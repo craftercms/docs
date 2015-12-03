@@ -15,6 +15,7 @@
 import sys
 import os
 import shlex
+from datetime import date
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -55,7 +56,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Crafter CMS'
-copyright = u'2015, Crafter Software Corporation'
+copyright = u"%s, Crafter Software Corporation"% str(date.today().year)
 author = u'Sumer Jabri'
 
 # The version info for the project you're documenting, acts as replacement for
