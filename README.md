@@ -1,0 +1,2 @@
+# docs
+Crafter CMS documentation
