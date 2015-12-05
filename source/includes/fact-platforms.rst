@@ -15,8 +15,6 @@
    * - RHEL/CentOS 7.0+
      - |checkmark|
      - |checkmark|
-     - |checkmark|
-     - |checkmark|
    * - Ubuntu 12.04
      - |checkmark|
      - |checkmark|
