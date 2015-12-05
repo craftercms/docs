@@ -1,7 +1,7 @@
 :orphan:
 
 ====================================================
-The CrafterCMS |version| (Release Candidate) Manual
+The CrafterCMS |version| Manual
 ====================================================
 
 .. default-domain:: craftercms
