@@ -17,11 +17,18 @@ Supported Platforms
 
 .. include:: /includes/fact-platforms.rst
 
+Supported Databases
+-------------------
+
+.. include:: /includes/fact-databases.rst
+
 .. _tutorials-installation:
 .. _tutorial-installation:
 
 Installation Guides
 --------------------
+
+.. todo:: Add installation guides
 
 See the :doc:`/release-notes` for information about specific releases
 of CrafterCMS.
