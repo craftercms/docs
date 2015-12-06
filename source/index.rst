@@ -6,14 +6,18 @@ The CrafterCMS |version| Manual
 
 .. default-domain:: craftercms
 
+.. admonition:: CrafterCMS 2.5 released
+
+    See :doc:`/release_notes/2.5` for new features in CrafterCMS 2.5.
+
 .. toctree::
    :maxdepth: 2
 
-   /index.rst
-   /getting_started/index.rst
-   /installation/index.rst
-   /release_notes/index.rst
-   /todo.rst
+   /index
+   /getting_started/index
+   /installation/index
+   /release_notes/index
+   /todo
 
 Welcome to the CrafterCMS |version| Manual! CrafterCMS is an open-source,
 Java-based, Web content management system designed for ease of development and scaling.
@@ -23,7 +27,10 @@ procedures as well as a comprehensive reference section.
 
 .. include:: /getting_started/index.rst
 
-.. include:: /todo.rst
+TODO
+----
+
+See :doc:`/todo`
 
 
 Indices and tables

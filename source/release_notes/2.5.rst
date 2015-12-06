@@ -1,1 +1,7 @@
+================================
+Release Notes for CrafterCMS 2.5
+================================
+
+.. default-domain:: craftercms
+
 .. todo:: Write Release Notes for 2.5
