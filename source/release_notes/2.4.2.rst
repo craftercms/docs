@@ -1,0 +1,29 @@
+2.4.2
+-----
+
+Highlights
+~~~~~~~~~~
+
+* Many fixes and small improvements
+
+Bug
+~~~~
+
+- `CRAFTERCMS-859 <http://issues.craftercms.org/browse/CRAFTERCMS-859>`_ - Don't do caching for static assets content
+- `CRAFTERCMS-867 <http://issues.craftercms.org/browse/CRAFTERCMS-867>`_ - Custom error FTLs (404, 500, etc) should be automatically recognizable without needing restart
+- `CRAFTERCMS-869 <http://issues.craftercms.org/browse/CRAFTERCMS-869>`_ - Search attachment with external metadata post processor does not remove deleted content from index
+- `CRAFTERCMS-932 <http://issues.craftercms.org/browse/CRAFTERCMS-932>`_  - fileType_s is added to a multivalued node resulting Solr deployment failure
+- `CRAFTERCMS-956 <http://issues.craftercms.org/browse/CRAFTERCMS-956>`_ - Submit to delete results in 404 error
+- `CRAFTERCMS-992 <http://issues.craftercms.org/browse/CRAFTERCMS-992>`_ - Scheduling option should be hidden when approving a delete item
+- `CRAFTERCMS-998 <http://issues.craftercms.org/browse/CRAFTERCMS-998>`_ - Deployment fails on zero byte files
+- `CRAFTERCMS-999 <http://issues.craftercms.org/browse/CRAFTERCMS-999>`_ - Bulk Go Live fails on createVersion
+
+Improvement
+~~~~~~~~~~~
+
+- `CRAFTERCMS-948 <http://issues.craftercms.org/browse/CRAFTERCMS-948>`_ - Deployment fails with NPE on a corrupted content
+
+Task
+~~~~
+
+- `CRAFTERCMS-486 <http://issues.craftercms.org/browse/CRAFTERCMS-486>`_ - Get rid of the static string array and use toString of the enum instead
