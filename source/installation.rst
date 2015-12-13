@@ -28,7 +28,12 @@ Supported Databases
 Installation Guides
 --------------------
 
-.. todo:: Add installation guides
+* Current Version
+    - :doc:`Crafter CMS 2.5 </installation/guide_2.5>`
+
+* Previous Versions
+    - :doc:`Crafter CMS 2.4 </installation/guide_2.4>`
+
 
 See the :doc:`/release-notes` for information about specific releases
 of CrafterCMS.

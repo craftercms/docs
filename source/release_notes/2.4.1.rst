@@ -1,0 +1,139 @@
+2.4.1
+-----
+
+Highlights
+~~~~~~~~~~
+
+* Many fixes and small improvements
+
+Bug
+~~~~
+
+- `CRAFTERCMS-44 <http://issues.craftercms.org/browse/CRAFTERCMS-44>`_ - Add group mapping to Crafter Social
+- `CRAFTERCMS-215 <http://issues.craftercms.org/browse/CRAFTERCMS-215>`_ - Error with parentPath macro on content creation
+- `CRAFTERCMS-262 <http://issues.craftercms.org/browse/CRAFTERCMS-262>`_ - No disabled indicator in Studio UI
+- `CRAFTERCMS-263 <http://issues.craftercms.org/browse/CRAFTERCMS-263>`_ - Disabled page rendered in navigation on live instance
+- `CRAFTERCMS-293 <http://issues.craftercms.org/browse/CRAFTERCMS-293>`_ - Cookies are not being set in IE10
+- `CRAFTERCMS-296 <http://issues.craftercms.org/browse/CRAFTERCMS-296>`_ - SCRIPT5007 error in all browsers, lead to a pop-up in IE 10.
+- `CRAFTERCMS-300 <http://issues.craftercms.org/browse/CRAFTERCMS-300>`_ - Blocking deployment error when publishing many static assets & templates
+- `CRAFTERCMS-327 <http://issues.craftercms.org/browse/CRAFTERCMS-327>`_ - Not all components can be edited.
+- `CRAFTERCMS-328 <http://issues.craftercms.org/browse/CRAFTERCMS-328>`_ - Cannot publish custom folders under /site
+- `CRAFTERCMS-340 <http://issues.craftercms.org/browse/CRAFTERCMS-340>`_ - 2.2.1 tomcat bundles in wiki do not have up-to-date schema.xml
+- `CRAFTERCMS-500 <http://issues.craftercms.org/browse/CRAFTERCMS-500>`_ - Set attributes should check permissions
+- `CRAFTERCMS-502 <http://issues.craftercms.org/browse/CRAFTERCMS-502>`_ - RTE not escaping special characters
+- `CRAFTERCMS-505 <http://issues.craftercms.org/browse/CRAFTERCMS-505>`_ - Add attachment should check permissions
+- `CRAFTERCMS-512 <http://issues.craftercms.org/browse/CRAFTERCMS-512>`_ - Do not return comments with TRASH moderation status from /crafter-social/api/2/ugc/target.json
+- `CRAFTERCMS-515 <http://issues.craftercms.org/browse/CRAFTERCMS-515>`_ - Crafter Social - backend should return meaningful error message
+- `CRAFTERCMS-516 <http://issues.craftercms.org/browse/CRAFTERCMS-516>`_ - Site Dropdown right-click controls become disabled
+- `CRAFTERCMS-521 <http://issues.craftercms.org/browse/CRAFTERCMS-521>`_ - UGCHookImpl uses autowatch flag from user's profile attributes.
+- `CRAFTERCMS-522 <http://issues.craftercms.org/browse/CRAFTERCMS-522>`_ - UGC Audit Harvester is broken whit anonymousFlag is set to true
+- `CRAFTERCMS-528 <http://issues.craftercms.org/browse/CRAFTERCMS-528>`_ - Notification records should be created for anonymously posted comments
+- `CRAFTERCMS-535 <http://issues.craftercms.org/browse/CRAFTERCMS-535>`_ - Issue with uploading attachment with same file name several times
+- `CRAFTERCMS-536 <http://issues.craftercms.org/browse/CRAFTERCMS-536>`_ - Uploading attachment file should not be allowed when user is not logged in
+- `CRAFTERCMS-537 <http://issues.craftercms.org/browse/CRAFTERCMS-537>`_ - Uploading longer attachment than permitted
+- `CRAFTERCMS-543 <http://issues.craftercms.org/browse/CRAFTERCMS-543>`_ - Save and Close option is refreshing the main window even if the property previewable of form is false
+- `CRAFTERCMS-555 <http://issues.craftercms.org/browse/CRAFTERCMS-555>`_ - Error using SearchAttachmentWithExternalMetadataPostProcessor with _dt field
+- `CRAFTERCMS-556 <http://issues.craftercms.org/browse/CRAFTERCMS-556>`_ - SearchAttachmentWithExternalMetadataPostProcessor issue - binary content indexing gets wiped out if binary is indexed before metadata file in processor
+- `CRAFTERCMS-557 <http://issues.craftercms.org/browse/CRAFTERCMS-557>`_ - SearchAttachmentWithExternalMetadataPostProcessor does not include multiple values of multi-valued fields
+- `CRAFTERCMS-571 <http://issues.craftercms.org/browse/CRAFTERCMS-571>`_ - No navigation label generated if navLabel not provided
+- `CRAFTERCMS-577 <http://issues.craftercms.org/browse/CRAFTERCMS-577>`_ - SOCIAL_AUTHOR cannot attach files to discussion
+- `CRAFTERCMS-646 <http://issues.craftercms.org/browse/CRAFTERCMS-646>`_ - Static assets shouldn't be cache in preview
+- `CRAFTERCMS-650 <http://issues.craftercms.org/browse/CRAFTERCMS-650>`_ - SQL syntax error when deleting site
+- `CRAFTERCMS-658 <http://issues.craftercms.org/browse/CRAFTERCMS-658>`_ - Social sends all profile attributes on suscribe
+- `CRAFTERCMS-660 <http://issues.craftercms.org/browse/CRAFTERCMS-660>`_ - Import exception while creating a new site from big blueprint
+- `CRAFTERCMS-661 <http://issues.craftercms.org/browse/CRAFTERCMS-661>`_ - Autosuscribe not working
+- `CRAFTERCMS-675 <http://issues.craftercms.org/browse/CRAFTERCMS-675>`_ - Cookies are used to pass in parameters to the RESTful services and are assumed to be part of the request.
+- `CRAFTERCMS-703 <http://issues.craftercms.org/browse/CRAFTERCMS-703>`_ - Parameters are redundant with ticket info.
+- `CRAFTERCMS-704 <http://issues.craftercms.org/browse/CRAFTERCMS-704>`_ - Lack of logging information
+- `CRAFTERCMS-705 <http://issues.craftercms.org/browse/CRAFTERCMS-705>`_ - Bad exception handeling
+- `CRAFTERCMS-707 <http://issues.craftercms.org/browse/CRAFTERCMS-707>`_ - Weird Security modeling (actions have roles instead of roles have actions)
+- `CRAFTERCMS-708 <http://issues.craftercms.org/browse/CRAFTERCMS-708>`_ - Old version of Spring-mvc (for example the jackson mapper, now handles better dates)
+- `CRAFTERCMS-709 <http://issues.craftercms.org/browse/CRAFTERCMS-709>`_ - Define moderation status workflow
+- `CRAFTERCMS-711 <http://issues.craftercms.org/browse/CRAFTERCMS-711>`_ - Role to Action mapping is purely done by hand and is full of conditionals/complexity.
+- `CRAFTERCMS-712 <http://issues.craftercms.org/browse/CRAFTERCMS-712>`_ - HTTP objects are being sent down to services and such
+- `CRAFTERCMS-713 <http://issues.craftercms.org/browse/CRAFTERCMS-713>`_ - Parameters are not being validated
+- `CRAFTERCMS-714 <http://issues.craftercms.org/browse/CRAFTERCMS-714>`_ - Old dependencies
+- `CRAFTERCMS-715 <http://issues.craftercms.org/browse/CRAFTERCMS-715>`_ - Check if all dependencies are really needed (for example found and delete some spring-social ones)
+- `CRAFTERCMS-716 <http://issues.craftercms.org/browse/CRAFTERCMS-716>`_ - Audit collection is being used to decide if an item is liked/not liked/etc.
+- `CRAFTERCMS-720 <http://issues.craftercms.org/browse/CRAFTERCMS-720>`_ - Mongo is used as if it was a transaction per method.(Check thread safety)
+- `CRAFTERCMS-722 <http://issues.craftercms.org/browse/CRAFTERCMS-722>`_ - Change Spring Data to Jongo
+- `CRAFTERCMS-723 <http://issues.craftercms.org/browse/CRAFTERCMS-723>`_ - Redesign Collections (AKA Pojos, remove profile, target (or use target as a Rel to UGC)
+- `CRAFTERCMS-724 <http://issues.craftercms.org/browse/CRAFTERCMS-724>`_ - Convencion over Configuration (there is a lot of stuff to make this work out of the box) (or at least better doc)1
+- `CRAFTERCMS-725 <http://issues.craftercms.org/browse/CRAFTERCMS-725>`_ - Make Build work with bamboo and sonar properly
+- `CRAFTERCMS-726 <http://issues.craftercms.org/browse/CRAFTERCMS-726>`_ - Clear pom of external repos (make it deployable in sonatype)
+- `CRAFTERCMS-727 <http://issues.craftercms.org/browse/CRAFTERCMS-727>`_ - Redefine APIs (make it simpler) (doc them as well)
+- `CRAFTERCMS-728 <http://issues.craftercms.org/browse/CRAFTERCMS-728>`_ - Use logback instend of log4j
+- `CRAFTERCMS-729 <http://issues.craftercms.org/browse/CRAFTERCMS-729>`_ - Upgrade to java 7
+- `CRAFTERCMS-733 <http://issues.craftercms.org/browse/CRAFTERCMS-733>`_ - Implement new security model, usable by all Crafter applications
+- `CRAFTERCMS-772 <http://issues.craftercms.org/browse/CRAFTERCMS-772>`_ - Cloud is not allowing admins to delete items because work area permissions are not set
+- `CRAFTERCMS-778 <http://issues.craftercms.org/browse/CRAFTERCMS-778>`_ - Scheduled Items not showing in 'Approved Scheduled Items' dashboard widget
+- `CRAFTERCMS-785 <http://issues.craftercms.org/browse/CRAFTERCMS-785>`_ - Using "logo" as Id (variable name) breaks form Engine
+- `CRAFTERCMS-791 <http://issues.craftercms.org/browse/CRAFTERCMS-791>`_ - Does not support Profile and Social connection to Mongo Replica Set
+- `CRAFTERCMS-793 <http://issues.craftercms.org/browse/CRAFTERCMS-793>`_ - Can't upload logo via Alfresco share management console
+- `CRAFTERCMS-799 <http://issues.craftercms.org/browse/CRAFTERCMS-799>`_ - Dependency extraction for rendering templates allows template to depend on itself
+- `CRAFTERCMS-802 <http://issues.craftercms.org/browse/CRAFTERCMS-802>`_ - col size too short for user names based on email addressed - publishing fails
+- `CRAFTERCMS-807 <http://issues.craftercms.org/browse/CRAFTERCMS-807>`_ - SearchAttachmentWithExternalMetadataPostProcessor fails to index meta-data
+- `CRAFTERCMS-814 <http://issues.craftercms.org/browse/CRAFTERCMS-814>`_ - Customize dashboard page is broken in Share UI
+- `CRAFTERCMS-818 <http://issues.craftercms.org/browse/CRAFTERCMS-818>`_ - Circular dependency page->component->component->page causing stack overflow exception on save form
+- `CRAFTERCMS-821 <http://issues.craftercms.org/browse/CRAFTERCMS-821>`_ - dependency calc complains about templates and other assets provided by engine
+- `CRAFTERCMS-834 <http://issues.craftercms.org/browse/CRAFTERCMS-834>`_ - Cannot configure remote preview server target on site by site basis.
+- `CRAFTERCMS-840 <http://issues.craftercms.org/browse/CRAFTERCMS-840>`_ - Crafter Profile has not yet switch to using mongo.server.set
+- `CRAFTERCMS-843 <http://issues.craftercms.org/browse/CRAFTERCMS-843>`_ - Cannot upload image with image-picker, or video with video-picker
+- `CRAFTERCMS-845 <http://issues.craftercms.org/browse/CRAFTERCMS-845>`_ - Shell processor does not account for dynamic siteID
+- `CRAFTERCMS-846 <http://issues.craftercms.org/browse/CRAFTERCMS-846>`_ - ICE dialog cancel not working when url has fragment identifier ( # )
+- `CRAFTERCMS-849 <http://issues.craftercms.org/browse/CRAFTERCMS-849>`_ - Browse repository does not show all files at /static-assets/css folder
+- `CRAFTERCMS-857 <http://issues.craftercms.org/browse/CRAFTERCMS-857>`_ - Circular dependency page->component->component->page causing stack overflow exception on deleting content
+- `CRAFTERCMS-862 <http://issues.craftercms.org/browse/CRAFTERCMS-862>`_ - Can't resize RTE as expected
+- `CRAFTERCMS-863 <http://issues.craftercms.org/browse/CRAFTERCMS-863>`_ - Crafter Engine device specific template no longer automatically falls back when template is not present
+- `CRAFTERCMS-864 <http://issues.craftercms.org/browse/CRAFTERCMS-864>`_ - RTE Insert/Edit Link button shows blank lightbox
+- `CRAFTERCMS-865 <http://issues.craftercms.org/browse/CRAFTERCMS-865>`_ - Solr index update fails when using flattening processor if parent contains multiple child components with single valued solr fields
+- `CRAFTERCMS-877 <http://issues.craftercms.org/browse/CRAFTERCMS-877>`_ - dual index as text and string when tokenize attribute is present
+- `CRAFTERCMS-879 <http://issues.craftercms.org/browse/CRAFTERCMS-879>`_ - Two identical wen projects, when editing content in one project, user activity reflects also in the other project
+- `CRAFTERCMS-900 <http://issues.craftercms.org/browse/CRAFTERCMS-900>`_ - Placing to engine proxies in a row results in a double encoding
+- `CRAFTERCMS-912 <http://issues.craftercms.org/browse/CRAFTERCMS-912>`_ - Opening form takes long due to loading dependencies
+- `CRAFTERCMS-915 <http://issues.craftercms.org/browse/CRAFTERCMS-915>`_ - Cannot configure Social to use Mongo running on port 37017
+- `CRAFTERCMS-916 <http://issues.craftercms.org/browse/CRAFTERCMS-916>`_ - Delete renamed page as index false deletes parent page
+- `CRAFTERCMS-918 <http://issues.craftercms.org/browse/CRAFTERCMS-918>`_ - Change whether a user auto-subscribe to a thread he creates.
+- `CRAFTERCMS-921 <http://issues.craftercms.org/browse/CRAFTERCMS-921>`_ - Provide API call to get a list of Social targets a user is subscribing
+- `CRAFTERCMS-925 <http://issues.craftercms.org/browse/CRAFTERCMS-925>`_ - Social Issue: Watched mark is not set properly
+
+Improvement
+~~~~~~~~~~~
+
+- `CRAFTERCMS-47 <http://issues.craftercms.org/browse/CRAFTERCMS-47>`_ - SolrDocumentBuilder should use Joda formatters with UTC timezone instead of setting the default timezone to UTC
+- `CRAFTERCMS-209 <http://issues.craftercms.org/browse/CRAFTERCMS-209>`_ - Make height & width of site dropdown configurable
+- `CRAFTERCMS-514 <http://issues.craftercms.org/browse/CRAFTERCMS-514>`_ - Both create.json and target.json should return displayName, but returns "User"
+- `CRAFTERCMS-759 <http://issues.craftercms.org/browse/CRAFTERCMS-759>`_ - Search flattener should recurse
+- `CRAFTERCMS-819 <http://issues.craftercms.org/browse/CRAFTERCMS-819>`_ - Improve alter table scripts not to run every time on startup
+- `CRAFTERCMS-841 <http://issues.craftercms.org/browse/CRAFTERCMS-841>`_ - Refactor setting system processing for bulk operations
+- `CRAFTERCMS-904 <http://issues.craftercms.org/browse/CRAFTERCMS-904>`_ - Display folders on top on assets folder
+- `CRAFTERCMS-913 <http://issues.craftercms.org/browse/CRAFTERCMS-913>`_ - siteName in deployment processors should OVERRIDE param coming from studio
+- `CRAFTERCMS-914 <http://issues.craftercms.org/browse/CRAFTERCMS-914>`_ - Bulk live should send items regarless of state or at least have an option to do this
+
+New Feature
+~~~~~~~~~~~
+
+- `CRAFTERCMS-764 <http://issues.craftercms.org/browse/CRAFTERCMS-764>`_ - Allow Engine to return "pages" in specified mimetypes
+- `CRAFTERCMS-847 <http://issues.craftercms.org/browse/CRAFTERCMS-847>`_ - Engine should come with the IVY jar inside so that groovy libs can be downloaded
+- `CRAFTERCMS-860 <http://issues.craftercms.org/browse/CRAFTERCMS-860>`_ - Add ability to Select All in Go Live Queue
+- `CRAFTERCMS-871 <http://issues.craftercms.org/browse/CRAFTERCMS-871>`_ - Add skip dependencies flag to content items to disable dependency calculation for content
+
+Task
+~~~~
+
+- `CRAFTERCMS-229 <http://issues.craftercms.org/browse/CRAFTERCMS-229>`_ - Sonar Issue #294b83a4-4182-4bc2-8e11-be8bac78e202 - An increment to a volatile field isn't atomic
+- `CRAFTERCMS-464 <http://issues.craftercms.org/browse/CRAFTERCMS-464>`_ - Define Crafter Profile API v3
+- `CRAFTERCMS-485 <http://issues.craftercms.org/browse/CRAFTERCMS-485>`_ - Remove direct reference of Social to Profile db
+- `CRAFTERCMS-488 <http://issues.craftercms.org/browse/CRAFTERCMS-488>`_ - Use JSONDocs
+- `CRAFTERCMS-758 <http://issues.craftercms.org/browse/CRAFTERCMS-758>`_ - Enable forceHttps flag
+- `CRAFTERCMS-768 <http://issues.craftercms.org/browse/CRAFTERCMS-768>`_ - Add configuration space export to filesystem
+- `CRAFTERCMS-775 <http://issues.craftercms.org/browse/CRAFTERCMS-775>`_ - Need sitemap.xml exposed in Cloud
+
+Sub-task
+~~~~~~~~
+
+- `CRAFTERCMS-238 <http://issues.craftercms.org/browse/CRAFTERCMS-238>`_ - Freemarker plugins in WAR and off of Shared
+- `CRAFTERCMS-239 <http://issues.craftercms.org/browse/CRAFTERCMS-239>`_ - Groovy plugins in WAR and off of Shared
+- `CRAFTERCMS-434 <http://issues.craftercms.org/browse/CRAFTERCMS-434>`_ - Enhance to allow custom attributes to be added easily
+- `CRAFTERCMS-445 <http://issues.craftercms.org/browse/CRAFTERCMS-510>`_ - Add attach functionality
+- `CRAFTERCMS-510 <http://issues.craftercms.org/browse/CRAFTERCMS-510>`_ - Create a Backend service to get configuration from a file.

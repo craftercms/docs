@@ -1,0 +1,17 @@
+2.4.3
+-----
+
+Highlights
+~~~~~~~~~~
+
+* Minor fixes
+
+Bug
+~~~~
+
+- `CRAFTERCMS-928 <http://issues.craftercms.org/browse/CRAFTERCMS-928>`_ - Locked icon does not show for scripts, templates and component
+
+Task
+~~~~
+
+- `CRAFTERCMS-1282 <http://issues.craftercms.org/browse/CRAFTERCMS-1282>`_ - Expose activity generation to the javascript layer
