@@ -1,1 +1,0 @@
-.. todo:: Upgrade Crafter CMS 2.4 to 2.5

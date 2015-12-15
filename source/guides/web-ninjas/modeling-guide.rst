@@ -1,5 +1,8 @@
+==================
+Modeling Guide
+==================
 .. todo:: Write Modeling Guides - Web Ninjas
 
-:doc:`build-a-form.rst`
+.. .. :doc:`build-a-form.rst`
 
-:doc:`image-sources.rst`
+.. .. :doc:`image-sources.rst`
