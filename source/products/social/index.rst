@@ -1,5 +1,5 @@
 ===============
-Crafter Core
+Crafter Social
 ===============
 .. todo:: Write What is it Document
 

@@ -1,5 +1,5 @@
 ===============
-Crafter Core
+Crafter Engine
 ===============
 .. todo:: Write What is it Document
 
