@@ -162,8 +162,8 @@ the template, eg. if the script has the line ``model.var = 5``, then in the temp
 ``crafterModel`` is the XML descriptor content, of type SiteItem. The scripts don't have to return any result, just populate the model.
 There are 2 ways in which you can "bind" a script to a page or component:
 
-#   Put the script under Scripts > pages or Scripts > components, and name it after the page or component content type.
-#   When creating the content type for the page or component, add a Item Selector with the variable name ``scripts``. Later when creating
+#.  Put the script under Scripts > pages or Scripts > components, and name it after the page or component content type.
+#.  When creating the content type for the page or component, add a Item Selector with the variable name ``scripts``. Later when creating
     a page or component of that type, you can select multiple scripts that will be associated to the page or component.
 
 The following is an example of a component script. The component content type is ``/component/upcoming-events``. We can then place the
@@ -175,7 +175,7 @@ script in Scripts > components > upcoming-events.groovy so that it is executed f
     import utils.DateUtils
 
     def now = DateUtils.formatDateAsIso(new Date())
-    def queryStr = "crafterSite:\"${SiteContext.current.siteName}\" AND content-type:\"/component/event\" AND disabled:\"false\" AND date_dt:[${now} TO *]"
+    def queryStr = "crafterSite:\"${siteContext.siteName}\" AND content-type:\"/component/event\" AND disabled:\"false\" AND date_dt:[${now} TO *]"
     def start = 0
     def rows = 1000
     def sort = "date_dt asc"
@@ -205,7 +205,7 @@ script in Scripts > components > upcoming-events.groovy so that it is executed f
 
     model.events = events
 
-You might notice that we're importing a utils.DateUtils class. This class is not part of Crafter CMS, but instead it is a Groovy class
+You might notice that we're importing a ``utils.DateUtils`` class. This class is not part of Crafter CMS, but instead it is a Groovy class
 specific to the site. To be able to use this class, you should place it under Classes > groovy > utils and name it DateUtils.groovy,
 where everything after the groovy directory is part of the class' package. It's recommended for all Groovy classes to follow this
 convention.

@@ -8,6 +8,7 @@ Developers Guide
     :titlesonly:
 
     groovy-development-guide
+    website-security-guide
     services-guide
     native-mobile-guide
     best-practices
