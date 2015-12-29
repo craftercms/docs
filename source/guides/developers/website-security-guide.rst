@@ -287,5 +287,36 @@ Add Authorization
 Restrict Pages
 ==============
 
+You can restrict pages based on whether a user is authenticated or has a certain role. To do this, you need to follow the next steps
+to create in the page content type a Repeating Group with a text Input for the roles:
+
+#.  In Studio, click on Admin Console.
+#.  Click on Open Existing Type and select the content type for the pages that you want to restrict.
+#.  On Controls, select the Repeating Group and add it to any Form Section (you can even create an Authorization section just for these
+    fields).
+#.  In the Repeating Group properties, set Authorized Roles as Title and Name / Variable Name as authorizedRoles.
+
+    .. image:: /_static/images/authorized_roles_properties.png
+
+#.  Add an Input control inside the Repeating Group, with Title Role and Name / Variable Name role.
+
+    .. image:: /_static/images/role_properties.png
+
+#.  Save the changes. The added fields should look like this:
+
+    .. image:: /_static/images/authorization_section.png
+
+With these changes, now you or any other content author can go to any page of this content type and add the roles that are required to
+access the page. Two special roles which indicate authentication state can be used besides the roles that are included in user profiles:
+``Anonymous`` and ``Authenticated``. The complete access check algorithm executed by Crafter Engine is described bellow:
+
+#.  If the page doesn't contain any role, no authentication is needed.
+#.  If the page has the role ``Anonymous``, no authentication is needed.
+#.  If the page has the role ``Authenticated``, just authentication is needed.
+#.  If the page has any other the roles, the user needs to be authenticated and have any of those roles.
+
 Restrict URLs
 =============
+
+Sometimes is not enough to restrict a single page. Sometimes you need to restrict an entire site subtree, or restrict several static
+assets. For this, Crafter CMS provides configuration parameters that allow you to restrict access based on URL patterns:
