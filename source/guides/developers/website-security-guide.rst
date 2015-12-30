@@ -298,7 +298,7 @@ to create in the page content type a Repeating Group with a text Input for the r
 
     .. image:: /_static/images/authorized_roles_properties.png
 
-#.  Add an Input control inside the Repeating Group, with Title Role and Name / Variable Name role.
+#.  Add an Input control inside the Repeating Group, with Title Role and Name / Variable Name role. Make this Input required.
 
     .. image:: /_static/images/role_properties.png
 
@@ -319,4 +319,27 @@ Restrict URLs
 =============
 
 Sometimes is not enough to restrict a single page. Sometimes you need to restrict an entire site subtree, or restrict several static
-assets. For this, Crafter CMS provides configuration parameters that allow you to restrict access based on URL patterns:
+assets. For this, Crafter CMS provides configuration parameters that allow you to restrict access based on URL patterns. You just need
+to add configuration similar to the following in Config > site.xml:
+
+.. code-block:: xml
+
+    <security>
+        <urlRestrictions>
+            <restriction>
+                <url>/user/*</url>
+                <expression>hasAnyRole({'user', 'admin'})</expression>
+            </restriction>
+        </urlRestrictions>
+    </security>
+
+The ``<urlRestrictions>`` can contain any number of ``<restriction>`` elements. Each restriction is formed by an Ant-style path pattern
+(``<url>``) and a Spring EL expression (``<expression>``) executed against the current profile. If a request matches the URL, and the
+expression evaluates to false, access is denied. The following expressions can be used:
+
+*   ``isAnonymous()``
+*   ``isAuthenticated()``
+*   ``hasRole('role'})``
+*   ``hasAnyRole({'role1', 'role2'})``
+*   ``permitAll()``
+*   ``denyAll()``
