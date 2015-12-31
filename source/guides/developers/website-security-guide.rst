@@ -7,7 +7,7 @@ Website Security Guide
 The following guide will help you configure Crafter Engine and Crafter Profile to:
 
 #.  Enable security for your website.
-#.  Add authentication to your site, including Facebook login.
+#.  Add authentication to your site, including Facebook login and Single Sign-On.
 #.  Add authorization so that access to certain pages and URLs of your site are restricted.
 
 ---------------
@@ -95,13 +95,13 @@ Normally, to add registration or sign up you just need to:
             throw new HttpStatusCodeException(400, "Bad request: missing password")
         }
 
-        def profile = profileService.getProfileByUsername("brochure", email)
+        def profile = profileService.getProfileByUsername(siteContext.siteName, email)
         if (profile == null) {
             def attributes = [:]
                 attributes.firstName = firstName
                 attributes.lastName = lastName
 
-            profile = profileService.createProfile("brochure", email, password, email, false, null, attributes, null)
+            profile = profileService.createProfile(siteContext.siteName, email, password, email, false, null, attributes, null)
 
             sendVerificationEmail(new MailHelper(siteContext.freeMarkerConfig.configuration), profile)
 
@@ -279,6 +279,82 @@ Add Facebook Login
         providerLoginSupport.complete(siteContext.siteName, "facebook", request)
 
         return "/templates/web/fb-login-done.ftl"
+
+Add Single Sign-On
+==================
+
+Crafter Profile's Security Provider is able to integrate with SAML 2.0, by means of the Apache mod_auth_mellon
+(https://github.com/UNINETT/mod_auth_mellon). By using mod_auth_mellon, the user can be authenticated against a SAML 2.0 IdP, and
+headers with the user's information can be sent to the Security Provider enabled applications, like Crafter Engine and Crafter Social,
+so that the user can be automatically signed in with Crafter Profile. Use the following to install mod_auth_mellon in Ubuntu and
+configure it so the correct headers are sent to the applications:
+
+#.  Install Apache 2 (``apt-get install apache2 and apt-get install apache2-dev``).
+#.  Install openssl (``apt-get install openssl``).
+#.  Install liblasso3 and liblasso3-dev (``apt-get install liblasso3 and apt-get install liblasso3-dev``).
+#.  Install libcurl4-openssl-dev (``apt-get install libcurl4-openssl-dev``).
+#.  Download mod_auth_mellon from https://github.com/UNINETT/mod_auth_mellon/releases.
+#.  Execute the following commands:
+
+    .. code-block:: bash
+
+        ./configure
+        make
+        sudo make install
+
+#.  Add the ``LoadModule auth_mellon_module /usr/lib/apache2/modules/mod_auth_mellon.so`` entry to
+    /etc/apache2/mods-available/auth_mellon.load.
+#.  Enable mod_auth_mellon (``a2enmod auth_mellon``).
+#.  Enable mod_headers (``a2enmod headers``).
+#.  Enable mod_proxy_ajp (``a2enmod proxy_ajp``).
+#.  Create the Service Provider metadata with the mello_create_metadata.sh script in the directory where you unzipped the mod_auth_mellon
+    code, passing  the Entity ID (a URN, can be the site URL) and the Endpoint URL (the URL root where mellon can handle SAML requests,
+    by default {SITE_URL}/mellon), as parameters. Eg: ``./mellon_create_metadata.sh urn:craftercms:testhttp://127.0.0.1/mellon``.
+#.  Copy the generated files to somewhere like /etc/apache2/saml/conf/sps/test.
+#.  Copy the IDP metadata to somewhere like /etc/apache2/saml/conf/idps.
+#.  Add the auth_mellon configuration to the virtual host. The configuration should be similar to this:
+
+    .. code-block:: apacheconf
+
+        ProxyPass / ajp://localhost:8009/
+        ProxyPassReverse / ajp://localhost:8009/
+
+        # Mod Mellon Conf
+        <Location />
+            MellonEnable "auth"
+
+            RequestHeader unset MELLON_username
+            RequestHeader unset MELLON_email
+            RequestHeader unset MELLON_firstName
+            RequestHeader unset MELLON_lastName
+            RequestHeader unset MELLON_displayName
+
+            RequestHeader set MELLON_username "%{MELLON_uid}e" env=MELLON_uid
+            RequestHeader set MELLON_email "%{MELLON_mail}e" env=MELLON_mail
+            RequestHeader set MELLON_firstName "%{MELLON_givenName}e" env=MELLON_givenName
+            RequestHeader set MELLON_lastName "%{MELLON_sn}e" env=MELLON_sn
+            RequestHeader set MELLON_displayName "%{MELLON_cn}e" env=MELLON_cn
+
+            MellonSPPrivateKeyFile  /etc/apache2/saml/conf/sps/urn_craftercms_test.key
+            MellonSPCertFile        /etc/apache2/saml/conf/sps/urn_craftercms_test.cert
+            MellonSPMetadataFile    /etc/apache2/saml/conf/sps/urn_craftercms_test.xml
+
+            MellonIdPMetadataFile   /etc/apache2/saml/conf/idps/openidp_feide_no.xml
+        </Location>
+
+    *   The URL after ``Location`` will be the URL auth_mellon intercepts. MellonEnable "auth" enables auth_mellon at the location.
+    *   The ``RequestHeader`` set entries create headers that are later sent to the Tomcat webapps with the user info. You need at least
+        to specify the ``MELLON_username`` and ``MELLON_email`` headers, the other ones are optional and are directly mapped, without the
+        MELLON_ prefix, to the attributes you defined in the Crafter Profile tenant, when a new user needs to be created. So the
+        configuration above will cause the Security Provider to create a user with firstName, lastName and displayName attributes. It's
+        important to remember that the environment variables set by auth_mellon and used to create this headers depend in the IdP, so
+        you'll need to check first what the IdP is sending before defining the headers.
+    *   The ``RequestHeader unset`` will make sure someone is not trying to forge the headers to authenticate as a user.
+    *   The last properties are the paths of each file generated by the mello_create_metadata.sh script, and the IdP metadata file
+        retrieved from the IdP.
+#.  In Crafter Profile Admin Console, make sure that the Single sign-on enabled checkbox is selected in the tenant page.
+
+    .. image:: /_static/images/sso_enabled.png
 
 -----------------
 Add Authorization
