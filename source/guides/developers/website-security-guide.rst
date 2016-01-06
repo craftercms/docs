@@ -26,17 +26,27 @@ create one:
 
     .. image:: /_static/images/new_access_token.png
 
-#.  Now that you have created the access token, you need to "tell" Engine to use it in your site. In Admin Console, click on List Access
-    Tokens in the navigation menu and copy the ID of the token you just created. Then, from Studio, add the ID as a configuration parameter
-    in Config > site.xml.
+#.  Now that you have created the access token, you need to "tell" Engine to use it in your site. In Admin Console, click on
+    List Access Tokens in the navigation menu and copy the ID of the token you just created. Then, depending on the mode Engine
+    is running, add one of the following configurations (preview is ignored because normally predefined Personas are used, so
+    there's no need to access the Crafter Profile app).
 
-    .. code-block:: xml
+    *   **Multi-tenant:** You need to add the access token ID to the Config > site.xml in Studio, and deploy the file to Engine:
 
-        <profile>
-            <api>
-                <accessTokenId>6604d59a-fe1b-4cb3-a76f-bdb1eb61e8c2</accessTokenId>
-            </api>
-        </profile>
+        .. code-block:: xml
+
+            <profile>
+                <api>
+                    <accessTokenId>6604d59a-fe1b-4cb3-a76f-bdb1eb61e8c2</accessTokenId>
+                </api>
+            </profile>
+
+    *   **Single tenant:** In the Tomcat where Engine is installed, go to shared/classes/crafter/engine/extension and add the access
+        token ID as the following property:
+
+        .. code-block:: properties
+
+            crafter.profile.rest.client.accessToken.id=6604d59a-fe1b-4cb3-a76f-bdb1eb61e8c2
 
 ------------------
 Add Authentication
