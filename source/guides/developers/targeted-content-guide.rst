@@ -41,3 +41,6 @@ configuration posted above:
 It's important to point out that if a page exists several times under the same "family" of locales, like *en* (fallback), *es* and *es_CR*,
 the content is inherited following the path of the most general locale to the most specific one, so /site/website/es_CR/contact-us,
 would inherit and overwrite the content of /site/website/es/contact-us and /site/website/en/contact-us.
+
+As stated before, the most popular case for targeted content is localization, but it isn't the only one. Sometimes you need to target
+content according to the user's region and country, for example. Or target it 
