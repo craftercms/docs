@@ -1,33 +1,31 @@
-.. todo:: Write Installation Guide
+========================================
+Install Crafter CMS from Tomcat Zip File
+========================================
 
-.. toctree::
-    :titlesonly:
-    :maxdepth: 2
+The tomcat zip file will set up a fully functional Crafter Studio instance running against test data stores.  It can easily be
+configured (using the documentation below) to point to Alfresco and external RDBMS.
 
-From Tomcat Zip File
---------------------
+#.  Download the tomcat install zip from http://craftercms.org/downloads. Source code for this can be found in
+    https://github.com/craftercms/studio2-installers.
+#.  Unzip the tomcat in any directory.
+#.  Start the tomcat
 
-The tomcat zip file will set up a fully functional Crafter Studio instance running against test data stores.  It can easily be configured (using the documentation below) to point to Alfresco and external RDBMS.
+    *   Linux / Apple
+        ::
 
-#. Download the tomcat install zip here `http://craftercms.org/downloads`
-    - Source code for this can be found `here <https://github.com/craftercms/studio2-installers>`
+            INSTALL_PATH/bin/startup.sh
 
-#. Unzip the tomcat in any directory
+    *   Windows
+        ::
 
-#. Start the tomcat
-    - Linux / Apple::
+            INSTALL_PATH/bin/startup.bat
 
-        INSTALL-DIR/bin/startup.sh
+#.  Login in with admin/admin (any username password will work, the security provider is faux by default).
+#.  Create a site.
 
-    - Windows::
-
-        INSTALL-DIR/bin/startup.bat
-
-#. Login in with admin/admin (any username password will work, the security provider is faux by default)
-
-#. Create a site
-
+=====================
 Configure Crafter CMS
----------------------
+=====================
 
-See :doc:`Configuration Guide</installation/configure>` for details.
+*   :doc:`/installation/configure`.
+*   :doc:`/installation/engine/configure`.
