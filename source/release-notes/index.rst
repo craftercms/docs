@@ -9,8 +9,8 @@ Highlights
 * Many engine improvements
 * Many profile / social improvements
 
-Bug
-~~~~
+Fixed
+~~~~~
 
 - `CRAFTERCMS-814 <http://issues.craftercms.org/browse/CRAFTERCMS-814>`_ - Customize dashboard page is broken in Share UI
 - `CRAFTERCMS-821 <http://issues.craftercms.org/browse/CRAFTERCMS-821>`_ - dependency calc complains about templates and other assets provided by engine
@@ -196,8 +196,8 @@ Bug
 - `CRAFTERCMS-1306 <http://issues.craftercms.org/browse/CRAFTERCMS-1306>`_ - Editing content and drag-drop do not work in CHROME on IE
 - `CRAFTERCMS-1307 <http://issues.craftercms.org/browse/CRAFTERCMS-1307>`_ - delete dialog does not work
 
-Improvement
-~~~~~~~~~~~
+Improvements
+~~~~~~~~~~~~
 
 - `CRAFTERCMS-777 <http://issues.craftercms.org/browse/CRAFTERCMS-777>`_ - There should be html response type from groovy script
 - `CRAFTERCMS-819 <http://issues.craftercms.org/browse/CRAFTERCMS-819>`_ - Improve alter table scripts not to run every time on startup
@@ -235,8 +235,8 @@ New Feature
 - `CRAFTERCMS-1167 <http://issues.craftercms.org/browse/CRAFTERCMS-1167>`_ - right click create script or template depending on which folder you are in
 - `CRAFTERCMS-1174 <http://issues.craftercms.org/browse/CRAFTERCMS-1174>`_ - allow authors to insert templated HTML (STUBS) in RTE
 
-Task
-~~~~
+Other
+~~~~~
 
 - `CRAFTERCMS-810 <http://issues.craftercms.org/browse/CRAFTERCMS-810>`_ - SOLR upgrade - crafter-search
 - `CRAFTERCMS-945 <http://issues.craftercms.org/browse/CRAFTERCMS-945>`_ - Reactor integration for event processing and "preview aspect replacement"
