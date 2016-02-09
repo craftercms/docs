@@ -53,3 +53,8 @@ Guides <getting-started>` to learn about CrafterCMS.
 <getting-started>` are available.
 
 .. include:: /includes/unicode-checkmark.rst
+
+
+.. todo:: write install from bundle
+.. todo:: write install from source
+.. todo:: write install from docker
