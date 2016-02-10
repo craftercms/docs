@@ -2,21 +2,17 @@
 Content Authors Guide
 =============
 
-Do I need to be technical to use Crafter Studio?
+What is Crafter Studio?
 -------------------
-NO. The whole point of Crafter Studio is to provide an easy to use enterprise class content authoring and management system for developing and optimizing the content and dynamic user experience for any and all of your Web properties.
+Crafter Studio is the content authoring, management and publishing application that allows marketers and content editors to create rich web experiences.  With a set of powerful and easy-to-use tools, content creators and managers can create timely content without any involvement from developers or IT administrators.  The power of creating rich content and delivering dynamic experiences is in the hands of business users with Crafter Studio.
 
-Crafter Studio Overview
--------------------
-Crafter Studio is a user friendly interface for managing your web experience for one or more web properties.
-A brief tour of the application should be given at this point.  You may find a pre-recorded tour here:
-VIDEO HERE
+With Crafter Studio, marketers are able to create different personas of the target audience and deliver tailored content to individual users or groups, building an engaging experience across the web, mobile, and social channels. Using its native integration with Google Analytics, or by easily integrating a third-party web analytics engine, Crafter Studio analytics are used to optimize the site’s performance for SEO, conversions, and other relevant web metrics.
 
-What Browser should I use with Studio?
+Installing / Using Crafter Studio
 -------------------
-The following browsers are supported:
-Firefox
+Crafter Studio is a thin-client, browser-based application.  There is no software to install on your local computer. The following browsers are supported:
 Chrome
+Firefox
 IE
 
 Logging in
@@ -114,20 +110,25 @@ Object types are high level archetypes of content objects within the system.  Th
 Page	
 -------------------
 A page is exactly what you would expect, it's a URI addressable object that represents a web page or resource. 
-Navigation Page:  This is a resource that has a URI should be shown in a dynamically generated navigation on the site
-Floating Page:  This is a resource that has a URI but should not be shown in dynamically generated navigation elements on the site
+# Navigation Page:  This is a resource that has a URI should be shown in a dynamically generated navigation on the site
+# Floating Page:  This is a resource that has a URI but should not be shown in dynamically generated navigation elements on the site
 
 Component	
 -------------------
 A component is an object that is generally not URI addressable on the website.  Examples are objects like Banners, Touts, Videos, Sidebar 
 content etc. Components are usually re-usable assets that can be assigned and shared across many pages.
-	Document	A Document, like pages are URI addressable objects.  In our experience many sites commonly have some usecase that involves a download of documents or other collateral.  While we could cover this need with the "Page" icon, these type of assets generally have specific workflows and we have found it beneficial to specifically identify them in the system.
+	
+Document	
+-------------------
+A Document, like pages are URI addressable objects.  In our experience many sites commonly have some usecase that involves a download of documents or other collateral.  While we could cover this need with the "Page" icon, these type of assets generally have specific workflows and we have found it beneficial to specifically identify them in the system.
+
 Status Indicators
+-------------------
 There are a number of states about content that are helpful for authors
  
  
  
-	New	You will find a * asterisk at the end of a content object's name if the content has never been pushed live. This helps authors quickly identify which objects that are in progress are already live and which ones are entirely new.
+New	You will find a * asterisk at the end of a content object's name if the content has never been pushed live. This helps authors quickly identify which objects that are in progress are already live and which ones are entirely new.
 	Disabled	You will find that some objects have a strike-through on their name, this means that the object is not deleted but it should not be displayed on the site.  It's essentially a logical delete.  Imagine a scenario where you need to take an object down immediately because of an inaccuracy while you make corrections.  Disable is perfect for this and several other scenarios.
 Workflow Indicators
 Workflow indicators help authors and content managers understand at a glance what is going on with the content at a highlevel.  Is it Live?  Is it work in progress?  Is it currently checked out? In some sort of approval process?
