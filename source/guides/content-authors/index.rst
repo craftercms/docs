@@ -3,9 +3,8 @@ Content Authors Guide
 =============
 
 Do I need to be technical to use Crafter Studio?
-NO. The whole point of Crafter Studio is to provide an easy to use enterprise class content authoring and management system for developing and optimizing the content and dynamic site visitor experience for any and all of your Web properties.
-Authoring and Delivery
-There are several versions of Crafter Studio that have been released. This document covers features available in Crafter Studio 2.2.x.
+-------------------
+NO. The whole point of Crafter Studio is to provide an easy to use enterprise class content authoring and management system for developing and optimizing the content and dynamic user experience for any and all of your Web properties.
 
 Crafter Studio Overview
 -------------------
