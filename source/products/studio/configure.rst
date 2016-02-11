@@ -5,7 +5,8 @@ Configure
 Default Studio configuration values:
 
 .. code-block:: properties
-	:caption: crafter/engine/studio-server-config.properties
+	:caption: Crafter Studio Configuration
+	:name: Studio Configuration
 
 	##########################
 	# Database configuration #
