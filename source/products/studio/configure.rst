@@ -5,7 +5,6 @@ Configure
 Default Studio configuration values:
 
 .. code-block:: properties
-
 	:caption: CLASSPATH:crafter/engine/studio-server-config.properties
 
 	##########################
