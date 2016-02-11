@@ -8,6 +8,8 @@ Crafter Studio is the content authoring, management and publishing application t
 
 With Crafter Studio, marketers are able to create different personas of the target audience and deliver tailored content to individual users or groups, building an engaging experience across the web, mobile, and social channels. Using its native integration with Google Analytics, or by easily integrating a third-party web analytics engine, Crafter Studio analytics are used to optimize the site’s performance for SEO, conversions, and other relevant web metrics.
 
+.. image:: ./images/studio.png
+
 Installing / Using Crafter Studio
 -------------------
 Crafter Studio is a thin-client, browser-based application.  There is no software to install on your local computer. The following browsers are supported:
