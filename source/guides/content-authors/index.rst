@@ -13,9 +13,9 @@ With Crafter Studio, marketers are able to create different personas of the targ
 Installing / Using Crafter Studio
 -------------------
 Crafter Studio is a thin-client, browser-based application.  There is no software to install on your local computer. The following browsers are supported:
-Chrome
-Firefox
-IE
+#. Chrome
+#. Firefox
+#. IE
 
 Logging in
 -------------------
@@ -23,20 +23,34 @@ If you have not logged in or your session has expired, you will be challenged fo
 
 .. image:: ./images/login.png
 
--------------------
 What Credentials should I use
+----------------
+#. Studio Credentials
+#. Alfresco Credentials
+#. Single Sign-on
+
+Once logged in you will be presented with a list of sites which you have access to manage
+.. image:: ./images/sites-dashboard.png
+
+Preview
+----------------
+Preview Button
+
+Dashboard
+----------------
+Dashboard Button
+
+Deleting a Site
+----------------
+Delete a site
+
+Creating a site
+----------------
+Delete a site
+
+Preview
 -------------------
-Crafter Studio can be integrated with oner or more of a number of authentication systems
-# Default / Evaluation
-# Alfresco accounts
 
-Once you have logged in you will have identified your user to the system. As a member of a Crafter Site each user can have one of two primary roles:
-Content Manager A content Manager has the ability to approve and reject workflow. A content manager also has access to a number of dashboards which are not available to content contributors including Recently Made Live and Approved Scheduled Items.
-Content Contributor A content contributor has access to create, edit and submit content
-Personal Dashboard
-
-
-Once an author logs in to Crafter Studio they will be directed to their personal dashboard
 
 Contextual Navigation
 -------------------
