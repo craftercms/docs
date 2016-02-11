@@ -5,8 +5,6 @@ Configure
 Default Studio configuration values:
 
 .. code-block:: properties
-	:caption: Crafter Studio Configuration
-	:name: Studio Configuration
 
 	##########################
 	# Database configuration #
