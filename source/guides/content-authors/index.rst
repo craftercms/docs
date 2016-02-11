@@ -21,14 +21,14 @@ Logging in
 -------------------
 If you have not logged in or your session has expired, you will be challenged for a user name and password.  
 
+.. image:: ./images/login.png
+
+-------------------
 What Credentials should I use
 -------------------
 Crafter Studio can be integrated with oner or more of a number of authentication systems
-Alfresco OOTB accounts
-NTLM
-CAS
-TAM Junction
-Roles
+# Default / Evaluation
+# Alfresco accounts
 
 Once you have logged in you will have identified your user to the system. As a member of a Crafter Site each user can have one of two primary roles:
 Content Manager A content Manager has the ability to approve and reject workflow. A content manager also has access to a number of dashboards which are not available to content contributors including Recently Made Live and Approved Scheduled Items.
