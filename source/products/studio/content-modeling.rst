@@ -1,5 +1,3 @@
-.. highlight:: modeling
-
 ================
 Content Modeling
 ================
