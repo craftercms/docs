@@ -10,6 +10,6 @@ Crafter Core
 	api
 	rest-api
 	in-process-api
-	configure
+	configuration
 	installation
 	release-notes
