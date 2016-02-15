@@ -6,10 +6,10 @@ Crafter Studio
 .. toctree::
 	:maxdepth: 1
 
+	configuration
+	content-modeling
+	installation
 	best-practices
 	api
 	rest-api
-	in-process-api
-	configuration
-	installation
 	release-notes
