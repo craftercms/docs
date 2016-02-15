@@ -34,6 +34,8 @@ In-context Editing
 
 In context editing renders pencils on the screen that invoke editing controls when clicked.  This allows authors to quickly/visually identify editable content and make changes.
 
+.. image:: /_static/images/ice-example.png
+
 To enable in-context editing simply add the following attribute to the container/element where you want to place the editing control
 
 .. code-block:: html
@@ -68,6 +70,8 @@ Component Drag and Drop Zone
 ----------------------------
 
 Drag and drop makes it easy for authors to visually assemble pages.  Authors simply choose a component from a pre-defined list of components/widgets, drag them on to the screen, place them where they want (in defined drop zones, and then configure them.  Authors may also move components from one zone to another or remove components.
+
+.. image:: /_static/images/dropzone.png
 
 To define a drop zone for components simply add the following attribute to the container element where you want your components to render
 
