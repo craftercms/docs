@@ -58,12 +58,14 @@ Tag Attributes
 |                |                                      | system will assume the outermost object e.g.   |
 |                |                                      | the page as the path.                          |
 +----------------+--------------------------------------+------------------------------------------------+
-
+| label          | No (but it's a best practice)        | UI will use lavel if it exists. Otherwise,     |
+|                |                                      | the iceGroup or path will be used.             |
++----------------+--------------------------------------+------------------------------------------------+
 Example: 
 
 .. code-block:: html
 
-	<img <@studio.iceAttr iceGroup="image" /> src="${model.image!""}" alt="${model.alttext!""}"/>``
+	<img <@studio.iceAttr iceGroup="image" label="Promo Image 1" /> src="${model.image!""}" alt="${model.alttext!""}"/>``
 
 ----------------------------
 Component Drag and Drop Zone
