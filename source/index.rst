@@ -21,7 +21,7 @@ procedures as well as a comprehensive reference section.
 	/guides/index
 	/getting-started/index
 	/installation/index
-	/products/index
+	/projects/index
 	/faq/index
 	/release-notes/index
 	/benchmarks/index

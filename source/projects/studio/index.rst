@@ -1,15 +1,15 @@
 ===============
-Crafter Social
+Crafter Studio
 ===============
 .. todo:: Write What is it Document
 
 .. toctree::
 	:maxdepth: 1
 
+	configuration
+	content-modeling
+	installation
 	best-practices
 	api
 	rest-api
-	in-process-api
-	configure
-	installation
 	release-notes

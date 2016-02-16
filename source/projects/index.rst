@@ -1,7 +1,7 @@
-===============
-Products
-===============
-.. todo:: Write Products documentation
+========
+Projects
+========
+.. todo:: Write projects documentation
 
 .. toctree::
     :maxdepth: 2

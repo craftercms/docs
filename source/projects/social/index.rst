@@ -1,5 +1,5 @@
 ===============
-Crafter Profile
+Crafter Social
 ===============
 .. todo:: Write What is it Document
 
@@ -10,6 +10,6 @@ Crafter Profile
 	api
 	rest-api
 	in-process-api
-	configure
+	configuration
 	installation
 	release-notes

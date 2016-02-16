@@ -1,5 +1,5 @@
 ===============
-Crafter Studio
+Crafter Engine
 ===============
 .. todo:: Write What is it Document
 
@@ -10,6 +10,6 @@ Crafter Studio
 	api
 	rest-api
 	in-process-api
-	configure
+	configuration
 	installation
 	release-notes

@@ -1,4 +1,4 @@
 ===============
-Configure
+Configuration
 ===============
 .. todo:: Write Configuration Guide

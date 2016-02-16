@@ -1,5 +1,5 @@
 ===============
-Crafter Engine
+Crafter Profile
 ===============
 .. todo:: Write What is it Document
 
@@ -10,6 +10,6 @@ Crafter Engine
 	api
 	rest-api
 	in-process-api
-	configure
+	configuration
 	installation
 	release-notes
