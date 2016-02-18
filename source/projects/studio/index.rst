@@ -13,3 +13,4 @@ Crafter Studio
 	api
 	rest-api
 	release-notes
+	extend/form-engine-control
