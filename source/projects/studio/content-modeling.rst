@@ -64,11 +64,20 @@ You now specify:
 The next screen shows the form builder:
 
 .. image:: /_static/images/create-content-type-2.png
-	:height: 200px
-	:width: 400 px
-	:scale: 50 %
-	:alt: Admin Console Link
-	:align: right
+	:height: 800px
+	:width: 800 px
+	:scale: 75 %
+	:alt: Content Type Editor
+	:align: center
+
+Let's start by exploring the various controls on this screen:
+
+1. Open Existing Content Type or Create a New Type
+
+2. The begging of the formm builder and it's headed by the name of currently open Content Type. Click here to explore the global properties of the type in the Properties Explorer, #3.
+3. Properties Explorere helps configure the properties of the currently selected item. Clicking on an item on the left side of the screen, like #2 or #7 will populate this control and allow you to modify the selected item.
+
+4. This is a list of available form controls for you to build your form with. Note that the list has a scrollbar for many types of useful controls. Controls can be dragged from the controls list onto the form builder 
 
 
 
