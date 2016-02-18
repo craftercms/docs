@@ -266,3 +266,7 @@ Default Studio configuration values:
     crafter.studio.cluster.enabled=false
 
 To override any of default configuration values create new properties file in ``TOMCAT/shared/classes/crafter/engine/extension/studio-server-config.properties`` and override value of any property by setting new value.
+
+.. include:: configuration/role-mappings.rst
+
+.. include:: configuration/permission-mappings.rst
