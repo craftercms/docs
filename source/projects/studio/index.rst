@@ -8,7 +8,7 @@ Crafter Studio
 
 	configuration
 	content-modeling
-        rte-setup
+	rte-setup
 	installation
 	best-practices
 	api
