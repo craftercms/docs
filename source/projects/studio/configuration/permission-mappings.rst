@@ -1,0 +1,67 @@
+Permission Mappings
+===================
+
+Sample
+------
+
+.. code-block:: xml
+    :caption: /cstudio/config/sites/SITENAME/permission-mappings.xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <permissions>
+        <site id="SITENAME">
+            <role name="admin">
+                <rule regex="/.*">
+                    <allowed-permissions>
+                        <permission>Read</permission>
+                        <permission>Write</permission>
+                        <permission>Delete</permission>
+                        <permission>Create Folder</permission>
+                        <permission>Publish</permission>
+                        <permission>Create Content</permission>
+                        <permission>Change Content Type</permission>
+                    </allowed-permissions>
+                </rule>
+                <rule regex="~DASHBOARD~">
+                    <allowed-permissions>
+                        <permission>Read</permission>
+                        <permission>Write</permission>
+                        <permission>Delete</permission>
+                        <permission>Create Folder</permission>
+                        <permission>Publish</permission>
+                        <permission>Create Content</permission>
+                        <permission>Change Content Type</permission>
+                    </allowed-permissions>
+                </rule>
+            </role>
+            <role name="author">
+                <rule regex="/.*">
+                    <allowed-permissions>
+                        <permission>Read</permission>
+                        <permission>Write</permission>
+                    </allowed-permissions>
+                </rule>
+                <rule regex="~DASHBOARD~">
+                    <allowed-permissions>
+                        <permission>Read</permission>
+                        <permission>Write</permission>
+                    </allowed-permissions>
+                </rule>
+            </role>
+            <role name="*">
+                <rule regex="/.*">
+                    <allowed-permissions>
+                        <permission>Read</permission>
+                    </allowed-permissions>
+                </rule>
+                <rule regex="~DASHBOARD~">
+                    <allowed-permissions>
+                        <permission>Read</permission>
+                    </allowed-permissions>
+                </rule>
+            </role>
+        </site>
+    </permissions>
+
+Description
+-----------
