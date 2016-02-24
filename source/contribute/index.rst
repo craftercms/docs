@@ -1,7 +1,8 @@
 ==========
 Contribute
 ==========
-.. todo:: Write Performance documentation
+
+.. todo:: Write how to contribute to Crafter CMS
 
 .. toctree::
     :maxdepth: 1

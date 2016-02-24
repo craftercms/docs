@@ -15,7 +15,7 @@ development enviornment, and provides operational and administrative considerati
 procedures as well as a comprehensive reference section.
 
 .. toctree::
-	:maxdepth: 2
+	:maxdepth: 1
 
 	/about
 	/guides/index
@@ -24,9 +24,9 @@ procedures as well as a comprehensive reference section.
 	/projects/index
 	/faq/index
 	/release-notes/index
-	/benchmarks/index
+	/benchmarks
 	/contribute/index
-	/support/index
+	/support
 
 See :doc:`/release-notes/index` for the latest release notes.
 
