@@ -1,5 +1,5 @@
 -----------------------
-Release Notes |version|
+Release Notes |release|
 -----------------------
 
 CrafterCMS 2.5.0

@@ -22,13 +22,15 @@ Content Types are limited to two core types: Pages and Components. Both are made
 # View: The view template that will render the content, typically to HTML markup
 # Controller: The controller that handles the incoming request for the page or component
 
+^^^^^
 Pages
-=====
+^^^^^
 
 Pages are top-level container types. Pages hold content, and optionally components. Content within pages is made up of various types, for example content can be a date, an image, or a rich text field.
 
+^^^^^^^^^^
 Components
-==========
+^^^^^^^^^^
 
 Components only differ from pages in that they can't render by themselves, instead, they must render within a container page or another component.
 
@@ -61,8 +63,9 @@ You now specify:
 
 .. note:: Content Type Name will be removed in a future release in favor of full automation of name generation with collision resolution mechanics.
 
+^^^^^^^^^^^^^^^^^^^
 Form Builder Basics
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 The next screen shows the form builder:
 
@@ -93,8 +96,9 @@ Let's start by exploring the various controls on this screen:
 
 9. Save or Cancel the changes to the Content Type.
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Properties of Content Types
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Let's select the content type itself, by clicking on the content type name at the top of the Form Builder and explore its properties.
 
@@ -112,7 +116,7 @@ The fields available at this level are:
 * Object Type: Page or Component
 * Content Type:
 * Display Template: View template to use when rendering this content
-* Merge Strategy: The inheritance pattern to use with content of this type, please see Content Inheritance for more detail on this feature :doc:`/projects/core/content-inheritance.rst`
+* Merge Strategy: The inheritance pattern to use with content of this type, please see Content Inheritance for more detail on this feature :ref:`content-inheritance`_.
 
 
 
