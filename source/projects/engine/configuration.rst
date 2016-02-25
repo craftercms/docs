@@ -1,4 +1,5 @@
 ===============
 Configuration
 ===============
-.. todo:: Write Configuration Guide
+
+.. include:: configuration/site-configuration.rst
