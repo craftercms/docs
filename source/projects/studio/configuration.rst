@@ -270,3 +270,5 @@ To override any of default configuration values create new properties file in ``
 .. include:: configuration/role-mappings.rst
 
 .. include:: configuration/permission-mappings.rst
+
+.. include:: configuration/deployment-endpoints.rst

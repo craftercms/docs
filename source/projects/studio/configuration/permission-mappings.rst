@@ -65,3 +65,28 @@ Sample
 
 Description
 -----------
+
+List of available permissions
+
+=================== ================================================================================
+Permission          Description
+=================== ================================================================================
+Read                User is permitted to read content
+Write               User is permitted to edit content
+Delete              Users is permitted to delete content
+Request Delete      User is permitted to submit content for deletion (request delete from approver)
+Create Folder       User is permitted to create new folder
+Publish             User is permitted to approve submitted content for publishing or publish content
+Create Content      User is permitted to create new content
+Change Content Type User is permitted to change content type
+=================== ================================================================================
+
+    ``/permissions/site@id``
+        Site id
+    ``/permissions/site/role@name``
+        Role name
+    ``/permissions/site/role/rule@regex``
+        Regular expression to filter paths where permission is applied
+        Value regex="~DASHBOARD~" is special regular expression applied for content displayed in dashboard widgets only
+    ``/permissions/site/role/rule/allowed-permissions/permission``
+        Allowed permission for role and rule (possible values give in the table above)

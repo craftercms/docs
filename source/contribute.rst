@@ -1,1 +1,0 @@
-.. todo:: Write Contribute page

@@ -1,7 +1,7 @@
 =======
 Support
 =======
-.. todo:: Write Performance documentation
+.. todo:: Write support documentation
 
 .. toctree::
     :maxdepth: 1

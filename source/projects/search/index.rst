@@ -1,6 +1,6 @@
-===============
-Crafter Core
-===============
+==============
+Crafter Search
+==============
 .. todo:: Write What is it Document
 
 .. toctree::
