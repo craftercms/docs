@@ -9,7 +9,7 @@ Developers Guide
 
     groovy-development-guide
     website-security-guide
-    targeted-content-guide
+    content-targeting-guide
     services-guide
     native-mobile-guide
     best-practices
