@@ -1,16 +1,13 @@
 ===============
 Crafter Studio
 ===============
-.. todo:: Write What is it Document
+.. todo:: Write overview
 
 .. toctree::
 	:maxdepth: 1
 
-	configuration
-	content-modeling
-	installation
-	best-practices
-	api
+	source-code
+	in-process-api
 	rest-api
+	configuration
 	release-notes
-	extend/form-engine-control

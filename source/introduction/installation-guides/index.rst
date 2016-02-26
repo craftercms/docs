@@ -28,7 +28,7 @@ Supported Databases
 Installation Guides
 --------------------
 
-    - :doc:`Crafter CMS </installation/guide>`
+    - :doc:`Crafter CMS </introduction/installation-guides/guide>`
 
 See the :doc:`/release-notes/index` for information about specific releases
 of CrafterCMS.

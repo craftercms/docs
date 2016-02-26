@@ -27,5 +27,5 @@ configured (using the documentation below) to point to Alfresco and external RDB
 Configure Crafter CMS
 =====================
 
-*   :doc:`/installation/configure`.
-*   :doc:`/installation/engine/configure`.
+*   :doc:`/introduction/installation-guides/configure`.
+*   :doc:`/introduction/installation-guides/engine/configure`.

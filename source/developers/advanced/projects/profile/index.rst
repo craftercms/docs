@@ -1,15 +1,13 @@
 ===============
 Crafter Profile
 ===============
-.. todo:: Write What is it Document
+.. todo:: Write overview
 
 .. toctree::
 	:maxdepth: 1
 
-	best-practices
-	api
-	rest-api
+	source-code
 	in-process-api
+	rest-api
 	configuration
-	installation
 	release-notes

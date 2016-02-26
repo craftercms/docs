@@ -6,10 +6,6 @@ Crafter Deployer
 .. toctree::
 	:maxdepth: 1
 
-	best-practices
-	api
-	rest-api
-	in-process-api
+	source-code
 	configuration
-	installation
 	release-notes

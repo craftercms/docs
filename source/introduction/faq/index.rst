@@ -1,6 +1,6 @@
----
+===
 FAQ
----
+===
 
 .. todo:: Write FAQ master page
 
