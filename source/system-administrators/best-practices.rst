@@ -1,4 +1,5 @@
-===============
+==============
 Best Practices
-===============
-.. todo:: Write Best Practices - Admin
+==============
+
+.. todo:: Write Best Prectices

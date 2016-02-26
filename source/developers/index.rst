@@ -1,15 +1,12 @@
-===========
+================
 Developers Guide
-===========
-.. todo:: Write Developers guides
+================
+
+.. todo:: Write overview
 
 .. toctree::
-    :maxdepth: 1
-    :titlesonly:
+	:maxdepth: 2
+	:titlesonly:
 
-    groovy-development-guide
-    website-security-guide
-    content-targeting-guide
-    services-guide
-    native-mobile-guide
-    best-practices
+	beginner/index
+	advanced/index
