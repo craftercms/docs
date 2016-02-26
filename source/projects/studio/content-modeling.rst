@@ -116,8 +116,7 @@ The fields available at this level are:
 * Object Type: Page or Component
 * Content Type:
 * Display Template: View template to use when rendering this content
-* Merge Strategy: The inheritance pattern to use with content of this type, please see Content Inheritance for more detail on this feature :ref:`content-inheritance`_.
-
+* Merge Strategy: The inheritance pattern to use with content of this type, please see Content Inheritance for more detail on this feature :ref:`content-inheritance`.
 
 
 

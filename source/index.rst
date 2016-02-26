@@ -6,9 +6,7 @@ The CrafterCMS |version| Manual
 
 .. default-domain:: craftercms
 
-.. #.. admonition:: CrafterCMS 2.5
-
-Welcome to the CrafterCMS |version| Manual! CrafterCMS is an open-source,
+Welcome to the CrafterCMS |version| Manual. CrafterCMS is an open-source,
 Java-based, high-performance Web content management system designed for ease of development and scaling.
 This Manual introduces key concepts in CrafterCMS, presents the authoring and
 development enviornment, and provides operational and administrative considerations and
@@ -17,20 +15,14 @@ procedures as well as a comprehensive reference section.
 .. toctree::
 	:maxdepth: 1
 
-	/about
-	/guides/index
-	/getting-started/index
-	/installation/index
-	/projects/index
-	/faq/index
+	/introduction/index
+	/content-authors/index
+	/developers/index
+	/site-administrators/index
+	/system-administrators/index
 	/release-notes/index
-	/benchmarks
 	/contribute/index
-	/support
-
-See :doc:`/release-notes/index` for the latest release notes.
-
-.. include:: /getting-started/index.rst
+	/get-support/index
 
 Indices and tables
 ==================
