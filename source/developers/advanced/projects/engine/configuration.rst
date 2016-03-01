@@ -1,5 +1,5 @@
-===============
+=============
 Configuration
-===============
+=============
 
-.. include:: configuration/site-configuration.rst
+.. include:: /includes/engine-site-configuration.rst

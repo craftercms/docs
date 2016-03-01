@@ -10,4 +10,7 @@ Crafter Studio
 	in-process-api
 	rest-api
 	configuration
+	configuration/deployment-endpoints
+	configuration/permission-mappings
+	configuration/role-mappings
 	release-notes

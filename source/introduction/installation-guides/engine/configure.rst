@@ -8,8 +8,9 @@ Configure Multi-Tenancy
 
 One instance of Crafter Engine can handle multiple sites (multi-tenancy). This guide explains how to setup Crafter Engine for multi-tenancy.
 
+^^^^^^^^^^^^^^^^^^^^
 Enable Multi-Tenancy
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Assume we have two websites in Crafter Studio that are to be deployed on a single Crafter Engine instance: site1 and site2. Add the
 following two Spring context files and site mappings property file to enable multi-tenant capabilities. The site mappings file should
@@ -46,8 +47,9 @@ contain domain name to site name mappings:
     site2.com=site2
     www.site2.com=site2
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Configure the Root Folder Path
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The root folder path, as shown below, needs to be configured to include the substitution variable {siteName}. This variable is resolved
 by mapping the domain name of the request to a site name based on the site-mappings.properties, so a request to

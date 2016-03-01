@@ -1,26 +1,27 @@
-=============
+*********************
 Content Authors Guide
-=============
+*********************
 
-What is Crafter Studio?
--------------------
+Crafter Studio
+
 Crafter Studio is the content authoring, management and publishing application that allows marketers and content editors to create rich web experiences.  With a set of powerful and easy-to-use tools, content creators and managers can create timely content without any involvement from developers or IT administrators.  The power of creating rich content and delivering dynamic experiences is in the hands of business users with Crafter Studio.
 
 With Crafter Studio, marketers are able to create different personas of the target audience and deliver tailored content to individual users or groups, building an engaging experience across the web, mobile, and social channels. Using its native integration with Google Analytics, or by easily integrating a third-party web analytics engine, Crafter Studio analytics are used to optimize the site’s performance for SEO, conversions, and other relevant web metrics.
 
+
 Installing / Using Crafter Studio
--------------------
+
 Crafter Studio is a thin-client, browser-based application.  There is no software to install on your local computer. The following browsers are supported:
 Chrome
 Firefox
 IE
 
 Logging in
--------------------
+
 If you have not logged in or your session has expired, you will be challenged for a user name and password.  
 
 What Credentials should I use
--------------------
+
 Crafter Studio can be integrated with oner or more of a number of authentication systems
 Alfresco OOTB accounts
 NTLM
@@ -37,7 +38,7 @@ Personal Dashboard
 Once an author logs in to Crafter Studio they will be directed to their personal dashboard
 
 Contextual Navigation
--------------------
+
 Branded Logo Button: Takes the user back to the Dashboard.
 Site Content Menu: Opens a menu that allows navigation to all pages, components and documents in the system.
 Contextual Navigation Links: An area reserved for dynamic links that will changed based off of the current page view.
@@ -47,7 +48,7 @@ The Navigation Bar is a fixed element at the top of the page and cannot be scrol
 
 
 Site Drop down
--------------------
+
 The Site content menu allows for browsing all site content in the system. This includes Pages, Components and Documents.
 The "View" menu will allow selections of separate site properties.
 The menu width and height can be resized freely be the user.
@@ -75,7 +76,7 @@ clicking on the item takes you to the search
 clicking on add will open a form for this type
 
 Web Site Dashboard
--------------------
+
 Common Dashboard Widgets Behaviors
 Each dashboard has a header
 
@@ -92,38 +93,38 @@ Clicking on the item's name will take the user to preview if the object is previ
 Edit link, clicking edit will check out the item and open the form for the item
 
 My Recent Activity
--------------------
+
 My Recent Activity tracks a user's authoring activity.
 A user can choose to see only those items which are in-progress or submitted to workflow
 Users cannot sort the recent activity list, most recent activities show up at the top.
 
 Icon Guide
--------------------
+
 The Icon guide is simply a legend to help authors and content managers with the iconography on the system. While it can be very complex to sum up the state and nature of content in a glance, Crafter Studio attempts to achieve a high level visual summary via for each object object icons. You will see these icons throughout the application whenever an object is presented to the user. The icon always shows the Current state of the object.
 The Icon guide breaks down icons in to their elements.  You have three basic elements which can be combined to form a specific icon: The object type, The Status Indicator, The Worfkflow Indicator.
 
 Object Types
--------------------
+
 Object types are high level archetypes of content objects within the system.  These types and the iconography associated with them provide a basic classification of the type of object at a glance.
  
  
 Page	
--------------------
+
 A page is exactly what you would expect, it's a URI addressable object that represents a web page or resource. 
 # Navigation Page:  This is a resource that has a URI should be shown in a dynamically generated navigation on the site
 # Floating Page:  This is a resource that has a URI but should not be shown in dynamically generated navigation elements on the site
 
 Component	
--------------------
+
 A component is an object that is generally not URI addressable on the website.  Examples are objects like Banners, Touts, Videos, Sidebar 
 content etc. Components are usually re-usable assets that can be assigned and shared across many pages.
 	
 Document	
--------------------
+
 A Document, like pages are URI addressable objects.  In our experience many sites commonly have some usecase that involves a download of documents or other collateral.  While we could cover this need with the "Page" icon, these type of assets generally have specific workflows and we have found it beneficial to specifically identify them in the system.
 
 Status Indicators
--------------------
+
 There are a number of states about content that are helpful for authors
  
  
@@ -545,11 +546,3 @@ If a user clicks the link to read a rejection notice on the dashboard. They will
 
  
 Analytics Dashboard
-
- 
-
-
-.. toctree::
-	:maxdepth: 1
-
-	best-practices

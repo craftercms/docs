@@ -1,6 +1,7 @@
-===============
+================
 Crafter Deployer
-===============
+================
+
 .. todo:: Write What is it Document
 
 .. toctree::

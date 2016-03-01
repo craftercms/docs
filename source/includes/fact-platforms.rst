@@ -1,3 +1,5 @@
+.. include:: /includes/unicode-checkmark.rst
+
 .. list-table::
    :header-rows: 1
    :stub-columns: 1

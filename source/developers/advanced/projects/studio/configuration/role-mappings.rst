@@ -1,8 +1,10 @@
+=============
 Role Mappings
 =============
 
 Role mappings configuration file defines mapping between group that user belongs to and studio authoring role.
 
+------
 Sample
 ------
 
@@ -31,6 +33,7 @@ Sample
         </groups>
     </role-mappings>
 
+-----------
 Description
 -----------
 

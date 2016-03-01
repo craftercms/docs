@@ -8,7 +8,7 @@ CrafterCMS 2.5.0
 
 ^^^^^^^^^^
 Highlights
-~~~~~~~~~~
+^^^^^^^^^^
 
 * New Studio interface
 * Repository abstraction

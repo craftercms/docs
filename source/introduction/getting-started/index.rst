@@ -1,11 +1,8 @@
-===============
+###############
 Getting Started
-===============
+###############
 
 .. _getting-started:
-
-Getting Started
----------------
 
 .. todo:: Write Getting Started Section
 

@@ -1,6 +1,8 @@
+===================
 Permission Mappings
 ===================
 
+------
 Sample
 ------
 
@@ -63,6 +65,7 @@ Sample
         </site>
     </permissions>
 
+-----------
 Description
 -----------
 

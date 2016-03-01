@@ -1,6 +1,6 @@
-===================
+###################
 Install Crafter CMS
-===================
+###################
 
 .. default-domain:: craftercms
 
@@ -12,21 +12,24 @@ Install Crafter CMS
 CrafterCMS runs on most platforms and supports 64-bit architecture for
 production use and both 64-bit and 32-bit architectures for testing.
 
+===================
 Supported Platforms
--------------------
+===================
 
 .. include:: /includes/fact-platforms.rst
 
+===================
 Supported Databases
--------------------
+===================
 
 .. include:: /includes/fact-databases.rst
 
 .. _tutorials-installation:
 .. _tutorial-installation:
 
+===================
 Installation Guides
---------------------
+===================
 
     - :doc:`Crafter CMS </introduction/installation-guides/guide>`
 
@@ -45,8 +48,9 @@ of CrafterCMS.
 
 .. .. include:: /includes/toc/install-verify-files.rst
 
+===========================
 First Steps with CrafterCMS
----------------------------
+===========================
 
 Once you have installed CrafterCMS, consider the :ref:`Getting Started
 Guides <getting-started>` to learn about CrafterCMS.
@@ -58,3 +62,13 @@ Guides <getting-started>` to learn about CrafterCMS.
 .. todo:: write install from bundle
 .. todo:: write install from source
 .. todo:: write install from docker
+
+.. todo:: fix below
+
+.. toctree::
+	:maxdepth: 1
+
+	upgrade
+	engine/configure
+	guide
+	configure
