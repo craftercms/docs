@@ -1,6 +1,9 @@
+.. _crafter-studio:
+
 ===============
 Crafter Studio
 ===============
+
 .. todo:: Write overview
 
 .. toctree::

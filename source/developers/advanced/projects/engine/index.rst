@@ -1,6 +1,9 @@
+.. _crafter-engine:
+
 ===============
 Crafter Engine
 ===============
+
 .. todo:: Write overview
 
 .. toctree::

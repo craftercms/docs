@@ -22,12 +22,11 @@ procedures as well as a comprehensive reference section.
 	/system-administrators/index
 	/release-notes/index
 	/contribute/index
+	/source-code
 	/get-support/index
 
 Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 

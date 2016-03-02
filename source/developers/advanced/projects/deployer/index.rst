@@ -1,3 +1,5 @@
+.. _crafter-deployer:
+
 ================
 Crafter Deployer
 ================

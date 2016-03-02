@@ -1,6 +1,9 @@
+.. _crafter-profile:
+
 ===============
 Crafter Profile
 ===============
+
 .. todo:: Write overview
 
 .. toctree::

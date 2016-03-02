@@ -1,6 +1,9 @@
+.. _crafter-social:
+
 ===============
 Crafter Social
 ===============
+
 .. todo:: Write What is it Document
 
 .. toctree::

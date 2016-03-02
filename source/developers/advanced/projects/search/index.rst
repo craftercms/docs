@@ -1,6 +1,9 @@
+.. _crafter-search:
+
 ==============
 Crafter Search
 ==============
+
 .. todo:: Write What is it Document
 
 .. toctree::
