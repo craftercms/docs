@@ -25,6 +25,16 @@ Configure the Database
 
 *   MySQL
 
+    Add following options to ``my.cnf`` to enable indexes on long columns
+
+    .. code-block:: properties
+        :caption: MYSQL_HOME/my.cnf
+
+        innodb_large_prefix = true
+        innodb_file_format = BARRACUDA
+        innodb_file_format_max = BARRACUDA
+        innodb_file_per_table = true
+
     .. code-block:: properties
         :caption: TOMCAT/shared/classes/crafter/cstudio/extension/server-config.properties
 

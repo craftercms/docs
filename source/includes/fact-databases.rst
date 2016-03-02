@@ -12,6 +12,9 @@
      - |checkmark|
      -
    * - MySql 5.1+
+     -
+     - |checkmark|
+   * - MySql 5.5.14+
      - |checkmark|
      - |checkmark|
    * - PostgresSQL 9.2+
