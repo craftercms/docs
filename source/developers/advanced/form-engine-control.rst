@@ -28,7 +28,7 @@ Data Sources consist of (at a minimum)
 Control Interface
 ^^^^^^^^^^^^^^^^^
 
-.. code-block:: xml
+.. code-block:: javascript
 
 	/** 
 	 * Constructor: Where .X is substituted with your class name
@@ -98,10 +98,15 @@ Our example is a grouped checkbox that allows the author to select one or more i
 ^^^^^^^^^^^^
 Control Code
 ^^^^^^^^^^^^
+.. image:: /_static/images/form-engine-control-example.png
+	:height: 500px
+	:width: 432 px
+	:scale: 50 %
+	:alt: Form Engine Control Example
 
-**Location /CSTUDIO-WAR/components/cstudio-forms/controls/checkbox-group.js**
+**Location /STUDIO-WAR/default-site/static-assets/components/cstudio-forms/controls/checkbox-group.js**
 
-.. code-block:: xml
+.. code-block:: javascript
 
 	CStudioForms.Controls.CheckBoxGroup = CStudioForms.Controls.CheckBoxGroup ||
 	function(id, form, owner, properties, constraints, readonly)  {
@@ -129,6 +134,9 @@ Control Code
 
 	YAHOO.extend(CStudioForms.Controls.CheckBoxGroup, CStudioForms.CStudioFormField, {
 
+	    /**
+	    * Return a user friendly name for the control (will show up in content type builder UX)
+	    */
 	    getLabel: function() {
 	        return CMgs.format(langBundle, "groupedCheckboxes");
 	    },
@@ -143,6 +151,9 @@ Control Code
 	        return count;
 	    },
 
+	    /**
+	    * validates the supported constraints of the control
+	    */
 	    validate : function () {
 	        if(this.minSize > 0) {
 	            if(this.value.length < this.minSize) {
@@ -160,10 +171,16 @@ Control Code
 	        this.owner.notifyValidation();
 	    },
 
+	    /**
+	    * sets "edited" property as true. This property will be verified when the engine form is canceled
+	    */
 	    _onChangeVal: function(evt, obj) {
 	        obj.edited = true;
 	    },
 
+	    /**
+	    * method is called when datasource is loaded
+	    */
 	    onDatasourceLoaded: function ( data ) {
 	        if (this.datasourceName === data.name && !this.datasource) {
 	            var datasource = this.form.datasourceMap[this.datasourceName];
@@ -176,6 +193,11 @@ Control Code
 	        }
 	    },
 
+	    /**
+	     * method is called by the engine to invoke the control to render.  The control is responsible for creating and managing its own HTML.
+	     * CONFIG is a structure containing the form definition and other control configuration
+	     * CONTAINER EL is the containing element the control is to render in to.
+	     */
 	    render: function(config, containerEl, isValueSet) {
 	        containerEl.id = this.id;
 	        this.containerEl = containerEl;
@@ -355,6 +377,9 @@ Control Code
 	        }
 	    },
 
+	    /**
+	     * selects/unselects all checkboxes inside the control
+	     */
 	    toggleAll: function (evt, el) {
 	        var ancestor = YAHOO.util.Dom.getAncestorByClassName(el, "checkbox-group"),
 	            checkboxes = YAHOO.util.Selector.query('.checkbox input[type="checkbox"]', ancestor),
@@ -387,6 +412,9 @@ Control Code
 	        this._onChangeVal(evt, this);
 	    },
 
+	    /**
+	     * method is called by the engine when the value of the control is changed
+	     */
 	    onChange: function(evt, el) {
 	        var checked = (el.checked);
 
@@ -402,6 +430,9 @@ Control Code
 	        this._onChangeVal(evt, this);
 	    },
 
+	    /**
+	     * validates if the checkbox is selected
+	     */
 	    isSelected: function(key) {
 	        var selected = false;
 	        var values = this.getValue();
@@ -429,6 +460,9 @@ Control Code
 	        return index;
 	    },
 
+	    /**
+	     * adds the selected item into the value of the control
+	     */
 	    selectItem: function(key, value) {
 	        var valObj = {};
 
@@ -440,6 +474,9 @@ Control Code
 	        }
 	    },
 
+	    /**
+	     * removes the unselect item from the value of the control
+	     */
 	    unselectItem: function(key) {
 	        var index = this.getIndex(key);
 
@@ -448,6 +485,9 @@ Control Code
 	        }
 	    },
 
+	    /**
+	     * returns the current value of the control
+	     */
 	    getValue: function() {
 	        return this.value;
 	    },
@@ -469,6 +509,9 @@ Control Code
 	        }
 	    },
 
+	    /**
+	     * sets the value of the control
+	     */
 	    setValue: function(value) {
 	        if(value === "") {
 	            value = [];
@@ -480,6 +523,9 @@ Control Code
 	        this.hiddenEl.value = this.valueToString();
 	    },
 
+	    /**
+	     * sets the value of the control to string
+	     */
 	    valueToString: function() {
 	        var strValue = "[";
 	        var values = this.getValue();
@@ -499,10 +545,17 @@ Control Code
 	        return strValue;
 	    },
 
+	    /**
+	     * return a string that represents the kind of control (this is the same as the file name)
+	     */
 	    getName: function() {
 	        return "checkbox-group";
 	    },
 
+	    /**
+	     * return a list of properties supported by the control.
+	     * properties is an array of objects with the following structure { label: "", name: "", type: "" }
+	     */  
 	    getSupportedProperties: function() {
 	        return [
 	            { label: CMgs.format(langBundle, "datasource"), name: "datasource", type: "datasource:item" },
@@ -511,6 +564,10 @@ Control Code
 	        ];
 	    },
 
+	    /**
+	     * return a list of constraints supported by the control.
+	     * constraints is an array of objects with the following structure { label: "", name: "", type: "" }
+	     */ 
 	    getSupportedConstraints: function() {
 	        return [
 	            { label:CMgs.format(langBundle, "minimumSelection"), name:"minSize", type: "int"}
@@ -541,11 +598,11 @@ Add the control's name to the list of controls in the content type editor config
 				</controls>
 				<datasources>
 					...
-	                                <datasource>video-desktop-upload</datasource>
+					<datasource>video-desktop-upload</datasource>
 					<datasource>configured-list</datasource>
 				</datasources>
-	                        ...		
-	                       </tool>
+				...		
+			</tool>
 			<!--tool>...</tool -->
 		</tools>
 	</config>
