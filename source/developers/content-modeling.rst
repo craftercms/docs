@@ -67,34 +67,49 @@ You now specify:
 Form Builder Basics
 ^^^^^^^^^^^^^^^^^^^
 
-The next screen shows the form builder:
-
-.. image:: /_static/images/create-content-type-2.png
-	:height: 800px
-	:width: 800 px
-	:scale: 75 %
+.. figure:: /_static/images/create-content-type-2.png
+	:height: 900px
+	:width: 900 px
+	:scale: 100 %
 	:alt: Content Type Editor
-	:align: center
+	:align: left
 
-Let's start by exploring the various controls on this screen:
+	Crafter Studio's Form Builder
 
-1. Content Type Actions: Open Existing Content Type or Create a New Type
-
-2. Form Builder: The begining of the form builder and it's headed by the name of currently open Content Type. Click here to explore the global properties of the type in the Properties Explorer, #3.
-
-3. Properties Explorer: Helps configure the properties of the currently selected item. Clicking on an item on the left side of the screen, like #2 or #7 will populate this control and allow you to modify the selected item.
-
-4. Form Controls: This is a list of available form controls for you to build your form with. Note that the list has a scrollbar for many types of useful controls. Controls can be dragged from the controls list onto the form builder.
-
-5. Data Sources: Shows the list of available data sources that can be attached to this content type such that the content authors can pull content and incorporate it into pages/components. Data Sources can be dragged over to the form builder and configured as needed. The content author will then use the control to pull data from that data source into the content object.
-
-6. Form Section: Form sections help cluster a number of controls together to make it easier for content authors. Click on the form section to edit its properties in the Properties Explorer.
-
-7. Form Controls: Actual controls that have been placed on this form. Clicking on a control will allow you to configure this control in the Properties Explorer.
-
-8. Data Source: The data sources configured for this content type. To configure a data source, click on it and then edit the properties in the Properties Explorer.
-
-9. Save or Cancel the changes to the Content Type.
+	+-------+------------------------------------------------------------------------------------------------+
+	| Label | Description                                                                                    |
+	+=======+================================================================================================+
+	| 1     | | Content Type Actions: Open Existing Content Type or Create a New Type.                       |
+	+-------+------------------------------------------------------------------------------------------------+
+	| 2     | | Form Builder: The begining of the form builder and it's headed by the name of currently open |
+	|       | | Content Type. Click here to explore the global properties of the type in the Properties      |
+	|       | | Explorer, #3.                                                                                |
+	+-------+------------------------------------------------------------------------------------------------+
+	| 3     | | Properties Explorer: Helps configure the properties of the currently selected item.          |
+	|       | | Clicking on an item on the left side of the screen, like #2 or #7 will populate this control |
+	|       | | and allow you to modify the selected item.                                                   |
+	+-------+------------------------------------------------------------------------------------------------+
+	| 4     | | Form Controls: This is a list of available form controls for you to build your form with.    |
+	|       | | Note that the list has a scrollbar for many types of useful controls. Controls can be        |
+	|       | | dragged from the controls list onto the form builder.                                        |
+	+-------+------------------------------------------------------------------------------------------------+
+	| 5     | | Data Sources: Shows the list of available data sources that can be attached to this content  |
+	|       | | type such that the content authors can pull content and incorporate it into pages or         |
+	|       | | components. Data Sources can be dragged over to the form builder and configured as needed.   |
+	|       | | The content author will then use the control to pull data from that data source into the     |
+	|       | | content object.                                                                              |
+	+-------+------------------------------------------------------------------------------------------------+
+	| 6     | | Form Section: Form sections help cluster a number of controls together to make it easier for |
+	|       | | content authors. Click on the form section to edit its properties in the Properties Explorer.|
+	+-------+------------------------------------------------------------------------------------------------+
+	| 7     | | Form Canvas: Actual controls that have been placed on this form. Clicking on a control will  |
+	|       | | allow you to configure this control in the Properties Explorer.                              |
+	+-------+------------------------------------------------------------------------------------------------+
+	| 8     | | Data Source: The data sources configured for this content type. To configure a data source,  |
+	|       | | click on it and then edit the properties in the Properties Explorer.                         |
+	+-------+------------------------------------------------------------------------------------------------+
+	| 9     | | Save or Cancel the changes to the Content Type.                                              |
+	+-------+------------------------------------------------------------------------------------------------+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Properties of Content Types
@@ -102,31 +117,59 @@ Properties of Content Types
 
 Let's select the content type itself, by clicking on the content type name at the top of the Form Builder and explore its properties.
 
-.. image:: /_static/images/create-content-type-3.png
-	:height: 200px
+.. figure:: /_static/images/create-content-type-3.png
+	:height: 400px
 	:width: 400 px
-	:scale: 50 %
-	:alt: Admin Console Link
-	:align: right
+	:scale: 100 %
+	:alt: Properties Explorer
+	:align: left
 
-The fields available at this level are:
+	The fields available at this level are:
 
-* Title: Content Type's friendly name
-* Description: Description of the Content Type
-* Object Type: Page or Component
-* Content Type:
-* Display Template: View template to use when rendering this content
-* Merge Strategy: The inheritance pattern to use with content of this type, please see Content Inheritance for more detail on this feature :ref:`content-inheritance`.
+	+-------------------+------------------------------------------------------------------------------------+
+	| Field             | Description                                                                        |
+	+===================+====================================================================================+
+	| Title             | | Content Type's friendly name                                                     |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Description       | | Description of the Content Type                                                  |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Object Type       | | Page or Component (read only)                                                    |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Content Type      | |  System name and path of this content type (read only)                           |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Display Template  | | View template to use when rendering this content                                 |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Merge Strategy    | | The inheritance pattern to use with content of this type, please see Content     |
+	|                   | | Inheritance for more detail on this feature :ref:`content-inheritance`.          |
+	+-------------------+------------------------------------------------------------------------------------+
+
+The 2 key properties are: the display template (:ref:`content-view-templates`) which is the HTML template that renders the final Web page; the content inheritance (:ref:`content-inheritance`) which determines how this content type will inherit from parent XML files in the system.
+
+^^^^^^^^^^^^^
+Form Controls
+^^^^^^^^^^^^^
+
+Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. Crafter CMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`form-engine-control`.
+
+
+
+
+^^^^^^^^^^^^
+Data Sources
+^^^^^^^^^^^^
+
+
+^^^^^^^^^^^
+Form Canvas
+^^^^^^^^^^^
+
+The canvas is where the form actually gets built. The building process is perfomed by simply dragging the controls from the Form Controls over to the canvas, rearranging the controls in the order you'd like to present to the content authors, and configure the controls individually.
 
 
 
 
 
-
-
-
-
-
+.. _content-view-templates:
 
 ---------------------------
 Content Type View Templates
