@@ -2,10 +2,6 @@
 Developers
 **********
 
-#########################
-Advanced Developer Topics
-#########################
-
 .. todo:: Write overview
 
 #########################

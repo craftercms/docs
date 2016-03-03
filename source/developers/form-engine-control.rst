@@ -2,20 +2,25 @@
 Form Engine Control
 ===================
 
--------------------------
-Create a New Form Control
--------------------------
-
-^^^^^^^^^^^^^^^^^
+-----------------
 What is a Control
-^^^^^^^^^^^^^^^^^
+-----------------
 
 A form control is a UX element to help authors capture and edit content and metadata properties.
 Crafter Studio form controls should be written in a way that makes them independent of the data they allow the user to select so that they can be (re)used across a wide range of data sets.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. image:: /_static/images/create-content-type-2.png
+        :height: 800px
+        :width: 800 px
+        :scale: 75 %
+        :alt: Content Type Editor
+        :align: center
+
+Form Engine controls are #4 in the image above.
+
+-------------------------------
 The anatomy of a Control Plugin
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 
 Data Sources consist of (at a minimum)
 
@@ -24,9 +29,9 @@ Data Sources consist of (at a minimum)
 	* The module name must also be the same as the control name with "cstudio-forms-controls-" prepended to the front of it Ex: "cstudio-forms-controls-configured-list."
 * Configuration in a Crafter Studio project to make that data source available for use
 
-^^^^^^^^^^^^^^^^^
+-----------------
 Control Interface
-^^^^^^^^^^^^^^^^^
+-----------------
 
 .. code-block:: javascript
 
@@ -579,9 +584,10 @@ Control Code
 	CStudioAuthoring.Module.moduleLoaded("cstudio-forms-controls-checkbox-group", CStudioForms.Controls.CheckBoxGroup);
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------
 Configuring the Control to show up in Crafter Studio
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------
+
 Add the control's name to the list of controls in the content type editor configuration
 
 **Location (In Repository) /company-home/cstudio/config/sites/SITENAME/administration/tools.xml**
