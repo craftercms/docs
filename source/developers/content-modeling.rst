@@ -151,7 +151,47 @@ Form Controls
 
 Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. Crafter CMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`form-engine-control`.
 
+.. figure:: /_static/images/form-engine-controls.png
+	:height: 400px
+	:width: 400 px
+	:scale: 100 %
+	:alt: Form Engine Controls
+	:align: left
 
+	Form Engine Controls (please use the scrollbar to see more controls)
+
+	+-------------------+------------------------------------------------------------------------------------+
+	| Control           | Description                                                                        |
+	+===================+====================================================================================+
+	| Form Section      | | Create a new section in the form, this is to help the content authors by         |
+	|                   | | by segmenting a form into sections of similar concern.                           |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Repeating Group   | | Repeating groups are used when the form has one or several controls that repeat  |
+	|                   | | to capture the same data as records. For example: a list of images in a carousel,|
+	|                   | | or a list of widgets on a page.                                                  |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Input             | | A simple textual input line.                                                     |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Text Area         | | A simple block of plain text.                                                    |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Rich Text Editor  | | A block of HTML.                                                                 |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Dropdown          | |                                                                                  |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Date/Time         | |                                                                                  |
+	+-------------------+------------------------------------------------------------------------------------+
+	|                   | |                                                                                  |
+	+-------------------+------------------------------------------------------------------------------------+
+	|                   | |                                                                                  |
+	+-------------------+------------------------------------------------------------------------------------+
+	|                   | |                                                                                  |
+	+-------------------+------------------------------------------------------------------------------------+
+	|                   | |                                                                                  |
+	+-------------------+------------------------------------------------------------------------------------+
+	|                   | |                                                                                  |
+	+-------------------+------------------------------------------------------------------------------------+
+	|                   | |                                                                                  |
+	+-------------------+------------------------------------------------------------------------------------+
 
 
 ^^^^^^^^^^^^
