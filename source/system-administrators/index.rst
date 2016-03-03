@@ -1,7 +1,8 @@
-==========
-Admin Guides
-==========
-.. todo:: Write Admin guides
+*********************
+System Administrators
+*********************
+
+.. todo:: Write system admin part
 
 .. toctree::
     :maxdepth: 2

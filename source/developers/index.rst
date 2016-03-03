@@ -25,6 +25,7 @@ Beginner Developer Topics
 	build-a-form
 	image-sources
 	rte-setup
+
 #########################
 Advanced Developer Topics
 #########################
@@ -42,5 +43,16 @@ Advanced Developer Topics
 	native-mobile-guide
 	services-guide
 	website-security-guide
-	projects/index
 	extending-studio
+
+##############################
+Project Specific Documentation
+##############################
+
+.. todo:: Write overview
+
+.. toctree::
+	:maxdepth: 2
+	:titlesonly:
+
+	projects/index
