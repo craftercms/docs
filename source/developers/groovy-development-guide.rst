@@ -1,8 +1,10 @@
 .. highlight:: groovy
 
-========================
-Groovy Development Guide
-========================
+.. _custom-services-and-controllers:
+
+===============================
+Custom Services and Controllers
+===============================
 
 A lot of functionality and site customization can be done through Groovy scripts in Crafter, no need to code in Java! By using Groovy
 scripts, you can create RESTful services, MVC controllers, code that runs before a page or component is rendered, servlet filters and

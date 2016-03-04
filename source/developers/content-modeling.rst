@@ -34,6 +34,8 @@ Components
 
 Components only differ from pages in that they can't render by themselves, instead, they must render within a container page or another component.
 
+.. _content-model:
+
 -----------------------------
 Content Type Model Definition
 -----------------------------
@@ -137,7 +139,7 @@ Let's select the content type itself, by clicking on the content type name at th
 	+-------------------+------------------------------------------------------------------------------------+
 	| Object Type       | | Page or Component (read only)                                                    |
 	+-------------------+------------------------------------------------------------------------------------+
-	| Content Type      | |  System name and path of this content type (read only)                           |
+	| Content Type      | | System name and path of this content type (read only)                           |
 	+-------------------+------------------------------------------------------------------------------------+
 	| Display Template  | | View template to use when rendering this content                                 |
 	+-------------------+------------------------------------------------------------------------------------+
@@ -301,13 +303,57 @@ Like the Form Section Control, Repeating Group Control is also a container that 
 
 The canvas allows the form-based content capture only, and is used by content authors when they're in that mode. In-Context Editing will leverage the form components, but not the canvas when authors are in that mode. Learn more about In-Context Editing configuration in :ref:`in-context-editing`.
 
-
 .. _content-view-templates:
 
 ---------------------------
 Content Type View Templates
 ---------------------------
 
+View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${model.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the parimary Crafter CMS model or additional model (via APIs, please read :ref:`custom-services-and-controllers` for that topic).
+
+An example view template:: html
+
+	<#import "/templates/system/common/cstudio-support.ftl" as studio />
+
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+	    		<!-- Basic Page Need
+	    		================================================== -->
+			<meta charset="utf-8">
+			<title>${model.browser_title}</title>
+			<meta name="description" content="${model.meta_description}">
+			<meta name="keywords" content="${model.meta_keywords}">
+		</head>
+		<body>
+			<div class="body" <@studio.iceAttr iceGroup="body"/>>
+				${model.body_html}
+			</div>
+
+			<#if (model.analytics_script)??>${model.analytics_script}</#if>
+		</body>
+	</html>
+
+The simple example renders an simple HTML page with a very basic model. Let's review the model first:
+
+	+----------------------+------------+-------------------------------------------------+
+	| Model Element        | Control    | Purpose                                         |
+	+======================+============+=================================================+
+	| browser_title        | Input      | | Provide a browser title for the page          |
+	+----------------------+------------+-------------------------------------------------+
+	| meta_keywords        | Input      | | SEO keywords associated with the page         |
+	+----------------------+------------+-------------------------------------------------+
+	| body_html            | Rich Text  | | The page's main HTML body (in this case, it's |
+	|                      | Editor     | | just a static HTML block).                    |
+	+----------------------+------------+-------------------------------------------------+
+	| analytics_script     | Text Area  | | Analytics's Engine JavaScript                 |
+	+----------------------+------------+-------------------------------------------------+
+
+.. todo:: reference the freemaker API
+
+
 ----------------------------------
 Content Type Controller Definition
 ----------------------------------
+
+.. todo:: Write up this section
