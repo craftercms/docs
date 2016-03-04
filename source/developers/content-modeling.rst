@@ -165,38 +165,125 @@ Form Controls are data input controls that, once placed on a form, will capture 
 	+===================+====================================================================================+
 	| Form Section      | | Create a new section in the form, this is to help the content authors by         |
 	|                   | | by segmenting a form into sections of similar concern.                           |
+	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-section` page.                                     |
 	+-------------------+------------------------------------------------------------------------------------+
 	| Repeating Group   | | Repeating groups are used when the form has one or several controls that repeat  |
 	|                   | | to capture the same data as records. For example: a list of images in a carousel,|
 	|                   | | or a list of widgets on a page.                                                  |
+	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-repeating-group` page.                             |
 	+-------------------+------------------------------------------------------------------------------------+
 	| Input             | | A simple textual input line.                                                     |
+	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-input` page.                                       |
 	+-------------------+------------------------------------------------------------------------------------+
 	| Text Area         | | A simple block of plain text.                                                    |
+	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-text-area` page.                                   |
 	+-------------------+------------------------------------------------------------------------------------+
 	| Rich Text Editor  | | A block of HTML.                                                                 |
+	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-rte` page.                                         |
 	+-------------------+------------------------------------------------------------------------------------+
 	| Dropdown          | |                                                                                  |
-	+-------------------+------------------------------------------------------------------------------------+
-	| Date/Time         | |                                                                                  |
-	+-------------------+------------------------------------------------------------------------------------+
 	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-dropdown` page.                                    |
 	+-------------------+------------------------------------------------------------------------------------+
+	| Date / Time       | |                                                                                  |
 	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-date-time` page.                                   |
 	+-------------------+------------------------------------------------------------------------------------+
+	| Checkbox          | |                                                                                  |
 	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-checkbox` page.                                    |
 	+-------------------+------------------------------------------------------------------------------------+
+	| Grouped Checkboxes| |                                                                                  |
 	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-grouped-checkboxes` page.                          |
 	+-------------------+------------------------------------------------------------------------------------+
+	| Item Selector     | |                                                                                  |
 	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-item-selector` page.                               |
 	+-------------------+------------------------------------------------------------------------------------+
+	| Image             | |                                                                                  |
 	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-image` page.                                       |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Video             | |                                                                                  |
+	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-video` page.                                       |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Label             | |                                                                                  |
+	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-label` page.                                       |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Page Order        | |                                                                                  |
+	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-page-order` page.                                  |
+	+-------------------+------------------------------------------------------------------------------------+
+	| File Name         | |                                                                                  |
+	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-filename` page.                                    |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Auto Filename     | |                                                                                  |
+	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-auto-filename` page.                               |
 	+-------------------+------------------------------------------------------------------------------------+
 
 
 ^^^^^^^^^^^^
 Data Sources
 ^^^^^^^^^^^^
+
+.. figure:: /_static/images/form-engine-data-sources.png
+	:height: 400px
+	:width: 400 px
+	:scale: 100 %
+	:alt: Form Engine Data Sources
+	:align: left
+
+	Form Engine Data Sources (please use the scrollbar to see more controls)
+
+	+-------------------+------------------------------------------------------------------------------------+
+	| Control           | Description                                                                        |
+	+===================+====================================================================================+
+	| Child Content     | |                                                                                  |
+	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-source-child-content` page.                        |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Image Uploaded    | |                                                                                  |
+	| from Desktop      | |                                                                                  |
+	|                   | | Details are in the :ref:`form-source-image-desktop` page.                        |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Image from        | |                                                                                  |
+	| Repository        | |                                                                                  |
+	|                   | | Details are in the :ref:`form-source-image-repo` page.                           |
+	+-------------------+------------------------------------------------------------------------------------+
+	| DAM Image Flickr  | |                                                                                  |
+	|                   | |                                                                                  |
+	|                   | | Details are in the :ref:`form-source-dam-flickr` page.                           |
+	+-------------------+------------------------------------------------------------------------------------+
+	| File Uploaded     | |                                                                                  |
+	| from Desktop      | |                                                                                  |
+	|                   | | Details are in the :ref:`form-source-file-desktop` page.                         |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Flash Uploaded    | |                                                                                  |
+	| from Desktop      | |                                                                                  |
+	|                   | | Details are in the :ref:`form-source-flash-desktop` page.                        |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Video Uploaded    | |                                                                                  |
+	| from Desktop      | |                                                                                  |
+	|                   | | Details are in the :ref:`form-source-video-desktop` page.                        |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Static Key Value  | |                                                                                  |
+	| Pairs             | |                                                                                  |
+	|                   | | Details are in the :ref:`form-source-kvp` page.                                  |
+	+-------------------+------------------------------------------------------------------------------------+
+	| Configured List   | |                                                                                  |
+	| of Pairs          | |                                                                                  |
+	|                   | | Details are in the :ref:`form-source-list-pairs` page.                           |
+	+-------------------+------------------------------------------------------------------------------------+
 
 
 ^^^^^^^^^^^
