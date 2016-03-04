@@ -15,7 +15,7 @@ Beginner Developer Topics
 	:titlesonly:
 
 	content-modeling
-	adding-crafter-studio-support-to-templates
+	in-context-editing
 	html-mobile-support
 	responsive-guide
 	build-a-form

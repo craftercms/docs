@@ -1,6 +1,8 @@
-==========================================
-Adding Crafter Studio Support to Templates
-==========================================
+.. _in-context-editing:
+
+==================
+In-Context Editing
+==================
 
 --------------
 Studio Support
@@ -28,9 +30,9 @@ At the bottom of your template insert the following: (Note the example shows a t
 		</body>
 	</html>
 
-------------------
-In-context Editing
-------------------
+--------------------------
+In-Context Editing Pencils
+--------------------------
 
 In context editing renders pencils on the screen that invoke editing controls when clicked.  This allows authors to quickly/visually identify editable content and make changes.
 
