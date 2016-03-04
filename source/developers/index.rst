@@ -19,7 +19,6 @@ Beginner Developer Topics
 	html-mobile-support
 	responsive-guide
 	build-a-form
-	image-sources
 	rte-setup
 
 #########################
