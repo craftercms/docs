@@ -311,7 +311,9 @@ Content Type View Templates
 
 View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${model.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the parimary Crafter CMS model or additional model (via APIs, please read :ref:`custom-services-and-controllers` for that topic).
 
-An example view template:: html
+An example view template
+
+.. code-block:: html
 
 	<#import "/templates/system/common/cstudio-support.ftl" as studio />
 
