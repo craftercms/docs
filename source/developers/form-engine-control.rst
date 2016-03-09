@@ -96,9 +96,9 @@ Control Interface
 	    getSupportedConstraints: function() { }
 	});
 
-----------------------
-Coding the an example
-----------------------
+------------------
+Coding an example
+------------------
 
 Our example is a grouped checkbox that allows the author to select one or more items from a set of checkboxes. The control relies on a data source for the set of possible values which allows it to be used for a wide range of data capture.
 
