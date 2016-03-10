@@ -6,23 +6,17 @@
    :class: compatibility
 
    * - Platform
-     - 2.5
-     - 2.4
+     - Support
    * - Derby
      - |checkmark|
-     -
    * - MySql 5.1+
      -
      - |checkmark|
    * - MySql 5.5.14+
      - |checkmark|
-     - |checkmark|
    * - PostgresSQL 9.2+
-     - |checkmark|
      - |checkmark|
    * - Oracle 11+
      - |checkmark|
-     - |checkmark|
    * - SQLServer 2008+
-     - |checkmark|
      - |checkmark|
