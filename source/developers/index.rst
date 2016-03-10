@@ -33,6 +33,7 @@ Advanced Developer Topics
 
 	content-targeting-guide
 	form-engine-control
+	data-source
 	content-inheritance
 	groovy-development-guide
 	native-mobile-guide
