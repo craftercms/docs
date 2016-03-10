@@ -1,12 +1,14 @@
 .. _data-source:
 
-============
-Data Source
-============
+===============================
+Build a Form Engine Data Source
+===============================
 
-----------------------
+.. todo:: review and update
+
+---------------------
 What is a Data Source
-----------------------
+---------------------
 
 Crafter Studio form controls should be written in a way that makes them independent of the data they allow the user to select so that they can be (re)used across a wide range of data sets. To accomplish this objective we use a data source pattern where by the form control widget code is concerned with rendering and facilitating the data capture/selection process but delegates the retrieval of the content to a separate swappable component interface known as a data source.
 
@@ -19,9 +21,9 @@ Crafter Studio form controls should be written in a way that makes them independ
 
 Form Engine controls are #5 in the image above.
 
-------------------------------------
+-----------------------------------
 The anatomy of a Data Source Plugin
-------------------------------------
+-----------------------------------
 
 Data Sources consist of (at a minimum)
 
