@@ -381,7 +381,7 @@ script in Scripts > components > upcoming-events.groovy so that it is executed f
 	import utils.DateUtils
 
 	def now = DateUtils.formatDateAsIso(new Date())
-	def queryStr = "crafterSite:\"${siteContext.siteName}\" AND content-type:\"/component/event\" AND disabled:\"false\" AND date_dt:[${now} TO \*]"
+	def queryStr = "crafterSite:\"${siteContext.siteName}\" AND content-type:\"/component/event\" AND disabled:\"false\" AND date_dt:[${now} TO *]"
 	def start = 0
 	def rows = 1000
 	def sort = "date_dt asc"
