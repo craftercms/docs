@@ -24,11 +24,11 @@ Form Engine controls are #4 in the image above.
 The anatomy of a Control Plugin
 -------------------------------
 
-Data Sources consist of (at a minimum)
+Form Engine Control consist of (at a minimum)
 
 * A single javascript file which implements the control interface.
 	* The file name of the control is important as the system uses a convention whereby the JS file name and the control name in the configuration must be the same.
-	* The module name must also be the same as the control name with "cstudio-forms-controls-" prepended to the front of it Ex: "cstudio-forms-controls-configured-list."
+	* The module name must also be the same as the control name with "cstudio-forms-controls-" prepended to the front of it Ex: "cstudio-forms-controls-checkbox-group."
 * Configuration in a Crafter Studio project to make that data source available for use
 
 -----------------
