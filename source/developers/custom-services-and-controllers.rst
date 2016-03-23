@@ -8,7 +8,14 @@ Custom Services and Controllers
 
 A lot of functionality and site customization can be done through Groovy scripts in Crafter, no need to code in Java! By using Groovy
 scripts, you can create RESTful services, MVC controllers, code that runs before a page or component is rendered, servlet filters and
-scheduled jobs.
+scheduled jobs. Crafter also provides a bunch of useful global variables that can be used in all the different types of scripts available:
+
+.. include:: ../includes/global-groovy-variables.rst
+
+There are also several other variables available to scripts that are executed during the scope of a request (REST scripts, controller
+scripts, page/component scripts and filter scripts):
+
+.. include:: ../includes/request-groovy-variables.rst
 
 -------------------------
 Create a Script in Studio

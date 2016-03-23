@@ -4,7 +4,7 @@
 Build a Form Engine Data Source
 ===============================
 
-.. todo:: review and update
+.. todo:: update
 
 ---------------------
 What is a Data Source
@@ -41,7 +41,7 @@ Data Source Interface
 .. code-block:: javascript
 
 	/** 
-	 * Constructor: Wehre .X is substituted with your class name
+	 * Constructor: Where .X is substituted with your class name
 	 */
 	CStudioForms.Datasources.ConfiguredList = CStudioForms.Datasources.X ||  
 	function(id, form, properties, constraints)  {
@@ -89,6 +89,12 @@ Our example is a data source that gets values from an XML file stored in the Alf
 ^^^^^^^^^^^^^^^^^
 Data Source Code
 ^^^^^^^^^^^^^^^^^
+
+.. image:: /_static/images/data-source-example.png
+	:height: 500px
+	:width: 432 px
+	:scale: 50 %
+	:alt: Form Engine Control Example
 
 **Location /STUDIO-WAR/components/cstudio-forms/data-sources/configured-list.js**
 
