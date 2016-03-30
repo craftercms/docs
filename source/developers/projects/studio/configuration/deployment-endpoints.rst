@@ -27,3 +27,22 @@ Sample
 -----------
 Description
 -----------
+
+    ``/config/endpoint/name``
+        Endpoint name
+    ``/config/endpoint/type``
+        Type of deployer (the only possible value is ``craftercms-deployer``)
+    ``/config/endpoint/server-url``
+        Url to publish content
+    ``/config/endpoint/status-url``
+        Url to check deployers' checking status
+    ``/config/endpoint/version-url``
+        Url to check target's version for deployment sync
+    ``/config/endpoint/bucket-size``
+        Number of files to be sent per one publishing http request
+    ``/config/endpoint/password``
+        Password for target
+    ``/config/endpoint/target``
+        Target name
+    ``/config/endpoint/send-metadata``
+        Send metadata with file content
