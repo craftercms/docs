@@ -10,6 +10,9 @@
    * - Derby
      - |checkmark|
    * - MySql 5.1+
+     -
+     - |checkmark|
+   * - MySql 5.5.14+
      - |checkmark|
    * - PostgresSQL 9.2+
      - |checkmark|
