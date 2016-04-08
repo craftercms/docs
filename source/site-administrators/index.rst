@@ -9,10 +9,11 @@ Site Administrators
 	:maxdepth: 1
 
 	content-monitoring
+	website-security-guide
+	content-targeting-guide
 
 .. todo:: Delivery Configuration for a Site
 
 .. todo:: Authoring Security for a Site
 
 .. todo:: Delivery Security for a Site
-
