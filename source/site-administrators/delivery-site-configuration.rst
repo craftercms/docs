@@ -1,8 +1,8 @@
 .. highlight:: xml
 
-==================
-Site Configuration
-==================
+===========================
+Delivery Site Configuration
+===========================
 
 ------------------------
 Configuration Parameters

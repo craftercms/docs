@@ -31,14 +31,12 @@ Advanced Developer Topics
 	:maxdepth: 2
 	:titlesonly:
 
-	content-targeting-guide
 	form-engine-control
 	build-a-data-source
 	content-inheritance
-	groovy-development-guide
+	custom-services-and-controllers
 	native-mobile-guide
 	services-guide
-	website-security-guide
 	extending-studio
 
 ##############################

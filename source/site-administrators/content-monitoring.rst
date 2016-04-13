@@ -9,8 +9,9 @@ Content Monitoring
 --------------------------
 What is Content Monitoring
 --------------------------
-Content Monitoring allows you to configure watches and notifications on your content.  
-Each day Crafter Studio will run a process that performs monitoring.  Each site can configure the monitors that run against the site.  
+
+Content Monitoring allows you to configure watches and notifications on your content.
+Each day Crafter Studio will run a process that performs monitoring.  Each site can configure the monitors that run against the site.
 A monitor defines the query to run, the paths that matter and the notification to be sent for items that match
 
 -----------------------------------
@@ -25,7 +26,7 @@ How to Configure Content Monitoring
 	.
 	.
 	.
-	 
+
 	    <contentMonitoring>
 	        <monitor>
 	            <!-- this query will email every expired item, every day -->
@@ -48,8 +49,8 @@ How to Configure Content Monitoring
 	        </monitor>
 	    </contentMonitoring>
 	</site-config>
- 
- 
+
+
 ^^^^^^^^^^^^^^^^^
 Multiple Monitors
 ^^^^^^^^^^^^^^^^^
