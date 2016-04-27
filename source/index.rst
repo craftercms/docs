@@ -24,6 +24,7 @@ procedures as well as a comprehensive reference section.
 	/contribute/index
 	/source-code
 	/get-support/index
+	/faq/index
 
 Indices and tables
 ==================

@@ -1,8 +1,8 @@
 .. highlight:: groovy
 
-======================
-Website Security Guide
-======================
+=======================
+Delivery Security Guide
+=======================
 
 The following guide will help you configure Crafter Engine and Crafter Profile to:
 
@@ -319,7 +319,7 @@ configure it so the correct headers are sent to the applications:
 #.  Enable mod_proxy_ajp (``a2enmod proxy_ajp``).
 #.  Create the Service Provider metadata with the mello_create_metadata.sh script in the directory where you unzipped the mod_auth_mellon
     code, passing  the Entity ID (a URN, can be the site URL) and the Endpoint URL (the URL root where mellon can handle SAML requests,
-    by default {SITE_URL}/mellon), as parameters. Eg: ``./mellon_create_metadata.sh urn:craftercms:testhttp://127.0.0.1/mellon``.
+    by default {SITE_URL}/mellon), as parameters. Eg: ``./mellon_create_metadata.sh urn:craftercms:test http://127.0.0.1/mellon``.
 #.  Copy the generated files to somewhere like /etc/apache2/saml/conf/sps/test.
 #.  Copy the IDP metadata to somewhere like /etc/apache2/saml/conf/idps.
 #.  Add the auth_mellon configuration to the virtual host. The configuration should be similar to this:
