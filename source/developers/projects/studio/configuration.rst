@@ -274,3 +274,5 @@ To override any of default configuration values create new properties file in ``
 .. include:: configuration/deployment-endpoints.rst
 
 .. include:: configuration/environment-overrides.rst
+
+.. include:: configuration/admin-console-tools.rst
