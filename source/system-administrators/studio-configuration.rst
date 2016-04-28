@@ -1,6 +1,6 @@
-=============
-Configuration
-=============
+====================
+Studio Configuration
+====================
 
 Default Studio configuration values:
 

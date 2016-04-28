@@ -7,6 +7,7 @@ Site Administrators
 .. toctree::
 	:maxdepth: 1
 
+	studio-configuration
 	content-monitoring
 	content-targeting-guide
 	delivery-site-configuration
