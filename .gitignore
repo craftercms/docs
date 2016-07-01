@@ -1,3 +1,7 @@
 build/*
 deploy.sh
 *.swp
+
+# IntelliJIdea files#
+*.iml
+.idea
