@@ -10,8 +10,8 @@ Site Administrators
 	studio-configuration
 	content-monitoring
 	content-targeting-guide
-	delivery-site-configuration
-	delivery-security-guide
+	engine-site-configuration
+	engine-site-security-guide
 	deployment-configuration
 
 .. todo:: Authoring Configuration for a Site

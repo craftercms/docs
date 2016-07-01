@@ -34,6 +34,7 @@ Advanced Developer Topics
 	form-engine-control
 	build-a-data-source
 	content-inheritance
+	templating-api
 	custom-services-and-controllers
 	native-mobile-guide
 	services-guide

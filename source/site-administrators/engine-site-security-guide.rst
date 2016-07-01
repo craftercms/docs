@@ -1,8 +1,8 @@
 .. highlight:: groovy
 
-=======================
-Delivery Security Guide
-=======================
+==========================
+Engine Site Security Guide
+==========================
 
 The following guide will help you configure Crafter Engine and Crafter Profile to:
 

@@ -14,36 +14,21 @@ System Requirements
 Development Environment
 -----------------------
 
-* Single Package
+.. toctree::
+	:maxdepth: 2
+	:titlesonly:
 
-Use Docker ...
-Use Zip ...
-Install by hand and from source
+	dev-environment/install-from-zip
 
-----------------------
-Production Environment
-----------------------
-
-* Authoring
-* Delivery
-** Engine
-** Profile
-** Social
-** Deployer
-
-* Server Configuration
-* Best practices
-* Backup and recovery
-
-Use Docker ...
-Use Zip ...
-Install by hand and from source
-
------------------------------
-Module Specific Configuration
------------------------------
+-------------------------
+QA/Production Environment
+-------------------------
 
 .. toctree::
-	:maxdepth: 1
+	:maxdepth: 2
+	:titlesonly:
 
-	studio-configuration.rst
+	prod-environment/install-studio.rst
+	prod-environment/configure-studio-with-alfresco.rst
+	prod-environment/install-engine.rst
+	prod-environment/configure-solr-replication.rst
