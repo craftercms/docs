@@ -31,4 +31,5 @@ QA/Production Environment
 	prod-environment/install-studio.rst
 	prod-environment/configure-studio-with-alfresco.rst
 	prod-environment/install-engine.rst
+	prod-environment/configure-engine-multi-tenancy.rst
 	prod-environment/configure-solr-replication.rst
