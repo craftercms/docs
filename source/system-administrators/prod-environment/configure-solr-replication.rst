@@ -11,7 +11,7 @@ Authoring Configuration
 -----------------------
 
 #.  In your Studio INSTALL_DIR, go to apache-tomcat/webapps, duplicate the solr.war and rename the new file to
-    as solr-live.war.
+    as solr-crafter-live.war.
 #.  In the same folder, duplicate the crafter-search.war and rename the file to crafter-search-live.war.
 #.  Go to INSTALL_DIR/apache-tomcat/conf/Catalina/localhost and create the solr-crafter-live.xml file with
     the following content:
@@ -91,10 +91,3 @@ So that the Solr config can be correctly replicated between the master and slave
 initially copied manually. Copy it from the authoring server to each of the delivery servers, to the
 INSTALL_DIR/apache-tomcat/solr-crafter/conf folder, and rename it to solrconfig.xml (delete the previous
 solrconfig.xml).
-
-
-
-
-
-
-
