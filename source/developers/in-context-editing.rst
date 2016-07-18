@@ -68,7 +68,7 @@ Example:
 
 .. code-block:: html
 
-	<img <@studio.iceAttr iceGroup="image" label="Promo Image 1" /> src="${model.image!""}" alt="${model.alttext!""}"/>``
+	<img <@studio.iceAttr iceGroup="image" label="Promo Image 1" /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}"/>``
 
 ----------------------------
 Component Drag and Drop Zone
@@ -111,8 +111,8 @@ The template needs to render the components that are referenced. The basic code 
 
 .. code-block:: html
 
-	<#if model.bottomPromos?? && model.bottomPromos.item??>
-		<#list model.bottomPromos1.item as module>
+	<#if contentModel.bottomPromos?? && contentModel.bottomPromos.item??>
+		<#list contentModel.bottomPromos1.item as module>
 			<@renderComponent component=module />
 		</#list>
 	</#if>
@@ -123,8 +123,8 @@ Full example of typical component drop zone
 .. code-block:: html
 
 	<div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" /> >
-		<#if model.bottomPromos?? && model.bottomPromos.item??>
-			<#list model.bottomPromos.item as module>
+		<#if contentModel.bottomPromos?? && contentModel.bottomPromos.item??>
+			<#list contentModel.bottomPromos.item as module>
 				<@renderComponent component=module />
 			</#list>
 		</#if>
@@ -137,7 +137,7 @@ In order for authors to interact with components, to drag them around the screen
 
 .. code-block:: html
 
-	<@studio.componentAttr path=model.storeUrl />
+	<@studio.componentAttr path=contentModel.storeUrl />
 
 Tag Attributes
 --------------
@@ -146,7 +146,7 @@ Tag Attributes
 | Attribute Name | Required                             | Expected Value                                 |
 +================+======================================+================================================+
 | path           | Yes                                  | the path to the component. Typically this is   |
-|                |                                      | simply model.storeUrl                          |
+|                |                                      | simply contentModel.storeUrl                   |
 +----------------+--------------------------------------+------------------------------------------------+
 | ice            | No                                   | true or false. If true the component will      |
 |                |                                      | automatically render ICE (in context editing)  |
@@ -162,7 +162,7 @@ Example
 
 .. code-block:: html
 
-	<img <@studio.componentAttr path=model.storeUrl ice=true /> src="${model.image!""}" alt="${model.alttext!""}" />
+	<img <@studio.componentAttr path=contentModel.storeUrl ice=true /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}" />
 
 --------------
 Engine Support
@@ -194,7 +194,7 @@ Need to iterate through a list of components and render them WITHOUT any additio
 
 .. code-block:: html
 
-	<@crafter.renderComponents componentList=model.bottomPromos />
+	<@crafter.renderComponents componentList=contentModel.bottomPromos />
 
 Render RTE (Rich Text Editor Components)
 ----------------------------------------
