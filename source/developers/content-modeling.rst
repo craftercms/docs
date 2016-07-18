@@ -273,7 +273,7 @@ The canvas allows the form-based content capture only, and is used by content au
 Content Type View Templates
 ---------------------------
 
-View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${model.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the parimary Crafter CMS model or additional model (via APIs, please read :ref:`custom-services-and-controllers` for that topic).
+View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the parimary Crafter CMS model or additional model (via APIs, please read :ref:`custom-services-and-controllers` for that topic).
 
 An example view template
 
@@ -287,16 +287,16 @@ An example view template
 	    		<!-- Basic Page Need
 	    		================================================== -->
 			<meta charset="utf-8">
-			<title>${model.browser_title}</title>
-			<meta name="description" content="${model.meta_description}">
-			<meta name="keywords" content="${model.meta_keywords}">
+			<title>${contentModel.browser_title}</title>
+			<meta name="description" content="${contentModel.meta_description}">
+			<meta name="keywords" content="${contentModel.meta_keywords}">
 		</head>
 		<body>
 			<div class="body" <@studio.iceAttr iceGroup="body"/>>
-				${model.body_html}
+				${contentModel.body_html}
 			</div>
 
-			<#if (model.analytics_script)??>${model.analytics_script}</#if>
+			<#if (contentModel.analytics_script)??>${contentModel.analytics_script}</#if>
 		</body>
 	</html>
 
@@ -322,13 +322,14 @@ analytics_script       Text Area    Analytics's Engine JavaScript
 Content Type Controller Definition
 ----------------------------------
 
-.. todo:: Validate this section
+Crafter page and components can have their own controller scripts too, that are executed before the page or component
+is rendered, and that can contribute to the model of the template. These scripts, besides the common variables, have
+the ``templateModel`` and the ``contentModel`` available. The ``templateModel`` is the actual map model of the
+template, and any variable put in it will be accessible directly in the template, eg. if the script has the line
+``templateModel.var = 5``, then in the template the var's value can be printed with ``${var}``. The ``contentModel``
+is the XML descriptor content, of type SiteItem. The scripts don't have to return any result, just populate the
+``templateModel``.
 
-Crafter page and components can have their own controller scripts too, that are executed before the page or component is rendered, and
-that can contribute to the model of the template. These scripts, besides the common variables, have the ``model`` and the
-``crafterModel`` available. The model is the actual map model of the template, and any variable put in it will be accessible directly in
-the template, eg. if the script has the line ``model.var = 5``, then in the template the var's value can be printed with ``${var}``. The
-``crafterModel`` is the XML descriptor content, of type SiteItem. The scripts don't have to return any result, just populate the model.
 There are 2 ways in which you can "bind" a script to a page or component:
 
 #.  Put the script under Scripts > pages or Scripts > components, and name it after the page or component content type.
@@ -340,69 +341,67 @@ script in Scripts > components > upcoming-events.groovy so that it is executed f
 
 .. code-block:: groovy
 
-	import org.craftercms.engine.service.context.SiteContext
+    import org.craftercms.engine.service.context.SiteContext
 
-	import utils.DateUtils
+    import utils.DateUtils
 
-	def now = DateUtils.formatDateAsIso(new Date())
-	def queryStr = "crafterSite:\"${siteContext.siteName}\" AND content-type:\"/component/event\" AND disabled:\"false\" AND date_dt:[${now} TO *]"
-	def start = 0
-	def rows = 1000
-	def sort = "date_dt asc"
-	def query = searchService.createQuery()
-	
-	query.setQuery(queryStr)
-	query.setStart(start)
-	query.setRows(rows)
-	query.addParam("sort", sort)
-	query.addParam("fl", "localId")
-	
-	def events = []
-	def searchResults = searchService.search(query)
+    def now = DateUtils.formatDateAsIso(new Date())
+    def queryStr = "crafterSite:\"${siteContext.siteName}\" AND content-type:\"/component/event\" AND disabled:\"false\" AND date_dt:[${now} TO *]"
+    def start = 0
+    def rows = 1000
+    def sort = "date_dt asc"
+    def query = searchService.createQuery()
 
-	if (searchResults.response) {
-		searchResults.response.documents.each {
-			def event = [:]
-			def item = siteItemService.getSiteItem(it.localId)
-			
-			event.image = item.image.text
-			event.title = item.title_s.text
-			event.date = DateUtils.parseModelValue(item.date_dt.text)
-			event.summary = item.summary_html.text
-			
-			events.add(event)
-		}
-	}
+    query.setQuery(queryStr)
+    query.setStart(start)
+    query.setRows(rows)
+    query.addParam("sort", sort)
+    query.addParam("fl", "localId")
 
-	model.events = events
+    def events = []
+    def searchResults = searchService.search(query)
+    if (searchResults.response) {
+        searchResults.response.documents.each {
+            def event = [:]
+            def item = siteItemService.getSiteItem(it.localId)
+
+            event.image = item.image.text
+            event.title = item.title_s.text
+            event.date = DateUtils.parseModelValue(item.date_dt.text)
+            event.summary = item.summary_html.text
+
+            events.add(event)
+        }
+    }
+
+    contentModel.events = events
 
 You might notice that we're importing a ``utils.DateUtils`` class. This class is not part of Crafter CMS, but instead it is a Groovy class
 specific to the site. To be able to use this class, you should place it under Classes > groovy > utils and name it DateUtils.groovy,
 where everything after the groovy directory is part of the class' package. It's recommended for all Groovy classes to follow this
 convention.
 
-
 .. code-block:: groovy
 
-	package utils
-	
-	import java.text.SimpleDateFormat
-	
-	class DateUtils {
-	
-		static def parseModelValue(value) {
-			def dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
-			dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
-			return dateFormat.parse(value)
-		}
-	
-		static def formatDateAsIso(date) {
-			def dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
-			dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
-			return dateFormat.format(date)
-		}
+    package utils
 
-	}
+    import java.text.SimpleDateFormat
+
+    class DateUtils {
+
+        static def parseModelValue(value){
+            def dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
+                dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
+            return dateFormat.parse(value)
+        }
+
+        static def formatDateAsIso(date) {
+            def dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+                dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
+            return dateFormat.format(date)
+        }
+
+    }
 
 .. todo:: reference the full FTL API
 

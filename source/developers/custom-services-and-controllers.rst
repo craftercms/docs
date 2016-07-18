@@ -164,11 +164,14 @@ controller then must be placed in Scripts > controllers > sitemap.groovy. The co
 Page and Component Scripts
 ==========================
 
-Crafter page and components can have their own controller scripts too, that are executed before the page or component is rendered, and
-that can contribute to the model of the template. These scripts, besides the common variables, have the ``model`` and the
-``crafterModel`` available. The model is the actual map model of the template, and any variable put in it will be accessible directly in
-the template, eg. if the script has the line ``model.var = 5``, then in the template the var's value can be printed with ``${var}``. The
-``crafterModel`` is the XML descriptor content, of type SiteItem. The scripts don't have to return any result, just populate the model.
+Crafter page and components can have their own controller scripts too, that are executed before the page or component
+is rendered, and that can contribute to the model of the template. These scripts, besides the common variables, have
+the ``templateModel`` and the ``contentModel`` available. The ``templateModel`` is the actual map model of the
+template, and any variable put in it will be accessible directly in the template, eg. if the script has the line
+``templateModel.var = 5``, then in the template the var's value can be printed with ``${var}``. The ``contentModel``
+is the XML descriptor content, of type SiteItem. The scripts don't have to return any result, just populate the
+``templateModel``.
+
 There are 2 ways in which you can "bind" a script to a page or component:
 
 #.  Put the script under Scripts > pages or Scripts > components, and name it after the page or component content type.
@@ -212,7 +215,7 @@ script in Scripts > components > upcoming-events.groovy so that it is executed f
         }
     }
 
-    model.events = events
+    contentModel.events = events
 
 You might notice that we're importing a ``utils.DateUtils`` class. This class is not part of Crafter CMS, but instead it is a Groovy class
 specific to the site. To be able to use this class, you should place it under Classes > groovy > utils and name it DateUtils.groovy,
@@ -243,10 +246,11 @@ convention.
 Filter Scripts
 ==============
 
-Crafter Engine can handle special Groovy filters that work basically in the same way as Servlet filters. These are scripts very similar to
-page scripts, and have basically the same variables available (except the ``model`` and ``crafterModel`` variables), but instead of updating
-the template model, they call ``filterChain.doFilter(request, response)``, just like in Java Servlet filters, to continue with the filter
-chain. You can even stop the request filtering and return the response directly, like in this example:
+Crafter Engine can handle special Groovy filters that work basically in the same way as Servlet filters. These are
+scripts very similar to page scripts, and have basically the same variables available (except the ``templateModel``
+and ``contentModel`` variables), but instead of updating the template model, they call ``filterChain.doFilter
+(request, response)``, just like in Java Servlet filters, to continue with the filter chain. You can even stop the
+request filtering and return the response directly, like in this example:
 ::
 
     if (!authentication) {
