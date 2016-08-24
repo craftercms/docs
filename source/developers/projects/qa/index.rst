@@ -4,7 +4,7 @@
 Crafter CMS QA Project
 ======================
 
-.. todo:: Configuration of the QA environment to automation.
+.. todo:: Configuration of the QA environment to Automation.
 
 .. toctree::
 	:maxdepth: 1
