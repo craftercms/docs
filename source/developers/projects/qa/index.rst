@@ -9,12 +9,18 @@ Crafter CMS QA Project
 .. toctree::
 	:maxdepth: 1
 
-###################################################################
-1. Java 7 should be installed in your computer because is required.
-###################################################################
-##############################################################################
-2. Open your favorite IDE, in this case this configuration is for Eclipse IDE.
-##############################################################################
+##############
+1. About Java.
+##############
+
+*Java 7 should be installed in your computer because is required.*
+
+#################
+2. About the IDE.
+#################
+
+*Open your favorite IDE, in this case this configuration is for Eclipse IDE.*
+
 ############################################
 3. Download the Selenium Java Client Driver.
 ############################################
