@@ -7,7 +7,7 @@ Crafter CMS QA Project
 .. todo:: Configuration of the QA environment to Automation.
 
 .. toctree::
-	:maxdepth: 1
+   :maxdepth: 1
 
 ##############
 1. About Java.
