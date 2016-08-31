@@ -36,7 +36,7 @@ Our developer documentation focuses on Crafter CMS specific topics.  Below is a 
 Beginner Developer Topics
 #########################
 
-.. todo:: Write overview
+This section covers the basic topics you need to define a content type and render that content as part of a page, component or service.
 
 .. toctree::
 	:maxdepth: 2
@@ -44,16 +44,17 @@ Beginner Developer Topics
 
 	content-modeling
 	in-context-editing
+    templating-api
+    custom-services-and-controllers
+    build-a-form
 	html-mobile-support
 	responsive-guide
-	build-a-form
-	rte-setup
 
 #########################
 Advanced Developer Topics
 #########################
 
-.. todo:: Write overview
+Looking to do something more advanced like extend Crafter Studio?  This section covers advanced topics and integrations.
 
 .. toctree::
 	:maxdepth: 2
@@ -62,17 +63,14 @@ Advanced Developer Topics
 	form-engine-control
 	build-a-data-source
 	content-inheritance
-	templating-api
-	custom-services-and-controllers
 	native-mobile-guide
 	services-guide
 	extending-studio
+	rte-setup
 
 ##############################
 Project Specific Documentation
 ##############################
-
-.. todo:: Write overview
 
 .. toctree::
 	:maxdepth: 2
