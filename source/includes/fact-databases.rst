@@ -10,7 +10,6 @@
    * - Derby
      - |checkmark|
    * - MySql 5.1+
-     -
      - |checkmark|
    * - MySql 5.5.14+
      - |checkmark|
@@ -25,7 +24,7 @@
 Above RDBMS databases are only required for Crafter Studio component of Crafter CMS.
 
 .. list-table::
-:header-rows: 1
+   :header-rows: 1
    :stub-columns: 1
          :class: compatibility
 
@@ -35,7 +34,7 @@ Above RDBMS databases are only required for Crafter Studio component of Crafter 
 Above Solr engine required for Crafter Search (used by Crafter Engine and Crafter Studio)
 
 .. list-table::
-:header-rows: 1
+   :header-rows: 1
    :stub-columns: 1
       :class: compatibility
 
