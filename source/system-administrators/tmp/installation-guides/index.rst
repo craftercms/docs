@@ -9,7 +9,7 @@ Install Crafter CMS
 .. index:: installation guides
 .. index:: installation
 
-CrafterCMS runs on most platforms and supports 64-bit architecture for
+Crafter CMS runs on most platforms and supports 64-bit architecture for
 production use and both 64-bit and 32-bit architectures for testing.
 
 ===================
@@ -34,7 +34,7 @@ Installation Guides
     - :doc:`Crafter CMS </introduction/installation-guides/guide>`
 
 See the :doc:`/release-notes/index` for information about specific releases
-of CrafterCMS.
+of Crafter CMS.
 
 .. .. include:: /includes/toc/dfn-list-spec-installation.rst
 
@@ -49,11 +49,11 @@ of CrafterCMS.
 .. .. include:: /includes/toc/install-verify-files.rst
 
 ===========================
-First Steps with CrafterCMS
+First Steps with Crafter CMS
 ===========================
 
-Once you have installed CrafterCMS, consider the :ref:`Getting Started
-Guides <getting-started>` to learn about CrafterCMS.
+Once you have installed Crafter CMS, consider the :ref:`Getting Started
+Guides <getting-started>` to learn about Crafter CMS.
 <getting-started>` are available.
 
 .. include:: /includes/unicode-checkmark.rst

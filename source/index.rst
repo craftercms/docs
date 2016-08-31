@@ -1,12 +1,12 @@
 :orphan:
 
 ====================================================
-The CrafterCMS |version| Manual
+The Crafter CMS |version| Manual
 ====================================================
 
 .. default-domain:: craftercms
 
-Welcome to the CrafterCMS |version| Manual. CrafterCMS is an open-source,
+Welcome to the Crafter CMS |version| Manual. Crafter CMS is an open-source,
 Java-based, high-performance Web content management system designed for ease of development and scaling.
 This Manual introduces key concepts in Crafter CMS, presents the authoring and
 development enviornment, and provides operational and administrative considerations and
