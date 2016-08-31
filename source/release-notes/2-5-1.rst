@@ -1,0 +1,273 @@
+----------------
+Crafter CMS 2.5.1
+----------------
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* New Studio interface
+* Repository abstraction
+* Many engine improvements
+* Many profile / social improvements
+
+^^^^^^^^^^
+Bugs Fixed
+^^^^^^^^^^
+
+- `CRAFTERCMS-814 <http://issues.craftercms.org/browse/CRAFTERCMS-814>`_ - Customize dashboard page is broken in Share UI
+- `CRAFTERCMS-821 <http://issues.craftercms.org/browse/CRAFTERCMS-821>`_ - dependency calc complains about templates and other assets provided by engine
+- `CRAFTERCMS-859 <http://issues.craftercms.org/browse/CRAFTERCMS-859>`_ - Don't do caching for static assets content
+- `CRAFTERCMS-863 <http://issues.craftercms.org/browse/CRAFTERCMS-863>`_ - Crafter Engine device specific template no longer automatically falls back when template is not present
+- `CRAFTERCMS-865 <http://issues.craftercms.org/browse/CRAFTERCMS-865>`_ - Solr index update fails when using flattening processor if parent contains multiple child components with single valued solr fields
+- `CRAFTERCMS-867 <http://issues.craftercms.org/browse/CRAFTERCMS-867>`_ - Custom error FTLs (404, 500, etc) should be automatically recognizable without needing restart
+- `CRAFTERCMS-879 <http://issues.craftercms.org/browse/CRAFTERCMS-879>`_ - Two identical wen projects, when editing content in one project, user activity reflects also in the other project
+- `CRAFTERCMS-916 <http://issues.craftercms.org/browse/CRAFTERCMS-916>`_ - Delete renamed page as index false deletes parent page
+- `CRAFTERCMS-917 <http://issues.craftercms.org/browse/CRAFTERCMS-917>`_ - No standard way to override Profile client settings
+- `CRAFTERCMS-920 <http://issues.craftercms.org/browse/CRAFTERCMS-920>`_ - Toggle profile preference of masking username in Social comments
+- `CRAFTERCMS-923 <http://issues.craftercms.org/browse/CRAFTERCMS-923>`_ - Unable to permanently delete comments of crafter social-admin Go to status "thrash", click on permanently delete on a comment
+- `CRAFTERCMS-927 <http://issues.craftercms.org/browse/CRAFTERCMS-927>`_ - CORS not working correctly
+- `CRAFTERCMS-928 <http://issues.craftercms.org/browse/CRAFTERCMS-928>`_ - Locked icon does not show for scripts, templates and component
+- `CRAFTERCMS-957 <http://issues.craftercms.org/browse/CRAFTERCMS-957>`_ - Make PUT and POST methods also work with POST
+- `CRAFTERCMS-1003 <http://issues.craftercms.org/browse/CRAFTERCMS-1003>`_ - Submit to delete fails due to database issue
+- `CRAFTERCMS-1007 <http://issues.craftercms.org/browse/CRAFTERCMS-1007>`_ - Context nav doesn't update on browse in preview
+- `CRAFTERCMS-1012 <http://issues.craftercms.org/browse/CRAFTERCMS-1012>`_ - search box on tool bar does not send to search on enter
+- `CRAFTERCMS-1018 <http://issues.craftercms.org/browse/CRAFTERCMS-1018>`_ - Items getting stuck IN-PROGRESS on write
+- `CRAFTERCMS-1024 <http://issues.craftercms.org/browse/CRAFTERCMS-1024>`_ - delete site check previliges before showing up as an option and should require confirmation before acting
+- `CRAFTERCMS-1028 <http://issues.craftercms.org/browse/CRAFTERCMS-1028>`_ - SITENAME is not getting replaced in create blueprint
+- `CRAFTERCMS-1030 <http://issues.craftercms.org/browse/CRAFTERCMS-1030>`_ - fix hardcoded global1 permissions in faux security provider
+- `CRAFTERCMS-1032 <http://issues.craftercms.org/browse/CRAFTERCMS-1032>`_ - user is logged out before session expires
+- `CRAFTERCMS-1035 <http://issues.craftercms.org/browse/CRAFTERCMS-1035>`_ - User gets logged out after create site or clicking on preview for the first time
+- `CRAFTERCMS-1036 <http://issues.craftercms.org/browse/CRAFTERCMS-1036>`_ - Static assets single file upload and bulk upload fail in processor chain
+- `CRAFTERCMS-1038 <http://issues.craftercms.org/browse/CRAFTERCMS-1038>`_ - site content menu should not show up on admin-console, search or browser pages
+- `CRAFTERCMS-1039 <http://issues.craftercms.org/browse/CRAFTERCMS-1039>`_ - If object does not have internal name, dashboard should show something
+- `CRAFTERCMS-1040 <http://issues.craftercms.org/browse/CRAFTERCMS-1040>`_ - Scheduled publishing does not work because of change of scheduled date format in request
+- `CRAFTERCMS-1041 <http://issues.craftercms.org/browse/CRAFTERCMS-1041>`_ - When uploading from site panel in asset folder upload dialog should disappear and panel should refresh on success
+- `CRAFTERCMS-1042 <http://issues.craftercms.org/browse/CRAFTERCMS-1042>`_ - bulk upload does not POST to the proper URL
+- `CRAFTERCMS-1043 <http://issues.craftercms.org/browse/CRAFTERCMS-1043>`_ - clicking logout on toolbar in preview does not log user out
+- `CRAFTERCMS-1045 <http://issues.craftercms.org/browse/CRAFTERCMS-1045>`_ - image upload on form does not work
+- `CRAFTERCMS-1047 <http://issues.craftercms.org/browse/CRAFTERCMS-1047>`_ - Disk Repo leaks file handles
+- `CRAFTERCMS-1049 <http://issues.craftercms.org/browse/CRAFTERCMS-1049>`_ - footer on dashboard should move with site content panel
+- `CRAFTERCMS-1050 <http://issues.craftercms.org/browse/CRAFTERCMS-1050>`_ - site ID generation should lower-case everything and remove special characters like '
+- `CRAFTERCMS-1051 <http://issues.craftercms.org/browse/CRAFTERCMS-1051>`_ - expand all button on scheduled items says FOO
+- `CRAFTERCMS-1052 <http://issues.craftercms.org/browse/CRAFTERCMS-1052>`_ - expand all collapse all on Items Waiting For Approval dashboard does not work when showing in progress items
+- `CRAFTERCMS-1053 <http://issues.craftercms.org/browse/CRAFTERCMS-1053>`_ - approved scheduled items dashboard type filter list changes to keys after a different type is selected
+- `CRAFTERCMS-1058 <http://issues.craftercms.org/browse/CRAFTERCMS-1058>`_ - save not working on code editor
+- `CRAFTERCMS-1059 <http://issues.craftercms.org/browse/CRAFTERCMS-1059>`_ - dont blow up in disk version history if file not found
+- `CRAFTERCMS-1064 <http://issues.craftercms.org/browse/CRAFTERCMS-1064>`_ - sort order in get items for site content panel is not correct
+- `CRAFTERCMS-1065 <http://issues.craftercms.org/browse/CRAFTERCMS-1065>`_ - style create folder dialog in site content panel
+- `CRAFTERCMS-1066 <http://issues.craftercms.org/browse/CRAFTERCMS-1066>`_ - create folder dialog is not wired to new service
+- `CRAFTERCMS-1067 <http://issues.craftercms.org/browse/CRAFTERCMS-1067>`_ - Going back to 'All Sites' prompts the login screen
+- `CRAFTERCMS-1068 <http://issues.craftercms.org/browse/CRAFTERCMS-1068>`_ - clicking view content is opening content in edit mode
+- `CRAFTERCMS-1072 <http://issues.craftercms.org/browse/CRAFTERCMS-1072>`_ - change content type posts to wrong URL
+- `CRAFTERCMS-1073 <http://issues.craftercms.org/browse/CRAFTERCMS-1073>`_ - Creating a site with 'Retail' blueprint causes StackOverflowError
+- `CRAFTERCMS-1075 <http://issues.craftercms.org/browse/CRAFTERCMS-1075>`_ - submit for delete posts to wrong url
+- `CRAFTERCMS-1076 <http://issues.craftercms.org/browse/CRAFTERCMS-1076>`_ - Cut AND Copy operations fail on paste
+- `CRAFTERCMS-1077 <http://issues.craftercms.org/browse/CRAFTERCMS-1077>`_ - 'Edit' and 'View' are highlighted together at first time opening the right-click menu after preview refresh
+- `CRAFTERCMS-1079 <http://issues.craftercms.org/browse/CRAFTERCMS-1079>`_ - Form: Form Section: Invalid number of required field count with the file name field
+- `CRAFTERCMS-1080 <http://issues.craftercms.org/browse/CRAFTERCMS-1080>`_ - Form: Opening another form while a form is open results in a blank form
+- `CRAFTERCMS-1082 <http://issues.craftercms.org/browse/CRAFTERCMS-1082>`_ - Form: File Name: The file name field does not check for existing content
+- `CRAFTERCMS-1083 <http://issues.craftercms.org/browse/CRAFTERCMS-1083>`_ - Form: Place In Nav: 'Edit position' button of 'Place in nav' field doesn't work
+- `CRAFTERCMS-1084 <http://issues.craftercms.org/browse/CRAFTERCMS-1084>`_ - flip phone control is not styled properly
+- `CRAFTERCMS-1085 <http://issues.craftercms.org/browse/CRAFTERCMS-1085>`_ - Form: Date: field should be wider
+- `CRAFTERCMS-1086 <http://issues.craftercms.org/browse/CRAFTERCMS-1086>`_ - Form: File Name: Changing a page URL doesn't work properly
+- `CRAFTERCMS-1087 <http://issues.craftercms.org/browse/CRAFTERCMS-1087>`_ - Form: File Name: The file name field in new form is disabled by default
+- `CRAFTERCMS-1089 <http://issues.craftercms.org/browse/CRAFTERCMS-1089>`_ - Form: Image Picker: the magnifying glass icon and the download icon are not aligned
+- `CRAFTERCMS-1090 <http://issues.craftercms.org/browse/CRAFTERCMS-1090>`_ - Admin Console: Content Type: saving form changes give feedback to user
+- `CRAFTERCMS-1091 <http://issues.craftercms.org/browse/CRAFTERCMS-1091>`_ - my recent activity should sort by default from latest edit first to earliest. most recent edit at the top
+- `CRAFTERCMS-1093 <http://issues.craftercms.org/browse/CRAFTERCMS-1093>`_ - Form: File Name: The field shows the required mark when a form is opened from the contextual navigation
+- `CRAFTERCMS-1095 <http://issues.craftercms.org/browse/CRAFTERCMS-1095>`_ - if user is not a member of a site and tries to load the site dash system should throw them to all sites
+- `CRAFTERCMS-1096 <http://issues.craftercms.org/browse/CRAFTERCMS-1096>`_ - role in UI is hardcoded
+- `CRAFTERCMS-1097 <http://issues.craftercms.org/browse/CRAFTERCMS-1097>`_ - Form Editor: Datasource: cannot create new datasources or edit the existing ones
+- `CRAFTERCMS-1099 <http://issues.craftercms.org/browse/CRAFTERCMS-1099>`_ - Form: Repeating Group: A required check mark appears while the field is not required
+- `CRAFTERCMS-1100 <http://issues.craftercms.org/browse/CRAFTERCMS-1100>`_ - delete fails on submission as admin
+- `CRAFTERCMS-1102 <http://issues.craftercms.org/browse/CRAFTERCMS-1102>`_ - Form: RTE: Multiple toolbar menu items are not available
+- `CRAFTERCMS-1106 <http://issues.craftercms.org/browse/CRAFTERCMS-1106>`_ - Clicking on 'Authoring >>' link from the site screen throws the user out to login
+- `CRAFTERCMS-1107 <http://issues.craftercms.org/browse/CRAFTERCMS-1107>`_ - Form: RTE: clicking on 'Insert Layout' or 'Insert Component' menu shows 'undefined' in the option list
+- `CRAFTERCMS-1108 <http://issues.craftercms.org/browse/CRAFTERCMS-1108>`_ - Form: RTE: The html editor dialog doesn't appear upon clicking on 'Edit Code' toolbar menu
+- `CRAFTERCMS-1109 <http://issues.craftercms.org/browse/CRAFTERCMS-1109>`_ - Form: Cancel doesn't unlock the content after the file name field is edited
+- `CRAFTERCMS-1110 <http://issues.craftercms.org/browse/CRAFTERCMS-1110>`_ - Admin Console: Content Type: Datasource change doesn't save in forms
+- `CRAFTERCMS-1113 <http://issues.craftercms.org/browse/CRAFTERCMS-1113>`_ - Form: Edit Position: the dialog doesn't render properly
+- `CRAFTERCMS-1114 <http://issues.craftercms.org/browse/CRAFTERCMS-1114>`_ - unlock option does not show up in right click when item is locked site content panel
+- `CRAFTERCMS-1118 <http://issues.craftercms.org/browse/CRAFTERCMS-1118>`_ - change all the dialog styles that have orange button to use standard button style
+- `CRAFTERCMS-1119 <http://issues.craftercms.org/browse/CRAFTERCMS-1119>`_ - tree not refreshing properly (js error) on create folder
+- `CRAFTERCMS-1120 <http://issues.craftercms.org/browse/CRAFTERCMS-1120>`_ - fix styles on image overlay in RTE
+- `CRAFTERCMS-1121 <http://issues.craftercms.org/browse/CRAFTERCMS-1121>`_ - drag and drop components js trying to write invalid document
+- `CRAFTERCMS-1123 <http://issues.craftercms.org/browse/CRAFTERCMS-1123>`_ - content type selector does not show image when one is available
+- `CRAFTERCMS-1124 <http://issues.craftercms.org/browse/CRAFTERCMS-1124>`_ - using ICE deletes the page in the repo!
+- `CRAFTERCMS-1125 <http://issues.craftercms.org/browse/CRAFTERCMS-1125>`_ - system should not allow create option on leaf component in right click content panel
+- `CRAFTERCMS-1126 <http://issues.craftercms.org/browse/CRAFTERCMS-1126>`_ - issues with edit groovy script save
+- `CRAFTERCMS-1127 <http://issues.craftercms.org/browse/CRAFTERCMS-1127>`_ - activity feed items do not have the correct attributes for asset types
+- `CRAFTERCMS-1128 <http://issues.craftercms.org/browse/CRAFTERCMS-1128>`_ - dashboard is not remembering filter settings on refresh
+- `CRAFTERCMS-1130 <http://issues.craftercms.org/browse/CRAFTERCMS-1130>`_ - change template is opening the wrong form
+- `CRAFTERCMS-1131 <http://issues.craftercms.org/browse/CRAFTERCMS-1131>`_ - Admin Console: Content Type: Create Content type option doesn't work properly
+- `CRAFTERCMS-1132 <http://issues.craftercms.org/browse/CRAFTERCMS-1132>`_ - Form: RTE: Code editor renders out of the form area
+- `CRAFTERCMS-1134 <http://issues.craftercms.org/browse/CRAFTERCMS-1134>`_ - style create content type dialog
+- `CRAFTERCMS-1135 <http://issues.craftercms.org/browse/CRAFTERCMS-1135>`_ - create site should delay longer before taking use to preview. Seems immediate
+- `CRAFTERCMS-1142 <http://issues.craftercms.org/browse/CRAFTERCMS-1142>`_ - edit template in preview tools does not work
+- `CRAFTERCMS-1144 <http://issues.craftercms.org/browse/CRAFTERCMS-1144>`_ - fix right click styles in static assets
+- `CRAFTERCMS-1145 <http://issues.craftercms.org/browse/CRAFTERCMS-1145>`_ - channel preview no longer works
+- `CRAFTERCMS-1148 <http://issues.craftercms.org/browse/CRAFTERCMS-1148>`_ - repeating group field's variable name is UNDEFINED when new field is drug on to form selector
+- `CRAFTERCMS-1149 <http://issues.craftercms.org/browse/CRAFTERCMS-1149>`_ - pencil in nav does not show up
+- `CRAFTERCMS-1151 <http://issues.craftercms.org/browse/CRAFTERCMS-1151>`_ - uploading image via image picket fails as not an image
+- `CRAFTERCMS-1152 <http://issues.craftercms.org/browse/CRAFTERCMS-1152>`_ - in context editing pencils are not hiding/showing as expected. they always show
+- `CRAFTERCMS-1153 <http://issues.craftercms.org/browse/CRAFTERCMS-1153>`_ - in context editing panel needs to list the editable regions and let the author jump ot them
+- `CRAFTERCMS-1154 <http://issues.craftercms.org/browse/CRAFTERCMS-1154>`_ - style pencil in context nav
+- `CRAFTERCMS-1155 <http://issues.craftercms.org/browse/CRAFTERCMS-1155>`_ - fix targeting panel styles
+- `CRAFTERCMS-1156 <http://issues.craftercms.org/browse/CRAFTERCMS-1156>`_ - multi variant testing options do not show up
+- `CRAFTERCMS-1159 <http://issues.craftercms.org/browse/CRAFTERCMS-1159>`_ - FTLs do not show up on recent activity dashboard when editing them
+- `CRAFTERCMS-1161 <http://issues.craftercms.org/browse/CRAFTERCMS-1161>`_ - style create template dialog
+- `CRAFTERCMS-1162 <http://issues.craftercms.org/browse/CRAFTERCMS-1162>`_ - CMS Search is not executing
+- `CRAFTERCMS-1163 <http://issues.craftercms.org/browse/CRAFTERCMS-1163>`_ - section defaults should be a component type
+- `CRAFTERCMS-1164 <http://issues.craftercms.org/browse/CRAFTERCMS-1164>`_ - create template dialog allows - and special chars in name
+- `CRAFTERCMS-1168 <http://issues.craftercms.org/browse/CRAFTERCMS-1168>`_ - editing groovy script doesn't show up in my recent activity (just cleared DB)
+- `CRAFTERCMS-1169 <http://issues.craftercms.org/browse/CRAFTERCMS-1169>`_ - restarting app removes all dates from recently madedesk
+- `CRAFTERCMS-1172 <http://issues.craftercms.org/browse/CRAFTERCMS-1172>`_ - set ice indicator style z-order to 999999999999999
+- `CRAFTERCMS-1173 <http://issues.craftercms.org/browse/CRAFTERCMS-1173>`_ - drag and drop then cancel leaves proxy in drag zone
+- `CRAFTERCMS-1176 <http://issues.craftercms.org/browse/CRAFTERCMS-1176>`_ - tighten up workflow cancel dialog
+- `CRAFTERCMS-1178 <http://issues.craftercms.org/browse/CRAFTERCMS-1178>`_ - clicking old logout button should LOG OUT, also it should say sign out like the rest of the UI. Currently it goes to the dashboard
+- `CRAFTERCMS-1179 <http://issues.craftercms.org/browse/CRAFTERCMS-1179>`_ - Get sites is returning sites that my user/role does not have access to
+- `CRAFTERCMS-1180 <http://issues.craftercms.org/browse/CRAFTERCMS-1180>`_ - create new content calls get types and gets different (incorrect) results on different executions
+- `CRAFTERCMS-1181 <http://issues.craftercms.org/browse/CRAFTERCMS-1181>`_ - clicking on the page items name on a dashboard does not go to preview as it should
+- `CRAFTERCMS-1182 <http://issues.craftercms.org/browse/CRAFTERCMS-1182>`_ - item selector insets empty item when there is not content in it
+- `CRAFTERCMS-1183 <http://issues.craftercms.org/browse/CRAFTERCMS-1183>`_ - duplicate does not work properly (file name is wrong)
+- `CRAFTERCMS-1184 <http://issues.craftercms.org/browse/CRAFTERCMS-1184>`_ - Clicking request publishing does not load dialog
+- `CRAFTERCMS-1185 <http://issues.craftercms.org/browse/CRAFTERCMS-1185>`_ - revert does not work
+- `CRAFTERCMS-1188 <http://issues.craftercms.org/browse/CRAFTERCMS-1188>`_ - submit to go live and go live dialogs have a select all but it doesn't do anything
+- `CRAFTERCMS-1189 <http://issues.craftercms.org/browse/CRAFTERCMS-1189>`_ - submit to go live (WITH SCHEDULE) seems to be succeeding but the service returns a 500
+- `CRAFTERCMS-1190 <http://issues.craftercms.org/browse/CRAFTERCMS-1190>`_ - when approving a schedule item, the dialog doesn't show the schedule etc, Checking the data it seems there is no schedule date attached the object
+- `CRAFTERCMS-1191 <http://issues.craftercms.org/browse/CRAFTERCMS-1191>`_ - approve to publish calendar / date and time should use same controls as submit
+- `CRAFTERCMS-1192 <http://issues.craftercms.org/browse/CRAFTERCMS-1192>`_ - reject option not showing up on submitted item
+- `CRAFTERCMS-1193 <http://issues.craftercms.org/browse/CRAFTERCMS-1193>`_ - reject dialog blows up due to bad service call for reject dependencies
+- `CRAFTERCMS-1194 <http://issues.craftercms.org/browse/CRAFTERCMS-1194>`_ - duplicate content cause key constraint
+- `CRAFTERCMS-1195 <http://issues.craftercms.org/browse/CRAFTERCMS-1195>`_ - version history in disk repo is sorted via alpha
+- `CRAFTERCMS-1198 <http://issues.craftercms.org/browse/CRAFTERCMS-1198>`_ - alfresco security / ui lets me sign in no matter what (even though i dont have permissions)
+- `CRAFTERCMS-1199 <http://issues.craftercms.org/browse/CRAFTERCMS-1199>`_ - signing in to Crafter with Alfresco fails
+- `CRAFTERCMS-1200 <http://issues.craftercms.org/browse/CRAFTERCMS-1200>`_ - submit/approve to go live dialog does not close after submit
+- `CRAFTERCMS-1201 <http://issues.craftercms.org/browse/CRAFTERCMS-1201>`_ - when you create a site in Alfresco from a blueprint it creates the site with site-config folder
+- `CRAFTERCMS-1202 <http://issues.craftercms.org/browse/CRAFTERCMS-1202>`_ - SITENAME is not getting replaced when creating site from blueprint in Alfresco
+- `CRAFTERCMS-1203 <http://issues.craftercms.org/browse/CRAFTERCMS-1203>`_ - UI does not alert user when username or password is incorrect
+- `CRAFTERCMS-1206 <http://issues.craftercms.org/browse/CRAFTERCMS-1206>`_ - flt shows up with no name in schedule itemds
+- `CRAFTERCMS-1208 <http://issues.craftercms.org/browse/CRAFTERCMS-1208>`_ - profile picker doesnt work when only one property is listed in persona
+- `CRAFTERCMS-1209 <http://issues.craftercms.org/browse/CRAFTERCMS-1209>`_ - preview not reloading after save of form or template
+- `CRAFTERCMS-1218 <http://issues.craftercms.org/browse/CRAFTERCMS-1218>`_ - allow under score in create template dialog (mobile templates require them
+- `CRAFTERCMS-1220 <http://issues.craftercms.org/browse/CRAFTERCMS-1220>`_ - renames are not showing up on deployer properly in preview
+- `CRAFTERCMS-1221 <http://issues.craftercms.org/browse/CRAFTERCMS-1221>`_ - in ftl editor if code example is already selected insert doesnt work
+- `CRAFTERCMS-1222 <http://issues.craftercms.org/browse/CRAFTERCMS-1222>`_ - when editing components and click done, if pencils are on they need to re-render, reposition
+- `CRAFTERCMS-1223 <http://issues.craftercms.org/browse/CRAFTERCMS-1223>`_ - drop a component twice in a row without refreshing browser causes all components to change to last dropped component
+- `CRAFTERCMS-1224 <http://issues.craftercms.org/browse/CRAFTERCMS-1224>`_ - components need to show some kind of indication that they are a component inside the drag zone. users cannot tell where one component stops and another stops
+- `CRAFTERCMS-1225 <http://issues.craftercms.org/browse/CRAFTERCMS-1225>`_ - when dragging a new component on to page I should be able to order it where I want it in a drop zone, currently always adds to bottom
+- `CRAFTERCMS-1226 <http://issues.craftercms.org/browse/CRAFTERCMS-1226>`_ - disabling a page does not show warning in studio
+- `CRAFTERCMS-1227 <http://issues.craftercms.org/browse/CRAFTERCMS-1227>`_ - workflow of a schedule item does work yet
+- `CRAFTERCMS-1228 <http://issues.craftercms.org/browse/CRAFTERCMS-1228>`_ - go live queue fails when trying to show scheudled home page
+- `CRAFTERCMS-1229 <http://issues.craftercms.org/browse/CRAFTERCMS-1229>`_ - reject dialog doesnt show up
+- `CRAFTERCMS-1230 <http://issues.craftercms.org/browse/CRAFTERCMS-1230>`_ - clean up log files, too many false errors and constant messages
+- `CRAFTERCMS-1231 <http://issues.craftercms.org/browse/CRAFTERCMS-1231>`_ - request publish does not load in firefox
+- `CRAFTERCMS-1232 <http://issues.craftercms.org/browse/CRAFTERCMS-1232>`_ - Browse Repository is not showing folders
+- `CRAFTERCMS-1233 <http://issues.craftercms.org/browse/CRAFTERCMS-1233>`_ - Dropdown are not been render in the form engine
+- `CRAFTERCMS-1239 <http://issues.craftercms.org/browse/CRAFTERCMS-1239>`_ - Can't add components to level descriptor
+- `CRAFTERCMS-1243 <http://issues.craftercms.org/browse/CRAFTERCMS-1243>`_ - Can't browse for components in subdirectories
+- `CRAFTERCMS-1244 <http://issues.craftercms.org/browse/CRAFTERCMS-1244>`_ - Crafter 2.5. RTE - Edit HTML Source modal
+- `CRAFTERCMS-1245 <http://issues.craftercms.org/browse/CRAFTERCMS-1245>`_ - deleted items show incorrectly in dashboards
+- `CRAFTERCMS-1248 <http://issues.craftercms.org/browse/CRAFTERCMS-1248>`_ - pencils and editing puck turn on unexpectly
+- `CRAFTERCMS-1249 <http://issues.craftercms.org/browse/CRAFTERCMS-1249>`_ - Place in nav dialog blocks the modal with overlay and user is unable to do anything
+- `CRAFTERCMS-1250 <http://issues.craftercms.org/browse/CRAFTERCMS-1250>`_ - Static key-value pairs datasource not sending the right options parameter
+- `CRAFTERCMS-1252 <http://issues.craftercms.org/browse/CRAFTERCMS-1252>`_ - schedule item doesn't show in review queue
+- `CRAFTERCMS-1254 <http://issues.craftercms.org/browse/CRAFTERCMS-1254>`_ - static values data source text is white on white, not usable
+- `CRAFTERCMS-1255 <http://issues.craftercms.org/browse/CRAFTERCMS-1255>`_ - dnd does not save on new component
+- `CRAFTERCMS-1256 <http://issues.craftercms.org/browse/CRAFTERCMS-1256>`_ - Alfresco session times out early
+- `CRAFTERCMS-1259 <http://issues.craftercms.org/browse/CRAFTERCMS-1259>`_ - Refreshing the all sites dashboard logs out the user
+- `CRAFTERCMS-1263 <http://issues.craftercms.org/browse/CRAFTERCMS-1263>`_ - Preview no longer loads after 'Save & Close'
+- `CRAFTERCMS-1265 <http://issues.craftercms.org/browse/CRAFTERCMS-1265>`_ - Admin Console: Content Types: the screen is disabled after clicking a menu link twice
+- `CRAFTERCMS-1268 <http://issues.craftercms.org/browse/CRAFTERCMS-1268>`_ - Cannot create a new content
+- `CRAFTERCMS-1270 <http://issues.craftercms.org/browse/CRAFTERCMS-1270>`_ - Unrelated error logs coming out while opening the 'Choose Content Type' dialog
+- `CRAFTERCMS-1271 <http://issues.craftercms.org/browse/CRAFTERCMS-1271>`_ - A random pop-up displays upon changing presets in preview tools
+- `CRAFTERCMS-1272 <http://issues.craftercms.org/browse/CRAFTERCMS-1272>`_ - Updating template doesn't refresh the preview automatically
+- `CRAFTERCMS-1273 <http://issues.craftercms.org/browse/CRAFTERCMS-1273>`_ - No edit information is present in the tooltip window
+- `CRAFTERCMS-1274 <http://issues.craftercms.org/browse/CRAFTERCMS-1274>`_ - Paste doesn't work properly
+- `CRAFTERCMS-1275 <http://issues.craftercms.org/browse/CRAFTERCMS-1275>`_ - Paste option shouldn't be displayed by default
+- `CRAFTERCMS-1276 <http://issues.craftercms.org/browse/CRAFTERCMS-1276>`_ - 'Create Template' from the site dropdown doesn't create a template file
+- `CRAFTERCMS-1277 <http://issues.craftercms.org/browse/CRAFTERCMS-1277>`_ - admin approves page for scheduled launch, item shows scheduled on recent activity but does not show in scheduled items list
+- `CRAFTERCMS-1279 <http://issues.craftercms.org/browse/CRAFTERCMS-1279>`_ - can't schedule / approve from preview
+- `CRAFTERCMS-1284 <http://issues.craftercms.org/browse/CRAFTERCMS-1284>`_ - The site dropdown and my recent activity do not reflect updates
+- `CRAFTERCMS-1287 <http://issues.craftercms.org/browse/CRAFTERCMS-1287>`_ - Cut & Paste deletes all the contents of the folder the document was cut from
+- `CRAFTERCMS-1294 <http://issues.craftercms.org/browse/CRAFTERCMS-1294>`_ - Admin Console: Content Types: dropping a new field doesn't work properly
+- `CRAFTERCMS-1297 <http://issues.craftercms.org/browse/CRAFTERCMS-1297>`_ - spin graphic on duplicate from site content does not follow standard
+- `CRAFTERCMS-1299 <http://issues.craftercms.org/browse/CRAFTERCMS-1299>`_ - Disk repository creates root as a file instead of folder on windows box
+- `CRAFTERCMS-1302 <http://issues.craftercms.org/browse/CRAFTERCMS-1302>`_ - adding xml files and maybe static assets to disk repo direct shows them locked via UI and user cannot do anything to them
+- `CRAFTERCMS-1303 <http://issues.craftercms.org/browse/CRAFTERCMS-1303>`_ - Zip install's Solr does not start due to missing folder
+- `CRAFTERCMS-1306 <http://issues.craftercms.org/browse/CRAFTERCMS-1306>`_ - Editing content and drag-drop do not work in CHROME on IE
+- `CRAFTERCMS-1307 <http://issues.craftercms.org/browse/CRAFTERCMS-1307>`_ - delete dialog does not work
+
+^^^^^^^^^^^^
+Improvements
+^^^^^^^^^^^^
+
+- `CRAFTERCMS-777 <http://issues.craftercms.org/browse/CRAFTERCMS-777>`_ - There should be html response type from groovy script
+- `CRAFTERCMS-819 <http://issues.craftercms.org/browse/CRAFTERCMS-819>`_ - Improve alter table scripts not to run every time on startup
+- `CRAFTERCMS-841 <http://issues.craftercms.org/browse/CRAFTERCMS-841>`_ - Refactor setting system processing for bulk operations
+- `CRAFTERCMS-952 <http://issues.craftercms.org/browse/CRAFTERCMS-952>`_ - JavaScripts and CSS for SUI should contain the version in the name
+- `CRAFTERCMS-953 <http://issues.craftercms.org/browse/CRAFTERCMS-953>`_ - JavaScripts for Studio should contain the version in the name
+- `CRAFTERCMS-1004 <http://issues.craftercms.org/browse/CRAFTERCMS-1004>`_ - Add select all, unselect all TO EACH dashboard on site dashboard
+- `CRAFTERCMS-1009 <http://issues.craftercms.org/browse/CRAFTERCMS-1009>`_ - Re-work drag and drop ICE
+- `CRAFTERCMS-1010 <http://issues.craftercms.org/browse/CRAFTERCMS-1010>`_ - improve nested forms experience
+- `CRAFTERCMS-1014 <http://issues.craftercms.org/browse/CRAFTERCMS-1014>`_ - Do not allow user to leave content type editor if changes are unsaved without CONFIRM
+- `CRAFTERCMS-1031 <http://issues.craftercms.org/browse/CRAFTERCMS-1031>`_ - improve channel preview
+- `CRAFTERCMS-1033 <http://issues.craftercms.org/browse/CRAFTERCMS-1033>`_ - footer copyright date is 2014
+- `CRAFTERCMS-1057 <http://issues.craftercms.org/browse/CRAFTERCMS-1057>`_ - style code edit window.
+- `CRAFTERCMS-1071 <http://issues.craftercms.org/browse/CRAFTERCMS-1071>`_ - Should reduce log level of loading blueprints
+- `CRAFTERCMS-1078 <http://issues.craftercms.org/browse/CRAFTERCMS-1078>`_ - Form should open ON TOP of site content
+- `CRAFTERCMS-1081 <http://issues.craftercms.org/browse/CRAFTERCMS-1081>`_ - Form: File Name: No visual indication of the file name control disabled before clicking on 'Edit'
+- `CRAFTERCMS-1088 <http://issues.craftercms.org/browse/CRAFTERCMS-1088>`_ - Form: clicking on another page in preview while the form is open only refreshes the page in the background
+- `CRAFTERCMS-1104 <http://issues.craftercms.org/browse/CRAFTERCMS-1104>`_ - file-name pageNavOrder controls should not require user to enter variable name
+- `CRAFTERCMS-1129 <http://issues.craftercms.org/browse/CRAFTERCMS-1129>`_ - if you are the lock owner you shouldbe able to unlock the item without editing it
+- `CRAFTERCMS-1141 <http://issues.craftercms.org/browse/CRAFTERCMS-1141>`_ - when waiting for site create delay display a dialog saying creating site and show spinner
+- `CRAFTERCMS-1157 <http://issues.craftercms.org/browse/CRAFTERCMS-1157>`_ - closing the code editor should refresh, context nav and dashboards, and the preview not the HOST screen
+- `CRAFTERCMS-1177 <http://issues.craftercms.org/browse/CRAFTERCMS-1177>`_ - Approve to go live dialog UX needs better UX for scheduling
+- `CRAFTERCMS-1266 <http://issues.craftercms.org/browse/CRAFTERCMS-1266>`_ - create default fields for pages and components on new type
+- `CRAFTERCMS-1269 <http://issues.craftercms.org/browse/CRAFTERCMS-1269>`_ - Content exists check shouldn't print an error log
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+
+- `CRAFTERCMS-811 <http://issues.craftercms.org/browse/CRAFTERCMS-811>`_ - Select All in Dashboards
+- `CRAFTERCMS-871 <http://issues.craftercms.org/browse/CRAFTERCMS-871>`_ - Add skip dependencies flag to content items to disable dependency calculation for content
+- `CRAFTERCMS-1006 <http://issues.craftercms.org/browse/CRAFTERCMS-1006>`_ - SAML2 support
+- `CRAFTERCMS-1054 <http://issues.craftercms.org/browse/CRAFTERCMS-1054>`_ - clicking edit on a template js css or groovy from the dashboard or from the toolbar should open the editor
+- `CRAFTERCMS-1056 <http://issues.craftercms.org/browse/CRAFTERCMS-1056>`_ - add quick create plugin
+- `CRAFTERCMS-1158 <http://issues.craftercms.org/browse/CRAFTERCMS-1158>`_ - need common api method to invoke preview change without refresh
+- `CRAFTERCMS-1167 <http://issues.craftercms.org/browse/CRAFTERCMS-1167>`_ - right click create script or template depending on which folder you are in
+- `CRAFTERCMS-1174 <http://issues.craftercms.org/browse/CRAFTERCMS-1174>`_ - allow authors to insert templated HTML (STUBS) in RTE
+
+^^^^^^^^^^^^
+Other Issues
+^^^^^^^^^^^^
+
+- `CRAFTERCMS-810 <http://issues.craftercms.org/browse/CRAFTERCMS-810>`_ - SOLR upgrade - crafter-search
+- `CRAFTERCMS-945 <http://issues.craftercms.org/browse/CRAFTERCMS-945>`_ - Reactor integration for event processing and "preview aspect replacement"
+- `CRAFTERCMS-993 <http://issues.craftercms.org/browse/CRAFTERCMS-993>`_ - services for getContentTypes (All) and contentTypesForPath
+- `CRAFTERCMS-1011 <http://issues.craftercms.org/browse/CRAFTERCMS-1011>`_ - Fix content type editor styles
+- `CRAFTERCMS-1013 <http://issues.craftercms.org/browse/CRAFTERCMS-1013>`_ - yui YES, NO, and other simple dialogs are unstyled
+- `CRAFTERCMS-1015 <http://issues.craftercms.org/browse/CRAFTERCMS-1015>`_ - Fix search page styles
+- `CRAFTERCMS-1016 <http://issues.craftercms.org/browse/CRAFTERCMS-1016>`_ - Support editing components with ICE pencils
+- `CRAFTERCMS-1029 <http://issues.craftercms.org/browse/CRAFTERCMS-1029>`_ - Make blueprints service dynamic
+- `CRAFTERCMS-1034 <http://issues.craftercms.org/browse/CRAFTERCMS-1034>`_ - Style the tool tip
+- `CRAFTERCMS-1046 <http://issues.craftercms.org/browse/CRAFTERCMS-1046>`_ - Complete submit to publish dialog and workflow backend service
+- `CRAFTERCMS-1060 <http://issues.craftercms.org/browse/CRAFTERCMS-1060>`_ - clean up styles property sheet in content type editor
+- `CRAFTERCMS-1061 <http://issues.craftercms.org/browse/CRAFTERCMS-1061>`_ - Fix browse page styles
+- `CRAFTERCMS-1063 <http://issues.craftercms.org/browse/CRAFTERCMS-1063>`_ - submit to go live, go live dialogs should auto select the items show in the dialog
+- `CRAFTERCMS-1069 <http://issues.craftercms.org/browse/CRAFTERCMS-1069>`_ - style change template dialog
+- `CRAFTERCMS-1070 <http://issues.craftercms.org/browse/CRAFTERCMS-1070>`_ - style select content type dialog
+- `CRAFTERCMS-1074 <http://issues.craftercms.org/browse/CRAFTERCMS-1074>`_ - do not allow schedule for delete in submit dialogs
+- `CRAFTERCMS-1092 <http://issues.craftercms.org/browse/CRAFTERCMS-1092>`_ - groovy services for ordering navigation do not connect to a java service
+- `CRAFTERCMS-1094 <http://issues.craftercms.org/browse/CRAFTERCMS-1094>`_ - support SUBMIT for delete
+- `CRAFTERCMS-1115 <http://issues.craftercms.org/browse/CRAFTERCMS-1115>`_ - style upload dialog
+- `CRAFTERCMS-1116 <http://issues.craftercms.org/browse/CRAFTERCMS-1116>`_ - upload asset service write content does not work for YUI uploader, needs to be a page and have document.domain set
+- `CRAFTERCMS-1117 <http://issues.craftercms.org/browse/CRAFTERCMS-1117>`_ - write asset service does not invoke preview deploy
+- `CRAFTERCMS-1122 <http://issues.craftercms.org/browse/CRAFTERCMS-1122>`_ - drag and drop UX basics
+- `CRAFTERCMS-1137 <http://issues.craftercms.org/browse/CRAFTERCMS-1137>`_ - style the cancel dialog on the edit window
+- `CRAFTERCMS-1150 <http://issues.craftercms.org/browse/CRAFTERCMS-1150>`_ - style image upload dialog warning
+- `CRAFTERCMS-1197 <http://issues.craftercms.org/browse/CRAFTERCMS-1197>`_ - URL for Alfresco is hardcoded in repositoru
+- `CRAFTERCMS-1234 <http://issues.craftercms.org/browse/CRAFTERCMS-1234>`_ - Make zip install work on windows box
+- `CRAFTERCMS-1264 <http://issues.craftercms.org/browse/CRAFTERCMS-1264>`_ - check to make sure the email on workflow is functioning with default properties assuming the localhost server is running a non secure smpt2.5.0_Enterprise.rst
