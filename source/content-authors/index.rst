@@ -6,40 +6,41 @@ Content Authors
 How Crafter Works
 --------------
 .. include:: /includes/how-crafter-works.rst
+
 * Authors work in Crafter Studio
-** Web based application. There is nothing to install.
-** Crafter Studio is multi-tenant so you can manage as many sites as you need to
-** Studio provides a safe environment to make and preview content changes
-** All changes are versioned and audited
-** Once ready content is submitted to workflow for approval
+    * Web based application. There is nothing to install.
+    * Crafter Studio is multi-tenant so you can manage as many sites as you need to
+    * Studio provides a safe environment to make and preview content changes
+    * All changes are versioned and audited
+    * Once ready content is submitted to workflow for approval
 * On approval content is published to the live environment.
-** Content can be published immediately
-** Or on a schedule
+    * Content can be published immediately
+    * Or on a schedule
 * Crafter Studio can publish to anywhere including social networks however, we often Publish to Crafter Engine.
-** Crafter Engine is a high performance, Spring MVC based content delivery engine.
-** Crafter Engine delivers highly personalized HTML (and other markup) based content and Content APIS (Content as a Service).
-** Crafter Engine is multi-channel.  It supports Responsive Design and Adaptive Design as well as Content as API(s)
-** Crafter Engine is multi-tenant so you can deliver as many sites as you need to.
+    * Crafter Engine is a high performance, Spring MVC based content delivery engine.
+    * Crafter Engine delivers highly personalized HTML (and other markup) based content and Content APIS (Content as a Service).
+    * Crafter Engine is multi-channel.  It supports Responsive Design and Adaptive Design as well as Content as API(s)
+    * Crafter Engine is multi-tenant so you can deliver as many sites as you need to.
 
 --------------
 Logging in
 --------------
-To log in to Crafter Studio enter the following in the URL of your browser http://SERVERNAMEHERE/studio
-Enter your user name
-Enter your password
-Click Sign in
+To log in to Crafter Studio:
+* Enter the following in the URL of your browser http://SERVERNAMEHERE/studio
+* Enter your user name
+* Enter your password
+* Click "Sign in"
 
 Note: You can change the language used for the Studio UI by selecting a language on the sign in screen.
 
-OOPS!
-If you see this screen it means you have never signed in before or your cookies have been cleared.
-Don’t worry in a few moments you will be redirected to the sign in screen.
-
 
 --------------
-Navigating around Crafter Studio
+Navigating Around Crafter Studio
 --------------
+
 My Sites
+
+
 My Account
 Site Dashboard
 Preview

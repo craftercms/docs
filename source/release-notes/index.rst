@@ -1,5 +1,5 @@
 =======================
-Release Notes 
+Release Notes
 =======================
 
 .. include:: /release-notes/2-5-1.rst

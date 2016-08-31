@@ -21,6 +21,7 @@ procedures as well as a comprehensive reference section.
 	/site-administrators/index
 	/system-administrators/index
 	/release-notes/index
+	/roadmap/index
 	/contribute/index
 	/source-code
 	/get-support/index
