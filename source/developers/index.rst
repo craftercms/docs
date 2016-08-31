@@ -3,10 +3,10 @@ Developers
 **********
 
 Welcome Developers!  The great thing about developing with Crafter CMS is that you ALREADY HAVE most of the skills you need to get started.
-One of the great strengths of Crafter CMS is that it combines some of the industries best and well know technologies in a way that feels purpose built to craft and deliver great digital experiences.
-Crafter is built with Java, Spring MVC, Groovy, Freemarker, Solr, AngularJS, and XML.  With Crafter you are not learning and using some niche technology: you are bringing existing skills to the table or learning new skills you can leverage elsewhere.
+One of the great strengths of Crafter CMS is that it combines some of the industry's best and well know technologies in a way that feels purpose built to craft and deliver great digital experiences.
+Crafter is built with Java, Spring MVC, Groovy, Freemarker, Solr, AngularJS, and XML.  With Crafter you are not learning and using some niche technology: you are bringing existing skills to the table and learning new skills you can leverage elsewhere.
 
-Our developer documentation focuses on Crafter CMS specific topics.  Below is a short set of links to other documentation you might find useful:
+Our developer documentation focuses on Crafter CMS specific topics.  Below is a short set of links to other documentation for technology that we leverage which you might find useful:
 
 +----------------+---------------------------------------------+----------------------------------------------+
 | Attribute Name |             Usage                           | Links                                        |
