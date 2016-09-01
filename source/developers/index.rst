@@ -54,16 +54,16 @@ Advanced Developer Topics
 #########################
 
 This section goes beyond the basics to cover advanced topics like building queries, accessing services and extending the core platforms.
+
 .. toctree::
 	:maxdepth: 2
 	:titlesonly:
 
     content-inheritance
     services-guide
-	form-engine-control
     native-mobile-guide
-	extending-studio/index
-	rte-setup
+    rte-setup
+    extending-studio/index
 
 ##############################
 Project Specific Documentation
