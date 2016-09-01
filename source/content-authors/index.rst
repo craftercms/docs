@@ -38,14 +38,31 @@ Note: You can change the language used for the Studio UI by selecting a language
 Navigating Around Crafter Studio
 --------------
 
+^^^^^^^^^^
 My Sites
+^^^^^^^^^^
 
+.. todo:: Write up My Sites
 
+^^^^^^^^^^
 My Account
+^^^^^^^^^^
+
+.. todo:: Write up My Account
+
+
+^^^^^^^^^^
 Site Dashboard
+^^^^^^^^^^
+
+.. todo:: Write up Site Dashboard
+
+^^^^^^^^^^
 Preview
-Browse
-Search
+^^^^^^^^^^
+
+.. todo:: Write up Preview
+
 
 --------------
 Common Navigation Elements

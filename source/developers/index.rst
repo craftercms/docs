@@ -39,33 +39,30 @@ Beginner Developer Topics
 This section covers the basic topics you need to define a content type and render that content as part of a page, component or service.
 
 .. toctree::
-	:maxdepth: 2
+	:maxdepth: 1
 	:titlesonly:
 
-	content-modeling
-	in-context-editing
+    content-modeling
     templating-api
     custom-services-and-controllers
-    build-a-form
-	html-mobile-support
-	responsive-guide
+    in-context-editing
+    html-mobile-support
+    responsive-guide
 
 #########################
 Advanced Developer Topics
 #########################
 
-Looking to do something more advanced like extend Crafter Studio?  This section covers advanced topics and integrations.
-
+This section goes beyond the basics to cover advanced topics like building queries, accessing services and extending the core platforms.
 .. toctree::
 	:maxdepth: 2
 	:titlesonly:
 
+    content-inheritance
+    services-guide
 	form-engine-control
-	build-a-data-source
-	content-inheritance
-	native-mobile-guide
-	services-guide
-	extending-studio
+    native-mobile-guide
+	extending-studio/index
 	rte-setup
 
 ##############################
