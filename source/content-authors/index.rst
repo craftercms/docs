@@ -41,28 +41,59 @@ Navigating Around Crafter Studio
 ^^^^^^^^^^
 My Sites
 ^^^^^^^^^^
+My Sites is the first screen you will encounter after logging in to Crafter Studio.  This screen lists all of the websites you have been granted permission to.
+From this screen you can navigate to any site's preview, dashboard or live url.
 
-.. todo:: Write up My Sites
+You can get back to the My Sites dashboard by:
+* Clicking on the Crafter CMS Logo in the toolbar
+* Or selecting all sites in the site selector within the site content dropdown
+* Or logging out and logging back in
+
+^^^^^^^^^^
+My Sites (Admins)
+^^^^^^^^^^
+Crafter Studio administrators can also create and delete sites from this screen.
 
 ^^^^^^^^^^
 My Account
 ^^^^^^^^^^
+My Account is where you go to change your personal Crafter Studio settings like language or to change your password.
 
-.. todo:: Write up My Account
-
+To get to My Account:
+* Click on Account in the toolbar
+* Select settings in the dropdown
 
 ^^^^^^^^^^^^^^
 Site Dashboard
 ^^^^^^^^^^^^^^
+Each site has a Site Dashboard.  This screen is an overview of the workflow for that given site.  The site dashbaord has different widgets depending on your role.
 
-.. todo:: Write up Site Dashboard
+* Waiting for Approval
+    * Shows all items currently in workflow
+    * Viewable only to admins and publishers
+* Approved Scheduled Items
+    * Shows all items approved for a specific scheduled deployment date
+    * Viewable only to admins and publishers
+* Recently Published
+    * Shows all items that have been previously deployed
+    * Viewable only to admins and publishers
+* My Recent Activity
+    * Shows all items recently modified by the curent user
+    * Viewable by all users
+* Workflow Icon Guide
+    * Describes the meaning of workflow icons within Crafter Studio
+    * Viewable by all users
 
 ^^^^^^^^^^
 Preview
 ^^^^^^^^^^
 
-.. todo:: Write up Preview
-
+Every site has a preview.  This allows users to see, edit and test the site in a safe authoring sandbox prior to publishing changes.
+* Preivew is a fully functional site but in a safe-to-edit environment.
+* Toolbar shows workflow options for the current page
+* Author can change the type of preivew from one channel to another
+* Author can turn on in-context and drag and drop editing features
+* Author can change the persona used to view the site
 
 --------------------------
 Common Navigation Elements
