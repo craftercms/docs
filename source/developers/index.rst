@@ -74,3 +74,13 @@ Project Specific Documentation
 	:titlesonly:
 
 	projects/index
+
+####################
+Cookbook / Tutorials
+####################
+
+.. toctree::
+	:maxdepth: 2
+	:titlesonly:
+
+    	cook-books/index

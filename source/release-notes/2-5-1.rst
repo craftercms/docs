@@ -353,7 +353,7 @@ Bugs Fixed
 
 
 ^^^^^^^^^^
-Improvementa
+Improvements
 ^^^^^^^^^^
 
     * [CRAFTERCMS-326] - Need a notification in deployment failure
