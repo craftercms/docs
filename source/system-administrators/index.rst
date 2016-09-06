@@ -67,3 +67,4 @@ Other Activities
 	:titlesonly:
 
     	reindexing-content.rst
+        debugging-deployment.rst
