@@ -1,0 +1,493 @@
+----------------
+Crafter CMS 2.5.1
+----------------
+http://issues.craftercms.org/secure/ReleaseNote.jspa?projectId=10100&version=10203
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* Improved in-context editing
+* Save as draft
+* Improved code editing
+* Improved bulk upload with folder support
+* Multi-core Solr support
+
+
+^^^^^^^^^^
+Bugs Fixed
+^^^^^^^^^^
+    * [CRAFTERCMS-14] - Filesize is incorrect in file upload datasource
+    * [CRAFTERCMS-15] - The contextual nav doesn't expand when the browser window expands in Chrome
+    * [CRAFTERCMS-29] - The workflow cancellation dialog should be displayed upon editing a content in submitted state.
+    * [CRAFTERCMS-49] - line breaks cause invalid json response in content type config
+    * [CRAFTERCMS-88] - Admin username not showing as comment author
+    * [CRAFTERCMS-99] - Error with invalid ticket when user has just sent a moderationStatus updated.
+    * [CRAFTERCMS-107] - Loading page with content of moderation pending status shows yellow background for a split second
+    * [CRAFTERCMS-161] - Profile Admin - Error with enter on page
+    * [CRAFTERCMS-234] - Deleting an empty folder doesn't work
+    * [CRAFTERCMS-364] - Crafter Social not enforcing security on all requests
+    * [CRAFTERCMS-388] - System fails to insert entries to multiple locations for contents with long paths
+    * [CRAFTERCMS-587] - RTE: Cursor in HTML mode skips tags in IE (11 & Edge)
+    * [CRAFTERCMS-589] - RTE: Image upload in IE (11 & Edge) doesn't respect cursor position
+    * [CRAFTERCMS-850] - RTE inserted components do not show up in preview, although their content shows up in RTE when editing using web form
+    * [CRAFTERCMS-853] - RTE Components are not rendering due to broken path
+    * [CRAFTERCMS-972] - clicking refresh on URL http://127.0.0.1:8080/studio/ always forces a login
+    * [CRAFTERCMS-990] - publishing environments need to be orderd by config in dialogs
+    * [CRAFTERCMS-1025] - groovy based filters
+    * [CRAFTERCMS-1133] - Form: RTE: the cursor disappears when switching back to WYSIWYG
+    * [CRAFTERCMS-1165] - variable name in form editor should be a special prop type and now allow anything but A-Za-z0-9 _ and -
+    * [CRAFTERCMS-1170] - The system should not load dependencies that are in live status
+    * [CRAFTERCMS-1186] - Unable to delete groovy script
+    * [CRAFTERCMS-1207] - Paste not working on Properties Explorer for img-desktop-upload
+    * [CRAFTERCMS-1262] - Too much logging at info level without any proper context
+    * [CRAFTERCMS-1267] - Previewable mimetypes
+    * [CRAFTERCMS-1275] - Paste option shouldn't be displayed by default
+    * [CRAFTERCMS-1289] - Links not working in RTE
+    * [CRAFTERCMS-1291] - Static key value pair and configured list lose the list type
+    * [CRAFTERCMS-1292] - Page order opens at the bottom of the form
+    * [CRAFTERCMS-1316] - bulk upload on windows fails when files have more than one . in the name
+    * [CRAFTERCMS-1384] - Add < to RTE
+    * [CRAFTERCMS-1392] - Author unable to update image via upload image picker
+    * [CRAFTERCMS-1436] - Same sub directory name in alfresco creates an infinite loop in the preview sync
+    * [CRAFTERCMS-1440] - Crafter Profile user detail doesn't save in IE11 & Edge
+    * [CRAFTERCMS-1447] - Search not working properly with Solr 4.0 schema
+    * [CRAFTERCMS-1448] - Canned Search not working in Crafter 2.5
+    * [CRAFTERCMS-1455] - Copy/Paste repeats content (indefinitely) in hierarchy
+    * [CRAFTERCMS-1459] - server names with no dots do not accept crafterSite cookie
+    * [CRAFTERCMS-1472] - "Configured List of Values" Datasource not displaying "Data Type"
+    * [CRAFTERCMS-1474] - Item Selector adds an empty selected node when creating a new component.
+    * [CRAFTERCMS-1475] - Node selector, on create new option close the content form
+    * [CRAFTERCMS-1479] - 'Allow Resize' only allows resizing the height of RTE
+    * [CRAFTERCMS-1486] - Log Console doesn't work
+    * [CRAFTERCMS-1489] - $preview-url does not get merged by notification service
+    * [CRAFTERCMS-1490] - The language selection dropdown should be reduced
+    * [CRAFTERCMS-1492] - Level descriptor form in empty blueprint doesn't render properly
+    * [CRAFTERCMS-1494] - A big folder tree doesn't render properly in Image Browse
+    * [CRAFTERCMS-1496] - Search doesn't work in the authoring dashboard
+    * [CRAFTERCMS-1499] - Deleted items don't display properly in My Recent Activity
+    * [CRAFTERCMS-1501] - Assuming back to anonymous user doesn't work
+    * [CRAFTERCMS-1503] - 'Approve & Publish' should default the option to 'Items should go live now.'
+    * [CRAFTERCMS-1504] - The order of versions is incorrect in Version History
+    * [CRAFTERCMS-1505] - Version History doesn't clear out minor version upon go live
+    * [CRAFTERCMS-1508] - Infinite recursion occurring in the deployer with cycled dependencies
+    * [CRAFTERCMS-1510] - The Cancel confirmation dialog should render on top of the screen not within the form
+    * [CRAFTERCMS-1512] - Cut or Copy & Paste fails when pasting into a folder where another child with the same name exists
+    * [CRAFTERCMS-1514] - 'New', 'Locked' and 'System Processing' workflow state don't reflect to the dashboard widgets
+    * [CRAFTERCMS-1529] - The content remains in workflow queue when the content is deleted outside of Studio
+    * [CRAFTERCMS-1534] - Editing a scheduled asset puts the item in a conflict state
+    * [CRAFTERCMS-1535] - 'Edit' shouldn't be available for non-editable assets
+    * [CRAFTERCMS-1537] - Calendar doesn't display fully when the date time control is the last item in the form
+    * [CRAFTERCMS-1538] - Node selector, on create new option lose form data
+    * [CRAFTERCMS-1540] - 'Disabled' state doesn't reflect
+    * [CRAFTERCMS-1543] - Preview doesn't render properly in IE (11 & Edge)
+    * [CRAFTERCMS-1544] - 'Edit' displays a js error while opening a form in IE (11 & Edge)
+    * [CRAFTERCMS-1545] - Clicking 'Site Content' leaves the focusing outline around in IE (11 & Edge)
+    * [CRAFTERCMS-1547] - Cursor is not placed properly and continuously blinking in the editor in IE (11 & Edge)
+    * [CRAFTERCMS-1548] - Form doesn't complete loading when creating a new content in IE (11 & Edge)
+    * [CRAFTERCMS-1549] - Preview doesn't load due to a site not set error in IE (11 & Edge)
+    * [CRAFTERCMS-1550] - 'In-Context Edit' doesn't work in (11 & Edge)
+    * [CRAFTERCMS-1552] - Cannot edit template from the preview tool in (11 & Edge)
+    * [CRAFTERCMS-1553] - Page component doesn't rendering in (11 & Edge)
+    * [CRAFTERCMS-1560] - Components are listed twice in the Approved Scheduled Items widget
+    * [CRAFTERCMS-1561] - Taking an action on a live item before the system completes publishing leaves the item in the System Processing state
+    * [CRAFTERCMS-1563] - Different font size on web form when editing content
+    * [CRAFTERCMS-1564] - grouped checkboxes seem to be sharing configuration inside repeating group
+    * [CRAFTERCMS-1566] - Multiple errors while starting up a new instance of Crafter Studio
+    * [CRAFTERCMS-1567] - Cluster: newly created content type doesn't get sync'd through nodes
+    * [CRAFTERCMS-1568] - Cluster: changes from a node doesn't get deployed to previews of other nodes
+    * [CRAFTERCMS-1569] - Cluster: all nodes make a deployment while a master node is set
+    * [CRAFTERCMS-1570] - Duplicate doesn't load the form for author
+    * [CRAFTERCMS-1571] - Locking doesn't reflect to the site dropdown
+    * [CRAFTERCMS-1572] - Author cannot edit a content that was edited by admin
+    * [CRAFTERCMS-1573] - Newly created items appear as deleted
+    * [CRAFTERCMS-1575] - Descriptions of Text Area controls in forms is misaligned (pushed to the left)
+    * [CRAFTERCMS-1576] - Child pages being published appear to be empty folders
+    * [CRAFTERCMS-1577] - Invalid column title in the Recently Published widget
+    * [CRAFTERCMS-1578] - The Recently Published widget doesn't change the number of items to be displayed
+    * [CRAFTERCMS-1581] - The system logs an error when it's the first time editing page position
+    * [CRAFTERCMS-1582] - The system always generates CmisObjectNotFoundException when creating a new contnet
+    * [CRAFTERCMS-1583] - Solr update fails when a page contains more than 1 component
+    * [CRAFTERCMS-1585] - Unapproved comments shows in the blog when the social context is set to display approved comments only
+    * [CRAFTERCMS-1588] - Parent folders don't change to live after child content deployment
+    * [CRAFTERCMS-1589] - Publishing/Notification is blocked by an NPE
+    * [CRAFTERCMS-1590] - Exception while rendering RTE components
+    * [CRAFTERCMS-1594] - Social uses default values when tenant preferences are expired in the cache
+    * [CRAFTERCMS-1595] - Content expiration notification is not working
+    * [CRAFTERCMS-1602] - The date on approval request email is incorrect
+    * [CRAFTERCMS-1603] - Crafter Social Admin console displays all contexts that are not related to the admin user
+    * [CRAFTERCMS-1604] - Updating the profile image doesn't change to the new image immediately
+    * [CRAFTERCMS-1607] - Profile /tenant/names is returning all tenants even is the current user is not superadmin
+    * [CRAFTERCMS-1608] - Make Social Admin to be available to log other tenants different that default
+    * [CRAFTERCMS-1609] - Remove all PUT/DELETE from Social Admin console
+    * [CRAFTERCMS-1611] - Studio should not auto uncapitalize labels on site dashboard
+    * [CRAFTERCMS-1612] - Clicking on “Upload” button without choosing a file results in a pop-up error
+    * [CRAFTERCMS-1613] - Dots in image filename causes error in uploading
+    * [CRAFTERCMS-1615] - Loading Crafter Studio in IE11 does not set the site
+    * [CRAFTERCMS-1617] - Cut&paste does not work with alfresco repo
+    * [CRAFTERCMS-1618] - components panel fails when components panel config only has one component
+    * [CRAFTERCMS-1620] - 'Notify on Reply' does not send any notification
+    * [CRAFTERCMS-1622] - The system generates multiple warnings on non-existing contents upon publishing
+    * [CRAFTERCMS-1623] - Can't view page in Navigation Order to Edit
+    * [CRAFTERCMS-1624] - Problems with video looping and seeking
+    * [CRAFTERCMS-1625] - Make sure SecurityUtils.getCurrentAuthentication() doesn't fail with NPE when there's no current request
+    * [CRAFTERCMS-1630] - SolrQuery.setFieldsToReturn() should set the fl parameter as a comma-separated list
+    * [CRAFTERCMS-1633] - Studio 2.5.0 does not set anon profile for user on initial change of site as it should
+    * [CRAFTERCMS-1634] - Make the Crater Core and Engine REST API work with XML responses
+    * [CRAFTERCMS-1635] - Syntax error in sql query for object state table
+    * [CRAFTERCMS-1638] - Errors with Content Monitor Task
+    * [CRAFTERCMS-1639] - Unable to copy content from the areas of site the user has read access to
+    * [CRAFTERCMS-1640] - Exception while rendering RTE components
+    * [CRAFTERCMS-1641] - Crop button disabled when user zoom in/out of image uploaded
+    * [CRAFTERCMS-1642] - POST requests do not use UTF-8 encoding by default.
+    * [CRAFTERCMS-1647] - Cannot add duplicates in context-menu
+    * [CRAFTERCMS-1648] - XML flattener won't work for node-selector with multiple components
+    * [CRAFTERCMS-1649] - profile object is always null in preview mode for templates and controller scripts
+    * [CRAFTERCMS-1650] - make logback location configurable in properties file accessible in shared class path or tomcat config
+    * [CRAFTERCMS-1654] - selecting items in search does not work
+    * [CRAFTERCMS-1655] - Nesting components dropzones inside other component dropzones does not work properly
+    * [CRAFTERCMS-1656] - Secure attribute on cookies
+    * [CRAFTERCMS-1657] - content targeting rules on engine need an exclude rule.
+    * [CRAFTERCMS-1659] - Cut and Paste of components doesnt work
+    * [CRAFTERCMS-1661] - no feedback on deployment error on submit
+    * [CRAFTERCMS-1662] - deployment error gives no details
+    * [CRAFTERCMS-1665] - Crafter Studio redirects to an empty page.
+    * [CRAFTERCMS-1667] - Add service to clear cache by site by passing site id
+    * [CRAFTERCMS-1670] - Pluton blueprint has invalid paths for images
+    * [CRAFTERCMS-1671] - Username with blank space is causing error when trying to get user groups from alfresco repository
+    * [CRAFTERCMS-1672] - When a query param is added after ?page Edit template from the preview tools popup doesn't work
+    * [CRAFTERCMS-1674] - Author user can't delete content
+    * [CRAFTERCMS-1675] - Search Page - Contextual Nav (edit, delete, schedule...) is not working
+    * [CRAFTERCMS-1676] - Remove hard coded server and protocol references as well as external fonts from studio and blueprints
+    * [CRAFTERCMS-1677] - Changing component id breaks editing in Studio
+    * [CRAFTERCMS-1678] - Unflag fails with a javascript error
+    * [CRAFTERCMS-1679] - Security update on some social actions doesn't get reflected to the site
+    * [CRAFTERCMS-1683] - Data source doesn't display properly after focusing out
+    * [CRAFTERCMS-1695] - Clicking on 'View & Comment' icon doesn't take the viewer to the discussion area
+    * [CRAFTERCMS-1701] - NumberFormatException parsing version label on deployment
+    * [CRAFTERCMS-1702] - Comment box doesn't render randomly when viewing on mobile
+    * [CRAFTERCMS-1703] - A random error pop-up appears when accessing a page with social component
+    * [CRAFTERCMS-1706] - Paste and Delete items from site content is not working
+    * [CRAFTERCMS-1707] - Prevent posting comments while the 'POST' button is not enabled
+    * [CRAFTERCMS-1708] - studio puts password in clear when failing to get to alfresco
+    * [CRAFTERCMS-1709] - Bulk Go Live does not work for renamed items
+    * [CRAFTERCMS-1710] - Deleting a content fails with 500 error
+    * [CRAFTERCMS-1711] - 'Refresh' after page loads list comments the oldest first
+    * [CRAFTERCMS-1712] - User not able to delete directly when belongs to multiple groups including admin and author roles
+    * [CRAFTERCMS-1714] - Uploading a profile image with capitalized file extension fails
+    * [CRAFTERCMS-1715] - Users shouldn't be allowed to vote on their own comments
+    * [CRAFTERCMS-1718] - Open lastest functionality in site dropdown is failling when root-folder has multiple paths.
+    * [CRAFTERCMS-1720] - Publishing comments are not displayed in history
+    * [CRAFTERCMS-1721] - CmisObjectNotFoundException on unknown config.xml files
+    * [CRAFTERCMS-1722] - Contents are listed twice in My Recent Activity
+    * [CRAFTERCMS-1723] - Duplicate message tag in default notification-config.xml
+    * [CRAFTERCMS-1724] - Duplicate doesn't complete form loading
+    * [CRAFTERCMS-1726] - Canceling edit makes content not editable
+    * [CRAFTERCMS-1727] - cut paste results fails.  Item is deleted but not moved
+    * [CRAFTERCMS-1728] - The 'Approve for Publish' dialog doesn't prevent scheduling without a date & time
+    * [CRAFTERCMS-1729] - My Recent Activity doesn't render properly in IE11
+    * [CRAFTERCMS-1730] - Item type selection dropdowns are not vertically aligned in IE11
+    * [CRAFTERCMS-1733] - Mail requires authentication, setting authentication property does not work
+    * [CRAFTERCMS-1734] - EmailFactory should have a method with a replyTo parameter
+    * [CRAFTERCMS-1735] - Cut paste does not mark children as renamed when cutting page with children
+    * [CRAFTERCMS-1736] - Copy paste does not copy whole tree only root item
+    * [CRAFTERCMS-1737] - Dependency Checker Fails
+    * [CRAFTERCMS-1738] - The system doesn't prevent circular dependency loading
+    * [CRAFTERCMS-1742] - 'Request Publish' dialog should display content's internal names
+    * [CRAFTERCMS-1744] - Don't refresh screen, use event instead
+    * [CRAFTERCMS-1745] - Reject fails with NPE
+    * [CRAFTERCMS-1748] - channel preview loses current page when you change from one type to another.
+    * [CRAFTERCMS-1750] - An error appears while starting up Crafter Studio for the first time
+    * [CRAFTERCMS-1752] - on sites dashboard do not show the sites in the left col since the screen that shows when you click on it is not yet implemented
+    * [CRAFTERCMS-1753] - Create folder does show newly created folder in navigation menu
+    * [CRAFTERCMS-1754] - Site Search doesn't return correct results
+    * [CRAFTERCMS-1755] - Sort options in Site Search don't work
+    * [CRAFTERCMS-1756] - Cutting and pasting back to the old location fails
+    * [CRAFTERCMS-1762] - Upload Dimensionless ICO file fails
+    * [CRAFTERCMS-1763] - updating permissions through config console do not take effect
+    * [CRAFTERCMS-1770] - Clicking on "Insert Component" results in a blank screen
+    * [CRAFTERCMS-1771] - Switching between 2 different publishing views other than web renders the window bigger than the screen size
+    * [CRAFTERCMS-1772] - Site_Admin user unable to delete directly, must submit to delete
+    * [CRAFTERCMS-1774] - Incorrect pasted content with alfrescoext repo
+    * [CRAFTERCMS-1777] - canceling an edit when in a sub form cancels parent form edit and should not
+    * [CRAFTERCMS-1778] - Content type config not found
+    * [CRAFTERCMS-1780] - copy paste completes in UI before operation and item does not show up.  User has to refresh.
+    * [CRAFTERCMS-1781] - Remove sleep workaround in clipboard for copy paste completes in UI before operation and item does not show up.  User has to refresh.
+    * [CRAFTERCMS-1782] - copy/paste failed in a regular folder
+    * [CRAFTERCMS-1792] - When deleting and site and then creating it again, and error appears
+    * [CRAFTERCMS-1793] - Click on the pencil button while using "Insert Component" in RTE creates a blank frame
+    * [CRAFTERCMS-1794] - Exception in logger causes calling code to fail.
+    * [CRAFTERCMS-1795] - Top bar is blocking some of the text in Admin Console > Bulk Operations
+    * [CRAFTERCMS-1797] - copy paste operations is certain orders can create duplicate ID
+    * [CRAFTERCMS-1798] - change mysql col type in table cstudio_pagenavigationordersequence for col path to text
+    * [CRAFTERCMS-1801] - stop this constant error from job [WARN] Going to buffer response body of large or unknown size. Using getResponseBodyAsStream instead is recommended.
+    * [CRAFTERCMS-1802] - 'Permanently Delete' action getting 500 error
+    * [CRAFTERCMS-1803] - User needs to be able to collapse dashlets on studio publishing dashboard
+    * [CRAFTERCMS-1804] - Studio adds authoring server prefix to an image URL inserted in RTE
+    * [CRAFTERCMS-1806] - Canned text for rejection reasons is not being displayed
+    * [CRAFTERCMS-1807] - remove Raleway font family from Crafter Studio
+    * [CRAFTERCMS-1809] - Crafter cache does not work properly in multithreaded environment
+    * [CRAFTERCMS-1810] - small bugs with submission scheduled date/time dialog
+    * [CRAFTERCMS-1811] - studio did not send dependency for parent item on schedule/submit for approval
+    * [CRAFTERCMS-1813] - add expand collapse for each widget/panel on dashboard
+    * [CRAFTERCMS-1816] - crafter throws error when trying to copy to environment encounters object locked in alfresco
+    * [CRAFTERCMS-1818] - Components disappear on RTE
+    * [CRAFTERCMS-1821] - Browse for only one existing component on Drag and Drop is not working
+    * [CRAFTERCMS-1822] - The Service /api/1/content_store/descriptor.json is throwing an UnsupportedOperationException
+    * [CRAFTERCMS-1823] - Inserting a Table using the "table" plugin should make the table bigger
+    * [CRAFTERCMS-1827] - Studio: Publish issue after using cut and past
+    * [CRAFTERCMS-1829] - 'Save' and 'Cancel' button don't disappear after moving to another section in Admin Console
+    * [CRAFTERCMS-1832] - Editing a scheduled groovy item doesn't warn the user and also leave the script in Approved & Scheduled widget
+    * [CRAFTERCMS-1833] - The dashboard doesn't refresh after duplication
+    * [CRAFTERCMS-1834] - Deployment gets stuck when an item is missing from the repository
+    * [CRAFTERCMS-1835] - Delete modal window doesn't disable the whole screen when scrolled
+    * [CRAFTERCMS-1836] - Deleting a folder structure doesn't work properly
+    * [CRAFTERCMS-1838] - Path includes configuration doesn't work
+    * [CRAFTERCMS-1839] - Required checkmark doesn't appear for input controls after validation
+    * [CRAFTERCMS-1841] - Content-Type Form Editor, Do not replace variable name if already set
+    * [CRAFTERCMS-1844] - ItemSelector/Image/Asset select if path is too long text is not wrapped properly
+    * [CRAFTERCMS-1845] - Components remain locked after canceling edit from in-context edit
+    * [CRAFTERCMS-1846] - Node Item Selector, Create new does not add created content path but Id
+    * [CRAFTERCMS-1848] - RTE - List HTML Elements are creating an extra span with different styles
+    * [CRAFTERCMS-1850] - ICE-Pencils are visible on the top of the window when the components are non visible
+    * [CRAFTERCMS-1851] - create site preview sync fails in latest build due to cache exception
+    * [CRAFTERCMS-1852] - schedule for publish throws exception on fresh install
+    * [CRAFTERCMS-1853] - Checkbox group does not work properly on IE11
+    * [CRAFTERCMS-1855] - In Drag and Drop when the user cancel the form when it is creating a new component, the "draggable handler" stays visible
+    * [CRAFTERCMS-1856] - Save draft release lock and allow other users to edit the same file concurrenlty
+    * [CRAFTERCMS-1861] - save draft refreshes screen when opened from context nav right click
+    * [CRAFTERCMS-1863] - Dashboard sometimes does not expand fully
+    * [CRAFTERCMS-1864] - Locked contents appear as 'index.xml' in the site dropdown
+    * [CRAFTERCMS-1865] - Page templates submitted doesn't go live together with a content
+    * [CRAFTERCMS-1866] - Submitted to publish items remain in-progress right after the submission
+    * [CRAFTERCMS-1867] - Save & Close after duplicating a content doesn't refresh the screen
+    * [CRAFTERCMS-1868] - 'Current Page' disappears when user drags it to change the page order
+    * [CRAFTERCMS-1869] - Clicking 'Hide In-Progress Items' adds a scrollbar to the Items Waiting For Approval' widget
+    * [CRAFTERCMS-1870] - Saving a content type from Admin Console breaks form-definition.xml in IE 11
+    * [CRAFTERCMS-1872] - Persona doesn't change in IE11
+    * [CRAFTERCMS-1873] - Switching to another publishing channel freezes a site in IE 11
+    * [CRAFTERCMS-1874] - 'Save & Close' from preview blinks a form multiple times before closing it in IE 11
+    * [CRAFTERCMS-1876] - Drag and drop should not be available if page object in url cannot be loaded.
+    * [CRAFTERCMS-1877] - Studio on 2.5 fails to load editor menu when parameter is present in url
+    * [CRAFTERCMS-1878] - content on dashboard tries to load .xml instead of .html file on editor
+    * [CRAFTERCMS-1879] - My Recent Activty not appearing
+    * [CRAFTERCMS-1881] - The site dropdown cannot be expanded properly in Preview
+    * [CRAFTERCMS-1883] - The Dropdown control doesn't not render required mark properly
+    * [CRAFTERCMS-1885] - Studio should have a datasource that uses a connection
+    * [CRAFTERCMS-1887] - Engine should only use the child element during merging if it's not empty
+    * [CRAFTERCMS-1889] - Unable to send customized notifications requesting approval
+    * [CRAFTERCMS-1890] - Locked files are not displaying as locked on dashboard and other studio UI components
+    * [CRAFTERCMS-1895] - get-item.json returns content even when call has no current user info
+    * [CRAFTERCMS-1897] - crafter write content service does not complain/fail if user tries to write file when file is locked by another user in alfresco
+    * [CRAFTERCMS-1898] - Content Editor, Cancel without  changes does not release content lock
+    * [CRAFTERCMS-1899] - preview sync is happening on blueprint
+    * [CRAFTERCMS-1901] - File upload data source sets the file type based on the first dot encountered rather than the last
+    * [CRAFTERCMS-1902] - Files appear as published after deleting them and then uploading them through WebDav
+    * [CRAFTERCMS-1905] - Every keystroke grows the RTE.
+    * [CRAFTERCMS-1906] - If two users click on edit at the same time, the form will open in edit mode for both of them and when you go to save you get exception
+    * [CRAFTERCMS-1907] - Edit buttons should be DISABLED as soon as user clicks on them in UI.  Users with slow machines and networks are clicking on edit over and over and causing bugs
+    * [CRAFTERCMS-1908] - dates in repeat groups reset when you add another repeat element and the field is set to default to the current date
+    * [CRAFTERCMS-1909] - Save as draft allows you to save a URL that already exists
+    * [CRAFTERCMS-1910] - front end yahoo library fails to load while EDITing content
+    * [CRAFTERCMS-1912] - in some browsers the up-down button doesn't work (can't figure out why)
+    * [CRAFTERCMS-1913] - Open certain folders throws wcm-root-folder.js:1265 Uncaught ReferenceError: lockOwner is not defined
+    * [CRAFTERCMS-1914] - The comment section doesn't render when user access the page previously visited after a while
+    * [CRAFTERCMS-1915] - Unable to open external link in preview
+    * [CRAFTERCMS-1916] - Syntax not supported in Postgres mapping
+    * [CRAFTERCMS-1918] - Delete doesn't seem to be deleting metadata from the DB for a file
+    * [CRAFTERCMS-1919] - Save as Draft Through pencils is not working properly.
+    * [CRAFTERCMS-1920] - Can't scroll down until the end in large FTL file
+    * [CRAFTERCMS-1921] - Deployment widget does not show anything on dashboard
+    * [CRAFTERCMS-1924] - configure-list sorting is breaks if user select any sorting value.
+    * [CRAFTERCMS-1925] - If previewing a static-asset form modal does not close
+    * [CRAFTERCMS-1926] - Overlay is wrong when the page has scroll.
+    * [CRAFTERCMS-1927] - Studio does not update the dashboard when a page is Edited
+    * [CRAFTERCMS-1928] - AlfrescoContentRepository constantly prints  Content Not Found for path message for */index.xml files for things under /components/*
+    * [CRAFTERCMS-1933] - Dependencies which have been previously made live should not be published if not page specific
+    * [CRAFTERCMS-1934] - Can't have a HTML field that is also an _en field
+    * [CRAFTERCMS-1938] - ICE labels with spaces do not work
+    * [CRAFTERCMS-1939] - clicking addAnother in a repreat group is always jumping user to top of group, should take user to new item
+    * [CRAFTERCMS-1943] - Unable to browse & add image to form picker
+    * [CRAFTERCMS-1944] - Crafter deployer should not fatten nested pages or nested pages in components
+    * [CRAFTERCMS-1946] - Upload same image doesn't show image already exists message
+    * [CRAFTERCMS-1947] - Version History Info missing
+    * [CRAFTERCMS-1949] - publishing causes duplicate entry (at least MSQL, maybe others)
+    * [CRAFTERCMS-1951] - Dont refresh screen after delete items.
+    * [CRAFTERCMS-1952] - Admin console looses user session/information after saving content type
+    * [CRAFTERCMS-1954] - Get Item Versions not returning last modified date
+    * [CRAFTERCMS-1955] - FileNotFoundError on ./crafter/data/repo/security-config.xml
+    * [CRAFTERCMS-1957] - A scheduled groovy item remains in Approved Scheduled
+    * [CRAFTERCMS-1958] - Firefox, may be duplicate, Preview tools do not look right
+    * [CRAFTERCMS-1959] - Firefox, may be duplicate, page save and close does not work
+    * [CRAFTERCMS-1960] - Firefox, may be duplicate, preview/dashes does not update on save of template or controller
+    * [CRAFTERCMS-1961] - code editor for templates, js, css, and groovy block the last few lines from visibility
+    * [CRAFTERCMS-1962] - error on edit template from preview when no template is associated with page
+    * [CRAFTERCMS-1970] - Uploaded Images in RTE renders broken
+    * [CRAFTERCMS-1971] - Go Live and Schedule do not pull in dependencies
+    * [CRAFTERCMS-1974] - browse screen needs to overflow text in tree to right and allow user to scroll the tree left and right
+    * [CRAFTERCMS-1975] - name for all content in the folder disappears when any content is updated
+    * [CRAFTERCMS-1982] - When click on revert action located in history dialog, the service used to get content for "site content" is getting an old value.
+    * [CRAFTERCMS-1986] - Lock Action
+    * [CRAFTERCMS-1987] - wcm assets issue when there is no wcm root folder open.
+    * [CRAFTERCMS-1991] - when an item of the site content menu is removed and the preview bar is open, The preview bar disappeared and the wrong thing is that icon continue on (like it is open).
+    * [CRAFTERCMS-1992] - page parameter in url and context navigation bar does not update as user browses around site via preview
+    * [CRAFTERCMS-1993] - preview is not refreshing on save of edit template AND edit via context nav
+    * [CRAFTERCMS-1994] - AlfrescoContentRepository should release connections when doing direct HTTP method calls to Alfresco
+    * [CRAFTERCMS-1995] - Upload image from desktop datasource adds timestamp to the filename for preview but does not remove it before save
+    * [CRAFTERCMS-1996] - when user assumes persona, refresh signal should be sent to preview iframe
+    * [CRAFTERCMS-1997] - in preview right state is off after publish then edit
+    * [CRAFTERCMS-1998] - increase browse panel width
+    * [CRAFTERCMS-1999] - Assume Persona First Expand Issue
+    * [CRAFTERCMS-2001] - Group checkboxes does not render saved values if content-type is Component
+    * [CRAFTERCMS-2006] - FF: RTE jumps to top of editor on every key stroke
+    * [CRAFTERCMS-2007] - copy-paste bugs
+    * [CRAFTERCMS-2009] - Cut/Copy folder doesn't work properly.
+    * [CRAFTERCMS-2010] - content type attribute <content-as-folder>false</content-as-folder> is no longer being respected.  content with false is being created as a folder
+    * [CRAFTERCMS-2011] - Site content search doesn't display any items
+    * [CRAFTERCMS-2013] - scheduling dialog prevents user from scheduling a item for a time earlier in the day on a future date than the current time
+    * [CRAFTERCMS-2014] - template editor: variable names like this ${contentModel.file-name} wont work
+    * [CRAFTERCMS-2016] - file name control allows . to be entered by user
+    * [CRAFTERCMS-2017] - allow user to stretch a editing window vertically when it is open
+    * [CRAFTERCMS-2044] - Delete site fails with error message "message.deleteFailed"
+    * [CRAFTERCMS-2046] - double // in path names for dependencies like images causes duplicate key exception
+
+
+^^^^^^^^^^
+Improvements
+^^^^^^^^^^
+
+    * [CRAFTERCMS-326] - Need a notification in deployment failure
+    * [CRAFTERCMS-997] - One site's deployment failure shouldn't interfere other sites' deployment process
+    * [CRAFTERCMS-1105] - auto-generate system name for data sources so users dont have to
+    * [CRAFTERCMS-1143] - add edit controller to in-context edit panel
+    * [CRAFTERCMS-1235] - Do not allow users to save form defs with missing variable names
+    * [CRAFTERCMS-1236] - add role-path permissions to create type and change type
+    * [CRAFTERCMS-1238] - Browse Repository should be compatible with Datasource macros
+    * [CRAFTERCMS-1323] - yell at user if they try to save a content type with missing or invalid variable names
+    * [CRAFTERCMS-1325] - on code editor display the file name in the bar so coder knows what they are editing
+    * [CRAFTERCMS-1409] - add additional error handling on deployment processor base class
+    * [CRAFTERCMS-1411] - On form don't ask if cancel without save if the user hasn't changed something
+    * [CRAFTERCMS-1443] - Add deployment agent status and sync queue to admin console
+    * [CRAFTERCMS-1467] - The buttons in all windows should be aligned properly
+    * [CRAFTERCMS-1468] - Add a way to rename fields for search indexing
+    * [CRAFTERCMS-1498] - Delete window truncate file names too early
+    * [CRAFTERCMS-1520] - The system logs too granular information at INFO level
+    * [CRAFTERCMS-1521] - Submission comment doesn't get stored into the version history
+    * [CRAFTERCMS-1526] - Form height should be flexible to content size
+    * [CRAFTERCMS-1536] - The system shouldn't produce error messages when a content is deleted
+    * [CRAFTERCMS-1580] - Cluster: Provide a way to take over deployment from a slave node when the master node is down
+    * [CRAFTERCMS-1584] - There should be a warning for deleting a site
+    * [CRAFTERCMS-1598] - Make Crafter Search multi-tenant
+    * [CRAFTERCMS-1669] - add properties file to specify user and password to the default security provider
+    * [CRAFTERCMS-1681] - edit-content.css shouldn't set style without namespace
+    * [CRAFTERCMS-1684] - add $authoring-url as a parameter in notifications
+    * [CRAFTERCMS-1685] - Improve dependency calculation performance when submitting to Go Live
+    * [CRAFTERCMS-1696] - Create Ex Alfresco Repo bean that uses disk for getChildren
+    * [CRAFTERCMS-1731] - 'Edit controller' should display a message when no script exists
+    * [CRAFTERCMS-1741] - Make content panel adjustable
+    * [CRAFTERCMS-1743] - Make Preview Content puck a panel
+    * [CRAFTERCMS-1751] - Add a search configuration property to Authoring custom properties in the installer package
+    * [CRAFTERCMS-1759] - Improve preview sync for alfresco ext repository
+    * [CRAFTERCMS-1764] - Bulk upload dialog "Done" button is hard to see
+    * [CRAFTERCMS-1776] - make rejection message a macro in notification service rather than tacking message on at end
+    * [CRAFTERCMS-1800] - Change from military time on the Request/Approve/Schedule for publish
+    * [CRAFTERCMS-1814] - user should be able to log in by entering user name password and hitting enter
+    * [CRAFTERCMS-1815] - make default security provider read security config from XML file
+    * [CRAFTERCMS-1825] - add redirect on login screen when user times out or deep links
+    * [CRAFTERCMS-1837] - Database initialization improvements
+    * [CRAFTERCMS-1847] - WCM Browser should have the option explore content tree
+    * [CRAFTERCMS-1858] - WCM Root Folder and should maintain open / closed states for a user in a cookie across refresehs
+    * [CRAFTERCMS-1859] - When an RTE is the only object in the form it should not collapse/expand.  It should open to the full height of the content.
+    * [CRAFTERCMS-1860] - RTE's should not collapse on the user if they are using it and click save as draft
+    * [CRAFTERCMS-1862] - Add a browsePath property to Child Content datasource
+    * [CRAFTERCMS-1880] - 'Select All' checkbox should be unselected when one of available options is unselected
+    * [CRAFTERCMS-1896] - fix minor save as draft issues
+    * [CRAFTERCMS-1917] - small updates to date time widget
+    * [CRAFTERCMS-1923] - Add configurable caching properties
+    * [CRAFTERCMS-1929] - SERVICE LAYER: list all dependencies in publishing window when approving or submitting a publish
+    * [CRAFTERCMS-1931] - SERVICE LAYER: allow user to publish without dependencies
+    * [CRAFTERCMS-1932] - UI LAYER: allow user to publish without dependencies
+    * [CRAFTERCMS-1937] - disabled banner not working to spec
+    * [CRAFTERCMS-1948] - Crop tool should notify user if image exists and they are going to overwrite it
+    * [CRAFTERCMS-1963] - list the available variable names for the given content type in the content type editor
+    * [CRAFTERCMS-1965] - sites with white backgrounds are difficult to edit with white form
+    * [CRAFTERCMS-1973] - add submit/publish to right click in content nav
+    * [CRAFTERCMS-1978] - Create template after submit shouldn't reload the whole page but the content site
+    * [CRAFTERCMS-1979] - Revert shouldn't reload the whole page but the preview iframe.
+    * [CRAFTERCMS-1980] - Selecting more than one item on dasboard page, and then clicking an action is updating only one item
+    * [CRAFTERCMS-1981] - Reject action shouldn't reload the whole page.
+    * [CRAFTERCMS-1983] - Request Publish action shouldn't reload the whole page.
+    * [CRAFTERCMS-1984] - Assume Persona action
+    * [CRAFTERCMS-1985] - Edit Controller action shouldn't reload the whole page.
+    * [CRAFTERCMS-2000] - Normalize model variable names in Goovy and Freemarker
+    * [CRAFTERCMS-2003] - add .xml to list of types the wcm-assets-folder.js can edit
+
+^^^^^^^^^^
+New Features
+^^^^^^^^^^
+
+    * [CRAFTERCMS-1138] - Put tenant ID in all log entries as a independent parseable value
+    * [CRAFTERCMS-1139] - Crafter Search Client should provide a write API
+    * [CRAFTERCMS-1166] - MongoDB Connection Manager for engine
+    * [CRAFTERCMS-1444] - Add deployment jobs control center to admin console
+    * [CRAFTERCMS-1458] - Support sending approval emails to different lists based on configuration
+    * [CRAFTERCMS-1473] - Social user should be able to update comment
+    * [CRAFTERCMS-1597] - Crafter Search API needs to include read-write
+    * [CRAFTERCMS-1601] - Create a wizard for component creation
+    * [CRAFTERCMS-1605] - users need to be able to browse for existing component in drag and drop panel
+    * [CRAFTERCMS-1626] - Ability to limit what users see in pub queue, recently made live and, scheduled dashboard by role
+    * [CRAFTERCMS-1658] - Add a redirect URL option for content targeting
+    * [CRAFTERCMS-1660] - allow paths to be EXCLUDED from a ROOT folder in the site dropdown
+    * [CRAFTERCMS-1663] - Missing menu in Studio
+    * [CRAFTERCMS-1673] - Add a contentModel groovy variable who can be used instead of the crafterModel
+    * [CRAFTERCMS-1682] - Add ability to configure multiple paths (and canned search) for a root-folder in the site dropdown
+    * [CRAFTERCMS-1698] - add images to comments in SUI
+    * [CRAFTERCMS-1699] - Allow for threaded comments to SUI
+    * [CRAFTERCMS-1717] - Mirror content store Crafter Core service calls in Crafter Engine but without needing contextId
+    * [CRAFTERCMS-1747] - Put the script path in the log entries for Groovy Scripts
+    * [CRAFTERCMS-1779] - Search server should be able to read and write to different Solrs
+    * [CRAFTERCMS-1819] - Remember latest expand/collapse for widget/panel on dashboard
+    * [CRAFTERCMS-1820] - Expand/Collapse Form Engine
+    * [CRAFTERCMS-1903] - Be able to view component before approving it to go live
+    * [CRAFTERCMS-1935] - Create event to refresh all dashboards.
+    * [CRAFTERCMS-1969] - When an item is updated on content site, the service is taking some time to change the correct status
+    * [CRAFTERCMS-1988] - crafter logo on login screen and tool bar must be customizable via configuration in the repository
+    * [CRAFTERCMS-1989] - rebuild state tables capability
+    * [CRAFTERCMS-2027] - allow browse for component in RTE
+    * [CRAFTERCMS-2121] - user must be able to delete a content type
+
+
+
+^^^^^^^^^^
+Tasks
+^^^^^^^^^^
+
+    * [CRAFTERCMS-76] - Cleanup previous (old) deployment engine functionalities
+    * [CRAFTERCMS-193] - Inline Moderation Features
+    * [CRAFTERCMS-1237] - test merge strategy with index_country_region_town_storeID
+    * [CRAFTERCMS-1334] - change all copyrights in code to 2016
+    * [CRAFTERCMS-1556] - 4.2.x and 5.x cert of Oracle 12c v12.1.0.2
+    * [CRAFTERCMS-1586] - Social: Remove the mouse-over article icons and the Reveal/Disable floating menu
+    * [CRAFTERCMS-1652] - /api/1/services/api/1/deployment/get-available-publishing-channels.json called outside common api in approve JS.  refactor. All services live in common API
+    * [CRAFTERCMS-1668] - 2.4.x build with Alfresco 4.2.5
+    * [CRAFTERCMS-1686] - Render the terms of user agreement checkbox checked and enable the post button by default
+    * [CRAFTERCMS-1687] - Display mouse-over options by default
+    * [CRAFTERCMS-1688] - Do not change the background color upon mouse-over
+    * [CRAFTERCMS-1704] - Change comment date format to MMMM dd, yyyy
+    * [CRAFTERCMS-1705] - Clicking on 'Discussion' title shouldn't collapse the discussion area
+    * [CRAFTERCMS-1716] - Update profile image upload guidelines
+    * [CRAFTERCMS-1760] - Add 'Site Component' datasource
+    * [CRAFTERCMS-1773] - Document Crafter Studio Extension: Form Engine Control
+    * [CRAFTERCMS-1840] - complete save as draft features
+    * [CRAFTERCMS-1843] - FreeMarker API
+    * [CRAFTERCMS-1849] - Sonar Issue #AVNm803-SiH1M3JoLM68 - Resources should be closed
+    * [CRAFTERCMS-1886] - add favicon to studo
+    * [CRAFTERCMS-1888] - make sure every product is building the git revision number in to the MANIFEST-MF
+
+^^^^^^^^^^
+Sub Tasks
+^^^^^^^^^^
+    * [CRAFTERCMS-1799] - Make Crafter Search look for the config extension folder path through JNDI
+    * [CRAFTERCMS-1805] - Make Crafter Engine look for the config extension folder path through JNDI
+
+
