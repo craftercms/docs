@@ -4,8 +4,6 @@
 Build a Form Engine Data Source
 ===============================
 
-.. todo:: update
-
 ---------------------
 What is a Data Source
 ---------------------
@@ -19,7 +17,7 @@ Crafter Studio form controls should be written in a way that makes them independ
         :alt: Content Type Editor
         :align: center
 
-Form Engine controls are #5 in the image above.
+Form Engine datasources are #5 in the image above.
 
 -----------------------------------
 The anatomy of a Data Source Plugin
