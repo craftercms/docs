@@ -4,8 +4,6 @@
 Build a Form Engine Data Source
 ===============================
 
-.. todo:: update
-
 ---------------------
 What is a Data Source
 ---------------------
@@ -19,7 +17,7 @@ Crafter Studio form controls should be written in a way that makes them independ
         :alt: Content Type Editor
         :align: center
 
-Form Engine controls are #5 in the image above.
+Form Engine datasources are #5 in the image above.
 
 -----------------------------------
 The anatomy of a Data Source Plugin
@@ -347,3 +345,18 @@ Complext Example that uses AJAX to get data from external source:
 	     
 	});
 	CStudioAuthoring.Module.moduleLoaded("cstudio-forms-controls-configured-list", CStudioForms.Datasources.ConfiguredList);
+
+---------------------------------------------------------
+Summary
+---------------------------------------------------------
+
+A good place to start is looking at the control you want to use, for example the video picker. 
+
+**Location /STUDIO-WAR/components/cstudio-forms/controls/video-picker.js**
+
+When you want to build a data source there is a method called get interface. This method tells the system what the data source can help with. So using the same example, a video upload it returns video and thus the video picker can use that data source.
+
+**Location /STUDIO-WAR/components/cstudio-forms/data-sources/video-desktop-upload.js**
+  
+If you want to create a new datasource for the video picker, you basically copy and paste a similar datasource, then change the object class name, label and interface. Then in the project go to the the administration panel and change the configuration to load the new javascript file.
+
