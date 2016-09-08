@@ -48,6 +48,6 @@ Work in the deployment queue is entirely time based.  This is because you could 
 If there is a deployment issue - some reason content wont deploy it's usually best to fix the issue and let deployment proceed.  That said there may be times when you want to cancel deployment to an environment.
 
 Because of this, the way to cancel a deployment to a specific end point is to make sure that there are no records in the deployment queue that the target needs.  Options for achieving this includeL:
-* Modifying the DEPVERSION timestamp in the deployer to a later date or now to indicate it's fully up to date.
-* Chaning the timestamp on the items in the queue to some previous time (usually something obvious like a some date time in 1978)
-* Deleting the records in the deployment queue.
+    * Modifying the DEPVERSION timestamp in the deployer to a later date or now to indicate it's fully up to date.
+    * Chaning the timestamp on the items in the queue to some previous time (usually something obvious like a some date time in 1978)
+    * Deleting the records in the deployment queue.

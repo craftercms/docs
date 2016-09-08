@@ -43,6 +43,9 @@ Step 1: Create a REST Controller
 
     http.request( Method.POST ) {
         uri.path = "/activiti-rest/service/runtime/process-instances"
+        // ACTIVITI ENTERPRISE URL
+        // uri.path = "/activiti-app/api/enterprise/process-instances"
+
         requestContentType = ContentType.JSON
         body =  [ processDefinitionKey: "vacationRequest", variables:[  [name:"employeeName", value: "Russ"], [name:"numberOfDays", value: "5"],[name:"startDate", value:"10-08-2015 11:11"],[name:"vacationMotivation", value: "rest"]    ]]
 
