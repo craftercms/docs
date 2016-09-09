@@ -68,3 +68,4 @@ Other Activities
 
     	reindexing-content.rst
         debugging-deployment.rst
+        changing-the-studio-logo.rst
