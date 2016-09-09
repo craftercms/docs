@@ -1,3 +1,5 @@
+..  _install_from_zip:
+
 ============================
 Install Crafter CMS from Zip
 ============================
