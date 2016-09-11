@@ -1,3 +1,5 @@
+..  _developer_cookbooks:
+
 =====================
 Cookbooks / Tutorials
 =====================

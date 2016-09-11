@@ -2,9 +2,7 @@
 System Administrators
 *********************
 
-.. todo:: Write system admin part
-
-.. todo:: add a table of contents
+This guide is intended to provide system administrators with the information and access to the tools they need to install and maintain Crafter CMS components.
 
 -------------------
 System Requirements
