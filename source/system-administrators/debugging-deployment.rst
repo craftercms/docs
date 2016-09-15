@@ -14,6 +14,66 @@ Places Deployment Can Get Hung Up
 * Content can not be copied to the environment queue
 * Content cannot be pushed to the deployment target
 
+-----------------------------------------------------------
+Determine What is Waiting to be Copied to Environment Store
+-----------------------------------------------------------
+In the database, execute following query
+
+.. code-block:: sql
+
+    SELECT * FROM cstudio_copytoenvironment WHERE state = 'READY_FOR_LIVE' ORDER BY scheduleddate ASC
+
+The result of this query will contain all objects that are waiting to be copied to environment, including objects that are scheduled for some time in the future. To exclude objects that are scheduled for time in the future, use query that qualifies current time:
+
+.. code-block:: sql
+
+    SELECT * FROM cstudio_copytoenvironment WHERE state = 'READY_FOR_LIVE' AND scheduleddate < NOW() ORDER BY scheduleddate ASC
+
+Because Studio is multi-tenant result can be further filtered by site and environment:
+
+.. code-block:: sql
+
+    SELECT * FROM cstudio_copytoenvironment WHERE state = 'READY_FOR_LIVE' AND site = 'mysiteid' AND environment = 'myenvironment' AND scheduleddate < NOW() ORDER BY scheduleddate ASC
+
+If there is issue with environment queue query will return non-empty result set (excluding scheduled objects for some future time).
+At this point it is important to verify if environment queue job is still working. To verify if job is still active it is needed to turn on debug level of logging for following class ``org.craftercms.studio.impl.v1.service.deployment.job.DeployContentToEnvironmentStore``. If there is periodic activity in logs coming from this class. job is still active.
+If job is not active, Studio needs to be restarted.
+If job is still active, and deployment queue is not advancing there are two possibilities:
+
+1. Environment queue is stuck
+In the database, execute following query
+
+.. code-block:: sql
+
+    SELECT * FROM cstudio_copytoenvironment WHERE state = 'PROCESSING' AND site = 'mysiteid' AND environment = 'myenvironment' ORDER BY scheduleddate ASC
+
+The result gives a list of files that potentially are causing issue when processing environment queue.
+To unstuck queue and continue processing environment queue at same point where it got stuck (retry deploying content that is failing) execute following query
+
+.. code-block:: sql
+
+    UPDATE cstudio_copytoenvironment SET state = 'READY_FOR_LIVE' WHERE state = 'PROCESSING' AND site = 'mysiteid' AND environment = 'myenvironment'
+
+To unstuck queue cancel deploying content that caused issues execute following query
+
+.. code-block:: sql
+
+    UPDATE cstudio_copytoenvironment SET state = 'CANCELED' WHERE state = 'PROCESSING' AND site = 'mysiteid' AND environment = 'myenvironment'
+
+2. Environment queue is looping same content caused by error.
+Review log files to look for errors that cause environment queue to loop over same content. If not able to fix error it might be needed to cancel deployment for content that is causing errors
+
+.. code-block:: sql
+
+    UPDATE cstudio_copytoenvironment SET state = 'CANCELED' WHERE id = <queue id>
+
+Queue id can be obtained from one of following queries
+
+.. code-block:: sql
+
+    SELECT * FROM cstudio_copytoenvironment WHERE state = 'READY_FOR_LIVE' AND site = 'mysiteid' AND environment = 'myenvironment' AND scheduleddate < NOW() ORDER BY scheduleddate ASC
+    SELECT * FROM cstudio_copytoenvironment WHERE state = 'PROCESSING' AND site = 'mysiteid' AND environment = 'myenvironment' ORDER BY scheduleddate ASC
+
 ----------------------------------------
 Determine What is Waiting for Deployment
 ----------------------------------------
