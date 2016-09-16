@@ -14,3 +14,4 @@ Projects
     deployer/index
     profile/index
     social/index
+    qa/index
