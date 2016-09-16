@@ -141,3 +141,39 @@ using the global variable siteConfig. Nevertheless, most of the configuration pa
     ``<cronExpression>``.
 *   **jobs.job:** Specifies a single script job to be scheduled. The job path should be specified in ``<path>``, and the cron expression
     in ``<cronExpression>``.
+
+--------------------
+Spring Configuration
+--------------------
+
+Each site can also have it's own Spring application context per site, at Config > spring > application-context.xml. Just
+as with site.xml, beans can be overwritten under
+apache-tomcat/shared/classes/crafter/engine/extension/sites/{SITENAME}/spring/application-context.xml.
+The application context inherits from Engine's own service-context.xml, and any class in Engine's claspath can be used,
+besides Groovy classes declared under Classes > groovy.
+
+As an example, assuming you have defined a Groovy class under Classes > groovy > mypackage > MyClass.groovy, you can
+define the bean like this in the application-context.xml:
+
+.. code-block:: xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:context="http://www.springframework.org/schema/context"
+           xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+        <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" parent="crafter.properties”/>
+
+        <bean id="greeting" class="mypackage.MyClass">
+            <property name="myproperty" value="${myvalue}/>
+        </bean>
+
+    </bean>
+
+A ``org.springframework.context.support.PropertySourcesPlaceholderConfigurer`` (like above) can be specified in the
+context so that the properties of site.xml can be used as placeholders, like ``${myvalue}``. By making the placeholder
+configurer inherit from crafter.properties, you'll also have access to Engine's global properties (like ``crafter
+.engine.preview``).
