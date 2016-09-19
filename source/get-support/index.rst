@@ -3,7 +3,7 @@
 =======
 Support
 =======
-Crafter CMS is commercialå open source project.  Every single line of source code in Crafter CMS licensed under the GPLv3 and is publicly available at `Crafter CMS / GitHub <https://github.com/craftercms>`_ and is supported by our `the Crafter CMS developer community <http://craftercms.org>`_.
+Crafter CMS is commercial open source project.  Every single line of source code in Crafter CMS licensed under the GPLv3 and is publicly available at `Crafter CMS / GitHub <https://github.com/craftercms>`_ and is supported by our `the Crafter CMS developer community <http://craftercms.org>`_.
 
 Many organizations run extremely large, mission critical capabilities based on Crafter CMS components. They want piece of mind and production support.  Further they want to invest in the software they are relying so heavily on.  Crafter Software, the principal contributor/maintainer of Crafter CMS provides its customers with production and other services including:
 
