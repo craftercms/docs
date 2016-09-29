@@ -2,8 +2,8 @@
 Site Administrators
 ===================
 
-.. todo:: Write overview
-
+This section details activities related to site administration in Crafter CMS. The content is oriented towards Crafter CMS administration primarily through the Crafter Studio UI.
+ 
 .. toctree::
 	:maxdepth: 1
 
