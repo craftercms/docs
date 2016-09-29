@@ -2,4 +2,4 @@
 Source Code
 ===========
 
-.. todo:: link to source code
+Crafter Studio's source code is managed in GitHub: https://github.com/craftercms/studio2
