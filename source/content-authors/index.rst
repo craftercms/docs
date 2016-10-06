@@ -24,9 +24,9 @@ How Crafter Works
     * Crafter Engine is multi-channel.  It supports Responsive Design and Adaptive Design as well as Content as API(s)
     * Crafter Engine is multi-tenant so you can deliver as many sites as you need to.
 
---------------
+----------
 Logging in
---------------
+----------
 To log in to Crafter Studio:
 * Enter the following in the URL of your browser http://SERVERNAMEHERE/studio
 * Enter your user name
@@ -40,9 +40,9 @@ Note: You can change the language used for the Studio UI by selecting a language
 Navigating Around Crafter Studio
 --------------------------------
 
-^^^^^^^^^^
+^^^^^^^^
 My Sites
-^^^^^^^^^^
+^^^^^^^^
 My Sites is the first screen you will encounter after logging in to Crafter Studio.  This screen lists all of the websites you have been granted permission to.
 From this screen you can navigate to any site's preview, dashboard or live url.
 
@@ -51,9 +51,9 @@ You can get back to the My Sites dashboard by:
 * Or selecting all sites in the site selector within the site content dropdown
 * Or logging out and logging back in
 
-^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 My Sites (Admins)
-^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 Crafter Studio administrators can also create and delete sites from this screen.
 
 ^^^^^^^^^^
@@ -77,14 +77,22 @@ Widget level options.  Options are different on each widget
 Show count.  Some widgets allow the author to decide how many items they want to see in the widget
 Content "type" filter:  Some widgets allow you to filter them by a broad content type (All, Pages, Components, Documents)
 
-IMAGE
+.. image:: /_static/images/crafter-studio-dashboard.png
+    :height: 800px
+    :width: 800 px
+    :scale: 95 %
+    :align: center
 
 Ability to be selected. Selecting an item allows the user to interact with the selected items via the context nav
 A state icon which shows the type and current workflow status of the item
 Clicking on the item's name will take the user to preview if the object is previewable
 Edit link, clicking edit will check out the item and open the form for the item
 
-IMAGE
+.. image:: /_static/images/crafter-studio-dashboard-item-selected.png
+    :height: 900px
+    :width: 900 px
+    :scale: 95 %
+    :align: center
 
 
 * Waiting for Approval
@@ -106,9 +114,9 @@ The Icon guide breaks down icons in to their elements.  You have three basic ele
     * Viewable by all users
 
 
-^^^^^^^^^^
+^^^^^^^
 Preview
-^^^^^^^^^^
+^^^^^^^
 
 Every site has a preview.  This allows users to see, edit and test the site in a safe authoring sandbox prior to publishing changes.
 * Preview is a fully functional site but in a safe-to-edit environment.
@@ -201,21 +209,28 @@ The Site content menu/panel allows for browsing all site content in the system. 
 * The top level blocks "Pages, Components, Documents" can be hidden from users based on their privilege settings.
 * The context can be stretched and will remember where you set the length and width on your browser
 
-IMAGE
+.. image:: /_static/images/crafter-studio-dashboard-item-selected.png
+    :height: 900px
+    :width: 900 px
+    :align: center
 
 Clicking the main folders will toggle them open or closed.
 Root folders allow a user to drill in to a hierarchy of content. If the item is previewable it will also be clickable.
 Clicking on an item will take the author to a preview of the item.
+Also, tooltips featuring extended information will be available when hovering over any item in the Site Content Menu or on the dashboard.
 
-IMAGE
-
-Tooltips featuring extended information will be available when hovering over any item in the Site Content Menu or on the dashboard.
-
-IMAGE
+.. image:: /_static/images/crafter-studio-site-content-panel2.png
+    :height: 800px
+    :width: 800 px
+    :scale: 55%
+    :align: center
 
 Right-clicking on an item opens a contextual right click menu for that item.
 
-IMAGE
+.. image:: /_static/images/crafter-studio-contextual-right-click-menu.png
+    :height: 280px
+    :width: 280 px
+    :align: center
 
 Occasionally you have so many pages or components in your information architecture that it is not practical to list them or you simply want to provide your authors with a quick way to get to a specific search.
 For these use cases Crafter Studio's site dropdown IA folders support the configuration of dedicated searches.
@@ -238,28 +253,28 @@ In-Context based Editing
 ----------------
 Editing Controls
 ----------------
-Input boxes
-Text areas
-Rich text editors
-Date pickers
-Dropdowns
-Checkboxes
-Group checkboxes
-Image pickers
-Child content selectors
-File Selectors
-Repeat Groups
+* Input boxes
+* Text areas
+* Rich text editors
+* Date pickers
+* Dropdowns
+* Checkboxes
+* Group checkboxes
+* Image pickers
+* Child content selectors
+* File Selectors
+* Repeat Groups
 
 
 --------------------------
 Placing Content Components
 --------------------------
-Drop Zones
-Available components
-Placing new components
-Placing existing components
-Moving components around
-deleting components
+* Drop Zones
+* Available components
+* Placing new components
+* Placing existing components
+* Moving components around
+* deleting components
 
 -------------------------------
 Submitting Content for Approval
@@ -272,7 +287,7 @@ Publishing Content
 ------------------------
 Common Editing Questions
 ------------------------
-* I forgot my passowrd
+* I forgot my password
 
 * The template dictates the markup, how do I change the markup and CSS?
 
