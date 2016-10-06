@@ -23,7 +23,7 @@ Session Timeout
 ---------------
 
 Crafter Studio will time a user out after inactivity based on a number of factors
-	1. Application Server inactivity sesstings.  See: https://tomcat.apache.org/tomcat-7.0-doc/config/manager.html
+	1. Application Server inactivity settings.  See: https://tomcat.apache.org/tomcat-7.0-doc/config/manager.html
 	2. Crafter Studio Web.XML inactivity settings. By default, this timeout is set to 15 minutes
 
 .. code-block:: xml
