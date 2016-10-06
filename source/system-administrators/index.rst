@@ -64,6 +64,8 @@ Other Activities
 	:maxdepth: 2
 	:titlesonly:
 
+	rebuilding-studio-database.rst
+	debugging-search.rst
     	reindexing-content.rst
         debugging-deployment.rst
         changing-the-studio-logo.rst
