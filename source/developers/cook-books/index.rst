@@ -9,3 +9,4 @@ Cookbooks / Tutorials
 	:titlesonly:
 
         activiti/index
+        services/index
