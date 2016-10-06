@@ -13,6 +13,7 @@ This section details activities related to site administration in Crafter CMS. T
 	engine-site-configuration
 	engine-site-security-guide
 	deployment-configuration
+	drag-n-drop-configuration
 
 .. todo:: Authoring Configuration for a Site
 
