@@ -71,7 +71,7 @@ This section goes beyond the basics to cover advanced topics like building queri
     native-mobile-guide
     rte-setup
     extending-studio/index
-    creation-test-cases
+    projects/qa/creation-test-cases
 
 ##############################
 Project Specific Documentation
