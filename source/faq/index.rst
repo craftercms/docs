@@ -69,7 +69,7 @@ Crafter's tools enable an agile development methodology.  Many organizations cre
 How do I contribute to Crafter CMS?
 -----------------------------------
 
-You can find out more about contributing bug reports, code, documentations and tests here: :ref:`_contribute`
+You can find out more about contributing bug reports, code, documentations and tests here: :ref:`contribute`
 
 
 -------------------------------------
