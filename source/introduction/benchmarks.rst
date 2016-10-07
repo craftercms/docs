@@ -1,10 +1,11 @@
 ==========
 Benchmarks
 ==========
-.. todo:: Write Performance documentation
+
+This section details performance bench marks of Crafter CMS Components
 
 .. toctree::
     :maxdepth: 1
 
-Delivery node peformance metrics
+    benchmarks/crafter-engine.rst
 
