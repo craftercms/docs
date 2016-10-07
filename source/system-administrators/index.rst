@@ -50,20 +50,23 @@ QA/Production Environment
 	:maxdepth: 2
 	:titlesonly:
 
-	prod-environment/install-studio.rst
-    prod-environment/supported-platforms.rst
-	prod-environment/configure-studio-with-alfresco.rst
-	prod-environment/install-engine.rst
-	prod-environment/configure-engine-multi-tenancy.rst
-	prod-environment/configure-solr-replication.rst
+    	prod-environment/*
+    	prod-environment/supported-platforms.rst
+    	prod-environment/install-studio.rst
+    	prod-environment/configure-studio-with-alfresco.rst
+    	prod-environment/install-engine.rst
+    	prod-environment/configure-engine-multi-tenancy.rst
+    	prod-environment/configure-solr-replication.rst
 
--------------------------
+
+----------------
 Other Activities
--------------------------
+----------------
 .. toctree::
 	:maxdepth: 2
 	:titlesonly:
 
     	reindexing-content.rst
         debugging-deployment.rst
+        debugging-search.rst
         changing-the-studio-logo.rst
