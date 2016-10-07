@@ -33,6 +33,11 @@ Our developer documentation focuses on Crafter CMS specific topics.  Below is a 
 |                | |                                           |                                              |
 +----------------+---------------------------------------------+----------------------------------------------+
 
+.. todo:: Write overview
+    
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
 
 #########################
 Beginner Developer Topics
@@ -66,6 +71,7 @@ This section goes beyond the basics to cover advanced topics like building queri
     native-mobile-guide
     rte-setup
     extending-studio/index
+    projects/qa/creation-test-cases
 
 ##############################
 Project Specific Documentation
