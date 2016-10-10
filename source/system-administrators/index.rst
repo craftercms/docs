@@ -72,5 +72,5 @@ Other Activities
     	reindexing-content.rst
         debugging-deployment.rst
         debugging-search.rst
-        changing-the-studio-logo.rst
+        understanding-studio-environment-overrides.rst
         changing-the-studio-logo.rst
