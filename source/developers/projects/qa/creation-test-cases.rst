@@ -57,4 +57,206 @@ Consider this simple script to login into a crafter local site.
 
 3. Type this code in the class *LoginPage* Created
 
-.. code-block:: ruby
+.. code-block:: c
+
+   package pages;
+
+   import org.openqa.selenium.By;
+   import org.openqa.selenium.WebDriver;
+   import org.openqa.selenium.WebElement;
+   import CrafterTools.UIElementsPropertiesManager;
+   import CrafterTools.WebDriverManager;
+
+   public class LoginPage {
+
+    private WebDriverManager driverManager;
+    private UIElementsPropertiesManager uIElementsManager;
+    private WebDriver driver;
+    private String userNameTextBoxLocator;
+    private String passwordTextBoxLocator;
+    private String loginButtonLocator;
+    /**
+     * 
+     */
+    public LoginPage(WebDriverManager driverManager, UIElementsPropertiesManager UIElementsPropertiesManager) {
+        this.driverManager = driverManager;
+        this.driverManager.openConnection();
+        this.uIElementsManager = UIElementsPropertiesManager;
+        this.driver = this.driverManager.getDriver();
+        userNameTextBoxLocator = uIElementsManager.getSharedUIElementsLocators().getProperty("login.txtbox_UserName");
+        passwordTextBoxLocator = uIElementsManager.getSharedUIElementsLocators().getProperty("login.txtbox_Password");
+        loginButtonLocator = uIElementsManager.getSharedUIElementsLocators().getProperty("login.btn_Login");
+    }
+   public LoginPage(WebDriver driver) {
+
+      this.driver = driver;
+
+   }
+
+   // Set user name in textbox
+
+   public void setUserName(String strUserName) {
+      
+    WebElement userCrafter = driver.findElement(By.id(userNameTextBoxLocator));
+    userCrafter.sendKeys(strUserName);
+      
+
+   }
+
+   // Set password in password textbox
+
+   public void setPassword(String strPassword) {
+
+       WebElement pwdCrafter = driver.findElement(By.id(passwordTextBoxLocator));
+       pwdCrafter.sendKeys(strPassword);
+
+   }
+
+   // Click on login button
+
+   public void clickLogin() {
+
+       WebElement loginButton = driver.findElement(By.cssSelector(loginButtonLocator));
+       loginButton.click();
+
+   }
+
+   //Login to crafter
+   public void loginToCrafter(String strUserName, String strPasword) {
+
+      // Fill user name
+
+      this.setUserName(strUserName);
+
+      // Fill password
+
+      this.setPassword(strPasword);
+
+      // Click Login button
+
+      this.clickLogin();
+
+   }
+   public WebDriverManager getDriverManager() {
+      return driverManager;
+   }
+   public void setDriverManager(WebDriverManager driverManager) {
+      this.driverManager = driverManager;
+   }
+   public WebDriver getDriver() {
+      return driver;
+   }
+   public void setDriver(WebDriver driver) {
+      this.driver = driver;
+   }
+   
+
+   }
+
+4. Create a package with the name TestCases.
+
+.. image:: /_static/images/CreationTestCase4.png
+
+5. Create a testNG class with the name LoginTest in to the package TestCases.
+
+.. image:: /_static/images/CreationTestCase5.png
+
+6. Type this code in the class LoginTest Created.
+
+.. code-block:: c
+
+   package TestCases;
+
+   import org.openqa.selenium.By;
+   import org.openqa.selenium.WebDriver;
+   import org.testng.Assert;
+   import org.testng.annotations.AfterTest;
+   import org.testng.annotations.BeforeTest;
+   import org.testng.annotations.Test;
+   import CrafterTools.ConstantsPropertiesManager;
+   import CrafterTools.FilesLocations;
+   import CrafterTools.UIElementsPropertiesManager;
+   import CrafterTools.WebDriverManager;
+   import pages.HomePage;
+   import pages.LoginPage;
+   
+   public class LoginTest {
+   
+      WebDriver driver;
+   
+      LoginPage objLogin;
+   
+      HomePage objHomePage;
+   
+      private WebDriverManager driverManager;
+   
+      private LoginPage loginPage;
+   
+      private UIElementsPropertiesManager UIElementsPropertiesManager;
+   
+      private ConstantsPropertiesManager constantsPropertiesManager;
+   
+      private HomePage homePage;
+   
+      // The following code is for the QA needs to execute the test with phantomJS
+   
+      /*
+       * @BeforeTest public void setup() throws Exception { //Set phantomjs.exe
+       * executable file path using DesiredCapabilities. DesiredCapabilities
+       * capability = new DesiredCapabilities();
+       * capability.setCapability(PhantomJSDriverService.
+       * PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
+       * "/Users/gustavoortizalfaro/Documents/workspace/phantomjs-2.1.1-macosx/bin/phantomjs"
+       * ); driver = new PhantomJSDriver(capability);
+       * driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS); }
+       */
+   
+      // This code shows the UI and the QA can see the steps executing in real
+      // time.
+   
+      @BeforeTest
+      public void beforeTest() {
+         this.driverManager = new WebDriverManager();
+         this.UIElementsPropertiesManager = new CrafterTools.UIElementsPropertiesManager(
+               FilesLocations.UIELEMENTSPROPERTIESFILEPATH);
+         this.constantsPropertiesManager = new ConstantsPropertiesManager(FilesLocations.CONSTANTSPROPERTIESFILEPATH);
+         this.loginPage = new LoginPage(driverManager, this.UIElementsPropertiesManager);
+         this.homePage = new HomePage(driverManager, this.UIElementsPropertiesManager);
+      }
+   
+      @AfterTest
+      public void afterTest() {
+         driverManager.closeConnection();
+      }
+   
+      @Test(priority = 0)
+   
+      public void login_Test() {
+   
+         // login to application
+   
+         loginPage.loginToCrafter("admin", "1234");
+   
+         // wait for element is clickeable
+   
+         homePage.getDriverManager().driverWait();
+   
+         // Verify login is fine
+   
+         String bodyText = driverManager.getDriver().findElement(By.xpath("/html/body/ui-view/section/div/header/h1"))
+               .getText();
+         Assert.assertNotNull(bodyText.contains(bodyText));
+   
+      }
+   
+   }
+   
+7. Select the LoginTest.java and execute the test case with manual run.
+
+.. image:: /_static/images/CreationTestCase6.png
+
+8. Check the results of the execution.
+
+.. image:: /_static/images/CreationTestCase7.png
+
+
