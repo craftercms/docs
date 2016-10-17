@@ -28,6 +28,7 @@ Step 1: Create a REST Controller
 * Add the following code to the controller. 
 
 .. code-block:: groovy
+
     import org.craftercms.core.cache.CacheLoader
     import org.craftercms.core.service.CachingOptions
     import groovy.json.JsonSlurper
