@@ -1,3 +1,5 @@
+.. _documentation-template:
+
 ======================
 Documentation Template
 ======================
@@ -12,51 +14,84 @@ Text
 Style
 ^^^^^
 
-``monospace``
-_underline_
-*italics*
-**bold**
+``monospaced text is done using``  
+
+.. code-block:: restructured
+
+    ``monospace``
+
+
+*italics are done using*
+
+.. code-block:: restructured
+
+    *italics*
+
+**And finally bold using**
+
+.. code-block:: restructured
+
+    **bold**
 
 ^^^^^
 Links
 ^^^^^
 
-External URL: `URL <http://example.com>`_
-External URL: http://example.com
+External URL with Tag: `URL <http://example.com>`_
+
+.. code-block:: restructured
+
+	External URL with Tag: `URL <http://example.com>`_
+
+External URL without Tag: http://example.com
+
+.. code-block:: restructured
+
+	External URL without Tag: http://example.com
+
 Sphinx-doc reference: :ref:`content-view-templates`
+
+.. code-block:: restructured
+
+	Sphinx-doc reference: :ref:`content-view-templates`
+
 
 ^^^^^^^
 Anchors
 ^^^^^^^
 
-.. _documentation-template
+.. code-block:: restructured
+
+   .. _documentation-templates:
 
 ==================================================
 Titles, Sections, sub-sections and sub-subsections
 ==================================================
 
-=====
-Title
-=====
+.. code-block:: restructured
 
-Text...
-
--------
-Section
--------
-
-Text...
-
-^^^^^^^^^^^
-Sub-section
-^^^^^^^^^^^
-
-Text...
-
-Sub-sub-section
-^^^^^^^^^^^^^^^
-
-Text...
+	=====
+	Title
+	=====
+	
+	Text...
+	
+	-------
+	Section
+	-------
+	
+	Text...
+	
+	^^^^^^^^^^^
+	Sub-section
+	^^^^^^^^^^^
+	
+	Text...
+	
+	Sub-sub-section
+	^^^^^^^^^^^^^^^
+	
+	Text...
 
 ------------------
 Images and Figures
@@ -66,66 +101,91 @@ Images and Figures
 Image
 ^^^^^
 
-.. image:: /_static/images/admin-console-link.png
-        :width: 25%
-        :alt: Admin Console Link
-        :align: center
+.. code-block:: restructured
+
+	.. image:: /_static/images/admin-console-link.png
+	        :width: 25%
+	        :alt: Admin Console Link
+	        :align: center
 
 ^^^^^^
 Figure
 ^^^^^^
 
-.. figure:: /_static/images/create-content-type-3.png
-        :alt: Properties Explorer
-        :align: center
+.. code-block:: restructured
+
+	.. figure:: /_static/images/create-content-type-3.png
+	        :alt: Properties Explorer
+	        :align: center
 
 ---------------------
 Bullets and Numbering
 ---------------------
 
-Numbered bullets 1
-# lorem ipsum
-# lorem ipsum
-# lorem ipsum
-
-Numbered bullets 2
-#. lorem ipsum
-#. lorem ipsum
-#. lorem ipsum
-
+^^^^^^^
 Bullets
-* lorem ipsum
-* lorem ipsum
-* lorem ipsum
+^^^^^^^
 
+.. code-block:: restructured
+
+	* lorem ipsum
+	* lorem ipsum
+	* lorem ipsum
+
+^^^^^^^^^^^^^^^^
+Numbered bullets
+^^^^^^^^^^^^^^^^
+
+.. code-block:: restructured
+
+	#. lorem ipsum
+	#. lorem ipsum
+	#. lorem ipsum
 
 -------------------------
 Notes, Todos and Warnings
 -------------------------
 
-.. note:: Important note
+.. code-block:: restructured
 
-.. todo:: Todo
+	.. note:: Important note
 
-.. warning:: Warning!
+.. code-block:: restructured
+
+	.. seealso:: See also this :math:`\alpha`
+
+.. code-block:: restructured
+
+	.. todo:: Todo
+
+.. code-block:: restructured
+
+	.. warning:: Warning!
 
 ------
 Tables
 ------
 
-=============== ============================================================================================
-Short Column    Long Column
-=============== ============================================================================================
-Row 1 Column 1  Row 1 Column 2
-Row 2 Column 1  Row 2 Column 2
-=============== ============================================================================================
+.. code-block:: restructured
 
+	=============== ============================================================================================
+	Short Column    Long Column
+	=============== ============================================================================================
+	Row 1 Column 1  Row 1 Column 2
+	Row 2 Column 1  Row 2 Column 2
+	=============== ============================================================================================
 
 -----------
 Code Blocks
 -----------
 
-.. code-block:: html
+^^^^
+HTML
+^^^^
+
+.. code-block:: restructured
+
+	.. code-block:: html
 
         <#import "/templates/system/common/cstudio-support.ftl" as studio />
 
@@ -148,32 +208,40 @@ Code Blocks
                 </body>
         </html>
 
-.. code-block:: groovy
+^^^^^^
+Groovy
+^^^^^^
 
-    import org.craftercms.engine.service.context.SiteContext
+.. code-block:: restructured
 
-    import utils.DateUtils
+	.. code-block:: groovy
 
-    def now = DateUtils.formatDateAsIso(new Date())
-    def start = 0
-    def rows = 1000
-    def sort = "date_dt asc"
-    def query = searchService.createQuery()
-
-    query.setQuery(queryStr)
-
-    def events = []
-    if (searchResults.response) {
-        searchResults.response.documents.each {
-            events.add(event)
-        }
-    }
-
-    contentModel.events = events
+	import org.craftercms.engine.service.context.SiteContext
+	
+	import utils.DateUtils
+	
+	def now = DateUtils.formatDateAsIso(new Date())
+	def start = 0
+	def rows = 1000
+	def sort = "date_dt asc"
+	def query = searchService.createQuery()
+	
+	query.setQuery(queryStr)
+	
+	def events = []
+	if (searchResults.response) {
+		searchResults.response.documents.each {
+			events.add(event)
+		}
+	}
+	
+	contentModel.events = events
 
 ------------------------
 Include Another Document
 ------------------------
 
-.. include:: ../includes/unicode-checkmark.rst
+.. code-block:: restructured
+
+	.. include:: ../includes/unicode-checkmark.rst
 
