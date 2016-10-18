@@ -2,4 +2,4 @@
 Source Code
 ===========
 
-.. todo:: link to source code
+Crafter Social's source code is managed in github: https://github.com/craftercms/social

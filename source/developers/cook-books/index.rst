@@ -8,4 +8,6 @@ Cookbooks / Tutorials
 	:maxdepth: 2
 	:titlesonly:
 
+        active-cache/index
         activiti/index
+        services/index

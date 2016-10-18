@@ -4,8 +4,18 @@
    :class: compatibility
 
    * - Platform
+     - Version
      - Support
-   * - 1.7
+     - Notes
+   * - OpenJDK
+     - 1.7, 1.8
      - |checkmark|
-   * - 1.8
+     - 
+   * - Oracle JDK (HotSpot)
+     - 1.7, 1.8
      - |checkmark|
+     - 
+   * - IBM J9
+     - 1.7, 1.8
+     - |ex|
+     - Known class loader issue with Crafter Deployer http://issues.craftercms.org/browse/CRAFTERCMS-2157

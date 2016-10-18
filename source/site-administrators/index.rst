@@ -2,8 +2,8 @@
 Site Administrators
 ===================
 
-.. todo:: Write overview
-
+This section details activities related to site administration in Crafter CMS. The content is oriented towards Crafter CMS administration primarily through the Crafter Studio UI.
+ 
 .. toctree::
 	:maxdepth: 1
 
@@ -13,6 +13,7 @@ Site Administrators
 	engine-site-configuration
 	engine-site-security-guide
 	deployment-configuration
+	drag-n-drop-configuration
 
 .. todo:: Authoring Configuration for a Site
 
