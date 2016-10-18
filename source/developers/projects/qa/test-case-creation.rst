@@ -1,8 +1,8 @@
 .. _crafter-QA:
 
-===================
-Creation Test Cases
-===================
+==================
+Test Case Creation
+==================
 
 .. todo:: How to create a test case for *Crafter Studio*.
 
