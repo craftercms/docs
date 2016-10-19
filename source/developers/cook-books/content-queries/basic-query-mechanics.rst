@@ -27,7 +27,7 @@ Make a Lucene/Solr Query
 
 .. code-block:: groovy
 
-    def queryStatement = 'ccontent-type:"/component/article" AND author:"Russ Danner"'
+    def queryStatement = 'content-type:"/component/article" AND author:"Russ Danner"'
 
     def query = searchService.createQuery()
     query = query.setQuery(queryStatement)
