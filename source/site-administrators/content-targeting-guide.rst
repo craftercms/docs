@@ -45,8 +45,9 @@ configuration posted above:
     ``targeting.redirectToTargetedUrl`` is set to true, then instead the user is redirected first to mysite.com/es_CR/contact-us.
 
 It's important to point out that if a page exists several times under the same "family" of locales, like *en* (fallback), *es* and *es_CR*,
-the content is inherited following the path of the most general locale to the most specific one, so /site/website/es_CR/contact-us,
-would inherit and overwrite the content of /site/website/es/contact-us and /site/website/en/contact-us.
+and the merge strategy for the page is ``targetedContent``, the content is inherited following the path of the most general locale to the
+most specific one, so /site/website/es_CR/contact-us, would inherit and overwrite the content of /site/website/es/contact-us and
+/site/website/en/contact-us.
 
 -----------------------------------------
 Configuration for Custom Targeted Content

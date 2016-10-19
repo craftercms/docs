@@ -4,6 +4,20 @@
 Drag and Drop Configuration
 ===========================
 
+Drag and Drop configuration file defines the categories and their corresponding components for the drag and drop panel.
+
+To find this configuration xml through studio follow the next instructions:
+
+#. Click on Console Admin located in the Site Content.
+#. Choose Configuration from the menu.
+#. Select Preview Components Configurations.
+
+.. image:: /_static/images/dnd-configuration.png
+
+------
+Sample
+------
+
 .. code-block:: xml
     :caption: /cstudio/config/sites/SITENAME/preview-tools/components-config.xml
 
@@ -50,3 +64,7 @@ Drag and Drop Configuration
 	</config>
 
 .. todo:: Description
+
+.. todo:: Browse Functionality
+
+
