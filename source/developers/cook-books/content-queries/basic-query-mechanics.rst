@@ -25,6 +25,9 @@ Crafter CMS supports 3 specific types of content queries:
 Make a Lucene/Solr Query
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+The following code examples use the Crafter Search Service in Crafter Egnine to get content.
+You can find the interface for this service`HERE <https://github.com/craftercms/engine/blob/2.5.xhttps://github.com/craftercms/search/blob/2.5.x/crafter-search-api/src/main/java/org/craftercms/search/service/SearchService.java>`_:
+
 .. code-block:: groovy
 
     def queryStatement = 'content-type:"/component/article" AND author:"Russ Danner"'
@@ -38,15 +41,49 @@ Make a Lucene/Solr Query
 
     return items
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Make a Query Content Structure With Filter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Make a Query for Content Based on Structure
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. todo:: Provide example
+The following code examples use the Site Item Service in Crafter Egnine to get content.
+You can find the interface for this service`HERE <https://github.com/craftercms/engine/blob/2.5.x/src/main/java/org/craftercms/engine/service/SiteItemService.java>`_:
+
+.. code-block:: groovy
+
+    def topNavItems = [:]
+    def siteDir = siteItemService.getSiteTree("/site/website", 2)
+
+    if(siteDir) {
+        def dirs = siteDir.childItems
+        dirs.each { dir ->
+                def dirName = dir.getStoreName()
+                def dirItem = siteItemService.getSiteItem("/site/website/${dirName}/index.xml")
+                if (dirItem != null) {
+                    def dirDisplayName = dirItem.queryValue('internal-name')
+                       topNavItems.put(dirName, dirDisplayName)
+                }
+       }
+    }
+
+    return topNavItems
+
+
+Make a Query for Content Based on Structure with Filter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following code examples use the Site Item Service in Crafter Egnine to get content.
+You can find the interface for this service`HERE <https://github.com/craftercms/engine/blob/2.5.x/src/main/java/org/craftercms/engine/service/SiteItemService.java>`_:
+
+.. todo:: add custom filter example
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Make a Query Against Fields in a Content Object
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following code examples use the Site Item Service in Crafter Egnine to get content.
+You can find the interface for this service`HERE <https://github.com/craftercms/engine/blob/1596f4978b92f84327547f1efcb2206f36c06011
+>`_:
 
 .. code-block:: groovy
 
