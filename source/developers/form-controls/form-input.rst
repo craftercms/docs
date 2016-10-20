@@ -32,19 +32,13 @@ Configuration
 ====================== ===================================================================================
 Description/Purpose    Simple text input control
 
-Properties             Display Size: How much of the input to show on
-                       the author input form.
-                       Max Length: Maximum number of characters to
-                       accept as input.
-                       Read Only: Make field read-only (can't be
-                       changed by the author).
-                       Tokenize for Indexing: Make the object
-                       searchable by this field.
+Properties             - Display Size: How much of the input to show on the author input form.
+                       - Max Length: Maximum number of characters to accept as input.
+                       - Read Only: Make field read-only (can't be changed by the author).
+                       - Tokenize for Indexing: Make the object searchable by this field.
 
-Constraints            Required: Make field required to fill out.
-                       Match Pattern: Field must match a regex to
-                       be accepted.
-
+Constraints            - Required: Make field required to fill out.
+                       - Match Pattern: Field must match a regex to be accepted.
 Related Data Sources   None
 ====================== ===================================================================================
 
