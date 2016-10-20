@@ -4,6 +4,19 @@
 Input Control
 =============
 
+-------
+Example
+-------
+
+.. image:: /_static/images/form-control-input-example.png
+        :width: 50%
+        :alt: Form Control Input 1
+        :align: center
+
+-------------
+Configuration
+-------------
+
 .. image:: /_static/images/form-control-input-1.png
         :width: 50%
         :alt: Form Control Input 1
@@ -35,3 +48,5 @@ Constraints            Required: Make field required to fill out.
 Related Data Sources   None
 ====================== ===================================================================================
 
+.. todo:: link the above to the Pencil Tool and other subjects to help with cross navigation
+.. seealso:: Links to Pencil Tool, other relevant topics
