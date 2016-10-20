@@ -13,7 +13,7 @@ To get started with making your first contribution, chose a project in gitHub an
 Documentation
 -------------
 
-Documentation help is greatly appreciated. We use Sphinx-doc to build our documentation using the following high-level tempalte: :ref:`documentation-template`.
+Documentation help is greatly appreciated. We use Sphinx-doc to build our documentation using the following high-level tempalte: :ref:`documentation-standard`.
 
 -----------
 Source Code

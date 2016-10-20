@@ -1,7 +1,7 @@
-.. _documentation-template:
+.. _documentation-standard:
 
 ======================
-Documentation Template
+Documentation Standard
 ======================
 
 Please view the source of this document to view and follow the template.
@@ -172,6 +172,7 @@ Tables
 	Short Column    Long Column
 	=============== ============================================================================================
 	Row 1 Column 1  Row 1 Column 2
+
 	Row 2 Column 1  Row 2 Column 2
 	=============== ============================================================================================
 
@@ -187,26 +188,26 @@ HTML
 
 	.. code-block:: html
 
-        <#import "/templates/system/common/cstudio-support.ftl" as studio />
+        	<#import "/templates/system/common/cstudio-support.ftl" as studio />
 
-        <!DOCTYPE html>
-        <html lang="en">
-                <head>
-                        <!-- Basic Page Need
-                        ================================================== -->
-                        <meta charset="utf-8">
-                        <title>${contentModel.browser_title}</title>
-                        <meta name="description" content="${contentModel.meta_description}">
-                        <meta name="keywords" content="${contentModel.meta_keywords}">
-                </head>
-                <body>
-                        <div class="body" <@studio.iceAttr iceGroup="body"/>>
-                                ${contentModel.body_html}
-                        </div>
+        	<!DOCTYPE html>
+        	<html lang="en">
+        	        <head>
+        	                <!-- Basic Page Need
+        	                ================================================== -->
+        	                <meta charset="utf-8">
+        	                <title>${contentModel.browser_title}</title>
+        	                <meta name="description" content="${contentModel.meta_description}">
+        	                <meta name="keywords" content="${contentModel.meta_keywords}">
+        	        </head>
+        	        <body>
+        	                <div class="body" <@studio.iceAttr iceGroup="body"/>>
+        	                        ${contentModel.body_html}
+        	                </div>
 
-                        <#if (contentModel.analytics_script)??>${contentModel.analytics_script}</#if>
-                </body>
-        </html>
+        	                <#if (contentModel.analytics_script)??>${contentModel.analytics_script}</#if>
+        	        </body>
+        	</html>
 
 ^^^^^^
 Groovy
@@ -216,26 +217,26 @@ Groovy
 
 	.. code-block:: groovy
 
-	import org.craftercms.engine.service.context.SiteContext
-	
-	import utils.DateUtils
-	
-	def now = DateUtils.formatDateAsIso(new Date())
-	def start = 0
-	def rows = 1000
-	def sort = "date_dt asc"
-	def query = searchService.createQuery()
-	
-	query.setQuery(queryStr)
-	
-	def events = []
-	if (searchResults.response) {
-		searchResults.response.documents.each {
-			events.add(event)
+		import org.craftercms.engine.service.context.SiteContext
+		
+		import utils.DateUtils
+		
+		def now = DateUtils.formatDateAsIso(new Date())
+		def start = 0
+		def rows = 1000
+		def sort = "date_dt asc"
+		def query = searchService.createQuery()
+		
+		query.setQuery(queryStr)
+		
+		def events = []
+		if (searchResults.response) {
+			searchResults.response.documents.each {
+				events.add(event)
+			}
 		}
-	}
-	
-	contentModel.events = events
+		
+		contentModel.events = events
 
 ------------------------
 Include Another Document
