@@ -9,5 +9,5 @@ Crafter QA Automation Framework
 .. toctree::
 	:maxdepth: 1
 
-	creation-test-cases
+	test-case-creation
 	setup-qa-environment
