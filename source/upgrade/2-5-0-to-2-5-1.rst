@@ -1,0 +1,25 @@
+--------------------------
+Crafter CMS 2.5.1 to 2.5.2
+--------------------------
+
+Crafter Engine
+--------------
+
+^^^^^^^^^^^^^^
+Config Changes
+^^^^^^^^^^^^^^
+    * None
+
+^^^^^^^^^^^
+API Changes
+^^^^^^^^^^^
+
+Item Filters
+^^^^^^^^^^^^
+The interface for Item Filters has been updated to improve performance. Item Filter now passes lists of included and excluded items for reference by the current filter.
+
+=============== ============================================================================================
+Who is Impacted Any Java or Groovy code that implements `org.craftercms.core.service.ItemFilter`
+
+Action Required You will need to update your extension to meet the updated interface
+=============== ============================================================================================
