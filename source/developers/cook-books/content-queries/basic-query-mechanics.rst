@@ -26,7 +26,7 @@ Make a Lucene/Solr Query
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following code examples use the Crafter Search Service in Crafter Egnine to get content.
-You can find the interface for this service`HERE <https://github.com/craftercms/engine/blob/2.5.xhttps://github.com/craftercms/search/blob/2.5.x/crafter-search-api/src/main/java/org/craftercms/search/service/SearchService.java>`_:
+You can find the interface for this service `HERE <https://github.com/craftercms/engine/blob/2.5.xhttps://github.com/craftercms/search/blob/2.5.x/crafter-search-api/src/main/java/org/craftercms/search/service/SearchService.java>`_
 
 .. code-block:: groovy
 
@@ -46,7 +46,7 @@ Make a Query for Content Based on Structure
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following code examples use the Site Item Service in Crafter Egnine to get content.
-You can find the interface for this service`HERE <https://github.com/craftercms/engine/blob/2.5.x/src/main/java/org/craftercms/engine/service/SiteItemService.java>`_:
+You can find the interface for this service `HERE <https://github.com/craftercms/engine/blob/2.5.x/src/main/java/org/craftercms/engine/service/SiteItemService.java>`_
 
 .. code-block:: groovy
 
@@ -72,7 +72,7 @@ Make a Query for Content Based on Structure with Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following code examples use the Site Item Service in Crafter Egnine to get content.
-You can find the interface for this service`HERE <https://github.com/craftercms/engine/blob/2.5.x/src/main/java/org/craftercms/engine/service/SiteItemService.java>`_:
+You can find the interface for this service `HERE <https://github.com/craftercms/engine/blob/2.5.x/src/main/java/org/craftercms/engine/service/SiteItemService.java>`_
 
 .. todo:: add custom filter example
 
@@ -82,8 +82,7 @@ Make a Query Against Fields in a Content Object
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following code examples use the Site Item Service in Crafter Egnine to get content.
-You can find the interface for this service`HERE <https://github.com/craftercms/engine/blob/1596f4978b92f84327547f1efcb2206f36c06011
->`_:
+You can find the interface for this service `HERE <https://github.com/craftercms/engine/blob/2.5.x/src/main/java/org/craftercms/engine/service/SiteItemService.java>`_
 
 .. code-block:: groovy
 
