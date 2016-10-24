@@ -7,3 +7,5 @@ Solutions RESTful Services
 	:titlesonly:
 
         rendered-components-as-json
+        get-a-list-of-sites
+        get-site-pages
