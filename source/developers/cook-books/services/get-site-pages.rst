@@ -34,9 +34,11 @@ Step 1: Create a REST Controller
         dirs.each { dir ->
                 def dirName = dir.getStoreName()
                 def dirItem = siteItemService.getSiteItem("/site/website/${dirName}/index.xml")
+
                 if (dirItem != null) {
                     def dirDisplayName = dirItem.queryValue('internal-name')
-                       topNavItems.put(dirName, dirDisplayName)
+
+                    navItems.put(dirName, dirDisplayName)
                 }
        }
     }
