@@ -2,20 +2,19 @@
 Crafter CMS 2.5.1 to 2.5.2
 --------------------------
 
-Crafter Engine
---------------
+^^^^^^^^^^^^^^^^^
+1. Crafter Engine
+^^^^^^^^^^^^^^^^^
 
-^^^^^^^^^^^^^^
-Config Changes
-^^^^^^^^^^^^^^
+1.1. Config Changes
+^^^^^^^^^^^^^^^^^^^
     * None
 
-^^^^^^^^^^^
-API Changes
-^^^^^^^^^^^
+1.1. API Changes
+^^^^^^^^^^^^^^^^
 
-Item Filters
-^^^^^^^^^^^^
+**1.1.1. Item Filters**
+
 The interface for Item Filters has been updated to improve performance. Item Filter now passes lists of included and excluded items for reference by the current filter.
 
 =============== ============================================================================================
