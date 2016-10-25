@@ -14,6 +14,9 @@
 
 import sys
 import os
+
+sys.path.insert(0, os.path.abspath('_ext'))
+
 import shlex
 from datetime import date
 
@@ -38,6 +41,7 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
+    'edit_on_github',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -376,3 +380,8 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 
 # The default source code language for literals
 highlight_language = 'java'
+
+# Configure Edit on Github
+edit_on_github_project = 'craftercms/docs'
+edit_on_github_branch = 'master'
+edit_on_github_base_folder = 'source'
