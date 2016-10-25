@@ -4,8 +4,6 @@
 Build a Form Engine Data Source
 ===============================
 
-.. todo:: update
-
 ---------------------
 What is a Data Source
 ---------------------
@@ -19,7 +17,7 @@ Crafter Studio form controls should be written in a way that makes them independ
         :alt: Content Type Editor
         :align: center
 
-Form Engine controls are #5 in the image above.
+Form Engine datasources are #5 in the image above.
 
 -----------------------------------
 The anatomy of a Data Source Plugin
@@ -216,3 +214,149 @@ Add the datasources name to the list of data sources in the content type editor
 			<!--tool>...</tool -->
 		</tools>
 	</config>
+
+-----------------------------------------------------------------
+Complext Example that uses AJAX to get data from external source:
+-----------------------------------------------------------------
+
+.. code-block:: javascript
+
+	CStudioForms.Datasources.ConfiguredList = CStudioForms.Datasources.ConfiguredList ||  
+	function(id, form, properties, constraints)  {
+	       this.id = id;
+	       this.form = form;
+	       this.properties = properties;
+	       this.constraints = constraints;
+	    this.callbacks = [];
+	    var _self = this;
+	     
+	    for(var i=0; i<properties.length; i++) {
+	        var property = properties[i]
+	        if(property.name == "listName") {
+	            var cb = { 
+	                success: function(config) {
+	                    var values = config.values;
+	                    if(!values.length) {
+	                        values = [ values.value ];
+	                    }
+	                     
+	                    _self.list = values;
+	                     
+	                    for(var j=0; j<_self.callbacks.length; j++) {
+	                        _self.callbacks[j].success(values);
+	                    }
+	                },
+	                failure: function() {
+	                }
+	            };
+	             
+	            CStudioAuthoring.Service.lookupConfigurtion(
+	                    CStudioAuthoringContext.site, 
+	                    "/form-control-config/configured-lists/" + property.value + ".xml",
+	                    cb);
+	                 
+	        }
+	    }
+	     
+	    return this;
+	}
+	YAHOO.extend(CStudioForms.Datasources.ConfiguredList, CStudioForms.CStudioFormDatasource, {
+	    getLabel: function() {
+	        return "Configured List of Values";
+	    },
+	       getInterface: function() {
+	           return "item";
+	       },
+	       /*
+	     * Datasource controllers don't have direct access to the properties controls, only to their properties and their values.
+	     * Because the property control (dropdown) and the dataType property share the property value, the dataType value must stay
+	     * as an array of objects where each object corresponds to each one of the options of the control. In order to know exactly
+	     * which of the options in the control is currently selected, we loop through all of the objects in the dataType value 
+	     * and check their selected value.
+	     */
+	    getDataType : function getDataType () {
+	        var val = null;
+	        this.properties.forEach( function(prop) {
+	            if (prop.name == "dataType") {
+	                // return the value of the option currently selected
+	                prop.value.forEach( function(opt) {
+	                    if (opt.selected) {
+	                        val = opt.value;
+	                    }
+	                });
+	            }
+	        });
+	        return val;
+	    },
+	    getName: function() {
+	        return "configured-list";
+	    },
+	     
+	    getSupportedProperties: function() {
+	        return [{
+	            label: "Data Type",
+	            name: "dataType",
+	            type: "dropdown",
+	            defaultValue: [{ // Update this array if the dropdown options need to be updated
+	                value: "value",
+	                label: "",
+	                selected: true
+	            }, {
+	                value: "value_s",
+	                label: "String",
+	                selected: false
+	            }, {
+	                value: "value_i",
+	                label: "Integer",
+	                selected: false
+	            }, {
+	                value: "value_f",
+	                label: "Float",
+	                selected: false
+	            }, {
+	                value: "value_dt",
+	                label: "Date",
+	                selected: false
+	            }, {
+	                value: "value_html",
+	                label: "HTML",
+	                selected: false
+	            }]
+	        }, {
+	            label: "List Name",
+	            name: "listName",
+	            type: "string"
+	        }];
+	    },    
+	    getSupportedConstraints: function() {
+	        return [
+	            { label: "Required", name: "required", type: "boolean" }
+	        ];
+	    },
+	     
+	    getList: function(cb) {
+	        if(!this.list) {
+	            this.callbacks[this.callbacks.length] = cb;
+	        }
+	        else {
+	            cb.success(this.list);
+	        }
+	    },
+	     
+	});
+	CStudioAuthoring.Module.moduleLoaded("cstudio-forms-controls-configured-list", CStudioForms.Datasources.ConfiguredList);
+
+---------------------------------------------------------
+Summary
+---------------------------------------------------------
+
+A good place to start is looking at the control you want to use, for example the video picker. 
+
+**Location /STUDIO-WAR/components/cstudio-forms/controls/video-picker.js**
+
+When you want to build a data source there is a method called get interface. This method tells the system what the data source can help with. So using the same example, a video upload it returns video and thus the video picker can use that data source.
+
+**Location /STUDIO-WAR/components/cstudio-forms/data-sources/video-desktop-upload.js**
+  
+If you want to create a new datasource for the video picker, you basically copy and paste a similar datasource, then change the object class name, label and interface. Then in the project go to the the administration panel and change the configuration to load the new javascript file.
+

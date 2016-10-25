@@ -1,6 +1,7 @@
 build/*
 deploy.sh
 *.swp
+.DS_Store
 
 # IntelliJIdea files#
 *.iml
