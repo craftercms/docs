@@ -295,7 +295,7 @@ Consider this simple script to login into a crafter local site.
 
 .. image:: /_static/images/CreationTestCase3.png
 
-8. Type this code in the class *LoginPage* Created
+8. Type this code in the class *LoginPage* Created.
 
 .. code-block:: c
 
