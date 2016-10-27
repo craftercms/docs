@@ -4,7 +4,8 @@
 Test Case Creation
 ==================
 
-.. todo:: How to create a test case for *Crafter Studio*.
+
+
 
 .. toctree::
    :maxdepth: 1
@@ -46,16 +47,255 @@ Consider this simple script to login into a crafter local site.
 
 **4. How to create a Test Case for Crafter Studio?**
 
-1. Create a package with the name *Pages*.
+1. Create a package with the name *CrafterTools* in to the *src* package.
+
+.. image:: /_static/images/CreationTestCase8.png
+
+2. Create in to the *CrafterTools* package the following classes.
+
+*ConstantsPropertiesManager.java*
+
+.. code-block:: c
+
+   package CrafterTools;
+   
+   import java.io.FileInputStream;
+   import java.io.IOException;
+   import java.util.Properties;
+   
+   public class ConstantsPropertiesManager {
+   private String baseUrl;
+   private String webBrowser;
+   private Properties sharedExecutionConstants;
+
+   public ConstantsPropertiesManager(String filePath) {
+
+      this.sharedExecutionConstants = new Properties();
+      
+      try {
+         
+         sharedExecutionConstants.load(new FileInputStream(filePath));
+         
+         this.baseUrl = sharedExecutionConstants.getProperty("baseUrl");
+         this.webBrowser = sharedExecutionConstants.getProperty("webBrowser");
+         
+      } catch (IOException e) {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+      }
+   }
+
+   public String getBaseUrl() {
+      return baseUrl;
+   }
+
+   public void setBaseUrl(String baseUrl) {
+      this.baseUrl = baseUrl;
+   }
+
+   public String getWebBrowser() {
+      return webBrowser;
+   }
+
+   public void setWebBrowser(String webBrowser) {
+      this.webBrowser = webBrowser;
+   }
+
+   public Properties getSharedExecutionConstants() {
+      return sharedExecutionConstants;
+   }
+
+   public void setSharedExecutionConstants(Properties sharedExecutionConstants) {
+      this.sharedExecutionConstants = sharedExecutionConstants;
+   }
+   }
+
+*FilesLocations.java*
+
+.. code-block:: c
+
+   package CrafterTools;
+
+   public interface FilesLocations {
+
+    public static String UIELEMENTSPROPERTIESFILEPATH = "./SharedUIElements.properties";
+    public static String CONSTANTSPROPERTIESFILEPATH = "./ExecutionConstants.properties";
+    public static String DATAOFTHEEXECUTIONPATH = "./DataOfTheExecution.properties";
+   
+   }
+
+*UIElementsPropertiesManager.java*
+
+.. code-block:: c
+
+   package CrafterTools;
+   
+   import java.io.FileInputStream;
+   import java.io.IOException;
+   import java.util.Properties;
+   
+   public class UIElementsPropertiesManager {
+   Properties sharedUIElementsLocators;
+
+   public UIElementsPropertiesManager(String filePath) {
+      sharedUIElementsLocators = new Properties();
+      try {
+         sharedUIElementsLocators.load(new FileInputStream(filePath));
+      } catch (IOException e) {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+      }
+   }
+
+   public Properties getSharedUIElementsLocators() {
+      return sharedUIElementsLocators;
+   }
+
+   public void setSharedUIElementsLocators(Properties sharedUIElementsLocators) {
+      this.sharedUIElementsLocators = sharedUIElementsLocators;
+   }
+   
+   public Properties getSharedDataOfExecutionLocators() {
+      return sharedUIElementsLocators;
+   }
+
+   }
+
+*WebDriverManager.java*
+
+.. code-block:: c
+
+   package CrafterTools;
+   
+   import java.util.concurrent.TimeUnit;
+   
+   import org.openqa.selenium.WebDriver;
+   import org.openqa.selenium.chrome.ChromeDriver;
+   import org.openqa.selenium.firefox.FirefoxDriver;
+   import org.openqa.selenium.safari.SafariDriver;
+   
+   public class WebDriverManager {
+   WebDriver driver;
+   ConstantsPropertiesManager constantsPropertiesManager;
+
+   public void openConnection() {
+      constantsPropertiesManager = new ConstantsPropertiesManager(FilesLocations.CONSTANTSPROPERTIESFILEPATH);
+      String webBrowserProperty = constantsPropertiesManager.getSharedExecutionConstants().getProperty("webBrowser");
+
+      if (webBrowserProperty.equalsIgnoreCase("Chrome")) {
+
+         System.setProperty("webdriver.chrome.driver",
+               constantsPropertiesManager.getSharedExecutionConstants().getProperty("chromeExec"));
+         driver = new ChromeDriver();
+      } else if (webBrowserProperty.equalsIgnoreCase("FireFox"))
+         driver = new FirefoxDriver();
+      else if (webBrowserProperty.equalsIgnoreCase("Safari"))
+         driver = new SafariDriver();
+      else {
+         // if not recognized web browser, it run by default with Firefox
+         driver = new FirefoxDriver();
+      }
+
+      driver.get(constantsPropertiesManager.getSharedExecutionConstants().getProperty("baseUrl"));
+   }
+
+   public void closeConnection() {
+      this.driver.close();
+      this.driver.quit();
+   }
+
+   public WebDriver getDriver() {
+      return driver;
+   }
+
+   public void setDriver(WebDriver driver) {
+      this.driver = driver;
+   }
+
+   public void driverWait() {
+      long wait = Long.parseLong(constantsPropertiesManager.getSharedExecutionConstants().getProperty("defaultWaitTime"));
+      this.driver.manage().timeouts().implicitlyWait(wait, TimeUnit.SECONDS);
+      try {
+         Thread.sleep(wait);
+      } catch (InterruptedException ie1) {
+         ie1.printStackTrace();
+      }
+   }
+   }
+
+3. Once created classes should be displayed as following:
+
+.. image:: /_static/images/CreationTestCase9.png
+
+4. Create in to the *Main Project* (in my case "Crafter_Framework") package, the following java files.
+
+*common.properties*   
+
+.. code-block:: c
+
+   URL=http://localhost:8080/studio/#/login
+   NameField=username
+   PasswordField=password
+   SignIn=/html/body/div[2]/div/div/form/div/div[5]/div/button     
+   
+*DataOfTheExecution.properties*
+
+.. code-block:: c      
+
+   ##Login Page data##
+   
+   #referenced by xpath, selectors and id's
+   crafter.username = admin
+   crafter.password = 12345
+   
+*ExecutionConstants.properties*
+
+.. code-block:: c      
+
+   ##Project Constants##
+   
+   #BaseUrl for execution
+   baseUrl = http://localhost:8080/studio/#/login
+   
+   
+   #Web browser for execution
+   #values = Chrome,FireFox,Safari,IE
+   webBrowser = Safari
+   
+   #ChromeDriverPlugin location
+   chromeExec = /Users/gustavoortizalfaro/Documents/workspace/chromedriver
+   
+   #Default web driver wait
+   defaultWaitTime = 4000
+   
+   #Test user datasheetname
+   dataSheetNameTestUsers = TestUsers
+   dataRowIndexTestUser = 1   
+   
+*SharedUIElements.properties*   
+
+.. code-block:: c
+
+   ##Login Page Elements##
+   
+   #referenced by xpath, selectors and id's
+   login.txtbox_UserName = username
+   login.txtbox_Password = password
+   login.btn_Login = .btn.btn-primary
+   
+5. Once created java files should be displayed as following:  
+
+.. image:: /_static/images/CreationTestCase10.png
+ 
+6. Create a package with the name *Pages* in to the *src* package.
 
 .. image:: /_static/images/CreationTestCase2.png
 
-2. Create a testNG class with the name *LoginPage* in to the package *Pages*.
+7. Create a testNG class with the name *LoginPage* in to the package *Pages*.
 
 .. image:: /_static/images/CreationTestCase3.png
 
-
-3. Type this code in the class *LoginPage* Created
+8. Type this code in the class *LoginPage* Created
 
 .. code-block:: c
 
@@ -69,7 +309,7 @@ Consider this simple script to login into a crafter local site.
 
    public class LoginPage {
 
-    private WebDriverManager driverManager;
+   private WebDriverManager driverManager;
     private UIElementsPropertiesManager uIElementsManager;
     private WebDriver driver;
     private String userNameTextBoxLocator;
@@ -152,20 +392,22 @@ Consider this simple script to login into a crafter local site.
    
 
    }
+   
 
-4. Create a package with the name TestCases.
+
+9. Create a package with the name *TestCases* in to the *src* package..
 
 .. image:: /_static/images/CreationTestCase4.png
 
-5. Create a testNG class with the name LoginTest in to the package TestCases.
+10. Create a testNG class with the name *LoginTest* in to the package *TestCases*.
 
 .. image:: /_static/images/CreationTestCase5.png
 
-6. Type this code in the class LoginTest Created.
+11. Type this code in the class LoginTest Created.
 
 .. code-block:: c
 
-   package TestCases;
+   package testcases;
 
    import org.openqa.selenium.By;
    import org.openqa.selenium.WebDriver;
@@ -177,85 +419,68 @@ Consider this simple script to login into a crafter local site.
    import CrafterTools.FilesLocations;
    import CrafterTools.UIElementsPropertiesManager;
    import CrafterTools.WebDriverManager;
-   import pages.HomePage;
    import pages.LoginPage;
    
    public class LoginTest {
    
-      WebDriver driver;
+   WebDriver driver;
    
-      LoginPage objLogin;
+   LoginPage objLogin;
    
-      HomePage objHomePage;
    
-      private WebDriverManager driverManager;
    
-      private LoginPage loginPage;
+   private WebDriverManager driverManager;
    
-      private UIElementsPropertiesManager UIElementsPropertiesManager;
+   private LoginPage loginPage;
    
-      private ConstantsPropertiesManager constantsPropertiesManager;
+   private UIElementsPropertiesManager UIElementsPropertiesManager;
    
-      private HomePage homePage;
+   private ConstantsPropertiesManager constantsPropertiesManager;
    
-      // The following code is for the QA needs to execute the test with phantomJS
    
-      /*
-       * @BeforeTest public void setup() throws Exception { //Set phantomjs.exe
-       * executable file path using DesiredCapabilities. DesiredCapabilities
-       * capability = new DesiredCapabilities();
-       * capability.setCapability(PhantomJSDriverService.
-       * PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
-       * "/Users/gustavoortizalfaro/Documents/workspace/phantomjs-2.1.1-macosx/bin/phantomjs"
-       * ); driver = new PhantomJSDriver(capability);
-       * driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS); }
-       */
    
-      // This code shows the UI and the QA can see the steps executing in real
-      // time.
    
-      @BeforeTest
-      public void beforeTest() {
-         this.driverManager = new WebDriverManager();
-         this.UIElementsPropertiesManager = new CrafterTools.UIElementsPropertiesManager(
-               FilesLocations.UIELEMENTSPROPERTIESFILEPATH);
-         this.constantsPropertiesManager = new ConstantsPropertiesManager(FilesLocations.CONSTANTSPROPERTIESFILEPATH);
-         this.loginPage = new LoginPage(driverManager, this.UIElementsPropertiesManager);
-         this.homePage = new HomePage(driverManager, this.UIElementsPropertiesManager);
-      }
+   @BeforeTest
+   public void beforeTest() {
+      this.driverManager = new WebDriverManager();
+      this.UIElementsPropertiesManager = new CrafterTools.UIElementsPropertiesManager(
+            FilesLocations.UIELEMENTSPROPERTIESFILEPATH);
+      this.constantsPropertiesManager = new ConstantsPropertiesManager(FilesLocations.CONSTANTSPROPERTIESFILEPATH);
+      this.loginPage = new LoginPage(driverManager, this.UIElementsPropertiesManager);
+   }
    
-      @AfterTest
-      public void afterTest() {
-         driverManager.closeConnection();
-      }
+   @AfterTest
+   public void afterTest() {
+      driverManager.closeConnection();
+   }
    
-      @Test(priority = 0)
+   @Test(priority = 0)
    
-      public void login_Test() {
+   public void login_Test() {
    
-         // login to application
+      // login to application
    
-         loginPage.loginToCrafter("admin", "1234");
+      loginPage.loginToCrafter("admin", "1234");
    
-         // wait for element is clickeable
+      // wait for element is clickeable
    
-         homePage.getDriverManager().driverWait();
+      loginPage.getDriverManager().driverWait();
    
-         // Verify login is fine
+      // Verify login is fine
    
-         String bodyText = driverManager.getDriver().findElement(By.xpath("/html/body/ui-view/section/div/header/h1"))
-               .getText();
-         Assert.assertNotNull(bodyText.contains(bodyText));
-   
-      }
+      String bodyText = driverManager.getDriver().findElement(By.xpath("/html/body/ui-view/section/div/header/h1"))
+            .getText();
+      Assert.assertNotNull(bodyText.contains(bodyText));
    
    }
    
-7. Select the LoginTest.java and execute the test case with manual run.
+   }   
+   
+12. Select the LoginTest.java and execute the test case with manual run.
 
 .. image:: /_static/images/CreationTestCase6.png
 
-8. Check the results of the execution.
+13. Check the results of the execution.
 
 .. image:: /_static/images/CreationTestCase7.png
 
