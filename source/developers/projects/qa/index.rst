@@ -4,10 +4,9 @@
 Crafter QA Automation Framework
 ===============================
 
-.. todo:: All about the Automation Framework of Crafter Studio.
-
 .. toctree::
-	:maxdepth: 1
+   :maxdepth: 1
 
-	test-case-creation
-	setup-qa-environment
+   setup-qa-environment.rst
+   test-case-creation.rst
+   test-suite-configuration.rst   

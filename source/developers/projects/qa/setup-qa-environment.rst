@@ -4,7 +4,7 @@
 Setup the QA Environment
 ========================
 
-.. todo:: Configuration of the QA environment to Automation.
+
 
 .. toctree::
    :maxdepth: 1
