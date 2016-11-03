@@ -232,10 +232,15 @@ Right-clicking on an item opens a contextual right click menu for that item.
     :width: 280 px
     :align: center
 
-Occasionally you have so many pages or components in your information architecture that it is not practical to list them or you simply want to provide your authors with a quick way to get to a specific search.
-For these use cases Crafter Studio's site dropdown IA folders support the configuration of dedicated searches.
+Occasionally you have so many pages or components in your information architecture that it is not practical to list them or you simply want to
+provide your authors with a quick way to get to a specific search.
+For these use cases Crafter Studio's site dropdown IA folders support the configuration of dedicated searches. That configuration can be made
+by an administrator on the Crafter Studio Admin Console.
 
-IMAGE
+.. image:: /_static/images/crafter-studio-site-content-ia-folders.png
+    :height: 280px
+    :width: 280 px
+    :align: center
 
 --------------------
 Making Content Edits
