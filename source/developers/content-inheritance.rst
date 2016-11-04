@@ -85,8 +85,28 @@ Assume we have two objects, one called Parent and one called Child and they're s
 		</body>
 	</page>
 
-Crafter CMS will invoke the inheritance mechanics implemented in the merge strategy ``inherit-levels`` to merge the page and the *level descriptor* and the merge strategy will pull in the elements defined in the *level descriptor* into the child page before handing the new model (XML) to the rendering system. This means that when the page renders, the model will automatically contain the meta-data defined in the parent *level descriptor*.
+Crafter CMS will invoke the inheritance mechanics implemented in the merge strategy ``inherit-levels`` to merge the page and the *level descriptor* and the merge strategy will pull in the elements defined in the *level descriptor* into the child page before handing the new model (XML) to the rendering system. This means that when the page renders, the model will automatically contain the meta-data defined in the parent *level descriptor*. In our example above, the page will automatically inherit the meta-data fields ``cssGroup``, ``defaultHeader``, and ``defaultFooter``.
+
+.. note:: When an element is defined by the **level descriptor** and then subsequently defined by a child, the child's definition overrides the **level descriptor**.
+
+This mechanism allows you to define meta-data that flows down the information architecture of the site such that an entire site can have defaults and those defaults can be overwritten by sections individual page. Some examples of real-life use of inheritance:
+* Site logo
+* Global stylesheet and JS includes
+* Global headers and footers
+* Section meta-data (flows to all pages/subsections)
+
+.. note:: The ``inherit-levels`` mechanism allows you set **level descriptors** at various levels of the information architecture with lower levels overriding upper levels.
+
+What we discussed thus far is a single inhertiance strategy implementation, ``inherit-levels``, the code to which is available here: `InheritLevelsMergeStrategy.java <https://github.com/craftercms/core/blob/master/src/main/java/org/craftercms/core/xml/mergers/impl/strategies/InheritLevelsMergeStrategy.java>`_. There are more inhertiance strategies implemented out of the box with Crafter CMS and you can build your own to suit your needs.
+
+-------------------------
+Out of the Box Strategies
+-------------------------
+
+=========== =================================
+Strategy    Purpose
+=========== =================================
 
 
-.. TODO:: Finish this article
+.. TODO:: List remaining strategies, describe the resolver and how to add your own. Describe merge cues.
 
