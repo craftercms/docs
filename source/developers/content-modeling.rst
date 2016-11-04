@@ -71,47 +71,46 @@ Form Builder Basics
 
 Crafter Studio's Form Builder
 
-+--------+-----------------------------------------------------------------------+
-| Label  | Description                                                           |
-+--------+-----------------------------------------------------------------------+
-| 1      | Content Type Actions: Open Existing Content Type or Create a New Type.|
-+--------+-----------------------------------------------------------------------+
-| 2      | Form Builder: The begining of the form builder and it's headed by the |
-|        | name of currently open Content Type.                                  |
-|        | Click here to explore the global properties of the type in the        |
-|        | Properties Explorer, #3.                                              |
-+--------+-----------------------------------------------------------------------+
-| 3      | Properties Explorer: Helps configure the properties of the currently  |
-|        | selected item. Clicking on an item on the left side of the screen,    |
-|        | like #2 or #7 will populate this control and allow you to modify      |
-|        | the selected item.                                                    |
-+--------+-----------------------------------------------------------------------+
-| 4      | Form Controls: This is a list of available form controls for you to   |
-|        | build your form with. Note that the list has a scrollbar for many     |
-|        | types of useful controls. Controls can be dragged from the controls   |
-|        | list onto the form builder.                                           | 
-+--------+-----------------------------------------------------------------------+
-| 5      | Data Sources: Shows the list of available data sources that can be    |
-|        | attached to this content type such that the content authors can pull  |
-|        | content and incorporate it into pages or components. Data Sources can |
-|        | be dragged over to the form builder and configured as needed.         |
-|        | The content author will then use the control to pull data from that   |
-|        | data source into the content object.                                  |
-+--------+-----------------------------------------------------------------------+
-| 6      | Form Section: Form sections help cluster a number of controls         |
-|        | together to make it easier for content authors. Click on the form     |
-|        | section to edit its properties in the Properties Explorer.            |
-+--------+-----------------------------------------------------------------------+
-| 7      | Form Canvas: Actual controls that have been placed on this form.      |
-|        | Clicking on a control will allow you to configure this control in     |
-|        | the Properties Explorer.                                              |
-+--------+-----------------------------------------------------------------------+
-| 8      | Data Source: The data sources configured for this content type.       |
-|        | To configure a data source, click on it and then edit the properties  |
-|        | in the Properties Explorer.                                           |
-+--------+-----------------------------------------------------------------------+
-| 9      | Save or Cancel the changes to the Content Type.                       |
-+--------+-----------------------------------------------------------------------+
++--------+---------------------------------------------------------------------------------------+
+| Label  || Description                                                                          |
++--------+---------------------------------------------------------------------------------------+
+| 1      || Content Type Actions: Open Existing Content Type or Create a New Type.               |
++--------+---------------------------------------------------------------------------------------+
+| 2      || Form Builder: The begining of the form builder and it's headed by the name of the    |
+|        || name of currently open Content Type.                                                 |
+|        || Click here to explore the global properties of the type in the Properties Explorer,  |
+|        || #3.                                                                                  |
++--------+---------------------------------------------------------------------------------------+
+| 3      || Properties Explorer: Helps configure the properties of the currently                 |
+|        || selected item. Clicking on an item on the left side of the screen,                   |
+|        || like #2 or #7 will populate this control and allow you to modify                     |
+|        || the selected item.                                                                   |
++--------+---------------------------------------------------------------------------------------+
+| 4      || Form Controls: This is a list of available form controls for you to build your own   |
+|        || form with. Note that the list has a scrollbar for many types of useful controls.     |
+|        || Controls can be dragged from the controls list onto the form builder.                |
++--------+---------------------------------------------------------------------------------------+
+| 5      || Data Sources: Shows the list of available data sources that can be attached to this  |
+|        || content type such that the content authors can pull content and incorporate it into  |
+|        || pages or components. Data Sources can be dragged over to the form builder            |
+|        || and configured as needed.                                                            |
+|        || The content author will then use the control to pull data from that data source into |
+|        || the content object.                                                                  |
++--------+---------------------------------------------------------------------------------------+
+| 6      || Form Section: Form sections help cluster a number of controls together to make it    |
+|        || easier for content authors. Click on the form section to edit its properties in      |
+|        || the Properties Explorer.                                                             |
++--------+---------------------------------------------------------------------------------------+
+| 7      || Form Canvas: Actual controls that have been placed on this form.                     |
+|        || Clicking on a control will allow you to configure this control in the Properties     |
+|        || Explorer.                                                                            |
++--------+---------------------------------------------------------------------------------------+
+| 8      || Data Source: The data sources configured for this content type.                      |
+|        || To configure a data source, click on it and then edit the properties                 |
+|        || in the Properties Explorer.                                                          |
++--------+---------------------------------------------------------------------------------------+
+| 9      || Save or Cancel the changes to the Content Type.                                      |
++--------+---------------------------------------------------------------------------------------+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Properties of Content Types

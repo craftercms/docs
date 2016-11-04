@@ -16,20 +16,20 @@ Style
 
 ``monospaced text is done using``  
 
-.. code-block:: restructured
+.. code-block:: rst
 
     ``monospace``
 
 
 *italics are done using*
 
-.. code-block:: restructured
+.. code-block:: rst
 
     *italics*
 
 **And finally bold using**
 
-.. code-block:: restructured
+.. code-block:: rst
 
     **bold**
 
@@ -39,19 +39,19 @@ Links
 
 External URL with Tag: `URL <http://example.com>`_
 
-.. code-block:: restructured
+.. code-block:: rst
 
 	External URL with Tag: `URL <http://example.com>`_
 
 External URL without Tag: http://example.com
 
-.. code-block:: restructured
+.. code-block:: rst
 
 	External URL without Tag: http://example.com
 
 Sphinx-doc reference: :ref:`content-view-templates`
 
-.. code-block:: restructured
+.. code-block:: rst
 
 	Sphinx-doc reference: :ref:`content-view-templates`
 
@@ -60,7 +60,7 @@ Sphinx-doc reference: :ref:`content-view-templates`
 Anchors
 ^^^^^^^
 
-.. code-block:: restructured
+.. code-block:: rst
 
    .. _documentation-templates:
 
@@ -68,7 +68,7 @@ Anchors
 Titles, Sections, sub-sections and sub-subsections
 ==================================================
 
-.. code-block:: restructured
+.. code-block:: rst
 
 	=====
 	Title
@@ -101,7 +101,7 @@ Images and Figures
 Image
 ^^^^^
 
-.. code-block:: restructured
+.. code-block:: rst
 
 	.. image:: /_static/images/admin-console-link.png
 	        :width: 25%
@@ -112,7 +112,7 @@ Image
 Figure
 ^^^^^^
 
-.. code-block:: restructured
+.. code-block:: rst
 
 	.. figure:: /_static/images/create-content-type-3.png
 	        :alt: Properties Explorer
@@ -126,7 +126,7 @@ Bullets and Numbering
 Bullets
 ^^^^^^^
 
-.. code-block:: restructured
+.. code-block:: rst
 
 	* lorem ipsum
 	* lorem ipsum
@@ -136,7 +136,7 @@ Bullets
 Numbered bullets
 ^^^^^^^^^^^^^^^^
 
-.. code-block:: restructured
+.. code-block:: rst
 
 	#. lorem ipsum
 	#. lorem ipsum
@@ -146,19 +146,19 @@ Numbered bullets
 Notes, Todos and Warnings
 -------------------------
 
-.. code-block:: restructured
+.. code-block:: rst
 
 	.. note:: Important note
 
-.. code-block:: restructured
+.. code-block:: rst
 
 	.. seealso:: See also this :math:`\alpha`
 
-.. code-block:: restructured
+.. code-block:: rst
 
 	.. todo:: Todo
 
-.. code-block:: restructured
+.. code-block:: rst
 
 	.. warning:: Warning!
 
@@ -166,15 +166,35 @@ Notes, Todos and Warnings
 Tables
 ------
 
-.. code-block:: restructured
+^^^^^^^^^^^^^
+Simple Tables
+^^^^^^^^^^^^^
 
-	=============== ============================================================================================
+.. code-block:: rst
+
+	=============== =================================================================================
 	Short Column    Long Column
-	=============== ============================================================================================
+	=============== =================================================================================
 	Row 1 Column 1  Row 1 Column 2
 
 	Row 2 Column 1  Row 2 Column 2
-	=============== ============================================================================================
+	=============== =================================================================================
+
+^^^^^^^^^^^^^^
+Complex Tables
+^^^^^^^^^^^^^^
+
+.. code-block:: rst
+
+	+-----------------+------------------------------------------------------------------------------+
+	|| Short Column   || Long Column                                                                 |
+        || (More stuff)   ||                                                                             |
+	+-----------------+------------------------------------------------------------------------------+
+	|| Row 1 Column 1 || Row 1 Column 2 Line 1                                                       |
+	||                || Row 1 Column 2 Line 2                                                       |
+	+-----------------+                                                                              |
+	|| Row 2 Column 1 || Row 1 Column 2 Line 3 (merged cell)                                         |
+	+-----------------+------------------------------------------------------------------------------+
 
 -----------
 Code Blocks
@@ -184,7 +204,7 @@ Code Blocks
 HTML
 ^^^^
 
-.. code-block:: restructured
+.. code-block:: rst
 
 	.. code-block:: html
 
@@ -213,7 +233,7 @@ HTML
 Groovy
 ^^^^^^
 
-.. code-block:: restructured
+.. code-block:: rst
 
 	.. code-block:: groovy
 
@@ -242,7 +262,7 @@ Groovy
 Include Another Document
 ------------------------
 
-.. code-block:: restructured
+.. code-block:: rst
 
 	.. include:: ../includes/unicode-checkmark.rst
 
