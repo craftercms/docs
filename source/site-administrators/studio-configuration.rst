@@ -11,3 +11,5 @@ Studio Configuration
 .. include:: studio/environment-overrides.rst
 
 .. include:: studio/admin-console-tools.rst
+
+.. include:: studio/configure-notifications.rst
