@@ -73,16 +73,25 @@ Category
 
 List of available category tags
 
-=================== =========================================================================================================================
-Tag                 Description
-=================== =========================================================================================================================
-Category            This tag contains each category of the panel. See #1 in the image above.
-Label               Each ``<category>`` element must contain a <label> element that specifies the category name. See #2 in the image above.
-Component           This tag refers to the component which the user can drag and drop into the preview page selected. See #3 in the image above.
-Label               Each ``<component>`` element must contain a <label> element that specifies the component name. See #4 in the image above.
-Type                Content-Type assigned to create the new component.
-Path                Path where the new component will be created.
-=================== =========================================================================================================================
++-----------------+------------------------------------+-------------------------------------------------+
+|| Tag            || Descriptionn                                                                        |
++=================+====================================+=================================================+
+|| Category       || This tag contains each category of the panel. See #1 in the image above.            |
++-----------------+------------------------------------+-------------------------------------------------+
+|| Label          || Each ``<category>`` element must contain a <label> element that specifies the       |
+||                || category name. See #2 in the image above.                                           |
++-----------------+------------------------------------+-------------------------------------------------+
+|| Component      || This tag refers to the component which the user can drag and drop into the          |
+||                || preview page selected. See #3 in the image above.                                   |
++-----------------+------------------------------------+-------------------------------------------------+
+|| Label          || Each ``<component>`` element must contain a <label> element that specifies the      |
+||                || ccomponent name. See #4 in the image above.                                         |
++-----------------+------------------------------------+-------------------------------------------------+
+|| Type           || Content-Type assigned to create the new component.                                  |
++-----------------+------------------------------------+-------------------------------------------------+
+|| Path           || Path where the new component will be created.                                       |
++-----------------+------------------------------------+-------------------------------------------------+
+
 
 .. image:: /_static/images/dnd-config1.png
 		:align: center
@@ -98,13 +107,18 @@ The Browse functionality is useful when the user wants to drag and drop an exist
 
 List of available browse tags
 
-=================== ============================================================================================================================================
-Tag                 Description
-=================== ============================================================================================================================================
-Browse              This tag contains each browse of the panel. See #1 in the image above.
-Label               Each ``<browse>`` element must contain a <label> element that specifies the browse label to display in the panel. See #2 in the image above.
-Path                Path where the user will select the component to drag and drop into the preview page selected.
-=================== ============================================================================================================================================
++-----------------+------------------------------------+-------------------------------------------------+
+|| Tag            || Descriptionn                                                                        |
++=================+====================================+=================================================+
+|| Browse         || This tag contains each browse of the panel. See #1 in the image above.              |
++-----------------+------------------------------------+-------------------------------------------------+
+|| Label          || Each ``<browse>`` element must contain a <label> element that specifies the browse  |
+||                || label to display in the panel. See #2 in the image above.                           |
++-----------------+------------------------------------+-------------------------------------------------+
+|| Path           || Path where the user will select the component to drag and drop into the preview     |
+||                || page selected.                                                                      |
++-----------------+------------------------------------+-------------------------------------------------+
+
 
 .. image:: /_static/images/dnd-config2.png
 		:align: center

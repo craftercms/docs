@@ -71,40 +71,46 @@ Form Builder Basics
 
 Crafter Studio's Form Builder
 
-========= ================================================================================================
-Label     Description
-========= ================================================================================================
- 1        Content Type Actions: Open Existing Content Type or Create a New Type.
-
- 2        Form Builder: The begining of the form builder and it's headed by the name of currently open
-          Content Type. Click here to explore the global properties of the type in the Properties
-          Explorer, #3.
-
- 3        Properties Explorer: Helps configure the properties of the currently selected item.
-          Clicking on an item on the left side of the screen, like #2 or #7 will populate this control
-          and allow you to modify the selected item.
-
- 4        Form Controls: This is a list of available form controls for you to build your form with.
-          Note that the list has a scrollbar for many types of useful controls. Controls can be
-          dragged from the controls list onto the form builder.
-
- 5        Data Sources: Shows the list of available data sources that can be attached to this content
-          type such that the content authors can pull content and incorporate it into pages or
-          components. Data Sources can be dragged over to the form builder and configured as needed.
-          The content author will then use the control to pull data from that data source into the
-          content object.
-
- 6        Form Section: Form sections help cluster a number of controls together to make it easier for
-          content authors. Click on the form section to edit its properties in the Properties Explorer.
-
- 7        Form Canvas: Actual controls that have been placed on this form. Clicking on a control will
-          allow you to configure this control in the Properties Explorer.
-
- 8        Data Source: The data sources configured for this content type. To configure a data source,
-          click on it and then edit the properties in the Properties Explorer.
-
- 9        Save or Cancel the changes to the Content Type.
-========= ================================================================================================
++--------+---------------------------------------------------------------------------------------+
+|| Label || Description                                                                          |
++--------+---------------------------------------------------------------------------------------+
+|| 1     || Content Type Actions: Open Existing Content Type or Create a New Type.               |
++--------+---------------------------------------------------------------------------------------+
+|| 2     || Form Builder: The begining of the form builder and it's headed by the name of the    |
+||       || name of currently open Content Type.                                                 |
+||       || Click here to explore the global properties of the type in the Properties Explorer,  |
+||       || #3.                                                                                  |
++--------+---------------------------------------------------------------------------------------+
+|| 3     || Properties Explorer: Helps configure the properties of the currently                 |
+||       || selected item. Clicking on an item on the left side of the screen,                   |
+||       || like #2 or #7 will populate this control and allow you to modify                     |
+||       || the selected item.                                                                   |
++--------+---------------------------------------------------------------------------------------+
+|| 4     || Form Controls: This is a list of available form controls for you to build your own   |
+||       || form with. Note that the list has a scrollbar for many types of useful controls.     |
+||       || Controls can be dragged from the controls list onto the form builder.                |
++--------+---------------------------------------------------------------------------------------+
+|| 5     || Data Sources: Shows the list of available data sources that can be attached to this  |
+||       || content type such that the content authors can pull content and incorporate it into  |
+||       || pages or components. Data Sources can be dragged over to the form builder            |
+||       || and configured as needed.                                                            |
+||       || The content author will then use the control to pull data from that data source into |
+||       || the content object.                                                                  |
++--------+---------------------------------------------------------------------------------------+
+|| 6     || Form Section: Form sections help cluster a number of controls together to make it    |
+||       || easier for content authors. Click on the form section to edit its properties in      |
+||       || the Properties Explorer.                                                             |
++--------+---------------------------------------------------------------------------------------+
+|| 7     || Form Canvas: Actual controls that have been placed on this form.                     |
+||       || Clicking on a control will allow you to configure this control in the Properties     |
+||       || Explorer.                                                                            |
++--------+---------------------------------------------------------------------------------------+
+|| 8     || Data Source: The data sources configured for this content type.                      |
+||       || To configure a data source, click on it and then edit the properties                 |
+||       || in the Properties Explorer.                                                          |
++--------+---------------------------------------------------------------------------------------+
+|| 9     || Save or Cancel the changes to the Content Type.                                      |
++--------+---------------------------------------------------------------------------------------+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Properties of Content Types
@@ -118,22 +124,23 @@ Let's select the content type itself, by clicking on the content type name at th
 
 The fields available at this level are:
 
-================= =================================================================================
-Field             Description
-================= =================================================================================
-Title             Content Type's friendly name
-
-Description       Description of the Content Type
-
-Object Type       Page or Component (read only)
-
-Content Type      System name and path of this content type (read only)
-
-Display Template  View template to use when rendering this content
-
-Merge Strategy    The inheritance pattern to use with content of this type, please see Content
-                  Inheritance for more detail on this feature :ref:`content-inheritance`.
-================= =================================================================================
++---------------+--------------------------------------------------------------------------------+
+|| Field        || Description                                                                   |
++---------------+--------------------------------------------------------------------------------+
+|| Title        || Content Type's friendly name                                                  |
++---------------+--------------------------------------------------------------------------------+
+|| Description  || Description of the Content Type                                               |
++---------------+--------------------------------------------------------------------------------+
+|| Object Type  || Page or Component (read only)                                                 |
++---------------+--------------------------------------------------------------------------------+
+|| Content Type || System name and path of this content type (read only)                         |
++---------------+--------------------------------------------------------------------------------+
+|| Display      || View template to use when rendering this content                              |
+|| Template     ||                                                                               |
++---------------+--------------------------------------------------------------------------------+
+|| Merge        || The inheritance pattern to use with content of this type, please see Content  |
+|| Strategy     || Inheritance for more detail on this feature :ref:`content-inheritance`.       |
++---------------+--------------------------------------------------------------------------------+
 
 The 2 key properties are: the display template (:ref:`content-view-templates`) which is the HTML template that renders the final Web page; the content inheritance (:ref:`content-inheritance`) which determines how this content type will inherit from parent XML files in the system.
 
@@ -150,76 +157,76 @@ Form Controls are data input controls that, once placed on a form, will capture 
 Form Engine Controls (please use the scrollbar to see more controls)
 
 
-=================== ====================================================================================
-Control             Description
-=================== ====================================================================================
-Form Section        Create a new section in the form, this is to help the content authors by
-                    by segmenting a form into sections of similar concern.
-
-                    Details are in the :ref:`form-section` page.
-
-Repeating Group     Repeating groups are used when the form has one or several controls that repeat
-                    to capture the same data as records. For example: a list of images in a carousel,
-                    or a list of widgets on a page.
-
-                    Details are in the :ref:`form-repeating-group` page.
-
-Input               A simple textual input line.
-
-                    Details are in the :ref:`form-input` page.
-
-Text Area           A simple block of plain text.
-
-                    Details are in the :ref:`form-text-area` page.
-
-Rich Text Editor    A block of HTML.
-
-                    Details are in the :ref:`form-rte` page.
-
-Dropdown            Dropdown list of items to pick from.
-
-                    Details are in the :ref:`form-dropdown` page.
-
-Date / Time         Date and Time field with a picker.
-
-                    Details are in the :ref:`form-date-time` page.
-
-Checkbox            True/False checkbox.
-
-                    Details are in the :ref:`form-checkbox` page.
-
-Grouped Checkboxes  Several checkboes (true/false).
-
-                    Details are in the :ref:`form-grouped-checkboxes` page.
-
-Item Selector
-
-                    Details are in the :ref:`form-item-selector` page.
-
-Image               Image selector from a Data Source.
-
-                    Details are in the :ref:`form-image` page.
-
-Video               Video selector from a Data Source.
-
-                    Details are in the :ref:`form-video` page.
-
-Label
-
-                    Details are in the :ref:`form-label` page.
-
-Page Order
-
-                    Details are in the :ref:`form-page-order` page.
-
-File Name
-
-                    Details are in the :ref:`form-filename` page.
-
-Auto Filename
-
-                    Details are in the :ref:`form-auto-filename` page.
-=================== ====================================================================================
++-------------------+----------------------------------------------------------------------------+
+|| Control          || Description                                                               |
++-------------------+----------------------------------------------------------------------------+
+|| Form Section     ||  Create a new section in the form, this is to help the content authors by |
+||                  ||  by segmenting a form into sections of similar concern.                   |
+||                  ||                                                                           |
+||                  ||  Details are in the :ref:`form-section` page.                             |
++-------------------+----------------------------------------------------------------------------+
+|| Repeating Group  ||  Repeating groups are used when the form has one or several controls that |
+||                  ||  repeat to capture the same data as records. For example: a list of       |
+||                  ||  images in a carousel, or a list of widgets on a page.                    |
+||                  ||                                                                           |
+||                  ||  Details are in the :ref:`form-repeating-group` page.                     |
++-------------------+----------------------------------------------------------------------------+
+|| Input            ||  A simple textual input line.                                             |
+||                  ||                                                                           |
+||                  ||  Details are in the :ref:`form-input` page.                               |
++-------------------+----------------------------------------------------------------------------+
+|| Text Area        ||  A simple block of plain text.                                            |
+||                  ||                                                                           |
+||                  ||  Details are in the :ref:`form-text-area` page.                           |
++-------------------+----------------------------------------------------------------------------+
+|| Rich Text Editor ||  A block of HTML.                                                         |
+||                  ||                                                                           |
+||                  ||  Details are in the :ref:`form-rte` page.                                 |
++-------------------+----------------------------------------------------------------------------+
+|| Dropdown         ||  Dropdown list of items to pick from.                                     |
+||                  ||                                                                           |
+||                  ||  Details are in the :ref:`form-dropdown` page.                            |
++-------------------+----------------------------------------------------------------------------+
+|| Date / Time      ||  Date and Time field with a picker.                                       |
+||                  ||                                                                           |
+||                  ||  Details are in the :ref:`form-date-time` page.                           |
++-------------------+----------------------------------------------------------------------------+
+|| Checkbox         ||  True/False checkbox.                                                     |
+||                  ||                                                                           |
+||                  ||  Details are in the :ref:`form-checkbox` page.                            |
++-------------------+----------------------------------------------------------------------------+
+|| Grouped          || Several checkboes (true/false).                                           |
+|| Checkboxes       ||                                                                           |
+||                  || Details are in the :ref:`form-grouped-checkboxes` page.                   |
++-------------------+----------------------------------------------------------------------------+
+|| Item Selector    ||                                                                           |
+||                  ||                                                                           |
+||                  ||  Details are in the :ref:`form-item-selector` page.                       |
++-------------------+----------------------------------------------------------------------------+
+|| Image            ||  Image selector from a Data Source.                                       |
+||                  ||                                                                           |
+||                  ||  Details are in the :ref:`form-image` page.                               |
++-------------------+----------------------------------------------------------------------------+
+|| Video            ||  Video selector from a Data Source.                                       |
+||                  ||                                                                           |
+||                  ||  Details are in the :ref:`form-video` page.                               |
++-------------------+----------------------------------------------------------------------------+
+|| Label            ||                                                                           |
+||                  ||                                                                           |
+||                  ||  Details are in the :ref:`form-label` page.                               |
++-------------------+----------------------------------------------------------------------------+
+|| Page Order       ||                                                                           |
+||                  ||                                                                           |
+||                  ||  Details are in the :ref:`form-page-order` page.                          |
++-------------------+----------------------------------------------------------------------------+
+|| File Name        ||                                                                           |
+||                  ||                                                                           |
+||                  ||  Details are in the :ref:`form-filename` page.                            |
++-------------------+----------------------------------------------------------------------------+
+|| Auto Filename    ||                                                                           |
+||                  ||                                                                           |
+||                  ||  Details are in the :ref:`form-auto-filename` page.                       |
++-------------------+----------------------------------------------------------------------------+
 
 ^^^^^^^^^^^^
 Data Sources
@@ -231,27 +238,27 @@ Data Sources
 
 Form Engine Data Sources (please use the scrollbar to see more controls)
 
-============================= ====================================================================================
-Control                       Description
-============================= ====================================================================================
-Child Content                 Details are in the :ref:`form-source-child-content` page.
-
-Image Uploaded from Desktop   Details are in the :ref:`form-source-image-desktop` page.
-
-Image from Repository         Details are in the :ref:`form-source-image-repo` page.
-
-DAM Image Flickr              Details are in the :ref:`form-source-dam-flickr` page.
-
-File Uploaded from Desktop    Details are in the :ref:`form-source-file-desktop` page.
-
-Flash Uploaded from Desktop   Details are in the :ref:`form-source-flash-desktop` page.
-
-Video Uploaded from Desktop   Details are in the :ref:`form-source-video-desktop` page.
-
-Static Key Value Pairs        Details are in the :ref:`form-source-kvp` page.
-
-Configured List of Pairs      Details are in the :ref:`form-source-list-pairs` page.
-============================= ====================================================================================
++------------------------------+-----------------------------------------------------------------+
+|| Control                     || Description                                                    |
++------------------------------+-----------------------------------------------------------------+
+|| Child Content               || Details are in the :ref:`form-source-child-content` page.      |
++------------------------------+-----------------------------------------------------------------+
+|| Image Uploaded from Desktop || Details are in the :ref:`form-source-image-desktop` page.      |
++------------------------------+-----------------------------------------------------------------+
+|| Image from Repository       || Details are in the :ref:`form-source-image-repo` page.         |
++------------------------------+-----------------------------------------------------------------+
+|| DAM Image Flickr            || Details are in the :ref:`form-source-dam-flickr` page.         |
++------------------------------+-----------------------------------------------------------------+
+|| File Uploaded from Desktop  || Details are in the :ref:`form-source-file-desktop` page.       |
++------------------------------+-----------------------------------------------------------------+
+|| Flash Uploaded from Desktop || Details are in the :ref:`form-source-flash-desktop` page.      |
++------------------------------+-----------------------------------------------------------------+
+|| Video Uploaded from Desktop || Details are in the :ref:`form-source-video-desktop` page.      |
++------------------------------+-----------------------------------------------------------------+
+|| Static Key Value Pairs      || Details are in the :ref:`form-source-kvp` page.                |
++------------------------------+-----------------------------------------------------------------+
+|| Configured List of Pairs    || Details are in the :ref:`form-source-list-pairs` page.         |
++------------------------------+-----------------------------------------------------------------+
 
 
 ^^^^^^^^^^^
@@ -302,18 +309,18 @@ An example view template
 
 The simple example renders an simple HTML page with a very basic model. Let's review the model first:
 
-====================== ============ =================================================
-Model Element          Control      Purpose
-====================== ============ =================================================
-browser_title          Input        Provide a browser title for the page
-
-meta_keywords          Input        SEO keywords associated with the page
-
-body_html              Rich Text    The page's main HTML body (in this case, it's
-                       Editor       just a static HTML block).
-
-analytics_script       Text Area    Analytics's Engine JavaScript
-====================== ============ =================================================
++-------------------+--------------+-------------------------------------------------------------+
+|| Model Element    || Control     || Purpose                                                    |
++-------------------+--------------+-------------------------------------------------------------+
+|| browser_title    || Input       || Provide a browser title for the page                       |
++-------------------+--------------+-------------------------------------------------------------+
+|| meta_keywords    || Input       || SEO keywords associated with the page                      |
++-------------------+--------------+-------------------------------------------------------------+
+|| body_html        || Rich Text   || The page's main HTML body (in this case, it's              |
+||                  || Editor      || just a static HTML block).                                 |
++-------------------+--------------+-------------------------------------------------------------+
+|| analytics_script || Text Area   || Analytics's Engine JavaScript                              |
++-------------------+--------------+-------------------------------------------------------------+
 
 .. todo:: reference the freemaker API
 
