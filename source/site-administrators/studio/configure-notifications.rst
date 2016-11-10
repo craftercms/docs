@@ -44,14 +44,14 @@ Common Variables
     ============================== ==================================================================================================
     Variable Name                  Description
     ============================== ==================================================================================================
-	date                           Date for submission
+    date                           Date for submission
 
-	files                          Collection of file objects in submission.
+    files                          Collection of file objects in submission.
                                    Usually iterated over `<#list files as file>...</#list>`
 
-    FILE.name                      File name including full repository path
+    `file`.name                      File name including full repository path
 
-    FILE.internalName              File internal CMS label
+    `file`.internalName              File internal CMS label
 
     submitter                      Content submitter object, has sub propeties
 
