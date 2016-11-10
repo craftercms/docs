@@ -41,37 +41,37 @@ Template Variables
 Common Variables
 ^^^^^^^^^^^^^^^^
 
-    ============================== ==================================================================================================
-    Variable Name                  Description
-    ============================== ==================================================================================================
-    date                           Date for submission
+============================== ========================================================
+Variable Name                  Description
+============================== ========================================================
+date                           Date for submission
 
-    files                          Collection of file objects in submission.
-                                   Usually iterated over `<#list files as file>...</#list>`
+files                          Collection of file objects in submission.
+                               Usually iterated over `<#list files as file>...</#list>`
 
-    `file`.name                      File name including full repository path
+`file`.name                      File name including full repository path
 
-    `file`.internalName              File internal CMS label
+`file`.internalName              File internal CMS label
 
-    submitter                      Content submitter object, has sub propeties
+submitter                      Content submitter object, has sub propeties
 
-    submitter.firstName            First name
+submitter.firstName            First name
 
-    submitter.lastName             Last Name
+submitter.lastName             Last Name
 
-    submitter.username             Authoring User Name / ID
+submitter.username             Authoring User Name / ID
 
-    submissionComments             String containing submission comments
+submissionComments             String containing submission comments
 
-    scheduleDate                   Date content is scheduled for
+scheduleDate                   Date content is scheduled for
 
-    siteName                       ID of the site
+siteName                       ID of the site
 
-    liveUrl                        Live Server URL base
+liveUrl                        Live Server URL base
 
-    authoringUrl                   Authoring Server URL base
+authoringUrl                   Authoring Server URL base
 
-    ============================== ==================================================================================================
+============================== ========================================================
 
 
 
@@ -81,12 +81,13 @@ Deployment Error Notice
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 
-    ============================== ==================================================================================================
-    Variable Name                  Description
-    ============================== ==================================================================================================
-	deploymentError                Error message on deployment.  Currently must be addressed as ${deploymentError.toString()}
+============================== ========================================================
+Variable Name                  Description
+============================== ========================================================
+deploymentError                Error message on deployment.  Currently must be
+                               addressed as ${deploymentError.toString()}
 
-    ============================== ==================================================================================================
+============================== ========================================================
 
 
 --------------------------------
