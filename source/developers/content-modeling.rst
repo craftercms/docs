@@ -236,6 +236,8 @@ Data Sources
 	:alt: Form Engine Data Sources
 	:align: center
 
+Data Sources are pickers that help pull in content from internal or external storage/systems. For example, data source include: youtube.com video picker, or Flickr image picker, desktop image uploader, and so on. Crafter CMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
+
 Form Engine Data Sources (please use the scrollbar to see more controls)
 
 +------------------------------+-----------------------------------------------------------------+
