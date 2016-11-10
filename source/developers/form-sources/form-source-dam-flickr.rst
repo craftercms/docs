@@ -18,11 +18,10 @@ Configuration
     :alt: Source Control Image From Repository Configuration
     :align: center
 
-====================== ===================================================================================
-Description/Purpose    Data source to upload images from Flickr.
+.. include:: /includes/form-sources/form-source-field-basics.rst
 
-Data Source Basics     - Title: Data source title to show on the form.
-                       - Name: Name of variable to store the final result in.
-
-Properties             - Repository Path: Path where to store the flyckr images uploaded.
-====================== ===================================================================================
++------------------------+-----------------------------------------------------------------------+
+|| Description/Purpose   || Data source to upload images from Flickr.                            |
++------------------------+-----------------------------------------------------------------------+
+|| Properties            || - Repository Path: Path where to store the flyckr images uploaded.   |
++------------------------+-----------------------------------------------------------------------+
