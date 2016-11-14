@@ -1,3 +1,5 @@
+.. index:: Content Modeling, Modeling, Content Model
+
 ================
 Content Modeling
 ================

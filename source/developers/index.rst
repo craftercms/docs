@@ -33,10 +33,6 @@ Our developer documentation focuses on Crafter CMS specific topics.  Below is a 
 |                | |                                           |                                              |
 +----------------+---------------------------------------------+----------------------------------------------+
 
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-
 #########################
 Beginner Developer Topics
 #########################
@@ -44,9 +40,10 @@ Beginner Developer Topics
 This section covers the basic topics you need to define a content type and render that content as part of a page, component or service.
 
 .. toctree::
-	:maxdepth: 1
+	:maxdepth: 2
 	:titlesonly:
 
+    architecture
     content-modeling
     templating-api
     custom-services-and-controllers
