@@ -33,8 +33,6 @@ Our developer documentation focuses on Crafter CMS specific topics.  Below is a 
 |                | |                                           |                                              |
 +----------------+---------------------------------------------+----------------------------------------------+
 
-.. todo:: Write overview
-    
 .. toctree::
    :maxdepth: 2
    :titlesonly:
