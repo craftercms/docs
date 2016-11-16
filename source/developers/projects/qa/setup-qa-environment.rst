@@ -181,5 +181,27 @@ We will now add the JAR files that contain the Selenium API. These files are fou
 
 .. image:: /_static/images/QATestNG8.png
 
+Step 6
+
+We will convert the current *java project* to *Maven Project*
+
+Right-click on the project > Configure > Convert > Convert to Maven Project. 
+
+.. image:: /_static/images/QAMaven1.png
+
+*Click on Finish*
+
+.. image:: /_static/images/QAMaven2.png
+
+*In the project should be display a "M" in the folder and in the end the POM.xml*
+
+.. image:: /_static/images/QAMaven3.png
+
+
+
+
+
+
+
 
 
