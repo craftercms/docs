@@ -18,16 +18,15 @@ Configuration
     :alt: Form Static Key Value Pairs
     :align: center
 
-====================== ===================================================================================
-Description/Purpose    Data source where key/value paris can be added for its use on a control.
+.. include:: /includes/form-sources/form-source-field-basics.rst
 
-Data Source Basics     - Title: Data source title to show on the form.
-                       - Name: Name of variable to store the final result in.
-
-Properties             - Data Type: Key Value pairs type (String, Integer, Float, Date, HTML).
-                       - Options: Key Value pairs to be added on the datasource.
-                       - Show keys:
-====================== ===================================================================================
++------------------------+---------------------------------------------------------------------------+
+|| Description/Purpose   || Data source where key/value paris can be added for its use on a control. |
++------------------------+---------------------------------------------------------------------------+
+|| Properties            || - Data Type: Key Value pairs type (String, Integer, Float, Date, HTML).  |
+||                       || - Options: Key Value pairs to be added on the datasource.                |
+||                       || - Show keys:                                                             |
++------------------------+---------------------------------------------------------------------------+
 
 --------------
 Adding Options
