@@ -110,7 +110,7 @@ Out of the Box Strategies
 +-----------------------+--------------------------------------------------------------------------------------------+
 || ``inherit-levels``   || Content from Crafter level descriptors (crafter-level-descriptor.xml) in the current and  |
 ||                      || upper levels should be inherited.                                                         |
-+-----------------------+---------------------------------------------------------------------------------------------+
++-----------------------+--------------------------------------------------------------------------------------------+
 || ``explicit-parent``  || The parent descriptor to inherit is specified explicitly in the XML tag                   |
 ||                      || ``parent-descriptor``.                                                                    |
 ||                      ||                                                                                           |
