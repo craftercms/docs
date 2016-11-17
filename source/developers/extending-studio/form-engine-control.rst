@@ -20,6 +20,10 @@ Crafter Studio form controls should be written in a way that makes them independ
 
 Form Engine controls are #4 in the image above.
 
+Out of the box data sources are:
+
+.. include:: ../form-controls/list-form-controls.rst
+
 -------------------------------
 The anatomy of a Control Plugin
 -------------------------------

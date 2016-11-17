@@ -1,4 +1,4 @@
-.. _data-source:
+.. _form-engine-data-source:
 
 ===============================
 Build a Form Engine Data Source
@@ -18,6 +18,10 @@ Crafter Studio form controls should be written in a way that makes them independ
         :align: center
 
 Form Engine datasources are #5 in the image above.
+
+Out of the box data sources are:
+
+.. include:: ../form-sources/list-form-sources.rst
 
 -----------------------------------
 The anatomy of a Data Source Plugin
