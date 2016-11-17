@@ -9,4 +9,5 @@ Crafter QA Automation Framework
 
    setup-qa-environment.rst
    test-case-creation.rst
+   phantomJS-configuration.rst
    test-suite-configuration.rst   
