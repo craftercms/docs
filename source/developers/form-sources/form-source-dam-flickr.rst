@@ -1,5 +1,7 @@
 .. _form-source-dam-flickr:
 
+.. index:: Data Sources; DAM Image Flickr
+
 ============================
 DAM Image Flickr Data Source
 ============================

@@ -1,5 +1,7 @@
 ..  _content_authors:
 
+.. index:: Content Authors
+
 ***************
 Content Authors
 ***************
