@@ -1,5 +1,7 @@
 .. _crafter-deployer:
 
+.. index:: Projects; Crafter Deployer
+
 ================
 Crafter Deployer
 ================

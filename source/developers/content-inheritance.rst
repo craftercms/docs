@@ -6,7 +6,7 @@
 Content Inheritance
 ===================
 
-Crafter CMS support content inhertiance out of the box, and supports it via a pluggable mechanism that allows developers to augment or override what's out of the box.
+Crafter CMS support content inheritance out of the box, and supports it via a pluggable mechanism that allows developers to augment or override what's out of the box.
 
 --------------------------
 Content Inheritance Basics

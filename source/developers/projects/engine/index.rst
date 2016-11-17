@@ -1,5 +1,7 @@
 .. _crafter-engine:
 
+.. index:: Projects; Crafter Engine
+
 ===============
 Crafter Engine
 ===============

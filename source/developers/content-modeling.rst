@@ -146,6 +146,8 @@ The fields available at this level are:
 
 The 2 key properties are: the display template (:ref:`content-view-templates`) which is the HTML template that renders the final Web page; the content inheritance (:ref:`content-inheritance`) which determines how this content type will inherit from parent XML files in the system.
 
+.. index:: Form Controls
+
 ^^^^^^^^^^^^^
 Form Controls
 ^^^^^^^^^^^^^
@@ -159,6 +161,8 @@ Form Controls are data input controls that, once placed on a form, will capture 
 Form Engine Controls (please use the scrollbar to see more controls)
 
 .. include:: form-controls/list-form-controls.rst
+
+.. index:: Data Sources
 
 ^^^^^^^^^^^^
 Data Sources
