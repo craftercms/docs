@@ -1,6 +1,6 @@
-.. _form-source-image-desktop:
-
 .. index:: Data Sources; Image Uploaded from Desktop
+
+.. _form-source-image-desktop:
 
 =======================================
 Image Uploaded from Desktop Data Source

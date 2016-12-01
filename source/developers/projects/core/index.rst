@@ -1,6 +1,6 @@
-.. _crafter-core:
-
 .. index:: Crafter Core, Projects; Crafter Core
+
+.. _crafter-core:
 
 ============
 Crafter Core

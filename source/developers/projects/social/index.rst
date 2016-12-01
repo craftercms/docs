@@ -1,6 +1,6 @@
-.. _crafter-social:
-
 .. index:: Projects; Crafter Social
+
+.. _crafter-social:
 
 ===============
 Crafter Social

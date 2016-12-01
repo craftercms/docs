@@ -1,6 +1,6 @@
-.. _form-label:
-
 .. index:: Form Controls; Label
+
+.. _form-label:
 
 =============
 Label Control

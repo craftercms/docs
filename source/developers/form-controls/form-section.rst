@@ -1,6 +1,6 @@
-.. _form-section:
-
 .. index:: Form Controls; Form Section
+
+.. _form-section:
 
 ====================
 Form Section Control
