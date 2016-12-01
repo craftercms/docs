@@ -4,9 +4,6 @@
 Test Suite Execution with Maven.
 ================================
 
-
-
-
 .. toctree::
    :maxdepth: 1
 
@@ -21,7 +18,7 @@ Apache Maven provides support for managing the full lifecycle of a test project.
 * Maven automatically downloads the necessary files from the repository while building the project.
 
 
-.. note:: Yo need Eclipse with Maven Installed
+.. note:: You need Eclipse with Maven installed
 
 1. We need add to the testng.xml our list of the test cases to execute.
 
