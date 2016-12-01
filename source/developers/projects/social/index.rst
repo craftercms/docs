@@ -2,17 +2,24 @@
 
 .. _crafter-social:
 
-===============
+==============
 Crafter Social
-===============
+==============
 
-.. todo:: Write What is it Document
+-----------
+Source Code
+-----------
 
-.. toctree::
-	:maxdepth: 1
+Crafter Social's source code is managed in github: https://github.com/craftercms/social
 
-	source-code
-	in-process-api
-	rest-api
-	configuration
-	release-notes
+--------
+Java Doc
+--------
+
+Crafter Social's Java Doc is here: http://javadoc.io/doc/org.craftercms/crafter-social
+
+-------------
+Configuration
+-------------
+
+.. todo:: Write overview; write configuration, write ReST API doc

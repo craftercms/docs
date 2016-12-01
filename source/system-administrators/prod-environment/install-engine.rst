@@ -1,4 +1,4 @@
-.. index:: Engine Install
+.. index:: Installation; Crafter Engine
 
 .. _install-engine:
 
