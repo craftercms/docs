@@ -1,5 +1,7 @@
 .. _crafter-cms-qa-project:
 
+.. index:: Projects; Crafter QA
+
 ===============================
 Crafter QA Automation Framework
 ===============================
@@ -9,4 +11,6 @@ Crafter QA Automation Framework
 
    setup-qa-environment.rst
    test-case-creation.rst
-   test-suite-configuration.rst   
+   phantomJS-configuration.rst
+   test-suite-configuration.rst
+   execution-with-maven.rst   

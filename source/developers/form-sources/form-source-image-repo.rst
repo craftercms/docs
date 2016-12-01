@@ -1,5 +1,7 @@
 .. _form-source-image-repo:
 
+.. index:: Data Sources; Image from Repository
+
 =================================
 Image from Repository Data Source
 =================================

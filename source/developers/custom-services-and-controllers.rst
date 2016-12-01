@@ -1,5 +1,7 @@
 .. highlight:: groovy
 
+.. index:: Custom Services and Controllers, Services, Controllers
+
 .. _custom-services-and-controllers:
 
 ===============================

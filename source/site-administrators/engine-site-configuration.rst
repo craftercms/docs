@@ -1,5 +1,7 @@
 .. highlight:: xml
 
+.. _engine-site-configuration:
+
 =========================
 Engine Site Configuration
 =========================

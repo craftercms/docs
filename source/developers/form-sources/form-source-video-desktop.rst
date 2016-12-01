@@ -1,5 +1,7 @@
 .. _form-source-video-desktop:
 
+.. index:: Data Sources; Video Uploaded from Desktop
+
 =======================================
 Video Uploaded from Desktop Data Source
 =======================================

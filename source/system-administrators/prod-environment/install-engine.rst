@@ -1,3 +1,7 @@
+.. index:: Engine Install
+
+.. _install-engine:
+
 ==============
 Install Engine
 ==============
