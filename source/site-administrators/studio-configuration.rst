@@ -1,3 +1,7 @@
+.. index:: Configuration; Crafter Studio
+
+.. _studio-configuration:
+
 ====================
 Studio Configuration
 ====================
