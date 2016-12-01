@@ -25,7 +25,7 @@ Apache Maven provides support for managing the full lifecycle of a test project.
 2. Open your favorite console and type this command to install *Maven*.
 
 *brew install maven*
-.. note:: You need Eclipse with Maven installed
+
 
 3. We need add to the testng.xml our list of the test cases to execute.
 
