@@ -33,6 +33,7 @@ Apache Maven provides support for managing the full lifecycle of a test project.
 
 .. image:: /_static/images/QAMaven4.png
 
+
 2.2 In this location in the console, type this command *mvn clean test* and wait.
 
 .. image:: /_static/images/QAMaven5.png
