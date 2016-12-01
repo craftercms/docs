@@ -1,3 +1,7 @@
+.. index:: Multi-Tenant, Multi-Tenancy
+
+.. _engine-site-configuration:
+
 =================================
 Configure Multi-Tenancy in Engine
 =================================
