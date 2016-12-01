@@ -1,6 +1,6 @@
-.. _crafter-cms-qa-project:
-
 .. index:: Projects; Crafter QA
+
+.. _crafter-cms-qa-project:
 
 ===============================
 Crafter QA Automation Framework

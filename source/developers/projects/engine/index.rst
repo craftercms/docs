@@ -1,6 +1,6 @@
-.. _crafter-engine:
-
 .. index:: Crafter Engine, Engine
+
+.. _crafter-engine:
 
 ===============
 Crafter Engine

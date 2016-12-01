@@ -1,6 +1,6 @@
-.. _form-video:
-
 .. index:: Form Controls; Video
+
+.. _form-video:
 
 =============
 Video Control

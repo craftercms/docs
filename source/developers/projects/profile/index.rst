@@ -1,6 +1,6 @@
-.. _crafter-profile:
-
 .. index:: Projects; Crafter Profile
+
+.. _crafter-profile:
 
 ===============
 Crafter Profile

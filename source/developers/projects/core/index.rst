@@ -1,6 +1,6 @@
-.. _crafter-core:
-
 .. index:: Crafter Core, Core, Crafter Core Library
+
+.. _crafter-core:
 
 ============
 Crafter Core

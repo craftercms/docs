@@ -1,6 +1,6 @@
-.. _form-item-selector:
-
 .. index:: Form Controls; Item Selector
+
+.. _form-item-selector:
 
 =====================
 Item Selector Control
