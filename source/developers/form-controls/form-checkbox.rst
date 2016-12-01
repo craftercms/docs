@@ -1,6 +1,6 @@
-.. _form-checkbox:
-
 .. index:: Form Controls; Checkbox
+
+.. _form-checkbox:
 
 ================
 Checkbox Control

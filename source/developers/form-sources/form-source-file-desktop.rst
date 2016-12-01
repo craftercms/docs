@@ -1,6 +1,6 @@
-.. _form-source-file-desktop:
-
 .. index:: Data Sources; File Uploaded from Desktop
+
+.. _form-source-file-desktop:
 
 ======================================
 File Uploaded from Desktop Data Source

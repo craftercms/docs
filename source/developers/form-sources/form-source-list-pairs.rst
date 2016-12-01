@@ -1,6 +1,6 @@
-.. _form-source-list-pairs:
-
 .. index:: Data Sources; Configured List of Pairs
+
+.. _form-source-list-pairs:
 
 ====================================
 Configured List of Pairs Data Source

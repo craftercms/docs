@@ -1,6 +1,6 @@
-.. _form-source-child-content:
-
 .. index:: Data Sources; Child Content
+
+.. _form-source-child-content:
 
 =========================
 Child Content Data Source
