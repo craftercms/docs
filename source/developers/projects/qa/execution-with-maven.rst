@@ -21,19 +21,25 @@ Apache Maven provides support for managing the full lifecycle of a test project.
 * Maven automatically downloads the necessary files from the repository while building the project.
 
 
-.. note:: Yo need Eclipse with Maven Installed
+1. We need install the *Homebrew* using `a link`_.
 
-1. We need add to the testng.xml our list of the test cases to execute.
+.. _a link: http://brew.sh/
+
+2. Open your favorite console and type this command to install *Maven*.
+
+*brew install maven*
+
+3. We need add to the testng.xml our list of the test cases to execute.
 
 .. image:: /_static/images/TestSuite2.png
 
-2. After type the test cases in the xml file , we will execute the testng.xml using *maven*.
+4. After type the test cases in the xml file , we will execute the testng.xml using *maven*.
 
-2.1 Open your favorite console and using the command line go to the location of the automation project. (studio-test-suite)
+4.1 Open your favorite console and using the command line go to the location of the automation project. (studio-test-suite)
 
 .. image:: /_static/images/QAMaven4.png
 
 
-2.2 In this location in the console, type this command *mvn clean test* and wait.
+4.2 In this location in the console, type this command *mvn clean test* and wait.
 
 .. image:: /_static/images/QAMaven5.png
