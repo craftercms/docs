@@ -1,4 +1,4 @@
-.. index:: Crafter Studio, Projects; Crafter Studio
+.. index:: Projects; Crafter Studio
 
 .. _crafter-studio:
 

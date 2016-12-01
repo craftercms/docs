@@ -1,4 +1,4 @@
-.. index:: Crafter Core, Projects; Crafter Core
+.. index:: Projects; Crafter Core
 
 .. _crafter-core:
 
