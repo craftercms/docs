@@ -1,15 +1,25 @@
 .. _crafter-core:
 
+.. index:: Crafter Core, Core, Crafter Core Library
+
 ============
 Crafter Core
 ============
 
-.. todo:: Write What is it Document
+-----------
+Source Code
+-----------
 
-.. toctree::
-	:maxdepth: 1
+Crafter Core's source code is managed in github: https://github.com/craftercms/core
 
-	source-code
-	in-process-api
-	configuration
-	release-notes
+--------
+Java Doc
+--------
+
+Crafter Core's Java Doc is here: http://javadoc.io/doc/org.craftercms/crafter-core
+
+-------------
+Configuration
+-------------
+
+.. todo:: Write overview; write configuration

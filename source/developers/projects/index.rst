@@ -1,7 +1,8 @@
-========
-Projects
-========
-.. todo:: Write projects documentation
+##############################
+Project Specific Documentation
+##############################
+
+Crafter CMS comprises a number of projects, below are the project specific documentations.
 
 .. toctree::
     :maxdepth: 1

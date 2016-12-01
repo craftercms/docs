@@ -72,11 +72,20 @@ This section goes beyond the basics to cover advanced topics like building queri
 Project Specific Documentation
 ##############################
 
-.. toctree::
-	:maxdepth: 2
-	:titlesonly:
+Crafter CMS comprises a number of projects, below are the project specific documentations.
 
-	projects/index
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    projects/core/index
+    projects/engine/index
+    projects/studio/index
+    projects/search/index
+    projects/deployer/index
+    projects/profile/index
+    projects/social/index
+    projects/qa/index
 
 ####################
 Cookbook / Tutorials
