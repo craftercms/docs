@@ -1,6 +1,6 @@
-.. _form-repeating-group:
-
 .. index:: Form Controls; Repeating Group
+
+.. _form-repeating-group:
 
 =======================
 Repeating Group Control

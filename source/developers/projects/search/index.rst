@@ -1,6 +1,6 @@
-.. _crafter-search:
-
 .. index:: Projects; Crafter Search
+
+.. _crafter-search:
 
 ==============
 Crafter Search

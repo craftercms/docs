@@ -1,6 +1,6 @@
-.. _form-source-video-desktop:
-
 .. index:: Data Sources; Video Uploaded from Desktop
+
+.. _form-source-video-desktop:
 
 =======================================
 Video Uploaded from Desktop Data Source

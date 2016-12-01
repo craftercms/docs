@@ -1,6 +1,6 @@
-.. _form-input:
-
 .. index:: Form Controls; Input
+
+.. _form-input:
 
 =============
 Input Control
