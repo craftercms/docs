@@ -1,6 +1,6 @@
-.. _form-source-flash-desktop:
-
 .. index:: Data Sources; Flash Uploaded from Desktop
+
+.. _form-source-flash-desktop:
 
 =======================================
 Flash Uploaded from Desktop Data Source

@@ -1,5 +1,7 @@
 .. highlight:: groovy
 
+.. _engine-site-security-guide:
+
 ==========================
 Engine Site Security Guide
 ==========================

@@ -1,18 +1,30 @@
-.. _crafter-engine:
+.. index:: Crafter Engine, Engine
 
-.. index:: Projects; Crafter Engine
+.. _crafter-engine:
 
 ===============
 Crafter Engine
-===============
+==============
 
-.. todo:: Write overview
+-----------
+Source Code
+-----------
 
-.. toctree::
-	:maxdepth: 1
+Crafter Engine's source code is managed in github: https://github.com/craftercms/engine
 
-	source-code
-	in-process-api
-	rest-api
-	configuration
-	release-notes
+--------
+Java Doc
+--------
+
+Crafter Engine's Java Doc is here: http://javadoc.io/doc/org.craftercms/crafter-engine
+
+-------------
+Configuration
+-------------
+
+* :ref:`engine-site-configuration`
+* :ref:`engine-site-security-guide`
+* :ref:`engine-site-configuration`
+* :ref:`install-engine`
+
+.. todo:: Write overview; write ReST API

@@ -1,6 +1,6 @@
-.. _form-source-kvp:
-
 .. index:: Data Sources; Static Key Value Pairs
+
+.. _form-source-kvp:
 
 ==================================
 Static Key Value Pairs Data Source

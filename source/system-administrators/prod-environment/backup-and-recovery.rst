@@ -13,7 +13,7 @@ A hot backup should comprise of the following steps:
 As you can see above, there are data stores behind Crafter CMS that need to get backed up.  All of these stores are standard disk or database stores that can be backed up and managed with off-the-shelf enterprise backup packages.
 
 ----------------------
-Scheduled Task / Chron
+Scheduled Task / CRON
 ----------------------
 
 By default you will set up your backup process to execute at 4AM. This is based on the fact that Alfresco backs up its search indexes every day at 3:00am.
@@ -49,6 +49,8 @@ Compress the temporary location
 
 Initiate a backup management system to collect the new backup asset or store the compressed backup in a safe location according to your retention policies.
 
+------------
 Files Backup
+------------
 
 Once the database export has been transferred into the backup files location, the script will then use rsync to backup the alf_data/contentstore and alf_data/contentstore.deleted directories to a temporary backup location.
