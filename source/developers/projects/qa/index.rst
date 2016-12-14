@@ -24,3 +24,4 @@ Configuration and How-Tos
    phantomJS-configuration.rst
    test-suite-configuration.rst
    execution-with-maven.rst   
+   execution-with-phantomJS.rst
