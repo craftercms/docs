@@ -1,0 +1,166 @@
+-----------------
+Crafter CMS 2.5.2
+-----------------
+
+`GitHub 2.5.2 Milestone <https://github.com/craftercms/craftercms/issues?q=is%3Aclosed+milestone%3A2.5.2>`_
+Release Date: December 19, 2016
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* Content view / compare ("Diff")
+* Improved code editing
+* Improved content browse UX
+* Improved component based site indexing
+* Crafter App Store support
+* Improve application in-activity timeout handling
+* Many small improvements and fixes
+
+
+^^^^^^^^^^
+New Features
+^^^^^^^^^^
+* #89 CRAFTERCMS-2015: hook up diff in version UI critical new feature
+* #136 CRAFTERCMS-2070: Add publishDate_dt as a field in solr that is automatically added by publisher when a document is published. blocker new feature
+* #135 CRAFTERCMS-2069: Add option to index repeat group items as child documents in solr blocker new feature
+* #79 CRAFTERCMS-1950: Add time zone picker to scheduling dialogs blocker new feature
+* #6 CRAFTERCMS-1300: Allow multiple datasources to be configured for a single node selector blocker new feature
+* #98 CRAFTERCMS-2028: file-desktop-upload Data Source (and other similar datasources) needs to allow browse path critical new feature
+* #299 Create tag in freemarker that allows you to specify groovy controllers that should be run to executing the freemarker. new feature
+* #238 CRAFTERCMS-2178: Add new "set default properties" functionality under title (content type page). new feature
+* #234 CRAFTERCMS-2174: Add overlay context and overlay config properties to Engine. new feature
+* #91 CRAFTERCMS-2019: make session time out only after in-activity of some specified in-activity of minutes by the user new feature
+* #41 CRAFTERCMS-1629: Create Crafter Market Place integration with Crafter Studio new feature
+
+^^^^^^^^^^
+Improvements
+^^^^^^^^^^
+* #78 CRAFTERCMS-1930: UI: list all dependencies in publishing window when approving or submitting a publish critical enhancement
+* #94 CRAFTERCMS-2022: bootstraping alfresco prints 1000s of lines of content not found critical enhancement
+* #215 CRAFTERCMS-2154: Change publishedDate to crafterPublishedDate and crafterPublishedDate_dt blocker enhancement
+* #189 CRAFTERCMS-2125: Do not log user out if validate ticket fails for network reasons blocker enhancement
+* #111 CRAFTERCMS-2042: Video Picker does not support .webm files blocker enhancement
+* #76 CRAFTERCMS-1900: It should be configurable which environments a publisher can publish to blocker enhancement
+* #194 CRAFTERCMS-2130: UI includes of resources (js,css & angular templates) should have a cache param critical enhancement
+* #99 CRAFTERCMS-2029: Improve browse screen UX critical enhancement
+* #252 CRAFTERCMS-889: Clean up model variable names in engine. enhancement
+* #250 CRAFTERCMS-854: Insert RTE does not support sub components. enhancement
+* #248 CRAFTERCMS-2195: Providing an error message if an author uploads a file with bad characters in the filename. enhancement wontfix
+* #231 CRAFTERCMS-2171: remove full screen refresh from site content right click unlock enhancement
+* #192 CRAFTERCMS-2128: copy and paste of empty folder in to another empty folder does not work. folder disappears enhancement
+* #191 CRAFTERCMS-2127: in form editor auto creation of variable name should keep caps except for first letter enhancement
+* #187 CRAFTERCMS-2122: change all blueprints in bootstrap to point to local environment config by default rather than DEV enhancement
+* #183 CRAFTERCMS-2117: Update documentation on deployment config enhancement
+* #182 CRAFTERCMS-2116: Write documentation for configuring panel dragdrop and browse components in studio enhancement
+* #133 CRAFTERCMS-2067: Edit template in preview when no template is available should automatically create the template enhancement
+* #132 CRAFTERCMS-2066: Form basics properties is not obvious to users, make it easier to get to enhancement
+* #120 CRAFTERCMS-2053: required fields dialog on forms should be real dialog message box enhancement
+* #117 CRAFTERCMS-2050: need better default lables for components enhancement wontfix
+* #115 CRAFTERCMS-2048: make real dialog with user friendly message when no content types available enhancement
+* #104 CRAFTERCMS-2035: Complete the RTE Setup Guide enhancement
+* #103 CRAFTERCMS-2034: Document how run test harness enhancement
+* #102 CRAFTERCMS-2033: Finish porting Supported Platforms to docs.craftercms.com enhancement
+* #101 CRAFTERCMS-2032: move 2.5.x install guide to docs.craftercms.com enhancement
+* #92 CRAFTERCMS-2020: replace "You cannot save until all form requirements are satisfied" with proper dialog enhancement
+* #90 CRAFTERCMS-2018: Make Component Editing Window Resizable enhancement
+* #68 CRAFTERCMS-1828: Write documentation for Form Engine Data Source enhancement
+* #63 CRAFTERCMS-1766: Install from Bundle Documentation enhancement
+* #62 CRAFTERCMS-1765: Author's Guide Documentation enhancement
+* #43 CRAFTERCMS-1637: Display the exact list of files that are going to be deployed (including dependencies) enhancement
+* #14 CRAFTERCMS-1380: Add disableJobs flag support in site.xml enhancement
+* #1 CRAFTERCMS-1037: if the content panel is marked open do not use the animation to render it. enhancement
+
+^^^^^^^^^^
+Bugs Fixed
+^^^^^^^^^^
+* #317 Logo Override is forgotten on dashboard blocker
+* #316 Glyph based Icons are broken in the build blocker
+* #311 Nested Search with components does not work as expected blocker bug
+* #308 Studio: When a component is created some fields are missing. blocker
+* #304 Invalid table name for index on oracle create DDL script blocker bug
+* #289 Change made in code mode doesn't get saved upon clicking 'Save & Close' blocker bug
+* #281 Rebuilding Studio Database will fail on Mysql, table is not been created. blocker bug
+* #267 // in content paths coming in to a service cause issues at the database level. blocker bug
+* #266 Bug in component-panel.js is stopping it from loading blocker bug
+* #262 RTE config rteStyleSheets tag cannot be empty blocker
+* #257 Clear publishing submission comment from previous publishing request blocker
+* #246 CRAFTERCMS-2187: Studio no longer generates deployment event. blocker bug
+* #239 CRAFTERCMS-2179: Checkbox group - unselect function is not working. blocker bug
+* #230 CRAFTERCMS-2170: Duplicated content upon template change or content creation. blocker bug
+* #229 CRAFTERCMS-2169: configured list (see pluton, slider sets on home page) shows double check boxes blocker bug
+* #204 CRAFTERCMS-2141: Studio not working on latest build CS2X-INST25X-19 blocker bug
+* #196 CRAFTERCMS-2132: renamed objects with altered internal names do not show up in site dropdown after rename blocker bug
+* #160 CRAFTERCMS-2094: site content menu page folder renders DOUBLE on create new blocker bug
+* #116 CRAFTERCMS-2049: contentModel in component points to the page, not the component (model works correctly) blocker bug
+* #106 CRAFTERCMS-2037: Save&Draft then Save&Close will duplicate the page as a child of the original blocker bug
+* #105 CRAFTERCMS-2036: Submitted schedule item showing different time than selected blocker bug
+* #87 CRAFTERCMS-2008: " in content creates broken content in json marshaller for /api/i/service/BLAH blocker bug
+* #65 CRAFTERCMS-1812: submit dialog does keep timezone in configured timezone blocker bug
+* #313 ContentServiceImpl.getContentAsString() unauthorized access in Alfresco critical
+* #312 Studio UI using verify ticket call is not redirect user to login screen when ticket is invalid critical
+* #298 Copy and Paste pages with content-as-folder false not working properly bug critical
+* #283 Save as Draft does not show the orange bar until after a page refresh bug critical
+* #278 Cut and Pasted page items don't appear in the site content list bug critical
+* #277 RTE doesn't expand with a large content until focused out and back in again bug critical
+* #275 Studio Contextual Navigation doesn't reflect changes made to the configuration file bug critical
+* #273 Studio: Duplicate operation is broken when content-as-folder is set to false bug critical
+* #263 Dashboard widgets attach "/" at the end of the browserUri when loading preview bug critical
+* #259 Form engine fails to load a form due to CmisObjectNotFoundException. bug critical
+* #247 CRAFTERCMS-2191: site content ROOT FOLDER plugin rendering issues on slow networks/REST response bug critical
+* #240 CRAFTERCMS-2180: parameters on urls or anchors on URL in preview prevents edit of content and templates. bug critical
+* #235 CRAFTERCMS-2175: User's session doesn't refresh after being inactive for long time bug critical
+* #232 CRAFTERCMS-2172: no longer getting crop dialog on image upload when image is larger than constraints bug critical
+* #219 CRAFTERCMS-2159: form resizes after uploading an image bug critical
+* #93 CRAFTERCMS-2021: security file not in bootstrap, fix: ./crafter/data/repo/security-config.xml bug critical
+* #71 CRAFTERCMS-1842: RTE right click inconsistent behavior (on copy-cut-paste actions) bug critical
+* #61 CRAFTERCMS-1761: delete issues a publish even if the item is NEW and was never before published. bug critical
+* #297 The app not allow to duplicate the global entry tree. bug invalid wontfix
+* #295 Studio: Filename field not displaying properly the count of chars bug
+* #294 In the Dashboard page, selecting more than one file and at least one in "Draft" mode does not display the orange bar. bug
+* #293 Lock File after Save Draft bug
+* #292 Site content Issue - Root folder is presenting a history(open latest) issue, when it contains the root and a folder. bug
+* #286 Depth param is never used other than for logging bug
+* #280 The Datetime control still shows the required mark when a value is pre-populated bug
+* #279 Custom option doesn't work in Publishing Channel when 'Web' is the only option configured bug
+* #274 Crafter Studio - Page name not showing up on authoring form bug
+* #270 Studio: RTE toolbar does not close when the user clicks any element that is not a field bug
+* #268 In some cases crafter publish dialog pulls old comments bug
+* #265 Diff throws error when running against Alfresco Repo bug
+* #264 Folders are displayed as components in the Image Browse bug
+* #260 User's session doesn't refresh after being inactive for long time bug
+* #258 The Dropdown form control fails to load the existing value bug
+* #254 CRAFTERCMS-905: Mandatory properties in Crafter are being indexed as arrays. bug
+* #249 CRAFTERCMS-2196: The 'Approve & Publish' dialog doesn't display dependency items bug
+* #244 CRAFTERCMS-2184: 'Submit' button should not be available while the 'Approve for Publish' dialog is loading items bug
+* #242 CRAFTERCMS-2182: Content life cycle not been triggered bug
+* #241 CRAFTERCMS-2181: Multiple includes/excludes for Groovy script filter mappings are not working bug
+* #236 CRAFTERCMS-2176: 'Recently Published' doesn't render 'Publisher' column properly bug
+* #228 CRAFTERCMS-2168: In Content Type Page when the user save a content type that doesn't contain a template, the user should be available of continue or cancel the save function. bug enhancement
+* #227 CRAFTERCMS-2167: Right Menu on content type page shoudn't be static. bug
+* #226 CRAFTERCMS-2166: Links and clickable content should change the cursor in hover state on content type page. bug
+* #225 CRAFTERCMS-2165: replace saved alert message with real dialog on content type editor bug
+* #223 CRAFTERCMS-2163: Components folder item continues to spin randomly bug wontfix
+* #218 CRAFTERCMS-2158: New indicator gets removed after edit in new site bug
+* #217 CRAFTERCMS-2156: RTE overflows after a certain width bug
+* #216 CRAFTERCMS-2155: Site component datasource fails to load due to a missing service call bug
+* #195 CRAFTERCMS-2131: version dialog becomes unuable when there are many versions bug
+* #193 CRAFTERCMS-2129: The search field doesn't work. bug
+* #190 CRAFTERCMS-2126: Uploading images to /static-assets/images/ will throw a DB exception bug
+* #188 CRAFTERCMS-2124: edit and other nav menu controls remain disabled after publish in preview bug
+* #185 CRAFTERCMS-2119: bulk upload fails when user ties to bulk upload in to existing structure due to existing folders bug
+* #121 CRAFTERCMS-2054: long file names should not push image pickers to the left in forms bug
+* #119 CRAFTERCMS-2052: form dialog does not grow big enough on images to allow for data source dialogs bug
+* #114 CRAFTERCMS-2047: Blueprint configs need drag-drop browse examples bug
+* #110 CRAFTERCMS-2041: The app doesn’t allows to copy the page for the third time . bug
+* #109 CRAFTERCMS-2040: Studio should always refresh the preview after creating/editing components bug
+* #108 CRAFTERCMS-2039: Video file .webm selection from authoring form not valid bug
+* #97 CRAFTERCMS-2026: orange save as draft bar does not go away on save and close bug
+* #85 CRAFTERCMS-2004: update solr schema in crafter deploy to understand the following fields bug
+* #70 CRAFTERCMS-1831: Using 'logo', 'header' and 'footer' breaks a form bug
+* #39 CRAFTERCMS-1621: Including external resources should respect the site's protocol in Pluton blueprint bug
+* #18 CRAFTERCMS-1432: Email Notification from Crafter Social doesn't work bug
+* #8 CRAFTERCMS-1332: Save and close after Duplicate doesn't work bug
+* #5 CRAFTERCMS-1205: Disk repository does not create version files beyond --0.10 bug
+* #4 CRAFTERCMS-1171: when drag drop panel is out and preview is not WEB/full screen, increase preview by the width of the panel bug wontfix
+* #3 CRAFTERCMS-1112: RTE html removing tags after update bug wontfix
