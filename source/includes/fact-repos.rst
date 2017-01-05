@@ -7,7 +7,5 @@
      - Support
    * - Disk Repo (local use)
      - |checkmark|
-   * - Alfresco 5.0
-     - |checkmark|
-   * - Alfresco 5.1
+   * - Git Repo
      - |checkmark|
