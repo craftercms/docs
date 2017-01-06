@@ -10,7 +10,7 @@ Test Suite Execution with Maven.
 
 **Maven**
 
-Integrating Maven with Selenium provides following benefits
+Integrating Maven with Selenium provides the following benefits
 Apache Maven provides support for managing the full lifecycle of a test project.
 
 * Maven is used to define project structure, dependencies, build, and test management.
