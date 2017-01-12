@@ -1,3 +1,6 @@
+.. _reindex-search:
+.. index:: Search; Solr; Reindex; Crafter Search; Dev Ops; System Administrators; 
+
 =========================================
 Reindexing Content for Search and Queries
 =========================================
