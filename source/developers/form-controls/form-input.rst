@@ -24,11 +24,6 @@ Configuration
         :alt: Form Control Input 1
         :align: center
 
-.. image:: /_static/images/form-control-input-2.png
-        :width: 50%
-        :alt: Form Control Input 1
-        :align: center
-
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
 ====================== ===================================================================================
