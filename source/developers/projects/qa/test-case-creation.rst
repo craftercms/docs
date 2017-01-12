@@ -165,41 +165,51 @@ Consider this simple script to login into a crafter local site.
 
 .. code-block:: c
 
-   package CrafterTools;
-   
+   package org.craftercms.studio.test.utils;
+
    import java.util.concurrent.TimeUnit;
-   
+
    import org.openqa.selenium.WebDriver;
    import org.openqa.selenium.chrome.ChromeDriver;
    import org.openqa.selenium.firefox.FirefoxDriver;
+   import org.openqa.selenium.phantomjs.PhantomJSDriver;
+   import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+   import org.openqa.selenium.remote.DesiredCapabilities;
    import org.openqa.selenium.safari.SafariDriver;
-   
+
    public class WebDriverManager {
-   WebDriver driver;
-   ConstantsPropertiesManager constantsPropertiesManager;
+      WebDriver driver;
+      ConstantsPropertiesManager constantsPropertiesManager;
+   
+      public void openConnection() {
+         constantsPropertiesManager = new ConstantsPropertiesManager(FilesLocations.CONSTANTSPROPERTIESFILEPATH);
+         String webBrowserProperty = constantsPropertiesManager.getSharedExecutionConstants().getProperty("webBrowser");
 
-   public void openConnection() {
-      constantsPropertiesManager = new ConstantsPropertiesManager(FilesLocations.CONSTANTSPROPERTIESFILEPATH);
-      String webBrowserProperty = constantsPropertiesManager.getSharedExecutionConstants().getProperty("webBrowser");
+      if (webBrowserProperty.equalsIgnoreCase("PhantomJS")) {
 
-      if (webBrowserProperty.equalsIgnoreCase("Chrome")) {
+         System.setProperty("phantomjs.binary.path",
+               constantsPropertiesManager.getSharedExecutionConstants().getProperty("phantomJSExec"));
+         driver = new PhantomJSDriver();
+      }
+      
+      else if (webBrowserProperty.equalsIgnoreCase("Chrome")) {
 
          System.setProperty("webdriver.chrome.driver",
                constantsPropertiesManager.getSharedExecutionConstants().getProperty("chromeExec"));
          driver = new ChromeDriver();
-      } else if (webBrowserProperty.equalsIgnoreCase("FireFox"))
-         driver = new FirefoxDriver();
+      }
+      
       else if (webBrowserProperty.equalsIgnoreCase("Safari"))
          driver = new SafariDriver();
       else {
-         // if not recognized web browser, it run by default with Firefox
+         // if not recognized web browser, it run by default with Firefox                
          driver = new FirefoxDriver();
       }
 
       driver.get(constantsPropertiesManager.getSharedExecutionConstants().getProperty("baseUrl"));
    }
 
-   public void closeConnection() {
+   public void closeConnection() {   
       this.driver.close();
       this.driver.quit();
    }
@@ -222,6 +232,7 @@ Consider this simple script to login into a crafter local site.
       }
    }
    }
+   
 
 3. Once created classes should be displayed as following:
 
@@ -253,24 +264,28 @@ Consider this simple script to login into a crafter local site.
 .. code-block:: c      
 
    ##Project Constants##
-   
+
    #BaseUrl for execution
    baseUrl = http://localhost:8080/studio/#/login
    
    
    #Web browser for execution
-   #values = Chrome,FireFox,Safari,IE
-   webBrowser = Safari
+   #values = Chrome,FireFox,Safari,IE,Chrome,PhantomJS
+   webBrowser = Chrome
    
    #ChromeDriverPlugin location
    chromeExec = /Users/gustavoortizalfaro/Documents/workspace/chromedriver
+   
+   #PhantomJSDriverPlugin location
+   phantomJSExec = /Users/gustavoortizalfaro/Documents/workspace/phantomjs-2.1.1-macosx/bin/phantomjs
    
    #Default web driver wait
    defaultWaitTime = 4000
    
    #Test user datasheetname
    dataSheetNameTestUsers = TestUsers
-   dataRowIndexTestUser = 1   
+   dataRowIndexTestUser = 1
+ 
    
 *SharedUIElements.properties*   
 
