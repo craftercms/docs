@@ -1,7 +1,6 @@
 ----------------
 Crafter CMS 2.5.1
 ----------------
-http://issues.craftercms.org/secure/ReleaseNote.jspa?projectId=10100&version=10203
 
 ^^^^^^^^^^
 Highlights

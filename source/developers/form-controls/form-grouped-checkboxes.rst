@@ -1,3 +1,5 @@
+.. index:: Form Controls; Grouped Checkboxes
+
 .. _form-grouped-checkboxes:
 
 ==========================

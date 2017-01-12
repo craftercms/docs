@@ -1,3 +1,5 @@
+.. index:: Data Sources; Image Uploaded from Desktop
+
 .. _form-source-image-desktop:
 
 =======================================
@@ -18,11 +20,10 @@ Configuration
     :alt: Form Control Input 1
     :align: center
 
-====================== ===================================================================================
-Description/Purpose    Data source to upload images from desktop.
+.. include:: /includes/form-sources/form-source-field-basics.rst
 
-Data Source Basics     - Title: Data source title to show on the form.
-                       - Name: Name of variable to store the final result in.
-
-Properties             - Repository Path: Path where to store the new image uploaded from desktop.
-====================== ===================================================================================
++------------------------+------------------------------------------------------------------------------+
+|| Description/Purpose   || Data source to upload images from desktop.                                  |
++------------------------+------------------------------------------------------------------------------+
+|| Properties            || - Repository Path: Path where to store the new image uploaded from desktop. |
++------------------------+------------------------------------------------------------------------------+

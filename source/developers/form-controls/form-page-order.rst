@@ -1,3 +1,5 @@
+.. index:: Form Controls; Page Order
+
 .. _form-page-order:
 
 ==================

@@ -1,3 +1,5 @@
+.. index:: Form Controls; Rich Text Editor
+
 .. _form-rte:
 
 ========================

@@ -33,12 +33,6 @@ Our developer documentation focuses on Crafter CMS specific topics.  Below is a 
 |                | |                                           |                                              |
 +----------------+---------------------------------------------+----------------------------------------------+
 
-.. todo:: Write overview
-    
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-
 #########################
 Beginner Developer Topics
 #########################
@@ -46,9 +40,10 @@ Beginner Developer Topics
 This section covers the basic topics you need to define a content type and render that content as part of a page, component or service.
 
 .. toctree::
-	:maxdepth: 1
+	:maxdepth: 2
 	:titlesonly:
 
+    architecture
     content-modeling
     templating-api
     custom-services-and-controllers
@@ -77,11 +72,20 @@ This section goes beyond the basics to cover advanced topics like building queri
 Project Specific Documentation
 ##############################
 
-.. toctree::
-	:maxdepth: 2
-	:titlesonly:
+Crafter CMS comprises a number of projects, below are the project specific documentations.
 
-	projects/index
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    projects/core/index
+    projects/engine/index
+    projects/studio/index
+    projects/search/index
+    projects/deployer/index
+    projects/profile/index
+    projects/social/index
+    projects/qa/index
 
 ####################
 Cookbook / Tutorials

@@ -1,3 +1,5 @@
+.. index:: Form Controls; Input
+
 .. _form-input:
 
 =============

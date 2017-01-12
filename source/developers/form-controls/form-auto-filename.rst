@@ -1,3 +1,5 @@
+.. index:: Form Controls; Auto Filename
+
 .. _form-auto-filename:
 
 =====================

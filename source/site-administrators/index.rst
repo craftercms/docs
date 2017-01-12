@@ -16,6 +16,4 @@ This section details activities related to site administration in Crafter CMS. T
 	deployment-configuration
 	drag-n-drop-configuration
 
-.. todo:: Authoring Configuration for a Site
-
-.. todo:: Authoring Security for a Site
+.. todo:: Add `Authoring Configuration for a Site`, `Authoring Security for a Site`

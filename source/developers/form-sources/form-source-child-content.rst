@@ -1,3 +1,5 @@
+.. index:: Data Sources; Child Content
+
 .. _form-source-child-content:
 
 =========================
@@ -18,13 +20,12 @@ Configuration
     :alt: Form Control Input 1
     :align: center
 
-====================== ===================================================================================
-Description/Purpose    Data source to select or create content to be used on the form.
+.. include:: /includes/form-sources/form-source-field-basics.rst
 
-Data Source Basics     - Title: Data source title to show on the form.
-                       - Name: Name of variable to store the final result in.
-
-Properties             - Repository Path: Path where to store new content created.
-                       - Browse Path: Path where to browse the datasource items.
-                       - Default Type: Default type of datasource items.
-====================== ===================================================================================
++------------------------+-----------------------------------------------------------------------+
+|| Description/Purpose   || Data source to select or create content to be used on the form.      |
++------------------------+-----------------------------------------------------------------------+
+|| Properties            || - Repository Path: Path where to store new content created.          |
+||                       || - Browse Path: Path where to browse the datasource items.            |
+||                       || - Default Type: Default type of datasource items.                    |
++------------------------+-----------------------------------------------------------------------+

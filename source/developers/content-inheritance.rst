@@ -6,7 +6,7 @@
 Content Inheritance
 ===================
 
-Crafter CMS support content inhertiance out of the box, and supports it via a pluggable mechanism that allows developers to augment or override what's out of the box.
+Crafter CMS support content inheritance out of the box, and supports it via a pluggable mechanism that allows developers to augment or override what's out of the box.
 
 --------------------------
 Content Inheritance Basics
@@ -97,16 +97,34 @@ This mechanism allows you to define meta-data that flows down the information ar
 
 .. note:: The ``inherit-levels`` mechanism allows you set **level descriptors** at various levels of the information architecture with lower levels overriding upper levels.
 
-What we discussed thus far is a single inhertiance strategy implementation, ``inherit-levels``, the code to which is available here: `InheritLevelsMergeStrategy.java <https://github.com/craftercms/core/blob/master/src/main/java/org/craftercms/core/xml/mergers/impl/strategies/InheritLevelsMergeStrategy.java>`_. There are more inhertiance strategies implemented out of the box with Crafter CMS and you can build your own to suit your needs.
+What we discussed thus far is a single inheritance strategy implementation, ``inherit-levels``, the code to which is available here: `InheritLevelsMergeStrategy.java <https://github.com/craftercms/core/blob/master/src/main/java/org/craftercms/core/xml/mergers/impl/strategies/InheritLevelsMergeStrategy.java>`_. There are more inhertiance strategies implemented out of the box with Crafter CMS and you can build your own to suit your needs.
 
 -------------------------
 Out of the Box Strategies
 -------------------------
 
-=========== =================================
-Strategy    Purpose
-=========== =================================
++-----------------------+------------------------------------------------------------------------+
++-----------------------+------------------------------------------------------------------------+
+|| Strategy             || Description                                                           |
++=======================+========================================================================+
+|| ``single-file``      || No content should be inherited.                                       |
++-----------------------+------------------------------------------------------------------------+
+|| ``inherit-levels``   || Content from Crafter level descriptors (crafter-level-descriptor.xml) |
+||                      || in the current and upper levels should be inherited.                  |
++-----------------------+------------------------------------------------------------------------+
+|| ``explicit-parent``  || The parent descriptor to inherit is specified explicitly in the XML   |
+||                      || tag ``parent-descriptor``.                                            |
++-----------------------+------------------------------------------------------------------------+
+|| ``targeted-content`` || The page will be merged with other pages in a targeted content        |
+||                      || hierarchy, including level descriptors. For example,                  |
+||                      || ``/en_US/about-us`` will generate the following merging list:         |
+||                      || ``/en_US/about-us/index.xml``,                                        |
+||                      || ``/en_US/about-us/crafter-level-descriptor.xml``,                     |
+||                      || ``/en/about-us/index.xml``,                                           |
+||                      || ``/en/about-us/crafter-level-descriptor.xml``,                        |
+||                      || ``/about-us/index.xml``, ``/about-us/crafter-level-descriptor.xml``,  |
+||                      || ``/crafter-level-descriptor.xml``.                                    |
++-----------------------+------------------------------------------------------------------------+
 
-
-.. TODO:: List remaining strategies, describe the resolver and how to add your own. Describe merge cues.
+.. TODO:: Describe how add your own merge strategy. Describe merge cues.
 

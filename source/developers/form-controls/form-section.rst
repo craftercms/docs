@@ -1,3 +1,5 @@
+.. index:: Form Controls; Form Section
+
 .. _form-section:
 
 ====================

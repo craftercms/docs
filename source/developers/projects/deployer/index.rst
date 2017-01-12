@@ -1,14 +1,19 @@
+.. index:: Projects; Crafter Deployer
+
 .. _crafter-deployer:
 
 ================
 Crafter Deployer
 ================
 
-.. todo:: Write What is it Document
+-----------
+Source Code
+-----------
 
-.. toctree::
-	:maxdepth: 1
+Crafter Deployer's source code is managed in github: https://github.com/craftercms/deployer
 
-	source-code
-	configuration
-	release-notes
+-------------
+Configuration
+-------------
+
+.. todo:: Write overview; write configuration, write ReST API doc

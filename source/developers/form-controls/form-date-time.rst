@@ -1,3 +1,5 @@
+.. index:: Form Controls; Date/Time Control
+
 .. _form-date-time:
 
 =================

@@ -1,16 +1,25 @@
+.. index:: Projects; Crafter Profile
+
 .. _crafter-profile:
 
 ===============
 Crafter Profile
 ===============
 
-.. todo:: Write overview
+-----------
+Source Code
+-----------
 
-.. toctree::
-	:maxdepth: 1
+Crafter Profile's source code is managed in github: https://github.com/craftercms/profile
 
-	source-code
-	in-process-api
-	rest-api
-	configuration
-	release-notes
+--------
+Java Doc
+--------
+
+Crafter Profile's Java Doc is here: http://javadoc.io/doc/org.craftercms/crafter-profile
+
+-------------
+Configuration
+-------------
+
+.. todo:: Write overview; write configuration, write ReST API doc

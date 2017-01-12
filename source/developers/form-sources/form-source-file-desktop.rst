@@ -1,3 +1,5 @@
+.. index:: Data Sources; File Uploaded from Desktop
+
 .. _form-source-file-desktop:
 
 ======================================
@@ -18,11 +20,10 @@ Configuration
     :alt: Source Control File From Desktop
     :align: center
 
-====================== ===================================================================================
-Description/Purpose    Data source to upload files from desktop.
+.. include:: /includes/form-sources/form-source-field-basics.rst
 
-Data Source Basics     - Title: Data source title to show on the form.
-                       - Name: Name of variable to store the final result in.
-
-Properties             - Repository Path: Path where to store the new file uploaded from desktop.
-====================== ===================================================================================
++------------------------+-----------------------------------------------------------------------------+
+|| Description/Purpose   || Data source to upload files from desktop.                                  |
++------------------------+-----------------------------------------------------------------------------+
+|| Properties            || - Repository Path: Path where to store the new file uploaded from desktop. |
++------------------------+-----------------------------------------------------------------------------+

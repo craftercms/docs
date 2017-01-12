@@ -1,3 +1,5 @@
+.. index:: Form Controls; Image
+
 .. _form-image:
 
 =============

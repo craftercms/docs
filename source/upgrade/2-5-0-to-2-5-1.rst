@@ -33,5 +33,5 @@ The `org.craftercms.engine.util.config.TargetingProperties` class has been moved
 =============== ============================================================================================
 Who is Impacted Any Java or Groovy code that implements `org.craftercms.engine.util.config.TargetingProperties`
 
-Action Required You will need to update your extension to meet the updated interface
+Action Required You will need to update your extension to meet the updated class
 =============== ============================================================================================

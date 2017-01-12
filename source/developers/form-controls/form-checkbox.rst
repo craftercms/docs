@@ -1,3 +1,5 @@
+.. index:: Form Controls; Checkbox
+
 .. _form-checkbox:
 
 ================

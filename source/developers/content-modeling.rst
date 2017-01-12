@@ -1,3 +1,5 @@
+.. index:: Content Modeling, Modeling, Content Model
+
 ================
 Content Modeling
 ================
@@ -144,6 +146,8 @@ The fields available at this level are:
 
 The 2 key properties are: the display template (:ref:`content-view-templates`) which is the HTML template that renders the final Web page; the content inheritance (:ref:`content-inheritance`) which determines how this content type will inherit from parent XML files in the system.
 
+.. index:: Form Controls
+
 ^^^^^^^^^^^^^
 Form Controls
 ^^^^^^^^^^^^^
@@ -156,77 +160,9 @@ Form Controls are data input controls that, once placed on a form, will capture 
 
 Form Engine Controls (please use the scrollbar to see more controls)
 
+.. include:: form-controls/list-form-controls.rst
 
-+-------------------+----------------------------------------------------------------------------+
-|| Control          || Description                                                               |
-+-------------------+----------------------------------------------------------------------------+
-|| Form Section     ||  Create a new section in the form, this is to help the content authors by |
-||                  ||  by segmenting a form into sections of similar concern.                   |
-||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-section` page.                             |
-+-------------------+----------------------------------------------------------------------------+
-|| Repeating Group  ||  Repeating groups are used when the form has one or several controls that |
-||                  ||  repeat to capture the same data as records. For example: a list of       |
-||                  ||  images in a carousel, or a list of widgets on a page.                    |
-||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-repeating-group` page.                     |
-+-------------------+----------------------------------------------------------------------------+
-|| Input            ||  A simple textual input line.                                             |
-||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-input` page.                               |
-+-------------------+----------------------------------------------------------------------------+
-|| Text Area        ||  A simple block of plain text.                                            |
-||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-text-area` page.                           |
-+-------------------+----------------------------------------------------------------------------+
-|| Rich Text Editor ||  A block of HTML.                                                         |
-||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-rte` page.                                 |
-+-------------------+----------------------------------------------------------------------------+
-|| Dropdown         ||  Dropdown list of items to pick from.                                     |
-||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-dropdown` page.                            |
-+-------------------+----------------------------------------------------------------------------+
-|| Date / Time      ||  Date and Time field with a picker.                                       |
-||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-date-time` page.                           |
-+-------------------+----------------------------------------------------------------------------+
-|| Checkbox         ||  True/False checkbox.                                                     |
-||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-checkbox` page.                            |
-+-------------------+----------------------------------------------------------------------------+
-|| Grouped          || Several checkboes (true/false).                                           |
-|| Checkboxes       ||                                                                           |
-||                  || Details are in the :ref:`form-grouped-checkboxes` page.                   |
-+-------------------+----------------------------------------------------------------------------+
-|| Item Selector    ||                                                                           |
-||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-item-selector` page.                       |
-+-------------------+----------------------------------------------------------------------------+
-|| Image            ||  Image selector from a Data Source.                                       |
-||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-image` page.                               |
-+-------------------+----------------------------------------------------------------------------+
-|| Video            ||  Video selector from a Data Source.                                       |
-||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-video` page.                               |
-+-------------------+----------------------------------------------------------------------------+
-|| Label            ||                                                                           |
-||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-label` page.                               |
-+-------------------+----------------------------------------------------------------------------+
-|| Page Order       ||                                                                           |
-||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-page-order` page.                          |
-+-------------------+----------------------------------------------------------------------------+
-|| File Name        ||                                                                           |
-||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-filename` page.                            |
-+-------------------+----------------------------------------------------------------------------+
-|| Auto Filename    ||                                                                           |
-||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-auto-filename` page.                       |
-+-------------------+----------------------------------------------------------------------------+
+.. index:: Data Sources
 
 ^^^^^^^^^^^^
 Data Sources
@@ -236,30 +172,11 @@ Data Sources
 	:alt: Form Engine Data Sources
 	:align: center
 
+Data Sources are pickers that help pull in content from internal or external storage/systems. For example, data source include: youtube.com video picker, or Flickr image picker, desktop image uploader, and so on. Crafter CMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
+
 Form Engine Data Sources (please use the scrollbar to see more controls)
 
-+------------------------------+-----------------------------------------------------------------+
-|| Control                     || Description                                                    |
-+------------------------------+-----------------------------------------------------------------+
-|| Child Content               || Details are in the :ref:`form-source-child-content` page.      |
-+------------------------------+-----------------------------------------------------------------+
-|| Image Uploaded from Desktop || Details are in the :ref:`form-source-image-desktop` page.      |
-+------------------------------+-----------------------------------------------------------------+
-|| Image from Repository       || Details are in the :ref:`form-source-image-repo` page.         |
-+------------------------------+-----------------------------------------------------------------+
-|| DAM Image Flickr            || Details are in the :ref:`form-source-dam-flickr` page.         |
-+------------------------------+-----------------------------------------------------------------+
-|| File Uploaded from Desktop  || Details are in the :ref:`form-source-file-desktop` page.       |
-+------------------------------+-----------------------------------------------------------------+
-|| Flash Uploaded from Desktop || Details are in the :ref:`form-source-flash-desktop` page.      |
-+------------------------------+-----------------------------------------------------------------+
-|| Video Uploaded from Desktop || Details are in the :ref:`form-source-video-desktop` page.      |
-+------------------------------+-----------------------------------------------------------------+
-|| Static Key Value Pairs      || Details are in the :ref:`form-source-kvp` page.                |
-+------------------------------+-----------------------------------------------------------------+
-|| Configured List of Pairs    || Details are in the :ref:`form-source-list-pairs` page.         |
-+------------------------------+-----------------------------------------------------------------+
-
+.. include:: form-sources/list-form-sources.rst
 
 ^^^^^^^^^^^
 Form Canvas

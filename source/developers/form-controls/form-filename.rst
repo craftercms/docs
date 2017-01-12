@@ -1,3 +1,5 @@
+.. index:: Form Controls; Filename
+
 .. _form-filename:
 
 ================

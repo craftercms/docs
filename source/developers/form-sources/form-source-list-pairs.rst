@@ -1,3 +1,5 @@
+.. index:: Data Sources; Configured List of Pairs
+
 .. _form-source-list-pairs:
 
 ====================================
@@ -18,16 +20,15 @@ Configuration
     :alt: Source Control Configured List of Pairs Configuration
     :align: center
 
-====================== ===================================================================================
-Description/Purpose    Data source that loads pairs from external xml file.
+.. include:: /includes/form-sources/form-source-field-basics.rst
 
-Data Source Basics     - Title: Data source title to show on the form.
-                       - Name: Name of variable to store the final result in.
-
-Properties             - Data Type: Key Value pairs type (String, Integer, Float, Date, HTML).
-                       - List Name: Name of the xml file with the pairs to be used by the data source.
-                       - Sort: Sort pairs when displaying on form.
-====================== ===================================================================================
++------------------------+----------------------------------------------------------------------------------+
+|| Description/Purpose   || Data source that loads pairs from external xml file.                            |
++------------------------+----------------------------------------------------------------------------------+
+|| Properties            || - Data Type: Key Value pairs type (String, Integer, Float, Date, HTML).         |
+||                       || - List Name: Name of the xml file with the pairs to be used by the data source. |
+||                       || - Sort: Sort pairs when displaying on form.                                     |
++------------------------+----------------------------------------------------------------------------------+
 
 ----------------------------------------
 Creating an XML file for the data source

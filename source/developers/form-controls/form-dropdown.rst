@@ -1,3 +1,5 @@
+.. index:: Form Controls; Dropdown
+
 .. _form-dropdown:
 
 ================

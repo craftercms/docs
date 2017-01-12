@@ -1,16 +1,25 @@
+.. index:: Projects; Crafter Search
+
 .. _crafter-search:
 
 ==============
 Crafter Search
 ==============
 
-.. todo:: Write What is it Document
+-----------
+Source Code
+-----------
 
-.. toctree::
-	:maxdepth: 1
+Crafter Search's source code is managed in github: https://github.com/craftercms/search
 
-	source-code
-	in-process-api
-	rest-api
-	configuration
-	release-notes
+--------
+Java Doc
+--------
+
+Crafter Search's Java Doc is here: http://javadoc.io/doc/org.craftercms/crafter-search
+
+-------------
+Configuration
+-------------
+
+.. todo:: Write overview; write configuration, write ReST API doc

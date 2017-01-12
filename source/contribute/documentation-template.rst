@@ -170,6 +170,8 @@ Tables
 Simple Tables
 ^^^^^^^^^^^^^
 
+.. note:: The number of characters per line is no more than 99. Please copy the template and start with it and don't make the lines any longer.
+
 .. code-block:: rst
 
 	=============== =================================================================================
@@ -183,6 +185,8 @@ Simple Tables
 ^^^^^^^^^^^^^^
 Complex Tables
 ^^^^^^^^^^^^^^
+
+.. note:: The number of characters per line is no more than 99. Please copy the template and start with it and don't make the lines any longer.
 
 .. code-block:: rst
 

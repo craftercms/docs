@@ -1,3 +1,5 @@
+.. index:: Data Sources; Flash Uploaded from Desktop
+
 .. _form-source-flash-desktop:
 
 =======================================
@@ -18,11 +20,10 @@ Configuration
     :alt: Source Control Flash From Desktop
     :align: center
 
-====================== ===================================================================================
-Description/Purpose    Data source to upload flash files from desktop.
+.. include:: /includes/form-sources/form-source-field-basics.rst
 
-Data Source Basics     - Title: Data source title to show on the form.
-                       - Name: Name of variable to store the final result in.
-
-Properties             - Repository Path: Path where to store the new flash file uploaded from desktop.
-====================== ===================================================================================
++------------------------+-----------------------------------------------------------------------------------+
+|| Description/Purpose   || Data source to upload flash files from desktop.                                  |
++------------------------+-----------------------------------------------------------------------------------+
+|| Properties            || - Repository Path: Path where to store the new flash file uploaded from desktop. |
++------------------------+-----------------------------------------------------------------------------------+

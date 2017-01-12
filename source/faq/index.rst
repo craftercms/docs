@@ -10,13 +10,13 @@ FAQ
 What is Crafter CMS
 -------------------
 
-Crafter CMS is an Digital Experience Management Platform.  This includes Enterprise grade management capabilities for building interactive, personalized experiences for Web, mobile, digital signage, email, augmented / virtual reality and may other digital mediums.  Crafter CMS is comprised of several independent, integrated components including: a repository, a authoring Studio (Crafter Studio), a Dynamic Content Delivery Engine (Crafter Engine), a Profile and personalization store and server (Crafter Profile), a query/search server (Crafter Search) and a social content store and server (Crafter Social).
+Crafter CMS is a Digital Experience Management Platform.  This includes Enterprise grade management capabilities for building interactive, personalized experiences for Web, mobile, digital signage, email, augmented / virtual reality and many other digital mediums.  Crafter CMS is comprised of several independent, integrated components including: a core content repository, an authoring application for content editors/managers (Crafter Studio), a dynamic content delivery system (Crafter Engine), a user profile store and personalization server (Crafter Profile), a query/search server (Crafter Search) and a social content store and server (Crafter Social).
 
 -----------------------------------------------------------------------------
 What's so special about Crafter CMS, don't we have enough OSS CMSs out there?
 -----------------------------------------------------------------------------
 
-Crafter Software believes that great digital experiences are those which are which are crafted.  Marketers, authors, designers and developers need a great set of tools and a platform that allows them to express themselves effectively, efficiently and more importantly, completely.  Crafter is a CMS for artisans built by artisans.  Our mission is to continue to create the World’s most scalable personalized digital content creation and delivery tools and platform in a way that truly enables your content creators and developers to quickly craft and deliver amazing experience to your customers, employees and partners.
+We firmly believe that great digital experiences must be crafted - they must be compelling, unique, branded, and personalized.  Marketers, authors, designers and developers need a great set of tools and a platform that allows them to express themselves effectively, efficiently and completely.  Crafter is a CMS for artisans built by artisans.  Our mission is to create the world’s most scalable, personalized digital content creation and delivery platform in a way that truly enables content creators and software developers to quickly craft and deliver amazing experience to their customers, employees and partners.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Crafter CMS is Different from the Competition

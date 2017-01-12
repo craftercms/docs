@@ -58,6 +58,7 @@ QA/Production Environment
     	prod-environment/turning-off-show-error.rst
         prod-environment/configure-engine-multi-tenancy.rst
     	prod-environment/configure-solr-replication.rst
+    	prod-environment/backup-and-recovery.rst
 
 
 ----------------

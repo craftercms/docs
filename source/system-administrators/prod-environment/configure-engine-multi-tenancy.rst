@@ -1,3 +1,7 @@
+.. index:: Multi-Tenancy, Configuration; Crafter Engine Multi-Tenancy
+
+.. _engine-site-configuration:
+
 =================================
 Configure Multi-Tenancy in Engine
 =================================
