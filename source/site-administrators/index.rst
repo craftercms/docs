@@ -7,6 +7,7 @@ This section details activities related to site administration in Crafter CMS. T
 .. toctree::
 	:maxdepth: 1
 
+	configuration
 	studio-configuration
 	content-monitoring
 	content-targeting-guide
