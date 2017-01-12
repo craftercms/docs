@@ -6,16 +6,22 @@
 Crafter Studio
 ===============
 
-.. todo:: Write overview
+-----------
+Source Code
+-----------
 
-.. toctree::
-	:maxdepth: 1
+Crafter Studio's source code is managed in github: https://github.com/craftercms/studio2
 
-	source-code
-	in-process-api
-	rest-api
-	configuration
-	configuration/deployment-endpoints
-	configuration/permission-mappings
-	configuration/role-mappings
-	release-notes
+--------
+Java Doc
+--------
+
+Crafter Studio's Java Doc is here: http://javadoc.io/doc/org.craftercms/crafter-studio-2
+
+-------------
+Configuration
+-------------
+
+* :ref:`studio-configuration`
+
+.. todo:: Write overview; write ReST API
