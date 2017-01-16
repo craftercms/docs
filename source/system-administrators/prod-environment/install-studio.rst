@@ -4,6 +4,18 @@ Install Studio
 
 The following guide explains how to install a Crafter Studio instance in a QA or production Unix-based server.
 
+----------------
+Before You Start
+----------------
+Crafter Studio relies on two underlying stores: a repository and a RDBMS Database.  The content itself, the versions and other core metadata are stored in the repository.  Operational data concerning dependencies, workflow and deployment are stored in the RDBMS database.  
+
+When you install Crafter CMS via the zip file and start up Crafter Studio it starts up with an in-memory database.  This is meant to facilitate local developer environments and evaluation.  For production, you will want to use an external database.  Crafter supports a number of popular RDBMS databases.  
+
+The steps below assume you have setup and configured an external database, created a schema and provisioned a user for that schema.
+
+------------------
+Installation Steps
+------------------
 #.  Download the crafter-studio-install-Studio.zip. This file contains already Tomcat 7 with the Studio, Search and
     Preview Engine WARs, the Crafter Deployer and the necessary configuration files.
 #.  Download the database JDBC driver.
