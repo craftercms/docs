@@ -5,7 +5,7 @@ Install Studio
 The following guide explains how to install a Crafter Studio instance in a QA or production Unix-based server.
 
 ----------------
-Before you Start
+Before You Start
 ----------------
 Crafter Studio relies on two underlying stores: a repository and a RDBMS Database.  The content itself, the versions and other core metadata are stored in the repository.  Operational data concerning dependencies, workflow and deployment are stored in the RDBMS database.  
 
