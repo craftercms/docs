@@ -84,7 +84,6 @@ To configure or override the deployment targets, edit **SampleTarget** in ``conf
 PostProcessors
 --------------
 
-.. todo:: Fill details on PostProcessors (description and properties)
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 CacheInvalidatePostProcessor
@@ -195,3 +194,5 @@ The deployment agent can be registered as Windows Service using Apache Prunsrv. 
 
     prunsrv //IS//CrafterDeployer --DisplayName="Crafter Deployer" --Install=C:\opt\prunsrv\prunsrv.exe --StartMode=java --Jvm=auto --JavaHome=C:\opt\java\jdk1.7.0 --StartPath="C:\opt\crafter\crafter-deployer" --StartClass=org.craftercms.cstudio.publishing.PublishingReceiverMain  --StopMode=java --StopPath="C:\opt\crafter\crafter-deployer" --StopClass=org.craftercms.cstudio.publishing.StopServiceMain --Classpath="C:\opt\crafter\crafter-deployer" ++JvmOptions="-Djava.ext.dirs=C:\opt\crafter\crafter-deployer" --LogPath="C:\opt\crafter\crafter-deployer"
      --LogPrefix="deployment" --LogLevel=Debug --StdOutput=auto --StdError=auto --PidFile=pid.txt --Startup=auto --Description="Crafter Deployer"
+
+.. todo:: Fill details on PostProcessors (description and properties)
