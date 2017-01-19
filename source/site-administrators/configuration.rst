@@ -216,6 +216,7 @@ To add new configuration file please follow the above steps.
 #. Go to configuration tab, then open the dropdown and finally look for your new configuration file.
 	
 	.. image:: /_static/images/basic-configuration-step3.png
+		:width: 70%
 		:align: center
 		:alt: Basic Configuration Step 3
 
