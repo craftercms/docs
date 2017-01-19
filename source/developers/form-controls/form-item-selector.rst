@@ -26,19 +26,18 @@ Configuration
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
-====================== ===================================================================================
-Description/Purpose    Item Selector control
-
-Properties             - Min Size: Minimum amount of items selected.
-                       - Max Size: Maximum amount of items selected.
-                       - Item Manager: Source where the items will be selected/created.
-                       - Read Only: Make field read-only (can't be changed by the author).
-                       - Disable Flattening for Search
-                       - Use single value filename
-
-
-Constraints            - Allow Duplicate: Allows adding the same item more than once.
-
-Related Data Sources   - Child Content
-====================== ===================================================================================
++------------------------+-----------------------------------------------------------------------+
+|| Description/Purpose   || Item Selector control.                                               |
++------------------------+-----------------------------------------------------------------------+
+|| Properties            || * Min Size: Minimum amount of items selected.                        |
+||                       || * Max Size: Maximum amount of items selected.                        |
+||                       || * Item Manager: Source where the items will be selected/created.     |
+||                       || * Read Only: Make field read-only (can't be changed by the author).  |
+||                       || * Disable Flattening for Search.                                     |
+||                       || * Use single value filename.                                         |
++------------------------+-----------------------------------------------------------------------+
+|| Constraints           || * Allow Duplicate: Allows adding the same item more than once.       |
++------------------------+-----------------------------------------------------------------------+
+|| Related Data Sources  || * Child Content.                                                     |
++------------------------+-----------------------------------------------------------------------+
 
