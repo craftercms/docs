@@ -6,6 +6,10 @@
 Crafter Studio API
 ==================
 
+---------------
+User Management
+---------------
+
 .. toctree::
 	:maxdepth: 1
 
