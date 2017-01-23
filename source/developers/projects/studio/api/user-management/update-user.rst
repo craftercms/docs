@@ -47,11 +47,11 @@ Example
 .. code-block:: json
 
 	{
-		"username" : "USERNAME",
-		"password" : "PASSWORD",
-		"first_name" : "FIRSTNAME",
-		"last_name" : "LASTNAME",
-		"email" : "email@example.com"
+		"username" : "jane.doe",
+		"password" : "SuperSecretPassword123#",
+		"first_name" : "Jane",
+		"last_name" : "Doe",
+		"email" : "jane@example.com"
 	}
 
 --------

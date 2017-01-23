@@ -39,7 +39,7 @@ Example
 .. code-block:: json
 
 	{
-		"username" : "USERNAME"
+		"username" : "jane.doe"
 	}
 
 --------
