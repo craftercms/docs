@@ -12,4 +12,4 @@ Crafter Studio API
 	user-management/create-user
 	user-management/update-user
 
-.. todo:: Current coverage is limited to version 3 new features, will need to extend converage to all API calls
+.. todo:: Current coverage is limited to version 3.x new features, will need to extend converage to all API calls
