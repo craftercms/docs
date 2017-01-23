@@ -40,6 +40,15 @@ Example
 
 	GET .../api/1/services/api/1/user/get-user.json/jane.doe
 
+.. code-block:: json
+
+	{
+		"username" : "jane.doe",
+		"first_name" : "Jane",
+		"last_name" : "Doe",
+		"email" : "jane@example.com"
+	}
+
 --------
 Response
 --------
