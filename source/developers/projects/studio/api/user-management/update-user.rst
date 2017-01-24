@@ -15,7 +15,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/user/update-user.json``                  |
+|| URL                       || ``/api/1/services/api/1/user/update-user.json/:username``        |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -46,8 +46,11 @@ Example
 
 .. code-block:: json
 
+	POST .../api/1/services/api/1/user/update-user.json/jane.doe
+
+.. code-block:: json
+
 	{
-		"username" : "jane.doe",
 		"password" : "SuperSecretPassword123#",
 		"first_name" : "Jane",
 		"last_name" : "Doe",
