@@ -15,7 +15,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/user/delete-user.json/:username``        |
+|| URL                       || ``/api/1/services/api/1/user/delete-user.json``                  |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -38,7 +38,13 @@ Example
 
 .. code-block:: json
 
-	POST .../api/1/services/api/1/user/delete-user.json/jane.doe
+	POST .../api/1/services/api/1/user/delete-user.json
+
+.. code-block:: json
+
+	{
+		"username" : "jane.doe"
+	}
 
 --------
 Response

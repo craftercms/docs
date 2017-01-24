@@ -15,6 +15,8 @@ User Management
 
 	user-management/create-user
 	user-management/get-user
+	user-management/get-users
+	user-management/get-users-per-site
 	user-management/update-user
 	user-management/delete-user
 	user-management/enable-user
