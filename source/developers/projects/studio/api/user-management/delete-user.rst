@@ -1,4 +1,4 @@
-.. _crafter-studio-api-delete-user:
+.. _crafter-studio-api-user-delete:
 
 .. include:: /includes/unicode-checkmark.rst
 
@@ -15,7 +15,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/user/delete-user.json``                  |
+|| URL                       || ``/api/1/services/api/1/user/delete.json``                       |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -38,7 +38,7 @@ Example
 
 .. code-block:: json
 
-	POST .../api/1/services/api/1/user/delete-user.json
+	POST .../api/1/services/api/1/user/delete.json
 
 .. code-block:: json
 
