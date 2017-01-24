@@ -1,12 +1,12 @@
-.. _crafter-studio-api-user-update:
+.. _crafter-studio-api-create-group:
 
 .. include:: /includes/unicode-checkmark.rst
 
 ===========
-Update User
+Create User
 ===========
 
-Update a Crafter Studio user.
+Create a Crafter Studio group.
 
 --------------------
 Resource Information
@@ -15,11 +15,11 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/user/update.json``                       |
+|| URL                       || ``/api/1/services/api/1/group/create-group.json``                  |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Admin, self                                                      |
+|| Required Role             || Admin                                                            |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -29,15 +29,15 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| username     || String     || |checkmark|  || Username to use                                 |
+|| groupname     || String     || |checkmark|  || Username to use                                 |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| password     || String     ||              || Password (clear)                                |
+|| password     || String     || |checkmark|  || Password (clear)                                |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| first_name   || String     ||              || User's first name                               |
+|| first_name   || String     || |checkmark|  || User's first name                               |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| last_name    || String     ||              || User's last name                                |
+|| last_name    || String     || |checkmark|  || User's last name                                |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| email        || String     ||              || User's email address                            |
+|| email        || String     || |checkmark|  || User's email address                            |
 +---------------+-------------+---------------+--------------------------------------------------+
 
 -------
@@ -46,12 +46,12 @@ Example
 
 .. code-block:: json
 
-	POST .../api/1/services/api/1/user/update.json
+	POST .../api/1/services/api/1/group/create-group.json
 
 .. code-block:: json
 
 	{
-		"username" : "jane.doe",
+		"groupname" : "jane.doe",
 		"password" : "SuperSecretPassword123#",
 		"first_name" : "Jane",
 		"last_name" : "Doe",
@@ -65,11 +65,11 @@ Response
 +---------+-------------------------------------------+---------------------------------------------------+
 || Status || Location                                 || Response Body                                    |
 +=========+===========================================+===================================================+
-|| 200    || ``.../user/get.json?username=:username`` || ``{ "status" : "OK" }``                          |
+|| 201    || ``.../get-group.json?groupname=:groupname`` || ``{ "status" : "OK" }``                          |
 +---------+-------------------------------------------+---------------------------------------------------+
 || 401    ||                                          || ``{ "status" : "Unauthorized" }``                |
 +---------+-------------------------------------------+---------------------------------------------------+
-|| 409    ||                                          || ``{ "status" : "User already exists" }``         |
+|| 409    || ``.../get-group.json?groupname=:groupname`` || ``{ "status" : "User already exists" }``         |
 +---------+-------------------------------------------+---------------------------------------------------+
 || 500    ||                                          || ``{ "status" : "Internal server error" }``       |
 +---------+-------------------------------------------+---------------------------------------------------+
