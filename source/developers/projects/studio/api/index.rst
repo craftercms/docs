@@ -31,6 +31,7 @@ Group Management
 	:maxdepth: 1
 
 	group-management/create-group
+	group-management/get-group
 	group-management/update-group
 	group-management/delete-group
 
