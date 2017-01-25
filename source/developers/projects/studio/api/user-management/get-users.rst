@@ -60,8 +60,7 @@ Example
                 "groups" :
                   [
                     {
-                      "group_id" : "groupId1",
-                      "group_name" : "groupName1",
+                      "group_name" : "groupName1"
                     }
                   ]
               }
@@ -80,8 +79,7 @@ Example
                 "groups" :
                   [
                     {
-                      "group_id" : "groupId1",
-                      "group_name" : "groupName1",
+                      "group_name" : "groupName1"
                     }
                   ]
               }
