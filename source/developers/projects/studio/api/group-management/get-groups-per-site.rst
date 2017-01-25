@@ -1,12 +1,12 @@
-.. _crafter-studio-api-user-get-per-site:
+.. _crafter-studio-api-group-get-per-site:
 
 .. include:: /includes/unicode-checkmark.rst
 
-==================
-Get Users per Site
-==================
+===================
+Get Groups per Site
+===================
 
-Get Crafter Studio users per site with an optional range for pagination.
+Get all Crafter Studio groups per site with an optional range for pagination.
 
 --------------------
 Resource Information
@@ -15,7 +15,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/user/get-per-site.json``                 |
+|| URL                       || ``/api/1/services/api/1/group/get-per-site.json``                |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -42,41 +42,22 @@ Example
 
 .. code-block:: json
 
-	GET .../api/1/services/api/1/user/get-per-site.json?site_id=mySite
+	GET .../api/1/services/api/1/group/get-per-site.json?site_id="mysite"
 
 .. code-block:: json
 
   {
-    "users" :
+    "groups" :
       [
         {
-          "username" : "jane.doe",
-          "first_name" : "Jane",
-          "last_name" : "Doe",
-          "email" : "jane@example.com",
-          "groups" :
-            [
-              {
-                "group_name" : "groupName1"
-              },
-              {
-                "group_name" : "groupName2"
-              }
-            ]
+          "group_name" : "group1",
+          "description" : "desc1"
         },
         {
-          "username" : "joe.bloggs",
-          "first_name" : "Joe",
-          "last_name" : "Bloggs",
-          "email" : "joe@example.com",
-          "groups" :
-            [
-              {
-                "group_name" : "groupName1"
-              }
-            ]
+          "group_name" : "group2",
+          "description" : "desc2"
         }
-    ]
+      ]
   }
 
 --------
@@ -86,7 +67,7 @@ Response
 +---------+---------------------------------------------+---------------------------------------------------+
 || Status || Location                                   || Response Body                                    |
 +=========+=============================================+===================================================+
-|| 200    || ``.../user/get-per-site.json?site=mySite`` || See example above.                               |
+|| 200    || ``.../group/get-per-site.json?...``        || See example above.                               |
 +---------+---------------------------------------------+---------------------------------------------------+
 || 401    ||                                            || ``{ "status" : "Unauthorized" }``                |
 +---------+---------------------------------------------+---------------------------------------------------+
