@@ -1,6 +1,6 @@
-.. _crafter-studio-api-user-disable:
-
 .. include:: /includes/unicode-checkmark.rst
+
+.. _crafter-studio-api-user-disable:
 
 ============
 Disable User
@@ -42,9 +42,9 @@ Example
 
 .. code-block:: json
 
-	{
-		"username" : "jane.doe"
-	}
+  {
+    "username" : "jane.doe"
+  }
 
 --------
 Response

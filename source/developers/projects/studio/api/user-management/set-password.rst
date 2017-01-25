@@ -1,12 +1,12 @@
 .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-user-enable:
+.. _crafter-studio-api-user-set-password:
 
-===========
-Enable User
-===========
+============
+Set Password
+============
 
-Enable a Crafter Studio user.
+Set Crafter Studio's user password provided a forgot password secure token (obtained through :ref:`crafter-studio-api-user-forgot-password`), or the invoker having the admin role.
 
 --------------------
 Resource Information
@@ -15,11 +15,11 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/user/enable.json``                       |
+|| URL                       || ``/api/1/services/api/1/user/set-password.json``                 |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Admin                                                            |
+|| Required Role             || Admin, self                                                      |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -31,6 +31,12 @@ Parameters
 +===============+=============+===============+==================================================+
 || username     || String     || |checkmark|  || Username to use                                 |
 +---------------+-------------+---------------+--------------------------------------------------+
+|| token        || String     || |checkmark|  || Forgot password secure token.                   |
+||              ||            || \*           || * *not required if invoker has the role*        |
+||              ||            ||              || *admin.*                                        |
++---------------+-------------+---------------+--------------------------------------------------+
+|| new          || String     ||              || User's new password (clear)                     |
++---------------+-------------+---------------+--------------------------------------------------+
 
 -------
 Example
@@ -38,12 +44,14 @@ Example
 
 .. code-block:: json
 
-	POST .../api/1/services/api/1/user/enable.json
+	POST .../api/1/services/api/1/user/set-password.json
 
 .. code-block:: json
 
   {
-    "username" : "jane.doe"
+    "username" : "jane.doe",
+    "token" : "asfopaiu02928s0980b98a098gs0fduoi2j341j448t735h1lk40",
+    "new" : "SuperSecretPassword321#"
   }
 
 --------
@@ -56,6 +64,8 @@ Response
 || 200    || ``.../user/get.json?username=:username`` || ``{ "status" : "OK" }``                          |
 +---------+-------------------------------------------+---------------------------------------------------+
 || 401    ||                                          || ``{ "status" : "Unauthorized" }``                |
++---------+-------------------------------------------+---------------------------------------------------+
+|| 404    ||                                          || ``{ "status" : "User not found" }``              |
 +---------+-------------------------------------------+---------------------------------------------------+
 || 500    ||                                          || ``{ "status" : "Internal server error" }``       |
 +---------+-------------------------------------------+---------------------------------------------------+

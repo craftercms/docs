@@ -1,6 +1,6 @@
-.. _crafter-studio-api-user-get-per-site:
-
 .. include:: /includes/unicode-checkmark.rst
+
+.. _crafter-studio-api-user-get-per-site:
 
 ==================
 Get Users per Site

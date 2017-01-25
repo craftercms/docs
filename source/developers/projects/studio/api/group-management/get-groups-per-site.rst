@@ -1,6 +1,6 @@
-.. _crafter-studio-api-group-get-per-site:
-
 .. include:: /includes/unicode-checkmark.rst
+
+.. _crafter-studio-api-group-get-per-site:
 
 ===================
 Get Groups per Site
@@ -52,11 +52,42 @@ Example
         {
           "group_name" : "group1",
           "description" : "desc1"
+          "users" :
+          [
+            {
+              "username" : "jane.doe",
+              "first_name" : "Jane",
+              "last_name" : "Doe",
+              "email" : "jane@example.com",
+            },
+            {
+              "username" : "joe.bloggs",
+              "first_name" : "Joe",
+              "last_name" : "Bloggs",
+              "email" : "joe@example.com",
+            }
+          ]
         },
         {
           "group_name" : "group2",
           "description" : "desc2"
-        }
+          "users" :
+          [
+            {
+              "username" : "jane.doe",
+              "first_name" : "Jane",
+              "last_name" : "Doe",
+              "email" : "jane@example.com",
+            }
+          ]
+       },
+       {
+          "group_name" : "group3",
+          "description" : "desc3"
+          "users" :
+          [
+          ]
+       }
       ]
   }
 

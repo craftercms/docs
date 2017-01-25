@@ -1,12 +1,12 @@
 .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-user-get:
+.. _crafter-studio-api-user-forgot-password:
 
-========
-Get User
-========
+===============
+Forgot Password
+===============
 
-Get a Crafter Studio user.
+Send the Crafter Studio user a forgot password / reset password email with a secure/tokenized URL to help them reset their password. This method is used in conjunction with :ref:`crafter-studio-api-user-set-password`.
 
 --------------------
 Resource Information
@@ -15,11 +15,11 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/user/get.json``                          |
+|| URL                       || ``/api/1/services/api/1/user/forgot-password.json``              |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Admin, self, member in same site                                 |
+|| Required Role             || Admin, self                                                      |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -38,42 +38,7 @@ Example
 
 .. code-block:: json
 
-	GET .../api/1/services/api/1/user/get.json?username=jane.doe
-
-.. code-block:: json
-
-  {
-    "username" : "jane.doe",
-    "first_name" : "Jane",
-    "last_name" : "Doe",
-    "email" : "jane@example.com",
-    "sites" :
-      [
-        {
-          "site_id" : "siteId1",
-          "site_name" : "Site 1",
-          "groups" :
-            [
-              {
-                "group_name" : "groupName1"
-              },
-              {
-                "group_name" : "groupName2"
-              }
-            ]
-        },
-        {
-          "site_id" : "siteId2",
-          "site_name" : "Site 2",
-          "groups" :
-            [
-              {
-                "group_name" : "groupName1"
-              }
-            ]
-        }
-      ]
-  }
+	GET .../api/1/services/api/1/user/forgot-password.json?username=jane.doe
 
 --------
 Response
@@ -82,7 +47,7 @@ Response
 +---------+------------------------------------------+---------------------------------------------------+
 || Status || Location                                || Response Body                                    |
 +=========+==========================================+===================================================+
-|| 200    || ``.../user/get.json?username=jane.doe`` || See example above.                               |
+|| 200    || ``.../user/get.json?username=jane.doe`` || ``{ "status" : "OK" }``                          |
 +---------+------------------------------------------+---------------------------------------------------+
 || 401    ||                                         || ``{ "status" : "Unauthorized" }``                |
 +---------+------------------------------------------+---------------------------------------------------+

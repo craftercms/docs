@@ -1,6 +1,6 @@
-.. _crafter-studio-api-group-delete:
-
 .. include:: /includes/unicode-checkmark.rst
+
+.. _crafter-studio-api-group-delete:
 
 ============
 Delete Group
@@ -44,10 +44,10 @@ Example
 
 .. code-block:: json
 
-	{
-		"group_name" : "contributors",
-		"site_id" : "mysite",
-	}
+  {
+    "group_name" : "contributors",
+    "site_id" : "mysite",
+  }
 
 --------
 Response
