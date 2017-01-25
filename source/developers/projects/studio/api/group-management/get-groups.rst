@@ -1,12 +1,12 @@
-.. _crafter-studio-api-user-get-per-site:
+.. _crafter-studio-api-group-get-all:
 
 .. include:: /includes/unicode-checkmark.rst
 
-==================
-Get Users per Site
-==================
+==========
+Get Groups
+==========
 
-Get Crafter Studio users per site with an optional range for pagination.
+Get all Crafter Studio groups with an optional range for pagination.
 
 --------------------
 Resource Information
@@ -15,11 +15,11 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/user/get-per-site.json``                 |
+|| URL                       || ``/api/1/services/api/1/group/get-all.json``                     |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Admin, site member                                               |
+|| Required Role             || Admin                                                            |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -29,8 +29,6 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to look under for users                    |
-+---------------+-------------+---------------+--------------------------------------------------+
 || start        || Integer    ||              || Start at this count in the result set           |
 +---------------+-------------+---------------+--------------------------------------------------+
 || end          || Integer    ||              || End at this count in the result set             |
@@ -42,40 +40,41 @@ Example
 
 .. code-block:: json
 
-	GET .../api/1/services/api/1/user/get-per-site.json?site=mySite
+	GET .../api/1/services/api/1/group/get-all.json?start=0&end=25
 
 .. code-block:: json
 
   {
-    "users" :
+    "sites" :
       [
         {
-          "username" : "jane.doe",
-          "first_name" : "Jane",
-          "last_name" : "Doe",
-          "email" : "jane@example.com",
+          "site_id" : "site 1",
           "groups" :
             [
               {
-                "group_name" : "groupName1"
+                "group_name" : "group1",
+                "description" : "desc1"
               },
               {
-                "group_name" : "groupName2"
+                "group_name" : "group2",
+                "description" : "desc2"
               }
             ]
         },
         {
-          "username" : "joe.bloggs",
-          "first_name" : "Joe",
-          "last_name" : "Bloggs",
-          "email" : "joe@example.com",
+           "site_id" : "site 2",
           "groups" :
             [
               {
-                "group_name" : "groupName1"
+                "group_name" : "group1",
+                "description" : "desc1"
+              },
+              {
+                "group_name" : "group2",
+                "description" : "desc2"
               }
             ]
-        }
+       }
     ]
   }
 
@@ -86,11 +85,9 @@ Response
 +---------+---------------------------------------------+---------------------------------------------------+
 || Status || Location                                   || Response Body                                    |
 +=========+=============================================+===================================================+
-|| 200    || ``.../user/get-per-site.json?site=mySite`` || See example above.                               |
+|| 200    || ``.../group/get-all.json?start=0&end=25``  || See example above.                               |
 +---------+---------------------------------------------+---------------------------------------------------+
 || 401    ||                                            || ``{ "status" : "Unauthorized" }``                |
-+---------+---------------------------------------------+---------------------------------------------------+
-|| 404    ||                                            || ``{ "status" : "Site not found"}``               |
 +---------+---------------------------------------------+---------------------------------------------------+
 || 500    ||                                            || ``{ "status" : "Internal server error" }``       |
 +---------+---------------------------------------------+---------------------------------------------------+

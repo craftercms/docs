@@ -32,6 +32,7 @@ Group Management
 
 	group-management/create-group
 	group-management/get-group
+	group-management/get-groups
 	group-management/update-group
 	group-management/delete-group
 

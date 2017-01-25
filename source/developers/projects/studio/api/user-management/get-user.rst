@@ -55,12 +55,10 @@ Example
           "groups" :
             [
               {
-                "group_id" : "groupId1",
-                "group_name" : "groupName1",
+                "group_name" : "groupName1"
               },
               {
-                "group_id" : "groupId2",
-                "group_name" : "groupName2",
+                "group_name" : "groupName2"
               }
             ]
         },
@@ -70,8 +68,7 @@ Example
           "groups" :
             [
               {
-                "group_id" : "groupId1",
-                "group_name" : "groupName1",
+                "group_name" : "groupName1"
               }
             ]
         }
