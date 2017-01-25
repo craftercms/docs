@@ -22,6 +22,9 @@ User Management
 	user-management/enable-user
 	user-management/disable-user
 	user-management/get-user-status
+	user-management/forgot-password
+	user-management/change-password
+	user-management/set-password
 
 ----------------
 Group Management

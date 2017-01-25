@@ -1,6 +1,6 @@
-.. _crafter-studio-api-group-get-all:
-
 .. include:: /includes/unicode-checkmark.rst
+
+.. _crafter-studio-api-group-get-all:
 
 ==========
 Get Groups

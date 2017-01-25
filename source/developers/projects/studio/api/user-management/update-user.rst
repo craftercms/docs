@@ -1,6 +1,6 @@
-.. _crafter-studio-api-user-update:
-
 .. include:: /includes/unicode-checkmark.rst
+
+.. _crafter-studio-api-user-update:
 
 ===========
 Update User
@@ -50,13 +50,13 @@ Example
 
 .. code-block:: json
 
-	{
-		"username" : "jane.doe",
-		"password" : "SuperSecretPassword123#",
-		"first_name" : "Jane",
-		"last_name" : "Doe",
-		"email" : "jane@example.com"
-	}
+  {
+    "username" : "jane.doe",
+    "password" : "SuperSecretPassword123#",
+    "first_name" : "Jane",
+    "last_name" : "Doe",
+    "email" : "jane@example.com"
+  }
 
 --------
 Response

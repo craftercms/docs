@@ -1,12 +1,12 @@
 .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-user-enable:
+.. _crafter-studio-api-user-change-password:
 
-===========
-Enable User
-===========
+===============
+Change Password
+===============
 
-Enable a Crafter Studio user.
+Change Crafter Studio's user password provided a user's current password. If the user forgot their password, use this API :ref:`crafter-studio-api-user-forgot-password`.
 
 --------------------
 Resource Information
@@ -15,11 +15,11 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/user/enable.json``                       |
+|| URL                       || ``/api/1/services/api/1/user/change-password.json``              |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Admin                                                            |
+|| Required Role             || Self                                                             |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -31,6 +31,10 @@ Parameters
 +===============+=============+===============+==================================================+
 || username     || String     || |checkmark|  || Username to use                                 |
 +---------------+-------------+---------------+--------------------------------------------------+
+|| current      || String     || |checkmark|  || User's current password (clear)                 |
++---------------+-------------+---------------+--------------------------------------------------+
+|| new          || String     ||              || User's new password (clear)                     |
++---------------+-------------+---------------+--------------------------------------------------+
 
 -------
 Example
@@ -38,12 +42,14 @@ Example
 
 .. code-block:: json
 
-	POST .../api/1/services/api/1/user/enable.json
+	POST .../api/1/services/api/1/user/change-password.json
 
 .. code-block:: json
 
   {
-    "username" : "jane.doe"
+    "username" : "jane.doe",
+    "current" : "SecretPassword123#",
+    "new" : "SuperSecretPassword321#"
   }
 
 --------
@@ -56,6 +62,8 @@ Response
 || 200    || ``.../user/get.json?username=:username`` || ``{ "status" : "OK" }``                          |
 +---------+-------------------------------------------+---------------------------------------------------+
 || 401    ||                                          || ``{ "status" : "Unauthorized" }``                |
++---------+-------------------------------------------+---------------------------------------------------+
+|| 404    ||                                          || ``{ "status" : "User not found" }``              |
 +---------+-------------------------------------------+---------------------------------------------------+
 || 500    ||                                          || ``{ "status" : "Internal server error" }``       |
 +---------+-------------------------------------------+---------------------------------------------------+

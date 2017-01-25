@@ -1,6 +1,6 @@
-.. _crafter-studio-api-group-remove-user:
-
 .. include:: /includes/unicode-checkmark.rst
+
+.. _crafter-studio-api-group-remove-user:
 
 ======================
 Remove User from Group

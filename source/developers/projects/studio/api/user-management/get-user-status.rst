@@ -1,6 +1,6 @@
-.. _crafter-studio-api-user-status:
-
 .. include:: /includes/unicode-checkmark.rst
+
+.. _crafter-studio-api-user-status:
 
 ===============
 Get User Status
@@ -42,10 +42,10 @@ Example
 
 .. code-block:: json
 
-	{
-		"username" : "jane.doe",
-		"enabled" : "true"
-	}
+  {
+    "username" : "jane.doe",
+    "enabled" : "true"
+  }
 
 --------
 Response

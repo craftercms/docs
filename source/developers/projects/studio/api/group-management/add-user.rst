@@ -1,6 +1,6 @@
-.. _crafter-studio-api-group-add-user:
-
 .. include:: /includes/unicode-checkmark.rst
+
+.. _crafter-studio-api-group-add-user:
 
 =================
 Add User to Group

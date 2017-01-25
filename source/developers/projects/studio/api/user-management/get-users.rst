@@ -1,6 +1,6 @@
-.. _crafter-studio-api-user-get-all:
-
 .. include:: /includes/unicode-checkmark.rst
+
+.. _crafter-studio-api-user-get-all:
 
 =========
 Get Users

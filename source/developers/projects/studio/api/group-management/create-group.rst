@@ -1,6 +1,6 @@
-.. _crafter-studio-api-group-create:
-
 .. include:: /includes/unicode-checkmark.rst
+
+.. _crafter-studio-api-group-create:
 
 ============
 Create Group
@@ -46,11 +46,11 @@ Example
 
 .. code-block:: json
 
-	{
-		"group_name" : "contributors",
-		"site_id" : "mysite",
-		"description" : "Content Contributors"
-	}
+  {
+    "group_name" : "contributors",
+    "site_id" : "mysite",
+    "description" : "Content Contributors"
+  }
 
 --------
 Response
