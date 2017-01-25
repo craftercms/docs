@@ -37,6 +37,7 @@ Group Management
 	group-management/get-group
 	group-management/get-groups
 	group-management/get-groups-per-site
+	group-management/get-users
 	group-management/update-group
 	group-management/delete-group
 	group-management/add-user
