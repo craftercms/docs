@@ -36,5 +36,7 @@ Group Management
 	group-management/get-groups-per-site
 	group-management/update-group
 	group-management/delete-group
+	group-management/add-user
+	group-management/remove-user
 
 .. todo:: Current coverage is limited to version 3.x new features, will need to extend converage to all API calls
