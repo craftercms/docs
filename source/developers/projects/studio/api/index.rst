@@ -23,4 +23,13 @@ User Management
 	user-management/disable-user
 	user-management/get-user-status
 
+----------------
+Group Management
+----------------
+
+.. toctree::
+	:maxdepth: 1
+
+	group-management/create-group
+
 .. todo:: Current coverage is limited to version 3.x new features, will need to extend converage to all API calls
