@@ -31,8 +31,6 @@ Parameters
 +===============+=============+===============+==================================================+
 || username     || String     || |checkmark|  || Username to use                                 |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| password     || String     ||              || Password (clear)                                |
-+---------------+-------------+---------------+--------------------------------------------------+
 || first_name   || String     ||              || User's first name                               |
 +---------------+-------------+---------------+--------------------------------------------------+
 || last_name    || String     ||              || User's last name                                |
@@ -52,7 +50,6 @@ Example
 
   {
     "username" : "jane.doe",
-    "password" : "SuperSecretPassword123#",
     "first_name" : "Jane",
     "last_name" : "Doe",
     "email" : "jane@example.com"
