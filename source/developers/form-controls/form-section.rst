@@ -21,7 +21,7 @@ Configuration
     :alt: Form Control Dropdown
     :align: center
 .. include:: /includes/form-controls/form-control-field-basics.rst
-====================== ===================================================================================
-Description/Purpose    Create a new section in the form, this is to help the content authors by 
-                       segmenting a form into sections of similar concern.
-====================== ===================================================================================
++------------------------+-----------------------------------------------------------------------+
+|| Description/Purpose   || Create a new section in the form, this is to help the content authors|
+||                       || by segmenting a form into sections of similar concern.               |
++------------------------+-----------------------------------------------------------------------+

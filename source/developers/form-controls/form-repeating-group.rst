@@ -21,8 +21,8 @@ Configuration
     :alt: Form Control Dropdown
     :align: center
 .. include:: /includes/form-controls/form-control-field-basics.rst
-====================== ===================================================================================
-Description/Purpose    Repeating groups are used when the form has one or several controls that repeat
-                       to capture the same data as records. For example: a list of images in a carousel, 
-                       or a list of widgets on a page.                       
-====================== ===================================================================================
++------------------------+-----------------------------------------------------------------------+
+|| Description/Purpose   || Repeating groups are used when the form has one or several controls  |
+||                       || that repeat to capture the same data as records. For example: a      |
+||                       || list of images in a carousel, or a list of widgets on a page.        |
++------------------------+-----------------------------------------------------------------------+
