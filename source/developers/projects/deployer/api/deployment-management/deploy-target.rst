@@ -1,12 +1,12 @@
 .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-deployer-api-target-delete:
+.. _crafter-deployer-api-target-deploy:
 
 =============
-Delete Target
+Deploy Target
 =============
 
-Delete a Crafter Deployer target.
+Deploy a Crafter Deployer target.
 
 --------------------
 Resource Information
@@ -15,7 +15,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/target/:target_id/delete``                              |
+|| URL                       || ``/api/1/deployment/:target_id/deploy``                          |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -38,13 +38,15 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/target/mysite/delete``
+``POST .../api/1/deployment/mysite/deploy-all``
 
 ^^^^^^^^
 Response
 ^^^^^^^^
 
-``Status 204 NO CONTENT``
+``Status 200 OK``
+
+.. todo:: Write example
 
 ---------
 Responses
@@ -53,7 +55,7 @@ Responses
 +---------+----------------------------------+---------------------------------------------------+
 || Status || Location                        || Response Body                                    |
 +=========+==================================+===================================================+
-|| 204    ||                                 ||                                                  |
+|| 200    ||                                 || See example above                                |
 +---------+----------------------------------+---------------------------------------------------+
 || 404    ||                                 || ``{ "message" : "Target not found" }``           |
 +---------+----------------------------------+---------------------------------------------------+
