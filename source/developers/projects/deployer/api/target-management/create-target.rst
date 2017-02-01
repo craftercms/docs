@@ -16,7 +16,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/target/:target_id/create``                              |
+|| URL                       || ``/api/1/target/create``                                         |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -28,7 +28,7 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------+
 || Name                   || Type       || Required     || Description                           |
 +=========================+=============+===============+========================================+
-|| target_id              || String     || |checkmark|  || The target ID                         |
+|| target_id              || String     || |checkmark|  || The target ID. Can be any unique ID   |
 +-------------------------+-------------+---------------+----------------------------------------+
 || replace                || Boolean    ||              || Replace the existing target           |
 +-------------------------+-------------+---------------+----------------------------------------+
@@ -38,11 +38,14 @@ Parameters
 ||                        ||            ||              || are provided. If not specified        |
 ||                        ||            ||              || ``default`` will be used.             |
 +-------------------------+-------------+---------------+----------------------------------------+
+|| site_name              || String     || |checkmark|  || The target's site name                |
++-------------------------+-------------+---------------+----------------------------------------+
 || remote_repo_url        || String     || |checkmark|  || The URL of the remote Git repo to     |
 ||                        ||            ||              || pull from.                            |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| remote_repo_branch     || String     || |checkmark|  || The branch name of the remote Git     |
-||                        ||            ||              || repo to pull from.                    |
+|| remote_repo_branch     || String     ||              || The branch name of the remote Git     |
+||                        ||            ||              || repo to pull from. If not specified   |
+||                        ||            ||              || ``master`` will be used.              |
 +-------------------------+-------------+---------------+----------------------------------------+
 || remote_repo_username   || String     ||              || The username of the remote Git repo   |
 +-------------------------+-------------+---------------+----------------------------------------+
@@ -54,7 +57,7 @@ Parameters
 ||                        ||            ||              || `Default Clear Cache URL`_ will be    |
 ||                        ||            ||              || used.                                 |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| template_name          || String     ||              || *Only use with "default" template*.   |
+|| notification_addresses || String     ||              || *Only use with "default" template*.   |
 ||                        ||            ||              || The email addresses that should       |
 ||                        ||            ||              || receive deployment notifications.     |
 +-------------------------+-------------+---------------+----------------------------------------+
@@ -69,11 +72,12 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/target/mysite/create``
+``POST .../api/1/target/create``
 
 .. code-block:: json
 
   {
+    "target_id": "mysite",
     "replace": true,
     "template_name" : "default",
     "remote_repo_url" : "ssh://crafter@server/opt/crafter/deployer/target/mysite",
@@ -100,11 +104,11 @@ Responses
 +---------+--------------------------------+------------------------------------------------------------+
 || Status || Location                      || Response Body                                             |
 +=========+================================+============================================================+
-|| 201    || ``.../target/:target_id/get`` || ``{ "message" : "OK" }``                                  |
+|| 201    || ``.../target/get/:target_id`` || ``{ "message" : "OK" }``                                  |
 +---------+--------------------------------+------------------------------------------------------------+
 || 422    ||                               || ``{ "message" : "Missing parameter 'remote_repo_url'" }`` |
 +---------+--------------------------------+------------------------------------------------------------+
-|| 409    || ``.../target/:target_id/get`` || ``{ "message" : "Target already exists" }``               |
+|| 409    || ``.../target/get/:target_id`` || ``{ "message" : "Target already exists" }``               |
 +---------+--------------------------------+------------------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``               |
 +---------+--------------------------------+------------------------------------------------------------+
