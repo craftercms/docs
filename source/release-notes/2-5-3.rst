@@ -1,0 +1,66 @@
+-----------------
+Crafter CMS 2.5.3
+-----------------
+
+`GitHub 2.5.2 Milestone <https://github.com/craftercms/craftercms/issues?q=is%3Aclosed+milestone%3A2.5.3>`_
+Release Date: February 03, 2017
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* Routine patch release
+
+^^^^^^^^^^
+Improvements
+^^^^^^^^^^
+* #123 CRAFTERCMS-2057: configure the XML security provider as the default in the crafter install
+* #363 [Search] Search should have an option to enforce filtering disabled items by auto-adding it to the query
+* #296 Studio should use Engine's overlay contexts 
+
+^^^^^^^^^^
+Bugs Fixed
+^^^^^^^^^^
+* #435 [studio-ui] Clicking on renamed child item loads the old URL 
+* #364 [Engine] If Parent missing is missing, BreadcrumbService returns an error
+* #426 [studio-ui] Selected item doesn't clear out after publishing a content  
+* #434 [studio-ui] Duplicate -> Save & Close doesn't clear out the selected item
+* #407 [studio] Change URL and save and draft then save and close create duplicate of the page 
+* #422 [studio-ui] Renaming .xml content from preview fails to reload the content blocker 
+* #421 [studio-ui] Saving duplicated .xml content doesn't close the form blocker 
+* #423 [studio-ui] Clicking on .xml content from the dashboard widgets take user to invalid preview 
+* #424 [studio-ui] Rename doesn't refresh the item in the content list blocker 
+* #429 [studio] Cut/Paste doesn't update timestamp on user activity 
+* #427 [studio] The system continuously generating an error on content-types/pages/config.xml file 
+* #428 [studio] debug level logging from ContentSerivceImpl prints stacktraces 
+* #431 [legacy-deployer] CommandProcessor processes through the content not matching patterns 
+* #342 submittedfordeletion column not created causing publish fail with postgres  
+* #333 SQL error in oracle for hide show live items bug 
+* #340 Sites created with corporate blueprint have ftl errors 
+* #328 Deployment creates major versions with admin username blocker 
+* #349 Version History is lost after renaming a content blocker 
+* #368 [studio] No new/update records generated upon cut/paste action on a folder structure  
+* #330 [Studio] Duplicate operation does not set the right LifecycleOperation for the ContentProcessorPipeline
+* #396 [Studio] Copy-Paste & Duplicate sends different parameters to the ContentProcessorPipeline. 
+* #360 [studio-ui] Workflow keeps submition comments after other user cancel the workflow blocker 
+* #300 The Schedule feature is not working properly when setting minutes ahead blocker 
+* #361 Browse Items should rely on path value instead of browserUri blocker 
+* #369 [studio-ui] Context Nav - Content Tree is collapsed and not refreshed after page creation 
+* #310 [studio-ui] Dates are off in version history 
+* #355 Version history doesn't display edited time correctly blocker 
+* #367 [studio-ui] Browse - Icons referencing localhost domain 
+* #371 [studio-ui] Browse Assets Modal - not listing on left side panel pages as folder types 
+* #362 [search] Renamed items are not being removed from the index - invalid
+* #329 Studio: Preview is not reloaded after using the "Change Template" option.  
+* #334 Editing a css file from Studio not working blocker 
+* #314 RTE Insert Image - Browse modal content is taking about 5 mins to load  
+* #325 Authoring - Browse is not selecting the item properly blocker 
+* #261 Opening and closing site dropdown generates a js error in console  
+* #320 Save as Draft orange bar shows up after save as draft on dashboard  
+* #303 Refresh dashboard and site content after "save draft". bug
+* #322 When context editing and saving not refreshing status icon - invalid
+* #321 Updated to latest snapshot but now icons not showing up 
+* #318 Layered Root Folder fails when it's used first in the tree (before a wcm root folder) 
+* #31 CRAFTERCMS-1551: Pluton blueprint homepage doesn't render a map in (11 & Edge)  wontfix
+* #302 Right click menu after save is not updated 
+* #69 CRAFTERCMS-1830: Menu items in contextual nav are not removed or rearranged according to the configuration file  duplicate 
