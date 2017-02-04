@@ -11,9 +11,9 @@ Highlights
 
 * Routine patch release
 
-^^^^^^^^^^
+^^^^^^^^^^^^
 Improvements
-^^^^^^^^^^
+^^^^^^^^^^^^
 * #123 CRAFTERCMS-2057: configure the XML security provider as the default in the crafter install
 * #363 [Search] Search should have an option to enforce filtering disabled items by auto-adding it to the query
 * #296 Studio should use Engine's overlay contexts 
