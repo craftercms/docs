@@ -14,7 +14,7 @@ The challenge in these scenarios with most CMS technology is moving content and 
 
 
 ---------------------------------------------------
-Changing the Studio Environment to be Configured
+Configuring which Environment Studio looks at
 ---------------------------------------------------
 
 .. code-block:: java
