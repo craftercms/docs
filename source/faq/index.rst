@@ -35,12 +35,12 @@ To get better results you have to be different. Crafter CMS delivers what no oth
 What do I need to run Crafter CMS
 ---------------------------------
 
-Follow these instructions run Crafter CMS you will download and install Crafter on your machine or a server. getting-started  :ref:`getting-started`
+Follow these instructions to run Crafter CMS and to download and install Crafter on your machine or server: :ref:`getting-started`
 
 ------------------------------------
 Can Crafter CMS be used as a portal?
 ------------------------------------
-Yes. Crafter is running portals for some of the most well known companies in the world.  Use cases include intranets, global extranets, B2B portals, B2E portals and B2C portals in hospitality, finance, logistics, education and telcom and many others.
+Yes. Crafter is running portals for some of the most well known companies in the world.  Use cases include intranets, global extranets, B2B portals, B2E portals and B2C portals in hospitality, finance, logistics, education and telecom and many others.
 
 Many people hear the word portal and immediately search for a "portal" technology that meets the JSR-268 standard.  Crafter does not support JSR-268 natively.  We do integrate with Liferay Portal and have been deployed in cases where stronger WCM capabilities were required than what Liferay provides out of the box. 
 
@@ -51,7 +51,7 @@ You only need JSR-268 if you want to build and deploy your application as "portl
 Can Crafter CMS be used for E-Commerce?
 ---------------------------------------
 
-Yes.  Crafter has a e-commerce API that you can plug an implementation in to.  This gives marketing total control of the user experience while integrating with the back-end e-commerce functionality of your choosing.
+Yes.  Crafter has an e-commerce API that you can plug an implementation in to.  This gives marketing total control of the user experience while integrating with the back-end e-commerce functionality of your choosing.
 
 --------------------------------------------------
 Can Crafter CMS be used to build a marketing site?
@@ -63,7 +63,7 @@ Yes. Marketing sites are one of the top use cases for Crafter CMS.  Crafter give
 How long does it take to build a Crafter CMS website?
 -----------------------------------------------------
 
-Project duration depends on complexity of the website or other digital experience you are building.  A project might be as short as a day or it could take 9 months to complete.  Typical real-world sites with a sophisticated design, personalization and back end integration will take between 3 and 6 months complete. 
+Project duration depends on complexity of the website or other digital experience you are building.  A project might be as short as a day or it could take 9 months to complete.  Typical real-world sites with a sophisticated design, personalization and back end integration will take between 3 and 6 months to complete. 
 
 Crafter's tools enable an agile development methodology.  Many organizations create and deploy a phase one project quickly and then leveraging Crafter's capabilities quickly iterate to deliver continuous value in the form of new features to the site on a regular cadence.
 
