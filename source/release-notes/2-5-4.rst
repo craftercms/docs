@@ -1,0 +1,21 @@
+-----------------
+Crafter CMS 2.5.3
+-----------------
+
+`GitHub 2.5.2 Milestone <https://github.com/craftercms/craftercms/issues?q=is%3Aclosed+milestone%3A2.5.4>`_
+Release Date: February 07, 2017
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* Patch release
+
+^^^^^^^^^^
+Bugs Fixed
+^^^^^^^^^^
+#59 CRAFTERCMS-1757: Cannot preview .html page content bug critical
+#223 CRAFTERCMS-2163: Components folder item continues to spin randomly bug
+#323 Unlock a page in the tree does not refresh Item State bug critical
+#60 CRAFTERCMS-1758: Dropdown field doesn't full render when it's the last item in the form bug critical
+#345 The date row doesn't render lines fully in the 'Recently Published' widget bug
