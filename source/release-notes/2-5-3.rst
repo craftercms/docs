@@ -2,8 +2,8 @@
 Crafter CMS 2.5.3
 -----------------
 
-`GitHub 2.5.2 Milestone <https://github.com/craftercms/craftercms/issues?q=is%3Aclosed+milestone%3A2.5.3>`_
-Release Date: February 03, 2017
+* `GitHub 2.5.2 Milestone <https://github.com/craftercms/craftercms/issues?q=is%3Aclosed+milestone%3A2.5.3>`_
+* Release Date: February 03, 2017
 
 ^^^^^^^^^^
 Highlights
@@ -14,7 +14,6 @@ Highlights
 ^^^^^^^^^^^^
 Improvements
 ^^^^^^^^^^^^
-* #123 CRAFTERCMS-2057: configure the XML security provider as the default in the crafter install
 * #363 [Search] Search should have an option to enforce filtering disabled items by auto-adding it to the query
 * #296 Studio should use Engine's overlay contexts 
 
