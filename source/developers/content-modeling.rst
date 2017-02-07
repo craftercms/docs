@@ -158,15 +158,64 @@ Form Controls are data input controls that, once placed on a form, will capture 
 	:alt: Form Engine Controls
 	:align: center
 
+Each Form Control type has it's own properties and constraints.  Some constraints are common, like "Variable Name" and "Required" while others apply only to the type, e.g. Height and Width limitations on the Image Picker control.  
+
 Form Engine Controls (please use the scrollbar to see more controls)
 
 .. include:: form-controls/list-form-controls.rst
 
-.. index:: Data Sources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Form Control Variable Names
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Every Form Control has a Variable Name property.  The Variable Name is used to by the form engine to store the content entered by the user in the content model and search index.  This same Variable Name is used later by templates and controllers to retreive the value.  
+
+Variable Name Best Bractices
+
+# Be descriptive.  Well thoughtout Variable Names help with template and controller readability.
+# Use camel case. Example: "productSummary".
+# Use regex constraints on input boxes to enforce additional validation rules
+# Do not used Reserved names.
+
+Reserved Variable Names
+
+The following variable names are used by Crafter CMS.  
++-------------------+----------------------------------------------------------+
+|| file-name        || Used by the File Name and Auto File Name control.       |
++-------------------+----------------------------------------------------------+
+|| internal-name    || Used by Crafter Studio to label the content object      |
++-------------------+----------------------------------------------------------+
+|| placeInNav       || Used by the Page Order control.                         |
++-------------------+----------------------------------------------------------+
+|| disabled         || Used to logically remove an object in content delivery. |
++-------------------+----------------------------------------------------------+
+|| expired          || Used to logically remove an object after date           |
++-------------------+----------------------------------------------------------+
+|| objectId         || UUID. Auto assigned by Crafter                          |
++-------------------+----------------------------------------------------------+
+|| objectGroupId    || First part of objectId. Auto assigned by Crafter        |
++-------------------+----------------------------------------------------------+
+|| createdDate      || create date. Auto assigned by Crafter                   |
++-------------------+----------------------------------------------------------+
+|| lastModifiedDate || Last modified date. Auto assigned by Crafter            |
++-------------------+----------------------------------------------------------+
+|| content-type     || Content type name                                       |
++-------------------+----------------------------------------------------------+
+|| display-template || Path to default template for type                       |
++-------------------+----------------------------------------------------------+
+|| merge-strategy   || Crafter Core/Engine "Merge Strategy" for content type   |
++-------------------+----------------------------------------------------------+	 
+|| id               || reseverved by Solr                                      |
++-------------------+----------------------------------------------------------+
+
+Variable Names and Search Indexing
+
+Crafter CMS indexes your content in to Solr using your content model variable name as the Solr field name. 
+Use the Solr schema to configure your Solr variable/solr field types in search. 
 
 ^^^^^^^^^^^^
 Data Sources
 ^^^^^^^^^^^^
+.. index:: Data Sources
 
 .. figure:: /_static/images/form-engine-data-sources.png
 	:alt: Form Engine Data Sources
@@ -239,7 +288,7 @@ The simple example renders an simple HTML page with a very basic model. Let's re
 || analytics_script || Text Area   || Analytics's Engine JavaScript                              |
 +-------------------+--------------+-------------------------------------------------------------+
 
-.. todo:: reference the freemaker API
+The `FreeMarker <http://freemarker.org>`_ language is supported. For detailed Freemarker documentation, please visit: `http://freemarker.org <http://freemarker.org>`_ 
 
 
 ----------------------------------
