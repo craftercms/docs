@@ -2,8 +2,8 @@
 Crafter CMS 2.5.3
 -----------------
 
-`GitHub 2.5.2 Milestone <https://github.com/craftercms/craftercms/issues?q=is%3Aclosed+milestone%3A2.5.3>`_
-Release Date: February 03, 2017
+* `GitHub 2.5.2 Milestone <https://github.com/craftercms/craftercms/issues?q=is%3Aclosed+milestone%3A2.5.3>`_
+* Release Date: February 03, 2017
 
 ^^^^^^^^^^
 Highlights
