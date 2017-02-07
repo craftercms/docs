@@ -18,9 +18,9 @@ Highlights
 * Many small improvements and fixes
 
 
-^^^^^^^^^^
+^^^^^^^^^^^^
 New Features
-^^^^^^^^^^
+^^^^^^^^^^^^
 * #89 CRAFTERCMS-2015: hook up diff in version UI critical new feature
 * #136 CRAFTERCMS-2070: Add publishDate_dt as a field in solr that is automatically added by publisher when a document is published. blocker new feature
 * #135 CRAFTERCMS-2069: Add option to index repeat group items as child documents in solr blocker new feature
