@@ -42,7 +42,7 @@ describes how to configure this scenario.
 
 #.  The root folder path, as shown below, needs to be configured to include the substitution variable {siteName}. This variable is resolved
     dynamically on every request, depending on the request's host name, which would be mapped to a site name. With the setting below, a
-	request to http://www.site1.com/foo/bar will make the engine look for files inside /opt/crafter/site1/content.
+    request to http://www.site1.com/foo/bar will make the engine look for files inside /opt/crafter/site1/content.
 
     .. code-block:: properties
         :caption: {ENGINE_INSTALL_DIR}/apache-tomcat/shared/classes/crafter/engine/server-config.properties
