@@ -30,8 +30,10 @@ The anatomy of a Data Source Plugin
 Data Sources consist of (at a minimum)
 
 * A single javascript file which implements the data source interface.
+
 	* The file name of the data source is important as the system uses a convention whereby the JS file name and the data source name in the configuration must be the same.
 	* The module name must also be the same as the data source name with "cstudio-forms-controls-" prepended to the front of it Ex: "cstudio-forms-controls-configured-list."
+
 * Configuration in a Crafter Studio project to make that data source available for use.
 
 ---------------------
@@ -354,11 +356,11 @@ Complext Example that uses AJAX to get data from external source:
 Summary
 ---------------------------------------------------------
 
-A good place to start is looking at the control you want to use, for example the video picker. 
+A good place to start is by looking at the control you want to use, for example the video picker. 
 
 **Location /STUDIO-WAR/components/cstudio-forms/controls/video-picker.js**
 
-When you want to build a data source there is a method called get interface. This method tells the system what the data source can help with. So using the same example, a video upload it returns video and thus the video picker can use that data source.
+When you want to build a data source, there is a method called get interface. This method tells the system what the data source can help with. So using the same example, a video upload returns video and thus the video picker can use that data source.
 
 **Location /STUDIO-WAR/components/cstudio-forms/data-sources/video-desktop-upload.js**
   
