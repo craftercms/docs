@@ -43,11 +43,12 @@ In the age of hyper-personalized digital experiences and content rich applicatio
 Best of Breed Approach
 ----------------------
 
-Many CMS platforms choose to roll their own or acquire capabilities for adjacent capabilities like analytics, marketing automation, CRM and so on.  This is what is called a suite based architecture by the industry.  While suites tend to do well in product evaluations because the "check all the boxes" they tend to fall down in practice during operation.
+Many CMS platforms choose to roll their own or acquire capabilities for adjacent capabilities like analytics, marketing automation, CRM and so on.  This is what is called a suite based architecture by the industry.  While suites tend to do well in product evaluations because they "check all the boxes", they tend to fall down in practice during operation.
 
 * The various subsystems are not integrated. This is especially true if the subsystem was acquired.
 * You tend to get more subsystems than you need (and pay for it too)
 * You are forced to use the subsystem provided rather than the one your team is already using, knows, likes and so on.
+
 Crafter CMS rejects the suite based approach in favor of a best of breed approach. Analytics, CRM, Marketing automation, social monitoring and so on are all available to your team through the CMS through integration with Crafter CMS APIs but are provided by the best of breed platforms in each space you choose.  Examples are Google Analytics and Omniture for Analytics, Digital River for eCommerce, Salesforce for CRM, Marketo for marketing automation and so on.
 
 -----------
@@ -65,3 +66,4 @@ Easily integrate with 3rd party services via Groovy
 * Easily produce RESTful services for 3rd party consumers
 * Sandboxed per tenant
 * Sandboxed/secured access to underlying system calls and resources
+

@@ -18,9 +18,10 @@ Content Type Management in Crafter Studio is located in the Admin Console.
 	:align: center
 
 Content Types are limited to two core types: Pages and Components. Both are made up of three ingredients:
-# Model: The content pieces that will be captured from the content authors for the page or component
-# View: The view template that will render the content, typically to HTML markup
-# Controller: The controller that handles the incoming request for the page or component
+
+#. Model: The content pieces that will be captured from the content authors for the page or component
+#. View: The view template that will render the content, typically to HTML markup
+#. Controller: The controller that handles the incoming request for the page or component
 
 ^^^^^
 Pages
@@ -79,7 +80,7 @@ Crafter Studio's Form Builder
 || 1     || Content Type Actions: Open Existing Content Type or Create a New Type.               |
 +--------+---------------------------------------------------------------------------------------+
 || 2     || Form Builder: The begining of the form builder and it's headed by the name of the    |
-||       || name of currently open Content Type.                                                 |
+||       || currently open Content Type.                                                         |
 ||       || Click here to explore the global properties of the type in the Properties Explorer,  |
 ||       || #3.                                                                                  |
 +--------+---------------------------------------------------------------------------------------+
@@ -141,7 +142,7 @@ The fields available at this level are:
 || Template     ||                                                                               |
 +---------------+--------------------------------------------------------------------------------+
 || Merge        || The inheritance pattern to use with content of this type, please see Content  |
-|| Strategy     || Inheritance for more detail on this feature :ref:`content-inheritance`.       |
+|| Strategy     || Inheritance for more detail on this feature :ref:`content-inheritance`        |
 +---------------+--------------------------------------------------------------------------------+
 
 The 2 key properties are: the display template (:ref:`content-view-templates`) which is the HTML template that renders the final Web page; the content inheritance (:ref:`content-inheritance`) which determines how this content type will inherit from parent XML files in the system.
@@ -171,14 +172,15 @@ Every Form Control has a Variable Name property.  The Variable Name is used to b
 
 Variable Name Best Bractices
 
-# Be descriptive.  Well thoughtout Variable Names help with template and controller readability.
-# Use camel case. Example: "productSummary".
-# Use regex constraints on input boxes to enforce additional validation rules
-# Do not used Reserved names.
+#. Be descriptive.  Well thoughtout Variable Names help with template and controller readability.
+#. Use camel case. Example: "productSummary".
+#. Use regex constraints on input boxes to enforce additional validation rules
+#. Do not used Reserved names.
 
 Reserved Variable Names
 
-The following variable names are used by Crafter CMS.  
+The following variable names are used by Crafter CMS.
+  
 +-------------------+----------------------------------------------------------+
 || file-name        || Used by the File Name and Auto File Name control.       |
 +-------------------+----------------------------------------------------------+
@@ -204,7 +206,7 @@ The following variable names are used by Crafter CMS.
 +-------------------+----------------------------------------------------------+
 || merge-strategy   || Crafter Core/Engine "Merge Strategy" for content type   |
 +-------------------+----------------------------------------------------------+	 
-|| id               || reseverved by Solr                                      |
+|| id               || reserved by Solr                                        |
 +-------------------+----------------------------------------------------------+
 
 Variable Names and Search Indexing
@@ -231,7 +233,7 @@ Form Engine Data Sources (please use the scrollbar to see more controls)
 Form Canvas
 ^^^^^^^^^^^
 
-The canvas is where the form actually gets built. The building process is perfomed by simply dragging the controls from the Form Controls over to the canvas, rearranging the controls in the order you'd like to present to the content authors, and configure the controls individually.
+The canvas is where the form actually gets built. The building process is perfomed by simply dragging the controls from the Form Controls over to the canvas, rearranging the controls in the order you'd like to present to the content authors, and configuring the controls individually.
 
 Controls on the canvas are configured by clicking on the control, and then editing the control's configration in the Properties Explorer, see item #3 in :ref:`form-builder-basics`. Different controls have different configuration, so please review the individual form control confuration listed in :ref:`form-controls`.
 
@@ -246,7 +248,7 @@ The canvas allows the form-based content capture only, and is used by content au
 Content Type View Templates
 ---------------------------
 
-View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the parimary Crafter CMS model or additional model (via APIs, please read :ref:`custom-services-and-controllers` for that topic).
+View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the primary Crafter CMS model or additional model (via APIs, please read :ref:`custom-services-and-controllers` for that topic).
 
 An example view template
 
@@ -273,7 +275,7 @@ An example view template
 		</body>
 	</html>
 
-The simple example renders an simple HTML page with a very basic model. Let's review the model first:
+The simple example renders a simple HTML page with a very basic model. Let's review the model first:
 
 +-------------------+--------------+-------------------------------------------------------------+
 || Model Element    || Control     || Purpose                                                    |
@@ -306,7 +308,7 @@ is the XML descriptor content, of type SiteItem. The scripts don't have to retur
 There are 2 ways in which you can "bind" a script to a page or component:
 
 #.  Put the script under Scripts > pages or Scripts > components, and name it after the page or component content type.
-#.  When creating the content type for the page or component, add a Item Selector with the variable name ``scripts``. Later when creating
+#.  When creating the content type for the page or component, add an Item Selector with the variable name ``scripts``. Later when creating
     a page or component of that type, you can select multiple scripts that will be associated to the page or component.
 
 The following is an example of a component script. The component content type is ``/component/upcoming-events``. We can then place the
