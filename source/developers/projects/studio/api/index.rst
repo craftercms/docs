@@ -52,4 +52,13 @@ Repo Management
 
 	repo/sync-from-repo
 
+-----
+Audit
+-----
+
+.. toctree::
+	:maxdepth: 1
+
+	audit/get-audit-log
+
 .. todo:: Current coverage is limited to version 3.x new features, will need to extend converage to all API calls
