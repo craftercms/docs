@@ -28,17 +28,17 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------+
 || Name                   || Type       || Required     || Description                           |
 +=========================+=============+===============+========================================+
-|| target_id              || String     || |checkmark|  || The target ID. Can be any unique ID   |
+|| env                    || String     || |checkmark|  || The target's environment (e.g dev).   |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| replace                || Boolean    ||              || Replace the existing target           |
+|| site_name              || String     || |checkmark|  || The target's site name (e.g mysite).  |
++-------------------------+-------------+---------------+----------------------------------------+
+|| replace                || Boolean    ||              || Replace the existing target.          |
 +-------------------------+-------------+---------------+----------------------------------------+
 || template_name          || String     ||              || The template to use for configuration |
 ||                        ||            ||              || generation. Out of the box            |
 ||                        ||            ||              || ``default`` and ``preview``           |
 ||                        ||            ||              || are provided. If not specified        |
 ||                        ||            ||              || ``default`` will be used.             |
-+-------------------------+-------------+---------------+----------------------------------------+
-|| site_name              || String     || |checkmark|  || The target's site name                |
 +-------------------------+-------------+---------------+----------------------------------------+
 || remote_repo_url        || String     || |checkmark|  || The URL of the remote Git repo to     |
 ||                        ||            ||              || pull from.                            |
@@ -49,13 +49,11 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------+
 || remote_repo_username   || String     ||              || The username of the remote Git repo   |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| remote_repo_password   || String     ||              || The password of the remote Git repo   |
+|| remote_repo_password   || String     ||              || The password of the remote Git repo.  |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| clear_cache_url        || String     ||              || *Only use with "default" template*.   |
-||                        ||            ||              || URL to clear the Crafter Engine       |
-||                        ||            ||              || cache. If not specified               |
-||                        ||            ||              || `Default Clear Cache URL`_ will be    |
-||                        ||            ||              || used.                                 |
+|| engine_url             || String     || |checkmark|  || Base URL of Engine, used to make API  |
+||                        ||            ||              || calls like clear cache and rebuild    |
+||                        ||            ||              || context.                              |
 +-------------------------+-------------+---------------+----------------------------------------+
 || notification_addresses || String     ||              || *Only use with "default" template*.   |
 ||                        ||            ||              || The email addresses that should       |
@@ -68,23 +66,43 @@ Parameters
 Example
 -------
 
-^^^^^^^
-Request
-^^^^^^^
+^^^^^^^^^^^^^^^
+Default Request
+^^^^^^^^^^^^^^^
 
 ``POST .../api/1/target/create``
 
 .. code-block:: json
 
   {
-    "target_id": "mysite",
-    "replace": true,
+    "env": "dev",
+    "site_name": "mysite",
+    "replace": false,
     "template_name" : "default",
     "remote_repo_url" : "ssh://crafter@server/opt/crafter/deployer/target/mysite",
+    "remote_repo_username" : "crafter",
     "remote_repo_password" : "crafter",
     "remote_repo_branch" : "master",
-    "clear_cache_url" : "http://localhost:9080/api/1/cache/clear_all.json ",
+    "engine_url" : "http://localhost:8080",
     "notification_addresses" : ["admin1@mysite.com", "admin2@mysite.com"]
+  }
+
+^^^^^^^^^^^^^^^
+Preview Request
+^^^^^^^^^^^^^^^
+
+``POST .../api/1/target/create``
+
+.. code-block:: json
+
+  {
+    "env": "preview",
+    "site_name": "mysite",
+    "replace": true,
+    "template_name" : "preview",
+    "remote_repo_url" : "ssh://crafter@server/opt/studio/deployer/target/mysite",
+    "remote_repo_branch" : "master",
+    "engine_url" : "http://localhost:8080",
   }
 
 ^^^^^^^^
@@ -106,7 +124,7 @@ Responses
 +=========+================================+============================================================+
 || 201    || ``.../target/get/:target_id`` || ``{ "message" : "OK" }``                                  |
 +---------+--------------------------------+------------------------------------------------------------+
-|| 422    ||                               || ``{ "message" : "Missing parameter 'remote_repo_url'" }`` |
+|| 400    ||                               || ``{ "message" : "Missing parameter 'remote_repo_url'" }`` |
 +---------+--------------------------------+------------------------------------------------------------+
 || 409    || ``.../target/get/:target_id`` || ``{ "message" : "Target already exists" }``               |
 +---------+--------------------------------+------------------------------------------------------------+

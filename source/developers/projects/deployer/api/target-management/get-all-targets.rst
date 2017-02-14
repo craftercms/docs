@@ -28,7 +28,7 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/target/get_all``
+``GET .../api/1/target/get_all``
 
 ^^^^^^^^
 Response
@@ -40,11 +40,15 @@ Response
 
   [
     {
-	  "target_id" : "mysite",
+      "env": "dev",
+      "siteName": "mysite",
+	  "id" : "mysite-dev",
 	  "load_date" : "2017-01-26T10:00:1.234-05:00"
     },
     {
-	  "target_id" : "yoursite",
+      "env": "dev",
+      "siteName": "mysite",
+	  "id" : "yoursite-dev",
 	  "load_date" : "2017-01-01T11:00:5.678-05:00"
     }
   ]
