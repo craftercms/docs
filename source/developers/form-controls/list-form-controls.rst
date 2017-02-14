@@ -44,7 +44,7 @@
 +-------------------+----------------------------------------------------------------------------+
 || Item Selector    ||                                                                           |
 ||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-item-selector` page.                       |
+||                  || Details are in the :ref:`form-item-selector` page.                        |
 +-------------------+----------------------------------------------------------------------------+
 || Image            ||  Image selector from a Data Source.                                       |
 ||                  ||                                                                           |
@@ -56,17 +56,17 @@
 +-------------------+----------------------------------------------------------------------------+
 || Label            ||                                                                           |
 ||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-label` page.                               |
+||                  || Details are in the :ref:`form-label` page.                                |
 +-------------------+----------------------------------------------------------------------------+
 || Page Order       ||                                                                           |
 ||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-page-order` page.                          |
+||                  || Details are in the :ref:`form-page-order` page.                           |
 +-------------------+----------------------------------------------------------------------------+
 || File Name        ||                                                                           |
 ||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-filename` page.                            |
+||                  || Details are in the :ref:`form-filename` page.                             |
 +-------------------+----------------------------------------------------------------------------+
 || Auto Filename    ||                                                                           |
 ||                  ||                                                                           |
-||                  ||  Details are in the :ref:`form-auto-filename` page.                       |
+||                  || Details are in the :ref:`form-auto-filename` page.                        |
 +-------------------+----------------------------------------------------------------------------+

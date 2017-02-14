@@ -5,10 +5,10 @@ Cookbooks / Tutorials
 =====================
 
 .. toctree::
-	:maxdepth: 2
-	:titlesonly:
+   :maxdepth: 2
+   :titlesonly:
 
-    content-queries/index
-    active-cache/index
-    activiti/index
-    services/index
+   content-queries/index
+   active-cache/index
+   activiti/index
+   services/index

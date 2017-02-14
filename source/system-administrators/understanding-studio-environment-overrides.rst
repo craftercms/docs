@@ -14,7 +14,7 @@ The challenge in these scenarios with most CMS technology is moving content and 
 
 
 ---------------------------------------------------
-Changing the Environment Studio is Configured to Be
+Configuring which Environment Studio looks at
 ---------------------------------------------------
 
 .. code-block:: java
@@ -30,11 +30,12 @@ Note: After setting these two properties, please restart the server.
 Modifying an Environment Config File
 ------------------------------------
 
-    * In the respository you will find the environment overrides files at: REPO/cstudio/config/sites/environment-overrides
-    * Each environment will have a folders for it with a name that should match the values in server-config.properties (see above.)
+    * In the respository you will find the environment override files at: REPO/cstudio/config/sites/environment-overrides
+    * Each environment will have a folder for it with a name that should match the values in server-config.properties (see above.)
     * Inside the environment folder you will see a file called environment-config.xml that contains configuration similar to what is listed below.
 
     .. code-block:: xml
+
         <environment-config>
             <preview-server-url>http://localhost:8080</preview-server-url>
             <authoring-server-url>http://localhost8080/studio</authoring-server-url>
@@ -60,6 +61,7 @@ Modifying an Environment Config File
 The addresses in preview-server-url and authoring-server-url should match your protocol, servername and port exactly.  For example if your CMS is running on a over https on a server called cms.myco.com your environment-config.xml might looks something like:
 
     .. code-block:: xml
+
         <environment-config>
             <preview-server-url>https://cms.myco.com</preview-server-url>
             <authoring-server-url>https://cms.myco.com/studio</authoring-server-url>
@@ -84,9 +86,9 @@ The addresses in preview-server-url and authoring-server-url should match your p
 
 
 
---------------------------------------------------------------
+---------------------------------------------------------------
 Editing environment-config.xml via Crafter Studio Admin Console
---------------------------------------------------------------
+---------------------------------------------------------------
 
 You can use Crafter Studio's admin console configuration tool to edit environment-config.xml files.  You may need to add them to the configuration in order for them to show up.
 
