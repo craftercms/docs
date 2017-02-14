@@ -48,6 +48,8 @@ Response
 
 ``Status 204 NO CONTENT``
 
+  { "message" : "OK" }
+
 ---------
 Responses
 ---------
