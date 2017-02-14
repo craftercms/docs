@@ -41,6 +41,9 @@ Response
 	[
 		{
 		  "target": {
+            "env": "dev",
+            "siteName": "mysite",
+	  	    "id": "mysite-dev",
 			"id": "mysite",
 			"load_date": "2017-01-31T17:08:48.308-05:00"
 		  },
@@ -84,7 +87,9 @@ Response
 	  	},
 		{
 		  "target": {
-		    "id": "yoursite",
+            "env": "dev",
+            "siteName": "yoursite",
+		    "id": "yoursite-dev",
 		    "load_date": "2017-01-31T17:08:48.308-05:00"
 		  },
 		  "start": "2017-01-31T17:31:00.068-05:00",
