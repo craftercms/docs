@@ -1,0 +1,27 @@
+-----------------
+Crafter CMS 2.5.5
+-----------------
+
+* `GitHub 2.5.5 Milestone <https://github.com/craftercms/craftercms/issues?q=is%3Aclosed+milestone%3A2.5.5>`_
+* Release Date: February 17, 2017
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* Patch release
+
+^^^^^^^^^^
+Bugs Fixed
+^^^^^^^^^^
+* #459 [studio] // in item paths stored database table path fields causes editing an publish failures bug critical
+* #448 [studio-ui] Editing a component refreshes preview to a broken preview blocker bug
+* #447 RTE box fit to size. invalid
+* #446 [studio-ui] Key-value-list dialog doesn't add scrollbar when large bug
+* #445 [studio] Fix RTE in empty blueprint bug
+* #444 Repository Path invalid wontfix
+* #420 Incorrect data format getting written to Solr bug wontfix
+* #418 [crafter-social] Comments title string cannot be customized enhancement
+* #406 [social-ui] IE 10 - reply text box/editable area does not show border bug
+* #405 [studio-ui] Change a template does not referesh type in the tree bug
+* #332 Delete dialog checks delete permissions on / path rather than paths selected to delete bug critical
