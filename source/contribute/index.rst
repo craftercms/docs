@@ -21,10 +21,3 @@ Source Code
 Links to the source code for each project can be found here
 
 http://docs.craftercms.org/source-code.html
-
----------------
-Release Process
----------------
-Details of our release process can be found here.  
-
-http://wiki.craftersoftware.com/display/CRAFTER/Software+Release+Process#SoftwareReleaseProcess-Introduction
