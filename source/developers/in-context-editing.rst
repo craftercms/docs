@@ -47,22 +47,22 @@ To enable in-context editing simply add the following attribute to the container
 Tag Attributes
 --------------
 
-+----------------+--------------------------------------+------------------------------------------------+
-| Attribute Name | Required                             | Expected Value                                 |
-+================+======================================+================================================+
-| iceGroup       | No (unless path is not supplied)     | the label/id assigned to iceGroup on fields    |
-|                |                                      | in your content model.                         |
-+----------------+--------------------------------------+------------------------------------------------+
-| path           | No (unless iceGroup is not supplied) | the path of the item. This is typically just   |
-|                |                                      | mode.storeUrl.                                 |
-|                |                                      |                                                |
-|                |                                      | If path is not supplied the                    |
-|                |                                      | system will assume the outermost object e.g.   |
-|                |                                      | the page as the path.                          |
-+----------------+--------------------------------------+------------------------------------------------+
-| label          | No (but it's a best practice)        | UI will use lavel if it exists. Otherwise,     |
-|                |                                      | the iceGroup or path will be used.             |
-+----------------+--------------------------------------+------------------------------------------------+
++----------------+------------------------------------+-------------------------------------------+
+| Attribute Name | Required                           | Expected Value                            |
++================+====================================+===========================================+
+|| iceGroup      || No (unless path is not supplied)  || the label/id assigned to iceGroup on     |
+||               ||                                   || fields in your content model.            |
++----------------+------------------------------------+-------------------------------------------+
+|| path          || No                                || the path of the item. This is typically  |
+||               || (unless iceGroup is not supplied) || just mode.storeUrl.                      |
+||               ||                                   ||                                          |
+||               ||                                   || If path is not supplied the system       |
+||               ||                                   || will assume the outermost object e.g.    |
+||               ||                                   || the page as the path.                    |
++----------------+------------------------------------+-------------------------------------------+
+|| label         || No (but it's a best practice)     || UI will use lavel if it exists. Otherwise|
+||               ||                                   || the iceGroup or path will be used.       |
++----------------+------------------------------------+-------------------------------------------+
 
 Example: 
 
@@ -87,14 +87,14 @@ To define a drop zone for components simply add the following attribute to the c
 Tag Attributes
 --------------
 
-+----------------+--------------------------------------+------------------------------------------------+
-| Attribute Name | Required                             | Expected Value                                 |
-+================+======================================+================================================+
-| target         | Yes                                  | The name of the field in the parent model      |
-|                |                                      | where component references will be stored.     |
-|                |                                      |                                                |
-|                |                                      | This is typically an item selector field type. |
-+----------------+--------------------------------------+------------------------------------------------+
++----------------+------------------------------+------------------------------------------------+
+| Attribute Name | Required                     | Expected Value                                 |
++================+==============================+================================================+
+|| target        || Yes                         || The name of the field in the parent model     |
+||               ||                             || where component references will be stored.    |
+||               ||                             ||                                               |
+||               ||                             || This is typically an item selector field type.|
++----------------+------------------------------+------------------------------------------------+
 
 Example:
 
@@ -144,21 +144,21 @@ In order for authors to interact with components, to drag them around the screen
 Tag Attributes
 --------------
 
-+----------------+--------------------------------------+------------------------------------------------+
-| Attribute Name | Required                             | Expected Value                                 |
-+================+======================================+================================================+
-| path           | Yes                                  | the path to the component. Typically this is   |
-|                |                                      | simply contentModel.storeUrl                   |
-+----------------+--------------------------------------+------------------------------------------------+
-| ice            | No                                   | true or false. If true the component will      |
-|                |                                      | automatically render ICE (in context editing)  |
-|                |                                      | controls for you. This is helpful on simple    |
-|                |                                      | components. Larger components may be so complex|
-|                |                                      | that multiple ice elements make sense. In the  |
-|                |                                      | latter case omit this attribute or set it to   |
-|                |                                      | false and manually add your own ICE attributes |
-|                |                                      | to the component template                      |
-+----------------+--------------------------------------+------------------------------------------------+
++----------------+------------------------------+-------------------------------------------------+
+| Attribute Name | Required                     | Expected Value                                  |
++================+==============================+=================================================+
+|| path          || Yes                         || the path to the component. Typically this is   |
+||               ||                             || simply contentModel.storeUrl                   |
++----------------+------------------------------+-------------------------------------------------+
+|| ice           || No                          || true or false. If true the component will      |
+||               ||                             || automatically render ICE (in context editing)  |
+||               ||                             || controls for you. This is helpful on simple    |
+||               ||                             || components. Larger components may be so complex|
+||               ||                             || that multiple ice elements make sense. In the  |
+||               ||                             || latter case omit this attribute or set it to   |
+||               ||                             || false and manually add your own ICE attributes |
+||               ||                             || to the component template                      |
++----------------+------------------------------+-------------------------------------------------+
 
 Example
 

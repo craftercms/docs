@@ -3,14 +3,14 @@ Backup and Recovery
 ===================
 
 A hot backup should comprise of the following steps:
-    * Backup Search Indexes (alf_data/solrBackup or alf_data/backup-lucene-indexes)
-    * Backup SQL
-    * Backup files (alf_data/contentstore, alf_data/contentstore.deleted)
+    #. Backup Search Indexes (alf_data/solrBackup or alf_data/backup-lucene-indexes)
+    #. Backup SQL
+    #. Backup files (alf_data/contentstore, alf_data/contentstore.deleted)
 
 
-.. note::  These steps should occur in this order, and should NOT overlap, otherwise the system could get in a corrupt state when restored from the backup. The backed up artifacts from step 1 through 3 should then be stored as a package, so that it can easily restored should this become necessary in the future.
+.. note::  These steps should occur in this order, and should NOT overlap, otherwise the system could get in a corrupt state when restored from the backup. The backed up artifacts from step 1 through 3 should then be stored as a package, so that it can be easily restored should this become necessary in the future.
 
-As you can see above, there are data stores behind Crafter CMS that need to get backed up.  All of these stores are standard disk or database stores that can be backed up and managed with off-the-shelf enterprise backup packages.
+As you can see above, there are data stores behind Crafter CMS that needs to be backed up.  All of these stores are standard disk or database stores that can be backed up and managed with off-the-shelf enterprise backup packages.
 
 ----------------------
 Scheduled Task / CRON
