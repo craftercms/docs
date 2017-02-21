@@ -16,10 +16,10 @@ The steps below assume you have setup and configured an external database, creat
 ------------------
 Installation Steps
 ------------------
-#.  Download the crafter-studio-install-Studio.zip. This file contains already Tomcat 7 with the Studio, Search and
+#.  Download the crafter-studio-install-Studio.zip. This file already contains Tomcat 7 with the Studio, Search and
     Preview Engine WARs, the Crafter Deployer and the necessary configuration files.
 #.  Download the database JDBC driver.
-#.  Unzip the crafter-studio-install-Studio.zip to any folder (from now on this folder will be referred as
+#.  Unzip the crafter-studio-install-Studio.zip to any folder (from now on this folder will be referred to as
     INSTALL_DIR). The recommended INSTALL_DIR is /opt/crafter/bin/authoring.
 #.  Copy the JDBC driver jar to INSTALL_DIR/apache-tomcat/lib.
 #.  Add the ``JAVA_HOME`` variable to INSTALL_DIR/apache-tomcat/bin/setenv.sh.
@@ -29,7 +29,7 @@ Installation Steps
 #.  Change the Studio configuration to connect to the database and to specify the environment:
 
     #.  Go to INSTALL_DIR/apache-tomcat/shared/classes/crafter/cstudio/extension/server-config.properties.
-    #.  Add the database connection properties, depending of your database engine (remember to replace the ``{}`` with
+    #.  Add the database connection properties, depending on your database engine (remember to replace the ``{}`` with
         the actual values, except for ``${}``):
 
             - MYSQL Properties
@@ -76,7 +76,7 @@ Installation Steps
                     studio.db.driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
                     studio.db.url=jdbc:sqlserver://{DB_HOST}:{DB_PORT};databaseName=${studio.db.name};user=${studio.db.username};password=${studio.db.password};
 
-    #.  Add the following properties to specify the environment (the string value of this properties can be anything,
+    #.  Add the following properties to specify the environment (the string value of these properties can be anything,
         just make sure that when site administrators specify environment overrides in the site configuration, they do
         it under a folder with the same name):
 
