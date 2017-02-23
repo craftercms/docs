@@ -1,12 +1,12 @@
 .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-deployer-api-target-delete:
+.. _crafter-deployer-api-index-delete:
 
-=============
-Delete Target
-=============
+============
+Delete Index
+============
 
-Delete a Crafter Deployer target.
+Delete an index, it's data and it's configuration
 
 --------------------
 Resource Information
@@ -15,7 +15,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/target/delete/:env/:site_name``                         |
+|| URL                       || ``/api/1/admin/index/delete/:id``                                |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -27,9 +27,14 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------+
 || Name                   || Type       || Required     || Description                           |
 +=========================+=============+===============+========================================+
-|| env                    || String     || |checkmark|  || The target's environment (e.g dev).   |
+|| id                     || String     || |checkmark|  || The index ID.                         |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| site_name              || String     || |checkmark|  || The target's site name (e.g mysite).  |
+|| delete_mode            || String     ||              || What exactly to delete. If not        |
+||                        ||            ||              || specified, only the index files will  |
+||                        ||            ||              || will be deleted. If ``ALL_DATA``, all |
+||                        ||            ||              || data related to the index will be     |
+||                        ||            ||              || deleted. If ``ALL_DATA_AND_CONFIG``,  |
+||                        ||            ||              || all data and configuration.           |
 +-------------------------+-------------+---------------+----------------------------------------+
 
 -------
@@ -40,7 +45,13 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/target/delete/dev/mysite``
+``POST .../api/1/admin/index/delete/mysite``
+
+.. code-block:: json
+
+  {
+    "delete_mode": "ALL_DATA_AND_CONFIG"
+  }
 
 ^^^^^^^^
 Response
@@ -57,7 +68,7 @@ Responses
 +=========+==================================+===================================================+
 || 204    ||                                 ||                                                  |
 +---------+----------------------------------+---------------------------------------------------+
-|| 404    ||                                 || ``{ "message" : "Target not found" }``           |
+|| 404    ||                                 || ``{ "message" : "Index not found" }``            |
 +---------+----------------------------------+---------------------------------------------------+
 || 500    ||                                 || ``{ "message" : "Internal server error" }``      |
 +---------+----------------------------------+---------------------------------------------------+
