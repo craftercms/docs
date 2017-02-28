@@ -9,6 +9,12 @@ Create Target
 Create a Crafter Deployer target. If a target already exists and ``replace`` is **true**, then the new target
 will replace the existing one. If ``replace`` is **false** and the target exists, a ``409`` is returned.
 
+Target creation is based on templates. The deployer comes with two out of the box: ``remote`` and ``local``.
+The ``remote`` template creates targets that pull changes from a remote Git repository, making it ideal to
+create targets for **delivery** environments. The ``local`` template instead generates targets that use a
+local Git repo and the last processed commit to infer the changes, without executing a pull, so it's used
+mostly to create targets for **authoring** environments.
+
 --------------------
 Resource Information
 --------------------
@@ -36,39 +42,50 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------+
 || template_name          || String     ||              || The template to use for configuration |
 ||                        ||            ||              || generation. Out of the box            |
-||                        ||            ||              || ``default`` and ``preview``           |
+||                        ||            ||              || ``remote`` and ``local``              |
 ||                        ||            ||              || are provided. If not specified        |
-||                        ||            ||              || ``default`` will be used.             |
+||                        ||            ||              || ``remote`` will be used.              |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| remote_repo_url        || String     || |checkmark|  || The URL of the remote Git repo to     |
-||                        ||            ||              || pull from.                            |
+|| disable_deploy_cron    || Boolean    ||              || Disabled the cron job the runs        |
+||                        ||            ||              || deployments every certain amount of   |
+||                        ||            ||              || time                                  |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| remote_repo_branch     || String     ||              || The branch name of the remote Git     |
+|| repo_url               || String     || |checkmark|  || Depends on the template. If           |
+||                        ||            ||              || ``remote`` is being used, it          |
+||                        ||            ||              || specifies the URL of the remote repo  |
+||                        ||            ||              || to pull from (e.g. ssh://...). If     |
+||                        ||            ||              || instead the template is ``local``,    |
+||                        ||            ||              || ``repo_url`` is the filesystem path   |
+||                        ||            ||              || of the local repo (e.g. /opt/..)      |
++-------------------------+-------------+---------------+----------------------------------------+
+|| repo_branch            || String     ||              || *Only use with "remote" template*.    |
+||                        ||            ||              || The branch name of the remote Git     |
 ||                        ||            ||              || repo to pull from. If not specified   |
 ||                        ||            ||              || ``master`` will be used.              |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| remote_repo_username   || String     ||              || The username of the remote Git repo   |
+|| repo_username          || String     ||              || *Only use with "remote" template*.    |
+||                        ||            ||              || The username of the remote Git repo   |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| remote_repo_password   || String     ||              || The password of the remote Git repo.  |
+|| repo_username          || String     ||              || *Only use with "remote" template*.    |
+||                        ||            ||              || The password of the remote Git repo.  |
 +-------------------------+-------------+---------------+----------------------------------------+
 || engine_url             || String     || |checkmark|  || Base URL of Engine, used to make API  |
 ||                        ||            ||              || calls like clear cache and rebuild    |
 ||                        ||            ||              || context.                              |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| notification_addresses || String     ||              || *Only use with "default" template*.   |
-||                        ||            ||              || The email addresses that should       |
+|| notification_addresses || String     ||              || The email addresses that should       |
 ||                        ||            ||              || receive deployment notifications.     |
 +-------------------------+-------------+---------------+----------------------------------------+
 
-.. _Default Clear Cache URL: http://localhost:8080/api/1/cache/clear_all.json
+.. _remote Clear Cache URL: http://localhost:8080/api/1/cache/clear_all.json
 
 -------
 Example
 -------
 
-^^^^^^^^^^^^^^^
-Default Request
-^^^^^^^^^^^^^^^
+^^^^^^^^
+Requests
+^^^^^^^^
 
 ``POST .../api/1/target/create``
 
@@ -78,18 +95,14 @@ Default Request
     "env": "dev",
     "site_name": "mysite",
     "replace": false,
-    "template_name" : "default",
-    "remote_repo_url" : "ssh://crafter@server/opt/crafter/deployer/target/mysite",
-    "remote_repo_username" : "crafter",
-    "remote_repo_password" : "crafter",
-    "remote_repo_branch" : "master",
+    "template_name" : "remote",
+    "repo_url" : "ssh://crafter@server/opt/crafter/deployer/target/mysite",
+    "repo_username" : "crafter",
+    "repo_password" : "crafter",
+    "repo_branch" : "master",
     "engine_url" : "http://localhost:8080",
     "notification_addresses" : ["admin1@mysite.com", "admin2@mysite.com"]
   }
-
-^^^^^^^^^^^^^^^
-Preview Request
-^^^^^^^^^^^^^^^
 
 ``POST .../api/1/target/create``
 
@@ -99,9 +112,9 @@ Preview Request
     "env": "preview",
     "site_name": "mysite",
     "replace": true,
-    "template_name" : "preview",
-    "remote_repo_url" : "ssh://crafter@server/opt/studio/deployer/target/mysite",
-    "remote_repo_branch" : "master",
+    "disable_deploy_cron": true,
+    "template_name" : "local",
+    "repo_url" : "/opt/crafter/studio/data/sites/mysite/sandbox",
     "engine_url" : "http://localhost:8080",
   }
 
