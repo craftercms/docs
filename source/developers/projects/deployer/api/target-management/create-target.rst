@@ -46,9 +46,9 @@ Parameters
 ||                        ||            ||              || are provided. If not specified        |
 ||                        ||            ||              || ``remote`` will be used.              |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| disable_deploy_cron    || Boolean    ||              || Disabled the cron job the runs        |
+|| disable_deploy_cron    || Boolean    ||              || Disables the cron job the runs        |
 ||                        ||            ||              || deployments every certain amount of   |
-||                        ||            ||              || time                                  |
+||                        ||            ||              || time.                                 |
 +-------------------------+-------------+---------------+----------------------------------------+
 || repo_url               || String     || |checkmark|  || Depends on the template. If           |
 ||                        ||            ||              || ``remote`` is being used, it          |
@@ -56,7 +56,7 @@ Parameters
 ||                        ||            ||              || to pull from (e.g. ssh://...). If     |
 ||                        ||            ||              || instead the template is ``local``,    |
 ||                        ||            ||              || ``repo_url`` is the filesystem path   |
-||                        ||            ||              || of the local repo (e.g. /opt/..)      |
+||                        ||            ||              || of the local repo (e.g. /opt/..).     |
 +-------------------------+-------------+---------------+----------------------------------------+
 || repo_branch            || String     ||              || *Only use with "remote" template*.    |
 ||                        ||            ||              || The branch name of the remote Git     |
@@ -64,7 +64,7 @@ Parameters
 ||                        ||            ||              || ``master`` will be used.              |
 +-------------------------+-------------+---------------+----------------------------------------+
 || repo_username          || String     ||              || *Only use with "remote" template*.    |
-||                        ||            ||              || The username of the remote Git repo   |
+||                        ||            ||              || The username of the remote Git repo.  |
 +-------------------------+-------------+---------------+----------------------------------------+
 || repo_username          || String     ||              || *Only use with "remote" template*.    |
 ||                        ||            ||              || The password of the remote Git repo.  |
