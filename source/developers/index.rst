@@ -78,7 +78,9 @@ Crafter CMS comprises a number of projects, below are the project specific docum
     :maxdepth: 1
     :titlesonly:
 
+    projects/craftercms/index
     projects/core/index
+    projects/commons/index
     projects/engine/index
     projects/studio/index
     projects/search/index
