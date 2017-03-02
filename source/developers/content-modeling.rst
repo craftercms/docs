@@ -168,14 +168,14 @@ Form Engine Controls (please use the scrollbar to see more controls)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Form Control Variable Names
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Every Form Control has a Variable Name property.  The Variable Name is used to by the form engine to store the content entered by the user in the content model and search index.  This same Variable Name is used later by templates and controllers to retreive the value.  
+Every Form Control has a Variable Name property.  The Variable Name is used by the form engine to store the content entered by the user in the content model and search index.  This same Variable Name is used later by templates and controllers to retreive the value.  
 
 Variable Name Best Bractices
 
 #. Be descriptive.  Well thoughtout Variable Names help with template and controller readability.
 #. Use camel case. Example: "productSummary".
 #. Use regex constraints on input boxes to enforce additional validation rules
-#. Do not used Reserved names.
+#. Do not use Reserved names.
 
 Reserved Variable Names
 
@@ -209,10 +209,41 @@ The following variable names are used by Crafter CMS.
 || id               || reserved by Solr                                        |
 +-------------------+----------------------------------------------------------+
 
+
 Variable Names and Search Indexing
 
 Crafter CMS indexes your content in to Solr using your content model variable name as the Solr field name. 
-Use the Solr schema to configure your Solr variable/solr field types in search. 
+Use the Solr schema to configure your Solr variable/solr field types in search.
+
+To facilitate indexing to Solr, the following suffix should be appended to variable names depending on the variable data type:
+
++------------+---------+-------------+----------------------------------------------------+
+||           || Field  || Multivalue || Description                                       |
+|| Type      || Suffix || Suffix     ||                                                   |
+||           ||        || (repeating ||                                                   |
+||           ||        || groups)    ||                                                   |
++============+=========+=============+====================================================+
+|| integer   || _i     || _is        || a 32 bit signed integer                           |
++------------+---------+-------------+----------------------------------------------------+
+|| string    || _s     || _ss        || String (UTF-8 encoded string or Unicode). A string|
+||           ||        ||            ||  value is indexed as a single unit.               |
++------------+---------+-------------+----------------------------------------------------+
+|| long      || _l     || _ls        || a 64 bit signed integer                           |
++------------+---------+-------------+----------------------------------------------------+
+|| text      || _t     || _txt       || Multiple words or tokens                          |
++------------+---------+-------------+----------------------------------------------------+
+|| boolean   || _b     || _bs        || true or false                                     |
++------------+---------+-------------+----------------------------------------------------+
+|| float     || _f     || _fs        || IEEE 32 bit floating point number                 |
++------------+---------+-------------+----------------------------------------------------+
+|| double    || _d     || _ds        || IEEE 64 bit floating point number                 |
++------------+---------+-------------+----------------------------------------------------+
+|| date      || _dt    || _dts       || A date in Solr's date format                      |
++------------+---------+-------------+----------------------------------------------------+
+|| text with || _html  ||            ||                                                   |
+|| html tags ||        ||            ||                                                   |
++------------+---------+-------------+----------------------------------------------------+
+
 
 ^^^^^^^^^^^^
 Data Sources
@@ -235,7 +266,7 @@ Form Canvas
 
 The canvas is where the form actually gets built. The building process is perfomed by simply dragging the controls from the Form Controls over to the canvas, rearranging the controls in the order you'd like to present to the content authors, and configuring the controls individually.
 
-Controls on the canvas are configured by clicking on the control, and then editing the control's configration in the Properties Explorer, see item #3 in :ref:`form-builder-basics`. Different controls have different configuration, so please review the individual form control confuration listed in :ref:`form-controls`.
+Controls on the canvas are configured by clicking on the control, and then editing the control's configration in the Properties Explorer, see item #3 in :ref:`form-builder-basics`. Different controls have different configuration, so please review the individual form control configuration listed in :ref:`form-controls`.
 
 Two controls have a special significance to the form canvas: :ref:`form-section` and :ref:`form-repeating-group`. Form Section Control creates a form section that can be expanded and collapsed and holds within it other controls. This typically used to group together controls that cover a similar concern and help provide the content authors with a clear and organized form when editing in form mode.
 Like the Form Section Control, Repeating Group Control is also a container that holds other controls, but the purpose is to allow a set of controls to repeat as configured. This is typically used to allow content authors to enter a set of meta-data and repeat it as many times as desired and permitted by configuration.
