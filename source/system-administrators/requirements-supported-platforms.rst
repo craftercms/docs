@@ -45,6 +45,6 @@ Browsers (Crafter Studio & Crafter Social/Profile Admin Consoles)
 
 The following browsers are supported:
 
-    - Chrome 55+
-    - Firefox 55+
-    - Edge 39
+    - Chrome
+    - Firefox
+    - Edge
