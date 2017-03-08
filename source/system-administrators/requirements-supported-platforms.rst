@@ -2,9 +2,9 @@
 
 ..  _requirements_supported_platforms:
 
-^^^^^^^^^^^^
+------------
 Requirements
-^^^^^^^^^^^^
+------------
 
 To run Crafter CMS, the following are required:
 
@@ -16,10 +16,11 @@ Additionally, to run the optional components Crafter Profile and/or Crafter Soci
     - MongoDb 3+
 
 
-^^^^^^^^^^^^^^^^^^^
+-------------------
 Supported Platforms
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
+^^^^^^^^^^^^^^^^^^^
 OS (All components)
 ^^^^^^^^^^^^^^^^^^^
 
@@ -29,7 +30,7 @@ The following Operating Systems are supported:
     - Linux
     - OS X
     
-
+^^^^^^^^^^^^^^^^^^^^^
 JVMs (All components)
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -38,7 +39,7 @@ The following JVMs are supported:
     - OpenJDK 1.8
     - Oracle JDK (HotSpot) 1.8
 
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Browsers (Crafter Studio & Crafter Social/Profile Admin Consoles)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
