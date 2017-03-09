@@ -23,8 +23,9 @@ User Management
 	user-management/disable-user
 	user-management/get-user-status
 	user-management/forgot-password
-	user-management/change-password
+	user-management/validate-token
 	user-management/set-password
+	user-management/change-password
 
 ----------------
 Group Management
