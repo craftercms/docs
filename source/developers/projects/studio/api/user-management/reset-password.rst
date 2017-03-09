@@ -1,12 +1,12 @@
 .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-user-set-password:
+.. _crafter-studio-api-user-reset-password:
 
-============
-Set Password
-============
+==============
+Reset Password
+==============
 
-Set Crafter Studio's user password provided a forgot password secure token (obtained through :ref:`crafter-studio-api-user-forgot-password`).
+Allow the administrator to reset Crafter Studio's user password provided.
 
 --------------------
 Resource Information
@@ -15,11 +15,11 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/user/set-password.json``                 |
+|| URL                       || ``/api/1/services/api/1/user/reset-password.json``               |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Anonymous                                                        |
+|| Required Role             || Admin                                                            |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -29,7 +29,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| token        || String     || |checkmark|  || Forgot password secure token.                   |
+|| username     || String     || |checkmark|  || Username to use                                 |
 +---------------+-------------+---------------+--------------------------------------------------+
 || new          || String     ||              || User's new password (clear)                     |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -40,12 +40,12 @@ Example
 
 .. code-block:: json
 
-	POST .../api/1/services/api/1/user/set-password.json
+	POST .../api/1/services/api/1/user/reset-password.json
 
 .. code-block:: json
 
   {
-    "token" : "asfopaiu02928s0980b98a098gs0fduoi2j341j448t735h1lk40",
+    "username" : "jane.doe",
     "new" : "SuperSecretPassword321#"
   }
 

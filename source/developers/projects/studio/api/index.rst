@@ -26,6 +26,7 @@ User Management
 	user-management/validate-token
 	user-management/set-password
 	user-management/change-password
+	user-management/reset-password
 
 ----------------
 Group Management
