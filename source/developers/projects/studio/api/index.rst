@@ -63,4 +63,13 @@ Audit
 
 	audit/get-audit-log
 
+--------
+Security
+--------
+
+.. toctree::
+	:maxdepth: 1
+
+	security/validate-session
+
 .. todo:: Current coverage is limited to version 3.x new features, will need to extend converage to all API calls
