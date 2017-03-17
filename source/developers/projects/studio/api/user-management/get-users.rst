@@ -45,6 +45,7 @@ Example
 .. code-block:: json
 
   {
+    "total": 2
     "users" :
       [
         {
