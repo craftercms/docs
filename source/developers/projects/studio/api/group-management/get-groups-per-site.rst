@@ -47,6 +47,7 @@ Example
 .. code-block:: json
 
   {
+    "total": 3
     "groups" :
       [
         {
