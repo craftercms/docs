@@ -46,6 +46,15 @@ Group Management
 	group-management/remove-user
 
 ---------------
+Site Management
+---------------
+
+.. toctree::
+	:maxdepth: 1
+
+	site/get-sites-per-user
+
+---------------
 Repo Management
 ---------------
 
