@@ -52,6 +52,8 @@ Site Management
 .. toctree::
 	:maxdepth: 1
 
+	site/create-site
+	site/get-site
 	site/get-sites-per-user
 
 ---------------
