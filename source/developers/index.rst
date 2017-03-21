@@ -40,16 +40,16 @@ Beginner Developer Topics
 This section covers the basic topics you need to define a content type and render that content as part of a page, component or service.
 
 .. toctree::
-	:maxdepth: 2
-	:titlesonly:
+   :maxdepth: 2
+   :titlesonly:
 
-    architecture
-    content-modeling
-    templating-api
-    custom-services-and-controllers
-    in-context-editing
-    html-mobile-support
-    responsive-guide
+   architecture
+   content-modeling
+   templating-api
+   custom-services-and-controllers
+   in-context-editing
+   html-mobile-support
+   responsive-guide
 
 #########################
 Advanced Developer Topics
@@ -58,15 +58,15 @@ Advanced Developer Topics
 This section goes beyond the basics to cover advanced topics like building queries, accessing services and extending the core platforms.
 
 .. toctree::
-	:maxdepth: 2
-	:titlesonly:
+   :maxdepth: 2
+   :titlesonly:
 
-    content-inheritance
-    services-guide
-    native-mobile-guide
-    rte-setup
-    extending-studio/index
-    projects/qa/test-case-creation
+   content-inheritance
+   services-guide
+   native-mobile-guide
+   rte-setup
+   extending-studio/index
+   projects/qa/test-case-creation
 
 ##############################
 Project Specific Documentation
@@ -78,7 +78,9 @@ Crafter CMS comprises a number of projects, below are the project specific docum
     :maxdepth: 1
     :titlesonly:
 
+    projects/craftercms/index
     projects/core/index
+    projects/commons/index
     projects/engine/index
     projects/studio/index
     projects/search/index

@@ -18,9 +18,10 @@ Content Type Management in Crafter Studio is located in the Admin Console.
 	:align: center
 
 Content Types are limited to two core types: Pages and Components. Both are made up of three ingredients:
-# Model: The content pieces that will be captured from the content authors for the page or component
-# View: The view template that will render the content, typically to HTML markup
-# Controller: The controller that handles the incoming request for the page or component
+
+#. Model: The content pieces that will be captured from the content authors for the page or component
+#. View: The view template that will render the content, typically to HTML markup
+#. Controller: The controller that handles the incoming request for the page or component
 
 ^^^^^
 Pages
@@ -79,7 +80,7 @@ Crafter Studio's Form Builder
 || 1     || Content Type Actions: Open Existing Content Type or Create a New Type.               |
 +--------+---------------------------------------------------------------------------------------+
 || 2     || Form Builder: The begining of the form builder and it's headed by the name of the    |
-||       || name of currently open Content Type.                                                 |
+||       || currently open Content Type.                                                         |
 ||       || Click here to explore the global properties of the type in the Properties Explorer,  |
 ||       || #3.                                                                                  |
 +--------+---------------------------------------------------------------------------------------+
@@ -141,7 +142,7 @@ The fields available at this level are:
 || Template     ||                                                                               |
 +---------------+--------------------------------------------------------------------------------+
 || Merge        || The inheritance pattern to use with content of this type, please see Content  |
-|| Strategy     || Inheritance for more detail on this feature :ref:`content-inheritance`.       |
+|| Strategy     || Inheritance for more detail on this feature :ref:`content-inheritance`        |
 +---------------+--------------------------------------------------------------------------------+
 
 The 2 key properties are: the display template (:ref:`content-view-templates`) which is the HTML template that renders the final Web page; the content inheritance (:ref:`content-inheritance`) which determines how this content type will inherit from parent XML files in the system.
@@ -158,15 +159,96 @@ Form Controls are data input controls that, once placed on a form, will capture 
 	:alt: Form Engine Controls
 	:align: center
 
+Each Form Control type has it's own properties and constraints.  Some constraints are common, like "Variable Name" and "Required" while others apply only to the type, e.g. Height and Width limitations on the Image Picker control.  
+
 Form Engine Controls (please use the scrollbar to see more controls)
 
 .. include:: form-controls/list-form-controls.rst
 
-.. index:: Data Sources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Form Control Variable Names
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Every Form Control has a Variable Name property.  The Variable Name is used by the form engine to store the content entered by the user in the content model and search index.  This same Variable Name is used later by templates and controllers to retreive the value.  
+
+Variable Name Best Bractices
+
+#. Be descriptive.  Well thoughtout Variable Names help with template and controller readability.
+#. Use camel case. Example: "productSummary".
+#. Use regex constraints on input boxes to enforce additional validation rules
+#. Do not use Reserved names.
+
+Reserved Variable Names
+
+The following variable names are used by Crafter CMS.
+  
++-------------------+----------------------------------------------------------+
+|| file-name        || Used by the File Name and Auto File Name control.       |
++-------------------+----------------------------------------------------------+
+|| internal-name    || Used by Crafter Studio to label the content object      |
++-------------------+----------------------------------------------------------+
+|| placeInNav       || Used by the Page Order control.                         |
++-------------------+----------------------------------------------------------+
+|| disabled         || Used to logically remove an object in content delivery. |
++-------------------+----------------------------------------------------------+
+|| expired          || Used to logically remove an object after date           |
++-------------------+----------------------------------------------------------+
+|| objectId         || UUID. Auto assigned by Crafter                          |
++-------------------+----------------------------------------------------------+
+|| objectGroupId    || First part of objectId. Auto assigned by Crafter        |
++-------------------+----------------------------------------------------------+
+|| createdDate      || create date. Auto assigned by Crafter                   |
++-------------------+----------------------------------------------------------+
+|| lastModifiedDate || Last modified date. Auto assigned by Crafter            |
++-------------------+----------------------------------------------------------+
+|| content-type     || Content type name                                       |
++-------------------+----------------------------------------------------------+
+|| display-template || Path to default template for type                       |
++-------------------+----------------------------------------------------------+
+|| merge-strategy   || Crafter Core/Engine "Merge Strategy" for content type   |
++-------------------+----------------------------------------------------------+	 
+|| id               || reserved by Solr                                        |
++-------------------+----------------------------------------------------------+
+
+
+Variable Names and Search Indexing
+
+Crafter CMS indexes your content in to Solr using your content model variable name as the Solr field name. 
+Use the Solr schema to configure your Solr variable/solr field types in search.
+
+To facilitate indexing to Solr, the following suffix should be appended to variable names depending on the variable data type:
+
++------------+---------+-------------+----------------------------------------------------+
+||           || Field  || Multivalue || Description                                       |
+|| Type      || Suffix || Suffix     ||                                                   |
+||           ||        || (repeating ||                                                   |
+||           ||        || groups)    ||                                                   |
++============+=========+=============+====================================================+
+|| integer   || _i     || _is        || a 32 bit signed integer                           |
++------------+---------+-------------+----------------------------------------------------+
+|| string    || _s     || _ss        || String (UTF-8 encoded string or Unicode). A string|
+||           ||        ||            ||  value is indexed as a single unit.               |
++------------+---------+-------------+----------------------------------------------------+
+|| long      || _l     || _ls        || a 64 bit signed integer                           |
++------------+---------+-------------+----------------------------------------------------+
+|| text      || _t     || _txt       || Multiple words or tokens                          |
++------------+---------+-------------+----------------------------------------------------+
+|| boolean   || _b     || _bs        || true or false                                     |
++------------+---------+-------------+----------------------------------------------------+
+|| float     || _f     || _fs        || IEEE 32 bit floating point number                 |
++------------+---------+-------------+----------------------------------------------------+
+|| double    || _d     || _ds        || IEEE 64 bit floating point number                 |
++------------+---------+-------------+----------------------------------------------------+
+|| date      || _dt    || _dts       || A date in Solr's date format                      |
++------------+---------+-------------+----------------------------------------------------+
+|| text with || _html  ||            ||                                                   |
+|| html tags ||        ||            ||                                                   |
++------------+---------+-------------+----------------------------------------------------+
+
 
 ^^^^^^^^^^^^
 Data Sources
 ^^^^^^^^^^^^
+.. index:: Data Sources
 
 .. figure:: /_static/images/form-engine-data-sources.png
 	:alt: Form Engine Data Sources
@@ -182,9 +264,9 @@ Form Engine Data Sources (please use the scrollbar to see more controls)
 Form Canvas
 ^^^^^^^^^^^
 
-The canvas is where the form actually gets built. The building process is perfomed by simply dragging the controls from the Form Controls over to the canvas, rearranging the controls in the order you'd like to present to the content authors, and configure the controls individually.
+The canvas is where the form actually gets built. The building process is perfomed by simply dragging the controls from the Form Controls over to the canvas, rearranging the controls in the order you'd like to present to the content authors, and configuring the controls individually.
 
-Controls on the canvas are configured by clicking on the control, and then editing the control's configration in the Properties Explorer, see item #3 in :ref:`form-builder-basics`. Different controls have different configuration, so please review the individual form control confuration listed in :ref:`form-controls`.
+Controls on the canvas are configured by clicking on the control, and then editing the control's configration in the Properties Explorer, see item #3 in :ref:`form-builder-basics`. Different controls have different configuration, so please review the individual form control configuration listed in :ref:`form-controls`.
 
 Two controls have a special significance to the form canvas: :ref:`form-section` and :ref:`form-repeating-group`. Form Section Control creates a form section that can be expanded and collapsed and holds within it other controls. This typically used to group together controls that cover a similar concern and help provide the content authors with a clear and organized form when editing in form mode.
 Like the Form Section Control, Repeating Group Control is also a container that holds other controls, but the purpose is to allow a set of controls to repeat as configured. This is typically used to allow content authors to enter a set of meta-data and repeat it as many times as desired and permitted by configuration.
@@ -197,7 +279,7 @@ The canvas allows the form-based content capture only, and is used by content au
 Content Type View Templates
 ---------------------------
 
-View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the parimary Crafter CMS model or additional model (via APIs, please read :ref:`custom-services-and-controllers` for that topic).
+View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the primary Crafter CMS model or additional model (via APIs, please read :ref:`custom-services-and-controllers` for that topic).
 
 An example view template
 
@@ -224,7 +306,7 @@ An example view template
 		</body>
 	</html>
 
-The simple example renders an simple HTML page with a very basic model. Let's review the model first:
+The simple example renders a simple HTML page with a very basic model. Let's review the model first:
 
 +-------------------+--------------+-------------------------------------------------------------+
 || Model Element    || Control     || Purpose                                                    |
@@ -239,7 +321,7 @@ The simple example renders an simple HTML page with a very basic model. Let's re
 || analytics_script || Text Area   || Analytics's Engine JavaScript                              |
 +-------------------+--------------+-------------------------------------------------------------+
 
-.. todo:: reference the freemaker API
+The `FreeMarker <http://freemarker.org>`_ language is supported. For detailed Freemarker documentation, please visit: `http://freemarker.org <http://freemarker.org>`_ 
 
 
 ----------------------------------
@@ -257,7 +339,7 @@ is the XML descriptor content, of type SiteItem. The scripts don't have to retur
 There are 2 ways in which you can "bind" a script to a page or component:
 
 #.  Put the script under Scripts > pages or Scripts > components, and name it after the page or component content type.
-#.  When creating the content type for the page or component, add a Item Selector with the variable name ``scripts``. Later when creating
+#.  When creating the content type for the page or component, add an Item Selector with the variable name ``scripts``. Later when creating
     a page or component of that type, you can select multiple scripts that will be associated to the page or component.
 
 The following is an example of a component script. The component content type is ``/component/upcoming-events``. We can then place the

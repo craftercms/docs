@@ -10,13 +10,13 @@ FAQ
 What is Crafter CMS
 -------------------
 
-Crafter CMS is an Digital Experience Management Platform.  This includes Enterprise grade management capabilities for building interactive, personalized experiences for Web, mobile, digital signage, email, augmented / virtual reality and may other digital mediums.  Crafter CMS is comprised of several independent, integrated components including: a repository, a authoring Studio (Crafter Studio), a Dynamic Content Delivery Engine (Crafter Engine), a Profile and personalization store and server (Crafter Profile), a query/search server (Crafter Search) and a social content store and server (Crafter Social).
+Crafter CMS is a Digital Experience Management Platform.  This includes Enterprise grade management capabilities for building interactive, personalized experiences for Web, mobile, digital signage, email, augmented / virtual reality and many other digital mediums.  Crafter CMS is comprised of several independent, integrated components including: a core content repository, an authoring application for content editors/managers (Crafter Studio), a dynamic content delivery system (Crafter Engine), a user profile store and personalization server (Crafter Profile), a query/search server (Crafter Search) and a social content store and server (Crafter Social).
 
 -----------------------------------------------------------------------------
 What's so special about Crafter CMS, don't we have enough OSS CMSs out there?
 -----------------------------------------------------------------------------
 
-Crafter Software believes that great digital experiences are those which are which are crafted.  Marketers, authors, designers and developers need a great set of tools and a platform that allows them to express themselves effectively, efficiently and more importantly, completely.  Crafter is a CMS for artisans built by artisans.  Our mission is to continue to create the World’s most scalable personalized digital content creation and delivery tools and platform in a way that truly enables your content creators and developers to quickly craft and deliver amazing experience to your customers, employees and partners.
+We firmly believe that great digital experiences must be crafted - they must be compelling, unique, branded, and personalized.  Marketers, authors, designers and developers need a great set of tools and a platform that allows them to express themselves effectively, efficiently and completely.  Crafter is a CMS for artisans built by artisans.  Our mission is to create the world’s most scalable, personalized digital content creation and delivery platform in a way that truly enables content creators and software developers to quickly craft and deliver amazing experience to their customers, employees and partners.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Crafter CMS is Different from the Competition
@@ -35,12 +35,12 @@ To get better results you have to be different. Crafter CMS delivers what no oth
 What do I need to run Crafter CMS
 ---------------------------------
 
-Follow these instructions run Crafter CMS you will download and install Crafter on your machine or a server. getting-started  :ref:`getting-started`
+Follow these instructions to run Crafter CMS and to download and install Crafter on your machine or server: :ref:`getting-started`
 
 ------------------------------------
 Can Crafter CMS be used as a portal?
 ------------------------------------
-Yes. Crafter is running portals for some of the most well known companies in the world.  Use cases include intranets, global extranets, B2B portals, B2E portals and B2C portals in hospitality, finance, logistics, education and telcom and many others.
+Yes. Crafter is running portals for some of the most well known companies in the world.  Use cases include intranets, global extranets, B2B portals, B2E portals and B2C portals in hospitality, finance, logistics, education and telecom and many others.
 
 Many people hear the word portal and immediately search for a "portal" technology that meets the JSR-268 standard.  Crafter does not support JSR-268 natively.  We do integrate with Liferay Portal and have been deployed in cases where stronger WCM capabilities were required than what Liferay provides out of the box. 
 
@@ -51,7 +51,7 @@ You only need JSR-268 if you want to build and deploy your application as "portl
 Can Crafter CMS be used for E-Commerce?
 ---------------------------------------
 
-Yes.  Crafter has a e-commerce API that you can plug an implementation in to.  This gives marketing total control of the user experience while integrating with the back-end e-commerce functionality of your choosing.
+Yes.  Crafter has an e-commerce API that you can plug an implementation in to.  This gives marketing total control of the user experience while integrating with the back-end e-commerce functionality of your choosing.
 
 --------------------------------------------------
 Can Crafter CMS be used to build a marketing site?
@@ -63,7 +63,7 @@ Yes. Marketing sites are one of the top use cases for Crafter CMS.  Crafter give
 How long does it take to build a Crafter CMS website?
 -----------------------------------------------------
 
-Project duration depends on complexity of the website or other digital experience you are building.  A project might be as short as a day or it could take 9 months to complete.  Typical real-world sites with a sophisticated design, personalization and back end integration will take between 3 and 6 months complete. 
+Project duration depends on complexity of the website or other digital experience you are building.  A project might be as short as a day or it could take 9 months to complete.  Typical real-world sites with a sophisticated design, personalization and back end integration will take between 3 and 6 months to complete. 
 
 Crafter's tools enable an agile development methodology.  Many organizations create and deploy a phase one project quickly and then leveraging Crafter's capabilities quickly iterate to deliver continuous value in the form of new features to the site on a regular cadence.
 

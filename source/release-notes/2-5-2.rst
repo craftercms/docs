@@ -2,8 +2,8 @@
 Crafter CMS 2.5.2
 -----------------
 
-`GitHub 2.5.2 Milestone <https://github.com/craftercms/craftercms/issues?q=is%3Aclosed+milestone%3A2.5.2>`_
-Release Date: December 19, 2016
+* `GitHub 2.5.2 Milestone <https://github.com/craftercms/craftercms/issues?q=is%3Aclosed+milestone%3A2.5.2>`_
+* Release Date: December 19, 2016
 
 ^^^^^^^^^^
 Highlights
@@ -18,9 +18,9 @@ Highlights
 * Many small improvements and fixes
 
 
-^^^^^^^^^^
+^^^^^^^^^^^^
 New Features
-^^^^^^^^^^
+^^^^^^^^^^^^
 * #89 CRAFTERCMS-2015: hook up diff in version UI critical new feature
 * #136 CRAFTERCMS-2070: Add publishDate_dt as a field in solr that is automatically added by publisher when a document is published. blocker new feature
 * #135 CRAFTERCMS-2069: Add option to index repeat group items as child documents in solr blocker new feature
@@ -33,9 +33,9 @@ New Features
 * #91 CRAFTERCMS-2019: make session time out only after in-activity of some specified in-activity of minutes by the user new feature
 * #41 CRAFTERCMS-1629: Create Crafter Market Place integration with Crafter Studio new feature
 
-^^^^^^^^^^
+^^^^^^^^^^^^
 Improvements
-^^^^^^^^^^
+^^^^^^^^^^^^
 * #78 CRAFTERCMS-1930: UI: list all dependencies in publishing window when approving or submitting a publish critical enhancement
 * #94 CRAFTERCMS-2022: bootstraping alfresco prints 1000s of lines of content not found critical enhancement
 * #215 CRAFTERCMS-2154: Change publishedDate to crafterPublishedDate and crafterPublishedDate_dt blocker enhancement

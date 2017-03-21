@@ -23,12 +23,12 @@ locale                    The current locale for the current     `Locale`_
                           user
 
 authentication            The current authentication (if the     `Authentication`_
-                          user has logged in), created by the
-                          Crafter Security Provider
+|                         user has logged in), created by the
+|                         Crafter Security Provider
 
 profile                   The current profile (if the user       `Profile`_
-                          has logged in), created by the
-                          Crafter Security Provider
+|                         has logged in), created by the
+|                         Crafter Security Provider
 ========================= ====================================== ==================================
 
 .. _ServletContext: http://docs.oracle.com/javaee/6/api/javax/servlet/ServletContext.html

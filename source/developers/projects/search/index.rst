@@ -18,6 +18,12 @@ Java Doc
 
 Crafter Search's Java Doc is here: http://javadoc.io/doc/org.craftercms/crafter-search
 
+--------
+ReST API
+--------
+
+:ref:`crafter-search-api`
+
 -------------
 Configuration
 -------------

@@ -24,14 +24,14 @@ Consider this simple script to login into a crafter local site.
 **2. What is POM?**
 
 
-1. Page Object Model is a design pattern to create Object Repository for web UI elements.
-2. Under this model, for each web page in the application there should be corresponding page class.
+1. Page Object Model is a design pattern to create an Object Repository for web UI elements.
+2. Under this model, for each web page in the application there should be a corresponding page class.
 3. This Page class will find the WebElements of that web page and also contains Page methods which perform operations on those WebElements.
 4. Name of these methods should be given as per the task they are performing. 
 
 .. note:: i.e., if I press a button to create a new site in *crafter studio*, POM method name can be **clickOnCreateButtonToCreateSite()**.
 
-**The final project of CrafterSoftware Framework looks that**
+**See below for how The final project of CrafterSoftware Framework looks like**
 
 .. image:: /_static/images/CreationTestCase1.png
 
@@ -39,10 +39,10 @@ Consider this simple script to login into a crafter local site.
 **Advantages of POM.**
 
 
-1. Page Object Patten says operations and flows in the UI should be separated from verification. This concept makes our code cleaner and easy to understand.
+1. Page Object Pattern says operations and flows in the UI should be separated from verification. This concept makes our code cleaner and easy to understand.
 2. Second benefit is the object repository is independent of testcases, so we can use the same object repository for a different purpose with different tools. For example, we can integrate POM with TestNG/JUnit for functional testing and at the same time with JBehave/Cucumber for acceptance testing.
 3. Code becomes less and optimized because of the reusable page methods in the POM classes.
-4. Methods get more realistic names which can be easily mapped with the operation happening in UI. i.e. if after clicking on the button we land on the home page, the method name will be like 'gotoHomePage()'.  
+4. Methods get more realistic names which can be easily mapped with the operation happening in the UI. i.e. if after clicking on the button we land on the home page, the method name will be like 'gotoHomePage()'.  
 
 
 **4. How to create a Test Case for Crafter Studio?**
@@ -165,41 +165,51 @@ Consider this simple script to login into a crafter local site.
 
 .. code-block:: c
 
-   package CrafterTools;
-   
+   package org.craftercms.studio.test.utils;
+
    import java.util.concurrent.TimeUnit;
-   
+
    import org.openqa.selenium.WebDriver;
    import org.openqa.selenium.chrome.ChromeDriver;
    import org.openqa.selenium.firefox.FirefoxDriver;
+   import org.openqa.selenium.phantomjs.PhantomJSDriver;
+   import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+   import org.openqa.selenium.remote.DesiredCapabilities;
    import org.openqa.selenium.safari.SafariDriver;
-   
+
    public class WebDriverManager {
-   WebDriver driver;
-   ConstantsPropertiesManager constantsPropertiesManager;
+      WebDriver driver;
+      ConstantsPropertiesManager constantsPropertiesManager;
+   
+      public void openConnection() {
+         constantsPropertiesManager = new ConstantsPropertiesManager(FilesLocations.CONSTANTSPROPERTIESFILEPATH);
+         String webBrowserProperty = constantsPropertiesManager.getSharedExecutionConstants().getProperty("webBrowser");
 
-   public void openConnection() {
-      constantsPropertiesManager = new ConstantsPropertiesManager(FilesLocations.CONSTANTSPROPERTIESFILEPATH);
-      String webBrowserProperty = constantsPropertiesManager.getSharedExecutionConstants().getProperty("webBrowser");
+      if (webBrowserProperty.equalsIgnoreCase("PhantomJS")) {
 
-      if (webBrowserProperty.equalsIgnoreCase("Chrome")) {
+         System.setProperty("phantomjs.binary.path",
+               constantsPropertiesManager.getSharedExecutionConstants().getProperty("phantomJSExec"));
+         driver = new PhantomJSDriver();
+      }
+      
+      else if (webBrowserProperty.equalsIgnoreCase("Chrome")) {
 
          System.setProperty("webdriver.chrome.driver",
                constantsPropertiesManager.getSharedExecutionConstants().getProperty("chromeExec"));
          driver = new ChromeDriver();
-      } else if (webBrowserProperty.equalsIgnoreCase("FireFox"))
-         driver = new FirefoxDriver();
+      }
+      
       else if (webBrowserProperty.equalsIgnoreCase("Safari"))
          driver = new SafariDriver();
       else {
-         // if not recognized web browser, it run by default with Firefox
+         // if not recognized web browser, it run by default with Firefox                
          driver = new FirefoxDriver();
       }
 
       driver.get(constantsPropertiesManager.getSharedExecutionConstants().getProperty("baseUrl"));
    }
 
-   public void closeConnection() {
+   public void closeConnection() {   
       this.driver.close();
       this.driver.quit();
    }
@@ -222,6 +232,7 @@ Consider this simple script to login into a crafter local site.
       }
    }
    }
+   
 
 3. Once created classes should be displayed as following:
 
@@ -253,24 +264,28 @@ Consider this simple script to login into a crafter local site.
 .. code-block:: c      
 
    ##Project Constants##
-   
+
    #BaseUrl for execution
    baseUrl = http://localhost:8080/studio/#/login
    
    
    #Web browser for execution
-   #values = Chrome,FireFox,Safari,IE
-   webBrowser = Safari
+   #values = Chrome,FireFox,Safari,IE,Chrome,PhantomJS
+   webBrowser = Chrome
    
    #ChromeDriverPlugin location
    chromeExec = /Users/gustavoortizalfaro/Documents/workspace/chromedriver
+   
+   #PhantomJSDriverPlugin location
+   phantomJSExec = /Users/gustavoortizalfaro/Documents/workspace/phantomjs-2.1.1-macosx/bin/phantomjs
    
    #Default web driver wait
    defaultWaitTime = 4000
    
    #Test user datasheetname
    dataSheetNameTestUsers = TestUsers
-   dataRowIndexTestUser = 1   
+   dataRowIndexTestUser = 1
+ 
    
 *SharedUIElements.properties*   
 
