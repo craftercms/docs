@@ -10,7 +10,7 @@ Description
 
 User Management allows you to control and set up who can access and manage the sites. All users are listed on the User Management page.
 
-To find Users Management console follow the next instructions:
+To find the Users Management console follow the next instructions:
 
 	#. Click on Admin Tools option located in main top navigation.
 
@@ -32,7 +32,7 @@ You can list, search, filter, add or delete users, as well as view specific info
 Listing Users
 ^^^^^^^^^^^^^
 
-On this section you will see a full list of all exiting users.
+On this section you will see a full list of all existing users.
 
 .. image:: /_static/images/users-list-all-sites.png
 	:align: center
@@ -41,7 +41,7 @@ On this section you will see a full list of all exiting users.
 Filtering Users
 ^^^^^^^^^^^^^^^
 
-On listing users, you can select the users that are part of a specific site. To filter users by site go to "All sites" dropdown and select the site you want to filter. In the following example we have choosed "editorial1", we got as a result just one related user: "Rossana".
+On listing users, you can select the users that are part of a specific site. To filter users by site go to "All sites" dropdown and select the site you want to filter. In the following example we have chosen "editorial1", we got as a result just one related user: "Luis".
 
 .. image:: /_static/images/users-list-specific-site.png
 	:align: center
@@ -50,7 +50,7 @@ On listing users, you can select the users that are part of a specific site. To 
 Searching Users
 ^^^^^^^^^^^^^^^
 
-Also on listing users, you can search for a specific user. To search users go to search field and type user name, last name, user name or mail. In the following example we typed "Ross", we obtained only one related user: "Rossana".
+Also on listing users, you can search for a specific user. To search users, go to the search field and type user name, last name, user name or mail. In the following example we typed "Ross", we obtained only one related user: "Rossana".
 
 .. image:: /_static/images/users-search.png
 	:align: center
@@ -60,12 +60,12 @@ Also on listing users, you can search for a specific user. To search users go to
 Creating New User
 ^^^^^^^^^^^^^^^^^
 
-To creat a new user, please click on "New User" button at the right of the page.
+To creat a new user, please click on the "New User" button at the right of the page.
 
 .. image:: /_static/images/users-add-new.png
 	:align: center
 
-A modal will be displayed, please fill out all the fields and finally click on "Create" button. If you do not want to create a new user, please click on "Cancel" button.
+A modal will be displayed, please fill out all the fields and finally click on "Create" button. If you do not want to create a new user, please click on the "Cancel" button.
 
 .. image:: /_static/images/users-add.png
 	:align: center
@@ -74,7 +74,7 @@ A modal will be displayed, please fill out all the fields and finally click on "
 Viewing an Existing User
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-To view a specific user, please click on the name property located inside the result table as the following example.
+To view a specific user, please click on the name property located inside the result table as shown in the following example.
 
 .. image:: /_static/images/users-view-btn.png
 	:align: center
@@ -88,7 +88,7 @@ A modal will be displayed with the user information. To finish view mode click o
 Editing an Existing User
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-To edit a specific user, please click on pencil icon located inside the result table as the following example.
+To edit a specific user, please click on the pencil icon located inside the result table as shown in the following example.
 
 .. image:: /_static/images/users-edit-btn.png
 	:align: center
@@ -102,7 +102,7 @@ A modal will be displayed, please edit the fields you want to change and then cl
 Removing an Existing User
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To remove a specific user, please click on trash icon located inside the result table as the following example.
+To remove a specific user, please click on the trash can icon located inside the result table as shown in the following example.
 
 .. image:: /_static/images/users-remove-btn.png
 	:align: center

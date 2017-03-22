@@ -1,6 +1,6 @@
-----------------
+-----------------
 Crafter CMS 2.5.1
-----------------
+-----------------
 
 ^^^^^^^^^^
 Highlights
@@ -351,9 +351,9 @@ Bugs Fixed
     * [CRAFTERCMS-2046] - double // in path names for dependencies like images causes duplicate key exception
 
 
-^^^^^^^^^^
+^^^^^^^^^^^^
 Improvements
-^^^^^^^^^^
+^^^^^^^^^^^^
 
     * [CRAFTERCMS-326] - Need a notification in deployment failure
     * [CRAFTERCMS-997] - One site's deployment failure shouldn't interfere other sites' deployment process
@@ -421,9 +421,9 @@ Improvements
     * [CRAFTERCMS-2000] - Normalize model variable names in Goovy and Freemarker
     * [CRAFTERCMS-2003] - add .xml to list of types the wcm-assets-folder.js can edit
 
-^^^^^^^^^^
+^^^^^^^^^^^^
 New Features
-^^^^^^^^^^
+^^^^^^^^^^^^
 
     * [CRAFTERCMS-1138] - Put tenant ID in all log entries as a independent parseable value
     * [CRAFTERCMS-1139] - Crafter Search Client should provide a write API
