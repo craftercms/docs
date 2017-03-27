@@ -251,8 +251,140 @@ Crafter Studio administrators can configure what components are available in thi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Working in the Rich Text Editor(RTE)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The RTE (Rich Text Editor) is intended to provide an in-context editing experience from within a form (rather than a preview.)<-- modify description?
+The RTE (Rich Text Editor) is intended to provide an in-context editing experience from within a form (rather than a preview) that allows authors to arrange and style content without needing to know HTML.  When clicking in an RTE field, the RTE toolbar will appear at the top, and is always available regardless of how far down you scroll in the RTE field.
 
+.. image:: /_static/images/rte-screen.png
+    :width: 75 %    
+    :align: center
+
+.. |rteFormatSelectList| image:: /_static/images/rte-tool-format-select-list.png
+                     :width: 25%
+                     
+.. |rteFormatSelect| image:: /_static/images/rte-tool-format-select.png
+                     :width: 45%
+
+.. |rteBold| image:: /_static/images/rte-tool-bold.png
+             :width: 15%
+
+.. |rteItalic| image:: /_static/images/rte-tool-italic.png
+             :width: 15%
+
+.. |rteUnderline| image:: /_static/images/rte-tool-underline.png
+             :width: 15%
+
+.. |rteStrikethrough| image:: /_static/images/rte-tool-strikethrough.png
+             :width: 15%
+
+.. |rteSubscript| image:: /_static/images/rte-tool-subscript.png
+             :width: 15%
+                                                            
+.. |rteSuperscript| image:: /_static/images/rte-tool-superscript.png
+             :width: 15%
+             
+.. |rteOutdent| image:: /_static/images/rte-tool-outdent.png
+             :width: 15%
+             
+.. |rteIndent| image:: /_static/images/rte-tool-indent.png
+             :width: 15%
+             
+.. |rteBlockQuote| image:: /_static/images/rte-tool-block-quote.png
+             :width: 15%
+
+.. |rteAlignLeft| image:: /_static/images/rte-tool-align-left.png
+             :width: 15%
+             
+.. |rteAlignRight| image:: /_static/images/rte-tool-align-right.png
+             :width: 15%
+
+.. |rteAlignCenter| image:: /_static/images/rte-tool-align-center.png
+             :width: 15%
+
+.. |rteAlignFull| image:: /_static/images/rte-tool-align-full.png
+             :width: 15%
+             
+.. |rteBulletList| image:: /_static/images/rte-tool-bullet-list.png
+             :width: 15%
+
+.. |rteNumberedList| image:: /_static/images/rte-tool-numbered-list.png
+             :width: 15%
+             
+.. |rteInsertImage| image:: /_static/images/rte-tool-insert-image.png
+             :width: 15%
+             
+.. |rteInsertLink| image:: /_static/images/rte-tool-insert-link.png
+             :width: 15%
+             
+.. |rteUnlink| image:: /_static/images/rte-tool-unlink.png
+             :width: 15%
+             
+.. |rteInsertAnchor| image:: /_static/images/rte-tool-insert-anchor.png
+             :width: 15%
+             
+.. |rteEditHtml| image:: /_static/images/rte-tool-edit-html.png
+             :width: 15%
+             
+.. |rteUndo| image:: /_static/images/rte-tool-undo.png
+             :width: 15%
+             
+.. |rteRedo| image:: /_static/images/rte-tool-redo.png
+             :width: 15%
+             
+There are a number of tools available from the RTE out of the box for editing your content.  Custom tools may also be added to the RTE, depending on your needs.  Please see the developer section of the docs for more details.
+
+---> add link to developer docs documenting how to add RTE widgets and configuring RTE
+
+Here are the available standard formatting tools from the RTE out of the box:
+
++----------------------------+----------------------------------------------------------------+
+| RTE Toolbar Icon           |                                                                |
++============================+================================================================+
+|| |rteFormatSelect|         || Format select - dropdown list that lets you change text format|
+||                           || |rteFormatSelectList|                                         |
++----------------------------+----------------------------------------------------------------+
+|| |rteBold|                 | Bold - make text **bold**                                      |
++----------------------------+----------------------------------------------------------------+
+|| |rteItalic|               | Italic - make text *italic*                                    |
++----------------------------+----------------------------------------------------------------+
+|| |rteUnderline|            | Underline                                                      |
++----------------------------+----------------------------------------------------------------+
+|| |rteStrikethrough|        | Strikethrough                                                  |
++----------------------------+----------------------------------------------------------------+
+|| |rteSubscript|            | Subscript                                                      |
++----------------------------+----------------------------------------------------------------+
+|| |rteSuperscript|          | Superscript                                                    |
++----------------------------+----------------------------------------------------------------+
+|| |rteOutdent|              | Decrease indent - decrease indent of paragraph                 |
++----------------------------+----------------------------------------------------------------+
+|| |rteIndent|               | Increase indent - increase indent of paragraph                 |
++----------------------------+----------------------------------------------------------------+
+|| |rteBlockQuote|           | Block quote                                                    |
++----------------------------+----------------------------------------------------------------+
+|| |rteAlignLeft|            | Align left - aligns text to the left                           |
++----------------------------+----------------------------------------------------------------+
+|| |rteAlignRight|           | Align right - aligns text to the right                         |
++----------------------------+----------------------------------------------------------------+
+|| |rteAlignCenter|          | Align center - aligns text to the center                       |
++----------------------------+----------------------------------------------------------------+
+|| |rteAlignFull|            | Align full - aligns text to both left and right                |
++----------------------------+----------------------------------------------------------------+
+|| |rteBulletList|           | Insert/remove bulleted list                                    |
++----------------------------+----------------------------------------------------------------+
+|| |rteNumberedList|         | Insert/remove numbered List                                    |
++----------------------------+----------------------------------------------------------------+
+|| |rteInsertImage|          | Insert image                                                   |
++----------------------------+----------------------------------------------------------------+
+|| |rteInsertLink|           | Insert/edit link                                               |
++----------------------------+----------------------------------------------------------------+
+|| |rteUnlink|               | Unlink                                                         |
++----------------------------+----------------------------------------------------------------+
+|| |rteInsertAnchor|         | Insert/edit anchor                                             |
++----------------------------+----------------------------------------------------------------+
+|| |rteEditHtml|             | Edit HTML source                                               |
++----------------------------+----------------------------------------------------------------+
+|| |rteUndo|                 | Undo the last action/change                                    |
++----------------------------+----------------------------------------------------------------+
+|| |rteRedo|                 | Redo the last action/action                                    |
++----------------------------+----------------------------------------------------------------+
 
 
 
