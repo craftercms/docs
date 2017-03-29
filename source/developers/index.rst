@@ -10,28 +10,28 @@ Crafter is built with Java, Spring MVC, Groovy, Freemarker, Solr, AngularJS, and
 
 Our developer documentation focuses on Crafter CMS specific topics.  Below is a short set of links to other documentation for technology that we leverage which you might find useful:
 
-+----------------+---------------------------------------------+----------------------------------------------+
-| Attribute Name |             Usage                           | Links                                        |
-+================+=============================================+==============================================+
-| Spring Beans   | | Server App Framework                      | https://spring.io/docs                       |
-| Spring MVC     | |                                           |                                              |
-+----------------+---------------------------------------------+----------------------------------------------+
-| Freemarker     | | Server side templates                     | http://freemarker.org/                       |
-|                | |                                           |                                              |
-+----------------+---------------------------------------------+----------------------------------------------+
-| Groovy         | | Server side scripting                     | http://groovy-lang.org/documentation.html    |
-|                | |                                           |                                              |
-+----------------+---------------------------------------------+----------------------------------------------+
-| Solr           | | Search and content query                  | http://lucene.apache.org/solr/resources.html |
-|                | |                                           |                                              |
-+----------------+---------------------------------------------+----------------------------------------------+
-| MongoDB        | | Crafter Profile and Social data store     | https://docs.mongodb.com                     |
-| GIT            | | Repository Implementation                 | https://git-scm.com/docs                     |
-| Alfresco       | | Repository Implementation                 | https://www.alfresco.com/develop             |
-+----------------+---------------------------------------------+----------------------------------------------+
-| RST            | | Documentation source format               | http://docutils.sourceforge.net/rst.html     |
-|                | |                                           |                                              |
-+----------------+---------------------------------------------+----------------------------------------------+
++----------------+------------------------------+----------------------------------------------+
+| Attribute Name |             Usage            | Links                                        |
++================+==============================+==============================================+
+|| Spring Beans  || Server App Framework        || https://spring.io/docs                      |
+|| Spring MVC    ||                             ||                                             |
++----------------+------------------------------+----------------------------------------------+
+|| Freemarker    || Server side templates       || http://freemarker.org/                      |
+||               ||                             ||                                             |
++----------------+------------------------------+----------------------------------------------+
+|| Groovy        || Server side scripting       || http://groovy-lang.org/documentation.html   |
+||               ||                             ||                                             |
++----------------+------------------------------+----------------------------------------------+
+|| Solr          || Search and content query    || http://lucene.apache.org/solr/resources.html|
+||               ||                             ||                                             |
++----------------+------------------------------+----------------------------------------------+
+|| MongoDB       || Crafter Profile and Social  || https://docs.mongodb.com                    |
+||               || data store                  ||                                             |
+|| GIT           || Repository Implementation   || https://git-scm.com/docs                    |
++----------------+------------------------------+----------------------------------------------+
+|| RST           || Documentation source format || http://docutils.sourceforge.net/rst.html    |
+||               ||                             ||                                             |
++----------------+------------------------------+----------------------------------------------+
 
 #########################
 Beginner Developer Topics

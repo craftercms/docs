@@ -13,7 +13,7 @@ From this screen you can navigate to any site's preview, dashboard or live url.
     :align: center
     
 You can get back to the My Sites screen by:    
-    * Selecting *All Sites* in the site selector within the site content dropdown
+    * Selecting *Sites* in the top right corner
     * Or logging out and logging back in
 
 .. image:: /_static/images/get-to-my-sites.png
@@ -50,7 +50,7 @@ To get to My Account:
 ^^^^^^^^^^^^^^
 Site Dashboard
 ^^^^^^^^^^^^^^
-Each site has a Site Dashboard.  This screen is an overview of the workflow for that given site.  The site dashboard has different widgets depending on your role.
+Each site has a Site Dashboard.  To view a site's dashboard, click on the Crafter CMS logo at the top left of the screen, or click on **Dashboard** at the top of the Sidebar.  This screen is an overview of the workflow for that given site.  The site dashboard has different widgets depending on your role.
 
 Each dashboard has a header
 
@@ -223,14 +223,11 @@ A simple syntax highlighting editor is provided.
 Page Components
 ^^^^^^^^^^^^^^^
 
-The Page Compnonents (drag and drop panel) puts the page in component construction mode.  Regions on the page that are wired to accept components ("drop zones") are highlighted.
+The Page Components (drag and drop panel) puts the page in component construction mode.  Regions on the page that are wired to accept components ("drop zones") are highlighted.
 
 The user may drag a component from one region to another. 
 The user may create new components by dragging components from the panel out and on to the screen.  A dialog is presented to the user when a new component is dropped on the screen so that the author can configure the component.
 Crafter Studio administrators can configure what components are available in this panel.
-
-
----> insert updated/correct screenshot
 
 .. image:: /_static/images/preview-page-components.png
     :height: 900px
@@ -284,10 +281,10 @@ other options relative to the page you are looking at, content you have selected
 The basic elements of the Contextual Navigation bar are:
 
     * Branded Logo Button: Takes the user back to the Dashboard.
-    * Site Content Menu: Opens a menu that allows navigation to all pages, components and documents in the system.
+    * Sidebar: Opens a menu that allows navigation to all pages, components and documents in the system.
     * Contextual Navigation Links: An area reserved for dynamic links that will change based off of the current page view.
-    * Search Field: Allows a user to search all site content or choose a subset of content to search from the drop-down menu (Please see the later section on Search for more details about the search field.)
-    * Log Out Button: Allows a user to log out of the system.
+    * Search: Allows a user to search all site content or choose a subset of content to search from the drop-down menu (Please see the later section on Search for more details about the search field.)
+    * Account: Allows a user to log out of the system or manage settings.
     
 .. image:: /_static/images/site-context-nav.png
     :height: 900px
@@ -296,9 +293,9 @@ The basic elements of the Contextual Navigation bar are:
     :align: center
 
 
-Site Content Panel
-^^^^^^^^^^^^^^^^^^
-The Site content menu/panel allows for browsing all site content in the system. This includes Pages, Components and Documents.
+Sidebar
+^^^^^^^
+The Sidebar menu/panel allows for browsing all site content in the system. This includes Pages, Components and Documents.
 
 * The "View" menu will allow selections of separate site properties.
 * The menu width can be resized freely by the user.
@@ -309,7 +306,7 @@ The Site content menu/panel allows for browsing all site content in the system. 
 * The top level blocks "Pages, Components, Documents" can be hidden from users based on their privilege settings.
 * The context can be stretched and will remember where you set the length and width on your browser
 
-.. image:: /_static/images/crafter-studio-dashboard-item-selected.png
+.. image:: /_static/images/sidebar-dashboard-item-selected.png
     :height: 900px
     :width: 900 px
     :align: center
@@ -321,7 +318,7 @@ The Site content menu/panel allows for browsing all site content in the system. 
 * Also, tooltips featuring extended information will be available when hovering over any item in the Site Content Menu or on the dashboard.
 
 
-.. image:: /_static/images/crafter-studio-site-content-panel2.png
+.. image:: /_static/images/sidebar-tooltips.png
     :height: 800px
     :width: 800 px
     :scale: 55%
@@ -329,7 +326,7 @@ The Site content menu/panel allows for browsing all site content in the system. 
 
 * Right-clicking on an item opens a contextual right click menu for that item.
 
-.. image:: /_static/images/crafter-studio-contextual-right-click-menu.png
+.. image:: /_static/images/sidebar-right-click-menu.png
     :height: 280px
     :width: 280 px
     :align: center
