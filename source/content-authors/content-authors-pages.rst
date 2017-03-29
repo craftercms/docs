@@ -231,22 +231,55 @@ Here are some controls that authors may encounter while editing content:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Placing Content Components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Drag and drop makes it easy for authors to visually assemble pages. Authors simply choose a component from a pre-defined list of components/widgets, drag them on to the screen, place them where they want (in defined drop zones, and then configure them. Authors may also move components from one zone to another or remove components.
+Drag and drop makes it easy for authors to visually assemble pages. Authors simply choose a component from a pre-defined list of components/widgets, drag them on to the screen, place them where they want (in defined drop zones), and then configure them. Authors may also move components from one zone to another or remove components.
 
-* Drop Zones
-* Available components
-* Placing new components
-* Placing existing components
-* Moving components around
-* Deleting components
+The drag and drop panel puts the page in component construction mode.  Regions on the page that are wired to accept components ("drop zones") are highlighted.  In the component construction mode, the user may drag an existing component or place a new component to be configured in the drop zone.  The user may also drag a component from one region to another.  Crafter Studio administrators can configure what components are available in this panel.
+
+
+.. image:: /_static/images/page-components.png
+    :width: 95 %    
+    :align: center
+    
 
 Drag and Drop Components
 
-The drag and drop panel puts the page in component construction mode.  Regions on the page that are wired to accept components ("drop zones") are highlighted.
-The user may drag a component from one region to another
-The user may create new components by dragging components from the panel out and on to the screen.  A dialog is presented to the user when a new component is dropped on the screen so that the author can configure the component.
-Crafter Studio administrators can configure what components are available in this panel.
+* Placing new components
 
+The user may create new components by dragging components from the panel (**General** section) out and on to the screen.  A dialog is presented to the user when a new component is dropped on the screen so that the author can configure the component.
+
+.. image:: /_static/images/page-components-general.png
+    :width: 75 %    
+    :align: center
+
+* Placing existing components
+
+The user may add existing components into the panel by clicking on **Browse Features**.  A list of existing components will be presented.  
+
+.. image:: /_static/images/page-components-browse-features.png
+    :width: 75 %    
+    :align: center
+
+Select a component and the list will close then prompt you to place the component somewhere in the drop zone.
+
+.. image:: /_static/images/page-components-browse-selected.png
+    :width: 95 %    
+    :align: center
+
+* Moving components around
+
+Components inside the drop zones may be moved around to the desired position.  Simply click, then drag and drop to the desired position in the drop zone.  Notice the positions of the features in the image below compared to the image above.
+
+.. image:: /_static/images/page-components-move.png
+    :width: 75 %    
+    :align: center
+    
+* Deleting components
+
+To remove a component from the drop zone, simply click on the "x"
+
+.. image:: /_static/images/page-components-remove.png
+    :width: 75 %    
+    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Working in the Rich Text Editor(RTE)
@@ -388,7 +421,7 @@ Here are the available standard formatting tools from the RTE out of the box:
 
 
 
-.. TODO:: Update blurb on placing content components and finish section on working in the RTE
+.. TODO:: finish section on working in the RTE
 
 
 
