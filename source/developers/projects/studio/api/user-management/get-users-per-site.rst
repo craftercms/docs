@@ -55,6 +55,7 @@ Example
           "first_name" : "Jane",
           "last_name" : "Doe",
           "email" : "jane@example.com",
+          "externally_managed" : "false"
           "groups" :
             [
               {
@@ -70,6 +71,7 @@ Example
           "first_name" : "Joe",
           "last_name" : "Bloggs",
           "email" : "joe@example.com",
+          "externally_managed" : "false"
           "groups" :
             [
               {
