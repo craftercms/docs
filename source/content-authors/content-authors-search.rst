@@ -10,9 +10,12 @@ Searching
 .. image:: /_static/images/page-toolbar-search.png
     :height: 900px
     :width: 900 px
-    :scale: 95 %
+    :scale: 50 %
     :align: center
 
+.. image:: /_static/images/page-search.png
+    :width: 95 %    
+    :align: center
 
 Search allows you to find objects in the system by filtering for them with keywords and canned filter options.
 
