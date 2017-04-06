@@ -1,0 +1,69 @@
+.. index:: Quick Start Guide
+
+..  _quick_start_guide:
+
+-----------------------------------
+Installing and Starting Crafter CMS
+-----------------------------------
+
+Here are the steps to start using Crafter CMS for development or evaluation:
+
+    #. **Install Crafter CMS by downloading the install zip file**
+
+        *  Download the Crafter CMS install zip file from http://craftercms.org/downloads.
+           
+           The zip file will install a fully functional Crafter Studio instance and a Crafter Engine in Preview Mode. Out of the box, the Studio instance uses a local directory as the repository and a Derby database, which allows a quick and easy set up for local development.
+
+        *  Unzip the contents in any directory.
+
+    #. **Start the Crafter CMS Server using the startup script**
+    
+        To start Crafter CMS Server:
+        From the command line, navigate to the INSTALL_PATH/bin directory, and execute the startup script:
+    
+            * Unix/Linux systems:
+    
+            .. code-block:: sh
+        
+                startup.sh 
+
+            * Windows:    
+    
+            .. code-block:: sh
+    
+                startup.bat
+
+        *note:*
+        *It takes a few seconds for Crafter CMS to startup.  
+
+
+        To stop Crafter CMS Server:
+        From the command line, navigate to the INSTALL_PATH/bin directory, and execute the shutdown script:
+
+            * Unix/Linux systems:
+    
+            .. code-block:: sh
+    
+                shutdown.sh 
+
+            * Windows:    
+    
+            .. code-block:: sh
+    
+                shutdown.bat
+
+    #. **Open Crafter Studio**
+    
+        * In your browser, go to 
+    
+        .. code-block:: none
+    
+                http://localhost:8080/studio.
+
+        * Login with the following:
+    
+            * username: admin
+            * password: admin 
+
+
+        After logging in, you should be redirected to the MySites screen, and you're now ready to create your first website!
