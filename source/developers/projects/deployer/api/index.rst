@@ -19,3 +19,14 @@ Target Management
 	target-management/delete-target
 	target-management/deploy-target
 	target-management/deploy-all-targets
+
+----------
+Monitoring
+----------
+
+.. toctree::
+	:maxdepth: 1
+
+	monitor/version
+	monitor/status
+	monitor/memory
