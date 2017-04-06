@@ -38,7 +38,9 @@ An error form will appear when you try to *Save and Close* without filling out a
 .. image:: /_static/images/page-save-error.png
     :width: 50 %    
     :align: center
-    
+
+
+.. _editing-a-page:
 
 --------------
 Editing a Page

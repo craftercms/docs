@@ -112,4 +112,4 @@ If a user clicks the link to read a rejection notice on the dashboard. They will
 
 ---> insert screenshot
 
-.. TODO:: Update blurbs and images.  Blurb taken from the wiki for older version of crafter cms
+.. TODO:: Update blurbs and images.

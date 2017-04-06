@@ -1,8 +1,8 @@
-Crafter is an award-winning web content and experience management solution that allows organizations to build and manage rich online experiences on the web, mobile, social, and all digital online channels.
+Crafter CMS is a web content and experience management solution that allows organizations to build and manage rich online experiences on the web, mobile, social, and all digital online channels.
 
----------------------
-How Crafter CMS Works
----------------------
+-------------------------------
+How Authors Work in Crafter CMS
+-------------------------------
   
 .. raw:: html
 

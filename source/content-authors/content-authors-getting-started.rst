@@ -44,7 +44,7 @@ Note: You can change the language used for the Studio UI by selecting a language
 
 After logging in, depending on what access rights have been setup for your user account, you can have one of two primary roles as a content author:
 
-    * **Content Manager** A content Manager has the ability to approve and reject workflow. A content manager also has access to a number of dashboards which are not available to content contributors including Recently Made Live and Approved Scheduled Items. Double check the previous statement!
+    * **Content Manager (Publisher Role)** A content Manager has the ability to approve and reject workflow. A content manager also has access to a number of dashboards which are not available to content contributors including Recently Published and Approved Scheduled Items.
 
-    * **Content Contributor** A content contributor has access to create, edit and submit content
+    * **Content Contributor(Author Role)** A content contributor has access to create, edit and submit content
 

@@ -1,10 +1,12 @@
+.. _architecture:
+
 .. index:: Architecture
 
 =======================
 High Level Architecture
 =======================
 
-.. image:: /_static/images/crafter-high-level-arch.jpg
+.. image:: /_static/images/crafter-cloud-v8-Detailed.png
         :width: 100%
         :alt: Admin Console Link
         :align: center

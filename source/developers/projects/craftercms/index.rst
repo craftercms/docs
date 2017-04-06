@@ -52,19 +52,22 @@ Gradle command formats
 ||          ||                                          ||             || - `??????`     |
 +-----------+-------------------------------------------+--------------+-----------------+
 
-Where `command` is one of:
-- `build`
-- `start`
-- `stop`
+Where ``command`` is one of:
 
-Where `env` is one of:
-- `authoring`
-- `delivery`
+- ``build``
+- ``start``
+- ``stop``
 
-And `module` is one of:
-- `studio`
-- `engine`
-- `deployer`
+Where ``env`` is one of:
+
+- ``authoring``
+- ``delivery``
+
+And ``module`` is one of:
+
+- ``studio``
+- ``engine``
+- ``deployer``
 
 **BUILD**
 
@@ -107,12 +110,12 @@ Both of those options will:
 
 ### 2.2.1 Authoring Environment Scripts
 
-The Crafter CMS Authoring scripts will help you on the basic startup shutdown of the services needed to run a healthy _Authoring environment_
+The Crafter CMS Authoring scripts will help you on the basic startup shutdown of the services needed to run a healthy *Authoring environment*
 with
 
 #### crafter(.sh/bat)
 
-Main Script to start,and stop all needed Services to have a functional Crafter CMS _Authoring Environment_
+Main Script to start,and stop all needed Services to have a functional Crafter CMS *Authoring Environment*
 
 ##### Synopsis
 
