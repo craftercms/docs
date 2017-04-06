@@ -52,7 +52,7 @@ Example
     "username" : "jane.doe",
     "first_name" : "Jane",
     "last_name" : "Doe",
-    "email" : "jane@example.com"
+    "email" : "jane@example.com",
     "externally_managed" : "false"
   }
 
