@@ -139,7 +139,7 @@ Configure Tomcat Ports
 
 #.  Assuming Tomcat as the server, update the ports the server runs on:
 
-.. code-block:: xml
+.. code-block:: guess
     :caption: TOMCAT/conf/server.xml
 
     <Server port="9005" shutdown="SHUTDOWN">

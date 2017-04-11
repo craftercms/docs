@@ -157,7 +157,7 @@ besides Groovy classes declared under Classes > groovy.
 As an example, assuming you have defined a Groovy class under Classes > groovy > mypackage > MyClass.groovy, you can
 define the bean like this in the application-context.xml:
 
-.. code-block:: xml
+.. code-block:: guess
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"

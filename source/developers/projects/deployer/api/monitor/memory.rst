@@ -1,4 +1,4 @@
-.. include:: /includes/unicode-checkmark.rst
+.. .. include:: /includes/unicode-checkmark.rst
 
 .. _crafter-deployer-api-monitor-memory:
 
@@ -42,7 +42,7 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: json
+.. code-block:: guess
 
   {
     [

@@ -267,12 +267,12 @@ Default Studio configuration values:
 
 To override any of default configuration values create new properties file in ``TOMCAT/shared/classes/crafter/engine/extension/studio-server-config.properties`` and override value of any property by setting new value.
 
-.. include:: configuration/role-mappings.rst
+.. include:: ../site-administrators/studio/role-mappings.rst
 
-.. include:: configuration/permission-mappings.rst
+.. include:: ../site-administrators/studio/permission-mappings.rst
 
-.. include:: configuration/deployment-endpoints.rst
+.. include:: ../site-administrators/studio/deployment-endpoints.rst
 
-.. include:: configuration/environment-overrides.rst
+.. include:: ../site-administrators/studio/environment-overrides.rst
 
-.. include:: configuration/admin-console-tools.rst
+.. include:: ../site-administrators/studio/admin-console-tools.rst

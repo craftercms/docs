@@ -12,22 +12,22 @@ Basics
 
 All configuration for the notification system is done by a site admin (on a per site basis) in the following configuration file:
 
-^^^^^
+
 Where
-^^^^^
+-----
 
 .. code-block:: xml
     :caption: {REPOSITORY_ROOT}/cstudio/config/sites/SITEID/workflow-messaging-config.xml
 
-            <notificationConfig>
-               ...
-            </notificationConfig>
+        <notificationConfig>
+            ...
+        </notificationConfig>
 
-^^^^^^^^^
+
 Templates
-^^^^^^^^^
+---------
 
-Templates are managed in the config file mentioned above.  The template time is Freemarker (also known as FTL)
+Templates are managed in the config file mentioned above.  The template used is Freemarker (also known as FTL)
 Variables are referenced in the template like `${VARIABLE}` or as part of a Freemarker statement like `<#list files as file>...</#list>`
 Dates can be formatted like so: `scheduleDate?string["MMMMM dd, yyyy 'at' hh:mm a"]}`
 
@@ -37,48 +37,48 @@ A full guide to FTL can be found here: http://freemarker.org/
 Template Variables
 ------------------
 
-^^^^^^^^^^^^^^^^
+
 Common Variables
-^^^^^^^^^^^^^^^^
+----------------
 
-============================== ========================================================
-Variable Name                  Description
-============================== ========================================================
-date                           Date for submission
-
-files                          Collection of file objects in submission.
-                               Usually iterated over `<#list files as file>...</#list>`
-
-`file`.name                      File name including full repository path
-
-`file`.internalName              File internal CMS label
-
-submitter                      Content submitter object, has sub propeties
-
-submitter.firstName            First name
-
-submitter.lastName             Last Name
-
-submitter.username             Authoring User Name / ID
-
-submissionComments             String containing submission comments
-
-scheduleDate                   Date content is scheduled for
-
-siteName                       ID of the site
-
-liveUrl                        Live Server URL base
-
-authoringUrl                   Authoring Server URL base
-
-============================== ========================================================
-
++-----------------------------+-----------------------------------------------------------+
+|| Variable Name              || Description                                              |
++=============================+===========================================================+
+|| date                       || Date for submission                                      |
++-----------------------------+-----------------------------------------------------------+
+|| files                      || Collection of file objects in submission.                |
+||                            || Usually iterated over `<#list files as file>...</#list>` |
++-----------------------------+-----------------------------------------------------------+
+|| `file`.name                || File name including full repository path                 |
++-----------------------------+-----------------------------------------------------------+
+|| `file`.internalName        || File internal CMS label                                  |
++-----------------------------+-----------------------------------------------------------+
+|| submitter                  || Content submitter object, has sub propeties              |
++-----------------------------+-----------------------------------------------------------+
+|| submitter.firstName        || First name                                               |
++-----------------------------+-----------------------------------------------------------+
+|| submitter.lastName         || Last Name                                                |
++-----------------------------+-----------------------------------------------------------+
+|| submitter.username         || Authoring User Name / ID                                 |
++-----------------------------+-----------------------------------------------------------+
+|| submissionComments         || String containing submission comments                    |
++-----------------------------+-----------------------------------------------------------+
+|| scheduleDate               || Date content is scheduled for                            |
++-----------------------------+-----------------------------------------------------------+
+|| siteName                   || ID of the site                                           |
++-----------------------------+-----------------------------------------------------------+
+|| liveUrl                    || Live Server URL base                                     |
++-----------------------------+-----------------------------------------------------------+
+|| authoringUrl               || Authoring Server URL base                                |
++-----------------------------+-----------------------------------------------------------+
 
 
 
-^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
 Deployment Error Notice
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 
 ============================== ========================================================

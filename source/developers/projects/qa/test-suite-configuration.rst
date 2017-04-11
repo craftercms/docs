@@ -1,4 +1,4 @@
-.. _crafter-QA:
+.. _crafter-QA-test-suite-config:
 
 ========================
 Test Suite Configuration
