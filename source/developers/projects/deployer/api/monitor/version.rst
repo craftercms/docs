@@ -60,7 +60,7 @@ Response
     "operating_system" : "Linux 3.13.0.103-generic",
     "os_architecture" : "amd64",
     "application_server_container" : "Apache Tomcat/8.0.33",
-    "jvm_input_arguments" : "-Xms8092m -Xmx8092m -Duser.timezone=EDT"
+    "jvm_input_arguments" : "-Xms8092m -Xmx8092m -Duser.timezone=EDT",
     "datetime" : "yyyy-MM-dd'T'HH:mm'Z'"
   } 
 
