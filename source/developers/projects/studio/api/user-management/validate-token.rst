@@ -1,4 +1,4 @@
-.. include:: /includes/unicode-checkmark.rst
+.. .. include:: /includes/unicode-checkmark.rst
 
 .. _crafter-studio-api-user-validate-token:
 
@@ -36,7 +36,7 @@ Parameters
 Example
 -------
 
-.. code-block:: json
+.. code-block:: guess
 
 	GET .../api/1/services/api/1/user/validate-token.json?token=asfopaiu02928s0980b98a098gs0fduoi2j341j448t735h1lk40
 

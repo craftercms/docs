@@ -1,3 +1,5 @@
+:orphan:
+
 *********************
 System Administrators
 *********************
@@ -26,10 +28,10 @@ Production Environment
 
 * Authoring
 * Delivery
-** Engine
-** Profile
-** Social
-** Deployer
+* Engine
+* Profile
+* Social
+* Deployer
 
 * Server Configuration
 * Best practices
@@ -46,4 +48,4 @@ Module Specific Configuration
 .. toctree::
 	:maxdepth: 1
 
-	studio-configuration.rst
+	../studio-configuration.rst

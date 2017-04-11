@@ -381,3 +381,9 @@ highlight_language = 'java'
 # edit_on_github_project = 'craftercms/docs'
 # edit_on_github_branch = 'master'
 # edit_on_github_base_folder = 'source'
+
+# Place substitution available in all files here
+rst_epilog = """
+.. |checkmark| unicode:: U+2713
+.. |ex| unicode:: U+2718
+"""

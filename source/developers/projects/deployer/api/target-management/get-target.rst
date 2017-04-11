@@ -1,4 +1,4 @@
-.. include:: /includes/unicode-checkmark.rst
+.. .. include:: /includes/unicode-checkmark.rst
 
 .. _crafter-deployer-api-target-get:
 

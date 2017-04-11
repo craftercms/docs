@@ -1,4 +1,4 @@
-.. include:: /includes/unicode-checkmark.rst
+.. .. include:: /includes/unicode-checkmark.rst
 
 .. _crafter-studio-api-site-get:
 
@@ -36,7 +36,7 @@ Parameters
 Example
 -------
 
-.. code-block:: json
+.. code-block:: guess
 
 	GET .../api/1/services/api/1/site/get.json?site_id=mySite
 

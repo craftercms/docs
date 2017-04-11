@@ -34,7 +34,7 @@ Here are the steps to start using Crafter CMS for development or evaluation:
                 startup.bat
 
         *note:*
-        *It takes a few seconds for Crafter CMS to startup.  
+            It takes a few seconds for Crafter CMS to startup.
 
 
         To stop Crafter CMS Server:

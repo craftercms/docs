@@ -1,4 +1,4 @@
-.. _form-source-field-basics
+.. _form-source-field-basics:
 
 +------------------------+-----------------------------------------------------------------------+
 || Title                 || Data source title to show on the form.                               |

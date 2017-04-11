@@ -1,3 +1,5 @@
+:orphan:
+
 ==============
 Crafter Studio
 ==============
@@ -6,7 +8,7 @@ Crafter Studio is the content authoring and publishing component of Crafter CMS.
 specific documentation.
 
 .. toctree::
-	:maxdepth: 1
+   :maxdepth: 1
 
-	/configuration/index
+   configuration/index
 

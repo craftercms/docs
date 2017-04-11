@@ -22,7 +22,7 @@ Step 1: Delete any existing content in the index
 -------------------------------
 Step 2: Invoke the reprocessing
 -------------------------------
-.. code-block:: xml
+.. code-block:: guess
 
     curl http://hostname:port/reprocess?password=(password)&target=(target-name)&processor=(processorBeanName)&siteId=(siteId)
 

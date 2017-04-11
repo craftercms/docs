@@ -26,7 +26,7 @@ Rendering navigation
 Crafter Engine provides the option of rendering automatically the navigation for you, just by using the  macro
 ``renderNavigation``:
 
-.. code-block:: html
+.. code-block:: guess
 
 	<#include "/templates/web/navigation/navigation.ftl">
 
@@ -50,7 +50,7 @@ sets of macros (which you'll probably want since the navigation HTML is generall
 need to overwrite the file by placing it under the same path in you project (templates/web/navigation/main/nav-macros
 .ftl). The following is the default markup of the macros:
 
-.. code-block:: html
+.. code-block:: guess
 
 	<#macro renderNavItem item active = false>
 	<li <#if active>class="active"</#if>><a href="${navFunctions.getNavItemUrl(item)}">${navFunctions.getNavItemName(item)}</a></li>

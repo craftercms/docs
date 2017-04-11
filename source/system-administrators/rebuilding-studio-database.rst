@@ -1,3 +1,5 @@
+.. _rebuilding_studio_database:
+
 ==========================
 Rebuilding Studio Database
 ==========================

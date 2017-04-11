@@ -1,4 +1,4 @@
-.. _crafter-QA:
+.. _crafter-QA-phantom-js-exec:
 
 =====================================
 Test Suite Execution using PhantomJS.
@@ -15,15 +15,12 @@ To test application rapidly in various browsers and without any visual interrupt
 
 *Our organization uses PhantomJS for various purpose, for example,*
 
-*Headless Website Testing
+* Headless Website Testing
+* Page Automation
+* Network Monitoring
+* To run Unit tests on command line
 
-*Page Automation
-
-*Network Monitoring
-
-*To run Unit tests on command line
-
-**How execute the test suite using *PhantomJS*?**
+**How to execute the test suite using *PhantomJS*?**
 
 1. Go to the *executionConstants.properties*, and add the value *PhantomJS* to the *webBrowser* constant.
 

@@ -1,3 +1,5 @@
+.. _debugging_search:
+
 =======================
 Debugging Search Issues
 =======================

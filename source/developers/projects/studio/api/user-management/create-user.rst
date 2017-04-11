@@ -1,4 +1,4 @@
-.. include:: /includes/unicode-checkmark.rst
+.. .. include:: /includes/unicode-checkmark.rst
 
 .. _crafter-studio-api-user-create:
 
@@ -44,7 +44,7 @@ Parameters
 Example
 -------
 
-.. code-block:: json
+.. code-block:: guess
 
 	POST .../api/1/services/api/1/user/create.json
 

@@ -1,4 +1,4 @@
-.. include:: /includes/unicode-checkmark.rst
+.. .. include:: /includes/unicode-checkmark.rst
 
 .. _crafter-studio-api-group-users:
 
@@ -42,7 +42,7 @@ Parameters
 Example
 -------
 
-.. code-block:: json
+.. code-block:: guess
 
 	GET .../api/1/services/api/1/group/users.json?group_name=mygroup&site_id=mysite
 

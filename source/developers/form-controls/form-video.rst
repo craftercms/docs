@@ -1,3 +1,8 @@
+:orphan:
+
+.. document does not appear in any toctree, this file is referenced
+   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
+
 .. index:: Form Controls; Video
 
 .. _form-video:
@@ -13,6 +18,7 @@ Example
     :width: 80%
     :alt: Form Control Dropdown
     :align: center
+
 -------------
 Configuration
 -------------
@@ -20,7 +26,9 @@ Configuration
     :width: 50%
     :alt: Form Control Dropdown
     :align: center
+
 .. include:: /includes/form-controls/form-control-field-basics.rst
+
 +------------------------+-----------------------------------------------------------------------+
 || Description/Purpose   || Video selector from a Data Source.                                   |
 +------------------------+-----------------------------------------------------------------------+

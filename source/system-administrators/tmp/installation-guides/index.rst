@@ -31,7 +31,9 @@ Supported Databases
 Installation Guides
 ===================
 
-    - :doc:`Crafter CMS </introduction/installation-guides/guide>`
+    - :doc:`Crafter CMS </introduction/getting-started>`
+
+.. .. - :doc:`Crafter CMS </introduction/installation-guides/guide>`
 
 See the :doc:`/release-notes/index` for information about specific releases
 of Crafter CMS.
@@ -48,15 +50,15 @@ of Crafter CMS.
 
 .. .. include:: /includes/toc/install-verify-files.rst
 
-===========================
+============================
 First Steps with Crafter CMS
-===========================
+============================
 
 Once you have installed Crafter CMS, consider the :ref:`Getting Started
 Guides <getting-started>` to learn about Crafter CMS.
 <getting-started>` are available.
 
-.. include:: /includes/unicode-checkmark.rst
+.. .. include:: /includes/unicode-checkmark.rst
 
 
 .. todo:: write install from bundle
@@ -66,9 +68,10 @@ Guides <getting-started>` to learn about Crafter CMS.
 .. todo:: fix below
 
 .. toctree::
-	:maxdepth: 1
+   :maxdepth: 1
 
-	upgrade
-	engine/configure
-	guide
-	configure
+   engine/configure
+   configure
+
+.. guide
+.. upgrade

@@ -1,4 +1,4 @@
-.. _crafter-QA:
+.. _crafter-QA-test-case-creation:
 
 ==================
 Test Case Creation
@@ -420,7 +420,7 @@ Consider this simple script to login into a crafter local site.
 
 11. Type this code in the class LoginTest Created.
 
-.. code-block:: c
+.. code-block:: guess
 
    package testcases;
 

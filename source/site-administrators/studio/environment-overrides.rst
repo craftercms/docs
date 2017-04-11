@@ -41,27 +41,40 @@ Sample
 Description
 -----------
 
-    ``/environment-config/preview-server-url``
-        Preview url
-	``/environment-config/authoring-server-url``
-	    Authoring url
-	``/environment-config/form-server-url``
-	    Form server url (deprecated)
-	``/environment-config/live-server-url``
-	    Live server url
-    ``/environment-config/publishing-channels``
-        Defines publishing channels
-    ``/environment-config/publishing-channels/channel-group``
-        Defines one publishing channel
-    ``/environment-config/publishing-channels/channel-group/label``
-        Publishing channel name
-    ``/environment-config/publishing-channels/channel-group/channels``
-        Defines deployment endpoints belonging to this publishing channel
-    ``/environment-config/publishing-channels/channel-group/channels/channel``
-        Deployment endpoint name
-    ``/environment-config/publishing-channels/channel-group/live-environment``
-        True if this channel is live environment
-    ``/environment-config/cookie-domain``
-        Environment cookie domain
-    ``/environment-config/open-site-dropdown``
-        True if site dropdown is opened by default
+    * ``/environment-config/preview-server-url``
+        * Preview url
+
+    * ``/environment-config/authoring-server-url``
+        * Authoring url
+
+    * ``/environment-config/form-server-url``
+        * Form server url (deprecated)
+
+    * ``/environment-config/live-server-url``
+        * Live server url
+
+    * ``/environment-config/publishing-channels``
+        * Defines publishing channels
+
+    * ``/environment-config/publishing-channels/channel-group``
+        * Defines one publishing channel
+
+    * ``/environment-config/publishing-channels/channel-group/label``
+        * Publishing channel name
+
+    * ``/environment-config/publishing-channels/channel-group/channels``
+        * Defines deployment endpoints belonging to this publishing channel
+
+    * ``/environment-config/publishing-channels/channel-group/channels/channel``
+        * Deployment endpoint name
+
+    * ``/environment-config/publishing-channels/channel-group/live-environment``
+        * True if this channel is live environment
+
+    * ``/environment-config/cookie-domain``
+        * Environment cookie domain
+
+    * ``/environment-config/open-site-dropdown``
+        * True if site dropdown is opened by default
+
+
