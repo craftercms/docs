@@ -6,20 +6,29 @@
 Installing and Starting Crafter CMS
 -----------------------------------
 
-Here are the steps to start using Crafter CMS for development or evaluation:
+Here are the steps to start using Crafter CMS for development or evaluation
 
-    #. **Install Crafter CMS by downloading the install zip file**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Installing Crafter CMS from the zip Download
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+To install Crafter CMS using the zip download:
 
-        *  Download the Crafter CMS install zip file from http://craftercms.org/downloads.
+    *  Download the Crafter CMS install zip file from http://craftercms.org/downloads.
            
-           The zip file will install a fully functional Crafter Studio instance and a Crafter Engine in Preview Mode. Out of the box, the Studio instance uses a local directory as the repository and a Derby database, which allows a quick and easy set up for local development.
+    The zip file will install a fully functional Crafter Studio instance and a Crafter Engine in Preview Mode. Out of the box, the Studio instance uses a local directory as the repository and a Derby database, which allows a quick and easy set up for local development.
 
-        *  Unzip the contents in any directory.
+     *  Unzip the contents in any directory.
 
+
+.. _start-crafter-cms-server-startup-script:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Starting Crafter CMS Using the Startup Script
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     #. **Start the Crafter CMS Server using the startup script**
     
         To start Crafter CMS Server:
-        From the command line, navigate to the INSTALL_PATH/bin directory, and execute the startup script:
+        From the command line, navigate to the INSTALL_PATH/crafter directory, and execute the startup script:
     
             * Unix/Linux systems:
     
@@ -38,7 +47,7 @@ Here are the steps to start using Crafter CMS for development or evaluation:
 
 
         To stop Crafter CMS Server:
-        From the command line, navigate to the INSTALL_PATH/bin directory, and execute the shutdown script:
+        From the command line, navigate to the INSTALL_PATH/crafter directory, and execute the shutdown script:
 
             * Unix/Linux systems:
     
@@ -67,3 +76,32 @@ Here are the steps to start using Crafter CMS for development or evaluation:
 
 
         After logging in, you should be redirected to the MySites screen, and you're now ready to create your first website!
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Installing Crafter CMS From Archive Built By the Gradle Environment Builder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To create the archives(``*.zip`` or ``*.tar.gz``) for installing Crafter CMS, the following must be installed in your system:
+
+* Java 8
+* Git 2.x+
+* Maven 3.3.x+
+
+#. Clone the Crafter CMS repo from github
+
+    .. code-block:: bash
+
+        git clone https://github.com/craftercms/craftercms.git
+
+#. Build a deployable bundle using the Gradle Environment Builder to generate the archives ``crafter-authoring-cms.zip`` and ``crafter-authoring-cms.tar.gz`` inside the *bundle* folder
+
+    .. code-block:: bash
+
+        ./gradlew init build deploy bundle
+
+#. Unzip the file (``crafter-authoring-cms.zip`` or ``crafter-authoring-cms.tar.gz``) into any directory.  You may now follow the instructions listed above :ref:`Start the Crafter CMS Server using the startup script <start-crafter-cms-server-startup-script>` to start using Crafter CMS
+
+For more details on using the Gradle environment builder, please review: https://github.com/craftercms/craftercms/blob/master/README.md
+
+.. todo:: Update link for download, the download link points to version 2.5.x right now
