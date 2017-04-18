@@ -13,20 +13,21 @@ User Management
 .. toctree::
 	:maxdepth: 1
 
-	user-management/create-user
-	user-management/get-user
-	user-management/get-users
-	user-management/get-users-per-site
-	user-management/update-user
-	user-management/delete-user
-	user-management/enable-user
-	user-management/disable-user
-	user-management/get-user-status
-	user-management/forgot-password
-	user-management/validate-token
-	user-management/set-password
-	user-management/change-password
-	user-management/reset-password
+	user/create
+	user/get
+	user/get-all
+	user/get-per-org
+	user/get-per-project
+	user/update
+	user/delete
+	user/enable
+	user/disable
+	user/status
+	user/forgot-password
+	user/validate-token
+	user/set-password
+	user/change-password
+	user/reset-password
 
 ----------------
 Group Management

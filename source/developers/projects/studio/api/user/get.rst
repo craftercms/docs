@@ -15,30 +15,34 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/user/get.json``                          |
+|| URL                       || ``/api/1/user/get/:username``                                    |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Admin, self, member in same site                                 |
+|| Required Role             || Admin, self, read user details in organization or project        |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
 Parameters
 ----------
 
-+---------------+-------------+---------------+--------------------------------------------------+
-|| Name         || Type       || Required     || Description                                     |
-+===============+=============+===============+==================================================+
-|| username     || String     || |checkmark|  || Username to use                                 |
-+---------------+-------------+---------------+--------------------------------------------------+
+None.
 
 -------
 Example
 -------
 
-.. code-block:: guess
+^^^^^^^
+Request
+^^^^^^^
 
-	GET .../api/1/services/api/1/user/get.json?username=jane.doe
+``GET /api/1/user/get/jane.doe``
+
+^^^^^^^^
+Response
+^^^^^^^^
+
+``Status 200 OK``
 
 .. code-block:: json
 
@@ -47,43 +51,58 @@ Example
     "first_name" : "Jane",
     "last_name" : "Doe",
     "email" : "jane@example.com",
-    "externally_managed" : "false"
-    "sites" :
-      [
-        {
-          "site_id" : "siteId1",
-          "site_name" : "Site 1",
-          "groups" :
+    "externally_managed" : "false",
+    "organizations" :
+    [
+      {
+        "org_name" : "Global Enterprise",
+        "org_desc" : "Super nice orgnization.",
+        "org_groups" :
+        [
+          {
+            "group_name" : "us-employees",
+            "group_desc" : "All USA Employees."
+          },
+          {
+            "group_name" : "us-developers",
+            "group_desc" : "USA-based developers."
+          }
+        ],
+        "projects" :
+        [
+          {
+            "project_name" : "Android Magic App",
+            "project_desc" : "Super nice project.",
+            "project_roles" :
             [
               {
-                "group_name" : "groupName1"
-              },
-              {
-                "group_name" : "groupName2"
+                "role_name" : "developer"
               }
             ]
-        },
-        {
-          "site_id" : "siteId2",
-          "site_name" : "Site 2",
-          "groups" :
+          },
+          {
+            "project_name" : "iOS Magic App",
+            "project_desc" : "Super nice project.",
+            "project_roles" :
             [
               {
-                "group_name" : "groupName1"
+                "role_name" : "developer"
               }
             ]
-        }
-      ]
+          }
+        ]
+      }
+    ]
   }
 
---------
-Response
---------
+---------
+Responses
+---------
 
 +---------+------------------------------------------+---------------------------------------------------+
 || Status || Location                                || Response Body                                    |
 +=========+==========================================+===================================================+
-|| 200    || ``.../user/get.json?username=jane.doe`` || See example above.                               |
+|| 200    || ``/api/1/user/get/jane.doe``            || See example above.                               |
 +---------+------------------------------------------+---------------------------------------------------+
 || 400    ||                                         || ``{ "message" : "Invalid parameter(s)" }``       |
 +---------+------------------------------------------+---------------------------------------------------+
@@ -91,5 +110,6 @@ Response
 +---------+------------------------------------------+---------------------------------------------------+
 || 404    ||                                         || ``{ "message" : "User not found" }``             |
 +---------+------------------------------------------+---------------------------------------------------+
-|| 500    ||                                         || ``{ "message" : "Internal server error" }``      |
+|| 500    ||                                         || ``{ "message" : "Internal server error.``        |
+||        ||                                         || ``ACTUAL_EXCEPTION" }``                          |
 +---------+------------------------------------------+---------------------------------------------------+

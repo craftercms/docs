@@ -1,12 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-user-set-password:
+.. _crafter-studio-api-user-create:
 
-============
-Set Password
-============
+===========
+Create User
+===========
 
-Set Crafter Studio's user password provided a forgot password secure token (obtained through :ref:`crafter-studio-api-user-forgot-password`).
+Create a Crafter Studio user.
 
 --------------------
 Resource Information
@@ -15,11 +15,11 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/user/set-password.json``                 |
+|| URL                       || ``/api/1/user/create``                                           |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Anonymous                                                        |
+|| Required Role             || Global admin, organization admin                                 |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -29,38 +29,58 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| token        || String     || |checkmark|  || Forgot password secure token.                   |
+|| username     || String     || |checkmark|  || Username to use                                 |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| new          || String     ||              || User's new password (clear)                     |
+|| password     || String     || |checkmark|  || Password (clear)                                |
++---------------+-------------+---------------+--------------------------------------------------+
+|| first_name   || String     || |checkmark|  || User's first name                               |
++---------------+-------------+---------------+--------------------------------------------------+
+|| last_name    || String     || |checkmark|  || User's last name                                |
++---------------+-------------+---------------+--------------------------------------------------+
+|| email        || String     || |checkmark|  || User's email address                            |
 +---------------+-------------+---------------+--------------------------------------------------+
 
 -------
 Example
 -------
 
-.. code-block:: guess
+^^^^^^^
+Request
+^^^^^^^
 
-	POST .../api/1/services/api/1/user/set-password.json
+``GET POST /api/1/user/create``
+
+^^^^^^^^
+Response
+^^^^^^^^
+
+``Status 201 CREATED``
 
 .. code-block:: json
 
   {
-    "token" : "asfopaiu02928s0980b98a098gs0fduoi2j341j448t735h1lk40",
-    "new" : "SuperSecretPassword321#"
+    "username" : "jane.doe",
+    "password" : "SuperSecretPassword123#",
+    "first_name" : "Jane",
+    "last_name" : "Doe",
+    "email" : "jane@example.com"
   }
 
---------
-Response
---------
+---------
+Responses
+---------
 
 +---------+-------------------------------------------+---------------------------------------------------+
 || Status || Location                                 || Response Body                                    |
 +=========+===========================================+===================================================+
-|| 200    || ``.../user/get.json?username=:username`` || ``{ "message" : "OK" }``                         |
+|| 201    || ``/api/1/user/get/:username``            || See example.                                     |
++---------+-------------------------------------------+---------------------------------------------------+
+|| 400    ||                                          || ``{ "message" : "Invalid parameter(s)" }``       |
 +---------+-------------------------------------------+---------------------------------------------------+
 || 401    ||                                          || ``{ "message" : "Unauthorized" }``               |
 +---------+-------------------------------------------+---------------------------------------------------+
-|| 404    ||                                          || ``{ "message" : "User not found" }``             |
+|| 409    || ``/api/1/user/get/:username``            || ``{ "message" : "User already exists" }``        |
 +---------+-------------------------------------------+---------------------------------------------------+
-|| 500    ||                                          || ``{ "message" : "Internal server error" }``      |
+|| 500    ||                                          || ``{ "message" : "Internal server error.``        |
+||        ||                                          || ``ACTUAL_EXCEPTION" }``                          |
 +---------+-------------------------------------------+---------------------------------------------------+
