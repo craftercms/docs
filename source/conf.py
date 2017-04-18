@@ -240,7 +240,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   (master_doc, 'CrafterCMS.tex', u'Crafter CMS Documentation',
-   u'Sumer Jabri', 'manual'),
+   u'Crafter Software Corporation', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
