@@ -16,8 +16,8 @@ User Management
 	user/create
 	user/get
 	user/get-all
-	user/get-per-org
-	user/get-per-project
+	user/get-by-org
+	user/get-by-project
 	user/update
 	user/delete
 	user/enable
