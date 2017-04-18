@@ -14,11 +14,8 @@ Creating your website from out of the box blueprint Website_Editorial
 After logging in, you'll see the MySites screen (Below).  Click on "Create Site"
 
 .. image:: /_static/images/sites-screen.png
-    :height: 800px
-    :width: 800 px
-    :scale: 95 %
+    :width: 75 %
     :align: center
-    
 
 Give the site a friendly name for the *Site Id* , a description and then choose a blueprint.  We're going to be using the "Website_Editorial" blueprint.  Blueprints offer you a starting point for your website. New blueprints can be created and installed in to the system.  As you are entering the site id, spaces are removed and upper case letters are converted to lower case letters.
 
