@@ -34,10 +34,8 @@ Sample
                     <datasource>child-content</datasource>
                     <datasource>img-desktop-upload</datasource>
                     <datasource>img-repository-upload</datasource>
-                    <datasource>img-flickr-upload</datasource>
                     <datasource>file-desktop-upload</datasource>
                     <datasource>file-browse-repo</datasource>
-                    <datasource>flash-desktop-upload</datasource>
                     <datasource>video-desktop-upload</datasource>
                     <datasource>video-browse-repo</datasource>
                     <datasource>key-value-list</datasource>
@@ -154,8 +152,6 @@ date-time
 disabled
 dropdown
 file-name
-flash-picker
-forcehttps
 image-picker
 input
 internal-name
@@ -181,13 +177,9 @@ child-content
 configured-list
 file-browse-repo
 file-desktop-upload
-flash-desktop-upload
-hubspot-forms
 img-desktop-upload
-img-flickr-upload
 img-repository-upload
 key-value-list
-salesforce-campaigns
 site-component
 tree-content
 video-browse-repo
