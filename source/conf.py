@@ -61,7 +61,7 @@ master_doc = 'index'
 # General information about the project.
 project = u'Crafter CMS'
 copyright = u"%s, Crafter Software Corporation"% str(date.today().year)
-author = u'Sumer Jabri'
+author = u'Crafter Software Corporation'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
