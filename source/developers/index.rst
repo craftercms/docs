@@ -39,9 +39,7 @@ Below is a short set of links to other documentation for technology that Crafter
 
    architecture
    content-modeling
-   templating-api
-   custom-services-and-controllers
-   in-context-editing
+   templates
    content-inheritance
    rte-setup
    extending-studio/index

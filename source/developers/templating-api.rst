@@ -1,8 +1,10 @@
+.. _templating-api:
+
 ==============
 Templating API
 ==============
 
-Each page and component content type in Crafter CMS has generally it's own view. Crafter Engine, which is in charge
+Each page and component content type in Crafter CMS generally has it's own view. Crafter Engine, which is in charge
 of rendering this views, uses Freemarker as the template engine to generate the HTML returned to the client.
 Documentation for Freemarker can be found at http://freemarker.org.
 
