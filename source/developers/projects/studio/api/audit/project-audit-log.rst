@@ -1,12 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-audit-get:
+.. _crafter-studio-api-audit-get-project:
 
-=============
-Get Audit Log
-=============
+=====================
+Get Project Audit Log
+=====================
 
-Get audit log for a site.
+Get audit log for a project.
 
 --------------------
 Resource Information
@@ -15,12 +15,15 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/audit/get.json``                         |
+|| URL                       || ``/api/1/audit/get/:project``                                    |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Admin, member of site                                            |
+|| Required Role             || Global admin, project admin, read permission to audit            |
+||                           || this project.                                                    |
 +----------------------------+-------------------------------------------------------------------+
+
+.. todo:: permissions
 
 ----------
 Parameters
@@ -29,7 +32,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site_id      || String     || |checkmark|  || Site to use                                     |
+|| project_id   || String     || |checkmark|  || Project to use                                  |
 +---------------+-------------+---------------+--------------------------------------------------+
 || start        || Integer    ||              || Start offset                                    |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -37,18 +40,20 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || user         || String     ||              || Username to filter by                           |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| actions      || String     ||              || Action to filter by: [ "CREATED", "UPDATED",    |
-||              ||            ||              || "DELETED" ]                                     |
+|| operations   || String     ||              || Actions to filter by                            |
 +---------------+-------------+---------------+--------------------------------------------------+
+
+.. todo:: operations
 
 -------
 Example
 -------
+
 ^^^^^^^
 Request
 ^^^^^^^
 
-``GET .../api/1/services/api/1/audit/get.json?site_id=mysite&start=0&number=25&actions=["DELETED"]``
+``GET .../api/1/audit/get/myproj?start=0&number=25``
 
 ^^^^^^^^
 Response
@@ -67,22 +72,22 @@ Response
             "creation_date": "01/31/2017 15:25:12",
             "summary": "User created file",
             "summary_format": "json",
-            "content_id": "/site/website/index.xml",
+            "content_id": "/project/website/index.xml",
             "content_type": "page",
             "type": "CREATED",
             "username": "joe.bloggs",
-            "site_id": "mysite"
+            "project_id": "myproj"
           },
           {
             "modified_date": "01/31/2017 17:33:46",
             "creation_date": "01/31/2017 15:25:12",
             "summary": "User saved file",
             "summary_format": "json",
-            "content_id": "/site/website/about/index.xml",
+            "content_id": "/project/website/about/index.xml",
             "content_type": "page",
             "type": "UPDATED",
             "username": "joe.bloggs",
-            "site_id": "mysite"
+            "project_id": "myproj"
           }
         ]
    }
@@ -100,7 +105,8 @@ Responses
 +---------+-------------------------------------------+---------------------------------------------------+
 || 401    ||                                          || ``{ "message" : "Unauthorized" }``               |
 +---------+-------------------------------------------+---------------------------------------------------+
-|| 404    ||                                          || ``{ "message" : "Site not found" }``             |
+|| 404    ||                                          || ``{ "message" : "Project not found" }``          |
 +---------+-------------------------------------------+---------------------------------------------------+
-|| 500    ||                                          || ``{ "message" : "Internal server error" }``      |
+|| 500    ||                                          || ``{ "message" : "Internal server error.``        |
+||        ||                                          || ``ACTUAL_EXCEPTION" }``                          |
 +---------+-------------------------------------------+---------------------------------------------------+
