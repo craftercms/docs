@@ -16,15 +16,14 @@ Step 1: Delete any existing content in the index
 ------------------------------------------------
 .. code-block:: xml
 
-	curl "http://hostname/solr-crafter/update/?commit=true -H "Content-Type: text/xml" -d "<delete><query>(crafterSite:"mysitename")</query></delete>""
-
+    curl "http://hostname/solr-crafter/update/?commit=true" -H "Content-Type: text/xml" -d "<delete><query>crafterSite:MYSITENAME</query></delete>"
 
 -------------------------------
 Step 2: Invoke the reprocessing
 -------------------------------
 .. code-block:: guess
 
-    curl http://hostname:port/reprocess?password=(password)&target=(target-name)&processor=(processorBeanName)&siteId=(siteId)
+    curl http://hostname:port/reprocess?password=MYPASSWORD&target=MYTARGET&processor=MyBeanName
 
 +----------------+-----------------------------------------------+------------------------------------------------+
 | Parameter Name | Description                                   | Example                                        |
@@ -44,12 +43,6 @@ Step 2: Invoke the reprocessing
 |                | bean in target context file.                  |                                                |
 +----------------+-----------------------------------------------+------------------------------------------------+
 | processor      | The bean  name of a processor. For reindexing,| DemoDotComProdSearchProcessor                  |
-|                | it should be the bean name of a search update |                                                |
-|                | post processor registered for a target bean in|                                                |
-|                | target context file.                          |                                                |
-|                | (e.g. SearchUpdateFlattenXmlProcessor)        |                                                |
-+----------------+-----------------------------------------------+------------------------------------------------+
-| siteId         | The Crafter site ID for the given site        | mySiteIdcom                                    |
 |                | it should be the bean name of a search update |                                                |
 |                | post processor registered for a target bean in|                                                |
 |                | target context file.                          |                                                |
