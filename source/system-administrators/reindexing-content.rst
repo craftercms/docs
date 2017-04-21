@@ -16,7 +16,7 @@ Step 1: Delete any existing content in the index
 ------------------------------------------------
 .. code-block:: xml
 
-	curl "http://hostname/solr-crafter/update/?commit=true -H "Content-Type: text/xml" -d "<delete><query>(crafterSite:"mysitename")</query></delete>""
+	curl "http://hostname/solr-crafter/update/?commit=true" -H "Content-Type: text/xml" -d "<delete><query>crafterSite:MYSITENAME</query></delete>"
 
 
 -------------------------------
