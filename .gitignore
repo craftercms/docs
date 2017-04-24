@@ -6,3 +6,6 @@ deploy.sh
 # IntelliJIdea files#
 *.iml
 .idea
+
+# Eclipse
+.project
