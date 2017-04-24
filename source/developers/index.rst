@@ -1,7 +1,7 @@
 ..  _developers:
 
 **********
-Developing
+Developers
 **********
 
 This section focuses on how to customize and extend Crafter CMS.  It covers the basic topics you need to define a content type and render that content as part of a page, component or service.  It also covers topics like building queries, accessing services and extending the core platforms.
