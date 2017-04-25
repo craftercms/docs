@@ -15,7 +15,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/user/change-password.json``              |
+|| URL                       || ``/api/2/user/change-password/:username``                        |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -40,21 +40,28 @@ Parameters
 Example
 -------
 
-.. code-block:: guess
+^^^^^^^
+Request
+^^^^^^^
 
-	POST .../api/1/services/api/1/user/change-password.json
+``POST /api/2/user/change-password/jane.doe``
 
 .. code-block:: json
 
   {
-    "username" : "jane.doe",
     "current" : "SecretPassword123#",
     "new" : "SuperSecretPassword321#"
   }
 
---------
+^^^^^^^^
 Response
---------
+^^^^^^^^
+
+``Status 200 OK``
+
+---------
+Responses
+---------
 
 +---------+---------------------------------------------------+
 || Status || Response Body                                    |
@@ -69,5 +76,6 @@ Response
 +---------+---------------------------------------------------+
 || 404    || ``{ "message" : "User not found" }``             |
 +---------+---------------------------------------------------+
-|| 500    || ``{ "message" : "Internal server error" }``      |
+|| 500    || ``{ "message" : "Internal server error.``        |
+||        || ``ACTUAL_EXCEPTION" }``                          |
 +---------+---------------------------------------------------+

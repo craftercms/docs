@@ -1,12 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-user-get:
+.. _crafter-studio-api-group-get:
 
-========
-Get User
-========
+=========
+Get Group
+=========
 
-Get a Crafter Studio user.
+Get a Crafter Studio group within an organization.
 
 --------------------
 Resource Information
@@ -15,11 +15,12 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/2/user/get/:username``                                    |
+|| URL                       || ``/api/2/group/get/:org_name/:group_name``                       |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Admin, self, read user details in organization or project        |
+|| Required Role             || Global admin, organization admin, member of the group,           |
+||                           || read group in organization.                                      |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -29,7 +30,9 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| username     || String     || |checkmark|  || Username to use                                 |
+|| org_name     || String     || |checkmark|  || Organization name                               |
++---------------+-------------+---------------+--------------------------------------------------+
+|| group_name   || String     || |checkmark|  || Group name to use                               |
 +---------------+-------------+---------------+--------------------------------------------------+
 
 -------
@@ -40,7 +43,7 @@ Example
 Request
 ^^^^^^^
 
-``GET /api/2/user/get/jane.doe``
+``GET /api/2/group/get/global_enterprise/us-employees``
 
 ^^^^^^^^
 Response
@@ -51,52 +54,9 @@ Response
 .. code-block:: json
 
   {
-    "username" : "jane.doe",
-    "first_name" : "Jane",
-    "last_name" : "Doe",
-    "email" : "jane@example.com",
-    "externally_managed" : "false",
-    "organizations" :
-    [
-      {
-        "org_name" : "global_enterprise",
-        "org_desc" : "Super nice organization.",
-        "org_groups" :
-        [
-          {
-            "group_name" : "us-employees",
-            "group_desc" : "All USA Employees."
-          },
-          {
-            "group_name" : "us-developers",
-            "group_desc" : "USA-based developers."
-          }
-        ],
-        "projects" :
-        [
-          {
-            "project_name" : "Android Magic App",
-            "project_desc" : "Super nice project.",
-            "project_roles" :
-            [
-              {
-                "role_name" : "developer"
-              }
-            ]
-          },
-          {
-            "project_name" : "iOS Magic App",
-            "project_desc" : "Super nice project.",
-            "project_roles" :
-            [
-              {
-                "role_name" : "developer"
-              }
-            ]
-          }
-        ]
-      }
-    ]
+    "org_name" : "global_enterprise",
+    "group_name" : "us-employees",
+    "description" : "Content Contributors"
   }
 
 ---------
@@ -112,7 +72,9 @@ Responses
 +---------+---------------------------------------------------+
 || 401    || ``{ "message" : "Unauthorized" }``               |
 +---------+---------------------------------------------------+
-|| 404    || ``{ "message" : "User not found" }``             |
+|| 404    || ``{ "message" : "Organization not found" }``     |
++---------+---------------------------------------------------+
+|| 404    || ``{ "message" : "Group not found" }``            |
 +---------+---------------------------------------------------+
 || 500    || ``{ "message" : "Internal server error.``        |
 ||        || ``ACTUAL_EXCEPTION" }``                          |

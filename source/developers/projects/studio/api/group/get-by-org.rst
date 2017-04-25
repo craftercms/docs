@@ -1,12 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-user-get:
+.. _crafter-studio-api-group-get-by-org:
 
-========
-Get User
-========
+==========================
+Get Groups by Organization
+==========================
 
-Get a Crafter Studio user.
+Get all Crafter Studio groups by organization with an optional range for pagination.
 
 --------------------
 Resource Information
@@ -15,11 +15,11 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/2/user/get/:username``                                    |
+|| URL                       || ``/api/2/group/get-by-org/:org_name``                            |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Admin, self, read user details in organization or project        |
+|| Required Role             || Global admin, organization admin, read groups in organization.   |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -29,7 +29,11 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| username     || String     || |checkmark|  || Username to use                                 |
+|| org_name     || String     || |checkmark|  || Organization name                               |
++---------------+-------------+---------------+--------------------------------------------------+
+|| start        || Integer    ||              || Start offset                                    |
++---------------+-------------+---------------+--------------------------------------------------+
+|| number       || Integer    ||              || Number of records to retrieve                   |
 +---------------+-------------+---------------+--------------------------------------------------+
 
 -------
@@ -40,7 +44,7 @@ Example
 Request
 ^^^^^^^
 
-``GET /api/2/user/get/jane.doe``
+``GET /api/2/group/get-by-org/global_enterprise``
 
 ^^^^^^^^
 Response
@@ -51,50 +55,16 @@ Response
 .. code-block:: json
 
   {
-    "username" : "jane.doe",
-    "first_name" : "Jane",
-    "last_name" : "Doe",
-    "email" : "jane@example.com",
-    "externally_managed" : "false",
-    "organizations" :
+    "total": 2
+    "org_groups" :
     [
       {
-        "org_name" : "global_enterprise",
-        "org_desc" : "Super nice organization.",
-        "org_groups" :
-        [
-          {
-            "group_name" : "us-employees",
-            "group_desc" : "All USA Employees."
-          },
-          {
-            "group_name" : "us-developers",
-            "group_desc" : "USA-based developers."
-          }
-        ],
-        "projects" :
-        [
-          {
-            "project_name" : "Android Magic App",
-            "project_desc" : "Super nice project.",
-            "project_roles" :
-            [
-              {
-                "role_name" : "developer"
-              }
-            ]
-          },
-          {
-            "project_name" : "iOS Magic App",
-            "project_desc" : "Super nice project.",
-            "project_roles" :
-            [
-              {
-                "role_name" : "developer"
-              }
-            ]
-          }
-        ]
+        "group_name" : "us-employees",
+        "group_desc" : "All USA Employees."
+      },
+      {
+        "group_name" : "us-developers",
+        "group_desc" : "USA-based developers."
       }
     ]
   }
@@ -112,7 +82,7 @@ Responses
 +---------+---------------------------------------------------+
 || 401    || ``{ "message" : "Unauthorized" }``               |
 +---------+---------------------------------------------------+
-|| 404    || ``{ "message" : "User not found" }``             |
+|| 404    || ``{ "message" : "Organization not found" }``     |
 +---------+---------------------------------------------------+
 || 500    || ``{ "message" : "Internal server error.``        |
 ||        || ``ACTUAL_EXCEPTION" }``                          |

@@ -36,15 +36,30 @@ Group Management
 .. toctree::
 	:maxdepth: 1
 
-	group-management/create-group
-	group-management/get-group
-	group-management/get-groups
-	group-management/get-groups-per-site
-	group-management/get-users
-	group-management/update-group
-	group-management/delete-group
-	group-management/add-user
-	group-management/remove-user
+	group/create
+	group/get
+	group/get-by-org
+	group/get-users
+	group/update
+	group/delete
+	group/add-user
+	group/remove-user
+
+---------------
+Role Management
+---------------
+
+.. toctree::
+	:maxdepth: 1
+
+	role/create
+	role/get
+	role/get-by-project
+	role/get-users
+	role/update
+	role/delete
+	role/add-user
+	role/remove-user
 
 ---------------
 Site Management
@@ -84,4 +99,19 @@ Security
 
 	security/validate-session
 
-.. todo:: Current coverage is limited to version 3.x new features, will need to extend converage to all API calls
+---------------
+Security Policy
+---------------
+
+.. toctree::
+	:maxdepth: 1
+
+	security/create
+	security/get
+	security/get-all
+	security/get-by-org
+	security/get-users
+	security/update
+	security/delete
+	security/add-user
+	security/remove-user

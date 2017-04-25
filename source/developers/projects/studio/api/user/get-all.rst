@@ -19,7 +19,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Global admin                                                     |
+|| Required Role             || Global admin, read users globally                                |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -65,8 +65,8 @@ Response
         "organizations" :
         [
           {
-            "org_name" : "Global Enterprise",
-            "org_desc" : "Super nice orgnization.",
+            "org_name" : "global_enterprise",
+            "org_desc" : "Super nice organization.",
             "org_groups" :
             [
               {
@@ -113,8 +113,8 @@ Response
         "organizations" :
         [
           {
-            "org_name" : "Global Enterprise",
-            "org_desc" : "Super nice orgnization.",
+            "org_name" : "global_enterprise",
+            "org_desc" : "Super nice organization.",
             "org_groups" :
             [
               {
