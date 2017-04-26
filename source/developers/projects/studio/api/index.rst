@@ -88,7 +88,9 @@ Audit
 .. toctree::
 	:maxdepth: 1
 
-	audit/get-audit-log
+	audit/organization-audit-log
+    audit/project-audit-log
+    audit/system-audit-log
 
 --------
 Security
