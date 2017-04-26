@@ -1,12 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-user-get-by-project:
+.. _crafter-studio-api-audit-get-organization:
 
-====================
-Get Users by Project
-====================
+==========================
+Get Organization Audit Log
+==========================
 
-Get all Crafter Studio users belonging to a project with an optional range for pagination.
+Get audit log for an organization.
 
 --------------------
 Resource Information
@@ -15,11 +15,11 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/2/user/get_by_project/:org_name/:project_name``           |
+|| URL                       || ``/api/2/audit/organization/:org_name``                          |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Global admin, organization admin, read users in project          |
+|| Required Role             || Global admin, organization admin, read audit in organization.    |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -29,12 +29,18 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| project_name || String     || |checkmark|  || Project name to use                             |
+|| org_name     || String     || |checkmark|  || Organization to use                             |
 +---------------+-------------+---------------+--------------------------------------------------+
 || start        || Integer    ||              || Start offset                                    |
 +---------------+-------------+---------------+--------------------------------------------------+
 || number       || Integer    ||              || Number of records to retrieve                   |
 +---------------+-------------+---------------+--------------------------------------------------+
+|| user         || String     ||              || Username to filter by                           |
++---------------+-------------+---------------+--------------------------------------------------+
+|| operations   || String     ||              || Actions to filter by                            |
++---------------+-------------+---------------+--------------------------------------------------+
+
+.. todo:: operations
 
 -------
 Example
@@ -44,7 +50,7 @@ Example
 Request
 ^^^^^^^
 
-``GET /api/2/user/get_by_org/myorg/myproj``
+``GET /api/2/audit/organization/global_enterprise?start=0&number=25``
 
 ^^^^^^^^
 Response
@@ -55,59 +61,20 @@ Response
 .. code-block:: json
 
   {
-    "total": 2
-    "users" :
-    [
-      {
-        "username" : "jane.doe",
-        "first_name" : "Jane",
-        "last_name" : "Doe",
-        "email" : "jane@example.com",
-        "externally_managed" : "false",
-        "org_groups" :
+      "total": 1
+      "items":
         [
           {
-            "group_name" : "us-employees",
-            "group_desc" : "All USA Employees."
-          },
-          {
-            "group_name" : "us-developers",
-            "group_desc" : "USA-based developers."
+            "org_name": "global_enterprise",
+            "username": "joe.bloggs",
+            "timestamp": "01/31/2017 15:25:12",
+            "action": "CREATE_USER",
+            "param_1": "jane.doe",
+            "param_2": "",
+            "param_3": "",
           }
-        ],
-	"project_roles" :
-	[
-	  {
-	    "role_name" : "developer"
-	  }
-	]
-      },
-      {
-        "username" : "joe.bloggs",
-        "first_name" : "Joe",
-        "last_name" : "Bloggs",
-        "email" : "joe@example.com",
-        "externally_managed" : "false",
-        "org_groups" :
-        [
-          {
-            "group_name" : "us-employees",
-            "group_desc" : "All USA Employees."
-          },
-          {
-            "group_name" : "us-developers",
-            "group_desc" : "USA-based developers."
-          }
-        ],
-	"project_roles" :
-	[
-	  {
-	    "role_name" : "developer"
-	  }
-	]
-      }
-    ]
-  }
+        ]
+   }
 
 ---------
 Responses
@@ -121,6 +88,8 @@ Responses
 || 400    || ``{ "message" : "Invalid parameter(s)" }``       |
 +---------+---------------------------------------------------+
 || 401    || ``{ "message" : "Unauthorized" }``               |
++---------+---------------------------------------------------+
+|| 404    || ``{ "message" : "Organization not found" }``     |
 +---------+---------------------------------------------------+
 || 500    || ``{ "message" : "Internal server error.``        |
 ||        || ``ACTUAL_EXCEPTION" }``                          |

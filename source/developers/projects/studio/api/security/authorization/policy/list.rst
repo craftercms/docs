@@ -1,25 +1,25 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-user-reset-password:
+.. _crafter-studio-api-security-create:
 
-==============
-Reset Password
-==============
+=============
+List Policies
+=============
 
-Allow the administrator to reset Crafter Studio's user password provided.
+List Crafter Studio security policies.
 
 --------------------
 Resource Information
 --------------------
 
 +----------------------------+-------------------------------------------------------------------+
-|| HTTP Verb                 || POST                                                             |
+|| HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/2/user/reset-password/:username``                         |
+|| URL                       || ``/api/2/security/policy/list/:org`` ??????                      |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Admin                                                            |
+|| Required Role             || Global admin                                                     |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -29,9 +29,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| username     || String     || |checkmark|  || Username to use                                 |
-+---------------+-------------+---------------+--------------------------------------------------+
-|| new          || String     ||              || User's new password (clear)                     |
+|| Id           || String     || |checkmark|  || Policy ID, must be unique                       |
 +---------------+-------------+---------------+--------------------------------------------------+
 
 -------
@@ -42,19 +40,39 @@ Example
 Request
 ^^^^^^^
 
-``POST /api/2/user/reset-password/jane.doe``
-
-.. code-block:: json
-
-  {
-    "new" : "SuperSecretPassword321#"
-  }
+``GET /api/2/security/policy/get/269096bb-3269-4f2b-90c6-b2a0172bd066``
 
 ^^^^^^^^
 Response
 ^^^^^^^^
 
 ``Status 200 OK``
+
+.. code-block:: json
+
+  {
+    "Id": "cd3ad3d9-2776-4ef1-a904-4c229d1642ee",
+    "Version": "2017-05-01",
+    "Statement":
+    [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "studio:CreateContent",
+          "studio:ReadContent",
+          "studio:DeleteContent"
+        ],
+        "Resource": "crn:studio:myorg:project:mysite:*"
+      },
+      {
+        "Effect": "Deny",
+        "Action": [
+          "studio:DeleteContent"
+        ],
+        "Resource": "crn:studio:myorg:project:mysite:/important-stuff/*"
+      }
+    ]
+  }
 
 ---------
 Responses
@@ -69,9 +87,7 @@ Responses
 +---------+---------------------------------------------------+
 || 401    || ``{ "message" : "Unauthorized" }``               |
 +---------+---------------------------------------------------+
-|| 403    || ``{ "message" : "Externally managed user" }``    |
-+---------+---------------------------------------------------+
-|| 404    || ``{ "message" : "User not found" }``             |
+|| 404    || ``{ "message" : "Policy not found" }``           |
 +---------+---------------------------------------------------+
 || 500    || ``{ "message" : "Internal server error.``        |
 ||        || ``ACTUAL_EXCEPTION" }``                          |

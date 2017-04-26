@@ -1,12 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-audit-get-project:
+.. _crafter-studio-api-user-get-by-org:
 
-=====================
-Get Project Audit Log
-=====================
+==========================
+List Users by Organization
+==========================
 
-Get audit log for a project.
+List all Crafter Studio users belonging to an organization with an optional range for pagination.
 
 --------------------
 Resource Information
@@ -15,11 +15,11 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/2/audit/get_by_project/:org_name/:project_name``          |
+|| URL                       || ``/api/2/user/list_by_org/:org_name``                            |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Global admin, project admin, read audit in project.              |
+|| Required Role             || Global admin, organization admin, read users in organization     |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -29,22 +29,12 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| project_name || String     || |checkmark|  || Project to use                                  |
+|| org_name     || String     || |checkmark|  || Organization name to use                        |
 +---------------+-------------+---------------+--------------------------------------------------+
 || start        || Integer    ||              || Start offset                                    |
 +---------------+-------------+---------------+--------------------------------------------------+
 || number       || Integer    ||              || Number of records to retrieve                   |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| user         || String     ||              || Username to filter by                           |
-+---------------+-------------+---------------+--------------------------------------------------+
-|| path         || String     ||              || Path patterns to filter by                      |
-+---------------+-------------+---------------+--------------------------------------------------+
-|| type         || String     ||              || Content types to filter by                      |
-+---------------+-------------+---------------+--------------------------------------------------+
-|| operations   || String     ||              || Actions to filter by                            |
-+---------------+-------------+---------------+--------------------------------------------------+
-
-.. todo:: operations
 
 -------
 Example
@@ -54,7 +44,7 @@ Example
 Request
 ^^^^^^^
 
-``GET /api/2/audit/get_by_project/global_enterprise/myproj?start=0&number=25``
+``GET /api/2/user/list_by_org/myorg``
 
 ^^^^^^^^
 Response
@@ -66,29 +56,79 @@ Response
 
   {
     "total": 2
-    "items":
+    "users" :
     [
       {
-        "project_name": "myproj",
-        "username": "joe.bloggs",
-        "modified_date": "01/31/2017 15:25:12",
-        "creation_date": "01/31/2017 15:25:12",
-        "summary": "User created file",
-        "summary_format": "json",
-        "content_id": "/project/website/index.xml",
-        "content_type": "page",
-        "type": "CREATED",
+        "username" : "jane.doe",
+        "first_name" : "Jane",
+        "last_name" : "Doe",
+        "email" : "jane@example.com",
+        "externally_managed" : "false",
+        "org_groups" :
+        [
+          {
+            "group_name" : "us-employees",
+            "group_desc" : "All USA Employees."
+          },
+          {
+            "group_name" : "us-developers",
+            "group_desc" : "USA-based developers."
+          }
+        ],
+        "projects" :
+        [
+          {
+            "project_name" : "Android Magic App",
+            "project_desc" : "Super nice project.",
+            "project_roles" :
+            [
+              {
+                "role_name" : "developer"
+              }
+            ]
+          },
+          {
+            "project_name" : "iOS Magic App",
+            "project_desc" : "Super nice project.",
+            "project_roles" :
+            [
+              {
+                "role_name" : "developer"
+              }
+            ]
+          }
+        ]
       },
       {
-        "project_name": "myproj",
-        "username": "joe.bloggs",
-        "modified_date": "01/31/2017 17:33:46",
-        "creation_date": "01/31/2017 15:25:12",
-        "summary": "User saved file",
-        "summary_format": "json",
-        "content_id": "/project/website/about/index.xml",
-        "content_type": "page",
-        "type": "UPDATED",
+        "username" : "joe.bloggs",
+        "first_name" : "Joe",
+        "last_name" : "Bloggs",
+        "email" : "joe@example.com",
+        "externally_managed" : "false",
+        "org_groups" :
+        [
+          {
+            "group_name" : "us-employees",
+            "group_desc" : "All USA Employees."
+          },
+          {
+            "group_name" : "us-developers",
+            "group_desc" : "USA-based developers."
+          }
+        ],
+        "projects" :
+        [
+          {
+            "project_name" : "Android Magic App",
+            "project_desc" : "Super nice project.",
+            "project_roles" :
+            [
+              {
+                "role_name" : "developer"
+              }
+            ]
+          }
+        ]
       }
     ]
   }
@@ -105,10 +145,6 @@ Responses
 || 400    || ``{ "message" : "Invalid parameter(s)" }``       |
 +---------+---------------------------------------------------+
 || 401    || ``{ "message" : "Unauthorized" }``               |
-+---------+---------------------------------------------------+
-|| 404    || ``{ "message" : "Organization not found" }``     |
-+---------+---------------------------------------------------+
-|| 404    || ``{ "message" : "Project not found" }``          |
 +---------+---------------------------------------------------+
 || 500    || ``{ "message" : "Internal server error.``        |
 ||        || ``ACTUAL_EXCEPTION" }``                          |

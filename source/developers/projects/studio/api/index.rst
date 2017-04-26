@@ -15,19 +15,14 @@ User Management
 
 	user/create
 	user/get
-	user/get-all
-	user/get-by-org
-	user/get-by-project
+	user/list
+	user/list-by-org
+	user/list-by-project
 	user/update
 	user/delete
 	user/enable
 	user/disable
 	user/status
-	user/forgot-password
-	user/validate-token
-	user/set-password
-	user/change-password
-	user/reset-password
 
 ----------------
 Group Management
@@ -88,32 +83,46 @@ Audit
 .. toctree::
 	:maxdepth: 1
 
-	audit/organization-audit-log
-    audit/project-audit-log
-    audit/system-audit-log
+    audit/get-by-sys
+	audit/get-by-org
+    audit/get-by-project
 
 --------
 Security
 --------
 
-.. toctree::
-	:maxdepth: 1
-
-	security/validate-session
-
----------------
-Security Policy
----------------
+^^^^^^^^^^^^^^
+Authentication
+^^^^^^^^^^^^^^
 
 .. toctree::
 	:maxdepth: 1
 
-	security/create
-	security/get
-	security/get-all
-	security/get-by-org
-	security/get-users
-	security/update
-	security/delete
-	security/add-user
-	security/remove-user
+    security/authentication/login
+    security/authentication/logout
+	security/authentication/validate-session
+	security/authentication/forgot-password
+	security/authentication/validate-token
+	security/authentication/set-password
+	security/authentication/change-password
+	security/authentication/reset-password
+
+^^^^^^^^^^^^^
+Authorization
+^^^^^^^^^^^^^
+
+Policy
+^^^^^^
+
+.. toctree::
+	:maxdepth: 1
+
+	security/authorization/policy/create
+	security/authorization/policy/get
+	security/authorization/policy/get-all
+	security/authorization/policy/get-by-org
+	security/authorization/policy/get-users
+	security/authorization/policy/update
+	security/authorization/policy/delete
+	security/authorization/policy/add-user
+	security/authorization/policy/remove-user

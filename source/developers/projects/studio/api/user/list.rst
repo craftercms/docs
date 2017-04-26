@@ -1,12 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-user-get-all:
+.. _crafter-studio-api-user-list:
 
-=========
-Get Users
-=========
+==========
+List Users
+==========
 
-Get all Crafter Studio users with an optional range for pagination.
+List all Crafter Studio users with an optional range for pagination.
 
 --------------------
 Resource Information
@@ -15,7 +15,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/2/user/get_all``                                          |
+|| URL                       || ``/api/2/user/list``                                             |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -42,7 +42,7 @@ Example
 Request
 ^^^^^^^
 
-``GET /api/2/user/get_all``
+``GET /api/2/user/list``
 
 ^^^^^^^^
 Response

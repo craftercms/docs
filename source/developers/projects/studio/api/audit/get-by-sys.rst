@@ -1,12 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-user-forgot-password:
+.. _crafter-studio-api-audit-get-system:
 
-===============
-Forgot Password
-===============
+====================
+Get System Audit Log
+====================
 
-Send the Crafter Studio user a forgot password / reset password email with a secure/tokenized URL to help them reset their password. This method is used in conjunction with :ref:`crafter-studio-api-user-set-password`.
+Get audit log for the system.
 
 --------------------
 Resource Information
@@ -15,12 +15,14 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/2/user/forgot-password/:username``                        |
+|| URL                       || ``/api/2/audit/system``                                          |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Anonymous                                                        |
+|| Required Role             || Global admin, read system audit.                                 |
 +----------------------------+-------------------------------------------------------------------+
+
+.. todo:: permissions
 
 ----------
 Parameters
@@ -29,8 +31,16 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| username     || String     || |checkmark|  || Username to use                                 |
+|| start        || Integer    ||              || Start offset                                    |
 +---------------+-------------+---------------+--------------------------------------------------+
+|| number       || Integer    ||              || Number of records to retrieve                   |
++---------------+-------------+---------------+--------------------------------------------------+
+|| user         || String     ||              || Username to filter by                           |
++---------------+-------------+---------------+--------------------------------------------------+
+|| operations   || String     ||              || Actions to filter by                            |
++---------------+-------------+---------------+--------------------------------------------------+
+
+.. todo:: operations
 
 -------
 Example
@@ -40,13 +50,30 @@ Example
 Request
 ^^^^^^^
 
-``GET /api/2/user/forgot-password/jane.doe``
+``GET /api/2/audit/system``
 
 ^^^^^^^^
 Response
 ^^^^^^^^
 
 ``Status 200 OK``
+
+.. code-block:: json
+
+  {
+      "total": 1
+      "items":
+        [
+          {
+            "username": "joe.bloggs",
+            "timestamp": "01/31/2017 15:25:12",
+            "action": "CREATE_ORG",
+            "operand_1": "myorg",
+            "operand_2": "",
+            "operand_3": "",
+          }
+        ]
+   }
 
 ---------
 Responses
@@ -55,13 +82,11 @@ Responses
 +---------+---------------------------------------------------+
 || Status || Response Body                                    |
 +=========+===================================================+
-|| 200    || ``{ "message" : "OK" }``                         |
+|| 200    || See example above.                               |
 +---------+---------------------------------------------------+
 || 400    || ``{ "message" : "Invalid parameter(s)" }``       |
 +---------+---------------------------------------------------+
-|| 403    || ``{ "message" : "Externally managed user" }``    |
-+---------+---------------------------------------------------+
-|| 404    || ``{ "message" : "User not found" }``             |
+|| 401    || ``{ "message" : "Unauthorized" }``               |
 +---------+---------------------------------------------------+
 || 500    || ``{ "message" : "Internal server error.``        |
 ||        || ``ACTUAL_EXCEPTION" }``                          |

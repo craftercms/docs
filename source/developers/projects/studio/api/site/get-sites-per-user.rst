@@ -2,11 +2,11 @@
 
 .. _crafter-studio-api-site-get-per-user:
 
-==================
-Get Sites per User
-==================
+===================
+List Sites per User
+===================
 
-Get Crafter Studio sites available to a user given a username with an optional range for pagination.
+List Crafter Studio sites available to a user given a username with an optional range for pagination.
 
 --------------------
 Resource Information
@@ -15,7 +15,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/site/get-per-user.json``                 |
+|| URL                       || ``/api/1/services/api/1/site/list-by-user.json``                 |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -42,7 +42,7 @@ Example
 
 .. code-block:: guess
 
-	GET .../api/1/services/api/1/site/get-per-user.json?username=jane.doe
+	GET .../api/1/services/api/1/site/list-per-user.json?username=jane.doe
 
 .. code-block:: json
 

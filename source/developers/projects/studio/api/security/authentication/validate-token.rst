@@ -1,21 +1,21 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-user-set-password:
+.. _crafter-studio-api-security-validate-token:
 
-============
-Set Password
-============
+==============
+Validate Token
+==============
 
-Set Crafter Studio's user password provided a forgot password secure token (obtained through :ref:`crafter-studio-api-user-forgot-password`).
+Validate a user's secure password reset token (obtained through :ref:`crafter-studio-api-user-forgot-password`).
 
 --------------------
 Resource Information
 --------------------
 
 +----------------------------+-------------------------------------------------------------------+
-|| HTTP Verb                 || POST                                                             |
+|| HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/2/user/set-password/:username``                           |
+|| URL                       || ``/api/2/security/validate-token/:token``                        |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -29,11 +29,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| username     || String     || |checkmark|  || Username to use                                 |
-+---------------+-------------+---------------+--------------------------------------------------+
-|| token        || String     || |checkmark|  || Forgot password secure token.                   |
-+---------------+-------------+---------------+--------------------------------------------------+
-|| new          || String     || |checkmark|  || User's new password (clear)                     |
+|| token        || String     || |checkmark|  || Forgot password secure token to validate.       |
 +---------------+-------------+---------------+--------------------------------------------------+
 
 -------
@@ -44,14 +40,7 @@ Example
 Request
 ^^^^^^^
 
-``POST /api/2/user/set-password/jane.doe``
-
-.. code-block:: json
-
-  {
-    "token" : "asfopaiu02928s0980b98a098gs0fduoi2j341j448t735h1lk40",
-    "new" : "SuperSecretPassword321#"
-  }
+``GET /api/2/security/validate-token/asfopaiu02928s0980b98a098gs0fduoi2j341j448t735h1lk40``
 
 ^^^^^^^^
 Response
@@ -73,8 +62,6 @@ Responses
 || 401    || ``{ "message" : "Unauthorized" }``               |
 +---------+---------------------------------------------------+
 || 403    || ``{ "message" : "Externally managed user" }``    |
-+---------+---------------------------------------------------+
-|| 404    || ``{ "message" : "User not found" }``             |
 +---------+---------------------------------------------------+
 || 500    || ``{ "message" : "Internal server error.``        |
 ||        || ``ACTUAL_EXCEPTION" }``                          |

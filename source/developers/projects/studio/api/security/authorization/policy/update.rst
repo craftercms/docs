@@ -1,28 +1,26 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-audit-get-system:
+.. _crafter-studio-api-security-update:
 
-====================
-Get System Audit Log
-====================
+=============
+Update Policy
+=============
 
-Get audit log for the system.
+Update a Crafter Studio security policy.
 
 --------------------
 Resource Information
 --------------------
 
 +----------------------------+-------------------------------------------------------------------+
-|| HTTP Verb                 || GET                                                              |
+|| HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/2/audit/get_by_sys``                                      |
+|| URL                       || ``/api/2/security/policy/update/:id``                            |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Global admin, read to system audit.                              |
+|| Required Role             || Global admin                                                     |
 +----------------------------+-------------------------------------------------------------------+
-
-.. todo:: permissions
 
 ----------
 Parameters
@@ -31,16 +29,13 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| start        || Integer    ||              || Start offset                                    |
+|| Id           || String     || |checkmark|  || Policy ID                                       |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| number       || Integer    ||              || Number of records to retrieve                   |
+|| Version      || String     || |checkmark|  || Schema version, currently "2017-05-01"          |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| user         || String     ||              || Username to filter by                           |
+|| Statement    || String     || |checkmark|  || Statement array specifying the policy, see REF  |
+||              ||            ||              || for more information on policy statements.      |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| operations   || String     ||              || Actions to filter by                            |
-+---------------+-------------+---------------+--------------------------------------------------+
-
-.. todo:: operations
 
 -------
 Example
@@ -50,30 +45,39 @@ Example
 Request
 ^^^^^^^
 
-``GET /api/2/audit/get_by_sys``
+``POST /api/2/security/policy/update/269096bb-3269-4f2b-90c6-b2a0172bd066``
+
+.. code-block:: json
+
+  {
+    "Id": "cd3ad3d9-2776-4ef1-a904-4c229d1642ee",
+    "Version": "2017-05-01",
+    "Statement":
+    [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "studio:CreateContent",
+          "studio:ReadContent",
+          "studio:DeleteContent"
+        ],
+        "Resource": "crn:studio:myorg:project:mysite:*"
+      },
+      {
+        "Effect": "Deny",
+        "Action": [
+          "studio:DeleteContent"
+        ],
+        "Resource": "crn:studio:myorg:project:mysite:/important-stuff/*"
+      }
+    ]
+  }
 
 ^^^^^^^^
 Response
 ^^^^^^^^
 
 ``Status 200 OK``
-
-.. code-block:: json
-
-  {
-      "total": 1
-      "items":
-        [
-          {
-            "username": "joe.bloggs",
-            "timestamp": "01/31/2017 15:25:12",
-            "action": "CREATE_ORG",
-            "operand_1": "myorg",
-            "operand_2": "",
-            "operand_3": "",
-          }
-        ]
-   }
 
 ---------
 Responses
@@ -82,11 +86,13 @@ Responses
 +---------+---------------------------------------------------+
 || Status || Response Body                                    |
 +=========+===================================================+
-|| 200    || See example above.                               |
+|| 200    || ``{ "message" : "OK" }``                         |
 +---------+---------------------------------------------------+
 || 400    || ``{ "message" : "Invalid parameter(s)" }``       |
 +---------+---------------------------------------------------+
 || 401    || ``{ "message" : "Unauthorized" }``               |
++---------+---------------------------------------------------+
+|| 404    || ``{ "message" : "Policy not found" }``           |
 +---------+---------------------------------------------------+
 || 500    || ``{ "message" : "Internal server error.``        |
 ||        || ``ACTUAL_EXCEPTION" }``                          |

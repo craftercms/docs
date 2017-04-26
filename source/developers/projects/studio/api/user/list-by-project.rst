@@ -1,12 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-user-get-by-org:
+.. _crafter-studio-api-user-get-by-project:
 
-=========================
-Get Users by Organization
-=========================
+=====================
+List Users by Project
+=====================
 
-Get all Crafter Studio users belonging to an organization with an optional range for pagination.
+List all Crafter Studio users belonging to a project with an optional range for pagination.
 
 --------------------
 Resource Information
@@ -15,11 +15,11 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/2/user/get_by_org/:org_name``                             |
+|| URL                       || ``/api/2/user/list_by_project/:org_name/:project_name``          |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Global admin, organization admin, read users in organization     |
+|| Required Role             || Global admin, organization admin, read users in project          |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -29,7 +29,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| org_name     || String     || |checkmark|  || Organization name to use                        |
+|| project_name || String     || |checkmark|  || Project name to use                             |
 +---------------+-------------+---------------+--------------------------------------------------+
 || start        || Integer    ||              || Start offset                                    |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -44,7 +44,7 @@ Example
 Request
 ^^^^^^^
 
-``GET /api/2/user/get_by_org/myorg``
+``GET /api/2/user/list_by_org/myorg/myproj``
 
 ^^^^^^^^
 Response
@@ -75,29 +75,12 @@ Response
             "group_desc" : "USA-based developers."
           }
         ],
-        "projects" :
-        [
-          {
-            "project_name" : "Android Magic App",
-            "project_desc" : "Super nice project.",
-            "project_roles" :
-            [
-              {
-                "role_name" : "developer"
-              }
-            ]
-          },
-          {
-            "project_name" : "iOS Magic App",
-            "project_desc" : "Super nice project.",
-            "project_roles" :
-            [
-              {
-                "role_name" : "developer"
-              }
-            ]
-          }
-        ]
+	"project_roles" :
+	[
+	  {
+	    "role_name" : "developer"
+	  }
+	]
       },
       {
         "username" : "joe.bloggs",
@@ -116,19 +99,12 @@ Response
             "group_desc" : "USA-based developers."
           }
         ],
-        "projects" :
-        [
-          {
-            "project_name" : "Android Magic App",
-            "project_desc" : "Super nice project.",
-            "project_roles" :
-            [
-              {
-                "role_name" : "developer"
-              }
-            ]
-          }
-        ]
+	"project_roles" :
+	[
+	  {
+	    "role_name" : "developer"
+	  }
+	]
       }
     ]
   }
