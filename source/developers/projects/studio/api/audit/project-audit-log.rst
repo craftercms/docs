@@ -15,15 +15,12 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/audit/get/:project``                                    |
+|| URL                       || ``/api/2/audit/get_by_project/:org_name/:project_name``          |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Global admin, project admin, read permission to audit            |
-||                           || this project.                                                    |
+|| Required Role             || Global admin, project admin, read audit in project.              |
 +----------------------------+-------------------------------------------------------------------+
-
-.. todo:: permissions
 
 ----------
 Parameters
@@ -32,7 +29,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| project_id   || String     || |checkmark|  || Project to use                                  |
+|| project_name || String     || |checkmark|  || Project to use                                  |
 +---------------+-------------+---------------+--------------------------------------------------+
 || start        || Integer    ||              || Start offset                                    |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -57,7 +54,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/audit/get/myproj?start=0&number=25``
+``GET /api/2/audit/get_by_project/global_enterprise/myproj?start=0&number=25``
 
 ^^^^^^^^
 Response
@@ -68,49 +65,51 @@ Response
 .. code-block:: json
 
   {
-      "total": 2
-      "items":
-        [
-          {
-            "modified_date": "01/31/2017 15:25:12",
-            "creation_date": "01/31/2017 15:25:12",
-            "summary": "User created file",
-            "summary_format": "json",
-            "content_id": "/project/website/index.xml",
-            "content_type": "page",
-            "type": "CREATED",
-            "username": "joe.bloggs",
-            "project_id": "myproj"
-          },
-          {
-            "modified_date": "01/31/2017 17:33:46",
-            "creation_date": "01/31/2017 15:25:12",
-            "summary": "User saved file",
-            "summary_format": "json",
-            "content_id": "/project/website/about/index.xml",
-            "content_type": "page",
-            "type": "UPDATED",
-            "username": "joe.bloggs",
-            "project_id": "myproj"
-          }
-        ]
-   }
+    "total": 2
+    "items":
+    [
+      {
+        "project_name": "myproj",
+        "username": "joe.bloggs",
+        "modified_date": "01/31/2017 15:25:12",
+        "creation_date": "01/31/2017 15:25:12",
+        "summary": "User created file",
+        "summary_format": "json",
+        "content_id": "/project/website/index.xml",
+        "content_type": "page",
+        "type": "CREATED",
+      },
+      {
+        "project_name": "myproj",
+        "username": "joe.bloggs",
+        "modified_date": "01/31/2017 17:33:46",
+        "creation_date": "01/31/2017 15:25:12",
+        "summary": "User saved file",
+        "summary_format": "json",
+        "content_id": "/project/website/about/index.xml",
+        "content_type": "page",
+        "type": "UPDATED",
+      }
+    ]
+  }
 
 ---------
 Responses
 ---------
 
-+---------+-------------------------------------------+---------------------------------------------------+
-|| Status || Location                                 || Response Body                                    |
-+=========+===========================================+===================================================+
-|| 200    ||                                          || See example above.                               |
-+---------+-------------------------------------------+---------------------------------------------------+
-|| 400    ||                                          || ``{ "message" : "Invalid parameter(s)" }``       |
-+---------+-------------------------------------------+---------------------------------------------------+
-|| 401    ||                                          || ``{ "message" : "Unauthorized" }``               |
-+---------+-------------------------------------------+---------------------------------------------------+
-|| 404    ||                                          || ``{ "message" : "Project not found" }``          |
-+---------+-------------------------------------------+---------------------------------------------------+
-|| 500    ||                                          || ``{ "message" : "Internal server error.``        |
-||        ||                                          || ``ACTUAL_EXCEPTION" }``                          |
-+---------+-------------------------------------------+---------------------------------------------------+
++---------+---------------------------------------------------+
+|| Status || Response Body                                    |
++=========+===================================================+
+|| 200    || See example above.                               |
++---------+---------------------------------------------------+
+|| 400    || ``{ "message" : "Invalid parameter(s)" }``       |
++---------+---------------------------------------------------+
+|| 401    || ``{ "message" : "Unauthorized" }``               |
++---------+---------------------------------------------------+
+|| 404    || ``{ "message" : "Organization not found" }``     |
++---------+---------------------------------------------------+
+|| 404    || ``{ "message" : "Project not found" }``          |
++---------+---------------------------------------------------+
+|| 500    || ``{ "message" : "Internal server error.``        |
+||        || ``ACTUAL_EXCEPTION" }``                          |
++---------+---------------------------------------------------+
