@@ -76,16 +76,6 @@ Repo Management
 
 	repo/sync-from-repo
 
------
-Audit
------
-
-.. toctree::
-	:maxdepth: 1
-
-    audit/get-by-sys
-	audit/get-by-org
-    audit/get-by-project
 
 --------
 Security
@@ -98,8 +88,8 @@ Authentication
 .. toctree::
 	:maxdepth: 1
 
-    security/authentication/login
-    security/authentication/logout
+	security/authentication/login
+	security/authentication/logout
 	security/authentication/validate-session
 	security/authentication/forgot-password
 	security/authentication/validate-token
@@ -119,10 +109,20 @@ Policy
 
 	security/authorization/policy/create
 	security/authorization/policy/get
-	security/authorization/policy/get-all
-	security/authorization/policy/get-by-org
-	security/authorization/policy/get-users
+	security/authorization/policy/list
+	security/authorization/policy/list-by-org
+	security/authorization/policy/list-users
 	security/authorization/policy/update
 	security/authorization/policy/delete
-	security/authorization/policy/add-user
-	security/authorization/policy/remove-user
+
+
+-----
+Audit
+-----
+
+.. toctree::
+	:maxdepth: 1
+
+	audit/system
+	audit/organization
+	audit/project

@@ -1,12 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-audit-get-system:
+.. _crafter-studio-api-project-get:
 
-====================
-Get System Audit Log
-====================
+===========
+Get Project
+===========
 
-Get audit log for the system.
+Get a Crafter Studio project.
 
 --------------------
 Resource Information
@@ -15,14 +15,13 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/2/audit/system``                                          |
+|| URL                       || ``/api/2/project/get/:project_name``                             |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Global admin, read system audit.                                 |
+|| Required Role             || Global admin, organization admin, project member, read project   |
+||                           || in organization/project                                          |
 +----------------------------+-------------------------------------------------------------------+
-
-.. todo:: permissions
 
 ----------
 Parameters
@@ -31,16 +30,8 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| start        || Integer    ||              || Start offset                                    |
+|| project_name || String     || |checkmark|  || Project name to use                             |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| number       || Integer    ||              || Number of records to retrieve                   |
-+---------------+-------------+---------------+--------------------------------------------------+
-|| user         || String     ||              || Username to filter by                           |
-+---------------+-------------+---------------+--------------------------------------------------+
-|| operations   || String     ||              || Actions to filter by                            |
-+---------------+-------------+---------------+--------------------------------------------------+
-
-.. todo:: operations
 
 -------
 Example
@@ -50,7 +41,7 @@ Example
 Request
 ^^^^^^^
 
-``GET /api/2/audit/system``
+``GET /api/2/project/get/mysite``
 
 ^^^^^^^^
 Response
@@ -61,19 +52,10 @@ Response
 .. code-block:: json
 
   {
-      "total": 1
-      "items":
-        [
-          {
-            "username": "joe.bloggs",
-            "timestamp": "01/31/2017 15:25:12",
-            "action": "CREATE_ORG",
-            "operand_1": "myorg",
-            "operand_2": "",
-            "operand_3": "",
-          }
-        ]
-   }
+    "site_id" : "mysite",
+    "description" : "My very first site!",
+    "blueprint" : "Empty"
+  }
 
 ---------
 Responses
@@ -87,6 +69,8 @@ Responses
 || 400    || ``{ "message" : "Invalid parameter(s)" }``       |
 +---------+---------------------------------------------------+
 || 401    || ``{ "message" : "Unauthorized" }``               |
++---------+---------------------------------------------------+
+|| 404    || ``{ "message" : "Project not found" }``          |
 +---------+---------------------------------------------------+
 || 500    || ``{ "message" : "Internal server error.``        |
 ||        || ``ACTUAL_EXCEPTION" }``                          |

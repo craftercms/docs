@@ -1,12 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-audit-get-project:
+.. _crafter-studio-api-audit-organization:
 
-=====================
-Get Project Audit Log
-=====================
+==========================
+Get Organization Audit Log
+==========================
 
-Get audit log for a project.
+Get audit log for an organization.
 
 --------------------
 Resource Information
@@ -15,11 +15,11 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/2/audit/project/:org_name/:project_name``                 |
+|| URL                       || ``/api/2/audit/organization/:org_name``                          |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Global admin, project admin, read audit in project.              |
+|| Required Role             || Global admin, organization admin, read audit in organization.    |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -29,17 +29,13 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| project_name || String     || |checkmark|  || Project to use                                  |
+|| org_name     || String     || |checkmark|  || Organization to use                             |
 +---------------+-------------+---------------+--------------------------------------------------+
 || start        || Integer    ||              || Start offset                                    |
 +---------------+-------------+---------------+--------------------------------------------------+
 || number       || Integer    ||              || Number of records to retrieve                   |
 +---------------+-------------+---------------+--------------------------------------------------+
 || user         || String     ||              || Username to filter by                           |
-+---------------+-------------+---------------+--------------------------------------------------+
-|| path         || String     ||              || Path patterns to filter by                      |
-+---------------+-------------+---------------+--------------------------------------------------+
-|| type         || String     ||              || Content types to filter by                      |
 +---------------+-------------+---------------+--------------------------------------------------+
 || operations   || String     ||              || Actions to filter by                            |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -54,7 +50,7 @@ Example
 Request
 ^^^^^^^
 
-``GET /api/2/audit/project/global_enterprise/myproj?start=0&number=25``
+``GET /api/2/audit/organization/global_enterprise?start=0&number=25``
 
 ^^^^^^^^
 Response
@@ -65,33 +61,20 @@ Response
 .. code-block:: json
 
   {
-    "total": 2
-    "items":
-    [
-      {
-        "project_name": "myproj",
-        "username": "joe.bloggs",
-        "modified_date": "01/31/2017 15:25:12",
-        "creation_date": "01/31/2017 15:25:12",
-        "summary": "User created file",
-        "summary_format": "json",
-        "content_id": "/project/website/index.xml",
-        "content_type": "page",
-        "type": "CREATED",
-      },
-      {
-        "project_name": "myproj",
-        "username": "joe.bloggs",
-        "modified_date": "01/31/2017 17:33:46",
-        "creation_date": "01/31/2017 15:25:12",
-        "summary": "User saved file",
-        "summary_format": "json",
-        "content_id": "/project/website/about/index.xml",
-        "content_type": "page",
-        "type": "UPDATED",
-      }
-    ]
-  }
+      "total": 1
+      "items":
+        [
+          {
+            "org_name": "global_enterprise",
+            "username": "joe.bloggs",
+            "timestamp": "01/31/2017 15:25:12",
+            "action": "CREATE_USER",
+            "param_1": "jane.doe",
+            "param_2": "",
+            "param_3": "",
+          }
+        ]
+   }
 
 ---------
 Responses
@@ -107,8 +90,6 @@ Responses
 || 401    || ``{ "message" : "Unauthorized" }``               |
 +---------+---------------------------------------------------+
 || 404    || ``{ "message" : "Organization not found" }``     |
-+---------+---------------------------------------------------+
-|| 404    || ``{ "message" : "Project not found" }``          |
 +---------+---------------------------------------------------+
 || 500    || ``{ "message" : "Internal server error.``        |
 ||        || ``ACTUAL_EXCEPTION" }``                          |

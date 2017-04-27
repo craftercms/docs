@@ -1,12 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-audit-get-organization:
+.. _crafter-studio-api-audit-system:
 
-==========================
-Get Organization Audit Log
-==========================
+====================
+Get System Audit Log
+====================
 
-Get audit log for an organization.
+Get audit log for the system.
 
 --------------------
 Resource Information
@@ -15,12 +15,14 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/2/audit/organization/:org_name``                          |
+|| URL                       || ``/api/2/audit/system``                                          |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Global admin, organization admin, read audit in organization.    |
+|| Required Role             || Global admin, read system audit.                                 |
 +----------------------------+-------------------------------------------------------------------+
+
+.. todo:: permissions
 
 ----------
 Parameters
@@ -29,8 +31,6 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| org_name     || String     || |checkmark|  || Organization to use                             |
-+---------------+-------------+---------------+--------------------------------------------------+
 || start        || Integer    ||              || Start offset                                    |
 +---------------+-------------+---------------+--------------------------------------------------+
 || number       || Integer    ||              || Number of records to retrieve                   |
@@ -50,7 +50,7 @@ Example
 Request
 ^^^^^^^
 
-``GET /api/2/audit/organization/global_enterprise?start=0&number=25``
+``GET /api/2/audit/system``
 
 ^^^^^^^^
 Response
@@ -65,13 +65,12 @@ Response
       "items":
         [
           {
-            "org_name": "global_enterprise",
             "username": "joe.bloggs",
             "timestamp": "01/31/2017 15:25:12",
-            "action": "CREATE_USER",
-            "param_1": "jane.doe",
-            "param_2": "",
-            "param_3": "",
+            "action": "CREATE_ORG",
+            "operand_1": "myorg",
+            "operand_2": "",
+            "operand_3": "",
           }
         ]
    }
@@ -88,8 +87,6 @@ Responses
 || 400    || ``{ "message" : "Invalid parameter(s)" }``       |
 +---------+---------------------------------------------------+
 || 401    || ``{ "message" : "Unauthorized" }``               |
-+---------+---------------------------------------------------+
-|| 404    || ``{ "message" : "Organization not found" }``     |
 +---------+---------------------------------------------------+
 || 500    || ``{ "message" : "Internal server error.``        |
 ||        || ``ACTUAL_EXCEPTION" }``                          |

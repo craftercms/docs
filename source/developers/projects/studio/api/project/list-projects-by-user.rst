@@ -1,26 +1,27 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-repo-sync-from-repo:
+.. _crafter-studio-api-project-list-by-user:
 
-==============
-Sync from Repo
-==============
+=====================
+List Projects by User
+=====================
 
-Synchronize Crafter Studio's database and object state with the underlying repository. This needs to be done if the
-underlying repository was updated directly, bypassing Studio's APIs/UI.
+List Crafter Studio projects available to a user given an organization and username with an optional range for
+pagination.
 
 --------------------
 Resource Information
 --------------------
 
 +----------------------------+-------------------------------------------------------------------+
-|| HTTP Verb                 || POST                                                             |
+|| HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/2/repo/sync-from-repo/:org_name/:project_name``           |
+|| URL                       || ``/api/2/project/list-by-user/:org_name/:username``              |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Global admin, organization admin, sync from repo in project      |
+|| Required Role             || Global admin, organization admin, list projects by user in       |
+||                           || organization.                                                    |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -32,7 +33,11 @@ Parameters
 +===============+=============+===============+==================================================+
 || org_name     || String     || |checkmark|  || Organization to use                             |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| project_name || String     || |checkmark|  || Project to sync                                 |
+|| username     || String     || |checkmark|  || User for whom to find permitted sites           |
++---------------+-------------+---------------+--------------------------------------------------+
+|| start        || Integer    ||              || Start offset                                    |
++---------------+-------------+---------------+--------------------------------------------------+
+|| number       || Integer    ||              || Number of records to retrieve                   |
 +---------------+-------------+---------------+--------------------------------------------------+
 
 -------
@@ -43,13 +48,30 @@ Example
 Request
 ^^^^^^^
 
-``POST /api/2/repo/sync-from-repo/global_enterprise/myproj``
+``GET /api/2/project/list-by-user/global_enterprise/jane.doe``
 
 ^^^^^^^^
 Response
 ^^^^^^^^
 
 ``Status 200 OK``
+
+.. code-block:: json
+
+  {
+    "total": 2
+    "projects" :
+    [
+      {
+        "project_name" : "mySite1",
+        "description" : "My nice site 1."
+      },
+      {
+        "project_name" : "mySite2",
+        "description" : "My nice site 2."
+      }
+    ]
+  }
 
 ---------
 Responses
@@ -58,7 +80,7 @@ Responses
 +---------+---------------------------------------------------+
 || Status || Response Body                                    |
 +=========+===================================================+
-|| 200    || ``{ "message" : "OK" }``                         |
+|| 200    || See example above.                               |
 +---------+---------------------------------------------------+
 || 400    || ``{ "message" : "Invalid parameter(s)" }``       |
 +---------+---------------------------------------------------+
@@ -66,7 +88,7 @@ Responses
 +---------+---------------------------------------------------+
 || 404    || ``{ "message" : "Organization not found" }``     |
 +---------+---------------------------------------------------+
-|| 404    || ``{ "message" : "Project not found" }``          |
+|| 404    || ``{ "message" : "User not found" }``             |
 +---------+---------------------------------------------------+
 || 500    || ``{ "message" : "Internal server error.``        |
 ||        || ``ACTUAL_EXCEPTION" }``                          |
