@@ -6,6 +6,15 @@
 Crafter Studio API
 ==================
 
+------------------
+Content Management
+------------------
+
+.. toctree::
+	:maxdepth: 1
+
+	content/create
+
 ---------------
 User Management
 ---------------
@@ -56,16 +65,18 @@ Role Management
 	role/add-user
 	role/remove-user
 
----------------
-Site Management
----------------
+------------------
+Project Management
+------------------
 
 .. toctree::
 	:maxdepth: 1
 
-	site/create-site
-	site/get-site
-	site/get-sites-per-user
+	project/create
+	project/get
+	project/list
+	project/list-by-org
+	project/list-by-user
 
 ---------------
 Repo Management

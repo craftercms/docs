@@ -2,11 +2,11 @@
 
 .. _crafter-studio-api-project-create:
 
-===========
-Create Site
-===========
+==============
+Create Project
+==============
 
-Create a Crafter Studio project.
+Create a Crafter Studio project in an organization.
 
 --------------------
 Resource Information
@@ -15,7 +15,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/2/project/create``                                        |
+|| URL                       || ``/api/2/project/create/:org_name``                              |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -29,6 +29,8 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
+|| org_name     || String     || |checkmark|  || Organization to create the project under        |
++---------------+-------------+---------------+--------------------------------------------------+
 || project_name || String     || |checkmark|  || Project name                                    |
 +---------------+-------------+---------------+--------------------------------------------------+
 || description  || String     ||              || Project description                             |
@@ -44,12 +46,12 @@ Example
 Request
 ^^^^^^^
 
-``POST /api/2/project/create``
+``POST /api/2/project/create/global_enterprise``
 
 .. code-block:: json
 
   {
-    "site_id" : "mysite",
+    "project_name" : "mysite",
     "description" : "My very first site!",
     "blueprint" : "Empty"
   }
@@ -73,6 +75,8 @@ Responses
 || 400    || ``{ "message" : "Invalid parameter(s)" }``       ||                                          |
 +---------+---------------------------------------------------+-------------------------------------------+
 || 401    || ``{ "message" : "Unauthorized" }``               ||                                          |
++---------+---------------------------------------------------+-------------------------------------------+
+|| 404    || ``{ "message" : "Organization not found" }``     ||                                          |
 +---------+---------------------------------------------------+-------------------------------------------+
 || 409    || ``{ "message" : "Project already exists" }``     || Location:                                |
 ||        ||                                                  || ``/api/2/project/get/:project_name``     |
