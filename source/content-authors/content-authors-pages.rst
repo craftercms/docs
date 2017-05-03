@@ -54,9 +54,7 @@ There are multiple ways to edit a page.
     #. In the Site Content panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to edit the content and click on it to display the page.  Click **Edit** on the context navigation menu. A form containing the page content you want to edit will open.
 
 .. image:: /_static/images/page-edit.png
-    :height: 900px
-    :width: 900 px
-    :scale: 95 %
+    :width: 95 %
     :align: center
 
 
@@ -71,18 +69,14 @@ All page changes/versions can be viewed, compared with other versions and revert
 After selecting the page you want, click on the **History** menu of the context navigation menu at the top of your browser.
 
 .. image:: /_static/images/page-access-history.png
-    :height: 900px
-    :width: 900 px
-    :scale: 95 %
+    :width: 95 %
     :align: center
 
 
 Another way to view the history of a page is by right clicking on the page you want and then selecting **History**
 
 .. image:: /_static/images/page-access-history-tree.png
-    :height: 900px
-    :width: 900 px
-    :scale: 95 %
+    :width: 95 %
     :align: center
 
     
@@ -107,9 +101,7 @@ There are a number of things that you can do in the Version History dialog.  On 
 For each version listed, there's a checkbox on the left, allowing you to select two versions and then compare them by selecting the **Compare** button.  Please see figure below.
 
 .. image:: /_static/images/page-history.png
-    :height: 900px
-    :width: 900 px
-    :scale: 95 %
+    :width: 95 %
     :align: center
     
 
@@ -122,9 +114,7 @@ Form controls are the building blocks of forms.  It lets you get content into th
 Forms are the means by which content is captured in Crafter Studio. A form generally maps to or represents a type of object in the system for example a certain kind of page - like a section page or a banner or video. Let's look at some common elements of a form and examine some of the controls that we use to get content in to the system.
 
 .. image:: /_static/images/page-form.png
-    :height: 900px
-    :width: 900 px
-    :scale: 95 %
+    :width: 95 %
     :align: center
 
 When a new page is created or a page is edited, the form interface for these functions will open in a new dialog. A user can Expand or Collapse all of the sections on the page using the "Expand All" or "Collapse All" links at the top of the page.  
@@ -294,9 +284,9 @@ The RTE (Rich Text Editor) is intended to provide an in-context editing experien
 
 .. |rteFormatSelectList| image:: /_static/images/rte-tool-format-select-list.png
                      :width: 25%
-                     
+
 .. |rteFormatSelect| image:: /_static/images/rte-tool-format-select.png
-                     :width: 45%
+             :width: 45%
 
 .. |rteBold| image:: /_static/images/rte-tool-bold.png
              :width: 15%
@@ -312,22 +302,22 @@ The RTE (Rich Text Editor) is intended to provide an in-context editing experien
 
 .. |rteSubscript| image:: /_static/images/rte-tool-subscript.png
              :width: 15%
-                                                            
+
 .. |rteSuperscript| image:: /_static/images/rte-tool-superscript.png
              :width: 15%
-             
+
 .. |rteOutdent| image:: /_static/images/rte-tool-outdent.png
              :width: 15%
-             
+
 .. |rteIndent| image:: /_static/images/rte-tool-indent.png
              :width: 15%
-             
+
 .. |rteBlockQuote| image:: /_static/images/rte-tool-block-quote.png
              :width: 15%
 
 .. |rteAlignLeft| image:: /_static/images/rte-tool-align-left.png
              :width: 15%
-             
+
 .. |rteAlignRight| image:: /_static/images/rte-tool-align-right.png
              :width: 15%
 
@@ -336,34 +326,35 @@ The RTE (Rich Text Editor) is intended to provide an in-context editing experien
 
 .. |rteAlignFull| image:: /_static/images/rte-tool-align-full.png
              :width: 15%
-             
+
 .. |rteBulletList| image:: /_static/images/rte-tool-bullet-list.png
              :width: 15%
 
 .. |rteNumberedList| image:: /_static/images/rte-tool-numbered-list.png
              :width: 15%
-             
+
 .. |rteInsertImage| image:: /_static/images/rte-tool-insert-image.png
              :width: 15%
-             
+
 .. |rteInsertLink| image:: /_static/images/rte-tool-insert-link.png
              :width: 15%
-             
+
 .. |rteUnlink| image:: /_static/images/rte-tool-unlink.png
              :width: 15%
-             
+
 .. |rteInsertAnchor| image:: /_static/images/rte-tool-insert-anchor.png
              :width: 15%
-             
+
 .. |rteEditHtml| image:: /_static/images/rte-tool-edit-html.png
              :width: 15%
-             
+
 .. |rteUndo| image:: /_static/images/rte-tool-undo.png
              :width: 15%
-             
+
 .. |rteRedo| image:: /_static/images/rte-tool-redo.png
              :width: 15%
-             
+
+
 There are a number of tools available from the RTE out of the box for editing your content.  Custom tools may also be added to the RTE, depending on your needs.  Please see the developer section of the docs for more details.
 
 ---> add link to developer docs documenting how to add RTE widgets and configuring RTE

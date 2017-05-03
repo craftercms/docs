@@ -222,7 +222,7 @@ Add the datasources name to the list of data sources in the content type editor
 	</config>
 
 -----------------------------------------------------------------
-Complext Example that uses AJAX to get data from external source:
+Complex Example that uses AJAX to get data from external source:
 -----------------------------------------------------------------
 
 .. code-block:: javascript

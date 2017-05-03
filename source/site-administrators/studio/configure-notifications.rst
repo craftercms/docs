@@ -3,8 +3,12 @@ Configure Simple Workflow Notifications and Dialog Messages
 ===========================================================
 
 This document assumes version 2 of the notification service has been enabled.  A system administrator can assist in
-configuring the notification service by following the following documentation :ref:`enable-studio-notifications`
+configuring the notification service by following the following documentation
 
+.. toctree::
+   :maxdepth: 1
+
+   studio/notifications
 
 ------
 Basics
@@ -112,9 +116,9 @@ Configure Who Gets Notifications
              </lang>
         </notificationConfig>
 
-----------------------------------------
-Configure Studio Worflow Dialog Messages
-----------------------------------------
+-----------------------------------------
+Configure Studio Workflow Dialog Messages
+-----------------------------------------
 
 
 .. code-block:: xml

@@ -19,23 +19,19 @@ System Requirements
 || Crafter Profile || User profile and attribute store || Java 1.8+                              |
 ||                 || (Optional component)             || MongoDb 3+                             |
 ||                 ||                                  || 1+ Gig of memory to JVM                |
-+-----------------+------------------------------------+-----------------------------------------+
++------------------+-----------------------------------+-----------------------------------------+
 || Crafter Social  || User Generated Content server    || Java 1.8+                              |
 ||                 || (Optional component)             || MongoDb 3+                             |
 ||                 ||                                  || 1+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
 
-* See :ref:<supported platforms`requirements-supported-platforms`> for detailed list and description of supported components.
+* See :ref:`supported platforms<requirements_supported_platforms>` for a detailed list and description of supported components.
 
 -----------------------
 Development Environment
 -----------------------
 
-.. toctree::
-	:maxdepth: 2
-	:titlesonly:
-
-	dev-environment/install-from-zip
+    :ref:`quick_start_guide`
 
 -------------------------
 QA/Production Environment

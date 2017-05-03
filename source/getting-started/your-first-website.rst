@@ -34,9 +34,7 @@ Click on "Create" and wait for the system to create your site based on the bluep
 When it's done you will be taken to the Home Page of your site:
 
 .. image:: /_static/images/home-page.png
-    :height: 800px
-    :width: 800 px
-    :scale: 95 %
+    :width: 95 %
     :align: center
 
 Your site is setup, we can now start adding/editing content!  To edit content you see on the page, click on **Edit** at the top (see above).  This will open a form (see below) where you can edit the page content.  To see other ways of editing page content, see :ref:`editing-a-page`.

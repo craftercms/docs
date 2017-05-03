@@ -335,6 +335,7 @@ The simple example renders a simple HTML page with a very basic model. Let's rev
 
 The `FreeMarker <http://freemarker.org>`_ language is supported. For detailed Freemarker documentation, please visit: `http://freemarker.org <http://freemarker.org>`_ 
 
+.. _content-type-controller-definition:
 
 ----------------------------------
 Content Type Controller Definition
