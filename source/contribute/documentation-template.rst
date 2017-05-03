@@ -64,9 +64,9 @@ Anchors
 
    .. _documentation-templates:
 
-==================================================
+--------------------------------------------------
 Titles, Sections, sub-sections and sub-subsections
-==================================================
+--------------------------------------------------
 
 .. code-block:: rst
 
@@ -208,30 +208,30 @@ Code Blocks
 HTML
 ^^^^
 
-.. code-block:: guess
+.. code-block:: rst
 
 	.. code-block:: html
 
-        	<#import "/templates/system/common/cstudio-support.ftl" as studio />
+        <#import "/templates/system/common/cstudio-support.ftl" as studio />
 
-        	<!DOCTYPE html>
-        	<html lang="en">
-        	        <head>
-        	                <!-- Basic Page Need
-        	                ================================================== -->
-        	                <meta charset="utf-8">
-        	                <title>${contentModel.browser_title}</title>
-        	                <meta name="description" content="${contentModel.meta_description}">
-        	                <meta name="keywords" content="${contentModel.meta_keywords}">
-        	        </head>
-        	        <body>
-        	                <div class="body" <@studio.iceAttr iceGroup="body"/>>
-        	                        ${contentModel.body_html}
-        	                </div>
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <!-- Basic Page Need
+        	    ================================================== -->
+        	    <meta charset="utf-8">
+        	    <title>${contentModel.browser_title}</title>
+        	    <meta name="description" content="${contentModel.meta_description}">
+        	    <meta name="keywords" content="${contentModel.meta_keywords}">
+        	</head>
+        	<body>
+        	     <div class="body" <@studio.iceAttr iceGroup="body"/>>
+        	          ${contentModel.body_html}
+        	     </div>
 
-        	                <#if (contentModel.analytics_script)??>${contentModel.analytics_script}</#if>
-        	        </body>
-        	</html>
+        	     <#if (contentModel.analytics_script)??>${contentModel.analytics_script}</#if>
+        	</body>
+        </html>
 
 ^^^^^^
 Groovy

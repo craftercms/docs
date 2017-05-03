@@ -1,3 +1,5 @@
+:orphan:
+
 ===========================================
 Native Mobile Application Development Guide
 ===========================================
