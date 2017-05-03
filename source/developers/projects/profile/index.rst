@@ -6,6 +6,13 @@
 Crafter Profile
 ===============
 
+.. figure:: /_static/images/crafter-cloud-v8-Crafter-Profile.png
+    :alt: Crafter Profile
+    :width: 60 %
+    :align: center
+
+Crafter Profile provides a secure and scalable platform for storing, querying and analyzing user data at each interaction in your customer journey.
+
 -----------
 Source Code
 -----------

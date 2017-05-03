@@ -16,7 +16,12 @@ Crafter Deployer's source code is managed in github: https://github.com/crafterc
 ReST API
 --------
 
-:ref:`crafter-deployer-api`
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   api/index
+
 
 -------------
 Configuration

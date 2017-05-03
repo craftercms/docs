@@ -6,6 +6,11 @@
 Crafter Search
 ==============
 
+.. figure:: /_static/images/crafter-cloud-v8-Crafter-Search.png
+    :alt: Crafter Search
+    :width: 60 %
+    :align: center
+
 -----------
 Source Code
 -----------
@@ -22,7 +27,11 @@ Crafter Search's Java Doc is here: http://javadoc.io/doc/org.craftercms/crafter-
 ReST API
 --------
 
-:ref:`crafter-search-api`
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   api/index
 
 -------------
 Configuration

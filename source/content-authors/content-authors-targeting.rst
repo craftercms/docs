@@ -20,10 +20,12 @@ In the example below, targeting is in the **Metadata** section, under **Segments
     :width: 75 %    
     :align: center
 
-    
--------------------------------------------
+
+.. _content_authors_site_views_diff_personas:
+
+----------------------------------------
 Viewing the site with different personas    
--------------------------------------------
+----------------------------------------
 
 The authoring environment can be configured with any number of predefined persona(s). A persona is like a profile, in fact it behaves exactly the same way but instead of setting up and signing in as specific users to test different scenarios authors can simply switch back and forth between the available configured persona(s).   Each persona has a name, image and a description to help authors identify the scenarios they represent.  
 

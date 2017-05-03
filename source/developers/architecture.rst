@@ -19,7 +19,7 @@ In the delivery environment, Crafter Engine provides content delivery services t
 
 The management and delivery of content is decoupled and separate, allowing each system to be optimized for its purpose, audience and scalability requirements. Multi-channel publishing is naturally supported, and mobile devices and applications are enabled by means of both native device support (iOS and Android) and HTML5 support.
 
-For more information on all the components inside the Authoring environment, the Delivery environment and the Deployer, please see the following sections:
+For more information on all the components inside the Authoring environment and the Delivery environment, please see the following sections:
 
     * :ref:`crafter-cms`
     * :ref:`crafter-core`
