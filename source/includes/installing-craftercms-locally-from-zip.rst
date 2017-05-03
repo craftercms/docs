@@ -1,3 +1,4 @@
+:orphan:
 
 ---------------------------------------
 Installing Crafter Locally via Zip File

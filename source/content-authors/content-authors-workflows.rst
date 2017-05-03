@@ -9,9 +9,7 @@ Workflow and Scheduled Deployments
 Workflow is the act of moving content through its lifecycle.
 
 .. image:: /_static/images/c2wf.png
-    :height: 900px
-    :width: 900 px
-    :scale: 95 %
+    :width: 95 %
     :align: center
     
 Workflow is managed through dialogs.

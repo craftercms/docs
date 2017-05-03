@@ -25,6 +25,7 @@ Below is a short set of links to other documentation for technology that Crafter
 +----------------+------------------------------+-----------------------------------------------+
 || MongoDB       || Crafter Profile and Social  || https://docs.mongodb.com                     |
 ||               || data store                  ||                                              |
++----------------+------------------------------+-----------------------------------------------+
 || GIT           || Repository Implementation   || https://git-scm.com/docs                     |
 +----------------+------------------------------+-----------------------------------------------+
 || RST           || Documentation source format || http://docutils.sourceforge.net/rst.html     |
@@ -39,11 +40,16 @@ Below is a short set of links to other documentation for technology that Crafter
 
    architecture
    content-modeling
-   templates
    content-inheritance
+   custom-services-and-controllers
+   templates
    rte-setup
    extending-studio/index
-   projects/qa/test-case-creation
+   search
+   tagging
+   testing
+   errors
+
 
 ##############################
 Project Specific Documentation
@@ -52,26 +58,26 @@ Project Specific Documentation
 Crafter CMS comprises a number of projects, below are the project specific documentations.
 
 .. toctree::
-    :maxdepth: 1
-    :titlesonly:
+   :maxdepth: 1
+   :titlesonly:
 
-    projects/craftercms/index
-    projects/core/index
-    projects/commons/index
-    projects/engine/index
-    projects/studio/index
-    projects/search/index
-    projects/deployer/index
-    projects/profile/index
-    projects/social/index
-    projects/qa/index
+   projects/craftercms/index
+   projects/core/index
+   projects/commons/index
+   projects/engine/index
+   projects/studio/index
+   projects/search/index
+   projects/deployer/index
+   projects/profile/index
+   projects/social/index
+   projects/qa/index
 
 ####################
 Cookbook / Tutorials
 ####################
 
 .. toctree::
-	:maxdepth: 2
-	:titlesonly:
+   :maxdepth: 2
+   :titlesonly:
 
-    	cook-books/index
+   cook-books/index

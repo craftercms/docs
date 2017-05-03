@@ -36,7 +36,7 @@ Gradle command formats
 
 .. code-block:: bash
 
-	./gradlew command [-Penv={env}] [-Pmodule={module}]
+   ./gradlew command [-Penv={env}] [-Pmodule={module}]
 
 +-----------+-------------------------------------------+--------------+-----------------+
 || Command  || Description                              || Env Options || Module Options |
@@ -73,7 +73,7 @@ And ``module`` is one of:
 
 .. code-block:: bash
 
-  ./gradlew build
+   ./gradlew build
 
 The Gradle task above will:
 
@@ -91,14 +91,14 @@ Starting an environment or a module using Gradle looks like this:
 
 .. code-block:: bash
 
-  ./gradlew start [-PmoduleName={module}] [-Penv={env}]
+   ./gradlew start [-PmoduleName={module}] [-Penv={env}]
 
 What this does under the hood is:
 
 .. code-block:: bash
 
-  cd crafter-{env}-env
-  ./startups.sh
+   cd crafter-{env}-env
+   ./startups.sh
 
 Both of those options will:
 
@@ -250,7 +250,7 @@ Archives will be saved in as ``crafter-live-env.tar`` and ``crafter-live-env.zip
 
 .. code-block:: bash
 
-     ./gradlew livePack
+   ./gradlew livePack
 
                 
                 
@@ -266,7 +266,7 @@ Once all the sources have been downloaded, you can run
 
 .. code-block:: bash
 
-    ./gradlew liveEnv
+   ./gradlew liveEnv
 
 
 The Gradle task above will:
@@ -289,7 +289,7 @@ To run the *Live environment* you can:
 
 .. code-block:: bash
 
-    ./gradlew runLive
+   ./gradlew runLive
 
 or
  
@@ -297,8 +297,8 @@ or
 
 .. code-block:: bash
 
-    cd crafter-live-env
-    ./startup.sh
+   cd crafter-live-env
+   ./startup.sh
 
 
 Both of those options will:
@@ -490,7 +490,7 @@ To get more information about all tasks used:
 
 .. code-block:: bash
 
-    ./gradlew tasks --all
+   ./gradlew tasks --all
 
 **build**
 
@@ -498,7 +498,7 @@ Builds all the projects from source.
 
 .. code-block:: bash
 
-    ./gradlew build
+   ./gradlew build
 
 
 **build+ProjectName**
@@ -518,7 +518,7 @@ Example:
 
 .. code-block:: bash
 
-    ./gradlew buildStudio
+   ./gradlew buildStudio
 
 **clean**
 
@@ -526,7 +526,7 @@ Cleans all projects build results
 
 .. code-block:: bat
 
-    gradlew.bat clean
+   gradlew.bat clean
 
 **clean+ProjectName**
 Clean the build results of the given project possible values are:
@@ -543,7 +543,7 @@ Example:
 
 .. code-block:: bat
 
-    gradlew.bat cleanCore
+   gradlew.bat cleanCore
 
 
 **downloadSolr**
@@ -552,7 +552,7 @@ Downloads the given configure Solr version also verifies that the war file is ok
 
 .. code-block:: bat
 
-    gradlew.bat downloadSolr
+   gradlew.bat downloadSolr
 
 
 **downloadTomcat**
@@ -561,7 +561,7 @@ Downloads the given configure Tomcat version also verifies that the zip file is 
 
 .. code-block:: bash
 
-    ./gradlew downloadTomcat
+   ./gradlew downloadTomcat
 
 
 **authEnv**
@@ -573,7 +573,7 @@ This task will delete the *authEnv* folder.
 
 .. code-block:: bat
 
-    gradlew.bat buildEnv
+   gradlew.bat buildEnv
 
 
 
@@ -586,7 +586,7 @@ This task will delete the *liveEnv* folder.
 
 .. code-block:: bat
 
-    gradlew.bat buildEnv
+   gradlew.bat buildEnv
 
 
 **authPack**
@@ -602,9 +602,9 @@ Copy Crafter CMS repository and initialize submodules
 
 .. code-block:: bash
 
-    git clone https://github.com/craftercms/craftercms.git
-    cd craftercms
-    git submodule init
+   git clone https://github.com/craftercms/craftercms.git
+   cd craftercms
+   git submodule init
 
 .. _update-submodules:
 
@@ -614,7 +614,7 @@ Update Submodules
 
 .. code-block:: bash
 
-    git submodule update --force --recursive --remote
+   git submodule update --force --recursive --remote
 
 
 Change Project URL to a fork
@@ -625,7 +625,7 @@ Change Project URL to a fork
 
 .. code-block:: bash
 
-    git submodule sync --recursive
+   git submodule sync --recursive
 
 
 Change the branch/tag of a project (manual way)
@@ -636,6 +636,6 @@ Change the branch/tag of a project (manual way)
 
 .. code-block:: bash
 
-    git submodule sync --recursive
+   git submodule sync --recursive
 
 3. Run :ref:`update-submodules`

@@ -15,11 +15,8 @@ As mentioned in the previous section, components only differ from pages in that 
    :titlesonly:
 
    templating-api
-   custom-services-and-controllers
    in-context-editing
    template-page
    template-component
 
 To learn more about content, pages and components, please see the previous section :ref:`content-model`.
-
-.. todo:: finish the description of templates, page templates
