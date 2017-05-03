@@ -13,7 +13,7 @@ Content Inheritance Basics
 --------------------------
 
 Content objects in Crafter CMS are essentially structured markup, XML by default, and house data authored via Crafter Studio by content authors. Content objects are typically structured as a tree which naturally suits the notion of inheriting from a parent (not to say that the inheritance mechanics are limited to that topology). Inhertiance works as follows:
-Assume we have two objects, one called Parent and one called Child and they're set up:
+Assume we have two objects, one called Parent and one called Child and they're set up as follows:
 
 **Parent**: Below you'll see a typical *level descriptor* which will be the parent of another object. You'll note the *level descriptor* defines multiple elements that are common to everthing at this level in the hierarchy and below it. This *level descriptor* defines a primary CSS file ``main.css``, a common header component ``default-header.xml`` and a common footer component ``default-footer.xml``.
 
@@ -57,7 +57,7 @@ Assume we have two objects, one called Parent and one called Child and they're s
         	<lastModifiedDate_dt>10/8/2016 19:58:30</lastModifiedDate_dt>
 	</component>
 
-**Child**: Below is the XML file of a page residing under the above *level descriptor* and is setup to inherit from it. You'll note the definition of the ``merge-strategy`` as ``inherit-levels``, this invokes the level-based inheritance mechanics that require Crafter CMS to look at current and higher levels for files named ``crafter-level-descriptor.level.xml`` (this is configrable). You'll also note that this page doesn't specify the CSS file/group of files to include, nor will it need to specify the header nor footer components.
+**Child**: Below is the XML file of a page residing under the above *level descriptor* and is setup to inherit from it. You'll note the definition of the ``merge-strategy`` as ``inherit-levels``, this invokes the level-based inheritance mechanics that require Crafter CMS to look at current and higher levels for files named ``crafter-level-descriptor.level.xml`` (this is configurable). You'll also note that this page doesn't specify the CSS file/group of files to include, nor will it need to specify the header nor footer components.
 
 .. code-block:: xml
 

@@ -7,15 +7,20 @@ Content authors creates, edits and submits content for a site.  Crafter CMS's Cr
 .. include:: /includes/how-craftercms-works.rst
 
 * Authors work in Crafter Studio
+
     * It is a web based application. There is nothing to install.
     * It is multi-tenant so you can manage as many sites as you need to
     * It provides a safe environment to make and preview content changes
     * All changes are versioned and audited
     * Once ready, content is submitted to workflow for approval
+
 * On approval, content is published to the live environment.
+
     * Content can be published immediately
     * Or on a schedule
+
 * Crafter Studio can publish to anywhere including social networks however, we often Publish to Crafter Engine.
+
     * Crafter Engine is a high performance, Spring MVC based content delivery engine.
     * Crafter Engine delivers highly personalized HTML (and other markup) based content and Content APIS (Content as a Service).
     * Crafter Engine is multi-channel.  It supports Responsive Design and Adaptive Design as well as Content as API(s)
@@ -32,9 +37,8 @@ To log in to Crafter Studio:
     * Click "Sign in"
 
 .. image:: /_static/images/login-screen-full.png
-    :height: 800px
-    :width: 800 px
-    :scale: 95 %
+    :alt: Getting Started - Login Screen
+    :width: 95 %
     :align: center
     
 Note: You can change the language used for the Studio UI by selecting a language on the log in screen.

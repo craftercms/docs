@@ -1,3 +1,5 @@
+.. _template-page:
+
 ==============
 Page Templates
 ==============
@@ -24,7 +26,7 @@ Enter a Display Label and content type name for your new page template, then sel
 	:alt: Template Create New Type Dialog
 	:align: center
 
-We'll now start to construct the layout of the page.  A template has three ingredients, the model, the view and the controller.
+We'll now start to construct the layout of the page.  A template has three ingredients: the model, the view and the controller.
 
 ^^^^^
 Model
@@ -102,7 +104,8 @@ The model for our template is done.  You can add some other controls by dragging
 View
 ^^^^
 
-We'll now build the view for our template, which is the freemarker template file that renders the content, typically to HTML markup.  There are two ways to create the freemarker template file for our template.  One way is to open the Sidebar menu in Studio, then navigate to the **Templates** folder, depending on how your site is setup, you may want to navigate to the subfolder in your Templates folder where you want to create the freemarker template file.  Once you are in the desired subfolder, right click on that folder then select **Create Template**
+We'll now build the view for our template, which is the freemarker template file that renders the content, typically to HTML markup.
+There are two ways to create the freemarker template file for our template.  One way is to open the Sidebar menu in Studio, then navigate to the **Templates** folder, depending on how your site is setup, you may want to navigate to the subfolder in your Templates folder where you want to create the freemarker template file.  Once you are in the desired subfolder, right click on that folder then select **Create Template**
 
 .. figure:: /_static/images/templates-ftl-create-sidebar.png
 	:alt: Template Create FTL from Sidebar
@@ -148,6 +151,34 @@ We will now start filling in the template of how we want the content captured in
 Controller
 ^^^^^^^^^^
 
-The controller is used to customize your page by enabling you to run codes before the page is rendered.  To find out more, please see :ref:`custom-services-and-controllers`
+To complete the content type template we are building, we will create a custom controller.  In the preceding section, we created a new content type (template) Page - Blog.  We will now add a couple of featured articles at the bottom of the page depending on the active Persona.  To be able to display articles depending on the active Persona, we will need to get a list of articles tagged for the active Persona.  This can be done by adding a script that gets executed to get the list of articles tagged for the persona selected before the page is rendered.
 
-Here, we will create a custom controller for the new content type template that we are creating.
+Open the **Sidebar** menu and navigate to the **Scripts** folder.  Click on the **Scripts** folder then **scripts**.  Right click on the folder **pages**, then select **Create Controller**
+
+.. figure:: /_static/images/templates-create-controller.png
+	:alt: Template Create Controller
+	:align: center
+
+Enter a name for the controller, then click on the **Create** button.  Since we are creating this controller for our Page-Blog template, we will name the script ``blog.groovy``.  Putting the script under *scripts->pages* and naming it after the page content type, binds the script to our page.
+
+.. figure:: /_static/images/templates-dialog-create-controller.png
+	:alt: Template Dialog Create Controller
+	:align: center
+
+We can now start adding the script to get a list of articles depending on the active Persona.
+
+.. figure:: /_static/images/templates-input-script-controller.png
+	:alt: Template Controller Script
+	:align: center
+
+There are two ways to bind a script/controller to a page/component.  The first way, as we have seen is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type.  We'll show the other way how to bind a script to a page/component in the next section :ref:`template-component`
+
+To find out more about page and component scripts, please see :ref:`page-and-component-scripts`.
+
+Now that we have our controller, we just need to add code to the freemarker template (view) to display the list of articles returned by the script.
+
+.. figure:: /_static/images/templates-controller-added.png
+	:alt: Template Modify FTL to Display Controller Script Output
+	:align: center
+
+As you can see from the controller we just added, the controller is used to customize your page by enabling you to run codes before the page is rendered.  To find out more about custom services and controllers in Crafter CMS, please see the section :ref:`custom-services-and-controllers`.

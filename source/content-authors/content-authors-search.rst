@@ -8,9 +8,7 @@ Searching
 
 
 .. image:: /_static/images/page-toolbar-search.png
-    :height: 900px
-    :width: 900 px
-    :scale: 50 %
+    :width: 50 %
     :align: center
 
 .. image:: /_static/images/page-search.png

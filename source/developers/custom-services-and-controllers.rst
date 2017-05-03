@@ -163,6 +163,9 @@ controller then must be placed in Scripts > controllers > sitemap.groovy. The co
 
     return null
 
+
+.. _page-and-component-scripts:
+
 Page and Component Scripts
 ==========================
 
@@ -177,7 +180,7 @@ is the XML descriptor content, of type SiteItem. The scripts don't have to retur
 There are 2 ways in which you can "bind" a script to a page or component:
 
 #.  Put the script under Scripts > pages or Scripts > components, and name it after the page or component content type.
-#.  When creating the content type for the page or component, add a Item Selector with the variable name ``scripts``. Later when creating
+#.  When creating the content type for the page or component, add an Item Selector with the variable name ``scripts``. Later when creating
     a page or component of that type, you can select multiple scripts that will be associated to the page or component.
 
 The following is an example of a component script. The component content type is ``/component/upcoming-events``. We can then place the
