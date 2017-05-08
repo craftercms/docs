@@ -47,9 +47,9 @@ Request
 
 .. code-block:: json
 
-{
-  "reprocess_all_files": false
-}
+  {
+    "reprocess_all_files": false
+  }
 
 ^^^^^^^^
 Response
@@ -59,51 +59,51 @@ Response
 
 .. code-block:: json
 
-	{
-	  "target": {
-	    "id": "mysite-dev",
-		"env": "dev",
-		"siteName": "mysite",
-	    "load_date": "2017-01-31T17:08:48.308-05:00"
-	  },
-	  "start": "2017-01-31T17:08:50.953-05:00",
-	  "end": "2017-01-31T17:08:53.279-05:00",
-	  "status": "SUCCESS",
-	  "change_set": {
-	    "created_files": [
-	      "site/website/index.xml"
-	    ],
-	    "updated_files": [],
-	    "deleted_files": []
-	  },
-	  "processor_executions": [
-	    {
-	      "processor_name": "gitPullProcessor",
-	      "start": "2017-01-31T17:08:50.96-05:00",
-	      "end": "2017-01-31T17:08:51.883-05:00",
-	      "status": "SUCCESS",
-	      "status_details": "Successfully cloned Git remote repository /opt/crafter/repos/mysite into /opt/crafter/deployed-sites/mysite",
-	      "running": false
-	    },
-	    {
-	      "processor_name": "searchIndexingProcessor",
-	      "start": "2017-01-31T17:08:51.883-05:00",
-	      "end": "2017-01-31T17:08:53.279-05:00",
-	      "status": "SUCCESS",
-	      "status_details": {
-	        "successfulUpdates": [
-	          "site/website/index.xml"
-	        ],
-	        "successfulDeletes": [],
-	        "failedUpdates": [],
-	        "failedDeletes": [],
-	        "attemptedUpdatesAndDeletes": 1
-	      },
-	      "running": false
-	    }
-	  ],
-	  "running": false
-	}
+  {
+    "target": {
+      "id": "mysite-dev",
+      "env": "dev",
+      "siteName": "mysite",
+      "load_date": "2017-01-31T17:08:48.308-05:00"
+    },
+    "start": "2017-01-31T17:08:50.953-05:00",
+    "end": "2017-01-31T17:08:53.279-05:00",
+    "status": "SUCCESS",
+    "change_set": {
+      "created_files": [
+        "site/website/index.xml"
+      ],
+      "updated_files": [],
+      "deleted_files": []
+    },
+    "processor_executions": [
+      {
+        "processor_name": "gitPullProcessor",
+        "start": "2017-01-31T17:08:50.96-05:00",
+        "end": "2017-01-31T17:08:51.883-05:00",
+        "status": "SUCCESS",
+        "status_details": "Successfully cloned Git remote repository /opt/crafter/repos/mysite into /opt/crafter/deployed-sites/mysite",
+        "running": false
+      },
+      {
+        "processor_name": "searchIndexingProcessor",
+        "start": "2017-01-31T17:08:51.883-05:00",
+        "end": "2017-01-31T17:08:53.279-05:00",
+        "status": "SUCCESS",
+        "status_details": {
+          "successfulUpdates": [
+            "site/website/index.xml"
+          ],
+          "successfulDeletes": [],
+          "failedUpdates": [],
+          "failedDeletes": [],
+          "attemptedUpdatesAndDeletes": 1
+        },
+        "running": false
+      }
+    ],
+    "running": false
+  }
 
 ---------
 Responses
