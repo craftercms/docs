@@ -31,6 +31,9 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------+
 || site_name              || String     || |checkmark|  || The target's site name (e.g mysite).  |
 +-------------------------+-------------+---------------+----------------------------------------+
+|| reprocess_all_files    || String     ||              || If all files in the target's repo     |
+||                        ||            ||              || should be reprocessed.                |
++-------------------------+-------------+---------------+----------------------------------------+
 
 -------
 Example
@@ -41,6 +44,12 @@ Request
 ^^^^^^^
 
 ``POST .../api/1/target/deploy/dev/mysite``
+
+.. code-block:: json
+
+{
+  "reprocess_all_files": false
+}
 
 ^^^^^^^^
 Response
@@ -54,7 +63,7 @@ Response
 	  "target": {
 	    "id": "mysite-dev",
 		"env": "dev",
-		"siteName": "mysite",		
+		"siteName": "mysite",
 	    "load_date": "2017-01-31T17:08:48.308-05:00"
 	  },
 	  "start": "2017-01-31T17:08:50.953-05:00",
