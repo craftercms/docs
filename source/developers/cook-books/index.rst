@@ -12,3 +12,4 @@ Cookbooks / Tutorials
    active-cache/index
    activiti/index
    services/index
+   blueprint/index

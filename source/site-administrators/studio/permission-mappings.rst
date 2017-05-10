@@ -2,6 +2,61 @@
 Permission Mappings
 ===================
 
+The permission mappings configuration file allows you to assign permissions to folders and objects in a Site giving specific Roles rights to the object.  The permission mappings config file contains the permissions mappings for the roles defined in the role mappings config file.  When applying permissions to Roles, rights are granted by adding permissions inside the tag ``<allowed-permissions>``.  Absence of permissions means the permission is denied.  Rules have a regex expression that govern the scope of the permissions assigned.  A list of available permissions that can be granted to Roles is available after the sample configuration file.
+
+Permissions are defined per:
+site > role > rule
+
+For example, to grant the role component_author the ability to read/write
+components and read-only to everything else:
+
+.. code-block:: xml
+
+      <role name="author">
+          <rule regex="/site/website/.*">
+            <allowed-permissions>
+              <permission>Read</permission>
+            </allowed-permissions>
+          </rule>
+          <rule regex="/site/components/.*">
+            <allowed-permissions>
+              <permission>Read</permission>
+              <permission>Write</permission>
+              <permission>Create Content</permission>
+              <permission>Create Folder</permission>
+            </allowed-permissions>
+          </rule>
+          <rule regex="/static-assets/.*">
+            <allowed-permissions>
+              <permission>Read</permission>
+            </allowed-permissions>
+          </rule>
+      </role>
+
+A regex of "~DASHBOARD~" governs view access to the publishing workflow
+related dasbhboard widgets:
+- Items Waiting For Approval
+- Approved Scheduled Items
+- Recently Published
+
+To grant a role the ability to view these dashboard widgets, simply grant
+the role the permission Publish to the scope ~DASHBOARD~. For example:
+
+.. code-block:: xml
+
+      <rule regex="~DASHBOARD~">
+        <allowed-permissions>
+          <permission>Publish</permission>
+        </allowed-permissions>
+      </rule>
+
+To modify/view the permission mappings for your site in Studio, click on **Site Config** at the bottom of the *Sidebar*, then click on **Configurations** and select **Permissions Mapping** from the dropdown list.
+
+.. image:: /_static/images/config-open-permission-mappings.png
+    :alt: Configurations - Open Permission Mappings
+    :width: 65 %
+    :align: center
+
 ------
 Sample
 ------
