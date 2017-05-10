@@ -2,56 +2,81 @@
 Groups Management
 =================
 
-Groups Management allows you to administrate the groups on the different sites created on Crafter CMS. You can add, remove,
-edit, and manage the users that will belong to the groups.
+Groups Management allows you to administrate the groups in the site created on Crafter CMS. You can add, remove,
+edit, and manage the users that will belong to the groups and you can also add and remove groups.
 
 To find this section through studio follow the next instructions:
 
-#. Click on Admin Tools button located in the Navigation Bar.
-#. Choose Groups from the menu (this section may be selected by default).
+#. Click on **Site Config** at the bottom of the *Sidebar*.
+#. Click on **Groups** from the menu.
 
-.. image:: /_static/images/admin-tools-groups.png
+.. image:: /_static/images/site-config-groups.png
     :width: 70%
     :alt: Groups Management
     :align: center
 
 ----------------
-Filtering Groups
+Searching Groups
 ----------------
 
-You can show groups that belong to a particular site, just by selecting the desired site on the sites dropdown.
+You can search for groups by their properties (Display Name, Description), simply enter your search term into the search bar and it will show results that match your search term.
 
-.. image:: /_static/images/admin-tools-filter-groups.png
-    :width: 30%
-    :alt: Groups Management Filter
-    :align: center
-
-Also, you can search groups by their properties (Display Name, Description, Site), when typing the Group property on the
-"Search" input it will filter and show only results that match that property.
-
-.. image:: /_static/images/admin-tools-groups-search.png
+.. image:: /_static/images/site-config-groups-search.png
     :width: 60%
     :alt: Groups Management Search
     :align: center
+
 
 ------------------
 Adding a New Group
 ------------------
 
-To create a new group, you just need to click on the "New Group" button,
+To create a new group, you just need to click on the "**New Group**" button,
 
-.. image:: /_static/images/admin-tools-groups-create-button.png
+.. image:: /_static/images/site-config-groups-new-btn.png
     :width: 60%
-    :alt: Admin Tools - Groups
+    :alt: Site Config - Groups New
     :align: center
 
-then, a modal will show up with the required fields for the group creation.
-After filling the form, click on "Create", and the new group will show on the groups table.
+then, a modal dialog will show up with the required fields for the group creation.  Enter a display name and a short description for the new group.
+After filling the form, click on **Create**, and the new group will show in the groups table.
 
-.. image:: /_static/images/admin-tools-groups-create.png
+.. image:: /_static/images/site-config-groups-create.png
     :width: 60%
-    :alt: Admin Tools - Groups
+    :alt: Site Config - Groups Create Dialog
     :align: center
+
+A notification of successful group creation will pop up for a few seconds after clicking on the **Create** button.
+
+.. image:: /_static/images/site-config-groups-created-notification.png
+   :width: 40%
+   :alt: Site Config - Groups Created Notification
+   :align: center
+
+----------------
+Removing a Group
+----------------
+
+To remove a group, select a group from the list and click on the trash can icon to the right of the group you would like to remove.
+
+.. image:: /_static/images/site-config-groups-remove-icon.png
+   :width: 60%
+   :alt: Site Config - Groups Remove Icon
+   :align: center
+
+A confirmation dialog will appear asking you if you want to delete the group.  Click on **Yes** to remove the group.
+
+.. image:: /_static/images/site-config-groups-remove-confirm.png
+   :width: 40%
+   :alt: Site Config - Groups Remove Confirmation
+   :align: center
+
+On successful removal of the group, a notification will appear for a few seconds that the group has been deleted.
+
+.. image:: /_static/images/site-config-groups-removed-notification.png
+   :width: 40%
+   :alt: Site Config - Groups Removed Notification
+   :align: center
 
 -------------------------
 Editing an Existing Group
@@ -59,52 +84,57 @@ Editing an Existing Group
 
 To edit a group, click on the pencil located at the right side of the group on the list,
 
-.. image:: /_static/images/admin-tools-groups-edit-button.png
+.. image:: /_static/images/site-config-groups-edit-btn.png
     :width: 80%
-    :alt: Admin Tools - Groups
+    :alt: Site Config - Groups Edit Icon
     :align: center
 
-then, a modal will show up. Now change the fields of the group you need, and finally click on "Edit". The edited group
-will be updated on the groups list.
+then, a modal dialog will show up. In this dialog, you can modify the group name and description, just click on the **Save** button after making your changes to either group name or description.  You can also add/remove users from the group.  Finally, you'll see a list of all users that belong to the group.  To return to the list of all groups in your site, click on **Back to groups** at the top right of the dialog.
 
-.. image:: /_static/images/admin-tools-groups-edit.png
+.. image:: /_static/images/site-config-groups-edit.png
     :width: 60%
-    :alt: Admin Tools - Groups
+    :alt: Site Config - Groups Edit
     :align: center
 
-------------------------------------
-Asigning/Removing Users from a group
-------------------------------------
+-----------------------
+Adding Users to a Group
+-----------------------
 
-By clicking on "Assign User", it will show a section where you can add or remove users to a specific group (from a site).
-On that view you can filter by sites, or search on the groups/users, and by clicking on a group, it will show the users
-that belong to that group.
+To add a user to a group, pick the group you want to add users, then click the pencil to the right of the group name, the same as the instructions listed above for editing a group, then click in the search box labeled **Add new members** and type in the name, username or email of the user you want to add to the group.
 
-.. image:: /_static/images/admin-tools-groups-assign-users-button.png
+.. image:: /_static/images/site-config-groups-add-user-search.png
     :width: 60%
-    :alt: Admin Tools - Groups
+    :alt: Site Config - Groups Add User Search
     :align: center
 
-To add a user to a group, first select the desired group (by clicking on it), then click on the "+" button located on the
-users section, that will display a modal with a list of users.
+Notice that it will give you a list of matching users, select the user you want to add and if you want to add some more users to the group, just type in the names, then click on the **Add members** button.
 
-.. image:: /_static/images/admin-tools-groups-assign-users.png
-    :width: 70%
-    :alt: Admin Tools - Groups
-    :align: center
-
-Then, click on "Add" on all of the users you want to assign to the group, and finally, click on "Close". You will notice
-that the added users will show on the users list for the current group.
-
-.. image:: /_static/images/admin-tools-groups-add-user.png
+.. image:: /_static/images/site-config-groups-add-members.png
     :width: 60%
-    :alt: Admin Tools - Groups
+    :alt: Site Config - Groups Add Members
     :align: center
 
-If you want to remove a user from a group, place your mouse over the user, and click on the trash button on the right,
-and on the confirmation message, click "Yes".
+It will then give you a notification that the users has been successfully added to the group.  Notice that the added user is now listed in the member list at the bottom of the page.
 
-.. image:: /_static/images/admin-tools-groups-remove-user.png
+.. image:: /_static/images/site-config-groups-users-added-notification.png
+    :width: 40%
+    :alt: Site Config - Groups Members Added Notification
+    :align: center
+
+---------------------------
+Removing Users from a Group
+---------------------------
+
+To remove a user from the group, click on the trash can icon to the right of the user.
+
+.. image:: /_static/images/site-config-groups-remove-user.png
     :width: 60%
-    :alt: Admin Tools - Groups
+    :alt: Site Config - Groups Remove Members
+    :align: center
+
+It will then ask you for confirmation if you want to delete the user from the group, click on **Yes** to delete the user from the group.
+
+.. image:: /_static/images/site-config-groups-delete-user-confirm.png
+    :width: 40%
+    :alt: Site Config - Groups Remove Members Confirmation
     :align: center
