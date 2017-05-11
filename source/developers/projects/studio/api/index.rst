@@ -85,4 +85,16 @@ Security
 	security/logout
 	security/validate-session
 
+
+-------
+Monitor
+-------
+
+.. toctree::
+	:maxdepth: 1
+
+	monitor/version
+	monitor/status
+	monitor/memory
+
 .. todo:: Current coverage is limited to version 3.x new features, will need to extend converage to all API calls
