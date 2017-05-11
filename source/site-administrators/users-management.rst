@@ -1,8 +1,8 @@
 .. highlight:: xml
 
-====================
+================
 Users Management
-====================
+================
 
 -----------
 Description
@@ -12,63 +12,67 @@ User Management allows you to control and set up who can access and manage the s
 
 To find the Users Management console follow the next instructions:
 
-	#. Click on Admin Tools option located in main top navigation.
+	1. Click on the **Users** option located at the top right of the browser
 
-		.. image:: /_static/images/users-admin-tools.png
-			:align: center
+        .. image:: /_static/images/users-manage-access.png
+            :alt: Users - Manage Access
+            :align: center
 
-	#. Choose Users from tab menu.
+	2. Here's the dialog that will appear after clicking on **Users** at the top right of the browser
 
-		.. image:: /_static/images/users-tab.png
-			:align: center
+        .. image:: /_static/images/users-tab.png
+            :alt: Users Dialog
+            :align: center
 
 -------
 Actions
 -------
 
-You can list, search, filter, add or delete users, as well as view specific information.
+You can list, search, add or delete users, as well as view specific information.
 
 ^^^^^^^^^^^^^
 Listing Users
 ^^^^^^^^^^^^^
 
-On this section you will see a full list of all existing users.
+To see a list of all existing users, make sure that there are no search terms entered in the search bar.  You can also change the number of users listed per page by changing the number in the **Users per page** input field at the top right
 
-.. image:: /_static/images/users-list-all-sites.png
-	:align: center
-
-
-Filtering Users
-^^^^^^^^^^^^^^^
-
-On listing users, you can select the users that are part of a specific site. To filter users by site go to "All sites" dropdown and select the site you want to filter. In the following example we have chosen "editorial1", we got as a result just one related user: "Luis".
-
-.. image:: /_static/images/users-list-specific-site.png
-	:align: center
+.. image:: /_static/images/users-list-all.png
+    :alt: Users - List All
+    :align: center
 
 
 Searching Users
 ^^^^^^^^^^^^^^^
 
-Also on listing users, you can search for a specific user. To search users, go to the search field and type user name, last name, user name or mail. In the following example we typed "Ross", we obtained only one related user: "Rossana".
+You can search for a specific user. To search users, go to the search field and type user name, last name, user name or mail. In the following example we typed "Ross", we obtained only one related user: "Rossana".
 
 .. image:: /_static/images/users-search.png
-	:align: center
+    :alt: Users - Search
+    :align: center
 
 
 ^^^^^^^^^^^^^^^^^
 Creating New User
 ^^^^^^^^^^^^^^^^^
 
-To creat a new user, please click on the "New User" button at the right of the page.
+To create a new user, please click on the "New User" button at the right of the page.
 
 .. image:: /_static/images/users-add-new.png
-	:align: center
+    :alt: Users - Add New
+    :align: center
 
-A modal will be displayed, please fill out all the fields and finally click on "Create" button. If you do not want to create a new user, please click on the "Cancel" button.
+A modal dialog will be displayed, please fill out all the fields and finally click on the "**Save**" button. If you do not want to create a new user, please click on the "**Cancel**" button.
 
 .. image:: /_static/images/users-add.png
-	:align: center
+    :alt: Users - Add
+    :align: center
+
+A notification will appear on the screen for a few seconds on successful creation of a new user
+
+.. image:: /_static/images/users-create-notification.png
+    :alt: Users - Created Notification
+    :align: center
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Viewing an Existing User
@@ -77,12 +81,14 @@ Viewing an Existing User
 To view a specific user, please click on the name property located inside the result table as shown in the following example.
 
 .. image:: /_static/images/users-view-btn.png
-	:align: center
+    :alt: Users - Click on Name to View Details
+    :align: center
 
-A modal will be displayed with the user information. To finish view mode click on "Close" button.
+A modal dialog will be displayed with the user information. To finish view mode, click on the "**Close**" button.
 
 .. image:: /_static/images/users-view.png
-	:align: center
+    :alt: Users - View User Info
+    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Editing an Existing User
@@ -91,12 +97,14 @@ Editing an Existing User
 To edit a specific user, please click on the pencil icon located inside the result table as shown in the following example.
 
 .. image:: /_static/images/users-edit-btn.png
-	:align: center
+    :alt: Users - Edit Icon
+    :align: center
 
-A modal will be displayed, please edit the fields you want to change and then click on "Create" button. If you do not want to edit the user, please click on "Cancel" button.
+A modal dialog will be displayed, please edit the fields you want to change and then click on the "**Save**" button. If you do not want to edit the user, please click on the "Cancel" button.  In this dialog, you can modify the user information such as email, first name, last name and user name.  You can also activate/de-activate the user currently being viewed by checking/unchecking the checkbox labeled **Enabled**.  The **Externally Managed** checkbox indicates whether the user is externally managed or not, such as the case in LDAP.  This dialog also allows you to change the password for the user currently being viewed.
 
 .. image:: /_static/images/users-edit.png
-	:align: center
+    :alt: Users - Edit
+    :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Removing an Existing User
@@ -105,11 +113,13 @@ Removing an Existing User
 To remove a specific user, please click on the trash can icon located inside the result table as shown in the following example.
 
 .. image:: /_static/images/users-remove-btn.png
-	:align: center
+    :alt: Users - Remove Icon
+    :align: center
 
-A confimation pop up will be displayed, please click on "Yes" to remove the user click on "Cancel" if you do not want to remove it.
+A confirmation pop up will be displayed, please click on "**Yes**" to remove the user and click on "**No**" if you do not want to remove it.
 
 .. image:: /_static/images/users-remove.png
-	:align: center
-	:width: 50%
+    :alt: Users - Remove
+    :align: center
+    :width: 50%
 
