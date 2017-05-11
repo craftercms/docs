@@ -16,3 +16,66 @@ Blueprints are Crafter CMS project templates.  It provides an initial structure/
 In the blueprint that comes out of the box with Crafter CMS, Website_Editorial blueprint, it provides us with an initial structure for our site, along with the site navigation, content inheritance, taxonomies for organizing the content such as categories and segments, which was also used for targeting content, static assets such as the initial images and fonts used for the site and configuration files for managing things like the personas for targeting, the permissions for all the items in the site, the role mappings, the RTE configuration, etc.  To see more of the Website Editorial blueprint, please see :ref:`your_first_website` where we create a site based on the Website_Editorial blueprint.
 
 As mentioned earlier, blueprints allows us to generate sites with predefined layouts, contents and configuration.  Blueprints could be a site theme or an API only site.  New blueprints can be created from a site and added into Crafter CMS allowing the creation of more sites based on the new blueprint.  In the section that follows, we will see how the Empty blueprint that comes out of the box from Crafter CMS and an existing site is used to create a new blueprint.
+
+-------------------------------
+How do I make my own Blueprint?
+-------------------------------
+
+^^^^^^^^^^^^^^
+On Crafter 3.0
+^^^^^^^^^^^^^^
+
+Suppose ``{CRAFTER_HOME}`` is the path to your Crafter installation so that it contains the startup scripts, ``apache-tomcat/`` and ``data/`` folders.
+
+Blueprints reside in ``{CRAFTER_HOME}/data/repos/global/blueprints`` since Crafter 3.0. Each folder corresponds to a blueprint (You may notice the empty and website_editorial blueprint folders), you can start by copying the ``empty`` folder and renaming it to your blueprint’s name, like "my_blueprint".
+
+Edit any files as desired. You can either edit them directly with a text editor, or with the help of Crafter Studio as detailed in :ref:`blueprint-edit`.
+
+Once you do, commit the change to the global repo (``{CRAFTER_HOME}/data/repos/global/``) by using ``git``, and your blueprint will now start appearing when you try to create a new site.
+
+Committing Changes
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Crafter 3 uses a vanilla version of Git, so regular git commands work as intended. To commit your changes so Crafter can see it, head to ``{CRAFTER_HOME}/data/repos/global/blueprints`` and git add your modified files like this
+
+.. code-block:: sh
+
+	git add <filename>
+
+for each filename. Or, to add all at once use:
+
+.. code-block:: sh
+
+	git add --all
+
+And once you are done, commit them with the following command:
+
+.. code-block:: sh
+
+    git commit -m "<the commit’s description>"
+
+No need to push, there’s no remote configured. You can also use any git client. Now, it will be available when you create a new site.
+
+^^^^^^^^^^^^^^^^^^^^^
+On Crafter 3.1 and on
+^^^^^^^^^^^^^^^^^^^^^
+
+.. todo:: Write guide for 3.1 and on
+
+.. _blueprint-edit:
+
+===============================
+Editing a Blueprint with Studio
+===============================
+
+Since a blueprint is very similar in its layout to a site, you can modify a blueprint by modifying a site created with that blueprint and then merging the changes. This has several benefits:
+
+* You can quickly see the effects of your modifications on Studio's preview site.
+* You can create components, pages, and other file types through Studio, providing you with base templates, snippets, and type-specific UIs.
+
+.. warning:: However
+
+    * The ``config/`` folder contains multiple configuration files with the site name. In blueprints, this is generically represented with ``{siteName}``, so you must either only edit config files directly on the blueprint's filesystem, or carefully replace your preview site name with ``{siteName}`` as appropriate (having an initial version of the blueprint in a git repository will be helpful for this.)
+    * Each site is made up of 2 different git repos, ``sandbox`` and ``published``. Inside of either of them, lie the site's folders and also the ``.git/`` folder. You need to move this site folders back to the blueprint folder, but avoid copying this ``.git/`` folder, as it's unnecessary for the final distributable package and may even contain sensitive information.
+
+Remember that whenever you are edit directly in the filesystem, you need to commit your changes and then "Sync from Repository" from the Site Config to ensure they are properly reflected.
