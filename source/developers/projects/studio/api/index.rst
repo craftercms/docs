@@ -86,9 +86,9 @@ Security
 	security/validate-session
 
 
--------
-Monitor
--------
+----------
+Monitoring
+----------
 
 .. toctree::
 	:maxdepth: 1
