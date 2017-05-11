@@ -84,7 +84,7 @@ To define a drop zone for components simply add the following attribute to the c
 
 .. code-block:: guess
 
-	<@studio.componentContainerAttr target="bottomPromos" />
+	<@studio.componentContainerAttr target="bottomPromos" objectId=contentModel.objectId />
 
 Tag Attributes
 --------------
