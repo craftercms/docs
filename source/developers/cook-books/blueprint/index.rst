@@ -59,6 +59,8 @@ Content Modeling
 
 A powerful and extensible blueprint that can be used in a variety of pages and scenarios needs proper :ref:`content-modeling`, so you have to be familiar with it before proceeding.
 
+A good blueprint separates each meaningful chunk of HTML code into a component. For example, whether you implement an "Our Team" section using a repeating group or multiple "Teammate" child components, it still has to be a separate type that only contains information related to "Our Team". Whether it is a Component or a Page, it shouldn't contain "Product" information. Once you have identified HTML chunks with a meaning, start by moving them into their type's ``template.ftl``. Next, replace any information with a variable from the ``contentModel`` (and add the respective control to the Content Type). Unless they are extremely simple, most pages will contain child components, even if they are just a ``header`` and ``footer`` component provided by the Section Defaults.
+
 There are some best practices to help you:
 
     * Prefix all your Content Type's display label with either "Component - " or "Page - " as appropriate.
@@ -66,8 +68,8 @@ There are some best practices to help you:
 
        * Additionally, since Section Defaults have inheritance mechanics, a child folder that's meant to have private pages could have it's own Section Defaults that overrides the normal site logo with a more private looking one, signalling users that they are in the intranet.
        * You can apply this similarly for headers, footers, log in floating forms, and many more.
-    * Use drag and drop but keep it to a minimum. At the moment, you can't limit what kind of components can be dropped into a container, so this enormouse amount of flexibility can make for a confusing user experience. Picture having a page with group of sections, that each contains headers, if both sections and headers are drag and droppable, an user could accidentally drop a section inside another section without noticing instead of just reordering. It could be more comfortable that only sections are drag and droppable.
-    * You can use label controls to add additional information to the content type's form.
+    * Use drag and drop but keep it to a minimum. At the moment, you can't limit what kind of components can be dropped into a container, so this enormous amount of flexibility can make for a confusing user experience. Picture having a page with a group of sections, that each contains headers. If both sections and headers are drag and droppable, an user could accidentally drop a section inside another section without noticing instead of just reordering. It could be more comfortable that only sections are drag and droppable.
+    * You can use label controls to add additional information to the content type's form. This is useful to add tips or additional information for advanced controls.
     * Prefer repeating groups over child components. Child components are ultimately more versatile, but if you are only going to repeat text, and that text is not going to appear outside the repeating group again, it's a better user experience to just use a repeating group.
 
        * Bear in mind that you can't have nested repeating groups, so only the innermost repetition can be a repeting group.
