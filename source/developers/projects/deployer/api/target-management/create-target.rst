@@ -60,8 +60,9 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------+
 || repo_branch            || String     ||              || *Only use with "remote" template*.    |
 ||                        ||            ||              || The branch name of the remote Git     |
-||                        ||            ||              || repo to pull from. If not specified   |
-||                        ||            ||              || ``master`` will be used.              |
+||                        ||            ||              || repo to pull from. If not specified,  |
+||                        ||            ||              || the branch will be whatever branch is |
+||                        ||            ||              || the current one in the remote repo.   |
 +-------------------------+-------------+---------------+----------------------------------------+
 || repo_username          || String     ||              || *Only use with "remote" template*.    |
 ||                        ||            ||              || The username of the remote Git repo.  |
@@ -69,9 +70,10 @@ Parameters
 || repo_username          || String     ||              || *Only use with "remote" template*.    |
 ||                        ||            ||              || The password of the remote Git repo.  |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| engine_url             || String     || |checkmark|  || Base URL of Engine, used to make API  |
+|| engine_url             || String     ||              || Base URL of Engine, used to make API  |
 ||                        ||            ||              || calls like clear cache and rebuild    |
-||                        ||            ||              || context.                              |
+||                        ||            ||              || context. If not specified the default |
+||                        ||            ||              || is http://localhost:8080.             |
 +-------------------------+-------------+---------------+----------------------------------------+
 || notification_addresses || String     ||              || The email addresses that should       |
 ||                        ||            ||              || receive deployment notifications.     |
@@ -96,10 +98,10 @@ Requests
     "site_name": "mysite",
     "replace": false,
     "template_name" : "remote",
-    "repo_url" : "ssh://crafter@server/opt/crafter/deployer/target/mysite",
+    "repo_url" : "ssh://crafter@server/opt/crafter/data/repos/sites/mysite/published",
     "repo_username" : "crafter",
     "repo_password" : "crafter",
-    "repo_branch" : "master",
+    "repo_branch" : "live",
     "engine_url" : "http://localhost:8080",
     "notification_addresses" : ["admin1@mysite.com", "admin2@mysite.com"]
   }
@@ -114,7 +116,7 @@ Requests
     "replace": true,
     "disable_deploy_cron": true,
     "template_name" : "local",
-    "repo_url" : "/opt/crafter/studio/data/sites/mysite/sandbox",
+    "repo_url" : "/opt/crafter/data/repos/sites/mysite/sandbox",
     "engine_url" : "http://localhost:8080",
   }
 
