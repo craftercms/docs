@@ -21,6 +21,8 @@ Crafter Engine also populates templates with other useful variables, described b
 
 .. include:: ../includes/freemarker-variables.rst
 
+.. _templating-rendering-navigation:
+
 --------------------
 Rendering navigation
 --------------------
