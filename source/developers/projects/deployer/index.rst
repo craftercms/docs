@@ -10,7 +10,7 @@ Crafter Deployer
 Source Code
 -----------
 
-Crafter Deployer's source code is managed in github: https://github.com/craftercms/deployer
+Crafter Deployer's source code is managed in Github: https://github.com/craftercms/deployer
 
 --------
 ReST API

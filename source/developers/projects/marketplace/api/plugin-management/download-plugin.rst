@@ -1,12 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-deployer-api-target-get:
+.. _crafter-marketplace-api-plugin-download:
 
-==========
-Get Target
-==========
+===============
+Download Plugin
+===============
 
-Get a Crafter Deployer target.
+Downloads a registered plugin.
 
 --------------------
 Resource Information
@@ -15,9 +15,9 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/target/get/:env/:site_name``                            |
+|| URL                       || ``/api/1/plugin/download/:id``                                   |
 +----------------------------+-------------------------------------------------------------------+
-|| Response Formats          || ``JSON``                                                         |
+|| Response Formats          || Octect Stream                                                    |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -27,9 +27,7 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------+
 || Name                   || Type       || Required     || Description                           |
 +=========================+=============+===============+========================================+
-|| env                    || String     || |checkmark|  || The target's environment (e.g dev).   |
-+-------------------------+-------------+---------------+----------------------------------------+
-|| site_name              || String     || |checkmark|  || The target's site name (e.g mysite).  |
+|| id                     || String     || |checkmark|  || The plugin ID                         |
 +-------------------------+-------------+---------------+----------------------------------------+
 
 -------
@@ -40,7 +38,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/target/get/dev/mysite``
+``GET .../api/1/plugin/download/myplugin``
 
 ^^^^^^^^
 Response
@@ -48,14 +46,9 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: json
+.. code-block:: guess
 
-  {
-    "env": "dev",
-    "siteName": "mysite",
-    "id": "mysite-dev",
-    "load_date" : "2017-01-26T10:00:1.234-05:00"
-  }
+  myplugin.car
 
 ---------
 Responses
@@ -64,10 +57,10 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------+
 || Status || Location                      || Response Body                                      |
 +=========+================================+=====================================================+
-|| 200    || ``.../target/get/:target_id`` || See example above.                                 |
+|| 200    || ``.../download/:id``          || See example above.                                 |
 +---------+--------------------------------+-----------------------------------------------------+
-|| 404    ||                               || ``{ "message" : "Target not found" }``             |
+|| 404    ||                               || ``{ "message" : "Plugin not found" }``             |
 +---------+--------------------------------+-----------------------------------------------------+
-|| 500    ||                               || ``{ "message" : "Internal server error:``          |
+|| 500    ||                               || ``{ "message" : "Internal server error:" }``       |
 ||        ||                               || ``ACTUAL_EXCEPTION" }``                            |
 +---------+--------------------------------+-----------------------------------------------------+
