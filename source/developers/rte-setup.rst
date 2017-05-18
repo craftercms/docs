@@ -84,6 +84,75 @@ Creating an RTE Setup
 
 .. todo:: EXPLAIN EXPLAIN XML FILE
 
+The RTE's configuration file looks like this:
+
+.. code-block:: xml
+
+    <config>
+        <setup>
+            <id>generic</id>	 
+            <rteStylesheets>
+                <link>
+                    <loadFromPreview>true</loadFromPreview>
+                    <url>/static-assets/css/style.css</url>         
+                </link>
+
+                <link>
+                    <appliesToChannel>iphonev,iphoneh</appliesToChannel>
+                    <loadFromPreview>true</loadFromPreview>
+                    <url>/static-assets/mobile/css/libs/jquery.mobile-1.0.min.css</url>         
+                </link>
+            </rteStylesheets>
+            
+            <toolbarItems1>formatselect,|,bold,italic,underline,strikethrough,|,sub,sup,charmap,|,outdent,indent,blockquote,|,justifyleft,justifycenter,justifyright,justifyfull,|,bullist,numlist,|,managedImage,link,unlink,anchor,|,code,|,undo,redo</toolbarItems1>
+            <toolbarItems2></toolbarItems2>
+            <toolbarItems3></toolbarItems3>
+            <toolbarItems4></toolbarItems4>
+            
+            <rteLinkStyles>
+                <style>
+                    <name>Standard</name>
+                    <value>standard</value>
+                </style>
+                <style>
+                    <name>Hidden</name>
+                    <value>hidden</value>
+                </style>
+                <style>
+                    <name>Button</name>
+                    <value>mediumButton</value>			
+                </style>		
+            </rteLinkStyles>
+                
+            <!-- widgets -->
+            <rteWidgets>
+            </rteWidgets>    
+            
+            <rteModules>
+                <module>insert-image</module>		
+                <module>channel</module>
+            </rteModules>
+        </setup>
+    </config>
+
+You can find it in Configuration, in the Site Config, as ``RTE Configuration``. Inside the ``<config>`` tag, there can be multiple ``<setup>`` tags. Each represents a possible RTE configuration that can be specified to be used by a RTE control. Each contains:
+
+    * An ``<id>`` tag with the name that must be specified for an RTE control to use this configuration.
+    * ``<rteStylesheets>`` tag that contains multiple ``<link>`` tags. Each link tag represents a link to a CSS stylesheet that will be used so that the RTE matches the look and feel of the site.
+
+      .. code-block:: xml
+
+        <link>
+         	<appliesToChannel>iphonev,iphoneh</appliesToChannel>
+			<loadFromPreview>true</loadFromPreview>
+			<url>/static-assets/mobile/css/libs/jquery.mobile-1.0.min.css</url>         
+        </link>
+
+      * ``<appliesToChannel>`` is optional. If it's missing, it will apply to every channel.
+    * ``<toolbarItems1>`` and similar contain the toolbar buttons in the RTE. You can specify any plugin as named in `Tiny MCE Plugins List <https://www.tinymce.com/docs/plugins/>`_. They will be featured in the same order as specified here, and separators can be specified with ``|``.
+    * ``<rteModules>`` is used to specify which external plugins to include, the list of which is available in `Crafter Studio's git repo <https://github.com/craftercms/studio2-ui/tree/master/static-assets/components/cstudio-forms/controls/rte-plugins>`_.
+
+For example, to use the ``edit-html`` editor, you'll have to add ``<module>edit-html</module>`` to ``<rteModules>`` and place ``edithtml`` somewhere in a toolbar ``<toolbarItems1>`` similar to this ``link,unlink,anchor,|,edithtml,|,undo,redo</toolbarItems1>``
 
 .. todo:: EXPLAIN EXAMPLES!
 
