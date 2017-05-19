@@ -1,13 +1,23 @@
-=====================
-Admin Console Tools
-=====================
+=================
+Site Config Tools
+=================
+
+The Site Config tools configuration file defines what modules are available for administration use when clicking on |siteConfig| from the Sidebar. This configuration is unique in that a configuration file exists in the following location of each site: ``SITENAME/config/studio/administration/tools.xml``
+
+.. image:: /_static/images/configuration-tool-config.png
+    :align: center
+    :alt: Site Config Tools
+
+.. |siteConfig| image:: /_static/images/configuration-site-config-icon.png
+             :width: 15%
 
 ------
 Sample
 ------
+Here is a sample tools configuration file.
 
 .. code-block:: xml
-    :caption: /cstudio/config/sites/SITENAME/administration/tools.xml
+    :caption: SITENAME/config/studio/administration/tools.xml
 
     <config>
         <tools>
@@ -39,7 +49,7 @@ Sample
                     <datasource>video-desktop-upload</datasource>
                     <datasource>video-browse-repo</datasource>
                     <datasource>key-value-list</datasource>
-                    <datasource>configured-list</datasource>
+                    <datasource>site-component</datasource>
                 </datasources>
                 <objectTypes>
                     <type>
@@ -96,7 +106,7 @@ Description
 -----------
 
     ``/config/tools/tool``
-        Admin console tool definition
+        Site Config tool definition
     ``/config/tools/tool/name``
         Tool name (javascript module name)
     ``/config/tools/tool/label``
@@ -142,46 +152,9 @@ workflow-states
 List of available content type form controls
 --------------------------------------------
 
-=============== ===========
-Control         Description
-=============== ===========
-auto-filename
-checkbox-group
-checkbox
-date-time
-disabled
-dropdown
-file-name
-image-picker
-input
-internal-name
-label
-link-input
-link-textarea
-linked-dropdown
-node-selector
-page-nav-order
-rte
-textarea
-uuid
-video-picker
-=============== ===========
+.. include:: /developers/form-controls/list-form-controls.rst
 
 List of available datasources
 -----------------------------
 
-===================== ===========
-Datasource            Description
-===================== ===========
-child-content
-configured-list
-file-browse-repo
-file-desktop-upload
-img-desktop-upload
-img-repository-upload
-key-value-list
-site-component
-tree-content
-video-browse-repo
-video-desktop-upload
-===================== ===========
+.. include:: /developers/form-sources/list-form-sources.rst

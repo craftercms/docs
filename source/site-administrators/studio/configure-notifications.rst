@@ -8,7 +8,7 @@ configuring the notification service by following the following documentation
 .. toctree::
    :maxdepth: 1
 
-   studio/notifications
+   /site-administrators/studio/notifications.rst
 
 ------
 Basics
