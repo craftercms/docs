@@ -6,6 +6,8 @@
 Crafter Core
 ============
 
+Crafter Core is the content rendering library for Crafter CMS.
+
 -----------
 Source Code
 -----------

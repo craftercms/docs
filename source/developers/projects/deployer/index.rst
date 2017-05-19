@@ -6,6 +6,8 @@
 Crafter Deployer
 ================
 
+Crafter Deployer is the deployment agent for Crafter CMS.
+
 -----------
 Source Code
 -----------
