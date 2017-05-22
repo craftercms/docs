@@ -8,6 +8,8 @@ Search
 Querying Content
 ----------------
 
+This section describes the types of content queries you can make.
+
 .. toctree::
    :maxdepth: 1
    :titlesonly:
