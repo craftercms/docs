@@ -6,6 +6,8 @@
 Studio Configuration
 ====================
 
+Write short description on what the section is all about:
+
 .. include:: studio/deployment-endpoints.rst
 
 .. include:: studio/environment-overrides.rst

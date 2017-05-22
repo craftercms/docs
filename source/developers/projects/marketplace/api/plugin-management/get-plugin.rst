@@ -59,11 +59,11 @@ Response
       "url": "https://craftercms.org/blueprints/example/"
     },
     "media": {
-      "images": [
+      "screenshots": [
         {
           "title": "Home Page",
           "description": "Screenshot of the homepage",
-          "url": "https://craftercms.org/static-assets/blueprints/images/example/home.png"
+          "url": "https://craftercms.org/static-assets/blueprints/screenshots/example/home.png"
         }
       ],
       "videos": [
