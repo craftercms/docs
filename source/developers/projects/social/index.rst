@@ -29,6 +29,17 @@ Java Doc
 
 Crafter Social's Java Doc is here: http://javadoc.io/doc/org.craftercms/crafter-social
 
+--------
+ReST API
+--------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   api/index
+
+
 -------------
 Configuration
 -------------
@@ -66,4 +77,4 @@ cd /usr/local/clamXav/sbin
 
 ./clamd
 
-.. todo:: Write overview; write configuration, write ReST API doc
+.. todo:: write configuration, write ReST API doc

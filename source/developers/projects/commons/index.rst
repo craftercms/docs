@@ -18,6 +18,7 @@ Java Doc
 
 Crafter Commons's Java Docs are here:
 
+* http://javadoc.io/doc/org.craftercms/crafter-commons
 * http://javadoc.io/doc/org.craftercms/crafter-commons-utilities
 * http://javadoc.io/doc/org.craftercms/crafter-commons-security
 * http://javadoc.io/doc/org.craftercms/crafter-commons-audit

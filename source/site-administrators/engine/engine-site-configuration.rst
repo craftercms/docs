@@ -6,6 +6,8 @@
 Engine Site Configuration
 =========================
 
+.. todo:: Update engine site configuration, needs short description here on what is Engine Site Configuration
+
 ------------------------
 Configuration Parameters
 ------------------------
@@ -115,11 +117,11 @@ using the global variable siteConfig. Nevertheless, most of the configuration pa
 *   **targeting.enabled**: If content targeting should be enabled. Defaults to false.
 *   **targeting.rootFolders:** The root folders that should be handled for content targeting.
 *   **targeting.excludePatterns:** Regex patterns that are used to exclude certain paths from content targeting.
-*   **targeting.availableTargetIds:** The valid target IDs for content targeting (see :doc:`/site-administrators/content-targeting-guide`).
+*   **targeting.availableTargetIds:** The valid target IDs for content targeting (see :doc:`/site-administrators/engine/content-targeting-guide`).
 *   **targeting.fallbackTargetId:** The target ID that should be used as last resort when resolving targeted content.
-    (see :doc:`/site-administrators/content-targeting-guide`).
+    (see :doc:`/site-administrators/engine/content-targeting-guide`).
 *   **targeting.mergeFolders:** If the content of folders that have to the same "family" of target IDs should be merged.
-    (see :doc:`/site-administrators/content-targeting-guide`).
+    (see :doc:`/site-administrators/engine/content-targeting-guide`).
 *   **profile.api.accessToken:** The access token to use for the Profile REST calls. This parameter should be always specified on
     multi-tenant configurations.
 *   **security.login.formUrl:** The URL of the login form page. The default is /login.

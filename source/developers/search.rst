@@ -349,4 +349,4 @@ Step 3: Add the Search Component to your Template
 The search code we built above is 100% Javascript / and CSS.  Now we want to incorporate it in to our template.  See below:
 
 
-.. TODO:: Finish section on creating type-ahead or suggestions for search, update images
+.. TODO:: Finish section on creating type-ahead or suggestions for search, verify/update faceted navigation, update images.  The blurbs above came from the wiki and may be outdated.

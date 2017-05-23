@@ -6,12 +6,35 @@
 Studio Configuration
 ====================
 
-Write short description on what the section is all about:
+This section details how to configure settings managed through Crafter Studio.
 
-.. include:: studio/deployment-endpoints.rst
+To access the configuration settings in Crafter Studio, click on **Site Config** in the Sidebar,
 
-.. include:: studio/environment-overrides.rst
+.. image:: /_static/images/configuration-access.png
+    :align: center
+    :alt: Open Configuration
 
-.. include:: studio/admin-console-tools.rst
+then click on **Configuration**.  After clicking on **Configuration**, you will see a dropdown list where you can select which configuration file you'd like to view/modify.  Below is one of the configuration files available to be viewed/modified.
 
-.. include:: studio/configure-notifications.rst
+.. image:: /_static/images/basic-configuration.png
+    :align: center
+    :alt: Basic Configuration
+
+The following items are noted in the image above:
+
+    #. This is the dropdown list that contains all the configurations that can be viewed/modified for your site.
+    #. This is a short description of the current selected configuration file from the dropdown list
+    #. These are the available actions that can be selected for the current selected configuration file.
+
+Here are the setting that can be configured through Crafter Studio:
+
+.. toctree::
+   :maxdepth: 1
+
+   studio/environment-overrides
+   studio/site-config-tools
+   studio/configure-notifications
+   studio/site-config-configuration
+   studio/drag-n-drop-configuration
+   studio/content-monitoring
+

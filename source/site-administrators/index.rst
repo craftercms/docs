@@ -9,8 +9,6 @@ This section details activities related to site administration in Crafter CMS. T
 
 	users-groups-management
 	configuration
-	content-monitoring
-	content-targeting-guide
-	engine-site-security-guide
+	logging
 
 .. todo:: Add `Authoring Configuration for a Site`, `Authoring Security for a Site`
