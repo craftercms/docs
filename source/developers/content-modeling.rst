@@ -143,7 +143,8 @@ The fields available at this level are:
 || Preview      ||                                                                               |
 || Image        ||                                                                               |
 +---------------+--------------------------------------------------------------------------------+
-|| Configuration||                                                                               |
+|| Configuration|| Contains config.xml which holds information about the content type such as the|
+||              || limit where content can be created, is it previewable, etc.                   |
 +---------------+--------------------------------------------------------------------------------+
 || Controller   ||                                                                               |
 +---------------+--------------------------------------------------------------------------------+
@@ -155,6 +156,12 @@ The fields available at this level are:
 +---------------+--------------------------------------------------------------------------------+
 
 The 2 key properties are: the display template (:ref:`content-view-templates`) which is the HTML template that renders the final Web page; the content inheritance (:ref:`content-inheritance`) which determines how this content type will inherit from parent XML files in the system.
+
+Content Creation Permissions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Limiting where a content type can be created is done through the Configuration Property of a content type (config.xml)
+
 
 .. _form-controls:
 
@@ -183,7 +190,7 @@ Every Form Control has a Variable Name property.  The Variable Name is used by t
 
 Variable Name Best Bractices
 
-#. Be descriptive.  Well thoughtout Variable Names help with template and controller readability.
+#. Be descriptive.  Well thought out Variable Names help with template and controller readability.
 #. Use camel case. Example: "productSummary".
 #. Use regex constraints on input boxes to enforce additional validation rules
 #. Do not use Reserved names.

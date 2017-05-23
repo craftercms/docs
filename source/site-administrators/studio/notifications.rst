@@ -7,7 +7,7 @@ Crafter Studio provides a simple workflow option that includes submission, revie
 publish immediate / publish on a schedule options.  This document covers the configuration of the HTML notifications
 that can be sent at each point in the workfow.
 
-.. NOTE:: Crafter Studio notifications were previous configured per project by modifying the following file in the repository: `/cstudio/config/sites/SITE/notification-config.xml` This configuration makes it possible to modify text-only templates.  This document covers how to configure the system to use the latest notification service and HTML based notifications.
+.. NOTE:: Crafter Studio notifications were previously configured per project by modifying the following file in the repository: `/cstudio/config/sites/SITE/notification-config.xml` This configuration makes it possible to modify text-only templates.  This document covers how to configure the system to use the latest notification service and HTML based notifications.
 
 ----------------------------
 Step 1. Enable Notifications
@@ -20,7 +20,7 @@ Step 1. Enable Notifications
 -------------------------------
 Step 2. Configure Notifications
 -------------------------------
-Place the following file in your repository for the given site and configure the HTML and recpieints for each type of notification.
+Place the following file in your repository for the given site and configure the HTML and recipients for each type of notification.
 
 .. code-block:: xml
     :caption: {REPOSITORY_ROOT}/cstudio/config/sites/SITEID/workflow-messaging-config.xml
