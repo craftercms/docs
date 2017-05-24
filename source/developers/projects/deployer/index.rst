@@ -6,11 +6,19 @@
 Crafter Deployer
 ================
 
+Crafter Deployer is the deployment agent for Crafter CMS.
+
 -----------
 Source Code
 -----------
 
 Crafter Deployer's source code is managed in github: https://github.com/craftercms/deployer
+
+--------
+Java Doc
+--------
+
+Crafter Deployer's Java Doc is here:
 
 --------
 ReST API
@@ -21,7 +29,6 @@ ReST API
    :titlesonly:
 
    api/index
-
 
 -------------
 Configuration

@@ -1,0 +1,13 @@
+-----------------
+Crafter CMS 3.0.0
+-----------------
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+.. todo:: Describe new features, etc here
+
+^^^^^^^^^^
+Bugs Fixed
+^^^^^^^^^^
+.. todo:: put link to git for bugs fixed
