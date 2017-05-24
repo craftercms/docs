@@ -33,7 +33,7 @@ Here's a sample config-list.xml file:
     			</file>
     			<file>
     				<path>/administration/tools.xml</path>
-    				<title>Admin Tools</title>
+    				<title>Site Config Tools</title>
     				<description>Defines the list of admin tools available</description>
     				<samplePath>/administration/samples/sample-tools.xml</samplePath>
     			</file>

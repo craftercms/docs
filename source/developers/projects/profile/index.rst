@@ -27,7 +27,21 @@ Crafter Profile's source code is managed in github: https://github.com/craftercm
 Java Doc
 --------
 
-Crafter Profile's Java Doc is here: http://javadoc.io/doc/org.craftercms/crafter-profile
+Crafter Profile's Java Doc are here:
+    http://javadoc.io/doc/org.craftercms/crafter-profile
+    http://javadoc.io/doc/org.craftercms/crafter-profile-api
+    http://javadoc.io/doc/org.craftercms/crafter-profile-client
+    http://javadoc.io/doc/org.craftercms/crafter-security-provider
+
+--------
+ReST API
+--------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   api/index
 
 -------------
 Configuration
