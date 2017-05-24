@@ -1,13 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-engine-api-site-context-id:
+.. _crafter-core-api-cache-clear:
 
-======
-Get Id
-======
+=====
+Clear
+=====
 
-Get the id for the site context resolved for this request by Crafter Engine, the value returned will depend
-on the SiteResolver implementation used.
+Clear the cache scope for a given site.
 
 --------------------
 Resource Information
@@ -16,10 +15,20 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/site/context/id``                                       |
+|| URL                       || ``/api/1/cache/clear``                                      |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
+
+----------
+Parameters
+----------
+
++-------------------------+-------------+---------------+--------------------------------------+
+|| Name                   || Type       || Required     || Description                         |
++=========================+=============+===============+======================================+
+|| contextId              || String     || |checkmark|  || The site context id                 |
++-------------------------+-------------+---------------+--------------------------------------+
 
 -------
 Example
@@ -29,7 +38,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/site/context/id``
+``GET .../api/1/cache/clear?contextId=405ffc233d075b010536bd2eb786b86c``
 
 ^^^^^^^^
 Response
@@ -39,7 +48,7 @@ Response
 
 .. code-block:: json
 
-  { "id" : "405ffc233d075b010536bd2eb786b86c" }
+  { message: "Cache scope for context '405ffc233d075b010536bd2eb786b86c' has been cleared" }
 
 ---------
 Responses
@@ -48,7 +57,7 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------------------+
 || Status || Location                      || Response Body                                                  |
 +=========+================================+=================================================================+
-|| 200    || ``.../site/context/id``       || See example above.                                             |
+|| 200    || ``.../cache/clear``           || See example above.                                             |
 +---------+--------------------------------+-----------------------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``                    |
 +---------+--------------------------------+-----------------------------------------------------------------+

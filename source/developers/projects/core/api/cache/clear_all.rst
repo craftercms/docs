@@ -1,13 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-engine-api-site-context-id:
+.. _crafter-core-api-cache-clear_all:
 
-======
-Get Id
-======
+=========
+Clear All
+=========
 
-Get the id for the site context resolved for this request by Crafter Engine, the value returned will depend
-on the SiteResolver implementation used.
+Clear all cache scopes for all sites.
 
 --------------------
 Resource Information
@@ -16,7 +15,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/site/context/id``                                       |
+|| URL                       || ``/api/1/cache/clear_all``                                       |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -29,7 +28,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/site/context/id``
+``GET .../api/1/cache/clear_all``
 
 ^^^^^^^^
 Response
@@ -39,7 +38,7 @@ Response
 
 .. code-block:: json
 
-  { "id" : "405ffc233d075b010536bd2eb786b86c" }
+  { message: "All cache scopes have been cleared" }
 
 ---------
 Responses
@@ -48,7 +47,7 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------------------+
 || Status || Location                      || Response Body                                                  |
 +=========+================================+=================================================================+
-|| 200    || ``.../site/context/id``       || See example above.                                             |
+|| 200    || ``.../cache/clear_all``       || See example above.                                             |
 +---------+--------------------------------+-----------------------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``                    |
 +---------+--------------------------------+-----------------------------------------------------------------+

@@ -1,13 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-engine-api-site-context-id:
+.. _crafter-core-api-cache-remove:
 
 ======
-Get Id
+Remove
 ======
 
-Get the id for the site context resolved for this request by Crafter Engine, the value returned will depend
-on the SiteResolver implementation used.
+Clear the cache for a single Site Item (and all children) in the scope for a given site.
 
 --------------------
 Resource Information
@@ -16,10 +15,22 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/site/context/id``                                       |
+|| URL                       || ``/api/1/cache/remove``                                          |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
+
+----------
+Parameters
+----------
+
++-------------------------+-------------+---------------+--------------------------------------+
+|| Name                   || Type       || Required     || Description                         |
++=========================+=============+===============+======================================+
+|| contextId              || String     || |checkmark|  || The site context id                 |
++-------------------------+-------------+---------------+--------------------------------------+
+|| url                    || String     || |checkmark|  || The item url                        |
++-------------------------+-------------+---------------+--------------------------------------+
 
 -------
 Example
@@ -29,7 +40,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/site/context/id``
+``GET .../api/1/cache/remove?contextId=405ffc233d075b010536bd2eb786b86c&url=/site/website/index.xml``
 
 ^^^^^^^^
 Response
@@ -39,7 +50,7 @@ Response
 
 .. code-block:: json
 
-  { "id" : "405ffc233d075b010536bd2eb786b86c" }
+  { message: "Removed /site/website/index.xml from cache scope for context '405ffc233d075b010536bd2eb786b86c'" }                                                             "context '" + contextId + "'" }
 
 ---------
 Responses
@@ -48,7 +59,7 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------------------+
 || Status || Location                      || Response Body                                                  |
 +=========+================================+=================================================================+
-|| 200    || ``.../site/context/id``       || See example above.                                             |
+|| 200    || ``.../cache/remove``          || See example above.                                             |
 +---------+--------------------------------+-----------------------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``                    |
 +---------+--------------------------------+-----------------------------------------------------------------+
