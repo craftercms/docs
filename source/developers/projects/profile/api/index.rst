@@ -7,9 +7,9 @@ Crafter Profile API
 ===================
 
 .. NOTE::
-  All endpoints in this API require an `accessTokenId` that needs to be known by
-  the client prior to any request. This value needs to be obtained from the
-  system administrator/maintainer and should be unique for each application.
+  All endpoints in this API require an ``accessTokenId`` parameter that needs
+  to be known by  the client prior to any request. This value needs to be
+  obtained from the  system administrator/maintainer.
 
 -----------------------
 Access Token Management
@@ -69,6 +69,7 @@ Profile Management
   profile/by_username
   profile/by_ticket
   profile/count
+  profile/count_by_query
   profile/by_query
   profile/by_ids
   profile/range
