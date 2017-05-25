@@ -6,6 +6,24 @@
 Crafter Profile API
 ===================
 
+.. NOTE::
+  All endpoints in this API require an `accessTokenId` that needs to be known by
+  the client prior to any request. This value needs to be obtained from the
+  system administrator/maintainer and should be unique for each application.
+
+-----------------------
+Access Token Management
+-----------------------
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  access_token/create
+  access_token/get
+  access_token/all
+  access_token/delete
+
 -----------------
 Tenant Management
 -----------------
@@ -19,7 +37,6 @@ Tenant Management
   tenant/update
   tenant/delete
   tenant/count
-  tenant/count_by_query
   tenant/all
   tenant/verify_new_profiles
   tenant/roles/add
@@ -28,9 +45,9 @@ Tenant Management
   tenant/attributes/update
   tenant/attributes/remove
 
------------------
+------------------
 Profile Management
------------------
+------------------
 
 .. toctree::
 	:maxdepth: 1
@@ -67,22 +84,9 @@ Profile Management
   profile/attachment/all
   profile/attachment/details
 
------------------
-Access Token
------------------
-
-.. toctree::
-  :maxdepth: 1
-  :titlesonly:
-
-  access_token/create
-  access_token/get
-  access_token/all
-  access_token/delete
-
------------------
+--------------
 Authentication
------------------
+--------------
 
 .. toctree::
   :maxdepth: 1
