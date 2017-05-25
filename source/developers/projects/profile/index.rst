@@ -6,7 +6,7 @@
 Crafter Profile
 ===============
 
-.. figure:: /_static/images/crafter-cloud-v8-Crafter-Profile.png
+.. figure:: /_static/images/architecture/crafter-profile.png
     :alt: Crafter Profile
     :width: 60 %
     :align: center

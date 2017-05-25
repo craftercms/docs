@@ -6,7 +6,7 @@
 Crafter Search
 ==============
 
-.. figure:: /_static/images/crafter-cloud-v8-Crafter-Search.png
+.. figure:: /_static/images/architecture/crafter-search.png
     :alt: Crafter Search
     :width: 60 %
     :align: center

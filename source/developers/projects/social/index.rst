@@ -6,7 +6,7 @@
 Crafter Social
 ==============
 
-.. figure:: /_static/images/crafter-cloud-v8-Crafter-Social.png
+.. figure:: /_static/images/architecture/crafter-social.png
     :alt: Crafter Social
     :width: 60 %
     :align: center
