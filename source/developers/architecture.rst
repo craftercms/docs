@@ -6,15 +6,15 @@
 Crafter CMS Architecture
 ========================
 
-Crafter CMS distinguishes itself by its modern architecture, in turn that enables:
+Crafter CMS distinguishes itself by its modern architecture, in turn this enables:
 
 * Truly Decoupled CMS (disconnected global delivery)
 * Dynamic / personalized delivery of every request at speed
 * API first CMS (content as a service)
 * Git-based CMS (allows for excellent developer cadence)
 * Share-nothing delivery architecture (extreme scale)
-* Front-end agnostic (bring your favorite UI framework if you choose to build HTML sites)
-* Fair balance between: content authors, developers and system administrators
+* Front-end agnostic (bring your favorite UI framework or use as a headless CMS)
+* Equal support for all three CMS stakeholders: content authors, developers and system administrators
 
 Crafter CMS is a true decoupled content management system, yet it supports dynamic and personalized content
 delivery. To understand this better, typical decoupled content management systems have the following general
@@ -27,7 +27,7 @@ architecture:
 
 Most decoupled content management systems compile the content into the final artifacts and push that to the delivery tier. While this allows for disconnected delivery, and extreme scalability (just add servers on the delivery tier that deliver the content, or use a CDN), this approach doesn't allow for dynamic/personalized delivery of content.
 
-Many actually coupled CMSes do claim to be decoupled. These systems allow you to have an authoring tier that's separate from the delivery tier, however, these are indeed connected via a database sync. That means that the delivery tiers cannot run without some level of connectivity to the authoring master, and indeed has limits on scale of the delivery tier.
+Many actually coupled CMSs do claim to be decoupled. These systems allow you to have an authoring tier that's separate from the delivery tier, however, these are indeed connected via a database sync. That means that the delivery tiers cannot run without some level of connectivity to the authoring master, and indeed has limits on scale of the delivery tier.
 
 A truly decoupled system will support disconnected delivery (think of a delivery tier that's running in a submarine or on a cruise ship). While running disconnected delivery nodes is an extreme example, it's a good test of the true scalability of the delivery tier of a CMS.
 
