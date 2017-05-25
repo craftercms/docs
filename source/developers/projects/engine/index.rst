@@ -6,7 +6,7 @@
 Crafter Engine
 ==============
 
-.. figure:: /_static/images/crafter-cloud-v8-Crafter-Engine.png
+.. figure:: /_static/images/architecture/crafter-engine.png
     :alt: Crafter Engine
     :width: 60 %
     :align: center
