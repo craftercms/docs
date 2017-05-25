@@ -6,56 +6,27 @@ Developers
 
 This section focuses on how to customize and extend Crafter CMS.  It covers the basic topics you need to define a content type and render that content as part of a page, component or service.  It also covers topics like building queries, accessing services and extending the core platforms.
 
-Below is a short set of links to other documentation for technology that Crafter CMS leverages:
-
-+----------------+------------------------------+-----------------------------------------------+
-| Attribute Name |             Usage            | Links                                         |
-+================+==============================+===============================================+
-|| Spring Beans  || Server App Framework        || https://spring.io/docs                       |
-|| Spring MVC    ||                             ||                                              |
-+----------------+------------------------------+-----------------------------------------------+
-|| Freemarker    || Server side templates       || http://freemarker.org/                       |
-||               ||                             ||                                              |
-+----------------+------------------------------+-----------------------------------------------+
-|| Groovy        || Server side scripting       || http://groovy-lang.org/documentation.html    |
-||               ||                             ||                                              |
-+----------------+------------------------------+-----------------------------------------------+
-|| Solr          || Search and content query    || http://lucene.apache.org/solr/resources.html |
-||               ||                             ||                                              |
-+----------------+------------------------------+-----------------------------------------------+
-|| MongoDB       || Crafter Profile and Social  || https://docs.mongodb.com                     |
-||               || data store                  ||                                              |
-+----------------+------------------------------+-----------------------------------------------+
-|| GIT           || Repository Implementation   || https://git-scm.com/docs                     |
-+----------------+------------------------------+-----------------------------------------------+
-|| RST           || Documentation source format || http://docutils.sourceforge.net/rst.html     |
-||               ||                             ||                                              |
-+----------------+------------------------------+-----------------------------------------------+
-
-
-
 .. toctree::
-   :maxdepth: 2
-   :titlesonly:
+      :maxdepth: 2
+      :titlesonly:
 
-   architecture
-   content-modeling
-   content-inheritance
-   custom-services-and-controllers
-   templates
-   rte-setup
-   extending-studio/index
-   search
-   tagging
-   testing
-   errors
-
+      architecture
+      content-modeling
+      content-inheritance
+      custom-services-and-controllers
+      templates
+      rte-setup
+      extending-studio/index
+      search
+      tagging
+      testing
+      errors
 
 ##############################
 Project Specific Documentation
 ##############################
 
-Crafter CMS comprises a number of projects, below are the project specific documentations.
+Crafter CMS comprises a number of projects, below are the project specific documentations including APIs.
 
 .. toctree::
    :maxdepth: 1
@@ -81,3 +52,29 @@ Cookbook / Tutorials
    :titlesonly:
 
    cook-books/index
+
+Below is a short set of links to other documentation for technology that Crafter CMS leverages:
+
++----------------+------------------------------+-----------------------------------------------+
+| Attribute Name |             Usage            | Links                                         |
++================+==============================+===============================================+
+|| Spring Beans  || Server App Framework        || https://spring.io/docs                       |
+|| Spring MVC    ||                             ||                                              |
++----------------+------------------------------+-----------------------------------------------+
+|| Freemarker    || Server side templates       || http://freemarker.org/                       |
+||               ||                             ||                                              |
++----------------+------------------------------+-----------------------------------------------+
+|| Groovy        || Server side scripting       || http://groovy-lang.org/documentation.html    |
+||               ||                             ||                                              |
++----------------+------------------------------+-----------------------------------------------+
+|| Solr          || Search and content query    || http://lucene.apache.org/solr/resources.html |
+||               ||                             ||                                              |
++----------------+------------------------------+-----------------------------------------------+
+|| MongoDB       || Crafter Profile and Social  || https://docs.mongodb.com                     |
+||               || data store                  ||                                              |
++----------------+------------------------------+-----------------------------------------------+
+|| GIT           || Repository Implementation   || https://git-scm.com/docs                     |
++----------------+------------------------------+-----------------------------------------------+
+|| RST           || Documentation source format || http://docutils.sourceforge.net/rst.html     |
+||               ||                             ||                                              |
++----------------+------------------------------+-----------------------------------------------+

@@ -2,9 +2,9 @@
 
 .. index:: Architecture
 
-=======================
-High Level Architecture
-=======================
+========================
+Crafter CMS Architecture
+========================
 
 Crafter CMS distinguishes itself by its modern architecture, in turn that enables:
 
