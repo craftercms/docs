@@ -15,7 +15,7 @@ Step 1. Enable Notifications
 ----------------------------
 
 .. code-block:: properties
-    :caption: {ENGINE_INSTALL_DIR}/apache-tomcat/shared/classes/crafter/cstduio/server-config.properties
+    :caption: {ENGINE_INSTALL_DIR}/apache-tomcat/shared/classes/crafter/cstudio/extension/server-config.properties
 
     notificationService.v2.enable=true
 
