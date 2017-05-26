@@ -306,6 +306,9 @@ The RTE (Rich Text Editor) is intended to provide an in-context editing experien
 .. |rteSuperscript| image:: /_static/images/rte-tool-superscript.png
              :width: 15%
 
+.. |rteCharmap| image:: /_static/images/rte-tool-insert-special-char.png
+             :width: 15%
+
 .. |rteOutdent| image:: /_static/images/rte-tool-outdent.png
              :width: 15%
 
@@ -355,9 +358,7 @@ The RTE (Rich Text Editor) is intended to provide an in-context editing experien
              :width: 15%
 
 
-There are a number of tools available from the RTE out of the box for editing your content.  Custom tools may also be added to the RTE, depending on your needs.  Please see the developer section of the docs for more details.
-
----> add link to developer docs documenting how to add RTE widgets and configuring RTE
+There are a number of tools available from the RTE out of the box for editing your content.  Custom tools may also be added to the RTE, depending on your needs.  Please see the developer section :ref:`rte-setup` of the docs for more details.
 
 Here are the available standard formatting tools from the RTE out of the box:
 
@@ -378,6 +379,8 @@ Here are the available standard formatting tools from the RTE out of the box:
 || |rteSubscript|            | Subscript                                                      |
 +----------------------------+----------------------------------------------------------------+
 || |rteSuperscript|          | Superscript                                                    |
++----------------------------+----------------------------------------------------------------+
+|| |rteCharmap|              | Insert special character                                       |
 +----------------------------+----------------------------------------------------------------+
 || |rteOutdent|              | Decrease indent - decrease indent of paragraph                 |
 +----------------------------+----------------------------------------------------------------+
@@ -414,7 +417,6 @@ Here are the available standard formatting tools from the RTE out of the box:
 
 
 
-.. TODO:: finish section on working in the RTE
 
 
 

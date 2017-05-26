@@ -34,4 +34,6 @@ ReST API
 Configuration
 -------------
 
-.. todo:: Write overview; write configuration
+Crafter Core is configured through the rest of the projects comprising Crafter CMS.
+
+
