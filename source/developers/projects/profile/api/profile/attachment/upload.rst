@@ -11,9 +11,6 @@ Upload a attachment to the specified profile.
 .. NOTE::
   If the mime type of the attachment is not on the valid list will fail.
 
-.. TODO::
-  Add link to mime type valid list configuration?
-
 --------------------
 Resource Information
 --------------------

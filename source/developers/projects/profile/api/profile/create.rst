@@ -56,21 +56,24 @@ Request
 
 .. code-block:: guess
 
-  POST .../api/1/profile/create/?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&tenantName=sample-tenant&username=john.doe&password=passw0rd&email=john.doe%40example.com&enabled=false&attributes&verificationUrl=%5B%7B%22firstName%22%3A%22John%22%7D,%7B%22lastName%22%3A%22Doe%22%7D,%7B%22avatarLink%22%3A%22%22%7D%5D
+  POST .../api/1/profile/create/?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&tenantName=sample-tenant&username=john.doe&password=passw0rd&email=john.doe%40example.com&enabled=false&attributes=%7B%22firstName%22%3A%22John%22,%22lastName%22%3A%22Doe%22%7D&verificationUrl
 
 .. code-block:: json
 
   {
-    "username": "john.doe",
-    "email": "john.doe@example.com",
-    "verified": false,
-    "enabled": false,
-    "createdOn": 1495733716728,
-    "lastModified": 1495733716728,
-    "tenant": "sample-tenant",
-    "roles": [],
-    "attributes": {},
-    "id": "592715d4d4c650e226b03b62"
+  	"username": "john.doe",
+  	"email": "john.doe@example.com",
+  	"verified": false,
+  	"enabled": false,
+  	"createdOn": 1495828439317,
+  	"lastModified": 1495828439317,
+  	"tenant": "sample-tenant",
+  	"roles": [],
+  	"attributes": {
+  		"firstName": "John",
+  		"lastName": "Doe"
+  	},
+  	"id": "592887d7d4c650213cc2f400"
   }
 
 ^^^^^^^^

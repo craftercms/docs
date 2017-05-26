@@ -56,7 +56,7 @@ Request
 
 .. code-block:: none
 
-  POST .../api/1/profile/1592715d4d4c650e226b03b62/update?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&username=john.doe&password=passw0rd&email=john.doe%40example.com&enabled=false
+  POST .../api/1/profile/592887d7d4c650213cc2f400/update?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&username=john.doe&password=passw0rd&email=john.doe%40example.com&enabled=false&role=APP_TEST,APP_REPORT
 
 .. code-block:: json
 
@@ -86,12 +86,18 @@ Response
     "email": "john.doe@example.com",
     "verified": false,
     "enabled": false,
-    "createdOn": 1495733716728,
-    "lastModified": 1495733716728,
+    "createdOn": 1495828439317,
+    "lastModified": 1495828570508,
     "tenant": "sample-tenant",
-    "roles": [],
-    "attributes": {},
-    "id": "592715d4d4c650e226b03b62"
+    "roles": [
+      "APP_TEST",
+      "APP_REPORT"
+    ],
+    "attributes": {
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    "id": "592887d7d4c650213cc2f400"
   }
 
 ---------
@@ -101,7 +107,7 @@ Responses
 +---------+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 || Status || Location                      || Response Body                                                                                                                                                     |
 +=========+================================+====================================================================================================================================================================+
-|| 200    || ``.../profile/create``        || See example above.                                                                                                                                                |
+|| 200    || ``.../profile/update``        || See example above.                                                                                                                                                |
 +---------+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``                                                                                                                       |
 +---------+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+

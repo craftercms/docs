@@ -47,7 +47,25 @@ Request
 
 .. code-block:: json
 
-  {}
+  [
+    {
+      "permissions": [
+        {
+          "allowedActions": [
+            "*"
+          ],
+          "application": "*"
+        }
+      ],
+      "name": "nickname",
+      "metadata": {
+        "label": "Nickname",
+        "type": "TEXT",
+        "displayOrder": 1.0
+      },
+      "defaultValue": null
+    }
+  ]
 
 ^^^^^^^^
 Response
@@ -57,7 +75,86 @@ Response
 
 .. code-block:: json
 
-  {}
+  {
+    "name": "sample-tenant",
+    "verifyNewProfiles": false,
+    "availableRoles": [
+      "APP_ADMIN",
+      "APP_USER"
+    ],
+    "ssoEnabled": false,
+    "attributeDefinitions": [
+      {
+        "permissions": [
+          {
+            "allowedActions": [
+              "*"
+            ],
+            "application": "*"
+          }
+        ],
+        "name": "firstName",
+        "metadata": {
+          "label": "First Name",
+          "type": "TEXT",
+          "displayOrder": 0
+        },
+        "defaultValue": null
+      },
+      {
+        "permissions": [
+          {
+            "allowedActions": [
+              "*"
+            ],
+            "application": "*"
+          }
+        ],
+        "name": "lastName",
+        "metadata": {
+          "label": "Last Name",
+          "type": "TEXT",
+          "displayOrder": 1
+        },
+        "defaultValue": null
+      },
+      {
+        "permissions": [
+          {
+            "allowedActions": [
+              "*"
+            ],
+            "application": "*"
+          }
+        ],
+        "name": "avatarLink",
+        "metadata": {
+          "label": "Avatar Link",
+          "type": "TEXT",
+          "displayOrder": 3
+        },
+        "defaultValue": null
+      },
+      {
+        "permissions": [
+          {
+            "allowedActions": [
+              "*"
+            ],
+            "application": "*"
+          }
+        ],
+        "name": "nickname",
+        "metadata": {
+          "label": "Nickname",
+          "type": "TEXT",
+          "displayOrder": 1.0
+        },
+        "defaultValue": null
+      }
+    ],
+    "id": "59284656d4c650213cc2f3fb"
+  }
 
 ---------
 Responses
