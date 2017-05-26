@@ -41,4 +41,4 @@ Configuration
 
 * :ref:`studio-configuration`
 
-.. todo:: Write overview
+

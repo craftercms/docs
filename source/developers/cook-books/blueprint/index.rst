@@ -74,8 +74,8 @@ There are some best practices to help you:
     * You can use label controls to add additional information to the content type's form. This is useful to add tips or additional information for advanced controls.
     * Prefer repeating groups over child components. Child components are ultimately more versatile, but if you are only going to repeat text, and that text is not going to appear outside the repeating group again, it's a better user experience to just use a repeating group.
 
-       * Bear in mind that you can't have nested repeating groups, so only the innermost repetition can be a repeting group.
-    * You can set up folders for specific content types, and you can enforce them by using ``<paths>`` in your types' config.xml. Use ``includes`` whenever you want to *whitelist* some paths, and use ``excludes`` to *blacklist* some paths, but do not mix them.
+       * Bear in mind that you can't have nested repeating groups, so only the innermost repetition can be a repeating group.
+    * You can set up folders for specific content types, and you can enforce them by using ``<paths>`` in your types' config.xml. Use ``includes`` whenever you want to *whitelist* some paths, and use ``excludes`` to *blacklist* some paths, but do not mix them.  For more examples, see :ref:`content-creation-permissions-section`
 
         .. code-block:: xml
 
@@ -89,7 +89,7 @@ There are some best practices to help you:
     * Ensure your blueprint supports :ref:`in-context-editing`.
     * For most sites, you'll have to override Studio's default navigation menu tags. You can do this by reading :ref:`templating-rendering-navigation`.
 
-Above all, blueprints should be useable and simple.
+Above all, blueprints should be usable and simple.
 
 ---------
 Packaging

@@ -6,6 +6,8 @@
 Crafter Commons
 ===============
 
+Crafter Commons contains the shared libraries used by the rest of the projects comprising Crafter CMS.
+
 -----------
 Source Code
 -----------
@@ -29,4 +31,4 @@ Crafter Commons's Java Docs are here:
 Configuration
 -------------
 
-.. todo:: Write overview
+Crafter Commons is configured through the rest of the projects comprising Crafter CMS.

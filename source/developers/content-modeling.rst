@@ -157,11 +157,61 @@ The fields available at this level are:
 
 The 2 key properties are: the display template (:ref:`content-view-templates`) which is the HTML template that renders the final Web page; the content inheritance (:ref:`content-inheritance`) which determines how this content type will inherit from parent XML files in the system.
 
+.. _content-creation-permissions-section:
+
 Content Creation Permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Limiting where a content type can be created is done through the Configuration Property of a content type (config.xml)
+Limiting where a content type can be created is through the Configuration Property of a content type (config.xml) using the following tags:
 
+.. code-block:: xml
+
+    <paths>
+        <includes>
+            <pattern>REG_EXP_HERE</pattern>
+        </includes>
+    </paths>
+
+OR
+
+.. code-block:: xml
+
+    <paths>
+	    <excludes>
+		    <pattern>REG_EXP_HERE</pattern>
+	    </excludes>
+    </paths>
+
+
+You can only use one of either include or exclude. Use Include when you need to whitelist places, use exclude when you need to blacklist.
+
+We'll look at an example of limiting where you can create content from the Website_Editorial blueprint that comes out of the box.
+
+From the **Sidebar**, click on **Site Config** at the bottom.  Next, click on **Content Type** then either create a new content type or open an existing content type.  In the image below, we have the content type **Page - Article** open for editing.  Go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name *config.xml*, click on that pencil to edit.
+
+.. figure:: /_static/images/form-engine-prop-configuration.png
+    :alt: Form Engine Properties Configuration
+	:align: center
+
+To limit where this particular content type can be created, the tags, <paths><includes><pattern>some_regex_pattern</pattern></includes></paths> are included towards the bottom of the file.  Here, we can see that content type **Page - Article** can be created anywhere under */site/website/articles*
+
+.. figure:: /_static/images/form-engine-prop-config-file.png
+    :alt: Form Engine Properties Configuration File config.xml
+    :align: center
+
+To see how the above tags/example works, go to the **Sidebar** and right click on the **Home** folder and select **New Content**.  Notice that content type **Page - Article** is not available from the content types listed.
+
+.. figure:: /_static/images/form-engine-prop-config-sample-no.png
+    :alt: Form Engine Properties Config File "Page - Articles" Not Available
+    :align: center
+
+From the **Sidebar** again, navigate from the **Pages** folder to the /Home/articles/2016/12/ folder then right click and select **New Content**, notice that the content type **Page - Article** is available from the list.
+
+.. figure:: /_static/images/form-engine-prop-config-sample-yes.png
+    :alt: Form Engine Properties Config File "Page - Articles" Available
+    :align: center
+
+To see more examples, try creating content types in the other folders in the **Sidebar** such as the **Taxonomy** folder, the **Components** folder and anywhere under the **Pages** folder.
 
 .. _form-controls:
 
@@ -172,7 +222,7 @@ Form Controls
 Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. Crafter CMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`form-engine-control`.
 
 .. figure:: /_static/images/form-engine-controls.png
-	:alt: Form Engine Controls
+    :alt: Form Engine Controls
 	:align: center
 
 Each Form Control type has it's own properties and constraints.  Some constraints are common, like "Variable Name" and "Required" while others apply only to the type, e.g. Height and Width limitations on the Image Picker control.  
