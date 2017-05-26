@@ -39,4 +39,4 @@ ReST API
 Configuration
 -------------
 
-.. todo:: Write overview; write configuration
+.. todo:: Write configuration

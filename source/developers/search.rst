@@ -8,7 +8,7 @@ Search
 Querying Content
 ----------------
 
-This section describes the types of content queries you can make.
+This section describes the types of content queries you can make (taken from cook-books section)
 
 .. toctree::
    :maxdepth: 1

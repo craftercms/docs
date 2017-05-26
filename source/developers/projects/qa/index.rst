@@ -6,6 +6,8 @@
 Crafter QA Automation Framework
 ===============================
 
+The Crafter QA Automation Framework provides a full test of the software to help you check that any new code added behaves correctly.
+
 -----------
 Source Code
 -----------
