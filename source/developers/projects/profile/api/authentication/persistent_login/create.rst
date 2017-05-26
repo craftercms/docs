@@ -2,9 +2,9 @@
 
 .. _crafter-profile-api-authentication-persistent_login-create:
 
-======================
-Create Persisten Login
-======================
+=======================
+Create Persistent Login
+=======================
 
 Creates a persistent login, use for remember me functionality.
 
@@ -40,7 +40,9 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/authentication/persistent_login/create?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&profileId=5925a68def86951f895cf497``
+.. code-block:: none
+
+  POST .../api/1/authentication/persistent_login/create?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&profileId=5925a68def86951f895cf497
 
 ^^^^^^^^
 Response

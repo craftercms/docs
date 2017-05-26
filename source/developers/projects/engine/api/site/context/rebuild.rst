@@ -2,9 +2,9 @@
 
 .. _crafter-engine-api-site-context-rebuild:
 
-=============
-Rebuild
-=============
+===============
+Rebuild Context
+===============
 
 Rebuild the site context resolved for this request by Crafter Engine.
 --------------------

@@ -2,9 +2,9 @@
 
 .. _crafter-profile-api-profile-one_by_query:
 
-===========================
-Get Single Profile By Query
-===========================
+====================
+Get Profile By Query
+====================
 
 Returns the single profile that matches the specified query.
 

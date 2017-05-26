@@ -44,7 +44,9 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/authentication/authenticate?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&tenantName=default&username=admin&password=admin``
+.. code-block:: none
+
+  POST .../api/1/authentication/authenticate?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&tenantName=default&username=admin&password=admin
 
 ^^^^^^^^
 Response

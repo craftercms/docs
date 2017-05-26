@@ -2,9 +2,9 @@
 
 .. _crafter-profile-api-access_token-create:
 
-======
-Create
-======
+===================
+Create Access Token
+===================
 
 Creates a new access token.
 

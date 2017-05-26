@@ -2,9 +2,9 @@
 
 .. _crafter-engine-api-site-context-destroy:
 
-=============
-Destroy
-=============
+===============
+Destroy Context
+===============
 
 Destroy the site context resolved for this request by Crafter Engine.
 

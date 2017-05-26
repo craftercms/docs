@@ -5,9 +5,9 @@
 .. ATTENTION::
   This API will be changed soon
 
-=============
-Get
-=============
+===========
+Get Profile
+===========
 
 Get the current user's profile from the session, if no profile is set an empty one will be created.
 

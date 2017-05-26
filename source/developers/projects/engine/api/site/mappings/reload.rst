@@ -2,9 +2,9 @@
 
 .. _crafter-engine-api-site-mappings-reload:
 
-=============
-Reload
-=============
+===============
+Reload Mappings
+===============
 
 Reload the mapping used to resolve sites by Crafter Engine.
 This endpoint is opnly available when Crafter Engine is configured as multi-tenant.

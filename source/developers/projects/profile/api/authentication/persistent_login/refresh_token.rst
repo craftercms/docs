@@ -40,7 +40,9 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/authentication/persistent_login/b68c0013-d7b2-4004-8463-d7ba03e15d94/refresh_token?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d``
+.. code-block:: none
+
+   POST .../api/1/authentication/persistent_login/b68c0013-d7b2-4004-8463-d7ba03e15d94/refresh_token?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
 
 ^^^^^^^^
 Response

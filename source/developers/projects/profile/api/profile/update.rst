@@ -54,7 +54,9 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/profile/1592715d4d4c650e226b03b62/update?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&username=john.doe&password=passw0rd&email=john.doe%40example.com&enabled=false``
+.. code-block:: none
+
+  POST .../api/1/profile/1592715d4d4c650e226b03b62/update?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&username=john.doe&password=passw0rd&email=john.doe%40example.com&enabled=false
 
 .. code-block:: json
 

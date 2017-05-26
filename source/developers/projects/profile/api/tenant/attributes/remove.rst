@@ -43,7 +43,9 @@ Example
 Request
 ^^^^^^^
 
-``POST ...crafter-profile/api/1/tenant/sample-tenant/attribute_definitions/remove?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&attributeName=nickname``
+.. code-block:: none
+
+  POST ...crafter-profile/api/1/tenant/sample-tenant/attribute_definitions/remove?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&attributeName=nickname
 
 ^^^^^^^^
 Response

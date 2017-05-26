@@ -2,9 +2,9 @@
 
 .. _crafter-profile-api-access_token-all:
 
-=======
-Get All
-=======
+======================
+Get All  Access Tokens
+======================
 
 Get all existing access tokens.
 

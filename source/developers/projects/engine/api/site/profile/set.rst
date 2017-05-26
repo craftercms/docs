@@ -5,9 +5,9 @@
 .. ATTENTION::
   This API will be changed soon
 
-=============
-Set
-=============
+===========
+Set Profile
+===========
 
 Set the current user's profile, all parameters are added to the profile and stored in the session.
 
