@@ -16,3 +16,16 @@ Index Management
 	index-management/create-index
 	index-management/index-info
 	index-management/delete-index
+
+------
+Search
+------
+
+.. toctree::
+  :maxdepth: 1
+
+  search/v2/search
+  search/v2/update
+  search/v2/update-content
+  search/v2/commit
+  search/v2/delete
