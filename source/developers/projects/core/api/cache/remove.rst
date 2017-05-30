@@ -50,7 +50,7 @@ Response
 
 .. code-block:: json
 
-  { "message": "Removed /site/website/index.xml from cache scope for context '405ffc233d075b010536bd2eb786b86c'" }                                                             "context '" + contextId + "'" }
+  { "message": "Removed /site/website/index.xml from cache scope for context '405ffc233d075b010536bd2eb786b86c'" }
 
 ---------
 Responses
