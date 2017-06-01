@@ -2,6 +2,8 @@
 Release Notes
 =============
 
+.. include:: /release-notes/3-0-0.rst
+
 .. include:: /release-notes/2-5-5.rst
 
 .. include:: /release-notes/2-5-4.rst

@@ -6,7 +6,7 @@
 Crafter Engine
 ==============
 
-.. figure:: /_static/images/crafter-cloud-v8-Crafter-Engine.png
+.. figure:: /_static/images/architecture/crafter-engine.png
     :alt: Crafter Engine
     :width: 60 %
     :align: center
@@ -25,13 +25,22 @@ Java Doc
 
 Crafter Engine's Java Doc is here: http://javadoc.io/doc/org.craftercms/crafter-engine
 
+--------
+ReST API
+--------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   api/index
+
 -------------
 Configuration
 -------------
 
 * :ref:`engine-site-configuration`
 * :ref:`engine-site-security-guide`
-* :ref:`engine-site-configuration`
 * :ref:`install-engine`
 
-.. todo:: Write overview; write ReST API
+.. todo:: write ReST API

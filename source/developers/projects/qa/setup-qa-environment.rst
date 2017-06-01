@@ -13,13 +13,13 @@ Setup the QA Environment
 1. About Java.
 ##############
 
-*Java 7 should be installed in your computer because is required.*
+Java 1.8+ is required.
 
 #################
 2. About the IDE.
 #################
 
-*Open your favorite IDE, in this case this configuration is for Eclipse IDE.*
+Open your favorite IDE, in our example here, the configuration is for Eclipse IDE.
 
 ############################################
 3. Download the Selenium Java Client Driver.

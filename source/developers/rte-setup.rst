@@ -1,3 +1,5 @@
+.. _rte-setup:
+
 ============================
 Rich Text Editor (RTE) Setup 
 ============================
@@ -26,63 +28,113 @@ Our RTE is based on TinyMCE (https://www.tinymce.com/) and can leverage all conf
 Crafter Studio Specific Extensions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+----------------+---------------------------------------------+-----------------+
-| Attribute Name | Description                                 | Configure       |
-+================+=============================================+=================+
-| HTML Code      | | Add syntax highlighted HTML code editing  | TODO LINK       |
-| Editor         | | to Crafter Studio.                        |                 |
-|                | | (Replaces out of the box code plugin)     |                 |
-+----------------+---------------------------------------------+-----------------+
-| Channel        | | Give the user a dropdown list of channels.| TODO LINK       |
-| Selector       | | Changes the RTE size and Style Sheets to  |                 |
-|                | | match the given channel.                  |                 |
-+----------------+---------------------------------------------+-----------------+
-| Insert Image   | | Enable the user to insert and image       |                 |
-|                | | from 1 or more datasources.               | TODO LINK       |
-|                | | (Replaces out of the box image plugin)    |                 |
-+----------------+---------------------------------------------+-----------------+
-| Edit Image     | | todo                                      | TODO LINK       |
-|                |                                             |                 |
-+----------------+---------------------------------------------+-----------------+
-| Insert Linked  | | Enable the user to browse for and insert  | TODO LINK       |
-|                | | a link for an object in                   |                 |
-| CMS Object     | | the CMS.                                  |                 |
-+----------------+---------------------------------------------+-----------------+
-| Insert         | | Enable the  user to insert a full fledged | TODO LINK       |
-| Component      | | Crafter component in to the RTE.          |                 |
-+----------------+---------------------------------------------+-----------------+
-| Insert HTML    | | Enable the user to insert a canned markup | TODO LINK       |
-|                | | in to the RTE. This is useful when a      |                 |
-| Stub           | | component is too heavy weight.            |                 |
-+----------------+---------------------------------------------+-----------------+
-| Insert Layout  | | Allow the user to insert markup designed  | TODO LINK       |
-|                | | to act as a layout in to the RTE.         |                 |
-+----------------+---------------------------------------------+-----------------+
-| Insert Smart   | | Allow the user to insert a table markup   | TODO LINK       |
-| Table          | | that holds its styles as rows and columns |                 |
-|                | | are added.                                |                 |
-+----------------+---------------------------------------------+-----------------+
+The list of Crafter Studio specific extensions is available in `Crafter Studio's git repo <https://github.com/craftercms/studio2-ui/tree/master/static-assets/components/cstudio-forms/controls/rte-plugins>`_.
 
+To see an example, the out of the box blueprints Empty and Website_Editorial uses the **Insert Image** specific extensions which enables the user to insert an image from 1 or more data sources, which replaces the TinyMCE out of the box image plugin.
 
------------------------------------------------------------------
-RTE Specific Configurations vs RTE Setups (Shared Configurations)
------------------------------------------------------------------
+In the blueprints, in order to use the **Insert Image** extension, add **managedImage** inside the tag ``<toolbarItems1>``.  Inside the tags ``<rteModules>``, insert ``<module>insert-image</module>``.  (See the sample RTE Setup configuration file in the section below.)
 
-.. todo:: EXPLAIN control properties vs leveraging shared configuration
+Once the RTE Setup is attached to an RTE in a form, you can now specify  multiple data sources for the image.  In the image below, we have two data sources enabled for the RTE image insert.
 
-------------------------------------------
-Attaching an RTE in a Form to an RTE Setup
-------------------------------------------
-
-.. todo:: EXPLAIN
+.. figure:: /_static/images/rte-setup-extension-example-insert-img.png
+    :alt: RTE Setup - Insert Image Extension Example
+	:align: center
 
 ---------------------
 Creating an RTE Setup
 ---------------------
 
-.. todo:: EXPLAIN EXPLAIN XML FILE
+The RTE's configuration file looks like this:
+
+.. code-block:: xml
+
+    <config>
+        <setup>
+            <id>generic</id>	 
+            <rteStylesheets>
+                <link>
+                    <loadFromPreview>true</loadFromPreview>
+                    <url>/static-assets/css/style.css</url>         
+                </link>
+
+                <link>
+                    <appliesToChannel>iphonev,iphoneh</appliesToChannel>
+                    <loadFromPreview>true</loadFromPreview>
+                    <url>/static-assets/mobile/css/libs/jquery.mobile-1.0.min.css</url>         
+                </link>
+            </rteStylesheets>
+            
+            <toolbarItems1>formatselect,|,bold,italic,underline,strikethrough,|,sub,sup,charmap,|,outdent,indent,blockquote,|,justifyleft,justifycenter,justifyright,justifyfull,|,bullist,numlist,|,managedImage,link,unlink,anchor,|,code,|,undo,redo</toolbarItems1>
+            <toolbarItems2></toolbarItems2>
+            <toolbarItems3></toolbarItems3>
+            <toolbarItems4></toolbarItems4>
+            
+            <rteLinkStyles>
+                <style>
+                    <name>Standard</name>
+                    <value>standard</value>
+                </style>
+                <style>
+                    <name>Hidden</name>
+                    <value>hidden</value>
+                </style>
+                <style>
+                    <name>Button</name>
+                    <value>mediumButton</value>			
+                </style>		
+            </rteLinkStyles>
+                
+            <!-- widgets -->
+            <rteWidgets>
+            </rteWidgets>    
+            
+            <rteModules>
+                <module>insert-image</module>		
+                <module>channel</module>
+            </rteModules>
+        </setup>
+    </config>
+
+You can access the ``RTE Configuration`` file by going to the **Sidebar** then clicking on  **Site Config**.  In the **Site Config**, click on **Configuration**, then from the dropdown list, select ``RTE Configuration``
+
+.. figure:: /_static/images/rte-setup-config-file-access.png
+    :alt: RTE Setup - Open RTE Configuration File in Studio
+	:align: center
 
 
-.. todo:: EXPLAIN EXAMPLES!
+Inside the ``<config>`` tag, there can be multiple ``<setup>`` tags. Each represents a possible RTE configuration that can be specified to be used by a RTE control. Each possible RTE configuration contains:
 
+    * An ``<id>`` tag with the name that must be specified for an RTE control to use this configuration.
+    * ``<rteStylesheets>`` tag that contains multiple ``<link>`` tags. Each link tag represents a link to a CSS stylesheet that will be used so that the RTE matches the look and feel of the site.
+
+      .. code-block:: xml
+
+        <link>
+         	<appliesToChannel>iphonev,iphoneh</appliesToChannel>
+			<loadFromPreview>true</loadFromPreview>
+			<url>/static-assets/mobile/css/libs/jquery.mobile-1.0.min.css</url>         
+        </link>
+
+      * ``<appliesToChannel>`` is optional. If it's missing, it will apply to every channel.
+    * ``<toolbarItems1>`` and similar contain the toolbar buttons in the RTE. You can specify any plugin as named in `Tiny MCE Plugins List <https://www.tinymce.com/docs/plugins/>`_. They will be featured in the same order as specified here, and separators can be specified with ``|``.
+    * ``<rteModules>`` is used to specify which external plugins to include, the list of which is available in `Crafter Studio's git repo <https://github.com/craftercms/studio2-ui/tree/master/static-assets/components/cstudio-forms/controls/rte-plugins>`_.
+
+For example, to use the ``edit-html`` editor, you'll have to add ``<module>edit-html</module>`` to ``<rteModules>`` and place ``edithtml`` somewhere in a toolbar ``<toolbarItems1>`` similar to this ``link,unlink,anchor,|,edithtml,|,undo,redo</toolbarItems1>``
+
+
+------------------------------------------
+Attaching an RTE in a Form to an RTE Setup
+------------------------------------------
+
+To attach an RTE setup to an RTE in a form, open the content type that you want to add an RTE to, then go to the **Properties Explorer** and click on RTE Configuration and type in an RTE setup name.
+
+.. figure:: /_static/images/rte-setup-form.png
+    :alt: RTE Setup - Add an RTE in the Form
+	:align: center
+
+In the image below, the RTE setup name used is **generic**.  Please see the section above on how to create an RTE Setup, where the example shows an RTE Setup named **generic**.
+
+.. figure:: /_static/images/rte-setup-attach-config.png
+    :alt: RTE Setup - Attach an RTE in a Form to an RTE Setup
+	:align: center
 

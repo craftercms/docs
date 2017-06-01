@@ -271,8 +271,6 @@ To override any of default configuration values create new properties file in ``
 
 .. include:: ../site-administrators/studio/permission-mappings.rst
 
-.. include:: ../site-administrators/studio/deployment-endpoints.rst
-
 .. include:: ../site-administrators/studio/environment-overrides.rst
 
-.. include:: ../site-administrators/studio/admin-console-tools.rst
+.. include:: ../site-administrators/studio/site-config-tools.rst

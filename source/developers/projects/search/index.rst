@@ -6,10 +6,12 @@
 Crafter Search
 ==============
 
-.. figure:: /_static/images/crafter-cloud-v8-Crafter-Search.png
+.. figure:: /_static/images/architecture/crafter-search.png
     :alt: Crafter Search
     :width: 60 %
     :align: center
+
+Crafter Search is the search facade for Crafter CMS. Crafter Search proxies the real search engine deployed behind it.
 
 -----------
 Source Code
@@ -37,4 +39,4 @@ ReST API
 Configuration
 -------------
 
-.. todo:: Write overview; write configuration, write ReST API doc
+.. todo:: Write configuration, write ReST API doc

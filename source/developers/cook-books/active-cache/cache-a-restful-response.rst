@@ -3,14 +3,14 @@ Active Cache a RESTful Response
 ===============================
 
 This cookbook will demonstrate how to create a RESTful service in Crafter Engine that has predictable performance
-and reliability when your service on an relies on external service.
+and reliability when your service relies on an external service.
 
 Any time your services depend on another service there is a cause for concern.  You can't control the performance or
-the availability of the external service. Further the if the response of the external service is not unique across calls
+the availability of the external service. Further, if the response of the external service is not unique across calls
 then there may be no real need to call out to it on each request you receive.
 
 In this case what you want to do is cache the request from the external service and have your service attempt to get the content from the cache.
-Active cache is a built in Crafter capability that makes building these sort of solutions much easier.
+Active cache is a built in Crafter CMS capability that makes building these sort of solutions much easier.
 You tell Active Cache what you want, how to get it and how often to refresh it in the background.  From there on, you
 simply ask Active cache for whatever the current response is.
 
@@ -90,5 +90,5 @@ Step 2: Execute the Service
 
 * Open a browser and hit the following URL:
     * http://localhost:8080/api/1/services/my-data.json
-    * Not that your host name, ports and pageId values may differ than the example
+    * Note that your host name, ports and pageId values may differ than the example
     * See results

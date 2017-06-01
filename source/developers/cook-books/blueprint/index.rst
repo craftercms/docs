@@ -51,6 +51,8 @@ HTML files will become Freemarker templates. For this cookbook, you'll see how t
 
 You should keep ``<#import "/templates/system/common/cstudio-support.ftl" as studio />`` at the very start, and add ``<@studio.toolSupport/>`` right before the ``body`` tag closes to have proper Studio support. Next, all resource locations are probably pointing to the wrong location. To fix this, replace every relative url that doesn't point to a page (this would include ``<link rel="stylesheet" href="`` tags for CSS files, ``<script src="`` for JS files, ``<img src="`` for image files, and ``<source src="`` for video and sound files) such that it starts with ``/static-assets/`` and points to the corresponding file.
 
+Modify the Rich Text Editor configuration so it uses your template's stylesheets. See :ref:`rte-setup`
+
 At this point, you should have a static page that looks just how the template is supposed to look. For every other HTML page, you have to either create a new page content type and, like with index, replace its ftl template with the page's source; or, generalize the content type, with proper content modeling, such that multiple pages share a single ftl template and vary only in the components they contain. Let's see some tips for this.
 
 ^^^^^^^^^^^^^^^^
@@ -72,8 +74,8 @@ There are some best practices to help you:
     * You can use label controls to add additional information to the content type's form. This is useful to add tips or additional information for advanced controls.
     * Prefer repeating groups over child components. Child components are ultimately more versatile, but if you are only going to repeat text, and that text is not going to appear outside the repeating group again, it's a better user experience to just use a repeating group.
 
-       * Bear in mind that you can't have nested repeating groups, so only the innermost repetition can be a repeting group.
-    * You can set up folders for specific content types, and you can enforce them by using ``<paths>`` in your types' config.xml. Use ``includes`` whenever you want to *whitelist* some paths, and use ``excludes`` to *blacklist* some paths, but do not mix them.
+       * Bear in mind that you can't have nested repeating groups, so only the innermost repetition can be a repeating group.
+    * You can set up folders for specific content types, and you can enforce them by using ``<paths>`` in your types' config.xml. Use ``includes`` whenever you want to *whitelist* some paths, and use ``excludes`` to *blacklist* some paths, but do not mix them.  For more examples, see :ref:`content-creation-permissions-section`
 
         .. code-block:: xml
 
@@ -87,7 +89,7 @@ There are some best practices to help you:
     * Ensure your blueprint supports :ref:`in-context-editing`.
     * For most sites, you'll have to override Studio's default navigation menu tags. You can do this by reading :ref:`templating-rendering-navigation`.
 
-Above all, blueprints should be useable and simple.
+Above all, blueprints should be usable and simple.
 
 ---------
 Packaging

@@ -6,6 +6,8 @@
 Crafter Commons
 ===============
 
+Crafter Commons contains the shared libraries used by the rest of the projects comprising Crafter CMS.
+
 -----------
 Source Code
 -----------
@@ -18,6 +20,7 @@ Java Doc
 
 Crafter Commons's Java Docs are here:
 
+* http://javadoc.io/doc/org.craftercms/crafter-commons
 * http://javadoc.io/doc/org.craftercms/crafter-commons-utilities
 * http://javadoc.io/doc/org.craftercms/crafter-commons-security
 * http://javadoc.io/doc/org.craftercms/crafter-commons-audit
@@ -28,4 +31,4 @@ Crafter Commons's Java Docs are here:
 Configuration
 -------------
 
-.. todo:: Write overview
+Crafter Commons is configured through the rest of the projects comprising Crafter CMS.

@@ -6,6 +6,8 @@
 Crafter Core
 ============
 
+Crafter Core is the content rendering library for Crafter CMS.
+
 -----------
 Source Code
 -----------
@@ -18,8 +20,20 @@ Java Doc
 
 Crafter Core's Java Doc is here: http://javadoc.io/doc/org.craftercms/crafter-core
 
+--------
+ReST API
+--------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   api/index
+
 -------------
 Configuration
 -------------
 
-.. todo:: Write overview; write configuration
+Crafter Core is configured through the rest of the projects comprising Crafter CMS.
+
+
