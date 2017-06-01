@@ -17,9 +17,9 @@ Index Management
 	index-management/index-info
 	index-management/delete-index
 
-------
-Search
-------
+------------------
+Content Management
+------------------
 
 .. toctree::
   :maxdepth: 1
