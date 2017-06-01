@@ -5,7 +5,7 @@ Permission Mappings
 The permission mappings configuration file allows you to assign permissions to folders and objects in a Site giving specific Roles rights to the object.  The permission mappings config file contains the permissions mappings for the roles defined in the role mappings config file.  When applying permissions to Roles, rights are granted by adding permissions inside the tag ``<allowed-permissions>``.  Absence of permissions means the permission is denied.  Rules have a regex expression that govern the scope of the permissions assigned.  A list of available permissions that can be granted to Roles is available after the sample configuration file.
 
 Permissions are defined per:
-site > role > rule
+    site > role > rule
 
 For example, to grant the role component_author the ability to read/write
 components and read-only to everything else:
