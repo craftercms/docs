@@ -423,4 +423,3 @@ Here are the available standard formatting tools from the RTE out of the box:
 
 
 
-
