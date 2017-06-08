@@ -61,5 +61,11 @@ Site Profile
 Monitoring
 ----------
 
-.. NOTE::
-  This API is still in development.
+.. toctree::
+	:maxdepth: 1
+
+	monitoring/memory
+	monitoring/status
+	monitoring/version
+	monitoring/log
+

@@ -35,6 +35,26 @@ ReST API
 
    api/index
 
+----------
+Groovy API
+----------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   api/groovy-api
+
+---------------------------
+FreeMarker (Templating) API
+---------------------------
+
+.. toctree::
+       :maxdepth: 1
+       :titlesonly:
+
+       api/templating-api
+
 -------------
 Configuration
 -------------
@@ -42,5 +62,3 @@ Configuration
 * :ref:`engine-site-configuration`
 * :ref:`engine-site-security-guide`
 * :ref:`install-engine`
-
-.. todo:: write ReST API
