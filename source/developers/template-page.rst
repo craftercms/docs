@@ -181,4 +181,4 @@ Now that we have our controller, we just need to add code to the freemarker temp
 	:alt: Template Modify FTL to Display Controller Script Output
 	:align: center
 
-As you can see from the controller we just added, the controller is used to customize your page by enabling you to run codes before the page is rendered.  To find out more about custom services and controllers in Crafter CMS, please see the section :ref:`custom-services-and-controllers`.
+As you can see from the controller we just added, the controller is used to customize your page by enabling you to run codes before the page is rendered.  To find out more about groovy APIs in Crafter CMS, please see the section :ref:`groovy-api`.

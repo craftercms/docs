@@ -13,7 +13,6 @@ This section focuses on how to customize and extend Crafter CMS.  It covers the 
       architecture
       content-modeling
       content-inheritance
-      custom-services-and-controllers
       templates
       rte-setup
       extending-studio/index

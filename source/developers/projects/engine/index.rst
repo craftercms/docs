@@ -35,6 +35,16 @@ ReST API
 
    api/index
 
+----------
+Groovy API
+----------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   api/groovy-api
+
 -------------
 Configuration
 -------------
