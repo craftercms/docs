@@ -263,7 +263,7 @@ In this section, we will be looking at how to use a query to provide suggestions
 Build the Service
 ^^^^^^^^^^^^^^^^^
 
-Create a REST service that returns suggentions based on the contente in your site.
+Create a REST service that returns suggestions based on the content in your site.
 
 Requirements
 ^^^^^^^^^^^^
@@ -312,7 +312,7 @@ You will also need to create the helper classs in the scripts forlder
     }
   
     def getSuggestions(String term) {
-      // Query documents matching a contant-type and having similar words to the term
+      // Query documents matching a content-type and having similar words to the term
       def queryStr = "${contentTypeQuery} AND ${searchField}:*${term}*"
       def query = searchService.createQuery()
       query.setQuery(queryStr)
