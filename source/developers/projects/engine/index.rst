@@ -62,5 +62,3 @@ Configuration
 * :ref:`engine-site-configuration`
 * :ref:`engine-site-security-guide`
 * :ref:`install-engine`
-
-.. todo:: write ReST API
