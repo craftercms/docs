@@ -1,8 +1,8 @@
 .. _templating-api:
 
-==============
-Templating API
-==============
+===========================
+FreeMarker (Templating) API
+===========================
 
 Each page and component content type in Crafter CMS generally has it's own view. Crafter Engine, which is in charge
 of rendering this views, uses Freemarker as the template engine to generate the HTML returned to the client.
@@ -19,7 +19,7 @@ the nested property access described previously is not enough, or if you need to
 
 Crafter Engine also populates templates with other useful variables, described below.
 
-.. include:: ../includes/freemarker-variables.rst
+.. include:: /includes/freemarker-variables.rst
 
 .. _templating-rendering-navigation:
 

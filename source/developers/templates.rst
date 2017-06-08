@@ -14,7 +14,7 @@ As mentioned in the previous section, components only differ from pages in that 
    :maxdepth: 1
    :titlesonly:
 
-   templating-api
+   /developers/projects/engine/api/templating-api
    in-context-editing
    template-page
    template-component

@@ -35,6 +35,26 @@ ReST API
 
    api/index
 
+----------
+Groovy API
+----------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   api/groovy-api
+
+---------------------------
+FreeMarker (Templating) API
+---------------------------
+
+.. toctree::
+       :maxdepth: 1
+       :titlesonly:
+
+       api/templating-api
+
 -------------
 Configuration
 -------------
