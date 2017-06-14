@@ -32,7 +32,8 @@ def html_page_context(app, pagename, templatename, context, doctree):
     # For sphinx_rtd_theme.
     context['display_github'] = True
     context['github_user'] = app.config.edit_on_github_project.split('/')[0]
-    context['github_version'] = app.config.edit_on_github_branch + '/' + app.config.edit_on_github_base_folder + '/'
+    #context['github_version'] = app.config.edit_on_github_branch + '/' + app.config.edit_on_github_base_folder + '/'
+    context['github_version'] = current_version + '/source/'
     context['github_repo'] = app.config.edit_on_github_project.split('/')[1]
     context['source_suffix'] = app.config.source_suffix[0]
 
