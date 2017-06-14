@@ -379,7 +379,7 @@ highlight_language = 'java'
 
 # Configure Edit on Github
 edit_on_github_project = 'craftercms/docs'
-edit_on_github_branch = 'master'
+edit_on_github_branch = version
 edit_on_github_base_folder = 'source'
 
 # Place substitution available in all files here
