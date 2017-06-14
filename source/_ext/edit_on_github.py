@@ -17,7 +17,7 @@ def get_github_url(app, view, path):
         project=app.config.edit_on_github_project,
         view=view,
         branch=app.config.edit_on_github_branch,
-	base_folder='/source/',
+	base_folder=app.config.edit_on_github_base_folder,
         path=path)
 
 
@@ -39,12 +39,9 @@ def html_page_context(app, pagename, templatename, context, doctree):
     # For sphinx_rtd_theme.
     context['display_github'] = True
     context['github_user'] = app.config.edit_on_github_project.split('/')[0]
-    #context['github_version'] = app.config.edit_on_github_branch + '/' + app.config.edit_on_github_base_folder + '/'
-    context['github_version'] = app.config.edit_on_github_branch + '/source/'
+    context['github_version'] = app.config.edit_on_github_branch + '/' + app.config.edit_on_github_base_folder + '/'
     context['github_repo'] = app.config.edit_on_github_project.split('/')[1]
     context['source_suffix'] = app.config.source_suffix[0]
-
-    print "CRAFTER_DEBUG: %s." % app.config.edit_on_github_base_folder
 
 def setup(app):
     app.add_config_value('edit_on_github_project', '', True)
