@@ -2,6 +2,7 @@ build/*
 deploy.sh
 *.swp
 .DS_Store
+*.pyc
 
 # IntelliJIdea files#
 *.iml
