@@ -44,7 +44,7 @@ def html_page_context(app, pagename, templatename, context, doctree):
     context['github_repo'] = app.config.edit_on_github_project.split('/')[1]
     context['source_suffix'] = app.config.source_suffix[0]
 
-    print "CRAFTER_DEBUG: app.config.edit_on_github_base_folder"
+    print "CRAFTER_DEBUG: " + app.config.edit_on_github_base_folder
 
 def setup(app):
     app.add_config_value('edit_on_github_project', '', True)
