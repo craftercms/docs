@@ -2,603 +2,692 @@
 
 .. _crafter-cms:
 
-============
+###########
 Crafter CMS
-============
+###########
 
 This project is the parent project that builds everything and prepares a deployable bundle and a developer's environment.
 
------------
+***********
 Source Code
------------
+***********
 
 Crafter CMS's source code is managed in github: https://github.com/craftercms/craftercms
 
--------------
+*************
 Documentation
--------------
+*************
 
-^^^^^^^^^^^^^^^
+===============
 Getting Started
-^^^^^^^^^^^^^^^
+===============
+
 To get started, please review: https://github.com/craftercms/craftercms/blob/master/README.md
 
-^^^^^^^^^^^^^^^^^^^^
+====================
 More Advanced Topics
-^^^^^^^^^^^^^^^^^^^^
+====================
 
-Gradle Authoring and Live Environment Scripts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Crafter CMS has two environments, the Authoring Environment and the Delivery Environment.
 
-**GENERAL**
+The authoring environment provides all the content management services, enabling authoring, managing and publishing of all content.  It provides a comprehensive set of user-friendly features for managing and optimizing your experiences.
 
-Gradle command formats
+The delivery environment provides content delivery services.  It consumes content published from your authoring environment and provides developers with the foundation for quickly building high-performance, flexible experiences.
 
-.. code-block:: bash
+In this section we will be discussing the scripts for the authoring and delivery environments.
 
-   ./gradlew command [-Penv={env}] [-Pmodule={module}]
+------------------------------------------
+Authoring and Delivery Environment Scripts
+------------------------------------------
 
-+-----------+-------------------------------------------+--------------+-----------------+
-|| Command  || Description                              || Env Options || Module Options |
-+===========+===========================================+==============+=================+
-|| `build`  || Build a module or an entire              || `authoring` || - None         |
-||          || environment                              ||             || - `studio`     |
-||          ||                                          ||             || - `deployer`   |
-||          ||                                          ||             || - `engine`     |
-||          ||                                          ||             || - `search`     |
-||          ||                                          ||             || - `??????`     |
-||          ||                                          +--------------+-----------------+
-||          ||                                          || `delivery`  || - `??????`     |
-||          ||                                          ||             || - `??????`     |
-+-----------+-------------------------------------------+--------------+-----------------+
-
-Where ``command`` is one of:
-
-- ``build``
-- ``start``
-- ``stop``
-
-Where ``env`` is one of:
-
-- ``authoring``
-- ``delivery``
-
-And ``module`` is one of:
-
-- ``studio``
-- ``engine``
-- ``deployer``
-
-**BUILD**
-
-.. code-block:: bash
-
-   ./gradlew build
-
-The Gradle task above will:
-
-#. Delete any existing environments
-#. Download Apache Tomcat and Apache Solr (check the Gradle section on how to specify a version of Apache Tomcat and Apache Solr)
-#. Build all Crafter CMS modules from the source (check the :ref:`git` section on how to update the source)
-#. Create the environment folders and copy all needed resources
-
-	- ``crafter-auth-env``
-	- ``crafter-delivery-env``
-
-**START**
-
-Starting an environment or a module using Gradle looks like this:
-
-.. code-block:: bash
-
-   ./gradlew start [-PmoduleName={module}] [-Penv={env}]
-
-What this does under the hood is:
-
-.. code-block:: bash
-
-   cd crafter-{env}-env
-   ./startups.sh
-
-Both of those options will:
-
-* Start Apache tomcat on default ports (8080, 8009, 8005) [See :ref:`gradle-tasks` on how to change default ports]
-
-* Start Solr server on port 8984
-
-* Start Crafter Deployer on port 
-
-
-Authoring Environment Scripts
------------------------------
-
-The Crafter CMS Authoring scripts will help you on the basic startup and shutdown of the services needed to run a healthy *Authoring environment*
-with the following scripts:
+The Crafter CMS Authoring and Delivery scripts will help you on the basic startup and shutdown of the services needed to run a healthy *Authoring environment* and *Delivery environment* with the following scripts:
 
 +-------------------------+----------------------------------------------------------------------+
 || **Script**             || ``crafter(.sh/bat)``                                                |
 +-------------------------+----------------------------------------------------------------------+
 || **Description**        || Main Script to start and stop all needed Services to have a         |
-||                        || functional Crafter CMS *Authoring Environment*                      |
+||                        || functional Crafter CMS *Authoring/Delivery Environment*             |
 +-------------------------+----------------------------------------------------------------------+
-|| **Synopsis**           || ``crafter.(sh/bat) start|stop|debug|tail|help``                     |
+|| **Synopsis**           || ``crafter.(sh/bat) start|stop|debug|help``                          |
 +-------------------------+----------------------------------------------------------------------+
 || **Arguments**          || * ``start`` Starts all Crafter CMS services in this order           |
-||                        ||    Crafter Deployer,Solr,Apache Tomcat                              |
+||                        ||    Crafter Deployer, Solr, Apache Tomcat                            |
 ||                        || * ``stop``  Stops all Crafter CMS services in the same order as     |
 ||                        ||    they start.                                                      |
-||                        || * ``debug`` Start all Crafter CMS services with the JAVA remote     |
-||                        ||    debug port 5005 for Crafter Deployer, 1044 for Solr and 8000     |
-||                        ||    for Apache Tomcat                                                |
-||                        || * ``help``  Prints script help                                      |
+||                        || * ``debug`` Starts all Crafter CMS services with the JAVA remote    |
+||                        ||    debug port 5000 for Crafter Deployer, 5005 for Solr and 8000     |
+||                        ||    for Apache Tomcat for the *Authoring Environment*                |
+||                        ||    Starts all Crafter CMS services with the JAVA remote debug port  |
+||                        ||    5001 for Crafter Deployer, 5006 for Solr and 9000 for Apache     |
+||                        ||    Tomcat for the *Delivery Environment*                            |
+||                        || * ``status`` Prints the status of Solr, Crafter Deployer and        |
+||                        ||    Crafter Studio (uptime, process id and version if applicable)    |
+||                        || * ``help``  Prints all options available                            |
 +-------------------------+----------------------------------------------------------------------+
-
-
-``crafter(.sh/bat)`` **Environment Variables**
-
-+-------------------------+-----------------------------------+----------------------------------+
-|| **Variable Name**      || **Description**                  || **Default Value**               |
-+-------------------------+-----------------------------------+----------------------------------+
-|| CRAFTER_HOME           || Crafter CMS path                 || _Current Working directory\_    |
-+-------------------------+-----------------------------------+----------------------------------+
-|| DEPLOYER_JAVA_OPTS     || Java Options to be passed to     || empty                           |
-||                        || Crafter Deployer                 ||                                 |
-+-------------------------+-----------------------------------+----------------------------------+
-|| CRAFTER_DEPLOYER_HOME  || Crafter Deployer jar file path   || _Current Working directory\_/   |
-||                        ||                                  || crafter-deployer                |
-+-------------------------+-----------------------------------+----------------------------------+
-|| CATALINA_HOME          || Apache Tomcat files path         ||  _Current Working directory\_/  |
-||                        ||                                  ||  apache-tomcat                  |
-+-------------------------+-----------------------------------+----------------------------------+
-|| CATALINA_PID           || Tomcat process id file save Path ||  CATALINA_HOME/tomcat.pid       |
-+-------------------------+-----------------------------------+----------------------------------+
-|| CRAFTER_DEPLOYER_SDOUT || Crafter Deployer SDOUT path      ||  _Current Working directory\_/  |
-||                        ||                                  ||  crafter-deployer/              |
-||                        ||                                  ||  crafter-deployer.log           |
-+-------------------------+-----------------------------------+----------------------------------+
-|| DEPLOYER_PID           || Crafter Deployer process id file ||  _Current Working directory\_/  |
-||                        || save path                        ||  crafter-deployer/              |
-||                        ||                                  ||  crafter-deployer.pid           |
-+-------------------------+-----------------------------------+----------------------------------+
-
 
 +-------------------------+----------------------------------------------------------------------+
 || **Synopsis**           || ``startup(.sh|bat)``                                                |
 +-------------------------+----------------------------------------------------------------------+
 || **Description**        || Starts all needed Services to have a functional                     |
-||                        || Crafter CMS *Authoring Environment*                                 |
+||                        || Crafter CMS *Authoring/Delivery Environment*                        |
 +-------------------------+----------------------------------------------------------------------+
 
 +-------------------------+----------------------------------------------------------------------+
 || **Synopsis**           || ``shutdown(.sh|bat)``                                               |
 +-------------------------+----------------------------------------------------------------------+
 || **Description**        || Stops all needed Services to have a functional                      |
-||                        || Crafter CMS *Authoring Environment*                                 |
+||                        || Crafter CMS *Authoring/Delivery Environment*                        |
 +-------------------------+----------------------------------------------------------------------+
 
 +-------------------------+----------------------------------------------------------------------+
 || **Synopsis**           || ``debug(.sh|bat)``                                                  |
 +-------------------------+----------------------------------------------------------------------+
 || **Description**        || Starts all needed Services to have a functional                     |
-||                        || Crafter CMS *Authoring Environment* with the JAVA remote debug      |
-||                        || ports open and listing port 5005 for Crafter Deployer,              |
-||                        || 1044 for Solr and 8000 for Apache Tomcat                            |
+||                        || Crafter CMS *Authoring/Delivery Environment* with the JAVA remote   |
+||                        || debug ports open and listening port 5000/5001 for Crafter Deployer, |
+||                        || 5005/5006 for Solr and 8000/9000 for Apache Tomcat                  |
 +-------------------------+----------------------------------------------------------------------+
-
 
 +-------------------------+----------------------------------------------------------------------+
 || **Script**             || ``deployer(.sh/bat)``                                               |
 +-------------------------+----------------------------------------------------------------------+
-|| **Description**        || Script located in *crafter-auth-env/crafter-deployer* which will    |
-||                        || start,stop Crafter Deployer                                         |
+|| **Description**        || Script located in *$CRAFTER_HOME/crafter-deployer* which will       |
+||                        || start,stop Crafter Deployer for the *Authoring/Delivery* environment|
 +-------------------------+----------------------------------------------------------------------+
-|| **Synopsis**           || ``deployer.(sh/bat) start|stop|debug|tail``                         |
+|| **Synopsis**           || ``deployer.(sh/bat) start|stop|debug|help``                         |
 +-------------------------+----------------------------------------------------------------------+
 || **Arguments**          || * ``start`` Starts all Crafter CMS services in this order           |
 ||                        ||    Crafter Deployer, Solr, Apache Tomcat                            |
 ||                        || * ``stop``  Stops all Crafter CMS services in the same order as     |
 ||                        ||    they start.                                                      |
 ||                        || * ``debug`` Start all Crafter CMS services with the JAVA remote     |
-||                        ||    debug port 5005 for Crafter Deployer, 1044 for Solr and 8000     |
-||                        ||    for Apache Tomcat                                                |
+||                        ||    debug port 5000 for Crafter Deployer, 5005 for Solr and 8000     |
+||                        ||    for Apache Tomcat for the *Authoring Environment*                |
+||                        ||    Starts all Crafter CMS services with the JAVA remote debug port  |
+||                        ||    5001 for Crafter Deployer, 5006 for Solr and 9000 for Apache     |
+||                        ||    Tomcat for the *Delivery Environment*                            |
 ||                        || * ``help``  Prints script help                                      |
 +-------------------------+----------------------------------------------------------------------+
 
+Here are the general environment variables used by ``crafter(.sh/bat)``:
 
-``deployer(.sh/bat)`` **Environment Variables**
++--------------------------+---------------------------------------------------------------------+
+|| Variable Name           || Description                                                        |
+||                         +---------------------------------------------------------------------+
+||                         || Default Value                                                      |
++==========================+=====================================================================+
+|| CRAFTER_HOME            || Crafter CMS *Authoring/Delivery* path                              |
+||                         +---------------------------------------------------------------------+
+||                         || {Crafter-CMS-install-directory}/crafter-{env}-env/bin              |
++--------------------------+---------------------------------------------------------------------+
+|| CRAFTER_ROOT            || Crafter CMS path                                                   |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_HOME/..                                                   |
++--------------------------+---------------------------------------------------------------------+
+|| DEPLOYER_HOME           || Crafter Deployer jar files path                                    |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_HOME/crafter-deployer                                     |
++--------------------------+---------------------------------------------------------------------+
 
+Here are the environment variables used for Tomcat in ``crafter(.sh/bat)``:
 
-**Note** If any of this variables are set using the ``crafter.(sh|bat)`` script the *default value of ``crafter.(sh|bat)``
-is the one that will be used.*
++--------------------------+---------------------------------------------------------------------+
+|| Tomcat                  || Description                                                        |
+|| Variable Name           +---------------------------------------------------------------------+
+||                         || Default Value                                                      |
++==========================+=====================================================================+
+|| CATALINA_HOME           || Apache Tomcat files path                                           |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_HOME/apache-tomcat                                        |
++--------------------------+---------------------------------------------------------------------+
+|| CATALINA_PID            || Tomcat process id file save path                                   |
+||                         +---------------------------------------------------------------------+
+||                         || $CATALINA_HOME/tomcat.pid                                          |
++--------------------------+---------------------------------------------------------------------+
+|| CATALINA_LOGS_DIR       || Tomcat file logs path                                              |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_ROOT/logs/tomcat                                          |
++--------------------------+---------------------------------------------------------------------+
+|| CATALINA_OUT            || Tomcat main log file                                               |
+||                         +---------------------------------------------------------------------+
+||                         || $CATALINA_LOGS_DIR/catalina.out                                    |
++--------------------------+---------------------------------------------------------------------+
+|| CATALINA_OPTS           || Tomcat options                                                     |
+||                         +---------------------------------------------------------------------+
+||                         || -Dcatalina.logs=$CATALINA_LOGS_DIR -server -Xss1024K -Xms1G -Xmx4G |
++--------------------------+---------------------------------------------------------------------+
 
+Here are the environment variables used for Solr in ``crafter(.sh/bat)``:
 
-+-------------------------+-----------------------------------+----------------------------------+
-|| Variable Name          || Description                      || Default Value                   |
-+=========================+===================================+==================================+
-|| DEPLOYER_JAVA_OPTS     || Java Options to be passed to     || empty                           |
-||                        || Crafter Deployer                 ||                                 |
-+-------------------------+-----------------------------------+----------------------------------+
-|| CRAFTER_DEPLOYER_HOME  || Crafter Deployer jar file path   || _Current Working directory\_/   |
-||                        ||                                  || crafter-deployer                |
-+-------------------------+-----------------------------------+----------------------------------+
-|| CRAFTER_DEPLOYER_SDOUT || Crafter Deployer SDOUT path      ||  _Current Working directory\_/  |
-||                        ||                                  ||  crafter-deployer/              |
-||                        ||                                  ||  crafter-deployer.log           |
-+-------------------------+-----------------------------------+----------------------------------+
-|| DEPLOYER_PID           || Crafter Deployer process id file ||  _Current Working directory\_/  |
-||                        || save path                        ||  crafter-deployer/              |
-||                        ||                                  ||  crafter-deployer.pid           |
-+-------------------------+-----------------------------------+----------------------------------+
++--------------------------+---------------------------------------------------------------------+
+|| Solr                    || Description                                                        |
+|| Variable Name           +---------------------------------------------------------------------+
+||                         || Default Value                                                      |
++==========================+=====================================================================+
+|| SOLR_PORT               || Solr port                                                          |
+||                         +---------------------------------------------------------------------+
+||                         || 8694                                                               |
++--------------------------+---------------------------------------------------------------------+
+|| SOLR_INDEXES_DIR        || Solr indexes directory                                             |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_ROOT/data/indexes                                         |
++--------------------------+---------------------------------------------------------------------+
+|| SOLR_LOGS_DIR           || Solr log files directory                                           |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_ROOT/logs/solr                                            |
++--------------------------+---------------------------------------------------------------------+
+|| SOLR_JAVA_OPTS          || Solr Java options                                                  |
+||                         +---------------------------------------------------------------------+
+||                         || "-server -Xss1024K -Xmx1G"                                         |
++--------------------------+---------------------------------------------------------------------+
 
-**Other Scripts**
+Here are the environment variables used for the Deployer in ``crafter(.sh/bat)``:
+
++--------------------------+---------------------------------------------------------------------+
+|| Deployer                || Description                                                        |
+|| Variable Name           +---------------------------------------------------------------------+
+||                         || Default Value                                                      |
++==========================+=====================================================================+
+|| DEPLOYER_PORT           || Deployer port                                                      |
+||                         +---------------------------------------------------------------------+
+||                         || 9191                                                               |
++--------------------------+---------------------------------------------------------------------+
+|| DEPLOYER_DATA_DIR       || Deployer data files directory                                      |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_ROOT/data/deployer                                        |
++--------------------------+---------------------------------------------------------------------+
+|| DEPLOYER_LOGS_DIR       || Deployer log files directory                                       |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_ROOT/logs/deployer                                        |
++--------------------------+---------------------------------------------------------------------+
+|| DEPLOYER_DEPLOYMENTS_DIR|| Deployer deployments files directory                               |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_ROOT/data/repos/sites                                     |
++--------------------------+---------------------------------------------------------------------+
+|| DEPLOYER_SDOUT          || Deployer SDOUT path                                                |
+||                         +---------------------------------------------------------------------+
+||                         || $DEPLOYER_LOGS_DIR/crafter-deployer.out                            |
++--------------------------+---------------------------------------------------------------------+
+|| DEPLOYER_JAVA_OPTS      || Deployer Java options                                              |
+||                         +---------------------------------------------------------------------+
+||                         || "-server -Xss1024K -Xmx1G"                                         |
++--------------------------+---------------------------------------------------------------------+
+
+Here are the environment variables used for MongoDB in ``crafter(.sh/bat)``:
+
++--------------------------+---------------------------------------------------------------------+
+|| MongoDB                 || Description                                                        |
+|| Variable Name           +---------------------------------------------------------------------+
+||                         || Default Value                                                      |
++==========================+=====================================================================+
+|| MONGODB_PORT            || MongoDB port                                                       |
+||                         +---------------------------------------------------------------------+
+||                         || 27020                                                              |
++--------------------------+---------------------------------------------------------------------+
+|| MONGODB_HOME            || MongoDB files path                                                 |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_HOME/mongodb                                              |
++--------------------------+---------------------------------------------------------------------+
+|| MONGODB_PID             || MongoDB process id file save path                                  |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_ROOT/data/mongodb/mongod.lock                             |
++--------------------------+---------------------------------------------------------------------+
+|| MONGODB_DATA_DIR        || MongoDB data directory                                             |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_ROOT/data/mongodb                                         |
++--------------------------+---------------------------------------------------------------------+
+|| MONGODB_LOGS_DIR        || MongoDB log files directory                                        |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_ROOT/logs/mongodb                                         |
++--------------------------+---------------------------------------------------------------------+
+
+Let's look at an example on how to start an authoring environment using the scripts we discussed above.  To start the authoring environment, go to your Crafter CMS install folder then run the following:
+
+.. code-block:: bash
+
+   cd crafter-auth-env
+   ./startup.sh
+
+What the above does is go to your authoring environment folder, then run the startup script.
+
+To stop the authoring environment:
+
+.. code-block:: bash
+
+   ./shutdown.sh
+
+^^^^^^^^^^^^^
+Other Scripts
+^^^^^^^^^^^^^
 
 For more information about Apache Tomcat and SOLR, please refer to the following:
 
  * [Tomcat Script documentation](https://tomcat.apache.org/tomcat-8.5-doc/RUNNING.txt)
  * [Solr Script documentation](https://cwiki.apache.org/confluence/display/solr/Running+Solr)
 
-                
-**Distribute Crater CMS Live Environment**
 
-To Distribute a Crafter CMS Environment there is a task ``livePack`` that will generate a Zip and a Tar file with
-a **Clean** Live environment.  This means that it will trigger the ``liveEnv`` task and make sure that your distributable
-files are clean and ready to be unarchived.
+-------------------------------------------------
+Gradle Authoring and Delivery Environment Scripts
+-------------------------------------------------
 
-Archives will be saved in as ``crafter-live-env.tar`` and ``crafter-live-env.zip`` in the ``distributables`` folder
-[Check the :ref:`gradle-tasks` for more information about the livePack task]
-
+As we have seen in the getting started section above, to run a gradle task, we run the following from the root of the project:
 
 .. code-block:: bash
 
-   ./gradlew livePack
-
-                
-                
-Create a Live Environment
-==========================
-
-Building a Crafter CMS Live environment
----------------------------------------
-
-**TBA: Live Environment Definition**
-
-Once all the sources have been downloaded, you can run
-
-.. code-block:: bash
-
-   ./gradlew liveEnv
+   ./gradlew command [-Penv={env}] [-PmoduleName={module}]
 
 
-The Gradle task above will:
+Here's a list of commands (Gradle tasks) available:
 
-1. Delete any existing *Live environment* in the ``crafter-live-env`` folder. *It will always make a clean Live environment*
++---------------+-------------------------------------------+--------------+-----------------+
+|| Command      || Description                              || Env Options || Module Options |
+|| ``command``  ||                                          || ``env``     || ``module``     |
++===============+===========================================+==============+=================+
+|| init         || Clones Crafter CMS                       || - None      || - None         |
++---------------+-------------------------------------------+--------------+-----------------+
+|| build        || Build a module or an entire              || authoring   || - None         |
+||              || environment                              ||             || - studio       |
+||              ||                                          ||             || - deployer     |
+||              ||                                          ||             || - engine       |
+||              ||                                          ||             || - search       |
+||              ||                                          ||             || - social       |
+||              ||                                          ||             || - profile      |
+||              ||                                          ||             || - core         |
+||              ||                                          ||             || - commons      |
+||              ||                                          ||             || - studio2-ui   |
+||              ||                                          +--------------+                 |
+||              ||                                          || delivery    ||                |
++---------------+-------------------------------------------+--------------+-----------------+
+|| deploy       || Deploy a module or an entire             || authoring   || - None         |
+||              || environment                              ||             || - studio       |
+||              ||                                          ||             || - deployer     |
+||              ||                                          ||             || - engine       |
+||              ||                                          ||             || - search       |
+||              ||                                          ||             || - social       |
+||              ||                                          ||             || - profile      |
+||              ||                                          +--------------+-----------------+
+||              ||                                          || delivery    || - None         |
+||              ||                                          ||             || - deployer     |
+||              ||                                          ||             || - engine       |
+||              ||                                          ||             || - search       |
+||              ||                                          ||             || - social       |
+||              ||                                          ||             || - profile      |
++---------------+-------------------------------------------+--------------+-----------------+
+|| bundle       || Build a deployable and distributable     || authoring   || - None         |
+||              || bundle                                   +--------------+                 |
+||              ||                                          || delivery    ||                |
++---------------+-------------------------------------------+--------------+-----------------+
+|| start        || Start Crafter CMS                        || authoring   || - None         |
+||              ||                                          +--------------+                 |
+||              ||                                          || delivery    ||                |
++---------------+-------------------------------------------+--------------+-----------------+
+|| stop         || Stop Crafter CMS                         || authoring   || - None         |
+||              ||                                          +--------------+                 |
+||              ||                                          || delivery    ||                |
++---------------+-------------------------------------------+--------------+-----------------+
+|| update       || Update a module or modules               || - None      || - None         |
+||              ||                                          ||             || - studio       |
+||              ||                                          ||             || - deployer     |
+||              ||                                          ||             || - engine       |
+||              ||                                          ||             || - search       |
+||              ||                                          ||             || - social       |
+||              ||                                          ||             || - profile      |
+||              ||                                          ||             || - core         |
+||              ||                                          ||             || - commons      |
+||              ||                                          ||             || - studio2-ui   |
++---------------+-------------------------------------------+--------------+-----------------+
+|| upgrade      || Upgrades the installed Tomcat version,   || - None      || - None         |
+||              || Solr scripts, etc, without deleting your ||             ||                |
+||              || data then builds and deploys             ||             ||                |
++---------------+-------------------------------------------+--------------+-----------------+
+|| selfupdate   || Updates the Crafter CMS project (gradle) || - None      || - None         |
++---------------+-------------------------------------------+--------------+-----------------+
+|| clear        || Delete all compiled objects              || - None      || - None         |
++---------------+-------------------------------------------+--------------+-----------------+
 
-2. Download Apache Tomcat and Solr. (Check the Gradle section on how to specify a version of Apache Tomcat an Solr)
+**Note:**
 
-3. Build all Crafter CMS modules from the source (check the :ref:`git` section on how to update the source).
-
-4. Create a folder name ``crafter-live-env`` and copy all needed resources for a *clean* and functional Live environment.
-
-
-Running a Crafter CMS Live environment
---------------------------------------
-
-To run the *Live environment* you can:
-
-* Run the gradle task
-
-.. code-block:: bash
-
-   ./gradlew runLive
-
-or
- 
-* Run it manually 
-
-.. code-block:: bash
-
-   cd crafter-live-env
-   ./startup.sh
-
-
-Both of those options will:
-
-* Start Apache tomcat on default ports (9080, 9009, 9005) [See :ref:`gradle-tasks` on how to change default ports]
-
-* Start Solr server on port 8985
-
-* Start Crafter Deployer on port 
-
-
-Live Environment Scripts
-------------------------
-
-The Crafter CMS Live scripts will help you on the basic startup and shutdown of the services needed to run a healthy *Live environment*
-with the following scripts:
-
-+-------------------------+----------------------------------------------------------------------+
-|| **Script**             || ``crafter(.sh/bat)``                                                |
-+-------------------------+----------------------------------------------------------------------+
-|| **Description**        || Main Script to start,and stop all needed Services to have a         |
-||                        || functional Crafter CMS *Live Environment*                           |
-+-------------------------+----------------------------------------------------------------------+
-|| **Synopsis**           || ``crafter.(sh/bat) start|stop|debug|tail|help``                     |
-+-------------------------+----------------------------------------------------------------------+
-|| **Arguments**          || * ``start`` Starts all Crafter CMS services in this order           |
-||                        ||    Crafter Deployer, Solr, Apache Tomcat                            |
-||                        || * ``stop``  Stops all Crafter CMS services in the same order as     |
-||                        ||    they start.                                                      |
-||                        || * ``debug`` Start all Crafter CMS services with the JAVA remote     |
-||                        ||    debug port 6005 for Crafter Deployer, 2044 for Solr and 9000     |
-||                        ||    for Apache Tomcat                                                |
-||                        || * ``tail``  **OSX or Linux only** Tails Apache Tomcat log,          |
-||                        ||    Crafter Deployer Log and Solr log.                               |
-||                        || * ``help``  Prints script help                                      |
-+-------------------------+----------------------------------------------------------------------+
-
-``crafter(.sh/bat)`` **Environment Variables**
-
-+-------------------------+-----------------------------------+----------------------------------+
-|| Variable Name          || Description                      || Default Value                   |
-+=========================+===================================+==================================+
-|| CRAFTER_HOME           || Crafter CMS path                 || _Current Working directory\_    |
-+-------------------------+-----------------------------------+----------------------------------+
-|| DEPLOYER_JAVA_OPTS     || Java Options to be passed to     || empty                           |
-||                        ||    Crafter Deployer              ||                                 |
-+-------------------------+-----------------------------------+----------------------------------+
-|| CRAFTER_DEPLOYER_HOME  || Crafter Deployer jar file path   || _Current Working directory\_/   |
-||                        ||                                  ||       crafter-deployer          |
-+-------------------------+-----------------------------------+----------------------------------+
-|| CATALINA_HOME          || Apache Tomcat files path         ||  _Current Working directory\_/  |
-||                        ||                                  ||       apache-tomcat             |
-+-------------------------+-----------------------------------+----------------------------------+
-|| CATALINA_PID           || Tomcat process id file save Path ||  CATALINA_HOME/tomcat.pid       |
-+-------------------------+-----------------------------------+----------------------------------+
-|| CRAFTER_DEPLOYER_SDOUT || Crafter Deployer SDOUT path      ||  _Current Working directory\_/  |
-||                        ||                                  ||        crafter-deployer/        |
-||                        ||                                  ||        crafter-deployer.log     |
-+-------------------------+-----------------------------------+----------------------------------+
-|| DEPLOYER_PID           || Crafter Deployer process id file ||  _Current Working directory\_/  |
-||                        ||    save path                     ||        crafter-deployer/        |
-||                        ||                                  ||        crafter-deployer.pid     |
-+-------------------------+-----------------------------------+----------------------------------+
+If you don't specify the ``env`` parameter, it means all environments (where applicable).
+In the current version of Crafter CMS, some services run in the same Web container, and that implies the stopping/starting of one of these services will cause other services to stop/start as well.
 
 
-+-------------------------+----------------------------------------------------------------------+
-|| **Synopsis**           || ``startup(.sh|bat)``                                                |
-+-------------------------+----------------------------------------------------------------------+
-|| **Description**        || Starts all needed Services to have a functional                     |
-||                        || Crafter CMS *Live Environment*                                      |
-+-------------------------+----------------------------------------------------------------------+
+Let's see some examples of running Gradle tasks here.
 
-+-------------------------+----------------------------------------------------------------------+
-|| **Synopsis**           || ``shutdown(.sh|bat)``                                               |
-+-------------------------+----------------------------------------------------------------------+
-|| **Description**        || Stops all needed Services to have a functional                      |
-||                        || Crafter CMS *Live Environment*                                      |
-+-------------------------+----------------------------------------------------------------------+
+^^^^^
+BUILD
+^^^^^
 
-+-------------------------+----------------------------------------------------------------------+
-|| **Synopsis**           || ``debug(.sh|bat)``                                                  |
-+-------------------------+----------------------------------------------------------------------+
-|| **Description**        || Starts all needed Services to have a functional                     |
-||                        || Crafter CMS *Live Environment* with the JAVA remote debug           |
-||                        || ports open and listing port 6005 for Crafter Deployer,              |
-||                        || 2044 for Solr and 9000 for Apache Tomcat                            |
-+-------------------------+----------------------------------------------------------------------+
-
-
-+-------------------------+----------------------------------------------------------------------+
-|| **Script**             || ``deployer(.sh/bat)``                                               |
-+-------------------------+----------------------------------------------------------------------+
-|| **Description**        || Script located in *crafter-live-env/crafter-deployer* which will    |
-||                        || start and stop Crafter Deployer                                     |
-+-------------------------+----------------------------------------------------------------------+
-|| **Synopsis**           || ``deployer.(sh/bat) start|stop|debug|tail``                         |
-+-------------------------+----------------------------------------------------------------------+
-|| **Arguments**          || * ``start`` Starts all Crafter CMS services in this order           |
-||                        ||    Crafter Deployer, Solr, Apache Tomcat                            |
-||                        || * ``stop``  Stops all Crafter CMS services in the same order as     |
-||                        ||    they start.                                                      |
-||                        || * ``debug`` Start all Crafter CMS services with the JAVA remote     |
-||                        ||    debug port 6005 for Crafter Deployer, 2044 for Solr and 9000     |
-||                        ||    for Apache Tomcat                                                |
-||                        || * ``tail``  **OSX or Linux only** Tails Apache Tomcat log,          |
-||                        ||    Crafter Deployer Log and Solr log.                               |
-||                        || * ``help``  Prints script help                                      |
-+-------------------------+----------------------------------------------------------------------+
-
-``deployer(.sh/bat)`` **Environment Variables**
-
-**Note**  If any of this variables are set using the `crafter.(sh|bat)` script the *default value of `crafter.(sh|bat)`  
-is the one that will be used.*
-
-+-------------------------+-----------------------------------+----------------------------------+
-|| Variable Name          || Description                      || Default Value                   |
-+=========================+===================================+==================================+
-|| DEPLOYER_JAVA_OPTS     || Java Options to be passed to     || empty                           |
-||                        || Crafter Deployer                 ||                                 |
-+-------------------------+-----------------------------------+----------------------------------+
-|| CRAFTER_DEPLOYER_HOME  || Crafter Deployer jar file path   || _Current Working directory\_    |
-+-------------------------+-----------------------------------+----------------------------------+
-|| CRAFTER_DEPLOYER_SDOUT || Crafter Deployer SDOUT path      ||  _Current Working directory\_   |
-+-------------------------+-----------------------------------+----------------------------------+
-|| DEPLOYER_PID           || Crafter Deployer process id file ||  _Current Working directory\_/  |
-||                        || save path                        ||  crafter-deployer.pid           |
-+-------------------------+-----------------------------------+----------------------------------+
-
-Other Scripts
--------------
-
-For more information about Apache Tomcat and SOLR, please refer to the following:
-
-    * Tomcat Script documentation (https://tomcat.apache.org/tomcat-8.5-doc/RUNNING.txt)
-    * Solr Script documentation (https://cwiki.apache.org/confluence/display/solr/Running+Solr)
-
-                
-
-.. _gradle-tasks:
-
-Gradle Tasks
-============
-
-Common task properties
-----------------------
-+-------------------------+----------------------------------------------------------------------+
-|| tomcatVersion          || Sets the tomcat version to be downloaded used by                    |
-||                        || *downloadTomcat* task                                               |
-+-------------------------+----------------------------------------------------------------------+
-|| solrVersion            || Sets the Solr version to be download used by *downloadSolr* task.   |
-+-------------------------+----------------------------------------------------------------------+
-|| downloadDir            || Path were all downloads will be saved.  Used by *downloadTomat* and |
-||                        || *downloadSolr*. Default value is *./target/dowloads*                |
-+-------------------------+----------------------------------------------------------------------+
-|| authEnv                || Path were a development environment will be generated.              |
-||                        || Default value is *./crafter-auth-env/*                              |
-+-------------------------+----------------------------------------------------------------------+
-|| liveEnv                || Path were a development environment will be generated.              |
-||                        || Default value is *./crafter-live-env/*                              |
-+-------------------------+----------------------------------------------------------------------+
-|| includeProfile         || Includes profile in the generation of the development environment.  |
-||                        || Default value is false. **If true,mongodb is required**             |
-+-------------------------+----------------------------------------------------------------------+
-|| includeSocial          || Includes Social in the generation of the development environment.   |
-||                        || Default value is false,                                             |
-||                        || **If true, *includeProfile* will be set to true**                   |
-+-------------------------+----------------------------------------------------------------------+
-|| authTomcatPort         || Authoring Tomcat Http port. Default value is 8080                   |
-+-------------------------+----------------------------------------------------------------------+
-|| authTomcatShutdownPort || Authoring Tomcat Shutdown port. Default value is 8005               |
-+-------------------------+----------------------------------------------------------------------+
-|| authTomcatAJPPort      || Authoring Tomcat AJP port. Default value is 8009                    |
-+-------------------------+----------------------------------------------------------------------+
-|| authTomcatSSLPort      || Authoring Tomcat SSL(https) port. Default value is 8443             |
-+-------------------------+----------------------------------------------------------------------+
-|| liveTomcatPort         || Live Tomcat Http port. Default value is 9080                        |
-+-------------------------+----------------------------------------------------------------------+
-|| liveTomcatShutdownPort || Live Tomcat Shutdown port. Default value is 9005                    |
-+-------------------------+----------------------------------------------------------------------+
-|| liveTomcatAJPPort      || Live Tomcat AJP port. Default value is 9009                         |
-+-------------------------+----------------------------------------------------------------------+
-|| liveTomcatSSLPort      || Live Tomcat SSL(https) port. Default value is 9443                  |
-+-------------------------+----------------------------------------------------------------------+
-
-Tasks
------
-
-To get more information about all tasks used:
-
-.. code-block:: bash
-
-   ./gradlew tasks --all
-
-**build**
-
-Builds all the projects from source.
+To build the authoring and delivery environments, run the following:
 
 .. code-block:: bash
 
    ./gradlew build
 
+The Gradle task above will:
 
-**build+ProjectName**
+#. Delete any existing environments/module
+#. Download Apache Tomcat, Apache Solr and MongoDB (check the Gradle section on how to specify a version of Apache Tomcat and Apache Solr)
+#. Build all Crafter CMS modules from the source (check the :ref:`git` section on how to update the source)
+#. Create the environment folders and copy all needed resources
 
-Builds the given project, possible values are:
+    - ``crafter-auth-env``
+    - ``crafter-delivery-env``
 
-* commons
-* core
-* search
-* profile
-* social
-* studio
-* deployer
-* engine
-
-Example:
+To build a module (all module options for task ``build`` are listed in the table above), run the following (we'll build the module *studio* in the example below):
 
 .. code-block:: bash
 
-   ./gradlew buildStudio
-
-**clean**
-
-Cleans all projects build results
-
-.. code-block:: bat
-
-   gradlew.bat clean
-
-**clean+ProjectName**
-Clean the build results of the given project possible values are:
-* Commons
-* Core
-* Search
-* Profile
-* Social
-* Studio
-* Deployer
-* Engine
-
-Example:
-
-.. code-block:: bat
-
-   gradlew.bat cleanCore
+   ./gradlew build -PmoduleName=studio
 
 
-**downloadSolr**
+To build an environment, run the following (we'll build the authoring environment in the example below:
 
-Downloads the given configure Solr version also verifies that the war file is ok agains a sha1 signature.
+.. code-block:: bash
+
+   ./gradlew build -Penv=authoring
+
+^^^^^
+START
+^^^^^
+
+To start an environment, run the following:
+
+.. code-block:: bash
+
+   ./gradlew start [-Penv={env}]
+
+What this does under the hood is:
+
+.. code-block:: bash
+
+   cd crafter-{env}-env
+   ./startup.sh
+
+The options above will:
+
+For the *Authoring Environment*:
+
+* Start Apache tomcat on default ports (8080, 8009, 8005) [See :ref:`gradle-tasks` on how to change default ports]
+* Start Solr server on port 8684
+* Start Crafter Deployer on port 9191
+
+For the *Delivery Environment*:
+
+* Start Apache tomcat on default ports (9080, 9009, 9005) [See :ref:`gradle-tasks` on how to change default ports]
+* Start Solr server on port 8685
+* Start Crafter Deployer on port 9192
+
+Here's an example starting an authoring environment:
+
+.. code-block:: bash
+
+   ./gradlew start -Penv=authoring
+
+
+^^^^
+STOP
+^^^^
+
+To stop an environment, run the following:
+
+.. code-block:: bash
+
+   ./gradlew stop [-Penv={env}]
+
+What this does under the hood is:
+
+.. code-block:: bash
+
+   cd crafter-{env}-env
+   ./shutdown.sh
+
+
+^^^^^^
+BUNDLE
+^^^^^^
+
+The Gradle task ``bundle`` will build a deployable and distributable bundle of Crafter CMS for the authoring and/or delivery environments.  This will generate zip and tar files ready to be unarchived and run.
+
+.. code-block:: bash
+
+   ./gradlew bundle [-Penv={env}]
+
+Archives will be saved as ``crafter-auth-env.tar`` and ``crafter-auth-env.zip`` for the *Authoring Environment* and ``crafter-delivery-env.tar`` and ``crafter-delivery-env.zip`` for the *Delivery Environment* in the ``bundles`` folder
+
+
+.. _gradle-tasks:
+
+^^^^^^^^^^^^
+Gradle Tasks
+^^^^^^^^^^^^
+
+In the section above, we discussed some of the Gradle tasks used for building, starting, stopping and bundling our authoring and delivery environments.  To get more information about all tasks used, run the following:
+
+.. code-block:: bash
+
+   ./gradlew tasks --all
+
+Let's take a look at some examples of running a task.
+
+downloadSolr
+^^^^^^^^^^^^
+Downloads the configured Solr version and also verifies that the war file is ok against a sha1 signature.
 
 .. code-block:: bat
 
    gradlew.bat downloadSolr
 
 
-**downloadTomcat**
-
-Downloads the given configure Tomcat version also verifies that the zip file is ok agains a sha1 signature.
+downloadTomcat
+^^^^^^^^^^^^^^
+Downloads the configured Tomcat version and also verifies that the zip file is ok against a sha1 signature.
 
 .. code-block:: bash
 
    ./gradlew downloadTomcat
 
 
-**authEnv**
+Aside from the tasks that we can run, there are also some properties defined in Crafter CMS that allows us to configure our environment.  Below are the available task properties
 
-Builds a **Clean** (Delete all the contents of *authEnv* defaults to crafter-auth-env folder) authoring environment for Studio, uses the build results of *build*,*downloadSolr* and *downloadTomcat*
-uses the *authEnv* property as the output of the it.
-**Note:**
-This task will delete the *authEnv* folder.
+Common task properties
+^^^^^^^^^^^^^^^^^^^^^^
++------------------------------------------------------------------------------------------------+
+|| Unzip Properties                                                                              |
++-------------------------+----------------------------------------------------------------------+
+|| Property               || Description                                                         |
++=========================+======================================================================+
+|| tomcatVersion          || ``tomcat.version``                                                  |
+||                        +----------------------------------------------------------------------+
+||                        || Sets the tomcat version to be downloaded used by                    |
+||                        || *downloadTomcat* task                                               |
++-------------------------+----------------------------------------------------------------------+
+|| solrVersion            || ``solr.version``                                                    |
+||                        +----------------------------------------------------------------------+
+||                        || Sets the Solr version to be downloaded used by *downloadSolr* task. |
++-------------------------+----------------------------------------------------------------------+
+|| downloadDir            || ``downloadDir``                                                     |
+||                        +----------------------------------------------------------------------+
+||                        || Path were all downloads will be saved. Used by *downloadTomcat* and |
+||                        || *downloadSolr*. Default value is *./target/downloads*               |
++-------------------------+----------------------------------------------------------------------+
 
-.. code-block:: bat
++------------------------------------------------------------------------------------------------+
+|| Environment Building Properties                                                               |
++-------------------------+----------------------------------------------------------------------+
+|| Property               || Description                                                         |
++=========================+======================================================================+
+|| authEnv                || ``authoring.root``                                                  |
+||                        +----------------------------------------------------------------------+
+||                        || Path were a development environment will be generated.              |
+||                        || Default value is *./crafter-auth-env/*                              |
++-------------------------+----------------------------------------------------------------------+
+|| liveEnv                || ``delivery.root``                                                   |
+||                        +----------------------------------------------------------------------+
+||                        || Path were a delivery environment will be generated.                 |
+||                        || Default value is *./crafter-delivery-env/*                          |
++-------------------------+----------------------------------------------------------------------+
+|| includeProfile         || ``crafter.profile``                                                 |
+||                        +----------------------------------------------------------------------+
+||                        || Includes Profile in the generation of the development environment.  |
+||                        || Default value is false. **If true,mongodb is required**             |
++-------------------------+----------------------------------------------------------------------+
+|| includeSocial          || ``crafter.social``                                                  |
+||                        +----------------------------------------------------------------------+
+||                        || Includes Social in the generation of the development environment.   |
+||                        || Default value is false,                                             |
+||                        || **If true, *includeProfile* will be set to true**                   |
++-------------------------+----------------------------------------------------------------------+
 
-   gradlew.bat buildEnv
++------------------------------------------------------------------------------------------------+
+|| Authoring Environment Properties                                                              |
++-------------------------+----------------------------------------------------------------------+
+|| Property               || Description                                                         |
++=========================+======================================================================+
+|| authTomcatPort         || ``authoring.tomcat.http.port``                                      |
+||                        +----------------------------------------------------------------------+
+||                        || Authoring Tomcat Http port. Default value is 8080                   |
++-------------------------+----------------------------------------------------------------------+
+|| authTomcatShutdownPort || ``authoring.tomcat.shutdown.port``                                  |
+||                        +----------------------------------------------------------------------+
+||                        || Authoring Tomcat shutdown port. Default value is 8005               |
++-------------------------+----------------------------------------------------------------------+
+|| authTomcatAJPPort      || ``authoring.tomcat.ajp.port``                                       |
+||                        +----------------------------------------------------------------------+
+||                        || Authoring Tomcat AJP port. Default value is 8009                    |
++-------------------------+----------------------------------------------------------------------+
+|| authTomcatSSLPort      || ``authoring.tomcat.https.port``                                     |
+||                        +----------------------------------------------------------------------+
+||                        || Authoring Tomcat SSL(https) port. Default value is 8443             |
++-------------------------+----------------------------------------------------------------------+
+|| authTomcatDebugPort    || ``authoring.tomcat.debug.port``                                     |
+||                        +----------------------------------------------------------------------+
+||                        || Authoring Tomcat SSL(https) port. Default value is 8000             |
++-------------------------+----------------------------------------------------------------------+
+|| authMongoDBPort        || ``authoring.mongo.port``                                            |
+||                        +----------------------------------------------------------------------+
+||                        || Authoring MongoDb port. Default value is 27020                      |
++-------------------------+----------------------------------------------------------------------+
+|| authSolrPort           || ``authoring.solr.port``                                             |
+||                        +----------------------------------------------------------------------+
+||                        || Authoring Solr port. Default value is 8694                          |
++-------------------------+----------------------------------------------------------------------+
+|| authSolrDebugPort      || ``authoring.solr.debug.port``                                       |
+||                        +----------------------------------------------------------------------+
+||                        || Authoring Solr debug port. Default value is 5005                    |
++-------------------------+----------------------------------------------------------------------+
+|| authMariaDbPort        || ``authoring.mariadb.port``                                          |
+||                        +----------------------------------------------------------------------+
+||                        || Authoring MariaDb port. Default value is 33306                      |
++-------------------------+----------------------------------------------------------------------+
+|| authDeployerPort       || ``authoring.deployer.port``                                         |
+||                        +----------------------------------------------------------------------+
+||                        || Authoring Deployer port. Default value is 9191                      |
++-------------------------+----------------------------------------------------------------------+
+|| authDeployerDebugPort  || ``authoring.deployer.debug.port``                                   |
+||                        +----------------------------------------------------------------------+
+||                        || Authoring Deployer debug port. Default value is 5000                |
++-------------------------+----------------------------------------------------------------------+
+|| authDeploymentDir      || ``authoring.deployment.dir``                                        |
+||                        +----------------------------------------------------------------------+
+||                        || Authoring deployment directory. Default value is "data/repos/sites" |
++-------------------------+----------------------------------------------------------------------+
 
++------------------------------------------------------------------------------------------------+
+|| Delivery Environment Properties                                                               |
++-----------------------------+------------------------------------------------------------------+
+|| Property                   || Description                                                     |
++=============================+==================================================================+
+|| deliveryTomcatPort         || ``delivery.tomcat.http.port``                                   |
+||                            +------------------------------------------------------------------+
+||                            || Delivery Tomcat Http port. Default value is 9080                |
++-----------------------------+------------------------------------------------------------------+
+|| deliveryTomcatShutdownPort || ``delivery.tomcat.shutdown.port``                               |
+||                            +------------------------------------------------------------------+
+||                            || Delivery Tomcat Shutdown port. Default value is 9005            |
++-----------------------------+------------------------------------------------------------------+
+|| deliveryTomcatAJPPort      || ``delivery.tomcat.ajp.port``                                    |
+||                            +------------------------------------------------------------------+
+||                            || Delivery Tomcat AJP port. Default value is 9009                 |
++-----------------------------+------------------------------------------------------------------+
+|| deliveryTomcatSSLPort      || ``delivery.tomcat.https.port``                                  |
+||                            +------------------------------------------------------------------+
+||                            || Delivery Tomcat SSL(https) port. Default value is 9443          |
++-----------------------------+------------------------------------------------------------------+
+|| deliveryTomcatDebugPort    || ``delivery.tomcat.debug.port``                                  |
+||                            +------------------------------------------------------------------+
+||                            || Delivery Tomcat debug port. Default value is 9000               |
++-----------------------------+------------------------------------------------------------------+
+|| deliveryMongoDBPort        || ``delivery.mongodb.port``                                       |
+||                            +------------------------------------------------------------------+
+||                            || Delivery Mongo DB port. Default value is 28020                  |
++-----------------------------+------------------------------------------------------------------+
+|| deliverySolrPort           || ``delivery.solr.port``                                          |
+||                            +------------------------------------------------------------------+
+||                            || Delivery Solr port. Default value is 8695                       |
++-----------------------------+------------------------------------------------------------------+
+|| deliverySolrDebugPort      || ``delivery.solr.debug.port``                                    |
+||                            +------------------------------------------------------------------+
+||                            || Delivery Solr debug port. Default value is 5006                 |
++-----------------------------+------------------------------------------------------------------+
+|| deliveryDeployerPort       || ``delivery.deployer.port``                                      |
+||                            +------------------------------------------------------------------+
+||                            || Delivery Deployer port. Default value is 9192                   |
++-----------------------------+------------------------------------------------------------------+
+|| deliveryDeployerDebugPort  || ``delivery.deployer.debug.port``                                |
+||                            +------------------------------------------------------------------+
+||                            || Delivery Deployer debug port. Default value is 5001             |
++-----------------------------+------------------------------------------------------------------+
+|| deliveryDeploymentDir      || ``delivery.deployment.dir``                                     |
+||                            +------------------------------------------------------------------+
+||                            || Delivery Deployment directory.                                  |
+||                            || Default value is "data/repos/sites"                             |
++-----------------------------+------------------------------------------------------------------+
 
++------------------------------------------------------------------------------------------------+
+|| Git Properties                                                                                |
++-----------------------------+------------------------------------------------------------------+
+|| Property                   || Description                                                     |
++=============================+==================================================================+
+|| gitURLTemplate             || ``crafter.git.url``                                             |
+||                            +------------------------------------------------------------------+
+||                            || Git URL                                                         |
+||                            || Default value is "https://github.com/craftercms/"               |
++-----------------------------+------------------------------------------------------------------+
+|| gitSourceBranch            || ``crafter.git.branch``                                          |
+||                            +------------------------------------------------------------------+
+||                            || Git source branch. Default value is "master"                    |
++-----------------------------+------------------------------------------------------------------+
+|| gitRepo                    || ``crafter.git.remote``                                          |
+||                            +------------------------------------------------------------------+
+||                            || Git repository. Default value is "origin"                       |
++-----------------------------+------------------------------------------------------------------+
+|| studioUIFromRepo           || ``crafter.ui.repo``                                             |
+||                            +------------------------------------------------------------------+
+||                            || Is Studio UI from repository? Default value is false            |
++-----------------------------+------------------------------------------------------------------+
+|| forceDeploy                || ``forceDeploy``                                                 |
+||                            +------------------------------------------------------------------+
+||                            || Force deploy? Default value is false                            |
++-----------------------------+------------------------------------------------------------------+
 
-**liveEnv**
+Here's an example using one of the task properties, ``gitRepo``,  to get the latest code from Crafter CMS, in order to have the latest updates from the community:
 
-Builds a **Clean** (Delete all the contents of *liveEnv* defaults to crafter-live-env folder) live environment for Studio, uses the build results of *build*,*downloadSolr* and *downloadTomcat*
-uses the *liveEnv* property as the output of the it.
-**Note:**
-This task will delete the *liveEnv* folder.
+.. code-block:: bash
 
-.. code-block:: bat
+    ./gradlew update -Pcrafter.git.remote=upstream
 
-   gradlew.bat buildEnv
-
-
-**authPack**
-Packages the *authEnv* in a zip and tar files to be distribute.
 
 .. _git:
 
-Git
-===
+-------------------
+Useful Git Commands
+-------------------
 
+Here are some useful Git commands for setting up our Crafter CMS project.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Copy Crafter CMS repository and initialize submodules
------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -608,17 +697,18 @@ Copy Crafter CMS repository and initialize submodules
 
 .. _update-submodules:
 
+^^^^^^^^^^^^^^^^^
 Update Submodules
------------------
+^^^^^^^^^^^^^^^^^
 1. Run
 
 .. code-block:: bash
 
    git submodule update --force --recursive --remote
 
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Change Project URL to a fork
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Change the url on the _.gitmodules_ file
 2. Run
@@ -627,9 +717,9 @@ Change Project URL to a fork
 
    git submodule sync --recursive
 
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Change the branch/tag of a project (manual way)
------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Change the `branch` value in the desire project to valid branch,tag or commit id
 2. Run
