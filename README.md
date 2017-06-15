@@ -1,2 +1,2 @@
 # docs
-Crafter CMS documentation
+Crafter CMS documentation.
