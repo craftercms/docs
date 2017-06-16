@@ -8,9 +8,9 @@ Drag and Drop configuration file defines the categories and their corresponding 
 
 To find this configuration xml through studio follow the next instructions:
 
-#. Click on Console Admin located in the Site Content.
-#. Choose Configuration from the menu.
-#. Select "Preview Components Configuration".
+#. Click on **Site Config** located in the **Sidebar**.
+#. Choose **Configuration** from the menu.
+#. Select **Preview Components Configuration**.
 
 .. image:: /_static/images/dnd-configuration.png
 
@@ -19,7 +19,7 @@ Sample
 ------
 
 .. code-block:: xml
-    :caption: /cstudio/config/sites/SITENAME/preview-tools/components-config.xml
+    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/preview-tools/components-config.xml
 
     <config>
 	   <category>
@@ -76,16 +76,16 @@ List of available category tags
 +-----------------+------------------------------------+-------------------------------------------------+
 || Tag            || Description                                                                         |
 +=================+====================================+=================================================+
-|| Category       || This tag contains each category of the panel. See #1 in the image above.            |
+|| Category       || This tag contains each category of the panel. See #1 in the image below.            |
 +-----------------+------------------------------------+-------------------------------------------------+
 || Label          || Each ``<category>`` element must contain a <label> element that specifies the       |
-||                || category name. See #2 in the image above.                                           |
+||                || category name. See #2 in the image below.                                           |
 +-----------------+------------------------------------+-------------------------------------------------+
 || Component      || This tag refers to the component which the user can drag and drop into the          |
-||                || preview page selected. See #3 in the image above.                                   |
+||                || preview page selected. See #3 in the image below.                                   |
 +-----------------+------------------------------------+-------------------------------------------------+
 || Label          || Each ``<component>`` element must contain a <label> element that specifies the      |
-||                || ccomponent name. See #4 in the image above.                                         |
+||                || component name. See #4 in the image below.                                          |
 +-----------------+------------------------------------+-------------------------------------------------+
 || Type           || Content-Type assigned to create the new component.                                  |
 +-----------------+------------------------------------+-------------------------------------------------+
@@ -110,10 +110,10 @@ List of available browse tags
 +-----------------+------------------------------------+-------------------------------------------------+
 || Tag            || Descriptionn                                                                        |
 +=================+====================================+=================================================+
-|| Browse         || This tag contains each browse of the panel. See #1 in the image above.              |
+|| Browse         || This tag contains each browse section in the panel. See #1 in the image below.      |
 +-----------------+------------------------------------+-------------------------------------------------+
 || Label          || Each ``<browse>`` element must contain a <label> element that specifies the browse  |
-||                || label to display in the panel. See #2 in the image above.                           |
+||                || label to display in the panel. See #2 in the image below.                           |
 +-----------------+------------------------------------+-------------------------------------------------+
 || Path           || Path where the user will select the component to drag and drop into the preview     |
 ||                || page selected.                                                                      |

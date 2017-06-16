@@ -6,7 +6,7 @@
 Crafter Studio
 ==============
 
-.. figure:: /_static/images/crafter-cloud-v8-Crafter-Studio.png
+.. figure:: /_static/images/architecture/crafter-studio.png
     :alt: Crafter Studio
     :width: 60 %
     :align: center
@@ -41,4 +41,4 @@ Configuration
 
 * :ref:`studio-configuration`
 
-.. todo:: Write overview
+

@@ -8,7 +8,7 @@ Search
 Querying Content
 ----------------
 
-This section describes the types of content queries you can make.
+This section describes the types of content queries you can make (taken from cook-books section)
 
 .. toctree::
    :maxdepth: 1
@@ -236,117 +236,142 @@ Given the number of items found and our productsPerPage value we can determine t
 
 
 
-----------------------------------------------------
-Creating a Type-ahead or Suggestions for Your Search
-----------------------------------------------------
+---------------------------------
+Implementing a Type-ahead Service
+---------------------------------
 
 There are a couple of options for creating a type-ahead or suggestions for your search:
 
-- Solr Suggest feature
-  Leverages a dictionary to suggest possible values (not your indexed content)
-  http://www.opensourceconnections.com/blog/2013/06/08/advanced-suggest-as-you-type-with-solr/
-- Facets
+Solr Suggester
+  Can leverage a dictionary or the content in your index. `More details <https://lucidworks.com/2015/03/04/solr-suggester>`_
+Solr Facets
+  Leverages the content in your index
+Solr Query
   Leverages the content in your index
 
-In this section, we will be looking at how to use facets for leveraging content in your index.  To create a type-ahead or suggestions for your search using facets, do the following:
+In this section, we will be looking at how to use a query to provide suggestions as the user types.
 
+.. figure:: /_static/images/search-typeahead-box.png
+  :scale: 50 %
+  :align: center
+  
+.. figure:: /_static/images/search-typeahead-suggestions.png
+  :scale: 50 %
+  :align: center
 
-Step 1: Create a Service
+^^^^^^^^^^^^^^^^^
+Build the Service
+^^^^^^^^^^^^^^^^^
 
-Create a REST service for search in your site.
-
-Requirements:
-
-The service will take the user's current search term and perform a search.
-The service will return the results
-The service will return the number of results found
-The service will return suggestions about what therms the user might be looking for
-Our example will focus on PRODUCTS where the user's QUERY is referring to the PRODUCT's TITLE
-
-
-
-To create the service, place the following GROOVY file in your scripts folder
-
-.. code-block:: groovy
-
-    /scripts/rest/search/products.get.groovy
-    // get the query parameter
-    def q = params['query'];
-    def result = [:]
-
-    // build the query statement
-    def queryStatement = "crafterSite:\"rosie\" ";
-    queryStatement    += "AND content-type:\"/component/jeans\" ";
-    queryStatement    += "AND productTitle:*"+q+"* ";
-
-    // construct and query operation object
-    def query = searchService.createQuery();
-    query = query.setQuery(queryStatement);
-    query = query.addParam("facet","on");
-    query = query.addParam("facet.field","productTitle");
-    query = query.addParam("facet.prefix", q);
-
-    // execute the query operation and get the result values
-   def executedQuery = searchService.search(query);
-   def productsFound = executedQuery.response.numFound;
-
-   // build product results
-   def products = executedQuery.response.documents;
-   result.productsFound = productsFound;
-   result.products = [];
-   products.each {
-       product ->
-       def productResult = [:];
-       productResult.title = product.productTitle;
-       productResult.abc = "abc";
-       result.products.add(productResult);
-   }
-
-   // build suggestions
-   def productNames = executedQuery.facet_counts.facet_fields['productTitle'];
-   result.suggestions = [];
-   productNames.each {
-       productName ->
-       if(productName.value > 0) {
-           result.suggestions.add(productName.key);
-       }
-   }
-
-   // query diagnostics
-   result.s = [:];
-   result.s.q = q;
-   result.s.resultsFound = productsFound;
-   //result.s.results = products;
-
-   return result;
-
-
-Step 2: Build the UI
-
-The front end experience is built with HTML, Javascript and specifically AJAX
+Create a REST service that returns suggestions based on the content in your site.
 
 Requirements
+^^^^^^^^^^^^
 
-When the user types a value send a request to the server to get instant results
-Display the results and show suggestions about what the user might be looking for
-DO NOT fire a query for every keystroke.  This can lead to more load than necessary, instead, batch user keystrokes and send when batch size is hit OR the user stops typing
+- The service will take the user's current search term and find similar content.
+- The service will return the results as a list of strings
+
+To create the REST endpoint, place the following Groovy file in your scripts folder
 
 .. code-block:: groovy
 
-    $('#products, #insearch input').typeahead({
-           source: function (query, process) {
-                      return $.get('/api/1/services/search/suggest.json',
-                                   { query: query },
-                                   function (data) {
-                                      return process(data.suggestions);
-                                   })
-           }
-    });
+    // /scripts/rest/suggestions.get.groovy
+    
+    import org.craftercms.sites.editorial.SuggestionHelper
+    
+    // Obtain the text from the request parameters
+    def term = params.term
 
+    def helper = new SuggestionHelper(searchService)
 
-Step 3: Add the Search Component to your Template
+    // Execute the query and process the results
+    return helper.getSuggestions(term)
 
-The search code we built above is 100% Javascript / and CSS.  Now we want to incorporate it in to our template.  See below:
+You will also need to create the helper classs in the scripts forlder
 
+.. code-block:: groovy
 
-.. TODO:: Finish section on creating type-ahead or suggestions for search, verify/update faceted navigation, update images.  The blurbs above came from the wiki and may be outdated.
+  // /scripts/classes/org/craftercms/sites/editorial/SuggestionHelper.groovy
+  
+  package org.craftercms.sites.editorial
+
+  import org.craftercms.search.service.SearchService
+
+  class SuggestionHelper {
+  
+    static final String DEFAULT_CONTENT_TYPE_QUERY = "content-type:\"/page/article\""
+    static final String DEFAULT_SEARCH_FIELD = "subject"
+  
+    SearchService searchService
+  
+    String contentTypeQuery = DEFAULT_CONTENT_TYPE_QUERY
+    String searchField = DEFAULT_SEARCH_FIELD
+  
+    SuggestionHelper(SearchService searchService) {
+      this.searchService = searchService
+    }
+  
+    def getSuggestions(String term) {
+      // Query documents matching a content-type and having similar words to the term
+      def queryStr = "${contentTypeQuery} AND ${searchField}:*${term}*"
+      def query = searchService.createQuery()
+      query.setQuery(queryStr)
+      def result = searchService.search(query)
+      return process(result)
+    }
+  
+    def process(result) {
+      // Extracts only a specific field from each matched document
+      def processed = result.response.documents.collect { doc ->
+        doc[searchField]
+      }
+      return processed
+    }
+  
+  }
+
+Once those files are created and the site context is reloaded you should be able to test the
+REST endpoint from a browser and get a result similar to this:
+
+  ``http://localhost:8080/api/1/services/suggestions.json?term=men``
+
+.. code-block:: json
+
+  [
+    "Men Styles For Winter",
+    "Women Styles for Winter",
+    "Top Books For Young Women",
+    "5 Popular Diets for Women"
+  ]
+
+^^^^^^^^^^^^
+Build the UI
+^^^^^^^^^^^^
+
+The front end experience is built with HTML, Javascript and specifically AJAX.
+
+Requirements
+^^^^^^^^^^^^
+
+  - When the user types a value send a request to the server to get instant results
+  - Display the results and show suggestions about what the user might be looking for
+  - *Do not* fire a query for every keystroke. This can lead to more load than necessary, instead, 
+    batch user keystrokes and send when batch size is hit or when the user stops typing.
+
+You can also integrate any existing library or framework that provides a type-ahead component,
+for example to use the `jQuery UI Autocomplete <http://jqueryui.com/autocomplete/>`_ 
+component you only need to provide the REST endpoint in the configuration:
+
+.. code-block:: javascript
+
+  $('#search').autocomplete({
+    // Wait for at least this many characters to send the request
+    minLength: 2,
+    source: '/api/1/services/suggestions.json',
+    // Once the user selects a suggestion from the list, redirect to the results page
+    select: function(evt, ui) {
+      window.location.replace("/search-results?q=" + ui.item.value);
+    }
+  });
+
+.. TODO:: Verify/update faceted navigation, update images.  The blurbs above came from the wiki and may be outdated.

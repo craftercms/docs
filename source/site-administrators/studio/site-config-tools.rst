@@ -131,30 +131,29 @@ Content Type Specific tool configuration
 List of available tools
 -----------------------
 
-==================== ===========
+Here's a list of available tools defined in the Website_Editorial blueprint.
+
+==================== =====================================================================
 Tool                 Description
-==================== ===========
-admin-configurations
-bulkoperations
-comment-moderation
-content-types
-deployment-tools
-find-replace
-log-view
-logging
-site-profiles
-socialmention
-taxonomies
-workflow-jobs
-workflow-states
-==================== ===========
+==================== =====================================================================
+content-types        Allows you to create/modify content types
+admin-configurations Contains all the configuration files managed through Crafter Studio
+groups               Allows you to manage site groups and group membership
+audit                Allows you to view your site activity log
+bulkoperations       Allows you to publish multiple items at once
+workflow-states      Contains a list of all files in the site with its corresponding state
+log-view             Allows you to tail logs depending on what logging levels are set
+logging              Allows you to set logging levels for the log console
+preview-sync         Allows you to initiate the preview server synchronization
+sync-from-repository Allows you to initiate synchronization from the repository
+==================== =====================================================================
 
 List of available content type form controls
 --------------------------------------------
 
 .. include:: /developers/form-controls/list-form-controls.rst
 
-List of available datasources
------------------------------
+List of available content type datasources
+------------------------------------------
 
 .. include:: /developers/form-sources/list-form-sources.rst

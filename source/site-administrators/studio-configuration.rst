@@ -26,7 +26,7 @@ The following items are noted in the image above:
     #. This is a short description of the current selected configuration file from the dropdown list
     #. These are the available actions that can be selected for the current selected configuration file.
 
-Here are the setting that can be configured through Crafter Studio:
+Here are the settings that can be configured through Crafter Studio:
 
 .. toctree::
    :maxdepth: 1

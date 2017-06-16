@@ -2,7 +2,7 @@
 Environment Overrides
 =====================
 
-Add a short description on what this does
+This configuration file is used
 
 ------
 Sample

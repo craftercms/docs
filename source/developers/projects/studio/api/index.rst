@@ -97,4 +97,14 @@ Monitoring
 	monitor/status
 	monitor/memory
 
+----
+CMIS
+----
+
+.. toctree::
+	:maxdepth: 1
+
+	cmis/list
+	cmis/search
+
 .. todo:: Current coverage is limited to version 3.x new features, will need to extend converage to all API calls

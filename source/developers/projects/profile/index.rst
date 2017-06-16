@@ -6,7 +6,7 @@
 Crafter Profile
 ===============
 
-.. figure:: /_static/images/crafter-cloud-v8-Crafter-Profile.png
+.. figure:: /_static/images/architecture/crafter-profile.png
     :alt: Crafter Profile
     :width: 60 %
     :align: center
@@ -28,10 +28,10 @@ Java Doc
 --------
 
 Crafter Profile's Java Doc are here:
-    http://javadoc.io/doc/org.craftercms/crafter-profile
-    http://javadoc.io/doc/org.craftercms/crafter-profile-api
-    http://javadoc.io/doc/org.craftercms/crafter-profile-client
-    http://javadoc.io/doc/org.craftercms/crafter-security-provider
+    - http://javadoc.io/doc/org.craftercms/crafter-profile
+    - http://javadoc.io/doc/org.craftercms/crafter-profile-api
+    - http://javadoc.io/doc/org.craftercms/crafter-profile-client
+    - http://javadoc.io/doc/org.craftercms/crafter-security-provider
 
 --------
 ReST API
@@ -47,4 +47,4 @@ ReST API
 Configuration
 -------------
 
-.. todo:: Write overview; write configuration, write ReST API doc
+.. todo:: write configuration, write ReST API doc

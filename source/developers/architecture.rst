@@ -2,63 +2,74 @@
 
 .. index:: Architecture
 
-=======================
-High Level Architecture
-=======================
+========================
+Crafter CMS Architecture
+========================
 
-.. image:: /_static/images/crafter-cloud-v8-Detailed.png
-        :width: 100%
-        :alt: Crafter CMS Architecture
-        :align: center
+Crafter CMS distinguishes itself by its modern architecture, in turn this enables:
 
-The Crafter CMS architecture at a high level consists of the Authoring Environment and the Delivery Environment.
+* Truly Decoupled CMS (disconnected global delivery)
+* Dynamic / personalized delivery of every request at speed
+* API first CMS (content as a service)
+* Git-based CMS (allows for excellent developer cadence)
+* Share-nothing delivery architecture (extreme scale)
+* Front-end agnostic (bring your favorite UI framework or use as a headless CMS)
+* Equal support for all three CMS stakeholders: content authors, developers and system administrators
 
-In the authoring environment, Crafter Studio provides all the content management services and integrates with repositories like Git, Alfresco and other CMIS based platforms to enable authoring, management, and publishing of all content. Crafter Studio provides a comprehensive set of user-friendly features for managing and optimizing of experiences.
+Crafter CMS is a true decoupled content management system, yet it supports dynamic and personalized content
+delivery. To understand this better, typical decoupled content management systems have the following general
+architecture:
 
-In the delivery environment, Crafter Engine provides content delivery services to power any type of Web or mobile application.  It consumes content published through Crafter Studio and provides developers with the foundation for quickly building high-performance, flexible Web and mobile applications. Crafter Engine provides out-of-the-box integration with numerous data sources and application services. Crafter Engine can easily be integrated with other applications such as CRM and sales force automation, marketing and email campaign management, and other enterprise systems required for optimizing the Web experience for your audience.
-
-The management and delivery of content is decoupled and separate, allowing each system to be optimized for its purpose, audience and scalability requirements. Multi-channel publishing is naturally supported, and mobile devices and applications are enabled by means of both native device support (iOS and Android) and HTML5 support.
-
-For more information on all the components inside the Authoring environment and the Delivery environment, please see the following sections:
-
-    * :ref:`crafter-cms`
-    * :ref:`crafter-core`
-    * :ref:`crafter-engine`
-    * :ref:`crafter-studio`
-    * :ref:`crafter-search`
-    * :ref:`crafter-deployer`
-    * :ref:`crafter-profile`
-    * :ref:`crafter-social`
-
-----------------------
-Decoupled Architecture
-----------------------
-
-A decoupled CMS architecture separates content authoring capabilities and infrastructure, from the delivery capabilities and infrastructure.
-
-    * Native multi-channel support via publishing.
-    * Authoring and delivery components typically have different
-
-        * Authentication and authorization requirements (internal vs external)
-        * Service Level Agreements (SLA)
-        * Scalability requirements
-
-    * Decoupled architectures also demonstrate the separation of principal concerns which makes upgrading and maintaining software easier.
-
-.. image:: /_static/images/crafter-cloud-v8-Decoupled.png
+.. image:: /_static/images/architecture/decoupled-overview.png
         :width: 100%
         :alt: Crafter CMS Decoupled Overview
         :align: center
 
-Crafter CMS is a decoupled CMS that separates authoring and publishing capabilities into their own subsystems.  Content is written and published once but can be requested and presented uniquely by any number of different channels / content consumers.  The process of making content live is done through a publishing mechanism where content is pushed from the authoring platform (and underlying content repository) to a content delivery infrastructure.
+Most decoupled content management systems compile the content into the final artifacts and push that to the delivery tier. While this allows for disconnected delivery, and extreme scalability (just add servers on the delivery tier that deliver the content, or use a CDN), this approach doesn't allow for dynamic/personalized delivery of content.
 
-    * Easier to scale for high traffic websites, and to handle multi-site management.
-    * SLAs are decoupled.  Authoring can be down for upgrades without impacting delivery. The reverse is also true.
-    * Scale only the components that you need.  If you are not adding more authors then there is no need to scale out authoring.  This affects the complexity of the solution and also license costs where they are involved.
-    * Code complexity is isolated within each of the two components (authoring and delivery).  Each piece can be as simple or complex as is needed without impacting the other.
-    * Integration is a built in concept, as content is natively published to the remote delivery system, it is generally straightforward to push to other systems as well. Also note, integration takes place on the authoring tier safely away from the live site protecting stability and performance.
-    * Content migration and sharing with other systems is generally much more innate to the architecture.
-    * Multi-channel support by nature, as publishing to mobile apps, social channels, and other digital channels is a natural extension of the native publishing capability.
-    * Content sharing and syndication are more naturally supported.
-    * When complexity is isolated and scaling is simple, it’s easier to develop and deploy rich features to your users.
-    * Integrating with devOps is much easier.  When you need to integrate your development tools, process/automation and source code repository you are inherently entering in to a discussion about security and systems administration — all of which are significantly more approachable if authoring and delivery systems are separated.
+Many actually coupled CMSs do claim to be decoupled. These systems allow you to have an authoring tier that's separate from the delivery tier, however, these are indeed connected via a database sync. That means that the delivery tiers cannot run without some level of connectivity to the authoring master, and indeed has limits on scale of the delivery tier.
+
+A truly decoupled system will support disconnected delivery (think of a delivery tier that's running in a submarine or on a cruise ship). While running disconnected delivery nodes is an extreme example, it's a good test of the true scalability of the delivery tier of a CMS.
+
+Crafter CMS is truly decoupled and only assets are published from the authoring tier to the publishing tier. These assets comprise XML files and static assets (like images, CSS, Groovy code, etc.). The delivery tier ingests these artifacts and can then deliver the desired experience.
+
+How can Crafter CMS deliver a dynamic experience? During ingestion, the delivery tier indexes the content into a local search engine and builds in-memory representation of content items to help drive the dynamic behavior. The search engine and in-memory store are local and therefore share nothing with other nodes, however, you're now able to search and build dynamic responses.
+
+What about personalization and targeting? Crafter CMS has two subsystems that are backed by a NoSQL database to help with personalization and UGC (User Generated Content): Crafter Profile and Crafter Social. These collected information about the user (logged in or not), and can drive dynamic behavior, and allow the user to engage with the site (comments, ratings, etc.).
+
+Hang on, you said disconnected delivery!? Crafter Profile and Crafter Social do indeed need a database, but: 1) the CMS doesn't mandate these, you can deliver content without these capabilities, 2) the choice NoSQL helps with geo-distribution, high-scale, and some disconnection for eventual consistency.
+
+Below is a diagram showing Crafter CMS including all microservices for authoring and delivery:
+
+.. image:: /_static/images/architecture/detailed.png
+        :width: 100%
+        :alt: Crafter CMS Architecture
+        :align: center
+
+You'll quickly note that the authoring tier has very different SLAs, scalability, and geo-location requirements when compared to the delivery tier. It's very likely that you'll only need the authoring environment present in one data-center (per set of sites), and will have a bounded set of users and less stringent SLA. Whereas for delivery, you'll likely to need the delivery tier to be geographically distributed for faster personalized response time to end-users, unbounded users and very high SLAs.
+
+A typical deployment of Crafter CMS on Amazon AWS will have 1 region for authoring, and 3 regions for delivery that will result in sub-one-second HTML response time to end-users globally.
+
+Here is a typical AWS deployment at a high-level:
+
+.. image:: /_static/images/architecture/typical-deployment.png
+        :width: 100%
+        :alt: Crafter CMS Typical Real-life AWS Deployment
+        :align: center
+
+The authoring cluster is typically deployed closest to the content authors, whereas delivery clusters are spread across geographies where you have end-users. If content authors are also globally distributed, authoring clusters are deployed near the authors to speed up their experience as well. Delivery nodes can pull content from an arbitrary number of authoring nodes.
+
+.. image:: /_static/images/architecture/global-delivery.png
+        :width: 100%
+        :alt: Crafter CMS Typical Real-life Global Deployment
+        :align: center
+
+
+For more information on most of the components inside the Authoring environment and the Delivery environment, please see the following sections:
+
+    * :ref:`crafter-studio`
+    * :ref:`crafter-engine`
+    * :ref:`crafter-search`
+    * :ref:`crafter-deployer`
+    * :ref:`crafter-profile`
+    * :ref:`crafter-social`

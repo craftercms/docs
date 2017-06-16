@@ -18,7 +18,7 @@ For the segments, we have Anonymous, Guy and Gal.
 Configuring
 ^^^^^^^^^^^
 
-Persona Configuration
+**Persona Configuration**
 
 .. figure:: /_static/images/tagging-personas-configuration.png
     :alt: Tagging-Open Personas Configuration
@@ -88,9 +88,18 @@ persona-config.xml
     </personas>
 
 
-Segments Configured List
+**Segments List**
 
-Here's the list that will be used by the Website_Editorial blueprint when modeling the segments into the content.  It can be configured by clicking on **Site Config** in the Sidebar, then clicking on **Configuration** and finally selecting **Segments Configured List** from the dropdown box.
+Here's the list that will be used by the Website_Editorial blueprint when modeling the segments into the content.  The list was created by right clicking on **Taxonomy** in the Sidebar, then clicking on **New Content**.
+
+Here's the list after entering the desired segments:
+
+.. figure:: /_static/images/tagging-segments.png
+    :alt: Tagging-Segments
+    :width: 80 %
+    :align: center
+
+Here's the resulting xml file:
 
 segments.xml
 
@@ -175,7 +184,16 @@ Another way of using tags for organizing content is by tagging pages based on ca
 Configuring
 ^^^^^^^^^^^
 
-Here's the list that will be used by the Website_Editorial blueprint when modeling the categories into the content.  It can be configured by clicking on **Site Config** in the Sidebar, then clicking on **Configuration** and finally selecting **Categories Configured List** from the dropdown box.
+Here's the list that will be used by the Website_Editorial blueprint when modeling the categories into the content.  The list was created by right clicking on **Taxonomy** in the Sidebar, then clicking on **New Content**.
+
+Here's the list after entering the desired categories:
+
+.. figure:: /_static/images/tagging-categories.png
+    :alt: Tagging-Categories
+    :width: 80 %
+    :align: center
+
+Here's the resulting xml file:
 
 categories.xml
 
@@ -277,11 +295,11 @@ In the dialog, notice the item selector control labelled **Controllers** with da
     :width: 80 %
     :align: center
 
-We'll now take a look at the component created to display related articles.  In the Sidebar, navigate to the **Components** folder, then right click on **Related Articles Widget** and click on **Edit**
+We'll now take a look at the component created to display related articles.  In the Sidebar, navigate to the **Components -> articles-widget** folder, then right click on **Related Articles Widget** and click on **Edit**
 
 .. figure:: /_static/images/tagging-component-related-open.png
     :alt: Tagging-Open Component Related Articles
-    :width: 80 %
+    :width: 50 %
     :align: center
 
 In the **Controllers** section, you'll see the groovy script that will be run before rendering the component.

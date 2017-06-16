@@ -6,6 +6,11 @@
 Crafter Deployer
 ================
 
+.. figure:: /_static/images/architecture/crafter-deployer.png
+   :alt: Crafter Deployer
+   :width: 60 %
+   :align: center
+
 Crafter Deployer is the deployment agent for Crafter CMS.
 
 -----------
@@ -34,4 +39,4 @@ ReST API
 Configuration
 -------------
 
-.. todo:: Write overview; write configuration
+.. todo:: Write configuration
