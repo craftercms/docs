@@ -14,7 +14,7 @@ Form Section Control
 -------
 Example
 -------
-.. image:: /_static/images/form-control-form-section-example.png
+.. image:: /_static/images/form-controls/form-control-form-section-example.png
     :width: 80%
     :alt: Form Control Dropdown
     :align: center
@@ -22,7 +22,7 @@ Example
 -------------
 Configuration
 -------------
-.. image:: /_static/images/form-control-form-section.png
+.. image:: /_static/images/form-controls/form-control-form-section.png
     :width: 50%
     :alt: Form Control Dropdown
     :align: center

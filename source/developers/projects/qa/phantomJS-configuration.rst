@@ -26,15 +26,15 @@ Step 2) Download PhantomJS, `phantomjs`_.
 
 .. _phantomjs: http://phantomjs.org/download.html
 
-.. image:: /_static/images/PhantomJS1.png
+.. image:: /_static/images/qa/PhantomJS1.png
 
 Step 3) Extract the downloaded folder to Program Files 
 
-.. image:: /_static/images/PhantomJS2.png
+.. image:: /_static/images/qa/PhantomJS2.png
 
 Step 4) Download the PhantomJS Driver from `here`_. Add the jar to your project 
 
 .. _here: http://mvnrepository.com/artifact/com.github.detro.ghostdriver/phantomjsdriver/1.1.0
 
-.. image:: /_static/images/PhantomJS3.png
+.. image:: /_static/images/qa/PhantomJS3.png
 

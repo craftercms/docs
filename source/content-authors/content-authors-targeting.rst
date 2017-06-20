@@ -16,7 +16,7 @@ Depending on how tagging was named/setup, go to the section for tagging content 
 
 In the example below, targeting is in the **Metadata** section, under **Segments**, where the available personas are Anonymous, Guy and Gal, and the page is currently tagged for the persona **Guy**.
 
-.. image:: /_static/images/page-targeting-tags.png
+.. image:: /_static/images/page/page-targeting-tags.png
     :width: 75 %    
     :align: center
 
@@ -31,39 +31,39 @@ The authoring environment can be configured with any number of predefined person
 
 Authors can also change the property values of a given persona once they have assumed it.
 
-.. image:: /_static/images/page-targeting-change.png
+.. image:: /_static/images/page/page-targeting-change.png
     :width: 75 %    
     :align: center
 
 To find out the current active persona, hover on the persona image displayed in the context nav, and a tooltip containing the name of the persona will appear.
 
-.. image:: /_static/images/page-targeting-curr-persona.png
-    :width: 75 %    
+.. image:: /_static/images/page/page-targeting-curr-persona.png
+    :width: 60 %
     :align: center
 
 To view what the site would look like if it were being browsed by a certain persona, open **Preview Tools**, click on **Targeting** and select the persona you would like to see the site with.  
 
-.. image:: /_static/images/page-targeting-persona.png
+.. image:: /_static/images/page/page-targeting-persona.png
     :width: 75 %    
     :align: center
     
 
 Below is a page with the persona set to **Anonymous**.  Notice the articles available on the page.
 
-.. image:: /_static/images/page-targeting-anonymous.png
+.. image:: /_static/images/page/page-targeting-anonymous.png
     :width: 75 %    
     :align: center
 
 Assuming a different persona than the currently selected one, will cause the preview for all channels to immediately respond with content for a user with properties specified in the persona.  Below, the persona **Guy** is selected.  Notice the articles available on the page has changed to display only articles targeted to persona **Guy**
 
 
-.. image:: /_static/images/page-targeting-guy.png
+.. image:: /_static/images/page/page-targeting-guy.png
     :width: 75 %    
     :align: center
 
 Here, the persona **Gal** is selected.  Again, notice the articles available on the page.
 
-.. image:: /_static/images/page-targeting-gal.png
+.. image:: /_static/images/page/page-targeting-gal.png
     :width: 75 %    
     :align: center    
 

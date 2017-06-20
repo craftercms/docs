@@ -15,7 +15,7 @@ Text Area Control
 Example
 -------
 
-.. image:: /_static/images/form-control-text-area-example.png
+.. image:: /_static/images/form-controls/form-control-text-area-example.png
     :width: 50%
     :alt: Form Control Input 1
     :align: center
@@ -24,7 +24,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-control-text-area-properties.png
+.. image:: /_static/images/form-controls/form-control-text-area-properties.png
     :width: 50%
     :alt: Form Control Input 1
     :align: center

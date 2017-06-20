@@ -2,7 +2,9 @@
 Environment Overrides
 =====================
 
-This configuration file is used
+.. todo:: add description and update
+
+This configuration file allows you to configure site specific items such as your preview server url, authoring server url, etc.
 
 ------
 Sample

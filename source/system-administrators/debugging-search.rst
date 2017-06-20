@@ -4,9 +4,9 @@
 Debugging Search Issues
 =======================
 
------------------------------
+----------------------------
 Overview of Search Mechanics
------------------------------
+----------------------------
 
 .. include:: /includes/how-search-works.rst
 

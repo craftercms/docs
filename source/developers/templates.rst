@@ -10,6 +10,8 @@ Page templates are top level container types that lets you define the layout and
 
 As mentioned in the previous section, components only differ from pages in that they can’t render by themselves, instead, they must render within a container page or another component.  Component templates allows you to reuse common design elements.  One use for component templates is to simplify your page templates when the layout gets complicated.  Examples of common design elements are headers, sidebars, etc.
 
+Here are the topics discussed in this section:
+
 .. toctree::
    :maxdepth: 1
    :titlesonly:

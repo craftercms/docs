@@ -10,13 +10,13 @@ This section details how to configure settings managed through Crafter Studio.
 
 To access the configuration settings in Crafter Studio, click on **Site Config** in the Sidebar,
 
-.. image:: /_static/images/configuration-access.png
+.. image:: /_static/images/site-admin/configuration-access.png
     :align: center
     :alt: Open Configuration
 
 then click on **Configuration**.  After clicking on **Configuration**, you will see a dropdown list where you can select which configuration file you'd like to view/modify.  Below is one of the configuration files available to be viewed/modified.
 
-.. image:: /_static/images/basic-configuration.png
+.. image:: /_static/images/site-admin/basic-configuration.png
     :align: center
     :alt: Basic Configuration
 
@@ -36,5 +36,6 @@ Here are the settings that can be configured through Crafter Studio:
    studio/configure-notifications
    studio/site-config-configuration
    studio/drag-n-drop-configuration
+   studio/rte-setup
    studio/content-monitoring
 
