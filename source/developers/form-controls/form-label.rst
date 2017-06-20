@@ -15,7 +15,7 @@ Label Control
 Example
 -------
 
-.. image:: /_static/images/form-control-label-example.png
+.. image:: /_static/images/form-controls/form-control-label-example.png
     :width: 50%
     :alt: Form Control Input 1
     :align: center
@@ -24,7 +24,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-control-label-properties.png
+.. image:: /_static/images/form-controls/form-control-label-properties.png
     :width: 50%
     :alt: Form Control Input 1
     :align: center

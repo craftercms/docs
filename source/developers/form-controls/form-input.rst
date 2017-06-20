@@ -15,7 +15,7 @@ Input Control
 Example
 -------
 
-.. image:: /_static/images/form-control-input-example.png
+.. image:: /_static/images/form-controls/form-control-input-example.png
         :width: 50%
         :alt: Form Control Input 1
         :align: center
@@ -24,7 +24,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-control-input-1.png
+.. image:: /_static/images/form-controls/form-control-input-1.png
         :width: 50%
         :alt: Form Control Input 1
         :align: center

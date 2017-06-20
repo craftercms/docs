@@ -6,20 +6,6 @@ Crafter Studio provides a simple workflow option that includes submission, revie
 publish immediate / publish on a schedule options.  This document covers the configuration of the HTML notifications
 that can be sent at each point in the workflow.
 
---------------------
-Enable Notifications
---------------------
-
-This document assumes the notification service has been enabled.  A system administrator can assist in
-configuring the notification service by enabling here:
-
-.. code-block:: properties
-    :caption: {ENGINE_INSTALL_DIR}/apache-tomcat/shared/classes/crafter/cstduio/server-config.properties
-
-       notificationService.v2.enable=true
-
-.. todo:: verify how to enable notification service or if it's still needed to enable the service?
-
 ------
 Basics
 ------
@@ -56,6 +42,7 @@ A full guide to FTL can be found here: http://freemarker.org/
 Template Variables
 ------------------
 
+Here are some template variables used in Crafter CMS:
 
 Common Variables
 ----------------
@@ -72,7 +59,7 @@ Common Variables
 +-----------------------------+-----------------------------------------------------------+
 || `file`.internalName        || File internal CMS label                                  |
 +-----------------------------+-----------------------------------------------------------+
-|| submitter                  || Content submitter object, has sub propeties              |
+|| submitter                  || Content submitter object, has sub properties             |
 +-----------------------------+-----------------------------------------------------------+
 || submitter.firstName        || First name                                               |
 +-----------------------------+-----------------------------------------------------------+
@@ -97,14 +84,12 @@ Deployment Error Notice
 -----------------------
 
 
-============================== ========================================================
-Variable Name                  Description
-============================== ========================================================
-deploymentError                Error message on deployment.  Currently must be
-                               addressed as ${deploymentError.toString()}
-
-============================== ========================================================
-
++-----------------------------+---------------------------------------------------------+
+|| Variable Name              || Description                                            |
++=============================+=========================================================+
+|| deploymentError            || Error message on deployment.  Currently must be        |
+||                            || addressed as ${deploymentError.toString()}             |
++-----------------------------+---------------------------------------------------------+
 
 --------------------------------
 Configure Who Gets Notifications
@@ -133,6 +118,7 @@ Configure who gets notifications by entering the email addresses of the people y
 Configure Studio Workflow Dialog Messages
 -----------------------------------------
 
+Below is a sample of Studio workflow dialog messages defined in our notifications configuration file.
 
 .. code-block:: xml
     :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/notifications.xml
@@ -173,6 +159,8 @@ Configure Studio Workflow Dialog Messages
 -------------------
 Configure Templates
 -------------------
+
+Below is an example of a configured email messages for each point in the workflow, found in between the tag <emailTemplates> in the notifications configuration file.
 
 .. code-block:: xml
     :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/notifications.xml

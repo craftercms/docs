@@ -15,7 +15,7 @@ Date/Time Control
 Example
 -------
 
-.. image:: /_static/images/form-control-date-time-example.png
+.. image:: /_static/images/form-controls/form-control-date-time-example.png
     :width: 50%
     :alt: Form Control Input 1
     :align: center
@@ -24,7 +24,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-control-date-time-properties.png
+.. image:: /_static/images/form-controls/form-control-date-time-properties.png
     :width: 50%
     :alt: Form Control Input 1
     :align: center

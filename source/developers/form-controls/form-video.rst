@@ -14,7 +14,7 @@ Video Control
 -------
 Example
 -------
-.. image:: /_static/images/form-control-video-example.png
+.. image:: /_static/images/form-controls/form-control-video-example.png
     :width: 80%
     :alt: Form Control Dropdown
     :align: center
@@ -22,7 +22,7 @@ Example
 -------------
 Configuration
 -------------
-.. image:: /_static/images/form-control-video.png
+.. image:: /_static/images/form-controls/form-control-video.png
     :width: 50%
     :alt: Form Control Dropdown
     :align: center

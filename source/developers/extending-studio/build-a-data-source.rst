@@ -10,7 +10,7 @@ What is a Data Source
 
 Crafter Studio form controls should be written in a way that makes them independent of the data they allow the user to select so that they can be (re)used across a wide range of data sets. To accomplish this objective we use a data source pattern where by the form control widget code is concerned with rendering and facilitating the data capture/selection process but delegates the retrieval of the content to a separate swappable component interface known as a data source.
 
-.. image:: /_static/images/create-content-type-2.png
+.. image:: /_static/images/content-model/create-content-type-2.png
         :height: 800px
         :width: 800 px
         :scale: 75 %
@@ -84,15 +84,15 @@ Data Source Interface
 		getList: function(cb) { }
 	});
 
-------------------
+-----------------
 Coding an example
-------------------
+-----------------
 
 Our example is a data source that gets values from an XML file stored in the Alfresco Repository. This is a simple data source that allows administrators to define common taxonomies or lists and then to re-use those across many forms without having to redefine them every time.
 
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 Data Source Code
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 .. image:: /_static/images/data-source-example.png
 	:height: 500px
@@ -192,9 +192,9 @@ Data Source Code
 
 	CStudioAuthoring.Module.moduleLoaded("cstudio-forms-controls-configured-list", CStudioForms.Datasources.ConfiguredList);
 
----------------------------------------------------------
+--------------------------------------------------------
 Configuring the Data source to show up in Crafter Studio
----------------------------------------------------------
+--------------------------------------------------------
 
 Add the datasources name to the list of data sources in the content type editor
 
@@ -221,9 +221,9 @@ Add the datasources name to the list of data sources in the content type editor
 		</tools>
 	</config>
 
------------------------------------------------------------------
+----------------------------------------------------------------
 Complex Example that uses AJAX to get data from external source:
------------------------------------------------------------------
+----------------------------------------------------------------
 
 .. code-block:: javascript
 
@@ -352,9 +352,9 @@ Complex Example that uses AJAX to get data from external source:
 	});
 	CStudioAuthoring.Module.moduleLoaded("cstudio-forms-controls-configured-list", CStudioForms.Datasources.ConfiguredList);
 
----------------------------------------------------------
+-------
 Summary
----------------------------------------------------------
+-------
 
 A good place to start is by looking at the control you want to use, for example the video picker. 
 
