@@ -14,16 +14,15 @@ This section focuses on how to customize and extend Crafter CMS.  It covers the 
       content-modeling
       content-inheritance
       templates
-      rte-setup
-      extending-studio/index
       search
-      tagging
+      targeting
       testing
       errors
+      extending-studio/index
 
-##############################
-Project Specific Documentation
-##############################
+################################
+Subsystems and API Documentation
+################################
 
 Crafter CMS comprises a number of projects, below are the project specific documentations including APIs.
 

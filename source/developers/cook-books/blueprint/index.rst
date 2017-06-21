@@ -8,7 +8,7 @@ What are Blueprints?
 
 Blueprints are Crafter CMS project templates.  It provides an initial structure/layout for your site containing one or more of the following: content types such as pages and components as described in :ref:`content-modeling`, static assets such as images, videos, etc., and site configuration files for managing items in the blueprint such as taxonomies (categories, segments), roles, permissions, etc.
 
-.. image:: /_static/images/blueprint-anatomy.png
+.. image:: /_static/images/blueprint/blueprint-anatomy.png
    :alt: Cook Books - Blueprint Anatomy
    :width: 65 %
    :align: center
@@ -31,20 +31,20 @@ Adapting an HTML template
 
 If you have an existing pure HTML template (and if you don't, you can find free ones, even with commercial friendly licenses like MIT and some flavors of Creative Commons), you can adapt it into a blueprint.
 
-.. image:: /_static/images/blueprint-sample-template-anatomy.png
+.. image:: /_static/images/blueprint/blueprint-sample-template-anatomy.png
 	        :alt: Cook Books - Template Anatomy
 	        :align: center
 
 Generally, pure HTML templates have a file structure similar to the picture above. To start, you'll want to copy all files except for ``index.html`` and any other ``.html`` files to your site's ``static-assets`` like this:
 
-.. image:: /_static/images/blueprint-template-static-assets.png
+.. image:: /_static/images/blueprint/blueprint-template-static-assets.png
 	        :width: 65%
 	        :alt: Copy folders to static-assets
 	        :align: center
 
 HTML files will become Freemarker templates. For this cookbook, you'll see how to adapt an index.html page, then you'll be able to adapt other pages. Start by editing the main page's ftl template, and replacing its contents with the ``index.html``'s contents:
 
-.. image:: /_static/images/blueprint-edit-freemarker.png
+.. image:: /_static/images/blueprint/blueprint-edit-freemarker.png
 	        :width: 65%
 	        :alt: Copy index.html contents to page ftl file.
 	        :align: center
@@ -103,7 +103,7 @@ Your site exists in ``{CRAFTER_HOME}/data/repos/sites/your-site-name``. Inside, 
 
 .. note:: Don't merge folders, before copying any folder, delete the existing one so any renamed or deleted files don't persist.
 
-.. image:: /_static/images/blueprint-package-copy-site.png
+.. image:: /_static/images/blueprint/blueprint-package-copy-site.png
 	        :width: 100%
 	        :alt: Copy ``scripts/``, ``site/``, ``static-assets/``, ``templates/``
 	        :align: center

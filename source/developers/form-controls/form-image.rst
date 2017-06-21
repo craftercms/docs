@@ -15,7 +15,7 @@ Image Control
 Example
 -------
 
-.. image:: /_static/images/form-control-image-example.png
+.. image:: /_static/images/form-controls/form-control-image-example.png
     :width: 50%
     :alt: Form Control Image Example
     :align: center
@@ -24,7 +24,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-control-image.png
+.. image:: /_static/images/form-controls/form-control-image.png
     :width: 50%
     :alt: Form Control Image
     :align: center

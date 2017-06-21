@@ -15,7 +15,7 @@ Auto Filename Control
 Configuration
 -------------
 
-.. image:: /_static/images/form-control-autofilename-properties.png
+.. image:: /_static/images/form-controls/form-control-autofilename-properties.png
     :width: 50%
     :alt: Form Control Input 1
     :align: center

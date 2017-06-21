@@ -11,7 +11,7 @@
 Site Component Data Source
 ==========================
 
-.. image:: /_static/images/form-source-site-component.png
+.. image:: /_static/images/form-sources/form-source-site-component.png
     :width: 50%
     :alt: Form Control Data Source Site Component
     :align: center
@@ -20,7 +20,7 @@ Site Component Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-source-site-component-conf.png
+.. image:: /_static/images/form-sources/form-source-site-component-conf.png
     :width: 50%
     :alt: Form Control Data Source Site Component Configuration
     :align: center
@@ -41,7 +41,7 @@ Creating an XML file for the data source
 The Site Component Data Source uses xml files to get the components that are going to be used. You can
 create your own component to use as data source by following the instructions on :ref:`creating a component<template-component>` and just skip creating the view and controller part of the content type if needed.
 
-.. image:: /_static/images/form-source-site-component-example.png
+.. image:: /_static/images/form-sources/form-source-site-component-example.png
     :width: 80%
     :alt: Form Control Data Source Site Component Example
     :align: center

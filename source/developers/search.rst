@@ -22,7 +22,7 @@ Implementing a Faceted Search
 
 Crafter Engine, the delivery component of Crafter CMS  provides powerful out-of-the-box search capabilities based on Apache Solr.  Solr is extremely fast and provides a wide range of capabilities that include fuzzy matching, full-text indexing of binary document formats, match highlighting, pagination, “did you mean”, typed fields and of course faceted search. Faceted search (aka faceted navigation) is an ability of the search interface to break down a search in to categories that allow a user to filter and narrow down the number of results by selecting only those category values that are relevant.
 
-.. figure:: /_static/images/search-faceted-search-sample.png
+.. figure:: /_static/images/search/search-faceted-search-sample.png
     :alt: Search - Faceted Search Example Page
     :width: 80 %
     :align: center
@@ -32,7 +32,7 @@ Before we get in to the construction of a faceted search let’s take a quick st
 
 The first thing to think about is the type of thing we’re going to be searching on.  From a web content management perspective, this is often referred to as the content model. A content model in its most basic form is just the description of an entity like an article and its properties such as title, author, publish date, body and so on.    In the figure above we see a search-driven UI that allows the user to narrow down a collection of jeans by size, color and fit.  In order to enable this we have to “model” the jeans.  These filters are criteria that must be associated with each instance of the content type.  Each field (color, size, fit) has many possible values that are selected by an author when a jean object is created.
 
-.. figure:: /_static/images/search-faceted-product-model1.png
+.. figure:: /_static/images/search/search-faceted-product-model1.png
     :alt: Search - Faceted Search Product Model
     :width: 80 %
     :align: center
@@ -41,7 +41,7 @@ In the figure above you can see just a small portion of the Jeans product conten
 
 Once we’ve created our content type we can now create instances of jeans, provide the details for the product and select the criteria that correctly categorizes the pair of jeans.
 
-.. figure:: /_static/images/search-faceted-select-criteria.png
+.. figure:: /_static/images/search/search-faceted-select-criteria.png
     :alt: Search - Faceted Search Select Criteria
     :width: 80 %
     :align: center
@@ -53,7 +53,7 @@ Now that we have content indexed in Solr we can build a search page. We’re goi
 
 To begin, create or navigate to your category page content type (standard fields are fine) and then open the template editor.  For a more in-depth tutorial on basic content modeling click here.
 
-.. figure:: /_static/images/search-faceted-template-editor.png
+.. figure:: /_static/images/search/search-faceted-template-editor.png
     :alt: Search - Faceted Search Template Editor
     :width: 80 %
     :align: center
@@ -251,11 +251,11 @@ Solr Query
 
 In this section, we will be looking at how to use a query to provide suggestions as the user types.
 
-.. figure:: /_static/images/search-typeahead-box.png
+.. figure:: /_static/images/search/search-typeahead-box.png
   :scale: 50 %
   :align: center
   
-.. figure:: /_static/images/search-typeahead-suggestions.png
+.. figure:: /_static/images/search/search-typeahead-suggestions.png
   :scale: 50 %
   :align: center
 

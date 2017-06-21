@@ -58,9 +58,9 @@ Search
    
    content-authors-search
 
-------------------------
-Personalization
-------------------------
+---------
+Targeting
+---------
 
 .. toctree::
    :maxdepth: 1

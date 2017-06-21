@@ -16,7 +16,8 @@ Step 1: Prepare the Logo Image
 Step 2: Place the Logo Image on the Server
 ------------------------------------------
 
-    * Place your logo.jpg file TOMCAT/shared/classes/crafter/cstudio/ui
+    * Create a `ui` directory under `TOMCAT/shared/classes/crafter/studio`
+    * Place your logo.jpg file under `TOMCAT/shared/classes/crafter/studio/ui`
 
 -------------------------
 Step 3: Test Your Updates

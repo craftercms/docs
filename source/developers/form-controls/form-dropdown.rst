@@ -15,7 +15,7 @@ Dropdown Control
 Example
 -------
 
-.. image:: /_static/images/form-control-dropdown-example.png
+.. image:: /_static/images/form-controls/form-control-dropdown-example.png
     :width: 50%
     :alt: Form Control Dropdown
     :align: center
@@ -24,7 +24,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-control-dropdown.png
+.. image:: /_static/images/form-controls/form-control-dropdown.png
     :width: 50%
     :alt: Form Control Dropdown
     :align: center
