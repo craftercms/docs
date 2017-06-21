@@ -12,13 +12,20 @@ What is Content Monitoring
 
 Content Monitoring allows you to configure watches and notifications on your content.
 Each day Crafter Studio will run a process that performs monitoring.  Each site can configure the monitors that run against the site.
-A monitor defines the query to run, the paths that matter and the notification to be sent for items that match
+A monitor defines the query to run, the paths that matter and the notification to be sent for items that match.
 
 -----------------------------------
 How to Configure Content Monitoring
 -----------------------------------
 
-``/cstudio/config/sites/SITENAME/SITENAME/site-config.xml``
+Content monitoring can be configured through Crafter Studio.  Go to the **Sidebar**, then click on **Site Confirg** -> **Configuration** -> **Site Configuration**
+
+.. image:: /_static/images/site-configuration-open.png
+    :align: center
+    :alt: Configuration - Open "Site Configuration" Configuration
+
+
+``{REPOSITORY_ROOT}/sites/SITENAME/config/studio/site-config.xml``
 
 .. code-block:: xml
 
@@ -61,7 +68,7 @@ You can define as many monitor groups as you want. Each monitor must have at lea
 Notification Messages Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Templates for the notifications are defined in ``/cstudio/config/sites/SITENAME/SITENAME/notification-config.xml``
+Templates for the notifications are defined in ````{REPOSITORY_ROOT}/sites/SITENAME/config/studio/notification-config.xml``
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Example Monitoring Queries

@@ -11,7 +11,7 @@
 File Uploaded from Desktop Data Source
 ======================================
 
-.. image:: /_static/images/form-source-file-desktop.png
+.. image:: /_static/images/form-sources/form-source-file-desktop.png
     :width: 50%
     :alt: Source Control File From Desktop
     :align: center
@@ -20,7 +20,7 @@ File Uploaded from Desktop Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-source-file-desktop-conf.png
+.. image:: /_static/images/form-sources/form-source-file-desktop-conf.png
     :width: 50%
     :alt: Source Control File From Desktop
     :align: center

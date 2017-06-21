@@ -12,7 +12,7 @@ To find this configuration xml through studio follow the next instructions:
 #. Choose **Configuration** from the menu.
 #. Select **Preview Components Configuration**.
 
-.. image:: /_static/images/dnd-configuration.png
+.. image:: /_static/images/site-admin/dnd-configuration.png
 
 ------
 Sample
@@ -93,7 +93,7 @@ List of available category tags
 +-----------------+------------------------------------+-------------------------------------------------+
 
 
-.. image:: /_static/images/dnd-config1.png
+.. image:: /_static/images/site-admin/dnd-config1.png
 		:align: center
 		:scale: 50 %
 		:width: 800 px
@@ -107,20 +107,20 @@ The Browse functionality is useful when the user wants to drag and drop an exist
 
 List of available browse tags
 
-+-----------------+------------------------------------+-------------------------------------------------+
-|| Tag            || Descriptionn                                                                        |
-+=================+====================================+=================================================+
++-----------------+--------------------------------------------------------------------------------------+
+|| Tag            || Description                                                                         |
++=================+======================================================================================+
 || Browse         || This tag contains each browse section in the panel. See #1 in the image below.      |
-+-----------------+------------------------------------+-------------------------------------------------+
++-----------------+--------------------------------------------------------------------------------------+
 || Label          || Each ``<browse>`` element must contain a <label> element that specifies the browse  |
 ||                || label to display in the panel. See #2 in the image below.                           |
-+-----------------+------------------------------------+-------------------------------------------------+
++-----------------+--------------------------------------------------------------------------------------+
 || Path           || Path where the user will select the component to drag and drop into the preview     |
 ||                || page selected.                                                                      |
-+-----------------+------------------------------------+-------------------------------------------------+
++-----------------+--------------------------------------------------------------------------------------+
 
 
-.. image:: /_static/images/dnd-config2.png
+.. image:: /_static/images/site-admin/dnd-config2.png
 		:align: center
 		:scale: 50 %
 		:width: 800 px

@@ -12,7 +12,7 @@ To find this configuration xml through studio follow the next instructions:
 #. Choose **Configuration** from the menu.
 #. Select **Configurations**.
 
-.. image:: /_static/images/configuration.png
+.. image:: /_static/images/site-admin/configuration.png
 
 ------
 Sample
@@ -154,24 +154,24 @@ Description
 
 List of available configuration tags
 
-+-----------------+------------------------------------+-------------------------------------------------+
++-----------------+--------------------------------------------------------------------------------------+
 || Tag            || Description                                                                         |
-+=================+====================================+=================================================+
++=================+======================================================================================+
 || files          || This tag contains each  file.                                                       |
-+-----------------+------------------------------------+-------------------------------------------------+
++-----------------+--------------------------------------------------------------------------------------+
 || file           || This tag cantains the configuration of each file.                                   |
-+-----------------+------------------------------------+-------------------------------------------------+
++-----------------+--------------------------------------------------------------------------------------+
 || path           || Path where the system will find the specific xml file                               |
-+-----------------+------------------------------------+-------------------------------------------------+
++-----------------+--------------------------------------------------------------------------------------+
 || title          || This tag refers to file title. It will be showed in the configuration dropdown      |
 ||                || at the top of the page. See #1 in the image above                                   |
-+-----------------+------------------------------------+-------------------------------------------------+
++-----------------+--------------------------------------------------------------------------------------+
 || description    || This tag refers to file description. It will be showed to explain the file          |
 ||                || functionality. See #2 in the image above                                            |
-+-----------------+------------------------------------+-------------------------------------------------+
++-----------------+--------------------------------------------------------------------------------------+
 || samplePath     || Path where the system will find an example of the specific xml.                     |
 ||                || See #3 in the image above                                                           |
-+-----------------+------------------------------------+-------------------------------------------------+
++-----------------+--------------------------------------------------------------------------------------+
 
 -----------
 Sample File
@@ -179,7 +179,7 @@ Sample File
 
 You can click on the **View Sample** button to see a configuration file example.
 
-.. image:: /_static/images/basic-configuration-sample.png
+.. image:: /_static/images/site-admin/basic-configuration-sample.png
     :align: center
     :alt: Basic Configuration Sample
 
@@ -202,19 +202,19 @@ To add a new configuration file please follow the steps below.
     			<samplePath>/administration/samples/sample-workflow-config.xml</samplePath>
     		</file>
 
-    	.. image:: /_static/images/basic-configuration-step1.png
+    	.. image:: /_static/images/site-admin/basic-configuration-step1.png
             :align: center
             :alt: Basic Configuration Step 1
 
 #. Click on the **Save** button
 
-    .. image:: /_static/images/basic-configuration-step2.png
+    .. image:: /_static/images/site-admin/basic-configuration-step2.png
         :align: center
         :alt: Basic Configuration Step 2
 
 #. Go to configuration tab, then open the dropdown and finally look for your new configuration file
 
-    .. image:: /_static/images/basic-configuration-step3.png
+    .. image:: /_static/images/site-admin/basic-configuration-step3.png
         :width: 70%
         :align: center
         :alt: Basic Configuration Step 3

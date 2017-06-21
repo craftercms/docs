@@ -16,14 +16,17 @@ Step 1: Delete any existing content in the index
 ------------------------------------------------
 .. code-block:: xml
 
-    curl "http://hostname/solr-crafter/update/?commit=true" -H "Content-Type: text/xml" -d "<delete><query>crafterSite:MYSITENAME</query></delete>"
+    curl "http://{hostname}:{port}/solr/{siteId}/update/?commit=true" -H "Content-Type: text/xml" -d "<delete><query>crafterSite:{siteId}</query></delete>"
+
+.. WARNING::
+  This action will delete all content matching the query, review carefully the solr index & the site id before executing the command.
 
 -------------------------------
 Step 2: Invoke the reprocessing
 -------------------------------
-.. code-block:: guess
+.. code-block:: xml
 
-    curl http://hostname:port/reprocess?password=MYPASSWORD&target=MYTARGET&processor=MyBeanName
+    curl "http://{hostname}:{port}/api/1/target/deploy/{environment}/{siteName}" -X -H "Content-Type: text/json" -d '{ "reprocess_all_files": true }'
 
 +----------------+-----------------------------------------------+------------------------------------------------+
 | Parameter Name | Description                                   | Example                                        |
@@ -37,16 +40,9 @@ Step 2: Invoke the reprocessing
 |                |                                               |                                                |
 |                |                                               |                                                |
 +----------------+-----------------------------------------------+------------------------------------------------+
-| password       | Deployer password                             |                                                |
+| environment    | Target environment                            | preview                                        |
 +----------------+-----------------------------------------------+------------------------------------------------+
-| target         | The name property value of a target           | demodotcomprod                                 |
-|                | bean in target context file.                  |                                                |
-+----------------+-----------------------------------------------+------------------------------------------------+
-| processor      | The bean  name of a processor. For reindexing,| DemoDotComProdSearchProcessor                  |
-|                | it should be the bean name of a search update |                                                |
-|                | post processor registered for a target bean in|                                                |
-|                | target context file.                          |                                                |
-|                | (e.g. SearchUpdateFlattenXmlProcessor)        |                                                |
+| siteName       | The name of the site                          | my-site                                        |
 +----------------+-----------------------------------------------+------------------------------------------------+
 
 -------------------------
@@ -54,6 +50,38 @@ Step 3: Wait for indexing
 -------------------------
 You will see indexing activity in the deployment log as well as entries on the server(s) running Crafter Search and Solr.
 Indexing activity time is dependant on the amount of content which must be re-processed.
+
+--------------------------------
+Step 4: Check deployment results
+--------------------------------
+
+When the deployer finishes the process it will return a response similar to this:
+
+.. code-block:: json
+
+  {
+    "target": {
+      "env": "preview",
+      "site_name": "my-site",
+      "id": "my-site-preview",
+      "load_date": "2017-06-20T13:52:04.525-06:00"
+    },
+    "start": "2017-06-20T16:38:41.91-06:00",
+    "end": "2017-06-20T16:38:45.18-06:00",
+    "duration": 3270,
+    "status": "SUCCESS",
+    "change_set": {
+      "created_files": [
+        ...
+      ],
+      "updated_files": [],
+      "deleted_files": []
+    },
+    "processor_executions": [
+      ...
+    ],
+    "running": false
+  }
 
 ===========================================================
 Reindexing Content Without Disrupting Service in Production

@@ -29,15 +29,15 @@ Apache Maven provides support for managing the full lifecycle of a test project.
 
 3. We need add to the testng.xml our list of the test cases to execute.
 
-.. image:: /_static/images/TestSuite2.png
+.. image:: /_static/images/qa/TestSuite2.png
 
 4. After type the test cases in the xml file , we will execute the testng.xml using *maven*.
 
 4.1 Open your favorite console and using the command line go to the location of the automation project. (studio-test-suite)
 
-.. image:: /_static/images/QAMaven4.png
+.. image:: /_static/images/qa/QAMaven4.png
 
 
 4.2 In this location in the console, type this command *mvn clean test* and wait.
 
-.. image:: /_static/images/QAMaven5.png
+.. image:: /_static/images/qa/QAMaven5.png

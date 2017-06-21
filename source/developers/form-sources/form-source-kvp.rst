@@ -11,7 +11,7 @@
 Static Key Value Pairs Data Source
 ==================================
 
-.. image:: /_static/images/form-source-kvp.png
+.. image:: /_static/images/form-sources/form-source-kvp.png
     :width: 50%
     :alt: Source Control Static Key Value Pairs
     :align: center
@@ -20,7 +20,7 @@ Static Key Value Pairs Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-source-kvp-conf.png
+.. image:: /_static/images/form-sources/form-source-kvp-conf.png
     :width: 50%
     :alt: Form Static Key Value Pairs
     :align: center
@@ -42,7 +42,7 @@ Adding Options
 When creating a static Key Value Pairs data source you can add the options by clicking on the "Options" input on the
 datasource configuration. That will display a dialog with the necessary features to manage the data.
 
-.. image:: /_static/images/form-source-kvp-options.png
+.. image:: /_static/images/form-sources/form-source-kvp-options.png
     :width: 50%
     :alt: Form Static Key Value Pairs Options
     :align: center

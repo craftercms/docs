@@ -8,13 +8,13 @@ Workflow and Scheduled Deployments
 
 Workflow is the act of moving content through its lifecycle.
 
-.. image:: /_static/images/c2wf.png
+.. image:: /_static/images/page/c2wf.png
     :width: 95 %
     :align: center
     
 Workflow is managed through dialogs.
 
-.. image:: /_static/images/page-workflows.png
+.. image:: /_static/images/page/page-workflows.png
     :width: 75 %    
     :align: center
 
@@ -30,11 +30,11 @@ Submit to Go Live
 
 A Go-Live submission can be initiated from a preview screen (for single items) or from the Dashboard (where items can be batch checked).
 
-.. image:: /_static/images/page-workflows-publish.png
+.. image:: /_static/images/page/page-workflows-publish.png
     :width: 75 %    
     :align: center
 
-.. image:: /_static/images/page-workflows-publish2.png
+.. image:: /_static/images/page/page-workflows-publish2.png
     :width: 75 %    
     :align: center
     
@@ -42,7 +42,7 @@ Scheduling Policy
 
 When the "Scheduling Policy" link is clicked on the "Submit to Go Live" screen, the previous screen content will be replaced with the scheduling policy. Clicking the "OK" button will take the user back to the "Submit to Go Live" screen.
 
-.. image:: /_static/images/page-workflows-schedule.png
+.. image:: /_static/images/page/page-workflows-schedule.png
     :width: 75 %    
     :align: center
     
@@ -94,7 +94,7 @@ Reject:
 
 Admins may pick canned rejection reasons from the drop-down menu. Once selected, the editable text area field will be filled with the corresponding rejection notice.
 
-.. image:: /_static/images/page-workflows-reject.png
+.. image:: /_static/images/page/page-workflows-reject.png
     :width: 75 %    
     :align: center
 

@@ -33,7 +33,7 @@ Consider this simple script to login into a crafter local site.
 
 **See below for how The final project of CrafterSoftware Framework looks like**
 
-.. image:: /_static/images/CreationTestCase1.png
+.. image:: /_static/images/qa/CreationTestCase1.png
 
 
 **Advantages of POM.**
@@ -49,7 +49,7 @@ Consider this simple script to login into a crafter local site.
 
 1. Create a package with the name *CrafterTools* in to the *src* package.
 
-.. image:: /_static/images/CreationTestCase8.png
+.. image:: /_static/images/qa/CreationTestCase8.png
 
 2. Create in to the *CrafterTools* package the following classes.
 
@@ -236,7 +236,7 @@ Consider this simple script to login into a crafter local site.
 
 3. Once created classes should be displayed as following:
 
-.. image:: /_static/images/CreationTestCase9.png
+.. image:: /_static/images/qa/CreationTestCase9.png
 
 4. Create in to the *Main Project* (in my case "Crafter_Framework") package, the following java files.
 
@@ -300,15 +300,15 @@ Consider this simple script to login into a crafter local site.
    
 5. Once created java files should be displayed as following:  
 
-.. image:: /_static/images/CreationTestCase10.png
+.. image:: /_static/images/qa/CreationTestCase10.png
  
 6. Create a package with the name *Pages* in to the *src* package.
 
-.. image:: /_static/images/CreationTestCase2.png
+.. image:: /_static/images/qa/CreationTestCase2.png
 
 7. Create a testNG class with the name *LoginPage* in to the package *Pages*.
 
-.. image:: /_static/images/CreationTestCase3.png
+.. image:: /_static/images/qa/CreationTestCase3.png
 
 8. Type this code in the class *LoginPage* Created
 
@@ -412,11 +412,11 @@ Consider this simple script to login into a crafter local site.
 
 9. Create a package with the name *TestCases* in to the *src* package..
 
-.. image:: /_static/images/CreationTestCase4.png
+.. image:: /_static/images/qa/CreationTestCase4.png
 
 10. Create a testNG class with the name *LoginTest* in to the package *TestCases*.
 
-.. image:: /_static/images/CreationTestCase5.png
+.. image:: /_static/images/qa/CreationTestCase5.png
 
 11. Type this code in the class LoginTest Created.
 
@@ -493,10 +493,10 @@ Consider this simple script to login into a crafter local site.
    
 12. Select the LoginTest.java and execute the test case with manual run.
 
-.. image:: /_static/images/CreationTestCase6.png
+.. image:: /_static/images/qa/CreationTestCase6.png
 
 13. Check the results of the execution.
 
-.. image:: /_static/images/CreationTestCase7.png
+.. image:: /_static/images/qa/CreationTestCase7.png
 
 

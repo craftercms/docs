@@ -11,7 +11,7 @@
 Child Content Data Source
 =========================
 
-.. image:: /_static/images/form-source-child-content.png
+.. image:: /_static/images/form-sources/form-source-child-content.png
     :width: 50%
     :alt: Form Control Input 1
     :align: center
@@ -20,7 +20,7 @@ Child Content Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-source-child-content-conf.png
+.. image:: /_static/images/form-sources/form-source-child-content-conf.png
     :width: 50%
     :alt: Form Control Input 1
     :align: center

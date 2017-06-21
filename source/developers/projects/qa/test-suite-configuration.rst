@@ -23,23 +23,23 @@ Here we will see how to run multiple classes (aka different suites) using TestNG
 
 1. Create a new file in your project and name it as testing.xml.
 
-.. image:: /_static/images/TestSuite1.png
+.. image:: /_static/images/qa/TestSuite1.png
 
 
 **Parallel execution in TestNG**
 
 After creating xml file as shown above, in next step, we will execute the parallel test. Below is the code. 
 
-.. image:: /_static/images/TestSuite2.png
+.. image:: /_static/images/qa/TestSuite2.png
 
 After type the code in the xml file created, we will execute the test suite.
 
-.. image:: /_static/images/TestSuite3.png
+.. image:: /_static/images/qa/TestSuite3.png
 
 
 When you execute the above code, you will get the following output.
 
 Output: 
 
-.. image:: /_static/images/TestSuite4.png
+.. image:: /_static/images/qa/TestSuite4.png
 
