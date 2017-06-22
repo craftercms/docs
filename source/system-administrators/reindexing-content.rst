@@ -28,22 +28,22 @@ Step 2: Invoke the reprocessing
 
     curl "http://{hostname}:{port}/api/1/target/deploy/{environment}/{siteName}" -X -H "Content-Type: text/json" -d '{ "reprocess_all_files": true }'
 
-+----------------+-----------------------------------------------+------------------------------------------------+
-| Parameter Name | Description                                   | Example                                        |
-+================+===============================================+================================================+
-| hostname       | Deployer's hostname                           | localhost                                      |
-+----------------+-----------------------------------------------+------------------------------------------------+
-| port           | Deployer's port.                              | 9191                                           |
-|                |                                               | default is 9191                                |
-|                |                                               |                                                |
-|                |                                               |                                                |
-|                |                                               |                                                |
-|                |                                               |                                                |
-+----------------+-----------------------------------------------+------------------------------------------------+
-| environment    | Target environment                            | preview                                        |
-+----------------+-----------------------------------------------+------------------------------------------------+
-| siteName       | The name of the site                          | my-site                                        |
-+----------------+-----------------------------------------------+------------------------------------------------+
++-----------------+-------------------------------+----------------------------+
+|| Parameter Name || Description                  || Example                   |
++=================+===============================+============================+
+|| hostname       || Deployer's hostname          || localhost                 |
++-----------------+-------------------------------+----------------------------+
+|| port           || Deployer's port.             || 9191                      |
+||                ||                              || default is 9191           |
+||                ||                              ||                           |
+||                ||                              ||                           |
+||                ||                              ||                           |
+||                ||                              ||                           |
++-----------------+-------------------------------+----------------------------+
+|| environment    || Target environment           || preview                   |
++-----------------+-------------------------------+----------------------------+
+|| siteName       || The name of the site         || my-site                   |
++-----------------+-------------------------------+----------------------------+
 
 -------------------------
 Step 3: Wait for indexing
@@ -57,7 +57,7 @@ Step 4: Check deployment results
 
 When the deployer finishes the process it will return a response similar to this:
 
-.. code-block:: json
+.. code-block:: guess
 
   {
     "target": {
@@ -130,7 +130,8 @@ Now that you are cetain everything is working as it should, notify your authors 
 ----------------
 Step 8: Clean up
 ----------------
-Now that your process is complete you can clean up some of the artificats created by the process.
+Now that your process is complete you can clean up some of the artifacts created by the process.
+
 * The re-index core if swapped out
 * The new deployment context
 

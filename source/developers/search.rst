@@ -374,4 +374,3 @@ component you only need to provide the REST endpoint in the configuration:
     }
   });
 
-.. TODO:: Verify/update faceted navigation, update images.  The blurbs above came from the wiki and may be outdated.

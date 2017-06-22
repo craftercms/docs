@@ -6,6 +6,8 @@
 Configure Multi-Tenancy in Engine
 =================================
 
+.. todo:: Article needs to be updated for 3.0
+
 One instance of Crafter Engine can handle multiple sites (multi-tenancy). This guide explains how to setup Crafter Engine for multi-tenancy.
 
 --------------------

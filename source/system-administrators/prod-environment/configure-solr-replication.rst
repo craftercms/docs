@@ -1,5 +1,7 @@
 :orphan:
 
+.. not valid for 3.0 anymore
+
 ==========================
 Configure Solr Replication
 ==========================
