@@ -1,5 +1,7 @@
 :orphan:
 
+.. not valid for 3.0 anymore
+
 .. index:: Supported Platforms
 
 ===================

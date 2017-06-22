@@ -13,9 +13,9 @@ It is very common for organizations to have several environments including:
 The challenge in these scenarios with most CMS technology is moving content and configuration from one environment to another.  One of the major differences between environments is typically anything with a server name in it and where content should be deployed.  Crafter Studio manages these configurations in the repository and it stores each environment's configuration as a different file so that all environment configurations can coexist at the same time in the repository.  Studio is then configured to look at a specific environment file.
 
 
----------------------------------------------------
+---------------------------------------------
 Configuring which Environment Studio looks at
----------------------------------------------------
+---------------------------------------------
 
 .. code-block:: java
     :caption: TOMCAT/shared/classes/crafter/studio/extension/server-config.properties

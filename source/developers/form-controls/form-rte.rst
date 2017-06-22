@@ -15,7 +15,7 @@ Rich Text Editor Control
 Example
 -------
 
-.. image:: /_static/images/form-control-rte-example.png
+.. image:: /_static/images/form-controls/form-control-rte-example.png
     :width: 50%
     :alt: RTE
     :align: center
@@ -24,7 +24,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-control-rte-properties.png
+.. image:: /_static/images/form-controls/form-control-rte-properties.png
     :width: 50%
     :alt: RTE
     :align: center

@@ -12,9 +12,9 @@ Every content object in Crafter CMS is an object associated with a Content Model
 Content Types in Crafter Studio
 -------------------------------
 
-Content Type Management in Crafter Studio is located in the Admin Console.
+Content Type Management in Crafter Studio is located in the Site Config.
 
-.. image:: /_static/images/admin-console-link.png
+.. image:: /_static/images/content-model/admin-console-link.png
 	:width: 25%
 	:alt: Admin Console Link
 	:align: center
@@ -44,14 +44,14 @@ Content Type Model Definition
 -----------------------------
 Content models are defined via Crafter Studio's graphical modeling tool under Content Types:
 
-.. image:: /_static/images/content-type-management.png
+.. image:: /_static/images/content-model/content-type-management.png
 	:width: 25%
 	:alt: Admin Console Link
 	:align: center
 
 You can now either create a new content type or open an existing type. Creating a new content type brings up a dialog that requests some basic content type information.
 
-.. image:: /_static/images/create-content-type-1.png
+.. image:: /_static/images/content-model/create-content-type-1.png
 	:width: 25%
 	:alt: Admin Console Link
 	:align: center
@@ -70,7 +70,7 @@ You now specify:
 Form Builder Basics
 ^^^^^^^^^^^^^^^^^^^
 
-.. figure:: /_static/images/create-content-type-2.png
+.. figure:: /_static/images/content-model/create-content-type-2.png
 	:alt: Content Type Editor
 	:align: center
 
@@ -123,7 +123,7 @@ Properties of Content Types
 
 Let's select the content type itself, by clicking on the content type name at the top of the Form Builder and explore its properties.
 
-.. figure:: /_static/images/create-content-type-3.png
+.. figure:: /_static/images/content-model/create-content-type-3.png
 	:alt: Properties Explorer
 	:align: center
 
@@ -189,25 +189,25 @@ We'll look at an example of limiting where you can create content from the Websi
 
 From the **Sidebar**, click on **Site Config** at the bottom.  Next, click on **Content Type** then either create a new content type or open an existing content type.  In the image below, we have the content type **Page - Article** open for editing.  Go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name *config.xml*, click on that pencil to edit.
 
-.. figure:: /_static/images/form-engine-prop-configuration.png
+.. figure:: /_static/images/content-model/form-engine-prop-configuration.png
     :alt: Form Engine Properties Configuration
 	:align: center
 
 To limit where this particular content type can be created, the tags, <paths><includes><pattern>some_regex_pattern</pattern></includes></paths> are included towards the bottom of the file.  Here, we can see that content type **Page - Article** can be created anywhere under */site/website/articles*
 
-.. figure:: /_static/images/form-engine-prop-config-file.png
+.. figure:: /_static/images/content-model/form-engine-prop-config-file.png
     :alt: Form Engine Properties Configuration File config.xml
     :align: center
 
 To see how the above tags/example works, go to the **Sidebar** and right click on the **Home** folder and select **New Content**.  Notice that content type **Page - Article** is not available from the content types listed.
 
-.. figure:: /_static/images/form-engine-prop-config-sample-no.png
+.. figure:: /_static/images/content-model/form-engine-prop-config-sample-no.png
     :alt: Form Engine Properties Config File "Page - Articles" Not Available
     :align: center
 
 From the **Sidebar** again, navigate from the **Pages** folder to the /Home/articles/2016/12/ folder then right click and select **New Content**, notice that the content type **Page - Article** is available from the list.
 
-.. figure:: /_static/images/form-engine-prop-config-sample-yes.png
+.. figure:: /_static/images/content-model/form-engine-prop-config-sample-yes.png
     :alt: Form Engine Properties Config File "Page - Articles" Available
     :align: center
 
@@ -221,7 +221,7 @@ Form Controls
 
 Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. Crafter CMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`form-engine-control`.
 
-.. figure:: /_static/images/form-engine-controls.png
+.. figure:: /_static/images/content-model/form-engine-controls.png
     :alt: Form Engine Controls
 	:align: center
 
@@ -236,9 +236,9 @@ Form Engine Controls (please use the scrollbar to see more controls)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Form Control Variable Names
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Every Form Control has a Variable Name property.  The Variable Name is used by the form engine to store the content entered by the user in the content model and search index.  This same Variable Name is used later by templates and controllers to retreive the value.  
+Every Form Control has a Variable Name property.  The Variable Name is used by the form engine to store the content entered by the user in the content model and search index.  This same Variable Name is used later by templates and controllers to retrieve the value.
 
-Variable Name Best Bractices
+Variable Name Best Practices
 
 #. Be descriptive.  Well thought out Variable Names help with template and controller readability.
 #. Use camel case. Example: "productSummary".
@@ -319,11 +319,11 @@ Data Sources
 ^^^^^^^^^^^^
 .. index:: Data Sources
 
-.. figure:: /_static/images/form-engine-data-sources.png
+.. figure:: /_static/images/content-model/form-engine-data-sources.png
 	:alt: Form Engine Data Sources
 	:align: center
 
-Data Sources are pickers that help pull in content from internal or external storage/systems. For example, data source include: youtube.com video picker, or Flickr image picker, desktop image uploader, and so on. Crafter CMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
+Data Sources are pickers that help pull in content from internal or external storage/systems. For example, data source include: desktop video uploader, desktop image uploader, and so on. Crafter CMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
 
 Form Engine Data Sources (please use the scrollbar to see more controls)
 
@@ -335,7 +335,7 @@ Form Canvas
 
 The canvas is where the form actually gets built. The building process is perfomed by simply dragging the controls from the Form Controls over to the canvas, rearranging the controls in the order you'd like to present to the content authors, and configuring the controls individually.
 
-Controls on the canvas are configured by clicking on the control, and then editing the control's configration in the Properties Explorer, see item #3 in :ref:`form-builder-basics`. Different controls have different configuration, so please review the individual form control configuration listed in :ref:`form-controls`.
+Controls on the canvas are configured by clicking on the control, and then editing the control's configuration in the Properties Explorer, see item #3 in :ref:`form-builder-basics`. Different controls have different configuration, so please review the individual form control configuration listed in :ref:`form-controls`.
 
 Two controls have a special significance to the form canvas: :ref:`form-section` and :ref:`form-repeating-group`. Form Section Control creates a form section that can be expanded and collapsed and holds within it other controls. This is typically used to group together controls that cover a similar concern and help provide the content authors with a clear and organized form when editing in form mode.
 Like the Form Section Control, Repeating Group Control is also a container that holds other controls, but the purpose is to allow a set of controls to repeat as configured. This is typically used to allow content authors to enter a set of meta-data and repeat it as many times as desired and permitted by configuration.
@@ -348,7 +348,7 @@ The canvas allows the form-based content capture only, and is used by content au
 Content Type View Templates
 ---------------------------
 
-View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the primary Crafter CMS model or additional model (via APIs, please read :ref:`custom-services-and-controllers` for that topic).
+View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the primary Crafter CMS model or additional model (via APIs, please read :ref:`groovy-api` for that topic).
 
 An example view template
 

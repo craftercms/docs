@@ -15,7 +15,7 @@ Filename Control
 Example
 -------
 
-.. image:: /_static/images/form-control-filename-example.png
+.. image:: /_static/images/form-controls/form-control-filename-example.png
     :width: 50%
     :alt: Form Control Input 1
     :align: center
@@ -24,7 +24,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-control-filename-properties.png
+.. image:: /_static/images/form-controls/form-control-filename-properties.png
     :width: 50%
     :alt: Form Control Input 1
     :align: center

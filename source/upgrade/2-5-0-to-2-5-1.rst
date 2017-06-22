@@ -19,19 +19,21 @@ Node
 The interface for Item Filters has been updated to provide more control to filters. Item Filter now passes lists of
 included and excluded items for reference by the current filter.
 
-=============== ============================================================================================
-Who is Impacted Any Java or Groovy code that implements `org.craftercms.core.service.ItemFilter`
-
-Action Required You will need to update your extension to meet the updated interface
-=============== ============================================================================================
++------------------+-----------------------------------------------------------------------------+
+|| Who is Impacted || Any Java or Groovy code that implements                                    |
+||                 || `org.craftercms.core.service.ItemFilter`                                   |
++------------------+-----------------------------------------------------------------------------+
+|| Action Required || You will need to update your extension to meet the updated interface       |
++------------------+-----------------------------------------------------------------------------+
 
 **1.1.2. Targeting Properties**
 
 The `org.craftercms.engine.util.config.TargetingProperties` class has been moved to
 `org.craftercms.engine.SiteProperties` and now includes more site specific properties.
 
-=============== ============================================================================================
-Who is Impacted Any Java or Groovy code that implements `org.craftercms.engine.util.config.TargetingProperties`
-
-Action Required You will need to update your extension to meet the updated class
-=============== ============================================================================================
++------------------+-----------------------------------------------------------------------------+
+|| Who is Impacted || Any Java or Groovy code that implements                                    |
+||                 || `org.craftercms.engine.util.config.TargetingProperties`                    |
++------------------+-----------------------------------------------------------------------------+
+|| Action Required || You will need to update your extension to meet the updated class           |
++------------------+-----------------------------------------------------------------------------+

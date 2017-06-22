@@ -13,7 +13,7 @@ __licence__ = 'BSD (3 clause)'
 
 
 def get_github_url(app, view, path):
-    return 'https://github.com/{project}/{view}/{branch}/{base_folder}/{path}'.format(
+    return 'https://craftercms.org/{project}/{view}/{branch}/{base_folder}/{path}'.format(
         project=app.config.edit_on_github_project,
         view=view,
         branch=app.config.edit_on_github_branch,
