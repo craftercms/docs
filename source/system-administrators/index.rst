@@ -42,10 +42,12 @@ QA/Production Environment
    :titlesonly:
 
    prod-environment/install-studio.rst
-   prod-environment/install-engine.rst
    prod-environment/turning-off-show-error.rst
    prod-environment/configure-engine-multi-tenancy.rst
    prod-environment/backup-and-recovery.rst
+
+.. prod-environment/install-engine.rst
+
 
 
 ----------------
