@@ -14,26 +14,104 @@ Overview of Search Mechanics
 Places Search Indexing Can Get Hung Up
 --------------------------------------
 
-* In preview, Crafter Studio sends content a deployment engine on write.  Ensure that the preview context is receiving content.
-	* If the deployement agent is not receiving content, check network connectivity, ports, and the password for the target.
-* The deployment agent has a target with a Search Processor. Ensure that the processor is configured to the proper HOST, PORT for Crafter Search.
-* Crafter Search is configured to talk to a Solr index.  Ensure that Crafter Search is configured to the proper HOST, PORT for Solr
-* Crafter Engine is configure to talk to Crafter Search. Ensure that Crafter Engine is configured to the proper HOST, PORT for Crafter Search.
+* Communication Between Crafter Studio & Crafter Deployer
+	* Crafter Studio will notify the deployment agent when content is changed.
+	* Ensure that the deployment agent is receiving the changes.
+	* If the deployment agent is not receiving any changes, check network connectivity and ports.
+* Communication Between Crafter Deployer & Crafter Search
+	* The deployment agent has a target with a Search Processor.
+	* Ensure that the processor is configured to the proper HOST, PORT for Crafter Search.
+	* Ensure that the processor is not failing before sending the changes to Solr.
+* Communication Between Crafter Search & Solr
+	* Crafter Search is configured to talk to a Solr index.
+	* Ensure that Crafter Search is configured to the proper HOST, PORT for Solr.
+	* Ensure that the Solr index is configured properly.
+* Communication Between Crafter Engine & Crafter Search
+	* Crafter Engine is configured to talk to Crafter Search.
+	* Ensure that Crafter Engine is configured to the proper HOST, PORT for Crafter Search.
 
-----------------------------------------------------------------------------
-Configure Crafter Deployer: Configure Hostname, ports and Crafter Search URL
-----------------------------------------------------------------------------
+-------------------
+Reviewing Log Files
+-------------------
 
-	CRAFTER/crafter-deployer/conf/preview-context.xml
+In order to discard the possible failures described in the previous section you should review the
+following log files for each one of the components:
 
---------------------------------------------------------------------------
-Configure Crafter Engine: Configure Hostname, ports and Crafter Search URL
---------------------------------------------------------------------------
++-------------------+-------------------------------------------------+
+|| Component        || Log Files                                      |
++===================+=================================================+
+|| Crafter Studio   || ``CRAFTER/logs/tomcat/catalina.out``           |
++-------------------+-------------------------------------------------+
+|| Crafter Deployer || ``CRAFTER/logs/deployer/deployer-general.log`` |
+||                  || ``CRAFTER/logs/deployer/{target}-{env}.log``   |
++-------------------+-------------------------------------------------+
+|| Crafter Search   || ``CRAFTER/logs/tomcat/catalina.out``           |
++-------------------+-------------------------------------------------+
+|| Solr             || ``CRAFTER/logs/solr/solr.log``                 |
++-------------------+-------------------------------------------------+
+|| Crafter Engine   || ``CRAFTER/logs/tomcat/catalina.out``           |
++-------------------+-------------------------------------------------+
 
-	TOMCAT/shared/classes/crafter/engine/extension/server-config.properties 
+----------------------
+Debugging Solr Queries
+----------------------
 
-----------------------------------------------------------------
-Configure Crafter Search: Configure Hostname, ports and Solr URL
-----------------------------------------------------------------
+If all components are able to communicate correctly but end users are still missing content in the site
+you should use the Solr Admin Console to debug the query used by Crafter Engine to search documents.
 
-	TOMCAT/shared/classes/crafter/search/extension/server-config.properties
+	``http://SOLR_HOST:SOLR_PORT/solr/#/SITE_NAME/query``
+
+More information about Solr Admin Console & query syntax can be found `here <http://lucene.apache.org/solr/6_6_0/quickstart.html#searching>`_.
+
+
+--------------------------------------------------------------
+Configure Crafter Deployer: Deployer Port & Crafter Search URL
+--------------------------------------------------------------
+
+``CRAFTER/bin/crafter-deployer/config/application.yaml``
+
+.. code-block:: yaml
+
+  server:
+    port: 9191
+
+``CRAFTER/bin/crafter-deployer/config/base-target.yaml``
+
+.. code-block:: yaml
+
+  search:
+    serverUrl: http://HOST:PORT/crafter-search
+
+----------------------------------------------
+Configure Crafter Studio: Crafter Deployer URL
+----------------------------------------------
+
+``TOMCAT/shared/classes/crafter/studio/extension/studio-config-override.yaml``
+
+.. code-block:: yaml
+
+  studio:
+    preview:
+      defaultPreviewDeployerUrl: http://HOST:PORT/api/1/target/deploy/preview/{siteName}
+      createTargetUrl: http://HOST:PORT/api/1/target/create
+      deleteTargetUrl: http://HOST:PORT/api/1/target/delete/{siteEnv}/{siteName}
+
+--------------------------------------------
+Configure Crafter Engine: Crafter Search URL
+--------------------------------------------
+
+``TOMCAT/shared/classes/crafter/engine/extension/server-config.properties`` 
+
+.. code-block:: guess
+
+  crafter.engine.search.server.url=http://HOST:PORT/crafter-search
+
+----------------------------------
+Configure Crafter Search: Solr URL
+----------------------------------
+
+``TOMCAT/shared/classes/crafter/search/extension/server-config.properties``
+
+.. code-block:: guess
+
+  crafter.search.solr.server.url=http://HOST:PORT/solr
