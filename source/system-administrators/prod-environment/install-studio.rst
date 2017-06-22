@@ -2,6 +2,8 @@
 Install Studio
 ==============
 
+.. todo:: Article needs to be updated for 3.0.  To install Studio, just follow the directions listed in the quick start guide under the Getting Started section
+
 The following guide explains how to install a Crafter Studio instance in a QA or production Unix-based server.
 
 ----------------

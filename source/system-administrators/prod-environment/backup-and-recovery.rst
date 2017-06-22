@@ -2,6 +2,8 @@
 Backup and Recovery
 ===================
 
+.. todo:: Article needs to be updated for 3.0
+
 A hot backup should comprise of the following steps:
     #. Backup Search Indexes (alf_data/solrBackup or alf_data/backup-lucene-indexes)
     #. Backup SQL

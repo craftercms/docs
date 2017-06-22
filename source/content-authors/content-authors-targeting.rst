@@ -2,6 +2,7 @@
 
 ..  _content_authors_targeting:
 
+.. todo:: Article needs updating
 
 Targeting allows an author to see what the website would look like if it were being browsed by a user with a given set of attributes, called Persona.  It also allows an author to tag the content being authored to the configured personas on the site.
 

@@ -6,11 +6,12 @@
 Searching
 ---------
 
-
 .. image:: /_static/images/page/page-toolbar-search.png
     :width: 50 %
     :align: center
     :alt: Content Author - Search
+
+To do a search in Crafter Studio, point your mouse to the magnifying glass icon, which will then display the name of the icon, **Search** and then click on it.
 
 .. image:: /_static/images/page/page-search.png
     :width: 95 %    
@@ -23,17 +24,15 @@ Filters.  By default (from the search box on the context nav) the filter is gene
 
 Result Templates: Each result is a content type of one sort or another.  Crafter Studio uses a template to render each result.  If a custom template is found for a given type it will be used, otherwise a default result template is used.  When you are looking for content the information you can quickly see about that content has a lot to do with how good your search experience is.  Authors need to see different information for different types of content.  For example, with an article you may want to see the category, the publish date and the summary.   For a banner, you want to see the banner creative.
 
-Result Selection: Note the checkboxes to the left of each result type.  Just as you can select multiple items on the dashboard and then interact with them in bulk, the same is true with search.  If you are in general search mode you will have checkboxes that allow you to choose many items and access to the context nav to take action on those items.  If you are selecting specific items for a control in a form you will be able to choose whatever number of items are expected by the control.  In selection mode you will note that the site context nav does not show.  A select/cancel bar shows at the bottom of search instead to confirm or cancel your selection.  If only one item is expected you will have radio buttons rather than checkboxes.
+Result Selection: Note the checkboxes to the left of each result type.  Just as you can select multiple items on the dashboard and then interact with them in bulk, the same is true with search.  If you are in general search mode you will have checkboxes that allow you to choose many items and access to the context nav to take action on those items.  If you are selecting specific items for a control in a form you will be able to choose whatever number of items are expected by the control.
 
-Search Pagination:  You can choose how many results you want to see per page.  Controls at the bottom of the page allow you to move through the results.
+Search Pagination(Show):  You can choose how many results you want to see per page.  Controls at the bottom of the page allow you to move through the results.
 
-Sort controls:  Each filter can define what the sort controls are for that filter.  In general you will find things like
+Sort controls(Sort):  Each filter can define what the sort controls are for that filter.  In general you will find things like
 
-    * relevance,
+    * Relevance,
 
-    * alpha on title,
+    * Alphabetical
 
-    * create date etc
+    * Create date
 
-
-.. TODO:: Update blurbs and images for authoring search.  The blurb above is from the wiki, for an older version of Crafter CMS

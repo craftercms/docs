@@ -1,5 +1,5 @@
 ===========================
-Debugging Deployment Issues
+Debugging Publishing Issues
 ===========================
 
 --------------------------------
@@ -8,9 +8,9 @@ Overview of Deployment Mechanics
 
 .. include:: /includes/how-deployment-works.rst
 
-----------------------------------------
+---------------------------------
 Places Deployment Can Get Hung Up
-----------------------------------------
+---------------------------------
 * Content can not be copied to the environment queue
 * Content cannot be pushed to the deployment target
 
