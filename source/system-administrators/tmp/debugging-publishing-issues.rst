@@ -1,3 +1,7 @@
+:orphan:
+
+.. article removed, ticket #991
+
 ===========================
 Debugging Publishing Issues
 ===========================
