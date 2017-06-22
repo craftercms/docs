@@ -31,7 +31,7 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------+
 || site_name              || String     || |checkmark|  || The target's site name (e.g mysite).  |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| reprocess_all_files    || String     ||              || If all files in the target's repo     |
+|| reprocess_all_files    || Boolean    ||              || If all files in the target's repo     |
 ||                        ||            ||              || should be reprocessed.                |
 +-------------------------+-------------+---------------+----------------------------------------+
 

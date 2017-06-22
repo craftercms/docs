@@ -6,7 +6,9 @@
 Destroy Context
 ===============
 
-Destroy the site context resolved for this request by Crafter Engine.
+Destroy the site context resolved for the current request. Destroying the context involves
+clearing the cache, destroying any loaded configuration and Spring beans for the site, and
+destroying the Groovy classloader for the site.
 
 --------------------
 Resource Information
@@ -47,7 +49,7 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------+
 || Status || Location                      || Response Body                                      |
 +=========+================================+=====================================================+
-|| 200    || ``.../site/context/destroy``  || See example above.                                 |
+|| 200    ||                               || See example above.                                 |
 +---------+--------------------------------+-----------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``        |
 +---------+--------------------------------+-----------------------------------------------------+

@@ -6,7 +6,8 @@
 Rebuild Context
 ===============
 
-Rebuild the site context resolved for this request by Crafter Engine.
+Rebuild the site context resolved for the current request, which means destroying and then creating
+again the context.
 
 --------------------
 Resource Information
@@ -47,7 +48,7 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------+
 || Status || Location                      || Response Body                                      |
 +=========+================================+=====================================================+
-|| 200    || ``.../site/context/rebuild``  || See example above.                                 |
+|| 200    ||                               || See example above.                                 |
 +---------+--------------------------------+-----------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``        |
 +---------+--------------------------------+-----------------------------------------------------+
