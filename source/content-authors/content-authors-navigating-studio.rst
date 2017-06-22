@@ -311,7 +311,7 @@ The Sidebar menu/panel allows for browsing all site content in the system. This 
 
 
 .. image:: /_static/images/content-author/sidebar-tooltips.png
-    :width: 55%
+    :width: 95%
     :align: center
     :alt: Navigating Studio - Sidebar Tooltips
 
@@ -381,4 +381,4 @@ For these use cases Crafter Studio's site dropdown IA folders support the config
 .. end of workflow icons================================================================================================
 
 
-.. todo::update targeting blurb and images
+.. todo::update targeting blurb and images, site dashboard blurb and images

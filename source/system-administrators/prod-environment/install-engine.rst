@@ -1,3 +1,7 @@
+:orphan:
+
+.. not valid for 3.0 anymore
+
 .. index:: Installation; Crafter Engine
 
 .. _install-engine:

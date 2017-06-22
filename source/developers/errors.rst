@@ -30,7 +30,10 @@ For more details on error codes for specific APIs, please see the ReST API secti
    projects/studio/api/index
    projects/search/api/index
    projects/deployer/api/index
-
+   projects/engine/api/index
+   projects/core/api/index
+   projects/profile/api/index
+   projects/social/api/index
 
 -----------
 Error Pages
