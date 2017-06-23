@@ -71,7 +71,7 @@ Response
 
   {
     "status" : "stopped",
-    "message" : "Stopped while trying to publish item: {item_path} on {yyyy-MM-dd'T'HH:mm'Z'}"
+    "message" : "Failed while trying to publish item: {item_path} on {yyyy-MM-dd'T'HH:mm'Z'}"
   }
 
 .. code-block:: json
