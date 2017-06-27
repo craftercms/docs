@@ -2,9 +2,6 @@
 
 .. _crafter-engine-api-site-profile-get:
 
-.. ATTENTION::
-  This API will be changed soon
-
 ===========
 Get Profile
 ===========
