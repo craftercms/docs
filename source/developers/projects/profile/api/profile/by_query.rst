@@ -24,28 +24,29 @@ Resource Information
 Parameters
 ----------
 
-+-------------------+---------+---------------+--------------------------------------------------+
-|| Name             || Type   || Required     || Description                                     |
-+===================+=========+===============+==================================================+
-|| accessTokenId    || String || |checkmark|  || The ID of the application access token          |
-+-------------------+---------+---------------+--------------------------------------------------+
-|| tenantName       || String || |checkmark|  || The tenant's name                               |
-+-------------------+---------+---------------+--------------------------------------------------+
-|| query            || String || |checkmark|  || The Mongo query used to search for the profiles |
-+-------------------+---------+---------------+--------------------------------------------------+
-|| sortBy           || String ||              || Profile attribute to sort the list by           |
-+-------------------+---------+---------------+--------------------------------------------------+
-|| sortOrder        || String ||              || The sort order (either ASC or DESC)             |
-+-------------------+---------+---------------+--------------------------------------------------+
-|| start            || String ||              || From the entire list of results, the position   |
-||                  ||        ||              || where the actual results should start (useful   |
-||                  ||        ||              || for pagination)                                 |
-+-------------------+---------+---------------+--------------------------------------------------+
-|| count            || String ||              || The number of profiles to return                |
-+-------------------+---------+---------------+--------------------------------------------------+
-|| attributeToReturn|| String ||              || The name of the attributes to return            |
-||                  ||        ||              || (don't specify to return all)                   |
-+-------------------+---------+---------------+--------------------------------------------------+
++---------------------+---------+---------------+--------------------------------------------------+
+|| Name               || Type   || Required     || Description                                     |
++=====================+=========+===============+==================================================+
+|| accessTokenId      || String || |checkmark|  || The access token ID of the application          |
+||                    ||        ||              || making the call                                 |
++---------------------+---------+---------------+--------------------------------------------------+
+|| tenantName         || String || |checkmark|  || The tenant's name                               |
++---------------------+---------+---------------+--------------------------------------------------+
+|| query              || String || |checkmark|  || The Mongo query used to search for the profiles |
++---------------------+---------+---------------+--------------------------------------------------+
+|| sortBy             || String ||              || Profile attribute to sort the list by           |
++---------------------+---------+---------------+--------------------------------------------------+
+|| sortOrder          || String ||              || The sort order (either ASC or DESC)             |
++---------------------+---------+---------------+--------------------------------------------------+
+|| start              || String ||              || From the entire list of results, the position   |
+||                    ||        ||              || where the actual results should start (useful   |
+||                    ||        ||              || for pagination)                                 |
++---------------------+---------+---------------+--------------------------------------------------+
+|| count              || String ||              || The number of profiles to return                |
++---------------------+---------+---------------+--------------------------------------------------+
+|| attributesToReturn || String ||              || The name of the attributes to return            |
+||                    ||        ||              || (don't specify to return all)                   |
++---------------------+---------+---------------+--------------------------------------------------+
 
 .. WARNING::
   The query must not contain the ``$where`` operator, the tenant's name (already specified) or any non-readable attribute by the application
@@ -92,7 +93,7 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------+
 || Status || Location                      || Response Body                                      |
 +=========+================================+=====================================================+
-|| 200    || ``.../profile/by_query``      || See example above.                                 |
+|| 200    ||                               || See example above.                                 |
 +---------+--------------------------------+-----------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``        |
 +---------+--------------------------------+-----------------------------------------------------+

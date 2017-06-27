@@ -24,19 +24,20 @@ Resource Information
 Parameters
 ----------
 
-+-------------------+-------------+---------------+----------------------------------------------+
-|| Name             || Type       || Required     || Description                                 |
-+===================+=============+===============+==============================================+
-|| accessTokenId    || String     || |checkmark|  || The ID of the application access token      |
-+-------------------+-------------+---------------+----------------------------------------------+
-|| id               || String     || |checkmark|  || The profile's ID                            |
-+-------------------+-------------+---------------+----------------------------------------------+
-|| resetPasswordUrl || String     || |checkmark|  || The base URL to use to build the final URL  |
-||                  ||            ||              || the profile will use to reset their password|
-+-------------------+-------------+---------------+----------------------------------------------+
-|| attributeToReturn|| String     ||              || The name of the attributes to return        |
-||                  ||            ||              || (don't specify to return all)               |
-+-------------------+-------------+---------------+----------------------------------------------+
++---------------------+-------------+---------------+----------------------------------------------+
+|| Name               || Type       || Required     || Description                                 |
++=====================+=============+===============+==============================================+
+|| accessTokenId      || String     || |checkmark|  || The access token ID of the application      |
+||                    ||            ||              || making the call                             |
++---------------------+-------------+---------------+----------------------------------------------+
+|| id                 || String     || |checkmark|  || The profile's ID                            |
++---------------------+-------------+---------------+----------------------------------------------+
+|| resetPasswordUrl   || String     || |checkmark|  || The base URL to use to build the final URL  |
+||                    ||            ||              || the profile will use to reset their password|
++---------------------+-------------+---------------+----------------------------------------------+
+|| attributesToReturn || String     ||              || The name of the attributes to return        |
+||                    ||            ||              || (don't specify to return all)               |
++---------------------+-------------+---------------+----------------------------------------------+
 
 -------
 Example

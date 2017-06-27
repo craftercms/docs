@@ -6,7 +6,7 @@
 Create Profile
 ==============
 
-Creates a new profile for a specific tenant name.
+Creates a new profile for a specific tenant.
 
 --------------------
 Resource Information
@@ -24,30 +24,31 @@ Resource Information
 Parameters
 ----------
 
-+-----------------+--------+--------------+------------------------------------------------------+
-|| Name           || Type  || Required    || Description                                         |
-+=======================+========+==============+================================================+
-|| accessTokenId  || String|| |checkmark| || The ID of the application access token              |
-+-----------------+--------+--------------+------------------------------------------------------+
-|| tenantName     || String|| |checkmark| || The name of the tenant to add the profile to        |
-+-----------------+--------+--------------+------------------------------------------------------+
-|| username       || String|| |checkmark| || The profile's username                              |
-+-----------------+--------+--------------+------------------------------------------------------+
-|| password       || String||             || The profile's password                              |
-+-----------------+--------+--------------+------------------------------------------------------+
-|| email          || String|| |checkmark| || The profile's email                                 |
-+-----------------+--------+--------------+------------------------------------------------------+
-|| enabled        || String|| |checkmark| || If the profile should be enabled or not             |
-+-----------------+--------+--------------+------------------------------------------------------+
-|| role           || String||             || The profile's roles                                 |
-+-----------------+--------+--------------+------------------------------------------------------+
-|| attributes     || String||             || The additional attributes to add to the profile     |
-||                ||       ||             || (specify a JSON string)                             |
-+-----------------+--------+--------------+------------------------------------------------------+
-|| verificationUrl|| String||             || The URL (sans token) the user needs to go in case   |
-||                ||       ||             || it needs to verify the created profile              |
-||                ||       ||             || (verification depends on tenant)                    |
-+-----------------+--------+--------------+------------------------------------------------------+
++------------------+---------+--------------+-----------------------------------------------------+
+|| Name            || Type   || Required    || Description                                        |
++==================+=========+==============+=====================================================+
+|| accessTokenId   || String || |checkmark| || The access token ID of the application             |
+||                 ||        ||             || making the call                                    |
++------------------+---------+--------------+-----------------------------------------------------+
+|| tenantName      || String || |checkmark| || The name of the tenant to add the profile to       |
++------------------+---------+--------------+-----------------------------------------------------+
+|| username        || String || |checkmark| || The profile's username                             |
++------------------+---------+--------------+-----------------------------------------------------+
+|| password        || String ||             || The profile's password                             |
++------------------+---------+--------------+-----------------------------------------------------+
+|| email           || String || |checkmark| || The profile's email                                |
++------------------+---------+--------------+-----------------------------------------------------+
+|| enabled         || String || |checkmark| || If the profile should be enabled or not            |
++------------------+---------+--------------+-----------------------------------------------------+
+|| role            || String ||             || The profile's roles                                |
++------------------+---------+--------------+-----------------------------------------------------+
+|| attributes      || String ||             || The additional attributes to add to the profile    |
+||                 ||        ||             || (specify a JSON string)                            |
++------------------+---------+--------------+-----------------------------------------------------+
+|| verificationUrl || String ||             || The URL (sans token) the user needs to go in case  |
+||                 ||        ||             || it needs to verify the created profile             |
+||                 ||        ||             || (verification depends on tenant)                   |
++------------------+---------+--------------+-----------------------------------------------------+
 
 -------
 Example
@@ -107,7 +108,7 @@ Responses
 +---------+------------------------+-------------------------------------------------------------+
 || Status || Location              || Response Body                                              |
 +=========+========================+=============================================================+
-|| 200    || ``.../profile/create``|  See example above.                                         |
+|| 200    ||                       |  See example above.                                         |
 +---------+------------------------+-------------------------------------------------------------+
 || 400    ||                       |  .. code-block:: json                                       |
 ||        ||                       |                                                             |
