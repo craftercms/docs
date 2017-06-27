@@ -6,7 +6,7 @@
 Get Descriptor
 ==============
 
-Get a Crafter Engine item descriptor.
+Get the descriptor data of an Item in the content store.
 
 --------------------
 Resource Information
@@ -17,7 +17,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || URL                       || ``/api/1/site/content_store/descriptor``                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Response Formats          || ``JSON`` ``XML``                                                 |
+|| Response Formats          || ``JSON``, ``XML``                                                |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
