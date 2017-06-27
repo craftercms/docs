@@ -2,14 +2,12 @@
 
 .. _crafter-engine-api-site-profile-get:
 
-.. ATTENTION::
-  This API will be changed soon
-
 ===========
 Get Profile
 ===========
 
 Get the current user's profile from the session, if no profile is set an empty one will be created.
+Only use it in conjunction with Studio's Personas.
 
 --------------------
 Resource Information
