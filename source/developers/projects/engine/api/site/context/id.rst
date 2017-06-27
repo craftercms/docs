@@ -3,11 +3,11 @@
 .. _crafter-engine-api-site-context-id:
 
 ======
-Get Id
+Get ID
 ======
 
-Get the id for the site context resolved for this request by Crafter Engine, the value returned will depend
-on the SiteResolver implementation used.
+Get the ID for the site context resolved for the current request, the value returned will depend on the SiteResolver
+implementation used.
 
 --------------------
 Resource Information
@@ -48,7 +48,7 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------+
 || Status || Location                      || Response Body                                      |
 +=========+================================+=====================================================+
-|| 200    || ``.../site/context/id``       || See example above.                                 |
+|| 200    ||                               || See example above.                                 |
 +---------+--------------------------------+-----------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``        |
 +---------+--------------------------------+-----------------------------------------------------+

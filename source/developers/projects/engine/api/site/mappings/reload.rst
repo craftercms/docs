@@ -6,8 +6,8 @@
 Reload Mappings
 ===============
 
-Reload the mapping used to resolve sites by Crafter Engine.
-This endpoint is opnly available when Crafter Engine is configured as multi-tenant.
+Reload the mappings used to resolve sites by Crafter Engine. This endpoint is only available when
+Crafter Engine is in mapped multi-tenant mode.
 
 --------------------
 Resource Information
@@ -50,7 +50,7 @@ Responses
 +========+==============================+========================================================+
 || 200   || ``.../site/mappings/reload``|| See example above.                                    |
 +--------+------------------------------+--------------------------------------------------------+
-|| 200   ||                             | .. code-block:: json                                   |
+|| 400   ||                             | .. code-block:: json                                   |
 ||       ||                             |                                                        |
 ||       ||                             |   { "message" : "The current resolver is not a         |
 ||       ||                             |   ReloadableMappingsSiteResolver. No mappings to       |

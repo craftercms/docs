@@ -6,7 +6,7 @@
 Clear
 =============
 
-Clear all cache scope for the current site context resolved for this request by Crafter Engine.
+Clear the content cache scope and the Freemarker cache for the current site context.
 
 --------------------
 Resource Information

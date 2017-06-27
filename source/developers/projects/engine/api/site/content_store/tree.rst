@@ -6,7 +6,7 @@
 Get Tree
 ========
 
-Get the complete structure of Site Items for a folder.
+Get the complete Item hierarchy under the specified folder in the content store.
 
 --------------------
 Resource Information
@@ -17,7 +17,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------+
 || URL                       || ``/api/1/site/content_store/tree``                         |
 +----------------------------+-------------------------------------------------------------+
-|| Response Formats          || ``JSON`` ``XML``                                           |
+|| Response Formats          || ``JSON``, ``XML``                                          |
 +----------------------------+-------------------------------------------------------------+
 
 ----------
@@ -27,7 +27,7 @@ Parameters
 +-------------+-------------+---------------+----------------------------------------------------+
 || Name       || Type       || Required     || Description                                       |
 +=============+=============+===============+====================================================+
-|| url        || String     || |checkmark|  || The folder's url (e.g /site/website/)             |
+|| url        || String     || |checkmark|  || The folder's URL (e.g /site/website/)             |
 +-------------+-------------+---------------+----------------------------------------------------+
 || depth      || Integer    ||              || Amount of levels to include (unlimited by default)|
 +-------------+-------------+---------------+----------------------------------------------------+

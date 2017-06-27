@@ -6,7 +6,7 @@
 Get Children
 ============
 
-Get a list of all Site Items that are children of a specific folder.
+Get the list of Items directly under the folder in the content store.
 
 --------------------
 Resource Information
@@ -17,7 +17,7 @@ Resource Information
 +----------------------------+-----------------------------------------------------------------+
 || URL                       || ``/api/1/site/content_store/children``                         |
 +----------------------------+-----------------------------------------------------------------+
-|| Response Formats          || ``JSON`` ``XML``                                               |
+|| Response Formats          || ``JSON``, ``XML``                                              |
 +----------------------------+-----------------------------------------------------------------+
 
 ----------

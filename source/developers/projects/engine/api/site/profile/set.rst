@@ -2,14 +2,12 @@
 
 .. _crafter-engine-api-site-profile-set:
 
-.. ATTENTION::
-  This API will be changed soon
-
 ===========
 Set Profile
 ===========
 
 Set the current user's profile, all parameters are added to the profile and stored in the session.
+Only use it in conjunction with Studio's Personas.
 
 --------------------
 Resource Information

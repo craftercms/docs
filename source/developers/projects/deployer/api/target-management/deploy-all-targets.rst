@@ -27,7 +27,7 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------+
 || Name                   || Type       || Required     || Description                           |
 +=========================+=============+===============+========================================+
-|| reprocess_all_files    || String     ||              || If all files in the targets' repo     |
+|| reprocess_all_files    || Boolean    ||              || If all files in all the target repos  |
 ||                        ||            ||              || should be reprocessed.                |
 +-------------------------+-------------+---------------+----------------------------------------+
 
