@@ -1,3 +1,5 @@
+.. _users-group-management:
+
 =======================
 Users/Groups Management
 =======================
