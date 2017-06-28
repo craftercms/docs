@@ -6,7 +6,7 @@
 Get Children
 ============
 
-Get the list of Items directly under the folder in the content store.
+Get the list of Items directly under a folder in the content store.
 
 --------------------
 Resource Information
