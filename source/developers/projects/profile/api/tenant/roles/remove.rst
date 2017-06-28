@@ -44,7 +44,12 @@ Request
 
 .. code-block:: none
 
-  POST .../api/1/tenant/sample-tenant/roles/remove?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&role=APP_TEST,APP_REPORT
+  POST .../api/1/tenant/sample-tenant/roles/remove
+
+.. code-block:: none
+
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  role=APP_TEST,APP_REPORT
 
 ^^^^^^^^
 Response
