@@ -6,7 +6,7 @@
 Get Profile Count
 =================
 
-Returns the number of profiles of the specified tenant.
+Returns the number of profiles for the specified tenant.
 
 --------------------
 Resource Information
@@ -27,7 +27,8 @@ Parameters
 +-------------------+-------------+---------------+----------------------------------------------+
 || Name             || Type       || Required     || Description                                 |
 +===================+=============+===============+==============================================+
-|| accessTokenId    || String     || |checkmark|  || The ID of the application access token      |
+|| accessTokenId    || String     || |checkmark|  || The access token ID of the application      |
+||                  ||            ||              || making the call                             |
 +-------------------+-------------+---------------+----------------------------------------------+
 || tenantName       || String     || |checkmark|  || The tenant's name                           |
 +-------------------+-------------+---------------+----------------------------------------------+
@@ -61,7 +62,7 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------+
 || Status || Location                      || Response Body                                      |
 +=========+================================+=====================================================+
-|| 200    || ``.../profile/count``         || See example above.                                 |
+|| 200    ||                               || See example above.                                 |
 +---------+--------------------------------+-----------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``        |
 +---------+--------------------------------+-----------------------------------------------------+

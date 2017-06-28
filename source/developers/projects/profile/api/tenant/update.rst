@@ -24,11 +24,12 @@ Resource Information
 Parameters
 ----------
 
-+-------------------------+-------------+---------------+-----------------------------------------+
-|| Name                   || Type       || Required     || Description                            |
-+=========================+=============+===============+=========================================+
-|| accessTokenId          || String     || |checkmark|  || The ID of the application access token |
-+-------------------------+-------------+---------------+-----------------------------------------+
++------------------------+-------------+---------------+-----------------------------------------+
+|| Name                  || Type       || Required     || Description                            |
++========================+=============+===============+=========================================+
+|| accessTokenId         || String     || |checkmark|  || The access token ID of the application |
+||                       ||            ||              || making the call                        |
++------------------------+-------------+---------------+-----------------------------------------+
 
 -------
 Example
@@ -46,11 +47,11 @@ Request
       "name" : "sample-tenant",
       "verifyNewProfiles" : true,
   		"ssoEnabled": true,
-      "availableRoles" : [ 
+      "availableRoles" : [
   			"APP_ADMIN",
   			"APP_USER"
       ],
-      "attributeDefinitions" : [ 
+      "attributeDefinitions" : [
           {
               "name" : "firstName",
               "metadata" : {
@@ -58,15 +59,15 @@ Request
                   "type" : "TEXT",
                   "displayOrder" : 0.0
               },
-              "permissions" : [ 
+              "permissions" : [
                   {
                       "application" : "*",
-                      "allowedActions" : [ 
+                      "allowedActions" : [
                           "*"
                       ]
                   }
               ]
-          }, 
+          },
           {
               "name" : "lastName",
               "metadata" : {
@@ -74,15 +75,15 @@ Request
                   "type" : "TEXT",
                   "displayOrder" : 1.0
               },
-              "permissions" : [ 
+              "permissions" : [
                   {
                       "application" : "*",
-                      "allowedActions" : [ 
+                      "allowedActions" : [
                           "*"
                       ]
                   }
               ]
-          }, 
+          },
           {
               "name" : "avatarLink",
               "metadata" : {
@@ -90,10 +91,10 @@ Request
                   "type" : "TEXT",
                   "displayOrder" : 3.0
               },
-              "permissions" : [ 
+              "permissions" : [
                   {
                       "application" : "*",
-                      "allowedActions" : [ 
+                      "allowedActions" : [
                           "*"
                       ]
                   }
@@ -181,7 +182,7 @@ Responses
 +---------+----------------------+---------------------------------------------------------------+
 || Status || Location            || Response Body                                                |
 +=========+======================+===============================================================+
-|| 200    | ``.../tenant/update``| See example above.                                            |
+|| 200    |                      | See example above.                                            |
 +---------+----------------------+---------------------------------------------------------------+
 || 400    |                      | .. code-block:: json                                          |
 ||        |                      |                                                               |

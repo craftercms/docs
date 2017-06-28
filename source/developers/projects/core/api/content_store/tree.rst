@@ -6,7 +6,7 @@
 Get Tree
 ========
 
-Get the complete structure of Site Items for a folder.
+Get the complete Item hierarchy under the specified folder in the content store.
 
 --------------------
 Resource Information
@@ -27,9 +27,9 @@ Parameters
 +-------------+-------------+---------------+----------------------------------------------------+
 || Name       || Type       || Required     || Description                                       |
 +=============+=============+===============+====================================================+
-|| contextId  || String     || |checkmark|  || The site context id                               |
+|| contextId  || String     || |checkmark|  || The context id                                    |
 +-------------+-------------+---------------+----------------------------------------------------+
-|| url        || String     || |checkmark|  || The folder's url (e.g /site/website/)             |
+|| url        || String     || |checkmark|  || The folder's URL (e.g /site/website/)             |
 +-------------+-------------+---------------+----------------------------------------------------+
 || depth      || Integer    ||              || Amount of levels to include (unlimited by default)|
 +-------------+-------------+---------------+----------------------------------------------------+
@@ -562,7 +562,7 @@ Responses
 +---------+----------------------------------+-----------------------------------------------+
 || Status || Location                        || Response Body                                |
 +=========+==================================+===============================================+
-|| 200    || ``.../content_store/tree``      || See example above.                           |
+|| 200    ||                                 || See example above.                           |
 +---------+----------------------------------+-----------------------------------------------+
 || 404    ||                                 || ``"No folder found at /site/website"``       |
 +---------+----------------------------------+-----------------------------------------------+

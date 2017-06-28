@@ -10,7 +10,7 @@ Creates a token that can be sent to the user in an email as a link.
 
 .. NOTE::
   After the user clicks the link, the token then can be passed to ``/verify``
-  or ``/change_password`` to verify that the user agrees.
+  or ``/change_password`` to verify user requesting the token.
 
 --------------------
 Resource Information
@@ -28,13 +28,14 @@ Resource Information
 Parameters
 ----------
 
-+---------------+--------+--------------+--------------------------------------------------------+
-|| Name         || Type  || Required    || Description                                           |
-+===============+========+==============+========================================================+
-|| accessTokenId|| String|| |checkmark| || The ID of the application access token                |
-+---------------+--------+--------------+--------------------------------------------------------+
-|| id           || String|| |checkmark| || The profile ID of the user that needs to be contacted |
-+---------------+--------+--------------+--------------------------------------------------------+
++---------------------+-------------+---------------+----------------------------------------------+
+|| Name               || Type       || Required     || Description                                 |
++=====================+=============+===============+==============================================+
+|| accessTokenId      || String     || |checkmark|  || The access token ID of the application      |
+||                    ||            ||              || making the call                             |
++---------------------+-------------+---------------+----------------------------------------------+
+|| id                 || String     || |checkmark|  || The profile ID of the user                  |
++---------------------+-------------+---------------+----------------------------------------------+
 
 -------
 Example
@@ -47,20 +48,6 @@ Request
 .. code-block:: guess
 
   POST .../api/1/profile/592715d4d4c650e226b03b62/verification_token/create?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
-.. code-block:: json
-
-  {
-    "username": "john.doe",
-    "email": "john.doe@example.com",
-    "verified": false,
-    "enabled": false,
-    "createdOn": 1495733716728,
-    "lastModified": 1495733716728,
-    "tenant": "sample-tenant",
-    "roles": [],
-    "attributes": {},
-    "id": "592715d4d4c650e226b03b62"
-  }
 
 ^^^^^^^^
 Response
@@ -69,7 +56,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
-  
+
   {
     "tenant": "sample-tenant",
     "profileId": "592715d4d4c650e226b03b62",
@@ -81,10 +68,10 @@ Response
 Responses
 ---------
 
-+---------+----------------------------------------------+--------------------------------------------+
-|| Status || Location                                    || Response Body                             |
-+=========+==============================================+============================================+
-|| 200    | ``.../profile/:id/verification_token/create``| See example above.                         |
-+---------+----------------------------------------------+--------------------------------------------+
-|| 500    |                                              | ``{ "message" : "Internal server error" }``|
-+---------+----------------------------------------------+--------------------------------------------+
++---------+----------------------------------------------+----------------------------------------------+
+|| Status || Location                                    || Response Body                               |
++=========+==============================================+==============================================+
+|| 200    || See example above.                          ||                                             |
++---------+----------------------------------------------+----------------------------------------------+
+|| 500    ||                                             || ``{ "message" : "Internal server error" }`` |
++---------+----------------------------------------------+----------------------------------------------+

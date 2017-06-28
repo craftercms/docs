@@ -6,7 +6,7 @@
 Get Children
 ============
 
-Get the list of Items directly under the folder in the content store.
+Get the list of Items directly under a folder in the content store.
 
 --------------------
 Resource Information
@@ -246,7 +246,7 @@ Responses
 +---------+--------------------------------------+-----------------------------------------------+
 || Status || Location                            || Response Body                                |
 +=========+======================================+===============================================+
-|| 200    || ``.../site/content_store/children`` || See example above.                           |
+|| 200    ||                                     || See example above.                           |
 +---------+--------------------------------------+-----------------------------------------------+
 || 404    ||                                     || ``"No folder found at /site/website"``       |
 +---------+--------------------------------------+-----------------------------------------------+
