@@ -47,7 +47,11 @@ Request
 
 .. code-block:: none
 
-  POST .../api/1/authentication/ticket/2e911e0b-ac47-423e-9174-4e8896f1b387?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  POST .../api/1/authentication/ticket/2e911e0b-ac47-423e-9174-4e8896f1b387
+
+.. code-block:: none
+
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
 
 ^^^^^^^^
 Response

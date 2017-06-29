@@ -46,7 +46,11 @@ Request
 
 .. code-block:: none
 
-  POST .../api/1/profile/verify?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&verificationTokenId=055d58c4-fabb-44da-96eb-261e24e1d0c9
+  POST .../api/1/profile/verify
+.. code-block:: none
+
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  verificationTokenId=055d58c4-fabb-44da-96eb-261e24e1d0c9
 
 ^^^^^^^^
 Response

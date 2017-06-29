@@ -58,22 +58,16 @@ Request
 
 .. code-block:: none
 
-  POST .../api/1/profile/592887d7d4c650213cc2f400/update?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&username=john.doe&password=passw0rd&email=john.doe%40example.com&enabled=false&role=APP_TEST,APP_REPORT
+  POST .../api/1/profile/592887d7d4c650213cc2f400/update
 
-.. code-block:: json
+.. code-block:: none
 
-  {
-    "username": "john.doe",
-    "email": "john.doe@example.com",
-    "verified": false,
-    "enabled": false,
-    "createdOn": 1495733716728,
-    "lastModified": 1495733716728,
-    "tenant": "sample-tenant",
-    "roles": [],
-    "attributes": {},
-    "id": "592715d4d4c650e226b03b62"
-  }
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  username=john.doe
+  password=passw0rd
+  email=john.doe@example.com
+  enabled=false
+  role=APP_TEST,APP_REPORT
 
 ^^^^^^^^
 Response

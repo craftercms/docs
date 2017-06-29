@@ -43,7 +43,12 @@ Request
 
 .. code-block:: none
 
-  POST .../api/1/authentication/persistent_login/create?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&profileId=5925a68def86951f895cf497
+  POST .../api/1/authentication/persistent_login/create
+
+.. code-block:: none
+
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  profileId=5925a68def86951f895cf497
 
 ^^^^^^^^
 Response

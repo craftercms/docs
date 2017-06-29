@@ -60,25 +60,18 @@ Request
 
 .. code-block:: guess
 
-  POST .../api/1/profile/create/?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&tenantName=sample-tenant&username=john.doe&password=passw0rd&email=john.doe%40example.com&enabled=false&attributes=%7B%22firstName%22%3A%22John%22,%22lastName%22%3A%22Doe%22%7D&verificationUrl
+  POST .../api/1/profile/create
 
-.. code-block:: json
+.. code-block:: none
 
-  {
-  	"username": "john.doe",
-  	"email": "john.doe@example.com",
-  	"verified": false,
-  	"enabled": false,
-  	"createdOn": 1495828439317,
-  	"lastModified": 1495828439317,
-  	"tenant": "sample-tenant",
-  	"roles": [],
-  	"attributes": {
-  		"firstName": "John",
-  		"lastName": "Doe"
-  	},
-  	"id": "592887d7d4c650213cc2f400"
-  }
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  tenantName=sample-tenant
+  username=john.doe
+  password=passw0rd
+  email=john.doe@example.com
+  enabled=false
+  attributes={"firstName":"John","lastName":"Doe"}
+  verificationUrl
 
 ^^^^^^^^
 Response
