@@ -77,6 +77,7 @@ Starting Crafter CMS Using the Startup Script
 
         After logging in, you should be redirected to the MySites screen, and you're now ready to create your first website!
 
+.. _installing-craftercms-from-gradle:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Installing Crafter CMS From Archive Built By the Gradle Environment Builder
