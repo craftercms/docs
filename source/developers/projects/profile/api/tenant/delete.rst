@@ -27,7 +27,8 @@ Parameters
 +------------------------+-------------+---------------+-----------------------------------------+
 || Name                  || Type       || Required     || Description                            |
 +========================+=============+===============+=========================================+
-|| accessTokenId         || String     || |checkmark|  || The ID of the application access token |
+|| accessTokenId         || String     || |checkmark|  || The access token ID of the application |
+||                       ||            ||              || making the call                        |
 +------------------------+-------------+---------------+-----------------------------------------+
 || name                  || String     || |checkmark|  || The tenant's name                      |
 +------------------------+-------------+---------------+-----------------------------------------+
@@ -40,7 +41,11 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/tenant/sample-tenant/delete?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d``
+``POST .../api/1/tenant/sample-tenant/delete``
+
+.. code-block:: none
+
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
 
 ^^^^^^^^
 Response
@@ -55,7 +60,7 @@ Responses
 +---------+---------------------------------+----------------------------------------------------+
 || Status || Location                       || Response Body                                     |
 +=========+=================================+====================================================+
-|| 200    || ``.../tenant/:name/delete``    || See example above.                                |
+|| 200    ||                                || See example above.                                |
 +---------+---------------------------------+----------------------------------------------------+
 || 500    ||                                || ``{ "message" : "Internal server error" }``       |
 +---------+---------------------------------+----------------------------------------------------+

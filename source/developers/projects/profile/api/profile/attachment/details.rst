@@ -6,7 +6,7 @@
 Get Profile Attachment Details
 ==============================
 
-Returns the details for an given attachment in a profile.
+Returns the details for a given attachment in a profile.
 
 --------------------
 Resource Information
@@ -27,7 +27,8 @@ Parameters
 +-------------------+-------------+---------------+----------------------------------------------+
 || Name             || Type       || Required     || Description                                 |
 +===================+=============+===============+==============================================+
-|| accessTokenId    || String     || |checkmark|  || The ID of the application access token      |
+|| accessTokenId    || String     || |checkmark|  || The access token ID of the application      |
+||                  ||            ||              || making the call                             |
 +-------------------+-------------+---------------+----------------------------------------------+
 || id               || String     || |checkmark|  || The profile's ID                            |
 +-------------------+-------------+---------------+----------------------------------------------+
@@ -54,7 +55,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
-  
+
   {
     "md5": "498a1e16be56873ef53a1a61295d1781",
     "contentType": "image/jpeg",

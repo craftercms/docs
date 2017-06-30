@@ -6,7 +6,7 @@
 Create Persistent Login
 =======================
 
-Creates a persistent login, use for remember me functionality.
+Creates a persistent login, used for remember me functionality.
 
 --------------------
 Resource Information
@@ -27,7 +27,8 @@ Parameters
 +-------------------------+-------------+---------------+-----------------------------------------+
 || Name                   || Type       || Required     || Description                            |
 +=========================+=============+===============+=========================================+
-|| accessTokenId          || String     || |checkmark|  || The ID of the application access token |
+|| accessTokenId          || String     || |checkmark|  || The access token ID of the application |
+||                        ||            ||              || making the call                        |
 +-------------------------+-------------+---------------+-----------------------------------------+
 || profileId              || String     || |checkmark|  || The ID of the profile                  |
 +-------------------------+-------------+---------------+-----------------------------------------+
@@ -42,7 +43,12 @@ Request
 
 .. code-block:: none
 
-  POST .../api/1/authentication/persistent_login/create?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&profileId=5925a68def86951f895cf497
+  POST .../api/1/authentication/persistent_login/create
+
+.. code-block:: none
+
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  profileId=5925a68def86951f895cf497
 
 ^^^^^^^^
 Response
@@ -64,10 +70,10 @@ Response
 Responses
 ---------
 
-+--------+----------------------------------------+----------------------------------------------+
-| Status | Location                               | Response Body                                |
-+========+========================================+==============================================+
-| 200    | ``.../persistent_login/create``        | See example above.                           |
-+--------+----------------------------------------+----------------------------------------------+
-| 500    |                                        | ``{ "message" : "Internal server error" }``  |
-+--------+----------------------------------------+----------------------------------------------+
++---------+---------------------------------+----------------------------------------------------+
+|| Status || Location                       || Response Body                                     |
++=========+=================================+====================================================+
+|| 200    ||                                || See example above.                                |
++---------+---------------------------------+----------------------------------------------------+
+|| 500    ||                                || ``{ "message" : "Internal server error" }``       |
++---------+---------------------------------+----------------------------------------------------+

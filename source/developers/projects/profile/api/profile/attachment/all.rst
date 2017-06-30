@@ -6,7 +6,7 @@
 Get All Profile Attachments
 ===========================
 
-Gets all attachments for the given Profile.
+Gets all attachments for the given profile.
 
 --------------------
 Resource Information
@@ -27,7 +27,8 @@ Parameters
 +-------------------+-------------+---------------+----------------------------------------------+
 || Name             || Type       || Required     || Description                                 |
 +===================+=============+===============+==============================================+
-|| accessTokenId    || String     || |checkmark|  || The ID of the application access token      |
+|| accessTokenId    || String     || |checkmark|  || The access token ID of the application      |
+||                  ||            ||              || making the call                             |
 +-------------------+-------------+---------------+----------------------------------------------+
 || id               || String     || |checkmark|  || The profile's ID                            |
 +-------------------+-------------+---------------+----------------------------------------------+
@@ -42,7 +43,7 @@ Request
 
 .. code-block:: guess
 
-  GET .../api/1/profile/59284659d4c650213cc2f3fc/attachments/?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  GET .../api/1/profile/59284659d4c650213cc2f3fc/attachments?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
 
 
 ^^^^^^^^
@@ -52,7 +53,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
-  
+
   [
     {
       "md5": "498a1e16be56873ef53a1a61295d1781",
@@ -71,7 +72,7 @@ Responses
 +---------+-----------------------------------+--------------------------------------------------+
 || Status || Location                         || Response Body                                   |
 +=========+===================================+==================================================+
-|| 200    || ``.../profile/:id/attachments/`` || See example above.                              |
+|| 200    ||                                  || See example above.                              |
 +---------+-----------------------------------+--------------------------------------------------+
 || 500    ||                                  || ``{ "message" : "Internal server error" }``     |
 +---------+-----------------------------------+--------------------------------------------------+

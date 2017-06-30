@@ -9,7 +9,7 @@ Create Ticket
 Creates a new ticket for the specified profile.
 
 .. NOTE::
-  This method should only be used when authentication is done through other means
+  This method should only be used when actual authentication is done through other means
   (like when authenticating through Facebook or Twitter) different than profile.
 
 --------------------
@@ -31,7 +31,8 @@ Parameters
 +-------------------------+-------------+---------------+-----------------------------------------+
 || Name                   || Type       || Required     || Description                            |
 +=========================+=============+===============+=========================================+
-|| accessTokenId          || String     || |checkmark|  || The ID of the application access token |
+|| accessTokenId          || String     || |checkmark|  || The access token ID of the application |
+||                        ||            ||              || making the call                        |
 +-------------------------+-------------+---------------+-----------------------------------------+
 || profileId              || String     || |checkmark|  || The ID of the profile                  |
 +-------------------------+-------------+---------------+-----------------------------------------+
@@ -46,7 +47,11 @@ Request
 
 .. code-block:: none
 
-  POST .../api/1/authentication/ticket/2e911e0b-ac47-423e-9174-4e8896f1b387?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  POST .../api/1/authentication/ticket/2e911e0b-ac47-423e-9174-4e8896f1b387
+
+.. code-block:: none
+
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
 
 ^^^^^^^^
 Response
@@ -70,7 +75,7 @@ Responses
 +--------+------------------------------------+--------------------------------------------------+
 || Status|| Location                          || Response Body                                   |
 +========+====================================+==================================================+
-| 200    | ``.../authentication/authenticate``| See example above.                               |
+| 200    |                                    | See example above.                               |
 +--------+------------------------------------+--------------------------------------------------+
 | 403    |                                    | .. code-block:: json                             |
 |        |                                    |                                                  |

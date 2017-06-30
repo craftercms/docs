@@ -24,28 +24,29 @@ Resource Information
 Parameters
 ----------
 
-+-------------------+---------+---------------+--------------------------------------------------+
-|| Name             || Type   || Required     || Description                                     |
-+===================+=========+===============+==================================================+
-|| accessTokenId    || String || |checkmark|  || The ID of the application access token          |
-+-------------------+---------+---------------+--------------------------------------------------+
-|| id               || String || |checkmark|  || The profile's ID                                |
-+-------------------+---------+---------------+--------------------------------------------------+
-|| username         || String || |checkmark|  || The new username for the profile                |
-+-------------------+---------+---------------+--------------------------------------------------+
-|| password         || String ||              || The new password for the profile                |
-+-------------------+---------+---------------+--------------------------------------------------+
-|| email            || String || |checkmark|  || The new email for the profile                   |
-+-------------------+---------+---------------+--------------------------------------------------+
-|| enabled          || String || |checkmark|  || If the profile should be enabled or not         |
-+-------------------+---------+---------------+--------------------------------------------------+
-|| role             || String ||              || The new roles for the profile                   |
-+-------------------+---------+---------------+--------------------------------------------------+
-|| attributes       || String ||              || The attributes to update (specify a JSON string)|
-+-------------------+---------+---------------+--------------------------------------------------+
-|| attributeToReturn|| String ||              || The name of the attributes to return            |
-||                  ||        ||              || (don't specify to return all)                   |
-+-------------------+---------+---------------+--------------------------------------------------+
++---------------------+---------+---------------+---------------------------------------------------+
+|| Name               || Type   || Required     || Description                                      |
++=====================+=========+===============+===================================================+
+|| accessTokenId      || String || |checkmark|  || The access token ID of the application           |
+||                    ||        ||              || making the call                                  |
++---------------------+---------+---------------+---------------------------------------------------+
+|| id                 || String || |checkmark|  || The profile's ID                                 |
++---------------------+---------+---------------+---------------------------------------------------+
+|| username           || String || |checkmark|  || The new username for the profile                 |
++---------------------+---------+---------------+---------------------------------------------------+
+|| password           || String ||              || The new password for the profile                 |
++---------------------+---------+---------------+---------------------------------------------------+
+|| email              || String || |checkmark|  || The new email for the profile                    |
++---------------------+---------+---------------+---------------------------------------------------+
+|| enabled            || String || |checkmark|  || If the profile should be enabled or not          |
++---------------------+---------+---------------+---------------------------------------------------+
+|| role               || String ||              || The new roles for the profile                    |
++---------------------+---------+---------------+---------------------------------------------------+
+|| attributes         || String ||              || The attributes to update (specify a JSON string) |
++---------------------+---------+---------------+---------------------------------------------------+
+|| attributesToReturn || String ||              || The name of the attributes to return             |
+||                    ||        ||              || (don't specify to return all)                    |
++---------------------+---------+---------------+---------------------------------------------------+
 
 -------
 Example
@@ -57,22 +58,16 @@ Request
 
 .. code-block:: none
 
-  POST .../api/1/profile/592887d7d4c650213cc2f400/update?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&username=john.doe&password=passw0rd&email=john.doe%40example.com&enabled=false&role=APP_TEST,APP_REPORT
+  POST .../api/1/profile/592887d7d4c650213cc2f400/update
 
-.. code-block:: json
+.. code-block:: none
 
-  {
-    "username": "john.doe",
-    "email": "john.doe@example.com",
-    "verified": false,
-    "enabled": false,
-    "createdOn": 1495733716728,
-    "lastModified": 1495733716728,
-    "tenant": "sample-tenant",
-    "roles": [],
-    "attributes": {},
-    "id": "592715d4d4c650e226b03b62"
-  }
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  username=john.doe
+  password=passw0rd
+  email=john.doe@example.com
+  enabled=false
+  role=APP_TEST,APP_REPORT
 
 ^^^^^^^^
 Response
@@ -108,7 +103,7 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------+
 || Status || Location                      || Response Body                                      |
 +=========+================================+=====================================================+
-|| 200    || ``.../profile/update``        || See example above.                                 |
+|| 200    ||                               || See example above.                                 |
 +---------+--------------------------------+-----------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``        |
 +---------+--------------------------------+-----------------------------------------------------+

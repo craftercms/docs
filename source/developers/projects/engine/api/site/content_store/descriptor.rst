@@ -38,7 +38,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/site/content_store/descriptor.xml?url=/site/website/index.xml``
+``GET .../api/1/site/content_store/descriptor.json?url=/site/website/index.xml``
 
 ^^^^^^^^
 Response
@@ -46,67 +46,63 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: xml
+.. code-block:: json
 
-  <page>
-    <content-type>/page/home</content-type>
-    <display-template>/templates/web/pages/home.ftl</display-template>
-    <merge-strategy>inherit-levels</merge-strategy>
-    <placeInNav>false</placeInNav>
-    <file-name>index.xml</file-name>
-    <objectGroupId>8d7f</objectGroupId>
-    <objectId>8d7f21fa-5e09-00aa-8340-853b7db302da</objectId>
-    <folder-name/>
-    <header>
-      <item>
-        <key>/site/components/headers/header.xml</key>
-        <value>Header</value>
-        <include>/site/components/headers/header.xml</include>
-        <disableFlattening>false</disableFlattening>
-      </item>
-    </header>
-    <createdDate>1/31/2017 16:18:14</createdDate>
-    <createdDate_dt>1/31/2017 16:18:14</createdDate_dt>
-    <lastModifiedDate>5/18/2017 15:52:21</lastModifiedDate>
-    <lastModifiedDate_dt>5/18/2017 15:52:21</lastModifiedDate_dt>
-    <left-rail>
-      <item>
-        <key>
-          /site/components/left-rails/left-rail-with-latest-articles.xml
-        </key>
-        <value>Left Rail with Latest Articles</value>
-        <include>
-          /site/components/left-rails/left-rail-with-latest-articles.xml
-        </include>
-        <disableFlattening>false</disableFlattening>
-      </item>
-    </left-rail>
-    <internal-name>Home</internal-name>
-    <orderDefault_f>-1</orderDefault_f>
-    <title>Editorial</title>
-    <hero_text>
-      <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
-    </hero_text>
-    <hero_title>
-      <h1><span>Hi, I&rsquo;m Editorial</span></h1> <h3><span style="font-size: 1.5em;">by HTML5 UP</span></h3>
-    </hero_title>
-    <features>
-      <item>
-        <value>Quam lorem ipsum</value>
-        <key>/site/components/features/quam-lorem-ipsum.xml</key>
-        <include>/site/components/features/quam-lorem-ipsum.xml</include>
-        <disableFlattening>false</disableFlattening>
-      </item>
-      <item>
-        <key>/site/components/features/sapien-veroeros.xml</key>
-        <value>Sapien Veroeros</value>
-        <include>/site/components/features/sapien-veroeros.xml</include>
-        <disableFlattening>false</disableFlattening>
-      </item>
-    </features>
-    <hero_image>/static-assets/images/strawberries.jpg</hero_image>
-    <features_title>Erat lacinia</features_title>
-  </page>
+  {
+    "page": {
+      "content-type": "/page/home",
+      "display-template": "/templates/web/pages/home.ftl",
+      "merge-strategy": "inherit-levels",
+      "placeInNav": "false",
+      "file-name": "index.xml",
+      "objectGroupId": "8d7f",
+      "objectId": "8d7f21fa-5e09-00aa-8340-853b7db302da",
+      "folder-name": null,
+      "header": {
+        "item": {
+          "key": "/site/components/headers/header.xml",
+          "value": "Header",
+          "include": "/site/components/headers/header.xml",
+          "disableFlattening": "false"
+        }
+      },
+      "createdDate": "1/31/2017 16:18:14",
+      "createdDate_dt": "1/31/2017 16:18:14",
+      "lastModifiedDate": "5/18/2017 15:52:21",
+      "lastModifiedDate_dt": "5/18/2017 15:52:21",
+      "left-rail": {
+        "item": {
+          "key": "/site/components/left-rails/left-rail-with-latest-articles.xml",
+          "value": "Left Rail with Latest Articles",
+          "include": "/site/components/left-rails/left-rail-with-latest-articles.xml",
+          "disableFlattening": "false"
+        }
+      },
+      "internal-name": "Home",
+      "orderDefault_f": "-1",
+      "title": "Editorial",
+      "hero_text": "<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>",
+      "hero_title": "<h1><span>Hi, I&rsquo;m Editorial</span></h1>\n<h3><span style=\"font-size: 1.5em;\">by HTML5 UP</span></h3>",
+      "features": {
+        "item": [
+          {
+            "value": "Quam lorem ipsum",
+            "key": "/site/components/features/quam-lorem-ipsum.xml",
+            "include": "/site/components/features/quam-lorem-ipsum.xml",
+            "disableFlattening": "false"
+          },
+          {
+            "key": "/site/components/features/sapien-veroeros.xml",
+            "value": "Sapien Veroeros",
+            "include": "/site/components/features/sapien-veroeros.xml",
+            "disableFlattening": "false"
+          }
+        ]
+      },
+      "hero_image": "/static-assets/images/strawberries.jpg",
+      "features_title": "Erat lacinia"
+    }
+  }
 
 ---------
 Responses
@@ -115,9 +111,9 @@ Responses
 +--------+--------------------------------------+------------------------------------------------+
 || Status|| Location                            || Response Body                                 |
 +========+======================================+================================================+
-|| 200   | ``.../site/content_store/descriptor``| See example above.                             |
+|| 200   ||                                     || See example above.                            |
 +--------+--------------------------------------+------------------------------------------------+
-|| 404   |                                      | ``"No item found at /site/website/index.xml"`` |
+|| 404   ||                                     || ``"No item found at /site/website/index.xml"``|
 +--------+--------------------------------------+------------------------------------------------+
-|| 500   |                                      | ``"Internal server error"``                    |
+|| 500   ||                                     || ``"Internal server error"``                   |
 +--------+--------------------------------------+------------------------------------------------+

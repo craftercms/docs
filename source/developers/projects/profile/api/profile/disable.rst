@@ -24,16 +24,17 @@ Resource Information
 Parameters
 ----------
 
-+-------------------+-------------+---------------+----------------------------------------------+
-|| Name             || Type       || Required     || Description                                 |
-+===================+=============+===============+==============================================+
-|| accessTokenId    || String     || |checkmark|  || The ID of the application access token      |
-+-------------------+-------------+---------------+----------------------------------------------+
-|| id               || String     || |checkmark|  || The profile's ID                            |
-+-------------------+-------------+---------------+----------------------------------------------+
-|| attributeToReturn|| String     ||              || The name of the attributes to return        |
-||                  ||            ||              || (don't specify to return all)               |
-+-------------------+-------------+---------------+----------------------------------------------+
++---------------------+-------------+---------------+----------------------------------------------+
+|| Name               || Type       || Required     || Description                                 |
++=====================+=============+===============+==============================================+
+|| accessTokenId      || String     || |checkmark|  || The access token ID of the application      |
+||                    ||            ||              || making the call                             |
++---------------------+-------------+---------------+----------------------------------------------+
+|| id                 || String     || |checkmark|  || The profile's ID                            |
++---------------------+-------------+---------------+----------------------------------------------+
+|| attributesToReturn || String     ||              || The name of the attributes to return        |
+||                    ||            ||              || (don't specify to return all)               |
++---------------------+-------------+---------------+----------------------------------------------+
 
 -------
 Example
@@ -43,7 +44,11 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/profile/592715d4d4c650e226b03b62/disable?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d``
+``POST .../api/1/profile/592715d4d4c650e226b03b62/disable``
+
+.. code-block:: none
+
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
 
 ^^^^^^^^
 Response

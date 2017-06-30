@@ -27,8 +27,9 @@ Parameters
 +----------------+----------+---------------+----------------------------------------------------+
 || Name          || Type    || Required     || Description                                       |
 +================+==========+===============+====================================================+
-|| accessTokenId || String  || |checkmark|  || The ID of the application access token            |
-+----------------+----------+---------------+----------------------------------------------------+
+|| accessTokenId || String  || |checkmark|  || The access token ID of the application            |
+||               ||         ||              || making the call                                   |
++----------------+-------------+---------------+-------------------------------------------------+
 || tenantName    || String  || |checkmark|  || The tenant's name                                 |
 +----------------+----------+---------------+----------------------------------------------------+
 || query         || String  || |checkmark|  || The Mongo query used to search for the profiles.  |
@@ -36,7 +37,6 @@ Parameters
 
 .. WARNING::
   The query must not contain the ``$where`` operator, the tenant's name (already specified) or any non-readable attribute by the application
-
 
 -------
 Example
@@ -67,7 +67,7 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------+
 || Status || Location                      || Response Body                                      |
 +=========+================================+=====================================================+
-|| 200    || ``.../profile/count_by_query``|| See example above.                                 |
+|| 200    ||                               || See example above.                                 |
 +---------+--------------------------------+-----------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``        |
 +---------+--------------------------------+-----------------------------------------------------+
