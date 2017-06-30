@@ -41,7 +41,11 @@ Request
 
 .. code-block:: none
 
-  POST .../api/1/access_token/a3f1a69c-3a7d-4b28-a944-61a7dc6877b8/delete?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  POST .../api/1/access_token/a3f1a69c-3a7d-4b28-a944-61a7dc6877b8/delete
+
+.. code-block:: none
+
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
 
 ^^^^^^^^
 Response

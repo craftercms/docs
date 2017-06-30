@@ -25,17 +25,17 @@ Resource Information
 Parameters
 ----------
 
-+----------------+---------+--------------+-------------------------------------------------------+
-|| Name          || Type   || Required    || Description                                          |
-+================+=========+==============+=======================================================+
-|| accessTokenId || String || |checkmark|  || The access token ID of the application              |
-||               ||        ||              || making the call                                     |
-+----------------+-------- +---------------+------------------------------------------------------+
-|| name          || String || |checkmark| || The tenant's name                                    |
-+----------------+---------+--------------+-------------------------------------------------------+
-|| verify        || String || |checkmark| || True to verify new profiles through email,           |
-||               ||        ||             || false otherwise                                      |
-+----------------+---------+--------------+-------------------------------------------------------+
++----------------+---------+--------------+------------------------------------------------------+
+|| Name          || Type   || Required    || Description                                         |
++================+=========+==============+======================================================+
+|| accessTokenId || String || |checkmark| || The access token ID of the application              |
+||               ||        ||             || making the call                                     |
++----------------+---------+--------------+------------------------------------------------------+
+|| name          || String || |checkmark| || The tenant's name                                   |
++----------------+---------+--------------+------------------------------------------------------+
+|| verify        || String || |checkmark| || True to verify new profiles through email,          |
+||               ||        ||             || false otherwise                                     |
++----------------+---------+--------------+------------------------------------------------------+
 
 -------
 Example
@@ -47,7 +47,13 @@ Request
 
 .. code-block:: none
 
-  POST .../api/1/tenant/sample-tenant/verify_new_profiles?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&verify=true
+  POST .../api/1/tenant/sample-tenant/verify_new_profiles
+
+.. code-block:: none
+
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  verify=true
+
 
 ^^^^^^^^
 Response

@@ -41,7 +41,11 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/tenant/sample-tenant/delete?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d``
+``POST .../api/1/tenant/sample-tenant/delete``
+
+.. code-block:: none
+
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
 
 ^^^^^^^^
 Response

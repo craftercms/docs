@@ -43,7 +43,11 @@ Request
 
 .. code-block:: none
 
-  POST .../api/1/authentication/ticket/fdc5fc1f-83ba-4cbd-9cdb-d345db8b89c6/invalidate?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  POST .../api/1/authentication/ticket/fdc5fc1f-83ba-4cbd-9cdb-d345db8b89c6/invalidate
+
+.. code-block:: none
+
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
 
 ^^^^^^^^
 Response

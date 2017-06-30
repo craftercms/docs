@@ -44,7 +44,13 @@ Request
 
 .. code-block:: none
 
-  POST .../api/2/search/delete?index_id=editorial&site=editorial&id=%2Fsite%2Fwebsite%2Farticles%2F2017%2F1%2Fwomen-styles-for-winter%2Findex.xml
+  POST .../api/2/search/delete
+
+.. code-block:: none
+
+  index_id=editorial
+  site=editorial
+  id=/site/website/articles/2017/women-styles-for-winter/index.xml
 
 ^^^^^^^^
 Response

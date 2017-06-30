@@ -49,7 +49,12 @@ Request
 
 .. code-block:: none
 
-  POST .../api/1/profile/59284659d4c650213cc2f3fc/reset_password?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&resetPasswordUrl=http%3A%2F%2Fexample.com
+  POST .../api/1/profile/59284659d4c650213cc2f3fc/reset_password
+
+.. code-block:: none
+
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  resetPasswordUrl=http://example.com
 
 ^^^^^^^^
 Response

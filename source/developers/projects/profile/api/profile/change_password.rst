@@ -48,7 +48,14 @@ Request
 
 .. code-block:: none
 
-  POST .../api/1/profile/by_ticket?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&ticketId=2e32b6c2-2792-40cd-847d-6478ce56779e
+  POST .../api/1/profile/change_password
+  
+.. code-block:: none
+
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  resetTokenId=a2be0e86-7c71-4edf-aed9-6b00c0c60c33
+  newPassword=test123
+  
 
 ^^^^^^^^
 Response
