@@ -1,3 +1,7 @@
+.. .. include:: /includes/unicode-checkmark.rst
+
+.. _crafter-deployer-administration-guide:
+
 =============================
 Deployer Administration Guide
 =============================
