@@ -22,7 +22,7 @@ To view all existing tenants you can click the ``List Tenants`` link in the left
 .. figure:: /_static/images/profile-admin/tenants-list.png
   :align: center
 
-In this page you can se the names of the tenants and delete them if needed.
+In this page you can see the names of the tenants and delete them if needed.
 
 .. WARNING::
   When you delete a tenant, all profiles created under it will be also deleted and there is no
@@ -74,7 +74,7 @@ Crafter Profile Admin Console uses the following roles:
 - PROFILE_ADMIN
 
 If you are going to have multiple users using the Admin Console you can change the roles to
-make sure only the appropiate users are able to change sensitive content.
+make sure only the appropriate users are able to change sensitive content.
 
 ^^^^^^^^^^^^^^^^^^^^^
 Attribute Definitions

@@ -6,9 +6,9 @@
 Crafter Profile Admin Console
 =============================
 
-Crafter Profile Admin Console consists of a single WAR file, which only dependecy is access to 
+Crafter Profile Admin Console consists of a single WAR file, which only dependency is access to 
 Crafter Profile. This web application provides a simple way to manage all data related to tenants
-and profiles without the need to call the :ref:`crafter-profile-api` direclty.
+and profiles without the need to call the :ref:`crafter-profile-api` directly.
 
 ------------
 Installation
@@ -66,33 +66,34 @@ Properties
 |                                       || can be changed in the first login                     |
 +---------------------------------------+--------------------------------------------------------+
 
-More details on the ``verificationUrl`` can be found here: :ref:`crafter-profile-api-profile-create`
+^^^^^^^^^^^^^^^^^^^^
+Profile Verification
+^^^^^^^^^^^^^^^^^^^^
+
+If your site or application will be open to general public it is a good idea to avoid spam by
+enabling the profile verification feature. When a tenant has this feature enabled and you
+include the ``crafter.profile.management.profile.verificationUrl`` property in the configuration
+all new users will receive a verification email and the profile will be enable only when the
+process is completed.
+
+.. figure:: /_static/images/profile-admin/verification-mail.png
+  :align: center
+  
+  Example verification mail using ``http://www.test.com`` as the `verificationUrl`
+
+.. NOTE::
+  You can change the email sender, subject and body template in the Crafter Profile configuration.
 
 -----------
 User Guides
 -----------
-
-Once the WAR file has been deployed, you can access the application in the following URL: 
-``HOST:PORT/crafter-profile-admin-console``
-
-.. figure:: /_static/images/profile-admin/login.png
-  :align: center
-  :width: 50%
-
-  Crafter Profile Admin Console login dialog.
-
-By default there is only one user created:
-
-.. code-block:: none
-
-  Username: admin
-  Password: admin
 
 In the next sections you can find detailed steps for all available operations in the application.
 
 .. toctree::
   :maxdepth: 2
   
+  guides/login.rst
   guides/access_tokens.rst
   guides/tenants.rst
   guides/profiles.rst

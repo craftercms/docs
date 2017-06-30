@@ -33,7 +33,7 @@ From this page you can view the general information about the tokens and delete 
 
 .. WARNING::
   When you delete an Access Token all applications that are configured to use it will be unable to
-  access the API inmediately.
+  access the API immediately.
 
 ------------
 View Details
@@ -45,7 +45,7 @@ From the List Access Tokens page you can click the ID of an existing record to d
   :align: center
 
 .. NOTE::
-  Access Tokens are inmutable, if you need to change the permissions for an existing token you need
+  Access Tokens are immutable, if you need to change the permissions for an existing token you need
   to delete it and create a new one using the same value for the ID.
 
 --------------------------
@@ -88,7 +88,7 @@ Example Tenant Permissions
 
 An application using an Access Token with these permissions will be able to:
 
-  - Query data from any tenant
-  - Manage profiles for tenants ``company1`` and ``company2``
-  - Make changes in ``company2`` tenant
+  - Query data from both tenants ``site1`` and ``site2``
+  - Update only tenant ``site2``
+  - Query, create, update and delete profiles for both ``site1`` and ``site2``
 
