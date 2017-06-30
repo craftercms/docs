@@ -40,7 +40,11 @@ Request
 
 .. code-block:: none
 
-  POST .../api/2/commit/search?index_id=editorial
+  POST .../api/2/commit/search
+
+.. code-block:: none
+
+  index_id=editorial
 
 ^^^^^^^^
 Response

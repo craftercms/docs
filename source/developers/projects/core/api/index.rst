@@ -16,7 +16,6 @@ Cache
   
   cache/clear
   cache/clear_all
-  cache/remove
 
 -------------
 Content Store

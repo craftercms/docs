@@ -8,9 +8,6 @@ Create Tenant
 
 Creates the given tenant.
 
-.. WARNING::
-  This method will fail if there's already a tenant with the given name.
-
 --------------------
 Resource Information
 --------------------
@@ -30,7 +27,8 @@ Parameters
 +------------------------+-------------+---------------+-----------------------------------------+
 || Name                  || Type       || Required     || Description                            |
 +========================+=============+===============+=========================================+
-|| accessTokenId         || String     || |checkmark|  || The ID of the application access token |
+|| accessTokenId         || String     || |checkmark|  || The access token ID of the application |
+||                       ||            ||              || making the call                        |
 +------------------------+-------------+---------------+-----------------------------------------+
 
 -------
@@ -48,11 +46,11 @@ Request
   {
       "name" : "sample-tenant",
       "verifyNewProfiles" : false,
-      "availableRoles" : [ 
+      "availableRoles" : [
   			"APP_ADMIN",
   			"APP_USER"
       ],
-      "attributeDefinitions" : [ 
+      "attributeDefinitions" : [
           {
               "name" : "firstName",
               "metadata" : {
@@ -60,15 +58,15 @@ Request
                   "type" : "TEXT",
                   "displayOrder" : 0.0
               },
-              "permissions" : [ 
+              "permissions" : [
                   {
                       "application" : "*",
-                      "allowedActions" : [ 
+                      "allowedActions" : [
                           "*"
                       ]
                   }
               ]
-          }, 
+          },
           {
               "name" : "lastName",
               "metadata" : {
@@ -76,15 +74,15 @@ Request
                   "type" : "TEXT",
                   "displayOrder" : 1.0
               },
-              "permissions" : [ 
+              "permissions" : [
                   {
                       "application" : "*",
-                      "allowedActions" : [ 
+                      "allowedActions" : [
                           "*"
                       ]
                   }
               ]
-          }, 
+          },
           {
               "name" : "avatarLink",
               "metadata" : {
@@ -92,10 +90,10 @@ Request
                   "type" : "TEXT",
                   "displayOrder" : 3.0
               },
-              "permissions" : [ 
+              "permissions" : [
                   {
                       "application" : "*",
-                      "allowedActions" : [ 
+                      "allowedActions" : [
                           "*"
                       ]
                   }
@@ -183,7 +181,7 @@ Responses
 +---------+----------------------+---------------------------------------------------------------+
 || Status || Location            || Response Body                                                |
 +=========+======================+===============================================================+
-|| 200    | ``.../tenant/create``| See example above.                                            |
+|| 200    |                      | See example above.                                            |
 +---------+----------------------+---------------------------------------------------------------+
 || 400    |                      | .. code-block:: json                                          |
 ||        |                      |                                                               |

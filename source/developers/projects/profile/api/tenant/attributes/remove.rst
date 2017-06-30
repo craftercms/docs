@@ -25,16 +25,17 @@ Resource Information
 Parameters
 ----------
 
-+---------------+---------+---------------+------------------------------------------------------+
-|| Name         || Type   || Required     || Description                                         |
-+===============+=========+===============+======================================================+
-|| accessTokenId|| String || |checkmark|  || The ID of the application access token              |
-+---------------+---------+---------------+------------------------------------------------------+
-|| name         || String || |checkmark|  || The tenant's name                                   |
-+---------------+---------+---------------+------------------------------------------------------+
-|| attributeName|| String || |checkmark|  || The name of the attributes whose definitions should |
-||              ||        ||              || be removed                                          |
-+---------------+---------+---------------+------------------------------------------------------+
++----------------+----------+---------------+-----------------------------------------------------+
+|| Name          || Type   || Required     || Description                                         |
++================+=========+===============+======================================================+
+|| accessTokenId || String || |checkmark|  || The access token ID of the application              |
+||               ||        ||              || making the call                                     |
++----------------+---------+---------------+------------------------------------------------------+
+|| name          || String || |checkmark|  || The tenant's name                                   |
++----------------+---------+---------------+------------------------------------------------------+
+|| attributeName || String || |checkmark|  || The name of the attributes whose definitions should |
+||               ||        ||              || be removed (the parmeter can be repeated)           |
++----------------+---------+---------------+------------------------------------------------------+
 
 -------
 Example
@@ -46,7 +47,12 @@ Request
 
 .. code-block:: none
 
-  POST ...crafter-profile/api/1/tenant/sample-tenant/attribute_definitions/remove?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d&attributeName=nickname
+  POST ...crafter-profile/api/1/tenant/sample-tenant/attribute_definitions/remove
+
+.. code-block:: none
+
+  accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
+  attributeName=nickname
 
 ^^^^^^^^
 Response
@@ -127,7 +133,7 @@ Responses
 +--------+--------------------------------------------------+------------------------------------+
 || Status|| Location                                        || Response Body                     |
 +========+==================================================+====================================+
-|| 200   | ``.../tenant/:name/attribute_definitions/remove``| See example above.                 |
+|| 200   |                                                  | See example above.                 |
 +--------+--------------------------------------------------+------------------------------------+
 || 400   |                                                  | .. code-block:: json               |
 ||       |                                                  |                                    |
