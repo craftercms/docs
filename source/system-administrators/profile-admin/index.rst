@@ -6,9 +6,9 @@
 Crafter Profile Admin Console
 =============================
 
-Crafter Profile Admin Console consists of a single WAR file, which only dependecy is access to Crafter Profile.
-This web application provides a simple way to manage all data related to tenants and profiles without 
-the need to call the :ref:`crafter-profile-api` direclty.
+Crafter Profile Admin Console consists of a single WAR file, which only dependecy is access to 
+Crafter Profile. This web application provides a simple way to manage all data related to tenants
+and profiles without the need to call the :ref:`crafter-profile-api` direclty.
 
 ------------
 Installation
@@ -18,17 +18,16 @@ Installation
 New Installation
 ^^^^^^^^^^^^^^^^
 
-You can follow the instructions for building a complete bundle as described :ref:`here <installing-craftercms-from-gradle>`, if you add
-the following parameter the bundle will contain crafter-profile.war and crafter-profile-admin-console.war.
-
-  ``-P includeProfile=true``
+You can follow the instructions for building a complete bundle as described 
+:ref:`here <installing-craftercms-from-gradle>`, if you add the parameter ``-P includeProfile=true``
+the bundle will contain crafter-profile.war and crafter-profile-admin-console.war.
 
 ^^^^^^^^^^^^^^^^^^^^^
 Existing Installation
 ^^^^^^^^^^^^^^^^^^^^^
 
-If you want to add Crafter Profile Admin Console to an existing installation you only need to build or download
-the WAR file making sure it matches the version of all other components.
+If you want to add Crafter Profile Admin Console to an existing installation you only need to 
+build or download the WAR file making sure it matches the version of all other components.
 
 To deploy the application you only need to move the WAR file into ``INSTALL_DIR/apache-tomcat/webapps``
 
@@ -73,7 +72,8 @@ More details on the ``verificationUrl`` can be found here: :ref:`crafter-profile
 User Guides
 -----------
 
-Once the WAR file has been deployed, you can access the application in the following URL: ``HOST:PORT/crafter-profile-admin-console``
+Once the WAR file has been deployed, you can access the application in the following URL: 
+``HOST:PORT/crafter-profile-admin-console``
 
 .. figure:: /_static/images/profile-admin/login.png
   :align: center
