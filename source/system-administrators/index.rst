@@ -48,15 +48,16 @@ QA/Production Environment
 
 .. prod-environment/install-engine.rst
 
----------------
-Crafter Profile
----------------
+-------------
+Admin Console
+-------------
 
 .. toctree::
    :maxdepth: 1
    :titlesonly:
 
    profile-admin/index.rst
+   social-admin/index.rst
 
 ----------------
 Other Activities

@@ -3,13 +3,13 @@ Accessing the Admin Console
 ===========================
 
 Once the WAR file has been deployed, you can access the application in the following URL: 
-``HOST:PORT/crafter-profile-admin-console``
+``HOST:PORT/crafter-social-admin``
 
-.. figure:: /_static/images/profile-admin/login.png
+.. figure:: /_static/images/social-admin/login.png
   :align: center
   :width: 50%
 
-  Crafter Profile Admin Console login dialog.
+  Crafter Social Admin Console login dialog.
 
 By default there is only one user created:
 
