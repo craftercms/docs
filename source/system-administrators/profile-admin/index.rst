@@ -6,7 +6,7 @@
 Crafter Profile Admin Console
 =============================
 
-Crafter Profile Admin Console consists of a single WAR file, which only dependency is access to 
+Crafter Profile Admin Console consists of a single WAR file, which only dependency is access to
 Crafter Profile. This web application provides a simple way to manage all data related to tenants
 and profiles without the need to call the :ref:`crafter-profile-api` directly.
 
@@ -18,7 +18,7 @@ Installation
 New Installation
 ^^^^^^^^^^^^^^^^
 
-You can follow the instructions for building a complete bundle as described 
+You can follow the instructions for building a complete bundle as described
 :ref:`here <installing-craftercms-from-gradle>`, if you add the parameter ``-P includeProfile=true``
 the bundle will contain crafter-profile.war and crafter-profile-admin-console.war.
 
@@ -26,7 +26,7 @@ the bundle will contain crafter-profile.war and crafter-profile-admin-console.wa
 Existing Installation
 ^^^^^^^^^^^^^^^^^^^^^
 
-If you want to add Crafter Profile Admin Console to an existing installation you only need to 
+If you want to add Crafter Profile Admin Console to an existing installation you only need to
 build or download the WAR file making sure it matches the version of all other components.
 
 To deploy the application you only need to move the WAR file into ``INSTALL_DIR/apache-tomcat/webapps``
@@ -42,10 +42,8 @@ properties files placed in the following location:
 
 You can change any of the default configuration, some of the more relevant properties are:
 
-.. code-block:: guess
+.. code-block:: properties
 
-  crafter.profile.management.profile.verificationUrl=
-  
   crafter.profile.rest.client.url.base=http://localhost:8080/crafter-profile
   crafter.profile.rest.client.accessToken.id=e8f5170c-877b-416f-b70f-4b09772f8e2d
 
@@ -56,33 +54,12 @@ Properties
 +---------------------------------------+--------------------------------------------------------+
 | Property                              | Description                                            |
 +=======================================+========================================================+
-| ...management.profile.verificationUrl || URL set to all profiles created from the Admin Console|
-|                                       || for completing the verification process               |
-+---------------------------------------+--------------------------------------------------------+
-| ..rest.client.url.base                || URL where Crafter Profile is deployed, can be an      |
+| ...rest.client.url.base               || URL where Crafter Profile is deployed, can be an      |
 |                                       || external server                                       |
 +---------------------------------------+--------------------------------------------------------+
 | ...rest.client.accessToken.id         || Access Token used by the Admin Console application,   |
 |                                       || can be changed in the first login                     |
 +---------------------------------------+--------------------------------------------------------+
-
-^^^^^^^^^^^^^^^^^^^^
-Profile Verification
-^^^^^^^^^^^^^^^^^^^^
-
-If your site or application will be open to general public it is a good idea to avoid spam by
-enabling the profile verification feature. When a tenant has this feature enabled and you
-include the ``crafter.profile.management.profile.verificationUrl`` property in the configuration
-all new users will receive a verification email and the profile will be enable only when the
-process is completed.
-
-.. figure:: /_static/images/profile-admin/verification-mail.png
-  :align: center
-  
-  Example verification mail using ``http://www.test.com`` as the `verificationUrl`
-
-.. NOTE::
-  You can change the email sender, subject and body template in the Crafter Profile configuration.
 
 -----------
 User Guides
@@ -92,7 +69,7 @@ In the next sections you can find detailed steps for all available operations in
 
 .. toctree::
   :maxdepth: 2
-  
+
   guides/login.rst
   guides/access_tokens.rst
   guides/tenants.rst

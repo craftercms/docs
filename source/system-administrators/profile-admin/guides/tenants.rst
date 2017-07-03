@@ -59,6 +59,24 @@ Fields
 | Attribute Definitions |             | List    || List of attributes that profiles can have     |
 +-----------------------+-------------+---------+------------------------------------------------+
 
+^^^^^^^^^^^^^^^^^^^^
+Profile Verification
+^^^^^^^^^^^^^^^^^^^^
+
+If your site or application will be open to general public it is a good idea to avoid spam by
+enabling the profile verification feature. When a tenant has this feature enabled and you
+include the ``crafter.profile.management.profile.verificationUrl`` property in the configuration
+all new users will receive a verification email and the profile will be enable only when the
+process is completed.
+
+.. figure:: /_static/images/profile-admin/verification-mail.png
+  :align: center
+
+  Example verification mail using ``http://www.test.com`` as the `verificationUrl`
+
+.. NOTE::
+  You can change the email sender, subject and body template in the Crafter Profile configuration.
+
 ^^^^^
 Roles
 ^^^^^
