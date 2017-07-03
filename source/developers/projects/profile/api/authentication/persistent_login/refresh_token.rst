@@ -2,9 +2,9 @@
 
 .. _crafter-profile-api-authentication-persistent_login-refresh_token:
 
-=========================
-Resfresh Persistent Login
-=========================
+========================
+Refresh Persistent Login
+========================
 
 Refreshes the token of the specified persistent login.
 
