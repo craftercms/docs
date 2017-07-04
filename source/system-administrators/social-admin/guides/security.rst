@@ -23,7 +23,5 @@ Update Security Actions
 -----------------------
 
 Using this page you can change the actions allowed to the Social Roles or add your own roles too.
-
-You only need to change the roles indicated in the right input and press the update button.
-
-Any change in this configuration will take effect immediately for all Crafter Social clients.
+You only need to change the roles indicated in the right input and press the update button. Any
+change in this configuration will take effect immediately for all Crafter Social clients.
