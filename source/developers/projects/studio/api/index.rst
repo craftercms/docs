@@ -118,4 +118,18 @@ Publish
 	publish/start
 	publish/stop
 
+----------
+Legacy API
+----------
+
+^^^^^^^^
+Activity
+^^^^^^^^
+
+.. toctree::
+	:maxdepth: 1
+
+    activity/get-user-activity
+    activity/post-activity
+
 .. todo:: Current coverage is limited to version 3.x new features, will need to extend converage to all API calls
