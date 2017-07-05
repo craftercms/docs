@@ -71,8 +71,8 @@ current site from the URL.
   ``HOST:PORT/?crafterSite=site2`` will render the home page for ``site2``
 
 .. WARNING::
-  Using this configuration you need to be sure that all request will include the ``crafterSite``
-  value as a cookie or parameter, otherwise the users will receive and error.
+  Using this configuration you need to be sure that the first request includes the ``crafterSite``
+  parameter so that the site value is set in the cookie for the next requests.
 
 ------------------------------
 Configure Mapped Multi-Tenancy
