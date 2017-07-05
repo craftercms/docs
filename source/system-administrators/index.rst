@@ -78,6 +78,16 @@ Crafter Profile
 
    profile/admin/index.rst
 
+---------------
+Crafter Social
+---------------
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  social/admin/index.rst
+
 ----------------
 Other Activities
 ----------------
