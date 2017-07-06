@@ -1,6 +1,4 @@
-.. index:: System Administrators
-
-.. _profile_admin:
+.. _profile-admin-console:
 
 =============================
 Crafter Profile Admin Console

@@ -1,6 +1,6 @@
 .. index:: System Administrators
 
-.. _social_admin:
+.. _social-admin-console:
 
 ============================
 Crafter Social Admin Console
