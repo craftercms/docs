@@ -76,6 +76,7 @@ Crafter Profile
    :maxdepth: 1
    :titlesonly:
 
+   profile/index.rst
    profile/admin/index.rst
 
 ---------------
