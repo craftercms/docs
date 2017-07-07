@@ -17,7 +17,7 @@ In the search page you need to select the right tenant from the dropdown, indica
 of the profile and then press the search button.
 
 In this page you can find basic information and manage the social roles for the profiles, if you
-need to change anything else in the profile you need to use the :ref:`profile_admin`.
+need to change anything else in the profile you need to use the :ref:`profile-admin-console`.
 
 ------------
 Update Roles
