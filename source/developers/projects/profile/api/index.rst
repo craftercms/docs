@@ -9,7 +9,7 @@ Crafter Profile API
 .. NOTE::
   All endpoints in this API require an ``accessTokenId`` parameter that needs
   to be known by  the client prior to any request. This value needs to be
-  obtained from the  system administrator or maintainer.
+  obtained from the  system administrator or maintainer. See :ref:`profile-admin-access-tokens`
 
 -----------------------
 Access Token Management
