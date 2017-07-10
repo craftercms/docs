@@ -8,11 +8,10 @@ Crafter Search Administration
 Solr Configuration
 ------------------
 
-Crafter Search is build to take advantage of the `schemaless` features in Solr, this allows you
+Crafter Search is build to take advantage of the ``dynamicField`` feature in Solr, this allows you
 to create your content types and Solr will easily understand if the fields need to be converted
-to certain type without having to an entry for each one in the schema. Additionally you can
-customize the Solr configuration in case you need more advanced features such as spellchecking and
-stemming.
+to a certain type. Additionally you can customize the Solr configuration in case you need more
+advanced features such as spellchecking and stemming.
 
 Official Solr Guides
  - `Schema Design <https://lucene.apache.org/solr/guide/6_6/documents-fields-and-schema-design.html#documents-fields-and-schema-design>`_
