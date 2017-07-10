@@ -68,6 +68,17 @@ Crafter Deployer
 
   deployer/admin-guide.rst
 
+--------------
+Crafter Search
+--------------
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  search/index.rst
+
+
 ---------------
 Crafter Profile
 ---------------
