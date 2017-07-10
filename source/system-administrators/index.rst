@@ -48,7 +48,46 @@ QA/Production Environment
 
 .. prod-environment/install-engine.rst
 
+---------------
+Crafter Studio
+---------------
 
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   studio/configure-ldap.rst
+
+----------------
+Crafter Deployer
+----------------
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  deployer/admin-guide.rst
+
+---------------
+Crafter Profile
+---------------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   profile/index.rst
+   profile/admin/index.rst
+
+---------------
+Crafter Social
+---------------
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  social/admin/index.rst
 
 ----------------
 Other Activities
