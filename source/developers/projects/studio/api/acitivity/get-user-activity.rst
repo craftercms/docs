@@ -47,7 +47,9 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/services/api/1/activity/get-user-activity.json?site=mysite&user=jane.doe&num=10&excludeLive=false&filterType=all``
+.. code-block:: guess
+
+    GET .../api/1/services/api/1/activity/get-user-activity.json?site=mysite&user=jane.doe&num=10&excludeLive=false&filterType=all``
 
 ^^^^^^^^
 Response

@@ -1,12 +1,12 @@
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-studio-api-activity-post-activity:
+.. _crafter-studio-api-content-create-folder:
 
 =============
-Post Activity
+Create Folder
 =============
 
-Post activity for a site (manually add activity).
+Create Folder.
 
 --------------------
 Resource Information
@@ -15,7 +15,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/activity/post-activity.json``            |
+|| URL                       || ``/api/1/services/api/1/content/create-folder.json``             |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -26,30 +26,27 @@ Resource Information
 Parameters
 ----------
 
-+-------------------+-------------+---------------+----------------------------------------------+
-|| Name             || Type       || Required     || Description                                 |
-+===================+=============+===============+==============================================+
-|| site             || String     || |checkmark|  || Site to use                                 |
-+-------------------+-------------+---------------+----------------------------------------------+
-|| user             || String     || |checkmark|  || User that performed activity                |
-+-------------------+-------------+---------------+----------------------------------------------+
-|| path             || String     || |checkmark|  || Path actioned upon                          |
-+-------------------+-------------+---------------+----------------------------------------------+
-|| activity         || String     || |checkmark|  || Activity type                               |
-+-------------------+-------------+---------------+----------------------------------------------+
-|| contentTypeClass || String     || |checkmark|  || Content type class                          |
-+-------------------+-------------+---------------+----------------------------------------------+
++---------------+-------------+---------------+--------------------------------------------------+
+|| Name         || Type       || Required     || Description                                     |
++===============+=============+===============+==================================================+
+|| site         || String     || |checkmark|  || Site to use                                     |
++---------------+-------------+---------------+--------------------------------------------------+
+|| path         || String     || |checkmark|  || Path of the content                             |
++---------------+-------------+---------------+--------------------------------------------------+
+|| name         || String     || |checkmark|  || Name of the new folder                          |
++---------------+-------------+---------------+--------------------------------------------------+
 
 -------
 Example
 -------
+
 ^^^^^^^
 Request
 ^^^^^^^
 
 .. code-block:: guess
 
-    POST .../api/1/services/api/1/activity/post-activity.json?site=mysite&user=jane.doe&path=/site/website/index.xml&activity=UPDATE&contentTypeClass=pages``
+    POST .../api/1/services/api/1/content/create-folder.json?site=mysite&path=/site/website&name=newFolder
 
 ^^^^^^^^
 Response
@@ -59,7 +56,7 @@ Response
 
 .. code-block:: json
 
-  No response body
+    true
 
 
 ---------
