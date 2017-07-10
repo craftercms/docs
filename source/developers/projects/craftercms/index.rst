@@ -342,7 +342,7 @@ Here's a list of commands (Gradle tasks) available:
 +---------------+-------------------------------------------+--------------+-----------------+
 || selfupdate   || Updates the Crafter CMS project (gradle) || - None      || - None         |
 +---------------+-------------------------------------------+--------------+-----------------+
-|| clear        || Delete all compiled objects              || - None      || - None         |
+|| clean        || Delete all compiled objects              || - None      || - None         |
 +---------------+-------------------------------------------+--------------+-----------------+
 
 **Note:**
