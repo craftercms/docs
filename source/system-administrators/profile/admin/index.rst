@@ -1,8 +1,8 @@
 .. _profile-admin-console:
 
-=============================
-Crafter Profile Admin Console
-=============================
+================================
+Crafter Profile Admin Console UI
+================================
 
 Crafter Profile Admin Console consists of a single WAR file, with a dependency on access to
 Crafter Profile. This web application provides a simple way to manage all data related to tenants

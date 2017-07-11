@@ -39,4 +39,5 @@ ReST API
 Configuration
 -------------
 
-.. todo:: Write configuration, write ReST API doc
+To configure Crafter Search, please see :ref:`crafter-search-admin`
+

@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-search-api-search-v2-search:
 
 ================
@@ -51,7 +49,7 @@ Solr Query Parameters
 +---------------+---------------------------------------------------------------+
 || hl.fl        || List of fields to apply text highlight                       |
 +---------------+---------------------------------------------------------------+
-|| hl.snippets  || Maximum number of highlighted snippeds for each field        |
+|| hl.snippets  || Maximum number of highlighted snippets for each field        |
 +---------------+---------------------------------------------------------------+
 || hl.fragsize  || Approximate number of characters to include in each snippet  |
 +---------------+---------------------------------------------------------------+
@@ -79,6 +77,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   {
   "responseHeader": {

@@ -1,6 +1,3 @@
-
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-profile-api-tenant-attributes-add:
 
 ==============
@@ -47,6 +44,7 @@ Request
   POST .../api/1/tenant/sample-tenant/attribute_definitions/add?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
 
 .. code-block:: json
+  :linenos:
 
   [
     {
@@ -75,6 +73,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   {
     "name": "sample-tenant",
