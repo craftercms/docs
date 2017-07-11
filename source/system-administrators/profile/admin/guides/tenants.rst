@@ -1,13 +1,11 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _profile-admin-tenants:
 
 ==================
 Tenants Management
 ==================
 
-Tenants can be used to organize profiles separating them by company or department or site, this
-allows a better control over data access by the applications.
+Tenants can be used to organize profiles separating them by company or department or site.  This
+allows better control over data access by the applications.
 
 After the installation there is only one tenant named ``default``, it will include the roles and
 attributes used by the Crafter Profile Admin Console and Crafter Profile. You are free to change
@@ -21,6 +19,7 @@ To view all existing tenants you can click the ``List Tenants`` link in the left
 
 .. figure:: /_static/images/profile-admin/tenants-list.png
   :align: center
+  :alt: Crafter Profile admin tenants list
 
 In this page you can see the names of the tenants and delete them if needed.
 
@@ -36,6 +35,7 @@ You can create a new tenant by clicking the ``New Tenant`` link in the left side
 
 .. figure:: /_static/images/profile-admin/tenants-new.png
   :align: center
+  :alt: Crafter Profile admin new tenant
 
 ^^^^^^
 Fields
@@ -63,14 +63,15 @@ Fields
 Profile Verification
 ^^^^^^^^^^^^^^^^^^^^
 
-If your site or application will be open to general public it is a good idea to avoid spam by
+If your site or application will be open to the general public, it is a good idea to avoid spam by
 enabling the profile verification feature. When a tenant has this feature enabled and you
-include the ``crafter.profile.management.profile.verificationUrl`` property in the configuration
-all new users will receive a verification email and the profile will be enable only when the
+include the ``crafter.profile.management.profile.verificationUrl`` property in the configuration,
+all new users will receive a verification email and the profile will be enabled only when the
 process is completed.
 
 .. figure:: /_static/images/profile-admin/verification-mail.png
   :align: center
+  :alt: Crafter Profile admin verification mail
 
   Example verification mail using ``http://www.test.com`` as the `verificationUrl`
 
@@ -81,7 +82,7 @@ process is completed.
 Roles
 ^^^^^
 
-Roles are simple strings used to differentiate users for business logic, in your site or
+Roles are simple strings used to differentiate users for business logic.  In your site or
 application you can check if a profile has certain roles to choose what content they can see
 or change.
 
@@ -99,12 +100,13 @@ Attribute Definitions
 ^^^^^^^^^^^^^^^^^^^^^
 
 A tenant can have any number of custom attributes according to the needs of each site or
-application, the attributes are used to store meta data used in the business logic.
+application.  The attributes are used to store meta data used in the business logic.
 When a new profile is created you can set a value for each one of the attributes defined in the
 tenant.
 
 .. figure:: /_static/images/profile-admin/tenants-update-attr.png
   :align: center
+  :alt: Crafter Profile update tenants attributes
 
 +-----------------------+-------------+---------+------------------------------------------------+
 | Field                 | Required    | Type    |  Description                                   |
@@ -122,7 +124,7 @@ tenant.
 |                       |             |         || - Complex                                     |
 +-----------------------+-------------+---------+------------------------------------------------+
 | Default Value         |             |         || Initial value if none is provided, the type   |
-|                       |             |         || will change depeding on each attribute        |
+|                       |             |         || will change depending on each attribute       |
 +-----------------------+-------------+---------+------------------------------------------------+
 | Display Order         | |checkmark| | Integer || Used by the Admin Console to sort the         |
 |                       |             |         || attributes in the view/update form            |
@@ -139,6 +141,7 @@ From the list page you can click the name of a tenant to open the update page:
 
 .. figure:: /_static/images/profile-admin/tenants-update.png
   :align: center
+  :alt: Crafter Profile update tenants
 
 All fields can be changed except for the name.
 

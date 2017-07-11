@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-profile-api-profile-change_password:
 
 ===============
@@ -64,6 +62,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   {
     "username": "john.doe",

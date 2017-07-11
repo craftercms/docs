@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-deployer-api-target-get-all:
 
 ===============
@@ -37,6 +35,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   [
     {

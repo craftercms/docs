@@ -1,14 +1,14 @@
 .. _crafter-profile-admin:
 
-==============================
-Crafter Profile Administration
-==============================
+=====================================
+Crafter Profile System Administration
+=====================================
 
 This guide covers the basic configuration for Crafter Profile, if you need to manage tenants and
 profiles you can follow the :ref:`profile-admin-console` guides.
 
 .. NOTE::
-  This guide assumes that you already have installed and configured MongoDB. You can find more
+  This guide assumes that you have already installed and configured MongoDB. You can find more
   information in the official documentation: https://docs.mongodb.com/manual/installation/
 
 
@@ -20,8 +20,8 @@ All configuration for Crafter Profile is managed using a properties file:
 MongoDB Configuration
 ---------------------
 
-Using the following properties you can change the server and database used by Crafter Profile,
-this will allow you to use advanced MongoDB features and also host multiple Crafter Profile
+Using the following properties you can change the server and database used by Crafter Profile.
+This will allow you to use advanced MongoDB features and also host multiple Crafter Profile
 databases in the same MongoDB server.
 
 Properties prefix: ``crafter.profile.mongodb.``
@@ -108,14 +108,14 @@ Properties prefix: ``crafter.profile.auth.``
 +--------------------------------+---------------+-----------------------------------------------+
 | ticket.cleaner.repeatInterval  | 30000         || Number of times to repeat the task           |
 +--------------------------------+---------------+-----------------------------------------------+
-| lockTime                       | 10            || Time in minutes to lock a profiles after     |
+| lockTime                       | 10            || Time in minutes to lock a profile after      |
 |                                |               || the specified failed attempts to login       |
 +--------------------------------+---------------+-----------------------------------------------+
 | failedLoginAttemptsBeforeLock  | 8             || Limit of failed attempts to login before     |
 |                                |               || locking the profile                          |
 +--------------------------------+---------------+-----------------------------------------------+
-| failedLoginAttemptsBeforeDelay | 2             || Number of consecutive login attempts, a      |
-|                                |               || delay with be included after this limit      |
+| failedLoginAttemptsBeforeDelay | 2             || Number of consecutive login attempts before  |
+|                                |               || a delay is added                             |
 +--------------------------------+---------------+-----------------------------------------------+
 
 --------------------------
@@ -131,10 +131,13 @@ Properties prefix: ``crafter.profile.verification.``
 | Property                        | Default Value                | Description                   |
 +=================================+==============================+===============================+
 | token.maxAge                    | 86400                        || Maximum time in seconds      |
-|                                 |                              || to keep the cookie           |
+|                                 |                              || to keep the verification     |
+|                                 |                              || token                        |
 +---------------------------------+------------------------------+-------------------------------+
 | token.cleaner.startDelay        | 0                            || Time in milliseconds to      |
-|                                 |                              || wait before starting         |
+|                                 |                              || wait before starting the     |
+|                                 |                              || task that deletes expired    |
+|                                 |                              || tokens                       |
 +---------------------------------+------------------------------+-------------------------------+
 | token.cleaner.repeatInterval    | 30000                        || Number of times to           |
 |                                 |                              || repeat the task              |
@@ -171,10 +174,11 @@ Properties prefix: ``crafter.profile.auth.``
 | Property                      | Default Value | Description                                    |
 +===============================+===============+================================================+
 | ticket.maxAge                 | 900           || Maximum time in seconds to keep the           |
-|                               |               || cookie                                        |
+|                               |               || ticket                                        |
 +-------------------------------+---------------+------------------------------------------------+
 | ticket.cleaner.startDelay     | 0             || Time in milliseconds to wait before           |
-|                               |               || starting                                      |
+|                               |               || starting the task that deletes expired        |
+|                               |               || tickets                                       |
 +-------------------------------+---------------+------------------------------------------------+
 | ticket.cleaner.repeatInterval | 30000         || Number of times to repeat the task            |
 +-------------------------------+---------------+------------------------------------------------+
@@ -238,7 +242,7 @@ The templates will have available the ``verificationLink`` variable.
 
 .. code-block:: guess
   :caption: Example Email Template
-  
+
   Click on the link below to verify your Crafter Profile account.
   <br/><br/>
   <a id="verificationLink" href="${verificationLink}">${verificationLink}</a>

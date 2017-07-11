@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-profile-api-profile-create:
 
 ==============
@@ -63,6 +61,7 @@ Request
   POST .../api/1/profile/create
 
 .. code-block:: none
+  :linenos:
 
   accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
   tenantName=sample-tenant
@@ -80,6 +79,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   {
     "username": "john.doe",

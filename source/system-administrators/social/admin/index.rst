@@ -2,9 +2,9 @@
 
 .. _social-admin-console:
 
-============================
-Crafter Social Admin Console
-============================
+===============================
+Crafter Social Admin Console UI
+===============================
 
 Crafter Social Admin Console consists of a single WAR file that depends on access to both Crafter
 Social and Crafter Profile. This web application provides a simple way to manage all data related

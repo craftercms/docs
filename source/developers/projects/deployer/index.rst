@@ -39,4 +39,4 @@ ReST API
 Configuration
 -------------
 
-.. todo:: Write configuration
+To configure Crafter Deployer, please see :ref:`crafter-deployer-administration-guide`

@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-deployer-api-target-create:
 
 =============
@@ -92,6 +90,7 @@ Requests
 ``POST .../api/1/target/create``
 
 .. code-block:: json
+  :linenos:
 
   {
     "env": "dev",
@@ -109,6 +108,7 @@ Requests
 ``POST .../api/1/target/create``
 
 .. code-block:: json
+  :linenos:
 
   {
     "env": "preview",

@@ -1,6 +1,3 @@
-
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-profile-api-tenant-roles-add:
 
 =========
@@ -60,6 +57,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   {
     "name": "sample-tenant",
