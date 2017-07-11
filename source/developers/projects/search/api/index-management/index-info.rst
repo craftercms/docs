@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-search-api-index-info:
 
 ==============
@@ -48,6 +46,7 @@ Response (Solr)
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   {
     "name": "mysite",

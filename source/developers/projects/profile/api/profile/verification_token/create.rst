@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-profile-api-profile-verification_token-create:
 
 =========================

@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-studio-api-monitor-memory:
 
 ======
@@ -46,6 +44,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: guess
+  :linenos:
 
   {
     [

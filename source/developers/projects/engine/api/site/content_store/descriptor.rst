@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-engine-api-site-content_store-descriptor:
 
 ==============
@@ -47,6 +45,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   {
     "page": {

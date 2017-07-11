@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _profile-admin-access-tokens:
 
 ========================
@@ -28,6 +26,7 @@ To view all existing Access Tokens you can click the ``List Access Tokens`` link
 
 .. figure:: /_static/images/profile-admin/access-tokens-list.png
   :align: center
+  :alt: Crafter Profile access tokens list
 
 From this page you can view the general information about the tokens and delete them if needed.
 
@@ -43,6 +42,7 @@ From the List Access Tokens page you can click the ID of an existing record to d
 
 .. figure:: /_static/images/profile-admin/access-tokens-view.png
   :align: center
+  :alt: Crafter Profile access tokens view
 
 .. NOTE::
   Access Tokens are immutable, if you need to change the permissions for an existing token you need
@@ -55,6 +55,8 @@ Create a New Access Ticket
 To create a new Access Token you can click the ``New Access Token`` link in the left sidebar.
 
 .. figure:: /_static/images/profile-admin/access-tokens-new.png
+   :align: center
+   :alt: Crafter Profile access tokens new
 
 ^^^^^^
 Fields
@@ -85,6 +87,7 @@ Example Tenant Permissions
 
 .. figure:: /_static/images/profile-admin/access-tokens-permissions.png
   :align: center
+  :alt: Crafter Profile access tokens permissions
 
 An application using an Access Token with these permissions will be able to:
 

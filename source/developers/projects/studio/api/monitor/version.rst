@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-studio-api-monitor-version:
 
 =======
@@ -45,6 +43,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   {
     "name" : "studio",

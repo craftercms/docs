@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-profile-api-profile-by_existing_attribute:
 
 ===============================
@@ -65,6 +63,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   [
     {
