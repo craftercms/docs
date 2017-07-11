@@ -19,7 +19,7 @@ The following guide explains how to install a Crafter Engine instance in a QA or
 #.  Add the ``JAVA_OPTS`` variable to INSTALL_DIR/apache-tomcat/bin/setenv.sh (e.g. ``JAVA_OPTS="$JAVA_OPTS -server
     -Xms2G -Xmx8G -XX:MaxPermSize=512M"``).
 #.  Remove the ``JAVA_OPTS`` variable from INSTALL_DIR/bin/startup.sh.
-#.  If you need Engine to serve multiple sites, follow the guide :doc:`configure-engine-multi-tenancy`.
+#.  If you need Engine to serve multiple sites, follow the guide :ref:`engine-site-configuration-multi-tenancy`.
 #.  If you didn't follow the multi tenancy guide, remember to change the root path of the site content:
 
     #.  In INSTALL_DIR/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties, update the value

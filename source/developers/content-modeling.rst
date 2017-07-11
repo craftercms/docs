@@ -479,6 +479,7 @@ convention.
 
     }
 
-.. todo:: reference the full FTL API
+For more information on the FreeMarker (Templating) APIs, pleasee see :ref:`templating-api`.
 
-.. include:: ../includes/freemarker-variables.rst
+For more information on the Groovy APIs, please see :ref:`groovy-api`
+

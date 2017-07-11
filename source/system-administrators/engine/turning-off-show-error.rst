@@ -12,9 +12,9 @@ Step 1
 Place the following property and value in the file below
 
 .. code-block:: properties
-    :caption: TOMCAT/shared/classes/engine/extension/server-config.properties
+    :caption: TOMCAT/shared/classes/crafter/engine/extension/server-config.properties
 
-	crafter.engine.template.error.displayInView=true
+	crafter.engine.template.error.displayInView=false
 
 ------
 Step 2

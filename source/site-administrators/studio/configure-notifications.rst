@@ -27,14 +27,14 @@ Where
 
 This can be modified/accessed through Crafter Studio, by going to the **Sidebar**, then clicking on **Site Config** -> **Configuration** -> **Notification Configuration**
 
-.. image:: /_static/images/notification-config-open.png
+.. image:: /_static/images/site-admin/notification-config-open.png
     :align: center
     :alt: Configuration - Open Notification Configuration
 
 Templates
 ---------
 
-Templates are managed in the configuration file mentioned above.  The template used is Freemarker (also known as FTL).
+Templates are used for the email messages sent for workflow states in the configuration file mentioned above.  The template used is Freemarker (also known as FTL).
 Variables are referenced in the template like `${VARIABLE}` or as part of a Freemarker statement like `<#list files as file>...</#list>`
 Dates can be formatted like so: `scheduleDate?string["MMMMM dd, yyyy 'at' hh:mm a"]}`
 
@@ -82,8 +82,8 @@ Common Variables
 
 
 
-Deployment Error Notice
------------------------
+Deployment Error Notice Variable
+--------------------------------
 
 
 +-----------------------------+---------------------------------------------------------+
@@ -101,6 +101,7 @@ Configure who gets notifications by entering the email addresses of the people y
 
 .. code-block:: xml
     :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/notifications.xml
+    :linenos:
 
         <notificationConfig>
             <lang name="en">
@@ -124,6 +125,7 @@ Below is a sample of Studio workflow dialog messages defined in our notification
 
 .. code-block:: xml
     :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/notifications.xml
+    :linenos:
 
         <notificationConfig>
          <lang name="en">
@@ -166,6 +168,7 @@ Below is an example of a configured email messages for each point in the workflo
 
 .. code-block:: xml
     :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/notifications.xml
+    :linenos:
 
         <notificationConfig>
             <lang name="en">

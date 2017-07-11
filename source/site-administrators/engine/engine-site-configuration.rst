@@ -11,6 +11,8 @@ Engine Site Configuration
 ------------------------
 Configuration Parameters
 ------------------------
+.. highlight:: xml
+   :linenothreshold: 5
 
 Each site can specify configuration parameters at Config > site.xml (when seen from the site's dashboard). This parameters can be
 overwritten in a physical location in the delivery server, under
@@ -160,6 +162,7 @@ As an example, assuming you have defined a Groovy class under Classes > groovy >
 define the bean like this in the application-context.xml:
 
 .. code-block:: guess
+    :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"

@@ -1,4 +1,5 @@
 .. highlight:: groovy
+   :linenothreshold: 5
 
 .. _engine-site-security-guide:
 
@@ -164,6 +165,7 @@ Normally, to add registration or sign up you just need to:
     verify-account.ftl:
 
     .. code-block:: html
+        :linenos:
 
         <p>Hi ${profile.attributes.firstName}!</p>
 
@@ -202,6 +204,7 @@ To add a login page:
     parameters, like in the following snippet:
 
     .. code-block:: html
+        :linenos:
 
         <form action="/crafter-security-login" method="post">
             <label for="username">Username: </label>
@@ -236,6 +239,7 @@ Add Facebook Login
 #.  Add the Facebook appSecret and appKey to your site's config (in Studio, Config > site.xml), like this:
 
     .. code-block:: xml
+        :linenos:
 
         <socialConnections>
             <facebookConnectionFactory>
@@ -248,6 +252,7 @@ Add Facebook Login
     user clicks on "Connect with Facebook":
 
     .. code-block:: javascript
+        :linenos:
 
         $("#connect").click(function() {
             try {
@@ -327,6 +332,7 @@ configure it so the correct headers are sent to the applications:
 #.  Add the auth_mellon configuration to the virtual host. The configuration should be similar to this:
 
     .. code-block:: apacheconf
+        :linenos:
 
         ProxyPass / ajp://localhost:8009/
         ProxyPassReverse / ajp://localhost:8009/
@@ -411,6 +417,7 @@ assets. For this, Crafter CMS provides configuration parameters that allow you t
 to add configuration similar to the following in Config > site.xml:
 
 .. code-block:: xml
+    :linenos:
 
     <security>
         <urlRestrictions>
