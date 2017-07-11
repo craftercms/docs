@@ -18,7 +18,7 @@ A monitor defines the query to run, the paths that matter and the notification t
 How to Configure Content Monitoring
 -----------------------------------
 
-Content monitoring can be configured through Crafter Studio.  Go to the **Sidebar**, then click on **Site Confirg** -> **Configuration** -> **Site Configuration**
+Content monitoring can be configured through Crafter Studio.  Go to the **Sidebar**, then click on **Site Config** -> **Configuration** -> **Site Configuration**
 
 .. image:: /_static/images/site-configuration-open.png
     :align: center

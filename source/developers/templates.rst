@@ -8,7 +8,7 @@ Templates are a starting point for your pages/components, providing a layout/str
 
 Page templates are top level container types that lets you define the layout and functionality of content/components.  It contains editable sections for Authors to place content into.  Any changes made to the template is immediately available to all pages that uses that template.
 
-As mentioned in the previous section, components only differ from pages in that they can’t render by themselves, instead, they must render within a container page or another component.  Component templates allows you to reuse common design elements.  One use for component templates is to simplify your page templates when the layout gets complicated.  Examples of common design elements are headers, sidebars, etc.
+As mentioned in the previous section, components only differ from pages in that they can’t render by themselves, instead, they must render within a container page or another component.  Component templates allows you to reuse common design elements.  One use for component templates is to simplify your page templates when the layout gets complicated.  Examples of common design elements are headers, left rails, etc.
 
 Here are the topics discussed in this section:
 

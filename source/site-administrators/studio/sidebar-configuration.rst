@@ -1,0 +1,141 @@
+.. _sidebar-configuration:
+
+#####################
+Sidebar Configuration
+#####################
+
+The sidebar configuration file configures the items available for interaction on the left side of Studio.  The Sidebar shows different projections of the content in addition to other tools to assist in content authoring.
+
+******
+Sample
+******
+
+.. code-block:: xml
+    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/context-nav/sidebar.xml
+    :linenos:
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!-- sidebar.xml
+    	This configuration file controls the SideBar in Crafter Studio. The SideBar is the left bar that shows
+    	different projections of the content in addition to other tools to assist in content authoring.
+
+    	<contextNav>
+    		<modulehook>
+    			<name>dashboard</name>
+    			<params>
+    				<label>Dashboard</label>
+    				<path>/site-dashboard</path>
+    				<icon>  	               (optional icon customization - only one state (no tree link))
+    					<class>fa-cog</class>  (change default icon - using Font Awesome class)
+    					<styles> 	           (Change default icon styles - using css rules)
+    						<color>#409a00</color>
+    						<font-size>16px</font-size>
+    					</styles>
+    				</icon>
+    				<roles>
+    					<role>admin</role>
+    					<role>developer</role>
+    				</roles>
+    				<label>Site Config</label>
+    				<path>/site-config</path>
+    				<showRootItem>true</showRootItem>
+    				<onClick>preview</onClick>
+    			</params>
+    		</modulehook>
+    	</contextNav>
+
+    -->
+    <contextNav>
+    	<contexts>
+    		<context>
+    			<groups>
+    				<group>
+    					<menuItems>
+    						<menuItem>
+    							<modulehooks>
+    								<!-- dashboard -->
+    								<modulehook>
+    									<name>dashboard</name>
+    									<params>
+    										<label>Dashboard</label>
+    										<path>/site-dashboard</path>
+    									</params>
+    								</modulehook>
+
+    								<!-- Site IA PAGES -->
+    								<modulehook>
+    									<name>wcm-root-folder</name>
+    									<showDivider>true</showDivider>
+    									<params>
+    										<label>Pages</label>
+    										<path>/site/website</path>
+    										<showRootItem>true</showRootItem>
+    										<onClick>preview</onClick>
+    									</params>
+    								</modulehook>
+
+    								<!-- COMPONENTS -->
+    								<modulehook>
+    									<name>wcm-root-folder</name>
+    									<showDivider>true</showDivider>
+    									<params>
+    										<label>Components</label>
+    										<path>/site/components</path>
+    										<showRootItem>true</showRootItem>
+    									</params>
+    								</modulehook>
+
+    								<modulehook>
+    									<name>wcm-assets-folder</name>
+    									<showDivider>true</showDivider>
+    									<params>
+    										<label>Static Assets</label>
+    										<path>/static-assets</path>
+    										<showRootItem>true</showRootItem>
+    										<onClick>none</onClick>
+    									</params>
+    								</modulehook>
+
+    								<modulehook>
+    									<name>wcm-assets-folder</name>
+    									<showDivider>true</showDivider>
+    									<params>
+    										<label>Templates</label>
+    										<path>/templates</path>
+    										<showRootItem>true</showRootItem>
+    										<onClick>none</onClick>
+    									</params>
+    								</modulehook>
+
+    								<modulehook>
+    									<name>wcm-assets-folder</name>
+    									<showDivider>true</showDivider>
+    									<params>
+    										<label>Scripts</label>
+    										<path>/scripts</path>
+    										<showRootItem>true</showRootItem>
+    										<onClick>none</onClick>
+    									</params>
+    								</modulehook>
+
+    								<modulehook>
+    									<name>site-config</name>
+    									<showDivider>true</showDivider>
+    									<params>
+    										<roles>
+    											<role>admin</role>
+    											<role>developer</role>
+    										</roles>
+    										<label>Site Config</label>
+    										<path>/site-config</path>
+    									</params>
+    								</modulehook>
+    							</modulehooks>
+
+    						</menuItem>
+    					</menuItems>
+    				</group>
+    			</groups>
+    		</context>
+    	</contexts>
+    </contextNav>
