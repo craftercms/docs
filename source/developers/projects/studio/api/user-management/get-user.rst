@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-studio-api-user-get:
 
 ========
@@ -41,6 +39,7 @@ Example
 	GET .../api/1/services/api/1/user/get.json?username=jane.doe
 
 .. code-block:: json
+  :linenos:
 
   {
     "username" : "jane.doe",

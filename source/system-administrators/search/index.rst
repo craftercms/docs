@@ -1,8 +1,8 @@
 .. _crafter-search-admin:
 
-=============================
-Crafter Search Administration
-=============================
+====================================
+Crafter Search System Administration
+====================================
 
 ------------------
 Solr Configuration

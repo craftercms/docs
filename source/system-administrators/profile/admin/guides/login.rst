@@ -8,6 +8,7 @@ Once the WAR file has been deployed, you can access the application in the follo
 .. figure:: /_static/images/profile-admin/login.png
   :align: center
   :width: 50%
+  :alt: Crafter Profile Admin Console Login
 
   Crafter Profile Admin Console login dialog.
 

@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-studio-api-group-get-per-site:
 
 ===================
@@ -45,6 +43,7 @@ Example
 	GET .../api/1/services/api/1/group/get-per-site.json?site_id="mysite"
 
 .. code-block:: json
+  :linenos:
 
   {
     "total": 3

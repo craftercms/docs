@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-studio-configure-ldap:
 
 =============================
@@ -10,6 +8,7 @@ Configuring LDAP authentication is very simple: in your Authoring installation, 
 following lines to ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your LDAP system):
 
   .. code-block:: properties
+    :linenos:
 
     # Defines security provider for accessing repository. Possible values:
     # db (users are stored in database)

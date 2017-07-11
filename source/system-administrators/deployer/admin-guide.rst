@@ -1,8 +1,8 @@
 .. _crafter-deployer-administration-guide:
 
-=============================
-Deployer Administration Guide
-=============================
+====================================
+Deployer System Administration Guide
+====================================
 
 ------------------------------
 How to Start/Stop the Deployer
@@ -36,7 +36,7 @@ defined by Spring Boot:
 
 You can also override the ``application.yaml`` properties by specifying them as System properties, e.g. ``-Dserver.port=7171``.
 
-The ``base-target.yaml`` file is handled a little bit different. This file is basically loaded by Crafter Deployer every time a new target is
+The ``base-target.yaml`` file is handled a little bit different. This file is loaded by Crafter Deployer every time a new target is
 being added, and is merged with the specific properties of the target, with the target's properties taking precedence. By default, the override
 location for this configuration file is ``./config/base-target.yaml``, but it can be changed through the ``application.yaml`` property
 ``deployer.main.targets.config.baseYaml.overrideLocation``.
@@ -55,6 +55,7 @@ following two examples can be taken as a base for most authoring/delivery target
 
 .. code-block:: yaml
   :caption: Authoring Target Configuration Example (editorial-preview.yaml)
+  :linenos:
 
   target:
     # Environment name
@@ -88,6 +89,7 @@ following two examples can be taken as a base for most authoring/delivery target
 
 .. code-block:: yaml
   :caption: Delivery Target Configuration Example (editorial-dev.yaml)
+  :linenos:
 
   target:
     # Environment name
@@ -129,16 +131,21 @@ The Deployer out of the box provides the following processor beans:
 * **gitPullProcessor:** Clones a remote repository into a local path. If the repository has been cloned already, it performs
   a Git pull. Useful for delivery targets which need to reach out to the authoring server to retrieve the changes on
   deployment. Must be the first processor in the list, since the rest of the processors all work on the local repository.
+
 * **gitDiffProcessor:** Calculates the diff between the latest commit in the local repository and the last commit processed,
   which is usually stored under ``./processed-commits`` (in the bundle the folder is in
   ``CRAFTER_HOME/data/deployer/processed-commits``). This diff is then used to build the change set of the deployment, so
   this processor should be the second one in the list.
+
 * **searchIndexingProcessor:** grabs the files from the change set and sends them to Crafter Search for indexing. It
   also does some XML processing before submitting the files like flattening (recursive inclusion of components), merging
   of inherited XML and metadata extraction for structured document files like PDFs, Word Docs, etc.
+
 * **httpMethodCallProcessor:** executes an HTTP method call to a specified URL.
+
 * **fileOutputProcessor:** generates the output of the deployment and saves it in a JSON file.
-* **mailNotificationProcessor:** sends an email notification when theres' a successful deployment with file changes or when
+
+* **mailNotificationProcessor:** sends an email notification when there's a successful deployment with file changes or when
   a deployment failed.
 
 --------------
@@ -175,6 +182,7 @@ Delete a Target
 There are two options for deleting a target:
 
 * Call the API endpoint :ref:`crafter-deployer-api-target-delete`.
+
 * Delete the target configuration file in the filesystem.
 
 ---------------

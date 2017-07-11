@@ -23,7 +23,15 @@ Error Code Description           Response Body Example
 
 For more details on error codes for specific APIs, please see the ReST API section in the following project specific documentation:
 
-.. toctree::
+- :ref:`crafter-studio-api`
+- :ref:`crafter-search-api`
+- :ref:`crafter-deployer-api`
+- :ref:`crafter-engine-api`
+- :ref:`crafter-core-api`
+- :ref:`crafter-profile-api`
+- :ref:`crafter-social-api`
+
+.. .. toctree::
    :maxdepth: 1
    :titlesonly:
 

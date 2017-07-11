@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-core-api-content_store-children:
 
 ============
@@ -51,6 +49,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   [
     {
