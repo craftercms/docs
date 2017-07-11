@@ -8,21 +8,22 @@ Crafter Search Administration
 Solr Configuration
 ------------------
 
-Crafter Search is build to take advantage of the ``dynamicField`` feature in Solr, this allows you
-to create your content types and Solr will easily understand if the fields need to be converted
-to a certain type. Additionally you can customize the Solr configuration in case you need more
-advanced features such as spellchecking and stemming.
+Crafter Search is build to take advantage of Solr's ``dynamicField`` to produce indexes with minimal
+schema definition. Since Crafter Search uses Solr out of the box with some small changes (Crafter
+Search has it's own config set used to create new cores, called ``crafter_configs``, which is just
+a ``basic_configs`` config set with some additional fields), you can perfectly customize the Solr
+configuration in case you need more advanced features such as spellchecking and stemming.
 
 Official Solr Guides
  - `Schema Design <https://lucene.apache.org/solr/guide/6_6/documents-fields-and-schema-design.html#documents-fields-and-schema-design>`_
  - `Instance Configuration <https://lucene.apache.org/solr/guide/6_6/the-well-configured-solr-instance.html#the-well-configured-solr-instance>`_
 
 .. WARNING::
-  If you are going to change the Solr schema make sure to keep the original definition for all 
-  fields used by Crafter Search, you can find a list of the field in the next section.
+  If you are going to change the Solr schema make sure to keep the original definition for all
+  fields used by Crafter Search, you can find a list of the fields in the next section.
 
 .. NOTE::
-  If you change an existing field in the schema you will need to perform a reindex of the data to
+  If you change an existing field in the schema you will need to perform a re-index of the data to
   be sure that the changes are reflected in future searches.
 
 ----------------------------
@@ -65,13 +66,13 @@ Properties prefix: ``crafter.search.solr.admin.``
 | defaultDataDir     | None            | Solr data directory                                   |
 +--------------------+-----------------+-------------------------------------------------------+
 | defaultConfigSet   | crafter_configs | Solr config set name                                  |
-+--------------------+-----------------+-------------------------------------------------------+ 
++--------------------+-----------------+-------------------------------------------------------+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Crafter Field Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-These properties define fields used internally by all CrafterCMS components, you should only change
+These properties define fields used internally by all Crafter CMS components, you should only change
 them if you are building a custom version of other components such as Crafter Studio or Engine.
 
 Properties prefix: ``crafter.search.solr.field.``
@@ -79,18 +80,18 @@ Properties prefix: ``crafter.search.solr.field.``
 +---------------------------+----------------------------------+---------------------------------+
 | Property                  | Default Value                    | Description                     |
 +===========================+==================================+=================================+
-| id.name                   | id                               || Unique id for each document    |
+| id.name                   | id                               || Unique ID for each document    |
 |                           |                                  || (unique across all sites)      |
 +---------------------------+----------------------------------+---------------------------------+
-| parentId.name             | parentId                         || Document id of the parent      |
+| parentId.name             | parentId                         || Document ID of a parent doc    |
 +---------------------------+----------------------------------+---------------------------------+
-| rootId.name               | rootId                           || Document id used in            |
+| rootId.name               | rootId                           || Document ID used in            |
 |                           |                                  || sub-documents                  |
 +---------------------------+----------------------------------+---------------------------------+
-| site.name                 | site                             || Site name to which the         |
+| site.name                 | site                             || Name of the site to which the  |
 |                           |                                  || document belongs               |
 +---------------------------+----------------------------------+---------------------------------+
-| localId.name              | localId                          || Unique id for each document    |
+| localId.name              | localId                          || Unique ID for each document    |
 |                           |                                  || (unique only in one site)      |
 +---------------------------+----------------------------------+---------------------------------+
 | contentType.name          | content-type                     || Crafter Studio content type    |
@@ -106,9 +107,9 @@ Properties prefix: ``crafter.search.solr.field.``
 | multiValue.separator      | ``,``                            || Character used to identify     |
 |                           |                                  || multivalued fields             |
 +---------------------------+----------------------------------+---------------------------------+
-| multiValue.ignore.pattern | ``^.+_(html|i|s|l|t|b|f|d|dt)$`` || Name suffixed that will not    |
-|                           |                                  || be indexed as multivalued      |
-|                           |                                  || fields                         |
+| multiValue.ignore.pattern | ``^.+_(html|i|s|l|t|b|f|d|dt)$`` || Name suffix of fields that     |
+|                           |                                  || will not be indexed as         |
+|                           |                                  || multivalued fields             |
 +---------------------------+----------------------------------+---------------------------------+
 
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -122,8 +123,8 @@ Properties prefix: ``crafter.search.solr.field.type.``
 +-----------------------------+-------------------------+----------------------------------------+
 | Property                    | Default Value           | Description                            |
 +=============================+=========================+========================================+
-| html.suffix                 | ``_html``               || Suffixes will be used to identify     |
-+-----------------------------+-------------------------+| the type of each field.               |
+| html.suffix                 | ``_html``               || Suffixes that will be used to         |
++-----------------------------+-------------------------+| identify the type of each field.      |
 | int.suffix                  | ``_i``                  ||                                       |
 +-----------------------------+-------------------------+| If a field does not match any         |
 | int.multiValued.suffix      | ``_imv``                || suffix it will use the generic text   |

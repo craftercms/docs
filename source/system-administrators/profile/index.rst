@@ -131,10 +131,13 @@ Properties prefix: ``crafter.profile.verification.``
 | Property                        | Default Value                | Description                   |
 +=================================+==============================+===============================+
 | token.maxAge                    | 86400                        || Maximum time in seconds      |
-|                                 |                              || to keep the cookie           |
+|                                 |                              || to keep the verification     |
+|                                 |                              || token                        |
 +---------------------------------+------------------------------+-------------------------------+
 | token.cleaner.startDelay        | 0                            || Time in milliseconds to      |
-|                                 |                              || wait before starting         |
+|                                 |                              || wait before starting the     |
+|                                 |                              || task that deletes expired    |
+|                                 |                              || tokens                       |
 +---------------------------------+------------------------------+-------------------------------+
 | token.cleaner.repeatInterval    | 30000                        || Number of times to           |
 |                                 |                              || repeat the task              |
@@ -171,10 +174,11 @@ Properties prefix: ``crafter.profile.auth.``
 | Property                      | Default Value | Description                                    |
 +===============================+===============+================================================+
 | ticket.maxAge                 | 900           || Maximum time in seconds to keep the           |
-|                               |               || cookie                                        |
+|                               |               || ticket                                        |
 +-------------------------------+---------------+------------------------------------------------+
 | ticket.cleaner.startDelay     | 0             || Time in milliseconds to wait before           |
-|                               |               || starting                                      |
+|                               |               || starting the task that deletes expired        |
+|                               |               || tickets                                       |
 +-------------------------------+---------------+------------------------------------------------+
 | ticket.cleaner.repeatInterval | 30000         || Number of times to repeat the task            |
 +-------------------------------+---------------+------------------------------------------------+
@@ -238,7 +242,7 @@ The templates will have available the ``verificationLink`` variable.
 
 .. code-block:: guess
   :caption: Example Email Template
-  
+
   Click on the link below to verify your Crafter Profile account.
   <br/><br/>
   <a id="verificationLink" href="${verificationLink}">${verificationLink}</a>
