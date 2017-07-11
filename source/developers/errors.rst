@@ -31,23 +31,11 @@ For more details on error codes for specific APIs, please see the ReST API secti
 - :ref:`crafter-profile-api`
 - :ref:`crafter-social-api`
 
-.. .. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   projects/studio/api/index
-   projects/search/api/index
-   projects/deployer/api/index
-   projects/engine/api/index
-   projects/core/api/index
-   projects/profile/api/index
-   projects/social/api/index
-
 -----------
 Error Pages
 -----------
 
-When Crafter Engine detectes an error trying to fulfill a request it will also look for a custom
+When Crafter Engine detects an error trying to fulfill a request it will also look for a custom
 error page to display in the browser, the process to add custom error pages is the following:
 
 1. Create a new folder under ``/templates/web/errors``
