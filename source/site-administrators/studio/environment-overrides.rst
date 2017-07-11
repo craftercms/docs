@@ -2,43 +2,54 @@
 Environment Overrides
 =====================
 
-.. todo:: add description and update
+This configuration file allows you to configure the site specific environments Crafter Studio can publish to, such as your preview server url, authoring server url, etc.
+To modify the environment overrides, click on **Site Config** from the bottom of the *Sidebar*, then click on **Configuration** and select **Environment Configuration** from the dropdown list.
 
-This configuration file allows you to configure site specific items such as your preview server url, authoring server url, etc.
+.. image:: /_static/images/site-admin/config-open-env-config.png
+    :alt: Configurations - Open Environment Configuration
+    :width: 65 %
+    :align: center
 
 ------
 Sample
 ------
 
 .. code-block:: xml
-    :caption: /cstudio/config/sites/SITENAME/environment-overrides/ENVIRONMENT/environment-config.xml
+    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/environment/environment-config.xml
+    :linenos:
 
+    <!--
+        This file configures the environments Crafter Studio can publish to.
+
+        The file structure is:
+
+        <environment-config>
+            <preview-server-url />
+            <authoring-server-url />
+            <live-server-url />
+            <open-sidebar />
+            <publishing-targets>
+                <target>
+                    <repo-branch-name />
+                    <display-label />
+                </target>
+            </publishing-targets>
+        </environment-config>
+
+    -->
     <environment-config>
-	    <preview-server-url>http://127.0.0.1:8080</preview-server-url>
-	    <authoring-server-url>http://127.0.0.1:8080/studio</authoring-server-url>
-	    <form-server-url>http://127.0.0.1:8080/form-server</form-server-url>
-	    <live-server-url>http://SITENAME</live-server-url>
-        <publishing-channels>
-            <channel-group>
-                <label>Production</label>
-                <channels>
-                    <channel>sample</channel>
-                </channels>
-                <live-environment>true</live-environment>
-            </channel-group>
-            <!--
-            <channel-group>
-                <label>Test</label>
-                <channels>
-                    <channel>sample</channel>
-                </channels>
-                <live-environment>false</live-environment>
-            </channel-group>
-            -->
-        </publishing-channels>
-	    <cookie-domain>127.0.0.1</cookie-domain>
-	    <open-site-dropdown>false</open-site-dropdown>
+        <preview-server-url>http://localhost:8080</preview-server-url>
+        <authoring-server-url>http://localhost:8080/studio</authoring-server-url>
+        <live-server-url>http://localhost:9080/?crafterSite={siteName}</live-server-url>
+        <open-sidebar>false</open-sidebar>
+        <publishing-targets>
+            <target>
+                <repo-branch-name>live</repo-branch-name>
+                <display-label>Live</display-label>
+            </target>
+        </publishing-targets>
     </environment-config>
+
 
 
 -----------
@@ -51,34 +62,12 @@ Description
     * ``/environment-config/authoring-server-url``
         * Authoring url
 
-    * ``/environment-config/form-server-url``
-        * Form server url (deprecated)
-
     * ``/environment-config/live-server-url``
         * Live server url
 
-    * ``/environment-config/publishing-channels``
-        * Defines publishing channels
+    * ``/environment-config/open-sidebar``
+        * Defines whether the Sidebar is open or not when loading Studio
 
-    * ``/environment-config/publishing-channels/channel-group``
-        * Defines one publishing channel
-
-    * ``/environment-config/publishing-channels/channel-group/label``
-        * Publishing channel name
-
-    * ``/environment-config/publishing-channels/channel-group/channels``
-        * Defines deployment endpoints belonging to this publishing channel
-
-    * ``/environment-config/publishing-channels/channel-group/channels/channel``
-        * Deployment endpoint name
-
-    * ``/environment-config/publishing-channels/channel-group/live-environment``
-        * True if this channel is live environment
-
-    * ``/environment-config/cookie-domain``
-        * Environment cookie domain
-
-    * ``/environment-config/open-site-dropdown``
-        * True if site dropdown is opened by default
-
+    * ``/environment-config/publishing-targets``
+        * Defines publishing targets
 

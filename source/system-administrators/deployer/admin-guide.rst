@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-deployer-administration-guide:
 
 =============================
@@ -26,7 +24,7 @@ Crafter Deployer has two main property configuration files:
 
 * **application.yaml:** contains the global application properties, like the server port and the locations of other configuration files.
 * **base-target.yaml:** contains the common properties for all targets. In here you can find properties for configuring indexing with
-Crafter Search and deployment email notifications.
+  Crafter Search and deployment email notifications.
 
 The ``application.yaml`` file is loaded automatically by Spring Boot, so its properties can be overridden in the standard external locations
 defined by Spring Boot:
@@ -184,7 +182,7 @@ Run Deployments
 ---------------
 
 Crafter Deployer has an option of running scheduled deployments for a target (``deployment.scheduling.enabled``), which is enabled by default, but if you
-want to manually trigger a deployment, you just need to call API endpoint :ref:`crafter-deployer-api-target-deploy` (or
+want to manually trigger a deployment, you just need to call the API endpoint :ref:`crafter-deployer-api-target-deploy` (or
 :ref:`crafter-deployer-api-target-deploy-all`). This will start the deployment if the request is correct. To watch the progress of a scheduled or a manually
 triggered deployment, check the Deployer log. When the deployment has finished, and the target has a ``fileOutputProcessor`` in the deployment pipeline, a
 JSON file with the final result of that particular deployment will be written under ``./logs`` (or ``CRAFTER_HOME/logs/deployer``).

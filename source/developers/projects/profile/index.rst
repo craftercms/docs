@@ -47,4 +47,5 @@ ReST API
 Configuration
 -------------
 
-.. todo:: write configuration, write ReST API doc
+To configure Crafter Profile, please see :ref:`crafter-profile-admin`
+
