@@ -7,7 +7,7 @@ Reindexing Content for Search and Queries
 
 It is necessary from time to time to reindex content due to schema changes, migrations and other scenarios.
 A bulk deployment will push all content to your index but involves several steps in addition to indexing which may not
-be needed.  This article shows how to use the deployer to (re)index content that has already been deployed.
+be needed.  This article shows you how to use the deployer to (re)index content that has already been deployed.
 
 Reindexing the site content can be done using the reprocess feature in Crafter Deployer.
 
@@ -19,7 +19,7 @@ Step 1: Delete any existing content in the index
     curl "http://{hostname}:{port}/solr/{siteId}/update/?commit=true" -H "Content-Type: text/xml" -d "<delete><query>crafterSite:{siteId}</query></delete>"
 
 .. WARNING::
-  This action will delete all content matching the query, review carefully the solr index & the site id before executing the command.
+  This action will delete all content matching the query, review carefully the Solr index & the site id before executing the command.
 
 -------------------------------
 Step 2: Invoke the reprocessing
@@ -49,7 +49,7 @@ Step 2: Invoke the reprocessing
 Step 3: Wait for indexing
 -------------------------
 You will see indexing activity in the deployment log as well as entries on the server(s) running Crafter Search and Solr.
-Indexing activity time is dependant on the amount of content which must be re-processed.
+Indexing activity time is dependent on the amount of content which must be re-processed.
 
 --------------------------------
 Step 4: Check deployment results
@@ -86,7 +86,7 @@ When the deployer finishes the process it will return a response similar to this
 ===========================================================
 Reindexing Content Without Disrupting Service in Production
 ===========================================================
-In some scenarios it's not possible/appropriate to delete a live index and wait for the index to rebuild in production.  Perhaps the index is driving dyanamic features on the site that will break while the index is empty or being rebuilt.  In these scenarios you need a process for building the index off line and swapping it in.  
+In some scenarios it's not possible/appropriate to delete a live index and wait for the index to rebuild in production.  Perhaps the index is driving dynamic features on the site that will break while the index is empty or being rebuilt.  In these scenarios you need a process for building the index off line and swapping it in.
 
 -------------------------------
 Step 1: Prepare a re-index core
@@ -101,31 +101,32 @@ The next step is to create a new deployment context that mimics/is a copy of the
 ----------------------
 Step 3: Content freeze
 ----------------------
-Once you are about to start a re-index you need to freeze your authoring/editing activity.  If Content is being updated in the live environment while you are rebuilding your indexes, you may miss updates.  Ask you authors not to publish during your re-index process.
+Once you are about to start a re-index you need to freeze your authoring/editing activity.  If Content is being updated in the live environment while you are rebuilding your indexes, you may miss updates.  Ask the authors not to publish during your re-index process.
 
 ----------------
 Step 4: Re-index
 ----------------
-Following the process above "Reindexing Content for Search and Queries" for re-indexing content you want to invoke a reprocess action against your new deployment context.
+Follow the process above, "Reindexing Content for Search and Queries", for re-indexing content you want to invoke a reprocess action against your new deployment context.
 
 ------------
 Step 5: Wait
 ------------
 You will see indexing activity in the deployment log as well as entries on the server(s) running Crafter Search and Solr.
-Indexing activity time is dependant on the amount of content which must be re-processed.
+Indexing activity time is dependent on the amount of content which must be re-processed.
 
 --------------------
 Step 6: Swap indexes
 --------------------
-Now that indexing is complete you need to load the re-indexed content.  Follow these steps
-* In the solr console for the core administration click swap cores and provide the paths to the new index.
+Now that indexing is complete you need to load the re-indexed content.  Follow these steps:
+
+* In the Solr console for the core administration, click swap cores and provide the paths to the new index.
 * Once the core has reloaded, move the original core to backup
-* Consider createing a copy of the re-indexed core with the original name and swapping again to preserve file/folder names.
+* Consider creating a copy of the re-indexed core with the original name and swapping again to preserve file/folder names.
 
 ------------------------
 Step 7: Unfreeze Content
 ------------------------
-Now that you are cetain everything is working as it should, notify your authors that they may start editing and publishing activitiy.
+Now that you are certain everything is working as it should, notify your authors that they may start editing and publishing activity.
 
 ----------------
 Step 8: Clean up

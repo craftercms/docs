@@ -27,26 +27,26 @@ System Requirements
 
 * See :ref:`supported platforms<requirements_supported_platforms>` for a detailed list and description of supported components.
 
------------------------
-Development Environment
------------------------
 
-    :ref:`quick_start_guide`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+To Install a Development Environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--------------------------
-QA/Production Environment
--------------------------
+To install a development environment, see :ref:`quick_start_guide`.
+
+----------
+Activities
+----------
 
 .. toctree::
    :maxdepth: 2
    :titlesonly:
 
-   prod-environment/install-studio.rst
-   prod-environment/turning-off-show-error.rst
-   prod-environment/configure-engine-multi-tenancy.rst
-   prod-environment/backup-and-recovery.rst
+   backup-and-recovery.rst
+   rebuilding-studio-database.rst
+   debugging-search.rst
+   reindexing-content.rst
 
-.. prod-environment/install-engine.rst
 
 ---------------
 Crafter Studio
@@ -57,6 +57,19 @@ Crafter Studio
    :titlesonly:
 
    studio/configure-ldap.rst
+   studio/changing-the-studio-logo.rst
+   studio/understanding-studio-environment-overrides.rst
+
+--------------
+Crafter Engine
+--------------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   engine/configure-engine-multi-tenancy.rst
+   engine/turning-off-show-error.rst
 
 ----------------
 Crafter Deployer
@@ -90,9 +103,9 @@ Crafter Profile
    profile/index.rst
    profile/admin/index.rst
 
----------------
+--------------
 Crafter Social
----------------
+--------------
 
 .. toctree::
   :maxdepth: 1
@@ -100,17 +113,5 @@ Crafter Social
 
   social/admin/index.rst
 
-----------------
-Other Activities
-----------------
 
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
 
-   rebuilding-studio-database.rst
-   debugging-search.rst
-   reindexing-content.rst
-   debugging-search.rst
-   understanding-studio-environment-overrides.rst
-   changing-the-studio-logo.rst

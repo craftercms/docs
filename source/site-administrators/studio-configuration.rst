@@ -31,11 +31,17 @@ Here are the settings that can be configured through Crafter Studio:
 .. toctree::
    :maxdepth: 1
 
-   studio/environment-overrides
-   studio/site-config-tools
+   studio/cmis-configuration
    studio/configure-notifications
-   studio/site-config-configuration
-   studio/drag-n-drop-configuration
-   studio/rte-setup
    studio/content-monitoring
+   studio/drag-n-drop-configuration
+   studio/environment-overrides
+   studio/mime-types-configuration
+   studio/preview-panel-configuration
+   studio/rte-setup
+   studio/sidebar-configuration
+   studio/site-configuration
+   studio/site-config-tools
+   studio/site-config-configuration
+   studio/targeting-configuration
 
