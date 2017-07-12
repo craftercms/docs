@@ -99,6 +99,7 @@ This section includes the basic configuration that applies to all Social Context
 | Encoding           || Encoding used for sending the email body                     |
 +--------------------+---------------------------------------------------------------+
 
+.. _social-admin-tenant-preferences:
 ------------------
 Tenant Preferences
 ------------------
