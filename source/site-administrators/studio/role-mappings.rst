@@ -1,3 +1,5 @@
+.. _role_mappings:
+
 =============
 Role Mappings
 =============
