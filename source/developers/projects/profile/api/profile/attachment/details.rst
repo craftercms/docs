@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-profile-api-profile-attachment-details:
 
 ==============================
@@ -55,6 +53,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   {
     "md5": "498a1e16be56873ef53a1a61295d1781",

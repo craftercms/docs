@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-profile-api-access_token-create:
 
 ===================
@@ -42,6 +40,7 @@ Request
 ``POST .../api/1/access_token/create?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d``
 
 .. code-block:: json
+  :linenos:
 
   {
     "application": "sample-app",
@@ -66,6 +65,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   {
     "application": "sample-app",

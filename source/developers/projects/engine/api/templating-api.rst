@@ -55,6 +55,7 @@ need to overwrite the file by placing it under the same path in you project (tem
 .ftl). The following is the default markup of the macros:
 
 .. code-block:: guess
+    :linenos:
 
 	<#macro renderNavItem item active = false>
 	<li <#if active>class="active"</#if>><a href="${navFunctions.getNavItemUrl(item)}">${navFunctions.getNavItemName(item)}</a></li>

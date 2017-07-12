@@ -1,27 +1,28 @@
 .. _crafter-profile-admin:
 
-==============================
-Crafter Profile Administration
-==============================
+=====================================
+Crafter Profile System Administration
+=====================================
 
 This guide covers the basic configuration for Crafter Profile, if you need to manage tenants and
 profiles you can follow the :ref:`profile-admin-console` guides.
 
 .. NOTE::
-  This guide assumes that you already have installed and configured MongoDB. You can find more
+  This guide assumes that you have already installed and configured MongoDB, or you've used
+  Crafter CMS's Gradle build system (which will install MongoDB for you). You can find more
   information in the official documentation: https://docs.mongodb.com/manual/installation/
 
 
 All configuration for Crafter Profile is managed using a properties file:
 
-  ``TOMCAT/shared/classes/crafter/profile/extension/server-config.properties``
+  ``$TOMCAT_HOME/shared/classes/crafter/profile/extension/server-config.properties``
 
 ---------------------
 MongoDB Configuration
 ---------------------
 
-Using the following properties you can change the server and database used by Crafter Profile,
-this will allow you to use advanced MongoDB features and also host multiple Crafter Profile
+Using the following properties you can change the server and database used by Crafter Profile.
+This will allow you to use advanced MongoDB features and also host multiple Crafter Profile
 databases in the same MongoDB server.
 
 Properties prefix: ``crafter.profile.mongodb.``
@@ -106,16 +107,17 @@ Properties prefix: ``crafter.profile.auth.``
 | ticket.cleaner.startDelay      | 0             || Time in milliseconds to wait before          |
 |                                |               || starting                                     |
 +--------------------------------+---------------+-----------------------------------------------+
-| ticket.cleaner.repeatInterval  | 30000         || Number of times to repeat the task           |
+| ticket.cleaner.repeatInterval  | 30000         || Time interval in milliseconds to run the     |
+|                                |               ||  cleaner task                                |
 +--------------------------------+---------------+-----------------------------------------------+
-| lockTime                       | 10            || Time in minutes to lock a profiles after     |
+| lockTime                       | 10            || Time in minutes to lock a profile after      |
 |                                |               || the specified failed attempts to login       |
 +--------------------------------+---------------+-----------------------------------------------+
 | failedLoginAttemptsBeforeLock  | 8             || Limit of failed attempts to login before     |
 |                                |               || locking the profile                          |
 +--------------------------------+---------------+-----------------------------------------------+
-| failedLoginAttemptsBeforeDelay | 2             || Number of consecutive login attempts, a      |
-|                                |               || delay with be included after this limit      |
+| failedLoginAttemptsBeforeDelay | 2             || Number of consecutive login attempts before  |
+|                                |               || a delay is added                             |
 +--------------------------------+---------------+-----------------------------------------------+
 
 --------------------------
@@ -139,10 +141,10 @@ Properties prefix: ``crafter.profile.verification.``
 |                                 |                              || task that deletes expired    |
 |                                 |                              || tokens                       |
 +---------------------------------+------------------------------+-------------------------------+
-| token.cleaner.repeatInterval    | 30000                        || Number of times to           |
-|                                 |                              || repeat the task              |
+| ticket.cleaner.repeatInterval   | 30000                        || Time interval in milliseconds|
+|                                 |                              || to run the cleaner task      |
 +---------------------------------+------------------------------+-------------------------------+
-| newProfile.mail.from            | noreply\@craftersoftware.com || Email address to send        |
+| newProfile.mail.from            | noreply\@example.com         || Email address to send        |
 |                                 |                              || the verification mail        |
 +---------------------------------+------------------------------+-------------------------------+
 | newProfile.mail.subject         | Verify Account               || Subject for the              |
@@ -151,7 +153,7 @@ Properties prefix: ``crafter.profile.verification.``
 | newProfile.mail.templateName    | verify-new-profile-email.ftl || Name of the template for     |
 |                                 |                              || the verification mail        |
 +---------------------------------+------------------------------+-------------------------------+
-| resetPassword.mail.from         | noreply\@craftersoftware.com || Email address to send        |
+| resetPassword.mail.from         | noreply\@example.com         || Email address to send        |
 |                                 |                              || the reset password mail      |
 +---------------------------------+------------------------------+-------------------------------+
 | resetPassword.mail.subject      | Reset Password               || Subject for the              |
@@ -180,7 +182,8 @@ Properties prefix: ``crafter.profile.auth.``
 |                               |               || starting the task that deletes expired        |
 |                               |               || tickets                                       |
 +-------------------------------+---------------+------------------------------------------------+
-| ticket.cleaner.repeatInterval | 30000         || Number of times to repeat the task            |
+| ticket.cleaner.repeatInterval | 30000         || Time interval in milliseconds to run the      |
+|                               |               ||  cleaner task                                 |
 +-------------------------------+---------------+------------------------------------------------+
 
 -------------------

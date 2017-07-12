@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _profile-admin-profiles:
 
 ===================
@@ -18,6 +16,7 @@ left sidebar.
 
 .. figure:: /_static/images/profile-admin/profiles-list.png
   :align: center
+  :alt: Crafter Profile admin profiles list
 
 Once the page is loaded you can select the desired tenant by using the dropdown below
 the page title.
@@ -35,6 +34,7 @@ To create a new profile you can click the ``New Profile`` link in the left sideb
 
 .. figure:: /_static/images/profile-admin/profiles-new.png
   :align: center
+  :alt: Crafter Profile admin new profiles
 
 ^^^^^^
 Fields
@@ -79,6 +79,7 @@ From the list page you can click the ID of a profile to open the update page:
 
 .. figure:: /_static/images/profile-admin/profiles-update.png
   :align: center
+  :alt: Crafter Profile admin update profiles
 
 When updating an existing profile the username and tenant are not editable.
 
