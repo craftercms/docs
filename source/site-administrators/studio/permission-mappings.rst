@@ -1,3 +1,5 @@
+.. _permission-mappings
+
 ===================
 Permission Mappings
 ===================
