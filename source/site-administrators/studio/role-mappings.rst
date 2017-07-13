@@ -1,4 +1,4 @@
-.. _role-mappings
+.. _role-mappings:
 
 =============
 Role Mappings
