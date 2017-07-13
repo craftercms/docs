@@ -1,10 +1,10 @@
-.. _crafter-social-api-context-preferences-email-update:
+.. _crafter-social-api-ugc-threads-subscribe-update:
 
-=====================
-Update Email Template
-=====================
+===================
+Update Subscription
+===================
 
-Updates an email template for a given Social Context.
+Subscribes the current user to a given thread.
 
 --------------------
 Resource Information
@@ -13,7 +13,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/crafter-social/api/3/system/context/preferences/email``       |
+|| URL                       || ``/crafter-social/api/3/threads/:id/subscribe/update``           |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -22,24 +22,22 @@ Resource Information
 Parameters
 ----------
 
-+---------------------+-------------+---------------+--------------------------------------------+
-|| Name               || Type       || Required     || Description                               |
-+=====================+=============+===============+============================================+
-|| context            || String     || |checkmark|  || The ID of the Social Context              |
-+---------------------+-------------+---------------+--------------------------------------------+
-|| template           || String     || |checkmark|  || The body of the email template            |
-+---------------------+-------------+---------------+--------------------------------------------+
-|| type               || String     || |checkmark|  || The type of the email template            |
-+---------------------+-------------+---------------+--------------------------------------------+
++-------------+----------+---------------+--------------------------------------------+
+|| Name       || Type    || Required     || Description                               |
++=============+==========+===============+============================================+
+|| context    || String  || |checkmark|  || The ID of the Social Context              |
++-------------+----------+---------------+--------------------------------------------+
+|| id         || String  || |checkmark|  || The ID of the thread to update            |
++-------------+----------+---------------+--------------------------------------------+
+|| frequency  || String  ||              || Type of notifications to receive          |
++-------------+----------+---------------+--------------------------------------------+
 
 .. NOTE::
-  The possible values for the ``type`` parameter are:
+  The possible values for the ``frequency`` parameter are:
   
-  - DAILY
-  - WEEKLY
-  - INSTANT
-  - APPROVEREMAIL
-  - APPROVER_RESULT_TEMPLATE
+  - weekly
+  - daily
+  - instant
 
 -------
 Example
@@ -51,13 +49,12 @@ Request
 
 .. code-block:: none
 
-  POST .../api/3/system/context/preferences/email
+  POST .../api/3/threads/Welcome/subscribe/update
 
 .. code-block:: guess
 
-  template=Sample template for email
-  type=INSTANT
   context=f5b143c2-f1c0-4a10-b56e-f485f00d3fe9
+  frequency=daily
 
 ^^^^^^^^
 Response

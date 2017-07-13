@@ -1,10 +1,10 @@
-.. _crafter-social-api-profile-clear:
+.. _crafter-social-api-context-preferences-email-config-get:
 
-===========
-Clear Cache
-===========
+=======================
+Get Email Configuration
+=======================
 
-Clears the Profile Aggregator Cache.
+Returns an email configuration for a given Social Context.
 
 --------------------
 Resource Information
@@ -13,7 +13,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/crafter-social/api/3/system/profile/clear``                   |
+|| URL                       || ``/crafter-social/api/3/system/context/preferences/email/config``|
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -25,12 +25,8 @@ Parameters
 +---------------------+-------------+---------------+--------------------------------------------+
 || Name               || Type       || Required     || Description                               |
 +=====================+=============+===============+============================================+
-|| profileIds         || String     ||              || List of IDs to be remove from the Cache   |
+|| context            || String     || |checkmark|  || The ID of the Social Context              |
 +---------------------+-------------+---------------+--------------------------------------------+
-
-.. WARNING::
-  If the ``profileIds`` parameter is empty or not included in the request, all profiles in the
-  cache will be cleared.
 
 -------
 Example
@@ -42,7 +38,7 @@ Request
 
 .. code-block:: none
 
-  GET .../api/3/system/profile/clear
+  GET .../api/3/system/context/preferences/email/config?context=f5b143c2-f1c0-4a10-b56e-f485f00d3fe9
 
 ^^^^^^^^
 Response
@@ -53,7 +49,19 @@ Response
 .. code-block:: json
   :linenos:
 
-  true
+  {
+    "host": "localhost",
+    "encoding": "UTF-8",
+    "port": 25.0,
+    "auth": false,
+    "username": "",
+    "password": "",
+    "tls": false,
+    "replyTo": "social@local.loc",
+    "from": "social@local.loc",
+    "priority": 5.0,
+    "subject": "Latest change on you subscribe threads for Social"
+  }
 
 ---------
 Responses

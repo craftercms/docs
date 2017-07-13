@@ -1,10 +1,10 @@
-.. _crafter-social-api-profile-clear:
+.. _crafter-social-api-ugc-comments-count-flagged:
 
-===========
-Clear Cache
-===========
+======================
+Count Flagged Comments
+======================
 
-Clears the Profile Aggregator Cache.
+Returns the number of comments with at least one flag.
 
 --------------------
 Resource Information
@@ -13,7 +13,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/crafter-social/api/3/system/profile/clear``                   |
+|| URL                       || ``/crafter-social/api/3/comments/flagged/count``                 |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -22,15 +22,11 @@ Resource Information
 Parameters
 ----------
 
-+---------------------+-------------+---------------+--------------------------------------------+
-|| Name               || Type       || Required     || Description                               |
-+=====================+=============+===============+============================================+
-|| profileIds         || String     ||              || List of IDs to be remove from the Cache   |
-+---------------------+-------------+---------------+--------------------------------------------+
-
-.. WARNING::
-  If the ``profileIds`` parameter is empty or not included in the request, all profiles in the
-  cache will be cleared.
++-------------+----------+---------------+--------------------------------------------+
+|| Name       || Type    || Required     || Description                               |
++=============+==========+===============+============================================+
+|| context    || String  || |checkmark|  || The ID of the Social Context              |
++-------------+----------+---------------+--------------------------------------------+
 
 -------
 Example
@@ -42,7 +38,7 @@ Request
 
 .. code-block:: none
 
-  GET .../api/3/system/profile/clear
+  GET .../api/3/comments/flagged/count?context=f5b143c2-f1c0-4a10-b56e-f485f00d3fe9
 
 ^^^^^^^^
 Response
@@ -53,7 +49,7 @@ Response
 .. code-block:: json
   :linenos:
 
-  true
+  1
 
 ---------
 Responses

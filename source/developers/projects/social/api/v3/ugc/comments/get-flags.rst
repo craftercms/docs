@@ -1,10 +1,10 @@
-.. _crafter-social-api-profile-clear:
+.. _crafter-social-api-ugc-comments-get-flags:
 
-===========
-Clear Cache
-===========
+=================
+Get Comment Flags
+=================
 
-Clears the Profile Aggregator Cache.
+Returns all the flags for the given comment.
 
 --------------------
 Resource Information
@@ -13,7 +13,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/crafter-social/api/3/system/profile/clear``                   |
+|| URL                       || ``/crafter-social/api/3/comments/:id/flags``                     |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -22,15 +22,13 @@ Resource Information
 Parameters
 ----------
 
-+---------------------+-------------+---------------+--------------------------------------------+
-|| Name               || Type       || Required     || Description                               |
-+=====================+=============+===============+============================================+
-|| profileIds         || String     ||              || List of IDs to be remove from the Cache   |
-+---------------------+-------------+---------------+--------------------------------------------+
-
-.. WARNING::
-  If the ``profileIds`` parameter is empty or not included in the request, all profiles in the
-  cache will be cleared.
++-------------+----------+---------------+--------------------------------------------+
+|| Name       || Type    || Required     || Description                               |
++=============+==========+===============+============================================+
+|| context    || String  || |checkmark|  || The ID of the Social Context              |
++-------------+----------+---------------+--------------------------------------------+
+|| id         || String  || |checkmark|  || The ID of the comment                     |
++-------------+----------+---------------+--------------------------------------------+
 
 -------
 Example
@@ -42,7 +40,7 @@ Request
 
 .. code-block:: none
 
-  GET .../api/3/system/profile/clear
+  GET .../api/3/comments/59678d3f300426156e21df50/flags?context=f5b143c2-f1c0-4a10-b56e-f485f00d3fe9
 
 ^^^^^^^^
 Response
@@ -53,7 +51,13 @@ Response
 .. code-block:: json
   :linenos:
 
-  true
+  [
+    {
+      "reason": "Contains offensive language",
+      "userId": "59667e8abd4787992596ba6b",
+      "_id": "5967e35f300426156e21df58"
+    }
+  ]
 
 ---------
 Responses

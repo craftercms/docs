@@ -100,6 +100,7 @@ This section includes the basic configuration that applies to all Social Context
 +--------------------+---------------------------------------------------------------+
 
 .. _social-admin-tenant-preferences:
+
 ------------------
 Tenant Preferences
 ------------------

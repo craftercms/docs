@@ -1,10 +1,10 @@
-.. _crafter-social-api-profile-clear:
+.. _crafter-social-api-ugc-attachments-get:
 
-===========
-Clear Cache
-===========
+===============
+Get Attachments
+===============
 
-Clears the Profile Aggregator Cache.
+Returns all the attachments for a given comment.
 
 --------------------
 Resource Information
@@ -13,7 +13,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/crafter-social/api/3/system/profile/clear``                   |
+|| URL                       || ``/crafter-social/api/3/comments/:id/attachments``               |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -22,15 +22,13 @@ Resource Information
 Parameters
 ----------
 
-+---------------------+-------------+---------------+--------------------------------------------+
-|| Name               || Type       || Required     || Description                               |
-+=====================+=============+===============+============================================+
-|| profileIds         || String     ||              || List of IDs to be remove from the Cache   |
-+---------------------+-------------+---------------+--------------------------------------------+
-
-.. WARNING::
-  If the ``profileIds`` parameter is empty or not included in the request, all profiles in the
-  cache will be cleared.
++-------------+----------+---------------+--------------------------------------------+
+|| Name       || Type    || Required     || Description                               |
++=============+==========+===============+============================================+
+|| context    || String  || |checkmark|  || The ID of the Social Context              |
++-------------+----------+---------------+--------------------------------------------+
+|| id         || String  || |checkmark|  || The ID of the comment                     |
++-------------+----------+---------------+--------------------------------------------+
 
 -------
 Example
@@ -42,7 +40,7 @@ Request
 
 .. code-block:: none
 
-  GET .../api/3/system/profile/clear
+  GET .../api/3/comments/59678d3f300426156e21df50?context=f5b143c2-f1c0-4a10-b56e-f485f00d3fe9
 
 ^^^^^^^^
 Response
@@ -53,7 +51,21 @@ Response
 .. code-block:: json
   :linenos:
 
-  true
+  [
+    {
+      "md5": "1300018473cc0038187aaa0e2604fa27",
+      "fileId": "5967ac48300426156e21df51",
+      "contentType": "image/png",
+      "fileSize": "1.5 KB",
+      "storeName": "/f5b143c2-f1c0-4a10-b56e-f485f00d3fe9/59678d3f300426156e21df50/image1.png",
+      "fileName": "image1.png",
+      "savedDate": "2017-07-13T11:22Z",
+      "fileSizeBytes": 1497,
+      "attributes": {
+        "owner": "59678d3f300426156e21df50"
+      }
+    }
+  ]
 
 ---------
 Responses

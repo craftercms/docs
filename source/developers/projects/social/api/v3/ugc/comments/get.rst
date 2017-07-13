@@ -1,10 +1,10 @@
-.. _crafter-social-api-context-preferences-email-get:
+.. _crafter-social-api-ugc-comments-get:
 
-==================
-Get Email Template
-==================
+===========
+Get Comment
+===========
 
-Returns an email template for a given Social Context.
+Returns the given comment.
 
 --------------------
 Resource Information
@@ -13,7 +13,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/crafter-social/api/3/system/context/preferences/email``       |
+|| URL                       || ``/crafter-social/api/3/comments/:id``                           |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -22,22 +22,13 @@ Resource Information
 Parameters
 ----------
 
-+---------------------+-------------+---------------+--------------------------------------------+
-|| Name               || Type       || Required     || Description                               |
-+=====================+=============+===============+============================================+
-|| context            || String     || |checkmark|  || The ID of the Social Context              |
-+---------------------+-------------+---------------+--------------------------------------------+
-|| type               || String     || |checkmark|  || The type of the email template            |
-+---------------------+-------------+---------------+--------------------------------------------+
-
-.. NOTE::
-  The possible values for the ``type`` parameter are:
-  
-  - DAILY
-  - WEEKLY
-  - INSTANT
-  - APPROVEREMAIL
-  - APPROVER_RESULT_TEMPLATE
++-------------+----------+---------------+--------------------------------------------+
+|| Name       || Type    || Required     || Description                               |
++=============+==========+===============+============================================+
+|| context    || String  || |checkmark|  || The ID of the Social Context              |
++-------------+----------+---------------+--------------------------------------------+
+|| id         || String  || |checkmark|  || The ID of the comment                     |
++-------------+----------+---------------+--------------------------------------------+
 
 -------
 Example
@@ -49,7 +40,7 @@ Request
 
 .. code-block:: none
 
-  GET .../api/3/system/context/preferences/email?type=WEEKLY&context=f5b143c2-f1c0-4a10-b56e-f485f00d3fe9
+  GET .../api/3/comments/59678d3f300426156e21df50?context=f5b143c2-f1c0-4a10-b56e-f485f00d3fe9
 
 ^^^^^^^^
 Response
@@ -61,7 +52,23 @@ Response
   :linenos:
 
   {
-    "template": "Hi ${profile.username} this are changes that happen on your subscribe Threads<#list digest as change><h1> ${change[\"_id\"]} </h1><dl><#list change.ugcList as ugc><dt>Subject</dt><dd> ${ugc.subject!\"\"} </dd><dt>Body</dt>  <dd>${ugc.body!\"\"} </dd><dt>Changed by<dt><dd>${ugc.lastModifiedBy.username}<dd></#list></dl></#list>"
+    "ancestors": [],
+    "targetId": "Welcome",
+    "subject": "",
+    "body": "This was the first comment in he site!",
+    "createdBy": "59667e8abd4787992596ba6b",
+    "lastModifiedBy": "59667e8abd4787992596ba6b",
+    "createdDate": "2017-07-13T09:09Z",
+    "lastModifiedDate": "2017-07-13T09:30Z",
+    "anonymousFlag": false,
+    "attributes": {},
+    "children": [],
+    "attachments": [],
+    "moderationStatus": "UNMODERATED",
+    "votesUp": [],
+    "votesDown": [],
+    "flags": [],
+    "_id": "59678d3f300426156e21df50"
   }
 
 ---------

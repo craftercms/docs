@@ -1,10 +1,10 @@
-.. _crafter-social-api-profile-clear:
+.. _crafter-social-api-ugc-attachments-get-content:
 
-===========
-Clear Cache
-===========
+======================
+Get Attachment Content
+======================
 
-Clears the Profile Aggregator Cache.
+Returns the content of a given attachment.
 
 --------------------
 Resource Information
@@ -13,7 +13,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/crafter-social/api/3/system/profile/clear``                   |
+|| URL                       || ``/crafter-social/api/3/comments/:id/attachments/:attachmentId`` |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -22,15 +22,16 @@ Resource Information
 Parameters
 ----------
 
-+---------------------+-------------+---------------+--------------------------------------------+
-|| Name               || Type       || Required     || Description                               |
-+=====================+=============+===============+============================================+
-|| profileIds         || String     ||              || List of IDs to be remove from the Cache   |
-+---------------------+-------------+---------------+--------------------------------------------+
++---------------+----------+---------------+--------------------------------------------+
+|| Name         || Type    || Required     || Description                               |
++===============+==========+===============+============================================+
+|| context      || String  || |checkmark|  || The ID of the Social Context              |
++---------------+----------+---------------+--------------------------------------------+
+|| id           || String  || |checkmark|  || The ID of the comment                     |
++---------------+----------+---------------+--------------------------------------------+
+|| attachmentId || String  || |checkmark|  || The ID of the attachment                  |
++---------------+----------+---------------+--------------------------------------------+
 
-.. WARNING::
-  If the ``profileIds`` parameter is empty or not included in the request, all profiles in the
-  cache will be cleared.
 
 -------
 Example
@@ -42,7 +43,7 @@ Request
 
 .. code-block:: none
 
-  GET .../api/3/system/profile/clear
+  GET .../api/3/comments/59678d3f300426156e21df50/attachments/5967ac48300426156e21df51?context=f5b143c2-f1c0-4a10-b56e-f485f00d3fe9
 
 ^^^^^^^^
 Response
@@ -50,10 +51,10 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: json
+.. code-block:: none
   :linenos:
 
-  true
+  Binary content
 
 ---------
 Responses

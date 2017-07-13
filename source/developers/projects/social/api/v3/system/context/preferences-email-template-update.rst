@@ -1,19 +1,19 @@
-.. _crafter-social-api-profile-clear:
+.. _crafter-social-api-context-preferences-email-template-update:
 
-===========
-Clear Cache
-===========
+=====================
+Update Email Template
+=====================
 
-Clears the Profile Aggregator Cache.
+Updates an email template for a given Social Context.
 
 --------------------
 Resource Information
 --------------------
 
 +----------------------------+-------------------------------------------------------------------+
-|| HTTP Verb                 || GET                                                              |
+|| HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/crafter-social/api/3/system/profile/clear``                   |
+|| URL                       || ``/crafter-social/api/3/system/context/preferences/email``       |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -25,12 +25,21 @@ Parameters
 +---------------------+-------------+---------------+--------------------------------------------+
 || Name               || Type       || Required     || Description                               |
 +=====================+=============+===============+============================================+
-|| profileIds         || String     ||              || List of IDs to be remove from the Cache   |
+|| context            || String     || |checkmark|  || The ID of the Social Context              |
++---------------------+-------------+---------------+--------------------------------------------+
+|| template           || String     || |checkmark|  || The body of the email template            |
++---------------------+-------------+---------------+--------------------------------------------+
+|| type               || String     || |checkmark|  || The type of the email template            |
 +---------------------+-------------+---------------+--------------------------------------------+
 
-.. WARNING::
-  If the ``profileIds`` parameter is empty or not included in the request, all profiles in the
-  cache will be cleared.
+.. NOTE::
+  The possible values for the ``type`` parameter are:
+  
+  - DAILY
+  - WEEKLY
+  - INSTANT
+  - APPROVEREMAIL
+  - APPROVER_RESULT_TEMPLATE
 
 -------
 Example
@@ -42,7 +51,13 @@ Request
 
 .. code-block:: none
 
-  GET .../api/3/system/profile/clear
+  POST .../api/3/system/context/preferences/email
+
+.. code-block:: guess
+
+  template=Sample template for email
+  type=INSTANT
+  context=f5b143c2-f1c0-4a10-b56e-f485f00d3fe9
 
 ^^^^^^^^
 Response
