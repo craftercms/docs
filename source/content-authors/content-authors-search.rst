@@ -1,6 +1,12 @@
-.. index:: Search
+.. index:: Content Author Search
 
 ..  _content_authors_search:
+
+=====================
+Content Author Search
+=====================
+
+This section describes how Content Authors can search for different things ins Crafter Studio while creating content.
 
 ---------
 Searching

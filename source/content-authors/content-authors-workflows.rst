@@ -2,6 +2,12 @@
 
 ..  _content_authors_workflows:
 
+=========
+Workflows
+=========
+
+This section describes the simple default workflow available from Crafter CMS.
+
 ----------------------------------
 Workflow and Scheduled Deployments
 ----------------------------------

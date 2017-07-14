@@ -30,7 +30,7 @@ Note: After setting these two properties, please restart the server.
 Modifying an Environment Config File
 ------------------------------------
 
-    * In the respository you will find the environment override files at: REPO/cstudio/config/sites/environment-overrides
+    * In the repository you will find the environment override files at: REPO/cstudio/config/sites/environment-overrides
     * Each environment will have a folder for it with a name that should match the values in server-config.properties (see above.)
     * Inside the environment folder you will see a file called environment-config.xml that contains configuration similar to what is listed below.
 
@@ -105,4 +105,4 @@ If your environment config file is not listed in the configurations dropdown sim
 
 After adding the content, save the configuration and reload the page.  You should now see an option to edit your configuration file in the dropdown.
 
-.. todo:: Update content, to describe the environment-config.xml file
+.. todo:: Update content, to describe maybe the studio config overrides?
