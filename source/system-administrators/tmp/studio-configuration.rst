@@ -1,3 +1,5 @@
+:orphan:
+
 ====================
 Studio Configuration
 ====================
@@ -267,10 +269,10 @@ Default Studio configuration values:
 
 To override any of default configuration values create new properties file in ``TOMCAT/shared/classes/crafter/engine/extension/studio-server-config.properties`` and override value of any property by setting new value.
 
-.. include:: ../site-administrators/studio/role-mappings.rst
+.. .. include:: /site-administrators/studio/role-mappings.rst
 
-.. include:: ../site-administrators/studio/permission-mappings.rst
+.. .. include:: /site-administrators/studio/permission-mappings.rst
 
-.. include:: ../site-administrators/studio/environment-overrides.rst
+.. .. include:: /site-administrators/studio/environment-overrides.rst
 
-.. include:: ../site-administrators/studio/site-config-tools.rst
+.. .. include:: /site-administrators/studio/site-config-tools.rst

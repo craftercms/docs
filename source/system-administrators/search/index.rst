@@ -8,7 +8,7 @@ Crafter Search System Administration
 Solr Configuration
 ------------------
 
-Crafter Search is build to take advantage of Solr's ``dynamicField`` to produce indexes with minimal
+Crafter Search is built to take advantage of Solr's ``dynamicField`` to produce indexes with minimal
 schema definition. Since Crafter Search uses Solr out of the box with some small changes (Crafter
 Search has it's own config set used to create new cores, called ``crafter_configs``, which is just
 a ``basic_configs`` config set with some additional fields), you can perfectly customize the Solr
@@ -198,7 +198,7 @@ Properties prefix: ``crafter.search.solr.delete.xml.``
 +----------+----------------------------------+--------------------------------------------------+
 | Property | Default Value                    | Description                                      |
 +==========+==================================+==================================================+
-| regex    | ``.*\\.xml$``                    || Pattern to determinate if a given id should     |
+| regex    | ``.*\\.xml$``                    || Pattern to determine if a given id should       |
 |          |                                  || use the query for being deleted                 |
 +----------+----------------------------------+--------------------------------------------------+
 | query    | ``id:"%1$s" OR parentId:"%1$s"`` || Query used to select all documents that should  |

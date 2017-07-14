@@ -2,7 +2,7 @@
 Changing the Logo in Studio
 ===========================
 
-It's common for companies that run Crafter to want to change the logo of Crafter Studio so that it shows their own logo.
+It's common for companies that run Crafter CMS to want to change the logo of Crafter Studio so that it shows their own logo.
 To do this take the following steps:
 
 ------------------------------

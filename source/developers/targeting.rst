@@ -4,6 +4,8 @@
 Targeting
 =========
 
+.. todo:: Update article
+
 Targeting is a Crafter CMS feature that allows delivering the right experience, with the right content, to the right people at the right time.  Crafter CMS provides the ability to render content adapted to specific users, depending on different aspects like geographical location, language, preferences, etc. Content that is targeted to users is known in Crafter CMS as targeted content.
 
 -------
