@@ -47,6 +47,8 @@ Creating an RTE Setup
 The RTE's configuration file looks like this:
 
 .. code-block:: xml
+    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/form-control-config/rte/rte-setup.xml
+    :linenos:
 
     <config>
         <setup>
@@ -138,3 +140,4 @@ In the image below, the RTE setup name used is **generic**.  Please see the sect
     :alt: RTE Setup - Attach an RTE in a Form to an RTE Setup
 	:align: center
 
+.. todo:: Update images

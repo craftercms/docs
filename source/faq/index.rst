@@ -10,25 +10,7 @@ FAQ
 What is Crafter CMS
 -------------------
 
-Crafter CMS is a Digital Experience Management Platform.  This includes Enterprise grade management capabilities for building interactive, personalized experiences for Web, mobile, digital signage, email, augmented / virtual reality and many other digital mediums.  Crafter CMS is comprised of several independent, integrated components including: a core content repository, an authoring application for content editors/managers (Crafter Studio), a dynamic content delivery system (Crafter Engine), a user profile store and personalization server (Crafter Profile), a query/search server (Crafter Search) and a social content store and server (Crafter Social).
-
------------------------------------------------------------------------------
-What's so special about Crafter CMS, don't we have enough OSS CMSs out there?
------------------------------------------------------------------------------
-
-We firmly believe that great digital experiences must be crafted - they must be compelling, unique, branded, and personalized.  Marketers, authors, designers and developers need a great set of tools and a platform that allows them to express themselves effectively, efficiently and completely.  Crafter is a CMS for artisans built by artisans.  Our mission is to create the world’s most scalable, personalized digital content creation and delivery platform in a way that truly enables content creators and software developers to quickly craft and deliver amazing experience to their customers, employees and partners.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Crafter CMS is Different from the Competition
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To get better results you have to be different. Crafter CMS delivers what no other enterprise Web CMS can because it's built like no other CMS in its class.  
-
-	* Built for the modern era of engagement. Crafter CMS was started in 2007 and built from the ground up for personalization, integration, cloud scale, mobile, IoT, and social.
-	* Built based on today’s most modern and powerful open source components like Spring MVC, AngularJS, Groovy, Git and Solr
-	* Complete freedom of front-end presentation
-	* Decoupled, true multi-channel architecture
-	* Unparalleled scalability, performance and scale-out
+Crafter CMS is an open-source, Java-based, Web content management system for Web sites, mobile apps, AR, VR and more, designed for ease of development and scaling. Crafter CMS is comprised of several independent, integrated components including: a core content repository, an authoring application for content editors/managers (Crafter Studio), a dynamic content delivery system (Crafter Engine), a user profile store and personalization server (Crafter Profile), a query/search server (Crafter Search) and a social content store and server (Crafter Social).
 
 
 ---------------------------------
@@ -40,9 +22,9 @@ Follow these instructions to run Crafter CMS and to download and install Crafter
 ------------------------------------
 Can Crafter CMS be used as a portal?
 ------------------------------------
-Yes. Crafter is running portals for some of the most well known companies in the world.  Use cases include intranets, global extranets, B2B portals, B2E portals and B2C portals in hospitality, finance, logistics, education and telecom and many others.
+Yes. Crafter CMS is running portals for some of the most well known companies in the world.  Use cases include intranets, global extranets, B2B portals, B2E portals and B2C portals in hospitality, finance, logistics, education and telecom and many others.
 
-Many people hear the word portal and immediately search for a "portal" technology that meets the JSR-268 standard.  Crafter does not support JSR-268 natively.  We do integrate with Liferay Portal and have been deployed in cases where stronger WCM capabilities were required than what Liferay provides out of the box. 
+Many people hear the word portal and immediately search for a "portal" technology that meets the JSR-268 standard.  Crafter CMS does not support JSR-268 natively.  We do integrate with Liferay Portal and have been deployed in cases where stronger WCM capabilities were required than what Liferay provides out of the box.
 
 You only need JSR-268 if you want to build and deploy your application as "portlets."  Doing so certainly has some advantages like the ability to leverage different application stacks for different applications in the portal.  However, from an IT management perspective, unless there is good justification for different technology, doing so creates issues with technology management and total cost of ownership.  
 

@@ -77,4 +77,4 @@ cd /usr/local/clamXav/sbin
 
 ./clamd
 
-.. todo:: write configuration, write ReST API doc
+.. todo:: write configuration doc

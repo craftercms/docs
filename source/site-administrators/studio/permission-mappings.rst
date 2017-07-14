@@ -1,3 +1,7 @@
+.. index:: Permission Mappings
+
+.. _permission-mappings:
+
 ===================
 Permission Mappings
 ===================
@@ -11,6 +15,7 @@ For example, to grant the role component_author the ability to read/write
 components and read-only to everything else:
 
 .. code-block:: xml
+      :linenos:
 
       <role name="author">
           <rule regex="/site/website/.*">
@@ -33,14 +38,14 @@ components and read-only to everything else:
           </rule>
       </role>
 
-A regex of "~DASHBOARD~" governs view access to the publishing workflow
-related dasbhboard widgets:
+A regex of "~DASHBOARD~" governs view access to the publishing workflow related dashboard widgets:
+
 - Items Waiting For Approval
 - Approved Scheduled Items
 - Recently Published
 
 To grant a role the ability to view these dashboard widgets, simply grant
-the role the permission Publish to the scope ~DASHBOARD~. For example:
+the role the permission **Publish** to the scope ~DASHBOARD~. For example:
 
 .. code-block:: xml
 
@@ -52,7 +57,7 @@ the role the permission Publish to the scope ~DASHBOARD~. For example:
 
 To modify/view the permission mappings for your site in Studio, click on **Site Config** at the bottom of the *Sidebar*, then click on **Configurations** and select **Permissions Mapping** from the dropdown list.
 
-.. image:: /_static/images/config-open-permission-mappings.png
+.. image:: /_static/images/site-admin/config-open-permission-mappings.png
     :alt: Configurations - Open Permission Mappings
     :width: 65 %
     :align: center
@@ -62,63 +67,196 @@ Sample
 ------
 
 .. code-block:: xml
-    :caption: /cstudio/config/sites/SITENAME/permission-mappings.xml
+    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/permission-mappings-config.xml
+    :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>
+    <!-- permission-mappings-config.xml
+
+      This files contains the permissions mappings for the roles defined in
+      role-mappings-config.xml.
+
+      Permissions are defined per:
+      site > role > rule
+
+      Rules have a regex expression that govern the scope of the permissions assigned.
+
+      Permissions are:
+      - Read
+      - Write
+      - Create Content
+      - Create Folder
+      - Create Content Type
+      - Publish
+
+      Absence of permissions means the permission is denied.
+
+      For example, to grant the role component_author the ability to read/write
+      components and read-only to everything else:
+
+          <role name="author">
+              <rule regex="/site/website/.*">
+                <allowed-permissions>
+                  <permission>Read</permission>
+                </allowed-permissions>
+              </rule>
+              <rule regex="/site/components/.*">
+                <allowed-permissions>
+                  <permission>Read</permission>
+                  <permission>Write</permission>
+                  <permission>Create Content</permission>
+                  <permission>Create Folder</permission>
+                </allowed-permissions>
+              </rule>
+              <rule regex="/static-assets/.*">
+                <allowed-permissions>
+                  <permission>Read</permission>
+                </allowed-permissions>
+              </rule>
+          </role>
+
+      A regex of "~DASHBOARD~" governs view access to the publishing workflow
+      related dashboard widgets:
+      - Items Waiting For Approval
+      - Approved Scheduled Items
+      - Recently Published
+
+      To grant a role the ability to view these dashboard widgets, simple grant
+      the role the permission Publish to the scope ~DASHBOARD~. For example:
+
+          <rule regex="~DASHBOARD~">
+            <allowed-permissions>
+              <permission>Publish</permission>
+            </allowed-permissions>
+          </rule>
+
+    -->
     <permissions>
-        <site id="SITENAME">
-            <role name="admin">
-                <rule regex="/.*">
-                    <allowed-permissions>
-                        <permission>Read</permission>
-                        <permission>Write</permission>
-                        <permission>Delete</permission>
-                        <permission>Create Folder</permission>
-                        <permission>Publish</permission>
-                        <permission>Create Content</permission>
-                        <permission>Change Content Type</permission>
-                    </allowed-permissions>
-                </rule>
-                <rule regex="~DASHBOARD~">
-                    <allowed-permissions>
-                        <permission>Read</permission>
-                        <permission>Write</permission>
-                        <permission>Delete</permission>
-                        <permission>Create Folder</permission>
-                        <permission>Publish</permission>
-                        <permission>Create Content</permission>
-                        <permission>Change Content Type</permission>
-                    </allowed-permissions>
-                </rule>
-            </role>
-            <role name="author">
-                <rule regex="/.*">
-                    <allowed-permissions>
-                        <permission>Read</permission>
-                        <permission>Write</permission>
-                    </allowed-permissions>
-                </rule>
-                <rule regex="~DASHBOARD~">
-                    <allowed-permissions>
-                        <permission>Read</permission>
-                        <permission>Write</permission>
-                    </allowed-permissions>
-                </rule>
-            </role>
-            <role name="*">
-                <rule regex="/.*">
-                    <allowed-permissions>
-                        <permission>Read</permission>
-                    </allowed-permissions>
-                </rule>
-                <rule regex="~DASHBOARD~">
-                    <allowed-permissions>
-                        <permission>Read</permission>
-                    </allowed-permissions>
-                </rule>
-            </role>
-        </site>
+      <site id="myawesomesite">
+        <role name="author">
+          <rule regex="/site/website/.*">
+            <allowed-permissions>
+              <permission>Read</permission>
+              <permission>Write</permission>
+              <permission>Create Content</permission>
+              <permission>Create Folder</permission>
+            </allowed-permissions>
+          </rule>
+          <rule regex="/site/components/.*">
+            <allowed-permissions>
+              <permission>Read</permission>
+              <permission>Write</permission>
+              <permission>Create Content</permission>
+              <permission>Create Folder</permission>
+            </allowed-permissions>
+          </rule>
+          <rule regex="/static-assets/.*">
+            <allowed-permissions>
+              <permission>Read</permission>
+              <permission>Write</permission>
+              <permission>Create Content</permission>
+              <permission>Create Folder</permission>
+            </allowed-permissions>
+          </rule>
+        </role>
+        <role name="publisher">
+          <rule regex="/site/.*">
+            <allowed-permissions>
+              <permission>Read</permission>
+              <permission>Write</permission>
+              <permission>Create Content</permission>
+              <permission>Create Folder</permission>
+              <permission>Publish</permission>
+            </allowed-permissions>
+          </rule>
+          <rule regex="^/site/(?!website/index\.xml)(.*)">
+            <allowed-permissions>
+              <permission>Delete</permission>
+            </allowed-permissions>
+          </rule>
+          <rule regex="/static-assets/.*">
+            <allowed-permissions>
+              <permission>Read</permission>
+              <permission>Write</permission>
+              <permission>Delete</permission>
+              <permission>Create Content</permission>
+              <permission>Create Folder</permission>
+              <permission>Publish</permission>
+            </allowed-permissions>
+          </rule>
+          <rule regex="~DASHBOARD~">
+            <allowed-permissions>
+              <permission>Publish</permission>
+            </allowed-permissions>
+          </rule>
+        </role>
+        <role name="developer">
+          <rule regex="/.*">
+            <allowed-permissions>
+              <permission>Read</permission>
+              <permission>Write</permission>
+              <permission>Publish</permission>
+              <permission>Create Folder</permission>
+              <permission>Create Content</permission>
+              <permission>Change Content Type</permission>
+            </allowed-permissions>
+          </rule>
+          <rule regex="^/(?!site/website/index\.xml)(.*)">
+            <allowed-permissions>
+              <permission>Delete</permission>
+            </allowed-permissions>
+          </rule>
+          <rule regex="~DASHBOARD~">
+            <allowed-permissions>
+              <permission>Publish</permission>
+            </allowed-permissions>
+          </rule>
+        </role>
+        <role name="admin">
+          <rule regex="/.*">
+            <allowed-permissions>
+              <permission>Read</permission>
+              <permission>Write</permission>
+              <permission>Publish</permission>
+              <permission>Create Folder</permission>
+              <permission>Create Content</permission>
+              <permission>Change Content Type</permission>
+            </allowed-permissions>
+          </rule>
+          <rule regex="^/(?!site/website/index\.xml)(.*)">
+            <allowed-permissions>
+              <permission>Delete</permission>
+            </allowed-permissions>
+          </rule>
+          <rule regex="~DASHBOARD~">
+            <allowed-permissions>
+              <permission>Publish</permission>
+            </allowed-permissions>
+          </rule>
+        </role>
+        <role name="reviewer">
+          <rule regex="/.*">
+            <allowed-permissions>
+              <permission>Read</permission>
+              <permission>Publish</permission>
+            </allowed-permissions>
+          </rule>
+          <rule regex="~DASHBOARD~">
+            <allowed-permissions>
+              <permission>Publish</permission>
+            </allowed-permissions>
+          </rule>
+        </role>
+        <role name="*">
+          <rule regex="/.*">
+            <allowed-permissions>
+              <permission>Read</permission>
+            </allowed-permissions>
+          </rule>
+        </role>
+      </site>
     </permissions>
+
 
 -----------
 Description
@@ -144,7 +282,7 @@ Change Content Type User is permitted to change content type
     ``/permissions/site/role@name``
         Role name
     ``/permissions/site/role/rule@regex``
-        Regular expression to filter paths where permission is applied
-        Value regex="~DASHBOARD~" is special regular expression applied for content displayed in dashboard widgets only
+        Regular expression to filter paths where permission is applied.
+        The value regex="~DASHBOARD~" is a special regular expression applied for content displayed in dashboard widgets only
     ``/permissions/site/role/rule/allowed-permissions/permission``
         Allowed permission for role and rule (possible values give in the table above)

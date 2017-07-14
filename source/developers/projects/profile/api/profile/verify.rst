@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-profile-api-profile-verify:
 
 ==============
@@ -47,6 +45,7 @@ Request
 .. code-block:: none
 
   POST .../api/1/profile/verify
+
 .. code-block:: none
 
   accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
@@ -59,6 +58,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   {
     "username": "john.doe",

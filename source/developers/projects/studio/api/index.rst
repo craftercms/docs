@@ -118,30 +118,4 @@ Publish
 	publish/start
 	publish/stop
 
-----------
-Legacy API
-----------
-
-^^^^^^^^
-Activity
-^^^^^^^^
-
-.. toctree::
-	:maxdepth: 1
-
-    activity/get-user-activity
-    activity/post-activity
-
-^^^^^^^^^
-Clipboard
-^^^^^^^^^
-
-.. toctree::
-	:maxdepth: 1
-
-    clipboard/copy-item
-    clipboard/cut-item
-    clipboard/get-items
-    clipboard/paste-item
-
-.. todo:: Current coverage is limited to version 3.x new features, will need to extend converage to all API calls
+.. todo:: Current coverage is limited to version 3.x new features, will need to extend coverage to all API calls

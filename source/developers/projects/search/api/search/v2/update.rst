@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-search-api-search-v2-update:
 
 ===================
@@ -49,6 +47,7 @@ Request
   POST .../api/2/search/update?index_id=editorial&site=editorial&id=%2Fsite%2Fwebsite%2Farticles%2F2017%2F1%2Fwomen-styles-for-winter%2Findex.xml
 
 .. code-block:: xml
+  :linenos:
 
   <?xml version="1.0" encoding="UTF-8"?>
     <page>

@@ -1,4 +1,5 @@
 .. highlight:: groovy
+   :linenothreshold: 5
 
 .. index:: Custom Services and Controllers, Services, Controllers, Groovy API
 
@@ -79,6 +80,7 @@ One very common controller script is the sitemap.groovy. A sitemap is used by se
 a website. A sitemap is an XML with references to most of the site's pages, and basically looks like this:
 
 .. code-block:: xml
+    :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

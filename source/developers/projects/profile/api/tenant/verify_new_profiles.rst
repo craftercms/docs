@@ -1,6 +1,3 @@
-
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-profile-api-tenant-verifiy_new_profiles:
 
 ===================
@@ -62,6 +59,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+  :linenos:
 
   {
     "name": "sample-tenant",

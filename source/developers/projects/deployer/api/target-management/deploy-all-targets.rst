@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-deployer-api-target-deploy-all:
 
 ==================

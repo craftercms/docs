@@ -6,37 +6,12 @@ Getting Started
 
 This section lets you get started quickly on using Crafter CMS for development or evaluation.
 
-------------------------------------
-Requirements and Supported Platforms   
-------------------------------------
-
 .. toctree::
-   :maxdepth: 1
-   
+   :maxdepth: 2
+
    /system-administrators/requirements-supported-platforms
-
-
------------------
-Quick Start Guide
------------------
-
-.. toctree:: 
-   :maxdepth: 1	   
-   
    quick-start-guide
-   
-
--------------------------
-Create Your First Website
--------------------------
-
-Let's get started building your first website!	
-	
-.. toctree:: 
-   :maxdepth: 1	   
-   
    your-first-website
-	   
 
 
 **Here are a few more links to get you started crafting!**

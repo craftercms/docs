@@ -2,11 +2,13 @@
 
 .. _your_first_website:
 
-------------------
+==================
 Your First Website
-------------------
+==================
 
-This section assumes that you have followed the steps in the :ref:`quick start guide <getting_started>` to get Crafter CMS and login. We will be using an out-of-the-box blueprint, called "Website_Editorial" to create your first website.
+This section assumes that you have followed the steps in the :ref:`Quick Start Guide <getting_started>` to get Crafter CMS and login. We will be using an out-of-the-box blueprint, called "Website_Editorial" to create your first website.
+
+Let's get started building your first website!
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Creating your website from out of the box blueprint Website_Editorial
@@ -18,7 +20,7 @@ After logging in, you'll see the MySites screen (Below).  Click on **Create Site
     :align: center
     :alt: Your First Website - Sites Screen
 
-Give the site a friendly name for the *Site Id* , a description and then choose a blueprint.  We're going to be using the "Website_Editorial" blueprint.  Blueprints offer you a starting point for your website. New blueprints can be created and installed in to the system.  As you are entering the site id, spaces are removed and upper case letters are converted to lower case letters.
+Give the site a friendly name for the *Site Id* , a description and then choose a blueprint.  We're going to be using the "Website_Editorial" blueprint.  Blueprints offer you a starting point for your website. New blueprints can be created and installed into the system.  As you are entering the site id, spaces are removed and upper case letters are converted to lower case letters.
 
 .. image:: /_static/images/first-site/create-site-screen.png
     :width: 75 %    

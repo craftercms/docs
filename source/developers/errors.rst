@@ -23,23 +23,19 @@ Error Code Description           Response Body Example
 
 For more details on error codes for specific APIs, please see the ReST API section in the following project specific documentation:
 
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   projects/studio/api/index
-   projects/search/api/index
-   projects/deployer/api/index
-   projects/engine/api/index
-   projects/core/api/index
-   projects/profile/api/index
-   projects/social/api/index
+- :ref:`crafter-studio-api`
+- :ref:`crafter-search-api`
+- :ref:`crafter-deployer-api`
+- :ref:`crafter-engine-api`
+- :ref:`crafter-core-api`
+- :ref:`crafter-profile-api`
+- :ref:`crafter-social-api`
 
 -----------
 Error Pages
 -----------
 
-When Crafter Engine detectes an error trying to fulfill a request it will also look for a custom
+When Crafter Engine detects an error trying to fulfill a request it will also look for a custom
 error page to display in the browser, the process to add custom error pages is the following:
 
 1. Create a new folder under ``/templates/web/errors``
