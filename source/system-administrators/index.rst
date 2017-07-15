@@ -114,6 +114,7 @@ Crafter Social
   :maxdepth: 1
   :titlesonly:
 
+  social/index.rst
   social/admin/index.rst
 
 
