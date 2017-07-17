@@ -31,9 +31,9 @@ Parameters
 +===============+=============+===============+==================================================+
 || site         || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| site         || String     || |checkmark|  || Number of days for history                      |
+|| sort         || String     || |checkmark|  || Sort results by field                           |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| num          || String     || |checkmark|  || Number of items to display                      |
+|| ascending    || String     || |checkmark|  || Ascending or descending order                   |
 +---------------+-------------+---------------+--------------------------------------------------+
 || filterType   || String     || |checkmark|  || Filter result set by filter type                |
 +---------------+-------------+---------------+--------------------------------------------------+
