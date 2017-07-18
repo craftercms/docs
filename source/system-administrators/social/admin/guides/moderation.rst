@@ -13,6 +13,7 @@ sidebar.
 
 .. figure:: /_static/images/social-admin/moderation.png
   :align: center
+  :alt: Crafter Social moderation
 
 When users submit new content, it will automatically be listed in this page. Remember to select
 the right Social Context from the dropdown before making any changes.
@@ -28,11 +29,12 @@ depending on the status of the content, the moderators will have different actio
 Unmoderated
 ^^^^^^^^^^^
 
-New content that no one has reviewed, items in this status will not be visible for the end users 
+New content that no one has reviewed. Items in this status will not be visible for the end users
 and is available for updates from the moderators in order to remove inappropriate content.
 
 .. figure:: /_static/images/social-admin/moderation-unmoderated.png
   :align: center
+  :alt: Crafter Social unmoderated
 
 Actions
  - Approve
@@ -45,11 +47,12 @@ Actions
 Approved
 ^^^^^^^^
 
-Content that has already been reviewed and accepted, items in this status will be visible for the
-end users but still can be updated or removed by the moderators.
+Content that has already been reviewed and accepted. Items in this status will be visible for the
+end users but can still be updated or removed by the moderators.
 
 .. figure:: /_static/images/social-admin/moderation-approved.png
   :align: center
+  :alt: Crafter Social moderation approved
 
 Actions
  - Mark as Spam
@@ -62,11 +65,12 @@ Actions
 Spam
 ^^^^
 
-Content that has already been reviewed but was considered as irrelevant, items in this state can
+Content that has already been reviewed but was considered as irrelevant.  Items in this state can
 be set as ``Unmoderated`` again.
 
 .. figure:: /_static/images/social-admin/moderation-spam.png
- :align: center
+  :align: center
+  :alt: Crafter Social spam
 
 Actions
  - Permanently delete
@@ -76,11 +80,12 @@ Actions
 Trash
 ^^^^^
 
-Content that has already been reviewed but should be discarded, items in this state can not be
+Content that has already been reviewed but should be discarded. Items in this state can not be
 recovered and the only option available is to delete them from the database.
 
 .. figure:: /_static/images/social-admin/moderation-trash.png
   :align: center
+  :alt: Crafter Social trash
 
 Actions
  - Permanently delete

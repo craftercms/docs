@@ -2,6 +2,12 @@
 
 ..  _requirements_supported_platforms:
 
+====================================
+Requirements and Supported Platforms
+====================================
+
+This section describes Crafter CMS requirements and supported platforms.
+
 ------------
 Requirements
 ------------

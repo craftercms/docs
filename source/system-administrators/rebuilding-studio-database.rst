@@ -4,7 +4,7 @@
 Rebuilding Studio Database
 ==========================
 
-.. todo::Article needs to be updated for 3.0
+.. todo:: Article needs to be updated for 3.0
 
 ------------------------------------------
 Step 1: Configure Rebuild Database Service

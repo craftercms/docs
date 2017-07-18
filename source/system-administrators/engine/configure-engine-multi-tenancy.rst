@@ -79,7 +79,7 @@ Configure Mapped Multi-Tenancy
 ------------------------------
 
 This is the recommended approach for production environments because this configuration will
-guarantee that all request will be able to resolve the right site.
+guarantee that all requests will be able to resolve the right site.
 
 To enable this mode you need to change the following files:
 

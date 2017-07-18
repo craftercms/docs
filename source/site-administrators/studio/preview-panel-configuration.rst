@@ -1,4 +1,4 @@
-.. preview-panel-configuration:
+.. _preview-panel-configuration:
 
 ###########################
 Preview Panel Configuration

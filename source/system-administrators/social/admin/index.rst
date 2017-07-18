@@ -20,14 +20,14 @@ New Installation
 ^^^^^^^^^^^^^^^^
 
 You can follow the instructions for building a complete bundle as described 
-:ref:`here <installing-craftercms-from-gradle>`, if you add the parameter ``-P includeProfile=true``
-the bundle will contain crafter-social.war and crafter-social-admin.war.
+:ref:`here <installing-craftercms-from-gradle>`, if you add the parameter ``-P includeSocial=true``
+the bundle will contain `crafter-social.war` and `crafter-social-admin.war`.
 
 ^^^^^^^^^^^^^^^^^^^^^
 Existing Installation
 ^^^^^^^^^^^^^^^^^^^^^
 
-If you want to add Crafter Social Admin Console to an existing installation you only need to 
+If you want to add the Crafter Social Admin Console to an existing installation, you only need to
 build or download the WAR file making sure it matches the version of all other components.
 
 To deploy the application you only need to move the WAR file into ``INSTALL_DIR/apache-tomcat/webapps``
@@ -37,7 +37,7 @@ Configuration Guide
 -------------------
 
 Similar to other CrafterCMS components you can configure the Social Admin Console using a simple
-properties files placed in the following location:
+properties file placed in the following location:
 
   ``INSTALL_DIR/apache-tomcat/shared/classes/crafter/social/management/extension/server-config.properties``
 

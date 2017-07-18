@@ -12,7 +12,7 @@ development environment, and provides operational and administrative considerati
 procedures as well as a comprehensive reference section.
 
 .. toctree::
-   :maxdepth: 1 
+   :maxdepth: 2
     
    /getting-started/index
    /content-authors/index

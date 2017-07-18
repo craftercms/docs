@@ -1,3 +1,5 @@
+.. _system-administrators:
+
 *********************
 System Administrators
 *********************
@@ -39,13 +41,14 @@ Activities
 ----------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
 
    backup-and-recovery.rst
    rebuilding-studio-database.rst
    debugging-search.rst
    reindexing-content.rst
+   upgrading-to-crafter-cms-3-0.rst
 
 
 ---------------
@@ -111,6 +114,7 @@ Crafter Social
   :maxdepth: 1
   :titlesonly:
 
+  social/index.rst
   social/admin/index.rst
 
 

@@ -1,3 +1,7 @@
+.. index:: Permission Mappings
+
+.. _permission-mappings:
+
 ===================
 Permission Mappings
 ===================

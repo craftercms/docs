@@ -2,7 +2,11 @@
 
 ..  _content_authors_getting_started:
 
-Content authors creates, edits and submits content for a site.  Crafter CMS's Crafter Studio provides the content author an easy to use authoring and management system for developing and optimizing the content and dynamic site visitor experience for any and all of your Web properties.
+============================
+Getting Started on Authoring
+============================
+
+This section contains an overview on how an Author works in Crafter CMS.  Content authors creates, edits and submits content for a site.  Crafter CMS's Crafter Studio provides the content author an easy to use authoring and management system for developing and optimizing the content and dynamic site visitor experience for any and all of your Web properties.
 
 .. include:: /includes/how-craftercms-works.rst
 
@@ -27,9 +31,10 @@ Content authors creates, edits and submits content for a site.  Crafter CMS's Cr
     * Crafter Engine is multi-tenant so you can deliver as many sites as you need to.
 
 
-^^^^^^^^^^
+----------
 Logging in
-^^^^^^^^^^
+----------
+
 To log in to Crafter Studio:
     * Enter the following in the URL of your browser:  *http://SERVERNAMEHERE/studio*
     * Enter your user name
@@ -43,8 +48,9 @@ To log in to Crafter Studio:
     
 Note: You can change the language used for the Studio UI by selecting a language on the log in screen.
 
-
-**Roles**
+^^^^^
+Roles
+^^^^^
 
 After logging in, depending on what access rights have been setup for your user account, you can have one of two primary roles as a content author:
 
