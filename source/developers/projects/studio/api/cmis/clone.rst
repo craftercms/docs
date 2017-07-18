@@ -1,8 +1,8 @@
-.. _crafter-studio-api-cmis-list:
+.. _crafter-studio-api-cmis-clone:
 
-===========================
-List CMIS Files and Folders
-===========================
+=============================
+Clone a CMIS File into Studio
+=============================
 
 Clone a file from a CMIS repository to Studio provided paths.
 
