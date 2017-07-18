@@ -300,11 +300,12 @@ Add Facebook Login
 Add Single Sign-On
 ==================
 
-Crafter Profile's Security Provider is able to integrate with SAML 2.0, by means of the Apache mod_auth_mellon
+Crafter Profile's Security Provider is able to integrate with SAML 2.0 providers and similar SSO solutions. Crafter Profile Security
+Provider will look for configurable HTTP headers and will use those to authenticate the user. An example is Apache mod_auth_mellon
 (https://github.com/UNINETT/mod_auth_mellon). By using mod_auth_mellon, the user can be authenticated against a SAML 2.0 IdP, and
 headers with the user's information can be sent to the Security Provider enabled applications, like Crafter Engine and Crafter Social,
-so that the user can be automatically signed in with Crafter Profile. Use the following to install mod_auth_mellon in Ubuntu and
-configure it so the correct headers are sent to the applications:
+so that the user can be automatically signed in with Crafter Profile. The example steps below demonstrate the install of mod_auth_mellon
+on Ubuntu and how to configure it so the correct headers are sent to the applications:
 
 #.  Install Apache 2 (``apt-get install apache2 and apt-get install apache2-dev``).
 #.  Install openssl (``apt-get install openssl``).
