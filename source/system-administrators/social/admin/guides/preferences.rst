@@ -16,6 +16,7 @@ left sidebar.
 
 .. figure:: /_static/images/social-admin/preferences.png
   :align: center
+  :alt: Crafter Social Admin Console Preferences
 
 ^^^^^^^^^^^^^^^
 Email Templates
@@ -41,6 +42,7 @@ All email templates need to be valid HTML pages and can use any feature from Fre
 
 .. code-block:: guess
   :caption: Example Email Template
+  :linenos:
 
   <html>
     <head>
@@ -99,16 +101,19 @@ This section includes the basic configuration that applies to all Social Context
 | Encoding           || Encoding used for sending the email body                     |
 +--------------------+---------------------------------------------------------------+
 
+.. _social-admin-tenant-preferences:
+
 ------------------
 Tenant Preferences
 ------------------
 
 These preferences allow you change the behavior of Crafter Social depending on the Social Context,
-for example one context could send daily notifications and other send them weekly instead. You can
+for example one context could send daily notifications and others send them weekly instead. You can
 access them by clicking the ``Tenant Preferences`` link in the left sidebar.
 
 .. figure:: /_static/images/social-admin/preferences-tenant.png
   :align: center
+  :alt: Crafter Social Admin tenant preferences
 
 ^^^^^^^^^^
 Properties
@@ -154,4 +159,5 @@ custom properties will be ignored.
 .. figure:: /_static/images/social-admin/preferences-tenant-new.png
   :align: center
   :width: 75%
+  :alt: Crafter Social new tenant preferences
 

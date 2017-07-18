@@ -4,8 +4,8 @@
 Access Tokens Management
 ========================
 
-All applications need an Access Token in order to make requests for the :ref:`crafter-profile-api`,
-by default three tokens will be created:
+All applications need an Access Token in order to make requests for the :ref:`crafter-profile-api`.
+By default three tokens will be created:
 
 +----------------+-----------------------------------------------------------------------------+
 | Application    | Description                                                                 |

@@ -14,6 +14,7 @@ To view all existing Security Actions you can click the ``Security Actions`` lin
 
 .. figure:: /_static/images/social-admin/security.png
   :align: center
+  :alt: Crafter Social security
 
 All actions starting with the prefix ``system.`` are used by Crafter Social and are not available
 for updates.

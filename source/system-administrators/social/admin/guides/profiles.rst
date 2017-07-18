@@ -1,4 +1,4 @@
-.. _social_admin-profiles:
+.. _social-admin-profiles:
 
 ===================
 Profiles Management
@@ -12,6 +12,7 @@ To find a specific profile you can click the ``Search Profiles`` link in the lef
 
 .. figure:: /_static/images/social-admin/profiles.png
   :align: center
+  :alt: Crafter Social search profiles
 
 In the search page you need to select the right tenant from the dropdown, indicate the username
 of the profile and then press the search button.
@@ -27,6 +28,7 @@ From the search page you can click the ID of the profile to see the details:
 
 .. figure:: /_static/images/social-admin/profile.png
   :align: center
+  :alt: Crafter Social profile
 
 To change the roles you need to select the right Context from the dropdown and indicate *all* the
 roles you want to set for the user.

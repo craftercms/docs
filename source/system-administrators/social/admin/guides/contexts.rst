@@ -14,6 +14,7 @@ To list all existing Social Contexts you can click the ``Contexts`` link in the 
 
 .. figure:: /_static/images/social-admin/contexts.png
   :align: center
+  :alt: Crafter Social contexts
 
 ------------------
 Create New Context
@@ -24,6 +25,7 @@ button.
 
 .. figure:: /_static/images/social-admin/contexts-new.png
   :align: center
+  :alt: Crafter Social new contexts
 
 An ID will be generated automatically and this is the value that need to be included in the requests
 by the Crafter Social clients.

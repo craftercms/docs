@@ -1,6 +1,10 @@
-.. index:: Navigation Studio
+.. index:: Navigating Studio
 
 ..  _content_authors_navigating_studio:
+
+================================
+Navigating Around Crafter Studio
+================================
 
 ^^^^^^^^
 My Sites

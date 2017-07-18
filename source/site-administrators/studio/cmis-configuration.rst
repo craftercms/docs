@@ -1,4 +1,4 @@
-.. cmis-configuration:
+.. _cmis-configuration:
 
 ==================
 CMIS Configuration

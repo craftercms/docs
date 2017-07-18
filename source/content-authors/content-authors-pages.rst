@@ -2,6 +2,13 @@
 
 ..  _content_authors_pages:
 
+==================
+Working with Pages
+==================
+
+This section describes how content authors can create and use pages to manage content.
+Templates are used for page layouts in Crafter CMS.  A developer usually creates the templates that authors can then use to manage content.
+
 -------------
 Adding a Page
 -------------

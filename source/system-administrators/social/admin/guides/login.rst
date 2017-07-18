@@ -8,6 +8,7 @@ Once the WAR file has been deployed, you can access the application in the follo
 .. figure:: /_static/images/social-admin/login.png
   :align: center
   :width: 50%
+  :alt: Crafter Social Admin Console Login
 
   Crafter Social Admin Console login dialog.
 
