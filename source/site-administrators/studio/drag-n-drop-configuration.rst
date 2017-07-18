@@ -1,5 +1,7 @@
 .. highlight:: xml
 
+.. _drag-and-drop-configuration:
+
 ===========================
 Drag and Drop Configuration
 ===========================
@@ -13,6 +15,7 @@ To find this configuration xml through studio follow the next instructions:
 #. Select **Preview Components Configuration**.
 
 .. image:: /_static/images/site-admin/dnd-configuration.png
+   :alt: Drag and Drop Configuration
 
 ------
 Sample

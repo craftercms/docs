@@ -1,5 +1,7 @@
 .. highlight:: xml
 
+.. _site-config-configuration:
+
 =========================
 Site Config Configuration
 =========================

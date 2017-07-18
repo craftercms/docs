@@ -1,3 +1,7 @@
+.. index:: Role Mappings
+
+.. _role-mappings:
+
 =============
 Role Mappings
 =============

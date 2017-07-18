@@ -48,4 +48,4 @@ Module Specific Configuration
 .. toctree::
 	:maxdepth: 1
 
-	../studio-configuration.rst
+	studio-configuration.rst

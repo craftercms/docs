@@ -2,15 +2,18 @@
 
 ..  _quick_start_guide:
 
------------------------------------
-Installing and Starting Crafter CMS
------------------------------------
+=================
+Quick Start Guide
+=================
 
-Here are the steps to start using Crafter CMS for development or evaluation
+This section describes how to quickly install Crafter CMS and start crafting your experiences.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Here are the steps to start using Crafter CMS for development or evaluation:
+
+--------------------------------------------
 Installing Crafter CMS from the zip Download
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------
+
 To install Crafter CMS using the zip download:
 
     * Download the Crafter CMS install zip file from http://downloads.craftercms.org/craftercms/community/3.0.0pre2/.
@@ -22,9 +25,10 @@ To install Crafter CMS using the zip download:
 
 .. _start-crafter-cms-server-startup-script:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------
 Starting Crafter CMS Using the Startup Script
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------
+
     #. **Start the Crafter CMS Server using the startup script**
     
         To start Crafter CMS Server:
@@ -79,9 +83,9 @@ Starting Crafter CMS Using the Startup Script
 
 .. _installing-craftercms-from-gradle:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------------------------------
 Installing Crafter CMS From Archive Built By the Gradle Environment Builder
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------------------------------
 
 To create the archives(``*.zip`` or ``*.tar.gz``) for installing Crafter CMS, the following must be installed in your system:
 

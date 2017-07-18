@@ -27,16 +27,16 @@ Existing Installation
 If you want to add Crafter Profile Admin Console to an existing installation you only need to
 build or download the WAR file making sure it matches the version of all other components.
 
-To deploy the application you only need to move the WAR file into ``INSTALL_DIR/apache-tomcat/webapps``
+To deploy the application you only need to move the WAR file into ``$CRAFTER_HOME/bin/apache-tomcat/webapps``
 
 -------------------
 Configuration Guide
 -------------------
 
-Similar to other CrafterCMS components you can configure the Profile Admin Console using a simple
+Similar to other Crafter CMS components you can configure the Profile Admin Console using a simple
 properties file placed in the following location:
 
-  ``INSTALL_DIR/apache-tomcat/shared/classes/crafter/profile/management/extension/server-config.properties``
+  ``$CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/profile/management/extension/server-config.properties``
 
 You can change any of the default configuration, some of the more relevant properties are:
 
