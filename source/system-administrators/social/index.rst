@@ -66,7 +66,7 @@ Properties prefix: ``crafter.profile.rest.client.``
 +----------------+----------------------------------------+------------------------------------+
 | Property       | Default Value                          | Description                        |
 +================+========================================+====================================+
-| url.base       | \http://localhost:8080/crafter-profile || URL where Crafter Profile is      |
+| url.base       | \http://localhost:8080/profile         || URL where Crafter Profile is      |
 |                |                                        || deployed                          |
 +----------------+----------------------------------------+------------------------------------+
 | accessToken.id | 2ba3ac10-c43e-11e3-9c1a-0800200c9a66   || Access Token included in all      |
@@ -102,8 +102,9 @@ Properties prefix: ``crafter.social.ugc.``
 | invalidQueryKeys || ``contextId:|$where:``   || MongoDB keywords not allowed in the            |
 |                  ||                          || user provided queries                          |
 +------------------+---------------------------+-------------------------------------------------+
-| arraySortFields  || flags,votesDown,votesUp, || MongoDB fields allowd to sort query            |
-|                  || attachments,ancestors    || results                                        |
+| arraySortFields  || `flags`, `votesDown`,    || MongoDB fields allowd to sort query            |
+|                  || `votesUp`, `attachments`,|| results                                        |
+|                  || `ancestors`              ||                                                |
 +------------------+---------------------------+-------------------------------------------------+
 | virusScanner     || [#]_                     || Class implementing the ``VirusScanner``        |
 |                  ||                          || interface, see :ref:`crafter-social-av`        |
@@ -120,7 +121,7 @@ Properties prefix: ``studio.social.notification.``
 +-----------------+-------------------+----------------------------------------------------------+
 | Property        | Default Value     | Description                                              |
 +=================+===================+==========================================================+
-| dailyCron       | ``0 0 0 * * ?``   || Cron Expressions used to control how often each type    |
+| dailyCron       | ``0 0 0 * * ?``   || CRON Expressions used to control how often each type    |
 +-----------------+-------------------+| of notification is sent.                                |
 | weeklyCron      | ``0 0 0 ? * SUN`` |                                                          |
 +-----------------+-------------------+                                                          |

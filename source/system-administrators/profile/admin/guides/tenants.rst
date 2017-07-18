@@ -51,8 +51,12 @@ Fields
 |                       |             |         || verification process is completed             |
 +-----------------------+-------------+---------+------------------------------------------------+
 | Enable Single Sign-On |             | Boolean || If set to `true` Crafter Profile will enable  |
-|                       |             |         || authentication using Apache                   |
-|                       |             |         || mod_auth_mellon                               |
+|                       |             |         || SSO security by looking for two properties in |
+|                       |             |         || HTTP headers: MELLON_username and MELLON_email|
+|                       |             |         || these names can be changed by changing Crafter|
+|                       |             |         || Profile security provider configuration. SSO  |
+|                       |             |         || is typically implemented using SAML2 and      |
+|                       |             |         || Apache mod_auth_mellon.                       |
 +-----------------------+-------------+---------+------------------------------------------------+
 | Available Roles       |             | List    || List of roles that profiles can have          |
 +-----------------------+-------------+---------+------------------------------------------------+
@@ -92,7 +96,7 @@ Crafter Profile Admin Console uses the following roles:
 - PROFILE_TENANT_ADMIN
 - PROFILE_ADMIN
 
-If you are going to have multiple users using the Admin Console you can change the roles to
+If you are going to have multiple users using the Profile Admin Console you can change the roles to
 make sure only the appropriate users are able to change sensitive content.
 
 ^^^^^^^^^^^^^^^^^^^^^

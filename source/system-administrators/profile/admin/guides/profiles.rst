@@ -66,7 +66,7 @@ Crafter Profile Admin Console will display an additional field for each one of t
 definition in the selected tenant. The input will change depending on the attribute type.
 
 .. NOTE::
-  Custom Fields are always optional, if no default value is set in the tenant they will remain empty
+  Custom Fields are always optional, if no default value is set in the tenant they will remain empty.
   
   Some attribute types such as ``Complex`` can only be changed using the API, those fields will
   appear to be disabled in the Admin Console.
