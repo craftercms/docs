@@ -10,12 +10,12 @@ By default three tokens will be created:
 +----------------+-----------------------------------------------------------------------------+
 | Application    | Description                                                                 |
 +================+=============================================================================+
-| adminconsole   || Used by the Admin Console web application for all operations on tenants    |
-|                || and profiles.                                                              |
+| profile-admin  || Used by the Profile Admin Console web application for all operations       |
+|                || on tenants and profiles.                                                   |
 +----------------+-----------------------------------------------------------------------------+
-| crafterengine  || Used by Crafter Engine for authenticating and getting profiles.            |
+| engine         || Used by Crafter Engine for authenticating and getting profiles.            |
 +----------------+-----------------------------------------------------------------------------+
-| craftersocial  || Used by Crafter Social for getting profiles.                               |
+| social         || Used by Crafter Social for getting profiles.                               |
 +----------------+-----------------------------------------------------------------------------+
 
 --------
@@ -94,4 +94,3 @@ An application using an Access Token with these permissions will be able to:
   - Query data from both tenants ``site1`` and ``site2``
   - Update only tenant ``site2``
   - Query, create, update and delete profiles for both ``site1`` and ``site2``
-
