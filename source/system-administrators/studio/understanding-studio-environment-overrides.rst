@@ -1,6 +1,6 @@
-============================================
-Understanding Studio's Environment Overrides
-============================================
+==============================================
+Understanding Studio's Configuration Overrides
+==============================================
 
 It is very common for organizations to have several environments including:
 

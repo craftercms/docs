@@ -60,7 +60,7 @@ Response
     "replyTo": "social@local.loc",
     "from": "social@local.loc",
     "priority": 5.0,
-    "subject": "Latest change on you subscribe threads for Social"
+    "subject": "Latest change on your subscribed threads for Social"
   }
 
 ---------

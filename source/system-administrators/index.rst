@@ -34,7 +34,7 @@ System Requirements
 To Install a Development Environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To install a development environment, see :ref:`quick_start_guide`.
+To install a development environment, see the :ref:`quick_start_guide`.
 
 ----------
 Activities

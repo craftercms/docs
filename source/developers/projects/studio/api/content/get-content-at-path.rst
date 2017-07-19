@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-studio-api-content-get-content-at-path:
 
 ===================
@@ -52,7 +50,7 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: stream
+.. code-block:: guess
 
     content
 
