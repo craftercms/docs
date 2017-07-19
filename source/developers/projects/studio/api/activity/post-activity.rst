@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-studio-api-activity-post-activity:
 
 =============
@@ -57,7 +55,7 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: json
+.. code-block:: guess
 
   No response body
 

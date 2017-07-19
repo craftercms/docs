@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-studio-api-content-change-content-type:
 
 ===============
@@ -54,7 +52,7 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: json
+.. code-block:: guess
 
     N/A
 

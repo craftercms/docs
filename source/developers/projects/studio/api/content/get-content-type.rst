@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-studio-api-content-get-content-type:
 
 ================
@@ -53,6 +51,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+    :linenos:
 
     {
         "name":"/page/category-landing",
