@@ -57,8 +57,8 @@ Response
     "username": "",
     "password": "",
     "tls": false,
-    "replyTo": "social@local.loc",
-    "from": "social@local.loc",
+    "replyTo": "social@example.com",
+    "from": "social@example.com",
     "priority": 5.0,
     "subject": "Latest change on your subscribed threads for Social"
   }

@@ -48,7 +48,7 @@ Request
 
 .. code-block:: guess
 
-  custom.property=true
+  customProperty=true
 
 ^^^^^^^^
 Response
