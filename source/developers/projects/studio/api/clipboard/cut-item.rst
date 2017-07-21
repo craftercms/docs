@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-studio-api-clipboard-cut-item:
 
 ========
@@ -44,6 +42,7 @@ Request
     POST .../api/1/services/api/1/clipboard/cut-item.json?site=mysite
 
 .. code-block:: json
+    :linenos:
 
     {
       "item":

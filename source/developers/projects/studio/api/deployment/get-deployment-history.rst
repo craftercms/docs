@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-studio-api-deployment-get-deployment-history:
 
 ======================
@@ -57,6 +55,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+    :linenos:
 
     {
         "total":1,

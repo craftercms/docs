@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-studio-api-deployment-get-available-publishing-channels:
 
 =================================
@@ -52,6 +50,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+    :linenos:
 
     {
         "availableUpdateStatusChannels":[ ],
