@@ -77,7 +77,7 @@ process is completed.
   :align: center
   :alt: Crafter Profile admin verification mail
 
-  Example verification mail using ``http://www.test.com`` as the `verificationUrl`
+  Example verification mail using ``http://www.example.com`` as the `verificationUrl`
 
 .. NOTE::
   You can change the email sender, subject and body template in the Crafter Profile configuration.

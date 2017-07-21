@@ -90,7 +90,7 @@ Normally, to add registration or sign up you just need to:
                 model.profile = profile
                 model.verificationUrl = verificationUrl
 
-            mailHelper.sendEmail("noreply@craftersoftware.com", profile.email, "Verify Account", "/templates/mail/verify-account.ftl", model)
+            mailHelper.sendEmail("noreply@example.com", profile.email, "Verify Account", "/templates/mail/verify-account.ftl", model)
         }
 
         def email = params.email

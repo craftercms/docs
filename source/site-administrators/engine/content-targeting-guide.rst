@@ -5,9 +5,9 @@ Content Targeting Guide
 Crafter Engine provides the ability to render content adapted to specific users, depending on different aspects like geographical location,
 language, preferences, etc. Content that is targeted to users is known in Crafter CMS as targeted content.
 
----------------------------------
-Languaged-Based Localized Content
----------------------------------
+--------------------------------
+Language-Based Localized Content
+--------------------------------
 
 The most common form of targeted content is language-based localization, which is enabled just by specifying some configuration in the
 Config > site.xml:
