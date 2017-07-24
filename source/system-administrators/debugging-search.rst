@@ -93,7 +93,7 @@ Configure Crafter Deployer: Deployer Port & Crafter Search URL
 Configure Crafter Studio: Crafter Deployer URL
 ----------------------------------------------
 
-``TOMCAT/shared/classes/crafter/studio/extension/studio-config-override.yaml``
+``$CATALINA_HOME/shared/classes/crafter/studio/extension/studio-config-override.yaml``
 
 .. code-block:: yaml
 
@@ -107,7 +107,7 @@ Configure Crafter Studio: Crafter Deployer URL
 Configure Crafter Engine: Crafter Search URL
 --------------------------------------------
 
-``TOMCAT/shared/classes/crafter/engine/extension/server-config.properties``
+``$CATALINA_HOME/shared/classes/crafter/engine/extension/server-config.properties``
 
 .. code-block:: guess
 
@@ -117,7 +117,7 @@ Configure Crafter Engine: Crafter Search URL
 Configure Crafter Search: Solr URL
 ----------------------------------
 
-``TOMCAT/shared/classes/crafter/search/extension/server-config.properties``
+``$CATALINA_HOME/shared/classes/crafter/search/extension/server-config.properties``
 
 .. code-block:: guess
 
