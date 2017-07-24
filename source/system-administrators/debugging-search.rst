@@ -18,7 +18,7 @@ Places Search Indexing Can Get Hung Up
 
 	* Crafter Studio will notify the Deployer when content has changed.
 	* Ensure that the Deployer is pulling the changes.
-	* If the deployment agent is not receiving any changes, check network connectivity and ports.
+	* If the Deployer is not receiving any changes, check network connectivity and ports.
 
 * Communication Between Crafter Deployer & Crafter Search
 
