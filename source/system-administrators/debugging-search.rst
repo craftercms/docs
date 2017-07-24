@@ -15,18 +15,25 @@ Places Search Indexing Can Get Hung Up
 --------------------------------------
 
 * Communication Between Crafter Studio & Crafter Deployer
-	* Crafter Studio will notify the deployment agent when content is changed.
-	* Ensure that the deployment agent is receiving the changes.
+
+	* Crafter Studio will notify the Deployer when content has changed.
+	* Ensure that the Deployer is pulling the changes.
 	* If the deployment agent is not receiving any changes, check network connectivity and ports.
+
 * Communication Between Crafter Deployer & Crafter Search
-	* The deployment agent has a target with a Search Processor.
+
+	* The Deployer has a target with a Search Processor.
 	* Ensure that the processor is configured to the proper HOST, PORT for Crafter Search.
 	* Ensure that the processor is not failing before sending the changes to Solr.
+
 * Communication Between Crafter Search & Solr
+
 	* Crafter Search is configured to talk to a Solr index.
 	* Ensure that Crafter Search is configured to the proper HOST, PORT for Solr.
 	* Ensure that the Solr index is configured properly.
+
 * Communication Between Crafter Engine & Crafter Search
+
 	* Crafter Engine is configured to talk to Crafter Search.
 	* Ensure that Crafter Engine is configured to the proper HOST, PORT for Crafter Search.
 
@@ -42,7 +49,8 @@ following log files for each one of the components:
 +===================+=================================================+
 || Crafter Studio   || ``CRAFTER/logs/tomcat/catalina.out``           |
 +-------------------+-------------------------------------------------+
-|| Crafter Deployer || ``CRAFTER/logs/deployer/deployer-general.log`` |
+|| Crafter Deployer || ``CRAFTER/logs/deployer/crafter-deployer.out`` |
+||                  || ``CRAFTER/logs/deployer/deployer-general.log`` |
 ||                  || ``CRAFTER/logs/deployer/{target}-{env}.log``   |
 +-------------------+-------------------------------------------------+
 || Crafter Search   || ``CRAFTER/logs/tomcat/catalina.out``           |
@@ -62,7 +70,6 @@ you should use the Solr Admin Console to debug the query used by Crafter Engine 
 	``http://SOLR_HOST:SOLR_PORT/solr/#/SITE_NAME/query``
 
 More information about Solr Admin Console & query syntax can be found `here <http://lucene.apache.org/solr/6_6_0/quickstart.html#searching>`_.
-
 
 --------------------------------------------------------------
 Configure Crafter Deployer: Deployer Port & Crafter Search URL
@@ -100,7 +107,7 @@ Configure Crafter Studio: Crafter Deployer URL
 Configure Crafter Engine: Crafter Search URL
 --------------------------------------------
 
-``TOMCAT/shared/classes/crafter/engine/extension/server-config.properties`` 
+``TOMCAT/shared/classes/crafter/engine/extension/server-config.properties``
 
 .. code-block:: guess
 
