@@ -1,5 +1,5 @@
 .. _reindex-search:
-.. index:: Search; Solr; Reindex; Crafter Search; Dev Ops; System Administrators; 
+.. index:: Search; Solr; Reindex; Crafter Search; Dev Ops; System Administrators;
 
 =========================================
 Reindexing Content for Search and Queries
@@ -14,12 +14,28 @@ Reindexing the site content can be done using the reprocess feature in Crafter D
 ------------------------------------------------
 Step 1: Delete any existing content in the index
 ------------------------------------------------
+
+There are two ways to clear the index of a site:
+
+^^^^^^^^^^^^^^^^^^^^^^^
+Clear index through API
+^^^^^^^^^^^^^^^^^^^^^^^
+
 .. code-block:: xml
 
-    curl "http://{hostname}:{port}/solr/{siteId}/update/?commit=true" -H "Content-Type: text/xml" -d "<delete><query>crafterSite:{siteId}</query></delete>"
+    curl "http://{hostname}:{port}/solr/{siteId}/update/?commit=true" -H "Content-Type: text/xml" -d "<delete><query>*:*</query></delete>"
 
 .. WARNING::
   This action will delete all content matching the query, review carefully the Solr index & the site id before executing the command.
+
+^^^^^^^^^^^^^^^^^^
+Delete index files
+^^^^^^^^^^^^^^^^^^^
+
+#. Make sure Tomcat and Solr have been stopped.
+#. Inside your Crafter installation, go to ``data/indexes/{siteId}``.
+#. Delete the ``data`` folder under there.
+#. Restart Tomcat/Solr
 
 -------------------------------
 Step 2: Invoke the reprocessing
@@ -135,4 +151,3 @@ Now that your process is complete you can clean up some of the artifacts created
 
 * The re-index core if swapped out
 * The new deployment context
-
