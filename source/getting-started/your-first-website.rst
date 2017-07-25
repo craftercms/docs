@@ -36,7 +36,7 @@ Click on **Create** and wait for the system to create your site based on the blu
     :alt: Your First Website - Creating a Site Spinner Dialog
 
     
-When it's done you will be taken to the Home Page of your site:
+When it's done you will be taken to the Home Page of your site: (need to update image below)
 
 .. image:: /_static/images/first-site/home-page.png
     :width: 95 %
@@ -53,7 +53,7 @@ Your site is setup, we can now start adding/editing content!  To edit content yo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Adding a new article page to the site
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-We'll be adding a new article to the site.  To add a new article (or a new page), navigate to the level and location within the site navigation tree in the **Sidebar** where we want to create the new page.  In this case, we are adding an article under **articles** -> **2017** -> **3**.  Right click, then select **New Content**
+We'll be adding a new article to the site.  To add a new article (or a new page), navigate to the level and location within the site navigation tree in the **Sidebar** where we want to create the new page.  In this case, we are adding an article under **articles** -> **2017** -> **3**.  Right click, then select **New Content**  (need to update image below)
 
 .. image:: /_static/images/first-site/first-site-new-content.png
     :width: 80 %

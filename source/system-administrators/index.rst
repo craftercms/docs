@@ -61,7 +61,7 @@ Crafter Studio
 
    studio/configure-ldap.rst
    studio/changing-the-studio-logo.rst
-   studio/understanding-studio-environment-overrides.rst
+   studio/studio-configuration-overrides.rst
 
 --------------
 Crafter Engine
