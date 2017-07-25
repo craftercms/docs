@@ -4,32 +4,24 @@
 Rebuilding Studio Database
 ==========================
 
-.. todo:: Article needs to be updated for 3.0
+To rebuild the Studio database of a site, preview the site, then open the **Sidebar**, and click on **Site Config**.  In the **Site Config**, click on **Sync From Repository**
 
-------------------------------------------
-Step 1: Configure Rebuild Database Service
-------------------------------------------
+.. image:: /_static/images/system-admin/sys-ad-sync-from-repo.png
+    :width: 50 %
+    :align: center
+    :alt: System Administration - Sync From Repository
 
-Update Studio configuration ``TOMCAT/shared/classes/crafter/cstudio/extension/server-config.properties`` to add/modify following properties
+A notification will appear that synchronization with the repository has been initiated.
 
-.. code-block:: properties
-    :caption: TOMCAT/shared/classes/crafter/cstudio/extension/server-config.properties
+.. image:: /_static/images/system-admin/sys-add-sync-from-repo-notification.png
+    :width: 60 %
+    :align: center
+    :alt: System Administration - Sync From Repository Notification
 
-    # Preview content root path
-    crafter.repository.previewRootPath=./crafter/data/repo
-    # Rebuild Repository Metadata job batch size
-    crafter.repository.rebuildMetadata.batchSize=100
+The time it takes to finish synchronizing from the repository depends on how much data needs to be synced.  To find out when the system has finished synchronizing from the repository, tail the catalina log and look for the message that says: ``Done syncing database with repository for site:{site_name}``.  Below is an example message in the log indicating it is done syncing from the repository::
 
----------------------------------------
-Step 2: Invoke Rebuild Database Service
----------------------------------------
+    [INFO] 2017-07-25 00:25:52,274 [studioTaskExecutor-1] [site.SiteServiceImpl] | Syncing database with repository for site: myawesomesite fromCommitId = 6c0d16efb227c5652ec46693d2b53b97aa292147
+    [INFO] 2017-07-25 00:25:52,283 [studioTaskExecutor-1] [site.SiteServiceImpl] | Done syncing operations with a result of: true
+    [INFO] 2017-07-25 00:25:52,283 [studioTaskExecutor-1] [site.SiteServiceImpl] | Syncing database lastCommitId for site: myawesomesite
+    [INFO] 2017-07-25 00:25:52,315 [studioTaskExecutor-1] [site.SiteServiceImpl] | Done syncing database with repository for site: myawesomesite fromCommitId = 6c0d16efb227c5652ec46693d2b53b97aa292147 with a final result of: true
 
-.. code-block:: sh
-
-    curl http://hostname:port/studio/api/1/services/api/1/site/rebuild-repo-metadata.json?site=SITE_TO_REBUILD_DB
-
------------------------------------------
-Step 3: Wait for Rebuild Database Service
------------------------------------------
-
-Rebuild Database service is executed as background job that processes whole content divided in batches. Batch size is configured in Step 1. If job is interrupted before rebuild is completed (server restart or shutdown), when service is invoked again, it will continue with the batch that was interrupted.

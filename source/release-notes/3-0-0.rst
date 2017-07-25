@@ -14,7 +14,7 @@ New Features
 * Git-based Deployment Model
 	* High performance, reliable global and disconnected deployment
 * New User Targeting System
-	* New UI for testing sophisticated multi-factor personalziation scenarios
+	* New UI for testing sophisticated multi-factor personalization scenarios
 * CMIS Integration to CMIS-capable ECMs
 	* Pick and publish content and assets from CMIS compliant repositories
 * First Class Support for Headless CMS Projects
@@ -40,14 +40,14 @@ Enhancements
 	* Quickly and easily build, deploy, bundle, start and stop specific versions and components of Crafter CMS
 * Publishing System Status Live Updates
 	* Authoring UI provides improved visibility in to the publishing process
-Better Documentation
+* Better Documentation
 	* New documentation system
 	* Improved version specific documentation
-Fresh UI
+* Fresh UI
 	* Cleaner more descriptive UI
-Faster Studio
+* Faster Studio
 	* Improved UI performance and responsiveness
 
 and lots of bug fixes :)
 
-For a full list of tickets, please visit: `GitHub 3.0.0 Milestore <https://github.com/craftercms/craftercms/milestone/3>`_
+For a full list of tickets, please visit: `GitHub 3.0.0 Milestone <https://github.com/craftercms/craftercms/milestone/3>`_
