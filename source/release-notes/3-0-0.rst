@@ -2,12 +2,52 @@
 Crafter CMS 3.0.0
 -----------------
 
-^^^^^^^^^^
-Highlights
-^^^^^^^^^^
-.. todo:: Describe new features, etc here
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
 
-^^^^^^^^^^
-Bugs Fixed
-^^^^^^^^^^
-.. todo:: put link to git for bugs fixed
+* Git-based Content Repository
+	* First-class content versioning mechanics
+	* Multi object/file version and compare
+	* Easy integration with existing developer workflow/DevOps
+	* Easily move content backwards and code forwards
+* Git-based Deployment Model
+	* High performance, reliable global and disconnected deployment
+* New User Targeting System
+	* New UI for testing sophisticated multi-factor personalization scenarios
+* CMIS Integration to CMIS-capable ECMs
+	* Pick and publish content and assets from CMIS compliant repositories
+* First Class Support for Headless CMS Projects
+	* Quickly start headless / Content as API projects via headless CMS blueprints
+	* Improved resource URL parameterization
+	* Rapid RESTful API development with Groovy within Crafter Studio
+
+^^^^^^^^^^^^
+Enhancements
+^^^^^^^^^^^^
+
+* Search
+	* Updated to Solr 6.4
+	* Switched to single core per project
+	* Automatic provisioning of Solr core per tenant in authoring
+* Out of the Box Blueprints	
+	* Four new out of the box blueprints:
+		* Editorial website: highlights dynamic and personalized content
+		* Headless blog:  Demonstrates headless CMS capability with a simple blog
+		* Headless product catalog: Demonstrates headless CMS capability with a simple product catalog
+		* Empty: Quickly start a new project with no pre-defined assumptions
+* Gradle-based Build and Deploy System
+	* Quickly and easily build, deploy, bundle, start and stop specific versions and components of Crafter CMS
+* Publishing System Status Live Updates
+	* Authoring UI provides improved visibility in to the publishing process
+* Better Documentation
+	* New documentation system
+	* Improved version specific documentation
+* Fresh UI
+	* Cleaner more descriptive UI
+* Faster Studio
+	* Improved UI performance and responsiveness
+
+and lots of bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 3.0.0 Milestone <https://github.com/craftercms/craftercms/milestone/3>`_
