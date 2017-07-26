@@ -45,7 +45,7 @@ Activities
    :titlesonly:
 
    backup-and-recovery.rst
-   rebuilding-studio-database.rst
+   sync-studio-database-with-repo.rst
    debugging-search.rst
    reindexing-content.rst
    upgrading-to-crafter-cms-3-0.rst
@@ -116,6 +116,3 @@ Crafter Social
 
   social/index.rst
   social/admin/index.rst
-
-
-
