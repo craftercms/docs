@@ -1,10 +1,11 @@
-.. _rebuilding_studio_database:
+.. _sync_studio_database_with_repo:
 
-==========================
-Rebuilding Studio Database
-==========================
+===========================================
+Synchronize Studio Database With Repository
+===========================================
 
-To rebuild the Studio database of a site, preview the site, then open the **Sidebar**, and click on **Site Config**.  In the **Site Config**, click on **Sync From Repository**
+Sometimes the Git repository and the Studio database can become out of sync, for example, if you import content into the repository from
+another environment. To fix this, open the **Sidebar**, and click on **Site Config**. In the **Site Config**, click on **Sync From Repository**.
 
 .. image:: /_static/images/system-admin/sys-ad-sync-from-repo.png
     :width: 50 %
@@ -24,4 +25,3 @@ The time it takes to finish synchronizing from the repository depends on how muc
     [INFO] 2017-07-25 00:25:52,283 [studioTaskExecutor-1] [site.SiteServiceImpl] | Done syncing operations with a result of: true
     [INFO] 2017-07-25 00:25:52,283 [studioTaskExecutor-1] [site.SiteServiceImpl] | Syncing database lastCommitId for site: myawesomesite
     [INFO] 2017-07-25 00:25:52,315 [studioTaskExecutor-1] [site.SiteServiceImpl] | Done syncing database with repository for site: myawesomesite fromCommitId = 6c0d16efb227c5652ec46693d2b53b97aa292147 with a final result of: true
-

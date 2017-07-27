@@ -49,7 +49,7 @@ following log files for each one of the components:
 +===================+=================================================+
 || Crafter Studio   || ``CRAFTER/logs/tomcat/catalina.out``           |
 +-------------------+-------------------------------------------------+
-|| Crafter Deployer || ``CRAFTER/logs/deployer/crafter-deployer.out`` |
+|| Crafter Deployer || ``CRAFTER/logs/deployer/deployer.out``         |
 ||                  || ``CRAFTER/logs/deployer/deployer-general.log`` |
 ||                  || ``CRAFTER/logs/deployer/{target}-{env}.log``   |
 +-------------------+-------------------------------------------------+
