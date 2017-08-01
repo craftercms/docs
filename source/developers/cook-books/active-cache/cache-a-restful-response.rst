@@ -17,75 +17,77 @@ simply ask Active cache for whatever the current response is.
 -------------
 Prerequisites
 -------------
+
 * None
 
+---------------------------------------
+Step 1: Specify the Cache Tick Duration
+---------------------------------------
+
+Crafter's cache implementation uses "ticks" to handle item expiration or refresh of items. A tick is an arbitrary period of time that is
+completely configurable, and by default it's 1 hour. So if an item is refreshed every 5 ticks, that means that it will be refreshed every 5 hours.
+If you need constant refreshment/expiration of items, we recommend each tick to be 1 minute. To change this go to your Crafter installation,
+and then in ``bin/apache-tomcat/shared/classes/crafter/engine/extension`` edit the ``server-config.properties`` an add the following property:
+
+.. code-block:: properties
+
+	# The timespan of a single "tick". 60 000 == 1 minute
+	crafter.core.cache.tick.frequency=60000
+
 --------------------------------
-Step 1: Create a REST Controller
+Step 2: Create a REST Controller
 --------------------------------
+
 * Under Scripts/rest right click and click create controller
     * Enter my-data.get as the controller name
 
-* Add the following code to the controller. 
+* Add the following code to the controller.
 
 .. code-block:: groovy
 
-    import org.craftercms.core.cache.CacheLoader
-    import org.craftercms.core.service.CachingOptions
-    import groovy.json.JsonSlurper
+	import org.craftercms.core.service.CachingOptions
+	import org.craftercms.commons.lang.Callback
+	import org.springframework.http.MediaType
+	import org.springframework.http.RequestEntity
+	import org.springframework.web.client.RestTemplate
+	import java.util.Map
 
-    def cacheService = applicationContext["crafter.cacheService"]
-    def cacheContext = siteContext.getContext()
-    def myCacheKey = "aServiceCallResponse"
-    def loader = new ExternalServiceLoader()
+	def cacheTemplate = applicationContext["crafter.cacheTemplate"]
+	def cacheContext = siteContext.context
+	def cacheKey = "externalData"
+	def cachingOptions = new CachingOptions()
+	def callback = new ExternalServiceCallback()
 
-    def value = ""
-    def responseItem = cacheService.get(cacheContext, myCacheKey)
+	// Sets the refresh frequency to be every 5 ticks, or every 5 minutes
+	cachingOptions.refreshFrequency = 5
 
-    if(responseItem == null) {
-        // item is not cached, get the value
-        def myObject = loader.load()
-        value = myObject
+	// Get the object. If the object has not yet being loaded into the cache the method
+	// will call the callback first and then will put the result in the cache. Refresh
+	// is done in the background.
+	return cacheTemplate.getObject(cacheContext, cachingOptions, callback, cacheKey)
 
-        // cache the value with a loader to periodically refresh its value
-        def cachingOptions = CachingOptions.DEFAULT_CACHING_OPTIONS
-        // def cachingOptions = new CachingOptions()  // define your own options
-        // cachingOptions.setRefreshFrequency(1)      // set the number of ticks for refresh
+	/**
+	 * Define a a callback that will be used to prime and then periodically refresh
+	 * the cache with the latest data from an external service.
+	 */
+	class ExternalServiceCallback implements Callback {
 
-        try {
-            cacheService.put(cacheContext, myCacheKey, myObject, [], cachingOptions, loader)
-        }
-        catch(err) {
-            logger.error("error adding ${myCacheKey} to cache: ${err}")
-        }
-    }
-    else {
-        value = responseItem
-    }
+	  Object execute() {
+	    // The REST client that will make the call
+	    def restTemplate = new RestTemplate()
+	    // The service URL
+	    def url = "http://api.population.io:80/1.0/population/United%20States/today-and-tomorrow"
+	    // Creates the request, specifying that the response should be application/json
+	    def request = RequestEntity.get(url.toURI()).accept(MediaType.APPLICATION_JSON).build()
 
-    return value
+	    // Calls the service
+	    return restTemplate.exchange(request, Map.class).body
+	  }
 
-    /**
-     * Define an active cache loader that will be used to prime and then
-     * periodically refresh the cache with the latest data from an external
-     * service.
-     */
-    class ExternalServiceLoader implements CacheLoader {
-        Object load(Object... parameters) throws Exception {
-            def externalServiceHost = "http://api.population.io/1.0"
-            def externalServiceURL = "/population/United%20States/today-and-tomorrow/"
-
-            // call the service
-            def response = (externalServiceHost+externalServiceURL).toURL().getText()
-
-            // parse service's the JSON response to an object
-            def result = new JsonSlurper().parseText( response )
-
-            return result
-        }
-    }
+	}
 
 ---------------------------
-Step 2: Execute the Service
+Step 3: Execute the Service
 ---------------------------
 
 * Open a browser and hit the following URL:

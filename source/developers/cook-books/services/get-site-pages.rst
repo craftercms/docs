@@ -16,7 +16,7 @@ Step 1: Create a REST Controller
 * Under Scripts/rest right click and click create controller
     * Enter get-pages.get as the controller name
 
-* Add the following code to the controller. 
+* Add the following code to the controller.
 
 .. code-block:: groovy
 
@@ -24,7 +24,7 @@ Step 1: Create a REST Controller
     def depthParam = (params.depth != null) params.depth.toInteger() : 0
 
     def path = "/site/website" + pathParam
-    def depth = (depthParam != 0) depthParam : 2
+    def depth = depthParam != 0 ? depthParam : 2
 
     def navItems = [:]
     def siteDir = siteItemService.getSiteTree(path, depth)
