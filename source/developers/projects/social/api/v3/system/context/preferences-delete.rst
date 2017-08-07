@@ -71,7 +71,7 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------+
 || 403    ||                               | .. code-block:: json                                |
 ||        ||                               |                                                     |
-||        ||                               |   { "message" : "Current subject doesnt have        |
+||        ||                               |   { "message" : "Current subject does not have      |
 ||        ||                               |   permission to execute global action ..." }        |
 +---------+--------------------------------+-----------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``        |
