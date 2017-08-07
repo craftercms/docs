@@ -16,7 +16,7 @@ Targeting Using Taxonomies
 Taxonomies allow you to organize your content to make it easy for your site users to browse what
 they want and deliver content appropriate for them. It also allows you to search for content faster.
 
-The :ref:`Content Authors - Personalization<content_authors_targeting>` section of the documentation,
+The :ref:`Content Authors - Targeting<content_authors_targeting>` section of the documentation,
 describes how Content Authors can target content with taxonomies based on segments and how to view
 the site depending on who is browsing. This section describes how to add the segments and segment
 targeting on pages as seen in the Website Editorial blueprint, so that content authors can target
@@ -185,7 +185,7 @@ the groovy script used to get the articles according to the right segment:
 From the script, you can see that it gets the segment currently active, then it searches for
 articles targeted for the right value, which it then returns to the template, ready to be displayed
 when the page renders. To see how the articles displayed differ depending on who the current active
-user is, please see the section: :ref:`content_authors_site_views_diff_personas`
+user is, please see the section: :ref:`content_authors_site_views_diff_segments`
 
 
 --------------------------
