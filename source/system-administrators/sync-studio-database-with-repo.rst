@@ -8,7 +8,7 @@ Sometimes the Git repository and the Studio database can become out of sync, for
 another environment. To fix this, open the **Sidebar**, and click on **Site Config**. In the **Site Config**, click on **Sync From Repository**.
 
 .. image:: /_static/images/system-admin/sys-ad-sync-from-repo.png
-    :width: 50 %
+    :width: 45 %
     :align: center
     :alt: System Administration - Sync From Repository
 

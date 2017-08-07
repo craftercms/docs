@@ -8,9 +8,9 @@ Content Monitoring
 What is Content Monitoring?
 ---------------------------
 
-Content Monitoring is a feature that allows you to configure watches and notifications on your site,
-this will provide an easy way to detect unwanted or outdated content.
-Crafter Studio will run the process that performs monitoring each 5 minutes and send notifications
+Content Monitoring is a feature that allows you to configure watches and notifications on your site.
+This will provide an easy way to detect unwanted or outdated content.
+Crafter Studio will run the process that performs monitoring every 5 minutes and send notifications
 indicating the items detected by the content monitors.
 Content monitors are managed independently for each site and are highly customizable.
 
