@@ -4,8 +4,9 @@
 Update Binary Document
 ======================
 
-Adds a binary document to the Solr index, internally Solr will use the Tika library to extract
-the file content and meta-data.
+Adds a binary document to the Solr index. Internally Solr will use the Tika library to extract
+the file content and meta-data. The request should always be a multi-part request, where the
+content is sent as a file part.
 
 --------------------
 Resource Information
@@ -33,6 +34,9 @@ Parameters
 || id                     || String     || |checkmark|  || The document ID                       |
 +-------------------------+-------------+---------------+----------------------------------------+
 || content                || File       || |checkmark|  || Binary file to upload                 |
++-------------------------+-------------+---------------+----------------------------------------+
+|| {param}                || String     ||              || Any additional meta-data that needs   |
+||                        ||            ||              || to be indexed along with the binary.  |
 +-------------------------+-------------+---------------+----------------------------------------+
 
 -------
