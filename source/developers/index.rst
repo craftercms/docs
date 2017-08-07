@@ -40,7 +40,6 @@ Crafter CMS comprises a number of projects, below are the project specific docum
    projects/profile/index
    projects/social/index
    projects/marketplace/index
-   projects/qa/index
 
 ####################
 Cookbook / Tutorials

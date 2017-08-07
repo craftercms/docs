@@ -1,3 +1,7 @@
+:orphan:
+
+.. .. Do not include for now
+
 .. index:: Projects; Crafter Studio Test Suite
 
 .. _crafter-cms-qa-project:

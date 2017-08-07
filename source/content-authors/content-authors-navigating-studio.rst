@@ -18,13 +18,17 @@ From this screen you can navigate to any site's preview or dashboard.
     :alt: Navigating Studio - My Sites Screen
 
 You can get back to the My Sites screen by:    
-    * Selecting *Sites* in the top right corner
-    * Or logging out and logging back in
+    * Selecting  |sitesIcon| *Sites* in the top right corner
+    * Or logging out (sign out) and logging back in (sign in)
 
 .. image:: /_static/images/content-author/get-to-my-sites.png
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Get to My Sites Screen
+
+.. |sitesIcon| image:: /_static/images/content-author/sites-icon.png
+                 :width: 5%
+                 :alt: Sites Icon
 
 My Sites (Admins)
 ^^^^^^^^^^^^^^^^^
@@ -78,7 +82,7 @@ Each dashboard has a header
     :alt: Navigating Studio - Site Dashboard
 
 For the dashboard shown above, here are the widgets listed:
-    * Waiting for Approval
+    * Items Waiting for Approval
         * Shows all items currently in workflow
         * Viewable only to admins and publishers
 
@@ -91,17 +95,17 @@ For the dashboard shown above, here are the widgets listed:
         * Viewable only to admins and publishers
 
     * My Recent Activity
-        * Shows all items recently modified by the curent user
+        * Shows all items recently modified by the current user
         * Viewable by all users
 
-    * Workflow Icon Guide
-        * The Icon guide is simply a legend to help authors and content managers with the iconography on the system. While it can be very complex to sum up the state and nature of content in a glance, Crafter Studio attempts to achieve a high level visual summary via for each object object icons. You will see these icons throughout the application whenever an object is presented to the user. The icon always shows the Current state of the object.
-        * Describes the meaning of workflow icons within Crafter Studio
+    * Icon Guide
+        * The Icon guide is simply a legend to help authors and content managers with the iconography on the system. While it can be very complex to sum up the state and nature of content in a glance, Crafter Studio attempts to achieve a high level visual summary for each object icons. You will see these icons throughout the application whenever an object is presented to the user. The icon always shows the Current state of the object.
+        * Describes the meaning of icons within Crafter Studio
         * Viewable by all users
-        * The Icon guide breaks down icons in to their elements.  You have three basic elements which can be combined to form a specific icon: The object type, The Status Indicator, The Worfkflow Indicator.
+        * The Icon guide breaks down icons in to their elements.  You have two basic elements which can be combined to form a specific icon: the item type and the worfkflow indicator.
 
-            Object Types
-            Object types are high level archetypes of content objects within the system.  These types and the iconography associated with them provide a basic classification of the type of object at a glance.
+            **Item Types**
+            Item types are high level archetypes of content objects within the system.  These types and the iconography associated with them provide a basic classification of the type of object at a glance.
 
             Page:	A page is exactly what you would expect, it's a URI addressable object that represents a web page or resource.
 
@@ -109,21 +113,31 @@ For the dashboard shown above, here are the widgets listed:
 
                 |workflowFloatingPage|: This is a resource that has a URI but should not be shown in dynamically generated navigation elements on the site
 
-            |workflowComponent|: A component is an object that is generally not URI addressable on the website.  Examples are objects like Banners, Touts, Videos, Sidebar content etc. Components are usually re-usable assets that can be assigned and shared across many pages.
+            |workflowComponent|: A component is an object that is generally not URI addressable on the website.  Examples are objects like Banners, Touts, Sidebar content etc. Components are usually re-usable assets that can be assigned and shared across many pages.
 
-            Document:	A Document, like pages are URI addressable objects.  In our experience many sites commonly have some usecase that involves a download of documents or other collateral.  While we could cover this need with the "Page" icon, these type of assets generally have specific workflows and we have found it beneficial to specifically identify them in the system.
+            |workflowTaxonomy|: A taxonomy is an object the same as a component used for classifying items.
 
+            Below is a list of all the other item types available:
 
-            Status Indicators
-            There are a number of states about content that are helpful for authors
+             - |workflowMsWord|
+             - |workflowCss|
+             - |workflowTemplateScript|
+             - |workflowGroovy|
+             - |workflowZip|
+             - |workflowMsExcel|
+             - |workflowMsPowerPoint|
+             - |workflowPdf|
+             - |workflowFont|
+             - |workflowVideo|
+             - |workflowImage|
+             - |workflowOtherFiles|
+
+            **Workflow Indicators**
+            Workflow indicators help authors and content managers understand at a glance what is going on with the content at a high level.  Is it Live?  Is it work in progress?  Is it currently checked out? In some sort of approval process?
 
             |workflowNeverPub|:	You will find a * asterisk at the end of a content object's name if the content has never been pushed live. This helps authors quickly identify which objects that are in progress are already live and which ones are entirely new.
 
             |workflowDisabled|:	You will find that some objects have a strike-through on their name, this means that the object is not deleted but it should not be displayed on the site.  It's essentially a logical delete.  Imagine a scenario where you need to take an object down immediately because of an inaccuracy while you make corrections.  Disable is perfect for this and several other scenarios.
-
-
-            Workflow Indicators
-            Workflow indicators help authors and content managers understand at a glance what is going on with the content at a high level.  Is it Live?  Is it work in progress?  Is it currently checked out? In some sort of approval process?
 
             |workflowInWorkflow|: Any item which carries the blue flag is in some sort of workflow
 
@@ -382,7 +396,57 @@ For these use cases Crafter Studio's site dropdown IA folders support the config
              :width: 23%
              :alt: Workflow Icons - Navigation Page
 
+.. |workflowTaxonomy| image:: /_static/images/content-author/workflow-icon-taxonomy.png
+             :width: 17%
+             :alt: Workflow Icons - Taxonomy
+
+.. |workflowImage| image:: /_static/images/content-author/workflow-icon-image.png
+             :width: 20%
+             :alt: Workflow Icons - Image
+
+.. |workflowVideo| image:: /_static/images/content-author/workflow-icon-video.png
+             :width: 20%
+             :alt: Workflow Icons - Video
+
+.. |workflowFont| image:: /_static/images/content-author/workflow-icon-font.png
+             :width: 16%
+             :alt: Workflow Icons - Font
+
+.. |workflowPdf| image:: /_static/images/content-author/workflow-icon-pdf.png
+             :width: 12%
+             :alt: Workflow Icons - Pdf
+
+.. |workflowMsPowerPoint| image:: /_static/images/content-author/workflow-icon-ms-powerpoint.png
+             :width: 23%
+             :alt: Workflow Icons - MS PowerPoint
+
+.. |workflowMsExcel| image:: /_static/images/content-author/workflow-icon-ms-excel.png
+             :width: 18%
+             :alt: Workflow Icons - MS Excel
+
+.. |workflowZip| image:: /_static/images/content-author/workflow-icon-zip.png
+             :width: 12%
+             :alt: Workflow Icons - Zip
+
+.. |workflowGroovy| image:: /_static/images/content-author/workflow-icon-groovy.png
+             :width: 18%
+             :alt: Workflow Icons - Groovy
+
+.. |workflowTemplateScript| image:: /_static/images/content-author/workflow-icon-template-script.png
+             :width: 27%
+             :alt: Workflow Icons - Template/Script
+
+.. |workflowCss| image:: /_static/images/content-author/workflow-icon-css.png
+             :width: 12%
+             :alt: Workflow Icons - CSS
+
+.. |workflowMsWord| image:: /_static/images/content-author/workflow-icon-ms-word.png
+             :width: 16%
+             :alt: Workflow Icons - MS Word
+
+.. |workflowOtherFiles| image:: /_static/images/content-author/workflow-icon-other-files.png
+             :width: 21%
+             :alt: Workflow Icons - Other Files
+
 .. end of workflow icons================================================================================================
 
-
-.. todo::update targeting blurb and images, site dashboard blurb and images
