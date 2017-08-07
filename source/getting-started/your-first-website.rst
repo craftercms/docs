@@ -6,7 +6,7 @@
 Your First Website
 ==================
 
-This section assumes that you have followed the steps in the :ref:`Quick Start Guide <getting_started>` to get Crafter CMS and login. We will be using an out-of-the-box blueprint, called "Website_Editorial" to create your first website.
+This section assumes that you have followed the steps in the :ref:`Quick Start Guide <getting-started>` to get Crafter CMS and login. We will be using an out-of-the-box blueprint, called "Website_Editorial" to create your first website.
 
 Let's get started building your first website!
 
@@ -36,7 +36,7 @@ Click on **Create** and wait for the system to create your site based on the blu
     :alt: Your First Website - Creating a Site Spinner Dialog
 
     
-When it's done you will be taken to the Home Page of your site: (need to update image below)
+When it's done you will be taken to the Home Page of your site:
 
 .. image:: /_static/images/first-site/home-page.png
     :width: 95 %
@@ -53,7 +53,7 @@ Your site is setup, we can now start adding/editing content!  To edit content yo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Adding a new article page to the site
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-We'll be adding a new article to the site.  To add a new article (or a new page), navigate to the level and location within the site navigation tree in the **Sidebar** where we want to create the new page.  In this case, we are adding an article under **articles** -> **2017** -> **3**.  Right click, then select **New Content**  (need to update image below)
+We'll be adding a new article to the site.  To add a new article (or a new page), navigate to the level and location within the site navigation tree in the **Sidebar** where we want to create the new page.  In this case, we are adding an article under **articles** -> **2017** -> **3**.  Right click, then select **New Content**
 
 .. image:: /_static/images/first-site/first-site-new-content.png
     :width: 80 %
@@ -98,7 +98,7 @@ Here's the site, with our newly created article in the featured section.
 You can add more pages or modify/remove the existing pages from the blueprint, depending on your needs.  To remove or edit an existing page, navigate to the location of the article you want to edit/remove.  Right click on it, then select the action you would like to do on the page.
 
 .. image:: /_static/images/first-site/first-site-edit-page.png
-    :width: 100 %
+    :width: 50 %
     :align: center
     :alt: Your First Website - Edit a Page
 
@@ -187,7 +187,7 @@ From inside the drop zone, you may also re-arrange the features by clicking and 
     :align: center
     :alt: Your First Website - Drag and Drop
 
-To edit a feature, select a feature from the list and click on the **Edit** button on the right of the list.  Edit the fields you would like to modify, then click on **Save and Close** or **Save Draft** to save your changes or click on **Cancel** to discard all changes in the form.  You can also edit a feature by clicking on the pencil next to the feature when In-Context Editing is enabled.
+To edit a feature, select a feature from the list and click on the **Edit** button on the right of the list.  Edit the fields you would like to modify, then click on **Save and Close** or **Save Draft** to save your changes or click on **Cancel** to discard all changes in the form.
 
 .. image:: /_static/images/first-site/first-site-edit-feature.png
     :width: 100 %

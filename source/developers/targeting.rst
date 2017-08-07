@@ -117,7 +117,7 @@ Model Criteria in Content
 
 We will now see how to add the segments you just configured into a page.  From the Sidebar, click
 on **Site Config**, next click on **Content Types**.  Click on **Open Existing Types**, then select
- **Page - Articles**
+**Page - Articles**
 
 .. figure:: /_static/images/targeting/tagging-personas-model-open.png
     :alt: Targeting - Open Model Personas

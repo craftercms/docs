@@ -90,12 +90,12 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------+
 || 403    ||                               | .. code-block:: json                                |
 ||        ||                               |                                                     |
-||        ||                               |   { "message" : "Current subject doesnt have        |
+||        ||                               |   { "message" : "Current subject does not have      |
 ||        ||                               |   permission to execute global action ..." }        |
 +---------+--------------------------------+-----------------------------------------------------+
 || 404    ||                               | .. code-block:: json                                |
 ||        ||                               |                                                     |
-||        ||                               |   { "message" : "Unable to found ugc with           |
+||        ||                               |   { "message" : "Unable to find ugc with            |
 ||        ||                               |   id ..." }                                         |
 +---------+--------------------------------+-----------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``        |
