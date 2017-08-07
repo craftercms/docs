@@ -25,19 +25,20 @@ Follow the next steps to import a site built in Crafter Studio 2.5.x to Crafter 
 		  the documentation on the new 3.0 mappings here: :ref:`permission-mappings` and :ref:`role-mappings`.
 		- **Site dropdown configuration:** ``config/studio/context-nav/site-dropdown.xml`` is now ``config/studio/context-nav/sidebar.xml`` in 3.0.
 		- **Tools configuration:** ``config/studio/administration/tools.xml`` has been renamed to ``config/studio/administration/site-config-tools.xml``.
+		- **Configured lists:** copy your configured list under ``form-control-config/configured-lists`` to the same path in ``config/studio``.
 
 	#. Import the content types:
 
 		#. Remove all current content types in the new 3.0 site by deleting everything under ``config/studio/content-types``.
 		#. Copy the 2.5.x content types.
-		#. Migrate any custom code you have in the ``extract.groovy`` files to ``controller.groovy``.
+		#. Create a ``controller.groovy`` on every content type that's missing it.
+		#. Migrate any custom code you have in the ``extract.groovy`` or ``extract.js`` files to ``controller.groovy``.
 
 #. Import the 2.5.x site content into ``sandbox``:
 
 	#. Delete the ``scripts``, ``site``, ``static-assets`` and ``templates`` folders from the ``sandbox``.
 	#. Copy the folders under the 2.5.x ``wem-projects`` into ``sandbox``.
-	#. If you have any files under ``classes/groovy``, move them under ``scripts/classes`` and appropriately update the imports in the Groovy scripts
-	   and classes that use them.
+	#. If you have any files under ``classes/groovy``, move them under ``scripts/classes``.
 	#. Rename the Engine site configuration files:
 
 		#. Move ``config/site.xml`` to ``config/engine/site-config.xml``.
@@ -55,7 +56,7 @@ Follow the next steps to import a site built in Crafter Studio 2.5.x to Crafter 
 
 		.. code-block:: guess
 
-			./mysql -u crafter -p --socket=/tmp/MariaDB4j.3306.sock
+			./mysql -u crafter -p --socket=/tmp/MariaDB4j.33306.sock
 
 #. In the MySQL console enter ``use crafter;`` to switch to the crafter DB, and then run the following SQL update command to set all items to the published
    state:

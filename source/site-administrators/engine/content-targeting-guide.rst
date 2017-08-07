@@ -1,3 +1,5 @@
+.. _targeting-guide:
+
 =======================
 Content Targeting Guide
 =======================
