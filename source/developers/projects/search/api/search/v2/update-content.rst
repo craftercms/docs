@@ -37,7 +37,7 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------+
 || content                || File       || |checkmark|  || Binary file to upload                 |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| {param}                || String     || |checkmark|  || Any additional meta-data that needs   |
+|| {param}                || String     ||              || Any additional meta-data that needs   |
 ||                        ||            ||              || to be indexed along with the binary.  |
 +-------------------------+-------------+---------------+----------------------------------------+
 
