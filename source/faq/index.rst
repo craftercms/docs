@@ -17,7 +17,7 @@ Crafter CMS is an open-source, Java-based, Web content management system for Web
 What do I need to run Crafter CMS
 ---------------------------------
 
-Follow these instructions to run Crafter CMS and to download and install Crafter on your machine or server: :ref:`getting-started`
+Follow these instructions to run Crafter CMS and to download and install Crafter on your machine or server: :ref:`Quick Start Guide <getting-started>`
 
 ------------------------------------
 Can Crafter CMS be used as a portal?
