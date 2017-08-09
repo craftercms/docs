@@ -178,7 +178,8 @@ Every site has a preview.  This allows users to see, edit and test the site in a
     * Toolbar shows workflow options for the current page
     * Author can change the type of preview from one channel to another
     * Author can turn on in-context and drag and drop editing features
-    * Author can change the persona used to view the site
+    * Author can change the targeting attributes used to view the site
+    * Author can view the publish status of the site
 
 .. image:: /_static/images/content-author/site-preview.png
    :width: 95 %
@@ -187,9 +188,9 @@ Every site has a preview.  This allows users to see, edit and test the site in a
 
 Preview Tools
     * When in preview mode your context navigation will show additional controls beside the authoring search.
-    * The pencil provides a shortcut to turn on/off in-context editing
+    * The pencil provides a shortcut to turn on/off in-context editing.
     * The wrench turns on/off the preview tools palette.
-    * The bulls eye provides a shortcut to targeting.
+    * The bulls eye provides a shortcut to targeting which allows the user to view and set targeting attributes for the site.
 
 .. image:: /_static/images/content-author/preview-tools.png
     :width: 35 %
@@ -263,24 +264,6 @@ The smart phone and tablet can be rotated through the use of the purple rotation
     :align: center
     :alt: Navigating Studio - Preview Panel Publishing Channel
 
-Targeting Tools
-^^^^^^^^^^^^^^^
-
-Targeting tools allows an author to see what the website would look like if it were being browsed by a user with a given set of attributes.  Crafter Studio allows administrators to configure sets of persona for authors to choose from.  A persona is a collection of profile and environmental attributes.
- 
-The current active persona is displayed in the context nav.
-Hovering on the persona image will produce a tool tip containing the name of the persona 
-
-.. image:: /_static/images/content-author/preview-targeting.png
-    :width: 95 %
-    :align: center
-    :alt: Navigating Studio - Preview Panel Targeting Tools
-
-When an author opens the targeting pane they are presented with an ability to see all of the configured personas for the site.  Each persona has a name, an image, and a description to make it easy for authors to remember them.  Additionally a persona has an arbitrary set of attributes.
-
-Click on the thumbnails in the persona panel to switch between personas.  The details of the persona will be displayed over the top of the preview. To switch to a given persona click ASSUME in the details dialog.
-Persona attribute values for the current persona are editable.  Crafter Studio administrators can configure personas to contain any properties required.
-
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Common Navigation Elements
@@ -297,7 +280,11 @@ The basic elements of the Contextual Navigation bar are:
     * Sidebar: Opens a menu that allows navigation to all pages, components and documents in the system.
     * Contextual Navigation Links: An area reserved for dynamic links that will change based off of the current page view.
     * Search: Allows a user to search all site content or choose a subset of content to search from the drop-down menu (Please see the later section on Search for more details about the search field.)
-    * Account: Allows a user to log out of the system or manage settings.
+    * Publish Status: Allows the user to view the site's publish status.
+    * Users: Allows the user (depending on permissions granted to the user) to view/edit the users.
+    * Sites: Allows the user (depending on permissions granted to the user) to view/edit sites accessible to the user
+    * Help: Provides the user a shortcut to Crafter CMS documentation and the about screen, listing the Crafter Studio version, etc.
+    * Username: Allows a user to log out of the system or manage settings.
     
 .. image:: /_static/images/content-author/site-context-nav.png
     :width: 95 %
@@ -401,19 +388,19 @@ For these use cases Crafter Studio's site dropdown IA folders support the config
              :alt: Workflow Icons - Taxonomy
 
 .. |workflowImage| image:: /_static/images/content-author/workflow-icon-image.png
-             :width: 20%
+             :width: 13%
              :alt: Workflow Icons - Image
 
 .. |workflowVideo| image:: /_static/images/content-author/workflow-icon-video.png
-             :width: 20%
+             :width: 13%
              :alt: Workflow Icons - Video
 
 .. |workflowFont| image:: /_static/images/content-author/workflow-icon-font.png
-             :width: 16%
+             :width: 11%
              :alt: Workflow Icons - Font
 
 .. |workflowPdf| image:: /_static/images/content-author/workflow-icon-pdf.png
-             :width: 12%
+             :width: 10%
              :alt: Workflow Icons - Pdf
 
 .. |workflowMsPowerPoint| image:: /_static/images/content-author/workflow-icon-ms-powerpoint.png
@@ -421,15 +408,15 @@ For these use cases Crafter Studio's site dropdown IA folders support the config
              :alt: Workflow Icons - MS PowerPoint
 
 .. |workflowMsExcel| image:: /_static/images/content-author/workflow-icon-ms-excel.png
-             :width: 18%
+             :width: 16%
              :alt: Workflow Icons - MS Excel
 
 .. |workflowZip| image:: /_static/images/content-author/workflow-icon-zip.png
-             :width: 12%
+             :width: 10%
              :alt: Workflow Icons - Zip
 
 .. |workflowGroovy| image:: /_static/images/content-author/workflow-icon-groovy.png
-             :width: 18%
+             :width: 14%
              :alt: Workflow Icons - Groovy
 
 .. |workflowTemplateScript| image:: /_static/images/content-author/workflow-icon-template-script.png
@@ -437,7 +424,7 @@ For these use cases Crafter Studio's site dropdown IA folders support the config
              :alt: Workflow Icons - Template/Script
 
 .. |workflowCss| image:: /_static/images/content-author/workflow-icon-css.png
-             :width: 12%
+             :width: 10%
              :alt: Workflow Icons - CSS
 
 .. |workflowMsWord| image:: /_static/images/content-author/workflow-icon-ms-word.png
@@ -445,7 +432,7 @@ For these use cases Crafter Studio's site dropdown IA folders support the config
              :alt: Workflow Icons - MS Word
 
 .. |workflowOtherFiles| image:: /_static/images/content-author/workflow-icon-other-files.png
-             :width: 21%
+             :width: 19%
              :alt: Workflow Icons - Other Files
 
 .. end of workflow icons================================================================================================
