@@ -108,7 +108,7 @@ One way is by going to the dashboard, then in the **Items Waiting For Approval**
 Another way to access the **Approve & Publish** option is by going to the **Sidebar**, then navigate to the article you want to approve, then right click on it.
 
 .. image:: /_static/images/page/page-workflows-nav-tree-approve.png
-     :width: 75 %
+     :width: 40 %
      :align: center
      :alt: Workflow - Approve & publish Sidebar nav tree option
 
@@ -154,7 +154,7 @@ Once an item has been scheduled to be published, notice the workflow icon next t
      :alt: Workflow - Dashboard scheduled Icon
 
 .. image:: /_static/images/page/page-workflows-nav-tree-scheduled.png
-     :width: 75 %
+     :width: 50 %
      :align: center
      :alt: Workflow - Nav tree scheduled Icon
 
@@ -189,4 +189,4 @@ Once an item has been rejected, a notification email will be sent to the request
     :align: center
     :alt: Workflow - Rejection notification email
 
-.. TODO:: Update blurbs and images.
+
