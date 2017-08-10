@@ -386,4 +386,8 @@ edit_on_github_base_folder = 'source'
 rst_epilog = """
 .. |checkmark| unicode:: U+2713
 .. |ex| unicode:: U+2718
+
+.. |siteConfig| image:: /_static/images/configuration-site-config-icon.png
+                   :width: 15%
+
 """

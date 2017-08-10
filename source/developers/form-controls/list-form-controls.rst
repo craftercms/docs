@@ -1,6 +1,7 @@
 .. _list-form-engine-controls:
 
 .. |ctlFormSection| image:: /_static/images/form-controls/ctl-form-section.png
+             :width: 90%
              :alt: Form Controls - Form Section
 
 .. |ctlRepeatGrp| image:: /_static/images/form-controls/ctl-repeat-grp.png
@@ -11,7 +12,7 @@
              :alt: Form Controls - Input
 
 .. |ctlTxtArea| image:: /_static/images/form-controls/ctl-text-area.png
-             :width: 75%
+             :width: 70%
              :alt: Form Controls - Text Area
 
 .. |ctlRTE| image:: /_static/images/form-controls/ctl-rte.png
@@ -23,7 +24,7 @@
              :alt: Form Controls - Dropdown
 
 .. |ctlDtTime| image:: /_static/images/form-controls/ctl-date-time.png
-             :width: 85%
+             :width: 80%
              :alt: Form Controls - Date Time
 
 .. |ctlCheckBox| image:: /_static/images/form-controls/ctl-check-box.png
@@ -39,23 +40,23 @@
              :alt: Form Controls - Item Selector
 
 .. |ctlImage| image:: /_static/images/form-controls/ctl-image.png
-             :width: 65%
+             :width: 60%
              :alt: Form Controls - Image
 
 .. |ctlVideo| image:: /_static/images/form-controls/ctl-video.png
-             :width: 55%
+             :width: 50%
              :alt: Form Controls - Video
 
 .. |ctlLabel| image:: /_static/images/form-controls/ctl-label.png
-             :width: 65%
+             :width: 55%
              :alt: Form Controls - Label
 
 .. |ctlPageOrder| image:: /_static/images/form-controls/ctl-page-order.png
-             :width: 95%
+             :width: 80%
              :alt: Form Controls - Page Order
 
 .. |ctlFileName| image:: /_static/images/form-controls/ctl-file-name.png
-             :width: 95%
+             :width: 80%
              :alt: Form Controls - File Name
 
 .. |ctlAutoFn| image:: /_static/images/form-controls/ctl-auto-filename.png
