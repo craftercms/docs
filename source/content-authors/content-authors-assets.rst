@@ -22,7 +22,7 @@ Right click on the folder **static-assets**, then select **Create Folder**
 
 .. image:: /_static/images/page/page-asset-folders.png
     :alt: Static Assets - Create a Folder
-    :width: 50 %
+    :width: 40 %
     :align: center
 
 
@@ -40,14 +40,14 @@ To add a file, from the folder **static-assets**, navigate to the folder you wan
 
 .. image:: /_static/images/page/page-asset-upload.png
     :alt: Static Assets - Upload a File
-    :width: 30 %
+    :width: 40 %
     :align: center
 
 Choose the file you want to upload, then click on the **Upload** button
 
 .. image:: /_static/images/page/page-asset-upload-screen.png
     :alt: Static Assets - Upload File Dialog
-    :width: 30 %
+    :width: 40 %
     :align: center
 
 If you have multiple files to upload, you can click on **Bulk Upload Assets**, it will then prompt you to drag and drop files that you want to upload.  After dragging the files, click on **Done**
@@ -65,21 +65,21 @@ To delete an asset, navigate to the asset you want to delete in the site navigat
 
 .. image:: /_static/images/page/page-asset-delete.png
     :alt: Static Assets - Delete
-    :width: 30 %
+    :width: 40 %
     :align: center
 
 After clicking on delete, it will prompt you if you want to delete the listed files.  Click on the **Delete** button if you want to delete the listed files, or click on **Cancel** if you don't want to delete the asset.  
 
 .. image:: /_static/images/page/page-asset-confirm-delete.png
     :alt: Static Assets - Delete Confirmation Dialog
-    :width: 30 %
+    :width: 60 %
     :align: center
 
 After clicking on the **Delete** button, another form will appear to inform you that the item/asset has been pushed for delete.
 
 .. image:: /_static/images/page/page-asset-delete-submitted.png
     :alt: Static Assets - Delete Action Information Dialog
-    :width: 30 %
+    :width: 60 %
     :align: center
 
 ----------------

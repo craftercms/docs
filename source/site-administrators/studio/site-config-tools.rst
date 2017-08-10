@@ -9,8 +9,6 @@ The Site Config tools configuration file defines what modules are available for 
     :align: center
     :alt: Site Config Tools
 
-.. |siteConfig| image:: /_static/images/configuration-site-config-icon.png
-             :width: 15%
 
 ------
 Sample

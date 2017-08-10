@@ -26,9 +26,9 @@ You will then be prompted to choose a content type.  Select a starter page templ
     :align: center
     :alt: Content Author - Add New Page Choose Content
 
-A form will open containing the template selected. You can now start adding content.  Required fields have a red asterisk after the field label.  The number of required fields within each section is displayed in the Section bar for that section.  
+A form will open containing the template selected. You can now start adding content.  Required fields have a red 'x' after the field label.  The number of required fields within each section is displayed in the Section bar for that section.
 
-When data is entered into a field, the red asterisk will change to a green checkmark and the section bar will update with the new status.
+When data is entered into a field, the red 'x' will change to a green checkmark and the section bar will update with the new status.
 
 .. image:: /_static/images/page/page-add-template-open.png
     :width: 75 %    
@@ -37,11 +37,14 @@ When data is entered into a field, the red asterisk will change to a green check
 
 An action bar is available at the bottom of the screen that cannot be scrolled away. This bar allows users to Save & Close, Save Draft or Cancel.
 
-    *Save Draft* will save the content entered on the form
+    * **Save Draft** will save the content entered on the form
+    * **Save & Close** will close the form and load the preview screen with the newly saved data.
+    * **Cancel** will close the form without making any changes and will warn users if there are unsaved changes.
+    * |pageActionBarMinMax| (arrow pointing up) will minimize/maximize the form.
 
-    *Save & Close* will close the form and load the preview screen with the newly saved data.
-
-    *Cancel* will close the form without making any changes and will warn users if there are unsaved changes.
+.. |pageActionBarMinMax| image:: /_static/images/page/page-action-bar-min-max.png
+                            :width: 5%
+                            :alt: Page - Action Bar Minimize/Maximize Icon
 
 An error form will appear when you try to *Save and Close* without filling out all the required fields.
 
@@ -86,7 +89,7 @@ After selecting the page you want, click on the **History** menu of the context 
 Another way to view the history of a page is by right clicking on the page you want and then selecting **History**
 
 .. image:: /_static/images/page/page-access-history-tree.png
-    :width: 60 %
+    :width: 40 %
     :align: center
     :alt: Content Author - Page Access History Tree
     
@@ -133,17 +136,17 @@ Clicking the +/- control on the Section Label will toggle the expanded or collap
 
 The number of required fields within each section is displayed in the Section bar for that section.
 
-An icon in front of the Section Label will display a red asterisk (when required fields are not complete), or a green check mark (when all required fields are complete) to denote status.
+An icon in front of the Section Label will display a red 'x' (when required fields are not complete), or a green check mark (when all required fields are complete) to denote status.
 
-Every required field will have a red asterisk icon after it's Field Label.
+Every required field will have a red 'x' icon after it's Field Label.
 
-When data is entered into a field the red asterisk will change to a green checkmark and the section bar will update with the new status. An action bar is available at the bottom of the screen that cannot be scrolled away. This bar allows users to Save & Close, Save Draft or Cancel.
+When data is entered into a field the red 'x' will change to a green check mark and the section bar will update with the new status. An action bar is available at the bottom of the screen that cannot be scrolled away. This bar allows users to Save & Close, Save Draft or Cancel, and minimize/maximize the form.
 
-"Save & Close" will close the New Page/Editing dialog and load the preview screen with the newly saved data.
+**Save & Close** will close the New Page/Editing dialog and load the preview screen with the newly saved data.
 
-"Save Draft" will save your changes and leave the New Page/Editing dialog open
+**Save Draft** will save your changes and leave the New Page/Editing dialog open
 
-Cancel will close the New Page/Editing screen without making any changes.
+**Cancel** will close the New Page/Editing screen without making any changes.
 
 The fields within each section are completely modular and can be applied to any given page as needed. This modularity allows us to craft edit pages for any new screens as they arise without the need for specific UI work on the edit screen.
 
@@ -175,7 +178,7 @@ Here are some controls that authors may encounter while editing content:
 * Checkbox - Allows the user to make two choices, depending on what was setup.
 
 .. image:: /_static/images/page/form-control-checkbox.png
-    :width: 30 %    
+    :width: 20 %
     :align: center
     :alt: Content Author - Form Control Checkbox
 
@@ -190,14 +193,14 @@ Here are some controls that authors may encounter while editing content:
     :align: center
     :alt: Content Author - Form Controls
 
-* Image pickers - Allows the user to select an image from whatever source is allowed, such as Desktop Image or Existing Image (asset uploaded to the system).  To select an image, click on **Add** (when there's no image selected yet) or **Replace** to change the selected image
+* Image pickers - Allows the user to select an image from whatever source is allowed, such as Upload Image or Existing Image (asset uploaded to the system).  To select an image, click on **Add** (when there's no image selected yet) or **Replace** to change the selected image
 
 .. image:: /_static/images/page/form-control-image-picker.png
     :width: 60 %    
     :align: center
     :alt: Content Author - Form Control Image Picker
 
-* Video pickers - Allows the user to select a video from whatever source is allowed, such as Desktop Video (video uploaded from Desktop) or Existing Video (asset uploaded to the system) 
+* Video pickers - Allows the user to select a video from whatever source is allowed, such as Upload Video (video to be uploaded) or Existing Video (asset uploaded to the system)
 
 .. image:: /_static/images/page/form-control-video-picker.png
     :width: 75 %    
@@ -212,7 +215,7 @@ Here are some controls that authors may encounter while editing content:
     :alt: Content Author - Form Control No Page Order
 
 .. image:: /_static/images/page/form-control-page-order-yes.png
-    :width: 30 %    
+    :width: 45 %
     :align: center
     :alt: Content Author - Form Control Yes Page Order
 
@@ -229,7 +232,7 @@ Here are some controls that authors may encounter while editing content:
     :alt: Content Author - Form Control Item Selector
 
 .. image:: /_static/images/page/form-control-item-select.png
-    :width: 50 %    
+    :width: 70 %
     :align: center
     :alt: Content Author - Form Control Item Select
 
@@ -254,6 +257,7 @@ The drag and drop panel puts the page in component construction mode.  Regions o
     :alt: Content Author - Page Components
 
 Drag and Drop Components
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Placing new components
 
