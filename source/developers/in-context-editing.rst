@@ -76,7 +76,7 @@ Example:
 Component Drag and Drop Zone
 ----------------------------
 
-Drag and drop makes it easy for authors to visually assemble pages.  Authors simply choose a component from a pre-defined list of components/widgets, drag them on to the screen, place them where they want (in defined drop zones, and then configure them.  Authors may also move components from one zone to another or remove components.
+Drag and drop makes it easy for authors to visually assemble pages.  Authors simply choose a component from a pre-defined list of components/widgets, drag them on to the screen, place them where they want (in defined drop zones), and then configure them.  Authors may also move components from one zone to another or remove components.
 
 .. image:: /_static/images/dropzone.png
 
