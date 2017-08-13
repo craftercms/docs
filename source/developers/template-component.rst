@@ -56,7 +56,7 @@ The model for our template is done.  You can add some other controls by dragging
 View
 ^^^^
 
-We'll now build the view for our template, which is the freemarker template file that renders the content, typically to HTML markup.  There are two ways to create the freemarker template file for our template.  One way is to open the Sidebar menu in Studio, then navigate to the **Templates** folder, depending on how your site is setup, you may want to navigate to the subfolder in your Templates folder where you want to create the freemarker template file.  Once you are in the desired subfolder, right click on that folder then select **Create Template**.  In our example here, we navigated to **Templates->templates->components**, then right click on the **components** folder then select *Create Template*
+We'll now build the view for our template, which is the freemarker template file that renders the content, typically to HTML markup.  There are two ways to create the freemarker template file for our template.  One way is to open the **Sidebar** menu in Studio, then navigate to the **Templates** folder, depending on how your site is setup, you may want to navigate to the subfolder in your Templates folder where you want to create the freemarker template file.  Once you are in the desired subfolder, right click on that folder then select **Create Template**.  In our example here, we navigated to **Templates->templates->components**, then right click on the **components** folder then select *Create Template*
 
 .. figure:: /_static/images/templates/templates-comp-create-controller.png
     :alt: Template Component Create Controller
