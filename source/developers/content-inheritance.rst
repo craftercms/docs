@@ -12,10 +12,11 @@ Crafter CMS support content inheritance out of the box, and supports it via a pl
 Content Inheritance Basics
 --------------------------
 
-Content objects in Crafter CMS are essentially structured markup, XML by default, and house data authored via Crafter Studio by content authors. Content objects are typically structured as a tree which naturally suits the notion of inheriting from a parent (not to say that the inheritance mechanics are limited to that topology). Inhertiance works as follows:
+Content objects in Crafter CMS are essentially structured markup, XML by default, and house data authored via Crafter Studio by content authors. Content objects are typically structured as a tree which naturally suits the notion of inheriting from a parent (not to say that the inheritance mechanics are limited to that topology). Inheritance works as follows:
+
 Assume we have two objects, one called Parent and one called Child and they're set up as follows:
 
-**Parent**: Below you'll see a typical *level descriptor* which will be the parent of another object. You'll note the *level descriptor* defines multiple elements that are common to everthing at this level in the hierarchy and below it. This *level descriptor* defines a primary CSS file ``main.css``, a common header component ``default-header.xml`` and a common footer component ``default-footer.xml``.
+**Parent**: Below you'll see a typical *level descriptor* which will be the parent of another object. You'll note the *level descriptor* defines multiple elements that are common to everything at this level in the hierarchy and below it. This *level descriptor* defines a primary CSS file ``main.css``, a common header component ``default-header.xml`` and a common footer component ``default-footer.xml``.
 
 .. code-block:: xml
 
@@ -98,7 +99,7 @@ This mechanism allows you to define meta-data that flows down the information ar
 
 .. note:: The ``inherit-levels`` mechanism allows you to set **level descriptors** at various levels of the information architecture with lower levels overriding upper levels.
 
-What we discussed thus far is a single inheritance strategy implementation, ``inherit-levels``, the code to which is available here: `InheritLevelsMergeStrategy.java <https://github.com/craftercms/core/blob/master/src/main/java/org/craftercms/core/xml/mergers/impl/strategies/InheritLevelsMergeStrategy.java>`_. There are more inhertiance strategies implemented out of the box with Crafter CMS and you can build your own to suit your needs.
+What we discussed thus far is a single inheritance strategy implementation, ``inherit-levels``, the code to which is available here: `InheritLevelsMergeStrategy.java <https://github.com/craftercms/core/blob/master/src/main/java/org/craftercms/core/xml/mergers/impl/strategies/InheritLevelsMergeStrategy.java>`_. There are more inheritance strategies implemented out of the box with Crafter CMS and you can build your own to suit your needs.
 
 -------------------------
 Out of the Box Strategies
