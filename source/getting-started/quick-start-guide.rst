@@ -16,7 +16,7 @@ Installing Crafter CMS from the zip Download
 
 To install Crafter CMS using the zip download:
 
-    * Download the Crafter CMS install zip file from http://downloads.craftercms.org/craftercms/community/3.0.0/ 
+    * Download the Crafter CMS install zip file from http://craftercms.org/downloads
            
        Select ``crafter-cms-authoring.zip`` or ``crafter-cms-authoring.tar.gz``.  The zip file will install a fully functional Crafter Studio instance and a Crafter Engine in Preview Mode. Out of the box, the Studio instance uses a local directory as the repository and a Derby database, which allows a quick and easy set up for local development.
 
