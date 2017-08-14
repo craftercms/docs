@@ -51,24 +51,24 @@
 | siteContext          || The current SiteContext              || `SiteContext`_                |
 +----------------------+---------------------------------------+--------------------------------+
 
-.. _SiteItemService: http://downloads.craftersoftware.com/javadoc/engine/org/craftercms/engine/service/SiteItemService.html
-.. _UrlTransformationService: http://downloads.craftersoftware.com/javadoc/engine/org/craftercms/engine/service/UrlTransformationService.html
-.. _SearchService: http://downloads.craftersoftware.com/javadoc/search/org/craftercms/search/service/SearchService.html
-.. _ApplicationContextAccessor: http://downloads.craftersoftware.com/javadoc/engine/org/craftercms/engine/util/spring/ApplicationContextAccessor.html
+.. _SiteItemService: :javadoc_base_url:`engine/org/craftercms/engine/service/SiteItemService.html`
+.. _UrlTransformationService: :javadoc_base_url:`engine/org/craftercms/engine/service/UrlTransformationService.html`
+.. _SearchService: :javadoc_base_url:`search/org/craftercms/search/service/SearchService.html`
+.. _ApplicationContextAccessor: :javadoc_base_url:`engine/org/craftercms/engine/util/spring/ApplicationContextAccessor.html`
 .. _PropertySourcesPropertyResolver: https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/PropertySourcesPropertyResolver.html
-.. _BreadcrumbBuilder: http://downloads.craftersoftware.com/javadoc/engine/org/craftercms/engine/util/breadcrumb/BreadcrumbBuilder.html
-.. _TenantsResolver: http://downloads.craftersoftware.com/javadoc/profile/org/craftercms/security/utils/tenant/TenantsResolver.html
-.. _ProfileService: http://downloads.craftersoftware.com/javadoc/profile/org/craftercms/profile/api/services/ProfileService.html
-.. _TenantService: http://downloads.craftersoftware.com/javadoc/profile/org/craftercms/profile/api/services/TenantService.html
-.. _AuthenticationService: http://downloads.craftersoftware.com/javadoc/profile/org/craftercms/profile/api/services/AuthenticationService.html
-.. _AuthenticationManager: http://downloads.craftersoftware.com/javadoc/profile/org/craftercms/security/authentication/AuthenticationManager.html
+.. _BreadcrumbBuilder: :javadoc_base_url:`engine/org/craftercms/engine/util/breadcrumb/BreadcrumbBuilder.html`
+.. _TenantsResolver: :javadoc_base_url:`profile/org/craftercms/security/utils/tenant/TenantsResolver.html`
+.. _ProfileService: :javadoc_base_url:`profile/org/craftercms/profile/api/services/ProfileService.html`
+.. _TenantService: :javadoc_base_url:`profile/org/craftercms/profile/api/services/TenantService.html`
+.. _AuthenticationService: :javadoc_base_url:`profile/org/craftercms/profile/api/services/AuthenticationService.html`
+.. _AuthenticationManager: :javadoc_base_url:`profile/org/craftercms/security/authentication/AuthenticationManager.html`
 .. _TextEncryptor: http://docs.spring.io/autorepo/docs/spring-security/4.0.3.RELEASE/apidocs/org/springframework/security/crypto/encrypt/TextEncryptor.html
 .. _Logger: http://www.slf4j.org/api/org/slf4j/Logger.html
 .. _XMLConfiguration: https://commons.apache.org/proper/commons-configuration/javadocs/v1.10/apidocs/org/apache/commons/configuration/XMLConfiguration.html
-.. _SiteContext: http://downloads.craftersoftware.com/javadoc/engine/
+.. _SiteContext: :javadoc_base_url:`engine/org/craftercms/engine/service/context/SiteContext.html`
 
 .. |UrlTransform| replace:: urlTransformationService
-.. _UrlTransform: http://downloads.craftersoftware.com/javadoc/engine/org/craftercms/engine/service/UrlTransformationService.html
+.. _UrlTransform: :javadoc_base_url:`engine/org/craftercms/engine/service/UrlTransformationService.html`
 
 .. |PropertySources| replace:: PropertySourcesPropertyResolver
 .. _PropertySources: https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/PropertySourcesPropertyResolver.html

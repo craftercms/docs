@@ -12,20 +12,21 @@ Crafter Commons contains the shared libraries used by the rest of the projects c
 Source Code
 -----------
 
-Crafter Commons's source code is managed in github: https://github.com/craftercms/commons
+Crafter Commons' source code is managed in github: https://github.com/craftercms/commons
 
 --------
 Java Doc
 --------
 
-Crafter Commons's Java Docs are here:
+Crafter Commons' Java Doc is here:
 
-* http://javadoc.io/doc/org.craftercms/crafter-commons
-* http://javadoc.io/doc/org.craftercms/crafter-commons-utilities
-* http://javadoc.io/doc/org.craftercms/crafter-commons-security
-* http://javadoc.io/doc/org.craftercms/crafter-commons-audit
-* http://javadoc.io/doc/org.craftercms/crafter-commons-ebus
-* http://javadoc.io/doc/org.craftercms/crafter-commons-mongo
+* :javadoc_base_url:`commons`
+
+.. ..* :javadoc_base_url:`commons-utilities`
+.. ..* :javadoc_base_url:`commons-security`
+.. ..* :javadoc_base_url:`commons-audit`
+.. ..* :javadoc_base_url:`commons-ebus`
+.. ..* :javadoc_base_url:`commons-mongo`
 
 -------------
 Configuration
