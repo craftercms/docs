@@ -12,8 +12,7 @@ The most important variable available in the page and component Freemarker templ
 the ``contentModel`` you have access to the content itself. So if in the page you defined a variable name ``title``,
 you can get the value of title with ``${contentModel.title}``. Or if you defined a repeater named ``links``, and under
 it ``url`` fields, then accessing the url links is just a matter of iterating the list using
-``<#list contentModel.links.url as url>``. The type of the ``contentModel`` is `SiteItem <http://downloads.craftersoftware
-.com/javadoc/engine/org/craftercms/engine/model/SiteItem.html>`_, so you can also call the methods of that class if
+``<#list contentModel.links.url as url>``. The type of the ``contentModel`` is :javadoc_base_url:`SiteItem <engine/org/craftercms/engine/model/SiteItem.html>`, so you can also call the methods of that class if
 the nested property access described previously is not enough, or if you need to access other properties like the
 ``storeUrl``.
 

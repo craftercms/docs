@@ -18,7 +18,7 @@ Crafter Core's source code is managed in github: https://github.com/craftercms/c
 Java Doc
 --------
 
-Crafter Core's Java Doc is here: http://javadoc.io/doc/org.craftercms/crafter-core
+Crafter Core's Java Doc is here: :javadoc_base_url:`core`
 
 --------
 ReST API

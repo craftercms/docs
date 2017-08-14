@@ -8,13 +8,7 @@ Search
 Querying Content
 ----------------
 
-This section describes the types of content queries you can make (taken from cook-books section)
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   cook-books/content-queries/basic-query-mechanics
+To see the types of content queries you can make in Crafter CMS, please see :ref:`basic-query-mechanics`
 
 -----------------------------
 Implementing a Faceted Search
