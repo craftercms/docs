@@ -1,3 +1,5 @@
+.. _basic-query-mechanics:
+
 =====================
 Basic Query Mechanics
 =====================

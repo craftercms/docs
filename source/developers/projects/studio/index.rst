@@ -33,7 +33,12 @@ ReST API
 Java Doc
 --------
 
-Crafter Studio's Java Doc is here: http://javadoc.io/doc/org.craftercms/crafter-studio-2
+Crafter Studio's Java Doc is here:
+
+* :javadoc_base_url:`studio`
+
+.. ..* :javadoc_base_url:`studio-2`
+
 
 -------------
 Configuration
