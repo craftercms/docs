@@ -10,6 +10,14 @@ This section describes how to quickly install Crafter CMS and start crafting you
 
 Here are the steps to start using Crafter CMS for development or evaluation:
 
+--------------------------------------
+Installing and verifying prerequisites
+--------------------------------------
+
+.. include:: /includes/installing-and-verifying-prerequisites.rst
+
+.. _installing-crafter-cms-from zip:
+
 --------------------------------------------
 Installing Crafter CMS from the zip Download
 --------------------------------------------
@@ -46,8 +54,9 @@ Starting Crafter CMS Using the Startup Script
     
                 startup.bat
 
-        *note:*
-            It takes a few seconds for Crafter CMS to startup.
+        .. note::
+
+            It takes a few seconds for Crafter CMS to startup and takes longer to startup the very first time you startup Crafter CMS.
 
 
         To stop Crafter CMS Server:
@@ -80,6 +89,11 @@ Starting Crafter CMS Using the Startup Script
 
 
         After logging in, you should be redirected to the MySites screen, and you're now ready to create your first website!
+
+
+
+
+
 
 .. _installing-craftercms-from-gradle:
 
