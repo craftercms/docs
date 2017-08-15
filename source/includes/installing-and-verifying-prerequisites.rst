@@ -26,7 +26,7 @@ Verify JAVA_HOME environment variable is set correctly
 Make sure that you have a JAVA_HOME environment variable that points to the root of the JDK install directory.
 To check the value set for JAVA_HOME, enter the following command at the command prompt:
 
-For Mac OS/Linux Systems:
+For Unix/Linux Systems:
 
 .. code-block:: sh
 
@@ -42,7 +42,7 @@ For Windows Systems:
 How to set the JAVA_HOME environment variable
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**To set JAVA_HOME on a Mac OS/Linux System**
+**To set JAVA_HOME on a Unix/Linux System**
 
     Korn and bash shells:
 
