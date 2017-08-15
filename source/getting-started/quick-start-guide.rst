@@ -54,6 +54,10 @@ Starting Crafter CMS Using the Startup Script
     
                 startup.bat
 
+            .. note::
+
+                For Windows, ``startup.bat`` should be run by a user with full Administrator privileges the very first time it is run.
+
         .. note::
 
             It takes a few seconds for Crafter CMS to startup and takes longer to startup the very first time you startup Crafter CMS.
