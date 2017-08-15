@@ -29,12 +29,17 @@ System Requirements
 
 * See :ref:`supported platforms<requirements_supported_platforms>` for a detailed list and description of supported components.
 
+--------------------------------------
+Installing and verifying prerequisites
+--------------------------------------
+
+.. include:: /includes/installing-and-verifying-prerequisites.rst
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To Install a Development Environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To install a development environment, see the :ref:`quick_start_guide`.
+To install a development environment, see the section on installing Crafter CMS from the zip download or the section on installing Crafter CMS from archive built by the Gradle environment builder in the :ref:`quick_start_guide`.
 
 ----------
 Activities
