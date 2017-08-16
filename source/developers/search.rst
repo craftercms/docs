@@ -91,6 +91,7 @@ Render controls with values selected from cookies
 Now we need to build the filter controls for our users so that they can narrow their searches. In the code below we’re iterating over the available options (we’ll show how these are acquired in just a moment) and creating the options for the select component.  For each option we look to see if it is the currently selected item and if so we mark it as selected.
 
 .. code-block:: guess
+   :linenos:
 
    <select style="width: 90px"  onchange="setCookie('category-filter-color', this.value);">
        <option <#if filterColor=='*'>selected</#if> value="*">Color</option>
@@ -105,6 +106,7 @@ Provide a  mechanism to save a selected value to our cookie and force a refresh
 In the code above you can see a simple JavaScript function on the “onChange” method for the select control.  Again you can see here we’re keeping the code as abstraction free as possible to make the example clear.  Below is the simple JavaScript function:
 
 .. code-block:: guess
+   :linenos:
 
    <script>
        var setCookie = function(name, value) {
@@ -149,6 +151,7 @@ Execute the unfiltered query
 Here you can see we’re declaring the facets we want the counts on.
 
 .. code-block:: guess
+   :linenos:
 
    <#assign query = searchService.createQuery()>
    <#assign query = query.setQuery(queryStatement) />
@@ -163,6 +166,7 @@ Execute the filtered query
 Here you can see we’re declaring the pagination and sorting options.
 
 .. code-block:: guess
+   :linenos:
 
    <#assign filteredQuery = searchService.createQuery()>
    <#assign filteredQuery = filteredQuery.setQuery(filteredQueryStatement) />
@@ -196,6 +200,7 @@ Display the products
 In the code below, we’re iterating over the available products and simply displaying the details for it.
 
 .. code-block:: guess
+   :linenos:
 
    <#list products as product>
       <#assign productId = product.localId?substring(product.localId?last_index_of("/")+1)?replace('.xml','')>
@@ -217,6 +222,7 @@ Construct pagination
 Given the number of items found and our productsPerPage value we can determine the number of pages to show to the user.
 
 .. code-block:: guess
+   :linenos:
 
    <div>
        <ul>
@@ -268,6 +274,7 @@ Requirements
 To create the REST endpoint, place the following Groovy file in your scripts folder
 
 .. code-block:: groovy
+    :linenos:
 
     // /scripts/rest/suggestions.get.groovy
     
@@ -284,6 +291,7 @@ To create the REST endpoint, place the following Groovy file in your scripts fol
 You will also need to create the helper classs in the scripts forlder
 
 .. code-block:: groovy
+  :linenos:
 
   // /scripts/classes/org/craftercms/sites/editorial/SuggestionHelper.groovy
   
@@ -357,6 +365,7 @@ for example to use the `jQuery UI Autocomplete <http://jqueryui.com/autocomplete
 component you only need to provide the REST endpoint in the configuration:
 
 .. code-block:: javascript
+  :linenos:
 
   $('#search').autocomplete({
     // Wait for at least this many characters to send the request

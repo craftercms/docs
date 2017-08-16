@@ -32,7 +32,7 @@ Data Sources consist of (at a minimum)
 * A single javascript file which implements the data source interface.
 
 	* The file name of the data source is important as the system uses a convention whereby the JS file name and the data source name in the configuration must be the same.
-	* The module name must also be the same as the data source name with "cstudio-forms-controls-" prepended to the front of it Ex: "cstudio-forms-controls-configured-list."
+	* The module name must also be the same as the data source name with ``cstudio-forms-controls-`` prepended to the front of it Ex: ``cstudio-forms-controls-configured-list``
 
 * Configuration in a Crafter Studio project to make that data source available for use.
 
@@ -43,6 +43,7 @@ Data Source Interface
 **Data Source Interface**
 
 .. code-block:: javascript
+    :linenos:
 
 	/** 
 	 * Constructor: Where .X is substituted with your class name
@@ -88,7 +89,7 @@ Data Source Interface
 Coding an example
 -----------------
 
-Our example is a data source that gets values from an XML file stored in the Alfresco Repository. This is a simple data source that allows administrators to define common taxonomies or lists and then to re-use those across many forms without having to redefine them every time.
+Our example is a data source that gets values from an XML file stored in the repository. This is a simple data source that allows administrators to define common taxonomies or lists and then to re-use those across many forms without having to redefine them every time.
 
 ^^^^^^^^^^^^^^^^
 Data Source Code
@@ -103,6 +104,7 @@ Data Source Code
 **Location /STUDIO-WAR/components/cstudio-forms/data-sources/configured-list.js**
 
 .. code-block:: javascript
+    :linenos:
 
 	/**
 	 * Constructor.  This data source can take time to retrieve the content from the repository.  
@@ -198,9 +200,10 @@ Configuring the Data source to show up in Crafter Studio
 
 Add the datasources name to the list of data sources in the content type editor
 
-**Location (In Repository) /company-home/cstudio/config/sites/SITENAME/administration/tools.xml**
+**Location (In Repository) SITENAME/config/studio/administration/tools.xml**
 
 .. code-block:: xml
+    :linenos:
 
 	<config>
 		<tools>
@@ -226,6 +229,7 @@ Complex Example that uses AJAX to get data from external source:
 ----------------------------------------------------------------
 
 .. code-block:: javascript
+    :linenos:
 
 	CStudioForms.Datasources.ConfiguredList = CStudioForms.Datasources.ConfiguredList ||  
 	function(id, form, properties, constraints)  {
