@@ -119,8 +119,8 @@ We will now see how to add the segments you just configured into a page.  From t
 on **Site Config**, next click on **Content Types**.  Click on **Open Existing Types**, then select
 **Page - Articles**
 
-.. figure:: /_static/images/targeting/tagging-personas-model-open.png
-    :alt: Targeting - Open Model Personas
+.. figure:: /_static/images/targeting/tagging-segments-model-open.png
+    :alt: Targeting - Open Model
     :width: 80 %
     :align: center
 
@@ -128,7 +128,7 @@ In the Metadata section of the form, a *Grouped Checkboxes* control is used to m
 The control is then named **Segments**, with the *Data Source* property in the Properties Explorer
 Section set to *Segments*.
 
-.. figure:: /_static/images/targeting/tagging-personas-model.png
+.. figure:: /_static/images/targeting/tagging-segments-model.png
     :alt: Targeting - Model Taxonomy
     :width: 80 %
     :align: center
@@ -145,7 +145,7 @@ content for targeting.  Click on the article from the Sidebar, then click on **E
 context nav.  Notice that the article is targeted for both Guy and Gal (Guy and Gal checkbox
 checked).
 
-.. figure:: /_static/images/targeting/targeting-personas-tag-content.png
+.. figure:: /_static/images/targeting/targeting-segments-tag-content.png
     :alt: Targeting - Segments Metadata in Content
     :width: 80 %
     :align: center
@@ -159,7 +159,7 @@ After targeting the content, we will now see how we can display pages depending 
 logged in. Let's take a look at the home page of the Website Editorial blueprint. We are browsing
 as an user with the segment Gal, and we're looking at the featured articles:
 
-.. figure:: /_static/images/targeting/tagging-personas-home-page.png
+.. figure:: /_static/images/targeting/tagging-segments-home-page.png
     :alt: Targeting - Targeted Home Page
     :width: 80 %
     :align: center
@@ -249,7 +249,7 @@ We will now see how to add the categories you just configured into a page.  From
 on **Site Config**, next click on **Content Types**.  Click on **Open Existing Types**, then select
 **Page - Articles**
 
-.. figure:: /_static/images/targeting/tagging-personas-model-open.png
+.. figure:: /_static/images/targeting/tagging-segments-model-open.png
     :alt: Targeting - Open Model Categories
     :width: 80 %
     :align: center
@@ -362,7 +362,7 @@ Widget** and click on **Edit**
 
 .. figure:: /_static/images/targeting/tagging-component-related-open.png
     :alt: Targeting - Open Component Related Articles
-    :width: 50 %
+    :width: 40 %
     :align: center
 
 In the **Controllers** section, you'll see the groovy script that will be run before rendering

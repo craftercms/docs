@@ -35,13 +35,14 @@ Form Engine Control consist of (at a minimum)
 	* The file name of the control is important as the system uses a convention whereby the JS file name and the control name in the configuration must be the same.
 	* The module name must also be the same as the control name with "cstudio-forms-controls-" prepended to the front of it Ex: "cstudio-forms-controls-checkbox-group."
 
-* Configuration in a Crafter Studio project to make that data source available for use
+* Configuration in a Crafter Studio project to make that control available for use
 
 -----------------
 Control Interface
 -----------------
 
 .. code-block:: javascript
+    :linenos:
 
 	/** 
 	 * Constructor: Where .X is substituted with your class name
@@ -120,6 +121,7 @@ Control Code
 **Location /STUDIO-WAR/default-site/static-assets/components/cstudio-forms/controls/checkbox-group.js**
 
 .. code-block:: javascript
+    :linenos:
 
 	CStudioForms.Controls.CheckBoxGroup = CStudioForms.Controls.CheckBoxGroup ||
 	function(id, form, owner, properties, constraints, readonly)  {
@@ -598,9 +600,11 @@ Configuring the Control to show up in Crafter Studio
 
 Add the control's name to the list of controls in the content type editor configuration
 
-**Location (In Repository) /company-home/cstudio/config/sites/SITENAME/administration/tools.xml**
+**Location (In Repository) SITENAME/config/studio/administration/tools.xml**
 
 .. code-block:: xml
+    :linenos:
+    :emphasize-lines: 7
 
 	<config>
 		<tools>

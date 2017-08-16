@@ -17,13 +17,12 @@ New Installation
 ^^^^^^^^^^^^^^^^
 
 You can follow the instructions for building a complete bundle as described
-:ref:`here <installing-craftercms-from-gradle>`, if you add the parameter ``-P includeProfile=true``
+:ref:`here <installing-craftercms-from-gradle>`, if you add the parameter ``-Pcrafter.profile=true``
 the bundle will contain crafter-profile.war and crafter-profile-admin-console.war.
 
 ^^^^^^^^^^^^^^^^^^^^^
 Existing Installation
 ^^^^^^^^^^^^^^^^^^^^^
-
 If you want to add Crafter Profile Admin Console to an existing installation you only need to
 build or download the WAR file making sure it matches the version of all other components.
 

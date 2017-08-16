@@ -123,3 +123,8 @@ A confirmation pop up will be displayed, please click on "**Yes**" to remove the
     :align: center
     :width: 50%
 
+A notification will appear on the screen for a few seconds on successful deletion of a user
+
+.. image:: /_static/images/users/users-delete-notification.png
+    :alt: Users - Deleted Notification
+    :align: center
