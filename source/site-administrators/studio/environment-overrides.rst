@@ -4,7 +4,7 @@ Environment Overrides
 =====================
 
 This configuration file allows you to configure the site specific environments Crafter Studio can publish to, such as your preview server url, authoring server url, etc.
-To modify the environment overrides, click on **Site Config** from the bottom of the *Sidebar*, then click on **Configuration** and select **Environment Configuration** from the dropdown list.
+To modify the environment overrides, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Environment Configuration** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-env-config.png
     :alt: Configurations - Open Environment Configuration

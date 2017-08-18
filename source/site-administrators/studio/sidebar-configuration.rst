@@ -5,6 +5,12 @@ Sidebar Configuration
 #####################
 
 The sidebar configuration file configures the items available for interaction on the left side of Studio.  The Sidebar shows different projections of the content in addition to other tools to assist in content authoring.
+To modify the sidebar configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Sidebar Configuration** from the dropdown list.
+
+.. image:: /_static/images/site-admin/config-open-sidebar-config.png
+    :alt: Configurations - Open Sidebar Configuration
+    :width: 65 %
+    :align: center
 
 ******
 Sample

@@ -5,6 +5,12 @@ Preview Panel Configuration
 ###########################
 
 The preview panel configuration file configures the Preview Tools panel on the right side of Studio.
+To modify the preview panel configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Preview Panel Configuration** from the dropdown list.
+
+.. image:: /_static/images/site-admin/config-open-preview-panel-config.png
+    :alt: Configurations - Open Preview Panel Configuration
+    :width: 65 %
+    :align: center
 
 ******
 Sample
