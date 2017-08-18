@@ -9,6 +9,12 @@ The Site Config tools configuration file defines what modules are available for 
     :align: center
     :alt: Site Config Tools
 
+To modify the site config tools configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Site Config Tools** from the dropdown list.
+
+.. image:: /_static/images/site-admin/config-open-site-config-tools.png
+    :alt: Configurations - Open Site Config Tools
+    :width: 65 %
+    :align: center
 
 ------
 Sample

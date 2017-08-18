@@ -10,7 +10,7 @@ What is Content Monitoring?
 
 Content Monitoring is a feature that allows you to configure watches and notifications on your site.
 This will provide an easy way to detect unwanted or outdated content.
-Crafter Studio will run the process that performs monitoring every 5 minutes and send notifications
+Crafter Studio using the Website_editorial blueprint out of the box will run the process that performs monitoring everyday  and send notifications
 indicating the items detected by the content monitors.
 Content monitors are managed independently for each site and are highly customizable.
 
@@ -71,27 +71,33 @@ The file can also be located in the following path:
     
     <contentMonitoring>
       <monitor>
-        <name>Expired Content</name>
-        <query>expired_dt:[* TO NOW]</query>
+        <name>Content Expiring Tomorrow</name>
+        <query>expired_dt:[NOW/DAY+1DAY TO NOW/DAY+2DAY]</query>
         <paths>
           <path>
-            <name>Expired Content: 'About' Section</name>
-            <pattern>/site/website/about/.*</pattern>
-            <emailTemplate>expiredContentAboutNotice</emailTemplate>
-            <emails>admin@example.com,authors@example.com</emails>
+            <name>All Site</name>
+            <pattern>/site/.*</pattern>
+            <emailTemplate>contentExpiringSoon</emailTemplate>
+            <emails>admin@example.com</emails>
             <locale>en</locale>
           </path>
+        </paths>
+      </monitor>
+      <monitor>
+        <name>Content Expiring In One Week</name>
+        <query>expired_dt:[NOW/DAY+7DAYS TO NOW/DAY+8DAYS]</query>
+        <paths>
           <path>
-            <name>Expired Content: All Site</name>
+            <name>All Site</name>
             <pattern>/site/.*</pattern>
-            <emailTemplate>expiredContentNotice</emailTemplate>
-            <emails>authors@example.com</emails>
+            <emailTemplate>contentExpiringSoon</emailTemplate>
+            <emails>admin@example.com</emails>
             <locale>en</locale>
           </path>
         </paths>
       </monitor>
     </contentMonitoring>
-    
+
     ...
     
   </site-config>
@@ -101,7 +107,7 @@ Notification Templates Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Notification templates can be configured through Crafter Studio.  Go to the **Sidebar**, then click
-on **Site Config** > **Configuration** > **Notification Configuration**
+on |siteConfig| > **Configuration** > **Notification Configuration**
 
 .. figure:: /_static/images/site-admin/notification-config-open.png
   :align: center
@@ -121,21 +127,32 @@ The file can also be located in the following path:
     <lang name="en">
     
       ...
-      
-      <emailTemplate key="expiredContentNotice">
-          <subject>Expired Content Notice</subject>
-          <body>
-            <![CDATA[
-              <p>Monitor '${monitorName}' for site '${siteName}' has found the following expired items:</p>
-                <ul>
-                  <#list items as item>
-                      <li><a href="${item.url!authoringUrl}">${item.internalName!item.id}</a></li>
-                  </#list>
-                </ul>
-            ]]>
-          </body>
+
+      <emailTemplate key="contentExpiringSoon">
+        <subject>Content Expiring Soon</subject>
+        <body><![CDATA[
+          <html>
+            <head>
+              <meta charset="utf-8"/>
+            </head>
+            <body>
+              <p>
+                 ${monitorName} in site '${siteName}':
+                 <ul>
+                   <#list items as item>
+                     <#if item.url??>
+                       <li><a href="${item.url}">${item.internalName!item.id}</a></li>
+                     <#else>
+                       <li>${item.internalName!item.id}</li>
+                     </#if>
+                   </#list>
+                 </ul>
+              </p>
+            </body>
+          </html>
+        ]]></body>
       </emailTemplate>
-      
+
       ...
       
     </lang>
