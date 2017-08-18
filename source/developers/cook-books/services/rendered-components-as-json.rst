@@ -15,7 +15,7 @@ Step 1: Create a REST Controller
 * Under Scripts/rest right click and click create controller
     * Enter get-rendered-components.get as the controller name
 
-* Add the following code to the controller. 
+* Add the following code to the controller.
 
 .. code-block:: groovy
 
@@ -40,34 +40,32 @@ Step 1: Create a REST Controller
 
     if(targetPage != null) {
       result.page = targetPage
-      
+
       def pageItem = siteItemService.getSiteItem(targetPage)
-      
+
       if(pageItem != null) {
           def componentPaths = pageItem.queryValues("//item/key")
           result.components = []
-          
+
           if(componentPaths != null) {
-          
-          
               componentPaths.each { componentPath ->
                   if(componentPath.endsWith(".xml") && !componentPath.startsWith("/site/website") ) {
                       logger.info("processing ${componentPath}")
-                      
+
                       def component = [:]
                       component.id = componentPath
-                      
+
                       // wrap the response to capture the output
-                      def wrappedResponse = new CapturingResponseWrapper(response) 
-                      
+                      def wrappedResponse = new CapturingResponseWrapper(response)
+
                       // "include" the page that does the actual work
                       request.getRequestDispatcher("/crafter-component?id="+componentPath).include(request, wrappedResponse)
-                      
+
                       // get the captured output, parse it and prepare the actual response
-                      def capturedOut = wrappedResponse.getCaptureAsString() 
-                      
+                      def capturedOut = wrappedResponse.getCaptureAsString()
+
                       component.markup = capturedOut
-                      
+
                       result.components.add(component)
                   }
               }
@@ -85,7 +83,6 @@ Step 1: Create a REST Controller
     }
 
     return result
-
 
     protected class CapturingResponseWrapper extends HttpServletResponseWrapper {
 

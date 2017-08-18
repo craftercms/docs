@@ -157,8 +157,8 @@ Crafter Engine Properties
  * **security.urlRestrictions:** Contains any number of restriction elements. Each restriction is formed by a URL pattern (``<url>``)
    and a Spring EL expression (``<expression>``) executed against the current profile. If a request matches the URL, and the expression
    evaluates to false, access is denied. For more information, check
-   `UrlAccessRestrictionCheckingProcessor.java <http://downloads.craftersoftware.com/javadoc/profile/org/craftercms/security/processors/impl/UrlAccessRestrictionCheckingProcessor.html>`_
-   and `AccessRestrictionExpressionRoot.java <http://downloads.craftersoftware.com/javadoc/profile/org/craftercms/security/utils/spring/el/AccessRestrictionExpressionRoot.html>`_
+   :javadoc_base_url:`UrlAccessRestrictionCheckingProcessor.java <profile/org/craftercms/security/processors/impl/UrlAccessRestrictionCheckingProcessor.html>`
+   and :javadoc_base_url:`AccessRestrictionExpressionRoot.java <profile/org/craftercms/security/utils/spring/el/AccessRestrictionExpressionRoot.html>`
  * **socialConnections.facebookConnectionFactory.appId:** The Facebook app ID required for establishing connections with Facebook.
  * **socialConnections.facebookConnectionFactory.appSecret:** The Facebook app ID required for establishing connections with Facebook.
  * **jobs.jobFolder:** Specifies a folder which will be looked up for scripts to be scheduled using a certain cron expression. The folder

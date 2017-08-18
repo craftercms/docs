@@ -40,7 +40,7 @@ Example
 
 	POST .../api/1/services/api/1/dependency/get-dependencies.json?site=mysite
 
-.. code-block:: json
+.. code-block:: guess
 
     [
         {
@@ -53,6 +53,7 @@ Response
 --------
 
 .. code-block:: json
+    :linenos:
 
     {
         "submissionComment":"",

@@ -25,7 +25,7 @@ You can add more groups defined whenever needed.  The list above is just a start
 
 To find this section through studio follow the next instructions:
 
-#. Click on **Site Config** at the bottom of the *Sidebar*.
+#. Click on |siteConfig| at the bottom of the *Sidebar*.
 #. Click on **Groups** from the menu.
 
 .. image:: /_static/images/groups/site-config-groups.png

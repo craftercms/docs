@@ -3,7 +3,7 @@ Accessing the Admin Console
 ===========================
 
 Once the WAR file has been deployed, you can access the application in the following URL: 
-``HOST:PORT/crafter-profile-admin-console``
+``HOST:PORT/crafter-profile-admin``
 
 .. figure:: /_static/images/profile-admin/login.png
   :align: center

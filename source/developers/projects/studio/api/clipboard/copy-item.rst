@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-studio-api-clipboard-copy-item:
 
 =========
@@ -45,6 +43,7 @@ Request
     POST .../api/1/services/api/1/clipboard/copy-item.json?site=mysite
 
 .. code-block:: json
+    :linenos:
 
     {
       "item":
@@ -155,4 +154,6 @@ Responses
 || Status || Location                                 || Response Body                                    |
 +=========+===========================================+===================================================+
 || 200    ||                                          || See example above.                               |
++---------+-------------------------------------------+---------------------------------------------------+
+|| 400    ||                                          || ``{ "message" : "Bad Request" }``                |
 +---------+-------------------------------------------+---------------------------------------------------+

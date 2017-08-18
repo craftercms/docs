@@ -42,6 +42,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'edit_on_github',
+    'sphinx.ext.extlinks',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -87,7 +88,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['includes/*.rst']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -382,8 +383,19 @@ edit_on_github_project = 'craftercms/docs'
 edit_on_github_branch = version
 edit_on_github_base_folder = 'source'
 
+
 # Place substitution available in all files here
 rst_epilog = """
 .. |checkmark| unicode:: U+2713
 .. |ex| unicode:: U+2718
+
+.. |siteConfig| image:: /_static/images/configuration-site-config-icon.png
+                   :width: 15%
+
 """
+
+javadoc_base = 'http://javadoc.craftercms.org/'
+javadoc_version = '3.0.0'
+
+# Shorten external links
+extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None )}

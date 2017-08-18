@@ -27,7 +27,7 @@ Sample
         the Crafter Engine's session and are made accessible using the Profile APIs.
 
         You can learn more about personalization and targeting here:
-        http://docs.craftercms.org/en/3.0/developers/tagging.html
+        http://docs.craftercms.org/en/3.0/developers/targeting.html
 
     <property>
         <name />

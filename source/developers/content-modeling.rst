@@ -12,11 +12,11 @@ Every content object in Crafter CMS is an object associated with a Content Model
 Content Types in Crafter Studio
 -------------------------------
 
-Content Type Management in Crafter Studio is located in the Site Config.
+Content Type Management in Crafter Studio is located in the |siteConfig|.
 
-.. image:: /_static/images/content-model/admin-console-link.png
-	:width: 25%
-	:alt: Admin Console Link
+.. image:: /_static/images/content-model/site-config-link.png
+	:width: 40%
+	:alt: Site Config Link
 	:align: center
 
 Content Types are limited to two core types: Pages and Components. Both are made up of three ingredients:
@@ -45,15 +45,15 @@ Content Type Model Definition
 Content models are defined via Crafter Studio's graphical modeling tool under Content Types:
 
 .. image:: /_static/images/content-model/content-type-management.png
-	:width: 25%
-	:alt: Admin Console Link
+	:width: 50%
+	:alt: Site Config - Content Types
 	:align: center
 
 You can now either create a new content type or open an existing type. Creating a new content type brings up a dialog that requests some basic content type information.
 
 .. image:: /_static/images/content-model/create-content-type-1.png
-	:width: 25%
-	:alt: Admin Console Link
+	:width: 40%
+	:alt: Site Config - Create Content Type
 	:align: center
 
 You now specify:
@@ -187,7 +187,7 @@ You can only use one of either include or exclude. Use Include when you need to 
 
 We'll look at an example of limiting where you can create content from the Website_Editorial blueprint that comes out of the box.
 
-From the **Sidebar**, click on **Site Config** at the bottom.  Next, click on **Content Type** then either create a new content type or open an existing content type.  In the image below, we have the content type **Page - Article** open for editing.  Go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name *config.xml*, click on that pencil to edit.
+From the **Sidebar**, click on **Site Config** at the bottom.  Next, click on **Content Types** then either create a new content type or open an existing content type.  In the image below, we have the content type **Page - Article** open for editing.  Go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name *config.xml*, click on that pencil to edit.
 
 .. figure:: /_static/images/content-model/form-engine-prop-configuration.png
     :alt: Form Engine Properties Configuration
@@ -198,6 +198,14 @@ To limit where this particular content type can be created, the tags, <paths><in
 .. figure:: /_static/images/content-model/form-engine-prop-config-file.png
     :alt: Form Engine Properties Configuration File config.xml
     :align: center
+
+.. code-block:: xml
+
+    <paths>
+		<includes>
+			<pattern>^/site/website/articles/.*</pattern>
+		</includes>
+	</paths>
 
 To see how the above tags/example works, go to the **Sidebar** and right click on the **Home** folder and select **New Content**.  Notice that content type **Page - Article** is not available from the content types listed.
 
@@ -227,7 +235,7 @@ Form Controls are data input controls that, once placed on a form, will capture 
 
 Each Form Control type has it's own properties and constraints.  Some constraints are common, like "Variable Name" and "Required" while others apply only to the type, e.g. Height and Width limitations on the Image Picker control.  
 
-Form Engine Controls (please use the scrollbar to see more controls)
+Here's a list of available Form Engine Controls:
 
 .. include:: form-controls/list-form-controls.rst
 
@@ -238,14 +246,14 @@ Form Control Variable Names
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Every Form Control has a Variable Name property.  The Variable Name is used by the form engine to store the content entered by the user in the content model and search index.  This same Variable Name is used later by templates and controllers to retrieve the value.
 
-Variable Name Best Practices
+**Variable Name Best Practices**
 
 #. Be descriptive.  Well thought out Variable Names help with template and controller readability.
 #. Use camel case. Example: "productSummary".
 #. Use regex constraints on input boxes to enforce additional validation rules
 #. Do not use Reserved names.
 
-Reserved Variable Names
+**Reserved Variable Names**
 
 The following variable names are used by Crafter CMS.
   
@@ -278,7 +286,7 @@ The following variable names are used by Crafter CMS.
 +-------------------+----------------------------------------------------------+
 
 
-Variable Names and Search Indexing
+**Variable Names and Search Indexing**
 
 Crafter CMS indexes your content in to Solr using your content model variable name as the Solr field name. 
 Use the Solr schema to configure your Solr variable/solr field types in search.

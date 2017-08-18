@@ -37,5 +37,5 @@
 .. _Map: https://docs.oracle.com/javase/7/docs/api/java/util/Map.html
 .. _HttpSession: http://docs.oracle.com/javaee/6/api/javax/servlet/http/HttpSession.html
 .. _Locale: https://docs.oracle.com/javase/7/docs/api/java/util/Locale.html
-.. _Authentication: http://downloads.craftersoftware.com/javadoc/profile/org/craftercms/security/authentication/Authentication.html
-.. _Profile: http://downloads.craftersoftware.com/javadoc/profile/org/craftercms/profile/api/Profile.html
+.. _Authentication: :javadoc_base_url:`profile/org/craftercms/security/authentication/Authentication.html`
+.. _Profile: :javadoc_base_url:`profile/org/craftercms/profile/api/Profile.html`

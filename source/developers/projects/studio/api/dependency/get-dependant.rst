@@ -1,5 +1,3 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
 .. _crafter-studio-api-dependency-get-dependant:
 
 ===================
@@ -53,6 +51,7 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
+    :linenos:
 
     [
         {

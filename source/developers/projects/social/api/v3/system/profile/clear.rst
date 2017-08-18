@@ -25,7 +25,7 @@ Parameters
 +---------------------+-------------+---------------+--------------------------------------------+
 || Name               || Type       || Required     || Description                               |
 +=====================+=============+===============+============================================+
-|| profileIds         || String     ||              || List of IDs to be remove from the Cache   |
+|| profileIds         || String     ||              || List of IDs to be removed from the Cache  |
 +---------------------+-------------+---------------+--------------------------------------------+
 
 .. WARNING::
@@ -68,7 +68,7 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------+
 || 403    ||                               | .. code-block:: json                                |
 ||        ||                               |                                                     |
-||        ||                               |   { "message" : "Current subject doesnt have        |
+||        ||                               |   { "message" : "Current subject does not have      |
 ||        ||                               |   permission to execute global action ..." }        |
 +---------+--------------------------------+-----------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``        |

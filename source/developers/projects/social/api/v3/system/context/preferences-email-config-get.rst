@@ -57,10 +57,10 @@ Response
     "username": "",
     "password": "",
     "tls": false,
-    "replyTo": "social@local.loc",
-    "from": "social@local.loc",
+    "replyTo": "social@example.com",
+    "from": "social@example.com",
     "priority": 5.0,
-    "subject": "Latest change on you subscribe threads for Social"
+    "subject": "Latest change on your subscribed threads for Social"
   }
 
 ---------
@@ -76,7 +76,7 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------+
 || 403    ||                               | .. code-block:: json                                |
 ||        ||                               |                                                     |
-||        ||                               |   { "message" : "Current subject doesnt have        |
+||        ||                               |   { "message" : "Current subject does not have      |
 ||        ||                               |   permission to execute global action ..." }        |
 +---------+--------------------------------+-----------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``        |

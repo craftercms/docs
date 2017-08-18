@@ -29,12 +29,17 @@ System Requirements
 
 * See :ref:`supported platforms<requirements_supported_platforms>` for a detailed list and description of supported components.
 
+--------------------------------------
+Installing and verifying prerequisites
+--------------------------------------
+
+.. include:: /includes/installing-and-verifying-prerequisites.rst
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To Install a Development Environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To install a development environment, see :ref:`quick_start_guide`.
+To install a development environment, see the section on installing Crafter CMS from the zip download or the section on installing Crafter CMS from archive built by the Gradle environment builder in the :ref:`quick_start_guide`.
 
 ----------
 Activities
@@ -45,7 +50,7 @@ Activities
    :titlesonly:
 
    backup-and-recovery.rst
-   rebuilding-studio-database.rst
+   sync-studio-database-with-repo.rst
    debugging-search.rst
    reindexing-content.rst
    upgrading-to-crafter-cms-3-0.rst
@@ -61,7 +66,7 @@ Crafter Studio
 
    studio/configure-ldap.rst
    studio/changing-the-studio-logo.rst
-   studio/understanding-studio-environment-overrides.rst
+   studio/studio-configuration-overrides.rst
 
 --------------
 Crafter Engine
@@ -116,6 +121,3 @@ Crafter Social
 
   social/index.rst
   social/admin/index.rst
-
-
-

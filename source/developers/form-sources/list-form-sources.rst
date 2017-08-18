@@ -20,6 +20,10 @@
              :width: 50%
              :alt: Form Data Sources - File Browse
 
+.. |ctlCMISRepo| image:: /_static/images/form-sources/ds-cms-repo.png
+             :width: 50%
+             :alt: Form Data Sources - CMIS Repo
+
 .. |ctlVidDt| image:: /_static/images/form-sources/ds-vid-up-dt.png
              :width: 100%
              :alt: Form Data Sources - Video Uploaded From Desktop
@@ -48,6 +52,8 @@
 || |ctlFileDt|                 || Details are in the :ref:`form-source-file-desktop` page.       |
 +------------------------------+-----------------------------------------------------------------+
 || |ctlFileBrowse|             || Details are in the :ref:`form-source-file-browse` page.        |
++------------------------------+-----------------------------------------------------------------+
+|| |ctlCMISRepo|               || Details are in the :ref:`form-source-cmis-repo` page.          |
 +------------------------------+-----------------------------------------------------------------+
 || |ctlVidDt|                  || Details are in the :ref:`form-source-video-desktop` page.      |
 +------------------------------+-----------------------------------------------------------------+

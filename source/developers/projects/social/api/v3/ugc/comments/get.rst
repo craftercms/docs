@@ -55,7 +55,7 @@ Response
     "ancestors": [],
     "targetId": "Welcome",
     "subject": "",
-    "body": "This was the first comment in he site!",
+    "body": "This was the first comment in the site!",
     "createdBy": "59667e8abd4787992596ba6b",
     "lastModifiedBy": "59667e8abd4787992596ba6b",
     "createdDate": "2017-07-13T09:09Z",
@@ -84,7 +84,7 @@ Responses
 +---------+--------------------------------+-----------------------------------------------------+
 || 403    ||                               | .. code-block:: json                                |
 ||        ||                               |                                                     |
-||        ||                               |   { "message" : "Current subject doesnt have        |
+||        ||                               |   { "message" : "Current subject does not have      |
 ||        ||                               |   permission to execute global action ..." }        |
 +---------+--------------------------------+-----------------------------------------------------+
 || 500    ||                               || ``{ "message" : "Internal server error" }``        |
