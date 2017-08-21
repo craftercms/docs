@@ -5,6 +5,12 @@ Site Configuration
 ##################
 
 The site configuration file contains the primary site configuration.
+To modify the site configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Site Configuration** from the dropdown list.
+
+.. image:: /_static/images/site-admin/config-open-site-config.png
+    :alt: Configurations - Open Site Configuration
+    :width: 65 %
+    :align: center
 
 ******
 Sample
