@@ -10,11 +10,14 @@ The Site Config configuration file allows you to specify which items can be acce
 
 To find this configuration xml through studio follow the next instructions:
 
-#. Click on **Site Config** located in the Sidebar.
+#. Click on |siteConfig| located in the Sidebar.
 #. Choose **Configuration** from the menu.
 #. Select **Configurations**.
 
 .. image:: /_static/images/site-admin/configuration.png
+    :alt: Configurations - Open Configurations
+    :width: 65 %
+    :align: center
 
 ------
 Sample

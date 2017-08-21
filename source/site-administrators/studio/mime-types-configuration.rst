@@ -5,6 +5,12 @@ Mime Types Configuration
 ########################
 
 The mime types configuration file configures the mime types icons overrides for a site/blueprint.
+To modify the mime types configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Mime Types** from the dropdown list.
+
+.. image:: /_static/images/site-admin/config-open-mime-types-config.png
+    :alt: Configurations - Open Mime Types Configuration
+    :width: 65 %
+    :align: center
 
 ******
 Sample
