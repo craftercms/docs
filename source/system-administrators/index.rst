@@ -67,6 +67,7 @@ Crafter Studio
    studio/configure-ldap.rst
    studio/changing-the-studio-logo.rst
    studio/studio-configuration-overrides.rst
+   studio/debugging-publishing-issues.rst
 
 --------------
 Crafter Engine
@@ -121,3 +122,14 @@ Crafter Social
 
   social/index.rst
   social/admin/index.rst
+
+---------------
+Crafter Commons
+---------------
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    commons/encryption-tool.rst
+

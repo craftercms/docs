@@ -1,4 +1,4 @@
-.. _crafter-studio-api-site-create:
+.. _crafter-studio-api-site-delete:
 
 ===========
 Delete Site
