@@ -43,6 +43,10 @@ This example file contains the properties used by Crafter Engine:
 
   <?xml version="1.0" encoding="UTF-8"?>
   <site>
+    <!-- General properties -->
+    <indexFileName>index.xml</indexFileName>
+    <defaultLocale>en</defaultLocale>
+
     <!-- Filter properties -->
     <filters>
         <filter>
@@ -66,9 +70,6 @@ This example file contains the properties used by Crafter Engine:
         </filter>
     </filters>
 
-    <!-- Locale properties -->
-    <defaultLocale>en</defaultLocale>
-
     <!-- Content targeting properties -->
     <targeting>
       <enabled>true</enabled>
@@ -77,12 +78,13 @@ This example file contains the properties used by Crafter Engine:
       <availableTargetIds>en,ja,ja_JP,ja_JP_JP</availableTargetIds>
       <fallbackTargetId>en</fallbackTargetId>
       <mergeFolders>true</mergeFolders>
+      <redirectToTargetedUrl>false</redirectToTargetedUrl>
     </targeting>
 
     <!-- Profile properties -->
     <profile>
       <api>
-        <accessTokenId>cd287b58-ab9c-457f-a4f0-39ef49f04c69</accessTokenId>
+        <accessTokenId>${enc:q3l5YNoKH38RldAkg6EAGjxlI7+K7Cl4iEmMJNlemNOjcuhaaQNPLwAB824QcJKCbEeLfsg+QSfHCYNcNP/yMw==}</accessTokenId>
       </api>
     </profile>
 
@@ -111,8 +113,8 @@ This example file contains the properties used by Crafter Engine:
     <!-- Social properties -->
     <socialConnections>
       <facebookConnectionFactory>
-        <appId>000000000000000</appId>
-        <appSecret>c852cb30cda311e488300800200c9a66</appSecret>
+        <appId>${enc:Nk4ZJWGGNIf9tt0X8BudixQhHekkBbG1AJE6myeqxp8=}</appId>
+        <appSecret>${enc:JOqVSAHHPYmIO8dC5VCz4KDBbKK466zKeAEowuDRqDammJ+07XmRbB+2ob5T8mg6gAEjDs5WxMuMiMPaDr4wOg==}</appSecret>
       </facebookConnectionFactory>
     </socialConnections>
 
@@ -130,25 +132,28 @@ This example file contains the properties used by Crafter Engine:
   </site>
 
 Crafter Engine Properties
+ * **indexFileName:** The name of a page's index file (default is ``index.xml``).
+ * **defaultLocale:** The default locale for the site. Used with content targeting through localization.
  * **filters:** Used to define the filter mappings. Each ``<filter>`` element must contain a ``<script>`` element that specifies the complete
    path to the filter script, and a ``<mapping>`` element. In the ``<mapping>`` element, the ``<include>`` element contains the Ant
    patterns (separated by comma) that request URLs should match for the filter to be executed, while the ``<exclude>`` element contains
    the patterns that requests shouldn't match.
- * **defaultLocale:** The default locale for the site. Used with content targeting through localization.
- * **targeting.enabled**: If content targeting should be enabled. Defaults to false.
+ * **targeting.enabled**:``true`` if content targeting should be enabled. Defaults to false.
  * **targeting.rootFolders:** The root folders that should be handled for content targeting.
  * **targeting.excludePatterns:** Regex patterns that are used to exclude certain paths from content targeting.
  * **targeting.availableTargetIds:** The valid target IDs for content targeting (see :doc:`/site-administrators/engine/content-targeting-guide`).
  * **targeting.fallbackTargetId:** The target ID that should be used as last resort when resolving targeted content.
    (see :doc:`/site-administrators/engine/content-targeting-guide`).
- * **targeting.mergeFolders:** If the content of folders that have to the same "family" of target IDs should be merged.
+ * **targeting.mergeFolders:** ``true`` if the content of folders that have to the same "family" of target IDs should be merged.
+   (see :doc:`/site-administrators/engine/content-targeting-guide`).
+ * **targeting.redirectToTargetedUrl:** ``true`` if the request should be redirected when the targeted URL is different from the current URL.
    (see :doc:`/site-administrators/engine/content-targeting-guide`).
  * **profile.api.accessToken:** The access token to use for the Profile REST calls. This parameter should be always specified on
    multi-tenant configurations.
  * **security.login.formUrl:** The URL of the login form page. The default is /login.
  * **security.login.defaultSuccessUrl:** The URL to redirect to if the login was successful and the user couldn't be redirected to the
    previous page. The default is /.
- * **security.login.alwaysUseDefaultSuccessUrl:** If after successful login always redirect to the default success URL. The default is
+ * **security.login.alwaysUseDefaultSuccessUrl:** ``true`` if after successful login always redirect to the default success URL. The default is
    false.
  * **security.login.failureUrl:** The URL to redirect to if the login fails. The default is /login?login_error=true.
  * **security.logout.successUrl:** The URL to redirect after a successful logout. The default is /.
@@ -189,23 +194,54 @@ you can define a bean like this:
   :caption: application-context.xml
   :linenos:
 
-  <?xml version="1.0" encoding="UTF-8"?>
-  <beans xmlns="http://www.springframework.org/schema/beans"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:context="http://www.springframework.org/schema/context"
-         xsi:schemaLocation="
-         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-    
+	<?xml version="1.0" encoding="UTF-8"?>
+	<beans xmlns="http://www.springframework.org/schema/beans"
+	       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
     <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" parent="crafter.properties"/>
-    
+
     <bean id="greeting" class="mypackage.MyClass">
       <property name="myproperty" value="${myvalue}"/>
     </bean>
-  
-  </bean>
 
-A ``org.springframework.context.support.PropertySourcesPlaceholderConfigurer`` (like above) can be 
+  </beans>
+
+A ``org.springframework.context.support.PropertySourcesPlaceholderConfigurer`` (like above) can be
 specified in the context so that the properties of ``site-config.xml`` can be used as placeholders,
 like ``${myvalue}``. By making the placeholder configurer inherit from crafter.properties, you'll
 also have access to Engine's global properties (like ``crafter.engine.preview``).
+
+------------------------------
+Encrypted Configuration Values
+------------------------------
+
+It's recommended that configuration properties like ``profile.api.accessToken``, ``socialConnections.facebookConnectionFactory.appId`` and
+``socialConnections.facebookConnectionFactory.appSecret`` be encrypted since they contain sensible data that shouldn't be publicly
+available to anyone but developers and administrators. In order to do that, follow the next steps (you need a system administrator for the
+first two steps):
+
+#. Encrypt the values with the Crafter Commons Encryption Tool. You can find instructions of how to use it in :ref:`crafter-commons-encryption-tool`.
+#. Configure a ``PbkAesTextEncryptor`` in ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/services-context.xml``
+   First constructor argument is the password and second argument is the salt, which should be the same as the ones used during the
+   encryption. The name of the bean should be `crafter.textEncryptor`:
+
+	.. code-block:: xml
+
+		<bean id="crafter.textEncryptor" class="org.craftercms.commons.crypto.impl.PbkAesTextEncryptor">
+		  <constructor-arg value="klanFogyetkonjo"/>
+		  <constructor-arg value="S25pT2RkeWk="/>
+		</bean>
+
+	.. WARNING ::
+	  Please do not use the same password and salt shown in the example. You should generate your own.
+
+#. Put the encrypted values in your site's `site-config.xml` in placeholders and with an `enc` prefix. Example:
+
+	.. code-block:: xml
+
+		<profile>
+		  <api>
+		    <accessTokenId>${enc:q3l5YNoKH38RldAkg6EAGjxlI7+K7Cl4iEmMJNlemNOjcuhaaQNPLwAB824QcJKCbEeLfsg+QSfHCYNcNP/yMw==}</accessTokenId>
+		  </api>
+		</profile>
