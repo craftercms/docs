@@ -6,8 +6,8 @@ Engine Site Configuration
 
 Crafter Engine provides a flexible configuration system that allows site administrators to change
 the behavior of the site without the need to modify any code. Some properties are used by Crafter
-Engine itself, but developers can also add any custom property they need for they code. All
-properties will be available for developer in Freemarker templates and Groovy scripts using the
+Engine itself, but developers can also add any custom property they need for their code. All
+properties will be available for developers in the Freemarker templates and Groovy scripts using the
 ``siteConfig`` variable.
 
 XML Configuration Files

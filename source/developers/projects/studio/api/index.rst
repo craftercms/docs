@@ -52,7 +52,10 @@ Site Management
 .. toctree::
    :maxdepth: 1
 
+   site/clear-configuration-cache
    site/create-site
+   site/delete-site
+   site/exists
    site/get-site
    site/get-sites-per-user
 
@@ -85,6 +88,8 @@ Security
    security/login
    security/logout
    security/validate-session
+   security/get-user-permissions
+   security/get-user-roles
 
 
 ----------
@@ -192,3 +197,14 @@ Preview
    :maxdepth: 1
 
    preview/sync-site
+
+------
+Server
+------
+.. toctree::
+   :maxdepth: 1
+
+   server/get-available-languages
+   server/get-loggers
+   server/get-ui-resource-override
+   server/set-logger-state
