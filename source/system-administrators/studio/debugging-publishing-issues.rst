@@ -54,7 +54,7 @@ By executing this command all content is practically published. To avoid unneces
     WHERE site = 'a_site_id'
     AND state = 'READY_FOR_LIVE';
 
-.. code-block::
+.. code-block:: sql
 
     UPDATE item_state
     SET state = 'EXISTING_UNEDITED_UNLOCKED', system_processing = 0
