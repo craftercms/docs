@@ -97,4 +97,19 @@ How to set the JAVA_HOME environment variable
             * ``Progra~1`` = ``Program Files``
             * ``Progra~2`` = ``Program Files(x86)``
 
+.. note::
+
+    Windows users using older operating systems may experience issues when Crafter CMS starts up MongoDb and see the following error:
+
+    *The program can't start because api-ms-win-crt-runtime-l1-1-0.dll is missing from your computer. Try reinstalling the program to fix this problem.*
+
+
+    For MongoDb to startup properly, a Microsoft update may be needed for older operating systems including:
+
+        - Windows 7
+        - Windows 8
+        - Windows 8.1
+
+    To install the update, download the Universal C Runtime update from Microsoft ( https://support.microsoft.com/en-us/kb/2999226 )
+    When the update is installed, please try to start Crafter CMS again.
 
