@@ -385,8 +385,8 @@ Restrict Pages
 You can restrict pages based on whether a user is authenticated or has a certain role. To do this, you need to follow the next steps
 to create in the page content type a Repeating Group with a text Input for the roles:
 
-#.  In Studio, click on Site Config.
-#.  Click on Open Existing Type and select the content type for the pages that you want to restrict.
+#.  In Studio, click on |siteConfig|.
+#.  Click on **Content Types** then **Open Existing Type** and select the content type for the pages that you want to restrict.
 #.  On Controls, select the Repeating Group and add it to any Form Section (you can even create an Authorization section just for these
     fields).
 #.  In the Repeating Group properties, set Authorized Roles as Title and Name / Variable Name as authorizedRoles.
