@@ -26,6 +26,8 @@ Follow the next steps to import a site built in Crafter Studio 2.5.x to Crafter 
 		- **Site dropdown configuration:** ``config/studio/context-nav/site-dropdown.xml`` is now ``config/studio/context-nav/sidebar.xml`` in 3.0.
 		- **Tools configuration:** ``config/studio/administration/tools.xml`` has been renamed to ``config/studio/administration/site-config-tools.xml``.
 		- **Configured lists:** copy your configured list under ``form-control-config/configured-lists`` to the same path in ``config/studio``.
+		- **Personas:** the way Personas are handled has changed. In order to understand and migrate 2.5 Personas to 3.0 Targeting, please check
+		  :ref:`targeting`.
 
 	#. Import the content types:
 
