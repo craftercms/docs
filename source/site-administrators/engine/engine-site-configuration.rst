@@ -144,7 +144,7 @@ Crafter Engine Properties
  * **targeting.availableTargetIds:** The valid target IDs for content targeting (see :doc:`/site-administrators/engine/content-targeting-guide`).
  * **targeting.fallbackTargetId:** The target ID that should be used as last resort when resolving targeted content.
    (see :doc:`/site-administrators/engine/content-targeting-guide`).
- * **targeting.mergeFolders:** ``true`` if the content of folders that have to the same "family" of target IDs should be merged.
+ * **targeting.mergeFolders:** ``true`` if the content of folders that have the same "family" of target IDs should be merged.
    (see :doc:`/site-administrators/engine/content-targeting-guide`).
  * **targeting.redirectToTargetedUrl:** ``true`` if the request should be redirected when the targeted URL is different from the current URL.
    (see :doc:`/site-administrators/engine/content-targeting-guide`).
@@ -165,7 +165,7 @@ Crafter Engine Properties
    :javadoc_base_url:`UrlAccessRestrictionCheckingProcessor.java <profile/org/craftercms/security/processors/impl/UrlAccessRestrictionCheckingProcessor.html>`
    and :javadoc_base_url:`AccessRestrictionExpressionRoot.java <profile/org/craftercms/security/utils/spring/el/AccessRestrictionExpressionRoot.html>`
  * **socialConnections.facebookConnectionFactory.appId:** The Facebook app ID required for establishing connections with Facebook.
- * **socialConnections.facebookConnectionFactory.appSecret:** The Facebook app ID required for establishing connections with Facebook.
+ * **socialConnections.facebookConnectionFactory.appSecret:** The Facebook app secret required for establishing connections with Facebook.
  * **jobs.jobFolder:** Specifies a folder which will be looked up for scripts to be scheduled using a certain cron expression. The folder
    path should be specified with ``<path>``, and should be absolute to the site root. The cron expressions is specified in
    ``<cronExpression>``.

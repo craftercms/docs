@@ -13,9 +13,9 @@ Crafter CMS ships with a Tomcat Application Server, Solr, and MongoDb included i
     - deployer
     - mongodb
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------------
 Tailing Log Files From a shell/Command Line
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------------
 The most recent messages from the log files may be displayed by tailing the log files.  Here are the log files and locations of the log files:
 
 +------------------------------+-----------------------------------------------------------------+
@@ -41,11 +41,12 @@ For the Delivery environment:
 
     ``$CRAFTER_LOGS_DIR = $CRAFTER_DIR/crafter-delivery-env/logs``
 
-
+^^^^^^^^^^^^^^^^^^^^^
 Log file descriptions
 ^^^^^^^^^^^^^^^^^^^^^
 
-**Tomcat Log Files**
+Tomcat Log Files
+^^^^^^^^^^^^^^^^
 
 File: catalina.out
 
@@ -63,7 +64,8 @@ To tail the catalina log file in the delivery environment:
 
     tail -f crafter-delivery-env/logs/tomcat/catalina.out
 
-**Deployer Log Files**
+Deployer Log Files
+^^^^^^^^^^^^^^^^^^
 
 File: crafter-deployer.out
 
@@ -81,7 +83,8 @@ To tail the log file in the delivery environment:
 
     tail -f ./crafter-delivery-env/logs/deployer/crafter-deployer.out
 
-**Solr Log Files**
+Solr Log Files
+^^^^^^^^^^^^^^
 
 File: solr.log
 
@@ -89,16 +92,17 @@ This log file contains all messages pertaining to Crafter Search.  It records er
 
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 Viewing Logs Through Crafter Studio
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
+^^^^^^^^^^
 Audit Logs
 ^^^^^^^^^^
 
-To view audit logs through Crafter Studio, from the **Sidebar**, click on **Site Config**, then click on **Audit**
+To view audit logs through Crafter Studio, from the **Sidebar**, click on |siteConfig|, then click on **Audit**
 
-.. figure:: /_static/images/logs-audit.png
+.. figure:: /_static/images/site-admin/logs-audit.png
     :alt: Crafter Studio Audit Logs
 	:align: center
 
@@ -109,18 +113,18 @@ To view logs in Crafter Studio, click on **Site Config** from the **Sidebar**, t
 
 There are 4 log levels defined in Crafter CMS.  These levels determines what messages will be displayed in the **Logging Console**.  Below are the 4 log levels available:
 
-- debug
-- info
-- warn
-- error
+    - debug: displays things useful for debugging
+    - info: displays informational messages like progress of the application, etc
+    - warn: displays potentially harmful situations that might cause problems
+    - error: displays anything that may be fatal to the operation/causes a problem
 
-.. figure:: /_static/images/logs-logging-levels.png
+.. figure:: /_static/images/site-admin/logs-logging-levels.png
     :alt: Crafter Studio Logging Levels
 	:align: center
 
-After setting up the log levels desired, we'll now go to the **Log Console** to start viewing the logs.  From the **Sidebar**, click on **Site Config** -> **Log Console**.  To start viewing the logs, click on **Play/Pause** at the top to start viewing the log files
+After setting up the log levels desired, we'll now go to the **Log Console** to start viewing the logs.  From the **Sidebar**, click on |siteConfig| -> **Log Console**.  To start viewing the logs, click on **Play/Pause** at the top to start viewing the log files
 
-.. figure:: /_static/images/logs-log-console.png
+.. figure:: /_static/images/site-admin/logs-log-console.png
     :alt: Crafter Studio Log Console
 	:align: center
 
