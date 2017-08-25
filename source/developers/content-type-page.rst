@@ -1,10 +1,10 @@
-.. _template-page:
+.. _content-type-page:
 
-==============
-Page Templates
-==============
+=================
+Page Content Type
+=================
 
-Page templates are top level container types that lets you define the layout/structure and functionality of content/components.  To create a new page template, click on |siteConfig| from the **Sidebar**
+Page content types are top level container types that lets you define the layout/structure and functionality of content/components.  To create a new page content type, click on |siteConfig| from the **Sidebar**
 
 .. figure:: /_static/images/templates/templates-site-config.png
 	:alt: Template Site Config
@@ -17,14 +17,14 @@ Click on **Content Types**, then select **Create New Type**
     :align: center
     :width: 50%
 
-Enter a Display Label and content type name for your new page template, then select **Page** as Type and then click on the **Create** button
+Enter a Display Label and content type name for your new page content type, then select **Page** as Type and then click on the **Create** button
 
 .. figure:: /_static/images/templates/templates-create-new-filled.png
     :alt: Template Create New Type Dialog
     :align: center
     :width: 35%
 
-We'll now start to construct the layout of the page.  A template has three ingredients: the model, the view and the controller.
+We'll now start to construct the layout of the page.  A content type has three ingredients: the model, the view and the controller.
 
 ^^^^^
 Model
@@ -217,7 +217,7 @@ We can now start adding the script to get a list of articles depending on the ac
 
     templateModel.articles = articles
 
-There are two ways to bind a script/controller to a page/component.  The first way, as we have seen is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type.  We'll show the other way how to bind a script to a page/component in the next section :ref:`template-component`
+There are two ways to bind a script/controller to a page/component.  The first way, as we have seen is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type.  We'll show the other way how to bind a script to a page/component in the next section :ref:`content-type-component`
 
 To find out more about page and component scripts, please see :ref:`page-and-component-scripts`.
 
