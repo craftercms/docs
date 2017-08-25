@@ -18,7 +18,4 @@ Here are the topics discussed in this section:
 
    /developers/projects/engine/api/templating-api
    in-context-editing
-   template-page
-   template-component
 
-To learn more about content, pages and components, please see the previous section :ref:`content-model`.
