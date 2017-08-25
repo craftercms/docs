@@ -1,12 +1,12 @@
-.. _template-component:
+.. _content-type-component:
 
-===================
-Component Templates
-===================
+======================
+Component Content Type
+======================
 
-Component content type templates are very similar to page content type templates, as mentioned in :ref:`content-modeling`, the only difference between components and pages is that components cannot render by itself, it needs a container to render into.  In this section, we will show you how to create a component content type template that can be rendered in the sidebar of the Website_Editorial blueprint.
+Component content type templates are very similar to page content type templates, as mentioned in :ref:`content-modeling`, the only difference between components and pages is that components cannot render by itself, it needs a container to render into.  In this section, we will show you how to create a component content type that can be rendered in the sidebar of the Website_Editorial blueprint.
 
-To create a new component template, click on Admin Console in the Sidebar.  Click on *Content Types*, then select *Create New Type*.  Enter a Display Label and content type name for your new page template, then select **Component** as Type and then click on the **Create** button.
+To create a new component content type, click on Admin Console in the Sidebar.  Click on *Content Types*, then select *Create New Type*.  Enter a Display Label and content type name for your new page template, then select **Component** as Type and then click on the **Create** button.
 
 .. figure:: /_static/images/templates/templates-component-new.png
     :alt: Template Create New Type Component Dialog
@@ -14,7 +14,7 @@ To create a new component template, click on Admin Console in the Sidebar.  Clic
     :align: center
 
 
-We'll now start to construct the layout of our component.  Just like a Page Template, a Component Template has three ingredients: the model, the view and the controller.
+We'll now start to construct the layout of our component.  Just like a Page content type, a Component content has three ingredients: the model, the view and the controller.
 
 ^^^^^
 Model
@@ -50,7 +50,7 @@ We'll then bind the data source *Scripts* to the item selector *Controllers* by 
     :width: 95 %
     :align: center
 
-The model for our template is done.  You can add some other controls by dragging and dropping controls from the **Controls** section to the form.  To learn more about all the controls available, please see :ref:`form-controls`.  To learn more about the data sources available, please see :ref:`data-sources`.
+The model for our content type is done.  You can add some other controls by dragging and dropping controls from the **Controls** section to the form.  To learn more about all the controls available, please see :ref:`form-controls`.  To learn more about the data sources available, please see :ref:`data-sources`.
 
 ^^^^
 View
@@ -100,7 +100,7 @@ Controller
 
 We will add a controller that allows us to display the latest blog entries in the sidebar of our site.
 
-There are two ways to bind a script/controller to a page/component.  The first way, as we have seen in the previous section :ref:`template-page` is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type.  We'll show the other way how to bind a script to a page/component in this section, by adding an item selector to the the model with a corresponding data source *Child Content* named ``scripts``.  When we were building the model for our content type template, you may have noticed that we have already added an item selector named **Controllers** with a corresponding data source child content named **Scripts**, we are now going to construct a script that can be used by the item selector of our content type.
+There are two ways to bind a script/controller to a page/component.  The first way, as we have seen in the previous section :ref:`content-type-page` is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type.  We'll show the other way how to bind a script to a page/component in this section, by adding an item selector to the the model with a corresponding data source *Child Content* named ``scripts``.  When we were building the model for our content type template, you may have noticed that we have already added an item selector named **Controllers** with a corresponding data source child content named **Scripts**, we are now going to construct a script that can be used by the item selector of our content type.
 
 .. figure:: /_static/images/templates/templates-comp-bind-select.png
     :alt: Template Create New Type Component Dialog
@@ -120,3 +120,5 @@ We will then create a Sidebar component with the *Latest Blogs Widget*
     :alt: Template Create New Type Component Dialog
     :width: 95 %
     :align: center
+
+.. todo:: Update the section on binding a script to the component

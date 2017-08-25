@@ -202,10 +202,10 @@ To limit where this particular content type can be created, the tags, <paths><in
 .. code-block:: xml
 
     <paths>
-		<includes>
-			<pattern>^/site/website/articles/.*</pattern>
-		</includes>
-	</paths>
+        <includes>
+            <pattern>^/site/website/articles/.*</pattern>
+        </includes>
+    </paths>
 
 To see how the above tags/example works, go to the **Sidebar** and right click on the **Home** folder and select **New Content**.  Notice that content type **Page - Article** is not available from the content types listed.
 
@@ -256,8 +256,10 @@ Every Form Control has a Variable Name property.  The Variable Name is used by t
 **Reserved Variable Names**
 
 The following variable names are used by Crafter CMS.
-  
+
 +-------------------+----------------------------------------------------------+
+|| Variable Name    || Description                                             |
++===================+==========================================================+
 || file-name        || Used by the File Name and Auto File Name control.       |
 +-------------------+----------------------------------------------------------+
 || internal-name    || Used by Crafter Studio to label the content object      |
@@ -361,6 +363,7 @@ View templates control how the model is rendered as HTML. Crafter uses `FreeMark
 An example view template
 
 .. code-block:: guess
+   :linenos:
 
 	<#import "/templates/system/common/cstudio-support.ftl" as studio />
 
@@ -424,6 +427,7 @@ The following is an example of a component script. The component content type is
 script in Scripts > components > upcoming-events.groovy so that it is executed for all components of that type.
 
 .. code-block:: groovy
+    :linenos:
 
     import org.craftercms.engine.service.context.SiteContext
 
@@ -466,6 +470,7 @@ where everything after the groovy directory is part of the class' package. It's 
 convention.
 
 .. code-block:: groovy
+    :linenos:
 
     package utils
 
@@ -490,4 +495,16 @@ convention.
 For more information on the FreeMarker (Templating) APIs, pleasee see :ref:`templating-api`.
 
 For more information on the Groovy APIs, please see :ref:`groovy-api`
+
+
+------------------------------
+Creating Content Type Examples
+------------------------------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   content-type-page
+   content-type-component
 
