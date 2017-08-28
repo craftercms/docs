@@ -1,16 +1,14 @@
-.. _upgrading-to-crafter-cms-3-0:
-
-=======================================
+---------------------------------------
 Upgrading to Crafter CMS 3.0 from 2.5.x
-=======================================
+---------------------------------------
 
 .. DANGER::
 	This guide assumes that you're trying to upgrade a site from a stock 2.5.x Studio and with some slight Studio configuration changes. If your site
 	configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
 
----------
+^^^^^^^^^
 Authoring
----------
+^^^^^^^^^
 
 Follow the next steps to import a site built in Crafter Studio 2.5.x to Crafter Studio 3.0.
 
@@ -67,9 +65,9 @@ Follow the next steps to import a site built in Crafter Studio 2.5.x to Crafter 
 
 			UPDATE cstudio_objectstate SET state = 'EXISTING_UNEDITED_UNLOCKED', system_processing = 0 WHERE site = '{siteName}';
 
---------
+^^^^^^^^
 Delivery
---------
+^^^^^^^^
 
 If you have custom Engine configuration, specially if your Delivery is set up as multi tenant, you will need to do some slight changes to migrate your
 configuration under ``apache-tomcat/shared/classes/crafter/engine/extension`` to a 3.0 compatible configuration:
