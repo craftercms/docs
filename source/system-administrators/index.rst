@@ -53,12 +53,11 @@ Activities
    sync-studio-database-with-repo.rst
    debugging-search.rst
    reindexing-content.rst
-   upgrading-to-crafter-cms-3-0.rst
+   upgrade/index.rst
 
-
----------------
+--------------
 Crafter Studio
----------------
+--------------
 
 .. toctree::
    :maxdepth: 1
