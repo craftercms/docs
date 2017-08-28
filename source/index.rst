@@ -20,7 +20,6 @@ procedures as well as a comprehensive reference section.
    /site-administrators/index
    /system-administrators/index
    /release-notes/index
-   /upgrade/index
    /roadmap/index
    /contribute/index
    /source-code

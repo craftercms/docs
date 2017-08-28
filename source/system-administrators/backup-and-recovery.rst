@@ -1,3 +1,5 @@
+.. _backup-and-recovery:
+
 ===================
 Backup and Recovery
 ===================
