@@ -137,7 +137,7 @@ html_show_sphinx = False
 html_theme_options = {
     "analytics_id": "UA-40677244-9",
     "topbar_items": [
-        {"text":"CrafterCMS Site", "link":"//craftercms.org"}
+        {"text":"Crafter CMS Site", "link":"//craftercms.org"}
     ]
 }
 
