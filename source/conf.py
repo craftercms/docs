@@ -42,6 +42,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'edit_on_github',
+    'sphinx.ext.extlinks',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -87,7 +88,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['includes/*.rst']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -122,8 +123,20 @@ todo_include_todos = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #html_theme = 'default'
-html_theme = 'sphinx_rtd_theme'
+#html_theme = 'sphinx_rtd_theme'
 #html_theme = 'alabaster'
+# https://github.com/rart/craftercms-sphinx-theme
+html_theme = 'craftercms_sphinx_theme'
+html_theme_options = {
+    "analytics_id": "UA-40677244-9",
+    "topbar_items": [
+        {"text":"Crafter CMS Site", "link":"//craftercms.org"}
+    ]
+}
+
+# Adding additional css files...
+# html_context = { "extra_css_files": ["_static/custom.css"] }
+
 
 html_show_sphinx = False
 
