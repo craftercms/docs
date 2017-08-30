@@ -1,0 +1,33 @@
+--------------------------
+Crafter CMS 2.5.2 to 2.5.6
+--------------------------
+
+^^^^^^^^^
+1. Search
+^^^^^^^^^
+
+1.1. Config Changes
+^^^^^^^^^^^^^^^^^^^
+Previously Crafter CMS indexed documents publishedDate. This was updated to crafterPublishedDate to avoid colisions with custom content models.
+
+crafter.search.solr.field.publishedDate.name=crafterPublishedDate
+crafter.search.solr.field.publishedDate.alt.name=crafterPublishedDate_dt
+
+=============== ============================================================================================
+Who is Impacted Any Java or Groovy code that queries for `publishedDate` field
+
+Action Required Update queries or change the above config back to publishedDate and publishedDate_dt
+=============== ============================================================================================
+
+1.2. Autofilter for disabled and expired items
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Crater Search no automatically applies a filter query for disabled and expired items
+
+=============== ============================================================================================
+Who is Impacted All runtime queries
+
+Action Required None
+
+Optional Action You may chose to simplify any existing code with queries that included these filters
+=============== ============================================================================================
+
