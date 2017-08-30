@@ -5,7 +5,7 @@ The Crafter CMS |version| Manual
 .. default-domain:: craftercms
 
 Welcome to the Crafter CMS |version| Manual. Crafter CMS is an open-source,
-Java-based, Web content management system for Web sites, mobile apps, VR and more, designed for ease of development and scaling. Crafter CMS is comprised of several independent, integrated components including: a core content repository, an authoring application for content editors/managers (Crafter Studio), a dynamic content delivery system (Crafter Engine), a user profile store and personalization server (Crafter Profile), a query/search server (Crafter Search) and a social content store and server (Crafter Social).
+Java-based, Web content management system for Websites, mobile apps, VR and more, designed for ease of development and scaling. Crafter CMS is comprised of several independent, integrated components including: a core content repository, an authoring application for content editors/managers (Crafter Studio), a dynamic content delivery system (Crafter Engine), a user profile store and personalization server (Crafter Profile), a query/search server (Crafter Search) and a social content store and server (Crafter Social).
 
 This Manual introduces key concepts in Crafter CMS, presents the authoring and
 development environment, and provides operational and administrative considerations and
