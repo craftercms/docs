@@ -19,6 +19,7 @@ Assume we have two objects, one called Parent and one called Child and they're s
 **Parent**: Below you'll see a typical *level descriptor* which will be the parent of another object. You'll note the *level descriptor* defines multiple elements that are common to everything at this level in the hierarchy and below it. This *level descriptor* defines a primary CSS file ``main.css``, a common header component ``default-header.xml`` and a common footer component ``default-footer.xml``.
 
 .. code-block:: xml
+    :linenos:
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<component>
@@ -61,6 +62,7 @@ Assume we have two objects, one called Parent and one called Child and they're s
 **Child**: Below is the XML file of a page residing under the above *level descriptor* and is setup to inherit from it. You'll note the definition of the ``merge-strategy`` as ``inherit-levels``, this invokes the level-based inheritance mechanics that require Crafter CMS to look at current and higher levels for files named ``crafter-level-descriptor.level.xml`` (this is configurable). You'll also note that this page doesn't specify the CSS file/group of files to include, nor will it need to specify the header nor footer components.
 
 .. code-block:: xml
+    :linenos:
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<page>

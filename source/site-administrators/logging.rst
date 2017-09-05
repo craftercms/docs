@@ -4,7 +4,7 @@
 Logging and Audit Logging
 =========================
 
-Log files from several sources are created when running Crafter CMS.  These log files are useful for checking the status of Crafter CMS, for example, the success of actions/requests, warnings and error messages.  These logs can be used to provide more information about potential issues in the system or for debugging errors.  The log files can be found in ``$CRAFTER_DIR/crafter-auth-env/logs/`` or in ``$CRAFTER_DIR/crafter-delivery-env/logs/`` depending on which environment you are running.  Effective use of these logs is an important part of maintaining your sites and are useful for keeping track of your system performance.
+Log files from several sources are created when running Crafter CMS.  These log files are useful for checking the status of Crafter CMS, for example, the success of actions/requests, warnings and error messages.  These logs can be used to provide more information about potential issues in the system or for debugging errors.  The log files can be found in ``$CRAFTER_DIR/crafter-authoring/logs/`` or in ``$CRAFTER_DIR/crafter-delivery/logs/`` depending on which environment you are running.  Effective use of these logs is an important part of maintaining your sites and are useful for keeping track of your system performance.
 
 Crafter CMS ships with a Tomcat Application Server, Solr, and MongoDb included in the bundle.  There are four folders used by Crafter CMS for the log files,
 
@@ -35,11 +35,11 @@ The most recent messages from the log files may be displayed by tailing the log 
 
 For the Authoring environment:
 
-    ``$CRAFTER_LOGS_DIR = $CRAFTER_DIR/crafter-auth-env/logs``
+    ``$CRAFTER_LOGS_DIR = $CRAFTER_DIR/crafter-authoring/logs``
 
 For the Delivery environment:
 
-    ``$CRAFTER_LOGS_DIR = $CRAFTER_DIR/crafter-delivery-env/logs``
+    ``$CRAFTER_LOGS_DIR = $CRAFTER_DIR/crafter-delivery/logs``
 
 ^^^^^^^^^^^^^^^^^^^^^
 Log file descriptions
@@ -56,13 +56,13 @@ To tail the catalina log file in the authoring environment:
 
 .. code-block:: bash
 
-    tail -f crafter-auth-env/logs/tomcat/catalina.out
+    tail -f crafter-authoring/logs/tomcat/catalina.out
 
 To tail the catalina log file in the delivery environment:
 
 .. code-block:: bash
 
-    tail -f crafter-delivery-env/logs/tomcat/catalina.out
+    tail -f crafter-delivery/logs/tomcat/catalina.out
 
 Deployer Log Files
 ^^^^^^^^^^^^^^^^^^
@@ -75,13 +75,13 @@ To tail the log file in the authoring environment:
 
 .. code-block:: bash
 
-    tail -f crafter-auth-env/logs/deployer/crafter-deployer.out
+    tail -f crafter-authoring/logs/deployer/crafter-deployer.out
 
 To tail the log file in the delivery environment:
 
 .. code-block:: bash
 
-    tail -f ./crafter-delivery-env/logs/deployer/crafter-deployer.out
+    tail -f ./crafter-delivery/logs/deployer/crafter-deployer.out
 
 Solr Log Files
 ^^^^^^^^^^^^^^

@@ -127,3 +127,4 @@ To create the archives(``*.zip`` or ``*.tar.gz``) for installing Crafter CMS, th
 
 For more details on using the Gradle environment builder, please review: https://github.com/craftercms/craftercms/blob/master/README.md
 
+For more details on building Crafter CMS on Windows, please review :ref:`build-crafter-cms-in-windows`
