@@ -6,9 +6,9 @@ System Administrators
 
 This guide is intended to provide system administrators with the information and access to the tools they need to install and maintain Crafter CMS components.
 
--------------------
+===================
 System Requirements
--------------------
+===================
 +------------------+-----------------------------------+-----------------------------------------+
 || Parameter Name  || Description                      || Prerequisites                          |
 +==================+===================================+=========================================+
@@ -35,15 +35,15 @@ Installing and verifying prerequisites
 
 .. include:: /includes/installing-and-verifying-prerequisites.rst
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------
 To Install a Development Environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------
 
 To install a development environment, see the section on installing Crafter CMS from the zip download or the section on installing Crafter CMS from archive built by the Gradle environment builder in the :ref:`quick_start_guide`.
 
-----------
+==========
 Activities
-----------
+==========
 
 .. toctree::
    :maxdepth: 1
@@ -51,13 +51,13 @@ Activities
 
    backup-and-recovery.rst
    sync-studio-database-with-repo.rst
-   debugging-search.rst
    reindexing-content.rst
    upgrade/index.rst
+   troubleshooting.rst
 
---------------
+==============
 Crafter Studio
---------------
+==============
 
 .. toctree::
    :maxdepth: 1
@@ -68,9 +68,9 @@ Crafter Studio
    studio/studio-configuration-overrides.rst
    studio/debugging-publishing-issues.rst
 
---------------
+==============
 Crafter Engine
---------------
+==============
 
 .. toctree::
    :maxdepth: 1
@@ -79,9 +79,9 @@ Crafter Engine
    engine/configure-engine-multi-tenancy.rst
    engine/turning-off-show-error.rst
 
-----------------
+================
 Crafter Deployer
-----------------
+================
 
 .. toctree::
   :maxdepth: 1
@@ -89,9 +89,9 @@ Crafter Deployer
 
   deployer/admin-guide.rst
 
---------------
+==============
 Crafter Search
---------------
+==============
 
 .. toctree::
   :maxdepth: 1
@@ -100,9 +100,9 @@ Crafter Search
   search/index.rst
 
 
----------------
+===============
 Crafter Profile
----------------
+===============
 
 .. toctree::
    :maxdepth: 1
@@ -111,9 +111,9 @@ Crafter Profile
    profile/index.rst
    profile/admin/index.rst
 
---------------
+==============
 Crafter Social
---------------
+==============
 
 .. toctree::
   :maxdepth: 1
@@ -122,9 +122,9 @@ Crafter Social
   social/index.rst
   social/admin/index.rst
 
----------------
+===============
 Crafter Commons
----------------
+===============
 
 .. toctree::
     :maxdepth: 1

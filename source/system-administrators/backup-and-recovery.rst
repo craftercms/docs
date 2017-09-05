@@ -9,7 +9,7 @@ Crafter CMS out of the box comes with a script to backup and restore your enviro
 ------
 Backup
 ------
-To backup your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}-env/bin``, where ``{env}`` is the environment (either auth or delivery) then run the following:
+To backup your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}/bin``, where ``{env}`` is the environment (either authoring or delivery) then run the following:
 
     * Unix/Linux systems:
 

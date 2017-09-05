@@ -30,8 +30,8 @@ From your command line, navigate to your ``{Crafter-CMS-delivery-environment-dir
 
 where:
 
-    - ``site name`` is the name of your site
-    - ``site's published repo git url`` is the site's published repository git url.
+    - ``<site name>`` is the name of your site
+    - ``<site's published repo git url>`` is the site's published repository git url.
       We recommend using Secure Shell (SSH) or if you are just working on another directory on disk for your delivery, you can just use the filesystem.  When your repository is local, make sure to use the absolute path.
 
       Here is a sample git url using ssh:
