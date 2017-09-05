@@ -245,7 +245,7 @@ Let's look at an example on how to start an authoring environment using the scri
 
 .. code-block:: bash
 
-   cd crafter-auth-env
+   cd crafter-authoring
    ./startup.sh
 
 What the above does is go to your authoring environment folder, then run the startup script.
@@ -370,8 +370,8 @@ The Gradle task above will:
 #. Build all Crafter CMS modules from the source (check the :ref:`git` section on how to update the source)
 #. Create the environment folders and copy all needed resources
 
-    - ``crafter-auth-env``
-    - ``crafter-delivery-env``
+    - ``crafter-authoring``
+    - ``crafter-delivery``
 
 To build a module (all module options for task ``build`` are listed in the table above), run the following (we'll build the module *studio* in the example below):
 
@@ -452,7 +452,7 @@ The Gradle task ``bundle`` will build a deployable and distributable bundle of C
 
    ./gradlew bundle [-Penv={env}]
 
-Archives will be saved as ``crafter-auth-env.tar`` and ``crafter-auth-env.zip`` for the *Authoring Environment* and ``crafter-delivery-env.tar`` and ``crafter-delivery-env.zip`` for the *Delivery Environment* in the ``bundles`` folder
+Archives will be saved as ``crafter-cms-authoring.tar`` and ``crafter-cms-authoring.zip`` for the *Authoring Environment* and ``crafter-cms-delivery.tar`` and ``crafter-cms-delivery.zip`` for the *Delivery Environment* in the ``bundles`` folder
 
 
 .. _gradle-tasks:
@@ -519,12 +519,12 @@ Common task properties
 || authEnv                || ``authoring.root``                                                  |
 ||                        +----------------------------------------------------------------------+
 ||                        || Path were a development environment will be generated.              |
-||                        || Default value is *./crafter-auth-env/*                              |
+||                        || Default value is *./crafter-authoring/*                             |
 +-------------------------+----------------------------------------------------------------------+
 || liveEnv                || ``delivery.root``                                                   |
 ||                        +----------------------------------------------------------------------+
 ||                        || Path were a delivery environment will be generated.                 |
-||                        || Default value is *./crafter-delivery-env/*                          |
+||                        || Default value is *./crafter-delivery/*                              |
 +-------------------------+----------------------------------------------------------------------+
 || includeProfile         || ``crafter.profile``                                                 |
 ||                        +----------------------------------------------------------------------+
@@ -729,3 +729,67 @@ Change the branch/tag of a project (manual way)
    git submodule sync --recursive
 
 3. Run :ref:`update-submodules`
+
+.. _build-crafter-cms-in-windows:
+
+===============================
+Building Crafter CMS in Windows
+===============================
+
+This section will give you information/tips on how to setup your environment in order to build Crafter CMS on Windows.
+
+----------------------------
+Installing the prerequisites
+----------------------------
+
+The first thing we need to do is install the prerequisites.  We need to install the following:
+
+    - Java 8
+    - Git 2.x+
+    - Maven 3.3.x+
+
+^^^^^^^^^^^^^^^
+Installing Java
+^^^^^^^^^^^^^^^
+
+The :ref:`quick_start_guide` has information on how to install Java and setup your JAVA_HOME environment variable.
+
+^^^^^^^^^^^^^^
+Installing Git
+^^^^^^^^^^^^^^
+
+There are a few ways to install git on Windows.
+
+#. One way is to install Git for Windows, download available here:  http://git-scm.com/download/win
+#. Another way is to use `chocolatey <https://chocolatey.org/>`_, which will help you install packages in one line, similar to how ``apt-get``/``yum`` is used in Linux to install packages.  After installing chocolatey, to install git, just run the following:
+
+   .. code-block:: bat
+
+       choco install git
+
+
+#. Yet another way is to install `GitHub for Windows <https://git-for-windows.github.io/>`_
+
+You can find more information on installing git on Windows `here <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
+
+^^^^^^^^^^^^^^^^
+Installing Maven
+^^^^^^^^^^^^^^^^
+
+There are a few ways to install maven on Windows.
+
+#. One way to install maven on Windows is by following the guide `Maven on Windows <https://maven.apache.org/guides/getting-started/windows-prerequisites.html>`_
+#. Another way is if you used `chocolatey <https://chocolatey.org/>`_ to install git, you can use it too to install maven by running the following:
+
+   .. code-block:: bat
+
+       choco install maven
+
+--------------------
+Building Crafter CMS
+--------------------
+
+To build Crafter CMS after installing the prerequisites, you can follow the instructions listed here: https://github.com/craftercms/craftercms/blob/master/README.md
+
+Also, please note that depending on your machine, Crafter CMS may take around half an hour or so to build.
+

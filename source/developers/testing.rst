@@ -10,7 +10,7 @@ In Crafter CMS, you build on top of it and not in it so for normal development, 
 Unit Testing
 ------------
 
-The primary goal of unit testing is to take the smallest piece of testable software in the application, isolate it from the remainder of the code, and determine whether it behaves exactly as you expect. Each unit is tested separately before integrating them into modules to test the interfaces between modules. Unit testing has proven its value in that a large percentage of defects are identified during its use.[1]_
+The primary goal of unit testing is to take the smallest piece of testable software in the application, isolate it from the remainder of the code, and determine whether it behaves exactly as you expect. Each unit is tested separately before integrating them into modules to test the interfaces between modules. Unit testing has proven its value in that a large percentage of defects are identified during its use. [#]_
 
 For unit testing in Crafter CMS Software we use Junit, Mockito and Spring Test on top of maven surefire plugin.
 
@@ -23,7 +23,7 @@ For unit testing in Crafter CMS Software we use Junit, Mockito and Spring Test o
 Integration Testing
 -------------------
 
-Integration testing is a logical extension of unit testing. In its simplest form, two units that have already been tested are combined into a component and the interface between them is tested. A component, in this sense, refers to an integrated aggregate of more than one unit. In a realistic scenario, many units are combined into components, which are in turn aggregated into even larger parts of the program.[2]_
+Integration testing is a logical extension of unit testing. In its simplest form, two units that have already been tested are combined into a component and the interface between them is tested. A component, in this sense, refers to an integrated aggregate of more than one unit. In a realistic scenario, many units are combined into components, which are in turn aggregated into even larger parts of the program. [#]_
 
 We use Integration Testing as a full test of the software. This includes UI interface, for that we use Selenium Webdriver, GhostDriver and PhantomJs (optionally you may use any other webdriver, but official tests will be done on PhantomJs)
 
@@ -32,6 +32,7 @@ We use Integration Testing as a full test of the software. This includes UI inte
 
 To learn more about the integration testing done for Crafter CMS Software, see the section on :ref:`crafter-cms-qa-project`
 
+.. rubric:: Footnotes
 
-.. [1] http://msdn.microsoft.com/en-us/library/aa292197(v=vs.71).aspx
-.. [2] http://msdn.microsoft.com/en-us/library/aa292128(v=vs.71).aspx
+.. [#] http://msdn.microsoft.com/en-us/library/aa292197(v=vs.71).aspx
+.. [#] http://msdn.microsoft.com/en-us/library/aa292128(v=vs.71).aspx
