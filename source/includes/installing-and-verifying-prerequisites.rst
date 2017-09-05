@@ -44,29 +44,29 @@ How to set the JAVA_HOME environment variable
 
 **To set JAVA_HOME on a Unix/Linux System**
 
-    Korn and bash shells:
+    - Korn and bash shells:
 
-    .. code-block:: bash
+      .. code-block:: bash
 
-        export JAVA_HOME=jdk-install-dir
-        export PATH=$JAVA_HOME/bin:$PATH
+          export JAVA_HOME=jdk-install-dir
+          export PATH=$JAVA_HOME/bin:$PATH
 
-    Bourne shell:
+    - Bourne shell:
 
-    .. code-block:: sh
+      .. code-block:: sh
 
-        JAVA_HOME=jdk-install-dir
-        export JAVA_HOME
-        PATH=$JAVA_HOME/bin:$PATH
-        export PATH
+          JAVA_HOME=jdk-install-dir
+          export JAVA_HOME
+          PATH=$JAVA_HOME/bin:$PATH
+          export PATH
 
-    C shell:
+    - C shell:
 
-    .. code-block:: csh
+      .. code-block:: csh
 
-        setenv JAVA_HOME jdk-install-dir
-        setenv PATH $JAVA_HOME/bin:$PATH
-        export PATH=$JAVA_HOME/bin:$PATH
+          setenv JAVA_HOME jdk-install-dir
+          setenv PATH $JAVA_HOME/bin:$PATH
+          export PATH=$JAVA_HOME/bin:$PATH
 
 **To set JAVA_HOME on a Windows System**
 
@@ -109,6 +109,9 @@ How to set the JAVA_HOME environment variable
         - Windows 7
         - Windows 8
         - Windows 8.1
+        - All Windows Server 2008
+        - Windows Server 2012 R2
+        - Windows Server 2012
 
     To install the update, download the Universal C Runtime update from Microsoft ( https://support.microsoft.com/en-us/kb/2999226 )
     When the update is installed, please try to start Crafter CMS again.
