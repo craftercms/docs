@@ -53,4 +53,4 @@ The following browsers are supported:
 
     - Chrome
     - Firefox
-    - Edge
+
