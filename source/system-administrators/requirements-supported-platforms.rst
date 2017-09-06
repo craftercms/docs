@@ -32,7 +32,7 @@ OS (All components)
 
 The following Operating Systems are supported:
 
-    - Windows    
+    - Windows (Windows 7, Windows 10, Windows Server 2012 and Windows Server 2016)
     - Linux
     - OS X
     
@@ -53,4 +53,4 @@ The following browsers are supported:
 
     - Chrome
     - Firefox
-    - Edge
+

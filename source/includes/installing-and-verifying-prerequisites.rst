@@ -73,7 +73,6 @@ How to set the JAVA_HOME environment variable
     * Do one of the following:
 
       * Windows 7 – Right click **My Computer** and select **Properties > Advanced**
-      * Windows 8 – Go to **Control Panel > System > Advanced System Settings**
       * Windows 10 - Type **advanced system settings** in the search box (beside the Windows start button) and click on the match
 
     * Click the **Environment Variables** button
@@ -107,9 +106,6 @@ How to set the JAVA_HOME environment variable
     For MongoDb to startup properly, a Microsoft update may be needed for older operating systems including:
 
         - Windows 7
-        - Windows 8
-        - Windows 8.1
-        - All Windows Server 2008
         - Windows Server 2012 R2
         - Windows Server 2012
 
