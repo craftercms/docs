@@ -19,8 +19,9 @@ To run Crafter CMS, the following are required:
     
 Additionally, to run the optional components Crafter Profile and/or Crafter Social, the following is required:
 
-    - MongoDb 3+
+    - MongoDB 3+
 
+Please note that Crafter CMS does not require any external databases for the core system to run and deliver fully dynamic experiences.  MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide user management and social features.
 
 -------------------
 Supported Platforms

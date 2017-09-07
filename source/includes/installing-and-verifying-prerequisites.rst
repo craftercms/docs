@@ -98,12 +98,12 @@ How to set the JAVA_HOME environment variable
 
 .. note::
 
-    Windows users using older operating systems may experience issues when Crafter CMS starts up MongoDb and see the following error:
+    Windows users using older operating systems may experience issues when Crafter CMS starts up MongoDB and see the following error:
 
     *The program can't start because api-ms-win-crt-runtime-l1-1-0.dll is missing from your computer. Try reinstalling the program to fix this problem.*
 
 
-    For MongoDb to startup properly, a Microsoft update may be needed for older operating systems including:
+    For MongoDB to startup properly, a Microsoft update may be needed for older operating systems including:
 
         - Windows 7
         - Windows Server 2012 R2
