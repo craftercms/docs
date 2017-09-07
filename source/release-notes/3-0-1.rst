@@ -18,7 +18,6 @@ Updates
 	* Bug fixes and general enhancements. To make use of this, you'll need to stop ``authoring`` and remove the folder ``craftercms/data/repos/global``, Studio will recreate with the updated blueprints. (That won't update already created sites.)
 * Other updates
 	* Added the integration testing suite right into Gradle, you can invoke it by calling ``gradlew(.sh/bat) test``
-	* Publishing troubleshooting guide (URL: http://docs.craftercms.org/en/3.0/system-administrators/studio/debugging-publishing-issues.html?highlight=publishing%20issues)
 
 and lots of bug fixes :)
 
