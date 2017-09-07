@@ -50,4 +50,4 @@ Enhancements
 
 and lots of bug fixes :)
 
-For a full list of tickets, please visit: `GitHub 3.0.0 Milestone <https://github.com/craftercms/craftercms/milestone/3>`_
+For a full list of tickets, please visit: `GitHub 3.0.0 Milestone <https://github.com/craftercms/craftercms/milestone/3?closed=1>`_

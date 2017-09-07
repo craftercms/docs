@@ -22,4 +22,4 @@ Updates
 
 and lots of bug fixes :)
 
-For a full list of tickets, please visit: `GitHub 3.0.1 Milestone <https://github.com/craftercms/craftercms/milestone/14>`_
+For a full list of tickets, please visit: `GitHub 3.0.1 Milestone <https://github.com/craftercms/craftercms/milestone/14?closed=1>`_
