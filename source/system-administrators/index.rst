@@ -19,11 +19,11 @@ System Requirements
 ||                 ||                                  || 1+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
 || Crafter Profile || User profile and attribute store || Java 1.8+                              |
-||                 || (Optional component)             || MongoDB 3+                             |
+||                 || (Optional component)             || MongoDB 3+ (included in the bundle)    |
 ||                 ||                                  || 1+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
 || Crafter Social  || User Generated Content server    || Java 1.8+                              |
-||                 || (Optional component)             || MongoDB 3+                             |
+||                 || (Optional component)             || MongoDB 3+ (included in the bundle)    |
 ||                 ||                                  || 1+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
 
