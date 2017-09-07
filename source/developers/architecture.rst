@@ -8,7 +8,7 @@ Crafter CMS Architecture
 
 Crafter CMS distinguishes itself by its modern architecture, in turn this enables:
 
-* Truly Decoupled CMS (disconnected global delivery)
+* Truly Decoupled CMS (disconnected global delivery),  composed of independent microservice-based components
 * Dynamic / personalized delivery of every request at speed
 * API first CMS (content as a service)
 * Git-based CMS (allows for excellent developer cadence)

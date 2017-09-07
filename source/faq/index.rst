@@ -19,6 +19,25 @@ What do I need to run Crafter CMS
 
 Follow these instructions to run Crafter CMS and to download and install Crafter on your machine or server: :ref:`Quick Start Guide <getting-started>`
 
+-----------------------------------------------------
+Do I need to run MongoDB in order to run Crafter CMS?
+-----------------------------------------------------
+
+No.  MongoDB is not mandatory for Crafter CMS to operate. MongoDB backs optional functionality in the platform.
+
+Crafter CMS is composed of independent microservices that you can activate/de-activate as needed.  Two Crafter CMS microservices rely on MongoDB:
+
+Crafter Profile which provides identity management, a distributed user attribute store and advanced targeting capabilities.
+Crafter Social which provides support for User Generated Content (UGC).
+These components add powerful capabilities to support your digital experiences but are not mandatory for Crafter CMS to deliver dynamic/personalized digital experiences.
+
+-----------------------------------------------
+Do I need to connect Crafter CMS to a database?
+-----------------------------------------------
+
+No.  It is not mandatory for Crafter CMS to connect to any external databases.  Crafter Studio embeds and manages its own database.  Crafter Social and Crafter Profile leverage MongoDB.  These are optional components.
+
+
 ------------------------------------
 Can Crafter CMS be used as a portal?
 ------------------------------------
