@@ -27,9 +27,9 @@ Supported Platforms
 OS (All components)
 ^^^^^^^^^^^^^^^^^^^
 
-The following Operating Systems are supported:
+The following Operating Systems are supported (64Bit only for all OSs)
 
-    - Windows (Windows 7 (64 bit), Windows 10 (64 bit), Windows Server 2012 (64 bit)and Windows Server 2016 (64 bit))
+    - Windows (Windows 7, Windows 10, Windows Server 2012 and Windows Server 2016)
     - Linux
     - OS X
     
