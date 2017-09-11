@@ -521,7 +521,7 @@ Common task properties
 ||                        || Path were a development environment will be generated.              |
 ||                        || Default value is *./crafter-authoring/*                             |
 +-------------------------+----------------------------------------------------------------------+
-|| liveEnv                || ``delivery.root``                                                   |
+|| deliveryEnv            || ``delivery.root``                                                   |
 ||                        +----------------------------------------------------------------------+
 ||                        || Path were a delivery environment will be generated.                 |
 ||                        || Default value is *./crafter-delivery/*                              |
@@ -643,6 +643,8 @@ Common task properties
 ||                            || Default value is "data/repos/sites"                             |
 +-----------------------------+------------------------------------------------------------------+
 
+.. _git-properties:
+
 +------------------------------------------------------------------------------------------------+
 || Git Properties                                                                                |
 +-----------------------------+------------------------------------------------------------------+
@@ -676,6 +678,13 @@ Here's an example using one of the task properties, ``gitRepo``,  to get the lat
 
     ./gradlew update -Pcrafter.git.remote=upstream
 
+Here's another example on how to init, build and bundle from a given tag/branch.  Remember to clone the desired branch/tag of craftercms (As descibed in the next section :ref:`git`),  before running the command below:
+
+.. code-block:: bash
+
+   ./gradlew init build deploy bundle -Pcrafter.git.branch={BRANCH}/{TAG NAME}
+
+Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.
 
 .. _git:
 
@@ -729,6 +738,20 @@ Change the branch/tag of a project (manual way)
    git submodule sync --recursive
 
 3. Run :ref:`update-submodules`
+
+^^^^^^^^^^^^^^^^^^
+Clone a branch/tag
+^^^^^^^^^^^^^^^^^^
+
+To clone the branch/tag of craftercms that you want to work with, run:
+
+.. code-block:: bash
+
+    git clone -b<branch> https://github.com/craftercms/craftercms/
+
+Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.  After cloning the desired branch, you can now init, build and bundle from a given tag/branch using the property `crafter.git.branch` as described in an earlier section :ref:`Git Properties<git-properties>`
+
+
 
 .. _build-crafter-cms-in-windows:
 
