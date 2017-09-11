@@ -521,7 +521,7 @@ Common task properties
 ||                        || Path were a development environment will be generated.              |
 ||                        || Default value is *./crafter-authoring/*                             |
 +-------------------------+----------------------------------------------------------------------+
-|| liveEnv                || ``delivery.root``                                                   |
+|| deliveryEnv            || ``delivery.root``                                                   |
 ||                        +----------------------------------------------------------------------+
 ||                        || Path were a delivery environment will be generated.                 |
 ||                        || Default value is *./crafter-delivery/*                              |
@@ -643,6 +643,8 @@ Common task properties
 ||                            || Default value is "data/repos/sites"                             |
 +-----------------------------+------------------------------------------------------------------+
 
+.. _git-properties:
+
 +------------------------------------------------------------------------------------------------+
 || Git Properties                                                                                |
 +-----------------------------+------------------------------------------------------------------+
@@ -676,6 +678,13 @@ Here's an example using one of the task properties, ``gitRepo``,  to get the lat
 
     ./gradlew update -Pcrafter.git.remote=upstream
 
+Here's another example on how to init, build and bundle from a given tag/branch.  Remember to clone the desired branch/tag of craftercms (As descibed in the next section :ref:`git`),  before running the command below:
+
+.. code-block:: bash
+
+   ./gradlew init build deploy bundle -Pcrafter.git.branch={BRANCH}/{TAG NAME}
+
+Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.
 
 .. _git:
 
@@ -730,6 +739,20 @@ Change the branch/tag of a project (manual way)
 
 3. Run :ref:`update-submodules`
 
+^^^^^^^^^^^^^^^^^^
+Clone a branch/tag
+^^^^^^^^^^^^^^^^^^
+
+To clone the branch/tag of craftercms that you want to work with, run:
+
+.. code-block:: bash
+
+    git clone -b<branch> https://github.com/craftercms/craftercms/
+
+Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.  After cloning the desired branch, you can now init, build and bundle from a given tag/branch using the property `crafter.git.branch` as described in an earlier section :ref:`Git Properties<git-properties>`
+
+
+
 .. _build-crafter-cms-in-windows:
 
 ===============================
@@ -748,38 +771,65 @@ The first thing we need to do is install the prerequisites.  We need to install 
     - Git 2.x+
     - Maven 3.3.x+
 
-^^^^^^^^^^^^^^^
+We'll describe two ways of installing the prerequisites:
+
+#. Installing the prerequisites one by one
+#. Installing the prerequisites using `chocolatey <https://chocolatey.org/>`_
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Installing the prerequisites one by one
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Below are the links to install the prerequisites one by one:
+
 Installing Java
 ^^^^^^^^^^^^^^^
 
 The :ref:`quick_start_guide` has information on how to install Java and setup your JAVA_HOME environment variable.
 
-^^^^^^^^^^^^^^
+
 Installing Git
 ^^^^^^^^^^^^^^
 
 There are a few ways to install git on Windows.
 
 #. One way is to install Git for Windows, download available here:  http://git-scm.com/download/win
-#. Another way is to use `chocolatey <https://chocolatey.org/>`_, which will help you install packages in one line, similar to how ``apt-get``/``yum`` is used in Linux to install packages.  After installing chocolatey, to install git, just run the following:
+#. Another way is to install `GitHub for Windows <https://git-for-windows.github.io/>`_
+
+You can find more information on installing git on Windows `here <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
+
+Installing Maven
+^^^^^^^^^^^^^^^^
+
+#. To install maven on Windows, follow the guide `Maven on Windows <https://maven.apache.org/guides/getting-started/windows-prerequisites.html>`_
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Installing the prerequisites using Chocolatey
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Chocolatey is a package manager for Windows that helps you install packages in one line.  To install chocolatey, please follow the instructions listed here: https://chocolatey.org/install . Below are the steps to install the prerequisites using chocolatey.
+
+.. note::
+
+    Remember to use an administrative shell when installing and running chocolatey.  One way to run an administrative shell is by searching for `cmd` or `command prompt`  in the search box, then right click on the match, and select `Run as administrator` to get an administrator shell.
+
+.. note::
+
+    Notice that you do not have to install Java, because when you install Maven, since Java is one of its dependencies, choco will install it for you and add the necessary environment variables.
+
+Installing Git
+^^^^^^^^^^^^^^
+To install git, just run the following from your command line:
 
    .. code-block:: bat
 
        choco install git
 
-
-#. Yet another way is to install `GitHub for Windows <https://git-for-windows.github.io/>`_
-
-You can find more information on installing git on Windows `here <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
-
-^^^^^^^^^^^^^^^^
 Installing Maven
 ^^^^^^^^^^^^^^^^
 
-There are a few ways to install maven on Windows.
-
-#. One way to install maven on Windows is by following the guide `Maven on Windows <https://maven.apache.org/guides/getting-started/windows-prerequisites.html>`_
-#. Another way is if you used `chocolatey <https://chocolatey.org/>`_ to install git, you can use it too to install maven by running the following:
+To install Maven, just run the following from your command line:
 
    .. code-block:: bat
 
