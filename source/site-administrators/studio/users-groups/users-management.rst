@@ -50,10 +50,11 @@ You can search for a specific user. To search users, go to the search field and 
     :alt: Users - Search
     :align: center
 
+.. _creating-a-user:
 
-^^^^^^^^^^^^^^^^^
-Creating New User
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+Creating a New User
+^^^^^^^^^^^^^^^^^^^
 
 To create a new user, please click on the "New User" button at the right of the page.
 
@@ -89,6 +90,8 @@ A modal dialog will be displayed with the user information. To finish view mode,
 .. image:: /_static/images/users/users-view.png
     :alt: Users - View User Info
     :align: center
+
+.. _editing-a-user:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Editing an Existing User
