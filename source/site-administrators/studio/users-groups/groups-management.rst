@@ -44,6 +44,7 @@ You can search for groups by their properties (Display Name, Description), simpl
     :alt: Groups Management Search
     :align: center
 
+.. _create-a-new-group:
 
 ------------------
 Adding a New Group
@@ -113,6 +114,8 @@ then, a modal dialog will show up. In this dialog, you can modify the group name
     :width: 60%
     :alt: Site Config - Groups Edit
     :align: center
+
+.. _adding-users-to-a-group:
 
 -----------------------
 Adding Users to a Group
