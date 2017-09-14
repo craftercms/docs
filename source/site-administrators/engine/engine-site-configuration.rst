@@ -12,7 +12,15 @@ properties will be available for developers in the Freemarker templates and Groo
 
 XML Configuration Files
  - ``/config/engine/site-config.xml``
-   Main XML configuration for the site, this file will always be loaded by Crafter Engine.
+   Main XML configuration for the site, this file will always be loaded by Crafter Engine. This file can
+   be accessed easily from any site created through the out-of-the-box blueprints, by navigating from the
+   Studio dashboard to ``Site Config`` > ``Configuration``, and finally picking up the ``Engine Site
+   Configuration`` option from the dropdown.
+
+	 .. image:: /_static/images/site-admin/engine-site-config.png
+			 :alt: Engine Site Configuration
+
+
  - ``/config/engine/{crafterEnv}-site-config.xml``
    Environment specific XML configuration, these files will be loaded only when the value of the
    ``crafter.engine.environment`` property matches the `crafterEnv` placeholder in the file name.
@@ -180,7 +188,13 @@ Each site can also have it's own Spring application context. Just as with site-c
 can be overwritten using the following locations:
 
 Spring Configuration Files
- - ``/config/engine/application-context.xml``
+ - ``/config/engine/application-context.xml`` (This file can be accessed easily from any site created
+   through the out-of-the-box blueprints, by navigating from the Studio dashboard to ``Site Config``
+   > ``Configuration``, and finally picking up the ``Engine Site Application Context`` option from the dropdown).
+
+	 .. image:: /_static/images/site-admin/engine-site-application-context.png
+			 :alt: Engine Site Application Context
+
  - ``/config/engine/{crafterEnv}-application-context.xml``
  - ``$TOMCAT/shared/classes/crafter/engine/extension/sites/{siteName}/application-context.xml``
 
