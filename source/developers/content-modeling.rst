@@ -187,7 +187,7 @@ You can only use one of either include or exclude. Use Include when you need to 
 
 We'll look at an example of limiting where you can create content from the Website_Editorial blueprint that comes out of the box.
 
-From the **Sidebar**, click on **Site Config** at the bottom.  Next, click on **Content Types** then either create a new content type or open an existing content type.  In the image below, we have the content type **Page - Article** open for editing.  Go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name *config.xml*, click on that pencil to edit.
+From the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Content Types** then either create a new content type or open an existing content type.  In the image below, we have the content type **Page - Article** open for editing.  Go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name *config.xml*, click on that pencil to edit.
 
 .. figure:: /_static/images/content-model/form-engine-prop-configuration.png
     :alt: Form Engine Properties Configuration
