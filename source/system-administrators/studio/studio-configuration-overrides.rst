@@ -1,3 +1,5 @@
+.. _studio-config-override:
+
 ================================
 Studio's Configuration Overrides
 ================================

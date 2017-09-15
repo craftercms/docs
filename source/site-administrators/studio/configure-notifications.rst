@@ -6,7 +6,7 @@ Configure Simple Workflow Notifications and Dialog Messages
 
 Crafter Studio provides a simple workflow option that includes submission, review/reject and approve and
 publish immediate / publish on a schedule options.  This document covers the configuration of the HTML notifications
-that can be sent at each point in the workflow.  To setup your email server, please see the section **System Administrators**, <insert link to file describing the studio-config-override.yaml file>
+that can be sent at each point in the workflow.  To setup your email server, please see the section **System Administrators**, :ref:`studio-config-override`
 
 ------
 Basics

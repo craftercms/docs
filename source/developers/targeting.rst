@@ -35,7 +35,7 @@ Configuring
     :width: 50 %
     :align: center
 
-Targeting can be configured by clicking on **Site Config** in the Sidebar, then clicking on 
+Targeting can be configured by clicking on |siteConfig| in the Sidebar, then clicking on
 **Configuration** and finally selecting **Targeting Configuration** from the dropdown box.
 Below is the sample configuration for Guy and Gal, that is used in the Website Editorial
 blueprint.
@@ -116,7 +116,7 @@ Model Criteria in Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We will now see how to add the segments you just configured into a page.  From the Sidebar, click
-on **Site Config**, next click on **Content Types**.  Click on **Open Existing Types**, then select
+on |siteConfig|, next click on **Content Types**.  Click on **Open Existing Types**, then select
 **Page - Articles**
 
 .. figure:: /_static/images/targeting/tagging-segments-model-open.png
@@ -246,7 +246,7 @@ Model Criteria in Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We will now see how to add the categories you just configured into a page.  From the Sidebar, click
-on **Site Config**, next click on **Content Types**.  Click on **Open Existing Types**, then select
+on |siteConfig|, next click on **Content Types**.  Click on **Open Existing Types**, then select
 **Page - Articles**
 
 .. figure:: /_static/images/targeting/tagging-segments-model-open.png

@@ -5,7 +5,7 @@ Synchronize Studio Database With Repository
 ===========================================
 
 Sometimes the Git repository and the Studio database can become out of sync, for example, if you import content into the repository from
-another environment. To fix this, open the **Sidebar**, and click on **Site Config**. In the **Site Config**, click on **Sync From Repository**.
+another environment. To fix this, open the **Sidebar**, and click on |siteConfig|. In the **Site Config**, click on **Sync From Repository**.
 
 .. image:: /_static/images/system-admin/sys-ad-sync-from-repo.png
     :width: 45 %
