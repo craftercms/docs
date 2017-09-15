@@ -175,6 +175,6 @@ Since a blueprint is very similar in its layout to a site, you can modify a blue
 
     * Each site is made up of 2 different git repos, ``sandbox`` and ``published``. Inside of either of them, lie the site's folders and also the ``.git/`` folder. You need to move this site folders back to the blueprint folder, but avoid copying this ``.git/`` folder, as it's unnecessary for the final distributable package and may even contain sensitive information.
 
-Remember that whenever you edit directly in the filesystem, you need to commit your changes and then "Sync from Repository" from the Site Config to ensure they are properly reflected.
+Remember that whenever you edit directly in the filesystem, you need to commit your changes and then "Sync from Repository" from the |siteConfig| to ensure they are properly reflected.
 
 Small edits after the initial development may be faster by editing the blueprint directly and testing by creating a new site.
