@@ -172,6 +172,8 @@ Crafter Engine Properties
  * **jobs.job:** Specifies a single script job to be scheduled. The job path should be specified in ``<path>``, and the cron expression
    in ``<cronExpression>``.
 
+.. _engine-site-configuration-spring-configuration:
+
 --------------------
 Spring Configuration
 --------------------
