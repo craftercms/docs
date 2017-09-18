@@ -81,3 +81,104 @@ need to overwrite the file by placing it under the same path in you project (tem
 	    </ul>
 	</li>
 	</#macro>
+
+------------------------
+Keeping Templates Simple
+------------------------
+
+You can access all Crafter Engine services directly from the Freemarker templates as described in 
+the previous sections, however it is a good practice to keep logic and complex operations outside
+of the templates to simplify debugging and maintenance. An easy way to extract logic from the
+templates is using Groovy's closures:
+
+.. code-block:: groovy
+  :caption: Page or Component Script
+  :linenos:
+
+  // Add a closure to the templateModel map, in this case it will find if a page has a custom
+  // nav icon defined in the xml descriptor.
+  
+  templateModel.getNavIcon = { item ->
+    def storeUrl = urlTransformationService.transform("renderUrlToStoreUrl", item.url)
+    def siteItem = siteItemService.getSiteItem(storeUrl)
+    if(siteItem) {
+      def navIcon = siteItem.navIcon?.text
+      if(navIcon) {
+        return navIcon
+      }
+    }
+    return "fa-file-o"
+  }
+
+.. code-block:: html
+  :caption: Page or Component Template
+  :linenos:
+
+  <!-- Now the closure is available to use in the template, you only have to use the same name
+       from the script and use the `call` method. -->
+       
+  <i class="fa ${getNavIcon.call(navItem)}">
+
+If you have a large amount of closures or operations that need to be shared between multiple 
+templates then you should consider creating a Groovy class instead:
+
+.. code-block:: groovy
+  :caption: Custom Service Class
+  :linenos:
+
+  // Define a class with all the logic
+  
+  package org.site.service
+  
+  class NavIconService {
+  
+    def urlTransformationService
+    def siteItemService
+    def defaultIcon
+  
+    def getNavItem(item) {
+      ...
+      return this.defaultIcon
+    }
+  
+  }
+
+.. code-block:: xml
+  :caption: Site Application Context file
+  :linenos:
+
+  <!-- Add a bean definition using the new class -->
+  
+  <bean id="navIconService" class="org.site.service.NavIconService">
+    <property name="urlTransformationService" ref="crafter.urlTransformationService"/>
+    <property name="siteItemService" ref="crafter.siteItemService"/>
+    <property name="defaultIcon" value="${nav.defaultIcon}"/>
+  </bean>
+
+.. code-block:: xml
+  :caption: Site Configuration file
+  :linenos:
+
+  <!-- If needed the bean can use external configuration for easy management -->
+  
+  <?xml version="1.0" encoding="UTF-8"?>
+  <site>
+    ...
+    <nav>
+      <defaultIcon>fa-file-o</defaultIcon>
+    </nav>
+    ...
+  </site>
+
+.. code-block:: html
+  :caption: Template
+  :linenos:
+  
+  <!-- Now the bean can be use just like Crafter built-in services -->
+  
+  <i class="fa ${navIconService.getNavIcon(navItem)}">
+
+.. note::
+
+  All beans defined in the :ref:`Engine Site Application Context <engine-site-configuration-spring-configuration>`
+  file will be available in templates.
