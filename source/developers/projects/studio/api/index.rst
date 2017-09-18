@@ -147,29 +147,6 @@ Clipboard
    clipboard/get-items
    clipboard/paste-item
 
--------
-Content
--------
-.. toctree::
-   :maxdepth: 1
-
-   content/change-content-type
-   content/content-exists
-   content/create-folder
-   content/delete-content
-   content/get-content
-   content/get-content-at-path
-   content/get-content-type
-   content/get-content-types
-   content/get-item
-   content/get-item-orders
-   content/get-item-states
-   content/get-item-versions
-   content/get-items-tree
-   content/reorder-items
-   content/revert-content
-   content/unlock-content
-
 ----------
 Dependency
 ----------
@@ -197,6 +174,30 @@ Preview
    :maxdepth: 1
 
    preview/sync-site
+
+---------------
+Content / Asset
+---------------
+
+.. toctree::
+   :maxdepth: 1
+
+   content/change-content-type
+   content/content-exists
+   content/create-folder
+   content/delete-content
+   content/get-content
+   content/get-content-at-path
+   content/get-content-type
+   content/get-content-types
+   content/get-item
+   content/get-item-orders
+   content/get-item-states
+   content/get-item-versions
+   content/get-items-tree
+   content/reorder-items
+   content/revert-content
+   content/unlock-content
 
 ------
 Server
