@@ -112,3 +112,12 @@ How to set the JAVA_HOME environment variable
     To install the update, download the Universal C Runtime update from Microsoft ( https://support.microsoft.com/en-us/kb/2999226 )
     When the update is installed, please try to start Crafter CMS again.
 
+^^^^^^^^^^^^^^^^^^^^^^^
+OS X extra prerequisite
+^^^^^^^^^^^^^^^^^^^^^^^
+
+For OS X users, the latest ``openssl`` formula needs to be installed via homebrew:
+
+.. code-block:: sh
+
+    brew install openssl
