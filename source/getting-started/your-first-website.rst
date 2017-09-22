@@ -214,7 +214,7 @@ Your site is published after creating the site from the Website_Editorial bluepr
     :align: center
     :alt: Your First Website - Publish Your New Content
 
-You will then prompted whether you want to publish the page now (**Items should go live now**), or publish the page at a later date and time (**Items go live on a specific date & time**).
+You will then be prompted whether you want to publish the page now (**Items should go live now**), or publish the page at a later date and time (**Items go live on a specific date & time**).
 
 .. image:: /_static/images/first-site/first-site-publish-option.png
     :width: 100 %
