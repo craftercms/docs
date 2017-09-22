@@ -29,6 +29,8 @@ System Requirements
 
 * See :ref:`supported platforms<requirements_supported_platforms>` for a detailed list and description of supported components.
 
+.. note:: Crafter CMS is not yet compatible with Java 1.9.  Crafter CMS will be compatible with Java 1.9 when Crafter CMS updates Solr and makes some manifest changes to load/export.  This documentation will be updated once Crafter CMS is compatible with Java 1.9.
+
 --------------------------------------
 Installing and verifying prerequisites
 --------------------------------------
