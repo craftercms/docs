@@ -287,6 +287,7 @@ The following variable names are used by Crafter CMS.
 || id               || reserved by Solr                                        |
 +-------------------+----------------------------------------------------------+
 
+.. _variable-names-search-indexing:
 
 **Variable Names and Search Indexing**
 

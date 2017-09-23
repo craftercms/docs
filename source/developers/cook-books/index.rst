@@ -13,3 +13,4 @@ Cookbooks / Tutorials
    activiti/index
    services/index
    blueprint/index
+   best-practices/best-practice-loading-content
