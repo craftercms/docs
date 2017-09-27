@@ -13,10 +13,10 @@ System Requirements
 || Parameter Name  || Description                      || Prerequisites                          |
 +==================+===================================+=========================================+
 || Crafter Studio  || Content authoring server         || Java 1.8+                              |
-||                 ||                                  || 1+ Gig of memory to JVM                |
+||                 ||                                  || 4+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
 || Crafter Engine  || Content delivery server          || Java 1.8+                              |
-||                 ||                                  || 1+ Gig of memory to JVM                |
+||                 ||                                  || 2+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
 || Crafter Profile || User profile and attribute store || Java 1.8+                              |
 ||                 || (Optional component)             || MongoDB 3+ (included in the bundle)    |
