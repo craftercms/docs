@@ -78,6 +78,16 @@ This example file contains the properties used by Crafter Engine:
         </filter>
     </filters>
 
+    <!-- CORS headers for REST API -->
+    <cors>
+      <enable>true</true>
+      <accessControlMaxAge>3600</accessControlMaxAge>
+      <accessControlAllowOrigin>*</accessControlAllowOrigin>
+      <accessControlAllowMethods>GET\, POST\, PUT</accessControlAllowMethods>
+      <accessControlAllowHeaders>Content-Type</accessControlAllowHeaders>
+      <accessControlAllowCredentials>true</accessControlAllowCredentials>
+    </cors>
+
     <!-- Content targeting properties -->
     <targeting>
       <enabled>true</enabled>
@@ -146,6 +156,10 @@ Crafter Engine Properties
    path to the filter script, and a ``<mapping>`` element. In the ``<mapping>`` element, the ``<include>`` element contains the Ant
    patterns (separated by comma) that request URLs should match for the filter to be executed, while the ``<exclude>`` element contains
    the patterns that requests shouldn't match.
+ * **cors.enable**:``true`` if CORS headers should be added to REST API responses. Defaults to false.
+   The elements ``<accessControlMaxAge>``, ``<accessControlAllowOrigin>``, ``<accessControlAllowMethods>``,
+   ``<accessControlAllowHeaders>`` and ``<accessControlAllowCredentials>`` have the values that will be
+   copied to each response.
  * **targeting.enabled**:``true`` if content targeting should be enabled. Defaults to false.
  * **targeting.rootFolders:** The root folders that should be handled for content targeting.
  * **targeting.excludePatterns:** Regex patterns that are used to exclude certain paths from content targeting.
