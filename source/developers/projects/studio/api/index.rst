@@ -121,6 +121,7 @@ Publish
 .. toctree::
    :maxdepth: 1
 
+   publish/commits
    publish/status
    publish/start
    publish/stop
