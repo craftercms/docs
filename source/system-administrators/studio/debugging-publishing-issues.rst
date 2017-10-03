@@ -61,3 +61,35 @@ By executing this command, all content is practically published. To avoid unnece
     UPDATE item_state
     SET state = 'EXISTING_UNEDITED_UNLOCKED', system_processing = 0
     WHERE site = 'a_site_id';
+
+---------------------------------------
+Publishing Issues When Upgrading Studio
+---------------------------------------
+
+Use case that can cause publishing issues when upgrading Studio can be described as following:
+
+* Existing older version environment with existing sites
+* Having some of the content in edit state (not published, not live)
+* Install new authoring environment on another location
+* Copy `data` folder from older authoring environment to the new one (overwrite existing `data` folder if it exists in new install location)
+* Start new environment and keep editing content. Include reverts to versions that existed in old authoring environment
+* Try to publish content and publishing fails
+
+Reason for failed publishing is lost reference between `published` repository and `sandbox` repository. In older versions of Studio `pubished` repository is created with reference to the `sandbox` as absolute path. By copying `data` folder to another location, reference to `sandbox` is not valid anymore. To resolve issue reference to `sandbox` repository in configuration for `published` repository needs to be updated.
+Typically configuration for `published` repository can be found in file `path_to_published_repo/published/.git/config` and reference to `sandbox` in older version looks like this:
+
+.. code-block:: text
+
+    [remote "origin"]
+	    url = /my/absolute/path/to/crafter_install/crafter-auth-env/bin/../data/repos/sites/mysite/sandbox
+	    fetch = +refs/heads/*:refs/remotes/origin/*
+
+In the newer version this configuration looks like this:
+
+.. code-block:: text
+
+    [remote "origin"]
+	    url = ../sandbox
+	    fetch = +refs/heads/*:refs/remotes/origin/*
+
+To manually fix configuration problem, either set url value as relative path between `published` and `sandbox` repositories (default `../sandbox`) or set it as absolute path of `sandbox` repository.
