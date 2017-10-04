@@ -39,12 +39,12 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/publish/stop.json?site_id=mySite``
+``POST .../api/1/publish/stop.json?site_id=my-site``
 
 .. code-block:: json
 
   {
-    "site_id" : "mySite"
+    "site_id" : "my-site"
   }
 
 ^^^^^^^^

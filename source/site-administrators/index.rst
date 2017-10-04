@@ -48,4 +48,4 @@ Here are the topics covered in this section:
    users-groups-management
    configuration
    setup-site-for-delivery
-   logging
+   studio-logging

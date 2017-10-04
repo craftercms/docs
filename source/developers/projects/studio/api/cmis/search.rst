@@ -50,7 +50,7 @@ Example
 Request
 ^^^^^^^
 
-``GET /api/1/services/api/1/cmis/search.json?site_id=mySite&cmis_repo_id=repo1&search_term=*&path=/assets```
+``GET /api/1/services/api/1/cmis/search.json?site_id=my-site&cmis_repo_id=repo1&search_term=*&path=/assets```
 
 ^^^^^^^^
 Response

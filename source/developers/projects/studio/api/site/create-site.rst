@@ -45,9 +45,9 @@ Example
 .. code-block:: json
 
   {
-    "site_id" : "mySite",
+    "site_id" : "my-site",
     "description" : "My very first site!",
-    "blueprint" : "Empty"
+    "blueprint" : "empty"
   }
 
 --------

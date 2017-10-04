@@ -40,7 +40,7 @@ Example
 
 .. code-block:: guess
 
-	GET .../api/1/services/api/1/user/get-per-site.json?site_id=mySite
+	GET .../api/1/services/api/1/user/get-per-site.json?site_id=my-site
 
 .. code-block:: json
   :linenos:
@@ -88,7 +88,7 @@ Response
 +---------+---------------------------------------------+---------------------------------------------------+
 || Status || Location                                   || Response Body                                    |
 +=========+=============================================+===================================================+
-|| 200    || ``.../user/get-per-site.json?site=mySite`` || See example above.                               |
+|| 200    || ``.../user/get-per-site.json?site=my-site``|| See example above.                               |
 +---------+---------------------------------------------+---------------------------------------------------+
 || 400    ||                                            || ``{ "message" : "Invalid parameter(s)" }``       |
 +---------+---------------------------------------------+---------------------------------------------------+
