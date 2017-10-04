@@ -66,14 +66,14 @@ By executing this command, all content is practically published. To avoid unnece
 Publishing Issues When Upgrading Studio
 ---------------------------------------
 
-The following is a use case that can cause publishing issues when upgrading Studio:
+The following is a complex single use-case that can cause publishing issues when upgrading Studio:
 
-* You have an existing older version of the environment with existing sites
-* You have some of the content in edited state (not published, not live)
-* You installed a new authoring environment on another location
-* You copied a ``data`` folder from an older authoring environment to the new one (overwrite an existing ``data`` folder if it exists in the new install location)
-* You started a new environment then kept on editing content. You then include reverts to versions that existed in the old authoring environment
-* You tried to publish content and publishing failed
+1. You have an existing older version of the environment with existing sites
+2. You have some of the content in edited state (not published, not live)
+3. You installed a new authoring environment on another location
+4. You copied a ``data`` folder from an older authoring environment to the new one (overwrite an existing ``data`` folder if it exists in the new install location)
+5. You started a new environment then kept on editing content. You then include reverts to versions that existed in the old authoring environment
+6. You tried to publish content and publishing failed
 
 The reason for the failed publishing is the lost reference between the ``published`` repository and the ``sandbox`` repository.  In older versions of Studio, the reference between the ``published`` repository and the ``sandbox`` repository is an absolute path.  By copying the ``data`` folder to another location, the reference to ``sandbox`` is not valid anymore.  To resolve the issue, the reference between the ``published`` and the ``sandbox`` repository needs to be updated.
 
