@@ -50,11 +50,11 @@ Example
     "sites" :
       [
         {
-          "site_id" : "mySite1",
+          "site_id" : "my-site1",
           "description" : "My nice site 1."
         },
         {
-          "site_id" : "mySite2",
+          "site_id" : "my-site2",
           "description" : "My nice site 2."
         }
     ]

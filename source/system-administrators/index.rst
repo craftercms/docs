@@ -54,6 +54,7 @@ Activities
    backup-and-recovery.rst
    sync-studio-database-with-repo.rst
    reindexing-content.rst
+   logging.rst
    upgrade/index.rst
    troubleshooting.rst
 

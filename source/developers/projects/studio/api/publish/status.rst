@@ -39,7 +39,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/publish/status.json?site_id=mySite``
+``GET .../api/1/publish/status.json?site_id=my-site``
 
 ^^^^^^^^
 Response

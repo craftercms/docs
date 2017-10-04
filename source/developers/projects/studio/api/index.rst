@@ -186,6 +186,7 @@ Content / Asset
    content/change-content-type
    content/content-exists
    content/create-folder
+   content/rename-folder
    content/delete-content
    content/get-content
    content/get-content-at-path
