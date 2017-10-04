@@ -66,17 +66,18 @@ By executing this command, all content is practically published. To avoid unnece
 Publishing Issues When Upgrading Studio
 ---------------------------------------
 
-Use case that can cause publishing issues when upgrading Studio can be described as following:
+The following is a complex single use-case that can cause publishing issues when upgrading Studio:
 
-* Existing older version environment with existing sites
-* Having some of the content in edit state (not published, not live)
-* Install new authoring environment on another location
-* Copy `data` folder from older authoring environment to the new one (overwrite existing `data` folder if it exists in new install location)
-* Start new environment and keep editing content. Include reverts to versions that existed in old authoring environment
-* Try to publish content and publishing fails
+1. You have an existing older version of the environment with existing sites
+2. You have some of the content in edited state (not published, not live)
+3. You installed a new authoring environment on another location
+4. You copied a ``data`` folder from an older authoring environment to the new one (overwrite an existing ``data`` folder if it exists in the new install location)
+5. You started a new environment then kept on editing content. You then include reverts to versions that existed in the old authoring environment
+6. You tried to publish content and publishing failed
 
-Reason for failed publishing is lost reference between `published` repository and `sandbox` repository. In older versions of Studio `pubished` repository is created with reference to the `sandbox` as absolute path. By copying `data` folder to another location, reference to `sandbox` is not valid anymore. To resolve issue reference to `sandbox` repository in configuration for `published` repository needs to be updated.
-Typically configuration for `published` repository can be found in file `path_to_published_repo/published/.git/config` and reference to `sandbox` in older version looks like this:
+The reason for the failed publishing is the lost reference between the ``published`` repository and the ``sandbox`` repository.  In older versions of Studio, the reference between the ``published`` repository and the ``sandbox`` repository is an absolute path.  By copying the ``data`` folder to another location, the reference to ``sandbox`` is not valid anymore.  To resolve the issue, the reference between the ``published`` and the ``sandbox`` repository needs to be updated.
+
+Typically, the configuration for the ``published`` repository can be found in the file ``path_to_published_repo/published/.git/config`` and the reference to ``sandbox`` in the older version looks like this:
 
 .. code-block:: text
 
@@ -84,7 +85,7 @@ Typically configuration for `published` repository can be found in file `path_to
 	    url = /my/absolute/path/to/crafter_install/crafter-auth-env/bin/../data/repos/sites/mysite/sandbox
 	    fetch = +refs/heads/*:refs/remotes/origin/*
 
-In the newer version this configuration looks like this:
+In the newer version, the configuration looks like this:
 
 .. code-block:: text
 
@@ -92,4 +93,4 @@ In the newer version this configuration looks like this:
 	    url = ../sandbox
 	    fetch = +refs/heads/*:refs/remotes/origin/*
 
-To manually fix configuration problem, either set url value as relative path between `published` and `sandbox` repositories (default `../sandbox`) or set it as absolute path of `sandbox` repository.
+To manually fix the configuration problem, either set the url value as a relative path between the ``published`` and the ``sandbox`` repositories (default ``../sandbox``) or set it as the absolute path of the ``sandbox`` repository.
