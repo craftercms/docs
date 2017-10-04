@@ -51,7 +51,7 @@ Request
   :linenos:
 
   {
-        "site_id" : "mySite",
+        "site_id" : "my-site",
 	"cmis_repo_id" : "myCMISRepo",
 	"cmis_path" : "...",
 	"studio_path" : "..."

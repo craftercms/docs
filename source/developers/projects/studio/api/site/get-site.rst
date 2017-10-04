@@ -36,14 +36,14 @@ Example
 
 .. code-block:: guess
 
-	GET .../api/1/services/api/1/site/get.json?site_id=mySite
+	GET .../api/1/services/api/1/site/get.json?site_id=my-site
 
 .. code-block:: json
 
   {
-    "site_id" : "mySite",
+    "site_id" : "my-site",
     "description" : "My very first site!",
-    "blueprint" : "Empty"
+    "blueprint" : "empty"
   }
 
 --------
@@ -53,7 +53,7 @@ Response
 +---------+------------------------------------------+---------------------------------------------------+
 || Status || Location                                || Response Body                                    |
 +=========+==========================================+===================================================+
-|| 200    || ``.../site/get.json?site_id=mySite``    || See example above.                               |
+|| 200    || ``.../site/get.json?site_id=my-site``   || See example above.                               |
 +---------+------------------------------------------+---------------------------------------------------+
 || 400    ||                                         || ``{ "message" : "Invalid parameter(s)" }``       |
 +---------+------------------------------------------+---------------------------------------------------+
