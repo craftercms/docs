@@ -66,7 +66,7 @@ By executing this command, all content is practically published. To avoid unnece
 Publishing Issues When Upgrading Studio
 ---------------------------------------
 
-Here are some use cases that can cause publishing issues when upgrading Studio:
+The following is a use case that can cause publishing issues when upgrading Studio:
 
 * You have an existing older version of the environment with existing sites
 * You have some of the content in edited state (not published, not live)
