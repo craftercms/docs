@@ -24,10 +24,14 @@
 ||                         || defined in                    ||                                   |
 ||                         || server-config.properties.     ||                                   |
 +--------------------------+--------------------------------+------------------------------------+
-|| breadcrumbBuilder       || Helper class that returns the || `BreadcrumbBuilder`_              | 
+|| navBreadcrumbBuilder    || Helper class that returns the || `BreadcrumbBuilder`_              | 
 ||                         || list of path components in an ||                                   |
 ||                         || URL, to create navigation     ||                                   |
 ||                         || breadcrumbs.                  ||                                   |
++--------------------------+--------------------------------+------------------------------------+
+|| navTreeBuilder          || Helper class that creates     || `NavTreeBuilder`_                 | 
+||                         || navigation trees to           ||                                   |
+||                         || facilitate rendering.         ||                                   |
 +--------------------------+--------------------------------+------------------------------------+
 || tenantsResolver         || Can be used to retrieve the   || `TenantsResolver`_                |
 ||                         || Profile tenants associated to ||                                   |
@@ -69,7 +73,8 @@
 .. _SearchService: :javadoc_base_url:`search/org/craftercms/search/service/SearchService.html`
 .. _ApplicationContextAccessor: :javadoc_base_url:`engine/org/craftercms/engine/util/spring/ApplicationContextAccessor.html`
 .. _PropertySourcesPropertyResolver: https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/PropertySourcesPropertyResolver.html
-.. _BreadcrumbBuilder: :javadoc_base_url:`engine/org/craftercms/engine/util/breadcrumb/BreadcrumbBuilder.html`
+.. _BreadcrumbBuilder: :javadoc_base_url:`engine/org/craftercms/engine/navigation/NavBreadcrumbBuilder.html`
+.. _NavTreeBuilder: :javadoc_base_url:`engine/org/craftercms/engine/navigation/NavTreeBuilder.html`
 .. _TenantsResolver: :javadoc_base_url:`profile/org/craftercms/security/utils/tenant/TenantsResolver.html`
 .. _ProfileService: :javadoc_base_url:`profile/org/craftercms/profile/api/services/ProfileService.html`
 .. _TenantService: :javadoc_base_url:`profile/org/craftercms/profile/api/services/TenantService.html`
