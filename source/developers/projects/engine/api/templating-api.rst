@@ -23,64 +23,153 @@ Crafter Engine also populates templates with other useful variables, described b
 .. _templating-rendering-navigation:
 
 --------------------
-Rendering navigation
+Rendering Navigation
 --------------------
 
-Crafter Engine provides the option of rendering automatically the navigation for you, just by using the  macro
+Crafter Engine provides the option of rendering automatically the navigation for you, just by using the macro
 ``renderNavigation``:
 
 .. code-block:: guess
+  :linenos:
+  :caption: Using the Navigation Macro
 
-	<#include "/templates/web/navigation/navigation.ftl">
+  <#import "/templates/web/navigation2/navigation.ftl" as nav>
 
-	<@renderNavigation "/site/website", 1 />
+  <@nav.renderNavigation "/site/website", 1, true />
 
-The first argument of the macro is the root path of the navigation tree, which in this case is the root path of all
-pages. The second argument is the level of the navigation tree, which in the case of the example, is only the pages
-of the first level. The Place In Nav field is also used by the ``renderNavigation`` macro to determine if a page
-should be included in the navigation or not.
 
-The ``renderNavigation`` macro uses other macros to render the navigation items. Each type of navigation item has
-it's own macro:
+* The first argument of the macro is the root path of the navigation tree, which in this case is the root path of all
+  pages.
+* The second argument is the level of the navigation tree, which in the case of the example, is only the pages
+  of the first level.
+* The third argument is optional and indicates if the top level item found in the root path should be included in the
+  markup.
+* The Place In Nav field is also used by the ``renderNavigation`` macro to determine if a page
+  should be included in the navigation or not.
 
+.. _templating-rendering-breadcrumbs:
+
+---------------------
+Rendering Breadcrumbs
+---------------------
+
+Crafter also offers a ``renderBreadcrumb`` macro to easily generate a dynamic list with all the
+parent pages of a specific url.
+
+.. code-block:: guess
+  :linenos:
+  :caption: Using the Breadcrumb Macro
+
+  <#import "/templates/web/navigation2/breadcrumb.ftl" as breadcrumb>
+
+  <@breadcrumb.renderBreadcrumb contentModel.storeUrl "/site/website/articles" />
+
+* The first argument is the full url of the item to generate the breadcrumb.
+* The second argument is the root path that will be skipped in the list of items returned, if no
+  value is given the default is "/site/website" (usually this is the home page).
+
+~~~~~~~~~~~~~~~~~~~
+Using Custom Macros
+~~~~~~~~~~~~~~~~~~~
+
+Both ``renderNavigation`` and ``renderBreadcrumb`` use other macros to render the items.
+In the case of navigation each type of item has it's own macro:
+
+*   ``renderRootItem``: for the top level item.
 *   ``renderNavItem``: for items with no sub-items.
 *   ``renderNavItemWithSubItems``: for items with sub-items.
 *   ``renderNavSubItem``: for sub-items with no other sub-items.
 *   ``renderNavSubItemWithSubItems``: for sub-items with other sub-items.
 
-These macros are included in Engine, under templates/web/navigation/main/nav-macros.ftl. If you want to provide your own
-sets of macros (which you'll probably want since the navigation HTML is generally specific to the site), you just
-need to overwrite the file by placing it under the same path in you project (templates/web/navigation/main/nav-macros
-.ftl). The following is the default markup of the macros:
+For breadcrumb there is only one type of item:
+
+*   ``renderBreadcrumbItem``
+
+Engine includes a default implementation that can be found in ``templates/web/navigation2/nav-macros.ftl``
+and ``templates/web/navigation2/breadcrumb-macros.ftl`` but it also provides the option to use your
+own sets of macros, which you'll probably want since the navigation HTML is generally specific to the site.
 
 .. code-block:: guess
-    :linenos:
+  :linenos:
+  :caption: Default Nav Macros
 
-	<#macro renderNavItem item active = false>
-	<li <#if active>class="active"</#if>><a href="${navFunctions.getNavItemUrl(item)}">${navFunctions.getNavItemName(item)}</a></li>
-	</#macro>
+  <#macro renderNavItem navItem>
+     <li <#if navItem.active>class="active"</#if>><a href="${navItem.url}">${navItem.label}</a></li>
+  </#macro>
 
-	<#macro renderNavItemWithSubItems item active = false>
-	<li <#if active>class="dropdown active"<#else>class="dropdown"</#if>>
-	    <a class="dropdown-toggle" data-toggle="dropdown" href="${navFunctions.getNavItemUrl(item)}">${navFunctions.getNavItemName(item)}</a>
-	    <ul class="dropdown-menu">
-	        <#nested>
-	    </ul>
-	</li>
-	</#macro>
+  <#macro renderRootItem navItem>
+     <@renderNavItem navItem/>
+  </#macro>
 
-	<#macro renderNavSubItem item active = false>
-	<li <#if active>class="active"</#if>><a href="${navFunctions.getNavItemUrl(item)}">${navFunctions.getNavItemName(item)}</a></li>
-	</#macro>
+  <#macro renderNavItemWithSubItems navItem>
+     <li <#if navItem.active>class="dropdown active"<#else>class="dropdown"</#if>>
+         <a class="dropdown-toggle" data-toggle="dropdown" href="${navItem.url}">${navItem.label}</a>
+         <ul class="dropdown-menu">
+             <#nested>
+         </ul>
+     </li>
+  </#macro>
 
-	<#macro renderNavSubItemWithSubItems item active = false>
-	<li class="dropdown-submenu">
-	    <a href="${navFunctions.getNavItemUrl(item)}">${navFunctions.getNavItemName(item)}</a>
-	    <ul class="dropdown-menu">
-	        <#nested>
-	    </ul>
-	</li>
-	</#macro>
+  <#macro renderNavSubItem navItem>
+     <@renderNavItem navItem/>
+  </#macro>
+
+  <#macro renderNavSubItemWithSubItems navItem>
+     <li class="dropdown-submenu">
+         <a href="${navItem.url}">${navItem.label}</a>
+         <ul class="dropdown-menu">
+             <#nested>
+         </ul>
+     </li>
+  </#macro>
+
+.. code-block:: guess
+  :linenos:
+  :caption: Default Breadcrumb Macros
+
+  <#macro renderBreadcrumbItem item >
+     <#if item.active>
+         <li class="active">${item.label}</li>
+     <#else>
+         <li><a href="${item.url}">${item.label}</a></li>
+     </#if>
+  </#macro>
+
+You can define your own macros in an additional Freemarker template and include and optional
+parameter with the namespace that was given in the ``import`` tag:
+
+.. code-block:: guess
+  :linenos:
+  :caption: Using Custom Navigation Macros
+
+  <#import "/templates/web/navigation2/navigation.ftl" as nav>
+  <#import "/templates/web/navigation2/breadcrumb.ftl" as breadcrumb>
+  <#import "/templates/web/components/custom-nav-macros.ftl" as customNav>
+
+  <@nav.renderNavigation "/site/website", 1, false, customNav />
+  
+  <@breadcrumb.renderBreadcrumb contentModel.storeUrl, "/site/website/articles", customNav />
+
+.. note::
+  If you use custom macros for navigation, you need to define each one with the same name as shown
+  in the list and include all parameters according to the default implementation provided by
+  Engine.
+
+In case the structure provided by the macros is not suitable for your need you can also use the
+beans to get the navigation tree or breadcrumb list in a Groovy script:
+
+.. code-block:: groovy
+  :linenos:
+  :caption: Navigation Tree from Groovy
+
+  def rootPath = "/site/website"
+  templateModel.navTree = navTreeBuilder.getNavTree(rootPath, 2, contentModel.storeUrl)
+  templateModel.breadcrumb = navBreadcrumb.getBreadcrumb(contentModel.storeUrl, rootPath)
+
+.. note::
+  These beans are the same used internally by the builtin macros, they will return `NavItem`_ objects.
+
+.. _NavItem: :javadoc_base_url:`engine/org/craftercms/engine/navigation/NavItem.html`
 
 ------------------------
 Keeping Templates Simple
