@@ -39,11 +39,18 @@ If it is not possible to fix the publishing queue blockage, a workaround can be 
 Manual Syncing of Repositories
 ------------------------------
 
-One of the general workaround to unblock the publishing queue is by manual syncing of repositories. Manual syncing is done by executing a ``git pull`` command on the environment store repository
+One of the general workaround to unblock the publishing queue is by manual syncing of repositories. Manual syncing is done by executing a ``git pull`` command on the environment store repository.
+Usual steps to manually synchronize repositories consist of following commands:
 
 .. code-block:: shell
 
-    git pull origin master
+    # navigate to published repository
+    > cd path_to_published
+    # checkout environment branch
+    > git checkout environment_branch
+    # merge changes from sandbox repository
+    > git pull -s recursive -Xtheirs origin master
+
 
 By executing this command, all content is practically published. To avoid unnecessary operations and confusion within the system, the database should also be updated by canceling everything remaining in the publishing queue and setting item states to ``Live``
 
@@ -61,6 +68,8 @@ By executing this command, all content is practically published. To avoid unnece
     UPDATE item_state
     SET state = 'EXISTING_UNEDITED_UNLOCKED', system_processing = 0
     WHERE site = 'a_site_id';
+
+After successful manual syncing of repositories it is needed to enable publishing process again. This can be done by calling :ref:`crafter-studio-api-publish-start` Rest API to start publishing.
 
 ---------------------------------------
 Publishing Issues When Upgrading Studio
