@@ -197,7 +197,6 @@ Content / Asset
    content/get-item-states
    content/get-item-versions
    content/get-items-tree
-   content/rename-folder
    content/reorder-items
    content/revert-content
    content/unlock-content
