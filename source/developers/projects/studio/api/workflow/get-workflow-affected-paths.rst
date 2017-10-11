@@ -50,7 +50,7 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: json
+.. code-block:: guess
     :linenos:
 
     {
