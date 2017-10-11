@@ -118,7 +118,7 @@ Here are the general environment variables used by ``crafter(.sh/bat)``:
 +==========================+=====================================================================+
 || CRAFTER_HOME            || Crafter CMS *Authoring/Delivery* path                              |
 ||                         +---------------------------------------------------------------------+
-||                         || {Crafter-CMS-install-directory}/crafter-{env}-env/bin              |
+||                         || {Crafter-CMS-install-directory}/crafter-{env}/bin                  |
 +--------------------------+---------------------------------------------------------------------+
 || CRAFTER_ROOT            || Crafter CMS path                                                   |
 ||                         +---------------------------------------------------------------------+
@@ -260,7 +260,7 @@ To stop the authoring environment:
 Other Scripts
 ^^^^^^^^^^^^^
 
-For more information about Apache Tomcat and SOLR, please refer to the following:
+For more information about Apache Tomcat and Solr, please refer to the following:
 
  * [Tomcat Script documentation](https://tomcat.apache.org/tomcat-8.5-doc/RUNNING.txt)
  * [Solr Script documentation](https://cwiki.apache.org/confluence/display/solr/Running+Solr)
@@ -400,7 +400,7 @@ What this does under the hood is:
 
 .. code-block:: bash
 
-   cd crafter-{env}-env
+   cd crafter-{env}
    ./startup.sh
 
 The options above will:
@@ -438,7 +438,7 @@ What this does under the hood is:
 
 .. code-block:: bash
 
-   cd crafter-{env}-env
+   cd crafter-{env}
    ./shutdown.sh
 
 
@@ -678,13 +678,20 @@ Here's an example using one of the task properties, ``gitRepo``,  to get the lat
 
     ./gradlew update -Pcrafter.git.remote=upstream
 
-Here's another example on how to init, build and bundle from a given tag/branch.  Remember to clone the desired branch/tag of craftercms (As descibed in the next section :ref:`git`),  before running the command below:
+Here's another example on how to init, build and bundle from a given tag/branch.  Remember to clone the desired branch/tag of craftercms (As described in the next section :ref:`git`),  before running the command below:
 
 .. code-block:: bash
 
    ./gradlew init build deploy bundle -Pcrafter.git.branch={BRANCH}/{TAG NAME}
 
 Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.
+
+Here's yet another example of building and deploying the authoring environment of Crafter CMS with Crafter Profile included:
+
+.. code-block:: bash
+
+   ./gradlew build deploy -Pcrafter.profile=true -Penv=authoring
+
 
 .. _git:
 
