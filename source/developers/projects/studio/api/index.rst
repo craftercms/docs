@@ -56,6 +56,7 @@ Site Management
    site/create-site
    site/delete-site
    site/exists
+   site/get-configuration
    site/get-site
    site/get-sites-per-user
 
@@ -186,6 +187,7 @@ Content / Asset
    content/change-content-type
    content/content-exists
    content/create-folder
+   content/crop-image
    content/rename-folder
    content/delete-content
    content/get-content
@@ -197,6 +199,8 @@ Content / Asset
    content/get-item-states
    content/get-item-versions
    content/get-items-tree
+   content/get-next-item-order
+   content/get-pages
    content/reorder-items
    content/revert-content
    content/unlock-content
@@ -211,3 +215,15 @@ Server
    server/get-loggers
    server/get-ui-resource-override
    server/set-logger-state
+
+--------
+Workflow
+--------
+.. toctree::
+   :maxdepth: 1
+
+   workflow/create-jobs
+   workflow/get-go-live-items
+   workflow/get-workflow-affected-paths
+   workflow/go-live
+   workflow/reject
