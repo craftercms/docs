@@ -80,7 +80,7 @@ This example file contains the properties used by Crafter Engine:
 
     <!-- CORS headers for REST API -->
     <cors>
-      <enable>true</true>
+      <enable>true</enable>
       <accessControlMaxAge>3600</accessControlMaxAge>
       <accessControlAllowOrigin>*</accessControlAllowOrigin>
       <accessControlAllowMethods>GET\, POST\, PUT</accessControlAllowMethods>
