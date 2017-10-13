@@ -4,6 +4,8 @@
 Debugging Publishing Issues
 ===========================
 
+When publishing fails, here are some things to consider to help track down the cause of publishing issues.
+
 ------------------------
 Inspect Publishing Queue
 ------------------------
@@ -69,37 +71,28 @@ By executing this command, all content is practically published. To avoid unnece
     SET state = 'EXISTING_UNEDITED_UNLOCKED', system_processing = 0
     WHERE site = 'a_site_id';
 
-After successful manual syncing of repositories it is needed to enable publishing process again. This can be done by calling :ref:`crafter-studio-api-publish-start` Rest API to start publishing.
+After successful manual syncing of repositories the publishing process needs to be enabled again. This can be done by calling :ref:`crafter-studio-api-publish-start` Rest API to start publishing.
 
----------------------------------------
-Publishing Issues When Upgrading Studio
----------------------------------------
+--------------------------------------------------
+Publishing Issues When Moving Sites Around in Disk
+--------------------------------------------------
 
-The following is a complex single use-case that can cause publishing issues when upgrading Studio:
+Publishing may fail when moving sites around in disk.  When moving sites around, the reference between the ``published`` repository and the ``sandbox`` repository may not be valid anymore.  To resolve the issue, the reference between the ``published`` repository and the ``sandbox`` repository needs to be updated.
 
-1. You have an existing older version of the environment with existing sites
-2. You have some of the content in edited state (not published, not live)
-3. You installed a new authoring environment on another location
-4. You copied a ``data`` folder from an older authoring environment to the new one (overwrite an existing ``data`` folder if it exists in the new install location)
-5. You started a new environment then kept on editing content. You then include reverts to versions that existed in the old authoring environment
-6. You tried to publish content and publishing failed
-
-The reason for the failed publishing is the lost reference between the ``published`` repository and the ``sandbox`` repository.  In older versions of Studio, the reference between the ``published`` repository and the ``sandbox`` repository is an absolute path.  By copying the ``data`` folder to another location, the reference to ``sandbox`` is not valid anymore.  To resolve the issue, the reference between the ``published`` and the ``sandbox`` repository needs to be updated.
-
-Typically, the configuration for the ``published`` repository can be found in the file ``path_to_published_repo/published/.git/config`` and the reference to ``sandbox`` in the older version looks like this:
-
-.. code-block:: text
-
-    [remote "origin"]
-	    url = /my/absolute/path/to/crafter_install/crafter-auth-env/bin/../data/repos/sites/mysite/sandbox
-	    fetch = +refs/heads/*:refs/remotes/origin/*
-
-In the newer version, the configuration looks like this:
+Typically, the configuration for the ``published`` repository can be found in the file ``path_to_published_repo/published/.git/config`` and the reference to ``sandbox`` may look like this:
 
 .. code-block:: text
 
     [remote "origin"]
 	    url = ../sandbox
+	    fetch = +refs/heads/*:refs/remotes/origin/*
+
+In some cases, the configuration looks like this:
+
+.. code-block:: text
+
+    [remote "origin"]
+	    url = /my/absolute/path/to/crafter_install/crafter-auth-env/bin/../data/repos/sites/mysite/sandbox
 	    fetch = +refs/heads/*:refs/remotes/origin/*
 
 To manually fix the configuration problem, either set the url value as a relative path between the ``published`` and the ``sandbox`` repositories (default ``../sandbox``) or set it as the absolute path of the ``sandbox`` repository.
