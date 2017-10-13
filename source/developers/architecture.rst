@@ -34,7 +34,7 @@ Crafter CMS was built from the ground up to scale for the cloud.  Crafter Studio
 High Performance Dynamic Content Delivery
 -----------------------------------------
 
-In the age of hyper-personalized digital experiences and content rich applications raw scalability is key.  Soul reliance on CDN technology is no longer a real alternative.
+In the age of hyper-personalized digital experiences and content rich applications raw scalability is key.  Sole reliance on CDN technology is no longer a real alternative.
 
 * Crafter CMS is able to serve 1 to 5 million requests per hour through a single instance of Crafter Engine (4 core CPU.)
 * Crafter Engine's performance is a direct result of it's disk and in-memory based architecture.  We're able to serve more per node than any other CMS and we're able to scale out easier than any other CMS because we don't sit on top of a traditional data store like a database or a JCR repository.
