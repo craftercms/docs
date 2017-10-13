@@ -14,3 +14,5 @@ Cookbooks / Tutorials
    services/index
    blueprint/index
    best-practices/best-practice-loading-content
+   setting-up-an-ldap-server-for-dev
+
