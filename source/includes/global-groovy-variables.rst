@@ -1,58 +1,67 @@
-+----------------------+---------------------------------------+--------------------------------+
-| Name                 | Description                           | API                            |
-+======================+=======================================+================================+
-| siteItemService      || Allows access to the site content.   || `SiteItemService`_            |
-+----------------------+---------------------------------------+--------------------------------+
-| |UrlTransform|       || Service for transforming URLs, like  || |UrlTransform|_               |
-|                      || transforming the content URL of a    ||                               |
-|                      || page to the web or render URL.       ||                               |
-+----------------------+---------------------------------------+--------------------------------+
-| searchService        || Service that can be used to execute  || `SearchService`_              |
-|                      || search queries against               ||                               |
-|                      || Crafter Search.                      ||                               |
-+----------------------+---------------------------------------+--------------------------------+
-| applicationContext   || Provides access to the Crafter       || `ApplicationContextAccessor`_ |
-|                      || Engine's Spring beans and site beans ||                               |
-|                      || defined in                           ||                               |
-|                      || config/spring/application-context.xml||                               |
-+----------------------+---------------------------------------+--------------------------------+
-| globalProperties     || Provides access to global            || |PropertySources|_            |
-|                      || configuration properties defined in  ||                               |
-|                      || server-config.properties.            ||                               |
-+----------------------+---------------------------------------+--------------------------------+
-| navBreadcrumbBuilder || Helper class that returns the list of|| `BreadcrumbBuilder`_          |
-|                      || path components in an URL, to create ||                               |
-|                      || navigation breadcrumbs.              ||                               |
-+----------------------+---------------------------------------+--------------------------------+
-| navTreeBuilder       || Helper class that creates navigation || `NavTreeBuilder`_             |
-|                      || trees to facilitate rendering        ||                               |
-+----------------------+---------------------------------------+--------------------------------+
-| tenantsResolver      || Can be used to retrieve the          || `TenantsResolver`_            |
-|                      || Profile tenants associated to the    ||                               |
-|                      || current site.                        ||                               |
-+----------------------+---------------------------------------+--------------------------------+
-| profileService       || Provides access to the Crafter       || `ProfileService`_             |
-|                      || Profile API for profiles.            ||                               |
-+----------------------+---------------------------------------+--------------------------------+
-| tenantService        || Provides access to the Crafter       || `TenantService`_              |
-|                      || Profile API for tenants.             ||                               |
-+----------------------+---------------------------------------+--------------------------------+
-| authenticationService|| Provides access to the Crafter       || `AuthenticationService`_      |
-|                      || Profile API for authentication.      ||                               |
-+----------------------+---------------------------------------+--------------------------------+
-| authenticationManager|| Manages Crafter Security Provider    || `AuthenticationManager`_      |
-|                      || based authentications.               ||                               |
-+----------------------+---------------------------------------+--------------------------------+
-| textEncryptor        || Utility class for encrypting/        || `TextEncryptor`_              |
-|                      || decrypting text with AES.            ||                               |
-+----------------------+---------------------------------------+--------------------------------+
-| logger               || The GroovyUtils SLF4J logger         || `Logger`_                     |
-+----------------------+---------------------------------------+--------------------------------+
-| siteConfig           || The current site Configuration,      || `XMLConfiguration`_           |
-|                      || loaded from /config/site.xml.        ||                               |
-+----------------------+---------------------------------------+--------------------------------+
-| siteContext          || The current SiteContext              || `SiteContext`_                |
-+----------------------+---------------------------------------+--------------------------------+
++------------------------+---------------------------------------+--------------------------------+
+| Name                   | Description                           | Type                           |
++========================+=======================================+================================+
+|| siteItemService       || Allows access to the site content.   || `SiteItemService`_            |
++------------------------+---------------------------------------+--------------------------------+
+|| |UrlTransform|        || Service for transforming URLs, like  || |UrlTransform|_               |
+||                       || transforming the content URL of a    ||                               |
+||                       || page to the web or render URL.       ||                               |
++------------------------+---------------------------------------+--------------------------------+
+|| searchService         || Service that can be used to execute  || `SearchService`_              |
+||                       || search queries against               ||                               |
+||                       || Crafter Search.                      ||                               |
++------------------------+---------------------------------------+--------------------------------+
+|| applicationContext    || Provides access to the Crafter       || `ApplicationContextAccessor`_ |
+||                       || Engine's Spring beans and site beans ||                               |
+||                       || defined in                           ||                               |
+||                       || config/spring/application-context.xml||                               |
++------------------------+---------------------------------------+--------------------------------+
+|| globalProperties      || Provides access to global            || |PropertySources|_            |
+||                       || configuration properties defined in  ||                               |
+||                       || server-config.properties.            ||                               |
++------------------------+---------------------------------------+--------------------------------+
+|| navBreadcrumbBuilder  || Helper class that returns the list of|| `BreadcrumbBuilder`_          |
+||                       || path components in an URL, to create ||                               |
+||                       || navigation breadcrumbs.              ||                               |
++------------------------+---------------------------------------+--------------------------------+
+|| navTreeBuilder        || Helper class that creates navigation || `NavTreeBuilder`_             |
+||                       || trees to facilitate rendering        ||                               |
++------------------------+---------------------------------------+--------------------------------+
+|| tenantsResolver       || Can be used to retrieve the          || `TenantsResolver`_            |
+||                       || Profile tenants associated to the    ||                               |
+||                       || current site.                        ||                               |
++------------------------+---------------------------------------+--------------------------------+
+|| profileService        || Provides access to the Crafter       || `ProfileService`_             |
+||                       || Profile API for profiles.            ||                               |
++------------------------+---------------------------------------+--------------------------------+
+|| tenantService         || Provides access to the Crafter       || `TenantService`_              |
+||                       || Profile API for tenants.             ||                               |
++------------------------+---------------------------------------+--------------------------------+
+|| authenticationService || Provides access to the Crafter       || `AuthenticationService`_      |
+||                       || Profile API for authentication.      ||                               |
++------------------------+---------------------------------------+--------------------------------+
+|| authenticationManager || Manages Crafter Security Provider    || `AuthenticationManager`_      |
+||                       || based authentications.               ||                               |
++------------------------+---------------------------------------+--------------------------------+
+|| textEncryptor         || Utility class for encrypting/        || `TextEncryptor`_              |
+||                       || decrypting text with AES.            ||                               |
++------------------------+---------------------------------------+--------------------------------+
+|| modePreview           || Flag that indicates that Engine is   || Boolean                       |
+||                       || being executed in preview mode       ||                               |
+||                       || (also the value of the               ||                               |
+||                       || ``crafter.engine.preview`` property) ||                               |
++------------------------+---------------------------------------+--------------------------------+
+|| crafterEnv            || Indicates the value of the           || String                        |
+||                       || ``crafter.engine.environment``       ||                               |
+||                       || property                             ||                               |
++------------------------+---------------------------------------+--------------------------------+
+|| logger                || The GroovyUtils SLF4J logger         || `Logger`_                     |
++------------------------+---------------------------------------+--------------------------------+
+|| siteConfig            || The current site Configuration,      || `XMLConfiguration`_           |
+||                       || loaded from /config/site.xml.        ||                               |
++------------------------+---------------------------------------+--------------------------------+
+|| siteContext           || The current SiteContext              || `SiteContext`_                |
++------------------------+---------------------------------------+--------------------------------+
 
 .. _SiteItemService: :javadoc_base_url:`engine/org/craftercms/engine/service/SiteItemService.html`
 .. _UrlTransformationService: :javadoc_base_url:`engine/org/craftercms/engine/service/UrlTransformationService.html`
