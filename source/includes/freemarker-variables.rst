@@ -1,72 +1,81 @@
-+--------------------------+--------------------------------+------------------------------------+
-|| Name                    || Description                   || API                               |
-+==========================+================================+====================================+
-|| siteItemService         || Allows access to the site     || `SiteItemService`_                |
-||                         || content.                      ||                                   |                        
-+--------------------------+--------------------------------+------------------------------------+
-|| urlTransformationService|| Service for transforming URLs,|| `UrlTransformationService`_       |
-||                         || like transforming the content ||                                   |
-||                         || URL of a page to the web or   ||                                   |
-||                         || render URL.                   ||                                   |
-+--------------------------+--------------------------------+------------------------------------+
-|| searchService           || Service that can be used to   || `SearchService`_                  |
-||                         || execute search queries against||                                   |
-||                         || Crafter Search.               ||                                   |
-+--------------------------+--------------------------------+------------------------------------+
-|| applicationContext      || Provides access to the Crafter|| `ApplicationContextAccessor`_     |
-||                         || Engine's Spring beans and site||                                   |
-||                         || beans defined in              ||                                   |
-||                         || config/spring/application-    ||                                   |
-||                         || context.xml.                  ||                                   | 
-+--------------------------+--------------------------------+------------------------------------+
-|| globalProperties        || Provides access to global     || `PropertySourcesPropertyResolver`_|
-||                         || configuration properties      ||                                   |
-||                         || defined in                    ||                                   |
-||                         || server-config.properties.     ||                                   |
-+--------------------------+--------------------------------+------------------------------------+
-|| navBreadcrumbBuilder    || Helper class that returns the || `BreadcrumbBuilder`_              | 
-||                         || list of path components in an ||                                   |
-||                         || URL, to create navigation     ||                                   |
-||                         || breadcrumbs.                  ||                                   |
-+--------------------------+--------------------------------+------------------------------------+
-|| navTreeBuilder          || Helper class that creates     || `NavTreeBuilder`_                 | 
-||                         || navigation trees to           ||                                   |
-||                         || facilitate rendering.         ||                                   |
-+--------------------------+--------------------------------+------------------------------------+
-|| tenantsResolver         || Can be used to retrieve the   || `TenantsResolver`_                |
-||                         || Profile tenants associated to ||                                   |
-||                         || the current site.             ||                                   | 
-+--------------------------+--------------------------------+------------------------------------+
-|| siteConfig              || The current site Configuration|| `XMLConfiguration`_               |
-||                         || loaded from /config/site.xml. ||                                   | 
-+--------------------------+--------------------------------+------------------------------------+
-|| siteContext             || The current SiteContext       || `SiteContext`_                    |
-+--------------------------+--------------------------------+------------------------------------+
-|| application             || The servlet context           || `ServletContextHashModel`_        |
-+--------------------------+--------------------------------+------------------------------------+
-|| request                 || The current request           || `HttpRequestHashModel`_           |
-+--------------------------+--------------------------------+------------------------------------+
-|| requestParameters       || The parameter values for the  || `HttpRequestParametersHashModel`_ |
-||                         || current request               ||                                   |
-+--------------------------+--------------------------------+------------------------------------+
-|| cookies                 || The cookie values for the     || `Map`_                            |
-||                         || current request               ||                                   |
-+--------------------------+--------------------------------+------------------------------------+
-|| session                 || The current session           || `HttpSessionHashModel`_           |
-+--------------------------+--------------------------------+------------------------------------+
-|| locale                  || The current locale for the    || `Locale`_                         |
-||                         || current user                  ||                                   |
-+--------------------------+--------------------------------+------------------------------------+
-|| authentication          || The current authentication (if|| `Authentication`_                 |
-||                         || the user has logged in),      ||                                   |
-||                         || created by the                ||                                   |
-||                         || Crafter Security Provider     ||                                   |
-+--------------------------+--------------------------------+------------------------------------+
-|| profile                 || The current profile (if the   || `Profile`_                        |
-||                         || user has logged in), created  ||                                   |
-||                         || by the                        ||                                   |
-||                         || Crafter Security Provider     ||                                   |
-+--------------------------+--------------------------------+------------------------------------+
++---------------------------+---------------------------------------+------------------------------------+
+|| Name                     || Description                          || Type                              |
++===========================+=======================================+====================================+
+|| siteItemService          || Allows access to the site            || `SiteItemService`_                |
+||                          || content.                             ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+|| urlTransformationService || Service for transforming URLs,       || `UrlTransformationService`_       |
+||                          || like transforming the content        ||                                   |
+||                          || URL of a page to the web or          ||                                   |
+||                          || render URL.                          ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+|| searchService            || Service that can be used to          || `SearchService`_                  |
+||                          || execute search queries against       ||                                   |
+||                          || Crafter Search.                      ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+|| applicationContext       || Provides access to the Crafter       || `ApplicationContextAccessor`_     |
+||                          || Engine's Spring beans and site       ||                                   |
+||                          || beans defined in                     ||                                   |
+||                          || config/spring/application-           ||                                   |
+||                          || context.xml.                         ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+|| globalProperties         || Provides access to global            || `PropertySourcesPropertyResolver`_|
+||                          || configuration properties             ||                                   |
+||                          || defined in                           ||                                   |
+||                          || server-config.properties.            ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+|| navBreadcrumbBuilder     || Helper class that returns the        || `BreadcrumbBuilder`_              |
+||                          || list of path components in an        ||                                   |
+||                          || URL, to create navigation            ||                                   |
+||                          || breadcrumbs.                         ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+|| navTreeBuilder           || Helper class that creates            || `NavTreeBuilder`_                 |
+||                          || navigation trees to                  ||                                   |
+||                          || facilitate rendering.                ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+|| tenantsResolver          || Can be used to retrieve the          || `TenantsResolver`_                |
+||                          || Profile tenants associated to        ||                                   |
+||                          || the current site.                    ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+|| modePreview              || Flag that indicates that Engine is   || Boolean                           |
+||                          || being executed in preview mode       ||                                   |
+||                          || (also the value of the               ||                                   |
+||                          || ``crafter.engine.preview`` property) ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+|| crafterEnv               || Indicates the value of the           || String                            |
+||                          || ``crafter.engine.environment``       ||                                   |
+||                          || property                             ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+|| siteConfig               || The current site Configuration       || `XMLConfiguration`_               |
+||                          || loaded from /config/site.xml.        ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+|| siteContext              || The current SiteContext              || `SiteContext`_                    |
++---------------------------+---------------------------------------+------------------------------------+
+|| application              || The servlet context                  || `ServletContextHashModel`_        |
++---------------------------+---------------------------------------+------------------------------------+
+|| request                  || The current request                  || `HttpRequestHashModel`_           |
++---------------------------+---------------------------------------+------------------------------------+
+|| requestParameters        || The parameter values for the         || `HttpRequestParametersHashModel`_ |
+||                          || current request                      ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+|| cookies                  || The cookie values for the            || `Map`_                            |
+||                          || current request                      ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+|| session                  || The current session                  || `HttpSessionHashModel`_           |
++---------------------------+---------------------------------------+------------------------------------+
+|| locale                   || The current locale for the           || `Locale`_                         |
+||                          || current user                         ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+|| authentication           || The current authentication (if       || `Authentication`_                 |
+||                          || the user has logged in),             ||                                   |
+||                          || created by the                       ||                                   |
+||                          || Crafter Security Provider            ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+|| profile                  || The current profile (if the          || `Profile`_                        |
+||                          || user has logged in), created         ||                                   |
+||                          || by the                               ||                                   |
+||                          || Crafter Security Provider            ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
 
 .. _SiteItemService: :javadoc_base_url:`engine/org/craftercms/engine/service/SiteItemService.html`
 .. _UrlTransformationService: :javadoc_base_url:`engine/org/craftercms/engine/service/UrlTransformationService.html`
