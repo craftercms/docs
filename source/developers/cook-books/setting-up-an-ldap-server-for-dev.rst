@@ -46,6 +46,8 @@ We will first configure LDAP authentication in Crafter Studio.  In your Authorin
 
 For more information on configuring LDAP authentication in Crafter Studio, please follow the guide here: :ref:`crafter-studio-configure-ldap`
 
+Please note that the LDAP attributes are configurable and in our example above, we are using ``o`` for the attribute for siteId instead of ``crafterSite`` and ``ou`` for the attribute for groupName instead of ``crafterGroup`` as listed in :ref:`crafter-studio-configure-ldap`
+
 -------------------------------
 Install Apache Directory Studio
 -------------------------------
@@ -175,7 +177,7 @@ An empty file in the middle of your ApacheDS will appear.  This is the LDIF edit
     uid: jwick
     userPassword:: abc
 
-Please note that a user can belong to multiple groups and sites.  To add another siteId or group value in the ldif file, just add another line specifying the attribute and the value. Notice the multiple values for the attributes **ou** (group) and **o** (siteId)
+Please note that a user can belong to multiple groups and sites.  To add another siteId or groupName value in the ldif file, just add another line specifying the attribute and the value. Notice the multiple values for the attributes **ou** (groupName) and **o** (siteId)
 
 .. code-block:: guess
     :linenos:
