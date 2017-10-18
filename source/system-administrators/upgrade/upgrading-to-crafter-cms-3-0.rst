@@ -44,6 +44,27 @@ Follow the next steps to import a site built in Crafter Studio 2.5.x to Crafter 
 		#. Move ``config/site.xml`` to ``config/engine/site-config.xml``.
 		#. Move ``config/spring/application-context.xml`` to ``config/engine/application-context.xml``.
 
+#. Update the date format in all XML files:
+
+	#. In a terminal move to the root folder of the site content ``AUTHORING_INSTALL/data/repos/site/{siteName}/sandbox/site``
+	#. Run this command:
+
+		.. code-block:: guess
+
+			find . -type f -name '*.xml' -exec sed -i '' -E 's/([0-9]+)\/([0-9]+)\/([0-9]{4}) ([0-9]+:[0-9]+:[0-9]+)/\3-\1-\2T\4.000Z/g' {} \;
+
+		.. NOTE::
+			This change can also be done with any text editor or IDE that supports replacing regular expression.
+			The previous format was ``MM/dd/yyyy HH:mm:ss`` and the new one is ``yyyy-MM-ddTHH:mm:ss.SSSZ``
+
+	#. Update any script or template that relies on the previous date format
+
+		.. NOTE::
+			Engine will automatically use the right format to parse fields with the suffix ``_dt`` so 
+			templates and scripts should not use directly the date format for parsing any more.
+			Expressions like ``${contentModel.date_dt?date("MM/dd/yyyy")?string.short}`` should be
+			``${contentModel.date_dt?date?string.short}``
+
 #. Do a ``git add .`` and then a ``git commit``. Add any message you want to the commit.
 #. Run ``git log`` and copy the commit ID of the commit you just did.
 #. Navigate one level up to the ``published`` directory.
