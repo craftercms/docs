@@ -60,7 +60,7 @@ Follow the next steps to import a site built in Crafter Studio 2.5.x to Crafter 
 	#. Update any script or template that relies on the previous date format
 
 		.. NOTE::
-			Engine will automatically use the right format to parse fields with the suffix ``_dt`` so 
+			Engine will automatically use the right format to parse fields with the suffix ``_dt`` so
 			templates and scripts should not use directly the date format for parsing any more.
 			Expressions like ``${contentModel.date_dt?date("MM/dd/yyyy")?string.short}`` should be
 			``${contentModel.date_dt?date?string.short}``

@@ -70,6 +70,7 @@ Crafter Studio
    studio/changing-the-studio-logo.rst
    studio/studio-configuration-overrides.rst
    studio/debugging-publishing-issues.rst
+   studio/exporting-importing-site.rst
 
 ==============
 Crafter Engine
@@ -134,4 +135,3 @@ Crafter Commons
     :titlesonly:
 
     commons/encryption-tool.rst
-
