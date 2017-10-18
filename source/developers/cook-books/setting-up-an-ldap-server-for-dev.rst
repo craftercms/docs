@@ -175,6 +175,32 @@ An empty file in the middle of your ApacheDS will appear.  This is the LDIF edit
     uid: jwick
     userPassword:: abc
 
+Please note that a user can belong to multiple groups and sites.  To add another siteId or group value in the ldif file, just add another line specifying the attribute and the value. Notice the multiple values for the attributes **ou** (group) and **o** (siteId)
+
+.. code-block:: guess
+    :linenos:
+
+    dn: cn=John Wick,ou=Users,dc=example,dc=com
+    objectClass: inetOrgPerson
+    objectClass: organizationalPerson
+    objectClass: person
+    objectClass: top
+    cn: John Wick
+    sn: Wick
+    ou: Publisher
+    ou: Editor
+    description: 19650324000000Z
+    employeeNumber: 8
+    givenName: John
+    mail: john@example.com
+    o: myawesomesite
+    o: helloworld
+    telephoneNumber: 169-637-3314
+    telephoneNumber: 907-547-9114
+    uid: jwick
+    userPassword:: abc
+
+
 To add the data we entered in the LDIF file into the LDAP Server, first, click on the **Browse** button in the LDIF editor and select the connection we setup (ApacheDS 2.0.0), then click on the green (Execute LDIF) button next to the **Browse** button to get our data into the server.
 
 .. image:: /_static/images/developer/ldap-server-run-ldif.png

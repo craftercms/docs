@@ -31,9 +31,9 @@ following lines to ``studio-config-override.yaml`` (of course, make any appropri
 		# LDAP email attribute
 		studio.security.ldap.userAttribute.email: mail
 		# LDAP site ID attribute
-		studio.security.ldap.userAttribute.siteId: o
+		studio.security.ldap.userAttribute.siteId: crafterSite
 		# LDAP groups attribute
-		studio.security.ldap.userAttribute.groupName: ou
+		studio.security.ldap.userAttribute.groupName: crafterGroup
 
 Some notes on the properties above:
 
@@ -41,7 +41,7 @@ Some notes on the properties above:
 - ``bindDN`` and ``bindPassword`` are basically the credentials used to connect initially to the LDAP server.
 - ``baseContext`` is the LDAP tree root where the user entries can be located.
 - ``username``, ``firstName``, ``lastName`` and ``email`` are basic user attributes.
-- ``siteId`` indicates the site the user has access to.
+- ``siteId`` indicates the sites the user has access to (can have multiple values).
 - ``groupName`` indicates the groups inside the site the user belongs to (can have multiple values).
 
 Studio will then do a query against the LDAP server whenever a user attempts to log in and the user is not yet in the DB. If there's a match in LDAP, the user is
@@ -51,36 +51,18 @@ Also, please note that Studio needs all the attributes listed in the config to b
 
 .. code-block:: guess
 
-    [WARN] 2017-10-11 12:42:57,487 [http-nio-8080-exec-2] [security.DbWithLdapExtensionSecurityProvider] | No LDAP attribute ou found for username cbrunato
+    [WARN] 2017-10-11 12:42:57,487 [http-nio-8080-exec-2] [security.DbWithLdapExtensionSecurityProvider] | No LDAP attribute crafterGroup found for username cbrunato
 
 
+Here are a few things to take note of when configuring LDAP authentication in Studio:
 
-.. note::
-    If the **groupName** attribute of the LDAP user does not exist in Studio, please make sure that the system administrator assigns a role to the group in Studio so the user can access the site, otherwise, once the user gets into the **Sites** screen and tries to Preview the site or view the dashboard, the user will get a notification that the site is invalid.
+Make sure that at least one of the **groupName** attribute of the LDAP user exists in Studio and has Roles and Permission setup.  If there is no **groupName** attribute setup in Studio with Roles and Permissions, please make sure that the system administrator assigns a role to at least one group in Studio so the user can access the site, otherwise, once the user gets into the **Sites** screen and tries to Preview the site or view the dashboard, the user will get a notification that the site is invalid.
 
     .. image:: /_static/images/system-admin/ldap-user-group-no-role-assigned.png
         :alt: System Admin LDAP Config - LDAP user group attribute not assigned to a role
         :width: 35 %
         :align: center
 
-    To assign a role to a group, please follow the guide :ref:`role-mappings`.  To assign permissions to a role, please see :ref:`permission-mappings`
-
-    If the **siteId** attribute of the LDAP user does not exist in Studio, the user will not be able to log in and will see the following screen:
-
-    .. image:: /_static/images/system-admin/ldap-user-group-site-dne.png
-        :alt: System Admin LDAP Config - LDAP user site attribute does not exist in Studio
-        :width: 35 %
-        :align: center
-
-    If you look at the tomcat log, you will also see the following error:
-
-    .. code-block:: guess
-
-        [ERROR] 2017-10-11 12:27:53,730 [http-nio-8080-exec-3] [security.DbWithLdapExtensionSecurityProvider] | Authentication failed with the LDAP system
-        org.springframework.ldap.UncategorizedLdapException: Uncategorized exception occured during LDAP processing; nested exception is java.lang.NullPointerException
-        ...
-        ...
-        ...
+To assign a role to a group, please follow the guide :ref:`role-mappings`.  To assign permissions to a role, please see :ref:`permission-mappings`
 
 
-    Please make sure that the **siteId** attribute assigned to an LDAP user exists in Studio.
