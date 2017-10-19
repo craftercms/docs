@@ -62,8 +62,8 @@ Follow the next steps to import a site built in Crafter Studio 2.5.x to Crafter 
 		.. NOTE::
 			Engine will automatically use the right format to parse fields with the suffix ``_dt`` so
 			templates and scripts should not use directly the date format for parsing any more.
-			In Freemarker expressions like ``${contentModel.date_dt?date("MM/dd/yyyy")?string.short}``
-			should be changed to ``${contentModel.date_dt?date?string.short}``. In Groovy expression like
+			In Freemarker, expressions like ``${contentModel.date_dt?date("MM/dd/yyyy")?string.short}``
+			should be changed to ``${contentModel.date_dt?date?string.short}``. In Groovy, expression like
 			``item.date_dt.text`` need to be updated to use the `Date <https://docs.oracle.com/javase/8/docs/api/java/util/Date.html>`_
 			object instead, for example ``item.date_dt.format(pattern)``
 
