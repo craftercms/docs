@@ -22,11 +22,11 @@
 | locale                 || The current locale for the current  || `Locale`_                      |
 |                        || user                                ||                                |
 +------------------------+--------------------------------------+---------------------------------+
-| authentication         || The current authentication (if the  || `Authentication`_              |
+| authentication         || The current authentication (if the  || |Authentication|               |
 |                        || user has logged in), created by the ||                                |
 |                        || Crafter Security Provider           ||                                |
 +------------------------+--------------------------------------+---------------------------------+
-| profile                || The current profile (if the user    || `Profile`_                     |
+| profile                || The current profile (if the user    || |Profile|                      |
 |                        || has logged in), created by the      ||                                |
 |                        || Crafter Security Provider           ||                                |
 +------------------------+--------------------------------------+---------------------------------+
@@ -37,5 +37,5 @@
 .. _Map: https://docs.oracle.com/javase/7/docs/api/java/util/Map.html
 .. _HttpSession: http://docs.oracle.com/javaee/6/api/javax/servlet/http/HttpSession.html
 .. _Locale: https://docs.oracle.com/javase/7/docs/api/java/util/Locale.html
-.. _Authentication: :javadoc_base_url:`profile/org/craftercms/security/authentication/Authentication.html`
-.. _Profile: :javadoc_base_url:`profile/org/craftercms/profile/api/Profile.html`
+.. |Authentication| replace:: :javadoc_base_url:`Authentication <profile/org/craftercms/security/authentication/Authentication.html>`
+.. |Profile| replace:: :javadoc_base_url:`Profile <profile/org/craftercms/profile/api/Profile.html>`
