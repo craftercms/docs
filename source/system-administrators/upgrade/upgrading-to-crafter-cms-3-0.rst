@@ -51,7 +51,10 @@ Follow the next steps to import a site built in Crafter Studio 2.5.x to Crafter 
 
 		.. code-block:: guess
 
-			find . -type f -name '*.xml' -exec sed -i '' -E 's/([0-9]+)\/([0-9]+)\/([0-9]{4}) ([0-9]+:[0-9]+:[0-9]+)/\3-\1-\2T\4.000Z/g' {} \;
+			find . -type f -name '*.xml' -exec sed -i -E 's/([0-9]+)\/([0-9]+)\/([0-9]{4}) ([0-9]+:[0-9]+:[0-9]+)/\3-\1-\2T\4.000Z/g' {} \;
+
+		.. NOTE::
+			In macOS the ``sed`` command requires an additional argument for the ``-i`` flag: ``-i ''``
 
 		.. NOTE::
 			This change can also be done with any text editor or IDE that supports replacing regular expression.
