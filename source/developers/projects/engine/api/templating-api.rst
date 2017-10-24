@@ -167,9 +167,9 @@ beans to get the navigation tree or breadcrumb list in a Groovy script:
   templateModel.breadcrumb = navBreadcrumb.getBreadcrumb(contentModel.storeUrl, rootPath)
 
 .. note::
-  These beans are the same used internally by the builtin macros, they will return `NavItem`_ objects.
+  These beans are the same used internally by the builtin macros, they will return |NavItem| objects.
 
-.. _NavItem: :javadoc_base_url:`engine/org/craftercms/engine/navigation/NavItem.html`
+.. |NavItem| replace:: :javadoc_base_url:`NavItem<engine/org/craftercms/engine/navigation/NavItem.html>`
 
 ------------------------
 Keeping Templates Simple
