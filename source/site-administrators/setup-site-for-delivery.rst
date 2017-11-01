@@ -52,6 +52,13 @@ where:
 
           /path/to/repo/
 
+.. note:: When using ``ssh``, we'll need to specify ssh to connect to ``port 63022`` (instead of the default port 22) and to use ``ssh-rsa`` as the preferred host key algorithm by running this command before running the ``init-site`` script:
+
+          .. code-block:: bash
+
+              ssh -o HostKeyAlgorithms=ssh-rsa <hostname> -p63022
+
+
 -----------------------------
 Viewing your Site for Testing
 -----------------------------
