@@ -52,11 +52,12 @@ Activities
    :titlesonly:
 
    backup-and-recovery.rst
-   sync-studio-database-with-repo.rst
-   reindexing-content.rst
    logging.rst
-   upgrade/index.rst
+   reindexing-content.rst
+   setup-site-for-delivery
+   sync-studio-database-with-repo.rst
    troubleshooting.rst
+   upgrade/index.rst
 
 ==============
 Crafter Studio
