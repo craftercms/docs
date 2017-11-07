@@ -68,6 +68,10 @@ Parameters
 || repo_username          || String     ||              || *Only use with "remote" template*.    |
 ||                        ||            ||              || The password of the remote Git repo.  |
 +-------------------------+-------------+---------------+----------------------------------------+
+|| ssh_private_key_path   || String     ||              || *Only use with "remote" template*.    |
+||                        ||            ||              || The path for the private key used     |
+||                        ||            ||              || for the remote Git repo.              |
++-------------------------+-------------+---------------+----------------------------------------+
 || engine_url             || String     ||              || Base URL of Engine, used to make API  |
 ||                        ||            ||              || calls like clear cache and rebuild    |
 ||                        ||            ||              || context. If not specified the default |
