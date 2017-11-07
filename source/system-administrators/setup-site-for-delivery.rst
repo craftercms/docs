@@ -20,13 +20,13 @@ From your command line, navigate to your ``{Crafter-CMS-delivery-environment-dir
 
         .. code-block:: bat
 
-            ./init-site.sh  <site name> <site's published repo git url>
+            ./init-site.sh  <site name> [site's published repo git url] [ssh private key path]
 
     * Windows:
 
         .. code-block:: bat
 
-            init-site.bat  <site name> <site's published repo git url>
+            init-site.bat  <site name> [site's published repo git url] [ssh private key path]
 
 where:
 
@@ -51,6 +51,7 @@ where:
       .. code-block:: sh
 
           /path/to/repo/
+    - ``<ssh private key path>`` is the local path for the private key used for SSH public/private authentication.
 
 .. note:: When using ``ssh``, we'll need to specify ssh to connect to ``port 63022`` (instead of the default port 22) and to use ``ssh-rsa`` as the preferred host key algorithm by running this command before running the ``init-site`` script:
 
