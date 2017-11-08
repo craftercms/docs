@@ -12,6 +12,10 @@
              :width: 80%
              :alt: Form Data Sources - Image From Repository
 
+.. |ctlCmisImgRepo| image:: /_static/images/form-sources/ds-cmis-img-repo.png
+             :width: 100%
+             :alt: Form Data Sources - CMIS Image From Repository
+
 .. |ctlFileDt| image:: /_static/images/form-sources/ds-file-up-dt.png
              :width: 100%
              :alt: Form Data Sources - File Uploaded From Desktop
@@ -27,6 +31,10 @@
 .. |ctlVidDt| image:: /_static/images/form-sources/ds-vid-up-dt.png
              :width: 100%
              :alt: Form Data Sources - Video Uploaded From Desktop
+
+.. |ctlCmisVidRepo| image:: /_static/images/form-sources/ds-cmis-video-repo.png
+             :width: 80%
+             :alt: Form Data Sources - CMIS Video From Repository
 
 .. |ctlVidRepo| image:: /_static/images/form-sources/ds-vid-repo.png
              :width: 85%
@@ -49,6 +57,8 @@
 +------------------------------+-----------------------------------------------------------------+
 || |ctlImgRepo|                || Details are in the :ref:`form-source-image-repo` page.         |
 +------------------------------+-----------------------------------------------------------------+
+|| |ctlCmisImgRepo|            || Details are in the :ref:`form-source-image-repo` page.         |
++------------------------------+-----------------------------------------------------------------+
 || |ctlFileDt|                 || Details are in the :ref:`form-source-file-desktop` page.       |
 +------------------------------+-----------------------------------------------------------------+
 || |ctlFileBrowse|             || Details are in the :ref:`form-source-file-browse` page.        |
@@ -58,6 +68,8 @@
 || |ctlVidDt|                  || Details are in the :ref:`form-source-video-desktop` page.      |
 +------------------------------+-----------------------------------------------------------------+
 || |ctlVidRepo|                || Details are in the :ref:`form-source-video-repo` page.         |
++------------------------------+-----------------------------------------------------------------+
+|| |ctlCmisVidRepo|            || Details are in the :ref:`form-source-video-repo` page.         |
 +------------------------------+-----------------------------------------------------------------+
 || |ctlKVPair|                 || Details are in the :ref:`form-source-kvp` page.                |
 +------------------------------+-----------------------------------------------------------------+

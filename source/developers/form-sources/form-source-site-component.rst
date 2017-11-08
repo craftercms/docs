@@ -39,7 +39,7 @@ Creating an XML file for the data source
 ----------------------------------------
 
 The Site Component Data Source uses xml files to get the components that are going to be used. You can
-create your own component to use as data source by following the instructions on :ref:`creating a component<template-component>` and just skip creating the view and controller part of the content type if needed.
+create your own component to use as data source by following the instructions on :ref:`creating a component<content-type-component>` and just skip creating the view and controller part of the content type if needed.
 
 .. image:: /_static/images/form-sources/form-source-site-component-example.png
     :width: 80%

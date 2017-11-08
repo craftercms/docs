@@ -1,6 +1,10 @@
+.. _release-notes:
+
 =============
 Release Notes
 =============
+
+.. include:: /release-notes/3-0-1.rst
 
 .. include:: /release-notes/3-0-0.rst
 

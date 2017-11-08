@@ -15,12 +15,11 @@ Requirements
 To run Crafter CMS, the following are required:
 
     - Java 1.8+
-    - 1+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
+    - 4+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
     
-Additionally, to run the optional components Crafter Profile and/or Crafter Social, the following is required:
+Please note that Crafter CMS does not require any external databases for the core system to run and deliver fully dynamic experiences.  MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide user management and social features.
 
-    - MongoDb 3+
-
+.. note:: Crafter CMS is not yet compatible with Java 1.9.  We are working on updating our code to make sure we are 100% compatible with the newest Java version.
 
 -------------------
 Supported Platforms
@@ -30,9 +29,9 @@ Supported Platforms
 OS (All components)
 ^^^^^^^^^^^^^^^^^^^
 
-The following Operating Systems are supported:
+The following Operating Systems are supported (64Bit only for all OSs)
 
-    - Windows    
+    - Windows (Windows 7, Windows 10, Windows Server 2012 and Windows Server 2016)
     - Linux
     - OS X
     
@@ -53,4 +52,4 @@ The following browsers are supported:
 
     - Chrome
     - Firefox
-    - Edge
+

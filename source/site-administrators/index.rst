@@ -43,9 +43,8 @@ For the site repository, the site structure looks like this::
 Here are the topics covered in this section:
 
 .. toctree::
-	:maxdepth: 2
+   :maxdepth: 2
 
-	users-groups-management
-	configuration
-	logging
-
+   users-groups-management
+   configuration
+   studio-logging

@@ -13,3 +13,8 @@ Cookbooks / Tutorials
    activiti/index
    services/index
    blueprint/index
+   best-practices/best-practice-loading-content
+   setting-up-an-ldap-server-for-dev
+   working-with-dates-freemarker
+   working-with-dates-groovy
+

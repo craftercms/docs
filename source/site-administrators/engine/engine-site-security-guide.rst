@@ -385,21 +385,24 @@ Restrict Pages
 You can restrict pages based on whether a user is authenticated or has a certain role. To do this, you need to follow the next steps
 to create in the page content type a Repeating Group with a text Input for the roles:
 
-#.  In Studio, click on Site Config.
-#.  Click on Open Existing Type and select the content type for the pages that you want to restrict.
+#.  In Studio, click on |siteConfig|.
+#.  Click on **Content Types** then **Open Existing Type** and select the content type for the pages that you want to restrict.
 #.  On Controls, select the Repeating Group and add it to any Form Section (you can even create an Authorization section just for these
     fields).
-#.  In the Repeating Group properties, set Authorized Roles as Title and Name / Variable Name as authorizedRoles.
+#.  In the Repeating Group properties, set the **Title** field to "Authorized Roles" and the **Name / Variable Name** field to "authorizedRoles."
 
-    .. image:: /_static/images/authorized_roles_properties.png
+    .. image:: /_static/images/site-admin/authorized_roles_properties.png
+        :alt: Engine Site Security Guide - Authorized Roles Properties
 
-#.  Add an Input control inside the Repeating Group, with Title Role and Name / Variable Name role. Make this Input required.
+#.  Add an Input control inside the Repeating Group, with the **Title** field set to "Role" and the **Name / Variable Name** field set to "role". Make this Input required by checking the checkbox under **Constraints** in the **Required** field in the **Properties Explorer**.
 
-    .. image:: /_static/images/role_properties.png
+    .. image:: /_static/images/site-admin/role_properties.png
+        :alt: Engine Site Security Guide - Role Properties
 
 #.  Save the changes. The added fields should look like this:
 
-    .. image:: /_static/images/authorization_section.png
+    .. image:: /_static/images/site-admin/authorization_section.png
+        :alt: Engine Site Security Guide - Authorization Section
 
 With these changes, now you or any other content author can go to any page of this content type and add the roles that are required to
 access the page. Two special roles which indicate authentication state can be used besides the roles that are included in user profiles:

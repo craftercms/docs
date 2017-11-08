@@ -10,13 +10,21 @@ This section describes how to quickly install Crafter CMS and start crafting you
 
 Here are the steps to start using Crafter CMS for development or evaluation:
 
+--------------------------------------
+Installing and verifying prerequisites
+--------------------------------------
+
+.. include:: /includes/installing-and-verifying-prerequisites.rst
+
+.. _installing-crafter-cms-from zip:
+
 --------------------------------------------
 Installing Crafter CMS from the zip Download
 --------------------------------------------
 
 To install Crafter CMS using the zip download:
 
-    * Download the Crafter CMS install zip file from http://downloads.craftercms.org/craftercms/community/3.0.0/ 
+    * Download the Crafter CMS install zip file from http://craftercms.org/downloads
            
        Select ``crafter-cms-authoring.zip`` or ``crafter-cms-authoring.tar.gz``.  The zip file will install a fully functional Crafter Studio instance and a Crafter Engine in Preview Mode. Out of the box, the Studio instance uses a local directory as the repository and a Derby database, which allows a quick and easy set up for local development.
 
@@ -46,8 +54,13 @@ Starting Crafter CMS Using the Startup Script
     
                 startup.bat
 
-        *note:*
-            It takes a few seconds for Crafter CMS to startup.
+            .. note::
+
+                For Windows, ``startup.bat`` should be run by a user with full Administrator privileges the very first time it is run.
+
+        .. note::
+
+            It takes a few seconds for Crafter CMS to startup and takes longer to startup the very first time you startup Crafter CMS.
 
 
         To stop Crafter CMS Server:
@@ -81,6 +94,11 @@ Starting Crafter CMS Using the Startup Script
 
         After logging in, you should be redirected to the MySites screen, and you're now ready to create your first website!
 
+
+
+
+
+
 .. _installing-craftercms-from-gradle:
 
 ---------------------------------------------------------------------------
@@ -109,3 +127,4 @@ To create the archives(``*.zip`` or ``*.tar.gz``) for installing Crafter CMS, th
 
 For more details on using the Gradle environment builder, please review: https://github.com/craftercms/craftercms/blob/master/README.md
 
+For more details on building Crafter CMS on Windows, please review :ref:`build-crafter-cms-in-windows`

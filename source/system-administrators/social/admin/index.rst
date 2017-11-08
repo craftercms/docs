@@ -20,7 +20,7 @@ New Installation
 ^^^^^^^^^^^^^^^^
 
 You can follow the instructions for building a complete bundle as described 
-:ref:`here <installing-craftercms-from-gradle>`, if you add the parameter ``-P includeSocial=true``
+:ref:`here <installing-craftercms-from-gradle>`, if you add the parameter ``-Pcrafter.social=true``
 the bundle will contain `crafter-social.war` and `crafter-social-admin.war`.
 
 ^^^^^^^^^^^^^^^^^^^^^

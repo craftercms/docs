@@ -13,8 +13,9 @@ When you work in Crafter Studio, you need to login as a user.  Your Crafter CMS 
 .. toctree::
    :maxdepth: 1
 
-   users-management
-   groups-management
+   studio/users-groups/users-management.rst
+   studio/users-groups/groups-management.rst
    studio/role-mappings.rst
    studio/permission-mappings.rst
-
+   studio/users-groups/putting-it-all-together.rst
+   studio/users-groups/user-passwords.rst

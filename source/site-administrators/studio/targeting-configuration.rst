@@ -5,6 +5,12 @@ Targeting Configuration
 #######################
 
 The targeting configuration file configures the targeting system of Crafter Studio to help provide Crafter Engine with fake user properties that help drive the targeting system.
+To modify the targeting configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Targeting Configuration** from the dropdown list.
+
+.. image:: /_static/images/site-admin/config-open-targeting-config.png
+    :alt: Configurations - Open Targeting Configuration
+    :width: 65 %
+    :align: center
 
 ******
 Sample

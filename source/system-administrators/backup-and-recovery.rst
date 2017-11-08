@@ -1,3 +1,5 @@
+.. _backup-and-recovery:
+
 ===================
 Backup and Recovery
 ===================
@@ -7,7 +9,7 @@ Crafter CMS out of the box comes with a script to backup and restore your enviro
 ------
 Backup
 ------
-To backup your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}-env/bin``, where ``{env}`` is the environment (either auth or delivery) then run the following:
+To backup your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}/bin``, where ``{env}`` is the environment (either authoring or delivery) then run the following:
 
     * Unix/Linux systems:
 
@@ -24,7 +26,7 @@ To backup your authoring or delivery environment, go to ``{Crafter-CMS-install-d
 
 where ``{filename}`` is optional.
 
-Your backup file will be located in ``{Crafter-CMS-install-directory}/crafter-{env}-env/``. If a filename has been specified, your backup file will be named ``{filename}-{yyyy-MM-dd-hh-mm-ss}.zip`` where:
+Your backup file will be located in ``{Crafter-CMS-install-directory}/crafter-{env}/backups/``. If a filename has been specified, your backup file will be named ``{filename}-{yyyy-MM-dd-hh-mm-ss}.zip`` where:
     - ``yyyy`` is the year, ex. 2017
     - ``MM`` is the month, from 01 to 12 ex. 07 for July
     - ``dd`` is the day, from 00 to 30 or 31 ex. 28
@@ -37,7 +39,7 @@ If no filename has been specified, the backup file will be named either ``crafte
 --------
 Recovery
 --------
-To restore your backup, make sure that Crafter CMS is not running.  To restore your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}-env/bin``, where ``{env}`` is the environment (either auth or delivery) then run the following:
+To restore your backup, make sure that Crafter CMS is not running.  To restore your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}/bin``, where ``{env}`` is the environment (either authoring or delivery) then run the following:
 
     * Unix/Linux systems:
 

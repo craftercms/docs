@@ -187,7 +187,7 @@ You can only use one of either include or exclude. Use Include when you need to 
 
 We'll look at an example of limiting where you can create content from the Website_Editorial blueprint that comes out of the box.
 
-From the **Sidebar**, click on **Site Config** at the bottom.  Next, click on **Content Types** then either create a new content type or open an existing content type.  In the image below, we have the content type **Page - Article** open for editing.  Go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name *config.xml*, click on that pencil to edit.
+From the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Content Types** then either create a new content type or open an existing content type.  In the image below, we have the content type **Page - Article** open for editing.  Go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name *config.xml*, click on that pencil to edit.
 
 .. figure:: /_static/images/content-model/form-engine-prop-configuration.png
     :alt: Form Engine Properties Configuration
@@ -202,10 +202,10 @@ To limit where this particular content type can be created, the tags, <paths><in
 .. code-block:: xml
 
     <paths>
-		<includes>
-			<pattern>^/site/website/articles/.*</pattern>
-		</includes>
-	</paths>
+        <includes>
+            <pattern>^/site/website/articles/.*</pattern>
+        </includes>
+    </paths>
 
 To see how the above tags/example works, go to the **Sidebar** and right click on the **Home** folder and select **New Content**.  Notice that content type **Page - Article** is not available from the content types listed.
 
@@ -256,8 +256,10 @@ Every Form Control has a Variable Name property.  The Variable Name is used by t
 **Reserved Variable Names**
 
 The following variable names are used by Crafter CMS.
-  
+
 +-------------------+----------------------------------------------------------+
+|| Variable Name    || Description                                             |
++===================+==========================================================+
 || file-name        || Used by the File Name and Auto File Name control.       |
 +-------------------+----------------------------------------------------------+
 || internal-name    || Used by Crafter Studio to label the content object      |
@@ -285,6 +287,7 @@ The following variable names are used by Crafter CMS.
 || id               || reserved by Solr                                        |
 +-------------------+----------------------------------------------------------+
 
+.. _variable-names-search-indexing:
 
 **Variable Names and Search Indexing**
 
@@ -361,6 +364,7 @@ View templates control how the model is rendered as HTML. Crafter uses `FreeMark
 An example view template
 
 .. code-block:: guess
+   :linenos:
 
 	<#import "/templates/system/common/cstudio-support.ftl" as studio />
 
@@ -424,6 +428,7 @@ The following is an example of a component script. The component content type is
 script in Scripts > components > upcoming-events.groovy so that it is executed for all components of that type.
 
 .. code-block:: groovy
+    :linenos:
 
     import org.craftercms.engine.service.context.SiteContext
 
@@ -466,6 +471,7 @@ where everything after the groovy directory is part of the class' package. It's 
 convention.
 
 .. code-block:: groovy
+    :linenos:
 
     package utils
 
@@ -490,4 +496,16 @@ convention.
 For more information on the FreeMarker (Templating) APIs, pleasee see :ref:`templating-api`.
 
 For more information on the Groovy APIs, please see :ref:`groovy-api`
+
+
+------------------------------
+Creating Content Type Examples
+------------------------------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   content-type-page
+   content-type-component
 

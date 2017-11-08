@@ -6,7 +6,7 @@
 Your First Website
 ==================
 
-This section assumes that you have followed the steps in the :ref:`Quick Start Guide <getting-started>` to get Crafter CMS and login. We will be using an out-of-the-box blueprint, called "Website_Editorial" to create your first website.
+This section assumes that you have followed the steps in the :ref:`Quick Start Guide <quick_start_guide>` to get Crafter CMS and login. We will be using an out-of-the-box blueprint, called "Website_Editorial" to create your first website.
 
 Let's get started building your first website!
 
@@ -214,7 +214,7 @@ Your site is published after creating the site from the Website_Editorial bluepr
     :align: center
     :alt: Your First Website - Publish Your New Content
 
-You will then prompted whether you want to publish the page now (**Items should go live now**), or publish the page at a later date and time (**Items go live on a specific date & time**).
+You will then be prompted whether you want to publish the page now (**Items should go live now**), or publish the page at a later date and time (**Items go live on a specific date & time**).
 
 .. image:: /_static/images/first-site/first-site-publish-option.png
     :width: 100 %

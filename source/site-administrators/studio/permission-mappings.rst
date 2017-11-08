@@ -55,7 +55,7 @@ the role the permission **Publish** to the scope ~DASHBOARD~. For example:
         </allowed-permissions>
       </rule>
 
-To modify/view the permission mappings for your site in Studio, click on **Site Config** at the bottom of the *Sidebar*, then click on **Configurations** and select **Permissions Mapping** from the dropdown list.
+To modify/view the permission mappings for your site in Studio, click on |siteConfig| at the bottom of the *Sidebar*, then click on **Configurations** and select **Permissions Mapping** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-permission-mappings.png
     :alt: Configurations - Open Permission Mappings

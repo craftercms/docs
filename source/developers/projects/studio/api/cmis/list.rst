@@ -48,7 +48,7 @@ Example
 Request
 ^^^^^^^
 
-``GET /api/1/services/api/1/cmis/list.json?site_id=mySite&cmis_repo_id=repo1&path=/assets```
+``GET /api/1/services/api/1/cmis/list.json?site_id=my-site&cmis_repo_id=repo1&path=/assets```
 
 ^^^^^^^^
 Response
@@ -89,9 +89,21 @@ Responses
 +---------+---------------------------------------------------+
 || 400    || ``{ "message" : "Invalid parameter(s)" }``       |
 +---------+---------------------------------------------------+
+|| 400    || ``{ "message" : "Invalid CMIS parameter(s).``    |
+||        || ``Invalid CMIS data source configuration``       |
+||        || ``(hostname, port number, etc.), please contact``|
+||        || ``your site administrator.``                     |
+||        || ``ACTUAL_EXCEPTION" }``                          |
++---------+---------------------------------------------------+
 || 401    || ``{ "message" : "Unauthorized" }``               |
 +---------+---------------------------------------------------+
-|| 401    || ``{ "message" : "CMIS Unauthorized.``            |
+|| 401    || ``{ "message" : "CMIS Unauthorized:``            |
+||        || ``Invalid username or password in CMIS``         |
+||        || ``data source configuration, please contact``    |
+||        || ``your site administrator.``                     |
+||        || ``ACTUAL_EXCEPTION" }``                          |
++---------+---------------------------------------------------+
+|| 404    || ``{ "message" : "CMIS Path Not Found.``          |
 ||        || ``ACTUAL_EXCEPTION" }``                          |
 +---------+---------------------------------------------------+
 || 408    || ``{ "message" : "CMIS Timeout.``                 |

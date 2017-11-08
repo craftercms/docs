@@ -52,7 +52,11 @@ Site Management
 .. toctree::
    :maxdepth: 1
 
+   site/clear-configuration-cache
    site/create-site
+   site/delete-site
+   site/exists
+   site/get-configuration
    site/get-site
    site/get-sites-per-user
 
@@ -85,6 +89,8 @@ Security
    security/login
    security/logout
    security/validate-session
+   security/get-user-permissions
+   security/get-user-roles
 
 
 ----------
@@ -116,6 +122,7 @@ Publish
 .. toctree::
    :maxdepth: 1
 
+   publish/commits
    publish/status
    publish/start
    publish/stop
@@ -141,29 +148,6 @@ Clipboard
    clipboard/cut-item
    clipboard/get-items
    clipboard/paste-item
-
--------
-Content
--------
-.. toctree::
-   :maxdepth: 1
-
-   content/change-content-type
-   content/content-exists
-   content/create-folder
-   content/delete-content
-   content/get-content
-   content/get-content-at-path
-   content/get-content-type
-   content/get-content-types
-   content/get-item
-   content/get-item-orders
-   content/get-item-states
-   content/get-item-versions
-   content/get-items-tree
-   content/reorder-items
-   content/revert-content
-   content/unlock-content
 
 ----------
 Dependency
@@ -192,3 +176,54 @@ Preview
    :maxdepth: 1
 
    preview/sync-site
+
+---------------
+Content / Asset
+---------------
+
+.. toctree::
+   :maxdepth: 1
+
+   content/change-content-type
+   content/content-exists
+   content/create-folder
+   content/crop-image
+   content/rename-folder
+   content/delete-content
+   content/get-content
+   content/get-content-at-path
+   content/get-content-type
+   content/get-content-types
+   content/get-item
+   content/get-item-orders
+   content/get-item-states
+   content/get-item-versions
+   content/get-items-tree
+   content/get-next-item-order
+   content/get-pages
+   content/reorder-items
+   content/revert-content
+   content/unlock-content
+
+------
+Server
+------
+.. toctree::
+   :maxdepth: 1
+
+   server/get-available-languages
+   server/get-loggers
+   server/get-ui-resource-override
+   server/set-logger-state
+
+--------
+Workflow
+--------
+.. toctree::
+   :maxdepth: 1
+
+   workflow/create-jobs
+   workflow/get-go-live-items
+   workflow/get-workflow-affected-paths
+   workflow/go-live
+   workflow/reject
