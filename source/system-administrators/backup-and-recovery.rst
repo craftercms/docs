@@ -21,7 +21,7 @@ To backup your authoring or delivery environment, go to ``{Crafter-CMS-install-d
 
       .. code-block:: bat
 
-          ./crafter.bat backup {filename}
+          crafter.bat backup {filename}
 
 
 where ``{filename}`` is optional.
@@ -51,5 +51,14 @@ To restore your backup, make sure that Crafter CMS is not running.  To restore y
 
       .. code-block:: bat
 
-          ./crafter.bat restore {backup-file}
+          crafter.bat restore {backup-file}
 
+It will then prompt you with the following message:
+
+   .. code-block:: text
+
+       Warning, you're about to restore CrafterCMS from a backup, which will wipe the existing sites and associated database and replace everything with the restored data. If you care about the existing state of the system then stop this process, backup the system, and then attempt the restore. Are you sure you want to proceed? (yes/no)
+
+Enter ``yes`` if you want to proceed with the restore, otherwise, enter ``no``.
+
+If you're restoring the authoring environment, Studio will be started by the restore process.  If you're restoring the delivery environment, you will need to start the delivery environment after the restore process is done.
