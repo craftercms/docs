@@ -47,14 +47,16 @@ One of the general workaround to unblock the publishing queue is by manual synci
 
     # navigate to published repository
     > cd path_to_published
-    > cs ..
+    > cd ..
     # delete published repository
     > rm -rf published
     # clone published repository from sandbox
     > git clone path_to_sandbox published
 
 
-By executing this command, all content is practically published. To avoid unnecessary operations and confusion within the system, the database should also be updated by canceling everything remaining in the publishing queue and setting item states to ``Live``
+Warning: By executing this command, all content is the sandbox will become published, and published history will replaced with authoring history.
+
+To avoid unnecessary operations and confusion within the system, the database should also be updated by canceling everything remaining in the publishing queue and setting item states to ``Live``
 
 .. code-block:: sql
     :caption: **Cancel everything in the publishing queue:**
