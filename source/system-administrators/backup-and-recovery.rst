@@ -62,3 +62,9 @@ It will then prompt you with the following message:
 Enter ``yes`` if you want to proceed with the restore, otherwise, enter ``no``.
 
 If you're restoring the authoring environment, Studio will be started by the restore process.  If you're restoring the delivery environment, you will need to start the delivery environment after the restore process is done.
+
+.. important::
+    When restoring the authoring environment, to avoid conflicts, please make sure you do one of the following for the delivery environment:
+        * Restore the delivery environment by following the steps listed above
+        * Re-initialize the delivery environment by deleting the ``data`` folder under ``{Crafter-CMS-install-directory}/crafter-delivery/`` and running the init-site.sh/.bat script for all sites
+
