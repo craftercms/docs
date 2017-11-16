@@ -136,3 +136,13 @@ Crafter Commons
     :titlesonly:
 
     commons/encryption-tool.rst
+
+================
+Crafter Security
+================
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    security/randomize-admin-passwd.rst
