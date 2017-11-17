@@ -496,18 +496,12 @@ Common task properties
 +-------------------------+----------------------------------------------------------------------+
 || Property               || Description                                                         |
 +=========================+======================================================================+
-|| tomcatVersion          || ``tomcat.version``                                                  |
-||                        +----------------------------------------------------------------------+
-||                        || Sets the tomcat version to be downloaded used by                    |
+|| ``tomcat.version``     || Sets the tomcat version to be downloaded used by                    |
 ||                        || *downloadTomcat* task                                               |
 +-------------------------+----------------------------------------------------------------------+
-|| solrVersion            || ``solr.version``                                                    |
-||                        +----------------------------------------------------------------------+
-||                        || Sets the Solr version to be downloaded used by *downloadSolr* task. |
+|| ``solr.version``       || Sets the Solr version to be downloaded used by *downloadSolr* task. |
 +-------------------------+----------------------------------------------------------------------+
-|| downloadDir            || ``downloadDir``                                                     |
-||                        +----------------------------------------------------------------------+
-||                        || Path were all downloads will be saved. Used by *downloadTomcat* and |
+|| ``downloadDir``        || Path were all downloads will be saved. Used by *downloadTomcat* and |
 ||                        || *downloadSolr*. Default value is *./target/downloads*               |
 +-------------------------+----------------------------------------------------------------------+
 
@@ -516,132 +510,79 @@ Common task properties
 +-------------------------+----------------------------------------------------------------------+
 || Property               || Description                                                         |
 +=========================+======================================================================+
-|| authEnv                || ``authoring.root``                                                  |
-||                        +----------------------------------------------------------------------+
-||                        || Path were a development environment will be generated.              |
+|| ``authoring.root``     || Path were a development environment will be generated.              |
 ||                        || Default value is *./crafter-authoring/*                             |
 +-------------------------+----------------------------------------------------------------------+
-|| deliveryEnv            || ``delivery.root``                                                   |
-||                        +----------------------------------------------------------------------+
-||                        || Path were a delivery environment will be generated.                 |
+|| ``delivery.root``      || Path were a delivery environment will be generated.                 |
 ||                        || Default value is *./crafter-delivery/*                              |
 +-------------------------+----------------------------------------------------------------------+
-|| includeProfile         || ``crafter.profile``                                                 |
-||                        +----------------------------------------------------------------------+
-||                        || Includes Profile in the generation of the development environment.  |
+|| ``crafter.profile``    || Includes Profile in the generation of the development environment.  |
 ||                        || Default value is false. **If true,mongodb is required**             |
 +-------------------------+----------------------------------------------------------------------+
-|| includeSocial          || ``crafter.social``                                                  |
-||                        +----------------------------------------------------------------------+
-||                        || Includes Social in the generation of the development environment.   |
+|| ``crafter.social``     || Includes Social in the generation of the development environment.   |
 ||                        || Default value is false,                                             |
 ||                        || **If true, *includeProfile* will be set to true**                   |
 +-------------------------+----------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------+
 || Authoring Environment Properties                                                              |
-+-------------------------+----------------------------------------------------------------------+
-|| Property               || Description                                                         |
-+=========================+======================================================================+
-|| authTomcatPort         || ``authoring.tomcat.http.port``                                      |
-||                        +----------------------------------------------------------------------+
-||                        || Authoring Tomcat Http port. Default value is 8080                   |
-+-------------------------+----------------------------------------------------------------------+
-|| authTomcatShutdownPort || ``authoring.tomcat.shutdown.port``                                  |
-||                        +----------------------------------------------------------------------+
-||                        || Authoring Tomcat shutdown port. Default value is 8005               |
-+-------------------------+----------------------------------------------------------------------+
-|| authTomcatAJPPort      || ``authoring.tomcat.ajp.port``                                       |
-||                        +----------------------------------------------------------------------+
-||                        || Authoring Tomcat AJP port. Default value is 8009                    |
-+-------------------------+----------------------------------------------------------------------+
-|| authTomcatSSLPort      || ``authoring.tomcat.https.port``                                     |
-||                        +----------------------------------------------------------------------+
-||                        || Authoring Tomcat SSL(https) port. Default value is 8443             |
-+-------------------------+----------------------------------------------------------------------+
-|| authTomcatDebugPort    || ``authoring.tomcat.debug.port``                                     |
-||                        +----------------------------------------------------------------------+
-||                        || Authoring Tomcat SSL(https) port. Default value is 8000             |
-+-------------------------+----------------------------------------------------------------------+
-|| authMongoDBPort        || ``authoring.mongo.port``                                            |
-||                        +----------------------------------------------------------------------+
-||                        || Authoring MongoDb port. Default value is 27020                      |
-+-------------------------+----------------------------------------------------------------------+
-|| authSolrPort           || ``authoring.solr.port``                                             |
-||                        +----------------------------------------------------------------------+
-||                        || Authoring Solr port. Default value is 8694                          |
-+-------------------------+----------------------------------------------------------------------+
-|| authSolrDebugPort      || ``authoring.solr.debug.port``                                       |
-||                        +----------------------------------------------------------------------+
-||                        || Authoring Solr debug port. Default value is 5005                    |
-+-------------------------+----------------------------------------------------------------------+
-|| authMariaDbPort        || ``authoring.mariadb.port``                                          |
-||                        +----------------------------------------------------------------------+
-||                        || Authoring MariaDb port. Default value is 33306                      |
-+-------------------------+----------------------------------------------------------------------+
-|| authDeployerPort       || ``authoring.deployer.port``                                         |
-||                        +----------------------------------------------------------------------+
-||                        || Authoring Deployer port. Default value is 9191                      |
-+-------------------------+----------------------------------------------------------------------+
-|| authDeployerDebugPort  || ``authoring.deployer.debug.port``                                   |
-||                        +----------------------------------------------------------------------+
-||                        || Authoring Deployer debug port. Default value is 5000                |
-+-------------------------+----------------------------------------------------------------------+
-|| authDeploymentDir      || ``authoring.deployment.dir``                                        |
-||                        +----------------------------------------------------------------------+
-||                        || Authoring deployment directory. Default value is "data/repos/sites" |
-+-------------------------+----------------------------------------------------------------------+
++-------------------------------------+----------------------------------------------------------+
+|| Property                           || Description                                             |
++=====================================+==========================================================+
+|| ``authoring.tomcat.http.port``     || Authoring Tomcat Http port. Default value is 8080       |
++-------------------------------------+----------------------------------------------------------+
+|| ``authoring.tomcat.shutdown.port`` || Authoring Tomcat shutdown port. Default value is 8005   |
++-------------------------------------+----------------------------------------------------------+
+|| ``authoring.tomcat.ajp.port``      || Authoring Tomcat AJP port. Default value is 8009        |
++-------------------------------------+----------------------------------------------------------+
+|| ``authoring.tomcat.https.port``    || Authoring Tomcat SSL(https) port. Default value is 8443 |
++-------------------------------------+----------------------------------------------------------+
+|| ``authoring.tomcat.debug.port``    || Authoring Tomcat debug port. Default value is 8000      |
++-------------------------------------+----------------------------------------------------------+
+|| ``authoring.mongo.port``           || Authoring MongoDb port. Default value is 27020          |
++-------------------------------------+----------------------------------------------------------+
+|| ``authoring.solr.port``            || Authoring Solr port. Default value is 8694              |
++-------------------------------------+----------------------------------------------------------+
+|| ``authoring.solr.debug.port``      || Authoring Solr debug port. Default value is 5005        |
++-------------------------------------+----------------------------------------------------------+
+|| ``authoring.mariadb.port``         || Authoring MariaDb port. Default value is 33306          |
++-------------------------------------+----------------------------------------------------------+
+|| ``authoring.deployer.port``        || Authoring Deployer port. Default value is 9191          |
++-------------------------------------+----------------------------------------------------------+
+|| ``authoring.deployer.debug.port``  || Authoring Deployer debug port. Default value is 5000    |
++-------------------------------------+----------------------------------------------------------+
+|| ``authoring.deployment.dir``       || Authoring deployment directory.                         |
+||                                    || Default value is "data/repos/sites"                     |
++-------------------------------------+----------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------+
 || Delivery Environment Properties                                                               |
-+-----------------------------+------------------------------------------------------------------+
-|| Property                   || Description                                                     |
-+=============================+==================================================================+
-|| deliveryTomcatPort         || ``delivery.tomcat.http.port``                                   |
-||                            +------------------------------------------------------------------+
-||                            || Delivery Tomcat Http port. Default value is 9080                |
-+-----------------------------+------------------------------------------------------------------+
-|| deliveryTomcatShutdownPort || ``delivery.tomcat.shutdown.port``                               |
-||                            +------------------------------------------------------------------+
-||                            || Delivery Tomcat Shutdown port. Default value is 9005            |
-+-----------------------------+------------------------------------------------------------------+
-|| deliveryTomcatAJPPort      || ``delivery.tomcat.ajp.port``                                    |
-||                            +------------------------------------------------------------------+
-||                            || Delivery Tomcat AJP port. Default value is 9009                 |
-+-----------------------------+------------------------------------------------------------------+
-|| deliveryTomcatSSLPort      || ``delivery.tomcat.https.port``                                  |
-||                            +------------------------------------------------------------------+
-||                            || Delivery Tomcat SSL(https) port. Default value is 9443          |
-+-----------------------------+------------------------------------------------------------------+
-|| deliveryTomcatDebugPort    || ``delivery.tomcat.debug.port``                                  |
-||                            +------------------------------------------------------------------+
-||                            || Delivery Tomcat debug port. Default value is 9000               |
-+-----------------------------+------------------------------------------------------------------+
-|| deliveryMongoDBPort        || ``delivery.mongodb.port``                                       |
-||                            +------------------------------------------------------------------+
-||                            || Delivery Mongo DB port. Default value is 28020                  |
-+-----------------------------+------------------------------------------------------------------+
-|| deliverySolrPort           || ``delivery.solr.port``                                          |
-||                            +------------------------------------------------------------------+
-||                            || Delivery Solr port. Default value is 8695                       |
-+-----------------------------+------------------------------------------------------------------+
-|| deliverySolrDebugPort      || ``delivery.solr.debug.port``                                    |
-||                            +------------------------------------------------------------------+
-||                            || Delivery Solr debug port. Default value is 5006                 |
-+-----------------------------+------------------------------------------------------------------+
-|| deliveryDeployerPort       || ``delivery.deployer.port``                                      |
-||                            +------------------------------------------------------------------+
-||                            || Delivery Deployer port. Default value is 9192                   |
-+-----------------------------+------------------------------------------------------------------+
-|| deliveryDeployerDebugPort  || ``delivery.deployer.debug.port``                                |
-||                            +------------------------------------------------------------------+
-||                            || Delivery Deployer debug port. Default value is 5001             |
-+-----------------------------+------------------------------------------------------------------+
-|| deliveryDeploymentDir      || ``delivery.deployment.dir``                                     |
-||                            +------------------------------------------------------------------+
-||                            || Delivery Deployment directory.                                  |
-||                            || Default value is "data/repos/sites"                             |
-+-----------------------------+------------------------------------------------------------------+
++------------------------------------+-----------------------------------------------------------+
+|| Property                          || Description                                              |
++====================================+===========================================================+
+|| ``delivery.tomcat.http.port``     || Delivery Tomcat Http port. Default value is 9080         |
++------------------------------------+-----------------------------------------------------------+
+|| ``delivery.tomcat.shutdown.port`` || Delivery Tomcat Shutdown port. Default value is 9005     |
++------------------------------------+-----------------------------------------------------------+
+|| ``delivery.tomcat.ajp.port``      || Delivery Tomcat AJP port. Default value is 9009          |
++------------------------------------+-----------------------------------------------------------+
+|| ``delivery.tomcat.https.port``    || Delivery Tomcat SSL(https) port. Default value is 9443   |
++------------------------------------+-----------------------------------------------------------+
+|| ``delivery.tomcat.debug.port``    || Delivery Tomcat debug port. Default value is 9000        |
++------------------------------------+-----------------------------------------------------------+
+|| ``delivery.mongodb.port``         || Delivery Mongo DB port. Default value is 28020           |
++------------------------------------+-----------------------------------------------------------+
+|| ``delivery.solr.port``            || Delivery Solr port. Default value is 8695                |
++------------------------------------+-----------------------------------------------------------+
+|| ``delivery.solr.debug.port``      || Delivery Solr debug port. Default value is 5006          |
++------------------------------------+-----------------------------------------------------------+
+|| ``delivery.deployer.port``        || Delivery Deployer port. Default value is 9192            |
++------------------------------------+-----------------------------------------------------------+
+|| ``delivery.deployer.debug.port``  || Delivery Deployer debug port. Default value is 5001      |
++------------------------------------+-----------------------------------------------------------+
+|| ``delivery.deployment.dir``       || Delivery Deployment directory.                           |
+||                                   || Default value is "data/repos/sites"                      |
++------------------------------------+-----------------------------------------------------------+
 
 .. _git-properties:
 
@@ -650,26 +591,16 @@ Common task properties
 +-----------------------------+------------------------------------------------------------------+
 || Property                   || Description                                                     |
 +=============================+==================================================================+
-|| gitURLTemplate             || ``crafter.git.url``                                             |
-||                            +------------------------------------------------------------------+
-||                            || Git URL                                                         |
+|| ``crafter.git.url``        || Git URL                                                         |
 ||                            || Default value is "https://github.com/craftercms/"               |
 +-----------------------------+------------------------------------------------------------------+
-|| gitSourceBranch            || ``crafter.git.branch``                                          |
-||                            +------------------------------------------------------------------+
-||                            || Git source branch. Default value is "master"                    |
+|| ``crafter.git.branch``     || Git source branch. Default value is "master"                    |
 +-----------------------------+------------------------------------------------------------------+
-|| gitRepo                    || ``crafter.git.remote``                                          |
-||                            +------------------------------------------------------------------+
-||                            || Git repository. Default value is "origin"                       |
+|| ``crafter.git.remote``     || Git repository. Default value is "origin"                       |
 +-----------------------------+------------------------------------------------------------------+
-|| studioUIFromRepo           || ``crafter.ui.repo``                                             |
-||                            +------------------------------------------------------------------+
-||                            || Is Studio UI from repository? Default value is false            |
+|| ``crafter.ui.repo``        || Is Studio UI from repository? Default value is false            |
 +-----------------------------+------------------------------------------------------------------+
-|| forceDeploy                || ``forceDeploy``                                                 |
-||                            +------------------------------------------------------------------+
-||                            || Force deploy? Default value is false                            |
+|| ``forceDeploy``            || Force deploy? Default value is false                            |
 +-----------------------------+------------------------------------------------------------------+
 
 Here's an example using one of the task properties, ``gitRepo``,  to get the latest code from Crafter CMS, in order to have the latest updates from the community:

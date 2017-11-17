@@ -7,7 +7,7 @@ Randomize "admin" Password for Crafter CMS Fresh Install
 Crafter CMS gives you the option to randomize the **admin** password on a fresh install.  To randomize the **admin** password, before starting Crafter CMS for the very first time, in your Authoring installation, go to  the following folder: ``bin/apache-tomcat/shared/classes/crafter/studio/extension/`` and add the following to the **studio-config-override.yaml** file:
 
 .. code-block:: yaml
-       :caption: *bin/apache-tpomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+       :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
        :linenos:
 
        ##################################################
