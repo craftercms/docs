@@ -98,3 +98,27 @@ In some cases, the configuration looks like this:
 	    fetch = +refs/heads/*:refs/remotes/origin/*
 
 To manually fix the configuration problem, either set the url value as a relative path between the ``published`` and the ``sandbox`` repositories (default ``../sandbox``) or set it as the absolute path of the ``sandbox`` repository.
+
+------------------------------------------------------------------
+Publishing Issues When Commit ID for a content is NULL in Database
+------------------------------------------------------------------
+
+Publishing issues may be caused if content does not have value for commit id in metadata table. To detect which content has NULL for commit id execute following query:
+
+.. code-block:: sql
+
+    SELECT site, path FROM item_metadata WHERE commit_id is NULL;
+
+When all content with NULL commit id is detected, it is needed to edit content manually by adding change that will not affect content itself but will cause a git change. (e.g. html or xml comment block, blank space etc.). It is needed to commit that change in git repo, and sync repository feature will update commit id in database.
+
+-------------------------------------------------------
+Publishing Issues Caused by 'Ghost' Content in Database
+-------------------------------------------------------
+
+'Ghost' content is content that has been deleted from repository, but its metadata remained in database. The only solution to this problem is to remove this content manually from database. Once 'ghost' content is identified following queries need to be executed:
+
+.. code-block:: sql
+
+    DELETE FROM item_state WHERE site = 'mysite' and path = 'ghostcontent';
+
+    DELETE FROM item_metadata WHERE site = 'mysite' and path = 'ghostcontent';
