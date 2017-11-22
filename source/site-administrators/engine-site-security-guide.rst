@@ -357,7 +357,7 @@ configure it so the correct headers are sent to the applications:
     *   The URL after ``Location`` will be the URL auth_mellon intercepts. MellonEnable "auth" enables auth_mellon at the location.
     *   The ``RequestHeader`` set entries create headers that are later sent to the Tomcat webapps with the user info. You need at least
         to specify the ``MELLON_username`` and ``MELLON_email`` headers, the other ones are optional and are directly mapped, without the
-        MELLON_ prefix, to the attributes you defined in the Crafter Profile tenant, when a new user needs to be created. So the
+        MELLON\_ prefix, to the attributes you defined in the Crafter Profile tenant, when a new user needs to be created. So the
         configuration above will cause the Security Provider to create a user with firstName, lastName and displayName attributes. It's
         important to remember that the environment variables set by auth_mellon and used to create this headers depend in the IdP, so
         you'll need to check first what the IdP is sending before defining the headers.

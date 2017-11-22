@@ -44,11 +44,11 @@ Description
     ``/environment-config/preview-server-url``
         Preview url
 	``/environment-config/authoring-server-url``
-	    Authoring url
+        Authoring url
 	``/environment-config/form-server-url``
-	    Form server url (deprecated)
+        Form server url (deprecated)
 	``/environment-config/live-server-url``
-	    Live server url
+        Live server url
     ``/environment-config/publishing-channels``
         Defines publishing channels
     ``/environment-config/publishing-channels/channel-group``

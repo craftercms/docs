@@ -5,7 +5,7 @@ Getting Started
 ###############
 
 Thanks for you interest in Crafter CMS! We've been powering digital experiences in the form of the world's largest websites, intranets, mobile applications since 2007.
-Today the leading brands use Crafter for much more than just sites. Crafter powers personized content as a service, personized email, virtual and augmented reality, kiosk, digital signage and much more.
+Today the leading brands use Crafter for much more than just sites. Crafter powers personized content as a service, personalized email, virtual and augmented reality, kiosk, digital signage and much more.
 
 Let's get started!
 

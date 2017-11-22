@@ -1,3 +1,8 @@
+:orphan:
+
+.. document does not appear in any toctree, this file is referenced
+   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
+
 *********************
 System Administrators
 *********************
@@ -26,10 +31,10 @@ Production Environment
 
 * Authoring
 * Delivery
-** Engine
-** Profile
-** Social
-** Deployer
+* Engine
+* Profile
+* Social
+* Deployer
 
 * Server Configuration
 * Best practices
@@ -44,6 +49,6 @@ Module Specific Configuration
 -----------------------------
 
 .. toctree::
-	:maxdepth: 1
+    :maxdepth: 1
 
-	studio-configuration.rst
+    /system-administrators/studio-configuration.rst

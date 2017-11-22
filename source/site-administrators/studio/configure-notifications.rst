@@ -1,31 +1,30 @@
-===========================================================
+###########################################################
 Configure Simple Workflow Notifications and Dialog Messages
-===========================================================
+###########################################################
 
 This document assumes version 2 of the notification service has been enabled.  A system administrator can assist in
 configuring the notification service by following the following documentation :ref:`enable-studio-notifications`
 
-
-------
+======
 Basics
-------
+======
 
 All configuration for the notification system is done by a site admin (on a per site basis) in the following configuration file:
 
-^^^^^
+-----
 Where
-^^^^^
+-----
 
 .. code-block:: xml
     :caption: {REPOSITORY_ROOT}/cstudio/config/sites/SITEID/workflow-messaging-config.xml
 
-            <notificationConfig>
-               ...
-            </notificationConfig>
+    <notificationConfig>
+       ...
+    </notificationConfig>
 
-^^^^^^^^^
+---------
 Templates
-^^^^^^^^^
+---------
 
 Templates are managed in the config file mentioned above.  The template time is Freemarker (also known as FTL)
 Variables are referenced in the template like `${VARIABLE}` or as part of a Freemarker statement like `<#list files as file>...</#list>`
@@ -33,13 +32,13 @@ Dates can be formatted like so: `scheduleDate?string["MMMMM dd, yyyy 'at' hh:mm 
 
 A full guide to FTL can be found here: http://freemarker.org/
 
-------------------
+==================
 Template Variables
-------------------
+==================
 
-^^^^^^^^^^^^^^^^
+----------------
 Common Variables
-^^^^^^^^^^^^^^^^
+----------------
 
 ============================== ========================================================
 Variable Name                  Description
@@ -76,9 +75,9 @@ authoringUrl                   Authoring Server URL base
 
 
 
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 Deployment Error Notice
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 
 ============================== ========================================================
@@ -90,9 +89,9 @@ deploymentError                Error message on deployment.  Currently must be
 ============================== ========================================================
 
 
---------------------------------
+================================
 Configure Who Gets Notifications
---------------------------------
+================================
 
 
 .. code-block:: xml
@@ -112,9 +111,9 @@ Configure Who Gets Notifications
              </lang>
         </notificationConfig>
 
-----------------------------------------
+========================================
 Configure Studio Worflow Dialog Messages
-----------------------------------------
+========================================
 
 
 .. code-block:: xml
@@ -152,125 +151,125 @@ Configure Studio Worflow Dialog Messages
           </lang>
         </notificationConfig>
 
--------------------
+===================
 Configure Templates
--------------------
+===================
 
 .. code-block:: xml
     :caption: {REPOSITORY_ROOT}/cstudio/config/sites/SITEID/workflow-messaging-config.xml
 
-        <notificationConfig>
-            <lang name="en">
-                ...
-                <emailTemplates>
-                    <emailTemplate key="deploymentError">
-                            <body><![CDATA[
-                                <html>
-                                <body style=" font-size: 11pt;font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif; margin-top:0px">
+    <notificationConfig>
+        <lang name="en">
+            ...
+            <emailTemplates>
+                <emailTemplate key="deploymentError">
+                    <body><![CDATA[
+                        <html>
+                            <body style=" font-size: 11pt;font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif; margin-top:0px">
                                 <p style="margin-top:0px">
                                     The following content was unable to deploy:
                                 </p>
                                 <ul  style="color:#0000EE;">
                                     <#list files as file>
-                                            <li>${file.internalName!file.name}</li>
+                                        <li>${file.internalName!file.name}</li>
                                     </#list>
                                 </ul>
-                                    Error:<br/>
-                                    ${deploymentError.toString()}
+                                Error:<br/>
+                                ${deploymentError.toString()}
                                 <br/>
                             </body>
-                            </html>
-                        ]]></body>
-                        <subject>Deployment error on site ${siteName}</subject>
-                    </emailTemplate>
-                    <emailTemplate key="contentApproval">
-                            <body><![CDATA[
-                                <#setting time_zone='EST'>
-                                <html>
+                         </html>
+                    ]]></body>
+                    <subject>Deployment error on site ${siteName}</subject>
+                </emailTemplate>
+                <emailTemplate key="contentApproval">
+                    <body><![CDATA[
+                        <#setting time_zone='EST'>
+                             <html>
                                 <body style=" font-size: 11pt;font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif; margin-top:0px">
                                 <p style="margin-top:0px">
-                                        <#if scheduleDate??>
-                                            The following content has been scheduled for publishing on ${scheduleDate?string["MMMMM dd, yyyy 'at' hh:mm a"]} Eastern Time.
-                                        <#else>
-                                            The following content has been reviewed and approved.
-                                        </#if>
-                                    </p>
-                                    <ul  style="color:#0000EE;">
-                                        <#list files as file>
-                                            <#if file.page>
+                                    <#if scheduleDate??>
+                                        The following content has been scheduled for publishing on ${scheduleDate?string["MMMMM dd, yyyy 'at' hh:mm a"]} Eastern Time.
+                                    <#else>
+                                        The following content has been reviewed and approved.
+                                    </#if>
+                                </p>
+                                <ul  style="color:#0000EE;">
+                                    <#list files as file>
+                                        <#if file.page>
                                             <li <#if file?has_next>style="margin-bottom: 0px"</#if>>
                                                 <a href="${liveUrl}/${file.browserUri!""}">
                                                     ${file.internalName!file.name}
                                                 </a>
                                             </li>
-                                            </#if>
-                                        </#list>
-                                    </ul>
-                                    <#if scheduleDate??>
-                                        <p>You will receive a confirmation email when your content is published.</p>
+                                        </#if>
+                                    </#list>
+                                </ul>
+                                <#if scheduleDate??>
+                                    <p>You will receive a confirmation email when your content is published.</p>
                                     </#if>
                                 </body>
-                                </html>
-                                ]]></body>
+                             </html>
+                    ]]></body>
                     <subject><![CDATA[<#if scheduleDate??>WCM: Content Scheduled<#else>WCM: Content Approved</#if>]]></subject>
-                    </emailTemplate>
-                    <emailTemplate key="submitToApproval">
-                            <body><![CDATA[
-                                <#setting time_zone='EST'>
-                                <html>
+                </emailTemplate>
+                <emailTemplate key="submitToApproval">
+                    <body><![CDATA[
+                        <#setting time_zone='EST'>
+                        <html>
                             <body style=" font-size: 11pt;font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif; margin-top:0px">
-                                    <p style="margin-top:0px">
-                                        <span style="text-transform: capitalize;">${submitter.firstName!submitter.username} ${submitter.lastName}</span> has submitted items for your review.
-                                    </p>
-                                    <ul  style="color:#0000EE;">
-                                        <#list files as file>
-                                            <#if file.page>
-                                                <li <#if file?has_next>style="margin-bottom: 0px"</#if>>
-                                                <a href="${authoringUrl}/preview/#/?page=${file.browserUri!""}&site=SITENAME">
-                                                    ${file.internalName!file.name}
-                                                </a>
-                                            </li>
-                                            </#if>
-                                        </#list>
-                                    </ul>
-                                    <br/><br/>
-                                    <#if submissionComments?has_content>
-                                        Comments:&nbsp;${submissionComments!""}
-                                        <br/><br/>
-                                    </#if>
-                                    <a href="${authoringUrl}/site-dashboard">Click Here to Review Workflow</a>
-                                    <br/>
-                                </body>
-                                </html>
-                                ]]></body>
-                    <subject>WCM Content Review</subject>
-                    </emailTemplate>
-                    <emailTemplate key="contentRejected">
-                            <body><![CDATA[
-                                <#setting time_zone='EST'>
-                                <html>
-                                 <body style=" font-size: 11pt;font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif; margin-top:0px">
-                                    <p style="margin-top:0px">
-                                        The following content has been reviewed and requires some revision before it can be approved.
-                                    </p>
-                                    <ul  style="color:#0000EE;">
-                                      <#list files as file>
-                                            <#if file.page>
+                                <p style="margin-top:0px">
+                                    <span style="text-transform: capitalize;">${submitter.firstName!submitter.username} ${submitter.lastName}</span> has submitted items for your review.
+                                </p>
+                                <ul  style="color:#0000EE;">
+                                    <#list files as file>
+                                        <#if file.page>
                                             <li <#if file?has_next>style="margin-bottom: 0px"</#if>>
                                                 <a href="${authoringUrl}/preview/#/?page=${file.browserUri!""}&site=SITENAME">
                                                     ${file.internalName!file.name}
                                                 </a>
                                             </li>
-                                            </#if>
-                                        </#list>
-                                    </ul>
-                                    Reason:&nbsp;${rejectionReason!""}
-                                    <br/>
-                                </body>
-                                </html>
-                                ]]></body>
+                                        </#if>
+                                    </#list>
+                                </ul>
+                                <br/><br/>
+                                <#if submissionComments?has_content>
+                                    Comments:&nbsp;${submissionComments!""}
+                                    <br/><br/>
+                                </#if>
+                                <a href="${authoringUrl}/site-dashboard">Click Here to Review Workflow</a>
+                                <br/>
+                            </body>
+                        </html>
+                    ]]></body>
+                    <subject>WCM Content Review</subject>
+                </emailTemplate>
+                <emailTemplate key="contentRejected">
+                    <body><![CDATA[
+                        <#setting time_zone='EST'>
+                        <html>
+                            <body style=" font-size: 11pt;font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif; margin-top:0px">
+                                <p style="margin-top:0px">
+                                    The following content has been reviewed and requires some revision before it can be approved.
+                                </p>
+                                <ul  style="color:#0000EE;">
+                                    <#list files as file>
+                                        <#if file.page>
+                                            <li <#if file?has_next>style="margin-bottom: 0px"</#if>>
+                                                <a href="${authoringUrl}/preview/#/?page=${file.browserUri!""}&site=SITENAME">
+                                                    ${file.internalName!file.name}
+                                                </a>
+                                            </li>
+                                        </#if>
+                                    </#list>
+                                </ul>
+                                Reason:&nbsp;${rejectionReason!""}
+                                <br/>
+                            </body>
+                        </html>
+                    ]]></body>
                     <subject>WCM Content Requires Revision</subject>
-                    </emailTemplate>
-                    </emailTemplates>
-                </lang>
-            </notificationConfig>
+                </emailTemplate>
+            </emailTemplates>
+        </lang>
+    </notificationConfig>

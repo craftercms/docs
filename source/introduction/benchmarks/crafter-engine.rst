@@ -26,7 +26,7 @@ Load Generation
 ^^^^^^^^
 Scenario
 ^^^^^^^^
-	* Random full page load of _highly dynamic, personalized pages and content as a service calls_
+	* Random full page load of _highly dynamic, personalized pages and content as a service calls
 	* Exercise search page with moderate query complexity (typical search includes full text across various fields, facets, pagination etc)
 
 ^^^^^^^

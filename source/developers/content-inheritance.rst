@@ -1,6 +1,6 @@
-.. _content-inheritance:
-
 .. index:: Content Inheritance, Inheritance
+
+.. _content-inheritance:
 
 ===================
 Content Inheritance

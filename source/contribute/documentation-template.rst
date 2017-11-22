@@ -208,7 +208,7 @@ Code Blocks
 HTML
 ^^^^
 
-.. code-block:: rst
+.. code-block:: guess
 
 	.. code-block:: html
 

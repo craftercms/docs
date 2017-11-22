@@ -1,4 +1,4 @@
-.. _crafter-QA:
+.. _crafter-QA-phantomjs-config:
 
 =======================
 PhantomJS Configuration

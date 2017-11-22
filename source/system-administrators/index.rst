@@ -37,41 +37,41 @@ Development Environment
 -----------------------
 
 .. toctree::
-	:maxdepth: 2
-	:titlesonly:
+    :maxdepth: 2
+    :titlesonly:
 
-	dev-environment/install-from-zip
+    dev-environment/install-from-zip
 
 -------------------------
 QA/Production Environment
 -------------------------
 
 .. toctree::
-	:maxdepth: 2
-	:titlesonly:
+    :maxdepth: 2
+    :titlesonly:
 
-    	prod-environment/*
-    	prod-environment/supported-platforms.rst
-    	prod-environment/install-studio.rst
-    	prod-environment/configure-studio-with-alfresco.rst
-    	prod-environment/install-engine.rst
-    	prod-environment/turning-off-show-error.rst
-        prod-environment/configure-engine-multi-tenancy.rst
-    	prod-environment/configure-solr-replication.rst
-    	prod-environment/backup-and-recovery.rst
+    prod-environment/supported-platforms.rst
+    prod-environment/install-studio.rst
+    prod-environment/configure-studio-with-alfresco.rst
+    prod-environment/install-engine.rst
+    prod-environment/turning-off-show-error.rst
+    prod-environment/configure-engine-multi-tenancy.rst
+    prod-environment/configure-solr-replication.rst
+    prod-environment/backup-and-recovery.rst
 
+..    prod-environment/*
 
 ----------------
 Other Activities
 ----------------
 .. toctree::
-	:maxdepth: 2
-	:titlesonly:
+    :maxdepth: 2
+    :titlesonly:
 
-		rebuilding-studio-database.rst
-		debugging-search.rst
-    	reindexing-content.rst
-        debugging-deployment.rst
-        debugging-search.rst
-        understanding-studio-environment-overrides.rst
-        changing-the-studio-logo.rst
+    rebuilding-studio-database.rst
+    debugging-search.rst
+    reindexing-content.rst
+    debugging-deployment.rst
+    debugging-search.rst
+    understanding-studio-environment-overrides.rst
+    changing-the-studio-logo.rst

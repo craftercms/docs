@@ -1,11 +1,8 @@
-.. _crafter-QA:
+.. _crafter-QA-config:
 
 ========================
 Test Suite Configuration
 ========================
-
-
-
 
 .. toctree::
    :maxdepth: 1

@@ -18,13 +18,13 @@ Enabling Authoring Support
 
 At the top of your page or component (whatever it is you are rendering, include the following) import:
 
-.. code-block:: html
+.. code-block:: guess
 
 	<#import "/templates/system/common/cstudio-support.ftl" as studio/>
 
 At the bottom of your template insert the following: (Note the example shows a traditional HTML page however other formats/levels of granularity are supported
 
-.. code-block:: html
+.. code-block:: guess
 
 			<@studio.toolSupport/>
 		</body>
@@ -40,7 +40,7 @@ In context editing renders pencils on the screen that invoke editing controls wh
 
 To enable in-context editing simply add the following attribute to the container/element where you want to place the editing control
 
-.. code-block:: html
+.. code-block:: guess
 
 	<@studio.iceAttr iceGroup="author"/>
 
@@ -66,7 +66,7 @@ Tag Attributes
 
 Example: 
 
-.. code-block:: html
+.. code-block:: guess
 
 	<img <@studio.iceAttr iceGroup="image" label="Promo Image 1" /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}"/>``
 
@@ -80,7 +80,7 @@ Drag and drop makes it easy for authors to visually assemble pages.  Authors sim
 
 To define a drop zone for components simply add the following attribute to the container element where you want your components to render
 
-.. code-block:: html
+.. code-block:: guess
 
 	<@studio.componentContainerAttr target="bottomPromos" />
 
@@ -98,20 +98,20 @@ Tag Attributes
 
 Example:
 
-.. code-block:: html
+.. code-block:: guess
 
 	<div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" /> >
 		...
 	<div> 
 
-If you want to learn how to configure the Drag and Drop panel please read the following document: :doc:`../site-administrators/drag-n-drop-configuration`.
+If you want to learn how to configure the Drag and Drop panel please read the following document: :ref:`drag-n-drop-configuration`.
 
 Rendering components from the target inside the container
 ---------------------------------------------------------
 
 The template needs to render the components that are referenced. The basic code to do this looks like:
 
-.. code-block:: html
+.. code-block:: guess
 
 	<#if contentModel.bottomPromos?? && contentModel.bottomPromos.item??>
 		<#list contentModel.bottomPromos1.item as module>
@@ -122,7 +122,7 @@ The template needs to render the components that are referenced. The basic code 
 Note that the code is simply iterating over the collection of objects and calling render component.  NO markup is being inserted in this example.  The component template is rendering itself.  It's up to you if you want to insert markup around sub-components.
 Full example of typical component drop zone
 
-.. code-block:: html
+.. code-block:: guess
 
 	<div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" /> >
 		<#if contentModel.bottomPromos?? && contentModel.bottomPromos.item??>
@@ -137,7 +137,7 @@ Identifying components in the template
 
 In order for authors to interact with components, to drag them around the screen for example the templating system must know how to identify them.  To identify a component simply add the following attribute to the outer most element in the component template's markup
 
-.. code-block:: html
+.. code-block:: guess
 
 	<@studio.componentAttr path=contentModel.storeUrl />
 
@@ -162,7 +162,7 @@ Tag Attributes
 
 Example
 
-.. code-block:: html
+.. code-block:: guess
 
 	<img <@studio.componentAttr path=contentModel.storeUrl ice=true /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}" />
 
@@ -172,7 +172,7 @@ Engine Support
 
 At the top of your page or component (whatever it is you are rendering, include the following) import:
 
-.. code-block:: html
+.. code-block:: guess
 
 	<#import "/templates/system/common/crafter-support.ftl" as crafter/>
 
@@ -184,7 +184,7 @@ Render Component
 
 Need to render a sub component of some kind? 
 
-.. code-block:: html
+.. code-block:: guess
 
 	<@renderComponent component=module />
 
@@ -194,7 +194,7 @@ Render Components
 Need to iterate through a list of components and render them WITHOUT any additional markup?
 
 
-.. code-block:: html
+.. code-block:: guess
 
 	<@crafter.renderComponents componentList=contentModel.bottomPromos />
 
@@ -203,6 +203,6 @@ Render RTE (Rich Text Editor Components)
 
 Have components that are inserted in to the rich text editor and need to render them?
 
-.. code-block:: html
+.. code-block:: guess
 
 	<@crafter.renderRTEComponents />

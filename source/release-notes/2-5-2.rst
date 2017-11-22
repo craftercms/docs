@@ -18,9 +18,9 @@ Highlights
 * Many small improvements and fixes
 
 
-^^^^^^^^^^
+^^^^^^^^^^^^
 New Features
-^^^^^^^^^^
+^^^^^^^^^^^^
 * #89 CRAFTERCMS-2015: hook up diff in version UI critical new feature
 * #136 CRAFTERCMS-2070: Add publishDate_dt as a field in solr that is automatically added by publisher when a document is published. blocker new feature
 * #135 CRAFTERCMS-2069: Add option to index repeat group items as child documents in solr blocker new feature
@@ -33,9 +33,9 @@ New Features
 * #91 CRAFTERCMS-2019: make session time out only after in-activity of some specified in-activity of minutes by the user new feature
 * #41 CRAFTERCMS-1629: Create Crafter Market Place integration with Crafter Studio new feature
 
-^^^^^^^^^^
+^^^^^^^^^^^^
 Improvements
-^^^^^^^^^^
+^^^^^^^^^^^^
 * #78 CRAFTERCMS-1930: UI: list all dependencies in publishing window when approving or submitting a publish critical enhancement
 * #94 CRAFTERCMS-2022: bootstraping alfresco prints 1000s of lines of content not found critical enhancement
 * #215 CRAFTERCMS-2154: Change publishedDate to crafterPublishedDate and crafterPublishedDate_dt blocker enhancement
@@ -56,7 +56,7 @@ Improvements
 * #133 CRAFTERCMS-2067: Edit template in preview when no template is available should automatically create the template enhancement
 * #132 CRAFTERCMS-2066: Form basics properties is not obvious to users, make it easier to get to enhancement
 * #120 CRAFTERCMS-2053: required fields dialog on forms should be real dialog message box enhancement
-* #117 CRAFTERCMS-2050: need better default lables for components enhancement wontfix
+* #117 CRAFTERCMS-2050: need better default labels for components enhancement wontfix
 * #115 CRAFTERCMS-2048: make real dialog with user friendly message when no content types available enhancement
 * #104 CRAFTERCMS-2035: Complete the RTE Setup Guide enhancement
 * #103 CRAFTERCMS-2034: Document how run test harness enhancement
@@ -137,14 +137,14 @@ Bugs Fixed
 * #241 CRAFTERCMS-2181: Multiple includes/excludes for Groovy script filter mappings are not working bug
 * #236 CRAFTERCMS-2176: 'Recently Published' doesn't render 'Publisher' column properly bug
 * #228 CRAFTERCMS-2168: In Content Type Page when the user save a content type that doesn't contain a template, the user should be available of continue or cancel the save function. bug enhancement
-* #227 CRAFTERCMS-2167: Right Menu on content type page shoudn't be static. bug
+* #227 CRAFTERCMS-2167: Right Menu on content type page shouldn't be static. bug
 * #226 CRAFTERCMS-2166: Links and clickable content should change the cursor in hover state on content type page. bug
 * #225 CRAFTERCMS-2165: replace saved alert message with real dialog on content type editor bug
 * #223 CRAFTERCMS-2163: Components folder item continues to spin randomly bug wontfix
 * #218 CRAFTERCMS-2158: New indicator gets removed after edit in new site bug
 * #217 CRAFTERCMS-2156: RTE overflows after a certain width bug
 * #216 CRAFTERCMS-2155: Site component datasource fails to load due to a missing service call bug
-* #195 CRAFTERCMS-2131: version dialog becomes unuable when there are many versions bug
+* #195 CRAFTERCMS-2131: version dialog becomes unusable when there are many versions bug
 * #193 CRAFTERCMS-2129: The search field doesn't work. bug
 * #190 CRAFTERCMS-2126: Uploading images to /static-assets/images/ will throw a DB exception bug
 * #188 CRAFTERCMS-2124: edit and other nav menu controls remain disabled after publish in preview bug

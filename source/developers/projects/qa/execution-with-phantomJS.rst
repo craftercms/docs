@@ -1,4 +1,4 @@
-.. _crafter-QA:
+.. _crafter-QA-phantomjs:
 
 =====================================
 Test Suite Execution using PhantomJS.
@@ -15,10 +15,10 @@ To test application rapidly in various browsers and without any visual interrupt
 
 *Our organization uses PhantomJS for various purpose, for example,*
 
-*Headless Website Testing
+* Headless Website Testing
 
-*Page Automation
+* Page Automation
 
-*Network Monitoring
+* Network Monitoring
 
-*To run Unit tests on command line
+* To run Unit tests on command line

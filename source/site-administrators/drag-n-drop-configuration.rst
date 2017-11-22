@@ -1,4 +1,5 @@
 .. highlight:: xml
+.. _drag-n-drop-configuration:
 
 ===========================
 Drag and Drop Configuration

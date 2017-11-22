@@ -1,3 +1,7 @@
+:orphan:
+
+.. document does not appear in any toctree, this file is referenced
+   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
 ========================
 Install Deployment Agent
@@ -190,7 +194,7 @@ Windows Service
 
 The deployment agent can be registered as Windows Service using Apache Prunsrv. Below is an example command.
 
-.. code-block::
+.. code-block:: shell
 
     prunsrv //IS//CrafterDeployer --DisplayName="Crafter Deployer" --Install=C:\opt\prunsrv\prunsrv.exe --StartMode=java --Jvm=auto --JavaHome=C:\opt\java\jdk1.7.0 --StartPath="C:\opt\crafter\crafter-deployer" --StartClass=org.craftercms.cstudio.publishing.PublishingReceiverMain  --StopMode=java --StopPath="C:\opt\crafter\crafter-deployer" --StopClass=org.craftercms.cstudio.publishing.StopServiceMain --Classpath="C:\opt\crafter\crafter-deployer" ++JvmOptions="-Djava.ext.dirs=C:\opt\crafter\crafter-deployer" --LogPath="C:\opt\crafter\crafter-deployer"
      --LogPrefix="deployment" --LogLevel=Debug --StdOutput=auto --StdError=auto --PidFile=pid.txt --Startup=auto --Description="Crafter Deployer"

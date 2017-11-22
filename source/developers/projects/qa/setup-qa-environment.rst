@@ -1,4 +1,4 @@
-.. _crafter-QA:
+.. _crafter-QA-setup:
 
 ========================
 Setup the QA Environment

@@ -1,4 +1,4 @@
-.. _form-control-field-basics
+.. _form-control-field-basics:
 
 ====================== ====================================================================================
 Title                  Control title to show the author on the input form

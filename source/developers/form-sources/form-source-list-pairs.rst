@@ -1,3 +1,8 @@
+:orphan:
+
+.. document does not appear in any toctree, this file is referenced
+   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
+
 .. index:: Data Sources; Configured List of Pairs
 
 .. _form-source-list-pairs:
@@ -38,6 +43,7 @@ The Configured List of Pairs Data Source uses xml files to get the list of pairs
 create your own list and save it into the repository at "/cstudio/config/sites/{SITE_NAME}/form-control-config/configured-lists"
 
 .. code-block:: xml
+   :caption: colors.xml
 
    <list>
         <values>
@@ -51,4 +57,3 @@ create your own list and save it into the repository at "/cstudio/config/sites/{
             </item>
         </values>
     </list>
-colors.xml
