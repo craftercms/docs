@@ -1,6 +1,6 @@
-----------------
+-----------------
 Crafter CMS 2.5.1
-----------------
+-----------------
 
 ^^^^^^^^^^
 Highlights
@@ -32,7 +32,7 @@ Bugs Fixed
     * [CRAFTERCMS-850] - RTE inserted components do not show up in preview, although their content shows up in RTE when editing using web form
     * [CRAFTERCMS-853] - RTE Components are not rendering due to broken path
     * [CRAFTERCMS-972] - clicking refresh on URL http://127.0.0.1:8080/studio/ always forces a login
-    * [CRAFTERCMS-990] - publishing environments need to be orderd by config in dialogs
+    * [CRAFTERCMS-990] - publishing environments need to be ordered by config in dialogs
     * [CRAFTERCMS-1025] - groovy based filters
     * [CRAFTERCMS-1133] - Form: RTE: the cursor disappears when switching back to WYSIWYG
     * [CRAFTERCMS-1165] - variable name in form editor should be a special prop type and now allow anything but A-Za-z0-9 _ and -
@@ -175,7 +175,7 @@ Bugs Fixed
     * [CRAFTERCMS-1712] - User not able to delete directly when belongs to multiple groups including admin and author roles
     * [CRAFTERCMS-1714] - Uploading a profile image with capitalized file extension fails
     * [CRAFTERCMS-1715] - Users shouldn't be allowed to vote on their own comments
-    * [CRAFTERCMS-1718] - Open lastest functionality in site dropdown is failling when root-folder has multiple paths.
+    * [CRAFTERCMS-1718] - Open lastest functionality in site dropdown is failing when root-folder has multiple paths.
     * [CRAFTERCMS-1720] - Publishing comments are not displayed in history
     * [CRAFTERCMS-1721] - CmisObjectNotFoundException on unknown config.xml files
     * [CRAFTERCMS-1722] - Contents are listed twice in My Recent Activity
@@ -351,9 +351,9 @@ Bugs Fixed
     * [CRAFTERCMS-2046] - double // in path names for dependencies like images causes duplicate key exception
 
 
-^^^^^^^^^^
+^^^^^^^^^^^^
 Improvements
-^^^^^^^^^^
+^^^^^^^^^^^^
 
     * [CRAFTERCMS-326] - Need a notification in deployment failure
     * [CRAFTERCMS-997] - One site's deployment failure shouldn't interfere other sites' deployment process
@@ -413,7 +413,7 @@ Improvements
     * [CRAFTERCMS-1973] - add submit/publish to right click in content nav
     * [CRAFTERCMS-1978] - Create template after submit shouldn't reload the whole page but the content site
     * [CRAFTERCMS-1979] - Revert shouldn't reload the whole page but the preview iframe.
-    * [CRAFTERCMS-1980] - Selecting more than one item on dasboard page, and then clicking an action is updating only one item
+    * [CRAFTERCMS-1980] - Selecting more than one item on dashboard page, and then clicking an action is updating only one item
     * [CRAFTERCMS-1981] - Reject action shouldn't reload the whole page.
     * [CRAFTERCMS-1983] - Request Publish action shouldn't reload the whole page.
     * [CRAFTERCMS-1984] - Assume Persona action
@@ -421,9 +421,9 @@ Improvements
     * [CRAFTERCMS-2000] - Normalize model variable names in Goovy and Freemarker
     * [CRAFTERCMS-2003] - add .xml to list of types the wcm-assets-folder.js can edit
 
-^^^^^^^^^^
+^^^^^^^^^^^^
 New Features
-^^^^^^^^^^
+^^^^^^^^^^^^
 
     * [CRAFTERCMS-1138] - Put tenant ID in all log entries as a independent parseable value
     * [CRAFTERCMS-1139] - Crafter Search Client should provide a write API
@@ -457,9 +457,9 @@ New Features
 
 
 
-^^^^^^^^^^
+^^^^^
 Tasks
-^^^^^^^^^^
+^^^^^
 
     * [CRAFTERCMS-76] - Cleanup previous (old) deployment engine functionalities
     * [CRAFTERCMS-193] - Inline Moderation Features
@@ -480,12 +480,12 @@ Tasks
     * [CRAFTERCMS-1840] - complete save as draft features
     * [CRAFTERCMS-1843] - FreeMarker API
     * [CRAFTERCMS-1849] - Sonar Issue #AVNm803-SiH1M3JoLM68 - Resources should be closed
-    * [CRAFTERCMS-1886] - add favicon to studo
+    * [CRAFTERCMS-1886] - add favicon to studio
     * [CRAFTERCMS-1888] - make sure every product is building the git revision number in to the MANIFEST-MF
 
-^^^^^^^^^^
+^^^^^^^^^
 Sub Tasks
-^^^^^^^^^^
+^^^^^^^^^
     * [CRAFTERCMS-1799] - Make Crafter Search look for the config extension folder path through JNDI
     * [CRAFTERCMS-1805] - Make Crafter Engine look for the config extension folder path through JNDI
 

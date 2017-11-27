@@ -1,8 +1,8 @@
 .. _form-engine-control:
 
-===================
+===========================
 Build a Form Engine Control
-===================
+===========================
 
 -----------------
 What is a Control
@@ -40,6 +40,7 @@ Control Interface
 -----------------
 
 .. code-block:: javascript
+    :linenos:
 
 	/** 
 	 * Constructor: Where .X is substituted with your class name
@@ -100,9 +101,9 @@ Control Interface
 	    getSupportedConstraints: function() { }
 	});
 
-------------------
+-----------------
 Coding an example
-------------------
+-----------------
 
 Our example is a grouped checkbox that allows the author to select one or more items from a set of checkboxes. The control relies on a data source for the set of possible values which allows it to be used for a wide range of data capture.
 
@@ -110,14 +111,15 @@ Our example is a grouped checkbox that allows the author to select one or more i
 Control Code
 ^^^^^^^^^^^^
 .. image:: /_static/images/form-engine-control-example.png
-	:height: 500px
-	:width: 432 px
-	:scale: 50 %
-	:alt: Form Engine Control Example
+    :height: 500px
+    :width: 432 px
+    :scale: 50 %
+    :alt: Form Engine Control Example
 
 **Location /STUDIO-WAR/default-site/static-assets/components/cstudio-forms/controls/checkbox-group.js**
 
 .. code-block:: javascript
+    :linenos:
 
 	CStudioForms.Controls.CheckBoxGroup = CStudioForms.Controls.CheckBoxGroup ||
 	function(id, form, owner, properties, constraints, readonly)  {
@@ -599,6 +601,7 @@ Add the control's name to the list of controls in the content type editor config
 **Location (In Repository) /company-home/cstudio/config/sites/SITENAME/administration/tools.xml**
 
 .. code-block:: xml
+    :linenos:
 
 	<config>
 		<tools>

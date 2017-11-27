@@ -115,11 +115,11 @@ using the global variable siteConfig. Nevertheless, most of the configuration pa
 *   **targeting.enabled**: If content targeting should be enabled. Defaults to false.
 *   **targeting.rootFolders:** The root folders that should be handled for content targeting.
 *   **targeting.excludePatterns:** Regex patterns that are used to exclude certain paths from content targeting.
-*   **targeting.availableTargetIds:** The valid target IDs for content targeting (see :doc:`/developers/advanced/content-targeting-guide`).
+*   **targeting.availableTargetIds:** The valid target IDs for content targeting (see :ref:`content-targeting-guide`).
 *   **targeting.fallbackTargetId:** The target ID that should be used as last resort when resolving targeted content.
-    (see :doc:`/developers/advanced/content-targeting-guide`).
+    (see :ref:`content-targeting-guide`).
 *   **targeting.mergeFolders:** If the content of folders that have to the same "family" of target IDs should be merged.
-    (see :doc:`/developers/advanced/content-targeting-guide`).
+    (see :ref:`content-targeting-guide`).
 *   **profile.api.accessToken:** The access token to use for the Profile REST calls. This parameter should be always specified on
     multi-tenant configurations.
 *   **security.login.formUrl:** The URL of the login form page. The default is /login.
@@ -151,13 +151,13 @@ Spring Configuration
 Each site can also have it's own Spring application context per site, at Config > spring > application-context.xml. Just
 as with site.xml, beans can be overwritten under
 apache-tomcat/shared/classes/crafter/engine/extension/sites/{SITENAME}/spring/application-context.xml.
-The application context inherits from Engine's own service-context.xml, and any class in Engine's claspath can be used,
+The application context inherits from Engine's own service-context.xml, and any class in Engine's classpath can be used,
 besides Groovy classes declared under Classes > groovy.
 
 As an example, assuming you have defined a Groovy class under Classes > groovy > mypackage > MyClass.groovy, you can
 define the bean like this in the application-context.xml:
 
-.. code-block:: xml
+.. code-block:: guess
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"

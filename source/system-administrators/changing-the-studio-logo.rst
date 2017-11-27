@@ -18,9 +18,9 @@ Step 2: Place the Logo Image on the Server
 
     * Place your logo.jpg file TOMCAT/shared/classes/crafter/cstudio/ui
 
-------------------------
+-------------------------
 Step 3: Test Your Updates
-------------------------
+-------------------------
 
     * Refresh the login screen
     * Log in and check the toolbar

@@ -48,6 +48,7 @@ Many CMS platforms choose to roll their own or acquire capabilities for adjacent
 * The various subsystems are not integrated. This is especially true if the subsystem was acquired.
 * You tend to get more subsystems than you need (and pay for it too)
 * You are forced to use the subsystem provided rather than the one your team is already using, knows, likes and so on.
+
 Crafter CMS rejects the suite based approach in favor of a best of breed approach. Analytics, CRM, Marketing automation, social monitoring and so on are all available to your team through the CMS through integration with Crafter CMS APIs but are provided by the best of breed platforms in each space you choose.  Examples are Google Analytics and Omniture for Analytics, Digital River for eCommerce, Salesforce for CRM, Marketo for marketing automation and so on.
 
 -----------

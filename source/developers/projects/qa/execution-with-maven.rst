@@ -1,4 +1,4 @@
-.. _crafter-QA:
+.. _crafter-QA-maven:
 
 ================================
 Test Suite Execution with Maven.

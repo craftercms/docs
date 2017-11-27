@@ -78,7 +78,7 @@ Crafter Studio's Form Builder
 +--------+---------------------------------------------------------------------------------------+
 || 1     || Content Type Actions: Open Existing Content Type or Create a New Type.               |
 +--------+---------------------------------------------------------------------------------------+
-|| 2     || Form Builder: The begining of the form builder and it's headed by the name of the    |
+|| 2     || Form Builder: The beginning of the form builder and it's headed by the name of the   |
 ||       || name of currently open Content Type.                                                 |
 ||       || Click here to explore the global properties of the type in the Properties Explorer,  |
 ||       || #3.                                                                                  |
@@ -148,6 +148,8 @@ The 2 key properties are: the display template (:ref:`content-view-templates`) w
 
 .. index:: Form Controls
 
+.. _form-controls:
+
 ^^^^^^^^^^^^^
 Form Controls
 ^^^^^^^^^^^^^
@@ -155,7 +157,7 @@ Form Controls
 Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. Crafter CMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`form-engine-control`.
 
 .. figure:: /_static/images/form-engine-controls.png
-	:alt: Form Engine Controls
+    :alt: Form Engine Controls
 	:align: center
 
 Each Form Control type has it's own properties and constraints.  Some constraints are common, like "Variable Name" and "Required" while others apply only to the type, e.g. Height and Width limitations on the Image Picker control.  
@@ -218,7 +220,7 @@ Data Sources
 .. index:: Data Sources
 
 .. figure:: /_static/images/form-engine-data-sources.png
-	:alt: Form Engine Data Sources
+    :alt: Form Engine Data Sources
 	:align: center
 
 Data Sources are pickers that help pull in content from internal or external storage/systems. For example, data source include: youtube.com video picker, or Flickr image picker, desktop image uploader, and so on. Crafter CMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
@@ -231,9 +233,9 @@ Form Engine Data Sources (please use the scrollbar to see more controls)
 Form Canvas
 ^^^^^^^^^^^
 
-The canvas is where the form actually gets built. The building process is perfomed by simply dragging the controls from the Form Controls over to the canvas, rearranging the controls in the order you'd like to present to the content authors, and configure the controls individually.
+The canvas is where the form actually gets built. The building process is performed by simply dragging the controls from the Form Controls over to the canvas, rearranging the controls in the order you'd like to present to the content authors, and configure the controls individually.
 
-Controls on the canvas are configured by clicking on the control, and then editing the control's configration in the Properties Explorer, see item #3 in :ref:`form-builder-basics`. Different controls have different configuration, so please review the individual form control confuration listed in :ref:`form-controls`.
+Controls on the canvas are configured by clicking on the control, and then editing the control's configuration in the Properties Explorer, see item #3 in :ref:`form-builder-basics`. Different controls have different configuration, so please review the individual form control configuration listed in :ref:`form-controls`.
 
 Two controls have a special significance to the form canvas: :ref:`form-section` and :ref:`form-repeating-group`. Form Section Control creates a form section that can be expanded and collapsed and holds within it other controls. This typically used to group together controls that cover a similar concern and help provide the content authors with a clear and organized form when editing in form mode.
 Like the Form Section Control, Repeating Group Control is also a container that holds other controls, but the purpose is to allow a set of controls to repeat as configured. This is typically used to allow content authors to enter a set of meta-data and repeat it as many times as desired and permitted by configuration.
@@ -250,7 +252,7 @@ View templates control how the model is rendered as HTML. Crafter uses `FreeMark
 
 An example view template
 
-.. code-block:: html
+.. code-block:: guess
 
 	<#import "/templates/system/common/cstudio-support.ftl" as studio />
 
@@ -289,7 +291,6 @@ The simple example renders an simple HTML page with a very basic model. Let's re
 +-------------------+--------------+-------------------------------------------------------------+
 
 The `FreeMarker <http://freemarker.org>`_ language is supported. For detailed Freemarker documentation, please visit: `http://freemarker.org <http://freemarker.org>`_ 
-
 
 ----------------------------------
 Content Type Controller Definition

@@ -40,8 +40,8 @@ Beginner Developer Topics
 This section covers the basic topics you need to define a content type and render that content as part of a page, component or service.
 
 .. toctree::
-	:maxdepth: 2
-	:titlesonly:
+    :maxdepth: 2
+    :titlesonly:
 
     architecture
     content-modeling
@@ -58,8 +58,8 @@ Advanced Developer Topics
 This section goes beyond the basics to cover advanced topics like building queries, accessing services and extending the core platforms.
 
 .. toctree::
-	:maxdepth: 2
-	:titlesonly:
+    :maxdepth: 2
+    :titlesonly:
 
     content-inheritance
     services-guide
@@ -92,7 +92,7 @@ Cookbook / Tutorials
 ####################
 
 .. toctree::
-	:maxdepth: 2
-	:titlesonly:
+    :maxdepth: 2
+    :titlesonly:
 
-    	cook-books/index
+    cook-books/index

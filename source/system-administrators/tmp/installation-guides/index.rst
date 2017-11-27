@@ -1,3 +1,8 @@
+:orphan:
+
+.. document does not appear in any toctree, this file is referenced
+   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
+
 ###################
 Install Crafter CMS
 ###################
@@ -31,9 +36,9 @@ Supported Databases
 Installation Guides
 ===================
 
-    - :doc:`Crafter CMS </introduction/installation-guides/guide>`
+    - :ref:`getting-started`
 
-See the :doc:`/release-notes/index` for information about specific releases
+See the :ref:`release-notes` for information about specific releases
 of Crafter CMS.
 
 .. .. include:: /includes/toc/dfn-list-spec-installation.rst
@@ -48,15 +53,15 @@ of Crafter CMS.
 
 .. .. include:: /includes/toc/install-verify-files.rst
 
-===========================
+============================
 First Steps with Crafter CMS
-===========================
+============================
 
 Once you have installed Crafter CMS, consider the :ref:`Getting Started
 Guides <getting-started>` to learn about Crafter CMS.
 <getting-started>` are available.
 
-.. include:: /includes/unicode-checkmark.rst
+.. .. include:: /includes/unicode-checkmark.rst
 
 
 .. todo:: write install from bundle
@@ -66,9 +71,9 @@ Guides <getting-started>` to learn about Crafter CMS.
 .. todo:: fix below
 
 .. toctree::
-	:maxdepth: 1
+    :maxdepth: 1
 
-	upgrade
-	engine/configure
-	guide
-	configure
+    engine/configure
+    configure
+..    	upgrade
+..      guide

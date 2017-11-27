@@ -30,11 +30,13 @@ Note: After setting these two properties, please restart the server.
 Modifying an Environment Config File
 ------------------------------------
 
-    * In the respository you will find the environment overrides files at: REPO/cstudio/config/sites/environment-overrides
+    * In the repository you will find the environment overrides files at: REPO/cstudio/config/sites/environment-overrides
     * Each environment will have a folders for it with a name that should match the values in server-config.properties (see above.)
     * Inside the environment folder you will see a file called environment-config.xml that contains configuration similar to what is listed below.
 
     .. code-block:: xml
+        :linenos:
+
         <environment-config>
             <preview-server-url>http://localhost:8080</preview-server-url>
             <authoring-server-url>http://localhost8080/studio</authoring-server-url>
@@ -60,6 +62,8 @@ Modifying an Environment Config File
 The addresses in preview-server-url and authoring-server-url should match your protocol, servername and port exactly.  For example if your CMS is running on a over https on a server called cms.myco.com your environment-config.xml might looks something like:
 
     .. code-block:: xml
+        :linenos:
+
         <environment-config>
             <preview-server-url>https://cms.myco.com</preview-server-url>
             <authoring-server-url>https://cms.myco.com/studio</authoring-server-url>
@@ -83,10 +87,63 @@ The addresses in preview-server-url and authoring-server-url should match your p
         </environment-config>
 
 
+---------------------------
+Ordering Publishing Targets
+---------------------------
 
---------------------------------------------------------------
+In the case where you have multiple environments, you can order the publishing targets.  Below is an example:
+
+.. code-block:: xml
+   :linenos:
+
+   <environment-config>
+      <preview-server-url>http://127.0.0.1:8080</preview-server-url>
+      <authoring-server-url>http://127.0.0.1:8080/studio</authoring-server-url>
+      <form-server-url>http://127.0.0.1:8080/form-server</form-server-url>
+      <live-server-url>http://SITENAME</live-server-url>
+      <publishing-channels>
+         <channel-group>
+            <label>Stage</label>
+            <order>2</order>
+            <channels>
+               <channel>samplez</channel>
+            </channels>
+            <live-environment>false</live-environment>
+         </channel-group>
+
+         <channel-group>
+            <label>Z-Env</label>
+            <order>3</order>
+            <channels>
+               <channel>samplex</channel>
+            </channels>
+            <live-environment>false</live-environment>
+         </channel-group>
+
+         <channel-group>
+            <label>Production</label>
+            <order>1</order>
+            <channels>
+               <channel>sample</channel>
+            </channels>
+            <live-environment>true</live-environment>
+         </channel-group>
+
+      </publishing-channels>
+      <cookie-domain>127.0.0.1</cookie-domain>
+      <open-site-dropdown>false</open-site-dropdown>
+   </environment-config>
+
+The above example will produce the following list for the publishing targets:
+
+   * Production
+   * Stage
+   * Z-Env
+
+
+---------------------------------------------------------------
 Editing environment-config.xml via Crafter Studio Admin Console
---------------------------------------------------------------
+---------------------------------------------------------------
 
 You can use Crafter Studio's admin console configuration tool to edit environment-config.xml files.  You may need to add them to the configuration in order for them to show up.
 

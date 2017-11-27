@@ -1,2 +1,3 @@
-.. |checkmark| unicode:: U+2713
-.. |ex| unicode:: U+2718
+
+.. .. |checkmark| unicode:: U+2713
+.. .. |ex| unicode:: U+2718

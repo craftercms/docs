@@ -1,5 +1,5 @@
+.. index:: Search; Solr; Reindex; Crafter Search; Dev Ops; System Administrators;
 .. _reindex-search:
-.. index:: Search; Solr; Reindex; Crafter Search; Dev Ops; System Administrators; 
 
 =========================================
 Reindexing Content for Search and Queries
@@ -22,7 +22,7 @@ Step 1: Delete any existing content in the index
 -------------------------------
 Step 2: Invoke the reprocessing
 -------------------------------
-.. code-block:: xml
+.. code-block:: guess
 
     curl http://hostname:port/reprocess?password=MYPASSWORD&target=MYTARGET&processor=MyBeanName
 
