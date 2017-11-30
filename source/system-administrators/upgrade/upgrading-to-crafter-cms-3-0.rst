@@ -74,8 +74,7 @@ Follow the next steps to import a site built in Crafter Studio 2.5.x to Crafter 
 #. Run ``git log`` and copy the commit ID of the commit you just did.
 #. Navigate one level up to the ``published`` directory.
 #. Do a ``git fetch origin master`` and then a ``git cherry-pick -x COMMIT_ID_YOU_COPIED``. This will basically publish the site.
-#. In your browser, login to Studio. Then go to the site's dashboard, *Site Config*, and click on *Sync From Repository*. This will sync the database
-   with the files you just imported. You can then tail the ``catalina.out`` until you see a line like the following: ``Done syncing database.``, which
+#. Verify that the database has been synced with the files you just imported. To verify, tail the ``catalina.out`` until you see a line like the following: ``Done syncing database.``, which
    will indicate that the sync is complete. You still need to set all files as published, though, which is done in the last few steps.
 #. Now in the filesystem again, navigate to the DBMS bin folder (``AUTHORING_INSTALL/bin/dbms/bin``) and run the following to login to the
    MariaDB (password is ``crafter``):

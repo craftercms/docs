@@ -176,6 +176,13 @@ Here is a sample tools configuration file.
                         </icon>
                     </datasource>
                     <datasource>
+                        <name>img-cmis-repo</name>
+                        <icon>
+                            <class>fa-square</class>
+                            <stackedclass>fa-plug fa-inverse fa-image-plug</stackedclass>
+                        </icon>
+                    </datasource>
+                    <datasource>
                         <name>file-desktop-upload</name>
                         <icon>
                             <class>fa-upload</class>
@@ -188,6 +195,12 @@ Here is a sample tools configuration file.
                         </icon>
                     </datasource>
                     <datasource>
+                        <name>CMIS-repo</name>
+                        <icon>
+                            <class>fa-plug</class>
+                        </icon>
+                    </datasource>
+                    <datasource>
                         <name>video-desktop-upload</name>
                         <icon>
                             <class>fa-video-camera</class>
@@ -197,6 +210,13 @@ Here is a sample tools configuration file.
                         <name>video-browse-repo</name>
                         <icon>
                             <class>fa-file-video-o</class>
+                        </icon>
+                    </datasource>
+                    <datasource>
+                        <name>video-cmis-repo</name>
+                        <icon>
+                            <class>fa-square-o fa-video-square</class>
+                            <stackedclass>fa-plug fa-video-plug</stackedclass>
                         </icon>
                     </datasource>
                     <datasource>
@@ -249,7 +269,6 @@ Here is a sample tools configuration file.
                             </property>
                         </properties>
                     </type>
-
                 </objectTypes>
             </tool>
             <tool>
@@ -279,14 +298,6 @@ Here is a sample tools configuration file.
             <tool>
                 <name>log-view</name>
                 <label>Log Console</label>
-            </tool>
-            <tool>
-                <name>preview-sync</name>
-                <label>Preview Sync</label>
-            </tool>
-            <tool>
-                <name>sync-from-repository</name>
-                <label>Sync From Repository</label>
             </tool>
         </tools>
     </config>
@@ -334,8 +345,6 @@ bulkoperations       Allows you to publish multiple items at once
 workflow-states      Contains a list of all files in the site with its corresponding state
 log-view             Allows you to tail logs depending on what logging levels are set
 logging              Allows you to set logging levels for the log console
-preview-sync         Allows you to initiate the preview server synchronization
-sync-from-repository Allows you to initiate synchronization from the repository
 ==================== =====================================================================
 
 List of available content type form controls
