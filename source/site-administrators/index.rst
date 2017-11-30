@@ -12,15 +12,16 @@ For the site repository, the site structure looks like this::
             config
                 studio
                     administration
-                    analytics
                     content-types
                     context-nav
-                    deployment
-                    environment-overrides
+                    data-sources
+                    dependency
+                    environment
                     form-control-config
                     preview-tools
                     search
                     targeting
+                    workflow
             scripts
                 classes
                 components
