@@ -132,7 +132,6 @@ Sample
 
     -->
     <permissions>
-      <site id="myawesomesite">
         <role name="author">
           <rule regex="/site/website/.*">
             <allowed-permissions>
@@ -254,7 +253,6 @@ Sample
             </allowed-permissions>
           </rule>
         </role>
-      </site>
     </permissions>
 
 
@@ -277,8 +275,6 @@ Create Content      User is permitted to create new content
 Change Content Type User is permitted to change content type
 =================== ================================================================================
 
-    ``/permissions/site@id``
-        Site id
     ``/permissions/site/role@name``
         Role name
     ``/permissions/site/role/rule@regex``
