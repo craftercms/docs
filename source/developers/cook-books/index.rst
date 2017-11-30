@@ -14,6 +14,7 @@ Cookbooks / Tutorials
    services/index
    blueprint/index
    best-practices/best-practice-loading-content
+   best-practices/environment-specific-configurations
    setting-up-an-ldap-server-for-dev
    working-with-dates-freemarker
    working-with-dates-groovy
