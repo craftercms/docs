@@ -194,3 +194,30 @@ want to manually trigger a deployment, you just need to call the API endpoint :r
 :ref:`crafter-deployer-api-target-deploy-all`). This will start the deployment if the request is correct. To watch the progress of a scheduled or a manually
 triggered deployment, check the Deployer log. When the deployment has finished, and the target has a ``fileOutputProcessor`` in the deployment pipeline, a
 JSON file with the final result of that particular deployment will be written under ``./logs`` (or ``CRAFTER_HOME/logs/deployer``).
+
+-----------------
+Processed Commits
+-----------------
+
+Crafter Deployer keeps track of the most recent commit id that was processed in the last deployment
+for each target, during a deployment it will use this commit id to get the list of files that have been
+changed in the repository.
+By default the processed commits are stored in a folder (``CRAFTER_HOME/data/deployer/processed-commits``)
+as an individual file for each target (for example ``editorial-preview.commit``). Each file contains
+only the commit id that will be used to track the changes during deployments:
+
+.. code-block:: guess
+  :caption: Example of a processed commit file
+  :linenos:
+  
+  0be0d2e52283c17b834901e9cda6332d06fb05b6
+
+If the repository is changed manually using git commands instead of updating files using Crafter
+Studio it is possible that a deployment may found a conflict, for example if a specific commit is
+deleted from the repository. In most cases Crafter Deployer should be able to detect those conflicts
+and solve them automatically, however if a deployment does not finish successfully you can follow
+the steps described in :ref:`crafter-studio-debugging-deployer-issues`
+
+.. warning::
+  Changing or deleting a processed commit file could cause unchanged files to be indexed again and
+  it should be done as a last resort in case of errors.
