@@ -1,0 +1,113 @@
+
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+$crimson: #ed1c24;
+$dark: #404041;
+$gold: #c2b59b;
+$blue: #08c;
+$custom-red: darken($crimson, 15%); // #D9411E;
+$custom-gray: #fcfcfc;
+$sidebar-sm: 250px;
+$sidebar-lg: 320px;
+
+$color-red: #FF3B30;
+$color-orange: #FF9500;
+$color-teal: #5AC8FA;
+
+.admonition-title {
+  font-size: 1.5rem !important;
+  margin: 2rem 0 1rem !important;
+  font-family: 'Open sans', sans-serif !important;
+  font-weight: 700 !important;
+  color: $color-teal;
+  &::before {
+    content: "\f06e";
+  }
+}
+
+.admonition {
+  .admonition-title {
+    &::before {
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin-right: 10px;
+    }
+  }
+  &.danger {
+    .admonition-title {
+      color: $color-red;
+      &::before {
+        content: "\f071";
+      }
+    }
+  }
+  &.warning {
+    .admonition-title {
+      color: $color-orange;
+      &::before {
+        content: "\f06a";
+      }
+    }
+  }
+  &.note {
+    // currently the default...
+  }
+}
+
+#toc {
+  > ul {
+    margin: 0;
+    padding: 0;
+    li {
+      margin-bottom: .7rem;
+      &.toctree-l2 {
+        > a {
+          border-left: 1px solid #eee;
+        }
+      }
+      &.toctree-l3 {
+        > a {
+          border-left: 1px solid #ddd;
+        }
+      }
+      &.toctree-l4 {
+        > a {
+          border-left: 1px solid #ccc;
+        }
+      }
+      &.toctree-l5 {
+        a {
+          border-left: 1px solid #bbb;
+        }
+      }
+      &.toctree-l2 > a,
+      &.toctree-l3 > a,
+      &.toctree-l4 > a,
+      &.toctree-l5 a {
+        &:hover {
+          border-left-color: $custom-red;
+        }
+      }
+    }
+    > li {
+      margin-bottom: 1rem;
+    }
+    a {
+      display: block;
+      padding: 0 1rem;
+      &:hover {
+        color: $custom-red;
+      }
+      + ul {
+        margin-top: .7rem;
+      }
+    }
+  }
+  li.current > a {
+    color: #555;
+  }
+}

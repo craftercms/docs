@@ -142,7 +142,7 @@ html_theme_options = {
 }
 
 # Adding additional css files...
-# html_context = { "extra_css_files": ["_static/custom.css"] }
+html_context = { "extra_css_files": ["_static/custom.css"] }
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
@@ -406,7 +406,7 @@ rst_epilog = """
 """
 
 javadoc_base = 'http://javadoc.craftercms.org/'
-javadoc_version = '3.0.1'
+javadoc_version = '3.0.2'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None )}
