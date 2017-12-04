@@ -1,9 +1,30 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
 .admonition-title {
   font-size: 1.5rem !important;
   margin: 2rem 0 1rem !important;
   font-family: 'Open sans', sans-serif !important;
   font-weight: 700 !important;
-  text-shadow: 0 0 10px yellow; }
+  color: #5AC8FA; }
+  .admonition-title::before {
+    content: "\f06e"; }
+
+.admonition .admonition-title::before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 10px; }
+.admonition.danger .admonition-title {
+  color: #FF3B30; }
+  .admonition.danger .admonition-title::before {
+    content: "\f071"; }
+.admonition.warning .admonition-title {
+  color: #FF9500; }
+  .admonition.warning .admonition-title::before {
+    content: "\f06a"; }
 
 #toc > ul {
   margin: 0;
