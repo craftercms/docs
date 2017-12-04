@@ -52,7 +52,7 @@ You only need JSR-268 if you want to build and deploy your application as "portl
 Can Crafter CMS be used for E-Commerce?
 ---------------------------------------
 
-Yes.  Crafter has an e-commerce API that you can plug an implementation in to.  This gives marketing total control of the user experience while integrating with the back-end e-commerce functionality of your choosing.
+Yes.  Crafter helps build great e-commerce sites which gives marketing total control of the user experience while integrating with the back-end e-commerce functionality of your choosing.
 
 --------------------------------------------------
 Can Crafter CMS be used to build a marketing site?
