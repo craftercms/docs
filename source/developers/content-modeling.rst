@@ -81,7 +81,7 @@ Crafter Studio's Form Builder
 +--------+---------------------------------------------------------------------------------------+
 || 1     || Content Type Actions: Open Existing Content Type or Create a New Type.               |
 +--------+---------------------------------------------------------------------------------------+
-|| 2     || Form Builder: The begining of the form builder and it's headed by the name of the    |
+|| 2     || Form Builder: The beginning of the form builder and it's headed by the name of the   |
 ||       || currently open Content Type.                                                         |
 ||       || Click here to explore the global properties of the type in the Properties Explorer,  |
 ||       || #3.                                                                                  |
