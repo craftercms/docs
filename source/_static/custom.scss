@@ -38,8 +38,16 @@ $sidebar-lg: 320px;
         }
       }
       &.toctree-l5 {
-        > a {
+        a {
           border-left: 1px solid #bbb;
+        }
+      }
+      &.toctree-l2 > a,
+      &.toctree-l3 > a,
+      &.toctree-l4 > a,
+      &.toctree-l5 a {
+        &:hover {
+          border-left-color: $custom-red;
         }
       }
     }

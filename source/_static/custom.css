@@ -16,8 +16,10 @@
       border-left: 1px solid #ddd; }
     #toc > ul li.toctree-l4 > a {
       border-left: 1px solid #ccc; }
-    #toc > ul li.toctree-l5 > a {
+    #toc > ul li.toctree-l5 a {
       border-left: 1px solid #bbb; }
+    #toc > ul li.toctree-l2 > a:hover, #toc > ul li.toctree-l3 > a:hover, #toc > ul li.toctree-l4 > a:hover, #toc > ul li.toctree-l5 a:hover {
+      border-left-color: #af0e14; }
   #toc > ul > li {
     margin-bottom: 1rem; }
   #toc > ul a {
