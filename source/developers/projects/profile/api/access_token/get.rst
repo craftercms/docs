@@ -79,7 +79,7 @@ Responses
 || 403    |                          | .. code-block:: json                                      |
 ||        |                          |                                                           |
 ||        |                          |   {"errorCode":"ACTION_DENIED", "message":"Current        |
-||        |                          |   subject doesnt have permission to execute action        |
+||        |                          |   subject does not have permission to execute action      |
 ||        |                          |   \"READ_TOKEN\" on e8f5170c-877b-416f-b70f-4b09772f8e2d"}|
 +---------+--------------------------+-----------------------------------------------------------+
 || 500    |                          | ``{ "message" : "Internal server error" }``               |
