@@ -96,7 +96,7 @@ Responses
 || 403    |                            | .. code-block:: json                                    |
 ||        |                            |                                                         |
 ||        |                            |   {"errorCode":"ACTION_DENIED", "message":"Current      |
-||        |                            |   subject doesnt have permission to execute global      |
+||        |                            |   subject does not have permission to execute global    |
 ||        |                            |   action \"CREATE_TOKEN\""}                             |
 +---------+----------------------------+---------------------------------------------------------+
 || 500    |                            | ``{ "message" : "Internal server error" }``             |
