@@ -1,8 +1,8 @@
-================================
-Rendered Page Components as JSON
-================================
+==============================
+Render Page Components as JSON
+==============================
 
-CaaS (Content as a Service) is a common need in today's multi-channel world.  Typically CaaS use cases require that the content is devoid of presentation markup so that the consumer can present the content as it desires.  Other times comsumers may wish to pull rendered content.  This cookbook provides a simple REST example (a single Groovy based rest controller script) that will give you a way to renender all of the components associated to a page.
+CaaS (Content as a Service) is a common need in today's multi-channel world.  Typically CaaS use cases require that the content is devoid of presentation markup so that the consumer can present the content as it desires.  Other times comsumers may wish to pull rendered content.  This cookbook provides a simple REST example (a single Groovy based rest controller script) that will give you a way to render all of the components associated to a page.
 
 -------------
 Prerequisites
@@ -18,6 +18,7 @@ Step 1: Create a REST Controller
 * Add the following code to the controller.
 
 .. code-block:: groovy
+    :linenos:
 
     import java.io.ByteArrayOutputStream
     import java.io.IOException
@@ -168,6 +169,6 @@ Step 2: Execute the Service
 ---------------------------
 
 * Open a browser and hit the following URL:
-    * http://localhost:8080/api/1/services/et-rendered-components.json?pageId=/site/website/en/index.xml
-    * Not that your host name, ports and pageId values may differ than the example
+    * http://localhost:8080/api/1/services/get-rendered-components.json?pageId=/site/website/en/index.xml
+    * Note that your host name, ports and pageId values may differ than the example
     * See results
