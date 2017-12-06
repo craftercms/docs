@@ -19,9 +19,10 @@ Step 1: Create a REST Controller
 * Add the following code to the controller.
 
 .. code-block:: groovy
+    :linenos:
 
-    def pathParam = (params.path != null) params.path : ""
-    def depthParam = (params.depth != null) params.depth.toInteger() : 0
+    def pathParam = (params.path != null) ? params.path : ""
+    def depthParam = (params.depth != null) ? params.depth.toInteger() : 0
 
     def path = "/site/website" + pathParam
     def depth = depthParam != 0 ? depthParam : 2

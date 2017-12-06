@@ -19,6 +19,7 @@ Step 1: Create a REST Controller
 * Add the following code to the controller. 
 
 .. code-block:: groovy
+    :linenos:
 
     def siteContextManager = applicationContext["crafter.siteContextManager"]
     def siteContextList = siteContextManager.listContexts()
