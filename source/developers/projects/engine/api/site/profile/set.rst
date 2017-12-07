@@ -7,6 +7,10 @@ Set Profile
 Set the current user's profile, all parameters are added to the profile and stored in the session.
 Only use it in conjunction with Studio's Personas.
 
+.. note::
+  Any parameter included in the request will be added as a property for the user profile, if the
+  request is made without any parameter then profile will be cleared.
+
 --------------------
 Resource Information
 --------------------
