@@ -1,0 +1,29 @@
+-----------------
+Crafter CMS 2.5.7
+-----------------
+
+* Release Date: October 6, 2017
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* Patch release
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* UI
+    * Better image cropper
+* Studio Backend
+    * Upload asset allows any filename
+    * XML-based user repository for demo purposes
+* Engine
+    * Show disabled pages when in preview mode
+* Documentation
+    * Studio configuration with Alfresco
+
+and lots of bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 2.5.7 Milestone <https://github.com/craftercms/craftercms/milestone/10?closed=1>`_
