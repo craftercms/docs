@@ -24,6 +24,27 @@ Getting Started
 
 To get started, please review: https://github.com/craftercms/craftercms/blob/master/README.md
 
+For every Crafter CMS repository, there are two long-running branches:
+
+    * develop: this is where development activities happen, and this branch is not meant to be stable
+    * master: this is stable and deployable
+
+If you're building a deployable Crafter CMS bundle, you'll need to clone the master branch:
+
+    .. code-block:: bash
+
+        git clone https://github.com/craftercms/craftercms.git
+
+OR
+
+If you would like to contribute to Crafter CMS, to build a developer's environment, you'll need to to clone the develop branch:
+
+    .. code-block:: bash
+
+        git clone https://github.com/craftercms/craftercms.git -b develop
+
+For more information on Crafter CMS Git Workflow, please review: https://github.com/craftercms/craftercms/blob/master/GIT_WORKFLOW.md
+
 ====================
 More Advanced Topics
 ====================
