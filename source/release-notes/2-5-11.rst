@@ -1,0 +1,21 @@
+------------------
+Crafter CMS 2.5.11
+------------------
+
+* Release Date: December 1, 2017
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* Patch release
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Studio Backend
+    * Fixed cascade-on-delete
+    * CMIS support enhancements
+
+For a full list of tickets, please visit: `GitHub 2.5.11 Milestone <https://github.com/craftercms/craftercms/milestone/20?closed=1>`_
