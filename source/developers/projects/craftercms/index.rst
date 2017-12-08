@@ -26,8 +26,8 @@ To get started, please review: https://github.com/craftercms/craftercms/blob/mas
 
 For every Crafter CMS repository, there are two long-running branches:
 
-    * develop: this is where development activities happen, and this branch is not meant to be stable
-    * master: this is stable and deployable
+    * ``develop``: this is where development activities happen, and this branch is not meant to be stable
+    * ``master``: this is stable and deployable
 
 If you're building a deployable Crafter CMS bundle, you'll need to clone the master branch:
 
