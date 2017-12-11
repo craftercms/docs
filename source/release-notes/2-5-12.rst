@@ -2,7 +2,7 @@
 Crafter CMS 2.5.12
 ------------------
 
-* Release Date: December 11, 2017
+* Release Date: December 6, 2017
 
 ^^^^^^^^^^
 Highlights
@@ -14,7 +14,4 @@ Highlights
 Updates
 ^^^^^^^
 
-* Studio Backend
-    * CMIS support over load-balancers with sticky-session
-
-For a full list of tickets, please visit: `GitHub 2.5.12 Milestone <https://github.com/craftercms/craftercms/milestone/22?closed=1>`_
+* Bulk-upload bug fix: https://github.com/craftercms/craftercms/issues/1672
