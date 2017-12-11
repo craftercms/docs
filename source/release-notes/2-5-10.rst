@@ -15,7 +15,6 @@ Updates
 ^^^^^^^
 
 * Studio Backend
-    * Much faster dependency calculator
     * Content diff tool fix
     * Workflow cancelation improvements
 
