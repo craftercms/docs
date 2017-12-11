@@ -4,6 +4,22 @@
 Release Notes
 =============
 
+.. include:: /release-notes/2-5-13.rst
+
+.. include:: /release-notes/2-5-12.rst
+
+.. include:: /release-notes/2-5-11.rst
+
+.. include:: /release-notes/2-5-10.rst
+
+.. include:: /release-notes/2-5-9.rst
+
+.. include:: /release-notes/2-5-8.rst
+
+.. include:: /release-notes/2-5-7.rst
+
+.. include:: /release-notes/2-5-6.rst
+
 .. include:: /release-notes/2-5-5.rst
 
 .. include:: /release-notes/2-5-4.rst

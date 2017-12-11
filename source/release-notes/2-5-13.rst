@@ -1,0 +1,22 @@
+------------------
+Crafter CMS 2.5.13
+------------------
+
+* Release Date: December 11, 2017
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* Patch release
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Studio Backend
+	* CMIS support over load-balancers with sticky-session
+* Studio UI
+	* Fixed bug with MS Edge: https://github.com/craftercms/craftercms/issues/1680
+
+For a full list of tickets, please visit: `GitHub 2.5.13 Milestone <https://github.com/craftercms/craftercms/milestone/23?closed=1>`_

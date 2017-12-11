@@ -1,0 +1,22 @@
+-----------------
+Crafter CMS 2.5.8
+-----------------
+
+* Release Date: October 20, 2017
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* Patch release
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Studio Backend
+    * Added authentication mechanics to demo disk repo
+
+and some bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 2.5.8 Milestone <https://github.com/craftercms/craftercms/milestone/16?closed=1>`_
