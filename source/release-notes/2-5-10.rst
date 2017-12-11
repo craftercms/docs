@@ -1,0 +1,21 @@
+------------------
+Crafter CMS 2.5.10
+------------------
+
+* Release Date: November 7, 2017
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* Patch release
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Studio Backend
+    * Content diff tool fix
+    * Workflow cancelation improvements
+
+For a full list of tickets, please visit: `GitHub 2.5.10 Milestone <https://github.com/craftercms/craftercms/milestone/18?closed=1>`_

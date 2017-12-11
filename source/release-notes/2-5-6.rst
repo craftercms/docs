@@ -1,0 +1,34 @@
+-----------------
+Crafter CMS 2.5.6
+-----------------
+
+* Release Date: March 29, 2017
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* Patch release
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* UI
+    * General clean up and replacement of alerts with proper dialogs
+    * Better styling of dialogs
+    * Refresh immediately after content duplication
+    * Alert the user if creating an existing site
+    * Fixed stuck dropdown tree on collapse
+    * View dependencies
+* Studio Backend
+    * Report file size on file upload
+    * Fix RTE is Empty Blueprint
+* Social
+    * SUI: Update counter when the user deletes a comment
+* Engine
+    * getSiteItem/getSiteTree no longer returns disabled items
+
+and lots of bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 2.5.6 Milestone <https://github.com/craftercms/craftercms/milestone/8?closed=1>`_
