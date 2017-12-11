@@ -15,6 +15,7 @@ Updates
 ^^^^^^^
 
 * Studio Backend
+    * Much faster dependency calculator
     * Fixed cascade-on-delete
     * CMIS support enhancements
 
