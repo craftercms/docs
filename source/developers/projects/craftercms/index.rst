@@ -508,10 +508,14 @@ Downloads the configured Tomcat version and also verifies that the zip file is o
    ./gradlew downloadTomcat
 
 
+
+.. _common-task-properties:
+
+Common Task Properties
+^^^^^^^^^^^^^^^^^^^^^^
+
 Aside from the tasks that we can run, there are also some properties defined in Crafter CMS that allows us to configure our environment.  Below are the available task properties
 
-Common task properties
-^^^^^^^^^^^^^^^^^^^^^^
 +------------------------------------------------------------------------------------------------+
 || Unzip Properties                                                                              |
 +-------------------------+----------------------------------------------------------------------+
@@ -544,6 +548,8 @@ Common task properties
 ||                        || Default value is false,                                             |
 ||                        || **If true, *includeProfile* will be set to true**                   |
 +-------------------------+----------------------------------------------------------------------+
+
+.. _authoring-default-ports:
 
 +------------------------------------------------------------------------------------------------+
 || Authoring Environment Properties                                                              |
