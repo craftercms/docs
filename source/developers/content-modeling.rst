@@ -221,6 +221,58 @@ From the **Sidebar** again, navigate from the **Pages** folder to the /Home/arti
 
 To see more examples, try creating content types in the other folders in the **Sidebar** such as the **Taxonomy** folder, the **Components** folder and anywhere under the **Pages** folder.
 
+Cascade on Delete Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Cascade on delete allows the automatic deletion of child items matching a regexp when a content is deleted.
+
+Enabling cascade on delete is configured through the content type **Configuration** property (config.xml) using the following tags:
+
+.. code-block:: xml
+    :linenos:
+
+    <delete-dependencies>
+	    <delete-dependency>
+		    <pattern>REG_EXP_HERE</pattern>
+		    <remove-empty-folder>false</remove-empty-folder>
+	    </delete-dependency>
+    </delete-dependencies>
+
+We'll look at an example of how to enable cascade on delete on the **Page - Article** content type in the Website_editorial blueprint.
+
+From the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Content Types**, then open an existing content type.  We will select the content type **Page - Article** for editing.  Next, go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name **config.xml**, click on that pencil to edit.
+
+We're going to enable cascade on delete for articles (**Page - Article** content type) containing images under ``/static-assets/images/page``, and we'll also delete empty folders under ``/static-assets/images/page`` by adding the following code in the **config.xml** file:
+
+.. code-block:: xml
+    :linenos:
+
+    <delete-dependencies>
+	    <delete-dependency>
+		    <pattern>(^/static-assets/images/page/.*)</pattern>
+		    <remove-empty-folder>true</remove-empty-folder>
+	    </delete-dependency>
+    </delete-dependencies>
+
+To see cascade on delete in action, let's create a new article (**Page - Article** content type) under one of the article folders in the **Sidebar**.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.
+
+.. figure:: /_static/images/content-model/new-article-image-uploaded.png
+    :alt: New article with image uploaded activity list in Dashboard
+    :align: center
+
+Let's look at the dependencies of our newly created article, where we expect the image under the ``static-assets/images/page`` will be deleted when we delete the article since we have configured cascade on delete for content type **Page - Article** for items under the directory ``static-assets/images/page``:
+
+.. figure:: /_static/images/content-model/new-article-dependencies.png
+    :alt: New article with image uploaded dependencies
+    :align: center
+
+Open the **Sidebar** and navigate to the newly created article.  Right click on the newly created article and select **Delete**.  Open the **Dashboard** and notice the items listed as deleted in the **My Recent Activity** widget.
+
+.. figure:: /_static/images/content-model/new-article-child-items-deleted.png
+    :alt: New article with image uploaded deleted activity list in Dashboard
+    :align: center
+
+
 .. _form-controls:
 
 ^^^^^^^^^^^^^
