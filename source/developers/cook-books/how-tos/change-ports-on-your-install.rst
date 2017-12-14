@@ -4,7 +4,9 @@
 How To Change the Ports on Your Crafter CMS Installation
 ========================================================
 
-Crafter CMS by default runs on port 8080.  This section details how to change your tomcat and deployer ports.
+Crafter CMS when installed using the zip bundles has default ports setup.  The default ports are listed :ref:`here<authoring-default-ports>`.  This section details how to change the ports of an already installed Crafter CMS.
+
+To generate an environment/bundle with your desired ports instead of default ports when you install Crafter CMS, we'll use ``gradle``.  To learn more on how to generate an environment with your desired ports, please see :ref:`common-task-properties`
 
 Let's take a look at a standard development installation - which consists of the following microservices: Crafter Studio, Crafter Engine, Crafter Search, Solr and Crafter Deployer
 
