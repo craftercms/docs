@@ -26,7 +26,7 @@ In the image above, note the black arrows between components.  These are HTTP co
 Configuration for Tomcat Ports
 ------------------------------
 
-There are a few places that we need to update to change the Tomcat ports.
+The default Tomcat port is 8080.  There are a few places that we need to update to change the Tomcat ports.
 
 First, we'll need to change the ports for Crafter Studio, Crafter Engine, and Crafter Search.
 Open the file ``INSTALL_DIR/bin/apache-tomcat/conf/server.xml``.  Notice that there are several ports listed in this XML file:
@@ -92,7 +92,7 @@ To update Crafter Studio's communication with the Deployer, open the file ``INST
 Configuration for Solr Ports
 ----------------------------
 
-There are a couple of places that we need to update to change the Solr ports.
+The default Solr port is 8694.  There are a couple of places that we need to update to change the Solr ports.
 
 We'll update Crafter Search's communication with Solr.
 
@@ -104,3 +104,20 @@ In your ``INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the f
 Next, open the file ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/studio/extension/server-config.properties``, and change the configured port to the desired port for the following:
 
     * crafter.search.solr.server.url
+
+-------------------------------
+Configuration for MariaDB Ports
+-------------------------------
+
+Crafter CMS has an embedded MariaDB in the installation with a default port of 33306.  There are a couple of places that we need to update to change the MariaDB port.
+
+Open your ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``
+change the port to the desired port listed in the following:
+    * studio.db.url
+    * studio.db.initializer.url
+    * studio.db.port
+
+Next, in your ``INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
+
+    * OS X/Linux: export MARIADB_PORT=33306
+    * Windows: SET MARIADB_PORT=33306
