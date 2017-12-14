@@ -115,6 +115,7 @@ Crafter CMS has an embedded MariaDB in the installation with a default port of 3
 
 Open your ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``
 change the port to the desired port listed in the following:
+
     * studio.db.url
     * studio.db.initializer.url
     * studio.db.port
