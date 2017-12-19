@@ -146,6 +146,25 @@ The fields available at this level are:
 
 The 2 key properties are: the display template (:ref:`content-view-templates`) which is the HTML template that renders the final Web page; the content inheritance (:ref:`content-inheritance`) which determines how this content type will inherit from parent XML files in the system.
 
+Cascade on Delete Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Cascade on delete allows the automatic deletion of child items matching a regexp when a content is deleted.
+
+Enabling cascade on delete is configured through the content type Configuration property (config.xml) using the following tags:
+
+.. code-block:: xml
+    :caption: /cstudio/config/sites/SITENAME/content-types/page/entry/config.xml
+    :linenos:
+
+    <delete-dependencies>
+        <delete-dependency>
+    	    <pattern>REG_EXP_HERE</pattern>
+    		<remove-empty-folder>false</remove-empty-folder>
+    	</delete-dependency>
+    </delete-dependencies>
+
+
 .. index:: Form Controls
 
 .. _form-controls:
@@ -171,16 +190,17 @@ Form Control Variable Names
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Every Form Control has a Variable Name property.  The Variable Name is used to by the form engine to store the content entered by the user in the content model and search index.  This same Variable Name is used later by templates and controllers to retreive the value.  
 
-Variable Name Best Bractices
+**Variable Name Best Practices**
 
-# Be descriptive.  Well thoughtout Variable Names help with template and controller readability.
-# Use camel case. Example: "productSummary".
-# Use regex constraints on input boxes to enforce additional validation rules
-# Do not used Reserved names.
+#. Be descriptive.  Well thoughtout Variable Names help with template and controller readability.
+#. Use camel case. Example: "productSummary".
+#. Use regex constraints on input boxes to enforce additional validation rules
+#. Do not used Reserved names.
 
 Reserved Variable Names
 
-The following variable names are used by Crafter CMS.  
+The following variable names are used by Crafter CMS.
+
 +-------------------+----------------------------------------------------------+
 || file-name        || Used by the File Name and Auto File Name control.       |
 +-------------------+----------------------------------------------------------+
