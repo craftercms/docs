@@ -264,18 +264,18 @@ Here are the environment variables used for MongoDB in ``crafter(.sh/bat)``:
 
 Let's look at an example on how to start an authoring environment using the scripts we discussed above.  To start the authoring environment, go to your Crafter CMS install folder then run the following:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   cd crafter-authoring
-   ./startup.sh
+        cd crafter-authoring
+        ./startup.sh
 
 What the above does is go to your authoring environment folder, then run the startup script.
 
 To stop the authoring environment:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   ./shutdown.sh
+        ./shutdown.sh
 
 ^^^^^^^^^^^^^
 Other Scripts
@@ -293,9 +293,9 @@ Gradle Authoring and Delivery Environment Scripts
 
 As we have seen in the getting started section above, to run a gradle task, we run the following from the root of the project:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   ./gradlew command [-Penv={env}] [-PmoduleName={module}]
+       ./gradlew command [-Penv={env}] [-PmoduleName={module}]
 
 
 Here's a list of commands (Gradle tasks) available:
@@ -380,9 +380,9 @@ BUILD
 
 To build the authoring and delivery environments, run the following:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   ./gradlew build
+       ./gradlew build
 
 The Gradle task above will:
 
@@ -396,16 +396,16 @@ The Gradle task above will:
 
 To build a module (all module options for task ``build`` are listed in the table above), run the following (we'll build the module *studio* in the example below):
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   ./gradlew build -PmoduleName=studio
+       ./gradlew build -PmoduleName=studio
 
 
 To build an environment, run the following (we'll build the authoring environment in the example below:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   ./gradlew build -Penv=authoring
+       ./gradlew build -Penv=authoring
 
 ^^^^^
 START
@@ -413,16 +413,16 @@ START
 
 To start an environment, run the following:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   ./gradlew start [-Penv={env}]
+       ./gradlew start [-Penv={env}]
 
 What this does under the hood is:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   cd crafter-{env}
-   ./startup.sh
+       cd crafter-{env}
+       ./startup.sh
 
 The options above will:
 
@@ -440,9 +440,9 @@ For the *Delivery Environment*:
 
 Here's an example starting an authoring environment:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   ./gradlew start -Penv=authoring
+       ./gradlew start -Penv=authoring
 
 
 ^^^^
@@ -451,16 +451,16 @@ STOP
 
 To stop an environment, run the following:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   ./gradlew stop [-Penv={env}]
+       ./gradlew stop [-Penv={env}]
 
 What this does under the hood is:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   cd crafter-{env}
-   ./shutdown.sh
+       cd crafter-{env}
+       ./shutdown.sh
 
 
 ^^^^^^
@@ -469,12 +469,34 @@ BUNDLE
 
 The Gradle task ``bundle`` will build a deployable and distributable bundle of Crafter CMS for the authoring and/or delivery environments.  This will generate zip and tar files ready to be unarchived and run.
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   ./gradlew bundle [-Penv={env}]
+       ./gradlew bundle [-Penv={env}] [-Pcrafter.bundle.archive={tar|zip}]
 
 Archives will be saved as ``crafter-cms-authoring.tar`` and ``crafter-cms-authoring.zip`` for the *Authoring Environment* and ``crafter-cms-delivery.tar`` and ``crafter-cms-delivery.zip`` for the *Delivery Environment* in the ``bundles`` folder
 
+Using the bundle task property ``crafter.bundle.archive`` lets you select what archive (tar or zip) will be generated, and the common task property ``env`` lets you select what environment (authoring or delivery) will be generated.
+
+Let's look at an example using the two task properties mentioned above:
+
+    .. code-block:: bash
+
+        ./gradlew bundle -Penv=authoring -Pcrafter.bundle.archive=zip
+
+The command above will generate an authoring zip bundle in the bundles folder named ``crafter-cms-authoring.zip``.  If the property ``crafter.bundle.archive`` is not specified, an authoring zip and tar file bundles will be generated.
+
+There are four more gradle bundle tasks available for use aside from ``bundle``:
+
+* ``delivery_bundle_tar`` - Bundles as a Tar file delivery environment
+* ``delivery_bundle_zip`` - Bundles as a Zip file delivery environment
+* ``authoring_bundle_tar`` - Bundles as a Tar file authoring environment
+* ``authoring_bundle_zip`` - Bundles as a Zip file authoring environment
+
+Here's an example using one of the above gradle task to generate an authoring zip bundle:
+
+    .. code-block:: bash
+
+        ./gradlew authoring_bundle_zip
 
 .. _gradle-tasks:
 
@@ -484,9 +506,9 @@ Gradle Tasks
 
 In the section above, we discussed some of the Gradle tasks used for building, starting, stopping and bundling our authoring and delivery environments.  To get more information about all tasks used, run the following:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   ./gradlew tasks --all
+       ./gradlew tasks --all
 
 Let's take a look at some examples of running a task.
 
@@ -494,18 +516,18 @@ downloadSolr
 ^^^^^^^^^^^^
 Downloads the configured Solr version and also verifies that the war file is ok against a sha1 signature.
 
-.. code-block:: bat
+    .. code-block:: bat
 
-   gradlew.bat downloadSolr
+       gradlew.bat downloadSolr
 
 
 downloadTomcat
 ^^^^^^^^^^^^^^
 Downloads the configured Tomcat version and also verifies that the zip file is ok against a sha1 signature.
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   ./gradlew downloadTomcat
+       ./gradlew downloadTomcat
 
 
 
@@ -632,23 +654,23 @@ Aside from the tasks that we can run, there are also some properties defined in 
 
 Here's an example using one of the task properties, ``gitRepo``,  to get the latest code from Crafter CMS, in order to have the latest updates from the community:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-    ./gradlew update -Pcrafter.git.remote=upstream
+        ./gradlew update -Pcrafter.git.remote=upstream
 
 Here's another example on how to init, build and bundle from a given tag/branch.  Remember to clone the desired branch/tag of craftercms (As described in the next section :ref:`git`),  before running the command below:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   ./gradlew init build deploy bundle -Pcrafter.git.branch={BRANCH}/{TAG NAME}
+       ./gradlew init build deploy bundle -Pcrafter.git.branch={BRANCH}/{TAG NAME}
 
 Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.
 
 Here's yet another example of building and deploying the authoring environment of Crafter CMS with Crafter Profile included:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   ./gradlew build deploy -Pcrafter.profile=true -Penv=authoring
+       ./gradlew build deploy -Pcrafter.profile=true -Penv=authoring
 
 
 .. _git:
@@ -663,11 +685,11 @@ Here are some useful Git commands for setting up our Crafter CMS project.
 Copy Crafter CMS repository and initialize submodules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   git clone https://github.com/craftercms/craftercms.git
-   cd craftercms
-   git submodule init
+       git clone https://github.com/craftercms/craftercms.git
+       cd craftercms
+       git submodule init
 
 .. _update-submodules:
 
@@ -676,9 +698,9 @@ Update Submodules
 ^^^^^^^^^^^^^^^^^
 1. Run
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   git submodule update --force --recursive --remote
+       git submodule update --force --recursive --remote
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Change Project URL to a fork
@@ -687,9 +709,9 @@ Change Project URL to a fork
 1. Change the url on the _.gitmodules_ file
 2. Run
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   git submodule sync --recursive
+       git submodule sync --recursive
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Change the branch/tag of a project (manual way)
@@ -698,9 +720,9 @@ Change the branch/tag of a project (manual way)
 1. Change the `branch` value in the desire project to valid branch,tag or commit id
 2. Run
 
-.. code-block:: bash
+    .. code-block:: bash
 
-   git submodule sync --recursive
+       git submodule sync --recursive
 
 3. Run :ref:`update-submodules`
 
@@ -710,9 +732,9 @@ Clone a branch/tag
 
 To clone the branch/tag of craftercms that you want to work with, run:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-    git clone -b<branch> https://github.com/craftercms/craftercms/
+        git clone -b<branch> https://github.com/craftercms/craftercms/
 
 Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.  After cloning the desired branch, you can now init, build and bundle from a given tag/branch using the property `crafter.git.branch` as described in an earlier section :ref:`Git Properties<git-properties>`
 
