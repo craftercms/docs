@@ -366,10 +366,11 @@ Here's a list of commands (Gradle tasks) available:
 || clean        || Delete all compiled objects              || - None      || - None         |
 +---------------+-------------------------------------------+--------------+-----------------+
 
-**Note:**
+.. note::
 
-If you don't specify the ``env`` parameter, it means all environments (where applicable).
-In the current version of Crafter CMS, some services run in the same Web container, and that implies the stopping/starting of one of these services will cause other services to stop/start as well.
+    * If you don't specify the ``env`` parameter, it means all environments (where applicable).
+    * In the current version of Crafter CMS, some services run in the same Web container, and that implies the stopping/starting of one of these services will cause other services to stop/start as well.
+    * The Gradle task property ``moduleName`` accepts one or multiple module/s, separated by commas like this: ``./gradlew build -PmoduleName=search,studio``
 
 
 Let's see some examples of running Gradle tasks here.
