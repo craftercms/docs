@@ -208,7 +208,10 @@ Content / Asset
    content/get-pages
    content/reorder-items
    content/revert-content
+   content/search
+   content/set-item-state
    content/unlock-content
+   content/write-content
 
 ------
 Server
