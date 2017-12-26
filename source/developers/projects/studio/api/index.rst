@@ -236,3 +236,4 @@ Workflow
    workflow/get-workflow-affected-paths
    workflow/go-live
    workflow/reject
+   workflow/submit-to-go-live
