@@ -234,6 +234,7 @@ Workflow
    workflow/create-jobs
    workflow/get-go-live-items
    workflow/get-workflow-affected-paths
+   workflow/go-delete
    workflow/go-live
    workflow/reject
    workflow/submit-to-go-live
