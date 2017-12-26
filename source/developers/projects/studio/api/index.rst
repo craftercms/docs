@@ -61,6 +61,7 @@ Site Management
    site/create-site
    site/delete-site
    site/exists
+   site/get-canned-message
    site/get-configuration
    site/get-site
    site/get-sites-per-user
