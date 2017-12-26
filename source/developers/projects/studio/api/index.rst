@@ -162,6 +162,7 @@ Dependency
 
    dependency/get-dependant
    dependency/get-dependencies
+   dependency/get-simple-dependencies
 
 ----------
 Deployment
