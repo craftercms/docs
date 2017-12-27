@@ -61,9 +61,12 @@ Site Management
    site/create-site
    site/delete-site
    site/exists
+   site/get-available-blueprints
+   site/get-canned-message
    site/get-configuration
    site/get-site
    site/get-sites-per-user
+   site/write-configuration
 
 ---------------
 Repo Management
@@ -162,6 +165,7 @@ Dependency
 
    dependency/get-dependant
    dependency/get-dependencies
+   dependency/get-simple-dependencies
 
 ----------
 Deployment
@@ -208,7 +212,10 @@ Content / Asset
    content/get-pages
    content/reorder-items
    content/revert-content
+   content/search
+   content/set-item-state
    content/unlock-content
+   content/write-content
 
 ------
 Server
@@ -230,5 +237,7 @@ Workflow
    workflow/create-jobs
    workflow/get-go-live-items
    workflow/get-workflow-affected-paths
+   workflow/go-delete
    workflow/go-live
    workflow/reject
+   workflow/submit-to-go-live
