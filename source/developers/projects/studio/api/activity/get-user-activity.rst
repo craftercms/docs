@@ -1,4 +1,4 @@
-.. _crafter-studio-api-activity-get-user-activity:
+.. _crafter-studio-api-activity-get-user-activities:
 
 =================
 Get User Activity
@@ -13,7 +13,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/activity/get-user-activity.json``        |
+|| URL                       || ``/api/1/services/api/1/activity/get-user-activities.json``        |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -47,7 +47,7 @@ Request
 
 .. code-block:: guess
 
-    GET .../api/1/services/api/1/activity/get-user-activity.json?site=mysite&user=jane.doe&num=10&excludeLive=false&filterType=all``
+    GET .../api/1/services/api/1/activity/get-user-activities.json?site=mysite&user=jane.doe&num=10&excludeLive=false&filterType=all``
 
 ^^^^^^^^
 Response
