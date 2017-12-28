@@ -40,7 +40,7 @@ Example
 
 	POST .../api/1/services/api/1/site/write-configuration.json?site=mysite&path=/config/studio/site-config.xml
 
-.. code-block:: json
+.. code-block:: xml
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!-- site-config.xml
