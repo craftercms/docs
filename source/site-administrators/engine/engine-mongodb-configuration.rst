@@ -74,3 +74,58 @@ where:
     * {database} - the name of an existing database
     * {collection} - collection name
     * {some id} - id you're searching for depending on your database
+
+---------------------------------
+Publish configuration to Delivery
+---------------------------------
+
+Until this point all changes have been made from Crafter Studio so they will only affect immediately
+the authoring environment, for a delivery environment you will need to publish the changed files.
+
+This can be done from the Studio site dashboard with the following steps:
+
+1. Go to Studio's site dashboard
+
+.. image:: /_static/images/site-admin/mongo/open-site-dashboard.png
+   :alt: Studio Site Dashboard
+   :width: 40 %
+   :align: center
+
+2. Locate ``My Recent Activity`` section and change the filter to ``All`` to display the
+configuration files
+
+.. image:: /_static/images/site-admin/mongo/my-recent-activity.png
+   :alt: Studio Site Dashboard - My Recent Activity
+   :width: 70 %
+   :align: center
+
+3. Select all configuration files updated in the previous sections
+
+.. image:: /_static/images/site-admin/mongo/my-recent-activity-config.png
+   :alt: Studio Site Dashboard - My Recent Activity
+   :width: 70 %
+   :align: center
+
+4. Click ``Approve & Publish`` from the contextual menu
+
+.. image:: /_static/images/site-admin/mongo/approve-and-publish-context-menu.png
+   :alt: Studio Site Dashboard - Contextual Menu
+   :width: 70 %
+   :align: center
+
+5. Click ``Submit`` to close the publish dialog
+
+.. image:: /_static/images/site-admin/mongo/publish-dialog.png
+   :alt: Studio Site Dashboard - Approve & Publish Dialog
+   :width: 70 %
+   :align: center
+
+Once the files are deployed to the delivery node and the site context is reloaded the new
+Configuration will take effect.
+
+--------------------------------
+Delivery specific configurations
+--------------------------------
+
+If you need to manage different values for the configuration files depending on the environment
+you can find more detailed information in the :ref:`environment-specific-configurations` cook book.
