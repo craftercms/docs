@@ -43,7 +43,7 @@ Parameters
 +----------------+-------------+---------------+------------------------------------------------------------+
 || password      || String     || |checkmark|* || Password to access remote repository                      |
 +----------------+-------------+---------------+------------------------------------------------------------+
-|| create_pption || String     || |checkmark|* || Create options for remote repository:                     |
+|| create_option || String     || |checkmark|* || Create options for remote repository:                     |
 ||               ||            ||              ||     `clone`: clone from remote repository                 |
 ||               ||            ||              ||     `push`: push to remote repository after creating site |
 +----------------+-------------+---------------+------------------------------------------------------------+
