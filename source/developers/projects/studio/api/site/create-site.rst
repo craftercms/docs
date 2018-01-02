@@ -31,22 +31,27 @@ Parameters
 +---------------+-------------+---------------+------------------------------------------------------------+
 || description  || String     ||              || Site description                                          |
 +---------------+-------------+---------------+------------------------------------------------------------+
-|| blueprint    || String     || |checkmark|  || Blueprint to use for bootstrapping the site               |
+|| blueprint    || String     || |checkmark|* || Blueprint to use for bootstrapping the site               |
 +---------------+-------------+---------------+------------------------------------------------------------+
-|| useRemote    || Boolean    ||              || Use remote repository option if true, otherwise false     |
+|| useRemote    || Boolean    || |checkmark|* || Use remote repository option if true, otherwise false     |
 +---------------+-------------+---------------+------------------------------------------------------------+
-|| remoteName   || String     ||              || Remote repository name                                    |
+|| remoteName   || String     || |checkmark|* || Remote repository name                                    |
 +---------------+-------------+---------------+------------------------------------------------------------+
-|| remoteUrl    || String     ||              || Remote repository url                                     |
+|| remoteUrl    || String     || |checkmark|* || Remote repository url                                     |
 +---------------+-------------+---------------+------------------------------------------------------------+
-|| username     || String     ||              || Username to access remote repository                      |
+|| username     || String     || |checkmark|* || Username to access remote repository                      |
 +---------------+-------------+---------------+------------------------------------------------------------+
-|| password     || String     ||              || Password to access remote repository                      |
+|| password     || String     || |checkmark|* || Password to access remote repository                      |
 +---------------+-------------+---------------+------------------------------------------------------------+
-|| createOption || String     ||              || Create options for remote repository:                     |
+|| createOption || String     || |checkmark|* || Create options for remote repository:                     |
 ||              ||            ||              ||     `clone`: clone from remote repository                 |
 ||              ||            ||              ||     `push`: push to remote repository after creating site |
 +---------------+-------------+---------------+------------------------------------------------------------+
+
+``*`` Required parameters:
+* all remote parameters are required if ``useRemote`` is true
+* ``blueprint`` is required if ``useRemote`` is true and ``createOption`` is set to ``push``
+* ``blueprint`` is required if ``useRemote`` is false
 
 -------
 Example
@@ -73,9 +78,9 @@ Example
     "useRemote" : true,
     "remoteName" : "upstream",
     "remoteUrl" : "https://github.com/craftercms/remoterepo.git"
-    "username" : "joe"
-    "password" : "doe"
-    "createOption" : "clone"
+    "username" : "joe.bloggs"
+    "password" : "SuperSecret$$587"
+    "createOption" : "push"
   }
 
 --------
