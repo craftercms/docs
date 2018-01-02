@@ -43,7 +43,7 @@ Step 2: Invoke the reprocessing
 
 .. code-block:: xml
 
-    curl "http://{hostname}:{port}/api/1/target/deploy/{environment}/{siteName}" -X POST -H "Content-Type: text/json" -d '{ "reprocess_all_files": true }'
+    curl "http://{hostname}:{port}/api/1/target/deploy/{environment}/{siteName}" -X POST -H "Content-Type: application/json" -d '{ "reprocess_all_files": true }'
 
 +----------------------+-------------------------------------------+----------------------------+
 || Parameter Name      || Description                              || Example                   |
