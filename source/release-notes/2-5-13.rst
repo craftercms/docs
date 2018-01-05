@@ -2,7 +2,7 @@
 Crafter CMS 2.5.13
 ------------------
 
-* Release Date: December 11, 2017
+* Release Date: January 5, 2018
 
 ^^^^^^^^^^
 Highlights
