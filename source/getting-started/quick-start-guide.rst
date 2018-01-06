@@ -40,7 +40,7 @@ Starting Crafter CMS Using the Startup Script
     #. **Start the Crafter CMS Server using the startup script**
     
         To start Crafter CMS Server:
-        From the command line, navigate to the ``{Crafter-CMS-unzip-directory}/crafter 3/bin/`` directory, and execute the startup script:
+        From the command line, navigate to the ``{Crafter-CMS-unzip-directory}/crafter/bin/`` directory, and execute the startup script:
     
             * Unix/Linux systems:
     
@@ -64,7 +64,7 @@ Starting Crafter CMS Using the Startup Script
 
 
         To stop Crafter CMS Server:
-        From the command line, navigate to the ``{Crafter-CMS-unzip-directory}/crafter 3/bin/`` directory, and execute the shutdown script:
+        From the command line, navigate to the ``{Crafter-CMS-unzip-directory}/crafter/bin/`` directory, and execute the shutdown script:
 
             * Unix/Linux systems:
     
