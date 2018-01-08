@@ -78,9 +78,9 @@ Example
     "blueprint" : "empty",
     "use_remote" : true,
     "remote_name" : "upstream",
-    "remote_url" : "https://github.com/craftercms/remoterepo.git"
-    "username" : "joe.bloggs"
-    "password" : "SuperSecret$$587"
+    "remote_url" : "https://github.com/craftercms/remoterepo.git",
+    "remote_username" : "joe.bloggs",
+    "remote_password" : "SuperSecret$$587",
     "create_option" : "push"
   }
 
