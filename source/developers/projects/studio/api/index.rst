@@ -198,7 +198,6 @@ Content / Asset
    content/create-folder
    content/crop-image
    content/rename-folder
-   content/delete-content
    content/get-content
    content/get-content-at-path
    content/get-content-type
