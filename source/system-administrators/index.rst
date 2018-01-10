@@ -68,6 +68,7 @@ Crafter Studio
    :titlesonly:
 
    studio/configure-ldap.rst
+   studio/configure-headers-based-auth.rst
    studio/changing-the-studio-logo.rst
    studio/studio-configuration-overrides.rst
    studio/debugging-publishing-issues.rst

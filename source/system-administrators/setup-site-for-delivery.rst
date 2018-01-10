@@ -53,11 +53,11 @@ where:
           /path/to/repo/
     - ``<ssh private key path>`` is the local path for the private key used for SSH public/private authentication.
 
-.. note:: When using ``ssh``, we'll need to specify ssh to connect to ``port 63022`` (instead of the default port 22) and to use ``ssh-rsa`` as the preferred host key algorithm by running this command before running the ``init-site`` script:
+.. note:: When using ``ssh``, we'll need to specify ssh to connect to your port and to use your host key algorithm as the preferred host key algorithm by running this command before running the ``init-site`` script:
 
           .. code-block:: bash
 
-              ssh -o HostKeyAlgorithms=ssh-rsa <hostname> -p63022
+              ssh -o HostKeyAlgorithms=<your-host-key-algorithm> <hostname> -p<your-port>
 
 
 -----------------------------
