@@ -29,6 +29,8 @@ Parameters
 +===============+=============+===============+==================================================+
 || site         || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
+|| parentPath   || String     || |checkmark|  || Item's destination (path to paste content into) |
++---------------+-------------+---------------+--------------------------------------------------+
 
 -------
 Example
@@ -40,7 +42,7 @@ Request
 
 .. code-block:: guess
 
-    GET .../api/1/services/api/1/clipboard/paste-item.json?site=mysite
+    GET .../api/1/services/api/1/clipboard/paste-item.json?site=mysite&parentPath=/site/website/folder2
 
 ^^^^^^^^
 Response
@@ -54,7 +56,7 @@ Response
     {
         "status":
             [
-                "/site/website/health/search-results/index.xml"
+                "/site/website/folder2/top-books-for-young-women/index.xml"
             ],
         "site":"mysite"
     }
