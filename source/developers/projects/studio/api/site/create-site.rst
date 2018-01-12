@@ -24,33 +24,33 @@ Resource Information
 Parameters
 ----------
 
-+----------------+------------+----------------+------------------------------------------------------------+
-|| Name          || Type      || Required      || Description                                               |
-+================+============+================+============================================================+
-|| site_id       || String    || |checkmark|   || Site ID to use                                            |
-+----------------+------------+----------------+------------------------------------------------------------+
-|| description   || String    ||               || Site description                                          |
-+----------------+------------+----------------+------------------------------------------------------------+
-|| blueprint     || String    || |checkmark| * || Blueprint to use for bootstrapping the site               |
-+----------------+------------+----------------+------------------------------------------------------------+
-|| use_remote    || Boolean   || |checkmark| * || Use remote repository option if true, otherwise false     |
-+----------------+------------+----------------+------------------------------------------------------------+
-|| remote_name   || String    || |checkmark| * || Remote repository name                                    |
-+----------------+------------+----------------+------------------------------------------------------------+
-|| remote_url    || String    || |checkmark| * || Remote repository url                                     |
-+----------------+------------+----------------+------------------------------------------------------------+
-|| username      || String    || |checkmark| * || Username to access remote repository                      |
-+----------------+------------+----------------+------------------------------------------------------------+
-|| password      || String    || |checkmark| * || Password to access remote repository                      |
-+----------------+------------+----------------+------------------------------------------------------------+
-|| create_option || String    || |checkmark| * || Create options for remote repository:                     |
-||               ||           ||               ||   ``clone``: clone from remote repository                 |
-||               ||           ||               ||   ``push``: push to remote repository after creating site |
-+----------------+------------+----------------+------------------------------------------------------------+
++------------------+------------+----------------+------------------------------------------------------------+
+|| Name            || Type      || Required      || Description                                               |
++==================+============+================+============================================================+
+|| site_id         || String    || |checkmark|   || Site ID to use                                            |
++------------------+------------+----------------+------------------------------------------------------------+
+|| description     || String    ||               || Site description                                          |
++------------------+------------+----------------+------------------------------------------------------------+
+|| blueprint       || String    || |checkmark| * || Blueprint to use for bootstrapping the site               |
++------------------+------------+----------------+------------------------------------------------------------+
+|| use_remote      || Boolean   || |checkmark| * || Use remote repository option if true, otherwise false     |
++------------------+------------+----------------+------------------------------------------------------------+
+|| remote_name     || String    || |checkmark| * || Remote repository name                                    |
++------------------+------------+----------------+------------------------------------------------------------+
+|| remote_url      || String    || |checkmark| * || Remote repository url                                     |
++------------------+------------+----------------+------------------------------------------------------------+
+|| remote_username || String    ||               || Username to access remote repository                      |
++------------------+------------+----------------+------------------------------------------------------------+
+|| remote_password || String    ||               || Password to access remote repository                      |
++------------------+------------+----------------+------------------------------------------------------------+
+|| create_option   || String    || |checkmark| * || Create options for remote repository:                     |
+||                 ||           ||               ||   ``clone``: clone from remote repository                 |
+||                 ||           ||               ||   ``push``: push to remote repository after creating site |
++------------------+------------+----------------+------------------------------------------------------------+
 
 .. note::
     ``*`` Required parameters:
-        * all remote parameters are required if ``use_remote`` is true
+        * some remote parameters are required if ``use_remote`` is true
         * ``blueprint`` is required if ``use_remote`` is true and ``create_option`` is set to ``push``
         * ``blueprint`` is required if ``use_remote`` is false
 
