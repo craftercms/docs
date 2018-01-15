@@ -76,3 +76,6 @@ Below is a short set of links to other documentation for technology that Crafter
 || RST           || Documentation source format || http://docutils.sourceforge.net/rst.html     |
 ||               ||                             ||                                              |
 +----------------+------------------------------+-----------------------------------------------+
+
+.. note::
+    Crafter CMS is a git-based CMS.  Please note that **your system's global git ignore file (list of rules for ignoring files in every Git repository on your computer) is respected by Crafter CMS**.  In case you find some of your content not being committed into Crafter CMS, check your global git ignore file to verify the content you're committing is not being ignored.

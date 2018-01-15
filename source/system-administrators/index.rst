@@ -67,8 +67,6 @@ Crafter Studio
    :maxdepth: 1
    :titlesonly:
 
-   studio/configure-ldap.rst
-   studio/configure-headers-based-auth.rst
    studio/changing-the-studio-logo.rst
    studio/studio-configuration-overrides.rst
    studio/debugging-publishing-issues.rst
@@ -147,3 +145,4 @@ Crafter Security
     :titlesonly:
 
     security/randomize-admin-passwd.rst
+    security/configure-studio-security.rst
