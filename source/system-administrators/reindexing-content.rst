@@ -23,10 +23,21 @@ Clear index through API
 
 .. code-block:: xml
 
-    curl "http://{hostname}:{port}/solr/{siteName}/update/?commit=true" -H "Content-Type: text/xml" -d "<delete><query>*:*</query></delete>"
+    curl "http://{solrHost}:{solrPort}/solr/{siteName}/update/?commit=true" -H "Content-Type: text/xml" -d "<delete><query>*:*</query></delete>"
+
++----------------------+-------------------------------------------+----------------------------+
+|| Parameter Name      || Description                              || Example                   |
++======================+===========================================+============================+
+|| solrHost            || Solr's hostname                          || localhost                 |
++----------------------+-------------------------------------------+----------------------------+
+|| solrPort            || Solr's port.                             || 8694                      |
+||                     ||                                          || (default is 8694)         |
++----------------------+-------------------------------------------+----------------------------+
+|| siteName            || The name of the site                     || my-site                   |
++----------------------+-------------------------------------------+----------------------------+
 
 .. WARNING::
-  This action will delete all content matching the query, review carefully the Solr index & the site id before executing the command.
+  This action will delete all content matching the query, review carefully the Solr index & the site name before executing the command.
 
 ^^^^^^^^^^^^^^^^^^
 Delete index files
@@ -43,19 +54,15 @@ Step 2: Invoke the reprocessing
 
 .. code-block:: xml
 
-    curl "http://{hostname}:{port}/api/1/target/deploy/{environment}/{siteName}" -X POST -H "Content-Type: application/json" -d '{ "reprocess_all_files": true }'
+    curl "http://{deployerHost}:{deployerPort}/api/1/target/deploy/{environment}/{siteName}" -X POST -H "Content-Type: application/json" -d '{ "reprocess_all_files": true }'
 
 +----------------------+-------------------------------------------+----------------------------+
 || Parameter Name      || Description                              || Example                   |
 +======================+===========================================+============================+
-|| hostname            || Deployer's hostname                      || localhost                 |
+|| deployerHost        || Deployer's hostname                      || localhost                 |
 +----------------------+-------------------------------------------+----------------------------+
-|| port                || Deployer's port.                         || 9191                      |
-||                     ||                                          || default is 9191           |
-||                     ||                                          ||                           |
-||                     ||                                          ||                           |
-||                     ||                                          ||                           |
-||                     ||                                          ||                           |
+|| deployerPort        || Deployer's port.                         || 9191                      |
+||                     ||                                          || (default is 9191)         |
 +----------------------+-------------------------------------------+----------------------------+
 || environment         || Target environment                       || preview                   |
 +----------------------+-------------------------------------------+----------------------------+
