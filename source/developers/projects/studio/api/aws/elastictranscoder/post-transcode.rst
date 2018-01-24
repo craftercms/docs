@@ -55,7 +55,6 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
-  :linenos:
 
   {"job_id":"1516814595995-dl9avp","output_bucket":"mytranscodebucket","base_key":"708213662/8bd2e16f-cc84-4822-ac9a-aa9613ec2cf6"}
 

@@ -55,7 +55,6 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
-  :linenos:
 
   {"name":"708213662.mp4","id":"268775475280"}
 

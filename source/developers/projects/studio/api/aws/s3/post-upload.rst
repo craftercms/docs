@@ -56,7 +56,6 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
-  :linenos:
 
   {"bucket":"mybucket456","key":"16229575007_dcf9c870e3_o.jpg"}
 
