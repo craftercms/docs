@@ -4,6 +4,8 @@
 Release Notes
 =============
 
+.. include:: /release-notes/3-0-4.rst
+
 .. include:: /release-notes/3-0-3.rst
 
 .. include:: /release-notes/3-0-2.rst
@@ -11,6 +13,8 @@ Release Notes
 .. include:: /release-notes/3-0-1.rst
 
 .. include:: /release-notes/3-0-0.rst
+
+.. include:: /release-notes/2-5-14.rst
 
 .. include:: /release-notes/2-5-13.rst
 
