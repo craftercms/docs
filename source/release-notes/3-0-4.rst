@@ -10,7 +10,7 @@ Updates
 * Faster publishing for large data-sets
 * Dependency calculations enhancement
 * CsrfFilter added to Studio
-* Engine freemarker upgraded to latest (2.3.26-incubating)
+* Engine's Freemarker host upgraded to latest (2.3.26-incubating)
 * Added CMIS support over HTTPS
 
 and lots of bug fixes :)
