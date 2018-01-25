@@ -66,6 +66,7 @@ Site Management
    site/get-configuration
    site/get-site
    site/get-sites-per-user
+   site/monitor-content
    site/write-configuration
 
 ---------------
@@ -240,3 +241,20 @@ Workflow
    workflow/go-live
    workflow/reject
    workflow/submit-to-go-live
+
+---
+AWS
+---
+.. toctree::
+   :maxdepth: 1
+
+   aws/elastictranscoder/post-transcode
+   aws/s3/post-upload
+
+---
+Box
+---
+.. toctree::
+   :maxdepth: 1
+
+   box/post-upload
