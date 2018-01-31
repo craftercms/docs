@@ -2,7 +2,7 @@
 Upgrading to Crafter CMS 3.0 from 2.5.x
 ---------------------------------------
 
-.. DANGER::
+.. WARNING::
 	This guide assumes that you're trying to upgrade a site from a stock 2.5.x Studio and with some slight Studio configuration changes. If your site
 	configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
 
