@@ -45,6 +45,21 @@ Request
 Response
 ^^^^^^^^
 
+Never Published Before
+^^^^^^^^^^^^^^^^^^^^^^
+
+``Status 200 OK``
+
+.. code-block:: json
+
+  {
+    "status" : "idle",
+    "message" : "idle"
+  }
+
+After Publishing
+^^^^^^^^^^^^^^^^
+
 ``Status 200 OK``
 
 .. code-block:: json
@@ -53,6 +68,9 @@ Response
     "status" : "idle",
     "message" : "Last successful publish was for item: {item_path} on {yyyy-MM-dd'T'HH:mm'Z'}"
   }
+
+During Publishing
+^^^^^^^^^^^^^^^^^
 
 ``Status 200 OK``
 
@@ -63,6 +81,9 @@ Response
     "message" : "Currently publishing item: {item_path} on {yyyy-MM-dd'T'HH:mm'Z'}"
   }
 
+Publishing Failed
+^^^^^^^^^^^^^^^^^
+
 ``Status 200 OK``
 
 .. code-block:: json
@@ -71,6 +92,11 @@ Response
     "status" : "stopped",
     "message" : "Failed while trying to publish item: {item_path} on {yyyy-MM-dd'T'HH:mm'Z'}"
   }
+
+Publishing Stopped
+^^^^^^^^^^^^^^^^^^
+
+``Status 200 OK``
 
 .. code-block:: json
 
