@@ -15,7 +15,7 @@ Export the 2.5.x Site
 ^^^^^^^^^^^^^^^^^^^^^
 
 Export the site's Studio config (``cstudio/config/sites/{siteName}``) and the site's content (``wem_projects/{siteName}/{siteName}/work-area`` folders
-from Alfresco or from your local 2.5.x repository. Then, copy this folders into a location in the system with Crafter 3.0.x installed.
+from Alfresco or from your local 2.5.x repository. Then, copy these folders into a location in the system with Crafter 3.0.x installed.
 
 ^^^^^^^^^^^^^^^^^^^^^
 Run the Import Script
@@ -51,9 +51,9 @@ The script will basically attempt to execute these operations:
 
 #. Copy the ``scripts``, ``site``, ``static-assets`` and ``templates`` folders from the 2.5.x content.
 #. Copy ``classes/groovy`` folder and rename it to ``scripts/classes``.
-#. Copy ``config/site.xml`` folder and rename it to ``config/engine/site-config.xml``.
+#. Copy ``config/site.xml`` file and rename it to ``config/engine/site-config.xml``.
 #. Upgrade old `<i10n>` configuration to `<targeting>` configuration (:ref:`targeting-guide`) in ``config/engine/site-config.xml``.
-#. Copy ``config/spring/application-context.xml`` folder and rename it to ``config/engine/application-context.xml``.
+#. Copy ``config/spring/application-context.xml`` file and rename it to ``config/engine/application-context.xml``.
 
 **Update Engine config:**
 
@@ -79,7 +79,7 @@ The script will basically attempt to execute these operations:
 
 #. Call studio to create the 3.0 site and to clone the site from the work repository.
 
-After all the previous steps, and after you have entered Studio's username/password, there's not much you can do except to wait for the site creation
+After all the previous steps, and after you have entered Studio's username/password, the next thing to do is wait for the site creation
 process to complete. You can tail the ``crafter-authoring/logs/tomcat/catalina.out`` meanwhile to watch the progress.
 
 ^^^^^^^^^^^^
