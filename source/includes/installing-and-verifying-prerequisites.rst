@@ -3,10 +3,10 @@ Install Java
 ^^^^^^^^^^^^
 Download and install Java JDK 1.8 (either `Oracle <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_  or `OpenJDK <http://openjdk.java.net/>`_).
 
-
 ^^^^^^^^^^^^^^^^^^^
 Verify Java Version
 ^^^^^^^^^^^^^^^^^^^
+
 Ensure that you are running Java 1.8.  To check,
 run the following command at the command prompt and make sure that the version displayed is Java 1.8:
 
@@ -23,6 +23,7 @@ The command above should output something like this:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Verify JAVA_HOME environment variable is set correctly
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Make sure that you have a JAVA_HOME environment variable that points to the root of the JDK install directory.
 To check the value set for JAVA_HOME, enter the following command at the command prompt:
 
