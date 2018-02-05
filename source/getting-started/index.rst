@@ -12,6 +12,7 @@ This section lets you get started quickly on using Crafter CMS for development o
    /system-administrators/requirements-supported-platforms
    quick-start-guide
    your-first-website
+   production-environment-setup
 
 
 **Here are a few more links to get you started crafting!**
