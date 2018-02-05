@@ -27,7 +27,7 @@ Before we begin, please review the following for requirements and supported plat
       `./gradlew init build deploy -Penv=delivery`
       `./gradlew start -Penv=delivery`
 
-4. After starting the delivery environment, we'll setup the site we created in step 2 in our delivery environment.  Crafter CMS comes with a script, ``init-site.sh`` out of the box, to help us setup our site for delivery.
+4. After starting the delivery environment, we'll setup the site we created in step 2 in our delivery environment.  Crafter CMS comes with a script, ``init-site.sh``, to help us setup our site for delivery.
 
       `./init-site.sh  <site name> [site's published repo git url] [ssh private key path]`
 
