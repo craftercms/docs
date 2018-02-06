@@ -14,7 +14,7 @@ Here are the steps for upgrading your Crafter CMS install.  Please review the st
 #. Start your upgraded Crafter CMS, and verify that the authoring and delivery environments are functioning as intended.
 
 
-.. include:: /system-administrators/upgrade/upgrading-to-crafter-cms-3-0.rst
+.. include:: /system-administrators/upgrade/upgrading-to-craftercms-3-0.rst
 
 
 -------------
