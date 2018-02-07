@@ -1,0 +1,21 @@
+------------------
+Crafter CMS 2.5.15
+------------------
+
+* Release Date: February 6, 2018
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* Patch release
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Faster dependency calculation on on content write
+* Updated dependency calculation configuration for item specific content
+* Improved dependency calculation accuracy on copy, move, publish, delete
+
+For a full list of tickets, please visit: `GitHub 2.5.15 Milestone <https://github.com/craftercms/craftercms/milestone/26?closed=1>`_
