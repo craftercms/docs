@@ -14,7 +14,7 @@ Highlights
 Updates
 ^^^^^^^
 
-* Faster dependency calculation on on content write
+* Faster dependency calculation on content write
 * Updated dependency calculation configuration for item specific content
 * Improved dependency calculation accuracy on copy, move, publish, delete
 
