@@ -1,8 +1,10 @@
 .. _release-notes:
 
-=============
-Release Notes
-=============
+=============================
+Crafter CMS 2.5 Release Notes
+=============================
+
+For other release notes, please visit your release's release notes page here: http://docs.craftercms.org
 
 .. include:: /release-notes/2-5-15.rst
 
