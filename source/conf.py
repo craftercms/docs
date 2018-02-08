@@ -135,7 +135,7 @@ html_theme_options = {
 }
 
 # Adding additional css files...
-# html_context = { "extra_css_files": ["_static/custom.css"] }
+html_context = { "extra_css_files": ["_static/custom.css"] }
 
 
 html_show_sphinx = False
