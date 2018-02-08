@@ -32,5 +32,4 @@ Upgrade Notes
    :maxdepth: 1
    :titlesonly:
 
-   upgrade-notes/2-5-0-to-2-5-1.rst
    upgrade-notes/2-5-x-to-3-0-0.rst
