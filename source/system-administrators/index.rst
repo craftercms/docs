@@ -57,6 +57,15 @@ Activities
    setup-site-for-delivery
    sync-studio-database-with-repo.rst
    troubleshooting.rst
+
+=====================
+Upgrading Crafter CMS
+=====================
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
    upgrade/index.rst
 
 ==============
