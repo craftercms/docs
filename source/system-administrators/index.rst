@@ -80,6 +80,7 @@ Crafter Studio
    studio/studio-configuration-overrides.rst
    studio/debugging-publishing-issues.rst
    studio/exporting-importing-site.rst
+   studio/create-site-with-link-to-remote-repo.rst
 
 ==============
 Crafter Engine
