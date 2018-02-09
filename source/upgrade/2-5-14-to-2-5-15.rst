@@ -1,0 +1,50 @@
+----------------------------
+Crafter CMS 2.5.14 to 2.5.15
+----------------------------
+
+^^^^^^^^^^^^^^^^^
+1. Crafter Studio
+^^^^^^^^^^^^^^^^^
+
+1.1. Config Changes
+^^^^^^^^^^^^^^^^^^^
+
+Important changes in configuration has been made for **Crafter CMS 2.5.15** and onwards.  The bean definitions used for dependency overrides are no longer supported and instead should be setup in the ``TOMCAT/shared/classes/crafter/cstudio/extension/server-config.properties`` configuration file.
+
+Users upgrading to Crafter CMS 2.5.15 and on from a previous version and who uses the bean definitions described below for dependency overrides should follow these instructions when upgrading their Crafter CMS:
+
+In your ``TOMCAT/shared/classes/crafter/cstudio/extension/services-context.xml``, if you have the following bean definitions, comment them out:
+
+.. code-block:: guess
+    :linenos:
+
+        <bean id="studioDeplymentDependencyRule" class="org.craftercms.studio.impl.v1.service.dependency.DeploymentDependencyRule">
+           <property name="dmDependencyService" ref="cstudioDmDependencyService"/>
+           <property name="objectStateService" ref="cstudioObjectStateService"/>
+           <property name="contentSpecificDependencies">
+           <list>
+              <value>/site/components/.*</value>
+              <value>/static-assets/.*</value>
+           </list>
+           </property>
+        </bean>
+
+        <bean id="studioSubmitToApproveDependencyRule" class="org.craftercms.studio.impl.v1.service.dependency.SubmitToApproveDependencyRule">
+           <property name="dmDependencyService" ref="cstudioDmDependencyService"/>
+           <property name="objectStateService" ref="cstudioObjectStateService"/>
+           <property name="contentService" ref="cstudioContentService"/>
+           <property name="contentSpecificDependencies">
+           <list>
+              <value>/site/components/.*</value>
+              <value>/static-assets/.*</value>
+           </list>
+           </property>
+        </bean>
+
+To replicate the behavior (dependency overrides) in the beans we commented out, we now use a configuration instead.  In your ``TOMCAT/shared/classes/crafter/cstudio/extension/server-config.properties``, add the following line:
+
+.. code-block:: guess
+
+    # Regex patterns for paths of item specific dependencies
+    crafter.studio.dependency.itemSpecificPattern=/site/components/page/.*,/static-assets/page/.*
+
