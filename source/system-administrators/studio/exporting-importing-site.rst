@@ -1,4 +1,4 @@
-.. _exporting_importing_site:
+.. _exporting-importing-site:
 
 ==========================
 Exporting/Importing a Site
@@ -6,31 +6,43 @@ Exporting/Importing a Site
 
 Exporting a site from one Studio and importing it into another one is very easy if you follow these steps:
 
-#. In the Crafter installation with the Studio that has the site you want to export, from the command line or file explorer, navigate to
-   ``data/repos/sites/{siteName}/sandbox``. Copy all the folders under there except ``.git``.
-#. Navigate to the same path but now in the Crafter installation where you're importing the site, and delete all folders except the ``.git``
-   folder.
-#. Copy the folders you exported into the ``sandbox`` folder. From now on all operations are done in this installation.
-#. Again in the ``sandbox``, execute a ``git add .`` and then a ``git commit``. Add any message you want to the commit.
-#. In your browser, login to Studio and follow the steps on :ref:`sync_studio_database_with_repo`. With this, Studio should be able to
-   recognize all the imported files.
+#. In the Crafter Studio installation where you want to import your site, from the **Sites** screen, click on **Create Site**
+#. In the **Create Site** dialog, fill in the **Site Id** and **Description**, then, click on **Link to upstream remote Git repository**
 
-In the case you want to publish your entire site, follow these optional steps:
+   .. image:: /_static/images/system-admin/link-to-remote-git-repo.png
+      :alt: System Administrator - Create Site "Link to upstream remote Git repository"
+      :width: 65 %
+      :align: center
 
-#. In the ``sandbox`` folder, run ``git log`` and copy the commit ID of the commit you just did on the steps above.
-#. Navigate one level up to the ``published`` directory.
-#. Do a ``git fetch origin master`` and then a ``git cherry-pick -x COMMIT_ID_YOU_COPIED``. This will basically publish the site.
-#. In your browser, login to Studio and follow the steps on :ref:`sync_studio_database_with_repo`.
-#. Now in the filesystem again, navigate to the DBMS bin folder (``AUTHORING_INSTALL/bin/dbms/bin``) and run the following to login to the
-   MariaDB (password is ``crafter``):
+#. Fill in the required fields for linking to an upstream remote Git repository. The ``Remote Git Respository URL`` is the import site's sandbox repository git url (the site you want to bring over to your Studio). Below are sample urls for the site being imported:
 
-		.. code-block:: guess
+   Here is a sample git url from github:
+   `https://github.com/username/hello-test.git`
+   Here is a sample git url using ssh:
+   `ssh://[user@]host.xz[:port]/path/to/repo/`
+   or alternatively for ssh:
+   `[user@]host.xz:path/to/repo/`
 
-			./mysql -u crafter -p --socket=/tmp/MariaDB4j.33306.sock
+   .. image:: /_static/images/system-admin/link-to-remote-git-repo-filled.png
+      :alt: System Administrator - Create Site "Link to upstream remote Git repository"
+      :width: 65 %
+      :align: center
 
-#. In the MySQL console enter ``use crafter;`` to switch to the crafter DB, and then run the following SQL update command to set all items to the published
-   state:
+   Under **Options**, select **Create site based on a remote git repository**, then click on the **Create** button.  Your site has now been imported.
 
-		.. code-block:: sql
+**In case you want to publish the entire site, follow these optional steps:**
 
-			UPDATE cstudio_objectstate SET state = 'EXISTING_UNEDITED_UNLOCKED', system_processing = 0 WHERE site = '{siteName}';
+#. In the site you just imported, click on |siteConfig|, then click on **Publishing**
+
+   .. image:: /_static/images/system-admin/publishing.png
+      :alt: System Administrator - Bulk Publishing"
+      :width: 30 %
+      :align: center
+
+#. In the **Publishing** screen, click on the **Bulk Publish** tab, and in the **Path to Publish** field, just enter ``/``, then click on the **Publish** button to publish the whole site.
+
+   .. image:: /_static/images/system-admin/bulk-publish-site.png
+      :alt: System Administrator - Bulk Publish the whole site filled in"
+      :width: 75 %
+      :align: center
+
