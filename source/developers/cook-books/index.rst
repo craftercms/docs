@@ -19,4 +19,5 @@ Cookbooks / Tutorials
    how-tos/setting-up-an-ldap-server-for-dev
    how-tos/working-with-dates-freemarker
    how-tos/working-with-dates-groovy
+   marketplace/index
 
