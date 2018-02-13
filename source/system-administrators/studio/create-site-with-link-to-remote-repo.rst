@@ -7,7 +7,7 @@ Site Creation with Remote Repositories
 
 Crafter Studio supports site creation with remote repositories and provides two options:
 
-- Create site based on a remote git repository
+- Create site based on remote git repository
 - Create site based on a blueprint then push to remote bare git repository
 
 To start creating a site with remote repository, from the **Sites** screen, click on the **Create Site** button.
@@ -37,11 +37,36 @@ Click on the **Create** button, your site should be created in a short while, an
 Create site based on a remote git repository
 --------------------------------------------
 
-To create a site based on a remote git repository, fill in the required items once **Link to upstream remote Git repository** has been expanded:
+Creating a site based on a remote git repository is basically exporting a site from one Studio and importing it into another one.
+
+To create a site based on remote git repository, fill in the required items once **Link to upstream remote Git repository** has been expanded. The ``Remote Git Respository URL`` is the import site's sandbox repository git url (the site you want to bring over to your Studio). Below are sample urls for the site being imported:
+
+Here is a sample git url from github:
+`https://github.com/username/hello-test.git`
+Here is a sample git url using ssh:
+`ssh://[user@]host.xz[:port]/path/to/repo/`
+or alternatively for ssh:
+`[user@]host.xz:path/to/repo/`
 
 .. image:: /_static/images/system-admin/link-to-remote-git-repo-filled.png
-   :alt: System Administrator - Create Site based on remote Git repository"
+   :alt: System Administrator - Create Site based on remote Git repository
    :width: 65 %
    :align: center
 
-See :ref:`exporting-importing-site` for an example and more information on how to use the option to create a site based on a remote repository.
+Under **Options**, select **Create site based on remote git repository**, then click on the **Create** button.  After a short while, your site will be imported.
+
+**In case you want to publish the entire site, follow these optional steps:**
+
+#. In the site you just imported, click on |siteConfig|, then click on **Publishing**
+
+   .. image:: /_static/images/system-admin/publishing.png
+      :alt: System Administrator - Bulk Publishing"
+      :width: 30 %
+      :align: center
+
+#. In the **Publishing** screen, click on the **Bulk Publish** tab, and in the **Path to Publish** field, just enter ``/``, then click on the **Publish**   button to publish the whole site.
+
+   .. image:: /_static/images/system-admin/bulk-publish-site.png
+      :alt: System Administrator - Bulk Publish the whole site filled in"
+      :width: 75 %
+      :align: center
