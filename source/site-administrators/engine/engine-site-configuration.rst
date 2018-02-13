@@ -55,6 +55,11 @@ This example file contains the properties used by Crafter Engine:
     <indexFileName>index.xml</indexFileName>
     <defaultLocale>en</defaultLocale>
 
+    <!-- Compatibility properties -->
+    <compatibility>
+        <disableFullModelTypeConversion>false</disableFullModelTypeConversion>
+    </compatibility>
+
     <!-- Filter properties -->
     <filters>
         <filter>
@@ -152,6 +157,16 @@ This example file contains the properties used by Crafter Engine:
 Crafter Engine Properties
  * **indexFileName:** The name of a page's index file (default is ``index.xml``).
  * **defaultLocale:** The default locale for the site. Used with content targeting through localization.
+ * **compatibility.disableFullModelTypeConversion:** Disables full content model type conversion for backwards compatibility mode (false by default)
+
+   Up to and including version 2:
+   Crafter Engine, in the FreeMarker host only, converts model elements based on a suffix type hint, but only for the first level in
+   the model, and not for _dt. For example, for contentModel.myvalue_i Integer is returned, but for contentModel.repeater.myvalue_i
+   and contentModel.date_dt a String is returned. In the Groovy host no type of conversion was performed.
+
+   In version 3 onwards:
+   Crafter Engine converts elements with any suffix type hints (including _dt) at at any level in the content
+   model and for both Freemarker and Groovy hosts.
  * **filters:** Used to define the filter mappings. Each ``<filter>`` element must contain a ``<script>`` element that specifies the complete
    path to the filter script, and a ``<mapping>`` element. In the ``<mapping>`` element, the ``<include>`` element contains the Ant
    patterns (separated by comma) that request URLs should match for the filter to be executed, while the ``<exclude>`` element contains
