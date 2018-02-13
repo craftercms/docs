@@ -79,7 +79,6 @@ Crafter Studio
    studio/changing-the-studio-logo.rst
    studio/studio-configuration-overrides.rst
    studio/debugging-publishing-issues.rst
-   studio/exporting-importing-site.rst
    studio/create-site-with-link-to-remote-repo.rst
 
 ==============
