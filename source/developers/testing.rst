@@ -30,7 +30,17 @@ We use Integration Testing as a full test of the software. This includes UI inte
 - For more details on Selenium, please visit: http://www.seleniumhq.org/
 - For more details on PhantomJs, please visit: http://phantomjs.org/
 
-To learn more about the integration testing done for Crafter CMS Software, see the section on :ref:`crafter-cms-qa-project`
+To run the whole test suite for craftercms, in your command line window, go to your craftercms install folder, then type in the following:
+
+``./gradlew test``
+
+To run only the api tests for craftercms, run the following:
+
+.. code-block:: guess
+
+   ./gradlew test -Pcrafter.testing.suites="src/test/resources/testngAPI.xml"
+
+To see all tests available, please see the ``build.gradle`` file in your craftercms install directory
 
 .. rubric:: Footnotes
 
