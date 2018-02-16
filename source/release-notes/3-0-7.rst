@@ -1,0 +1,12 @@
+-----------------
+Crafter CMS 3.0.7
+-----------------
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Corrected deleted related publishing issue
+* Minor UI bug fixes
+
+For a full list of tickets, please visit: `GitHub 3.0.7 Milestone <https://github.com/craftercms/craftercms/milestone/29?closed=1>`_
