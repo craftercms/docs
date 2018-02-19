@@ -1,10 +1,10 @@
 .. _release-notes:
 
-=============================
-Crafter CMS 3.0 Release Notes
-=============================
+=============
+Release Notes
+=============
 
-For other release notes, please visit your release's release notes page here: http://docs.craftercms.org
+This section contains release notes for Crafter CMS 3.0.x.  For other release notes, please visit your release's release notes page here: http://docs.craftercms.org
 
 .. include:: /release-notes/3-0-7.rst
 
