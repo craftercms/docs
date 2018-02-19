@@ -3,6 +3,12 @@ Instructions for Upgrading to Crafter CMS 3.0.x from 2.5.x
 ==========================================================
 This section give you the details on how to upgrade your Crafter CMS installation.
 
+.. WARNING::
+    This guide assumes that you're trying to upgrade a site from a stock 2.5.x Studio and with some slight Studio configuration changes. If your site configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
+
+----------------
+Before Upgrading
+----------------
 Here are the steps for upgrading your Crafter CMS install.  Please review the steps listed below before starting your upgrade.
 
 #. Review the release notes for the version you are upgrading to, which contains specific information on the changes that have been made and how it may affect you when upgrading to that specific version.
@@ -10,10 +16,21 @@ Here are the steps for upgrading your Crafter CMS install.  Please review the st
 #. Upgrade your Crafter CMS to the new version by following the instructions listed for the version you are upgrading to.
 #. Start your upgraded Crafter CMS, and verify that the authoring and delivery environments are functioning as intended.
 
+.. note::
+    There are a few things to note with Crafter Studio when upgrading to Crafter CMS 3.0.0 from 2.5.x.  Repository changes have been made and the following now applies:
 
-.. WARNING::
-  This guide assumes that you're trying to upgrade a site from a stock 2.5.x Studio and with some slight Studio configuration changes. If your site
-  configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
+    #. **Structure**
+
+       The entire repository is now divided in two separate spaces. One space is for global content and configurations, and the other is for sites content and configurations.
+       Global space contains site blueprints and studio (global) configuration.
+       Sites space is further divided into separate spaces for each site. Site subspace contains content and configuration. Major difference from previous versions is that site specific configuration is part of site content (site content and configuration are unified within same space)
+       Example:
+       Content types configuration in previous version was stored in following location: ``/cstudio/config/sites/{SITENAME}/content-types/{CONTENT_TYPE}``. Since 3.0.0 content types are stored in: ``repos/sites/{SITENAME}/sandbox/config/studio/content-types/{CONTENT_TYPE}``
+
+    #. **Source control**
+
+       Git is used as the source control system. Regarding new repository structure, multiple git repositories are used for the entire studio repository. One git repository is used for global space, and for sites, two git repositories are used per site (one for sandbox and one for published content).
+
 
 ---------
 Authoring
