@@ -66,7 +66,8 @@ Upgrading Crafter CMS
    :maxdepth: 1
    :titlesonly:
 
-   upgrade/index.rst
+   upgrade/upgrading-to-craftercms-3-0.rst
+   upgrade/notes-on-upgrading-to-3-0.rst
 
 ==============
 Crafter Studio
