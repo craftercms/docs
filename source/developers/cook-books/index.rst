@@ -13,11 +13,7 @@ Cookbooks / Tutorials
    activiti/index
    services/index
    blueprint/index
-   best-practices/best-practice-loading-content
-   best-practices/environment-specific-configurations
-   how-tos/change-ports-on-your-install
-   how-tos/setting-up-an-ldap-server-for-dev
-   how-tos/working-with-dates-freemarker
-   how-tos/working-with-dates-groovy
+   best-practices/index
+   how-tos/index
    marketplace/index
 
