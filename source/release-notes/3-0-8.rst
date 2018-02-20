@@ -1,0 +1,14 @@
+-----------------
+Crafter CMS 3.0.8
+-----------------
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Fixed issue with create site and push to upstream repository
+* Minor UI bug fixes
+* Minor Studio API bug fixes
+* Documentation updates
+
+For a full list of tickets, please visit: `GitHub 3.0.8 Milestone <https://github.com/craftercms/craftercms/milestone/30?closed=1>`_

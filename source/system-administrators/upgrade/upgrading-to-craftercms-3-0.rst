@@ -47,8 +47,12 @@ from Alfresco or from your local 2.5.x repository. Then, copy these folders into
 Run the Import Script
 ^^^^^^^^^^^^^^^^^^^^^
 
-#. From your 3.0.x Studio, create a new site based on the ``empty`` blueprint.
-#. Shutdown Studio (``crafter-authoring/bin/shutdown.sh``).
+#. Before running the script, make sure:
+
+   - ``curl`` and ``git`` are installed.
+   - Studio 3.0.x is running.
+   - There's no site in Studio with the same name as the one you're migrating.
+
 #. Run the ``migrate.sh``, which is located under ``crafter-authoring/bin/migrate`` directory. The script takes 3 parameters:
 
    - The name of the new 3.0 site where the original site will be migrated.
@@ -89,12 +93,12 @@ The script will basically attempt to execute these operations:
 
    .. NOTE::
      Up to and including 2.5, Crafter Engine, in the FreeMarker host only, converts model elements based on a suffix type hint, but only
-     for the first level in the model, and not for ``_dt``. For example, for ``contentModel.myvalue_i`` Integer is returned, but for
-     ``contentModel.repeater.myvalue_i`` and ``contentModel.date_dt`` a String is returned. In the Groovy host no type of conversion
-     was performed.
+     for the first level in the model, and not for ``_dt``, ``_s``, ``_t`` and ``_html``. For example, for ``contentModel.myvalue_i``
+     Integer is returned, but for ``contentModel.repeater.myvalue_i`` and ``contentModel.date_dt`` a String is returned. In the Groovy
+     host no type of conversion was performed.
 
-     In version 3 onwards, Crafter Engine converts elements with any suffix type hints (including ``_dt``) at at any level in the content
-     model and for both Freemarker and Groovy hosts.
+     In version 3 onwards, Crafter Engine converts elements with any suffix type hints (including ``_dt``, ``_s``, ``_t`` and ``_html``)
+     at any level in the content model and for both Freemarker and Groovy hosts.
 
 **Update the date format:**
 
@@ -125,6 +129,8 @@ before site creation, just before entering the Studio credentials):
      :ref:`targeting`.
 
 #. Migrate code from the old content type controllers into the new ``controller.groovy`` (like mentioned above).
+#. Change the date pattern from ``MM/dd/yyyy HH:mm:ss`` to ``yyyy-MM-dd'T'HH:mm:ss.SSSX``, when parsing a ``_dt`` field extracted from the content model
+   (make sure ``<disableFullModelTypeConversion>`` is set as true, which the script should have done automatically).
 
 --------
 Delivery
