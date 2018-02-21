@@ -64,8 +64,7 @@ Delete index files
 To delete any existing content in the index by deleting the index files, do the following:
 
 #. Make sure Tomcat and Solr have been stopped.
-#. Inside your Crafter installation, go to ``data/indexes/{siteName}``.
-#. Delete the ``data`` folder under the site you are reindexing.
+#. Delete the index ``data`` folder for the site you are reindexing (*INSTALL_DIRECTORY/data/indexes/{siteName}/data/*).
 #. Restart Tomcat/Solr
 
 -------------------------------
