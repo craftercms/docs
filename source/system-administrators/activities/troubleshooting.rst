@@ -10,5 +10,5 @@ This section details common problems you might encounter with Crafter CMS and ho
    :titlesonly:
 
    debugging-search.rst
-   studio/debugging-publishing-issues.rst
-   deployer/debugging-deployer-issues.rst
+   ../studio/debugging-publishing-issues.rst
+   ../deployer/debugging-deployer-issues.rst
