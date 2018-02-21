@@ -54,7 +54,9 @@ One of the general workaround to unblock the publishing queue is by manual synci
     > git clone path_to_sandbox published
 
 
-Warning: By executing this command, all content is the sandbox will become published, and published history will replaced with authoring history.
+.. warning:: By executing this command, all content in the sandbox will become published, and the published history will be replaced with authoring history.
+
+|
 
 To avoid unnecessary operations and confusion within the system, the database should also be updated by canceling everything remaining in the publishing queue and setting item states to ``Live``
 
@@ -66,6 +68,8 @@ To avoid unnecessary operations and confusion within the system, the database sh
     WHERE site = 'a_site_id'
     AND state = 'READY_FOR_LIVE';
 
+|
+
 .. code-block:: sql
     :caption: **Set item states to "Live":**
 
@@ -73,7 +77,9 @@ To avoid unnecessary operations and confusion within the system, the database sh
     SET state = 'EXISTING_UNEDITED_UNLOCKED', system_processing = 0
     WHERE site = 'a_site_id';
 
-After successful manual syncing of repositories the publishing process needs to be enabled again. This can be done by calling :ref:`crafter-studio-api-publish-start` Rest API to start publishing.
+|
+
+After successful manual syncing of repositories the publishing process needs to be enabled again. This can be done by calling the :ref:`crafter-studio-api-publish-start` Rest API to start publishing.
 
 --------------------------------------------------
 Publishing Issues When Moving Sites Around in Disk
@@ -89,6 +95,8 @@ Typically, the configuration for the ``published`` repository can be found in th
 	    url = ../sandbox
 	    fetch = +refs/heads/*:refs/remotes/origin/*
 
+|
+
 In some cases, the configuration looks like this:
 
 .. code-block:: text
@@ -97,25 +105,29 @@ In some cases, the configuration looks like this:
 	    url = /my/absolute/path/to/crafter_install/crafter-auth-env/bin/../data/repos/sites/mysite/sandbox
 	    fetch = +refs/heads/*:refs/remotes/origin/*
 
+|
+
 To manually fix the configuration problem, either set the url value as a relative path between the ``published`` and the ``sandbox`` repositories (default ``../sandbox``) or set it as the absolute path of the ``sandbox`` repository.
 
 ------------------------------------------------------------------
 Publishing Issues When Commit ID for a content is NULL in Database
 ------------------------------------------------------------------
 
-Publishing issues may be caused if content does not have value for commit id in metadata table. To detect which content has NULL for commit id execute following query:
+Publishing issues may be caused if content does not have a commit id value in the metadata table. To detect which content has NULL for commit id, execute the following query:
 
 .. code-block:: sql
 
     SELECT site, path FROM item_metadata WHERE commit_id is NULL;
 
-When all content with NULL commit id is detected, it is needed to edit content manually by adding change that will not affect content itself but will cause a git change. (e.g. html or xml comment block, blank space etc.). It is needed to commit that change in git repo, and sync repository feature will update commit id in database.
+|
+
+When all content with NULL commit id is detected, the content needs to be edited manually by adding a change that will not affect content itself but will cause a git change. (e.g. html or xml comment block, blank space etc.). The change needs to be committed in git repo, then the sync repository feature will update the commit id in database.
 
 -------------------------------------------------------
 Publishing Issues Caused by 'Ghost' Content in Database
 -------------------------------------------------------
 
-'Ghost' content is content that has been deleted from repository, but its metadata remained in database. The only solution to this problem is to remove this content manually from database. Once 'ghost' content is identified following queries need to be executed:
+'Ghost' content is content that has been deleted from repository, but its metadata remained in database. The only solution to this problem is to remove this content manually from database. Once 'ghost' content is identified the following queries need to be executed:
 
 .. code-block:: sql
 

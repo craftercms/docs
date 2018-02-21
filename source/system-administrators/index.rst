@@ -51,12 +51,12 @@ Activities
    :maxdepth: 1
    :titlesonly:
 
-   backup-and-recovery.rst
-   logging.rst
-   reindexing-content.rst
-   setup-site-for-delivery
-   sync-studio-database-with-repo.rst
-   troubleshooting.rst
+   activities/backup-and-recovery.rst
+   activities/logging.rst
+   activities/reindexing-content.rst
+   activities/setup-site-for-delivery
+   activities/sync-studio-database-with-repo.rst
+   activities/troubleshooting.rst
 
 =====================
 Upgrading Crafter CMS

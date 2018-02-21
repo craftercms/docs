@@ -1,7 +1,7 @@
 ==========================================================
 Instructions for Upgrading to Crafter CMS 3.0.x from 2.5.x
 ==========================================================
-This section give you the details on how to upgrade your Crafter CMS installation.
+This section details how to upgrade your Crafter CMS installation.
 
 .. WARNING::
     This guide assumes that you're trying to upgrade a site from a stock 2.5.x Studio and with some slight Studio configuration changes. If your site configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
@@ -31,6 +31,7 @@ Here are the steps for upgrading your Crafter CMS install.  Please review the st
 
        Git is used as the source control system. Regarding new repository structure, multiple git repositories are used for the entire studio repository. One git repository is used for global space, and for sites, two git repositories are used per site (one for sandbox and one for published content).
 
+Let's begin upgrading our Crafter CMS install.
 
 ---------
 Authoring
@@ -53,7 +54,7 @@ Run the Import Script
    - Studio 3.0.x is running.
    - There's no site in Studio with the same name as the one you're migrating.
 
-#. Run the ``migrate.sh``, which is located under ``crafter-authoring/bin/migrate`` directory. The script takes 3 parameters:
+#. Run the ``migrate.sh``, which is located under ``crafter-authoring/bin/migration`` directory. The script takes 3 parameters:
 
    - The name of the new 3.0 site where the original site will be migrated.
    - The location of the 2.5 Studio configuration (where the content-types reside).
@@ -82,7 +83,7 @@ The script will basically attempt to execute these operations:
 #. Copy the ``scripts``, ``site``, ``static-assets`` and ``templates`` folders from the 2.5.x content.
 #. Copy ``classes/groovy`` folder and rename it to ``scripts/classes``.
 #. Copy ``config/site.xml`` file and rename it to ``config/engine/site-config.xml``.
-#. Upgrade old `<i10n>` configuration to `<targeting>` configuration (:ref:`targeting-guide`) in ``config/engine/site-config.xml``.
+#. Upgrade old ``<i10n>`` configuration to ``<targeting>`` configuration (:ref:`targeting-guide`) in ``config/engine/site-config.xml``.
 #. Copy ``config/spring/application-context.xml`` file and rename it to ``config/engine/application-context.xml``.
 
 **Update Engine config:**
@@ -102,8 +103,8 @@ The script will basically attempt to execute these operations:
 
 **Update the date format:**
 
-#. Search for old date patterns (``MM/dd/yyyy HH:mm:ss``) in Groovy and Freemarker files and asks the user to change them if necessary.
-#. Chang the format of stored dates in XML descriptors under ``site``, from ``MM/dd/yyyy HH:mm:ss`` to yyyy-MM-dd'T'HH:mm:ss.SSSX.**
+#. Search for old date patterns (``MM/dd/yyyy HH:mm:ss``) in Groovy and Freemarker files and ask the user to change them if necessary.
+#. Change the format of stored dates in XML descriptors under ``site``, from ``MM/dd/yyyy HH:mm:ss`` to ``yyyy-MM-dd'T'HH:mm:ss.SSSX.**``
 
 **Create 3.0 site:**
 
