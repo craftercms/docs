@@ -14,6 +14,8 @@ Crafter CMS out of the box has a script to help you create your Solr core and de
 
 In the ``bin`` folder in your Crafter CMS delivery environment, we will use the script ``init-site.sh``/``init-site.bat`` to help us create the Solr core and the deployer target.
 
+.. note:: If you're setting up a site for delivery from a Unix/Linux system, ``curl`` is required when running the script.  (To learn more about curl, see https://curl.haxx.se/)
+
 From your command line, navigate to your ``{Crafter-CMS-delivery-environment-directory}/bin/`` , and execute the init-site script:
 
     * Unix/Linux systems:
