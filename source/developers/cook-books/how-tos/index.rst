@@ -8,6 +8,7 @@ How-Tos
 
    change-ports-on-your-install
    setting-up-an-ldap-server-for-dev
+   working-with-crafter-studios-api
    working-with-dates-freemarker
    working-with-dates-groovy
-   working-with-crafter-studios-api
+   working-with-filters
