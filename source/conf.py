@@ -145,7 +145,7 @@ html_theme_options = {
 html_context = { "extra_css_files": ["_static/custom.css"] }
 
 # Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = []
+html_theme_path = ["."]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
