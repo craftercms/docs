@@ -81,9 +81,7 @@ Each dashboard has a header
     - Content "type" filter:  Some widgets allow you to filter them by a broad content type (All, Pages, Components, Documents)
 
     .. image:: /_static/images/crafter-studio-dashboard.png
-        :height: 800px
-        :width: 800 px
-        :scale: 95 %
+        :width: 100 %
         :align: center
 
     - Ability to be selected. Selecting an item allows the user to interact with the selected items via the context nav
@@ -92,9 +90,7 @@ Each dashboard has a header
     - Edit link, clicking edit will check out the item and open the form for the item
 
 .. image:: /_static/images/crafter-studio-dashboard-item-selected.png
-    :height: 900px
-    :width: 900 px
-    :scale: 95 %
+    :width: 100 %
     :align: center
 
 
@@ -201,8 +197,7 @@ The Site content menu/panel allows for browsing all site content in the system. 
 * The context can be stretched and will remember where you set the length and width on your browser
 
 .. image:: /_static/images/crafter-studio-dashboard-item-selected.png
-    :height: 900px
-    :width: 900 px
+    :width: 100 %
     :align: center
 
 * Clicking the main folders will toggle them open or closed.
@@ -211,16 +206,13 @@ The Site content menu/panel allows for browsing all site content in the system. 
 * Also, tooltips featuring extended information will be available when hovering over any item in the Site Content Menu or on the dashboard.
 
 .. image:: /_static/images/crafter-studio-site-content-panel2.png
-    :height: 800px
-    :width: 800 px
-    :scale: 55%
+    :width: 55 %
     :align: center
 
 Right-clicking on an item opens a contextual right click menu for that item.
 
 .. image:: /_static/images/crafter-studio-contextual-right-click-menu.png
-    :height: 280px
-    :width: 280 px
+    :width: 35 %
     :align: center
 
 Occasionally you have so many pages or components in your information architecture that it is not practical to list them or you simply want to
@@ -230,8 +222,7 @@ For these use cases Crafter Studio's site dropdown IA folders support the config
 by an administrator on the Crafter Studio Admin Console.
 
 .. image:: /_static/images/crafter-studio-site-content-ia-folders.png
-    :height: 280px
-    :width: 280 px
+    :width: 35 %
     :align: center
 
 --------------------
