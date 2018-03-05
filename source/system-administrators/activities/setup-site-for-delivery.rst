@@ -18,42 +18,40 @@ In the ``bin`` folder in your Crafter CMS delivery environment, we will use the 
 
 From your command line, navigate to your ``{Crafter-CMS-delivery-environment-directory}/bin/`` , and execute the init-site script:
 
-    * Unix/Linux systems:
+* Unix/Linux systems:
 
-        .. code-block:: bat
+    .. code-block:: bat
 
-            ./init-site.sh  <site name> [site's published repo git url] [ssh private key path]
+        ./init-site.sh  <site name> [site's published repo git url] [ssh private key path]
 
-    * Windows:
+* Windows:
 
-        .. code-block:: bat
+    .. code-block:: bat
 
-            init-site.bat  <site name> [site's published repo git url] [ssh private key path]
+        init-site.bat  <site name> [site's published repo git url] [ssh private key path]
 
 where:
 
     - ``<site name>`` is the name of your site
-    - ``[site's published repo git url]`` is the site's published repository git url. (optional)
-      We recommend using Secure Shell (SSH) or if you are just working on another directory on disk for your delivery, you can just use the filesystem.  When your repository is local, make sure to use the absolute path.
+    - ``[site's published repo git url]`` is the Git URL to the published repository of the Studio server/installation (e.g. ``/opt/crafter/authoring/data/repos/sites/mysite/published``) (optional)
+    - ``[ssh private key path]`` is the local path for the private key used for SSH public/private key authentication. (optional)
 
-      Here is a sample git url using ssh:
+    We recommend using Secure Shell (SSH) with your site's published repo git url and for authentication, to use either username/password authentication or public/private key authentication.
 
-      .. code-block:: sh
+    The SSH Git URL format is: ``ssh://[user@]host.xz[:port]/path/to/repo/`` where sections between **[]** are optional.
 
-          ssh://[user@]host.xz[:port]/path/to/repo/
+    Example #1: ssh://server1.example.com/path/to/repo
 
-      or alternatively for ssh:
+    Example #2: ssh://jdoe@server2.example.com:63022/path/to/repo
 
-      .. code-block:: sh
+    If you are just working on another directory on disk for your delivery, you can just use the filesystem.  When your repository is local, make sure to use the absolute path.
 
-          [user@]host.xz:path/to/repo/
-
-      Here is a sample git url when using a local repository:
+    Here is an example site's published repo git url when using a local repository:
 
       .. code-block:: sh
 
-          /path/to/repo/
-    - ``[ssh private key path]`` is the local path for the private key used for SSH public/private authentication. (optional)
+          /opt/crafter/authoring/data/repos/sites/mysite/published
+
 
 .. note:: When using ``ssh``, we'll need to specify ssh to connect to your port and to use your host key algorithm as the preferred host key algorithm by running this command before running the ``init-site`` script:
 
