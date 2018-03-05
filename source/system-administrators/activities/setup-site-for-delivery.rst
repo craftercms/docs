@@ -36,8 +36,6 @@ where:
     - ``[site's published repo git url]`` is the Git URL to the published repository of the Studio server/installation (e.g. ``/opt/crafter/authoring/data/repos/sites/mysite/published``) (optional)
     - ``[ssh private key path]`` is the local path for the private key used for SSH public/private key authentication. (optional)
 
-    We recommend using Secure Shell (SSH) with your site's published repo git url and for authentication, to use either username/password authentication or public/private key authentication.
-
     The SSH Git URL format is: ``ssh://[user@]host.xz[:port]/path/to/repo/`` where sections between **[]** are optional.
 
     Example #1: ssh://server1.example.com/path/to/repo
