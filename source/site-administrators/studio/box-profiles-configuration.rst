@@ -62,6 +62,8 @@ Sample
         </profile>
     </box>
 
+.. note:: If both ``<privateKey>`` and ``<privateKeyPath>`` is supplied in the configuration, the ``<privateKey>`` will be used.
+
 -----------------
 Box Configuration
 -----------------
