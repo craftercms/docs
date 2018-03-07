@@ -103,7 +103,7 @@ In your ``INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the f
     * OS X/Linux: export SOLR_PORT=8694
     * Windows: SET SOLR_PORT=8694
 
-Next, open the file ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/studio/extension/server-config.properties``, and change the configured port to the desired port for the following:
+Next, open the file ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/search/extension/server-config.properties``, and change the configured port to the desired port for the following:
 
     * crafter.search.solr.server.url
 
