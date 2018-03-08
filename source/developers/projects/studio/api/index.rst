@@ -250,11 +250,3 @@ AWS
 
    aws/elastictranscoder/post-transcode
    aws/s3/post-upload
-
----
-Box
----
-.. toctree::
-   :maxdepth: 1
-
-   box/post-upload
