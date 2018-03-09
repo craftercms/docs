@@ -49,10 +49,10 @@ Parameters
 
 .. note::
     ``*`` Required parameters:
-        * ``remote_username`` is required if ``autehentication_type`` is set to ``basic`` or ``token``
-        * ``remote_password`` is required if ``autehentication_type`` is set to ``basic``
-        * ``remote_token`` is required if ``autehentication_type`` is set to ``token``
-        * ``remote_private_key`` is required if ``autehentication_type`` is set to ``key``
+        * ``remote_username`` is required if ``authentication_type`` is set to ``basic``
+        * ``remote_password`` is required if ``authentication_type`` is set to ``basic``
+        * ``remote_token`` is required if ``authentication_type`` is set to ``token``
+        * ``remote_private_key`` is required if ``authentication_type`` is set to ``key``
 
 -------
 Example
