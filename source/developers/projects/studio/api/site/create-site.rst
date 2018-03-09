@@ -40,17 +40,18 @@ Parameters
 || remote_url          || String    || |checkmark| * || Remote repository url                                       |
 +----------------------+------------+----------------+--------------------------------------------------------------+
 || authentication_type || String    || |checkmark|   || Authentication type to use to access remote repository      |
+||                     ||           ||               ||   ``none``: No authentication                               |
 ||                     ||           ||               ||   ``basic``: username password authentication               |
 ||                     ||           ||               ||   ``token``: username token authentication                  |
-||                     ||           ||               ||   ``key``: key-base authentication                          |
+||                     ||           ||               ||   ``key``: key-based authentication                         |
 +----------------------+------------+----------------+--------------------------------------------------------------+
-|| remote_username     || String    ||               || Username to access remote repository                        |
+|| remote_username     || String    || |checkmark| * || Username to access remote repository                        |
 +----------------------+------------+----------------+--------------------------------------------------------------+
-|| remote_password     || String    ||               || Password to access remote repository                        |
+|| remote_password     || String    || |checkmark| * || Password to access remote repository                        |
 +----------------------+------------+----------------+--------------------------------------------------------------+
-|| remote_token        || String    || |checkmark| * || Token to use for authentication to access remote repository |
+|| remote_token        || String    || |checkmark| * || Token to use to access remote repository                    |
 +----------------------+----------- +----------------+--------------------------------------------------------------+
-|| remote_auth_key     || String    || |checkmark| * || Authentication key to access remote repository              |
+|| remote_private_key  || String    || |checkmark| * || Private key to access remote repository                     |
 +----------------------+-------------+----------------+-------------------------------------------------------------+
 || create_option       || String    || |checkmark| * || Create options for remote repository:                       |
 ||                     ||           ||               ||   ``clone``: clone from remote repository                   |
@@ -62,6 +63,10 @@ Parameters
         * some remote parameters are required if ``use_remote`` is true
         * ``blueprint`` is required if ``use_remote`` is true and ``create_option`` is set to ``push``
         * ``blueprint`` is required if ``use_remote`` is false
+        * ``remote_username`` is required if ``authentication_type`` is set to ``basic``
+        * ``remote_password`` is required if ``authentication_type`` is set to ``basic``
+        * ``remote_token`` is required if ``authentication_type`` is set to ``token``
+        * ``remote_private_key`` is required if ``authentication_type`` is set to ``key``
 
 -------
 Example

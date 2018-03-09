@@ -31,20 +31,20 @@ Parameters
 +----------------------+-------------+----------------+--------------------------------------------------------------+
 || remote_name         || String     || |checkmark|   || Remote repository name                                      |
 +----------------------+-------------+----------------+--------------------------------------------------------------+
-|| remote_url          || String     || |checkmark|   || Url to access remote repository                             |
+|| remote_url          || String     || |checkmark|   || URL to access remote repository                             |
 +----------------------+-------------+----------------+--------------------------------------------------------------+
 || authentication_type || String     || |checkmark|   || Authentication type to use to access remote repository      |
-||                     ||            ||               ||   ``basic``: username password authentication               |
-||                     ||            ||               ||   ``token``: username token authentication                  |
-||                     ||            ||               ||   ``key``: key-base authentication                          |
+||                     ||            ||               ||   ``basic``: username and password authentication           |
+||                     ||            ||               ||   ``token``: token authentication                           |
+||                     ||            ||               ||   ``key``: key-based authentication                          |
 +----------------------+-------------+----------------+--------------------------------------------------------------+
 || remote_username     || String     || |checkmark| * || Username to use to access remote repository                 |
 +----------------------+-------------+----------------+--------------------------------------------------------------+
 || remote_password     || String     || |checkmark| * || Password to use to access remote repository                 |
 +----------------------+-------------+----------------+--------------------------------------------------------------+
-|| remote_token        || String     || |checkmark| * || Token to use for authentication to access remote repository |
+|| remote_token        || String     || |checkmark| * || Token to use to access remote repository                    |
 +----------------------+-------------+----------------+--------------------------------------------------------------+
-|| remote_auth_key     || String     || |checkmark| * || Authentication key to access remote repository              |
+|| remote_private_key  || String     || |checkmark| * || Private key to access remote repository                     |
 +----------------------+-------------+----------------+--------------------------------------------------------------+
 
 .. note::
@@ -52,7 +52,7 @@ Parameters
         * ``remote_username`` is required if ``autehentication_type`` is set to ``basic`` or ``token``
         * ``remote_password`` is required if ``autehentication_type`` is set to ``basic``
         * ``remote_token`` is required if ``autehentication_type`` is set to ``token``
-        * ``remote_auth_key`` is required if ``autehentication_type`` is set to ``key``
+        * ``remote_private_key`` is required if ``autehentication_type`` is set to ``key``
 
 -------
 Example
@@ -103,7 +103,7 @@ Response
 
 .. code-block:: json
 
-  null
+    { "message" : "OK" }
 
 ---------
 Responses
