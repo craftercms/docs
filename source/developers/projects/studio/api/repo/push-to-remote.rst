@@ -47,8 +47,8 @@ Request
 
   {
     "site_id" : "mysite",
-    "remote_name" : "myremote",
-    "remote_branch" : "mybranch"
+    "remote_name" : "origin",
+    "remote_branch" : "master"
   }
 
 
