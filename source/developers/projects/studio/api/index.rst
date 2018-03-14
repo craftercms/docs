@@ -76,8 +76,12 @@ Repo Management
 .. toctree::
    :maxdepth: 1
 
-   repo/sync-from-repo
+   repo/add-remote
+   repo/pull-from-remote
+   repo/push-to-remote
    repo/rebuild-database
+   repo/remove-remote
+   repo/sync-from-repo
 
 -----
 Audit
