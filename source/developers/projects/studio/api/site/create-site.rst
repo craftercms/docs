@@ -50,9 +50,9 @@ Parameters
 || remote_password     || String    || |checkmark| * || Password to access remote repository                        |
 +----------------------+------------+----------------+--------------------------------------------------------------+
 || remote_token        || String    || |checkmark| * || Token to use to access remote repository                    |
-+----------------------+----------- +----------------+--------------------------------------------------------------+
++----------------------+------------+----------------+--------------------------------------------------------------+
 || remote_private_key  || String    || |checkmark| * || Private key to access remote repository                     |
-+----------------------+-------------+----------------+-------------------------------------------------------------+
++----------------------+------------+----------------+--------------------------------------------------------------+
 || create_option       || String    || |checkmark| * || Create options for remote repository:                       |
 ||                     ||           ||               ||   ``clone``: clone from remote repository                   |
 ||                     ||           ||               ||   ``push``: push to remote repository after creating site   |
