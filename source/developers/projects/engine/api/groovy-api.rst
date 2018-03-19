@@ -76,6 +76,14 @@ Controller scripts basically work like a controller in the MVC pattern. They sho
 and similarly to REST scripts, the URL is made up of the directory hierarchy, the script name and the HTTP method. For example,
 a script at Scripts > controllers > myfolder > mycontroller.get.groovy will respond to GET calls at http://mysite/myfolder/mycontroller.
 
+The following is a very simple example script that will do the sum of 2 parameters, put the result in the ``templateModel`` and return
+the path of the FTL template that will render the result:
+::
+
+    templateModel.result = Integer.parseInt(params.num1) + Integer.parseInt(params.num2)
+
+    return "/templates/web/sum.ftl"
+
 One very common controller script is the sitemap.groovy. A sitemap is used by search engines to have a better idea of how to "crawl"
 a website. A sitemap is an XML with references to most of the site's pages, and basically looks like this:
 
