@@ -7,6 +7,7 @@ How-Tos
    :titlesonly:
 
    change-ports-on-your-install
+   developer-workflow
    setting-up-an-ldap-server-for-dev
    working-with-crafter-studios-api
    working-with-dates-freemarker
