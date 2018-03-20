@@ -20,6 +20,28 @@ A **Create Site** dialog will be launched.  In the **Create Site** dialog, click
 
 Once the link is expanded, as mentioned above, there are two options provided for site creation with remote repositories.  For each option, the **Remote Git Repository Name** and **Remote Git Repository URL** needs to be filled out and the rest is optional and only needs to be filled out if required by the remote git repository being used.
 
+Let's take a look at the fields displayed when **Link to upstream remote Git repository** is expanded.
+
+.. image:: /_static/images/system-admin/link-to-upstream-remote-git-repo-expanded.png
+   :alt: System Administrator - Expanded "Link to upstream remote Git repository" fields
+   :width: 65 %
+   :align: center
+
+#. In the **Remote Git Repository Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
+#. In the **Remote Git Repository URL** field you must provide the link to the Git repository you would like to use
+#. In **Remote Git Repository Username** if required, provide your credentials (username)
+#. In **Remote Git Repository Password** if required, provide your credentials (password)
+#. In **Options**, select the option for the operation required, **Create site based on remote git repository** or **Create site based on a blueprint then push to remote bare git repository**
+#. The field **Blueprint** is available when the option **Create site based on a blueprint then push to remote bare git repository** is selected.  Choose one of the default or choose your own.  The available default blueprints are as follows: Empty, Headless_blog, Headless_store and Website_editorial
+
+.. note::
+    For items 3 and 4, Crafter CMS supports the following authentication type to use to access remote repository:
+
+        - username and password authentication - for this method, supply your username and password
+        - username and token authentication - this method is usually used when two-factor authentication is configured on the remote repository to be accessed. Supply your username for the **Remote Git Repository Username** and in the **Remote Git Repository Password**, supply your token.
+        - key-based authentication - for this method, username and password is not required
+
+
 ------------------------------------------------------------------------
 Create site based on a blueprint then push to remote bare git repository
 ------------------------------------------------------------------------
@@ -70,3 +92,4 @@ Under **Options**, select **Create site based on remote git repository**, then c
       :alt: System Administrator - Bulk Publish the whole site filled in"
       :width: 75 %
       :align: center
+
