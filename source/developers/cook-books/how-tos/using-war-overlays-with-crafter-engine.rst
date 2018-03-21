@@ -8,7 +8,7 @@ From time to time:
 
 - you may find that you want to build classes in Java directly
 - or you may need to include dependencies in a deployment where Ivy and Grapes are not an option
-- or you may need to modify the Web.xml of the engine WAR file for some reason.
+- or you may need to modify the ``web.xml`` of the engine WAR file for some reason.
 
 These scenarios are an exception but they do come up. For these scenarios, you want to create a `Maven WAR Overlay <https://maven.apache.org/plugins/maven-war-plugin/overlays.html>`_.  Overlays allow you to add and override contents of Crafter CMS component WARs like Crafter Studio, Engine, Profile, and Social.
 
@@ -40,7 +40,7 @@ Create a directory structure as follows:
 Step 2: Create your Maven POM file
 ----------------------------------
 
-In a file at my-project/pom.xml put the following contents:
+In a file at ``my-project/pom.xml`` put the following contents:
 
 .. code-block:: xml
     :linenos:
@@ -106,7 +106,8 @@ In a file at my-project/pom.xml put the following contents:
 
 |
 
-Note that the above POM file is very simple.  It simply states that you want to download Crafter Engine 3.0.8, Download Amazon’s 1.11.x SDK and then recombine these into a new Engine WAR file called ROOT.war in the output directory target folder.
+.. note::
+    Note that the above POM file is very simple.  It simply states that you want to download Crafter Engine 3.0.8, Download Amazon’s 1.11.x SDK and then recombine these into a new Engine WAR file called ``ROOT.war`` in the output directory target folder.
 
 ---------------------
 Step 3: Run the Build
@@ -127,18 +128,18 @@ Similar output to the following is expected:
     [INFO] ------------------------------------------------------------------------
     [INFO]
     [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ craftercms-engine-overlay ---
-    [INFO] Deleting /Users/rdanner/code/test-war-overlay/target
+    [INFO] Deleting /Users/myuser/code/test-war-overlay/target
     [INFO]
     [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ craftercms-engine-overlay ---
     [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-    [INFO] skip non existing resourceDirectory /Users/rdanner/code/test-war-overlay/src/main/resources
+    [INFO] skip non existing resourceDirectory /Users/myuser/code/test-war-overlay/src/main/resources
     [INFO]
     [INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ craftercms-engine-overlay ---
     [INFO] No sources to compile
     [INFO]
     [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ craftercms-engine-overlay ---
     [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-    [INFO] skip non existing resourceDirectory /Users/rdanner/code/test-war-overlay/src/test/resources
+    [INFO] skip non existing resourceDirectory /Users/myuser/code/test-war-overlay/src/test/resources
     [INFO]
     [INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ craftercms-engine-overlay ---
     [INFO] No sources to compile
@@ -148,11 +149,11 @@ Similar output to the following is expected:
     [INFO]
     [INFO] --- maven-war-plugin:2.1.1:war (default-war) @ craftercms-engine-overlay ---
     [INFO] Packaging webapp
-    [INFO] Assembling webapp [craftercms-engine-overlay] in [/Users/rdanner/code/test-war-overlay/target/ROOT]
+    [INFO] Assembling webapp [craftercms-engine-overlay] in [/Users/myuser/code/test-war-overlay/target/ROOT]
     [INFO] Processing war project
     [INFO] Processing overlay [ id org.craftercms:crafter-engine]
     [INFO] Webapp assembled in [780 msecs]
-    [INFO] Building war: /Users/rdanner/code/test-war-overlay/target/ROOT.war
+    [INFO] Building war: /Users/myuser/code/test-war-overlay/target/ROOT.war
     [INFO] WEB-INF/web.xml already added, skipping
     [INFO] ------------------------------------------------------------------------
     [INFO] BUILD SUCCESS
@@ -168,4 +169,4 @@ Similar output to the following is expected:
 Step 4: Deploy Your New WAR
 ---------------------------
 
-In the project folder, you will now see a target folder with a ROOT.war in it.  This is your new WAR file.  You can now place this in the webapps folder of your Crafter CMS authoring or delivery server.
+In the project folder, you will now see a target folder with a ``ROOT.war`` in it.  This is your new WAR file.  You can now place this in the ``webapps`` folder of your Crafter CMS authoring or delivery server.
