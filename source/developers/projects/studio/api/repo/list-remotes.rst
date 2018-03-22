@@ -1,10 +1,10 @@
-.. _crafter-studio-api-repo-list-remotes:
+.. _crafter-studio-api-repo-list-remote:
 
-============
-List Remotes
-============
+========================
+List Remote Repositories
+========================
 
-List remote repositories of site content repository.
+List remote git repositories for a site.
 
 --------------------
 Resource Information
@@ -13,7 +13,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/repo/list-remotes.json``                 |
+|| URL                       || ``/api/1/services/api/1/repo/list-remote.json``                  |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -37,7 +37,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/services/api/1/repo/list-remotes.json?site_id=mysite``
+``GET .../api/1/services/api/1/repo/list-remote.json?site_id=mysite``
 
 
 ^^^^^^^^
