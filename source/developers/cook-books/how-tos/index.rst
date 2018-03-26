@@ -7,7 +7,6 @@ How-Tos
    :titlesonly:
 
    change-ports-on-your-install
-   developer-workflow
    setting-up-an-ldap-server-for-dev
    using-war-overlays-with-crafter-engine
    working-with-crafter-studios-api
