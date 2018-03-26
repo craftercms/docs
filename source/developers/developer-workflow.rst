@@ -152,11 +152,11 @@ First, please review the following for requirements and supported platforms: :re
 
 We'll then install the Crafter Studio (authoring instance). You can follow the :ref:`quick_start_guide` to install and start authoring.
 
-   Alternatively, you can also install craftercms and start authoring by cloning the craftercms repo and building and deploying it using gradle.
+Alternatively, you can also install craftercms and start authoring by cloning the craftercms repo and building and deploying it using gradle.
 
-      `git clone https://github.com/craftercms/craftercms.git`
-      `./gradlew init build deploy -Penv=authoring`
-      `./gradlew start -Penv=authoring`
+   `git clone https://github.com/craftercms/craftercms.git`
+   `./gradlew init build deploy -Penv=authoring`
+   `./gradlew start -Penv=authoring`
       
 Step 1: Create your upstream
 ----------------------------
@@ -168,7 +168,7 @@ Create an empty repository in your upstream (GitHub, Bitbucket etc.) The specifi
     :width: 70 %
     :align: center    
 
-On Github, once created you will see the following screen. Here you will note the repository URL (https://github.com/russdanner/devworkflowexample.git) which you will need for the next step. Also, if you’re trying to create an upstream for an existing project, you’ll find the instructions below in the “push an existing repository from the command line” section.
+On Github, once created you will see the following screen. Here you will note the repository URL (https://github.com/myuser/devworkflowexample.git) which you will need for the next step. Also, if you’re trying to create an upstream for an existing project, you’ll find the instructions below in the “push an existing repository from the command line” section.
 
 .. image:: /_static/images/developer/workflow/craftercms-bare-repo-2-768x569.png
     :alt: Developer Workflow - Bare repo created in Git
@@ -182,7 +182,7 @@ Next, you want to log in to Crafter Studio as the admin user. The admin user has
 
 .. image:: /_static/images/developer/workflow/craftercms-createsite-1-768x255.png
     :alt: Developer Workflow - Create Site via Crafter Studio
-    :width: 70 %
+    :width: 65 %
     :align: center
 
 Clicking **Create Site** will present you with the Create Site dialog. This dialog changes depending on what you choose. Below is an example of the dialog filled out in a way that creates your project locally, set the Github repository as its upstream remote and pushes the initial project contents to the upstream repository.
@@ -195,11 +195,11 @@ Let’s walk through each part of the dialog:
     :align: center
 
 #. The first thing you need to do is give your site an ID. The ID itself doesn’t matter in a sense. It doesn’t need to match anything per se, technically speaking the only requirement is that it’s unique. That said, it’s a best practice to provide an ID that is meaningful/recognizable to the team. If your website is called FreshFlowers.com a good ID might be “freshflowerscom”
-#. Next, because you plan to connect this project to an upstream repository you want to click the plus (+) on “Link to upstream remote Git repository” This will open a number of new fields.
-#. In the “Remote Git Repository Name” field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
-#. In the “Remote Git Repository URL” field you must provide the link to the Git repository discussed in **Step #1**: https://github.com/russdanner/devworkflowexample.git
-#. Provide your credentials in Git Remote Repository Username and Password
-#. Choose the option: “Create site based on blueprint push to a remote bare repository.” This means that Crafter Studio will create a new site based on the blueprint you choose, link the remote repository as an upstream and then once the blueprint is installed in the local Repositories it will be pushed automatically to the upstream remote.
+#. Next, because you plan to connect this project to an upstream repository you want to click the plus (+) on **Link to upstream remote Git repository** This will open a number of new fields.
+#. In the **Remote Git Repository Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
+#. In the **Remote Git Repository URL** field you must provide the link to the Git repository discussed in **Step #1**: https://github.com/myuser/devworkflowexample.git
+#. Provide your credentials in **Remote Git Repository Username** and **Remote Git Repository Password**
+#. Choose the option: **Create site based on blueprint push to a remote bare repository**. This means that Crafter Studio will create a new site based on the blueprint you choose, link the remote repository as an upstream and then once the blueprint is installed in the local Repositories it will be pushed automatically to the upstream remote.
 #. Choose your blueprint. There are several out of the box blueprints provided by default. Choose one of these or one of your own. For our example, we’ll choose Empty which is the “Hello World” of blueprints.
 #. Click **Create**. Crafter CMS will create the local repositories, Solr core and internal data structures required to support the project and install the blueprint. Once complete it will connect to the upstream and push the contents of the Sandbox repository to the remote.
 
@@ -211,7 +211,7 @@ Let’s walk through each part of the dialog:
 Step 3: Set up Your Delivery Nodes
 ----------------------------------
 
-Now that your project is created you can set up the rest of your production environment by initializing your delivery nodes to receive deployments from authoring. Remember these delivery nodes will pull from Crafter Studio’s repositories, not the upstream remote repository.
+Now that your project is created you can set up the rest of your production environment by initializing your delivery nodes to receive deployments from authoring. **Remember these delivery nodes will pull from Crafter Studio’s repositories, not the upstream remote repository.**
 
 When you add a new delivery node a simple command line script is run on that node that configures it to replicate and process content from the “Published” repository from authoring.
 
@@ -239,8 +239,8 @@ After setting up the topology above, if you just want to get a local environment
 
 #. Install Crafter Studio locally (Source build or Binaries bundle)
 #. Login as Admin
-#. Click Create Site
-#. Fill out the Create Site Form as in a similar fashion described in Step 2, except this time you chose the option to create your site based on an existing upstream repository. This can be your team’s branch or your own fork. The exact workflow is up to you.
+#. Click **Create Site**
+#. Fill out the Create Site Form as in a similar fashion described in Step 2 above, except this time choose the option to create your site based on an existing upstream repository. This can be your team’s branch or your own fork. The exact workflow is up to you.
 
 .. figure:: /_static/images/developer/workflow/Screen-Shot-2018-02-19-at-12.16.00-AM-1-882x1024.png
     :alt: Developer Workflow - Setting up to work locally against the upstream

@@ -19,6 +19,7 @@ This section focuses on how to customize and extend Crafter CMS.  It covers the 
       testing
       errors
       extending-studio/index
+      developer-workflow
 
 ################################
 Subsystems and API Documentation
