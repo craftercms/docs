@@ -49,8 +49,22 @@ Response
 .. code-block:: json
 
     {
-        "remotes" : [ "origin", "upstream" ],
-        "message" : "OK"
+      "total": 2
+      "remotes" :
+      [
+        {
+          "name" : "origin",
+          "url" :  "https://github.com/craftercms/craftercms.git",
+          "fetch" :  "+refs/heads/*:refs/remotes/origin/*",
+          "push_url" :  "https://github.com/craftercms/craftercms.git"
+        },
+        {
+          "name" : "upstream",
+          "url" :  "https://github.com/myrepo/craftercms.git",
+          "fetch" :  "+refs/heads/\*:refs/remotes/origin/\*",
+          "push_url" :  "https://github.com/myrepo/craftercms.git"
+        }
+      ]
     }
 
 ---------
