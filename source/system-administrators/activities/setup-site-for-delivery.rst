@@ -51,11 +51,9 @@ where:
           /opt/crafter/authoring/data/repos/sites/mysite/published
 
 
-.. note:: When using ``ssh``, we'll need to specify ssh to connect to your port and to use your host key algorithm as the preferred host key algorithm by running this command before running the ``init-site`` script:
-
-          .. code-block:: bash
-
-              ssh -o HostKeyAlgorithms=<your-host-key-algorithm> <hostname> -p<your-port>
+.. note::
+  When using ``ssh``, you might see in the logs ``com.jcraft.jsch.JSchException: UnknownHostKey`` errors. These errors are common in Ubuntu, and are caused by known host
+  keys being stored in non-RSA format. Please follow the instructions in :ref:`crafter-studio-debugging-deployer-issues` under ``SSH Unknown Host`` to resolve them. 
 
 
 -----------------------------
@@ -98,4 +96,3 @@ To set the site to the ``myawesomesite``, in your browser, type in
     :width: 100 %
     :align: center
     :alt: Setup Site for Delivery - My Awesome Site
-

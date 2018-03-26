@@ -119,6 +119,7 @@ change the port to the desired port listed in the following:
     * studio.db.url
     * studio.db.initializer.url
     * studio.db.port
+    * studio.db.socket
 
 Next, in your ``INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
 
