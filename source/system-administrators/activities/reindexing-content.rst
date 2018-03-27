@@ -1,5 +1,4 @@
-.. _reindex-search:
-.. index:: Search; Solr; Reindex; Crafter Search; Dev Ops; System Administrators;
+.. _reindexing-content:
 
 =========================================
 Reindexing Content for Search and Queries
@@ -99,7 +98,7 @@ After sending the CURL command, you will get a response like this:
 
 .. code-block:: guess
 
-   {"message":"OK"}%
+   {"message":"OK"}
 
 |
 
@@ -107,15 +106,14 @@ After sending the CURL command, you will get a response like this:
 Step 3: Wait for indexing
 -------------------------
 
-You will see indexing activity in the deployment log located in ``INSTALL_DIRECTORY/logs/deployer/crafter-deployer.out``. Indexing activity time is dependent on the amount of content which must be re-processed. When the deployment/indexing finishes you should see something like the following in the log:
+You will see indexing activity in the deployment log located in ``INSTALL_DIRECTORY/logs/deployer/crafter-deployer.out``. Indexing activity time is dependent on the amount of content which must be re-processed. When the
+deployment/indexing finishes you should see something like the following in the log:
 
 .. code-block:: guess
 
 	2017-07-25 16:52:03.762  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : ------------------------------------------------------------
 	2017-07-25 16:52:03.763  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : Deployment for editorial-preview finished in 2.359 secs
 	2017-07-25 16:52:03.763  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : ------------------------------------------------------------
-
-|
 
 --------------------------------
 Step 4: Check deployment results

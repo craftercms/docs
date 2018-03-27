@@ -58,6 +58,7 @@ Activities
    activities/backup-and-recovery.rst
    activities/logging.rst
    activities/reindexing-content.rst
+   activities/reindexing-content-in-prod.rst
    activities/setup-site-for-delivery
    activities/sync-studio-database-with-repo.rst
    activities/troubleshooting.rst
