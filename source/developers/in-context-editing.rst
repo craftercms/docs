@@ -84,7 +84,7 @@ To define a drop zone for components simply add the following attribute to the c
 
 .. code-block:: guess
 
-	<@studio.componentContainerAttr target="bottomPromos"  objectId=contentModel.objectId />
+	<@studio.componentContainerAttr target="bottomPromos" objectId=contentModel.objectId />
 
 Tag Attributes
 --------------
@@ -107,8 +107,8 @@ Example:
 .. code-block:: guess
 
 	<div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" objectId=contentModel.objectId /> >
-        ...
-    <div>
+		...
+	<div>
 
 If you want to learn how to configure the Drag and Drop panel please read the following document: :doc:`../site-administrators/studio/drag-n-drop-configuration`.
 
