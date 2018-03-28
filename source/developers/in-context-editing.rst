@@ -97,6 +97,10 @@ Tag Attributes
 ||               ||                             ||                                               |
 ||               ||                             || This is typically an item selector field type.|
 +----------------+------------------------------+------------------------------------------------+
+|| objectId      || Yes                         || Id for component container which is typically |
+||               ||                             || the store URL of the current content object   |
+||               ||                             || (contentModel.objectId)                       |
++----------------+------------------------------+------------------------------------------------+
 
 Example:
 
