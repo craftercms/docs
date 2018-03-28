@@ -108,7 +108,7 @@ Example:
 
 	<div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" objectId=contentModel.objectId /> >
 		...
-	<div> 
+	<div>
 
 If you want to learn how to configure the Drag and Drop panel please read the following document: :doc:`../site-administrators/studio/drag-n-drop-configuration`.
 
