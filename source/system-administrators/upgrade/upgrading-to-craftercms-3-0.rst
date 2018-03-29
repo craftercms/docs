@@ -44,27 +44,25 @@ Export the 2.5.x Site
 Export the site's Studio config (``cstudio/config/sites/{siteName}``) and the site's content (``wem_projects/{siteName}/{siteName}/work-area`` folders
 from Alfresco or from your local 2.5.x repository. Then, copy these folders into a location in the system with Crafter 3.0.x installed.
 
-^^^^^^^^^^^^^^^^^^^^^
-Run the Import Script
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
+Run the Migration Script
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Before running the script, make sure:
+Before running the script, make sure:
 
-   - ``curl`` and ``git`` are installed.
-   - Studio 3.0.x is running.
-   - There's no site in Studio with the same name as the one you're migrating.
+  - ``curl`` and ``git`` are installed.
 
-#. Run the ``migrate.sh``, which is located under ``crafter-authoring/bin/migration`` directory. The script takes 3 parameters:
+Run the ``migrate.sh``, which is located under ``crafter-authoring/bin/migration`` directory. The script takes 3 parameters:
 
-   - The name of the new 3.0 site where the original site will be migrated.
-   - The location of the 2.5 Studio configuration (where the content-types reside).
-   - The root of the 2.5 site (where the site, scripts, static-assets and template folders reside).
+  - The name of the new 3.0 site where the original site will be migrated.
+  - The location of the 2.5 Studio configuration (where the content-types reside).
+  - The root of the 2.5 site (where the site, scripts, static-assets and template folders reside).
 
 The script will basically attempt to execute these operations:
 
-**Setup migrate repo:**
+**Setup a migrate repo:**
 
-#. Create a Git repo from 3.0 site skeleton under the ``crafter-authoring/bin/migrate/work`` directory. All migration work will be done under this
+#. Create a Git repo from 3.0 site skeleton under the ``crafter-authoring/data/migrate`` directory. All migration work will be done under this
    directory.
 
 **Import content types:**
@@ -103,22 +101,22 @@ The script will basically attempt to execute these operations:
 
 **Update the date format:**
 
-#. Search for old date patterns (``MM/dd/yyyy HH:mm:ss``) in Groovy and Freemarker files and ask the user to change them if necessary.
 #. Change the format of stored dates in XML descriptors under ``site``, from ``MM/dd/yyyy HH:mm:ss`` to ``yyyy-MM-dd'T'HH:mm:ss.SSSX.**``
 
-**Create 3.0 site:**
+**Commit the files:**
 
-#. Call studio to create the 3.0 site and to clone the site from the work repository.
+#. Commit the added files in chunks (by default of 1000), to avoid generating a single giant commit that would slow down Git.
 
-After all the previous steps, and after you have entered Studio's username/password, the next thing to do is wait for the site creation
-process to complete. You can tail the ``crafter-authoring/logs/tomcat/catalina.out`` meanwhile to watch the progress.
+**Check for old date format in code:**
 
-^^^^^^^^^^^^
-Manual Steps
-^^^^^^^^^^^^
+#. Search for old date patterns (``MM/dd/yyyy HH:mm:ss``) in Groovy and Freemarker files and ask the user to change them if necessary.
 
-Depending on your site customizations, you might want to do this additional steps, after the site has been created (or you can also do them
-before site creation, just before entering the Studio credentials):
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Manual Steps After Migration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Depending on your site customizations, you might want to do these additional steps, after the site has been migrated. You can find the migrated
+repository under ``crafter-authoring/data/migration/{siteName}``, and perform the changes there.
 
 #. Migrate old Studio configuration, which includes:
 
@@ -132,6 +130,34 @@ before site creation, just before entering the Studio credentials):
 #. Migrate code from the old content type controllers into the new ``controller.groovy`` (like mentioned above).
 #. Change the date pattern from ``MM/dd/yyyy HH:mm:ss`` to ``yyyy-MM-dd'T'HH:mm:ss.SSSX``, when parsing a ``_dt`` field extracted from the content model
    (make sure ``<disableFullModelTypeConversion>`` is set as true, which the script should have done automatically).
+
+After you've made any necessary changes, commit them.
+
+^^^^^^^^^^^^^^^^^^^^^
+Run the Import Script
+^^^^^^^^^^^^^^^^^^^^^
+
+This is the last step of the migration/import, and basically involves importing the migrated site into Studio. Before continuing, make sure:
+
+  - Studio 3.0.x is running.
+  - There's no site in Studio with the same name as the one you're migrating.
+
+Run the ``import.sh``, which is located under ``crafter-authoring/bin/migration`` directory. The script takes 1 parameter, the name of the site,
+which should be the same one that you used on the migration process.
+
+The import script will basically attempt to execute these operations:
+
+**Create 3.0 site:**
+
+#. Call studio to create the 3.0 site and to clone the site from the work repository. The script will ask you for Studio's username and password.
+
+After this, you just need to wait for the site creation process to complete. You can tail the ``crafter-authoring/logs/tomcat/catalina.out`` meanwhile to
+watch the progress. The site should be ready when you see the following line in the log:
+
+.. code-block:: guess
+
+  [INFO] 2018-03-29 11:54:42,063 [studioSchedulerFactoryBean_Worker-1] [site.SiteServiceImpl] | Done syncing database with repository for site: mysite fromCommitId = a1f2f8beba50da9cc75fcd3aa97d412750ef5225 with a final result of: true
+  [INFO] 2018-03-29 11:54:42,063 [studioSchedulerFactoryBean_Worker-1] [site.SiteServiceImpl] | Last commit ID for site: mysite is 069f82a4bb3bce1e8cb3c2abc030f9a2cb68e9a9
 
 --------
 Delivery
