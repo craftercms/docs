@@ -58,6 +58,12 @@ Run the ``migrate.sh``, which is located under ``crafter-authoring/bin/migration
   - The location of the 2.5 Studio configuration (where the content-types reside).
   - The root of the 2.5 site (where the site, scripts, static-assets and template folders reside).
 
+Example:
+
+.. code-block:: sh
+
+  ./migrate.sh mysite ~/crafter/crafter-2.5.x/authoring/data/repo/cstudio/config/mysite ~/crafter/crafter-2.5.x/authoring/data/repo/wem-projects/mysite/mysite/work-area
+
 The script will basically attempt to execute these operations:
 
 **Setup a migrate repo:**
@@ -131,7 +137,7 @@ repository under ``crafter-authoring/data/migration/{siteName}``, and perform th
 #. Change the date pattern from ``MM/dd/yyyy HH:mm:ss`` to ``yyyy-MM-dd'T'HH:mm:ss.SSSX``, when parsing a ``_dt`` field extracted from the content model
    (make sure ``<disableFullModelTypeConversion>`` is set as true, which the script should have done automatically).
 
-After you've made any necessary changes, commit them.
+After you've made any necessary changes, commit them by doing ``git add .`` and then ``git commit -m "Manual changes for migration"``.
 
 ^^^^^^^^^^^^^^^^^^^^^
 Run the Import Script
@@ -144,6 +150,12 @@ This is the last step of the migration/import, and basically involves importing 
 
 Run the ``import.sh``, which is located under ``crafter-authoring/bin/migration`` directory. The script takes 1 parameter, the name of the site,
 which should be the same one that you used on the migration process.
+
+Example:
+
+.. code-block:: sh
+
+  ./import.sh mysite
 
 The import script will basically attempt to execute these operations:
 
