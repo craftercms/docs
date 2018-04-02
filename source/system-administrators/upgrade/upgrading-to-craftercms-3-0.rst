@@ -41,8 +41,15 @@ Authoring
 Export the 2.5.x Site
 ^^^^^^^^^^^^^^^^^^^^^
 
-Export the site's Studio config (``cstudio/config/sites/{siteName}``) and the site's content (``wem_projects/{siteName}/{siteName}/work-area`` folders
-from Alfresco or from your local 2.5.x repository. Then, copy these folders into a location in the system with Crafter 3.0.x installed.
+#. Export the site's Studio config (``cstudio/config/sites/{siteName}``) and the site's content (``wem_projects/{siteName}/{siteName}/work-area``
+   from your Crafter 2.5 installation:
+
+   - If your Crafter 2.5 uses Alfresco as the repository, login to Alfresco Share and download the folders as zips from the
+     ``Repository`` tab, or copy them using WebDav.
+   - If your Crafter 2.5 uses the local filesystem as the repository, go to ``CRAFTER_INSTALLATION/data/repo`` and there you'll find
+     the aforementioned folders.
+
+#. Then, copy the folders (or extract the zip) under any location on the machine with Crafter 3.0 installed.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Run the Migration Script
