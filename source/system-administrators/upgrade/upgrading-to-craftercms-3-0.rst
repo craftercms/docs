@@ -44,7 +44,7 @@ Export the 2.5.x Site
 #. Export the site's Studio config (``cstudio/config/sites/{siteName}``) and the site's content (``wem_projects/{siteName}/{siteName}/work-area``
    from your Crafter 2.5 installation:
 
-   - If your Crafter 2.5 uses Alfresco as the repository, login to Alfresco Share and download this folders as zips from the
+   - If your Crafter 2.5 uses Alfresco as the repository, login to Alfresco Share and download the folders as zips from the
      ``Repository`` tab, or copy them using WebDav.
    - If your Crafter 2.5 uses the local filesystem as the repository, go to ``CRAFTER_INSTALLATION/data/repo`` and there you'll find
      the aforementioned folders.
