@@ -1,0 +1,16 @@
+------------------
+Crafter CMS 3.0.10
+------------------
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Add Studio REST API support for working with remote repositories
+* Add support for Studio to process/transform uploaded assets through pipelines
+* Add a processor that executes a command line process in the Deployer
+* Studio bug fixes
+* Minor UI bug fixes
+* Documentation updates
+
+For a full list of tickets, please visit: `GitHub 3.0.10 Milestone <https://github.com/craftercms/craftercms/milestone/32?closed=1>`_
