@@ -39,6 +39,10 @@ Parameters
 +----------------------+------------+----------------+--------------------------------------------------------------+
 || remote_url          || String    || |checkmark| * || Remote repository url                                       |
 +----------------------+------------+----------------+--------------------------------------------------------------+
+|| remote_branch       || String    ||               || Branch to clone repo from                                   |
++----------------------+------------+----------------+--------------------------------------------------------------+
+|| single_branch       || Boolean   ||               || Clone single branch if true, otherwise clone all            |
++----------------------+------------+----------------+--------------------------------------------------------------+
 || authentication_type || String    || |checkmark|   || Authentication type to use to access remote repository      |
 ||                     ||           ||               ||   ``none``: No authentication                               |
 ||                     ||           ||               ||   ``basic``: username password authentication               |
