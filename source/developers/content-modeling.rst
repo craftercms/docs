@@ -165,6 +165,7 @@ Content Creation Permissions
 Limiting where a content type can be created is through the Configuration Property of a content type (config.xml) using the following tags:
 
 .. code-block:: xml
+    :linenos:
 
     <paths>
         <includes>
@@ -172,9 +173,12 @@ Limiting where a content type can be created is through the Configuration Proper
         </includes>
     </paths>
 
+|
+
 OR
 
 .. code-block:: xml
+    :linenos:
 
     <paths>
 	    <excludes>
@@ -182,6 +186,7 @@ OR
 	    </excludes>
     </paths>
 
+|
 
 You can only use one of either include or exclude. Use Include when you need to whitelist places, use exclude when you need to blacklist.
 
@@ -199,7 +204,10 @@ To limit where this particular content type can be created, the tags, <paths><in
     :alt: Form Engine Properties Configuration File config.xml
     :align: center
 
+|
+
 .. code-block:: xml
+    :linenos:
 
     <paths>
         <includes>
@@ -207,17 +215,23 @@ To limit where this particular content type can be created, the tags, <paths><in
         </includes>
     </paths>
 
+|
+
 To see how the above tags/example works, go to the **Sidebar** and right click on the **Home** folder and select **New Content**.  Notice that content type **Page - Article** is not available from the content types listed.
 
 .. figure:: /_static/images/content-model/form-engine-prop-config-sample-no.png
     :alt: Form Engine Properties Config File "Page - Articles" Not Available
     :align: center
 
+|
+
 From the **Sidebar** again, navigate from the **Pages** folder to the /Home/articles/2016/12/ folder then right click and select **New Content**, notice that the content type **Page - Article** is available from the list.
 
 .. figure:: /_static/images/content-model/form-engine-prop-config-sample-yes.png
     :alt: Form Engine Properties Config File "Page - Articles" Available
     :align: center
+
+|
 
 To see more examples, try creating content types in the other folders in the **Sidebar** such as the **Taxonomy** folder, the **Components** folder and anywhere under the **Pages** folder.
 
@@ -240,7 +254,7 @@ Enabling cascade on delete is configured through the content type **Configuratio
 
 We'll look at an example of how to enable cascade on delete on the **Page - Article** content type in the Website_editorial blueprint.
 
-From the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Content Types**, then open an existing content type.  We will select the content type **Page - Article** for editing.  Next, go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name **config.xml**, click on that pencil to edit.
+From the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Content Types**, then **Open an existing content type**.  We will select the content type **Page - Article** for editing.  Next, go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name **config.xml**, click on that pencil to edit.
 
 We're going to enable cascade on delete for articles (**Page - Article** content type) containing images under ``/static-assets/images/page``, and we'll also delete empty folders under ``/static-assets/images/page`` by adding the following code in the **config.xml** file:
 
@@ -254,11 +268,15 @@ We're going to enable cascade on delete for articles (**Page - Article** content
 	    </delete-dependency>
     </delete-dependencies>
 
+|
+
 To see cascade on delete in action, let's create a new article (**Page - Article** content type) under one of the article folders in the **Sidebar**.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.
 
 .. figure:: /_static/images/content-model/new-article-image-uploaded.png
     :alt: New article with image uploaded activity list in Dashboard
     :align: center
+
+|
 
 Let's look at the dependencies of our newly created article, where we expect the image under the ``static-assets/images/page`` will be deleted when we delete the article since we have configured cascade on delete for content type **Page - Article** for items under the directory ``static-assets/images/page``:
 
@@ -266,12 +284,64 @@ Let's look at the dependencies of our newly created article, where we expect the
     :alt: New article with image uploaded dependencies
     :align: center
 
+|
+
 Open the **Sidebar** and navigate to the newly created article.  Right click on the newly created article and select **Delete**.  Open the **Dashboard** and notice the items listed as deleted in the **My Recent Activity** widget.
 
 .. figure:: /_static/images/content-model/new-article-child-items-deleted.png
     :alt: New article with image uploaded deleted activity list in Dashboard
     :align: center
 
+|
+
+Copy Dependencies Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Copy dependencies allows the automatic copying of child items matching a regexp when a content is copied.
+
+Enabling copy dependencies is configured through the content type **Configuration** property (config.xml) using the following tags:
+
+.. code-block:: xml
+    :linenos:
+
+        <copy-dependencies>
+            <copy-dependency>
+                <pattern>REG_EXP_HERE</pattern>
+                <target>FOLDER_FOR_COPIES</target>
+            </copy-dependency>
+        </copy-dependencies>
+
+|
+
+We'll look at an example of how to enable copy dependencies on the **Page - Article** content type in the Website_editorial blueprint.
+
+From the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Content Types**, then click on **Open Existing Type**.  We will select the content type **Page - Article** for editing.  Next, go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name **config.xml**, click on that pencil to edit.
+
+We're going to enable copy dependencies for articles (**Page - Article** content type) containing images under ``/static-assets/images/`` and placing the copies in folder ``/static-assets/images/articles/`` by adding the following code in the **config.xml** file:
+
+.. code-block:: xml
+    :linenos:
+
+        <copy-dependencies>
+            <copy-dependency>
+                <pattern>(^/static-assets/images/.*)</pattern>
+                <target>/static-assets/images/articles/</target>
+            </copy-dependency>
+        </copy-dependencies>
+
+|
+
+Click on **Update**, then save changes made to the content type by clicking on **Save**.
+
+To see copy dependencies in action, let's copy an article under one of the article folders from the **Sidebar**.  First, we'll create the folder ``articles`` under ``/static-assets/images``.  Next, we'll navigate to ``articles/2016/12/Top Books For Young Women``.  Right click on the article and select **Copy**.  Navigate to ``articles/2016/7``, right click on the folder and select **Paste**.
+
+Let's look at the dependencies of our copied article, where we expect a copy of the image under the ``static-assets/images/articles`` will be located since we have configured cop dependencies for content type **Page - Article** for items under the directory ``static-assets/images``:
+
+.. figure:: /_static/images/content-model/copied-article-dependencies.png
+    :alt: Copy of article with copy of image
+    :align: center
+
+|
 
 .. _form-controls:
 
