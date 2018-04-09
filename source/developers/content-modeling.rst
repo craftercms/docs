@@ -49,12 +49,16 @@ Content models are defined via Crafter Studio's graphical modeling tool under Co
 	:alt: Site Config - Content Types
 	:align: center
 
+|
+
 You can now either create a new content type or open an existing type. Creating a new content type brings up a dialog that requests some basic content type information.
 
 .. image:: /_static/images/content-model/create-content-type-1.png
 	:width: 40%
 	:alt: Site Config - Create Content Type
 	:align: center
+
+|
 
 You now specify:
 
@@ -73,6 +77,8 @@ Form Builder Basics
 .. figure:: /_static/images/content-model/create-content-type-2.png
 	:alt: Content Type Editor
 	:align: center
+
+|
 
 Crafter Studio's Form Builder
 
@@ -456,17 +462,20 @@ Data Sources
 	:alt: Form Engine Data Sources
 	:align: center
 
-Data Sources are pickers that help pull in content from internal or external storage/systems. For example, data source include: desktop video uploader, desktop image uploader, and so on. Crafter CMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
+Data Sources are pickers that help pull in content from internal or external storage/systems.  For example, data source include: desktop video uploader, desktop image uploader, and so on. Crafter CMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
+
+Data Sources allows the content model designer to decide where different assets uploaded via different controls go (for instance icons, images, RTE related assets, etc.).  It has it's own properties, like "Repository Path", which specifies the path where assets are stored, which help keep the system consistent over time.  The storage destination designed in the model dictates how those assets are handled during a duplicate event (duplicate the asset or duplicate the reference to the asset).
 
 Form Engine Data Sources (please use the scrollbar to see more controls)
 
 .. include:: form-sources/list-form-sources.rst
 
+
 ^^^^^^^^^^^
 Form Canvas
 ^^^^^^^^^^^
 
-The canvas is where the form actually gets built. The building process is perfomed by simply dragging the controls from the Form Controls over to the canvas, rearranging the controls in the order you'd like to present to the content authors, and configuring the controls individually.
+The canvas is where the form actually gets built. The building process is performed by simply dragging the controls from the Form Controls over to the canvas, rearranging the controls in the order you'd like to present to the content authors, and configuring the controls individually.
 
 Controls on the canvas are configured by clicking on the control, and then editing the control's configuration in the Properties Explorer, see item #3 in :ref:`form-builder-basics`. Different controls have different configuration, so please review the individual form control configuration listed in :ref:`form-controls`.
 
