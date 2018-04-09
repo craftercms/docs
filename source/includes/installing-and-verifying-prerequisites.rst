@@ -122,3 +122,15 @@ For OS X users, the latest ``openssl`` formula needs to be installed via homebre
 .. code-block:: sh
 
     brew install openssl
+
+|
+
+^^^^^^^^^^^^^^^^^^
+Linux prerequisite
+^^^^^^^^^^^^^^^^^^
+
+For Linux users, some of the scripts uses ``lsof``.  Please note that some Linux distributions does not come with ``lsof`` pre-installed and so, may need to be installed.
+
+To install ``lsof`` for Debian-based Linux distros: ``apt-get install lsof``
+
+To install ``lsof`` for RedHat-based Linux distros: ``yum install lsof``
