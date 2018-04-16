@@ -252,11 +252,11 @@ Solr Query
 In this section, we will be looking at how to use a query to provide suggestions as the user types.
 
 .. figure:: /_static/images/search/search-typeahead-box.png
-  :scale: 50 %
+  :width: 50 %
   :align: center
   
 .. figure:: /_static/images/search/search-typeahead-suggestions.png
-  :scale: 50 %
+  :width: 50 %
   :align: center
 
 ^^^^^^^^^^^^^^^^^

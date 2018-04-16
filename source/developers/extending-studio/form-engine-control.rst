@@ -12,9 +12,7 @@ A form control is a UX element to help authors capture and edit content and meta
 Crafter Studio form controls should be written in a way that makes them independent of the data they allow the user to select so that they can be (re)used across a wide range of data sets.
 
 .. image:: /_static/images/content-model/create-content-type-2.png
-        :height: 800px
-        :width: 800 px
-        :scale: 75 %
+        :width: 75 %
         :alt: Content Type Editor
         :align: center
 
@@ -113,10 +111,8 @@ Our example is a grouped checkbox that allows the author to select one or more i
 Control Code
 ^^^^^^^^^^^^
 .. image:: /_static/images/form-engine-control-example.png
-	:height: 500px
-	:width: 432 px
-	:scale: 50 %
-	:alt: Form Engine Control Example
+    :width: 50 %
+    :alt: Form Engine Control Example
 
 **Location /STUDIO-WAR/default-site/static-assets/components/cstudio-forms/controls/checkbox-group.js**
 
