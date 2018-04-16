@@ -11,9 +11,7 @@ What is a Data Source
 Crafter Studio form controls should be written in a way that makes them independent of the data they allow the user to select so that they can be (re)used across a wide range of data sets. To accomplish this objective we use a data source pattern where by the form control widget code is concerned with rendering and facilitating the data capture/selection process but delegates the retrieval of the content to a separate swappable component interface known as a data source.
 
 .. image:: /_static/images/content-model/create-content-type-2.png
-        :height: 800px
-        :width: 800 px
-        :scale: 75 %
+        :width: 75 %
         :alt: Content Type Editor
         :align: center
 
@@ -96,10 +94,8 @@ Data Source Code
 ^^^^^^^^^^^^^^^^
 
 .. image:: /_static/images/data-source-example.png
-	:height: 500px
-	:width: 432 px
-	:scale: 50 %
-	:alt: Form Engine Control Example
+    :width: 50 %
+    :alt: Form Engine Control Example
 
 **Location /STUDIO-WAR/components/cstudio-forms/data-sources/configured-list.js**
 
