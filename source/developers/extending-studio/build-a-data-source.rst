@@ -13,7 +13,7 @@ Crafter Studio form controls should be written in a way that makes them independ
 .. image:: /_static/images/content-model/create-content-type-2.png
         :height: 800px
         :width: 800 px
-        :scale: 75 %
+        :width: 75 %
         :alt: Content Type Editor
         :align: center
 
@@ -98,7 +98,7 @@ Data Source Code
 .. image:: /_static/images/data-source-example.png
 	:height: 500px
 	:width: 432 px
-	:scale: 50 %
+	:width: 50 %
 	:alt: Form Engine Control Example
 
 **Location /STUDIO-WAR/components/cstudio-forms/data-sources/configured-list.js**
