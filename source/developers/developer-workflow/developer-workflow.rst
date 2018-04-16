@@ -10,7 +10,7 @@ Here's a typical developer process and set of environments which must be followe
 
 .. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-Typical-DevOps-Workflow-1024x335.png
     :alt: Developer Workflow - Typical developer process and set of environments
-    :scale: 100 %
+    :width: 100 %
     :align: center
 
 We'll first tackle Crafter CMS content management and deployment mechanics, then the DevOps workflow and finally how to setup the workflow.
@@ -71,7 +71,7 @@ Let's take a look at a typical developer workflow that’s integrated with the p
 
 .. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-DEVOPS-FLOW-1024x603.png
     :alt: Developer Workflow - Typical DevOps Workflow
-    :scale: 70 %
+    :width: 70 %
     :align: center
 
     **DevOps workflow that describes in general how content flows back to the development process and code flows forward through the certification process to production**
@@ -84,7 +84,7 @@ In order to facilitate a developer workflow, you want to establish an upstream r
 
 .. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-flow-1-768x496.png
     :alt: Developer Workflow - Create upstream repository
-    :scale: 70 %
+    :width: 70 %
     :align: center
 
     **A Git repository with support for “developer/team workflow” such as Github, GitLab or Bitbucket is configured as a remote upstream repository of the Production Authoring Sandbox repository.  This is the primary point of contact between the authoring process and the development and code release process come together.**
@@ -97,7 +97,7 @@ You will want to keep the upstream repository up to date with authoring. The bes
 
 .. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-FLOW-2-1024x693.png
     :alt: Developer Workflow - Use Automation to Sync Sandbox with the Upstream
-    :scale: 70 %
+    :width: 70 %
     :align: center
 
     **Content flows from Production Authoring Sandbox to the Developer repository via automated Git Push**
@@ -108,7 +108,7 @@ From this upstream repository, you will feed all lower environments and branch f
 
 .. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-flow3-1024x726.png
     :alt: Developer Workflow - Use the Upstream Repository to Support Development and Testing Environments and Workflow
-    :scale: 70 %
+    :width: 70 %
     :align: center
 
     **Development branches and forks can be created to meet your specific workflow needs.  Lower environments use these repositories and branches as their upstream.**
@@ -120,7 +120,7 @@ Once the merge operation is complete in the upstream repository your automation 
 
 .. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-flow4-1024x603.png
     :alt: Developer Workflow - Merge Code Updates Into the Upstream Master and Pull them to the Production Authoring Sandbox Repository
-    :scale: 70 %
+    :width: 70 %
     :align: center
 
     **Use “Pull Requests” and other Git workflow mechanics to promote code through the process.  When it’s ready to go live merge it to the “Master” of the Developer Repository.  At this point, it will flow via automation to the Production Authoring Sandbox.**
@@ -131,7 +131,7 @@ Once your development work is in the Production Sandbox you will want to publish
 
 .. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-flow5-1024x821.png
     :alt: Developer Workflow - Use Crafter Studio’s Publish Commits API to Publish Code to Delivery
-    :scale: 70 %
+    :width: 70 %
     :align: center
 
     **Move code from Sandbox to Published with a simple API call.**
