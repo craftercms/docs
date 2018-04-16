@@ -57,6 +57,16 @@ Site Profile
 	site/profile/get
 	site/profile/set
 
+---------------
+Site Navigation
+---------------
+
+.. toctree::
+	:maxdepth: 1
+
+	site/navigation/breadcrumb
+	site/navigation/tree
+
 ----------
 Monitoring
 ----------
