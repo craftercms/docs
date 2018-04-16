@@ -94,7 +94,7 @@ List of available category tags
 
 .. image:: /_static/images/site-admin/dnd-config1.png
 		:align: center
-		:scale: 90 %
+		:width: 90 %
 		:alt: DnD Panel
 
 ^^^^^^
@@ -120,5 +120,5 @@ List of available browse tags
 
 .. image:: /_static/images/site-admin/dnd-config2.png
 		:align: center
-		:scale: 90 %
+		:width: 90 %
 		:alt: DnD Panel
