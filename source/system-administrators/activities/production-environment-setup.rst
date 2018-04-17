@@ -5,7 +5,13 @@ Setting up a Crafter CMS production environment
 ===============================================
 
 This section lets you get started on setting up your Crafter CMS for production. A production environment normally consists of one authoring instance
-and one or more delivery instances. Before we begin, please review the following for requirements and supported platforms: :ref:`requirements_supported_platforms`
+and one or more delivery instances.
+
+Before we begin, please review the following for requirements and supported platforms: :ref:`requirements_supported_platforms`
+
+-------------------------------------
+Setting up the production environment
+-------------------------------------
 
 #. We'll first install the authoring instance. You can follow the :ref:`quick_start_guide` to install and start authoring.
 
@@ -42,3 +48,23 @@ and one or more delivery instances. Before we begin, please review the following
 #. Your production environment is now ready.
 
 For more information on using gradle, please see :ref:`crafter-cms`.
+
+-------------------------------------------
+Server Hardware Configuration Consideration
+-------------------------------------------
+
+Crafter CMS performs multiple reads/writes to disk from various concerns such as the database, the repository, logs, etc. with very different I/O patterns.  One of the primary factor for hardware bottlenecks is disk I/O.
+
+For optimal performance, the server should have different storage systems (disks) mounted for different concerns, for example:
+
+|    /dev/{dev0} -> /
+|    /dev/{dev1} -> /opt/crafter/data/db
+|    /dev/{dev2} -> /opt/crafter/data/repos
+|    /dev/{dev3} -> /opt/crafter/data/indexes
+|    /dev/{dev4} -> /opt/crafter/logs
+|    /dev/{dev5} -> /opt/crafter/data/mongodb
+|    /dev/{dev6} -> /var
+|    /dev/{dev7} -> /home
+|    /dev/{dev8} -> /usr
+
+|
