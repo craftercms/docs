@@ -67,6 +67,15 @@ Site Navigation
 	site/navigation/breadcrumb
 	site/navigation/tree
 
+------------------
+URL Transformation
+------------------
+
+.. toctree::
+	:maxdepth: 1
+
+	site/url/transform
+
 ----------
 Monitoring
 ----------
