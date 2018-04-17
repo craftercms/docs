@@ -57,6 +57,7 @@ Activities
 
    activities/backup-and-recovery.rst
    activities/logging.rst
+   activities/production-environment-setup.rst
    activities/reindexing-content.rst
    activities/reindexing-content-in-prod.rst
    activities/setup-site-for-delivery
