@@ -10,4 +10,6 @@ This section explains the basic mechanics that support content authoring, publis
       :titlesonly:
 
       developer-workflow
+      code-repo-n-devops-workflow
       connecting-prod-cms-to-dev-workflow
+      implementation-prod-repo-sync
