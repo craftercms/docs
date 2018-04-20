@@ -68,3 +68,5 @@ For optimal performance, the server should have different storage systems (disks
 |    /dev/{dev8} -> /usr
 
 |
+
+For more information on tuning your authoring environment for better performance, please see: :ref:`authoring-env-performance-tuning.rst`
