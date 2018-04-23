@@ -6,22 +6,22 @@ Authoring Environment Performance Tuning
 
 This section describes ways on how to enhance the authoring environment performance by tuning authoring environment settings and recommendations for hardware configurations.
 
-----------------------------------
-Crafter Studio Server Requirements
-----------------------------------
-Minimum Installation
+-------------------
+Server Requirements
+-------------------
+Minimum Installation (~1-10 concurrent users per site, ~10 sites)
 
     * 8GB of RAM + 8GB Swap Space or Virtual Memory
     * 4GB JVM Memory (-Xms 1G -Xmx 4G)
     * 2 CPU Cores
 
-Recommended for Medium Installations (number of users/sites)
+Medium Installations (~11-25 concurrent users per site, ~25 sites)
 
 	* 16GB+ of RAM + 16GB Swap Space or Virtual Memory
 	* 8GB+ JVM Memory (-Xms 2G -Xmx 8G)
 	* 4+ CPU Cores
 
-Recommended for Larger Installations (number of users/sites)
+Larger Installations (~26-100 concurrent users per site, ~100 sites)
 
 	* 32GB+ of RAM + 16GB Swap Space or Virtual Memory
 	* 16GB+ of JVM Memory (-Xms 2G -Xmx 16G)
@@ -51,10 +51,52 @@ Disk/Storage Devices
 ^^^^^^^^^^^^^^^^^^^^
 Crafter Studio’s job is to manage content. A high volume of concurrent reads and writes should be expected. The faster the disk type and connection to the computer, the better the performance you will observe.
 
-.. Testing Raw Performance
-.. [TODO: controller/raw device: hdparm -tT /dev/{device}]
-.. Indicate that this test is a single concurrency test and is a good start, but insufficient]
-.. [TODO: consider using this https://www.binarylane.com.au/support/solutions/articles/1000055889-how-to-benchmark-disk-i-o]
+Testing Raw Performance
+* Non-concurrent quick test or the raw device performance can be achieved with ``sudo hdparm -tT /dev/{device}``
+	* Example
+	.. code-block
+	Timing cached reads:   24486 MB in  1.99 seconds = 12284.28 MB/sec
+	Timing buffered disk reads: 3104 MB in  3.00 seconds = 1033.84 MB/sec
+* Test IOPS using ``fio`` https://github.com/axboe/fio
+	* Example
+	.. code-block
+	 $ fio --randrepeat=1 --ioengine=libaio --gtod_reduce=1 --name=test --filename=test --bs=4k --iodepth=64 --size=4G --readwrite=randrw --rwmixread=75 
+	test: (g=0): rw=randrw, bs=4K-4K/4K-4K/4K-4K, ioengine=libaio, iodepth=64
+	fio-2.2.10
+	Starting 1 process
+	Jobs: 1 (f=1): [m(1)] [100.0% done] [495.2MB/164.7MB/0KB /s] [127K/42.2K/0 iops] [eta 00m:00s]
+	test: (groupid=0, jobs=1): err= 0: pid=9071: Mon Apr 23 10:49:08 2018
+  		read : io=3071.7MB, bw=485624KB/s, iops=121406, runt=  6477msec
+  		write: io=1024.4MB, bw=161945KB/s, iops=40486, runt=  6477msec
+  		cpu          : usr=12.04%, sys=87.77%, ctx=32, majf=0, minf=8
+  		IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     			submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     			complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     			issued    : total=r=786347/w=262229/d=0, short=r=0/w=0/d=0, drop=r=0/w=0/d=0
+     			latency   : target=0, window=0, percentile=100.00%, depth=64
+
+	Run status group 0 (all jobs):
+   		READ: io=3071.7MB, aggrb=485624KB/s, minb=485624KB/s, maxb=485624KB/s, mint=6477msec, maxt=6477msec
+  		WRITE: io=1024.4MB, aggrb=161944KB/s, minb=161944KB/s, maxb=161944KB/s, mint=6477msec, maxt=6477msec
+Note the ``IOPS`` for READ and WRITE
+* Test latency with ``ioping`` https://github.com/koct9i/ioping
+	* Example
+	.. code-block
+	$ ioping -c 10 .
+	4 KiB from . (ext4 /dev/nvme0n1p3): request=1 time=179 us
+	4 KiB from . (ext4 /dev/nvme0n1p3): request=2 time=602 us
+	4 KiB from . (ext4 /dev/nvme0n1p3): request=3 time=704 us
+	4 KiB from . (ext4 /dev/nvme0n1p3): request=4 time=600 us
+	4 KiB from . (ext4 /dev/nvme0n1p3): request=5 time=597 us
+	4 KiB from . (ext4 /dev/nvme0n1p3): request=6 time=612 us
+	4 KiB from . (ext4 /dev/nvme0n1p3): request=7 time=599 us
+	4 KiB from . (ext4 /dev/nvme0n1p3): request=8 time=659 us
+	4 KiB from . (ext4 /dev/nvme0n1p3): request=9 time=652 us
+	4 KiB from . (ext4 /dev/nvme0n1p3): request=10 time=742 us
+
+	--- . (ext4 /dev/nvme0n1p3) ioping statistics ---
+	10 requests completed in 9.01 s, 1.68 k iops, 6.57 MiB/s
+	min/avg/max/mdev = 179 us / 594 us / 742 us / 146 us
 
 Recommendations
 ^^^^^^^^^^^^^^^
@@ -109,9 +151,6 @@ Does Crafter CMS have a Linux or Windows preference?  Crafter CMS is a server ba
 Linux Ulimit
 ^^^^^^^^^^^^
 Crafter CMS includes many subsystems that require additional file-handles be available at the operating system level.
-
-.. Here is a list of recommended ``ulimit`` updates:
-.. [todo: do something like this: https://docs.mongodb.com/manual/reference/ulimit/ for different OSs and distros and such]
 
 Our limits are:
 
