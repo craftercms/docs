@@ -57,6 +57,10 @@ The basic structure for a plugin is the following:
     * templates
     * scripts
 
+*Possible Errors*
+
+* ``Missing required parameter '...'`` one or more required parameter needs to be added.
+
 --------------------
 Package Plugin Tasks
 --------------------
@@ -99,6 +103,12 @@ plugin, when the files are copied some placeholders will be replaced in all file
 
 If all required values are provided either as parameters or in the plugin descriptor a new file
 will be created under ``plugins/{pluginName}-{pluginVersion}.car``
+
+*Possible Errors*
+
+* ``Missing required parameter '...'`` one or more required parameter needs to be added.
+* ``Missing required fields from manifest file: ...`` one or more required fields are empty in the manifest file.
+* ``The path does not exist or is not a folder: ...`` the plugin folder does not exist or cannot be read.
 
 --------------------
 Publish Plugin Tasks

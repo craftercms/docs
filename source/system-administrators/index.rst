@@ -55,6 +55,7 @@ Activities
    :maxdepth: 1
    :titlesonly:
 
+   activities/authoring-env-performance-tuning.rst
    activities/backup-and-recovery.rst
    activities/logging.rst
    activities/production-environment-setup.rst
