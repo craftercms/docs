@@ -57,14 +57,14 @@ Response
           "url" :  "https://github.com/craftercms/craftercms.git",
           "fetch" :  "+refs/heads/*:refs/remotes/origin/*",
           "push_url" :  "https://github.com/craftercms/craftercms.git",
-          "branch" :  [ "master", "qa" ]
+          "branches" :  [ "master", "qa" ]
         },
         {
           "name" : "upstream",
           "url" :  "https://github.com/myrepo/craftercms.git",
           "fetch" :  "+refs/heads/\*:refs/remotes/origin/\*",
           "push_url" :  "https://github.com/myrepo/craftercms.git",
-          "branch" :  [ "master", "qa" ]
+          "branches" :  [ "master", "qa" ]
         }
       ]
     }
