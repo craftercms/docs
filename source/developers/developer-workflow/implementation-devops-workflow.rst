@@ -46,9 +46,7 @@ Initializing the Repository for the Git Flow Tool
 
 To create a branch you use the following GitFlow command:
 
-|    ``git flow init``
-
-|
+``git flow init``
 
 Example:
 
@@ -85,9 +83,7 @@ Whenever a new feature team is formed to work on a new feature, the first thing 
 
 To create a branch you use the following GitFlow command:
 
-|    ``git flow feature start [FEATURE_NAME]``
-
-|
+``git flow feature start [FEATURE_NAME]``
 
 Example:
 
@@ -115,9 +111,7 @@ Once you create the branch it exists locally.  It is not yet part of your Remote
 
 To publish a branch you use the following GitFlow command
 
-|    ``git flow feature publish [FEATURE_NAME]``
-
-|
+``git flow feature publish [FEATURE_NAME]``
 
 Example:
 
@@ -213,9 +207,7 @@ Ideally you are working in your own personal fork of the Remote Code Repository.
 
 To push your updates to the Remote Code Repository you use the following Git command
 
-|    ``git push origin feature/[FEATURE_NAME]``
-
-|
+``git push origin feature/[FEATURE_NAME]``
 
 Example:
 
@@ -262,8 +254,362 @@ When we work on features, especially when we work in teams, it’s very likely t
 
 To begin the squash of multiple commits in to a single commit use the following Git command
 
-|    ``git reset --soft [BASELINE COMMIT ID]``
+``git reset --soft [BASELINE COMMIT ID]``
+
+BASELINE COMMIT ID is the first commit ID in your set of changes.  E.g. If your team made 10 commits, find the commit ID (via the git log command) that is the first of 10.  Alternatively, note the commit ID of the repo at the time you create your feature branch.
+
+Note that a ``reset --soft`` essentially rolls back your add and commit commands so that they appear uncommitted. This will allow you to add and commit all of them as a single commit (or “squash” them.)
+
+Example:
+
+➜  sandbox git:(feature/MYFEATURE) git reset --soft fc0c32793b286ed5895375b77fc220ff8fa98b4f
+
+Example:
+
+➜  sandbox git:(feature/MYFEATURE) git reset --soft fc0c32793b286ed5895375b77fc220ff8fa98b4f
+
+Commit the List of Changes in a Single Commit (“Squash”)
+--------------------------------------------------------
+
+Once you are satisfied that all of the changes are present in the list you will create the new commit.  This is the actual squash operation.
+
+To complete the squash of multiple commits into a single commit use the following Git command:
+
+``git commit -m "COMMENT HERE"``
+
+Example:
+
+.. code-block:: guess
+    :linenos:
+
+    ➜  sandbox git:(feature/MYFEATURE) ✗ git commit -m "Combining all MYFEATURE Commits in to a single Commit ID"
+    [feature/MYFEATURE 1879915] Combining all MYFEATURE Commits in to a single Commit ID
+    1 file changed, 1 insertion(+), 1 deletion(-)
 
 |
 
-BASELINE COMMIT ID is the first commit ID in your set of changes.  E.g. If your team made 10 commits, find the commit ID (via the git log command) that is the first of 10.  Alternatively, note the commit ID of the repo at the time you create your feature branch.
+Rebase/Merge the Squash to The Head of Feature
+----------------------------------------------
+Once you have squashed the content you need to rebase your work relative to the remote origin so that you can push the Squashed Commit back up.
+
+To rebase the squashed commit at the tip of the Remote Code Repository use the following Git Flow command:
+
+``git flow feature pull origin [FEATURE_NAME]``
+
+Example:
+
+.. code-block:: guess
+    :linenos:
+
+    ➜  sandbox git:(feature/MYFEATURE) ✗ git commit -m "Combining all MYFEATURE Commits in to a single Commit ID"
+    [feature/MYFEATURE 1879915] Combining all MYFEATURE Commits in to a single Commit ID
+    1 file changed, 1 insertion(+), 1 deletion(-)
+
+|
+
+Push the Squash to the Feature Remote Code Repository
+-----------------------------------------------------
+Once the commit has been rebased you can push the work up to the Remote Code Repository so that the single commit is available to the team (and other environments)
+
+To push the rebased commit up to the Remote Code Repository use the following Git Flow command:
+
+``git push origin feature/ [FEATURE_NAME]``
+
+Example:
+
+.. code-block:: guess
+    :linenos:
+
+    ➜  sandbox git:(feature/MYFEATURE) git push origin feature/MYFEATURE
+    Counting objects: 2, done.
+    Delta compression using up to 8 threads.
+    Compressing objects: 100% (2/2), done.
+    Writing objects: 100% (2/2), 580 bytes | 0 bytes/s, done.
+    Total 2 (delta 1), reused 0 (delta 0)
+    remote:
+    remote: To create a merge request for feature/MYFEATURE, visit:
+    remote:   https://gitlab.com/myuser/my-awesome-project/merge_requests/new?merge_request%5Bsource_branch%5D=feature%2FMYFEATURE
+    remote:
+    To https://gitlab.com/myuser/my-awesome-project.git
+       61fbeea..247d20f  feature/MYFEATURE -> feature/MYFEATURE
+
+|
+
+Cherry Pick the Feature into the Environment
+--------------------------------------------
+Now that the remote code repository has your squashed commit you can update the repository clone on a given environment and then use the Cherry Pick operation to put the feature on the environment.
+
+No more paper manifest/change logs.  You simply reference that single commit ID.
+
+To cherry pick the squashed feature commit use the following Git command:
+
+``git cherry-pick [SQUASHED COMMIT ID]``
+
+Example:
+
+.. code-block:: guess
+    :linenos:
+
+    ➜  sandbox git:(evn-x) git cherry-pick 294235aa042c7dadd84ecd6b33ce7d02818c291d
+
+|
+
+How does Git know where to get the content for the Commit ID?
+-------------------------------------------------------------
+Commit IDs are globally unique hashes.  You don’t need to tell Git which branch the commit ID is on etc. It can find it on it’s own.
+
+---------------------------------------
+Moving a Feature to the Release Process
+---------------------------------------
+A feature will stay in a feature branch until it’s blessed for a potential release.  Once it’s blessed it needs to be moved off the branch and on to it’s parent develop branch.  This makes it available to other features and starts the wheels turning for a release.
+
+Finalize the Feature Branch
+---------------------------
+For each feature you are looking to release, once it’s complete and blessed (and no more core development is required) you want to “finalize it.”  Finalizing a feature merges the code up to the develop branch and deletes the feature branch.
+To finalize a feature branch use the following Git Flow command:
+
+``git flow feature finish [FEATURE_NAME]``
+
+Example:
+
+.. code-block:: guess
+    :linenos:
+
+    ➜  sandbox git:(feature/MYFEATURE) git flow feature finish MYFEATURE
+    Switched to branch 'develop'
+    Merge made by the 'recursive' strategy.
+    static-assets/js/main.js | 1 +
+    1 file changed, 1 insertion(+)
+    Deleted branch feature/MYFEATURE (was a7c9db9).
+
+    Summary of actions:
+    - The feature branch 'feature/MYFEATURE' was merged into 'develop'
+    - Feature branch 'feature/MYFEATURE' has been removed
+    - You are now on branch 'develop'
+
+|
+
+Push the Changes to Develop on the Remote Code Repository
+---------------------------------------------------------
+When you run the finalize command you are running it locally, you need to push that operation up to the remote code repository.
+
+To push the finalized work up to the remote repository use the following Git command:
+
+``git push origin develop``
+
+Example:
+
+.. code-block:: guess
+    :linenos:
+
+    ➜  sandbox git:(develop) git push origin develop
+    Counting objects: 1, done.
+    Writing objects: 100% (1/1), 377 bytes | 0 bytes/s, done.
+    Total 1 (delta 0), reused 0 (delta 0)
+    remote:
+    remote: To create a merge request for develop, visit:
+    remote:   https://gitlab.com/myuser/my-awesome-project/merge_requests/new?merge_request%5Bsource_branch%5D=develop
+    remote:
+    To https://gitlab.com/myuser/my-awesome-project.git
+    * [new branch]      develop -> develop
+
+|
+
+Remove the Feature Branch from the Remote Code Repository
+---------------------------------------------------------
+The finalize command also removed your feature branch locally.  Now you need to push that operation to the Remote Code Repository:
+
+To push the branch removal up to the remote repository use the following Git command:
+
+``git push origin :feature/[FEATURE_NAME]``
+
+Example:
+
+.. code-block:: guess
+    :linenos:
+
+    ➜  sandbox git:(develop) git push origin develop
+    Counting objects: 1, done.
+    Writing objects: 100% (1/1), 377 bytes | 0 bytes/s, done.
+    Total 1 (delta 0), reused 0 (delta 0)
+    remote:
+    remote: To create a merge request for develop, visit:
+    remote:   https://gitlab.com/myuser/my-awesome-project/merge_requests/new?merge_request%5Bsource_branch%5D=develop
+    remote:
+    To https://gitlab.com/myuser/my-awesome-project.git
+    * [new branch]      develop -> develop
+
+|
+
+Repeat Process For All Features that are Part of the Release
+------------------------------------------------------------
+Repeat the process above for any/all features that are complete and will be part of the release.
+
+Create a Feature Branch (Freeze a Snapshot of Develop)
+------------------------------------------------------
+Now you are ready to take a bunch of feature, combined through the release vetting process.  You want to snap-shot them, essentially freezing them in time so that other code that’s getting blessed and showing up in the develop branch has no impact on them.  You are going to create a release branch.  You will QA and qualify the work on this branch.  If you find an issue, you will fix it here first.
+To create a release branch use the following GitFlow command:
+
+``git flow release start [VERSION ID]``
+
+Example:
+
+.. code-block:: guess
+    :linenos:
+
+    ➜  sandbox git:(develop) git flow release start 1.2.0
+    Switched to a new branch 'release/1.2.0'
+
+    Summary of actions:
+    - A new branch 'release/1.2.0' was created, based on 'develop'
+    - You are now on branch 'release/1.2.0'
+
+    Follow-up actions:
+    - Bump the version number now!
+    - Start committing last-minute fixes in preparing your release
+    - When done, run:
+         git flow release finish '1.2.0'
+
+|
+
+Push the Release Branch to the Remote Code Repository
+-----------------------------------------------------
+The release branch you just created was done locally, now you need to push this to the Remote Code Repository so it’s available to the QA and load testing process
+
+To push the new branch to the Remote Code Repository use the following Git command.
+
+``git flow release publish  [VERSION ID]``
+
+Example:
+
+.. code-block:: guess
+    :linenos:
+
+    ➜  sandbox git:(release/1.2.0) git flow release publish 1.2.0
+    Total 0 (delta 0), reused 0 (delta 0)
+    remote:
+    remote: To create a merge request for release/1.2.0, visit:
+    remote:   https://gitlab.com/myuser/my-awesome-project/merge_requests/new?merge_request%5Bsource_branch%5D=release%2F1.2.0
+    remote:
+    To https://gitlab.com/myuser/my-awesome-project.git
+     * [new branch]      release/1.2.0 -> release/1.2.0
+    Already on 'release/1.2.0'
+    Your branch is up-to-date with 'origin/release/1.2.0'.
+
+    Summary of actions:
+    - A new remote branch 'release/1.2.0' was created
+    - The local branch 'release/1.2.0' was configured to track the remote branch
+    - You are now on branch 'release/1.2.0'
+
+|
+
+--------------------------------------
+Moving a Release to the QA Environment
+--------------------------------------
+See the section on Moving a Feature to Dev (1, 2) Environment.
+
+The process for moving a work from a release branch  to QA is exactly the same as moving work from a feature branch to Dev.  The only differences are that when you squash you will have far fewer commits to deal with.
+
+---------
+Releasing
+---------
+Once the release has been QA approved and Load Testing Approved it’s time to go live. Now we’re going to move our code and configuration in the release to the production CMS..
+
+Finalize the Release Branch
+---------------------------
+The first step in moving the release to the production CMS is to finalize the release.  This will merge the release code in to the Master branch and remove the release branch.
+
+To finalize the release use the following Git Flow command:
+
+``git flow  release finish [VERSION ID]``
+
+Example:
+
+.. code-block:: guess
+    :linenos:
+
+    ➜  sandbox git:(master) git flow  release finish 1.2.0
+    Deleted branch release/1.2.0 (was 3d9b92a).
+
+    Summary of actions:
+    - Latest objects have been fetched from 'origin'
+    - Release branch has been merged into 'master'
+    - The release was tagged 'v1.2.0'
+    - Release branch has been back-merged into 'develop'
+    - Release branch 'release/1.2.0' has been deleted
+
+Push the Merged Release Branch to the Remote Code Repository Master (GOING TO SANDBOX)
+--------------------------------------------------------------------------------------
+
+The finalize work you just performed was done locally, so now you need to push these operations to the Remote Code Repository.
+
+To push the finalized release to the Remote Code Repository use the following Git command:
+
+``git push origin master``
+
+Example:
+
+.. code-block:: guess
+    :linenos:
+
+    ➜  sandbox git:(master) git push origin master
+
+    Counting objects: 1, done.
+    Writing objects: 100% (1/1), 360 bytes | 0 bytes/s, done.
+    Total 1 (delta 0), reused 0 (delta 0)
+    To https://gitlab.com/myuser/my-awesome-project.git
+       645bc14..b46ff22  master -> master
+
+|
+
+Make Sure Develop is Up to Date
+-------------------------------
+Now make sure Develop has the latest release.  Ideally there is no real update here:
+
+``git push origin develop``
+
+Example:
+
+.. code-block:: guess
+    :linenos:
+
+    ➜  sandbox git:(master) git push origin develop
+    Everything up-to-date
+
+Push the Release Tags to Remote Code Repository
+-----------------------------------------------
+The finalize command creates a release tag for you locally.  Push this release tag to the Remote Code Repository
+
+``git push origin --tags``
+
+Example:
+
+.. code-block:: guess
+    :linenos:
+
+    ➜  sandbox git:(master) git push origin --tags
+    Counting objects: 1, done.
+    Writing objects: 100% (1/1), 197 bytes | 0 bytes/s, done.
+    Total 1 (delta 0), reused 0 (delta 0)
+    To https://gitlab.com/myuser/my-awesome-project.git
+     * [new tag]         v1.2.0 -> v1.2.0
+
+|
+
+Remove the Release Branch From the Remote Code Repository
+---------------------------------------------------------
+Finally, the release branch was removed locally when it was finalized.  Push the removal of the release branch to the Remote Code Repository
+
+``git push origin :release/[VERSION ID]``
+
+Example:
+
+.. code-block:: guess
+    :linenos:
+
+    ➜  sandbox git:(master) git push origin :release/1.2.0
+    To https://gitlab.com/myuser/my-awesome-project.git
+     - [deleted]         release/1.2.0
+
+|
+
