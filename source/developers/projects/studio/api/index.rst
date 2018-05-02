@@ -140,6 +140,7 @@ Publish
    publish/status
    publish/start
    publish/stop
+   publish/publish-items
 
 --------
 Activity
@@ -172,6 +173,7 @@ Dependency
    dependency/get-dependant
    dependency/get-dependencies
    dependency/get-simple-dependencies
+   dependency/calculate-dependencies
 
 ----------
 Deployment
