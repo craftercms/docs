@@ -29,57 +29,62 @@ Resource Information
 Parameters
 ----------
 
-+-------------------------+-------------+---------------+----------------------------------------+
-|| Name                   || Type       || Required     || Description                           |
-+=========================+=============+===============+========================================+
-|| env                    || String     || |checkmark|  || The target's environment (e.g dev).   |
-+-------------------------+-------------+---------------+----------------------------------------+
-|| site_name              || String     || |checkmark|  || The target's site name (e.g mysite).  |
-+-------------------------+-------------+---------------+----------------------------------------+
-|| replace                || Boolean    ||              || Replace the existing target.          |
-+-------------------------+-------------+---------------+----------------------------------------+
-|| template_name          || String     ||              || The template to use for configuration |
-||                        ||            ||              || generation. Out of the box            |
-||                        ||            ||              || ``remote`` and ``local``              |
-||                        ||            ||              || are provided. If not specified        |
-||                        ||            ||              || ``remote`` will be used.              |
-+-------------------------+-------------+---------------+----------------------------------------+
-|| disable_deploy_cron    || Boolean    ||              || Disables the cron job the runs        |
-||                        ||            ||              || deployments every certain amount of   |
-||                        ||            ||              || time.                                 |
-+-------------------------+-------------+---------------+----------------------------------------+
-|| repo_url               || String     || |checkmark|  || Depends on the template. If           |
-||                        ||            ||              || ``remote`` is being used, it          |
-||                        ||            ||              || specifies the URL of the remote repo  |
-||                        ||            ||              || to pull from (e.g. ssh://...). If     |
-||                        ||            ||              || instead the template is ``local``,    |
-||                        ||            ||              || ``repo_url`` is the filesystem path   |
-||                        ||            ||              || of the local repo (e.g. /opt/..).     |
-+-------------------------+-------------+---------------+----------------------------------------+
-|| repo_branch            || String     ||              || *Only use with "remote" template*.    |
-||                        ||            ||              || The branch name of the remote Git     |
-||                        ||            ||              || repo to pull from. If not specified,  |
-||                        ||            ||              || the branch will be whatever branch is |
-||                        ||            ||              || the current one in the remote repo.   |
-+-------------------------+-------------+---------------+----------------------------------------+
-|| repo_username          || String     ||              || *Only use with "remote" template*.    |
-||                        ||            ||              || The username of the remote Git repo.  |
-+-------------------------+-------------+---------------+----------------------------------------+
-|| repo_username          || String     ||              || *Only use with "remote" template*.    |
-||                        ||            ||              || The password of the remote Git repo.  |
-+-------------------------+-------------+---------------+----------------------------------------+
-|| ssh_private_key_path   || String     ||              || *Only use with "remote" template*.    |
-||                        ||            ||              || The path for the private key used     |
-||                        ||            ||              || for the remote Git repo.              |
-+-------------------------+-------------+---------------+----------------------------------------+
-|| engine_url             || String     ||              || Base URL of Engine, used to make API  |
-||                        ||            ||              || calls like clear cache and rebuild    |
-||                        ||            ||              || context. If not specified the default |
-||                        ||            ||              || is http://localhost:8080.             |
-+-------------------------+-------------+---------------+----------------------------------------+
-|| notification_addresses || String     ||              || The email addresses that should       |
-||                        ||            ||              || receive deployment notifications.     |
-+-------------------------+-------------+---------------+----------------------------------------+
++-----------------------------+-------------+---------------+----------------------------------------+
+|| Name                       || Type       || Required     || Description                           |
++=============================+=============+===============+========================================+
+|| env                        || String     || |checkmark|  || The target's environment (e.g dev).   |
++-----------------------------+-------------+---------------+----------------------------------------+
+|| site_name                  || String     || |checkmark|  || The target's site name (e.g mysite).  |
++-----------------------------+-------------+---------------+----------------------------------------+
+|| replace                    || Boolean    ||              || Replace the existing target.          |
++-----------------------------+-------------+---------------+----------------------------------------+
+|| template_name              || String     ||              || The template to use for configuration |
+||                            ||            ||              || generation. Out of the box            |
+||                            ||            ||              || ``remote`` and ``local``              |
+||                            ||            ||              || are provided. If not specified        |
+||                            ||            ||              || ``remote`` will be used.              |
++-----------------------------+-------------+---------------+----------------------------------------+
+|| disable_deploy_cron        || Boolean    ||              || Disables the cron job the runs        |
+||                            ||            ||              || deployments every certain amount of   |
+||                            ||            ||              || time.                                 |
++-----------------------------+-------------+---------------+----------------------------------------+
+|| repo_url                   || String     || |checkmark|  || Depends on the template. If           |
+||                            ||            ||              || ``remote`` is being used, it          |
+||                            ||            ||              || specifies the URL of the remote repo  |
+||                            ||            ||              || to pull from (e.g. ssh://...). If     |
+||                            ||            ||              || instead the template is ``local``,    |
+||                            ||            ||              || ``repo_url`` is the filesystem path   |
+||                            ||            ||              || of the local repo (e.g. /opt/..).     |
++-----------------------------+-------------+---------------+----------------------------------------+
+|| repo_branch                || String     ||              || *Only use with "remote" template*.    |
+||                            ||            ||              || The branch name of the remote Git     |
+||                            ||            ||              || repo to pull from. If not specified,  |
+||                            ||            ||              || the branch will be whatever branch is |
+||                            ||            ||              || the current one in the remote repo.   |
++-----------------------------+-------------+---------------+----------------------------------------+
+|| repo_username              || String     ||              || *Only use with "remote" template*.    |
+||                            ||            ||              || The username of the remote Git repo.  |
++-----------------------------+-------------+---------------+----------------------------------------+
+|| repo_password              || String     ||              || *Only use with "remote" template*.    |
+||                            ||            ||              || The password of the remote Git repo.  |
++-----------------------------+-------------+---------------+----------------------------------------+
+|| ssh_private_key_path       || String     ||              || *Only use with "remote" template*.    |
+||                            ||            ||              || The path for the private key used     |
+||                            ||            ||              || for the remote Git repo.              |
++-----------------------------+-------------+---------------+----------------------------------------+
+|| ssh_private_key_passphrase || String     ||              || *Only use with "remote" template*.    |
+||                            ||            ||              || The passphrase for the private key    |
+||                            ||            ||              || for the remote Git repo (only if the  |
+||                            ||            ||              || key is passphrase-protected).         |
++-----------------------------+-------------+---------------+----------------------------------------+
+|| engine_url                 || String     ||              || Base URL of Engine, used to make API  |
+||                            ||            ||              || calls like clear cache and rebuild    |
+||                            ||            ||              || context. If not specified the default |
+||                            ||            ||              || is http://localhost:8080.             |
++-----------------------------+-------------+---------------+----------------------------------------+
+|| notification_addresses     || String     ||              || The email addresses that should       |
+||                            ||            ||              || receive deployment notifications.     |
++-----------------------------+-------------+---------------+----------------------------------------+
 
 .. _remote Clear Cache URL: http://localhost:8080/api/1/cache/clear_all.json
 
