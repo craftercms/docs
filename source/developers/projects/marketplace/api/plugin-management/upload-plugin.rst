@@ -1,6 +1,4 @@
-.. .. include:: /includes/unicode-checkmark.rst
-
-.. _crafter-marketplace-api-plugin-upload
+.. _crafter-marketplace-api-plugin-upload:
 
 =============
 Upload Plugin
