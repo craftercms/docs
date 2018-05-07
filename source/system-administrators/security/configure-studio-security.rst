@@ -1,3 +1,4 @@
+.. _configuring-studio-security:
 
 ===========================
 Configuring Studio Security
