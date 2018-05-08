@@ -44,15 +44,16 @@ The following section of Studio's configuration overrides allows you to setup yo
    ############################################################
 
    # Default preview deployer URL (can be overridden per site)
-   studio.preview.defaultPreviewDeployerUrl: http://localhost:@DEPLOYER_PORT@/api/1/target/deploy/preview/{siteName}
+   studio.preview.defaultPreviewDeployerUrl: http://localhost:9191/api/1/target/deploy/preview/{siteName}
    # Default preview create target URL (can be overridden per site)
-   studio.preview.createTargetUrl: http://localhost:@DEPLOYER_PORT@/api/1/target/create
+   studio.preview.createTargetUrl: http://localhost:9191/api/1/target/create
    # Default preview create target URL (can be overridden per site)
-   studio.preview.deleteTargetUrl: http://localhost:@DEPLOYER_PORT@/api/1/target/delete/{siteEnv}/{siteName}
+   studio.preview.deleteTargetUrl: http://localhost:9191/api/1/target/delete/{siteEnv}/{siteName}
    # URL to the preview Crafter Engine
-   studio.preview.engineUrl: http://localhost:@TOMCAT_HTTP_PORT@
+   studio.preview.engineUrl: http://localhost:8080
    # URL to the preview repository (aka Sandbox) where authors save work-in-progress
    studio.preview.repoUrl: ../data/repos/sites/{siteName}/sandbox
+
 
 ----------------------------
 Preview Search Configuration
@@ -88,16 +89,16 @@ The following section of Studio's configuration overrides allows you to setup th
    # Format:
    # jdbc:DATABASE_PLATFORM;databaseName=DATABASE_NAME;create=true;user=DATABASE_USERNAME;password=DATABASE_USER_PASSWORD
    # Note that a relative path is not suitable for a production deployment
-   studio.db.url: jdbc:mariadb://127.0.0.1:@MARIADB_PORT@/crafter?user=crafter&password=crafter
+   studio.db.url: jdbc:mariadb://127.0.0.1:33306/crafter?user=crafter&password=crafter
 
    # Connection string used to initialize database
-   studio.db.initializer.url: jdbc:mariadb://127.0.0.1:@MARIADB_PORT@?user=root&password=
+   studio.db.initializer.url: jdbc:mariadb://127.0.0.1:33306?user=root&password=
    # Port number for the embedded database (note this must match what's in the connection URLs in this config file)
-   studio.db.port: @MARIADB_PORT@
+   studio.db.port: 33306
    # Data folder for the embedded database
    studio.db.dataPath: ../data/db
    # Socket path for the embedded database
-   studio.db.socket: /tmp/MariaDB4j.@MARIADB_PORT@.sock
+   studio.db.socket: /tmp/MariaDB4j.33306.sock
 
 ----------------------
 Security Configuration
