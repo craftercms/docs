@@ -33,8 +33,13 @@ Unblock Publishing Queue
 ------------------------
 
 The publishing queue can be blocked or stuck in an infinite loop by trying to publish the same item over and over again. It usually happens when there is some error in publishing some content.
+
 To discover which item is blocking publishing, the most common method is to inspect the queue and determine which item is first in the queue (state ``READY_FOR_LIVE``), together with all the other items that are scheduled with the same timestamp.
-Once you determine where the publishing queue is blocked/stuck, you can determine the reason by inspecting the log files and the repository.  If it is possible to fix the publishing queue blockage, the system should be allowed to continue normally.
+Once you determine where the publishing queue is blocked/stuck, you can determine the reason by inspecting the log files and the repository.
+
+If it is possible to fix the publishing queue blockage, the system should be allowed to continue normally.
+After the queue has been unblocked, the publishing process needs to be enabled again. This can be done by calling the :ref:`crafter-studio-api-publish-start` Rest API to start publishing.
+
 If it is not possible to fix the publishing queue blockage, a workaround can be applied to unblock publishing. The workaround can be any valid intervention on the database and the repository to simulate the publishing process.
 
 ------------------------------
