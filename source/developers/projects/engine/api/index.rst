@@ -30,6 +30,15 @@ Site Context
 	site/context/destroy
 	site/context/rebuild
 
+-------------------
+Site Scheduled Jobs
+-------------------
+
+.. toctree::
+	:maxdepth: 1
+
+	site/jobs/list
+
 -------------
 Site Mappings
 -------------
