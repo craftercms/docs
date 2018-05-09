@@ -56,6 +56,7 @@ Site Cache
 	:maxdepth: 1
 
 	site/cache/clear
+	site/cache/statistics
 	
 ------------------
 Site Content Store
