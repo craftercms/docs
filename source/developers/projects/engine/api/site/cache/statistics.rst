@@ -42,18 +42,17 @@ Response
 
 .. code-block:: json
 
-  [
-    {
-      "46b0f2effb636293234e10749dd9f5a4": {
-        "size": 147,
-        "localHeapSize": 147,
-        "localOffHeapSize": 0,
-        "localDiskSize": 0,
-        "remoteSize": 0,
-        "writerQueueLength": 0,
-      }
-    }
-  ]
+  {
+    "size": 17,
+    "localHeapSize": 17,
+    "localOffHeapSize": 0,
+    "localDiskSize": 0,
+    "cacheHitRatio": 1,
+    "cacheHitCount": 4,
+    "cacheMissCount": 25,
+    "cacheMissExpiredCount": 0,
+    "cacheMissNotFoundCount": 25
+  }
 
 ---------
 Responses
