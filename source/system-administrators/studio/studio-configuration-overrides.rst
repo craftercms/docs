@@ -12,7 +12,10 @@ To override any of the pre-configured settings, in your Authoring installation, 
 Content Repository Configuration
 --------------------------------
 
-   The following section of Studio's configuration overrides allows you to set your repository base
+The following section of Studio's configuration overrides allows you to do the following:
+
+* ``studio.repo.basePath`` allows you to set your repository base
+* ``studio.repo.siteSandboxBranch`` allows you to switch the branch used by sandbox
 
 .. code-block:: yaml
    :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
@@ -23,12 +26,14 @@ Content Repository Configuration
    ##################################################
    # Absolute or relative path to repository base (all actual repositories will be under this)
    studio.repo.basePath: ../data/repos
+   # Sandbox git repository branch for every site
+   # studio.repo.siteSandboxBranch: master
 
 ------------------------------
 Preview Deployer Configuration
 ------------------------------
 
-   The following section of Studio's configuration overrides allows you to setup your deployer urls
+The following section of Studio's configuration overrides allows you to setup your deployer urls
 
 .. code-block:: yaml
    :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
@@ -49,11 +54,12 @@ Preview Deployer Configuration
    # URL to the preview repository (aka Sandbox) where authors save work-in-progress
    studio.preview.repoUrl: ../data/repos/sites/{siteName}/sandbox
 
+
 ----------------------------
 Preview Search Configuration
 ----------------------------
 
-   The following section of Studio's configuration overrides allows you to setup urls for search in preview
+The following section of Studio's configuration overrides allows you to setup urls for search in preview
 
 .. code-block:: yaml
    :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
@@ -70,9 +76,9 @@ Preview Search Configuration
 Database Configuration
 ----------------------
 
-   The following section of Studio's configuration overrides allows you to setup the database url, port number, connection string to initialize the database and path
+The following section of Studio's configuration overrides allows you to setup the database url, port number, connection string to initialize the database and path
 
-.. code-block:: yaml
+.. code-block:: guess
    :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
    :linenos:
 
@@ -91,12 +97,92 @@ Database Configuration
    studio.db.port: 33306
    # Data folder for the embedded database
    studio.db.dataPath: ../data/db
+   # Socket path for the embedded database
+   studio.db.socket: /tmp/MariaDB4j.33306.sock
+
+----------------------
+Security Configuration
+----------------------
+
+The following section of Studio's configuration overrides allows you to randomize the admin password on a fresh install (for more information, see: :ref:`randomize-admin-password`), configure encryption and configure authentication method to be used (for more informations, see: :ref:`configuring-studio-security`).
+
+.. code-block:: yaml
+   :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
+   :linenos:
+
+   ##################################################
+   ##                   Security                   ##
+   ##################################################
+   # Enable random admin password generation
+   # studio.db.initializer.randomAdminPassword.enabled: false
+   # Random admin password length
+   # studio.db.initializer.randomAdminPassword.length: 16
+   # Random admin password allowed chars
+   # studio.db.initializer.randomAdminPassword.chars: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*_=+-/
+
+   # Salt for encrypting
+   # studio.security.cipher.salt: TDEsDF8vx3gV4c7G
+   # Key for encrypting
+   # studio.security.cipher.key: AoCcBdnsTa9R3DdG
+
+   # Defines security provider for accessing repository. Possible values
+   # - db (users are stored in database)
+   # - ldap (users are imported from LDAP into the database)
+   # - headers (use when authenticating via headers)
+   # studio.security.type: ldap
+
+   # LDAP Server url
+   # studio.security.ldap.serverUrl: ldap://localhost:389
+   # LDAP bind DN (user)
+   # studio.security.ldap.bindDN: cn=Manager,dc=my-domain,dc=com
+   # LDAP bind password
+   # studio.security.ldap.bindPassword: secret
+   # LDAP base context (directory root)
+   # studio.security.ldap.baseContext: dc=my-domain,dc=com
+   # LDAP username attribute
+   # studio.security.ldap.userAttribute.username: uid
+   # LDAP first name attribute
+   # studio.security.ldap.userAttribute.firstName: cn
+   # LDAP last name attribute
+   # studio.security.ldap.userAttribute.lastName: sn
+   # LDAP email attribute
+   # studio.security.ldap.userAttribute.email: mail
+   # LDAP site ID attribute
+   # studio.security.ldap.userAttribute.siteId: crafterSite
+   # LDAP groups attribute
+   # studio.security.ldap.userAttribute.groupName: crafterGroup
+   # LDAP groups attribute name regex
+   # studio.security.ldap.userAttribute.groupName.regex: cn=Crafter_([a-zAZ]+),.*
+   # LDAP groups attribute match index
+   # studio.security.ldap.userAttribute.groupName.matchIndex: 1
+   # LDAP default site if site ID attribute not found
+   # studio.security.ldap.defaultSiteId: default
+
+   # Authentication via headers enabled
+   # studio.authentication.headers.enabled: false
+   # Authentication header for secure key
+   # studio.authentication.headers.secureKeyHeaderName: secure_key
+   # Authentication headers secure key that is expected to match secure key value from headers
+   # Typically this is placed in the header by the authentication agent, e.g. Apache mod_mellon
+   # studio.authentication.headers.secureKeyHeaderValue: secure
+   # Authentication header for username
+   # studio.authentication.headers.username: username
+   # Authentication header for first name
+   # studio.authentication.headers.firstName: firstname
+   # Authentication header for last name
+   # studio.authentication.headers.lastName: lastname
+   # Authentication header for email
+   # studio.authentication.headers.email: email
+   # Authentication header for groups: comma separated list of sites and groups
+   #   Example:
+   #   craftercms1645,Author,anothersite,Author
+   # studio.authentication.headers.groups: groups
 
 ------------------
 Mail Configuration
 ------------------
 
-   The following section of Studio's configuration overrides allows you to setup the SMTP server to be used by Crafter CMS when sending emails
+The following section of Studio's configuration overrides allows you to setup the SMTP server to be used by Crafter CMS when sending emails
 
 .. code-block:: yaml
    :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml

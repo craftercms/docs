@@ -6,6 +6,19 @@
 Crafter Engine API
 ==================
 
+.. note::
+    When simple multi-tenancy has been configured for Crafter Engine, make sure that the request includes the ``crafterSite`` parameter to set a site value.  Crafter Engine API's are site specific, and so, it needs to know the site when multi-tenancy has been configured for each request made.
+
+    Here's an example to get an Item from the content store:
+
+    .. code-block:: guess
+
+        http://localhost:8080/api/1/site/content_store/item.json?url=/site/website/index.xml&crafterSite=mysite
+
+    |
+
+    For more information on configuring multi-tenancy in Crafter Engine, see :ref:`engine-site-configuration-multi-tenancy`
+
 ------------
 Site Context
 ------------
@@ -16,6 +29,15 @@ Site Context
 	site/context/id
 	site/context/destroy
 	site/context/rebuild
+
+-------------------
+Site Scheduled Jobs
+-------------------
+
+.. toctree::
+	:maxdepth: 1
+
+	site/jobs/list
 
 -------------
 Site Mappings
@@ -34,6 +56,7 @@ Site Cache
 	:maxdepth: 1
 
 	site/cache/clear
+	site/cache/statistics
 	
 ------------------
 Site Content Store

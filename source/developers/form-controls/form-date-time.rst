@@ -34,14 +34,19 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Description/Purpose   || Date and Time field with a picker.                                   |
 +------------------------+-----------------------------------------------------------------------+
-|| Properties            || * Display Size: How much of the input to show on the author input    |
-||                       ||   form.                                                              |
-||                       || * Max Length: Maximum number of characters to accept as input.       |
-||                       || * Read Only: Make field read-only (can't be changed by the author).  |
-||                       || * Tokenize for Indexing: Make the object searchable by this field.   |
+|| Properties            || * Show Date: Display date                                            |
+||                       || * Show Time: Display time                                            |
+||                       || * Show Clear Value: Display link to clear value                      |
+||                       || * Set Now Link: Display link to set time to now                      |
+||                       || * Populated: Put in values in the date/time based on                 |
+||                       ||       populate expression                                            |
+||                       || * Allow Past Date: Allow user to set date in the past                |
+||                       || * Populate Expression:                                               |
+||                       || * Use Custom Timezone:                                               |
+||                       || * Readonly: Make field read-only (can't be changed by the author).   |
+||                       || * Readonly on Edit:                                                  |
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || * Required: Make field required to fill out.                         |
-||                       || * Match Pattern: Field must match a regex to be accepted.            |
 +------------------------+-----------------------------------------------------------------------+
 || Related Data Sources  || * None.                                                              |
 +------------------------+-----------------------------------------------------------------------+

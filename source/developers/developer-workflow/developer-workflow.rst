@@ -1,8 +1,8 @@
 .. _devOps-workflow:
 
-=============================================
-Working with Crafter CMS - Developer Workflow
-=============================================
+=======================================================
+Introduction to the Developer Workflow with Crafter CMS
+=======================================================
 
 Development and content authoring are both a major part of producing digital experiences.  In this section, we'll take a look at the basic mechanics that support content authoring, publishing and developer workflow.
 
@@ -198,7 +198,7 @@ Let’s walk through each part of the dialog:
 #. Next, because you plan to connect this project to an upstream repository you want to click the plus (+) on **Link to upstream remote Git repository** This will open a number of new fields.
 #. In the **Remote Git Repository Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
 #. In the **Remote Git Repository URL** field you must provide the link to the Git repository discussed in **Step #1**: https://github.com/myuser/devworkflowexample.git
-#. Provide your credentials in **Remote Git Repository Username** and **Remote Git Repository Password**
+#. Provide your credentials based on the authentication method selected.  In our example, we chose ``Basic`` as the authentication method and we'll need to fill in **Remote Git Repository Username** and **Remote Git Repository Password**
 #. Choose the option: **Create site based on blueprint push to a remote bare repository**. This means that Crafter Studio will create a new site based on the blueprint you choose, link the remote repository as an upstream and then once the blueprint is installed in the local Repositories it will be pushed automatically to the upstream remote.
 #. Choose your blueprint. There are several out of the box blueprints provided by default. Choose one of these or one of your own. For our example, we’ll choose Empty which is the “Hello World” of blueprints.
 #. Click **Create**. Crafter CMS will create the local repositories, Solr core and internal data structures required to support the project and install the blueprint. Once complete it will connect to the upstream and push the contents of the Sandbox repository to the remote.
