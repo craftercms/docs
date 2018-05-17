@@ -29,17 +29,19 @@ Let's take a look at the fields displayed when **Link to upstream remote Git rep
 
 #. In the **Remote Git Repository Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
 #. In the **Remote Git Repository URL** field you must provide the link to the Git repository you would like to use
-#. In **Remote Git Repository Username** if required, provide your credentials (username)
-#. In **Remote Git Repository Password** if required, provide your credentials (password)
+#. In the **Remote Branch** field, you can supply a branch name, but can be left blank, which in turn would default to the ``master`` branch.
+#. In the **Authentication** field you must select the authentication method to be used to access the git repository in the previous field.
+
+   Crafter CMS supports the following authentication types to use to access remote repository:
+
+        - **None** - no credentials needed to access remote repository
+        - **Basic** - for this method, you will be asked for a **Remote Git Repository Username** and a **Remote Git Repository Password**.  Supply your username and password
+        - **Remote Git Repository Token** - for this method, you will be asked for a **Remote Git Repository Username** (if required) and a **Remote Git Repository Token**.  This method is usually used when two-factor authentication is configured on the remote repository to be accessed. Supply your username if required and token.
+        - **Remote Git Repository Private Key** - for this method, you will be asked for a **Remote Git Repository Private Key**.  This method is a key-based authentication.  Supply your private key.
+
 #. In **Options**, select the option for the operation required, **Create site based on remote git repository** or **Create site based on a blueprint then push to remote bare git repository**
-#. The field **Blueprint** is available when the option **Create site based on a blueprint then push to remote bare git repository** is selected.  Choose one of the default or choose your own.  The available default blueprints are as follows: Empty, Headless_blog, Headless_store and Website_editorial
 
-.. note::
-    For items 3 and 4, Crafter CMS supports the following authentication type to use to access remote repository:
-
-        - username and password authentication - for this method, supply your username and password
-        - username and token authentication - this method is usually used when two-factor authentication is configured on the remote repository to be accessed. Supply your username for the **Remote Git Repository Username** and in the **Remote Git Repository Password**, supply your token.
-        - key-based authentication - for this method, username and password is not required
+   The field **Blueprint** is available when the option **Create site based on a blueprint then push to remote bare git repository** is selected.  Choose one of the default or choose your own.  The available default blueprints are as follows: Empty, Headless_blog, Headless_store and Website_editorial
 
 
 ------------------------------------------------------------------------
@@ -77,7 +79,8 @@ or alternatively for ssh:
 
 Under **Options**, select **Create site based on remote git repository**, then click on the **Create** button.  After a short while, your site will be imported.
 
-**In case you want to publish the entire site, follow these optional steps:**
+In case you want to publish the entire site, follow these optional steps:
+-------------------------------------------------------------------------
 
 #. In the site you just imported, click on |siteConfig|, then click on **Publishing**
 
