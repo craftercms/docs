@@ -10,13 +10,14 @@ Every RTE in the system can have a different look  and feel, different editing/m
 ----------------------------------------
 Common Configurations for Effective RTEs
 ----------------------------------------
+Here are some things to consider for setting up effective RTEs:
 
 #. The rich text editor's width should be set to the same width as the region it is intended to edit
-#. Site style sheet is imported
+#. Site style sheet of your site is imported so it can be applied to the RTE
 #. Site styles are being applied appropriately to the markup in the RTE.  Not that sometimes styles in CSS are so aggressively specified that the RTE cannot pick them up.
 #. Formats and styles are configured to match the part of the site being edited
 #. Toolbar is configured with only what is required for the specific use case (reducing options makes it easier for editors)
-#. If plugins like insert component, insert smart table and so on are enabled it should be fully configured.
+#. If plugins like ``insert component``, ``insert smart table`` and so on are enabled it should be fully configured.
 
 --------------------------------------------------------------------
 What Out-of-the-Box Functionality Does Crafter Studio's RTE Support?
