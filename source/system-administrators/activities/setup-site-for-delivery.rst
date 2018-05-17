@@ -14,48 +14,69 @@ Crafter CMS out of the box has a script to help you create your Solr core and de
 
 In the ``bin`` folder in your Crafter CMS delivery environment, we will use the script ``init-site.sh``/``init-site.bat`` to help us create the Solr core and the deployer target.
 
-.. note:: If you're setting up a site for delivery from a Unix/Linux system, ``curl`` is required when running the script.  (To learn more about curl, see https://curl.haxx.se/)
+From your command line, navigate to your ``{Crafter-CMS-delivery-environment-directory}/bin/`` , and execute the init-site script. The following output of ``init-site.sh -h``
+explains how to use the script:
 
-From your command line, navigate to your ``{Crafter-CMS-delivery-environment-directory}/bin/`` , and execute the init-site script:
+  .. code-block:: guess
 
-* Unix/Linux systems:
+    usage: init-site [options] [site] [repo-path]
+     -a,--notification-addresses <addresses>   A comma-separated list of email
+                                               addresses that should receive
+                                               deployment notifications
+     -b,--branch <branch>                      The name of the branch to clone
+                                               (live by default)
+     -f,--passphrase <passphrase>              The passphrase of the private
+                                               key (when the key is passphrase
+                                               protected)
+     -h,--help                                 Show usage information
+     -k,--private-key <path>                   The path to the private key, if
+                                               it's not under the default path
+                                               (~/.ssh/id_rsa), when
+                                               authenticating through SSH to
+                                               the remote Git repo
+     -p,--password <password>                  The password for the remote Git
+                                               repo, when using basic
+                                               authentication
+     -u,--username <username>                  The username for the remote Git
+                                               repo, when using basic
+                                               authentication
+    EXAMPLES:
+     Init a site from the default repo path (../../crafter-authoring/data/repos/sites/{sitename}/published)
+         init-site mysite
+     Init a site from a specific local repo path
+         init-site mysite /opt/crafter/authoring/data/repos/sites/mysite/published
+     Init a site from a specific local repo path, cloning a specific branch of the repo
+         init-site -b master mysite /opt/crafter/authoring/data/repos/sites/mysite/published
+     Init a site that is in a remote HTTPS repo with username/password authentication
+         init-site -u jdoe -p jdoe1234 mysite https://github.com/jdoe/mysite.git
+     Init a site that is in a remote SSH repo with public/private key authentication (default private key path
+     with no passphrase)
+         init-site mysite ssh://myserver/opt/crater/sites/mysite
+     Init a site that is in a remote SSH repo with public/private key authentication (specific private key path
+     with no passphrase)
+         init-site -k ~/.ssh/jdoe_key mysite ssh://myserver/opt/crater/sites/mysite
+     Init a site that is in a remote SSH repo with public/private key authentication (specific private key path
+     with passphrase)
+         init-site -k ~/.ssh/jdoe_key -f jdoe123 mysite ssh://myserver/opt/crater/sites/mysite
 
-    .. code-block:: bat
 
-        ./init-site.sh  <site name> [site's published repo git url] [ssh private key path]
+We recommend using Secure Shell (SSH) with your site's published repo git url and for authentication, to use either username/password authentication or public/private key
+authentication. The SSH Git URL format is: ``ssh://[user@]host.xz[:port]/path/to/repo/`` where sections between **[]** are optional.
 
-* Windows:
+Example #1: ``ssh://server1.example.com/path/to/repo``
 
-    .. code-block:: bat
+Example #2: ``ssh://jdoe@server2.example.com:63022/path/to/repo``
 
-        init-site.bat  <site name> [site's published repo git url] [ssh private key path]
+If you are just working on another directory on disk for your delivery, you can just use the filesystem.  When your repository is local, make sure to use the absolute path.
+Here is an example site's published repo git url when using a local repository:
 
-where:
+  .. code-block:: guess
 
-    - ``<site name>`` is the name of your site
-    - ``[site's published repo git url]`` is the Git URL to the published repository of the Studio server/installation (e.g. ``/opt/crafter/authoring/data/repos/sites/mysite/published``) (optional)
-    - ``[ssh private key path]`` is the local path for the private key used for SSH public/private key authentication. (optional)
-
-    We recommend using Secure Shell (SSH) with your site's published repo git url and for authentication, to use either username/password authentication or public/private key authentication.
-
-    The SSH Git URL format is: ``ssh://[user@]host.xz[:port]/path/to/repo/`` where sections between **[]** are optional.
-
-    Example #1: ssh://server1.example.com/path/to/repo
-
-    Example #2: ssh://jdoe@server2.example.com:63022/path/to/repo
-
-    If you are just working on another directory on disk for your delivery, you can just use the filesystem.  When your repository is local, make sure to use the absolute path.
-
-    Here is an example site's published repo git url when using a local repository:
-
-      .. code-block:: sh
-
-          /opt/crafter/authoring/data/repos/sites/mysite/published
-
+      /opt/crafter/authoring/data/repos/sites/mysite/published
 
 .. note::
   When using ``ssh``, you might see in the logs ``com.jcraft.jsch.JSchException: UnknownHostKey`` errors. These errors are common in Ubuntu, and are caused by known host
-  keys being stored in non-RSA format. Please follow the instructions in :ref:`crafter-studio-debugging-deployer-issues` under ``SSH Unknown Host`` to resolve them. 
+  keys being stored in non-RSA format. Please follow the instructions in :ref:`crafter-studio-debugging-deployer-issues` under ``SSH Unknown Host`` to resolve them.
 
 
 -----------------------------
