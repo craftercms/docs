@@ -349,6 +349,86 @@ Let's look at the dependencies of our copied article, where we expect a copy of 
 
 |
 
+Item Specific Dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Item specific dependencies allows for the automatic copying of child items matching the regex pattern in the ``studio-config.yaml`` file when a content is copied.  It also allows the automatic deletion of child items matching the regex pattern in the ``studio-config.yaml`` file when a content is deleted.
+
+Below is the regex pattern for item specific dependencies:
+
+.. code-block:: yaml
+
+   # Regex pattern for item specific dependencies
+   studio.configuration.dependency.itemSpecificPatterns: /site/components/page/.*,/static-assets/page/.*,/site/components/item/.*,/static-assets/item/.*
+
+|
+
+``/site/components/page/.*`` and ``/static-assets/page/.*`` are legacy regex pattern for backwards compatibility.  Moving forward, we suggest using the following regex patterns for item specific dependencies: ``/site/components/item/.*`` and ``/static-assets/item/.*``
+
+Item specific dependencies are configured during content type creation.  We'll look at an example of how content is modeled to take advantage of item specific dependencies, using the **Page - Article** content type in the Website_editorial blueprint.
+
+From the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Content Types**, then click on **Open Existing Type**.  We will select the content type **Page - Article** for editing.
+
+Scroll to the ``Data Sources`` section, and click on **Upload Images**.  Notice the value in the **Repository Path** property, which is the path where to store the new file uploaded from desktop.
+
+.. figure:: /_static/images/content-model/item-specific-dependencies.png
+    :alt: Modeling content for item specific dependencies
+    :align: center
+
+|
+
+Let's take a closer look at the value for the **Repository Path** property.  The value listed is: `/static-assets/item/images/{yyyy}/{mm}/{dd}/` where:
+
+    * **{yyyy}** inserts the current year when the image is uploaded (4 digit year)
+    * **{mm}** inserts the current month when the image is uploaded (2-digit month of the year)
+    * **{dd}** inserts the current day when the image is uploaded (2-digit day of the month)
+
+To take advantage of item dependencies for copying and deleting, we will place uploaded items in ``/static-assets/item/``.  We added a folder ``image`` to better organize our items, since in this location, we will only be storing images.  We also used the macros **{yyyy}**, **{mm}** and **{dd}**, again to better organize our image (we can browse by year, or by month, or by date).  So, when an image is uploaded from the Desktop say on May 17, 2016, the image will be stored in the following location: `/static-assets/item/images/2016/05/17/`.
+
+The macros **{yyyy}**, **{mm}** and **{dd}** are available for content modelers to use to better organize their site items.
+
+Let's take a look at item dependencies in action for copying and deleting content.  Let's create a new article (**Page-Article** content type) under one of the article folders in the **Sidebar**.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.  Note the location where the image is uploaded.
+
+.. figure:: /_static/images/content-model/new-article-item-dependencies.png
+    :alt: New article created with image uploaded from Desktop
+    :align: center
+
+|
+
+From the **Sidebar**, navigate to the newly created article.  Right click on the article and select **Copy**.  Navigate to a different folder, right click on the folder and select **Paste**.
+
+Let's look at the dependencies of our copied article, where we expect a copy of the image under the ``/static-assets/item/images/2018/05/17`` will be located since we have taken advantage of the item specific dependencies regex pattern of ``/static-assets/item/*``.
+
+.. figure:: /_static/images/content-model/copied-article-item-dependencies.png
+    :alt: Copy of image uploaded from Desktop created when article was copied in dependencies
+    :align: center
+
+|
+
+Let's also take a look at the ``static-assets`` folder to see the copy of the uploaded image
+
+.. figure:: /_static/images/content-model/copied-article-sidebar.png
+    :alt: Copy of image uploaded from Desktop created when article was copied in Sidebar
+    :align: center
+
+|
+
+Now let's take a look at what happens when we delete content with item specific dependencies.  From the **Sidebar**, navigate to the article that we created.  Right click on the article and select **Delete**.  Click on the **Delete** button when the Delete dialog appears.  Notice the items that will be deleted when we delete the article.
+
+.. figure:: /_static/images/content-model/delete-article-dialog.png
+    :alt: Delete dialog showing items to be deleted
+    :align: center
+
+|
+
+Open the **Sidebar** and the **Dashboard** and notice the items that are deleted.  We deleted an article, and since the image is located in a path matching the regex pattern for item specific dependencies, the image is deleted along with the article.
+
+.. figure:: /_static/images/content-model/delete-article-sidebar.png
+    :alt: Sidebar and Dashboard showing items that were deleted when the article was deleted
+    :align: center
+
+|
+
 .. _form-controls:
 
 ^^^^^^^^^^^^^
