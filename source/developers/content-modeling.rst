@@ -383,11 +383,11 @@ Let's take a closer look at the value for the **Repository Path** property.  The
     * **{mm}** inserts the current month when the image is uploaded (2-digit month of the year)
     * **{dd}** inserts the current day when the image is uploaded (2-digit day of the month)
 
-To take advantage of item dependencies for copying and deleting, we will place uploaded items in ``/static-assets/item/``.  We added a folder ``image`` to better organize our items, since in this location, we will only be storing images.  We also used the macros **{yyyy}**, **{mm}** and **{dd}**, again to better organize our image (we can browse by year, or by month, or by date).  So, when an image is uploaded from the Desktop say on May 17, 2016, the image will be stored in the following location: `/static-assets/item/images/2016/05/17/`.
+To take advantage of item specific dependencies for copying and deleting, we will place uploaded items in ``/static-assets/item/``.  We added a folder ``image`` to better organize our items, since in this location, we will only be storing images.  We also used the macros **{yyyy}**, **{mm}** and **{dd}**, again to better organize our image (we can browse by year, or by month, or by date).  So, when an image is uploaded from the Desktop say on May 17, 2016, the image will be stored in the following location: `/static-assets/item/images/2016/05/17/`.
 
 The macros **{yyyy}**, **{mm}** and **{dd}** are available for content modelers to use to better organize their site items.
 
-Let's take a look at item dependencies in action for copying and deleting content.  Let's create a new article (**Page-Article** content type) under one of the article folders in the **Sidebar**.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.  Note the location where the image is uploaded.
+Let's take a look at item specific dependencies in action for copying and deleting content.  Let's create a new article (**Page-Article** content type) under one of the article folders in the **Sidebar**.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.  Note the location where the image is uploaded.
 
 .. figure:: /_static/images/content-model/new-article-item-dependencies.png
     :alt: New article created with image uploaded from Desktop
