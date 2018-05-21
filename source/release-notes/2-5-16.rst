@@ -14,8 +14,8 @@ Highlights
 Updates
 ^^^^^^^
 
-UI
-^^
+Studio UI
+^^^^^^^^^
 * Updated service call for Dependencies dialog
 * Updated right click menu for items in workflow
 * Fix for repeat group rendering in content form
