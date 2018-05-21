@@ -19,7 +19,7 @@
   <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
   {% endblock %}
 
-  <script src="http://email.tl.fortawesome.com/c/eJxNjUEOgyAQRU8jS8Iwg-CChUnbewiD0cYWFUyvX7pr8lcvL--z59RzsmL1WoFVDgxYQjNIQw5Bmrt1A4ICusGoaexI1U3O-azTJ5X8SjLml1g8Wp41Mk46osHgKIHp3cAxTIF6y2LzS6176XDs9KPtKqll3v-ZRtE6CgCsnHwWcfozxy3ta1xSOz6u4wo_8Qv7fjYS"></script>
+  <script src="https://use.fontawesome.com/2f9f3dc2b9.js"></script>
 
   {# FAVICON #}
   {% if favicon %}
@@ -199,16 +199,46 @@
 <script type="text/javascript" src="{{ pathto('_static/js/app.js', 1) }}"></script>
 
 {%- block analytics %}
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<link rel="stylesheet" href="https://static.craftercms.org/cookie-consent.css" type="text/css" />
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+
 {% if theme_analytics_id %}
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', '{{ theme_analytics_id }}', 'auto');
-  ga('send', 'pageview');
-</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ theme_analytics_id }}"></script>
 {% endif %}
+
+<script async type="text/javascript" src="https://static.craftercms.org/cookie-consent.js"></script>
+
+<script>
+function GDPRHandler_init() {
+	return {
+		"palette": {
+		    "popup": {
+		        "background": "#aa0000",
+		        "text": "#ffdddd"
+		    },
+		    "button": {
+		        "background": "#ff0000"
+		    }
+		},
+		"content": {
+			"href": "https://craftercms.org/privacy/",
+			"clearCookiesHowToHref": "https://www.wikihow.com/Clear-Your-Browser%27s-Cookies",
+			"dismiss": "Decline",
+			"allow": "Accept"
+		},
+
+		{% if theme_analytics_id %}
+		"gaId": "{{ theme_analytics_id }}",
+		{% endif %}
+
+		"didAcceptCookies": function(){
+		}
+        }
+    }
+</script>
+
 {% endblock %}
 
 {%- block bottom %} {% endblock %}
