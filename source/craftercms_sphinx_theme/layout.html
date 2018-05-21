@@ -199,17 +199,46 @@
 <script type="text/javascript" src="{{ pathto('_static/js/app.js', 1) }}"></script>
 
 {%- block analytics %}
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<link rel="stylesheet" href="https://static.craftercms.org/cookie-consent.css" type="text/css" />
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+
 {% if theme_analytics_id %}
-<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ theme_analytics_id }}"></script>
+{% endif %}
+
+<script async type="text/javascript" src="https://static.craftercms.org/cookie-consent.js"></script>
+
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ theme_analytics_id }}', { 'anonymize_ip': true });
+function GDPRHandler_init() {
+	return {
+		"palette": {
+		    "popup": {
+		        "background": "#aa0000",
+		        "text": "#ffdddd"
+		    },
+		    "button": {
+		        "background": "#ff0000"
+		    }
+		},
+		"content": {
+			"href": "https://craftercms.org/privacy/",
+			"clearCookiesHowToHref": "https://www.wikihow.com/Clear-Your-Browser%27s-Cookies",
+			"dismiss": "Decline",
+			"allow": "Accept"
+		},
+
+		{% if theme_analytics_id %}
+		"gaId": "{{ theme_analytics_id }}",
+		{% endif %}
+
+		"didAcceptCookies": function(){
+		}
+        }
+    }
 </script>
 
-{% endif %}
 {% endblock %}
 
 {%- block bottom %} {% endblock %}
