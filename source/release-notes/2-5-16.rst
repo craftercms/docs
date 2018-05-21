@@ -1,0 +1,30 @@
+------------------
+Crafter CMS 2.5.16
+------------------
+
+* Release Date: May 10, 2018
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* Patch release
+
+^^^^^^^
+Updates
+^^^^^^^
+
+Studio UI
+^^^^^^^^^
+* Updated service call for Dependencies dialog
+* Updated right click menu for items in workflow
+* Fix for repeat group rendering in content form
+
+Studio Backend
+^^^^^^^^^^^^^^
+* Improvements for Get Permissions call on dashboard
+* Fix for state of reverted content
+* Cascade delete dependencies when nested
+* Improved dependency service implementation
+
+For a full list of tickets, please visit: `GitHub 2.5.16 Milestone <https://github.com/craftercms/craftercms/milestone/28?closed=1>`_
