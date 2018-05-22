@@ -200,16 +200,6 @@
 
 {%- block analytics %}
 
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-<link rel="stylesheet" href="https://static.craftercms.org/cookie-consent.css" type="text/css" />
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-
-{% if theme_analytics_id %}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ theme_analytics_id }}"></script>
-{% endif %}
-
-<script async type="text/javascript" src="https://static.craftercms.org/cookie-consent.js"></script>
-
 <script>
 function GDPRHandler_init() {
 	return {
@@ -229,6 +219,11 @@ function GDPRHandler_init() {
 			"allow": "Accept"
 		},
 
+		cookie: {
+			path: '/',
+			domain: '.craftercms.org',
+		},
+
 		{% if theme_analytics_id %}
 		"gaId": "{{ theme_analytics_id }}",
 		{% endif %}
@@ -238,6 +233,16 @@ function GDPRHandler_init() {
         }
     }
 </script>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.css" />
+<link rel="stylesheet" href="https://static.craftercms.org/cookie-consent.css" type="text/css" />
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.js"></script>
+
+{% if theme_analytics_id %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ theme_analytics_id }}"></script>
+{% endif %}
+
+<script async type="text/javascript" src="https://static.craftercms.org/cookie-consent.js"></script>
 
 {% endblock %}
 
