@@ -75,8 +75,13 @@ Here is an example site's published repo git url when using a local repository:
       /opt/crafter/authoring/data/repos/sites/mysite/published
 
 .. note::
-  When using ``ssh``, you might see in the logs ``com.jcraft.jsch.JSchException: UnknownHostKey`` errors. These errors are common in Ubuntu, and are caused by known host
-  keys being stored in non-RSA format. Please follow the instructions in :ref:`crafter-studio-debugging-deployer-issues` under ``SSH Unknown Host`` to resolve them.
+  * When using ``ssh``, you might see in the logs ``com.jcraft.jsch.JSchException: UnknownHostKey`` errors. These errors are common in Ubuntu, and are caused by known host keys being stored in non-RSA format. Please follow the instructions in :ref:`crafter-studio-debugging-deployer-issues` under ``SSH Unknown Host`` to resolve them.
+
+  * ``git`` needs to be installed in authoring when using SSH to connect the delivery to the authoring.
+
+    If you see the following error in the delivery Deployer: `Caused by: java.io.IOException: bash: git-upload-pack: command not found` you'll need to add the location of git (usually **/usr/bin**) to your non-login shell startup file (e.g. **~/.bashrc**).
+
+    To get the location of git, run the following command: ``which git-upload-pack``
 
 
 -----------------------------
