@@ -27,7 +27,7 @@ Example
 
 .. code-block:: guess
 
-	GET .../api/1/services/api/1/site/clear-configuration-cache.json?site=mysite
+	GET .../api/1/services/api/1/site/clear-configuration-cache.json?site_id=mysite
 
 
 --------

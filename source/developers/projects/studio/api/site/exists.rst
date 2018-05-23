@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site ID to use                                  |
+|| site_id      || String     || |checkmark|  || Site ID to use                                  |
 +---------------+-------------+---------------+--------------------------------------------------+
 
 -------
@@ -36,7 +36,7 @@ Example
 
 .. code-block:: guess
 
-	GET .../api/1/services/api/1/site/exists.json?site=mysite
+	GET .../api/1/services/api/1/site/exists.json?site_id=mysite
 
 .. code-block:: json
 

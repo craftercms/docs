@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || days         || String     || |checkmark|  || Number of days for history                      |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -46,7 +46,7 @@ Request
 
 .. code-block:: guess
 
-    GET .../api/1/services/api/1/deployment/get-deployment-history.json?site=mysite&days=30&num=10&filterType=all
+    GET .../api/1/services/api/1/deployment/get-deployment-history.json?site_id=mysite&days=30&num=10&filterType=all
 
 ^^^^^^^^
 Response

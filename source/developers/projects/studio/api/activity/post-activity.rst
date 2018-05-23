@@ -27,7 +27,7 @@ Parameters
 +-------------------+-------------+---------------+----------------------------------------------+
 || Name             || Type       || Required     || Description                                 |
 +===================+=============+===============+==============================================+
-|| site             || String     || |checkmark|  || Site to use                                 |
+|| site_id          || String     || |checkmark|  || Site to use                                 |
 +-------------------+-------------+---------------+----------------------------------------------+
 || user             || String     || |checkmark|  || User that performed activity                |
 +-------------------+-------------+---------------+----------------------------------------------+
@@ -47,7 +47,7 @@ Request
 
 .. code-block:: guess
 
-    POST .../api/1/services/api/1/activity/post-activity.json?site=mysite&user=jane.doe&path=/site/website/index.xml&activity=UPDATE&contentTypeClass=pages``
+    POST .../api/1/services/api/1/activity/post-activity.json?site_id=mysite&user=jane.doe&path=/site/website/index.xml&activity=UPDATE&contentTypeClass=pages``
 
 ^^^^^^^^
 Response

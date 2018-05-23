@@ -27,7 +27,7 @@ Parameters
 +--------------------+-------------+---------------+--------------------------------------------------+
 || Name              || Type       || Required     || Description                                     |
 +====================+=============+===============+==================================================+
-|| site              || String     || |checkmark|  || Site to use                                     |
+|| site_id           || String     || |checkmark|  || Site to use                                     |
 +--------------------+-------------+---------------+--------------------------------------------------+
 || sort              || String     || |checkmark|  || Sort results by field                           |
 +--------------------+-------------+---------------+--------------------------------------------------+
@@ -46,7 +46,7 @@ Request
 
 .. code-block:: guess
 
-    GET .../api/1/services/api/1/workflow/get-go-live-items.json?site=mysite&sort=eventDate&ascending=false
+    GET .../api/1/services/api/1/workflow/get-go-live-items.json?site_id=mysite&sort=eventDate&ascending=false
 
 ^^^^^^^^
 Response

@@ -30,7 +30,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || profile      || String     || |checkmark|  || Profile Id to use                               |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -43,7 +43,7 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/services/api/1/aws/s3/upload.json?site=mysite&profile=s3-default``
+``POST .../api/1/services/api/1/aws/s3/upload.json?site_id=mysite&profile=s3-default``
 
 .. NOTE::
     This request needs to be sent with ``Content-Type=multipart/form-data`` and the file as parameter ``file``.

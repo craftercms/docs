@@ -28,7 +28,7 @@ Parameters
 +---------------------+-------------+---------------+--------------------------------------------------+
 || Name               || Type       || Required     || Description                                     |
 +=====================+=============+===============+==================================================+
-|| site               || String     || |checkmark|  || Site to use                                     |
+|| site_id            || String     || |checkmark|  || Site to use                                     |
 +---------------------+-------------+---------------+--------------------------------------------------+
 || environment        || String     || |checkmark|  || Environment to publish to                       |
 +---------------------+-------------+---------------+--------------------------------------------------+
@@ -45,7 +45,7 @@ Example
 
 .. code-block:: guess
 
-	POST .../api/1/services/api/1/publish/publish-items.json?site=mysite
+	POST .../api/1/services/api/1/publish/publish-items.json?site_id=mysite
 
 .. code-block:: json
     :linenos:

@@ -30,7 +30,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || profile      || String     || |checkmark|  || Profile Id to use                               |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -42,7 +42,7 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/services/api/1/aws/elastictranscoder/transcode.json?site=mysite&profile=profileId``
+``POST .../api/1/services/api/1/aws/elastictranscoder/transcode.json?site_id=mysite&profile=profileId``
 
 .. NOTE::
     This request needs to be sent with ``Content-Type=multipart/form-data`` and the file as parameter ``file``.
