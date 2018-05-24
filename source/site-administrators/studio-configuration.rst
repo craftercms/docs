@@ -37,6 +37,7 @@ Here are the settings that can be configured through Crafter Studio:
    studio/configure-notifications
    studio/content-monitoring
    studio/contextual-navigation-config
+   studio/dependency-resolver
    studio/drag-n-drop-configuration
    studio/environment-overrides
    studio/mime-types-configuration
