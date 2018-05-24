@@ -7,7 +7,7 @@ Dependency Resolver Configuration
 Crafter Studio extracts and tracks dependencies between content items to assist authors with publishing, workflow and core content operations like copy and delete.  This file configures what file paths Crafter considers a dependency and how they should be extracted.
 
 .. image:: /_static/images/site-admin/config-open-dependency-config.png
-    :alt: Configurations - Open CMIS Configuration
+    :alt: Configurations - Open Dependency Resolver Configuration
     :width: 65 %
     :align: center
 
