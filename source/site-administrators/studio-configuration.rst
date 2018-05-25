@@ -31,6 +31,7 @@ Here are the settings that can be configured through Crafter Studio:
 .. toctree::
    :maxdepth: 1
 
+   studio/asset-processing-config
    studio/aws-profiles-configuration
    studio/box-profiles-configuration
    studio/cmis-configuration
