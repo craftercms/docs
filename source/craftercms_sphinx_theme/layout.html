@@ -201,48 +201,8 @@
 {%- block analytics %}
 
 <script>
-function GDPRHandler_init() {
-	return {
-		"palette": {
-		    "popup": {
-		        "background": "#aa0000",
-		        "text": "#ffdddd"
-		    },
-		    "button": {
-		        "background": "#ff0000"
-		    }
-		},
-		"content": {
-			"href": "https://craftercms.org/privacy/",
-			"clearCookiesHowToHref": "https://www.wikihow.com/Clear-Your-Browser%27s-Cookies",
-			"dismiss": "Decline",
-			"allow": "Accept"
-		},
-
-		cookie: {
-			path: '/',
-			domain: '.craftercms.org',
-		},
-
-		{% if theme_analytics_id %}
-		"gaId": "{{ theme_analytics_id }}",
-		{% endif %}
-
-		"didAcceptCookies": function(){
-		}
-        }
-    }
+    document.write("<script async data-cookie-consent-site='craftercms' data-cookie-consent-child='docs.craftercms.org' src='//static.craftercms.org/gdpr.min.js'><\/script>");
 </script>
-
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.css" />
-<link rel="stylesheet" href="https://static.craftercms.org/cookie-consent.css" type="text/css" />
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.js"></script>
-
-{% if theme_analytics_id %}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ theme_analytics_id }}"></script>
-{% endif %}
-
-<script async type="text/javascript" src="https://static.craftercms.org/cookie-consent.js"></script>
 
 {% endblock %}
 
