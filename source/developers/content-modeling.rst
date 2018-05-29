@@ -300,6 +300,8 @@ Open the **Sidebar** and navigate to the newly created article.  Right click on 
 
 |
 
+.. _copy-dependencies-configuration:
+
 Copy Dependencies Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -349,6 +351,8 @@ Let's look at the dependencies of our copied article, where we expect a copy of 
 
 |
 
+.. _item-specific-dependencies:
+
 Item Specific Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -377,15 +381,21 @@ Scroll to the ``Data Sources`` section, and click on **Upload Images**.  Notice 
 
 |
 
-Let's take a closer look at the value for the **Repository Path** property.  The value listed is: `/static-assets/item/images/{yyyy}/{mm}/{dd}/` where:
+Let's take a closer look at the value for the **Repository Path** property.  The value listed is:
+
+`/static-assets/item/images/{yyyy}/{mm}/{dd}/`
+
+where:
 
     * **{yyyy}** inserts the current year when the image is uploaded (4 digit year)
     * **{mm}** inserts the current month when the image is uploaded (2-digit month of the year)
     * **{dd}** inserts the current day when the image is uploaded (2-digit day of the month)
 
-To take advantage of item specific dependencies for copying and deleting, we will place uploaded items in ``/static-assets/item/``.  We added a folder ``image`` to better organize our items, since in this location, we will only be storing images.  We also used the macros **{yyyy}**, **{mm}** and **{dd}**, again to better organize our image (we can browse by year, or by month, or by date).  So, when an image is uploaded from the Desktop say on May 17, 2016, the image will be stored in the following location: `/static-assets/item/images/2016/05/17/`.
+To take advantage of item specific dependencies for copying and deleting, we will place uploaded items in ``/static-assets/item/``.  We added a folder ``image`` to better organize our items, since in this location, we will only be storing images.  We also used the macros **{yyyy}**, **{mm}** and **{dd}**, again to better organize our image (we can browse by year, or by month, or by date).  So, when an image is uploaded from the Desktop say on May 17, 2016, the image will be stored in the following location:
 
-The macros **{yyyy}**, **{mm}** and **{dd}** are available for content modelers to use to better organize their site items.
+`/static-assets/item/images/2016/05/17/`
+
+The macros **{yyyy}**, **{mm}** and **{dd}** are available for content modelers to use to better organize their site items.  To see other macros available for content modelers, see :ref:`macros-for-data-sources`.
 
 Let's take a look at item specific dependencies in action for copying and deleting content.  Let's create a new article (**Page-Article** content type) under one of the article folders in the **Sidebar**.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.  Note the location where the image is uploaded.
 
@@ -550,6 +560,35 @@ Form Engine Data Sources (please use the scrollbar to see more controls)
 
 .. include:: form-sources/list-form-sources.rst
 
+.. _macros-for-data-sources:
+
+Macros for Data Sources
+^^^^^^^^^^^^^^^^^^^^^^^
+There are a number of macros available for the content model designer to use in data sources. These macros are used when uploading assets to better organize site items, usually in the **Repository Path** property of the data source for uploading.  Here are the available macros:
+
++---------------------+--------------------------------------------------------------------------------+
+|| Macro              || Description                                                                   |
++=====================+================================================================================+
+|| {objectId}         || Inserts a GUID                                                                |
++---------------------+--------------------------------------------------------------------------------+
+|| {objectGroupId}    || Inserts the first 4 characters of a GUID                                      |
++---------------------+--------------------------------------------------------------------------------+
+|| {objectGroupId2}   || Inserts the first 2 characters of a GUID                                      |
++---------------------+--------------------------------------------------------------------------------+
+|| {year}             || Inserts the current year (4 digit year)                                       |
++---------------------+--------------------------------------------------------------------------------+
+|| {month}            || Inserts the current month (2-digit month of the year)                         |
++---------------------+--------------------------------------------------------------------------------+
+|| {parentPath}       || Inserts the parent path of the component/page containing the upload controls  |
++---------------------+--------------------------------------------------------------------------------+
+|| {yyyy}             || Inserts the current year (4 digit year)                                       |
++---------------------+--------------------------------------------------------------------------------+
+|| {mm}               || Inserts the current month (2-digit month of the year)                         |
++---------------------+--------------------------------------------------------------------------------+
+|| {dd}               || Inserts the current day (2-digit day of the month)                            |
++---------------------+--------------------------------------------------------------------------------+
+
+For an example of how the macros are used when modeling your content, the website_editorial blueprint uses some of the macros available in the content type Page -  Article.  The section :ref:`item-specific-dependencies` above details the use of some of the macros in the website_editorial blueprint, content type Page -  Article.
 
 ^^^^^^^^^^^
 Form Canvas
