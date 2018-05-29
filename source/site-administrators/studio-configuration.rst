@@ -31,12 +31,14 @@ Here are the settings that can be configured through Crafter Studio:
 .. toctree::
    :maxdepth: 1
 
+   studio/asset-processing-config
    studio/aws-profiles-configuration
    studio/box-profiles-configuration
    studio/cmis-configuration
    studio/configure-notifications
    studio/content-monitoring
    studio/contextual-navigation-config
+   studio/dependency-resolver
    studio/drag-n-drop-configuration
    studio/environment-overrides
    studio/mime-types-configuration
