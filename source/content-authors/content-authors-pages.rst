@@ -12,7 +12,7 @@ Templates are used for page layouts in Crafter CMS.  A developer usually creates
 -------------
 Adding a Page
 -------------
-To add a page, in the Site Content panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to create the content, then right click on the parent page and select *New Content*
+To add a page, in the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to create the content, then right click on the parent page and select *New Content*
 
 .. image:: /_static/images/page/page-add-new-content.png
     :width: 40 %    
@@ -60,11 +60,11 @@ Editing a Page
 --------------
 There are multiple ways to edit a page.  
     
-    #. In the Site Content panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to edit the content, then right click and select **Edit**.  A form containing the page content you want to edit will open.
+    #. In the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to edit the content, then right click and select **Edit**.  A form containing the page content you want to edit will open.
     
-    #. Click on the pencil on the top right corner to turn on in-context editing if it's not turned on yet.  Click on the pencil on top of the content you want to edit.  A form containing the page content you want to edit will open.
+    #. In the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to edit the content and click on it to display the page.  Click on the pencil on the top right corner (context nav) to turn on in-context editing if it's not turned on yet.  Click on the pencil on top of the content you want to edit.  A form containing the page content you want to edit will open.
 
-    #. In the Site Content panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to edit the content and click on it to display the page.  Click **Edit** on the context navigation menu. A form containing the page content you want to edit will open.
+    #. In the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to edit the content and click on it to display the page.  Click **Edit** on the context navigation menu. A form containing the page content you want to edit will open.
 
 .. image:: /_static/images/page/page-edit.png
     :width: 95 %
@@ -470,10 +470,25 @@ Here are the available standard formatting tools from the RTE out of the box:
 +----------------------------+----------------------------------------------------------------+
 
 
+--------------
+Copying a Page
+--------------
 
+To copy a page, in the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to copy content, then right click on the page and select **Copy**
 
+.. image:: /_static/images/page/page-copy-menu.png
+    :width: 50 %
+    :align: center
+    :alt: Content Author - Copy Page Menu
 
+In the Sidebar panel, navigate to the level and location within the site navigation tree where you want to paste the copied content, then right click and select **Paste**
 
+.. image:: /_static/images/page/page-paste-menu.png
+    :width: 50 %
+    :align: center
+    :alt: Content Author - Paste Page Menu
 
+Depending on how the page content type has been modeled (dependencies), copying and pasting a page may also create copies of items in the page. These dependencies are setup by the developers when creating the content type.  Generally, when an item on a page is uploaded to the following locations: ``/site/components/item/.*`` or  ``/static-assets/item/.*``, when the page containing those items is copied, a copy of the uploaded items are created.
 
+To learn more about these dependencies and see examples, see :ref:`item-specific-dependencies` or :ref:`copy-dependencies-configuration`.
 
