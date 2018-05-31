@@ -141,6 +141,7 @@ Publish
    publish/start
    publish/stop
    publish/publish-items
+   publish/reset-staging
 
 --------
 Activity
