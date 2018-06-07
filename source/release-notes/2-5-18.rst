@@ -1,0 +1,17 @@
+------------------
+Crafter CMS 2.5.18
+------------------
+
+* Release Date: June 6, 2018
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* Patch release
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Studio form UI fixes https://github.com/craftercms/craftercms/issues/2153
