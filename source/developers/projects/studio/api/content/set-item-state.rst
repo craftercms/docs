@@ -27,7 +27,7 @@ Parameters
 +-------------------+-------------+---------------+--------------------------------------------------+
 || Name             || Type       || Required     || Description                                     |
 +===================+=============+===============+==================================================+
-|| site             || String     || |checkmark|  || Site to use                                     |
+|| site_id          || String     || |checkmark|  || Site to use                                     |
 +-------------------+-------------+---------------+--------------------------------------------------+
 || path             || String     || |checkmark|  || Path to use                                     |
 +-------------------+-------------+---------------+--------------------------------------------------+
@@ -46,7 +46,7 @@ Request
 
 .. code-block:: guess
 
-    GET ../api/1/services/api/1/content/set-item-state.json?site=mysite&path=/config/studio/administration/config-list.xml&state=EXISTING_UNEDITED_UNLOCKED&systemprocessing=false
+    GET ../api/1/services/api/1/content/set-item-state.json?site_id=mysite&path=/config/studio/administration/config-list.xml&state=EXISTING_UNEDITED_UNLOCKED&systemprocessing=false
 
 
 

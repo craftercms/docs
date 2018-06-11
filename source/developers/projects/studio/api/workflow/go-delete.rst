@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || user         || String     || |checkmark|  || User executing operation                        |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -44,7 +44,7 @@ Request
 
 .. code-block:: guess
 
-    POST ../api/1/services/api/1/workflow/go-delete.json?deletedep=true&site=mysite&user=admin
+    POST ../api/1/services/api/1/workflow/go-delete.json?deletedep=true&site_id=mysite&user=admin
 
 .. code-block:: json
     :linenos:

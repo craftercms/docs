@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || uri          || String     || |checkmark|  || Path of the content                             |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -38,7 +38,7 @@ Example
 
 .. code-block:: guess
 
-	POST .../api/1/services/api/1/dependency/get-dependencies.json?site=mysite
+	POST .../api/1/services/api/1/dependency/get-dependencies.json?site_id=mysite
 
 .. code-block:: guess
 

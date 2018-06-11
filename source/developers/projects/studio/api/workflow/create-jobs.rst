@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || user         || String     || |checkmark|  || User executing request                          |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -42,7 +42,7 @@ Request
 
 .. code-block:: guess
 
-    POST .../api/1/services/api/1/workflow/create-jobs.json?site=mysite&user=test
+    POST .../api/1/services/api/1/workflow/create-jobs.json?site_id=mysite&user=test
 
 .. code-block:: json
     :linenos:

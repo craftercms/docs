@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || parentpath   || String     || |checkmark|  || Path of the parent item                         |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -42,7 +42,7 @@ Request
 
 .. code-block:: guess
 
-    GET .../api/1/services/api/1/content/get-next-item-order.json?site=mysite&path=/site/website/index.xml
+    GET .../api/1/services/api/1/content/get-next-item-order.json?site_id=mysite&path=/site/website/index.xml
 
 ^^^^^^^^
 Response

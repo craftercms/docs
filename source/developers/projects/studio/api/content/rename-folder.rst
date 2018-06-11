@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || path         || String     || |checkmark|  || Path of the folder                              |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -44,7 +44,7 @@ Request
 
 .. code-block:: guess
 
-    POST .../api/1/services/api/1/content/rename-folder.json?site=mysite&path=/site/website/oldFolder&name=newFolder
+    POST .../api/1/services/api/1/content/rename-folder.json?site_id=mysite&path=/site/website/oldFolder&name=newFolder
 
 ^^^^^^^^
 Response

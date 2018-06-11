@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 
 -------
@@ -40,7 +40,7 @@ Request
 
 .. code-block:: guess
 
-    POST .../api/1/services/api/1/preview/sync-site.json?site=mysite
+    POST .../api/1/services/api/1/preview/sync-site.json?site_id=mysite
 
 ^^^^^^^^
 Response
