@@ -39,10 +39,11 @@ Configuration
 ||                       || * Show Clear Value: Display link to clear value                      |
 ||                       || * Set Now Link: Display link to set time to now                      |
 ||                       || * Populated: Put in values in the date/time based on                 |
-||                       ||       populate expression                                            |
+||                       ||   populate expression                                                |
 ||                       || * Allow Past Date: Allow user to set date in the past                |
-||                       || * Populate Expression:                                               |
-||                       || * Use Custom Timezone:                                               |
+||                       || * Populate Expression: Populate date/time control using the following|
+||                       ||   expressions: now [+ or -][number][days or weeks or years]          |
+||                       || * Use Custom Timezone: Allows user to select a timezone              |
 ||                       || * Readonly: Make field read-only (can't be changed by the author).   |
 ||                       || * Readonly on Edit:                                                  |
 +------------------------+-----------------------------------------------------------------------+
