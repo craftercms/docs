@@ -1,0 +1,17 @@
+------------------
+Crafter CMS 2.5.19
+------------------
+
+* Release Date: June 15, 2018?
+
+^^^^^^^^^^
+Highlights
+^^^^^^^^^^
+
+* Patch release
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Studio site config caching fix https://github.com/craftercms/craftercms/issues/2216
