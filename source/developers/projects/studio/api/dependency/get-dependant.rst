@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || path         || String     || |checkmark|  || Path of the content                             |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -42,7 +42,7 @@ Request
 
 .. code-block:: guess
 
-    POST .../api/1/services/api/1/dependency/get-dependant.json?site=mysite&path=/templates/web/pages/home.ftl
+    POST .../api/1/services/api/1/dependency/get-dependant.json?site_id=mysite&path=/templates/web/pages/home.ftl
 
 ^^^^^^^^
 Response

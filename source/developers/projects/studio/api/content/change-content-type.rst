@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || path         || String     || |checkmark|  || Path of the content                             |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -44,7 +44,7 @@ Request
 
 .. code-block:: guess
 
-    POST .../api/1/services/api/1/content/change-content-type.json?site=mysite&path=/site/website/health/index.xml&contentType=/page/generic
+    POST .../api/1/services/api/1/content/change-content-type.json?site_id=mysite&path=/site/website/health/index.xml&contentType=/page/generic
 
 ^^^^^^^^
 Response

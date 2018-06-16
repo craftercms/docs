@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || parentPath   || String     || |checkmark|  || Item's destination (path to paste content into) |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -42,7 +42,7 @@ Request
 
 .. code-block:: guess
 
-    GET .../api/1/services/api/1/clipboard/paste-item.json?site=mysite&parentPath=/site/website/folder2
+    GET .../api/1/services/api/1/clipboard/paste-item.json?site_id=mysite&parentPath=/site/website/folder2
 
 ^^^^^^^^
 Response

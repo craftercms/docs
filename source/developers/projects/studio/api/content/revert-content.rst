@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || path         || String     || |checkmark|  || Path of the content                             |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -44,7 +44,7 @@ Request
 
 .. code-block:: guess
 
-    GET .../api/1/services/api/1/content/revert-content.json?site=mysite&path=/site/website/style/index.xml&version=818e0f68bfccda9a9a1a788341b87ca3ba5ad3c6
+    GET .../api/1/services/api/1/content/revert-content.json?site_id=mysite&path=/site/website/style/index.xml&version=818e0f68bfccda9a9a1a788341b87ca3ba5ad3c6
 
 ^^^^^^^^
 Response

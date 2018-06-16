@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || path         || String     || |checkmark|  || Path of the content                             |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -42,7 +42,7 @@ Request
 
 .. code-block:: guess
 
-    GET .../api/1/services/api/1/content/get-item.json?site=mysite&path=/site/website/index.xml&edit=true
+    GET .../api/1/services/api/1/content/get-item.json?site_id=mysite&path=/site/website/index.xml&edit=true
 
 ^^^^^^^^
 Response

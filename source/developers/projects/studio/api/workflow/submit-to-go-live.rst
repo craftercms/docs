@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+----------------------------------------------------+
 || Name         || Type       || Required     || Description                                       |
 +===============+=============+===============+====================================================+
-|| site         || String     || |checkmark|  || Site to use                                       |
+|| site_id      || String     || |checkmark|  || Site to use                                       |
 +---------------+-------------+---------------+----------------------------------------------------+
 || user         || String     || |checkmark|  || User requesting publishing                        |
 +---------------+-------------+---------------+----------------------------------------------------+
@@ -45,7 +45,7 @@ Request
 
 .. code-block:: guess
 
-    POST .../api/1/services/api/1/workflow/submit-to-go-live.json?site=mysite&user=author
+    POST .../api/1/services/api/1/workflow/submit-to-go-live.json?site_id=mysite&user=author
 
 .. code-block:: json
     :linenos:

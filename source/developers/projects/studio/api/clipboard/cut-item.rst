@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 
 -------
@@ -39,7 +39,7 @@ Request
 
 .. code-block:: guess
 
-    POST .../api/1/services/api/1/clipboard/cut-item.json?site=mysite
+    POST .../api/1/services/api/1/clipboard/cut-item.json?site_id=mysite
 
 .. code-block:: json
     :linenos:

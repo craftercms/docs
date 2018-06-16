@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || locale       || String     || |checkmark|  || Locale of message                               |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -44,7 +44,7 @@ Request
 
 .. code-block:: guess
 
-    GET .../api/1/services/api/1/site/get-canned-message.json?site=mysite&locale=en&type=NotApproved
+    GET .../api/1/services/api/1/site/get-canned-message.json?site_id=mysite&locale=en&type=NotApproved
 
 ^^^^^^^^
 Response

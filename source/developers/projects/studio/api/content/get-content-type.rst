@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || type         || String     || |checkmark|  || Content type                                    |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -42,7 +42,7 @@ Request
 
 .. code-block:: guess
 
-    GET .../api/1/services/api/1/content/get-content-type.json?site=mysite&type=/page/category-landing
+    GET .../api/1/services/api/1/content/get-content-type.json?site_id=mysite&type=/page/category-landing
 
 ^^^^^^^^
 Response

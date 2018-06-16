@@ -1,13 +1,10 @@
-.. _crafter-studio-api-s3-upload:
+.. _crafter-studio-api-publish-sync-staging:
 
-=============
-AWS S3 Upload
-=============
+============
+Sync Staging
+============
 
-Upload a file to AWS S3.
-
-.. NOTE::
-  Make sure that the aws profile id to be used has been configured.
+Synchronize Crafter Studio's staging published repository with live published repository.
 
 --------------------
 Resource Information
@@ -16,11 +13,11 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/aws/s3/upload.json``                     |
+|| URL                       || ``/api/1/services/api/1/publish/sync-staging.json``              |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || N/A                                                              |
+|| Required Role             || Admin, site member                                               |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -32,9 +29,8 @@ Parameters
 +===============+=============+===============+==================================================+
 || site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| profile      || String     || |checkmark|  || Profile Id to use                               |
+|| environment  || String     || |checkmark|  || Staging environment to sync with live           |
 +---------------+-------------+---------------+--------------------------------------------------+
-
 
 -------
 Example
@@ -43,21 +39,20 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/services/api/1/aws/s3/upload.json?site_id=mysite&profile=s3-default``
+``POST .../api/1/services/api/1/publish/sync-staging.json``
 
-.. NOTE::
-    This request needs to be sent with ``Content-Type=multipart/form-data`` and the file as parameter ``file``.
+.. code-block:: json
 
+  {
+    "site_id" : "mysite",
+    "environment" : "qa"
+  }
 
 ^^^^^^^^
 Response
 ^^^^^^^^
 
 ``Status 200 OK``
-
-.. code-block:: json
-
-  {"bucket":"mybucket456","key":"16229575007_dcf9c870e3_o.jpg"}
 
 ---------
 Responses
@@ -66,9 +61,17 @@ Responses
 +---------+-------------------------------------------+---------------------------------------------------+
 || Status || Location                                 || Response Body                                    |
 +=========+===========================================+===================================================+
-|| 200    ||                                          || See example above.                               |
+|| 200    ||                                          || ``{ "message" : "OK" }``                         |
 +---------+-------------------------------------------+---------------------------------------------------+
-|| 400    ||                                          || ``{ "message" : "Bad request" }``                |
+|| 400    ||                                          || ``{ "message" : "Invalid parameter(s)" }``       |
++---------+-------------------------------------------+---------------------------------------------------+
+|| 400    ||                                          || ``{ "message" : "Bad Request" }``                |
++---------+-------------------------------------------+---------------------------------------------------+
+|| 401    ||                                          || ``{ "message" : "Unauthorized" }``               |
++---------+-------------------------------------------+---------------------------------------------------+
+|| 404    ||                                          || ``{ "message" : "Site not found" }``             |
++---------+-------------------------------------------+---------------------------------------------------+
+|| 404    ||                                          || ``{ "message" : "Environment not found" }``      |
 +---------+-------------------------------------------+---------------------------------------------------+
 || 500    ||                                          || ``{ "message" : "Internal server error" }``      |
 +---------+-------------------------------------------+---------------------------------------------------+
