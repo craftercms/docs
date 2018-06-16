@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     ||              || Site to use                                     |
+|| site_id      || String     ||              || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || user         || String     ||              || User to get his/hers roles                      |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -38,7 +38,7 @@ Example
 
 .. code-block:: guess
 
-	GET .../api/1/services/api/1/security/get-user-roles.json?site=mysite&user=admin
+	GET .../api/1/services/api/1/security/get-user-roles.json?site_id=mysite&user=admin
 
 .. code-block:: json
   :linenos:

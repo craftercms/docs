@@ -27,7 +27,7 @@ Parameters
 +-----------------+-------------+---------------+--------------------------------------------------+
 || Name           || Type       || Required     || Description                                     |
 +=================+=============+===============+==================================================+
-|| site           || String     || |checkmark|  || Site to use                                     |
+|| site_id        || String     || |checkmark|  || Site to use                                     |
 +-----------------+-------------+---------------+--------------------------------------------------+
 || contentTypes   || String     || |checkmark|  || Filter results by specified content types       |
 +-----------------+-------------+---------------+--------------------------------------------------+
@@ -60,7 +60,7 @@ Request
 
 .. code-block:: guess
 
-    GET ../api/1/services/api/1/content/search.json?site=mysite
+    GET ../api/1/services/api/1/content/search.json?site_id=mysite
 
 .. code-block:: json
 

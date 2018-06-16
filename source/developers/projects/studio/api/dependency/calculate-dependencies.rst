@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || item         || String     || |checkmark|  || Path to the item(s)                             |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -38,7 +38,7 @@ Example
 
 .. code-block:: guess
 
-	POST .../api/1/services/api/1/dependency/calculate-dependencies.json?site=mysite
+	POST .../api/1/services/api/1/dependency/calculate-dependencies.json?site_id=mysite
 
 .. code-block:: json
     :linenos:

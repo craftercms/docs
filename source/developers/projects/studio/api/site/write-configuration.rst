@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site ID to use                                  |
+|| site_id      || String     || |checkmark|  || Site ID to use                                  |
 +---------------+-------------+---------------+--------------------------------------------------+
 || path         || String     || |checkmark|  || Path where to save configuration file           |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -38,7 +38,7 @@ Example
 
 .. code-block:: guess
 
-	POST .../api/1/services/api/1/site/write-configuration.json?site=mysite&path=/config/studio/site-config.xml
+	POST .../api/1/services/api/1/site/write-configuration.json?site_id=mysite&path=/config/studio/site-config.xml
 
 .. code-block:: xml
 
