@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     ||              || Site to use                                     |
+|| site_id      || String     ||              || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || path         || String     ||              || Path of the content                             |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -40,7 +40,7 @@ Example
 
 .. code-block:: guess
 
-	GET .../api/1/services/api/1/security/get-user-permissions.json?site=mysite&path=/site/website/style/index.xml&user=admin
+	GET .../api/1/services/api/1/security/get-user-permissions.json?site_id=mysite&path=/site/website/style/index.xml&user=admin
 
 .. code-block:: json
   :linenos:

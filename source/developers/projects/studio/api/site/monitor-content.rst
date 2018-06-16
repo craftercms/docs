@@ -33,19 +33,19 @@ Example
 
    [
      {
-       siteId: "myawesomesite",
+       site_id: "myawesomesite",
        contentMonitoring: {
          monitors: [ ]
        }
      },
      {
-       siteId: "hello",
+       site_id: "hello",
        contentMonitoring: {
          monitors: [ ]
        }
      },
      {
-       siteId: "blog",
+       site_id: "blog",
        contentMonitoring: {
        monitors: [ ]
        }

@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || path         || String     || |checkmark|  || Path of the content                             |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -46,7 +46,7 @@ Request
 
 .. code-block:: guess
 
-    GET .../api/1/services/api/1/content/reorder-items.json?site=mysitet&path=/site/website/health/index.xml&before=/site/website/entertainment/index.xml&after=/site/website/technology/index.xml
+    GET .../api/1/services/api/1/content/reorder-items.json?site_id=mysitet&path=/site/website/health/index.xml&before=/site/website/entertainment/index.xml&after=/site/website/technology/index.xml
 
 ^^^^^^^^
 Response

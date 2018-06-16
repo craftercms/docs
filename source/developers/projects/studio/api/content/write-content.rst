@@ -33,7 +33,7 @@ Parameters
 +-----------------+-------------+---------------+--------------------------------------------------+
 || Name           || Type       || Required     || Description                                     |
 +=================+=============+===============+==================================================+
-|| site           || String     || |checkmark|  || Site to use                                     |
+|| site_id        || String     || |checkmark|  || Site to use                                     |
 +-----------------+-------------+---------------+--------------------------------------------------+
 || path           || String     || |checkmark|  || Path of the content                             |
 +-----------------+-------------+---------------+--------------------------------------------------+
@@ -61,7 +61,7 @@ Request
 
 .. code-block:: guess
 
-    GET ../api/1/services/api/1/content/write-content.json?site=mysite&phase=onSave&path=/site/website/index.xml&fileName=index.xml&user=admin&contentType=/page/home&unlock=true
+    GET ../api/1/services/api/1/content/write-content.json?site_id=mysite&phase=onSave&path=/site/website/index.xml&fileName=index.xml&user=admin&contentType=/page/home&unlock=true
 
 .. code-block:: guess
     :caption: Request body

@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || path         || String     || |checkmark|  || Path of the content                             |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -52,7 +52,7 @@ Request
 
 .. code-block:: guess
 
-    GET .../api/1/services/api/1/content/get-content.json?site=mysite&path=/static-assets/images/image1.png&newname=cropped.png&t=10&l=10&w=10&h=10
+    GET .../api/1/services/api/1/content/get-content.json?site_id=mysite&path=/static-assets/images/image1.png&newname=cropped.png&t=10&l=10&w=10&h=10
 
 ^^^^^^^^
 Response

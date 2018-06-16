@@ -27,7 +27,7 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| site         || String     || |checkmark|  || Site to use                                     |
+|| site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
 || user         || String     || |checkmark|  || Username to filter by                           |
 +---------------+-------------+---------------+--------------------------------------------------+
@@ -47,7 +47,7 @@ Request
 
 .. code-block:: guess
 
-    GET .../api/1/services/api/1/activity/get-user-activities.json?site=mysite&user=jane.doe&num=10&excludeLive=false&filterType=all``
+    GET .../api/1/services/api/1/activity/get-user-activities.json?site_id=mysite&user=jane.doe&num=10&excludeLive=false&filterType=all``
 
 ^^^^^^^^
 Response
