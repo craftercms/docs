@@ -10,7 +10,13 @@ FAQ
 What is Crafter CMS
 -------------------
 
-Crafter CMS is an open-source, Java-based, Web content management system for Web sites, mobile apps, AR, VR and more, designed for ease of development and scaling. Crafter CMS is comprised of several independent, integrated components including: a core content repository, an authoring application for content editors/managers (Crafter Studio), a dynamic content delivery system (Crafter Engine), a user profile store and personalization server (Crafter Profile), a query/search server (Crafter Search) and a social content store and server (Crafter Social).
+Crafter CMS is an open-source, Java-based, content management system for:
+
+* Web applications (including React JS, Angular, Vue, HTML5)
+* API-based mobile apps (Crafter CMS is API-first)
+* Augmented and Virtual Reality applications based on A-Frame
+
+Crafter CMS is designed for ease of development, flexibility, scalability and geographic distribution of independent delivery nodes. Crafter CMS is comprised of several independent, integrated components including: a core content repository, an authoring application for content editors/managers (Crafter Studio), a dynamic content delivery system (Crafter Engine), a user profile store and personalization server (Crafter Profile), a query/search server (Crafter Search) and a social content store and server (Crafter Social).
 
 
 ---------------------------------
@@ -25,7 +31,7 @@ Do I need to run MongoDB in order to run Crafter CMS?
 
 No.  MongoDB is not mandatory for Crafter CMS to operate. MongoDB backs optional functionality in the platform.
 
-Crafter CMS is composed of independent microservices that you can activate/de-activate as needed.  Two Crafter CMS microservices rely on MongoDB:
+Crafter CMS is composed of independent services that you can activate/de-activate as needed.  Two Crafter CMS services rely on MongoDB:
 
 Crafter Profile which provides identity management, a distributed user attribute store and advanced targeting capabilities.
 Crafter Social which provides support for User Generated Content (UGC).
