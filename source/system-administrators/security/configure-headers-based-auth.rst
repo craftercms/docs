@@ -140,4 +140,8 @@ Let's take a look at an example setup for headers based authentication using SAM
 
 Once a user has been authenticated, the user will be granted access to Studio.  If the user is not yet in the Studio database, the user will be created in the database with the attributes from the header, and also added to the groups of the site specified in the header.
 
+.. note::
+
+   The **secure_key** header value set in the ``auth_mellon configuration`` (Item number 5 above) should match the value listed in the ``studio-config-override.yaml`` for the property **studio.authentication.headers.secureKeyHeaderName**.  Also, remember to change the default values listed for the **secure_key** in the yaml file.
+
 For more information on doing a generic setup of mod_auth_mellon, see: https://github.com/UNINETT/mod_auth_mellon/wiki/GenericSetup
