@@ -120,7 +120,7 @@ Let's take a look at an example setup for headers based authentication using SAM
           RequestHeader set firstname "%{MELLON_firstname}e" env=MELLON_firstname
           RequestHeader set lastname "%{MELLON_lastname}e" env=MELLON_lastname
           RequestHeader set groups "%{MELLON_groups}e" env=MELLON_groups
-          RequestHeader set secure_key "secure" env=MELLON_secure_key
+          RequestHeader set secure_key "secure"
 
           # Configure the SP metadata
           MellonSPPrivateKeyFile  /etc/apache2/mellon/https_sp.example.org_studio.key
