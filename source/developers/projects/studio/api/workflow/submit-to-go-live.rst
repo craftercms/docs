@@ -54,6 +54,7 @@ Request
         "sendEmail" : true,
         "schedule" : "now",
         "submissionComment" : "",
+        "environment" : "live"
         "items" : [
             "/site/website/index.xml"
         ]
