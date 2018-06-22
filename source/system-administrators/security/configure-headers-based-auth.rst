@@ -6,6 +6,10 @@ Configure Headers Based Authentication
 
 Crafter Studio is able to integrate with SAML 2.0 providers and similar Single Sign-on (SSO) solutions.  Studio will look for configurable HTTP headers and will use those to authenticate the user.  This section details how to setup Studio for headers based authentication.
 
+.. note::
+
+    This section assumes the user has familiarity with Apache HTTPd, Apache mod_mellon and SAML 2.0 protocol
+
 -------------------------------------------------
 Configure Studio for Headers Based Authentication
 -------------------------------------------------
@@ -72,7 +76,7 @@ Let's take a look at an example setup for headers based authentication using SAM
 
        a2enmod auth_mellon headers proxy_ajp
 
-3. Create the service provider metadata with the `mellon_create_metadata.sh <https://raw.githubusercontent.com/UNINETT/mod_auth_mellon/master/mellon_create_metadata.sh/>`_ script.
+3. Create the service provider metadata with the `mellon_create_metadata.sh <https://github.com/UNINETT/mod_auth_mellon/blob/master/mellon_create_metadata.sh/>`_ script.
 
    Here's an example:
 
@@ -142,6 +146,6 @@ Once a user has been authenticated, the user will be granted access to Studio.  
 
 .. note::
 
-   The **secure_key** header value set in the ``auth_mellon configuration`` (Item number 5 above) should match the value listed in the ``studio-config-override.yaml`` for the property **studio.authentication.headers.secureKeyHeaderName**.  Also, remember to change these default values.
+   The **secure_key** header value set in the ``auth_mellon configuration`` (Item number 5 above) should match the value listed in the ``studio-config-override.yaml`` for the property **studio.authentication.headers.secureKeyHeaderValue**.  This becomes a handshake between Studio and HTTPd and protects your installation from someone potentially faking headers. You should change the default to some arbitrary value to better protect your installation.
 
 For more information on doing a generic setup of mod_auth_mellon, see: https://github.com/UNINETT/mod_auth_mellon/wiki/GenericSetup
