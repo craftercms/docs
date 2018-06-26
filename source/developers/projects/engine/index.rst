@@ -17,7 +17,7 @@ Crafter Engine provides content delivery services to power any type of Web or mo
 Source Code
 -----------
 
-Crafter Engine's source code is managed in github: https://github.com/craftercms/engine
+Crafter Engine's source code is managed in GitHub: https://github.com/craftercms/engine
 
 --------
 Java Doc

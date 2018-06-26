@@ -29,7 +29,7 @@ Here are the steps for upgrading your Crafter CMS install.  Please review the st
 
     #. **Source control**
 
-       Git is used as the source control system. Regarding new repository structure, multiple git repositories are used for the entire studio repository. One git repository is used for global space, and for sites, two git repositories are used per site (one for sandbox and one for published content).
+       Git is used as the source control system. Regarding new repository structure, multiple Git repositories are used for the entire studio repository. One Git repository is used for global space, and for sites, two Git repositories are used per site (one for sandbox and one for published content).
 
 Let's begin upgrading our Crafter CMS install.
 

@@ -26,13 +26,13 @@ What do I need to run Crafter CMS
 Follow these instructions to run Crafter CMS and to download and install Crafter on your machine or server: :ref:`Quick Start Guide <getting-started>`
 
 --------------------------------------------------------------------------------
-Does Crafter CMS require git?  My company uses xxx source code control system...
+Does Crafter CMS require Git?  My company uses XYZ source code control system...
 --------------------------------------------------------------------------------
 
 No.  Crafter CMS does not require your development team to use Git.  Crafter CMS employs a Git-based repository and publishing system, which comes embedded in every Crafter CMS. Using Crafter's Git-based repository for your content application's source code is optional.  You may continue to use the Source Code Management System of your choice for development.
 
 -------------------------------
-Do my authors need to know git?
+Do my authors need to know Git?
 -------------------------------
 
 No.  Authors do not need to know or work directly with Git at all in order to use Crafter CMS.

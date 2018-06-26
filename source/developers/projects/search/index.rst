@@ -17,7 +17,7 @@ Crafter Search is the search facade for Crafter CMS. Crafter Search proxies the 
 Source Code
 -----------
 
-Crafter Search's source code is managed in github: https://github.com/craftercms/search
+Crafter Search's source code is managed in GitHub: https://github.com/craftercms/search
 
 --------
 Java Doc

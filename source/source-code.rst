@@ -6,7 +6,7 @@ Source Code
 Crafter CMS Projects
 ####################
 
-Git Hub hosts `Crafter CMS <https://github.com/craftercms/>`_ and is made up of a number of software projects that work together to make up Crafter CMS.
+GitHub hosts `Crafter CMS <https://github.com/craftercms/>`_ and is made up of a number of software projects that work together to make up Crafter CMS.
 
 The primary projects are:
 
