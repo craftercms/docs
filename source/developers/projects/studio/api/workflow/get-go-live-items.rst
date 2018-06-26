@@ -229,6 +229,8 @@ Response
                                 "size":0.0,
                                 "sizeUnit":null,
                                 "mimeType":"application/xml",
+                                "environment":null,
+                                "submittedToEnvironment":"live",
                                 "new":false,
                                 "levelDescriptor":false,
                                 "newFile":false,
