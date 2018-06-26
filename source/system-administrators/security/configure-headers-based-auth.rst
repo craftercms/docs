@@ -149,3 +149,5 @@ Once a user has been authenticated, the user will be granted access to Studio.  
    The **secure_key** header value set in the ``auth_mellon configuration`` (Item number 5 above) should match the value listed in the ``studio-config-override.yaml`` for the property **studio.authentication.headers.secureKeyHeaderValue**.  This becomes a handshake between Studio and HTTPd and protects your installation from someone potentially faking headers. You should change the default to some arbitrary value to better protect your installation.
 
 For more information on doing a generic setup of mod_auth_mellon, see: https://github.com/UNINETT/mod_auth_mellon/wiki/GenericSetup
+
+For more information on adding Microsoft Active Directory Integration (ADFS) to Apache, see: https://bgstack15.wordpress.com/2016/03/24/adding-adfs-integration-to-apache/
