@@ -38,7 +38,7 @@ Setting up the production environment
 #. After starting delivery, we'll setup the site we created in step 2 in our delivery instance. Crafter CMS comes with a script, ``init-site.sh``, to help
    us setup our site for delivery.
 
-      `./init-site.sh  <site name> [site's published repo git url] [ssh private key path]`
+      `./init-site.sh [options] [site] [repo-path]`
 
    See the guide :ref:`setup-site-for-delivery` for more information on setting up your site for delivery.
 
