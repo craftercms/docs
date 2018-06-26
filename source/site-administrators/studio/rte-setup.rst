@@ -29,7 +29,7 @@ Our RTE is based on TinyMCE (https://www.tinymce.com/) and can leverage all conf
 Crafter Studio Specific Extensions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The list of Crafter Studio specific extensions is available in `Crafter Studio's git repo <https://github.com/craftercms/studio2-ui/tree/master/static-assets/components/cstudio-forms/controls/rte-plugins>`_.
+The list of Crafter Studio specific extensions is available in `Crafter Studio's Git repo <https://github.com/craftercms/studio2-ui/tree/master/static-assets/components/cstudio-forms/controls/rte-plugins>`_.
 
 To see an example, the out of the box blueprints Empty and Website_Editorial uses the **Insert Image** specific extensions which enables the user to insert an image from 1 or more data sources, which replaces the TinyMCE out of the box image plugin.
 
@@ -185,7 +185,7 @@ Inside the ``<config>`` tag, there can be multiple ``<setup>`` tags. Each repres
 
       * ``<appliesToChannel>`` is optional. If it's missing, it will apply to every channel.
     * ``<toolbarItems1>`` and similar contain the toolbar buttons in the RTE. You can specify any plugin as named in `Tiny MCE Plugins List <https://www.tinymce.com/docs/plugins/>`_. They will be featured in the same order as specified here, and separators can be specified with ``|``.
-    * ``<rteModules>`` is used to specify which external plugins to include, the list of which is available in `Crafter Studio's git repo <https://github.com/craftercms/studio2-ui/tree/master/static-assets/components/cstudio-forms/controls/rte-plugins>`_.
+    * ``<rteModules>`` is used to specify which external plugins to include, the list of which is available in `Crafter Studio's Git repo <https://github.com/craftercms/studio2-ui/tree/master/static-assets/components/cstudio-forms/controls/rte-plugins>`_.
 
 For example, to use the ``edit-html`` editor, you'll have to add ``<module>edit-html</module>`` to ``<rteModules>`` and place ``edithtml`` somewhere in a toolbar ``<toolbarItems1>`` similar to this ``link,unlink,anchor,|,edithtml,|,undo,redo</toolbarItems1>``
 

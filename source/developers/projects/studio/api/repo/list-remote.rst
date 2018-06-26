@@ -4,7 +4,7 @@
 List Remote Repositories
 ========================
 
-List remote git repositories for a site.
+List remote Git repositories for a site.
 
 --------------------
 Resource Information

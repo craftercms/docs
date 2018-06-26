@@ -17,7 +17,7 @@ Crafter Studio provides all the content management services and integrates with 
 Source Code
 -----------
 
-Crafter Studio's source code is managed in github: https://github.com/craftercms/studio
+Crafter Studio's source code is managed in GitHub: https://github.com/craftercms/studio
 
 --------
 ReST API

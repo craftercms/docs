@@ -112,7 +112,7 @@ In the previous screenshot, we didn't copy the ``config/`` folder. Why? (:ref:`W
 
     * **Copy the config folder and modify** ``permission-mappings-config.xml`` and ``site-config.xml`` to use ``{siteName}`` again as explained in (:ref:`Warnings <blueprint-site-vs-blueprint>`)
     * **Keep config as is** and only copy the files you've modified. This will likely include the whole ``config/studio/content-types/`` folder and ``config/studio/preview-tools/components-config.xml`` for drag and drop.
-    * **Keep your blueprint in a VCS** which will allow you to compare it against your changes and interactively see when to preserve the old version. This will also help you make any updates when blueprints get updated. You can either use git or a visual diff tool.
+    * **Keep your blueprint in a VCS** which will allow you to compare it against your changes and interactively see when to preserve the old version. This will also help you make any updates when blueprints get updated. You can either use Git or a visual diff tool.
 
 Now that you have merged your "site" with the Empty blueprint in the proper way, the resulting folder is ready to be distributed. To install, follow the next steps.
 
@@ -128,7 +128,7 @@ On Crafter 3.0
     #. Copy your blueprint folder into ``{CRAFTER_HOME}/data/repos/global/blueprints``.
     #. Once you do, commit the change to the global repo (``{CRAFTER_HOME}/data/repos/global/``) by using ``git``, and your blueprint will now start appearing when you try to create a new site.
     
-       * Crafter 3 uses a vanilla version of Git, so regular git commands work as intended. To commit your changes so Crafter can see it, head to ``{CRAFTER_HOME}/data/repos/global/blueprints`` and git add your modified files like this
+       * Crafter 3 uses a vanilla version of Git, so regular Git commands work as intended. To commit your changes so Crafter can see it, head to ``{CRAFTER_HOME}/data/repos/global/blueprints`` and git add your modified files like this
 
          .. code-block:: sh
 
@@ -146,7 +146,7 @@ On Crafter 3.0
 
             git commit -m "<the commit’s description>"
 
-       * No need to push, there’s no remote configured. You can also use any git client. Now, it will be available when you create a new site.
+       * No need to push, there’s no remote configured. You can also use any Git client. Now, it will be available when you create a new site.
 
 ^^^^^^^^^^^^^^^^^^^^^
 On Crafter 3.1 and on
@@ -167,13 +167,13 @@ Since a blueprint is very similar in its layout to a site, you can modify a blue
 
 .. warning:: However
 
-    * The ``config/`` folder contains multiple configuration files with the site name. In blueprints, this is generically represented with ``{siteName}``, so you must either only edit config files directly on the blueprint's filesystem, or carefully replace your preview site name with ``{siteName}`` as appropriate. Having an initial version of the blueprint (when it was just copy of the Empty blueprint before making it a site) in a git repository will be helpful for this.
+    * The ``config/`` folder contains multiple configuration files with the site name. In blueprints, this is generically represented with ``{siteName}``, so you must either only edit config files directly on the blueprint's filesystem, or carefully replace your preview site name with ``{siteName}`` as appropriate. Having an initial version of the blueprint (when it was just copy of the Empty blueprint before making it a site) in a Git repository will be helpful for this.
 
        * Specifically, ``permission-mappings-config.xml`` and ``site-config.xml`` use ``{siteName}`` in a way where Studio replaces it with the site's name when creating a site. Sample files keep their ``{siteName}``.
        * ``permission-mappings-config.xml`` uses it in ``<site id="{siteName}">``
        * ``site-config.xml`` uses it in ``<wem-project>{siteName}</wem-project>`` and ``<display-name>{siteName}</display-name>``
 
-    * Each site is made up of 2 different git repos, ``sandbox`` and ``published``. Inside of either of them, lie the site's folders and also the ``.git/`` folder. You need to move this site folders back to the blueprint folder, but avoid copying this ``.git/`` folder, as it's unnecessary for the final distributable package and may even contain sensitive information.
+    * Each site is made up of 2 different Git repos, ``sandbox`` and ``published``. Inside of either of them, lie the site's folders and also the ``.git/`` folder. You need to move this site folders back to the blueprint folder, but avoid copying this ``.git/`` folder, as it's unnecessary for the final distributable package and may even contain sensitive information.
 
 Remember that whenever you edit directly in the filesystem, you need to commit your changes to ensure they are properly reflected.
 
