@@ -212,7 +212,7 @@ only the commit id that will be used to track the changes during deployments:
   
   0be0d2e52283c17b834901e9cda6332d06fb05b6
 
-If the repository is changed manually using git commands instead of updating files using Crafter
+If the repository is changed manually using Git commands instead of updating files using Crafter
 Studio it is possible that a deployment may found a conflict, for example if a specific commit is
 deleted from the repository. In most cases Crafter Deployer should be able to detect those conflicts
 and solve them automatically, however if a deployment does not finish successfully you can follow

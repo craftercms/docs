@@ -35,7 +35,7 @@ High-level Performance Considerations
 The majority of Studio operations are I/O intensive. Optimizing your installation for better I/O performance will typically pay the biggest dividends in performance gains early on. These general guidelines help address these considerations:
 
 * Fast raw storage performance (fast concurrent reads and writes)
-* Different storage devices are used for different concerns (logging, git, search index, swap etc.)
+* Different storage devices are used for different concerns (logging, Git, search index, swap etc.)
 * Data organization on disk (using different devices for each repos, indexes, etc)
 * Leave half the RAM for the OS and non-JVM processes
 

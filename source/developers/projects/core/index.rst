@@ -12,7 +12,7 @@ Crafter Core is the content rendering library for Crafter CMS.
 Source Code
 -----------
 
-Crafter Core's source code is managed in github: https://github.com/craftercms/core
+Crafter Core's source code is managed in GitHub: https://github.com/craftercms/core
 
 --------
 Java Doc

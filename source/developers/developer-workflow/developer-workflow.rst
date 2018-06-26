@@ -80,14 +80,14 @@ Let's take a closer look at the diagram above.
 
 Step 1: Create an Upstream Repository
 
-In order to facilitate a developer workflow, you want to establish an upstream repository for your Sandbox in your production authoring environment. Any Git repository will work. It’s typical to use a Git repository that has a UI/Workflow atop of it such as Github, Bitbucket, Gitlab and other similar systems. The upstream repository is the root of the developer workflow.
+In order to facilitate a developer workflow, you want to establish an upstream repository for your Sandbox in your production authoring environment. Any Git repository will work. It’s typical to use a Git repository that has a UI/Workflow atop of it such as GitHub, Bitbucket, GitLab and other similar systems. The upstream repository is the root of the developer workflow.
 
 .. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-flow-1-768x496.png
     :alt: Developer Workflow - Create upstream repository
     :width: 70 %
     :align: center
 
-    **A Git repository with support for “developer/team workflow” such as Github, GitLab or Bitbucket is configured as a remote upstream repository of the Production Authoring Sandbox repository.  This is the primary point of contact between the authoring process and the development and code release process come together.**
+    **A Git repository with support for “developer/team workflow” such as GitHub, GitLab or Bitbucket is configured as a remote upstream repository of the Production Authoring Sandbox repository.  This is the primary point of contact between the authoring process and the development and code release process come together.**
 
 Step 2: Use Automation to Sync Sandbox with the Upstream
 
@@ -168,7 +168,7 @@ Create an empty repository in your upstream (GitHub, Bitbucket etc.) The specifi
     :width: 70 %
     :align: center    
 
-On Github, once created you will see the following screen. Here you will note the repository URL (https://github.com/myuser/devworkflowexample.git) which you will need for the next step. Also, if you’re trying to create an upstream for an existing project, you’ll find the instructions below in the “push an existing repository from the command line” section.
+On GitHub, once created you will see the following screen. Here you will note the repository URL (https://github.com/myuser/devworkflowexample.git) which you will need for the next step. Also, if you’re trying to create an upstream for an existing project, you’ll find the instructions below in the “push an existing repository from the command line” section.
 
 .. image:: /_static/images/developer/workflow/craftercms-bare-repo-2-768x569.png
     :alt: Developer Workflow - Bare repo created in Git
@@ -185,7 +185,7 @@ Next, you want to log in to Crafter Studio as the admin user. The admin user has
     :width: 65 %
     :align: center
 
-Clicking **Create Site** will present you with the Create Site dialog. This dialog changes depending on what you choose. Below is an example of the dialog filled out in a way that creates your project locally, set the Github repository as its upstream remote and pushes the initial project contents to the upstream repository.
+Clicking **Create Site** will present you with the Create Site dialog. This dialog changes depending on what you choose. Below is an example of the dialog filled out in a way that creates your project locally, set the GitHub repository as its upstream remote and pushes the initial project contents to the upstream repository.
 
 Let’s walk through each part of the dialog:
 

@@ -17,7 +17,7 @@ Crafter Deployer is the deployment agent for Crafter CMS.
 Source Code
 -----------
 
-Crafter Deployer's source code is managed in Github: https://github.com/craftercms/deployer
+Crafter Deployer's source code is managed in GitHub: https://github.com/craftercms/deployer
 
 --------
 Java Doc

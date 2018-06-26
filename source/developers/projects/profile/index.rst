@@ -21,7 +21,7 @@ Crafter Profile provides a secure and scalable platform for storing, querying an
 Source Code
 -----------
 
-Crafter Profile's source code is managed in github: https://github.com/craftercms/profile
+Crafter Profile's source code is managed in GitHub: https://github.com/craftercms/profile
 
 --------
 Java Doc

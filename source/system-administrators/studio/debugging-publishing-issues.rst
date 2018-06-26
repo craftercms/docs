@@ -126,7 +126,7 @@ Publishing issues may be caused if content does not have a commit id value in th
 
 |
 
-When all content with NULL commit id is detected, the content needs to be edited manually by adding a change that will not affect content itself but will cause a git change. (e.g. html or xml comment block, blank space etc.). The change needs to be committed in git repo, then the sync repository feature will update the commit id in database.
+When all content with NULL commit id is detected, the content needs to be edited manually by adding a change that will not affect content itself but will cause a Git change. (e.g. html or xml comment block, blank space etc.). The change needs to be committed in Git repo, then the sync repository feature will update the commit id in database.
 
 -------------------------------------------------------
 Publishing Issues Caused by 'Ghost' Content in Database

@@ -55,11 +55,11 @@ Now that we’ve got a bit more content on the repository architecture for a sit
      :width: 70 %
      :align: center
 
-In the figure above you see that it is the **Sandbox** repository for the site that is directly “connected” with the production code repository.  Studio’s sandbox repository (in production), the Production content repository, is “connected” with the project’s master branch, the Production code repository, in Github.
+In the figure above you see that it is the **Sandbox** repository for the site that is directly “connected” with the production code repository.  Studio’s sandbox repository (in production), the Production content repository, is “connected” with the project’s master branch, the Production code repository, in GitHub.
 
 Remote Repositories
 -------------------
-The term “connected” is a simplification.  In Git parlance, the real terminology, and the terminology we’ll use going forward in the documentation is “remote.”  The repository in Github is configured as a “remote” of the Sandbox repository under Crafter Studio.  Remote repositories are Git’s way of relating one repository to another.  A repository can have many remotes.  Remotes are given names that describe their purpose and relationship.  Typically the type of relationship Studio’s Sandbox repository has with the production Code repository in Github is called an upstream and is typically labeled “origin”
+The term “connected” is a simplification.  In Git parlance, the real terminology, and the terminology we’ll use going forward in the documentation is “remote.”  The repository in GitHub is configured as a “remote” of the Sandbox repository under Crafter Studio.  Remote repositories are Git’s way of relating one repository to another.  A repository can have many remotes.  Remotes are given names that describe their purpose and relationship.  Typically the type of relationship Studio’s Sandbox repository has with the production Code repository in GitHub is called an upstream and is typically labeled “origin”
 
 There are two mechanisms for configuring a remote repository:
     * At creation time of the project in Crafter Studio

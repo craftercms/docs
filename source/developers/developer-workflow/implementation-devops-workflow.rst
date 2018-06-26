@@ -41,8 +41,8 @@ This document assumes the use of both the GitFlow process and the GitFlow tool t
 
     * https://github.com/nvie/gitflow/wiki/Installation
 
-Initializing the Repository for the Git Flow Tool
--------------------------------------------------
+Initializing the Repository for the GitFlow Tool
+------------------------------------------------
 
 To create a branch you use the following GitFlow command:
 
@@ -147,9 +147,9 @@ Local Development and Feature Team Collaboration
 
 Now that the feature is present in the Remote Code Repository your team members can collaborate with you.
 
-Github and Pull Requests
+GitHub and Pull Requests
 ------------------------
-It’s common for Github projects to designate specific leads who have access to write in the main repository.  Other team members who do not have write access need to fork the repository (creating their own private, related version) where they have write access and can perform their work.   When their work is complete they can submit it for review and merge via  Pull Request.
+It’s common for GitHub projects to designate specific leads who have access to write in the main repository.  Other team members who do not have write access need to fork the repository (creating their own private, related version) where they have write access and can perform their work.   When their work is complete they can submit it for review and merge via  Pull Request.
 
 The pull request mechanism provides a check-point that potentially triggers a code review whenever a team member wants to give code to the rest of the team.
 Use of the Pull Request mechanism along with code reviews is a best practice and is recommended (but not required.)
@@ -256,7 +256,7 @@ To begin the squash of multiple commits in to a single commit use the following 
 
 ``git reset --soft [BASELINE COMMIT ID]``
 
-BASELINE COMMIT ID is the first commit ID in your set of changes.  E.g. If your team made 10 commits, find the commit ID (via the git log command) that is the first of 10.  Alternatively, note the commit ID of the repo at the time you create your feature branch.
+BASELINE COMMIT ID is the first commit ID in your set of changes.  E.g. If your team made 10 commits, find the commit ID (via the ``git log`` command) that is the first of 10.  Alternatively, note the commit ID of the repo at the time you create your feature branch.
 
 Note that a ``reset --soft`` essentially rolls back your add and commit commands so that they appear uncommitted. This will allow you to add and commit all of them as a single commit (or “squash” them.)
 
@@ -292,7 +292,7 @@ Rebase/Merge the Squash to The Head of Feature
 ----------------------------------------------
 Once you have squashed the content you need to rebase your work relative to the remote origin so that you can push the Squashed Commit back up.
 
-To rebase the squashed commit at the tip of the Remote Code Repository use the following Git Flow command:
+To rebase the squashed commit at the tip of the Remote Code Repository use the following GitFlow command:
 
 ``git flow feature pull origin [FEATURE_NAME]``
 
@@ -311,7 +311,7 @@ Push the Squash to the Feature Remote Code Repository
 -----------------------------------------------------
 Once the commit has been rebased you can push the work up to the Remote Code Repository so that the single commit is available to the team (and other environments)
 
-To push the rebased commit up to the Remote Code Repository use the following Git Flow command:
+To push the rebased commit up to the Remote Code Repository use the following GitFlow command:
 
 ``git push origin feature/ [FEATURE_NAME]``
 
@@ -366,7 +366,7 @@ A feature will stay in a feature branch until it’s blessed for a potential rel
 Finalize the Feature Branch
 ---------------------------
 For each feature you are looking to release, once it’s complete and blessed (and no more core development is required) you want to “finalize it.”  Finalizing a feature merges the code up to the develop branch and deletes the feature branch.
-To finalize a feature branch use the following Git Flow command:
+To finalize a feature branch use the following GitFlow command:
 
 ``git flow feature finish [FEATURE_NAME]``
 
@@ -519,7 +519,7 @@ Finalize the Release Branch
 ---------------------------
 The first step in moving the release to the production CMS is to finalize the release.  This will merge the release code in to the Master branch and remove the release branch.
 
-To finalize the release use the following Git Flow command:
+To finalize the release use the following GitFlow command:
 
 ``git flow  release finish [VERSION ID]``
 

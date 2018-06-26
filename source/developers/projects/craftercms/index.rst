@@ -12,7 +12,7 @@ This project is the parent project that builds everything and prepares a deploya
 Source Code
 ***********
 
-Crafter CMS's source code is managed in github: https://github.com/craftercms/craftercms
+Crafter CMS's source code is managed in GitHub: https://github.com/craftercms/craftercms
 
 *************
 Documentation
@@ -779,12 +779,12 @@ The :ref:`quick_start_guide` has information on how to install Java and setup yo
 Installing Git
 ^^^^^^^^^^^^^^
 
-There are a few ways to install git on Windows.
+There are a few ways to install Git on Windows.
 
 #. One way is to install Git for Windows, download available here:  http://git-scm.com/download/win
 #. Another way is to install `GitHub for Windows <https://git-for-windows.github.io/>`_
 
-You can find more information on installing git on Windows `here <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
+You can find more information on installing Git on Windows `here <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
 
 Installing Maven
 ^^^^^^^^^^^^^^^^
@@ -808,7 +808,7 @@ Chocolatey is a package manager for Windows that helps you install packages in o
 
 Installing Git
 ^^^^^^^^^^^^^^
-To install git, just run the following from your command line:
+To install Git, just run the following from your command line:
 
    .. code-block:: bat
 
