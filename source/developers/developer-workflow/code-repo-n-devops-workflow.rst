@@ -12,7 +12,7 @@ Feature Development
 Consider the following diagram below.  This is the essence of the GitFlow strategy:  There are 3 “types” (read purpose) of branches shown in the diagram: Master, Develop and Feature.
 
 .. image:: /_static/images/developer/workflow/feature-dev-gitflow.png
-     :alt: Developer Workflow - Feature Development Gitflow Strategy
+     :alt: Developer Workflow - Feature Development GitFlow Strategy
      :width: 80 %
      :align: center
 
@@ -37,7 +37,7 @@ When a group of feature is ready for release the typical practice is to “Code 
 
 
 .. image:: /_static/images/developer/workflow/releases-gitflow.png
-     :alt: Developer Workflow - Releases Gitflow Strategy
+     :alt: Developer Workflow - Releases GitFlow Strategy
      :width: 80 %
      :align: center
 

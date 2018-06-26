@@ -21,7 +21,7 @@ Crafter Social is a multi-tenant, platform independent user-generated content ma
 Source Code
 -----------
 
-Crafter Social's source code is managed in github: https://github.com/craftercms/social
+Crafter Social's source code is managed in GitHub: https://github.com/craftercms/social
 
 --------
 Java Doc

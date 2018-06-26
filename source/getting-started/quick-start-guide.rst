@@ -106,7 +106,7 @@ To create the archives(``*.zip`` or ``*.tar.gz``) for installing Crafter CMS, th
 * Git 2.x+
 * Maven 3.3.x+
 
-#. Clone the Crafter CMS repo from github
+#. Clone the Crafter CMS repo from GitHub
 
     .. code-block:: bash
 

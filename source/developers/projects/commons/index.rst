@@ -12,7 +12,7 @@ Crafter Commons contains the shared libraries used by the rest of the projects c
 Source Code
 -----------
 
-Crafter Commons' source code is managed in github: https://github.com/craftercms/commons
+Crafter Commons' source code is managed in GitHub: https://github.com/craftercms/commons
 
 --------
 Java Doc

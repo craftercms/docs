@@ -60,7 +60,7 @@ explains how to use the script:
          init-site -k ~/.ssh/jdoe_key -f jdoe123 mysite ssh://myserver/opt/crater/sites/mysite
 
 
-We recommend using Secure Shell (SSH) with your site's published repo git url and for authentication, to use either username/password authentication or public/private key
+We recommend using Secure Shell (SSH) with your site's published repo Git url and for authentication, to use either username/password authentication or public/private key
 authentication. The SSH Git URL format is: ``ssh://[user@]host.xz[:port]/path/to/repo/`` where sections between **[]** are optional.
 
 Example #1: ``ssh://server1.example.com/path/to/repo``
@@ -68,7 +68,7 @@ Example #1: ``ssh://server1.example.com/path/to/repo``
 Example #2: ``ssh://jdoe@server2.example.com:63022/path/to/repo``
 
 If you are just working on another directory on disk for your delivery, you can just use the filesystem.  When your repository is local, make sure to use the absolute path.
-Here is an example site's published repo git url when using a local repository:
+Here is an example site's published repo Git url when using a local repository:
 
   .. code-block:: guess
 
@@ -77,11 +77,11 @@ Here is an example site's published repo git url when using a local repository:
 .. note::
   * When using ``ssh``, you might see in the logs ``com.jcraft.jsch.JSchException: UnknownHostKey`` errors. These errors are common in Ubuntu, and are caused by known host keys being stored in non-RSA format. Please follow the instructions in :ref:`crafter-studio-debugging-deployer-issues` under ``SSH Unknown Host`` to resolve them.
 
-  * ``git`` needs to be installed in authoring when using SSH to connect the delivery to the authoring.
+  * ``Git`` needs to be installed in authoring when using SSH to connect the delivery to the authoring.
 
     If you see the following error in the delivery Deployer: `Caused by: java.io.IOException: bash: git-upload-pack: command not found` you'll need to add the location of git (usually **/usr/bin**) to your non-login shell startup file (e.g. **~/.bashrc**).
 
-    To get the location of git, run the following command: ``which git-upload-pack``
+    To get the location of Git, run the following command: ``which git-upload-pack``
 
 
 -----------------------------
