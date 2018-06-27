@@ -127,7 +127,7 @@ You can also preview the article that you want to approve by clicking on the lin
      :align: center
      :alt: Workflow - Notification email to approve/reject request to approver
 
-Below is the dialog that loads after clicking on **Approve & Publish***.  The item scheduling selected in the dialog depends on what the requester has chosen when the request to publish was sent.  In the image below. the selected scheduling for the item is for the **Items should go live now**.  Click on **Submit** to publish the content now.
+Below is the dialog that loads after clicking on **Approve & Publish**.  The item scheduling selected in the dialog depends on what the requester has chosen when the request to publish was sent.  In the image below. the selected scheduling for the item is for the **Items should go live now**.  Click on **Submit** to publish the content now.
 
 .. image:: /_static/images/page/page-workflows-approve-publish-now.png
      :width: 75 %
