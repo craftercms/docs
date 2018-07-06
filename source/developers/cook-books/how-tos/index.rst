@@ -7,8 +7,10 @@ How-Tos
    :titlesonly:
 
    change-ports-on-your-install
+   override-logging-levels
    setting-up-an-ldap-server-for-dev
    using-war-overlays-with-crafter-engine
+   using-custom-processors-with-crafter-deployer
    working-with-crafter-studios-api
    working-with-dates-freemarker
    working-with-dates-groovy
