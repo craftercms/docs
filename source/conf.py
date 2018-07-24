@@ -405,6 +405,7 @@ rst_epilog = """
 
 """
 
+# Javadoc home and version
 javadoc_base = 'http://javadoc.craftercms.org/'
 javadoc_version = '3.0.15'
 
