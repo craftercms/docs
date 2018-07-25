@@ -61,7 +61,7 @@ Activities
    activities/production-environment-setup.rst
    activities/reindexing-content.rst
    activities/reindexing-content-in-prod.rst
-   activities/setup-site-for-delivery
+   activities/setup-site-for-delivery.rst
    activities/sync-studio-database-with-repo.rst
    activities/troubleshooting.rst
 
@@ -74,6 +74,7 @@ Upgrading Crafter CMS
    :titlesonly:
 
    upgrade/upgrading-to-craftercms-3-0.rst
+   upgrade/index.rst
 
 ==============
 Crafter Studio
