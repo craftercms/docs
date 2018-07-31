@@ -6,6 +6,25 @@ Crafter CMS Intermediate Publishing Environment
 
 Crafter CMS supports an intermediate environment to publish to, named ``staging``, where the site can be fully exercised with regards to system and integration points.  This staging environment allows testing of your site.  Once validated in the staging environment, items can be pushed live.  This ``staging`` environment precedes the ``live`` environment.
 
+When the staging environment is setup, the **Request Publish** and **Approve for Publish** dialogs gives the user the option to select to which environment to publish to:
+
+.. image:: /_static/images/system-admin/staging-publish-option.png
+    :width: 75 %
+    :align: center
+    :alt: System Administrator - Staging Environment Setup for Publish dialogs
+
+|
+
+Users with access to the following widgets in the dashboard will see a column named **Environment** indicating which environment an item has been/would be published to: ``Items Waiting For Approval``, ``Approved Scheduled Items`` and ``Recently Published``
+
+.. image:: /_static/images/system-admin/staging-dashboard.png
+    :width: 75 %
+    :align: center
+    :alt: System Administrator - Dashboard
+
+Notice the pages published to staging and live with the same time in the above image.  When the intermediate environment is setup, all items will go through the staging environment before going to live.  So, if a user approves an item to be published directly to live, it will be published to staging first, then onto live.
+
+
 ------------------------------------------------
 Setting Up the Intermediate Environment per Site
 ------------------------------------------------
