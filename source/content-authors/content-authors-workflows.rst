@@ -178,7 +178,7 @@ To reject a request for publish, open the item for preview, then in the context 
 Approvers may pick canned rejection reasons from the drop-down menu. Once selected, the editable text area field will be filled with the corresponding rejection notice.
 
 .. image:: /_static/images/page/page-workflows-reject.png
-    :width: 75 %    
+    :width: 65 %
     :align: center
     :alt: Workflow - Reject request to publish
 

@@ -30,6 +30,13 @@ Sample
         <wem-project>myawesomesite</wem-project>
         <display-name>myawesomesite</display-name>
         <default-timezone>EST5EDT</default-timezone>
+        <sandbox-branch>master</sandbox-branch>
+
+        <published-repository>
+            <enable-staging-environment>true</enable-staging-environment>
+            <staging-environment>staging</staging-environment>
+            <live-environment>live</live-environment>
+        </published-repository>
 
         <repository rootPrefix="/site">
 
