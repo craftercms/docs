@@ -6,6 +6,8 @@
 Crafter Search API
 ====================
 
+The context for this API is ``/crafter-search/``, please prefix the API URLs with this context.
+
 ----------------
 Index Management
 ----------------

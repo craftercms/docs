@@ -45,7 +45,7 @@ Example
 Response
 --------
 
-.. code-block:: json
+.. code-block:: guess
     :linenos:
 
     {
