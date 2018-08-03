@@ -37,7 +37,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/2/index/info/mysite``
+``GET .../api/2/admin/index/info/mysite``
 
 ^^^^^^^^^^^^^^^
 Response (Solr)

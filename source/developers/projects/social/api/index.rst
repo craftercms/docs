@@ -6,6 +6,8 @@
 Crafter Social API
 ==================
 
+The context for this API is ``/crafter-social/``, please prefix the API URLs with this context.
+
 .. NOTE::
   All request in this API require the user to be authenticated using the Crafter Profile API, for
   details see :ref:`crafter-profile-api-authentication-authenticate`
