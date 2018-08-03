@@ -16,6 +16,7 @@ The following section of Studio's configuration overrides allows you to do the f
 
 * ``studio.repo.basePath`` allows you to set your repository base
 * ``studio.repo.siteSandboxBranch`` allows you to switch the branch used by sandbox
+* ``studio.repo.published.live`` and ``studio.repo.published.staging`` allows you to set the branch for your environments
 
 .. code-block:: yaml
    :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
@@ -26,8 +27,13 @@ The following section of Studio's configuration overrides allows you to do the f
    ##################################################
    # Absolute or relative path to repository base (all actual repositories will be under this)
    studio.repo.basePath: ../data/repos
-   # Sandbox git repository branch for every site
+   # Sandbox Git repository branch for every site
    # studio.repo.siteSandboxBranch: master
+   # If not using environment-config.xml, environments are configured here
+   # Git repository branch for the `live` environment, default "live"
+   # studio.repo.published.live: live
+   # Git repository branch for the `staging` environment, default "staging"
+   # studio.repo.published.staging: staging
 
 ------------------------------
 Preview Deployer Configuration

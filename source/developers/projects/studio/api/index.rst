@@ -6,10 +6,14 @@
 Crafter Studio API
 ==================
 
+The context for this API is ``/studio/``, please prefix the API URLs with this context.
+
 .. note::
-  This API is protected using a CSRF Token so all ``POST``, ``PUT`` and ``DELETE`` calls need to 
-  include a cookie and a header with a matching value to work. The name of the cookie must be
-  ``XSRF-TOKEN`` and the header ``X-XSRF-TOKEN``.
+    This API is protected using a CSRF Token so all ``POST``, ``PUT`` and ``DELETE`` calls need to
+    include a cookie and a header with a matching value to work. The name of the cookie must be
+    ``XSRF-TOKEN`` and the header ``X-XSRF-TOKEN``.
+
+    For more information on using Crafter Studio APIs, see :ref:`working-with-crafter-studios-api`
 
 ---------------
 User Management

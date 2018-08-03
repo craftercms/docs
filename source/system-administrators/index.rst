@@ -62,6 +62,7 @@ Activities
    activities/reindexing-content.rst
    activities/reindexing-content-in-prod.rst
    activities/setup-site-for-delivery.rst
+   activities/staging-env.rst
    activities/sync-studio-database-with-repo.rst
    activities/troubleshooting.rst
 

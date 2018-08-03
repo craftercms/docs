@@ -6,6 +6,8 @@
 Crafter Profile API
 ===================
 
+The context for this API is ``/crafter-profile/``, please prefix the API URLs with this context.
+
 .. NOTE::
   All endpoints in this API require an ``accessTokenId`` parameter that needs
   to be known by  the client prior to any request. This value needs to be
