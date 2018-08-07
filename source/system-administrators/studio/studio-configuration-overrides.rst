@@ -15,7 +15,7 @@ Content Repository Configuration
 The following section of Studio's configuration overrides allows you to do the following:
 
 * ``studio.repo.basePath`` allows you to set your repository base
-* ``studio.repo.siteSandboxBranch`` allows you to switch the branch used by sandbox
+* ``studio.repo.siteSandboxBranch`` allows you to set the default branch to be used by sandbox
 * ``studio.repo.published.live`` and ``studio.repo.published.staging`` allows you to set the branch for your environments
 
 .. code-block:: yaml
@@ -155,10 +155,16 @@ The following section of Studio's configuration overrides allows you to randomiz
    # studio.security.ldap.userAttribute.email: mail
    # LDAP site ID attribute
    # studio.security.ldap.userAttribute.siteId: crafterSite
+   # LDAP site ID attribute name regex
+   # studio.security.ldap.userAttribute.siteId.regex: .*
+   # LDAP site ID attribute match index
+   # studio.security.ldap.userAttribute.siteId.matchIndex: 0
+   # LDAP group name match index for the site ID attribute
+   # studio.security.ldap.userAttribute.siteId.groupName.matchIndex: 1
    # LDAP groups attribute
    # studio.security.ldap.userAttribute.groupName: crafterGroup
    # LDAP groups attribute name regex
-   # studio.security.ldap.userAttribute.groupName.regex: cn=Crafter_([a-zAZ]+),.*
+   # studio.security.ldap.userAttribute.groupName.regex: .*
    # LDAP groups attribute match index
    # studio.security.ldap.userAttribute.groupName.matchIndex: 1
    # LDAP default site if site ID attribute not found
