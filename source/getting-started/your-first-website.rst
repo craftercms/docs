@@ -20,7 +20,7 @@ After logging in, you'll see the MySites screen (Below).  Click on **Create Site
     :align: center
     :alt: Your First Website - Sites Screen
 
-Give the site a friendly name for the *Site Id* , a description and then choose a blueprint.  We're going to be using the "Website_Editorial" blueprint.  Blueprints offer you a starting point for your website. New blueprints can be created and installed into the system.  As you are entering the site id, spaces are removed and upper case letters are converted to lower case letters.
+Give the site a friendly name for the **Site Id** , a description and then choose a blueprint.  You can also set the branch for your sandbox in the **Sandbox Branch** field to something other than the default, which is typically *master*.  We're going to be using the "Website_Editorial" blueprint.  Blueprints offer you a starting point for your website. New blueprints can be created and installed into the system.  As you are entering the Site Id, spaces are removed and upper case letters are converted to lower case letters.
 
 .. image:: /_static/images/first-site/create-site-screen.png
     :width: 75 %    
