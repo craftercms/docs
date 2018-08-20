@@ -107,6 +107,8 @@ following two examples can be taken as a base for most authoring/delivery target
             url: /opt/crafter/authoring/data/repos/sites/editorial/published
             # Live of the repo to pull
             branch: live
+        # Calculates the Git differences with the latest commit processed
+        - processorName: gitDiffProcessor
         # Performs Crafter Search indexing
         - processorName: searchIndexingProcessor
         # Calls Rebuild Context when a file under /scripts is changed
