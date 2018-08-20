@@ -107,6 +107,8 @@ following two examples can be taken as a base for most authoring/delivery target
             url: /opt/crafter/authoring/data/repos/sites/editorial/published
             # Live of the repo to pull
             branch: live
+        # Calculates the Git differences with the latest commit processed
+        - processorName: gitDiffProcessor
         # Performs Crafter Search indexing
         - processorName: searchIndexingProcessor
         # Calls Rebuild Context when a file under /scripts is changed
@@ -143,7 +145,7 @@ The Deployer out of the box provides the following processor beans:
 
 * **httpMethodCallProcessor:** executes an HTTP method call to a specified URL.
 
-* **fileOutputProcessor:** generates the output of the deployment and saves it in a JSON file.
+* **fileOutputProcessor:** generates the output of the deployment and saves it in a CSV file.
 
 * **mailNotificationProcessor:** sends an email notification when there's a successful deployment with file changes or when
   a deployment failed.
@@ -193,7 +195,7 @@ Crafter Deployer has an option of running scheduled deployments for a target (``
 want to manually trigger a deployment, you just need to call the API endpoint :ref:`crafter-deployer-api-target-deploy` (or
 :ref:`crafter-deployer-api-target-deploy-all`). This will start the deployment if the request is correct. To watch the progress of a scheduled or a manually
 triggered deployment, check the Deployer log. When the deployment has finished, and the target has a ``fileOutputProcessor`` in the deployment pipeline, a
-JSON file with the final result of that particular deployment will be written under ``./logs`` (or ``CRAFTER_HOME/logs/deployer``).
+CSV file with the final result of that particular deployment will be written under ``./logs`` (or ``CRAFTER_HOME/logs/deployer``).
 
 -----------------
 Processed Commits
