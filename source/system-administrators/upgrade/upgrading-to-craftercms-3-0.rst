@@ -71,6 +71,8 @@ Example:
 
   ./migrate.sh mysite ~/crafter/crafter-2.5.x/authoring/data/repo/cstudio/config/mysite ~/crafter/crafter-2.5.x/authoring/data/repo/wem-projects/mysite/mysite/work-area
 
+|
+
 The script will basically attempt to execute these operations:
 
 **Setup a migrate repo:**
@@ -155,6 +157,9 @@ This is the last step of the migration/import, and basically involves importing 
   - Studio 3.0.x is running.
   - There's no site in Studio with the same name as the one you're migrating.
 
+.. tip:: *Very large sites may take a long time to import and can, in some cases, last longer than the user session timeout settings. We suggest increasing the session timeout to 180 minutes (3 hours) when importing/upgrading very large sites.  To increase the session time follow the instructions here:* :ref:`changing-session-timeout`
+
+
 Run the ``import.sh``, which is located under ``crafter-authoring/bin/migration`` directory. The script takes 1 parameter, the name of the site,
 which should be the same one that you used on the migration process.
 
@@ -163,6 +168,8 @@ Example:
 .. code-block:: sh
 
   ./import.sh mysite
+
+|
 
 The import script will basically attempt to execute these operations:
 
@@ -177,6 +184,8 @@ watch the progress. The site should be ready when you see the following line in 
 
   [INFO] 2018-03-29 11:54:42,063 [studioSchedulerFactoryBean_Worker-1] [site.SiteServiceImpl] | Done syncing database with repository for site: mysite fromCommitId = a1f2f8beba50da9cc75fcd3aa97d412750ef5225 with a final result of: true
   [INFO] 2018-03-29 11:54:42,063 [studioSchedulerFactoryBean_Worker-1] [site.SiteServiceImpl] | Last commit ID for site: mysite is 069f82a4bb3bce1e8cb3c2abc030f9a2cb68e9a9
+
+|
 
 --------
 Delivery
