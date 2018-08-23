@@ -89,6 +89,7 @@ Crafter Studio
    studio/studio-configuration-overrides.rst
    studio/debugging-publishing-issues.rst
    studio/create-site-with-link-to-remote-repo.rst
+   studio/session-timeout-settings.rst
 
 ==============
 Crafter Engine

@@ -25,6 +25,10 @@
   color: #FF9500; }
   .admonition.warning .admonition-title::before {
     content: "\f06a"; }
+.admonition.tip .admonition-title {
+  color: #F5D507; }
+  .admonition.tip .admonition-title::before {
+    content: "\f0eb"; }
 
 #toc > ul {
   margin: 0;

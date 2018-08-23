@@ -13,6 +13,7 @@ $sidebar-lg: 320px;
 $color-red: #FF3B30;
 $color-orange: #FF9500;
 $color-teal: #5AC8FA;
+$color-yellow: #F5D507;
 
 .admonition-title {
   font-size: 1.5rem !important;
@@ -50,6 +51,14 @@ $color-teal: #5AC8FA;
       color: $color-orange;
       &::before {
         content: "\f06a";
+      }
+    }
+  }
+  &.tip {
+    .admonition-title {
+      color: $color-yellow;
+      &::before {
+        content: "\f0eb";
       }
     }
   }
