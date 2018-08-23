@@ -32,7 +32,7 @@ OS (All components)
 The following Operating Systems are supported (64Bit only for all OSs)
 
     - Windows (Windows 7, Windows 10, Windows Server 2012 and Windows Server 2016)
-    - Linux
+    - Linux (Ubuntu, RHEL, CentOS)
     - OS X
     
 ^^^^^^^^^^^^^^^^^^^^^
