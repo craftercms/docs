@@ -9,7 +9,7 @@ How to Start/Stop the Deployer
 ------------------------------
 
 If you're using the Crafter CMS bundle, starting and stopping the Deployer is very easy. From the command line, navigate to the
-authoring or delivery environment folder, and then inside the ``bin`` folder, run ``./crafter.sh start_deployer`` to start
+{env-directory}, authoring or delivery environment folder, and then inside the ``bin`` folder, run ``./crafter.sh start_deployer`` to start
 the Deployer or ``./crafter.sh stop_deployer`` to stop the Deployer.
 
 -------------
@@ -20,7 +20,7 @@ Configuration
 Global Configuration
 ^^^^^^^^^^^^^^^^^^^^
 
-Crafter Deployer has two main property configuration files:
+Crafter Deployer has two main property configuration files found in ``{env-directory}/bin/crafter-deployer/config``:
 
 * **application.yaml:** contains the global application properties, like the server port and the locations of other configuration files.
 * **base-target.yaml:** contains the common properties for all targets. In here you can find properties for configuring indexing with
