@@ -42,9 +42,9 @@ and it also runs ``crafter-search.war`` and ``crafter-profile.war``:
   crafter.engine.environment=dev
 
 .. NOTE::
-  Please holder ``TOMCAT`` above refers to the Tomcat folder in Crafter Engine
+
+- Placeholder ``TOMCAT`` above refers to the Tomcat folder in Crafter Engine
   deployment, and it usually is ``bin/apache-tomcat`` under the Crafter Engine
   root folder.
-
-  Additional changes to ``bin/apache-tomcat/conf/server.xml`` and ``bin/crafter-setenv.sh``
+- Additional changes to ``bin/apache-tomcat/conf/server.xml`` and ``bin/crafter-setenv.sh``
   are required to change the default port number from 8080 to 9080.
