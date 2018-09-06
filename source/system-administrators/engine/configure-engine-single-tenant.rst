@@ -31,7 +31,7 @@ and it also runs ``crafter-search.war`` and ``crafter-profile.war``:
   crafter.engine.site.default.name=mysite
   # Content root folder. The {siteName} variable will be automatically replaced. This is a file URL, even in Windows forward
   # slashes (/) should be used, e.g. file:/C:/crafter/data/repos/sites/{siteName}/sandbox
-  crafter.engine.site.default.rootFolder.path=file:../data/repos/sites/mysite
+  crafter.engine.site.default.rootFolder.path=file:../data/repos/sites/{siteName}
   # The URL of Crafter Search
   crafter.engine.search.server.url=http://localhost:9080/crafter-search
   # The URL of Crafter Profile
