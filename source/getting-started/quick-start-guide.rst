@@ -16,6 +16,8 @@ Installing and verifying prerequisites
 
 .. include:: /includes/installing-and-verifying-prerequisites.rst
 
+|
+
 .. _installing-crafter-cms-from zip:
 
 --------------------------------------------

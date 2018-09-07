@@ -14,11 +14,16 @@ run the following command at the command prompt and make sure that the version d
 
     java -version
 
+|
+|
+
 The command above should output something like this:
 
 .. code-block:: sh
 
     java version "1.8.0_91"
+
+|
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Verify JAVA_HOME environment variable is set correctly
@@ -33,11 +38,15 @@ For Unix/Linux Systems:
 
     env | grep JAVA_HOME
 
+|
+
 For Windows Systems:
 
 .. code-block:: bat
 
     set JAVA_HOME
+
+|
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 How to set the JAVA_HOME environment variable
@@ -68,6 +77,8 @@ How to set the JAVA_HOME environment variable
           setenv JAVA_HOME jdk-install-dir
           setenv PATH $JAVA_HOME/bin:$PATH
           export PATH=$JAVA_HOME/bin:$PATH
+
+|
 
 **To set JAVA_HOME on a Windows System**
 
