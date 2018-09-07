@@ -2,49 +2,65 @@
 
 .. _engine-site-configuration-single-tenant:
 
-=================================
-Configure Single Tenant in Engine
-=================================
+==================================
+Configure Single-Tenancy in Engine
+==================================
 
-For most deployments, an instance of Crafter Engine handles a single site (single tenant).
-This guide explains how to setup Crafter Engine for single tenant.
+.. note:: *This guide applies only to the* **delivery environment** *of Crafter CMS*
 
--------------------------------
-Crafter Engine Extension Folder
--------------------------------
+Crafter Engine by default is setup for multi-tenancy (multiple sites handled by a single Crafter Engine).  There are instances where the deployment is for a single site.
+This guide explains how to setup Crafter Engine for single tenancy.
 
-The default Crafter Engine binary (ROOT.war) is built to support single tenant.
-In a single tenant deployment, folder ``TOMCAT/shared/classes/crafter/engine/extension``
-must contain one and only one file: ``server-config.properties``.
+Assume we have a website in Crafter Studio named ``editorial``, to be deployed on Crafter Engine.  To setup single tenancy, follow the instructions listed below.
 
--------------------------------
-Sample server-config.properties
--------------------------------
+--------------------------
+Configure the Default Name
+--------------------------
 
-This example configures a site named ``mysite``. Tomcat is listening to port 9080,
-and it also runs ``crafter-search.war`` and ``crafter-profile.war``:
+The default name, as shown below, needs to be configured with the name of the site to be deployed (site name is ``editorial`` for our example), by adding the following lines
 
 .. code-block:: properties
-  :caption: TOMCAT/shared/classes/crafter/engine/extension/server-config.properties
+  :caption: {delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties
 
-  # The default site name, when not in preview or multi-tenant modes
-  crafter.engine.site.default.name=mysite
-  # Content root folder. The {siteName} variable will be automatically replaced. This is a file URL, even in Windows forward
-  # slashes (/) should be used, e.g. file:/C:/crafter/data/repos/sites/{siteName}/sandbox
-  crafter.engine.site.default.rootFolder.path=file:../data/repos/sites/{siteName}
-  # The URL of Crafter Search
-  crafter.engine.search.server.url=http://localhost:9080/crafter-search
-  # The URL of Crafter Profile
-  crafter.profile.rest.client.url.base=http://localhost:9080/crafter-profile
-  # If the Security Provider is enabled
-  crafter.security.enabled=true
-  # environments (local, dev, prod)
-  crafter.engine.environment=dev
+      # The default site name, when not in preview or multi-tenant modes
+      crafter.engine.site.default.name=editorial
 
-.. NOTE::
+|
 
-- Placeholder ``TOMCAT`` above refers to the Tomcat folder in Crafter Engine
-  deployment, and it usually is ``bin/apache-tomcat`` under the Crafter Engine
-  root folder.
-- Additional changes to ``bin/apache-tomcat/conf/server.xml`` and ``bin/crafter-setenv.sh``
-  are required to change the default port number from 8080 to 9080.
+--------------------------------------------
+Change Simple Multi-Tenancy to Single-Tenant
+--------------------------------------------
+
+As mentioned above, Crafter Engine is setup for multi-tenancy by default.  To change it to single tenant, comment out the import line in your ``services-context.xml`` and ``rendering-context.xml`` file like so:
+
+.. code-block:: xml
+    :caption: {delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/services-context.xml
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <beans xmlns="http://www.springframework.org/schema/beans"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+               xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                               http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+           <!--
+           <import resource="classpath*:crafter/engine/mode/multi-tenant/simple/services-context.xml"/>
+           -->
+        </beans>
+
+|
+
+.. code-block:: xml
+    :caption: {delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/rendering-context.xml
+
+        <?xml version="1.0" encoding="UTF-8"?>
+        <beans xmlns="http://www.springframework.org/schema/beans"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+               xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                               http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+           <!--
+           <import resource="classpath*:crafter/engine/mode/multi-tenant/simple/rendering-context.xml"/>
+           -->
+        </beans>
+
+|
+
+After making your changes and reloading, your Crafter Engine in delivery is now setup for single tenancy.
