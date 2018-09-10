@@ -24,7 +24,9 @@ The default name, as shown below, needs to be configured with the name of the si
 
       # The default site name, when not in preview or multi-tenant modes
       crafter.engine.site.default.name=editorial
-
+      # Content root folder. The {siteName} variable will be automatically replaced. This is a file URL, even in Windows forward
+      # slashes (/) should be used, e.g. file:/C:/crafter/data/repos/sites/{siteName}/sandbox
+      crafter.engine.site.default.rootFolder.path=file:../data/repos/sites/{siteName}
 |
 
 --------------------------------------------
