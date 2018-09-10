@@ -78,6 +78,7 @@ Delivery
    :maxdepth: 1
    :titlesonly:
 
+   activities/configure-apache-vhost.rst
    activities/setup-site-for-delivery.rst
 
 *************************
