@@ -33,6 +33,8 @@ For Unix/Linux Systems:
 
     env | grep JAVA_HOME
 
+|
+
 For Windows Systems:
 
 .. code-block:: bat
@@ -52,6 +54,8 @@ How to set the JAVA_HOME environment variable
           export JAVA_HOME=jdk-install-dir
           export PATH=$JAVA_HOME/bin:$PATH
 
+    |
+
     - Bourne shell:
 
       .. code-block:: sh
@@ -61,6 +65,8 @@ How to set the JAVA_HOME environment variable
           PATH=$JAVA_HOME/bin:$PATH
           export PATH
 
+    |
+
     - C shell:
 
       .. code-block:: csh
@@ -68,6 +74,8 @@ How to set the JAVA_HOME environment variable
           setenv JAVA_HOME jdk-install-dir
           setenv PATH $JAVA_HOME/bin:$PATH
           export PATH=$JAVA_HOME/bin:$PATH
+
+    |
 
 **To set JAVA_HOME on a Windows System**
 
