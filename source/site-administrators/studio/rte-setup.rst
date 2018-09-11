@@ -1,3 +1,4 @@
+.. index:: Rich Text Editor (RTE) Setup; RTE Plugins
 .. _rte-setup:
 
 ============================
@@ -39,36 +40,11 @@ Crafter Studio uses standard TinyMCE plugins.  Here's a list of available TinyMC
 || advhr                || advhr              || Advanced hr dialog that supports noshade, width  |
 ||                      ||                    || and size                                         |
 +-----------------------+---------------------+---------------------------------------------------+
-|| advimage             ||                    || Advanced image dialog that supports mouseover/out|
-||                      ||                    || image swapping                                   |
-+-----------------------+---------------------+---------------------------------------------------+
-|| advlink              ||                    || Advanced link dialog that supports popup windows |
-||                      ||                    || and targets                                      |
-+-----------------------+---------------------+---------------------------------------------------+
-|| advlist              ||                    || Advanced list dialog that provides options to the|
-||                      ||                    || ordered and unordered list buttons               |
-+-----------------------+---------------------+---------------------------------------------------+
-|| autolink             ||                    || Normalizes behaviour with IE that produces links |
-||                      ||                    || when you simply type links in the content window |
-+-----------------------+---------------------+---------------------------------------------------+
-|| autoresize           ||                    || Automatically resizes the editor to the content  |
-||                      ||                    || inside it.                                       |
-+-----------------------+---------------------+---------------------------------------------------+
-|| bbcode               ||                    || Makes it possible for TinyMCE to edit BBCode in  |
-||                      ||                    || WYSIWYG way by converting tags like [b] into     |
-||                      ||                    || and then back to [b] when the user submits the   |
-||                      ||                    || content                                          |
-+-----------------------+---------------------+---------------------------------------------------+
-|| contextmenu          ||                    || Provides context (right-click) menu capability   |
-+-----------------------+---------------------+---------------------------------------------------+
 || directionality       || ltr,               || Adds directionality icons to TinyMCE that enables|
 ||                      || rtl                || TinyMCE to better handle languages that is       |
 ||                      ||                    || written from right to left.                      |
 +-----------------------+---------------------+---------------------------------------------------+
 || emotions             || emotions           || Insert smiley images in the editable area        |
-+-----------------------+---------------------+---------------------------------------------------+
-|| fullpage             || fullpage           || Enables you to edit whole documents with both    |
-||                      ||                    || head and body.                                   |
 +-----------------------+---------------------+---------------------------------------------------+
 || fullscreen           || fullscreen         || Adds fullscreen editing mode                     |
 +-----------------------+---------------------+---------------------------------------------------+
@@ -85,22 +61,11 @@ Crafter Studio uses standard TinyMCE plugins.  Here's a list of available TinyMC
 ||                      || movebackward,      ||                                                  |
 ||                      || absolute           ||                                                  |
 +-----------------------+---------------------+---------------------------------------------------+
-|| legacyoutput         ||                    || Maintain compatibility for font, b, i, u,        |
-||                      ||                    || strike, etc                                      |
-+-----------------------+---------------------+---------------------------------------------------+
-|| lists                ||                    || Normalizes list behaviour between browsers       |
-+-----------------------+---------------------+---------------------------------------------------+
 || media                || media              || Handles embedded media such as QuickTime, Flash, |
 ||                      ||                    || ShockWave, RealPlayer and Windows Media Player   |
 +-----------------------+---------------------+---------------------------------------------------+
 || nonbreaking          || nonbreaking        || Adds a button for inserting nonbreaking space    |
 ||                      ||                    || entities at the current caret location           |
-+-----------------------+---------------------+---------------------------------------------------+
-|| noneditable          ||                    || Adds non editable elements support for MSIE and  |
-||                      ||                    || Mozilla/FF                                       |
-+-----------------------+---------------------+---------------------------------------------------+
-|| pagebreak            ||                    || Adds pagebreak support.  Enables you to use a    |
-||                      ||                    || special separator to break contents into pages   |
 +-----------------------+---------------------+---------------------------------------------------+
 || paste                || pastetext,         || "Cleans" content pasted from clipboard; useful   |
 ||                      || pasteword,         || when pasting from MS Office                      |
@@ -108,21 +73,10 @@ Crafter Studio uses standard TinyMCE plugins.  Here's a list of available TinyMC
 +-----------------------+---------------------+---------------------------------------------------+
 || preview              || preview            || Opens a popup showing the current content        |
 +-----------------------+---------------------+---------------------------------------------------+
-|| print                || print              || Adds a print button                              |
-+-----------------------+---------------------+---------------------------------------------------+
-|| save                 || save               || Adds a save button                               |
-+-----------------------+---------------------+---------------------------------------------------+
 || searchreplace        || search,            || Adds search/replace dialogs                      |
 ||                      || replace            ||                                                  |
 +-----------------------+---------------------+---------------------------------------------------+
-|| spellchecker         ||                    || Adds spellchecker functionality by providing a   |
-||                      ||                    || new button that performs a AJAX call to a backend|
-||                      ||                    || PHP page that uses PSpell/ASpell or Google       |
-||                      ||                    || spellchecker.                                    |
-+-----------------------+---------------------+---------------------------------------------------+
 || style                || styleprops         || Adds CSS style editing support                   |
-+-----------------------+---------------------+---------------------------------------------------+
-|| tabfocus             ||                    || Adds the possibility to tab in/out               |
 +-----------------------+---------------------+---------------------------------------------------+
 || table                || tablecontrols,     || Adds table management functionality              |
 ||                      || table,             ||                                                  |
