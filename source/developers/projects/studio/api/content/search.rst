@@ -60,7 +60,7 @@ Request
 
 .. code-block:: guess
 
-    GET ../api/1/services/api/1/content/search.json?site_id=mysite
+    POST ../api/1/services/api/1/content/search.json?site_id=mysite
 
 .. code-block:: json
 

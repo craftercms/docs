@@ -46,7 +46,7 @@ Request
 
 .. code-block:: guess
 
-    GET ../api/1/services/api/1/content/set-item-state.json?site_id=mysite&path=/config/studio/administration/config-list.xml&state=EXISTING_UNEDITED_UNLOCKED&systemprocessing=false
+    POST ../api/1/services/api/1/content/set-item-state.json?site_id=mysite&path=/config/studio/administration/config-list.xml&state=EXISTING_UNEDITED_UNLOCKED&systemprocessing=false
 
 
 
