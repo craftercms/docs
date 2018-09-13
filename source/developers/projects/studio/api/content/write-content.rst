@@ -63,6 +63,8 @@ Request
 
     POST ../api/1/services/api/1/content/write-content.json?site_id=mysite&phase=onSave&path=/site/website/index.xml&fileName=index.xml&user=admin&contentType=/page/home&unlock=true
 
+|
+
 .. code-block:: guess
     :caption: Request body
 
@@ -104,6 +106,7 @@ Request
 	    <disabled  >false</disabled>
     </page>
 
+|
 
 Response
 ^^^^^^^^
@@ -183,6 +186,8 @@ Request
 .. code-block:: guess
 
     POST ../api/1/services/api/1/content/write-content.json?site_id=mysite&phase=onSave&path=/templates/web/pages&fileName=home.ftl&user=admin&unlock=true
+
+|
 
 .. code-block:: guess
     :caption: Request body
@@ -278,6 +283,7 @@ Request
         </body>
     </html>
 
+|
 
 Response
 ^^^^^^^^
@@ -357,13 +363,18 @@ Request
 
     POST ../api/1/services/api/1/content/write-content.json?site_id=mysite&phase=onSave&path=/static-assets&fileName=undefined&user=admin&unlock=true
 
+|
+
 This request needs to be sent with ``Content-Type=multipart/form-data`` with the following parameters:
 
     Text Part:
-        field: ``site``    value: mysite (the site id)
-        field: ``path``    value: /static-assets (the folder in your site where you want to upload your file)
+
+    * field: ``site``    value: mysite (the site id)
+    * field: ``path``    value: /static-assets (the folder in your site where you want to upload your file)
+
     File Part:
-        field: ``file``    value: (the_file_to_be_uploaded)
+
+    * field: ``file``    value: (the_file_to_be_uploaded)
 
 Your request payload should look like this:
 
