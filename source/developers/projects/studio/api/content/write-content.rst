@@ -61,7 +61,9 @@ Request
 
 .. code-block:: guess
 
-    GET ../api/1/services/api/1/content/write-content.json?site_id=mysite&phase=onSave&path=/site/website/index.xml&fileName=index.xml&user=admin&contentType=/page/home&unlock=true
+    POST ../api/1/services/api/1/content/write-content.json?site_id=mysite&phase=onSave&path=/site/website/index.xml&fileName=index.xml&user=admin&contentType=/page/home&unlock=true
+
+|
 
 .. code-block:: guess
     :caption: Request body
@@ -104,6 +106,7 @@ Request
 	    <disabled  >false</disabled>
     </page>
 
+|
 
 Response
 ^^^^^^^^
@@ -154,7 +157,7 @@ Parameters
 +-----------------+-------------+---------------+--------------------------------------------------+
 || fileName       || String     || |checkmark|  || File name of the content                        |
 +-----------------+-------------+---------------+--------------------------------------------------+
-|| contentType    || String     || |checkmark|  || Content type of the content                     |
+|| contentType    || String     ||              || Content type of the content                     |
 +-----------------+-------------+---------------+--------------------------------------------------+
 || user           || String     ||              || User that executes action                       |
 +-----------------+-------------+---------------+--------------------------------------------------+
@@ -182,7 +185,9 @@ Request
 
 .. code-block:: guess
 
-    GET ../api/1/services/api/1/content/write-content.json?site=mysite&phase=onSave&path=/templates/web/pages&fileName=home.ftl&user=admin&unlock=true
+    POST ../api/1/services/api/1/content/write-content.json?site_id=mysite&phase=onSave&path=/templates/web/pages&fileName=home.ftl&user=admin&unlock=true
+
+|
 
 .. code-block:: guess
     :caption: Request body
@@ -278,6 +283,7 @@ Request
         </body>
     </html>
 
+|
 
 Response
 ^^^^^^^^
@@ -329,7 +335,7 @@ Parameters
 +-----------------+-------------+---------------+--------------------------------------------------+
 || fileName       || String     || |checkmark|  || File name of the content                        |
 +-----------------+-------------+---------------+--------------------------------------------------+
-|| contentType    || String     || |checkmark|  || Content type of the content                     |
+|| contentType    || String     ||              || Content type of the content                     |
 +-----------------+-------------+---------------+--------------------------------------------------+
 || user           || String     ||              || User that executes action                       |
 +-----------------+-------------+---------------+--------------------------------------------------+
@@ -355,8 +361,42 @@ Request
 
 .. code-block:: guess
 
-    GET ../api/1/services/api/1/content/write-content.json
+    POST ../api/1/services/api/1/content/write-content.json?site_id=mysite&phase=onSave&path=/static-assets&fileName=undefined&user=admin&unlock=true
 
+|
+
+This request needs to be sent with ``Content-Type=multipart/form-data`` with the following parameters:
+
+    Text Part:
+
+    * field: ``site``    value: mysite (the site id)
+    * field: ``path``    value: /static-assets (the folder in your site where you want to upload your file)
+
+    File Part:
+
+    * field: ``file``    value: (the_file_to_be_uploaded)
+
+Your request payload should look like this:
+
+.. code-block:: guess
+
+   ------WebKitFormBoundaryl9p1lhdx4gWpuCMM
+   Content-Disposition: form-data; name="site"
+
+   mysite
+   ------WebKitFormBoundaryl9p1lhdx4gWpuCMM
+   Content-Disposition: form-data; name="path"
+
+   /static-assets
+   ------WebKitFormBoundaryl9p1lhdx4gWpuCMM
+   Content-Disposition: form-data; name="file"; filename="test.txt"
+   Content-Type: text/plain
+
+   Hello world!
+
+   ------WebKitFormBoundaryl9p1lhdx4gWpuCMM--
+
+|
 
 Response
 ^^^^^^^^
