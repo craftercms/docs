@@ -1,9 +1,0 @@
------------------
-Crafter CMS 3.0.3
------------------
-
-^^^^^^^
-Updates
-^^^^^^^
-
-* Bulk-upload bug fix: https://github.com/craftercms/craftercms/issues/1672

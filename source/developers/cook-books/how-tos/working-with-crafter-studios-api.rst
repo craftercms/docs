@@ -15,6 +15,14 @@ We’ll use CURL, a ubiquitous Linux command tool as our client.
 You can find the full Crafter Studio API for Crafter CMS version 3.0 here
 http://docs.craftercms.org/en/3.0/developers/projects/studio/api/index.html
 
+Most Crafter Studio API requires users to authenticate first.  When a user authenticates via the login API call, this establishes a session which is provided per J2EE in a **JSESSIONID** cookie.  Future calls must send this cookie.
+
+Crafter Studio APIs are protected using a CSRF Token so all ``POST``, ``PUT`` and ``DELETE`` calls need to include a cookie named **XSRF-TOKEN** and a header named **X-XSRF-TOKEN** with a matching value to work.
+
+As we'll see below, the Login API sends a header and a cookie CSRF/XSRF token value which must also be sent in subsequent calls. The value is arbitrary and is dictated by the caller. Strong values are more secure than predictable weak ones.
+
+Let's begin:
+
 #. **Authenticate**
 
    We’ll use the authenticate API
@@ -26,44 +34,44 @@ http://docs.craftercms.org/en/3.0/developers/projects/studio/api/index.html
 
    |
 
-   The first thing you’ll note is that we’re going to perform a POST, passing the username and password as a JSON object.  In a production environment, you will want to use HTTPS.
+   The first thing you’ll note is that we’re going to perform a ``POST``, passing the username and password as a JSON object.  In a production environment, you will want to use HTTPS.
 
-   The next thing you will notice, we are passing a cookie “XSRF-TOKEN” and a header “X-XSRF-TOKEN”.  The value passed for these are arbitrary.  They must match and they must be passed in all future PUT and POST API calls.  These are used to protect against certain cross-browser scripting attacks.  If you are using Studio APIs as part of a web client you want to make sure these values are randomly generated.
+   The next thing you will notice, we are passing a cookie ``XSRF-TOKEN`` and a header ``X-XSRF-TOKEN``.  The value passed for these are arbitrary.  They must match and they must be passed in all future PUT and POST API calls.  These are used to protect against certain cross-browser scripting attacks.  If you are using Studio APIs as part of a web client you want to make sure these values are randomly generated.
 
    After issuing the CURL command you will get back a response:
 
    .. code-block:: guess
       :linenos:
 
-       * Trying ::1...
-       * Trying 127.0.0.1...
-       * Connected to localhost (127.0.0.1) port 8080 (#0)
-       > POST /studio/api/1/services/api/1/security/login.json HTTP/1.1
-       > Host: localhost:8080
-       > User-Agent: curl/7.43.0
-       > Accept: */*
-       > Cookie: XSRF-TOKEN=A_VALUE
-       > X-XSRF-TOKEN:A_VALUE
-       > Content-Type: application/json
-       > Content-Length: 39
-       >
-       * upload completely sent off: 39 out of 39 bytes
-       < HTTP/1.1 200
-       < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-       < Pragma: no-cache
-       < Expires: 0
-       < Set-Cookie: JSESSIONID=2E114725C82F3EE44ADC04B578A3BE8F; Path=/studio; HttpOnly
-       < Content-Type: application/json;charset=UTF-8
-       < Content-Language: en-US
-       < Transfer-Encoding: chunked
-       < Date: Mon, 22 Jan 2018 21:32:48 GMT
-       <
-       * Connection #0 to host localhost left intact
-       {"username":"admin","first_name":"admin","last_name":"admin","email":"evaladmin@example.com"}
+      * Trying ::1...
+      * Trying 127.0.0.1...
+      * Connected to localhost (127.0.0.1) port 8080 (#0)
+      > POST /studio/api/1/services/api/1/security/login.json HTTP/1.1
+      > Host: localhost:8080
+      > User-Agent: curl/7.43.0
+      > Accept: */*
+      > Cookie: XSRF-TOKEN=A_VALUE
+      > X-XSRF-TOKEN:A_VALUE
+      > Content-Type: application/json
+      > Content-Length: 39
+      >
+      * upload completely sent off: 39 out of 39 bytes
+      < HTTP/1.1 200
+      < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+      < Pragma: no-cache
+      < Expires: 0
+      < Set-Cookie: JSESSIONID=2E114725C82F3EE44ADC04B578A3BE8F; Path=/studio; HttpOnly
+      < Content-Type: application/json;charset=UTF-8
+      < Content-Language: en-US
+      < Transfer-Encoding: chunked
+      < Date: Mon, 22 Jan 2018 21:32:48 GMT
+      <
+      * Connection #0 to host localhost left intact
+      {"username":"admin","first_name":"admin","last_name":"admin","email":"evaladmin@example.com"}
 
    Note the response returned is a successful 200 status code and the response contains JSON with details for the authenticated user.
 
-   Also found as part of the request is the JSESSION cookie.  You will need this value for all future requests.
+   Also found as part of the request is the ``JSESSIONID`` cookie.  You will need this value for all future requests.
 
 #. **Get a list of projects under management**
 
@@ -101,7 +109,7 @@ http://docs.craftercms.org/en/3.0/developers/projects/studio/api/index.html
    In the call above note:
 
    We are passing in content as the POST body.  The content is in XML format.  In Crafter CMS, content objects are stored as simple XML documents.
-   We are passing the Session ID and the XSRF tokens
+   We are passing the Session ID and the XSRF tokens.
    We are passing a number of parameters that tell Crafter CMS where and how to store the content in the repository
 
 Using the above examples as a guide, we can now interact with any Crafter Studio API found here:  http://docs.craftercms.org/en/3.0/developers/projects/studio/api/index.html.
