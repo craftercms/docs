@@ -40,9 +40,9 @@ Configuring Studio for headers based authentication is very simple: in your Auth
     studio.authentication.headers.lastName: lastname
     # Authentication header for email
     studio.authentication.headers.email: email
-    # Authentication header for groups: comma separated list of sites and groups
+    # Authentication header for groups: comma separated list of groups
     #   Example:
-    #   craftercms1645,Author,anothersite,Author
+    #   site_author,site_xyz_developer
     studio.authentication.headers.groups: groups
 
 From the above configuration, here are the attributes that Studio expects from the headers to be provided:
@@ -151,3 +151,4 @@ Once a user has been authenticated, the user will be granted access to Studio.  
 For more information on doing a generic setup of mod_auth_mellon, see: https://github.com/UNINETT/mod_auth_mellon/wiki/GenericSetup
 
 For more information on adding Microsoft Active Directory Integration (ADFS) to Apache, see: https://bgstack15.wordpress.com/2016/03/24/adding-adfs-integration-to-apache/
+
