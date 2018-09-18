@@ -7,19 +7,19 @@ The detailed roadmap is maintained in our issue planning and tracking system, an
 At a high-level, we're pursuing the objectives listed below in order:
 
 * SPA Support II
-	- ICE (In-Context Editing) Pencils for React JS and Angular: 20% done
+	- ICE (In-Context Editing) Pencils for React JS and Angular
 	- Drag and Drop for React JS and Angular
 * Crafter Studio features
-	- Schedule an item for publishing continue editing it (specific-version publishing): 30% done
+	- Schedule an item for publishing and continue editing it (specific-version publishing)
 	- Improved delete mechanics
-	- Better Drag and Drop mechanics
-	- Crafter Studio Marketplace for blueprints and new blueprints: 50% done (backend mostly done, and the marketplace app is done)
+	- Improved in-context editing including better drag and drop mechanics
+	- Crafter Studio Marketplace for blueprints and new blueprints
 	- Time-travel mechanics to preview sites across time
-	- Crafter Studio UI NG (next generation UI for Crafter Studio built on Angular): New front-end is 50% done (code: https://github.com/craftercms/studio-ui-ng)
+	- Crafter Studio UI NG (next generation UI for Crafter Studio built on Angular, code is here: https://github.com/craftercms/studio-ui-ng)
 	- Integrate Crafter Profile Admin and Crafter Social Admin directly into Crafter Studio
 * AWS Elastic Search support OOtB
 
-Recenlty Completed
+Recently Completed
 ------------------
 
 * SPA Support I
