@@ -1,0 +1,11 @@
+------------------
+Crafter CMS 3.0.17
+------------------
+
+^^^^^^^
+Updates
+^^^^^^^
+* Added WebDAV datasource to enable uploading and picking files from WebDAV
+* Bug fixes and enhancements
+
+For a full list of tickets, please visit: `GitHub 3.0.17 Milestone <https://github.com/craftercms/craftercms/milestone/43?closed=1>`_
