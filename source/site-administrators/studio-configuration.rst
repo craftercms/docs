@@ -49,4 +49,4 @@ Here are the settings that can be configured through Crafter Studio:
    studio/site-config-tools
    studio/site-config-configuration
    studio/targeting-configuration
-
+   studio/webdav-profiles-configuration
