@@ -12,7 +12,7 @@ Create a new group
 
 Let's begin by creating a new group.
 
-#. To create a new group, click on |siteConfig| from the **Sidebar**, then click on **Groups**.
+#. To create a new group, click on |mainMenu| **Main Menu** from the top right, then click on **Groups**.
 #. Click on the **New Group** button.
 #. Enter a name for the new group being created in the **Display Name** field.
 #. Enter a description of the new group being created in the **Description** field.
@@ -122,7 +122,7 @@ Adding users to the role
 
 We can now add users to the role by adding the users to the group mapped to the role.  In the role mappings configuration file, we mapped the role **newseditor** to the group NewsEditor.  To add users to the group NewsEditor,
 
-#. Click on |siteConfig| from the **Sidebar**, then select **Groups**
+#. Click on |mainMenu| from the top right of Studio, then select **Groups** on the left hand side
 #. Click on the pencil (edit icon) next to the group name you want to edit.  In our example, the group **NewsEditor**
 #. Click on the box for the field **Add new members**, enter the users you'd like to add, then click on the **Add members** button.
 

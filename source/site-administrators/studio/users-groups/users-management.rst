@@ -12,17 +12,17 @@ User Management allows you to control and set up who can access and manage the s
 
 To find the Users Management console follow the next instructions:
 
-	1. Click on the **Users** option located at the top right of the browser
+1. Click on the **Main Menu** |mainMenu| option located at the top right of the browser, then click on **Users** in the main menu located on the left side of the browser:
 
-        .. image:: /_static/images/users/users-manage-access.png
-            :alt: Users - Manage Access
-            :align: center
+   .. image:: /_static/images/users/users-manage-access.png
+       :alt: Users - Manage Access
+       :align: center
 
-	2. Here's the dialog that will appear after clicking on **Users** at the top right of the browser
+2. Here's the dialog that will appear after clicking on **Users** in the main menu
 
-        .. image:: /_static/images/users/users-tab.png
-            :alt: Users Dialog
-            :align: center
+   .. image:: /_static/images/users/users-tab.png
+       :alt: Users Dialog
+       :align: center
 
 -------
 Actions
@@ -39,6 +39,7 @@ To see a list of all existing users, make sure that there are no search terms en
 .. image:: /_static/images/users/users-list-all.png
     :alt: Users - List All
     :align: center
+    :width: 75%
 
 
 Searching Users
