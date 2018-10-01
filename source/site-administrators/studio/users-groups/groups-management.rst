@@ -2,31 +2,33 @@
 Groups Management
 =================
 
-Groups Management allows you to administrate the groups in the site created on Crafter CMS. You can add, remove,
+Groups Management allows you to administrate the groups created on Crafter CMS. You can add, remove,
 edit, and manage the users that will belong to the groups and you can also add and remove groups.
 
-Here's a list of predefined groups and roles in the out of the box Website_Editorial blueprint in Crafter CMS:
+Here's a list of predefined groups and roles in Crafter CMS:
 
-+----------------+----------------+
-|| Group         || Role          |
-+================+================+
-|| Admin         || admin         |
-+----------------+----------------+
-|| Author        || author        |
-+----------------+----------------+
-|| Developer     || developer     |
-+----------------+----------------+
-|| Reviewer      || reviewer      |
-+----------------+----------------+
-|| Publisher     || publisher     |
-+----------------+----------------+
++---------------------+----------------+
+|| Group              || Role          |
++=====================+================+
+|| system_admin       || system_admin  |
++---------------------+----------------+
+|| site_admin         || admin         |
++---------------------+----------------+
+|| site_author        || author        |
++---------------------+----------------+
+|| site_developer     || developer     |
++---------------------+----------------+
+|| site_reviewer      || reviewer      |
++---------------------+----------------+
+|| site_publisher     || publisher     |
++---------------------+----------------+
 
 You can add more groups defined whenever needed.  The list above is just a starting point for when you first create your site.  The following sections will give you more details on users and groups.  The next sections, Permission Mappings and Role Mappings describes how to setup/assign permissions and roles.
 
 To find this section through studio follow the next instructions:
 
-#. Click on |siteConfig| at the bottom of the *Sidebar*.
-#. Click on **Groups** from the menu.
+#. Click on ``Main Menu`` |mainMenu| at the top right of your browser.
+#. Click on **Groups** from the main menu on the left side of your browser.
 
 .. image:: /_static/images/groups/site-config-groups.png
     :width: 70%
