@@ -55,8 +55,24 @@ From the above configuration, here are the attributes that Studio expects from t
 
 The attribute ``secure_key`` is placed by the authentication agent, e.g. Apache mod_mellon, in the header.
 
-.. note:: Users logged in to Studio through SSO should not be able to logout from Studio.  This functionality will be supported in a future release.  In the meantime, **Sign Out** can be removed by removing the ``logout`` menu item from ``contextual-navigation-config.xml``.  See :ref:`contextual-navigation-configuration` for more information on the configuration file.
 
+Configuring Logout
+------------------
+
+The **Sign out** button link is disabled/hidden by default when headers based authentication is enabled.
+
+To enable **Sign out** for users signed in using headers based authentication, in your Authoring installation, go to ``shared/classes/crafter/studio/extension`` and add the following lines to ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your system):
+
+.. code-block:: yaml
+
+    # Enable/disable logout for headers authenticated users (SSO)
+    studio.authentication.headers.logout.enabled: true
+    # If logout is enabled for headers authenticated users (SSO), set the endpoint of the SP or IdP logout, which should
+    # be called after local logout. The {baseUrl} macro is provided so that the browser is redirected back to Studio
+    # after logout (https://STUDIO_SERVER:STUDIO_PORT/studio)
+    studio.authentication.headers.logout.url: /mellon/logout?ReturnTo={baseUrl}
+
+|
 
 ---------------------
 Setup mod_auth_mellon
@@ -149,6 +165,66 @@ Once a user has been authenticated, the user will be granted access to Studio.  
    The **secure_key** header value set in the ``auth_mellon configuration`` (Item number 5 above) should match the value listed in the ``studio-config-override.yaml`` for the property **studio.authentication.headers.secureKeyHeaderValue**.  This becomes a handshake between Studio and HTTPd and protects your installation from someone potentially faking headers. You should change the default to some arbitrary value to better protect your installation.
 
 For more information on doing a generic setup of mod_auth_mellon, see: https://github.com/UNINETT/mod_auth_mellon/wiki/GenericSetup
+
+-----------------------------------
+Microsoft ADFS as Identity Provider
+-----------------------------------
+
+Here's a few things to take note of when setting up headers based authentication using Microsoft ADFS as the Identity Provider with Crafter CMS and mod_auth_mellon.
+
+In ADFS, SPs are called the "Relying Party" and the SP configuration a "Relying Party Trust".
+When setting up the ADFS connection with Crafter CMS, the following custom rules should be added in the Relying Party Trust, under the Claim Issuance Policy
+
+
+The first rule extracts all of the groups out and moves them into a temp store:
+
+.. code-block:: guess
+
+    c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", Issuer == "AD AUTHORITY"]
+    => add(store = "Active Directory", types = ("http://schemas.xmlsoap.org/claims/Group"), query = ";tokenGroups;{0}", param = c.Value);
+
+|
+
+
+The second rule filters down to the regex of ``.myproject.`` or basically anything that includes ``myproject`` in the group name and then prepends the actual value with "myproject-site":
+
+.. code-block:: guess
+
+    c:[Type == "http://schemas.xmlsoap.org/claims/Group", Value =~ ".*myproject.*"]
+    => issue(Type = "groups", Value = "myproject-site," + c.Value, Issuer = c.Issuer);
+
+|
+
+After setting up the custom rules above, we need to setup 2 more rules for SAML to work with Mellon and Crafter CMS
+
+Setup the SAML Map to AD Properties:
+
+.. code-block:: guess
+
+    c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", Issuer == "AD AUTHORITY"]
+    => issue(store = "Active Directory", types = ("email", "firstname", "lastname", "username"), query = ";mail,givenName,sn,sAMAccountName;{0}", param = c.Value);
+
+|
+
+Configure Claim Rule Transform ("Transform an incoming claim") that maps the desired Claim data into SAML data element, nameid:
+
+.. code-block:: guess
+
+    c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"]
+    => issue(Type = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", Issuer = c.Issuer, OriginalIssuer = c.OriginalIssuer, Value = c.Value, ValueType = c.ValueType, Properties["http://schemas.xmlsoap.org/ws/2005/05/identity/claimproperties/format"] = "urn:oasis:names:tc:SAML:2.0:nameid-format:transient");
+
+|
+
+.. note:: Any changes made to the ADFS settings require you to update the iDP Federation.xml on Crafter
+
+|
+
+For more information on creating a rule to send claims using a custom rule, see: https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/create-a-rule-to-send-claims-using-a-custom-rule
+
+For more information on creating a rule to transform an incoming claim, see:
+https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/create-a-rule-to-transform-an-incoming-claim
+
+For more information on ADFS issues with mod_auth_mellon, see: https://github.com/Uninett/mod_auth_mellon/blob/master/doc/user_guide/mellon_user_guide.adoc#microsoft-adfs-issues
 
 For more information on adding Microsoft Active Directory Integration (ADFS) to Apache, see: https://bgstack15.wordpress.com/2016/03/24/adding-adfs-integration-to-apache/
 
