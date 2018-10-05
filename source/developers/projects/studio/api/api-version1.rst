@@ -216,4 +216,5 @@ AWS
    :maxdepth: 1
 
    aws/elastictranscoder/post-transcode
+   aws/mediaconvert/post-upload
    aws/s3/post-upload
