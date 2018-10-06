@@ -15,24 +15,36 @@ We provide a clear set of security guidelines for developers and maintainers of 
     This section is limited in scope to the following:
 
     * Crafter CMS v3.0.0 onwards
+    * Submitting and handling security-related issues
     * Secure development processes limited to Crafter CMS’s codebase
     * Auditing 3rd party libraries and software
     * Auditing Crafter CMS
-    * Auditing the software
-    * Auditing images
+    * Auditing machine images
     * Auditing and securing Crafter Cloud (Crafter Software’s SaaS offering of Crafter CMS)
-    * Submitting and handling security-related issues.
+    * OWASP Top 10 Mitigation
+
+---------------
+Security Issues
+---------------
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Submitting Security Issues
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Request that the customer, SI, bounty-hunter, user report security issues privately via ZenDesk or by emailing security@craftersoftware.com whenever possible
+
+^^^^^^^^^^^^^^^^^^^^^^^
+Security Issue Workflow
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: /_static/images/system-admin/Crafter-CMS-Security-Issue-Flow.png
+    :alt: Crafter CMS Security Issue Flow
+    :align: center
+
 
 -----------
 Development
 -----------
-
-^^^^^^^^^^^^^^^^^^^^^^^
-Development Environment
-^^^^^^^^^^^^^^^^^^^^^^^
-* Developer machines: Linux or Mac with encrypted disk
-* Approved IDE: MS VScode, IntelliJ IDEA
-* 2FA SCM access
 
 ^^^^^^^^^
 Code Flow
@@ -71,27 +83,6 @@ Crafter Cloud
 
 * Crafter Cloud is based on the scanned AWS AMI
 * Periodic penetration testing using OWASP ZAP
-
-
----------------
-Security Issues
----------------
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-Submitting Security Issues
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Request that the customer, SI, bounty-hunter, user report security issues privately via ZenDesk or by emailing security@craftersoftware.com whenever possible
-
-^^^^^^^^^^^^^^^^^^^^^^^
-Security Issue Workflow
-^^^^^^^^^^^^^^^^^^^^^^^
-
-.. figure:: /_static/images/system-admin/Crafter-CMS-Security-Issue-Flow.png
-    :alt: Crafter CMS Security Issue Flow
-    :align: center
-
-
 
 
 --------
