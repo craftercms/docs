@@ -403,6 +403,8 @@ rst_epilog = """
 .. |siteConfig| image:: /_static/images/configuration-site-config-icon.png
                    :width: 15%
 
+.. |mainMenu| image:: /_static/images/main-menu-button.png
+                   :width: 5%
 """
 
 # Javadoc home and version
