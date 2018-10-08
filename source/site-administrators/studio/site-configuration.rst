@@ -4,7 +4,7 @@
 Site Configuration
 ##################
 
-The site configuration file contains the primary configuration for Crafter Studio's behavior. Each site has its own site configuration file that controls its behavior indendently of other sites.
+The site configuration file contains the primary configuration for Crafter Studio's behavior. Each site has its own site configuration file that controls its behavior independently of other sites.
 
 To modify the site configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Site Configuration** from the dropdown list.
 
