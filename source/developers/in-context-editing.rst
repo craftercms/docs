@@ -24,6 +24,8 @@ At the top of your page or component (whatever it is you are rendering, include 
 
 	<#import "/templates/system/common/cstudio-support.ftl" as studio/>
 
+|
+
 At the bottom of your template insert the following: (Note the example shows a traditional HTML page however other formats/levels of granularity are supported
 
 .. code-block:: guess
@@ -32,6 +34,8 @@ At the bottom of your template insert the following: (Note the example shows a t
 		</body>
 	</html>
 
+|
+
 --------------------------
 In-Context Editing Pencils
 --------------------------
@@ -39,12 +43,19 @@ In-Context Editing Pencils
 In context editing renders pencils on the screen that invoke editing controls when clicked.  This allows authors to quickly/visually identify editable content and make changes.
 
 .. image:: /_static/images/ice-example.png
+        :align: center
+        :width: 70 %
+        :alt: In context editing example
+
+|
 
 To enable in-context editing simply add the following attribute to the container/element where you want to place the editing control
 
 .. code-block:: guess
 
 	<@studio.iceAttr iceGroup="author"/>
+
+|
 
 Tag Attributes
 --------------
@@ -72,6 +83,8 @@ Example:
 
 	<img <@studio.iceAttr iceGroup="image" label="Promo Image 1" /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}"/>``
 
+|
+
 ----------------------------
 Component Drag and Drop Zone
 ----------------------------
@@ -85,6 +98,8 @@ To define a drop zone for components simply add the following attribute to the c
 .. code-block:: guess
 
 	<@studio.componentContainerAttr target="bottomPromos" objectId=contentModel.objectId />
+
+|
 
 Tag Attributes
 --------------
@@ -110,6 +125,8 @@ Example:
 		...
 	<div>
 
+|
+
 If you want to learn how to configure the Drag and Drop panel please read the following document: :doc:`../site-administrators/studio/drag-n-drop-configuration`.
 
 Rendering components from the target inside the container
@@ -125,6 +142,8 @@ The template needs to render the components that are referenced. The basic code 
 		</#list>
 	</#if>
 
+|
+
 Note that the code is simply iterating over the collection of objects and calling render component.  NO markup is being inserted in this example.  The component template is rendering itself.  It's up to you if you want to insert markup around sub-components.
 Full example of typical component drop zone
 
@@ -138,6 +157,8 @@ Full example of typical component drop zone
 		</#if>
 	</div>
 
+|
+
 Identifying components in the template
 --------------------------------------
 
@@ -146,6 +167,8 @@ In order for authors to interact with components, to drag them around the screen
 .. code-block:: guess
 
 	<@studio.componentAttr path=contentModel.storeUrl />
+
+|
 
 Tag Attributes
 --------------
@@ -172,6 +195,10 @@ Example
 
 	<img <@studio.componentAttr path=contentModel.storeUrl ice=true /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}" />
 
+|
+
+.. note:: Remember to have an item selector control in the form definition for each drop zone
+
 --------------
 Engine Support
 --------------
@@ -181,6 +208,8 @@ At the top of your page or component (whatever it is you are rendering, include 
 .. code-block:: guess
 
 	<#import "/templates/system/common/crafter-support.ftl" as crafter/>
+
+|
 
 Components
 ----------
@@ -194,6 +223,8 @@ Need to render a sub component of some kind?
 
 	<@renderComponent component=module />
 
+|
+
 Render Components
 -----------------
 
@@ -204,6 +235,8 @@ Need to iterate through a list of components and render them WITHOUT any additio
 
 	<@crafter.renderComponents componentList=contentModel.bottomPromos />
 
+|
+
 Render RTE (Rich Text Editor Components)
 ----------------------------------------
 
@@ -212,3 +245,5 @@ Have components that are inserted in to the rich text editor and need to render 
 .. code-block:: guess
 
 	<@crafter.renderRTEComponents />
+
+|
