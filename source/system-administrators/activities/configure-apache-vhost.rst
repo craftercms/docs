@@ -32,6 +32,14 @@ Here's the sample configuration for setting up a vhost for production:
         RewriteRule ^/api/1/site/context/destroy / [NC,PT,L]
         RewriteRule ^/api/1/site/context/rebuild / [NC,PT,L]
 
+        # Take all inbound URLs and lower case them before proxying to Crafter Engine
+        #     Crafter Studio forces all URL path names to be lower case to have a consistent naming pattern on the server for the files
+        #     Using the rewrite rule below, the URL the user sees can be any (upper and/or lower) case
+        RewriteCond %{REQUEST_URI} !^/static-assets/.*$ [NC]
+        RewriteCond %{REQUEST_URI} !^/api/.*$ [NC]
+        RewriteMap lc int:tolower
+        RewriteRule ^/(.*)$ /${lc:$1}
+
         ProxyPreserveHost On
 
         # Don't send static asset requests to Engine
