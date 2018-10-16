@@ -19,42 +19,41 @@ Configuring Studio for headers based authentication is very simple: in your Auth
 .. code-block:: properties
     :linenos:
 
-    # Defines security provider for accessing repository. Possible values
-    # - db (users are stored in database)
-    # - ldap (users are imported from LDAP into the database)
-    # - headers (use when authenticating via headers)
-    studio.security.type: headers
+    # Studio authentication chain configuration
+    studio.authentication.chain:
+      # Authentication provider type
+      - provider: HEADERS
+        # Authentication via headers enabled
+        enabled: true
+        # Authentication header for secure key
+        secureKeyHeader: secure_key
+        # Authentication headers secure key that is expected to match secure key value from headers
+        # Typically this is placed in the header by the authentication agent, e.g. Apache mod_mellon
+        secureKeyHeaderValue: secure
+        # Authentication header for username
+        usernameHeader: username
+        # Authentication header for first name
+        firstNameHeader: firstname
+        # Authentication header for last name
+        lastNameHeader: lastname
+        # Authentication header for email
+        emailHeader: email
+        # Authentication header for groups: comma separated list of groups
+        #   Example:
+        #   site_author,site_xyz_developer
+        groupsHeader: groups
 
-    # Authentication via headers enabled
-    studio.authentication.headers.enabled: true
-    # Authentication header for secure key
-    studio.authentication.headers.secureKeyHeaderName: secure_key
-    # Authentication headers secure key that is expected to match secure key value from headers
-    # Typically this is placed in the header by the authentication agent, e.g. Apache mod_mellon
-    studio.authentication.headers.secureKeyHeaderValue: secure
-    # Authentication header for username
-    studio.authentication.headers.username: username
-    # Authentication header for first name
-    studio.authentication.headers.firstName: firstname
-    # Authentication header for last name
-    studio.authentication.headers.lastName: lastname
-    # Authentication header for email
-    studio.authentication.headers.email: email
-    # Authentication header for groups: comma separated list of groups
-    #   Example:
-    #   site_author,site_xyz_developer
-    studio.authentication.headers.groups: groups
 
 From the above configuration, here are the attributes that Studio expects from the headers to be provided:
 
-    - username
-    - firstname
-    - lastname
-    - email
-    - groups
+- username
+- firstname
+- lastname
+- email
+- groups
 
 The attribute ``secure_key`` is placed by the authentication agent, e.g. Apache mod_mellon, in the header.
-
+The attribute ``enabled`` enables/disables headers authentication, make sure this is set to **true** for headers authentication
 
 Configuring Logout
 ------------------

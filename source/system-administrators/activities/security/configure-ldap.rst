@@ -7,42 +7,51 @@ Configure LDAP Authentication
 Configuring LDAP authentication is very simple: in your Authoring installation, go to ``shared/classes/crafter/studio/extension`` and add the
 following lines to ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your LDAP system):
 
-  .. code-block:: properties
-      :linenos:
+.. code-block:: properties
+    :linenos:
 
-      # LDAP Server url
-      studio.security.ldap.serverUrl: ldap://localhost:10389
-      # LDAP bind DN (user)
-      studio.security.ldap.bindDN: uid=admin,ou=system
-      # LDAP bind password
-      studio.security.ldap.bindPassword: secret
-      # LDAP base context (directory root)
-      studio.security.ldap.baseContext: dc=example,dc=com
-      # LDAP username attribute
-      studio.security.ldap.userAttribute.username: uid
-      # LDAP first name attribute
-      studio.security.ldap.userAttribute.firstName: cn
-      # LDAP last name attribute
-      studio.security.ldap.userAttribute.lastName: sn
-      # LDAP email attribute
-      studio.security.ldap.userAttribute.email: mail
-      # LDAP groups attribute
-      studio.security.ldap.userAttribute.groupName: ou
-      # LDAP groups attribute name regex
-      studio.security.ldap.userAttribute.groupName.regex: .*
-      # LDAP groups attribute match index
-      studio.security.ldap.userAttribute.groupName.matchIndex: 0
+    # Studio authentication chain configuration
+    studio.authentication.chain:
+      # Authentication provider type
+      - provider: LDAP
+        # Authentication via LDAP enabled
+        enabled: true
+        # LDAP Server url
+        studio.security.ldap.serverUrl: ldap://localhost:10389
+        # LDAP bind DN (user)
+        studio.security.ldap.bindDN: uid=admin,ou=system
+        # LDAP bind password
+        studio.security.ldap.bindPassword: secret
+        # LDAP base context (directory root)
+        studio.security.ldap.baseContext: dc=example,dc=com
+        # LDAP username attribute
+        studio.security.ldap.userAttribute.username: uid
+        # LDAP first name attribute
+        studio.security.ldap.userAttribute.firstName: cn
+        # LDAP last name attribute
+        studio.security.ldap.userAttribute.lastName: sn
+        # LDAP email attribute
+        studio.security.ldap.userAttribute.email: mail
+        # LDAP groups attribute
+        studio.security.ldap.userAttribute.groupName: ou
+        # LDAP groups attribute name regex
+        studio.security.ldap.userAttribute.groupName.regex: .*
+        # LDAP groups attribute match index
+        studio.security.ldap.userAttribute.groupName.matchIndex: 0
 
-      Some notes on the properties above:
+|
 
+Some notes on the properties above:
+
+- ``enabled`` enables/disables LDAP authentication, make sure this is set to **true** for LDAP authentication
 - ``serverUrl`` is just the URL where the LDAP server is listening for requests.
 - ``bindDN`` and ``bindPassword`` are basically the credentials used to connect initially to the LDAP server.
 - ``baseContext`` is the LDAP tree root where the user entries can be located.
 - ``username``, ``firstName``, ``lastName`` and ``email`` are basic user attributes.
-- ``groupName`` indicates the groups inside the site the user belongs to (can have multiple values)  You can specify a regex to extract the group name of a user.
+- ``groupName`` indicates the groups the user belongs to (can have multiple values).  You can specify a regex to extract the group name of a user.
 
 Studio will then do a query against the LDAP server whenever a user attempts to log in and the user is not yet in the DB. If there's a match in LDAP, the user is
-created in the database with the imported LDAP attributes, and finally added to the groups of the site specified in LDAP.
+created in the database with the imported LDAP attributes, and finally added to the groups specified in LDAP.
 
 Also, please note that Studio needs all the attributes listed in the config to be present in the LDAP user's attributes, otherwise, Studio is not able to authenticate the user.  When an attribute is missing, an error message will be displayed in the login screen: ``A system error has occurred.  Please wait a few minutes or contact an administrator``.  Please look at the tomcat log to check which attribute was not found.  Here's an example log:
 
