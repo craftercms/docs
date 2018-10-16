@@ -78,8 +78,9 @@ Authoring
    :maxdepth: 1
    :titlesonly:
 
-   activities/authoring-env-performance-tuning.rst
-   activities/staging-env.rst
+   activities/authoring/authoring-env-performance-tuning.rst
+   activities/authoring/change-ports-on-your-auth-install.rst
+   activities/authoring/staging-env.rst
    activities/sync-studio-database-with-repo.rst
 
 ********
@@ -90,8 +91,9 @@ Delivery
    :maxdepth: 1
    :titlesonly:
 
-   activities/configure-apache-vhost.rst
-   activities/setup-site-for-delivery.rst
+   activities/delivery/configure-apache-vhost.rst
+   activities/delivery/change-ports-on-your-delivery-install.rst
+   activities/delivery/setup-site-for-delivery.rst
 
 *************************
 Subsystems Administration
