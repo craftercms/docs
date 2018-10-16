@@ -11,9 +11,9 @@ Cookbooks / Tutorials
    content-queries/index
    active-cache/index
    activiti/index
+   aws/index
    services/index
    blueprint/index
    best-practices/index
    how-tos/index
    marketplace/index
-
