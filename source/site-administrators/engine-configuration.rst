@@ -13,4 +13,5 @@ This section details how to configure settings related to Crafter Engine, Crafte
    engine/engine-site-security-guide
    engine/content-targeting-guide
    engine/engine-mongodb-configuration
+   engine/configure-url-rewrite
 
