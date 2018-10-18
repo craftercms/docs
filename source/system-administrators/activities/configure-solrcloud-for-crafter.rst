@@ -14,7 +14,7 @@ In Authoring
 #. Zip up (with tar.gz) the directory https://github.com/craftercms/search/tree/master/crafter-search-provider/solr/configsets/crafter_configs/conf.
 #. Copy the zip to one of the Solr servers and unzip it
 #. Go to **SOLR_INSTALL_DIR/server/scripts/cloud-scripts**.
-#. Run the command  ``./zkcli.sh -zkhost ZOOKEEPER_HOST:ZOOKEEPER_PORT -cmd upconfig -confname crafter_configs -confdir PATH_TO_UNZIPPED_CONFIGS`` (make sure the folder at PATH_TO_UNZIPPED_CONFIGS contains the ``solrconfig.xml`` file).
+#. Run the command  ``./zkcli.sh -zkhost ZOOKEEPER_HOST:ZOOKEEPER_PORT -cmd upconfig -confname crafter_configs -confdir PATH_TO_UNZIPPED_CONFIGS`` (make sure the folder at ``PATH_TO_UNZIPPED_CONFIGS`` contains the ``solrconfig.xml`` file and remember to replace ``ZOOKEEPER_HOST`` and ``ZOOKEEPER_PORT`` with the actual Zookeeper host and port).
 #. Go to one of the Solr Admin Consoles.
 #. Go to **Collections** and click on **Add Collection**.
 #. Make the name of the collection the same as your site name, pick ``crafter_configs`` in config set and then click on **Add Collection**.
@@ -47,6 +47,8 @@ In Authoring
        </beans>
 
    |
+
+   Remember to replace ``ZOOKEEPER_HOST`` and ``ZOOKEEPER_PORT`` with the actual Zookeeper host and port.
 
 #. Go to **CRAFTER_INSTALL/data/deployer/targets** and create a new target with the name of your site, followed by -solrcloud (e.g. ``editorial-solrcloud.yaml``). Add the following content (changing the SITE_NAME and the SITE_REPOS_PATH):
 
