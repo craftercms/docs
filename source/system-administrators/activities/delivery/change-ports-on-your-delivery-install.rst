@@ -62,7 +62,7 @@ If you are working with both the delivery and the authoring environment, when yo
 
 Finally, we'll also need to update ports in the existing deployer targets.  To update the port in existing deployer targets, open the file ``DELIVERY_INSTALL_DIR/data/deployer/targets/SITENAME-preview.yaml`` and update the ``engineUrl`` to the desired port:
 
-    * engineUrl: http://localhost:8080
+    * engineUrl: http://localhost:9080
 
 -----------------------------------------
 Configuration for Delivery Deployer Ports
