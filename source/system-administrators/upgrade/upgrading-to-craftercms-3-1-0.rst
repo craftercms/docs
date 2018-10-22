@@ -5,7 +5,7 @@ Instructions for Upgrading to Crafter CMS 3.1.0 from a previous 3.0.x version
 =============================================================================
 
 After upgrading your Crafter CMS install, you will need to update the following site configurations
-depending of the previous version you were running.
+depending on the previous version you were running.
 
 
 ------------
