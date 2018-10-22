@@ -20,13 +20,12 @@ into your site ``/config/studio/administration/samples``.
 Adding the version file
 -----------------------
 
-Starting with version 3.1.0 Crafter CMS will use a special file to track the version of each site
-and automatically apply upgrades for future releases. When migrating a site from any previous version
+Starting with version 3.1.0 Crafter CMS will use a special file ``studio_version.xml`` to track the version of 
+each site and automatically apply upgrades for future releases. When migrating a site from any previous version
 this file has to be added and committed in the site repository.
 
-``/config/studio/studio_version.xml``
-
 .. code-block:: xml
+  :caption: /config/studio/studio_version.xml
 
   <?xml version="1.0" encoding="UTF-8"?>
   <studio>
@@ -46,15 +45,13 @@ Upgrading Site Configurations
 
   Some of the changes may not be needed depending on the Crafter CMS version in which your site was created.
 
-``/config/studio/search/``
+All files in the folder ``/config/studio/search/`` are no longer used it can be completely removed.
 
-All files in this folder are no longer used it can be completely removed.
-
-``/config/studio/administration/config-list.xml``
-
-Add the dependency resolver configuration file
+To add the dependency resolver configuration file in the SiteConfig configuration file ``config-list.xml``, add the 
+following:
 
 .. code-block:: xml
+  :caption: /config/studio/administration/config-list.xml
   
   <file>
     <path>/studio/dependency/resolver-config.xml</path>
@@ -63,11 +60,13 @@ Add the dependency resolver configuration file
     <samplePath>/studio/administration/samples/sample-resolver-config.xml</samplePath>
   </file>
 
+In your ``site-config-tools.xml`` configuration file, you will need to remove the groups tool, then add the repositories tool.
 ``/config/studio/administration/site-config-tools.xml``
 
 Remove the groups tool
 
 .. code-block:: xml
+  :caption: /config/studio/administration/site-config-tools.xml
 
   <tool>
     <name>groups</name>
@@ -78,6 +77,7 @@ Remove the groups tool
 Add the repositories tool
 
 .. code-block:: xml
+  :caption: /config/studio/administration/site-config-tools.xml
 
   <tool>
     <name>repository</name>
@@ -88,13 +88,13 @@ Add the repositories tool
   </tool>
 
 
-``/config/studio/dependency/resolver-config.xml``
-
-Replace the following regular expressions:
+In your dependency resolver configuration file ``/config/studio/dependency/resolver-config.xml``, replace the following 
+regular expressions:
 
 - ``<find-regex>/static-assets/([^&lt;"'\)]+)</find-regex>`` with ``<find-regex>/static-assets/([^&lt;"'\)\?]+)</find-regex>``
 - ``<path-pattern>/static-assets/([^&lt;"'\)]+)</path-pattern>`` with
     .. code-block:: xml
+      :caption: /config/studio/dependency/resolver-config.xml
 
       <path-pattern>/static-assets/([^&lt;"'\)]+)\.css</path-pattern>
       <path-pattern>/static-assets/([^&lt;"'\)]+)\.js</path-pattern>
@@ -107,6 +107,7 @@ Replace the following regular expressions:
 
 - ``<find-regex>/templates/([^&lt;"]+)\.ftl</find-regex>`` with
     .. code-block:: xml
+      :caption: /config/studio/dependency/resolver-config.xml
 
       <pattern>
         <find-regex>/templates/([^&lt;"]+)\.ftl</find-regex>
@@ -139,7 +140,7 @@ in order to keep them up to date.
 
 .. note::
 
-  These upgrades can also be disabled setting the version to a random string, just like the site version.
+  These upgrades can also be disabled by setting the version to a random string, just like the site version.
 
 .. important::
 
