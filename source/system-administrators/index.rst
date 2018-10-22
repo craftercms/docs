@@ -69,6 +69,7 @@ Upgrading Crafter CMS
    :titlesonly:
 
    upgrade/upgrading-to-craftercms-3-0.rst
+   upgrade/upgrading-to-craftercms-3-1-0.rst
    upgrade/index.rst
 
 *********
