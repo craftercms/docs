@@ -12,17 +12,17 @@ System Requirements
 +------------------+-----------------------------------+-----------------------------------------+
 || Parameter Name  || Description                      || Prerequisites                          |
 +==================+===================================+=========================================+
-|| Crafter Studio  || Content authoring server         || Java 1.8+                              |
+|| Crafter Studio  || Content authoring server         || Java 1.8                               |
 ||                 ||                                  || 4+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
-|| Crafter Engine  || Content delivery server          || Java 1.8+                              |
+|| Crafter Engine  || Content delivery server          || Java 1.8                               |
 ||                 ||                                  || 2+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
-|| Crafter Profile || User profile and attribute store || Java 1.8+                              |
+|| Crafter Profile || User profile and attribute store || Java 1.8                               |
 ||                 || (Optional component)             || MongoDB 3+ (included in the bundle)    |
 ||                 ||                                  || 1+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
-|| Crafter Social  || User Generated Content server    || Java 1.8+                              |
+|| Crafter Social  || User Generated Content server    || Java 1.8                               |
 ||                 || (Optional component)             || MongoDB 3+ (included in the bundle)    |
 ||                 ||                                  || 1+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
@@ -78,8 +78,9 @@ Authoring
    :maxdepth: 1
    :titlesonly:
 
-   activities/authoring-env-performance-tuning.rst
-   activities/staging-env.rst
+   activities/authoring/authoring-env-performance-tuning.rst
+   activities/authoring/change-ports-on-your-auth-install.rst
+   activities/authoring/staging-env.rst
    activities/sync-studio-database-with-repo.rst
 
 ********
@@ -90,8 +91,9 @@ Delivery
    :maxdepth: 1
    :titlesonly:
 
-   activities/configure-apache-vhost.rst
-   activities/setup-site-for-delivery.rst
+   activities/delivery/configure-apache-vhost.rst
+   activities/delivery/change-ports-on-your-delivery-install.rst
+   activities/delivery/setup-site-for-delivery.rst
 
 *************************
 Subsystems Administration

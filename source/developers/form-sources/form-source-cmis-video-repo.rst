@@ -3,24 +3,24 @@
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. index:: Data Sources; Video from Repository
+.. index:: Data Sources; Video from CMIS Repository
 
 .. _form-source-cmis-video-repo:
 
-=================================
-Video from Repository Data Source
-=================================
+======================================
+Video from CMIS Repository Data Source
+======================================
 
-.. image:: /_static/images/form-sources/form-source-video-repo.png
+.. image:: /_static/images/form-sources/form-source-cmis-video-repo.png
     :width: 50%
-    :alt: Source Control Video From Repository
+    :alt: Source Control Video From CMIS Repository
     :align: center
 
 -------------
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-video-repo-conf.png
+.. image:: /_static/images/form-sources/form-source-cmis-video-repo-conf.png
     :width: 50%
     :alt: Source Control Video From CMIS Repository Configuration
     :align: center

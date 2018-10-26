@@ -6,7 +6,6 @@ How-Tos
    :maxdepth: 2
    :titlesonly:
 
-   change-ports-on-your-install
    components-in-rte
    override-logging-levels
    setting-up-an-ldap-server-for-dev
