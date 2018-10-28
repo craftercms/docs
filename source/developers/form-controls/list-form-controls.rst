@@ -63,6 +63,19 @@
              :width: 95%
              :alt: Form Controls - Auto Filename
 
+.. |ctlAwsFileUp| image:: /_static/images/form-controls/ctl-aws-file-upload.png
+             :width: 95%
+             :alt: Form Controls - AWS File Upload
+
+.. |ctlAwsVideoUp| image:: /_static/images/form-controls/ctl-aws-video-upload.png
+             :width: 97%
+             :alt: Form Controls - AWS Video Upload
+
+.. |ctlBoxFileUp| image:: /_static/images/form-controls/ctl-box-file-upload.png
+             :width: 95%
+             :alt: Form Controls - Box File Upload
+
+
 +------------------------+-----------------------------------------------------------------------+
 || Control               || Description                                                          |
 +------------------------+-----------------------------------------------------------------------+
@@ -132,4 +145,16 @@
 || |ctlAutoFn|           ||                                                                      |
 ||                       ||                                                                      |
 ||                       || Details are in the :ref:`form-auto-filename` page.                   |
++------------------------+-----------------------------------------------------------------------+
+|| |ctlAwsFileUp|        ||                                                                      |
+||                       ||                                                                      |
+||                       || Details are in the :ref:`form-aws-file-upload` page.                 |
++------------------------+-----------------------------------------------------------------------+
+|| |ctlAwsVideoUp|       ||                                                                      |
+||                       ||                                                                      |
+||                       || Details are in the :ref:`form-aws-video-upload` page.                |
++------------------------+-----------------------------------------------------------------------+
+|| |ctlBoxFileUp|        ||                                                                      |
+||                       ||                                                                      |
+||                       || Details are in the :ref:`form-box-file-upload` page.                 |
 +------------------------+-----------------------------------------------------------------------+
