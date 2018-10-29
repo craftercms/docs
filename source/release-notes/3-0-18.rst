@@ -1,0 +1,11 @@
+------------------
+Crafter CMS 3.0.18
+------------------
+
+^^^^^^^
+Updates
+^^^^^^^
+* Added WebDAV datasource to enable uploading image and video files from desktop to WebDAV
+* Bug fixes
+
+For a full list of tickets, please visit: `GitHub 3.0.18 Milestone <https://github.com/craftercms/craftercms/milestone/46?closed=1>`_
