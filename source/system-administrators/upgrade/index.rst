@@ -93,6 +93,8 @@ Upgrading Crafter CMS bundle versions prior to 3.0.15
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Crafter CMS installs prior to 3.0.15 does not contain the upgrade scripts required to upgrade and will need to use the ``upgrade-target`` script to upgrade your bundle install.  Please follow the steps above to upgrade your current Crafter CMS install.
 
+.. _running-upgrade-script-from-current-install:
+
 Running the upgrade script from your current install
 ----------------------------------------------------
 

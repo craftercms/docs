@@ -9,3 +9,6 @@ Updates
 * Bug fixes
 
 For a full list of tickets, please visit: `GitHub 3.0.18 Milestone <https://github.com/craftercms/craftercms/milestone/46?closed=1>`_
+
+.. important::
+    If you're updating your Crafter CMS installed from a bundle from version 3.0.17 on a Windows machine, please see :ref:`upgrade-from-3-0-17` to update your scripts before upgrading
