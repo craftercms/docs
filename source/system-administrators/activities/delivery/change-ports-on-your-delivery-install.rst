@@ -31,7 +31,7 @@ Configuration for Delivery Environment Tomcat Ports
 
 The default Tomcat port is 9080.  There are a few places that we need to update to change the Tomcat ports.
 
-First, we'll need to change the ports for Crafter Studio, Crafter Engine, and Crafter Search.
+First, we'll need to change the ports for Crafter Engine, and Crafter Search.
 Open the file ``DELIVERY_INSTALL_DIR/bin/apache-tomcat/conf/server.xml``.  Notice that there are several ports listed in this XML file:
 
     * 9005 (shutdown port),

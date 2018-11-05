@@ -4,9 +4,42 @@
 Instructions for Upgrading to Crafter CMS 3.1.0 from a previous 3.0.x version
 =============================================================================
 
-After upgrading your Crafter CMS install, you will need to update the following site configurations
-depending on the previous version you were running.
+Upgrade your Crafter CMS install, by following the upgrade guide :ref:`upgrading-craftercms`.
 
+Please note the following when upgrading to Crafter CMS 3.1 from 3.0:
+
+#. Groups are now at the system level instead of per site.  By default, Crafter CMS has the following groups available after a fresh install: ``system_admin``, ``site_admin``, ``site_author``, ``site_developer``, ``site_publisher``, and ``site_reviewer``.  Users added to the system_admin group has the role **system_admin** that has permissions to create users, create site, add users to groups, etc.  Users added to any of the default groups has permissions for all sites created in Studio.
+
+#. Site membership of a user is now determined by a mapping of group membership to roles within a site using the mapping file ``role-mappings.xml`` (see :ref:`role-mappings` on  how to configure the role mappings).  Note the new default groups when you create a site as noted above, these are automatically mapped to roles when using the built-in blueprints.
+
+   When upgrading a site, the default groups in the site are updated as follows:
+
+   +-------------------------------+------------------------------------------+
+   || 3.0 Default Groups  ==>      || 3.1 Default Groups                      |
+   +===============================+==========================================+
+   || Admin                        || {site_name}_admin                       |
+   +-------------------------------+------------------------------------------+
+   || Author                       || {site_name}_author                      |
+   +-------------------------------+------------------------------------------+
+   || Developer                    || {site_name}_developer                   |
+   +-------------------------------+------------------------------------------+
+   || Publisher                    || {site_name}_publisher                   |
+   +-------------------------------+------------------------------------------+
+   || Reviewer                     || {site_name}_reviewer                    |
+   +-------------------------------+------------------------------------------+
+
+   For example, if user ``john`` is a member of group ``Developer`` (one of the default groups) in the site ``mysite``, after upgrading, user ``john`` will be a member of group ``mysite_developer``.
+
+
+#. The LDAP authentication configuration has been updated.  The attribute ``siteId`` has been removed and is no longer needed since site membership of a user is now determined by group membership.  Please see :ref:`crafter-studio-configure-ldap` for the updated configuration.
+
+#. The headers based authentication configuration has been updated. The ``groups`` header value should just be a comma separated list of groups that a user belongs to.  In the previous version, 3.0.x, the ``groups`` header value contained a comma separated list of sites and groups.  Please update the ``groups`` header value of users to contain only a comma separated list of groups the user belongs to.  Please see :ref:`crafter-studio-configure-headers-based-auth` for the updated configuration.
+
+
+#. After upgrading your Crafter CMS install, you will need to update some site configurations depending on the previous version you were running.
+
+
+After upgrading your Crafter CMS install, update the following site configurations depending on the previous version you were running:
 
 ------------
 Sample files
