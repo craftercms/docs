@@ -84,7 +84,7 @@ Sample
 
         pipelineId: id of the pipeline that will be used for transcoding jobs
         outputs: list of outputs for the transcoding jobs
-        presentId: id of the preset for a particular output
+        presetId: id of the preset for a particular output, can use AWS default presets for common formats
         outputKeySuffix: suffix added to a particular output
 
         -->
@@ -145,3 +145,11 @@ Sample
             <template>Example Template</template>
         </profile>
     </aws>
+
+|
+
+For more information on Amazon S3, please see: https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html
+
+For more information on the AWS elastic transcoder, please see: https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/introduction.html
+
+For more information on the AWS mediaconvert, please see: https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
