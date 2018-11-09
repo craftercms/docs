@@ -209,6 +209,10 @@ Crafter Engine Properties
  * **jobs.job:** Specifies a single script job to be scheduled. The job path should be specified in ``<path>``, and the cron expression
    in ``<cronExpression>``.
 
+	.. NOTE ::
+	  Crafter Engine will not be able to load your Site Context if your configuration contains invalid XML 
+          or incorrect configuration.  
+
 .. _engine-site-configuration-spring-configuration:
 
 --------------------
@@ -256,6 +260,10 @@ A ``org.springframework.context.support.PropertySourcesPlaceholderConfigurer`` (
 specified in the context so that the properties of ``site-config.xml`` can be used as placeholders,
 like ``${myvalue}``. By making the placeholder configurer inherit from crafter.properties, you'll
 also have access to Engine's global properties (like ``crafter.engine.preview``).
+
+	.. NOTE ::
+	  Crafter Engine will not be able to load your Site Context if your context file contains invalid XML, 
+          incorrect configuration or if your beans do not properly handle their own errors on intiialization.  
 
 ------------------------------
 Encrypted Configuration Values
