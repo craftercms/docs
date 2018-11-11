@@ -40,6 +40,7 @@ Security
    :titlesonly:
 
    activities/security/security-policies.rst
+   activities/security/configure-studio-security.rst
 
 **********
 Activities
@@ -58,7 +59,6 @@ Activities
    activities/reindexing-content-in-prod.rst
    activities/troubleshooting.rst
    activities/security/randomize-admin-passwd.rst
-   activities/security/configure-studio-security.rst
 
 *********************
 Upgrading Crafter CMS
