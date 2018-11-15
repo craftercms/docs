@@ -27,7 +27,7 @@ Crafter CMS supports 3 specific types of content queries:
 Make a Lucene/Solr Query
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following code examples use the Crafter Search Service in Crafter Egnine to get content.
+The following code examples use the Crafter Search Service in Crafter Engine to get content.
 You can find the interface for this service :javadoc_base_url:`HERE <search/org/craftercms/search/service/SearchService.html>`
 
 .. code-block:: groovy
@@ -35,7 +35,7 @@ You can find the interface for this service :javadoc_base_url:`HERE <search/org/
     def queryStatement = 'content-type:"/component/article" AND author:"Russ Danner"'
 
     def query = searchService.createQuery()
-    query = query.setQuery(queryStatement)
+    query.setQuery(queryStatement)
 
     def executedQuery = searchService.search(query)
     def itemsFound = executedQuery.response.numFound
