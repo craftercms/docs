@@ -171,6 +171,18 @@ beans to get the navigation tree or breadcrumb list in a Groovy script:
 
 .. |NavItem| replace:: :javadoc_base_url:`NavItem<engine/org/craftercms/engine/navigation/NavItem.html>`
 
+---------------------------
+Running Scripts/Controllers
+---------------------------
+
+Crafter Engine allows executing scripts/controllers from inside Freemarker templates by using the tag ``@crafter.controller``.  It requires a single parameter, ``path``, which is the path of the script/controller in the site:
+
+.. code-block:: guess
+   :caption: Running Scripts/Controllers from inside Freemarker templates
+
+   <@crafter.controller path=“/scripts/plugins/MyPlugin/1/get-tweets.groovy” />
+   <@crafter.controller path=“/scripts/plugins/MyPlugin/1/get-fbs.groovy” />
+
 ------------------------
 Keeping Templates Simple
 ------------------------
