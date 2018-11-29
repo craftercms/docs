@@ -2,9 +2,9 @@
 
 .. _security:
 
-=============================
-Crafter CMS Security Policies
-=============================
+========
+Security
+========
 
 In this section, we describe the security processes followed during the development, release, and support of Crafter CMS.
 

@@ -31,16 +31,6 @@ System Requirements
 
 .. note:: Crafter CMS is not yet compatible with Java 1.9. We are working on updating our code to make sure we are 100% compatible with the newest Java version.
 
-********
-Security
-********
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   activities/security/security-policies.rst
-
 **********
 Activities
 **********
