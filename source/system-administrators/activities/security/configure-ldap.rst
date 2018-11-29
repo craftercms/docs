@@ -4,11 +4,14 @@
 Configure LDAP Authentication
 =============================
 
-Configuring LDAP authentication is very simple: in your Authoring installation, go to ``shared/classes/crafter/studio/extension`` and add the
-following lines to ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your LDAP system):
+To configure LDAP authentication, in your Authoring installation, go to ``shared/classes/crafter/studio/extension`` and add the
+following lines to the ``studio-config-override.yaml`` file.
+
+.. note:: The values for the parameters listed below are just examples.  Remember to make any appropriate configuration changes according to your directory service in use.
 
 .. code-block:: properties
     :linenos:
+    :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
 
     # Studio authentication chain configuration
     studio.authentication.chain:
@@ -59,6 +62,7 @@ Also, please note that Studio needs all the attributes listed in the config to b
 
     [WARN] 2017-10-11 12:42:57,487 [http-nio-8080-exec-2] [security.DbWithLdapExtensionSecurityProvider] | No LDAP attribute crafterGroup found for username cbrunato
 
+|
 
 Here are a few things to take note of when configuring LDAP authentication in Studio:
 
@@ -68,6 +72,8 @@ Make sure that at least one of the **groupName** attribute of the LDAP user exis
         :alt: System Admin LDAP Config - LDAP user group attribute not assigned to a role
         :width: 35 %
         :align: center
+
+|
 
 To assign a role to a group, please follow the guide :ref:`role-mappings`.  To assign permissions to a role, please see :ref:`permission-mappings`
 
