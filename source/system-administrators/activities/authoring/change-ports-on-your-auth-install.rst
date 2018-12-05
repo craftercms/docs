@@ -63,7 +63,7 @@ To  update Crafter Deployer, open the file ``AUTHORING_INSTALL_DIR/bin/crafter-d
 
     * target:search:serverUrl
 
-We also need to update the ports in site specific environment configurations.  To update the environment configurations, for each existing site, open the file ``AUTHORING_INSTALL_DIR/data/repos/sites/SITENAME/sandbox/config/studio/environment/environment-config.xm`` and update the ports in the ``preview-server-url`` and the ``authoring-server-url`` to the desired port:
+We also need to update the ports in site specific environment configurations.  To update the environment configurations, for each existing site, open the file ``AUTHORING_INSTALL_DIR/data/repos/sites/SITENAME/sandbox/config/studio/environment/environment-config.xml`` and update the ports in the ``preview-server-url`` and the ``authoring-server-url`` to the desired port:
 
     * <preview-server-url>http://localhost:8080</preview-server-url>
     * <authoring-server-url>http://localhost:8080/studio</authoring-server-url>
