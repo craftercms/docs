@@ -173,5 +173,6 @@ Crafter Studio
    studio/changing-the-studio-logo.rst
    studio/studio-configuration-overrides.rst
    studio/debugging-publishing-issues.rst
+   studio/debugging-upgrade-issues.rst
    studio/create-site-with-link-to-remote-repo.rst
    studio/session-timeout-settings.rst
