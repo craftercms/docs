@@ -4,43 +4,49 @@
 Configure LDAP Authentication
 =============================
 
-Configuring LDAP authentication is very simple: in your Authoring installation, go to ``shared/classes/crafter/studio/extension`` and add the
-following lines to ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your LDAP system):
+To configure LDAP authentication, in your Authoring installation, go to ``shared/classes/crafter/studio/extension`` and add the
+following lines to the ``studio-config-override.yaml`` file.
 
-  .. code-block:: properties
-        :linenos:
+.. note:: The values for the parameters listed below are just examples.  Remember to make any appropriate configuration changes according to your directory service in use.
 
-        # Defines security provider for accessing repository. Possible values:
-        # db (users are stored in database)
-        # ldap (users are imported from LDAP into the database)
-        studio.security.type: ldap
-        # LDAP Server url
-        studio.security.ldap.serverUrl: ldap://localhost:389
-        # LDAP bind DN (user)
-        studio.security.ldap.bindDN: cn=Manager,dc=my-domain,dc=com
-        # LDAP bind password
-        studio.security.ldap.bindPassword: secret
-        # LDAP base context (directory root)
-        studio.security.ldap.baseContext: dc=my-domain,dc=com
-        # LDAP username attribute
-        studio.security.ldap.userAttribute.username: uid
-        # LDAP first name attribute
-        studio.security.ldap.userAttribute.firstName: cn
-        # LDAP last name attribute
-        studio.security.ldap.userAttribute.lastName: sn
-        # LDAP email attribute
-        studio.security.ldap.userAttribute.email: mail
-        # LDAP site ID attribute
-        studio.security.ldap.userAttribute.siteId: crafterSite
-        # LDAP groups attribute
-        studio.security.ldap.userAttribute.groupName: crafterGroup
-        # LDAP groups attribute name regex
-        studio.security.ldap.userAttribute.groupName.regex: cn=Crafter_([a-zAZ]+),.*
-        # LDAP groups attribute match index
-        studio.security.ldap.userAttribute.groupName.matchIndex: 1
-        # LDAP default site if site ID attribute not found
-        studio.security.ldap.defaultSiteId: default
+|
 
+.. code-block:: properties
+      :linenos:
+      :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
+
+      # Defines security provider for accessing repository. Possible values:
+      # db (users are stored in database)
+      # ldap (users are imported from LDAP into the database)
+      studio.security.type: ldap
+      # LDAP Server url
+      studio.security.ldap.serverUrl: ldap://localhost:389
+      # LDAP bind DN (user)
+      studio.security.ldap.bindDN: cn=Manager,dc=my-domain,dc=com
+      # LDAP bind password
+      studio.security.ldap.bindPassword: secret
+      # LDAP base context (directory root)
+      studio.security.ldap.baseContext: dc=my-domain,dc=com
+      # LDAP username attribute
+      studio.security.ldap.userAttribute.username: uid
+      # LDAP first name attribute
+      studio.security.ldap.userAttribute.firstName: cn
+      # LDAP last name attribute
+      studio.security.ldap.userAttribute.lastName: sn
+      # LDAP email attribute
+      studio.security.ldap.userAttribute.email: mail
+      # LDAP site ID attribute
+      studio.security.ldap.userAttribute.siteId: crafterSite
+      # LDAP groups attribute
+      studio.security.ldap.userAttribute.groupName: crafterGroup
+      # LDAP groups attribute name regex
+      studio.security.ldap.userAttribute.groupName.regex: cn=Crafter_([a-zAZ]+),.*
+      # LDAP groups attribute match index
+      studio.security.ldap.userAttribute.groupName.matchIndex: 1
+      # LDAP default site if site ID attribute not found
+      studio.security.ldap.defaultSiteId: default
+
+|
 
 Some notes on the properties above:
 
@@ -60,6 +66,7 @@ Also, please note that Studio needs all the attributes listed in the config to b
 
     [WARN] 2017-10-11 12:42:57,487 [http-nio-8080-exec-2] [security.DbWithLdapExtensionSecurityProvider] | No LDAP attribute crafterGroup found for username cbrunato
 
+|
 
 Here are a few things to take note of when configuring LDAP authentication in Studio:
 
@@ -69,6 +76,8 @@ Make sure that at least one of the **groupName** attribute of the LDAP user exis
         :alt: System Admin LDAP Config - LDAP user group attribute not assigned to a role
         :width: 35 %
         :align: center
+
+|
 
 To assign a role to a group, please follow the guide :ref:`role-mappings`.  To assign permissions to a role, please see :ref:`permission-mappings`
 
