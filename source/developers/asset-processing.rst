@@ -6,17 +6,17 @@
 Asset Processing
 ================
 
-Most sites contains images that are viewed in different display sizes (desktops/laptops, mobile phones, tablets, of which comes in different sizes, etc.).  To ensure the same experience on your site through various display sizes, the images would need to be converted to different sizes and formats.  Crafter CMS has automatic image processing that allows you to upload just one image that gets converted to the different sizes required by your site for various display sizes.  This automatic image processing can be configured in Studio through the **Asset Processing** configuration file.
+Most sites contains images that are viewed in different display sizes (desktops/laptops, mobile phones, tablets, of which comes in different sizes, etc.).  To ensure the same experience on your site through various display sizes, the images would need to be converted to different sizes and formats.  Crafter CMS supports automatic image processing that allows you to upload just one image that gets converted to the different sizes or formats required by your site for various display sizes.  This automatic image processing is one form of asset processing and can be configured in Studio through the **Asset Processing** configuration file.
 
 Asset processing allows you to define transformations for static assets (currently only images), through a series of
-processor pipelines that are executed when the assets are uploaded to Studio.  A processor is an application that can manipulate your assets to your desired formats such as compress and optimize JPEG and PNG images, etc.  Each processor pipeline in the configuration let's you manipulate the asset to a desired format.  You can specify just one or as many pipelines as required by your site. (Say, you want an image appropriate for mobile devices and an image appropriate for desktop browsers, you'll have two pipelines setup in the configuration.)
+processor pipelines that are executed when the assets are uploaded to Studio.  A processor is an application that can manipulate your assets to your desired formats such as compress and optimize JPEG and PNG images, etc.  Each processor pipeline in the configuration let's you manipulate the asset to a desired format/size.  You can specify just one or as many processors as needed.  You can also specify just one or as many pipelines as required by your site. (Say, you want an image appropriate for mobile devices and an image appropriate for desktop browsers, you'll have two pipelines setup in the configuration.)
 
 ----------------------------
 Configuring Asset Processing
 ----------------------------
 
 The pipelines can be configured by
-going to ``Site Config > Configurations > Asset Processing``, and have the following structure:
+going to the Sidebar in Studio, then from the Sidebar, go to ``Site Config > Configurations > Asset Processing``.   Each pipeline has the following structure:
 
 .. code-block:: xml
 
@@ -51,7 +51,10 @@ going to ``Site Config > Configurations > Asset Processing``, and have the follo
   specified, then the same input path is used as the output path.
 
 .. note::
-    As noted above, we currently support 2 types of image processors, **ImageMagickTransformer** and **Tinify**
+    Please note the following:
+
+    - We currently support 2 types of image processors, **ImageMagickTransformer** and **TinifyTransformer**
+    - You can have one or multiple pipelines setup, but, a pipeline must have at least one processor configured.
 
 |
 
@@ -114,8 +117,8 @@ would be discarded.
 .. rubric:: Footnotes
 
 .. [#] You need to have image ImageMagick installed in the machine, with the ``convert`` command in the path.  For more information on ImageMagick options, please see https://imagemagick.org/script/command-line-options.php
-.. [#] The Tinify API key must be specified in the ``studio-config-overrides.yaml``
-       (``studio.configuration.asset.processing.tinify.apiKey``).  For more information on Tinify, please see https://tinypng.com/developers/reference/java
+.. [#] The Tinify API key must be specified in the ``studio-config-overrides.yaml`` file (found in your Authoring installation, under ``shared/classes/crafter/studio/extension``).  Add the line below and remember to replace ``<your Tinify API key>`` with the actual value of your Tinify API key:
+       ``studio.configuration.asset.processing.tinify.apiKey:<your Tinify API key>``.  For more information on Tinify, please see https://tinypng.com/developers/reference/java
 
 
 
