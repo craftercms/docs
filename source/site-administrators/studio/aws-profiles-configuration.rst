@@ -44,6 +44,17 @@ Sample
        Every service can require additional properties.
     -->
     <aws>
+        <!--
+
+        AWS S3 Profile
+
+        Additional properties:
+
+        <bucketName/>
+
+        bucketName: name of the bucket where files will be uploaded
+
+        -->
         <profile>
             <id>s3-default</id>
             <credentials>
@@ -53,6 +64,30 @@ Sample
             <region>us-west-1</region>
             <bucketName>sample-input-bucket</bucketName>
         </profile>
+
+        <!--
+
+        AWS Elastic Transcoder Profile
+
+        Additional properties:
+
+        <pipelineId/>
+        <outputs>
+            <output>
+                <presetId/>
+                <outputKeySuffix/>
+            </output>
+
+            ...
+
+        </outputs>
+
+        pipelineId: id of the pipeline that will be used for transcoding jobs
+        outputs: list of outputs for the transcoding jobs
+        presetId: id of the preset for a particular output, can use AWS default presets for common formats
+        outputKeySuffix: suffix added to a particular output
+
+        -->
         <profile>
             <id>elastic-transcoder-default</id>
             <credentials>
@@ -76,5 +111,11 @@ Sample
                 </output>
             </outputs>
         </profile>
+
     </aws>
 
+|
+
+For more information on Amazon S3, please see: https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html
+
+For more information on the AWS elastic transcoder, please see: https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/introduction.html

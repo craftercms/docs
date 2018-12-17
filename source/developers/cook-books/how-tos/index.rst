@@ -7,6 +7,7 @@ How-Tos
    :titlesonly:
 
    components-in-rte
+   integrating-crafter-cms-with-cloud
    override-logging-levels
    setting-up-an-ldap-server-for-dev
    using-war-overlays-with-crafter-engine

@@ -48,6 +48,10 @@ the rest of the site.
   Custom Error pages are standalone templates, they are not associated with any site item and will not have
   the ``model`` object available.
 
+.. note::
+  A valid context is required for custom error pages to render.  If Crafter Engine is not able to load your
+  site context due to a configuration or some other error condition you will receive a default system error page.
+
 Once the file is saved it will be used automatically in preview, for a delivery node you need to publish
 the new file so that it takes effect in the live site.
 
