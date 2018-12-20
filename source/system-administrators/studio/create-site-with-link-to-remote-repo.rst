@@ -1,3 +1,4 @@
+.. index:: Site Creation with Remote Repositories, Remote Repositories
 
 .. _create-site-with-link-to-remote-repo:
 
@@ -43,6 +44,18 @@ Let's take a look at the fields displayed when **Link to upstream remote Git rep
 
    The field **Blueprint** is available when the option **Create site based on a blueprint then push to remote bare Git repository** is selected.  Choose one of the default or choose your own.  The available default blueprints are as follows: Empty, Headless_blog, Headless_store and Website_editorial
 
+.. note::
+        When using **Remote Git Repository Private Key** as the authentication type, take note of the following:
+
+        - The keys need to be generated using **RSA** as the algorithm
+        - Save the key using the default filename (``id_rsa`` and ``id_rsa.pub``).
+
+        .. include:: /includes/setup-ssh-keys.rst
+
+        After copying your public keys to where your remote git repository is located, there are a couple of ways to setup the way Crafter Studio accesses the remote repository:
+
+        #. Set the authentication type to **Remote Git Repository Private Key** in the ``Site`` screen, then specify your private key in the **Remote Git Repository Private Key** field.
+        #. When a trust relationship has been established between your machine and the machine hosting your remote repo, you can set the authentication type  to **None**.
 
 ------------------------------------------------------------------------
 Create site based on a blueprint then push to remote bare Git repository
