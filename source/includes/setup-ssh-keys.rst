@@ -16,5 +16,5 @@ To generate your Secure Shell (SSH) keys for authentication, run the following c
 
 |
 
-After generating your private and public keys, you will need to add your new public key to where your remote git repository is located.  If you are using GitHub, you will need to add your public key ``id_rsa.pub`` into your GitHub account.  If your remote Git repository is hosted on a server, you will need to copy your public key ``id_rsa.pub`` to the host server.
+After generating your private and public keys, you will need to add your new public key to where your remote git repository is located.  If you are using GitHub, you will need to add your public key (e.g., ``id_rsa.pub``) into your GitHub account.  If your remote Git repository is hosted on a server, you will need to copy your public key (e.g., ``id_rsa.pub``) to the host server.
 
