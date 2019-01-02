@@ -45,17 +45,14 @@ Let's take a look at the fields displayed when **Link to upstream remote Git rep
    The field **Blueprint** is available when the option **Create site based on a blueprint then push to remote bare Git repository** is selected.  Choose one of the default or choose your own.  The available default blueprints are as follows: Empty, Headless_blog, Headless_store and Website_editorial
 
 .. note::
-        When using **Remote Git Repository Private Key** as the authentication type, take note of the following:
-
-        - The keys need to be generated using **RSA** as the algorithm
-        - Save the key using the default filename (``id_rsa`` and ``id_rsa.pub``).
+        When using ssh keys for authentication, the keys need to be generated using **RSA** as the algorithm
 
         .. include:: /includes/setup-ssh-keys.rst
 
         After copying your public keys to where your remote git repository is located, there are a couple of ways to setup the way Crafter Studio accesses the remote repository:
 
-        #. Set the authentication type to **Remote Git Repository Private Key** in the ``Site`` screen, then specify your private key in the **Remote Git Repository Private Key** field.
-        #. When a trust relationship has been established between your machine and the machine hosting your remote repo, you can set the authentication type  to **None**.
+        #. Set the authentication type to **Remote Git Repository Private Key** in the ``Create Site`` screen, then specify your private key in the **Remote Git Repository Private Key** field.
+        #.  Set the authentication type to **None** in the ``Create Site`` screen, if you put the key in the default RSA key path in the Crafter Studio server (~/.ssh/id_rsa.pub).  Remember the key needs to use the default filename (``id_rsa`` and ``id_rsa.pub``) when using this method of setting up access to the remote repository.
 
 ------------------------------------------------------------------------
 Create site based on a blueprint then push to remote bare Git repository
