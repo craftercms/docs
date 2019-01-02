@@ -66,8 +66,9 @@ Parameters
 || search_engine       || String    ||               || Search engine options for the site                          |
 ||                     ||           ||               ||   ``ElasticSearch``: use Elastic Search as search engine    |
 ||                     ||           ||               ||   ``CrafterSearch``: use Crafter Search as search engine    |
-||                     ||           ||               || Default value is ``ElasticSearch``
+||                     ||           ||               || Default value is ``ElasticSearch``                          |
 +----------------------+------------+----------------+--------------------------------------------------------------+
+
 .. note::
     ``*`` Required parameters:
         * some remote parameters are required if ``use_remote`` is true
