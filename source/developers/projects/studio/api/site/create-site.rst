@@ -29,6 +29,8 @@ Parameters
 +======================+============+================+==============================================================+
 || site_id             || String    || |checkmark|   || Site ID to use                                              |
 +----------------------+------------+----------------+--------------------------------------------------------------+
+|| sandbox_branch      || String    ||               || Name for sandbox branch (default master)                    |
++----------------------+------------+----------------+--------------------------------------------------------------+
 || description         || String    ||               || Site description                                            |
 +----------------------+------------+----------------+--------------------------------------------------------------+
 || blueprint           || String    || |checkmark| * || Blueprint to use for bootstrapping the site                 |
@@ -61,7 +63,11 @@ Parameters
 ||                     ||           ||               ||   ``clone``: clone from remote repository                   |
 ||                     ||           ||               ||   ``push``: push to remote repository after creating site   |
 +----------------------+------------+----------------+--------------------------------------------------------------+
-
+|| search_engine       || String    ||               || Search engine options for the site                          |
+||                     ||           ||               ||   ``ElasticSearch``: use Elastic Search as search engine    |
+||                     ||           ||               ||   ``CrafterSearch``: use Crafter Search as search engine    |
+||                     ||           ||               || Default value is ``ElasticSearch``
++----------------------+------------+----------------+--------------------------------------------------------------+
 .. note::
     ``*`` Required parameters:
         * some remote parameters are required if ``use_remote`` is true

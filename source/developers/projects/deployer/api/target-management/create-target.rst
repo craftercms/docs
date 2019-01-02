@@ -85,6 +85,13 @@ Parameters
 || notification_addresses     || String     ||              || The email addresses that should       |
 ||                            ||            ||              || receive deployment notifications.     |
 +-----------------------------+-------------+---------------+----------------------------------------+
+|| search_engine              || String     ||              || Search engine options for the site    |
+||                            ||            ||              ||   ``ElasticSearch``: use Elastic      |
+||                            ||            ||              ||       Search as search engine         |
+||                            ||            ||              ||   ``CrafterSearch``: use Crafter      |
+||                            ||            ||              ||       Search as search engine         |
+||                            ||            ||              || Default value is ``ElasticSearch``    |
++-----------------------------+-------------+---------------+----------------------------------------+
 
 .. _remote Clear Cache URL: http://localhost:8080/api/1/cache/clear_all.json
 
