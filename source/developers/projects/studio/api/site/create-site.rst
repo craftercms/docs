@@ -63,6 +63,11 @@ Parameters
 ||                     ||           ||               ||   ``clone``: clone from remote repository                   |
 ||                     ||           ||               ||   ``push``: push to remote repository after creating site   |
 +----------------------+------------+----------------+--------------------------------------------------------------+
+|| search_engine       || String    ||               || Search engine options for the site                          |
+||                     ||           ||               ||   ``ElasticSearch``: use Elastic Search as search engine    |
+||                     ||           ||               ||   ``CrafterSearch``: use Crafter Search as search engine    |
+||                     ||           ||               || Default value is ``ElasticSearch``                          |
++----------------------+------------+----------------+--------------------------------------------------------------+
 
 .. note::
     ``*`` Required parameters:
