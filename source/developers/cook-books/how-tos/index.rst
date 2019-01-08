@@ -7,6 +7,7 @@ How-Tos
    :titlesonly:
 
    add-to-upgrade-scripts
+   change-log-data-folder-location
    components-in-rte
    integrating-crafter-cms-with-cloud
    override-logging-levels
