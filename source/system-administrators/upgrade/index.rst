@@ -153,7 +153,7 @@ Here's an example to perform a full upgrade of your current install using a bund
 
 |
 
-Here's an example to perform a full upgrade of your current install using a bundle url
+Here's an example to perform a full upgrade of your current install using the path where your bundle was downloaded
 
 .. code-block:: bash
 
