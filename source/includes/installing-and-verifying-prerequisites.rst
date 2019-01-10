@@ -122,12 +122,23 @@ For OS X users, the latest ``openssl`` formula needs to be installed via homebre
 Linux prerequisite
 ^^^^^^^^^^^^^^^^^^
 
-For Linux users, some of the scripts uses ``lsof``.  Please note that some Linux distributions does not come with ``lsof`` pre-installed and so, may need to be installed.
+#. For Linux users, some of the scripts uses ``lsof``.  Please note that some Linux distributions does not come with ``lsof`` pre-installed and so, may need to be installed.
 
-To install ``lsof`` for Debian-based Linux distros: ``apt-get install lsof``
+   To install ``lsof`` for Debian-based Linux distros: ``apt-get install lsof``
 
-To install ``lsof`` for RedHat-based Linux distros: ``yum install lsof``
+   To install ``lsof`` for RedHat-based Linux distros: ``yum install lsof``
 
+#. The library ``libncurses5`` is required for running the restore script.  You may get the following error when running the restore script without the ``libncurses5`` library installed:
+
+   **error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory**
+
+   To install the library ``libncurses5``, use the following commands:
+
+   On Debian-based Linux distros: ``sudo apt-get install libncurses5-dev libncursesw5-dev``
+
+   On RHEL, CentOS:  ``sudo yum install ncurses-devel``
+
+   On Fedora 22 and newer version: ``sudo dnf install ncurses-devel``
 
 ^^^^^^^^^^^^^^^^^^^^
 Windows prerequisite
