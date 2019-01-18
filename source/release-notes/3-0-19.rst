@@ -12,6 +12,3 @@ Updates
 * Bug fixes
 
 For a full list of tickets, please visit: `GitHub 3.0.19 Milestone <https://github.com/craftercms/craftercms/milestone/47?closed=1>`_
-
-.. important::
-    After updating your Crafter CMS install, please see :ref:`upgrade-to-3-0-19` to update your existing site's site-config configuration
