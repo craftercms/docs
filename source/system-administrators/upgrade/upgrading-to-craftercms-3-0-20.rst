@@ -3,10 +3,10 @@
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. _upgrade-to-3-0-19:
+.. _upgrade-to-3-0-20:
 
 ==============================================================================
-Instructions for Upgrading to Crafter CMS 3.0.19 from a previous 3.0.x version
+Instructions for Upgrading to Crafter CMS 3.0.20 from a previous 3.0.x version
 ==============================================================================
 
 After upgrading your Crafter CMS install, you will need to update the site-config configuration file in your existing site.
