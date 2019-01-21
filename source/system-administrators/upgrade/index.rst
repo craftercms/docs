@@ -93,6 +93,9 @@ Upgrading Crafter CMS bundle versions prior to 3.0.15
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Crafter CMS installs prior to 3.0.15 does not contain the upgrade scripts required to upgrade and will need to use the ``upgrade-target`` script to upgrade your bundle install.  Please follow the steps above to upgrade your current Crafter CMS install.
 
+|
+|
+
 Running the upgrade script from your current install
 ----------------------------------------------------
 
@@ -162,3 +165,13 @@ Here's an example to perform a full upgrade of your current install using the pa
     $ ./upgrade.sh
 
 |
+
+.. note::
+    When upgrading Crafter CMS installed from a bundle, please note which compressed archive file to use depending on your OS:
+
+    * Unix/Linux Systems
+
+      Use the **.tar.gz** compressed archive file bundle, since this format stores Unix file attributes
+    * Windows Systems
+
+      Use the **.zip** compressed archive file, since this format stores MS-DOS attributes
