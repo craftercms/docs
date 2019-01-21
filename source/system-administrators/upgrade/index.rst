@@ -164,3 +164,13 @@ Here's an example to perform a full upgrade of your current install using the pa
     $ ./upgrade.sh
 
 |
+
+.. note::
+    When upgrading Crafter CMS installed from a bundle, please note which compressed archive file to use depending on your OS:
+
+    * Unix/Linux Systems
+
+      Use the **.tar.gz** compressed archive file bundle, since this format stores Unix file attributes
+    * Windows Systems
+
+      Use the **.zip** compressed archive file, since this format stores MS-DOS attributes
