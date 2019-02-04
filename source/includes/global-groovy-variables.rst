@@ -11,6 +11,10 @@
 ||                       || search queries against               ||                               |
 ||                       || Crafter Search.                      ||                               |
 +------------------------+---------------------------------------+--------------------------------+
+|| elasticSearch         || Service that can be used to execute  || |ElasticSearchWrapper|        |
+||                       || search queries against               ||                               |
+||                       || ElasticSearch.                       ||                               |
++------------------------+---------------------------------------+--------------------------------+
 || applicationContext    || Provides access to the Crafter       || |ApplicationContextAccessor|  |
 ||                       || Engine's Spring beans and site beans ||                               |
 ||                       || defined in                           ||                               |
@@ -69,6 +73,7 @@
 .. _PropertySources: https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/PropertySourcesPropertyResolver.html
 .. |UrlTransformationService| replace:: :javadoc_base_url:`UrlTransformationService <engine/org/craftercms/engine/service/UrlTransformationService.html>`
 .. |SearchService| replace:: :javadoc_base_url:`SearchService <search/org/craftercms/search/service/SearchService.html>`
+.. |ElasticSearchWrapper| replace:: :javadoc_base_url:`ElasticSearchWrapper <org/craftercms/search/elasticsearch/ElasticSearchWrapper.html>`.
 .. |ApplicationContextAccessor| replace:: :javadoc_base_url:`ApplicationContextAccessor <engine/org/craftercms/engine/util/spring/ApplicationContextAccessor.html>`
 .. |BreadcrumbBuilder| replace:: :javadoc_base_url:`BreadcrumbBuilder <engine/org/craftercms/engine/navigation/NavBreadcrumbBuilder.html>`
 .. |NavTreeBuilder| replace:: :javadoc_base_url:`NavTreeBuilder <engine/org/craftercms/engine/navigation/NavTreeBuilder.html>`

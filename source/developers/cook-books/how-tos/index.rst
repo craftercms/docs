@@ -18,3 +18,4 @@ How-Tos
    working-with-dates-freemarker
    working-with-dates-groovy
    working-with-filters
+   migrate-site-to-elasticsearch
