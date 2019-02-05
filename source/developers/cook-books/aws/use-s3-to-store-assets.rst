@@ -124,7 +124,7 @@ Step 5: Add the Groovy script to generate the public URLs
 In order for the article attachments to be publicly accessible, we need a Groovy script that will be executed every
 time an Article page is about be be rendered, that will generate pre-signed URLs for every one of the article
 attachments, and that will put the URLs in the template model so that they can be shown in the view. To do this, create
-a controller under ``Scripts`` > ``pages`` and name it ``articles.groovy``. The controller must have the following code:
+a controller under ``Scripts`` > ``pages`` and name it ``article.groovy``. The controller must have the following code:
 
 .. code-block:: groovy
 
