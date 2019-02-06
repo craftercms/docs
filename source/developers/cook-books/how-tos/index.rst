@@ -12,6 +12,7 @@ How-Tos
    integrating-crafter-cms-with-cloud
    override-logging-levels
    setting-up-an-ldap-server-for-dev
+   setting-up-serverless-mode
    using-war-overlays-with-crafter-engine
    using-custom-processors-with-crafter-deployer
    working-with-crafter-studios-api
