@@ -17,6 +17,7 @@ This section focuses on how to customize and extend Crafter CMS.  It covers the 
       templates
       search
       targeting
+      redirect
       testing
       errors
       extending-studio/index

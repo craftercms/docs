@@ -8,6 +8,8 @@ Configuring URL Rewriting
 
 URL rewriting turns hard to remember, long and complicated URLs into easier to remember URLs.  Simple URL rewrite rules per site can be done through Crafter Engine.
 
+Crafter CMS comes with the Tuckey URLRewrite filter, a Java Web Filter with functionality like Apache's mod_rewrite, that lets you setup rewrite rules for your site.
+
 To add a URL rewrite rule, in Studio, open the **Sidebar** then click on |siteConfig|.  Click on **Configuration** then select **Engine URL Rewrite Configuration (XML Style)**.
 
 .. image:: /_static/images/site-admin/config-urlrewrite-select.png
@@ -15,6 +17,7 @@ To add a URL rewrite rule, in Studio, open the **Sidebar** then click on |siteCo
     :width: 65 %
     :align: center
 
+|
 
 Below is a sample URL rewrite configuration.
 
