@@ -1,7 +1,7 @@
-.. _setting-up-serverless-mode:
+.. _setup-serverless-delivery:
 
 =========================================
-Setting up Crafter CMS in serverless mode
+Setup AWS Serverless Delivery Environment
 =========================================
 
 Crafter CMS can be configured to provide a delivery environment that is seamlessly integrated with AWS services like
@@ -81,6 +81,10 @@ using the following additional parameters in the request body:
 |``aws.distribution.url``|The CloudFront URL that will be used to replace local URLs                                |
 +------------------------+------------------------------------------------------------------------------------------+
 |``aws.distribution.ids``|The ids of any CloudFront distribution for cache invalidation                             |
++------------------------+------------------------------------------------------------------------------------------+
+|``engine_urls``         |The list of URLs to clear cache & reload site context after deploy                        |
++------------------------+------------------------------------------------------------------------------------------+
+|``delay``               |The number of seconds to wait after syncing to S3                                         |
 +------------------------+------------------------------------------------------------------------------------------+
 
 Example Request:
