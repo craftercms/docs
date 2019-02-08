@@ -8,7 +8,7 @@ Debugging Search Issues
 Overview of Search Mechanics
 ----------------------------
 
-.. include:: /includes/how-search-works.rst
+.. include:: /includes/how-search-works-solr.rst
 
 --------------------------------------
 Places Search Indexing Can Get Hung Up

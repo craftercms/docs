@@ -6,9 +6,10 @@ Logging
 
 Log files from several sources are created when running Crafter CMS.  These log files are useful for checking the status of Crafter CMS, for example, the success of actions/requests, warnings and error messages.  These logs can be used to provide more information about potential issues in the system or for debugging errors.  The log files can be found in ``$CRAFTER_DIR/crafter-authoring/logs/`` or in ``$CRAFTER_DIR/crafter-delivery/logs/`` depending on which environment you are running.  Effective use of these logs is an important part of maintaining your sites and are useful for keeping track of your system performance.  To that end, please make sure that you rotate the logs.
 
-Crafter CMS ships with a Tomcat Application Server, Solr, and MongoDB included in the bundle.  There are four folders used by Crafter CMS for the log files,
+Crafter CMS ships with a Tomcat Application Server, ElasticSearch, Solr, and MongoDB included in the bundle.  There are five folders used by Crafter CMS for the log files,
 
     - tomcat
+    - elasticsearch
     - solr
     - deployer
     - mongodb
@@ -24,6 +25,8 @@ The most recent messages from the log files may be displayed by tailing the log 
 || Tomcat log file             || ``$CRAFTER_LOGS_DIR/tomcat/catalina.out``                      |
 +------------------------------+-----------------------------------------------------------------+
 || Tomcat historical log files || ``$CRAFTER_LOGS_DIR/tomcat/catalina.%Y-%M-%D.log``             |
++------------------------------+-----------------------------------------------------------------+
+|| ElasticSearch log files     || ``$CRAFTER_LOGS_DIR/elasticsearch/``                           |
 +------------------------------+-----------------------------------------------------------------+
 || Solr Search log files       || ``$CRAFTER_LOGS_DIR/solr/``                                    |
 +------------------------------+-----------------------------------------------------------------+
@@ -84,6 +87,13 @@ To tail the log file in the delivery environment:
 .. code-block:: bash
 
     tail -f ./crafter-delivery/logs/deployer/crafter-deployer.out
+
+ElasticSearch Log Files
+^^^^^^^^^^^^^^^^^^^^^^^
+
+File: elasticsearch.log
+
+This log file contains all messages pertaining to ElasticSearch.
 
 Solr Log Files
 ^^^^^^^^^^^^^^

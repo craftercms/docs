@@ -72,7 +72,7 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 || **Synopsis**           || ``crafter.(sh/bat) start|stop|debug|help``                          |
 +-------------------------+----------------------------------------------------------------------+
 || **Arguments**          || * ``start`` Starts all Crafter CMS services in this order           |
-||                        ||    Crafter Deployer, Solr, Apache Tomcat                            |
+||                        ||    Crafter Deployer, ElasticSearch, Apache Tomcat                   |
 ||                        || * ``stop``  Stops all Crafter CMS services in the same order as     |
 ||                        ||    they start.                                                      |
 ||                        || * ``debug`` Starts all Crafter CMS services with the JAVA remote    |
@@ -118,7 +118,7 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 || **Synopsis**           || ``deployer.(sh/bat) start|stop|debug|help``                         |
 +-------------------------+----------------------------------------------------------------------+
 || **Arguments**          || * ``start`` Starts all Crafter CMS services in this order           |
-||                        ||    Crafter Deployer, Solr, Apache Tomcat                            |
+||                        ||    Crafter Deployer, ElasticSearch, Apache Tomcat                   |
 ||                        || * ``stop``  Stops all Crafter CMS services in the same order as     |
 ||                        ||    they start.                                                      |
 ||                        || * ``debug`` Start all Crafter CMS services with the JAVA remote     |
@@ -176,6 +176,30 @@ Here are the environment variables used for Tomcat in ``crafter(.sh/bat)``:
 || CATALINA_OPTS           || Tomcat options                                                     |
 ||                         +---------------------------------------------------------------------+
 ||                         || -Dcatalina.logs=$CATALINA_LOGS_DIR -server -Xss1024K -Xms1G -Xmx4G |
++--------------------------+---------------------------------------------------------------------+
+
+Here are the environment variables used for ElasticSearch in ``crafter(.sh/bat)``:
+
++--------------------------+---------------------------------------------------------------------+
+|| ElasticSearch           || Description                                                        |
+|| Variable Name           +---------------------------------------------------------------------+
+||                         || Default Value                                                      |
++==========================+=====================================================================+
+|| ES_PORT                 || ElasticSearch HTTP port                                            |
+||                         +---------------------------------------------------------------------+
+||                         || 9201                                                               |
++--------------------------+---------------------------------------------------------------------+
+|| ES_INDEXES_DIR          || ElasticSearch indexes directory                                    |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_ROOT/data/indexes-es                                      |
++--------------------------+---------------------------------------------------------------------+
+|| ES_LOGS_DIR             || ElasticSearch log files directory                                  |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_ROOT/logs/elasticsearch                                   |
++--------------------------+---------------------------------------------------------------------+
+|| ES_JAVA_OPTS            || ElasticSearch Java options                                         |
+||                         +---------------------------------------------------------------------+
+||                         || "-server -Xss1024K -Xmx1G"                                         |
 +--------------------------+---------------------------------------------------------------------+
 
 Here are the environment variables used for Solr in ``crafter(.sh/bat)``:
@@ -281,10 +305,11 @@ To stop the authoring environment:
 Other Scripts
 ^^^^^^^^^^^^^
 
-For more information about Apache Tomcat and Solr, please refer to the following:
+For more information about Apache Tomcat, Solr, and ElasticSearch please refer to the following:
 
  * [Tomcat Script documentation](https://tomcat.apache.org/tomcat-8.5-doc/RUNNING.txt)
  * [Solr Script documentation](https://cwiki.apache.org/confluence/display/solr/Running+Solr)
+ * [ElasticSEarch Script documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/starting-elasticsearch.html)
 
 
 -------------------------------------------------
@@ -388,7 +413,7 @@ To build the authoring and delivery environments, run the following:
 The Gradle task above will:
 
 #. Delete any existing environments/module
-#. Download Apache Tomcat, Apache Solr and MongoDB (check the Gradle section on how to specify a version of Apache Tomcat and Apache Solr)
+#. Download Apache Tomcat, ElasticSearch, Apache Solr and MongoDB (check the Gradle section on how to specify a version for each component)
 #. Build all Crafter CMS modules from the source (check the :ref:`git` section on how to update the source)
 #. Create the environment folders and copy all needed resources
 
@@ -430,13 +455,13 @@ The options above will:
 For the *Authoring Environment*:
 
 * Start Apache tomcat on default ports (8080, 8009, 8005) [See :ref:`gradle-tasks` on how to change default ports]
-* Start Solr server on port 8684
+* Start ElasticSearch on port 9201
 * Start Crafter Deployer on port 9191
 
 For the *Delivery Environment*:
 
 * Start Apache tomcat on default ports (9080, 9009, 9005) [See :ref:`gradle-tasks` on how to change default ports]
-* Start Solr server on port 8685
+* Start ElasticSEarch server on port 9202
 * Start Crafter Deployer on port 9192
 
 Here's an example starting an authoring environment:
@@ -591,6 +616,8 @@ Aside from the tasks that we can run, there are also some properties defined in 
 +-------------------------------------+----------------------------------------------------------+
 || ``authoring.mongo.port``           || Authoring MongoDb port. Default value is 27020          |
 +-------------------------------------+----------------------------------------------------------+
+|| ``authoring.elasticsearch.port``   || Authoring ElasticSearch port. Default value is 9201     |
++-------------------------------------+----------------------------------------------------------+
 || ``authoring.solr.port``            || Authoring Solr port. Default value is 8694              |
 +-------------------------------------+----------------------------------------------------------+
 || ``authoring.solr.debug.port``      || Authoring Solr debug port. Default value is 5005        |
@@ -623,6 +650,8 @@ Aside from the tasks that we can run, there are also some properties defined in 
 || ``delivery.tomcat.debug.port``    || Delivery Tomcat debug port. Default value is 9000        |
 +------------------------------------+-----------------------------------------------------------+
 || ``delivery.mongodb.port``         || Delivery Mongo DB port. Default value is 28020           |
++------------------------------------+-----------------------------------------------------------+
+|| ``delivery.elasticsearch.port``   || Delivery ElasticSearch port. Default value is 9202       |
 +------------------------------------+-----------------------------------------------------------+
 || ``delivery.solr.port``            || Delivery Solr port. Default value is 8695                |
 +------------------------------------+-----------------------------------------------------------+
