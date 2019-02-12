@@ -1,28 +1,15 @@
-.. index:: Rich Text Editor (RTE) Setup; RTE Plugins
+.. index:: Rich Text Editor (RTE TinyMCE 2) Setup; RTE Plugins; RTE Setup
 .. _rte-setup:
 
-============================
-Rich Text Editor (RTE) Setup 
-============================
+======================================
+Rich Text Editor (RTE TinyMCE 2) Setup
+======================================
 
-RTEs are more effective/productive for authors  when they are configured properly for the specific type of content the author is managing.  A properly and effectively configured RTE has the right styles, menu options and so on.
-Every RTE in the system can have a different look  and feel, different editing/menu options, available styles, components and other configurations.  You can also SHARE setups between similar RTEs in your project.  This document will help you understand how to configure RTEs in Crafter Studio.
+Crafter CMS provides support for TinyMCE 2.  This section details how to setup RTE (TinyMCE 2).
 
-----------------------------------------
-Common Configurations for Effective RTEs
-----------------------------------------
-Here are some things to consider for setting up effective RTEs:
-
-#. The rich text editor's width should be set to the same width as the region it is intended to edit
-#. Site style sheet of your site is imported so it can be applied to the RTE
-#. Site styles are being applied appropriately to the markup in the RTE.  Note that sometimes styles in CSS are so aggressively specified that the RTE cannot pick them up.
-#. Formats and styles are configured to match the part of the site being edited
-#. Toolbar is configured with only what is required for the specific use case (reducing options makes it easier for editors)
-#. If plugins like ``insert component``, ``insert layout`` and so on are enabled it should be fully configured.
-
---------------------------------------------------------------------
-What Out-of-the-Box Functionality Does Crafter Studio's RTE Support?
---------------------------------------------------------------------
+--------------------------------------------------------------------------------
+What Out-of-the-Box Functionality Does Crafter Studio's RTE (TinyMCE 2) Support?
+--------------------------------------------------------------------------------
 
 Our RTE is based on TinyMCE (https://www.tinymce.com/) and can leverage all configurations and plugins designed for the TinyMCE editor.   You can find the documentation for these TinyMCE configurations and settings here: https://www.tinymce.com/docs/configure
 
@@ -107,7 +94,7 @@ Crafter Studio uses standard TinyMCE plugins.  Here's a list of available TinyMC
 ||                      || attribs            ||                                                  |
 +-----------------------+---------------------+---------------------------------------------------+
 
-.. |rteMediaBtn| image:: /_static/images/site-admin/rte-media-button.png
+.. |rteMediaBtn| image:: /_static/images/site-admin/rte/rte-media-button.png
                      :width: 4%
 
 To use the TinyMCE plugins, add the **Button Name(s)** to one of the toolbarItem tags: ``<toolbarItems1>``, ``<toolbarItems2>``, ``<toolbarItems3>`` or ``<toolbarItems4>``.
@@ -121,7 +108,7 @@ To be able to embed a YouTube video in the RTE, do the following:
 1. Add the button name **media** to one of the toolbarItem tags: ``<toolbarItems1>``.  An **Insert/Edit Embedded Media** button |rteMediaBtn| will now be available for users of the RTE.
 2. Click on the |rteMediaBtn| button to add the link to the YouTube video you'd like to embed in the RTE and to setup other parameters. In the **General** tab, select ``iframe`` in the **Type** field, then fill in the **File/URL** field with the URL of the YouTube video you'd like to embed and finally, fill in the **Dimensions** field to the size desired.  Click on the **Insert** button.
 
-   .. figure:: /_static/images/site-admin/rte-media-config.png
+   .. figure:: /_static/images/site-admin/rte/rte-media-config.png
       :alt: RTE Setup - Insert/Edit Embedded Media Example
       :width: 65%
       :align: center
@@ -130,7 +117,7 @@ To be able to embed a YouTube video in the RTE, do the following:
 
 3. Save your changes, and your video should now be embedded in your page
 
-   .. figure:: /_static/images/site-admin/rte-media-preview.png
+   .. figure:: /_static/images/site-admin/rte/rte-media-preview.png
       :alt: RTE Setup - YouTube video embedded in page, inserted through the RTE
       :width: 65%
       :align: center
@@ -202,7 +189,7 @@ Once the RTE Setup is attached to an RTE in a form, you can now specify multiple
 
 In the image below, we have two data sources enabled for the RTE image insert.
 
-.. figure:: /_static/images/rte-setup-extension-example-insert-img.png
+.. figure:: /_static/images/site-admin/rte/rte-setup-extension-example-insert-img.png
     :alt: RTE Setup - Insert Image Extension Example
 	:align: center
 
@@ -606,9 +593,11 @@ The RTE's configuration file looks like this:
         </setup>
     </config>
 
-You can access the ``RTE Configuration`` file by going to the **Sidebar** then clicking on  |siteConfig|.  In the **Site Config**, click on **Configuration**, then from the dropdown list, select ``RTE Configuration``
+|
 
-.. figure:: /_static/images/rte-setup-config-file-access.png
+You can access the ``RTE (TinyMCE 2) Configuration`` file by going to the **Sidebar** then clicking on  |siteConfig|.  In the **Site Config**, click on **Configuration**, then from the dropdown list, select ``RTE (TinyMCE 2) Configuration``
+
+.. figure:: /_static/images/site-admin/rte/rte-setup-config-file-access.png
     :alt: RTE Setup - Open RTE Configuration File in Studio
     :align: center
     :width: 60%
@@ -641,7 +630,7 @@ Attaching an RTE in a Form to an RTE Setup
 
 To attach an RTE setup to an RTE in a form, open the content type that you want to add an RTE to, then go to the **Properties Explorer** and click on RTE Configuration and type in an RTE setup name.
 
-.. figure:: /_static/images/rte-setup-form.png
+.. figure:: /_static/images/site-admin/rte/rte-setup-form.png
     :alt: RTE Setup - Add an RTE in the Form
 	:align: center
 
@@ -649,7 +638,8 @@ To attach an RTE setup to an RTE in a form, open the content type that you want 
 
 In the image below, the RTE setup name used is **generic**.  Please see the section above on how to create an RTE Setup, where the example shows an RTE Setup named **generic**.
 
-.. figure:: /_static/images/rte-setup-attach-config.png
+.. figure:: /_static/images/site-admin/rte/rte-setup-attach-config.png
     :alt: RTE Setup - Attach an RTE in a Form to an RTE Setup
 	:align: center
 
+|
