@@ -15,7 +15,7 @@ This section focuses on how to customize and extend Crafter CMS.  It covers the 
       content-inheritance
       asset-processing
       templates
-      search
+      search-solr
       targeting
       redirect
       testing
@@ -66,6 +66,9 @@ Below is a short set of links to other documentation for technology that Crafter
 ||               ||                             ||                                              |
 +----------------+------------------------------+-----------------------------------------------+
 || Groovy        || Server side scripting       || http://groovy-lang.org/documentation.html    |
+||               ||                             ||                                              |
++----------------+------------------------------+-----------------------------------------------+
+|| ElasticSearch || Search and content query    || https://www.elastic.co/products/elasticsearch|
 ||               ||                             ||                                              |
 +----------------+------------------------------+-----------------------------------------------+
 || Solr          || Search and content query    || http://lucene.apache.org/solr/resources.html |

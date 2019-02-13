@@ -201,7 +201,7 @@ Let’s walk through each part of the dialog:
 #. Provide your credentials based on the authentication method selected.  In our example, we chose ``Basic`` as the authentication method and we'll need to fill in **Remote Git Repository Username** and **Remote Git Repository Password**
 #. Choose the option: **Create site based on blueprint push to a remote bare repository**. This means that Crafter Studio will create a new site based on the blueprint you choose, link the remote repository as an upstream and then once the blueprint is installed in the local Repositories it will be pushed automatically to the upstream remote.
 #. Choose your blueprint. There are several out of the box blueprints provided by default. Choose one of these or one of your own. For our example, we’ll choose Empty which is the “Hello World” of blueprints.
-#. Click **Create**. Crafter CMS will create the local repositories, Solr core and internal data structures required to support the project and install the blueprint. Once complete it will connect to the upstream and push the contents of the Sandbox repository to the remote.
+#. Click **Create**. Crafter CMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint. Once complete it will connect to the upstream and push the contents of the Sandbox repository to the remote.
 
 .. image:: /_static/images/developer/workflow/site-created.png
     :alt: Developer Workflow - Site is created and the contents of the sandbox are automatically pushed to the upstream repository

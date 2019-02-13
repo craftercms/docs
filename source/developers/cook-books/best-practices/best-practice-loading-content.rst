@@ -21,12 +21,11 @@ When should you load content from search index?
 
 Content should be loaded from search index for actual user searches that result in large result sets with the need to paginate, or when searching for things that you can't access through paths (unknown paths).  Remember that it is slower to go through the search index vis-a-vis disk because of the overhead (search index overhead + network overhead).  If the path is known, there is little reason to go through search.
 
-Remember to append field suffixes to your variable names to facilitate Solr indexing, which is used to configure value conversion during indexing.  To see a list of suffixes that can be appended, see :ref:`Variable Names and Search Indexing<variable-names-search-indexing>`
+Remember to append field suffixes to your variable names to facilitate indexing, which is used to configure value conversion during indexing.  To see a list of suffixes that can be appended, see :ref:`Variable Names and Search Indexing<variable-names-search-indexing>`
 
 Here are some things to note when using search:
 
     * Appending the suffix ``_html`` to your variable name removes html tags before indexing and allows you to properly highlight search results. However, this means you can't use that field directly from the search index since it's stripped of markup.
-    * Appending the suffix ``_dt`` to your variable name converts the Crafter Studio date format to Solr's date format, a restricted subset of ISO-8601.
     * Single value fields with multiple values are converted to multi value field
 
 ------------------------------------------------
