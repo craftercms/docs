@@ -43,7 +43,7 @@ Here are the settings that can be configured through Crafter Studio:
    studio/environment-overrides
    studio/mime-types-configuration
    studio/preview-panel-configuration
-   studio/rte-setup
+   studio/rte-configuration
    studio/sidebar-configuration
    studio/site-configuration
    studio/site-config-tools
