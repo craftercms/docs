@@ -36,10 +36,11 @@ You can find the interface for this service :javadoc_base_url:`HERE <search/org/
 
 .. code-block:: groovy
 
-    def queryStatement = 'content-type:"/component/article" AND author:"Russ Danner"'
+    def queryStatement = "author:\"Russ Danner\""
 
     def query = searchService.createQuery()
-    query = query.setQuery(queryStatement)
+    query.setQuery(queryStatement)
+    query.addFilterQuery("content-type:/component/article")
 
     def executedQuery = searchService.search(query)
     def itemsFound = executedQuery.response.numFound
