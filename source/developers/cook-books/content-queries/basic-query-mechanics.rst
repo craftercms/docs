@@ -36,7 +36,7 @@ You can find the interface for this service :javadoc_base_url:`HERE <search/org/
 
 .. code-block:: groovy
 
-    def queryStatement = "author:\"Russ Danner\""
+    def queryStatement = "author:\"John Doe\""
 
     def query = searchService.createQuery()
     query.setQuery(queryStatement)
