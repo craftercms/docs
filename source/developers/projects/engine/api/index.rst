@@ -99,6 +99,15 @@ URL Transformation
 
 	site/url/transform
 
+-------------
+ElasticSearch
+-------------
+
+.. toctree::
+	:maxdepth: 1
+	
+	site/elasticsearch/search
+
 ----------
 Monitoring
 ----------

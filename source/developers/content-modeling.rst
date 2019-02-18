@@ -509,10 +509,9 @@ The following variable names are used by Crafter CMS.
 
 **Variable Names and Search Indexing**
 
-Crafter CMS indexes your content in to Solr using your content model variable name as the Solr field name. 
-Use the Solr schema to configure your Solr variable/solr field types in search.
+Crafter CMS indexes your content in the search index using your content model variable name as the field name.
 
-To facilitate indexing to Solr, the following suffix should be appended to variable names depending on the variable data type:
+To facilitate indexing, the following suffix should be appended to variable names depending on the variable data type:
 
 +------------+---------+-------------+----------------------------------------------------+
 ||           || Field  || Multivalue || Description                                       |
@@ -535,7 +534,7 @@ To facilitate indexing to Solr, the following suffix should be appended to varia
 +------------+---------+-------------+----------------------------------------------------+
 || double    || _d     || _ds        || IEEE 64 bit floating point number                 |
 +------------+---------+-------------+----------------------------------------------------+
-|| date      || _dt    || _dts       || A date in Solr's date format                      |
+|| date      || _dt    || _dts       || A date in ISO 8601 date format                    |
 +------------+---------+-------------+----------------------------------------------------+
 || text with || _html  ||            ||                                                   |
 || html tags ||        ||            ||                                                   |

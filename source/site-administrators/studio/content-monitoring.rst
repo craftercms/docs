@@ -23,7 +23,7 @@ Each monitor needs to define the following properties:
 - name:
     General name for the content monitor.
 - query:
-    Solr query used to match documents, can be any valid Solr query.
+    Luecene query used to match documents, can be any valid Lucene query.
 - paths:
     List of paths with notification configurations, there must be at least one path item for each
     monitor.

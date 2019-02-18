@@ -10,7 +10,7 @@ Crafter CMS when installed using the zip bundles has default ports setup.  The d
 
 To generate an environment/bundle with your desired ports instead of default ports when you install Crafter CMS, we'll use ``gradle``.  To learn more on how to generate an environment with your desired ports, please see :ref:`common-task-properties`
 
-Let's take a look at a standard development installation - which consists of the following microservices: Crafter Studio, Crafter Engine, Crafter Search, Solr and Crafter Deployer
+Let's take a look at a standard development installation - which consists of the following microservices: Crafter Studio, Crafter Engine, Crafter Search, ElasticSearch, Solr and Crafter Deployer
 
 .. image:: /_static/images/developer/crafter-cms-ports.jpg
      :alt: Crafter CMS Ports
@@ -21,9 +21,9 @@ In the image above, note the black arrows between components.  These are HTTP co
 
 * A\. Developer/consumer goes to Crafter Studio application (/studio).  Crafter Studio IFrames Crafter Engine rendering.
 * B\. Crafter Studio queries Crafter Search when users do a search inside the CMS
-* C\. When rendering, Crafter Engine can leverage Crafter Search to perform content queries and searches.
+* C\. When rendering, Crafter Engine can leverage ElasticSearch or Crafter Search to perform content queries and searches.
 * D\. Crafter Search applies platform-specific business rules and makes query requests to Solr via connection **D**
-* E\. When content, code or configuration is saved via Crafter Studio or directly via Git, it is picked up by the preview deployer and published to Crafter Search.  Crafter search performs inserts, updates and deletes on Solr via connection **D**
+* E\. When content, code or configuration is saved via Crafter Studio or directly via Git, it is picked up by the preview deployer and published to ElasticSearch or Crafter Search.  Crafter search performs inserts, updates and deletes on Solr via connection **D**
 * F\. Crafter Studio maintains/caches project/user and operational metadata (workflow state, dependencies) about content locally in an embedded MariaDB.
 
 ----------------------------------------------------
@@ -100,6 +100,16 @@ To update Crafter Studio's communication with the Deployer, open the file ``AUTH
     * studio.preview.createTargetUrl
     * studio.preview.deleteTargetUrl
 
+-----------------------------------------------
+Configuration for Authoring ElasticSearch Ports
+-----------------------------------------------
+
+The default ElasticSearch port is 9201.  There are a couple of places that we need to update to change the ElasticSearch ports.
+
+In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
+
+    * OS X/Linux: export ES_PORT=9201
+    * Windows: SET ES_PORT=9201
 
 --------------------------------------
 Configuration for Authoring Solr Ports

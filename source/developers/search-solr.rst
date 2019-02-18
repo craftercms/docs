@@ -1,8 +1,8 @@
-.. _developer-search:
+.. _developer-search-solr:
 
-======
-Search
-======
+================
+Search with Solr
+================
 
 ----------------
 Querying Content
