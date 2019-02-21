@@ -13,6 +13,8 @@ Transcode and/or compress media files using AWS Elemental MediaConvert.
 Resource Information
 --------------------
 
+.. include:: /includes/studio-api-url-prefix.rst
+
 +-------------------------+-----------------------------------------------------------------------+
 || HTTP Verb              || POST                                                                 |
 +-------------------------+-----------------------------------------------------------------------+

@@ -10,6 +10,8 @@ Adds the given attribute definitions to the specified tenant.
 Resource Information
 --------------------
 
+.. include:: /includes/profile-api-url-prefix.rst
+
 +-------------------------+----------------------------------------------------------------------+
 || HTTP Verb              || POST                                                                |
 +-------------------------+----------------------------------------------------------------------+

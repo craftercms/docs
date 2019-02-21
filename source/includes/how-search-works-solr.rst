@@ -25,5 +25,5 @@ Querying Process:
 
 A. The end user makes a page or service request to Crafter Engine.
 B. Crafter Engine components requiring queries issue a query to ElasticSearch or Crafter Search.
-D. If ElasticSearch is being used, simple filters will be added to the query and then executed.
-C. If Crafter Search is being used, it applies simple rules/additions to the query and issues the query to Solr.
+C. If ElasticSearch is being used, simple filters will be added to the query and then executed.
+D. If Crafter Search is being used, it applies simple rules/additions to the query and issues the query to Solr.

@@ -10,6 +10,8 @@ Returns the number of comments with a given moderation status.
 Resource Information
 --------------------
 
+.. include:: /includes/social-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+

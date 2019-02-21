@@ -10,6 +10,8 @@ Gets the requested attachment of the given profile.
 Resource Information
 --------------------
 
+.. include:: /includes/profile-api-url-prefix.rst
+
 +--------------------------+---------------------------------------------------------------------+
 || HTTP Verb               || GET                                                                |
 +--------------------------+---------------------------------------------------------------------+

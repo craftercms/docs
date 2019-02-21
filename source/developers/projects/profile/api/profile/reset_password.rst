@@ -10,6 +10,8 @@ Sends an email to the profile's user to indicate that the password needs to be r
 Resource Information
 --------------------
 
+.. include:: /includes/profile-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
