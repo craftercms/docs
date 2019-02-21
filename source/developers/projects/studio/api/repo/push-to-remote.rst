@@ -10,6 +10,8 @@ Push content to remote repository from site content repository.
 Resource Information
 --------------------
 
+.. include:: /includes/studio-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+

@@ -10,6 +10,8 @@ Returns the single profile that matches the specified query.
 Resource Information
 --------------------
 
+.. include:: /includes/profile-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+

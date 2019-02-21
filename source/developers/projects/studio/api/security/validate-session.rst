@@ -10,6 +10,8 @@ Validate a user's active session and return if it's OK or the user has been logg
 Resource Information
 --------------------
 
+.. include:: /includes/studio-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+

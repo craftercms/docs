@@ -10,6 +10,8 @@ Search files and folders in a CMIS repository with an optional range for paginat
 Resource Information
 --------------------
 
+.. include:: /includes/studio-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+

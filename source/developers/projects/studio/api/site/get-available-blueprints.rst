@@ -10,6 +10,8 @@ Get available site blueprints to create new site.
 Resource Information
 --------------------
 
+.. include:: /includes/studio-api-url-prefix.rst
+
 +--------------------------+---------------------------------------------------------------------+
 || HTTP Verb               || GET                                                                |
 +--------------------------+---------------------------------------------------------------------+
