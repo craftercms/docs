@@ -10,6 +10,8 @@ Change Crafter Studio's user password provided a user's current password. If the
 Resource Information
 --------------------
 
+.. include:: /includes/studio-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+

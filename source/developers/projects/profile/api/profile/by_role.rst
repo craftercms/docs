@@ -10,6 +10,8 @@ Returns a list of profiles for a specific role and tenant.
 Resource Information
 --------------------
 
+.. include:: /includes/profile-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+

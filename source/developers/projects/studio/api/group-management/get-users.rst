@@ -10,6 +10,8 @@ Get all Crafter Studio users for a group with an optional range for pagination.
 Resource Information
 --------------------
 
+.. include:: /includes/studio-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+

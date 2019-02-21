@@ -10,6 +10,8 @@ Commits all pending changes to the Solr index.
 Resource Information
 --------------------
 
+.. include:: /includes/search-api-url-prefix.rst
+
 +----------------------------+-----------------------------------------------------+
 || HTTP Verb                 || POST                                               |
 +----------------------------+-----------------------------------------------------+

@@ -10,6 +10,8 @@ Returns the number of comments with at least one flag.
 Resource Information
 --------------------
 
+.. include:: /includes/social-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+

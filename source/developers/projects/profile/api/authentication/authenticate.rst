@@ -10,6 +10,8 @@ Authenticates the user, and returns a ticket identifying the authentication.
 Resource Information
 --------------------
 
+.. include:: /includes/profile-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+
