@@ -10,6 +10,8 @@ Returns the persistent login info for the given ID.
 Resource Information
 --------------------
 
+.. include:: /includes/profile-api-url-prefix.rst
+
 +-----------------------+------------------------------------------------------------------------+
 || HTTP Verb            || GET                                                                   |
 +-----------------------+------------------------------------------------------------------------+

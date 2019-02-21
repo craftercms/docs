@@ -16,6 +16,8 @@ Get the statistics for all cache scopes for the current site context.
 Resource Information
 --------------------
 
+.. include:: /includes/tomcat-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+

@@ -10,6 +10,8 @@ Transforms a URL, based on the current site's configuration.
 Resource Information
 --------------------
 
+.. include:: /includes/tomcat-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------+
 || HTTP Verb                 || GET                                                        |
 +----------------------------+-------------------------------------------------------------+

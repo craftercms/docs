@@ -10,6 +10,8 @@ Deletes the given comment and all its children.
 Resource Information
 --------------------
 
+.. include:: /includes/social-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || DELETE                                                           |
 +----------------------------+-------------------------------------------------------------------+
