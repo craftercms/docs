@@ -17,6 +17,8 @@ mostly to create targets for **authoring** environments.
 Resource Information
 --------------------
 
+.. include:: /includes/deployer-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+

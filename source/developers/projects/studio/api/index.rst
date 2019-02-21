@@ -6,8 +6,6 @@
 Crafter Studio API
 ==================
 
-The context for this API is ``/studio/``, please prefix the API URLs with this context.
-
 There are 2 versions of Crafter Studio APIs.  **API version 2** contains the User and Group Management APIs and all other APIs are in **API version 1**.
 
 .. note::

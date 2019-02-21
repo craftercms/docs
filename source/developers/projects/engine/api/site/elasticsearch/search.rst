@@ -14,6 +14,8 @@ Performs a search operation in the ElasticSearch index of the current site resol
 Resource Information
 --------------------
 
+.. include:: /includes/tomcat-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------+
 || HTTP Verb                 || POST                                                       |
 +----------------------------+-------------------------------------------------------------+

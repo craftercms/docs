@@ -10,6 +10,8 @@ Get the descriptor data of an Item in the content store.
 Resource Information
 --------------------
 
+.. include:: /includes/tomcat-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+

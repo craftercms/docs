@@ -10,6 +10,8 @@ Unsubscribes the current user to a given thread.
 Resource Information
 --------------------
 
+.. include:: /includes/social-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST, DELETE                                                     |
 +----------------------------+-------------------------------------------------------------------+

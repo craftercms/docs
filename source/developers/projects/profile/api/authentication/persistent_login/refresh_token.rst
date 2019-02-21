@@ -10,6 +10,8 @@ Refreshes the token of the specified persistent login.
 Resource Information
 --------------------
 
+.. include:: /includes/profile-api-url-prefix.rst
+
 +-----------------+-----------------------------------------------------------------------------+
 | HTTP Verb       | POST                                                                        |
 +-----------------+-----------------------------------------------------------------------------+
