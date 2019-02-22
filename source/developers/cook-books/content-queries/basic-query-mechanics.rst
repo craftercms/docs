@@ -62,7 +62,7 @@ You can find the interface for this service :javadoc_base_url:`here <search/org/
   import org.elasticsearch.index.query.QueryBuilders
   import org.elasticsearch.search.builder.SearchSourceBuilder
   
-  def queryStatement = 'content-type:"/component/article" AND author:"Russ Danner"'
+  def queryStatement = 'content-type:"/component/article" AND author:"My User"'
   
   def builder = new SearchSourceBuilder()
       .query(QueryBuilders.queryStringQuery(queryStatement))
