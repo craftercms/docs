@@ -1,79 +1,72 @@
 .. _list-form-engine-controls:
 
 .. |ctlFormSection| image:: /_static/images/form-controls/ctl-form-section.png
-             :width: 90%
+             :width: 60%
              :alt: Form Controls - Form Section
 
 .. |ctlRepeatGrp| image:: /_static/images/form-controls/ctl-repeat-grp.png
+             :width: 70%
              :alt: Form Controls - Repeating Group
 
 .. |ctlInput| image:: /_static/images/form-controls/ctl-input.png
-             :width: 55%
+             :width: 35%
              :alt: Form Controls - Input
 
 .. |ctlTxtArea| image:: /_static/images/form-controls/ctl-text-area.png
-             :width: 70%
+             :width: 50%
              :alt: Form Controls - Text Area
 
 .. |ctlRTE| image:: /_static/images/form-controls/ctl-rte.png
              :width: 105%
-             :alt: Form Controls - Rich Text Editor
+             :alt: Form Controls - Rich Text Editor (TinyMCE 2)
+
+.. |ctlRTE2| image:: /_static/images/form-controls/ctl-rte2.png
+             :width: 105%
+             :alt: Form Controls - Rich Text Editor (TinyMCE 4)
 
 .. |ctlDropdown| image:: /_static/images/form-controls/ctl-dropdown.png
-             :width: 75%
+             :width: 55%
              :alt: Form Controls - Dropdown
 
 .. |ctlDtTime| image:: /_static/images/form-controls/ctl-date-time.png
-             :width: 80%
+             :width: 60%
              :alt: Form Controls - Date Time
 
 .. |ctlCheckBox| image:: /_static/images/form-controls/ctl-check-box.png
-             :width: 75%
+             :width: 55%
              :alt: Form Controls - Check Box
 
 .. |ctlGrpChkBox| image:: /_static/images/form-controls/ctl-grp-check-box.png
-             :width: 100%
+             :width: 90%
              :alt: Form Controls - Grouped Check Box
 
 .. |ctlItemSel| image:: /_static/images/form-controls/ctl-item-sel.png
-             :width: 95%
+             :width: 65%
              :alt: Form Controls - Item Selector
 
 .. |ctlImage| image:: /_static/images/form-controls/ctl-image.png
-             :width: 60%
+             :width: 40%
              :alt: Form Controls - Image
 
 .. |ctlVideo| image:: /_static/images/form-controls/ctl-video.png
-             :width: 50%
+             :width: 35%
              :alt: Form Controls - Video
 
 .. |ctlLabel| image:: /_static/images/form-controls/ctl-label.png
-             :width: 55%
+             :width: 35%
              :alt: Form Controls - Label
 
 .. |ctlPageOrder| image:: /_static/images/form-controls/ctl-page-order.png
-             :width: 80%
+             :width: 50%
              :alt: Form Controls - Page Order
 
 .. |ctlFileName| image:: /_static/images/form-controls/ctl-file-name.png
-             :width: 80%
+             :width: 50%
              :alt: Form Controls - File Name
 
 .. |ctlAutoFn| image:: /_static/images/form-controls/ctl-auto-filename.png
-             :width: 95%
+             :width: 65%
              :alt: Form Controls - Auto Filename
-
-.. |ctlAwsFileUp| image:: /_static/images/form-controls/ctl-aws-file-upload.png
-             :width: 95%
-             :alt: Form Controls - AWS File Upload
-
-.. |ctlAwsVideoUp| image:: /_static/images/form-controls/ctl-aws-video-upload.png
-             :width: 97%
-             :alt: Form Controls - AWS Video Upload
-
-.. |ctlBoxFileUp| image:: /_static/images/form-controls/ctl-box-file-upload.png
-             :width: 95%
-             :alt: Form Controls - Box File Upload
 
 
 +------------------------+-----------------------------------------------------------------------+
@@ -101,6 +94,10 @@
 || |ctlRTE|              ||  A block of HTML.                                                    |
 ||                       ||                                                                      |
 ||                       ||  Details are in the :ref:`form-rte` page.                            |
++------------------------+-----------------------------------------------------------------------+
+|| |ctlRTE2|             ||  A block of HTML.                                                    |
+||                       ||                                                                      |
+||                       ||  Details are in the :ref:`form-rte2` page.                           |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlDropdown|         ||  Dropdown list of items to pick from.                                |
 ||                       ||                                                                      |
@@ -145,16 +142,4 @@
 || |ctlAutoFn|           ||                                                                      |
 ||                       ||                                                                      |
 ||                       || Details are in the :ref:`form-auto-filename` page.                   |
-+------------------------+-----------------------------------------------------------------------+
-|| |ctlAwsFileUp|        ||                                                                      |
-||                       ||                                                                      |
-||                       || Details are in the :ref:`form-aws-file-upload` page.                 |
-+------------------------+-----------------------------------------------------------------------+
-|| |ctlAwsVideoUp|       ||                                                                      |
-||                       ||                                                                      |
-||                       || Details are in the :ref:`form-aws-video-upload` page.                |
-+------------------------+-----------------------------------------------------------------------+
-|| |ctlBoxFileUp|        ||                                                                      |
-||                       ||                                                                      |
-||                       || Details are in the :ref:`form-box-file-upload` page.                 |
 +------------------------+-----------------------------------------------------------------------+
