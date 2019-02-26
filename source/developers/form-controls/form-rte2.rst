@@ -3,19 +3,19 @@
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. index:: Form Controls; Rich Text Editor (TinyMCE 2)
+.. index:: Form Controls; Rich Text Editor (TinyMCE 4)
 
-.. _form-rte:
+.. _form-rte2:
 
 ====================================
-Rich Text Editor (TinyMCE 2) Control
+Rich Text Editor (TinyMCE 4) Control
 ====================================
 
 -------
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-rte-example.png
+.. image:: /_static/images/form-controls/form-control-rte2-example.png
     :width: 50%
     :alt: RTE
     :align: center
@@ -24,7 +24,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-rte-properties.png
+.. image:: /_static/images/form-controls/form-control-rte2-properties.png
     :width: 50%
     :alt: RTE
     :align: center
@@ -34,21 +34,17 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Description/Purpose   || Rich Text Area field.                                                |
 +------------------------+-----------------------------------------------------------------------+
-|| Properties            || * Width: Width of the Rich Text Area.                                |
-||                       || * Height: Height of the Rich Text Area.                              |
-||                       || * Max Length: Maximum number of characters to accept as input.       |
-||                       || * Allow Resize: Allows to resize the field.                          |
+|| Properties            || * Height: Height of the Rich Text Area.                              |
 ||                       || * Force Root Block p Tag.                                            |
 ||                       || * Force p tags New Lines: Adds a p tag on every new line.            |
 ||                       || * Force br New Lines: Adds br for each new line.                     |
-||                       || * Require Image Alt Tag: When inserting image, requires alternative  |
-||                       ||   tag.                                                               |
 ||                       || * Supported Channels.                                                |
 ||                       || * RTE Configuration: Configuration to be loaded on the rte.          |
 ||                       || * Image Manager.                                                     |
+||                       || * Video Manager.                                                     |
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || * Required: Make field required to fill out.                         |
 +------------------------+-----------------------------------------------------------------------+
-|| Related Data Sources  || * Image.                                                             |
+|| Related Data Sources  || * Image and Video.                                                   |
 +------------------------+-----------------------------------------------------------------------+
 
