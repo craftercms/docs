@@ -132,6 +132,7 @@ CMIS
    cmis/list
    cmis/search
    cmis/clone
+   cmis/upload
 
 -------
 Publish
