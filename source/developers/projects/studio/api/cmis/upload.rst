@@ -1,10 +1,10 @@
 .. _crafter-studio-api-cmis-upload:
 
-=============================
-Upload a asset File into CMIS
-=============================
+==============================
+Upload an asset File into CMIS
+==============================
 
-Upload a asset file to CMIS repository.
+Upload an asset file to CMIS repository.
 
 --------------------
 Resource Information
