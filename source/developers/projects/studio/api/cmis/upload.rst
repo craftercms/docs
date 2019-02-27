@@ -55,10 +55,12 @@ Response
 ``Status 200 OK``
 
 .. code-block:: json
-  :linenos:
-      {
-            "message" : "OK"
-      }
+   :linenos:
+
+    {
+        "message" : "OK"
+    }
+
 ---------
 Responses
 ---------
