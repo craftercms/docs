@@ -32,7 +32,7 @@ Sample
             <clientSecret/>
             <enterpriseId/>
             <publicKeyId/>
-            <privateKey/> or <privateKeyPath/>
+            <privateKey/>
             <privateKeyPassword/>
             <uploadFolder/>
         </profile>
@@ -44,7 +44,6 @@ Sample
         enterpriseId: Box enterprise id (recommended to be encrypted)
         publicKeyId: Box public key id (recommended to be encrypted)
         privateKey: Actual private key text in a CDATA
-        privateKeyPath: Full path for the private key file
         privateKeyPassword: Password used to decrypt the private key (recommended to be encrypted)
         uploadFolder: Name of the folder where files will be uploaded
 
@@ -56,13 +55,13 @@ Sample
             <clientSecret>...</clientSecret>
             <enterpriseId>...</enterpriseId>
             <publicKeyId>...</publicKeyId>
-            <privateKeyPath>...</privateKeyPath> or <privateKey><![CDATA[...]]></privateKey>
+            <privateKey><![CDATA[...]]></privateKey>
             <privateKeyPassword>...</privateKeyPassword>
             <uploadFolder>videos</uploadFolder>
         </profile>
     </box>
 
-.. note:: If both ``<privateKey>`` and ``<privateKeyPath>`` is supplied in the configuration, the ``<privateKey>`` will be used.
+|
 
 -----------------
 Box Configuration
