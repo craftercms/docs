@@ -1,25 +1,23 @@
-.. _crafter-studio-api-monitor-version:
+.. _crafter-deployer-api-monitor-memory:
 
-=======
-Version
-=======
+======
+Memory
+======
 
-Get a Crafter Studio's version details.
+Get a Crafter Deployer's memory details.
 
 --------------------
 Resource Information
 --------------------
 
-.. include:: /includes/studio-api-url-prefix.rst
+.. include:: /includes/deployer-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/monitor/version.json``                   |
+|| URL                       || ``/api/1/monitoring/memory``                                     |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
-+----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Anonymous                                                        |
 +----------------------------+-------------------------------------------------------------------+
 
 ----------
@@ -36,7 +34,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/monitor/version.json``
+``GET .../api/1/monitor/memory``
 
 ^^^^^^^^
 Response
@@ -48,24 +46,14 @@ Response
   :linenos:
 
   {
-    "name" : "studio",
-    "version" : "3.0.0-SNAPSHOT",
-    "build" : "7630f6bbaaa86977896bfda00e70a397964d9826",
-    "build_datetime" : "yyyy-MM-dd'T'HH:mm'Z'",
-    "java_version" : "1.8.0_102",
-    "java_vendor" : "Oracle Corporation",
-    "jvm_version" : "1.8",
-    "jvm_vendor" : "Oracle Corporation",
-    "jvm_implementation_version" : "25.102-b14",
-    "java_runtime" : "Java(TM) SE Runtime Environment",
-    "java_vm" : "Java HotSpot(TM) 64-Bit Server VM",
-    "System Encoding" : "UTF-8",
-    "operating_system" : "Linux 3.13.0.103-generic",
-    "os_architecture" : "amd64",
-    "application_server_container" : "Apache Tomcat/8.0.33",
-    "jvm_input_arguments" : "-Xms8092m -Xmx8092m -Duser.timezone=EDT",
-    "datetime" : "yyyy-MM-dd'T'HH:mm'Z'"
-  } 
+    "totalJvmMemory": 2017984512,
+    "freeJvmMemory": 1113921056,
+    "maxJvmMemory": 3817865216,
+    "totalOsMemory": 17179869184,
+    "freeOsMemory": 2669301760,
+    "totalSwapMemory": 2147483648,
+    "freeSwapMemory": 1026555904,
+  }
 
 ---------
 Responses

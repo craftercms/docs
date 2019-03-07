@@ -103,3 +103,15 @@ Authentication
   authentication/persistent_login/get
   authentication/persistent_login/refresh_token
   authentication/persistent_login/delete
+
+----------
+Monitoring
+----------
+
+.. toctree::
+  :maxdepth: 1
+
+  monitoring/memory
+  monitoring/status
+  monitoring/version
+

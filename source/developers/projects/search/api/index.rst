@@ -31,3 +31,14 @@ Content Management
   search/v2/update-content
   search/v2/commit
   search/v2/delete
+
+----------
+Monitoring
+----------
+
+.. toctree::
+  :maxdepth: 1
+
+  monitoring/memory
+  monitoring/status
+  monitoring/version
