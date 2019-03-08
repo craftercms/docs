@@ -12,6 +12,7 @@ Cookbooks / Tutorials
    active-cache/index
    activiti/index
    aws/index
+   box/index
    services/index
    blueprint/index
    best-practices/index

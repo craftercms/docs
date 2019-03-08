@@ -15,7 +15,7 @@ Resource Information
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/monitor/version``                                       |
+|| URL                       || ``/api/1/monitoring/version``                                    |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -46,24 +46,17 @@ Response
   :linenos:
 
   {
-    "name" : "deployer",
-    "version" : "3.0.0-SNAPSHOT",
-    "build" : "7630f6bbaaa86977896bfda00e70a397964d9826",
-    "build_datetime" : "yyyy-MM-dd'T'HH:mm'Z'",
-    "java_version" : "1.8.0_102",
-    "java_vendor" : "Oracle Corporation",
-    "jvm_version" : "1.8",
-    "jvm_vendor" : "Oracle Corporation",
-    "jvm_implementation_version" : "25.102-b14",
-    "java_runtime" : "Java(TM) SE Runtime Environment",
-    "java_vm" : "Java HotSpot(TM) 64-Bit Server VM",
-    "System Encoding" : "UTF-8",
-    "operating_system" : "Linux 3.13.0.103-generic",
-    "os_architecture" : "amd64",
-    "application_server_container" : "Apache Tomcat/8.0.33",
-    "jvm_input_arguments" : "-Xms8092m -Xmx8092m -Duser.timezone=EDT",
-    "datetime" : "yyyy-MM-dd'T'HH:mm'Z'"
-  } 
+    "packageName": "Crafter Deployer",
+    "packageVersion": "3.1.0-SNAPSHOT",
+    "packageBuild": "a68f1ff7ad84d5ecbeaa008f392e4cef0ca02f41",
+    "packageBuildDate": "2019-03-07T21:03:05.422Z",
+    "osName": "Mac OS X",
+    "osVersion": "10.13.6",
+    "osArch": "x86_64",
+    "javaVersion": "1.8",
+    "javaVendor": "Oracle Corporation",
+    "javaVm": "Java HotSpot(TM) 64-Bit Server VM",
+  }
 
 ---------
 Responses

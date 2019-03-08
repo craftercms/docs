@@ -1,21 +1,21 @@
-.. _crafter-engine-api-monitoring-version:
+.. _crafter-social-api-monitoring-version:
 
 ===========
 Get Version
 ===========
 
-Returns the Crafter Engine JVM version details.
+Returns the Crafter Social JVM version details.
 
 --------------------
 Resource Information
 --------------------
 
-.. include:: /includes/tomcat-api-url-prefix.rst
+.. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/monitoring/version``                                    |
+|| URL                       || ``/api/3/monitoring/version``                                    |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
@@ -28,7 +28,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/monitoring/version.json``
+``GET .../api/3/monitoring/version.json``
 
 ^^^^^^^^
 Response
@@ -40,7 +40,7 @@ Response
   :linenos:
 
   {
-    "packageName": "Crafter Engine",
+    "packageName": "Crafter Social",
     "packageVersion": "3.1.0-SNAPSHOT",
     "packageBuild": "a68f1ff7ad84d5ecbeaa008f392e4cef0ca02f41",
     "packageBuildDate": "2019-03-07T21:03:05.422Z",

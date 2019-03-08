@@ -1,27 +1,24 @@
-.. _crafter-studio-api-monitor-status:
+.. _crafter-deployer-api-monitor-status:
 
 ======
 Status
 ======
 
-Get a Crafter Studio's status details.
+Get a Crafter Deployer's status details.
 
 --------------------
 Resource Information
 --------------------
 
-.. include:: /includes/studio-api-url-prefix.rst
+.. include:: /includes/deployer-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
 +----------------------------+-------------------------------------------------------------------+
-|| URL                       || ``/api/1/services/api/1/monitor/status.json``                    |
+|| URL                       || ``/api/1/monitoring/status``                                     |
 +----------------------------+-------------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                         |
 +----------------------------+-------------------------------------------------------------------+
-|| Required Role             || Anonymous                                                        |
-+----------------------------+-------------------------------------------------------------------+
-
 
 ----------
 Parameters
@@ -37,7 +34,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/monitor/status.json``
+``GET .../api/1/monitor/status``
 
 ^^^^^^^^
 Response
@@ -48,9 +45,8 @@ Response
 .. code-block:: json
 
   {
-    "status" : "healthy",
-    "uptime" : "%sh %sm %ss",
-    "datetime" : "yyyy-MM-dd'T'HH:mm'Z'"
+    "uptime": 4801,
+    "startup": "2019-03-07T21:29:11.049Z",
   }
 
 ---------

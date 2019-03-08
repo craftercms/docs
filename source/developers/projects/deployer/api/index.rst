@@ -27,6 +27,6 @@ Monitoring
 .. toctree::
 	:maxdepth: 1
 
-	monitor/version
-	monitor/status
-	monitor/memory
+	monitoring/version
+	monitoring/status
+	monitoring/memory
