@@ -1,16 +1,16 @@
-.. _crafter-engine-api-monitoring-version:
+.. _crafter-search-api-monitoring-version:
 
 ===========
 Get Version
 ===========
 
-Returns the Crafter Engine JVM version details.
+Returns the Crafter Search JVM version details.
 
 --------------------
 Resource Information
 --------------------
 
-.. include:: /includes/tomcat-api-url-prefix.rst
+.. include:: /includes/search-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
@@ -40,7 +40,7 @@ Response
   :linenos:
 
   {
-    "packageName": "Crafter Engine",
+    "packageName": "Crafter Search",
     "packageVersion": "3.1.0-SNAPSHOT",
     "packageBuild": "a68f1ff7ad84d5ecbeaa008f392e4cef0ca02f41",
     "packageBuildDate": "2019-03-07T21:03:05.422Z",

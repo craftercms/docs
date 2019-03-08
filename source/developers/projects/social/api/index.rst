@@ -120,3 +120,14 @@ Threads
   v3/ugc/threads/subscribe.rst
   v3/ugc/threads/subscribe-update.rst
   v3/ugc/threads/unsubscribe.rst
+  
+----------
+Monitoring
+----------
+
+.. toctree::
+  :maxdepth: 1
+
+  v3/monitoring/memory
+  v3/monitoring/status
+  v3/monitoring/version
