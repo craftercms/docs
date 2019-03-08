@@ -35,10 +35,9 @@ Sample
                 <region/>
             </profile>
 
-            id:	a unique id for this profile, this will be referenced in the
-                control defined in the content type
-            accessKey: AWS access key (recommended to be encrypted)
-            secretKey: AWS secret key (recommended to be encrypted)
+            id:	a unique id for this profile, this will be referenced in the control defined in the content type
+            accessKey: AWS access key
+            secretKey: AWS secret key
             region: AWS region for the service
 
             Every service can require additional properties.

@@ -39,12 +39,12 @@ Sample
 
         id:	a unique id for this profile, this will be referenced in the
             control defined in the content type
-        clientId: Box client id (recommended to be encrypted)
-        clientSecret: Box client secret (recommended to be encrypted)
-        enterpriseId: Box enterprise id (recommended to be encrypted)
-        publicKeyId: Box public key id (recommended to be encrypted)
+        clientId: Box client id
+        clientSecret: Box client secret
+        enterpriseId: Box enterprise id
+        publicKeyId: Box public key id
         privateKey: Actual private key text in a CDATA
-        privateKeyPassword: Password used to decrypt the private key (recommended to be encrypted)
+        privateKeyPassword: Password used to decrypt the private key
         uploadFolder: Name of the folder where files will be uploaded
 
     -->
