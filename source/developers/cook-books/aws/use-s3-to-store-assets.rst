@@ -189,7 +189,7 @@ Now that we have the Groovy code to generate the URLs, we need the Freemarker co
 the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following lines after the
 ``<#list contentModel.sections.item as item>...</#list>`` lines:
 
-.. code-block:: freemarker
+.. code-block:: guess
 
   <#if attachments??>
     <h2>Attachments</h2>
