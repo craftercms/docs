@@ -45,12 +45,12 @@ Go to |siteConfig| > ``Configurations`` and in the dropdown select Box Profiles.
 **where:**
 
 * **id:** the ID that ``box-file-upload`` controls will use to refer to this profile.
-* **clientId:** Box client id (recommended to be encrypted)
-* **clientSecret:** Box client secret (recommended to be encrypted)
-* **enterpriseId:** Box enterprise id (recommended to be encrypted)
-* **publicKeyId:** Box public key id (recommended to be encrypted)
+* **clientId:** Box client id
+* **clientSecret:** Box client secret
+* **enterpriseId:** Box enterprise id
+* **publicKeyId:** Box public key id
 * **privateKey:** Actual private key text in a CDATA
-* **privateKeyPassword:** Password used to decrypt the private key (recommended to be encrypted)
+* **privateKeyPassword:** Password used to decrypt the private key
 * **uploadFolder:** Name of the folder where files will be uploaded in Box
 
 For this guide, the Box Profiles should look like this (replace the ``...``'s for actual Box credentials and ``uploadFolder`` for the actual upload folder where you’re storing the documents):
