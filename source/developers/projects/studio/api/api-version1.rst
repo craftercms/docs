@@ -44,10 +44,10 @@ Repo Management
 Audit
 ^^^^^
 
-.. toctree::
-   :maxdepth: 1
+.. note::
+  Audit operations are only available in the new API, for more information, please visit:
+  https://app.swaggerhub.com/apis/craftercms/studio
 
-   audit/get-audit-log
 
 ^^^^^^^^
 Security
