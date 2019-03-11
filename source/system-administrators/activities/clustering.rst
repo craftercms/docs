@@ -6,7 +6,7 @@
 Studio Clustering
 =================
 
-Any number of Crafter Studio can be clustered, where multiple servers, each with their own Crafter Studio installed, acts like a single Crafter Studio to users.  Each Crafter Studio contains the same data.
+Any number of Crafter Studio instances can be clustered, where multiple servers, each with their own Crafter Studio installed, act like a single Crafter Studio to the end users.
 
 Crafter Studio by default is not configured for clustering.  This section describes how to configure Crafter Studio for clustering.  The configuration setup for one node or multiple nodes is the same.
 
@@ -23,7 +23,7 @@ Requirements
 
 Before we begin configuring Studio for clustering, the following must be setup:
 
-#. An external `MariaDB <https://mariadb.org/>`_ database, such as `Amazon RDS for MariaDB <https://aws.amazon.com/rds/mariadb>`_ , `Azure Database for MariaDB <https://azure.microsoft.com/en-us/services/mariadb/>`_ or setup a server with MariaDB which can be downloaded `here <https://downloads.mariadb.org/>`_.  We currently only support MariaDB 10.1 for the shared database when clustering, so remember to use the MariaDB 10.1 Series
+#. An external `MariaDB <https://mariadb.org/>`_ database, such as `Amazon RDS for MariaDB <https://aws.amazon.com/rds/mariadb>`_ , `Azure Database for MariaDB <https://azure.microsoft.com/en-us/services/mariadb/>`_ or setup a server with MariaDB which can be downloaded `here <https://downloads.mariadb.org/>`_.  Crafter Studio only supports MariaDB 10.1 for the shared database when clustering, so remember to use the MariaDB 10.1 Series
 #. A load balancer with sticky session support enabled
 
 ----------------
@@ -96,14 +96,14 @@ To view nodes in the cluster in your browser, click on **Main Menu** on the top 
     :width: 100%
     :align: center
 
-As you start adding nodes to the cluster, the **Cluster** menu will list them like below:
+As you start up new Crafter Studio nodes, they will automatically join the cluster, the **Cluster** menu will list them like below:
 
 .. image:: /_static/images/system-admin/studio-cluster-2node.png
     :alt: Crafter CMS Authoring Cluster with Two Node
     :width: 100%
     :align: center
 
-In the cluster screen, it also gives an indication whether a node is **ACTIVE** or **INACTIVE**.  When a node is **INACTIVE**, the user is given an option to delete the node from the cluster.
+In the cluster screen, it also gives an indication whether a node is **ACTIVE** (healthy) or **INACTIVE** (not healthy).  When a node is **INACTIVE**, the user is given an option to delete the node from the cluster immediately, or it will be automatically removed in time.
 
 .. image:: /_static/images/system-admin/studio-cluster-inactive-node.png
     :alt: Crafter CMS Authoring Cluster with an Inactive Node
