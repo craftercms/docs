@@ -39,7 +39,7 @@ Sample
             control defined in the content type
         baseUrl: Full URL of the WebDAV server
         username: WebDAV account username
-        password: WebDAV account password (recommended to be encrypted)
+        password: WebDAV account password
     -->
     <webdav>
         <profile>
