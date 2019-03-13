@@ -114,6 +114,7 @@ Crafter Deployer
    :titlesonly:
 
    deployer/admin-guide.rst
+   deployer/debugging-deployer-issues.rst
 
 
 ==============
