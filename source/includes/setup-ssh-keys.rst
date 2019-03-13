@@ -6,9 +6,8 @@ To generate your Secure Shell (SSH) keys for authentication, run the following c
     ✗ ssh-keygen -b 4096 -t rsa
     Generating public/private rsa key pair.
     Enter file in which to save the key (/Users/myuser/.ssh/id_rsa):
-    .
-    .
-    .
+    Enter passphrase (empty for no passphrase):
+    Enter same passphrase again:
     Your identification has been saved in /Users/myuser/.ssh/id_rsa.
     Your public key has been saved in /Users/myuser/.ssh/id_rsa.pub.
     .

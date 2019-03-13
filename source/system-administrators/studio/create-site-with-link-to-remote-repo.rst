@@ -45,7 +45,7 @@ Let's take a look at the fields displayed when **Link to upstream remote Git rep
    The field **Blueprint** is available when the option **Create site based on a blueprint then push to remote bare Git repository** is selected.  Choose one of the default or choose your own.  The available default blueprints are as follows: Empty, Headless_blog, Headless_store and Website_editorial
 
 .. note::
-        When using ssh keys for authentication, the keys need to be generated using **RSA** as the algorithm
+        When using ssh keys for authentication, the keys need to be generated using **RSA** as the algorithm  and with **no passphrase**.
 
         .. include:: /includes/setup-ssh-keys.rst
 
