@@ -1,22 +1,22 @@
-.. index:: Rich Text Editor (RTE TinyMCE 4) Setup; RTE Setup
+.. index:: Rich Text Editor (RTE TinyMCE 5) Setup; RTE Setup
 .. _rte2-setup:
 
 ======================================
-Rich Text Editor (RTE TinyMCE 4) Setup
+Rich Text Editor (RTE TinyMCE 5) Setup
 ======================================
 
-Crafter CMS provides support for TinyMCE 4.  This section details how to setup RTE (TinyMCE 4).
+Crafter CMS provides support for TinyMCE 5.  This section details how to setup RTE (TinyMCE 5).
 
 --------------------------------------------------------------------------------
-What Out-of-the-Box Functionality Does Crafter Studio's RTE (TinyMCE 4) Support?
+What Out-of-the-Box Functionality Does Crafter Studio's RTE (TinyMCE 5) Support?
 --------------------------------------------------------------------------------
 
-Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.   You can find the documentation for these TinyMCE configurations and settings here: https://www.tiny.cloud/docs-4x/
+Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.   You can find the documentation for these TinyMCE configurations and settings here: https://www.tiny.cloud/docs/
 
 ^^^^^^^^^^^^^^^
 TinyMCE plugins
 ^^^^^^^^^^^^^^^
-Crafter Studio uses standard TinyMCE plugins.  Please see https://www.tiny.cloud/docs-4x/plugins/ for a list of available plugins.
+Crafter Studio uses standard TinyMCE plugins.  Please see https://www.tiny.cloud/docs/plugins/ for a list of available plugins.
 
 
 .. |rteMediaBtn| image:: /_static/images/site-admin/rte/rte2-media-button.png
@@ -56,7 +56,7 @@ Creating an RTE Setup
 The RTE's configuration file looks like this:
 
 .. code-block:: xml
-    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/form-control-config/rte/rte-setup-tinymce4.xml
+    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/form-control-config/rte/rte-setup-tinymce5.xml
     :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>
@@ -66,7 +66,7 @@ The RTE's configuration file looks like this:
     -->
     <config>
         <setup>
-            <id>rteTinyMCE4</id> <!-- This starts a profile configuration -->
+            <id>generic</id> <!-- This starts a profile configuration -->
 
             <rteStylesheets> <!-- This informs the RTE to use the CSS files -->
                 <!-- <link>/static-assets/css/rte/rte.css</link> -->
@@ -80,8 +80,8 @@ The RTE's configuration file looks like this:
 
             <plugins>
                 print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template
-    			codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount
-    			contextmenu colorpicker textpattern help ace
+    			codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount
+    			textpattern help acecode
             </plugins>
 
             <toolbarItems1>
@@ -95,7 +95,7 @@ The RTE's configuration file looks like this:
 
 |
 
-You can access the ``RTE (TinyMCE 4) Configuration`` file by going to the **Sidebar** then clicking on  |siteConfig|.  In the **Site Config**, click on **Configuration**, then from the dropdown list, select ``RTE (TinyMCE 4) Configuration``
+You can access the ``RTE (TinyMCE 5) Configuration`` file by going to the **Sidebar** then clicking on  |siteConfig|.  In the **Site Config**, click on **Configuration**, then from the dropdown list, select ``RTE (TinyMCE 5) Configuration``
 
 .. figure:: /_static/images/site-admin/rte/rte2-setup-config-file-access.png
     :alt: RTE Setup - Open RTE Configuration File in Studio
@@ -117,7 +117,7 @@ Inside the ``<config>`` tag, there can be multiple ``<setup>`` tags. Each repres
         </link>
 
     * ``<rteStyleOverride>`` tag that may contain other tags for changing the looks and feel of your site.
-    * ``<plugins>`` contains the plugins available to the editor.  You can specify any plugin as named in `Tiny MCE Plugins List <https://www.tiny.cloud/docs-4x/plugins//>`_.
+    * ``<plugins>`` contains the plugins available to the editor.  You can specify any plugin as named in `Tiny MCE Plugins List <https://www.tiny.cloud/docs/plugins//>`_.
     * ``<toolbarItems1>`` and similar contain the toolbar buttons in the RTE. You can specify any plugin toolbar item listed in the plugins above.  They will be featured in the same order as specified here, and separators can be specified with ``|``.
 
 ------------------------------------------
@@ -127,12 +127,12 @@ Attaching an RTE in a Form to an RTE Setup
 To attach an RTE setup to an RTE in a form, open the content type that you want to add an RTE to, then go to the **Properties Explorer** and click on RTE Configuration and type in an RTE setup name.
 
 .. figure:: /_static/images/site-admin/rte/rte2-setup-form.png
-    :alt: RTE Setup - Add an RTE (TinyMCE 4) in the Form
+    :alt: RTE Setup - Add an RTE (TinyMCE 5) in the Form
 	:align: center
 
 |
 
-In the image below, the RTE setup name used is **rteTinyMCE4**.  Please see the section above on how to create an RTE Setup, where the example shows an RTE Setup named **rteTinyMCE4**.
+In the image below, the RTE setup name used is **generic**.  Please see the section above on how to create an RTE Setup, where the example shows an RTE Setup named **generic**.
 
 .. figure:: /_static/images/site-admin/rte/rte2-setup-attach-config.png
     :alt: RTE Setup - Attach an RTE in a Form to an RTE Setup
