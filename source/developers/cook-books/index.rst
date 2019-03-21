@@ -14,6 +14,7 @@ Cookbooks / Tutorials
    aws/index
    box/index
    services/index
+   graphql/index
    blueprint/index
    best-practices/index
    how-tos/index
