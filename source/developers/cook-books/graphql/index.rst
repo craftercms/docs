@@ -19,11 +19,11 @@ All content changes made by authors in Crafter Studio will be immediately availa
 
 When a change is made in the content model, for example adding a new field or creating a new content-type, the
 GraphQL schema will be rebuilt to reflect the same changes. So for a Crafter CMS site that uses GraphQL queries the
-develop process would look like this:
+development process would look like this:
 
-1. Developers make changes in the content model
-2. Developers update the GraphQL queries to use the latest schema
-3. Authors make updates using the latest content model
+1. Developers define the base content model
+2. Developers define the site base GraphQL queries to use the latest schema
+3. Content authors create content based on the model
 4. Publishers review & approve the author's work
 5. Publishers publish to live both the content model configuration & the content updates
 6. Crafter Deployer will handle the GraphQL schema rebuild in delivery
@@ -50,7 +50,7 @@ To explore the GraphQL schema you can click the ``Docs`` icon on the right side:
         :alt: GraphiQL
         :align: center
 
-GraphiQL provides a convenient search navigation to quickly found a specific type or field:
+GraphiQL provides a convenient search navigation to quickly find a specific type or field:
 
 .. image:: /_static/images/developer/graphql/graphiql-doc.png
         :width: 75%
@@ -79,7 +79,7 @@ of ``items``.
 
 .. note::
   Because GraphQL only supports the underscore ``_`` character besides alphanumeric for names, if your content-type or 
-  field name contains a the dash ``-`` character it will be replaced with a double underscore ``__``. To avoid 
+  field name contains the dash ``-`` character it will be replaced with a double underscore ``__``. To avoid 
   unnecessary long names it is suggested to use only ``_`` or ``camelCase`` notation if possible.
 
 The simplest GraphQL you can run in Crafter CMS sites is to find all items of a given content-type.
@@ -169,7 +169,7 @@ a specific author.
     }
   }
 
-Finally you can also include fields from child components in your model, this applies for field like ``node-selector``,
+Finally you can also include fields from child components in your model, this applies for fields like ``node-selector``,
 ``checkbox-group`` and ``repeat`` groups. Filters can also be added to fields from child components.
 
 .. code-block:: guess
@@ -198,5 +198,5 @@ Finally you can also include fields from child components in your model, this ap
     }
   }
 
-You can use many GraphQL features such as aliases and query variables to implement complex queries than can be reused. 
+You can use many GraphQL features such as aliases and query variables to implement complex queries that can be reused. 
 For more detailed information you can read the `official documentation <https://graphql.org/>`_.
