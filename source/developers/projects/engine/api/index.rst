@@ -29,6 +29,7 @@ Site Context
 	site/context/id
 	site/context/destroy
 	site/context/rebuild
+	site/context/graphql/rebuild
 
 -------------------
 Site Scheduled Jobs
@@ -100,13 +101,23 @@ URL Transformation
 	site/url/transform
 
 -------------
-ElasticSearch
+Elasticsearch
 -------------
 
 .. toctree::
 	:maxdepth: 1
 	
 	site/elasticsearch/search
+
+-------
+GraphQL
+-------
+
+.. toctree::
+	:maxdepth: 1
+	
+	site/graphql/get
+	site/graphql/post
 
 ----------
 Monitoring
