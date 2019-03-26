@@ -29,10 +29,10 @@ Above RDBMS databases are only required for Crafter Studio component of Crafter 
 
    * - Platform
      - Support
-   * - ElasticSearch 6.6+
+   * - Elasticsearch 6.6+
      - |checkmark|
 
-Above ElasticSearch engine required for Crafter Engine and Crafter Studio
+Above Elasticsearch engine required for Crafter Engine and Crafter Studio
 
 .. list-table::
    :header-rows: 1

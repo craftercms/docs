@@ -10,7 +10,7 @@ Crafter CMS when installed using the zip bundles has default ports setup.  The d
 
 To generate an environment/bundle with your desired ports instead of default ports when you install Crafter CMS, we'll use ``gradle``.  To learn more on how to generate an environment with your desired ports, please see :ref:`common-task-properties`
 
-Let's take a look at a standard development installation - which consists of the following microservices: Crafter Engine, Crafter Search, ElasticSearch, Solr and Crafter Deployer
+Let's take a look at a standard development installation - which consists of the following microservices: Crafter Engine, Crafter Search, Elasticsearch, Solr and Crafter Deployer
 
 .. image:: /_static/images/developer/crafter-cms-ports-delivery.png
      :alt: Crafter CMS Ports
@@ -86,10 +86,10 @@ In your ``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, cha
 
 
 ----------------------------------------------
-Configuration for Delivery ElasticSearch Ports
+Configuration for Delivery Elasticsearch Ports
 ----------------------------------------------
 
-The default ElasticSearch port is 9202. There are a couple of places that we need to update to change the ElasticSearch ports.
+The default Elasticsearch port is 9202. There are a couple of places that we need to update to change the Elasticsearch ports.
 
 In your ``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
 

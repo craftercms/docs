@@ -20,7 +20,7 @@ Types of Content Queries
 Crafter CMS supports 4 specific types of content queries:
 
 * Cross content Solr queries. This enables you to query any/all content objects, by any group of properties)
-* Cross content ElasticSearch queries. This enables you to query any/all content objects, by any group of properties)
+* Cross content Elasticsearch queries. This enables you to query any/all content objects, by any group of properties)
 * Filtered Structural Queries. This enables you to query against the repository structure e.g. "Get all articles by author XYZ"
 * Content Item specific query.  This enables you to write queries inside of a given content item
 
@@ -50,11 +50,11 @@ You can find the interface for this service :javadoc_base_url:`HERE <search/org/
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Make an ElasticSearch Query
+Make an Elasticsearch Query
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following code examples use the ElasticSearch client in Crafter Engine to get content.
-You can find the interface for this service :javadoc_base_url:`here <search/org/craftercms/search/elasticssearch/ElasticSearchWrapper.html>`
+The following code examples use the Elasticsearch client in Crafter Engine to get content.
+You can find the interface for this service :javadoc_base_url:`here <search/org/craftercms/search/elasticssearch/ElasticsearchWrapper.html>`
 
 .. code-block:: groovy
 
@@ -67,7 +67,7 @@ You can find the interface for this service :javadoc_base_url:`here <search/org/
   def builder = new SearchSourceBuilder()
       .query(QueryBuilders.queryStringQuery(queryStatement))
   
-  def executedQuery = elasticSearch.search(new SearchRequest().source(builder))
+  def executedQuery = elasticsearch.search(new SearchRequest().source(builder))
   
   def itemsFound = executedQuery.hits.totalHits
   def items = executedQuery.hits.hits
