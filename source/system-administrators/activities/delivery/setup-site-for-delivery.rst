@@ -38,7 +38,7 @@ explains how to use the script:
                                                repo, when using basic
                                                authentication
      -s,--crafter-search                       Use Crafter Search instead of
-                                               ElasticSearch
+                                               Elasticsearch
      -u,--username <username>                  The username for the remote Git
                                                repo, when using basic
                                                authentication
