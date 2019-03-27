@@ -228,7 +228,7 @@ NFS is a particularly slow and unreliable network storage protocol, especially w
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Putting all data on the same disk
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Studio stores content in Git, Metadata about workflow and content in an embedded database and indexes in ElasticSearch. All of these stores are updated on each write. Putting them on the same disk can lead to slower access times due to contention in high throughput scenarios.
+Studio stores content in Git, Metadata about workflow and content in an embedded database and indexes in Elasticsearch. All of these stores are updated on each write. Putting them on the same disk can lead to slower access times due to contention in high throughput scenarios.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Using Default Settings for Larger Installations

@@ -17,14 +17,14 @@ At a high-level, we're pursuing the objectives listed below in order:
 	- Time-travel mechanics to preview sites across time
 	- Crafter Studio UI NG (next generation UI for Crafter Studio built on Angular, code is here: https://github.com/craftercms/studio-ui-ng)
 	- Integrate Crafter Profile Admin and Crafter Social Admin directly into Crafter Studio
-	- New search backend based on ElasticSearch for better search in authoring
+	- New search backend based on Elasticsearch for better search in authoring
 * Elastic Search
 	- Becomes the default search engine (we will continue to support Solr)
-	- Full support for AWS ElasticSearch
+	- Full support for AWS Elasticsearch
 * Serverless Delivery
 	- Crafter Engine will be backed by AWS S3 (or compatible services)
 	- Crafter CMS provided Docker images
-	- Search is provided by ElasticSearch and is scaled separately
+	- Search is provided by Elasticsearch and is scaled separately
 * GraphQL
 	- Query content in Engine via GraphQL
 

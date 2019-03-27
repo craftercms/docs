@@ -88,11 +88,11 @@ Parameters
 ||                            ||            ||              || receive deployment notifications.     |
 +-----------------------------+-------------+---------------+----------------------------------------+
 || search_engine              || String     ||              || Search engine options for the site    |
-||                            ||            ||              ||   ``ElasticSearch``: use Elastic      |
+||                            ||            ||              ||   ``Elasticsearch``: use Elastic      |
 ||                            ||            ||              ||       Search as search engine         |
 ||                            ||            ||              ||   ``CrafterSearch``: use Crafter      |
 ||                            ||            ||              ||       Search as search engine         |
-||                            ||            ||              || Default value is ``ElasticSearch``    |
+||                            ||            ||              || Default value is ``Elasticsearch``    |
 +-----------------------------+-------------+---------------+----------------------------------------+
 
 .. _remote Clear Cache URL: http://localhost:8080/api/1/cache/clear_all.json

@@ -6,8 +6,8 @@ Setting up a serverless site
 
 Crafter CMS can be configured to serve sites directly from AWS services, following this guide you will:
 
-- Configure Crafter Deployer to upload files to AWS S3 and index to AWS ElasticSearch
-- Configure Crafter Engine to read files from AWS S3 and query to AWS ElasticSearch
+- Configure Crafter Deployer to upload files to AWS S3 and index to AWS Elasticsearch
+- Configure Crafter Engine to read files from AWS S3 and query to AWS Elasticsearch
 
 
 -------------
@@ -35,7 +35,7 @@ Step 1: Create the site in the authoring environment
 Step 2: Create the AWS resources
 --------------------------------
 
-.. important:: You might need to wait several minutes before the CloudFront distribution and the ElasticSearch domain
+.. important:: You might need to wait several minutes before the CloudFront distribution and the Elasticsearch domain
                are available to continue with the next steps.
 
 Login to the `AWS Management Console <https://aws.amazon.com/console/>`_ to create the following resources:
@@ -73,7 +73,7 @@ S3 Bucket
       :align: center
 
 ^^^^^^^^^^^^^
-ElasticSearch
+Elasticsearch
 ^^^^^^^^^^^^^
 
 1. In the top navigation bar click the ``Services`` dropdown menu
@@ -93,14 +93,14 @@ ElasticSearch
 3. Click the ``Create a new domain`` button
 
 .. image:: /_static/images/developer/serverless/create-new-domain.png
-   :alt: How-Tos - AWS ElasticSearch Create New Domain
+   :alt: How-Tos - AWS Elasticsearch Create New Domain
    :width: 70 %
    :align: center
 
 4. Select the appropriate ``Deployment type`` and ``Elasticsearch version`` and click the ``Next`` button
 
    .. image:: /_static/images/developer/serverless/es-type.png
-      :alt: How-Tos - AWS ElasticSearch Type
+      :alt: How-Tos - AWS Elasticsearch Type
       :width: 70 %
       :align: center
 
@@ -108,7 +108,7 @@ ElasticSearch
    ``Data instances`` and ``Storage`` and click the ``Next`` button
    
    .. image:: /_static/images/developer/serverless/es-domain.png
-      :alt: How-Tos - AWS ElasticSearch Domain settings
+      :alt: How-Tos - AWS Elasticsearch Domain settings
       :width: 70 %
       :align: center
    
@@ -117,7 +117,7 @@ ElasticSearch
 8. Take note of the ``Endpoint`` URL for the next steps
 
    .. image:: /_static/images/developer/serverless/es-endpoint.png
-      :alt: How-Tos - AWS ElasticSearch endpoint
+      :alt: How-Tos - AWS Elasticsearch endpoint
       :width: 70 %
       :align: center
 
@@ -200,7 +200,7 @@ Step 3: Configure Crafter Engine & Crafter Deployer
      crafter.engine.s3.secretKey=<YOUR AWS SECRET KEY>
      crafter.engine.elasticsearch.urls=<YOUR AWS ELASTICSEARCH ENDPOINT>
 
-3. Edit the base target override file to point to AWS ElasticSearch
+3. Edit the base target override file to point to AWS Elasticsearch
    ``DELIVERY_INSTALL_DIR/bin/crafter-deployer/conf/base-target.yaml``
 
    .. code-block:: yaml
@@ -210,7 +210,7 @@ Step 3: Configure Crafter Engine & Crafter Deployer
       engineUrl: http://${sys:tomcat.host}:${sys:tomcat.http.port}
       search:
         serverUrl: http://${sys:tomcat.host}:${sys:tomcat.http.port}/crafter-search
-        elasticSearch:
+        elasticsearch:
           urls:
             - <YOUR AWS ELASTICSEARCH ENDPOINT>
       notifications:
@@ -224,7 +224,7 @@ Step 4: Create the AWS target in Crafter Deployer
 -------------------------------------------------
 
 1. Start the delivery environment (Crafter Engine & Crafter Deployer)
-   ``DELIVERY_INSTALL_DIR/bin/startup.sh skipElasticSearch``
+   ``DELIVERY_INSTALL_DIR/bin/startup.sh skipElasticsearch``
 2. Create a new target using the REST API:
    
    .. code-block:: bash
