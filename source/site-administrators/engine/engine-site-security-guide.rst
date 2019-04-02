@@ -12,6 +12,7 @@ The following guide will help you configure Crafter Engine and Crafter Profile t
 #.  Enable security for your website.
 #.  Add authentication to your site, including Facebook login and Single Sign-On.
 #.  Add authorization so that access to certain pages and URLs of your site are restricted.
+#.  Add standalone authentication to your site
 
 ---------------
 Enable Security
@@ -442,3 +443,45 @@ expression evaluates to false, access is denied. The following expressions can b
 *   ``hasAnyRole({'role1', 'role2'})``
 *   ``permitAll()``
 *   ``denyAll()``
+
+-------------------------
+Standalone Authentication
+-------------------------
+
+You can also integrate SAML 2.0 authentication without using Crafter Profile, in this case the requests will still use
+the headers to obtain the user's information but it will not execute any additional authentication.
+
+For setting up the standalone authentication you can follow the previous steps to configure ``mod_mellon`` to set
+the needed headers and then enable it in your site configuration (in Studio, Config > site.xml) add or update the 
+security elements as needed:
+
+.. code-block:: xml
+  :linenos:
+
+  <security>
+    <saml>
+      <token>SOME_SECRET_TOKEN</token>
+      <groups>
+        <group>
+          <name>GROUP_PAID</name>
+          <role>paidUser</role>
+        </group>
+      </groups>
+      <attributes>
+        <attribute>
+          <name>givenName</name>
+          <field>firstName</field>
+        </attribute>
+      </attributes>
+    </saml>
+  ...
+  </security>
+
+**SAML Properties:**
+
+* ``security.saml.token`` (required): The expected value for the ``secure_key`` request header, if the value does not 
+  match the request will not be considered as authenticated even if all other headers are present.
+* ``security.saml.groups`` (optional): List of mappings to apply when setting the roles of the user based on the
+  request header, if there is no mapping for a group the value will be copied without any change.
+* ``security.saml.attributes`` (optional): List of mappings to apply when setting the attributes of the user based on
+  the request headers, the value of each header will be available as an attribute using the provided name.
