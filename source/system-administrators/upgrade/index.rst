@@ -132,8 +132,8 @@ The ``start-upgrade`` script downloads the Crafter CMS version that you specify 
 To upgrade your current Crafter CMS install:
 
 #. Go to your ``bin/upgrade`` folder
-#. Run the ``start-upgrade`` script.  The ``start-upgrade`` script downloads the Crafter CMS bundle version you would like to upgrade to.  This will create a script ``upgrade.sh|bat`` in ``{Crafter-CMS-install-directory}/temp/upgrade``.
-#. Go to ``{Crafter-CMS-install-directory}/temp/upgrade`` and run the ``upgrade.sh|bat`` script
+#. Run the ``start-upgrade`` script.  The ``start-upgrade`` script downloads the Crafter CMS bundle version you would like to upgrade to.  This will create a script ``upgrade.sh`` in ``{Crafter-CMS-install-directory}/temp/upgrade``.
+#. Go to ``{Crafter-CMS-install-directory}/temp/upgrade`` and run the ``upgrade.sh`` script
 
 Here's an example to perform a full upgrade of your current install to a certain version
 
@@ -165,13 +165,3 @@ Here's an example to perform a full upgrade of your current install using the pa
     $ ./upgrade.sh
 
 |
-
-.. note::
-    When upgrading Crafter CMS installed from a bundle, please note which compressed archive file to use depending on your OS:
-
-    * Unix/Linux Systems
-
-      Use the **.tar.gz** compressed archive file bundle, since this format stores Unix file attributes
-    * Windows Systems
-
-      Use the **.zip** compressed archive file, since this format stores MS-DOS attributes
