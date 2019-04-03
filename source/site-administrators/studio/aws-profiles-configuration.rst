@@ -35,10 +35,9 @@ Sample
                 <region/>
             </profile>
 
-            id:	a unique id for this profile, this will be referenced in the
-                control defined in the content type
-            accessKey: AWS access key (recommended to be encrypted)
-            secretKey: AWS secret key (recommended to be encrypted)
+            id:	a unique id for this profile, this will be referenced in the control defined in the content type
+            accessKey: AWS access key
+            secretKey: AWS secret key
             region: AWS region for the service
 
             Every service can require additional properties.
@@ -58,8 +57,8 @@ Sample
         <profile>
             <id>s3-default</id>
             <credentials>
-                <accessKey>${enc:xxxxxxxxx}</accessKey>
-                <secretKey>${enc:xxxxxxxxx}</secretKey>
+                <accessKey>xxxxxxxxx</accessKey>
+                <secretKey>xxxxxxxxx</secretKey>
             </credentials>
             <region>us-west-1</region>
             <bucketName>sample-input-bucket</bucketName>
@@ -91,8 +90,8 @@ Sample
         <profile>
             <id>elastic-transcoder-default</id>
             <credentials>
-                <accessKey>${enc:xxxxxxxxx}</accessKey>
-                <secretKey>${enc:xxxxxxxxx}</secretKey>
+                <accessKey>xxxxxxxxx</accessKey>
+                <secretKey>xxxxxxxxx</secretKey>
             </credentials>
             <region>us-east-1</region>
             <pipelineId>xxxxxxxx</pipelineId>
@@ -134,8 +133,8 @@ Sample
         <profile>
             <id>mediaconvert-default</id>
             <credentials>
-                <accessKey>${enc:xxxxxxxxx}</accessKey>
-                <secretKey>${enc:xxxxxxxxx}</secretKey>
+                <accessKey>xxxxxxxxx</accessKey>
+                <secretKey>xxxxxxxxx</secretKey>
             </credentials>
             <region>us-west-1</region>
             <endpoint>https://XXXXXXXX.mediaconvert.us-east-1.amazonaws.com</endpoint>

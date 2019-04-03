@@ -10,7 +10,7 @@ Crafter CMS when installed using the zip bundles has default ports setup.  The d
 
 To generate an environment/bundle with your desired ports instead of default ports when you install Crafter CMS, we'll use ``gradle``.  To learn more on how to generate an environment with your desired ports, please see :ref:`common-task-properties`
 
-Let's take a look at a standard development installation - which consists of the following microservices: Crafter Engine, Crafter Search, Solr and Crafter Deployer
+Let's take a look at a standard development installation - which consists of the following microservices: Crafter Engine, Crafter Search, Elasticsearch, Solr and Crafter Deployer
 
 .. image:: /_static/images/developer/crafter-cms-ports-delivery.png
      :alt: Crafter CMS Ports
@@ -41,7 +41,7 @@ Open the file ``DELIVERY_INSTALL_DIR/bin/apache-tomcat/conf/server.xml``.  Notic
 
 Change the HTTP connector port to your desired port.
 
-In your ``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
+In your ``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh``, change the following to your desired port:
 
     * Linux/OS X: export TOMCAT_HTTP_PORT=9080
     * Windows: SET TOMCAT_HTTP_PORT=9080
@@ -79,11 +79,19 @@ First, we'll configure the ports for the Deployer that affects your Studio.  Ope
 
 |
 
-In your ``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
+In your ``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh``, change the following to your desired port:
 
-    * OS X/Linux: export SET DEPLOYER_PORT=9192
-    * Windows: export DEPLOYER_PORT=9192
+    * export SET DEPLOYER_PORT=9192
 
+----------------------------------------------
+Configuration for Delivery Elasticsearch Ports
+----------------------------------------------
+
+The default Elasticsearch port is 9202. There are a couple of places that we need to update to change the Elasticsearch ports.
+
+In your ``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh``, change the following to your desired port:
+
+    * export ES_PORT=9202
 
 -------------------------------------
 Configuration for Delivery Solr Ports
@@ -93,10 +101,9 @@ The default Solr port is 8695.  There are a couple of places that we need to upd
 
 We'll update Crafter Search's communication with Solr.
 
-In your ``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
+In your ``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh``, change the following to your desired port:
 
-    * OS X/Linux: export SOLR_PORT=8695
-    * Windows: SET SOLR_PORT=8695
+    * export SOLR_PORT=8695
 
 Next, open the file ``DELIVERY_INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/search/extension/server-config.properties``, and change the configured port to the desired port for the following:
 

@@ -10,6 +10,8 @@ Creates a persistent login, used for remember me functionality.
 Resource Information
 --------------------
 
+.. include:: /includes/profile-api-url-prefix.rst
+
 +------------------------------------------------------------------------------------------------+
 || HTTP Verb         | POST                                                                      |
 +------------------------------------------------------------------------------------------------+

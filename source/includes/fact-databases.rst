@@ -29,7 +29,19 @@ Above RDBMS databases are only required for Crafter Studio component of Crafter 
 
    * - Platform
      - Support
-   * - Solr 4+
+   * - Elasticsearch 6.6+
+     - |checkmark|
+
+Above Elasticsearch engine required for Crafter Engine and Crafter Studio
+
+.. list-table::
+   :header-rows: 1
+   :stub-columns: 1
+   :class: compatibility
+
+   * - Platform
+     - Support
+   * - Solr 7.0+
      - |checkmark|
 
 Above Solr engine required for Crafter Search (used by Crafter Engine and Crafter Studio)

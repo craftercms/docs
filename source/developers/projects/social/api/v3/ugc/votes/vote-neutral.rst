@@ -10,6 +10,8 @@ Clears both up and down votes in the given comment for the currently logged user
 Resource Information
 --------------------
 
+.. include:: /includes/social-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
 +----------------------------+-------------------------------------------------------------------+

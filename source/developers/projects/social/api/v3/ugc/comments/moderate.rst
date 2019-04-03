@@ -10,6 +10,8 @@ Changes the moderation status of the given comment.
 Resource Information
 --------------------
 
+.. include:: /includes/social-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || PUT, POST                                                        |
 +----------------------------+-------------------------------------------------------------------+

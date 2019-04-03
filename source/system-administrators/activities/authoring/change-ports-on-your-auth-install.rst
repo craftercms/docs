@@ -10,7 +10,7 @@ Crafter CMS when installed using the zip bundles has default ports setup.  The d
 
 To generate an environment/bundle with your desired ports instead of default ports when you install Crafter CMS, we'll use ``gradle``.  To learn more on how to generate an environment with your desired ports, please see :ref:`common-task-properties`
 
-Let's take a look at a standard development installation - which consists of the following microservices: Crafter Studio, Crafter Engine, Crafter Search, Solr and Crafter Deployer
+Let's take a look at a standard development installation - which consists of the following microservices: Crafter Studio, Crafter Engine, Crafter Search, Elasticsearch, Solr and Crafter Deployer
 
 .. image:: /_static/images/developer/crafter-cms-ports.jpg
      :alt: Crafter CMS Ports
@@ -21,9 +21,9 @@ In the image above, note the black arrows between components.  These are HTTP co
 
 * A\. Developer/consumer goes to Crafter Studio application (/studio).  Crafter Studio IFrames Crafter Engine rendering.
 * B\. Crafter Studio queries Crafter Search when users do a search inside the CMS
-* C\. When rendering, Crafter Engine can leverage Crafter Search to perform content queries and searches.
+* C\. When rendering, Crafter Engine can leverage Elasticsearch or Crafter Search to perform content queries and searches.
 * D\. Crafter Search applies platform-specific business rules and makes query requests to Solr via connection **D**
-* E\. When content, code or configuration is saved via Crafter Studio or directly via Git, it is picked up by the preview deployer and published to Crafter Search.  Crafter search performs inserts, updates and deletes on Solr via connection **D**
+* E\. When content, code or configuration is saved via Crafter Studio or directly via Git, it is picked up by the preview deployer and published to Elasticsearch or Crafter Search.  Crafter search performs inserts, updates and deletes on Solr via connection **D**
 * F\. Crafter Studio maintains/caches project/user and operational metadata (workflow state, dependencies) about content locally in an embedded MariaDB.
 
 ----------------------------------------------------
@@ -42,7 +42,7 @@ Open the file ``AUTHORING_INSTALL_DIR/bin/apache-tomcat/conf/server.xml``.  Noti
 
 Change the HTTP connector port to your desired port.
 
-In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
+In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh``, change the following to your desired port:
 
     * Linux/OS X: export TOMCAT_HTTP_PORT=8080
     * Windows: SET TOMCAT_HTTP_PORT=8080
@@ -87,10 +87,9 @@ First, we'll configure the ports for the Deployer that affects your Studio.  Ope
 
 |
 
-In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
+In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh``, change the following to your desired port:
 
     * OS X/Linux: export SET DEPLOYER_PORT=9191
-    * Windows: export DEPLOYER_PORT=9191
 
 After changing the Deployer ports, we need to update the configuration for the communication between Crafter Studio and the Deployer.
 
@@ -100,6 +99,15 @@ To update Crafter Studio's communication with the Deployer, open the file ``AUTH
     * studio.preview.createTargetUrl
     * studio.preview.deleteTargetUrl
 
+-----------------------------------------------
+Configuration for Authoring Elasticsearch Ports
+-----------------------------------------------
+
+The default Elasticsearch port is 9201.  There are a couple of places that we need to update to change the Elasticsearch ports.
+
+In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh``, change the following to your desired port:
+
+    * export ES_PORT=9201
 
 --------------------------------------
 Configuration for Authoring Solr Ports
@@ -109,10 +117,9 @@ The default Solr port is 8694.  There are a couple of places that we need to upd
 
 We'll update Crafter Search's communication with Solr.
 
-In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
+In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh``, change the following to your desired port:
 
-    * OS X/Linux: export SOLR_PORT=8694
-    * Windows: SET SOLR_PORT=8694
+    * export SOLR_PORT=8694
 
 Next, open the file ``AUTHORING_INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/search/extension/server-config.properties``, and change the configured port to the desired port for the following:
 
@@ -132,7 +139,7 @@ change the port to the desired port listed in the following:
     * studio.db.port
     * studio.db.socket
 
-Next, in your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
+Next, in your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh``, change the following to your desired port:
 
-    * OS X/Linux: export MARIADB_PORT=33306
-    * Windows: SET MARIADB_PORT=33306
+    * export MARIADB_PORT=33306
+

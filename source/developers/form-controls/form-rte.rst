@@ -3,13 +3,13 @@
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. index:: Form Controls; Rich Text Editor
+.. index:: Form Controls; Rich Text Editor (TinyMCE 2)
 
 .. _form-rte:
 
-========================
-Rich Text Editor Control
-========================
+====================================
+Rich Text Editor (TinyMCE 2) Control
+====================================
 
 -------
 Example
@@ -49,7 +49,6 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || * Required: Make field required to fill out.                         |
 +------------------------+-----------------------------------------------------------------------+
-|| Related Data Sources  || * None.                                                              |
+|| Related Data Sources  || * Image.                                                             |
 +------------------------+-----------------------------------------------------------------------+
 
-.. todo:: Complete RTE properties.

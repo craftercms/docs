@@ -44,10 +44,10 @@ Repo Management
 Audit
 ^^^^^
 
-.. toctree::
-   :maxdepth: 1
+.. note::
+  Audit operations are only available in the new API, for more information, please visit:
+  https://app.swaggerhub.com/apis/craftercms/studio
 
-   audit/get-audit-log
 
 ^^^^^^^^
 Security
@@ -67,12 +67,9 @@ Security
 Monitoring
 ^^^^^^^^^^
 
-.. toctree::
-   :maxdepth: 1
-
-   monitor/version
-   monitor/status
-   monitor/memory
+.. note::
+  Monitoring operations are only available in the new API, for more information, please visit: 
+  https://app.swaggerhub.com/apis/craftercms/studio
 
 ^^^^
 CMIS
@@ -84,6 +81,7 @@ CMIS
    cmis/list
    cmis/search
    cmis/clone
+   cmis/upload
 
 ^^^^^^^
 Publish

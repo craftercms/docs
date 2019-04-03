@@ -6,13 +6,13 @@ Setup Site for a Delivery Environment
 
 In this section, we will be working in the delivery environment of Crafter CMS and describing how to setup your site for a delivery environment.
 
---------------------------
-Setup Solr core and Target
---------------------------
+-----------------------------
+Setup Crafter Deployer Target
+-----------------------------
 
-Crafter CMS out of the box has a script to help you create your Solr core and deployer target for the delivery environment.
+Crafter CMS out of the box has a script to help you create your deployer target for the delivery environment.
 
-In the ``bin`` folder in your Crafter CMS delivery environment, we will use the script ``init-site.sh``/``init-site.bat`` to help us create the Solr core and the deployer target.
+In the ``bin`` folder in your Crafter CMS delivery environment, we will use the script ``init-site.sh`` to help us create the deployer target.
 
 From your command line, navigate to your ``{Crafter-CMS-delivery-environment-directory}/bin/`` , and execute the init-site script. The following output of ``init-site.sh -h``
 explains how to use the script:
@@ -37,6 +37,8 @@ explains how to use the script:
      -p,--password <password>                  The password for the remote Git
                                                repo, when using basic
                                                authentication
+     -s,--crafter-search                       Use Crafter Search instead of
+                                               Elasticsearch
      -u,--username <username>                  The username for the remote Git
                                                repo, when using basic
                                                authentication

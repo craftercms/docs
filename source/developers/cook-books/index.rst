@@ -12,7 +12,9 @@ Cookbooks / Tutorials
    active-cache/index
    activiti/index
    aws/index
+   box/index
    services/index
+   graphql/index
    blueprint/index
    best-practices/index
    how-tos/index

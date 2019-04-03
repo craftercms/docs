@@ -90,7 +90,7 @@ Next we'll add a **Repeating Group** control to the form,  with a minimum of 1 o
 	:alt: Template Add Repeating Group Control
 	:align: center
 
-In the Repeating Group control, we will add an RTE (Rich Text Editor).  In order for the content to be searchable, it needs to be indexed to Solr.  To facilitate indexing to Solr, the suffix **_html** should be appended to the variable name given to the RTE.  In this case, the RTE's variable name is *entry_html*.  For more information on variable names and search indexing , please see the section :ref:`form-control-variable-names`
+In the Repeating Group control, we will add an RTE (Rich Text Editor).  In order for the content to be searchable, it needs to be indexed.  To facilitate indexing, the suffix **_html** should be appended to the variable name given to the RTE.  In this case, the RTE's variable name is *entry_html*.  For more information on variable names and search indexing , please see the section :ref:`form-control-variable-names`
 
 .. figure:: /_static/images/templates/templates-add-rte.png
 	:alt: Template Add Rich Text Editor to Repeating Group Control

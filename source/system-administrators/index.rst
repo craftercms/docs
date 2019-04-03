@@ -42,6 +42,7 @@ Activities
 
    activities/installing-and-verifying-prereq.rst
    activities/backup-and-recovery.rst
+   activities/clustering.rst
    activities/configure-solrcloud-for-crafter.rst
    activities/logging.rst
    activities/production-environment-setup.rst
@@ -114,6 +115,7 @@ Crafter Deployer
    :titlesonly:
 
    deployer/admin-guide.rst
+   deployer/debugging-deployer-issues.rst
 
 
 ==============

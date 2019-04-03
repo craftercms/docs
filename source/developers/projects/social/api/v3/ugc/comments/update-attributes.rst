@@ -10,6 +10,8 @@ Updates the attributes for the given comment.
 Resource Information
 --------------------
 
+.. include:: /includes/social-api-url-prefix.rst
+
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || PUT, POST                                                        |
 +----------------------------+-------------------------------------------------------------------+
