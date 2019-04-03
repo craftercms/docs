@@ -103,7 +103,7 @@ on Ubuntu and how to configure it so the correct headers are sent to the applica
 Configure your site
 ===================
 
-To enable SAML 2.0 in your site configuration (in Studio, Config > site.xml) add or update the security elements as
+To enable SAML 2.0 in your site configuration (in Studio, Config > Engine Site Configuration) add or update the security elements as
 needed:
 
 .. code-block:: xml
@@ -185,7 +185,7 @@ Restrict URLs
 
 Sometimes it is not enough to restrict a single page. Sometimes you need to restrict an entire site subtree, or 
 restrict several static assets. For this, Crafter CMS provides configuration parameters that allow you to restrict 
-access based on URL patterns. You just need to add configuration similar to the following in Config > site.xml:
+access based on URL patterns. You just need to add configuration similar to the following in Config > Engine Site Configuration:
 
 .. code-block:: xml
     :linenos:
@@ -235,7 +235,7 @@ next steps to create one:
     on the mode Engine is running, add one of the following configurations (preview is ignored because normally 
     predefined Personas are used, so there's no need to access the Crafter Profile app).
 
-    *   **Multi-tenant:** You need to add the access token ID to the Config > site.xml in Studio, and deploy the file
+    *   **Multi-tenant:** You need to add the access token ID to the Config > Engine Site Configuration in Studio, and deploy the file
         to Engine:
 
         .. code-block:: xml
@@ -461,7 +461,7 @@ Add Facebook Login
 
     .. image:: /_static/images/connections_attribute.png
 
-#.  Add the Facebook appSecret and appKey to your site's config (in Studio, Config > site.xml), like this:
+#.  Add the Facebook appSecret and appKey to your site's config (in Studio, Config > Engine Site Configuration), like this:
 
     .. code-block:: xml
       :linenos:
