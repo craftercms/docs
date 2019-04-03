@@ -50,6 +50,7 @@ Activities
    activities/troubleshooting.rst
    activities/security/randomize-admin-passwd.rst
    activities/security/configure-studio-security.rst
+   activities/kubernetes/simple-kubernetes-deployment.rst
 
 *********************
 Upgrading Crafter CMS
