@@ -101,3 +101,67 @@ Solr Log Files
 File: solr.log
 
 This log file contains all messages pertaining to Crafter Search.  It records errors and warnings related to Search indexing and features.  In the same folder where **solr.log** is found, you'll find other solr logs and archived log files that may be of interest depending on what you're investigating/debugging.
+
+----------------------
+Using custom appenders
+----------------------
+
+All Crafter CMS components use Apache Log4j2 for logging and you can easily include custom configurations to change
+the logging behavior. If you want to use any of the built-in appenders from Log4j2 such as the JDBC or SMTP appenders
+you only need to add them in the appropriate configuration file. For more details on the provided appenders you can
+visit the `official documentation <https://logging.apache.org/log4j/2.x/manual/appenders.html>`_.
+
+^^^^^^^^^^^^^^^^^^^^^^
+Logging configurations
+^^^^^^^^^^^^^^^^^^^^^^
+
+You can update the logging configuration depending on the Crafter CMS component that you need to change:
+
+* Crafter Engine: ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/engine/extension/logging.xml``
+* Crafter Studio: ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/studio/extension/logging.xml``
+* Crafter Search: ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/search/extension/logging.xml``
+* Crafter Profile: ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/profile/extension/logging.xml``
+* Crafter Social: ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/social/extension/logging.xml``
+* Crafter Deployer: ``INSTALL_DIR/bin/crafter-deployer/logging.xml``
+
+.. warning::
+  It is highly recommended to only add new appenders or do small changes to existing ones, if existing appenders are
+  removed or the configuration is broken some Crafter CMS components could stop working.
+
+^^^^^^^^^^^^^^^^^^^^^
+Add a custom appender
+^^^^^^^^^^^^^^^^^^^^^
+
+To add a custom appender you can follow these steps:
+
+#. Place the required JAR files in the appropriate location:
+   
+   * for Engine, Studio, Search, Profile or Social use ``INSTALL_DIR/bin/apache-tomcat/shared/lib``
+   * for Deployer use ``INSTALL_DIR/bin/crafter-deployer/lib``
+#. Update the required logging configuration to add the custom appender, for example if the custom appender name is
+   ``AwesomeAppender`` and the class is under the package ``com.custom.logging`` the configuration will be like this:
+   
+  .. code-block:: xml
+  
+    <Configuration packages="com.custom.logging">
+      <Appenders>
+        <!-- existing appenders -->
+        <AwesomeAppender name="AwesomeAppender" someConfig="true" otherParam="5"/>
+      </Appenders>
+      <Loggers>
+        <!-- existing loggers -->
+        <Root level="info">
+          <!-- existing refs -->
+          <AppenderRef ref="AwesomeAppender" />
+        </Root>
+      </Loggers>
+    </Configuration>
+
+.. note::
+  In order for custom appenders to be loaded properly all dependencies should be included in the JAR file or also
+  copy the required JARs along. Most of the time you will need to copy the ``log4j-api-{version}.jar`` and
+  ``log4j-core-{version}.jar`` too.
+
+.. warning::
+  Because Log4j2 only loads classes during initialization if there is a change in the custom appender JAR those will 
+  not be caught by the reconfiguration feature and you must restart the app context or tomcat.
