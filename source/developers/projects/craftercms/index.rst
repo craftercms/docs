@@ -64,12 +64,12 @@ Authoring and Delivery Environment Scripts
 The Crafter CMS Authoring and Delivery scripts will help you on the basic startup and shutdown of the services needed to run a healthy *Authoring environment* and *Delivery environment* with the following scripts:
 
 +-------------------------+----------------------------------------------------------------------+
-|| **Script**             || ``crafter(.sh/bat)``                                                |
+|| **Script**             || ``crafter.sh``                                                      |
 +-------------------------+----------------------------------------------------------------------+
 || **Description**        || Main Script to start and stop all needed Services to have a         |
 ||                        || functional Crafter CMS *Authoring/Delivery Environment*             |
 +-------------------------+----------------------------------------------------------------------+
-|| **Synopsis**           || ``crafter.(sh/bat) start|stop|debug|help``                          |
+|| **Synopsis**           || ``crafter.sh start|stop|debug|help``                                |
 +-------------------------+----------------------------------------------------------------------+
 || **Arguments**          || * ``start`` Starts all Crafter CMS services in this order           |
 ||                        ||    Crafter Deployer, Elasticsearch, Apache Tomcat                   |
@@ -87,21 +87,21 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 +-------------------------+----------------------------------------------------------------------+
 
 +-------------------------+----------------------------------------------------------------------+
-|| **Synopsis**           || ``startup(.sh|bat)``                                                |
+|| **Synopsis**           || ``startup.sh``                                                      |
 +-------------------------+----------------------------------------------------------------------+
 || **Description**        || Starts all needed Services to have a functional                     |
 ||                        || Crafter CMS *Authoring/Delivery Environment*                        |
 +-------------------------+----------------------------------------------------------------------+
 
 +-------------------------+----------------------------------------------------------------------+
-|| **Synopsis**           || ``shutdown(.sh|bat)``                                               |
+|| **Synopsis**           || ``shutdown.sh``                                                     |
 +-------------------------+----------------------------------------------------------------------+
 || **Description**        || Stops all needed Services to have a functional                      |
 ||                        || Crafter CMS *Authoring/Delivery Environment*                        |
 +-------------------------+----------------------------------------------------------------------+
 
 +-------------------------+----------------------------------------------------------------------+
-|| **Synopsis**           || ``debug(.sh|bat)``                                                  |
+|| **Synopsis**           || ``debug.sh``                                                        |
 +-------------------------+----------------------------------------------------------------------+
 || **Description**        || Starts all needed Services to have a functional                     |
 ||                        || Crafter CMS *Authoring/Delivery Environment* with the JAVA remote   |
@@ -110,12 +110,12 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 +-------------------------+----------------------------------------------------------------------+
 
 +-------------------------+----------------------------------------------------------------------+
-|| **Script**             || ``deployer(.sh/bat)``                                               |
+|| **Script**             || ``deployer.sh``                                                     |
 +-------------------------+----------------------------------------------------------------------+
 || **Description**        || Script located in *$CRAFTER_HOME/crafter-deployer* which will       |
 ||                        || start,stop Crafter Deployer for the *Authoring/Delivery* environment|
 +-------------------------+----------------------------------------------------------------------+
-|| **Synopsis**           || ``deployer.(sh/bat) start|stop|debug|help``                         |
+|| **Synopsis**           || ``deployer.sh start|stop|debug|help``                               |
 +-------------------------+----------------------------------------------------------------------+
 || **Arguments**          || * ``start`` Starts all Crafter CMS services in this order           |
 ||                        ||    Crafter Deployer, Elasticsearch, Apache Tomcat                   |
@@ -130,7 +130,7 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 ||                        || * ``help``  Prints script help                                      |
 +-------------------------+----------------------------------------------------------------------+
 
-Here are the general environment variables used by ``crafter(.sh/bat)``:
+Here are the general environment variables used by ``crafter.sh``:
 
 +--------------------------+---------------------------------------------------------------------+
 || Variable Name           || Description                                                        |
@@ -150,7 +150,7 @@ Here are the general environment variables used by ``crafter(.sh/bat)``:
 ||                         || $CRAFTER_HOME/crafter-deployer                                     |
 +--------------------------+---------------------------------------------------------------------+
 
-Here are the environment variables used for Tomcat in ``crafter(.sh/bat)``:
+Here are the environment variables used for Tomcat in ``crafter.sh``:
 
 +--------------------------+---------------------------------------------------------------------+
 || Tomcat                  || Description                                                        |
@@ -178,7 +178,7 @@ Here are the environment variables used for Tomcat in ``crafter(.sh/bat)``:
 ||                         || -Dcatalina.logs=$CATALINA_LOGS_DIR -server -Xss1024K -Xms1G -Xmx4G |
 +--------------------------+---------------------------------------------------------------------+
 
-Here are the environment variables used for Elasticsearch in ``crafter(.sh/bat)``:
+Here are the environment variables used for Elasticsearch in ``crafter.sh``:
 
 +--------------------------+---------------------------------------------------------------------+
 || Elasticsearch           || Description                                                        |
@@ -202,7 +202,7 @@ Here are the environment variables used for Elasticsearch in ``crafter(.sh/bat)`
 ||                         || "-server -Xss1024K -Xmx1G"                                         |
 +--------------------------+---------------------------------------------------------------------+
 
-Here are the environment variables used for Solr in ``crafter(.sh/bat)``:
+Here are the environment variables used for Solr in ``crafter.sh``:
 
 +--------------------------+---------------------------------------------------------------------+
 || Solr                    || Description                                                        |
@@ -226,7 +226,7 @@ Here are the environment variables used for Solr in ``crafter(.sh/bat)``:
 ||                         || "-server -Xss1024K -Xmx1G"                                         |
 +--------------------------+---------------------------------------------------------------------+
 
-Here are the environment variables used for the Deployer in ``crafter(.sh/bat)``:
+Here are the environment variables used for the Deployer in ``crafter.sh``:
 
 +--------------------------+---------------------------------------------------------------------+
 || Deployer                || Description                                                        |
@@ -258,7 +258,7 @@ Here are the environment variables used for the Deployer in ``crafter(.sh/bat)``
 ||                         || "-server -Xss1024K -Xmx1G"                                         |
 +--------------------------+---------------------------------------------------------------------+
 
-Here are the environment variables used for MongoDB in ``crafter(.sh/bat)``:
+Here are the environment variables used for MongoDB in ``crafter.sh``:
 
 +--------------------------+---------------------------------------------------------------------+
 || MongoDB                 || Description                                                        |
@@ -542,9 +542,9 @@ downloadSolr
 ^^^^^^^^^^^^
 Downloads the configured Solr version and also verifies that the war file is ok against a sha1 signature.
 
-    .. code-block:: bat
+    .. code-block:: bash
 
-       gradlew.bat downloadSolr
+       ./gradlew downloadSolr
 
 
 downloadTomcat
@@ -770,95 +770,4 @@ To clone the branch/tag of craftercms that you want to work with, run:
 
 Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.  After cloning the desired branch, you can now init, build and bundle from a given tag/branch using the property `crafter.git.branch` as described in an earlier section :ref:`Git Properties<git-properties>`
 
-
-
-.. _build-crafter-cms-in-windows:
-
-===============================
-Building Crafter CMS in Windows
-===============================
-
-This section will give you information/tips on how to setup your environment in order to build Crafter CMS on Windows.
-
-----------------------------
-Installing the prerequisites
-----------------------------
-
-The first thing we need to do is install the prerequisites.  We need to install the following:
-
-    - Java 8
-    - Git 2.x+
-    - Maven 3.3.x+
-
-We'll describe two ways of installing the prerequisites:
-
-#. Installing the prerequisites one by one
-#. Installing the prerequisites using `chocolatey <https://chocolatey.org/>`_
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Installing the prerequisites one by one
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Below are the links to install the prerequisites one by one:
-
-Installing Java
-^^^^^^^^^^^^^^^
-
-The :ref:`quick_start_guide` has information on how to install Java and setup your JAVA_HOME environment variable.
-
-
-Installing Git
-^^^^^^^^^^^^^^
-
-There are a few ways to install Git on Windows.
-
-#. One way is to install Git for Windows, download available here:  http://git-scm.com/download/win
-#. Another way is to install `GitHub for Windows <https://git-for-windows.github.io/>`_
-
-You can find more information on installing Git on Windows `here <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
-
-Installing Maven
-^^^^^^^^^^^^^^^^
-
-#. To install maven on Windows, follow the guide `Maven on Windows <https://maven.apache.org/guides/getting-started/windows-prerequisites.html>`_
-
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Installing the prerequisites using Chocolatey
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Chocolatey is a package manager for Windows that helps you install packages in one line.  To install chocolatey, please follow the instructions listed here: https://chocolatey.org/install . Below are the steps to install the prerequisites using chocolatey.
-
-.. note::
-
-    Remember to use an administrative shell when installing and running chocolatey.  One way to run an administrative shell is by searching for `cmd` or `command prompt`  in the search box, then right click on the match, and select `Run as administrator` to get an administrator shell.
-
-.. note::
-
-    Notice that you do not have to install Java, because when you install Maven, since Java is one of its dependencies, choco will install it for you and add the necessary environment variables.
-
-Installing Git
-^^^^^^^^^^^^^^
-To install Git, just run the following from your command line:
-
-   .. code-block:: bat
-
-       choco install git
-
-Installing Maven
-^^^^^^^^^^^^^^^^
-
-To install Maven, just run the following from your command line:
-
-   .. code-block:: bat
-
-       choco install maven
-
---------------------
-Building Crafter CMS
---------------------
-
-To build Crafter CMS after installing the prerequisites, you can follow the instructions listed here: https://github.com/craftercms/craftercms/blob/master/README.md
-
-Also, please note that depending on your machine, Crafter CMS may take around half an hour or so to build.
 
