@@ -114,8 +114,8 @@ Bootstrap the Site in Delivery
 ------------------------------
 
 Now you need to setup the site in Delivery. If you don't know the name of the Delivery Pod yet, run ``kubectl get pods``
-and check for the one that has a name like ``delivery-deployment-XXXXX``. Then, run the following command (replace
-the pod name and the site name with the actual values):
+and check for the one that has a name like ``delivery-deployment-XXXXX``. Then, run the following command (remember to
+replace the pod name and the site name with the actual values):
 
 .. code-block:: bash
   
