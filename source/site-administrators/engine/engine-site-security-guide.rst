@@ -114,8 +114,8 @@ needed:
       <token>SOME_SECRET_TOKEN</token>
       <groups>
         <group>
-          <name>GROUP_PAID</name>
-          <role>paidUser</role>
+          <name>MEMBER</name>
+          <role>memberUser</role>
         </group>
       </groups>
       <attributes>
