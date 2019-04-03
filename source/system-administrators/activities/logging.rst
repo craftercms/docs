@@ -146,7 +146,7 @@ To add a custom appender you can follow these steps:
     <Configuration packages="com.custom.logging">
       <Appenders>
         <!-- existing appenders -->
-        <AwesomeAppender name="AwesomeAppender" someCofig="true" otherParam="5"/>
+        <AwesomeAppender name="AwesomeAppender" someConfig="true" otherParam="5"/>
       </Appenders>
       <Loggers>
         <!-- existing loggers -->
