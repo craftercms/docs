@@ -35,6 +35,7 @@ Crafter CMS comprises a number of projects, below are the project specific docum
    :titlesonly:
 
    projects/craftercms/index
+   projects/docker-compose/index
    projects/core/index
    projects/commons/index
    projects/engine/index
