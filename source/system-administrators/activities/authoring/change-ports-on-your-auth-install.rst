@@ -42,7 +42,7 @@ Open the file ``AUTHORING_INSTALL_DIR/bin/apache-tomcat/conf/server.xml``.  Noti
 
 Change the HTTP connector port to your desired port.
 
-In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
+In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh``, change the following to your desired port:
 
     * Linux/OS X: export TOMCAT_HTTP_PORT=8080
     * Windows: SET TOMCAT_HTTP_PORT=8080
@@ -87,10 +87,9 @@ First, we'll configure the ports for the Deployer that affects your Studio.  Ope
 
 |
 
-In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
+In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh``, change the following to your desired port:
 
     * OS X/Linux: export SET DEPLOYER_PORT=9191
-    * Windows: export DEPLOYER_PORT=9191
 
 After changing the Deployer ports, we need to update the configuration for the communication between Crafter Studio and the Deployer.
 
@@ -106,10 +105,9 @@ Configuration for Authoring Elasticsearch Ports
 
 The default Elasticsearch port is 9201.  There are a couple of places that we need to update to change the Elasticsearch ports.
 
-In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
+In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh``, change the following to your desired port:
 
-    * OS X/Linux: export ES_PORT=9201
-    * Windows: SET ES_PORT=9201
+    * export ES_PORT=9201
 
 --------------------------------------
 Configuration for Authoring Solr Ports
@@ -119,10 +117,9 @@ The default Solr port is 8694.  There are a couple of places that we need to upd
 
 We'll update Crafter Search's communication with Solr.
 
-In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
+In your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh``, change the following to your desired port:
 
-    * OS X/Linux: export SOLR_PORT=8694
-    * Windows: SET SOLR_PORT=8694
+    * export SOLR_PORT=8694
 
 Next, open the file ``AUTHORING_INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/search/extension/server-config.properties``, and change the configured port to the desired port for the following:
 
@@ -142,7 +139,7 @@ change the port to the desired port listed in the following:
     * studio.db.port
     * studio.db.socket
 
-Next, in your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh / crafter-setenv.bat``, change the following to your desired port:
+Next, in your ``AUTHORING_INSTALL_DIR/bin/crafter-setenv.sh``, change the following to your desired port:
 
-    * OS X/Linux: export MARIADB_PORT=33306
-    * Windows: SET MARIADB_PORT=33306
+    * export MARIADB_PORT=33306
+
