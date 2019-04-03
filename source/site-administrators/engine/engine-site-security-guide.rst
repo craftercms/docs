@@ -173,7 +173,7 @@ the next steps to create in the page content type a Repeating Group with a text 
 With these changes, now you or any other content author can go to any page of this content type and add the roles that
 are required to access the page. Two special roles which indicate authentication state can be used besides the roles
 that are included in user profiles: ``Anonymous`` and ``Authenticated``. The complete access check algorithm executed 
-by Crafter Engine is described bellow:
+by Crafter Engine is described below:
 
 #.  If the page doesn't contain any role, no authentication is needed.
 #.  If the page has the role ``Anonymous``, no authentication is needed.
