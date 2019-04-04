@@ -24,7 +24,7 @@ errors. In Minikube, to start a node with this characteristics, you can run a co
 Create the SSH Keys Secret
 --------------------------
 
-The Delivery Pod will need SSH access to the Authoring Pod to pull the site content. For this, we need to generate 
+The Delivery Pod will need SSH access to the Authoring Pod to pull the site content. For this, you need to generate 
 an SSH public/private key pair for authentication and provide the key pair as a Kubernetes Secret to the Pods:
 
 #. Run ``ssh-keygen -b 4096 -t rsa -C "your_email@example.com"`` to generate the key pair. When being asked for the 
@@ -80,8 +80,8 @@ just run:
    kubectl apply -f .
 
 Check the status of the deployments by running ``kubectl get deployments``, and the status of the Pods by running
-``kubectl get pods``. You can also tail the logs of the ``tomcat`` and ``deployer`` containers, for both authoring 
-and deliver Pods, with the command:
+``kubectl get pods``. You can also tail the logs of the ``tomcat`` and ``deployer`` containers, for both Authoring 
+and Delivery Pods, with the command:
 
 .. code-block:: bash
   
