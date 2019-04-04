@@ -1,0 +1,113 @@
+# Authoring LB
+apiVersion: v1
+kind: Service
+metadata:
+  name: authoring-service
+spec:
+  type: LoadBalancer
+  selector:
+    component: authoring
+  ports:
+    - port: 8080
+      targetPort: 8080
+---
+# Authoring SSH Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: authoring-ssh-service
+spec:
+  type: ClusterIP
+  selector:
+    component: authoring
+  ports:
+  - port: 22
+    targetPort: 22
+---
+# Authoring PV Claim
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: authoring-data-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce 
+  resources:
+    requests:
+      storage: 5Gi
+---
+# Authoring Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: authoring-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: authoring
+  template:
+    metadata:
+      labels:
+        component: authoring
+    spec:
+      volumes:
+        - name: ssh-keys
+          secret:
+            secretName: ssh-keys
+        - name: data
+          persistentVolumeClaim:
+            claimName: authoring-data-pv-claim
+        - name: logs
+          emptyDir: {}
+        - name: temp
+          emptyDir: {}
+      containers:
+        - name: tomcat
+          image: craftercms/authoring_tomcat:3.1.0-SNAPSHOT
+          imagePullPolicy: 'Always'      
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: ssh-keys
+              mountPath: /opt/crafter/.ssh            
+            - name: data
+              mountPath: /opt/crafter/data
+            - name: temp
+              mountPath: /opt/crafter/temp              
+            - name: logs
+              mountPath: /opt/crafter/logs
+          env:
+            - name: ES_HOST
+              value: elasticsearch-service
+            - name: ES_PORT
+              value: '9200'
+        - name: deployer
+          image: craftercms/deployer:3.1.0-SNAPSHOT
+          imagePullPolicy: 'Always'           
+          ports:
+            - containerPort: 9191
+          volumeMounts:
+            - name: ssh-keys
+              mountPath: /opt/crafter/.ssh            
+            - name: data
+              mountPath: /opt/crafter/data
+            - name: temp
+              mountPath: /opt/crafter/temp              
+            - name: logs
+              mountPath: /opt/crafter/logs
+          env:
+            - name: ES_HOST
+              value: elasticsearch-service
+            - name: ES_PORT
+              value: '9200'
+        - name: git-ssh-server
+          image: craftercms/git_ssh_server:3.1.0-SNAPSHOT
+          imagePullPolicy: 'Always'     
+          ports:
+            - containerPort: 22
+          volumeMounts:
+            - name: ssh-keys
+              mountPath: /opt/crafter/.ssh            
+            - name: data
+              mountPath: /opt/crafter/data
