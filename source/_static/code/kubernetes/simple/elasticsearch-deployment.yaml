@@ -1,0 +1,63 @@
+# Elasticsearch Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: elasticsearch-service
+spec:
+  type: ClusterIP
+  selector:
+    component: elasticsearch
+  ports:
+  - port: 9200
+    targetPort: 9200
+---
+# Elasticsearch PV Claim
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: elasticsearch-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce 
+  resources:
+    requests:
+      storage: 5Gi
+---
+# Elasticsearch Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elasticsearch-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: elasticsearch
+  template:
+    metadata:
+      labels:
+        component: elasticsearch
+    spec:
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: elasticsearch-pv-claim
+        - name: logs
+          emptyDir: {}
+      containers:
+        - name: elasticsearch
+          image: docker.elastic.co/elasticsearch/elasticsearch:6.6.0
+          ports:
+            - containerPort: 9200
+          volumeMounts:
+            - name: data
+              mountPath: /usr/share/elasticsearch/data
+            - name: logs
+              mountPath: /usr/share/elasticsearch/logs
+          env:
+            - name: discovery.type
+              value: single-node
+            - name: bootstrap.memory_lock
+              value: 'true'
+            - name: ES_JAVA_OPTS
+              value: '-server -Xss1024K -Xmx2G'

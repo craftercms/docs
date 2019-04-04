@@ -119,7 +119,7 @@ deployment/indexing finishes you should see something like the following in the 
 Step 4: Check deployment results
 --------------------------------
 
-When the deployer finishes the process it will write in the ```INSTALL_DIRECTORY/logs/deployer/`` folder a CSV file named ``{siteName}-{environment}-deployments.csv`` with the final status of the deployment, similar to this:
+When the deployer finishes the process it will write in the ``INSTALL_DIRECTORY/logs/deployer/`` folder a CSV file named ``{siteName}-{environment}-deployments.csv`` with the final status of the deployment, similar to this:
 
 .. image:: /_static/images/system-admin/deploy-results-csv.png
    :alt: Cook Books - Reindexing Deployment Results CSV File

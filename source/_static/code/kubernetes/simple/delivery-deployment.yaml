@@ -1,0 +1,90 @@
+# Delivery LB
+apiVersion: v1
+kind: Service
+metadata:
+  name: delivery-service
+spec:
+  type: LoadBalancer
+  selector:
+    component: delivery
+  ports:
+    - port: 9080
+      targetPort: 8080
+---
+# Delivery PV Claim
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: delivery-data-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce 
+  resources:
+    requests:
+      storage: 5Gi
+---
+# Delivery Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: delivery-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: delivery
+  template:
+    metadata:
+      labels:
+        component: delivery
+    spec:
+      volumes:
+        - name: ssh-keys
+          secret:
+            secretName: ssh-keys      
+        - name: data
+          persistentVolumeClaim:
+            claimName: delivery-data-pv-claim
+        - name: logs
+          emptyDir: {}
+        - name: temp
+          emptyDir: {}
+      containers:
+        - name: tomcat
+          image: craftercms/delivery_tomcat:3.1.0-SNAPSHOT
+          imagePullPolicy: 'Always'      
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: ssh-keys
+              mountPath: /opt/crafter/.ssh
+            - name: data
+              mountPath: /opt/crafter/data
+            - name: temp
+              mountPath: /opt/crafter/temp              
+            - name: logs
+              mountPath: /opt/crafter/logs
+          env:
+            - name: ES_HOST
+              value: elasticsearch-service
+            - name: ES_PORT
+              value: '9200'
+        - name: deployer
+          image: craftercms/deployer:3.1.0-SNAPSHOT
+          imagePullPolicy: 'Always'           
+          ports:
+            - containerPort: 9191
+          volumeMounts:
+            - name: ssh-keys
+              mountPath: /opt/crafter/.ssh
+            - name: data
+              mountPath: /opt/crafter/data
+            - name: temp
+              mountPath: /opt/crafter/temp              
+            - name: logs
+              mountPath: /opt/crafter/logs
+          env:
+            - name: ES_HOST
+              value: elasticsearch-service
+            - name: ES_PORT
+              value: '9200'
