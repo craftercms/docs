@@ -36,7 +36,7 @@ A truly decoupled system will support disconnected delivery (think of a delivery
 
 .. image:: /_static/images/architecture/traditional-modern-decoupled.png
         :width: 100%
-        :alt: Crafter CMS Decoupled Overview
+        :alt: Crafter CMS Modern Decoupled
         :align: center
 
 How can Crafter CMS deliver a dynamic experience? During ingestion, the delivery tier indexes the content into a local search engine and builds in-memory representation of content items to help drive the dynamic behavior. The search engine and in-memory store are local and therefore share nothing with other nodes, however, you're now able to search and build dynamic responses. These dynanmic responses can be driven by defined user personas along with user identity or prior user behavior. If you have a user store, behavior stream, or social media profile access, you can then tailor the content dynamically in real time. Crafter CMS has two *optional* modules that support this and can be combined/layered with other systems; Crafter Profile (user identity and behavior store), and Crafter Social (User-generated-content store).
@@ -45,9 +45,9 @@ Application Development
 =======================
 
 .. image:: /_static/images/architecture/application-development.png
-	:width: 100%
-	:alt: Application Development on Crafter CMS
-	:align: center
+		:width: 100%
+		:alt: Application Development on Crafter CMS
+		:align: center
 
 Crafter CMS is a very flexible platform, and features:
 
@@ -74,7 +74,7 @@ Starting with Crafter CMS 3.1, serverless delivery is supported via Docker, Kube
 
 .. image:: /_static/images/architecture/serverless-deployment-architecture.png
         :width: 100%
-        :alt: Crafter CMS Typical Real-life AWS Deployment
+        :alt: Crafter CMS Serverless Deployment
         :align: center
 
 Traditional Deployment
@@ -96,7 +96,7 @@ The authoring clusters are typically deployed closest to the content authors, wh
 
 .. image:: /_static/images/architecture/global-delivery.png
         :width: 100%
-        :alt: Crafter CMS Typical Real-life Global Deployment
+        :alt: Crafter CMS Geo Distributed Deployment
         :align: center
 
 
@@ -112,7 +112,7 @@ It's quite hard to provide a good experience to all three stakeholders, and the 
 
 .. image:: /_static/images/architecture/stakeholder-fairness.png
         :width: 100%
-        :alt: Crafter CMS Typical Real-life AWS Deployment
+        :alt: Crafter CMS Stakeholder Equality
         :align: center
 
 Traditional CMSs cater to content authors and web editors, and do so very well. However, developers are then forced to develop in outdated or proprietary frameworks using difficult workflows. Additionally, operations has a hard time supporting these workflows, especially when it comes to code deployments or moving production content back to lower environments.
@@ -138,7 +138,7 @@ Crafter CMS is Git-based. That means that Crafter applications/sites are actuall
 
 .. image:: /_static/images/architecture/git-data-flow.png
         :width: 100%
-        :alt: Crafter CMS Typical Real-life AWS Deployment
+        :alt: Crafter CMS Git-based Workflow
         :align: center
 
 
@@ -149,7 +149,7 @@ Crafter CMS can be further leveraged as an enterprise-wide content as a service 
 
 .. image:: /_static/images/architecture/enterprise-content-platform.png
         :width: 100%
-        :alt: Crafter CMS Typical Real-life AWS Deployment
+        :alt: Crafter CMS Enterprise Content Platform
         :align: center
 
 
@@ -167,7 +167,7 @@ The application/site can then be delivered using whatever technology, and simply
 
 .. image:: /_static/images/architecture/partial-delivery.png
         :width: 100%
-        :alt: Crafter CMS Typical Real-life AWS Deployment
+        :alt: Crafter CMS Partial Delivery
         :align: center
 
 Crafter CMS Services
