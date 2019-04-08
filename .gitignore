@@ -1,5 +1,6 @@
 target/*
 build/*
+source/_build
 deploy.sh
 *.swp
 .DS_Store
