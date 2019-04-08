@@ -1,6 +1,6 @@
-.. _architecture:
-
 .. index:: Architecture
+
+.. _architecture:
 
 ========================
 Crafter CMS Architecture
