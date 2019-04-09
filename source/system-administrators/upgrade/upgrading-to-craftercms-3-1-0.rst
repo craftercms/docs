@@ -6,6 +6,64 @@ Instructions for Upgrading to Crafter CMS 3.1.0 from a previous 3.0.x version
 
 Upgrade your Crafter CMS install, by following the upgrade guide :ref:`upgrading-craftercms`.
 
+--------------------
+Upgrading Solr Cores
+--------------------
+
+Because Elasticsearch is now the default search engine, the Deployer targets need to be updated to include a new 
+parameter for using Solr:
+
+.. code-block:: bash
+  :linenos:
+
+  curl --request POST \
+    --url http://localhost:9191/api/1/target/create \
+    --header 'content-type: application/json' \
+    --data '{
+    "replace": true,
+    "site_name": "SITE_NAME",
+    
+     ... existing configuration ...
+    
+     "use_crafter_search": true
+  }'
+
+.. include:: /includes/upgrading-to-solr-7.rst
+
+--------------------------
+Creating Authoring Targets
+--------------------------
+
+Starting with Crafter CMS 3.1.0, Studio will use Elasticsearch to index all sites to provide the new features in the
+authoring search. For all existing sites a new target must be created using the Deployer API:
+
+#.  Create the new target:
+    
+    .. code-block:: bash
+      :linenos:
+
+      curl --request POST \
+        --url http://localhost:9191/api/1/target/create \
+        --header 'content-type: application/json' \
+        --data '{
+        "env": "authoring",
+        "site_name": "SITE_NAME",
+        "template_name": "authoring",
+        "repo_url": "INSTALL_DIR/data/repos/sites/SITE_NAME/sandbox"
+      }'
+
+#.  Index all content
+    
+    .. code-block:: bash
+      :linenos:
+    
+      curl --request POST \
+        --url http://localhost:9191/api/1/target/deploy/authoring/SITE_NAME \
+        --header 'content-type: application/json' \
+        --data '{
+        "reprocess_all_files": true
+      }'
+
 Please note the following when upgrading to Crafter CMS 3.1 from 3.0:
 
 #. Groups are now at the system level instead of per site.  By default, Crafter CMS has the following groups available after a fresh install: ``system_admin``, ``site_admin``, ``site_author``, ``site_developer``, ``site_publisher``, and ``site_reviewer``.  Users added to the system_admin group has the role **system_admin** that has permissions to create users, create site, add users to groups, etc.  Users added to any of the default groups has permissions for all sites created in Studio.
