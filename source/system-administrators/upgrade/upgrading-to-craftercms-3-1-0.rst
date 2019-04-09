@@ -3,41 +3,64 @@
 =============================================================================
 Instructions for Upgrading to Crafter CMS 3.1.0 from a previous 3.0.x version
 =============================================================================
+This section details how to upgrade your Crafter CMS installation.
 
-Upgrade your Crafter CMS install, by following the upgrade guide :ref:`upgrading-craftercms`.
+.. WARNING::
+   This guide assumes that you're trying to upgrade a site from a stock 3.0.x Studio and with some slight Studio configuration changes. If your site configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
 
-Please note the following when upgrading to Crafter CMS 3.1 from 3.0:
+----------------
+Before Upgrading
+----------------
+Here are the steps for upgrading your Crafter CMS install.  Please review the steps listed below before starting your upgrade.
 
-#. Groups are now at the system level instead of per site.  By default, Crafter CMS has the following groups available after a fresh install: ``system_admin``, ``site_admin``, ``site_author``, ``site_developer``, ``site_publisher``, and ``site_reviewer``.  Users added to the system_admin group has the role **system_admin** that has permissions to create users, create site, add users to groups, etc.  Users added to any of the default groups has permissions for all sites created in Studio.
+#. Review the release notes for the version you are upgrading to, which contains specific information on the changes that have been made and how it may affect you when upgrading to that specific version.
+#. Backup your existing Crafter CMS installation.  For more information on how to perform the backup, please see the documentation on :ref:`backup-and-recovery`
+#. Upgrade your Crafter CMS to the new version by following the instructions listed for the version you are upgrading to.
+#. Start your upgraded Crafter CMS, and verify that the authoring and delivery environments are functioning as intended.
 
-#. Site membership of a user is now determined by a mapping of group membership to roles within a site using the mapping file ``role-mappings.xml`` (see :ref:`role-mappings` on  how to configure the role mappings).  Note the new default groups when you create a site as noted above, these are automatically mapped to roles when using the built-in blueprints.
+.. note::
 
-   When upgrading a site, the default groups in the site are updated as follows:
+   There are a few things to note when upgrading to Crafter CMS 3.1 from 3.0:
 
-   +-------------------------------+------------------------------------------+
-   || 3.0 Default Groups  ==>      || 3.1 Default Groups                      |
-   +===============================+==========================================+
-   || Admin                        || {site_name}_admin                       |
-   +-------------------------------+------------------------------------------+
-   || Author                       || {site_name}_author                      |
-   +-------------------------------+------------------------------------------+
-   || Developer                    || {site_name}_developer                   |
-   +-------------------------------+------------------------------------------+
-   || Publisher                    || {site_name}_publisher                   |
-   +-------------------------------+------------------------------------------+
-   || Reviewer                     || {site_name}_reviewer                    |
-   +-------------------------------+------------------------------------------+
+   #. Groups are now at the system level instead of per site.  By default, Crafter CMS has the following groups available after a fresh install: ``system_admin``, ``site_admin``, ``site_author``, ``site_developer``, ``site_publisher``, and ``site_reviewer``.  Users added to the system_admin group has the role **system_admin** that has permissions to create users, create site, add users to groups, etc.  Users added to any of the default groups has permissions for all sites created in Studio.
 
-   For example, if user ``john`` is a member of group ``Developer`` (one of the default groups) in the site ``mysite``, after upgrading, user ``john`` will be a member of group ``mysite_developer``.
+   #. Site membership of a user is now determined by a mapping of group membership to roles within a site using the mapping file ``role-mappings.xml`` (see :ref:`role-mappings` on  how to configure the role mappings).  Note the new default groups when you create a site as noted above, these are automatically mapped to roles when using the built-in blueprints.
+
+      When upgrading a site, the default groups in the site are updated as follows:
+
+      +-------------------------------+------------------------------------------+
+      || 3.0 Default Groups  ==>      || 3.1 Default Groups                      |
+      +===============================+==========================================+
+      || Admin                        || {site_name}_admin                       |
+      +-------------------------------+------------------------------------------+
+      || Author                       || {site_name}_author                      |
+      +-------------------------------+------------------------------------------+
+      || Developer                    || {site_name}_developer                   |
+      +-------------------------------+------------------------------------------+
+      || Publisher                    || {site_name}_publisher                   |
+      +-------------------------------+------------------------------------------+
+      || Reviewer                     || {site_name}_reviewer                    |
+      +-------------------------------+------------------------------------------+
+
+      For example, if user ``john`` is a member of group ``Developer`` (one of the default groups) in the site ``mysite``, after upgrading, user ``john`` will be a member of group ``mysite_developer``.
 
 
-#. The LDAP authentication configuration has been updated.  The attribute ``siteId`` has been removed and is no longer needed since site membership of a user is now determined by group membership.  Please see :ref:`crafter-studio-configure-ldap` for the updated configuration.
+   #. The LDAP authentication configuration has been updated.  The attribute ``siteId`` has been removed and is no longer needed since site membership of a user is now determined by group membership.  Please see :ref:`crafter-studio-configure-ldap` for the updated configuration.
 
-#. The headers based authentication configuration has been updated. The ``groups`` header value should just be a comma separated list of groups that a user belongs to.  In the previous version, 3.0.x, the ``groups`` header value contained a comma separated list of sites and groups.  Please update the ``groups`` header value of users to contain only a comma separated list of groups the user belongs to.  Please see :ref:`crafter-studio-configure-headers-based-auth` for the updated configuration.
+   #. The headers based authentication configuration has been updated. The ``groups`` header value should just be a comma separated list of groups that a user belongs to.  In the previous version, 3.0.x, the ``groups`` header value contained a comma separated list of sites and groups.  Please update the ``groups`` header value of users to contain only a comma separated list of groups the user belongs to.  Please see :ref:`crafter-studio-configure-headers-based-auth` for the updated configuration.
 
+   #. The default search engine used is now Elasticsearch, see :ref:`why-elasticsearch` for more information.
 
-#. After upgrading your Crafter CMS install, you will need to update some site configurations depending on the previous version you were running.
+Let's begin upgrading your Crafter CMS install.
 
+-------------------
+Upgrade Crafter CMS
+-------------------
+
+#. In your Crafter CMS 3.0.x install, copy the data folder ``CRAFTER_3.0.x_INSTALLATION/data``
+#. Download the Crafter CMS 3.1.0 bundle version and extract the files
+#. Paste the data folder copied from the first step to your new ``CRAFTER_3.1.0_INSTALLATION`` install folder
+#. Migrate sites to Elasticsearch (recommended) by following this guide: :ref:`migrate-site-to-elasticsearch`. You can continue using Crafter Search and Solr as the search engine, by following :ref:`using-crafter-search-and-solr`
 
 After upgrading your Crafter CMS install, update the following site configurations depending on the previous version you were running:
 
