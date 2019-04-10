@@ -7,6 +7,8 @@ Migrating a site from Solr to Elasticsearch
 When upgrading to Crafter CMS 3.1 you can choose to keep existing sites without changes or update your code to use 
 Elasticsearch. For new sites it is highly recommended to always use Elasticsearch instead of Solr.
 
+.. _using-crafter-search-and-solr:
+
 -----------------------------
 Using Crafter Search and Solr
 -----------------------------
