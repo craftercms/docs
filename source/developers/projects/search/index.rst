@@ -14,7 +14,7 @@ Crafter Search
 Crafter Search is the search facade for Crafter CMS. Crafter Search proxies the real search engine deployed behind it.
 
 .. note::
-    Crafter Search is supported for backwards compatibility.  Crafter CMS's default search engine is Elasticsearch.
+    Crafter Search is supported for backward compatibility.  Crafter CMS's default search engine is Elasticsearch.
 
 -----------
 Source Code
