@@ -15,6 +15,7 @@ This section focuses on how to customize and extend Crafter CMS.  It covers the 
       content-inheritance
       asset-processing
       templates
+      search-elasticsearch
       search-solr
       targeting
       redirect
