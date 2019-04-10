@@ -4,65 +4,11 @@
 Instructions for Upgrading to Crafter CMS 3.1.0 from a previous 3.0.x version
 =============================================================================
 
-Upgrade your Crafter CMS install, by following the upgrade guide :ref:`upgrading-craftercms`.
+This section details how to upgrade your Crafter CMS installation.
 
---------------------
-Upgrading Solr Cores
---------------------
-
-Because Elasticsearch is now the default search engine, the Deployer targets need to be updated to include a new 
-parameter for using Solr:
-
-.. code-block:: bash
-  :linenos:
-
-  curl --request POST \
-    --url http://localhost:9191/api/1/target/create \
-    --header 'content-type: application/json' \
-    --data '{
-    "replace": true,
-    "site_name": "SITE_NAME",
-    
-     ... existing configuration ...
-    
-     "use_crafter_search": true
-  }'
-
-.. include:: /includes/upgrading-to-solr-7.rst
-
---------------------------
-Creating Authoring Targets
---------------------------
-
-Starting with Crafter CMS 3.1.0, Studio will use Elasticsearch to index all sites to provide the new features in the
-authoring search. For all existing sites a new target must be created using the Deployer API:
-
-#.  Create the new target:
-    
-    .. code-block:: bash
-      :linenos:
-
-      curl --request POST \
-        --url http://localhost:9191/api/1/target/create \
-        --header 'content-type: application/json' \
-        --data '{
-        "env": "authoring",
-        "site_name": "SITE_NAME",
-        "template_name": "authoring",
-        "repo_url": "INSTALL_DIR/data/repos/sites/SITE_NAME/sandbox"
-      }'
-
-#.  Index all content
-    
-    .. code-block:: bash
-      :linenos:
-    
-      curl --request POST \
-        --url http://localhost:9191/api/1/target/deploy/authoring/SITE_NAME \
-        --header 'content-type: application/json' \
-        --data '{
-        "reprocess_all_files": true
-      }'
+----------------
+Before Upgrading
+----------------
 
 Please note the following when upgrading to Crafter CMS 3.1 from 3.0:
 
@@ -93,8 +39,82 @@ Please note the following when upgrading to Crafter CMS 3.1 from 3.0:
 
 #. The headers based authentication configuration has been updated. The ``groups`` header value should just be a comma separated list of groups that a user belongs to.  In the previous version, 3.0.x, the ``groups`` header value contained a comma separated list of sites and groups.  Please update the ``groups`` header value of users to contain only a comma separated list of groups the user belongs to.  Please see :ref:`crafter-studio-configure-headers-based-auth` for the updated configuration.
 
+#. The default search engine used is now Elasticsearch, see :ref:`why-elasticsearch` for more information.
 
 #. After upgrading your Crafter CMS install, you will need to update some site configurations depending on the previous version you were running.
+
+
+Let's begin upgrading your Crafter CMS install.
+
+-------------------
+Upgrade Crafter CMS
+-------------------
+
+#. Review the release notes for the version you are upgrading to, which contains specific information on the changes that have been made and how it may affect you when upgrading to that specific version.
+#. In your Crafter CMS 3.0.x install, copy the data folder ``CRAFTER_3.0.x_INSTALLATION/data``
+#. Download the Crafter CMS 3.1.0 bundle version and extract the files
+#. Paste the data folder copied from the first step to your new ``CRAFTER_3.1.0_INSTALLATION`` install folder
+#. Migrate sites to Elasticsearch (recommended) by following this guide: :ref:`migrate-site-to-elasticsearch`. You can continue using Crafter Search and Solr as the search engine, by following :ref:`using-crafter-search-and-solr`
+#. Start your upgraded Crafter CMS, and verify that the authoring and delivery environments are functioning as intended.
+
+
+--------------------
+Upgrading Solr Cores
+--------------------
+
+Because Elasticsearch is now the default search engine, the Deployer targets need to be updated to include a new
+parameter for using Solr:
+
+.. code-block:: bash
+  :linenos:
+
+  curl --request POST \
+    --url http://localhost:9191/api/1/target/create \
+    --header 'content-type: application/json' \
+    --data '{
+    "replace": true,
+    "site_name": "SITE_NAME",
+
+     ... existing configuration ...
+
+     "use_crafter_search": true
+  }'
+
+.. include:: /includes/upgrading-to-solr-7.rst
+
+--------------------------
+Creating Authoring Targets
+--------------------------
+
+Starting with Crafter CMS 3.1.0, Studio will use Elasticsearch to index all sites to provide the new features in the
+authoring search. For all existing sites a new target must be created using the Deployer API:
+
+#.  Create the new target:
+
+    .. code-block:: bash
+      :linenos:
+
+      curl --request POST \
+        --url http://localhost:9191/api/1/target/create \
+        --header 'content-type: application/json' \
+        --data '{
+        "env": "authoring",
+        "site_name": "SITE_NAME",
+        "template_name": "authoring",
+        "repo_url": "INSTALL_DIR/data/repos/sites/SITE_NAME/sandbox"
+      }'
+
+#.  Index all content
+
+    .. code-block:: bash
+      :linenos:
+
+      curl --request POST \
+        --url http://localhost:9191/api/1/target/deploy/authoring/SITE_NAME \
+        --header 'content-type: application/json' \
+        --data '{
+        "reprocess_all_files": true
+      }'
 
 
 After upgrading your Crafter CMS install, update the following site configurations depending on the previous version you were running:
