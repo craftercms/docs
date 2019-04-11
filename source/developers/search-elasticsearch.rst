@@ -18,7 +18,7 @@ Using Elasticsearch it is possible to use aggregations to provide a faceted sear
 results based on one or more fields.
 
 .. note:: 
-  Elasticsearch offers a give variety of aggregations that can be used depending on the type of the fields in
+  Elasticsearch offers a variety of aggregations that can be used depending on the type of the fields in
   your model or the requirements in the UI to display the data, for detailed information visit the 
   `official documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html>`_
 
