@@ -89,7 +89,7 @@ Delivery
    activities/delivery/change-ports-on-your-delivery-install.rst
    activities/delivery/configure-apache-vhost.rst
    activities/delivery/setup-site-for-delivery.rst
-   activities/delivery/setup-serverless-delivery.rst
+   activities/delivery/setup-serverless-site.rst
 
 *************************
 Subsystems Administration
