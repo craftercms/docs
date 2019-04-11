@@ -46,8 +46,8 @@ Places Search Indexing Can Get Hung Up
 Reviewing Log Files
 -------------------
 
-In order to discard the possible failures described in the previous section you should review the
-following log files for each one of the components:
+In order to figure out which of the possible failures described in the previous section happened,
+you should review the following log files for each one of the components:
 
 +-------------------+-------------------------------------------------+
 || Component        || Log Files                                      |
