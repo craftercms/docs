@@ -147,8 +147,51 @@ CloudFront Distribution
       :alt: Serverless Site - CloudFront ID and Domain Name
       :align: center
 
+-----------------------------------------------------------
+Step 3: Create the AWS Target in Authoring Crafter Deployer
+-----------------------------------------------------------
+
+The Deployer target you're about to create will allow the authoring Deployer to push the content to the S3 bucket and 
+index the files in the AWS Elasticsearch any time you do a publish in the site.
+
+#. Copy the following content in a file in the authoring node/server. Please also edit the values in ``<>``.
+
+   .. code-block:: yaml
+
+     {
+        "env": "aws",
+        "site_name": "<SITE_NAME>",
+        "template_name": "aws-s3",
+        "local_repo_path": "${env:CRAFTER_DATA_DIR}/repos/aws/<SITE_NAME>",
+        "elastic_search_url": "<ELASTICSEARCH_URL>",
+        "repo_url": "${env:CRAFTER_DATA_DIR}/repos/sites/<SITE_NAME>/published",
+        "aws": {
+          "region": "<AWS_REGION>",
+          "access_key": "<AWS_ACCESS_KEY>",
+          "secret_key": "<AWS_SECRET_KEY",
+          "s3": {
+            "url": "s3://<BUCKET_NAME>/<SITES_ROOT>/{siteName}"
+          },
+          "distribution": {
+            "url": "http://<CLOUDFRONT_DISTRIBUTION_DOMAIN_NAME>",
+            "ids": [ "<CLOUDFRONT_DISTRIBUTION_ID>" ]
+          }
+        },
+        "delay": 10
+     }
+
+#. Call the Deployer create target API with the file you created in the previous step as the request body. You can do
+   do this in ``curl`` with the following command (replace <> for the actual filename):
+
+   .. code-block:: bash
+
+      curl --request POST --url http://localhost:9191/api/1/target/create --header 'content-type: application/json' --data '@<CREATE_TARGET_REQUEST_BODY_FILE>'
+
+#. If you ``tail`` the Deployer log file (``AUTHORING_INSTALL_DIR/logs/deployer/crafter-deployer.out``), after a minute,
+   you should see indications that the site was uploaded to S3 and the files were indexed.
+
 -----------------------------------------------------------------
-Step 3: Configure the Delivery Crafter Engine for Serverless Mode
+Step 4: Configure the Delivery Crafter Engine for Serverless Mode
 -----------------------------------------------------------------
 
 #. Edit the services override file to enable the Serverless S3 mode
@@ -210,51 +253,8 @@ Step 3: Configure the Delivery Crafter Engine for Serverless Mode
 
       export ES_URL=https://search-craftercms-sites-kvbatu2vr4nioxpwmktlpvq3jm.us-east-1.es.amazonaws.com
 
------------------------------------------------------------
-Step 4: Create the AWS Target in Authoring Crafter Deployer
------------------------------------------------------------
-
-The Deployer target you're about to create will allow the authoring Deployer to push the content to the S3 bucket and 
-index the files in the AWS Elasticsearch any time you do a publish in the site.
-
-#. Copy the following content in a file in the authoring node/server. Please also edit the values in ``<>``.
-
-   .. code-block:: yaml
-
-     {
-        "env": "aws",
-        "site_name": "<SITE_NAME>",
-        "template_name": "aws-s3",
-        "local_repo_path": "${env:CRAFTER_DATA_DIR}/repos/aws/<SITE_NAME>",
-        "elastic_search_url": "<ELASTICSEARCH_URL>",
-        "repo_url": "${env:CRAFTER_DATA_DIR}/repos/sites/<SITE_NAME>/published",
-        "aws": {
-          "region": "<AWS_REGION>",
-          "access_key": "<AWS_ACCESS_KEY>",
-          "secret_key": "<AWS_SECRET_KEY",
-          "s3": {
-            "url": "s3://<BUCKET_NAME>/<SITES_ROOT>/{siteName}"
-          },
-          "distribution": {
-            "url": "http://<CLOUDFRONT_DISTRIBUTION_DOMAIN_NAME>",
-            "ids": [ "<CLOUDFRONT_DISTRIBUTION_ID>" ]
-          }
-        },
-        "delay": 10
-     }
-
-#. Call the Deployer create target API with the file you created in the previous step as the request body. You can do
-   do this in ``curl`` with the following command (replace <> for the actual filename):
-
-   .. code-block:: bash
-
-      curl --request POST --url http://localhost:9191/api/1/target/create --header 'content-type: application/json' --data '@<CREATE_TARGET_REQUEST_BODY_FILE>'
-
-#. If you ``tail`` the Deployer log file (``AUTHORING_INSTALL_DIR/logs/deployer/crafter-deployer.out``), after a minute,
-   you should see indications that the site was uploaded to S3 and the files were indexed.
-
 ------------------------------
-Step 4: Test the Delivery Site
+Step 5: Test the Delivery Site
 ------------------------------
 
 #. Start the delivery environment: ``DELIVERY_INSTALL_DIR/bin/startup.sh``
