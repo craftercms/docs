@@ -96,19 +96,12 @@ Configure Ports
 Configure Crafter Studio: Crafter Deployer URL
 ----------------------------------------------
 
-``$CATALINA_HOME/shared/classes/crafter/studio/extension/studio-config-override.yaml``
+To set the Deployer URL, simply change the Deployer port in the ``crafter-setenv.sh`` file.
 
-.. code-block:: yaml
+``CRAFTER/bin/crafter-setenv.sh``
 
-  ############################################################
-  ##                    Preview Deployer                    ##
-  ############################################################
-  # Default preview deployer URL (can be overridden per site)
-  studio.preview.defaultPreviewDeployerUrl: http://HOST:PORT/api/1/target/deploy/{siteEnv}/{siteName}
-  # Default preview create target URL (can be overridden per site)
-  studio.preview.createTargetUrl: http://HOST:PORT/api/1/target/upsert
-  # Default preview delete target URL (can be overridden per site)
-  studio.preview.deleteTargetUrl: http://HOST:PORT/api/1/target/delete-if-exists/{siteEnv}/{siteName}
+.. code-block:: bash
+
+  export DEPLOYER_PORT=${DEPLOYER_PORT:="9191"}
 
 |
-
