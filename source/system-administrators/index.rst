@@ -74,7 +74,7 @@ Authoring
    :titlesonly:
 
    activities/authoring/authoring-env-performance-tuning.rst
-   activities/authoring/change-ports-on-your-auth-install.rst
+   activities/authoring/change-hosts-ports-on-your-auth-install.rst
    activities/authoring/staging-env.rst
    activities/sync-studio-database-with-repo.rst
 
@@ -86,7 +86,7 @@ Delivery
    :maxdepth: 1
    :titlesonly:
 
-   activities/delivery/change-ports-on-your-delivery-install.rst
+   activities/delivery/change-hosts-ports-on-your-delivery-install.rst
    activities/delivery/configure-apache-vhost.rst
    activities/delivery/setup-site-for-delivery.rst
    activities/delivery/setup-serverless-site.rst
