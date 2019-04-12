@@ -128,7 +128,7 @@ This step will change depending on the technology being used to display all info
 or a SPA using Angular, React or Vue. As an example we will use Handlebars templates that will be rendered using
 jQuery.
 
-.. code-block:: javascript
+.. code-block:: guess
   :linenos:
   :caption: Search result page templates
   
