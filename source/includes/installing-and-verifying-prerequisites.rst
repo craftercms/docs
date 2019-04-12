@@ -16,7 +16,6 @@ run the following command at the command prompt and make sure that the version d
     java -version
 
 |
-|
 
 The command above should output something like this:
 
@@ -38,7 +37,6 @@ To check the value set for JAVA_HOME, enter the following command at the command
     env | grep JAVA_HOME
 
 |
-
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 How to set the JAVA_HOME environment variable
