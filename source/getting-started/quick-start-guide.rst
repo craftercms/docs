@@ -18,8 +18,6 @@ Installing and Verifying Prerequisites
 
 .. include:: /includes/installing-and-verifying-prerequisites.rst
 
-|
-
 .. _installing-crafter-cms-from zip:
 
 ------------------------------------------------
@@ -65,9 +63,6 @@ Starting Crafter CMS Using the Startup Script
 
           ./shutdown.sh
 
-
-|
-
 .. _open-crafter-studio:
 
 -------------------
@@ -79,8 +74,6 @@ In your browser, go to
 .. code-block:: none
 
    http://localhost:8080/studio
-
-|
 
 * Login with the following:
 
@@ -109,8 +102,6 @@ To create the archives(``*.tar.gz``) for installing Crafter CMS, the following m
 
         git clone https://github.com/craftercms/craftercms.git
 
-   |
-
 #. Build a deployable bundle using the Gradle Environment Builder to generate the archives ``crafter-cms-authoring.tar.gz`` inside the *bundle* folder
 
     .. code-block:: bash
@@ -120,10 +111,6 @@ To create the archives(``*.tar.gz``) for installing Crafter CMS, the following m
 #. Unpack the file (``crafter-cms-authoring.tar.gz``) into any directory.  You may now follow the instructions listed above :ref:`Start the Crafter CMS Server using the startup script <start-crafter-cms-server-startup-script>` to start using Crafter CMS
 
 For more details on using the Gradle environment builder, please review: https://github.com/craftercms/craftercms/blob/master/README.md
-
-
-|
-|
 
 .. _running-craftercms-in-docker:
 
@@ -137,7 +124,12 @@ To run Crafter CMS in a Docker container using Docker Compose, make sure the fol
 * Docker Compose (https://docs.docker.com/compose/install/)
 * Git 2.x+
 
-For Windows and Mac, we recommend you give Docker Desktop at least 8GB of RAM and 4 CPUs. To do this, go to Docker Desktop's Settings > Advanced, and then change the resource limits.
+**For Windows and Mac, we recommend you give Docker Desktop at least 8GB of RAM and 4 CPUs. To do this, go to Docker Desktop's Settings > Advanced, and then change the resource limits.**
+
+.. image:: /_static/images/quick-start/docker-advanced-settings.png
+    :alt: Docker Desktop Advanced Settings
+    :scale: 50%
+    :align: center
 
 #. Clone the Crafter CMS Docker Compose repo from GitHub
 
@@ -156,4 +148,4 @@ For Windows and Mac, we recommend you give Docker Desktop at least 8GB of RAM an
 
 You may now follow the instructions listed above: :ref:`Open Crafter Studio<open-crafter-studio>` to start using Crafter CMS.
 
-For more information on Crafter CMS Docker Compose, please see: https://github.com/craftercms/docker-compose/blob/develop/README.md
+For more information on Crafter CMS Docker Compose, please see: https://github.com/craftercms/docker-compose.
