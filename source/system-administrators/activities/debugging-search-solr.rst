@@ -1,8 +1,13 @@
-.. _debugging_search:
+:orphan:
 
-=======================
-Debugging Search Issues
-=======================
+.. document does not appear in any toctree, this file is referenced
+   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
+
+.. _debugging-search-solr:
+
+===========================================
+Debugging Search Issues with Crafter Search
+===========================================
 
 ----------------------------
 Overview of Search Mechanics
@@ -41,8 +46,8 @@ Places Search Indexing Can Get Hung Up
 Reviewing Log Files
 -------------------
 
-In order to discard the possible failures described in the previous section you should review the
-following log files for each one of the components:
+In order to figure out which of the possible failures described in the previous section happened,
+you should review the following log files for each one of the components:
 
 +-------------------+-------------------------------------------------+
 || Component        || Log Files                                      |
@@ -71,54 +76,32 @@ you should use the Solr Admin Console to debug the query used by Crafter Engine 
 
 More information about Solr Admin Console & query syntax can be found `here <http://lucene.apache.org/solr/6_6_0/quickstart.html#searching>`_.
 
---------------------------------------------------------------
-Configure Crafter Deployer: Deployer Port & Crafter Search URL
---------------------------------------------------------------
+---------------
+Configure Ports
+---------------
 
-``CRAFTER/bin/crafter-deployer/config/application.yaml``
+``CRAFTER/bin/crafter-setenv.sh``
 
-.. code-block:: yaml
+.. code-block:: bash
 
-  server:
-    port: 9191
+  export DEPLOYER_PORT=${DEPLOYER_PORT:="9191"}
+  export SOLR_HOST=${SOLR_HOST:="localhost"}
+  export SOLR_PORT=${SOLR_PORT:="8694"}
+  export TOMCAT_HOST=${TOMCAT_HOST:="localhost"}
+  export TOMCAT_HTTP_PORT=${TOMCAT_HTTP_PORT:="8080"}
 
-``CRAFTER/bin/crafter-deployer/config/base-target.yaml``
-
-.. code-block:: yaml
-
-  search:
-    serverUrl: http://HOST:PORT/crafter-search
+|
 
 ----------------------------------------------
 Configure Crafter Studio: Crafter Deployer URL
 ----------------------------------------------
 
-``$CATALINA_HOME/shared/classes/crafter/studio/extension/studio-config-override.yaml``
+To set the Deployer URL, simply change the Deployer port in the ``crafter-setenv.sh`` file.
 
-.. code-block:: yaml
+``CRAFTER/bin/crafter-setenv.sh``
 
-  studio:
-    preview:
-      defaultPreviewDeployerUrl: http://HOST:PORT/api/1/target/deploy/preview/{siteName}
-      createTargetUrl: http://HOST:PORT/api/1/target/create
-      deleteTargetUrl: http://HOST:PORT/api/1/target/delete/{siteEnv}/{siteName}
+.. code-block:: bash
 
---------------------------------------------
-Configure Crafter Engine: Crafter Search URL
---------------------------------------------
+  export DEPLOYER_PORT=${DEPLOYER_PORT:="9191"}
 
-``$CATALINA_HOME/shared/classes/crafter/engine/extension/server-config.properties``
-
-.. code-block:: guess
-
-  crafter.engine.search.server.url=http://HOST:PORT/crafter-search
-
-----------------------------------
-Configure Crafter Search: Solr URL
-----------------------------------
-
-``$CATALINA_HOME/shared/classes/crafter/search/extension/server-config.properties``
-
-.. code-block:: guess
-
-  crafter.search.solr.server.url=http://HOST:PORT/solr
+|

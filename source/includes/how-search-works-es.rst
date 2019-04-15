@@ -1,8 +1,8 @@
 ^^^^
 Flow
 ^^^^
-.. image:: /_static/images/search/search-mechanics-solr.png
-   :alt: Crafter Studio Search Mechanics with Crafter Search
+.. image:: /_static/images/search/search-mechanics-es.png
+   :alt: Crafter Studio Search Mechanics
    :align: center
 
 Indexing Process:
@@ -15,14 +15,13 @@ Indexing Process:
 	  and the latest commit in the ``sandbox``.
 	* On publish, Studio moves the changes to ``published`` and the Deployer in delivery pulls the changes.
 
-#. A processor of the target in the Deployer sends a request to the search engine with the XML or content to index.
+#. A processor of the target in the Deployer sends a request to Elasticsearch with the XML or content to index.
 
-#. Crafter Search then generates a Solr document based on the received XML/content and sends it to Solr
-   for indexing.
+
 
 Querying Process:
 ^^^^^^^^^^^^^^^^^
 
 A. The end user makes a page or service request to Crafter Engine.
-B. Crafter Engine components requiring queries issue a query to Crafter Search.
-C. Crafter Search applies simple rules/additions to the query and issues the query to Solr.
+B. Crafter Engine components requiring queries issue a query to Elasticsearch where simple filters will be added to the query and then executed.
+
