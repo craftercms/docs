@@ -71,20 +71,3 @@ Configure Deployer Port & Elasticsearch Port
   export ES_PORT=${ES_PORT:="9201"}
 
 |
-
-----------------------------------------------
-Configure Crafter Studio: Crafter Deployer URL
-----------------------------------------------
-
-To set the Deployer URL, simply change the Deployer port in the ``crafter-setenv.sh`` file.
-
-``CRAFTER/bin/crafter-setenv.sh``
-
-.. code-block:: bash
-
-  export DEPLOYER_PORT=${DEPLOYER_PORT:="9191"}
-
-|
-
-
-
