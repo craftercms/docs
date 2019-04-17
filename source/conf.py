@@ -138,7 +138,9 @@ html_theme_options = {
     "analytics_id": "UA-40677244-9",
     "topbar_items": [
         {"text":"Crafter CMS Site", "link":"//craftercms.org"}
-    ]
+    ],
+    "has_sidebar_top_text": True,
+    "sidebar_top_text": "&#x26A0; We are currently updating this version of our documentation to match this release. Please bear with us."
 }
 
 # Adding additional css files...
