@@ -1,6 +1,6 @@
-================================
-The Crafter CMS |version| Manual
-================================
+===================================
+Crafter CMS |version| Documentation
+===================================
 
 .. default-domain:: craftercms
 
