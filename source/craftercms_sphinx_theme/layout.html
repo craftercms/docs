@@ -130,6 +130,11 @@
         </a>
       </header>
       {% endif %}
+      {%- if theme_has_sidebar_top_text %}
+      <section class="sidebartext">
+        <p>{{ theme_sidebar_top_text }}</p>
+      </section>
+      {%- endif %}
       {%- if builder != 'singlehtml' %}
       <section class="search"role="search">
         <form action="{{ pathto('search') }}" method="get">
