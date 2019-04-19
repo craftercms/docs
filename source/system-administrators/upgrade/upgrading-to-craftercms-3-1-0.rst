@@ -34,6 +34,8 @@ There are a few things to note when upgrading to Crafter CMS 3.1 from 3.0:
       For example, if user ``john`` is a member of group ``Developer`` (one of the default groups) in the site ``mysite``, after upgrading, user ``john`` will be a member of group ``mysite_developer``.
 
 
+   #. Studio authentication now uses a chain, with the internal database as the Studio default authentication.  For more information, see :ref:`configuring-studio-security`
+
    #. The LDAP authentication configuration has been updated.  The attribute ``siteId`` has been removed and is no longer needed since site membership of a user is now determined by group membership.  Please see :ref:`crafter-studio-configure-ldap` for the updated configuration.
 
    #. The headers based authentication configuration has been updated. The ``groups`` header value should just be a comma separated list of groups that a user belongs to.  In the previous version, 3.0.x, the ``groups`` header value contained a comma separated list of sites and groups.  Please update the ``groups`` header value of users to contain only a comma separated list of groups the user belongs to.  Please see :ref:`crafter-studio-configure-headers-based-auth` for the updated configuration.
@@ -51,7 +53,7 @@ Upgrade Crafter CMS
 #. Download the Crafter CMS 3.1.0 bundle version and extract the files
 #. Paste the data folder copied from the first step to your new ``CRAFTER_3.1.0_INSTALLATION`` install folder
 #. Migrate sites to Elasticsearch (recommended) by following this guide: :ref:`migrate-site-to-elasticsearch`. You can continue using Crafter Search and Solr as the search engine, by following :ref:`using-crafter-search-and-solr`
-#. Start your upgraded Crafter CMS, and verify that the authoring and delivery environments are functioning as intended.
+#. Start your upgraded Crafter CMS, depending on your installation, follow the steps below as needed then verify that the authoring and delivery environments are functioning as intended.
 
 
 --------------------
