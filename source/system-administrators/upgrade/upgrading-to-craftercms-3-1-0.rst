@@ -40,7 +40,14 @@ There are a few things to note when upgrading to Crafter CMS 3.1 from 3.0:
 
    #. The headers based authentication configuration has been updated. The ``groups`` header value should just be a comma separated list of groups that a user belongs to.  In the previous version, 3.0.x, the ``groups`` header value contained a comma separated list of sites and groups.  Please update the ``groups`` header value of users to contain only a comma separated list of groups the user belongs to.  Please see :ref:`crafter-studio-configure-headers-based-auth` for the updated configuration.
 
-   #. The default search engine used is now Elasticsearch, see :ref:`why-elasticsearch` for more information.
+   #. The default search engine for Crafter CMS is now Elasticsearch as opposed to Solr, learn more at :ref:`why-elasticsearch`.
+
+      * If you're happy with Solr, you can keep using it as it is fully supported. However, please bear in mind:
+
+         * New features, like GraphQL support, require Elasticsearch.
+         * Studio requires Elasticsearch for authoring search, so that will get installed and used regardless.
+
+      * If you'd like to switch to Elasticsearch, please read :ref:`migrate-site-to-elasticsearch`.
 
 Let's begin upgrading your Crafter CMS install.
 
