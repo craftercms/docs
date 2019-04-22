@@ -25,6 +25,57 @@ Clear index through API
 
 To delete any existing content in the index through API, send the following CURL command:
 
+.. WARNING::
+  This action will delete all content matching the query, review carefully the index & the site name before executing 
+  the command.
+
+Elasticsearch
+"""""""""""""
+
+.. code-block:: xml
+
+  curl "http://{esHost}:{esPort}/{siteName}/_doc/_delete_by_query" -H "Content-Type: application/json" -d "{ "query": { "match_all": {} } }"
+
+|
+
++----------------------+-------------------------------------------+----------------------------+
+|| Parameter Name      || Description                              || Example                   |
++======================+===========================================+============================+
+|| esHost              || Elasticsearch hostname                   || localhost                 |
++----------------------+-------------------------------------------+----------------------------+
+|| esPort              || Elasticsearch port                       || 9201                      |
+||                     ||                                          || (default is 9201)         |
++----------------------+-------------------------------------------+----------------------------+
+|| siteName            || The name of the site                     || my-site                   |
++----------------------+-------------------------------------------+----------------------------+
+
+After sending the CURL command, you will then get a response like this:
+
+.. code-block:: json
+
+  {
+    "took":34,
+    "timed_out":false,
+    "total":31,
+    "deleted":31,
+    "batches":1,
+    "version_conflicts":0,
+    "noops":0,
+    "retries":{
+      "bulk":0,
+      "search":0
+    },
+    "throttled_millis":0,
+    "requests_per_second":-1.0,
+    "throttled_until_millis":0,
+    "failures":[]
+  }
+
+|
+
+Solr
+""""
+
 .. code-block:: xml
 
     curl "http://{solrHost}:{solrPort}/solr/{siteName}/update/?commit=true" -H "Content-Type: text/xml" -d "<delete><query>*:*</query></delete>"
@@ -61,6 +112,12 @@ Delete index files
 ^^^^^^^^^^^^^^^^^^
 
 To delete any existing content in the index by deleting the index files, do the following:
+
+.. NOTE::
+  It is not recommended to modify index files directly for Elasticsearch, specially in a clustered environment.
+
+Solr
+""""
 
 #. Make sure Tomcat and Solr have been stopped.
 #. Delete the index ``data`` folder for the site you are reindexing (*INSTALL_DIRECTORY/data/indexes/{siteName}/data/*).
