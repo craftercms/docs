@@ -29,8 +29,10 @@ The first step is to create a new index on Elasticsearch where you can index the
      
       SITE_NAME   SITE_NAME_v1   - - -
 
-#. Download the appropriate settings for the environment and Crafter CMS version being updated, for example the latest
-   version can be found `here <https://github.com/craftercms/search/tree/master/crafter-search-elasticsearch/src/main/resources/crafter/elasticsearch>`_
+#. Download the Elasticsearch settings appropriate for the index. If the index is an authoring index (it has an
+   -authoring suffix), then use ``authoring-index-settings.json``. If its any other index (it has a -preview suffix
+   or no suffix), then use ``default-index-settings.json``. The latest version of the settings can be found 
+   `here <https://github.com/craftercms/search/tree/master/crafter-search-elasticsearch/src/main/resources/crafter/elasticsearch>`_
 #. Create the new index using the next version and the settings file:
    
    .. code-block:: bash
