@@ -10,6 +10,10 @@ be needed.  This article shows you how to use the deployer to (re)index content 
 
 Reindexing the site content can be done using the reprocess feature in Crafter Deployer.
 
+.. NOTE::
+  The following guide is intended for environments that can have downtime during the process, for live environments
+  see :ref:`reindexing-content-in-prod`
+
 ------------------------------------------------
 Step 1: Delete any existing content in the index
 ------------------------------------------------
