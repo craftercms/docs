@@ -29,17 +29,14 @@ The first step is to create a new index on Elasticsearch where you can index the
      
       SITE_NAME   SITE_NAME_v1   - - -
 
-#. Find the appropriate settings for the environment and Crafter CMS version being updated, for example the latest
-   version can be found `here <https://github.com/craftercms/search/tree/develop/crafter-search-elasticsearch/src/main/resources/crafter/elasticsearch>`_
-#. Create the new index using the next version and the settings:
+#. Download the appropriate settings for the environment and Crafter CMS version being updated, for example the latest
+   version can be found `here <https://github.com/craftercms/search/tree/master/crafter-search-elasticsearch/src/main/resources/crafter/elasticsearch>`_
+#. Create the new index using the next version and the settings file:
    
    .. code-block:: bash
       :linenos:
    
-      curl -s -X PUT http://ES_HOST:ES_PORT/SITE_NAME_v2 -H 'Content-Type: application/json' -d '{ JSON_SETTINGS }'
-
-.. note::
-  You can also download the required settings file and use the reference to the file: ``curl ... -d '@filename'``
+      curl -s -X PUT http://ES_HOST:ES_PORT/SITE_NAME_v2 -H 'Content-Type: application/json' -d '@default-index-settings.json'
 
 ^^^^^^^^^^^^^^^^^^^^^^
 Step 2: Content freeze
