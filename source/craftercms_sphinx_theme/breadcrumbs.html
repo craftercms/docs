@@ -24,6 +24,12 @@
 {% set display_gitlab = True %}
 {% endif %}
 
+{% set myvariable = 'False' %}
+{% set myvariable_key = 'is-up-to-date' %}
+{% if check_meta and myvariable_key in meta %}
+    {%- set myvariable = meta.get(myvariable_key) %}
+{%- endif %}
+
 <nav class="breadcrumbs-container grid-x" aria-label="You are here:" role="navigation">
   {% block breadcrumbs %}
   <ul class="breadcrumbs primary">
@@ -67,5 +73,14 @@
       {% endif %}
     </li>
   </ul>
+    <div class="page-status">
+        {%- if myvariable == 'True' %}
+        <img src="{{ pathto('_static/img/Up-to-Date.png', 1) }}"
+             alt="Document Up to Date" />
+        {%- else %}
+        <img src="{{ pathto('_static/img/Under-Review.png', 1) }}"
+             alt="Document Under Review" />
+        {%- endif %}
+    </div>
   {% endblock %}
 </nav>
