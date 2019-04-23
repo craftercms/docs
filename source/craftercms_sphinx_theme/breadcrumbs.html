@@ -71,19 +71,16 @@
           <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow"> {{ _('View page source') }}</a>
         {% endif %}
       {% endif %}
-
-      <div align="right">
+    </li>
+  </ul>
+    <div class="page-status">
         {%- if myvariable == 'True' %}
-        <br>
         <img src="{{ pathto('_static/img/Up-to-Date.png', 1) }}"
              alt="Document Up to Date" />
         {%- else %}
-        <br>
         <img src="{{ pathto('_static/img/Under-Review.png', 1) }}"
              alt="Document Under Review" />
         {%- endif %}
-      </div>
-    </li>
-  </ul>
+    </div>
   {% endblock %}
 </nav>
