@@ -6594,6 +6594,8 @@ a.thumbnail {
   margin: auto;
   display: block; }
 
+
+/* New changes directly to css*/
 .right-nav{
     overflow: hidden;
 }
@@ -6605,15 +6607,11 @@ a.thumbnail {
 
 .right-nav ul li{
     float: right;
-    margin-bottom: 14px;
+    margin: 0 0 14px 10px;
 }
 
 .right-nav ul li.page-status img{
-    width:150px;
-}
-
-.right-nav ul li#google_translate_element{
-    margin-top: 4px;
+    width:158px;
 }
 
 .right-nav ul li#google_translate_element .goog-te-gadget .goog-te-gadget-simple{
