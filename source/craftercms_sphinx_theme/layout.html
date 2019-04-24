@@ -161,7 +161,20 @@
   <div id="content">
     {% include "breadcrumbs.html" %}
 
-	<div align="right" id="google_translate_element"></div>
+    <div class="right-nav" align="right">
+        <ul>
+            <li id="google_translate_element"></li>
+            <li class="page-status">
+                {%- if myvariable == 'True' %}
+                <img src="{{ pathto('_static/img/up-to-date.svg', 1) }}"
+                     alt="Document Up to Date" />
+                {%- else %}
+                <img src="{{ pathto('_static/img/under-review.svg', 1) }}"
+                     alt="Document Under Review" />
+                {%- endif %}
+            </li>
+        </ul>
+    </div>
 	<script type="text/javascript">
 		function googleTranslateElementInit() {
 	 	new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
