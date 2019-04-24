@@ -8,6 +8,12 @@
 {%- endif %}
 {%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
 
+{% set myvariable = 'False' %}
+{% set myvariable_key = 'is-up-to-date' %}
+{% if check_meta and myvariable_key in meta %}
+{%- set myvariable = meta.get(myvariable_key) %}
+{%- endif %}
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="{{ lang_attr }}" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="{{ lang_attr }}" > <!--<![endif]-->
