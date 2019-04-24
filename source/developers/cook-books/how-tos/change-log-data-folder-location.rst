@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Changing the Data and Logs Folder Location, Change Data Folder Location, Change Log Folder Location
 
 .. _change-log-data-folder-location:
@@ -18,5 +20,3 @@ The data folder and logs folder is by default located in **{Crafter-CMS-install-
         # Locations variables
         export CRAFTER_LOGS_DIR=${CRAFTER_LOGS_DIR:="$CRAFTER_ROOT/logs"}
         export CRAFTER_DATA_DIR=${CRAFTER_DATA_DIR:="$CRAFTER_ROOT/data"}
-
-

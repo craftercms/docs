@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _best-practice-loading-content-from-disk-vs-search-index:
 
 ===========================================================

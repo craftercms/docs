@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Use S3 to Store Assets
 
 .. _use-s3-to-store-assets:

@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Configuring Studio Security; Studio Security; Security
 
 .. _configuring-studio-security:

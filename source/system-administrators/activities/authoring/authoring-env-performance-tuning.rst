@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _authoring-env-performance-tuning.rst:
 
 ========================================
@@ -11,9 +13,9 @@ Server Requirements
 -------------------
 Minimum Installation (~1-10 concurrent users per site, ~10 sites)
 
-    * 8GB of RAM + 8GB Swap Space or Virtual Memory
-    * 4GB JVM Memory (-Xms 1G -Xmx 4G)
-    * 2 CPU Cores
+	* 8GB of RAM + 8GB Swap Space or Virtual Memory
+	* 4GB JVM Memory (-Xms 1G -Xmx 4G)
+	* 2 CPU Cores
 
 Medium Installations (~11-25 concurrent users per site, ~25 sites)
 

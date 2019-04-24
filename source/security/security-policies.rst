@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Crafter CMS Security Policies, Security, Security Policies
 
 .. _security:

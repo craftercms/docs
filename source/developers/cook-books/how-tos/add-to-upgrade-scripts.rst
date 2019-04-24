@@ -1,3 +1,4 @@
+:is-up-to-date: True
 
 .. _add-to-upgrade-scripts:
 

@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Quick Start Guide
 
 ..  _quick_start_guide:

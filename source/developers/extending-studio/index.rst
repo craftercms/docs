@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 ========================
 Extending Crafter Studio
 ========================

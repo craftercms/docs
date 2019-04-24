@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Assets
 
 ..  _content_authors_assets:

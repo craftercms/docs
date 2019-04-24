@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Targeting
 
 ..  _content_authors_targeting:

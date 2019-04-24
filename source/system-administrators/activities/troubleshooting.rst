@@ -1,3 +1,4 @@
+:is-up-to-date: True
 
 ===========================
 Troubleshooting Crafter CMS

@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. .. include:: /includes/unicode-checkmark.rst
 
 .. _crafter-profile-api-access_token-delete:

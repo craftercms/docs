@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: API; Crafter Core
 
 .. _crafter-core-api:

@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 
 .. index:: Use Box to Store Assets; Store Assets
 
