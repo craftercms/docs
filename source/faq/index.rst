@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _faq:
 
 .. index:: FAQ
@@ -10,14 +12,16 @@ FAQ
 What is Crafter CMS
 -------------------
 
-Crafter CMS is an open-source, Java-based, content management system for:
+Crafter CMS is a modern content management platform for building digital experience applications using:
 
-* Web applications (including React JS, Angular, Vue, HTML5)
-* API-based mobile apps (Crafter CMS is API-first)
-* Augmented and Virtual Reality applications based on A-Frame
+* SPA frameworks like React, Vue, and Angular
+* AR/VR applications using A-Frame
+* Native Mobile and Headless applications
+* HTML5 Websites using Bootstrap or other HTML frameworks
 
-Crafter CMS is designed for ease of development, flexibility, scalability and geographic distribution of independent delivery nodes. Crafter CMS is comprised of several independent, integrated components including: a core content repository, an authoring application for content editors/managers (Crafter Studio), a dynamic content delivery system (Crafter Engine), a user profile store and personalization server (Crafter Profile), a query/search server (Crafter Search) and a social content store and server (Crafter Social).
+Crafter is a dynamic CMS based on Git and supports DevOps processes for code and content. It is also a hybrid-headless, API-first (GraphQL, REST, in-process) CMS, and that allows developers to use their favorite UI frameworks and tools.
 
+Crafter CMS differentiates itself from existing CMSs with its architecture: microservices-based, serverless, elastic and planet-wide scalability. To learn more, see the :ref:`architecture`.
 
 ---------------------------------
 What do I need to run Crafter CMS

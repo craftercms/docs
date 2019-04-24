@@ -8,6 +8,12 @@
 {%- endif %}
 {%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
 
+{% set upToDate = 'True' %}
+{% set upToDate_key = 'is-up-to-date' %}
+{% if check_meta and upToDate_key in meta %}
+{%- set upToDate = meta.get(upToDate_key) %}
+{%- endif %}
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="{{ lang_attr }}" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="{{ lang_attr }}" > <!--<![endif]-->
@@ -165,7 +171,7 @@
         <ul>
             <li id="google_translate_element"></li>
             <li class="page-status">
-                {%- if myvariable == 'True' %}
+                {%- if upToDate == 'True' %}
                 <img src="{{ pathto('_static/img/up-to-date.svg', 1) }}"
                      alt="Document Up to Date" />
                 {%- else %}

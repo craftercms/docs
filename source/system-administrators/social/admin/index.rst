@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: System Administrators
 
 .. _social-admin-console:

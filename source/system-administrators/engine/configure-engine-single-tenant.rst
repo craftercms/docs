@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Single Tenant, Configuration; Crafter Engine Single Tenant
 
 .. _engine-site-configuration-single-tenant:

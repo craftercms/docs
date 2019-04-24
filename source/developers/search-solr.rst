@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _developer-search-solr:
 
 ================

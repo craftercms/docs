@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 
 ======================
 Preferences Management
@@ -160,4 +162,3 @@ custom properties will be ignored.
   :align: center
   :width: 75%
   :alt: Crafter Social new tenant preferences
-

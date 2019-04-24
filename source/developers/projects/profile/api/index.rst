@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: API; Crafter Profile
 
 .. _crafter-profile-api:
@@ -114,4 +116,3 @@ Monitoring
   monitoring/memory
   monitoring/status
   monitoring/version
-

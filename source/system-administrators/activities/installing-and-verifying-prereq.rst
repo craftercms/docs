@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Prerequisites, Verifying Prerequisites, Installing Prerequisites
 
 .. _installing-and-verifying-prerequisites:
@@ -30,4 +32,3 @@ To Install a Development Environment
 To install a development environment, see the section on installing Crafter CMS from the zip download, the section on installing Crafter CMS from archive built by the Gradle environment builder or running Crafter CMS in a Docker container in the :ref:`quick_start_guide`.
 
 To learn more about the developer workflow, see :ref:`devOps-workflow`.
-

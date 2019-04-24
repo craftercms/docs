@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: How to change hosts and ports on your Crafter CMS Delivery install; How to change ports
 
 .. _how-to-change-hosts-ports-on-your-crafter-delivery-install:

@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Projects; Crafter Search
 
 .. _crafter-search:
@@ -43,4 +45,3 @@ Configuration
 -------------
 
 To configure Crafter Search, please see :ref:`crafter-search-admin`
-

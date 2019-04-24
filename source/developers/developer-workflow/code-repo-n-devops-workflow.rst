@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _code-repo-and-devops-workflow:
 
 =================================

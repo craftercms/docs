@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Debugging Search; Search
 
 .. _debugging-search:

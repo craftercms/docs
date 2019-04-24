@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _basic-query-mechanics:
 
 =====================
@@ -236,5 +238,3 @@ You can find the interface for this service :javadoc_base_url:`HERE <engine/org/
     result.image = itemDom.queryValue("/component/targetedSlide//segment[contains(.,'" +  segment + "')]/../image")
 
     return result
-
-

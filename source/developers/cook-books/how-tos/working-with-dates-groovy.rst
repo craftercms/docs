@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _working-with-dates-in-groovy:
 
 ===========================================

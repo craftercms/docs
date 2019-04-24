@@ -1,10 +1,12 @@
+:is-up-to-date: True
+
 .. index:: Projects; Crafter CMS Docker Compose; Docker Compose
 
-.. _crafter-cms-docker-compose:
+.. _crafter-docker-compose:
 
-==========================
-Crafter CMS Docker Compose
-==========================
+======================
+Crafter Docker Compose
+======================
 
 Crafter CMS provides support for running Crafter CMS in Docker.  This project provides Docker compose files that allow you to run Docker containers for various Crafter CMS environments.
 

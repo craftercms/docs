@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-aws-s3-upload:
 
 =========

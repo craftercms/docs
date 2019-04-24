@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-social-api-context-preferences-email-config-get:
 
 =======================

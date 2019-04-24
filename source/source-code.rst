@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 ***********
 Source Code
 ***********
@@ -10,12 +12,15 @@ GitHub hosts `Crafter CMS <https://github.com/craftercms/>`_ and is made up of a
 
 The primary projects are:
 
+* :ref:`crafter-cms`
+* :ref:`crafter-commons`
 * :ref:`crafter-core`
+* :ref:`crafter-deployer`
+* :ref:`crafter-docker-compose`
 * :ref:`crafter-engine`
-* :ref:`crafter-studio`
 * :ref:`crafter-search`
+* :ref:`crafter-studio`
 * :ref:`crafter-profile`
 * :ref:`crafter-social`
-* :ref:`crafter-deployer`
 
 There are a number of additional projects within Crafter CMS that help complete it, including a project for this very documentation.

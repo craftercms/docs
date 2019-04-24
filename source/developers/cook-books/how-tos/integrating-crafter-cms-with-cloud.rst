@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Integrating Crafter CMS with cloud hosted developer platforms
 
 .. _integrating-crafter-cms-with-cloud-platform:
