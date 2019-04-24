@@ -90,14 +90,16 @@ For delivery environments:
       "replace": true
     }'
 
+.. note::
+  For a detailed list of parameters see :ref:`crafter-deployer-api-target-create`
+
 The create target operation will also create the new index in Elasticsearch.
 
 ^^^^^^^^^^^^^^^^^^^^^^
 Index all site content
 ^^^^^^^^^^^^^^^^^^^^^^
 
-If the target has scheduling enabled then the site content will be indexed automatically, if it is disabled you
-can execute the following command:
+To reindex all existing content execute the following command:
 
 .. code-block:: bash
   :linenos:
