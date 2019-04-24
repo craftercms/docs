@@ -6594,14 +6594,32 @@ a.thumbnail {
   margin: auto;
   display: block; }
 
-/*Custom changes on app.css directly*/
-.page-status {
-    width:100%;
+.right-nav{
+    overflow: hidden;
+}
+
+.right-nav ul{
+    list-style: none;
+    overflow: hidden;
+}
+
+.right-nav ul li{
+    float: right;
     margin-bottom: 14px;
 }
-.page-status img{
+
+.right-nav ul li.page-status img{
     width:150px;
 }
+
+.right-nav ul li#google_translate_element{
+    margin-top: 4px;
+}
+
+.right-nav ul li#google_translate_element .goog-te-gadget .goog-te-gadget-simple{
+    border-radius: 6px;
+}
+
 .sidebartext .currently-updating{
     width: 90%;
     margin: 17px auto 0 auto;
@@ -6610,6 +6628,7 @@ a.thumbnail {
     border: 1px solid #e0dcdc;
     border-radius: 3px;
 }
+
 .sidebartext .currently-updating p{
     margin-bottom: 0px;
     font-size: 13px;
@@ -6618,4 +6637,5 @@ a.thumbnail {
 /*table tbody*/
 .highlight-bash .highlighttable tbody{
     border: 1px solid #e0dcdc;
+    background-color: #f7f7f7;
 }
