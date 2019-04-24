@@ -160,41 +160,20 @@ Let's begin upgrading your Crafter CMS install.
 Upgrade Crafter CMS
 -------------------
 
-#. Review the release notes for the version you are upgrading to, which contains specific information on the changes that have been made and how it may affect you when upgrading to that specific version.
+#. Review the release notes for the version you are upgrading to, which contains specific information on the changes 
+   that have been made and how it may affect you when upgrading to that specific version.
 #. In your Crafter CMS 3.0.x install, copy the data folder ``CRAFTER_3.0.x_INSTALLATION/data``
 #. Download the Crafter CMS 3.1.0 bundle version and extract the files
 #. Paste the data folder copied from a previous step to your new ``CRAFTER_3.1.0_INSTALLATION`` install folder
-#. Migrate sites to Elasticsearch (recommended) by following this guide: :ref:`migrate-site-to-elasticsearch`. You can continue using Crafter Search and Solr as the search engine, by following :ref:`using-crafter-search-and-solr`
-#. Start your upgraded Crafter CMS, then follow the steps below for **Creating Authoring Targets** for all upgraded sites. If a site has not been migrated to Elasticsearch, follow the steps below **Upgrading Solr Cores**, then finally, verify that the authoring and delivery environments are functioning as intended.
+#. Migrate sites to Elasticsearch (recommended) by following this guide: :ref:`migrate-site-to-elasticsearch`. 
+   You can continue using Crafter Search and Solr as the search engine, by following :ref:`using-crafter-search-and-solr`
+#. Start your upgraded Crafter CMS, then follow the steps below for **Create Authoring Targets** for all upgraded sites. 
+   If a site has not been migrated to Elasticsearch, follow additionally the steps under **Updates for Solr**, then 
+   finally, verify that the authoring and delivery environments are functioning as intended.
 
-
---------------------
-Upgrading Solr Cores
---------------------
-
-Because Elasticsearch is now the default search engine, the Deployer targets need to be updated to include a new
-parameter for using Solr:
-
-.. code-block:: bash
-  :linenos:
-
-  curl --request POST \
-    --url http://localhost:9191/api/1/target/create \
-    --header 'content-type: application/json' \
-    --data '{
-    "replace": true,
-    "site_name": "SITE_NAME",
-
-     ... existing configuration ...
-
-     "use_crafter_search": true
-  }'
-
-.. include:: /includes/upgrading-to-solr-7.rst
-
---------------------------
-Creating Authoring Targets
---------------------------
+------------------------
+Create Authoring Targets
+------------------------
 
 Starting with Crafter CMS 3.1.0, Studio will use Elasticsearch to index all sites to provide the new features in the
 authoring search. For all existing sites a new target must be created using the Deployer API:
@@ -225,3 +204,44 @@ authoring search. For all existing sites a new target must be created using the 
         --data '{
         "reprocess_all_files": true
       }'
+
+----------------------------------------------
+Update the Index Format of the Preview Targets
+----------------------------------------------
+
+The preview Deployer targets in the Authoring environment need to be updated to include the new preview index format:
+
+#. Go to ``AUTHORING_INSTALL_DIR/data/deployer/targets``.
+#. For each target YAML file ending in ``-preview``, below the ``localRepoPath`` property, add the following property 
+   with the same indentation:
+
+   .. code-block:: yaml
+
+      search:
+        indexIdFormat: '%s-preview'
+
+----------------
+Updates for Solr
+----------------
+
+The following are updates **only** required if you're going to keep using Solr as your search engine.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enable Crafter Search in the Targets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You need to update the Authoring and Delivery Deployer targets to enable Crafter Search use:
+
+#. Go to ``CRAFTERCMS_INSTALL_DIR/data/deployer/targets``.
+#. For each target YAML file ending in ``-preview`` in case of Authoring, or in ``-default.yaml`` in case of Delivery, 
+   below the ``localRepoPath`` property, add the following property with the same indentation:
+
+   .. code-block:: yaml
+
+      crafterSearchEnabled: true
+
+^^^^^^^^^^^^^^^^^^
+Upgrade Solr Cores
+^^^^^^^^^^^^^^^^^^
+
+.. include:: /includes/upgrading-to-solr-7.rst
