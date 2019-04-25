@@ -138,8 +138,8 @@ Upgrade Crafter CMS
 #. Start your upgraded Crafter CMS, then follow the steps below for :ref:`create-authoring-targets` for all upgraded sites.
 
    * If a site has not been migrated to Elasticsearch, follow additionally the steps under :ref:`updates-for-solr`.
-   * If a site uses a default dependency resolver configuration file from a previous Crafter CMS installation version, follow the steps in :ref:`upgrading-site-configurations` to upgrade your dependency resolver configuration file,
-   * If a site has a customized dependency resolver configuration file, please read through :ref:`upgrading-site-configurations` and review your dependency resolver configuration file for any changes that may be required.
+   * If a site uses a default dependency resolver configuration file from a previous Crafter CMS installation version, consider deleting your dependency resolver configuration file and it will then use the default dependency resolver configuration file found in ``CRAFTER_3.1.0_INSTALLATION/data/repos/global/configuration/dependency/resolver-config.xml``
+   * If a site has a customized dependency resolver configuration file, please compare your dependency resolver configuration with the default dependency resolver file ``CRAFTER_3.1.0_INSTALLATION/data/repos/global/configuration/dependency/resolver-config.xml`` and make changes as required.
 
 #. Verify that the authoring and delivery environments are functioning as intended.
 
@@ -148,7 +148,6 @@ Upgrade Crafter CMS
 ------------------------
 Create Authoring Targets
 ------------------------
-
 Starting with Crafter CMS 3.1.0, Studio will use Elasticsearch to index all sites to provide the new features in the
 authoring search. For all existing sites a new target must be created using the Deployer API:
 
@@ -221,40 +220,3 @@ Upgrade Solr Cores
 ^^^^^^^^^^^^^^^^^^
 
 .. include:: /includes/upgrading-to-solr-7.rst
-
-
-.. _upgrading-site-configurations:
-
------------------------------
-Upgrading Site Configurations
------------------------------
-
-   All files in the folder ``/config/studio/search/`` are no longer used it can be completely removed.
-
-   In your dependency resolver configuration file ``/config/studio/dependency/resolver-config.xml``, replace the following
-   regular expressions:
-
-   - ``<find-regex>/static-assets/([^&lt;"'\)]+)</find-regex>`` with ``<find-regex>/static-assets/([^&lt;"'\)\?]+)</find-regex>``
-   - ``<path-pattern>/static-assets/([^&lt;"'\)]+)</path-pattern>`` with
-
-     .. code-block:: xml
-        :caption: /config/studio/dependency/resolver-config.xml
-
-              <path-pattern>/static-assets/([^&lt;"'\)]+)\.css</path-pattern>
-              <path-pattern>/static-assets/([^&lt;"'\)]+)\.js</path-pattern>
-              <path-pattern>/static-assets/([^&lt;"'\)]+)\.html</path-pattern>
-              <path-pattern>/static-assets/([^&lt;"'\)]+)\.xml</path-pattern>
-              <path-pattern>/static-assets/([^&lt;"'\)]+)\.json</path-pattern>
-              <path-pattern>/static-assets/([^&lt;"'\)]+)\.scss</path-pattern>
-              <path-pattern>/static-assets/([^&lt;"'\)]+)\.sass</path-pattern>
-              <path-pattern>/static-assets/([^&lt;"'\)]+)\.hbs</path-pattern>
-
-         - ``<find-regex>/templates/([^&lt;"]+)\.ftl</find-regex>`` with
-
-     .. code-block:: xml
-        :caption: /config/studio/dependency/resolver-config.xml
-
-              <pattern>
-                <find-regex>/templates/([^&lt;"]+)\.ftl</find-regex>
-              </pattern>
-
