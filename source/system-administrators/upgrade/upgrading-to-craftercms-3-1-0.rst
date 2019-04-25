@@ -138,7 +138,7 @@ Upgrade Crafter CMS
 #. Start your upgraded Crafter CMS, then follow the steps below for :ref:`create-authoring-targets` for all upgraded sites.
 
    * If a site has not been migrated to Elasticsearch, follow additionally the steps under :ref:`updates-for-solr`.
-   * If a site uses a default dependency resolver configuration file from a previous Crafter CMS installation version, consider deleting your dependency resolver configuration file and it will then use the default dependency resolver configuration file found in ``CRAFTER_3.1.0_INSTALLATION/data/repos/global/configuration/dependency/resolver-config.xml``
+   * If a site uses a default dependency resolver configuration file from a previous Crafter CMS installation version, consider deleting your dependency resolver configuration file and it will then use the default dependency resolver configuration with rules matching what's in this sample ``CRAFTER_3.1.0_INSTALLATION/data/repos/global/configuration/dependency/resolver-config.xml``
    * If a site has a customized dependency resolver configuration file, please compare your dependency resolver configuration with the default dependency resolver file ``CRAFTER_3.1.0_INSTALLATION/data/repos/global/configuration/dependency/resolver-config.xml`` and make changes as required.
 
 #. Verify that the authoring and delivery environments are functioning as intended.
