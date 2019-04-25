@@ -101,6 +101,8 @@ Images and Figures
 Image
 ^^^^^
 
+We recommend uploaded images be no wider than 500px.
+
 .. code-block:: rst
 
 	.. image:: /_static/images/admin-console-link.png

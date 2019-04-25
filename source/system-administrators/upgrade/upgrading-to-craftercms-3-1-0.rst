@@ -75,38 +75,6 @@ Starting with version 3.1.0, Crafter CMS has an upgrade manager that automatical
    If you are certain that one of those files is already up to date in your site, you can add the version tag with the
    latest value to prevent the upgrades from being applied to it.
 
-#. **Upgrading Site Configurations**
-
-   All files in the folder ``/config/studio/search/`` are no longer used it can be completely removed.
-
-   In your dependency resolver configuration file ``/config/studio/dependency/resolver-config.xml``, replace the following
-   regular expressions:
-
-   - ``<find-regex>/static-assets/([^&lt;"'\)]+)</find-regex>`` with ``<find-regex>/static-assets/([^&lt;"'\)\?]+)</find-regex>``
-   - ``<path-pattern>/static-assets/([^&lt;"'\)]+)</path-pattern>`` with
-
-     .. code-block:: xml
-        :caption: /config/studio/dependency/resolver-config.xml
-
-        <path-pattern>/static-assets/([^&lt;"'\)]+)\.css</path-pattern>
-        <path-pattern>/static-assets/([^&lt;"'\)]+)\.js</path-pattern>
-        <path-pattern>/static-assets/([^&lt;"'\)]+)\.html</path-pattern>
-        <path-pattern>/static-assets/([^&lt;"'\)]+)\.xml</path-pattern>
-        <path-pattern>/static-assets/([^&lt;"'\)]+)\.json</path-pattern>
-        <path-pattern>/static-assets/([^&lt;"'\)]+)\.scss</path-pattern>
-        <path-pattern>/static-assets/([^&lt;"'\)]+)\.sass</path-pattern>
-        <path-pattern>/static-assets/([^&lt;"'\)]+)\.hbs</path-pattern>
-
-   - ``<find-regex>/templates/([^&lt;"]+)\.ftl</find-regex>`` with
-
-     .. code-block:: xml
-        :caption: /config/studio/dependency/resolver-config.xml
-
-        <pattern>
-          <find-regex>/templates/([^&lt;"]+)\.ftl</find-regex>
-        </pattern>
-
-
 #. **Groups Update**
 
    Groups are now at the system level instead of per site.  As mentioned above, the Groups tool has been removed from |siteConfig| and is now in the Main Menu.  By default, Crafter CMS has the following groups available after a fresh install: ``system_admin``, ``site_admin``, ``site_author``, ``site_developer``, ``site_publisher``, and ``site_reviewer``.  Users added to the system_admin group has the role **system_admin** that has permissions to create users, create site, add users to groups, etc.  Users added to any of the default groups has permissions for all sites created in Studio.
@@ -167,9 +135,15 @@ Upgrade Crafter CMS
 #. Paste the data folder copied from a previous step to your new ``CRAFTER_3.1.0_INSTALLATION`` install folder
 #. Migrate sites to Elasticsearch (recommended) by following this guide: :ref:`migrate-site-to-elasticsearch`. 
    You can continue using Crafter Search and Solr as the search engine, by following :ref:`using-crafter-search-and-solr`
-#. Start your upgraded Crafter CMS, then follow the steps below for **Create Authoring Targets** for all upgraded sites. 
-   If a site has not been migrated to Elasticsearch, follow additionally the steps under **Updates for Solr**, then 
-   finally, verify that the authoring and delivery environments are functioning as intended.
+#. Start your upgraded Crafter CMS, then follow the steps below for :ref:`create-authoring-targets` for all upgraded sites.
+
+   * If a site has not been migrated to Elasticsearch, follow additionally the steps under :ref:`updates-for-solr`.
+   * If a site uses a default dependency resolver configuration file from a previous Crafter CMS installation version, follow the steps in :ref:`upgrading-site-configurations` to upgrade your dependency resolver configuration file,
+   * If a site has a customized dependency resolver configuration file, please read through :ref:`upgrading-site-configurations` and review your dependency resolver configuration file for any changes that may be required.
+
+#. Verify that the authoring and delivery environments are functioning as intended.
+
+.. _create-authoring-targets:
 
 ------------------------
 Create Authoring Targets
@@ -220,6 +194,8 @@ The preview Deployer targets in the Authoring environment need to be updated to 
       search:
         indexIdFormat: '%s-preview'
 
+.. _updates-for-solr:
+
 ----------------
 Updates for Solr
 ----------------
@@ -245,3 +221,40 @@ Upgrade Solr Cores
 ^^^^^^^^^^^^^^^^^^
 
 .. include:: /includes/upgrading-to-solr-7.rst
+
+
+.. _upgrading-site-configurations:
+
+-----------------------------
+Upgrading Site Configurations
+-----------------------------
+
+   All files in the folder ``/config/studio/search/`` are no longer used it can be completely removed.
+
+   In your dependency resolver configuration file ``/config/studio/dependency/resolver-config.xml``, replace the following
+   regular expressions:
+
+   - ``<find-regex>/static-assets/([^&lt;"'\)]+)</find-regex>`` with ``<find-regex>/static-assets/([^&lt;"'\)\?]+)</find-regex>``
+   - ``<path-pattern>/static-assets/([^&lt;"'\)]+)</path-pattern>`` with
+
+     .. code-block:: xml
+        :caption: /config/studio/dependency/resolver-config.xml
+
+              <path-pattern>/static-assets/([^&lt;"'\)]+)\.css</path-pattern>
+              <path-pattern>/static-assets/([^&lt;"'\)]+)\.js</path-pattern>
+              <path-pattern>/static-assets/([^&lt;"'\)]+)\.html</path-pattern>
+              <path-pattern>/static-assets/([^&lt;"'\)]+)\.xml</path-pattern>
+              <path-pattern>/static-assets/([^&lt;"'\)]+)\.json</path-pattern>
+              <path-pattern>/static-assets/([^&lt;"'\)]+)\.scss</path-pattern>
+              <path-pattern>/static-assets/([^&lt;"'\)]+)\.sass</path-pattern>
+              <path-pattern>/static-assets/([^&lt;"'\)]+)\.hbs</path-pattern>
+
+         - ``<find-regex>/templates/([^&lt;"]+)\.ftl</find-regex>`` with
+
+     .. code-block:: xml
+        :caption: /config/studio/dependency/resolver-config.xml
+
+              <pattern>
+                <find-regex>/templates/([^&lt;"]+)\.ftl</find-regex>
+              </pattern>
+
