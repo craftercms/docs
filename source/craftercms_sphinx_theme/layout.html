@@ -8,6 +8,12 @@
 {%- endif %}
 {%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
 
+{% if meta is defined and meta is not none %}
+{% set check_meta = True %}
+{% else %}
+{% set check_meta = False %}
+{% endif %}
+
 {% set upToDate = 'False' %}
 {% set upToDate_key = 'is-up-to-date' %}
 {% if check_meta and upToDate_key in meta %}
