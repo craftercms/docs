@@ -103,7 +103,8 @@ The authoring clusters are typically deployed closest to the content authors, wh
 
 
 Equal Support for all Stakeholders
-=============================
+==================================
+
 Crafter CMS tries to be fair to all three primary stakeholders:
 
 * Developers
