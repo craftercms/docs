@@ -135,7 +135,7 @@ Upgrade Crafter CMS
 #. In your Crafter CMS 3.0.x install, copy/paste or move the data folder ``CRAFTER_3.0.x_INSTALLATION/data`` to your new ``CRAFTER_3.1.0_INSTALLATION`` install folder
 #. Migrate sites to Elasticsearch (recommended) by following this guide: :ref:`migrate-site-to-elasticsearch`.
    You can continue using Crafter Search and Solr as the search engine, by following :ref:`using-crafter-search-and-solr`
-#. Start your upgraded Crafter CMS, then follow the steps below for :ref:`create-authoring-targets` for all upgraded sites.
+#. Start your upgraded Crafter CMS, then follow the steps below for :ref:`create-authoring-targets`, :ref:`update-index-format-preview-targets` and :ref:`update-paths-in-targets` for all upgraded sites.
 
    * If a site has not been migrated to Elasticsearch, follow additionally the steps under :ref:`updates-for-solr`.
    * If a site uses a default dependency resolver configuration file from a previous Crafter CMS installation version, consider deleting your dependency resolver configuration file and it will then use the default dependency resolver configuration with rules matching what's in this sample ``CRAFTER_3.1.0_INSTALLATION/data/repos/global/configuration/dependency/resolver-config.xml``
@@ -178,6 +178,8 @@ authoring search. For all existing sites a new target must be created using the 
         "reprocess_all_files": true
       }'
 
+.. _update-index-format-preview-targets:
+
 ----------------------------------------------
 Update the Index Format of the Preview Targets
 ----------------------------------------------
@@ -192,6 +194,8 @@ The preview Deployer targets in the Authoring environment need to be updated to 
 
       search:
         indexIdFormat: '%s-preview'
+
+.. _update-paths-in-targets:
 
 -------------------------------
 Update the Paths in the Targets
