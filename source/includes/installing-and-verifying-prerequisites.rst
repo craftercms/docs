@@ -105,21 +105,6 @@ How to set the JAVA_HOME environment variable
             * ``Progra~1`` = ``Program Files``
             * ``Progra~2`` = ``Program Files(x86)``
 
-.. note::
-
-    Windows users using older operating systems may experience issues when Crafter CMS starts up MongoDB and see the following error:
-
-    *The program can't start because api-ms-win-crt-runtime-l1-1-0.dll is missing from your computer. Try reinstalling the program to fix this problem.*
-
-
-    For MongoDB to startup properly, a Microsoft update may be needed for older operating systems including:
-
-        - Windows 7
-        - Windows Server 2012 R2
-        - Windows Server 2012
-
-    To install the update, download the Universal C Runtime update from Microsoft ( https://support.microsoft.com/en-us/kb/2999226 )
-    When the update is installed, please try to start Crafter CMS again.
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 OS X extra prerequisite
@@ -137,8 +122,48 @@ For OS X users, the latest ``openssl`` formula needs to be installed via homebre
 Linux prerequisite
 ^^^^^^^^^^^^^^^^^^
 
-For Linux users, some of the scripts uses ``lsof``.  Please note that some Linux distributions does not come with ``lsof`` pre-installed and so, may need to be installed.
+#. For Linux users, some of the scripts uses ``lsof``.  Please note that some Linux distributions does not come with ``lsof`` pre-installed and so, may need to be installed.
 
-To install ``lsof`` for Debian-based Linux distros: ``apt-get install lsof``
+   To install ``lsof`` for Debian-based Linux distros: ``apt-get install lsof``
 
-To install ``lsof`` for RedHat-based Linux distros: ``yum install lsof``
+   To install ``lsof`` for RedHat-based Linux distros: ``yum install lsof``
+
+#. The library ``libncurses5`` is required for running the restore script.  You may get the following error when running the restore script without the ``libncurses5`` library installed:
+
+   **error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory**
+
+   To install the library ``libncurses5``, use the following commands:
+
+   On Debian-based Linux distros: ``sudo apt-get install libncurses5-dev libncursesw5-dev``
+
+   On RHEL, CentOS:  ``sudo yum install ncurses-devel``
+
+   On Fedora 22 and newer version: ``sudo dnf install ncurses-devel``
+
+^^^^^^^^^^^^^^^^^^^^
+Windows prerequisite
+^^^^^^^^^^^^^^^^^^^^
+
+Windows users using older operating systems may experience issues when Crafter CMS starts up MongoDB and see the following error:
+
+**The program can't start because api-ms-win-crt-runtime-l1-1-0.dll is missing from your computer. Try reinstalling the program to fix this problem.**
+
+
+For MongoDB to startup properly, a Microsoft update may be needed for older operating systems including:
+
+    - Windows 7
+    - Windows Server 2012 R2
+    - Windows Server 2012
+
+To install the update, download the Universal C Runtime update from Microsoft ( https://support.microsoft.com/en-us/kb/2999226 )
+When the update is installed, please try to start Crafter CMS again.
+
+Another issue Windows users may experience when Crafter CMS starts up MongoDB, is the following error in the logs:
+
+**Error creating bean with name 'crafter.profileRepository' defined in class path resource [crafter/profile/services-context.xml]: Invocation of init method failed; nested exception is com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches WritableServerSelector**
+
+Users may also see a Windows dialog with the following message:
+
+**The code execution cannot proceed because VCRUNTIME140.dll was not found.  Reinstalling the program may fix this problem.**
+
+For MongoDB to startup properly, Visual Studio C++ Redistributable 2015 needs to be installed or repaired if some of the required dll is corrupted.  You can download Visual Studio C++ Redistributable 2015 here: https://www.microsoft.com/en-us/download/details.aspx?id=48145. When finished installing, please restart Windows.

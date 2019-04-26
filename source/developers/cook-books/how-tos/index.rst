@@ -6,6 +6,7 @@ How-Tos
    :maxdepth: 2
    :titlesonly:
 
+   change-log-data-folder-location
    components-in-rte
    integrating-crafter-cms-with-cloud
    override-logging-levels

@@ -32,7 +32,7 @@ You can find the interface for this service :javadoc_base_url:`HERE <search/org/
 
 .. code-block:: groovy
 
-    def queryStatement = 'content-type:"/component/article" AND author:"Russ Danner"'
+    def queryStatement = 'content-type:"/component/article" AND author:"My User"'
 
     def query = searchService.createQuery()
     query.setQuery(queryStatement)

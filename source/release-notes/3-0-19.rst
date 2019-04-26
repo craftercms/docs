@@ -1,0 +1,17 @@
+------------------
+Crafter CMS 3.0.19
+------------------
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Upgraded library dependencies versions for various Crafter modules
+* Updated site config and AWS Profiles configuration
+* Added additional policy based restrictions to Tomcat container for improved security
+* Bug fixes
+
+For a full list of tickets, please visit: `GitHub 3.0.19 Milestone <https://github.com/craftercms/craftercms/milestone/47?closed=1>`_
+
+.. important::
+    After updating your Crafter CMS install, please see :ref:`upgrade-to-3-0-19` for some important notes

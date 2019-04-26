@@ -9,8 +9,51 @@ Crafter Social API
 The context for this API is ``/crafter-social/``, please prefix the API URLs with this context.
 
 .. NOTE::
-  All request in this API require the user to be authenticated using the Crafter Profile API, for
-  details see :ref:`crafter-profile-api-authentication-authenticate`
+  All request in this API require the user to be authenticated with the following steps:
+  
+  #. Send a ``POST`` request to the ``/crafter-social/crafter-security-login`` endpoint with the ``username`` and 
+     ``password`` parameters
+  #. Include the cookies set in the response of the login in later requests
+  
+  Besides setting the authentication cookies the login response also provides the user's information:
+  
+  .. code-block:: json
+    :linenos:
+  
+    {  
+       "ticket":"0489ca78-cd96-46c2-bc96-c1ea1fa4db6f",
+       "profile":{  
+          "username":"admin",
+          "password":null,
+          "email":"admin@example.com",
+          "verified":false,
+          "enabled":true,
+          "createdOn":1554832283831,
+          "lastModified":1554834126479,
+          "tenant":"default",
+          "roles":[  
+             "SOCIAL_SUPERADMIN",
+             "PROFILE_SUPERADMIN"
+          ],
+          "attributes":{  
+             "socialContexts":[  
+                {  
+                   "name":"Default",
+                   "id":"f5b143c2-f1c0-4a10-b56e-f485f00d3fe9",
+                   "roles":[  
+                      "SOCIAL_ADMIN",
+                      "SOCIAL_MODERATOR",
+                      "SOCIAL_USER"
+                   ]
+                }
+             ]
+          },
+          "failedLoginAttempts":0,
+          "lastFailedLogin":null,
+          "id":"5cacdb9b386f920d482a5ad4"
+       },
+       "remembered":false
+    }
 
 ----------------
 Security Actions
