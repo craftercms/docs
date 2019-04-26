@@ -11,3 +11,6 @@ deploy.sh
 
 # Eclipse
 .project
+
+# VSCode
+.vscode
