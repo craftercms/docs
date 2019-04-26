@@ -130,10 +130,10 @@ Upgrade Crafter CMS
 
 #. Review the release notes for the version you are upgrading to, which contains specific information on the changes 
    that have been made and how it may affect you when upgrading to that specific version.
-#. In your Crafter CMS 3.0.x install, copy the data folder ``CRAFTER_3.0.x_INSTALLATION/data``
+#. Backup your Crafter CMS 3.0.x install
 #. Download the Crafter CMS 3.1.0 bundle version and extract the files
-#. Paste the data folder copied from a previous step to your new ``CRAFTER_3.1.0_INSTALLATION`` install folder
-#. Migrate sites to Elasticsearch (recommended) by following this guide: :ref:`migrate-site-to-elasticsearch`. 
+#. In your Crafter CMS 3.0.x install, copy/paste or move the data folder ``CRAFTER_3.0.x_INSTALLATION/data`` to your new ``CRAFTER_3.1.0_INSTALLATION`` install folder
+#. Migrate sites to Elasticsearch (recommended) by following this guide: :ref:`migrate-site-to-elasticsearch`.
    You can continue using Crafter Search and Solr as the search engine, by following :ref:`using-crafter-search-and-solr`
 #. Start your upgraded Crafter CMS, then follow the steps below for :ref:`create-authoring-targets` for all upgraded sites.
 
@@ -192,6 +192,40 @@ The preview Deployer targets in the Authoring environment need to be updated to 
 
       search:
         indexIdFormat: '%s-preview'
+
+-------------------------------
+Update the Paths in the Targets
+-------------------------------
+
+The Deployer targets needs the repository path to be updated to point to the new local repository path:
+
+For Authoring environments, to update the local repository path:
+
+#. Go to ``AUTHORING_INSTALL_DIR/data/deployer/targets``.
+#. For each target YAML file ending in ``-preview``, modify the ``localRepoPath`` property value
+   with the new path of the site sandbox repository:
+
+   .. code-block:: yaml
+      :linenos:
+
+      localRepoPath: AUTHORING_INSTALL_DIR/data/repos/sites/SITE_NAME/sandbox
+
+For Delivery environments, to update the repository path:
+
+#. Go to ``DELIVERY_INSTALL_DIR/data/deployer/targets``.
+#. For each target YAML file ending in ``-default``, modify the ``deployment:pipeline:remoteRepo:url:`` property value
+   with the new path of the site published repository:
+
+   .. code-block:: yaml
+      :linenos:
+      :emphasize-lines: 5
+
+      deployment:
+        pipeline:
+          - processorName: gitPullProcessor
+            remoteRepo:
+              url: AUTHORING_INSTALL_DIR/data/repos/sites/SITE_NAME/published
+
 
 .. _updates-for-solr:
 
