@@ -8,13 +8,13 @@
 Crafter CMS Architecture
 ========================
 
-Crafter CMS distinguishes itself by its modern architecture, in turn this enables:
+Crafter CMS distinguishes itself by its modern architecture, which in turn enables:
 
-* Truly Decoupled CMS (disconnected global delivery),  composed of independent microservice-based components
-* Dynamic / personalized delivery of every request at speed
+* Truly decoupled content management (and disconnected global delivery), composed of independent microservice-based components
+* Dynamic, personalized content delivery of every request at speed
 * API first CMS (content as a service via GraphQL & REST)
 * Git-based CMS (allows for excellent developer cadence)
-* Share-nothing, serverless, delivery architecture (planet-scale)
+* Shared-nothing, serverless, delivery architecture (planet-scale)
 * Front-end agnostic (bring your favorite UI framework or use as a headless CMS)
 * Equal support for all three CMS stakeholders: content authors, developers and system administrators
 * Build new apps or weave into existing apps and sites
@@ -32,7 +32,7 @@ delivery. To understand this better, Crafter's decoupled architecture is as foll
 
 You'll note that Crafter doesn't share a database between the authoring and delivery systems. Instead, the authoring system reduces the content to XML and static assets, and the delivery system rehydrates those for personalized, planet-scale, disconnected, and fast delivery.
 
-In contrast, many coupled CMSs do claim to be decoupled. These systems allow you to have an authoring tier that's separate from the delivery tier, however, these are connected via a database sync. That means that the delivery tiers cannot run without some level of connectivity to the authoring master, and indeed has limits on scale of the delivery tier.
+In contrast, many coupled CMSs do claim to be decoupled, but are really not. These systems allow you to have an authoring tier that's separate from the delivery tier; however, these are connected via a database sync. That means that the delivery tiers cannot run without some level of connectivity to the authoring master, and indeed has limits on scale of the delivery tier.
 
 A truly decoupled system will support disconnected delivery (think of a delivery tier that's running in a submarine or on a cruise ship). While running disconnected delivery nodes is an extreme example, it's a good test of the true scalability of the delivery tier of a CMS.
 
@@ -63,7 +63,7 @@ Crafter CMS is a very flexible platform, and features:
    * Groovy/Java if backed by Crafter Engine
    * Any language if backed by an external service
 
-* Simple HTML5 sites
+* HTML5 sites
 * Mobile applications and other headless use-cases
 
 Deployment Architecture
@@ -92,7 +92,7 @@ If you're not quite ready for serverless deployment, Crafter CMS deploys quite n
 Planet-scale
 ============
 
-To support content authors and end-users across the globe, it's best to deploy Crafter CMS services close to the users. This guarantees fast, yet dynamic, responses to the users (CDNs are great, but they won't help you with dynamic/personalized responses).
+To support content authors and end-users across the globe, it's best to deploy Crafter CMS services close to the users. This guarantees fast, yet dynamic, responses to the users (CDNs are great, but they won't help you with dynamic or personalized responses).
 
 The authoring clusters are typically deployed closest to the content authors, whereas delivery clusters are spread across geographies where you have end-users. Delivery nodes can pull content from an arbitrary number of authoring nodes, and are typically deployed in geographies where your end-users are.
 
@@ -102,9 +102,10 @@ The authoring clusters are typically deployed closest to the content authors, wh
         :align: center
 
 
-Equality Between Stakeholders
-=============================
-Crafter CMS tries to be fair to the three primary stakeholders:
+Equal Support for all Stakeholders
+==================================
+
+Crafter CMS tries to be fair to all three primary stakeholders:
 
 * Developers
 * Operations
@@ -117,15 +118,15 @@ It's quite hard to provide a good experience to all three stakeholders, and the 
         :alt: Crafter CMS Stakeholder Equality
         :align: center
 
-Traditional CMSs cater to content authors and web editors, and do so very well. However, developers are then forced to develop in outdated or proprietary frameworks using difficult workflows. Additionally, operations has a hard time supporting these workflows, especially when it comes to code deployments or moving production content back to lower environments.
+Traditional CMSs cater to content authors and web editors, and some do so very well. However, developers are then forced to develop in outdated or proprietary frameworks using difficult workflows. Additionally, operations has a hard time supporting these workflows, especially when it comes to code deployments or moving production content back to lower environments.
 
-More modern headless CMSs do a much better job supporting developer's choice of development framework. Operations can be simpler with SaaS-based headless CMSs, but that means up-time is now in the hands of a third part, same for global distribution. If the headless CMS is on-premises, then potentially similar workflow problems may exist. Authors are simply underserved here as they can't manage the content in-context and are left to edit headless forms without the ability to drag-and-drop, or see the content they're editing change the site/application in real time.
+Some modern headless CMSs do a better job supporting developer's choice of development framework. Operations can be simpler with SaaS-based headless CMSs, but that means up-time, performance, security, etc. is now in the hands of a third party; same for global distribution. If the headless CMS is on-premises, then potentially similar workflow problems may exist. Importanty, authors are simply underserved here as they can't manage the content in-context and are left to edit headless forms without the ability to drag and drop, nor can they see the content they're editing change the site/application in real time.
 
 Crafter CMS, on the other hand, provides:
 
 * Content authors with in-context editing tools and full CMS workflow.
 * Developers get to choose their framework, and get to use their own tools.
-* Operations get to deploy the system in a modern and scalable manner (Kubernetes), and workflow is much easier thanks to being databaseless and Git-based
+* Operations get to deploy the system in a modern and scalable manner (Kubernetes), and workflow is much easier thanks to being Git-based and without the need for any database.
 
    * Code flows forward from lower environments to production, and content flows back from production to lower environments
 
@@ -147,7 +148,7 @@ Crafter CMS is Git-based. That means that Crafter applications/sites are actuall
 Enterprise Content Platform
 ===========================
 
-Crafter CMS can be further leveraged as an enterprise-wide content as a service provider. Thanks to being a multi-tenant CMS, any number of authors can manage content for any number of sites/applications, and Crafter can either deliver the applications, or simply provide content snippets to existing applications.
+Crafter CMS can be further leveraged as an enterprise-wide, content-as-a-service provider. Thanks to being a multi-tenant CMS, any number of authors can manage content for any number of sites/applications, and Crafter can either deliver the applications, or simply provide content snippets to existing applications.
 
 .. image:: /_static/images/architecture/enterprise-content-platform.png
         :width: 100%
