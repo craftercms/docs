@@ -7,3 +7,6 @@ deploy.sh
 # IntelliJIdea files#
 *.iml
 .idea
+
+# VSCode
+.vscode
