@@ -84,7 +84,7 @@ of ``items``.
   field name contains the dash ``-`` character it will be replaced with a double underscore ``__``. To avoid 
   unnecessary long names it is suggested to use only ``_`` or ``camelCase`` notation if possible.
 
-The simplest GraphQL you can run in Crafter CMS sites is to find all items of a given content-type.
+One of simplest GraphQL queries you can run in Crafter CMS sites is to find all items of a given content-type.
 
 .. code-block:: guess
   :caption: Query for all ``/page/article`` items
@@ -104,8 +104,67 @@ The simplest GraphQL you can run in Crafter CMS sites is to find all items of a 
     }
   }
 
-As you can expect if there are too many items for a given content-type the result of the query will be too large, so
-you can also implement pagination using the ``offset`` and ``limit`` parameters. For example the following query
+You can also run queries to find all pages, components or content items (both pages and components).
+
+.. code-block:: guess
+  :caption: Query for all pages
+
+  # root query
+  {
+    # query for all pages
+    pages {
+      total # total number of items found
+      items { # list of items found
+        # the page fields that will be returned
+        content__type
+        localId
+        createdDate_dt
+        lastModifiedDate_dt
+        placeInNav
+        orderDefault_f
+        navLabel
+      }
+    }
+  }
+
+.. code-block:: guess
+  :caption: Query for all components
+
+  # root query
+  {
+    # query for all pages
+    components {
+      total # total number of items found
+      items { # list of items found
+        # the component fields that will be returned
+        content__type
+        localId
+        createdDate_dt
+        lastModifiedDate_dt
+      }
+    }
+  }
+
+.. code-block:: guess
+  :caption: Query for all content items
+
+  # root query
+  {
+    # query for all pages
+    contentItems {
+      total # total number of items found
+      items { # list of items found
+        # the content item fields that will be returned
+        content__type
+        localId
+        createdDate_dt
+        lastModifiedDate_dt
+      }
+    }
+  }
+
+As you can expect if there are too many items for a given query the result will be too large, so you can also 
+implement pagination using the ``offset`` and ``limit`` parameters. For example the following query
 will return only the first five items found.
 
 .. code-block:: guess
@@ -171,7 +230,7 @@ a specific author.
     }
   }
 
-Finally you can also include fields from child components in your model, this applies for fields like ``node-selector``,
+You can also include fields from child components in your model, this applies to fields like ``node-selector``,
 ``checkbox-group`` and ``repeat`` groups. Filters can also be added to fields from child components.
 
 .. code-block:: guess
@@ -200,5 +259,26 @@ Finally you can also include fields from child components in your model, this ap
     }
   }
 
-You can use many GraphQL features such as aliases and query variables to implement complex queries that can be reused. 
-For more detailed information you can read the `official documentation <https://graphql.org/>`_.
+GrapQL ``aliases`` are supported on root level query fields (``contentItems``, ``pages``, ``components`` and content 
+type fields).
+
+.. code-block:: guess
+   :caption: Query for 2016 and 2017 articles using aliases
+
+   # root query
+   {
+     # query for 2016 articles
+     articlesOf2016: page_article {
+       items {
+         localId(filter: {regex: ".*2016.*"})
+       }
+     },
+     # query for 2017 articles
+     articlesOf2017: page_article {
+       items {
+         localId(filter: {regex: ".*2017.*"})
+       }
+     }  
+   }
+
+For more detailed information about GraphQL you can read the `official documentation <https://graphql.org/>`_.
