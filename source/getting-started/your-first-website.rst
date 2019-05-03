@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Create Your First Website
 
 .. _your_first_website:
@@ -11,42 +13,55 @@ This section assumes that you have followed the steps in the :ref:`Quick Start G
 Let's get started building your first website!
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Creating your website from out of the box blueprint Website_Editorial
+Creating your website from out of the box blueprint Website Editorial
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-After logging in, you'll see the MySites screen (Below).  Click on **Create Site**
+After logging in, you'll see the Sites screen (Below).  Click on **Create Site**
 
 .. image:: /_static/images/first-site/sites-screen.png
-    :width: 75 %
+    :width: 100 %
     :align: center
-    :alt: Your First Website - Sites Screen
+    :alt: Your First Website - Sites Screen - needs update
 
-Give the site a friendly name for the **Site Id** , a description and then choose a blueprint.  You can also set the branch for your sandbox in the **Sandbox Branch** field to something other than the default, which is typically *master*.  We're going to be using the "Website_Editorial" blueprint.  Blueprints offer you a starting point for your website. New blueprints can be created and installed into the system.  As you are entering the Site Id, spaces are removed and upper case letters are converted to lower case letters.
+In the **Choose a Blueprint** screen, the user is presented with the available blueprints or the option to use a remote Git repository instead of selecting a blueprint from the list.  To see all available blueprints, scroll down.  We're going to be using the "Website Editorial Blueprint".  Blueprints offer you a starting point for your website. New blueprints can be created and installed into the system.  Click on **Select** for the "Website Editorial Blueprint".
 
-.. image:: /_static/images/first-site/create-site-screen.png
-    :width: 75 %    
+.. image:: /_static/images/first-site/create-site-choose-bp.png
+    :width: 100 %
     :align: center
-    :alt: Your First Website - Create a Site
+    :alt: Your First Website - Create Site: Choose a Blueprint
+
+Give the site a friendly name for the **Site Id** and a description.  As you are entering the Site Id, spaces are removed and upper case letters are converted to lower case letters.
+
+.. image:: /_static/images/first-site/create-site-basic-info.png
+    :width: 100 %
+    :align: center
+    :alt: Your First Website - Create Site: Basic Information
 
 
-Click on **Create** and wait for the system to create your site based on the blueprint. It's creating the following: configuration, site content, and permissions based on the template provided by the blueprint.
+The next step is to review your entries and finally create your new site.  Click on the **Create** button and wait for the system to create your site based on the blueprint.
+
+.. image:: /_static/images/first-site/create-site-review-create.png
+    :width: 100 %
+    :align: center
+    :alt: Your First Website - Create Site: Review and Create
+
+A spinner will appear while it's creating the following: configuration, site content, and permissions based on the template provided by the blueprint.
 
 .. image:: /_static/images/first-site/creating-spinner.png
-    :width: 40 %    
+    :width: 40 %
     :align: center
     :alt: Your First Website - Creating a Site Spinner Dialog
 
-    
 When it's done you will be taken to the Home Page of your site:
 
-.. image:: /_static/images/first-site/home-page.png
-    :width: 95 %
+.. image:: /_static/images/first-site/home-page.jpg
+    :width: 100 %
     :align: center
     :alt: Your First Website - Home Page
 
 Your site is setup, we can now start adding/editing content!  To edit content you see on the page, click on **Edit** at the top (see above).  This will open a form (see below) where you can edit the page content.  To see other ways of editing page content, see :ref:`editing-a-page`.
 
-.. image:: /_static/images/first-site/first-site-editing-content.png
-    :width: 100 %
+.. image:: /_static/images/first-site/first-site-editing-content.jpg
+    :width: 90 %
     :align: center
     :alt: Your First Website - Editing Content
 
@@ -55,7 +70,7 @@ Adding a new article page to the site
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 We'll be adding a new article to the site.  To add a new article (or a new page), navigate to the level and location within the site navigation tree in the **Sidebar** where we want to create the new page.  In this case, we are adding an article under **articles** -> **2017** -> **3**.  Right click, then select **New Content**
 
-.. image:: /_static/images/first-site/first-site-new-content.png
+.. image:: /_static/images/first-site/first-site-new-content.jpg
     :width: 80 %
     :align: center
     :alt: Your First Website - New Content
@@ -67,7 +82,7 @@ We'll then select the page template we want.  Since we are adding a new article 
     :align: center
     :alt: Your First Website - Select Page Template
 
-We'll start filling out the form for our new article, "Where to find cherry blossoms in Virginia".  For the **Page URL**, replace spaces with dashes.  You can write the **Internal Name** and **Title** however you like as long as it is 50 characters or less as indicated on the right of the input boxes.  For the **Header** and **Sidebar**, we will be using the default provided by the template.
+We'll start filling out the form for our new article, "Where to find cherry blossoms in Virginia".  For the **Page URL**, replace spaces with dashes.  You can write the **Internal Name** and **Title** however you like as long as it is 50 characters or less as indicated on the right of the input boxes.  For the **Header** and **Left Rail**, we will be using the default provided by the template.
 
 .. image:: /_static/images/first-site/first-site-page-properties.png
     :width: 100 %
@@ -83,21 +98,21 @@ The next section on the form is the **Metadata** section, where we can select th
 
 Finally, we add our blurb in the **Content** section of the form.  Here, we fill out the **Subject**, **Author**, **Date**, **Summary**, **Image** and **Section**, which contains the content of our article.
 
-.. image:: /_static/images/first-site/first-site-page-content.png
+.. image:: /_static/images/first-site/first-site-page-content.jpg
     :width: 100 %
     :align: center
     :alt: Your First Website - Page Content Section
 
 Here's the site, with our newly created article in the featured section.
 
-.. image:: /_static/images/first-site/first-site-home-page.png
+.. image:: /_static/images/first-site/first-site-home-page.jpg
     :width: 100 %
     :align: center
     :alt: Your First Website - Newly Created Site Home Page
 
 You can add more pages or modify/remove the existing pages from the blueprint, depending on your needs.  To remove or edit an existing page, navigate to the location of the article you want to edit/remove.  Right click on it, then select the action you would like to do on the page.
 
-.. image:: /_static/images/first-site/first-site-edit-page.png
+.. image:: /_static/images/first-site/first-site-edit-page.jpg
     :width: 50 %
     :align: center
     :alt: Your First Website - Edit a Page
@@ -106,9 +121,9 @@ You can add more pages or modify/remove the existing pages from the blueprint, d
 Updating the Contact Us section in the sidebar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Another thing that we may want to modify from the blueprint, is the left rail.  For this example, we are going to modify the **Contact Us** section in the left rail (contact widget).  To edit items in the sidebar, click on the pencil on the top right of your screen to enable in-context editing.  Pencils should appear on sections editable on the page.  Go to the top left of the left rail and click on the pencil there.
+Another thing that we may want to modify from the blueprint, is the left rail.  For this example, we are going to modify the **Contact Us** section in the left rail (contact widget).  To edit items in the left rail, click on the pencil on the top right of your screen to enable in-context editing.  Pencils should appear on sections editable on the page.  Go to the top left of the left rail and click on the pencil there.
 
-.. image:: /_static/images/first-site/first-site-edit-left-rail.png
+.. image:: /_static/images/first-site/first-site-edit-left-rail.jpg
     :width: 100 %
     :align: center
     :alt: Your First Website - Edit the Left Rail
@@ -129,7 +144,7 @@ A form containing all the editable fields in the **Contact Us** section will app
 
 Here's the sidebar with the **Contact Us** section updated.
 
-.. image:: /_static/images/first-site/first-site-contact-us-updated.png
+.. image:: /_static/images/first-site/first-site-contact-us-updated.jpg
     :width: 100 %
     :align: center
     :alt: Your First Website - Updated Contact Us Section
@@ -140,7 +155,7 @@ Editing the features section, "Erat lacinia"
 
 We will now edit the features section in our blueprint.  The features in this section has been configured as components, as you will see in the images below.  There are multiple ways of editing the features section in the blueprint.
 
-.. image:: /_static/images/first-site/first-site-add-features-drag-n-drop.png
+.. image:: /_static/images/first-site/first-site-add-features-drag-n-drop.jpg
     :width: 100 %
     :align: center
     :alt: Your First Website - Add Features through Drag and Drop
@@ -175,7 +190,7 @@ We will now add another feature, by selecting **Browse for Existing - Features**
 
 We will again add another feature, this time by opening the **Preview Tools** panel, and then clicking on **Page Components**.  A **Components** panel will open where the **Preview Tools** panel used to be, containing components that you can drag and drop onto the drop zone highlighted on the page.  To click and drag a new feature onto the drop zone, click and drag **Feature**, under the general heading.  This will then open up a form for you to add your new feature content.  To click and drag an existing feature onto the drop zone, click on **Browse Features**.  This will then open up a form containing a list of existing features that you may choose from.  Make your selection, the form with the list will then close and now you can drag and drop your selected existing feature onto the drop zone.
 
-.. image:: /_static/images/first-site/first-site-drop-zone.png
+.. image:: /_static/images/first-site/first-site-drop-zone.jpg
     :width: 100 %
     :align: center
     :alt: Your First Website - Drag and Drop Zone
@@ -209,7 +224,7 @@ Your site is published after creating the site from the Website_Editorial bluepr
 - Click on the page you want to publish.  In the context menu, click on **Approve & Publish**
 - Right click on the page you want to publish from the Site Navigation Tree, then click on **Approve & Publish**
 
-.. image:: /_static/images/first-site/first-site-publish.png
+.. image:: /_static/images/first-site/first-site-publish.jpg
     :width: 100 %
     :align: center
     :alt: Your First Website - Publish Your New Content
