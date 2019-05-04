@@ -24,7 +24,7 @@ At a high-level, we're pursuing the objectives listed below in order:
 Recently Completed
 ------------------
 
-* Elastic Search
+* Elasticsearch
 	- Becomes the default search engine (we continue to support Solr)
 	- Full support for AWS Elasticsearch
 * Serverless Delivery
