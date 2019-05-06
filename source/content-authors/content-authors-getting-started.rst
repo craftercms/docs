@@ -1,4 +1,6 @@
-.. index:: Author
+:is-up-to-date: True
+
+.. index:: Getting Started on Authoring; Author
 
 ..  _content_authors_getting_started:
 

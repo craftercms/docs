@@ -1,3 +1,5 @@
+:is-up-to-date: False
+
 .. index:: Navigating Studio
 
 ..  _content_authors_navigating_studio:
@@ -6,10 +8,10 @@
 Navigating Around Crafter Studio
 ================================
 
-^^^^^^^^
-My Sites
-^^^^^^^^
-My Sites is the first screen you will encounter after logging in to Crafter Studio.  This screen lists all of the websites you have been granted permission to.
+^^^^^
+Sites
+^^^^^
+**Sites** is the first screen you will encounter after logging in to Crafter Studio.  This screen lists all of the websites you have been granted permission to.
 From this screen you can navigate to any site's preview or dashboard.
 
 .. image:: /_static/images/content-author/my-sites-screen.png
@@ -17,21 +19,18 @@ From this screen you can navigate to any site's preview or dashboard.
     :align: center
     :alt: Navigating Studio - My Sites Screen
 
-You can get back to the My Sites screen by:    
-    * Selecting  |sitesIcon| *Sites* in the top right corner
+You can get back to the **Sites** screen by:
+    * Selecting  |mainMenu| **Main Menu** in the top right corner
     * Or logging out (sign out) and logging back in (sign in)
 
-.. image:: /_static/images/content-author/get-to-my-sites.png
+.. image:: /_static/images/content-author/get-to-my-sites.jpg
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Get to My Sites Screen
 
-.. |sitesIcon| image:: /_static/images/content-author/sites-icon.png
-                 :width: 5%
-                 :alt: Sites Icon
 
-My Sites (Admins)
-^^^^^^^^^^^^^^^^^
+Sites (Admin)
+^^^^^^^^^^^^^
 Crafter Studio administrators can also create and delete sites from this screen.
 
 .. image:: /_static/images/content-author/site-delete.png
@@ -39,17 +38,17 @@ Crafter Studio administrators can also create and delete sites from this screen.
     :align: center
     :alt: Navigating Studio - Delete Site
 
-^^^^^^^^^^
-My Account
-^^^^^^^^^^
-My Account is where you go to change your personal Crafter Studio settings like language or to change your password.
+^^^^^^^^^^^^^^^^^^
+Account Management
+^^^^^^^^^^^^^^^^^^
+Account Management is where you go to change your personal Crafter Studio settings like language or to change your password.
 
 .. image:: /_static/images/content-author/site-account.png
     :width: 75 %    
     :align: center
     :alt: Navigating Studio - Open My Account Settings Screen
 
-To get to My Account:
+To get to Account Management:
     * Click on your username in the toolbar
     * Select **Settings** in the dropdown
 
@@ -76,12 +75,13 @@ Each dashboard has a header
    Content "type" filter:  Some widgets allow you to filter them by a broad content type (All, Pages, Components, Documents)
 
 
-.. image:: /_static/images/content-author/site-dashboard.png
+.. image:: /_static/images/content-author/site-dashboard.jpg
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Site Dashboard
 
 For the dashboard shown above, here are the widgets listed:
+
     * Items Waiting for Approval
         * Shows all items currently in workflow
         * Viewable only to admins and publishers
@@ -105,6 +105,7 @@ For the dashboard shown above, here are the widgets listed:
         * The Icon guide breaks down icons in to their elements.  You have two basic elements which can be combined to form a specific icon: the item type and the worfkflow indicator.
 
             **Item Types**
+
             Item types are high level archetypes of content objects within the system.  These types and the iconography associated with them provide a basic classification of the type of object at a glance.
 
             Page:	A page is exactly what you would expect, it's a URI addressable object that represents a web page or resource.
@@ -133,6 +134,7 @@ For the dashboard shown above, here are the widgets listed:
              - |workflowOtherFiles|
 
             **Workflow Indicators**
+
             Workflow indicators help authors and content managers understand at a glance what is going on with the content at a high level.  Is it Live?  Is it work in progress?  Is it currently checked out? In some sort of approval process?
 
             |workflowNeverPub|:	You will find a * asterisk at the end of a content object's name if the content has never been pushed live. This helps authors quickly identify which objects that are in progress are already live and which ones are entirely new.
@@ -163,7 +165,7 @@ For the dashboard shown above, here are the widgets listed:
 
         Edit link.  Clicking edit will check out the item and open the form for the item
 
-.. image:: /_static/images/content-author/site-dashboard-selected.png
+.. image:: /_static/images/content-author/site-dashboard-selected.jpg
    :width: 95 %
    :align: center
    :alt: Navigating Studio - Dashboard Selected
@@ -181,7 +183,7 @@ Every site has a preview.  This allows users to see, edit and test the site in a
     * Author can change the targeting attributes used to view the site
     * Author can view the publish status of the site
 
-.. image:: /_static/images/content-author/site-preview.png
+.. image:: /_static/images/content-author/site-preview.jpg
    :width: 95 %
    :align: center
    :alt: Navigating Studio - Site Preview
@@ -281,8 +283,7 @@ The basic elements of the Contextual Navigation bar are:
     * Contextual Navigation Links: An area reserved for dynamic links that will change based off of the current page view.
     * Search: Allows a user to search all site content or choose a subset of content to search from the drop-down menu (Please see the later section on Search for more details about the search field.)
     * Publish Status: Allows the user to view the site's publish status.
-    * Users: Allows the user (depending on permissions granted to the user) to view/edit the users.
-    * Sites: Allows the user (depending on permissions granted to the user) to view/edit sites accessible to the user
+    * Main Menu: Allows the user (depending on permissions granted to the user) to view/edit sites, the groups, the users, etc..
     * Help: Provides the user a shortcut to Crafter CMS documentation and the about screen, listing the Crafter Studio version, etc.
     * Username: Allows a user to log out of the system or manage settings.
     
@@ -295,11 +296,11 @@ Sidebar
 ^^^^^^^
 The Sidebar menu/panel allows for browsing all site content in the system. This includes Pages, Components and Documents.
 
-* The "View" menu will allow selections of separate site properties.
 * The menu width can be resized freely by the user.
 * Users can have multiple tree paths open at the same time.
 * If closed, the menu should retain it's last state when re-opened.
 * Clicking the **Sidebar** menu button a second time, or clicking anywhere off the menu will close the menu with the following exceptions:
+
     * Any action executed by a right click in the menu should be allowed to complete without closing the menu (e.g.: a copy/paste operation or a delete operation.)
     * The top level blocks "Pages, Components, Documents" can be hidden from users based on their privilege settings.
 * The Sidebar menu panel can be stretched and will remember where you set the length and width on your browser
@@ -329,7 +330,7 @@ The Sidebar menu/panel allows for browsing all site content in the system. This 
 
 Occasionally you have so many pages or components in your information architecture that it is not practical to list them or you simply want to provide your authors with a quick way to get to a specific search.
 
-For these use cases Crafter Studio's site dropdown IA folders support the configuration of dedicated searches. That configuration can be made by an administrator on the Crafter Studio Admin Console.
+For these use cases Crafter Studio's site dropdown IA folders support the configuration of dedicated searches. That configuration can be made by an administrator on the Crafter Studio |siteConfig|.
 
 
 .. image:: /_static/images/content-author/crafter-studio-site-content-ia-folders.png
