@@ -1,4 +1,7 @@
+:is-up-to-date: True
+
 .. index:: Rich Text Editor (RTE TinyMCE 5) Setup; RTE Setup
+
 .. _rte2-setup:
 
 ======================================
@@ -35,14 +38,14 @@ The default editor instance contains a menubar with most of the commonly used ed
 
    .. figure:: /_static/images/site-admin/rte/rte2-media-config.png
       :alt: RTE Setup - Insert/Edit Embedded Media Example
-      :width: 65%
+      :width: 45%
       :align: center
 
 |
 
 3. Save your changes, and your video should now be embedded in your page
 
-   .. figure:: /_static/images/site-admin/rte/rte-media-preview.png
+   .. figure:: /_static/images/site-admin/rte/rte-media-preview.jpg
       :alt: RTE Setup - YouTube video embedded in page, inserted through the RTE
       :width: 65%
       :align: center
