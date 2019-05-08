@@ -77,6 +77,7 @@ Authoring
    activities/authoring/authoring-env-performance-tuning.rst
    activities/authoring/change-hosts-ports-on-your-auth-install.rst
    activities/authoring/staging-env.rst
+   activities/authoring/setup-authoring-using-aws-ami.rst
    activities/sync-studio-database-with-repo.rst
 
 ********
@@ -91,6 +92,7 @@ Delivery
    activities/delivery/configure-apache-vhost.rst
    activities/delivery/setup-site-for-delivery.rst
    activities/delivery/setup-serverless-site.rst
+   activities/delivery/setup-delivery-using-aws-ami.rst
 
 *************************
 Subsystems Administration
