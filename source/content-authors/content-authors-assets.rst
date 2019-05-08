@@ -89,7 +89,7 @@ Asset Versioning
 ----------------
 All changes to static assets are tracked and can be reverted to an older version.  For static assets, like images, videos, etc., to access the History dialog, select the static asset that you want to view the history of from the site navigation tree, under the folder **Static Assets**, then click on the **History** menu of the context navigation menu at the top of your browser.
 
-.. image:: /_static/images/page/page-asset-access-history.png
+.. image:: /_static/images/page/page-asset-access-history.jpg
     :alt: Static Assets - Open History
     :width: 95 %
     :align: center

@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Rich Text Editor (RTE TinyMCE 2) Setup; RTE Plugins; RTE Setup
 .. _rte-setup:
 
@@ -117,7 +119,7 @@ To be able to embed a YouTube video in the RTE, do the following:
 
 3. Save your changes, and your video should now be embedded in your page
 
-   .. figure:: /_static/images/site-admin/rte/rte-media-preview.png
+   .. figure:: /_static/images/site-admin/rte/rte-media-preview.jpg
       :alt: RTE Setup - YouTube video embedded in page, inserted through the RTE
       :width: 65%
       :align: center
