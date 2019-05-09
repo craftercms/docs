@@ -46,7 +46,7 @@ How can Crafter CMS deliver a dynamic experience? During ingestion, the delivery
 Application Development
 =======================
 
-.. image:: /_static/images/architecture/application-development.png
+.. image:: /_static/images/architecture/application-development.jpg
 		:width: 100%
 		:alt: Application Development on Crafter CMS
 		:align: center
@@ -96,7 +96,7 @@ To support content authors and end-users across the globe, it's best to deploy C
 
 The authoring clusters are typically deployed closest to the content authors, whereas delivery clusters are spread across geographies where you have end-users. Delivery nodes can pull content from an arbitrary number of authoring nodes, and are typically deployed in geographies where your end-users are.
 
-.. image:: /_static/images/architecture/global-delivery.png
+.. image:: /_static/images/architecture/global-delivery.jpg
         :width: 100%
         :alt: Crafter CMS Geo Distributed Deployment
         :align: center
@@ -113,7 +113,7 @@ Crafter CMS tries to be fair to all three primary stakeholders:
 
 It's quite hard to provide a good experience to all three stakeholders, and the CMS architecture plays a crucial role in creating the necessary balance. Consider:
 
-.. image:: /_static/images/architecture/stakeholder-fairness.png
+.. image:: /_static/images/architecture/stakeholder-fairness.jpg
         :width: 100%
         :alt: Crafter CMS Stakeholder Equality
         :align: center
@@ -139,7 +139,7 @@ Crafter CMS is Git-based. That means that Crafter applications/sites are actuall
 * Authors work against the same Git repo using a GUI (Crafter Studio), without being aware of Git
 * Operations maintains well-known and proven foundational persistence tier, Git, and use that to flow content and code forward and back
 
-.. image:: /_static/images/architecture/git-data-flow.png
+.. image:: /_static/images/architecture/git-data-flow.jpg
         :width: 100%
         :alt: Crafter CMS Git-based Workflow
         :align: center
@@ -168,7 +168,7 @@ It's also not an all or nothing. Existing applications/sites can leverage Crafte
 
 The application/site can then be delivered using whatever technology, and simply use Crafter to deliver specific content tiles and assets.
 
-.. image:: /_static/images/architecture/partial-delivery.png
+.. image:: /_static/images/architecture/partial-delivery.jpg
         :width: 100%
         :alt: Crafter CMS Partial Delivery
         :align: center
