@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 :orphan:
 
 .. document does not appear in any toctree, this file is referenced
@@ -16,7 +18,7 @@ Example
 -------
 
 .. image:: /_static/images/form-controls/form-control-dropdown-example.png
-    :width: 50%
+    :width: 30%
     :alt: Form Control Dropdown
     :align: center
 

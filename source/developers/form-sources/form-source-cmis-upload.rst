@@ -5,35 +5,33 @@
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. index:: Data Sources; CMIS Repository
+.. index:: Data Sources; CMIS File Upload Repository
 
-.. _form-source-cmis-repo:
+.. _form-source-cmis-upload:
 
-===========================
-CMIS Repository Data Source
-===========================
+============================
+CMIS File Upload Data Source
+============================
 
-.. image:: /_static/images/form-sources/form-source-cmis-repo.png
+.. image:: /_static/images/form-sources/form-source-cmis-upload.png
     :width: 50%
-    :alt: Source Control CMIS Repository
+    :alt: Source Control CMIS File Upload
     :align: center
 
 -------------
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-cmis-repo-conf.png
+.. image:: /_static/images/form-sources/form-source-cmis-upload-conf.png
     :width: 50%
-    :alt: Source Control CMIS Repository Configuration
+    :alt: Source Control CMIS File Upload Configuration
     :align: center
 
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
 +------------------------+--------------------------------------------------------------------------+
-|| Description/Purpose   || Data source to select images from repository.                           |
+|| Description/Purpose   || Data source to upload file to the repository.                           |
 +------------------------+--------------------------------------------------------------------------+
-|| Properties            || - Repository Path: Path where to browse the CMIS repository.            |
+|| Properties            || - Repository Path: Path where to store files in the CMIS repository     |
 ||                       || - Repository ID:                                                        |
-||                       || - Studio Path:                                                          |
-||                       || - Allowed Operations: Clone and Link, Clone, Link                       |
 +------------------------+--------------------------------------------------------------------------+

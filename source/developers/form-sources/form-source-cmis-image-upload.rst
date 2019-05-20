@@ -5,35 +5,33 @@
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. index:: Data Sources; CMIS Repository
+.. index:: Data Sources; Image Upload to CMIS Repository
 
-.. _form-source-cmis-repo:
+.. _form-source-cmis-image-upload:
 
-===========================
-CMIS Repository Data Source
-===========================
+===========================================
+Image Upload to CMIS Repository Data Source
+===========================================
 
-.. image:: /_static/images/form-sources/form-source-cmis-repo.png
+.. image:: /_static/images/form-sources/form-source-cmis-img-upload.png
     :width: 50%
-    :alt: Source Control CMIS Repository
+    :alt: Source Control Image Upload to CMIS Repository
     :align: center
 
 -------------
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-cmis-repo-conf.png
+.. image:: /_static/images/form-sources/form-source-cmis-upload-conf.png
     :width: 50%
-    :alt: Source Control CMIS Repository Configuration
+    :alt: Source Control Image Upload to CMIS Repository Configuration
     :align: center
 
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
 +------------------------+--------------------------------------------------------------------------+
-|| Description/Purpose   || Data source to select images from repository.                           |
+|| Description/Purpose   || Data source to upload images from repository.                           |
 +------------------------+--------------------------------------------------------------------------+
-|| Properties            || - Repository Path: Path where to browse the CMIS repository.            |
+|| Properties            || - Repository Path: Path where to store the images in the CMIS repository|
 ||                       || - Repository ID:                                                        |
-||                       || - Studio Path:                                                          |
-||                       || - Allowed Operations: Clone and Link, Clone, Link                       |
 +------------------------+--------------------------------------------------------------------------+
