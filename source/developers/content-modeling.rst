@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Content Modeling, Modeling, Content Model
 
 .. _content-modeling:
@@ -278,7 +280,7 @@ We're going to enable cascade on delete for articles (**Page - Article** content
 
 To see cascade on delete in action, let's create a new article (**Page - Article** content type) under one of the article folders in the **Sidebar**.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.
 
-.. figure:: /_static/images/content-model/new-article-image-uploaded.png
+.. figure:: /_static/images/content-model/new-article-image-uploaded.jpg
     :alt: New article with image uploaded activity list in Dashboard
     :align: center
 
@@ -433,7 +435,7 @@ Now let's take a look at what happens when we delete content with item specific 
 
 Open the **Sidebar** and the **Dashboard** and notice the items that are deleted.  We deleted an article, and since the image is located in a path matching the regex pattern for item specific dependencies, the image is deleted along with the article.
 
-.. figure:: /_static/images/content-model/delete-article-sidebar.png
+.. figure:: /_static/images/content-model/delete-article-sidebar.jpg
     :alt: Sidebar and Dashboard showing items that were deleted when the article was deleted
     :align: center
 

@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 :orphan:
 
 .. document does not appear in any toctree, this file is referenced
@@ -11,7 +13,7 @@
 Image from CMIS Repository Data Source
 ======================================
 
-.. image:: /_static/images/form-sources/form-source-cmis-image-repo.png
+.. image:: /_static/images/form-sources/form-source-cmis-img-repo.png
     :width: 50%
     :alt: Source Control Image From Repository
     :align: center

@@ -1,3 +1,8 @@
+:is-up-to-date: True
+
+.. index:: Environment Configuration, Configuration
+
+.. _environment-overrides:
 
 =====================
 Environment Overrides
@@ -8,7 +13,7 @@ To modify the environment overrides, click on |siteConfig| from the bottom of th
 
 .. image:: /_static/images/site-admin/config-open-env-config.png
     :alt: Configurations - Open Environment Configuration
-    :width: 65 %
+    :width: 50 %
     :align: center
 
 ------
@@ -39,16 +44,18 @@ Sample
 
     -->
     <environment-config>
-        <preview-server-url>http://localhost:8080</preview-server-url>
-        <authoring-server-url>http://localhost:8080/studio</authoring-server-url>
-        <live-server-url>http://localhost:9080/?crafterSite={siteName}</live-server-url>
-        <open-sidebar>false</open-sidebar>
-        <publishing-targets>
-            <target>
-                <repo-branch-name>live</repo-branch-name>
-                <display-label>Live</display-label>
-            </target>
-        </publishing-targets>
+       <preview-server-url>http://localhost:8080</preview-server-url>
+       <preview-engine-server-url>http://localhost:8080</preview-engine-server-url>
+       <graphql-server-url>http://localhost:8080</graphql-server-url>
+       <authoring-server-url>http://localhost:8080/studio</authoring-server-url>
+       <live-server-url>http://localhost:9080/?crafterSite={siteName}</live-server-url>
+       <open-sidebar>false</open-sidebar>
+       <publishing-targets>
+          <target>
+             <repo-branch-name>live</repo-branch-name>
+             <display-label>Live</display-label>
+          </target>
+       </publishing-targets>
     </environment-config>
 
 
@@ -59,6 +66,12 @@ Description
 
     * ``/environment-config/preview-server-url``
         * Preview url
+
+    * ``/environment-config/preview-engine-server-url``
+        * Preview Engine url
+
+    * ``/environment-config/graphql-server-url``
+        * Graphql url
 
     * ``/environment-config/authoring-server-url``
         * Authoring url
