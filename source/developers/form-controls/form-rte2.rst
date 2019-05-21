@@ -1,14 +1,16 @@
+:is-up-to-date: True
+
 :orphan:
 
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. index:: Form Controls; Rich Text Editor (TinyMCE 4)
+.. index:: Form Controls; Rich Text Editor (TinyMCE 5)
 
 .. _form-rte2:
 
 ====================================
-Rich Text Editor (TinyMCE 4) Control
+Rich Text Editor (TinyMCE 5) Control
 ====================================
 
 -------
@@ -17,7 +19,7 @@ Example
 
 .. image:: /_static/images/form-controls/form-control-rte2-example.png
     :width: 50%
-    :alt: RTE
+    :alt: RTE (TinyMCE 5)
     :align: center
 
 -------------
@@ -26,7 +28,7 @@ Configuration
 
 .. image:: /_static/images/form-controls/form-control-rte2-properties.png
     :width: 50%
-    :alt: RTE
+    :alt: RTE (TinyMCE 5)
     :align: center
 
 .. include:: /includes/form-controls/form-control-field-basics.rst

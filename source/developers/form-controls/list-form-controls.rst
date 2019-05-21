@@ -22,7 +22,7 @@
 
 .. |ctlRTE2| image:: /_static/images/form-controls/ctl-rte2.png
              :width: 105%
-             :alt: Form Controls - Rich Text Editor (TinyMCE 4)
+             :alt: Form Controls - Rich Text Editor (TinyMCE 5)
 
 .. |ctlDropdown| image:: /_static/images/form-controls/ctl-dropdown.png
              :width: 55%
