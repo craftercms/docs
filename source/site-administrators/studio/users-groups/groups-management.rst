@@ -1,3 +1,9 @@
+:is-up-to-date: True
+
+.. index:: Groups Management
+
+.. _groups-management:
+
 =================
 Groups Management
 =================

@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Permission Mappings
 
 .. _permission-mappings:

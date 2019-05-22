@@ -1,4 +1,9 @@
+:is-up-to-date: True
+
+.. index:: Users Management
 .. highlight:: xml
+
+.. _users-management:
 
 ================
 Users Management

@@ -1,3 +1,9 @@
+:is-up-to-date: True
+
+.. index:: Site Administrators
+
+.. _site-administrators:
+
 ===================
 Site Administrators
 ===================
@@ -8,8 +14,9 @@ Most configuration files can be accessed through Crafter Studio through the **Si
 
 For the site repository, the site structure looks like this::
 
-        {REPOSITORY_ROOT}/sites/SITENAME/
+        {REPOSITORY_ROOT}/sites/SITENAME/sandbox/
             config
+                engine
                 studio
                     administration
                     content-types
@@ -19,7 +26,6 @@ For the site repository, the site structure looks like this::
                     environment
                     form-control-config
                     preview-tools
-                    search
                     targeting
                     workflow
             scripts
