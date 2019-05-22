@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: User Passwords
+
 .. _user-passwords:
 
 ==============
