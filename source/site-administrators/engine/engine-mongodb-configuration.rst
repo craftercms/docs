@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. index:: Configure Engine to use MondoDB
+.. index:: Configure Engine to use MongoDB
 
 .. _engine-mongodb-configuration:
 
