@@ -12,9 +12,9 @@ There are times when you may need access to MongoDB.  This section details how y
 
 Here are the steps for configuring Engine to use mongoDB:
 
------------------------
-Configure the Mongo URI
------------------------
+-------------------------
+Configure the MongoDB URI
+-------------------------
 To define the connection between MongoDB and Engine, add the URI in the config file `/config/engine/site-config.xml`.  (This file can be accessed easily from any site created through the out-of-the-box blueprints, by navigating from the Studio dashboard to Site Config > Configuration, and finally picking up the **Engine Site Configuration** option from the dropdown).
 
 .. code-block:: xml
