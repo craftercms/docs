@@ -1,5 +1,7 @@
 :is-up-to-date: True
+
 .. index:: Setting up a Crafter CMS production environment, Production Environment
+
 .. _production-environment-setup:
 
 ===============================================
@@ -73,9 +75,9 @@ For optimal performance, the server should have different storage systems (disks
 
 For more information on tuning your authoring environment for better performance, please see: :ref:`authoring-env-performance-tuning.rst`
 
--------------------------------------
-Set Profile Cookies default to Secure
--------------------------------------
+-----------------------------
+Set Profile Cookies to Secure
+-----------------------------
 
 For production environments using Crafter Profile and/or the Security Provider, these properties should be added to ``shared/classes/crafter/engine/extension/server-config.properties`` to make the Crafter Profile cookies be sent only through HTTPS
 
