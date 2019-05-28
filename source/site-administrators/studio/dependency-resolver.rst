@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Dependency Resolver Configuration, Dependency Resolver, Dependency
+
 .. _dependency-resolver-config:
 
 =================================

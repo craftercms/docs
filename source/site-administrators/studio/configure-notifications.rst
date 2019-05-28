@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Configure Simple Workflow Notifications and Dialog Messages
+
 .. _configure-notifications:
 
 ===========================================================

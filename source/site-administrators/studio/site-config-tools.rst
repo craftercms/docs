@@ -1,3 +1,8 @@
+:is-up-to-date: True
+
+.. index:: Site Config Tools
+
+.. _site-config-tools:
 
 =================
 Site Config Tools
@@ -5,7 +10,7 @@ Site Config Tools
 
 The Site Config tools configuration file defines what modules are available for administration use when clicking on |siteConfig| from the Sidebar. This configuration is unique in that a configuration file exists in the following location of each site: ``SITENAME/config/studio/administration/tools.xml``
 
-.. image:: /_static/images/configuration-tool-config.png
+.. image:: /_static/images/site-admin/configuration-tool-config.png
     :align: center
     :alt: Site Config Tools
 

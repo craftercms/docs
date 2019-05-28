@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: CMIS Configuration
+
 .. _cmis-configuration:
 
 ==================

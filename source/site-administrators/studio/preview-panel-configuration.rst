@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Preview Panel Configuration
+
 .. _preview-panel-configuration:
 
 ###########################
