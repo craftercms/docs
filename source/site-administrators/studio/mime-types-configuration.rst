@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Mime Types Configuration
+
 .. _mime-types-configuration:
 
 ########################

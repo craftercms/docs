@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Box Profiles Configuration
+
 .. _box-profile-configuration:
 
 ==========================

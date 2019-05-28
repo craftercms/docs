@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: AWS Profiles Configuration
+
 .. _aws-profile-configuration:
 
 ==========================

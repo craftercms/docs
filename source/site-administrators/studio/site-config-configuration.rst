@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Site Config Configuration
+
 .. highlight:: xml
 
 .. _site-config-configuration:
@@ -176,7 +180,7 @@ Sample File
 
 You can click on the **View Sample** button to see a configuration file example.
 
-.. image:: /_static/images/site-admin/basic-configuration-sample.png
+.. image:: /_static/images/site-admin/basic-configuration-sample.jpg
     :align: center
     :alt: Basic Configuration Sample
 
@@ -199,13 +203,13 @@ To add a new configuration file please follow the steps below.
     			<samplePath>/administration/samples/sample-workflow-config.xml</samplePath>
     		</file>
 
-    	.. image:: /_static/images/site-admin/basic-configuration-step1.png
+    	.. image:: /_static/images/site-admin/basic-configuration-step1.jpg
             :align: center
             :alt: Basic Configuration Step 1
 
 #. Click on the **Save** button
 
-    .. image:: /_static/images/site-admin/basic-configuration-step2.png
+    .. image:: /_static/images/site-admin/basic-configuration-step2.jpg
         :align: center
         :alt: Basic Configuration Step 2
 

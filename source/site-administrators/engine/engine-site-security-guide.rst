@@ -1,5 +1,7 @@
 :is-up-to-date: True
 
+.. index:: Engine Site Security Guide
+
 .. highlight:: groovy
    :linenothreshold: 5
 

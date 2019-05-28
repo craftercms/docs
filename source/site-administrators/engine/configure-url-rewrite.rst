@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: URL Rewrite
 
 .. _configure-url-rewrite:

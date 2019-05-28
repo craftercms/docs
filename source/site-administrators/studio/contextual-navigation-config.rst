@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index::Contextual Navigation Configuration
+
 .. _contextual-navigation-configuration:
 
 ###################################

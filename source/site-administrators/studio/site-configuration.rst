@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Site Configuration
+
 .. _site-configuration:
 
 ##################

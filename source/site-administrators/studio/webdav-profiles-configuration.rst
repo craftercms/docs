@@ -1,3 +1,7 @@
+:is-up -to-date: True
+
+.. index:: WebDAV Profiles Configuration
+
 .. _webdav-profiles-configuration:
 
 =============================
