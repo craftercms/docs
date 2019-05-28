@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Configuration; Crafter Studio
 
 .. _studio-configuration:
@@ -42,7 +44,9 @@ Here are the settings that can be configured through Crafter Studio:
    studio/drag-n-drop-configuration
    studio/environment-overrides
    studio/mime-types-configuration
+   studio/permission-mappings
    studio/preview-panel-configuration
+   studio/role-mappings
    studio/rte-configuration
    studio/sidebar-configuration
    studio/site-configuration

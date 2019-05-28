@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Role Mappings
 
 .. _role-mappings:

@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Engine Site Configuration
+
 .. _engine-site-configuration:
 
 =========================
@@ -17,7 +21,7 @@ XML Configuration Files
    Studio dashboard to ``Site Config`` > ``Configuration``, and finally picking up the ``Engine Site
    Configuration`` option from the dropdown.
 
-	 .. image:: /_static/images/site-admin/engine-site-config.png
+	 .. image:: /_static/images/site-admin/engine-site-config.jpg
 			 :alt: Engine Site Configuration
 
 
@@ -227,7 +231,7 @@ Spring Configuration Files
    through the out-of-the-box blueprints, by navigating from the Studio dashboard to ``Site Config``
    > ``Configuration``, and finally picking up the ``Engine Site Application Context`` option from the dropdown).
 
-	 .. image:: /_static/images/site-admin/engine-site-application-context.png
+	 .. image:: /_static/images/site-admin/engine-site-application-context.jpg
 			 :alt: Engine Site Application Context
 
  - ``/config/engine/{crafterEnv}-application-context.xml``

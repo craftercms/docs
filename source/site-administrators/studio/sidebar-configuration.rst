@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Sidebar Configuration
+
 .. _sidebar-configuration:
 
 #####################

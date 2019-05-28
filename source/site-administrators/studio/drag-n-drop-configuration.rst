@@ -1,4 +1,9 @@
+:is-up-to-date: True
+
+.. index:: Drag and Drop Configuration
+
 .. highlight:: xml
+
 
 .. _drag-and-drop-configuration:
 

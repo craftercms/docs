@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Putting it all together - Users, Groups, Roles and Permissions
+
 .. _putting-it-all-together:
 
 ==============================================================
