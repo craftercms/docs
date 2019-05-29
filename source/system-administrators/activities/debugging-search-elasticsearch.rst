@@ -73,3 +73,31 @@ Configure Deployer Port & Elasticsearch Port
   export ES_PORT=${ES_PORT:="9201"}
 
 |
+
+--------------------------------
+Elasticsearch Storage Monitoring
+--------------------------------
+
+Please note the following default behavior of Elasticsearch monitoring the available storage:
+
+* Will not allocate shards to nodes that have more than 85% disk used (only affects clusters not single instances)
+* Will attempt to relocate shards away from a node whose disk usage is above 90% (only affects clusters, not single instances)
+* Enforces read-only on every index that has one or more shards allocated on the node that has at least one disk exceeding 95% (affects any intance)
+
+When an index is set as read-only the application log will show messages similar to this one
+
+.. code-block:: guess
+
+   Caused by: ElasticsearchStatusException[Elasticsearch exception [type=cluster_block_exception, reason=blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];]]
+
+|
+
+In the Elasticsearch log the following message will be shown:
+
+.. code-block:: guess
+
+   [2019-04-02T16:10:14,520][WARN ][o.e.c.r.a.DiskThresholdMonitor] [uKHC0qA] flood stage disk watermark [95%] exceeded on [uKHC0qAFSrWZguNmsWhFiQ][uKHC0qA][INSTALL_DIR/data/indexes-es/nodes/0] free: 10.5gb[4.5%], all indices on this node will be marked read-only
+
+|
+
+For more information on the Elasticsearch disk-based shard allocation, see https://www.elastic.co/guide/en/elasticsearch/reference/current/disk-allocator.html for reference
