@@ -44,7 +44,8 @@ Configuration
 ||                       ||   populate expression                                                |
 ||                       || * Allow Past Date: Allow user to set date in the past                |
 ||                       || * Populate Expression: Populate date/time control using the following|
-||                       ||   expressions: now [+ or -][number][days or weeks or years]          |
+||                       ||   expressions: now [+ or -][number][days or weeks or years or hours  |
+||                       ||   or minutes]                                                        |
 ||                       || * Use Custom Timezone: Allows user to select a timezone              |
 ||                       || * Readonly: Make field read-only (can't be changed by the author).   |
 ||                       || * Readonly on Edit:                                                  |
