@@ -69,3 +69,8 @@ Crafter CMS allows you to set default branch names for the ``live`` and ``stagin
    # studio.repo.published.live: live
    # Git repository branch for the `staging` environment, default "staging"
    # studio.repo.published.staging: staging
+
+.. note::
+
+   Studio uses the properties described above (``studio-config-override.yaml`` file) when staging is enabled and the names for ``<live-environment/>`` and ``<staging-environment/>`` are not present in the Site Configuration (*site-config.xml* file).
+   When staging is disabled, the published environment name is read from the Environment Configuration (*environment-config.xml* file).
