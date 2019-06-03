@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Page Content Type
+
 .. _content-type-page:
 
 =================
@@ -6,9 +10,11 @@ Page Content Type
 
 Page content types are top level container types that lets you define the layout/structure and functionality of content/components.  To create a new page content type, click on |siteConfig| from the **Sidebar**
 
-.. figure:: /_static/images/templates/templates-site-config.png
+.. figure:: /_static/images/templates/templates-site-config.jpg
 	:alt: Template Site Config
 	:align: center
+
+|
 
 Click on **Content Types**, then select **Create New Type**
 
@@ -17,12 +23,16 @@ Click on **Content Types**, then select **Create New Type**
     :align: center
     :width: 50%
 
+|
+
 Enter a Display Label and content type name for your new page content type, then select **Page** as Type and then click on the **Create** button
 
 .. figure:: /_static/images/templates/templates-create-new-filled.png
     :alt: Template Create New Type Dialog
     :align: center
     :width: 35%
+
+|
 
 We'll now start to construct the layout of the page.  A content type has three ingredients: the model, the view and the controller.
 
@@ -36,11 +46,15 @@ We'll start building the model first, which is the form that Authors will be usi
 	:alt: Template Add Form Section to Model
 	:align: center
 
+|
+
 We'll add a few more things to our model by dragging controls and data sources to the form.  We're creating a page template for a blog entry, so at a minimum, we'll add some input fields for the title and author names, a date/time field, an image picker and it's corresponding data sources and a rich text editor inside a repeating group control so Authors can add as many sections as they want.
 
 .. figure:: /_static/images/templates/templates-add-controls-input.png
 	:alt: Template Add Input Fields to the Form
 	:align: center
+
+|
 
 Here we're adding an image picker to the form.  Notice that we'll need to add data sources for the image picker to get images from.  There are at least two sources that the image picker can get images from.  One is from images uploaded from the desktop, the other is for existing images listed in the **Static Assets** folder in the **Sidebar**.
 
@@ -48,11 +62,15 @@ Here we're adding an image picker to the form.  Notice that we'll need to add da
 	:alt: Template Add Image Picker to Form
 	:align: center
 
+|
+
 We're now going to add a data source for our image picker, by dragging the **Image Uploaded from Desktop** from the Data Sources list on the right to the form in the section **Data Sources**.  Don't forget to enter the path where to store the new image uploaded from desktop in the **Repository Path** field under the Properties Explorer
 
 .. figure:: /_static/images/templates/templates-image-desktop-src.png
 	:alt: Template Add Desktop Image Source
 	:align: center
+
+|
 
 We'll also add the data source **Image from repository** by dragging it to the **Data Sources** section in the form.  Don't forget to add the path where to browse existing images from the repository
 
@@ -60,17 +78,23 @@ We'll also add the data source **Image from repository** by dragging it to the *
 	:alt: Template Add Existing Image Source
 	:align: center
 
+|
+
 We'll go back to the Image Picker control on the form to make sure the two data sources we added are checked as sources for the Image Picker
 
 .. figure:: /_static/images/templates/templates-add-img-src.png
 	:alt: Template Add Image Sources to Image Picker
 	:align: center
 
+|
+
 We'll be adding a header component and a left-rail component inherited from the home page.  To add a component to the form, drag the **Item Selector** control to the form in the *Page - Blog Properties* section.  We'll be adding two components to the form, one for the *Header* and one for the *Left-rail*
 
 .. figure:: /_static/images/templates/templates-add-item-selector.png
 	:alt: Template Add Item Selector
 	:align: center
+
+|
 
 We'll need to add a data source for the two *Item Selectors* we just added to the form by dragging **Child Content** to the *Data Sources* section to the form and naming it **Components**. Don't forget to add the path where to store new content created under the **Repository Path** field in the Properties Explorer.
 
