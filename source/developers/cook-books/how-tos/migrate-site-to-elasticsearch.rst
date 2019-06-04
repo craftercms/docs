@@ -117,8 +117,8 @@ To reindex all existing content execute the following command:
 Update the site code
 ^^^^^^^^^^^^^^^^^^^^
 
-Because both Solr and Elasticsearch are based on Lucene, you will be able to keep your queries unchanged, however
-features like sorting, facets and highlighting will require code changes.
+Because both Solr and Elasticsearch are based on Lucene, you will be able to keep most of your queries unchanged, 
+however features like sorting, facets and highlighting will require code changes.
 
 .. note:: If you are using any customization or any advance feature from Solr, you might not be able to easily update
   your code to work with Elasticsearch, in this case you might need to consider running Solr as described before.
@@ -162,6 +162,7 @@ This is a basic example of replacing Crafter Search service with Elasticsearch
         query.setQuery(q)
         query.setStart(start)
         query.setRows(rows)
+        query.setParam("sort", "createdDate_dt asc")
         query.setHighlight(true)
         query.setHighlightFields(HIGHLIGHT_FIELDS)
 
@@ -180,6 +181,8 @@ Using the Elasticsearch Java API the code will look like this:
   import org.elasticsearch.action.search.SearchRequest
   import org.elasticsearch.index.query.QueryBuilders
   import org.elasticsearch.search.builder.SearchSourceBuilder
+  import org.elasticsearch.search.sort.FieldSortBuilder
+  import org.elasticsearch.search.sort.SortOrder
 
   ...
 
@@ -194,6 +197,7 @@ Using the Elasticsearch Java API the code will look like this:
       .query(QueryBuilders.queryStringQuery(q))
       .from(start)
       .size(rows)
+      .sort(new FieldSortBuilder("createdDate_dt").order(SortOrder.ASC))
       .highlighter(highlighter)
   
   // Execute the query
@@ -227,6 +231,13 @@ Using the Elasticsearch Query DSL the code will look like this:
     ],
     from: start,
     size: rows,
+    sort: [
+      {
+        createdDate_dt: {
+          order: "asc"
+        }
+      }
+    ],
     highlight: [
       fields: highlighter
     ]
@@ -241,3 +252,21 @@ For additional information you can read the official
 Notice in the given example that the query string didn't change, you will need to update only the code
 that builds and executes the query. However Elasticsearch provides new query types and features that you
 can use directly from your Groovy scripts.
+
+If any of your queries includes date math for range queries, you will also need to update them to use the Elasticsearch
+date math syntax described `here <https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#date-math>`_.
+
+**Example**
+
+.. code-block:: guess
+  :linenos:
+  :caption: Solr date math expression
+
+  createdDate_dt: [ NOW-1MONTH/DAY TO NOW-2DAYS/DAY ]
+
+.. code-block:: guess
+  :linenos:
+  :caption: Elasticsearch date math expression
+
+  createdDate_dt: [ now-1M/d TO now-2d/d ]
+
