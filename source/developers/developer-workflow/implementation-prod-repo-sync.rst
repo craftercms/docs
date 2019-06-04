@@ -1,5 +1,8 @@
 :is-up-to-date: True
 
+.. index:: Configuration / Implementation Production Content Repository-Code Repository Sync and Code Releases Publishing
+
+.. _config-implementation-production-content-repo-code-repo-sync:
 
 ==============================================================================================================
 Configuration / Implementation Production Content Repository-Code Repository Sync and Code Releases Publishing
@@ -172,7 +175,7 @@ The following instructions show how to create a project in Jenkins that will exe
 
 The first step is to create a project.  Give the project a clear name and select the Freestyle project then click OK to continue.
 
-.. image:: /_static/images/developer/workflow/jenkins-freestyle-proj.png
+.. image:: /_static/images/developer/workflow/jenkins-freestyle-proj.jpg
      :alt: Developer Workflow - Create Jenkins Project
      :width: 80 %
      :align: center
@@ -181,7 +184,7 @@ The first step is to create a project.  Give the project a clear name and select
 
 There is no Source Code Management (SCM) aspect of the project.  The most typical use case for Content back workflow is a scheduled event: Every hour, day, week etc.
 
-.. image:: /_static/images/developer/workflow/jenkins-src-code-mgmt.png
+.. image:: /_static/images/developer/workflow/jenkins-src-code-mgmt.jpg
      :alt: Developer Workflow - Jenkins Source Code Management
      :width: 80 %
      :align: center
@@ -193,7 +196,7 @@ The next step is to define build triggers.  Since you are calling APIs here and 
 We want content from authoring to flow backward regularly, so we'll configure the job to run periodically.  Select “Build Periodically” and define your schedule.  Schedule definitions use standard Cron/Quartz configuration.  In the example, we’ll run every hour.
 
 
-.. image:: /_static/images/developer/workflow/jenkins-build-triggers.png
+.. image:: /_static/images/developer/workflow/jenkins-build-triggers.jpg
      :alt: Developer Workflow - Jenkins Build Triggers
      :width: 80 %
      :align: center
@@ -202,14 +205,14 @@ We want content from authoring to flow backward regularly, so we'll configure th
 
 Finally, you must define that you want Jenkins to call your script:
 
-.. image:: /_static/images/developer/workflow/jenkins-build.png
+.. image:: /_static/images/developer/workflow/jenkins-build.jpg
      :alt: Developer Workflow - Jenkins Build
      :width: 80 %
      :align: center
 
 |
 
-.. image:: /_static/images/developer/workflow/jenkins-execute-shell.png
+.. image:: /_static/images/developer/workflow/jenkins-execute-shell.jpg
      :alt: Developer Workflow - Jenkins Execute Shell
      :width: 80 %
      :align: center
@@ -287,14 +290,14 @@ See configuration of sync script above (codeforward-contentback-sync.sh).  The s
 #. You will call the publish-code script instead of the codeforward-contentback-sync script.
 #. You will ask the user for a parameter  value **COMMIT_ID** via the UI on each invocation and pass that to the command line as the COMMIT_ID parameter value
 
-.. image:: /_static/images/developer/workflow/jenkins-commit-id-param.png
+.. image:: /_static/images/developer/workflow/jenkins-commit-id-param.jpg
      :alt: Developer Workflow - Jenkins Commit ID parameter added
      :width: 80 %
      :align: center
 
 |
 
-.. image:: /_static/images/developer/workflow/jenkins-build-publish.png
+.. image:: /_static/images/developer/workflow/jenkins-build-publish.jpg
      :alt: Developer Workflow - Jenkins Build Publish
      :width: 80 %
      :align: center
