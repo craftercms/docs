@@ -1,5 +1,9 @@
 :is-up-to-date: True
 
+.. index:: Connecting the Production CMS to the Development Workflow, Development Workflow
+
+.. _connecting-the-production-CMS-to-the-development-workflow:
+
 =========================================================
 Connecting the Production CMS to the Development Workflow
 =========================================================
@@ -32,7 +36,7 @@ Content Authoring and Publishing
 
 The first thing to grok in the process is how content is published to the Production delivery servers.
 
-.. image:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-Sandbox-Published-768x470.png
+.. image:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-Sandbox-Published-768x470.jpg
       :alt: Developer Workflow - Authors work in Sandbox. Delivery nodes pull from Published
       :width: 60 %
       :align: center
@@ -87,7 +91,7 @@ Syncing the two repositories is done in two steps.
 
 Syncing (pull / push) the repositories is triggered via two distinct API calls (one to pull from a remote and the other to push to a remote.)   It’s possible to trigger these activities manually or on a schedule.  The frequency of triggering the sync depends on how often the development process needs the production content.  The APIs are most often triggered via DevOps automation platforms like Jenkins, Travis, Bamboo and so on.
 
-.. image:: /_static/images/developer/workflow/syncing-content-repo.png
+.. image:: /_static/images/developer/workflow/syncing-content-repo.jpg
      :alt: Developer Workflow - Syncing the Content Repository and the Code Repository
      :width: 80 %
      :align: center
@@ -119,7 +123,7 @@ Publishing Code Updates
 
 As you can see from the figures above, the Authoring server’s Sandbox is the Content repository for the project.  It’s the Sandbox that is synced with the remote Code repository.  Once code has moved forward from the Code repository to the Sandbox on the authoring server it’s still not “live” on the delivery servers. Delivery and depot servers running Crafter Deployer are syncing with the project Published repository.  To promote code updates to Live we must inform Crafter Studio to publish them.  Publishing a code update is done via a Studio API (Publish Commits) that will publish one or more commit IDs.  Typically only a single commit ID is required.  Once the API is called Studio will publish the code to the live delivery servers just as it publishes content.
 
-.. image:: /_static/images/developer/workflow/publishing-code-updates.png
+.. image:: /_static/images/developer/workflow/publishing-code-updates.jpg
      :alt: Developer Workflow - Publishing Code Updates
      :width: 80 %
      :align: center

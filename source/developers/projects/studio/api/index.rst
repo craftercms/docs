@@ -10,7 +10,7 @@
 Crafter Studio API
 ==================
 
-There are 2 versions of Crafter Studio APIs.  **API version 2** contains the User and Group Management, Monitoring and Audit APIs.   All other APIs are in **API version 1**.
+There are 2 versions of Crafter Studio APIs.  **API version 2** contains the User and Group Management, UI, Cluster, Sites, Search, Audit, Monitoring, CMIS, Repository, Content and Schemas APIs.   All other APIs are in **API version 1**.
 
 .. note::
     This API is protected using a CSRF Token so all ``POST``, ``PUT`` and ``DELETE`` calls need to
