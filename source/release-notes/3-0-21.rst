@@ -1,0 +1,15 @@
+------------------
+Crafter CMS 3.0.21
+------------------
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Upgraded Jackson Databind library for various Crafter modules
+* Solr library upgraded to 7.7.1
+* Added support for copyField/copyTo capability in the search engines
+* Documentation updates
+* Bug fixes
+
+For a full list of tickets, please visit: `GitHub 3.0.21 Milestone <https://github.com/craftercms/craftercms/milestone/49?closed=1>`_
