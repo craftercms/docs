@@ -98,25 +98,25 @@ We'll be adding a header component and a left-rail component inherited from the 
 
 We'll need to add a data source for the two *Item Selectors* we just added to the form by dragging **Child Content** to the *Data Sources* section to the form and naming it **Components**. Don't forget to add the path where to store new content created under the **Repository Path** field in the Properties Explorer.
 
-.. figure:: /_static/images/templates/templates-add-item-selector-src.png
+.. figure:: /_static/images/templates/templates-add-item-selector-src.jpg
 	:alt: Template Add Item Selector Source
 	:align: center
 
 We're going back to the Item Selectors we added to the form and check  **Components** as data source for our control
 
-.. figure:: /_static/images/templates/templates-add-item-sel-src.png
+.. figure:: /_static/images/templates/templates-add-item-sel-src.jpg
 	:alt: Template Check Item Selector Source
 	:align: center
 
 Next we'll add a **Repeating Group** control to the form,  with a minimum of 1 occurrence, which can be specified in the *Properties Explorer* section, in the **Minimum Occurrences** field
 
-.. figure:: /_static/images/templates/templates-add-repeating-group.png
+.. figure:: /_static/images/templates/templates-add-repeating-group.jpg
 	:alt: Template Add Repeating Group Control
 	:align: center
 
 In the Repeating Group control, we will add an RTE (Rich Text Editor).  In order for the content to be searchable, it needs to be indexed.  To facilitate indexing, the suffix **_html** should be appended to the variable name given to the RTE.  In this case, the RTE's variable name is *entry_html*.  For more information on variable names and search indexing , please see the section :ref:`form-control-variable-names`
 
-.. figure:: /_static/images/templates/templates-add-rte.png
+.. figure:: /_static/images/templates/templates-add-rte.jpg
 	:alt: Template Add Rich Text Editor to Repeating Group Control
 	:align: center
 
@@ -136,7 +136,7 @@ There are two ways to create the freemarker template file for our template.  One
 
 The other way of creating your freemarker template, is to go to the Properties Explorer in the Content Type model, then click on the **Display Template** field, a magnifying glass and a pencil will appear on the field.  To create a template, click on the pencil.
 
-.. figure:: /_static/images/templates/templates-ftl-create-properties.png
+.. figure:: /_static/images/templates/templates-ftl-create-properties.jpg
 	:alt: Template Create FTL from Content Type Properties Display Template Field
 	:align: center
 
