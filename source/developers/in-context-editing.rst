@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: In-Context Editing
+
 .. _in-context-editing:
 
 ==================
