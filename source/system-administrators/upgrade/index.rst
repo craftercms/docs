@@ -50,12 +50,8 @@ Download the Crafter CMS version you'd like to upgrade to, and extract the files
 .. code-block:: bash
 
     usage: upgrade-target [options] <target-installation-path>
-    -f,--full   Perform a full upgrade. During a non-full upgrade, only the
-                Tomcat wars and the Deployer jar are upgraded. During a full
-                upgrade, the entire bin directory is upgraded, keeping only
-                Tomcat's shared folder, Tomcat's conf folder, the Crafter
-                Solr config, the Deployer config folder, and the
-                crafter-setenv scripts
+    -f,--full   Deprecated option. Since 3.0.19, a full upgrade is always
+                executed
     -h,--help   Show usage information
 
 |
