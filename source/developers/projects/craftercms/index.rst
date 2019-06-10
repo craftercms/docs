@@ -84,6 +84,25 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 ||                        || * ``status`` Prints the status of Solr, Crafter Deployer and        |
 ||                        ||    Crafter Studio (uptime, process id and version if applicable)    |
 ||                        || * ``help``  Prints all options available                            |
+||                        || * ``start_deployer``  Starts Deployer                               |
+||                        || * ``stop_deployer``  Stops Deployer                                 |
+||                        || * ``debug_deployer``  Starts Deployer in debug mode                 |
+||                        || * ``start_solr``  Starts Solr                                       |
+||                        || * ``stop_solr``  Stops Solr                                         |
+||                        || * ``debug_solr``  Starts Solr in debug mode                         |
+||                        || * ``start_tomcat``  Starts Apache Tomcat                            |
+||                        || * ``stop_tomcat``  Stops Apache Tomcat                              |
+||                        || * ``debug_tomcat``  Starts Apache Tomcat in debug mode              |
+||                        || * ``start_mongodb``  Starts MongoDB                                 |
+||                        || * ``stop_mongodb``  Stops MongoDB                                   |
+||                        || * ``status_engine``  Prints the status of Crafter Engine            |
+||                        || * ``status_studio``  Prints the status of Crafter Studio            |
+||                        || * ``status_deployer``  Prints the status of Crafter Deployer        |
+||                        || * ``status_solr``  Prints the status of Solr                        |
+||                        || * ``status_mariadb``  Prints the status of MariaDb                  |
+||                        || * ``status_mongodb``  Prints the status of MongoDB                  |
+||                        || * ``backup <name>``  Perform a backup of all data                   |
+||                        || * ``restore <file>``  Perform a restore of all data                 |
 +-------------------------+----------------------------------------------------------------------+
 
 +-------------------------+----------------------------------------------------------------------+
@@ -145,6 +164,14 @@ Here are the general environment variables used by ``crafter(.sh/bat)``:
 ||                         +---------------------------------------------------------------------+
 ||                         || $CRAFTER_HOME/..                                                   |
 +--------------------------+---------------------------------------------------------------------+
+|| CRAFTER_LOGS_DIR        || Crafter CMS logs file path                                         |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_HOME/logs                                                 |
++--------------------------+---------------------------------------------------------------------+
+|| CRAFTER_DATA_DIR        || Crafter CMS data file path                                         |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_HOME/data                                                 |
++--------------------------+---------------------------------------------------------------------+
 || DEPLOYER_HOME           || Crafter Deployer jar files path                                    |
 ||                         +---------------------------------------------------------------------+
 ||                         || $CRAFTER_HOME/crafter-deployer                                     |
@@ -167,7 +194,7 @@ Here are the environment variables used for Tomcat in ``crafter(.sh/bat)``:
 +--------------------------+---------------------------------------------------------------------+
 || CATALINA_LOGS_DIR       || Tomcat file logs path                                              |
 ||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_ROOT/logs/tomcat                                          |
+||                         || $CRAFTER_LOGS_DIR/tomcat                                           |
 +--------------------------+---------------------------------------------------------------------+
 || CATALINA_OUT            || Tomcat main log file                                               |
 ||                         +---------------------------------------------------------------------+
@@ -176,6 +203,14 @@ Here are the environment variables used for Tomcat in ``crafter(.sh/bat)``:
 || CATALINA_OPTS           || Tomcat options                                                     |
 ||                         +---------------------------------------------------------------------+
 ||                         || -Dcatalina.logs=$CATALINA_LOGS_DIR -server -Xss1024K -Xms1G -Xmx4G |
++--------------------------+---------------------------------------------------------------------+
+|| CATALINA_TMPDIR         || Tomcat temporary directory                                         |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_HOME/temp/tomcat                                          |
++--------------------------+---------------------------------------------------------------------+
+|| CRAFTER_APPLICATION_LOGS|| Crafter application log files path                                 |
+||                         +---------------------------------------------------------------------+
+||                         || $CATALINA_LOGS_DIR                                                 |
 +--------------------------+---------------------------------------------------------------------+
 
 Here are the environment variables used for Solr in ``crafter(.sh/bat)``:
@@ -191,11 +226,15 @@ Here are the environment variables used for Solr in ``crafter(.sh/bat)``:
 +--------------------------+---------------------------------------------------------------------+
 || SOLR_INDEXES_DIR        || Solr indexes directory                                             |
 ||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_ROOT/data/indexes                                         |
+||                         || $CRAFTER_DATA_DIR/indexes                                          |
 +--------------------------+---------------------------------------------------------------------+
 || SOLR_LOGS_DIR           || Solr log files directory                                           |
 ||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_ROOT/logs/solr                                            |
+||                         || $CRAFTER_LOGS_DIR/solr                                             |
++--------------------------+---------------------------------------------------------------------+
+|| SOLR_LOGS_PID           || Solr process id file                                               |
+||                         +---------------------------------------------------------------------+
+||                         || $SOLR_INDEXES_DIR/solr.pid                                         |
 +--------------------------+---------------------------------------------------------------------+
 || SOLR_JAVA_OPTS          || Solr Java options                                                  |
 ||                         +---------------------------------------------------------------------+
@@ -215,15 +254,15 @@ Here are the environment variables used for the Deployer in ``crafter(.sh/bat)``
 +--------------------------+---------------------------------------------------------------------+
 || DEPLOYER_DATA_DIR       || Deployer data files directory                                      |
 ||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_ROOT/data/deployer                                        |
+||                         || $CRAFTER_DATA_DIR/deployer                                         |
 +--------------------------+---------------------------------------------------------------------+
 || DEPLOYER_LOGS_DIR       || Deployer log files directory                                       |
 ||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_ROOT/logs/deployer                                        |
+||                         || $CRAFTER_LOGS_DIR/deployer                                         |
 +--------------------------+---------------------------------------------------------------------+
 || DEPLOYER_DEPLOYMENTS_DIR|| Deployer deployments files directory                               |
 ||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_ROOT/data/repos/sites                                     |
+||                         || $CRAFTER_DATA_DIR/repos/sites                                      |
 +--------------------------+---------------------------------------------------------------------+
 || DEPLOYER_SDOUT          || Deployer SDOUT path                                                |
 ||                         +---------------------------------------------------------------------+
@@ -255,11 +294,27 @@ Here are the environment variables used for MongoDB in ``crafter(.sh/bat)``:
 +--------------------------+---------------------------------------------------------------------+
 || MONGODB_DATA_DIR        || MongoDB data directory                                             |
 ||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_ROOT/data/mongodb                                         |
+||                         || $CRAFTER_DATA_DIR/mongodb                                          |
 +--------------------------+---------------------------------------------------------------------+
 || MONGODB_LOGS_DIR        || MongoDB log files directory                                        |
 ||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_ROOT/logs/mongodb                                         |
+||                         || $CRAFTER_LOGS_DIR/mongodb                                          |
++--------------------------+---------------------------------------------------------------------+
+
+Here are the environment variables used for Profile in ``crafter(.sh/bat)``:
+
++--------------------------+---------------------------------------------------------------------+
+|| Profile                 || Description                                                        |
+|| Variable Name           +---------------------------------------------------------------------+
+||                         || Default Value                                                      |
++==========================+=====================================================================+
+|| PROFILE_DEPLOY_WAR_PATH || Crafter Profile war file deploy path                               |
+||                         +---------------------------------------------------------------------+
+||                         || $CATALINA_HOME/webapps/crafter-profile                             |
++--------------------------+---------------------------------------------------------------------+
+|| PROFILE_WAR_PATH        || Crafter Profile war file path                                      |
+||                         +---------------------------------------------------------------------+
+||                         || $CATALINA_HOME/webapps/crafter-profile.war                         |
 +--------------------------+---------------------------------------------------------------------+
 
 Let's look at an example on how to start an authoring environment using the scripts we discussed above.  To start the authoring environment, go to your Crafter CMS install folder then run the following:
@@ -547,10 +602,16 @@ Aside from the tasks that we can run, there are also some properties defined in 
 || ``tomcat.version``     || Sets the tomcat version to be downloaded used by                    |
 ||                        || *downloadTomcat* task                                               |
 +-------------------------+----------------------------------------------------------------------+
+|| ``groovy.version``     || Sets the groovy version to be downloaded used by                    |
+||                        || *downloadGroovy* task                                               |
++-------------------------+----------------------------------------------------------------------+
 || ``solr.version``       || Sets the Solr version to be downloaded used by *downloadSolr* task. |
 +-------------------------+----------------------------------------------------------------------+
-|| ``downloadDir``        || Path were all downloads will be saved. Used by *downloadTomcat* and |
-||                        || *downloadSolr*. Default value is *./target/downloads*               |
+|| ``mariadb4j.version``  || Sets the MariaDb version to be downloaded used by                   |
+||                        || *downloadMariaDB4j* task                                            |
++-------------------------+----------------------------------------------------------------------+
+|| ``downloadDir``        || Path were all downloads will be saved.                              |
+||                        || Default value is *./target/downloads*                               |
 +-------------------------+----------------------------------------------------------------------+
 
 +------------------------------------------------------------------------------------------------+
@@ -601,8 +662,7 @@ Aside from the tasks that we can run, there are also some properties defined in 
 +-------------------------------------+----------------------------------------------------------+
 || ``authoring.deployer.debug.port``  || Authoring Deployer debug port. Default value is 5000    |
 +-------------------------------------+----------------------------------------------------------+
-|| ``authoring.deployment.dir``       || Authoring deployment directory.                         |
-||                                    || Default value is "data/repos/sites"                     |
+|| ``authoring.studio.smtp.port``     || Authoring Studio SMTP port. Default value is 25         |
 +-------------------------------------+----------------------------------------------------------+
 
 .. _delivery-default-ports:
@@ -632,28 +692,30 @@ Aside from the tasks that we can run, there are also some properties defined in 
 +------------------------------------+-----------------------------------------------------------+
 || ``delivery.deployer.debug.port``  || Delivery Deployer debug port. Default value is 5001      |
 +------------------------------------+-----------------------------------------------------------+
-|| ``delivery.deployment.dir``       || Delivery Deployment directory.                           |
-||                                   || Default value is "data/repos/sites"                      |
-+------------------------------------+-----------------------------------------------------------+
+
 
 .. _git-properties:
 
-+------------------------------------------------------------------------------------------------+
-|| Git Properties                                                                                |
-+-----------------------------+------------------------------------------------------------------+
-|| Property                   || Description                                                     |
-+=============================+==================================================================+
-|| ``crafter.git.url``        || Git URL                                                         |
-||                            || Default value is "https://github.com/craftercms/"               |
-+-----------------------------+------------------------------------------------------------------+
-|| ``crafter.git.branch``     || Git source branch. Default value is "master"                    |
-+-----------------------------+------------------------------------------------------------------+
-|| ``crafter.git.remote``     || Git repository. Default value is "origin"                       |
-+-----------------------------+------------------------------------------------------------------+
-|| ``crafter.ui.repo``        || Is Studio UI from repository? Default value is false            |
-+-----------------------------+------------------------------------------------------------------+
-|| ``forceDeploy``            || Force deploy? Default value is false                            |
-+-----------------------------+------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+
+|| Git Properties                                                                                  |
++-------------------------------+------------------------------------------------------------------+
+|| Property                     || Description                                                     |
++===============================+==================================================================+
+|| ``crafter.git.url``          || Git URL                                                         |
+||                              || Default value is "https://github.com/craftercms/"               |
++-------------------------------+------------------------------------------------------------------+
+|| ``crafter.git.branch``       || Git source branch. Default value is "master"                    |
++-------------------------------+------------------------------------------------------------------+
+|| ``crafter.git.remote``       || Git repository. Default value is "origin"                       |
++-------------------------------+------------------------------------------------------------------+
+|| ``crafter.git.shallowClone`` || Perform a shallow clone? Default value is false                 |
++-------------------------------+------------------------------------------------------------------+
+|| ``crafter.ui.repo``          || Is Studio UI from repository? Default value is false            |
++-------------------------------+------------------------------------------------------------------+
+|| ``forceDeploy``              || Force deploy? Default value is false                            |
++-------------------------------+------------------------------------------------------------------+
+|| ``keepBin``                  || keepBin? Default value is false                                 |
++-------------------------------+------------------------------------------------------------------+
 
 Here's an example using one of the task properties, ``gitRepo``,  to get the latest code from Crafter CMS, in order to have the latest updates from the community:
 

@@ -102,6 +102,8 @@ Crafter CMS installs prior to 3.0.15 does not contain the upgrade scripts requir
 |
 |
 
+.. _running-upgrade-script-from-current-install:
+
 Running the upgrade script from your current install
 ----------------------------------------------------
 
