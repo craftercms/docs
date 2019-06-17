@@ -101,7 +101,7 @@ Data Source Code
     :width: 50 %
     :alt: Form Engine Control Example
 
-**Location /STUDIO-WAR/components/cstudio-forms/data-sources/configured-list.js**
+**Location /STUDIO-WAR/default-site/static-assets/components/cstudio-forms/data-sources/configured-list.js**
 
 .. code-block:: javascript
     :linenos:
@@ -362,11 +362,11 @@ Summary
 
 A good place to start is by looking at the control you want to use, for example the video picker. 
 
-**Location /STUDIO-WAR/components/cstudio-forms/controls/video-picker.js**
+**Location /STUDIO-WAR/default-site/static-assets/components/cstudio-forms/controls/video-picker.js**
 
 When you want to build a data source, there is a method called get interface. This method tells the system what the data source can help with. So using the same example, a video upload returns video and thus the video picker can use that data source.
 
-**Location /STUDIO-WAR/components/cstudio-forms/data-sources/video-desktop-upload.js**
+**Location /STUDIO-WAR/default-site/static-assets/components/cstudio-forms/data-sources/video-desktop-upload.js**
   
 If you want to create a new datasource for the video picker, you basically copy and paste a similar datasource, then change the object class name, label and interface. Then in the project go to the the administration panel and change the configuration to load the new javascript file.
 
