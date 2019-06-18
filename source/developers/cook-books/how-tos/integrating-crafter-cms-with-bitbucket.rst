@@ -18,7 +18,7 @@ Create a New Project and Connect it to BitBucket
 Step 1: Create a Project in BitBucket
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: /_static/images/developer/dev-cloud-platforms/crafter-cms-bitbucket-create-repo.png
+.. image:: /_static/images/developer/dev-cloud-platforms/crafter-cms-bitbucket-create-repo.jpg
     :alt: How-Tos - Create a project in BitBucket
     :width: 70 %
     :align: center
