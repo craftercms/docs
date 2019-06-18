@@ -413,5 +413,9 @@ rst_epilog = """
 javadoc_base = 'http://javadoc.craftercms.org/'
 javadoc_version = '3.1.0'
 
+# docs home
+doc_base = 'https://docs.craftercms.org/en/'
+
 # Shorten external links
-extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None )}
+extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),
+            'doc_base_url': (doc_base + version + '/%s', None )}
