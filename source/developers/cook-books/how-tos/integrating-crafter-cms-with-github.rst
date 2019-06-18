@@ -18,7 +18,7 @@ Create a New Project and Connect it to GitHub
 Step 1: Create a Project in GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: /_static/images/developer/craftercms-github-create-repo.png
+.. image:: /_static/images/developer/dev-cloud-platforms/craftercms-github-create-repo.jpg
     :alt: How-Tos - Create a project in GitHub
     :width: 70 %
     :align: center
@@ -34,7 +34,7 @@ Step 1: Create a Project in GitHub
 
 Once your repository is created you will see a screen similar to the one below.  You want to make note of the Git URL for the site.  You will need this URL in the next step.
 
-.. image:: /_static/images/developer/craftercms-github-create-repo-url.png
+.. image:: /_static/images/developer/dev-cloud-platforms/craftercms-github-create-repo-url.jpg
     :alt: How-Tos - New project in GitHub
     :width: 70 %
     :align: center
@@ -111,7 +111,7 @@ Step 3: Check GitHub to Make Sure Your Site is There
 
 Go back to your Github project and refresh the screen.  You will see the contents of your CMS project in the repository.
 
-.. image:: /_static/images/developer/craftercms-github-site-created-syncd.png
+.. image:: /_static/images/developer/dev-cloud-platforms/craftercms-github-site-created-syncd.jpg
     :alt: How-Tos - Your project in GitHub
     :width: 80 %
     :align: center

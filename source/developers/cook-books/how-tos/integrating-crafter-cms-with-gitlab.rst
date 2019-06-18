@@ -18,7 +18,7 @@ Create a New Project and Connect it to GitLab
 Step 1: Create a Project in GitLab
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: /_static/images/developer/craftercms-gitlab-create-repo.png
+.. image:: /_static/images/developer/dev-cloud-platforms/craftercms-gitlab-create-repo.jpg
     :alt: How-Tos - Create a project in GitLab
     :width: 70 %
     :align: center
@@ -33,7 +33,7 @@ Step 1: Create a Project in GitLab
 
 Once your repository is created you will see a screen similar to the one below.  You want to make note of the Git URL for the site.  You will need this URL in the next step.
 
-.. image:: /_static/images/developer/craftercms-gitlab-create-repo-url.png
+.. image:: /_static/images/developer/dev-cloud-platforms/craftercms-gitlab-create-repo-url.jpg
     :alt: How-Tos - New project in GitLab
     :width: 70 %
     :align: center
@@ -110,7 +110,7 @@ Step 3: Check GitLab to Make Sure Your Site is There
 
 Go back to your GitLab project and refresh the screen.  You will see the contents of your CMS project in the repository.
 
-.. image:: /_static/images/developer/craftercms-gitlab-site-created-syncd.png
+.. image:: /_static/images/developer/dev-cloud-platforms/craftercms-gitlab-site-created-syncd.jpg
     :alt: How-Tos - Your project in GitLab
     :width: 70 %
     :align: center

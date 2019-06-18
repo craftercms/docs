@@ -1,5 +1,8 @@
 :is-up-to-date: True
 
+.. index:: Setting up an LDAP server for development/testing using Apache Directory Studio, Setting up an LDAP server for development
+
+.. _setting-up-ldap-server-for-dev:
 
 ===============================================================================
 Setting up an LDAP server for development/testing using Apache Directory Studio
@@ -100,7 +103,7 @@ Load some data into the LDAP Server
 
 The server we setup earlier does not have any data yet.  We will now load some data by using the LDIF editor.  LDIF or LDAP Data Interchange Format, is a text format for representing LDAP data and commands.  To open an LDIF editor, click on the **New** icon at the top left, or click **File** -> **New**, a dialog will appear with a list, select **LDIF File** under **LDAP Browser**
 
-.. image:: /_static/images/developer/ldap-server-select-ldif.png
+.. image:: /_static/images/developer/ldap-server-select-ldif.jpg
     :alt: Apache Directory Studio - Open LDIF file editor
     :width: 95 %
     :align: center
@@ -207,14 +210,14 @@ Please note that a user can belong to multiple groups and sites.  To add another
 
 To add the data we entered in the LDIF file into the LDAP Server, first, click on the **Browse** button in the LDIF editor and select the connection we setup (ApacheDS 2.0.0), then click on the green (Execute LDIF) button next to the **Browse** button to get our data into the server.
 
-.. image:: /_static/images/developer/ldap-server-run-ldif.png
+.. image:: /_static/images/developer/ldap-server-run-ldif.jpg
     :alt: Apache Directory Studio - Open LDIF file editor
     :width: 95 %
     :align: center
 
 After executing the LDIF file, you should see the results in the **Modification Logs** tab at the bottom of the LDIF Editor and should look something like the image below:
 
-.. image:: /_static/images/developer/ldap-server-mod-logs.png
+.. image:: /_static/images/developer/ldap-server-mod-logs.jpg
     :alt: Apache Directory Studio - LDIF Execute Results in Modification Logs
     :width: 65 %
     :align: center
@@ -232,7 +235,7 @@ Changing a user's password in the LDAP server
 
 Notice that we set the password to the same characters for all the users.  Let's change the password for all the users.  To do this, from the LDAP Browser tab, navigate to DIT -> Root DSE -> dc=example,dc=com -> ou=Users, then click on the name os a user. We'll click on user **Jane Doe**.  A new tab will open in the middle of your ApacheDS with all the attributes for user **Jane Doe**.  Double click on **userPassword** to change the user's password,
 
-.. image:: /_static/images/developer/ldap-server-user-view.png
+.. image:: /_static/images/developer/ldap-server-user-view.jpg
     :alt: Apache Directory Studio - LDAP Browser View a User
     :width: 95 %
     :align: center
