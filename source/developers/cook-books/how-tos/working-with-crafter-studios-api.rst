@@ -17,7 +17,7 @@ In this section, we'll show the basics of interacting with Crafter Studio APIs b
 We’ll use CURL, a ubiquitous Linux command tool as our client.
 
 You can find the full Crafter Studio API for Crafter CMS version 3.1 here
-http://docs.craftercms.org/en/3.1/developers/projects/studio/api/index.html
+:doc_base_url:`developers/projects/studio/api/index.html`
 
 Most Crafter Studio API requires users to authenticate first.  When a user authenticates via the login API call, this establishes a session which is provided per J2EE in a **JSESSIONID** cookie.  Future calls must send this cookie.
 
@@ -30,7 +30,7 @@ Let's begin:
 #. **Authenticate**
 
    We’ll use the authenticate API
-   http://docs.craftercms.org/en/3.1/developers/projects/studio/api/security/login.html
+   :doc_base_url:`developers/projects/studio/api/security/login.html`
 
    .. code-block:: guess
 
@@ -80,7 +80,7 @@ Let's begin:
 #. **Get a list of projects under management**
 
    We'll get a list of sites the user is authorized to work with
-   http://docs.craftercms.org/en/3.1/developers/projects/studio/api/site/get-sites-per-user.html
+   :doc_base_url:`developers/projects/studio/api/site/get-sites-per-user.html`
 
    .. code-block:: guess
 
@@ -102,7 +102,7 @@ Let's begin:
 #. **Write content to a project**
 
    We'll now write content to the Editorial com Project
-   http://docs.craftercms.org/en/3.1/developers/projects/studio/api/content/write-content.html
+   :doc_base_url:`developers/projects/studio/api/content/write-content.html`
 
    .. code-block:: guess
 
@@ -116,4 +116,4 @@ Let's begin:
    We are passing the Session ID and the XSRF tokens.
    We are passing a number of parameters that tell Crafter CMS where and how to store the content in the repository
 
-Using the above examples as a guide, we can now interact with any Crafter Studio API found here:  http://docs.craftercms.org/en/3.1/developers/projects/studio/api/index.html.
+Using the above examples as a guide, we can now interact with any Crafter Studio API found here:  :doc_base_url:`developers/projects/studio/api/index.html`
