@@ -1,4 +1,4 @@
-:is-up -to-date: True
+:is-up-to-date: True
 
 .. index:: WebDAV Profiles Configuration
 
