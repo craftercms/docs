@@ -162,6 +162,18 @@ The fields available at this level are:
 || Merge        || The inheritance pattern to use with content of this type, please see Content  |
 || Strategy     || Inheritance for more detail on this feature :ref:`content-inheritance`        |
 +---------------+--------------------------------------------------------------------------------+
+|| Show in Quick|| Show this content type in the quick create menu from the context nav          |
+|| Create       ||                                                                               |
++---------------+--------------------------------------------------------------------------------+
+|| Destination  || Path pattern where the content created from quick create will be stored.      |
+|| Path Pattern || The patterns available are the following:                                     |
+||              ||    **{objectId}** Inserts a GUID.                                             |
+||              ||    **{year}** Inserts the current year (4 digit year).                        |
+||              ||    **{month}** Inserts the current month (2-digit month of the year).         |
+||              ||    **{yyyy}** Inserts the current year (4 digit year).                        |
+||              ||    **{mm}** Inserts the current month (2-digit month of the year).            |
+||              ||    **{dd}** Inserts the current day (2-digit day of the month).               |
++---------------+--------------------------------------------------------------------------------+
 
 The 2 key properties are: the display template (:ref:`content-view-templates`) which is the HTML template that renders the final Web page; the content inheritance (:ref:`content-inheritance`) which determines how this content type will inherit from parent XML files in the system.
 
@@ -440,6 +452,57 @@ Open the **Sidebar** and the **Dashboard** and notice the items that are deleted
     :align: center
 
 |
+
+.. _setting-up-quick-create:
+
+Quick Create
+^^^^^^^^^^^^
+
+Quick create allows content authors to create content with as few clicks as possible through a button from the context nav for configured content types.
+
+.. figure:: /_static/images/content-model/quick-create-button.png
+    :alt: Context Nav showing the quick create button
+    :align: center
+
+|
+
+Let's take a look at an example on how to configure a content type to be available from the quick create button in the context nav for authors using the out of the box blueprint **Website Editorial**.  In the image below, we have a site named **mysite** with the quick create button expanded.  Notice that we have one content type available for quick create, the **Page - Article** content type.
+
+.. figure:: /_static/images/content-model/quick-create-btn-expanded.png
+    :alt: Context Nav showing the expanded quick create button
+    :align: center
+
+|
+
+If you look at the site tree as shown above, most of the content (the articles) is organized in a dated folder structure.  Adding quick create for the **Page - Article** content type lets the content author skip having to open the **Sidebar**, then navigate through the site tree, create the year/month folder if it does not exist yet, then finally create their content.
+
+To setup quick create for a content type, from the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Content Types**, then click on **Open Existing Type**.  We will select the content type **Page - Article** for editing.  Next, go to the **Properties Explorer** and scroll to the **Quick Create** section of the properties.
+
+.. figure:: /_static/images/content-model/quick-create-properties.png
+    :alt: Page - Article Content Type Quick Create Properties
+    :align: center
+
+|
+
+Check the **Show in Quick Create** property to make the content type available from the quick create button of the **Page - Article** content type.
+
+In the **Destination Path Pattern**, fill in the path pattern where the content created from quick create will be stored.  For our example, notice that the articles are arranged in the following folder structure:
+
+.. code-block:: guess
+
+   /articles
+       /{year}
+           /{month}
+
+|
+
+We will then put in ``/site/website/articles/{year}/{month}`` as the path pattern, which will put the new content into the year and month folder when the content author used quick create.
+
+Below is the site tree after using the quick create button to create a new article titled ``New article using quick create``, where the year and month folders were created for the new article using the value in the ``Destination Path Pattern`` property of the content type.
+
+.. figure:: /_static/images/content-model/quick-create-article-created.png
+    :alt: Article created using quick create
+    :align: center
 
 .. _form-controls:
 
