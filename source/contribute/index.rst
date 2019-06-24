@@ -27,4 +27,4 @@ Source Code
 -----------
 Links to the source code for each project can be found here
 
-http://docs.craftercms.org/source-code.html
+https://docs.craftercms.org/en/2.5/source-code.html
