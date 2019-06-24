@@ -215,7 +215,7 @@ When in-context editing is turned on, pencils will show up around regions of the
     * A blue pencil indicates that you are editing a component
     * </> allows you to edit the template of a component
 
-.. image:: /_static/images/content-author/preview-in-context-editing.png
+.. image:: /_static/images/content-author/preview-in-context-editing.jpg
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Preview In-Context Editing
@@ -261,7 +261,7 @@ The Publishing Channel preview allows an author to review the current page in th
 
 The smart phone and tablet can be rotated through the use of the purple rotation control next to the drop down box selection of publishing channel preview presets.  The channels are browsable
 
-.. image:: /_static/images/content-author/preview-publishing-channel.png
+.. image:: /_static/images/content-author/preview-publishing-channel.jpg
     :width: 60 %
     :align: center
     :alt: Navigating Studio - Preview Panel Publishing Channel
@@ -280,14 +280,14 @@ The basic elements of the Contextual Navigation bar are:
 
     * Branded Logo Button: Takes the user back to the Dashboard.
     * Sidebar: Opens a menu that allows navigation to all pages, components and documents in the system.
-    * Contextual Navigation Links: An area reserved for dynamic links that will change based off of the current page view.
+    * Contextual Navigation Links: An area reserved for the quick create button and dynamic links that will change based off of the current page view.  The quick create button is a shortcut for content authors to create configured content without having to navigate through the site tree.
     * Search: Allows a user to search all site content or choose a subset of content to search from the drop-down menu (Please see the later section on Search for more details about the search field.)
     * Publish Status: Allows the user to view the site's publish status.
     * Main Menu: Allows the user (depending on permissions granted to the user) to view/edit sites, the groups, the users, etc..
     * Help: Provides the user a shortcut to Crafter CMS documentation and the about screen, listing the Crafter Studio version, etc.
     * Username: Allows a user to log out of the system or manage settings.
     
-.. image:: /_static/images/content-author/site-context-nav.png
+.. image:: /_static/images/content-author/site-context-nav.jpg
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Site Context Navigation
