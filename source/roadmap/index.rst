@@ -17,9 +17,8 @@ At a high-level, we're pursuing the objectives listed below in order:
 	- Improved in-context editing including better drag and drop mechanics
 	- Crafter Studio Marketplace for blueprints and new blueprints
 	- Time-travel mechanics to preview sites across time
-	- Crafter Studio UI NG (next generation UI for Crafter Studio built on Angular, code is here: https://github.com/craftercms/studio-ui-ng)
+	- Crafter Studio UI enhancements using React components that weave in
 	- Integrate Crafter Profile Admin and Crafter Social Admin directly into Crafter Studio
-	- Diskless Studio, where content will live in a remote Git repository (like GitHub, GitLab, BitBucket, etc.) and bucket storage (we will continue to support local storage)
 
 Recently Completed
 ------------------
@@ -27,7 +26,7 @@ Recently Completed
 * Elasticsearch
 	- Becomes the default search engine (we continue to support Solr)
 	- Full support for AWS Elasticsearch
-* Serverless Delivery
+* Serverless Crafter CMS
 	- Full support for Kubernetes clustering vanilla or AWS EKS
 	- Crafter Engine backed by AWS S3 (or compatible services)
 	- Crafter CMS provided Docker images
