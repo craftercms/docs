@@ -35,13 +35,20 @@ Sample
     		<params>
               <label>Dashboard</label>
     		  <path>/site-dashboard</path>
-              <icon>  	               (optional icon customization - only one state (no tree link))
-    		    <class>fa-cog</class>  (change default icon - using Font Awesome class)
-                <styles> 	           (Change default icon styles - using css rules)
-    		      <color>#409a00</color>
-    			  <font-size>16px</font-size>
-    		    </styles>
-    		  </icon>
+    		  <module-icon-open>       (optional module-icon-open customization - only one state (no tree link))
+                <class>fa-cog</class>
+                <styles>
+                    <color>#409a00</color>
+                    <font-size>16px</font-size>
+                </styles>
+              </module-icon-open>
+              <module-icon-closed>     (optional module-icon-closed customization - only one state (no tree link))
+                <class>fa-cog</class>
+                <styles>
+                    <color>#409a00</color>
+                    <font-size>16px</font-size>
+                </styles>
+              </module-icon-closed>
     		  <roles>
     			<role>admin</role>
     			<role>developer</role>
