@@ -29,26 +29,19 @@ Sample
     	This configuration file controls the SideBar in Crafter Studio. The SideBar is the left bar that shows
     	different projections of the content in addition to other tools to assist in content authoring.
 
-    	<contextNav>
+        <contextNav>
           <modulehook>
     		<name>dashboard</name>
     		<params>
               <label>Dashboard</label>
     		  <path>/site-dashboard</path>
-    		  <module-icon-open>       (optional module-icon-open customization - only one state (no tree link))
-                <class>fa-cog</class>
-                <styles>
-                    <color>#409a00</color>
-                    <font-size>16px</font-size>
-                </styles>
-              </module-icon-open>
-              <module-icon-closed>     (optional module-icon-closed customization - only one state (no tree link))
-                <class>fa-cog</class>
-                <styles>
-                    <color>#409a00</color>
-                    <font-size>16px</font-size>
-                </styles>
-              </module-icon-closed>
+              <icon>  	               (optional icon customization - only one state (no tree link))
+    		    <class>fa-cog</class>  (change default icon - using Font Awesome class)
+                <styles> 	           (Change default icon styles - using css rules)
+    		      <color>#409a00</color>
+    			  <font-size>16px</font-size>
+    		    </styles>
+    		  </icon>
     		  <roles>
     			<role>admin</role>
     			<role>developer</role>
@@ -57,6 +50,32 @@ Sample
     		  <path>/site-config</path>
     		  <showRootItem>true</showRootItem>
     		  <onClick>preview</onClick>
+    		</params>
+          </modulehook>
+    	</contextNav>
+                
+    	<contextNav>
+          <modulehook>
+              <name>wcm-root-folder</name>
+              <showDivider>true</showDivider>
+              <label>Pages</label>
+              <path>/site/website</path>
+    		  <module-icon-open>       (optional module-icon-open customization - state open)
+                <class>fa-cog</class>
+                <styles>
+                    <color>#409a00</color>
+                    <font-size>16px</font-size>
+                </styles>
+              </module-icon-open>
+              <module-icon-closed>     (optional module-icon-closed customization - state close)
+                <class>fa-cog</class>
+                <styles>
+                    <color>#409a00</color>
+                    <font-size>16px</font-size>
+                </styles>
+              </module-icon-closed>
+              <showRootItem>true</showRootItem>
+              <onClick>preview</onClick>
     		</params>
           </modulehook>
     	</contextNav>
