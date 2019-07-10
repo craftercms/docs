@@ -16,7 +16,7 @@ The Production CMS instance is connected to the development workflow at the repo
 The Link Between Production Authoring and Development
 -----------------------------------------------------
 
-Typically development  process is supported by a Git repository with workflow and tooling on top of it.  Organizations use a wide variety of solutions both on-prem and in the cloud including BitBucket, GitHub, GitLab and others.  It’s the **Master** branch that serves as the root of the DevOps workflow. For further reference we’ll call this Master branch in this repository the Production Code repository.  It’s worth noting that any Git based repository will work. That said, a Git repository that has a Web UI and integration hooks on top of it (like the examples mentioned) is ideal.
+Typically a development  process is supported by a Git repository with workflow and tooling on top of it.  Organizations use a wide variety of solutions both on-prem and in the cloud including BitBucket, GitHub, GitLab and others.  It’s the **Master** branch that serves as the root of the DevOps workflow. For further reference we’ll call this Master branch in this repository the Production Code repository.  It’s worth noting that any Git based repository will work. That said, a Git repository that has a Web UI and integration hooks on top of it (like the examples mentioned) is ideal.
 
 At a very high level, the project for your site (my.com) in your Production Crafter CMS’ authoring server Crafter Studio is configured to be “connected” with your production code repository.
 
@@ -41,7 +41,7 @@ The first thing to grok in the process is how content is published to the Produc
       :width: 60 %
       :align: center
 
-The illustration above illustrates the production environment and shows both authoring and delivery components.  Note that when authors create content they are working in a safe, version controlled “sandbox”.  Every change they make through the UI is tacked and versioned for them in a Crafter Studio managed, local (to Studio) repository called **Sandbox**.
+The illustration above illustrates the production environment and shows both authoring and delivery components.  Note that when authors create content they are working in a safe, version controlled “sandbox”.  Every change they make through the UI is tracked and versioned for them in a Crafter Studio managed, local (to Studio) repository called **Sandbox**.
 
 When the author publishes content via the UI, Crafter CMS moves content from the local **Sandbox** repository to a local **Published** repository.  Once content is committed in **Published** it is considered to be published.
 
@@ -51,7 +51,7 @@ Remote delivery nodes (or deployment depots) run a Crafter Deployment agent call
 Connecting Content Authoring to Developer Workflow / DevOps
 -----------------------------------------------------------
 
-The next thing to grok is exactly how your Production content repository and authoring process is “connected” with your Production code repository and DevOps process.  As previously indicated, the primary point of integration is via distributed repository.
+The next thing to grok is exactly how your Production content repository and authoring process is “connected” with your Production code repository and DevOps process.  As previously indicated, the primary point of integration is via the distributed repository.
 
 Now that we’ve got a bit more content on the repository architecture for a site under Studio we can better illustrate the relationship between Studio’s repositories and the Production code repository.
 
