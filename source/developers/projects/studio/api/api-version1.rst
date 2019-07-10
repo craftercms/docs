@@ -99,9 +99,6 @@ Publish
    publish/stop
    publish/publish-items
    publish/reset-staging
-   publish/sync-staging
-   publish/cancel-publish-requests
-   publish/list-publish-requests
 
 ^^^^^^^^
 Activity
