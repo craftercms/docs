@@ -21,37 +21,38 @@ We will first configure LDAP authentication in Crafter Studio.  In your Authorin
 .. code-block:: yaml
    :linenos:
 
-   #####################################################
-   ##         LDAP                                    ##
-   #####################################################
-   # Defines security provider for accessing repository. Possible values
-   # db (users are stored in database)
-   # ldap (users are imported from LDAP into the database)
-   studio.security.type: ldap
-   # LDAP Server url
-   studio.security.ldap.serverUrl: ldap://localhost:10389
-   # LDAP bind DN (user)
-   studio.security.ldap.bindDN: uid=admin,ou=system
-   # LDAP bind password
-   studio.security.ldap.bindPassword: secret
-   # LDAP base context (directory root)
-   studio.security.ldap.baseContext: dc=example,dc=com
-   # LDAP username attribute
-   studio.security.ldap.userAttribute.username: uid
-   # LDAP first name attribute
-   studio.security.ldap.userAttribute.firstName: cn
-   # LDAP last name attribute
-   studio.security.ldap.userAttribute.lastName: sn
-   # LDAP email attribute
-   studio.security.ldap.userAttribute.email: mail
-   # LDAP site ID attribute
-   studio.security.ldap.userAttribute.siteId: o
-   # LDAP groups attribute
-   studio.security.ldap.userAttribute.groupName: ou
+   # Studio authentication chain configuration
+   studio.authentication.chain:
+     # Authentication provider type
+     - provider: LDAP
+       # Authentication via LDAP enabled
+       enabled: true
+       # LDAP Server url
+       ldapUrl: ldap://localhost:10389
+       # LDAP bind DN (user)
+       ldapUsername: uid=admin, ou=system
+       # LDAP bind password
+       ldapPassword: secret
+       # LDAP base context (directory root)
+       ldapBaseContext: dc=example,dc=com
+       # LDAP username attribute
+       usernameLdapAttribute: uid
+       # LDAP first name attribute
+       firstNameLdapAttribute: cn
+       # LDAP last name attribute
+       lastNameLdapAttribute: sn
+       # Authentication header for email
+       emailLdapAttribute: mail
+       # LDAP groups attribute
+       groupNameLdapAttribute: ou
+       # LDAP groups attribute name regex
+       groupNameLdapAttributeRegex: .*
+       # LDAP groups attribute match index
+       groupNameLdapAttributeMatchIndex: 0
 
 For more information on configuring LDAP authentication in Crafter Studio, please follow the guide here: :ref:`crafter-studio-configure-ldap`
 
-Please note that the LDAP attributes are configurable and in our example above, we are using ``o`` for the attribute for siteId instead of ``crafterSite`` and ``ou`` for the attribute for groupName instead of ``crafterGroup`` as listed in :ref:`crafter-studio-configure-ldap`
+Please note that the LDAP attributes are configurable and in our example above, we are using ``ou`` for the attribute for groupName instead of ``crafterGroup`` as listed in :ref:`crafter-studio-configure-ldap`
 
 -------------------------------
 Install Apache Directory Studio
@@ -135,12 +136,11 @@ An empty file in the middle of your ApacheDS will appear.  This is the LDIF edit
     objectClass: top
     cn: Joe Bloggs
     sn: Bloggs
-    ou: Author
+    ou: site_author
     description: 19650324000000Z
     employeeNumber: 9
     givenName: Joe
     mail: joe@example.com
-    o: myawesomesite
     telephoneNumber: 169-637-3314
     telephoneNumber: 907-547-9114
     uid: jbloggs
@@ -153,12 +153,11 @@ An empty file in the middle of your ApacheDS will appear.  This is the LDIF edit
     objectClass: top
     cn: Jane Doe
     sn: Doe
-    ou: Admin
+    ou: site_admin
     description: 19650324000000Z
     employeeNumber: 12
     givenName: Jane
     mail: jane@example.com
-    o: myawesomesite
     telephoneNumber: 169-637-3314
     telephoneNumber: 907-547-9114
     uid: jdoe
@@ -171,18 +170,17 @@ An empty file in the middle of your ApacheDS will appear.  This is the LDIF edit
     objectClass: top
     cn: John Wick
     sn: Wick
-    ou: Reviewer
+    ou: site_reviewer
     description: 19650324000000Z
     employeeNumber: 8
     givenName: John
     mail: john@example.com
-    o: myawesomesite
     telephoneNumber: 169-637-3314
     telephoneNumber: 907-547-9114
     uid: jwick
     userPassword:: abc
 
-Please note that a user can belong to multiple groups and sites.  To add another siteId or groupName value in the ldif file, just add another line specifying the attribute and the value. Notice the multiple values for the attributes **ou** (groupName) and **o** (siteId)
+Please note that a user can belong to multiple groups. To add another groupName value in the ldif file, just add another line specifying the attribute and the value. Notice the multiple values for the attribute **ou** (groupName)
 
 .. code-block:: guess
     :linenos:
@@ -194,14 +192,12 @@ Please note that a user can belong to multiple groups and sites.  To add another
     objectClass: top
     cn: John Wick
     sn: Wick
-    ou: Publisher
-    ou: Editor
+    ou: site_publisher
+    ou: site_editor
     description: 19650324000000Z
     employeeNumber: 8
     givenName: John
     mail: john@example.com
-    o: myawesomesite
-    o: helloworld
     telephoneNumber: 169-637-3314
     telephoneNumber: 907-547-9114
     uid: jwick
@@ -210,14 +206,14 @@ Please note that a user can belong to multiple groups and sites.  To add another
 
 To add the data we entered in the LDIF file into the LDAP Server, first, click on the **Browse** button in the LDIF editor and select the connection we setup (ApacheDS 2.0.0), then click on the green (Execute LDIF) button next to the **Browse** button to get our data into the server.
 
-.. image:: /_static/images/developer/ldap-server-run-ldif.jpg
+.. image:: /_static/images/developer/ldap-server-run-ldif.png
     :alt: Apache Directory Studio - Open LDIF file editor
     :width: 95 %
     :align: center
 
 After executing the LDIF file, you should see the results in the **Modification Logs** tab at the bottom of the LDIF Editor and should look something like the image below:
 
-.. image:: /_static/images/developer/ldap-server-mod-logs.jpg
+.. image:: /_static/images/developer/ldap-server-mod-logs.png
     :alt: Apache Directory Studio - LDIF Execute Results in Modification Logs
     :width: 65 %
     :align: center
@@ -233,9 +229,9 @@ We should also be able to see the three users we just added in the LDAP browser
 Changing a user's password in the LDAP server
 ---------------------------------------------
 
-Notice that we set the password to the same characters for all the users.  Let's change the password for all the users.  To do this, from the LDAP Browser tab, navigate to DIT -> Root DSE -> dc=example,dc=com -> ou=Users, then click on the name os a user. We'll click on user **Jane Doe**.  A new tab will open in the middle of your ApacheDS with all the attributes for user **Jane Doe**.  Double click on **userPassword** to change the user's password,
+Notice that we set the password to the same characters for all the users.  Let's change the password for all the users.  To do this, from the LDAP Browser tab, navigate to DIT -> Root DSE -> dc=example,dc=com -> ou=Users, then click on the name os a user. We'll click on user **Jane Doe**.  A new tab will open in the middle of your ApacheDS with all the attributes for user **Jane Doe**.  Double click on **userPassword** to change the user's password.
 
-.. image:: /_static/images/developer/ldap-server-user-view.jpg
+.. image:: /_static/images/developer/ldap-server-user-view.png
     :alt: Apache Directory Studio - LDAP Browser View a User
     :width: 95 %
     :align: center
