@@ -178,7 +178,6 @@ Crafter Studio
    :maxdepth: 1
    :titlesonly:
 
-   studio/changing-the-studio-logo.rst
    studio/studio-configuration-overrides.rst
    studio/debugging-publishing-issues.rst
    studio/debugging-upgrade-issues.rst
