@@ -22,7 +22,7 @@ following lines to the ``studio-config-override.yaml`` file.
         # Authentication via LDAP enabled
         enabled: true
         # LDAP Server url
-        studio.security.ldap.serverUrl: ldap://localhost:10389
+        studio.security.ldap.serverUrl: ldap://localhost:389
         # LDAP bind DN (user)
         studio.security.ldap.bindDN: uid=admin,ou=system
         # LDAP bind password
