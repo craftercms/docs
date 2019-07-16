@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Setup Site for a Delivery Environment
+
 .. _setup-site-for-delivery:
 
 =====================================
@@ -105,7 +109,7 @@ If you have multiple sites setup, to view a certain site, in your browser, enter
 
 Here we have an example of a delivery setup in another directory on disk (local), where there are two sites, ``myawesomesite`` and ``helloworld``
 
-.. image:: /_static/images/site-admin/site-list.png
+.. image:: /_static/images/system-admin/site-list.png
     :width: 100 %
     :align: center
     :alt: Setup Site for Delivery - Site List
@@ -116,7 +120,7 @@ To set the site to the ``helloworld`` site, in your browser, type in
 
     http://localhost:9080?crafterSite=helloworld
 
-.. image:: /_static/images/site-admin/site-hello.png
+.. image:: /_static/images/system-admin/site-hello.png
     :width: 100 %
     :align: center
     :alt: Setup Site for Delivery - Hello World Site
@@ -127,7 +131,7 @@ To set the site to the ``myawesomesite``, in your browser, type in
 
     http://localhost:9080?crafterSite=myawesomesite
 
-.. image:: /_static/images/site-admin/site-awesome.png
+.. image:: /_static/images/system-admin/site-awesome.jpg
     :width: 100 %
     :align: center
     :alt: Setup Site for Delivery - My Awesome Site
