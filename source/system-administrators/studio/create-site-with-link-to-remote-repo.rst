@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Site Creation with Remote Repositories, Remote Repositories
 
 .. _create-site-with-link-to-remote-repo:
