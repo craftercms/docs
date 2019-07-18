@@ -232,11 +232,11 @@ Using the Elasticsearch Query DSL the code will look like this:
     from: start,
     size: rows,
     sort: [
-      {
-        createdDate_dt: {
+      [
+        createdDate_dt: [
           order: "asc"
-        }
-      }
+        ]
+      ]
     ],
     highlight: [
       fields: highlighter
@@ -270,3 +270,41 @@ date math syntax described `here <https://www.elastic.co/guide/en/elasticsearch/
 
   createdDate_dt: [ now-1M/d TO now-2d/d ]
 
+In Solr there were two special fields ``_text_`` and ``_text_main_``, during indexing the values of other fields were
+copied to provide a simple way to create generic queries in all relevant text. Elasticsearch provides a different
+feature that replaces those fields `Multi-match query <https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html>`_
+
+**Example**
+
+.. code-block:: guess
+  :linenos:
+  :caption: Solr query for any field
+
+  _text_: some keywords
+
+.. code-block:: guess
+  :linenos:
+  :caption: Elasticsearch query for any field (replacement for ``_text_``)
+
+  [
+    query: [
+      multi_match: [
+        query: "some keywords"
+      ]
+    ]
+  ]
+
+Elasticsearch also offers the possibility to query specific fields
+
+.. code-block:: guess
+  :linenos:
+  :caption: Elasticsearch query for specific fields (replacement for ``_text_main_``)
+
+  [
+    query: [
+      multi_match: [
+        query: "some keywords",
+        fields: ["*_t", "*_txt", "*_html"]
+      ]
+    ]
+  ]
