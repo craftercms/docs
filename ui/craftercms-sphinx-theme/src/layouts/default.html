@@ -1,0 +1,127 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>docstitle  - Crafter CMS</title>
+  <script src="http://email.tl.fortawesome.com/c/eJxNjUEOgyAQRU8jS8Iwg-CChUnbewiD0cYWFUyvX7pr8lcvL--z59RzsmL1WoFVDgxYQjNIQw5Bmrt1A4ICusGoaexI1U3O-azTJ5X8SjLml1g8Wp41Mk46osHgKIHp3cAxTIF6y2LzS6176XDs9KPtKqll3v-ZRtE6CgCsnHwWcfozxy3ta1xSOz6u4wo_8Qv7fjYS"></script>
+  <link rel="stylesheet" href="{{root}}static/css/app.css">
+  <link rel="stylesheet" href="https://unpkg.com/native-toast@2.0.0/dist/native-toast.css"> 
+</head>
+<body role="document" class="">
+
+<header id="header">
+  <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+    <div class="title-bar-title"></div>
+    <a class="logo" href="/" title="Crafter CMS">
+      <img src="{{root}}static/img/crafter-logo-white.png"
+           alt="Crafter CMS Logo in flat white" />
+    </a>
+  </div>
+  <div class="top-bar" id="responsive-menu">
+    <div class="top-bar-left">
+      <ul class="menu">
+        <li>
+          <a class="logo" href="/" title="Crafter CMS">
+            <img src="{{root}}static/img/logo.svg"
+                 alt="Crafter CMS Logo in flat white" />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="vertical medium-horizontal menu">
+        <li><a href="javascript:">Top</a></li>
+        <li><a href="javascript:">Nav</a></li>
+        <li><a href="javascript:">Items</a></li>
+        <li><a href="javascript:">Here</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="table-of-contents" data-sticky-container>
+    <div class="mb-title" data-responsive-toggle="toc" data-hide-for="medium">
+      <button class="hamburger float-right" type="button" data-toggle="toc"></button> Table of Contents
+    </div>
+    <div id="toc" data-sticky data-anchor="main" data-margin-top="0">
+      <header>
+        <a class="logo" href="/" title="Crafter CMS">
+          <img src="{{root}}static/img/crafter-logo-white.png"
+               alt="Crafter CMS Logo in flat white" />
+        </a>
+      </header>
+      <section class="search"role="search">
+        <form action="[[ pathto('search') ]]" method="get">
+          <input type="text" name="q" placeholder="[[ _('Search docs') ]]" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+      </section>
+      <ul>
+        <li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started</a></li>
+        <li class="toctree-l1 current"><a class="reference internal" href="index.html"><span class="toctree-expand"></span>Content Authors</a><ul class="current">
+          <li class="toctree-l2"><a class="reference internal" href="content-authors-getting-started.html">Getting Started on Authoring</a></li>
+          <li class="toctree-l2"><a class="reference internal" href="content-authors-navigating-studio.html">Navigating Around Crafter Studio</a></li>
+          <li class="toctree-l2 current"><a class="current reference internal" href="#"><span class="toctree-expand"></span>Working with Pages</a><ul>
+            <li class="toctree-l3"><a class="reference internal" href="#adding-a-page">Adding a Page</a></li>
+            <li class="toctree-l3 current"><a class="reference internal" href="#editing-a-page">Editing a Page</a></li>
+            <li class="toctree-l3"><a class="reference internal" href="#versioning"><span class="toctree-expand"></span>Versioning</a><ul>
+              <li class="toctree-l4"><a class="reference internal" href="#version-history">Version History</a></li>
+            </ul>
+            </li>
+            <li class="toctree-l3"><a class="reference internal" href="#form-based-editing"><span class="toctree-expand"></span>Form based editing</a><ul>
+              <li class="toctree-l4"><a class="reference internal" href="#editing-controls">Editing Controls</a></li>
+              <li class="toctree-l4"><a class="reference internal" href="#placing-content-components">Placing Content Components</a></li>
+              <li class="toctree-l4"><a class="reference internal" href="#working-in-the-rich-text-editor-rte">Working in the Rich Text Editor(RTE)</a></li>
+            </ul>
+            </li>
+          </ul>
+          </li>
+          <li class="toctree-l2"><a class="reference internal" href="content-authors-assets.html">Working with Assets</a></li>
+          <li class="toctree-l2"><a class="reference internal" href="content-authors-search.html">Content Author Search</a></li>
+          <li class="toctree-l2"><a class="reference internal" href="content-authors-targeting.html">Targeting</a></li>
+          <li class="toctree-l2"><a class="reference internal" href="content-authors-workflows.html">Workflows</a></li>
+        </ul>
+        </li>
+        <li class="toctree-l1"><a class="reference internal" href="../developers/index.html">Developers</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="../site-administrators/index.html">Site Administrators</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="../system-administrators/index.html">System Administrators</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">Release Notes</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="../upgrade/index.html">Upgrade Crafter CMS</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="../roadmap/index.html">Roadmap</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="../source-code.html">Source Code</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="../get-support/index.html">Support</a></li>
+        <li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="content">
+    <nav class="breadcrumbs-container grid-x" aria-label="You are here:" role="navigation">
+      <ul class="breadcrumbs primary">
+        <li><a href="//craftercms.org">Crafter CMS</a></li>
+        <li><a href="/">Docs</a></li>
+        <li><a href="/">3.0</a></li>
+        <li class="disabled">3.0</li>
+        <li><span class="show-for-sr">Current: </span> Cloning</li>
+      </ul>
+      <ul class="breadcrumbs extra">
+        <li><a>Edit on Github</a></li>
+      </ul>
+    </nav>
+    <div class="rst-content">{{> body}}</div>
+    <nav class="nav-buttons" role="navigation" aria-label="breadcrumb navigation">
+      <a href="/" class="btn btn-neutral float-right" title="Next" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      <a href="/" class="btn btn-neutral" title="Prev" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+    </nav>
+  </div>
+</main>
+
+<script src="{{root}}static/js/app.js"></script>
+
+</body>
+</html>
