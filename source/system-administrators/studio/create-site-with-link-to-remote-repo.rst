@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Site Creation with Remote Repositories, Remote Repositories
 
 .. _create-site-with-link-to-remote-repo:
@@ -12,20 +14,13 @@ Crafter Studio supports site creation with remote repositories and provides two 
 - Create site based on a blueprint then push to remote bare Git repository
 
 To start creating a site with remote repository, from the **Sites** screen, click on the **Create Site** button.
-A **Create Site** dialog will be launched.  In the **Create Site** dialog, click on **Link to upstream remote Git repository**
+A **Create Site** dialog will be launched.  This dialog changes depending on what you choose.  For both options, there will be a screen where the **Remote Git Repository Name** and **Remote Git Repository URL** needs to be filled out and the rest is optional and only needs to be filled out if required by the remote git repository being used.
 
-.. image:: /_static/images/system-admin/link-to-remote-git-repo.png
-   :alt: System Administrator - Create Site "Link to upstream remote Git repository"
-   :width: 65 %
-   :align: center
+Let's take a look at the fields where the remote repository details needs to be filled in:
 
-Once the link is expanded, as mentioned above, there are two options provided for site creation with remote repositories.  For each option, the **Remote Git Repository Name** and **Remote Git Repository URL** needs to be filled out and the rest is optional and only needs to be filled out if required by the remote git repository being used.
-
-Let's take a look at the fields displayed when **Link to upstream remote Git repository** is expanded.
-
-.. image:: /_static/images/system-admin/link-to-upstream-remote-git-repo-expanded.png
-   :alt: System Administrator - Expanded "Link to upstream remote Git repository" fields
-   :width: 65 %
+.. image:: /_static/images/system-admin/remote-repo-info.png
+   :alt: System Administrator - Remote Repository Details
+   :width: 85 %
    :align: center
 
 #. In the **Remote Git Repository Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
@@ -39,10 +34,6 @@ Let's take a look at the fields displayed when **Link to upstream remote Git rep
         - **Basic** - for this method, you will be asked for a **Remote Git Repository Username** and a **Remote Git Repository Password**.  Supply your username and password
         - **Remote Git Repository Token** - for this method, you will be asked for a **Remote Git Repository Username** (if required) and a **Remote Git Repository Token**.  This method is usually used when two-factor authentication is configured on the remote repository to be accessed. Supply your username if required and token.
         - **Remote Git Repository Private Key** - for this method, you will be asked for a **Remote Git Repository Private Key**.  This method is a key-based authentication.  Supply your private key.
-
-#. In **Options**, select the option for the operation required, **Create site based on remote Git repository** or **Create site based on a blueprint then push to remote bare git repository**
-
-   The field **Blueprint** is available when the option **Create site based on a blueprint then push to remote bare Git repository** is selected.  Choose one of the default or choose your own.  The available default blueprints are as follows: Empty, Headless_blog, Headless_store and Website_editorial
 
 .. note::
         When using ssh keys for authentication, the keys need to be generated using **RSA** as the algorithm  and with **no passphrase**.
@@ -58,14 +49,23 @@ Let's take a look at the fields displayed when **Link to upstream remote Git rep
 Create site based on a blueprint then push to remote bare Git repository
 ------------------------------------------------------------------------
 
-To create a site based on a blueprint then push to a remote bare Git repository, fill in the required items once **Link to upstream remote Git repository** has been expanded:
+To create a site based on a blueprint then push to a remote bare Git repository, after clicking on **Create Site**, choose your blueprint:
 
-.. image:: /_static/images/system-admin/create-site-then-push-to-remote.png
-   :alt: System Administrator - Create Site based on a blueprint then push to remote Git repository"
-   :width: 65 %
-   :align: center
+.. image:: /_static/images/developer/workflow/create-site-then-push-1.png
+    :alt: Developer Workflow - Create Site Dialog in Crafter Studio, populating a bare upstream Git repository
+    :width: 70 %
+    :align: center
 
-Click on the **Create** button, your site should be created in a short while, and then pushed on to the remote bare Git repository specified in the field **Remote Git Repository URL**.  Remember that the remote repository needs to be a bare git repository, otherwise the site creation will fail.
+The next thing to do is give your site an ID.
+
+.. image:: /_static/images/developer/workflow/create-site-then-push-2.png
+    :alt: Developer Workflow - Create Site Dialog in Crafter Studio, populating a bare upstream Git repository
+    :width: 70 %
+    :align: center
+
+Click on the **Additional Developer Options** button, this will take you to the dialog where we can fill in all the information for our remote repository as described above.
+
+Click on the **Review and Create** button, then finally, the **Create** button.  Your site should be created in a short while, and then pushed on to the remote bare Git repository specified in the field **Remote Git Repository URL**.  Remember that the remote repository needs to be a bare git repository, otherwise the site creation will fail.
 
 --------------------------------------------
 Create site based on a remote Git repository
@@ -73,7 +73,16 @@ Create site based on a remote Git repository
 
 Creating a site based on a remote Git repository is basically exporting a site from one Studio and importing it into another one.
 
-To create a site based on remote Git repository, fill in the required items once **Link to upstream remote Git repository** has been expanded. The ``Remote Git Respository URL`` is the import site's sandbox repository git url (the site you want to bring over to your Studio). Below are sample urls for the site being imported:
+To create a site based on remote Git repository, after clicking on **Create Site**, check **Use a remote Git repository instead of a built-in blueprint** in the **Choose a Blueprint** screen
+
+.. figure:: /_static/images/developer/workflow/create-site-based-on-remote-1.png
+    :alt: Developer How Tos - Setting up to work locally against the upstream
+    :width: 70 %
+    :align: center
+
+|
+
+Click on **Basic Information** where you'll need to give your site an ID.  Click on **Basic Developer Options** next, where you can fill in all the information for the remote repository we are importing.  The ``Remote Git Respository URL`` is the import site's sandbox repository git url (the site you want to bring over to your Studio). Below are sample urls for the site being imported:
 
 Here is a sample Git url from GitHub:
 `https://github.com/username/hello-test.git`
@@ -82,12 +91,7 @@ Here is a sample Git url using ssh:
 or alternatively for ssh:
 `[user@]host.xz:path/to/repo/`
 
-.. image:: /_static/images/system-admin/link-to-remote-git-repo-filled.png
-   :alt: System Administrator - Create Site based on remote Git repository
-   :width: 65 %
-   :align: center
-
-Under **Options**, select **Create site based on remote Git repository**, then click on the **Create** button.  After a short while, your site will be imported.
+Click on the **Review and Create** button, then finally, the **Create** button.  After a short while, your site will be imported.
 
 In case you want to publish the entire site, follow these optional steps:
 -------------------------------------------------------------------------
