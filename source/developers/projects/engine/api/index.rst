@@ -121,6 +121,15 @@ GraphQL
 	site/graphql/get
 	site/graphql/post
 
+-------------
+Configuration
+-------------
+
+.. toctree::
+	:maxdepth: 1
+	
+	config/preview
+
 ----------
 Monitoring
 ----------
