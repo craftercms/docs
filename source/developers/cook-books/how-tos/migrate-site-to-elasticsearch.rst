@@ -294,7 +294,7 @@ feature that replaces those fields `Multi-match query <https://www.elastic.co/gu
     ]
   ]
 
-Elasticsearch also offers the possibility to query specific fields
+Elasticsearch also offers the possibility to query fields with postfixes using wildcards
 
 .. code-block:: guess
   :linenos:
