@@ -10,6 +10,7 @@ __pycache__/
 .Python
 env/
 build/
+craftercms_sphinx_theme/
 develop-eggs/
 dist/
 downloads/
