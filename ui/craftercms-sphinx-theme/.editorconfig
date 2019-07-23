@@ -1,0 +1,17 @@
+# http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# All files
+[*]
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+
+[*.{ftl,vm}]
+indent_size = 2
+
+[*.{js,es}]
+indent_size = 2
