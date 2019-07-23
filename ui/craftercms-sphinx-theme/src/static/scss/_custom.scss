@@ -239,13 +239,13 @@
   }
 }
 
-.code{
-  .highlight {
-    .hll {
-      font-weight: bold;
-    }    
-  }
+.highlight {
+  background: #fff;
+  .hll {
+    font-weight: bold;
+  }    
 }
+
 
 .right-nav{
   overflow: hidden;
@@ -291,11 +291,7 @@
   background-color: #f7f7f7;
 }
 
-.highlight {
-  background: #fff;
-}
-
-.code { 
+.highlight { 
   position: relative;
   
   &:hover .copy-code-btn{
