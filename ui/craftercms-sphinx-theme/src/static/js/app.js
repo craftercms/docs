@@ -25,6 +25,5 @@ $(document).foundation();
 
 
 $(function() {
-  // addCopyBtns('.code');
   addCopyBtns('.highlight > pre');
 });
