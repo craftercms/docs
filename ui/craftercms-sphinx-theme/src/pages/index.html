@@ -397,7 +397,16 @@
                 </table>
               </div>
             </div>
-          
+
+            <div class="section"> 
+              <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;site&gt;</span>
+                <span class="nt">&lt;db&gt;</span>
+                    <span class="nt">&lt;uri&gt;</span><span class="highlighted">mongodb</span>://{host}:{port}/{database}?readPreference=primary<span class="ni">&amp;amp;</span>maxPoolSize=50<span class="ni">&amp;amp;</span>minPoolSize=5<span class="ni">&amp;amp;</span>maxIdleTimeMS=1000<span class="ni">&amp;amp;</span>waitQueueMultiple=200<span class="ni">&amp;amp;</span>waitQueueTimeoutMS=100<span class="ni">&amp;amp;</span>w=1<span class="ni">&amp;amp;</span>journal=true<span class="nt">&lt;/uri&gt;</span>
+                <span class="nt">&lt;/db&gt;</span>
+              <span class="nt">&lt;/site&gt;</span>
+              </pre></div>
+              </div>
+            </div>          
         </div>
     </div>
 
