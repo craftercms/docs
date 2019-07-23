@@ -1,7 +1,5 @@
 :is-up-to-date: True
 
-:is-up-to-date: True
-
 .. index:: API; Crafter Studio
 
 .. _crafter-studio-api:

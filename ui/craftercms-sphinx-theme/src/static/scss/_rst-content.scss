@@ -1,0 +1,61 @@
+.rst-content {
+
+  .highlighted {
+    padding: 0 5px;
+    color: #404040;
+    border-radius: 3px;
+    display: inline-block;
+    background-color: #f1c40f;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    .headerlink {
+      font-size: 1rem;
+      visibility: hidden;
+      display: inline-block;
+      margin-left: 5px;
+    }
+    &:hover {
+      .headerlink {
+        visibility: visible;
+      }
+    }
+  }
+
+  .admonition-title,
+  h1 .headerlink,
+  h2 .headerlink,
+  h3 .headerlink,
+  h4 .headerlink,
+  h5 .headerlink,
+  h6 .headerlink,
+  dl dt .headerlink,
+  p.caption .headerlink,
+  tt.download span:first-child,
+  code.download span:first-child,
+  .icon {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .section>img,
+  .section>a>img {
+    margin-bottom: 2rem;
+  }
+
+  .align-center {
+    margin: auto;
+    display: block;
+  }
+
+}
