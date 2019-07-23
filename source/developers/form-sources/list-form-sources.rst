@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _list-form-engine-data-sources:
 
 .. |ctlChildContent| image:: /_static/images/form-sources/ds-child-content.png
@@ -92,6 +94,10 @@
              :width: 75%
              :alt: Form Data Sources - S3 Repo
 
+.. |ctlTranscode| image:: /_static/images/form-sources/ds-transcode-repo.png
+             :width: 105%
+             :alt: Form Data Sources - Video Upload then Transcode from S3 Repo
+
 .. |ctlVidDt| image:: /_static/images/form-sources/ds-vid-up-dt.png
              :width: 85%
              :alt: Form Data Sources - Video Uploaded From Desktop
@@ -108,60 +114,62 @@
              :width: 58%
              :alt: Form Data Sources - Site Component
 
-+------------------------------+-----------------------------------------------------------------+
-|| Datasource                  || Description                                                    |
-+==============================+=================================================================+
-|| |ctlChildContent|           || Details are in the :ref:`form-source-child-content` page.      |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlImgDt|                  || Details are in the :ref:`form-source-image-desktop` page.      |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlImgRepo|                || Details are in the :ref:`form-source-image-repo` page.         |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlFileDt|                 || Details are in the :ref:`form-source-file-desktop` page.       |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlFileBrowse|             || Details are in the :ref:`form-source-file-browse` page.        |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlCMISRepo|               || Details are in the :ref:`form-source-cmis-repo` page.          |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlCmisImgRepo|            || Details are in the :ref:`form-source-cmis-image-repo` page.    |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlCmisVidRepo|            || Details are in the :ref:`form-source-cmis-video-repo` page.    |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlCMISUpload|             || Details are in the :ref:`form-source-cmis-upload` page.        |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlCmisImgUpload|          || Details are in the :ref:`form-source-cmis-image-upload` page.  |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlCmisVidUpload|          || Details are in the :ref:`form-source-cmis-video-upload` page.  |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlWebDAVRepo|             || Details are in the :ref:`form-source-webdav-file-repo` page.   |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlWebDAVImgRepo|          || Details are in the :ref:`form-source-webdav-image-repo` page.  |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlWebDAVVidRepo|          || Details are in the :ref:`form-source-webdav-video-repo` page.  |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlWebDAVUpload|           || Details are in the :ref:`form-source-webdav-file-upload` page. |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlWebDAVImgUpload|        || Details are in the :ref:`form-source-webdav-image-upload` page.|
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlWebDAVVidUpload|        || Details are in the :ref:`form-source-webdav-video-upload` page.|
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlS3Repo|                 || Details are in the :ref:`form-source-s3-file-repo` page.       |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlS3ImgRepo|              || Details are in the :ref:`form-source-s3-image-repo` page.      |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlS3VidRepo|              || Details are in the :ref:`form-source-s3-video-repo` page.      |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlS3Upload|               || Details are in the :ref:`form-source-s3-file-upload` page.     |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlS3ImgUpload|            || Details are in the :ref:`form-source-s3-image-upload` page.    |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlS3VidUpload|            || Details are in the :ref:`form-source-s3-video-upload` page.    |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlVidDt|                  || Details are in the :ref:`form-source-video-desktop` page.      |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlVidRepo|                || Details are in the :ref:`form-source-video-repo` page.         |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlKVPair|                 || Details are in the :ref:`form-source-kvp` page.                |
-+------------------------------+-----------------------------------------------------------------+
-|| |ctlSiteComp|               || Details are in the :ref:`form-source-site-component` page.     |
-+------------------------------+-----------------------------------------------------------------+
++----------------------------+-------------------------------------------------------------------+
+|| Datasource                || Description                                                      |
++============================+===================================================================+
+|| |ctlChildContent|         || Details are in the :ref:`form-source-child-content` page.        |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlImgDt|                || Details are in the :ref:`form-source-image-desktop` page.        |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlImgRepo|              || Details are in the :ref:`form-source-image-repo` page.           |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlFileDt|               || Details are in the :ref:`form-source-file-desktop` page.         |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlFileBrowse|           || Details are in the :ref:`form-source-file-browse` page.          |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlCMISRepo|             || Details are in the :ref:`form-source-cmis-repo` page.            |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlCmisImgRepo|          || Details are in the :ref:`form-source-cmis-image-repo` page.      |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlCmisVidRepo|          || Details are in the :ref:`form-source-cmis-video-repo` page.      |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlCMISUpload|           || Details are in the :ref:`form-source-cmis-upload` page.          |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlCmisImgUpload|        || Details are in the :ref:`form-source-cmis-image-upload` page.    |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlCmisVidUpload|        || Details are in the :ref:`form-source-cmis-video-upload` page.    |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlWebDAVRepo|           || Details are in the :ref:`form-source-webdav-file-repo` page.     |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlWebDAVImgRepo|        || Details are in the :ref:`form-source-webdav-image-repo` page.    |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlWebDAVVidRepo|        || Details are in the :ref:`form-source-webdav-video-repo` page.    |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlWebDAVUpload|         || Details are in the :ref:`form-source-webdav-file-upload` page.   |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlWebDAVImgUpload|      || Details are in the :ref:`form-source-webdav-image-upload` page.  |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlWebDAVVidUpload|      || Details are in the :ref:`form-source-webdav-video-upload` page.  |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlS3Repo|               || Details are in the :ref:`form-source-s3-file-repo` page.         |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlS3ImgRepo|            || Details are in the :ref:`form-source-s3-image-repo` page.        |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlS3VidRepo|            || Details are in the :ref:`form-source-s3-video-repo` page.        |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlS3Upload|             || Details are in the :ref:`form-source-s3-file-upload` page.       |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlS3ImgUpload|          || Details are in the :ref:`form-source-s3-image-upload` page.      |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlS3VidUpload|          || Details are in the :ref:`form-source-s3-video-upload` page.      |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlTranscode|            || Details are in the :ref:`form-source-mediaconvert-transcode` page|
++----------------------------+-------------------------------------------------------------------+
+|| |ctlVidDt|                || Details are in the :ref:`form-source-video-desktop` page.        |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlVidRepo|              || Details are in the :ref:`form-source-video-repo` page.           |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlKVPair|               || Details are in the :ref:`form-source-kvp` page.                  |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlSiteComp|             || Details are in the :ref:`form-source-site-component` page.       |
++----------------------------+-------------------------------------------------------------------+

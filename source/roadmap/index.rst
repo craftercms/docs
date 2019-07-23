@@ -1,5 +1,9 @@
 :is-up-to-date: True
 
+.. index:: Roadmap
+
+.. _roadmap:
+
 =======
 Roadmap
 =======
