@@ -20,6 +20,11 @@
 {% set upToDate = meta.get(upToDate_key) %}
 {% endif %}
 
+{# Set Search page to updated #}
+{% if title == _('Search') %}
+{% set upToDate = 'True' %}
+{% endif %}
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="{{ lang_attr }}" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="{{ lang_attr }}" > <!--<![endif]-->

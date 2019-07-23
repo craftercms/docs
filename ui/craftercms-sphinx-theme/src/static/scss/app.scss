@@ -5,6 +5,7 @@
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
+@import './native-toast.scss';
 
 @include foundation-global-styles;
 // @include foundation-grid;
