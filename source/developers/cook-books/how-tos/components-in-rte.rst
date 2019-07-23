@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Using Components in the Rich Text Editor (RTE)
+
 .. _using-components-in-rte:
 
 ==============================================
