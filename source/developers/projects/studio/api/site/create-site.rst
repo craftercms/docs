@@ -49,7 +49,7 @@ Parameters
 +----------------------+------------+----------------+--------------------------------------------------------------+
 || single_branch       || Boolean   ||               || Clone single branch if true, otherwise clone all            |
 +----------------------+------------+----------------+--------------------------------------------------------------+
-|| authentication_type || String    || |checkmark|   || Authentication type to use to access remote repository      |
+|| authentication_type || String    || |checkmark| * || Authentication type to use to access remote repository      |
 ||                     ||           ||               ||   ``none``: No authentication                               |
 ||                     ||           ||               ||   ``basic``: username password authentication               |
 ||                     ||           ||               ||   ``token``: username token authentication                  |
@@ -73,6 +73,7 @@ Parameters
         * some remote parameters are required if ``use_remote`` is true
         * ``blueprint`` is required if ``use_remote`` is true and ``create_option`` is set to ``push``
         * ``blueprint`` is required if ``use_remote`` is false
+        * ``authentication_type`` is required if ``authentication_type`` to be used is not ``none``
         * ``remote_username`` is required if ``authentication_type`` is set to ``basic``
         * ``remote_password`` is required if ``authentication_type`` is set to ``basic``
         * ``remote_token`` is required if ``authentication_type`` is set to ``token``
@@ -97,15 +98,16 @@ Example
 .. code-block:: json
 
   {
-    "site_id" : "my-site",
+    "authentication_type" : "basic",
+    "blueprint" : "org.craftercms.blueprint.empty",
+    "create_option" : "push",
     "description" : "My very first site!",
-    "blueprint" : "empty",
-    "use_remote" : true,
     "remote_name" : "upstream",
+    "remote_password" : "SuperSecret$$587",
     "remote_url" : "https://github.com/craftercms/remoterepo.git",
     "remote_username" : "joe.bloggs",
-    "remote_password" : "SuperSecret$$587",
-    "create_option" : "push"
+    "site_id" : "my-site",
+    "use_remote" : true
   }
 
 --------
