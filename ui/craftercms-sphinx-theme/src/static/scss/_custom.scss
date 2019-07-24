@@ -291,9 +291,28 @@
   background-color: #f7f7f7;
 }
 
-.highlight { 
+div[class^="highlight-"] {
   position: relative;
-  
+
+  .highlight {
+    overflow-x: scroll;
+    pre { 
+      overflow: visible;
+    }
+  }
+
+  .highlighttable {
+    overflow-x: scroll;
+    display: block;
+    .highlight { 
+      overflow: visible;
+    }
+
+    .code {
+      width: 100%;
+    }
+  }
+
   &:hover .copy-code-btn{
     opacity: 1;
   }
