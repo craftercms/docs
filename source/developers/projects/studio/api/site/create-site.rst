@@ -98,7 +98,7 @@ Example
 
   {
     "authentication_type" : "basic",
-    "blueprint" : "org.craftercms.blueprint.empty",
+    "blueprint" : "empty",
     "create_option" : "push",
     "description" : "My very first site!",
     "remote_name" : "upstream",
