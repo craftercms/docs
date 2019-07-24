@@ -91,7 +91,7 @@ Example
   {
     "site_id" : "my-site",
     "description" : "My very first site!",
-    "blueprint" : "org.craftercms.blueprint.empty"
+    "blueprint" : "empty"
   }
 
 .. code-block:: json
