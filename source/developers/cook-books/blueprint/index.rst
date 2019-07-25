@@ -127,60 +127,29 @@ Now that you have merged your "site" with the Empty blueprint in the proper way,
 Installing
 ----------
 
-^^^^^^^^^^^^^^
-On Crafter 3.0
-^^^^^^^^^^^^^^
+#. Copy your blueprint folder into ``{CRAFTER_HOME}/data/repos/global/blueprints``.
+#. Check in your blueprint folder if it contains a ``craftercms-plugin.yaml`` file.  Add in the file if it does not exist by copying a ``craftercms-plugin.yaml`` file from one of the default blueprints, such as from the folder ``4000_empty``, which contains the empty blueprint and modifying it as needed.  See :ref:`craftercms-plugin-yaml-file` for details on the file
+#. Once you do, commit the change to the global repo (``{CRAFTER_HOME}/data/repos/global/``) by using ``git``, and your blueprint will now start appearing when you try to create a new site.
 
-    #. Copy your blueprint folder into ``{CRAFTER_HOME}/data/repos/global/blueprints``.
-    #. Once you do, commit the change to the global repo (``{CRAFTER_HOME}/data/repos/global/``) by using ``git``, and your blueprint will now start appearing when you try to create a new site.
-    
-       * Crafter 3 uses a vanilla version of Git, so regular Git commands work as intended. To commit your changes so Crafter can see it, head to ``{CRAFTER_HOME}/data/repos/global/blueprints`` and git add your modified files like this
+   * Crafter 3 uses a vanilla version of Git, so regular Git commands work as intended. To commit your changes so Crafter can see it, head to ``{CRAFTER_HOME}/data/repos/global/blueprints`` and git add your modified files like this
 
-         .. code-block:: sh
+     .. code-block:: sh
 
-            git add <filename>
+        git add <filename>
 
-         for each filename. Or, to add all at once use:
+     for each filename. Or, to add all at once use:
 
-         .. code-block:: sh
+     .. code-block:: sh
 
-	        git add --all
+         git add --all
 
-       * And once you are done, commit them with the following command:
+   * And once you are done, commit them with the following command:
 
-         .. code-block:: sh
+     .. code-block:: sh
 
-            git commit -m "<the commit’s description>"
+        git commit -m "<the commit’s description>"
 
-       * No need to push, there’s no remote configured. You can also use any Git client. Now, it will be available when you create a new site.
-
-^^^^^^^^^^^^^^^^^^^^^
-On Crafter 3.1 and on
-^^^^^^^^^^^^^^^^^^^^^
-
-    #. Copy your blueprint folder into ``{CRAFTER_HOME}/data/repos/global/blueprints``.
-    #. Check in your blueprint folder if it contains a ``craftercms-plugin.yaml`` file.  Add in the file if it does not exist by copying a ``craftercms-plugin.yaml`` file from one of the default blueprints, such as from the folder ``4000_empty``, which contains the empty blueprint and modifying it as needed.  See :ref:`craftercms-plugin-yaml-file` for details on the file
-    #. Once you do, commit the change to the global repo (``{CRAFTER_HOME}/data/repos/global/``) by using ``git``, and your blueprint will now start appearing when you try to create a new site.
-
-       * Crafter 3 uses a vanilla version of Git, so regular Git commands work as intended. To commit your changes so Crafter can see it, head to ``{CRAFTER_HOME}/data/repos/global/blueprints`` and git add your modified files like this
-
-         .. code-block:: sh
-
-            git add <filename>
-
-         for each filename. Or, to add all at once use:
-
-         .. code-block:: sh
-
-	        git add --all
-
-       * And once you are done, commit them with the following command:
-
-         .. code-block:: sh
-
-            git commit -m "<the commit’s description>"
-
-       * No need to push, there’s no remote configured. You can also use any Git client. Now, it will be available when you create a new site.
+   * No need to push, there’s no remote configured. You can also use any Git client. Now, it will be available when you create a new site.
 
 .. _craftercms-plugin-yaml-file:
 
