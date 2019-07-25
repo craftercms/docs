@@ -153,6 +153,7 @@ Installing
 
 .. _craftercms-plugin-yaml-file:
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 What's in the craftercms-plugin.yaml file?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
