@@ -50,12 +50,7 @@
 }
 
 .top-bar {
-  background-color: $white;
   border-bottom: 1px solid $custom-light-gray;
-
-  & .top-bar-left, .top-bar-right, .top-bar-left ul, .top-bar-right ul {
-    background-color: $white;
-  }
 
   .logo {
     padding: 0;
@@ -302,29 +297,22 @@ div[class^="highlight-"] {
   }
 
   .highlighttable {
-    overflow-x: scroll;
-    display: block;
-    .highlight { 
-      overflow: visible;
-    }
+    table-layout: fixed;
+    width: 100%;
 
-    .code {
-      width: 100%;
+    .linenos {
+      width: 60px;
+      vertical-align: top;
     }
-  }
-
-  &:hover .copy-code-btn{
-    opacity: 1;
   }
 
   .copy-code-btn {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
     color: grey;
 
-    opacity: 0;
     transition: visibility 0s, opacity 0.3s linear;
   }
 }
