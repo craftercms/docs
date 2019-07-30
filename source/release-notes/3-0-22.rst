@@ -1,0 +1,14 @@
+------------------
+Crafter CMS 3.0.22
+------------------
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Upgraded Spring Boot to 2.1.6
+* Upgraded Spring Security to 4.2.13
+* Upgraded Jackson Databind library to 2.9.9.2 for various Crafter modules
+* Other security related patches
+
+For a full list of tickets, please visit: `GitHub 3.0.22 Milestone <https://github.com/craftercms/craftercms/milestone/50?closed=1>`_
