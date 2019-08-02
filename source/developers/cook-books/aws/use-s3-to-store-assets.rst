@@ -102,30 +102,30 @@ data source, to the ``Page - Article`` content type. To do this:
 
 |
 
-----------------------------------------------
-Step 3: Add Freemarker code to render the URLs
-----------------------------------------------
+.. note::
 
-We need to add the Freemarker code that will render the URLs. In
-the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following lines after the
-``<#list contentModel.sections.item as item>...</#list>`` lines:
+    If you're using Freemarker as your view layer, follow the steps below after adding the data source and controls for uploading files to your S3 bucket to the content type:
 
-.. code-block:: guess
-   :linenos:
+    We need to add the Freemarker code that will render the URLs. In
+    the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following lines after the
+    ``<#list contentModel.sections.item as item>...</#list>`` lines:
 
-   <#if contentModel.attachments??>
-     <h2>Attachments</h2>
-     <ul>
-       <#list contentModel.attachments.item as a>
-         <li><a href="${a.attachment.item.key}">${a.attachmentName}</a></li>
-       </#list>
-     </ul>
-   </#if>
+    .. code-block:: guess
+       :linenos:
+
+       <#if contentModel.attachments??>
+         <h2>Attachments</h2>
+         <ul>
+           <#list contentModel.attachments.item as a>
+             <li><a href="${a.attachment.item.key}">${a.attachmentName}</a></li>
+           </#list>
+         </ul>
+       </#if>
 
 |
 
 -------------------------------------------------
-Step 4: Add some attachments and test the changes
+Step 3: Add some attachments and test the changes
 -------------------------------------------------
 
 If all the previous steps have been done correctly, you should be able to add any number of attachments and they
@@ -147,7 +147,7 @@ The bottom of the page looks like this when you preview your page:
 |
 
 ---------------------------
-Step 5: Publish the changes
+Step 4: Publish the changes
 ---------------------------
 
 The next step is to publish the changes.  Remember to publish not just the page where we added the S3 assets,
@@ -160,7 +160,7 @@ but also the ``article.ftl`` and the ``aws.xml`` files too.
 |
 
 -------------------------------------------------------
-Step 6: Enable the remote assets controller in Delivery
+Step 5: Enable the remote assets controller in Delivery
 -------------------------------------------------------
 
 In order for the article attachments to be publicly accessible in Delivery, the remote assets controller needs

@@ -105,9 +105,9 @@ For this guide, the ``AWS Profiles`` should look like this (replace the ``X's`` 
 
 |
 
--------------------------------------------------------------------------------------------
-Step 2: Add the data source for uploading video to AWS for transcoding, to the content type
--------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+Step 2: Add the control and data source for uploading video to AWS for transcoding, to the content type
+-------------------------------------------------------------------------------------------------------
 
 For our example, we'll add the Video Transcoding from S3 datasource and a Video picker control to the ``Page - Article`` content type.  To do this:
 
@@ -132,31 +132,32 @@ For our example, we'll add the Video Transcoding from S3 datasource and a Video 
    |
 
 
-------------------------------------------------
-Step 3: Add Freemarker code to render the videos
-------------------------------------------------
+.. note::
 
-We need to add the Freemarker code that will render the URLs. In the example below, we will display one of the transcoded videos.
+    If you're using Freemarker as your view layer, follow the steps below after adding the data source and control for uploading video to AWS for transcoding, to the content type:
 
-In the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following lines after the
-``<section><header class="main" <@studio.iceAttr iceGroup="subject"/>>...</#section>`` lines:
 
-.. code-block:: guess
-   :linenos:
+    We need to add the Freemarker code that will render the URLs. In the example below, we will display one of the transcoded videos.
 
-   <!-- AWSVideoTranscoding -->
-   <section id="transcodedVideos">
-       <h2>Videos</h2>
-       <video width="400" controls>
-           <source src="${ contentModel.video.item[0].url }" type="video/mp4">
-           Your browser does not support HTML5 video.
-       </video>
-   </section>
+    In the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following lines after the
+    ``<section><header class="main" <@studio.iceAttr iceGroup="subject"/>>...</#section>`` lines:
 
-   |
+    .. code-block:: guess
+       :linenos:
+
+       <!-- AWSVideoTranscoding -->
+       <section id="transcodedVideos">
+           <h2>Videos</h2>
+           <video width="400" controls>
+               <source src="${ contentModel.video.item[0].url }" type="video/mp4">
+               Your browser does not support HTML5 video.
+           </video>
+       </section>
+
+|
 
 -------------------------------------------
-Step 4: Upload a video and test the changes
+Step 3: Upload a video and test the changes
 -------------------------------------------
 
 If all the previous steps have been done correctly, you should be able to add a video that will be transcoded into the formats specified in your job template, and in the case of our example, one of the videos will be available for viewing when the page is rendered.
@@ -186,7 +187,7 @@ Here's how it will look like when we preview the page where we added the video:
 |
 
 ---------------------------
-Step 5: Publish the changes
+Step 4: Publish the changes
 ---------------------------
 
 The next step is to publish the changes.  Remember to publish not just the page where we added the AWS MediaConvert data source,
@@ -199,7 +200,7 @@ but also the ``article.ftl`` and the ``aws.xml`` files too.
 |
 
 -------------------------------------------------------
-Step 6: Enable the remote assets controller in Delivery
+Step 5: Enable the remote assets controller in Delivery
 -------------------------------------------------------
 
 In order for the videos to be publicly accessible in Delivery, the remote assets controller needs
