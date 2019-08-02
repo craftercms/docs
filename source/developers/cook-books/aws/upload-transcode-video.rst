@@ -144,7 +144,7 @@ In the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following 
 .. code-block:: guess
    :linenos:
 
-   <!-- aWSVideoTranscoding -->
+   <!-- AWSVideoTranscoding -->
    <section id="transcodedVideos">
        <h2>Videos</h2>
        <video width="400" controls>
