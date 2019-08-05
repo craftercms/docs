@@ -1,0 +1,11 @@
+------------------
+Crafter CMS 3.0.23
+------------------
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Performance tuning
+
+For a full list of tickets, please visit: `GitHub 3.0.23 Milestone <https://github.com/craftercms/craftercms/milestone/52?closed=1>`_
