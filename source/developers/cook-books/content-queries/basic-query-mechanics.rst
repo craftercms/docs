@@ -58,7 +58,7 @@ Make an Elasticsearch Query
 To perform content queries in Elasticsearch you need to use the client provided by Crafter Engine, the bean name is
 ``elasticsearch`` and it can be used from any Groovy script.
 
-You can find the interface for this service :javadoc_base_url:`here <search/org/craftercms/search/elasticssearch/ElasticSearchWrapper.html>`
+You can find the interface for this service :javadoc_base_url:`here <search/org/craftercms/search/elasticsearch/ElasticsearchWrapper.html>`
 
 This client provides two ways for running queries:
 
