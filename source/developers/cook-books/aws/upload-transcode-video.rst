@@ -237,4 +237,8 @@ to be enabled.  To do this, in your delivery, open the file ``rendering-context.
 |
 
 .. note::
-   Enabling the remote assets controller opens up all access to the files of the remote profiles configured in Studio
+   Enabling the remote assets controller opens up the remote repository for read access via the URL pattern ``/remote-assets/STORE-TYPE/PROFILE-ID/PATH-TO-ASSET``, where:
+
+   * **STORE-TYPE** the remote repository storage used, for our example above, **S3**
+   * **PROFILE-ID** ID used to refer to remote repository profile
+   * **PATH-TO-ASSET**  path to asset in the remote repository
