@@ -11,3 +11,4 @@ Solutions for AWS
    :titlesonly:
 
    use-s3-to-store-assets
+   upload-transcode-video
