@@ -1,0 +1,12 @@
+------------------
+Crafter CMS 3.0.24
+------------------
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Additional performance enhancements
+* Added message in sites dashboard for users who are not members of any sites
+
+For a full list of tickets, please visit: `GitHub 3.0.24 Milestone <https://github.com/craftercms/craftercms/milestone/53?closed=1>`_
