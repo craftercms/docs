@@ -413,9 +413,10 @@ rst_epilog = """
 javadoc_base = 'http://javadoc.craftercms.org/'
 javadoc_version = '3.1.0'
 
-# docs home
-doc_base = 'https://docs.craftercms.org/en/'
+# swagger base and version
+studio_swagger_base = 'https://app.swaggerhub.com/apis/craftercms/studio/'
+studio_swagger_version = '3.1.1.11'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),
-            'doc_base_url': (doc_base + version + '/%s', None )}
+            'studio_swagger_url': (studio_swagger_base + studio_swagger_version + '%s', None )}
