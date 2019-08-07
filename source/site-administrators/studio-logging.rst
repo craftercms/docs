@@ -26,7 +26,7 @@ To view the audit logs, from the **Sidebar**, click on |siteConfig|, then click 
 -----------
 Log Console
 -----------
-Crafter CMS has a **Log Console** that allows you to view messages depending on what what log levels and what Java packages you'd like to track.
+Crafter CMS has a **Log Console** that allows you to view messages depending on what log levels and what Java packages have been set for tracking.
 
 To view logs in Crafter Studio, click on |siteConfig| from the **Sidebar**, then click on **Log Console**.  Looking inside the **Log Console**, messages we want to display are setup beforehand.  The messages displayed in the **Log Console** depends on what levels are set for the Java packages being run in Crafter CMS.
 
@@ -45,3 +45,4 @@ We'll now go to the **Log Console** to start viewing the logs.  From the **Sideb
     :alt: Crafter Studio Log Console
 	:align: center
 
+For more information on logging levels, see :ref:`override-logging-levels`

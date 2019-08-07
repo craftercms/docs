@@ -20,5 +20,3 @@ Cookbooks / Tutorials
    blueprint/index
    best-practices/index
    how-tos/index
-   marketplace/index
-
