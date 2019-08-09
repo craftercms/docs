@@ -17,19 +17,19 @@ Minimum Installation
 
     * 4GB of RAM + 4GB Swap Space or Virtual Memory
     * 3GB JVM Memory (-Xms 1G -Xmx 3G)
-    * 2 CPU Cores
+    * 4 CPU Cores
 
 Medium Installation
 
     * 8GB of RAM + 8GB Swap Space or Virtual Memory
     * 4GB JVM Memory (-Xms 1G -Xmx 4G)
-    * 2 CPU Cores
+    * 4 CPU Cores
 
 Large Installations
 
 	* 16GB+ of RAM + 16GB Swap Space or Virtual Memory
 	* 8GB+ JVM Memory (-Xms 2G -Xmx 8G)
-	* 4+ CPU Cores
+	* 8+ CPU Cores
 
 Extra Large Installations
 
