@@ -1,40 +1,50 @@
 :is-up-to-date: True
 
-.. _authoring-env-performance-tuning.rst:
+.. index:: Delivery Environment Performance Tuning
 
-========================================
-Authoring Environment Performance Tuning
-========================================
+.. _delivery-env-performance-tuning.rst:
 
-This section describes ways on how to enhance the authoring environment performance by tuning authoring environment settings and recommendations for hardware configurations.
+=======================================
+Delivery Environment Performance Tuning
+=======================================
+
+This section describes ways on how to enhance a traditional delivery environment setup (non-serverless) performance by tuning delivery environment settings and recommendations for hardware configurations.
 
 -------------------
 Server Requirements
 -------------------
-Minimum Installation (~1-10 concurrent users per site, ~10 sites)
+Minimum Installation
 
-	* 8GB of RAM + 8GB Swap Space or Virtual Memory
-	* 4GB JVM Memory (-Xms 1G -Xmx 4G)
-	* 2 CPU Cores
+    * 4GB of RAM + 4GB Swap Space or Virtual Memory
+    * 3GB JVM Memory (-Xms 1G -Xmx 3G)
+    * 4 CPU Cores
 
-Medium Installations (~11-25 concurrent users per site, ~25 sites)
+Medium Installation
+
+    * 8GB of RAM + 8GB Swap Space or Virtual Memory
+    * 4GB JVM Memory (-Xms 1G -Xmx 4G)
+    * 4 CPU Cores
+
+Large Installations
 
 	* 16GB+ of RAM + 16GB Swap Space or Virtual Memory
 	* 8GB+ JVM Memory (-Xms 2G -Xmx 8G)
-	* 4+ CPU Cores
+	* 8+ CPU Cores
 
-Larger Installations (~26-100 concurrent users per site, ~100 sites)
+Extra Large Installations
 
 	* 32GB+ of RAM + 16GB Swap Space or Virtual Memory
 	* 16GB+ of JVM Memory (-Xms 2G -Xmx 16G)
 	* 16+ CPU Cores
 
-Vertical scaling can be very effective in scaling out Crafter Studio.
+Horizontal scaling can be very effective in scaling out delivery of content.
+
+.. [TBD: add request ranges for the installations listed above]
 
 -------------------------------------
 High-level Performance Considerations
 -------------------------------------
-The majority of Studio operations are I/O intensive. Optimizing your installation for better I/O performance will typically pay the biggest dividends in performance gains early on. These general guidelines help address these considerations:
+Crafter Engine operations can be I/O intensive. Optimizing your installation for better I/O performance will typically pay the biggest dividends in performance gains early on. These general guidelines help address these considerations:
 
 * Fast raw storage performance (fast concurrent reads and writes)
 * Different storage devices are used for different concerns (logging, Git, search index, swap etc.)
@@ -51,7 +61,7 @@ Server/Hardware Level
 ^^^^^^^^^^^^^^^^^^^^
 Disk/Storage Devices
 ^^^^^^^^^^^^^^^^^^^^
-Crafter Studio’s job is to manage content. A high volume of concurrent reads and writes should be expected. The faster the disk type and connection to the computer, the better the performance you will observe.
+Crafter Engine’s job is to provide content delivery services. A high volume of concurrent reads (requests) and writes(for the logs) should be expected. The faster the disk type and connection to the computer, the better the performance you will observe.
 
 Testing Raw Performance
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -130,8 +140,8 @@ Crafter must update content, metadata about the content, search indexes and more
 Not all storage devices are created equal. The fast the read/write speeds and the more concurrency and lower latency the device supports, the better the performance will be. As a general rule of thumb, use the highest IOPS devices for the most demanding storage concerns, by order of importance:
 
 |    {CRAFTER_HOME}/data/repos (high-concurrency, important)
-|    {CRAFTER_HOME}/data/db (high-concurrency, important)
 |    {CRAFTER_HOME}/data/indexes
+|    {CRAFTER_HOME}/data/indexes_es
 |    {CRAFTER_HOME}/data/mongodb (if in use)
 |    {CRAFTER_HOME}/data/logs
 
@@ -147,9 +157,9 @@ NFS or similar protocols will increase latency and cause performance issues.
 One optimization to raise effective IOPS of a system without buying very expensive storage devices is to distribute the load across many devices. Crafter CMS performs multiple reads/writes to disk from various concerns such as the database, the repository, logs, etc. with very different I/O patterns. For optimal performance, the server should have different storage systems (disks) mounted for different concerns, for example:
 
 |    /dev/{dev0} -> /
-|    /dev/{dev1} -> /opt/crafter/data/db
-|    /dev/{dev2} -> /opt/crafter/data/repos
-|    /dev/{dev3} -> /opt/crafter/data/indexes
+|    /dev/{dev1} -> /opt/crafter/data/repos
+|    /dev/{dev2} -> /opt/crafter/data/indexes
+|    /dev/{dev3} -> /opt/crafter/data/indexes_es
 |    /dev/{dev4} -> /opt/crafter/logs
 |    /dev/{dev5} -> /opt/crafter/data/mongodb
 |    /dev/{dev6} -> /var
