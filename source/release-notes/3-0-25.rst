@@ -1,0 +1,12 @@
+------------------
+Crafter CMS 3.0.25
+------------------
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Added support UI and API support in Crafter Studio for resolving conflicted repository states
+* Added log message when a conflicted repository state is produced by a pull from remote repository
+
+For a full list of tickets, please visit: `GitHub 3.0.25 Milestone <https://github.com/craftercms/craftercms/milestone/54?closed=1>`_
