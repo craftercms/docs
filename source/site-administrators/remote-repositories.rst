@@ -15,9 +15,8 @@ The **Remote Repositories** under |siteConfig| allows the user to view remote re
 
 Below, we have a site **mysweetdotcom** with a link to a remote repository in GitHub:
 
-.. image:: /_static/images/developer/craftercms-github-remotes.png
-    :alt: Developer How-Tos - Pushing and Pulling from the Remote Repository
-    :width: 100 %
+.. image:: /_static/images/site-admin/site-config-remote-repositories.png
+    :alt: Site Admin - Site Config Remote Repositories
     :align: center
 
 ----------------
@@ -44,6 +43,69 @@ In the **Pull** dialog, select the branch in the remote repository you'd like to
 .. image:: /_static/images/site-admin/site-config-pull-from-remote-options.png
     :alt: Remote Repositories - Pull from Remote Repository Options
     :align: center
+
+^^^^^^^^^^^^^^^^^^^
+Conflict Resolution
+^^^^^^^^^^^^^^^^^^^
+When performing a pull from remote repository, Git is usually able to merge changes from the remote repository to your local files.  Sometimes, a line you edited in a file may have also been edited on the remote repository which will result in a merge conflict when you pull from the remote repository.  In this case, you will have to step in and tell Git what to do.  Crafter Studio supports resolving the conflict from the ``Remote Repositories`` dashboard.
+
+When you perform a pull from repository, and there's a conflict between your local files and the remote repository files, the message ``Pull from remote failed`` will appear:
+
+.. image:: /_static/images/site-admin/site-config-pull-from-remote-error.png
+    :alt: Remote Repositories - Pull from Remote Repository Error
+    :align: center
+
+After closing the error message by clicking the ``Ok`` button, you will then be presented with options on how to resolve the conflict
+
+.. image:: /_static/images/site-admin/site-config-pull-from-remote-fix.png
+    :alt: Remote Repositories - Pull from Remote Repository Error Resolution Screen
+    :align: center
+
+In the next screen, you will be given the option to cancel the pull operation:
+
+.. image:: /_static/images/site-admin/site-config-cancel-pull.png
+    :alt: Remote Repositories - Cancel Pull From Remote Repository
+    :align: center
+
+
+You will also be presented with options to resolve the conflict:
+
+* **Accept Remote**: accept the changes from the remote repository and discard your local changes
+
+  .. image:: /_static/images/site-admin/site-config-accept-remote.png
+      :alt: Remote Repositories - Pull from Remote Repository Conflict Resolution Accept Remote
+      :align: center
+
+* **Keep Local**: keep your local changes and discard changes from the remote repository
+
+  .. image:: /_static/images/site-admin/site-config-keep-local.png
+      :alt: Remote Repositories - Pull from Remote Repository Conflict Resolution Keep Local
+      :align: center
+
+* **Diff**: let's you view the differences between your local files and the files in the remote repository.  Crafter Studio let's you view the differences a couple of ways:
+
+  .. image:: /_static/images/site-admin/site-config-conflict-diff-stacked.png
+      :alt: Remote Repositories - Pull from Remote Repository Conflict Resolution Keep Local
+      :align: center
+
+  |
+
+  .. image:: /_static/images/site-admin/site-config-conflict-diff-split.png
+      :alt: Remote Repositories - Pull from Remote Repository Conflict Resolution Keep Local
+      :align: center
+
+Select the appropriate button for your case, ``Keep Local`` or ``Accept Remote`` then click on ``Confirm``.  You will then be directed to commit the changes done to your local or cancel the pull operation.
+
+.. image:: /_static/images/site-admin/site-config-commit-res-btn.png
+    :alt: Remote Repositories - Pull from Remote Repository Conflict Resolution Keep Local
+    :align: center
+
+When committing your changes, you will then be asked to supply a message for the repository history log and you're done resolving the conflict
+
+.. image:: /_static/images/site-admin/site-config-commit-res.png
+    :alt: Remote Repositories - Pull from Remote Repository Conflict Resolution Keep Local
+    :align: center
+
 
 ------------------
 Push to Repository

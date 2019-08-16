@@ -1,3 +1,6 @@
+.. index:: Site Config Tools Configuration
+
+.. _site-config-tools:
 
 =================
 Site Config Tools
