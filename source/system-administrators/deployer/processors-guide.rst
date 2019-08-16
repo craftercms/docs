@@ -38,6 +38,9 @@ All deployment processors support the following properties:
 +------------------+--------+-------------+----------------------------------------------------------------------+
 |``excludeFiles``  |        |None         |List of regular expressions to check the files that should be excluded|
 +------------------+--------+-------------+----------------------------------------------------------------------+
+|``alwaysRun``     |        |``false``    |Indicates if the processor should run even if there are no changes in |
+|                  |        |             |the current deployment                                                |
++------------------+--------+-------------+----------------------------------------------------------------------+
 
 ^^^^^^^^^^^^^^^^^^
 Git Pull Processor
