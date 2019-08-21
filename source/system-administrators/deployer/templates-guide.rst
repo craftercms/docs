@@ -105,13 +105,13 @@ This target will:
 +------------------------------+----------+------------------------------------------------------------------------+
 |``repo_branch``               |          |The branch name of the remote Git repo to pull from                     |
 +------------------------------+----------+------------------------------------------------------------------------+
-|``repo_username``             |          |The username of the remote Git repo                                     |
+|``repo_username``             |          |Username to access remote repository                                    |
 +------------------------------+----------+------------------------------------------------------------------------+
-|``repo_password``             |          |The password of the remote Git repo                                     |
+|``repo_password``             |          |Password to access remote repository                                    |
 +------------------------------+----------+------------------------------------------------------------------------+
-|``ssh_private_key_path``      |          |The path for the private key used for the remote Git repo               |
+|``ssh_private_key_path``      |          |The path for the private key to access remote repository                |
 +------------------------------+----------+------------------------------------------------------------------------+
-|``ssh_private_key_passphrase``|          |The passphrase for the private key for the remote Git repo (only if     |
+|``ssh_private_key_passphrase``|          |The passphrase for the private key to access remote repository (only if |
 |                              |          |the key is passphrase-protected)                                        |
 +------------------------------+----------+------------------------------------------------------------------------+
 |``notification_addresses``    |          |The email addresses that should receive deployment notifications        |
@@ -167,13 +167,13 @@ This target will:
 +------------------------------+-----------+------------------------------------------------------------------------+
 |``repo_branch``               |           |The branch name of the remote Git repo to pull from                     |
 +------------------------------+-----------+------------------------------------------------------------------------+
-|``repo_username``             |           |The username of the remote Git repo                                     |
+|``repo_username``             |           |Username to access remote repository                                    |
 +------------------------------+-----------+------------------------------------------------------------------------+
-|``repo_password``             |           |The password of the remote Git repo                                     |
+|``repo_password``             |           |Password to access remote repository                                    |
 +------------------------------+-----------+------------------------------------------------------------------------+
-|``ssh_private_key_path``      |           |The path for the private key used for the remote Git repo               |
+|``ssh_private_key_path``      |           |The path for the private key to access remote repository                |
 +------------------------------+-----------+------------------------------------------------------------------------+
-|``ssh_private_key_passphrase``|           |The passphrase for the private key for the remote Git repo (only if     |
+|``ssh_private_key_passphrase``|           |The passphrase for the private key to access remote repository (only if |
 |                              |           |the key is passphrase-protected)                                        |
 +------------------------------+-----------+------------------------------------------------------------------------+
 |``notification_addresses``    |           |The email addresses that should receive deployment notifications        |
@@ -188,7 +188,7 @@ AWS Cloudformed Target
 ^^^^^^^^^^^^^^^^^^^^^^
 
 This template is used to provide a serverless delivery environment without the need to manually create all required 
-esources in AWS. It works similar to the AWS S3 Target but uses an AWS Cloudformation template.
+resources in AWS. It works similar to the AWS S3 Target but uses an AWS Cloudformation template.
 
 This target will:
 
@@ -228,13 +228,13 @@ This target will:
 +---------------------------------+--------+------------------------------------------------------------------------+
 |``repo_branch``                  |        |The branch name of the remote Git repo to pull from                     |
 +---------------------------------+--------+------------------------------------------------------------------------+
-|``repo_username``                |        |The username of the remote Git repo                                     |
+|``repo_username``                |        |Username to access remote repository                                    |
 +---------------------------------+--------+------------------------------------------------------------------------+
-|``repo_password``                |        |The password of the remote Git repo                                     |
+|``repo_password``                |        |Password to access remote repository                                    |
 +---------------------------------+--------+------------------------------------------------------------------------+
-|``ssh_private_key_path``         |        |The path for the private key used for the remote Git repo               |
+|``ssh_private_key_path``         |        |The path for the private key to access remote repository                |
 +---------------------------------+--------+------------------------------------------------------------------------+
-|``ssh_private_key_passphrase``   |        |The passphrase for the private key for the remote Git repo (only if     |
+|``ssh_private_key_passphrase``   |        |The passphrase for the private key to access remote repository (only if |
 |                                 |        |the key is passphrase-protected)                                        |
 +---------------------------------+--------+------------------------------------------------------------------------+
 |``notification_addresses``       |        |The email addresses that should receive deployment notifications        |
