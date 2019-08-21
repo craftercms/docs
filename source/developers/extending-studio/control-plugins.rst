@@ -1,14 +1,14 @@
 :is-up-to-date: True
 
-.. index:: Building External Form Engine Controls and Data Sources
+.. index:: Building Form Engine Plugins Controls
 
-.. _building-external-controls-and-ds:
+.. _building-plugins-controls:
 
-======================================
-Building External Form Engine Controls
-======================================
+====================================
+Building Form Engine Control Plugins
+====================================
 
-In :ref:`form-engine-control`, we learned how to build form engine controls placed in the Studio war file.  Crafter Studio also allows external plugins for form engine controls through the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile`
+In :ref:`form-engine-control`, we learned how to build form engine controls placed in the Studio war file.  Crafter Studio also allows plugins for form engine controls through the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile`
 
 -------------------------------
 The anatomy of a Control Plugin
@@ -29,13 +29,13 @@ Interface
 
 See :ref:`control-interface` for more information on form engine control interface.
 
-.. _external-plugin-directory-structure:
+.. _plugin-directory-structure:
 
------------------------------------
-External Plugin Directory Structure
------------------------------------
+--------------------------
+Plugin Directory Structure
+--------------------------
 
-When using external plugins, the JS files location for the plugins uses a convention where the files needs to go in the following location:
+When using plugins, the JS files location for the plugins uses a convention where the files needs to go in the following location:
 
 * **Controls** : CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/config/studio/plugins/control/CONTROL_NAME/JS_FILE.js
 
@@ -46,33 +46,33 @@ where:
 - **CONTROL_NAME** : Name of form engine control plugin
 - **JS_FILE.js** : JavaScript file containing the control/data source interface implementation
 
-.. note:: When using an out-of-the-box blueprint to create your site, the ``plugins/control`` or ``plugins/datasource`` folder does not exist under ``CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/config/studio/`` and will need to be created by the user creating the plugins.
+.. note:: When using an out-of-the-box blueprint to create your site, the ``plugins/control`` folder does not exist under ``CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/config/studio/`` and will need to be created by the user creating the plugins.
 
 ---------------------------
 Form Engine Control Example
 ---------------------------
-Let's take a look at an example of an external control plugin.  We will be adding a control named ``input2``.
+Let's take a look at an example of a control plugin.  We will be adding a control named ``text-input``.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Form Engine Control Code
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-The first thing we have to do is to create the folder structure where we will be placing the JS file for our control.  We'll follow the convention listed above in :ref:`external-plugin-directory-structure`
+The first thing we have to do is to create the folder structure where we will be placing the JS file for our control.  We'll follow the convention listed above in :ref:`plugin-directory-structure`
 
-Under ``CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/config/studio``, create the folder ``plugins``.  Under the ``plugins`` folder, create the folder ``control``.  Under the ``control`` folder, create the folder ``input2``, which is the name of the control we're building.  We will be placing the JS file implementing the control interface under the ``input2`` folder.  In the example below, the JS file is ``main.js``
+Under ``CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/config/studio``, create the folder ``plugins``.  Under the ``plugins`` folder, create the folder ``control``.  Under the ``control`` folder, create the folder ``text-input``, which is the name of the control we're building.  We will be placing the JS file implementing the control interface under the ``text-input`` folder.  In the example below, the JS file is ``main.js``
 
 .. image:: /_static/images/form-controls/control-plugin-directory-struct.png
     :width: 75 %
-    :alt: External Form Engine Control Directory Structure
+    :alt: Form Engine Control Plugin Directory Structure
     :align: center
 
-In the JS file, please note that the ``CStudioAuthoring.Module`` is required and that the prefix for ``CStudioAuthoring.Module.moduleLoaded`` must be the name of the control.  For our example, the prefix is ``input2`` as shown in the example.
+In the JS file, please note that the ``CStudioAuthoring.Module`` is required and that the prefix for ``CStudioAuthoring.Module.moduleLoaded`` must be the name of the control.  For our example, the prefix is ``text-input`` as shown in the example.
 
 .. code-block:: js
     :linenos:
-    :emphasize-lines: 47
+    :emphasize-lines: 51
 
-    CStudioForms.Controls.Input2 = CStudioForms.Controls.Input2 ||
+    CStudioForms.Controls.textInput = CStudioForms.Controls.textInput ||
     function(id, form, owner, properties, constraints, readonly)  {
     	this.owner = owner;
     	this.owner.registerField(this);
@@ -91,13 +91,17 @@ In the JS file, please note that the ``CStudioAuthoring.Module`` is required and
     	return this;
     }
 
-    YAHOO.extend(CStudioForms.Controls.Input2, CStudioForms.CStudioFormField, {
+    YAHOO.extend(CStudioForms.Controls.textInput, CStudioForms.CStudioFormField, {
+
+        getLabel: function() {
+            return CMgs.format(langBundle, "Text Input");
+        },
         .
         .
         .
 
         getName: function() {
-    	    	return "input2";
+    	    	return "text-input";
         },
 
         getSupportedProperties: function() {
@@ -118,7 +122,7 @@ In the JS file, please note that the ``CStudioAuthoring.Module`` is required and
 
     });
 
-    CStudioAuthoring.Module.moduleLoaded("input2", CStudioForms.Controls.Input2);
+    CStudioAuthoring.Module.moduleLoaded("text-input", CStudioForms.Controls.textInput);
 
 |
 
@@ -168,7 +172,7 @@ Add the plugin control's name to the list of controls in the content type editor
         <control>
             <plugin>
                 <type>control</type>
-                <name>input2</name>
+                <name>text-input</name>
                 <filename>main.js</filename>
             </plugin>
             <icon>
@@ -178,10 +182,10 @@ Add the plugin control's name to the list of controls in the content type editor
     </controls>
 
 
-Here's our external plugin control added to the list of controls in the site content types
+Here's our plugin control added to the list of controls in the site content types
 
 .. image:: /_static/images/form-controls/control-plugin-added.png
-    :width: 75 %
-    :alt: External Form Engine Control Added to Content Type
+    :width: 50 %
+    :alt: Form Engine Control Plugin Added to Content Type
     :align: center
 
