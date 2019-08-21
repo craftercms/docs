@@ -39,6 +39,9 @@ Form Engine Control consist of (at a minimum)
 
 * Configuration in a Crafter Studio project to make that control available for use
 
+
+.. _control-interface:
+
 -----------------
 Control Interface
 -----------------
@@ -600,7 +603,7 @@ Configuring the Control to show up in Crafter Studio
 
 Add the control's name to the list of controls in the content type editor configuration
 
-**Location (In Repository) SITENAME/config/studio/administration/tools.xml**
+**Location (In Repository) SITENAME/config/studio/administration/site-config-tools.xml**
 
 .. code-block:: xml
     :linenos:

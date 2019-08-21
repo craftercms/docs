@@ -1,5 +1,3 @@
-:is-up-to-date: True
-
 .. _list-form-engine-data-sources:
 
 .. |ctlChildContent| image:: /_static/images/form-sources/ds-child-content.png
