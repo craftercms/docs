@@ -1,5 +1,3 @@
-:is-up-to-date: True
-
 .. _list-form-engine-controls:
 
 .. |ctlFormSection| image:: /_static/images/form-controls/ctl-form-section.png

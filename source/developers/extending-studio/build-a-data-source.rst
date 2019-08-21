@@ -19,7 +19,7 @@ Crafter Studio form controls should be written in a way that makes them independ
         :alt: Content Type Editor
         :align: center
 
-Form Engine datasources are #5 in the image above.
+Form Engine data sources are #5 in the image above.
 
 Out of the box data sources are:
 
@@ -37,6 +37,9 @@ Data Sources consist of (at a minimum)
 	* The module name must also be the same as the data source name with ``cstudio-forms-controls-`` prepended to the front of it Ex: ``cstudio-forms-controls-configured-list``
 
 * Configuration in a Crafter Studio project to make that data source available for use.
+
+
+.. _data-source-interface:
 
 ---------------------
 Data Source Interface
@@ -200,7 +203,7 @@ Configuring the Data source to show up in Crafter Studio
 
 Add the datasources name to the list of data sources in the content type editor
 
-**Location (In Repository) SITENAME/config/studio/administration/tools.xml**
+**Location (In Repository) SITENAME/config/studio/administration/site-config-tools.xml**
 
 .. code-block:: xml
     :linenos:
