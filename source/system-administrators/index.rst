@@ -120,6 +120,7 @@ Crafter Deployer
 
    deployer/admin-guide.rst
    deployer/processors-guide.rst
+   deployer/templates-guide.rst
    deployer/debugging-deployer-issues.rst
 
 
