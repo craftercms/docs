@@ -70,59 +70,61 @@ In the JS file, please note that the ``CStudioAuthoring.Module`` is required and
 
 .. code-block:: js
     :linenos:
-    :emphasize-lines: 51
+    :emphasize-lines: 47
 
-    CStudioForms.Controls.textInput = CStudioForms.Controls.textInput ||
-    function(id, form, owner, properties, constraints, readonly)  {
-    	this.owner = owner;
-    	this.owner.registerField(this);
-    	this.errors = [];
-    	this.properties = properties;
-    	this.constraints = constraints;
-    	this.inputEl = null;
-    	this.patternErrEl = null;
-    	this.countEl = null;
-    	this.required = false;
-    	this.value = "_not-set";
-    	this.form = form;
-    	this.id = id;
-    	this.readonly = readonly;
+(function (CStudioAuthoring, CStudioForms) {
 
-    	return this;
+  // If you want to localize messages and use existing translations in Crafter CMS
+  const Messages = CStudioAuthoring.Messages;
+  const bundle = Messages.getBundle('forms', CStudioAuthoringContext.lang);
+  
+  const CONTROL_NAME = 'text-input';
+
+  function TextInput(id, form, owner, properties, constraints, readonly) {
+    this.owner = owner;
+    this.owner.registerField(this);
+    this.errors = [];
+    this.properties = properties;
+    this.constraints = constraints;
+    this.inputEl = null;
+    this.patternErrEl = null;
+    this.countEl = null;
+    this.required = false;
+    this.value = '_not-set';
+    this.form = form;
+    this.id = id;
+    this.readonly = readonly;
+    return this;
+  }
+
+  YAHOO.extend(TextInput, CStudioForms.CStudioFormField, {
+    getLabel: function () {
+      return Messages.format(bundle, 'Text Input');
+    },
+    getName: function () {
+      return CONTROL_NAME;
+    },
+    getSupportedProperties: function () {
+      return [
+        { label: Messages.format(bundle, 'displaySize'), name: 'size', type: 'int', defaultValue: '50' },
+        { label: Messages.format(bundle, 'maxLength'), name: 'maxlength', type: 'int', defaultValue: '50' },
+        { label: Messages.format(bundle, 'readonly'), name: 'readonly', type: 'boolean' },
+        { label: 'Tokenize for Indexing', name: 'tokenize', type: 'boolean', defaultValue: 'false' }
+      ];
+    },
+    getSupportedConstraints: function () {
+      return [
+        { label: Messages.format(bundle, 'required'), name: 'required', type: 'boolean' },
+        { label: Messages.format(bundle, 'matchPattern'), name: 'pattern', type: 'string' },
+      ];
     }
+    // More methods of your own...
+  });
 
-    YAHOO.extend(CStudioForms.Controls.textInput, CStudioForms.CStudioFormField, {
+  CStudioForms.Controls.textInput = TextInput;
+  CStudioAuthoring.Module.moduleLoaded(CONTROL_NAME, TextInput);
 
-        getLabel: function() {
-            return CMgs.format(langBundle, "Text Input");
-        },
-        .
-        .
-        .
-
-        getName: function() {
-    	    	return "text-input";
-        },
-
-        getSupportedProperties: function() {
-    	    return [
-    		    { label: CMgs.format(langBundle, "displaySize"), name: "size", type: "int", defaultValue: "50" },
-    		    { label: CMgs.format(langBundle, "maxLength"), name: "maxlength", type: "int",  defaultValue: "50" },
-    		    { label: CMgs.format(langBundle, "readonly"), name: "readonly", type: "boolean" },
-    		    { label: "Tokenize for Indexing", name: "tokenize", type: "boolean",  defaultValue: "false" }
-    	    ];
-        },
-
-        getSupportedConstraints: function() {
-    	    return [
-    		    { label: CMgs.format(langBundle, "required"), name: "required", type: "boolean" },
-    		    { label: CMgs.format(langBundle, "matchPattern"), name: "pattern", type: "string" },
-    	    ];
-        }
-
-    });
-
-    CStudioAuthoring.Module.moduleLoaded("text-input", CStudioForms.Controls.textInput);
+})(CStudioAuthoring, CStudioForms);
 
 |
 
@@ -164,11 +166,9 @@ Add the plugin control's name to the list of controls in the content type editor
     <controls>
         <control>
             <name>auto-filename</name>
-            .
-            .
+            <!-- Other elements/properties... -->
         </control>
-        .
-        .
+        <!-- Other elements/properties... -->
         <control>
             <plugin>
                 <type>control</type>
