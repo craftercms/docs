@@ -51,6 +51,75 @@ You will then be given some options when Studio pulls from the remote repository
 - Accept Theirs: Accept the remote's version of the site and overwrite the local version if different
 - None: Studio will try to merge the remote version with the local version
 
+^^^^^^^^^^^^^^^^^^^
+Conflict Resolution
+^^^^^^^^^^^^^^^^^^^
+When performing a pull from remote repository, Git is usually able to merge changes from the remote repository to your local files.  Sometimes, a line you edited in a file may have also been edited on the remote repository which will result in a merge conflict when you pull from the remote repository.  In this case, you will have to step in and tell Git what to do.  Crafter Studio supports resolving the conflict from the ``Remote Repositories`` dashboard.
+
+When you perform a pull from repository, and there's a conflict between your local files and the remote repository files, the message ``Pull from remote failed`` will appear:
+
+.. image:: /_static/images/site-admin/site-config-pull-from-remote-error.png
+    :alt: Remote Repositories - Pull from Remote Repository Error
+    :align: center
+
+After closing the error message by clicking the ``Ok`` button, you will then be presented with options on how to resolve the conflict
+
+.. image:: /_static/images/site-admin/site-config-pull-from-remote-fix.png
+    :alt: Remote Repositories - Pull from Remote Repository Error Resolution Screen
+    :align: center
+
+In the next screen, you will be given the option to cancel the pull operation:
+
+.. image:: /_static/images/site-admin/site-config-cancel-pull.png
+    :alt: Remote Repositories - Cancel Pull From Remote Repository
+    :align: center
+    :width: 50 %
+
+
+You will also be presented with options to resolve the conflict:
+
+* **Accept Remote**: accept the changes from the remote repository and discard your local changes
+
+  .. image:: /_static/images/site-admin/site-config-accept-remote.png
+      :alt: Remote Repositories - Pull from Remote Repository Conflict Resolution Accept Remote
+      :align: center
+      :width: 50 %
+
+* **Keep Local**: keep your local changes and discard changes from the remote repository
+
+  .. image:: /_static/images/site-admin/site-config-keep-local.png
+      :alt: Remote Repositories - Pull from Remote Repository Conflict Resolution Keep Local
+      :align: center
+      :width: 40 %
+
+* **Diff**: let's you view the differences between your local files and the files in the remote repository.  Crafter Studio let's you view the differences a couple of ways:
+
+  .. image:: /_static/images/site-admin/site-config-conflict-diff-stacked.jpg
+      :alt: Remote Repositories - Pull from Remote Repository Conflict Resolution Keep Local
+      :align: center
+      :width: 70 %
+
+  |
+
+  .. image:: /_static/images/site-admin/site-config-conflict-diff-split.jpg
+      :alt: Remote Repositories - Pull from Remote Repository Conflict Resolution Keep Local
+      :align: center
+      :width: 70 %
+
+Select the appropriate button for your case, ``Keep Local`` or ``Accept Remote`` then click on ``Confirm``.  You will then be directed to commit the changes done to your local or cancel the pull operation.
+
+.. image:: /_static/images/site-admin/site-config-commit-res-btn.png
+    :alt: Remote Repositories - Pull from Remote Repository Conflict Resolution Keep Local
+    :align: center
+
+When committing your changes, you will then be asked to supply a message for the repository history log and you're done resolving the conflict
+
+.. image:: /_static/images/site-admin/site-config-commit-res.png
+    :alt: Remote Repositories - Pull from Remote Repository Conflict Resolution Keep Local
+    :align: center
+    :width: 60 %
+
+
 ------------------
 Push to Repository
 ------------------
