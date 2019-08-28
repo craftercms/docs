@@ -139,7 +139,7 @@ html_theme_options = {
     "topbar_items": [
         {"text":"Crafter CMS Site", "link":"//craftercms.org"}
     ],
-    "has_sidebar_top_text": True,
+    "has_sidebar_top_text": False,
     "sidebar_top_text": "&#x26A0; We are currently updating this version of our documentation to match this release. Please bear with us."
 }
 
