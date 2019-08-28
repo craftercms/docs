@@ -83,7 +83,7 @@ allow you to use builder objects to develop complex logic for building the queri
       .query(QueryBuilders.queryStringQuery(queryStatement))
   
   // Execute the query
-  def executedQuery = elasticSearch.search(new SearchRequest().source(builder))
+  def executedQuery = elasticsearch.search(new SearchRequest().source(builder))
   
   def itemsFound = executedQuery.hits.totalHits
   def items = executedQuery.hits.hits
@@ -107,7 +107,7 @@ much configuration.
   // No imports are required for this method
   
   // Execute the query as a single map object
-  def executedQuery = elasticSearch.search([
+  def executedQuery = elasticsearch.search([
     query: [
       bool: [
         should: [
