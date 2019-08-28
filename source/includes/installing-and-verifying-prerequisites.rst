@@ -71,7 +71,7 @@ How to set the JAVA_HOME environment variable
 |
 
 ^^^^^^^^^^^^^^^^^^^^^^^
-OS X extra prerequisite
+OS X Extra Prerequisite
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 For OS X users, the latest ``openssl`` formula needs to be installed via homebrew:
@@ -82,9 +82,18 @@ For OS X users, the latest ``openssl`` formula needs to be installed via homebre
 
 |
 
+
 ^^^^^^^^^^^^^^^^^^
-Linux prerequisite
+Linux Prerequisite
 ^^^^^^^^^^^^^^^^^^
+
+#. The library ``libaio`` is required by the embedded database MariaDB4j in the Authoring install.  Please note that some Linux distributions does not install the library ``libaio`` by default and so, may need to be installed.  You may get the following error when starting up Studio:
+
+   **error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory**
+
+   To install ``libaio`` for Debian-based Linux distros: ``sudo apt install libaio1``
+
+   To install ``libaio`` for RedHat-based Linux distros: ``yum install libaio``
 
 #. For Linux users, some of the scripts uses ``lsof``.  Please note that some Linux distributions does not come with ``lsof`` pre-installed and so, may need to be installed.
 
