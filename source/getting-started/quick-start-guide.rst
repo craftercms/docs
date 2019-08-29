@@ -14,6 +14,8 @@ Here are the steps to start using Crafter CMS for development or evaluation:
 
 .. note:: Windows support is now via Docker.  If you are on a Windows operating system, please follow the guide :ref:`here<running-craftercms-in-docker>` to start using Crafter CMS.
 
+.. _prerequisites:
+
 --------------------------------------
 Installing and Verifying Prerequisites
 --------------------------------------
