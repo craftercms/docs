@@ -1,4 +1,4 @@
-:is-up-to-date: True
+.. index:: Crafter CMS 3.1.0 Release Notes
 
 -----------------
 Crafter CMS 3.1.0

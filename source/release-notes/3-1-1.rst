@@ -1,0 +1,39 @@
+.. index:: Crafter CMS 3.1.1 Release Notes
+
+-----------------
+Crafter CMS 3.1.1
+-----------------
+
+^^^^^^^
+Updates
+^^^^^^^
+* Upgraded Spring Boot to 2.1.6
+* Upgraded Spring Security to 4.2.13
+* Upgraded Jackson Databind library to 2.9.9.3 for various Crafter modules
+* Embedded MariaDB upgraded to version 10.4.6
+* Upgraded GraphiQL version
+* Upgraded JGit version to v5.4.0.201906121030-r
+* Upgraded jQuery version to 3.4.1
+* Several improvements for GraphQL schema generation, added support for fragments and complex filters in queries and added integration for url transformation service in queries in GraphQL
+* Added message in sites dashboard for users who are not members of any sites
+* Added support UI and API support in Crafter Studio for resolving conflicted repository states
+* Documentation updates
+* Other security related patches
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+* Added plugin support for Form Engine Controls and Data Sources
+* Added deployer target lifecycle hook support
+* Added support UI and API support for Quick Create
+* Added data source for uploading then transcoding video using AWS MediaConvert
+* Added numbers only and time only controls
+* Added Engine API to check if preview is enabled
+* Added support for user controlled publishing of soft and hard dependencies
+
+Lot's of other small enhancements and bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 3.1.1 Milestone <https://github.com/craftercms/craftercms/milestone/44?closed=1>`_
+
+.. important::
+    For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
