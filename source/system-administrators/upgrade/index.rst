@@ -75,9 +75,9 @@ Here's an example to perform an upgrade of your current installation:
 
 |
 
-When performing an upgrade, the script creates a backup of your ``data`` folder then shuts down Crafter CMS.  It will then backup your ``bin`` folder, then perform the upgrade.  Finally, it will start your Crafter CMS install again.
+When performing an upgrade, the script asks if the user wants to backup the ``data`` folder then shuts down Crafter CMS.  It will then ask if the user wants to backup the ``bin`` folder, then perform the upgrade.  Finally, it will start your Crafter CMS install again.
 
-Depending on how recent the version you are upgrading from, there may be files that does not exist in the new release and the script will give you options on what to do with the files.
+Depending on how recent the version you are upgrading from, there may be files that does not exist in the new release and the script will give the user the option to delete or keep the files.  For config files that are different in the new release, the script gives you the option to overwrite the config files with their new versions.  When the script overwrites a file, it creates a backup version of the file with a timestamp and a bak file extension.
 
 After the ``upgrade-target`` script is done with the upgrade, you will need to run the ``post-upgrade.sh`` script,
 
@@ -102,6 +102,22 @@ Below is a sample output when you start the upgrade-target script:
         .
         .
 
+        ---------------------------------------------------------------------------------------
+        Config file [solr/server/solr/solr.xml] is different in the new release. Please choose:
+        - (D)iff file versions to see what changed
+        - (E)dit the original file (with $EDITOR)
+        - (K)eep the original file
+        - (O)verwrite the file with the new version
+        - (M)atching config files for regex [solr/server/solr/[^/]+] should always be overwritten
+        - (A)lways overwrite config files and don't ask again
+        - (Q)uit the upgrade script (this will stop the upgrade at this point)
+        ---------------------------------------------------------------------------------------
+        > Enter your choice:
+
+        .
+        .
+        .
+
         ========================================================================
         Upgrade completed
         ========================================================================
@@ -114,12 +130,17 @@ Upgrading Crafter CMS bundle versions prior to 3.0.15
 Crafter CMS installs prior to 3.0.15 does not contain the upgrade scripts required to upgrade and will need to use the ``upgrade-target`` script from the new bundle to upgrade your bundle install.  Please follow the steps above to upgrade your current Crafter CMS install.
 
 |
+
+Upgrading Crafter CMS bundle version 3.1.0
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Crafter CMS version 3.1.0 has the upgrade scripts disabled because the upgrade system was being refactored, and will need to use the ``upgrade-target`` script from the new bundle to upgrade your bundle install.  Please follow the steps above to upgrade your current Crafter CMS install.
+
 |
 
 Running the upgrade script from your current install
 ----------------------------------------------------
 
-Crafter CMS version 3.0.15 and up contain the upgrade scripts required to upgrade your install.  Here's the description for the script we are going to use:
+Crafter CMS version 3.0.15 and up, excluding version 3.1.0,  contain the upgrade scripts required to upgrade your install.  Here's the description for the script we are going to use:
 
     .. code-block:: bash
 
