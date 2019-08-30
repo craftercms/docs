@@ -8,7 +8,7 @@ For Authoring environments, use the following commands to upgrade the Preview co
       :linenos:
     
       curl --request POST \
-        --url http://localhost:8080/crafter-search/api/2/admin/index/delete/SITE_NAME
+        --url http://localhost:8080/crafter-search/api/2/admin/index/delete/SITE_NAME-preview
 
 #.  Create the new core.
     
