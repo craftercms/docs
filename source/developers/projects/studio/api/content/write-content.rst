@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-content-write-content:
 
 =============
@@ -15,6 +17,8 @@ Save content using Create/Edit web form.
 ^^^^^^^^^^^^^^^^^^^^
 Resource Information
 ^^^^^^^^^^^^^^^^^^^^
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

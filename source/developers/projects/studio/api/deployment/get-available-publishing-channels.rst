@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-deployment-get-available-publishing-channels:
 
 =================================
@@ -9,6 +11,8 @@ Get available publishing channels.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

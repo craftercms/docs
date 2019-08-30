@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 
 =================================
 User Generated Content Moderation
@@ -89,4 +91,3 @@ recovered and the only option available is to delete them from the database.
 
 Actions
  - Permanently delete
-

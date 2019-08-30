@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-publish-publish-items:
 
 =============
@@ -10,6 +12,8 @@ workflows and add them to a new publish package.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

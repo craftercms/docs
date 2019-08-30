@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-s3-upload:
 
 =============
@@ -12,6 +14,8 @@ Upload a file to AWS S3.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

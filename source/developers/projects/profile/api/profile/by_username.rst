@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-profile-api-profile-by_username:
 
 =======================
@@ -9,6 +11,8 @@ Returns the user for the specified tenant and username.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/profile-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

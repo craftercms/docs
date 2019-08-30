@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Asset Processing
+
 .. _asset-processing-config:
 
 ==============================

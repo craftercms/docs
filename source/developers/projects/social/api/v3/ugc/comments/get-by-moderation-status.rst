@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-social-api-ugc-comments-get-by-moderation-status:
 
 =================================
@@ -9,6 +11,8 @@ Returns all the comments with a given moderation status.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

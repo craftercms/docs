@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-clipboard-get-items:
 
 =========
@@ -9,6 +11,8 @@ Get items from clipboard.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

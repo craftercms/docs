@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-profile-api-profile-by_ticket:
 
 =====================
@@ -9,6 +11,8 @@ Returns the profile for the specified ticket.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/profile-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

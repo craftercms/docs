@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-server-get-ui-resource-override:
 
 ========================
@@ -9,6 +11,8 @@ Get UI resource override.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +-------------------------+-----------------------------------------------------------------------+
 || HTTP Verb              || GET                                                                  |

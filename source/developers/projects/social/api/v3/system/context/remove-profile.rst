@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-social-api-context-remove-profile:
 
 ==================================
@@ -9,6 +11,8 @@ Updates the ``socialContext`` attribute in the given profile to remove the Socia
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

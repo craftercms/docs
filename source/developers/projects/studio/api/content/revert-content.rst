@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-content-revert-content:
 
 ===================
@@ -9,6 +11,8 @@ Revert content item to a specific version.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

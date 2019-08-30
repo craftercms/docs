@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-content-change-content-type:
 
 ===============
@@ -9,6 +11,8 @@ Change template for the content.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

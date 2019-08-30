@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-social-api-context-get-all:
 
 =======================
@@ -9,6 +11,8 @@ Returns a list of all Social Contexts.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

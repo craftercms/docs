@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-profile-api-authentication-ticket-get:
 
 ==========
@@ -9,6 +11,8 @@ Returns the ticket info for the given ticket ID.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/profile-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

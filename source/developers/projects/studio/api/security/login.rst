@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-security-login:
 
 =====
@@ -9,6 +11,8 @@ Authenticates the user.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

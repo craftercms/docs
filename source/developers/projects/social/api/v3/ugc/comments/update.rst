@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-social-api-ugc-comments-update:
 
 ==============
@@ -9,6 +11,8 @@ Updates the given comment.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || PUT                                                              |

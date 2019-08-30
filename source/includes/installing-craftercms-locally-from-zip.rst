@@ -10,8 +10,7 @@ Installing Crafter Locally via Zip File
 5. Change directory to the install directory
 6. Change directory to crafter/bin inside the install directory
 7. Execute the startup file
-   - startup.sh for linux and MacOSX
-   - startup.bat for Window
+   - startup.sh
 8. Verify two Java processes are running
    - Tomcat
    - Crafter Deployer
@@ -34,8 +33,7 @@ Restarting install at a later date
 2. Change directory to the install directory
 3. Change directory to crafter/bin inside the install directory
 4. Execute the startup file
-   - startup.sh for linux and MacOSX
-   - startup.bat for Window
+   - startup.sh
 5. Verify two Java processes are running
    - Tomcat
    - Crafter Deployer

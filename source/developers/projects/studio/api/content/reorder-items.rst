@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-content-reorder-items:
 
 =====================
@@ -9,6 +11,8 @@ Reorder content items.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

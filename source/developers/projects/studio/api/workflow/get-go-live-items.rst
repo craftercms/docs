@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-workflow-get-go-live-items:
 
 =================
@@ -9,6 +11,8 @@ Get items waiting for approval.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

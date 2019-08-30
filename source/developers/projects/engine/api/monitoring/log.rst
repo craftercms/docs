@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-engine-api-monitoring-log:
 
 ==============
@@ -9,6 +11,8 @@ Returns all events recorded in the Crafter Engine log for a given site in a spec
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/tomcat-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

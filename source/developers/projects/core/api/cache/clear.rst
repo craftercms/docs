@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-core-api-cache-clear:
 
 =====
@@ -9,6 +11,8 @@ Clear the cache scope for a given context.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/tomcat-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

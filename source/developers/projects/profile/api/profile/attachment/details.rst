@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-profile-api-profile-attachment-details:
 
 ==============================
@@ -9,6 +11,8 @@ Returns the details for a given attachment in a profile.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/profile-api-url-prefix.rst
 
 +------------------+-----------------------------------------------------------------------------+
 || HTTP Verb       || GET                                                                        |

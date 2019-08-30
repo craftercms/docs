@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-configure-headers-based-auth:
 
 ======================================
@@ -20,28 +22,34 @@ Configuring Studio for headers based authentication is very simple: in your Auth
     :linenos:
 
     # Studio authentication chain configuration
-    studio.authentication.chain:
+    # studio.authentication.chain:
       # Authentication provider type
-      - provider: HEADERS
+      # - provider: HEADERS
         # Authentication via headers enabled
-        enabled: true
+        # enabled: false
         # Authentication header for secure key
-        secureKeyHeader: secure_key
+        # secureKeyHeader: secure_key
         # Authentication headers secure key that is expected to match secure key value from headers
         # Typically this is placed in the header by the authentication agent, e.g. Apache mod_mellon
-        secureKeyHeaderValue: secure
+        # secureKeyHeaderValue: secure
         # Authentication header for username
-        usernameHeader: username
+        # usernameHeader: username
         # Authentication header for first name
-        firstNameHeader: firstname
+        # firstNameHeader: firstname
         # Authentication header for last name
-        lastNameHeader: lastname
+        # lastNameHeader: lastname
         # Authentication header for email
-        emailHeader: email
-        # Authentication header for groups: comma separated list of groups
+        # emailHeader: email
+        # Authentication header for groups: comma separated list of sites and groups
         #   Example:
         #   site_author,site_xyz_developer
-        groupsHeader: groups
+        # groupsHeader: groups
+        # Enable/disable logout for headers authenticated users (SSO)
+        # logoutEnabled: false
+        # If logout is enabled for headers authenticated users (SSO), set the endpoint of the SP or IdP logout, which should
+        # be called after local logout. The {baseUrl} macro is provided so that the browser is redirected back to Studio
+        # after logout (https://STUDIO_SERVER:STUDIO_PORT/studio)
+        # logoutUrl: /mellon/logout?ReturnTo={baseUrl}
 
 
 From the above configuration, here are the attributes that Studio expects from the headers to be provided:
@@ -60,16 +68,16 @@ Configuring Logout
 
 The **Sign out** button link is disabled/hidden by default when headers based authentication is enabled.
 
-To enable **Sign out** for users signed in using headers based authentication, in your Authoring installation, go to ``shared/classes/crafter/studio/extension`` and add the following lines to ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your system):
+To enable **Sign out** for users signed in using headers based authentication, change the following lines (as described from the above configurqtion) in your ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: yaml
 
     # Enable/disable logout for headers authenticated users (SSO)
-    studio.authentication.headers.logout.enabled: true
+    # logoutEnabled: false
     # If logout is enabled for headers authenticated users (SSO), set the endpoint of the SP or IdP logout, which should
     # be called after local logout. The {baseUrl} macro is provided so that the browser is redirected back to Studio
     # after logout (https://STUDIO_SERVER:STUDIO_PORT/studio)
-    studio.authentication.headers.logout.url: /mellon/logout?ReturnTo={baseUrl}
+    # logoutUrl: /mellon/logout?ReturnTo={baseUrl}
 
 |
 

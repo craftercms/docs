@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-social-api-ugc-votes-up:
 
 =======
@@ -9,6 +11,8 @@ Toggles a vote up in the given comment from the currently logged user.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

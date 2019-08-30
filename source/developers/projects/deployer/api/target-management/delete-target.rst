@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-deployer-api-target-delete:
 
 =============
@@ -9,6 +11,8 @@ Delete a Crafter Deployer target.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/deployer-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

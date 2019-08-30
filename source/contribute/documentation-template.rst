@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Documentation Standard
+
 .. _documentation-standard:
 
 ======================
@@ -100,6 +104,8 @@ Images and Figures
 ^^^^^
 Image
 ^^^^^
+
+We recommend uploaded images be no wider than 1280px.
 
 .. code-block:: rst
 

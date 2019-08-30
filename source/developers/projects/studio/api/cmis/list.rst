@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-cmis-list:
 
 ===========================
@@ -9,6 +11,8 @@ List files and folders in a CMIS repository with an optional range for paginatio
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Configure SolrCloud for Crafter; SolrCloud
 
 .. _configure-solrcloud-for-crafter:

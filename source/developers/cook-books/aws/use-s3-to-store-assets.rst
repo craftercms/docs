@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Use S3 to Store Assets
 
 .. _use-s3-to-store-assets:
@@ -100,30 +102,30 @@ data source, to the ``Page - Article`` content type. To do this:
 
 |
 
-----------------------------------------------
-Step 3: Add Freemarker code to render the URLs
-----------------------------------------------
+.. note::
 
-Now that we have the Groovy code to generate the URLs, we need the Freemarker code that will render the URLs. In
-the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following lines after the
-``<#list contentModel.sections.item as item>...</#list>`` lines:
+    If you're using Freemarker as your view layer, follow the steps below after adding the data source and controls for uploading files to your S3 bucket to the content type:
 
-.. code-block:: guess
-   :linenos:
+    We need to add the Freemarker code that will render the URLs. In
+    the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following lines after the
+    ``<#list contentModel.sections.item as item>...</#list>`` lines:
 
-   <#if contentModel.attachments??>
-     <h2>Attachments</h2>
-     <ul>
-       <#list contentModel.attachments.item as a>
-         <li><a href="${a.attachment.item.key}">${a.attachmentName}</a></li>
-       </#list>
-     </ul>
-   </#if>
+    .. code-block:: guess
+       :linenos:
+
+       <#if contentModel.attachments??>
+         <h2>Attachments</h2>
+         <ul>
+           <#list contentModel.attachments.item as a>
+             <li><a href="${a.attachment.item.key}">${a.attachmentName}</a></li>
+           </#list>
+         </ul>
+       </#if>
 
 |
 
 -------------------------------------------------
-Step 4: Add some attachments and test the changes
+Step 3: Add some attachments and test the changes
 -------------------------------------------------
 
 If all the previous steps have been done correctly, you should be able to add any number of attachments and they
@@ -145,7 +147,7 @@ The bottom of the page looks like this when you preview your page:
 |
 
 ---------------------------
-Step 5: Publish the changes
+Step 4: Publish the changes
 ---------------------------
 
 The next step is to publish the changes.  Remember to publish not just the page where we added the S3 assets,
@@ -154,45 +156,3 @@ but also the ``article.ftl`` and the ``aws.xml`` files too.
 .. image:: /_static/images/guides/s3/attachments-publish.png
    :alt: AWS S3 Assets - Publish Changes
    :align: center
-
-|
-
--------------------------------------------------------
-Step 6: Enable the remote assets controller in Delivery
--------------------------------------------------------
-
-In order for the article attachments to be publicly accessible in Delivery, the remote assets controller needs
-to be enabled.  To do this, in your delivery, open the file ``rendering-context.xml`` under
-``apache-tomcat/shared/classes/crafter/engine/extension/`` and edit the file to contain the following:
-
-.. code-block:: xml
-   :linenos:
-
-   <?xml version="1.0" encoding="UTF-8"?>
-    <beans xmlns="http://www.springframework.org/schema/beans"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xmlns:util="http://www.springframework.org/schema/util"
-           xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
-
-   <import resource="classpath*:crafter/engine/mode/multi-tenant/simple/rendering-context.xml" />
-
-    <bean id="crafter.remoteAssetsRequestHandler" class="org.craftercms.engine.controller.RemoteAssetsRequestHandler"
-          init-method="init">
-     <property name="remoteFileResolver" ref="crafter.remoteFileResolver"/>
-     <property name="disableCaching" value="${crafter.engine.remoteAssets.disableCaching}"/>
-    </bean>
-
-    <util:map id="crafter.urlMappings">
-     <entry key="/api/**" value-ref="crafter.restScriptsController"/>
-     <entry key="/api/1/services/**" value-ref="crafter.restScriptsController"/> <!-- Deprecated mapping, might be removed in a later version -->
-     <entry key="/static-assets/**" value-ref="crafter.staticAssetsRequestHandler"/>
-     <entry key="/remote-assets/**" value-ref="crafter.remoteAssetsRequestHandler"/>
-     <entry key="/*" value-ref="crafter.pageRenderController"/>
-    </util:map>
-
-   </beans>
-
-|
-
-.. note::
-    Enabling the remote assets controller opens up all access to the files of the remote profiles configured in Studio

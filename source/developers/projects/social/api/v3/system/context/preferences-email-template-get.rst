@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-social-api-context-preferences-email-template-get:
 
 ==================
@@ -9,6 +11,8 @@ Returns an email template for a given Social Context.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

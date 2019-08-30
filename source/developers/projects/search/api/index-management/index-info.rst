@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-search-api-index-info:
 
 ==============
@@ -10,6 +12,8 @@ Returns information about an index. The information returned depends on the sear
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/search-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

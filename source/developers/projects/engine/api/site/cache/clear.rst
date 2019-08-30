@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-engine-api-site-cache-clear:
 
 =============
@@ -9,6 +11,8 @@ Clear the content cache scope and the Freemarker cache for the current site cont
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/tomcat-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

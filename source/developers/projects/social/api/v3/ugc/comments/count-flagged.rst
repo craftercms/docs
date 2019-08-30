@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-social-api-ugc-comments-count-flagged:
 
 ======================
@@ -9,6 +11,8 @@ Returns the number of comments with at least one flag.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

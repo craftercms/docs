@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-workflow-submit-to-go-live:
 
 ==================
@@ -9,6 +11,8 @@ Request publishing workflow.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

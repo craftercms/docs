@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _authoring-env-performance-tuning.rst:
 
 ========================================
@@ -11,9 +13,9 @@ Server Requirements
 -------------------
 Minimum Installation (~1-10 concurrent users per site, ~10 sites)
 
-    * 8GB of RAM + 8GB Swap Space or Virtual Memory
-    * 4GB JVM Memory (-Xms 1G -Xmx 4G)
-    * 2 CPU Cores
+	* 8GB of RAM + 8GB Swap Space or Virtual Memory
+	* 4GB JVM Memory (-Xms 1G -Xmx 4G)
+	* 2 CPU Cores
 
 Medium Installations (~11-25 concurrent users per site, ~25 sites)
 
@@ -159,13 +161,6 @@ One optimization to raise effective IOPS of a system without buying very expensi
 OS Level
 --------
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Linux or Windows Operating System
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Crafter supports both Linux and Windows based operating systems. All of the concepts in this document apply to both platforms. That said, Linux and Window handle basic operations like reads, writes, permissions and file locking differently. It’s important to tune specifically for the operating system you are on.
-
-Does Crafter CMS have a Linux or Windows preference?  Crafter CMS is a server based platform. The majority of Crafter CMS users deploy on Linux. While Crafter is tested and deployed on both Linux and Windows, all things being equal, we would recommend you deploy in Linux.
-
 ^^^^^^^^^^^^
 Linux Ulimit
 ^^^^^^^^^^^^
@@ -228,7 +223,7 @@ NFS is a particularly slow and unreliable network storage protocol, especially w
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Putting all data on the same disk
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Studio stores content in Git, Metadata about workflow and content in an embedded database and indexes in ElasticSearch. All of these stores are updated on each write. Putting them on the same disk can lead to slower access times due to contention in high throughput scenarios.
+Studio stores content in Git, Metadata about workflow and content in an embedded database and indexes in Elasticsearch. All of these stores are updated on each write. Putting them on the same disk can lead to slower access times due to contention in high throughput scenarios.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Using Default Settings for Larger Installations

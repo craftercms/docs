@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-engine-api-site-content_store-children:
 
 ============
@@ -9,6 +11,8 @@ Get the list of Items directly under a folder in the content store.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/tomcat-api-url-prefix.rst
 
 +----------------------------+-----------------------------------------------------------------+
 || HTTP Verb                 || GET                                                            |

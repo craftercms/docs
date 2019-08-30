@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-server-get-loggers:
 
 ===========
@@ -9,6 +11,8 @@ Get available languages.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

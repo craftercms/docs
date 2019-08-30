@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-clipboard-copy-item:
 
 =========
@@ -9,6 +11,8 @@ Copy item to clipboard.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

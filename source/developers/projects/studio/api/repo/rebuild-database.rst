@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-repo-rebuild-database:
 
 ================
@@ -9,6 +11,8 @@ Rebuild Crafter Studio's database and object state with the underlying repositor
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

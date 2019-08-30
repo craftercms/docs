@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Rich Text Editor (RTE) Configuration;
 .. _rte-configuration:
 

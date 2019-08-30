@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Projects; Crafter Profile
 
 .. _crafter-profile:
@@ -49,4 +51,3 @@ Configuration
 -------------
 
 To configure Crafter Profile, please see :ref:`crafter-profile-admin`
-

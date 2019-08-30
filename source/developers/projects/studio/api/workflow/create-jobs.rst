@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-workflow-create-jobs:
 
 ===========
@@ -9,6 +11,8 @@ Create workflow jobs.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

@@ -1,3 +1,4 @@
+:is-up-to-date: True
 
 =============================================
 Using Custom Processors with Crafter Deployer

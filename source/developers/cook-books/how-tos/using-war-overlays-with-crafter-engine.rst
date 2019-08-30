@@ -1,3 +1,4 @@
+:is-up-to-date: True
 
 ======================================
 Using War Overlays with Crafter Engine

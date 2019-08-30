@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-engine-api-monitoring-status:
 
 ==========
@@ -9,6 +11,8 @@ Returns the Crafter Engine JVM status details.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/tomcat-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
@@ -37,9 +41,8 @@ Response
 .. code-block:: json
 
   {
-    "uptime":"4h 296m 17763s",
-    "datetime":"2017-06-07T15:35:50-0600",
-    "status":"healthy"
+    "uptime": 4801,
+    "startup": "2019-03-07T21:29:11.049Z",
   }
 
 ---------

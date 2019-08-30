@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-activity-get-user-activities:
 
 =================
@@ -9,6 +11,8 @@ Get user activity for a site (My recent activity dashboard).
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+--------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                               |

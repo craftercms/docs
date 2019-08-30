@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-site-get-per-user:
 
 ==================
@@ -9,6 +11,8 @@ Get Crafter Studio sites available to a user given a username with an optional r
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

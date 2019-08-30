@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-engine-api-site-navigation-breadcrumb:
 
 ==========
@@ -9,6 +11,8 @@ Returns the navigation items that form the breadcrumb for the specified store UR
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/tomcat-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------+
 || HTTP Verb                 || GET                                                        |

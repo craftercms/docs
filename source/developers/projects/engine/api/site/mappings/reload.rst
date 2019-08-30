@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-engine-api-site-mappings-reload:
 
 ===============
@@ -10,6 +12,8 @@ Crafter Engine is in mapped multi-tenant mode.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/tomcat-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

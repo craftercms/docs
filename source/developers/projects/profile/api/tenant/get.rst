@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-profile-api-tenant-get:
 
 ==========
@@ -9,6 +11,8 @@ Returns a tenant.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/profile-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

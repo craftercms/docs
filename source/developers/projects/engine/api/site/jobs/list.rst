@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-engine-api-site-jobs-list:
 
 =========
@@ -9,6 +11,8 @@ Get a list of all scheduled jobs for the current site.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/tomcat-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

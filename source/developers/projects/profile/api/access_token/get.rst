@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-profile-api-access_token-get:
 
 ================
@@ -9,6 +11,8 @@ Get the information for a specific access token.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/profile-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-social-api-actions-get:
 
 ===================
@@ -9,6 +11,8 @@ Gets all Security Actions for current context.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

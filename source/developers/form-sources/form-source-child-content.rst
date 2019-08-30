@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 :orphan:
 
 .. document does not appear in any toctree, this file is referenced
@@ -30,7 +32,9 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Description/Purpose   || Data source to select or create content to be used on the form.      |
 +------------------------+-----------------------------------------------------------------------+
-|| Properties            || - Repository Path: Path where to store new content created.          |
+|| Properties            || - Enable Create New: Allows user to create a new item                |
+||                       || - Enable Browse Existing: Allows user to browse existing items       |
+||                       || - Repository Path: Path where to store new content created.          |
 ||                       || - Browse Path: Path where to browse the datasource items.            |
 ||                       || - Default Type: Default type of datasource items.                    |
 +------------------------+-----------------------------------------------------------------------+

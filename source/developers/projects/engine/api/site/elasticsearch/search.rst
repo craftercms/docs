@@ -1,18 +1,22 @@
+:is-up-to-date: True
+
 .. _crafter-engine-api-site-elasticsearch-search:
 
 ======
 Search
 ======
 
-Performs a search operation in the ElasticSearch index of the current site resolved for the request.
+Performs a search operation in the Elasticsearch index of the current site resolved for the request.
 
 .. note::
-	The request body must be a valid ElasticSearch JSON query as described in the 
+	The request body must be a valid Elasticsearch JSON query as described in the 
 	`official docs <https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html>`_
 
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/tomcat-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------+
 || HTTP Verb                 || POST                                                       |

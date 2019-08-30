@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-preview-sync-site:
 
 ============
@@ -9,6 +11,8 @@ Sync preview content with repository.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

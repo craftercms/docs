@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-profile-api-tenant-count:
 
 =============
@@ -9,6 +11,8 @@ Returns the total number of tenants.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/profile-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

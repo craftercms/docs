@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-core-api-content_store-item:
 
 ========
@@ -9,6 +11,8 @@ Get an Item from the content store.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/tomcat-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------+
 || HTTP Verb                 || GET                                                        |

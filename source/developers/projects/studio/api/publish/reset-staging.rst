@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-publish-reset-staging:
 
 =========================
@@ -9,6 +11,8 @@ Reset Crafter Studio's staging environment repository with live repository.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

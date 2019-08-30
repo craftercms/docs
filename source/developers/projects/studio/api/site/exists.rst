@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-site-exists:
 
 ======
@@ -9,6 +11,8 @@ Check if Crafter Studio site exists.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

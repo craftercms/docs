@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-workflow-reject:
 
 ======
@@ -9,6 +11,8 @@ Reject workflow.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

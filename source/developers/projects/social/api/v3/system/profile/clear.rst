@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-social-api-profile-clear:
 
 ===========
@@ -9,6 +11,8 @@ Clears the Profile Aggregator Cache.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

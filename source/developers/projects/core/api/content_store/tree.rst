@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-core-api-content_store-tree:
 
 ========
@@ -9,6 +11,8 @@ Get the complete Item hierarchy under the specified folder in the content store.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/tomcat-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------+
 || HTTP Verb                 || GET                                                        |

@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Workflows
 
 ..  _content_authors_workflows:
@@ -15,14 +17,14 @@ Workflow and Scheduled Deployments
 Workflow is the act of moving content through its lifecycle.  A simple workflow option that includes submission, review/reject and approve and publish immediate / publish on a schedule options are provided by default. Workflow options are available to specific content, such as pages or static assets, etc.  The available workflow options for users depends on the Role the users are assigned with.  As the content goes through the workflow options, notification emails are sent out to corresponding users based on the workflow option.  To setup the email addresses, please see the section **Site Administrators**, :ref:`configure-notifications` and  :ref:`users-group-management`. Below is a diagram showing the default workflow steps.
 
 .. image:: /_static/images/page/page-workflow-diagram.png
-    :width: 95 %
+    :width: 75 %
     :align: center
     :alt: Workflow - Diagram
     
 We will be looking at the workflow steps in this section.  Workflow is managed through dialogs.  Below is a sample dialog:
 
 .. image:: /_static/images/page/page-workflows.png
-    :width: 75 %    
+    :width: 65 %
     :align: center
     :alt: Workflow - Sample dialog
 
@@ -37,14 +39,14 @@ After creating/editing content, a request to publish content can be done by clic
 Request Publish through the context nav at the top:
 
 .. image:: /_static/images/page/page-workflows-publish.png
-    :width: 65 %
+    :width: 85 %
     :align: center
     :alt: Workflow - Request publish through the context nav
 
 Request Publish batch checked through the dashboard:
 
 .. image:: /_static/images/page/page-workflows-publish2.png
-    :width: 65 %
+    :width: 85 %
     :align: center
     :alt: Workflow - Request batch items for publish through Dashboard
 

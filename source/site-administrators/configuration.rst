@@ -1,3 +1,8 @@
+:is-up-to-date: True
+
+.. index:: Configuration
+
+.. _configuration:
 
 =============
 Configuration

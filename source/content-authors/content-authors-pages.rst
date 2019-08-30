@@ -1,4 +1,6 @@
-.. index:: Pages
+:is-up-to-date: True
+
+.. index:: Content Authors Working with Pages, Pages
 
 ..  _content_authors_pages:
 
@@ -66,7 +68,7 @@ There are multiple ways to edit a page.
 
     #. In the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to edit the content and click on it to display the page.  Click **Edit** on the context navigation menu. A form containing the page content you want to edit will open.
 
-.. image:: /_static/images/page/page-edit.png
+.. image:: /_static/images/page/page-edit.jpg
     :width: 95 %
     :align: center
     :alt: Content Author - Edit a Page
@@ -89,7 +91,7 @@ After selecting the page you want, click on the **History** menu of the context 
 Another way to view the history of a page is by right clicking on the page you want and then selecting **History**
 
 .. image:: /_static/images/page/page-access-history-tree.png
-    :width: 40 %
+    :width: 30 %
     :align: center
     :alt: Content Author - Page Access History Tree
     
@@ -305,170 +307,15 @@ To remove a component from the drop zone, simply click on the "x"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Working in the Rich Text Editor(RTE)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The RTE (Rich Text Editor) is intended to provide an in-context editing experience from within a form (rather than a preview) that allows authors to arrange and style content without needing to know HTML.  When clicking in an RTE field, the RTE toolbar will appear at the top, and is always available regardless of how far down you scroll in the RTE field.
+The RTE (Rich Text Editor) is intended to provide an in-context editing experience from within a form (rather than a preview) that allows authors to arrange and style content without needing to know HTML.  In an RTE field, the RTE toolbar is at the top, and is always available regardless of how far down you scroll in the RTE field.
 
-.. image:: /_static/images/rte-tool/rte-screen.png
+.. image:: /_static/images/page/rte-screen.png
     :width: 75 %    
     :align: center
     :alt: Content Author - RTE Screen
 
-.. |rteFormatSelectList| image:: /_static/images/rte-tool/rte-tool-format-select-list.png
-                     :width: 25%
-                     :alt: Content Author - RTE Tool Format Select List
 
-.. |rteFormatSelect| image:: /_static/images/rte-tool/rte-tool-format-select.png
-             :width: 45%
-             :alt: Content Author - RTE Tool Format Format Select
-
-.. |rteBold| image:: /_static/images/rte-tool/rte-tool-bold.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Bold
-
-.. |rteItalic| image:: /_static/images/rte-tool/rte-tool-italic.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Italic
-
-.. |rteUnderline| image:: /_static/images/rte-tool/rte-tool-underline.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Underline
-
-.. |rteStrikethrough| image:: /_static/images/rte-tool/rte-tool-strikethrough.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Strike Through
-
-.. |rteSubscript| image:: /_static/images/rte-tool/rte-tool-subscript.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Subscript
-
-.. |rteSuperscript| image:: /_static/images/rte-tool/rte-tool-superscript.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Superscript
-
-.. |rteCharmap| image:: /_static/images/rte-tool/rte-tool-insert-special-char.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Insert Special Character
-
-.. |rteOutdent| image:: /_static/images/rte-tool/rte-tool-outdent.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Outdent
-
-.. |rteIndent| image:: /_static/images/rte-tool/rte-tool-indent.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Indent
-
-.. |rteBlockQuote| image:: /_static/images/rte-tool/rte-tool-block-quote.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Block Quote
-
-.. |rteAlignLeft| image:: /_static/images/rte-tool/rte-tool-align-left.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Align Left
-
-.. |rteAlignRight| image:: /_static/images/rte-tool/rte-tool-align-right.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Align Right
-
-.. |rteAlignCenter| image:: /_static/images/rte-tool/rte-tool-align-center.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Align Center
-
-.. |rteAlignFull| image:: /_static/images/rte-tool/rte-tool-align-full.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Align Full
-
-.. |rteBulletList| image:: /_static/images/rte-tool/rte-tool-bullet-list.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Bullet List
-
-.. |rteNumberedList| image:: /_static/images/rte-tool/rte-tool-numbered-list.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Numbered List
-
-.. |rteInsertImage| image:: /_static/images/rte-tool/rte-tool-insert-image.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Insert Image
-
-.. |rteInsertLink| image:: /_static/images/rte-tool/rte-tool-insert-link.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Insert Link
-
-.. |rteUnlink| image:: /_static/images/rte-tool/rte-tool-unlink.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Unlink
-
-.. |rteInsertAnchor| image:: /_static/images/rte-tool/rte-tool-insert-anchor.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Insert Anchor
-
-.. |rteEditHtml| image:: /_static/images/rte-tool/rte-tool-edit-html.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Edit HTML
-
-.. |rteUndo| image:: /_static/images/rte-tool/rte-tool-undo.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Undo
-
-.. |rteRedo| image:: /_static/images/rte-tool/rte-tool-redo.png
-             :width: 15%
-             :alt: Content Author - RTE Tool Redo
-
-There are a number of tools available from the RTE out of the box for editing your content.  Custom tools may also be added to the RTE, depending on your needs.  Please see the developer section :ref:`rte-setup` of the docs for more details.
-
-Here are the available standard formatting tools from the RTE out of the box:
-
-+----------------------------+----------------------------------------------------------------+
-| RTE Toolbar Icon           |                                                                |
-+============================+================================================================+
-|| |rteFormatSelect|         || Format select - dropdown list that lets you change text format|
-||                           || |rteFormatSelectList|                                         |
-+----------------------------+----------------------------------------------------------------+
-|| |rteBold|                 | Bold - make text **bold**                                      |
-+----------------------------+----------------------------------------------------------------+
-|| |rteItalic|               | Italic - make text *italic*                                    |
-+----------------------------+----------------------------------------------------------------+
-|| |rteUnderline|            | Underline                                                      |
-+----------------------------+----------------------------------------------------------------+
-|| |rteStrikethrough|        | Strikethrough                                                  |
-+----------------------------+----------------------------------------------------------------+
-|| |rteSubscript|            | Subscript                                                      |
-+----------------------------+----------------------------------------------------------------+
-|| |rteSuperscript|          | Superscript                                                    |
-+----------------------------+----------------------------------------------------------------+
-|| |rteCharmap|              | Insert special character                                       |
-+----------------------------+----------------------------------------------------------------+
-|| |rteOutdent|              | Decrease indent - decrease indent of paragraph                 |
-+----------------------------+----------------------------------------------------------------+
-|| |rteIndent|               | Increase indent - increase indent of paragraph                 |
-+----------------------------+----------------------------------------------------------------+
-|| |rteBlockQuote|           | Block quote                                                    |
-+----------------------------+----------------------------------------------------------------+
-|| |rteAlignLeft|            | Align left - aligns text to the left                           |
-+----------------------------+----------------------------------------------------------------+
-|| |rteAlignRight|           | Align right - aligns text to the right                         |
-+----------------------------+----------------------------------------------------------------+
-|| |rteAlignCenter|          | Align center - aligns text to the center                       |
-+----------------------------+----------------------------------------------------------------+
-|| |rteAlignFull|            | Align full - aligns text to both left and right                |
-+----------------------------+----------------------------------------------------------------+
-|| |rteBulletList|           | Insert/remove bulleted list                                    |
-+----------------------------+----------------------------------------------------------------+
-|| |rteNumberedList|         | Insert/remove numbered List                                    |
-+----------------------------+----------------------------------------------------------------+
-|| |rteInsertImage|          | Insert image                                                   |
-+----------------------------+----------------------------------------------------------------+
-|| |rteInsertLink|           | Insert/edit link                                               |
-+----------------------------+----------------------------------------------------------------+
-|| |rteUnlink|               | Unlink                                                         |
-+----------------------------+----------------------------------------------------------------+
-|| |rteInsertAnchor|         | Insert/edit anchor                                             |
-+----------------------------+----------------------------------------------------------------+
-|| |rteEditHtml|             | Edit HTML source                                               |
-+----------------------------+----------------------------------------------------------------+
-|| |rteUndo|                 | Undo the last action/change                                    |
-+----------------------------+----------------------------------------------------------------+
-|| |rteRedo|                 | Redo the last action/action                                    |
-+----------------------------+----------------------------------------------------------------+
-
+There are a number of tools available from the RTE out of the box for editing your content.  Custom tools may also be added to the RTE, depending on your needs.  Please see the developer section :ref:`rte2-setup` of the docs for more details.
 
 --------------
 Copying a Page

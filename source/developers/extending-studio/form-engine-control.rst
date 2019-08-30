@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Build a Form Engine Control
+
 .. _form-engine-control:
 
 ===========================
@@ -34,6 +38,9 @@ Form Engine Control consist of (at a minimum)
 	* The module name must also be the same as the control name with "cstudio-forms-controls-" prepended to the front of it Ex: "cstudio-forms-controls-checkbox-group."
 
 * Configuration in a Crafter Studio project to make that control available for use
+
+
+.. _control-interface:
 
 -----------------
 Control Interface
@@ -101,9 +108,9 @@ Control Interface
 	    getSupportedConstraints: function() { }
 	});
 
-------------------
+-----------------
 Coding an example
-------------------
+-----------------
 
 Our example is a grouped checkbox that allows the author to select one or more items from a set of checkboxes. The control relies on a data source for the set of possible values which allows it to be used for a wide range of data capture.
 
@@ -596,7 +603,7 @@ Configuring the Control to show up in Crafter Studio
 
 Add the control's name to the list of controls in the content type editor configuration
 
-**Location (In Repository) SITENAME/config/studio/administration/tools.xml**
+**Location (In Repository) SITENAME/config/studio/administration/site-config-tools.xml**
 
 .. code-block:: xml
     :linenos:

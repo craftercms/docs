@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-social-api-ugc-comments-get-flags:
 
 =================
@@ -9,6 +11,8 @@ Returns all the flags for the given comment.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

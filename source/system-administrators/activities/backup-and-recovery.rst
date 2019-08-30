@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _backup-and-recovery:
 
 ===================
@@ -11,17 +13,9 @@ Backup
 ------
 To backup your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}/bin``, where ``{env}`` is the environment (either authoring or delivery) then run the following:
 
-    * Unix/Linux systems:
+    .. code-block:: bash
 
-      .. code-block:: bash
-
-          ./crafter.sh backup {filename}
-
-    * Windows:
-
-      .. code-block:: bat
-
-          crafter.bat backup {filename}
+       ./crafter.sh backup {filename}
 
 
 where ``{filename}`` is optional.
@@ -41,17 +35,10 @@ Recovery
 --------
 To restore your backup, make sure that Crafter CMS is not running.  To restore your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}/bin``, where ``{env}`` is the environment (either authoring or delivery) then run the following:
 
-    * Unix/Linux systems:
+    .. code-block:: bash
 
-      .. code-block:: bash
+       ./crafter.sh restore {backup-file}
 
-          ./crafter.sh restore {backup-file}
-
-    * Windows:
-
-      .. code-block:: bat
-
-          crafter.bat restore {backup-file}
 
 It will then prompt you with the following message:
 
@@ -70,5 +57,5 @@ If you're restoring the authoring environment, Studio will be started by the res
 
         **OR**
 
-        * Re-initialize the delivery environment by deleting the ``data`` folder under ``{Crafter-CMS-install-directory}/crafter-delivery/`` and running the init-site.sh/.bat script for all sites
+        * Re-initialize the delivery environment by deleting the ``data`` folder under ``{Crafter-CMS-install-directory}/crafter-delivery/`` and running the init-site.sh script for all sites
 

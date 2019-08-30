@@ -1,3 +1,4 @@
+:is-up-to-date: True
 
 ===================
 Turn Off Show Error
@@ -28,4 +29,3 @@ Step 3
 
 Test by deploying an FTL file with an error in it.
 Note that the error will not show up but is printed out in the server's log file.
-

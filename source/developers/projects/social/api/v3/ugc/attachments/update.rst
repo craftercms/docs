@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-social-api-ugc-attachments-update:
 
 =========================
@@ -9,6 +11,8 @@ Updates the content of a given attachment.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/social-api-url-prefix.rst
 
 +-------------------+--------------------------------------------------------------------------+
 || HTTP Verb        || POST                                                                    |

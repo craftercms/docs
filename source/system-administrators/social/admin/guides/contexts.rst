@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 
 ==========================
 Social Contexts Management
@@ -29,4 +31,3 @@ button.
 
 An ID will be generated automatically and this is the value that need to be included in the requests
 by the Crafter Social clients.
-

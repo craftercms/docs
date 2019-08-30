@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-publish-stop:
 
 ==============
@@ -9,6 +11,8 @@ Stop Crafter Studio's publishing for a site.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

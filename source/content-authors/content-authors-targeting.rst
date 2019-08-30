@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Targeting
 
 ..  _content_authors_targeting:
@@ -38,7 +40,7 @@ The authoring environment can be configured with any number of predefined attrib
 
 To find out the current active targeting attributes, hover on the targeting image (bulls eye) |targetingIcon| displayed to the right of the context nav (on the upper right hand side of Studio) then click, and a dialog containing the current attribute values will appear.  You can have as many attributes as you need for your site.  To add other attributes, please see the section :ref:`targeting` in the developer's section of the documentation.    In the Website_editorial blueprint that we are using, the targeting attribute used is segments.
 
-.. image:: /_static/images/page/page-targeting-curr-attributes.png
+.. image:: /_static/images/page/page-targeting-curr-attributes.jpg
     :width: 80 %
     :align: center
 

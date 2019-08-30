@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-deployment-get-deployment-history:
 
 ======================
@@ -9,6 +11,8 @@ Get deployment history.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------+-------------------------------------------------------------------------+
 || HTTP Verb           || GET                                                                    |

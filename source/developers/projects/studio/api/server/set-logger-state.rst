@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-server-set-logger-state:
 
 ================
@@ -9,6 +11,8 @@ Set logger state.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

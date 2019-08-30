@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-profile-api-tenant-roles-remove:
 
 ============
@@ -9,6 +11,8 @@ Removes the given roles to the specified tenant.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/profile-api-url-prefix.rst
 
 +-------------------+----------------------------------------------------------------------------+
 || HTTP Verb        || POST                                                                      |

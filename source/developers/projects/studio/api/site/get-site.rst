@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-site-get:
 
 ========
@@ -9,6 +11,8 @@ Get a Crafter Studio site.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

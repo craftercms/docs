@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-social-api-actions-post:
 
 ==============
@@ -13,6 +15,8 @@ Updates the given action name with the Roles.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/social-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

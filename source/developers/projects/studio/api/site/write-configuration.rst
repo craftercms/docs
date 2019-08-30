@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-site-write-configuration:
 
 ===================
@@ -9,6 +11,8 @@ Write site configuration.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

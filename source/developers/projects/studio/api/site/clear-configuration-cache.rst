@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-site-clear-configuration-cache:
 
 =========================
@@ -9,6 +11,8 @@ Clear configuration cache for site.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +--------------------------+----------------------------------------------------------------------+
 || HTTP Verb               || GET                                                                 |

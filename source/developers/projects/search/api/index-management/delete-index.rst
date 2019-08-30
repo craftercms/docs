@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-deployer-api-index-delete:
 
 ============
@@ -9,6 +11,8 @@ Delete an index, it's data and it's configuration
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/search-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

@@ -1,0 +1,404 @@
+<div itemprop="articleBody">
+
+    <div class="section" id="working-with-pages">
+        <span id="content-authors-pages"></span><span id="index-0"></span><h1>Working with Pages<a class="headerlink" href="#working-with-pages" title="Permalink to this headline">¶</a></h1>
+        <p>This section describes how content authors can create and use pages to manage content.
+            Templates are used for page layouts in Crafter CMS.  A developer usually creates the templates that authors can then use to manage content.</p>
+        <div class="section" id="adding-a-page">
+            <h2>Adding a Page<a class="headerlink" href="#adding-a-page" title="Permalink to this headline">¶</a></h2>
+            <p>To add a page, in the Site Content panel, click on the <strong>Pages</strong> folder.  Navigate to the level and location within the site navigation tree where you want to create the content, then right click on the parent page and select <em>New Content</em></p>
+            <a class="reference internal image-reference" href="../_images/page-add-new-content.png"><img alt="Content Author - Add New Page Content" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/page-add-new-content.png" style="width: 40%;"></a>
+            <p>You will then be prompted to choose a content type.  Select a starter page template from the list shown, then click <em>Ok</em> to open the form. If you need a template that’s not available or want to modify the template, ask a developer to add/modify the template that you want.</p>
+            <a class="reference internal image-reference" href="../_images/page-add-choose-content.png"><img alt="Content Author - Add New Page Choose Content" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/page-add-choose-content.png" style="width: 75%;"></a>
+            <p>A form will open containing the template selected. You can now start adding content.  Required fields have a red ‘x’ after the field label.  The number of required fields within each section is displayed in the Section bar for that section.</p>
+            <p>When data is entered into a field, the red ‘x’ will change to a green checkmark and the section bar will update with the new status.</p>
+            <a class="reference internal image-reference" href="../_images/page-add-template-open.png"><img alt="Content Author - Add New Page Open Template" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/page-add-template-open.png" style="width: 75%;"></a>
+            <p>An action bar is available at the bottom of the screen that cannot be scrolled away. This bar allows users to Save &amp; Close, Save Draft or Cancel.</p>
+            <blockquote>
+                <div><ul class="simple">
+                    <li><strong>Save Draft</strong> will save the content entered on the form</li>
+                    <li><strong>Save &amp; Close</strong> will close the form and load the preview screen with the newly saved data.</li>
+                    <li><strong>Cancel</strong> will close the form without making any changes and will warn users if there are unsaved changes.</li>
+                    <li><a class="reference internal" href="../_images/page-action-bar-min-max.png"><img alt="Page - Action Bar Minimize/Maximize Icon" src="http://docs.craftercms.org/en/3.0/_images/page-action-bar-min-max.png" style="width: 5%;"></a> (arrow pointing up) will minimize/maximize the form.</li>
+                </ul>
+                </div></blockquote>
+            <p>An error form will appear when you try to <em>Save and Close</em> without filling out all the required fields.</p>
+            <a class="reference internal image-reference" href="../_images/page-save-error.png"><img alt="Content Author - Page Save Error" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/page-save-error.png" style="width: 50%;"></a>
+        </div>
+        <div class="section" id="editing-a-page">
+            <span id="id1"></span><h2>Editing a Page<a class="headerlink" href="#editing-a-page" title="Permalink to this headline">¶</a></h2>
+            <p>There are multiple ways to edit a page.</p>
+            <blockquote>
+                <div><ol class="arabic simple">
+                    <li>In the Site Content panel, click on the <strong>Pages</strong> folder.  Navigate to the level and location within the site navigation tree where you want to edit the content, then right click and select <strong>Edit</strong>.  A form containing the page content you want to edit will open.</li>
+                    <li>Click on the pencil on the top right corner to turn on in-context editing if it’s not turned on yet.  Click on the pencil on top of the content you want to edit.  A form containing the page content you want to edit will open.</li>
+                    <li>In the Site Content panel, click on the <strong>Pages</strong> folder.  Navigate to the level and location within the site navigation tree where you want to edit the content and click on it to display the page.  Click <strong>Edit</strong> on the context navigation menu. A form containing the page content you want to edit will open.</li>
+                </ol>
+                </div></blockquote>
+            <a class="reference internal image-reference" href="../_images/page-edit.png"><img alt="Content Author - Edit a Page" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/page-edit.png" style="width: 95%;"></a>
+        </div>
+        <div class="section" id="versioning">
+            <h2>Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h2>
+            <p>Crafter CMS tracks all changes to pages/contents/static assets in your site.</p>
+            <p>All page changes/versions can be viewed, compared with other versions and reverted to an older version.  There are a couple of ways to view the History of your desired page.  Navigate to the page you want to view the history of from the site navigation tree.</p>
+            <p>After selecting the page you want, click on the <strong>History</strong> menu of the context navigation menu at the top of your browser.</p>
+            <a class="reference internal image-reference" href="../_images/page-access-history.png"><img alt="Content Author - Access Page History" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/page-access-history.png" style="width: 95%;"></a>
+            <p>Another way to view the history of a page is by right clicking on the page you want and then selecting <strong>History</strong></p>
+            <a class="reference internal image-reference" href="../_images/page-access-history-tree.png"><img alt="Content Author - Page Access History Tree" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/page-access-history-tree.png" style="width: 40%;"></a>
+            <div class="section" id="version-history">
+                <h3>Version History<a class="headerlink" href="#version-history" title="Permalink to this headline">¶</a></h3>
+                <p>There are a number of things that you can do in the Version History dialog.  On the right hand side of the dialog, for each entry/version on the list, there are a number of actions that you can perform on the version you selected, represented by icons.</p>
+                <div class="wy-table-responsive"><table border="1" class="docutils">
+                    <colgroup>
+                        <col width="30%">
+                        <col width="70%">
+                    </colgroup>
+                    <thead valign="bottom">
+                    <tr class="row-odd"><th class="head"><div class="first last line-block">
+                        <div class="line">Actions</div>
+                    </div>
+                    </th>
+                        <th class="head"><div class="first last line-block">
+                            <div class="line">Description</div>
+                        </div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody valign="top">
+                    <tr class="row-even"><td><div class="first last line-block">
+                        <div class="line">View this version</div>
+                        <div class="line"><br></div>
+                    </div>
+                    </td>
+                        <td><div class="first last line-block">
+                            <div class="line">View details of the selected version of the page such</div>
+                            <div class="line">as the creation date, last modified date, page content</div>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="row-odd"><td><div class="first last line-block">
+                        <div class="line">Compare to current</div>
+                        <div class="line"><br></div>
+                    </div>
+                    </td>
+                        <td><div class="first last line-block">
+                            <div class="line">Compares the selected version to the current version</div>
+                            <div class="line">of the page</div>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="row-even"><td><div class="first last line-block">
+                        <div class="line">Revert to this version</div>
+                    </div>
+                    </td>
+                        <td><div class="first last line-block">
+                            <div class="line">Reverts the page content to selected version</div>
+                        </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table></div>
+                <p>For each version listed, there’s a checkbox on the left, allowing you to select two versions and then compare them by selecting the <strong>Compare</strong> button.  Please see figure below.</p>
+                <a class="reference internal image-reference" href="../_images/page-history.png"><img alt="Content Author - Page History" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/page-history.png" style="width: 95%;"></a>
+            </div>
+        </div>
+        <div class="section" id="form-based-editing">
+            <h2>Form based editing<a class="headerlink" href="#form-based-editing" title="Permalink to this headline">¶</a></h2>
+            <p>Form controls are the building blocks of forms.  It lets you get content into the system.</p>
+            <p>Forms are the means by which content is captured in Crafter Studio. A form generally maps to or represents a type of object in the system for example a certain kind of page - like a section page or a banner or video. Let’s look at some common elements of a form and examine some of the controls that we use to get content in to the system.</p>
+            <a class="reference internal image-reference" href="../_images/page-form.png"><img alt="Content Author - Page Form" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/page-form.png" style="width: 95%;"></a>
+            <p>When a new page is created or a page is edited, the form interface for these functions will open in a new dialog. A user can Expand or Collapse all of the sections on the page using the “Expand All” or “Collapse All” links at the top of the page.
+                Clicking the +/- control on the Section Label will toggle the expanded or collapsed state for each section.</p>
+            <p>The number of required fields within each section is displayed in the Section bar for that section.</p>
+            <p>An icon in front of the Section Label will display a red ‘x’ (when required fields are not complete), or a green check mark (when all required fields are complete) to denote status.</p>
+            <p>Every required field will have a red ‘x’ icon after it’s Field Label.</p>
+            <p>When data is entered into a field the red ‘x’ will change to a green check mark and the section bar will update with the new status. An action bar is available at the bottom of the screen that cannot be scrolled away. This bar allows users to Save &amp; Close, Save Draft or Cancel, and minimize/maximize the form.</p>
+            <p><strong>Save &amp; Close</strong> will close the New Page/Editing dialog and load the preview screen with the newly saved data.</p>
+            <p><strong>Save Draft</strong> will save your changes and leave the New Page/Editing dialog open</p>
+            <p><strong>Cancel</strong> will close the New Page/Editing screen without making any changes.</p>
+            <p>The fields within each section are completely modular and can be applied to any given page as needed. This modularity allows us to craft edit pages for any new screens as they arise without the need for specific UI work on the edit screen.</p>
+            <div class="section" id="editing-controls">
+                <h3>Editing Controls<a class="headerlink" href="#editing-controls" title="Permalink to this headline">¶</a></h3>
+                <p>Here are some controls that authors may encounter while editing content:</p>
+                <ul class="simple">
+                    <li>Dropdowns - Allows the user to select an item from the list.  When not selecting an item from the dropdown, the selected item is shown on the box.</li>
+                </ul>
+                <a class="reference internal image-reference" href="../_images/form-control-dropdown-expand.png"><img alt="Content Author - Form Control Dropdown Expanded" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/form-control-dropdown-expand.png" style="width: 40%;"></a>
+                <a class="reference internal image-reference" href="../_images/form-controls-dropdown.png"><img alt="Content Author - Form Controls Dropdown" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/form-controls-dropdown.png" style="width: 40%;"></a>
+                <ul class="simple">
+                    <li>Text areas - Allows the user to enter text up to the character limit indicated at the top of the text area input box.</li>
+                </ul>
+                <a class="reference internal image-reference" href="../_images/form-control-text-area.png"><img alt="Content Author - Form Control Text Area" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/form-control-text-area.png" style="width: 50%;"></a>
+                <ul class="simple">
+                    <li>Checkbox - Allows the user to make two choices, depending on what was setup.</li>
+                </ul>
+                <a class="reference internal image-reference" href="../_images/form-control-checkbox.png"><img alt="Content Author - Form Control Checkbox" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/form-control-checkbox.png" style="width: 20%;"></a>
+                <ul class="simple">
+                    <li>Group checkboxes - Allows users to select one or more items in a group</li>
+                    <li>Input boxes - Simple text input control allows users to input text up to the character limit indicated next to the input box.  The character limit specifies both the MAXLENGTH and SIZE attributes for the field.  The character counter will count up as the user types into the field.</li>
+                    <li>Date/Time pickers - The Date and Time input can allow entry of both Date and Time, only Date or only Time, depending on what was setup.</li>
+                    <li>Rich text editors - What You See Is What You Get (WYSIWYG) editor that allows authors to arrange and style content without needing to know HTML.  Below is a more detailed description on working in the RTE.</li>
+                    <li>Repeating Group - Group of controls (1 or more controls) that can be duplicated multiple times by clicking on <strong>Add Another</strong>.  If there are two or more instances, “Move Up” and “Move Down” links will be available which will move the group up or down in relation to the other group instances.</li>
+                </ul>
+                <a class="reference internal image-reference" href="../_images/form-controls.png"><img alt="Content Author - Form Controls" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/form-controls.png" style="width: 75%;"></a>
+                <ul class="simple">
+                    <li>Image pickers - Allows the user to select an image from whatever source is allowed, such as Upload Image or Existing Image (asset uploaded to the system).  To select an image, click on <strong>Add</strong> (when there’s no image selected yet) or <strong>Replace</strong> to change the selected image</li>
+                </ul>
+                <a class="reference internal image-reference" href="../_images/form-control-image-picker.png"><img alt="Content Author - Form Control Image Picker" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/form-control-image-picker.png" style="width: 60%;"></a>
+                <ul class="simple">
+                    <li>Video pickers - Allows the user to select a video from whatever source is allowed, such as Upload Video (video to be uploaded) or Existing Video (asset uploaded to the system)</li>
+                </ul>
+                <a class="reference internal image-reference" href="../_images/form-control-video-picker.png"><img alt="Content Author - Form Control Video Picker" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/form-control-video-picker.png" style="width: 75%;"></a>
+                <ul class="simple">
+                    <li>Page Order - Allows the user to change the position of the page in the navigation structure.  To change the position of the page, select <strong>Yes</strong>, an <strong>Edit Position</strong> button will appear.  Click on the <strong>Edit Position</strong> button, a form will appear that lets the user drag and drop the position of the page the user is editing, called <strong>Current Page</strong>.  The first time navigation is turned on for the page, the <strong>Current Page</strong> will always default to the top position.</li>
+                </ul>
+                <a class="reference internal image-reference" href="../_images/form-control-page-order-no.png"><img alt="Content Author - Form Control No Page Order" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/form-control-page-order-no.png" style="width: 30%;"></a>
+                <a class="reference internal image-reference" href="../_images/form-control-page-order-yes.png"><img alt="Content Author - Form Control Yes Page Order" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/form-control-page-order-yes.png" style="width: 45%;"></a>
+                <a class="reference internal image-reference" href="../_images/form-control-page-order.png"><img alt="Content Author - Form Control Page Order" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/form-control-page-order.png" style="width: 50%;"></a>
+                <ul class="simple">
+                    <li>Item Selector - Allows the user to select an item from configured sources.  Clicking the <strong>Add</strong> button opens a menu that lets the user pick from the list.  Clicking on <strong>Add &amp; Close</strong> or <strong>Add Selection</strong> adds the selected item to the selector list</li>
+                </ul>
+                <a class="reference internal image-reference" href="../_images/form-control-item-selector.png"><img alt="Content Author - Form Control Item Selector" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/form-control-item-selector.png" style="width: 50%;"></a>
+                <a class="reference internal image-reference" href="../_images/form-control-item-select.png"><img alt="Content Author - Form Control Item Select" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/form-control-item-select.png" style="width: 70%;"></a>
+                <ul class="simple">
+                    <li>File name - Allows the user to enter a name for the file.  Whitespaces are replaced by a dash automatically and a maximum length for the name is specified next to the filename input box.</li>
+                </ul>
+                <a class="reference internal image-reference" href="../_images/form-control-filename.png"><img alt="Content Author - Form Control Filename" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/form-control-filename.png" style="width: 75%;"></a>
+            </div>
+            <div class="section" id="placing-content-components">
+                <h3>Placing Content Components<a class="headerlink" href="#placing-content-components" title="Permalink to this headline">¶</a></h3>
+                <p>Drag and drop makes it easy for authors to visually assemble pages. Authors simply choose a component from a pre-defined list of components/widgets, drag them on to the screen, place them where they want (in defined drop zones), and then configure them. Authors may also move components from one zone to another or remove components.</p>
+                <p>The drag and drop panel puts the page in component construction mode.  Regions on the page that are wired to accept components (“drop zones”) are highlighted.  In the component construction mode, the user may drag an existing component or place a new component to be configured in the drop zone.  The user may also drag a component from one region to another.  Crafter Studio administrators can configure what components are available in this panel.</p>
+                <a class="reference internal image-reference" href="../_images/page-components.png"><img alt="Content Author - Page Components" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/page-components.png" style="width: 95%;"></a>
+                <div class="section" id="drag-and-drop-components">
+                    <h4>Drag and Drop Components<a class="headerlink" href="#drag-and-drop-components" title="Permalink to this headline">¶</a></h4>
+                    <ul class="simple">
+                        <li>Placing new components</li>
+                    </ul>
+                    <p>The user may create new components by dragging components from the panel (<strong>General</strong> section) out and on to the screen.  A dialog is presented to the user when a new component is dropped on the screen so that the author can configure the component.</p>
+                    <a class="reference internal image-reference" href="../_images/page-components-general.png"><img alt="Content Author - Page Components General" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/page-components-general.png" style="width: 75%;"></a>
+                    <ul class="simple">
+                        <li>Placing existing components</li>
+                    </ul>
+                    <p>The user may add existing components into the panel by clicking on <strong>Browse Features</strong>.  A list of existing components will be presented.</p>
+                    <a class="reference internal image-reference" href="../_images/page-components-browse-features.png"><img alt="Content Author - Page Components Browse Features" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/page-components-browse-features.png" style="width: 75%;"></a>
+                    <p>Select a component and the list will close then prompt you to place the component somewhere in the drop zone.</p>
+                    <a class="reference internal image-reference" href="../_images/page-components-browse-selected.png"><img alt="Content Author - Page Components Browse Selected" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/page-components-browse-selected.png" style="width: 95%;"></a>
+                    <ul class="simple">
+                        <li>Moving components around</li>
+                    </ul>
+                    <p>Components inside the drop zones may be moved around to the desired position.  Simply click, then drag and drop to the desired position in the drop zone.  Notice the positions of the features in the image below compared to the image above.</p>
+                    <a class="reference internal image-reference" href="../_images/page-components-move.png"><img alt="Content Author - Page Components Move" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/page-components-move.png" style="width: 75%;"></a>
+                    <ul class="simple">
+                        <li>Deleting components</li>
+                    </ul>
+                    <p>To remove a component from the drop zone, simply click on the “x”</p>
+                    <a class="reference internal image-reference" href="../_images/page-components-remove.png"><img alt="Content Author - Page Components Remove" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/page-components-remove.png" style="width: 75%;"></a>
+                </div>
+            </div>
+            <div class="section" id="working-in-the-rich-text-editor-rte">
+                <h3>Working in the Rich Text Editor(RTE)<a class="headerlink" href="#working-in-the-rich-text-editor-rte" title="Permalink to this headline">¶</a></h3>
+                <p>The RTE (Rich Text Editor) is intended to provide an in-context editing experience from within a form (rather than a preview) that allows authors to arrange and style content without needing to know HTML.  When clicking in an RTE field, the RTE toolbar will appear at the top, and is always available regardless of how far down you scroll in the RTE field.</p>
+                <a class="reference internal image-reference" href="../_images/rte-screen.png"><img alt="Content Author - RTE Screen" class="align-center" src="http://docs.craftercms.org/en/3.0/_images/rte-screen.png" style="width: 75%;"></a>
+                <p>There are a number of tools available from the RTE out of the box for editing your content.  Custom tools may also be added to the RTE, depending on your needs.  Please see the developer section <a class="reference internal" href="../site-administrators/studio/rte-setup.html#rte-setup"><span class="std std-ref">Rich Text Editor (RTE) Setup</span></a> of the docs for more details.</p>
+                <p>Here are the available standard formatting tools from the RTE out of the box:</p>
+                <div class="wy-table-responsive"><table border="1" class="docutils">
+                    <colgroup>
+                        <col width="30%">
+                        <col width="70%">
+                    </colgroup>
+                    <thead valign="bottom">
+                    <tr class="row-odd"><th class="head">RTE Toolbar Icon</th>
+                        <th class="head">&nbsp;</th>
+                    </tr>
+                    </thead>
+                    <tbody valign="top">
+                    <tr class="row-even"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-format-select.png"><img alt="Content Author - RTE Tool Format Format Select" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-format-select.png" style="width: 45%;"></a></div>
+                        <div class="line"><br></div>
+                    </div>
+                    </td>
+                        <td><div class="first last line-block">
+                            <div class="line">Format select - dropdown list that lets you change text format</div>
+                            <div class="line"><a class="reference internal" href="../_images/rte-tool-format-select-list.png"><img alt="Content Author - RTE Tool Format Select List" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-format-select-list.png" style="width: 25%;"></a></div>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="row-odd"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-bold.png"><img alt="Content Author - RTE Tool Bold" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-bold.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Bold - make text <strong>bold</strong></td>
+                    </tr>
+                    <tr class="row-even"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-italic.png"><img alt="Content Author - RTE Tool Italic" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-italic.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Italic - make text <em>italic</em></td>
+                    </tr>
+                    <tr class="row-odd"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-underline.png"><img alt="Content Author - RTE Tool Underline" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-underline.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Underline</td>
+                    </tr>
+                    <tr class="row-even"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-strikethrough.png"><img alt="Content Author - RTE Tool Strike Through" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-strikethrough.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Strikethrough</td>
+                    </tr>
+                    <tr class="row-odd"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-subscript.png"><img alt="Content Author - RTE Tool Subscript" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-subscript.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Subscript</td>
+                    </tr>
+                    <tr class="row-even"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-superscript.png"><img alt="Content Author - RTE Tool Superscript" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-superscript.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Superscript</td>
+                    </tr>
+                    <tr class="row-odd"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-insert-special-char.png"><img alt="Content Author - RTE Tool Insert Special Character" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-insert-special-char.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Insert special character</td>
+                    </tr>
+                    <tr class="row-even"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-outdent.png"><img alt="Content Author - RTE Tool Outdent" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-outdent.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Decrease indent - decrease indent of paragraph</td>
+                    </tr>
+                    <tr class="row-odd"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-indent.png"><img alt="Content Author - RTE Tool Indent" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-indent.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Increase indent - increase indent of paragraph</td>
+                    </tr>
+                    <tr class="row-even"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-block-quote.png"><img alt="Content Author - RTE Tool Block Quote" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-block-quote.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Block quote</td>
+                    </tr>
+                    <tr class="row-odd"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-align-left.png"><img alt="Content Author - RTE Tool Align Left" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-align-left.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Align left - aligns text to the left</td>
+                    </tr>
+                    <tr class="row-even"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-align-right.png"><img alt="Content Author - RTE Tool Align Right" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-align-right.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Align right - aligns text to the right</td>
+                    </tr>
+                    <tr class="row-odd"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-align-center.png"><img alt="Content Author - RTE Tool Align Center" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-align-center.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Align center - aligns text to the center</td>
+                    </tr>
+                    <tr class="row-even"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-align-full.png"><img alt="Content Author - RTE Tool Align Full" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-align-full.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Align full - aligns text to both left and right</td>
+                    </tr>
+                    <tr class="row-odd"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-bullet-list.png"><img alt="Content Author - RTE Tool Bullet List" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-bullet-list.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Insert/remove bulleted list</td>
+                    </tr>
+                    <tr class="row-even"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-numbered-list.png"><img alt="Content Author - RTE Tool Numbered List" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-numbered-list.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Insert/remove numbered List</td>
+                    </tr>
+                    <tr class="row-odd"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-insert-image.png"><img alt="Content Author - RTE Tool Insert Image" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-insert-image.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Insert image</td>
+                    </tr>
+                    <tr class="row-even"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-insert-link.png"><img alt="Content Author - RTE Tool Insert Link" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-insert-link.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Insert/edit link</td>
+                    </tr>
+                    <tr class="row-odd"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-unlink.png"><img alt="Content Author - RTE Tool Unlink" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-unlink.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Unlink</td>
+                    </tr>
+                    <tr class="row-even"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-insert-anchor.png"><img alt="Content Author - RTE Tool Insert Anchor" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-insert-anchor.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Insert/edit anchor</td>
+                    </tr>
+                    <tr class="row-odd"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-edit-html.png"><img alt="Content Author - RTE Tool Edit HTML" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-edit-html.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Edit HTML source</td>
+                    </tr>
+                    <tr class="row-even"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-undo.png"><img alt="Content Author - RTE Tool Undo" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-undo.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Undo the last action/change</td>
+                    </tr>
+                    <tr class="row-odd"><td><div class="first last line-block">
+                        <div class="line"><a class="reference internal" href="../_images/rte-tool-redo.png"><img alt="Content Author - RTE Tool Redo" src="http://docs.craftercms.org/en/3.0/_images/rte-tool-redo.png" style="width: 15%;"></a></div>
+                    </div>
+                    </td>
+                        <td>Redo the last action/action</td>
+                    </tr>
+                    </tbody>
+                </table></div>
+            </div>
+            <div class="section"> 
+              <div class="highlight-xml notranslate">
+                <table class="highlighttable">
+                  <tbody>
+                    <tr>
+                      <td class="linenos">
+                        <div class="linenodiv">
+                          <pre>1
+                              2
+                              3
+                              4
+                              5
+                          </pre>
+                        </div>
+                      </td>
+                      <td class="code">
+                        <div class="highlight">
+                          <pre>
+                            <span></span>
+                            <span class="nt">&lt;paths&gt;</span>
+                            <span class="nt">&lt;includes&gt;</span>
+                            <span class="nt">&lt;pattern&gt;</span>REG_EXP_HERE<span class="nt">&lt;/pattern&gt;</span>
+                            <span class="nt">&lt;/includes&gt;</span>
+                            <span class="nt">&lt;/paths&gt;</span>
+                          </pre>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

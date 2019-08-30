@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-profile-api-authentication-ticket-create:
 
 =============
@@ -13,6 +15,8 @@ Creates a new ticket for the specified profile.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/profile-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

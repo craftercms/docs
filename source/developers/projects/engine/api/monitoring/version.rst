@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-engine-api-monitoring-version:
 
 ===========
@@ -9,6 +11,8 @@ Returns the Crafter Engine JVM version details.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/tomcat-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
@@ -38,23 +42,16 @@ Response
   :linenos:
 
   {
-    "name":"Sun Java System Application Server",
-    "packageVersion":"1.1",
-    "build":null,
-    "build_date":"1969-12-31T18:00:00-0600",
-    "java_version":"1.8",
-    "java_vendor":"Oracle Corporation",
-    "java_runtime":"Java Virtual Machine Specification",
-    "java_vm":"Java HotSpot(TM) 64-Bit Server VM",
-    "system_encoding":"UTF-8",
-    "operating_system":"Mac OS X-10.11.6",
-    "os_architecture":"x86_64",
-    "application_server_container":"",
-    "jvm_input_arguments":"[-Djava.util.logging.config.file=..., -Xss1024K, -Xms1G, -Xmx4G, ...]",
-    "datetime":"2017-06-07T15:38:47-0600",
-    "jvm_version":"1.8",
-    "jvm_vendor":"Oracle Corporation",
-    "jvm_implementation_version":"25.77-b03"
+    "packageName": "Crafter Engine",
+    "packageVersion": "3.1.0-SNAPSHOT",
+    "packageBuild": "a68f1ff7ad84d5ecbeaa008f392e4cef0ca02f41",
+    "packageBuildDate": "2019-03-07T21:03:05.422Z",
+    "osName": "Mac OS X",
+    "osVersion": "10.13.6",
+    "osArch": "x86_64",
+    "javaVersion": "1.8",
+    "javaVendor": "Oracle Corporation",
+    "javaVm": "Java HotSpot(TM) 64-Bit Server VM",
   }
 
 ---------

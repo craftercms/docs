@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Content Inheritance, Inheritance
 
 .. _content-inheritance:

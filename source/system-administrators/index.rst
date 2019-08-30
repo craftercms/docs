@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _system-administrators:
 
 #####################
@@ -42,6 +44,7 @@ Activities
 
    activities/installing-and-verifying-prereq.rst
    activities/backup-and-recovery.rst
+   activities/clustering.rst
    activities/configure-solrcloud-for-crafter.rst
    activities/logging.rst
    activities/production-environment-setup.rst
@@ -50,6 +53,7 @@ Activities
    activities/troubleshooting.rst
    activities/security/randomize-admin-passwd.rst
    activities/security/configure-studio-security.rst
+   activities/kubernetes/simple-kubernetes-deployment.rst
 
 *********************
 Upgrading Crafter CMS
@@ -59,7 +63,6 @@ Upgrading Crafter CMS
    :maxdepth: 1
    :titlesonly:
 
-   upgrade/upgrading-to-craftercms-3-0.rst
    upgrade/upgrading-to-craftercms-3-1-0.rst
    upgrade/index.rst
 
@@ -72,8 +75,9 @@ Authoring
    :titlesonly:
 
    activities/authoring/authoring-env-performance-tuning.rst
-   activities/authoring/change-ports-on-your-auth-install.rst
+   activities/authoring/change-hosts-ports-on-your-auth-install.rst
    activities/authoring/staging-env.rst
+   activities/authoring/setup-authoring-using-aws-ami.rst
    activities/sync-studio-database-with-repo.rst
 
 ********
@@ -84,10 +88,12 @@ Delivery
    :maxdepth: 1
    :titlesonly:
 
-   activities/delivery/change-ports-on-your-delivery-install.rst
+   activities/delivery/change-hosts-ports-on-your-delivery-install.rst
    activities/delivery/configure-apache-vhost.rst
+   activities/delivery/delivery-env-performance-tuning.rst
    activities/delivery/setup-site-for-delivery.rst
-   activities/delivery/setup-serverless-delivery.rst
+   activities/delivery/setup-serverless-site.rst
+   activities/delivery/setup-delivery-using-aws-ami.rst
 
 *************************
 Subsystems Administration
@@ -113,6 +119,9 @@ Crafter Deployer
    :titlesonly:
 
    deployer/admin-guide.rst
+   deployer/processors-guide.rst
+   deployer/templates-guide.rst
+   deployer/debugging-deployer-issues.rst
 
 
 ==============
@@ -171,7 +180,6 @@ Crafter Studio
    :maxdepth: 1
    :titlesonly:
 
-   studio/changing-the-studio-logo.rst
    studio/studio-configuration-overrides.rst
    studio/debugging-publishing-issues.rst
    studio/debugging-upgrade-issues.rst

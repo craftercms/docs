@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-engine-api-monitoring-memory:
 
 ================
@@ -9,6 +11,8 @@ Returns the Crafter Engine JVM memory details.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/tomcat-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |
@@ -37,64 +41,15 @@ Response
 .. code-block:: json
   :linenos:
 
-  [
-    {
-      "name":"Heap MemoryMonitor",
-      "init":"1 GB",
-      "used":"1 GB",
-      "committed":"2 GB",
-      "max":"3 GB"
-    },
-    {
-      "name":"Non Heap MemoryMonitor",
-      "init":"2 MB",
-      "used":"273 MB",
-      "committed":"277 MB",
-      "max":"-1 bytes"
-    },
-    {
-      "name":"Code Cache",
-      "init":"2 MB",
-      "used":"84 MB",
-      "committed":"84 MB",
-      "max":"240 MB"
-    },
-    {
-      "name":"Metaspace",
-      "init":"0 bytes",
-      "used":"168 MB",
-      "committed":"171 MB",
-      "max":"-1 bytes"
-    },
-    {
-      "name":"Compressed Class Space",
-      "init":"0 bytes",
-      "used":"20 MB",
-      "committed":"21 MB",
-      "max":"1 GB"
-    },
-    {
-      "name":"PS Eden Space",
-      "init":"256 MB",
-      "used":"886 MB",
-      "committed":"1 GB",
-      "max":"1 GB"
-    },
-    {
-      "name":"PS Survivor Space",
-      "init":"42 MB",
-      "used":"38 MB",
-      "committed":"39 MB",
-      "max":"39 MB"
-    },
-    {
-      "name":"PS Old Gen",
-      "init":"683 MB",
-      "used":"206 MB",
-      "committed":"1 GB",
-      "max":"2 GB"
-    }
-  ]
+  {
+    "totalJvmMemory": 2017984512,
+    "freeJvmMemory": 1113921056,
+    "maxJvmMemory": 3817865216,
+    "totalOsMemory": 17179869184,
+    "freeOsMemory": 2669301760,
+    "totalSwapMemory": 2147483648,
+    "freeSwapMemory": 1026555904,
+  }
 
 ---------
 Responses

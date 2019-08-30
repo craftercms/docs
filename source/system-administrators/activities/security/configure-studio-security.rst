@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Configuring Studio Security; Studio Security; Security
 
 .. _configuring-studio-security:
@@ -68,6 +70,12 @@ To setup the authentication chain, open the file ``studio-config-override.yaml``
         #   Example:
         #   site_author,site_xyz_developer
         groupsHeader: groups
+        # Enable/disable logout for headers authenticated users (SSO)
+        # logoutEnabled: false
+        # If logout is enabled for headers authenticated users (SSO), set the endpoint of the SP or IdP logout, which should
+        # be called after local logout. The {baseUrl} macro is provided so that the browser is redirected back to Studio
+        # after logout (https://STUDIO_SERVER:STUDIO_PORT/studio)
+        # logoutUrl: /mellon/logout?ReturnTo={baseUrl}
       # Authentication provider type
       - provider: LDAP
         # Authentication via LDAP enabled

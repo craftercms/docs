@@ -1,3 +1,8 @@
+:is-up-to-date: True
+
+.. index:: Configuration / Implementation Production Content Repository-Code Repository Sync and Code Releases Publishing
+
+.. _config-implementation-production-content-repo-code-repo-sync:
 
 ==============================================================================================================
 Configuration / Implementation Production Content Repository-Code Repository Sync and Code Releases Publishing
@@ -30,70 +35,70 @@ The following process is used to configure the upstream remote:
 #. Make sure that the remote does not exist
 
    * Issue the List Remotes API
-        http://docs.craftercms.org/en/3.0/developers/projects/studio/api/repo/list-remote.html
+        :studio_swagger_url:`#/repository/listRemoteRepositories`
 
 #. Assuming the remote does not exist, add it
 
    * Issue the Add Remote API
-         http://docs.craftercms.org/en/3.0/developers/projects/studio/api/repo/add-remote.html
+         :studio_swagger_url:`#/repository/addRemoteRepository`
    * Parameter values listed in table below
 #. Issue pull to get the latest content from the remote
 
    * Issue the Pull Remote API
-        http://docs.craftercms.org/en/3.0/developers/projects/studio/api/repo/pull-from-remote.html
+        :studio_swagger_url:`#/repository/pullFromRemoteRepository`
    * Parameter values listed in table below
 
 #. Issue push to get the latest content to the remote
 
    * Issue the Push Remote API
-        http://docs.craftercms.org/en/3.0/developers/projects/studio/api/repo/push-to-remote.html
+        :studio_swagger_url:`#/repository/pushToRemoteRepository`
    * Parameter values listed in table below
 
 +--------+--------------+----------------------------------------------------------------+
 ||  Env  ||             ||   Upstream and Branch                                         |
 +========+==============+================================================================+
-||  DEV  || List Remote || GET /api/1/services/api/1/repo/list-remote.json               |
-||       ||             || site_id=mycom                                                 |
+||  DEV  || List Remote || GET /studio/api/2/repository/list_remotes                     |
+||       ||             || siteId=mycom                                                  |
 +--------+--------------+----------------------------------------------------------------+
-||       || Add Remote  || POST /studio/api/1/services/api/1/repo/add-remote.json        |
-||       ||             || site_id=mycom                                                 |
-||       ||             || remote_name=origin                                            |
-||       ||             || remote_url=https://github.com/mycom/web-content               |
+||       || Add Remote  || POST /studio/api/2/repository/add_remote                      |
+||       ||             || siteId=mycom                                                  |
+||       ||             || remoteName=origin                                             |
+||       ||             || remoteUrl=https://github.com/mycom/web-content                |
 +--------+--------------+----------------------------------------------------------------+
-||       || Pull Remote || POST /studio/api/1/services/api/1/repo/pull-from-remote.json  |
-||       ||             || site_id=mycom                                                 |
-||       ||             || remote_name=origin                                            |
-||       ||             || branch_name=env-dev                                           |
+||       || Pull Remote || POST /studio/api/2/repository/pull_from_remote                |
+||       ||             || siteId=mycom                                                  |
+||       ||             || remoteName=origin                                             |
+||       ||             || remoteBranch=env-dev                                          |
 +--------+--------------+----------------------------------------------------------------+
-||       || Push Remote || POST /studio/api/1/services/api/1/repo/push-to-remote.json    |
-||       ||             || site_id=mycom                                                 |
-||       ||             || remote_name=origin                                            |
-||       ||             || branch_name=env-dev                                           |
+||       || Push Remote || POST /studio/api/2/repository/push_to_remote                  |
+||       ||             || siteId=mycom                                                  |
+||       ||             || remoteName=origin                                             |
+||       ||             || remoteBranch=env-dev                                          |
 +--------+--------------+----------------------------------------------------------------+
-||  QA   || List Remote || GET /api/1/services/api/1/repo/list-remote.json               |
-||       ||             || site_id=mycom                                                 |
+||  QA   || List Remote || GET /studio/api/2/repository/list_remotes                     |
+||       ||             || siteId=mycom                                                  |
 +--------+--------------+----------------------------------------------------------------+
-||       || Add Remote  || POST /studio/api/1/services/api/1/repo/add-remote.json        |
-||       ||             || site_id=mycom                                                 |
-||       ||             || remote_name=origin                                            |
-||       ||             || remote_url=https://github.com/mycom/web-content               |
+||       || Add Remote  || POST /studio/api/2/repository/add_remote                      |
+||       ||             || siteId=mycom                                                  |
+||       ||             || remoteName=origin                                             |
+||       ||             || remoteUrl=https://github.com/mycom/web-content                |
 +--------+--------------+----------------------------------------------------------------+
-||       || Pull Remote || POST /studio/api/1/services/api/1/repo/pull-from-remote.json  |
-||       ||             || site_id=mycom                                                 |
-||       ||             || remote_name=origin                                            |
-||       ||             || branch_name=env-qa                                            |
+||       || Pull Remote || POST /studio/api/2/repository/pull_from_remote                |
+||       ||             || siteId=mycom                                                  |
+||       ||             || remoteName=origin                                             |
+||       ||             || remoteBranch=env-qa                                           |
 +--------+--------------+----------------------------------------------------------------+
-||       || Push Remote || POST /studio/api/1/services/api/1/repo/push-to-remote.json    |
-||       ||             || site_id=mycom                                                 |
-||       ||             || remote_name=origin                                            |
-||       ||             || branch_name=env-qa                                            |
+||       || Push Remote || POST /studio/api/2/repository/push_to_remote                  |
+||       ||             || siteId=mycom                                                  |
+||       ||             || remoteName=origin                                             |
+||       ||             || remoteBranch=env-qa                                           |
 +--------+--------------+----------------------------------------------------------------+
 
 -----------------------------------------------------------------
 Configuring Content Repository-Code Repository Sync in Production
 -----------------------------------------------------------------
 
-The synchronization of the Production content repository (Sandbox) on Production Authoring and the Production Code repository (Master Branch) on your Git repository is performed via execution of Crafter Studio APIs.  You can find a full listing of Crafter Studio APIs for Crafter 3.0 here: http://docs.craftercms.org/en/3.0/developers/projects/studio/index.html
+The synchronization of the Production content repository (Sandbox) on Production Authoring and the Production Code repository (Master Branch) on your Git repository is performed via execution of Crafter Studio APIs.  You can find a full listing of Crafter Studio APIs here: :ref:`crafter-studio-api`
 
 Automating the Pull / Push of Code and Content
 ----------------------------------------------
@@ -121,13 +126,13 @@ The following bash script is called by a Jenkins job either in an on-demand or s
 
      echo "Authenticating with authoring"
      rm session.txt
-     curl -d '{ "username":"'$studioUsername'", "password":"'$studioPassword'" }' --cookie-jar session.txt --cookie "XSRF-TOKEN=A_VALUE" --header "X-XSRF-TOKEN:A_VALUE" --header "Content-Type: application/json"  -X POST $studioserver/studio/api/1/services/api/1/security/login.json
 
+     curl -d '{ "username":"'$studioUsername'", "password":"'$studioPassword'" }' --cookie-jar session.txt --cookie "XSRF-TOKEN=A_VALUE" --header "X-XSRF-TOKEN:A_VALUE" --header "Content-Type: application/json"  -X POST $studioserver/studio/api/1/services/api/1/security/login.json
      echo "Pull from remote (get code waiting to come to sandbox)"
-     curl -d '{ "site_id" :"'$project'", "remote_name":"'$remote'", "remote_branch":"'$branch'" }' --cookie session.txt --cookie "XSRF-TOKEN=A_VALUE"  --header "Content-Type: application/json" --header "X-XSRF-TOKEN:A_VALUE" -X POST  $studioserver/studio/api/1/services/api/1/repo/pull-from-remote.json
+     curl -d '{ "siteId" :"'$project'", "remoteName":"'$remote'", "remoteBranch":"'$branch'" }' --cookie session.txt --cookie "XSRF-TOKEN=A_VALUE"  --header "Content-Type: application/json" --header "X-XSRF-TOKEN:A_VALUE" -X POST  $studioserver/studio/api/2/repository/pull_from_remote
 
      echo "Push to remote (send content waiting to go to development)"
-     curl -d '{ "site_id" :"'$project'", "remote_name":"'$remote'", "remote_branch":"'$branch'" }' --cookie session.txt --cookie "XSRF-TOKEN=A_VALUE"  --header "Content-Type: application/json" --header "X-XSRF-TOKEN:A_VALUE" -X POST  $studioserver/studio/api/1/services/api/1/repo/push-to-remote.json
+     curl -d '{ "siteId" :"'$project'", "remoteName":"'$remote'", "remoteBranch":"'$branch'" }' --cookie session.txt --cookie "XSRF-TOKEN=A_VALUE"  --header "Content-Type: application/json" --header "X-XSRF-TOKEN:A_VALUE" -X POST  $studioserver/studio/api/2/repository/push_to_remote
 
 
 |
@@ -170,7 +175,7 @@ The following instructions show how to create a project in Jenkins that will exe
 
 The first step is to create a project.  Give the project a clear name and select the Freestyle project then click OK to continue.
 
-.. image:: /_static/images/developer/workflow/jenkins-freestyle-proj.png
+.. image:: /_static/images/developer/workflow/jenkins-freestyle-proj.jpg
      :alt: Developer Workflow - Create Jenkins Project
      :width: 80 %
      :align: center
@@ -179,7 +184,7 @@ The first step is to create a project.  Give the project a clear name and select
 
 There is no Source Code Management (SCM) aspect of the project.  The most typical use case for Content back workflow is a scheduled event: Every hour, day, week etc.
 
-.. image:: /_static/images/developer/workflow/jenkins-src-code-mgmt.png
+.. image:: /_static/images/developer/workflow/jenkins-src-code-mgmt.jpg
      :alt: Developer Workflow - Jenkins Source Code Management
      :width: 80 %
      :align: center
@@ -191,7 +196,7 @@ The next step is to define build triggers.  Since you are calling APIs here and 
 We want content from authoring to flow backward regularly, so we'll configure the job to run periodically.  Select “Build Periodically” and define your schedule.  Schedule definitions use standard Cron/Quartz configuration.  In the example, we’ll run every hour.
 
 
-.. image:: /_static/images/developer/workflow/jenkins-build-triggers.png
+.. image:: /_static/images/developer/workflow/jenkins-build-triggers.jpg
      :alt: Developer Workflow - Jenkins Build Triggers
      :width: 80 %
      :align: center
@@ -200,14 +205,14 @@ We want content from authoring to flow backward regularly, so we'll configure th
 
 Finally, you must define that you want Jenkins to call your script:
 
-.. image:: /_static/images/developer/workflow/jenkins-build.png
+.. image:: /_static/images/developer/workflow/jenkins-build.jpg
      :alt: Developer Workflow - Jenkins Build
      :width: 80 %
      :align: center
 
 |
 
-.. image:: /_static/images/developer/workflow/jenkins-execute-shell.png
+.. image:: /_static/images/developer/workflow/jenkins-execute-shell.jpg
      :alt: Developer Workflow - Jenkins Execute Shell
      :width: 80 %
      :align: center
@@ -285,14 +290,14 @@ See configuration of sync script above (codeforward-contentback-sync.sh).  The s
 #. You will call the publish-code script instead of the codeforward-contentback-sync script.
 #. You will ask the user for a parameter  value **COMMIT_ID** via the UI on each invocation and pass that to the command line as the COMMIT_ID parameter value
 
-.. image:: /_static/images/developer/workflow/jenkins-commit-id-param.png
+.. image:: /_static/images/developer/workflow/jenkins-commit-id-param.jpg
      :alt: Developer Workflow - Jenkins Commit ID parameter added
      :width: 80 %
      :align: center
 
 |
 
-.. image:: /_static/images/developer/workflow/jenkins-build-publish.png
+.. image:: /_static/images/developer/workflow/jenkins-build-publish.jpg
      :alt: Developer Workflow - Jenkins Build Publish
      :width: 80 %
      :align: center

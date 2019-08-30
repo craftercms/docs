@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Debugging Upgrade Issues; Troubleshooting
 
 .. _debugging-upgrade-issues:

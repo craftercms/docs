@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _sync_studio_database_with_repo:
 
 ===========================================

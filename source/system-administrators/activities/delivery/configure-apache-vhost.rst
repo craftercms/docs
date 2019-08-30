@@ -1,3 +1,4 @@
+:is-up-to-date: True
 
 .. index:: Configuring Apache Virtual Host for Production, Configuring Apache vhost
 .. _configure-apache-vhost-for-production:
@@ -46,8 +47,8 @@ Here's the sample configuration for setting up a vhost for production:
         ProxyPass /static-assets !
 
         # Send requests to Engine's Tomcat
-        ProxyPass / ajp://localhost:8009/
-        ProxyPassReverse / ajp://localhost:8009/
+        ProxyPass / ajp://localhost:9009/
+        ProxyPassReverse / ajp://localhost:9009/
 
         # This is where errors related to this virtual host are stored
         ErrorLog ${APACHE_LOG_DIR}/mysite-error.log

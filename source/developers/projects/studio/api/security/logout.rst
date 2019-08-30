@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-security-logout:
 
 ======
@@ -9,6 +11,8 @@ Logouts the current user.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

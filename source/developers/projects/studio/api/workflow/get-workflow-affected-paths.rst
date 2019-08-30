@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-workflow-get-workflow-affected-paths:
 
 ===========================
@@ -9,6 +11,8 @@ Get workflow affected paths.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +--------------------+----------------------------------------------------------------------------+
 || HTTP Verb         || GET                                                                       |

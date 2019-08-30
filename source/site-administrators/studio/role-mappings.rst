@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Role Mappings
 
 .. _role-mappings:
@@ -30,19 +32,19 @@ Sample
 
         <role-mappings>
             <groups>
-                <group name="Admin">
+                <group name="site_admin">
                     <role>admin</role>
                 </group>
-                <group name="Developer">
+                <group name="site_developer">
                     <role>developer</role>
                 </group>
-                <group name="Author">
+                <group name="site_author">
                     <role>author</role>
                 </group>
-                <group name="Publisher">
+                <group name="site_publisher">
                     <role>publisher</role>
                 </group>
-                <group name="Reviewer">
+                <group name="site_reviewer">
                     <role>reviewer</role>
                 </group>
             </groups>
@@ -56,20 +58,21 @@ Sample
 
     -->
     <role-mappings>
+        <version>2</version>
         <groups>
-            <group name="Admin">
+            <group name="site_admin">
                 <role>admin</role>
             </group>
-            <group name="Developer">
+            <group name="site_developer">
                 <role>developer</role>
             </group>
-            <group name="Author">
+            <group name="site_author">
                 <role>author</role>
             </group>
-            <group name="Publisher">
+            <group name="site_publisher">
                 <role>publisher</role>
             </group>
-            <group name="Reviewer">
+            <group name="site_reviewer">
                 <role>reviewer</role>
             </group>
         </groups>

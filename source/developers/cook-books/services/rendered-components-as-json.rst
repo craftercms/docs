@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 ==============================
 Render Page Components as JSON
 ==============================
@@ -180,4 +182,3 @@ Step 2: Execute the Service
 
 * Open a browser and hit the following URL:
 	* http://localhost:8080/api/1/services/get-rendered-components.json?pageId=/site/website/index.xml
-

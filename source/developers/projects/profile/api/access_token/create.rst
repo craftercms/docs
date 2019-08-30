@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-profile-api-access_token-create:
 
 ===================
@@ -9,6 +11,8 @@ Creates a new access token.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/profile-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

@@ -1,3 +1,8 @@
+:is-up-to-date: True
+
+.. index:: Working With URL Interceptor/Servlet Filters in Crafter CMS
+
+.. _working-with-url-filters:
 
 ===========================================================
 Working With URL Interceptor/Servlet Filters in Crafter CMS
@@ -35,7 +40,7 @@ Step 2: Install the Filter in the CMS
 Open the **Sidebar** and navigate to a folder called **scripts**
 
 .. image:: /_static/images/developer/working-with-filters/sidebar-scripts-folder.png
-   :width: 35 %
+   :width: 45 %
    :align: center
    :alt: Working with Filters - "scripts" Folder
 
@@ -43,14 +48,14 @@ Open the **Sidebar** and navigate to a folder called **scripts**
 Right-click on the **scripts** folder and click **Create Folder**. Enter “filters” as the folder name.  Right-click on the new filters folder and click **Create Controller**.
 
 .. image:: /_static/images/developer/working-with-filters/sidebar-create-filter.png
-   :width: 35 %
+   :width: 45 %
    :align: center
    :alt: Working with Filters - Create Filter
 
 Enter “MyFilter” as the name and click **Create**
 
 .. image:: /_static/images/developer/working-with-filters/create-controller-filter.png
-   :width: 85 %
+   :width: 100 %
    :align: center
    :alt: Working with Filters - Create Controller
 
@@ -64,7 +69,7 @@ Add the code from **Step 1** above and click “Update.”
 At this point, you should see your filter in the Sidebar and we’re ready to configure it to run when a user requests a resource.
 
 .. image:: /_static/images/developer/working-with-filters/sidebar-filter-created.png
-   :width: 35 %
+   :width: 45 %
    :align: center
    :alt: Working with Filters - Sidebar with the filter created
 
@@ -78,7 +83,7 @@ Now we need to tell the filter which resources to execute for by configuring the
 From the **Sidebar**, click on |siteConfig|.  Click on **Configuration**.  Select **Engine Site Configuration** from the dropdown.
 
 .. image:: /_static/images/developer/working-with-filters/select-engine-site-config.png
-   :width: 50 %
+   :width: 75 %
    :align: center
    :alt: Working with Filters - Open Engine Site Configuration
 
@@ -118,6 +123,7 @@ Then, you should see your log entries in the log file every time you view a page
 
     .. code-block:: xml
 
-       [INFO] 2018-02-19 12:52:11,568 [http-nio-8080-exec-4] [empty] [impl.GroovyScript] [/scripts/filters/MyFilter.groovy] | Control returned to filter/controller
-       [INFO] 2018-02-19 12:52:31,592 [http-nio-8080-exec-2] [empty] [impl.GroovyScript] [/scripts/filters/MyFilter.groovy] | Handling the request
+       [INFO] 2019-06-19T11:26:57,991 [http-nio-8080-exec-7] [examplecom] [impl.GroovyScript] [/scripts/filters/MyFilter.groovy] | Handling the request
+       [INFO] 2019-06-19T11:26:58,012 [http-nio-8080-exec-7] [examplecom] [impl.GroovyScript] [/scripts/filters/MyFilter.groovy] | Control returned to filter/controller
+
 

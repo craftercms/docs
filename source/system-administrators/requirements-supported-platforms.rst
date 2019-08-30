@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Requirements and Supported Platforms
 
 ..  _requirements_supported_platforms:
@@ -29,13 +31,11 @@ Supported Platforms
 OS (All components)
 ^^^^^^^^^^^^^^^^^^^
 
-
-
 The following Operating Systems are supported (64Bit only for all OSs)
 
-    - Windows (Windows 7, Windows 10, Windows Server 2012 and Windows Server 2016)
     - Linux (Ubuntu, RHEL, CentOS)
     - OS X
+    - Windows via Docker
     
 ^^^^^^^^^^^^^^^^^^^^^
 JVMs (All components)

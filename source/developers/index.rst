@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 ..  _developers:
 
 **********
@@ -13,8 +15,9 @@ This section focuses on how to customize and extend Crafter CMS.  It covers the 
       architecture
       content-modeling
       content-inheritance
-      asset-processing
+      assets
       templates
+      search-elasticsearch
       search-solr
       targeting
       redirect
@@ -35,6 +38,7 @@ Crafter CMS comprises a number of projects, below are the project specific docum
    :titlesonly:
 
    projects/craftercms/index
+   projects/docker-compose/index
    projects/core/index
    projects/commons/index
    projects/engine/index
@@ -68,7 +72,7 @@ Below is a short set of links to other documentation for technology that Crafter
 || Groovy        || Server side scripting       || http://groovy-lang.org/documentation.html    |
 ||               ||                             ||                                              |
 +----------------+------------------------------+-----------------------------------------------+
-|| ElasticSearch || Search and content query    || https://www.elastic.co/products/elasticsearch|
+|| Elasticsearch || Search and content query    || https://www.elastic.co/products/elasticsearch|
 ||               ||                             ||                                              |
 +----------------+------------------------------+-----------------------------------------------+
 || Solr          || Search and content query    || http://lucene.apache.org/solr/resources.html |

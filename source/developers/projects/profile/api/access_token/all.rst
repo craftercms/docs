@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-profile-api-access_token-all:
 
 ======================
@@ -9,6 +11,8 @@ Get all existing access tokens.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/profile-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

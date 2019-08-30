@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-deployer-api-target-get-all:
 
 ===============
@@ -9,6 +11,8 @@ Get all Crafter Deployer targets.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/deployer-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

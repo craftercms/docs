@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-publish-status:
 
 ==============
@@ -9,6 +11,8 @@ Get a Crafter Studio's publishing status for a site.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || GET                                                              |

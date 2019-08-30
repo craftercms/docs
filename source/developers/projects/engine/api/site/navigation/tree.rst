@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-engine-api-site-navigation-tree:
 
 ====
@@ -9,6 +11,8 @@ Returns the navigation tree with the specified depth for the specified store URL
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/tomcat-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------+
 || HTTP Verb                 || GET                                                        |

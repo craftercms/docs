@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-profile-api-authentication-ticket-invalidate:
 
 =================
@@ -9,6 +11,8 @@ Invalidates the given ticket.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/profile-api-url-prefix.rst
 
 +------------------------+-----------------------------------------------------------------------+
 || HTTP Verb             || POST                                                                 |

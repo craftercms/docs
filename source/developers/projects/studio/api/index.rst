@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: API; Crafter Studio
 
 .. _crafter-studio-api:
@@ -6,9 +8,7 @@
 Crafter Studio API
 ==================
 
-The context for this API is ``/studio/``, please prefix the API URLs with this context.
-
-There are 2 versions of Crafter Studio APIs.  **API version 2** contains the User and Group Management APIs and all other APIs are in **API version 1**.
+There are 2 versions of Crafter Studio APIs.  **API version 2** contains the User and Group Management, UI, Cluster, Sites, Search, Audit, Monitoring, CMIS, Repository, Content and Schemas APIs.   All other APIs are in **API version 1**.
 
 .. note::
     This API is protected using a CSRF Token so all ``POST``, ``PUT`` and ``DELETE`` calls need to
@@ -32,5 +32,3 @@ API Version 1
    :titlesonly:
 
    api-version1.rst
-
-

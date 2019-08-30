@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-search-api-search-v2-update-content:
 
 ======================
@@ -11,6 +13,8 @@ content is sent as a file part.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/search-api-url-prefix.rst
 
 +----------------------------+-----------------------------------------------------+
 || HTTP Verb                 || POST                                               |

@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: Projects; Crafter Search
 
 .. _crafter-search:
@@ -12,6 +14,9 @@ Crafter Search
     :align: center
 
 Crafter Search is the search facade for Crafter CMS. Crafter Search proxies the real search engine deployed behind it.
+
+.. note::
+    Crafter Search is supported for backward compatibility.  Crafter CMS's default search engine is Elasticsearch.
 
 -----------
 Source Code
@@ -40,4 +45,3 @@ Configuration
 -------------
 
 To configure Crafter Search, please see :ref:`crafter-search-admin`
-

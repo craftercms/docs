@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-search-api-search-v2-delete:
 
 ===============
@@ -9,6 +11,8 @@ Deletes a document from the Solr index.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/search-api-url-prefix.rst
 
 +----------------------------+-----------------------------------------------------+
 || HTTP Verb                 || POST                                               |

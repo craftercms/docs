@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Targeting
+
 .. _targeting:
 
 =================
@@ -124,6 +128,8 @@ on |siteConfig|, next click on **Content Types**.  Click on **Open Existing Type
     :width: 80 %
     :align: center
 
+|
+
 In the Metadata section of the form, a *Grouped Checkboxes* control is used to model our segments.
 The control is then named **Segments**, with the *Data Source* property in the Properties Explorer
 Section set to *Segments*.
@@ -132,6 +138,8 @@ Section set to *Segments*.
     :alt: Targeting - Model Taxonomy
     :width: 80 %
     :align: center
+
+|
 
 ^^^^^^^^^^^^^^^^^^
 Update the Content
@@ -150,6 +158,7 @@ checked).
     :width: 80 %
     :align: center
 
+|
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Build Dynamic Components
@@ -159,10 +168,12 @@ After targeting the content, we will now see how we can display pages depending 
 logged in. Let's take a look at the home page of the Website Editorial blueprint. We are browsing
 as an user with the segment Gal, and we're looking at the featured articles:
 
-.. figure:: /_static/images/targeting/tagging-segments-home-page.png
+.. figure:: /_static/images/targeting/tagging-segments-home-page.jpg
     :alt: Targeting - Targeted Home Page
     :width: 80 %
     :align: center
+
+|
 
 In order to display only articles targeted for gal, a groovy script is used that is run before the
 page renders so it knows which articles are supposed to be displayed for the current user.  Here is
@@ -217,6 +228,8 @@ Here's the list after entering the desired categories:
     :width: 80 %
     :align: center
 
+|
+
 Here's the resulting xml file:
 
 .. code-block:: xml
@@ -241,6 +254,8 @@ Here's the resulting xml file:
     </item>
   </items>
 
+|
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Model Criteria in Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -254,6 +269,8 @@ on |siteConfig|, next click on **Content Types**.  Click on **Open Existing Type
     :width: 80 %
     :align: center
 
+|
+
 In the Metadata section of the form, a *Grouped Checkboxes* control is used to model our categories.
 The control is then named **Categories**, with the *Data Source* property in the Properties Explorer
 Section set to *categories*.
@@ -262,6 +279,8 @@ Section set to *categories*.
     :alt: Targeting - Model Categories
     :width: 80 %
     :align: center
+
+|
 
 ^^^^^^^^^^^^^^^^^^
 Update the Content
@@ -279,6 +298,8 @@ that the article is targeted for the *Style* category.
     :width: 80 %
     :align: center
 
+|
+
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Build Dynamic Components
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -289,18 +310,22 @@ the left rail of our site.  If your screen is not wide enough, look at the top l
 page, there is a hamburger icon/button (multiple lines in red that sort of looks like a hamburger),
 click on that icon to display the left rail.
 
-.. figure:: /_static/images/targeting/tagging-hamburger-icon.png
+.. figure:: /_static/images/targeting/tagging-hamburger-icon.jpg
     :alt: Targeting - Hamburger Icon
     :width: 80 %
     :align: center
 
+|
+
 Let us look at the navigation menu on the left rail.  As you can see, the categories we used to
 target our pages can be used as navigation headings for the site.
 
-.. figure:: /_static/images/targeting/tagging-categories-left-rail.png
+.. figure:: /_static/images/targeting/tagging-categories-left-rail.jpg
     :alt: Targeting - Categories Left Rail
     :width: 80 %
     :align: center
+
+|
 
 We'll now take a closer look on how our taxonomy for categories is used for displaying articles in
 the landing pages of our site. On the left rail of our site, click on **Health**, notice how all
@@ -308,10 +333,12 @@ the articles listed on the page are targeted for category *Health*.  (To check t
 an article, just click on the article then click on **Edit** on the context nav at the top of the
 page. Go down to the *Metadata* section to see which category is selected.)
 
-.. figure:: /_static/images/targeting/tagging-categories-landing.png
+.. figure:: /_static/images/targeting/tagging-categories-landing.jpg
     :alt: Targeting - Categories Landing Page
     :width: 80 %
     :align: center
+
+|
 
 In order to display just the articles targeted for a certain category, a groovy script is run before
 the page renders.  To do this, we need to create a script named after the page we want the script
@@ -347,6 +374,8 @@ Existing Type -> Component Articles Widget**
     :width: 80 %
     :align: center
 
+|
+
 In the dialog, notice the item selector control labeled **Controllers** with data source
 **Scripts**.  This picker will be used to select which script we want to run before the component
 renders in its container.
@@ -355,6 +384,8 @@ renders in its container.
     :alt: Targeting - Form Component Article Widget
     :width: 80 %
     :align: center
+
+|
 
 We'll now take a look at the component created to display related articles. In the Sidebar,
 navigate to the **Components -> articles-widget** folder, then right click on **Related Articles
@@ -365,6 +396,8 @@ Widget** and click on **Edit**
     :width: 40 %
     :align: center
 
+|
+
 In the **Controllers** section, you'll see the groovy script that will be run before rendering
 the component.
 
@@ -372,6 +405,8 @@ the component.
     :alt: Targeting - Open Component Related Articles
     :width: 80 %
     :align: center
+
+|
 
 To open the groovy script, click on the Sidebar and navigate the tree to **scripts -> components
 then right click on related-articles.groovy** and select **Edit**.  In the groovy script, it
@@ -400,7 +435,7 @@ category, then the left rail is expanded by clicking on the hamburger icon at th
 the page.  In the left rail, we can see the related articles to the one currently being viewed
 in the page (articles tagged for category Health).
 
-.. figure:: /_static/images/targeting/tagging-component-related-display.png
+.. figure:: /_static/images/targeting/tagging-component-related-display.jpg
     :alt: Targeting - Script Component Related Articles
     :width: 80 %
     :align: center

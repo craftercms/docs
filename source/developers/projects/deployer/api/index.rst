@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. index:: API; Crafter Deployer
 
 .. _crafter-deployer-api:
@@ -27,6 +29,6 @@ Monitoring
 .. toctree::
 	:maxdepth: 1
 
-	monitor/version
-	monitor/status
-	monitor/memory
+	monitoring/version
+	monitoring/status
+	monitoring/memory

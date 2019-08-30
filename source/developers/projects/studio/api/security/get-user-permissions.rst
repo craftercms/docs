@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-security-get-user-permissions:
 
 ====================
@@ -9,6 +11,8 @@ Get user permissions for site and space (path).
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +--------------------------+---------------------------------------------------------------------+
 || HTTP Verb               || GET                                                                |

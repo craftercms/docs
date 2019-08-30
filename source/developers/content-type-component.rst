@@ -1,3 +1,7 @@
+:is-up-to-date: True
+
+.. index:: Component Content Type
+
 .. _content-type-component:
 
 ======================
@@ -24,7 +28,7 @@ The dialog that opens after clicking on the **Create** button is the form that i
 
 Let's take a look at the model for the articles-widget component content type.  The default dialog after clicking on the **Create** button  contains only the **Component ID** and **Internal Name** field.  From the image below, we have two input controls added, one for the **Title** and one for **Max Articles**, a check box for **Disable Component** and an item selector for **Controllers**.
 
-.. figure:: /_static/images/templates/templates-comp-articles-widget-model.png
+.. figure:: /_static/images/templates/templates-comp-articles-widget-model.jpg
     :alt: Template Articles Widget Component Content Type Model
     :width: 95 %
     :align: center
@@ -42,7 +46,7 @@ In the Data Sources section of the form, we see a child content for **Scripts**,
 
 We'll take a look at the property **Controllers** and notice that the data source **Scripts** is bound to the item selector **Controllers** by a check mark to *Scripts* for the *Item Manager* under the *Properties Explorer* of the *Controller* item selector control
 
-.. figure:: /_static/images/templates/templates-comp-bind-ctrl-src.png
+.. figure:: /_static/images/templates/templates-comp-bind-ctrl-src.jpg
     :alt: Template Component Bind the Child Content Data Source to the Item Selector Control
     :width: 95 %
     :align: center
@@ -76,7 +80,7 @@ You'll then be shown a dialog where you can give the view template a name, then 
 
 Here we'll take a look at the view template for the component content type named **articles-widget.ftl**
 
-.. figure:: /_static/images/templates/templates-comp-view-template.png
+.. figure:: /_static/images/templates/templates-comp-view-template.jpg
     :alt: Template Component Controller
     :width: 70 %
     :align: center
@@ -86,7 +90,7 @@ Here we'll take a look at the view template for the component content type named
 
 Let's take a look on how to bind the view template to the model described earlier by clicking on the **Display Template** under the *Properties Explorer* in your model.
 
-.. figure:: /_static/images/templates/templates-comp-bind-view-model.png
+.. figure:: /_static/images/templates/templates-comp-bind-view-model.jpg
     :alt: Template Component Bind View to Template
     :width: 95 %
     :align: center

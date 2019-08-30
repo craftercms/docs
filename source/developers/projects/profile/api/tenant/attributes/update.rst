@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-profile-api-tenant-attributes-update:
 
 =================
@@ -9,6 +11,8 @@ Updates the given attribute definitions of the specified tenant.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/profile-api-url-prefix.rst
 
 +----------------------+-------------------------------------------------------------------------+
 || HTTP Verb           || POST                                                                   |

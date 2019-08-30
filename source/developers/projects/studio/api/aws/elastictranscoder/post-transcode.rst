@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-aws-s3-upload:
 
 =========
@@ -12,6 +14,8 @@ Transcode a video file using the AWS Elastic Transcoder.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +-------------------------+-----------------------------------------------------------------------+
 || HTTP Verb              || POST                                                                 |

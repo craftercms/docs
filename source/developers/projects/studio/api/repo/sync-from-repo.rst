@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-studio-api-repo-sync-from-repo:
 
 ==============
@@ -9,6 +11,8 @@ Synchronize Crafter Studio's database and object state with the underlying repos
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/studio-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

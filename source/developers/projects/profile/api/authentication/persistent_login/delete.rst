@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-profile-api-authentication-persistent_login-delete:
 
 =======================
@@ -9,6 +11,8 @@ Deletes a persistent login.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/profile-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |

@@ -1,3 +1,5 @@
+:is-up-to-date: True
+
 .. _crafter-profile-api-authentication-authenticate:
 
 ============
@@ -9,6 +11,8 @@ Authenticates the user, and returns a ticket identifying the authentication.
 --------------------
 Resource Information
 --------------------
+
+.. include:: /includes/profile-api-url-prefix.rst
 
 +----------------------------+-------------------------------------------------------------------+
 || HTTP Verb                 || POST                                                             |
