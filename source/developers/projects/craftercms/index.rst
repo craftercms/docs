@@ -906,11 +906,11 @@ Aside from the tasks that we can run, there are also some properties defined in 
 +-------------------------------+----------------------------------------------------------------+
 || Property                     || Description                                                   |
 +===============================+================================================================+
-|| ``overwriteConfig``          || Overwrite configurations? Default value is false              |
+|| ``overwriteConfig``          || Overwrite configurations. Default value is false              |
 +-------------------------------+----------------------------------------------------------------+
-|| ``backupAndReplaceConfig``   || Backup and replace configurations? Default value is false     |
+|| ``backupAndReplaceConfig``   || Backup and replace configurations. Default value is false     |
 +-------------------------------+----------------------------------------------------------------+
-|| ``withSolr``                 || Start Solr ? Default value is false                           |
+|| ``withSolr``                 || Start Solr.  Default value is false                           |
 +-------------------------------+----------------------------------------------------------------+
 
 .. _git-properties:
@@ -927,7 +927,7 @@ Aside from the tasks that we can run, there are also some properties defined in 
 +-------------------------------+----------------------------------------------------------------+
 || ``crafter.git.remote``       || Git repository. Default value is "origin"                     |
 +-------------------------------+----------------------------------------------------------------+
-|| ``crafter.git.shallowClone`` || Perform a shallow clone? Default value is false               |
+|| ``crafter.git.shallowClone`` || Perform a shallow clone. Default value is false               |
 +-------------------------------+----------------------------------------------------------------+
 || ``crafter.ui.repo``          || Is Studio UI from repository? Default value is false          |
 +-------------------------------+----------------------------------------------------------------+
