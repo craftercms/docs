@@ -1,5 +1,10 @@
 :is-up-to-date: True
 
+:orphan:
+
+.. document does not appear in any toctree, this file is referenced
+   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
+
 .. _upgrade-to-3-1-0:
 
 =============================================================================
