@@ -63,7 +63,6 @@ Upgrading Crafter CMS
    :maxdepth: 1
    :titlesonly:
 
-   upgrade/upgrading-to-craftercms-3-1-0.rst
    upgrade/index.rst
 
 *********
@@ -79,6 +78,7 @@ Authoring
    activities/authoring/staging-env.rst
    activities/authoring/setup-authoring-using-aws-ami.rst
    activities/sync-studio-database-with-repo.rst
+   activities/authoring/navigating-main-menu.rst
 
 ********
 Delivery
