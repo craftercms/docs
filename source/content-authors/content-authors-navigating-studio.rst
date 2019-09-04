@@ -2,7 +2,7 @@
 
 .. index:: Navigating Studio
 
-..  _content_authors_navigating_studio:
+..  _content-authors-navigating-studio:
 
 ================================
 Navigating Around Crafter Studio
