@@ -185,6 +185,8 @@ authoring search. For all existing sites a new target must be created using the 
 
 .. _update-index-format-preview-targets:
 
+This may take a few minutes. Inspect ``crafter-deployer.log`` to confirm completion of reindexing before proceeding further.
+
 ----------------------------------------------
 Update the Index Format of the Preview Targets
 ----------------------------------------------
@@ -192,7 +194,7 @@ Update the Index Format of the Preview Targets
 The preview Deployer targets in the Authoring environment need to be updated to include the new preview index format:
 
 #. Go to ``AUTHORING_INSTALL_DIR/data/deployer/targets``.
-#. For each target YAML file ending in ``-preview``, below the ``localRepoPath`` property, add the following property 
+#. For each target YAML file ending in ``-preview``, below the ``localRepoPath`` property, add the following property
    with the same indentation:
 
    .. code-block:: yaml
@@ -251,7 +253,7 @@ Enable Crafter Search in the Targets
 You need to update the Authoring and Delivery Deployer targets to enable Crafter Search use:
 
 #. Go to ``CRAFTERCMS_INSTALL_DIR/data/deployer/targets``.
-#. For each target YAML file ending in ``-preview`` in case of Authoring, or in ``-default.yaml`` in case of Delivery, 
+#. For each target YAML file ending in ``-preview`` in case of Authoring, or in ``-default.yaml`` in case of Delivery,
    below the ``localRepoPath`` property, add the following property with the same indentation:
 
    .. code-block:: yaml
