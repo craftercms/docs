@@ -14,6 +14,8 @@ This section details the steps required to upgrade your Crafter CMS install.
 .. WARNING::
     This guide assumes that you're trying to upgrade a site from a stock 3.0.x Studio and with some slight Studio configuration changes. If your site configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
 
+    This guide also assumes that you are upgrading to version 3.1.1 or later. If you are upgrading to 3.1.0, the automatic upgrade scripts are not enabled and you will need to follow :ref:`these instructions<system-administrators/upgrade/upgrading-to-craftercms-3-1-0>` to upgrade manually.
+
 |
 
 ----------------
@@ -79,7 +81,7 @@ When performing an upgrade, the script asks if the user wants to backup the ``da
 
 Depending on how recent the version you are upgrading from, there may be files that do not exist in the new release and the script will give the user the option to delete or keep the files.  For config files that are different in the new release, the script gives you the option to overwrite the config files with their new versions.  When the script overwrites a file, it creates a backup version of the file with a timestamp and a bak file extension.
 
-After the ``upgrade-target`` script is done with the upgrade, you will need to run the ``post-upgrade.sh`` script,
+After the ``upgrade-target`` script is done with the upgrade, change to your target folder and run the ``post-upgrade.sh`` script.
 
 Below is a sample output when you start the upgrade-target script:
 
