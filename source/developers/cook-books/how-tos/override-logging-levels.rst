@@ -16,10 +16,9 @@ Crafter CMS comes with classes and packages set to logging level INFO out of the
 Temporarily Set Logging Levels
 ------------------------------
 
-To temporarily set the logging levels for specific classes through the |siteConfig| panel:
+To temporarily set the logging levels for specific classes through the Main Menu panel:
 
-* Open your **Sidebar**
-* Click on **Site Config**
+* Click on |mainMenu| **Main Menu**
 * Click on **Logging Levels**
 * Find the class/package you want to change the log level, then set the level by clicking on the desired log level.
 
