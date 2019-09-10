@@ -64,7 +64,7 @@ spec:
           emptyDir: {}
       containers:
         - name: tomcat
-          image: craftercms/authoring_tomcat:3.1.1
+          image: craftercms/authoring_tomcat:3.1.3
           imagePullPolicy: 'Always'      
           ports:
             - containerPort: 8080
@@ -83,7 +83,7 @@ spec:
             - name: ES_PORT
               value: '9200'
         - name: deployer
-          image: craftercms/deployer:3.1.1
+          image: craftercms/deployer:3.1.3
           imagePullPolicy: 'Always'           
           ports:
             - containerPort: 9191
@@ -102,7 +102,7 @@ spec:
             - name: ES_PORT
               value: '9200'
         - name: git-ssh-server
-          image: craftercms/git_ssh_server:3.1.1
+          image: craftercms/git_ssh_server:3.1.3
           imagePullPolicy: 'Always'     
           ports:
             - containerPort: 22

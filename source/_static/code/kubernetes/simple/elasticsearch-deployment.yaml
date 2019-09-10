@@ -61,3 +61,5 @@ spec:
               value: 'true'
             - name: ES_JAVA_OPTS
               value: '-server -Xss1024K -Xmx2G'
+            - name: TAKE_FILE_OWNERSHIP
+              value: 'true'
