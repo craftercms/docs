@@ -8,8 +8,8 @@
 Custom GraphQL Schema
 =====================
 
-Crafter CMS provides a simple way to customize the built-in GraphQL schema, this feature can be used for integrating
-external services or transforming values to match special requirements. Once that the schema has been customized it is
+Crafter CMS provides a simple way to customize the built-in GraphQL schema. This feature can be used for integrating
+external services or transforming values to match special requirements. Once the schema has been customized it is
 possible to create apps or sites that interact only using GraphQL for getting both authored content & external services.
 
 .. note:: 
@@ -41,7 +41,7 @@ Example
 The following example shows how to customize the schema to integrate a service written in Groovy.
 
 .. note::
-  The example uses the public OMDb API that requires a key, to make the code work in you local environment
+  The example uses the public OMDb API that requires a key, to make the code work in your local environment
   you can get a free key `here <http://www.omdbapi.com/apikey.aspx>`_
 
 #.  Update the site configuration to include the needed information to connect to the OMDb API:
@@ -114,8 +114,157 @@ The following example shows how to customize the schema to integrate a service w
         }
         
       }
+      
+    .. note::
+      Notice that the service is not performing any mapping or transformation to the values returned by the API. It
+      will only parse the response from JSON into Groovy map instances. This means that the GraphQL schema needs to 
+      match the field names returned by the API.
 
-#.  Add the GraphQL schema customizations:
+#.  Define the GraphQL schema to use:
+
+    First you need to know what the API will return to create a matching schema, in any browser or REST client execute 
+    a call to ``http://www.omdbapi.com/?t=XXXX&apikey=XXXXXXX``. The result will look like this:
+    
+    .. code-block:: json
+      :caption: OMDb API response for movies
+      :linenos:
+    
+      {
+        "Title": "Hackers",
+        "Year": "1995",
+        "Rated": "PG-13",
+        "Released": "15 Sep 1995",
+        "Runtime": "107 min",
+        "Genre": "Comedy, Crime, Drama, Thriller",
+        "Director": "Iain Softley",
+        "Writer": "Rafael Moreu",
+        "Actors": "Jonny Lee Miller, Angelina Jolie, Jesse Bradford, Matthew Lillard",
+        "Plot": "Hackers are blamed for making a virus that will capsize five oil tankers.",
+        "Language": "English, Italian, Japanese, Russian",
+        "Country": "USA",
+        "Awards": "N/A",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNmExMTkyYjItZTg0YS00NWYzLTkwMjItZWJiOWQ2M2ZkYjE4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+        "Ratings": [
+          {
+            "Source": "Internet Movie Database",
+            "Value": "6.2/10"
+          },
+          {
+            "Source": "Rotten Tomatoes",
+            "Value": "33%"
+          },
+          {
+            "Source": "Metacritic",
+            "Value": "46/100"
+          }
+        ],
+        "Metascore": "46",
+        "imdbRating": "6.2",
+        "imdbVotes": "62,125",
+        "imdbID": "tt0113243",
+        "Type": "movie",
+        "DVD": "24 Apr 2001",
+        "BoxOffice": "N/A",
+        "Production": "MGM",
+        "Website": "N/A",
+        "Response": "True"
+      }
+    
+    .. code-block:: json
+      :caption: OMDb API response for series
+      :linenos:
+    
+      {
+        "Title": "Friends",
+        "Year": "1994–2004",
+        "Rated": "TV-14",
+        "Released": "22 Sep 1994",
+        "Runtime": "22 min",
+        "Genre": "Comedy, Romance",
+        "Director": "N/A",
+        "Writer": "David Crane, Marta Kauffman",
+        "Actors": "Jennifer Aniston, Courteney Cox, Lisa Kudrow, Matt LeBlanc",
+        "Plot": "Follows the personal and professional lives of six twenty to thirty-something-year-old friends living in Manhattan.",
+        "Language": "English, Dutch, Italian, French",
+        "Country": "USA",
+        "Awards": "Won 1 Golden Globe. Another 68 wins & 211 nominations.",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
+        "Ratings": [
+          {
+            "Source": "Internet Movie Database",
+            "Value": "8.9/10"
+          }
+        ],
+        "Metascore": "N/A",
+        "imdbRating": "8.9",
+        "imdbVotes": "696,324",
+        "imdbID": "tt0108778",
+        "Type": "series",
+        "totalSeasons": "10",
+        "Response": "True"
+      }
+
+    The API also has support for single episodes but those will not be included in this example. Not all fields returned
+    by the API might be needed in the GraphQL schema, for this example we will include a small subset.
+    
+    #.  The first step is to define a generic entry type that includes all common fields present in movies and series:
+    
+        .. code-block:: guess
+          :caption: GraphQL interface for all entries
+          :linenos:
+        
+          interface OmdbEntry {
+            Title: String!
+            Genre: String!
+            Plot: String!
+            Actors: [String!]
+          }
+        
+        Notice that the API returns a single string for the ``Actors`` fields but in the GraphQL schema it will be
+        defined as a list of strings, a custom data fetcher will handle this transformation.
+    
+    #.  Next step is to define the concrete types for movies and series, those will have all fields from the parent
+        type but include new ones:
+        
+        .. code-block:: guess
+          :caption: GraphQL type for movies
+          :linenos:
+        
+          type OmdbMovie implements OmdbEntry {
+            Title: String!
+            Genre: String!
+            Plot: String!
+            Actors: [String!]
+            
+            Production: String!
+          }
+        
+        .. code-block:: guess
+          :caption: GraphQL type for series
+          :linenos:
+        
+          type OmdbSeries implements OmdbEntry {
+            Title: String!
+            Genre: String!
+            Plot: String!
+            Actors: [String!]
+            
+            totalSeasons: Int!
+          }
+        
+    #.  Finally the service call will be exposed using a wrapper type:
+        
+        .. code-block:: guess
+          :caption: GraphQL type for the service
+          :linenos:
+        
+          type OmdbService {
+          
+            search(title: String): [OmdbEntry!]
+            
+          }
+
+#.  Add the GraphQL schema customizations to create the schema defined in the previous step:
 
     .. code-block:: groovy
       :caption: ``/script/graphql/init.groovy``
