@@ -52,7 +52,7 @@ Let's take a look at the fields displayed when **Link to upstream remote Git rep
         After copying your public keys to where your remote git repository is located, there are a couple of ways to setup the way Crafter Studio accesses the remote repository:
 
         #. Set the authentication type to **Remote Git Repository Private Key** in the ``Create Site`` screen, then specify your private key in the **Remote Git Repository Private Key** field.
-        #.  Set the authentication type to **None** in the ``Create Site`` screen, if you put the key in the default RSA key path in the Crafter Studio server (~/.ssh/id_rsa).  Remember the key needs to use the default filename (``id_rsa`` and ``id_rsa.pub``) when using this method of setting up access to the remote repository.
+        #.  Set the authentication type to **None** in the ``Create Site`` screen, if you put the key in the default RSA key path in the Crafter Studio server (~/.ssh/id_rsa).  Remember the key needs to use the default filename (``id_rsa`` and ``id_rsa.pub``) when using this method of setting up access to the remote repository.  Also, remember that **Studio must be restarted** for the JVM to pick up the default key.
 
 ------------------------------------------------------------------------
 Create site based on a blueprint then push to remote bare Git repository
