@@ -183,9 +183,10 @@ authoring search. For all existing sites a new target must be created using the 
         "reprocess_all_files": true
       }'
 
-.. _update-index-format-preview-targets:
 
 This may take a few minutes. Inspect ``crafter-deployer.log`` to confirm completion of reindexing before proceeding further.
+
+.. _update-index-format-preview-targets:
 
 ----------------------------------------------
 Update the Index Format of the Preview Targets
