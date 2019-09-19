@@ -1,0 +1,12 @@
+------------------
+Crafter CMS 3.0.26
+------------------
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Fix for Deployer not loading external libraries
+* Other security related patches
+
+For a full list of tickets, please visit: `GitHub 3.0.26 Milestone <https://github.com/craftercms/craftercms/milestone/55?closed=1>`_
