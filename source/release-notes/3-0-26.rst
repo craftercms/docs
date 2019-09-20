@@ -8,7 +8,8 @@ Updates
 
 * Fix for Deployer not loading external libraries
 * Upgraded Jackson Databind library to 2.9.9.3 for various Crafter modules
-* Upgraded Xstream library to 4.11.1
+* Upgraded Xstream library to 1.4.11.1
 * Upgraded Commons BeanUtils library to 1.9.4
+* Minor UI bug fixes
 
 For a full list of tickets, please visit: `GitHub 3.0.26 Milestone <https://github.com/craftercms/craftercms/milestone/55?closed=1>`_
