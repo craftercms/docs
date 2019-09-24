@@ -2,11 +2,14 @@
 
 .. _crafter-studio-api-cmis-upload:
 
-==============================
-Upload an asset File into CMIS
-==============================
+===========================================
+Upload an asset File into CMIS (deprecated)
+===========================================
 
 Upload an asset file to CMIS repository.
+
+.. important::
+    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/cmis/cmisUpload` for the current version.
 
 --------------------
 Resource Information

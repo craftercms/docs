@@ -2,11 +2,14 @@
 
 .. _crafter-studio-api-cmis-clone:
 
-=============================
-Clone a CMIS File into Studio
-=============================
+==========================================
+Clone a CMIS File into Studio (deprecated)
+==========================================
 
 Clone a file from a CMIS repository to Studio provided paths.
+
+.. important::
+    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/cmis/cmisClone` for the current version.
 
 --------------------
 Resource Information

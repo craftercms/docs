@@ -2,14 +2,17 @@
 
 .. _crafter-studio-api-s3-upload:
 
-=============
-AWS S3 Upload
-=============
+==========================
+AWS S3 Upload (deprecated)
+==========================
 
 Upload a file to AWS S3.
 
 .. NOTE::
   Make sure that the aws profile id to be used has been configured.
+
+.. important::
+    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/aws/uploadItem` for the current version.
 
 --------------------
 Resource Information

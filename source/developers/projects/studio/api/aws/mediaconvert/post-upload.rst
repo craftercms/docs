@@ -2,14 +2,17 @@
 
 .. _crafter-studio-api-aws-mediaconvert:
 
-============
-MediaConvert
-============
+=========================
+MediaConvert (deprecated)
+=========================
 
 Transcode and/or compress media files using AWS Elemental MediaConvert.
 
 .. NOTE::
      Make sure that the aws profile id to be used has been configured.
+
+.. important::
+    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/aws/uploadVideo` for the current version.
 
 --------------------
 Resource Information

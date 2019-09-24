@@ -41,6 +41,9 @@ Repo Management
    repo/sync-from-repo
    repo/list-remote
 
+.. note::
+  Some of the repo management operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit: https://app.swaggerhub.com/apis/craftercms/studio
+
 ^^^^^
 Audit
 ^^^^^
@@ -83,6 +86,9 @@ CMIS
    cmis/search
    cmis/clone
    cmis/upload
+
+.. note::
+    The CMIS operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit: https://app.swaggerhub.com/apis/craftercms/studio
 
 ^^^^^^^
 Publish
@@ -214,3 +220,6 @@ AWS
    aws/elastictranscoder/post-transcode
    aws/mediaconvert/post-upload
    aws/s3/post-upload
+
+.. note::
+    Some of the AWS operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit: https://app.swaggerhub.com/apis/craftercms/studio
