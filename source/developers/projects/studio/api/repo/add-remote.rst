@@ -2,11 +2,14 @@
 
 .. _crafter-studio-api-repo-add-remote:
 
-==========
-Add Remote
-==========
+=======================
+Add Remote (deprecated)
+=======================
 
 Add remote repository to site content repository.
+
+.. important::
+    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/repository/addRemoteRepository` for the current version.
 
 --------------------
 Resource Information

@@ -32,7 +32,7 @@ To install Crafter CMS using the archive download:
 
 * Download the Crafter CMS install archive file from http://craftercms.org/downloads
 
-  Select ``crafter-cms-authoring.tar.gz``.  The ``.tar.gz`` file will install a fully functional Crafter Studio instance and a Crafter Engine in Preview Mode. Out of the box, the Studio instance uses a local directory as the repository and a Derby database, which allows a quick and easy set up for local development.
+  Select ``crafter-cms-authoring-3.1.X.tar.gz``.  The ``.tar.gz`` file will install a fully functional Crafter Studio instance and a Crafter Engine in Preview Mode. Out of the box, the Studio instance uses a local directory as the repository and an embedded MariaDB database, which allows a quick and easy set up for local development.
 
 * Extract the contents in any directory.
 
@@ -106,13 +106,13 @@ To create the archives(``*.tar.gz``) for installing Crafter CMS, the following m
 
         git clone https://github.com/craftercms/craftercms.git
 
-#. Build a deployable bundle using the Gradle Environment Builder to generate the archives ``crafter-cms-authoring.tar.gz`` inside the *bundle* folder
+#. Build a deployable bundle using the Gradle Environment Builder to generate the archives ``crafter-cms-authoring-3.1.X.tar.gz`` inside the *bundle* folder
 
     .. code-block:: bash
 
         ./gradlew init build deploy bundle
 
-#. Unpack the file (``crafter-cms-authoring.tar.gz``) into any directory.  You may now follow the instructions listed above :ref:`Start the Crafter CMS Server using the startup script <start-crafter-cms-server-startup-script>` to start using Crafter CMS
+#. Unpack the file (``crafter-cms-authoring-3.1.X.tar.gz``) into any directory.  You may now follow the instructions listed above :ref:`Start the Crafter CMS Server using the startup script <start-crafter-cms-server-startup-script>` to start using Crafter CMS
 
 For more details on using the Gradle environment builder, please review: https://github.com/craftercms/craftercms/blob/master/README.md
 

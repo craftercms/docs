@@ -2,11 +2,14 @@
 
 .. _crafter-studio-api-repo-remove-remote:
 
-=============
-Remove Remote
-=============
+==========================
+Remove Remote (deprecated)
+==========================
 
 Remove remote repository from site content repository.
+
+.. important::
+    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/repository/removeRemoteRepository` for the current version.
 
 --------------------
 Resource Information

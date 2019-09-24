@@ -2,11 +2,15 @@
 
 .. _crafter-studio-api-repo-push-to-remote:
 
-==============
-Push To Remote
-==============
+===========================
+Push To Remote (deprecated)
+===========================
 
 Push content to remote repository from site content repository.
+
+.. important::
+    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/repository/pushToRemoteRepository` for the current version.
+
 
 --------------------
 Resource Information

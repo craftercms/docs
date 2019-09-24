@@ -2,11 +2,14 @@
 
 .. _crafter-studio-api-cmis-search:
 
-===========
-Search CMIS
-===========
+========================
+Search CMIS (deprecated)
+========================
 
 Search files and folders in a CMIS repository with an optional range for pagination.
+
+.. important::
+    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/cmis/cmisSearch` for the current version.
 
 --------------------
 Resource Information

@@ -2,11 +2,15 @@
 
 .. _crafter-studio-api-repo-list-remote:
 
-========================
-List Remote Repositories
-========================
+=====================================
+List Remote Repositories (deprecated)
+=====================================
 
 List remote Git repositories for a site.
+
+.. important::
+    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/repository/listRemoteRepositories` for the current version.
+
 
 --------------------
 Resource Information

@@ -2,11 +2,15 @@
 
 .. _crafter-studio-api-repo-pull-from-remote:
 
-================
-Pull From Remote
-================
+=============================
+Pull From Remote (deprecated)
+=============================
 
 Pull content from remote repository to site content repository.
+
+.. important::
+    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/repository/pullFromRemoteRepository` for the current version.
+
 
 --------------------
 Resource Information
