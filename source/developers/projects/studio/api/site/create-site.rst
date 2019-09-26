@@ -67,6 +67,9 @@ Parameters
 ||                     ||           ||               ||   ``clone``: clone from remote repository                   |
 ||                     ||           ||               ||   ``push``: push to remote repository after creating site   |
 +----------------------+------------+----------------+--------------------------------------------------------------+
+|| site_params         || Object    ||               || Object containing all parameters for the blueprint. It      |
+||                     ||           ||               || should include all required parameters from the descriptor  |
++----------------------+------------+----------------+--------------------------------------------------------------+
 
 .. note::
     ``*`` Required parameters:
@@ -107,7 +110,10 @@ Example
     "remote_url" : "https://github.com/craftercms/remoterepo.git",
     "remote_username" : "joe.bloggs",
     "site_id" : "my-site",
-    "use_remote" : true
+    "use_remote" : true,
+    "site_params": {
+      "apiKey": "SuperSecretKey$$142"
+    }
   }
 
 --------
