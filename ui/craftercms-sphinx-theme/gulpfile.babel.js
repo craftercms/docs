@@ -14,6 +14,7 @@ import named         from 'vinyl-named';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
+const uglify = require('gulp-uglify-es').default;
 
 // Check for --production flag
 const PRODUCTION = !!(yargs.argv.production);
@@ -126,7 +127,7 @@ function javascript() {
     .pipe(named())
     .pipe($.sourcemaps.init())
     .pipe(webpackStream(webpackConfig, webpack2))
-    .pipe($.if(PRODUCTION, $.uglify()
+    .pipe($.if(PRODUCTION, uglify()
       .on('error', e => { console.log(e); })
     ))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
