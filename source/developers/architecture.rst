@@ -12,7 +12,7 @@ Crafter CMS distinguishes itself by its modern architecture, which in turn enabl
 
 * Truly decoupled content management (and disconnected global delivery), composed of independent microservice-based components
 * Dynamic, personalized content delivery of every request at speed
-* API first CMS (content as a service via GraphQL & REST)
+* API first CMS (content as a service via extensible GraphQL & REST)
 * Git-based CMS (allows for excellent developer cadence)
 * Shared-nothing, serverless, delivery architecture (planet-scale)
 * Front-end agnostic (bring your favorite UI framework or use as a headless CMS)
@@ -53,7 +53,11 @@ Application Development
 
 Crafter CMS is a very flexible platform, and features:
 
-* Content access via API (GraphQL / REST)
+* Content access via API (extensible GraphQL / REST)
+
+   * Extend GraphQL with your own schema and pull data from any external source to augment what's in the CMS
+   * Quickly build REST end-points with small snippets of Groovy
+
 * Modern SPAs (Single Page Applications) support, like React, Angular, Vue
 
    * Support for in-context editing via content edit pencils, drag and drop component management, etc.
