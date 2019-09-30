@@ -17,6 +17,7 @@ How-Tos
    using-war-overlays-with-crafter-engine
    using-custom-processors-with-crafter-deployer
    upgrading-to-rte5
+   web-app-manifest-use-credentials
    working-with-crafter-studios-api
    working-with-dates-freemarker
    working-with-dates-groovy
