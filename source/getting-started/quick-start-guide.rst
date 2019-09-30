@@ -112,7 +112,7 @@ To create the archives(``*.zip`` or ``*.tar.gz``) for installing Crafter CMS, th
 
         git clone https://github.com/craftercms/craftercms.git
 
-#. Build a deployable bundle using the Gradle Environment Builder to generate the archives ``crafter-cms-authoring.zip`` and ``crafter-cms-authoring.tar.gz`` inside the *bundle* folder
+#. Build a deployable bundle using the Gradle Environment Builder to generate the archives ``crafter-cms-authoring-3.0.X.zip`` and ``crafter-cms-authoring-3.0.X.tar.gz`` inside the *bundle* folder
 
     .. code-block:: bash
 
