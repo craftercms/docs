@@ -4,6 +4,10 @@
              :width: 50%
              :alt: Form Data Sources - Child Content
 
+.. |ctlEmbeddedContent| image:: /_static/images/form-sources/ds-embedded-content.png
+             :width: 68%
+             :alt: Form Data Sources - Embedded Content
+
 .. |ctlImgDt| image:: /_static/images/form-sources/ds-img-up-dt.png
              :width: 100%
              :alt: Form Data Sources - Image Uploaded From Desktop
@@ -116,6 +120,8 @@
 || Datasource                || Description                                                      |
 +============================+===================================================================+
 || |ctlChildContent|         || Details are in the :ref:`form-source-child-content` page.        |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlEmbeddedContent|      || Details are in the :ref:`form-source-embedded-content` page.     |
 +----------------------------+-------------------------------------------------------------------+
 || |ctlImgDt|                || Details are in the :ref:`form-source-image-desktop` page.        |
 +----------------------------+-------------------------------------------------------------------+
