@@ -5,27 +5,24 @@
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. index:: Data Sources; Child Content
+.. index:: Data Sources; Shared Content
 
-.. _form-source-child-content:
+.. _form-source-shared-content:
 
-======================================
-Child Content Data Source (Deprecated)
-======================================
+==========================
+Shared Content Data Source
+==========================
 
-.. image:: /_static/images/form-sources/form-source-child-content.png
+.. image:: /_static/images/form-sources/form-source-shared-content.png
     :width: 50%
     :alt: Form Control Input 1
     :align: center
-
-.. important::
-    This data source is deprecated and provided only as a reference. For components that need to be shared across pages or components, please use :ref:`Shared Content<form-source-shared-content>` instead. For components that belong exclusively to a content object, please use :ref:`Embedded Content<form-source-embedded-content>`.
 
 -------------
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-child-content-conf.png
+.. image:: /_static/images/form-sources/form-source-shared-content-conf.png
     :width: 50%
     :alt: Form Control Input 1
     :align: center

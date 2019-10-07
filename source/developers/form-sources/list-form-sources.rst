@@ -1,8 +1,12 @@
 .. _list-form-engine-data-sources:
 
 .. |ctlChildContent| image:: /_static/images/form-sources/ds-child-content.png
-             :width: 50%
+             :width: 93%
              :alt: Form Data Sources - Child Content
+
+.. |ctlSharedContent| image:: /_static/images/form-sources/ds-shared-content.png
+             :width: 60%
+             :alt: Form Data Sources - Shared Content
 
 .. |ctlEmbeddedContent| image:: /_static/images/form-sources/ds-embedded-content.png
              :width: 68%
@@ -119,9 +123,11 @@
 +----------------------------+-------------------------------------------------------------------+
 || Datasource                || Description                                                      |
 +============================+===================================================================+
-|| |ctlChildContent|         || Details are in the :ref:`form-source-child-content` page.        |
+|| |ctlSharedContent|        || Details are in the :ref:`form-source-shared-content` page.       |
 +----------------------------+-------------------------------------------------------------------+
 || |ctlEmbeddedContent|      || Details are in the :ref:`form-source-embedded-content` page.     |
++----------------------------+-------------------------------------------------------------------+
+|| |ctlChildContent|         || Details are in the :ref:`form-source-child-content` page.        |
 +----------------------------+-------------------------------------------------------------------+
 || |ctlImgDt|                || Details are in the :ref:`form-source-image-desktop` page.        |
 +----------------------------+-------------------------------------------------------------------+
