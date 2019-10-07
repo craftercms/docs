@@ -37,3 +37,19 @@ Sometimes you may want to disable access to remote repositories. To do this, in 
     </util:map>
 
 .. note:: Please take note that if you disable /remote-access in your authoring install, preview of remote assets will be broken.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+By-passing /remote-assets in Delivery for WebDAV
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To avoid proxying the WebDav ``/remote-assets`` in Delivery, the Delivery Deployer target should be configured to have a find and replace processor that changes the ``/remote-assets`` URL to an actual Apache static asset delivery URL.
+
+.. code-block:: yaml
+  :linenos:
+  :caption: {CRAFTER-DELIVERY-INSTALL}/data/deployer/targets/SITE-NAME-default.yaml
+
+  - processorName: findAndReplaceProcessor
+    textPattern: /remote-assets/webdav(/([^&quot;&lt;]+)
+    replacement: 'http://apache.static-asset.delivery.url$1'
+

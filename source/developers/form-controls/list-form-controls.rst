@@ -115,7 +115,7 @@
 ||                       ||                                                                      |
 ||                       || Details are in the :ref:`form-grouped-checkboxes` page.              |
 +------------------------+-----------------------------------------------------------------------+
-|| |ctlItemSel|          ||                                                                      |
+|| |ctlItemSel|          || Item selector from a Data Source                                     |
 ||                       ||                                                                      |
 ||                       || Details are in the :ref:`form-item-selector` page.                   |
 +------------------------+-----------------------------------------------------------------------+
