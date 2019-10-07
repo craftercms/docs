@@ -18,6 +18,37 @@ Studio support adds authoring tools to your template.  It's important to underst
 
 The previous template markup for Studio support still works however the new markup generates cleaner code and exposes new features.
 
+.. note::
+   If your ``cstudio-support.ftl`` uses ``siteContext.overlayCallback`` to check if Engine is running in preview mode, please update your file to use ``modePreview`` instead as ``siteContext.overlayCallback`` and related classes are being discontinued in Engine.
+
+     Search for ``siteContext.overlayCallback`` calls in your ``cstudio-support.ftl`` file:
+
+     .. code-block:: guess
+        :caption: cstudio-support.ftl
+        :emphasize-lines: 2
+
+        <#macro toolSupport>
+          <#if siteContext.overlayCallback??>
+            <script src="/studio/static-assets/libs/requirejs/require.js" data-main="/studio/overlayhook?site=NOTUSED&page=NOTUSED&cs.js"></script>
+            <script>document.domain = "${Request.serverName}"; </script>
+          </#if>
+
+     |
+
+     Replace with ``modePreview`` to check if Engine is running in preview mode:
+
+     .. code-block:: guess
+        :caption: cstudio-support.ftl
+        :emphasize-lines: 2
+
+        <#macro toolSupport>
+          <#if modePreview>
+            <script src="/studio/static-assets/libs/requirejs/require.js" data-main="/studio/overlayhook?site=NOTUSED&page=NOTUSED&cs.js"></script>
+            <script>document.domain = "${Request.serverName}"; </script>
+          </#if>
+
+     |
+
 --------------------------
 Enabling Authoring Support
 --------------------------
