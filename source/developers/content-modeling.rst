@@ -131,9 +131,12 @@ Properties of Content Types
 
 Let's select the content type itself, by clicking on the content type name at the top of the Form Builder and explore its properties.
 
-.. figure:: /_static/images/content-model/create-content-type-3.png
-	:alt: Properties Explorer
+.. image:: /_static/images/content-model/create-content-type-3.png
+    :width: 80%
+    :alt: Properties Explorer
 	:align: center
+
+|
 
 The fields available at this level are:
 
@@ -218,6 +221,8 @@ From the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Con
     :alt: Form Engine Properties Configuration
 	:align: center
 
+|
+
 To limit where this particular content type can be created, the tags, <paths><includes><pattern>some_regex_pattern</pattern></includes></paths> are included towards the bottom of the file.  Here, we can see that content type **Page - Article** can be created anywhere under */site/website/articles*
 
 .. figure:: /_static/images/content-model/form-engine-prop-config-file.png
@@ -266,11 +271,13 @@ Enabling cascade on delete is configured through the content type **Configuratio
     :linenos:
 
     <delete-dependencies>
-	    <delete-dependency>
-		    <pattern>REG_EXP_HERE</pattern>
-		    <remove-empty-folder>false</remove-empty-folder>
-	    </delete-dependency>
+      <delete-dependency>
+  	    <pattern>REG_EXP_HERE</pattern>
+  	    <remove-empty-folder>false</remove-empty-folder>
+      </delete-dependency>
     </delete-dependencies>
+
+|
 
 We'll look at an example of how to enable cascade on delete on the **Page - Article** content type in the Website_editorial blueprint.
 
@@ -282,10 +289,10 @@ We're going to enable cascade on delete for articles (**Page - Article** content
     :linenos:
 
     <delete-dependencies>
-	    <delete-dependency>
-		    <pattern>(^/static-assets/images/page/.*)</pattern>
-		    <remove-empty-folder>true</remove-empty-folder>
-	    </delete-dependency>
+      <delete-dependency>
+        <pattern>(^/static-assets/images/page/.*)</pattern>
+        <remove-empty-folder>true</remove-empty-folder>
+      </delete-dependency>
     </delete-dependencies>
 
 |
@@ -326,12 +333,12 @@ Enabling copy dependencies is configured through the content type **Configuratio
 .. code-block:: xml
     :linenos:
 
-        <copy-dependencies>
-            <copy-dependency>
-                <pattern>REG_EXP_HERE</pattern>
-                <target>FOLDER_FOR_COPIES</target>
-            </copy-dependency>
-        </copy-dependencies>
+    <copy-dependencies>
+      <copy-dependency>
+        <pattern>REG_EXP_HERE</pattern>
+        <target>FOLDER_FOR_COPIES</target>
+      </copy-dependency>
+    </copy-dependencies>
 
 |
 
@@ -344,12 +351,12 @@ We're going to enable copy dependencies for articles (**Page - Article** content
 .. code-block:: xml
     :linenos:
 
-        <copy-dependencies>
-            <copy-dependency>
-                <pattern>(^/static-assets/images/.*)</pattern>
-                <target>/static-assets/images/articles/</target>
-            </copy-dependency>
-        </copy-dependencies>
+    <copy-dependencies>
+      <copy-dependency>
+        <pattern>(^/static-assets/images/.*)</pattern>
+        <target>/static-assets/images/articles/</target>
+      </copy-dependency>
+    </copy-dependencies>
 
 |
 
@@ -615,13 +622,18 @@ Data Sources
 ^^^^^^^^^^^^
 .. index:: Data Sources
 
-.. figure:: /_static/images/content-model/form-engine-data-sources.png
-	:alt: Form Engine Data Sources
-	:align: center
+.. image:: /_static/images/content-model/form-engine-data-sources.png
+    :alt: Form Engine Data Sources
+    :width: 50%
+    :align: left
 
 Data Sources are pickers that help pull in content from internal or external storage/systems.  For example, data source include: desktop video uploader, desktop image uploader, and so on. Crafter CMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
 
 Data Sources allows the content model designer to decide where different assets uploaded via different controls go (for instance icons, images, RTE related assets, etc.).  It has it's own properties, like "Repository Path", which specifies the path where assets are stored, which help keep the system consistent over time.  The storage destination designed in the model dictates how those assets are handled during a duplicate event (duplicate the asset or duplicate the reference to the asset).
+
+There are a couple of data source that also dictates how components are handled during duplicate/copy events.  The :ref:`Shared Content<form-source-shared-content>` data source will duplicate/copy the reference to a component during a duplicate/copy event and is used for components that need to be shared across pages or components. For components that belong exclusively to a content object, use the :ref:`Embedded Content<form-source-embedded-content>` data source.
+
+Data sources are usually used in conjunction with a control in the content type, for example, the :ref:`form-item-selector` is used for selecting files to be uploaded when bound with the :ref:`form-source-file-desktop` data source.
 
 Form Engine Data Sources (please use the scrollbar to see more controls)
 
@@ -655,7 +667,9 @@ There are a number of macros available for the content model designer to use in 
 || {dd}               || Inserts the current day (2-digit day of the month)                            |
 +---------------------+--------------------------------------------------------------------------------+
 
-For an example of how the macros are used when modeling your content, the website_editorial blueprint uses some of the macros available in the content type Page -  Article.  The section :ref:`item-specific-dependencies` above details the use of some of the macros in the website_editorial blueprint, content type Page -  Article.
+For an example of how the macros are used when modeling your content, the website_editorial blueprint uses some of the macros available in the content type Page -  Article.
+
+The section :ref:`item-specific-dependencies` above details the use of some of the macros in the website_editorial blueprint, content type Page -  Article.
 
 ^^^^^^^^^^^
 Form Canvas
