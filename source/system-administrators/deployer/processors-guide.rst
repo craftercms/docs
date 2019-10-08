@@ -42,6 +42,17 @@ All deployment processors support the following properties:
 |                  |        |             |the current deployment                                                |
 +------------------+--------+-------------+----------------------------------------------------------------------+
 
+.. |lBranch| replace:: ``localRepoBranch``
+.. |URL| replace:: ``remoteRepo.url``
+.. |Name| replace:: ``remoteRepo.name``
+.. |Branch| replace:: ``remoteRepo.branch``
+.. |username| replace:: ``remoteRepo.username``
+.. |password| replace:: ``remoteRepo.password``
+
+.. |path| replace:: ``remoteRepo.ssh.privateKey.path``
+.. |passphrase| replace:: ``remoteRepo.ssh.privateKey.passphrase``
+
+
 ^^^^^^^^^^^^^^^^^^
 Git Pull Processor
 ^^^^^^^^^^^^^^^^^^
@@ -52,35 +63,27 @@ Processor that clones/pulls a remote Git repository into a local path in the fil
 
 **Properties**
 
-Prefix: ``remoteRepo``
-
 +------------+-----------+-------------------------------+------------------------------------------------------------+
 |Name        |Required   |Default Value                  |Description                                                 |
 +============+===========+===============================+============================================================+
-|``url``     ||checkmark||                               |The URL of the remote Git repo to pull                      |
+||URL|       ||checkmark||                               |The URL of the remote Git repo to pull                      |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-|``name``    |           |``origin``                     | The name to use for the remote repo when pulling from it   |
+||Name|      |           |``origin``                     |The name to use for the remote repo when pulling from it    |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-|``branch``  |           |The default branch in the repo |The branch of the remote Git repo to pull                   |
+||Branch|    |           |The default branch in the repo |The branch of the remote Git repo to pull                   |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-|``username``|           |                               |The username for authentication with the remote Git repo.   |
+||username|  |           |                               |The username for authentication with the remote Git repo.   |
 |            |           |                               |Not needed when SSH with RSA key pair authentication is used|
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-|``password``|           |                               |The password for authentication with the remote Git repo.   |
+||password|  |           |                               |The password for authentication with the remote Git repo.   |
 |            |           |                               |Not needed when SSH with RSA key pair authentication is used|
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-
-
-Prefix: ``remoteRepo.ssh.privateKey``
-
-+--------------+--------+-------------+-----------------------------------------------------------------------------+
-|Name          |Required|Default Value|Description                                                                  |
-+==============+========+=============+=============================================================================+
-|``path``      |        |             |The SSH private key path, used only with SSH with RSA key pair authentication|
-+--------------+--------+-------------+-----------------------------------------------------------------------------+
-|``passphrase``|        |             |The SSH private key passphrase, used only with SSH withRSA key pair          |
-|              |        |             |authentication                                                               |
-+--------------+--------+-------------+-----------------------------------------------------------------------------+
+||path|      |           |                               |The SSH private key path, used only with SSH with RSA key   |
+|            |           |                               |pair authentication                                         |
++------------+-----------+-------------------------------+------------------------------------------------------------+
+||passphrase||           |                               |The SSH private key passphrase, used only with SSH withRSA  |
+|            |           |                               |key pair authentication                                     |
++------------+-----------+-------------------------------+------------------------------------------------------------+
 
 **Example**
 
@@ -146,35 +149,27 @@ Processor that pushes a local repo to a remote Git repository.
 
 **Properties**
 
-Prefix: ``remoteRepo``
-
 +------------+-----------+-------------------------------+------------------------------------------------------------+
 |Name        |Required   |Default Value                  |Description                                                 |
 +============+===========+===============================+============================================================+
-|``url``     ||checkmark||                               |The URL of the remote Git repo to pull                      |
+||lBranch|   ||checkmark||                               |The branch of the local repo to push                        |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-|``name``    |           |``origin``                     | The name to use for the remote repo when pulling from it   |
+||URL|       ||checkmark||                               |The URL of the remote Git repo to push to                   |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-|``branch``  |           |The default branch in the repo |The branch of the remote Git repo to pull                   |
+||Branch|    |           |The default branch in the repo |The branch of the remote Git repo to push to                |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-|``username``|           |                               |The username for authentication with the remote Git repo.   |
+||username|  |           |                               |The username for authentication with the remote Git repo.   |
 |            |           |                               |Not needed when SSH with RSA key pair authentication is used|
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-|``password``|           |                               |The password for authentication with the remote Git repo.   |
+||password|  |           |                               |The password for authentication with the remote Git repo.   |
 |            |           |                               |Not needed when SSH with RSA key pair authentication is used|
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-
-
-Prefix: ``remoteRepo.ssh.privateKey``
-
-+--------------+--------+-------------+-----------------------------------------------------------------------------+
-|Name          |Required|Default Value|Description                                                                  |
-+==============+========+=============+=============================================================================+
-|``path``      |        |             |The SSH private key path, used only with SSH with RSA key pair authentication|
-+--------------+--------+-------------+-----------------------------------------------------------------------------+
-|``passphrase``|        |             |The SSH private key passphrase, used only with SSH withRSA key pair          |
-|              |        |             |authentication                                                               |
-+--------------+--------+-------------+-----------------------------------------------------------------------------+
+||path|      |           |                               |The SSH private key path, used only with SSH with RSA key   |
+|            |           |                               |pair authentication                                         |
++------------+-----------+-------------------------------+------------------------------------------------------------+
+||passphrase||           |                               |The SSH private key passphrase, used only with SSH withRSA  |
+|            |           |                               |key pair authentication                                     |
++------------+-----------+-------------------------------+------------------------------------------------------------+
 
 **Example**
 
@@ -366,6 +361,8 @@ Processor that stops the pipeline execution for a given number of seconds.
 
   - processorName: delayProcessor
     seconds: 10
+
+.. _deployer-target-find-replace-processor:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Find And Replace Processor
