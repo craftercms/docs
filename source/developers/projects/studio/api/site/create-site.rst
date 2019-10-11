@@ -71,7 +71,7 @@ Parameters
 ||                     ||           ||               || should include all required parameters from the descriptor  |
 +----------------------+------------+----------------+--------------------------------------------------------------+
 || create_as_orphan    || Boolean   ||               || Create the site from a remote repository as orphan          |
-||                     ||           ||               || (no git history)                                            |
+||                     ||           ||               || (no git history) - default is false                         |
 +----------------------+------------+----------------+--------------------------------------------------------------+
 
 .. note::
