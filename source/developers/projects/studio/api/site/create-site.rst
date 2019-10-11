@@ -70,6 +70,9 @@ Parameters
 || site_params         || Object    ||               || Object containing all parameters for the blueprint. It      |
 ||                     ||           ||               || should include all required parameters from the descriptor  |
 +----------------------+------------+----------------+--------------------------------------------------------------+
+|| create_as_orphan    || Boolean   ||               || Create the site from a remote repository as orphan          |
+||                     ||           ||               || (no git history)                                            |
++----------------------+------------+----------------+--------------------------------------------------------------+
 
 .. note::
     ``*`` Required parameters:
