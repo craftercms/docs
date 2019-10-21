@@ -10,6 +10,8 @@ In-Context Editing
 
 .. Highlighting language used is "guess" (let Pygments guess the lexer based on contents, only works with certain well-recognizable languages) since there's no Pygment lexer for freemarker
 
+.. |SiteItem| replace:: :javadoc_base_url:`SiteItem <engine/org/craftercms/engine/model/SiteItem.html>`
+
 --------------
 Studio Support
 --------------
@@ -55,19 +57,19 @@ Enabling Authoring Support
 
 At the top of your page or component (whatever it is you are rendering, include the following) import:
 
-.. code-block:: guess
+    .. code-block:: guess
 
-	<#import "/templates/system/common/cstudio-support.ftl" as studio/>
+	    <#import "/templates/system/common/cstudio-support.ftl" as studio/>
 
 |
 
 At the bottom of your template insert the following: (Note the example shows a traditional HTML page however other formats/levels of granularity are supported
 
-.. code-block:: guess
+    .. code-block:: guess
 
-			<@studio.toolSupport/>
-		</body>
-	</html>
+	        <@studio.toolSupport/>
+	      </body>
+	    </html>
 
 |
 
@@ -86,9 +88,17 @@ In context editing renders pencils on the screen that invoke editing controls wh
 
 To enable in-context editing simply add the following attribute to the container/element where you want to place the editing control
 
-.. code-block:: guess
+    .. code-block:: guess
 
-	<@studio.iceAttr iceGroup="author"/>
+	    <@studio.iceAttr iceGroup="author"/>
+
+|
+
+For embedded components, to enable in-context editing simply add the following attribute and tag attribute to the embedded component template
+
+    .. code-block:: guess
+
+	    <@studio.iceAttr component=contentModel/>
 
 |
 
@@ -108,15 +118,46 @@ Tag Attributes
 ||               ||                                   || will assume the outermost object e.g.    |
 ||               ||                                   || the page as the path.                    |
 +----------------+------------------------------------+-------------------------------------------+
-|| label         || No (but it's a best practice)     || UI will use lavel if it exists. Otherwise|
+|| label         || No (but it's a best practice)     || UI will use label if it exists. Otherwise|
 ||               ||                                   || the iceGroup or path will be used.       |
++----------------+------------------------------------+-------------------------------------------+
+|| component     || No                                || a |SiteItem| object                      |
 +----------------+------------------------------------+-------------------------------------------+
 
 Example: 
 
-.. code-block:: guess
+    .. code-block:: guess
 
-	<img <@studio.iceAttr iceGroup="image" label="Promo Image 1" /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}"/>``
+	    <img <@studio.iceAttr iceGroup="image" label="Promo Image 1" /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}"/>``
+
+    |
+
+Here's an example of enabling in-context editing pencils for embedded components, using the Website Editorial bp, ``feature`` embedded component
+
+Here's how the features section pencils look like before adding the ``iceAttr`` with the ``component`` tag:
+
+.. image:: /_static/images/developer/ice-embedded-component-example.png
+    :align: center
+    :width: 70 %
+    :alt: In context editing embedded content not enabled example
+
+|
+
+To enable the in-context editing pencils of the features component, add the attribute ``iceAttr`` with the attribute tag ``component`` like below:
+
+    .. code-block:: guess
+        :caption: /templates/web/components/feature.ftl
+
+        <article <@studio.iceAttr component=contentModel/> <@studio.componentAttr path=contentModel.storeUrl />>
+
+    |
+
+Here's how the features section pencils look like after enabling the in-context editing pencils for embedded components:
+
+.. image:: /_static/images/developer/ice-embedded-component-example2.png
+    :align: center
+    :width: 70 %
+    :alt: In context editing embedded content enabled example
 
 |
 
@@ -132,9 +173,9 @@ Drag and drop makes it easy for authors to visually assemble pages.  Authors sim
 
 To define a drop zone for components simply add the following attribute to the container element where you want your components to render
 
-.. code-block:: guess
+    .. code-block:: guess
 
-	<@studio.componentContainerAttr target="bottomPromos" objectId=contentModel.objectId />
+	    <@studio.componentContainerAttr target="bottomPromos" objectId=contentModel.objectId />
 
 |
 
@@ -156,11 +197,11 @@ Tag Attributes
 
 Example:
 
-.. code-block:: guess
+    .. code-block:: guess
 
-	<div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" objectId=contentModel.objectId /> >
-		...
-	<div>
+	    <div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" objectId=contentModel.objectId /> >
+		    ...
+	    <div>
 
 |
 
@@ -171,28 +212,28 @@ Rendering components from the target inside the container
 
 The template needs to render the components that are referenced. The basic code to do this looks like:
 
-.. code-block:: guess
+    .. code-block:: guess
 
-	<#if contentModel.bottomPromos?? && contentModel.bottomPromos.item??>
-		<#list contentModel.bottomPromos1.item as module>
-			<@renderComponent component=module />
-		</#list>
-	</#if>
+	    <#if contentModel.bottomPromos?? && contentModel.bottomPromos.item??>
+		  <#list contentModel.bottomPromos1.item as module>
+		    <@renderComponent component=module />
+		  </#list>
+	    </#if>
 
 |
 
 Note that the code is simply iterating over the collection of objects and calling render component.  NO markup is being inserted in this example.  The component template is rendering itself.  It's up to you if you want to insert markup around sub-components.
 Full example of typical component drop zone
 
-.. code-block:: guess
+    .. code-block:: guess
 
-	<div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" /> >
-		<#if contentModel.bottomPromos?? && contentModel.bottomPromos.item??>
-			<#list contentModel.bottomPromos.item as module>
-				<@renderComponent component=module />
-			</#list>
-		</#if>
-	</div>
+	    <div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" /> >
+		  <#if contentModel.bottomPromos?? && contentModel.bottomPromos.item??>
+		    <#list contentModel.bottomPromos.item as module>
+		      <@renderComponent component=module />
+		    </#list>
+		  </#if>
+	    </div>
 
 |
 
@@ -201,9 +242,9 @@ Identifying components in the template
 
 In order for authors to interact with components, to drag them around the screen for example the templating system must know how to identify them.  To identify a component simply add the following attribute to the outer most element in the component template's markup
 
-.. code-block:: guess
+    .. code-block:: guess
 
-	<@studio.componentAttr path=contentModel.storeUrl />
+	    <@studio.componentAttr path=contentModel.storeUrl />
 
 |
 
@@ -228,9 +269,9 @@ Tag Attributes
 
 Example
 
-.. code-block:: guess
+    .. code-block:: guess
 
-	<img <@studio.componentAttr path=contentModel.storeUrl ice=true /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}" />
+	    <img <@studio.componentAttr path=contentModel.storeUrl ice=true /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}" />
 
 |
 
@@ -242,9 +283,9 @@ Engine Support
 
 At the top of your page or component (whatever it is you are rendering, include the following) import:
 
-.. code-block:: guess
+    .. code-block:: guess
 
-	<#import "/templates/system/common/crafter-support.ftl" as crafter/>
+	    <#import "/templates/system/common/crafter-support.ftl" as crafter/>
 
 |
 
@@ -256,9 +297,9 @@ Render Component
 
 Need to render a sub component of some kind? 
 
-.. code-block:: guess
+    .. code-block:: guess
 
-	<@renderComponent component=module />
+	    <@renderComponent component=module />
 
 |
 
@@ -268,9 +309,9 @@ Render Components
 Need to iterate through a list of components and render them WITHOUT any additional markup?
 
 
-.. code-block:: guess
+    .. code-block:: guess
 
-	<@crafter.renderComponents componentList=contentModel.bottomPromos />
+	    <@crafter.renderComponents componentList=contentModel.bottomPromos />
 
 |
 
@@ -279,8 +320,8 @@ Render RTE (Rich Text Editor Components)
 
 Have components that are inserted in to the rich text editor and need to render them?
 
-.. code-block:: guess
+    .. code-block:: guess
 
-	<@crafter.renderRTEComponents />
+	    <@crafter.renderRTEComponents />
 
 |
