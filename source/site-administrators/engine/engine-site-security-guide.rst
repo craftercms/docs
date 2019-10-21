@@ -162,6 +162,9 @@ the next steps to create in the page content type a Repeating Group with a text 
     .. image:: /_static/images/site-admin/authorized_roles_properties.png
         :alt: Engine Site Security Guide - Authorized Roles Properties
 
+    .. warning::
+        The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by Crafter CMS.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
+
 #.  Add an Input control inside the Repeating Group, with the **Title** field set to "Role" and the **Name / Variable
     Name** field set to "role". Make this Input required by checking the checkbox under **Constraints** in the 
     **Required** field in the **Properties Explorer**.
@@ -169,10 +172,16 @@ the next steps to create in the page content type a Repeating Group with a text 
     .. image:: /_static/images/site-admin/role_properties.png
         :alt: Engine Site Security Guide - Role Properties
 
+    .. warning::
+        The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as the ``role`` variable name is used by Crafter CMS for enforcing access to a page.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
+
+
 #.  Save the changes. The added fields should look like this:
 
     .. image:: /_static/images/site-admin/authorization_section.png
         :alt: Engine Site Security Guide - Authorization Section
+
+    |
 
 With these changes, now you or any other content author can go to any page of this content type and add the roles that
 are required to access the page. Two special roles which indicate authentication state can be used besides the roles
@@ -182,7 +191,7 @@ by Crafter Engine is described below:
 #.  If the page doesn't contain any role, no authentication is needed.
 #.  If the page has the role ``Anonymous``, no authentication is needed.
 #.  If the page has the role ``Authenticated``, just authentication is needed.
-#.  If the page has any other the roles, the user needs to be authenticated and have any of those roles.
+#.  If the page has any other roles, the user needs to be authenticated and have any of those roles.
 
 Restrict URLs
 =============

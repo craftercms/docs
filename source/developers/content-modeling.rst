@@ -543,39 +543,53 @@ Every Form Control has a Variable Name property.  The Variable Name is used by t
 #. Use regex constraints on input boxes to enforce additional validation rules
 #. Do not use Reserved names.
 
+.. _reserved-variable-names:
+
 **Reserved Variable Names**
 
 The following variable names are used by Crafter CMS.
 
-+-------------------+----------------------------------------------------------+
-|| Variable Name    || Description                                             |
-+===================+==========================================================+
-|| file-name        || Used by the File Name and Auto File Name control.       |
-+-------------------+----------------------------------------------------------+
-|| internal-name    || Used by Crafter Studio to label the content object      |
-+-------------------+----------------------------------------------------------+
-|| placeInNav       || Used by the Page Order control.                         |
-+-------------------+----------------------------------------------------------+
-|| disabled         || Used to logically remove an object in content delivery. |
-+-------------------+----------------------------------------------------------+
-|| expired          || Used to logically remove an object after date           |
-+-------------------+----------------------------------------------------------+
-|| objectId         || UUID. Auto assigned by Crafter                          |
-+-------------------+----------------------------------------------------------+
-|| objectGroupId    || First part of objectId. Auto assigned by Crafter        |
-+-------------------+----------------------------------------------------------+
-|| createdDate      || create date. Auto assigned by Crafter                   |
-+-------------------+----------------------------------------------------------+
-|| lastModifiedDate || Last modified date. Auto assigned by Crafter            |
-+-------------------+----------------------------------------------------------+
-|| content-type     || Content type name                                       |
-+-------------------+----------------------------------------------------------+
-|| display-template || Path to default template for type                       |
-+-------------------+----------------------------------------------------------+
-|| merge-strategy   || Crafter Core/Engine "Merge Strategy" for content type   |
-+-------------------+----------------------------------------------------------+	 
-|| id               || reserved by Solr                                        |
-+-------------------+----------------------------------------------------------+
++-------------------+------------------------------------------------------------+
+|| Variable Name    || Description                                               |
++===================+============================================================+
+|| file-name        || Used by the File Name and Auto File Name control.         |
++-------------------+------------------------------------------------------------+
+|| internal-name    || Used by Crafter Studio to label the content object        |
++-------------------+------------------------------------------------------------+
+|| placeInNav       || Used by the Page Order control.                           |
++-------------------+------------------------------------------------------------+
+|| disabled         || Used to logically remove an object in content delivery.   |
++-------------------+------------------------------------------------------------+
+|| expired          || Used to logically remove an object after date             |
++-------------------+------------------------------------------------------------+
+|| objectId         || UUID. Auto assigned by Crafter                            |
++-------------------+------------------------------------------------------------+
+|| objectGroupId    || First part of objectId. Auto assigned by Crafter          |
++-------------------+------------------------------------------------------------+
+|| createdDate      || create date. Auto assigned by Crafter                     |
++-------------------+------------------------------------------------------------+
+|| lastModifiedDate || Last modified date. Auto assigned by Crafter              |
++-------------------+------------------------------------------------------------+
+|| content-type     || Content type name                                         |
++-------------------+------------------------------------------------------------+
+|| display-template || Path to default template for type                         |
++-------------------+------------------------------------------------------------+
+|| merge-strategy   || Crafter Core/Engine "Merge Strategy" for content type     |
++-------------------+------------------------------------------------------------+
+|| id               || reserved by Solr                                          |
++-------------------+------------------------------------------------------------+
+|| authorizedRoles  || Used to restrict pages based on roles                     |
++-------------------+------------------------------------------------------------+
+|| role             || Contains the role required to access a page               |
++-------------------+------------------------------------------------------------+
+|| mime-type        || Mime-type name                                            |
++-------------------+------------------------------------------------------------+
+|| force-https      || HTTPS connection needs to be forced to access the page    |
++-------------------+------------------------------------------------------------+
+|| navLabel         || Navigation label                                          |
++-------------------+------------------------------------------------------------+
+|| redirect-url     || Redirect URL                                              |
++-------------------+------------------------------------------------------------+
 
 .. _variable-names-search-indexing:
 
@@ -614,6 +628,11 @@ To facilitate indexing, the following suffix should be appended to variable name
 || text with || _html  ||            ||                                                   |
 || html tags ||        ||            ||                                                   |
 +------------+---------+-------------+----------------------------------------------------+
+
+Model fields require their respective data type postfix as listed above.  The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.
+
+When setting up reserved variable names for your model, remember to remove the postfix auto-added by the UI since the variable name needs to be exactly the same as listed :ref:`above<reserved-variable-names>`.
+
 
 .. _data-sources:
 
