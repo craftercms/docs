@@ -67,9 +67,9 @@ Content Modeling
 
 A powerful and extensible blueprint that can be used in a variety of pages and scenarios needs proper :ref:`content-modeling`, so you have to be familiar with it before proceeding.
 
-A good blueprint separates each meaningful chunk of HTML code into a component. For example, whether you implement an "Our Team" section using a repeating group or multiple "Teammate" child components, it still has to be a separate type that only contains information related to "Our Team". Whether it is a Component or a Page, it shouldn't contain "Product" information. Once you have identified HTML chunks with a meaning, start by moving them into their type's ``template.ftl``. Next, replace any information with a variable from the ``contentModel`` (and add the respective control to the Content Type). Unless they are extremely simple, most pages will contain child components, even if they are just a ``header`` and ``footer`` component provided by the Section Defaults.
+A good blueprint separates each meaningful chunk of HTML code into a component. For example, whether you implement an "Our Team" section using a repeating group or multiple "Teammate" shared components, it still has to be a separate type that only contains information related to "Our Team". Whether it is a Component or a Page, it shouldn't contain "Product" information. Once you have identified HTML chunks with a meaning, start by moving them into their type's ``template.ftl``. Next, replace any information with a variable from the ``contentModel`` (and add the respective control to the Content Type). Unless they are extremely simple, most pages will contain shared components, even if they are just a ``header`` and ``footer`` component provided by the Section Defaults.
 
-There are some best practices to help you:
+Here are some best practices to help you:
 
     * Prefix all your Content Type's display label with either "Component - " or "Page - " as appropriate.
     * Make use of **Section Defaults**. Most sites will have a site logo that will be used all throughout the site, this is a perfect use case for Section Defaults.
@@ -78,7 +78,7 @@ There are some best practices to help you:
        * You can apply this similarly for headers, footers, log in floating forms, and many more.
     * Use drag and drop but keep it to a minimum. At the moment, you can't limit what kind of components can be dropped into a container, so this enormous amount of flexibility can make for a confusing user experience. Picture having a page with a group of sections, that each contains headers. If both sections and headers are drag and droppable, an user could accidentally drop a section inside another section without noticing instead of just reordering. It could be more comfortable that only sections are drag and droppable.
     * You can use label controls to add additional information to the content type's form. This is useful to add tips or additional information for advanced controls.
-    * Prefer repeating groups over child components. Child components are ultimately more versatile, but if you are only going to repeat text, and that text is not going to appear outside the repeating group again, it's a better user experience to just use a repeating group.
+    * Prefer repeating groups over shared/embedded components. Shared/embedded components are ultimately more versatile, but if you are only going to repeat text, and that text is not going to appear outside the repeating group again, it's a better user experience to just use a repeating group.
 
        * Bear in mind that you can't have nested repeating groups, so only the innermost repetition can be a repeating group.
     * You can set up folders for specific content types, and you can enforce them by using ``<paths>`` in your types' config.xml. Use ``includes`` whenever you want to *whitelist* some paths, and use ``excludes`` to *blacklist* some paths, but do not mix them.  For more examples, see :ref:`content-creation-permissions-section`
@@ -219,6 +219,95 @@ where the following fields are required:
 - ``plugin.crafterCmsVersions`` - Crafter CMS versions that the blueprint applies to (look in the :ref:`release-notes` section for the versions available)
 - ``plugin.searchEngine`` - search engine that will be used when a site is created from the blueprint (possible values are, ``CrafterSearch`` and ``Elasticsearch``)
 
+.. _passing-parameters-to-bp:
+
+Passing Parameters to Blueprints
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Some parameters may need to be passed to the blueprint instead of left in the blueprint, say, AWS credentials, Box credentials, CommerceTools credentials, etc.  Crafter CMS supports passing parameters to blueprints during creation.
+
+To add parameters to be passed to blueprints, simply add the following to the ``craftercms-plugin.yaml`` file
+
+.. code-block:: yaml
+
+   parameters:
+    - label: My Parameter Label
+      name: myParam
+      type: string
+      description: My parameter
+      required: true
+
+|
+
+where:
+
+- ``label``: Label to display for parameter on Create Site dialog
+- ``name``: Name of the parameter
+- ``type``: Type of the parameter, possible values are ``string`` and ``PASSWORD``.  The default is ``string``
+- ``description``: Description of the parameter
+- ``required``: Indicates whether the parameter is required.  The default is ``true``
+
+
+Let's take a look at an example of adding parameters to the **Website Editorial** blueprint.
+
+#. The first thing we need to do is to add the parameters to the ``craftercms-plugin.yaml`` file of the Website Editorial blueprint.  Open the ``craftercms-plugin.yaml`` which is under the ``{CRAFTER_HOME}/data/repos/global/blueprints/1000_website_editorial`` folder and add the following lines to the end of the file:
+
+   .. code-block:: yaml
+      :linenos:
+      :caption: *{CRAFTER_HOME}/data/repos/global/blueprints/1000_website_editorial/craftercms-plugin.yaml*
+      :emphasize-lines: 13-17
+
+      # This file describes a plugin for use in Crafter CMS
+
+      # The version of the format for this file
+      descriptorVersion: 2
+
+      # Describe the blueprint
+      plugin:
+        type: blueprint
+        id: org.craftercms.blueprint.editorial
+        name: Website Editorial Blueprint
+      ...
+      searchEngine: Elasticsearch
+      parameters:
+        - label: My Param 1
+          name: myParam1
+          description: My parameter 1
+          required: true
+
+   |
+
+#. Commit your changes
+
+   .. code-block:: guess
+
+      ➜  craftercms git:(develop) cd crafter-authoring/data/repos/global/blueprints/1000_website_editorial
+      ➜  1000_website_editorial git:(master) ✗ vi craftercms-plugin.yaml
+      ➜  1000_website_editorial git:(master) ✗ git status
+      On branch master
+      Changes not staged for commit:
+        (use "git add <file>..." to update what will be committed)
+        (use "git checkout -- <file>..." to discard changes in working directory)
+
+	       modified:   craftercms-plugin.yaml
+
+      no changes added to commit (use "git add" and/or "git commit -a")
+      ➜  1000_website_editorial git:(master) ✗ git add .
+      ➜  1000_website_editorial git:(master) ✗ git commit -m "Add param"
+      [master 7b8f271] Add param
+      1 file changed, 6 insertions(+)
+
+   |
+
+#. Refresh your browser.  We will now try creating a site using the **Website Editorial** blueprint to see the parameter we added to the blueprint earlier.
+
+   Click on the ``Main Menu`` ➜ ``Sites`` ➜ ``Create Site`` button, then finally select the ``Website Editorial`` blueprint.  You will then be presented with the ``Create Site`` dialog.  Notice that the parameter we added to the ``craftercms-plugin.yaml`` file is near the bottom of dialog.  The value entered there will now be available to the site being created.
+
+   .. image:: /_static/images/blueprint/blueprint-param-added.png
+      :width: 80%
+      :alt: Parameter added in Create Site
+      :align: center
+
+   |
 
 -------------------------------------
 Editing as a Site vs Editing directly
