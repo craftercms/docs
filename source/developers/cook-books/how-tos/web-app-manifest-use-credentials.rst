@@ -6,7 +6,7 @@
 Web Manifest Usage in Crafter CMS
 =================================
 
-Some web apps uses a ``web app manifest``, a file that describes the web application.
+Some web apps use a ``web app manifest``, a file that describes the web application.
 
 From `Google <https://developers.google.com/web/fundamentals/web-app-manifest>`_:
 
