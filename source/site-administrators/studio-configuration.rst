@@ -37,6 +37,7 @@ Here are the settings that can be configured through Crafter Studio:
    studio/aws-profiles-configuration
    studio/box-profiles-configuration
    studio/cmis-configuration
+   studio/code-editor-configuration
    studio/configure-notifications
    studio/content-monitoring
    studio/contextual-navigation-config
