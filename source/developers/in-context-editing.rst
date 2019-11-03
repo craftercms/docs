@@ -237,6 +237,40 @@ Full example of typical component drop zone
 
 |
 
+If the component to be rendered is an embedded component, the tag ``parent`` with a |SiteItem| object for the value needs to be added to ``renderComponent`` like below:
+
+    .. code-block:: guess
+
+       <@renderComponent component=module parent=contentModel/>
+
+    |
+
+Let's take a look at an example using a site created using the Website Editorial blueprint.  In the Home page of the site, the features section contains embedded components ``feature``.  To render the embedded components from the target inside the container, the tag ``parent=contentModel`` is added:
+
+.. code-block:: guess
+   :linenos:
+   :emphasize-lines: 9
+   :caption: */templates/web/pages/home.ftl*
+
+   <!-- Section -->
+     <section <@studio.iceAttr iceGroup="features"/>>
+       <header class="major">
+         <h2>${contentModel.features_title_t}</h2>
+       </header>
+       <div class="features" <@studio.componentContainerAttr target="features_o" objectId=contentModel.objectId/>>
+         <#if contentModel.features_o?? && contentModel.features_o.item??>
+           <#list contentModel.features_o.item as feature>
+             <@renderComponent parent=contentModel component=feature />
+           </#list>
+         </#if>
+       </div>
+     </section>
+
+|
+
+As noted above, the code is simply iterating over the collection of objects (``feature`` component) and calling render component.  The component template is rendering itself.
+
+
 Identifying components in the template
 --------------------------------------
 
