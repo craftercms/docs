@@ -33,6 +33,7 @@ Configuration
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
+
 +------------------------+-----------------------------------------------------------------------+
 || Description/Purpose   || Image selector from a Data Source.                                   |
 +------------------------+-----------------------------------------------------------------------+
@@ -44,6 +45,21 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || * Read Only: Make field read-only (can't be changed by the author).  |
 +------------------------+-----------------------------------------------------------------------+
-|| Related Data Sources  || * Image Uploaded from Desktop.                                       |
-||                       || * Image from Repository                                              |
+|| Related Data Sources  || * |imgUploadFromDesktop|                                             |
+||                       || * |imgFromRepo|                                                      |
+||                       || * |imgFromCMIS|                                                      |
+||                       || * |imgUploadToCMIS|                                                  |
+||                       || * |imgFromWebDAV|                                                    |
+||                       || * |imgUploadToWebDAV|                                                |
+||                       || * |imgFromS3|                                                        |
+||                       || * |imgUploadToS3|                                                    |
 +------------------------+-----------------------------------------------------------------------+
+
+.. |imgUploadFromDesktop| replace:: :ref:`Image Uploaded from Desktop <form-source-image-desktop>`
+.. |imgFromRepo| replace:: :ref:`Image from Repository <form-source-image-repo>`
+.. |imgFromCMIS| replace:: :ref:`Image from CMIS Repository <form-source-cmis-image-repo>`
+.. |imgUploadToCMIS| replace:: :ref:`Image Uploaded to CMIS Repository <form-source-cmis-image-upload>`
+.. |imgFromWebDAV| replace:: :ref:`Image from WebDAV Repository <form-source-webdav-image-repo>`
+.. |imgUploadToWebDAV| replace:: :ref:`Image Uploaded to WebDAV Repository <form-source-webdav-image-upload>`
+.. |imgFromS3| replace:: :ref:`Image From S3 Repository <form-source-s3-image-repo>`
+.. |imgUploadToS3| replace:: :ref:`Image Uploaded to S3 Repository <form-source-s3-image-upload>`
