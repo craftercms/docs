@@ -39,5 +39,21 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || * Required: Make field required to fill out.                         |
 +------------------------+-----------------------------------------------------------------------+
-|| Related Data Sources  || * Video upload from desktop.                                         |
+|| Related Data Sources  || * |vidUploadFromDesktop|                                             |
+||                       || * |vidFromRepo|                                                      |
+||                       || * |vidFromCMIS|                                                      |
+||                       || * |vidUploadToCMIS|                                                  |
+||                       || * |vidFromWebDAV|                                                    |
+||                       || * |vidUploadToWebDAV|                                                |
+||                       || * |vidFromS3|                                                        |
+||                       || * |vidUploadToS3|                                                    |
 +------------------------+-----------------------------------------------------------------------+
+
+.. |vidUploadFromDesktop| replace:: :ref:`Video Uploaded From Desktop <form-source-video-desktop>`
+.. |vidFromRepo| replace:: :ref:`Video from Repository <form-source-video-repo>`
+.. |vidFromCMIS| replace:: :ref:`Video from CMIS Repository <form-source-cmis-video-repo>`
+.. |vidUploadToCMIS| replace:: :ref:`Video Uploaded to CMIS Repository <form-source-cmis-video-upload>`
+.. |vidFromWebDAV| replace:: :ref:`Video from WebDAV Repository <form-source-webdav-video-repo>`
+.. |vidUploadToWebDAV| replace:: :ref:`Video Uploaded to WebDAV Repository <form-source-webdav-video-upload>`
+.. |vidFromS3| replace:: :ref:`Video From S3 Repository <form-source-s3-video-repo>`
+.. |vidUploadToS3| replace:: :ref:`Video Uploaded to S3 Repository <form-source-s3-video-upload>`
