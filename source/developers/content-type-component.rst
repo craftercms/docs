@@ -28,14 +28,14 @@ The dialog that opens after clicking on the **Create** button is the form that i
 
 Let's take a look at the model for the articles-widget component content type.  The default dialog after clicking on the **Create** button  contains only the **Component ID** and **Internal Name** field.  From the image below, we have two input controls added, one for the **Title** and one for **Max Articles**, a check box for **Disable Component** and an item selector for **Controllers**.
 
-.. figure:: /_static/images/templates/templates-comp-articles-widget-model.jpg
+.. figure:: /_static/images/templates/templates-comp-articles-widget-model.png
     :alt: Template Articles Widget Component Content Type Model
     :width: 95 %
     :align: center
 
 |
 
-In the Data Sources section of the form, we see a child content for **Scripts**, with the Repository Path property set to ``/scripts/components``
+In the Data Sources section of the form, we see a shared content for **Scripts**, with the Repository Path property set to ``/scripts/components``
 
 .. figure:: /_static/images/templates/templates-comp-articles-widget-ds.png
     :alt: Template Articles Widget Component Content Type Model Data Source
@@ -46,8 +46,8 @@ In the Data Sources section of the form, we see a child content for **Scripts**,
 
 We'll take a look at the property **Controllers** and notice that the data source **Scripts** is bound to the item selector **Controllers** by a check mark to *Scripts* for the *Item Manager* under the *Properties Explorer* of the *Controller* item selector control
 
-.. figure:: /_static/images/templates/templates-comp-bind-ctrl-src.jpg
-    :alt: Template Component Bind the Child Content Data Source to the Item Selector Control
+.. figure:: /_static/images/templates/templates-comp-bind-ctrl-src.png
+    :alt: Template Component Bind the Shared Content Data Source to the Item Selector Control
     :width: 95 %
     :align: center
 
@@ -80,7 +80,7 @@ You'll then be shown a dialog where you can give the view template a name, then 
 
 Here we'll take a look at the view template for the component content type named **articles-widget.ftl**
 
-.. figure:: /_static/images/templates/templates-comp-view-template.jpg
+.. figure:: /_static/images/templates/templates-comp-view-template.png
     :alt: Template Component Controller
     :width: 70 %
     :align: center
@@ -90,7 +90,7 @@ Here we'll take a look at the view template for the component content type named
 
 Let's take a look on how to bind the view template to the model described earlier by clicking on the **Display Template** under the *Properties Explorer* in your model.
 
-.. figure:: /_static/images/templates/templates-comp-bind-view-model.jpg
+.. figure:: /_static/images/templates/templates-comp-bind-view-model.png
     :alt: Template Component Bind View to Template
     :width: 95 %
     :align: center
@@ -116,7 +116,7 @@ Controller
 
 We will look at a controller that allows us to display the latest article entries in the sidebar of our site.
 
-There are two ways to bind a script/controller to a page/component.  The first way, as we have seen in the previous section :ref:`content-type-page` is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type.  We'll show the other way how to bind a script to a page/component in this section, by adding an item selector to the model with a corresponding data source **Child Content** named ``scripts``.  When we were looking at the model for our content type template (articles-widget), you may have noticed that there is an item selector named **Controllers** with a corresponding data source child content named **Scripts**, we are now going to look at a script that can be used by the item selector of our content type.
+There are two ways to bind a script/controller to a page/component.  The first way, as we have seen in the previous section :ref:`content-type-page` is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type.  We'll show the other way how to bind a script to a page/component in this section, by adding an item selector to the model with a corresponding data source **Shared Content** named ``scripts``.  When we were looking at the model for our content type template (articles-widget), you may have noticed that there is an item selector named **Controllers** with a corresponding data source shared content named **Scripts**, we are now going to look at a script that can be used by the item selector of our content type.
 
 To create a new controller, open the **Sidebar** menu and navigate to the **Scripts** folder.  Click on the **Scripts** folder then **scripts**.  Right click on the folder **components**, then select **Create Controller**
 
@@ -148,14 +148,14 @@ A dialog will then open where you can start entering your script.  Let's take a 
 .. code-block:: guess
     :linenos:
 
-        import org.craftercms.sites.editorial.SearchHelper
-        import org.craftercms.sites.editorial.ProfileUtils
+    import org.craftercms.sites.editorial.SearchHelper
+    import org.craftercms.sites.editorial.ProfileUtils
 
-        def segment = ProfileUtils.getSegment(profile, siteItemService)
-        def searchHelper = new SearchHelper(searchService, urlTransformationService)
-        def articles = searchHelper.searchArticles(false, null, segment, 0, 2)
+    def segment = ProfileUtils.getSegment(profile, siteItemService)
+    def searchHelper = new SearchHelper(searchService, urlTransformationService)
+    def articles = searchHelper.searchArticles(false, null, segment, 0, 2)
 
-        templateModel.articles = articles
+    templateModel.articles = articles
 
 |
 

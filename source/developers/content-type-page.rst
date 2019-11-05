@@ -72,7 +72,7 @@ We're now going to add a data source for our image picker, by dragging the **Ima
 
 |
 
-We'll also add the data source **Image from repository** by dragging it to the **Data Sources** section in the form.  Don't forget to add the path where to browse existing images from the repository
+We'll also add the data source **Image From Repository** by dragging it to the **Data Sources** section in the form.  Don't forget to add the path where to browse existing images from the repository
 
 .. figure:: /_static/images/templates/templates-image-existing-src.png
 	:alt: Template Add Existing Image Source
@@ -96,29 +96,38 @@ We'll be adding a header component and a left-rail component inherited from the 
 
 |
 
-We'll need to add a data source for the two *Item Selectors* we just added to the form by dragging **Child Content** to the *Data Sources* section to the form and naming it **Components**. Don't forget to add the path where to store new content created under the **Repository Path** field in the Properties Explorer.
+We'll need to add a data source for the two *Item Selectors* we just added to the form by dragging **Shared Content** to the *Data Sources* section to the form and naming it **Components**. Don't forget to add the path where to store new content created under the **Repository Path** field in the Properties Explorer.
 
-.. figure:: /_static/images/templates/templates-add-item-selector-src.jpg
+.. figure:: /_static/images/templates/templates-add-item-selector-src.png
 	:alt: Template Add Item Selector Source
 	:align: center
 
+|
+
+
 We're going back to the Item Selectors we added to the form and check  **Components** as data source for our control
 
-.. figure:: /_static/images/templates/templates-add-item-sel-src.jpg
+.. figure:: /_static/images/templates/templates-add-item-sel-src.png
 	:alt: Template Check Item Selector Source
 	:align: center
 
+|
+
 Next we'll add a **Repeating Group** control to the form,  with a minimum of 1 occurrence, which can be specified in the *Properties Explorer* section, in the **Minimum Occurrences** field
 
-.. figure:: /_static/images/templates/templates-add-repeating-group.jpg
+.. figure:: /_static/images/templates/templates-add-repeating-group.png
 	:alt: Template Add Repeating Group Control
 	:align: center
 
+|
+
 In the Repeating Group control, we will add an RTE (Rich Text Editor).  In order for the content to be searchable, it needs to be indexed.  To facilitate indexing, the suffix **_html** should be appended to the variable name given to the RTE.  In this case, the RTE's variable name is *entry_html*.  For more information on variable names and search indexing , please see the section :ref:`form-control-variable-names`
 
-.. figure:: /_static/images/templates/templates-add-rte.jpg
+.. figure:: /_static/images/templates/templates-add-rte.png
 	:alt: Template Add Rich Text Editor to Repeating Group Control
 	:align: center
+
+|
 
 The model for our template is done.  You can add some other controls by dragging and dropping controls from the **Controls** section to the form.  To learn more about all the controls available, please see :ref:`form-controls`.  To learn more about the data sources available, please see :ref:`data-sources`.
 
@@ -134,11 +143,15 @@ There are two ways to create the freemarker template file for our template.  One
     :align: center
     :width: 35%
 
+|
+
 The other way of creating your freemarker template, is to go to the Properties Explorer in the Content Type model, then click on the **Display Template** field, a magnifying glass and a pencil will appear on the field.  To create a template, click on the pencil.
 
-.. figure:: /_static/images/templates/templates-ftl-create-properties.jpg
+.. figure:: /_static/images/templates/templates-ftl-create-properties.png
 	:alt: Template Create FTL from Content Type Properties Display Template Field
 	:align: center
+
+|
 
 Either way of starting to create your new ftl template, a Create Template dialog will appear.  It will then ask you for a filename for the freemarker template you're creating, then click on the **Create** button.
 
@@ -147,12 +160,16 @@ Either way of starting to create your new ftl template, a Create Template dialog
     :align: center
     :width: 35%
 
+|
+
 A dialog will appear with a blank template.
 
 .. figure:: /_static/images/templates/templates-ftl-dialog.png
     :alt: Template FTL Dialog
     :width: 65%
     :align: center
+
+|
 
 At the top of the dialog, you can use some *Template code examples* from a drop down list.  Here's the list of available template code examples.
 
@@ -161,11 +178,15 @@ At the top of the dialog, you can use some *Template code examples* from a drop 
     :align: center
     :width: 35%
 
+|
+
 For the template we are creating, we will select **Studio support** from  the drop down list and then click on the **Add Code** button to enable authoring support.
 
 .. figure:: /_static/images/templates/templates-ftl-studio-support-sample.png
 	:alt: Template FTL Studio Support Code Example
 	:align: center
+
+|
 
 We will now start filling in the template of how we want the content captured in the model is rendered to html in this case.  In the image below, we render the header component and the other fields in the Content section of our model.  Please note how fields in the model are rendered through the FTL template.  To learn more, please see the section :ref:`templating-api`
 
@@ -173,36 +194,42 @@ We will now start filling in the template of how we want the content captured in
 	:alt: Template FTL
 	:align: center
 
+|
+
 .. code-block:: guess
-    :caption: Render header
+    :caption: *Render header*
 
     <!-- Header -->
         <@renderComponent component = contentModel.header.item />
 
+|
+
 .. code-block:: guess
-    :caption: Render content section
+    :caption: *Render content section*
     :linenos:
 
     <!-- Content -->
-        <section>
-            <header class="main" <@studio.iceAttr iceGroup="subject"/>>
-                <h1>${contentModel.subject!""}</h1>
-                <h2>by ${contentModel.author!""}</h2>
-            </header>
-            <#if contentModel.image??>
-                <#assign image = contentModel.image/>
-            <#else>
-                <#assign image = "/static-assets/images/placeholder.png"/>
-            </#if>
-            <span class="image main"><img src="${image}" alt="" /></span>
-            <#list contentModel.entries.item as item>
-                <div <@studio.iceAttr iceGroup="blog"/>>
-                    ${item.entry_html}
-                </div>
-                <hr class="major" />
-            </#list>
-        </section>
+      <section>
+        <header class="main" <@studio.iceAttr iceGroup="subject"/>>
+          <h1>${contentModel.subject!""}</h1>
+          <h2>by ${contentModel.author!""}</h2>
+        </header>
+        <#if contentModel.image??>
+          <#assign image = contentModel.image/>
+        <#else>
+          <#assign image = "/static-assets/images/placeholder.png"/>
+        </#if>
+        <span class="image main"><img src="${image}" alt="" /></span>
+        <#list contentModel.entries.item as item>
+          <div <@studio.iceAttr iceGroup="blog"/>>
+            ${item.entry_html}
+          </div>
+          <hr class="major" />
+        </#list>
+      </section>
 
+
+|
 
 ^^^^^^^^^^
 Controller
@@ -216,6 +243,8 @@ Open the **Sidebar** menu and navigate to the **Scripts** folder.  Click on the 
 	:alt: Template Create Controller
 	:align: center
 
+|
+
 Enter a name for the controller, then click on the **Create** button.  Since we are creating this controller for our Page-Blog template, we will name the script ``blog.groovy``.  Putting the script under *scripts->pages* and naming it after the page content type, binds the script to our page.
 
 .. figure:: /_static/images/templates/templates-dialog-create-controller.png
@@ -223,11 +252,15 @@ Enter a name for the controller, then click on the **Create** button.  Since we 
     :align: center
     :width: 35%
 
+|
+
 We can now start adding the script to get a list of articles depending on the active segment.
 
 .. figure:: /_static/images/templates/templates-input-script-controller.png
 	:alt: Template Controller Script
 	:align: center
+
+|
 
 .. code-block:: guess
     :linenos:
@@ -241,6 +274,8 @@ We can now start adding the script to get a list of articles depending on the ac
 
     templateModel.articles = articles
 
+|
+
 There are two ways to bind a script/controller to a page/component.  The first way, as we have seen is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type.  We'll show the other way how to bind a script to a page/component in the next section :ref:`content-type-component`
 
 To find out more about page and component scripts, please see :ref:`page-and-component-scripts`.
@@ -251,33 +286,37 @@ Now that we have our controller, we just need to add code to the freemarker temp
 	:alt: Template Modify FTL to Display Controller Script Output
 	:align: center
 
+|
+
 .. code-block:: guess
     :linenos:
 
     <section>
-        <header class="major">
-            <h2>Featured Articles</h2>
-        </header>
+      <header class="major">
+        <h2>Featured Articles</h2>
+      </header>
 
-        <div class="posts">
-            <#list articles as article>
-                <article>
-                    <a href="${article.url}" class="image">
-                        <#if article.image??>
-                            <#assign articleImage = article.image/>
-                        <#else>
-                            <#assign articleImage = "/static-assets/images/placeholder.png"/>
-                        </#if>
-                        <img src="${articleImage}" alt="" />
-                    </a>
-                    <h4><a href="${article.url}">${article.title}</a></h4>
-                    <p>${article.summary}</p>
-                    <ul class="actions">
-                        <li><a href="${article.url}" class="button">More</a></li>
-                    </ul>
-                </article>
-            </#list>
-        </div>
+      <div class="posts">
+        <#list articles as article>
+          <article>
+            <a href="${article.url}" class="image">
+              <#if article.image??>
+                <#assign articleImage = article.image/>
+              <#else>
+                <#assign articleImage = "/static-assets/images/placeholder.png"/>
+              </#if>
+              <img src="${articleImage}" alt="" />
+            </a>
+            <h4><a href="${article.url}">${article.title}</a></h4>
+            <p>${article.summary}</p>
+            <ul class="actions">
+              <li><a href="${article.url}" class="button">More</a></li>
+            </ul>
+          </article>
+        </#list>
+      </div>
     </section>
+
+|
 
 As you can see from the controller we just added, the controller is used to customize your page by enabling you to run codes before the page is rendered.  To find out more about groovy APIs in Crafter CMS, please see the section :ref:`groovy-api`.
