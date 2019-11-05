@@ -328,12 +328,16 @@ To copy a page, in the Sidebar panel, click on the **Pages** folder.  Navigate t
     :align: center
     :alt: Content Author - Copy Page Menu
 
+|
+
 In the Sidebar panel, navigate to the level and location within the site navigation tree where you want to paste the copied content, then right click and select **Paste**
 
 .. image:: /_static/images/page/page-paste-menu.png
     :width: 50 %
     :align: center
     :alt: Content Author - Paste Page Menu
+
+|
 
 Depending on how the page content type has been modeled (dependencies), copying and pasting a page may also create copies of items in the page. These dependencies are setup by the developers when creating the content type.  Generally, when an item on a page is uploaded to the following locations: ``/site/components/item/.*`` or  ``/static-assets/item/.*``, when the page containing those items is copied, a copy of the uploaded items are created.
 

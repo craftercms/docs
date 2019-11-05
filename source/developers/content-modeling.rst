@@ -191,9 +191,9 @@ Limiting where a content type can be created is through the Configuration Proper
     :linenos:
 
     <paths>
-        <includes>
-            <pattern>REG_EXP_HERE</pattern>
-        </includes>
+      <includes>
+        <pattern>REG_EXP_HERE</pattern>
+      </includes>
     </paths>
 
 |
@@ -204,9 +204,9 @@ OR
     :linenos:
 
     <paths>
-	    <excludes>
-		    <pattern>REG_EXP_HERE</pattern>
-	    </excludes>
+      <excludes>
+        <pattern>REG_EXP_HERE</pattern>
+      </excludes>
     </paths>
 
 |
@@ -235,9 +235,9 @@ To limit where this particular content type can be created, the tags, <paths><in
     :linenos:
 
     <paths>
-        <includes>
-            <pattern>^/site/website/articles/.*</pattern>
-        </includes>
+      <includes>
+        <pattern>^/site/website/articles/.*</pattern>
+      </includes>
     </paths>
 
 |
@@ -272,8 +272,8 @@ Enabling cascade on delete is configured through the content type **Configuratio
 
     <delete-dependencies>
       <delete-dependency>
-  	    <pattern>REG_EXP_HERE</pattern>
-  	    <remove-empty-folder>false</remove-empty-folder>
+        <pattern>REG_EXP_HERE</pattern>
+        <remove-empty-folder>false</remove-empty-folder>
       </delete-dependency>
     </delete-dependencies>
 
@@ -498,8 +498,8 @@ In the **Destination Path Pattern**, fill in the path pattern where the content 
 .. code-block:: guess
 
    /articles
-       /{year}
-           /{month}
+     /{year}
+       /{month}
 
 |
 
@@ -522,6 +522,8 @@ Form Controls are data input controls that, once placed on a form, will capture 
 .. figure:: /_static/images/content-model/form-engine-controls.png
     :alt: Form Engine Controls
 	:align: center
+
+|
 
 Each Form Control type has it's own properties and constraints.  Some constraints are common, like "Variable Name" and "Required" while others apply only to the type, e.g. Height and Width limitations on the Image Picker control.  
 
@@ -646,6 +648,8 @@ Data Sources
     :width: 50%
     :align: left
 
+|
+
 Data Sources are pickers that help pull in content from internal or external storage/systems.  For example, data source include: desktop video uploader, desktop image uploader, and so on. Crafter CMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
 
 Data Sources allows the content model designer to decide where different assets uploaded via different controls go (for instance icons, images, RTE related assets, etc.).  It has it's own properties, like "Repository Path", which specifies the path where assets are stored, which help keep the system consistent over time.  The storage destination designed in the model dictates how those assets are handled during a duplicate event (duplicate the asset or duplicate the reference to the asset).
@@ -716,26 +720,28 @@ An example view template
 .. code-block:: guess
    :linenos:
 
-	<#import "/templates/system/common/cstudio-support.ftl" as studio />
+   <#import "/templates/system/common/cstudio-support.ftl" as studio />
 
-	<!DOCTYPE html>
-	<html lang="en">
-		<head>
-	    		<!-- Basic Page Need
-	    		================================================== -->
-			<meta charset="utf-8">
-			<title>${contentModel.browser_title}</title>
-			<meta name="description" content="${contentModel.meta_description}">
-			<meta name="keywords" content="${contentModel.meta_keywords}">
-		</head>
-		<body>
-			<div class="body" <@studio.iceAttr iceGroup="body"/>>
-				${contentModel.body_html}
-			</div>
+   <!DOCTYPE html>
+   <html lang="en">
+     <head>
+       <!-- Basic Page Need
+       ================================================== -->
+       <meta charset="utf-8">
+       <title>${contentModel.browser_title}</title>
+       <meta name="description" content="${contentModel.meta_description}">
+       <meta name="keywords" content="${contentModel.meta_keywords}">
+     </head>
+     <body>
+       <div class="body" <@studio.iceAttr iceGroup="body"/>>
+         ${contentModel.body_html}
+       </div>
 
-			<#if (contentModel.analytics_script)??>${contentModel.analytics_script}</#if>
-		</body>
-	</html>
+       <#if (contentModel.analytics_script)??>${contentModel.analytics_script}</#if>
+     </body>
+   </html>
+
+|
 
 The simple example renders a simple HTML page with a very basic model. Let's review the model first:
 
@@ -800,20 +806,22 @@ script in Scripts > components > upcoming-events.groovy so that it is executed f
     def events = []
     def searchResults = searchService.search(query)
     if (searchResults.response) {
-        searchResults.response.documents.each {
-            def event = [:]
-            def item = siteItemService.getSiteItem(it.localId)
+      searchResults.response.documents.each {
+        def event = [:]
+        def item = siteItemService.getSiteItem(it.localId)
 
-            event.image = item.image.text
-            event.title = item.title_s.text
-            event.date = DateUtils.parseModelValue(item.date_dt.text)
-            event.summary = item.summary_html.text
+        event.image = item.image.text
+        event.title = item.title_s.text
+        event.date = DateUtils.parseModelValue(item.date_dt.text)
+        event.summary = item.summary_html.text
 
-            events.add(event)
-        }
+        events.add(event)
+      }
     }
 
     contentModel.events = events
+
+|
 
 You might notice that we're importing a ``utils.DateUtils`` class. This class is not part of Crafter CMS, but instead it is a Groovy class
 specific to the site. To be able to use this class, you should place it under Classes > groovy > utils and name it DateUtils.groovy,
@@ -829,19 +837,20 @@ convention.
 
     class DateUtils {
 
-        static def parseModelValue(value){
-            def dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
-                dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
-            return dateFormat.parse(value)
-        }
+      static def parseModelValue(value){
+        def dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
+        return dateFormat.parse(value)
+      }
 
-        static def formatDateAsIso(date) {
-            def dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
-                dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
-            return dateFormat.format(date)
-        }
-
+      static def formatDateAsIso(date) {
+        def dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
+        return dateFormat.format(date)
+      }
     }
+
+|
 
 For more information on the FreeMarker (Templating) APIs, pleasee see :ref:`templating-api`.
 
