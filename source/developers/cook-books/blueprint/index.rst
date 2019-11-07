@@ -250,8 +250,8 @@ To add parameters to be passed to blueprints, simply add the following to the ``
 where:
 
 - ``label``: Label to display for parameter on Create Site dialog
-- ``name``: Name of the parameter
-- ``type``: Type of the parameter, possible values are ``string`` and ``PASSWORD``.  The default is ``string``
+- ``name``: Name of the parameter in *camelCase* notation
+- ``type``: Type of the parameter, possible values are ``STRING`` and ``PASSWORD``.  The default is ``STRING``
 - ``description``: Description of the parameter
 - ``required``: Indicates whether the parameter is required.  The default is ``true``
 
