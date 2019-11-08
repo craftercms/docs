@@ -1,0 +1,42 @@
+.. index:: Crafter CMS 3.1.4 Release Notes
+
+-----------------
+Crafter CMS 3.1.4
+-----------------
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+
+* Added support for Crafter CMS plugins to be listed in `Crafter Marketplace <https://github.com/marketplace/crafter-marketplace>`_ simply by tagging your project on GitHub.  Follow the instructions :ref:`here <marketplace_create_plugins>` to create your own plugins and list it in the `Crafter Marketplace <https://github.com/marketplace/crafter-marketplace>`_
+* Added support for flattened content XML through a new data source ``Embedded Content`` to be used for creating inline components
+* Added a date-time picker inside the targeting dialog in the Website Editorial blueprint
+* Added ``Publishing Queue`` tab to ``Site Config`` ➜ ``Publishing``
+* Added :ref:`code-editor-configuration` for adding/editing snippets
+* Added a logrotate sidecar image for docker/kubernetes
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Upgraded Jackson library to 2.9.10 for various Crafter modules
+* Upgraded Quartz library to 2.3.2 for various Crafter modules
+* Added support for passing parameters to blueprints during site creation
+* Added support for cache warming and cache double buffering
+* Added ability to extend GraphQL schema
+* Improved Publishing Status dialog
+* Added an RTE plugin for inserting static asset links
+* Improved ``Create Site`` dialog
+
+
+Lot's of other small enhancements and bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 3.1.4 Milestone <https://github.com/craftercms/craftercms/milestone/57?closed=1>`_
+
+.. important::
+
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.4)
+
+    For Docker/Kuber deployments, see :ref:`upgrade-to-3-1-3` for instructions on how to upgrade from 3.1.0 to 3.1.3 (applies to 3.1.4)
+
+    For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
