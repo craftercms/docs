@@ -3,7 +3,7 @@
 Configuration / Implementation Production Content Repository-Code Repository Sync and Code Releases Publishing
 ==============================================================================================================
 
-The following section describes the steps required to configure the core mechanics of the Code Back, Content Forward Process.
+The following section describes the steps required to configure the core mechanics of the Code Forward, Content Back Process.
 
 As a recap, here's a diagram of The Code Forward Content Back™ Process and Development Workflow:
 
