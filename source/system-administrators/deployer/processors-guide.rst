@@ -170,6 +170,10 @@ Processor that pushes a local repo to a remote Git repository.
 ||passphrase||           |                               |The SSH private key passphrase, used only with SSH withRSA  |
 |            |           |                               |key pair authentication                                     |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
+|``force``   |           |``false``                      |Sets the force preference for the push                      |
++------------+-----------+-------------------------------+------------------------------------------------------------+
+|``pushAll`` |           |``false``                      |If all local branches should be pushed to the remote        |
++------------+-----------+-------------------------------+------------------------------------------------------------+
 
 **Example**
 
