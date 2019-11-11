@@ -22,9 +22,9 @@ Updates
 * Upgraded Jackson library to 2.9.10 for various Crafter modules
 * Upgraded Quartz library to 2.3.2 for various Crafter modules
 * Added support for passing parameters to blueprints during site creation
-* Added support for cache warming and cache double buffering
-* Added ability to extend GraphQL schema
-* Improved Publishing Status dialog
+* Added support for automatic Engine cache warming and double-buffering in Serverless mode
+* Added support for federated GraphQL and extensible schema definition and overrides
+* Added publishing queue management and improved publishing status reporting
 * Added an RTE plugin for inserting static asset links
 * Improved ``Create Site`` dialog
 
