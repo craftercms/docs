@@ -1,8 +1,12 @@
 :is-up-to-date: True
 
-===========
-Marketplace
-===========
+.. index:: Crafter Marketplace, Marketplace
+
+.. _marketplace:
+
+===================
+Crafter Marketplace
+===================
 
 .. toctree::
    :maxdepth: 2
