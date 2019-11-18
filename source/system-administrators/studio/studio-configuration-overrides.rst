@@ -133,7 +133,7 @@ The following section of Studio's configuration overrides allows you to setup th
 Security Configuration
 ----------------------
 
-The following section of Studio's configuration overrides allows you to randomize the admin password on a fresh install (for more information, see: :ref:`randomize-admin-password`), configure encryption and configure authentication method to be used (for more information, see: :ref:`configuring-studio-security`).
+The following section of Studio's configuration overrides allows you to randomize the admin password on a fresh install (for more information, see: :ref:`randomize-admin-password`), configure encryption and configure authentication method to be used (for more information, see: :ref:`configuring-studio-security`), configure password requirements validation (for more information see: :ref:`crafter-studio-configure-password-requirements`).
 
 .. code-block:: yaml
    :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
@@ -148,27 +148,31 @@ The following section of Studio's configuration overrides allows you to randomiz
    # studio.db.initializer.randomAdminPassword.length: 16
    # Random admin password allowed chars
    # studio.db.initializer.randomAdminPassword.chars: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*_=+-/
-
    # HTTP Session timeout for studio (value is in minutes).
    # studio.security.sessionTimeout: 60
-
+   # Defines security provider for accessing repository. Possible values
+   # - db (users are stored in database)
+   # - ldap (users are imported from LDAP into the database)
+   # - headers (use when authenticating via headers)
+   # studio.security.type: ldap
+   #
    # Salt for encrypting
    # studio.security.cipher.salt: TDEsDF8vx3gV4c7G
-
    # Key for encrypting
    # studio.security.cipher.key: AoCcBdnsTa9R3DdG
-
    # Enable password requirements validation
    # studio.security.passwordRequirements.enabled: false
    # Password requirements validation regular expression
-   #   (?=.*[0-9])       a digit must occur at least once
-   #   (?=.*[a-z])       a lower case letter must occur at least once
-   #   (?=.*[A-Z])       an upper case letter must occur at least once
-   #   (?=.*[@#$%^&+=])  a special character must occur at least once
-   #   (?=\S+$)          no whitespace allowed in the entire string
-   #   .{8,}             anything, at least eight places though
-   # studio.security.passwordRequirements.validationRegex: ^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{8,}$
-
+   # The supported capture group keys are:
+   #   hasNumbers
+   #   hasLowercase
+   #   hasUppercase
+   #   hasSpecialChars
+   #   noSpaces
+   #   minLength
+   #   maxLength
+   #   minMaxLength
+   # studio.security.passwordRequirements.validationRegex: ^(?=(?<hasNumbers>.*[0-9]))(?=(?<hasLowercase>.*[a-z]))(?=(?<hasUppercase>.*[A-Z]))(?=(?<hasSpecialChars>.*[~|!`,;\/@#$%^&+=]))(?<minLength>.{8,})$
    # Studio authentication chain configuration
    # studio.authentication.chain:
      # Authentication provider type
@@ -224,7 +228,7 @@ The following section of Studio's configuration overrides allows you to randomiz
        # groupNameLdapAttributeRegex: .*
        # LDAP groups attribute match index
        # groupNameLdapAttributeMatchIndex: 0
-   # Authentication provider type
+     # Authentication provider type
      # - provider: DB
        # Authentication via DB enabled
        # enabled: true
@@ -268,12 +272,15 @@ The following section of Studio's configuration overrides allows you to setup th
 Clustering
 ----------
 
-The following section of Studio's configuration overrides allows you to setup Studio for clustering
+The following section of Studio's configuration overrides allows you to setup Studio for clustering.  See :ref:`clustering` for more information
 
 .. code-block:: yaml
    :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
    :linenos:
 
+   ##################################################
+   ##                 Clustering                   ##
+   ##################################################
    #-----------------------------------------------------------------------------
    # IMPORTANT: When enabling clustering, please specify the environment variable
    # SPRING_PROFILES_ACTIVE=crafter.studio.externalDb in your crafter-setenv.sh
@@ -281,11 +288,18 @@ The following section of Studio's configuration overrides allows you to setup St
    # its embedded DB. Also configure the appropiate MARIADB env variables
    # -----------------------------------------------------------------------------
 
+   # Cluster Git URL format for synching members.
+   # - Typical SSH URL format: ssh://{username}@{localAddress}{absolutePath}
+   # - Typical HTTPS URL format: https://{localAddress}/repos/sites
+   # studio.clustering.sync.urlFormat: ssh://{username}@{localAddress}{absolutePath}
+
    # Cluster Syncers
    # Sandbox Sync Job interval in milliseconds which is how often to sync the work-area
    # studio.clustering.sandboxSyncJob.interval: 2000
    # Published Sync Job interval in milliseconds which is how often to sync the published repos
    # studio.clustering.publishedSyncJob.interval: 60000
+   # Global Repo Sync Job interval in milliseconds which is how often to sync the global repo
+   # studio.clustering.globalRepoSyncJob.interval: 45000
    # Cluster member after heartbeat stale for amount of minutes will be declared inactive
    # studio.clustering.heartbeatStale.timeLimit: 5
    # Cluster member after being inactive for amount of minutes will be removed from cluster
@@ -294,19 +308,20 @@ The following section of Studio's configuration overrides allows you to setup St
    # Cluster member registration, this registers *this* server into the pool
    # Cluster node registration data, remember to uncomment the next line
    # studio.clustering.node.registration:
-   #  this server's local address (reachable to other cluster members)
+   #  This server's local address (reachable to other cluster members). You can also specify a different port by
+   #  attaching :PORT to the adddress (e.g 192.168.1.200:2222)
    #  localAddress: ${env:CLUSTER_NODE_ADDRESS}
-   #  authentication type to access this server's local repository
+   #  Authentication type to access this server's local repository
    #  possible values
    #   - none (no authentication needed)
    #   - basic (username/password authentication)
    #   - key (ssh authentication)
    #  authenticationType: none
-   #  username to access this server's local repository
+   #  Username to access this server's local repository
    #  username: user
-   #  password to access this server's local repository
+   #  Password to access this server's local repository
    #  password: SuperSecurePassword
-   #  private key to access this server's local repository (multiline string)
+   #  Private key to access this server's local repository (multiline string)
    #  privateKey: |
    #    -----BEGIN PRIVATE KEY-----
    #    privateKey
@@ -353,3 +368,47 @@ The following section of Studio's configuration overrides allows you to setup th
 
    # URLs to connect to Elasticsearch
    studio.search.urls: ${env:ES_URL}
+
+-------------------
+Serverless Delivery
+-------------------
+
+The following section of Studio's configuration overrides allows you to setup serverless delivery
+
+.. code-block:: yaml
+   :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
+   :linenos:
+
+   ##########################################################
+   ##                 Serverless Delivery                  ##
+   ##########################################################
+   # Indicates if serverless delivery is enabled
+   # studio.serverless.delivery.enabled: true
+   # The URL for the serverless delivery deployer create URL
+   # studio.serverless.delivery.deployer.target.createUrl: ${studio.preview.createTargetUrl}
+   # The URL for the serverless delivery deployer delete URL
+   # studio.serverless.delivery.deployer.target.deleteUrl: ${studio.preview.deleteTargetUrl}
+   # The template name for serverless deployer targets
+   # studio.serverless.delivery.deployer.target.template: aws-cloudformed-s3
+   # Replace existing target configuration if one exists?
+   # studio.serverless.delivery.deployer.target.replace: false
+   # The URL the deployer will use to clone/pull the site's published repo. When the deployer is in a separate node
+   # (because of clustering), this URL should be an SSH/HTTP URL to the load balancer in front of the Studios
+   # studio.serverless.delivery.deployer.target.remoteRepoUrl: ${env:CRAFTER_DATA_DIR}/repos/sites/{siteName}/published
+   # The deployer's local path where it will store the clone of the published site. This property is not needed if
+   # the deployer is not the preview deployer, so you can leave an empty string ('') instead
+   # studio.serverless.delivery.deployer.target.localRepoPath: ${env:CRAFTER_DATA_DIR}/repos/aws/{siteName}
+   # Parameters for the target template. Please check the deployer template documentation for the possible parameters.
+   # The following parameters will be sent automatically, and you don't need to specify them: env, site_name, replace,
+   # disable_deploy_cron, local_repo_path, repo_url, use_crafter_search
+   # studio.serverless.delivery.deployer.target.template.params:
+   #   aws:
+   #     cloudformation:
+   #       # Namespace to use for CloudFormation resources (required when target template is aws-cloudformed-s3)
+   #       namespace: myorganization
+   #       # The domain name of the serverless delivery LB (required when target template is aws-cloudformed-s3)
+   #       deliveryLBDomainName:
+   #       # The SSL certificate ARN the CloudFront CDN should use (optional when target template is aws-cloudformed-s3)
+   #       cloudfrontCertificateArn:
+   #       # The alternate domains names (besides *.cloudfront.net) for the CloudFront CDN (optional when target template is aws-cloudformed-s3)
+   #       alternateCloudFrontDomainNames:

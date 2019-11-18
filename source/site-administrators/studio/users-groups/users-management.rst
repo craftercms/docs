@@ -25,7 +25,7 @@ To find the Users Management console follow the next instructions:
 
 2. Here's the dialog that will appear after clicking on **Users** in the main menu
 
-   .. image:: /_static/images/users/users-tab.png
+   .. image:: /_static/images/system-admin/main-menu/main-menu-users.png
        :alt: Users Dialog
        :align: center
 

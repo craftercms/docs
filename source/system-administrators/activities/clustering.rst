@@ -47,13 +47,15 @@ Below is a sample configuration containing the parameters used to setup a server
     ##################################################
     ##                   Database                   ##
     ##################################################
-
+    # Crafter Studio uses an embedded MariaDB by default
     # Crafter DB connection string
-    studio.db.url: jdbc:mariadb://${env:MARIADB_HOST}:${env:MARIADB_PORT}/${env:MARIADB_SCHEMA}?user=${env:MARIADB_USER}&password=${env:MARIADB_PASSWD}
+    studio.db.url: jdbc:mariadb://${env:MARIADB_HOST}:${env:MARIADB_PORT}/crafter?user=${env:MARIADB_USER}&password=${env:MARIADB_PASSWD}
     # Connection string used to initialize database. This creates the `crafter` schema, the `crafter` user and/or upgrades the database
-    studio.db.initializer.url: jdbc:mariadb://${env:MARIADB_HOST}:${env:MARIADB_PORT}?user=${env:MARIADB_ROOT_USER}&password=${env :MARIADB_ROOT_PASSWD}
+    studio.db.initializer.url: jdbc:mariadb://${env:MARIADB_HOST}:${env:MARIADB_PORT}?user=${env:MARIADB_ROOT_USER}&password=${env:MARIADB_ROOT_PASSWD}
     # Connection string if using a database with an already created schema and user (like AWS RDS)
     # studio.db.initializer.url: ${studio.db.url}
+
+    ...
 
     ##################################################
     ##                 Clustering                   ##
@@ -114,7 +116,7 @@ where:
 - **studio.clustering.node.registration.password**: password to access this server's local repository
 - **studio.clustering.node.registration.privateKey**: private key to access this server's local repository (multiline string) when using ``key`` as authentication type to access this server's local repository
 
-Modify the values in the clustering section of your ``studio-config-overrides.yaml`` file with values from your setup and save the file.
+Modify the values in the clustering section of your ``studio-config-overrides.yaml`` file with values from your setup and save the file.  You can also change the clustering section from the |mainMenu| **Main Menu** in Studio under ``Global Config``
 
 Notice the environment variables used in the configuration above.  The next step is to setup those environment variables used above.  To setup the environment variables, open the ``crafter-setenv.sh`` file (found in your Authoring installation, under ``bin``) and modify the values of the variables listed below with values from your setup and save the file.  Remember to uncomment the ``SPRING_PROFILES_ACTIVE`` environment variable since we are using an external database.
 

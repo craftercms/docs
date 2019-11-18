@@ -22,12 +22,15 @@ To change the session timeout, follow the instructions below:
 
    |
 
-#. In your ``TOMCAT/shared/classes/crafter/studio/extension/studio-config-override.yaml``, change the value for ``studio.security.sessionTimeout`` to desired amount of time the session will exist in minutes (the same value from the previous step):
+#. In your ``TOMCAT/shared/classes/crafter/studio/extension/studio-config-override.yaml``, change the value for ``studio.security.sessionTimeout`` to desired amount of time the session will exist in minutes (the same value or less from the previous step):
 
    .. code-block:: properties
 
+      # HTTP Session timeout for studio (value is in minutes).
       studio.security.sessionTimeout: 60
 
-|
+   |
 
-Make sure to stop and restart your Studio after making your changes.
+   You can also change the Studio session timeout from the |mainMenu| **Main Menu** in Studio under ``Global Config``
+
+Remember to keep the Studio session timeout from the ``studio-config-override.yaml`` file less than the Tomcat session-timeout (``TOMCAT/webapps/studio/WEB-INF/web.xml`` file).  Also make sure to stop and **restart your Studio after making your changes**.

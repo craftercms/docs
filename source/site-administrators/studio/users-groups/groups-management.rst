@@ -36,7 +36,7 @@ To find this section through studio follow the next instructions:
 #. Click on ``Main Menu`` |mainMenu| at the top right of your browser.
 #. Click on **Groups** from the main menu on the left side of your browser.
 
-.. image:: /_static/images/groups/site-config-groups.png
+.. image:: /_static/images/system-admin/main-menu/main-menu-groups.png
     :width: 70%
     :alt: Groups Management
     :align: center
