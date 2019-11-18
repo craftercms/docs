@@ -27,6 +27,8 @@ To configure an external authentication method, please follow one of the guides 
 
 When using an external authentication method, user accounts are automatically created in the internal database upon each user's first successful login, using the attributes from the responses received.  Users added to the internal database after the user's first successful login through external authentication are marked as **Externally Managed**.
 
+.. _authentication-chaining:
+
 -----------------------
 Authentication Chaining
 -----------------------
@@ -42,7 +44,9 @@ As mentioned above, Crafter CMS supports multiple security providers.  Crafter C
 
 When an authentication chain is configured, when a user logs in, Studio will try to authenticate the user using the first security provider in the chain as defined in the ``studio-config-override.yaml`` file.  If authentication fails, it will then move on to the next authentication provider in the list and try to authenticate the user again.  It will continue moving on to the next security provider in the chain until the user is authenticated or the authentication fails.
 
-To setup the authentication chain, open the file ``studio-config-override.yaml`` under ``shared/classes/crafter/studio/extension``.  Below is a sample configuration for the authentication chain.  There are four authentication providers in the example below: (1) Headers Authentication (2) LDAP1 (3) LDAP2 (4) Internal database
+To setup the authentication chain, open the file ``studio-config-override.yaml`` under ``shared/classes/crafter/studio/extension``.  Another way to access the ``studio-config-override.yaml`` file is by clicking on the |mainMenu| **Main Menu** from the context nav in Studio, then clicking on ``Global Config``.
+
+Below is a sample configuration for the authentication chain.  There are four authentication providers in the example below: (1) Headers Authentication (2) LDAP1 (3) LDAP2 (4) Internal database
 
 .. code-block:: properties
     :linenos:

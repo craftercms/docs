@@ -127,3 +127,17 @@ The ``Log Console`` allows the user to view messages depending on what log level
 
 The ``Log Console`` here in the Main Menu is similar to a site ``Log Console`` described :ref:`here<studio-log-console>`.  The difference is the ``Log Console`` from the Main Menu can display logs for all the sites inside Studio, not just one site.
 
+-------------
+Global Config
+-------------
+
+The ``Global Config`` allows the user to edit the system settings for Studio without access to the physical server.
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-global-config.png
+    :alt: System Administrator - Main Menu Log Console
+    :align: center
+    :width: 100%
+
+When making changes here, not all changes can/will take effect without a restart, so expect to have to **restart Studio** for most changes to take effect
+
+For more information on what you can configure from the ``Global Config``, see :ref:`main-menu-global-config`
