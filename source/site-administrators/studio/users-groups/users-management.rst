@@ -96,6 +96,7 @@ A modal dialog will be displayed with the user information. To finish view mode,
 .. image:: /_static/images/users/users-view.png
     :alt: Users - View User Info
     :align: center
+    :width: 75%
 
 .. _editing-a-user:
 
@@ -109,11 +110,29 @@ To edit a specific user, please click on the pencil icon located inside the resu
     :alt: Users - Edit Icon
     :align: center
 
-A modal dialog will be displayed, please edit the fields you want to change and then click on the "**Save**" button. If you do not want to edit the user, please click on the "Cancel" button.  In this dialog, you can modify the user information such as email, first name, last name and user name.  You can also activate/de-activate the user currently being viewed by checking/unchecking the checkbox labeled **Enabled**.  The **Externally Managed** checkbox indicates whether the user is externally managed or not, such as the case in LDAP.  This dialog also allows you to change the password for the user currently being viewed.
+A modal dialog will be displayed, please edit the fields you want to change and then click on the "**Save**" button. If you do not want to edit the user, please click on the "Cancel" button.  In this dialog, you can modify the user information such as email, first name, last name and user name.  You can also activate/de-activate the user currently being viewed by checking/unchecking the checkbox labeled **Enabled**.  The **Externally Managed** checkbox indicates whether the user is externally managed or not, such as the case in LDAP.
 
 .. image:: /_static/images/users/users-edit.png
     :alt: Users - Edit
     :align: center
+    :width: 75%
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Resetting an Existing User's Password
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To reset the password of a specific user, please click on the key icon located inside the result table as shown in the following example.
+
+.. image:: /_static/images/users/users-reset-btn.png
+    :alt: Users - Reset Password Icon
+    :align: center
+
+A modal dialog will be displayed, where the admin can reset the users password.  Click on ``Save`` to reset the password.
+
+.. image:: /_static/images/users/users-reset.png
+    :alt: Users - Reset Password
+    :align: center
+    :width: 55%
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Removing an Existing User
@@ -124,6 +143,7 @@ To remove a specific user, please click on the trash can icon located inside the
 .. image:: /_static/images/users/users-remove-btn.png
     :alt: Users - Remove Icon
     :align: center
+    :width: 80%
 
 A confirmation pop up will be displayed, please click on "**Yes**" to remove the user and click on "**No**" if you do not want to remove it.
 
