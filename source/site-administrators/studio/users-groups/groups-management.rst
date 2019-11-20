@@ -1,3 +1,7 @@
+.. index:: Groups Management, Groups
+
+.. _groups-management:
+
 =================
 Groups Management
 =================

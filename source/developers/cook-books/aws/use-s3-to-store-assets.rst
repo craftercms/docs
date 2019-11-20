@@ -1,5 +1,7 @@
+.. index:: Use S3 to Store Assets
+
 ======================
-Use S3 to store assets
+Use S3 to Store Assets
 ======================
 
 AWS S3 is recommended when you need to store media and documents that are quite large. The following guide
@@ -106,7 +108,7 @@ Step 4: Add the AWS File Upload Control to the content type
 For our example, we'll add an ``Attachments`` field, which is of type ``aws-file-upload``, to the ``Page - Article``
 content type. To do this:
 
-#. Go to ``Site Config`` and open the ``Page - Article`` content type definition.
+#. Go to ``Site Config`` > ``Content Types`` > ``Open Existing Type`` and open the ``Page - Article`` content type definition.
 #. At the end of the *Content* section, add a ``Repeating Group`` control with Title *Attachments* and Name
    *attachments*.
 #. Add an ``Input`` control inside the repeating group with Title *Attachment Name* and Name *attachmentName*.
@@ -127,6 +129,7 @@ attachments, and that will put the URLs in the template model so that they can b
 a controller under ``Scripts`` > ``pages`` and name it ``article.groovy``. The controller must have the following code:
 
 .. code-block:: groovy
+  :linenos:
 
   @Grab(group='com.amazonaws', module='aws-java-sdk-s3', version='1.11.428')
   import com.amazonaws.services.s3.AmazonS3ClientBuilder
@@ -181,6 +184,8 @@ a controller under ``Scripts`` > ``pages`` and name it ``article.groovy``. The c
 
   templateModel.attachments = attachments
 
+|
+
 ----------------------------------------------
 Step 6: Add Freemarker code to render the URLs
 ----------------------------------------------
@@ -201,7 +206,7 @@ the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following lin
   </#if>
 
 -------------------------------------------------
-Step 6: Add some attachments and test the changes
+Step 7: Add some attachments and test the changes
 -------------------------------------------------
 
 If all the previous steps have been done correctly, you should be able to add any number of attachments and they
@@ -217,3 +222,8 @@ The bottom of the page looks like this:
 .. image:: /_static/images/guides/s3/attachments-view.png
    :alt: AWS S3 Assets - Attachments View
    :align: center
+
+---------------------------
+Step 8: Publish the changes
+---------------------------
+The next step is to publish the changes. Remember to publish not just the page where we added the Box assets, but also the ``article.ftl``, ``article.groovy``, ``engine/site-config.xml`` and the ``aws.xml`` files too.

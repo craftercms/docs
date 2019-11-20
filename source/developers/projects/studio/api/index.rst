@@ -87,6 +87,11 @@ Repo Management
    repo/remove-remote
    repo/sync-from-repo
    repo/list-remote
+   repo/status
+   repo/resolve-conflict
+   repo/diff-conflicted-file
+   repo/commit-resolution
+   repo/cancel-failed-pull
 
 -----
 Audit
@@ -147,9 +152,6 @@ Publish
    publish/stop
    publish/publish-items
    publish/reset-staging
-   publish/sync-staging
-   publish/cancel-publish-requests
-   publish/list-publish-requests
 
 --------
 Activity

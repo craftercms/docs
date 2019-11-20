@@ -83,6 +83,7 @@ Delivery
 
    activities/delivery/configure-apache-vhost.rst
    activities/delivery/change-ports-on-your-delivery-install.rst
+   activities/delivery/delivery-env-performance-tuning.rst
    activities/delivery/setup-site-for-delivery.rst
 
 *************************
