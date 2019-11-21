@@ -55,6 +55,7 @@ Activities
    activities/security/configure-studio-security.rst
    activities/security/configure-ssl-tls.rst
    activities/kubernetes/simple-kubernetes-deployment.rst
+   activities/language-support/add-new-language.rst
 
 *********************
 Upgrading Crafter CMS
