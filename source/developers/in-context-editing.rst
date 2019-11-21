@@ -132,7 +132,7 @@ Example:
 
     |
 
-Here's an example of enabling in-context editing pencils for embedded components, using the Website Editorial bp, ``feature`` embedded component
+Let's take a look at an example of enabling in-context editing pencils for embedded components, using the Website Editorial bp, ``feature`` embedded component.
 
 Here's how the features section pencils look like before adding the ``iceAttr`` with the ``component`` tag:
 
@@ -148,7 +148,7 @@ To enable the in-context editing pencils of the features component, add the attr
     .. code-block:: guess
         :caption: /templates/web/components/feature.ftl
 
-        <article <@studio.iceAttr component=contentModel/> <@studio.componentAttr path=contentModel.storeUrl />>
+        <article <@studio.iceAttr component=contentModel/> <@studio.componentAttr component=contentModel ice=true />>
 
     |
 
@@ -171,13 +171,12 @@ Drag and drop makes it easy for authors to visually assemble pages.  Authors sim
 
 |
 
-To define a drop zone for components simply add the following attribute to the container element where you want your components to render
+To define a drop zone for components simply add the ``componentContainerAttr`` attribute with the ``component`` tag to the container element where you want your components to render
 
     .. code-block:: guess
 
-	    <@studio.componentContainerAttr target="bottomPromos" objectId=contentModel.objectId />
+	    <@studio.componentContainerAttr target="bottomPromos" component=contentModel />
 
-|
 
 Tag Attributes
 --------------
@@ -190,20 +189,18 @@ Tag Attributes
 ||               ||                             ||                                               |
 ||               ||                             || This is typically an item selector field type.|
 +----------------+------------------------------+------------------------------------------------+
-|| objectId      || Yes                         || Id for component container which is typically |
-||               ||                             || the store URL of the current content object   |
-||               ||                             || (contentModel.objectId)                       |
+|| component     || Yes                         || a |SiteItem| object                           |
 +----------------+------------------------------+------------------------------------------------+
 
 Example:
 
     .. code-block:: guess
 
-	    <div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" objectId=contentModel.objectId /> >
+	    <div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" component=contentModel /> >
 		    ...
 	    <div>
 
-|
+    |
 
 If you want to learn how to configure the Drag and Drop panel please read the following document: :doc:`../site-administrators/studio/drag-n-drop-configuration`.
 
@@ -237,7 +234,7 @@ Full example of typical component drop zone
 
 |
 
-If the component to be rendered is an embedded component, the tag ``parent`` with a |SiteItem| object for the value needs to be added to ``renderComponent`` like below:
+If the component to be rendered is an embedded component, the tag ``parent`` with a |SiteItem| object for the value needs to be added to ``renderComponent`` if the component to be rendered is not the current item, like below:
 
     .. code-block:: guess
 
@@ -245,7 +242,7 @@ If the component to be rendered is an embedded component, the tag ``parent`` wit
 
     |
 
-Let's take a look at an example using a site created using the Website Editorial blueprint.  In the Home page of the site, the features section contains embedded components ``feature``.  To render the embedded components from the target inside the container, the tag ``parent=contentModel`` is added:
+Let's take a look at an example using a site created using the Website Editorial blueprint.  In the Home page of the site, the features section contains embedded components ``feature``.  To render the embedded components from the target inside the container, note that the tag ``parent=contentModel`` is not required since the component to be rendered is the current item:
 
 .. code-block:: guess
    :linenos:
@@ -260,7 +257,7 @@ Let's take a look at an example using a site created using the Website Editorial
        <div class="features" <@studio.componentContainerAttr target="features_o" objectId=contentModel.objectId/>>
          <#if contentModel.features_o?? && contentModel.features_o.item??>
            <#list contentModel.features_o.item as feature>
-             <@renderComponent parent=contentModel component=feature />
+             <@renderComponent component=feature />
            </#list>
          </#if>
        </div>
@@ -299,6 +296,11 @@ Tag Attributes
 ||               ||                             || latter case omit this attribute or set it to   |
 ||               ||                             || false and manually add your own ICE attributes |
 ||               ||                             || to the component template                      |
++----------------+------------------------------+-------------------------------------------------+
+|| iceGroup      || No (unless path is not      || the label/id assigned to iceGroup on           |
+||               || supplied)                   || fields in your content model.                  |
++----------------+------------------------------+-------------------------------------------------+
+|| component     || No                          || a |SiteItem| object                            |
 +----------------+------------------------------+-------------------------------------------------+
 
 Example
