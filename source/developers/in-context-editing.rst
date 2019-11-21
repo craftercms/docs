@@ -148,7 +148,7 @@ To enable the in-context editing pencils of the features component, add the attr
     .. code-block:: guess
         :caption: /templates/web/components/feature.ftl
 
-        <article <@studio.iceAttr component=contentModel/> <@studio.componentAttr path=contentModel.storeUrl />>
+        <article <@studio.iceAttr component=contentModel/> <@studio.componentAttr component=contentModel ice=true />>
 
     |
 
@@ -171,15 +171,7 @@ Drag and drop makes it easy for authors to visually assemble pages.  Authors sim
 
 |
 
-To define a drop zone for components simply add the ``componentContainerAttr`` attribute with the ``objectId`` tag to the container element where you want your components to render
-
-    .. code-block:: guess
-
-	    <@studio.componentContainerAttr target="bottomPromos" objectId=contentModel.objectId />
-
-|
-
-To define a drop zone for embedded components, simply add the ``componentContainerAttr`` attribute with the ``component`` tag to the container element where you want your embedded components to render
+To define a drop zone for components simply add the ``componentContainerAttr`` attribute with the ``component`` tag to the container element where you want your components to render
 
     .. code-block:: guess
 
@@ -197,26 +189,10 @@ Tag Attributes
 ||               ||                             ||                                               |
 ||               ||                             || This is typically an item selector field type.|
 +----------------+------------------------------+------------------------------------------------+
-|| component     || No                          || a |SiteItem| object                           |
-||               || (unless ``objectId`` is     ||                                               |
-||               ||  not supplied)              ||                                               |
-+----------------+------------------------------+------------------------------------------------+
-|| objectId      || No                          || Id for component container which is typically |
-||               || (unless ``component`` is    || the store URL of the current content object   |
-||               ||  not supplied)              || (contentModel.objectId)                       |
+|| component     || Yes                         || a |SiteItem| object                           |
 +----------------+------------------------------+------------------------------------------------+
 
 Example:
-
-    .. code-block:: guess
-
-	    <div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" objectId=contentModel.objectId /> >
-		    ...
-	    <div>
-
-    |
-
-    For embedded components:
 
     .. code-block:: guess
 
@@ -323,9 +299,9 @@ Tag Attributes
 +----------------+------------------------------+-------------------------------------------------+
 || iceGroup      || No (unless path is not      || the label/id assigned to iceGroup on           |
 ||               || supplied)                   || fields in your content model.                  |
-+----------------+------------------------------------+-------------------------------------------+
++----------------+------------------------------+-------------------------------------------------+
 || component     || No                          || a |SiteItem| object                            |
-+----------------+------------------------------------+-------------------------------------------+
++----------------+------------------------------+-------------------------------------------------+
 
 Example
 
