@@ -23,7 +23,8 @@ To reach more users, additional languages may need to be added in Crafter Studio
 #. Add the translations file for everything else not in the dashboard ``studio-ui/static-assets/components/cstudio-common/resources/**/base.js``
 #. Add the new language to the ``get-available-languages`` API
 #. Add the new language to the react translations manager
-#. Update templates to add the new language
+#. Update templates to add the new language imports into the runtime (i.e. via script[src] elements)
+#. Build, deploy and test your changes
 
 **where:**
 
@@ -144,9 +145,49 @@ Remember to change the language code in the all the ``registerBundle`` calls in 
      yarn run v1.13.0
      $ node scripts/i18n.js
 
--------------------------------------------
-5. Update templates to add the new language
--------------------------------------------
+* After generating the ``ja.json`` locale file from above, open the file in your ``studio-ui`` code by navigating to ``/studio-ui/ui/app/src/translations/locales/``, then open the ``ja.json`` file and start translating the content
+
+  .. code-block:: guess
+
+     {
+       "blueprint.by": "バイ",
+       "blueprint.crafterCMS": "Crafter CMS",
+       "blueprint.license": "ライセンス",
+       ...
 
 
+--------------------------------------------------------------------
+5. Update templates to add the new language imports into the runtime
+--------------------------------------------------------------------
+
+* We now need to update templates to add the new language imports into the runtime (i.e. via script[src] elements).  In your ``studio-ui`` code, navigate to ``studio-ui/templates/web/``.  The following templates need to be updated:
+
+  * preview.ftl
+  * form.ftl
+  * site-config.ftl
+
+* Add the new language imports ``<script src="/studio/static-assets/components/cstudio-common/resources/ja/base.js?version=${UIBuildId!.now?string('Mddyyyy')}"></script>`` into the files listed above:
+
+  .. code-block:: guess
+     :linenos:
+     :emphasize-lines: 6
+     :caption: *studio-ui/templates/web/preview.ftl*
+
+     <#include "/templates/web/common/page-fragments/head.ftl" />
+     <script src="/studio/static-assets/components/cstudio-common/resources/en/base.js?version=${UIBuildId!.now?string('Mddyyyy')}"></script>
+     <script src="/studio/static-assets/components/cstudio-common/resources/kr/base.js?version=${UIBuildId!.now?string('Mddyyyy')}"></script>
+     <script src="/studio/static-assets/components/cstudio-common/resources/es/base.js?version=${UIBuildId!.now?string('Mddyyyy')}"></script>
+     <script src="/studio/static-assets/components/cstudio-common/resources/de/base.js?version=${UIBuildId!.now?string('Mddyyyy')}"></script>
+     <script src="/studio/static-assets/components/cstudio-common/resources/ja/base.js?version=${UIBuildId!.now?string('Mddyyyy')}"></script>
+
+--------------------------------------
+6. Build, deploy and test your changes
+--------------------------------------
+
+Don't forget to build and deploy.  To test your changes, from the login screen, click on the language dropdown box, and you should see the new language we just added.
+
+.. image:: /_static/images/system-admin/login-new-lang.png
+   :align: center
+   :width: 35 %
+   :alt: Japanese Language Added
 
