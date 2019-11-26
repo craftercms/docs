@@ -131,7 +131,6 @@ This target will:
 - Clone the remote repository if needed
 - Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
 - Identify the changed files according to the Git repository history
-- Replace all URLs for static assets with external URLs using an AWS Cloudfront distribution
 - Index all site content in Elasticsearch
 - Sync all new, updated and deleted files to an AWS S3 bucket
 - Execute an invalidation for all updated files in one or more AWS Cloudfront distributions
@@ -154,16 +153,13 @@ This target will:
 +------------------------------+-----------+------------------------------------------------------------------------+
 |``aws.secret_key``            |           |The AWS Secret Key to use                                               |
 +------------------------------+-----------+------------------------------------------------------------------------+
-|``aws.distribution.url``      ||checkmark||The base URL of the AWS Cloudfront distribution to use for static       |
-|                              |           |assets                                                                  |
-+------------------------------+-----------+------------------------------------------------------------------------+
 |``aws.distribution.ids``      |           |An array of AWS Cloudfront distribution ids to execute invalidations    |
 +------------------------------+-----------+------------------------------------------------------------------------+
 |``aws.s3.url``                ||checkmark||The full AWS S3 URI of the folder to sync files                         |
 +------------------------------+-----------+------------------------------------------------------------------------+
 |``disable_deploy_cron``       |           |Disables the cron job that runs deployments every certain amount of time|
 +------------------------------+-----------+------------------------------------------------------------------------+
-|``local_repo_path``           |           |The path of the local Git repository to use                             |
+|``local_repo_path``           |           |The local path where to put the remote Git repo clone                   |
 +------------------------------+-----------+------------------------------------------------------------------------+
 |``repo_branch``               |           |The branch name of the remote Git repo to pull from                     |
 +------------------------------+-----------+------------------------------------------------------------------------+
@@ -190,17 +186,17 @@ AWS Cloudformed Target
 This template is used to provide a serverless delivery environment without the need to manually create all required 
 resources in AWS. It works similar to the AWS S3 Target but uses an AWS CloudFormation template to create the AWS 
 resources on target creation: the S3 bucket where the site content will be stored and a CloudFront distribution that 
-will deliver the static assets directly from the S3 bucket. These resources will be deleted when the target is deleted.
+will front an Engine load balancer and deliver the static assets directly from the S3 bucket. These resources will be 
+deleted when the target is deleted.
 
 This target will:
 
 - Clone the remote repository if needed
 - Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
 - Identify the changed files according to the Git repository history
-- Replace all URLs for static assets with external URLs using an AWS CloudFront distribution
 - Index all site content in Elasticsearch
 - Sync all new, updated and deleted files to an AWS S3 bucket
-- Execute an invalidation for all updated files in one or more AWS CloudFront distributions
+- Execute an invalidation for all updated files in the AWS CloudFront distribution
 - Submit deployments events for all Crafter Engine instances:
 
   - Rebuild the site context when there are changes in configuration files or Groovy scripts
@@ -211,36 +207,48 @@ This target will:
 
 **Parameters**
 
-+---------------------------------+--------+------------------------------------------------------------------------+
-|Name                             |Required|Description                                                             |
-+=================================+========+========================================================================+
-|``aws.region``                   |        |The AWS Region to use                                                   |
-+---------------------------------+--------+------------------------------------------------------------------------+
-|``aws.default_access_key``       |        |The AWS Access Key to use for S3 and CloudFront                         |
-+---------------------------------+--------+------------------------------------------------------------------------+
-|``aws.default_secret_key``       |        |The AWS Secret Key to use for S3 and CloudFront                         |
-+---------------------------------+--------+------------------------------------------------------------------------+
-|``aws.cloudformation.access_key``|        |The AWS Access Key to use for CloudFormation                            |
-+---------------------------------+--------+------------------------------------------------------------------------+
-|``aws.cloudformation.secret_key``|        |The AWS Secret Key to use for CloudFormation                            |
-+---------------------------------+--------+------------------------------------------------------------------------+
-|``disable_deploy_cron``          |        |Disables the cron job that runs deployments every certain amount of time|
-+---------------------------------+--------+------------------------------------------------------------------------+
-|``local_repo_path``              |        |The path of the local Git repository to use                             |
-+---------------------------------+--------+------------------------------------------------------------------------+
-|``repo_branch``                  |        |The branch name of the remote Git repo to pull from                     |
-+---------------------------------+--------+------------------------------------------------------------------------+
-|``repo_username``                |        |Username to access remote repository                                    |
-+---------------------------------+--------+------------------------------------------------------------------------+
-|``repo_password``                |        |Password to access remote repository                                    |
-+---------------------------------+--------+------------------------------------------------------------------------+
-|``ssh_private_key_path``         |        |The path for the private key to access remote repository                |
-+---------------------------------+--------+------------------------------------------------------------------------+
-|``ssh_private_key_passphrase``   |        |The passphrase for the private key to access remote repository (only if |
-|                                 |        |the key is passphrase-protected)                                        |
-+---------------------------------+--------+------------------------------------------------------------------------+
-|``notification_addresses``       |        |The email addresses that should receive deployment notifications        |
-+---------------------------------+--------+------------------------------------------------------------------------+
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|Name                                                 |Required   |Description                                         |
++=====================================================+===========+====================================================+
+|``aws.region``                                       |           |The AWS Region to use                               |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.default_access_key``                           |           |The AWS Access Key to use for S3 and CloudFront     |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.default_secret_key``                           |           |The AWS Secret Key to use for S3 and CloudFront     |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.cloudformation.namespace``                     ||checkmark||Prefix to use for CloudFormation resource names     |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.cloudformation.deliveryLBDomainName``          ||checkmark||The domain name of the Engine delivery LB           |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.cloudformation.cloudfrontCertificateArn``      |           |The ARN of the CloudFront SSL certificate           |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.cloudformation.alternateCloudFrontDomainNames``|           |The alternate domain names for the CloudFront to use| 
+|                                                     |           |(must match the valid certificate domain names)     |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.cloudformation.access_key``                    |           |The AWS Access Key to use for CloudFormation        |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``aws.cloudformation.secret_key``                    |           |The AWS Secret Key to use for CloudFormation        |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``disable_deploy_cron``                              |           |Disables the cron job that runs deployments every   | 
+|                                                     |           |certain amount of time                              |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``local_repo_path``                                  |           |The local path where to put the remoe Git repo clone|
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``repo_branch``                                      |           |The branch name of the remote Git repo to pull from |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``repo_username``                                    |           |Username to access remote repository                |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``repo_password``                                    |           |Password to access remote repository                |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``ssh_private_key_path``                             |           |The path for the private key to access remote       | 
+|                                                     |           |repository                                          |
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``ssh_private_key_passphrase``                       |           |The passphrase for the private key to access remote |
+|                                                     |           |repository (only if the key is passphrase-protected)|
++-----------------------------------------------------+-----------+----------------------------------------------------+
+|``notification_addresses``                           |           |The email addresses that should receive deployment  |
+|                                                     |           |notifications                                       |
++-----------------------------------------------------+-----------+----------------------------------------------------+
 
 .. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
 
