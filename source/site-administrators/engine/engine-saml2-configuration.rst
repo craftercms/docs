@@ -4,9 +4,9 @@
 
 .. _engine-saml2-configuration:
 
-==========================
-Engine SAML2 Configuration
-==========================
+===========================================
+Engine SAML2 Configuration |enterpriseOnly|
+===========================================
 
 Crafter Engine can be configured to support SAML2 SSO out of the box without using any additional plugin.
 
@@ -69,7 +69,7 @@ Properties Details
 |``enable``                         |Indicates if SAML2 is enabled or not       |``false``                            |
 +-----------------------------------+-------------------------------------------+-------------------------------------+
 |``attributes``                     |Comma separated list of the custom         |                                     |
-|                                   |custom attributes sent by the IDP          |                                     |
+|                                   |attributes sent by the IDP                 |                                     |
 +-----------------------------------+-------------------------------------------+-------------------------------------+
 |``role.key``                       |Name of the role attribute sent by the IDP |``Role``                             |
 +-----------------------------------+-------------------------------------------+-------------------------------------+
@@ -101,7 +101,7 @@ Commit the required files
 -------------------------
 
 You will need to add & commit the keystore and descriptor files manually to the site repository, the location will
-depend of the configuration used, the following example uses the default locations:
+depend on the configuration used. The following example uses the default locations:
 
 .. code-block:: bash
   :linenos:

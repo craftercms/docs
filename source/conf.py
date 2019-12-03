@@ -407,6 +407,10 @@ rst_epilog = """
 
 .. |mainMenu| image:: /_static/images/main-menu-button.png
                    :width: 5%
+
+.. |enterpriseOnly| image:: /_static/images/ee-only-badge.svg
+                      :alt: Enterprise only feature
+                      :class: ee-only-badge
 """
 
 # Javadoc home and version
