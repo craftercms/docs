@@ -95,17 +95,8 @@ To enable in-context editing simply add the following attribute to the container
 
     .. code-block:: guess
 
-	    <@studio.iceAttr iceGroup="author"/>
+	    <@studio.iceAttr component=contentModel iceGroup="author"/>
 
-|
-
-For embedded components, to enable in-context editing simply add the following attribute and tag attribute to the embedded component template
-
-    .. code-block:: guess
-
-	    <@studio.iceAttr component=contentModel/>
-
-|
 
 Tag Attributes
 --------------
@@ -126,7 +117,7 @@ Tag Attributes
 || label         || No (but it's a best practice)     || UI will use label if it exists. Otherwise|
 ||               ||                                   || the iceGroup or path will be used.       |
 +----------------+------------------------------------+-------------------------------------------+
-|| component     || No                                || a |SiteItem| object                      |
+|| component     || Yes                               || a |SiteItem| object                      |
 +----------------+------------------------------------+-------------------------------------------+
 
 Example: 
@@ -136,35 +127,6 @@ Example:
 	    <img <@studio.iceAttr iceGroup="image" label="Promo Image 1" /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}"/>``
 
     |
-
-Let's take a look at an example of enabling in-context editing pencils for embedded components, using the Website Editorial bp, ``feature`` embedded component.
-
-Here's how the features section pencils look like before adding the ``iceAttr`` with the ``component`` tag:
-
-.. image:: /_static/images/developer/ice-embedded-component-example.png
-    :align: center
-    :width: 70 %
-    :alt: In context editing embedded content not enabled example
-
-|
-
-To enable the in-context editing pencils of the features component, add the attribute ``iceAttr`` with the attribute tag ``component`` like below:
-
-    .. code-block:: guess
-        :caption: /templates/web/components/feature.ftl
-
-        <article <@studio.iceAttr component=contentModel/> <@studio.componentAttr component=contentModel ice=true />>
-
-    |
-
-Here's how the features section pencils look like after enabling the in-context editing pencils for embedded components:
-
-.. image:: /_static/images/developer/ice-embedded-component-example2.png
-    :align: center
-    :width: 70 %
-    :alt: In context editing embedded content enabled example
-
-|
 
 ----------------------------
 Component Drag and Drop Zone
@@ -280,7 +242,7 @@ In order for authors to interact with components, to drag them around the screen
 
     .. code-block:: guess
 
-	    <@studio.componentAttr path=contentModel.storeUrl />
+	    <@studio.componentAttr component=contentModel />
 
 |
 
@@ -290,7 +252,7 @@ Tag Attributes
 +----------------+------------------------------+-------------------------------------------------+
 | Attribute Name | Required                     | Expected Value                                  |
 +================+==============================+=================================================+
-|| path          || Yes                         || the path to the component. Typically this is   |
+|| path          || No                          || the path to the component. Typically this is   |
 ||               ||                             || simply contentModel.storeUrl                   |
 +----------------+------------------------------+-------------------------------------------------+
 || ice           || No                          || true or false. If true the component will      |
@@ -305,18 +267,47 @@ Tag Attributes
 || iceGroup      || No (unless path is not      || the label/id assigned to iceGroup on           |
 ||               || supplied)                   || fields in your content model.                  |
 +----------------+------------------------------+-------------------------------------------------+
-|| component     || No                          || a |SiteItem| object                            |
+|| component     || Yes                         || a |SiteItem| object                            |
 +----------------+------------------------------+-------------------------------------------------+
 
 Example
 
     .. code-block:: guess
 
-	    <img <@studio.componentAttr path=contentModel.storeUrl ice=true /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}" />
+	    <img <@studio.componentAttr component=contentModel ice=true /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}" />
 
 |
 
 .. note:: Remember to have an item selector control in the form definition for each drop zone
+
+Let's take a look at an example of enabling in-context editing pencils for embedded components, using the Website Editorial bp, ``feature`` embedded component through the ``<@studio.componentAttr />`` tag.
+
+Here's how the features section pencils look like before enabling pencils on the embedded components:
+
+.. image:: /_static/images/developer/ice-embedded-component-example.png
+   :align: center
+   :width: 70 %
+   :alt: In context editing embedded content not enabled example
+
+|
+
+To enable the in-context editing pencils of the features component, add the attribute tag ``ice`` with the value set to ``true`` like below:
+
+.. code-block:: guess
+   :caption: /templates/web/components/feature.ftl
+
+   <article <@studio.componentAttr component=contentModel ice=true />>
+
+|
+
+Here's how the features section pencils look like after enabling the in-context editing pencils for embedded components:
+
+.. image:: /_static/images/developer/ice-embedded-component-example2.png
+   :align: center
+   :width: 70 %
+   :alt: In context editing embedded content enabled example
+
+|
 
 --------------
 Engine Support

@@ -44,7 +44,7 @@ The macro ``<@studio.iceAttr/>`` adds a pencil to open a form for the path
 || label         || No (but it's a best practice)     || UI will use label if it exists. Otherwise|
 ||               ||                                   || the iceGroup or path will be used.       |
 +----------------+------------------------------------+-------------------------------------------+
-|| component     || No                                || a |SiteItem| object                      |
+|| component     || Yes                               || a |SiteItem| object                      |
 +----------------+------------------------------------+-------------------------------------------+
 
 |
@@ -98,7 +98,7 @@ The macro ``<@studio.componentAttr/>`` identifies a component
 +----------------+------------------------------+-------------------------------------------------+
 | Attribute Name | Required                     | Expected Value                                  |
 +================+==============================+=================================================+
-|| path          || Yes                         || the path to the component. Typically this is   |
+|| path          || No                          || the path to the component. Typically this is   |
 ||               ||                             || simply contentModel.storeUrl                   |
 +----------------+------------------------------+-------------------------------------------------+
 || ice           || No                          || true or false. If true the component will      |
@@ -113,7 +113,7 @@ The macro ``<@studio.componentAttr/>`` identifies a component
 || iceGroup      || No (unless path is not      || the label/id assigned to iceGroup on           |
 ||               || supplied)                   || fields in your content model.                  |
 +----------------+------------------------------+-------------------------------------------------+
-|| component     || No                          || a |SiteItem| object                            |
+|| component     || Yes                         || a |SiteItem| object                            |
 +----------------+------------------------------+-------------------------------------------------+
 
 Take a look at :ref:`in-context-editing-ftl` for more details and examples on how to use the tag attributes for enabling in-context editing in Freemarker templates.
