@@ -20,8 +20,7 @@ Freemarker Template In-Context Editing
 --------------
 Studio Support
 --------------
-
-Studio support adds authoring tools to your template.  It's important to understand that these macros *ONLY RENDER IN PREVIEW* and *DO NOT* add additional structure to your markup.  A minimal amount of Javascript/css is injected in to your page to facilitate editing tool integration with your page.  
+Studio support contains various tools that allow developers to integrate and enable Crafter CMS’s In-Context Editing (ICE) features.  It's important to understand that these macros *ONLY RENDER IN PREVIEW* and *DO NOT* add additional structure to your markup.   It only adds attributes to your markup (i.e. no additional elements will be inserted to your HTML tree). A minimal amount of JavaScript/CSS is injected in to your page to enable ICE controls on your marked sections.
 
 The previous template markup for Studio support still works however the new markup generates cleaner code and exposes new features.
 
@@ -347,13 +346,3 @@ Need to iterate through a list of components and render them WITHOUT any additio
 
 |
 
-Render RTE (Rich Text Editor Components)
-----------------------------------------
-
-Have components that are inserted in to the rich text editor and need to render them?
-
-    .. code-block:: guess
-
-	    <@crafter.renderRTEComponents />
-
-|
