@@ -58,3 +58,10 @@
   color: #555; }
 
 /*# sourceMappingURL=custom.css.map */
+
+
+.ee-only-badge {
+    height: 24px;
+    position: relative;
+    top: -14px;
+}

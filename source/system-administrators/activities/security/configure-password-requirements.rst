@@ -66,3 +66,18 @@ Capture group keys are used with the regular expression as listed above, where:
 * ``minLength``: specify the minimum password length
 * ``maxLength``: specify the maximum password length
 * ``minMaxLength``: specify the minimum and maximum password length
+
+Safe capture group keys include camel-cased (e.g. MustHaveAtLeastTwoNumbers) or underscored (e.g. Must_Have_At_Least_Two_Numbers, Must_have_at_least_two_numbers) strings. Capture group names may not contain spaces or other special chars.
+
+Here's an example where the validation regex requires at least two numbers, where the capture group key for that requirements uses the camel case string ``MustHaveAtLeastTwoNumbers``, which is the text that will be displayed as part of the password requirements:
+
+.. code-block:: yaml
+   :linenos:
+   :caption: *crafter_install_dir/data/repos/global/configuration/studio-config-override.yaml*
+
+   # studio.security.passwordRequirements.validationRegex: ^(?=(?<MustHaveAtLeastTwoNumbers>.*[0-9].*[0-9]))(?=(?<hasLowercase>.*[a-z]))(?=(?<hasUppercase>.*[A-Z]))(?=(?<hasSpecialChars>.*[~|!`,;\/@#$%^&+=]))(?<minLength>.{8,})$
+
+.. image:: /_static/images/system-admin/password-requirements-mod.png
+    :alt: System Administrator - Password Requirements Display
+    :align: center
+    :width: 65%
