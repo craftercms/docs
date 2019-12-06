@@ -39,10 +39,7 @@ Java Doc
 
 Crafter Studio's Java Doc is here:
 
-* :javadoc_base_url:`studio`
-
-.. ..* :javadoc_base_url:`studio-2`
-
+* :javadoc_base_url:`studio/index.html`
 
 -------------
 Configuration
