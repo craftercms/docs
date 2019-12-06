@@ -23,7 +23,7 @@ Crafter Engine's source code is managed in GitHub: https://github.com/craftercms
 Java Doc
 --------
 
-Crafter Engine's Java Doc is here: :javadoc_base_url:`engine`
+Crafter Engine's Java Doc is here: :javadoc_base_url:`engine/index.html`
 
 --------
 ReST API
