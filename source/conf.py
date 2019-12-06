@@ -411,7 +411,7 @@ rst_epilog = """
 .. |enterpriseOnly| image:: /_static/images/ee-only-badge.svg
                       :alt: Enterprise only feature
                       :class: ee-only-badge
-                      :target: http://www.craftersoftware.com
+                      :target: https://craftersoftware.com
 """
 
 # Javadoc home and version
