@@ -22,8 +22,6 @@ Studio Support
 --------------
 Studio support contains various tools that allow developers to integrate and enable Crafter CMS’s In-Context Editing (ICE) features.  It's important to understand that these macros *ONLY RENDER IN PREVIEW* and *DO NOT* add additional structure to your markup.   It only adds attributes to your markup (i.e. no additional elements will be inserted to your HTML tree). A minimal amount of JavaScript/CSS is injected in to your page to enable ICE controls on your marked sections.
 
-The previous template markup for Studio support still works however the new markup generates cleaner code and exposes new features.
-
 .. note::
    If your ``cstudio-support.ftl`` uses ``siteContext.overlayCallback`` to check if Engine is running in preview mode, please update your file to use ``modePreview`` instead as ``siteContext.overlayCallback`` and related classes are being discontinued in Engine.
 
