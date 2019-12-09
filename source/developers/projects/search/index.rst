@@ -28,7 +28,7 @@ Crafter Search's source code is managed in GitHub: https://github.com/craftercms
 Java Doc
 --------
 
-Crafter Search's Java Doc is here: :javadoc_base_url:`search`
+Crafter Search's Java Doc is here: :javadoc_base_url:`search/index.html`
 
 --------
 ReST API

@@ -114,7 +114,7 @@ needed:
   :linenos:
 
   <security>
-    <saml>
+    <headers>
       <token>SOME_SECRET_TOKEN</token>
       <groups>
         <group>
@@ -128,7 +128,7 @@ needed:
           <field>firstName</field>
         </attribute>
       </attributes>
-    </saml>
+    </headers>
   ...
   </security>
 

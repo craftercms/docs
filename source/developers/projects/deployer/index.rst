@@ -25,7 +25,7 @@ Crafter Deployer's source code is managed in GitHub: https://github.com/crafterc
 Java Doc
 --------
 
-Crafter Deployer's Java Doc is here: :javadoc_base_url:`deployer`
+Crafter Deployer's Java Doc is here: :javadoc_base_url:`deployer/index.html`
 
 --------
 ReST API
