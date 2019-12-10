@@ -50,6 +50,7 @@ In case you decide to update your site to use Elasticsearch instead of Solr you 
 #. Find all references to ``searchService`` in your FreeMarker templates and replace them with the Elasticsearch service
 #. Find all references to ``searchService`` in your Groovy scripts and replace them with the Elasticsearch service
 #. Delete the unused Solr core if needed (can be done using the Solr Admin UI or the ``data/indexes`` folder)
+#. Update ``craftercms-plugin.yaml`` to use Elasticsearch as the search engine
 
 ^^^^^^^^^^^^^^^^^^^^
 Overwrite the target
@@ -308,3 +309,19 @@ Elasticsearch also offers the possibility to query fields with postfixes using w
       ]
     ]
   ]
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Update "craftercms-plugin.yaml" to use Elasticsearch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Your site contains a ``craftercms-plugin.yaml`` file that contains information for use by Crafter CMS.  We'll have to update the file to use Elasticsearch as the search engine.
+
+Edit your ``craftercms-plugin.yaml``, and add the following property at the end of the file:
+
+.. code-block:: yaml
+   :caption: *AUTHORING_INSTALL_DIR/data/repos/sites/YOURSITE/sandbox/craftercms-plugin.yaml*
+   :linenos:
+
+   searchEngine: Elasticsearch
+
+And make sure to commit your changes to ``craftercms-plugin.yaml``.
