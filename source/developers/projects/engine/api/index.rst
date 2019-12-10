@@ -142,3 +142,12 @@ Monitoring
 	monitoring/version
 	monitoring/log
 
+------------------
+Crafter-Controller
+------------------
+
+.. toctree::
+	:maxdepth: 1
+
+	crafter-controller/component
+
