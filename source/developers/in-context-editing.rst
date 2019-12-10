@@ -8,103 +8,26 @@
 In-Context Editing
 ==================
 
-.. Highlighting language used is "guess" (let Pygments guess the lexer based on contents, only works with certain well-recognizable languages) since there's no Pygment lexer for freemarker
-
 .. |SiteItem| replace:: :javadoc_base_url:`SiteItem <engine/org/craftercms/engine/model/SiteItem.html>`
 
---------------
-Studio Support
---------------
+In-context editing (ICE) allows authors to edit/update content in place through editable regions.  This makes it easier for the content authors to find and edit their content.
 
-Studio support adds authoring tools to your template.  It's important to understand that these macros *ONLY RENDER IN PREVIEW* and *DO NOT* add additional structure to your markup.  A minimal amount of Javascript/css is injected in to your page to facilitate editing tool integration with your page.  
+Crafter Studio supports enabling in-context editing for content authors through macros/tag attributes for freemarker templates and HTML5 attributes for HTML5 applications.
 
-The previous template markup for Studio support still works however the new markup generates cleaner code and exposes new features.
 
-.. note::
-   If your ``cstudio-support.ftl`` uses ``siteContext.overlayCallback`` to check if Engine is running in preview mode, please update your file to use ``modePreview`` instead as ``siteContext.overlayCallback`` and related classes are being discontinued in Engine.
+---------------------------------------------------
+Enabling In-Context Editing in Freemarker Templates
+---------------------------------------------------
 
-     Search for ``siteContext.overlayCallback`` calls in your ``cstudio-support.ftl`` file:
+Here's a summary of macros and corresponding tag attributes used for enabling in-context editing in freemarker templates
 
-     .. code-block:: guess
-        :caption: cstudio-support.ftl
-        :emphasize-lines: 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+In-context Editing Pencils
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+The macro ``<@studio.iceAttr/>`` adds a pencil to open a form for the path
 
-        <#macro toolSupport>
-          <#if siteContext.overlayCallback??>
-            <script src="/studio/static-assets/libs/requirejs/require.js" data-main="/studio/overlayhook?site=NOTUSED&page=NOTUSED&cs.js"></script>
-            <script>document.domain = "${Request.serverName}"; </script>
-          </#if>
-
-     |
-
-     Replace with ``modePreview`` to check if Engine is running in preview mode:
-
-     .. code-block:: guess
-        :caption: cstudio-support.ftl
-        :emphasize-lines: 2
-
-        <#macro toolSupport>
-          <#if modePreview>
-            <script src="/studio/static-assets/libs/requirejs/require.js" data-main="/studio/overlayhook?site=NOTUSED&page=NOTUSED&cs.js"></script>
-            <script>document.domain = "${Request.serverName}"; </script>
-          </#if>
-
-     |
-
---------------------------
-Enabling Authoring Support
---------------------------
-
-At the top of your page or component (whatever it is you are rendering, include the following) import:
-
-    .. code-block:: guess
-
-	    <#import "/templates/system/common/cstudio-support.ftl" as studio/>
-
-|
-
-At the bottom of your template insert the following: (Note the example shows a traditional HTML page however other formats/levels of granularity are supported
-
-    .. code-block:: guess
-
-	        <@studio.toolSupport/>
-	      </body>
-	    </html>
-
-|
-
---------------------------
-In-Context Editing Pencils
---------------------------
-
-In context editing renders pencils on the screen that invoke editing controls when clicked.  This allows authors to quickly/visually identify editable content and make changes.
-
-.. image:: /_static/images/ice-example.png
-        :align: center
-        :width: 70 %
-        :alt: In context editing example
-
-|
-
-To enable in-context editing simply add the following attribute to the container/element where you want to place the editing control
-
-    .. code-block:: guess
-
-	    <@studio.iceAttr iceGroup="author"/>
-
-|
-
-For embedded components, to enable in-context editing simply add the following attribute and tag attribute to the embedded component template
-
-    .. code-block:: guess
-
-	    <@studio.iceAttr component=contentModel/>
-
-|
-
-Tag Attributes
---------------
-
+<@studio.iceAttr/> Tag Attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 +----------------+------------------------------------+-------------------------------------------+
 | Attribute Name | Required                           | Expected Value                            |
 +================+====================================+===========================================+
@@ -121,66 +44,18 @@ Tag Attributes
 || label         || No (but it's a best practice)     || UI will use label if it exists. Otherwise|
 ||               ||                                   || the iceGroup or path will be used.       |
 +----------------+------------------------------------+-------------------------------------------+
-|| component     || No                                || a |SiteItem| object                      |
+|| component     || Yes                               || a |SiteItem| object                      |
 +----------------+------------------------------------+-------------------------------------------+
 
-Example: 
-
-    .. code-block:: guess
-
-	    <img <@studio.iceAttr iceGroup="image" label="Promo Image 1" /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}"/>``
-
-    |
-
-Let's take a look at an example of enabling in-context editing pencils for embedded components, using the Website Editorial bp, ``feature`` embedded component.
-
-Here's how the features section pencils look like before adding the ``iceAttr`` with the ``component`` tag:
-
-.. image:: /_static/images/developer/ice-embedded-component-example.png
-    :align: center
-    :width: 70 %
-    :alt: In context editing embedded content not enabled example
-
 |
 
-To enable the in-context editing pencils of the features component, add the attribute ``iceAttr`` with the attribute tag ``component`` like below:
+^^^^^^^^^^^^^^^^^^^
+Drag and Drop Zones
+^^^^^^^^^^^^^^^^^^^
+The macro ``<@studio.componentContainerAttr/>`` defines a drop zone for components
 
-    .. code-block:: guess
-        :caption: /templates/web/components/feature.ftl
-
-        <article <@studio.iceAttr component=contentModel/> <@studio.componentAttr component=contentModel ice=true />>
-
-    |
-
-Here's how the features section pencils look like after enabling the in-context editing pencils for embedded components:
-
-.. image:: /_static/images/developer/ice-embedded-component-example2.png
-    :align: center
-    :width: 70 %
-    :alt: In context editing embedded content enabled example
-
-|
-
-----------------------------
-Component Drag and Drop Zone
-----------------------------
-
-Drag and drop makes it easy for authors to visually assemble pages.  Authors simply choose a component from a pre-defined list of components/widgets, drag them on to the screen, place them where they want (in defined drop zones), and then configure them.  Authors may also move components from one zone to another or remove components.
-
-.. image:: /_static/images/dropzone.png
-
-|
-
-To define a drop zone for components simply add the ``componentContainerAttr`` attribute with the ``component`` tag to the container element where you want your components to render
-
-    .. code-block:: guess
-
-	    <@studio.componentContainerAttr target="bottomPromos" component=contentModel />
-
-
-Tag Attributes
---------------
-
+<@studio.componentContainerAttr/> Tag Attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 +----------------+------------------------------+------------------------------------------------+
 | Attribute Name | Required                     | Expected Value                                 |
 +================+==============================+================================================+
@@ -192,100 +67,38 @@ Tag Attributes
 || component     || Yes                         || a |SiteItem| object                           |
 +----------------+------------------------------+------------------------------------------------+
 
-Example:
+|
 
-    .. code-block:: guess
-
-	    <div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" component=contentModel /> >
-		    ...
-	    <div>
-
-    |
-
-If you want to learn how to configure the Drag and Drop panel please read the following document: :doc:`../site-administrators/studio/drag-n-drop-configuration`.
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Rendering components from the target inside the container
----------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The macro ``<@renderComponent/>`` renders components
 
-The template needs to render the components that are referenced. The basic code to do this looks like:
-
-    .. code-block:: guess
-
-	    <#if contentModel.bottomPromos?? && contentModel.bottomPromos.item??>
-		  <#list contentModel.bottomPromos1.item as module>
-		    <@renderComponent component=module />
-		  </#list>
-	    </#if>
-
-|
-
-Note that the code is simply iterating over the collection of objects and calling render component.  NO markup is being inserted in this example.  The component template is rendering itself.  It's up to you if you want to insert markup around sub-components.
-Full example of typical component drop zone
-
-    .. code-block:: guess
-
-	    <div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" /> >
-		  <#if contentModel.bottomPromos?? && contentModel.bottomPromos.item??>
-		    <#list contentModel.bottomPromos.item as module>
-		      <@renderComponent component=module />
-		    </#list>
-		  </#if>
-	    </div>
+<@renderComponent/> Tag Attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++----------------+------------------------------+------------------------------------------------+
+| Attribute Name | Required                     | Expected Value                                 |
++================+==============================+================================================+
+|| parent        || No                          || a |SiteItem| object                           |
+||               ||                             || Required if the component to be rendered is   |
+||               ||                             || not the current item                          |
++----------------+------------------------------+------------------------------------------------+
+|| component     || Yes                         || a |SiteItem| object                           |
++----------------+------------------------------+------------------------------------------------+
 
 |
 
-If the component to be rendered is an embedded component, the tag ``parent`` with a |SiteItem| object for the value needs to be added to ``renderComponent`` if the component to be rendered is not the current item, like below:
-
-    .. code-block:: guess
-
-       <@renderComponent component=module parent=contentModel/>
-
-    |
-
-Let's take a look at an example using a site created using the Website Editorial blueprint.  In the Home page of the site, the features section contains embedded components ``feature``.  To render the embedded components from the target inside the container, note that the tag ``parent=contentModel`` is not required since the component to be rendered is the current item:
-
-.. code-block:: guess
-   :linenos:
-   :emphasize-lines: 9
-   :caption: */templates/web/pages/home.ftl*
-
-   <!-- Section -->
-     <section <@studio.iceAttr iceGroup="features"/>>
-       <header class="major">
-         <h2>${contentModel.features_title_t}</h2>
-       </header>
-       <div class="features" <@studio.componentContainerAttr target="features_o" objectId=contentModel.objectId/>>
-         <#if contentModel.features_o?? && contentModel.features_o.item??>
-           <#list contentModel.features_o.item as feature>
-             <@renderComponent component=feature />
-           </#list>
-         </#if>
-       </div>
-     </section>
-
-|
-
-As noted above, the code is simply iterating over the collection of objects (``feature`` component) and calling render component.  The component template is rendering itself.
-
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Identifying components in the template
---------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The macro ``<@studio.componentAttr/>`` identifies a component
 
-In order for authors to interact with components, to drag them around the screen for example the templating system must know how to identify them.  To identify a component simply add the following attribute to the outer most element in the component template's markup
-
-    .. code-block:: guess
-
-	    <@studio.componentAttr path=contentModel.storeUrl />
-
-|
-
-Tag Attributes
---------------
-
+<@studio.componentAttr/> Tag Attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 +----------------+------------------------------+-------------------------------------------------+
 | Attribute Name | Required                     | Expected Value                                  |
 +================+==============================+=================================================+
-|| path          || Yes                         || the path to the component. Typically this is   |
+|| path          || No                          || the path to the component. Typically this is   |
 ||               ||                             || simply contentModel.storeUrl                   |
 +----------------+------------------------------+-------------------------------------------------+
 || ice           || No                          || true or false. If true the component will      |
@@ -300,64 +113,120 @@ Tag Attributes
 || iceGroup      || No (unless path is not      || the label/id assigned to iceGroup on           |
 ||               || supplied)                   || fields in your content model.                  |
 +----------------+------------------------------+-------------------------------------------------+
-|| component     || No                          || a |SiteItem| object                            |
+|| component     || Yes                         || a |SiteItem| object                            |
 +----------------+------------------------------+-------------------------------------------------+
 
-Example
+Take a look at :ref:`in-context-editing-ftl` for more details and examples on how to use the tag attributes for enabling in-context editing in Freemarker templates.
 
-    .. code-block:: guess
 
-	    <img <@studio.componentAttr path=contentModel.storeUrl ice=true /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}" />
+-------------------------------------------------
+Enabling In-Context Editing in HTML5 Applications
+-------------------------------------------------
 
-|
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+In-context Editing Pencils
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following attributes adds a pencil to open a form for the path (and ICE id combination if set):
 
-.. note:: Remember to have an item selector control in the form definition for each drop zone
-
---------------
-Engine Support
---------------
-
-At the top of your page or component (whatever it is you are rendering, include the following) import:
-
-    .. code-block:: guess
-
-	    <#import "/templates/system/common/crafter-support.ftl" as crafter/>
-
-|
-
-Components
-----------
-
-Render Component
-----------------
-
-Need to render a sub component of some kind? 
-
-    .. code-block:: guess
-
-	    <@renderComponent component=module />
++-------------------------------+---------------------+-------------------------------------------+
+| Attribute Name                | Required            | Expected Value                            |
++===============================+=====================+===========================================+
+|| data-studio-ice              ||                    || Marks the element as the container for   |
+||                              ||                    || in-context editing. No value is required.|
++-------------------------------+---------------------+-------------------------------------------+
+|| data-studio-ice-path         ||                    || Path of the content object.              |
+||                              ||                    || Example: “/site/products/a-component.xml”|
++-------------------------------+---------------------+-------------------------------------------+
+|| data-studio-ice-label        || No (but it's a best|| UI will use label if it exists. Otherwise|
+||                              || practice)          || the path will be used.                   |
++-------------------------------+---------------------+-------------------------------------------+
+|| data-studio-embedded-item-id || No (only required  || Object Id of embedded component          |
+||                              || when component is  ||                                          |
+||                              || of embedded type   ||                                          |
++-------------------------------+---------------------+-------------------------------------------+
 
 |
 
-Render Components
------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Identifying Drag n Drop Components
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following attributes identifies the outer div of a component:
 
-Need to iterate through a list of components and render them WITHOUT any additional markup?
++-------------------------------+---------------------+-------------------------------------------+
+| Attribute Name                | Required            | Expected Value                            |
++===============================+=====================+===========================================+
+|| data-studio-component        ||                    || Content type name.                       |
+||                              ||                    || Example: “/component/product”            |
++-------------------------------+---------------------+-------------------------------------------+
+|| data-studio-component-path   ||                    || Path of the content object.              |
+||                              ||                    || Example: “/site/products/a-component.xml”|
++-------------------------------+---------------------+-------------------------------------------+
+|| data-studio-embedded-item-id || No (only required  || Object Id of embedded component          |
+||                              || when component is  ||                                          |
+||                              || of embedded type   ||                                          |
++-------------------------------+---------------------+-------------------------------------------+
 
+|
 
-    .. code-block:: guess
+.. _identifying-drag-n-drop-with-pencil:
 
-	    <@crafter.renderComponents componentList=contentModel.bottomPromos />
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Identifying Drag n Drop Components with a Pencil
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following attributes identifies the outer div of a component and adds a pencil to open a form for the path (and ICE id combination if set)
+
++-------------------------------+---------------------+-------------------------------------------+
+| Attribute Name                | Required            | Expected Value                            |
++===============================+=====================+===========================================+
+|| data-studio-ice              ||                    || Marks the element as the container for   |
+||                              ||                    || in-context editing. No value is required.|
++-------------------------------+---------------------+-------------------------------------------+
+|| data-studio-ice-path         ||                    || Path of the content object.              |
+||                              ||                    || Example: “/site/products/a-component.xml”|
++-------------------------------+---------------------+-------------------------------------------+
+|| data-studio-ice-label        || No (but it's a best|| UI will use label if it exists. Otherwise|
+||                              || practice)          || the path will be used.                   |
++-------------------------------+---------------------+-------------------------------------------+
+|| data-studio-component        ||                    || Content type name.                       |
+||                              ||                    || Example: “/component/product”            |
++-------------------------------+---------------------+-------------------------------------------+
+|| data-studio-component-path   ||                    || Path of the content object.              |
+||                              ||                    || Example: “/site/products/a-component.xml”|
++-------------------------------+---------------------+-------------------------------------------+
+|| data-studio-embedded-item-id || No (only required  || Object Id of embedded component          |
+||                              || when component is  ||                                          |
+||                              || of embedded type   ||                                          |
++-------------------------------+---------------------+-------------------------------------------+
 
 |
 
-Render RTE (Rich Text Editor Components)
-----------------------------------------
+^^^^^^^^^^
+Drop Zones
+^^^^^^^^^^
+The following attributes identifies an element as a drop zone.
 
-Have components that are inserted in to the rich text editor and need to render them?
-
-    .. code-block:: guess
-
-	    <@crafter.renderRTEComponents />
++---------------------------------+---------------------+-------------------------------------------+
+| Attribute Name                  | Required            | Expected Value                            |
++=================================+=====================+===========================================+
+|| data-studio-components-target  || Yes                || The name of the field in the parent model|
+||                                ||                    || where component references will be stored|
+||                                ||                    ||                                          |
+||                                ||                    || This is typically an                     |
+||                                ||                    || item selector field type.                |
++---------------------------------+---------------------+-------------------------------------------+
+|| data-studio-components-objectid||                    || a |SiteItem| object                      |
++---------------------------------+---------------------+-------------------------------------------+
+|| data-studio-zone-content-type  ||                    || Content type id/path of the component.   |
+||                                ||                    || Example: “/component/product”            |
++---------------------------------+---------------------+-------------------------------------------+
 
 |
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Some Notes on HTML5 Applications In-Context Editing Attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* You can (and typically do) combine drag and drop component attributes and pencils attributes in the same tag, as described :ref:`here <identifying-drag-n-drop-with-pencil>`
+* You **cannot** combine drop zone attributes with ICE or drag n drop component attributes. They must be in their own tag.
+
+
