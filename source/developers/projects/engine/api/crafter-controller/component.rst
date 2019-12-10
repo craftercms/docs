@@ -29,7 +29,7 @@ Parameters
 +-------------------+-------------+---------------+----------------------------------------------+
 || Name             || Type       || Required     || Description                                 |
 +===================+=============+===============+==============================================+
-|| path             || String     || |checkmark|  || The component's url                         |
+|| path             || String     || |checkmark|  || Path to the component                       |
 ||                  ||            ||              || (e.g /site/components/headers/header.xml)   |
 +-------------------+-------------+---------------+----------------------------------------------+
 
@@ -61,6 +61,8 @@ Response
       <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
     </div>
   </article>
+
+|
 
 ---------
 Responses
