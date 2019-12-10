@@ -316,10 +316,12 @@ Update "craftercms-plugin.yaml" to use Elasticsearch
 
 Your site contains a ``craftercms-plugin.yaml`` file that contains information for use by Crafter CMS.  We'll have to update the file to use Elasticsearch as the search engine.
 
-Open your ``craftercms-plugin.yaml`` file by navigating to ``AUTHORING_INSTALL_DIR/data/repos/sites/SITE_NAME/sandbox``, and add the following property at the end of the file:
+Edit your ``craftercms-plugin.yaml``, and add the following property at the end of the file:
 
 .. code-block:: yaml
    :caption: *AUTHORING_INSTALL_DIR/data/repos/sites/YOURSITE/sandbox/craftercms-plugin.yaml*
    :linenos:
 
    searchEngine: Elasticsearch
+
+And make sure to commit your changes to ``craftercms-plugin.yaml``.
