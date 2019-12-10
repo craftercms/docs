@@ -24,12 +24,6 @@ Crafter Commons' Java Doc is here:
 
 * :javadoc_base_url:`commons/index.html`
 
-.. ..* :javadoc_base_url:`commons-utilities/index.html`
-.. ..* :javadoc_base_url:`commons-security/index.html`
-.. ..* :javadoc_base_url:`commons-audit/index.html`
-.. ..* :javadoc_base_url:`commons-ebus/index.html`
-.. ..* :javadoc_base_url:`commons-mongo/index.html`
-
 -------------
 Configuration
 -------------
