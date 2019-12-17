@@ -8,13 +8,13 @@
 Encrypting Configuration Properties
 ===================================
 
-It's recommended that configuration properties like access keys or passwords are encrypted since they contain sensible 
+It's recommended that configuration properties like access keys or passwords are encrypted since they contain sensitive 
 data that shouldn't be publicly available to anyone but developers and administrators. In order to do that, follow the 
 next steps (you need a system administrator for the first step):
 
-.. WARNING :: Please do not use the same password and salt shown in the example. You should generate your own.
+.. WARNING :: Please do not use the same key and salt shown in the example. You should generate your own.
 
-#. Configure encryption by making defining the following environment variables before starting Crafter:
+#. Configure encryption by defining the following environment variables before starting Crafter:
 
    - ``CRAFTER_ENCRYPTION_KEY``
    - ``CRAFTER_ENCRYPTION_SALT``
