@@ -268,37 +268,3 @@ also have access to Engine's global properties (like ``crafter.engine.preview``)
 .. note::
     Crafter Engine will not be able to load your Site Context if your context file contains invalid XML,
     incorrect configuration or if your beans do not properly handle their own errors on initialization.
-
-------------------------------
-Encrypted Configuration Values
-------------------------------
-
-It's recommended that configuration properties like ``profile.api.accessToken``, ``socialConnections.facebookConnectionFactory.appId`` and
-``socialConnections.facebookConnectionFactory.appSecret`` be encrypted since they contain sensible data that shouldn't be publicly
-available to anyone but developers and administrators. In order to do that, follow the next steps (you need a system administrator for the
-first two steps):
-
-#. Encrypt the values with the Crafter Commons Encryption Tool. You can find instructions of how to use it in :ref:`crafter-commons-encryption-tool`.
-#. Configure a ``PbkAesTextEncryptor`` in ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/services-context.xml``
-   First constructor argument is the password and second argument is the salt, which should be the same as the ones used during the
-   encryption. The name of the bean should be `crafter.textEncryptor`:
-
-	.. code-block:: xml
-
-		<bean id="crafter.textEncryptor" class="org.craftercms.commons.crypto.impl.PbkAesTextEncryptor">
-		  <constructor-arg value="klanFogyetkonjo"/>
-		  <constructor-arg value="S25pT2RkeWk="/>
-		</bean>
-
-	.. WARNING ::
-	  Please do not use the same password and salt shown in the example. You should generate your own.
-
-#. Put the encrypted values in your site's `site-config.xml` in placeholders and with an `enc` prefix. Example:
-
-	.. code-block:: xml
-
-		<profile>
-		  <api>
-		    <accessTokenId>${enc:q3l5YNoKH38RldAkg6EAGjxlI7+K7Cl4iEmMJNlemNOjcuhaaQNPLwAB824QcJKCbEeLfsg+QSfHCYNcNP/yMw==}</accessTokenId>
-		  </api>
-		</profile>
