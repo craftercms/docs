@@ -30,11 +30,7 @@ Java Doc
 --------
 
 Crafter Profile's Java Doc is here:
-    - :javadoc_base_url:`profile`
-
-    .. ..- :javadoc_base_url:`profile-api`
-    .. ..- :javadoc_base_url:`profile-client`
-    .. ..- :javadoc_base_url:`security-provider`
+    - :javadoc_base_url:`profile/index.html`
 
 --------
 ReST API

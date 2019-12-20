@@ -29,7 +29,7 @@ Crafter Social's source code is managed in GitHub: https://github.com/craftercms
 Java Doc
 --------
 
-Crafter Social's Java Doc is here: :javadoc_base_url:`social`
+Crafter Social's Java Doc is here: :javadoc_base_url:`social/index.html`
 
 --------
 ReST API
