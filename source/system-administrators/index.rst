@@ -95,7 +95,7 @@ Delivery
    activities/delivery/configure-apache-vhost.rst
    activities/delivery/delivery-env-performance-tuning.rst
    activities/delivery/setup-site-for-delivery.rst
-   activities/delivery/setup-serverless-site.rst
+   activities/delivery/setup-serverless-delivery.rst
    activities/delivery/setup-delivery-using-aws-ami.rst
 
 *************************

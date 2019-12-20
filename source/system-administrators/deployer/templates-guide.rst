@@ -177,7 +177,7 @@ This target will:
 
 .. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
 
-.. note:: For more details about setting up a serverless delivery see :ref:`setup-serverless-site`
+.. note:: For more details about setting up a serverless delivery see :ref:`setup-serverless-delivery`
 
 ^^^^^^^^^^^^^^^^^^^^^^
 AWS Cloudformed Target

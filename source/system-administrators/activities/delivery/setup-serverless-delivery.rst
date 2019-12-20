@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _setup-serverless-site:
+.. _setup-serverless-delivery:
 
 =========================
 Setup Serverless Delivery
