@@ -25,7 +25,7 @@ Prerequisites
 Step 1: Create an Elasticsearch Domain for Delivery (optional)
 --------------------------------------------------------------
 
-Since serverless delivery requires a single Elasticsearch endpoint readable by all Engine instances, we recommed you
+Since serverless delivery requires a single Elasticsearch endpoint readable by all Engine instances, we recommend you
 create an AWS Elasticsearch domain for delivery. If you don't want to use an AWS Elasticsearch domain then you should
 create and mantain your own Elasticsearch cluster.
 
@@ -38,7 +38,7 @@ To create an AWS Elasticsearch domain please do the following:
 #. In the top navigation bar of your AWS console, click the ``Services`` dropdown menu, and search for 
    ``Elasticsearch Service``.
 #. Click on ``Create a new domain``.
-#. Select a ``Deployment Type`` and on the Elasticsearch version, pick ``6.7``.
+#. Select ``Deployment Type`` and on the Elasticsearch version, pick ``6.7``.
 
    .. image:: /_static/images/system-admin/serverless/es-deployment-type.png
       :alt: Serverless Site - Elasticsearch Deployment Type
@@ -136,7 +136,7 @@ Step 3: Configure Authoring for Serverless Deployment
 -----------------------------------------------------
 
 Instead of having one Crafter Deployer per node in delivery, for serverless you just need a single Deployer uploading
-files to S3. The authoring preview deployer can be used also for serverless deployment, when there's only one 
+files to S3. The authoring preview deployer can also be used for serverless deployment, when there's only one 
 authoring node. When there's multiple authoring nodes (a cluster), then you'll need to have a separate deployer pulling
 from a load balanced SSH/HTTPS URL fronting the Studio Git repos.
 
@@ -158,7 +158,7 @@ notice:
   CloudFormation stack with an S3 bucket where the site content will be uploaded and a CloudFront that will serve 
   ``/static-assets`` directly and will redirect any other requests to the Delivery Engine LB (which you specify in 
   ``studio.serverless.delivery.deployer.target.template.params.aws.cloudformation.deliveryLBDomainName``).
-- The ``aws.cloudformation.namespace`` is basically the prefix of the S3 bucket mentioned in hte previous step. This 
+- The ``aws.cloudformation.namespace`` is basically the prefix of the S3 bucket mentioned in the previous step. This 
   prefix will be part of the name of most of the AWS resources created by the serverless deployer.
 - You need to specify proper AWS credentials for creating the CloudFormation stack and uploading files to S3, which can
   be done in the following ways:
@@ -193,7 +193,7 @@ notice:
 
 - By default, the CloudFront created by Deployer will have a ``*.cloudfront.net`` domain name. To have CloudFront use 
   additional domain name(s) please specify the AWS ARN of the domain SSL certificate (``cloudfrontCertificateArn``) and 
-  the altername domain name(s) (``alternateCloudFrontDomainNames``):
+  the alternate domain name(s) (``alternateCloudFrontDomainNames``):
 
   .. code-block:: yaml
 
@@ -256,9 +256,9 @@ Step 4: Create the Site in the Authoring Environment
 #. Click the ``Create Site`` button
 #. Choose the ``Editorial`` blueprint, enter the ``Site Id`` (e.g. ``editorial``), and then review and create.
 #. Go to your AWS console in your browser and on the ``Services`` dropdown search for CloudFormation. You should then 
-   see  the CloudFormation for the site you just created with the status ``CREATE_IN_PROGRESS``. After a several
-   minutes, the status should change to ``CREATE_COMPLETE``, which tells the Crafter Deployer that the it is able to 
-   start uploading files to S3.
+   see  the CloudFormation for the site you just created with the status ``CREATE_IN_PROGRESS``. After several minutes, 
+   the status should change to ``CREATE_COMPLETE``, which tells the Crafter Deployer that it is able to start 
+   uploading files to S3.
 
    .. image:: /_static/images/system-admin/serverless/cloudformation.png
       :alt: Serverless Site - CloudFormation
