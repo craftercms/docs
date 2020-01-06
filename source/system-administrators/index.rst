@@ -56,6 +56,7 @@ Activities
    activities/security/configure-ssl-tls.rst
    activities/kubernetes/simple-kubernetes-deployment.rst
    activities/language-support/add-new-language.rst
+   activities/encrypting-configuration-properties.rst
 
 *********************
 Upgrading Crafter CMS
@@ -94,7 +95,7 @@ Delivery
    activities/delivery/configure-apache-vhost.rst
    activities/delivery/delivery-env-performance-tuning.rst
    activities/delivery/setup-site-for-delivery.rst
-   activities/delivery/setup-serverless-site.rst
+   activities/delivery/setup-serverless-delivery.rst
    activities/delivery/setup-delivery-using-aws-ami.rst
 
 *************************
