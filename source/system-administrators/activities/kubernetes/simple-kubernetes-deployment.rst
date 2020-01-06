@@ -32,6 +32,30 @@ an SSH public/private key pair for authentication and provide the key pair as a 
 #. Run ``ssh-keygen -b 4096 -t rsa -C "your_email@example.com"`` to generate the key pair. When being asked for the 
    filename of the key, just enter ``id_rsa`` (so that the keys are saved in the current folder). Do not provide a 
    passphrase.
+
+      .. note::
+         Crafter requires the key to be ``RSA`` and does not support keys generated using an algorithm other than ``RSA``.  The Jsch library that Jgit uses only supports ``RSA`` and does not support other keys such as OpenSSH.  Make sure when you generate the key to specify the type as ``rsa``:
+
+         .. code-block:: sh
+
+            ssh-keygen -b 4096 -t rsa -C "your_email@example.com"
+
+         |
+
+         For users on macOS 10.14 and above (macOS Mojave and onwards) or users using OpenSSH 7.8 and above, ``ssh-keygen`` writes OpenSSH format private keys by default (RFC7416 format) instead of using OpenSSL's PEM format.
+
+         To generate keys using PEM format, add option ``-m PEM`` into your ssh-keygen command. For example, you can run the command below  to force ssh-keygen to export as PEM format:
+
+         .. code-block:: sh
+
+            ssh-keygen -m PEM -t rsa -b 4096 -C "your_email@example.com"
+
+         |
+
+         Also, check that the file starts with the following header: ``-----BEGIN RSA PRIVATE KEY-----`` to verify that the key is using ``RSA``.
+         Crafter also currently doesn't support using a passphrase with SSH keys.  Remember to **NOT** use a passphrase when creating your keys.
+
+
 #. Create a copy of the public key and rename it to ``authorized_keys``: ``cp id_rsa.pub authorized_keys``.
 #. In the same folder, create a ``config`` file with the following, to disable ``StrictHostKeyChecking`` for automatic 
    connection to the Authoring SSH server:

@@ -30,20 +30,18 @@ Let's take a look at the fields where the remote repository details needs to be 
 
    Crafter CMS supports the following authentication types to use to access remote repository:
 
-        - **None** - no credentials needed to access remote repository
-        - **Basic** - for this method, you will be asked for a **Remote Git Repository Username** and a **Remote Git Repository Password**.  Supply your username and password
-        - **Remote Git Repository Token** - for this method, you will be asked for a **Remote Git Repository Username** (if required) and a **Remote Git Repository Token**.  This method is usually used when two-factor authentication is configured on the remote repository to be accessed. Supply your username if required and token.
-        - **Remote Git Repository Private Key** - for this method, you will be asked for a **Remote Git Repository Private Key**.  This method is a key-based authentication.  Supply your private key.
+   - **None** - no credentials needed to access remote repository
+   - **Basic** - for this method, you will be asked for a **Remote Git Repository Username** and a **Remote Git Repository Password**.  Supply your username and password
+   - **Remote Git Repository Token** - for this method, you will be asked for a **Remote Git Repository Username** (if required) and a **Remote Git Repository Token**.  This method is usually used when two-factor authentication is configured on the remote repository to be accessed. Supply your username if required and token.
+   - **Remote Git Repository Private Key** - for this method, you will be asked for a **Remote Git Repository Private Key**.  This method is a key-based authentication.  Supply your private key.
 
-.. note::
-        When using ssh keys for authentication, the keys need to be generated using **RSA** as the algorithm  and with **no passphrase**.
+      .. note::
+         .. include:: /includes/setup-ssh-keys.rst
 
-        .. include:: /includes/setup-ssh-keys.rst
+         After copying your public keys to where your remote git repository is located, there are a couple of ways to setup the way Crafter Studio accesses the remote repository:
 
-        After copying your public keys to where your remote git repository is located, there are a couple of ways to setup the way Crafter Studio accesses the remote repository:
-
-        #. Set the authentication type to **Remote Git Repository Private Key** in the ``Create Site`` screen, then specify your private key in the **Remote Git Repository Private Key** field.
-        #.  Set the authentication type to **None** in the ``Create Site`` screen, if you put the key in the default RSA key path in the Crafter Studio server (~/.ssh/id_rsa).  Remember the key needs to use the default filename (``id_rsa`` and ``id_rsa.pub``) when using this method of setting up access to the remote repository. Also, remember that **Studio must be restarted** for the JVM to pick up the default key.
+         #. Set the authentication type to **Remote Git Repository Private Key** in the ``Create Site`` screen, then specify your private key in the **Remote Git Repository Private Key** field.
+         #.  Set the authentication type to **None** in the ``Create Site`` screen, if you put the key in the default RSA key path in the Crafter Studio server (~/.ssh/id_rsa).  Remember the key needs to use the default filename (``id_rsa`` and ``id_rsa.pub``) when using this method of setting up access to the remote repository. Also, remember that **Studio must be restarted** for the JVM to pick up the default key.
 
 ------------------------------------------------------------------------
 Create site based on a blueprint then push to remote bare Git repository
