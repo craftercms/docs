@@ -65,7 +65,7 @@ You may encounter in the logs when creating a site with a link to a remote repos
 
 |
 
-This could be caused by keys generated using an algorithm other than RSA.  Crafter requires the key to be RSA.  Make sure when you generate the key to specify the type as ``rsa``:
+This could be caused by keys generated using an algorithm other than ``RSA``.  Crafter requires the key to be ``RSA`` and does not support keys generated using an algorithm (such as OPENSSH) other than **RSA**.  Make sure when you generate the key to specify the type as ``rsa``:
 
 .. code-block:: sh
 
@@ -73,4 +73,14 @@ This could be caused by keys generated using an algorithm other than RSA.  Craft
 
 |
 
-Also, check that the file starts with the following header: ``-----BEGIN RSA PRIVATE KEY-----`` to verify that the key is using RSA.
+Also, check that the file starts with the following header: ``-----BEGIN RSA PRIVATE KEY-----`` to verify that the key is using ``RSA``.
+
+    .. note::
+        For users on macOS 10.14 and above (macOS Mojave and onwards) or users using OpenSSH 7.8 and above, ``ssh-keygen`` writes OpenSSH format private keys by default (RFC7416 format) instead of using OpenSSL's PEM format.
+
+        To generate keys using PEM format, add option ``-m PEM`` into your ssh-keygen command. For example, you can run the command below  to force ssh-keygen to export as PEM format:
+
+        .. code-block:: sh
+
+           ssh-keygen -m PEM -t rsa -b 4096 -C "your_email@example.com"
+

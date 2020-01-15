@@ -73,10 +73,8 @@ Example #1: ``ssh://server1.example.com/path/to/repo``
 
 Example #2: ``ssh://jdoe@server2.example.com:63022/path/to/repo``
 
-.. note::
-    When using ssh, your keys need to be generated using **RSA** as the algorithm
-
-    .. include:: /includes/setup-ssh-keys.rst
+   .. note::
+      .. include:: /includes/setup-ssh-keys.rst
 
 If you are just working on another directory on disk for your delivery, you can just use the filesystem.  When your repository is local, make sure to use the absolute path.
 Here is an example site's published repo Git url when using a local repository:
