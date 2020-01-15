@@ -31,6 +31,8 @@ Parameters
 +=========================+=============+===============+======================================+
 || contextId              || String     || |checkmark|  || The site context id                 |
 +-------------------------+-------------+---------------+--------------------------------------+
+|| token                  || String     || |checkmark|  || The authorization token             |
++-------------------------+-------------+---------------+--------------------------------------+
 
 -------
 Example
@@ -40,7 +42,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/cache/clear?contextId=405ffc233d075b010536bd2eb786b86c``
+``GET .../api/1/cache/clear?contextId=405ffc233d075b010536bd2eb786b86c&token=defaultManagementToken``
 
 ^^^^^^^^
 Response
