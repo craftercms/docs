@@ -125,6 +125,7 @@ Crafter Deployer
    deployer/processors-guide.rst
    deployer/templates-guide.rst
    deployer/debugging-deployer-issues.rst
+   deployer/elasticsearch-configuration-guide.rst
 
 
 ==============
