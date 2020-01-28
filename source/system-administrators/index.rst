@@ -57,6 +57,7 @@ Activities
    activities/kubernetes/simple-kubernetes-deployment.rst
    activities/language-support/add-new-language.rst
    activities/encrypting-configuration-properties.rst
+   activities/management-token.rst
 
 *********************
 Upgrading Crafter CMS
