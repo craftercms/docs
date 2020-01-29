@@ -231,7 +231,7 @@ To create the REST endpoint, place the following Groovy file in your scripts fol
     // Execute the query and process the results
     return helper.getSuggestions(term)
 
-You will also need to create the helper classs in the scripts forlder
+You will also need to create the helper class in the scripts folder
 
 .. code-block:: groovy
   :linenos:
@@ -242,7 +242,7 @@ You will also need to create the helper classs in the scripts forlder
     class SuggestionHelper {
     	
     	static final String DEFAULT_CONTENT_TYPE_QUERY = "content-type:\"/page/article\""
-    	static final String DEFAULT_SEARCH_FIELD = "subject"
+    	static final String DEFAULT_SEARCH_FIELD = "subject_t"
     	
     	def elasticsearch
     	
