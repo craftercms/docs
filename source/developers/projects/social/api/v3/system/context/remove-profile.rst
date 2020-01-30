@@ -48,7 +48,7 @@ Request
 
   POST .../api/3/system/context/e41e7273-b504-4d50-9edd-3b215eff6464/596683c030047dc279c21d27/delete
 
-.. code-block:: guess
+.. code-block:: none
 
   context=f5b143c2-f1c0-4a10-b56e-f485f00d3fe9
 

@@ -93,7 +93,7 @@ of ``items``.
 
 One of simplest GraphQL queries you can run in Crafter CMS sites is to find all items of a given content-type.
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Query for all ``/page/article`` items
 
@@ -114,7 +114,7 @@ One of simplest GraphQL queries you can run in Crafter CMS sites is to find all 
 
 You can also run queries to find all pages, components or content items (both pages and components).
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Query for all pages
 
@@ -136,7 +136,7 @@ You can also run queries to find all pages, components or content items (both pa
     }
   }
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Query for all components
 
@@ -155,7 +155,7 @@ You can also run queries to find all pages, components or content items (both pa
     }
   }
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Query for all content items
 
@@ -178,7 +178,7 @@ As you can expect if there are too many items for a given query the result will 
 implement pagination using the ``offset`` and ``limit`` parameters. For example the following query
 will return only the first five items found.
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Paginated query for content-type ``/page/article``
 
@@ -201,7 +201,7 @@ By default all items will be sorted using the ``lastModifiedDate_dt`` in descend
 the ``sortBy`` and ``sortOrder`` parameters. For example you can use the ``date_dt`` field that is specific for the 
 ``/page/article`` content-type to sort.
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Paginated and sorted query for content-type ``/page/article``
 
@@ -224,7 +224,7 @@ Besides finding all items for a specific content-type, it is also possible to fi
 fields in the query. Fields will have different filters depending on their type, for example you can find items for
 a specific author.
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Paginated, sorted and filtered query for content-type ``/page/article``
 
@@ -246,7 +246,7 @@ a specific author.
 
 Additionally you can create complex filters using expressions like ``and``, ``or`` and ``not`` for any field:
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Filtered query with complex conditions
 
@@ -293,7 +293,7 @@ Additionally you can create complex filters using expressions like ``and``, ``or
 You can also include fields from child components in your model, this applies to fields like ``node-selector``,
 ``checkbox-group`` and ``repeat`` groups. Filters can also be added to fields from child components.
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Paginated, sorted and filtered query for content-type ``/page/article`` using child components
 
@@ -323,7 +323,7 @@ You can also include fields from child components in your model, this applies to
 GraphQL ``aliases`` are supported on root level query fields (``contentItems``, ``pages``, ``components`` and content 
 type fields).
 
-.. code-block:: guess
+.. code-block:: text
    :linenos:
    :caption: Query for 2016 and 2017 articles using aliases
 
@@ -346,7 +346,7 @@ type fields).
 GraphQL ``fragments`` are fully supported and can be used inline or as spreads. Using fragments you can simplify
 queries by extracting repeated fields or request specific fields for different content-types in as single query:
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Using fragment spreads to simplify a query
 
@@ -379,7 +379,7 @@ queries by extracting repeated fields or request specific fields for different c
     }
   }
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Using inline fragments to request specific fields in a single query
 

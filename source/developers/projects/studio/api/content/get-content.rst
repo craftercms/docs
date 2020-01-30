@@ -46,7 +46,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     GET .../api/1/services/api/1/content/get-content.json?site_id=mysite&path=/site/website/health/index.xml&edit=true
 
@@ -56,7 +56,7 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: guess
+.. code-block:: none
 
     content
 

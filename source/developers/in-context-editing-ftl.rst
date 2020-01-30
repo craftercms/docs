@@ -27,7 +27,8 @@ Studio support contains various tools that allow developers to integrate and ena
 
      Search for ``siteContext.overlayCallback`` calls in your ``cstudio-support.ftl`` file:
 
-     .. code-block:: guess
+     .. code-block:: html
+        :force:
         :caption: cstudio-support.ftl
         :emphasize-lines: 2
 
@@ -41,7 +42,8 @@ Studio support contains various tools that allow developers to integrate and ena
 
      Replace with ``modePreview`` to check if Engine is running in preview mode:
 
-     .. code-block:: guess
+     .. code-block:: html
+        :force:
         :caption: cstudio-support.ftl
         :emphasize-lines: 2
 
@@ -59,7 +61,8 @@ Enabling Authoring Support
 
 At the top of your page or component (whatever it is you are rendering, include the following) import:
 
-    .. code-block:: guess
+    .. code-block:: html
+       :force:
 
 	    <#import "/templates/system/common/cstudio-support.ftl" as studio/>
 
@@ -67,7 +70,8 @@ At the top of your page or component (whatever it is you are rendering, include 
 
 At the bottom of your template insert the following: (Note the example shows a traditional HTML page however other formats/levels of granularity are supported
 
-    .. code-block:: guess
+    .. code-block:: html
+       :force:
 
 	        <@studio.toolSupport/>
 	      </body>
@@ -90,7 +94,8 @@ In context editing renders pencils on the screen that invoke editing controls wh
 
 To enable in-context editing simply add the following attribute to the container/element where you want to place the editing control
 
-    .. code-block:: guess
+    .. code-block:: html
+        :force:
 
 	    <@studio.iceAttr component=contentModel iceGroup="author"/>
 
@@ -119,7 +124,8 @@ Tag Attributes
 
 Example: 
 
-    .. code-block:: guess
+    .. code-block:: html
+        :force:
 
 	    <img <@studio.iceAttr iceGroup="image" label="Promo Image 1" /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}"/>``
 
@@ -137,7 +143,8 @@ Drag and drop makes it easy for authors to visually assemble pages.  Authors sim
 
 To define a drop zone for components simply add the ``componentContainerAttr`` attribute with the ``component`` tag to the container element where you want your components to render
 
-    .. code-block:: guess
+    .. code-block:: html
+        :force:
 
 	    <@studio.componentContainerAttr target="bottomPromos" component=contentModel />
 
@@ -158,7 +165,8 @@ Tag Attributes
 
 Example:
 
-    .. code-block:: guess
+    .. code-block:: html
+        :force:
 
 	    <div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" component=contentModel /> >
 		    ...
@@ -173,7 +181,8 @@ Rendering components from the target inside the container
 
 The template needs to render the components that are referenced. The basic code to do this looks like:
 
-    .. code-block:: guess
+    .. code-block:: html
+        :force:
 
 	    <#if contentModel.bottomPromos?? && contentModel.bottomPromos.item??>
 		  <#list contentModel.bottomPromos1.item as module>
@@ -186,7 +195,8 @@ The template needs to render the components that are referenced. The basic code 
 Note that the code is simply iterating over the collection of objects and calling render component.  NO markup is being inserted in this example.  The component template is rendering itself.  It's up to you if you want to insert markup around sub-components.
 Full example of typical component drop zone
 
-    .. code-block:: guess
+    .. code-block:: html
+        :force:
 
 	    <div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" /> >
 		  <#if contentModel.bottomPromos?? && contentModel.bottomPromos.item??>
@@ -200,7 +210,8 @@ Full example of typical component drop zone
 
 If the component to be rendered is an embedded component, the tag ``parent`` with a |SiteItem| object for the value needs to be added to ``renderComponent`` if the component to be rendered is not the current item, like below:
 
-    .. code-block:: guess
+    .. code-block:: html
+       :force:
 
        <@renderComponent component=module parent=contentModel/>
 
@@ -208,7 +219,8 @@ If the component to be rendered is an embedded component, the tag ``parent`` wit
 
 Let's take a look at an example using a site created using the Website Editorial blueprint.  In the Home page of the site, the features section contains embedded components ``feature``.  To render the embedded components from the target inside the container, note that the tag ``parent=contentModel`` is not required since the component to be rendered is the current item:
 
-.. code-block:: guess
+.. code-block:: html
+   :force:
    :linenos:
    :emphasize-lines: 9
    :caption: */templates/web/pages/home.ftl*
@@ -237,7 +249,8 @@ Identifying components in the template
 
 In order for authors to interact with components, to drag them around the screen for example the templating system must know how to identify them.  To identify a component simply add the following attribute to the outer most element in the component template's markup
 
-    .. code-block:: guess
+    .. code-block:: html
+        :force:
 
 	    <@studio.componentAttr component=contentModel />
 
@@ -269,7 +282,8 @@ Tag Attributes
 
 Example
 
-    .. code-block:: guess
+    .. code-block:: html
+        :force:
 
 	    <img <@studio.componentAttr component=contentModel ice=true /> src="${contentModel.image!""}" alt="${contentModel.alttext!""}" />
 
@@ -290,7 +304,8 @@ Here's how the features section pencils look like before enabling pencils on the
 
 To enable the in-context editing pencils of the features component, add the attribute tag ``ice`` with the value set to ``true`` like below:
 
-.. code-block:: guess
+.. code-block:: html
+   :force:
    :caption: /templates/web/components/feature.ftl
 
    <article <@studio.componentAttr component=contentModel ice=true />>
@@ -312,7 +327,8 @@ Engine Support
 
 At the top of your page or component (whatever it is you are rendering, include the following) import:
 
-    .. code-block:: guess
+    .. code-block:: html
+        :force:
 
 	    <#import "/templates/system/common/crafter-support.ftl" as crafter/>
 
@@ -326,7 +342,8 @@ Render Component
 
 Need to render a sub component of some kind? 
 
-    .. code-block:: guess
+    .. code-block:: html
+        :force:
 
 	    <@renderComponent component=module />
 
@@ -338,7 +355,8 @@ Render Components
 Need to iterate through a list of components and render them WITHOUT any additional markup?
 
 
-    .. code-block:: guess
+    .. code-block:: html
+        :force:
 
 	    <@crafter.renderComponents componentList=contentModel.bottomPromos />
 

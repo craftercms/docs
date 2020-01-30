@@ -245,7 +245,7 @@ templates and configure Crafter Profile to use them following this steps:
 
 The templates will have available the ``verificationLink`` variable.
 
-.. code-block:: guess
+.. code-block:: html
   :caption: Example Email Template
 
   Click on the link below to verify your Crafter Profile account.

@@ -48,7 +48,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     GET .../api/1/services/api/1/deployment/get-deployment-history.json?site_id=mysite&days=30&num=10&filterType=all
 

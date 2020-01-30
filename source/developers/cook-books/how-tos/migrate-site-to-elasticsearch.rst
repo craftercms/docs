@@ -259,13 +259,13 @@ date math syntax described `here <https://www.elastic.co/guide/en/elasticsearch/
 
 **Example**
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Solr date math expression
 
   createdDate_dt: [ NOW-1MONTH/DAY TO NOW-2DAYS/DAY ]
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Elasticsearch date math expression
 
@@ -277,13 +277,13 @@ feature that replaces those fields `Multi-match query <https://www.elastic.co/gu
 
 **Example**
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Solr query for any field
 
   _text_: some keywords
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Elasticsearch query for any field (replacement for ``_text_``)
 
@@ -297,7 +297,7 @@ feature that replaces those fields `Multi-match query <https://www.elastic.co/gu
 
 Elasticsearch also offers the possibility to query fields with postfixes using wildcards
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Elasticsearch query for specific fields (replacement for ``_text_main_``)
 

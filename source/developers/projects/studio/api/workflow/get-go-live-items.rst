@@ -48,7 +48,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     GET .../api/1/services/api/1/workflow/get-go-live-items.json?site_id=mysite&sort=eventDate&ascending=false
 

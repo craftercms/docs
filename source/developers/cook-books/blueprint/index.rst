@@ -287,7 +287,7 @@ Let's take a look at an example of adding parameters to the **Website Editorial*
 
 #. Commit your changes
 
-   .. code-block:: guess
+   .. code-block:: text
 
       ➜  craftercms git:(develop) cd crafter-authoring/data/repos/global/blueprints/1000_website_editorial
       ➜  1000_website_editorial git:(master) ✗ vi craftercms-plugin.yaml

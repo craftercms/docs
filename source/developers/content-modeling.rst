@@ -495,7 +495,7 @@ Check the **Show in Quick Create** property to make the content type available f
 
 In the **Destination Path Pattern**, fill in the path pattern where the content created from quick create will be stored.  For our example, notice that the articles are arranged in the following folder structure:
 
-.. code-block:: guess
+.. code-block:: text
 
    /articles
      /{year}
@@ -717,7 +717,9 @@ View templates control how the model is rendered as HTML. Crafter uses `FreeMark
 
 An example view template
 
-.. code-block:: guess
+
+.. code-block:: html
+   :force:
    :linenos:
 
    <#import "/templates/system/common/cstudio-support.ftl" as studio />

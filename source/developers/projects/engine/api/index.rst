@@ -13,7 +13,7 @@ Crafter Engine API
 
     Here's an example to get an Item from the content store:
 
-    .. code-block:: guess
+    .. code-block:: text
 
         http://localhost:8080/api/1/site/content_store/item.json?url=/site/website/index.xml&crafterSite=mysite
 

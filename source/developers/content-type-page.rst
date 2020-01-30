@@ -196,7 +196,8 @@ We will now start filling in the template of how we want the content captured in
 
 |
 
-.. code-block:: guess
+.. code-block:: html
+    :force:
     :caption: *Render header*
 
     <!-- Header -->
@@ -204,7 +205,8 @@ We will now start filling in the template of how we want the content captured in
 
 |
 
-.. code-block:: guess
+.. code-block:: html
+    :force:
     :caption: *Render content section*
     :linenos:
 
@@ -262,7 +264,7 @@ We can now start adding the script to get a list of articles depending on the ac
 
 |
 
-.. code-block:: guess
+.. code-block:: groovy
     :linenos:
 
     import org.craftercms.sites.editorial.SearchHelper
@@ -288,7 +290,8 @@ Now that we have our controller, we just need to add code to the freemarker temp
 
 |
 
-.. code-block:: guess
+.. code-block:: html
+    :force:
     :linenos:
 
     <section>

@@ -30,7 +30,7 @@ Basic Setup and Configuration
 
 #. Create the component template.  From the content model definition, go to the **Properties Explorer** panel and select the **Display Template** field.  Click on the pencil which will open a **Create Template** dialog.  Provide a filename for the template then it will open a blank template that we can then fill in with the following:
 
-   .. code-block:: guess
+   .. code-block:: html
 
       <h1>${model.greetingText}</h1>
 

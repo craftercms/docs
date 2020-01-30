@@ -185,7 +185,7 @@ When setting up the ADFS connection with Crafter CMS, the following custom rules
 
 The first rule extracts all of the groups out and moves them into a temp store:
 
-.. code-block:: guess
+.. code-block:: none
 
     c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", Issuer == "AD AUTHORITY"]
     => add(store = "Active Directory", types = ("http://schemas.xmlsoap.org/claims/Group"), query = ";tokenGroups;{0}", param = c.Value);
@@ -195,7 +195,7 @@ The first rule extracts all of the groups out and moves them into a temp store:
 
 The second rule filters down to the regex of ``.myproject.`` or basically anything that includes ``myproject`` in the group name and then prepends the actual value with "myproject-site":
 
-.. code-block:: guess
+.. code-block:: none
 
     c:[Type == "http://schemas.xmlsoap.org/claims/Group", Value =~ ".*myproject.*"]
     => issue(Type = "groups", Value = "myproject-site," + c.Value, Issuer = c.Issuer);
@@ -206,7 +206,7 @@ After setting up the custom rules above, we need to setup 2 more rules for SAML 
 
 Setup the SAML Map to AD Properties:
 
-.. code-block:: guess
+.. code-block:: none
 
     c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", Issuer == "AD AUTHORITY"]
     => issue(store = "Active Directory", types = ("email", "firstname", "lastname", "username"), query = ";mail,givenName,sn,sAMAccountName;{0}", param = c.Value);
@@ -215,7 +215,7 @@ Setup the SAML Map to AD Properties:
 
 Configure Claim Rule Transform ("Transform an incoming claim") that maps the desired Claim data into SAML data element, nameid:
 
-.. code-block:: guess
+.. code-block:: none
 
     c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"]
     => issue(Type = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", Issuer = c.Issuer, OriginalIssuer = c.OriginalIssuer, Value = c.Value, ValueType = c.ValueType, Properties["http://schemas.xmlsoap.org/ws/2005/05/identity/claimproperties/format"] = "urn:oasis:names:tc:SAML:2.0:nameid-format:transient");

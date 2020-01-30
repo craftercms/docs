@@ -29,9 +29,9 @@ Since serverless delivery requires a single Elasticsearch endpoint readable by a
 create an AWS Elasticsearch domain for delivery. If you don't want to use an AWS Elasticsearch domain then you should
 create and mantain your own Elasticsearch cluster.
 
-.. important:: Authoring can also use an Elasticsearch domain, but be aware that in a clustered authoring environment
-               each authoring instance requires a separate Elasticsearch instance. If you try to use the same ES domain
-               then you will have multiple preview deployers writing to the same index.
+   .. important:: Authoring can also use an Elasticsearch domain, but be aware that in a clustered authoring environment
+                  each authoring instance requires a separate Elasticsearch instance. If you try to use the same ES domain
+                  then you will have multiple preview deployers writing to the same index.
 
 To create an AWS Elasticsearch domain please do the following:
 
@@ -44,6 +44,8 @@ To create an AWS Elasticsearch domain please do the following:
       :alt: Serverless Site - Elasticsearch Deployment Type
       :align: center
 
+   |
+
 #. On the next screen, enter the domain name. Leave the defaults on the rest of the settings or change as needed per
    your environment requirements, then click on ``Next``.
 #. On ``Network Configuration``, we recommend you pick the VPC where your delivery nodes reside. If they're not running 
@@ -53,12 +55,16 @@ To create an AWS Elasticsearch domain please do the following:
       :alt: Serverless Site - Elasticsearch Network Access
       :align: center
 
+   |
+
 #. Select the ``Access Policy`` that fits your Crafter environment, and click on ``Next`` (if on the same VPC as 
    delivery, we recommend ``Do not require signing request with IAM credential``).
 
    .. image:: /_static/images/system-admin/serverless/es-access-policy.png
       :alt: Serverless Site - Elasticsearch Access Policy
       :align: center
+
+   |
 
 #. Review the settings and click on ``Confirm``.
 #. Wait for a few minutes until the domain is ready. Copy the ``Endpoint``. You'll need this URL later to configure
@@ -67,6 +73,8 @@ To create an AWS Elasticsearch domain please do the following:
    .. image:: /_static/images/system-admin/serverless/es-endpoint.png
       :alt: Serverless Site - Elasticsearch Endpoint
       :align: center
+
+   |
 
 --------------------------------------------------
 Step 2: Configure the Delivery for Serverless Mode
@@ -88,6 +96,8 @@ Step 2: Configure the Delivery for Serverless Mode
 
       </beans>
 
+   |
+
 #. Edit the properties override file to point Engine to consume the site content from S3
    (``DELIVERY_INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``). The
    properties you need to update are the following:
@@ -101,6 +111,7 @@ Step 2: Configure the Delivery for Serverless Mode
    (which is the most common use case), is the following (values in ``X`` are not displayed since they're sensitive):
 
    .. code-block:: properties
+      :force:
 
       # Content root folder when using S3 store. Format is s3://<BUCKET_NAME>/<SITES_ROOT>/{siteName}
       crafter.engine.site.default.rootFolder.path=s3://serverless-test-site-{siteName}/{siteName}
@@ -113,6 +124,8 @@ Step 2: Configure the Delivery for Serverless Mode
       crafter.engine.s3.accessKey=XXXXXXXXXX
       # AWS secret key
       crafter.engine.s3.secretKey=XXXXXXXXXXXXXXXXXXXX
+
+   |
 
    As you can see, the bucket name portion of the root folder S3 URL contains a prefix and then the site name. This
    prefix is mentioned also as a "namespace" later on in the Studio serverless configuration.
@@ -127,6 +140,8 @@ Step 2: Configure the Delivery for Serverless Mode
    .. code-block:: bash
 
       export ES_URL=https://vpc-serverless-test-jpwyav2k43bb4xebdrzldjncbq.us-east-1.es.amazonaws.com
+
+   |
 
 #. Make sure that the you have an application load balancer (ALB) fronting the Delivery Engine instances and that it's 
    accessible by AWS CloudFront.
@@ -152,7 +167,9 @@ notice:
     
     studio.serverless.delivery.deployer.target.template.params:
       # The delivery Elasticsearch endpoint (optional is authoring is using the same one, specified in the ES_URL env variable)
-      elastic_search_url: https://vpc-serverless-test-jpwyav2k43bb4xebdrzldjncbq.us-east-1.es.amazonaws.com    
+      elastic_search_url: https://vpc-serverless-test-jpwyav2k43bb4xebdrzldjncbq.us-east-1.es.amazonaws.com
+
+  |
 
 - When using the ``aws-cloudformed-s3`` target template (the default one), the Deployer creates first an AWS 
   CloudFormation stack with an S3 bucket where the site content will be uploaded and a CloudFront that will serve 
@@ -177,6 +194,8 @@ notice:
            # AWS secret key (optional if specified through default AWS chain)
            default_secret_key: XXXXXXXXXXXXXXXXXXXX
 
+    |
+
   - In ``aws.cloudformation.access_key`` and ``aws.cloudformation.secret_key`` properties under 
     ``studio.serverless.delivery.deployer.target.template.params``, when specific CloudFormation credentials are needed:
 
@@ -190,6 +209,8 @@ notice:
              access_key: XXXXXXXXXX
              # AWS secret key (optional if aws.secretKey is specified)
              secret_key: XXXXXXXXXXXXXXXXXXXX
+
+    |
 
 - By default, the CloudFront created by Deployer will have a ``*.cloudfront.net`` domain name. To have CloudFront use 
   additional domain name(s) please specify the AWS ARN of the domain SSL certificate (``cloudfrontCertificateArn``) and 
@@ -205,6 +226,8 @@ notice:
            cloudfrontCertificateArn: arn:aws:acm:...
            # The alternate domains names (besides *.cloudfront.net) for the CloudFront CDN (optional when target template is aws-cloudformed-s3)
            alternateCloudFrontDomainNames: myawesomesite.com,www.myawesomesite.com
+
+  |
 
 An example of serverless deployment configuration where there's a single authoring instance and no specific domain
 name requirements is the following:
@@ -247,6 +270,7 @@ name requirements is the following:
           # The domain name of the serverless delivery LB (required when target template is aws-cloudformed-s3)
           deliveryLBDomainName: serverless-test-lb-1780491458.us-east-1.elb.amazonaws.com
 
+|
 
 ----------------------------------------------------
 Step 4: Create the Site in the Authoring Environment
@@ -263,6 +287,8 @@ Step 4: Create the Site in the Authoring Environment
    .. image:: /_static/images/system-admin/serverless/cloudformation.png
       :alt: Serverless Site - CloudFormation
       :align: center
+
+   |
 
 #. Wait at least 2 minutes for the Crafter Deployer to finish uploading the files and for the delivery Crafter Engine
    to warm up the new site in cache.
@@ -318,6 +344,8 @@ Step 4: Create the Site in the Authoring Environment
       2019-12-20 20:49:15.882  INFO 18846 --- [deployment-8] org.craftercms.deployer.impl.TargetImpl  : ============================================================
       2019-12-20 20:49:15.882  INFO 18846 --- [deployment-8] org.craftercms.deployer.impl.TargetImpl  : Deployment for editorial-serverless-delivery finished in 15.878 secs
       2019-12-20 20:49:15.882  INFO 18846 --- [deployment-8] org.craftercms.deployer.impl.TargetImpl  : ============================================================
+
+   |
 
    .. code-block:: none
       :caption: engine.log
@@ -377,6 +405,8 @@ Step 4: Create the Site in the Authoring Environment
       [INFO] 2019-12-20T20:50:04,393 [pool-3-thread-10] [] [context.SiteContextManager] | ================================================== 
       [INFO] 2019-12-20T20:50:04,393 [pool-3-thread-10] [] [context.SiteContextManager] | </Creating site context: editorial> 
       [INFO] 2019-12-20T20:50:04,393 [pool-3-thread-10] [] [context.SiteContextManager] | ==================================================   
+
+   |
 
 ------------------------------
 Step 5: Test the Delivery Site

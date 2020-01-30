@@ -145,7 +145,7 @@ A dialog will then open where you can start entering your script.  Let's take a 
 
 |
 
-.. code-block:: guess
+.. code-block:: groovy
     :linenos:
 
     import org.craftercms.sites.editorial.SearchHelper

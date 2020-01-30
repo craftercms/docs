@@ -80,7 +80,7 @@ Let's take a look at an example of adding the template code example for freemark
 #. Open the ``Sidebar`` and click on |siteConfig| ➜ ``Configuration`` ➜ ``Code Editor Configuration``
 #. Uncomment the snippet ``freemarker-example`` and save your changes
 
-   .. code-block:: guess
+   .. code-block:: xml
       :linenos:
       :emphasize-lines: 8-17
 

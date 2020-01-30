@@ -49,7 +49,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     POST .../api/1/services/api/1/activity/post-activity.json?site_id=mysite&user=jane.doe&path=/site/website/index.xml&activity=UPDATE&contentTypeClass=pages``
 
@@ -59,7 +59,7 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: guess
+.. code-block:: none
 
   No response body
 
