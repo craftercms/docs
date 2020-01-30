@@ -44,7 +44,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     POST .../api/1/services/api/1/workflow/create-jobs.json?site_id=mysite&user=test
 

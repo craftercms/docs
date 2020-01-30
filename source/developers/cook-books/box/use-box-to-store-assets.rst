@@ -115,7 +115,8 @@ Step 4: Add Freemarker code to render the URLs
 
 We need to add the Freemarker code that will render the URLs. In the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following lines after the ``<#list contentModel.sections.item as item>...</#list>`` lines:
 
-.. code-block:: guess
+.. code-block:: html
+  :force:
 
   <#if contentModel.attachments??>
      <h2>Attachments</h2>

@@ -60,7 +60,7 @@ created in the database with the imported LDAP attributes, and finally added to 
 
 Also, please note that Studio needs all the attributes listed in the config to be present in the LDAP user's attributes, otherwise, Studio is not able to authenticate the user.  When an attribute is missing, an error message will be displayed in the login screen: ``A system error has occurred.  Please wait a few minutes or contact an administrator``.  Please look at the tomcat log to check which attribute was not found.  Here's an example log:
 
-.. code-block:: guess
+.. code-block:: none
 
     [WARN] 2017-10-11 12:42:57,487 [http-nio-8080-exec-2] [security.DbWithLdapExtensionSecurityProvider] | No LDAP attribute crafterGroup found for username cbrunato
 

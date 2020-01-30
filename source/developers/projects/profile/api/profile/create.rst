@@ -60,7 +60,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
   POST .../api/1/profile/create
 

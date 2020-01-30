@@ -23,7 +23,7 @@ To upgrade 3.1.0 Docker/Kuber deployments to 3.1.3:
 #. Change the image version to 3.1.3 and restart containers.
 #. Wait for the containers to come up, the ``authoring_tomcat`` log should show some DB errors.
 
-   .. code-block:: guess
+   .. code-block:: bash
 
       tomcat_1         | Caused by: org.craftercms.studio.api.v2.exception.UpgradeException: Error executing sql script upgrade-3.1.0.34-to-3.1.0.35.sql
       ...

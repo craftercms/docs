@@ -44,7 +44,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     GET .../api/1/services/api/1/workflow/get-workflow-affected-paths.json?site_id=mysite&path=/site/website/index.xml
 
@@ -54,7 +54,7 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: guess
+.. code-block:: none
     :linenos:
 
     {

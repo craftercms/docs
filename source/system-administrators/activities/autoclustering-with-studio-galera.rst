@@ -170,7 +170,7 @@ We'll need to start the node we selected for bootstrapping first to start the Pr
 
 To check that your cluster is up, log into the MariaDB monitor and check the cluster size by running the following command:
 
-   .. code-block:: guess
+   .. code-block:: mysql
 
       show status like 'wsrep_cluster_size';
 
@@ -178,7 +178,7 @@ To check that your cluster is up, log into the MariaDB monitor and check the clu
 
 The output should show that there's one cluster:
 
-   .. code-block:: guess
+   .. code-block:: none
 
       MariaDB [crafter]> show status like 'wsrep_cluster_size';
       +---------------------+-------+
@@ -190,7 +190,7 @@ The output should show that there's one cluster:
 
 Once the bootstrap node is up and running, we can start the rest of the nodes by running the startup script ``./gradlew start`` or ``./startup.sh`` depending on if you're using a Crafter CMS build or a bundle.  For our example, we will be starting the node with address ``192.168.1.103``.   Once the second node is up, you can check the cluster size by logging into the MariaDB monitor and verify that your cluster size is now 2
 
-   .. code-block:: guess
+   .. code-block:: none
 
       MariaDB [crafter]> show status like 'wsrep_cluster_size';
       +---------------------+-------+
@@ -236,7 +236,7 @@ Whenever the number of Studios in the cluster is even numbered, the Studio Arbit
 
 #. Run the arbiter ``java -jar studio-arbiter.jar``.  To check that the arbiter is running and part of the cluster, you can check the cluster size by logging into the MariaDB monitor of one of the Studio nodes and verify that your cluster size is now 3
 
-   .. code-block:: guess
+   .. code-block:: none
 
       MariaDB [crafter]> show status like 'wsrep_cluster_size';
       +---------------------+-------+

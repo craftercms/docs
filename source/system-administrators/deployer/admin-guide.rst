@@ -210,7 +210,7 @@ By default the processed commits are stored in a folder (``CRAFTER_HOME/data/dep
 as an individual file for each target (for example ``editorial-preview.commit``). Each file contains
 only the commit id that will be used to track the changes during deployments:
 
-.. code-block:: guess
+.. code-block:: none
   :caption: Example of a processed commit file
   :linenos:
   

@@ -42,7 +42,8 @@ Let's begin adding the language ``Japanese`` to Crafter Studio:
 * Copy the contents from one of the existing json files, ``locale-en.json`` and paste it into the new file, ``locale-ja.json``.
 * Start translating the content in your ``locale-ja.json`` file, then save your changes
 
-    .. code-block:: guess
+    .. code-block:: json
+       :force:
        :caption: *studio-ui/static-assets/scripts/resources/locale-ja.json*
        :linenos:
 
@@ -147,7 +148,8 @@ Remember to change the language code in the all the ``registerBundle`` calls in 
 
 * After generating the ``ja.json`` locale file from above, open the file in your ``studio-ui`` code by navigating to ``/studio-ui/ui/app/src/translations/locales/``, then open the ``ja.json`` file and start translating the content
 
-  .. code-block:: guess
+  .. code-block:: json
+     :force:
 
      {
        "blueprint.by": "バイ",
@@ -168,7 +170,8 @@ Remember to change the language code in the all the ``registerBundle`` calls in 
 
 * Add the new language imports ``<script src="/studio/static-assets/components/cstudio-common/resources/ja/base.js?version=${UIBuildId!.now?string('Mddyyyy')}"></script>`` into the files listed above:
 
-  .. code-block:: guess
+  .. code-block:: html
+     :force:
      :linenos:
      :emphasize-lines: 6
      :caption: *studio-ui/templates/web/preview.ftl*

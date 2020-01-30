@@ -39,7 +39,7 @@ Parameters
 Example
 -------
 
-.. code-block:: guess
+.. code-block:: none
 
 	GET .../api/1/services/api/1/server/get-ui-resource-override.json?resource=logo.jpg
 

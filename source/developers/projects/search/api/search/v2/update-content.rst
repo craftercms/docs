@@ -55,7 +55,7 @@ Request
 
   POST .../api/2/search/update-content
 
-.. code-block:: guess
+.. code-block:: none
 
   index_id = editorial
   site = editorial

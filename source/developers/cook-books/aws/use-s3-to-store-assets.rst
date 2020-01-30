@@ -110,7 +110,8 @@ data source, to the ``Page - Article`` content type. To do this:
     the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following lines after the
     ``<#list contentModel.sections.item as item>...</#list>`` lines:
 
-    .. code-block:: guess
+    .. code-block:: html
+       :force:
        :linenos:
 
        <#if contentModel.attachments??>

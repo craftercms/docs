@@ -213,7 +213,7 @@ Now that both our public and private keys are installed on their respective serv
 
 SSH on to the delivery server as the ubuntu user and execute the following commands:
 
-.. code-block:: sh
+.. code-block:: bash
     :linenos:
 
     sudo su crafter
@@ -221,7 +221,7 @@ SSH on to the delivery server as the ubuntu user and execute the following comma
 
 It's important that you include the  **-o HostKeyAlgorithms=ssh-rsa** parameter in the initial SSH connection to the authoring server. Crafter expects the fingerprint to be stored in an RSA format. Once you execute the SSH command to log in to the authoring machine from the delivery machine as the crafter user. You will be prompted to verify the auhtenticity of the authoring server.  Type yes to confirm.  After this you will be logged in to the authoring server.  No further action is required. Type exit in to the command line of the authoring server to terminate the SSH session.
 
-.. code-block:: guess
+.. code-block:: text
     :linenos:
 
     The authenticity of host 'ec2-3-93-34-40.compute-1.amazonaws.com (172.31.79.17)' can't be established.
@@ -263,7 +263,7 @@ The SITE_ID parameter can be acquired from the authoring server. Log in to Craft
 
 Successful execution of this command will produce output similar to the following:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     Creating Solr Core...
@@ -273,7 +273,7 @@ Successful execution of this command will produce output similar to the followin
 
 Example:
 
-.. code-block:: sh
+.. code-block:: bash
     :linenos:
 
     init-site.sh -b live editorial ssh://crafter@ec2-3-93-34-40.compute-1.amazonaws.com:/opt/crafter/data/repos/sites/editorial/published
@@ -292,7 +292,7 @@ You can further verify that the deployment is working by watching the logs.  To 
 
 Look for output that is similar to the following:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     2019-04-17 21:39:00.001 INFO 4389 --- [pool-5-thread-1] o.c.d.impl.processors.GitPullProcessor : Cloning Git remote repository ssh://crafter@ec2-3-93-34-40.compute-1.amazonaws.com:/opt/crafter/data/repos/sites/editorial/published into /opt/crafter/data/repos/sites/editorial
