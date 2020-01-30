@@ -15,7 +15,7 @@ Failure Executing a Statement
 -----------------------------
 Let's take a look at an example log:
 
-.. code-block:: guess
+.. code-block:: bash
     :caption: Failed statement during upgrade
     :linenos:
 
@@ -48,7 +48,7 @@ Upgrade Not Supported
 ---------------------
 When the system is in an undefined state between two versions, you may see the following message in the logs:
 
-.. code-block:: guess
+.. code-block:: text
     :caption: System in an undefined state between two versions
 
     Caused by: org.craftercms.studio.api.v2.exception.UpgradeNotSupportedException: The current database version can't be upgraded

@@ -40,11 +40,11 @@ Parameters
 Example
 -------
 
-.. code-block:: guess
+.. code-block:: none
 
 	POST .../api/1/services/api/1/dependency/get-dependencies.json?site_id=mysite
 
-.. code-block:: guess
+.. code-block:: none
 
     [
         {

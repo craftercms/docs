@@ -209,7 +209,7 @@ The following example shows how to customize the schema to integrate a service w
     
     #.  The first step is to define a generic entry type that includes all common fields present in movies and series:
     
-        .. code-block:: guess
+        .. code-block:: text
           :caption: GraphQL interface for all entries
           :linenos:
         
@@ -226,7 +226,7 @@ The following example shows how to customize the schema to integrate a service w
     #.  Next step is to define the concrete types for movies and series, those will have all fields from the parent
         type but include new ones:
         
-        .. code-block:: guess
+        .. code-block:: text
           :caption: GraphQL type for movies
           :linenos:
         
@@ -239,7 +239,7 @@ The following example shows how to customize the schema to integrate a service w
             Production: String!
           }
         
-        .. code-block:: guess
+        .. code-block:: text
           :caption: GraphQL type for series
           :linenos:
         
@@ -254,7 +254,7 @@ The following example shows how to customize the schema to integrate a service w
         
     #.  Finally the service call will be exposed using a wrapper type:
         
-        .. code-block:: guess
+        .. code-block:: text
           :caption: GraphQL type for the service
           :linenos:
         

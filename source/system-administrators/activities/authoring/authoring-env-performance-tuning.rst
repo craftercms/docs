@@ -60,7 +60,7 @@ Testing Raw Performance
 
 	* Example
 
-      .. code-block:: guess
+      .. code-block:: none
           :linenos:
 
           Timing cached reads:   24486 MB in  1.99 seconds = 12284.28 MB/sec
@@ -72,7 +72,7 @@ Testing Raw Performance
 
 	* Example
 
-      .. code-block:: guess
+      .. code-block:: bash
          :linenos:
 
          $ fio --randrepeat=1 --ioengine=libaio --gtod_reduce=1 --name=test --filename=test --bs=4k --iodepth=64 --size=4G --readwrite=randrw --rwmixread=75
@@ -100,7 +100,7 @@ Testing Raw Performance
 
 	* Example
 
-      .. code-block:: guess
+      .. code-block:: bash
          :linenos:
 
 	     $ ioping -c 10 .
@@ -168,7 +168,7 @@ Crafter CMS includes many subsystems that require additional file-handles be ava
 
 Our limits are:
 
-.. code-block:: guess
+.. code-block:: none
     :linenos:
 
     [Service]

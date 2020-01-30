@@ -62,7 +62,7 @@ Use the client from a Groovy script
 
 We can now use the client from a Groovy script.  Here's a simple script that runs a query:
 
-.. code-block:: guess
+.. code-block:: groovy
     :linenos:
 
     def mongo = applicationContext.mongoClient

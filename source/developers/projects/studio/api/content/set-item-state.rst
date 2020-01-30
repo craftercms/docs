@@ -48,7 +48,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     POST ../api/1/services/api/1/content/set-item-state.json?site_id=mysite&path=/config/studio/administration/config-list.xml&state=EXISTING_UNEDITED_UNLOCKED&systemprocessing=false
 

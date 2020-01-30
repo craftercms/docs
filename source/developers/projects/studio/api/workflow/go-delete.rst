@@ -48,7 +48,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     POST ../api/1/services/api/1/workflow/go-delete.json?deletedep=true&site_id=mysite&user=admin
 

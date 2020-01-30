@@ -82,7 +82,7 @@ You will see indexing activity in the deployment log located in ``INSTALL_DIRECT
 Indexing activity time is dependent on the amount of content which must be re-processed. When the deployment/indexing 
 finishes you should see something like the following in the log:
 
-.. code-block:: guess
+.. code-block:: none
 
   2017-07-25 16:52:03.762  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : ------------------------------------------------------------
   2017-07-25 16:52:03.763  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : Deployment for SITE_NAME_v2 finished in 2.359 secs
@@ -187,7 +187,7 @@ You will see indexing activity in the deployment log located in ``INSTALL_DIRECT
 Indexing activity time is dependent on the amount of content which must be re-processed. When the deployment/indexing 
 finishes you should see something like the following in the log:
 
-.. code-block:: guess
+.. code-block:: none
 
   2017-07-25 16:52:03.762  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : ------------------------------------------------------------
   2017-07-25 16:52:03.763  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : Deployment for editorial-tmp-prod finished in 2.359 secs

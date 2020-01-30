@@ -44,7 +44,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     GET .../api/1/services/api/1/content/content-exists.json?site_id=mysite&path=/site/website/health/index.xml
 

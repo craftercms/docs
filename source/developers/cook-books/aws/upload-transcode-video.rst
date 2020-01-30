@@ -142,7 +142,8 @@ For our example, we'll add the Video Transcoding from S3 datasource and a Video 
     In the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following lines after the
     ``<section><header class="main" <@studio.iceAttr iceGroup="subject"/>>...</#section>`` lines:
 
-    .. code-block:: guess
+    .. code-block:: html
+       :force:
        :linenos:
 
        <!-- AWSVideoTranscoding -->

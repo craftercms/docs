@@ -45,7 +45,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
   GET .../api/1/profile/59284659d4c650213cc2f3fc/attachment/picture1?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
 

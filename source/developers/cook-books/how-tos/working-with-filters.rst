@@ -23,7 +23,7 @@ Let’s start simple. We’ll create a controller that prints a message before p
 
 Here’s the code:
 
-    .. code-block:: guess
+    .. code-block:: groovy
 
        logger.info("Handling the request")
        filterChain.doFilter(request, response)

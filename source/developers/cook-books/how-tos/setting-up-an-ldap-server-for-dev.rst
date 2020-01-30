@@ -111,7 +111,7 @@ The server we setup earlier does not have any data yet.  We will now load some d
 
 An empty file in the middle of your ApacheDS will appear.  This is the LDIF editor.  We will now enter some data into it to create users that Crafter Studio can authenticate through the LDAP Server we just setup.  We will add three users, each belonging to a different group for the site **myawesomesite** in Crafter Studio.  Please make sure that the attributes listed in the Crafter Studio LDAP configuration is configured in the LDAP server for each user.  Copy and paste the data listed below into the LDIF editor.  Make sure that there is an empty line after the last entry.
 
-.. code-block:: guess
+.. code-block:: text
     :linenos:
 
     dn: dc=example,dc=com
@@ -182,7 +182,7 @@ An empty file in the middle of your ApacheDS will appear.  This is the LDIF edit
 
 Please note that a user can belong to multiple groups. To add another groupName value in the ldif file, just add another line specifying the attribute and the value. Notice the multiple values for the attribute **ou** (groupName)
 
-.. code-block:: guess
+.. code-block:: text
     :linenos:
 
     dn: cn=John Wick,ou=Users,dc=example,dc=com

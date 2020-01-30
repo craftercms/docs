@@ -85,7 +85,8 @@ After the ``upgrade-target`` script is done with the upgrade, change to your tar
 
 Below is a sample output when you start the upgrade-target script:
 
-    .. code-block:: guess
+    .. code-block:: bash
+        :force:
 
         > Backup the data folder before upgrade? [(Y)es/(N)o]:
 

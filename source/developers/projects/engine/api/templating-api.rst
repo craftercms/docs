@@ -31,7 +31,8 @@ Rendering Navigation
 Crafter Engine provides the option of rendering automatically the navigation for you, just by using the macro
 ``renderNavigation``:
 
-.. code-block:: guess
+.. code-block:: html
+  :force:
   :linenos:
   :caption: Using the Navigation Macro
 
@@ -58,7 +59,8 @@ Rendering Breadcrumbs
 Crafter also offers a ``renderBreadcrumb`` macro to easily generate a dynamic list with all the
 parent pages of a specific url.
 
-.. code-block:: guess
+.. code-block:: html
+  :force:
   :linenos:
   :caption: Using the Breadcrumb Macro
 
@@ -91,7 +93,8 @@ Engine includes a default implementation that can be found in ``templates/web/na
 and ``templates/web/navigation2/breadcrumb-macros.ftl`` but it also provides the option to use your
 own sets of macros, which you'll probably want since the navigation HTML is generally specific to the site.
 
-.. code-block:: guess
+.. code-block:: html
+  :force:
   :linenos:
   :caption: Default Nav Macros
 
@@ -125,7 +128,8 @@ own sets of macros, which you'll probably want since the navigation HTML is gene
      </li>
   </#macro>
 
-.. code-block:: guess
+.. code-block:: html
+  :force:
   :linenos:
   :caption: Default Breadcrumb Macros
 
@@ -140,7 +144,8 @@ own sets of macros, which you'll probably want since the navigation HTML is gene
 You can define your own macros in an additional Freemarker template and include and optional
 parameter with the namespace that was given in the ``import`` tag:
 
-.. code-block:: guess
+.. code-block:: html
+  :force:
   :linenos:
   :caption: Using Custom Navigation Macros
 
@@ -179,7 +184,8 @@ Running Scripts/Controllers
 
 Crafter Engine allows executing scripts/controllers from inside Freemarker templates by using the tag ``@crafter.controller``.  It requires a single parameter, ``path``, which is the path of the script/controller in the site:
 
-.. code-block:: guess
+.. code-block:: html
+   :force:
    :caption: Running Scripts/Controllers from inside Freemarker templates
 
    <@crafter.controller path=“/scripts/plugins/MyPlugin/1/get-tweets.groovy” />

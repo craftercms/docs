@@ -49,7 +49,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     GET .../api/1/services/api/1/activity/get-user-activities.json?site_id=mysite&user=jane.doe&num=10&excludeLive=false&filterType=all``
 
@@ -59,7 +59,8 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: guess
+.. code-block:: json
+  :force:
   :linenos:
 
   {
