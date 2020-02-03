@@ -50,7 +50,7 @@ Response
 
 .. code-block:: json
 
-  { "message": "Content cache and Freemarker cache have been cleared for site 'sample'" }
+  { "message":"Cache clear for site 'sample' started" }
 
 ---------
 Responses
