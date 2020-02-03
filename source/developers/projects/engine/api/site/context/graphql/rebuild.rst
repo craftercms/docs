@@ -50,7 +50,7 @@ Response
 
 .. code-block:: json
 
-  { "message": "GraphQL schema for 'sample' rebuilt" }
+  { "message": "Rebuild of GraphQL schema started for 'sample'" }
 
 ---------
 Responses
