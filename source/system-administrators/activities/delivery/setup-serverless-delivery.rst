@@ -134,6 +134,35 @@ Step 2: Configure the Delivery for Serverless Mode
                   properties. Please see 
                   `Set up AWS Credentials and Region for Development <https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html>`_.
 
+#. We recommend that the AWS credentials configured belong to a user with just the following permission policy (all 
+   strings like ``$VAR`` are placeholders and need to be replaced):
+
+   .. code-block:: json
+      :caption: aws-serverless-engine-policy.json
+      :linenos:
+
+      {
+          "Version": "2012-10-17",
+          "Statement": [
+              {
+                  "Effect": "Allow",
+                  "Action": "s3:ListAllMyBuckets",
+                  "Resource": "*"
+              },
+              {
+                  "Effect": "Allow",
+                  "Action": [
+                      "s3:ListBucket",
+                      "s3:GetBucketLocation",
+                      "s3:GetObject"
+                  ],
+                  "Resource": "arn:aws:s3:::$BUCKET_NAME_PREFIX-*"
+              }
+          ]
+      }
+
+   |
+
 #. Edit the ``ES_URL`` in ``DELIVERY_INSTALL_DIR/bin/crafter-setenv.sh`` to point to the Elasticsearch endpoint you 
    created in the previous step:
       
@@ -211,6 +240,71 @@ notice:
              secret_key: XXXXXXXXXXXXXXXXXXXX
 
     |
+
+- We recommend that the AWS credentials configured belong to a user with just the following permission policy (all 
+  strings like ``$VAR`` are placeholders and need to be replaced):
+
+  .. code-block:: json
+     :caption: aws-serverless-deployer-policy.json
+     :linenos:
+
+     {
+         "Version": "2012-10-17",
+         "Statement": [
+             {
+                 "Effect": "Allow",
+                 "Action": [
+                     "cloudformation:CreateStack",
+                     "cloudformation:DescribeStacks",
+                     "cloudformation:DeleteStack"
+                 ],
+                 "Resource": "arn:aws:cloudformation:$REGION:$ACCOUNT_ID:stack/$CLOUDFORMATION_NAMESPACE-*/*"
+             },
+             {
+                 "Effect": "Allow",
+                 "Action": [
+                     "cloudfront:CreateDistribution",
+                     "cloudfront:GetDistribution",
+                     "cloudfront:GetDistributionConfig",
+                     "cloudfront:UpdateDistribution",
+                     "cloudfront:DeleteDistribution",
+                     "cloudfront:CreateInvalidation",
+                     "cloudfront:TagResource",
+                     "cloudfront:UntagResource"
+                 ],
+                 "Resource": "arn:aws:cloudfront::$ACCOUNT_ID:distribution/*"
+             },
+             {
+                 "Effect": "Allow",
+                 "Action": [
+                     "cloudfront:CreateCloudFrontOriginAccessIdentity",
+                     "cloudfront:GetCloudFrontOriginAccessIdentityConfig",
+                     "cloudfront:GetCloudFrontOriginAccessIdentity",
+                     "cloudfront:DeleteCloudFrontOriginAccessIdentity"
+                 ],
+                 "Resource": "*"
+             },
+             {
+                 "Effect": "Allow",
+                 "Action": [
+                     "s3:CreateBucket",
+                     "s3:ListBucket",
+                     "s3:DeleteBucket",
+                     "s3:GetBucketLocation",
+                     "s3:GetBucketPolicy",
+                     "s3:PutBucketPolicy",
+                     "s3:DeleteBucketPolicy",
+                     "s3:PutBucketCORS",
+                     "s3:GetObject",
+                     "s3:PutObject",
+                     "s3:DeleteObject"
+                 ],
+                 "Resource": "arn:aws:s3:::$CLOUDFORMATION_NAMESPACE-*"
+             }
+         ]
+     }
+
+  |
 
 - By default, the CloudFront created by Deployer will have a ``*.cloudfront.net`` domain name. To have CloudFront use 
   additional domain name(s) please specify the AWS ARN of the domain SSL certificate (``cloudfrontCertificateArn``) and 
