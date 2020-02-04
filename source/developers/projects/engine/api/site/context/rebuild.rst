@@ -51,7 +51,7 @@ Response
 
 .. code-block:: json
 
-  { "message": "Site context for 'sample' rebuilt" }
+  { "message": "Started rebuild for site context for 'sample'" }
 
 ---------
 Responses
