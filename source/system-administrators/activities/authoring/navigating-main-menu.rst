@@ -134,10 +134,23 @@ Global Config
 The ``Global Config`` allows the user to edit the system settings for Studio without access to the physical server.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-global-config.png
-    :alt: System Administrator - Main Menu Log Console
+    :alt: System Administrator - Main Menu Global Config
     :align: center
     :width: 100%
 
 When making changes here, not all changes can/will take effect without a restart, so expect to have to **restart Studio** for most changes to take effect
 
 For more information on what you can configure from the ``Global Config``, see :ref:`main-menu-global-config`
+
+---------------
+Encryption Tool
+---------------
+
+The ``Encryption Tool`` allows the user to encrypt sensitive data such as access keys and passwords, that shouldn't be publicly available to anyone but developers and administrators
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-encryption-tool.png
+    :alt: System Administrator - Main Menu Encryption Tool
+    :align: center
+    :width: 100%
+
+For more information on how to use the encryption tool, see :ref:`main-menu-encryption-tool`.
