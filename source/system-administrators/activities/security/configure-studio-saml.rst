@@ -23,10 +23,10 @@ Requirements
 Configure
 ---------
 
-To configure Studio SAML2, in your Authoring installation, go to ``shared/classes/crafter/studio/extension`` and add the following lines to ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your system):
+To configure Studio SAML2, in your Authoring installation, go to ``bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: yaml
-   :caption: *shared/classes/crafter/studio/extension/studio-config-override.yaml*
+   :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
    :linenos:
 
    ###############################################################
@@ -69,17 +69,17 @@ where
      - ``studio.security.saml.attributeName.lastName``
      - ``studio.security.saml.attributeName.group``
 
-- ``studio.security.saml.metadata.location.serviceProvider``: The path of the service provider metadata XML descriptor in the repo classpath
-- ``studio.security.saml.metadata.location.idp``: The path of the identity provider metadata XML descriptor in the repo classpath
-- ``studio.security.saml.keystore.location``: The path of the keystore file in the repo classpath
+- ``studio.security.saml.metadata.location.serviceProvider``: The path of the service provider metadata XML descriptor in the classpath
+- ``studio.security.saml.metadata.location.idp``: The path of the identity provider metadata XML descriptor in the classpath
+- ``studio.security.saml.keystore.location``: The path of the keystore file in the classpath
 - ``studio.security.saml.keystore.storePassword``: The password of the keystore file
 - ``studio.security.saml.keystore.keyPassword``: The password of the key
 - ``studio.security.saml.keystore.alias``: Keystore entry identifier
 
-The classpath is located in your Authoring installation, under ``shared/classes``.  As shown in the example above, the identity provider metadata XML descriptor is located in your Authoring installation under ``shared/classes/crafter/studio/extension/saml`` folder.
+The classpath is located in your Authoring installation, under ``bin/apache-tomcat/shared/classes``.  As shown in the example above, the identity provider metadata XML descriptor is located in your Authoring installation under ``bin/apache-tomcat/shared/classes/crafter/studio/extension/saml`` folder.
 
 .. code-block:: yaml
-   :caption: *shared/classes/crafter/studio/extension/studio-config-override.yaml*
+   :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
    # IDP Metadata location (classpath resource)
    studio.security.saml.metadata.location.idp: "/crafter/studio/extension/saml/idp-metadata.xml"
