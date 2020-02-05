@@ -31,7 +31,8 @@ next steps (you need a system administrator for the first step):
 
    #. Using the Crafter Commons Encryption Tool with the same key and salt values. 
       You can find instructions of how to use it in :ref:`crafter-commons-encryption-tool`.
-   #. Using the Encryption section from Crafter Studio. Details TBD
+   #. Using the Encryption section from Crafter Studio.
+      You can find instructions of how to use the tool in Crafter Studio :ref:`here <main-menu-encryption-tool>`
 
 #. Put the encrypted values in your configuration file using placeholders and a prefix: ``${enc:...}``. Example:
 
