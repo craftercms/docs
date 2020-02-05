@@ -195,7 +195,7 @@ The following section of Studio's global config allows you to configure an authe
        # Authentication via DB enabled
        # enabled: true
 
-For more information, see :ref:`authentication-chaining`
+For more information, see :ref:`configure-authentication-chain`
 
 ----
 CORS
