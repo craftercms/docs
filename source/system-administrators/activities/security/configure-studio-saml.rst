@@ -8,9 +8,6 @@
 Studio SAML2 Configuration |enterpriseOnly|
 ===========================================
 
-.. warning::
-   **This feature is still in beta**
-
 Crafter Studio can be configured to support SAML2 SSO out of the box without using any additional plugin.
 
 ------------
