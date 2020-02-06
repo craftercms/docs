@@ -13,6 +13,9 @@
 Auto-Clustering with Studio and Galera |enterpriseOnly|
 =======================================================
 
+.. warning::
+   **This feature is still in beta**
+
 In this section, we'll learn how to setup auto-clustering with Studio and MariaDB Galera.
 
 The MariaDB Galera Cluster is a synchronous multi-master cluster for MariaDB.  It is available on Linux only and has been a standard part of the MariaDB server since MariaDB 10.1.  See https://mariadb.com/kb/en/galera-cluster/ for more information.
