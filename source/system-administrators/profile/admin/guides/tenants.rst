@@ -48,17 +48,21 @@ Fields
 +=======================+=============+=========+================================================+
 | Name                  | |checkmark| | String  || Unique name for the tenant                    |
 +-----------------------+-------------+---------+------------------------------------------------+
-| Verify Profiles       |             | Boolean || If set to `true` new profiles created for     |
+| Verify Profiles       |             | Boolean || If set to ``true`` new profiles created for   |
 |                       |             |         || this tenant will not be available until the   |
 |                       |             |         || verification process is completed             |
 +-----------------------+-------------+---------+------------------------------------------------+
-| Enable Single Sign-On |             | Boolean || If set to `true` Crafter Profile will enable  |
+| Enable Single Sign-On |             | Boolean || If set to ``true`` Crafter Profile will enable|
 |                       |             |         || SSO security by looking for two properties in |
 |                       |             |         || HTTP headers: MELLON_username and MELLON_email|
 |                       |             |         || these names can be changed by changing Crafter|
 |                       |             |         || Profile security provider configuration. SSO  |
 |                       |             |         || is typically implemented using SAML2 and      |
 |                       |             |         || Apache mod_auth_mellon.                       |
++-----------------------+-------------+---------+------------------------------------------------+
+| Cleanse Attributes    |             | Boolean || If set to ``true``, escape HTML tags in       |
+|                       |             |         || values for attributes of type ``TEXT``,       |
+|                       |             |         || ``LARGE TEXT`` and ``STRING LIST``            |
 +-----------------------+-------------+---------+------------------------------------------------+
 | Available Roles       |             | List    || List of roles that profiles can have          |
 +-----------------------+-------------+---------+------------------------------------------------+
@@ -114,6 +118,8 @@ tenant.
   :align: center
   :alt: Crafter Profile update tenants attributes
 
+|
+
 +-----------------------+-------------+---------+------------------------------------------------+
 | Field                 | Required    | Type    |  Description                                   |
 +=======================+=============+=========+================================================+
@@ -148,6 +154,8 @@ From the list page you can click the name of a tenant to open the update page:
 .. figure:: /_static/images/profile-admin/tenants-update.png
   :align: center
   :alt: Crafter Profile update tenants
+
+|
 
 All fields can be changed except for the name.
 
