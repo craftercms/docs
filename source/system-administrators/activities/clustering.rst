@@ -24,5 +24,5 @@ Configuring Studio Clustering
 
 Crafter CMS provides two ways of setting up Studio clustering:
 
-* :ref:`Crafter CMS Auto-clustering of Studio Enterprise<autoclustering-with-studio-and-galera>`
+* :ref:`Crafter CMS Auto-clustering of Studio Enterprise<autoclustering-with-studio>`
 * :ref:`Crafter CMS Studio clustering using an external database<clustering-with-external-db>`
