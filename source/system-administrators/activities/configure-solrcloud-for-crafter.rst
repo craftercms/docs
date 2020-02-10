@@ -13,7 +13,7 @@ Crafter Search allows defining a CloudSolrClient in Spring config.  This section
 ------------
 In Authoring
 ------------
-#. Zip up (with tar.gz) the directory https://github.com/craftercms/search/tree/master/crafter-search-provider/solr/configsets/crafter_configs/conf.
+#. Zip up (with tar.gz) the directory https://github.com/craftercms/search/tree/master/crafter-search-solr-provider/solr/configsets/crafter_configs/conf.
 #. Copy the zip to one of the Solr servers and unzip it
 #. Go to **SOLR_INSTALL_DIR/server/scripts/cloud-scripts**.
 #. Run the command  ``./zkcli.sh -zkhost ZOOKEEPER_HOST:ZOOKEEPER_PORT -cmd upconfig -confname crafter_configs -confdir PATH_TO_UNZIPPED_CONFIGS`` (make sure the folder at ``PATH_TO_UNZIPPED_CONFIGS`` contains the ``solrconfig.xml`` file and remember to replace ``ZOOKEEPER_HOST`` and ``ZOOKEEPER_PORT`` with the actual Zookeeper host and port).

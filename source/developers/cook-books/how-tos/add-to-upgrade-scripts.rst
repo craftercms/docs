@@ -91,7 +91,7 @@ Site Content
 ^^^^^^^^^^^^
 When there is a change that breaks existing sites like the format of a field in the descriptors or the name of a 
 service in the Groovy scripts a new operation should be added to make the necessary changes in the repository. Any
-operation of this kind should extend the `AbstractContentUpgradeOperation <https://github.com/craftercms/studio/tree/develop/src/main/java/org/craftercms/studio/impl/v2/upgrade/operations/AbstractContentUpgradeOperation.java>`_
+operation of this kind should extend the `AbstractContentUpgradeOperation <https://github.com/craftercms/studio/tree/develop/src/main/java/org/craftercms/studio/impl/v2/upgrade/operations/site/AbstractContentUpgradeOperation.java>`_
 which handles committing the changes in the repository. Implementations of this 
 class
 only need to concern about finding the files that need to be updated (by using path patterns, content-types 
