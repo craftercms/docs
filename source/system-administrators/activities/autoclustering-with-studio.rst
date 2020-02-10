@@ -5,36 +5,37 @@
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. index:: Auto-Clustering with Studio and Galera
+.. index:: Auto-Clustering with Studio, Studio's Embedded Database Multi-master Cluster
 
-.. _autoclustering-with-studio-and-galera:
+.. _autoclustering-with-studio:
 
-=======================================================
-Auto-Clustering with Studio and Galera |enterpriseOnly|
-=======================================================
+============================================
+Auto-Clustering with Studio |enterpriseOnly|
+============================================
 
-In this section, we'll learn how to setup auto-clustering with Studio and MariaDB Galera.
+.. warning::
+   **This feature is still in beta**
 
-The MariaDB Galera Cluster is a synchronous multi-master cluster for MariaDB.  It is available on Linux only and has been a standard part of the MariaDB server since MariaDB 10.1.  See https://mariadb.com/kb/en/galera-cluster/ for more information.
+In this section, we'll learn how to setup auto-clustering with Studio.
 
-Crafter CMS supports MariaDB Galera clustering using the embedded database in Studio.
+Crafter CMS supports auto-clustering using Studio's embedded database.
 
 .. image:: /_static/images/system-admin/studio-autoclustering.png
     :alt: Crafter CMS Auto-clustering of Studio Enterprise
     :width: 100%
     :align: center
 
-When setting up a Galera cluster, a specific node needs to be started first as a reference point, then the rest of the nodes can join and form the cluster. This is known as cluster bootstrapping. Bootstrapping is the first step to introduce a database node as Primary Component, which others will see as a reference point to sync up with.
+When setting up a Studio's embedded database multi-master cluster, a specific node needs to be started first as a reference point, then the rest of the nodes can join and form the cluster. This is known as cluster bootstrapping. Bootstrapping is the first step to introduce a database node as Primary Component, which others will see as a reference point to sync up with.
 
-The Primary Component is a central concept on how Galera ensures that there is no opportunity for database inconsistency or divergence between the nodes in case of a network split.  The Primary Component is a set of Galera nodes that communicate with each other over the network and contains majority of the nodes.  There's no Primary Component yet when starting up a cluster, hence the need to bootstap a node first.  The other nodes will then look for an existing Primary Component to join when started using a normal start.
+The Primary Component is a central concept on how to ensure that there is no opportunity for database inconsistency or divergence between the nodes in case of a network split.  The Primary Component is a set of nodes that communicate with each other over the network and contains majority of the nodes.  There's no Primary Component yet when starting up a cluster, hence the need to bootstap a node first.  The other nodes will then look for an existing Primary Component to join when started using a normal start.
 
 There is no upper limit to the number of nodes that can be put in the cluster.  It's recommended that the cluster have at least three nodes, and have an odd number of nodes in the cluster to prevent the split brain problem.
 
 Resources can sometimes be limited and the cluster will need to run with just two nodes.  The solution is to setup an arbitrator, which Crafter CMS provides using the ``Studio Arbiter``.  This arbitrator functions as an odd node, to avoid split-brain situations and it can also request a consistent application state snapshot, which is useful in making backups.
 
-Let's take a look at an example of how to setup a two node cluster with Studio and Galera and a Studio Arbiter.
+Let's take a look at an example of how to setup a two node cluster with Studio and a Studio Arbiter.
 
-To setup a two node cluster with Studio and Galera, we'll need to do the following:
+To setup a two node cluster with Studio's embedded DB we'll need to do the following:
 
 #. Configure Nodes in the Cluster
 #. Start the Nodes in the Cluster
@@ -44,10 +45,10 @@ To setup a two node cluster with Studio and Galera, we'll need to do the followi
 Requirements
 ------------
 
-* At least 3 servers running Linux (Remember that MariaDB Galera runs only in Linux)
+* At least 3 servers running Linux (Remember that Studio's embedded DB multi-master cluster runs only in Linux)
 * Enterprise build/bundle of Crafter CMS
 * If using an enterprise bundle Crafter CMS, ``Git`` is required by Crafter CMS and may need to be installed if not already installed in the server.
-* Galera requires the ``libssl1.0.0`` (or ``libssl1.0.2``) shared library.  Some Linux distros does not come with the library pre-installed and may need to be installed.
+* Studio's embedded DB multi-master cluster requires the ``libssl1.0.0`` (or ``libssl1.0.2``) shared library.  Some Linux distros does not come with the library pre-installed and may need to be installed.
 
 --------------------------------
 Configuring Nodes in the Cluster
@@ -168,7 +169,7 @@ After finishing the node configurations, we are now ready to start the cluster.
 
 We'll need to start the node we selected for bootstrapping first to start the Primary Component.  From the above configurations, we will start the node with address ``192.168.1.100``, which is our bootstrap node, by running the startup script ``./gradlew start`` or ``./startup.sh`` depending on if you're using a Crafter CMS build or a bundle.  We'll need to wait until the node is up and running.
 
-To check that your cluster is up, log into the MariaDB monitor and check the cluster size by running the following command:
+To check that your cluster is up, log into Studio's embedded database monitor and check the cluster size by running the following command:
 
    .. code-block:: mysql
 
@@ -180,7 +181,7 @@ The output should show that there's one cluster:
 
    .. code-block:: none
 
-      MariaDB [crafter]> show status like 'wsrep_cluster_size';
+      > show status like 'wsrep_cluster_size';
       +---------------------+-------+
       | Variable_name       | Value |
       +---------------------+-------+
@@ -188,11 +189,11 @@ The output should show that there's one cluster:
       +---------------------+-------+
       1 row in set (0.027 sec)
 
-Once the bootstrap node is up and running, we can start the rest of the nodes by running the startup script ``./gradlew start`` or ``./startup.sh`` depending on if you're using a Crafter CMS build or a bundle.  For our example, we will be starting the node with address ``192.168.1.103``.   Once the second node is up, you can check the cluster size by logging into the MariaDB monitor and verify that your cluster size is now 2
+Once the bootstrap node is up and running, we can start the rest of the nodes by running the startup script ``./gradlew start`` or ``./startup.sh`` depending on if you're using a Crafter CMS build or a bundle.  For our example, we will be starting the node with address ``192.168.1.103``.   Once the second node is up, you can check the cluster size by logging into Studio's embedded database monitor and verify that your cluster size is now 2
 
    .. code-block:: none
 
-      MariaDB [crafter]> show status like 'wsrep_cluster_size';
+      > show status like 'wsrep_cluster_size';
       +---------------------+-------+
       | Variable_name       | Value |
       +---------------------+-------+
@@ -205,7 +206,7 @@ Once the bootstrap node is up and running, we can start the rest of the nodes by
 You can also verify from Studio that there are two nodes in the cluster by clicking on the |mainMenu| then clicking on ``Cluster``
 
 .. image:: /_static/images/system-admin/studio-galera-cluster-2node.png
-    :alt: Crafter CMS Authoring Galera Cluster with Two Nodes
+    :alt: Crafter CMS Authoring Studio's Embedded DB Multi-master Cluster with Two Nodes
     :width: 100%
     :align: center
 
@@ -238,7 +239,7 @@ Whenever the number of Studios in the cluster is even numbered, the Studio Arbit
 
    .. code-block:: none
 
-      MariaDB [crafter]> show status like 'wsrep_cluster_size';
+      > show status like 'wsrep_cluster_size';
       +---------------------+-------+
       | Variable_name       | Value |
       +---------------------+-------+

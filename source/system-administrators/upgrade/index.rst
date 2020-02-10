@@ -77,7 +77,7 @@ Here's an example to perform an upgrade of your current installation:
 
 |
 
-When performing an upgrade, the script asks if the user wants to backup the ``data`` folder then shuts down Crafter CMS.  It will then ask if the user wants to backup the ``bin`` folder, then perform the upgrade.  Finally, it will start your Crafter CMS install again.
+When performing an upgrade, Crafter CMS is shut down, then the script asks if the user wants to backup the ``data`` folder.  It will then ask if the user wants to backup the ``bin`` folder, then perform the upgrade.  Finally, it will start your Crafter CMS install again.
 
 Depending on how recent the version you are upgrading from, there may be files that do not exist in the new release and the script will give the user the option to delete or keep the files.  For config files that are different in the new release, the script gives you the option to overwrite the config files with their new versions.  When the script overwrites a file, it creates a backup version of the file with a timestamp and a bak file extension.
 
