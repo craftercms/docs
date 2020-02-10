@@ -413,4 +413,4 @@ The following example shows how to customize the schema to integrate a service w
 This is a very simple example that shows the basic features to integrate a service in the schema, but it is possible
 to use any GraphQL feature such as mutations to wrap a full REST API or database.
 
-.. |SchemaCustomizer| replace:: :javadoc_base_url:`SchemaCustomizer <engine/org/craftercms/engine/graphql/SchemaCustomizer.html>`
+.. |SchemaCustomizer| replace:: :javadoc_base_url:`SchemaCustomizer <engine/org/craftercms/engine/graphql/impl/SchemaCustomizer.html>`

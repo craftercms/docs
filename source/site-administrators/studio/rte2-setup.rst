@@ -120,7 +120,7 @@ Inside the ``<config>`` tag, there can be multiple ``<setup>`` tags. Each repres
         </link>
 
     * ``<rteStyleOverride>`` tag that may contain other tags for changing the looks and feel of your site.
-    * ``<plugins>`` contains the plugins available to the editor.  You can specify any plugin as named in `Tiny MCE Plugins List <https://www.tiny.cloud/docs/plugins//>`_.
+    * ``<plugins>`` contains the plugins available to the editor.  You can specify any plugin as named in `Tiny MCE Plugins List <https://www.tiny.cloud/docs/plugins/>`_.
     * ``<toolbarItems1>`` and similar contain the toolbar buttons in the RTE. You can specify any plugin toolbar item listed in the plugins above.  They will be featured in the same order as specified here, and separators can be specified with ``|``.
 
 ------------------------------------------
