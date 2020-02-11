@@ -22,7 +22,7 @@ To make the sites available, follow these steps:
 
       |
 
-#. Check the site directory is a shared dive
+#. Check the site directory is a shared drive
 
    Make sure the drive with the directory that will contain the sites is a shared drive by clicking on Docker Desktop ``Preferences`` -> ``File Sharing``)
 
