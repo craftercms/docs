@@ -28,7 +28,7 @@ Let's begin:
    We’ll use the authenticate API
    http://docs.craftercms.org/en/3.0/developers/projects/studio/api/security/login.html
 
-   .. code-block:: guess
+   .. code-block:: bash
 
        curl -d '{"username":"admin","password":"admin"}' --cookie "XSRF-TOKEN=A_VALUE" --header "X-XSRF-TOKEN:A_VALUE" --header "Content-Type: application/json" -v -X POST http://localhost:8080/studio/api/1/services/api/1/security/login.json
 
@@ -40,7 +40,7 @@ Let's begin:
 
    After issuing the CURL command you will get back a response:
 
-   .. code-block:: guess
+   .. code-block:: bash
       :linenos:
 
            * Trying ::1...
@@ -78,7 +78,7 @@ Let's begin:
    We'll get a list of sites the user is authorized to work with
    http://docs.craftercms.org/en/3.0/developers/projects/studio/api/site/get-sites-per-user.html
 
-   .. code-block:: guess
+   .. code-block:: bash
 
       curl --cookie "XSRF-TOKEN=A_VALUE;JSESSIONID=2E114725C82F3EE44ADC04B578A3BE8F" -H "X-XSRF-TOKEN:A_VALUE"  -X GET http://localhost:8080/studio/api/1/services/api/1/site/get-per-user.json?username=admin
 
@@ -87,7 +87,7 @@ Let's begin:
    Note the CURL command contains your session ID and XSRF tokens.
    After issuing the CURL command you will get a response that contains sites your user has access to:
 
-   .. code-block:: guess
+   .. code-block:: bash
 
       {"sites":[{"id":9,"siteId":"ar","name":"ar","description":"","status":null,"liveUrl":null,"lastCommitId":"951004363449cc83209f307b1e9f110dab37fed7","publishingEnabled":1,"publishingStatusMessage":"idle|Idle","lastVerifiedGitlogCommitId":null},{"id":5,"siteId":"diiot","name":"diiot","description":"","status":null,"liveUrl":null,"lastCommitId":"92d543eaa164b1ebfbdd6ce538ae028d4d6421b7","publishingEnabled":0,"publishingStatusMessage":"idle|Idle","lastVerifiedGitlogCommitId":"92d543eaa164b1ebfbdd6ce538ae028d4d6421b7"},{"id":10,"siteId":"editorialcom","name":"editorialcom","description":"","status":null,"liveUrl":null,"lastCommitId":"503d922f226e8ab821073e23ef5a229f907212a0","publishingEnabled":1,"publishingStatusMessage":"","lastVerifiedGitlogCommitId":"503d922f226e8ab821073e23ef5a229f907212a0"},{"id":3,"siteId":"flow","name":"flow","description":"","status":null,"liveUrl":null,"lastCommitId":"21923775c3a1fc778a364d47884b9ee2bb4928a5","publishingEnabled":1,"publishingStatusMessage":"idle|Idle","lastVerifiedGitlogCommitId":"21923775c3a1fc778a364d47884b9ee2bb4928a5"},{"id":8,"siteId":"vr","name":"vr","description":"","status":null,"liveUrl":null,"lastCommitId":"c67fd9dd25d1aa59ff13e3fda2a4387be50dfc69","publishingEnabled":1,"publishingStatusMessage":"idle|Idle","lastVerifiedGitlogCommitId":null}],"total":6}
 
@@ -100,7 +100,7 @@ Let's begin:
    We'll now write content to the Editorial com Project
    http://docs.craftercms.org/en/3.0/developers/projects/studio/api/content/write-content.html
 
-   .. code-block:: guess
+   .. code-block:: bash
 
       curl -d "<page><content-type>/page/category-landing</content-type><display-template>/templates/web/pages/category-landing.ftl</display-template><merge-strategy>inherit-levels</merge-strategy><file-name>index.xml</file-name><folder-name>test3</folder-name><internal-name>test3</internal-name><disabled >false</disabled></page>" --cookie "XSRF-TOKEN=A_VALUE;JSESSIONID=2E114725C82F3EE44ADC04B578A3BE8F" -H "X-XSRF-TOKEN:A_VALUE"  -X POST "http://localhost:8080/studio/api/1/services/api/1/content/write-content.json?site=editorialcom&phase=onSave&path=/site/website/test3/index.xml&fileName=index.xml&user=admin&contentType=/page/category-landing&unlock=true"
 

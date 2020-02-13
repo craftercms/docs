@@ -46,7 +46,7 @@ Request
 
   PUT .../api/3/comments/59678d3f300426156e21df50/moderate?context=f5b143c2-f1c0-4a10-b56e-f485f00d3fe9
 
-.. code-block:: guess
+.. code-block:: none
 
   status=APPROVED
 

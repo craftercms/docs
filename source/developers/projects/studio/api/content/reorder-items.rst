@@ -46,7 +46,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     GET .../api/1/services/api/1/content/reorder-items.json?site_id=mysitet&path=/site/website/health/index.xml&before=/site/website/entertainment/index.xml&after=/site/website/technology/index.xml
 

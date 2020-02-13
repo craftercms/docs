@@ -45,7 +45,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: text
 
   GET .../api/1/profile/592887d7d4c650213cc2f400/attributes?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
 

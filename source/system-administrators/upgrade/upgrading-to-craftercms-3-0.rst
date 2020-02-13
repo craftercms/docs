@@ -180,7 +180,7 @@ The import script will basically attempt to execute these operations:
 After this, you just need to wait for the site creation process to complete. You can tail the ``crafter-authoring/logs/tomcat/catalina.out`` meanwhile to
 watch the progress. The site should be ready when you see the following line in the log:
 
-.. code-block:: guess
+.. code-block:: text
 
   [INFO] 2018-03-29 11:54:42,063 [studioSchedulerFactoryBean_Worker-1] [site.SiteServiceImpl] | Done syncing database with repository for site: mysite fromCommitId = a1f2f8beba50da9cc75fcd3aa97d412750ef5225 with a final result of: true
   [INFO] 2018-03-29 11:54:42,063 [studioSchedulerFactoryBean_Worker-1] [site.SiteServiceImpl] | Last commit ID for site: mysite is 069f82a4bb3bce1e8cb3c2abc030f9a2cb68e9a9

@@ -38,7 +38,7 @@ Parameters
 Example
 -------
 
-.. code-block:: guess
+.. code-block:: none
 
 	POST .../api/1/services/api/1/site/write-configuration.json?site_id=mysite&path=/config/studio/site-config.xml
 

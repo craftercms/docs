@@ -42,7 +42,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     POST .../api/1/services/api/1/dependency/get-dependant.json?site_id=mysite&path=/templates/web/pages/home.ftl
 

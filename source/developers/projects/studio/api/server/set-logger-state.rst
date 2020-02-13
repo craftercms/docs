@@ -39,7 +39,7 @@ Parameters
 Example
 -------
 
-.. code-block:: guess
+.. code-block:: none
 
 	GET .../api/1/services/api/1/server/set-logger-state.json?logger=org.craftercms.studio.impl.v1.service.content.ContentServiceImpl&level=debug
 

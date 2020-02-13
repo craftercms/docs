@@ -31,7 +31,7 @@ To format the date to a certain format pattern, which we then pass to a template
 
 Which will output this:
 
-.. code-block:: guess
+.. code-block:: text
 
     Tuesday, December 27, 2016, 09:00 PM (PST)
 
@@ -45,7 +45,7 @@ To format the date for a certain format pattern and time zone, do the following:
 
 Which will output this:
 
-.. code-block:: guess
+.. code-block:: text
 
     Wednesday, December 28, 2016, 12:00 AM (EST)
 
@@ -57,7 +57,7 @@ Let's show another example of formatting the date for a certain format pattern a
 
 Which will output this:
 
-.. code-block:: guess
+.. code-block:: text
 
     Tue, December 27, 2016, 09:00 PM (PST)
 
@@ -78,7 +78,7 @@ To convert a date string into a date object (so you can perform date arithmetic,
 
 Which will output this for ``nowDate``:
 
-.. code-block:: guess
+.. code-block:: text
 
     Thu Oct 26 23:45:23 PDT 2017
 
@@ -100,7 +100,7 @@ Say, we want to find the date object 10 days after the date in our example above
 
 Both ``addDate`` and ``addDate2``, will output:
 
-.. code-block:: guess
+.. code-block:: text
 
     Sun Nov 05 23:45:23 PST 2017
 
@@ -113,7 +113,7 @@ Now, if we want to find out the date object 30 days before the date in our examp
 
 Both ``subDate`` and ``subDate2`` will output:
 
-.. code-block:: guess
+.. code-block:: text
 
     Tue Sep 26 23:45:23 PDT 2017
 

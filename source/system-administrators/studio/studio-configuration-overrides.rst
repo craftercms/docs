@@ -84,7 +84,7 @@ Database Configuration
 
 The following section of Studio's configuration overrides allows you to setup the database url, port number, connection string to initialize the database and path
 
-.. code-block:: guess
+.. code-block:: yaml
    :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
    :linenos:
 

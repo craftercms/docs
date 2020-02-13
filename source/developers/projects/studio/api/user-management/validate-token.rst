@@ -36,7 +36,7 @@ Parameters
 Example
 -------
 
-.. code-block:: guess
+.. code-block:: none
 
 	GET .../api/1/services/api/1/user/validate-token.json?token=asfopaiu02928s0980b98a098gs0fduoi2j341j448t735h1lk40
 

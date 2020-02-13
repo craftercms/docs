@@ -27,7 +27,7 @@ Resource Information
 Example
 -------
 
-.. code-block:: guess
+.. code-block:: none
 
 	GET .../api/1/services/api/1/server/get-loggers.json
 
