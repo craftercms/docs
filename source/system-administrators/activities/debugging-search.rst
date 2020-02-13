@@ -109,7 +109,7 @@ Configure Crafter Engine: Crafter Search URL
 
 ``$CATALINA_HOME/shared/classes/crafter/engine/extension/server-config.properties``
 
-.. code-block:: guess
+.. code-block:: properties
 
   crafter.engine.search.server.url=http://HOST:PORT/crafter-search
 
@@ -119,6 +119,6 @@ Configure Crafter Search: Solr URL
 
 ``$CATALINA_HOME/shared/classes/crafter/search/extension/server-config.properties``
 
-.. code-block:: guess
+.. code-block:: properties
 
   crafter.search.solr.server.url=http://HOST:PORT/solr

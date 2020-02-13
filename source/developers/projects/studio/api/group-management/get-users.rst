@@ -42,7 +42,7 @@ Parameters
 Example
 -------
 
-.. code-block:: guess
+.. code-block:: none
 
 	GET .../api/1/services/api/1/group/users.json?group_name=mygroup&site_id=mysite
 

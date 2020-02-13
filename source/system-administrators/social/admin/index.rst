@@ -43,7 +43,7 @@ properties file placed in the following location:
 
 You can change any of the default configuration, some of the more relevant properties are:
 
-.. code-block:: guess
+.. code-block:: properties
 
   crafter.social.app.rootUrl=
   crafter.social.app.name=crafter-social

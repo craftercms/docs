@@ -39,7 +39,7 @@ Example
 ^^^^^^^
 Request
 ^^^^^^^
-.. code-block:: guess
+.. code-block:: text
 
   GET .../api/1/content_store/item.json?contextId=405ffc233d075b010536bd2eb786b86c&url=/site/website/index.xml
 

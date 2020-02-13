@@ -50,7 +50,7 @@ Request
 
   POST .../api/3/comments/search
 
-.. code-block:: guess
+.. code-block:: none
 
   context=f5b143c2-f1c0-4a10-b56e-f485f00d3fe9
   search={ targetId: "Welcome" }

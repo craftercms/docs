@@ -58,11 +58,12 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: text
 
   POST .../api/1/profile/create
 
-.. code-block:: none
+.. code-block:: json
+  :force:
   :linenos:
 
   accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d

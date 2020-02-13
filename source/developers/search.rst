@@ -79,7 +79,8 @@ Create template variables with current cookie values
 
 As you can see, the code simply creates a template value for each user selection based on the value from the cookie.  If no cookie is found a default value (specified by !”FOO”) is provided. This code would typically appear close to the top of the template.
 
-.. code-block:: guess
+.. code-block:: html
+   :force:
 
    <#assign sort = (Cookies["category-sort"]!"")?replace("-", " ")>
    <#assign filterSize = (Cookies["category-filter-size"]!"*")>
@@ -90,7 +91,8 @@ Render controls with values selected from cookies
 
 Now we need to build the filter controls for our users so that they can narrow their searches. In the code below we’re iterating over the available options (we’ll show how these are acquired in just a moment) and creating the options for the select component.  For each option we look to see if it is the currently selected item and if so we mark it as selected.
 
-.. code-block:: guess
+.. code-block:: html
+   :force:
    :linenos:
 
    <select style="width: 90px"  onchange="setCookie('category-filter-color', this.value);">
@@ -105,7 +107,8 @@ Provide a  mechanism to save a selected value to our cookie and force a refresh
 
 In the code above you can see a simple JavaScript function on the “onChange” method for the select control.  Again you can see here we’re keeping the code as abstraction free as possible to make the example clear.  Below is the simple JavaScript function:
 
-.. code-block:: guess
+.. code-block:: js
+   :force:
    :linenos:
 
    <script>
@@ -127,7 +130,8 @@ Construct a query that is NOT constrained by filters.
 We will use the results of this query to get the possible values and counts for our filters.
 Below you can see we’re building up a simple query for the jeans content type, gender and collection.
 
-.. code-block:: guess
+.. code-block:: html
+   :force:
 
    <#assign queryStatement = 'content-type:"/component/jeans" ' />
    <#assign queryStatement = queryStatement + 'AND gender.item.key:"' + gender + '" ' />
@@ -139,7 +143,8 @@ Construct a query based on the first but with additional filter constraints
 
 We will use the results of this query to display the results to the user.
 
-.. code-block:: guess
+.. code-block:: html
+   :force:
 
    <#assign filteredQueryStatement = queryStatement />
    <#assign filteredQueryStatement = filteredQueryStatement + ‘AND size.item.value:”‘ + filterSize + ‘” ‘ />
@@ -150,7 +155,8 @@ Execute the unfiltered query
 
 Here you can see we’re declaring the facets we want the counts on.
 
-.. code-block:: guess
+.. code-block:: html
+   :force:
    :linenos:
 
    <#assign query = searchService.createQuery()>
@@ -165,7 +171,8 @@ Execute the filtered query
 
 Here you can see we’re declaring the pagination and sorting options.
 
-.. code-block:: guess
+.. code-block:: html
+   :force:
    :linenos:
 
    <#assign filteredQuery = searchService.createQuery()>
@@ -183,7 +190,8 @@ Assign the results to template variables
 
 Below you can see the how we’re getting the matching jean objects, and number of results returned from the filtered query response.  You can also see how we’re getting the available options and counts from the unfiltered query response.
 
-.. code-block:: guess
+.. code-block:: html
+   :force:
 
    <#assign productsFound = executedFilteredQuery.response.numFound>
    <#assign products = executedFilteredQuery.response.documents />
@@ -199,7 +207,8 @@ Display the products
 
 In the code below, we’re iterating over the available products and simply displaying the details for it.
 
-.. code-block:: guess
+.. code-block:: html
+   :force:
    :linenos:
 
    <#list products as product>
@@ -221,7 +230,8 @@ Construct pagination
 
 Given the number of items found and our productsPerPage value we can determine the number of pages to show to the user.
 
-.. code-block:: guess
+.. code-block:: html
+   :force:
    :linenos:
 
    <div>

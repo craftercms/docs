@@ -28,7 +28,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/target/get_all``
+``GET .../api/1/target/get-all``
 
 ^^^^^^^^
 Response

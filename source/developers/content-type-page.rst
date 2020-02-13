@@ -149,13 +149,15 @@ We will now start filling in the template of how we want the content captured in
 	:alt: Template FTL
 	:align: center
 
-.. code-block:: guess
+.. code-block:: html
+    :force:
     :caption: Render header
 
     <!-- Header -->
         <@renderComponent component = contentModel.header.item />
 
-.. code-block:: guess
+.. code-block:: html
+    :force:
     :caption: Render content section
     :linenos:
 
@@ -205,7 +207,7 @@ We can now start adding the script to get a list of articles depending on the ac
 	:alt: Template Controller Script
 	:align: center
 
-.. code-block:: guess
+.. code-block:: groovy
     :linenos:
 
     import org.craftercms.sites.editorial.SearchHelper
@@ -227,7 +229,8 @@ Now that we have our controller, we just need to add code to the freemarker temp
 	:alt: Template Modify FTL to Display Controller Script Output
 	:align: center
 
-.. code-block:: guess
+.. code-block:: html
+    :force:
     :linenos:
 
     <section>

@@ -42,7 +42,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     GET .../api/1/services/api/1/site/get-configuration.json?site_id=mysite&path=/site-config.xml
 

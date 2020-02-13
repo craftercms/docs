@@ -253,7 +253,7 @@ Enable ClamAV Virus Scanner
 1. Install ClamAV
 2. Edit the ClamAV configuration file to include the following properties:
 
-.. code-block:: guess
+.. code-block:: aconf
   :caption: clamd.conf
   :linenos:
 

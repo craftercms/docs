@@ -45,7 +45,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: text
 
   POST .../api/1/profile/592715d4d4c650e226b03b62/verification_token/create?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
 
