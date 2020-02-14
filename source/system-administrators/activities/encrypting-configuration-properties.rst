@@ -27,8 +27,8 @@ next steps (you need a system administrator for the first step):
      :caption: Encryption configuration example in *bin/crafter-setenv.sh*
 
 	 # -------------------- Encryption variables --------------------
-     export CRAFTER_ENCRYPTION_KEY=${CRAFTER_ENCRYPTION_KEY:="default_encrytption_key"}
-     export CRAFTER_ENCRYPTION_SALT=${CRAFTER_ENCRYPTION_SALT:="default_encrytption_salt"}
+     export CRAFTER_ENCRYPTION_KEY=${CRAFTER_ENCRYPTION_KEY:="default_encryption_key"}
+     export CRAFTER_ENCRYPTION_SALT=${CRAFTER_ENCRYPTION_SALT:="default_encryption_salt"}
 
    |
 
