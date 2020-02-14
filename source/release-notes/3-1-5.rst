@@ -9,11 +9,16 @@ New Features
 ^^^^^^^^^^^^
 
 * Added management tokens for Studio, Engine, Deployer, Search, Profile and Social modules
-** Make sure to adjust your monitors to supply your configured token. See :ref:`management-tokens` for more information.
+
+     *Make sure to adjust your monitors to supply your configured token. See* :ref:`management-tokens` *for more information.*
+
 * Added API and UI support for encrypting sensitive text in configuration files (like access credentials)
-** Make sure to change the default crypto configurations for your deployment
+
+     *Make sure to change the default crypto configurations for your deployment*
+
 * Added Deployer support for indexing to multiple ES on a single target
-** You can now have multiple Elasticsearch clusters being seeded by a single Deployer target (these clusters can be geo-distributed)
+
+     *You can now have multiple Elasticsearch clusters being seeded by a single Deployer target (these clusters can be geo-distributed)*
 
 ^^^^^^^
 Updates
