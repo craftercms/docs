@@ -21,5 +21,6 @@ How-Tos
    working-with-crafter-studios-api
    working-with-dates-freemarker
    working-with-dates-groovy
+   working-with-docker-based-installs
    working-with-filters
    migrate-site-to-elasticsearch
