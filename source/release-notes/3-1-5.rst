@@ -37,4 +37,6 @@ For a full list of tickets, please visit: `GitHub 3.1.5 Milestone <https://githu
 
     Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.5)
 
+    For Docker/Kuber deployments, see :ref:`upgrade-to-3-1-5` for instructions on how to upgrade from 3.1.4 to 3.1.5
+
     For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
