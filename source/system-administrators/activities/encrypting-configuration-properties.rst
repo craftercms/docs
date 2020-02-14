@@ -18,15 +18,20 @@ next steps (you need a system administrator for the first step):
 
    - ``CRAFTER_ENCRYPTION_KEY``
    - ``CRAFTER_ENCRYPTION_SALT``
-   
+
+
+   Open ``bin/crafter-setenv.sh`` from your install and modify the following:
+
    .. code-block:: bash
      :linenos:
-     :caption: Encryption configuration example
+     :caption: Encryption configuration example in *bin/crafter-setenv.sh*
 
-     export CRAFTER_ENCRYPTION_KEY="klanFogyetkonjo"
-     export CRAFTER_ENCRYPTION_SALT="S25pT2RkeWk="
-     bin/startup.sh
- 
+	 # -------------------- Encryption variables --------------------
+     export CRAFTER_ENCRYPTION_KEY=${CRAFTER_ENCRYPTION_KEY:="default_encryption_key"}
+     export CRAFTER_ENCRYPTION_SALT=${CRAFTER_ENCRYPTION_SALT:="default_encryption_salt"}
+
+   |
+
 #. Encrypt the values using one of the following methods:
 
    #. Using the Crafter Commons Encryption Tool with the same key and salt values. 
@@ -43,6 +48,8 @@ next steps (you need a system administrator for the first step):
 		    <accessTokenId>${enc:q3l5YNoKH38RldAkg6EAGjxlI7+K7Cl4iEmMJNlemNOjcuhaaQNPLwAB824QcJKCbEeLfsg+QSfHCYNcNP/yMw==}</accessTokenId>
 		  </api>
 		</profile>
+
+    |
 
 The encrypted properties work in the following files:
 
