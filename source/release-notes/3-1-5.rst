@@ -26,6 +26,7 @@ Updates
 
 * Upgraded Elasticsearch version to 6.8.6
 * Upgraded the following Studio UI dependencies: @types/jest to 24.0.23, @types/node to 12.12.17, @types/react to 16.9.16, graphiql to 0.17.5, typescript tp 3.7.3 and babel-plugin-react-intl to 5.1.11
+* Upgraded Tomcat version to 8.5.51
 * Added support for path style access configuration to all S3 client creations
 * Improved Content type administration UI
 
