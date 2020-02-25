@@ -10,6 +10,9 @@ Upgrading Crafter CMS
 
 This section details the steps required to upgrade your Crafter CMS install.
 
+.. important:: 
+    For upgrading Docker Compose environments or Kubernetes deployments please follow the instructions in :ref:`upgrading-dockers`.
+
 
 .. WARNING::
     This guide assumes that you're trying to upgrade a site from a stock 3.0.x Studio and with some slight Studio configuration changes. If your site configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
