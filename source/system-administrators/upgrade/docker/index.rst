@@ -32,7 +32,8 @@ These upgrade instructions are for both ``authoring`` and ``delivery`` compose p
    #. Replace the file in the volume with the new configuration file with your changes.
 
 #. Check the :ref:`release-notes` for any other additional tasks you need to perform.
-#. Run ``docker-compose up`` and monitor the Docker logs for any upgrade errors.
+#. Run ``docker-compose up``.
+#. Monitor the Docker logs for any upgrade errors.
 
 --------------------------------
 Upgrading Kubernetes Deployments
@@ -54,5 +55,5 @@ These upgrade instructions are for both Authoring and Delivery deployments:
    #. Replace the file in the ``ConfigMap`` or ``Secret`` with the new configuration file with your changes.
 
 #. Check the :ref:`release-notes` for any other additional tasks you need to perform.
-#. Apply the updated deployment files so the containers are restarted and detect the configuration changes, and monitor 
-   the Kubernetes logs for any upgrade errors.
+#. Apply the updated deployment files so the containers are restarted and the configuration changes detected.  
+#. Monitor the Kubernetes logs for any upgrade errors.
