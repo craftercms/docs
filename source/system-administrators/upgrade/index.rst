@@ -11,7 +11,7 @@ Upgrading Crafter CMS
 This section details the steps required to upgrade your Crafter CMS install.
 
 .. important:: 
-    For upgrading Docker Compose environments or Kubernetes deployments please follow the instructions in :ref:`upgrading-dockers`.
+    For upgrading Docker Compose environments or Kubernetes deployments please follow the instructions in :ref:`upgrading-dockers`, instead of the ones in this document.
 
 
 .. WARNING::
