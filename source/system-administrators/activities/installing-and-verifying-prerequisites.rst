@@ -1,7 +1,25 @@
+:is-up-to-date: True
 
-^^^^^^^^^^^^
+:orphan:
+
+.. document does not appear in any toctree, and is only accessible via searching.
+   This document is deprecated and is provided as a reference only
+   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
+
+
+.. index:: Installing and verifying prerequisites, Prerequisites
+
+.. _installing-and-verifying-prerequisites:
+
+===============================================
+Verifying Java Installs and Other Prerequisites
+===============================================
+
+This section lists various prerequisites needed depending on the operating system and how to verify Java installs.  Please note that this section only applies to Linux/Unix/OS X operating systems
+
+------------
 Install Java
-^^^^^^^^^^^^
+------------
 Download and install Java JDK 1.8 (either `Oracle <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_  or `OpenJDK <http://openjdk.java.net/>`_).
 
 ^^^^^^^^^^^^^^^^^^^
@@ -24,6 +42,8 @@ The command above should output something like this:
     java version "1.8.0_91"
 
 |
+
+.. _verify-java-home-env-var:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Verify JAVA_HOME environment variable is set correctly
@@ -70,9 +90,9 @@ How to set the JAVA_HOME environment variable
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^
-OS X Extra Prerequisite
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------
+OS X Prerequisite
+-----------------
 
 For OS X users, the latest ``openssl`` formula needs to be installed via homebrew:
 
@@ -82,10 +102,11 @@ For OS X users, the latest ``openssl`` formula needs to be installed via homebre
 
 |
 
+.. _prerequisites:
 
-^^^^^^^^^^^^^^^^^^
+------------------
 Linux Prerequisite
-^^^^^^^^^^^^^^^^^^
+------------------
 
 #. The library ``libaio`` is required by the embedded database MariaDB4j in the Authoring install.  Please note that some Linux distributions does not install the library ``libaio`` by default and so, may need to be installed.  You may get the following error when starting up Studio:
 
@@ -112,4 +133,49 @@ Linux Prerequisite
    On RHEL, CentOS:  ``sudo yum install ncurses-devel``
 
    On Fedora 22 and newer version: ``sudo dnf install ncurses-devel``
+
+
+----------------------------------
+Building with Gradle Prerequisites
+----------------------------------
+
+For building with Gradle for installing Crafter CMS, the following must be installed in your system:
+
+^^^^^^^^
+On Linux
+^^^^^^^^
+* Java 8
+* Git 2.x+
+* Maven 3.3.x+
+* make and GCC
+
+  * For **Debian** based distributions (such as Ubuntu), ``make`` and ``GCC`` can be installed through ``build-essential``
+
+      .. code-block:: sh
+
+         sudo apt install build-essential
+
+      |
+
+  * For **RHEL** based distributions (such as CentOS), ``make`` and ``GCC`` can be installed through "Development Tools"
+
+      .. code-block:: sh
+
+         yum groupinstall "Development Tools"
+
+      |
+
+^^^^^^^^
+On macOS
+^^^^^^^^
+* Java 8
+* Git 2.x+
+* Maven 3.3.x+
+* make and GCC, which can be installed from ``XCode Command Line Tools``
+
+    .. code-block:: sh
+
+       xcode-select --install
+
+    |
 
