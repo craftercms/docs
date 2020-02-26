@@ -42,7 +42,7 @@ Activities
    :maxdepth: 1
    :titlesonly:
 
-   activities/installing-and-verifying-prereq.rst
+   activities/installing.rst
    activities/backup-and-recovery.rst
    activities/clustering.rst
    activities/configure-solrcloud-for-crafter.rst
