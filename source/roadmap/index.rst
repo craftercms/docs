@@ -12,6 +12,8 @@ The detailed roadmap is maintained in our issue planning and tracking system, an
 
 At a high-level, we're pursuing the objectives listed below in order:
 
+* Managed Blob Stores
+	- Manage external blob stores (S3) assets as if they're Crafter CMS assets with full workflow and multi-environment support
 * SPA Support II
 	- ICE (In-Context Editing) Pencils for React JS and Angular (possible now, but not as easy as we want it to be)
 	- Drag and Drop for React, Angular, and Vue (possible now, but not as easy as we want it to be)

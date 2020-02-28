@@ -22,14 +22,16 @@ After logging in, you'll see the Sites screen (Below).  Click on **Create Site**
     :align: center
     :alt: Your First Website - Sites Screen - needs update
 
-In the **Choose a Blueprint** screen, the user is presented with the available blueprints or the option to use a remote Git repository instead of selecting a blueprint from the list.  To see all available blueprints, scroll down.  We're going to be using the "Website Editorial Blueprint".  Blueprints offer you a starting point for your website. New blueprints can be created and installed into the system.  Click on **Select** for the "Website Editorial Blueprint".
+In the **Create Site** screen, the user is presented with the available blueprints or the option to use a remote Git repository instead of selecting a blueprint from the list.  To see all available blueprints, scroll through the two tabs available, ``Private Blueprints`` which contains default blueprints available out of the box from Crafter Studio including the option use a remote Git repository to create a new site, and ``Public Marketplace``. which contains blueprints submitted to `Crafter's Marketplace <https://github.com/marketplace/crafter-marketplace>`_
+
+We're going to be using the "Website Editorial Blueprint".  Blueprints offer you a starting point for your website. New blueprints can be created and installed into the system.  Click on **Use** for the "Website Editorial Blueprint".
 
 .. image:: /_static/images/first-site/create-site-choose-bp.png
     :width: 100 %
     :align: center
     :alt: Your First Website - Create Site: Choose a Blueprint
 
-Give the site a friendly name for the **Site Id** and a description.  As you are entering the Site Id, spaces are removed and upper case letters are converted to lower case letters.
+Give the site a friendly name for the **Site Id** and a description.  As you are entering the Site Id, spaces are removed and upper case letters are converted to lower case letters.  Click on the ``Review`` button.
 
 .. image:: /_static/images/first-site/create-site-basic-info.png
     :width: 100 %
@@ -37,7 +39,7 @@ Give the site a friendly name for the **Site Id** and a description.  As you are
     :alt: Your First Website - Create Site: Basic Information
 
 
-The next step is to review your entries and finally create your new site.  Click on the **Create** button and wait for the system to create your site based on the blueprint.
+The next step is to review your entries and finally create your new site.  Click on the **Create Site** button and wait for the system to create your site based on the blueprint.
 
 .. image:: /_static/images/first-site/create-site-review-create.png
     :width: 100 %
@@ -47,7 +49,7 @@ The next step is to review your entries and finally create your new site.  Click
 A spinner will appear while it's creating the following: configuration, site content, and permissions based on the template provided by the blueprint.
 
 .. image:: /_static/images/first-site/creating-spinner.png
-    :width: 40 %
+    :width: 100 %
     :align: center
     :alt: Your First Website - Creating a Site Spinner Dialog
 
