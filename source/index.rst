@@ -37,6 +37,11 @@ This Manual introduces key concepts in Crafter CMS, presents the authoring and d
    /get-support/index
    /faq/index
 
+.. toctree::
+   :maxdepth: 1
+
+   Acknowledgements </acknowledgements/index>
+
 
 Indices and tables
 ==================

@@ -384,6 +384,10 @@ epub_exclude_files = ['search.html']
 # If false, no index is generated.
 #epub_use_index = True
 
+# linkcheck builder options
+linkcheck_ignore = [r'http://localhost:\d+',
+                    'https://mvnrepository.com/artifact/',
+                    'https://github.com/myuser/' ]
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
@@ -419,7 +423,7 @@ javadoc_version = '3.1.5'
 
 # swagger base and version
 studio_swagger_base = 'https://app.swaggerhub.com/apis/craftercms/studio/'
-studio_swagger_version = '3.1.5.1'
+studio_swagger_version = '3.1.6.4'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),
