@@ -13,17 +13,20 @@ Engine Site Security Guide
 
 The following guide will help you configure Crafter Engine to:
 
-#. Add SAML 2.0 authentication for your website.
+#. Add authentication for your website.
 #. Add authorization so that access to certain pages and URLs of your site are restricted.
 
 ------------------
 Add Authentication
 ------------------
-There are a couple of ways to setup authentication:
+
+Crafter Engine is able to integrate with SAML 2.0 providers and similar SSO solutions.
+
+Here are a couple of ways to setup authentication:
 
 #. **Using the Engine Site Configuration**
 
-   To configure Engine SAML 2.0 in your site, follow the instructions::ref:`engine-saml2-configuration`
+   To configure Engine SAML 2.0 in your site, follow the instructions: :ref:`engine-saml2-configuration`
 
 #. **Using Crafter Profile**
 
@@ -349,7 +352,7 @@ To add logout, just add a link in the global header that points to /crafter-secu
 Add Single Sign-On
 ==================
 
-After configuring SSO headers, check in Crafter Profile Admin Console to make sure
+Configure SSO headers with at least a MELLON_secure_key, MELLON_username, MELLON_email and MELLON_groups (which must be a comma separated list of string) in the header, then check in Crafter Profile Admin Console to make sure
 that the Single sign-on enabled checkbox is selected in the tenant page.
 
 .. image:: /_static/images/sso_enabled.png
