@@ -13,137 +13,30 @@ Engine Site Security Guide
 
 The following guide will help you configure Crafter Engine to:
 
-#. Add SAML 2.0 authentication for your website.
+#. Add authentication for your website.
 #. Add authorization so that access to certain pages and URLs of your site are restricted.
 
 ------------------
 Add Authentication
 ------------------
 
-Configure request headers
-=========================
+Crafter Engine is able to integrate with SAML 2.0 providers and similar SSO solutions.
 
-Crafter Engine is able to integrate with SAML 2.0 providers and similar SSO solutions, it will will look for 
-configurable HTTP headers and will use those to authenticate the user. An example is Apache mod_auth_mellon
-(https://github.com/UNINETT/mod_auth_mellon). By using mod_auth_mellon, the user can be authenticated against a 
-SAML 2.0 IdP, and headers with the user's information can be sent to the Security Provider enabled applications
-so that the user can be automatically signed in. The example steps below demonstrate the install of mod_auth_mellon
-on Ubuntu and how to configure it so the correct headers are sent to the applications:
+Here are a couple of ways to setup authentication:
 
-#.  Install Apache 2 (``apt-get install apache2 and apt-get install apache2-dev``).
-#.  Install openssl (``apt-get install openssl``).
-#.  Install liblasso3 and liblasso3-dev (``apt-get install liblasso3 and apt-get install liblasso3-dev``).
-#.  Install libcurl4-openssl-dev (``apt-get install libcurl4-openssl-dev``).
-#.  Download mod_auth_mellon from https://github.com/UNINETT/mod_auth_mellon/releases.
-#.  Execute the following commands:
+#. **Using the Engine Site Configuration**
 
-    .. code-block:: bash
-      :linenos:
+   To configure Engine SAML 2.0 in your site, follow the instructions: :ref:`engine-saml2-configuration`
 
-      ./configure
-      make
-      sudo make install
+#. **Using Crafter Profile**
 
-#.  Add the ``LoadModule auth_mellon_module /usr/lib/apache2/modules/mod_auth_mellon.so`` entry to 
-    /etc/apache2/mods-available/auth_mellon.load.
-#.  Enable mod_auth_mellon (``a2enmod auth_mellon``).
-#.  Enable mod_headers (``a2enmod headers``).
-#.  Enable mod_proxy_ajp (``a2enmod proxy_ajp``).
-#.  Create the Service Provider metadata with the mellon_create_metadata.sh script in the directory where you unzipped 
-    the mod_auth_mellon code, passing  the Entity ID (a URN, can be the site URL) and the Endpoint URL (the URL root 
-    where mellon can handle SAML requests, by default {SITE_URL}/mellon), as parameters. Eg: 
-    ``./mellon_create_metadata.sh urn:craftercms:test http://127.0.0.1/mellon``.
-#.  Copy the generated files to somewhere like /etc/apache2/saml/conf/sps/test.
-#.  Copy the IDP metadata to somewhere like /etc/apache2/saml/conf/idps.
-#.  Add the auth_mellon configuration to the virtual host. The configuration should be similar to this:
-
-    .. code-block:: apacheconf
-      :linenos:
-
-      ProxyPass / ajp://localhost:8009/
-      ProxyPassReverse / ajp://localhost:8009/
-
-      # Mod Mellon Conf
-      <Location />
-        MellonEnable "auth"
-
-        RequestHeader unset MELLON_secure_key
-        RequestHeader unset MELLON_username
-        RequestHeader unset MELLON_email
-        RequestHeader unset MELLON_groups
-        RequestHeader unset MELLON_firstName
-        RequestHeader unset MELLON_lastName
-        RequestHeader unset MELLON_displayName
-
-        RequestHeader set MELLON_secure_key "SOME_SECRET_TOKEN"
-        RequestHeader set MELLON_username "%{MELLON_uid}e" env=MELLON_uid
-        RequestHeader set MELLON_email "%{MELLON_mail}e" env=MELLON_mail
-        RequestHeader set MELLON_groups "%{MELLON_groups}e" env=MELLON_groups
-        RequestHeader set MELLON_firstName "%{MELLON_givenName}e" env=MELLON_givenName
-        RequestHeader set MELLON_lastName "%{MELLON_sn}e" env=MELLON_sn
-        RequestHeader set MELLON_displayName "%{MELLON_cn}e" env=MELLON_cn
-
-        MellonSPPrivateKeyFile  /etc/apache2/saml/conf/sps/urn_craftercms_test.key
-        MellonSPCertFile        /etc/apache2/saml/conf/sps/urn_craftercms_test.cert
-        MellonSPMetadataFile    /etc/apache2/saml/conf/sps/urn_craftercms_test.xml
-
-        MellonIdPMetadataFile   /etc/apache2/saml/conf/idps/openidp_feide_no.xml
-      </Location>
-
-    *   The URL after ``Location`` will be the URL auth_mellon intercepts. MellonEnable "auth" enables auth_mellon at 
-        the location.
-    *   The ``RequestHeader set`` entries create headers that are later sent to the Tomcat webapps with the user info.
-        You need at least to specify the ``MELLON_secure_key``, ``MELLON_username``, ``MELLON_email`` and 
-        ``MELLON_groups`` headers, the groups header must be a comma separated list of string.
-    *   The ``RequestHeader unset`` and the ``MELLON_secure_key`` header will make sure someone is not trying to forge 
-        the headers to authenticate as a user.
-    *   The last properties are the paths of each file generated by the mellon_create_metadata.sh script, and the IdP
-        metadata file retrieved from the IdP.
-
-.. note::
-  It’s important to remember that the environment variables set by auth_mellon and used to create this headers depend
-  in the IdP, so you’ll need to check first what the IdP is sending before defining the headers.
-
-Configure your site
-===================
-
-To enable SAML 2.0 in your site configuration (in Studio, Config > Engine Site Configuration) add or update the security elements as
-needed:
-
-.. code-block:: xml
-  :linenos:
-
-  <security>
-    <headers>
-      <token>SOME_SECRET_TOKEN</token>
-      <groups>
-        <group>
-          <name>MEMBER</name>
-          <role>memberUser</role>
-        </group>
-      </groups>
-      <attributes>
-        <attribute>
-          <name>givenName</name>
-          <field>firstName</field>
-        </attribute>
-      </attributes>
-    </headers>
-  ...
-  </security>
-
-**SAML Properties:**
-
-* ``security.saml.token`` (required): The expected value for the ``secure_key`` request header, if the value does not 
-  match the request will not be considered as authenticated even if all other headers are present.
-* ``security.saml.groups`` (optional): List of mappings to apply when setting the roles of the user based on the
-  request header, if there is no mapping for a group the value will be copied without any change.
-* ``security.saml.attributes`` (optional): List of mappings to apply when setting the attributes of the user based on
-  the request headers, the value of each header will be available as an attribute using the provided name.
+   To configure authentication via Crafter Profile, follow the instructions: :ref:`using-crafter-profile-site-security`
 
 -----------------
 Add Authorization
 -----------------
+
+Adding authorization allows restricted access to certain pages and URLs of your site depending on what is setup.
 
 Restrict Pages
 ==============
@@ -223,6 +116,9 @@ be used:
 *   ``hasAnyRole({'role1', 'role2'})``
 *   ``permitAll()``
 *   ``denyAll()``
+
+
+.. _using-crafter-profile-site-security:
 
 --------------------------------------
 Enhanced Features with Crafter Profile
@@ -456,7 +352,7 @@ To add logout, just add a link in the global header that points to /crafter-secu
 Add Single Sign-On
 ==================
 
-After configuring SSO headers as described in the previous section check in Crafter Profile Admin Console to make sure 
+Configure SSO headers with at least a MELLON_secure_key, MELLON_username, MELLON_email and MELLON_groups (which must be a comma separated list of string) in the header, then check in Crafter Profile Admin Console to make sure
 that the Single sign-on enabled checkbox is selected in the tenant page.
 
 .. image:: /_static/images/sso_enabled.png
