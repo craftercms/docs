@@ -8,7 +8,7 @@
 Multi-Environment Configuration
 ===============================
 
-Users may want multiple environments setup with different configurations for each environment, e.g. qa, prod, dev, etc.  To setup an environment, do the following:
+Users may want multiple environments setup with different configurations for each environment, e.g. QA, Prod, Dev, etc.  To setup an environment, do the following:
 
 #. Create a folder under ``data/repos/site/mysite/sandbox/config/studio`` called ``env``
 #. Inside the folder, create a directory called ``myenv`` (or whatever you want to call the environment)
