@@ -179,3 +179,12 @@ On macOS
 
     |
 
+  * For **macOS Catalina**, a failure may occur with ``node-gyp`` when building like below:
+
+      .. code-block:: text
+
+         [ERROR] Building: /Users/myuser/craftercms/src/studio/target/node/node /Users/myuser/craftercms/src/studio-ui/ui/scss/node_modules/node-gyp/bin/node-gyp.js rebuild --verbose --libsass_ext= --libsass_cflags= --libsass_ldflags= --libsass_library=
+
+    |
+
+    See https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md for more information on resolving the issue.
