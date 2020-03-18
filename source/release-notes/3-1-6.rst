@@ -1,0 +1,35 @@
+.. index:: Crafter CMS 3.1.6 Release Notes
+
+-----------------
+Crafter CMS 3.1.6
+-----------------
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+
+* Added support for S3 Bucket storage publishing
+* Added support for Dashboard APIs that enables content retrieval based on content and metadata criteria defined by users.
+* Added a new video picker control for mediaconvert data source
+* Added support for cache warming configuration per site
+
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Added configurable script support to TinyMCE 5 form control
+* Added a property for checking if a site is in staging
+* Added video center blueprint enhancements
+
+Lot's of other small enhancements and bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 3.1.6 Milestone <https://github.com/craftercms/craftercms/milestone/61?closed=1>`_
+
+.. important::
+
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.6)
+
+    For Docker/Kuber deployments, see :ref:`upgrading-dockers`
+
+    For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
