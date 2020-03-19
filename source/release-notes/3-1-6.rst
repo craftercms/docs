@@ -8,7 +8,7 @@ Crafter CMS 3.1.6
 New Features
 ^^^^^^^^^^^^
 
-* Added support for S3 Bucket storage publishing
+* Added workflow / publishing support for S3 bucket storage. 
 * Added support for Dashboard APIs that enables content retrieval based on content and metadata criteria defined by users.
 * Added a new video picker control for mediaconvert data source
 * Added support for cache warming configuration per site
