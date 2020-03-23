@@ -216,26 +216,35 @@ You can also verify from Studio that there are two nodes in the cluster by click
 Setup the Studio Arbiter
 ------------------------
 
-Whenever the number of Studios in the cluster is even numbered, the Studio Arbiter needs to be started.  To setup the Studio Arbiter:
+Whenever the number of Studios in the cluster is an even numbered, the Studio Arbiter needs to be started.  
+To setup the Studio Arbiter:
 
-#. Configure the Arbiter by configuring the following items in your ``bin/studio-arbiter/config/application.yaml`` file
+.. note:: Studio Arbiter can't run on any authoring server because it needs to use the same ports that Studio.
+          |
 
-   .. code-block:: yaml
-      :caption: *bin/studio-arbiter/config/application.yaml*
+#. Copy the Studio Arbiter executable to a new server, the file is located at:
 
-      # Studio Arbiter configuration
-      galera-cluster:
-        parameters:
-          # Galera cluster name - value needs to be set to galera cluster name which arbiter needs to join
-          - --group=studio_galera_cluster
-          # Galera cluster address - value needs to be set to galera cluster address which arbiter needs to join
-          - --address=gcomm://192.168.1.100
-          # Log file
-          - --log=studio-arbiter.log
+   ``$CRAFTER_HOME/bin/studio-arbiter/studio-arbiter.jar``
 
+#. Configure the Arbiter by setting the following environment variables:
+
+   - ``CLUSTER_NAME``: The name of the cluster to join
+   - ``CLUSTER_ADDRESS``: The address of the cluster to join
+   
    |
 
-#. Run the arbiter ``java -jar studio-arbiter.jar``.  To check that the arbiter is running and part of the cluster, you can check the cluster size by logging into the MariaDB monitor of one of the Studio nodes and verify that your cluster size is now 3
+   .. code-block:: bash
+      :caption: Example configuration for the Studio Arbiter
+
+      # Studio Arbiter configuration
+      export CLUSTER_NAME=studio_galera_cluster
+      export CLUSTER_ADDRESS=192.168.1.100
+      
+   |
+
+#. Run the arbiter ``java -jar studio-arbiter.jar``.  To check that the arbiter is running and part of the 
+   cluster, you can check the cluster size by logging into the MariaDB monitor of one of the Studio nodes and verify 
+   that your cluster size is now 3
 
    .. code-block:: none
 
