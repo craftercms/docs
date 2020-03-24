@@ -52,6 +52,10 @@
              :width: 35%
              :alt: Form Controls - Video
 
+.. |ctlTranscodedVideo| image:: /_static/images/form-controls/ctl-transcoded-video.png
+             :width: 80%
+             :alt: Form Controls - Transcoded Video
+
 .. |ctlLabel| image:: /_static/images/form-controls/ctl-label.png
              :width: 35%
              :alt: Form Controls - Label
@@ -126,6 +130,10 @@
 || |ctlVideo|            ||  Video selector from a Data Source.                                  |
 ||                       ||                                                                      |
 ||                       ||  Details are in the :ref:`form-video` page.                          |
++------------------------+-----------------------------------------------------------------------+
+|| |ctlTranscodedVideo|  ||  Transcoded Video selector from Video Transcoding Data Source.       |
+||                       ||                                                                      |
+||                       ||  Details are in the :ref:`form-transcoded-video` page.               |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlLabel|            ||                                                                      |
 ||                       ||                                                                      |
