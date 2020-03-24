@@ -216,10 +216,10 @@ You can also verify from Studio that there are two nodes in the cluster by click
 Setup the Studio Arbiter
 ------------------------
 
-Whenever the number of Studios in the cluster is an even numbered, the Studio Arbiter needs to be started.  
+Whenever the number of Studios in the cluster is an even number, the Studio Arbiter needs to be started.
 To setup the Studio Arbiter:
 
-.. note:: Studio Arbiter can't run on any authoring server because it needs to use the same ports that Studio.
+.. note:: Studio Arbiter can't run on any authoring server because it needs to use the same ports that Studio uses.
           |
 
 #. Copy the Studio Arbiter executable to a new server, the file is located at:
