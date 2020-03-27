@@ -154,7 +154,7 @@ Configuring Nodes in the Cluster
 
    where:
 
-   - **SPRING_PROFILES_ACTIVE**: enables clustering of embedded database, indicates whether this node is the bootstrap node
+   - **SPRING_PROFILES_ACTIVE**: enables auto clustering of embedded database, indicates whether this node is the bootstrap node
    - **CLUSTER_NODE_ADDRESS**: address of Studio to be registered to the pool, address reachable to other cluster members (this server's local address)
    - **MARIADB_CLUSTER_ADDRESS**: address where the MariaDB cluster is located
    - **MARIADB_CLUSTER_NAME**: name of the MariaDB cluster
