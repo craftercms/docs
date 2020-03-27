@@ -50,7 +50,9 @@ Let's take a look at an example of setting up an external storage for preview, s
 **Prerequisites:**
 
 #. Site created using the Website Editorial blueprint.
-#. Two AWS S3 buckets. One for authoring and another for delivery.  For our example, the following buckets were setup in AWS S3: *my-authoring-bucket* for authoring and *my-deli-bucket* for delivery.
+#. AWS S3 bucket/s. A single bucket can be used as long as all the ``publishingTarget`` uses a unique ``prefix``, or a separate bucket can be created for each ``publishingTarget``, or a combination of both.
+
+   For our example, we will be using two buckets.  One for authoring and another for delivery.  The following buckets were setup in AWS S3: *my-authoring-bucket* for authoring (used by publishing target ``preview`` with the prefix *sandbox* and publishing target ``staging`` with the prefix *staging*) and *my-deli-bucket* for delivery.
 
 **Here are the steps:**
 
