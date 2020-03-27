@@ -67,9 +67,9 @@ Crafter Studio supports creating multiple environments with different configurat
    studio/multi-environment-configurations
 
 
-Crafter CMS supports managing external assets in bucket storage (S3) including workflow and publishing mechanics.  For more information, see below:
+Crafter CMS supports managing assets in external storage through workflow and publishing mechanics.  For more information, see below:
 
 .. toctree::
    :maxdepth: 1
 
-   studio/bucket-storage-publishing
+   studio/publishing-assets-in-external-storage
