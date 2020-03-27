@@ -80,7 +80,7 @@ Authoring
 
    activities/authoring/authoring-env-performance-tuning.rst
    activities/authoring/change-hosts-ports-on-your-auth-install.rst
-   activities/authoring/staging-env.rst
+   activities/authoring/staging.rst
    activities/authoring/setup-authoring-using-aws-ami.rst
    activities/sync-studio-database-with-repo.rst
    activities/authoring/navigating-main-menu.rst
