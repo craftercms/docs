@@ -97,7 +97,7 @@ Configuring Nodes in the Cluster
    Modify the values as shown above in the clustering section of your ``studio-config-overrides.yaml`` file with values from your setup and save the file.  You can also change the clustering section from the |mainMenu| **Main Menu** in Studio under ``Global Config``
 
 
-#. Configure the environment variables for the nodes.  Pick a node to serve as the bootstrap node.  The address of the boostrap node will be the address of the *MARIADB_GALERA_CLUSTER_ADDRESS*.
+#. Configure the environment variables for the nodes.  Pick a node to serve as the bootstrap node.  The address of the boostrap node will be the address of the *MARIADB_CLUSTER_ADDRESS*.
 
    **Configuration for the First Node**
 
@@ -106,60 +106,60 @@ Configuring Nodes in the Cluster
       .. code-block:: sh
           :caption: *bin/crafter-setenv.sh*
 
-          export SPRING_PROFILES_ACTIVE=crafter.studio.galeraNewCluster
+          export SPRING_PROFILES_ACTIVE=crafter.studio.studioDbNewCluster
 
           ...
 
           export CLUSTER_NODE_ADDRESS=${CLUSTER_NODE_ADDRESS:="192.168.1.100"}
 
-          # -------------------- MariaDB Galera variables --------------------
-          export MARIADB_GALERA_CLUSTER_ADDRESS=${MARIADB_GALERA_CLUSTER_ADDRESS:="192.168.1.100"}
-          export MARIADB_GALERA_CLUSTER_NAME=${MARIADB_GALERA_CLUSTER_NAME:="studio_galera_cluster"}
-          export MARIADB_GALERA_CLUSTER_NODE_ADDRESS=${MARIADB_GALERA_CLUSTER_NODE_ADDRESS:="192.168.1.100"}
-          export MARIADB_GALERA_CLUSTER_NODE_NAME=${MARIADB_GALERA_CLUSTER_NODE_NAME:="studio_node_1"}
+          # -------------------- MariaDB Cluster variables --------------------
+          export MARIADB_CLUSTER_ADDRESS=${MARIADB_CLUSTER_ADDRESS:="192.168.1.100"}
+          export MARIADB_CLUSTER_NAME=${MARIADB_CLUSTER_NAME:="studiodb_cluster"}
+          export MARIADB_CLUSTER_NODE_ADDRESS=${MARIADB_CLUSTER_NODE_ADDRESS:="192.168.1.100"}
+          export MARIADB_CLUSTER_NODE_NAME=${MARIADB_CLUSTER_NODE_NAME:="studio_node_1"}
 
       |
 
    where:
 
-   - **SPRING_PROFILES_ACTIVE**: enables Galera clustering of embedded database, indicates whether this node is the bootstrap node
+   - **SPRING_PROFILES_ACTIVE**: enables auto clustering of embedded database, indicates whether this node is the bootstrap node
    - **CLUSTER_NODE_ADDRESS**: address of Studio to be registered to the pool, address reachable to other cluster members (this server's local address)
-   - **MARIADB_GALERA_CLUSTER_ADDRESS**: address where the galera cluster is located
-   - **MARIADB_GALERA_CLUSTER_NAME**: name of the galera cluster
-   - **MARIADB_GALERA_CLUSTER_NODE_ADDRESS**: address of cluster node to be registered to the Galera cluster
-   - **MARIADB_GALERA_CLUSTER_NODE_NAME**: name of cluster node to be registered to the Galera cluster
+   - **MARIADB_CLUSTER_ADDRESS**: address where the MariaDB cluster is located
+   - **MARIADB_CLUSTER_NAME**: name of the MariaDB cluster
+   - **MARIADB_CLUSTER_NODE_ADDRESS**: address of cluster node to be registered to the MariaDB cluster
+   - **MARIADB_CLUSTER_NODE_NAME**: name of cluster node to be registered to the MariaDB cluster
 
    |
 
    **Configuration for Additional Nodes**
 
-   After configuring the bootstrap node, configure the following environment variables in the ``crafter-setenv.sh`` file of the remaining nodes.  Notice that for the rest of the nodes, the value of *SPRING_PROFILES_ACTIVE* is ``crafter.studio.galeraClusterNode``.  For our example, we are setting up a two node cluster, so we'll only need to configure one node.
+   After configuring the bootstrap node, configure the following environment variables in the ``crafter-setenv.sh`` file of the remaining nodes.  Notice that for the rest of the nodes, the value of *SPRING_PROFILES_ACTIVE* is ``crafter.studio.studioDbClusterNode``.  For our example, we are setting up a two node cluster, so we'll only need to configure one node.
 
       .. code-block:: sh
           :caption: *bin/crafter-setenv.sh*
 
-          export SPRING_PROFILES_ACTIVE=crafter.studio.galeraClusterNode
+          export SPRING_PROFILES_ACTIVE=crafter.studio.studioDbClusterNode
 
           ...
 
           export CLUSTER_NODE_ADDRESS=${CLUSTER_NODE_ADDRESS:="192.168.1.103"}
 
-          # -------------------- MariaDB Galera variables --------------------
-          export MARIADB_GALERA_CLUSTER_ADDRESS=${MARIADB_GALERA_CLUSTER_ADDRESS:="192.168.1.100"}
-          export MARIADB_GALERA_CLUSTER_NAME=${MARIADB_GALERA_CLUSTER_NAME:="studio_galera_cluster"}
-          export MARIADB_GALERA_CLUSTER_NODE_ADDRESS=${MARIADB_GALERA_CLUSTER_NODE_ADDRESS:="192.168.1.103"}
-          export MARIADB_GALERA_CLUSTER_NODE_NAME=${MARIADB_GALERA_CLUSTER_NODE_NAME:="studio_node_2"}
+          # -------------------- MariaDB Cluster variables --------------------
+          export MARIADB_CLUSTER_ADDRESS=${MARIADB_CLUSTER_ADDRESS:="192.168.1.100"}
+          export MARIADB_CLUSTER_NAME=${MARIADB_CLUSTER_NAME:="studiodb_cluster"}
+          export MARIADB_CLUSTER_NODE_ADDRESS=${MARIADB_CLUSTER_NODE_ADDRESS:="192.168.1.103"}
+          export MARIADB_CLUSTER_NODE_NAME=${MARIADB_CLUSTER_NODE_NAME:="studio_node_2"}
 
       |
 
    where:
 
-   - **SPRING_PROFILES_ACTIVE**: enables Galera clustering of embedded database, indicates whether this node is the bootstrap node
+   - **SPRING_PROFILES_ACTIVE**: enables auto clustering of embedded database, indicates whether this node is the bootstrap node
    - **CLUSTER_NODE_ADDRESS**: address of Studio to be registered to the pool, address reachable to other cluster members (this server's local address)
-   - **MARIADB_GALERA_CLUSTER_ADDRESS**: address where the galera cluster is located
-   - **MARIADB_GALERA_CLUSTER_NAME**: name of the galera cluster
-   - **MARIADB_GALERA_CLUSTER_NODE_ADDRESS**: address of cluster node to be registered to the Galera cluster
-   - **MARIADB_GALERA_CLUSTER_NODE_NAME**: name of cluster node to be registered to the Galera cluster
+   - **MARIADB_CLUSTER_ADDRESS**: address where the MariaDB cluster is located
+   - **MARIADB_CLUSTER_NAME**: name of the MariaDB cluster
+   - **MARIADB_CLUSTER_NODE_ADDRESS**: address of cluster node to be registered to the MariaDB cluster
+   - **MARIADB_CLUSTER_NODE_NAME**: name of cluster node to be registered to the MariaDB cluster
 
 ---------------------------------
 Starting the Nodes in the Cluster
@@ -205,7 +205,7 @@ Once the bootstrap node is up and running, we can start the rest of the nodes by
 
 You can also verify from Studio that there are two nodes in the cluster by clicking on the |mainMenu| then clicking on ``Cluster``
 
-.. image:: /_static/images/system-admin/studio-galera-cluster-2node.png
+.. image:: /_static/images/system-admin/studio-auto-cluster-2node.png
     :alt: Crafter CMS Authoring Studio's Embedded DB Multi-master Cluster with Two Nodes
     :width: 100%
     :align: center
@@ -237,7 +237,7 @@ To setup the Studio Arbiter:
       :caption: Example configuration for the Studio Arbiter
 
       # Studio Arbiter configuration
-      export CLUSTER_NAME=studio_galera_cluster
+      export CLUSTER_NAME=studiodb_cluster
       export CLUSTER_ADDRESS=192.168.1.100
       
    |
