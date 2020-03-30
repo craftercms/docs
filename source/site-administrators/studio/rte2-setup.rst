@@ -52,6 +52,101 @@ The default editor instance contains a menubar with most of the commonly used ed
 
 |
 
+.. _rte-add-allowable-elements:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Adding Allowable Elements
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Tiny MCE allows only a certain set of elements (HTML tags ) as valid (rule set) by default in the code editor and will strip elements not in the allowable list  when it outputs its HTML.  For example, if you try adding in the ``<script />`` element , or the ``<iframe />`` element, it will be stripped out of the HTML output.  To add specific elements that should also be valid, in addition to the existing rule set, we use the ``<extendedElements />`` in the RTE configuration.  Simply add the elements you would like added to the existing rule set in the ``<extendedElements />`` tag in RTE Configuration file.
+
+.. code-block:: xml
+
+   <extendedElements>script,mycustomtag</extendedElements>   <!-- elements whitelist (won't be stripped out) -->
+
+|
+
+Example allowing script element
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Let's take a look at an example of adding ``<script />`` to the allowable elements (rule set).  We'll be using a site created using the Website Editorial blueprint.
+
+1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+
+2. Scroll down to ``<extendedElements />`` tag and add ``script`` and save.
+
+   .. code-block:: xml
+
+      <extendedElements>script</extendedElements>   <!-- elements whitelist (won't be stripped out) -->
+
+   |
+
+3. We'll now add ``<script />`` in the RTE to verify it works.
+
+   Open the **Sidebar** and edit one of the articles.  Navigate to ``/articles/2016/7/`` then right click on ``New ACME Phone Released Today`` and select ``Edit``.
+
+   Scroll down to the ``Content`` part of the form and Under ``Sections``, click on ``Add Another``
+
+4. Click on the newly added section, then click on ``Tools`` -> ``Code Editor`` from the RTE menubar.
+
+   .. figure:: /_static/images/site-admin/rte/rte-open-code-editor.png
+      :alt: RTE Setup - Open RTE code editor
+      :width: 85%
+      :align: center
+
+   |
+
+5. Add a script in the code editor then save the changes.  This will display a dialog saying ``Hello`` when you preview the article ``New ACME Phone Released Today``
+
+   .. code-block:: html
+
+      <script>alert('Hello!')</script>
+
+   |
+
+6. Preview the page.  A dialog saying ``Hello`` should pop up before the page is displayed
+
+   .. figure:: /_static/images/site-admin/rte/rte-script-run.png
+      :alt: RTE Setup - Preview page with <script /> added in RTE
+      :width: 45%
+      :align: center
+
+Please note that TinyMCE gives this warning when allowing script elements (<script />):
+
+  .. Warning:: Allowing script elements (<script>) in TinyMCE exposes users to cross-site scripting (XSS) attacks.
+
+Example allowing a custom element
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can also add custom elements to the rule set and can be done by simply adding the custom tag to ``<extendedElements />``.  Let's take a look at an example of adding the tag  ``mycustomtag`` to the rule set.
+
+1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+
+2. Scroll down to ``<extendedElements />`` tag and add ``mycustomtag`` and save.
+
+   .. code-block:: xml
+
+      <extendedElements>script,mycustomtag</extendedElements>   <!-- elements whitelist (won't be stripped out) -->
+
+   |
+
+3. We'll now add the ``<mycustomtag />`` in the RTE to verify it works.
+
+   Open the **Sidebar** and edit one of the articles.  Navigate to ``/articles/2016/7/`` then right click on ``New ACME Phone Released Today`` and select ``Edit``.
+
+   Scroll down to the ``Content`` part of the form and Under ``Sections``, click on one of the section, then click on ``Tools`` -> ``Code Editor`` from the RTE menubar, then use  ``<mycustomtag />``
+
+      .. code-block:: xml
+
+         <mycustomtag>my custom tag</mycustomtag>
+
+      |
+
+   .. figure:: /_static/images/site-admin/rte/rte-custom-tag-added.png
+      :alt: RTE Setup - Open RTE code editor
+      :width: 85%
+      :align: center
+
+
 ---------------------
 Creating an RTE Setup
 ---------------------
@@ -64,36 +159,38 @@ The RTE's configuration file looks like this:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!--
-    	This file configures Studio's Rich Text Editor (RTE), and it supports several configuration profiles, where the
-    	content model selects which profile to use for which RTE field in the forms.
+      This file configures Studio's Rich Text Editor (RTE), and it supports several configuration profiles, where the
+      content model selects which profile to use for which RTE field in the forms.
     -->
     <config>
-        <setup>
-            <id>generic</id> <!-- This starts a profile configuration -->
+      <setup>
+        <id>generic</id> <!-- This starts a profile configuration -->
 
-            <rteStylesheets> <!-- This informs the RTE to use the CSS files -->
-                <!-- <link>/static-assets/css/rte/rte.css</link> -->
-            </rteStylesheets>
+        <rteStylesheets> <!-- This informs the RTE to use the CSS files -->
+          <!-- <link>/static-assets/css/rte/rte.css</link> -->
+        </rteStylesheets>
 
-            <rteStyleOverride>
-                body {
-                    <!-- styles -->
-                }
-            </rteStyleOverride>
+        <rteStyleOverride>
+          body {
+            <!-- styles -->
+          }
+        </rteStyleOverride>
 
-            <plugins>
-                print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template
-    			codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount
-    			textpattern help acecode
-            </plugins>
+        <plugins>
+          print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template
+    	  codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount
+    	  textpattern help acecode
+        </plugins>
 
-            <toolbarItems1>
-                formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat
-            </toolbarItems1>
-            <toolbarItems2></toolbarItems2>
-            <toolbarItems3></toolbarItems3>
-            <toolbarItems4></toolbarItems4>
-        </setup>
+        <extendedElements>script,mycustomtag</extendedElements>   <!-- elements whitelist (won't be stripped out) -->
+
+        <toolbarItems1>
+          formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat
+        </toolbarItems1>
+        <toolbarItems2></toolbarItems2>
+        <toolbarItems3></toolbarItems3>
+        <toolbarItems4></toolbarItems4>
+      </setup>
     </config>
 
 |
