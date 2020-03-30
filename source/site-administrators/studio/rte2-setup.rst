@@ -58,7 +58,7 @@ The default editor instance contains a menubar with most of the commonly used ed
 Adding Allowable Elements
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Tiny MCE allows only a certain set of elements (HTML tags ) as valid (rule set) by default in the code editor and will strip elements not in the allowable list  when it outputs its HTML.  For example, if you try adding in the ``<script />`` element , or the ``<iframe />`` element, it will be stripped out of the HTML output.  To add specific elements that should also be valid, in addition to the existing rule set, we use the ``<extendedElements />`` in the RTE configuration.  Simply add the elements you would like added to the existing rule set in the ``<extendedElements />`` tag in RTE Configuration file.
+Tiny MCE allows only a certain set of elements (HTML tags) as valid (rule set) by default in the code editor and will strip elements not in the allowable list  when it outputs its HTML.  For example, if you try adding in the ``<script />`` element , or the ``<iframe />`` element, it will be stripped out of the HTML output.  To add specific elements that should also be valid, in addition to the existing rule set, we use the ``<extendedElements />`` in the RTE configuration.  Simply add the elements you would like added to the existing rule set in the ``<extendedElements />`` tag in RTE Configuration file.
 
 .. code-block:: xml
 
