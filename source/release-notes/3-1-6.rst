@@ -17,9 +17,12 @@ New Features
   *See* :ref:`publishing-assets-in-external-storage` *for more information.*
 * Added support for Dashboard APIs that enables content retrieval based on content and metadata criteria defined by users. |br|
   *Read more about it:* https://app.swaggerhub.com/apis/craftercms/studio/#/dashboard
-* Added a new video picker control for mediaconvert data source |br|
+* Added a new video picker control for AWS MediaConvert data source |br|
   *See* :ref:`form-transcoded-video` *for more information.*
-* Added support for cache warming configuration per site
+* Added support for cache warming configuration per site |br|
+  *See* :ref:`engine-site-configuration` *for more information on Cache Warm Up properties*
+* Added configurable script support to TinyMCE 5 form control |br|
+  *See* :ref:`rte-add-allowable-elements` *for more information.*
 
 
 ^^^^^^^
@@ -29,8 +32,6 @@ Updates
 * Upgraded Jackson library to 2.9.10 for various Crafter modules
 * Upgraded Crafter Studio, Engine, Profile and Social Tomcat version to 8.5.53
 * Upgraded Crafter Deployer Tomcat version to 9.0.33
-* Added configurable script support to TinyMCE 5 form control |br|
-  *See* :ref:`rte-add-allowable-elements` *for more information.*
 
 
 Lot's of other small enhancements and bug fixes :)
