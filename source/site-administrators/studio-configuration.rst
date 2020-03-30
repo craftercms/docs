@@ -36,6 +36,7 @@ Here are the settings that can be configured through Crafter Studio:
 
    studio/asset-processing-config
    studio/aws-profiles-configuration
+   studio/blob-stores
    studio/box-profiles-configuration
    studio/cmis-configuration
    studio/code-editor-configuration
@@ -64,3 +65,11 @@ Crafter Studio supports creating multiple environments with different configurat
    :maxdepth: 1
 
    studio/multi-environment-configurations
+
+
+Crafter CMS supports managing assets in external storage through workflow and publishing mechanics.  For more information, see below:
+
+.. toctree::
+   :maxdepth: 1
+
+   studio/publishing-assets-in-external-storage
