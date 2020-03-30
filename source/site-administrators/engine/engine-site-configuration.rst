@@ -156,6 +156,14 @@ This example file contains the properties used by Crafter Engine:
         <cronExpression>0 0/15 * * * ?</cronExpression>
       </job>
     </jobs>
+
+     <!-- Cache Warm Up properties -->
+    <cache>
+      <warmUp>
+        <descriptorFolders>/site:3</descriptorFolders>
+        <contentFolders>/scripts,/templates</contentFolders>
+      </warmUp>
+    </cache>
   </site>
 
 Crafter Engine Properties
@@ -212,6 +220,8 @@ Crafter Engine Properties
    ``<cronExpression>``.
  * **jobs.job:** Specifies a single script job to be scheduled. The job path should be specified in ``<path>``, and the cron expression
    in ``<cronExpression>``.
+ * **cache.warmUp.descriptor.folders:** The descriptor folders that need to be preloaded in cache, separated by comma. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders will be fully preloaded.
+ * **cache.warmUp.content.folders:** The content folders that need to be preloaded in cache, separated by comma. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders will be fully preloaded.
 
 .. note::
     Crafter Engine will not be able to load your Site Context if your configuration contains invalid XML
