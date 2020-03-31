@@ -119,6 +119,8 @@ Example allowing a custom element
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 You can also add custom elements to the rule set and can be done by simply adding the custom tag to ``<extendedElements />``.  Let's take a look at an example of adding the tag  ``mycustomtag`` to the rule set.
 
+   .. note:: Case sensitive custom elements are not supported in TinyMCE 5.  Remember to **use only lowercase for custom elements** (e.g. ``myattr`` is supported but *myAttr* is not supported).
+
 1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
 
 2. Scroll down to ``<extendedElements />`` tag and add ``mycustomtag`` and save.
