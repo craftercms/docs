@@ -273,40 +273,40 @@ Let's take a look at an example of adding ``staging`` to an existing site.
 
 Let's begin:
 
-#. Enable staging.
+#. **Enable staging**
 
    In your Studio, click on |siteConfig| -> *Configuration* -> *Site Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
 
-   .. code-block:: xml
-      :emphasize-lines: 2
+     .. code-block:: xml
+        :emphasize-lines: 2
 
-      <published-repository>
-        <enable-staging-environment>true</enable-staging-environment>
-        <staging-environment>staging</staging-environment>
-        <live-environment>live</live-environment>
-      </published-repository>
+        <published-repository>
+          <enable-staging-environment>true</enable-staging-environment>
+          <staging-environment>staging</staging-environment>
+          <live-environment>live</live-environment>
+        </published-repository>
 
-   |
+     |
 
    For more information on staging, see :ref:`staging-env`
 
-2. Setup Blob Store
+2. **Setup Blob Store**
 
    Setup ``staging`` in the Blob Store by adding the following to your ``Blob Stores`` configuration.  In your Studio, click on |siteConfig| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 bucket for staging.
 
-   .. code-block:: xml
+     .. code-block:: xml
 
-      <mapping>
-        <publishingTarget>staging</publishingTarget>
-        <storeTarget>my-staging</storeTarget>
-      </mapping>
+        <mapping>
+          <publishingTarget>staging</publishingTarget>
+          <storeTarget>my-staging</storeTarget>
+        </mapping>
 
-   |
+     |
 
   
    To see more information on the Blob Stores configuration, see :ref:`blob-stores-configuration`
 
-#. Copy assets in ``live`` to ``staging`` in external storage
+#. **Copy assets in** ``live`` **to** ``staging`` **in external storage**
 
    In your AWS console, copy the contents of your delivery bucket
 
