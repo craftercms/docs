@@ -41,6 +41,7 @@ To see more information on the Blob Stores configuration, see :ref:`blob-stores-
 
 After setting up the ``Blob Stores`` configuration, you may now use the external storage for uploading using the various upload methods provided by Crafter Studio, and publishing to live or staging if it's setup.
 
+
 -------
 Example
 -------
@@ -248,3 +249,81 @@ When the file/s are published to ``live``, the file/s get published to the ``my-
     :width: 85%
 
 |
+
+-------------------------------------
+Setting up Staging for Existing Sites
+-------------------------------------
+
+When adding the ``staging`` publishing target to an established site that uses external storage, Studio does not clone the assets in external storage for ``live`` into ``staging``.  Performing a bulk publish to ``staging`` also does not work at this time.  This is because Studio does not publish to ``staging``, assets in a LIVE, UNEDITED state.
+
+To sync the external storage for ``staging`` with ``live``, you must copy the assets in the ``live`` external storage to the ``staging`` external storage.
+
+Let's take a look at an example of adding ``staging`` to an existing site.
+
+**Prerequisites:**
+
+#. Site created using the Website Editorial blueprint with external storage setup for ``live`` and assets already published to ``live`` (See example above for setting up external storage for a site.  Remember to not setup ``staging`` as we will be doing it in this example)
+#. AWS S3 bucket to be used by the ``staging`` publishing target.  For our example, we will be using the bucket ``my-staging`` setup in AWS S3.
+
+**Here are the steps:**
+
+#. Enable staging in Studio
+#. Setup the blob store in Studio
+#. Copy assets in live to staging in external storage
+
+Let's begin:
+
+#. Enable staging.
+
+   In your Studio, click on |siteConfig| -> *Configuration* -> *Site Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
+
+   .. code-block:: xml
+      :emphasize-lines: 2
+
+      <published-repository>
+        <enable-staging-environment>true</enable-staging-environment>
+        <staging-environment>staging</staging-environment>
+        <live-environment>live</live-environment>
+      </published-repository>
+
+   |
+
+   For more information on staging, see :ref:`staging-env`
+
+2. Setup Blob Store
+
+   Setup ``staging`` in the Blob Store by adding the following to your ``Blob Stores`` configuration.  In your Studio, click on |siteConfig| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 bucket for staging.
+
+   .. code-block:: xml
+
+      <mapping>
+        <publishingTarget>staging</publishingTarget>
+        <storeTarget>my-staging</storeTarget>
+      </mapping>
+
+   |
+
+  
+   To see more information on the Blob Stores configuration, see :ref:`blob-stores-configuration`
+
+#. Copy assets in ``live`` to ``staging`` in external storage
+
+   In your AWS console, copy the contents of your delivery bucket
+
+   .. image:: /_static/images/site-admin/ext-storage/s3-copy-delivery.png
+      :align: center
+      :alt: Copy assets in the delivery bucket
+      :width: 85%
+
+   |
+
+   Paste the copied content into the staging bucket ``my-staging``
+
+   .. image:: /_static/images/site-admin/ext-storage/s3-staging-bucket-content.png
+      :align: center
+      :alt: Assets copied from delivery bucket to staging bucket
+      :width: 85%
+
+   |
+
+   The ``live`` and ``staging`` external storage is now synced.
