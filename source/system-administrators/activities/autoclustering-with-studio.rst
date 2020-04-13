@@ -117,7 +117,7 @@ Configuring Nodes in the Cluster
    |
 
    .. note:: 
-      You can used the node's default SSH keys, located in ``~/.ssh/id_rsa`` and ``~/.ssh/id_rsa.pub``, if you set
+      You can use the node's default SSH keys, located in ``~/.ssh/id_rsa`` and ``~/.ssh/id_rsa.pub``, if you set
       the ``authenticationType`` to ``none``. You can also use ``~/.ssh/config`` if you need to configure certain 
       aspects of SSH authentication, like ``StrictHostKeyChecking``. For example, you can disable 
       ``StrictHostKeyChecking`` for hostnames with ``*.hostnamespace`` so that you don't need to validate the SSH host
