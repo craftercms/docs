@@ -22,9 +22,18 @@ where the site is deployed: for example the address, name or port of the databas
 for the staging and production servers. Crafter Engine provides a feature to easily include the
 configurations for all environments in the site repository.
 
-.. note::
-  In order to use this feature all Crafter Engine servers need to set a proper value for the
-  ``crafter.engine.environment`` property.
+  .. note::
+    In order to use this feature all Crafter Engine servers need to set a proper value for the
+    ``crafter.engine.environment`` property.  This property can be set by setting the value of
+    ``CRAFTER_ENVIRONMENT`` to the desired environment in the ``crafter-setenv.sh`` file
+
+    .. code-block:: bash
+        :caption: *bin/crafter-setenv.sh*
+
+        # -------------------- Configuration variables --------------------
+        export CRAFTER_ENVIRONMENT=${CRAFTER_ENVIRONMENT:=mycustomenv}
+
+    |
 
 For this example assume the following values:
 
