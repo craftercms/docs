@@ -36,7 +36,14 @@ SAML2 authentication can be enabled by updating the site configuration to includ
   <security>
      <saml2>
         <enable>true</enable>
-        <attributes>DisplayName</attributes>
+        <attributes>
+          <mappings>
+            <mapping>
+              <name>DisplayName</name>
+              <attribute>fullName</attribute>
+            </mapping>
+          </mappings>
+        </attributes>
         <role>
            <mappings>
               <mapping>
@@ -68,8 +75,9 @@ Properties Details
 +===================================+===========================================+=====================================+
 |``enable``                         |Indicates if SAML2 is enabled or not       |``false``                            |
 +-----------------------------------+-------------------------------------------+-------------------------------------+
-|``attributes``                     |Comma separated list of the custom         |                                     |
-|                                   |attributes sent by the IDP                 |                                     |
+|``attributes.mappings.mapping``    |List of mappings to apply for attributes,  |                                     |
+|                                   |every attribute sent by the IDP will be    |                                     |
+|                                   |compared against this list                 |                                     |
 +-----------------------------------+-------------------------------------------+-------------------------------------+
 |``role.key``                       |Name of the role attribute sent by the IDP |``Role``                             |
 +-----------------------------------+-------------------------------------------+-------------------------------------+
