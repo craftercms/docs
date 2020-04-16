@@ -95,9 +95,6 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 ||                        ||   If skipElasticsearch is specified Elasticsearch will not be started.|
 ||                        ||   If skipMongoDB is specified MongoDB will not bestarted even if the  |
 ||                        ||   Crafter Profile war is present.                                     |
-||                        || * ``status`` Prints the status of Solr, Crafter Deployer and          |
-||                        ||    Crafter Studio (uptime, process id and version if applicable)      |
-||                        || * ``help``  Prints all options available                              |
 ||                        || * ``start_deployer``  Starts Deployer                                 |
 ||                        || * ``stop_deployer``  Stops Deployer                                   |
 ||                        || * ``debug_deployer``  Starts Deployer in debug mode                   |
@@ -112,6 +109,7 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 ||                        || * ``debug_tomcat``  Starts Apache Tomcat in debug mode                |
 ||                        || * ``start_mongodb``  Starts MongoDB                                   |
 ||                        || * ``stop_mongodb``  Stops MongoDB                                     |
+||                        || * ``status``  Prints the status of all Crafter CMS subsystems         |
 ||                        || * ``status_engine``  Prints the status of Crafter Engine              |
 ||                        || * ``status_studio``  Prints the status of Crafter Studio              |
 ||                        || * ``status_profile``  Prints the status of Crafter Profile            |
@@ -124,6 +122,7 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 ||                        || * ``status_mongodb``  Prints the status of MongoDB                    |
 ||                        || * ``backup <name>``  Perform a backup of all data                     |
 ||                        || * ``restore <file>``  Perform a restore of all data                   |
+||                        || * ``upgradedb``  Perform database upgrade (mysql_upgrade)             |
 +-------------------------+------------------------------------------------------------------------+
 
 +-------------------------+----------------------------------------------------------------------+
@@ -194,7 +193,7 @@ Here are the location environment variables used by ``crafter.sh``:
 ||                         || $CRAFTER_HOME/temp                                                 |
 +--------------------------+---------------------------------------------------------------------+
 
-Here are the environment variables used for hosts and ports in ``crafter(.sh/bat)``:
+Here are the environment variables used for hosts and ports in ``crafter.sh``:
 
 +--------------------------+---------------------------------------------------------------------+
 || Hosts and Ports         || Description                                                        |
@@ -270,7 +269,7 @@ Here are the environment variables used for hosts and ports in ``crafter(.sh/bat
 ||                         || 8005                                                               |
 +--------------------------+---------------------------------------------------------------------+
 
-Here are the environment variables used for URLs in ``crafter(.sh/bat)``:
+Here are the environment variables used for URLs in ``crafter.sh``:
 
 +--------------------------+---------------------------------------------------------------------+
 || URLs                    || Description                                                        |
@@ -361,10 +360,6 @@ Here are the environment variables used for Tomcat in ``crafter.sh``:
 ||                         +---------------------------------------------------------------------+
 ||                         || $CRAFTER_TEMP_DIR/tomcat                                           |
 +--------------------------+---------------------------------------------------------------------+
-|| CRAFTER_APPLICATION_LOGS|| Crafter application log files path                                 |
-||                         +---------------------------------------------------------------------+
-||                         || $CATALINA_LOGS_DIR                                                 |
-+--------------------------+---------------------------------------------------------------------+
 
 Here are the environment variables used for Elasticsearch in ``crafter.sh``:
 
@@ -388,6 +383,14 @@ Here are the environment variables used for Elasticsearch in ``crafter.sh``:
 || ES_PID                  || Elasticsearch process Id                                           |
 ||                         +---------------------------------------------------------------------+
 ||                         || $ES_HOME/elasticsearch.pid                                         |
++--------------------------+---------------------------------------------------------------------+
+|| ES_USERNAME             || Elasticsearch username                                             |
+||                         +---------------------------------------------------------------------+
+||                         ||                                                                    |
++--------------------------+---------------------------------------------------------------------+
+|| ES_PASSWORD             || Elasticsearch password                                             |
+||                         +---------------------------------------------------------------------+
+||                         ||                                                                    |
 +--------------------------+---------------------------------------------------------------------+
 
 Here are the environment variables used for Solr in ``crafter.sh``:
@@ -491,8 +494,20 @@ Here are the environment variables used for MariaDb in ``crafter.sh``:
 ||                         +---------------------------------------------------------------------+
 ||                         ||                                                                    |
 +--------------------------+---------------------------------------------------------------------+
+|| MARIADB_USER            || MariaDb username                                                   |
+||                         +---------------------------------------------------------------------+
+||                         || crafter                                                            |
++--------------------------+---------------------------------------------------------------------+
+|| MARIADB_PASSWD          || MariaDb user password                                              |
+||                         +---------------------------------------------------------------------+
+||                         || crafter                                                            |
++--------------------------+---------------------------------------------------------------------+
+|| MARIADB_PID             || MariaDB process id file                                            |
+||                         +---------------------------------------------------------------------+
+||                         || $MARIADB_HOME/$HOSTNAME.pid                                        |
++--------------------------+---------------------------------------------------------------------+
 
-Here are the environment variables used for Git in ``crafter(.sh/bat)``:
+Here are the environment variables used for Git in ``crafter.sh``:
 
 +--------------------------+---------------------------------------------------------------------+
 || Git                     || Description                                                        |
@@ -504,6 +519,67 @@ Here are the environment variables used for Git in ``crafter(.sh/bat)``:
 ||                         || true                                                               |
 +--------------------------+---------------------------------------------------------------------+
 
+Here are the environment variables used for Management Tokens.
+Remember to update these per installation and provide these tokens to the status monitors:
+
++----------------------------+-------------------------------------------------------------------+
+|| Management Token          || Description                                                      |
+|| Variable Name             +-------------------------------------------------------------------+
+||                           || Default Value                                                    |
++============================+===================================================================+
+|| STUDIO_MANAGEMENT_TOKEN   || Authorization token for Studio                                   |
+||                           +-------------------------------------------------------------------+
+||                           || defaultManagementToken                                           |
++----------------------------+-------------------------------------------------------------------+
+|| ENGINE_MANAGEMENT_TOKEN   || Authorization token for Engine                                   |
+||                           +-------------------------------------------------------------------+
+||                           || defaultManagementToken                                           |
++----------------------------+-------------------------------------------------------------------+
+|| DEPLOYER_MANAGEMENT_TOKEN || Authorization token for Deployer                                 |
+||                           +-------------------------------------------------------------------+
+||                           || defaultManagementToken                                           |
++----------------------------+-------------------------------------------------------------------+
+|| SEARCH_MANAGEMENT_TOKEN   || Authorization token for Search                                   |
+||                           +-------------------------------------------------------------------+
+||                           || defaultManagementToken                                           |
++----------------------------+-------------------------------------------------------------------+
+|| PROFILE_MANAGEMENT_TOKEN  || Authorization token for Profile                                  |
+||                           +-------------------------------------------------------------------+
+||                           || defaultManagementToken                                           |
++----------------------------+-------------------------------------------------------------------+
+|| SOCIAL_MANAGEMENT_TOKEN   || Authorization token for Social                                   |
+||                           +-------------------------------------------------------------------+
+||                           || defaultManagementToken                                           |
++----------------------------+-------------------------------------------------------------------+
+
+Here are the environment variables used for encryption of properties:
+
++--------------------------+---------------------------------------------------------------------+
+|| Encryption              || Description                                                        |
+|| Variable Name           +---------------------------------------------------------------------+
+||                         || Default Value                                                      |
++==========================+=====================================================================+
+|| CRAFTER_ENCRYPTION_KEY  || Key used for encrypting properties                                 |
+||                         +---------------------------------------------------------------------+
+||                         || default_encryption_key                                             |
++--------------------------+---------------------------------------------------------------------+
+|| CRAFTER_ENCRYPTION_SALT || Salt used for encrypting properties                                |
+||                         +---------------------------------------------------------------------+
+||                         || default_encryption_salt                                            |
++--------------------------+---------------------------------------------------------------------+
+
+Here are the configuration variables used in Crafter CMS:
+
++--------------------------+---------------------------------------------------------------------+
+|| Configuration           || Description                                                        |
+|| Variable Name           +---------------------------------------------------------------------+
+||                         || Default Value                                                      |
++==========================+=====================================================================+
+|| CRAFTER_ENVIRONMENT     || Name used for environment specific configurations in               |
+||                         || Studio, Engine and Deployer                                        |
+||                         +---------------------------------------------------------------------+
+||                         || default                                                            |
++--------------------------+---------------------------------------------------------------------+
 
 Let's look at an example on how to start an authoring environment using the scripts we discussed above.  To start the authoring environment, go to your Crafter CMS install folder then run the following:
 
