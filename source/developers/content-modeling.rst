@@ -613,7 +613,8 @@ View templates control how the model is rendered as HTML. Crafter uses `FreeMark
 
 An example view template
 
-.. code-block:: guess
+.. code-block:: html
+   :force:
    :linenos:
 
 	<#import "/templates/system/common/cstudio-support.ftl" as studio />

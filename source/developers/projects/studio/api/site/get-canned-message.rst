@@ -44,7 +44,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     GET .../api/1/services/api/1/site/get-canned-message.json?site_id=mysite&locale=en&type=NotApproved
 

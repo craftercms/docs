@@ -72,7 +72,7 @@ The default Deployer port is 9192.  There are a few places that we need to updat
 
 First, we'll configure the ports for the Deployer that affects your Studio.  Open the file ``DELIVERY_INSTALL_DIR/bin/crafter-deployer/config/application.yaml`` and change the configured ports to the desired port by adding the following lines with your desired port number:
 
-    .. code-block:: guess
+    .. code-block:: yaml
 
         server:
             port: 9192

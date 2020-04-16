@@ -40,7 +40,8 @@ This section includes Context specific templates for all supported event notific
 
 All email templates need to be valid HTML pages and can use any feature from Freemarker.
 
-.. code-block:: guess
+.. code-block:: html
+  :force:
   :caption: Example Email Template
   :linenos:
 

@@ -32,7 +32,7 @@ None.
 Example
 -------
 
-.. code-block:: guess
+.. code-block:: none
 
 	GET .../api/1/services/api/1/security/validate-session.json
 

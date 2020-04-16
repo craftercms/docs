@@ -52,7 +52,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     GET .../api/1/services/api/1/content/get-content.json?site_id=mysite&path=/static-assets/images/image1.png&newname=cropped.png&t=10&l=10&w=10&h=10
 
@@ -62,7 +62,7 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: guess
+.. code-block:: json
 
     { "success":true }
 

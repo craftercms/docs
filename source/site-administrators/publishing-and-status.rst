@@ -56,7 +56,7 @@ To publish by commit id, let's use a site created using the Website Editorial bl
 - Edit the Home page (/site/website/index.xm) from the command line or anywhere other than Studio
 - From the command line, commit your changes
 
-  .. code-block:: guess
+  .. code-block:: bash
 
      $ cd crafter-authoring/data/repos/sites/mysite/sandbox/site/website
      $ git add .
@@ -64,7 +64,7 @@ To publish by commit id, let's use a site created using the Website Editorial bl
 
 - Get the commit id after doing the above step
 
-  .. code-block:: guess
+  .. code-block:: bash
 
      $ git log
      commit f47c9a5bae4184e7b5ff2cb03b90b8ff86adec37 (HEAD -> master)

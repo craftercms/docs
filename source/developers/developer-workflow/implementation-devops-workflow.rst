@@ -50,7 +50,7 @@ To create a branch you use the following GitFlow command:
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(master) git flow init
@@ -87,7 +87,7 @@ To create a branch you use the following GitFlow command:
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(master) git flow feature start MYFEATURE
@@ -115,7 +115,7 @@ To publish a branch you use the following GitFlow command
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(feature/MYFEATURE) git flow feature publish MYFEATURE
@@ -166,7 +166,7 @@ To get branch you use the following GitFlow command
 
 Example:
 
-.. code-block:: guess
+.. code-block:: text
     :linenos:
 
     ➜  sandbox git:(feature/MYFEATURE) git flow feature pull origin MYFEATURE
@@ -211,7 +211,7 @@ To push your updates to the Remote Code Repository you use the following Git com
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(feature/MYFEATURE) git push origin feature/MYFEATURE
@@ -279,7 +279,7 @@ To complete the squash of multiple commits into a single commit use the followin
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(feature/MYFEATURE) ✗ git commit -m "Combining all MYFEATURE Commits in to a single Commit ID"
@@ -298,7 +298,7 @@ To rebase the squashed commit at the tip of the Remote Code Repository use the f
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(feature/MYFEATURE) ✗ git commit -m "Combining all MYFEATURE Commits in to a single Commit ID"
@@ -317,7 +317,7 @@ To push the rebased commit up to the Remote Code Repository use the following Gi
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(feature/MYFEATURE) git push origin feature/MYFEATURE
@@ -347,7 +347,7 @@ To cherry pick the squashed feature commit use the following Git command:
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(evn-x) git cherry-pick 294235aa042c7dadd84ecd6b33ce7d02818c291d
@@ -372,7 +372,7 @@ To finalize a feature branch use the following GitFlow command:
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(feature/MYFEATURE) git flow feature finish MYFEATURE
@@ -399,7 +399,7 @@ To push the finalized work up to the remote repository use the following Git com
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(develop) git push origin develop
@@ -425,7 +425,7 @@ To push the branch removal up to the remote repository use the following Git com
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(develop) git push origin develop
@@ -454,7 +454,7 @@ To create a release branch use the following GitFlow command:
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(develop) git flow release start 1.2.0
@@ -482,7 +482,7 @@ To push the new branch to the Remote Code Repository use the following Git comma
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(release/1.2.0) git flow release publish 1.2.0
@@ -525,7 +525,7 @@ To finalize the release use the following GitFlow command:
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(master) git flow  release finish 1.2.0
@@ -549,7 +549,7 @@ To push the finalized release to the Remote Code Repository use the following Gi
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(master) git push origin master
@@ -570,7 +570,7 @@ Now make sure Develop has the latest release.  Ideally there is no real update h
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(master) git push origin develop
@@ -584,7 +584,7 @@ The finalize command creates a release tag for you locally.  Push this release t
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(master) git push origin --tags
@@ -604,7 +604,7 @@ Finally, the release branch was removed locally when it was finalized.  Push the
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(master) git push origin :release/1.2.0
