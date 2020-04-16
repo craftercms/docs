@@ -12,22 +12,30 @@ The detailed roadmap is maintained in our issue planning and tracking system, an
 
 At a high-level, we're pursuing the objectives listed below in order:
 
-* SPA Support II
-	- ICE (In-Context Editing) Pencils for React JS and Angular (possible now, but not as easy as we want it to be)
-	- Drag and Drop for React, Angular, and Vue (possible now, but not as easy as we want it to be)
+* Crafter Engine features
+	- Engine Plugin Marketplace: Pull in widgets for your app from the marketplace
+	- Direct integration with Node JS
 * Crafter Studio features
+	- Crafter Studio Marketplace: Pull in authoring extensions for your site from the marketplace
+	- Enhanced Preview Proxy to connect to any remote server as the preview server
+		- This will allow easier authoring of sites built with other programming languages and technologies
+	- New Sidebar navigator
+	- Enhanced site translation mechanics
+	- Direct management of Node JS scripts and artifacts
+	- Page Builder: Improved in-context editing including
+		- In-place editing
+		- Out of the box and marketplace components
+		- Improved drag and drop mechanics
 	- Schedule an item for publishing and continue editing it (specific-version publishing)
 	- Improved delete mechanics
-	- Improved in-context editing including better drag and drop mechanics
 	- Time-travel mechanics to preview sites across time
-	- Crafter Studio UI enhancements using React components that weave in
 	- Integrate Crafter Profile Admin and Crafter Social Admin directly into Crafter Studio
-* Crafter Engine features
-	- Engine Plugin Marketplace: Pull in widgets for your app from the marketplace!
 
 Recently Completed
 ------------------
 
+* Managed Blob Stores
+	- Manage external blob stores (S3) assets as if they're Crafter CMS assets with full workflow and multi-environment support
 * GraphQL
 	- Query content in Engine via GraphQL
 	- GraphQL extensions: You can now change the GraphQL response and add in data from other sources with a small groovy script. GraphQL now pulls back data from Crafter CMS or other sources, and you can override whatever you like.
@@ -44,7 +52,12 @@ Recently Completed
 	- Node JS integration
 	- React JS integration and seamless development
 	- Angular integration and seamless development
+* SPA Support II
+	- ICE (In-Context Editing) Pencils for React JS and Angular
+	- Drag and Drop for React, Angular, and Vue
+	- Example: https://github.com/craftercms/wordify-blueprint
 * Crafter Studio features
+	- Crafter Studio UI enhancements using React components that weave in
 	- Crafter Studio Marketplace for blueprints and new blueprints
 	- Advanced multi-master clustering for the authoring environment
 	- New search backend based on Elasticsearch for better search in authoring
