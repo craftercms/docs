@@ -26,7 +26,7 @@ Users may want multiple environments setup with different configurations for eac
 
       |
 
-#. Restart studio
+#. Restart Studio
 
 -------
 Example
