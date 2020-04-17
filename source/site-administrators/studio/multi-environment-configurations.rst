@@ -15,17 +15,18 @@ Users may want multiple environments setup with different configurations for eac
 #. Copy the configuration file you want to override in the new environment you are setting up, inside your ``myenv`` folder
    following the folder structure under ``config/studio``.
 #. Remember to commit the files copied so Studio will pick it up.
-#. In the ``studio-override.yaml`` file in ``TOMCAT/shared/classes/crafter/studio/extension`` set the
-   following property:
+#. In the ``creafter-setenv.sh`` file in ``TOMCAT/bin`` set the
+   following property to desired environment:
 
-      .. code-block:: yaml
+      .. code-block:: bash
+         :caption: *bin/crafter-setenv.sh*
 
-         # The active environment for multi environment configuration, e.g. qa, prod, dev
-         studio.configuration.environment.active: myenv
+         # -------------------- Configuration variables --------------------
+         export CRAFTER_ENVIRONMENT=${CRAFTER_ENVIRONMENT:=myenv}
 
       |
 
-#. Restart studio
+#. Restart Studio
 
 -------
 Example
@@ -88,13 +89,14 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
       |
 
-#. Open the ``studio-config-override.yaml`` file in ``TOMCAT/shared/classes/crafter/studio/extension`` and add the following lines to enable the environment we setup:
+#. Open the ``crafter-setenv.sh`` file in ``TOMCAT/bin`` and set the value of ``CRAFTER_ENVIRONMENT`` to the
+   environment we setup above to make it the active environment:
 
-      .. code-block:: yaml
-         :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+      .. code-block:: bash
+         :caption: *bin/crafter-setenv.sh*
 
-         # The active environment for multi environment configuration, e.g. qa, prod, dev
-         studio.configuration.environment.active: mycustomenv
+         # -------------------- Configuration variables --------------------
+         export CRAFTER_ENVIRONMENT=${CRAFTER_ENVIRONMENT:=mycustomenv}
 
       |
 
