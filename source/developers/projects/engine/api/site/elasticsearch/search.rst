@@ -41,6 +41,7 @@ Request
 
   {
     "_source": "localId",
+    "size": 1,
     "query" : {
       "match_all" : {}
     }
@@ -56,73 +57,29 @@ Response
   :linenos:
 
   {
-    "scrollId": null,
-    "totalShards": 5,
-    "successfulShards": 5,
-    "skippedShards": 0,
-    "shardFailures": [],
-    "clusters": {
-        "total": 0,
-        "successful": 0,
-        "skipped": 0,
-        "fragment": true
+    "took": 41,
+    "timed_out": false,
+    "_shards": {
+      "total": 5,
+      "successful": 5,
+      "skipped": 0,
+      "failed": 0
     },
     "hits": {
-        "hits": [
-            {
-                "score": 1,
-                "id": "f4a1af43fed0b4e246abb3a8c7d7323d",
-                "type": "_doc",
-                "nestedIdentity": null,
-                "version": -1,
-                "fields": {},
-                "highlightFields": {},
-                "sortValues": [],
-                "matchedQueries": [],
-                "explanation": null,
-                "shard": null,
-                "index": "editorial",
-                "clusterAlias": null,
-                "sourceAsMap": {
-                    "localId": "/site/components/articles-widget/latest-articles-widget.xml"
-                },
-                "innerHits": null,
-                "sourceRef": {
-                    "childResources": [],
-                    "fragment": true
-                },
-                "sourceAsString": "{\"localId\":\"/site/components/articles-widget/latest-articles-widget.xml\"}",
-                "fragment": false
-            }
-        ],
-        "totalHits": 31,
-        "maxScore": 1,
-        "fragment": true
-    },
-    "aggregations": null,
-    "suggest": null,
-    "terminatedEarly": null,
-    "numReducePhases": 1,
-    "took": {
-        "micros": 3000,
-        "microsFrac": 3000,
-        "millisFrac": 3,
-        "secondsFrac": 0.003,
-        "minutesFrac": 0.00005,
-        "hoursFrac": 8.333333333333333e-7,
-        "daysFrac": 3.472222222222222e-8,
-        "days": 0,
-        "stringRep": "3ms",
-        "nanos": 3000000,
-        "hours": 0,
-        "minutes": 0,
-        "seconds": 0,
-        "millis": 3
-    },
-    "failedShards": 0,
-    "profileResults": {},
-    "timedOut": false,
-    "fragment": false
+      "total": 28,
+      "max_score": 1.0,
+      "hits": [
+        {
+          "_index": "editorial-preview_v1",
+          "_type": "_doc",
+          "_id": "f4a1af43fed0b4e246abb3a8c7d7323d",
+          "_score": 1.0,
+          "_source": {
+            "localId": "/site/components/articles-widget/latest-articles-widget.xml"
+          }
+        }
+      ]
+    }
   }
 
 ---------
