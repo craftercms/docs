@@ -244,6 +244,12 @@ Processor that runs a command line process.
 +----------------------+-----------+--------------------+-------------------------------------------------------+
 |``processTimeoutSecs``|           |``30``              |The amount of seconds to wait for the process to finish|
 +----------------------+-----------+--------------------+-------------------------------------------------------+
+|``includeChanges``    |           |``false``           |Additional parameters will be added to the command     |
+|                      |           |                    |                                                       |
+|                      |           |                    ||includeChangesTrue|                                   |
++----------------------+-----------+--------------------+-------------------------------------------------------+
+
+.. |includeChangesTrue| replace:: **Example:** script.sh SITE_NAME OPERATION (CREATE | UPDATE | DELETE) FILE (relative path of the file)
 
 **Example**
 
@@ -254,6 +260,7 @@ Processor that runs a command line process.
   - processorName: commandLineProcessor
     workingDir: '/home/myuser/myapp/bin'
     command: 'myapp -f --param1=value1'
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Search Indexing Processor
