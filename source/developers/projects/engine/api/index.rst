@@ -29,6 +29,7 @@ Site Context
 	:maxdepth: 1
 
 	site/context/id
+	site/context/status
 	site/context/destroy
 	site/context/rebuild
 	site/context/graphql/rebuild
