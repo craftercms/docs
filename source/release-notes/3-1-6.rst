@@ -1,0 +1,48 @@
+.. index:: Crafter CMS 3.1.6 Release Notes
+
+.. # define a hard line break for HTML
+.. |br| raw:: html
+
+   <br />
+
+-----------------
+Crafter CMS 3.1.6
+-----------------
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+
+* Added ability to manage assets in external storage through workflow and publishing mechanics. |br|
+  *See* :ref:`publishing-assets-in-external-storage` *for more information.*
+* Added support for Dashboard APIs that enables content retrieval based on content and metadata criteria defined by users. |br|
+  *Read more about it:* https://app.swaggerhub.com/apis/craftercms/studio/#/dashboard
+* Added a new video picker control for AWS MediaConvert data source |br|
+  *See* :ref:`form-transcoded-video` *for more information.*
+* Added support for cache warming configuration per site |br|
+  *See* :ref:`engine-site-configuration` *for more information on Cache Warm Up properties*
+* Added configurable script support to TinyMCE 5 form control |br|
+  *See* :ref:`rte-add-allowable-elements` *for more information.*
+
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Upgraded Jackson library to 2.9.10 for various Crafter modules
+* Upgraded Crafter Studio, Engine, Profile and Social Tomcat version to 8.5.53
+* Upgraded Crafter Deployer Tomcat version to 9.0.33
+
+
+Lot's of other small enhancements and bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 3.1.6 Milestone <https://github.com/craftercms/craftercms/milestone/61?closed=1>`_
+
+.. important::
+
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.6)
+
+    For Docker/Kuber deployments, see :ref:`upgrading-dockers`
+
+    For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
