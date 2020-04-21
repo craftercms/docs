@@ -1,8 +1,6 @@
 +------------------------+--------------------------------------+---------------------------------+
 | Name                   | Description                          | API                             |
 +========================+======================================+=================================+
-| application            || The servlet context                 || `ServletContext`_              |
-+------------------------+--------------------------------------+---------------------------------+
 | request                || The current request                 || `HttpServletRequest`_          |
 +------------------------+--------------------------------------+---------------------------------+
 | response               || The current response                || `HttpServletResponse`_         |
@@ -29,6 +27,14 @@
 | profile                || The current profile (if the user    || |Profile|                      |
 |                        || has logged in), created by the      ||                                |
 |                        || Crafter Security Provider           ||                                |
++------------------------+--------------------------------------+---------------------------------+
+
+The following variables are restricted by default, to use them see :ref:`access-to-services`
+
++------------------------+--------------------------------------+---------------------------------+
+| Name                   | Description                          | API                             |
++========================+======================================+=================================+
+| application            || The servlet context                 || `ServletContext`_              |
 +------------------------+--------------------------------------+---------------------------------+
 
 .. _ServletContext: http://docs.oracle.com/javaee/6/api/javax/servlet/ServletContext.html
