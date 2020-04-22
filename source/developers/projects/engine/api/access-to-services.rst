@@ -8,14 +8,14 @@
 Access to Services
 ==================
 
-When developing templates or scripts only a small list of services are available to use, you can expose other
+When developing templates or scripts only a small list of services are available to use. You can expose other
 services with the following steps.
 
 -------------
 Site Services
 -------------
 
-If your site includes includes a custom application context with services, you can make them available updating the
+If your site includes a custom application context with services, you can make them available by updating the
 site configuration:
 
 .. code-block:: xml
