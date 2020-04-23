@@ -42,7 +42,7 @@ To add the rule for SSH, click the ``Inbound traffic`` tab and then ``Add Rule``
     :align: center
     :alt: Crafter CMS AWS AMI Delivery Security Groups
 
-Once your have added SSH access and made any other tweaks you feel are necessary to your instance's configuration, click the ``Review`` tab and then click the ``Launch`` button.
+Once you have added SSH access and made any other tweaks you feel are necessary to your instance's configuration, click the ``Review`` tab and then click the ``Launch`` button.
 
 .. image:: /_static/images/ami/craftercms-aws-ami-delivery-review.jpg
     :width: 100 %
@@ -301,7 +301,11 @@ Look for output that is similar to the following:
 ---------------------------------------------------------------
 Step 5: View the site on the delivery server from a web browser
 ---------------------------------------------------------------
+<<<<<<< Updated upstream
 Now that site has deployed it can be viewied via web browser. As previously mentioned, Crafter's delivery tier is multi-tenant.  A SITE_ID is used on the URL to indicate which tenant is to be displayed. To preview the site you initialized, open a browser and navigate to the following URL:
+=======
+Now that site has deployed it can be viewed via web browser. As previously mentioned, Crafter's delivery tier is multi-tenant.  A SITE_ID is used on the URL to indicate which tenant is to be displayed. To preview the site you initialized, open a browser and navigate to the following URL:
+>>>>>>> Stashed changes
 
 **http://[DELIVERY_DNS_NAME]?crafterSite=[SITE_ID]**
 
