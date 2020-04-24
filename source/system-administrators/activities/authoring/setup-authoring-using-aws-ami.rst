@@ -43,7 +43,7 @@ To add the rule for SSH, click the ``Inbound traffic`` tab and then ``Add Rule``
     :align: center
     :alt: Crafter CMS AWS AMI Authoring Configure Security Group
 
-Once your have added SSH access and made any other tweaks you feel are necessary to your instance's configuration, click the ``Review`` tab and then click the ``Launch`` button.
+Once you have added SSH access and made any other tweaks you feel are necessary to your instance's configuration, click the ``Review`` tab and then click the ``Launch`` button.
 
 .. image:: /_static/images/ami/craftercms-aws-ami-authoring-review1.jpg
     :width: 100 %
@@ -104,7 +104,7 @@ To acquire the initial password you must log in to the instance via SSH. Open a 
 
 **If SSH times out :**
 
-You have will need to double check your security policies for the instance to make sure you are using the correct SSH port and that the firewall will accept your traffic from your network. To check these configurations, scroll right and click the ``Security Settings`` column for your instance.  Follow the steps outlined in step 1 to check or configure your security policies. Once the rule has been added/updated or you have specified the non-standard port (22) in your SSH command (add -p PORT_NUMBER to your command) you will be able to log in.
+You will need to double check your security policies for the instance to make sure you are using the correct SSH port and that the firewall will accept your traffic from your network. To check these configurations, scroll right and click the ``Security Settings`` column for your instance.  Follow the steps outlined in step 1 to check or configure your security policies. Once the rule has been added/updated or you have specified the non-standard port (22) in your SSH command (add -p PORT_NUMBER to your command) you will be able to log in.
 
 **To get the initial administrative password:**
 
