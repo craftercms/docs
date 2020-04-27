@@ -173,7 +173,7 @@ authentication provider used, but you can always obtain an instance of |CustomUs
 Migrating from Crafter Profile
 ==============================
 
-Previous to version ``3.1.5`` Crafter Profile was the only security provider available, all sites created in previous
+Prior to version ``3.1.5`` Crafter Profile was the only security provider available, all sites created in previous
 versions will continue to work without any changes, however if you need to migrate to a different provider like SAML2
 you will need to replace all uses of the ``profile`` and ``authentication`` variables, both have been replaced with
 ``authToken``.
