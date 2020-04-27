@@ -149,19 +149,24 @@ be used:
 *   ``permitAll()``
 *   ``denyAll()``
 
--------------------------------
-Using the Authentication Object
--------------------------------
+----------------------
+Access User Attributes 
+----------------------
 
 Once the authentication and authorization configurations are completed you can use the ``authToken`` object in
 templates and scripts to access the current user attributes. The class of the object will change depending of the
 authentication provider used, but you can always obtain an instance of |CustomUser| using the ``principal`` property.
 
 .. code-block:: none
+  :caption: Displaying the first name of the current user in Freemarker
 
   <#if authToken??>
-    <i>${authToken.principal.attributes.firstName}</i>
+    Hello ${authToken.principal.attributes.firstName}!
+  <#else>
+    <#-- show login button -->
   </#if>
+
+.. note:: You can find more details about the ``authToken`` variable in :ref:`templating-api` or :ref:`groovy-api`
 
 |
 
