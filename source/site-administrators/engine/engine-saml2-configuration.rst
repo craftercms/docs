@@ -8,6 +8,9 @@
 Engine SAML2 Configuration |enterpriseOnly|
 ===========================================
 
+.. note:: This guide includes SAML2 specific configuration only, for a general guide see 
+          :ref:`engine-site-security-guide`
+
 Crafter Engine can be configured to support SAML2 SSO out of the box without using any additional plugin.
 
 ------------
