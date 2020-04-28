@@ -17,10 +17,57 @@ Crafter Engine can be configured to support SAML2 SSO out of the box without usi
 Requirements
 ------------
 
-#. A SAML2 compatible Identity Provider properly configured, this configuration will not be covered here
-#. A Java KeyStore file containing all needed keys & certificates, this can be generated with the Java Keytool or any 
-   other compatible tool
-#. XML descriptors for the Identity Provider and the Service Provider (Crafter Engine)
+#.  A SAML2 compatible Identity Provider properly configured, this configuration will not be covered here
+#.  A Java KeyStore file containing all needed keys & certificates, this can be generated with the Java Keytool or any 
+    other compatible tool. For example:
+    
+    ``keytool -genkey -alias CREDENTIAL_NAME -keystore keystore.jks -storepass STORE_PASSWORD``
+    
+#.  XML descriptors for the Identity Provider and the Service Provider (Crafter Engine). The descriptor for Crafter
+    Engine can be generated following these steps:
+    
+    #.  Export the X509 certificate from the key store file:
+    
+        ``keytool -export -alias CREDENTIAL_NAME -keystore keystore.jks -rfc -file CREDENTIAL_NAME.cer``
+    
+    #.  Create the XML descriptor, either using a `third party tool <https://www.samltool.com/sp_metadata.php>`_ or
+        manually. The descriptor should look like this:
+       
+        .. code-block:: xml
+          :caption: Example SAML 2.0 Service Provider Metadata
+          :emphasize-lines: 2,3,7,14,18,20
+       
+          <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+          <md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="<Entity ID>">
+            <md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+              <md:KeyDescriptor use="signing">
+                <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                  <ds:X509Data>
+                    <ds:X509Certificate><Certificate></ds:X509Certificate>
+                  </ds:X509Data>
+                </ds:KeyInfo>
+              </md:KeyDescriptor>
+              <md:KeyDescriptor use="encryption">
+                <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                  <ds:X509Data>
+                    <ds:X509Certificate><Certificate></ds:X509Certificate>
+                  </ds:X509Data>
+                </ds:KeyInfo>
+              </md:KeyDescriptor>
+              <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="<Logout URL>"/>
+              <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+              <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="<SAML URL>" index="0" isDefault="true"/>
+            </md:SPSSODescriptor>
+          </md:EntityDescriptor>
+        
+        Replacing the following values:
+        
+        - **Entity ID**: Unique identifier for the service provider
+        - **AuthnRequestsSigned**: indicates if the service provider will sign authentication requests
+        - **WantAssertionsSigned**: indicates if the service provider requires signed assertions
+        - **Certificate**: The content of the certificate obtained in the previous step
+        - **SAML URL**: The full URL for the service provider logout endpoint (``ENGINE_URL/saml/logout``)
+        - **SAML URL**: The full URL for the service provider SSO processing endpoint (``ENGINE_URL/saml/SSO``)
 
 .. note::
   If Crafter Engine will be behind a load balancer or proxy server, the XML Service Provider descriptor needs to use
@@ -80,7 +127,9 @@ Properties Details
 +-----------------------------------+-------------------------------------------+-------------------------------------+
 |``attributes.mappings.mapping``    |List of mappings to apply for attributes,  |                                     |
 |                                   |every attribute sent by the IDP will be    |                                     |
-|                                   |compared against this list                 |                                     |
+|                                   |compared against this list and will be     |                                     |
+|                                   |available as described in                  |                                     |
+|                                   |:ref:`engine-security-access-attributes`   |                                     |
 +-----------------------------------+-------------------------------------------+-------------------------------------+
 |``role.key``                       |Name of the role attribute sent by the IDP |``Role``                             |
 +-----------------------------------+-------------------------------------------+-------------------------------------+
