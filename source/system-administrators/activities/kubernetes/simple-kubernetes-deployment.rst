@@ -42,7 +42,7 @@ an SSH public/private key pair for authentication and provide the key pair as a 
 
          |
 
-         For users on macOS 10.14 and above (macOS Mojave and onwards) or users using OpenSSH 7.8 and above, ``ssh-keygen`` writes OpenSSH format private keys by default (RFC7416 format) instead of using OpenSSL's PEM format.
+         For users on macOS 10.14 and above (macOS Mojave and onwards), users on Ubuntu 20.04 (focal fossa) and onwards, RHEL/CentOS 8 and onwards, Debian 10 (Buster) and onwards, or users using **OpenSSH 7.8** and above,  ``ssh-keygen`` writes OpenSSH format private keys by default (RFC7416 format) instead of using OpenSSL's PEM format.
 
          To generate keys using PEM format, add option ``-m PEM`` into your ssh-keygen command. For example, you can run the command below  to force ssh-keygen to export as PEM format:
 
