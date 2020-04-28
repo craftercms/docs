@@ -66,7 +66,7 @@ Requirements
         - **AuthnRequestsSigned**: indicates if the service provider will sign authentication requests
         - **WantAssertionsSigned**: indicates if the service provider requires signed assertions
         - **Certificate**: The content of the certificate obtained in the previous step
-        - **SAML URL**: The full URL for the service provider logout endpoint (``ENGINE_URL/saml/logout``)
+        - **Logout URL**: The full URL for the service provider logout endpoint (``ENGINE_URL/saml/logout``)
         - **SAML URL**: The full URL for the service provider SSO processing endpoint (``ENGINE_URL/saml/SSO``)
 
 .. note::
