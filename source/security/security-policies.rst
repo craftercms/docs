@@ -158,7 +158,6 @@ How does Crafter CMS help mitigate this risk?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Crafter Software audits all XML reading, writing and manipulating 3rd party libraries as part of the release process. Those libraries are kept up-to-date per security advisories.
 * Crafter CMS disables XML external entity and DTD processing in all XML parsers in the application, as per the OWASP Cheat Sheet 'XXE Prevention'.
-* Crafter CMS sandboxes disk access via JVM security policies.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
