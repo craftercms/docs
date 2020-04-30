@@ -44,11 +44,13 @@ Sample
         password: WebDAV account password
     -->
     <webdav>
+      <webdav>
         <profile>
             <id>webdav-default</id>
             <baseUrl>...</baseUrl>
             <username>...</username>
             <password>...</password>
         </profile>
+      </webdav>
     </webdav>
 
