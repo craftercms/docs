@@ -12,7 +12,7 @@
   "license": "GPL 3.0",
   "dependencies": {
     "foundation-sites": "^6.5.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "js-yaml": "^3.13.1",
     "motion-ui": "^2.0.3",
     "native-toast": "^2.0.0"
