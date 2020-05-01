@@ -151,4 +151,4 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
    |
 
-   The preview page should take you */articles/2017/12/Top Books For Young Women*
+   The preview page should take you to */articles/2017/12/Top Books For Young Women*
