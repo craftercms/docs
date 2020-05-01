@@ -52,10 +52,20 @@ FreeMarker (Templating) API
 ---------------------------
 
 .. toctree::
-       :maxdepth: 1
-       :titlesonly:
+    :maxdepth: 1
+    :titlesonly:
 
-       api/templating-api
+    api/templating-api
+
+--------------------
+JavaScript Libraries
+--------------------
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    javascript-libraries
 
 -------------
 Configuration
