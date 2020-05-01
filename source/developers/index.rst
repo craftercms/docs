@@ -6,7 +6,19 @@
 Developers
 **********
 
-This section focuses on how to customize and extend Crafter CMS.  It covers the basic topics you need to define a content type and render that content as part of a page, component or service.  It also covers topics like building queries, accessing services and extending the core platforms.
+This section focuses on how to build content rich applications backed by Crafter CMS.  It covers the basic topics you need to define a content type and render that content as part of a page, component or service.  It also covers topics like building queries, accessing services and extending the core platforms.
+
+Developers need to be comfortable with Content Modeling (how to represent content in Crafter CMS for your application to retrieve said content), and how to access content items from your application/site.
+
+**Define Content**
+
+To get started with content modeling, read: :ref:`content-modeling`.
+
+**Retrieve Content**
+
+To get started with content access/APIs, read: :ref:`crafter-engine`.
+
+In depth concepts and guides follow.
 
 .. toctree::
       :maxdepth: 1
@@ -18,7 +30,7 @@ This section focuses on how to customize and extend Crafter CMS.  It covers the 
       assets
       templates
       search-elasticsearch
-      search-solr
+      cook-books/graphql/index
       targeting
       redirect
       testing
