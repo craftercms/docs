@@ -1,5 +1,7 @@
 :is-up-to-date: True
 
+:orphan:
+
 .. _developer-search-solr:
 
 ================
