@@ -21,4 +21,4 @@ The libraries have the following npm package names:
 * `@craftercms/ice <https://www.npmjs.com/package/@craftercms/ice>`__ - Contains JavaScript utilities to use Crafter CMS In Context Editing in your Apps and Sites
 
 
-See the blueprint **Video Center** in the *Public Marketplace* when creating a site in Crafter Studio for an example of using the above JavaScript libraries.
+See the blueprint `Video Center <https://marketplace.craftercms.org/blueprints/org.craftercms.blueprint.videoCenter>`__ in the *Public Marketplace* when creating a site in Crafter Studio for an example of using the above JavaScript libraries.
