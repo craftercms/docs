@@ -1,12 +1,12 @@
 :is-up-to-date: True
 
-.. index:: Create a Blueprint
+.. index:: Create a Blueprint, Blueprint
 
 .. _create-a-blueprint:
 
-==================
-Create a Blueprint
-==================
+==========
+Blueprints
+==========
 
 --------------------
 What are Blueprints?

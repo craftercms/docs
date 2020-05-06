@@ -17,7 +17,6 @@ Cookbooks / Tutorials
    box/index
    services/index
    graphql/index
-   blueprint/index
    marketplace/index
    best-practices/index
    how-tos/index
