@@ -21,7 +21,7 @@ similar to this:
 It is recommended to keep the default configuration if possible. However, if a site requires access to one or more of
 the blacklisted expressions it is possible to override the configuration:
 
-.. warning:: When you allow a script to make a insecure call you should make sure it can only be executed with known
+.. warning:: When you allow a script to make an insecure call you should make sure it can only be executed with known
              arguments and **never** with unverified user input.
 
 |
