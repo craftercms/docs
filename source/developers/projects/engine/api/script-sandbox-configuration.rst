@@ -57,7 +57,7 @@ Disabling the sandbox
 ---------------------
 
 It is possible to completely disable the sandbox for all scripts, this should be used as the last option and is provided
-only for backward compatibility with sites that heavily rely on insecure code.
+primarily for backward compatibility.
 
 To disable the sandbox for all sites update the server configuration file:
 
