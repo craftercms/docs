@@ -854,10 +854,11 @@ convention.
 
 |
 
-For more information on the FreeMarker (Templating) APIs, pleasee see :ref:`templating-api`.
+For more information on the FreeMarker (Templating) APIs, please see :ref:`templating-api`.
 
 For more information on the Groovy APIs, please see :ref:`groovy-api`
 
+  .. include:: /includes/scripts-templates-security.rst
 
 ------------------------------
 Creating Content Type Examples

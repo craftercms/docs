@@ -19,6 +19,10 @@ Building content rich applications backed by Crafter CMS requires you use one of
 * Groovy (great for business logic with access to content or configuration/parameterization)
 * Java (for embedding your business logic/app within Crafter Engine)
 
+|
+
+  .. include:: /includes/scripts-templates-security.rst
+
 --------------------
 JavaScript Libraries
 --------------------
