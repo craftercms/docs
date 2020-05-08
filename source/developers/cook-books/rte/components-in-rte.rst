@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 
 .. index:: Using Components in the Rich Text Editor (RTE)
 
@@ -16,7 +16,7 @@ Basic Setup and Configuration
 
 #. Create the component content type.  Open the **Sidebar** and click on |siteConfig| and select **Content Types**.  Click on **Create New Type**, fill in the required fields and you will then be taken to the content model definition.  We'll create a simple component that displays a greeting.  Here are the values that we'll fill-in:
 
-   * Auto-filename: file-name
+   * Component ID: file-name
    * Internal Name: internal-name
    * Greeting Text:  greetingText
 
