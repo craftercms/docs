@@ -22,6 +22,9 @@ scripts, page/component scripts and filter scripts):
 
 .. include:: /includes/request-groovy-variables.rst
 
+All scripts are executed in a sandbox to prevent insecure code from running, to change the configuration see 
+:ref:`script-sandbox-configuration`
+
 -------------------------
 Create a Script in Studio
 -------------------------
