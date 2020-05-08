@@ -56,7 +56,7 @@ Now you can execute the same script without any issues.
 Disabling the sandbox
 ---------------------
 
-It is possible to completely disable the sandbox for all scripts, this should be used the last option and is provided
+It is possible to completely disable the sandbox for all scripts, this should be used as the last option and is provided
 only for backward compatibility with sites that heavily rely on insecure code.
 
 To disable the sandbox for all sites update the server configuration file:
