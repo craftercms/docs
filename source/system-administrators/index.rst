@@ -191,3 +191,7 @@ Crafter Studio
    studio/debugging-upgrade-issues.rst
    studio/create-site-with-link-to-remote-repo.rst
    studio/session-timeout-settings.rst
+
+|
+
+  .. include:: /includes/scripts-templates-security.rst

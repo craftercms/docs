@@ -56,3 +56,7 @@ Here are the topics covered in this section:
    users-groups-management
    configuration
    studio-logging
+
+|
+
+  .. include:: /includes/scripts-templates-security.rst
