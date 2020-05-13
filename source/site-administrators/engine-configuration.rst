@@ -21,3 +21,4 @@ This section details how to configure settings related to Crafter Engine, Crafte
    engine/engine-mongodb-configuration
    engine/configure-url-rewrite
    engine/engine-multi-environment-configuration
+   engine/engine-multi-target-configuration
