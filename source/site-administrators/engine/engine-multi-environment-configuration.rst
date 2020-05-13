@@ -26,7 +26,7 @@ To setup an environment for engine configuration files, do the following:
 #. Inside the folder, create a directory called ``myenv`` (or whatever you want to call the environment)
 #. Copy the configuration file you want to override in the new environment you are setting up, inside your ``myenv`` folder
 #. Remember to commit the files copied so Studio will pick it up.
-#. In the ``creafter-setenv.sh`` file in ``TOMCAT/bin`` set the
+#. In the ``crafter-setenv.sh`` file in ``TOMCAT/bin`` set the
    following property to desired environment:
 
       .. code-block:: bash
