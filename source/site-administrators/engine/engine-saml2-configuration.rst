@@ -23,6 +23,9 @@ Requirements
     
     ``keytool -genkey -alias CREDENTIAL_NAME -keystore keystore.jks -storepass STORE_PASSWORD``
     
+    .. note:: Some versions of the Keytool support a different password for the keystore and the key generated, you
+              will be prompted for one or you can add the ``-keypass KEY_PASSWORD`` parameter.
+    
 #.  XML descriptors for the Identity Provider and the Service Provider (Crafter Engine). The descriptor for Crafter
     Engine can be generated following these steps:
     
@@ -155,6 +158,9 @@ Properties Details
 |``serviceProviderDescriptor``      |The path of the service provider metadata  |``/config/engine/saml2/sp.xml``      |
 |                                   |XML descriptor in the repo                 |                                     |
 +-----------------------------------+-------------------------------------------+-------------------------------------+
+
+.. note:: If your keystore does not support different passwords for each key, then you should use the same value
+          provided for ``-storepass`` in ``keystore.password`` and ``keystore.credentials.credential.password``
 
 -------------------------
 Commit the required files
