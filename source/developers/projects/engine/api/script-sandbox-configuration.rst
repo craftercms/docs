@@ -52,14 +52,29 @@ To use a custom blacklist follow these steps:
 
 Now you can execute the same script without any issues.
 
----------------------
-Disabling the sandbox
----------------------
 
-It is possible to completely disable the sandbox for all scripts, this should be used as the last option and is provided
-primarily for backward compatibility.
+-------------------------------
+Adding dependencies with Grapes
+-------------------------------
 
-To disable the sandbox for all sites update the server configuration file:
+If your Groovy code need to use external dependencies you can use Grapes, however, when the Groovy sandbox is enabled
+dependencies can only be downloaded during the initial compilation and not during runtime. For this reason it is
+required to add an extra parameter ``initClass=false`` in the annotations to prevent them to be copied to the classes:
+
+.. code-block:: groovy
+  :caption: Example grapes annotations
+
+  @Grab(group='org.apache.commons', module='commons-pool2', version='2.8.0', initClass=false)
+  
+  @Grab(value='org.apache.commons:commons-pool2:2.8.0', initClass=false)
+
+|
+
+----------------------------
+Disabling the Groovy Sandbox
+----------------------------
+
+It is possible to completely disable the Groovy sandbox for all scripts. To disable the sandbox for all sites update the server configuration file:
 
 .. code-block:: none
   :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
