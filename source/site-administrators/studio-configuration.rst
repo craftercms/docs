@@ -45,10 +45,10 @@ Here are the settings that can be configured through Crafter Studio:
    studio/contextual-navigation-config
    studio/dependency-resolver
    studio/drag-n-drop-configuration
-   studio/environment-overrides
    studio/mime-types-configuration
    studio/permission-mappings
    studio/preview-panel-configuration
+   studio/proxy-configuration
    studio/role-mappings
    studio/rte-configuration
    studio/sidebar-configuration

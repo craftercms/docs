@@ -100,7 +100,7 @@ Sample
                  <label>Static Assets</label>        Label
                  <path>/static-assets</path>         Path to root tree at. You mave multiple path elements
                  <showRootItem>true</showRootItem>   Display the root folder (true/false)
-                 <onClick>preview</onClick>          Attempt to prview asset on click
+                 <onClick>preview</onClick>          Attempt to preview asset on click
                  <roles>...</roles>                  (optional roles list that has access to the menu item)
               </params>
            </modulehook>
@@ -125,95 +125,103 @@ Sample
     -->
     <contextNav>
       <contexts>
-    	<context>
-          <groups>
+        <context>
+    	  <groups>
     		<group>
-    	  	  <menuItems>
-    			<menuItem>
-    		 	  <modulehooks>
-    			  <!-- dashboard -->
-    				<modulehook>
-    				  <name>dashboard</name>
-    				  <params>
-    				    <label>Dashboard</label>
-    					<path>/site-dashboard</path>
-    				  </params>
-    				</modulehook>
+    		  <menuItems>
+    		    <menuItem>
+                  <modulehooks>
+                    <!-- Dashboard -->
+                    <modulehook>
+                      <name>dashboard</name>
+                      <params>
+                        <label>Dashboard</label>
+                        <path>/site-dashboard</path>
+                      </params>
+                    </modulehook>
 
-    			  <!-- Site IA PAGES -->
-    			    <modulehook>
-    				  <name>wcm-root-folder</name>
-    				  <showDivider>true</showDivider>
-    				  <params>
-    					<label>Pages</label>
-    					<path>/site/website</path>
-    					<showRootItem>true</showRootItem>
-    					<onClick>preview</onClick>
-    				  </params>
-    				</modulehook>
+                    <!-- Site IA Pages -->
+                    <modulehook>
+                      <name>wcm-root-folder</name>
+                      <params>
+                        <label>Pages</label>
+                        <path>/site/website</path>
+                        <showRootItem>true</showRootItem>
+                        <onClick>preview</onClick>
+                      </params>
+                    </modulehook>
 
-    			  <!-- COMPONENTS -->
-    				<modulehook>
-    				  <name>wcm-root-folder</name>
-    				  <showDivider>true</showDivider>
-    				  <params>
-    					<label>Components</label>
-    					<path>/site/components</path>
-    					<showRootItem>true</showRootItem>
-    				  </params>
-    				</modulehook>
+                    <!-- Components -->
+                    <modulehook>
+                       <name>wcm-root-folder</name>
+                       <params>
+                         <label>Components</label>
+                         <path>/site/components</path>
+                         <showRootItem>true</showRootItem>
+                       </params>
+                    </modulehook>
 
-    				<modulehook>
-    				  <name>wcm-assets-folder</name>
-    				  <showDivider>true</showDivider>
-    				  <params>
-    				    <label>Static Assets</label>
-    					<path>/static-assets</path>
-    					<showRootItem>true</showRootItem>
-    					<onClick>none</onClick>
-    				  </params>
-    				</modulehook>
+                    <!-- Taxonomy -->
+                    <modulehook>
+                      <name>wcm-root-folder</name>
+                      <params>
+                        <label>Taxonomy</label>
+                        <path>/site/taxonomy</path>
+                        <showRootItem>true</showRootItem>
+                      </params>
+                    </modulehook>
 
-    				<modulehook>
-    				  <name>wcm-assets-folder</name>
-    				  <showDivider>true</showDivider>
-    				  <params>
-    					<label>Templates</label>
-    					<path>/templates</path>
-    					<showRootItem>true</showRootItem>
-    					<onClick>none</onClick>
-    				  </params>
-    				</modulehook>
+                    <!-- Static Assets -->
+                    <modulehook>
+                      <name>wcm-assets-folder</name>
+                      <params>
+                        <label>Static Assets</label>
+                        <path>/static-assets</path>
+                        <showRootItem>true</showRootItem>
+                        <onClick>none</onClick>
+                      </params>
+                    </modulehook>
 
-    				<modulehook>
-    				  <name>wcm-assets-folder</name>
-    				  <showDivider>true</showDivider>
-    				  <params>
-    				    <label>Scripts</label>
-    					<path>/scripts</path>
-    					<showRootItem>true</showRootItem>
-    					<onClick>none</onClick>
-    				  </params>
-    				</modulehook>
+                    <!-- Templates -->
+                    <modulehook>
+                      <name>wcm-assets-folder</name>
+                      <params>
+                        <label>Templates</label>
+                        <path>/templates</path>
+                        <showRootItem>true</showRootItem>
+                        <onClick>none</onClick>
+                      </params>
+                    </modulehook>
 
-    				<modulehook>
-    				  <name>site-config</name>
-    				  <showDivider>true</showDivider>
-    				  <params>
-    				    <roles>
-    					  <role>admin</role>
-    					  <role>developer</role>
-    					</roles>
-    					<label>Site Config</label>
-    					<path>/site-config</path>
-    				  </params>
-    				</modulehook>
-    			  </modulehooks>
+                    <!-- Scripts -->
+                    <modulehook>
+                      <name>wcm-assets-folder</name>
+                      <params>
+                        <label>Scripts</label>
+                        <path>/scripts</path>
+                        <showRootItem>true</showRootItem>
+                         <onClick>none</onClick>
+    									</params>
+    								</modulehook>
 
-    			</menuItem>
-    		  </menuItems>
-    		</group>
-    	  </groups>
-    	</context>
-      </contexts>
+    								<!-- Site Config -->
+    								<modulehook>
+    									<name>site-config</name>
+    									<params>
+    										<roles>
+    											<role>admin</role>
+    											<role>developer</role>
+    										</roles>
+    										<label>Site Config</label>
+    										<path>/site-config</path>
+    									</params>
+    								</modulehook>
+    							</modulehooks>
+
+    						</menuItem>
+    					</menuItems>
+    				</group>
+    			</groups>
+    		</context>
+    	</contexts>
     </contextNav>

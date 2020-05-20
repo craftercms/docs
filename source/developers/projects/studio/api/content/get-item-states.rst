@@ -89,13 +89,6 @@ Response
                     "systemProcessing":0
                 },
                 {
-                    "objectId":"36b5826a-f2ba-443d-a160-a5167625e716",
-                    "site":"mysite",
-                    "path":"/config/studio/administration/samples/sample-environment-config.xml",
-                    "state":"EXISTING_UNEDITED_UNLOCKED",
-                    "systemProcessing":0
-                },
-                {
                     "objectId":"83283c18-2b60-4f53-a6ca-1cd9cd0463b9",
                     "site":"mysite",
                     "path":"/config/studio/administration/samples/sample-form-control-rte-setup.xml",
@@ -526,13 +519,6 @@ Response
                     "objectId":"f90f82cb-82eb-4e6d-b3ba-89f7de95b853",
                     "site":"mysite",
                     "path":"/config/studio/data-sources/cmis-config.xml",
-                    "state":"EXISTING_UNEDITED_UNLOCKED",
-                    "systemProcessing":0
-                },
-                {
-                    "objectId":"1a17897f-6cf4-4f77-8437-782d844c7748",
-                    "site":"mysite",
-                    "path":"/config/studio/environment/environment-config.xml",
                     "state":"EXISTING_UNEDITED_UNLOCKED",
                     "systemProcessing":0
                 },

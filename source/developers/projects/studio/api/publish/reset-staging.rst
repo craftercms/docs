@@ -2,11 +2,11 @@
 
 .. _crafter-studio-api-publish-reset-staging:
 
-=========================
-Reset Staging Environment
-=========================
+=============
+Reset Staging
+=============
 
-Reset Crafter Studio's staging environment repository with live repository.
+Reset Crafter Studio's staging repository with live repository.
 
 --------------------
 Resource Information
