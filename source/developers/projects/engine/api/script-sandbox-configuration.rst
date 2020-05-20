@@ -52,6 +52,24 @@ To use a custom blacklist follow these steps:
 
 Now you can execute the same script without any issues.
 
+
+-------------------------------
+Adding dependencies with Grapes
+-------------------------------
+
+If your Groovy classes need to use external dependencies you can use Grapes, however, when the sandbox is enabled
+dependencies can only be downloaded during the initial compilation and not during runtime. For this reason it is
+required to add an extra parameter ``initClass=false`` in the annotations to prevent them to be copied to the classes:
+
+.. code-block:: groovy
+  :caption: Example grapes annotations
+
+  @Grab(group='org.apache.commons', module='commons-pool2', version='2.8.0', initClass=false)
+  
+  @Grab(value='org.apache.commons:commons-pool2:2.8.0', initClass=false)
+
+|
+
 ---------------------
 Disabling the sandbox
 ---------------------
