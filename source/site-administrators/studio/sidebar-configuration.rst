@@ -200,28 +200,28 @@ Sample
                         <label>Scripts</label>
                         <path>/scripts</path>
                         <showRootItem>true</showRootItem>
-                         <onClick>none</onClick>
-    									</params>
-    								</modulehook>
+                        <onClick>none</onClick>
+                      </params>
+                    </modulehook>
 
-    								<!-- Site Config -->
-    								<modulehook>
-    									<name>site-config</name>
-    									<params>
-    										<roles>
-    											<role>admin</role>
-    											<role>developer</role>
-    										</roles>
-    										<label>Site Config</label>
-    										<path>/site-config</path>
-    									</params>
-    								</modulehook>
-    							</modulehooks>
+                    <!-- Site Config -->
+                    <modulehook>
+                      <name>site-config</name>
+                      <params>
+                        <roles>
+                          <role>admin</role>
+                          <role>developer</role>
+                        </roles>
+                        <label>Site Config</label>
+                        <path>/site-config</path>
+                      </params>
+                    </modulehook>
+                  </modulehooks>
 
-    						</menuItem>
-    					</menuItems>
-    				</group>
-    			</groups>
-    		</context>
-    	</contexts>
+                </menuItem>
+              </menuItems>
+            </group>
+          </groups>
+        </context>
+      </contexts>
     </contextNav>
