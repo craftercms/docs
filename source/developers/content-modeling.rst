@@ -554,7 +554,7 @@ The following variable names are used by Crafter CMS.
 +-------------------+------------------------------------------------------------+
 || Variable Name    || Description                                               |
 +===================+============================================================+
-|| file-name        || Used by the File Name and Auto File Name control.         |
+|| file-name*       || Used by the File Name and Auto File Name control.         |
 +-------------------+------------------------------------------------------------+
 || internal-name    || Used by Crafter Studio to label the content object        |
 +-------------------+------------------------------------------------------------+
@@ -592,6 +592,10 @@ The following variable names are used by Crafter CMS.
 +-------------------+------------------------------------------------------------+
 || redirect-url     || Redirect URL                                              |
 +-------------------+------------------------------------------------------------+
+
+\* **Note on file names**
+
+.. include:: /includes/valid-file-names.rst
 
 .. _variable-names-search-indexing:
 

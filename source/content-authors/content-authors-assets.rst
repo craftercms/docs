@@ -10,6 +10,9 @@ Working with Assets
 
 Assets are binary files, typically images, videos, etc. which can be uploaded directly by Authors from the site navigation tree to Crafter CMS.
 
+.. note::
+	.. include:: /includes/valid-file-names.rst
+
 -------------
 Adding Assets
 -------------
