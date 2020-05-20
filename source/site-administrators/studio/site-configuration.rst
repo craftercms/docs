@@ -26,84 +26,180 @@ Sample
     :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>
-    <!-- site-config.xml
-
-        This contains the primary site configuration.
-
-    -->
     <site-config>
-        <wem-project>myawesomesite</wem-project>
-        <display-name>myawesomesite</display-name>
-        <default-timezone>EST5EDT</default-timezone>
+      <version>7</version>
+      <wem-project>mysite</wem-project>
+      <display-name>mysite</display-name>
+      <default-timezone>EST5EDT</default-timezone>
 
-        <published-repository>
-            <enable-staging-environment>true</enable-staging-environment>
-            <staging-environment>staging</staging-environment>
-            <live-environment>live</live-environment>
-        </published-repository>
+      <!-- Site URLs. Default to http://localhost:8080 if blank -->
+      <site-urls>
+        <authoring-url></authoring-url>
+        <staging-url></staging-url>
+        <live-url></live-url>
+      </site-urls>
 
-        <repository rootPrefix="/site">
+      <published-repository>
+        <enable-staging-environment>false</enable-staging-environment>
+      </published-repository>
 
-            <!-- default inheritance file name -->
-            <level-descriptor>crafter-level-descriptor.level.xml</level-descriptor>
+      <publishing>
+        <comments>
+          <!-- Global setting would apply to all -->
+          <required>false</required>
+          <!-- Additional (also optional) specific overrides -->
+          <!-- <delete-required/> -->
+          <!-- <bulk-publish-required/> -->
+          <!-- <publish-by-commit-required/> -->
+        </comments>
+      </publishing>
 
-            <!-- The section below classifies items into folders for two dashboard widgets:
-            - Items Waiting For Approval
-            - Approved Scheduled Items
+      <form-engine>
+        <field-name-postfix>true</field-name-postfix>
+        <ignore-postfix-fields>
+          <field>internal-name</field>
+          <field>file-name</field>
+          <field>placeInNav</field>
+          <field>scripts</field>
+          <field>mime-type</field>
+          <field>force-https</field>
+          <field>navLabel</field>
+          <field>expired</field>
+          <field>key</field>
+          <field>value</field>
+          <field>items</field>
+          <field>redirect-url</field>
+          <field>authorizedRoles</field>
+          <field>role</field>
+          <field>disabled</field>
+        </ignore-postfix-fields>
+      </form-engine>
 
-            Items that match the paths specified will be grouped together in the dashboard widget
-            -->
-            <folders>
-                <folder name="Pages" path="/website" read-direct-children="false" attach-root-prefix="true"/>
-                <folder name="Components" path="/components" read-direct-children="false" attach-root-prefix="true"/>
-                <folder name="Assets" path="/static-assets" read-direct-children="false" attach-root-prefix="false"/>
-                <folder name="Templates" path="/templates" read-direct-children="false" attach-root-prefix="false"/>
-            </folders>
+      <!--
+      Pattern that Studio will use to load plugin from the site repository
+      Required placeholders: ${type}, ${name}
+      -->
+      <plugin-folder-pattern>/config/studio/plugins/${type}/${name}</plugin-folder-pattern>
 
-            <!-- Item Patterns -->
-            <patterns>
-                <!-- The section below helps determine the type of content based on regex. This shows up in two places:
-                - The activity audit log.
-                - The UI icon used for the item
-                -->
+      <repository rootPrefix="/site">
 
-                <pattern-group name="page">
-                    <pattern>/site/website/([^&lt;]+)\.xml</pattern>
-                </pattern-group>
+        <!-- default inheritance file name -->
+        <level-descriptor>crafter-level-descriptor.level.xml</level-descriptor>
 
-                <pattern-group name="component">
-                    <pattern>/site/components/([^&lt;]+)\.xml</pattern>
-                    <pattern>/site/system/page-components/([^&lt;]+)\.xml</pattern>
-                    <pattern>/site/component-bindings/([^&lt;]+)\.xml</pattern>
-                    <pattern>/site/indexes/([^&lt;]+)\.xml</pattern>
-                    <pattern>/site/resources/([^&lt;]+)\.xml</pattern>
-                </pattern-group>
+        <!-- The section below classifies items into folders for two dashboard widgets:
+        - Items Waiting For Approval
+        - Approved Scheduled Items
 
-                <pattern-group name="asset">
-                    <pattern>/static-assets/([^&lt;"'\)]+)</pattern>
-                </pattern-group>
+        Items that match the paths specified will be grouped together in the dashboard widget
+        -->
+        <folders>
+          <folder name="Pages" path="/website" read-direct-children="false" attach-root-prefix="true"/>
+          <folder name="Components" path="/components" read-direct-children="false" attach-root-prefix="true"/>
+          <folder name="Assets" path="/static-assets" read-direct-children="false" attach-root-prefix="false"/>
+          <folder name="Templates" path="/templates" read-direct-children="false" attach-root-prefix="false"/>
+        </folders>
 
-                <pattern-group name="rendering-template">
-                    <pattern>/templates/([^&lt;"]+)\.ftl</pattern>
-                </pattern-group>
+        <!-- Item Patterns -->
+        <patterns>
+          <!-- The section below helps determine the type of content based on regex. This shows up in two places:
+          - The activity audit log.
+          - The UI icon used for the item
+          -->
 
-                <!-- The section below enumerates the mime-types we can preview -->
-                <pattern-group name="previewable-mimetypes">
-                    <pattern>image/(.*)</pattern>
-                    <pattern>application/pdf</pattern>
-                    <pattern>video/(.*)</pattern>
-                    <pattern>application/msword</pattern>
-                    <pattern>application/vnd.openxmlformats-officedocument.wordprocessingml.document</pattern>
-                    <pattern>application/vnd.ms-excel</pattern>
-                    <pattern>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</pattern>
-                    <pattern>application/vnd.ms-powerpoint</pattern>
-                </pattern-group>
-            </patterns>
+          <pattern-group name="page">
+            <pattern>/site/website/([^&lt;]+)\.xml</pattern>
+          </pattern-group>
 
-            <!-- The patterns below identify what is allowed to show up in the Dashboard widgets -->
-            <display-in-widget-patterns>
-                <display-in-widget-pattern>.*</display-in-widget-pattern>
-            </display-in-widget-patterns>
+          <pattern-group name="component">
+            <pattern>/site/components/([^&lt;]+)\.xml</pattern>
+            <pattern>/site/system/page-components/([^&lt;]+)\.xml</pattern>
+            <pattern>/site/component-bindings/([^&lt;]+)\.xml</pattern>
+            <pattern>/site/indexes/([^&lt;]+)\.xml</pattern>
+            <pattern>/site/resources/([^&lt;]+)\.xml</pattern>
+          </pattern-group>
 
-        </repository>
+          <pattern-group name="asset">
+            <pattern>/static-assets/([^&lt;"'\)]+)</pattern>
+          </pattern-group>
+
+          <pattern-group name="rendering-template">
+            <pattern>/templates/([^&lt;"]+)\.ftl</pattern>
+          </pattern-group>
+
+          <pattern-group name="scripts">
+            <pattern>/scripts/([^&lt;"]+)\.groovy</pattern>
+          </pattern-group>
+
+          <!-- The section below enumerates the mime-types we can preview -->
+          <pattern-group name="previewable-mimetypes">
+            <pattern>image/(.*)</pattern>
+            <pattern>application/pdf</pattern>
+            <pattern>video/(.*)</pattern>
+            <pattern>application/msword</pattern>
+            <pattern>application/vnd.openxmlformats-officedocument.wordprocessingml.document</pattern>
+            <pattern>application/vnd.ms-excel</pattern>
+            <pattern>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</pattern>
+            <pattern>application/vnd.ms-powerpoint</pattern>
+          </pattern-group>
+        </patterns>
+
+        <!-- The patterns below identify what is allowed to show up in the Dashboard widgets -->
+        <display-in-widget-patterns>
+            <display-in-widget-pattern>.*</display-in-widget-pattern>
+        </display-in-widget-patterns>
+      </repository>
+      <contentMonitoring>
+        <monitor>
+          <name>Content Expiring Tomorrow</name>
+          <query>expired_dt:[now+1d/d TO now+2d/d]</query>
+          <paths>
+            <path>
+              <name>All Site</name>
+              <pattern>/site/.*</pattern>
+              <emailTemplate>contentExpiringSoon</emailTemplate>
+              <emails>admin@example.com</emails>
+              <locale>en</locale>
+            </path>
+          </paths>
+        </monitor>
+        <monitor>
+          <name>Content Expiring In One Week</name>
+          <query>expired_dt:[now+7d/d TO now+8d/d]</query>
+          <paths>
+            <path>
+              <name>All Site</name>
+              <pattern>/site/.*</pattern>
+              <emailTemplate>contentExpiringSoon</emailTemplate>
+              <emails>admin@example.com</emails>
+              <locale>en</locale>
+            </path>
+          </paths>
+        </monitor>
+        <monitor>
+          <name>Content Expiring In One Month</name>
+          <query>expired_dt:[now+30d/d TO now+32d/d]</query>
+          <paths>
+            <path>
+              <name>All Site</name>
+              <pattern>/site/.*</pattern>
+              <emailTemplate>contentExpiringSoon</emailTemplate>
+              <emails>admin@example.com</emails>
+              <locale>en</locale>
+            </path>
+          </paths>
+        </monitor>
+        <monitor>
+          <name>Content Expiring In Two Months</name>
+          <query>expired_dt:[now+60d/d TO now+62d/d]</query>
+          <paths>
+            <path>
+              <name>All Site</name>
+              <pattern>/site/.*</pattern>
+              <emailTemplate>contentExpiringSoon</emailTemplate>
+              <emails>admin@example.com</emails>
+              <locale>en</locale>
+            </path>
+          </paths>
+        </monitor>
+      </contentMonitoring>
     </site-config>

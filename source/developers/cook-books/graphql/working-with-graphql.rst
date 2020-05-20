@@ -72,7 +72,7 @@ against the schema in real time.
         :align: center
 
 .. note::
-    If the GraphQL server host name used is not ``localhost``, the ``<graphql-server-url />`` in your environment configuration file needs to be set to the appropriate url.  For more information on the environment configuration file, see: :ref:`environment-overrides`
+    If the GraphQL server host name used is not ``localhost``, the ``<graphql-server-url />`` in your proxy configuration file needs to be set to the appropriate url.  For more information on the proxy configuration file, see: :ref:`proxy-configuration`
 
 ----------------
 GraphQL Examples

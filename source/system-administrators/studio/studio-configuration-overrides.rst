@@ -20,7 +20,7 @@ The following section of Studio's configuration overrides allows you to do the f
 
 * ``studio.repo.basePath`` allows you to set your repository base
 * ``studio.repo.siteSandboxBranch`` allows you to set the default branch to be used by sandbox
-* ``studio.repo.published.live`` and ``studio.repo.published.staging`` allows you to set the branch for your environments
+* ``studio.repo.published.live`` and ``studio.repo.published.staging`` allows you to set the branch for your publishing targets
 
 .. code-block:: yaml
    :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
@@ -33,17 +33,17 @@ The following section of Studio's configuration overrides allows you to do the f
    studio.repo.basePath: ../data/repos
    # Sandbox Git repository branch for every site
    # studio.repo.siteSandboxBranch: master
-   # If not using environment-config.xml, environments are configured here
-   # Git repository branch for the `live` environment, default "live"
+   # Git repository branch for publishing targets are configured here
+   # Git repository branch for the `live` publishing target, default "live"
    # studio.repo.published.live: live
-   # Git repository branch for the `staging` environment, default "staging"
+   # Git repository branch for the `staging` publishing target, default "staging"
    # studio.repo.published.staging: staging
 
 ------------------
 Site Configuration
 ------------------
 
-The following section of Studio's configuration overrides allows you to setup you site configuration
+The following section of Studio's configuration overrides allows you to setup your site configuration
 
 .. code-block:: yaml
    :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
@@ -53,11 +53,30 @@ The following section of Studio's configuration overrides allows you to setup yo
    ##                   Site Configuration                   ##
    ############################################################
    # Destroy site context url for preview engine
-   studio.configuration.site.preview.destroy.context.url: ${env:ENGINE_URL}/api/1/site/context/destroy.json?crafterSite={siteName}
+   studio.configuration.site.preview.destroy.context.url: ${env:ENGINE_URL}/api/1/site/context/destroy.json?crafterSite={siteName}&token=${studio.configuration.management.previewAuthorizationToken}
    # Default preview URL
    studio.configuration.site.defaultPreviewUrl: ^https?://localhost:8080/?
    # Default authoring URL
    studio.configuration.site.defaultAuthoringUrl: ^https?://localhost:8080/studio/?
+   # Default GraphQL server URL
+   studio.configuration.site.defaultGraphqlServerUrl: ^https?://localhost:8080/?
+   # Studio management authorization token.
+   studio.configuration.management.authorizationToken: ${env:STUDIO_MANAGEMENT_TOKEN}
+   # Preview engine management authorization token.
+   studio.configuration.management.previewAuthorizationToken: ${env:ENGINE_MANAGEMENT_TOKEN}
+   # Protected URLs with preview engine management authorization token.
+   # Coma separated list of preview engine urls
+   studio.configuration.management.previewProtectedUrls: >-
+     /api/1/monitoring/log.json,
+     /api/1/monitoring/memory.json,
+     /api/1/monitoring/status.json,
+     /api/1/monitoring/version.json,
+     /api/1/site/context/id,
+     /api/1/site/context/destroy,
+     /api/1/site/context/rebuild,
+     /api/1/site/context/graphql/rebuild,
+     /api/1/site/cache/clear,
+     /api/1/site/cache/statistics
 
 ------------------------------
 Preview Deployer Configuration
@@ -116,6 +135,8 @@ The following section of Studio's configuration overrides allows you to setup th
    ##################################################
 
    # Crafter Studio uses an embedded MariaDB by default
+   # Crafter DB schema name
+   studio.db.schema: ${env:MARIADB_SCHEMA}
    # Crafter DB connection string
    studio.db.url: jdbc:mariadb://${env:MARIADB_HOST}:${env:MARIADB_PORT}/crafter?user=${env:MARIADB_USER}&password=${env:MARIADB_PASSWD}
    # Connection string used to initialize database. This creates the `crafter` schema, the `crafter` user and/or upgrades the database
@@ -233,6 +254,13 @@ The following section of Studio's configuration overrides allows you to randomiz
        # Authentication via DB enabled
        # enabled: true
 
+   # The key used for encryption of configuration properties
+   studio.security.encryption.key: ${env:CRAFTER_ENCRYPTION_KEY}
+   # The salt used for encryption of configuration properties
+   studio.security.encryption.salt: ${env:CRAFTER_ENCRYPTION_SALT}
+
+   # Defines name used for environment specific configuration. It is used for environment overrides in studio. Default value is default.
+   studio.configuration.environment.active: ${env:CRAFTER_ENVIRONMENT}
 
 
 ------------------
@@ -338,6 +366,9 @@ The following section of Studio's configuration overrides allows you to setup CO
    :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
    :linenos:
 
+   ################################################################
+   ##                             CORS                           ##
+   ################################################################
    # This is configured as permissive by default for ease of deployment
    # Remember to tighten this up for production
 
@@ -353,8 +384,6 @@ The following section of Studio's configuration overrides allows you to setup CO
    # studio.cors.credentials: true
    # Value for the Access-Control-Max-Age header
    # studio.cors.maxage: -1
-   # The active environment for multi environment configuration, e.g. qa, prod, dev
-   # studio.configuration.environment.active: ENV
 
 ------
 Search
@@ -366,8 +395,16 @@ The following section of Studio's configuration overrides allows you to setup th
    :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
    :linenos:
 
+   ################################################################
+   ##                           Search                           ##
+   ################################################################
    # URLs to connect to Elasticsearch
    studio.search.urls: ${env:ES_URL}
+   # The username for Elasticsearch
+   studio.search.username: ${env:ES_USERNAME}
+   # The password for Elasticsearch
+   studio.search.password: ${env:ES_PASSWORD}
+
 
 -------------------
 Serverless Delivery
@@ -402,8 +439,20 @@ The following section of Studio's configuration overrides allows you to setup se
    # The following parameters will be sent automatically, and you don't need to specify them: env, site_name, replace,
    # disable_deploy_cron, local_repo_path, repo_url, use_crafter_search
    # studio.serverless.delivery.deployer.target.template.params:
+   #   # The delivery Elasticsearch endpoint (optional is authoring is using the same one, specified in the ES_URL env variable)
+   #   elastic_search_url:
    #   aws:
+   #     # AWS region (optional if specified through default AWS chain)
+   #     region: us-east-1
+   #     # AWS access key (optional if specified through default AWS chain)
+   #     default_access_key:
+   #     # AWS secret key (optional if specified through default AWS chain)
+   #     default_secret_key:
    #     cloudformation:
+   #       # AWS access key (optional if aws.accessKey is specified)
+   #       access_key:
+   #       # AWS secret key (optional if aws.secretKey is specified)
+   #       secret_key:
    #       # Namespace to use for CloudFormation resources (required when target template is aws-cloudformed-s3)
    #       namespace: myorganization
    #       # The domain name of the serverless delivery LB (required when target template is aws-cloudformed-s3)
