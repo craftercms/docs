@@ -20,3 +20,4 @@ Cookbooks / Tutorials
    marketplace/index
    best-practices/index
    how-tos/index
+   rte/index

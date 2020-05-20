@@ -39,6 +39,10 @@ In depth concepts and guides follow.
       extending-studio/index
       developer-workflow/index
 
+|
+
+  .. include:: /includes/scripts-templates-security.rst
+
 
 ################################
 Subsystems and API Documentation
