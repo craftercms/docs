@@ -9,7 +9,7 @@ Script Sandbox Configuration
 ============================
 
 When a script is executed all code is validated against a blacklist of insecure expressions to prevent code that could
-compromise Crafter CMS. When you try to execute a script that contains insecure expressions you will see an error
+compromise the system. When you try to execute a script that contains insecure expressions you will see an error
 similar to this:
 
 .. code-block:: none
@@ -21,7 +21,7 @@ similar to this:
 It is recommended to keep the default configuration if possible. However, if a site requires access to one or more of
 the blacklisted expressions it is possible to override the configuration:
 
-.. warning:: When you allow a script to make a insecure call you should make sure it can only be executed with known
+.. warning:: When you allow a script to make an insecure call you should make sure it can only be executed with known
              arguments and **never** with unverified user input.
 
 |
@@ -31,7 +31,7 @@ Using a custom blacklist
 ------------------------
 
 Crafter Engine includes a default blacklist that you can find 
-`here <https://github.com/craftercms/engine/blob/develop/src/main/resources/crafter/engine/groovy/blacklist>`_.
+`here <https://github.com/craftercms/engine/blob/develop/src/main/resources/crafter/engine/groovy/blacklist>`_. Make sure you review the branch/tag you're using.
 
 To use a custom blacklist follow these steps:
 

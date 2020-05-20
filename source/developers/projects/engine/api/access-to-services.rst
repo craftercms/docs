@@ -25,7 +25,7 @@ comma-separated list in the configuration file:
   crafter.engine.defaultPublicBeans=crafter\\.(targetIdManager|targetedUrlStrategy),someOtherBean
 
 .. note:: The value from the configuration is used as a regular expression, if the value contains special
-          characters you will need to scape them with backslashes ``\\``.
+          characters you will need to escape them with backslashes ``\\``.
 
 ---------------
 System Services

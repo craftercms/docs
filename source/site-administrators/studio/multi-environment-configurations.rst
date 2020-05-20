@@ -15,7 +15,7 @@ Users may want multiple environments setup with different configurations for eac
 #. Copy the configuration file you want to override in the new environment you are setting up, inside your ``myenv`` folder
    following the folder structure under ``config/studio``.
 #. Remember to commit the files copied so Studio will pick it up.
-#. In the ``creafter-setenv.sh`` file in ``TOMCAT/bin`` set the
+#. In the ``crafter-setenv.sh`` file in ``TOMCAT/bin`` set the
    following property to desired environment:
 
       .. code-block:: bash

@@ -693,7 +693,7 @@ Here's a list of commands (Gradle tasks) available:
     * If you don't specify the ``env`` parameter, it means all environments (where applicable).
     * In the current version of Crafter CMS, some services run in the same Web container, and that implies the stopping/starting of one of these services will cause other services to stop/start as well.
     * The Gradle task property ``moduleName`` accepts one or multiple module/s, separated by commas like this: ``./gradlew build -PmoduleName=search,studio``
-
+    * The ``clean`` command does not delete previously built environment folders ``crafter-authoring`` and ``crafter-delivery``. To build a fresh copy of these two, backup your custom data and delete both folders manually.
 
 Let's see some examples of running Gradle tasks here.
 
