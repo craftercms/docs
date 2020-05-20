@@ -52,29 +52,11 @@ To view your site with respect to the staging preview, we need to set it up for 
 
 |
 
----------------------------------
-Setting Default Repo Branch Names
----------------------------------
-
-Crafter CMS allows you to set default branch names for the ``live`` and ``staging`` publishing targets.  In your Authoring installation, go to ``shared/classes/crafter/studio/extension`` and open the file ``studio-config-override.yaml``. The current default names are **live** and **staging**.  To change the default names, uncomment and change the defaults set:
-
-.. code-block:: yaml
-   :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
-   :linenos:
-
-   # Sandbox git repository branch for every site
-   # studio.repo.siteSandboxBranch: master
-   # Git repository branch for publishing targets are configured here
-   # Git repository branch for the `live` publishing target, default "live"
-   studio.repo.published.live: live
-   # Git repository branch for the `staging` publishing target, default "staging"
-   studio.repo.published.staging: staging
-
 -------------------------
 Syncing Staging with Live
 -------------------------
 
-There are times when you need to sync the staging repository with the live repository. When adding the ``staging`` publishing target to an established site, the live repository is not cloned to the staging repository until an item has been published after setting up staging.  There may be some other scenarios, when you might need to sync the staging repository with the live repository.
+There are times when you need to sync the staging publishing target with the live publishing target. When adding the ``staging`` publishing target to an established site, the live repository is not cloned to the staging repository until an item has been published after setting up staging.  There may be some other scenarios, when you might need to sync the staging publishing target with the live publishing target.
 
-To sync the staging target with the live target, simply execute the ``reset-staging`` API.  See :ref:`crafter-studio-api-publish-reset-staging` for more details on the API
+To sync the staging target with the live target, simply call the ``reset-staging`` API.  See :ref:`crafter-studio-api-publish-reset-staging` for more details on the API
 
