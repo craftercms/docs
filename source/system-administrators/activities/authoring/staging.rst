@@ -2,9 +2,9 @@
 
 .. _staging-env:
 
-=========================================
-Configuring Publishing to Staging Preview
-=========================================
+========================================
+Configuring Publishing to Staging Target
+========================================
 
 Crafter CMS supports an intermediate publishing target, named ``staging``, where the site can be fully exercised with regards to system and integration points.  This staging publishing target allows testing of your site.  Once validated in staging, items can be pushed live.  This ``staging`` publishing target precedes ``live``.
 
@@ -76,5 +76,5 @@ Syncing Staging with Live
 
 There are times when you need to sync the staging repository with the live repository. When adding the ``staging`` publishing target to an established site, the live repository is not cloned to the staging repository until an item has been published after setting up staging.  There may be some other scenarios, when you might need to sync the staging repository with the live repository.
 
-To sync the staging repository to the live repository, simply execute the ``reset-staging`` API.  See :ref:`crafter-studio-api-publish-reset-staging` for more details on the API
+To sync the staging target with the live target, simply execute the ``reset-staging`` API.  See :ref:`crafter-studio-api-publish-reset-staging` for more details on the API
 
