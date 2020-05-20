@@ -57,7 +57,7 @@ Now you can execute the same script without any issues.
 Adding dependencies with Grapes
 -------------------------------
 
-If your Groovy classes need to use external dependencies you can use Grapes, however, when the sandbox is enabled
+If your Groovy code need to use external dependencies you can use Grapes, however, when the Groovy sandbox is enabled
 dependencies can only be downloaded during the initial compilation and not during runtime. For this reason it is
 required to add an extra parameter ``initClass=false`` in the annotations to prevent them to be copied to the classes:
 
@@ -70,14 +70,11 @@ required to add an extra parameter ``initClass=false`` in the annotations to pre
 
 |
 
----------------------
-Disabling the sandbox
----------------------
+----------------------------
+Disabling the Groovy Sandbox
+----------------------------
 
-It is possible to completely disable the sandbox for all scripts, this should be used the last option and is provided
-only for backward compatibility with sites that heavily rely on insecure code.
-
-To disable the sandbox for all sites update the server configuration file:
+It is possible to completely disable the Groovy sandbox for all scripts. To disable the sandbox for all sites update the server configuration file:
 
 .. code-block:: none
   :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
