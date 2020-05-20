@@ -13,12 +13,11 @@ Here are the available plugin types:
 
 * Blueprints
 * Studio Plugins
-
-Crafter CMS currently has a `marketplace <https://marketplace.craftercms.org>`__ for users to submit their plugins for others to use or to find plugins that others have created. The Crafter Marketplace currently only supports the blueprint plugin type.  See :ref:`marketplace` for more information.
+* Engine Plugins
 
 **Blueprints**
 
-Blueprints provide an initial structure for a site.  The following contains details on how to create a blueprint that you can submit to the Crafter Marketplace:
+Blueprints provide an initial set of styles, pages, behaviours, content types and more.
 
 .. toctree::
    :maxdepth: 1
@@ -28,7 +27,7 @@ Blueprints provide an initial structure for a site.  The following contains deta
 
 **Studio Plugins**
 
-Studio plugins allows users to either replace a piece in Studio or to work in conjunction with Studio.
+Studio plugins allow users to either replace, extend or even create stand alone experiences to serve a particular use case or set of use cases.
 
 .. toctree::
    :maxdepth: 1
@@ -36,3 +35,6 @@ Studio plugins allows users to either replace a piece in Studio or to work in co
 
    studio-plugins
 
+**Engine Plugins**
+
+Engine plugins allow users to extend experiences in delivery.  Engine plugins will be supported in the near future.

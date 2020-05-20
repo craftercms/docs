@@ -8,8 +8,10 @@
 Crafter Studio Plugins
 ======================
 
-Crater Studio plugins allows users to replace a piece in Studio or work in conjunction with Studio.
-It is for the authoring environment and can be a separate app that runs outside of Studio UI, or it can be a piece of widget or a sidebar item added inside the Studio UI.
+Crater Studio plugins allow users to replace, extend or even create stand alone experiences to serve a particular use case or set of use cases.
+Studio plugins extend the authoring environment and can be pieces within Studio UI or have their own devoted page inside Studio, in which case plugin authors have a blank canvas to design their full plugin experience.
+
+Stand alone plugins can make use of Studio UI components using various possible mechanisms described below.
 
 The Crafter Studio API that gets a file for a given plugin, the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile` facilitates extending Studio through plugins.
 
@@ -103,30 +105,25 @@ React is already present in the Studio client runtime. You may access the lib(s)
 |
 
 
-You can use ``JSX``, ``TypeScript`` or any form of transpiling when developing your plugin. In this case, we suggest the following directory structure for your files:
+You can use ``JSX``, ``TypeScript`` or any form of transpiling when developing your plugin. In this case, we suggest the following directory structure for your files:  ``{sandbox}/sources/{pluginSource}`` for the plugin source and ``{sandbox}/config/studio/plugins/{type}/{name}/(pluginBuild)`` for the JavaScript files/folders containing the plugin implementation
 
 .. code-block:: none
 
-   {siteRoot}/
+   {sanbox}/
      config/
        studio/
          plugins/
            {yourPluginType}/     <= Your plugin "type"
              {yourPluginName}/   <= Your plugin name
-               build/
+               {pluginBuild}/
                  main.js         <= Your transpiled main/index plugin entry point
-               src/
-                 components/
-                   SomeComponent.tsx
-                   (...)
-                 index.ts
-                 package.json
-                 yarn.lock
-                 .babelrc
+     sources/
+       {pluginSource}            <= Your plugin source
+
 
 |
 
-Your plugin's build script would then transpile your app and write the output on the ``build`` folder and commit that
+Your plugin's build script would then transpile your app and write the output on the ``pluginBuild`` folder and commit that
 output so Studio can see it. If your plugin size allows, it is preferable to have a single bundled file. If you do
 need multiple files (e.g. more JS files, CSS files, other), you may have them; simply bear in mind that loading them
 into the page would need to be done through the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile` (i.e. it's not a regular web resource loaded
@@ -138,7 +135,7 @@ To load a file, the URL would look like:
 
 For the above example directory structure, the URL for loading a file would look like:
 
-  `/studio/api/2/plugin/file?siteId={siteId}&type={yourPluginType}&name={yourPluginName}&file=build/main.js`
+  `/studio/api/2/plugin/file?siteId={siteId}&type={yourPluginType}&name={yourPluginName}&file={pluginBuild}/main.js`
 
 .. note::
   - In runtime, you may get the current site id by running `CStudioAuthoringContext.site`
