@@ -17,7 +17,7 @@ Here are the available plugin types:
 
 **Blueprints**
 
-Blueprints provide an initial set of styles, pages, behaviours, content types and more.
+Blueprints provide an initial set of styles, pages, behaviors, content types and more.
 
 .. toctree::
    :maxdepth: 1
