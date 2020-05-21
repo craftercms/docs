@@ -32,7 +32,7 @@ Users may want multiple environments setup with different configurations for eac
 Example
 -------
 
-Let's take a look at an example of creating a new environment, called ``mycustomenv`` with the ``environment-config.xml`` file overridden in the new environment:
+Let's take a look at an example of creating a new environment, called ``mycustomenv`` with the ``rte-setup-tinymce5.xml`` file overridden in the new environment:
 
 #. We'll create a folder called ``env`` under ``data/repos/site/mysite/sandbox/config/studio``
 
@@ -54,7 +54,6 @@ Let's take a look at an example of creating a new environment, called ``mycustom
                        data-sources/
                        dependency/
                        env/
-                       environment/
                        form-control-config/
                        mime-type.xml
                        permission-mappings-config.xml
@@ -68,15 +67,16 @@ Let's take a look at an example of creating a new environment, called ``mycustom
       |
 
 #. Inside the ``env`` folder, create a directory called ``mycustomenv``
-#. We will now copy the configuration file for the ``environment-config.xml`` that we want to override in the new environment we are setting up, inside our ``mycustomenv`` folder, following the folder structure under ``config/studio``.  For our example, the ``environment-config.xml`` file is under ``config/studio/environment``:
+#. We will now copy the configuration file for the ``rte-setup-tinymce5.xml`` that we want to override in the new environment we are setting up, inside our ``mycustomenv`` folder, following the folder structure under ``config/studio``.  For our example, the ``rte-setup-tinymce5.xml`` file is under ``config/studio/form-control-config/rte``:
 
       .. code-block:: text
-         :emphasize-lines: 4
+         :emphasize-lines: 5
 
          env/
            mycustomenv/
-             environment/
-               environment-config.xml
+             form-control-config/
+               rte/
+                 rte-setup-tinymce5.xml
 
       |
 
@@ -85,7 +85,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
       .. code-block:: bash
 
          ➜  sandbox git:(master) ✗ git add .
-         ➜  sandbox git:(master) ✗ git commit -m "Add updated environment-config.xml file for mycustomenv"
+         ➜  sandbox git:(master) ✗ git commit -m "Add updated rte-setup-tinymce5.xml file for mycustomenv"
 
       |
 
