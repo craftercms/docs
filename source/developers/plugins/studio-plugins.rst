@@ -21,7 +21,7 @@ Plugin Directory Structure
 
 When using plugins, the JavaScript files and folders location for the plugins uses a convention where the files/folders needs to go in the following location:
 
-* **Plugin** : CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/config/studio/plugins/PLUGIN_TYPE/PLUGIN_NAME/PLUGIN_FILES_FOLDERS
+* **Plugin** : $CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/config/studio/plugins/PLUGIN_TYPE/PLUGIN_NAME/PLUGIN_FILES_FOLDERS
 
 where:
 
@@ -29,7 +29,7 @@ where:
 - **SITE_NAME** : Name of site where the plugin is to be added
 - **PLUGIN_TYPE** : Type of plugin, e.g. control, datasource, sidebar, app, etc.
 - **PLUGIN_NAME** : Name of  plugin
-- **PLUGIN_FILES_FOLDERS** : JavaScript files/folders containing the plugin implementation
+- **PLUGIN_FILES_FOLDERS** : JavaScript and/or plugin build output files/folders containing the plugin implementation
 
 .. note:: When using an out-of-the-box blueprint to create your site, the ``plugins`` folder does not exist under ``CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/config/studio/`` and will need to be created by the user creating the plugins.
 
@@ -105,7 +105,7 @@ React is already present in the Studio client runtime. You may access the lib(s)
 |
 
 
-You can use ``JSX``, ``TypeScript`` or any form of transpiling when developing your plugin. In this case, we suggest the following directory structure for your files:  ``{sandbox}/sources/{pluginSource}`` for the plugin source and ``{sandbox}/config/studio/plugins/{type}/{name}/(pluginBuild)`` for the JavaScript files/folders containing the plugin implementation
+You can use ``JSX``, ``TypeScript`` or any form of transpiling when developing your plugin. In this case, we suggest the following directory structure for your files:  ``{sandbox}/sources/{pluginSource}`` for the plugin source and ``{sandbox}/config/studio/plugins/{type}/{name}/(pluginBuild)`` for the JavaScript and/or plugin build output files/folders containing the plugin implementation
 
 .. code-block:: none
 
