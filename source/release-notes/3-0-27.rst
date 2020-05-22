@@ -1,0 +1,20 @@
+------------------
+Crafter CMS 3.0.27
+------------------
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Enhanced scripts and templates security
+
+  * FreeMarker engine security enhancements with service access limits
+  * Groovy engine security enhancements
+    * Groovy engine service access limits
+    * Groovy engine sandboxing
+
+  |
+
+  *See* :ref:`script-sandbox-configuration` for more information on Groovy Engine sandboxing and :ref:`access-to-services` *for more information on Groovy and Freemarker engine service access limits.*
+
+For a full list of tickets, please visit: `GitHub 3.0.27 Milestone <https://github.com/craftercms/craftercms/milestone/59?closed=1>`_
