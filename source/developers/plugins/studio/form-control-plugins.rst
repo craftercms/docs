@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. index:: Building Form Engine Plugins Controls
+.. index:: Building Form Engine Controls Plugins, Form Control Plugins
 
 .. _building-plugins-controls:
 
