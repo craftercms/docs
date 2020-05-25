@@ -1,10 +1,5 @@
 .. index:: Crafter CMS 3.1.7 Release Notes
 
-.. # define a hard line break for HTML
-.. |br| raw:: html
-
-   <br />
-
 -----------------
 Crafter CMS 3.1.7
 -----------------
@@ -13,27 +8,48 @@ Crafter CMS 3.1.7
 New Features
 ^^^^^^^^^^^^
 
-* Added multi-target configuration support for Engine configuration files|br|
+* Added multi-target configuration support for Engine configuration files |br|
   *See* :ref:`engine-multi-target-configurations` *for more information.*
-* Built-in database security enhancements
-* Enhanced scripts and templates security|br|
-  *See* :ref:`script-sandbox-configuration` and :ref:`access-to-services` *for more information.*
-* Added engine API for site status|br|
-  *See* :ref:`crafter-engine-api-site-context-status` *for more information.*
-* Added support for preview proxy servers|br|
-  *See* :ref:`proxy-configuration` *for more information.*
+* Built-in database security enhancements |br|
+  At startup, when Crafter Studio detects an unsecured database, a secure installation script will be run against the database to secure it.
+* Enhanced scripts and templates security
 
+  * FreeMarker engine security enhancements with service access limits
+  * Groovy engine security enhancements
+    * Groovy engine service access limits
+    * Groovy engine sandboxing
+
+  *See* :ref:`script-sandbox-configuration` *for more information on Groovy Engine sandboxing and* :ref:`access-to-services` *for more information on Groovy and Freemarker Engine service access limits.*
+* Added support for proxy system to proxy GraphQL, Engine, NodeJS or other application delivery system |br|
+  *See* :ref:`proxy-configuration` *for more information.*
+* Added engine API for site status |br|
+  *See* :ref:`crafter-engine-api-site-context-status` *for more information.*
 
 ^^^^^^^
 Updates
 ^^^^^^^
 
-* Upgraded Deployer Spring Boot library to 2.2.6
-* The *environment-config.xml* configuration has been removed and the site URLs moved to Site Configuration |br|
+* The *environment-config.xml* configuration has been removed |br|
+  The following tags from the *environment-config.xml* file has been removed and ``staging`` and ``live`` are now used as defaults for the repository branch name for publishing targets:
+
+  .. code-block:: xml
+     :caption: *The tags below from "environment-config.xml" no longer exist, "staging" and "live" are now used as default publishing targets*
+
+     <open-sidebar />
+     <publishing-targets>
+       <target>
+         <repo-branch-name />
+         <display-label />
+       </target>
+     </publishing-targets>
+
+  |
+
+  The site URLs from the *environment-config.xml* file has been moved to Site Configuration |br|
   *See* :ref:`site-configuration` *for more information.*
 * Updated Engine multi-environment configuration |br|
   *See* :ref:`engine-multi-environment-configurations` *for more information.*
-
+* Upgraded Deployer Spring Boot library to 2.2.6
 
 
 Lot's of other small enhancements and bug fixes :)
