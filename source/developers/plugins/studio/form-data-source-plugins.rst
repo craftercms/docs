@@ -2,7 +2,7 @@
 
 .. index:: Building Form Engine Data Source Plugins
 
-.. _building-plugins-ds:
+.. _building-plugins-form-ds:
 
 ========================================
 Building Form Engine Data Source Plugins

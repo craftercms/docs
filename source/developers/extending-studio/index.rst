@@ -22,5 +22,3 @@ Form Engine Extensions
 
         form-engine-control
         build-a-data-source
-        control-plugins
-        data-source-plugins

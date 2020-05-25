@@ -31,6 +31,7 @@ In depth concepts and guides follow.
       templates
       search-elasticsearch
       cook-books/graphql/index
+      plugins/index
       targeting
       redirect
       testing
