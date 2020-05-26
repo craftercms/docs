@@ -63,15 +63,21 @@ The following example shows how to customize the schema to integrate a service w
       :caption: ``/config/engine/application-context.xml``
       :linenos:
     
-      <!-- Enable placeholders support -->
-      <context:property-placeholder/>
-
-      <!-- Define the service bean -->
-      <bean id="omdbService" init-method="init"
-            class="org.craftercms.movies.omdb.OmdbService">
-        <property name="baseUrl" value="${omdb.baseUrl}"/>
-        <property name="apiKey" value="${omdb.apiKey}"/>
-      </bean>
+	<beans xmlns="http://www.springframework.org/schema/beans"
+	       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	       xmlns:context="http://www.springframework.org/schema/context">
+	
+	      <!-- Enable placeholders support -->
+	      <context:property-placeholder/>
+	
+	      <!-- Define the service bean -->
+	      <bean id="omdbService" init-method="init"
+	            class="org.craftercms.movies.omdb.OmdbService">
+	        <property name="baseUrl" value="${omdb.baseUrl}"/>
+	        <property name="apiKey" value="${omdb.apiKey}"/>
+	      </bean>
+	</beans>
 
 #.  Add the Groovy class for the service:
     
