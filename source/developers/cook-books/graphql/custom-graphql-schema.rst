@@ -82,7 +82,7 @@ The following example shows how to customize the schema to integrate a service w
       package org.craftercms.movies.omdb
 
       // include a third-party library for easily calling the API
-      @Grab('io.github.http-builder-ng:http-builder-ng-core:1.0.4')
+      @Grab(value='io.github.http-builder-ng:http-builder-ng-core:1.0.4', initClass=false)
       import groovyx.net.http.HttpBuilder
 
       class OmdbService {
