@@ -176,6 +176,7 @@ Example:
 
 If you want to learn how to configure the Drag and Drop panel please read the following document: :doc:`../site-administrators/studio/drag-n-drop-configuration`.
 
+
 Rendering components from the target inside the container
 ---------------------------------------------------------
 
@@ -198,7 +199,7 @@ Full example of typical component drop zone
     .. code-block:: html
         :force:
 
-	    <div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" /> >
+	    <div class="span4 mb10" <@studio.componentContainerAttr target="bottomPromos" component=contentModel /> >
 		  <#if contentModel.bottomPromos?? && contentModel.bottomPromos.item??>
 		    <#list contentModel.bottomPromos.item as module>
 		      <@renderComponent component=module />
@@ -230,7 +231,7 @@ Let's take a look at an example using a site created using the Website Editorial
        <header class="major">
          <h2>${contentModel.features_title_t}</h2>
        </header>
-       <div class="features" <@studio.componentContainerAttr target="features_o" objectId=contentModel.objectId/>>
+       <div class="features" <@studio.componentContainerAttr target="features_o" component=contentModel />>
          <#if contentModel.features_o?? && contentModel.features_o.item??>
            <#list contentModel.features_o.item as feature>
              <@renderComponent component=feature />
@@ -243,6 +244,14 @@ Let's take a look at an example using a site created using the Website Editorial
 
 As noted above, the code is simply iterating over the collection of objects (``feature`` component) and calling render component.  The component template is rendering itself.
 
+   .. note::
+      Here are some guidelines to follow when working with drop zones:
+
+      * The drop zone should have no markup inside of it besides the **render** tag e.g. ``<@renderComponent ... />``
+      * The components should have the ``component`` tag out the outermost markup element
+      * Make sure that the markup is well formed, with matching opens and closes
+
+|
 
 Identifying components in the template
 --------------------------------------
@@ -289,7 +298,7 @@ Example
 
 |
 
-.. note:: Remember to have an item selector control in the form definition for each drop zone
+   .. note:: Remember to have an item selector control in the form definition for each drop zone
 
 Let's take a look at an example of enabling in-context editing pencils for embedded components, using the Website Editorial bp, ``feature`` embedded component through the ``<@studio.componentAttr />`` tag.
 
