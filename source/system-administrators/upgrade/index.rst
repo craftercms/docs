@@ -25,7 +25,16 @@ This section details the steps required to upgrade your Crafter CMS install.
 Before Upgrading
 ----------------
 
-Before starting your upgrade, please review the :ref:`release notes<release-notes>` for the version you are upgrading to, which contains specific information on the changes that have been made and how it may affect you when upgrading to that specific version.
+Before starting your upgrade:
+
+#. **Review the** :ref:`release notes<release-notes>` **for the version you are upgrading to**. It contains specific information on the changes that have been made and how it may affect you when upgrading to that specific version.
+
+#. **Backup Crafter CMS** just in case something goes wrong with the upgrade.  When upgrading Crafter CMS installed using a bundle, the upgrade scripts performs an automated backup of Crafter CMS, but it's recommended not to rely on the automated backup, just in case.  See :ref:`backup-and-recovery` for details on how to perform the backup of Crafter CMS
+
+#. **Manually shut down Crafter CMS**   For Crafter CMS installed using a bundle, the upgrade scripts shuts down Crafter CMS as one of the first steps, but it's also recommended not to rely on the automated shutting down just in case.
+
+   * To shutdown Crafter CMS installed using a bundle, run the ``shutdown.sh`` script from the ``{Crafter-CMS-install-directory}/bin`` directory
+   * To shutdown Crafter CMS installed using gradle, run ``./gradlew stop``
 
 --------------------------------------------
 Upgrading Crafter CMS installed using gradle
