@@ -318,7 +318,7 @@ To setup the Studio Arbiter:
       :caption: Example configuration for the Studio Arbiter
 
       # Studio Arbiter configuration
-      export CLUSTER_NAME=studiodb_cluster
+      export CLUSTER_NAME=studio_db_cluster
       export CLUSTER_ADDRESS=192.168.1.100,192.168.1.101
       
    |
