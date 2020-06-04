@@ -139,7 +139,7 @@ Notice the environment variables used in the configuration above.  The next step
    export MARIADB_PORT=${MARIADB_PORT:="3306"}
 
    # -------------------- MariaDB variables ------------------
-   export MARIADB_ROOT_PASSWD=${MARIADB_ROOT_PASSWD:=""}
+   export MARIADB_ROOT_PASSWD=${MARIADB_ROOT_PASSWD:="root"}
    export MARIADB_USER=${MARIADB_USER:="crafter"}
    export MARIADB_PASSWD=${MARIADB_PASSWD:="crafter"}
 

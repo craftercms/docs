@@ -1,9 +1,5 @@
 .. index:: Crafter CMS 3.1.6 Release Notes
 
-.. # define a hard line break for HTML
-.. |br| raw:: html
-
-   <br />
 
 -----------------
 Crafter CMS 3.1.6
