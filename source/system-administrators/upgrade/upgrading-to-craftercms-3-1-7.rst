@@ -11,7 +11,7 @@
 Upgrade Notes for Crafter CMS 3.1.7
 ===================================
 
-After upgrading to Crafter CMS 3.1.7, when using the backup script, the ``crafter`` embedded database user is not backed up and causes an error when starting up Crafter Studio after running the restore script,  To get the authoring install to work, the ``crafter`` embedded database user needs to be manually added to the database after running the restore script. (Instructions on using the backup and restore scripts are available here: :ref:`backup-and-recovery`)
+After upgrading to Crafter CMS 3.1.7, when using the backup script, the ``crafter`` embedded database user is not backed up and causes an error when starting up Crafter Studio after running the restore script.  To get the authoring install to work, the ``crafter`` embedded database user needs to be manually added to the database after running the restore script. (Instructions on using the backup and restore scripts are available here: :ref:`backup-and-recovery`)
 
 After running the restore script, when the authoring install is started, you may see the following error in the tomcat logs:
 
@@ -27,11 +27,11 @@ To get the authoring install working, do the following:
 
 #. Start the database
 #. Login to the database
-#. Add user `crafter`
+#. Add user ``crafter``
 
 After performing the steps above, you may now startup the authoring install.
 
-Let's begin adding the ``crafter`` user after running the restore script.
+Let's begin adding the ``crafter`` user after backing up and running the restore script.
 
 #. The first thing that needs to be done is to start the database.  To start the database, run the following:
 
@@ -96,7 +96,7 @@ Let's begin adding the ``crafter`` user after running the restore script.
 
       |
 
-   The schema name by default is ``crafter``.  Remember to replace <crafter_schema_name> with the actual schema name (MARIADB_SCHEMA) used in your system (if the default value is not used), which can be found in the ``crafter-setenv.sh`` file under the ``CRAFTER_HOME/bin`` folder MARIADB_SCHEMA
+   The schema name by default is ``crafter``.  Remember to replace <crafter_schema_name> with the actual schema name (MARIADB_SCHEMA) used in your system (if the default value is not used), which can be found in the ``crafter-setenv.sh`` file under the ``CRAFTER_HOME/bin`` folder.
 
    Here's the sample run with the schema name ``crafter``:
 
@@ -105,14 +105,14 @@ Let's begin adding the ``crafter`` user after running the restore script.
          MariaDB [(none)]> CREATE USER 'crafter'@'localhost' IDENTIFIED BY 'crafter' ;
          Query OK, 0 rows affected (0.012 sec)
 
-         MariaDB [(none)]>       GRANT ALL PRIVILEGES ON root.* TO 'crafter'@'localhost' WITH GRANT OPTION ;
+         MariaDB [(none)]>       GRANT ALL PRIVILEGES ON crafter.* TO 'crafter'@'localhost' WITH GRANT OPTION ;
          Query OK, 0 rows affected (0.010 sec)
 
          MariaDB [(none)]>
          MariaDB [(none)]>       CREATE USER 'crafter'@'%' IDENTIFIED BY 'crafter' ;
          Query OK, 0 rows affected (0.011 sec)
 
-         MariaDB [(none)]>       GRANT ALL PRIVILEGES ON root.* TO 'crafter'@'%' WITH GRANT OPTION ;
+         MariaDB [(none)]>       GRANT ALL PRIVILEGES ON crafter.* TO 'crafter'@'%' WITH GRANT OPTION ;
          Query OK, 0 rows affected (0.011 sec)
 
       |
