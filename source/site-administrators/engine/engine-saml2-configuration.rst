@@ -89,6 +89,21 @@ SAML2 authentication can be enabled by updating the site configuration to includ
   <security>
      <saml2>
         <enable>true</enable>
+        <reverseProxy>true</reverseProxy>
+        <context>
+          <forwardedProtoHeaderName>X-Forwarded-Proto</forwardedProtoHeaderName>
+          <forwardedHostHeaderName>X-Forwarded-Host</forwardedHostHeaderName>
+          <forwardedPortHeaderName>X-Forwarded-Port</forwardedPortHeaderName>
+          <scheme>https</scheme>
+          <serverName>myproxy</serverName>
+          <serverPort>80</serverPort>
+          <contextPath>/app</contextPath>
+        </context>
+        <profile>
+          <passive>true</passive>
+          <forceAuthN>true</forceAuthN>
+          <includeScoping>false</includeScoping>
+        </profile>
         <attributes>
           <mappings>
             <mapping>
@@ -123,41 +138,68 @@ SAML2 authentication can be enabled by updating the site configuration to includ
 ^^^^^^^^^^^^^^^^^^
 Properties Details
 ^^^^^^^^^^^^^^^^^^
-+-----------------------------------+-------------------------------------------+-------------------------------------+
-|| Property                         || Description                              || Default Value                      |
-+===================================+===========================================+=====================================+
-|``enable``                         |Indicates if SAML2 is enabled or not       |``false``                            |
-+-----------------------------------+-------------------------------------------+-------------------------------------+
-|``attributes.mappings.mapping``    |List of mappings to apply for attributes,  |                                     |
-|                                   |every attribute sent by the IDP will be    |                                     |
-|                                   |compared against this list and will be     |                                     |
-|                                   |available as described in                  |                                     |
-|                                   |:ref:`engine-security-access-attributes`   |                                     |
-+-----------------------------------+-------------------------------------------+-------------------------------------+
-|``role.key``                       |Name of the role attribute sent by the IDP |``Role``                             |
-+-----------------------------------+-------------------------------------------+-------------------------------------+
-|``role.mappings.mapping``          |List of mappings to apply for roles, every |                                     |
-|                                   |role sent by the IDP will be compared      |                                     |
-|                                   |against this list                          |                                     |
-+-----------------------------------+-------------------------------------------+-------------------------------------+
-|``keystore.defaultCredential``     |The name of the default credential to use  |                                     |
-+-----------------------------------+-------------------------------------------+-------------------------------------+
-|``keystore.path``                  |The path of the keystore file in the repo  |``/config/engine/saml2/keystore.jks``|
-+-----------------------------------+-------------------------------------------+-------------------------------------+
-|``keystore.password``              |The password of the keystore file          |                                     |
-+-----------------------------------+-------------------------------------------+-------------------------------------+
-|``keystore.credentials.credential``|List of credentials in the keystore        |                                     |
-+-----------------------------------+-------------------------------------------+-------------------------------------+
-|``identityProviderName``           |The name of the identity provider to use   |                                     |
-+-----------------------------------+-------------------------------------------+-------------------------------------+
-|``identityProviderDescriptor``     |The path of the identity provider metadata |``/config/engine/saml2/idp.xml``     |
-|                                   |XML descriptor in the repo                 |                                     |
-+-----------------------------------+-------------------------------------------+-------------------------------------+
-|``serviceProviderName``            |The name of the service provider to use    |                                     |
-+-----------------------------------+-------------------------------------------+-------------------------------------+
-|``serviceProviderDescriptor``      |The path of the service provider metadata  |``/config/engine/saml2/sp.xml``      |
-|                                   |XML descriptor in the repo                 |                                     |
-+-----------------------------------+-------------------------------------------+-------------------------------------+
++------------------------------------+-------------------------------------------+-------------------------------------+
+|| Property                          || Description                              || Default Value                      |
++====================================+===========================================+=====================================+
+|``enable``                          |Indicates if SAML2 is enabled or not       |``false``                            |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``reverseProxy``                    |Indicates if the site is running behind a  |``false``                            |
+|                                    |reverse proxy and the request to the IdP   |                                     |
+|                                    |should use the ``context.*`` properties    |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``context.forwardedProtoHeaderName``|The name of the header for the protocol    |``X-Forwarded-Proto``                |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``context.forwardedHostHeaderName`` |The name of the header for the host        |``X-Forwarded-Host``                 |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``context.forwardedPortHeaderName`` |The name of the header for the port        |``X-Forwarded-Port``                 |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``context.scheme``                  |The protocol to use ``http`` or ``https``  |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``context.serverName``              |The name of the server                     |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``context.serverPort``              |The port of the server                     |``0``                                |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``context.contextPath``             |The context path of the application        |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``profile.passive``                 |Sets the value for ``IsPassive`` in the    |``false``                            |
+|                                    |SAML request                               |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``profile.forceAuthN``              |Sets the value for ``ForceAuthn`` in the   |``false``                            |
+|                                    |SAML request                               |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``profile.includeScoping``          |Indicates if scoping element should be     |``true``                             |
+|                                    |included in the requests sent to IdP       |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``attributes.mappings.mapping``     |List of mappings to apply for attributes,  |                                     |
+|                                    |every attribute sent by the IDP will be    |                                     |
+|                                    |compared against this list and will be     |                                     |
+|                                    |available as described in                  |                                     |
+|                                    |:ref:`engine-security-access-attributes`   |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``role.key``                        |Name of the role attribute sent by the IDP |``Role``                             |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``role.mappings.mapping``           |List of mappings to apply for roles, every |                                     |
+|                                    |role sent by the IDP will be compared      |                                     |
+|                                    |against this list                          |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``keystore.defaultCredential``      |The name of the default credential to use  |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``keystore.path``                   |The path of the keystore file in the repo  |``/config/engine/saml2/keystore.jks``|
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``keystore.password``               |The password of the keystore file          |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``keystore.credentials.credential`` |List of credentials in the keystore        |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``identityProviderName``            |The name of the identity provider to use   |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``identityProviderDescriptor``      |The path of the identity provider metadata |``/config/engine/saml2/idp.xml``     |
+|                                    |XML descriptor in the repo                 |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``serviceProviderName``             |The name of the service provider to use    |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``serviceProviderDescriptor``       |The path of the service provider metadata  |``/config/engine/saml2/sp.xml``      |
+|                                    |XML descriptor in the repo                 |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
 
 .. note:: If your keystore does not support different passwords for each key, then you should use the same value
           provided for ``-storepass`` in ``keystore.password`` and ``keystore.credentials.credential.password``
