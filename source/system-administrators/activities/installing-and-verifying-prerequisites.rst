@@ -128,11 +128,11 @@ Linux Prerequisite
 
    To install the library ``libncurses5``, use the following commands:
 
-   On Debian-based Linux distros: ``sudo apt-get install libncurses5-dev libncursesw5-dev``
+   On Debian-based Linux distros: ``sudo apt install libncurses5``
 
-   On RHEL, CentOS:  ``sudo yum install ncurses-devel``
+   On RHEL, CentOS:  ``sudo yum install ncurses-compat-libs``
 
-   On Fedora 22 and newer version: ``sudo dnf install ncurses-devel``
+   On Fedora 22 and newer version: ``sudo dnf install ncurses-compat-libs``
 
 
 ----------------------------------
