@@ -10,10 +10,10 @@ Templates in Crafter CMS will display the errors in line with content as they en
 Step 1
 ------
 
-Place the following property and value in the file below
+Place the following property and value in the :ref:`server-config.properties <engine-configuration-files>` file
 
 .. code-block:: properties
-    :caption: TOMCAT/shared/classes/crafter/engine/extension/server-config.properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
 	crafter.engine.template.error.displayInView=false
 

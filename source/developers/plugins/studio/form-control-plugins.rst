@@ -37,16 +37,16 @@ Plugin Directory Structure
 
 When using plugins, the JS files location for the plugins uses a convention where the files needs to go in the following location:
 
-* **Controls** : CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/config/studio/plugins/control/CONTROL_NAME/JS_FILE.js
+* **Controls** : CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/config/studio/plugins/control/CONTROL_NAME/JS_FILE.js
 
 where:
 
-- **CRAFTER_INSTALL** : Studio location
+- **CRAFTER_HOME** : Studio location
 - **SITE_NAME** : Name of site where the plugin is to be added
 - **CONTROL_NAME** : Name of form engine control plugin
 - **JS_FILE.js** : JavaScript file containing the control/data source interface implementation
 
-.. note:: When using an out-of-the-box blueprint to create your site, the ``plugins/control`` folder does not exist under ``CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/config/studio/`` and will need to be created by the user creating the plugins.
+.. note:: When using an out-of-the-box blueprint to create your site, the ``plugins/control`` folder does not exist under ``CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/config/studio/`` and will need to be created by the user creating the plugins.
 
 ---------------------------
 Form Engine Control Example
@@ -59,7 +59,7 @@ Form Engine Control Code
 
 The first thing we have to do is to create the folder structure where we will be placing the JS file for our control.  We'll follow the convention listed above in :ref:`plugin-directory-structure`
 
-Under ``CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/config/studio``, create the folder ``plugins``.  Under the ``plugins`` folder, create the folder ``control``.  Under the ``control`` folder, create the folder ``text-input``, which is the name of the control we're building.  We will be placing the JS file implementing the control interface under the ``text-input`` folder.  In the example below, the JS file is ``main.js``
+Under ``CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/config/studio``, create the folder ``plugins``.  Under the ``plugins`` folder, create the folder ``control``.  Under the ``control`` folder, create the folder ``text-input``, which is the name of the control we're building.  We will be placing the JS file implementing the control interface under the ``text-input`` folder.  In the example below, the JS file is ``main.js``
 
 .. image:: /_static/images/form-controls/control-plugin-directory-struct.png
     :width: 75 %

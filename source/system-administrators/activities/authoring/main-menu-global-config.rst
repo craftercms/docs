@@ -15,7 +15,7 @@ Main Menu Global Config
 =======================
 
 Crafter CMS allows the user to edit the system settings for Studio without access to the physical server through ``Global Config`` under the |mainMenu| **Main Menu** in Studio.
-This global configuration file overrides the core configuration of Crafter Studio, ``studio-config.yaml``,  found in your Authoring installation, under ``webapps/studio/WEB-INF/classes/crafter/studio``, and the Studio configuration override file ``studio-config-override.yaml`` under ``shared/classes/crafter/studio/extension`` in your Authoring installation (for more information on this file, see :ref:`studio-config-override`.
+This global configuration file overrides the core configuration of Crafter Studio, ``studio-config.yaml``,  found in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio``, and the Studio configuration override file :ref:`studio-config-override.yaml <studio-configuration-files>` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` in your Authoring installation (for more information on this file, see :ref:`studio-config-override`.
 
 Changes made to this file will spread to all nodes in a Studio cluster automatically. Please note that not all changes to this file can/will take effect without a restart, so expect to have to **restart Studio for most changes to take effect**. If in a cluster, you'll need a rolling restart for all nodes to pick up the changes.
 
@@ -36,7 +36,7 @@ This section allows the user to setup a mail client by configuring the SMTP serv
 
 .. code-block:: yaml
    :linenos:
-   :caption: *crafter_install_dir/data/repos/global/configuration/studio-config-override.yaml*
+   :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
 
    ##################################################
    ##        SMTP Configuration (Email)            ##
@@ -72,7 +72,7 @@ This section allows the user to set the Studio session timeout, the amount of ti
 
 .. code-block:: yaml
    :linenos:
-   :caption: *crafter_install_dir/data/repos/global/configuration/studio-config-override.yaml*
+   :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
 
    # HTTP Session timeout for studio (value is in minutes).
    # studio.security.sessionTimeout: 60
@@ -87,7 +87,7 @@ The following section of Studio's global config allows you to define security pr
 
 .. code-block:: yaml
    :linenos:
-   :caption: *crafter_install_dir/data/repos/global/configuration/studio-config-override.yaml*
+   :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
 
    # Defines security provider for accessing repository. Possible values
    # - db (users are stored in database)
@@ -106,7 +106,7 @@ The following section of Studio's global config allows you to setup password req
 
 .. code-block:: yaml
    :linenos:
-   :caption: *crafter_install_dir/data/repos/global/configuration/studio-config-override.yaml*
+   :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
 
    # Password requirements validation regular expression
    # The supported capture group keys are:
@@ -133,7 +133,7 @@ The following section of Studio's global config allows you to configure an authe
 
 .. code-block:: yaml
    :linenos:
-   :caption: *crafter_install_dir/data/repos/global/configuration/studio-config-override.yaml*
+   :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
 
    # Studio authentication chain configuration
    # studio.authentication.chain:
@@ -205,7 +205,7 @@ The following section of Studio's global config allows you to setup Cross-Origin
 
 .. code-block:: yaml
    :linenos:
-   :caption: *crafter_install_dir/data/repos/global/configuration/studio-config-override.yaml*
+   :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
 
    ################################################################
    ##                             CORS                           ##
@@ -236,7 +236,7 @@ The following section of Studio's global config allows you to setup Studio clust
 
 .. code-block:: yaml
    :linenos:
-   :caption: *crafter_install_dir/data/repos/global/configuration/studio-config-override.yaml*
+   :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
 
    ##################################################
    ##                 Clustering                   ##
@@ -297,7 +297,7 @@ The following section of Studio's global config allows you to setup a prologues 
 
 .. code-block:: yaml
    :linenos:
-   :caption: *crafter_install_dir/data/repos/global/configuration/studio-config-override.yaml*
+   :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
 
    ##################################################
    ##              Content Repository              ##
@@ -315,7 +315,7 @@ The following section of Studio's global config allows you to setup serverless d
 
 .. code-block:: yaml
    :linenos:
-   :caption: *crafter_install_dir/data/repos/global/configuration/studio-config-override.yaml*
+   :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
 
    ##########################################################
    ##                 Serverless Delivery                  ##

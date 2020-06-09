@@ -1,6 +1,5 @@
 .. index:: Crafter CMS 3.1.6 Release Notes
 
-
 -----------------
 Crafter CMS 3.1.6
 -----------------

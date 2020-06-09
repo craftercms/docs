@@ -23,11 +23,11 @@ Sample
 ------
 
 .. code-block:: xml
-    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/code-editor-config.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/code-editor-config.xml*
     :linenos:
 
     <!--
-      ~ Copyright (C) 2007-2019 Crafter Software Corporation. All Rights Reserved.
+      ~ Copyright (C) 2007-2020 Crafter Software Corporation. All Rights Reserved.
       ~
       ~ This program is free software: you can redistribute it and/or modify
       ~ it under the terms of the GNU General Public License as published by

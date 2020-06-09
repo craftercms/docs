@@ -21,7 +21,7 @@ Sample
 ------
 
 .. code-block:: xml
-    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/box/box.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/box/box.xml*
     :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>

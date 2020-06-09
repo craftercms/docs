@@ -21,7 +21,7 @@ This section describes how to configure Crafter Studio for clustering with an ex
     :width: 100%
     :align: center
 
-In a Crafter Studio cluster, content is automatically synced to all the nodes registered.  This means that any node in the cluster will contain the same content as all the other nodes.  The nodes communicate with each other using a Git URL format configured in the ``studio-config-override.yaml`` file.  It is therefore a must to configure every node to announce itself to the cluster using the configuration files mentioned below to help the other nodes reach it and pull the content.
+In a Crafter Studio cluster, content is automatically synced to all the nodes registered.  This means that any node in the cluster will contain the same content as all the other nodes.  The nodes communicate with each other using a Git URL format configured in the :ref:`studio-config-override.yaml <studio-configuration-files>` file.  It is therefore a must to configure every node to announce itself to the cluster using the configuration files mentioned below to help the other nodes reach it and pull the content.
 
 Please note that when a new node announces itself to the cluster, the new node will need some time to sync with the existing nodes.  Please allow time for all the nodes to sync, this can take a while for very large sites.
 
@@ -38,7 +38,7 @@ Before we begin configuring Studio for clustering, the following must be setup:
 Clustering Setup
 ----------------
 
-To setup your Crafter Studio to be part of a cluster, open the ``studio-config-overrides.yaml`` file (found in your Authoring installation, under ``bin/apache-tomcat/shared/classes/crafter/studio/extension``)
+To setup your Crafter Studio to be part of a cluster, open the :ref:`studio-config-override.yaml <studio-configuration-files>` file (found in your Authoring installation, under ``bin/apache-tomcat/shared/classes/crafter/studio/extension``)
 
 Below is a sample configuration containing the parameters used to setup a server with Crafter Studio installed for clustering with the MariaDB database on 192.168.1.1 and the Crafter Studio being added to the cluster on 192.168.1.18:
 

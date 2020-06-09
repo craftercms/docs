@@ -107,10 +107,11 @@ Step 2: Configure the Delivery for Serverless Mode
    - ``crafter.engine.s3.accessKey``
    - ``crafter.engine.s3.secretKey``
 
-   An example of how the ``server-config.properties`` would look with configuration to read from an S3 bucket per site
+   An example of how the :ref:`server-config.properties <engine-configuration-files>` would look with configuration to read from an S3 bucket per site
    (which is the most common use case), is the following (values in ``X`` are not displayed since they're sensitive):
 
    .. code-block:: properties
+      :caption: *DELIVERY_INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
       :force:
 
       # Content root folder when using S3 store. Format is s3://<BUCKET_NAME>/<SITES_ROOT>/{siteName}
@@ -185,7 +186,7 @@ authoring node. When there's multiple authoring nodes (a cluster), then you'll n
 from a load balanced SSH/HTTPS URL fronting the Studio Git repos.
 
 In both cases you still need to configure Studio to call the Deployer to create the serverless targets on site creation. 
-You can find this configuration under ``shared/classes/crafter/studio/extension/studio-config-override.yaml``. The 
+You can find this configuration under :ref:`CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml <studio-configuration-files>`. The
 properties are well documented in the file so they won't be explained here, but there are still some important things to 
 notice:
 

@@ -218,7 +218,7 @@ The ``craftercms-plugin.yaml`` file contains information for use in Crafter CMS.
 
 where the following fields are required:
 
-- ``descriptorVersion`` - The version of the format for this file (You can copy the value from the ``craftercms-plugin.yaml`` in one of the default blueprints under ``CRAFTER_INSTALL/data/repos/global/blueprints/`` if using a copy from the default)
+- ``descriptorVersion`` - The version of the format for this file (You can copy the value from the ``craftercms-plugin.yaml`` in one of the default blueprints under ``CRAFTER_HOME/data/repos/global/blueprints/`` if using a copy from the default)
 - ``plugin.type`` - ``blueprint`` for our purposes
 - ``plugin.id`` - a unique Id that is meaningful/recognizable to people who will be using the blueprint/plugin
 - ``plugin.name`` - blueprint/plugin name (For our blueprint example, it is the blueprint name shown in the **Choose Blueprint** screen of **Create Site**)

@@ -23,10 +23,10 @@ Requirements
 Configure
 ---------
 
-To configure Studio SAML2, in your Authoring installation, go to ``bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to ``studio-config-override.yaml`` (of course, make any appropriate configuration changes according to your system):
+To configure Studio SAML2, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: yaml
-   :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
    :linenos:
 
    ###############################################################
@@ -76,10 +76,10 @@ where
 - ``studio.security.saml.keystore.keyPassword``: The password of the key
 - ``studio.security.saml.keystore.alias``: Keystore entry identifier
 
-The classpath is located in your Authoring installation, under ``bin/apache-tomcat/shared/classes``.  As shown in the example above, the identity provider metadata XML descriptor is located in your Authoring installation under ``bin/apache-tomcat/shared/classes/crafter/studio/extension/saml`` folder.
+The classpath is located in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes``.  As shown in the example above, the identity provider metadata XML descriptor is located in your Authoring installation under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/saml`` folder.
 
 .. code-block:: yaml
-   :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
    # IDP Metadata location (classpath resource)
    studio.security.saml.metadata.location.idp: "/crafter/studio/extension/saml/idp-metadata.xml"

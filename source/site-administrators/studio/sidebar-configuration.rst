@@ -21,7 +21,7 @@ Sample
 ******
 
 .. code-block:: xml
-    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/context-nav/sidebar.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/context-nav/sidebar.xml*
     :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>

@@ -156,7 +156,7 @@ Creating an RTE Setup
 The RTE's configuration file looks like this:
 
 .. code-block:: xml
-    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/form-control-config/rte/rte-setup-tinymce5.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-setup-tinymce5.xml*
     :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>

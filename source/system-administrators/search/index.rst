@@ -34,7 +34,7 @@ Crafter Search Configuration
 
 All Crafter Search configurations are managed using a simple properties file:
 
-  ``TOMCAT/shared/classes/crafter/search/extension/server-config.properties``
+  ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/search/extension/server-config.properties``
 
 ^^^^^^^^^^^^^^^^^^
 General Properties
