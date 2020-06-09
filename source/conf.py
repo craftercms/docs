@@ -415,6 +415,12 @@ rst_epilog = """
                       :alt: Enterprise only feature
                       :class: ee-only-badge
                       :target: https://craftersoftware.com
+
+.. # define a hard line break for HTML
+.. |br| raw:: html
+
+   <br />
+
 """
 
 # Javadoc home and version

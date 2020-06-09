@@ -27,7 +27,7 @@ Sample
 Here is a sample tools configuration file.
 
 .. code-block:: xml
-    :caption: SITENAME/config/studio/administration/tools.xml
+    :caption: CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/administration/tools.xml
     :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>

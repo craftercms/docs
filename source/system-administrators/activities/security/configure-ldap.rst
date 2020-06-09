@@ -6,14 +6,14 @@
 Configure LDAP Authentication
 =============================
 
-To configure LDAP authentication, in your Authoring installation, go to ``shared/classes/crafter/studio/extension`` and add the
-following lines to the ``studio-config-override.yaml`` file.
+To configure LDAP authentication, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the
+following lines to the :ref:`studio-config-override.yaml <studio-configuration-files>` file.
 
 .. note:: The values for the parameters listed below are just examples.  Remember to make any appropriate configuration changes according to your directory service in use.
 
 .. code-block:: properties
     :linenos:
-    :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
     # Studio authentication chain configuration
     studio.authentication.chain:

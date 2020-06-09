@@ -78,7 +78,7 @@ Step 2: Configure tomcat to use the keystore file
 The next step is to configure SSL/TLS Connector in the authoring/delivery tomcat file by uncommenting/adding the following:
 
 .. code-block:: xml
-    :caption: CRAFTER_INSTALL/bin/apache-tomcat/conf/server.xml
+    :caption: CRAFTER_HOME/bin/apache-tomcat/conf/server.xml
     :linenos:
 
     <Connector port="8443"

@@ -91,6 +91,7 @@ For more information on staging, see :ref:`staging-env`
 In your Studio, click on |siteConfig| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 buckets for the preview, staging and live.
 
    .. code-block:: xml
+      :caption: *CRAFTER_HOME/data/repos/sites/sandbox/SITENAME/sandbox/config/studio/blob-stores-config.xml*
       :linenos:
       :emphasize-lines: 5,9,14,19,24,25,27
 

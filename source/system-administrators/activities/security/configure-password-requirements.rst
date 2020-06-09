@@ -13,7 +13,7 @@
 Configure Studio Password Requirements
 ======================================
 
-Password requirements validation allows the admin to setup rules that ensures users create passwords based on an organizations password security policy.
+Password requirements validation allows the admin to setup rules that ensures users create passwords based on an organization's password security policy.
 
 Crafter Studio by default requires passwords to meet the following validation regular expression:
 
@@ -40,7 +40,7 @@ To configure the password validation regular expression, click on |mainMenu| **M
 
 .. code-block:: yaml
    :linenos:
-   :caption: *crafter_install_dir/data/repos/global/configuration/studio-config-override.yaml*
+   :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
 
    # Password requirements validation regular expression
    # The supported capture group keys are:
@@ -73,7 +73,7 @@ Here's an example where the validation regex requires at least two numbers, wher
 
 .. code-block:: yaml
    :linenos:
-   :caption: *crafter_install_dir/data/repos/global/configuration/studio-config-override.yaml*
+   :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
 
    # studio.security.passwordRequirements.validationRegex: ^(?=(?<MustHaveAtLeastTwoNumbers>.*[0-9].*[0-9]))(?=(?<hasLowercase>.*[a-z]))(?=(?<hasUppercase>.*[A-Z]))(?=(?<hasSpecialChars>.*[~|!`,;\/@#$%^&+=]))(?<minLength>.{8,})$
 

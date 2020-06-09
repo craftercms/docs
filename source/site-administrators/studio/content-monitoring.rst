@@ -64,7 +64,7 @@ Content monitoring can be configured through Crafter Studio.  Go to the **Sideba
 
 The file can also be located in the following path:
 
-  ``/config/studio/site-config.xml``
+  ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/site-config.xml``
 
 .. code-block:: xml
   :caption: Example Content Monitor Configuration
@@ -119,7 +119,7 @@ on |siteConfig| > **Configuration** > **Notification Configuration**
 
 The file can also be located in the following path:
 
-  ``/config/studio/workflow/notification-config.xml``
+  ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/workflow/notification-config.xml``
 
 .. code-block:: xml
   :caption: Example Notification Template for Content Monitoring

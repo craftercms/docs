@@ -20,7 +20,7 @@ Sample
 ------
 
 .. code-block:: xml
-    :caption: /cstudio/config/sites/SITENAME/role-mappings.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/sandbox/SITENAME/sandbox/config/studio/role-mappings-config.xml*
     :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>

@@ -151,7 +151,7 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 +-------------------------+----------------------------------------------------------------------+
 || **Script**             || ``deployer.sh``                                                     |
 +-------------------------+----------------------------------------------------------------------+
-|| **Description**        || Script located in *$CRAFTER_HOME/crafter-deployer* which will       |
+|| **Description**        || Script located in *$CRAFTER_HOME/bin/crafter-deployer* which will   |
 ||                        || start,stop Crafter Deployer for the *Authoring/Delivery* environment|
 +-------------------------+----------------------------------------------------------------------+
 || **Synopsis**           || ``deployer.sh start|stop|debug|help``                               |
@@ -178,7 +178,7 @@ Here are the location environment variables used by ``crafter.sh``:
 +==========================+=====================================================================+
 || CRAFTER_HOME            || Crafter CMS *Authoring/Delivery* path                              |
 ||                         +---------------------------------------------------------------------+
-||                         || {Crafter-CMS-install-directory}/crafter-{env}/bin                  |
+||                         || {Crafter-CMS-install-directory}/crafter-{env}/                     |
 +--------------------------+---------------------------------------------------------------------+
 || CRAFTER_LOGS_DIR        || Crafter CMS logs file path                                         |
 ||                         +---------------------------------------------------------------------+
@@ -342,11 +342,11 @@ Here are the environment variables used for Tomcat in ``crafter.sh``:
 +==========================+=====================================================================+
 || CATALINA_HOME           || Apache Tomcat files path                                           |
 ||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_HOME/apache-tomcat                                        |
+||                         || $CRAFTER_HOME/bin/apache-tomcat                                    |
 +--------------------------+---------------------------------------------------------------------+
 || CATALINA_PID            || Tomcat process id file save path                                   |
 ||                         +---------------------------------------------------------------------+
-||                         || $CATALINA_HOME/tomcat.pid                                          |
+||                         || $CATALINA_HOME/bin/tomcat.pid                                      |
 +--------------------------+---------------------------------------------------------------------+
 || CATALINA_LOGS_DIR       || Tomcat file logs path                                              |
 ||                         +---------------------------------------------------------------------+
@@ -427,7 +427,7 @@ Here are the environment variables used for the Deployer in ``crafter.sh``:
 +==========================+=====================================================================+
 || DEPLOYER_HOME           || Crafter Deployer jar files path                                    |
 ||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_HOME/crafter-deployer                                     |
+||                         || $CRAFTER_HOME/bin/crafter-deployer                                 |
 +--------------------------+---------------------------------------------------------------------+
 || DEPLOYER_DATA_DIR       || Deployer data files directory                                      |
 ||                         +---------------------------------------------------------------------+

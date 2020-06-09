@@ -19,10 +19,10 @@ Assume we have a website in Crafter Studio named ``editorial``, to be deployed o
 Configure the Default Name
 --------------------------
 
-The default name, as shown below, needs to be configured with the name of the site to be deployed (site name is ``editorial`` for our example), by adding the following lines
+The default name, as shown below, needs to be configured with the name of the site to be deployed (site name is ``editorial`` for our example), by adding the following lines in the :ref:`server-config.properties <engine-configuration-files>` file:
 
 .. code-block:: properties
-  :caption: {delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties
+  :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
       # The default site name, when not in preview or multi-tenant modes
       crafter.engine.site.default.name=editorial
@@ -33,10 +33,10 @@ The default name, as shown below, needs to be configured with the name of the si
 Change Simple Multi-Tenancy to Single-Tenant
 --------------------------------------------
 
-As mentioned above, Crafter Engine is setup for multi-tenancy by default.  To change it to single tenant, comment out the import line in your ``services-context.xml`` and ``rendering-context.xml`` file like so:
+As mentioned above, Crafter Engine is setup for multi-tenancy by default.  To change it to single tenant, comment out the import line in your :ref:`Crafter Engine configuration files <engine-configuration-files>` ``services-context.xml`` and ``rendering-context.xml`` file like so:
 
 .. code-block:: xml
-    :caption: {delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/services-context.xml
+    :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/services-context.xml*
 
         <?xml version="1.0" encoding="UTF-8"?>
         <beans xmlns="http://www.springframework.org/schema/beans"
@@ -51,7 +51,7 @@ As mentioned above, Crafter Engine is setup for multi-tenancy by default.  To ch
 |
 
 .. code-block:: xml
-    :caption: {delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/rendering-context.xml
+    :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/rendering-context.xml*
 
         <?xml version="1.0" encoding="UTF-8"?>
         <beans xmlns="http://www.springframework.org/schema/beans"

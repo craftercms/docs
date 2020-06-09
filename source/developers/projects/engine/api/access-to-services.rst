@@ -16,7 +16,7 @@ Crafter CMS Services
 --------------------
 
 If your site includes a custom application context with services, you can make them available by adding them to the
-comma-separated list in the configuration file:
+comma-separated list in the :ref:`server-config.properties <engine-configuration-files>` configuration file:
 
 .. code-block:: none
   :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
@@ -36,7 +36,7 @@ System Services
 |
 
 System objects like ``servletContext`` cannot be exposed by adding them to a list, instead you will need to change
-the following configuration:
+the following configuration in the :ref:`server-config.properties <engine-configuration-files>` file:
 
 .. code-block:: none
   :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``

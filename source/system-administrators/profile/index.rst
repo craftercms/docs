@@ -17,7 +17,7 @@ profiles you can follow the :ref:`profile-admin-console` guides.
 
 All configuration for Crafter Profile is managed using a properties file:
 
-  ``$TOMCAT_HOME/shared/classes/crafter/profile/extension/server-config.properties``
+  ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/profile/extension/server-config.properties``
 
 ---------------------
 MongoDB Configuration

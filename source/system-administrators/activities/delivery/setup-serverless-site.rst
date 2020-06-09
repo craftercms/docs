@@ -209,10 +209,11 @@ Step 3: Configure the Delivery Crafter Engine for Serverless Mode
    - ``crafter.engine.s3.accessKey``
    - ``crafter.engine.s3.secretKey``
 
-   An example of how the ``server-config.properties`` would look with these properties configured (values in
+   An example of how the :ref:`server-config.properties <engine-configuration-files>` would look with these properties configured (values in
    ``*`` are not displayed since they're sensitive):
 
    .. code-block:: properties
+      :caption: *DELIVERY_INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
       # Content root folder when using S3 store. Format is s3://<BUCKET_NAME>/<SITES_ROOT>/{siteName}
       crafter.engine.site.default.rootFolder.path=s3://craftercms-sites/{siteName}

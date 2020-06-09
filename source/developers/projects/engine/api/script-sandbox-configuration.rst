@@ -40,7 +40,7 @@ To use a custom blacklist follow these steps:
     ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/groovy/blacklist``
     
 #.  Remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
-#.  Update the configuration to load the custom blacklist:
+#.  Update the :ref:`server-config.properties <engine-configuration-files>` configuration file to load the custom blacklist:
     
     .. code-block:: none
       :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
@@ -74,10 +74,10 @@ required to add an extra parameter ``initClass=false`` in the annotations to pre
 Disabling the Groovy Sandbox
 ----------------------------
 
-It is possible to completely disable the Groovy sandbox for all scripts. To disable the sandbox for all sites update the server configuration file:
+It is possible to completely disable the Groovy sandbox for all scripts. To disable the sandbox for all sites update the server configuration file :ref:`server-config.properties <engine-configuration-files>`:
 
 .. code-block:: none
-  :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
+  :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
   # Disable the script sandbox for all sites
   crafter.engine.groovy.sandbox.enable=false
