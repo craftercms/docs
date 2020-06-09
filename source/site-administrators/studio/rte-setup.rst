@@ -480,119 +480,119 @@ Creating an RTE Setup
 The RTE's configuration file looks like this:
 
 .. code-block:: xml
-    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/form-control-config/rte/rte-setup.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-setup.xml*
     :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!--
-    	This file configures Studio's Rich Text Editor (RTE), and it supports several configuration profiles, where the
-    	content model selects which profile to use for which RTE field in the forms.
+      This file configures Studio's Rich Text Editor (RTE), and it supports several configuration profiles, where the
+      content model selects which profile to use for which RTE field in the forms.
     -->
     <config>
-        <setup>
-            <id>generic</id> <!-- This starts a profile configuration -->
-            <rteStylesheets> <!-- This informs the RTE to use the CSS files -->
-                <link>
-                    <loadFromPreview>true</loadFromPreview>
-                    <url>/static-assets/css/main.css</url>
-                </link>
+      <setup>
+        <id>generic</id> <!-- This starts a profile configuration -->
+          <rteStylesheets> <!-- This informs the RTE to use the CSS files -->
+            <link>
+              <loadFromPreview>true</loadFromPreview>
+              <url>/static-assets/css/main.css</url>
+            </link>
 
-                <link>
-                    <appliesToChannel>iphonev,iphoneh</appliesToChannel>
-                    <loadFromPreview>true</loadFromPreview>
-                    <url>/static-assets/mobile/css/iphone.css</url>
-                </link>
-                <link>
-                    <appliesToChannel>iphonev,iphoneh</appliesToChannel>
-                    <loadFromPreview>true</loadFromPreview>
-                    <url>/static-assets/mobile/css/libs/jquery.mobile-1.0.min.css</url>
-                </link>
-            </rteStylesheets>
+            <link>
+              <appliesToChannel>iphonev,iphoneh</appliesToChannel>
+              <loadFromPreview>true</loadFromPreview>
+              <url>/static-assets/mobile/css/iphone.css</url>
+            </link>
+            <link>
+              <appliesToChannel>iphonev,iphoneh</appliesToChannel>
+              <loadFromPreview>true</loadFromPreview>
+              <url>/static-assets/mobile/css/libs/jquery.mobile-1.0.min.css</url>
+            </link>
+          </rteStylesheets>
 
-            <rteStyleOverride>
-                body { background: none; background-color: white; padding: 10px; }
-                .layoutColumn { border: 1px solid gray; float: left; width: 50%}
-                .layoutColumn3 { border: 1px solid gray; float: left; width: 33.33%}
-                .layoutColumn4 { border: 1px solid gray; float: left; width: 25%}
+          <rteStyleOverride>
+            body { background: none; background-color: white; padding: 10px; }
+            .layoutColumn { border: 1px solid gray; float: left; width: 50%}
+            .layoutColumn3 { border: 1px solid gray; float: left; width: 33.33%}
+            .layoutColumn4 { border: 1px solid gray; float: left; width: 25%}
 
-                h1 {
-                color:rgb(61, 68, 73);
-                font-family:'Roboto Slab';
-                font-size:44px;
-                font-weight:bold;
-                }
+            h1 {
+            color:rgb(61, 68, 73);
+            font-family:'Roboto Slab';
+            font-size:44px;
+            font-weight:bold;
+            }
 
-                h3 {
-                color:rgb(61, 68, 73);
-                font-family:'Roboto Slab';
-                font-size:18px;
-                }
+            h3 {
+            color:rgb(61, 68, 73);
+            font-family:'Roboto Slab';
+            font-size:18px;
+            }
 
-                p {
-                font-size:14px;
-                }
+            p {
+            font-size:14px;
+            }
 
-            </rteStyleOverride>
+          </rteStyleOverride>
 
-            <toolbarItems1>
-                formatselect,|,bold,italic,underline,strikethrough,|,sub,sup,charmap,|,outdent,indent,blockquote,|,justifyleft,justifycenter,justifyright,justifyfull,|,bullist,numlist,|,managedImage,link,unlink,anchor,|,edithtml,|,undo,redo
-        </toolbarItems1>
-        <toolbarItems2></toolbarItems2>
-        <toolbarItems3></toolbarItems3>
-        <toolbarItems4></toolbarItems4>
+          <toolbarItems1>
+            formatselect,|,bold,italic,underline,strikethrough,|,sub,sup,charmap,|,outdent,indent,blockquote,|,justifyleft,justifycenter,justifyright,justifyfull,|,bullist,numlist,|,managedImage,link,unlink,anchor,|,edithtml,|,undo,redo
+          </toolbarItems1>
+          <toolbarItems2></toolbarItems2>
+          <toolbarItems3></toolbarItems3>
+          <toolbarItems4></toolbarItems4>
 
-            <rteLinkStyles> <!-- configures HTTP link styles within the RTE (double click a link in the RTE and select the
+          <rteLinkStyles> <!-- configures HTTP link styles within the RTE (double click a link in the RTE and select the
 						`Class` field. -->
-                <style>
-                    <!-- first row is the title -->
-                    <name>Link Styles</name>
-                    <value>Link Styles</value>
-                </style>
-                <style>
-                    <name>Standard</name>
-                    <value>standard</value>
-                </style>
-                <style>
-                    <name>Single</name>
-                    <value>single</value>
-                </style>
-                <style>
-                    <name>Hidden</name>
-                    <value>hidden</value>
-                </style>
-                <style>
-                    <name>Title link</name>
-                    <value>titleLink</value>
-                </style>
-                <style>
-                    <name>Button</name>
-                    <value>mediumButton</value>
-                </style>
-            </rteLinkStyles>
+            <style>
+              <!-- first row is the title -->
+              <name>Link Styles</name>
+              <value>Link Styles</value>
+            </style>
+            <style>
+              <name>Standard</name>
+              <value>standard</value>
+            </style>
+            <style>
+              <name>Single</name>
+              <value>single</value>
+            </style>
+            <style>
+              <name>Hidden</name>
+              <value>hidden</value>
+            </style>
+            <style>
+              <name>Title link</name>
+              <value>titleLink</value>
+            </style>
+            <style>
+              <name>Button</name>
+              <value>mediumButton</value>
+            </style>
+          </rteLinkStyles>
 
-            <!-- Widgets: These are Crafter components that can be dragged and dropped in the RTE -->
-            <rteWidgets>
-                <!--
-                <widget>
-                    <name />
-                    <description />
-                    <contentIdField />
-                    <contentIdType />
-                    <contentPath />
-                    <contentType />
-                    <includeJs />
-                    <includeCss />
-                </widget>
-                -->
-            </rteWidgets>
+          <!-- Widgets: These are Crafter components that can be dragged and dropped in the RTE -->
+          <rteWidgets>
+            <!--
+            <widget>
+              <name />
+              <description />
+              <contentIdField />
+              <contentIdType />
+              <contentPath />
+              <contentType />
+              <includeJs />
+              <includeCss />
+            </widget>
+            -->
+          </rteWidgets>
 
-            <!-- Modules: -->
-            <rteModules>
-                <module>insert-image</module>
-                <module>channel</module>
-                <module>edit-html</module>
-            </rteModules>
-        </setup>
+          <!-- Modules: -->
+          <rteModules>
+            <module>insert-image</module>
+            <module>channel</module>
+            <module>edit-html</module>
+          </rteModules>
+      </setup>
     </config>
 
 |

@@ -36,16 +36,16 @@ Plugin Directory Structure
 
 When using plugins, the JS files location for the plugins uses a convention where the data source files needs to go in the following location:
 
-* **Data Sources** : CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/config/studio/plugins/datasource/DATA_SOURCE_NAME/JS_FILE.js
+* **Data Sources** : CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/config/studio/plugins/datasource/DATA_SOURCE_NAME/JS_FILE.js
 
 where:
 
-- **CRAFTER_INSTALL** : Studio location
+- **CRAFTER_HOME** : Studio location
 - **SITE_NAME** : Name of site where the plugin is to be added
 - **DATA_SOURCE_NAME** : Name of form engine data source plugin
 - **JS_FILE.js** : JavaScript file containing the data source interface implementation
 
-.. note:: When using an out-of-the-box blueprint to create your site, the ``plugins/datasource`` folder does not exist under ``CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/config/studio/`` and will need to be created by the user creating the plugins.
+.. note:: When using an out-of-the-box blueprint to create your site, the ``plugins/datasource`` folder does not exist under ``CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/config/studio/`` and will need to be created by the user creating the plugins.
 
 -------------------------------
 Form Engine Data Source Example
@@ -59,7 +59,7 @@ Form Engine Data Source Code
 
 The first thing we have to do is to create the folder structure where we will be placing the JS file for our data source.  We'll follow the convention listed above in :ref:`plugin-ds-directory-structure`
 
-Under ``CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/config/studio``, create the folder ``plugins``.  Under the ``plugins`` folder, create the folder ``datasource``.  Under the ``datasource`` folder, create the folder ``parent-content``, which is the name of the data source we're building.  We will be placing the JS file implementing the data source interface under the ``parent-content`` folder.  In the example below, the JS file is ``main.js``
+Under ``CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/config/studio``, create the folder ``plugins``.  Under the ``plugins`` folder, create the folder ``datasource``.  Under the ``datasource`` folder, create the folder ``parent-content``, which is the name of the data source we're building.  We will be placing the JS file implementing the data source interface under the ``parent-content`` folder.  In the example below, the JS file is ``main.js``
 
 .. image:: /_static/images/form-sources/datasource-plugin-directory-struct.png
     :width: 75 %

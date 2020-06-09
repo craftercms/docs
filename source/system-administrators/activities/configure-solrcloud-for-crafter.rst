@@ -21,7 +21,7 @@ In Authoring
 #. Go to **Collections** and click on **Add Collection**.
 #. Make the name of the collection the same as your site name, pick ``crafter_configs`` in config set and then click on **Add Collection**.
 #. Stop Authoring if it’s running.
-#. Go to **CRAFTER_INSTALL/bin/apache-tomcat/conf/Catalina/localhost** and create the file ``crafter-search-solrcloud.xml`` with the following content:
+#. Go to **CRAFTER_HOME/bin/apache-tomcat/conf/Catalina/localhost** and create the file ``crafter-search-solrcloud.xml`` with the following content:
 
    .. code-block:: xml
 
@@ -32,8 +32,8 @@ In Authoring
 
    |
 
-#. Go to **CRAFTER_INSTALL/bin/apache-tomcat/webapps** and duplicate the ``crafter-search.war`` with the name ``crafter-search-solrcloud.war``.
-#. Go to **CRAFTER_INSTALL/bin/apache-tomcat/shared/classes/crafter**, create the folders **search-solrcloud/extension**, and inside create the file ``services-context.xml`` with the following content:
+#. Go to **CRAFTER_HOME/bin/apache-tomcat/webapps** and duplicate the ``crafter-search.war`` with the name ``crafter-search-solrcloud.war``.
+#. Go to **CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter**, create the folders **search-solrcloud/extension**, and inside create the file ``services-context.xml`` with the following content:
 
    .. code-block:: xml
        :linenos:
@@ -52,7 +52,7 @@ In Authoring
 
    Remember to replace ``ZOOKEEPER_HOST`` and ``ZOOKEEPER_PORT`` with the actual Zookeeper host and port.
 
-#. Go to **CRAFTER_INSTALL/data/deployer/targets** and create a new target with the name of your site, followed by -solrcloud (e.g. ``editorial-solrcloud.yaml``). Add the following content (changing the SITE_NAME and the SITE_REPOS_PATH):
+#. Go to **CRAFTER_HOME/data/deployer/targets** and create a new target with the name of your site, followed by -solrcloud (e.g. ``editorial-solrcloud.yaml``). Add the following content (changing the SITE_NAME and the SITE_REPOS_PATH):
 
    .. code-block:: yaml
        :linenos:
@@ -80,6 +80,6 @@ In Delivery
 -----------
 
 #. Stop Delivery if it’s running.
-#. Copy the same configuration in step 11 of the previous section under **CRAFTER_INSTALL/bin/apache-tomcat/shared/classes/crafter/search/extension/services-context.xml**.
-#. Go into the Deployer target of the site: **CRAFTER_INSTALL/data/deployer/targets/SITE_NAME-default.yaml**, and comment the line with the searchIndexingProcessor (e.g. ``#- processorName: searchIndexingProcessor``).
+#. Copy the same configuration in step 11 of the previous section under **CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/search/extension/services-context.xml**.
+#. Go into the Deployer target of the site: **CRAFTER_HOME/data/deployer/targets/SITE_NAME-default.yaml**, and comment the line with the searchIndexingProcessor (e.g. ``#- processorName: searchIndexingProcessor``).
 #. Start Delivery again. Crafter Search should now read from the SolrCloud, and the Deployer won’t index changes since the processor is now commented.

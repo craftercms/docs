@@ -21,10 +21,10 @@ configuration using the Spring context files.
 Configure the Root Folder Path
 ------------------------------
 
-The root folder path, as shown below, needs to be configured to include a substitution variable ``{siteName}``
+The root folder path, as shown below, needs to be configured to include a substitution variable ``{siteName}`` in the :ref:`server-config.properties <engine-configuration-files>` file:
 
 .. code-block:: properties
-  :caption: {delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties
+  :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
   crafter.engine.site.default.rootFolder.path=file:/opt/crafter/data/site-content/{siteName}/content
 
@@ -40,10 +40,10 @@ Configure Simple Multi-Tenancy
 Using this mode you can easily support multiple sites without any additional configuration in
 external components.
 
-To enable this mode you need to change the following files:
+To enable this mode you need to change the following :ref:`Crafter Engine configuration files <engine-configuration-files>`:
 
 .. code-block:: xml
-    :caption: {delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/services-context.xml
+    :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/services-context.xml*
 
     <?xml version="1.0" encoding="UTF-8"?>
         <beans xmlns="http://www.springframework.org/schema/beans"
@@ -58,7 +58,7 @@ To enable this mode you need to change the following files:
 |
 
 .. code-block:: xml
-    :caption: {delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/rendering-context.xml
+    :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/rendering-context.xml*
 
     <?xml version="1.0" encoding="UTF-8"?>
         <beans xmlns="http://www.springframework.org/schema/beans"
@@ -91,10 +91,10 @@ Configure Mapped Multi-Tenancy
 This is the recommended approach for production environments because this configuration will
 guarantee that all requests will be able to resolve the right site.
 
-To enable this mode you need to change the following files:
+To enable this mode you need to change the following :ref:`Crafter Engine configuration files <engine-configuration-files>`:
 
 .. code-block:: xml
-    :caption: TOMCAT/shared/classes/crafter/engine/extension/services-context.xml
+    :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/services-context.xml*
 
     <?xml version="1.0" encoding="UTF-8"?>
         <beans xmlns="http://www.springframework.org/schema/beans"
@@ -109,7 +109,7 @@ To enable this mode you need to change the following files:
 |
 
 .. code-block:: xml
-    :caption: TOMCAT/shared/classes/crafter/engine/extension/rendering-context.xml
+    :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/rendering-context.xml*
 
     <?xml version="1.0" encoding="UTF-8"?>
         <beans xmlns="http://www.springframework.org/schema/beans"
@@ -126,7 +126,7 @@ To enable this mode you need to change the following files:
 You also need to define a mapping from domain names to site names in a properties file:
 
 .. code-block:: properties
-    :caption: TOMCAT/shared/classes/crafter/engine/extension/site-mappings.properties
+    :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/site-mappings.properties*
 
     site1.com=site1
     www.site1.com=site1
@@ -143,3 +143,4 @@ the site using the domain name of the server. For example a request to
   Using this configuration it is not possible to access a site using internal addresses like
   ``localhost`` or ``127.0.0.1``. You will need to change the hostname for the server or manage
   virtual hosts using an HTTP server.
+

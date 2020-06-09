@@ -79,9 +79,10 @@ For more information on tuning your authoring environment for better performance
 Set Profile Cookies to Secure
 -----------------------------
 
-For production environments using Crafter Profile and/or the Security Provider, these properties should be added to ``shared/classes/crafter/engine/extension/server-config.properties`` to make the Crafter Profile cookies be sent only through HTTPS
+For production environments using Crafter Profile and/or the Security Provider, these properties should be added to  :ref:`server-config.properties <engine-configuration-files>` configuration file to make the Crafter Profile cookies be sent only through HTTPS
 
 .. code-block:: Properties
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
    :linenos:
 
    # Indicates whether the cookie should be only sent using a secure protocol, like HTTPS or SSL

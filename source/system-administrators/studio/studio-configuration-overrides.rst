@@ -8,9 +8,9 @@
 Studio's Configuration Overrides
 ================================
 
-Crafter Studio comes with pre-configured settings that you may want to override.  To view the pre-configured settings in Crafter Studio, in your Authoring installation, go to ``webapps/studio/WEB-INF/classes/crafter/studio`` and open the file ``studio-config.yaml``.
+Crafter Studio comes with pre-configured settings that you may want to override.  To view the pre-configured settings in Crafter Studio, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio`` and open the file ``studio-config.yaml``.
 
-To override any of the pre-configured settings, in your Authoring installation, go to ``shared/classes/crafter/studio/extension`` and add the settings you would like to configure in the file ``studio-config-override.yaml``.   The override file have some settings already listed that you may want to override in Crafter Studio:
+To override any of the pre-configured settings, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the settings you would like to configure in the file ``studio-config-override.yaml``.   The override file have some settings already listed that you may want to override in Crafter Studio:
 
 --------------------------------
 Content Repository Configuration
@@ -23,7 +23,7 @@ The following section of Studio's configuration overrides allows you to do the f
 * ``studio.repo.published.live`` and ``studio.repo.published.staging`` allows you to set the branch for your publishing targets
 
 .. code-block:: yaml
-   :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
    :linenos:
 
    ##################################################
@@ -46,7 +46,7 @@ Site Configuration
 The following section of Studio's configuration overrides allows you to setup your site configuration
 
 .. code-block:: yaml
-   :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
    :linenos:
 
    ############################################################
@@ -85,7 +85,7 @@ Preview Deployer Configuration
 The following section of Studio's configuration overrides allows you to setup your deployer urls
 
 .. code-block:: yaml
-   :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
    :linenos:
 
    ############################################################
@@ -110,7 +110,7 @@ Preview Search Configuration
 The following section of Studio's configuration overrides allows you to setup urls for search in preview
 
 .. code-block:: yaml
-   :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
    :linenos:
 
    ############################################################
@@ -127,7 +127,7 @@ Database Configuration
 The following section of Studio's configuration overrides allows you to setup the database url, port number, connection string to initialize the database and path
 
 .. code-block:: yaml
-   :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
    :linenos:
 
    ##################################################
@@ -157,7 +157,7 @@ Security Configuration
 The following section of Studio's configuration overrides allows you to randomize the admin password on a fresh install (for more information, see: :ref:`randomize-admin-password`), configure encryption and configure authentication method to be used (for more information, see: :ref:`configuring-studio-security`), configure password requirements validation (for more information see: :ref:`crafter-studio-configure-password-requirements`).
 
 .. code-block:: yaml
-   :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
    :linenos:
 
    ##################################################
@@ -270,7 +270,7 @@ Mail Configuration
 The following section of Studio's configuration overrides allows you to setup the SMTP server to be used by Crafter CMS when sending emails
 
 .. code-block:: yaml
-   :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
    :linenos:
 
    ##################################################
@@ -303,7 +303,7 @@ Clustering
 The following section of Studio's configuration overrides allows you to setup Studio for clustering.  See :ref:`clustering` for more information
 
 .. code-block:: yaml
-   :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
    :linenos:
 
    ##################################################
@@ -363,7 +363,7 @@ CORS
 The following section of Studio's configuration overrides allows you to setup CORS
 
 .. code-block:: yaml
-   :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
    :linenos:
 
    ################################################################
@@ -392,7 +392,7 @@ Search
 The following section of Studio's configuration overrides allows you to setup the url for search
 
 .. code-block:: yaml
-   :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
    :linenos:
 
    ################################################################
@@ -413,7 +413,7 @@ Serverless Delivery
 The following section of Studio's configuration overrides allows you to setup serverless delivery
 
 .. code-block:: yaml
-   :caption: shared/classes/crafter/studio/extension/studio-config-override.yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
    :linenos:
 
    ##########################################################

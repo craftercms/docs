@@ -25,13 +25,13 @@ When using plugins, the JavaScript files and folders location for the plugins us
 
 where:
 
-- **CRAFTER_INSTALL** : Studio location
+- **CRAFTER_HOME** : Studio location
 - **SITE_NAME** : Name of site where the plugin is to be added
 - **PLUGIN_TYPE** : Type of plugin, e.g. control, datasource, sidebar, app, etc.
 - **PLUGIN_NAME** : Name of  plugin
 - **PLUGIN_FILES_FOLDERS** : JavaScript and/or plugin build output files/folders containing the plugin implementation
 
-.. note:: When using an out-of-the-box blueprint to create your site, the ``plugins`` folder does not exist under ``CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/config/studio/`` and will need to be created by the user creating the plugins.
+.. note:: When using an out-of-the-box blueprint to create your site, the ``plugins`` folder does not exist under ``CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/config/studio/`` and will need to be created by the user creating the plugins.
 
 
 --------------------------------

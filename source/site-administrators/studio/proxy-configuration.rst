@@ -21,7 +21,7 @@ Sample
 ******
 
 .. code-block:: xml
-   :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/engine/proxy-config.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/sandbox/SITENAME/sandbox/config/engine/proxy-config.xml*
    :linenos:
 
    <?xml version="1.0" encoding="UTF-8"?>

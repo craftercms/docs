@@ -16,7 +16,7 @@ First, we'll configure LDAP authentication in Crafter Studio, then proceed to in
 Configure LDAP authentication in Crafter Studio
 -----------------------------------------------
 
-We will first configure LDAP authentication in Crafter Studio.  In your Authoring installation, go to ``shared/classes/crafter/studio/extension`` and add the following lines to ``studio-config-override.yaml``.  (The server url, bindDN and password are all default values of the Apache Directory Studio)  Stop and restart Crafter Studio after making your changes.
+We will first configure LDAP authentication in Crafter Studio.  In your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>`.  (The server url, bindDN and password are all default values of the Apache Directory Studio)  Stop and restart Crafter Studio after making your changes.
 
 .. code-block:: yaml
    :linenos:

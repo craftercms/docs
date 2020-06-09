@@ -22,7 +22,7 @@ Sample
 ------
 
 .. code-block:: xml
-    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/blob-stores-config.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/blob-stores-config.xml*
     :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>

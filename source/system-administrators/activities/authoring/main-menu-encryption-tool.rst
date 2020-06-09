@@ -20,10 +20,10 @@ Crafter Studio provides an encryption tool for encrypting configuration properti
 Encryption Tool
 ---------------
 
-Crafter Studio uses a default key and salt for the encryption tool.  To set the key and salt to desired values, in your Authoring installation directory, open ``/bin/crafter-setenv.sh`` and modify the following values
+Crafter Studio uses a default key and salt for the encryption tool.  To set the key and salt to desired values, in your Authoring installation directory, open ``CRAFTER_HOME/bin/crafter-setenv.sh`` and modify the following values
 
 .. code-block:: bash
-   :caption: *bin/crafter-setenv.sh*
+   :caption: *CRAFTER_HOMEbin/crafter-setenv.sh*
 
    # -------------------- Encryption variables --------------------
    export CRAFTER_ENCRYPTION_KEY=${CRAFTER_ENCRYPTION_KEY:="default_encrytption_key"}
@@ -49,7 +49,7 @@ Example
 Let's take a look at an example of using the encryption tool to encrypt a password.  From the |mainMenu|, click on ``Global Config`` and scroll down to the ``SMTP Configuration (Email)`` section. We're going to encrypt the value for ``studio.mail.password:``
 
 .. code-block:: yaml
-   :caption: *crafter_install_dir/data/repos/global/configuration/studio-config-override.yaml*
+   :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
    :emphasize-lines: 13
 
    ##################################################
@@ -101,7 +101,7 @@ Let's begin:
    * Paste the encrypted password
 
      .. code-block:: yaml
-        :caption: *crafter_install_dir/data/repos/global/configuration/studio-config-override.yaml*
+        :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
 
         # SMTP password for authenticated access when sending emails.
         studio.mail.password: ${enc:q2gqrm8R6Z0Xg77J6wzHH4i4qqMSlrcFcSkshS+RZ9s=}

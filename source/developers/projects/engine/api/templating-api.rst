@@ -254,7 +254,7 @@ templates then you should consider creating a Groovy class instead:
   }
 
 .. code-block:: xml
-  :caption: Site Application Context file
+  :caption: *Engine Site Application Context file - application-context.xml*
   :linenos:
 
   <!-- Add a bean definition using the new class -->
@@ -266,7 +266,7 @@ templates then you should consider creating a Groovy class instead:
   </bean>
 
 .. code-block:: xml
-  :caption: Site Configuration file
+  :caption: *Engine Site Configuration file - site-config.xml*
   :linenos:
 
   <!-- If needed the bean can use external configuration for easy management -->
@@ -292,3 +292,5 @@ templates then you should consider creating a Groovy class instead:
 
   All beans defined in the :ref:`Engine Site Application Context <engine-site-configuration-spring-configuration>`
   file will be available in templates.
+
+  For more information on Crafter Engine Site configuration files, see :ref:`engine-site-configuration-files`

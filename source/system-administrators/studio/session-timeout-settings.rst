@@ -12,7 +12,7 @@ In some cases, some operations in Crafter may last longer than the user session 
 
 To change the session timeout, follow the instructions below:
 
-#. In your ``TOMCAT/webapps/studio/WEB-INF/web.xml`` file, change the value in between the session-timeout tags to desired amount of time the session will exist in minutes:
+#. In your ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/web.xml`` file, change the value in between the session-timeout tags to desired amount of time the session will exist in minutes:
 
    .. code-block:: xml
 
@@ -22,7 +22,7 @@ To change the session timeout, follow the instructions below:
 
    |
 
-#. In your ``TOMCAT/shared/classes/crafter/studio/extension/studio-config-override.yaml``, change the value for ``studio.security.sessionTimeout`` to desired amount of time the session will exist in minutes (the same value or less from the previous step):
+#. In your ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml``, change the value for ``studio.security.sessionTimeout`` to desired amount of time the session will exist in minutes (the same value or less from the previous step):
 
    .. code-block:: properties
 
@@ -33,4 +33,4 @@ To change the session timeout, follow the instructions below:
 
    You can also change the Studio session timeout from the |mainMenu| **Main Menu** in Studio under ``Global Config``
 
-Remember to keep the Studio session timeout from the ``studio-config-override.yaml`` file less than the Tomcat session-timeout (``TOMCAT/webapps/studio/WEB-INF/web.xml`` file).  Also make sure to stop and **restart your Studio after making your changes**.
+Remember to keep the Studio session timeout from the :ref:`studio-config-override.yaml <studio-configuration-files>` file less than the Tomcat session-timeout (``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/web.xml`` file).  Also make sure to stop and **restart your Studio after making your changes**.

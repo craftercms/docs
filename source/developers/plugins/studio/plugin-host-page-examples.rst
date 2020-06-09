@@ -27,10 +27,10 @@ Let's begin:
    * **Site ID**: editorial
    * **Git Repo URL**: https://github.com/rart/craftercms-editorial-ice
 
-#. Make the ``plugin_deploy.sh`` file executable under the *CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/sources* folder.  This is the script that builds and deploys the plugins.
+#. Make the ``plugin_deploy.sh`` file executable under the *CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/sources* folder.  This is the script that builds and deploys the plugins.
 
      .. code-block:: bash
-        :caption: *CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/sources*
+        :caption: *CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/sources*
 
         chmod +x plugin_deploy.sh
 
@@ -39,7 +39,7 @@ Let's begin:
 #. Deploy the plugins ``react-app``, ``modern`` and ``vanilla``
 
      .. code-block:: bash
-        :caption: *CRAFTER_INSTALL/data/repos/sites/SITE_NAME/sandbox/sources*
+        :caption: *CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/sources*
 
         ./plugin_deploy.sh --target=studio-plugin-cra --name=react-app
         ./plugin_deploy.sh --target=studio-plugin-modern --name=modern

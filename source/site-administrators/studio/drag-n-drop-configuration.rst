@@ -27,44 +27,44 @@ Sample
 ------
 
 .. code-block:: xml
-    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/preview-tools/components-config.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/preview-tools/components-config.xml*
     :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>
 	<!--
-	    This file configures the drag-and-drop components available in the Preview Tools. Those components can then
-	    be dragged and dropped on a drop-zone within a page.
+	  This file configures the drag-and-drop components available in the Preview Tools. Those components can then
+	  be dragged and dropped on a drop-zone within a page.
 
 	    The structure of this file is:
 
-	    <config>
-	        <category> (list of components that can be created on the fly during the drag and drop)
-	            <label />
-	            <component>
-	                <label />
-	                <type /> (reference content type of the component)
-	                <path /> (where to store these components)
-	            </component>
-	        </category>
-	        <browse> (list of browse paths of where to find ready components to be dragged/dropped)
-	            <label />
-	            <path /> (where to look for)
-	        </browse>
-	    </config>
+	  <config>
+	    <category> (list of components that can be created on the fly during the drag and drop)
+	      <label />
+	      <component>
+	        <label />
+	        <type /> (reference content type of the component)
+	        <path /> (where to store these components)
+	      </component>
+	    </category>
+	    <browse> (list of browse paths of where to find ready components to be dragged/dropped)
+	      <label />
+	      <path /> (where to look for)
+	    </browse>
+	  </config>
 	-->
 	<config>
-	    <category>
-	        <label>General</label>
-	        <component>
-	            <label>Feature</label>
-	            <type>/component/feature</type>
-	            <path>/site/components/features</path>
-	        </component>
-	    </category>
-	    <browse>
-	        <label>Features</label>
-	        <path>/site/components/features</path>
-	    </browse>
+	  <category>
+	    <label>General</label>
+	    <component>
+	      <label>Feature</label>
+	      <type>/component/feature</type>
+	      <path>/site/components/features</path>
+	    </component>
+	  </category>
+	  <browse>
+	    <label>Features</label>
+	    <path>/site/components/features</path>
+	  </browse>
 	</config>
 
 -----------
