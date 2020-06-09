@@ -144,8 +144,9 @@ Properties Details
 |``enable``                          |Indicates if SAML2 is enabled or not       |``false``                            |
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``reverseProxy``                    |Indicates if the site is running behind a  |``false``                            |
-|                                    |reverse proxy and the request to the IdP   |                                     |
-|                                    |should use the ``context.*`` properties    |                                     |
+|                                    |reverse proxy or load balancer and the     |                                     |
+|                                    |request to the IdP should use the          |                                     |
+|                                    |``context.*`` properties                   |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``context.forwardedProtoHeaderName``|The name of the header for the protocol    |``X-Forwarded-Proto``                |
 +------------------------------------+-------------------------------------------+-------------------------------------+
