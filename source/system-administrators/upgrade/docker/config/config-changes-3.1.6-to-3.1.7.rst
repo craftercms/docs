@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _docker-config-changes-3-1-5-to-3-1-6:
+.. _docker-config-changes-3-1-6-to-3-1-7:
 
 =========================================================================
 Configuration changes between Crafter CMS version 3.1.6 and version 3.1.7 
