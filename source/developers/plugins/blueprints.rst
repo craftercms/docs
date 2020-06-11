@@ -12,7 +12,7 @@ Blueprints
 What are Blueprints?
 --------------------
 
-Blueprints are Crafter CMS project templates.  It provides an initial structure/layout for your site containing one or more of the following: content types such as pages and components as described in :ref:`content-modeling`, static assets such as images, videos, etc., and site configuration files for managing items in the blueprint such as taxonomies (categories, segments), roles, permissions, etc.
+Blueprints are Crafter CMS project templates.  It provides an initial set of styles, pages, behaviors, content types and more, containing one or more of the following: content types such as pages and components as described in :ref:`content-modeling`, static assets such as images, videos, etc., and site configuration files for managing items in the blueprint such as taxonomies (categories, segments), roles, permissions, etc.
 
 .. image:: /_static/images/blueprint/blueprint-anatomy.png
    :alt: Cook Books - Blueprint Anatomy
@@ -22,6 +22,8 @@ Blueprints are Crafter CMS project templates.  It provides an initial structure/
 The blueprint that comes out of the box with Crafter CMS, Website_Editorial blueprint, provides us with an initial structure for our site, along with the site navigation, content inheritance, taxonomies for organizing the content such as categories and segments, which is also used for targeting content, static assets such as the initial images and fonts used for the site and configuration files for managing things like the segments for targeting, the permissions for all the items in the site, the role mappings, the RTE configuration, etc.  To see more of the Website Editorial blueprint, please see :ref:`your_first_website` where we create a site based on the Website_Editorial blueprint.
 
 As mentioned earlier, blueprints allows us to generate sites with predefined layouts, contents and configuration.  Blueprints could be a site theme or an API only site.  New blueprints can be created from a site and added into Crafter CMS allowing the creation of more sites based on the new blueprint.  In the section that follows, we will see how the Empty blueprint that comes out of the box from Crafter CMS and an existing site is used to create a new blueprint.
+
+Crafter CMS has a `marketplace <https://marketplace.craftercms.org>`__ for users to submit their blueprints for others to use or to find blueprints that others have created.  See :ref:`submit-plugin-to-marketplace` for more information on how to submit your blueprint to the `marketplace <https://marketplace.craftercms.org>`__ so other users can find your blueprints.
 
 -------------------------------
 How do I make my own Blueprint?
