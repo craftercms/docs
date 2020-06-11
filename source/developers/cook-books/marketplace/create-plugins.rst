@@ -18,6 +18,8 @@ Types of plugins
   to allow dynamic sites that use API keys or passwords for external services. For more information about creating
   blueprints you can follow this guide: :ref:`create-a-blueprint`.
 
+.. _submit-plugin-to-marketplace:
+
 ---------------
 Submit a plugin
 ---------------
