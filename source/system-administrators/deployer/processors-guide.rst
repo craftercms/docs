@@ -480,7 +480,7 @@ placed after all main deployment processors to work properly.
 File Output Processor
 ^^^^^^^^^^^^^^^^^^^^^
 
-Post processor that writes the deployment result to an output CSV file for later access, whenever a deployment fails or 
+Post processor that writes the deployment result to an output CSV file under ``CRAFTER_HOME/logs/deployer`` for later access, whenever a deployment fails or
 files were processed.
 
 **Example**
