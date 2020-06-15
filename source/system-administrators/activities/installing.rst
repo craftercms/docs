@@ -18,6 +18,8 @@ First we'll take a look at the requirements and supported platform for installin
 
    /system-administrators/requirements-supported-platforms
 
+Remember to change the default values pre-configured when installing Crafter CMS for a secure installation.  See :ref:`securing-your-crafter-cms-install` for more information.
+
 -----------------------
 Development Environment
 -----------------------
