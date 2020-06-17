@@ -23,7 +23,7 @@ The blueprint that comes out of the box with Crafter CMS, ``Website Editorial Bl
 
 As mentioned earlier, blueprints allows us to generate sites with predefined layouts, contents and configuration.  Blueprints could be a site theme or an API only site.  New blueprints can be created from a site and added into Crafter CMS allowing the creation of more sites based on the new blueprint.  In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from Crafter CMS and an existing site is used to create a new blueprint.
 
-Developers may submit their blueprints to the `Crafter CMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted blueprints are listed, and power users of Crafter CMS can create sites based on marketplace plugins directly from the ``Create Site`` dialog on the CMS. See :ref:`submit-plugin-to-marketplace` for more information on how to submit your blueprint to the marketplace.
+Developers may submit their blueprints to the `Crafter CMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted blueprints are listed, and power users of Crafter CMS can create sites based on marketplace plugins directly from the ``Create Site`` dialog in the CMS. See :ref:`submit-plugin-to-marketplace` for more information on how to submit your blueprint to the marketplace.
 
 -------------------------------
 How do I make my own Blueprint?
