@@ -39,7 +39,7 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
 
      |
 
-* Replace default values for the DB root password and the DB ``crafter`` user password
+* Replace default values for the DB root password and the DB ``crafter`` user password before starting Crafter CMS.  Remember that these values should **not** be changed after the DB has been installed
 
      .. code-block:: sh
         :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
@@ -52,7 +52,7 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
 
      |
 
-* Replace the default values for the cipher key and salt in Studio
+* Replace the default values for the cipher key and salt before starting Crafter CMS.  Remember that these values should **not** be changed after Crafter CMS has been started.
 
      .. code-block:: sh
         :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
