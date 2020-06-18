@@ -240,3 +240,8 @@ Using Default Settings for Larger Installations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Installations are pre-configured with settings that assume an average/smaller sized machines. Further OS defaults are not managed by Crafter. To get the best performance you should consider and adjust for your specific environment, hardware, business needs and best practices.
 
+---------------------------------
+Securing your Crafter CMS Install
+---------------------------------
+
+Crafter CMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`securing-your-crafter-cms-install`

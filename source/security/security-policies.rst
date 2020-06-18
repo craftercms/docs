@@ -279,3 +279,8 @@ How does Crafter CMS help mitigate this risk?
     * Application developed on Crafter CMS log all critical events.
     * Logs are processed by monitors and alarms are triggered per OWASP best practices.
 
+---------------------------------
+Securing your Crafter CMS Install
+---------------------------------
+
+Crafter CMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`securing-your-crafter-cms-install`
