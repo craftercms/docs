@@ -39,7 +39,7 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
 
      |
 
-* Replace default values for the DB root password and the DB ``crafter`` user password before starting Crafter CMS.  Remember that these values should **not** be changed after the DB has been installed
+* Replace default values for the DB root password and the DB ``crafter`` user password before starting Crafter CMS for the very first time.
 
      .. code-block:: sh
         :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
@@ -52,7 +52,55 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
 
      |
 
-* Replace the default values for the cipher key and salt before starting Crafter CMS.  Remember that these values should **not** be changed after Crafter CMS has been started.
+  To change the values after the initial start of Crafter CMS, do the following:
+
+  #. Manually change the DB passwords
+
+     First, login to the database as root.  From the command line in the server, go to ``CRAFTER_HOME/bin/dbms/bin`` and run the following command:
+
+       .. code-block:: bash
+
+          /mysql -u root -p --socket=/tmp/MariaDB4j.33306.sock
+
+       |
+
+     To change the ``root`` password, run the following command:
+
+       .. code-block:: bash
+
+          ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';
+
+       |
+
+     Remember to replace ``MyNewPass`` with the actual password you want to set, and if you are connecting to the DB from another host, change ``localhost`` with the remote hostname or IP address.
+
+     To change the ``crafter`` user password, run the following command, similar to changing the root password.
+
+       .. code-block:: bash
+
+          ALTER USER 'crafter'@'localhost' IDENTIFIED BY 'MyNewCrafterPass';
+
+       |
+
+     Again, remember to replace ``MyNewCrafterPass`` with the actual password you want to set, and if you are connecting to the DB from another host, change ``localhost`` with the remote hostname or IP address.
+
+  #. Stop Studio
+  #. Update the values in the configuration file ``crafter-setenv.sh`` with the new password used in the previous step
+
+       .. code-block:: sh
+        :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
+
+        # -------------------- MariaDB variables --------------------
+        ...
+        export MARIADB_ROOT_PASSWD=${MARIADB_ROOT_PASSWD:="MyNewPass"}
+        ...
+        export MARIADB_PASSWD=${MARIADB_PASSWD:="MyNewCrafterPass"}
+
+     |
+
+  #. Restart Studio
+
+* Replace the default values for the cipher key and salt before starting Crafter CMS for the very first time.  Remember that these values should **not** be changed after Crafter CMS has been started.
 
      .. code-block:: sh
         :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
