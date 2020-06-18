@@ -100,7 +100,7 @@ Let's take a look at an example of overriding the Site Configuration used by Eng
         <path>site-config.live.xml</path>
         <title>Engine Site Configuration Live</title>
         <description>Site Configuration used by Engine for the Live publishing target</description>
-        <samplePath>sample-site-config.xml</samplePath>
+        <samplePath>sample-engine-site-config.xml</samplePath>
       </file>
 
    |
