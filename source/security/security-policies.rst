@@ -3,13 +3,7 @@
 .. _security:
 
 .. warning::
-    Crafter CMS is a platform for developing content rich applications. This includes developing code and deploying it to servers. A user with access to Crafter Studio or with access to the git repository of a *site* can develop server-side code and deploy it.
-
-    For example, a Crafter Studio user can create a Groovy script that executes on the server with access to the server equivalent to the daemon running the Crafter application server.
-
-    This is not different from someone editing PHP files in WordPress admin and running server-side PHP.
-
-    Enterprises should consider having a series of environments, typically: ``Dev`` -> ``QA`` -> ``Prod`` where code gets developed and validated in the lower environments before pushing up. This is fully supported by Crafter CMS and the underlying git repository makes it easy.
+    Crafter CMS is a platform for developing content rich applications. This includes developing code and deploying it to servers. A user with access to Crafter Studio (with sufficiently priveleged role) or with access to the git repository of a *site* can develop server-side code and deploy it. While Crafter CMS provides a sandbox environment to restrict the server-side code, Enterprises should consider having a series of environments, typically: ``Dev`` -> ``QA`` -> ``Prod`` where code gets developed and validated in the lower environments before pushing up. This is fully supported by Crafter CMS and the underlying git repository makes it easy.
 
 ========
 Security
