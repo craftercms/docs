@@ -404,6 +404,13 @@ The following section of Studio's configuration overrides allows you to setup th
    studio.search.username: ${env:ES_USERNAME}
    # The password for Elasticsearch
    studio.search.password: ${env:ES_PASSWORD}
+   # The connection timeout in milliseconds, if set to -1 the default will be used
+   studio.search.timeout.connect: -1
+   # The socket timeout in milliseconds, if set to -1 the default will be used
+   studio.search.timeout.socket: -1
+   # The number of threads to use, if set to -1 the default will be used
+   studio.search.threads: -1
+
 
 
 -------------------
