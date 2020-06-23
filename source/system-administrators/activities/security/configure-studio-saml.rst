@@ -117,29 +117,28 @@ To configure Studio SAML2, in your Authoring installation, go to ``CRAFTER_HOME/
    studio.security.saml.keystore.alias: crafterstudio
    # SAML logout URL
    studio.security.saml.logoutUrl: /studio/saml/logout
-   # Enable SAML with reverse proxy
+   # Enable SAML configuration used when Studio is behind a reverse proxy or load balancer
    # studio.security.saml.reverseProxy.enabled: false
-   # SAML with reverse proxy forwarded host header name
+   # The header name that contains the public URL (matching the SAML SP URL) hostname
    # studio.security.saml.reverseProxy.forwardedHostHeaderName: X-Forwarded-Host
-   # SAML with reverse proxy forwarded port header name
+   # The header name that contains the public URL (matching the SAML SP URL) port
    # studio.security.saml.reverseProxy.forwardedPortHeaderName: X-Forwarded-Port
-   # SAML with reverse proxy forwarded proto header name
+   # The header name that contains the public URL (matching the SAML SP URL) protocol
    # studio.security.saml.reverseProxy.forwardedProtoHeaderName: X-Forwarded-Proto
-   # SAML with reverse proxy schema
+   # The scheme or protocol of the public URL (matching the SAML SP URL). Use if you want to overwrite the forwarded header
    # studio.security.saml.reverseProxy.scheme:
-   # SAML with reverse proxy server name
+   # The server name or hostname of the public URL (matching the SAML SP URL). Use if you want to overwrite the forwarded header
    # studio.security.saml.reverseProxy.serverName:
-   # SAML with reverse proxy server port
+   # The port of the public URL (matching the SAML SP URL). Use if you want to overwrite the forwarded header
    # studio.security.saml.reverseProxy.serverPort: 0
-   # SAML with reverse proxy context path
+   # The context path of the public URL (matching the SAML SP URL)
    # studio.security.saml.reverseProxy.contextPath:
    # SAML Web SSO profile options: authenticate the user silently
    # studio.security.saml.webSSOProfileOptions.passive: false
    # SAML Web SSO profile options: force user to re-authenticate
    # studio.security.saml.webSSOProfileOptions.forceAuthn: false
 
-
-    |
+   |
 
 where
 
@@ -157,14 +156,14 @@ where
 - ``studio.security.saml.keystore.storePassword``: The password of the keystore file
 - ``studio.security.saml.keystore.keyPassword``: The password of the key
 - ``studio.security.saml.keystore.alias``: Keystore entry identifier (unique string to identify the key entry)
-- ``studio.security.saml.reverseProxy.enabled``: Indicates if reverse proxy is enabled or not
-- ``studio.security.saml.reverseProxy.forwardedHostHeaderName``: The forwarded host header name
-- ``studio.security.saml.reverseProxy.forwardedPortHeaderName``: The forwarded port header name
-- ``studio.security.saml.reverseProxy.forwardedProtoHeaderName``:  The forwarded proto header name
-- ``studio.security.saml.reverseProxy.scheme``: The reverse proxy schema
-- ``studio.security.saml.reverseProxy.serverName``: The reverse proxy server name
-- ``studio.security.saml.reverseProxy.serverPort``: The reverse proxy server port
-- ``studio.security.saml.reverseProxy.contextPath``: The reverse proxy context path
+- ``studio.security.saml.reverseProxy.enabled``: Indicates if SAML configuration used when Studio is behind a reverse proxy or load balancer is enabled or not
+- ``studio.security.saml.reverseProxy.forwardedHostHeaderName``: The header name that contains the public URL (matching the SAML SP URL) hostname
+- ``studio.security.saml.reverseProxy.forwardedPortHeaderName``: The header name that contains the public URL (matching the SAML SP URL) port
+- ``studio.security.saml.reverseProxy.forwardedProtoHeaderName``:  The header name that contains the public URL (matching the SAML SP URL) protocol
+- ``studio.security.saml.reverseProxy.scheme``: The scheme or protocol of the public URL (matching the SAML SP URL). Use if you want to overwrite the forwarded header
+- ``studio.security.saml.reverseProxy.serverName``: The server name or hostname of the public URL (matching the SAML SP URL). Use if you want to overwrite the forwarded header
+- ``studio.security.saml.reverseProxy.serverPort``: The port of the public URL (matching the SAML SP URL). Use if you want to overwrite the forwarded header
+- ``studio.security.saml.reverseProxy.contextPath``: The context path of the public URL (matching the SAML SP URL)
 - ``studio.security.saml.webSSOProfileOptions.passive``: Indicates if user is authenticated silently
 - ``studio.security.saml.webSSOProfileOptions.forceAuthn``: Indicates if user will be forced to re-authenticate
 
