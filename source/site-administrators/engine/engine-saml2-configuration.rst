@@ -192,7 +192,7 @@ Properties Details
 |                                    |available as described in                  |                                     |
 |                                    |:ref:`engine-security-access-attributes`.  |                                     |
 |                                    |Each mapping is comprised of the original  |                                     |
-|                                    |``name`` of the attribute, sent by the IPD,|                                     |
+|                                    |``name`` of the attribute, sent by the IDP,|                                     |
 |                                    |and ``attribute`` which will be the new    |                                     |
 |                                    |name of the attribute in Engine            |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
@@ -202,11 +202,11 @@ Properties Details
 |                                    |role sent by the IDP will be compared      |                                     |
 |                                    |against this list. Each mapping is         |                                     |
 |                                    |comprised of the original ``name`` of the  |                                     |
-|                                    |role, sent by the IPD, and ``role`` which  |                                     |
+|                                    |role, sent by the IDP, and ``role`` which  |                                     |
 |                                    |will be the new name of the role in Engine |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``keystore.defaultCredential``      |The name of the default credential to use  |                                     |
-|                                    |(should be defined also in                 |                                     |
+|                                    |(should also be defined in                 |                                     |
 |                                    |``keystore.credentials.credential``)       |                                     |                                        
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``keystore.path``                   |The path of the keystore file in the repo  |``/config/engine/saml2/keystore.jks``|
