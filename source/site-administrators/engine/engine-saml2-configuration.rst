@@ -25,6 +25,15 @@ Requirements
     
     .. note:: Some versions of the Keytool support a different password for the keystore and the key generated, you
               will be prompted for one or you can add the ``-keypass KEY_PASSWORD`` parameter.
+
+    Take note of the values of the following options used to generate your keystore that will be used later for 
+    configuring Engine:
+
+    * **alias**: The value used for this option wil be used in the ``keystore.defaultCredential`` and 
+      ``keystore.credentials.credential.name`` properties
+    * **storepass**: The value used for this option will be used in the ``keystore.password`` property
+    * **keypass**: The value used for this option will be used in the ``keystore.credentials.credential.password`` 
+      property
     
 #.  XML descriptors for the Identity Provider and the Service Provider (Crafter Engine). The descriptor for Crafter
     Engine can be generated following these steps:
@@ -149,16 +158,22 @@ Properties Details
 |                                    |``context.*`` properties                   |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``context.forwardedProtoHeaderName``|The name of the header for the protocol    |``X-Forwarded-Proto``                |
+|                                    |(set by the reverse proxy/load balancer)   |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``context.forwardedHostHeaderName`` |The name of the header for the host        |``X-Forwarded-Host``                 |
+|                                    |(set by the reverse proxy/load balancer)   |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``context.forwardedPortHeaderName`` |The name of the header for the port        |``X-Forwarded-Port``                 |
+|                                    |(set by the reverse proxy/load balancer)   |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``context.scheme``                  |The protocol to use ``http`` or ``https``  |                                     |
+|                                    |(overwrites the forwarded header)          |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``context.serverName``              |The name of the server                     |                                     |
+|                                    |(overwrites the forwarded header)          |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``context.serverPort``              |The port of the server                     |``0``                                |
+|                                    |(overwrites the forwarded header)          |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``context.contextPath``             |The context path of the application        |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
@@ -175,21 +190,32 @@ Properties Details
 |                                    |every attribute sent by the IDP will be    |                                     |
 |                                    |compared against this list and will be     |                                     |
 |                                    |available as described in                  |                                     |
-|                                    |:ref:`engine-security-access-attributes`   |                                     |
+|                                    |:ref:`engine-security-access-attributes`.  |                                     |
+|                                    |Each mapping is comprised of the original  |                                     |
+|                                    |``name`` of the attribute, sent by the IDP,|                                     |
+|                                    |and ``attribute`` which will be the new    |                                     |
+|                                    |name of the attribute in Engine            |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``role.key``                        |Name of the role attribute sent by the IDP |``Role``                             |
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``role.mappings.mapping``           |List of mappings to apply for roles, every |                                     |
 |                                    |role sent by the IDP will be compared      |                                     |
-|                                    |against this list                          |                                     |
+|                                    |against this list. Each mapping is         |                                     |
+|                                    |comprised of the original ``name`` of the  |                                     |
+|                                    |role, sent by the IDP, and ``role`` which  |                                     |
+|                                    |will be the new name of the role in Engine |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``keystore.defaultCredential``      |The name of the default credential to use  |                                     |
+|                                    |(should also be defined in                 |                                     |
+|                                    |``keystore.credentials.credential``)       |                                     |                                        
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``keystore.path``                   |The path of the keystore file in the repo  |``/config/engine/saml2/keystore.jks``|
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``keystore.password``               |The password of the keystore file          |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
-|``keystore.credentials.credential`` |List of credentials in the keystore        |                                     |
+|``keystore.credentials.credential`` |List of credentials in the keystore. Each  |                                     |
+|                                    |credential is comprised of a ``name`` and  |                                     |
+|                                    |a ``password``                             |                                     | 
 +------------------------------------+-------------------------------------------+-------------------------------------+
 |``identityProviderName``            |The name of the identity provider to use   |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
