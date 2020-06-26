@@ -5,13 +5,13 @@
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. _upgrade-to-3-1-7:
+.. _upgrade-notes-to-fix-backup-error:
 
-===================================
-Upgrade Notes for Crafter CMS 3.1.7
-===================================
+=====================================
+Upgrade Notes for Fixing Backup Error
+=====================================
 
-After upgrading to Crafter CMS 3.1.7, when using the backup script, the ``crafter`` embedded database user is not backed up and causes an error when starting up Crafter Studio after running the restore script.  To get the authoring install to work, the ``crafter`` embedded database user needs to be manually added to the database after running the restore script. (Instructions on using the backup and restore scripts are available here: :ref:`backup-and-recovery`)
+After upgrading to Crafter CMS 3.1.7 or later versions, when using the backup script, the ``crafter`` embedded database user is not backed up and causes an error when starting up Crafter Studio after running the restore script.  To get the authoring install to work, the ``crafter`` embedded database user needs to be manually added to the database after running the restore script. (Instructions on using the backup and restore scripts are available here: :ref:`backup-and-recovery`)
 
 After running the restore script, when the authoring install is started, you may see the following error in the tomcat logs:
 
