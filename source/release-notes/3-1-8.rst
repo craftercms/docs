@@ -1,0 +1,94 @@
+.. index:: Crafter CMS 3.1.8 Release Notes
+
+-----------------
+Crafter CMS 3.1.8
+-----------------
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+
+* Added a new processor ``s3DeploymentEventsProcessor`` that uploads the deployment-events.properties of a site for S3 serverless deployer |br|
+  *See* :ref:`deployer-s3-deployment-events-processor` *for more information.*
+
+* Added a new processor, ``gitUpdateCommitIdProcessor``,  that only updates the latest commit id |br|
+  *See* :ref:`deployer-git-update-commit-id-processor` *for more information.*
+
+* Added a new property ``updateCommitStore`` for the ``gitDiffProcessor`` that indicates whether or not to update the processed commit |br|
+  *See* :ref:`deployer-git-diff-processor` *for more information.*
+
+* Added a new property ``failDeploymentOnFailure`` for all processors that enables failing the deployment when there's a processor failure
+  *See* :ref:`crafter-deployer-processors-guide` *for more information.*
+
+* Added support for automatically updating ES index settings |br|
+  Whenever the Elasticsearch index settings are updated, for example, a new field has been added for a release, the ES index settings will be automatically updated by the Crafter CMS upgrade manager.  The updated index containing the mew settings will be named the current index version name incremented by 1, e.g. let's say the current index is ``mysite-authoring_v1``, after the upgrade, the new index will now be ``mysite-authoring_v2``
+
+  The ES index settings will be automatically updated when upgrading to Crafter CMS 3.1.8 for users upgrading from Crafter CMS 3.1.6 and earlier, and also for users upgrading from Crafter CMS 3.1.7 where a manual update of the ES index settings has not been performed.  The automatic update is triggered when upgrading to 3.1.8 as mentioned above because of an update in the ES index settings (`input fields tokenize in repeating groups <https://github.com/craftercms/craftercms/issues/4118>`__) in Crafter CMS 3.1.7.
+
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Elasticsearch improvements |br|
+  The Elasticsearch client connection timeout, socket timeout and number of threads to use are now configurable for Studio, Engine and Deployer
+
+  * In Studio, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/``, then edit the :ref:`studio-config-override.yaml <studio-configuration-files>` file and update the following properties to the desired values
+
+     .. code-block:: properties
+       :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+       # The connection timeout in milliseconds, if set to -1 the default will be used
+       studio.search.timeout.connect: -1
+       # The socket timeout in milliseconds, if set to -1 the default will be used
+       studio.search.timeout.socket: -1
+       # The number of threads to use, if set to -1 the default will be used
+       studio.search.threads: -1
+
+     |
+
+  * In Engine, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension``, then edit the :ref:`server-config.properties <engine-configuration-files>` and update the following properties to the desired values:
+
+     .. code-block:: properties
+       :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+	   # The connection timeout in milliseconds, if set to -1 the default will be used
+       crafter.engine.elasticsearch.timeout.connect=-1
+       # The socket timeout in milliseconds, if set to -1 the default will be used
+       crafter.engine.elasticsearch.timeout.socket=-1
+       # The number of threads to use, if set to -1 the default will be used
+       crafter.engine.elasticsearch.threads=-1
+
+     |
+
+  * In Deployer, edit ``CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml`` and update the following to the desired values:
+
+     .. code-block:: yaml
+       :caption: *CRAFTER_HOME/bin/crafter-deployer/config/base-target.yaml*
+
+       timeout:
+         # The connection timeout in milliseconds, if set to -1 the default will be used
+         connect: -1
+         # The socket timeout in milliseconds, if set to -1 the default will be used
+         socket: -1
+       # The number of threads to use, if set to -1 the default will be used
+       threads: -1
+
+     |
+
+
+
+Lot's of other small enhancements and bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 3.1.8 Milestone <https://github.com/craftercms/craftercms/milestone/63?closed=1>`_
+
+.. important::
+
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.8)
+
+    For Docker/Kuber deployments, see :ref:`upgrading-dockers`
+
+    For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+    Please see :ref:`upgrade-notes-to-fix-backup-error` for some important notes when updating to Crafter CMS 3.1.8
+
