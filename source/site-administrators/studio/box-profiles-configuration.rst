@@ -53,16 +53,20 @@ Sample
 
     -->
     <box>
+      <box>
         <profile>
-            <id>box-default</id>
-            <clientId>...</clientId>
-            <clientSecret>...</clientSecret>
-            <enterpriseId>...</enterpriseId>
-            <publicKeyId>...</publicKeyId>
-            <privateKey><![CDATA[...]]></privateKey>
-            <privateKeyPassword>...</privateKeyPassword>
-            <uploadFolder>videos</uploadFolder>
+          <id>box-default</id>
+          <clientId>...</clientId>
+          <clientSecret>...</clientSecret>
+          <enterpriseId>...</enterpriseId>
+          <publicKeyId>...</publicKeyId>
+          <privateKey>
+    <![CDATA[...]]>
+          </privateKey>
+          <privateKeyPassword>...</privateKeyPassword>
+          <uploadFolder>videos</uploadFolder>
         </profile>
+      </box>
     </box>
 
 |

@@ -52,25 +52,29 @@ Go to |siteConfig| > ``Configurations`` and in the dropdown select Box Profiles.
 * **enterpriseId:** Box enterprise id
 * **publicKeyId:** Box public key id
 * **privateKey:** Actual private key text in a CDATA
-* **privateKeyPassword:** Password used to decrypt the private key
+* **privateKeyPassword:** Password used to decrypt the private key (passphrase)
 * **uploadFolder:** Name of the folder where files will be uploaded in Box
 
-For this guide, the Box Profiles should look like this (replace the ``...``'s for actual Box credentials and ``uploadFolder`` for the actual upload folder where you’re storing the documents):
+For this guide, the Box Profiles should look like this (replace the ``...``'s for actual Box credentials and ``videos`` for the actual upload folder where you’re storing the documents):
 
 .. code-block:: xml
     :linenos:
 
     <box>
+      <box>
         <profile>
-            <id>box-default</id>
-            <clientId>...</clientId>
-            <clientSecret>...</clientSecret>
-            <enterpriseId>...</enterpriseId>
-            <publicKeyId>...</publicKeyId>
-            <privateKey><![CDATA[...]]></privateKey>
-            <privateKeyPassword>...</privateKeyPassword>
-            <uploadFolder>videos</uploadFolder>
+          <id>box-default</id>
+          <clientId>...</clientId>
+          <clientSecret>...</clientSecret>
+          <enterpriseId>...</enterpriseId>
+          <publicKeyId>...</publicKeyId>
+          <privateKey>
+    <![CDATA[...]]>
+          </privateKey>
+          <privateKeyPassword>...</privateKeyPassword>
+          <uploadFolder>videos</uploadFolder>
         </profile>
+      </box>
     </box>
 
 |
@@ -85,11 +89,11 @@ In |siteConfig| > Configurations > Site Config Tools, in the <controls> section,
     :linenos:
 
     <control>
-        <name>box-file-upload</name>
-        <icon>
-            <class>fa-square-o</class>
-            <stackedclass>fa-upload</stackedclass>
-        </icon>
+      <name>box-file-upload</name>
+      <icon>
+        <class>fa-square-o</class>
+        <stackedclass>fa-upload</stackedclass>
+      </icon>
     </control>
 
 |
