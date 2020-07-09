@@ -309,9 +309,9 @@ To setup the Studio Arbiter:
 
 #. Configure the Arbiter by setting the following environment variables:
 
-   - ``CLUSTER_NAME``: The name of the cluster to join
-   - ``CLUSTER_ADDRESS``: The address of the cluster to join (comma-separated list of IP or hostnames)
-   
+   - ``CLUSTER_NAME``: The name of the cluster to join (defaults to ``studio_db_cluster``)
+   - ``HAZELCAST_CONFIG``: The path for the Hazelcast YAML configuration (defaults to ``config/hazelcast-config.yaml``)
+
    |
 
    .. code-block:: bash
@@ -319,8 +319,8 @@ To setup the Studio Arbiter:
 
       # Studio Arbiter configuration
       export CLUSTER_NAME=studio_db_cluster
-      export CLUSTER_ADDRESS=192.168.1.100,192.168.1.101
-      
+      export HAZELCAST_CONFIG=/opt/studio-arbiter/config/hazelcast-config.yaml
+
    |
 
 #. Run the arbiter ``java -jar studio-arbiter.jar``. To check that the arbiter is running and part of the 
