@@ -38,7 +38,7 @@ To create an AWS Elasticsearch domain please do the following:
 #. In the top navigation bar of your AWS console, click the ``Services`` dropdown menu, and search for 
    ``Elasticsearch Service``.
 #. Click on ``Create a new domain``.
-#. Select ``Deployment Type`` and on the Elasticsearch version, pick ``6.7``.
+#. Select ``Deployment Type`` and on the Elasticsearch version, pick ``7.2``.
 
    .. image:: /_static/images/system-admin/serverless/es-deployment-type.png
       :alt: Serverless Site - Elasticsearch Deployment Type
@@ -334,6 +334,8 @@ name requirements is the following:
    ##########################################################
    # Indicates if serverless delivery is enabled
    studio.serverless.delivery.enabled: true
+   # Indicates if the local (preview) Deployer is going to be used for serverless deployments
+   # studio.serverless.delivery.deployer.local: true
    # The URL for the serverless delivery deployer create URL
    studio.serverless.delivery.deployer.target.createUrl: ${studio.preview.createTargetUrl}
    # The URL for the serverless delivery deployer delete URL
@@ -342,12 +344,10 @@ name requirements is the following:
    studio.serverless.delivery.deployer.target.template: aws-cloudformed-s3
    # Replace existing target configuration if one exists?
    studio.serverless.delivery.deployer.target.replace: false
-   # The URL the deployer will use to clone/pull the site's published repo. When the deployer is in a separate node
-   # (because of clustering), this URL should be an SSH/HTTP URL to the load balancer in front of the Studios
-   studio.serverless.delivery.deployer.target.remoteRepoUrl: ${env:CRAFTER_DATA_DIR}/repos/sites/{siteName}/published
-   # The deployer's local path where it will store the clone of the published site. This property is not needed if
-   # the deployer is not the preview deployer, so you can leave an empty string ('') instead
-   studio.serverless.delivery.deployer.target.localRepoPath: ${env:CRAFTER_DATA_DIR}/repos/aws/{siteName}
+   # The URL of the site repo that the Deployer needs to upload to the bucket needed by serverless delivery. If using the
+   # local deployer, this should be the local path to the published repo. If using a a Deployer in a separate node
+   # (because of clustering), this should be an load balanced SSH/HTTP URL to the published repo
+   studio.serverless.delivery.deployer.target.repoUrl: ${env:CRAFTER_DATA_DIR}/repos/sites/{siteName}/published
    # Parameters for the target template. Please check the deployer template documentation for the possible parameters.
    # The following parameters will be sent automatically, and you don't need to specify them: env, site_name, replace,
    # disable_deploy_cron, local_repo_path, repo_url, use_crafter_search
@@ -513,3 +513,13 @@ Open a browser and go to ``https://DOMAIN_OF_YOUR_CLOUDFRONT``. You should be ab
    :alt: Serverless Site - Editorial Screenshot
    :align: center
 
+.. note::
+
+   The following error in the deployer appears when a site hasn't been published:
+
+      .. code-block:: text
+
+         2020-07-07 15:33:00.004 ERROR 22576 --- [deployment-9] l.processors.AbstractDeploymentProcessor : Processor 'gitDiffProcessor' for target 'ed-serverless-delivery' failed
+         org.craftercms.deployer.api.exceptions.DeployerException: Failed to open Git repository at /home/ubuntu/craftercms/crafter-authoring/data/repos/sites/ed/published;
+
+   Once the site has been published, the error above will go away.
