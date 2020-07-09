@@ -515,7 +515,7 @@ Open a browser and go to ``https://DOMAIN_OF_YOUR_CLOUDFRONT``. You should be ab
 
 .. note::
 
-   The following error in the deployer appears when a site hasn't been published:
+   The following error appears in the deployer logs (*CRAFTER_HOME/logs/deployer/crafter-deployer.out*) when a site hasn't been published:
 
       .. code-block:: text
 
