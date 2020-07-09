@@ -88,3 +88,22 @@ Description
 
     ``/role-mappings/groups/role``
         Name of authoring role that group will map to
+
+------------------
+Default Site Roles
+------------------
+
+Crafter CMS comes with predefined roles out of the box for sites.
+Here's a list of predefined roles for sites:
+
+* **admin**: Users with the ``admin`` role have access to site configuration files, creating/editing layouts, templates, taxonomies, content types, scripts, etc. in addition to creating and editing content, as well as the ability to approve and reject workflow
+
+* **developer**: Users with the ``developer`` role have access to site configuration files, creating/editing layouts, templates, taxonomies, content types, scripts, etc. in addition to creating and editing content, as well as the ability to approve and reject workflow
+
+* **reviewer**: Users with the ``reviewer`` role have the ability to approve and reject workflow. They also have access to a number of dashboards which are not available to content contributors (users with role ``author``) including ``Recently Published`` and ``Approved Scheduled Items``.  They do not have access to edit content.
+
+* **publisher**: Users with the ``publisher`` role have the ability to approve and reject workflow. They also have access to a number of dashboards which are not available to content contributors (users with role ``author``) including ``Recently Published`` and ``Approved Scheduled Items``.  In addition, they also have access to create, edit and submit content like the ``author`` role.
+
+* **author**: Users with the role ``author`` have access to create, edit and submit content
+
+See :ref:`permission-mappings` for more information on all items accessible for each role in a site.

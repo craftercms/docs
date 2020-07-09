@@ -84,6 +84,7 @@ Authoring
    activities/authoring/setup-authoring-using-aws-ami.rst
    activities/sync-studio-database-with-repo.rst
    activities/authoring/navigating-main-menu.rst
+   activities/authoring/users-groups-management.rst
 
 ********
 Delivery
