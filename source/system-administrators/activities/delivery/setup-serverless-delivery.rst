@@ -38,7 +38,7 @@ To create an AWS Elasticsearch domain please do the following:
 #. In the top navigation bar of your AWS console, click the ``Services`` dropdown menu, and search for 
    ``Elasticsearch Service``.
 #. Click on ``Create a new domain``.
-#. Select ``Deployment Type`` and on the Elasticsearch version, pick ``7.2``.
+#. Select ``Deployment Type`` and on the Elasticsearch version, pick ``6.8``.
 
    .. image:: /_static/images/system-admin/serverless/es-deployment-type.png
       :alt: Serverless Site - Elasticsearch Deployment Type
