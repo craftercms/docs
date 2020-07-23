@@ -24,7 +24,10 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
 
      |
 
-* Replace the default values for database values encryption key and salt before starting Crafter CMS for the very first time.  Remember that these values should **not** be changed after Crafter CMS has been started.
+* Replace the default values for database values encryption key and salt. Remember that these values should **not** be changed after Crafter CMS has been started if the installation has one or more of the following:
+
+  * Remote repository passwords and keys
+  * Cluster passwords and keys
 
      .. code-block:: sh
         :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
