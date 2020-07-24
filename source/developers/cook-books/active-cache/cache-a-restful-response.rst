@@ -20,7 +20,15 @@ simply ask Active cache for whatever the current response is.
 Prerequisites
 -------------
 
-* None
+**Enable active cache**
+
+Active cache is disabled by default.  To enable active cache, in the ``crafter-setenv.sh`` file under ``CRAFTER_HOME/bin``, set the Spring profile ``crafter.core.activeCache``
+
+   .. code-block:: yaml
+      :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
+
+      export SPRING_PROFILES_ACTIVE=crafter.core.activeCache
+
 
 ---------------------------------------
 Step 1: Specify the Cache Tick Duration
