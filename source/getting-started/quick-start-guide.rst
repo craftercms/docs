@@ -124,7 +124,7 @@ Installing Crafter CMS From Archive Built By the Gradle Environment Builder
 
    .. code-block:: bash
 
-      ./gradlew init build deploy bundle
+      ./gradlew clone build deploy bundle
 
    |
 

@@ -159,7 +159,7 @@ We'll then install the Crafter Studio (authoring instance). You can follow the :
 Alternatively, you can also install craftercms and start authoring by cloning the craftercms repo and building and deploying it using gradle.
 
    `git clone https://github.com/craftercms/craftercms.git`
-   `./gradlew init build deploy -Penv=authoring`
+   `./gradlew clone build deploy -Penv=authoring`
    `./gradlew start -Penv=authoring`
       
 Step 1: Create your upstream

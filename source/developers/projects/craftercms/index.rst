@@ -624,7 +624,7 @@ Here's a list of commands (Gradle tasks) available:
 || Command      || Description                              || Env Options || Module Options |
 || ``command``  ||                                          || ``env``     || ``module``     |
 +===============+===========================================+==============+=================+
-|| init         || Clones Crafter CMS                       || - None      || - None         |
+|| clone        || Clones Crafter CMS                       || - None      || - None         |
 +---------------+-------------------------------------------+--------------+-----------------+
 || build        || Build a module or an entire              || authoring   || - None         |
 ||              || environment                              ||             || - studio       |
@@ -1014,11 +1014,11 @@ Here's an example using one of the task properties, ``gitRepo``,  to get the lat
 
         ./gradlew update -Pcrafter.git.remote=upstream
 
-Here's another example on how to init, build and bundle from a given tag/branch.  Remember to clone the desired branch/tag of craftercms (As described in the next section :ref:`git`),  before running the command below:
+Here's another example on how to clone, build and bundle from a given tag/branch.  Remember to clone the desired branch/tag of craftercms (As described in the next section :ref:`git`),  before running the command below:
 
     .. code-block:: bash
 
-       ./gradlew init build deploy bundle -Pcrafter.git.branch={BRANCH}/{TAG NAME}
+       ./gradlew clone build deploy bundle -Pcrafter.git.branch={BRANCH}/{TAG NAME}
 
 Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.
 
@@ -1038,14 +1038,14 @@ Useful Git Commands
 Here are some useful Git commands for setting up our Crafter CMS project.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Copy Crafter CMS repository and initialize submodules
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Copy Crafter CMS repository and clone submodules
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     .. code-block:: bash
 
        git clone https://github.com/craftercms/craftercms.git
        cd craftercms
-       git submodule init
+       git submodule clone
 
 .. _update-submodules:
 
@@ -1092,6 +1092,6 @@ To clone the branch/tag of craftercms that you want to work with, run:
 
         git clone -b<branch> https://github.com/craftercms/craftercms/
 
-Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.  After cloning the desired branch, you can now init, build and bundle from a given tag/branch using the property `crafter.git.branch` as described in an earlier section :ref:`Git Properties<git-properties>`
+Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.  After cloning the desired branch, you can now clone, build and bundle from a given tag/branch using the property `crafter.git.branch` as described in an earlier section :ref:`Git Properties<git-properties>`
 
 
