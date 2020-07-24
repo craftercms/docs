@@ -40,7 +40,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/monitor/status?token=defaultManagementToken``
+``GET .../api/1/monitoring/status?token=defaultManagementToken``
 
 ^^^^^^^^
 Response
