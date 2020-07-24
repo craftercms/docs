@@ -8,7 +8,11 @@
 Putting it all together - Users, Groups, Roles and Permissions
 ==============================================================
 
-We'll create a new role, assign it to a group then add permissions.  For our example, we will be using the Website_editorial blueprint.  We'll add a **news** folder under **Home**, by navigating to **Pages** -> **Home**, then right click on **Home** and select **New Folder**.  Enter *news* in the **Folder Name** field.  We will be using the **news** folder for our example in setting up permissions to folders based on roles.  Users assigned to the **newseditor** role will then have access to publish and add/edit content in the **news** folder.
+In this section, we'll see how users, groups, roles and permissions work together in giving users access to certain folders in a site.
+
+We'll create a new role, group and user, add permissions for the new role and finally assign the newly created user to the new group setup.
+
+In preparation for our example, we will be using the Website_editorial blueprint.  We'll add a **news** folder under **Home**, by navigating to **Pages** -> **Home**, then right click on **Home** and select **New Folder**.  Enter *news* in the **Folder Name** field.  We will be using the **news** folder for our example in setting up permissions to folders based on roles.  Users assigned to the **newseditor** role will then have access to publish and add/edit content in the **news** folder.
 
 ------------------
 Create a new group
@@ -22,7 +26,7 @@ Let's begin by creating a new group.
 #. Enter a description of the new group being created in the **Description** field.
 #. Click on the **Create** button. A notification will appear that your new group has been created.
 
-Below are the information I used to create a new group:
+Below are the information used to create a new group:
 
 .. image:: /_static/images/site-admin/new-group.png
      :alt: Group - Create a New Group

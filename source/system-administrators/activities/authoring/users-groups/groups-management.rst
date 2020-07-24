@@ -13,21 +13,21 @@ edit, and manage the users that will belong to the groups and you can also add a
 
 Here's a list of predefined groups and roles in Crafter CMS:
 
-+---------------------+----------------+
-|| Group              || Role          |
-+=====================+================+
-|| system_admin       || system_admin  |
-+---------------------+----------------+
-|| site_admin         || admin         |
-+---------------------+----------------+
-|| site_author        || author        |
-+---------------------+----------------+
-|| site_developer     || developer     |
-+---------------------+----------------+
-|| site_reviewer      || reviewer      |
-+---------------------+----------------+
-|| site_publisher     || publisher     |
-+---------------------+----------------+
++---------------------+------------------------+----------------+
+|| Group              || Description           || Role          |
++=====================+========================+================+
+|| system_admin       || System administrator  || system_admin  |
++---------------------+------------------------+----------------+
+|| site_admin         || Site administrator    || admin         |
++---------------------+------------------------+----------------+
+|| site_author        || Site author           || author        |
++---------------------+------------------------+----------------+
+|| site_developer     || Site developer        || developer     |
++---------------------+------------------------+----------------+
+|| site_reviewer      || Site reviewer         || reviewer      |
++---------------------+------------------------+----------------+
+|| site_publisher     || Site publisher        || publisher     |
++---------------------+------------------------+----------------+
 
 You can add more groups defined whenever needed.  The list above is just a starting point for when you first create your site.  The following sections will give you more details on users and groups.  The next sections, Permission Mappings and Role Mappings describes how to setup/assign permissions and roles.
 
