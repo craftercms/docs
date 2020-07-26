@@ -104,6 +104,36 @@ ehcache
 **Dependency:** ehcache |br|
 **URL:** https://mvnrepository.com/artifact/net.sf.ehcache/ehcache
 
+jackson-dataformat-xml
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** com.fasterxml.jackson.dataformat |br|
+**Dependency:** jackson-dataformat-xml |br|
+**URL:** https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml
+
+jackson-module-jaxb-annotations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** com.fasterxml.jackson.module |br|
+**Dependency:** jackson-module-jaxb-annotations |br|
+**URL:** https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-jaxb-annotations
+
+jakarta.xml.bind-api
+^^^^^^^^^^^^^^^^^^^^
+**Package:** jakarta.xml.bind |br|
+**Dependency:** jakarta.xml.bind-api |br|
+**URL:** https://mvnrepository.com/artifact/jakarta.xml.bind/jakarta.xml.bind-api
+
+jakarta.activation-api
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** jakarta.activation |br|
+**Dependency:** jakarta.activation-api |br|
+**URL:** https://mvnrepository.com/artifact/jakarta.activation/jakarta.activation-api
+
+woodstox-core
+^^^^^^^^^^^^^
+**Package:** com.fasterxml.woodstox |br|
+**Dependency:** woodstox-core |br|
+**URL:** https://mvnrepository.com/artifact/com.fasterxml.woodstox/woodstox-core
+
 xstream
 ^^^^^^^
 **Package:** com.thoughtworks.xstream |br|
@@ -458,12 +488,6 @@ jaxb-runtime
 **Dependency:** jaxb-runtime |br|
 **URL:** https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-runtime
 
-jakarta.xml.bind-api
-^^^^^^^^^^^^^^^^^^^^
-**Package:** jakarta.xml.bind |br|
-**Dependency:** jakarta.xml.bind-api |br|
-**URL:** https://mvnrepository.com/artifact/jakarta.xml.bind/jakarta.xml.bind-api
-
 txw2
 ^^^^
 **Package:** org.glassfish.jaxb |br|
@@ -740,12 +764,6 @@ netcdf4
 **Dependency:** netcdf4 |br|
 **URL:** https://mvnrepository.com/artifact/edu.ucar/netcdf4
 
-jcip-annotations
-^^^^^^^^^^^^^^^^
-**Package:** net.jcip |br|
-**Dependency:** jcip-annotations |br|
-**URL:** https://mvnrepository.com/artifact/net.jcip/jcip-annotations
-
 jdom2
 ^^^^^
 **Package:** org.jdom |br|
@@ -769,24 +787,6 @@ listenablefuture
 **Package:** com.google.guava |br|
 **Dependency:** listenablefuture |br|
 **URL:** https://mvnrepository.com/artifact/com.google.guava/listenablefuture
-
-jsr305
-^^^^^^
-**Package:** com.google.code.findbugs |br|
-**Dependency:** jsr305 |br|
-**URL:** https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305
-
-checker-qual
-^^^^^^^^^^^^
-**Package:** org.checkerframework |br|
-**Dependency:** checker-qual |br|
-**URL:** https://mvnrepository.com/artifact/org.checkerframework/checker-qual
-
-error_prone_annotations
-^^^^^^^^^^^^^^^^^^^^^^^
-**Package:** com.google.errorprone |br|
-**Dependency:** error_prone_annotations |br|
-**URL:** https://mvnrepository.com/artifact/com.google.errorprone/error_prone_annotations
 
 j2objc-annotations
 ^^^^^^^^^^^^^^^^^^
@@ -938,24 +938,6 @@ protobuf-java
 **Dependency:** protobuf-java |br|
 **URL:** https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
 
-jackson-dataformat-xml
-^^^^^^^^^^^^^^^^^^^^^^
-**Package:** com.fasterxml.jackson.dataformat |br|
-**Dependency:** jackson-dataformat-xml |br|
-**URL:** https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml
-
-jackson-module-jaxb-annotations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Package:** com.fasterxml.jackson.module |br|
-**Dependency:** jackson-module-jaxb-annotations |br|
-**URL:** https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-jaxb-annotations
-
-woodstox-core
-^^^^^^^^^^^^^
-**Package:** com.fasterxml.woodstox |br|
-**Dependency:** woodstox-core |br|
-**URL:** https://mvnrepository.com/artifact/com.fasterxml.woodstox/woodstox-core
-
 stax2-api
 ^^^^^^^^^
 **Package:** org.codehaus.woodstox |br|
@@ -997,6 +979,102 @@ ivy
 **Package:** org.apache.ivy |br|
 **Dependency:** ivy |br|
 **URL:** https://mvnrepository.com/artifact/org.apache.ivy/ivy
+
+guava-collections
+^^^^^^^^^^^^^^^^^
+**Package:** com.google.guava |br|
+**Dependency:** guava-collections |br|
+**URL:** https://mvnrepository.com/artifact/com.google.guava/guava-collections
+
+guava-annotations
+^^^^^^^^^^^^^^^^^
+**Package:** com.google.guava |br|
+**Dependency:** guava-annotations |br|
+**URL:** https://mvnrepository.com/artifact/com.google.guava/guava-annotations
+
+guava-primitives
+^^^^^^^^^^^^^^^^
+**Package:** com.google.guava |br|
+**Dependency:** guava-primitives |br|
+**URL:** https://mvnrepository.com/artifact/com.google.guava/guava-primitives
+
+guava-base
+^^^^^^^^^^
+**Package:** com.google.guava |br|
+**Dependency:** guava-base |br|
+**URL:** https://mvnrepository.com/artifact/com.google.guava/guava-base
+
+findbugs
+^^^^^^^^
+**Package:** com.google.code.findbugs |br|
+**Dependency:** findbugs |br|
+**URL:** https://mvnrepository.com/artifact/com.google.code.findbugs/findbugs
+
+jcip-annotations
+^^^^^^^^^^^^^^^^
+**Package:** net.jcip |br|
+**Dependency:** jcip-annotations |br|
+**URL:** https://mvnrepository.com/artifact/net.jcip/jcip-annotations
+
+jsr305
+^^^^^^
+**Package:** com.google.code.findbugs |br|
+**Dependency:** jsr305 |br|
+**URL:** https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305
+
+bcel-findbugs
+^^^^^^^^^^^^^
+**Package:** com.google.code.findbugs |br|
+**Dependency:** bcel-findbugs |br|
+**URL:** https://mvnrepository.com/artifact/com.google.code.findbugs/bcel-findbugs
+
+jFormatString
+^^^^^^^^^^^^^
+**Package:** com.google.code.findbugs |br|
+**Dependency:** jFormatString |br|
+**URL:** https://mvnrepository.com/artifact/com.google.code.findbugs/jFormatString
+
+asm-debug-all
+^^^^^^^^^^^^^
+**Package:** org.ow2.asm |br|
+**Dependency:** asm-debug-all |br|
+**URL:** https://mvnrepository.com/artifact/org.ow2.asm/asm-debug-all
+
+asm-commons
+^^^^^^^^^^^
+**Package:** org.ow2.asm |br|
+**Dependency:** asm-commons |br|
+**URL:** https://mvnrepository.com/artifact/org.ow2.asm/asm-commons
+
+asm-tree
+^^^^^^^^
+**Package:** org.ow2.asm |br|
+**Dependency:** asm-tree |br|
+**URL:** https://mvnrepository.com/artifact/org.ow2.asm/asm-tree
+
+AppleJavaExtensions
+^^^^^^^^^^^^^^^^^^^
+**Package:** com.apple |br|
+**Dependency:** AppleJavaExtensions |br|
+**URL:** https://mvnrepository.com/artifact/com.apple/AppleJavaExtensions
+
+caffeine
+^^^^^^^^
+**Package:** com.github.ben-manes.caffeine |br|
+**Dependency:** caffeine |br|
+**URL:** https://mvnrepository.com/artifact/com.github.ben-manes.caffeine/caffeine
+
+checker-qual
+^^^^^^^^^^^^
+**Package:** org.checkerframework |br|
+**Dependency:** checker-qual |br|
+**URL:** https://mvnrepository.com/artifact/org.checkerframework/checker-qual
+
+error_prone_annotations
+^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** com.google.errorprone |br|
+**Dependency:** error_prone_annotations |br|
+**URL:** https://mvnrepository.com/artifact/com.google.errorprone/error_prone_annotations
 
 commons-lang3
 ^^^^^^^^^^^^^
@@ -1099,6 +1177,12 @@ graphql-java-extended-scalars
 **Package:** com.graphql-java |br|
 **Dependency:** graphql-java-extended-scalars |br|
 **URL:** https://mvnrepository.com/artifact/com.graphql-java/graphql-java-extended-scalars
+
+smiley-http-proxy-servlet
+^^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.mitre.dsmiley.httpproxy |br|
+**Dependency:** smiley-http-proxy-servlet |br|
+**URL:** https://mvnrepository.com/artifact/org.mitre.dsmiley.httpproxy/smiley-http-proxy-servlet
 
 commons-collections
 ^^^^^^^^^^^^^^^^^^^
