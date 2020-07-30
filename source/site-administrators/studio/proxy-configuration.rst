@@ -88,3 +88,7 @@ Sample
        </server>
      </servers>
    </proxy-config>
+
+|
+
+See :ref:`using-the-proxy-configuration` for an example of configuring the proxy configuration.
