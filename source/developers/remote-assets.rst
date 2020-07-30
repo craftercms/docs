@@ -8,11 +8,11 @@
 Remote Assets
 -------------
 
-Remote assets are binary files, typically images, videos, pdf documents, etc. which are hosted outside of Crafter Studio.  Remote assets could be hosted in AWS, Box or some other server accessed through WebDAV, CMIS. etc.
+Remote assets are binary files, typically images, videos, pdf documents, etc. which are hosted outside of Crafter CMS.  Remote assets could be hosted in AWS S3 or compatible storage, Box or some other server accessed through WebDAV, CMIS. etc.
 
-Various data sources are available to help manage/use assets hosted outside of Crafter Studio in your site.  The ``Developer`` section contains some examples on how to store assets remotely, such as :ref:`use-s3-to-store-assets` and :ref:`use-box-to-store-assets`.  The ``Site Administrators`` section contains information on how to configure Crafter Studio to access services used for storing assets remotely here: :ref:`studio-configuration`.
+Various data sources are available to help manage/select assets hosted outside of Crafter CMS in your site.  The ``Developer`` section contains some examples on how to store assets remotely, such as :ref:`use-s3-to-store-assets` and :ref:`use-box-to-store-assets`.  The ``Site Administrators`` section contains information on how to configure Crafter CMS to access services used for storing assets remotely here: :ref:`studio-configuration`.
 
-Crafter Studio by default has the remote assets controller open up the remote repository for read access via the URL pattern ``/remote-assets/STORE-TYPE/PROFILE-ID/PATH-TO-ASSET``, where:
+Browser access to remote assets on your site is provided by Crafter Engine's remote assets controller via the URL pattern ``/remote-assets/STORE-TYPE/PROFILE-ID/PATH-TO-ASSET``, where:
 
    * **STORE-TYPE** the remote repository storage used, for our example above, **S3**
    * **PROFILE-ID** ID used to refer to remote repository profile
