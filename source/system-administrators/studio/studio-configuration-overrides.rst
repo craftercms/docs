@@ -178,9 +178,9 @@ The following section of Studio's configuration overrides allows you to randomiz
    # studio.security.type: ldap
    #
    # Salt for encrypting
-   # studio.security.cipher.salt: TDEsDF8vx3gV4c7G
+   # studio.security.cipher.salt: ${env:CRAFTER_SYSTEM_ENCRYPTION_KEY}
    # Key for encrypting
-   # studio.security.cipher.key: AoCcBdnsTa9R3DdG
+   # studio.security.cipher.key: ${env:CRAFTER_SYSTEM_ENCRYPTION_SALT}
    # Enable password requirements validation
    # studio.security.passwordRequirements.enabled: false
    # Password requirements validation regular expression

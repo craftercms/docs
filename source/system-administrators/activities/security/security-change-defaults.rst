@@ -18,9 +18,22 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
         :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
 
         # -------------------- Encryption variables --------------------
+        # These variables are used to encrypt and decrypt values inside the configuration files.
         export CRAFTER_ENCRYPTION_KEY=${CRAFTER_ENCRYPTION_KEY:="default_encryption_key"}
         export CRAFTER_ENCRYPTION_SALT=${CRAFTER_ENCRYPTION_SALT:="default_encryption_salt"}
 
+     |
+
+* Replace the default values for database values encryption key and salt. Remember that these values should **not** be changed after Crafter CMS has been started if the installation has one or more of the following:
+
+  * Remote repository passwords and keys
+  * Cluster passwords and keys
+
+     .. code-block:: sh
+        :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
+        # These variables are used by Studio to encrypt and decrypt values in the database.
+        export CRAFTER_SYSTEM_ENCRYPTION_KEY=${CRAFTER_SYSTEM_ENCRYPTION_KEY:="s0meDefaultKey"}
+        export CRAFTER_SYSTEM_ENCRYPTION_SALT=${CRAFTER_SYSTEM_ENCRYPTION_SALT:="s0meDefaultSalt"}
      |
 
 * Replace default values for the management tokens used by Studio, Engine, Deployer, Search, Profile and Social
@@ -99,17 +112,5 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
      |
 
   #. Restart Studio
-
-* Replace the default values for the cipher key and salt before starting Crafter CMS for the very first time.  Remember that these values should **not** be changed after Crafter CMS has been started.
-
-     .. code-block:: sh
-        :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
-
-        # Salt for encrypting
-        # studio.security.cipher.salt: s0meDefaultSalt
-        # Key for encrypting
-        # studio.security.cipher.key: s0meDefaultKey
-
-     |
 
 * Change the default Studio ``admin`` user password either by randomizing the ``admin`` password for a fresh install of Crafter Studio or by changing the password after logging in as user ``admin``.  For more information on randomizing the admin password for a fresh install, see :ref:`randomize-admin-password`.  For more information on changing user passwords, see :ref:`user-passwords`
