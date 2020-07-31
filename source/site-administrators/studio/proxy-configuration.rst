@@ -91,4 +91,4 @@ Sample
 
 |
 
-See :ref:`using-the-proxy-configuration` for an example of configuring the proxy configuration.
+See :ref:`using-the-proxy-configuration` for an example of configuring the proxy with a React application.

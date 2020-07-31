@@ -83,15 +83,30 @@ Let's begin:
 
      |
 
-   * Edit the base url in your React app to the server we are using for development, which in our case, is the Studio server, on ``localhost:8080``, and the websocket port for hot module reloading, then save the changes and restart the React app.
+   * Edit the base url in your React app to the server we are using for development, which in our case, is the Studio server, on ``localhost:8080``, and the websocket port for hot module reloading (Crafter does not proxy websocket so you will need to point to the origin server of the websocket), then save the changes and restart the React server.
 
-     To edit the base url, navigate to ``video-center-blueprint/sources/app`` then open the ``.env.development`` file using your favorite editor and set the following variables variables: ``REACT_APP_BASE_URL`` and ``WDS_SOCKET_PORT``
+     To edit the base url, navigate to ``video-center-blueprint/sources/app`` then open the ``.env.development`` file using your favorite editor and set the following variables: ``REACT_APP_BASE_URL`` and ``WDS_SOCKET_PORT``
 
        .. code-block:: text
+          :emphasize-lines: 6,12
           :caption: *video-center-blueprint/sources/app/.env.development*
 
+          # A blank REACT_APP_SITE_NAME variable will make the app
+          # try to find the crafterSite cookie which, provided you're
+          # running both your local crafter and node dev web server for
+          # the app are the same, it should be set for you when you created
+          # the site. Manually set the here otherwise.
           REACT_APP_BASE_URL=http://localhost:8080
+
+          # If you're using the Crafter CMS's Preview Proxy to view the dev mode app inside Preview,
+          # configuring the port makes live reload work inside the Crafter CMS Preview frame.
+          # If you're using any other port to run your webpack dev server, you should adjust this to
+          # that port too.
           WDS_SOCKET_PORT=3000
+
+     Remember to restart the React server for the settings to take effect.
+
+       .. note:: If you're using the create-react-app, please note that ``react-scripts`` versions earlier than 3.4.0 does not support custom sockjs pathname for hot reloading the server.  Make sure that your ``react-scripts`` version used is 3.4.0 or above for the live reload work inside Crafter CMS to work.
 
 #. Setup Studio
 
@@ -147,7 +162,7 @@ Let's begin:
             type: 'channel-card-alt',
             ...
 
-     Save your changes.  Notice that in the React app preview (localhost:3000), the page is reloaded with our changes now visible.  Now let's take a look at Studio.  Refresh the browser and notice that the changes we made in the React app is visible inside the Studio preview
+     Save your changes.  Notice that in the React app preview (localhost:3000), the page is reloaded with our changes now visible.  Now let's take a look at Studio.  Notice that Studio preview has reloaded and the changes we made in the React app is now visible.
 
      .. image:: /_static/images/site-admin/vcbp-react-app-edited.jpg
         :alt: Changes made in the React app now visible in the Studio preview
