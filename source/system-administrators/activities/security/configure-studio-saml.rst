@@ -84,7 +84,22 @@ Requirements
 Configure
 ---------
 
-To configure Studio SAML2, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+To configure Studio SAML2, in your Authoring installation, we need to enable SAML security then we'll setup the required SAML configuration properties.
+
+To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter.studio.samlSecurity``:
+
+.. code-block:: sh
+   :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
+
+   # -------------------- Spring Profiles --------------------
+   ...
+   # Uncomment to enable SAML security
+   export SPRING_PROFILES_ACTIVE=crafter.studio.samlSecurity
+   # For multiple active spring profiles, create comma separated list
+
+|
+
+Next we'll setup SAML configuration properties.  Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -93,8 +108,6 @@ To configure Studio SAML2, in your Authoring installation, go to ``CRAFTER_HOME/
    ###############################################################
    ##               SAML Security                               ##
    ###############################################################
-   # SAML security enabled
-   studio.security.saml.enabled: true
    # SAML attribute name for email
    studio.security.saml.attributeName.email: email
    # SAML attribute name for first name
@@ -177,4 +190,4 @@ The classpath is located in your Authoring installation, under ``CRAFTER_HOME/bi
 
 |
 
-Restart Studio after configuring the above.
+Restart your Authoring installation after configuring the above.
