@@ -552,7 +552,7 @@ Remember to update these per installation and provide these tokens to the status
 ||                           || defaultManagementToken                                           |
 +----------------------------+-------------------------------------------------------------------+
 
-Here are the environment variables used for encryption of properties:
+Here are the environment variables used to encrypt and decrypt values inside configuration files:
 
 +--------------------------+---------------------------------------------------------------------+
 || Encryption              || Description                                                        |
@@ -567,6 +567,22 @@ Here are the environment variables used for encryption of properties:
 ||                         +---------------------------------------------------------------------+
 ||                         || default_encryption_salt                                            |
 +--------------------------+---------------------------------------------------------------------+
+
+Here are the environment variables used to encrypt and decrypt values in the database:
+
++---------------------------------+---------------------------------------------------------------------+
+|| Encryption                     || Description                                                        |
+|| Variable Name                  +---------------------------------------------------------------------+
+||                                || Default Value                                                      |
++=================================+=====================================================================+
+|| CRAFTER_SYSTEM_ENCRYPTION_KEY  || Key used for encrypting database values                            |
+||                                +---------------------------------------------------------------------+
+||                                || <someDefaultKeyValue>                                              |
++---------------------------------+---------------------------------------------------------------------+
+|| CRAFTER_SYSTEM_ENCRYPTION_SALT || Salt used for encrypting database values                           |
+||                                +---------------------------------------------------------------------+
+||                                || <someDefaultSaltValue>                                             |
++---------------------------------+---------------------------------------------------------------------+
 
 Here are the configuration variables used in Crafter CMS:
 
