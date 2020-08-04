@@ -36,7 +36,7 @@ OS (All components)
 The following Operating Systems are supported (64Bit only for all OSs)
 
     - Linux (Ubuntu, RHEL, CentOS)
-    - OS X
+    - macOS (10.12 and later)
     - Windows via Docker
     
 ^^^^^^^^^^^^^^^^^^^^^
