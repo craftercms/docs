@@ -149,6 +149,9 @@ be used:
 *   ``permitAll()``
 *   ``denyAll()``
 
+.. note::
+   For the ``<url>`` Ant-style path pattern, ``<url>/*</url>`` indicates just one level of the URL and ``<url>/**</url>`` indicates all urls.  For more information on Ant-style path pattern matching, see https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/util/AntPathMatcher.html
+
 .. _engine-security-access-attributes:
 
 ----------------------
