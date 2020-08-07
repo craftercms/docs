@@ -14,7 +14,7 @@ What is Content Monitoring?
 
 Content Monitoring is a feature that allows you to configure watches and notifications on your site.
 This will provide an easy way to detect unwanted or outdated content.
-Crafter Studio using the Website_editorial blueprint out of the box will run the process that performs monitoring everyday  and send notifications
+Sites created using Crafter Studio's Website Editorial blueprint out of the box will run the process that performs monitoring everyday and send notifications
 indicating the items detected by the content monitors.
 Content monitors are managed independently for each site and are highly customizable.
 
@@ -27,7 +27,7 @@ Each monitor needs to define the following properties:
 - name:
     General name for the content monitor.
 - query:
-    Luecene query used to match documents, can be any valid Lucene query.
+    Lucene query used to match documents, can be any valid Lucene query.
 - paths:
     List of paths with notification configurations, there must be at least one path item for each
     monitor.
@@ -76,7 +76,7 @@ The file can also be located in the following path:
     <contentMonitoring>
       <monitor>
         <name>Content Expiring Tomorrow</name>
-        <query>expired_dt:[NOW/DAY+1DAY TO NOW/DAY+2DAY]</query>
+        <query>expired_dt:[now+1d/d TO now+2d/d]</query>
         <paths>
           <path>
             <name>All Site</name>
@@ -89,7 +89,7 @@ The file can also be located in the following path:
       </monitor>
       <monitor>
         <name>Content Expiring In One Week</name>
-        <query>expired_dt:[NOW/DAY+7DAYS TO NOW/DAY+8DAYS]</query>
+        <query>expired_dt:[now+7d/d TO now+8d/d]</query>
         <paths>
           <path>
             <name>All Site</name>
@@ -194,17 +194,19 @@ Content Expiration
 +------------------------------------------------+-------------------------------------------+
 | Purpose                                        | Query                                     |
 +================================================+===========================================+
-| Warn every day that content is past expiration | | ``expired_dt:[* TO NOW]``               |
+| Warn every day that content is past expiration | | ``expired_dt:[* TO now]``               |
 +------------------------------------------------+-------------------------------------------+
-| Warn 10 days ahead that content will expire    | | ``expired_dt:[NOW+10DAY TO NOW+11DAY]`` |
+| Warn 10 days ahead that content will expire    | | ``expired_dt:[now+10d/d TO now+11d/d]`` |
 +------------------------------------------------+-------------------------------------------+
-| Warn 10 days ahead AND on expire date          | | ``expired_dt:[NOW+10DAY TO NOW+11DAY]`` |
+| Warn 10 days ahead AND on expire date          | | ``expired_dt:[now+10d/d TO now+11d/d]`` |
 |                                                | | or                                      |
-|                                                | | ``expired_dt:[NOW TO NOW+1DAY]``        |
+|                                                | | ``expired_dt:[now TO now+1d/d]``        |
 +------------------------------------------------+-------------------------------------------+
-| Everything that was modified today             | | ``modified_dt:[NOW-1DAY TO NOW]``       |
+| Everything that was modified today             | | ``modified_dt:[now-1d/d TO now]``       |
 |                                                | | or                                      |
-|                                                | | ``create_dt:[NOW-1DAY TO NOW]``         |
+|                                                | | ``create_dt:[now-1d/d TO now]``         |
 +------------------------------------------------+-------------------------------------------+
 | Content that Contains an Old Trademark         | | ``*:"UNWANTED TRADEMARK"``              |
 +------------------------------------------------+-------------------------------------------+
+
+For more information on supported time units that you can use for your query, see https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#date-math
