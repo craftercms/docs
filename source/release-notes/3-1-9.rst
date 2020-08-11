@@ -1,0 +1,46 @@
+.. index:: Crafter CMS 3.1.9 Release Notes
+
+-----------------
+Crafter CMS 3.1.9
+-----------------
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+
+* Added Git Shell in the Git SSH server image in the Crafter CMS Docker images.  This allows an extra level of security since only Git related commands can be used when connecting to the server
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Upgraded JGit version to 5.8
+
+* Published repository improvements |br|
+  When creating a site, the ``published`` repository is not created until a publish request has been sent.  The ``published`` repository is initialized when the very first publish request is received.
+
+* Added support for using the numpad (numeric keypad/ten key/number pad) on a keyboard in ``number`` form control
+
+* Added support for the search API to accept path filters with regex values |br|
+  The search parameter (SearchParams) ``path`` is now added in the search API for filtering paths using a regular expression.  See :studio_swagger_url:`#/search/search` for more information.
+
+* Added a new lifecycle hook for remote targets |br|
+  All targets that use the ``gitPullProcessor`` need to include a new lifecycle hook, ``deleteLocalRepoFolderLifecycleHook``.  This new lifecycle hook will be automatically added to existing targets when upgrading to Crafter CMS 3.1.9 by the upgrade manager.
+
+* Added support for clearing the site cache for static-assets |br|
+  The deployer now includes templates under the static-assets folder in the clear cache post processor.  This change will be automatically performed by the upgrade manager for existing targets when upgrading to Crafter CMS 3.1.9.
+
+Lot's of other small enhancements and bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 3.1.9 Milestone <https://github.com/craftercms/craftercms/milestone/65?closed=1>`_
+
+.. important::
+
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.9)
+
+    For Docker/Kuber deployments, see :ref:`upgrading-dockers`
+
+    For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+    Please see :ref:`upgrade-notes-to-fix-backup-error` for some important notes when updating to Crafter CMS 3.1.9
+
