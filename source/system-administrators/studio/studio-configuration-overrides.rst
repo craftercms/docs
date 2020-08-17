@@ -468,3 +468,20 @@ The following section of Studio's configuration overrides allows you to setup se
    #       cloudfrontCertificateArn:
    #       # The alternate domains names (besides *.cloudfront.net) for the CloudFront CDN (optional when target template is aws-cloudformed-s3)
    #       alternateCloudFrontDomainNames:
+
+-----------------
+Forwarded Headers
+-----------------
+
+The following section of Studio's configuration overrides allows you to to resolve the actual hostname and protocol when it is behind a load balancer or reverse proxy.
+
+.. code-block:: yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+   :linenos:
+
+   ##################################################
+   ##             Forwarded Headers                ##
+   ##################################################
+   # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
+   # address. Enable when Studio is behind a reverse proxy or load balancer that sends these
+   studio.forwarded.headers.enabled: false

@@ -30,6 +30,31 @@ Updates
 * Added support for clearing the site cache for static-assets |br|
   The deployer now includes templates under the static-assets folder in the clear cache post processor.  This change will be automatically performed by the upgrade manager for existing targets when upgrading to Crafter CMS 3.1.9.
 
+* Added Studio and Engine support for forwarded headers, to resolve the actual hostname and protocol when it is behind a load balancer, reverse proxy or CloudFront via new properties |br|
+
+  To enable forwarded headers in Engine, open the :ref:`server-config.properties <engine-configuration-files>` and set the ``crafter.engine.forwarded.headers.enabled`` property to ``true``
+
+    .. code-block:: properties
+       :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+       # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
+       # address. Enable when Engine is behind a reverse proxy or load balancer that sends these
+       crafter.engine.forwarded.headers.enabled=false
+
+  To enable forwarded headers in Studio, open the :ref:`studio-config-override.yaml <studio-configuration-files>` and set the ``studio.forwarded.headers.enabled`` property to true
+
+    .. code-block:: yaml
+       :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+       ##################################################
+       ##             Forwarded Headers                ##
+       ##################################################
+       # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
+       # address. Enable when Studio is behind a reverse proxy or load balancer that sends these
+       studio.forwarded.headers.enabled: false
+
+
+
 Lot's of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 3.1.9 Milestone <https://github.com/craftercms/craftercms/milestone/65?closed=1>`_
