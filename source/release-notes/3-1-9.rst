@@ -30,6 +30,9 @@ Updates
 * Added support for clearing the site cache for static-assets |br|
   The deployer now includes templates under the static-assets folder in the clear cache post processor.  This change will be automatically performed by the upgrade manager for existing targets when upgrading to Crafter CMS 3.1.9.
 
+* Added new environment variables for encrypting and decrypting values in the database |br|
+  See :ref:`securing-your-crafter-cms-install` for more information on the database values encryption key and salt.
+
 * Added Studio and Engine support for forwarded headers, to resolve the actual hostname and protocol when it is behind a load balancer, reverse proxy or CloudFront via new properties |br|
 
   To enable forwarded headers in Engine, open the :ref:`server-config.properties <engine-configuration-files>` and set the ``crafter.engine.forwarded.headers.enabled`` property to ``true``
