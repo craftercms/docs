@@ -1,0 +1,74 @@
+.. index:: Crafter CMS 3.1.9 Release Notes
+
+-----------------
+Crafter CMS 3.1.9
+-----------------
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+
+* Added Git Shell in the Git SSH server image in the Crafter CMS Docker images.  This allows an extra level of security since only Git related commands can be used when connecting to the server
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Upgraded JGit version to 5.8
+
+* Published repository improvements |br|
+  When creating a site, the ``published`` repository is not created until a publish request has been sent.  The ``published`` repository is initialized when the very first publish request is received.
+
+* Added support for using the numpad (numeric keypad/ten key/number pad) on a keyboard in ``number`` form control
+
+* Added support for the search API to accept path filters with regex values |br|
+  The search parameter (SearchParams) ``path`` is now added in the search API for filtering paths using a regular expression.  See :studio_swagger_url:`#/search/search` for more information.
+
+* Added a new lifecycle hook for remote targets |br|
+  All targets that use the ``gitPullProcessor`` need to include a new lifecycle hook, ``deleteLocalRepoFolderLifecycleHook``.  This new lifecycle hook will be automatically added to existing targets when upgrading to Crafter CMS 3.1.9 by the upgrade manager.
+
+* Added support for clearing the site cache for static-assets |br|
+  The deployer now includes templates under the static-assets folder in the clear cache post processor.  This change will be automatically performed by the upgrade manager for existing targets when upgrading to Crafter CMS 3.1.9.
+
+* Added new environment variables for encrypting and decrypting values in the database |br|
+  See :ref:`securing-your-crafter-cms-install` for more information on the database values encryption key and salt.
+
+* Added Studio and Engine support for forwarded headers, to resolve the actual hostname and protocol when it is behind a load balancer, reverse proxy or CloudFront via new properties |br|
+
+  To enable forwarded headers in Engine, open the :ref:`server-config.properties <engine-configuration-files>` and set the ``crafter.engine.forwarded.headers.enabled`` property to ``true``
+
+    .. code-block:: properties
+       :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+       # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
+       # address. Enable when Engine is behind a reverse proxy or load balancer that sends these
+       crafter.engine.forwarded.headers.enabled=false
+
+  To enable forwarded headers in Studio, open the :ref:`studio-config-override.yaml <studio-configuration-files>` and set the ``studio.forwarded.headers.enabled`` property to true
+
+    .. code-block:: yaml
+       :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+       ##################################################
+       ##             Forwarded Headers                ##
+       ##################################################
+       # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
+       # address. Enable when Studio is behind a reverse proxy or load balancer that sends these
+       studio.forwarded.headers.enabled: false
+
+
+
+Lot's of other small enhancements and bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 3.1.9 Milestone <https://github.com/craftercms/craftercms/milestone/65?closed=1>`_
+
+.. important::
+
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.9)
+
+    For Docker/Kuber deployments, see :ref:`upgrading-dockers`
+
+    For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+    Please see :ref:`upgrade-notes-to-fix-backup-error` for some important notes when updating to Crafter CMS 3.1.9
+
