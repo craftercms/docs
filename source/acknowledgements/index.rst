@@ -2,10 +2,6 @@
 
 .. index:: Open Source Acknowledgements
 
-.. |br| raw:: html
-
-    <br>
-
 .. _oss-acknowledgements:
 
 Open Source Acknowledgements
