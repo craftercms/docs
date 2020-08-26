@@ -2,14 +2,12 @@
 
 .. index:: Crafter CMS Security Policies, Security, Security Policies
 
-.. _security:
-
 .. warning::
     Crafter CMS is a platform for developing content rich applications, which includes developing code and deploying it to servers. Crafter CMS provides for a server-side sandbox (Groovy Sandbox -- based on Jenkins' Groovy Sandbox: https://github.com/jenkinsci/groovy-sandbox) to limit what these server-side applications can do on a server. A user with access to Crafter Studio (with a sufficiently priveleged role) or with access to the git repository of a *site* can develop server-side code and deploy it. The sandbox will limit and restirct what can be executed on a server and is configurable to allow more access as needed. Nonetheless, Enterprises should consider having a series of environments, typically: ``Dev`` -> ``QA`` -> ``Prod`` where code gets developed and validated in the lower environments before pushing up. This is fully supported by Crafter CMS and the underlying git repository makes it easy.
 
-========
-Security
-========
+=================
+Security Policies
+=================
 
 In this section, we describe the security processes followed during the development, release, and support of Crafter CMS.
 
