@@ -2,8 +2,6 @@
 
 .. index:: Crafter CMS Security Advisories, Advisories
 
-.. _security:
-
 ===================
 Security Advisories
 ===================
