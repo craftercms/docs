@@ -29,7 +29,7 @@ This Manual introduces key concepts in Crafter CMS, presents the authoring and d
    /developers/index
    /site-administrators/index
    /system-administrators/index
-   /security/security-policies
+   /security/index
    /release-notes/index
    /roadmap/index
    /contribute/index
