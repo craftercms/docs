@@ -40,10 +40,16 @@ Request that the customer, SI, bounty-hunter, user report security issues privat
 Security Issue Workflow
 ^^^^^^^^^^^^^^^^^^^^^^^
 
+Upon submission of a security issue
+
+* You'll receive an acknowledgement indicating recept of submission
+* You'll receive a timeframe for the triage of the issue to determine if there is a vulnerability
+* You'll be invited to an advisory issue tracker to track the progress through the embargo period
+* You'll be provided a CVE ID (pending our application to become a CNA for Crafter CMS issues)
+
 .. figure:: /_static/images/system-admin/Crafter-CMS-Security-Issue-Flow.png
     :alt: Crafter CMS Security Issue Flow
     :align: center
-
 
 -----------
 Development
