@@ -1,10 +1,5 @@
 :is-up-to-date: True
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
 .. index:: Setup a Two Node Cluster with Studio and a Studio Arbiter, Auto-Clustering with Studio Example, Studio's Embedded Database Multi-master Cluster Example
 
 .. _setup-a-two-node-cluster-with-studio-and-a-studio-arbiter:
