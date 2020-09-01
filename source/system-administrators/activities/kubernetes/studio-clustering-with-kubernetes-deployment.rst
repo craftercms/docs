@@ -1,10 +1,5 @@
 :is-up-to-date: True
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
 .. index:: Setup Studio Clustering with Kubernetes Deployment, Auto-Clustering with Studio Example with Kubernetes, Studio's Embedded Database Multi-master Cluster Example with Kubernetes
 
 .. _setup-studio-clustering-with-kubernetes-deployment:

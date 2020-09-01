@@ -46,5 +46,8 @@ making backups.
 
 First, we'll take a look at an example of how to setup a two node cluster with Studio and a Studio Arbiter step by step, then, we'll take a look at an example of setting up Studio clustering using a Kubernetes deployment
 
-* :ref:`setup-a-two-node-cluster-with-studio-and-a-studio-arbiter`
-* :ref:`setup-studio-clustering-with-kubernetes-deployment`
+.. toctree::
+   :maxdepth: 1
+
+   studio-clustering-two-nodes-with-arbiter
+   kubernetes/studio-clustering-with-kubernetes-deployment
