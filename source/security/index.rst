@@ -12,3 +12,4 @@ Security
 
    security-policies
    advisory
+   crafter-cms-security
