@@ -31,9 +31,17 @@ Code Flow
 
   * Automated
 
+    * CI: Travis-CI
     * Code quality gate: Codacy
     * Security audit: Snyk
-    * CI: Travis-CI
+
+      * Critical and High issues will be addressed
+      * Medium and below issues will be addressed if we deem it a viable attack vector
+
+    * Penetration testing using OWASP ZAP during every release
+
+      * Critical and High issues will be addressed
+      * Medium and below issues will be addressed if we deem it a viable attack vector
 
   * Human
 
@@ -53,7 +61,6 @@ Release
 * Artifacts are hosted on AWS S3
 * AWS AMI is scanned by AWS Inspector,  https://aws.amazon.com/inspector/
 
-
 -------------
 Crafter Cloud
 -------------
@@ -61,6 +68,8 @@ Crafter Cloud
 * Crafter Cloud is based on the scanned AWS AMI
 * Penetration testing using OWASP ZAP during every release
 
+  * Critical and High issues will be addressed
+  * Medium and below issues will be addressed if we deem it a viable attack vector
 
 --------
 OWASP 10
