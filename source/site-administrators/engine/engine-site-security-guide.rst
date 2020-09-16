@@ -118,6 +118,8 @@ by Crafter Engine is described below:
 #.  If the page has the role ``Authenticated``, just authentication is needed.
 #.  If the page has any other roles, the user needs to be authenticated and have any of those roles.
 
+.. _engine-site-security-guide-restrict-urls:
+
 Restrict URLs
 =============
 
@@ -132,7 +134,7 @@ access based on URL patterns. You just need to add configuration similar to the 
         <urlRestrictions>
             <restriction>
                 <url>/user/*</url>
-                <expression>hasAnyRole({'user', 'admin'})</expression>
+                <expression>hasAnyRole({'user'\, 'admin'})</expression>
             </restriction>
         </urlRestrictions>
     </security>
@@ -144,13 +146,15 @@ be used:
 
 *   ``isAnonymous()``
 *   ``isAuthenticated()``
-*   ``hasRole('role'})``
-*   ``hasAnyRole({'role1', 'role2'})``
+*   ``hasRole('role')``
+*   ``hasAnyRole({'role1'\, 'role2'})``
 *   ``permitAll()``
 *   ``denyAll()``
 
 .. note::
    For the ``<url>`` Ant-style path pattern, ``<url>/*</url>`` indicates just one level of the URL and ``<url>/**</url>`` indicates all urls.  For more information on Ant-style path pattern matching, see https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/util/AntPathMatcher.html
+
+  For the *hasAnyRole* expression, remember to escape the comma ``,`` separating the roles inside the expression as shown above.
 
 .. _engine-security-access-attributes:
 
