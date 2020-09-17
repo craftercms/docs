@@ -137,6 +137,8 @@ where:
 * **name**: The name of the attribute in the header.  The ``APP_`` prefix shown above is just an example and could be anything.
 * **field**: The name of the attribute in the authentication object.
 
+To get the value of the attribute passed in the header, use the following ``authToken.principal.attribute.FIELD_NAME``, where ``FIELD_NAME`` is the name of the attribute in the authentication object
+
 -------
 Example
 -------
@@ -288,23 +290,23 @@ Notice that this time, we are able to preview the article correctly
 |
 
 
-To display the value of the attribute ``APP_FULL_NAME``, open the ``Sidebar`` in Studio, then navigate to ``/templates/web/components/`` then right click on ``header.ftl`` and select ``Edit``.  Replace the name in the greeting ``Howdy ${name}`` with ``Howdy, ${authToken.principal.attributes.name}``
+The website editorial blueprint displays the value of the attribute with field ``name`` out of the box in the page header. You can take a look at the ``header.ftl`` file on how the attribute is displayed.  Open the ``Sidebar`` in Studio, then navigate to ``/templates/web/components/`` then right click on ``header.ftl`` and select ``Edit``.  The ``authToken.principal.attributes.name`` contains the value passed for ``APP_FULL_NAME`` in the header
 
    .. code-block:: text
-      :emphasize-lines: 10
+      :emphasize-lines: 5
       :caption: */templates/web/components/header.ftl*
       :linenos:
 
       <#import "/templates/system/common/cstudio-support.ftl" as studio />
       <header id="header" <@studio.componentAttr component=contentModel ice=true iceGroup="header"/>>
         <a href="/" class="logo"><img border="0" alt="${contentModel.logo_text_t!""}" src="${contentModel.logo_s!""}">
-          <#if profile??>
-            <#assign name = profile.attributes.name!"stranger" />
+          <#if authToken.principal??>
+            <#assign name = authToken.principal.attributes.name!"stranger" />
           <#else>
             <#assign name = "stranger" />
           </#if>
 
-          Howdy, ${authToken.principal.attributes.name}
+          Howdy, ${name}
 
          </a>
          ...
