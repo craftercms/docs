@@ -50,9 +50,9 @@ From the List Access Tokens page you can click the ID of an existing record to d
   Access Tokens are immutable, if you need to change the permissions for an existing token you need
   to delete it and create a new one using the same value for the ID.
 
---------------------------
-Create a New Access Ticket
---------------------------
+-------------------------
+Create a New Access Token
+-------------------------
 
 To create a new Access Token you can click the ``New Access Token`` link in the left sidebar.
 
