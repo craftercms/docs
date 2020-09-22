@@ -20,7 +20,18 @@ To backup your authoring or delivery environment, go to ``{Crafter-CMS-install-d
 
 where ``{filename}`` is optional.
 
-Your backup file will be located in ``{Crafter-CMS-install-directory}/crafter-{env}/backups/``. If a filename has been specified, your backup file will be named ``{filename}-{yyyy-MM-dd-hh-mm-ss}.zip`` where:
+Your backup file will be located in ``$CRAFTER_HOME/backups/`` by default (where ``$CRAFTER_HOME`` is ``{Crafter-CMS-install-directory}/crafter-{env}``).
+
+You can change the backup file location by opening **{Crafter-CMS-install-directory}/{Crafter-ENV}/bin/crafter-setenv.sh** and change ``$CRAFTER_HOME/backups`` in the following line to your desired location:
+
+   .. code-block:: bash
+
+      export CRAFTER_BACKUPS_DIR=${CRAFTER_BACKUPS_DIR:="$CRAFTER_HOME/backups"}
+
+   |
+
+
+If a filename has been specified, your backup file will be named ``{filename}-{yyyy-MM-dd-hh-mm-ss}.zip`` where:
     - ``yyyy`` is the year, ex. 2017
     - ``MM`` is the month, from 01 to 12 ex. 07 for July
     - ``dd`` is the day, from 00 to 30 or 31 ex. 28
