@@ -192,6 +192,10 @@ Here are the location environment variables used by ``crafter.sh``:
 ||                         +---------------------------------------------------------------------+
 ||                         || $CRAFTER_HOME/temp                                                 |
 +--------------------------+---------------------------------------------------------------------+
+|| CRAFTER_BACKUPS_DIR     || Crafter CMS backup directory path                                  |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_HOME/backups                                              |
++--------------------------+---------------------------------------------------------------------+
 
 Here are the environment variables used for hosts and ports in ``crafter.sh``:
 
