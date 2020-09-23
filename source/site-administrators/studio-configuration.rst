@@ -48,7 +48,6 @@ Here are the settings that can be configured through Crafter Studio:
    studio/mime-types-configuration
    studio/permission-mappings
    studio/preview-panel-configuration
-   studio/proxy-configuration
    studio/role-mappings
    studio/rte-configuration
    studio/sidebar-configuration
