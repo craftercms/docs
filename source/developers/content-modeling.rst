@@ -670,6 +670,8 @@ To facilitate indexing, the following suffix should be appended to variable name
 
 Model fields require their respective data type postfix as listed above.  The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.
 
+Please note that indexed *text* fields are case insensitive when performing a search, while *string* fields are case sensitive. If performing a case insensitive search on a *string* field is desired, Crafter CMS provides a way by enabling tokenization of the field in the content type.  To enable tokenization of a *string* field, put a check in the checkbox labeled ``Tokenize for Indexing`` in the properties section of the content type field.
+
 When setting up reserved variable names for your model, remember to remove the postfix auto-added by the UI since the variable name needs to be exactly the same as listed :ref:`above<reserved-variable-names>`.
 
 
