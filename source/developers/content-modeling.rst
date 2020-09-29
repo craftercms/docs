@@ -670,10 +670,40 @@ To facilitate indexing, the following suffix should be appended to variable name
 
 Model fields require their respective data type postfix as listed above.  The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.
 
-Please note that indexed *text* fields are case insensitive when performing a search, while *string* fields are case sensitive. If performing a case insensitive search on a *string* field is desired, Crafter CMS provides a way by enabling tokenization of the field in the content type.  To enable tokenization of a *string* field, put a check in the checkbox labeled ``Tokenize for Indexing`` in the properties section of the content type field.
-
 When setting up reserved variable names for your model, remember to remove the postfix auto-added by the UI since the variable name needs to be exactly the same as listed :ref:`above<reserved-variable-names>`.
 
+Please note that indexed ``text`` fields are case insensitive when performing a search, while ``string`` fields are case sensitive. If performing a case insensitive search on a ``string`` field is desired, Crafter CMS provides a way by enabling tokenization of the field in the content type.  To enable tokenization of a ``string`` field in Studio, put a check in the checkbox labeled **Tokenize for Indexing** in the properties section of the content type field.  Below is the ``Page - Article`` content type in a site created using the Website Editorial blueprint, showing the field ``Author`` with the ``Tokenize for Indexing`` option:
+
+.. image:: /_static/images/content-model/tokenize-for-indexing-property.jpg
+   :alt: Enable case insensitive keyword search for string fields in content type by clicking on "Tokenize for Indexing"
+   :width: 90%
+   :align: left
+
+|
+
+This will set the ``tokenize`` property of the field to ``true``, so for our example shown above,
+
+   .. code-block:: xml
+      :caption: */config/studio/content-types/page-article/form-definition.xml*
+      :emphasize-lines: 8-10
+
+      <field>
+        <type>input</type>
+        <id>author_s</id>
+        ...
+        <properties>
+          ...
+          <property>
+            <name>tokenize</name>
+            <value>true</value>
+            <type>boolean</type>
+          </property>
+        </properties>
+        ...
+
+   |
+
+It should also be noted that when the tokenize option is enabled, a second field will be created with the ``_t`` postfix.  This second field with the ``_t`` postfix should be used in queries to be case insensitive and match tokens.  In our example above, the field ``author_t`` should be used in queries.
 
 .. _data-sources:
 
