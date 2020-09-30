@@ -683,7 +683,7 @@ If performing a case insensitive search on a ``string`` field is desired, Crafte
 
 |
 
-It should also be noted that when the tokenize option is enabled, a second field will be created with the ``_t`` postfix.  This second field with the ``_t`` postfix should be used in queries to be case insensitive and match tokens.  In our example above, the field ``author_t`` should be used in queries instead of ``author_s``to be case insensitive and match tokens.
+It should also be noted that when the tokenize option is enabled, a second field will be created with the ``_t`` postfix.  This second field with the ``_t`` postfix should be used in queries to be case insensitive and match tokens.  In our example above, the field ``author_t`` should be used in queries instead of ``author_s`` to be case insensitive and match tokens.
 
 Let's take a look at an example of queries performed on a ``string`` field with ``tokenize`` enabled and compare the results of using the field with the ``_s`` postfix and the second field created when we enabled ``tokenize`` with the  ``_t`` postfix. We'll use the ``Author`` field shown above with ``Tokenize for Indexing`` enabled. Here are the results of the queries using the ``author_s`` and ``author_t`` fields:
 
