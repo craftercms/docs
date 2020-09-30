@@ -19,7 +19,7 @@ procedures as well as a comprehensive reference section.
    /developers/index
    /site-administrators/index
    /system-administrators/index
-   /security/security-policies
+   /security/index
    /release-notes/index
    /roadmap/index
    /contribute/index

@@ -403,6 +403,11 @@ rst_epilog = """
 .. |siteConfig| image:: /_static/images/configuration-site-config-icon.png
                    :width: 15%
 
+.. # define a hard line break for HTML
+.. |br| raw:: html
+
+   <br />
+
 """
 
 # Javadoc home and version
