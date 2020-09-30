@@ -672,7 +672,9 @@ Model fields require their respective data type postfix as listed above.  The UI
 
 When setting up reserved variable names for your model, remember to remove the postfix auto-added by the UI since the variable name needs to be exactly the same as listed :ref:`above<reserved-variable-names>`.
 
-Please note that indexed ``text`` fields are case insensitive when performing a search, while ``string`` fields are case sensitive. If performing a case insensitive search on a ``string`` field is desired, Crafter CMS provides a way by enabling tokenization of the field in the content type.  To enable tokenization of a ``string`` field in Studio, put a check in the checkbox labeled **Tokenize for Indexing** in the properties section of the content type field.  Below is the ``Page - Article`` content type in a site created using the Website Editorial blueprint, showing the field ``Author`` with the ``Tokenize for Indexing`` option:
+Please note that indexed ``text`` fields are case insensitive when performing a search, while ``string`` fields are case sensitive. Also, queries using ``string`` fields will only match full values besides being case sensitive.
+
+If performing a case insensitive search on a ``string`` field is desired, Crafter CMS provides a way by enabling tokenization of the field in the content type.  To enable tokenization of a ``string`` field in Studio, put a check in the checkbox labeled **Tokenize for Indexing** in the properties section of the content type field.  Below is the ``Page - Article`` content type in a site created using the Website Editorial blueprint, showing the field ``Author`` with the ``Tokenize for Indexing`` option:
 
 .. image:: /_static/images/content-model/tokenize-for-indexing-property.jpg
    :alt: Enable case insensitive keyword search for string fields in content type by clicking on "Tokenize for Indexing"
@@ -681,29 +683,23 @@ Please note that indexed ``text`` fields are case insensitive when performing a 
 
 |
 
-This will set the ``tokenize`` property of the field to ``true``, so for our example shown above,
+It should also be noted that when the tokenize option is enabled, a second field will be created with the ``_t`` postfix.  This second field with the ``_t`` postfix should be used in queries to be case insensitive and match tokens.  In our example above, the field ``author_t`` should be used in queries instead of ``author_s`` to be case insensitive and match tokens.
 
-   .. code-block:: xml
-      :caption: */config/studio/content-types/page-article/form-definition.xml*
-      :emphasize-lines: 8-10
+Let's take a look at an example of queries performed on a ``string`` field with ``tokenize`` enabled and compare the results of using the field with the ``_s`` postfix and the second field created when we enabled ``tokenize`` with the  ``_t`` postfix. We'll use the ``Author`` field shown above with ``Tokenize for Indexing`` enabled. Here are the results of the queries using the ``author_s`` and ``author_t`` fields:
 
-      <field>
-        <type>input</type>
-        <id>author_s</id>
-        ...
-        <properties>
-          ...
-          <property>
-            <name>tokenize</name>
-            <value>true</value>
-            <type>boolean</type>
-          </property>
-        </properties>
-        ...
-
-   |
-
-It should also be noted that when the tokenize option is enabled, a second field will be created with the ``_t`` postfix.  This second field with the ``_t`` postfix should be used in queries to be case insensitive and match tokens.  In our example above, the field ``author_t`` should be used in queries.
++---------+-------------------+------------------+
+|Query	  |Matches author_s?  |Matches author_t? |
++=========+===================+==================+
+|Jane	  |No	              |Yes               |
++---------+-------------------+------------------+
+|jane	  |No	              |Yes               |
++---------+-------------------+------------------+
+|Jane Doe |Yes	              |Yes               |
++---------+-------------------+------------------+
+|jane doe |No	              |Yes               |
++---------+-------------------+------------------+
+|Jane doe |No	              |Yes               |
++---------+-------------------+------------------+
 
 .. _data-sources:
 
