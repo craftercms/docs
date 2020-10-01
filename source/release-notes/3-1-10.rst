@@ -1,0 +1,68 @@
+.. index:: Crafter CMS 3.1.10 Release Notes
+
+------------------
+Crafter CMS 3.1.10
+------------------
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Added a new environment variable for the backup folder location |br|
+  *See* :ref:`backup-and-recovery` *for more information*
+
+* Elasticsearch improvements |br|
+
+  * Disabled date detection in Elasticsearch |br|
+    Elasticsearch by default will try to convert fields into dates if the value matches a valid pattern, this could cause conflicts during indexing. See https://www.elastic.co/guide/en/elasticsearch/reference/6.8/dynamic-field-mapping.html#date-detection for more information.
+
+    Date detection is now disabled for all indexes by default.
+
+  * Added support for custom index settings such as total fields limit and depth |br|
+    For more information on available index settings, see  https://www.elastic.co/guide/en/elasticsearch/reference/current/index-modules.html#index-modules-settings.
+
+  * Reindex is now skipped when an Elasticsearch processor is not found.
+
+  * Supported index settings are now copied during reindex.
+
+  The ES index settings will be automatically updated when upgrading to Crafter CMS 3.1.10.  The automatic update is triggered when upgrading to 3.1.10 because of an update to support custom index settings and update to disable date detection as listed above.
+
+* Added content-length header for all responses |br|
+  The content-length header is sent for all responses by default.  If you need to disable sending the content-length header for all responses, just set ``crafter.engine.header.etag.enable`` to false
+
+     .. code-block::  xml
+        :caption: *TOMCAT/shared/classes/crafter/engine/extension/server-config.properties*
+
+        # Indicates if the 'etag' header should be added
+        crafter.engine.header.etag.enable=true
+
+* Updated dependencies for the following:
+
+  * Upgraded Jackson Databind library to 2.10.5 for various Crafter modules
+  * Upgraded ehcache library to 2.10.6 for various Crafter modules
+  * Upgraded Apache cxf library to 3.3.5 for Crafter Studio
+  * Upgraded xstream library to 1.4.12 for various Crafter modules
+  * Upgraded tika library to 1.24 for various Crafter modules
+  * Upgraded unit library to 2.0 for various Crafter modules
+  * Upgraded commons configuration library to 2.7 for various Crafter modules
+  * Upgraded commons text library to 1.8 for various Crafter modules
+  * Upgraded groovy library to 3.0.4 for various Crafter modules
+  * Upgraded the embedded mariadb4j library to 2.4.8 for various Crafter modules
+  * Upgraded node-sass library to 4.13.1
+
+
+
+Lot's of other small enhancements and bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 3.1.10 Milestone <https://github.com/craftercms/craftercms/milestone/66?closed=1>`_
+
+.. important::
+
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.10)
+
+    For Docker/Kuber deployments, see :ref:`upgrading-dockers`
+
+    For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+    Please see :ref:`upgrade-notes-to-fix-backup-error` for some important notes when restoring backups created prior to Crafter CMS 3.1.10
+
