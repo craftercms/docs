@@ -12,7 +12,8 @@ New Features
   *See* :ref:`engine-multi-target-configurations` *for more information.*
 * Built-in database security enhancements |br|
   At startup, when Crafter Studio detects an unsecured database, a secure installation script will be run against the database to secure it.
-* Enhanced scripts and templates security
+* Enhanced scripts and templates security |br|
+  This addresses the following security advisories: :ref:`cv-2020080101` and :ref:`cv-2020080102`
 
   * FreeMarker engine security enhancements with service access limits
   * Groovy engine security enhancements
