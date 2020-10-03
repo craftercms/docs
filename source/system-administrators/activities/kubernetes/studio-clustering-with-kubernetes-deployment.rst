@@ -127,11 +127,11 @@ The next step is to start the cluster.  When starting the cluster, remember to s
 Start the nodes
 ^^^^^^^^^^^^^^^
 
-Go to ``kubernetes-deployments/authoring/cluster/nodes`` then run ``kubectl apply -f .``
+Go to ``kubernetes-deployments/authoring/cluster/nodes`` then run ``kubectl apply -k .``
 
    .. code-block:: bash
 
-      ➜ kubectl apply -f .
+      ➜ kubectl apply -k .
       clusterrolebinding.rbac.authorization.k8s.io/default-cluster unchanged
       configmap/authoring-studio-config-8ttt252b8f created
       secret/authoring-crafter-license-f2tf6946hb unchanged
@@ -252,7 +252,7 @@ To forward a local port to the tomcat port in a pod using k9s, from the ``Pods``
 |
 
 
-Change the value of ``Local Port`` to your desired value.  For ouw example, we're usimg local port ``8080`` for the ``authoring-0`` pod and local port ``8081`` for the ``authoring-1`` pod.  After making desired changes, move the cursor to ``Ok`` then hit the enter key to save your changes.
+Change the value of ``Local Port`` to your desired value.  For our example, we're using local port ``8080`` for the ``authoring-0`` pod and local port ``8081`` for the ``authoring-1`` pod.  After making desired changes, move the cursor to ``Ok`` then hit the enter key to save your changes.
 
 We can now access Studio from either pods using ``localhost:8080/studio`` or ``localhost:8081/studio`` in your browser
 
