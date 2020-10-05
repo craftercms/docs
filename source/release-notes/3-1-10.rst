@@ -50,6 +50,11 @@ Updates
   * Upgraded the embedded mariadb4j library to 2.4.8 for various Crafter modules
   * Upgraded node-sass library to 4.13.1
 
+* RTE improvements |br|
+  Browser spell checking is now enabled in TinyMCE 2 and TinyMCE 5
+
+* Publishing enhancement |br|
+  See `here <https://github.com/craftercms/craftercms/issues/4315>`__ for more information
 
 
 Lot's of other small enhancements and bug fixes :)
