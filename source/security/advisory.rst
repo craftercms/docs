@@ -19,7 +19,7 @@ CV-2020080101
 **Risk**		Medium
 **Description**         Authenticated attackers with developer privileges in Crafter Studio may execute OS \
 			commands via Groovy scripting.
-**CVE**                 TBD
+**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25802
 ======================= ======================================================================================
 
 .. _cv-2020080102:
@@ -35,7 +35,7 @@ CV-2020080102
 **Risk**		Medium
 **Description**         Authenticated attackers with developer privileges in Crafter Studio may execute OS \
 			commands via deep inspection of FreeMarker template exposed objects.
-**CVE**                 TBD
+**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25803
 ======================= ======================================================================================
 
 CV-2018120601
