@@ -53,15 +53,15 @@ Response
 
   {
     "packageName": "Crafter Search",
-    "packageVersion": "3.1.0-SNAPSHOT",
-    "packageBuild": "a68f1ff7ad84d5ecbeaa008f392e4cef0ca02f41",
-    "packageBuildDate": "2019-03-07T21:03:05.422Z",
+    "packageVersion": "3.2.0-SNAPSHOT",
+    "packageBuild": "8bcdc32ee7e58bd27c485ac1e5f353ece2b60aea",
+    "packageBuildDate": "2020-10-05T20:40:24.798Z",
     "osName": "Mac OS X",
-    "osVersion": "10.13.6",
+    "osVersion": "10.15.6",
     "osArch": "x86_64",
-    "javaVersion": "1.8",
+    "javaVersion": "11",
     "javaVendor": "Oracle Corporation",
-    "javaVm": "Java HotSpot(TM) 64-Bit Server VM",
+    "javaVm": "OpenJDK 64-Bit Server VM",
   }
 
 ---------

@@ -14,17 +14,17 @@ System Requirements
 +------------------+-----------------------------------+-----------------------------------------+
 || Parameter Name  || Description                      || Prerequisites                          |
 +==================+===================================+=========================================+
-|| Crafter Studio  || Content authoring server         || Java 1.8                               |
+|| Crafter Studio  || Content authoring server         || Java 1.11                              |
 ||                 ||                                  || 4+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
-|| Crafter Engine  || Content delivery server          || Java 1.8                               |
+|| Crafter Engine  || Content delivery server          || Java 1.11                              |
 ||                 ||                                  || 2+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
-|| Crafter Profile || User profile and attribute store || Java 1.8                               |
+|| Crafter Profile || User profile and attribute store || Java 1.11                              |
 ||                 || (Optional component)             || MongoDB 3+ (included in the bundle)    |
 ||                 ||                                  || 1+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
-|| Crafter Social  || User Generated Content server    || Java 1.8                               |
+|| Crafter Social  || User Generated Content server    || Java 1.11                              |
 ||                 || (Optional component)             || MongoDB 3+ (included in the bundle)    |
 ||                 ||                                  || 1+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+

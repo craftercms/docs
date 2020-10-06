@@ -20,14 +20,14 @@ This section lists various prerequisites needed depending on the operating syste
 ------------
 Install Java
 ------------
-Download and install Java JDK 1.8 (either `Oracle <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_  or `OpenJDK <http://openjdk.java.net/>`_).
+Download and install Java JDK 1.11 (either `Oracle <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_  or `OpenJDK <http://openjdk.java.net/>`_).
 
 ^^^^^^^^^^^^^^^^^^^
 Verify Java Version
 ^^^^^^^^^^^^^^^^^^^
 
-Ensure that you are running Java 1.8.  To check,
-run the following command at the command prompt and make sure that the version displayed is Java 1.8:
+Ensure that you are running Java 1.11.  To check,
+run the following command at the command prompt and make sure that the version displayed is Java 1.11:
 
 .. code-block:: sh
 
@@ -39,7 +39,7 @@ The command above should output something like this:
 
 .. code-block:: sh
 
-    java version "1.8.0_91"
+    openjdk version "11.0.8"
 
 |
 
@@ -144,7 +144,7 @@ For building with Gradle for installing Crafter CMS, the following must be insta
 ^^^^^^^^
 On Linux
 ^^^^^^^^
-* Java 8
+* Java 11
 * Git 2.x+
 * Maven 3.3.x+
 * make and GCC
@@ -168,7 +168,7 @@ On Linux
 ^^^^^^^^
 On macOS
 ^^^^^^^^
-* Java 8
+* Java 11
 * Git 2.x+
 * Maven 3.3.x+
 * make and GCC, which can be installed from ``XCode Command Line Tools``

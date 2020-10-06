@@ -53,15 +53,15 @@ Response
 
   {
     "packageName": "Crafter Deployer",
-    "packageVersion": "3.1.0-SNAPSHOT",
-    "packageBuild": "a68f1ff7ad84d5ecbeaa008f392e4cef0ca02f41",
-    "packageBuildDate": "2019-03-07T21:03:05.422Z",
+    "packageVersion": "3.2.0-SNAPSHOT",
+    "packageBuild": "bafd216ffff61b64fba1f2a8917e2b596b0a950a",
+    "packageBuildDate": "2020-10-05T20:40:50.580Z",
     "osName": "Mac OS X",
-    "osVersion": "10.13.6",
+    "osVersion": "10.15.6",
     "osArch": "x86_64",
-    "javaVersion": "1.8",
+    "javaVersion": "11",
     "javaVendor": "Oracle Corporation",
-    "javaVm": "Java HotSpot(TM) 64-Bit Server VM",
+    "javaVm": "OpenJDK 64-Bit Server VM",
   }
 
 ---------
