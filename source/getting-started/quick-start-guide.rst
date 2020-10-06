@@ -20,9 +20,9 @@ Installing Crafter CMS from the Archive Download
 
 Here are the steps to start using Crafter CMS for development or evaluation by installing Crafter CMS from the archive download:
 
-#. **Download and install Java 8**
+#. **Download and install Java 11**
 
-   Download and install Java JDK 1.8 (either `Oracle <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_  or `OpenJDK <http://openjdk.java.net/>`_).
+   Download and install Java JDK 1.11 (either `Oracle <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_  or `OpenJDK <http://openjdk.java.net/>`_).
 
    Make sure that you have a ``JAVA_HOME`` environment variable that points to the root of the JDK install directory.  See :ref:`here<verify-java-home-env-var>` for more information on the ``JAVA_HOME`` environment variable
 
