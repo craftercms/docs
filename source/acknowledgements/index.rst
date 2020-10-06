@@ -116,24 +116,6 @@ jackson-module-jaxb-annotations
 **Dependency:** jackson-module-jaxb-annotations |br|
 **URL:** https://search.maven.org/artifact/com.fasterxml.jackson.module/jackson-module-jaxb-annotations
 
-jakarta.xml.bind-api
-^^^^^^^^^^^^^^^^^^^^
-**Package:** jakarta.xml.bind |br|
-**Dependency:** jakarta.xml.bind-api |br|
-**URL:** https://search.maven.org/artifact/jakarta.xml.bind/jakarta.xml.bind-api
-
-jakarta.activation-api
-^^^^^^^^^^^^^^^^^^^^^^
-**Package:** jakarta.activation |br|
-**Dependency:** jakarta.activation-api |br|
-**URL:** https://search.maven.org/artifact/jakarta.activation/jakarta.activation-api
-
-woodstox-core
-^^^^^^^^^^^^^
-**Package:** com.fasterxml.woodstox |br|
-**Dependency:** woodstox-core |br|
-**URL:** https://search.maven.org/artifact/com.fasterxml.woodstox/woodstox-core
-
 xstream
 ^^^^^^^
 **Package:** com.thoughtworks.xstream |br|
@@ -482,47 +464,11 @@ tika-core
 **Dependency:** tika-core |br|
 **URL:** https://search.maven.org/artifact/org.apache.tika/tika-core
 
-jaxb-runtime
-^^^^^^^^^^^^
-**Package:** org.glassfish.jaxb |br|
-**Dependency:** jaxb-runtime |br|
-**URL:** https://search.maven.org/artifact/org.glassfish.jaxb/jaxb-runtime
-
-txw2
-^^^^
-**Package:** org.glassfish.jaxb |br|
-**Dependency:** txw2 |br|
-**URL:** https://search.maven.org/artifact/org.glassfish.jaxb/txw2
-
-istack-commons-runtime
-^^^^^^^^^^^^^^^^^^^^^^
-**Package:** com.sun.istack |br|
-**Dependency:** istack-commons-runtime |br|
-**URL:** https://search.maven.org/artifact/com.sun.istack/istack-commons-runtime
-
-stax-ex
-^^^^^^^
-**Package:** org.jvnet.staxex |br|
-**Dependency:** stax-ex |br|
-**URL:** https://search.maven.org/artifact/org.jvnet.staxex/stax-ex
-
-FastInfoset
-^^^^^^^^^^^
-**Package:** com.sun.xml.fastinfoset |br|
-**Dependency:** FastInfoset |br|
-**URL:** https://search.maven.org/artifact/com.sun.xml.fastinfoset/FastInfoset
-
 jakarta.activation
 ^^^^^^^^^^^^^^^^^^
 **Package:** com.sun.activation |br|
 **Dependency:** jakarta.activation |br|
 **URL:** https://search.maven.org/artifact/com.sun.activation/jakarta.activation
-
-javax.annotation-api
-^^^^^^^^^^^^^^^^^^^^
-**Package:** javax.annotation |br|
-**Dependency:** javax.annotation-api |br|
-**URL:** https://search.maven.org/artifact/javax.annotation/javax.annotation-api
 
 vorbis-java-tika
 ^^^^^^^^^^^^^^^^
@@ -584,6 +530,18 @@ pdfbox-tools
 **Dependency:** pdfbox-tools |br|
 **URL:** https://search.maven.org/artifact/org.apache.pdfbox/pdfbox-tools
 
+preflight
+^^^^^^^^^
+**Package:** org.apache.pdfbox |br|
+**Dependency:** preflight |br|
+**URL:** https://search.maven.org/artifact/org.apache.pdfbox/preflight
+
+xmpbox
+^^^^^^
+**Package:** org.apache.pdfbox |br|
+**Dependency:** xmpbox |br|
+**URL:** https://search.maven.org/artifact/org.apache.pdfbox/xmpbox
+
 jempbox
 ^^^^^^^
 **Package:** org.apache.pdfbox |br|
@@ -607,6 +565,12 @@ commons-math3
 **Package:** org.apache.commons |br|
 **Dependency:** commons-math3 |br|
 **URL:** https://search.maven.org/artifact/org.apache.commons/commons-math3
+
+SparseBitSet
+^^^^^^^^^^^^
+**Package:** com.zaxxer |br|
+**Dependency:** SparseBitSet |br|
+**URL:** https://search.maven.org/artifact/com.zaxxer/SparseBitSet
 
 poi-scratchpad
 ^^^^^^^^^^^^^^
@@ -655,6 +619,18 @@ isoparser
 **Package:** com.googlecode.mp4parser |br|
 **Dependency:** isoparser |br|
 **URL:** https://search.maven.org/artifact/com.googlecode.mp4parser/isoparser
+
+metadata-extractor
+^^^^^^^^^^^^^^^^^^
+**Package:** org.tallison |br|
+**Dependency:** metadata-extractor |br|
+**URL:** https://search.maven.org/artifact/org.tallison/metadata-extractor
+
+xmpcore-shaded
+^^^^^^^^^^^^^^
+**Package:** org.tallison.xmp |br|
+**Dependency:** xmpcore-shaded |br|
+**URL:** https://search.maven.org/artifact/org.tallison.xmp/xmpcore-shaded
 
 boilerpipe
 ^^^^^^^^^^
@@ -794,12 +770,6 @@ j2objc-annotations
 **Dependency:** j2objc-annotations |br|
 **URL:** https://search.maven.org/artifact/com.google.j2objc/j2objc-annotations
 
-animal-sniffer-annotations
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Package:** org.codehaus.mojo |br|
-**Dependency:** animal-sniffer-annotations |br|
-**URL:** https://search.maven.org/artifact/org.codehaus.mojo/animal-sniffer-annotations
-
 grib
 ^^^^
 **Package:** edu.ucar |br|
@@ -853,12 +823,6 @@ sis-utility
 **Package:** org.apache.sis.core |br|
 **Dependency:** sis-utility |br|
 **URL:** https://search.maven.org/artifact/org.apache.sis.core/sis-utility
-
-unit-api
-^^^^^^^^
-**Package:** javax.measure |br|
-**Dependency:** unit-api |br|
-**URL:** https://search.maven.org/artifact/javax.measure/unit-api
 
 sis-netcdf
 ^^^^^^^^^^
@@ -937,6 +901,12 @@ protobuf-java
 **Package:** com.google.protobuf |br|
 **Dependency:** protobuf-java |br|
 **URL:** https://search.maven.org/artifact/com.google.protobuf/protobuf-java
+
+unit-api
+^^^^^^^^
+**Package:** javax.measure |br|
+**Dependency:** unit-api |br|
+**URL:** https://search.maven.org/artifact/javax.measure/unit-api
 
 stax2-api
 ^^^^^^^^^
@@ -1574,11 +1544,53 @@ cxf-core
 **Dependency:** cxf-core |br|
 **URL:** https://search.maven.org/artifact/org.apache.cxf/cxf-core
 
+jaxb-runtime
+^^^^^^^^^^^^
+**Package:** org.glassfish.jaxb |br|
+**Dependency:** jaxb-runtime |br|
+**URL:** https://search.maven.org/artifact/org.glassfish.jaxb/jaxb-runtime
+
+txw2
+^^^^
+**Package:** org.glassfish.jaxb |br|
+**Dependency:** txw2 |br|
+**URL:** https://search.maven.org/artifact/org.glassfish.jaxb/txw2
+
+istack-commons-runtime
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** com.sun.istack |br|
+**Dependency:** istack-commons-runtime |br|
+**URL:** https://search.maven.org/artifact/com.sun.istack/istack-commons-runtime
+
+FastInfoset
+^^^^^^^^^^^
+**Package:** com.sun.xml.fastinfoset |br|
+**Dependency:** FastInfoset |br|
+**URL:** https://search.maven.org/artifact/com.sun.xml.fastinfoset/FastInfoset
+
+jakarta.activation-api
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** jakarta.activation |br|
+**Dependency:** jakarta.activation-api |br|
+**URL:** https://search.maven.org/artifact/jakarta.activation/jakarta.activation-api
+
+woodstox-core
+^^^^^^^^^^^^^
+**Package:** com.fasterxml.woodstox |br|
+**Dependency:** woodstox-core |br|
+**URL:** https://search.maven.org/artifact/com.fasterxml.woodstox/woodstox-core
+
 xmlschema-core
 ^^^^^^^^^^^^^^
 **Package:** org.apache.ws.xmlschema |br|
 **Dependency:** xmlschema-core |br|
 **URL:** https://search.maven.org/artifact/org.apache.ws.xmlschema/xmlschema-core
+
+jakarta.xml.bind-api
+^^^^^^^^^^^^^^^^^^^^
+**Package:** jakarta.xml.bind |br|
+**Dependency:** jakarta.xml.bind-api |br|
+**URL:** https://search.maven.org/artifact/jakarta.xml.bind/jakarta.xml.bind-api
 
 cxf-rt-bindings-soap
 ^^^^^^^^^^^^^^^^^^^^
@@ -1598,18 +1610,6 @@ cxf-rt-databinding-jaxb
 **Dependency:** cxf-rt-databinding-jaxb |br|
 **URL:** https://search.maven.org/artifact/org.apache.cxf/cxf-rt-databinding-jaxb
 
-jaxb-impl
-^^^^^^^^^
-**Package:** com.sun.xml.bind |br|
-**Dependency:** jaxb-impl |br|
-**URL:** https://search.maven.org/artifact/com.sun.xml.bind/jaxb-impl
-
-jaxb-core
-^^^^^^^^^
-**Package:** com.sun.xml.bind |br|
-**Dependency:** jaxb-core |br|
-**URL:** https://search.maven.org/artifact/com.sun.xml.bind/jaxb-core
-
 cxf-rt-bindings-xml
 ^^^^^^^^^^^^^^^^^^^
 **Package:** org.apache.cxf |br|
@@ -1627,6 +1627,72 @@ cxf-rt-ws-addr
 **Package:** org.apache.cxf |br|
 **Dependency:** cxf-rt-ws-addr |br|
 **URL:** https://search.maven.org/artifact/org.apache.cxf/cxf-rt-ws-addr
+
+javax.annotation-api
+^^^^^^^^^^^^^^^^^^^^
+**Package:** javax.annotation |br|
+**Dependency:** javax.annotation-api |br|
+**URL:** https://search.maven.org/artifact/javax.annotation/javax.annotation-api
+
+jaxws-api
+^^^^^^^^^
+**Package:** javax.xml.ws |br|
+**Dependency:** jaxws-api |br|
+**URL:** https://search.maven.org/artifact/javax.xml.ws/jaxws-api
+
+javax.xml.soap-api
+^^^^^^^^^^^^^^^^^^
+**Package:** javax.xml.soap |br|
+**Dependency:** javax.xml.soap-api |br|
+**URL:** https://search.maven.org/artifact/javax.xml.soap/javax.xml.soap-api
+
+javax.activation
+^^^^^^^^^^^^^^^^
+**Package:** com.sun.activation |br|
+**Dependency:** javax.activation |br|
+**URL:** https://search.maven.org/artifact/com.sun.activation/javax.activation
+
+geronimo-ws-metadata_2.0_spec
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.geronimo.specs |br|
+**Dependency:** geronimo-ws-metadata_2.0_spec |br|
+**URL:** https://search.maven.org/artifact/org.apache.geronimo.specs/geronimo-ws-metadata_2.0_spec
+
+saaj-impl
+^^^^^^^^^
+**Package:** com.sun.xml.messaging.saaj |br|
+**Dependency:** saaj-impl |br|
+**URL:** https://search.maven.org/artifact/com.sun.xml.messaging.saaj/saaj-impl
+
+mimepull
+^^^^^^^^
+**Package:** org.jvnet.mimepull |br|
+**Dependency:** mimepull |br|
+**URL:** https://search.maven.org/artifact/org.jvnet.mimepull/mimepull
+
+stax-ex
+^^^^^^^
+**Package:** org.jvnet.staxex |br|
+**Dependency:** stax-ex |br|
+**URL:** https://search.maven.org/artifact/org.jvnet.staxex/stax-ex
+
+jacorb-omgapi
+^^^^^^^^^^^^^
+**Package:** org.jacorb |br|
+**Dependency:** jacorb-omgapi |br|
+**URL:** https://search.maven.org/artifact/org.jacorb/jacorb-omgapi
+
+geronimo-jta_1.1_spec
+^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.geronimo.specs |br|
+**Dependency:** geronimo-jta_1.1_spec |br|
+**URL:** https://search.maven.org/artifact/org.apache.geronimo.specs/geronimo-jta_1.1_spec
+
+jboss-rmi-api_1.0_spec
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.jboss.spec.javax.rmi |br|
+**Dependency:** jboss-rmi-api_1.0_spec |br|
+**URL:** https://search.maven.org/artifact/org.jboss.spec.javax.rmi/jboss-rmi-api_1.0_spec
 
 cxf-rt-transports-http
 ^^^^^^^^^^^^^^^^^^^^^^

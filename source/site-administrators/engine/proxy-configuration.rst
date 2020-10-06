@@ -91,4 +91,7 @@ Sample
 
 |
 
+   .. note::
+      Deleting the config file (*proxy-config.xml*) from the repo completely disables the proxy feature.
+
 See :ref:`using-the-proxy-configuration` for an example of configuring the proxy with a React application.

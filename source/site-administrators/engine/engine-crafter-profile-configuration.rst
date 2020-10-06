@@ -8,24 +8,29 @@
 Engine Crafter Profile Configuration
 ====================================
 
-.. note:: This guide includes Crafter Profile specific configuration only, for a general guide see 
-          :ref:`engine-site-security-guide`
+   .. note:: This guide includes Crafter Profile specific configuration only, for a general guide see
+             :ref:`engine-site-security-guide`
 
 Crafter Engine needs access tokens to use Crafter Profile's API. Each site must have it's own access token. Follow the
 next steps to create one:
 
-#.  Login to Crafter Profile Admin Console as a ``PROFILE_SUPERADMIN`` (by default the admin user has this role).
-#.  Click on New Access Token in the navigation. Enter your site's name on Application, leave the Master checkbox 
-    unselected, pick a proper Expiration Date (10 years from the current date is ok) and on Tenant Permissions add 
-    your tenant's name to the input and click on add. By default the admin console auto-selects the 3 actions 
+#.  Login to Crafter Profile Admin Console as a ``PROFILE_SUPERADMIN`` (by default the admin user has this role).  *See* :ref:`here <profile-admin-console>` *for more information on the Crafter Profile Admin Console UI.*
+#.  Click on **New Access Token** in the navigation. Enter your site's name on **Application**, leave the **Master** checkbox
+    unselected, pick a proper Expiration Date (10 years from the current date is ok) and on **Tenant Permissions** add
+    your tenant's name to the input (*Remember that your tenant's name has to have the same name as your site.  See the note below*) and click on **Add**. By default the admin console auto-selects the 3 actions
     mentioned before. If you're using the same access token as another environment (e.g. you want to use the same 
     access token in dev and prod), copy the same access token ID from the other environment, and enter the same field 
-    values for Application, Master and Expiration Date. Finally, click on Accept.
+    values for Application, Master and Expiration Date. Finally, click on **Accept**.
+
+       .. note::
+          Authentication by default is done against a tenant with the same name as your site.  See :ref:`profile-admin-tenants` for more information on creating a tenant.
 
     .. image:: /_static/images/new_access_token.png
 
-#.  Now that you have created the access token, you need to "tell" Engine to use it in your site. In Admin Console, 
-    click on List Access Tokens in the navigation menu and copy the ID of the token you just created. Then, depending 
+    |
+
+#.  Now that you have created the access token, you need to "tell" Engine to use it in your site. In Admin Console,
+    click on **List Access Tokens** in the navigation menu and copy the ID of the token you just created. Then, depending
     on the mode Engine is running, add one of the following configurations (preview is ignored because normally 
     predefined Personas are used, so there's no need to access the Crafter Profile app).
 

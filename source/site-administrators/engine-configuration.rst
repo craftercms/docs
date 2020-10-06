@@ -16,9 +16,11 @@ This section details how to configure settings related to Crafter Engine, Crafte
    engine/engine-site-configuration
    engine/engine-site-security-guide
    engine/engine-saml2-configuration
+   engine/engine-headers-based-authentication
    engine/engine-crafter-profile-configuration
    engine/content-targeting-guide
    engine/engine-mongodb-configuration
    engine/configure-url-rewrite
    engine/engine-multi-environment-configuration
    engine/engine-multi-target-configuration
+   engine/proxy-configuration

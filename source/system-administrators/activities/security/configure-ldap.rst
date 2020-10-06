@@ -6,7 +6,7 @@
 Configure LDAP Authentication
 =============================
 
-To configure LDAP authentication, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the
+To configure LDAP authentication, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and uncomment the
 following lines to the :ref:`studio-config-override.yaml <studio-configuration-files>` file.
 
 .. note:: The values for the parameters listed below are just examples.  Remember to make any appropriate configuration changes according to your directory service in use.
@@ -22,27 +22,27 @@ following lines to the :ref:`studio-config-override.yaml <studio-configuration-f
         # Authentication via LDAP enabled
         enabled: true
         # LDAP Server url
-        studio.security.ldap.serverUrl: ldap://localhost:389
+        ldapUrl: ldap://localhost:389
         # LDAP bind DN (user)
-        studio.security.ldap.bindDN: uid=admin,ou=system
+        ldapUsername: cn=Manager,dc=my-domain,dc=com
         # LDAP bind password
-        studio.security.ldap.bindPassword: secret
+        ldapPassword: secret
         # LDAP base context (directory root)
-        studio.security.ldap.baseContext: dc=example,dc=com
+        ldapBaseContext: dc=my-domain,dc=com
         # LDAP username attribute
-        studio.security.ldap.userAttribute.username: uid
+        usernameLdapAttribute: uid
         # LDAP first name attribute
-        studio.security.ldap.userAttribute.firstName: cn
+        firstNameLdapAttribute: cn
         # LDAP last name attribute
-        studio.security.ldap.userAttribute.lastName: sn
+        lastNameLdapAttribute: sn
         # LDAP email attribute
-        studio.security.ldap.userAttribute.email: mail
+        emailLdapAttribute: mail
         # LDAP groups attribute
-        studio.security.ldap.userAttribute.groupName: ou
+        groupNameLdapAttribute: crafterGroup
         # LDAP groups attribute name regex
-        studio.security.ldap.userAttribute.groupName.regex: .*
+        groupNameLdapAttributeRegex: .*
         # LDAP groups attribute match index
-        studio.security.ldap.userAttribute.groupName.matchIndex: 0
+        groupNameLdapAttributeMatchIndex: 0
 
 |
 
@@ -78,5 +78,7 @@ Make sure that at least one of the **groupName** attribute of the LDAP user exis
 |
 
 To assign a role to a group, please follow the guide :ref:`role-mappings`.  To assign permissions to a role, please see :ref:`permission-mappings`
+
+For an example of setting up LDAP, see :ref:`setting-up-ldap-server-for-dev`
 
 
