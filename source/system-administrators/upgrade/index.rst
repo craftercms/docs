@@ -240,6 +240,6 @@ Once you start up Crafter CMS, in the logs, notice the lines mentioning ``Checki
 Crafter CMS has an upgrade manager that automatically upgrades the system, some configuration files and blueprints on startup.  It uses a pipeline of handlers to upgrade various subsystems.
 
 Note that the Elasticsearch index will be automatically updated by the Crafter CMS upgrade manager whenever the Elasticsearch index settings are updated, for example, a new field has been added for a release.
-The updated index containing the mew settings will be named the current index version name incremented by 1, e.g. let’s say the current index is ``mysite-authoring_v1``, after the upgrade, the new index will now be ``mysite-authoring_v2``.
+The updated index containing the new settings will be named the current index version name incremented by 1, e.g. let’s say the current index is ``mysite-authoring_v1``, after the upgrade, the new index will now be ``mysite-authoring_v2``.
 
 To learn more about the upgrade manager and how to add upgrade scripts for your customizations, see :ref:`here <add-to-upgrade-scripts>`
