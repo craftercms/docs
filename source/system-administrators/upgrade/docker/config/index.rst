@@ -11,10 +11,4 @@
 Configuration changes between Crafter CMS versions
 ==================================================
 
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   config-changes-3.1.4-to-3.1.5.rst
-   config-changes-3.1.5-to-3.1.6.rst
-   config-changes-3.1.6-to-3.1.7.rst
+.. Leave file in place for future configuration changes between Crafter CMS versions starting 3.2.0

@@ -22,11 +22,11 @@ These upgrade instructions are for both ``authoring`` and ``delivery`` compose p
 #. Check the release notes of the new Crafter CMS version (:ref:`release-notes`) for upgrades to Elasticsearch (and 
    Solr if you're using the Crafter CMS images with Solr support). If there has been an upgrade, then also update the 
    Elasticsearch/Solr image versions.
-#. Check the configuration file changes between the previous version and the new version: :ref:`docker-config-changes`.
+#. Check the configuration file changes between the previous version and the new version.
    If you have overwritten any of them in a volume, we recommend you do the following:
 
    #. Compare the original configuration files and the files you have overwritten, so you know what are the 
-      changes you have made (for example, if you're currently in 3.1.4, then run a diff between the original 3.1.4 
+      changes you have made (for example, if you're currently in 3.1.4, then run a diff between the original 3.1.4
       configuration files and your overwritten versions).
    #. Copy your changes to the new version of the configuration file (for example, if the new version you're 
       upgrading to is 3.1.5, then copy your configuration overrides to the 3.1.5 version of the file).
@@ -46,11 +46,11 @@ These upgrade instructions are for both Authoring and Delivery deployments:
 #. Check the release notes of the new Crafter CMS version (:ref:`release-notes`) for upgrades to Elasticsearch (and 
    Solr if you're using the Crafter CMS images with Solr support). If there has been an upgrade, then also update the 
    Elasticsearch/Solr image versions in your deployment files.
-#. Check the configuration file changes between the previous version and the new version: :ref:`docker-config-changes`.
+#. Check the configuration file changes between the previous version and the new version.
    If you have overwritten any of them in a ``ConfigMap`` or ``Secret``, we recommend you do the following:
 
    #. Compare the original configuration files and the files you have overwritten, so you know what are the 
-      changes you have made (for example, if you're currently in 3.1.4, then run a diff between the original 3.1.4 
+      changes you have made (for example, if you're currently in 3.1.4, then run a diff between the original 3.1.4
       configuration files and your overwritten versions).
    #. Copy your changes to the new version of the configuration file (for example, if the new version you're 
       upgrading to is 3.1.5, then copy your configuration overrides to the 3.1.5 version of the file).
