@@ -20,3 +20,4 @@ Configuration changes between Crafter CMS versions
    config-changes-3.1.6-to-3.1.7.rst
    config-changes-3.1.7-to-3.1.8.rst
    config-changes-3.1.8-to-3.1.9.rst
+   config-changes-3.1.9-to-3.1.10.rst
