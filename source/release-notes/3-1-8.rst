@@ -21,7 +21,7 @@ New Features
   *See* :ref:`crafter-deployer-processors-guide` *for more information.*
 
 * Added support for automatically updating ES index settings |br|
-  Whenever the Elasticsearch index settings are updated, for example, a new field has been added for a release, the ES index settings will be automatically updated by the Crafter CMS upgrade manager.  The updated index containing the mew settings will be named the current index version name incremented by 1, e.g. let's say the current index is ``mysite-authoring_v1``, after the upgrade, the new index will now be ``mysite-authoring_v2``
+  Whenever the Elasticsearch index settings are updated, for example, a new field has been added for a release, the ES index settings will be automatically updated by the Crafter CMS upgrade manager.  The updated index containing the new settings will be named the current index version name incremented by 1, e.g. let's say the current index is ``mysite-authoring_v1``, after the upgrade, the new index will now be ``mysite-authoring_v2``
 
   The ES index settings will be automatically updated when upgrading to Crafter CMS 3.1.8 for users upgrading from Crafter CMS 3.1.6 and earlier, and also for users upgrading from Crafter CMS 3.1.7 where a manual update of the ES index settings has not been performed.  The automatic update is triggered when upgrading to 3.1.8 as mentioned above because of an update in the ES index settings (`input fields tokenize in repeating groups <https://github.com/craftercms/craftercms/issues/4118>`__) in Crafter CMS 3.1.7.
 
