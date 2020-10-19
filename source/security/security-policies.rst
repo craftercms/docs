@@ -34,7 +34,7 @@ Upon submission of a security issue
 * You'll receive an acknowledgement indicating receipt of submission
 * You'll receive a timeframe for the triage of the issue to determine if there is a vulnerability
 * You'll be invited to an advisory issue tracker to track the progress through the embargo period
-* Crafter CMS has a dedicated Root CNA and an appropriate CVE will be issued there
+* Crafter CMS has a dedicated CNA and an appropriate CVE will be issued there
 
 .. figure:: /_static/images/system-admin/crafter-cms-security-issue-flow.png
     :alt: Crafter CMS Security Issue Flow
