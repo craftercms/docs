@@ -20,20 +20,20 @@ After logging in, you'll see the Sites screen (Below).  Click on **Create Site**
 .. image:: /_static/images/first-site/sites-screen.png
     :width: 100 %
     :align: center
-    :alt: Your First Website - Sites Screen - needs update
+    :alt: Your First Website - Sites Screen
 
 In the **Create Site** screen, the user is presented with the available blueprints or the option to use a remote Git repository instead of selecting a blueprint from the list.  To see all available blueprints, scroll through the two tabs available, ``Private Blueprints`` which contains default blueprints available out of the box from Crafter Studio including the option use a remote Git repository to create a new site, and ``Public Marketplace``. which contains blueprints submitted to `Crafter's Marketplace <https://github.com/marketplace/crafter-marketplace>`_
 
 We're going to be using the "Website Editorial Blueprint".  Blueprints offer you a starting point for your website. New blueprints can be created and installed into the system.  Click on **Use** for the "Website Editorial Blueprint".
 
-.. image:: /_static/images/first-site/create-site-choose-bp.png
+.. image:: /_static/images/first-site/create-site-choose-bp.jpg
     :width: 100 %
     :align: center
     :alt: Your First Website - Create Site: Choose a Blueprint
 
-Give the site a friendly name for the **Site Id** and a description.  As you are entering the Site Id, spaces are removed and upper case letters are converted to lower case letters.  Click on the ``Review`` button.
+Give the site a friendly name for the **Site Name** and a description.  Click on the ``Review`` button.
 
-.. image:: /_static/images/first-site/create-site-basic-info.png
+.. image:: /_static/images/first-site/create-site-basic-info.jpg
     :width: 100 %
     :align: center
     :alt: Your First Website - Create Site: Basic Information
@@ -79,14 +79,14 @@ We'll be adding a new article to the site.  To add a new article (or a new page)
 
 We'll then select the page template we want.  Since we are adding a new article to the site, we will be selecting the template **Page - Article**
 
-.. image:: /_static/images/first-site/first-site-select-page-template.png
+.. image:: /_static/images/first-site/first-site-select-page-template.jpg
     :width: 80 %
     :align: center
     :alt: Your First Website - Select Page Template
 
 We'll start filling out the form for our new article, "Where to find cherry blossoms in Virginia".  For the **Page URL**, replace spaces with dashes.  You can write the **Internal Name** and **Title** however you like as long as it is 50 characters or less as indicated on the right of the input boxes.  For the **Header** and **Left Rail**, we will be using the default provided by the template.
 
-.. image:: /_static/images/first-site/first-site-page-properties.png
+.. image:: /_static/images/first-site/first-site-page-properties.jpg
     :width: 100 %
     :align: center
     :alt: Your First Website - Page Properties
@@ -157,7 +157,7 @@ Editing the features section, "Erat lacinia"
 
 We will now edit the features section in our blueprint.  The features in this section has been configured as components, as you will see in the images below.  There are multiple ways of editing the features section in the blueprint.
 
-.. image:: /_static/images/first-site/first-site-add-features-drag-n-drop.jpg
+.. image:: /_static/images/first-site/first-site-add-features-drag-n-drop.png
     :width: 100 %
     :align: center
     :alt: Your First Website - Add Features through Drag and Drop
@@ -169,21 +169,21 @@ We'll start out by adding a feature using the pencil at the top of the features 
     :align: center
     :alt: Your First Website - Edit by Clicking on the Pencil
 
-In this form, you can add another feature, by clicking on the **Add** button, which will give you a menu to **Create New - Features** or **Browse for Existing - features**
+In this form, you can add another feature, by clicking on the **Add** button, which will give you a menu to **Create New - Features** (Uses an embedded data source available only on the current page/component) or **Create New - Shared Features** (Uses a shared data source available to other pages/components) or **Browse for Existing - Shared Features**
 
 We will add a feature by selecting **Create New - Features** as seen on the image above.  This will open a form, where we will now enter our content.
 
-.. image:: /_static/images/first-site/first-site-new-feature.png
+.. image:: /_static/images/first-site/first-site-new-feature.jpg
     :width: 100 %
     :align: center
     :alt: Your First Website - New Feature
 
-.. image:: /_static/images/first-site/first-site-new-feature-added.png
+.. image:: /_static/images/first-site/first-site-new-feature-added.jpg
     :width: 100 %
     :align: center
     :alt: Your First Website - New Feature Added
 
-We will now add another feature, by selecting **Browse for Existing - Features**, after clicking on the **Add** button.  This will bring up a form containing a list of existing features in the blueprint.  Select one, then click on **Add & Close** or, click on the radio button of your selection, then click on **Add Selection**.  This will add your selected existing feature to the features section of the page.
+We will now add another feature, by selecting **Browse for Existing - Shared Features**, after clicking on the **Add** button.  This will bring up a form containing a list of existing shared features in the blueprint.  Select one, then click on **Add & Close** or, click on the radio button of your selection, then click on **Add Selection**.  This will add your selected existing feature to the features section of the page.
 
 .. image:: /_static/images/first-site/first-site-browse-for-existing.png
     :width: 100 %
@@ -204,7 +204,7 @@ From inside the drop zone, you may also re-arrange the features by clicking and 
     :align: center
     :alt: Your First Website - Drag and Drop
 
-To edit a feature, select a feature from the list and click on the **Edit** button on the right of the list.  Edit the fields you would like to modify, then click on **Save and Close** or **Save Draft** to save your changes or click on **Cancel** to discard all changes in the form.
+To edit a feature, select a feature from the list and click on the **Edit** button on the right of the list.  Edit the fields you would like to modify, then click on **Save & Close** or **Save** to save your changes or click on **Cancel** to discard all changes in the form.
 
 .. image:: /_static/images/first-site/first-site-edit-feature.png
     :width: 100 %
@@ -221,7 +221,7 @@ To remove a feature, select a feature from the list and click on the **X** butto
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Publishing Your New/Edited Page
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Your site is published after creating the site from the Website_Editorial blueprint.  If you make edits to any of the pages or created new pages, it will need to be published for your site visitors to see the changes.  There are a couple of ways to publish your page edits.  The first thing you need to do is to navigate to the page you want to publish in the Site Navigation Tree (Enabled by clicking on **Sidebar** on the right of the Crafter CMS logo on the upper left hand corner of Studio).  After navigating to the page you want to publish, there are two ways to publish:
+Your site is published after creating the site from the Website_Editorial blueprint.  If you make edits to any of the pages or created new pages, it will need to be published for your site visitors to see the changes.  There are a couple of ways to publish your page edits.  The first thing you need to do is to navigate to the page you want to publish in the Site Navigation Tree (Enabled by clicking on **Sidebar** icon on the upper left hand corner of Studio).  After navigating to the page you want to publish, there are two ways to publish:
 
 - Click on the page you want to publish.  In the context menu, click on **Approve & Publish**
 - Right click on the page you want to publish from the Site Navigation Tree, then click on **Approve & Publish**
@@ -231,7 +231,7 @@ Your site is published after creating the site from the Website_Editorial bluepr
     :align: center
     :alt: Your First Website - Publish Your New Content
 
-You will then be prompted whether you want to publish the page now (**Items should go live now**), or publish the page at a later date and time (**Items go live on a specific date & time**).
+You will then be prompted whether you want to publish the page now (**Now**), or publish the page at a later date and time (**Later**).
 
 .. image:: /_static/images/first-site/first-site-publish-option.png
     :width: 100 %
