@@ -20,10 +20,17 @@ From this screen you can navigate to any site's preview or dashboard.
     :alt: Navigating Studio - My Sites Screen
 
 You can get back to the **Sites** screen by:
-    * Selecting  |mainMenu| **Main Menu** in the top right corner
-    * Or logging out (sign out) and logging back in (sign in)
+    * Selecting the Crafter logo at the top right corner, then click on "Sites" on the top left of the *Global* panel
+    * Or logging out (sign out) and logging back in (sign in) by selecting the Crafter logo at the top right corner, then click on the logout icon on the bottom right of the *Global* panel
 
-.. image:: /_static/images/content-author/get-to-my-sites.jpg
+.. image:: /_static/images/content-author/get-to-my-sites-1.png
+    :width: 95 %
+    :align: center
+    :alt: Navigating Studio - Get to My Sites Screen Crafter logo
+
+|
+
+.. image:: /_static/images/content-author/get-to-my-sites-2.jpg
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Get to My Sites Screen
@@ -43,16 +50,18 @@ Account Management
 ^^^^^^^^^^^^^^^^^^
 Account Management is where you go to change your personal Crafter Studio settings like language or to change your password.
 
-.. image:: /_static/images/content-author/site-account.png
-    :width: 75 %    
+To get to Account Management:
+    * Click on the Crafter logo at the top right
+    * Click on **Settings** under *Global*
+
+.. image:: /_static/images/content-author/site-account.jpg
+    :width: 75 %
     :align: center
     :alt: Navigating Studio - Open My Account Settings Screen
 
-To get to Account Management:
-    * Click on your username in the toolbar
-    * Select **Settings** in the dropdown
+|
 
-.. image:: /_static/images/content-author/settings-account-management.png
+.. image:: /_static/images/content-author/settings-account-management.jpg
     :width: 75 %    
     :align: center
     :alt: Navigating Studio - Account Settings Screen
@@ -74,6 +83,13 @@ Each dashboard has a header
 
    Content "type" filter:  Some widgets allow you to filter them by a broad content type (All, Pages, Components, Documents)
 
+
+.. image:: /_static/images/content-author/site-dashboard-alt.png
+    :width: 95 %
+    :align: center
+    :alt: Navigating Studio - Site Dashboard
+
+|
 
 .. image:: /_static/images/content-author/site-dashboard.jpg
     :width: 95 %
@@ -235,7 +251,7 @@ The template editor provides users who have the proper permission with an abilit
 
 A simple syntax highlighting editor is provided.   
 
-.. image:: /_static/images/content-author/preview-template-editing.png
+.. image:: /_static/images/content-author/preview-template-editing.jpg
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Preview Panel Template Editing
@@ -278,19 +294,24 @@ other options relative to the page you are looking at, content you have selected
 
 The basic elements of the Contextual Navigation bar are:
 
-    * Branded Logo Button: Takes the user back to the Dashboard.
+    * Branded Logo Button: Takes the user to a panel with ``Global`` and ``Site`` options containing various links such as Dashboard, About, Help, etc.
     * Sidebar: Opens a menu that allows navigation to all pages, components and documents in the system.
     * Contextual Navigation Links: An area reserved for the quick create button and dynamic links that will change based off of the current page view.  The quick create button is a shortcut for content authors to create configured content without having to navigate through the site tree.
     * Search: Allows a user to search all site content or choose a subset of content to search from the drop-down menu (Please see the later section on Search for more details about the search field.)
     * Publish Status: Allows the user to view the site's publish status.
-    * Main Menu: Allows the user (depending on permissions granted to the user) to view/edit sites, the groups, the users, etc..
-    * Help: Provides the user a shortcut to Crafter CMS documentation and the about screen, listing the Crafter Studio version, etc.
-    * Username: Allows a user to log out of the system or manage settings.
-    
+
 .. image:: /_static/images/content-author/site-context-nav.jpg
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Site Context Navigation
+
+|
+
+.. image:: /_static/images/content-author/site-context-nav-logo-btn.png
+    :width: 95 %
+    :align: center
+    :alt: Navigating Studio - Site Context Navigation branded logo button links
+
 
 Sidebar
 ^^^^^^^
@@ -305,7 +326,7 @@ The Sidebar menu/panel allows for browsing all site content in the system. This 
     * The top level blocks "Pages, Components, Documents" can be hidden from users based on their privilege settings.
 * The Sidebar menu panel can be stretched and will remember where you set the length and width on your browser
 
-.. image:: /_static/images/content-author/sidebar-dashboard-item-selected.png
+.. image:: /_static/images/content-author/sidebar-dashboard-item-selected.jpg
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Sidebar Panel
