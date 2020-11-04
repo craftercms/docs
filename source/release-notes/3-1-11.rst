@@ -11,6 +11,7 @@ Updates
 * Added a new property for enabling/disabling support for script tags in ``Input`` and ``Text Area`` controls |br|
   To enable/disable support for escaping script tags, just put a check or uncheck the property ``Escape Content`` in the control's properties section.
 
+* Performance improvements in auto-clustering |enterpriseOnly|
 
 Lot's of other small enhancements and bug fixes :)
 
