@@ -1,0 +1,28 @@
+.. index:: Crafter CMS 3.1.11 Release Notes
+
+------------------
+Crafter CMS 3.1.11
+------------------
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Added a new property for enabling/disabling support for script tags in ``Input`` and ``Text Area`` controls |br|
+  To enable/disable support for escaping script tags, just put a check or uncheck the property ``Escape Content`` in the control's properties section.
+
+
+Lot's of other small enhancements and bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 3.1.11 Milestone <https://github.com/craftercms/craftercms/milestone/67?closed=1>`_
+
+.. important::
+
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.11)
+
+    For Docker/Kuber deployments, see :ref:`upgrading-dockers`
+
+    For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+    Please see :ref:`upgrade-notes-to-fix-backup-error` for some important notes when restoring backups created prior to Crafter CMS 3.1.10
+
