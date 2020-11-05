@@ -182,9 +182,44 @@ Our limits are:
     # (locked-in-memory size)
     LimitMEMLOCK=infinity
     # (open files)
-    LimitNOFILE=64000
+    LimitNOFILE=65535
     # (processes/threads)
-    LimitNPROC=64000
+    LimitNPROC=65535
+
+|
+
+The values listed above can be persistently set in the **limits.conf** file located at ``/etc/security/``
+
+Here's an example of how the items listed above will look like in a **limits.conf** file:
+
+  .. code-block:: text
+     :caption: */etc/security/limits.conf*
+
+     #[domain]        [type]  [item]   [value]
+     ...
+
+     *                -       fsize    infinity
+     *                -       cpu      infinity
+     *                -       as       infinity
+     *                -       memlock  infinity
+     *                -       nofile   65535
+     *                -       nproc    65535
+
+     ...
+
+  |
+
+where
+ * **domain:** can be a username, a group name, or a wildcard entry.
+ * **type:** can be *soft*, *hard* or *-*
+ * **item:** the resource to set the limit for
+
+For more information on types, other items, etc. that you can configure, see your OS man page for ``limits.conf`` (e.g. ``man limits.conf`` or  visit the online man page for your OS if available:: http://manpages.ubuntu.com/manpages/focal/en/man5/limits.conf.5.html )
+
+  .. note::
+
+     * On RHEL/CentOS: For the ``nproc`` setting, please use ``/etc/security/limits.d/90-nproc.conf``.  More information can be found `here <https://access.redhat.com/solutions/61334>`_
+     * On Ubuntu: The *limits.conf* file is ignored for processes started by *init.d* .  To apply the settings in *limits.conf* for processes started by *init.d*, open ``/etc/pam.d/su`` and uncomment the following: ``session required pam_limits.so``
 
 
 .. JVM Level
