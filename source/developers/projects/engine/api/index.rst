@@ -9,7 +9,7 @@ Crafter Engine API
 ==================
 
 .. note::
-    When simple multi-tenancy has been configured for Crafter Engine, make sure that the request includes the ``crafterSite`` parameter to set a site value.  Crafter Engine API's are site specific, and so, it needs to know the site when multi-tenancy has been configured for each request made.
+    When simple multi-tenancy has been configured for Crafter Engine, or when working in ``Preview`` mode, make sure that the request includes the ``crafterSite`` parameter to set a site value.  Crafter Engine API's are site specific, and so, it needs to know the site when multi-tenancy or preview mode has been configured for each request made.
 
     Here's an example to get an Item from the content store:
 

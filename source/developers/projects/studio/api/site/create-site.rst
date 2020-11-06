@@ -89,9 +89,13 @@ Parameters
 Example
 -------
 
-.. code-block:: none
+^^^^^^^^^^^^^
+Create a site
+^^^^^^^^^^^^^
 
-	POST .../api/1/services/api/1/site/create.json
+Example of creating a site:
+
+``POST .../api/1/services/api/1/site/create.json``
 
 .. code-block:: json
 
@@ -101,19 +105,28 @@ Example
     "blueprint" : "org.craftercms.blueprint.empty"
   }
 
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Create a site then push to remote
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Example of creating a site that is then pushed to a remote Git repository after creation:
+
+``POST .../api/1/services/api/1/site/create.json``
+
 .. code-block:: json
 
   {
-    "authentication_type" : "basic",
-    "blueprint" : "org.craftercms.blueprint.empty",
-    "create_option" : "push",
-    "description" : "My very first site!",
+    "site_id":"my-site",
+    "blueprint":"org.craftercms.blueprint.empty",
+    "description":"My very fist site!",
+    "use_remote":true,
+    "authentication_type":"basic",
     "remote_name" : "upstream",
-    "remote_password" : "SuperSecret$$587",
-    "remote_url" : "https://github.com/craftercms/remoterepo.git",
-    "remote_username" : "joe.bloggs",
-    "site_id" : "my-site",
-    "use_remote" : true,
+    "remote_url":"https://github.com/craftercms/remoterepo.git",
+    "remote_username":"joe.bloggs",
+    "remote_password":"SuperSecret$$587",
+    "create_option":"push",
     "site_params": {
       "apiKey": "SuperSecretKey$$142"
     }
