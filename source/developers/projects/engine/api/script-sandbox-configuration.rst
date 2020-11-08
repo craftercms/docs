@@ -18,8 +18,8 @@ similar to this:
 
 |
 
-It is recommended to keep the default configuration if possible. However, if a site requires access to one or more of
-the blacklisted expressions it is possible to override the configuration:
+It is recommended to keep the default configuration if possible. However, if access to one or more of the blacklisted expressions
+is required, it is possible to override the blacklist configuration. Configuration is global and affects all scripts on the server.
 
 .. warning:: When you allow a script to make an insecure call you should make sure it can only be executed with known
              arguments and **never** with unverified user input.
