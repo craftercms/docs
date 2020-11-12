@@ -49,20 +49,53 @@ Example
 .. code-block:: json
   :linenos:
 
-  {
-    "total": 2
-    "sites" :
-      [
-        {
-          "site_id" : "my-site1",
-          "description" : "My nice site 1."
-        },
-        {
-          "site_id" : "my-site2",
-          "description" : "My nice site 2."
+      {
+        "sites": [
+          {
+            "id": 2,
+            "siteUuid": "acbf5459-c5ab-4be1-be1a-a12571db9b7f",
+            "siteId": "myeditorial",
+            "name": "myeditorial",
+            "description": null,
+            "status": null,
+            "deleted": 0,
+            "liveUrl": null,
+            "lastCommitId": "ef874be1b167d229163dee4e70f1fa73a1f66401",
+            "publishingEnabled": 1,
+            "publishingStatusMessage": "ready|Ready",
+            "lastVerifiedGitlogCommitId": "ef874be1b167d229163dee4e70f1fa73a1f66401",
+            "sandboxBranch": "master",
+            "searchEngine": "Elasticsearch",
+            "publishedRepoCreated": 0,
+            "publishingLockOwner": "localhost/127.0.0.1",
+            "publishingLockHeartbeat": "2020-11-10T14:49:02-05:00",
+            "sitePublishedRepoCreated": false,
+            "siteDeleted": false
+          },
+          {
+            "id": 3,
+            "siteUuid": "b918ee26-a672-4363-989d-2743eeff4c43",
+            "siteId": "mysite",
+            "name": "mysite",
+            "description": null,
+            "status": null,
+            "deleted": 0,
+            "liveUrl": null,
+            "lastCommitId": "75f6057714737be8c9929bdb769fcb172ee769a8",
+            "publishingEnabled": 1,
+            "publishingStatusMessage": "ready|Ready",
+            "lastVerifiedGitlogCommitId": "75f6057714737be8c9929bdb769fcb172ee769a8",
+            "sandboxBranch": "master",
+            "searchEngine": "Elasticsearch",
+            "publishedRepoCreated": 0,
+            "publishingLockOwner": "localhost/127.0.0.1",
+            "publishingLockHeartbeat": "2020-11-10T14:49:01-05:00",
+            "sitePublishedRepoCreated": false,
+            "siteDeleted": false
+          }
+        ],
+        "total": 2
         }
-    ]
-  }
 
 --------
 Response
