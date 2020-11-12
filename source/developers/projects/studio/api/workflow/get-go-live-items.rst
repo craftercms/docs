@@ -6,7 +6,7 @@
 Get Go Live Items
 =================
 
-Get items waiting for approval.
+Get items waiting for approval. Optionally, include in-progress items. Note, there can be a significant performance cost to including in-progress items.
 
 --------------------
 Resource Information
