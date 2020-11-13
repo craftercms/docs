@@ -46,6 +46,7 @@ Activities
    activities/backup-and-recovery.rst
    activities/clustering.rst
    activities/configure-solrcloud-for-crafter.rst
+   crafter-cli/index.rst
    activities/logging.rst
    activities/production-environment-setup.rst
    activities/reindexing-content.rst
