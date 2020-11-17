@@ -34,6 +34,7 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Properties            || - Enable Create New: Allows user to create a new item                |
 ||                       || - Enable Browse Existing: Allows user to browse existing items       |
+||                       || - Enable Search Existing: Allows user to search for existing items   |
 ||                       || - Repository Path: Path where to store new content created.          |
 ||                       || - Browse Path: Path where to browse the datasource items.            |
 ||                       || - Default Type: Default type of datasource items.                    |
