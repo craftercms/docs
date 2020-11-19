@@ -11,7 +11,7 @@
 Upgrade Notes for Re-encrypting Values
 ======================================
 
-Crafter CMS uses the Apache commons-codec library for encrypting/decrypting sensitive information.  Crafter CMS was expecting the salt to be encoded in base64 but because of a bug in the Apache commons-codec library, invalid characters were being used to encrypt the values.
+Crafter CMS uses the Apache commons-codec library for encrypting/decrypting sensitive information.  Crafter CMS 3.1.8 and earlier versions was expecting the salt to be encoded in base64 but because of a bug in the Apache commons-codec library, invalid characters were being used to encrypt the values.
 
 To prevent this from causing issues, the upgrade manager will automatically re-encrypt values for installations upgraded to **Crafter CMS 3.1.9 and later 3.1.x** versions.
 
