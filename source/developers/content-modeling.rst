@@ -721,9 +721,47 @@ Data Sources allows the content model designer to decide where different assets 
 
 There are a couple of data source that also dictates how components are handled during duplicate/copy events.  The :ref:`Shared Content<form-source-shared-content>` data source will duplicate/copy the reference to a component during a duplicate/copy event and is used for components that need to be shared across pages or components. For components that belong exclusively to a content object, use the :ref:`Embedded Content<form-source-embedded-content>` data source.
 
+The ``shared-content`` data sources also provides an option to allow users to search for existing items (``Enable Search Existing`` property) in addition to browsing.  This provides users ease of managing lots of items/assets.
+
 Data sources are usually used in conjunction with a control in the content type, for example, the :ref:`form-item-selector` is used for selecting files to be uploaded when bound with the :ref:`form-source-file-desktop` data source.
 
-Form Engine Data Sources (please use the scrollbar to see more controls)
+Let's take a look at a shared content data source in a site created using the Video Center blueprint from the Marketplace.
+
+.. image:: /_static/images/content-model/create-site-video-center-bp.jpg
+    :alt: Form Engine Data Sources Example - Create Site Using Video Center Blueprint
+    :width: 70%
+    :align: left
+
+|
+
+Open the ``Sidebar`` then click on |siteConfig|.  Click on ``Content Types`` and select ``Stream``, then click on the ``Open Type`` button.  Scroll down  to the ``Data Sources`` section, then click on ``Origins``, a shared content data source.  Notice how a :ref:`form-item-selector` control is used for selecting shared content ``Origin``.  In the ``Properties Explorer`` on the right  side, put a check mark on  ``Enable Search Existing`` property so users can search for existing items.
+
+.. image:: /_static/images/content-model/shared-content-ds-enable-search-existing.jpg
+    :alt: Form Engine Data Sources Example - Shared Content Data Source
+    :width: 100%
+    :align: left
+
+|
+
+To see the property we setup in action, open the ``Sidebar``, then navigate to ``/streams``.  Right click on any of the items, say, ``AlphaGo``, then click on ``Edit``.  Scroll down to the ``Content`` section of the form.  In the ``Origin`` field, select the item next to it (``ShakaDemo``) then click on the ``x`` button to remove it.  We'll now add a new one, by clicking on the ``Add`` button, then select ``Search for Existing - Origins``.
+
+.. image:: /_static/images/content-model/author-search-for-existing.png
+   :alt: Form Engine Data Sources Example - Author Search for Existing Option
+   :width: 70%
+   :align: left
+
+|
+
+A search dialog will open displaying in a grid view, items the user can search through, select, filter, etc.  As we can see, the search option makes it easier for users to pick items instead of scrolling through all the available items, especially for say sites with hundreds or even thousands of items/assets.
+
+.. image:: /_static/images/content-model/author-search-for-existing-dialog.jpg
+   :alt: Form Engine Data Sources Example - Author Search for Existing Dialog
+   :width: 70%
+   :align: left
+
+|
+
+Form Engine Data Sources (please use the scrollbar to see more data sources)
 
 .. include:: form-sources/list-form-sources.rst
 
