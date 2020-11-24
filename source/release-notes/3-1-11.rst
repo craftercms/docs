@@ -23,6 +23,8 @@ For a full list of tickets, please visit: `GitHub 3.1.11 Milestone <https://gith
 
     For Docker/Kuber deployments, see :ref:`upgrading-dockers`
 
+    Please see :ref:`upgrade-to-3-1-11` for some important notes when updating to Crafter CMS 3.1.11
+
     For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
 
     Please see :ref:`upgrade-notes-to-fix-backup-error` for some important notes when restoring backups created prior to Crafter CMS 3.1.10
