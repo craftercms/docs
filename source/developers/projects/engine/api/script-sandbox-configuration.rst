@@ -164,17 +164,17 @@ There are a couple of things you can do to get around the exception being thrown
      .. code-block::
 
         class Test {
-          private String message
+          private String theMessage
 
-          public String getTheMessage() {
-             return this.message
+          public String getMessage() {
+             return this.theMessage
           }
         }
 
         def t = new Test()
-        t.message = "this is a test"
+        t.theMessage = "this is a test"
 
-        return t.getTheMessage()
+        return t.getMessage()
 
      |
 
