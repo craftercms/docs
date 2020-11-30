@@ -19,9 +19,9 @@ However, there may be some cases that the upgrade manager may not be able to aut
 
    .. code-block:: text
 
-      │ Caused by: java.lang.IllegalStateException: The current configuration doesn't support values encrypted with a base64 encoded salt                                                                        │
-      │     at org.craftercms.commons.crypto.impl.PbkAesTextEncryptor.decrypt(PbkAesTextEncryptor.java:80) ~[crafter-commons-utilities-3.1.9E.jar:3.1.9E]                                                        │
-      │     at org.craftercms.studio.impl.v2.upgrade.operations.site.ConfigEncryptionUpgradeOperation.updateFile(ConfigEncryptionUpgradeOperation.java:61) ~[classes/:3.1.9E]
+      Caused by: java.lang.IllegalStateException: The current configuration doesn't support values encrypted with a base64 encoded salt                                                                        │
+         at org.craftercms.commons.crypto.impl.PbkAesTextEncryptor.decrypt(PbkAesTextEncryptor.java:80) ~[crafter-commons-utilities-3.1.9E.jar:3.1.9E]                                                        │
+         at org.craftercms.studio.impl.v2.upgrade.operations.site.ConfigEncryptionUpgradeOperation.updateFile(ConfigEncryptionUpgradeOperation.java:61) ~[classes/:3.1.9E]
 
 |
 
@@ -37,6 +37,7 @@ Manually Re-encrypt Values
 **To re-encrypt values:**
 
 #. Find all values that need to be re-encrypted e.g. configuration files & remote repository credentials
+
 #. For this step, we need to use the Crafter CMS command line encryption tool version 3.1.8 or earlier.  |br|
    Using the old key and salt, decrypt the values using the Crafter CMS command line encryption tool (See :ref:`crafter-commons-encryption-tool` for more information on the tool).
 
@@ -59,7 +60,8 @@ Manually Re-encrypt Values
 
       .. code-block:: bash
 
-         java -jar crafter-commons-utilities-3.1.8-enctool.jar -d VkHxBsaSZ9DXrXk52uK9And+CEZlqiy7Wb23GxBFOSXD6KBOCh1ojp8fUw7w11IxpxBipiI4HsSg3cdl9TgTQg== -p klanFogyetkonjo -s S25pT2RkeWk=
+         $ java -jar crafter-commons-utilities-3.1.8-enctool.jar -d VkHxBsaSZ9DXrXk52uK9And+CEZlqiy7Wb23GxBFOSXD6KBOCh1ojp8fUw7w11IxpxBipiI4HsSg3cdl9TgTQg== -p klanFogyetkonjo -s S25pT2RkeWk=
+         Clear text: mySup3rsecret#@hello
 
       |
 
@@ -83,7 +85,19 @@ Manually Re-encrypt Values
 
       .. code-block:: bash
 
-         java -jar crafter-commons-utilities-3.1.9-enctool.jar -d VkHxBsaSZ9DXrXk52uK9And+CEZlqiy7Wb23GxBFOSXD6KBOCh1ojp8fUw7w11IxpxBipiI4HsSg3cdl9TgTQg== -p klanFogyetkonjo -s S25pT2RkeWk=
+         $ java -jar crafter-commons-utilities-3.1.10-enctool.jar -e mySup3rsecret#@hello -p klanFogyetkonjo -s Sdf25pT2RkeWk=
+         Cipher text (in Base 64): VkHxBsaSZ9DXrXk52uK9And+CEZlqiy7Wb23GxBFOSXD6KBOCh1ojp8fUw7w11IxpxBipiI4HsSg3cdl9TgTQg==
+
+#. After updating configuration files that needs to be re-encrypted, commit the files by using ``git`` so the changes will be picked up by Crafter CMS.
+
+      .. code-block:: bash
+
+         $ git add <config_file_modified>
+         $ git commit -m "Comment for the commit"
+
+      |
+
+   For the remote repository credentials, you could also just remove the existing remotes, then add them again to avoid manually changing the database.  See :ref:`remote-repositories` for more information on adding/removing remotes in Studio
 
 
 
