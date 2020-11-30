@@ -55,6 +55,7 @@ Activities
    activities/security/randomize-admin-passwd.rst
    activities/security/configure-studio-security.rst
    activities/security/configure-ssl-tls.rst
+   activities/security/setup-cloudfront-signed-cookies-in-crafter.rst
    activities/kubernetes/index.rst
    activities/language-support/add-new-language.rst
    activities/encrypting-configuration-properties.rst
