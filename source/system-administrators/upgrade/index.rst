@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 
 .. index:: Upgrading Crafter CMS; Upgrading
 
