@@ -15,11 +15,11 @@ This section details the steps required to upgrade your Crafter CMS install.
 
 
 .. WARNING::
-    This guide assumes that you're trying to upgrade a site from a stock 3.0.x Studio and with some slight Studio configuration changes. If your site configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
+    This guide assumes that you're trying to upgrade a site from a stock 3.1.9 and later version Studio and with some slight Studio configuration changes. If your site configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
 
-    If you are upgrading from an earlier release (2.5.x), you would need to upgrade to 3.0.x first before performing the steps below.  See :ref:`upgrading-craftercms-to-3-0-x` to upgrade from 2.5.x to 3.0.x
+    If you are upgrading from 3.1.8 or earlier release, you would need to upgrade to 3.1.9 or later 3.1.x version first before upgrading to 3.2.x.  See :ref:`upgrade-notes-for-re-encrypting-values` for some important notes on the re-encryption process performed by the upgrade manager on installations upgraded to Crafter CMS 3.1.9 and later 3.1.x versions.
 
-    This guide also assumes that you are upgrading to version 3.1.1 or later. If you are upgrading to 3.1.0, the automatic upgrade scripts are not enabled and you will need to follow :ref:`these instructions<upgrade-to-3-1-0>` to upgrade manually.
+    If you are upgrading from an earlier release (2.5.x), you would need to upgrade to 3.0.x first, then upgrade to 3.1.9 or later version before upgrading to 3.2.x.  See :ref:`upgrading-craftercms-to-3-0-x` to upgrade from 2.5.x to 3.0.x
 
 |
 
