@@ -86,7 +86,7 @@ Manually Re-encrypt Values
       .. code-block:: bash
 
          $ java -jar crafter-commons-utilities-3.1.10-enctool.jar -e mySup3rsecret#@hello -p klanFogyetkonjo -s Sdf25pT2RkeWk=
-         Cipher text (in Base 64): VkHxBsaSZ9DXrXk52uK9And+CEZlqiy7Wb23GxBFOSXD6KBOCh1ojp8fUw7w11IxpxBipiI4HsSg3cdl9TgTQg==
+         Cipher text (in Base 64): CCE-V1#fQ5sZ3zfIezQzmWl38+FPph2BwVsLstkwGeWuqKAhbFCN3I1PM3ahAHkrMYCytFV
 
 #. After updating configuration files that needs to be re-encrypted, commit the files by using ``git`` so the changes will be picked up by Crafter CMS.
 
