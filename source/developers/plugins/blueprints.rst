@@ -228,7 +228,7 @@ where the following fields are required:
 - ``plugin.crafterCmsVersions`` - Crafter CMS versions that the blueprint applies to (look in the :ref:`release-notes` section for the versions available)
 - ``plugin.searchEngine`` - search engine that will be used when a site is created from the blueprint (possible values are, ``CrafterSearch`` and ``Elasticsearch``)
 
-.. note:: For the images to be used for the ``screenshots`` in the ``craftercms-plugin.yaml`` file, we recommend using images with approximately a ``4:3`` aspect ratio (width to height), such as an image sized at 1200x800
+   .. note:: For the images to be used for the ``screenshots`` in the ``craftercms-plugin.yaml`` file, we recommend using images with approximately a ``4:3`` aspect ratio (width to height), such as an image sized at 1200x800
 
 .. _passing-parameters-to-bp:
 
@@ -258,14 +258,21 @@ where:
 - ``required``: Indicates whether the parameter is required.  The default is ``true``
 
 
+To use the parameters in configuration files, simply use ``${plugin:PLUGIN_NAME}`` where PLUGIN_NAME is the name of the parameter.
+
+**Example**
+
 Let's take a look at an example of adding parameters to the **Website Editorial** blueprint.
+In our example, we will be passing AWS credentials when the site is created to be used for storing files in an S3 bucket and will setup the configuration file that will be using the passed parameters, along with the changes required in the content type and template so users can upload files to S3 once the site is up.
+
+To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>` guide, but instead of manually adding the AWS credentials so the user can upload files, we'll pass the AWS credentials through the blueprint when the site is created.
 
 #. The first thing we need to do is to add the parameters to the ``craftercms-plugin.yaml`` file of the Website Editorial blueprint.  Open the ``craftercms-plugin.yaml`` which is under the ``{CRAFTER_HOME}/data/repos/global/blueprints/1000_website_editorial`` folder and add the following lines to the end of the file:
 
    .. code-block:: yaml
       :linenos:
       :caption: *{CRAFTER_HOME}/data/repos/global/blueprints/1000_website_editorial/craftercms-plugin.yaml*
-      :emphasize-lines: 13-17
+      :emphasize-lines: 13-31
 
       # This file describes a plugin for use in Crafter CMS
 
@@ -280,45 +287,136 @@ Let's take a look at an example of adding parameters to the **Website Editorial*
       ...
       searchEngine: Elasticsearch
       parameters:
-        - label: My Param 1
-          name: myParam1
-          description: My parameter 1
+        - label: Access Key
+          name: accessKey
+          description: AWS Access Key
+          required: true
+          type: PASSWORD
+        - label: Secret Key
+          name: secretKey
+          description: AWS Secret Key
+          required: true
+          type: PASSWORD
+        - label: AWS Region
+          name: awsRegion
+          description: AWS region for the service
+          required: true
+        - label: Bucket Name
+          name: bucketName
+          description: Name of the bucket where files will be uploaded
           required: true
 
    |
 
-#. Commit your changes
+#. Next, we'll add the ``aws.xml`` file which will contain all the parameters passed from the blueprint which we'll use to create an S3 profile, so files can be uploaded to an S3 bucket. To access the parameters passed from the blueprint when the site was created, simply use ``${plugin:PLUGIN_NAME}``, where PLUGIN_NAME is the name of the parameter passed through the blueprint that you would like to use.
+
+   Create the folder ``aws`` under ``CRAFTER_HOME/data/repos/global/blueprints/config`` then inside the newly create folder, create the file ``aws.xml``.  Add the following inside the file:
+
+   .. code-block:: xml
+      :linenos:
+      :caption: *CRAFTER_HOME/data/repos/global/blueprints/config/aws/aws.xml*
+      :emphasize-lines: 8-9, 11-12
+
+      <?xml version="1.0" encoding="UTF-8"?>
+      <aws>
+        <version>2</version>
+        <s3>
+          <profile>
+            <id>s3-default</id>
+            <credentials>
+              <accessKey>${plugin:accessKey}</accessKey>
+              <secretKey>${plugin:secretKey}</secretKey>
+            </credentials>
+            <region>${plugin:awsRegion}</region>
+            <bucketName>${plugin:bucketName}</bucketName>
+          </profile>
+        </s3>
+      </aws>
+
+
+#. Next we'll modify the content type ``Page - Article`` and the template for it, ``article.ftl`` to allow the user to select files to be uploaded like in the example :ref:`here <use-s3-to-store-assets>`.  We'll end up with two files modified.  The ``article.ftl`` and ``form-definition.xml`` files.
 
    .. code-block:: text
+      :caption: *CRAFTER_HOME/data/repos/global/blueprints/1000_website_editorial/templates/web/pages/article.ftl*
+      :linenos:
 
-      ➜  craftercms git:(develop) cd crafter-authoring/data/repos/global/blueprints/1000_website_editorial
-      ➜  1000_website_editorial git:(master) ✗ vi craftercms-plugin.yaml
-      ➜  1000_website_editorial git:(master) ✗ git status
-      On branch master
-      Changes not staged for commit:
-        (use "git add <file>..." to update what will be committed)
-        (use "git checkout -- <file>..." to discard changes in working directory)
-
-	       modified:   craftercms-plugin.yaml
-
-      no changes added to commit (use "git add" and/or "git commit -a")
-      ➜  1000_website_editorial git:(master) ✗ git add .
-      ➜  1000_website_editorial git:(master) ✗ git commit -m "Add param"
-      [master 7b8f271] Add param
-      1 file changed, 6 insertions(+)
+      <#if contentModel.attachments??>
+        <h2>Attachments</h2>
+        <ul>
+          <#list contentModel.attachments.item as a>
+            <li><a href="${a.attachment.item.key}">${a.attachmentName}</a></li>
+          </#list>
+        </ul>
+      </#if>
 
    |
 
-#. Refresh your browser.  We will now try creating a site using the **Website Editorial** blueprint to see the parameter we added to the blueprint earlier.
+   .. code-block:: xml
+      :caption: *CRAFTER_HOME/data/repos/global/blueprints/1000_website_editorial/config/studio/content-types/page/article/form-definition.xml*
+      :linenos:
 
-   Click on the ``Main Menu`` ➜ ``Sites`` ➜ ``Create Site`` button, then finally select the ``Website Editorial`` blueprint.  You will then be presented with the ``Create Site`` dialog.  Notice that the parameter we added to the ``craftercms-plugin.yaml`` file is near the bottom of dialog.  The value entered there will now be available to the site being created.
+      ...
 
-   .. image:: /_static/images/blueprint/blueprint-param-added.png
+      <field>
+        <type>repeat</type>
+		<id>attachments_o</id>
+      ...
+
+      <datasource>
+        <type>S3-upload</type>
+        <id>s3Upload</id>
+        <title>S3 Upload</title>
+        <interface>item</interface>
+        <properties>
+          <property>
+            <name>repoPath</name>
+              <value></value>
+              <type>string</type>
+          </property>
+          <property>
+            <name>profileId</name>
+            <value>s3-default</value>
+            <type>string</type>
+          </property>
+        </properties>
+      </datasource>
+
+   |
+
+
+#. Commit your changes using ``git add`` and ``git commit``
+
+   .. code-block:: text
+
+      ➜  craftercms git:(develop) cd CRAFTER_HOME/data/repos/global/blueprints
+      ➜  blueprints git:(master) ✗ git add 1000_website_editorial/config/studio/aws/
+      ➜  blueprints git:(master) ✗ git add 1000_website_editorial/config/studio/content-types/page/article/form-definition.xml
+      ➜  blueprints git:(master) ✗ git add 1000_website_editorial/craftercms-plugin.yaml
+      ➜  blueprints git:(master) ✗ git add 1000_website_editorial/templates/web/pages/article.ftl
+      ➜  blueprints git:(master) ✗ git commit -m "Add storing assets to S3"
+
+   |
+
+#. Refresh your browser.  We will now try creating a site using the **Website Editorial** blueprint to see the parameters we added to the blueprint earlier.
+
+   Click on the ``Main Menu`` ➜ ``Sites`` ➜ ``Create Site`` button, then finally select the ``Website Editorial`` blueprint.  You will then be presented with the ``Create Site`` dialog.  Notice that the parameters we added to the ``craftercms-plugin.yaml`` file is near the bottom of dialog.  The values entered there will now be available to the site being created which for our example, will be used for the AWS profile in ``aws.xml``.  Enter the requested information then click on ``Create Site``
+
+   .. image:: /_static/images/blueprint/blueprint-param-added.jpg
       :width: 80%
       :alt: Parameter added in Create Site
       :align: center
 
    |
+
+#. Once your new site is up, users can upload files to S3 from an article page.  Let's verify the parameters you passed through the blueprint by checking the ``aws.xml`` file.  Open the **Sidebar**, then click on |siteConfig|.  Click on ``Configuration``, then select ``AWS Profiles`` from the dropdown.
+
+   .. image:: /_static/images/blueprint/blueprint-param-added-verify.jpg
+      :width: 80%
+      :alt: Parameter added in Create Site
+      :align: center
+
+   |
+
 
 -------------------------------------
 Editing as a Site vs Editing directly
