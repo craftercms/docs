@@ -258,7 +258,7 @@ where:
 - ``required``: Indicates whether the parameter is required.  The default is ``true``
 
 
-To use the parameters in configuration files, simply use ``${plugin:PLUGIN_NAME}`` where PLUGIN_NAME is the name of the parameter.
+To use the parameters in configuration files, simply use ``${plugin:PARAM_NAME}`` where PARAM_NAME is the name of the parameter.
 
 **Example**
 
@@ -308,7 +308,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>
 
    |
 
-#. Next, we'll add the ``aws.xml`` file which will contain all the parameters passed from the blueprint which we'll use to create an S3 profile, so files can be uploaded to an S3 bucket. To access the parameters passed from the blueprint when the site was created, simply use ``${plugin:PLUGIN_NAME}``, where PLUGIN_NAME is the name of the parameter passed through the blueprint that you would like to use.
+#. Next, we'll add the ``aws.xml`` file which will contain all the parameters passed from the blueprint which we'll use to create an S3 profile, so files can be uploaded to an S3 bucket. To access the parameters passed from the blueprint when the site was created, simply use ``${plugin:PARAM_NAME}``, where PARAM_NAME is the name of the parameter passed through the blueprint that you would like to use.
 
    Create the folder ``aws`` under ``CRAFTER_HOME/data/repos/global/blueprints/config`` then inside the newly create folder, create the file ``aws.xml``.  Add the following inside the file:
 
