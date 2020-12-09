@@ -17,8 +17,6 @@ At a high-level, we're pursuing the objectives listed below in order:
 	- Direct integration with Node JS
 * Crafter Studio features
 	- Crafter Studio Marketplace: Pull in authoring extensions for your site from the marketplace
-	- Enhanced Preview Proxy to connect to any remote server as the preview server
-		- This will allow easier authoring of sites built with other programming languages and technologies
 	- New Sidebar navigator
 	- Enhanced site translation mechanics
 	- Direct management of Node JS scripts and artifacts
@@ -27,13 +25,15 @@ At a high-level, we're pursuing the objectives listed below in order:
 		- Out of the box and marketplace components
 		- Improved drag and drop mechanics
 	- Schedule an item for publishing and continue editing it (specific-version publishing)
-	- Improved delete mechanics
+	- Recycle Bin and improved delete mechanics
 	- Time-travel mechanics to preview sites across time
 	- Integrate Crafter Profile Admin and Crafter Social Admin directly into Crafter Studio
 
 Recently Completed
 ------------------
 
+* Enhanced Preview Proxy to connect to any remote server as the preview server
+	- This allows easier authoring of sites built with other programming languages and technologies
 * Managed Blob Stores
 	- Manage external blob stores (S3) assets as if they're Crafter CMS assets with full workflow and multi-environment support
 * GraphQL
