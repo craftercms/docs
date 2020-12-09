@@ -33,6 +33,9 @@ Updates
 * Added new environment variables for encrypting and decrypting values in the database |br|
   See :ref:`securing-your-crafter-cms-install` for more information on the database values encryption key and salt.
 
+* Re-encryption of configuration files and remote repository credentials |br|
+  This is automatically done by the upgrade manager when upgrading to Crafter CMS 3.1.9.  For more information on the re-encryption performed by the upgrade manager, see :ref:`upgrade-notes-for-re-encrypting-values`.
+
 * Added Studio and Engine support for forwarded headers, to resolve the actual hostname and protocol when it is behind a load balancer, reverse proxy or CloudFront via new properties |br|
 
   To enable forwarded headers in Engine, open the :ref:`server-config.properties <engine-configuration-files>` and set the ``crafter.engine.forwarded.headers.enabled`` property to ``true``

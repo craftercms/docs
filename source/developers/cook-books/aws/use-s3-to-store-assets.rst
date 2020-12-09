@@ -60,15 +60,18 @@ bucket name for the actual bucket where you're storing the documents):
 
    <?xml version="1.0" encoding="UTF-8"?>
    <aws>
-     <profile>
-       <id>s3-default</id>
-       <credentials>
-         <accessKey>XXXXXXXXXX</accessKey>
-         <secretKey>XXXXXXXXXXXXXXXXXXXX</secretKey>
-       </credentials>
-       <region>us-east-1</region>
-       <bucketName>mybucket</bucketName>
-     </profile>
+     <version>2</version>
+     <s3>
+       <profile>
+         <id>s3-default</id>
+         <credentials>
+           <accessKey>XXXXXXXXXX</accessKey>
+           <secretKey>XXXXXXXXXXXXXXXXXXXX</secretKey>
+         </credentials>
+         <region>us-east-1</region>
+         <bucketName>mybucket</bucketName>
+       </profile>
+     </s3>
    </aws>
 
 |
