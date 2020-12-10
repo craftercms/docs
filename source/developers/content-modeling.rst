@@ -157,7 +157,7 @@ The fields available at this level are:
 || Configuration|| Contains config.xml which holds information about the content type such as the|
 ||              || limit where content can be created, is it previewable, etc.                   |
 +---------------+--------------------------------------------------------------------------------+
-|| Controller   || Contains controller.groovy which provides an extension/hook to author         |
+|| Controller   || Contains controller.groovy which provides an extension/hook to authoring      |
 ||              || lifecycle events                                                              |
 +---------------+--------------------------------------------------------------------------------+
 || Display      || View template to use when rendering this content                              |
