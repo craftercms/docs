@@ -33,23 +33,28 @@ Sample
         <profile>
             <id/>
             <baseUrl/>
+            <deliveryBaseUrl/> (deprecated)
             <username/>
             <password/>
+            <preemptiveAuth/>
         </profile>
 
         id:	a unique id for this profile, this will be referenced in the
             control defined in the content type
         baseUrl: Full URL of the WebDAV server
+        deliveryBaseUrl: Full URL of the delivery server to override for files, deprecated and will be ignored
         username: WebDAV account username
         password: WebDAV account password
+        preemptiveAuth: Indicates if the client should use preemptiveAuth, defaults to false
     -->
     <webdav>
       <webdav>
         <profile>
-            <id>webdav-default</id>
-            <baseUrl>...</baseUrl>
-            <username>...</username>
-            <password>...</password>
+          <id>webdav-default</id>
+          <baseUrl>...</baseUrl>
+          <username>...</username>
+          <password>...</password>
+          <preemptiveAuth>...</preemptiveAuth>
         </profile>
       </webdav>
     </webdav>
