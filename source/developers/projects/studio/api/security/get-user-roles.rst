@@ -33,8 +33,6 @@ Parameters
 +===============+=============+===============+==================================================+
 || site_id      || String     ||              || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| user         || String     ||              || User to get his/hers roles                      |
-+---------------+-------------+---------------+--------------------------------------------------+
 
 -------
 Example
@@ -42,7 +40,7 @@ Example
 
 .. code-block:: none
 
-	GET .../api/1/services/api/1/security/get-user-roles.json?site_id=mysite&user=admin
+	GET .../api/1/services/api/1/security/get-user-roles.json?site_id=mysite
 
 .. code-block:: json
   :linenos:
