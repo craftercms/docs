@@ -33,8 +33,6 @@ Parameters
 +====================+=============+===============+==================================================+
 || site_id           || String     || |checkmark|  || Site to use                                     |
 +--------------------+-------------+---------------+--------------------------------------------------+
-|| user              || String     || |checkmark|  || User executing operation                        |
-+--------------------+-------------+---------------+--------------------------------------------------+
 || items             || String     || |checkmark|  || Array of paths to delete                        |
 +--------------------+-------------+---------------+--------------------------------------------------+
 || submissionComment || String     ||              || submission comment                              |
@@ -50,7 +48,7 @@ Request
 
 .. code-block:: none
 
-    POST ../api/1/services/api/1/workflow/go-delete.json?deletedep=true&site_id=mysite&user=admin
+    POST ../api/1/services/api/1/workflow/go-delete.json?deletedep=true&site_id=mysite
 
 .. code-block:: json
     :linenos:
