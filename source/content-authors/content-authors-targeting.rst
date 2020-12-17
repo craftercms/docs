@@ -46,27 +46,27 @@ To find out the current active targeting attributes, hover on the targeting imag
 
 To view what the site would look like if it were being browsed by a certain segment, open the targeting dialog by clicking on the bulls eye |targetingIcon| on the upper right hand of Studio, and select the segment you would like to see the site with.
 
-.. image:: /_static/images/page/page-targeting-segment.png
+.. image:: /_static/images/page/page-targeting-segment.jpg
     :width: 75 %    
     :align: center
     
 
 Below is a page with the segment set to **Anonymous**.  Notice the articles available on the page.
 
-.. image:: /_static/images/page/page-targeting-anonymous.png
+.. image:: /_static/images/page/page-targeting-anonymous.jpg
     :width: 75 %    
     :align: center
 
 Selecting a different segment than the currently selected one, will cause the preview for all channels to immediately respond with content for a user with the attributes selected.  Below, the segment **Guy** is selected.  Notice the articles available on the page has changed to display only articles targeted to segment **Guy**
 
 
-.. image:: /_static/images/page/page-targeting-guy.png
+.. image:: /_static/images/page/page-targeting-guy.jpg
     :width: 75 %    
     :align: center
 
 Here, the segment **Gal** is selected.  Again, notice the articles available on the page.
 
-.. image:: /_static/images/page/page-targeting-gal.png
+.. image:: /_static/images/page/page-targeting-gal.jpg
     :width: 75 %    
     :align: center    
 
