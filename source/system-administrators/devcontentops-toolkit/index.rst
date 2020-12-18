@@ -1,21 +1,21 @@
 :is-up-to-date: True
 
-.. index:: Crafter CLI, Crafter Command Line Interface
+.. index:: DevContentOps Toolkit, Crafter CMS Command Line Interface, crafter-cli
 
-.. _crafter-cli:
+.. _devcontentops-toolkit:
 
-==============================
-Crafter Command Line Interface
-==============================
+=====================
+DevContentOps Toolkit
+=====================
 
-The Crafter Command Line Interface, **Crafter CLI**, allows you to run commands that perform various actions available through Crafter Studio from the command prompt in your terminal program.
+Crafter CMS provides a DevContentOps Toolkit to support :ref:`DevContentOps <developer-workflow>` processes in Crafter CMS.  The DevContentOps Toolkit contains the Crafter CMS Command Line Interface (CLI), that allows you to authenticate with Crafter CMS and exercise its APIs via a Unix or Windows command line interface.
 
-To run the command line tool, download the **Crafter CLI** from http://craftercms.org/downloads and extract the contents to any directory.  In your terminal program, navigate to the directory where you extracted the tool.  There you will find two versions of the tool:
+To run the command line tool (A Bash and Windows Crafter CMS Command line Interface (CLI) for DevContentOps processes), download the **DevContentOps Toolkit** archive file from http://craftercms.org/downloads and extract the contents to any directory.  In your terminal program, navigate to the ``bin`` folder under the directory where you extracted the tool, ``DOWNLOAD_DIR/crafter-cli-3.1.x/bin/``.  There you will find two versions of the tool:
 
 * **crafter-cli:** - for users on a Linux/macOS operating system
 * **crafter-cli.bat** - for users on a Windows operating system
 
-When using the **Crafter CLI**, we first need to setup the connection to Crafter CMS before we can use the other available commands.  To setup the connection, run the ``add-environment`` command,  provide a name, the url for a Crafter CMS authoring server and the authentication information.
+When using the **crafter-cli**, we first need to setup the connection to Crafter CMS before we can use the other available commands.  To setup the connection, run the ``add-environment`` command,  provide a name, the url for a Crafter CMS authoring server and the authentication information.
 
 For the example below, we'll use ``local`` for the name, ``http://localhost:8080`` for the url, and username ``john`` for the authentication.  Leave the password blank, you will be prompted for the password after issuing the ``add-environment`` command:
 
@@ -94,7 +94,7 @@ To view more information about each command, just enter ``./crafter-cli <command
    |
 
 
-You can also find more information on the Crafter CLI commands, here:
+You can also find more information on the **crafter-cli** commands, here:
 
 .. toctree::
    :maxdepth: 1

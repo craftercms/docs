@@ -1,10 +1,12 @@
 :is-up-to-date: True
 
-==================
-Developer Workflow
-==================
+.. index:: Developer Workflow, DevContentOps
 
-This section explains the basic mechanics that support content authoring, publishing and developer workflow and how to configure and implement it.
+==================================
+Developer Workflow (DevContentOps)
+==================================
+
+This section explains the basic mechanics of DevContentOps which supports content authoring, publishing and developer workflow and how to configure and implement it.
 
 .. toctree::
       :maxdepth: 1
