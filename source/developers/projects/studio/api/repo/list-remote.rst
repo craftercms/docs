@@ -54,7 +54,7 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: json
+.. code-block:: text
 
     {
       "total": 2
