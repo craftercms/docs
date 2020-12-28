@@ -27,7 +27,7 @@ Here are the steps:
       :caption: CloudFrontUtils.groovy
       :linenos:
 
-3. Create a Groovy filter that is applied to all requests and calls the class method: ``CloudFrontUtils.setSignedCookies(request, response, siteConfig)``
+3. Create a Groovy filter that checks for current user authentication/authorization on the requests that need it, and then calls the class method: ``CloudFrontUtils.setSignedCookies(request, response, siteConfig)``
 4. Add the following config to Engine's site-config.xml:
 
    .. code-block:: xml
