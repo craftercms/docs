@@ -232,6 +232,33 @@ Processor that updates the processed commits value with the current commit
 
     - processorName: gitUpdateCommitIdProcessor
 
+.. _deployer-script-processor:
+
+^^^^^^^^^^^^^^^^
+Script Processor
+^^^^^^^^^^^^^^^^
+
+Processor that executes scripts in a sandbox
+
+**Properties**
+
++------------+-----------+-------------------------------+------------------------------------------------------------+
+|Name        |Required   |Default Value                  |Description                                                 |
++============+===========+===============================+============================================================+
+|scriptPath  ||checkmark||                               |The relative path of the script to execute                  |
++------------+-----------+-------------------------------+------------------------------------------------------------+
+
+
+**Example**
+
+.. code-block:: yaml
+    :linenos:
+    :caption: *Script Processor*
+
+    - processorName: scriptProcessor
+      scriptPath: 'myscripts/mychanges.groovy'
+
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 File Based Deployment Event Processor
