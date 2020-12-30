@@ -4,12 +4,30 @@
 Crafter CMS 3.1.12
 ------------------
 
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+
+* Added a new Deployer processor ``scriptProcessor`` |br|
+  See :ref:`deployer-script-processor` for more information
+
 ^^^^^^^
 Updates
 ^^^^^^^
 
 * Added a new option ``preemptiveAuth`` in the WebDAV configuration file for enabling/disabling use of preemptive authentication (sending authentication credentials before an unauthorized response) |br|
   See :ref:`webdav-profiles-configuration` for more information
+
+* Improved UI for uploading and browsing files on CMIS |br|
+  See `here <https://github.com/craftercms/craftercms/issues/4420>`__ for more information
+
+* Added support for running scripts at XPath ``scripts_o/item/key``
+
+* Added an environment variable for use when restoring backups, ``MARIADB_TCP_TIMEOUT`` |br|
+  This variable is used for setting the wait time for the database to finish starting up during restore. See :ref:`here <mariadb-environment-variables>` for more information
+
+* Added environment variable used for database connection timeout, ``MARIADB_SOCKET_TIMEOUT`` |br|
+  See :ref:`here <mariadb-environment-variables>` for more information
 
 * Bug fixes and performance improvements in auto-clustering |enterpriseOnly|
 
