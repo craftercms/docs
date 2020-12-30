@@ -59,3 +59,6 @@ Sample
       </webdav>
     </webdav>
 
+|
+
+  .. note:: Preemptive authentication may be needed if network timeouts are happening during uploads.  To enable preemptive authentication, simply set the option ``preemptiveAuth`` to ``true`` in the configuration file.
