@@ -278,12 +278,6 @@ jackson-dataformat-yaml
 **Dependency:** jackson-dataformat-yaml |br|
 **URL:** https://search.maven.org/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml
 
-elasticsearch-geo
-^^^^^^^^^^^^^^^^^
-**Package:** org.elasticsearch |br|
-**Dependency:** elasticsearch-geo |br|
-**URL:** https://search.maven.org/artifact/org.elasticsearch/elasticsearch-geo
-
 lucene-core
 ^^^^^^^^^^^
 **Package:** org.apache.lucene |br|
@@ -542,6 +536,18 @@ pdfbox-tools
 **Dependency:** pdfbox-tools |br|
 **URL:** https://search.maven.org/artifact/org.apache.pdfbox/pdfbox-tools
 
+preflight
+^^^^^^^^^
+**Package:** org.apache.pdfbox |br|
+**Dependency:** preflight |br|
+**URL:** https://search.maven.org/artifact/org.apache.pdfbox/preflight
+
+xmpbox
+^^^^^^
+**Package:** org.apache.pdfbox |br|
+**Dependency:** xmpbox |br|
+**URL:** https://search.maven.org/artifact/org.apache.pdfbox/xmpbox
+
 jempbox
 ^^^^^^^
 **Package:** org.apache.pdfbox |br|
@@ -565,6 +571,12 @@ commons-math3
 **Package:** org.apache.commons |br|
 **Dependency:** commons-math3 |br|
 **URL:** https://search.maven.org/artifact/org.apache.commons/commons-math3
+
+SparseBitSet
+^^^^^^^^^^^^
+**Package:** com.zaxxer |br|
+**Dependency:** SparseBitSet |br|
+**URL:** https://search.maven.org/artifact/com.zaxxer/SparseBitSet
 
 poi-scratchpad
 ^^^^^^^^^^^^^^
@@ -613,6 +625,18 @@ isoparser
 **Package:** com.googlecode.mp4parser |br|
 **Dependency:** isoparser |br|
 **URL:** https://search.maven.org/artifact/com.googlecode.mp4parser/isoparser
+
+metadata-extractor
+^^^^^^^^^^^^^^^^^^
+**Package:** org.tallison |br|
+**Dependency:** metadata-extractor |br|
+**URL:** https://search.maven.org/artifact/org.tallison/metadata-extractor
+
+xmpcore-shaded
+^^^^^^^^^^^^^^
+**Package:** org.tallison.xmp |br|
+**Dependency:** xmpcore-shaded |br|
+**URL:** https://search.maven.org/artifact/org.tallison.xmp/xmpcore-shaded
 
 boilerpipe
 ^^^^^^^^^^
@@ -751,12 +775,6 @@ j2objc-annotations
 **Package:** com.google.j2objc |br|
 **Dependency:** j2objc-annotations |br|
 **URL:** https://search.maven.org/artifact/com.google.j2objc/j2objc-annotations
-
-animal-sniffer-annotations
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Package:** org.codehaus.mojo |br|
-**Dependency:** animal-sniffer-annotations |br|
-**URL:** https://search.maven.org/artifact/org.codehaus.mojo/animal-sniffer-annotations
 
 grib
 ^^^^
