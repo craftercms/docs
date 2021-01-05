@@ -260,6 +260,10 @@ A site-specific custom Groovy processor that can process published content.
     - processorName: scriptProcessor
       scriptPath: 'myscripts/mychanges.groovy'
 
+|
+
+For more information on implementing the Groovy script processor, see :javadoc_base_url:`HERE <deployer/org/craftercms/deployer/impl/processors/AbstractMainDeploymentProcessor.html>`
+
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
