@@ -234,11 +234,11 @@ Processor that updates the processed commits value with the current commit
 
 .. _deployer-script-processor:
 
-^^^^^^^^^^^^^^^^
-Script Processor
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+Groovy Script Processor
+^^^^^^^^^^^^^^^^^^^^^^^
 
-Processor that executes scripts in a sandbox
+A site-specific custom Groovy processor that can process published content.
 
 **Properties**
 
@@ -255,7 +255,7 @@ Processor that executes scripts in a sandbox
 
 .. code-block:: yaml
     :linenos:
-    :caption: *Script Processor*
+    :caption: *Groovy Script Processor*
 
     - processorName: scriptProcessor
       scriptPath: 'myscripts/mychanges.groovy'
