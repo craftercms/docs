@@ -238,7 +238,7 @@ Processor that updates the processed commits value with the current commit
 Groovy Script Processor
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-A site-specific custom Groovy processor that can process published content.
+A custom Groovy processor that can process published content.
 
 **Properties**
 
@@ -249,7 +249,6 @@ A site-specific custom Groovy processor that can process published content.
 +------------+-----------+-------------------------------+------------------------------------------------------------+
 
   .. note::  The default path scripts are loaded from is ``$CRAFTER_HOME/bin/crafter-deployer/processors/scripts``
-
 
 **Example**
 
@@ -262,8 +261,42 @@ A site-specific custom Groovy processor that can process published content.
 
 |
 
-For more information on implementing the Groovy script processor, see :javadoc_base_url:`HERE <deployer/org/craftercms/deployer/impl/processors/AbstractMainDeploymentProcessor.html>`
+The following variables are available for use in your scripts:
 
+==================  ===========
+Variable Name       Description
+==================  ===========
+logger              The processor's logger, http://www.slf4j.org/api/org/slf4j/Logger.html
+applicationContext  The application context of the current target, https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/ApplicationContext.html
+deployment          The current deployment, :javadoc_base_url:`deployer/org/craftercms/deployer/api/Deployment.html`
+execution           The execution for this processor, :javadoc_base_url:`deployer/org/craftercms/deployer/api/ProcessorExecution.html`
+filteredChangeSet   The filtered change set calculated by this processor before execution, :javadoc_base_url:`deployer/org/craftercms/deployer/api/ChangeSet.html`
+originalChangeSet   The original change set returned by the previous processors in the pipeline, :javadoc_base_url:`deployer/org/craftercms/deployer/api/ChangeSet.html`
+==================  ===========
+
+|
+|
+
+Let's take a look at an example script that you can use for the Groovy script processor.
+Below is a script that only includes a file from the change set if a parameter is present in the deployment:
+
+.. code-block:: groovy
+   :caption: *Example Groovy script to be run by a script processor*
+   :linenos:
+
+   import org.craftercms.deployer.api.ChangeSet
+
+   logger.info("starting script execution")
+
+   def specialFile = "/site/website/expensive-page-to-index.xml"
+
+   // if the file has been changed but the param was not sent then remove it from the change set
+   if (originalChangeSet.getUpdatedFiles().contains(specialFile) && !deployment.getParam("index_expensive_page")) {
+       originalChangeSet.removeUpdatedFile(specialFile)
+   }
+
+   // return the new change set
+   return originalChangeSet
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
