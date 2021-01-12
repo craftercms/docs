@@ -189,7 +189,7 @@ Here's the Section Defaults under **Home**
 
 .. code-block:: xml
     :linenos:
-    :caption: *Section Defaults unde Home*
+    :caption: *Section Defaults under Home*
     :emphasize-lines: 20
 
     <component>
@@ -222,7 +222,7 @@ Here's the Section Defaults under **articles**
 
 .. code-block:: xml
     :linenos:
-    :caption: *Section Defaults unde Home*
+    :caption: *Section Defaults under Home*
     :emphasize-lines: 9
 
     <component>
