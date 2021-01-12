@@ -26,7 +26,7 @@ Model
 ^^^^^
 The dialog that opens after clicking on the **Create** button is the form that is presented to authors to enter content into.  The controls available are on the right side of the dialog, in the **Controls** section.  Simply drag the desired control to the form section to add.
 
-Let's take a look at the model for the articles-widget component content type.  The default dialog after clicking on the **Create** button  contains only the **Component ID** and **Internal Name** field.  From the image below, we have two input controls added, one for the **Title** and one for **Max Articles**, a check box for **Disable Component** and an item selector for **Controllers**.
+Let's take a look at the model for the articles-widget component content type.  The default dialog after clicking on the **Create** button  contains only the **Component ID** and **Internal Name** field.  From the image below, we have a few input controls added, one for the **Title**, one for **Max Articles**, a check box for **Disable Component** and an item selector for **Controllers**.
 
 .. figure:: /_static/images/templates/templates-comp-articles-widget-model.png
     :alt: Template Articles Widget Component Content Type Model
