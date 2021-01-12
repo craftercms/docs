@@ -181,7 +181,7 @@ in close succession, one after the other. If you take more than 5 minutes to sta
 the nodes already running will timeout while trying to synchronize for bootstrapping (you can configure this
 timeout in :ref:`studio-config-override.yaml <studio-configuration-files>`, under the property ``studio.db.cluster.nodes.startup.wait.timeout``).
 
-To check that the cluster is up, you can inspect the ``$CRFATER_HOME/logs/tomcat/catalina.out`` of the nodes for
+To check that the cluster is up, you can inspect the ``$CRAFTER_HOME/logs/tomcat/catalina.out`` of the nodes for
 the following entries:
 
 - Bootstrap of the DB cluster (one of the nodes):

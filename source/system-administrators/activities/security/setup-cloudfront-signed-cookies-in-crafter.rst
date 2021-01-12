@@ -21,7 +21,13 @@ Here are the steps:
 
 1. Configure CloudFront to use signed cookies following this guide: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-cookies.html
 2. Add the Groovy class to your site's classes.
-3. Create a Groovy filter that is applied to all requests and calls the class method: ``CloudFrontUtils.setSignedCookies(request, response, siteConfig)``
+
+   .. literalinclude:: /_static/code/system-admin/CloudFrontUtils.groovy
+      :language: groovy
+      :caption: CloudFrontUtils.groovy
+      :linenos:
+
+3. Create a Groovy filter that checks for current user authentication/authorization on the requests that need it, and then calls the class method: ``CloudFrontUtils.setSignedCookies(request, response, siteConfig)``
 4. Add the following config to Engine's site-config.xml:
 
    .. code-block:: xml

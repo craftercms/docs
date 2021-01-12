@@ -6,7 +6,7 @@
 Get Sites per User
 ==================
 
-Get Crafter Studio sites available to a user given a username with an optional range for pagination.
+Get Crafter Studio sites available to current user with an optional range for pagination.
 
 --------------------
 Resource Information
@@ -31,8 +31,6 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || Name         || Type       || Required     || Description                                     |
 +===============+=============+===============+==================================================+
-|| username     || String     || |checkmark|  || User for whom to find permitted sites           |
-+---------------+-------------+---------------+--------------------------------------------------+
 || start        || Integer    ||              || Start offset                                    |
 +---------------+-------------+---------------+--------------------------------------------------+
 || number       || Integer    ||              || Number of records to retrieve                   |
@@ -44,7 +42,7 @@ Example
 
 .. code-block:: none
 
-	GET .../api/1/services/api/1/site/get-per-user.json?username=jane.doe
+	GET .../api/1/services/api/1/site/get-per-user.json
 
 .. code-block:: json
   :linenos:
@@ -104,7 +102,7 @@ Response
 +---------+---------------------------------------------+---------------------------------------------------+
 || Status || Location                                   || Response Body                                    |
 +=========+=============================================+===================================================+
-|| 200    || ``.../site/get-per-user.json?username=..`` || See example above.                               |
+|| 200    || ``.../site/get-per-user.json..``           || See example above.                               |
 +---------+---------------------------------------------+---------------------------------------------------+
 || 400    ||                                            || ``{ "message" : "Invalid parameter(s)" }``       |
 +---------+---------------------------------------------+---------------------------------------------------+

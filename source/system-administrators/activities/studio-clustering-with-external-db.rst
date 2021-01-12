@@ -47,7 +47,7 @@ Below is a sample configuration containing the parameters used to setup a server
     ##################################################
     # Crafter Studio uses an embedded MariaDB by default
     # Crafter DB connection string
-    studio.db.url: jdbc:mariadb://${env:MARIADB_HOST}:${env:MARIADB_PORT}/crafter?user=${env:MARIADB_USER}&password=${env:MARIADB_PASSWD}
+    studio.db.url: jdbc:mariadb://${env:MARIADB_HOST}:${env:MARIADB_PORT}/${env:MARIADB_SCHEMA}?user=${env:MARIADB_USER}&password=${env:MARIADB_PASSWD}&socketTimeout=${env:MARIADB_SOCKET_TIMEOUT}
     # Connection string used to initialize database. This creates the `crafter` schema, the `crafter` user and/or upgrades the database
     studio.db.initializer.url: jdbc:mariadb://${env:MARIADB_HOST}:${env:MARIADB_PORT}?user=${env:MARIADB_ROOT_USER}&password=${env:MARIADB_ROOT_PASSWD}
     # Connection string if using a database with an already created schema and user (like AWS RDS)
