@@ -429,7 +429,7 @@ javadoc_version = '3.1.12'
 
 # swagger base and version
 studio_swagger_base = 'https://app.swaggerhub.com/apis/craftercms/studio/'
-studio_swagger_version = '3.1.9.1'
+studio_swagger_version = '3.1.9.2'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),
