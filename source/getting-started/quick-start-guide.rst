@@ -211,4 +211,6 @@ When the ``authoring`` application displayed above is selected, the application 
 For more information on Docker Desktop Dashboard, see https://docs.docker.com/desktop/dashboard/
 
 
-For more information on Crafter CMS Docker Compose, please see: https://github.com/craftercms/docker-compose.  For more information on working with sites in Docker based installs, see :ref:`working-with-docker-based-installs`
+For more information on Crafter CMS Docker Compose, please see: https://github.com/craftercms/docker-compose.
+
+If you are a developer and want to use your local IDE and other tools, follow :ref:`this <configuring-crafter-on-docker-for-local-dev-tools>` documentation to configure your docker container to support access to your sites via local IDE.

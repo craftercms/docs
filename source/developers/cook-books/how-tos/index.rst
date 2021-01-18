@@ -10,6 +10,7 @@ How-Tos
 
    add-to-upgrade-scripts
    change-log-data-folder-location
+   configure-crafter-on-docker-for-local-dev-tools
    integrating-crafter-cms-with-cloud
    override-logging-levels
    setting-up-an-ldap-server-for-dev
@@ -19,6 +20,5 @@ How-Tos
    working-with-crafter-studios-api
    working-with-dates-freemarker
    working-with-dates-groovy
-   working-with-docker-based-installs
    working-with-filters
    migrate-site-to-elasticsearch
