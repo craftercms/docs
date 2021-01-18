@@ -200,7 +200,10 @@ There are 2 ways in which you can "bind" a script to a page or component:
 
 The following is an example of a component script. The component content type is ``/component/upcoming-events``. We can then place the
 script in Scripts > components > upcoming-events.groovy so that it is executed for all components of that type.
-::
+
+.. code-block:: groovy
+   :linenos:
+   :caption: *scripts/components/upcoming-events.groovy*
 
     import org.craftercms.engine.service.context.SiteContext
 
@@ -222,26 +225,30 @@ script in Scripts > components > upcoming-events.groovy so that it is executed f
     def events = []
     def searchResults = searchService.search(query)
     if (searchResults.response) {
-        searchResults.response.documents.each {
-            def event = [:]
-            def item = siteItemService.getSiteItem(it.localId)
+      searchResults.response.documents.each {
+        def event = [:]
+        def item = siteItemService.getSiteItem(it.localId)
 
-            event.image = item.image.text
-            event.title = item.title_s.text
-            event.date = DateUtils.parseModelValue(item.date_dt.text)
-            event.summary = item.summary_html.text
+        event.image = item.image.text
+        event.title = item.title_s.text
+        event.date = DateUtils.parseModelValue(item.date_dt.text)
+        event.summary = item.summary_html.text
 
-            events.add(event)
-        }
+        events.add(event)
+      }
     }
 
     contentModel.events = events
 
-You might notice that we're importing a ``utils.DateUtils`` class. This class is not part of Crafter CMS, but instead it is a Groovy class
-specific to the site. To be able to use this class, you should place it under Classes > groovy > utils and name it DateUtils.groovy,
-where everything after the groovy directory is part of the class' package. It's recommended for all Groovy classes to follow this
-convention.
-::
+|
+
+
+In the above example, you will see that we're importing a ``utils.DateUtils`` class. This class is not part of Crafter CMS, but instead it is a site specific class written in Groovy.
+The class is/needs to be located at the following path ``scripts > classes > utils`` and is placed in a file called ``DateUtils.groovy``, like below:
+
+.. code-block:: groovy
+   :linenos:
+   :caption: *scripts/classes/utils/DateUtils.groovy*
 
     package utils
 
@@ -249,17 +256,17 @@ convention.
 
     class DateUtils {
 
-        static def parseModelValue(value){
-            def dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
-                dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
-            return dateFormat.parse(value)
-        }
+      static def parseModelValue(value){
+        def dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
+        return dateFormat.parse(value)
+      }
 
-        static def formatDateAsIso(date) {
-            def dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
-                dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
-            return dateFormat.format(date)
-        }
+      static def formatDateAsIso(date) {
+        def dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
+        return dateFormat.format(date)
+      }
 
     }
 
