@@ -1,17 +1,16 @@
 :is-up-to-date: True
 
-.. index:: Working with Docker Based Installs
+.. index:: Configuring Crafter on Docker for Local Development Tools
 
-.. _working-with-docker-based-installs:
+.. _configuring-crafter-on-docker-for-local-dev-tools:
 
-===========================================
-Working with Sites on Docker Based Installs
-===========================================
+=========================================================
+Configuring Crafter on Docker for Local Development Tools
+=========================================================
 
+Sometimes you'll need to have the Authoring site repositories in your docker container available in the host filesystem, specially if you want to update the files from your IDE. To support access to your sites via a local IDE, we need to mount the Authoring site repositories directory to a host directory.
 
-Sometimes you'll need to have the Authoring site repositories available in the host filesystem, specially if you want to update the files from your IDE. To make the sites available, we need to mount the Authoring site repositories directory to a host directory.
-
-To make the sites available, follow these steps:
+Here are the steps:
 
    .. NOTE::
       This will only work on an Authoring install with no existing data. To clear the current data, run the same command you've been using to start up the environment, but replace the ``up`` part for ``down -v``, e.g.
