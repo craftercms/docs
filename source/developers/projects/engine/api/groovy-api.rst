@@ -238,7 +238,7 @@ script in Scripts > components > upcoming-events.groovy so that it is executed f
       }
     }
 
-    contentModel.events = events
+    templateModel.events = events
 
 
 
