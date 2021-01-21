@@ -55,7 +55,7 @@ This example file contains the properties used by Crafter Engine:
 
   <?xml version="1.0" encoding="UTF-8"?>
     <!--
-      ~ Copyright (C) 2007-2020 Crafter Software Corporation. All Rights Reserved.
+      ~ Copyright (C) 2007-2021 Crafter Software Corporation. All Rights Reserved.
       ~
       ~ This program is free software: you can redistribute it and/or modify
       ~ it under the terms of the GNU General Public License version 3 as published by
@@ -219,6 +219,11 @@ This example file contains the properties used by Crafter Engine:
     </navigation>
     -->
 
+    <!-- Compatibility properties -->
+    <compatibility>
+      <disableFullModelTypeConversion>false</disableFullModelTypeConversion>
+    </compatibility>
+
     <!-- Filter properties -->
     <filters>
       <filter>
@@ -326,6 +331,14 @@ This example file contains the properties used by Crafter Engine:
         <cronExpression>0 0/15 * * * ?</cronExpression>
       </job>
     </jobs>
+
+    <!-- Cache Warm Up properties -->
+    <cache>
+      <warmUp>
+        <descriptorFolders>/site:3</descriptorFolders>
+        <contentFolders>/scripts,/templates</contentFolders>
+      </warmUp>
+    </cache>
   </site>
 
 |
