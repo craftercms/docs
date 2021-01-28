@@ -17,7 +17,7 @@ Content Types in Crafter Studio
 Content Type Management in Crafter Studio is located in the |siteConfig|.
 
 .. image:: /_static/images/content-model/site-config-link.png
-	:width: 40%
+	:width: 30%
 	:alt: Site Config Link
 	:align: center
 
@@ -46,8 +46,8 @@ Content Type Model Definition
 -----------------------------
 Content models are defined via Crafter Studio's graphical modeling tool under Content Types:
 
-.. image:: /_static/images/content-model/content-type-management.png
-	:width: 50%
+.. image:: /_static/images/content-model/content-type-management.jpg
+	:width: 70%
 	:alt: Site Config - Content Types
 	:align: center
 
@@ -56,7 +56,7 @@ Content models are defined via Crafter Studio's graphical modeling tool under Co
 You can now either create a new content type or open an existing type. Creating a new content type brings up a dialog that requests some basic content type information.
 
 .. image:: /_static/images/content-model/create-content-type-1.png
-	:width: 40%
+	:width: 30%
 	:alt: Site Config - Create Content Type
 	:align: center
 
@@ -76,7 +76,7 @@ You now specify:
 Form Builder Basics
 ^^^^^^^^^^^^^^^^^^^
 
-.. figure:: /_static/images/content-model/create-content-type-2.png
+.. figure:: /_static/images/content-model/create-content-type-2.jpg
 	:alt: Content Type Editor
 	:align: center
 
@@ -100,7 +100,8 @@ Crafter Studio's Form Builder
 ||       || the selected item.                                                                   |
 +--------+---------------------------------------------------------------------------------------+
 || 4     || Form Controls: This is a list of available form controls for you to build your own   |
-||       || form with. Note that the list has a scrollbar for many types of useful controls.     |
+||       || form with. Note that the list can be expanded or collapsed and a search can also be  |
+||       || performed instead of scrolling through the list.                                     |
 ||       || Controls can be dragged from the controls list onto the form builder.                |
 +--------+---------------------------------------------------------------------------------------+
 || 5     || Data Sources: Shows the list of available data sources that can be attached to this  |
@@ -132,7 +133,7 @@ Properties of Content Types
 Let's select the content type itself, by clicking on the content type name at the top of the Form Builder and explore its properties.
 
 .. image:: /_static/images/content-model/create-content-type-3.png
-    :width: 80%
+    :width: 50%
     :alt: Properties Explorer
 	:align: center
 
@@ -218,7 +219,7 @@ We'll look at an example of limiting where you can create content from the Websi
 
 From the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Content Types** then either create a new content type or open an existing content type.  In the image below, we have the content type **Page - Article** open for editing.  Go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name *config.xml*, click on that pencil to edit.
 
-.. figure:: /_static/images/content-model/form-engine-prop-configuration.png
+.. figure:: /_static/images/content-model/form-engine-prop-configuration.jpg
     :alt: Form Engine Properties Configuration
 	:align: center
 
@@ -226,7 +227,8 @@ From the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Con
 
 To limit where this particular content type can be created, the tags, <paths><includes><pattern>some_regex_pattern</pattern></includes></paths> are included towards the bottom of the file.  Here, we can see that content type **Page - Article** can be created anywhere under */site/website/articles*
 
-.. figure:: /_static/images/content-model/form-engine-prop-config-file.png
+.. figure:: /_static/images/content-model/form-engine-prop-config-file.jpg
+    :width: 60%
     :alt: Form Engine Properties Configuration File config.xml
     :align: center
 
@@ -243,9 +245,9 @@ To limit where this particular content type can be created, the tags, <paths><in
 
 |
 
-To see how the above tags/example works, go to the **Sidebar** and right click on the **Home** folder and select **New Content**.  Notice that content type **Page - Article** is not available from the content types listed.
+To see how the above tags/example works, go to the **Sidebar** and right click on the **Home** folder and select **Create Content**.  Notice that content type **Page - Article** is not available from the content types listed.
 
-.. figure:: /_static/images/content-model/form-engine-prop-config-sample-no.png
+.. figure:: /_static/images/content-model/form-engine-prop-config-sample-no.jpg
     :alt: Form Engine Properties Config File "Page - Articles" Not Available
     :align: center
 
@@ -253,7 +255,7 @@ To see how the above tags/example works, go to the **Sidebar** and right click o
 
 From the **Sidebar** again, navigate from the **Pages** folder to the /Home/articles/2016/12/ folder then right click and select **New Content**, notice that the content type **Page - Article** is available from the list.
 
-.. figure:: /_static/images/content-model/form-engine-prop-config-sample-yes.png
+.. figure:: /_static/images/content-model/form-engine-prop-config-sample-yes.jpg
     :alt: Form Engine Properties Config File "Page - Articles" Available
     :align: center
 
@@ -284,14 +286,14 @@ We'll look at an example of how to enable cascade on delete on the **Page - Arti
 
 From the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Content Types**, then **Open an existing content type**.  We will select the content type **Page - Article** for editing.  Next, go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name **config.xml**, click on that pencil to edit.
 
-We're going to enable cascade on delete for articles (**Page - Article** content type) containing images under ``/static-assets/images/page``, and we'll also delete empty folders under ``/static-assets/images/page`` by adding the following code in the **config.xml** file:
+We're going to enable cascade on delete for articles (**Page - Article** content type) containing images under ``/static-assets/item/images``, and we'll also delete empty folders under ``/static-assets/item/images`` by adding the following code in the **config.xml** file:
 
 .. code-block:: xml
     :linenos:
 
     <delete-dependencies>
       <delete-dependency>
-        <pattern>(^/static-assets/images/page/.*)</pattern>
+        <pattern>(^/static-assets/item/images/.*)</pattern>
         <remove-empty-folder>true</remove-empty-folder>
       </delete-dependency>
     </delete-dependencies>
@@ -306,9 +308,10 @@ To see cascade on delete in action, let's create a new article (**Page - Article
 
 |
 
-Let's look at the dependencies of our newly created article, where we expect the image under the ``static-assets/images/page`` will be deleted when we delete the article since we have configured cascade on delete for content type **Page - Article** for items under the directory ``static-assets/images/page``:
+Let's look at the dependencies of our newly created article, where we expect the image under the ``static-assets/items/images/2021/01/26`` will be deleted when we delete the article since we have configured cascade on delete for content type **Page - Article** for items under the directory ``static-assets/item/images``:
 
 .. figure:: /_static/images/content-model/new-article-dependencies.png
+    :width: 80%
     :alt: New article with image uploaded dependencies
     :align: center
 
@@ -361,13 +364,14 @@ We're going to enable copy dependencies for articles (**Page - Article** content
 
 |
 
-Click on **Update**, then save changes made to the content type by clicking on **Save**.
+Click on **Save & Close**, then save changes made to the content type by clicking on **Save**.
 
 To see copy dependencies in action, let's copy an article under one of the article folders from the **Sidebar**.  First, we'll create the folder ``articles`` under ``/static-assets/images``.  Next, we'll navigate to ``articles/2016/12/Top Books For Young Women``.  Right click on the article and select **Copy**.  Navigate to ``articles/2016/7``, right click on the folder and select **Paste**.
 
 Let's look at the dependencies of our copied article, where we expect a copy of the image under the ``static-assets/images/articles`` will be located since we have configured cop dependencies for content type **Page - Article** for items under the directory ``static-assets/images``:
 
 .. figure:: /_static/images/content-model/copied-article-dependencies.png
+    :width: 80%
     :alt: Copy of article with copy of image
     :align: center
 
@@ -397,7 +401,7 @@ From the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Con
 
 Scroll to the ``Data Sources`` section, and click on **Upload Images**.  Notice the value in the **Repository Path** property, which is the path where to store the new file uploaded from desktop.
 
-.. figure:: /_static/images/content-model/item-specific-dependencies.png
+.. figure:: /_static/images/content-model/item-specific-dependencies.jpg
     :alt: Modeling content for item specific dependencies
     :align: center
 
@@ -422,6 +426,7 @@ The macros **{yyyy}**, **{mm}** and **{dd}** are available for content modelers 
 Let's take a look at item specific dependencies in action for copying and deleting content.  Let's create a new article (**Page-Article** content type) under one of the article folders in the **Sidebar**.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.  Note the location where the image is uploaded.
 
 .. figure:: /_static/images/content-model/new-article-item-dependencies.png
+    :width: 40%
     :alt: New article created with image uploaded from Desktop
     :align: center
 
@@ -432,6 +437,7 @@ From the **Sidebar**, navigate to the newly created article.  Right click on the
 Let's look at the dependencies of our copied article, where we expect a copy of the image under the ``/static-assets/item/images/2018/05/17`` will be located since we have taken advantage of the item specific dependencies regex pattern of ``/static-assets/item/*``.
 
 .. figure:: /_static/images/content-model/copied-article-item-dependencies.png
+    :width: 80%
     :alt: Copy of image uploaded from Desktop created when article was copied in dependencies
     :align: center
 
@@ -440,6 +446,7 @@ Let's look at the dependencies of our copied article, where we expect a copy of 
 Let's also take a look at the ``static-assets`` folder to see the copy of the uploaded image
 
 .. figure:: /_static/images/content-model/copied-article-sidebar.png
+    :width: 40%
     :alt: Copy of image uploaded from Desktop created when article was copied in Sidebar
     :align: center
 
@@ -469,6 +476,7 @@ Quick Create
 Quick create allows content authors to create content with as few clicks as possible through a button from the context nav for configured content types.
 
 .. figure:: /_static/images/content-model/quick-create-button.png
+    :width: 70%
     :alt: Context Nav showing the quick create button
     :align: center
 
@@ -477,6 +485,7 @@ Quick create allows content authors to create content with as few clicks as poss
 Let's take a look at an example on how to configure a content type to be available from the quick create button in the context nav for authors using the out of the box blueprint **Website Editorial**.  In the image below, we have a site named **mysite** with the quick create button expanded.  Notice that we have one content type available for quick create, the **Page - Article** content type.
 
 .. figure:: /_static/images/content-model/quick-create-btn-expanded.png
+    :width: 40%
     :alt: Context Nav showing the expanded quick create button
     :align: center
 
@@ -487,6 +496,7 @@ If you look at the site tree as shown above, most of the content (the articles) 
 To setup quick create for a content type, from the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Content Types**, then click on **Open Existing Type**.  We will select the content type **Page - Article** for editing.  Next, go to the **Properties Explorer** and scroll to the **Quick Create** section of the properties.
 
 .. figure:: /_static/images/content-model/quick-create-properties.png
+    :width: 50%
     :alt: Page - Article Content Type Quick Create Properties
     :align: center
 
@@ -509,6 +519,7 @@ We will then put in ``/site/website/articles/{year}/{month}`` as the path patter
 Below is the site tree after using the quick create button to create a new article titled ``New article using quick create``, where the year and month folders were created for the new article using the value in the ``Destination Path Pattern`` property of the content type.
 
 .. figure:: /_static/images/content-model/quick-create-article-created.png
+    :width: 40%
     :alt: Article created using quick create
     :align: center
 
@@ -521,6 +532,7 @@ Form Controls
 Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. Crafter CMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`form-engine-control`.
 
 .. figure:: /_static/images/content-model/form-engine-controls.png
+    :width: 40%
     :alt: Form Engine Controls
 	:align: center
 
@@ -709,9 +721,9 @@ Data Sources
 ^^^^^^^^^^^^
 .. index:: Data Sources
 
-.. image:: /_static/images/content-model/form-engine-data-sources.png
+.. image:: /_static/images/content-model/form-engine-data-sources.jpg
     :alt: Form Engine Data Sources
-    :width: 50%
+    :width: 40%
     :align: left
 
 |
@@ -755,7 +767,7 @@ To see the property we setup in action, open the ``Sidebar``, then navigate to `
 
 A search dialog will open displaying in a grid view, items the user can search through, select, filter, etc.  As we can see, the search option makes it easier for users to pick items instead of scrolling through all the available items, especially for say sites with hundreds or even thousands of items/assets.
 
-.. image:: /_static/images/content-model/author-search-for-existing-dialog.jpg
+.. image:: /_static/images/content-model/author-search-for-existing-dialog.png
    :alt: Form Engine Data Sources Example - Author Search for Existing Dialog
    :width: 70%
    :align: left
