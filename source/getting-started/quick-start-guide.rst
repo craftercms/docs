@@ -103,7 +103,7 @@ Installing Crafter CMS From Archive Built By the Gradle Environment Builder
 
    To create the archives(``*.tar.gz``) for installing Crafter CMS, the following must be installed in your system:
 
-   * Java 8
+   * Java 11
    * Git 2.x+
    * Maven 3.3.x+
    * make and GCC
