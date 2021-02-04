@@ -27,7 +27,7 @@ results based on one or more fields.
 In this section, we will be using the most basic aggregation ``terms`` to provide a faceted search based on the 
 category of blog articles.
 
-.. image:: /_static/images/developer/search/faceted-search.png
+.. image:: /_static/images/developer/search/faceted-search.jpg
   :width: 90 %
   :align: center
 
@@ -35,11 +35,11 @@ First we must define the fields that will be used for the aggregation, in this c
 a ``categories`` field that uses a datasource to get values from a taxonomy in the site. For this case the name of the
 field in the Elasticsearch index is ``categories.item.value_smv``.
 
-.. image:: /_static/images/developer/search/model.png
+.. image:: /_static/images/developer/search/model.jpg
   :width: 90 %
   :align: center
 
-.. image:: /_static/images/developer/search/datasource.png
+.. image:: /_static/images/developer/search/datasource.jpg
   :width: 50 %
   :align: center
 

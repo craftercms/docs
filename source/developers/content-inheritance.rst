@@ -169,7 +169,7 @@ The top part of the page is the header and the left side is the left-rail.  As s
 
 The Website Editorial blueprint uses a ``Section Defaults`` component content type (the level descriptor) to provide inherited values to all children and sibling content items, which for the example we are working on, is the header and the left-rail.  Below is the Section Defaults content type, showing us the content type as ``/component/level-descriptor`` with the merge strategy ``inherit-levels`` used, and two components, the header and the left-rail:
 
-.. image:: /_static/images/developer/content-inheritance/section-defaults-content-type.png
+.. image:: /_static/images/developer/content-inheritance/section-defaults-content-type.jpg
     :width: 75%
     :alt: Content Inheritance - Section Defaults Content Type
     :align: center
@@ -177,7 +177,7 @@ The Website Editorial blueprint uses a ``Section Defaults`` component content ty
 In the site tree below, we have two Section Defaults used, one residing under the **Home** folder (upper level in the site tree), and another residing under **articles** (lower level in the site tree in relation with the other Section Defaults defined).
 
 .. image:: /_static/images/developer/content-inheritance/site-tree-section-defaults.png
-    :width: 50%
+    :width: 30%
     :alt: Content Inheritance - Site tree showing section defaults
     :align: center
 
@@ -250,6 +250,6 @@ As we can see from above, the left-rail component used for the Section Defaults 
 If a new article page is created under ``articles/2019/10/27``, it will inherit the Section Defaults under **articles**.
 
 
-.. TODO:: Describe how to add your own merge strategy. Describe merge cues.make html
+.. .. TODO:: Describe how to add your own merge strategy. Describe merge cues.
 
 

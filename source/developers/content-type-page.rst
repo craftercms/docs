@@ -18,7 +18,7 @@ Page content types are top level container types that lets you define the layout
 
 Click on **Content Types**, then select **Create New Type**
 
-.. figure:: /_static/images/templates/templates-create-new-type.png
+.. figure:: /_static/images/templates/templates-create-new-type.jpg
     :alt: Template Create New Type
     :align: center
     :width: 50%
@@ -42,7 +42,7 @@ Model
 
 We'll start building the model first, which is the form that Authors will be using to enter content into.  We'll add a form section called *Content* to the form and name it accordingly.
 
-.. figure:: /_static/images/templates/templates-add-form-section.png
+.. figure:: /_static/images/templates/templates-add-form-section.jpg
 	:alt: Template Add Form Section to Model
 	:align: center
 
@@ -50,7 +50,7 @@ We'll start building the model first, which is the form that Authors will be usi
 
 We'll add a few more things to our model by dragging controls and data sources to the form.  We're creating a page template for a blog entry, so at a minimum, we'll add some input fields for the title and author names, a date/time field, an image picker and it's corresponding data sources and a rich text editor inside a repeating group control so Authors can add as many sections as they want.
 
-.. figure:: /_static/images/templates/templates-add-controls-input.png
+.. figure:: /_static/images/templates/templates-add-controls-input.jpg
 	:alt: Template Add Input Fields to the Form
 	:align: center
 
@@ -58,7 +58,7 @@ We'll add a few more things to our model by dragging controls and data sources t
 
 Here we're adding an image picker to the form.  Notice that we'll need to add data sources for the image picker to get images from.  There are at least two sources that the image picker can get images from.  One is from images uploaded from the desktop, the other is for existing images listed in the **Static Assets** folder in the **Sidebar**.
 
-.. figure:: /_static/images/templates/templates-add-image-picker.png
+.. figure:: /_static/images/templates/templates-add-image-picker.jpg
 	:alt: Template Add Image Picker to Form
 	:align: center
 
@@ -66,7 +66,7 @@ Here we're adding an image picker to the form.  Notice that we'll need to add da
 
 We're now going to add a data source for our image picker, by dragging the **Image Uploaded from Desktop** from the Data Sources list on the right to the form in the section **Data Sources**.  Don't forget to enter the path where to store the new image uploaded from desktop in the **Repository Path** field under the Properties Explorer
 
-.. figure:: /_static/images/templates/templates-image-desktop-src.png
+.. figure:: /_static/images/templates/templates-image-desktop-src.jpg
 	:alt: Template Add Desktop Image Source
 	:align: center
 
@@ -74,7 +74,7 @@ We're now going to add a data source for our image picker, by dragging the **Ima
 
 We'll also add the data source **Image From Repository** by dragging it to the **Data Sources** section in the form.  Don't forget to add the path where to browse existing images from the repository
 
-.. figure:: /_static/images/templates/templates-image-existing-src.png
+.. figure:: /_static/images/templates/templates-image-existing-src.jpg
 	:alt: Template Add Existing Image Source
 	:align: center
 
@@ -82,7 +82,7 @@ We'll also add the data source **Image From Repository** by dragging it to the *
 
 We'll go back to the Image Picker control on the form to make sure the two data sources we added are checked as sources for the Image Picker
 
-.. figure:: /_static/images/templates/templates-add-img-src.png
+.. figure:: /_static/images/templates/templates-add-img-src.jpg
 	:alt: Template Add Image Sources to Image Picker
 	:align: center
 
@@ -90,7 +90,7 @@ We'll go back to the Image Picker control on the form to make sure the two data 
 
 We'll be adding a header component and a left-rail component inherited from the home page.  To add a component to the form, drag the **Item Selector** control to the form in the *Page - Blog Properties* section.  We'll be adding two components to the form, one for the *Header* and one for the *Left-rail*
 
-.. figure:: /_static/images/templates/templates-add-item-selector.png
+.. figure:: /_static/images/templates/templates-add-item-selector.jpg
 	:alt: Template Add Item Selector
 	:align: center
 
@@ -98,7 +98,7 @@ We'll be adding a header component and a left-rail component inherited from the 
 
 We'll need to add a data source for the two *Item Selectors* we just added to the form by dragging **Shared Content** to the *Data Sources* section to the form and naming it **Components**. Don't forget to add the path where to store new content created under the **Repository Path** field in the Properties Explorer.
 
-.. figure:: /_static/images/templates/templates-add-item-selector-src.png
+.. figure:: /_static/images/templates/templates-add-item-selector-src.jpg
 	:alt: Template Add Item Selector Source
 	:align: center
 
@@ -107,7 +107,7 @@ We'll need to add a data source for the two *Item Selectors* we just added to th
 
 We're going back to the Item Selectors we added to the form and check  **Components** as data source for our control
 
-.. figure:: /_static/images/templates/templates-add-item-sel-src.png
+.. figure:: /_static/images/templates/templates-add-item-sel-src.jpg
 	:alt: Template Check Item Selector Source
 	:align: center
 
@@ -115,7 +115,7 @@ We're going back to the Item Selectors we added to the form and check  **Compone
 
 Next we'll add a **Repeating Group** control to the form,  with a minimum of 1 occurrence, which can be specified in the *Properties Explorer* section, in the **Minimum Occurrences** field
 
-.. figure:: /_static/images/templates/templates-add-repeating-group.png
+.. figure:: /_static/images/templates/templates-add-repeating-group.jpg
 	:alt: Template Add Repeating Group Control
 	:align: center
 
@@ -123,7 +123,7 @@ Next we'll add a **Repeating Group** control to the form,  with a minimum of 1 o
 
 In the Repeating Group control, we will add an RTE (Rich Text Editor).  In order for the content to be searchable, it needs to be indexed.  To facilitate indexing, the suffix **_html** should be appended to the variable name given to the RTE.  In this case, the RTE's variable name is *entry_html*.  For more information on variable names and search indexing , please see the section :ref:`form-control-variable-names`
 
-.. figure:: /_static/images/templates/templates-add-rte.png
+.. figure:: /_static/images/templates/templates-add-rte.jpg
 	:alt: Template Add Rich Text Editor to Repeating Group Control
 	:align: center
 
@@ -147,7 +147,7 @@ There are two ways to create the freemarker template file for our template.  One
 
 The other way of creating your freemarker template, is to go to the Properties Explorer in the Content Type model, then click on the **Display Template** field, a magnifying glass and a pencil will appear on the field.  To create a template, click on the pencil.
 
-.. figure:: /_static/images/templates/templates-ftl-create-properties.png
+.. figure:: /_static/images/templates/templates-ftl-create-properties.jpg
 	:alt: Template Create FTL from Content Type Properties Display Template Field
 	:align: center
 
@@ -171,16 +171,16 @@ A dialog will appear with a blank template.
 
 |
 
-At the top of the dialog, you can use some *Template code examples* from a drop down list.  Here's the list of available template code examples.
+At the top right of the dialog, you can use some *Template code examples* from a drop down list with the caption ``Insert Code``.  Here's the list of available template code examples.
 
-.. figure:: /_static/images/templates/templates-ftl-sample-codes.png
+.. figure:: /_static/images/templates/templates-ftl-sample-codes.jpg
     :alt: Template FTL Code Examples
     :align: center
     :width: 35%
 
 |
 
-For the template we are creating, we will select **Studio support** from  the drop down list and then click on the **Add Code** button to enable authoring support.
+For the template we are creating, we will select **Studio support** from  the drop down list to enable authoring support.
 
 .. figure:: /_static/images/templates/templates-ftl-studio-support-sample.png
 	:alt: Template FTL Studio Support Code Example
@@ -190,7 +190,7 @@ For the template we are creating, we will select **Studio support** from  the dr
 
 We will now start filling in the template of how we want the content captured in the model is rendered to html in this case.  In the image below, we render the header component and the other fields in the Content section of our model.  Please note how fields in the model are rendered through the FTL template.  To learn more, please see the section :ref:`templating-api`
 
-.. figure:: /_static/images/templates/templates-ftl.png
+.. figure:: /_static/images/templates/templates-ftl.jpg
 	:alt: Template FTL
 	:align: center
 
@@ -242,25 +242,27 @@ A controller is not necessary for a content type.  To show how to create a contr
 Open the **Sidebar** menu and navigate to the **Scripts** folder.  Click on the **Scripts** folder then **scripts**.  Right click on the folder **pages**, then select **Create Controller**
 
 .. figure:: /_static/images/templates/templates-create-controller.png
-	:alt: Template Create Controller
+    :alt: Template Create Controller
 	:align: center
+    :width: 35%
 
 |
 
 Enter a name for the controller, then click on the **Create** button.  Since we are creating this controller for our Page-Blog template, we will name the script ``blog.groovy``.  Putting the script under *scripts->pages* and naming it after the page content type, binds the script to our page.
 
-.. figure:: /_static/images/templates/templates-dialog-create-controller.png
+.. figure:: /_static/images/templates/templates-dialog-create-controller.jpg
     :alt: Template Dialog Create Controller
     :align: center
-    :width: 35%
+    :width: 45%
 
 |
 
 We can now start adding the script to get a list of articles depending on the active segment.
 
-.. figure:: /_static/images/templates/templates-input-script-controller.png
-	:alt: Template Controller Script
+.. figure:: /_static/images/templates/templates-input-script-controller.jpg
+    :alt: Template Controller Script
 	:align: center
+    :width: 75%
 
 |
 
@@ -284,7 +286,7 @@ To find out more about page and component scripts, please see :ref:`page-and-com
 
 Now that we have our controller, we just need to add code to the freemarker template (view) to display the list of articles returned by the script.
 
-.. figure:: /_static/images/templates/templates-controller-added.png
+.. figure:: /_static/images/templates/templates-controller-added.jpg
 	:alt: Template Modify FTL to Display Controller Script Output
 	:align: center
 
