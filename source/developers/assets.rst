@@ -10,7 +10,7 @@ Assets
 
 Assets are media (images, videos, etc.) or document files used in your site.  Assets can reside locally within Studio under ``/static-assets`` or outside of Studio from another server.
 
-To view assets in Studio, open the **Sidebar** by clicking on ``Sidebar`` at the top left of your browser, if it's not yet open
+To view assets in Studio, open the **Sidebar** by clicking on hamburger icon (three horizontal lines stacked on top of each other) at the top left of your browser, if it's not yet open
 
 .. image:: /_static/images/site-admin/open-sidebar.png
     :alt: Assets - Open the Sidebar
@@ -19,7 +19,7 @@ To view assets in Studio, open the **Sidebar** by clicking on ``Sidebar`` at the
 
 The out-of-the-box blueprint ``Website Editorial``, has the following assets:
 
-.. image:: /_static/images/developer/assets-in-studio.png
+.. image:: /_static/images/developer/assets-in-studio.jpg
     :alt: Assets - /static-assets
     :width: 30 %
     :align: center
