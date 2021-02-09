@@ -685,6 +685,8 @@ Model fields require their respective data type postfix as listed above.  The UI
 
 When setting up reserved variable names for your model, remember to remove the postfix auto-added by the UI since the variable name needs to be exactly the same as listed :ref:`above<reserved-variable-names>`.
 
+Remember to also remove the postfix auto-added by the UI when using ``key`` or ``value`` for your variable names being setup as key-value pairs in a content type, such as the ``Taxonomy`` content type used in the Website Editorial blueprint.
+
 Please note that indexed ``text`` fields are case insensitive when performing a search, while ``string`` fields are case sensitive. Also, queries using ``string`` fields will only match full values besides being case sensitive.
 
 If performing a case insensitive search on a ``string`` field is desired, Crafter CMS provides a way by enabling tokenization of the field in the content type.  To enable tokenization of a ``string`` field in Studio, put a check in the checkbox labeled **Tokenize for Indexing** in the properties section of the content type field.  Below is the ``Page - Article`` content type in a site created using the Website Editorial blueprint, showing the field ``Author`` with the ``Tokenize for Indexing`` option:
