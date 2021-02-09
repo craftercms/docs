@@ -10,7 +10,7 @@ Working with Crafter Studio's APIs
 
 In this section, we'll show the basics of interacting with Crafter Studio APIs by performing the following:
 
-#. Authenticate
+#. Authentication
 #. Get a list of projects under management
 #. Write content to a project
 
@@ -18,63 +18,105 @@ We’ll use CURL, a ubiquitous Linux command tool as our client.
 
 You can find the full Crafter Studio API for Crafter CMS :ref:`here<crafter-studio-api>`
 
-Most Crafter Studio API requires users to authenticate first.  When a user authenticates via the login API call, this establishes a session which is provided per J2EE in a **JSESSIONID** cookie.  Future calls must send this cookie.
-
-Crafter Studio APIs are protected using a CSRF Token so all ``POST``, ``PUT`` and ``DELETE`` calls need to include a cookie named **XSRF-TOKEN** and a header named **X-XSRF-TOKEN** with a matching value to work.
-
-As we'll see below, the Login API sends a header and a cookie CSRF/XSRF token value which must also be sent in subsequent calls. The value is arbitrary and is dictated by the caller. Strong values are more secure than predictable weak ones.
-
 Let's begin:
 
-#. **Authenticate**
+#. **Authentication**
 
-   We’ll use the authenticate API
-   :ref:`crafter-studio-api-security-login`
+   There are two authentication methods that can be used: JWT and HTTP Basic
 
-   .. code-block:: bash
+   JWT is standard widely adopted as a secure authentication method, this is the prefered way. HTTP Basic is
+   simple but not as secure as JWT and for that reason it is disabled by default, however, it can be very useful for
+   local development environments.
 
-       curl -d '{"username":"admin","password":"admin"}' --cookie "XSRF-TOKEN=A_VALUE" --header "X-XSRF-TOKEN:A_VALUE" --header "Content-Type: application/json" -v -X POST http://localhost:8080/studio/api/1/services/api/1/security/login.json
+   In both authentication methods you need to know the credentials of a user with the right permissions depending on
+   the operations that you need to execute. For this example we will generate a token for the ``admin`` user but in
+   a real scenario you should create a user with the least amount of permissions possible.
+
+   .. note::
+
+     Not all users have the required permission ``manage_access_token`` to create access tokens, if the
+     ``Token Management`` tool is not shown in the global menu you will need to request the permission or an
+     access token to a system administrator.
 
    |
 
-   The first thing you’ll note is that we’re going to perform a ``POST``, passing the username and password as a JSON object.  In a production environment, you will want to use HTTPS.
+   To use JWT you need to obtain a an access token following these steps:
 
-   The next thing you will notice, we are passing a cookie ``XSRF-TOKEN`` and a header ``X-XSRF-TOKEN``.  The value passed for these are arbitrary.  They must match and they must be passed in all future PUT and POST API calls.  These are used to protect against certain cross-browser scripting attacks.  If you are using Studio APIs as part of a web client you want to make sure these values are randomly generated.
+   1. Login to Crafter Studio
 
-   After issuing the CURL command you will get back a response:
+      .. figure:: /_static/images/jwt/global-menu.png
+        :width: 70%
+        :alt: Crafter Studio - Global Menu
+        :align: center
+      |
 
-   .. code-block:: text
-      :linenos:
+   2. Open the ``Token Management`` tool
 
-      * Trying ::1...
-      * Trying 127.0.0.1...
-      * Connected to localhost (127.0.0.1) port 8080 (#0)
-      > POST /studio/api/1/services/api/1/security/login.json HTTP/1.1
-      > Host: localhost:8080
-      > User-Agent: curl/7.43.0
-      > Accept: */*
-      > Cookie: XSRF-TOKEN=A_VALUE
-      > X-XSRF-TOKEN:A_VALUE
-      > Content-Type: application/json
-      > Content-Length: 39
-      >
-      * upload completely sent off: 39 out of 39 bytes
-      < HTTP/1.1 200
-      < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-      < Pragma: no-cache
-      < Expires: 0
-      < Set-Cookie: JSESSIONID=2E114725C82F3EE44ADC04B578A3BE8F; Path=/studio; HttpOnly
-      < Content-Type: application/json;charset=UTF-8
-      < Content-Language: en-US
-      < Transfer-Encoding: chunked
-      < Date: Mon, 22 Jan 2018 21:32:48 GMT
-      <
-      * Connection #0 to host localhost left intact
-      {"username":"admin","first_name":"admin","last_name":"admin","email":"evaladmin@example.com"}
+      .. figure:: /_static/images/jwt/token-management.png
+        :width: 70%
+        :alt: Crafter Studio - Token Management
+        :align: center
+      |
 
-   Note the response returned is a successful 200 status code and the response contains JSON with details for the authenticated user.
+   3. Create a new access token
 
-   Also found as part of the request is the ``JSESSIONID`` cookie.  You will need this value for all future requests.
+      The only required field for the access token is the label to identify it, however, it is recommended to also
+      set an expiration date to minimize the risk of lost or stolen tokens being used without noticing.
+
+      .. figure:: /_static/images/jwt/create-token.png
+        :width: 70%
+        :alt: Crafter Studio - Create Access Token
+        :align: center
+      |
+
+      Once the expiration date is reached the access token will stop working automatically.
+
+      .. figure:: /_static/images/jwt/create-token-2.png
+        :width: 70%
+        :alt: Crafter Studio - Access Token Expiration
+        :align: center
+      |
+
+   4. Copy the value of the access token
+
+      The value of the access token will not be stored on the server, so it needs to be stored by the user in a safe
+      place as it is impossible to recover it after it is created.
+
+      If an access token is lost or exposed in any way it should be disabled or completeley deleted to avoid any
+      possible use.
+
+      .. figure:: /_static/images/jwt/token-management-2.png
+        :width: 70%
+        :alt: Crafter Studio - Token Management
+        :align: center
+      |
+
+   5. Include the access token with all requests
+
+      Most HTTP clients provide built-in support for access token athentication, in the case of curl you will need
+      to use the header option ``--header`` or ``-H``
+
+      ``curl -H 'Authentication: Bearer <access token>' ...``
+
+   To use HTTP Basic you need to follow these steps:
+
+   1. Enable HTTP Basic auth and restart Crafter Studio
+
+      Update the Crafter Studio configuration override (either from the disk or from the UI) to add the following:
+
+      .. code-block:: yaml
+
+        # Indicates if HTTP Basic auth should be enabled for the API
+        studio.security.http.basic.enabled: true
+      |
+
+
+   2. Include the credentials with all requests
+
+      Most HTTP clients provide an easy way to use HTTP Basic, in the case of curl you can simple use the user options
+      ``--user`` or ``-u``
+
+      ``curl -u <username>:<password> ...``
 
 #. **Get a list of projects under management**
 
@@ -83,11 +125,10 @@ Let's begin:
 
    .. code-block:: bash
 
-      curl --cookie "XSRF-TOKEN=A_VALUE;JSESSIONID=2E114725C82F3EE44ADC04B578A3BE8F" -H "X-XSRF-TOKEN:A_VALUE"  -X GET http://localhost:8080/studio/api/1/services/api/1/site/get-per-user.json?username=admin
+      curl <authentication option> -X GET http://localhost:8080/studio/api/1/services/api/1/site/get-per-user.json?username=admin
 
    |
 
-   Note the CURL command contains your session ID and XSRF tokens.
    After issuing the CURL command you will get a response that contains sites your user has access to:
 
    .. code-block:: json
@@ -105,14 +146,13 @@ Let's begin:
 
    .. code-block:: bash
 
-      curl -d "<page><content-type>/page/category-landing</content-type><display-template>/templates/web/pages/category-landing.ftl</display-template><merge-strategy>inherit-levels</merge-strategy><file-name>index.xml</file-name><folder-name>test3</folder-name><internal-name>test3</internal-name><disabled >false</disabled></page>" --cookie "XSRF-TOKEN=A_VALUE;JSESSIONID=2E114725C82F3EE44ADC04B578A3BE8F" -H "X-XSRF-TOKEN:A_VALUE"  -X POST "http://localhost:8080/studio/api/1/services/api/1/content/write-content.json?site=editorialcom&phase=onSave&path=/site/website/test3/index.xml&fileName=index.xml&user=admin&contentType=/page/category-landing&unlock=true"
+      curl <authentication option> -d "<page><content-type>/page/category-landing</content-type><display-template>/templates/web/pages/category-landing.ftl</display-template><merge-strategy>inherit-levels</merge-strategy><file-name>index.xml</file-name><folder-name>test3</folder-name><internal-name>test3</internal-name><disabled >false</disabled></page>" -X POST "http://localhost:8080/studio/api/1/services/api/1/content/write-content.json?site=editorialcom&phase=onSave&path=/site/website/test3/index.xml&fileName=index.xml&user=admin&contentType=/page/category-landing&unlock=true"
 
    |
 
    In the call above note:
 
    We are passing in content as the POST body.  The content is in XML format.  In Crafter CMS, content objects are stored as simple XML documents.
-   We are passing the Session ID and the XSRF tokens.
    We are passing a number of parameters that tell Crafter CMS where and how to store the content in the repository
 
 Using the above examples as a guide, we can now interact with any Crafter Studio API found :ref:`here<crafter-studio-api>`
