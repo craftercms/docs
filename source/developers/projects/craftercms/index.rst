@@ -1081,9 +1081,9 @@ Copy Crafter CMS repository and initialize submodules
 
     .. code-block:: bash
 
-       ➜ git clone https://github.com/craftercms/craftercms.git
-       ➜ cd craftercms
-       ➜ git submodule init
+       git clone https://github.com/craftercms/craftercms.git
+       cd craftercms
+       git submodule init
 
 .. _update-submodules:
 
