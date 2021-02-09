@@ -124,3 +124,5 @@ Sample
     </blobStores>
 
     |
+
+See :ref:`publishing-assets-in-external-storage` for an example of using the blob stores configuration
