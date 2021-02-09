@@ -1068,9 +1068,9 @@ Copy Crafter CMS repository and clone submodules
 
     .. code-block:: bash
 
-       ➜ git clone https://github.com/craftercms/craftercms.git
-       ➜ cd craftercms
-       ➜ git submodule clone
+       git clone https://github.com/craftercms/craftercms.git
+       cd craftercms
+       git submodule clone
 
 .. _update-submodules:
 
