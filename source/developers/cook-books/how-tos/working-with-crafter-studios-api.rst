@@ -24,9 +24,9 @@ Let's begin:
 
    There are two authentication methods that can be used: JWT and HTTP Basic
 
-   JWT is standard widely adopted as a secure authentication method, this is the prefered way. HTTP Basic is
-   simple but not as secure as JWT and for that reason it is disabled by default, however, it can be very useful for
-   local development environments.
+   JWT is a widely adopted standard for secure authentication and is the preferred way.
+   HTTP Basic is simple but not as secure as JWT and for that reason it is disabled by default. However, it can be very
+   useful for local development environments.
 
    In both authentication methods you need to know the credentials of a user with the right permissions depending on
    the operations that you need to execute. For this example we will generate a token for the ``admin`` user but in
@@ -34,13 +34,14 @@ Let's begin:
 
    .. note::
 
-     Not all users have the required permission ``manage_access_token`` to create access tokens, if the
-     ``Token Management`` tool is not shown in the global menu you will need to request the permission or an
-     access token to a system administrator.
+     Not all users have the required permission ``manage_access_token`` to create access tokens.
+     If the ``Token Management`` tool is not shown in the global menu you will need to request the permission or an
+     access token from a system administrator.
 
    |
 
-   To use JWT you need to obtain a an access token following these steps:
+   If you already have an access token you can skip to step 5, otherwise follow all steps to create a new
+   token:
 
    1. Login to Crafter Studio
 
@@ -60,8 +61,8 @@ Let's begin:
 
    3. Create a new access token
 
-      The only required field for the access token is the label to identify it, however, it is recommended to also
-      set an expiration date to minimize the risk of lost or stolen tokens being used without noticing.
+      The only required field for the access token is the label to identify it, however, it is also recommended to set
+      an expiration date to minimize the risk of lost or stolen tokens being used without being noticed.
 
       .. figure:: /_static/images/jwt/create-token.png
         :width: 70%
@@ -98,11 +99,14 @@ Let's begin:
 
       ``curl -H 'Authentication: Bearer <access token>' ...``
 
-   To use HTTP Basic you need to follow these steps:
+   If HTTP Basic authentication is already enabled you can skip step 1 and start using the credentials:
 
    1. Enable HTTP Basic auth and restart Crafter Studio
 
-      Update the Crafter Studio configuration override (either from the disk or from the UI) to add the following:
+      Update the Crafter Studio configuration override: from Crafter Studio ``Global Menu > Global Config`` or directly
+      from the global repository ``$CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml``
+
+      Adding the following property:
 
       .. code-block:: yaml
 
@@ -113,7 +117,7 @@ Let's begin:
 
    2. Include the credentials with all requests
 
-      Most HTTP clients provide an easy way to use HTTP Basic, in the case of curl you can simple use the user options
+      Most HTTP clients provide an easy way to use HTTP Basic, in the case of curl you can use the user options
       ``--user`` or ``-u``
 
       ``curl -u <username>:<password> ...``
