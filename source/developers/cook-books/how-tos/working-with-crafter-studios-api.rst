@@ -49,6 +49,7 @@ Let's begin:
         :width: 70%
         :alt: Crafter Studio - Global Menu
         :align: center
+
       |
 
    2. Open the ``Token Management`` tool
@@ -57,6 +58,7 @@ Let's begin:
         :width: 70%
         :alt: Crafter Studio - Token Management
         :align: center
+
       |
 
    3. Create a new access token
@@ -68,6 +70,7 @@ Let's begin:
         :width: 70%
         :alt: Crafter Studio - Create Access Token
         :align: center
+
       |
 
       Once the expiration date is reached the access token will stop working automatically.
@@ -76,6 +79,7 @@ Let's begin:
         :width: 70%
         :alt: Crafter Studio - Access Token Expiration
         :align: center
+
       |
 
    4. Copy the value of the access token
@@ -90,6 +94,7 @@ Let's begin:
         :width: 70%
         :alt: Crafter Studio - Token Management
         :align: center
+
       |
 
    5. Include the access token with all requests
@@ -112,6 +117,7 @@ Let's begin:
 
         # Indicates if HTTP Basic auth should be enabled for the API
         studio.security.http.basic.enabled: true
+
       |
 
 

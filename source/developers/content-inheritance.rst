@@ -223,7 +223,7 @@ Here's the Section Defaults under **articles**
 .. code-block:: xml
     :linenos:
     :caption: *Section Defaults under Home*
-    :emphasize-lines: 9
+    :emphasize-lines: 11
 
     <component>
       <content-type>/component/level-descriptor</content-type>	<display-template/>
