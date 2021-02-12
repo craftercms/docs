@@ -57,8 +57,20 @@ Never Published Before
 .. code-block:: json
 
   {
-    "status" : "idle",
-    "message" : "idle"
+    "status" : "ready",
+    "message" : "Ready"
+  }
+
+Queued for Publishing
+^^^^^^^^^^^^^^^^^^^^^
+
+``Status 200 OK``
+
+.. code-block:: json
+
+  {
+    "status" : "queued",
+    "message" : "Items queued for publishing"
   }
 
 After Publishing
@@ -69,8 +81,20 @@ After Publishing
 .. code-block:: json
 
   {
-    "status" : "idle",
-    "message" : "Last successful publish was for item: {item_path} on {yyyy-MM-dd'T'HH:mm'Z'}"
+    "status" : "ready",
+    "message" : "Last successful publish was for package: {package_id} on {datetime} with {package_size} items"
+  }
+
+During Publishing - Busy
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+``Status 200 OK``
+
+.. code-block:: json
+
+  {
+    "status" : "busy",
+    "message" : "Currently publishing item: {item_path} on {datetime}"
   }
 
 During Publishing
@@ -81,8 +105,8 @@ During Publishing
 .. code-block:: json
 
   {
-    "status" : "busy",
-    "message" : "Currently publishing item: {item_path} on {yyyy-MM-dd'T'HH:mm'Z'}"
+    "status" : "publishing",
+    "message" : "Currently publishing package: {package_id} on {datetime}"
   }
 
 Publishing Failed
@@ -94,7 +118,7 @@ Publishing Failed
 
   {
     "status" : "stopped",
-    "message" : "Failed while trying to publish item: {item_path} on {yyyy-MM-dd'T'HH:mm'Z'}"
+    "message" : "Stopped while trying to publish item: {item_path} on {datetime}"
   }
 
 Publishing Stopped
@@ -106,7 +130,19 @@ Publishing Stopped
 
   {
     "status" : "stopped",
-    "message" : "User {username} stopped the site on {yyyy-MM-dd'T'HH:mm'Z'}"
+    "message" : "User {username} disabled publishing for site on {datetime}"
+  }
+
+Publishing Started
+^^^^^^^^^^^^^^^^^^
+
+``Status 200 OK``
+
+.. code-block:: json
+
+  {
+    "status" : "started",
+    "message" : "User {username} enabled publishing for site on {datetime}"
   }
 
 ---------
