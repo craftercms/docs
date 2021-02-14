@@ -40,7 +40,7 @@ Elasticsearch
 
 .. code-block:: xml
 
-  curl "http://{esHost}:{esPort}/{siteName}/_doc/_delete_by_query" -H "Content-Type: application/json" -d "{ "query": { "match_all": {} } }"
+  curl -X POST "http://{esHost}:{esPort}/{siteName}/_delete_by_query?pretty" -H 'Content-Type: application/json' -d'{ "query": { "match_all": {} } }'
 
 |
 
