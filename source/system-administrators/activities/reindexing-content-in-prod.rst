@@ -31,16 +31,12 @@ The first step is to create a new index on Elasticsearch where you can index the
      
       SITE_NAME   SITE_NAME_v1   - - -
 
-#. Download the Elasticsearch settings appropriate for the index. If the index is an authoring index (it has an
-   -authoring suffix), then use ``authoring-index-settings.json``. If it's any other index (it has a -preview suffix
-   or no suffix), then use ``default-index-settings.json``. The latest version of the settings can be found 
+#. Download the Elasticsearch mappings appropriate for the index. If the index is an authoring index (it has an
+   -authoring suffix), then use ``authoring-mapping.json``. If it's any other index (it has a -preview suffix
+   or no suffix), then use ``default-mapping.json``. The latest version of the mappings can be found
    `here <https://github.com/craftercms/search/tree/master/crafter-search-elasticsearch/src/main/resources/crafter/elasticsearch>`_
-#. Create the new index using the next version and the settings file:
-   
-   .. code-block:: bash
-      :linenos:
-   
-      curl -s -X PUT http://ES_HOST:ES_PORT/SITE_NAME_v2 -H 'Content-Type: application/json' -d '@default-index-settings.json'
+
+#. Use the Elasticsearch API `create index <https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html>`_ to create a new index and create the request based on the  mappings downloaded from the previous step
 
 ^^^^^^^^^^^^^^^^^^^^^^
 Step 2: Content freeze
