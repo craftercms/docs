@@ -159,6 +159,7 @@ The fields available at this level are:
 +---------------+--------------------------------------------------------------------------------+
 || Controller   || Contains controller.groovy which provides an extension/hook to authoring      |
 ||              || lifecycle events                                                              |
+||              || .. todo:: Write how to use the authoring lifecycle controller framework.      |
 +---------------+--------------------------------------------------------------------------------+
 || Display      || View template to use when rendering this content                              |
 || Template     ||                                                                               |
