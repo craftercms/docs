@@ -12,8 +12,7 @@ Crafter CMS plugins extend the CMS and provide the user additional functionality
 Here are the available plugin types:
 
 * Blueprints
-* Studio Plugins
-* Engine Plugins
+* Site Plugins
 
 **Blueprints**
 
@@ -25,16 +24,13 @@ Blueprints provide an initial set of styles, pages, behaviors, content types and
 
    blueprints
 
-**Studio Plugins**
+**Site Plugins**
 
-Studio plugins allow users to either replace, extend or even create stand alone experiences to serve a particular use case or set of use cases.
+Site plugins allow users to either replace, extend or even create stand alone experiences to serve a particular
+use case or set of use cases.
 
 .. toctree::
    :maxdepth: 1
    :titlesonly:
 
-   studio-plugins
-
-**Engine Plugins**
-
-Engine plugins allow users to extend experiences in delivery.  Engine plugins will be supported in the near future.
+   site-plugins
