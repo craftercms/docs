@@ -40,7 +40,7 @@ a blueprint.  Here's a sample taken from the  ``craftercms-plugin.yaml`` for the
       screenshots:
         - title: Home Page
           description: Screenshot of the homepage
-          url: /studio/static-assets/images/blueprints/empty/bp_empty.png
+          url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/logo.svg"
     developer:
       company:
         name: Crafter Software
