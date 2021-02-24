@@ -69,7 +69,6 @@ Site Content Store
 .. toctree::
 	:maxdepth: 1
 
-	site/content_store/descriptor
 	site/content_store/item
 	site/content_store/children
 	site/content_store/tree
