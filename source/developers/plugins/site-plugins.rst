@@ -12,8 +12,15 @@ Site Plugins
 What are site plugins?
 ----------------------
 
-A site plugin can contain one or more extensions for Crafter CMS, for example additional content-types with their
-respective Freemarker templates and Groovy script or a custom widget for Crafter Studio.
+A site plugin can contain one or more extensions for Crafter CMS in a single package. These extensions can:
+* Extend Crafter Studio (authoring)
+  * Add Studio authoring widgets that drive the Sidebar and other UI elements
+  * Add new Form Engine extensions including data sources and components
+  * Add server-side code and services that drive the Studio UI extensions
+* Extend Crafter Engine and the site/web application (delivery)
+  * Add new content types along with their Groovy controllers and FreeMarker templates
+  * Add REST APIs and/or server-side code
+  * Add 3rd party integrations to your web app
 
 ---------------------------------
 How do I make my own site plugin?
