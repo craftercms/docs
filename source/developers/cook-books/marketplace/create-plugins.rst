@@ -12,11 +12,12 @@ Create Plugins for the Crafter Marketplace
 Types of plugins
 ----------------
 
-    .. note:: At this moment there is support for only one type of plugin, but others will be added in the future
-
 - ``blueprint``: This type of plugin can be used as a template to create sites, it includes support for parameters
   to allow dynamic sites that use API keys or passwords for external services. For more information about creating
   blueprints you can follow this guide: :ref:`create-a-blueprint`.
+
+- ``site``: This type of plugin can be used to add features to existing sites, it can include authoring and delivery
+  extensions. For more information about creating site plugins you can follow this guide: :ref:`create-a-site-plugin`
 
 .. _submit-plugin-to-marketplace:
 
