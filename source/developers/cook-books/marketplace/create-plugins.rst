@@ -16,7 +16,7 @@ Types of plugins
   to allow dynamic sites that use API keys or passwords for external services. For more information about creating
   blueprints you can follow this guide: :ref:`create-a-blueprint`.
 
-- ``site``: This type of plugin can be used to add features in existing sites, it can include authoring and delivery
+- ``site``: This type of plugin can be used to add features to existing sites, it can include authoring and delivery
   extensions. For more information about creating site plugins you can follow this guide: :ref:`create-a-site-plugin`
 
 .. _submit-plugin-to-marketplace:
