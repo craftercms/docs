@@ -2,11 +2,16 @@
 
 .. _crafter-engine-api-site-content_store-descriptor:
 
-==============
-Get Descriptor
-==============
+===========================
+Get Descriptor (deprecated)
+===========================
 
 Get the descriptor data of an Item in the content store.
+
+   .. important::
+      This API is deprecated and provided only as a reference.  To get the content of an item, use :ref:`crafter-engine-api-site-content_store-item`
+
+This API is used to get XMLs of pages and components and returns **only** the content or DOM of an XML
 
 --------------------
 Resource Information
