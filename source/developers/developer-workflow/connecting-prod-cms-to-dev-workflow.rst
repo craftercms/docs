@@ -8,7 +8,7 @@
 Connecting the Production CMS to the Development Workflow
 =========================================================
 
-In this section we’re going to illustrate how the production CMS is “connected with” and participates in the development workflow to support Crafter Software’s Code Forward, Content Back™ process.
+In this section we’re going to illustrate how the production CMS is “connected with” and participates in the development workflow to support Crafter Software’s DevContentOps process.
 
 The Production CMS instance is connected to the development workflow at the repository level.  Crafter CMS’s authoring components sit on top of Crafter’s Git-based repository.  Git is a distributed repository -- and we leverage this fact to support the movement of code and content between production and the development process.
 
@@ -16,9 +16,9 @@ The Production CMS instance is connected to the development workflow at the repo
 The Link Between Production Authoring and Development
 -----------------------------------------------------
 
-Typically a development  process is supported by a Git repository with workflow and tooling on top of it.  Organizations use a wide variety of solutions both on-prem and in the cloud including BitBucket, GitHub, GitLab and others.  It’s the **Master** branch that serves as the root of the DevOps workflow. For further reference we’ll call this Master branch in this repository the Production Code repository.  It’s worth noting that any Git based repository will work. That said, a Git repository that has a Web UI and integration hooks on top of it (like the examples mentioned) is ideal.
+Typically a development  process is supported by a Git repository with workflow and tooling on top of it.  Organizations use a wide variety of solutions both on-prem and in the cloud including BitBucket, GitHub, GitLab and others.  It’s the **Master** branch that serves as the root of the DevOps workflow. For further reference we’ll call this Master branch in this repository the Production Code repository.  It’s worth noting that any Git-based repository will work. That said, a Git repository that has a Web UI and integration hooks on top of it (like the examples mentioned) is ideal.
 
-At a very high level, the project for your site (my.com) in your Production Crafter CMS’ authoring server Crafter Studio is configured to be “connected” with your production code repository.
+At a very high level, the project for your site (e.g., my.com) in your Production Crafter CMS’ authoring server Crafter Studio is configured to be “connected” with your production code repository.
 
 Said more simply, your Production Content repository and process is connected with your Production Code repository and process (as shown in the figure below).  In effect they are one, distributed repository.
 
@@ -34,7 +34,7 @@ Said more simply, your Production Content repository and process is connected wi
 Content Authoring and Publishing
 --------------------------------
 
-The first thing to grok in the process is how content is published to the Production delivery servers.
+The first thing to understand in the process is how content is published to the Production delivery servers.
 
 .. image:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-Sandbox-Published-768x470.jpg
       :alt: Developer Workflow - Authors work in Sandbox. Delivery nodes pull from Published
@@ -45,13 +45,13 @@ The illustration above illustrates the production environment and shows both aut
 
 When the author publishes content via the UI, Crafter CMS moves content from the local **Sandbox** repository to a local **Published** repository.  Once content is committed in **Published** it is considered to be published.
 
-Remote delivery nodes (or deployment depots) run a Crafter Deployment agent called Crafter Deployer.  The deployer updates the local content on it’s server by either a duty cycle or on an API invocation.   Crafter Deployer creates and manages a remote clone of the **Published** repository from the Authoring server.  A clone is a local Git repository with an upstream relationship with a remote repository (typically on another server and addressed via HTTPS or SSH.)  In most cases SSH is used by the delivery server to talk to the Authoring server and access the **Published** Git repository.
+Remote delivery nodes (or deployment depots) run a Crafter Deployment agent called Crafter Deployer.  The deployer updates the local content on it’s server by either a duty cycle or on an API invocation.  Crafter Deployer creates and manages a remote clone of the **Published** repository from the Authoring server.  A clone is a local Git repository with an upstream relationship with a remote repository (typically on another server and addressed via HTTPS or SSH.)  In most cases SSH is used by the delivery server to talk to the Authoring server and access the **Published** Git repository.
 
 -----------------------------------------------------------
 Connecting Content Authoring to Developer Workflow / DevOps
 -----------------------------------------------------------
 
-The next thing to grok is exactly how your Production content repository and authoring process is “connected” with your Production code repository and DevOps process.  As previously indicated, the primary point of integration is via the distributed repository.
+The next thing to understand is exactly how your Production content repository and authoring process is “connected” with your Production code repository and DevOps process.  As previously indicated, the primary point of integration is via the distributed repository.
 
 Now that we’ve got a bit more content on the repository architecture for a site under Studio we can better illustrate the relationship between Studio’s repositories and the Production code repository.
 
