@@ -23,7 +23,7 @@ We'll first tackle Crafter CMS content management and deployment mechanics, then
 Content Management and Deployment Mechanics
 -------------------------------------------
 
-Crafter CMS is decoupled, composed of several microservices where content authoring and content delivery services are separated into their own distinct, subsystems.
+Crafter CMS is implemented with a decoupled architecture, composed of several microservices where content authoring and content delivery services are separated into their own distinct, subsystems.
 
 Authoring is supported via Crafter Studio (a web-based authoring tool) that sits on top of a headless Git-based repository and publishing system.  While content authors are performing their work, Crafter is managing all of the Git mechanics, managing locking, creating a time-machine like, Git-based version history and audit trail, all accessible via the Studio UI.
 
