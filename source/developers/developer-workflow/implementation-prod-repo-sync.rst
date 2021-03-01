@@ -225,7 +225,7 @@ Once you have done these steps you are ready to go.  Manually invoke this build 
 Publishing Code That’s Been Sync’d to Sandbox
 ---------------------------------------------
 
-When you run the "code forward, content back" process, code in the remote code repository is moved to the production authoring sandbox (content repository).  This code is now staged for publishing.  It is not yet live.  Crafter Studio may be used ri publish the code, making it available to your delivery servers.
+When you run the "code forward, content back" process, code in the remote code repository is moved to the production authoring sandbox (content repository).  This code is now staged for publishing.  It is not yet live.  Crafter Studio may be used to publish the code, making it available to your delivery servers.
 
 Crafter Studio provides an API that allows you to publish commit IDs.  You can provide a single commit ID or you can provide a list.  It’s typical as part of your release process to “Squash” all of the commits in a given release into a single commit ID.  This allows you to address all of the work as a single ID/moniker which makes it very easy to move, publish and roll back without missing anything.
 
