@@ -1,19 +1,19 @@
 :is-up-to-date: True
 
-.. index:: Configuration / Implementation Production Content Repository-Code Repository Sync and Code Releases Publishing
+.. index:: Configuration and Implementation Production Content Repository <--> Code Repository Sync and Code Release Publishing
 
 .. _config-implementation-production-content-repo-code-repo-sync:
 
-==============================================================================================================
-Configuration / Implementation Production Content Repository-Code Repository Sync and Code Releases Publishing
-==============================================================================================================
+====================================================================================================================
+Configuration and Implementation Production Content Repository <--> Code Repository Sync and Code Release Publishing
+====================================================================================================================
 
-The following section describes the steps required to configure the core mechanics of the Code Forward, Content Back Process.
+The following section describes the steps required to configure the core mechanics of Crafter's DevContentOps process.
 
-As a recap, here's a diagram of The Code Forward Content Back™ Process and Development Workflow:
+As a recap, here's a diagram of the Developer Workflow within the DevContentOps process:
 
 .. image:: /_static/images/developer/workflow/code-forward-content-back.png
-     :alt: Developer Workflow - Code Forward Content Back
+     :alt: Developer Workflow - DevContentOps
      :width: 80 %
      :align: center
 
@@ -94,9 +94,9 @@ The following process is used to configure the upstream remote:
 ||       ||             || remoteBranch=env-qa                                           |
 +--------+--------------+----------------------------------------------------------------+
 
------------------------------------------------------------------
-Configuring Content Repository-Code Repository Sync in Production
------------------------------------------------------------------
+----------------------------------------------------------------------
+Configuring Content Repository <--> Code Repository Sync in Production
+----------------------------------------------------------------------
 
 The synchronization of the Production content repository (Sandbox) on Production Authoring and the Production Code repository (Master Branch) on your Git repository is performed via execution of Crafter Studio APIs.  You can find a full listing of Crafter Studio APIs here: :ref:`crafter-studio-api`
 
@@ -182,7 +182,7 @@ The first step is to create a project.  Give the project a clear name and select
 
 |
 
-There is no Source Code Management (SCM) aspect of the project.  The most typical use case for Content back workflow is a scheduled event: Every hour, day, week etc.
+There is no Source Code Management (SCM) aspect of the project.  The most typical use case for "content back"  workflow is a scheduled event: Every hour, day, week etc.
 
 .. image:: /_static/images/developer/workflow/jenkins-src-code-mgmt.jpg
      :alt: Developer Workflow - Jenkins Source Code Management
@@ -191,7 +191,7 @@ There is no Source Code Management (SCM) aspect of the project.  The most typica
 
 |
 
-The next step is to define build triggers.  Since you are calling APIs here and content back is most likely based on some schedule you define you want to indicate that there is no Source Code Management (SCM) aspect of the project.
+The next step is to define build triggers.  Since you are calling APIs here and "content back" is most likely based on some schedule you define, you want to indicate that there is no Source Code Management (SCM) aspect of the project.
 
 We want content from authoring to flow backward regularly, so we'll configure the job to run periodically.  Select “Build Periodically” and define your schedule.  Schedule definitions use standard Cron/Quartz configuration.  In the example, we’ll run every hour.
 
@@ -225,7 +225,7 @@ Once you have done these steps you are ready to go.  Manually invoke this build 
 Publishing Code That’s Been Sync’d to Sandbox
 ---------------------------------------------
 
-When you run the **code forward, content back** process, code in the remote code repository is moved to the production authoring sandbox (content repository.)  This code is now staged for publishing.  It is not yet live.  Crafter Studio must publish the code, making it available to your delivery servers.
+When you run the "code forward, content back" process, code in the remote code repository is moved to the production authoring sandbox (content repository).  This code is now staged for publishing.  It is not yet live.  Crafter Studio may be used ri publish the code, making it available to your delivery servers.
 
 Crafter Studio provides an API that allows you to publish commit IDs.  You can provide a single commit ID or you can provide a list.  It’s typical as part of your release process to “Squash” all of the commits in a given release into a single commit ID.  This allows you to address all of the work as a single ID/moniker which makes it very easy to move, publish and roll back without missing anything.
 
