@@ -1,8 +1,8 @@
 :is-up-to-date: True
 
-====================================================
+=====================================
 Implementation of the DevOps Workflow 
-====================================================
+=====================================
 
 
 In the previous section entitled :ref:`code-repo-and-devops-workflow` we discussed the details and mechanics of the workflow that takes content from a feature branch all the way through to production.  We demonstrated:

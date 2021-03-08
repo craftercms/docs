@@ -4,9 +4,9 @@
 
 .. _config-implementation-production-content-repo-code-repo-sync:
 
-==============================================================================================================
+=====================================================================================================================
 Configuration and Implementation: Production Content Repository <--> Code Repository Sync and Code Release Publishing
-==============================================================================================================
+=====================================================================================================================
 
 The following section describes the steps required to configure the core mechanics of Crafter's DevContentOps process.
 
@@ -94,9 +94,9 @@ The following process is used to configure the upstream remote:
 ||       ||             || remoteBranch=env-qa                                           |
 +--------+--------------+----------------------------------------------------------------+
 
------------------------------------------------------------------
+----------------------------------------------------------------------
 Configuring Content Repository <--> Code Repository Sync in Production
------------------------------------------------------------------
+----------------------------------------------------------------------
 
 The synchronization of the Production content repository (Sandbox) on Production Authoring and the Production Code repository (Master Branch) on your Git repository is performed via execution of Crafter Studio APIs.  You can find a full listing of Crafter Studio APIs here: :ref:`crafter-studio-api`
 
