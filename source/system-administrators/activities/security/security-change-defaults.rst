@@ -121,7 +121,7 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
 
   .. code-block:: xml
      :caption: *CRAFTER_HOME/bin/apache-tomcat/conf/web.xml*
-     :emphasize-lines: 4,5
+     :emphasize-lines: 3-6
      :linenos:
 
      <session-config>
