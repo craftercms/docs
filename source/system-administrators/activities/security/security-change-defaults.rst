@@ -116,3 +116,18 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
   #. Restart Studio
 
 * Change the default Studio ``admin`` user password either by randomizing the ``admin`` password for a fresh install of Crafter Studio or by changing the password after logging in as user ``admin``.  For more information on randomizing the admin password for a fresh install, see :ref:`randomize-admin-password`.  For more information on changing user passwords, see :ref:`user-passwords`
+
+* Set session cookies as ``HTTP Only`` and ``Secure`` by setting the flags to ``true`` in your tomcat ``web.xml`` file
+
+  .. code-block:: xml
+     :caption: *CRAFTER_HOME/bin/apache-tomcat/conf/web.xml*
+     :emphasize-lines: 4,5
+     :linenos:
+
+     <session-config>
+       <session-timeout>1</session-timeout>
+       <cookie-config>
+         <http-only>true</http-only>
+         <secure>true</secure>
+       </cookie-config>
+     </session-config>
