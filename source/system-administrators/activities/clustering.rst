@@ -8,9 +8,7 @@
 Studio Clustering |enterpriseOnly|
 ==================================
 
-Any number of Crafter Studio instances can be clustered, where multiple servers, each with their own Crafter Studio installed, act like a single Crafter Studio to the end users.
-
-Crafter CMS supports auto-clustering using Studio's embedded database.
+Crafter Studio can be clustered for high-availability by having two Crafter Studio instances act like a single Crafter Studio to the end users. This requires the help of a Crafter Studio Arbiter.
 
 .. image:: /_static/images/system-admin/studio-autoclustering.png
    :alt: Crafter CMS Auto-clustering of Studio Enterprise
@@ -19,9 +17,9 @@ Crafter CMS supports auto-clustering using Studio's embedded database.
 
 |
 
-When setting up a Studio embedded database multi-master cluster, a specific node needs to be started first as a
-reference point, then the rest of the nodes can join and form the cluster. This is known as cluster bootstrapping.
-Bootstrapping is the first step to introduce a database node as Primary Component, which others will see as a reference
+When setting up a Studio cluster, a specific node needs to be started first as a
+reference point, then the other nodes (Studio and/or Arbiter) can join and form the cluster. This is known as cluster bootstrapping.
+Bootstrapping is the first step to introduce a node as Primary Component, which others will see as a reference
 point to sync up with.
 
 The Primary Component is a central concept on how to ensure that there is no opportunity for database inconsistency or
@@ -32,15 +30,11 @@ existing Primary Component to join.
 
    .. note::
       Studio nodes use an in-memory distributed data store to orchestrate the bootstrapping of the Primary Component, so
-      you don't need to do it. Basically, when the cluster is started, the nodes synchronize through the data store to
+      you don't need to do it. When the cluster is started, the nodes synchronize through the data store to
       decide which one does the bootstrapping, and then the rest join the Primary Component.
 
-There is no upper limit to the number of nodes that can be put in the cluster. It's recommended that the cluster have
-at least three nodes, and have an odd number of nodes in the cluster to prevent the split brain problem.
-
-Resources can sometimes be limited and the cluster will need to run with just two nodes. The solution is to setup an
-arbitrator, which Crafter CMS provides using the ``Studio Arbiter``. This arbitrator functions as an odd node, to
-avoid split-brain situations and it can also request a consistent application state snapshot, which is useful in
+The cluster must have three nodes, two Studios and one ``Studio Arbiter``. This arbitrator functions as an odd node, to
+avoid split-brain situations and it can also provide a consistent application state snapshot, which is useful in
 making backups.
 
 ------------
@@ -62,4 +56,3 @@ First, we'll take a look at an example of how to setup a two node cluster with S
 
    studio-clustering-two-nodes-with-arbiter
    kubernetes/studio-clustering-with-kubernetes-deployment
-
