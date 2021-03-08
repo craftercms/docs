@@ -43,7 +43,7 @@ Requirements
 
 Before we begin configuring Studio for clustering, the following must be setup:
 
-* A load balancer with sticky session support enabled
+* A DNS server directing traffic to the primary node, and can failover to the secondary node if the primary is not healthy
 
 -----------------------------
 Configuring Studio Clustering
