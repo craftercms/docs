@@ -8,11 +8,11 @@
 Studio Clustering |enterpriseOnly|
 ==================================
 
-Crafter Studio can be clustered for high-availability. Two Crafter Studio instances are clustered as primary and secondary along with a Crafter Studio Arbiter to act as arbitraror.
+Crafter Studio can be clustered for high-availability. Two Crafter Studio instances are clustered as primary and secondary along with a Crafter Studio Arbiter to act as arbitrator.
 
-.. image:: /_static/images/system-admin/studio-autoclustering.png
-   :alt: Crafter CMS Auto-clustering of Studio Enterprise
-   :width: 100%
+.. image:: /_static/images/system-admin/studio-enterprise-clustering.png
+   :alt: Crafter CMS - Studio Enterprise Clustering
+   :width: 60%
    :align: center
 
 |
