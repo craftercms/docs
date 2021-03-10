@@ -60,9 +60,6 @@ Security
 .. toctree::
    :maxdepth: 1
 
-   security/login
-   security/logout
-   security/validate-session
    security/get-user-permissions
    security/get-user-roles
 
