@@ -31,6 +31,11 @@ To add a remote repository for your site, click on the **New Repository** button
     :alt: Remote Repositories - New Repository
 	:align: center
 
+|
+
+   .. note::
+      .. include:: /includes/setup-ssh-keys.rst
+
 --------------------
 Pull from Repository
 --------------------

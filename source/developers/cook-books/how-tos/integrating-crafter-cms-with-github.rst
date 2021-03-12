@@ -85,6 +85,9 @@ Let’s walk through each part of the dialog:
 
 6. Provide your credentials based on the authentication method selected.  In our example, we chose ``Username & Password`` as the authentication method and we'll need to fill in **Username** and **Password**
 
+      .. note::
+         .. include:: /includes/setup-ssh-keys.rst
+
 7. In the **Git Remote Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
 
 8. Click **Review**.  The next screen will give you a chance to review your entries and make corrections as needed by clicking on the **Back** button
