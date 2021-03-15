@@ -69,19 +69,9 @@ This could be caused by keys generated using an algorithm other than ``RSA``.  C
 
 .. code-block:: sh
 
-    ssh-keygen -b 4096 -t rsa
+    openssl genrsa -out my-privateKey 4096
+    chmod 400 my-privateKey
 
 |
 
-Also, check that the file starts with the following header: ``-----BEGIN RSA PRIVATE KEY-----`` to verify that the key is using ``RSA``.
-
-    .. note::
-
-        For users on macOS 10.14 and above (macOS Mojave and onwards), users on Ubuntu 20.04 (focal fossa) and onwards, RHEL/CentOS 8 and onwards, Debian 10 (Buster) and onwards, or users using **OpenSSH 7.8** and above,  ``ssh-keygen`` writes OpenSSH format private keys by default (RFC7416 format) instead of using OpenSSL's PEM format.
-
-        To generate keys using PEM format, add option ``-m PEM`` into your ssh-keygen command. For example, you can run the command below  to force ssh-keygen to export as PEM format:
-
-        .. code-block:: sh
-
-           ssh-keygen -m PEM -t rsa -b 4096 -C "your_email@example.com"
-
+Check that the file starts with the following header: ``-----BEGIN RSA PRIVATE KEY-----`` to verify that the key is using ``RSA``.
