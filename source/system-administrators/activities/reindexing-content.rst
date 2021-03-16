@@ -52,7 +52,11 @@ Elasticsearch
 || esPort              || Elasticsearch port                       || 9201                      |
 ||                     ||                                          || (default is 9201)         |
 +----------------------+-------------------------------------------+----------------------------+
-|| siteName            || The name of the site                     || my-site                   |
+|| siteName            || For Delivery, the name of the site       || my-site                   |
++----------------------+-------------------------------------------+----------------------------+
+||                     || For Authoring, there are two indexes per || my-site-authoring         |
+||                     || site with the suffix of -authoring and   || my-site-preview           |
+||                     || -preview.                                ||                           |
 +----------------------+-------------------------------------------+----------------------------+
 
 After sending the CURL command, you will then get a response like this:
@@ -149,7 +153,10 @@ To start reindexing/reprocessing, send the following CURL command:
 || deployerPort        || Deployer's port.                         || 9191                      |
 ||                     ||                                          || (default is 9191)         |
 +----------------------+-------------------------------------------+----------------------------+
-|| environment         || Target environment                       || preview                   |
+|| environment         || One of two target environments for       || authoring                 |
+||                     || Authoring                                || preview                   |
++----------------------+-------------------------------------------+----------------------------+
+||                     || Target environment for Delivery          || default                   |
 +----------------------+-------------------------------------------+----------------------------+
 || siteName            || The name of the site                     || my-site                   |
 +----------------------+-------------------------------------------+----------------------------+
