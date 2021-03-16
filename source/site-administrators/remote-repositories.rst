@@ -34,7 +34,7 @@ To add a remote repository for your site, click on the **New Repository** button
 |
 
    .. note::
-      .. include:: /system-administrators/activities/debugging-ssh-issues.rst
+      :ref:debugging_ssh_issues
 
 --------------------
 Pull from Repository
