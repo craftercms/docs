@@ -52,11 +52,11 @@ Elasticsearch
 || esPort              || Elasticsearch port                       || 9201                      |
 ||                     ||                                          || (default is 9201)         |
 +----------------------+-------------------------------------------+----------------------------+
-|| siteName            || The name of the site                     || my-site                   |
+|| siteName            || For Delivery, the name of the site       || my-site                   |
 +----------------------+-------------------------------------------+----------------------------+
-||                     || In Crafter Studio, there are two indexes || my-site-authoring         |
-||                     || per site with the suffix of -authoring   || my-site-preview           |
-||                     || and -preview.                            ||                           |
+||                     || For Authoring, there are two indexes per || my-site-authoring         |
+||                     || site with the suffix of -authoring and   || my-site-preview           |
+||                     || -preview.                                ||                           |
 +----------------------+-------------------------------------------+----------------------------+
 
 After sending the CURL command, you will then get a response like this:
@@ -154,7 +154,7 @@ To start reindexing/reprocessing, send the following CURL command:
 ||                     ||                                          || (default is 9191)         |
 +----------------------+-------------------------------------------+----------------------------+
 || environment         || One of two target environments for       || authoring                 |
-||                     || Crafter Studio                           || preview                   |
+||                     || Authoring                                || preview                   |
 +----------------------+-------------------------------------------+----------------------------+
 ||                     || Target environment for Delivery          || default                   |
 +----------------------+-------------------------------------------+----------------------------+
