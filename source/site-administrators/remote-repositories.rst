@@ -34,7 +34,7 @@ To add a remote repository for your site, click on the **New Repository** button
 |
 
    .. note::
-      For more information on errors that a user may encounter when using ssh keys with Crafter CMS, see :ref:debugging_ssh_issues
+      For more information on errors that a user may encounter when using ssh keys with Crafter CMS, see :ref:`debugging_ssh_issues`
 
 --------------------
 Pull from Repository

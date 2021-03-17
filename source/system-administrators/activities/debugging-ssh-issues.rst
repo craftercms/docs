@@ -68,6 +68,7 @@ You may encounter in the logs when creating a site with a link to a remote repos
 This could be caused by keys generated using an algorithm other than ``RSA``.  Crafter requires the key to be ``RSA`` and does not support keys generated using an algorithm (such as OPENSSH) other than **RSA**.  Make sure when you generate the key to specify the type as ``rsa``:
 
 To verify that the key is using ``RSA``, check that the file starts with the following header: ``-----BEGIN RSA PRIVATE KEY-----``
+
 Here are a couple of ways to generate keys using the ``RSA`` algorithm:
 
 .. code-block:: sh
