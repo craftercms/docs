@@ -71,6 +71,7 @@ To verify that the key is using ``RSA``, check that the file starts with the fol
 Here are a couple of ways to generate keys using the ``RSA`` algorithm:
 
 .. code-block:: sh
+
    openssl genrsa -out my-privateKey 4096
    chmod 400 my-privateKey
 
@@ -79,6 +80,7 @@ Here are a couple of ways to generate keys using the ``RSA`` algorithm:
 or
 
 .. code-block:: sh
+
     ssh-keygen -m PEM -t rsa -b 4096
 
 |
