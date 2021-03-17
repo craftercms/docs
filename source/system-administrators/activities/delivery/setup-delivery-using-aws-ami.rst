@@ -117,7 +117,7 @@ On your local machine, generate a public / private key pair.  On a terminal/cons
 .. code-block:: sh
    :linenos:
 
-   ssh-keygen -b 4096 -t rsa
+   ssh-keygen -m PEM -b 4096 -t rsa
 
 You will be prompted for the file name and a passphrase. Since Crafter will use this key as part of an automated process, do not enter a passphase (just hit enter when prompted.)
 
