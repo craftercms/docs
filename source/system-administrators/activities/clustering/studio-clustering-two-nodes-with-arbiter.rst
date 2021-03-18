@@ -86,18 +86,19 @@ Configuring Nodes in the Cluster
 
    |
 
-   .. note::
-      You can use the node's default SSH keys, located in ``~/.ssh/id_rsa`` and ``~/.ssh/id_rsa.pub``, if you set
-      the ``authenticationType`` to ``none``. You can also use ``~/.ssh/config`` if you need to configure certain
-      aspects of SSH authentication, like ``StrictHostKeyChecking``. For example, you can disable
-      ``StrictHostKeyChecking`` for hostnames with ``*.hostnamespace`` so that you don't need to validate the SSH host
-      keys before running Studio:
+      .. note::
+         You can use the node's default SSH keys, located in ``~/.ssh/id_rsa`` and ``~/.ssh/id_rsa.pub``, if you set
+         the ``authenticationType`` to ``none``. You can also use ``~/.ssh/config`` if you need to configure certain
+         aspects of SSH authentication, like ``StrictHostKeyChecking``. For example, you can disable
+         ``StrictHostKeyChecking`` for hostnames with ``*.hostnamespace`` so that you don't need to validate the SSH host
+         keys before running Studio:
 
-      .. code-block:: none
+         .. code-block:: none
 
-         Host *.hostnamespace
-             StrictHostKeyChecking no
+            Host *.hostnamespace
+                StrictHostKeyChecking no
 
+   |
    |
 
    Configure the Hazelcast configuration file location in Studio, by uncommenting ``studio.hazelcast.config.location``.  You will create the Hazelcast configuration file in a later step.
@@ -112,8 +113,9 @@ Configuring Nodes in the Cluster
       studio.hazelcast.config.location: classpath:crafter/studio/extension/hazelcast-config.yaml
 
    |
+   |
 
-   Configure the following times, locations. Leave the environment variables, e.g. ``${env:MARIADB_CLUSTER_NAME}``.  You can see the configuration of the environment variables in a later step.
+   Configure the following times and locations. Leave the environment variables, e.g. ``${env:MARIADB_CLUSTER_NAME}``.  You can see the configuration of the environment variables in a later step.
 
    .. code-block:: yaml
       :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -144,6 +146,8 @@ Configuring Nodes in the Cluster
       studio.db.cluster.bootrap.wait.timeout: 180
       # Time in seconds before giving up on the local node to finish synching with the cluster
       studio.db.cluster.nodes.local.synced.wait.timeout: 180
+
+   |
 
 
 #. Configure the environment variables for the nodes in the ``crafter-setenv.sh`` file.
