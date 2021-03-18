@@ -38,9 +38,20 @@ Configuring Nodes in the Cluster
    .. code-block:: yaml
       :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
+      # Cluster Git URL format for synching members.
+      # - Typical SSH URL format: ssh://{username}@{localAddress}{absolutePath}
+      # - Typical HTTPS URL format: https://{localAddress}/repos/sites
+      studio.clustering.sync.urlFormat: ssh://{username}@{localAddress}{absolutePath}
+
+      # Cluster Syncers
+      # Cluster member after heartbeat stale for amount of minutes will be declared inactive
+      studio.clustering.heartbeatStale.timeLimit: 5
+      # Cluster member after being inactive for amount of minutes will be removed from cluster
+      studio.clustering.inactivity.timeLimit: 5
+
       # Cluster member registration, this registers *this* server into the pool
       # Cluster node registration data, remember to uncomment the next line
-      # studio.clustering.node.registration:
+      studio.clustering.node.registration:
       #  This server's local address (reachable to other cluster members). You can also specify a different port by
       #  attaching :PORT to the adddress (e.g 192.168.1.200:2222)
       #  localAddress: ${env:CLUSTER_NODE_ADDRESS}
@@ -49,7 +60,7 @@ Configuring Nodes in the Cluster
       #   - none (no authentication needed)
       #   - basic (username/password authentication)
       #   - key (ssh authentication)
-      #  authenticationType: none
+       authenticationType: none
       #  Username to access this server's local repository
       #  username: user
       #  Password to access this server's local repository
@@ -89,22 +100,71 @@ Configuring Nodes in the Cluster
 
    |
 
+   Configure the Hazelcast configuration file location in Studio, by uncommenting ``studio.hazelcast.config.location``.  You will create the Hazelcast configuration file in a later step.
+
+   .. code-block:: yaml
+      :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+      ##################################################
+      ##                 Hazelcast                    ##
+      ##################################################
+      # Location of the Hazelcast config path (must be in YAML format)
+      studio.hazelcast.config.location: classpath:crafter/studio/extension/hazelcast-config.yaml
+
+   |
+
+   Configure the following times, locations. Leave the environment variables, e.g. ``${env:MARIADB_CLUSTER_NAME}``.  You can see the configuration of the environment variables in a later step.
+
+   .. code-block:: yaml
+      :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+      ##################################################
+      ##                Studio DB Cluster             ##
+      ##################################################
+      # DB cluster library location
+      # studio.db.cluster.lib.location: ${env:CRAFTER_BIN_DIR}/dbms/libs/galera/libgalera_smm.so
+      # The path where the grastate.dat file resides
+      studio.db.cluster.grastate.location: ${studio.db.dataPath}/grastate.dat
+      # DB cluster name
+      studio.db.cluster.name: ${env:MARIADB_CLUSTER_NAME}
+      # Count for the number of Studio cluster members (without counting the arbiter)
+      studio.db.cluster.nodes.count: ${env:MARIADB_CLUSTER_NODE_COUNT}
+      # DB cluster address of the local node (which will be seen by other members of the cluster)
+      studio.db.cluster.nodes.local.address: ${env:MARIADB_CLUSTER_NODE_ADDRESS}
+      # DB cluster name of the local node (which will be seen by other members of the cluster)
+      studio.db.cluster.nodes.local.name: ${env:MARIADB_CLUSTER_NODE_NAME}
+      # Time in seconds when each Studio member of the DB cluster should report its status
+      studio.db.cluster.nodes.status.report.period: 30
+      # Time in seconds when each report of a DB member should expire (needs to be higher than the report period)
+      studio.db.cluster.nodes.status.report.ttl: 60
+      # Time in seconds before giving up on waiting for all cluster members to appear online on startup
+      studio.db.cluster.nodes.startup.wait.timeout: 300
+      #Time in seconds before giving up on waiting for cluster bootstrap to complete (at least a node is active,
+      # which means the node is synced AND its Studio has finished starting up)
+      studio.db.cluster.bootrap.wait.timeout: 180
+      # Time in seconds before giving up on the local node to finish synching with the cluster
+      studio.db.cluster.nodes.local.synced.wait.timeout: 180
+
+
 #. Configure the environment variables for the nodes in the ``crafter-setenv.sh`` file.
 
    .. code-block:: sh
       :caption: *bin/crafter-setenv.sh*
 
+      # Uncomment to enable clustering of the embedded DB
       export SPRING_PROFILES_ACTIVE=crafter.studio.dbCluster
 
       ...
 
-      export CLUSTER_NODE_ADDRESS=${CLUSTER_NODE_ADDRESS:="192.168.1.100"}
+      # -------------------- Cluster variables -------------------
+      export CLUSTER_NODE_ADDRESS=${CLUSTER_NODE_ADDRESS:="$(hostname -i)"}
 
-      # --------------------------------- MariaDB Cluster variables --------------------------------
+      # -------------------- MariaDB Cluster variables --------------------
       export MARIADB_CLUSTER_NAME=${MARIADB_CLUSTER_NAME:="studio_db_cluster"}
       export MARIADB_CLUSTER_NODE_COUNT=${MARIADB_CLUSTER_NODE_COUNT:="2"}
-      export MARIADB_CLUSTER_NODE_ADDRESS=${MARIADB_CLUSTER_NODE_ADDRESS:="192.168.1.100"}
-      export MARIADB_CLUSTER_NODE_NAME=${MARIADB_CLUSTER_NODE_NAME:="node1"}
+      export MARIADB_CLUSTER_NODE_ADDRESS=${MARIADB_CLUSTER_NODE_ADDRESS:="$(hostname -i)"}
+      export MARIADB_CLUSTER_NODE_NAME=${MARIADB_CLUSTER_NODE_NAME:="$(hostname)"}
+      export MARIADB_CLUSTER_RETRY_AUTOCOMMIT=${MARIADB_CLUSTER_RETRY_AUTOCOMMIT:="5"}
 
    |
 
@@ -123,11 +183,13 @@ Configuring Nodes in the Cluster
 
    |
 
-#. Create a Hazelcast configuration file in ``shared/classes/crafter/studio/extension/hazelcast-config.yaml``. Studio
-   uses Hazelcast as the in-memory distributed data store to orchestrate the bootstrapping of the MariaDB cluster.
+#. Create a Hazelcast configuration file in ``shared/classes/crafter/studio/extension/hazelcast-config.yaml``.
+
+   Studio uses Hazelcast as the in-memory distributed data store to orchestrate the bootstrapping of the MariaDB cluster.
    You can find more about Hazelcast in `<https://hazelcast.org/>`_ and its configuration in
-   `<https://docs.hazelcast.org/docs/latest/manual/html-single/#understanding-configuration>`_,
-   but basically in this configuration file you specify the way the nodes discover each other in the Hazelcast cluster.
+   `<https://docs.hazelcast.org/docs/latest/manual/html-single/#understanding-configuration>`_.
+   In this configuration file you specify the way the nodes discover each other in the Hazelcast cluster.
+
    We recommend you create a simple configuration in each node with the list of addresses of the cluster nodes:
 
    .. code-block:: yaml
@@ -165,12 +227,11 @@ Configuring Nodes in the Cluster
 
    |
 
-   .. note::
-      Please apply the ``rbac.yaml`` mentioned in the
-      `Kubernetes Hazelcast Plugin  <https://github.com/hazelcast/hazelcast-kubernetes>`_ documentation
-      in your Kubernetes cluster, before even starting any Studio pods.
+      .. note::
+         Please apply the ``rbac.yaml`` mentioned in the
+         `Kubernetes Hazelcast Plugin  <https://github.com/hazelcast/hazelcast-kubernetes>`_ documentation
+         in your Kubernetes cluster, before even starting any Studio pods.
 
-   |
 
 ---------------------------------
 Starting the Nodes in the Cluster
