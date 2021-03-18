@@ -85,5 +85,7 @@ or
     ssh-keygen -m PEM -t rsa -b 4096
 
 |
+
     .. note::
+
         For users on macOS 10.14 and above (macOS Mojave and onwards), users on Ubuntu 20.04 (focal fossa) and onwards, RHEL/CentOS 8 and onwards, Debian 10 (Buster) and onwards, or users using **OpenSSH 7.8** and above, ``ssh-keygen`` writes OpenSSH format private keys by default (RFC7416 format) instead of using OpenSSL's PEM format.  Adding the  option ``-m PEM`` formats your keys as PEM.
