@@ -52,7 +52,11 @@ Elasticsearch
 || esPort              || Elasticsearch port                       || 9201                      |
 ||                     ||                                          || (default is 9201)         |
 +----------------------+-------------------------------------------+----------------------------+
-|| siteName            || The name of the site                     || my-site                   |
+|| siteName            || For Delivery, the name of the site       || my-site                   |
+||                     +-------------------------------------------+----------------------------+
+||                     || For Authoring, there are two indexes per || my-site-authoring         |
+||                     || site with the suffix of ``-preview`` and || my-site-preview           |
+||                     || ``-authoring``                           ||                           |
 +----------------------+-------------------------------------------+----------------------------+
 
 After sending the CURL command, you will then get a response like this:
