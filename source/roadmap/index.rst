@@ -59,7 +59,7 @@ Recently Completed
 * Crafter Studio features
 	- Crafter Studio UI enhancements using React components that weave in
 	- Crafter Studio Marketplace for blueprints and new blueprints
-	- Advanced multi-master clustering for the authoring environment
+	- Advanced clustering for the authoring environment
 	- New search backend based on Elasticsearch for better search in authoring
 	- Advanced Git workflow mechanics
 		- Specify a branch per site
