@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. index:: Studio Clustering, Clustering, Studio's Embedded Database Multi-master Cluster
+.. index:: Studio Clustering, Clustering, Studio's Embedded Database Cluster
 
 .. _clustering:
 

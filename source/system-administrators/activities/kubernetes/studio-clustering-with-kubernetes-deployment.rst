@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. index:: Setup Studio Clustering with Kubernetes Deployment, Auto-Clustering with Studio Example with Kubernetes, Studio's Embedded Database Multi-master Cluster Example with Kubernetes
+.. index:: Setup Studio Clustering with Kubernetes Deployment, Clustering with Studio Example with Kubernetes, Studio's Embedded Database Cluster Example with Kubernetes
 
 .. _setup-studio-clustering-with-kubernetes-deployment:
 
@@ -55,7 +55,7 @@ The requirements (listed above) is the same as specified in :ref:`simple-kuberne
 
   |
 
-  The ``nodes`` folder contains the deployment files for setting up two authoring pods and hazelcast, which is used as an in-memory distributed data store to orchestrate the bootstrapping of Studio's Embedded Database Multi-master Cluster.
+  The ``nodes`` folder contains the deployment files for setting up two authoring pods and hazelcast, which is used as an in-memory distributed data store to orchestrate the bootstrapping of Studio's Embedded Database Cluster.
 
   The ``arbiter`` folder contains the deployment files for hazelcast and the Studio Arbiter, an arbitrator that functions as an odd node, since our authoring deployment only has two nodes, to avoid split-brain situations.
 
@@ -308,7 +308,7 @@ To shutdown the nodes, go to the nodes directory ``kubernetes-deployments/author
       service "authoring-service" deleted
       statefulset.apps "authoring" deleted
 
-Shutting down the nodes one by one allows for a graceful shutdown of the embedded database multi-master cluster.  The ``cascade`` flag allows killing the pods (shutting down the nodes) one by one.  Remember to set the ``cascade`` flag to ``false``, otherwise it will kill both pods at the same time.
+Shutting down the nodes one by one allows for a graceful shutdown of the embedded database cluster.  The ``cascade`` flag allows killing the pods (shutting down the nodes) one by one.  Remember to set the ``cascade`` flag to ``false``, otherwise it will kill both pods at the same time.
 
 The next step is to terminate the pods one by one.  Terminate one pod first.  Make sure the pod has completely terminated, then terminate the remaining pod.
 
