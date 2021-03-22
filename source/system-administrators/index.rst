@@ -45,7 +45,6 @@ Activities
    activities/installing.rst
    activities/backup-and-recovery.rst
    activities/clustering.rst
-   activities/configure-solrcloud-for-crafter.rst
    devcontentops-toolkit/index.rst
    activities/logging.rst
    activities/production-environment-setup.rst

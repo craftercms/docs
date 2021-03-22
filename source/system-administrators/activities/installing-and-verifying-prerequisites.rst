@@ -108,7 +108,7 @@ For OS X users, the latest ``openssl`` formula needs to be installed via homebre
 Linux Prerequisite
 ------------------
 
-#. The library ``libaio`` is required by the embedded database MariaDB4j in the Authoring install.  Please note that some Linux distributions does not install the library ``libaio`` by default and so, may need to be installed.  You may get the following error when starting up Studio:
+#. The library ``libaio`` is required by the MariaDB4j in the Authoring install.  Please note that some Linux distributions does not install the library ``libaio`` by default and so, may need to be installed.  You may get the following error when starting up Studio:
 
    **error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory**
 
