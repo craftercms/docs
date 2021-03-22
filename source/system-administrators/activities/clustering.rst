@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. index:: Studio Clustering, Clustering, Auto-Clustering with Studio, Studio's Embedded Database Multi-master Cluster
+.. index:: Studio Clustering, Clustering
 
 .. _clustering:
 
@@ -54,5 +54,15 @@ First, we'll take a look at an example of how to setup a two node cluster with S
 .. toctree::
    :maxdepth: 1
 
-   studio-clustering-two-nodes-with-arbiter
+   clustering/studio-clustering-two-nodes-with-arbiter
    kubernetes/studio-clustering-with-kubernetes-deployment
+
+
+-------
+How-tos
+-------
+
+.. toctree::
+   :maxdepth: 1
+
+   clustering/changing-git-url-format-in-cluster
