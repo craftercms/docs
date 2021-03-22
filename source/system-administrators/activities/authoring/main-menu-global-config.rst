@@ -242,10 +242,10 @@ The following section of Studio's global config allows you to setup Studio clust
    ##                 Clustering                   ##
    ##################################################
    #-----------------------------------------------------------------------------
-   # IMPORTANT: When enabling clustering, please specify the environment variable
-   # SPRING_PROFILES_ACTIVE=crafter.studio.externalDb in your crafter-setenv.sh
-   # (or Docker/Kubernetes env variables). This will stop studio from starting
-   # its embedded DB. Also configure the appropiate MARIADB env variables
+   # IMPORTANT: To enable clustering, please specify the environment variable
+   # SPRING_PROFILES_ACTIVE=crafter.studio.dbCluster in your crafter-setenv.sh
+   # (or Docker/Kubernetes env variables).
+   # Also configure the appropriate MARIADB env variables
    # -----------------------------------------------------------------------------
 
    # Cluster Git URL format for synching members.

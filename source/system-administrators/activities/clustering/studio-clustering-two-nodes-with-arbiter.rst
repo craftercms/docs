@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. index:: Setup a Two Node Cluster with Studio and a Studio Arbiter, Clustering with Studio Example, Studio's Embedded Database Cluster Example
+.. index:: Setup a Two Node Cluster with Studio and a Studio Arbiter, Clustering with Studio Example
 
 .. _setup-a-two-node-cluster-with-studio-and-a-studio-arbiter:
 
@@ -10,7 +10,7 @@ Setup a Two Node Cluster with Studio and a Studio Arbiter |enterpriseOnly|
 
 Let's take a look at an example of how to setup a two node cluster with Studio and a Studio Arbiter.
 
-To setup a two node cluster with Studio's embedded DB we'll need to do the following:
+To setup a two node cluster with Studio we'll need to do the following:
 
 #. Configure Nodes in the Cluster
 #. Start the Nodes in the Cluster
@@ -20,11 +20,11 @@ To setup a two node cluster with Studio's embedded DB we'll need to do the follo
 Requirements
 ------------
 
-* At least 3 servers running Linux (Remember that Studio's embedded DB cluster runs only in Linux)
+* At least 3 servers running Linux (Remember that Studio's cluster runs only in Linux)
 * Enterprise build/bundle of Crafter CMS
 * If using an enterprise bundle Crafter CMS, ``Git`` is required by Crafter CMS and may need to be installed if not
   already installed in the server.
-* Studio's embedded DB cluster requires the ``libssl1.0.0`` (or ``libssl1.0.2``) shared library.
+* Studio's cluster requires the ``libssl1.0.0`` (or ``libssl1.0.2``) shared library.
   Some Linux distros does not come with the library pre-installed and may need to be installed.
 
 --------------------------------
@@ -155,7 +155,7 @@ Configuring Nodes in the Cluster
    .. code-block:: sh
       :caption: *bin/crafter-setenv.sh*
 
-      # Uncomment to enable clustering of the embedded DB
+      # Uncomment to enable clustering of Studio
       export SPRING_PROFILES_ACTIVE=crafter.studio.dbCluster
 
       ...
@@ -174,8 +174,7 @@ Configuring Nodes in the Cluster
 
    where:
 
-   - **SPRING_PROFILES_ACTIVE**: with the value ``crafter.studio.dbCluster``, enables auto clustering of the embedded
-     database.
+   - **SPRING_PROFILES_ACTIVE**: with the value ``crafter.studio.dbCluster``, enables clustering
    - **CLUSTER_NODE_ADDRESS**: hostname or IP of the local node to be registered in the Git repository cluster, should
      be reachable to other cluster members.
    - **MARIADB_CLUSTER_NAME**: name of the MariaDB cluster.
