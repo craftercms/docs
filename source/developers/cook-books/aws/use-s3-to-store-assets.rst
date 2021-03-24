@@ -23,7 +23,7 @@ explains how to:
 
       For more information on Blob Store, see :ref:`blob-stores-configuration`
 
-      For an example of setting up a blob store, see :ref:`publishing-assets-in-external-storage-example`
+      For an example of setting up a blob store, see :ref:`here <publishing-assets-in-external-storage-example>`
 
 -------------
 Prerequisites
