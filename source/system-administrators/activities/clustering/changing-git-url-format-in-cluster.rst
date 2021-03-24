@@ -8,7 +8,7 @@
 Changing the Cluster Git URL |enterpriseOnly|
 =============================================
 
-When the cluster Git URL for syncing members is changed after a cluster has been setup and started, the nodes on the disk may contain the old URL format when starting up.  The following error appears in the log when switching the URL from SSH to HTTPS:
+When the cluster Git URL for syncing members is changed after a cluster has been setup and started, the nodes on the disk may contain the old URL format when starting up. The following error appears in the log when switching the URL from SSH to HTTPS:
 
    .. code-block:: text
 
