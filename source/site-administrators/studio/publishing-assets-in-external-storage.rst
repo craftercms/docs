@@ -41,6 +41,7 @@ To see more information on the Blob Stores configuration, see :ref:`blob-stores-
 
 After setting up the ``Blob Stores`` configuration, you may now use the external storage for uploading using the various upload methods provided by Crafter Studio, and publishing to live or staging if it's setup.
 
+.. _publishing-assets-in-external-storage-example:
 
 -------
 Example

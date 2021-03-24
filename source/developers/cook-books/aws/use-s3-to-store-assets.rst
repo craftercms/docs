@@ -15,6 +15,16 @@ explains how to:
 * Upload documents to the S3 bucket using the AWS data sources and item selector control in Studio.
 * Generate public links that users can use to access these documents.
 
+|
+|
+
+   .. note::
+      The preferred way to store S3 files is to use the Blob Store since it can handle multiple buckets and is completely integrated in Crafter Studio, allowing you to upload and publish files in S3 as if they were in the local repo.
+
+      For more information on Blob Store, see :ref:`blob-stores-configuration`
+
+      For an example of setting up a blob store, see :ref:`publishing-assets-in-external-storage-example`
+
 -------------
 Prerequisites
 -------------
