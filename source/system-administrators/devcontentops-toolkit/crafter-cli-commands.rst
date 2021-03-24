@@ -18,7 +18,9 @@ Crafter CLI Commands
 
    add-environment
    add-remote
+   copy-plugin
    create-site
    list-remotes
+   list-sites
    sync-from
    sync-to

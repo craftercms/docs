@@ -31,7 +31,7 @@ Options
 
        --config=path         The folder to store configurations
    -e, --environment=<environment>
-                            The name of the environment
+                             The name of the environment
        --key=<privateKey>    The path of the private key for authentication
    -n, --name=<remoteName>   The name of the remote repository
    -p, --profile=<profile>   The name of the profile
