@@ -16,7 +16,7 @@ New Features
 
 * New Crafter Studio features
 
-  - Added Crafter Studio multi-master clustering
+  - Added Crafter Studio clustering
   - Added Studio form engine TinyMCE 5 support
   - Added Studio upgrade engine that performs site and blueprint upgrades automatically moving forward
   - Added Video Center Blueprint, a live, live-to-VOD, and video serving site on Crafter CMS.
