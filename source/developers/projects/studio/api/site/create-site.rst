@@ -67,7 +67,6 @@ Parameters
 +----------------------+------------+----------------+--------------------------------------------------------------+
 || create_option       || String    || |checkmark| * || Create options for remote repository:                       |
 ||                     ||           ||               ||   ``clone``: clone from remote repository                   |
-||                     ||           ||               ||   ``push``: push to remote repository after creating site   |
 +----------------------+------------+----------------+--------------------------------------------------------------+
 || site_params         || Object    ||               || Object containing all parameters for the blueprint. It      |
 ||                     ||           ||               || should include all required parameters from the descriptor  |
@@ -79,7 +78,6 @@ Parameters
 .. note::
     ``*`` Required parameters:
         * some remote parameters are required if ``use_remote`` is true
-        * ``blueprint`` is required if ``use_remote`` is true and ``create_option`` is set to ``push``
         * ``blueprint`` is required if ``use_remote`` is false
         * ``authentication_type`` is required if ``authentication_type`` to be used is not ``none``
         * ``remote_username`` is required if ``authentication_type`` is set to ``basic``
@@ -106,34 +104,6 @@ Example of creating a site:
     "description" : "My very first site!",
     "blueprint" : "org.craftercms.blueprint.empty"
   }
-
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Create a site then push to remote
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Example of creating a site that is then pushed to a remote Git repository after creation:
-
-``POST .../api/1/services/api/1/site/create.json``
-
-.. code-block:: json
-
-  {
-    "site_id":"my-site",
-    "blueprint":"org.craftercms.blueprint.empty",
-    "description":"My very fist site!",
-    "use_remote":true,
-    "authentication_type":"basic",
-    "remote_name" : "upstream",
-    "remote_url":"https://github.com/craftercms/remoterepo.git",
-    "remote_username":"joe.bloggs",
-    "remote_password":"SuperSecret$$587",
-    "create_option":"push",
-    "site_params": {
-      "apiKey": "SuperSecretKey$$142"
-    }
-  }
-
 
 
 --------
