@@ -22,6 +22,43 @@ Crafter Engine also populates templates with other useful variables, described b
 
 .. include:: /includes/freemarker-variables.rst
 
+--------------------
+Rendering Components
+--------------------
+
+Crafter Engine provides the ``renderComponent`` macro that can be used to render components in any template:
+
+.. code-block:: html
+  :force:
+  :linenos:
+  :caption: Using the RenderComponent Macro
+
+  <!-- Render a component by referencing the path -->
+  <@renderComponent componentPath='/site/components/headers/header.xml' />
+
+  <!-- Render a component by referencing a shared component from the current item -->
+  <@renderComponent component=contentModel.mySharedComponent_o.item  />
+
+  <!-- Render a component by referencing an embedded component from the current item -->
+  <@renderComponent component=contentModel.myEmbeddedComponent_o.item />
+
+  <!-- Render an embedded component from another component instead of the current item -->
+  <#assign sharedItem = siteItemService.getSiteItem('/site/components/global.xml')/>
+  <@renderComponent parent=sharedItem component=sharedItem.myEmbeddedComponent_o.item />
+
+  <!-- Render a component passing additional variables -->
+  <!-- Inside the component's template 'theme' will be available as a global variable -->
+  <@renderComponent component=contentModel.myComponent.item additionalModel={ 'theme': contentModel.theme_s } />
+
+Parameters:
+
+* **componentPath**: a path for a shared component in the site
+* **component**: a XML node from a node selector field, supports both shared and embedded components
+* **parent**: the SiteItem to use as a parent in the case of embedded components (defaults to the current item
+  being rendered)
+* **additionalModel**: a Freemarker hash containing key-value pairs that can be used as global variables in the
+  component's template
+
 .. _templating-rendering-navigation:
 
 --------------------
