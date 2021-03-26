@@ -18,8 +18,8 @@ To enable Engine headers based authentication:
 - Set the URLs requiring authentication
 
 Additionally, optional role mappings are available that allows mapping names from the external authentication to
-simple role names to use in the page or url restrictions.  Optional attribute mappings are also available which
-allows exposing attributes from the external authentication.
+simple role names to use in the page or URL restrictions.  Optional attribute mappings are also available which
+allow exposing attributes from the external authentication authority.
 
 -------------------------------------------------
 Configure Engine for Headers Based Authentication
@@ -201,7 +201,7 @@ Open the Engine ``site-config.xml`` file in Studio, by navigating from the ``Sid
 You can also access the ``site-config.xml`` using your favorite editor under
 ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/site-config.xml``
 
-Add the following, where we are enabling Engine headers authentication and requiring authentication for all urls in the
+Add the following, where we are enabling Engine headers authentication and requiring authentication for all URLs in the
 site in addition to changing the default value for the token to ``my_updated_token``. :
 
    .. code-block:: xml
