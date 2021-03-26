@@ -32,6 +32,7 @@ Options
                              The name of the environment
    -p, --profile=<profile>   The name of the profile
        --password            The password for authentication
+       --token               The access token for authentication
    -u, --url=<url>           The URL of the server
        --username=<username> The username for authentication
 

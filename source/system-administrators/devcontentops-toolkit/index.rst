@@ -72,6 +72,8 @@ To view the available commands, type in ``./crafter-cli -h``
         list-remotes     List the remote repositories of a site
         sync-from        Sync the content of a site from a remote repository
         sync-to          Sync the content of a site to a remote repository
+        list-sites       List the sites that the current user can access
+        copy-plugin      Copies a plugin from a Studio local folder into a site
 
    |
 

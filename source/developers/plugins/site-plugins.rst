@@ -26,6 +26,8 @@ A site plugin can contain one or more extensions for Crafter CMS in a single pac
   * Add REST APIs and/or server-side code
   * Add 3rd party integrations to your web app
 
+.. _how-do-i-make-my-own-site-plugin:
+
 ---------------------------------
 How do I make my own site plugin?
 ---------------------------------
