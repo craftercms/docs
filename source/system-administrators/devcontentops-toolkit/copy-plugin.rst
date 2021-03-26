@@ -43,7 +43,10 @@ Example
 
    .. code-block:: bash
 
-      ➜  ./crafter-cli copy-plugin -e local -s editorial --path
-      Created
+      ➜  ./crafter-cli copy-plugin -e local -s editorial --path /users/myuser/myplugin
+      OK
 
    |
+
+
+See :ref:`how-do-i-make-my-own-site-plugin` for the folder structure required for your plugin and more information on creating a plugin
