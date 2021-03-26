@@ -65,11 +65,11 @@ See :ref:`engine-site-security-guide-restrict-urls` for more information on expr
 
 From the above configuration, here are the headers that Engine expects to be provided:
 
-- MELLON_secure_key (required)
-- MELLON_username (required)
-- MELLON_email (required)
-- MELLON_groups
-- MELLON_*
+- CRAFTER_secure_key (required)
+- CRAFTER_username (required)
+- CRAFTER_email (required)
+- CRAFTER_groups
+- CRAFTER_*
 
 It is also possible to change the prefix and names for the headers:
 
@@ -81,7 +81,7 @@ It is also possible to change the prefix and names for the headers:
      <headers>
        ...
        <names>
-        <!-- Prefix that will be used for all headers, defaults to 'MELLON_' -->
+        <!-- Prefix that will be used for all headers, defaults to 'CRAFTER_' -->
         <prefix>MY_APP_</prefix>
 
         <!-- Name for the header containing the username, defaults to 'username' -->
@@ -239,9 +239,9 @@ Now, try viewing the Home page without the header attributes required, by enteri
 
 This time, try viewing the Home page with the following header attributes and values:
 
-- MELLON_secure_key : my_updated_token
-- MELLON_username : jsmith
-- MELLON_email : jsmith@example.com
+- CRAFTER_secure_key : my_updated_token
+- CRAFTER_username : jsmith
+- CRAFTER_email : jsmith@example.com
 
 You should now see the Home page displayed
 
@@ -313,9 +313,9 @@ For the ``expression`` in the URL restriction, remember to escape the comma as s
 
 When we send the following headers:
 
-- MELLON_secure_key : my_updated_token
-- MELLON_username : jsmith
-- MELLON_email : jsmith@example.com
+- CRAFTER_secure_key : my_updated_token
+- CRAFTER_username : jsmith
+- CRAFTER_email : jsmith@example.com
 
 Notice that when we try to view an article, since the user does not have either ``admin`` or ``user`` role, the page
 is not available and will display the following message: ``The user doesn't have enough rights to access the page.``
@@ -332,10 +332,10 @@ In our example below, we tried previewing the article ``Top Books For Young Wome
 
 Let's now try sending the headers again, but this time with the role ``APP_USER`` for our user
 
-- MELLON_secure_key : my_updated_token
-- MELLON_username : jsmith
-- MELLON_email : jsmith@example.com
-- MELLON_groups: APP_USER
+- CRAFTER_secure_key : my_updated_token
+- CRAFTER_username : jsmith
+- CRAFTER_email : jsmith@example.com
+- CRAFTER_groups: APP_USER
 
 Notice that this time, we are able to preview the article correctly
 
@@ -376,11 +376,11 @@ The ``authToken.principal.attributes.name`` contains the value passed for ``APP_
 
 Let's now try sending the headers again, but this time with the attribute ``APP_FULL_NAME``
 
-- MELLON_secure_key : my_updated_token
-- MELLON_username : jsmith
-- MELLON_email : jsmith@example.com
-- MELLON_groups: APP_USER
-- MELLON_APP_FULL_NAME: John Smith
+- CRAFTER_secure_key : my_updated_token
+- CRAFTER_username : jsmith
+- CRAFTER_email : jsmith@example.com
+- CRAFTER_groups: APP_USER
+- CRAFTER_APP_FULL_NAME: John Smith
 
 Note that when sending the attribute ``APP_FULL_NAME`` in the header, the header prefix must be added as shown above.
 
