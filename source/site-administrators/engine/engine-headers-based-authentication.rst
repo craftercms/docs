@@ -10,7 +10,7 @@ Engine Headers Based Authentication
 
 Crafter Engine is able to integrate with any authentication system that sends custom HTTP headers containing
 information that will be used to authenticate the user in Engine.  This section details how to setup Engine for
- headers based authentication.
+headers based authentication.
 
 To enable Engine headers based authentication:
 
@@ -143,9 +143,9 @@ To add optional role mappings, add the following inside the ``<headers>`` tag:
 where:
 
 * **name**: The name of the group in the header.  The ``APP_`` prefix shown above is just an example and could be
- anything.
+  anything.
 * **role**: The name of the role in the authentication object.  Remember to add **ROLE_** to the name of the role in
- the authentication object.  So, if mapping the role ``user``, it will be ``<role>ROLE_user</role>``
+  the authentication object.  So, if mapping the role ``user``, it will be ``<role>ROLE_user</role>``
 
 ^^^^^^^^^^^^^^^^^^^
 Optional Attributes
@@ -176,7 +176,7 @@ To add optional attributes, add the following inside the ``<headers>`` tag:
 where:
 
 * **name**: The name of the attribute in the header.  The ``APP_`` prefix shown above is just an example and could be
-anything.
+  anything.
 * **field**: The name of the attribute in the authentication object.
 
 To get the value of the attribute passed in the header, use the following ``authToken.principal.attributes.FIELD_NAME``,
@@ -188,7 +188,7 @@ Example
 
 Let's take a look at an example of setting up Engine headers authentication using a site created using the Website
 Editorial blueprint named ``mysite``.  We will also change the default value for the token header. We'll then take a
- look at an example of setting up Engine headers authentication with optional role mappings and attribute.
+look at an example of setting up Engine headers authentication with optional role mappings and attribute.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -320,7 +320,7 @@ When we send the following headers:
 Notice that when we try to view an article, since the user does not have either ``admin`` or ``user`` role, the page
 is not available and will display the following message: ``The user doesn't have enough rights to access the page.``
 In our example below, we tried previewing the article ``Top Books For Young Women`` with the headers listed above and
- is shown the message below:
+is shown the message below:
 
 .. image:: /_static/images/site-admin/engine-headers-no-role.jpg
    :align: center
