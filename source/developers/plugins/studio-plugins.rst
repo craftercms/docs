@@ -23,12 +23,13 @@ Plugin Directory Structure
 
 When using plugins, the JavaScript files and folders location for the plugins uses a convention where the files/folders needs to go in the following location:
 
-* **Plugin** : $CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/config/studio/plugins/PLUGIN_TYPE/PLUGIN_NAME/PLUGIN_FILES_FOLDERS
+* **Plugin** : $CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/config/studio/plugins/PLUGIN_ID/PLUGIN_TYPE/PLUGIN_NAME/PLUGIN_FILES_FOLDERS
 
 where:
 
 - **CRAFTER_HOME** : Studio location
 - **SITE_NAME** : Name of site where the plugin is to be added
+- **PLUGIN_ID** : The id of the plugin (e.g. org.craftercms.plugin)
 - **PLUGIN_TYPE** : Type of plugin, e.g. control, datasource, sidebar, app, etc.
 - **PLUGIN_NAME** : Name of  plugin
 - **PLUGIN_FILES_FOLDERS** : JavaScript and/or plugin build output files/folders containing the plugin implementation

@@ -26,14 +26,110 @@ A site plugin can contain one or more extensions for Crafter CMS in a single pac
   * Add REST APIs and/or server-side code
   * Add 3rd party integrations to your web app
 
+----------
+Installing
+----------
+
+Once a site plugin is published to the Crafter CMS Marketplace it can be installed using Crafter Studio user interface
+or the REST API:
+
+   .. note::
+      To access the Plugin Management tool or use the install plugin REST API your user needs to have the following
+      permissions:
+
+      - ``list_plugins``
+      - ``install_plugins``
+
+
+
+#. Login to Crafter Studio
+#. Open the left sidebar by clicking on the Crafter logo with the hamburger icon next to it at the top left of your screen
+
+   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-sidebar.jpg
+      :align: center
+      :alt: Crafter Studio open the sidebar
+
+   |
+
+#. Open Site Tools
+
+   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-site-tools.jpg
+      :align: center
+      :alt: Crafter Studio Site Tools
+
+   |
+
+#. Open Plugin Management
+
+   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-management.jpg
+      :align: center
+      :alt: Crafter Studio Plugin Management
+
+   |
+
+#. Click ``Search & install``
+
+   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-search.png
+      :align: center
+      :alt: Crafter Studio Search Plugins
+
+   |
+
+#. Install the desired plugins by clicking on the ``Install`` button
+
+   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-install.png
+      :align: center
+      :alt: Crafter Studio Install Plugins
+
+   |
+
+   A snack bar informing the user of the plugin installation status (success/failure/etc.) will appear on the top right
+
+   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-snackbaar.png
+      :align: center
+      :alt: Crafter Studio Install Plugins Successful
+
+   |
+
+--------------------------
+Managing Installed Plugins
+--------------------------
+
+To view the installed plugins in your site, open the ``Sidebar``.  Click on ``Site Tools``, then ``Plugin Management``.
+
+.. figure:: /_static/images/developer/plugins/site-plugins/plugins-installed.png (get an updated screenshot)
+   :align: center
+   :alt: Crafter Studio Installed Plugins
+
+|
+
 .. _how-do-i-make-my-own-site-plugin:
 
 ---------------------------------
 How do I make my own site plugin?
 ---------------------------------
 
-A site plugin consist of a group of files that are copied to the site repository when installed, to create your own
-site plugin you only need to copy the files following this structure:
+^^^^^^^^^^^^
+Requirements
+^^^^^^^^^^^^
+You'll need the following for creating your plugin:
+
+* A plugin descriptor file, ``craftercms-plugin.yaml``
+* Your plugin files
+
+The ``craftercms-plugin.yaml`` file contains information about your plugin, such as what license your plugin supports,
+which versions of Crafter CMS is supported, which editions of Crafter CMS is supported, etc.
+
+See :ref:`craftercms-plugin-yaml-file` for more information on what's inside the plugin descriptor.
+
+Your plugin files/folders could be JavaScript files, XML files, etc. depending on the plugin type you're creating.
+
+^^^^^^^^^^^^^^^^^^^
+Directory Structure
+^^^^^^^^^^^^^^^^^^^
+
+A site plugin consist of a group of files that are copied to the site repository when installed.  To create your own
+site plugin, your files/folders needs to go in the corresponding type of plugin folder, following the structure below:
 
 - ``craftercms-plugin.yaml``: the plugin descriptor, see :ref:`craftercms-plugin-yaml-file` for details
 - ``authoring``: contains all files related to Crafter Studio extensions
@@ -96,59 +192,11 @@ the file:
 | ``delivery/scripts/rest/*``              | ``/scripts/rest/<plugin id path>/*``                          |
 +------------------------------------------+---------------------------------------------------------------+
 
+
+
 ----------
 Publishing
 ----------
 
 To publish a plugin in the Crafter CMS Marketplace you can follow the instructions in :ref:`marketplace_create_plugins`
 
-----------
-Installing
-----------
-
-Once a site plugin is published to the Crafter CMS Marketplace it can be installed using Crafter Studio user interface
-or the REST API:
-
-.. note::
-  To access the Plugin Management tool or use the install plugin REST API your user needs to have the following
-  permissions:
-
-  - ``list_plugins``
-  - ``install_plugins``
-
-|
-
-#. Login to Crafter Studio
-#. Open the left sidebar
-
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-sidebar.png
-    :align: center
-    :alt: Crafter Studio sidebar
-
-   |
-
-#. Open Site Tools
-
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-site-tools.png
-    :align: center
-    :alt: Crafter Studio Site Tools
-
-   |
-
-#. Open Plugin Management
-
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-management.png
-    :align: center
-    :alt: Crafter Studio Plugin Management
-
-   |
-
-#. Click ``Search & install``
-
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-search.png
-    :align: center
-    :alt: Crafter Studio Search Plugins
-
-   |
-
-#. Install the desired plugins
