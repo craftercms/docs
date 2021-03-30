@@ -9,8 +9,8 @@ Updates
 ^^^^^^^
 * Added support for configurable header names when using Engine header authentication |br|
 
-  The header prefix has been changed from ``MELLON_`` to ``CRAFTER_`` |br|
-  Remember to update your configuration to use the prefix ``CRAFTER_`` when using Engine header authentication. |br|
+  When using Engine header authentication, remember to update your SAML2 configuration to
+  use the prefix ``CRAFTER_``, or to update Engine to use your preferred prefix. |br|
 
   See :ref:`engine-headers-authentication` for more information on configuring header names
 
