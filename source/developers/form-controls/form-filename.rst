@@ -19,7 +19,7 @@ Example
 
 .. image:: /_static/images/form-controls/form-control-filename-example.png
     :width: 50%
-    :alt: Form Control Input 1
+    :alt: Form Control Filename Example
     :align: center
 
 -------------
@@ -28,7 +28,7 @@ Configuration
 
 .. image:: /_static/images/form-controls/form-control-filename-properties.png
     :width: 50%
-    :alt: Form Control Input 1
+    :alt: Form Control Filename Properties
     :align: center
 
 .. include:: /includes/form-controls/form-control-field-basics.rst

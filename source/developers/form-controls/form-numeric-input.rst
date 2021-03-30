@@ -19,7 +19,7 @@ Example
 
 .. image:: /_static/images/form-controls/form-control-numeric-input-example.png
         :width: 60%
-        :alt: Form Control Input 1
+        :alt: Form Control Numeric Input Example
         :align: center
 
 -------------

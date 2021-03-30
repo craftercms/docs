@@ -13,6 +13,15 @@
 Locale Selector Control
 =======================
 
+-------
+Example
+-------
+
+.. image:: /_static/images/form-controls/form-control-locale-selector-example.png
+      :width: 60%
+      :alt: Form Control - Locale Selector Control Example
+      :align: center
+
 -------------
 Configuration
 -------------

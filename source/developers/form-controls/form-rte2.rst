@@ -19,7 +19,7 @@ Example
 
 .. image:: /_static/images/form-controls/form-control-rte2-example.png
     :width: 50%
-    :alt: RTE (TinyMCE 5)
+    :alt: RTE (TinyMCE 5) Example
     :align: center
 
 -------------

@@ -18,7 +18,7 @@ Example
 -------
 .. image:: /_static/images/form-controls/form-control-transcoded-video-example.png
     :width: 80%
-    :alt: Form Control Dropdown
+    :alt: Form Control Transcoded Video Example
     :align: center
 
 -------------
@@ -26,7 +26,7 @@ Configuration
 -------------
 .. image:: /_static/images/form-controls/form-control-transcoded-video.png
     :width: 50%
-    :alt: Form Control Dropdown
+    :alt: Form Control Transcoded Video
     :align: center
 
 .. include:: /includes/form-controls/form-control-field-basics.rst

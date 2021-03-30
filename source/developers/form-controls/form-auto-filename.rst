@@ -19,7 +19,7 @@ Configuration
 
 .. image:: /_static/images/form-controls/form-control-autofilename-properties.png
     :width: 50%
-    :alt: Form Control Input 1
+    :alt: Form Control Autofilename Properties
     :align: center
 
 .. include:: /includes/form-controls/form-control-field-basics.rst

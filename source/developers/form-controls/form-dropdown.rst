@@ -19,7 +19,7 @@ Example
 
 .. image:: /_static/images/form-controls/form-control-dropdown-example.png
     :width: 30%
-    :alt: Form Control Dropdown
+    :alt: Form Control Dropdown Example
     :align: center
 
 -------------
@@ -28,7 +28,7 @@ Configuration
 
 .. image:: /_static/images/form-controls/form-control-dropdown.png
     :width: 50%
-    :alt: Form Control Dropdown
+    :alt: Form Control Dropdown Properties
     :align: center
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
