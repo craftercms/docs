@@ -20,7 +20,7 @@ Crafter CMS comes with tuckey filter, a Java Web Filter which allows you to rewr
 Redirect using a content type in Crafter CMS
 --------------------------------------------
 
-Another way to perform redirects is by using a ``/page/redirect`` content type containing a field named ``rewrite-url`` which Crafter Engine picks up, then acts on.  Let's take a look at an example where we want the URL **localhost:8080/fashion** to redirect to the category landing page for style **localhost:8080/style**
+Another way to perform redirects is by using a ``/page/redirect`` content type containing a field named ``redirect-url`` which Crafter Engine picks up, then acts on.  Let's take a look at an example where we want the URL **localhost:8080/fashion** to redirect to the category landing page for style **localhost:8080/style**
 
 Create content type for redirecting
 -----------------------------------
