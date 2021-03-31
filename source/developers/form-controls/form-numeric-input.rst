@@ -5,40 +5,41 @@
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. index:: Form Controls; Input
+.. index:: Form Controls; Numeric Input
 
-.. _form-input:
+.. _form-numeric-input:
 
-=============
-Input Control
-=============
+=====================
+Numeric Input Control
+=====================
 
 -------
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-input-example.png
-        :width: 50%
-        :alt: Form Control Input Example
+.. image:: /_static/images/form-controls/form-control-numeric-input-example.png
+        :width: 60%
+        :alt: Form Control Numeric Input Example
         :align: center
 
 -------------
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-input-1.png
-        :width: 50%
-        :alt: Form Control Input
+.. image:: /_static/images/form-controls/form-control-numeric-input.png
+        :width: 45%
+        :alt: Form Control Numeric Input Properties
         :align: center
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
 +------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Simple text input control.                                           |
+|| Description/Purpose   || Simple numeric input control.                                        |
 +------------------------+-----------------------------------------------------------------------+
 ||                       || * Display Size: How much of the input to show on the author input    |
 ||                       ||   form.                                                              |
-|| Properties            || * Max Length: Maximum number of characters to accept as input.       |
+|| Properties            || * Max Length: Maximum number of numeric characters to accept as input|
+||                       || * Min Length: Minimum number of numeric characters to accept as input|
 ||                       || * Read Only: Make field read-only (can't be changed by the author).  |
 ||                       || * Tokenize for Indexing: Make the object searchable by this field.   |
 +------------------------+-----------------------------------------------------------------------+
@@ -48,5 +49,5 @@ Configuration
 || Related Data Sources  || * None.                                                              |
 +------------------------+-----------------------------------------------------------------------+
 
-.. todo:: link the above to the Pencil Tool and other subjects to help with cross navigation
-.. seealso:: Links to Pencil Tool, other relevant topics
+.. .. todo:: link the above to the Pencil Tool and other subjects to help with cross navigation
+.. .. seealso:: Links to Pencil Tool, other relevant topics

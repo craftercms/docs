@@ -19,7 +19,7 @@ Example
 
 .. image:: /_static/images/form-controls/form-control-text-area-example.png
     :width: 50%
-    :alt: Form Control Input 1
+    :alt: Form Control Text Area Example
     :align: center
 
 -------------
@@ -28,7 +28,7 @@ Configuration
 
 .. image:: /_static/images/form-controls/form-control-text-area-properties.png
     :width: 50%
-    :alt: Form Control Input 1
+    :alt: Form Control Text Area
     :align: center
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
