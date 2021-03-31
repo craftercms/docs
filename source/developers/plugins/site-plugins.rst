@@ -85,8 +85,9 @@ or the REST API:
 
    A snack bar informing the user of the plugin installation status (success/failure/etc.) will appear on the top right
 
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-snackbaar.png
+   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-snackbar.png
       :align: center
+      :width: 40%
       :alt: Crafter Studio Install Plugins Successful
 
    |
@@ -97,7 +98,7 @@ Managing Installed Plugins
 
 To view the installed plugins in your site, open the ``Sidebar``.  Click on ``Site Tools``, then ``Plugin Management``.
 
-.. figure:: /_static/images/developer/plugins/site-plugins/plugins-installed.png (get an updated screenshot)
+.. figure:: /_static/images/developer/plugins/site-plugins/plugins-installed.jpg
    :align: center
    :alt: Crafter Studio Installed Plugins
 
