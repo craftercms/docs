@@ -13,7 +13,12 @@ Upgrade Notes for Re-encrypting Values
 
 Crafter CMS uses the Apache commons-codec library for encrypting/decrypting sensitive information.  Crafter CMS 3.1.8 and earlier versions was expecting the salt to be encoded in base64 but because of a bug in the Apache commons-codec library, invalid characters were being used to encrypt the values.
 
-To prevent this from causing issues, the upgrade manager will automatically re-encrypt values for installations upgraded to **Crafter CMS 3.1.9 and later 3.1.x** versions.
+To prevent this from causing issues, the upgrade manager will automatically re-encrypt values for installations upgraded to **Crafter CMS 3.1.9**.
+
+   .. important::
+      Crafter CMS versions later than 3.1.9 needs encrypted properties re-encrypted.
+
+      If you are upgrading to a version later than Crafter CMS 3.1.9, you need to **upgrade to Crafter CMS 3.1.9 first** before upgrading to a later version.
 
 However, there may be some cases that the upgrade manager may not be able to automatically re-encrypt values and a manual re-encryption will be required.  The range of valid base64 characters are: ``A–Z``, ``a–z``, ``0–9``, ``+``, ``/`` and ``=``.  If any of the values encrypted contained other characters aside from the ones previously listed, say an ``@`` character, the re-encryption process being performed by the upgrade manager will fail with a message that looks like the following:
 
