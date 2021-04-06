@@ -21,6 +21,8 @@ This section details the steps required to upgrade your Crafter CMS install.
 
     This guide also assumes that you are upgrading to version 3.1.1 or later. If you are upgrading to 3.1.0, the automatic upgrade scripts are not enabled and you will need to follow :ref:`these instructions<upgrade-to-3-1-0>` to upgrade manually.
 
+    If you are upgrading to version 3.1.10 or later release, you would need to upgrade to 3.1.9 first before upgrading to a later version.
+
 |
 
 ----------------
