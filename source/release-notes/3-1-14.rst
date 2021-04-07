@@ -22,8 +22,13 @@ Updates
   See `here <https://github.com/craftercms/craftercms/issues/4587>`__ for more information
 * Added support for encrypted properties when using CMIS |br|
   See `here <https://github.com/craftercms/craftercms/issues/4546>`__ for more information
-* Added support for RTE line wrap |br|
-  See `here <https://github.com/craftercms/craftercms/issues/4509>`__ for more information
+* RTE improvements
+
+  * Added support for RTE line wrap |br|
+    See `here <https://github.com/craftercms/craftercms/issues/4509>`__ for more information
+  * Added support for loading external plugins in the RTE |br|
+    See :ref:`adding-external-plugins` for more information
+
 
 Lot's of other small enhancements and bug fixes :)
 
@@ -37,6 +42,6 @@ For a full list of tickets, please visit: `GitHub 3.1.14 Milestone <https://gith
 
     For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
 
-    Please see :ref:`upgrade-notes-to-fix-backup-error` for some important notes when restoring backups created prior to Crafter CMS 3.1.10 and :ref:`upgrade-notes-for-re-encrypting-values` for some important notes on the re-encryption process performed by the upgrade manager on installations upgraded to Crafter CMS 3.1.9 and later 3.1.x versions.
+    Please see :ref:`upgrade-notes-to-fix-backup-error` for some important notes when restoring backups created prior to Crafter CMS 3.1.10 and :ref:`upgrade-notes-for-re-encrypting-values` for some important notes on the re-encryption process.
 
 
