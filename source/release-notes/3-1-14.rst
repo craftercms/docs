@@ -14,6 +14,8 @@ Updates
 
   See :ref:`engine-headers-authentication` for more information on configuring header names
 
+* Optimized Git sync for faster Git log syncing in Studio |br|
+  See `here <https://github.com/craftercms/craftercms/issues/4506>`__ for more information
 * Improved error messages that occur on write when system-processing is set to true |br|
   See `here <https://github.com/craftercms/craftercms/issues/4506>`__ for more information
 * Improved dashboard performance |br|
@@ -42,6 +44,8 @@ For a full list of tickets, please visit: `GitHub 3.1.14 Milestone <https://gith
 
     For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
 
-    Please see :ref:`upgrade-notes-to-fix-backup-error` for some important notes when restoring backups created prior to Crafter CMS 3.1.10 and :ref:`upgrade-notes-for-re-encrypting-values` for some important notes on the re-encryption process.
+    Please see :ref:`upgrade-notes-to-fix-backup-error` for some important notes when restoring backups created prior
+    to Crafter CMS 3.1.10, :ref:`upgrade-notes-for-re-encrypting-values` for some important notes on the re-encryption
+    process and :ref:`upgrade-notes-to-fix-stored-procedure-error` for some important notes on database errors.
 
 
