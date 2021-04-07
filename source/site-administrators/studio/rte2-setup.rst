@@ -148,6 +148,108 @@ You can also add custom elements to the rule set and can be done by simply addin
       :width: 85%
       :align: center
 
+   |
+
+.. _adding-external-plugins:
+
+^^^^^^^^^^^^^^^^^^^^^^^
+Adding External Plugins
+^^^^^^^^^^^^^^^^^^^^^^^
+
+TinyMCE provides an option to specify URLS to plugins outside the tinymce plugins directory.  These external plugins allows the user to extend TinyMCE.  For example, you can create custom dialogs, buttons, menu items, etc.
+
+To add an external plugin, use the tag ``<external_plugins />`` in the RTE configuration.  Use the Crafter Studio API that gets a file for a given plugin, the getPluginFile API found here https://app.swaggerhub.com/apis/craftercms/studio/3.1.14.0#/plugin/getPluginFile to get the Tiny MCE external plugin file to pass to the RTE.
+
+Example External Plugin
+^^^^^^^^^^^^^^^^^^^^^^^
+Let's take a look at an example of a simple external plugin that creates a custom button which inserts text in the RTE.
+We'll then load our external plugin then add the custom button to the RTE's toolbar.  For our example, we'll be using a site created using the empty blueprint named ``hello``.
+
+1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+
+2. First, we'll load the external plugin using the ``<external_plugins />`` tag and use the getPluginFile API to get the external plugin file for the RTE |br|
+
+   .. code-block:: xml
+
+      <external_plugins>
+        <my_button><![CDATA[/studio/1/plugin/file?siteId=hello&type=tinymce&name=my_button&filename=plugin.min.js]]></my_button>
+      </external_plugins>
+
+   |
+
+3. Next, we'll add the custom button we're creating to the toolbar of the RTE.  Scroll down to ``<toolbarItems2 />`` tag and add the custom button we are creating ``my_button``
+
+   .. code-block:: xml
+
+      <toolbarItems2>my_button</toolbarItems2>
+
+   |
+
+4. Finally, we'll create our plugin file and add it in to Studio.  See :ref:`studio-plugins` for more information on creating a Crafter Studio plugin.
+
+   * Using information from step 2 for our external plugin, create the required directory structure for the plugin file, then create our plugin file named ``plugin.min.js``
+
+     .. code-block:: js
+        :linenos:
+        :caption: *$CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/config/studio/plugins/tinymce/my_button/plugin.min.js*
+
+        (function () {
+
+          'use strict';
+
+          tinymce.PluginManager.add("my_button", function (editor, url) {
+
+            function _onAction()
+            {
+              // Write something in the RTE when the plugin is triggered
+              editor.insertContent("<p>Content added from my button.</p>")
+            }
+
+            // Define the Toolbar button
+            editor.ui.registry.addButton('my_button', {
+                text: "My Button",
+                onAction: _onAction
+            });
+          });
+
+          // Return details to be displayed in TinyMCE's "Help" plugin, if you use it
+          // This is optional.
+          return {
+            getMetadata: function () {
+              return {
+                name: "My Button example",
+                url: "http://exampleplugindocsurl.com"
+              };
+            }
+          };
+        })();
+
+     |
+
+   * Remember to commit the new file so Studio will pick it up by doing a ``git add`` then a ``git commit``.  Whenever you edit directly in the filesystem, you need to commit your changes to ensure they are properly reflected.
+
+5. Let's see see the TinyMCE external plugin we created in action.
+
+   Edit the ``Home`` page by opening the ``Sidebar`` then under ``Pages``, right-click on ``Home``, then select edit. |br|
+   Scroll down to the ``Main Content`` section of the form to view the RTE.  Notice that the button we created is in the toolbar.
+
+   .. figure:: /_static/images/site-admin/rte/rte-custom-button-added.jpg
+      :alt: RTE showing custom button
+      :width: 85%
+      :align: center
+
+   |
+
+   Click on our custom button in the RTE ``My Button``, and the line *Content added from my button.* will be inserted into the RTE
+
+   .. figure:: /_static/images/site-admin/rte/rte-custom-button-clicked.jpg
+      :alt: RTE custom button clicked - text inserted in RTE
+      :width: 85%
+      :align: center
+
+   |
+
+
 
 ---------------------
 Creating an RTE Setup
