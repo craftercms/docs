@@ -19,13 +19,28 @@ Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all confi
 ^^^^^^^^^^^^^^^
 TinyMCE plugins
 ^^^^^^^^^^^^^^^
-Crafter Studio uses standard TinyMCE plugins.  Please see https://www.tiny.cloud/docs/plugins/ for a list of available plugins.
+Crafter Studio uses standard TinyMCE plugins.  To see the list of TinyMCE plugins available in Studio, look for the ``<plugins />`` tag in the configuration:
+
+.. code-block:: xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-setup-tinymce5.xml*
+
+   <plugins>
+     print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template
+     codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount
+     textpattern help acecode
+   </plugins>
+
+|
+
+See https://www.tiny.cloud/docs/plugins/opensource/ for more information on the TinyMCE plugins.
 
 
 .. |rteMediaBtn| image:: /_static/images/site-admin/rte/rte2-media-button.png
-                     :width: 4%
+                   :width: 4%
 
-To use the TinyMCE plugins, add the names listed in the **toolbar** tag in the plugin documentation to one of the toolbarItem tags in the configuration: ``<toolbarItems1>``, ``<toolbarItems2>``, ``<toolbarItems3>`` or ``<toolbarItems4>``.
+To add TinyMCE plugins to the toolbar, add the names listed in the **toolbar** tag in the TinyMCE plugin documentation to one of the toolbarItem tags in the configuration: ``<toolbarItems1>``, ``<toolbarItems2>``, ``<toolbarItems3>`` or ``<toolbarItems4>``.
+
+See https://www.tiny.cloud/docs/configure/editor-appearance/#toolbarn for more information on the toolbar(n) option of Tiny MCE
 
 TinyMCE Plugin Example
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -41,7 +56,7 @@ The default editor instance contains a menubar with most of the commonly used ed
       :width: 45%
       :align: center
 
-|
+   |
 
 3. Save your changes, and your video should now be embedded in your page
 
@@ -50,7 +65,7 @@ The default editor instance contains a menubar with most of the commonly used ed
       :width: 65%
       :align: center
 
-|
+   |
 
 .. _rte-add-allowable-elements:
 
@@ -113,7 +128,7 @@ Let's take a look at an example of adding ``<script />`` to the allowable elemen
 
 Please note that TinyMCE gives this warning when allowing script elements (<script />):
 
-  .. Warning:: Allowing script elements (<script>) in TinyMCE exposes users to cross-site scripting (XSS) attacks.
+   .. Warning:: Allowing script elements (<script>) in TinyMCE exposes users to cross-site scripting (XSS) attacks.
 
 Example allowing a custom element
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -156,18 +171,23 @@ You can also add custom elements to the rule set and can be done by simply addin
 Adding External Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-TinyMCE provides an option to specify URLS to plugins outside the tinymce plugins directory.  These external plugins allows the user to extend TinyMCE.  For example, you can create custom dialogs, buttons, menu items, etc.
+TinyMCE provides an option to specify URLS to plugins outside the tinymce plugins directory.  These external plugins allow the user to extend TinyMCE.  For example, you can create custom dialogs, buttons, menu items, etc.
 
-To add an external plugin, use the tag ``<external_plugins />`` in the RTE configuration.  Use the Crafter Studio API that gets a file for a given plugin, the getPluginFile API found here https://app.swaggerhub.com/apis/craftercms/studio/3.1.14.0#/plugin/getPluginFile to get the Tiny MCE external plugin file to pass to the RTE.
+For more information on the Tiny MCE external_plugins option, see https://www.tiny.cloud/docs/configure/integration-and-setup/#external_plugins
+
+The Crafter Studio user does not have full control of the tinymce initialization.  To add a custom button to the toolbar in Crafter Studio, it would be done using the external plugin route since, what TinyMCE docs advise is not viable in Studio without doing a whole form control plugin where they'd have full control of tinymce initialization.
+
+To add an external plugin, use the tag ``<external_plugins />`` in the RTE configuration.
+Use the Crafter Studio API that gets a file for a given plugin, the getPluginFile API found here https://app.swaggerhub.com/apis/craftercms/studio/3.1.14.0#/plugin/getPluginFile to get the Tiny MCE external plugin file to pass to the RTE.
 
 Example External Plugin
 ^^^^^^^^^^^^^^^^^^^^^^^
 Let's take a look at an example of a simple external plugin that creates a custom button which inserts text in the RTE.
-We'll then load our external plugin then add the custom button to the RTE's toolbar.  For our example, we'll be using a site created using the empty blueprint named ``hello``.
+We'll load our external plugin (a custom button) and add it to the RTE's toolbar.  For our example, we'll be using a site created using the empty blueprint named ``hello``.
 
 1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
 
-2. First, we'll load the external plugin using the ``<external_plugins />`` tag and use the getPluginFile API to get the external plugin file for the RTE |br|
+2. We'll add the configuration for TinyMCE to load the plugin using Crafter Studio's getPluginFile API. We achieve this by using the ``<external_plugins />`` tag and adding child tags with the id of the plugin as tag name and the target URL as the tag's content |br|
 
    .. code-block:: xml
 
@@ -177,7 +197,7 @@ We'll then load our external plugin then add the custom button to the RTE's tool
 
    |
 
-3. Next, we'll add the custom button we're creating to the toolbar of the RTE.  Scroll down to ``<toolbarItems2 />`` tag and add the custom button we are creating ``my_button``
+3. Add the custom button we're creating to the toolbar of the RTE.  Scroll to the ``<toolbarItems2 />`` tag and add the custom button we are creating ``my_button``
 
    .. code-block:: xml
 
@@ -248,7 +268,6 @@ We'll then load our external plugin then add the custom button to the RTE's tool
       :align: center
 
    |
-
 
 
 ---------------------
@@ -331,15 +350,15 @@ Attaching an RTE in a Form to an RTE Setup
 To attach an RTE setup to an RTE in a form, open the content type that you want to add an RTE to, then go to the **Properties Explorer** and click on RTE Configuration and type in an RTE setup name.
 
 .. figure:: /_static/images/site-admin/rte/rte2-setup-form.png
-    :alt: RTE Setup - Add an RTE (TinyMCE 5) in the Form
-	:align: center
+   :alt: RTE Setup - Add an RTE (TinyMCE 5) in the Form
+   :align: center
 
 |
 
 In the image below, the RTE setup name used is **generic**.  Please see the section above on how to create an RTE Setup, where the example shows an RTE Setup named **generic**.
 
 .. figure:: /_static/images/site-admin/rte/rte2-setup-attach-config.png
-    :alt: RTE Setup - Attach an RTE in a Form to an RTE Setup
-	:align: center
-    :width: 50%
+   :alt: RTE Setup - Attach an RTE in a Form to an RTE Setup
+   :align: center
+   :width: 50%
 
