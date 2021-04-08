@@ -175,7 +175,7 @@ TinyMCE provides an option to specify URLS to plugins outside the tinymce plugin
 
 For more information on the Tiny MCE external_plugins option, see https://www.tiny.cloud/docs/configure/integration-and-setup/#external_plugins
 
-The Crafter Studio user does not have full control of the tinymce initialization.  To add a custom button to the toolbar in Crafter Studio, it would be done using the external plugin route since, what TinyMCE docs advise is not viable in Studio without doing a whole form control plugin where they'd have full control of tinymce initialization.
+The Crafter Studio developer does not have full control of the tinymce initialization.  To add a custom button to the toolbar in Crafter Studio, it would be done using the external plugin route since, what TinyMCE docs advise – i.e. using the ``setup`` function to add the button – is not viable in Studio without doing a whole :ref:`form control plugin <building-plugins-controls>` where they'd have full control of tinymce initialization.
 
 To add an external plugin, use the tag ``<external_plugins />`` in the RTE configuration.
 Use the Crafter Studio API that gets a file for a given plugin, the getPluginFile API found here https://app.swaggerhub.com/apis/craftercms/studio/3.1.14.0#/plugin/getPluginFile to get the Tiny MCE external plugin file to pass to the RTE.
@@ -192,7 +192,7 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
    .. code-block:: xml
 
       <external_plugins>
-        <my_button><![CDATA[/studio/1/plugin/file?siteId=hello&type=tinymce&name=my_button&filename=plugin.min.js]]></my_button>
+        <my_button><![CDATA[/studio/1/plugin/file?siteId=hello&type=tinymce&name=my_button&filename=plugin.js]]></my_button>
       </external_plugins>
 
    |
@@ -207,11 +207,11 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
 
 4. Finally, we'll create our plugin file and add it in to Studio.  See :ref:`studio-plugins` for more information on creating a Crafter Studio plugin.
 
-   * Using information from step 2 for our external plugin, create the required directory structure for the plugin file, then create our plugin file named ``plugin.min.js``
+   * Using information from step 2 for our external plugin, create the required directory structure for the plugin file, then create our plugin file named ``plugin.js``
 
      .. code-block:: js
         :linenos:
-        :caption: *$CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/config/studio/plugins/tinymce/my_button/plugin.min.js*
+        :caption: *$CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/config/studio/plugins/tinymce/my_button/plugin.js*
 
         (function () {
 
@@ -245,6 +245,8 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
         })();
 
      |
+
+     We recommend minimizing the ``plugin.js`` file. If your plugin is minimized, remember to change the external_plugins > my_button URL in the RTE configuration to load the minified version.
 
    * Remember to commit the new file so Studio will pick it up by doing a ``git add`` then a ``git commit``.  Whenever you edit directly in the filesystem, you need to commit your changes to ensure they are properly reflected.
 
