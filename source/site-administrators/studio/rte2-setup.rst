@@ -329,7 +329,7 @@ You can access the ``RTE (TinyMCE 5) Configuration`` file by going to the **Side
 
 |
 
-Inside the ``<config>`` tag, there can be multiple ``<setup>`` tags. Each represents a possible RTE configuration that can be specified to be used by a RTE control. Each possible RTE configuration contains:
+Inside the ``<config>`` tag, there can be multiple ``<setup>`` tags. Each represents a possible RTE configuration that can be specified to be used by a RTE control. To add your own configuration, create a new ``<setup>`` tag.  Each ``<setup>`` tag contains:
 
     * An ``<id>`` tag with the name that must be specified for an RTE control to use this configuration.
     * ``<rteStylesheets>`` tag that may contain multiple ``<link>`` tags. Each link tag represents a link to a CSS stylesheet that will be used so that the RTE matches the look and feel of the site.
@@ -342,8 +342,8 @@ Inside the ``<config>`` tag, there can be multiple ``<setup>`` tags. Each repres
         </link>
 
     * ``<rteStyleOverride>`` tag that may contain other tags for changing the looks and feel of your site.
-    * ``<plugins>`` contains the plugins available to the editor.  You can specify any plugin as named in `Tiny MCE Plugins List <https://www.tiny.cloud/docs/plugins/>`_.
-    * ``<toolbarItems1>`` and similar contain the toolbar buttons in the RTE. You can specify any plugin toolbar item listed in the plugins above.  They will be featured in the same order as specified here, and separators can be specified with ``|``.
+    * ``<plugins>`` contains the plugins available to the editor.  You can specify any plugin as named in `Tiny MCE Plugins List <https://www.tiny.cloud/docs/plugins/>`_. Separate items from one another with a space `` ``.
+    * ``<toolbarItems1>`` and similar contain the toolbar buttons in the RTE. You can specify any plugin toolbar item listed in the plugins above.  They will be featured in the same order as specified here, and separators can be specified with ``|``. Separate toolbar items as well as ``|`` separators from one another with a space `` ``.
 
 ------------------------------------------
 Attaching an RTE in a Form to an RTE Setup
