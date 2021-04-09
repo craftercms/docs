@@ -19,7 +19,7 @@ Example
 
 .. image:: /_static/images/form-controls/form-control-checkbox-example.png
     :width: 30%
-    :alt: Form Control Checkbox
+    :alt: Form Control Checkbox Example
     :align: center
 
 -------------
@@ -28,7 +28,7 @@ Configuration
 
 .. image:: /_static/images/form-controls/form-control-checkbox-properties.png
     :width: 50%
-    :alt: Form Control Checkbox
+    :alt: Form Control Checkbox Properties
     :align: center
 
 .. include:: /includes/form-controls/form-control-field-basics.rst

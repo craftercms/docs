@@ -5,40 +5,40 @@
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. index:: Form Controls; Page Order
+.. index:: Form Controls; Locale Selector
 
-.. _form-page-order:
+.. _form-locale-selector:
 
-==================
-Page Order Control
-==================
+=======================
+Locale Selector Control
+=======================
 
 -------
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-page-order-example.png
-    :width: 30%
-    :alt: Form Control Page Order Example
-    :align: center
+.. image:: /_static/images/form-controls/form-control-locale-selector-example.png
+      :width: 60%
+      :alt: Form Control - Locale Selector Control Example
+      :align: center
 
 -------------
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-page-order-properties.png
+.. image:: /_static/images/form-controls/form-control-locale-selector-properties.png
     :width: 50%
-    :alt: Form Control Page Order
+    :alt: Form Control Locale Selector Properties
     :align: center
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
 +------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Control that allows changing the page order.                         |
+|| Description/Purpose   || Indicates locale used for content                                    |
 +------------------------+-----------------------------------------------------------------------+
-||                       || * Read Only: Make field read-only (can't be changed by the author).  |
+|| Properties            || * Read Only: Make field read-only (can't be changed by the author).  |
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || * Required: Make field required to fill out.                         |
 +------------------------+-----------------------------------------------------------------------+
-|| Related Data Sources  || None.                                                                |
+|| Related Data Sources  || None                                                                 |
 +------------------------+-----------------------------------------------------------------------+

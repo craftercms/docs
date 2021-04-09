@@ -19,7 +19,7 @@ Example
 
 .. image:: /_static/images/form-controls/form-control-grouped-checkboxes-example.png
     :width: 50%
-    :alt: Form Control Grouped Checkboxes
+    :alt: Form Control Grouped Checkboxes Example
     :align: center
 
 -------------
@@ -28,7 +28,7 @@ Configuration
 
 .. image:: /_static/images/form-controls/form-control-grouped-checkboxes.png
     :width: 50%
-    :alt: Form Control Grouped Checkboxes
+    :alt: Form Control Grouped Checkboxes Properties
     :align: center
 
 .. include:: /includes/form-controls/form-control-field-basics.rst

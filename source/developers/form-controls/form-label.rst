@@ -19,7 +19,7 @@ Example
 
 .. image:: /_static/images/form-controls/form-control-label-example.png
     :width: 50%
-    :alt: Form Control Input 1
+    :alt: Form Control Label Example
     :align: center
 
 -------------
@@ -28,7 +28,7 @@ Configuration
 
 .. image:: /_static/images/form-controls/form-control-label-properties.png
     :width: 50%
-    :alt: Form Control Input 1
+    :alt: Form Control Label
     :align: center
 
 .. include:: /includes/form-controls/form-control-field-basics.rst

@@ -19,7 +19,7 @@ Example
 
 .. image:: /_static/images/form-controls/form-control-item-selector-example.png
     :width: 50%
-    :alt: Form Control Item Selector
+    :alt: Form Control Item Selector Example
     :align: center
 
 -------------
@@ -28,7 +28,7 @@ Configuration
 
 .. image:: /_static/images/form-controls/form-control-item-selector.png
     :width: 50%
-    :alt: Form Control Item Selector
+    :alt: Form Control Item Selector Properties
     :align: center
 
 .. include:: /includes/form-controls/form-control-field-basics.rst

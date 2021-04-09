@@ -174,7 +174,7 @@ controller then must be placed in Scripts > controllers > sitemap.groovy. The co
         }
     }
 
-    response.flush()
+    response.flushBuffer()
 
     return null
 

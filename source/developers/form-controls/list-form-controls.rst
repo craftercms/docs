@@ -5,15 +5,19 @@
              :alt: Form Controls - Form Section
 
 .. |ctlRepeatGrp| image:: /_static/images/form-controls/ctl-repeat-grp.png
-             :width: 70%
+             :width: 75%
              :alt: Form Controls - Repeating Group
 
 .. |ctlInput| image:: /_static/images/form-controls/ctl-input.png
              :width: 35%
              :alt: Form Controls - Input
 
+.. |ctlNumericInput| image:: /_static/images/form-controls/ctl-numeric-input.png
+             :width: 65%
+             :alt: Form Controls - Numeric Input
+
 .. |ctlTxtArea| image:: /_static/images/form-controls/ctl-text-area.png
-             :width: 50%
+             :width: 45%
              :alt: Form Controls - Text Area
 
 .. |ctlRTE| image:: /_static/images/form-controls/ctl-rte.png
@@ -27,6 +31,10 @@
 .. |ctlDropdown| image:: /_static/images/form-controls/ctl-dropdown.png
              :width: 55%
              :alt: Form Controls - Dropdown
+
+.. |ctlTime| image:: /_static/images/form-controls/ctl-time.png
+             :width: 35%
+             :alt: Form Controls - Time
 
 .. |ctlDtTime| image:: /_static/images/form-controls/ctl-date-time.png
              :width: 60%
@@ -72,6 +80,13 @@
              :width: 65%
              :alt: Form Controls - Auto Filename
 
+.. |ctlInternalName| image:: /_static/images/form-controls/ctl-internal-name.png
+             :width: 65%
+             :alt: Form Controls - Internal Name
+
+.. |ctlLocaleSel| image:: /_static/images/form-controls/ctl-locale-selector.png
+             :width: 65%
+             :alt: Form Controls - Locale Selector
 
 +------------------------+-----------------------------------------------------------------------+
 || Control               || Description                                                          |
@@ -90,6 +105,10 @@
 || |ctlInput|            ||  A simple textual input line.                                        |
 ||                       ||                                                                      |
 ||                       ||  Details are in the :ref:`form-input` page.                          |
++------------------------+-----------------------------------------------------------------------+
+|| |ctlNumericInput|     ||  A simple numeric input line.                                        |
+||                       ||                                                                      |
+||                       ||  Details are in the :ref:`form-numeric-input` page.                  |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlTxtArea|          ||  A simple block of plain text.                                       |
 ||                       ||                                                                      |
@@ -110,6 +129,10 @@
 || |ctlDtTime|           ||  Date and Time field with a picker.                                  |
 ||                       ||                                                                      |
 ||                       ||  Details are in the :ref:`form-date-time` page.                      |
++------------------------+-----------------------------------------------------------------------+
+|| |ctlTime|             ||  Time field with a picker.                                           |
+||                       ||                                                                      |
+||                       ||  Details are in the :ref:`form-time` page.                           |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlCheckBox|         ||  True/False checkbox.                                                |
 ||                       ||                                                                      |
@@ -135,19 +158,27 @@
 ||                       ||                                                                      |
 ||                       ||  Details are in the :ref:`form-transcoded-video` page.               |
 +------------------------+-----------------------------------------------------------------------+
-|| |ctlLabel|            ||                                                                      |
+|| |ctlLabel|            || Displays text                                                        |
 ||                       ||                                                                      |
 ||                       || Details are in the :ref:`form-label` page.                           |
 +------------------------+-----------------------------------------------------------------------+
-|| |ctlPageOrder|        ||                                                                      |
+|| |ctlPageOrder|        || Allows changing the page order                                       |
 ||                       ||                                                                      |
 ||                       || Details are in the :ref:`form-page-order` page.                      |
 +------------------------+-----------------------------------------------------------------------+
-|| |ctlFileName|         ||                                                                      |
+|| |ctlFileName|         || A simple text filename                                               |
 ||                       ||                                                                      |
 ||                       || Details are in the :ref:`form-filename` page.                        |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlAutoFn|           ||                                                                      |
 ||                       ||                                                                      |
 ||                       || Details are in the :ref:`form-auto-filename` page.                   |
++------------------------+-----------------------------------------------------------------------+
+|| |ctlInternalName|     ||                                                                      |
+||                       ||                                                                      |
+||                       || Details are in the :ref:`form-internal-name` page.                   |
++------------------------+-----------------------------------------------------------------------+
+|| |ctlLocaleSel|        ||                                                                      |
+||                       ||                                                                      |
+||                       || Details are in the :ref:`form-locale-selector` page.                 |
 +------------------------+-----------------------------------------------------------------------+
