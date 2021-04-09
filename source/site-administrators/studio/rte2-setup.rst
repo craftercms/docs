@@ -175,7 +175,7 @@ TinyMCE provides an option to specify URLS to plugins outside the tinymce plugin
 
 For more information on the Tiny MCE external_plugins option, see https://www.tiny.cloud/docs/configure/integration-and-setup/#external_plugins
 
-The Crafter Studio developer does not have full control of the tinymce initialization.  To add a custom button to the toolbar in Crafter Studio, it would be done using the external plugin route since, what TinyMCE docs advise – i.e. using the ``setup`` function to add the button – is not viable in Studio without doing a whole :ref:`form control plugin <building-plugins-controls>` where they'd have full control of tinymce initialization.
+The Crafter Studio developer does not have full control of the tinymce initialization.  To add a custom button to the toolbar in Crafter Studio, it would be done using the external plugin route since, what TinyMCE docs advise – i.e. using the ``setup`` function to add the button – is not viable in Studio without creating a :ref:`form control plugin <building-plugins-controls>` where they'd have full control of tinymce initialization.
 
 To add an external plugin, use the tag ``<external_plugins />`` in the RTE configuration.
 Use the Crafter Studio API that gets a file for a given plugin, the getPluginFile API found here https://app.swaggerhub.com/apis/craftercms/studio/3.1.14.0#/plugin/getPluginFile to get the Tiny MCE external plugin file to pass to the RTE.
@@ -250,7 +250,7 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
 
    * Remember to commit the new file so Studio will pick it up by doing a ``git add`` then a ``git commit``.  Whenever you edit directly in the filesystem, you need to commit your changes to ensure they are properly reflected.
 
-5. Let's see see the TinyMCE external plugin we created in action.
+5. Let's see the TinyMCE external plugin we created in action.
 
    Edit the ``Home`` page by opening the ``Sidebar`` then under ``Pages``, right-click on ``Home``, then select edit. |br|
    Scroll down to the ``Main Content`` section of the form to view the RTE.  Notice that the button we created is in the toolbar.
