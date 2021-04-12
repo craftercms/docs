@@ -34,12 +34,31 @@ It also allows the user to **Start** or **Stop** Studio publishing
     :alt: Site Config Publishing - Status
 	:align: center
 
+|
+
+Publishing is locked when content is being published.  From the Status tab, you can unlock publishing by clicking on the ``unlock`` button that is displayed during content publishing.
+
+.. image:: /_static/images/site-admin/site-config-unlock-publish.png
+    :alt: Site Config Publishing - Unlock icon
+ 	:align: center
+
+|
+
+After clicking on the ``unlock`` button, the user will be prompted to confirm the action:
+
+.. image:: /_static/images/site-admin/site-config-unlock-publish-confirm.png
+    :alt: Site Config Publishing - Unlock icon
+    :width: 50%
+    :align: center
+
+|
 
 ------------
 Bulk Publish
 ------------
 
-The **Bulk Publish** tab allows the user to publish multiple items under the specified path.  For example, using the Website Editorial blueprint, to publish all the articles in the year 2017, in the **Path to Publish** field, enter ``/site/website/articles/2017``.  To publish everything in your site, the user will enter ``/`` in the **Path to Publish** field
+The **Bulk Publish** tab allows the user to publish multiple items under the specified path.
+For example, using the Website Editorial blueprint, to publish all the articles in the year 2017, in the **Path to Publish** field, enter ``/site/website/articles/2017``.  To publish everything in your site, the user will enter ``/`` in the **Path to Publish** field
 
 .. image:: /_static/images/site-admin/site-config-publish-bulk.png
     :alt: Site Config Publishing - Bulk Publishing
