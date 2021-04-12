@@ -152,6 +152,8 @@ Publishing Issues Caused by 'Ghost' Content in Database
 
     DELETE FROM item_metadata WHERE site = 'mysite' and path = 'ghostcontent';
 
+|
+
 ----------------------------------------
 Publishing Issues Upon a Cluster Restart
 ----------------------------------------
