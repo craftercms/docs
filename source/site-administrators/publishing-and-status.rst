@@ -39,7 +39,9 @@ It also allows the user to **Start** or **Stop** Studio publishing
 Bulk Publish
 ------------
 
-The **Bulk Publish** tab allows the user to publish multiple items under the specified path.  For example, using the Website Editorial blueprint, to publish all the articles in the year 2017, in the **Path to Publish** field, enter ``/site/website/articles/2017``.  To publish everything in your site, the user will enter ``/`` in the **Path to Publish** field
+The **Bulk Publish** tab allows the user to publish multiple items under the specified path.  Bulk publish should be used to publish changes made in Studio via the UI.
+
+For example, using the Website Editorial blueprint, to publish all the articles in the year 2017, in the **Path to Publish** field, enter ``/site/website/articles/2017``.  To publish everything in your site, the user will enter ``/`` in the **Path to Publish** field
 
 .. image:: /_static/images/site-admin/site-config-publish-bulk.png
     :alt: Site Config Publishing - Bulk Publishing
@@ -49,11 +51,17 @@ The **Bulk Publish** tab allows the user to publish multiple items under the spe
 Publish by Commit ID(s)
 -----------------------
 
-Crafter Studio also allows the user to publish commits from sandbox repository by commit id.
+Crafter Studio also allows the user to publish commits from sandbox repository by commit id.  Publish by commit ID(s) must be used for changes made via direct git actions against the repository or pulled from a remote repository.
 
 .. image:: /_static/images/site-admin/site-config-publish-commit-id.png
     :alt: Site Config Publishing - Publish by Commit ID(s)
 	:align: center
+
+|
+
+   .. include:: /includes/git-changes-note.rst
+
+|
 
 To publish by commit id, let's use a site created using the Website Editorial blueprint and follow the steps below:
 
