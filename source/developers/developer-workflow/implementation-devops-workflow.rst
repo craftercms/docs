@@ -21,6 +21,10 @@ For the sake of review below is the diagram that illustrates the full workflow.
      :width: 80 %
      :align: center
 
+|
+
+   .. include:: /includes/git-changes-note.rst
+
 ------------------------------------------
 GitFlow, the Process and GitFlow, the Tool
 ------------------------------------------
