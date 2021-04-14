@@ -151,3 +151,15 @@ Publishing Issues Caused by 'Ghost' Content in Database
     DELETE FROM item_state WHERE site = 'mysite' and path = 'ghostcontent';
 
     DELETE FROM item_metadata WHERE site = 'mysite' and path = 'ghostcontent';
+
+|
+
+----------------------------------------
+Publishing Issues Upon a Cluster Restart
+----------------------------------------
+
+It's possible for the publisher to lock itself out upon a cluster restart where the nodes are based on k8s and IP/identifiers change with every restart.
+
+To unlock publishing, open the ``Sidebar`` in Studio, then click on ``Site Config`` ->  ``Publishing``.  Click on the ``Status`` tab then click on the ``unlock publishing`` button (button with open padlock).  Next, follow the instructions in the dialog to confirm action in order to unlock the publisher.
+
+See :ref:`publishing-status` for more details on the unlock publisher button.
