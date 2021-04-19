@@ -31,6 +31,22 @@ Updates
   * Added support for loading external plugins in the RTE |br|
     See :ref:`adding-external-plugins` for more information
 
+* Upgraded AWS SDK library to 1.11.994 in various projects
+* Fixed Grab imports failing in the scriptProcessor |br|
+  Remember that the grab must contain the following: ``initClass=false``
+
+     .. code-block:: groovy
+
+         @Grapes(
+             @Grab(group='com.akamai.edgegrid', module='edgegrid-signer-core', version='4.0.1', initClass=false)
+         )
+
+     |
+
+  See `here <https://github.com/craftercms/craftercms/issues/4614>`__ for more information
+
+
+
 
 Lot's of other small enhancements and bug fixes :)
 
