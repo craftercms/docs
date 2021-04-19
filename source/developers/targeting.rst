@@ -440,3 +440,145 @@ in the page (articles tagged for category Health).
     :width: 80 %
     :align: center
 
+|
+
+---------------------
+Targeting Using Roles
+---------------------
+
+Another way of organizing content is by targeting pages based on role(s).  First, decide on the roles you'd
+like to use.  After deciding on the roles, we will now work on adding in metadata to our site that content
+authors can use. Using the Website Editorial blueprint, for example, we can have the following roles for targeting purposes:
+
+- ROLE_user
+- ROLE_admin
+- ROLE_editor
+
+^^^^^^^^^^^
+Configuring
+^^^^^^^^^^^
+
+Let's configure targeting based on roles by clicking on |siteConfig| in the Sidebar, then clicking on
+**Configuration** and finally selecting **Targeting Configuration** from the dropdown box.
+Below is the configuration for roles using the Website Editorial blueprint.
+
+.. code-block:: xml
+   :caption: **Example setting up targeting based on roles - targeting-config.xml**
+   :linenos:
+
+   <property>
+      <name>roles</name>
+      <label>Role</label>
+      <description>User role, e.g. ROLE_admin</description>
+      <type>input</type> <!-- valid types: dropdown, input -->
+      <default_value></default_value>
+      <hint>Setting the role will change content available based on role selected.</hint>
+   </property>
+
+|
+
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Model Criteria in Content
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We will now see how to add the role(s) into a page.  From the Sidebar, click
+on |siteConfig|, next click on **Content Types**.  Click on **Open Existing Types**, then select
+**Page - Articles**
+
+.. figure:: /_static/images/targeting/tagging-segments-model-open.png
+   :alt: Targeting - Open Model Categories
+   :width: 80 %
+   :align: center
+
+|
+
+From the Controls list on the right, select ``Repeating Group`` and add it to the ``Metadata`` Form Section.
+In the ``Repeating Group`` properties, set the Title field to “Authorized Roles” and the Name / Variable Name field to “authorizedRoles.”
+
+.. image:: /_static/images/site-admin/authorized_roles_properties.png
+   :alt: Engine Site Security Guide - Authorized Roles Properties
+
+|
+
+   .. warning::
+      The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by Crafter CMS.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
+
+      Remember that the values in ``authorizedRoles`` need to include the ``ROLE_`` prefix
+
+Add an Input control inside the Repeating Group, with the **Title** field set to "Role" and the **Name / Variable
+Name** field set to "role". Make this Input required by checking the checkbox under **Constraints** in the
+**Required** field in the **Properties Explorer**.
+
+.. image:: /_static/images/site-admin/role_properties.png
+   :alt: Engine Site Security Guide - Role Properties
+
+|
+
+    .. warning::
+       The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_s``, as the ``role`` variable name is used by Crafter CMS for enforcing access to a page.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
+
+
+^^^^^^^^^^^^^^^^^^
+Update the Content
+^^^^^^^^^^^^^^^^^^
+
+Now that we have modeled the criteria, we can now target content. When you create a new article page,
+you will see the repeating group control that we added in the previous section, in the Metadata section,
+ready for the content author to input which role is authorized to preview the page. We will look at one of the
+articles in the blueprint, "Top Books For Young Women" as an example of targeting content based on a
+role. Click on the article from the Sidebar, then click on **Edit** in the context nav.
+Scroll down to the ``Metadata`` section in the form to the ``Authorized Roles`` field.  Click on ``Add First Item``
+
+.. figure:: /_static/images/targeting/tagging-roles-tag-content-1.png
+   :alt: Targeting - Authorized Roles Metadata in Content
+   :width: 60 %
+   :align: center
+
+|
+
+Let's setup the page to be available to users with the role ``user``.  Remember to use the prefix ``ROLE_`` for the values in ``authorizedRoles``
+
+.. figure:: /_static/images/targeting/tagging-roles-tag-content-2.png
+   :alt: Targeting - Authorized Roles Metadata in Content
+   :width: 60 %
+   :align: center
+
+|
+
+^^^^^^^^^^^^^^^^^^^^^^^^
+Build Dynamic Components
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+After targeting the content, we will now see how we can display pages depending on which role a
+user has. Let's take a look at the home page of the Website Editorial blueprint. We are browsing
+as a user with the role ``ROLE_user``,
+
+.. figure:: /_static/images/targeting/tagging-roles-targeting.png
+    :alt: Targeting - Set role ROLE_user
+    :width: 50 %
+    :align: center
+
+|
+
+and we're looking at the ``Entertainment`` category page.  Notice that the article we setup with role ``ROLE_user`` is listed:
+
+.. figure:: /_static/images/targeting/tagging-roles-entertainment-page.jpg
+    :alt: Targeting - Entertainment category landing page with role targeting set to ROLE_user
+    :width: 80 %
+    :align: center
+
+|
+
+By using ``authorizedRoles`` (Used to restrict pages based on roles) and
+``role`` (Contains the role required to access a page) reserved variables, access to pages can be restricted based on whether a user has a certain role.
+
+Now, let's change the role to ``ROLE_admin`` and notice that the article ``Top Books For Young Women`` is not listed
+in the ``Entertainment`` category page.
+
+.. figure:: /_static/images/targeting/tagging-roles-entertainment-page-2.jpg
+    :alt: Targeting - Entertainment category landing page with role targeting set to ROLE_user
+    :width: 80 %
+    :align: center
+
+|
+
