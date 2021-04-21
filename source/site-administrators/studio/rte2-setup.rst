@@ -192,10 +192,15 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
    .. code-block:: xml
 
       <external_plugins>
-        <my_button><![CDATA[/studio/1/plugin/file?siteId=hello&type=tinymce&name=my_button&filename=plugin.js]]></my_button>
+        <my_button><![CDATA[/studio/1/plugin/file?siteId={site}&type=tinymce&name=my_button&filename=plugin.js]]></my_button>
       </external_plugins>
 
    |
+
+   where:
+
+      {site}: a macro that inserts the current siteId
+
 
 3. Add the custom button we're creating to the toolbar of the RTE.  Scroll to the ``<toolbarItems2 />`` tag and add the custom button we are creating ``my_button``
 
