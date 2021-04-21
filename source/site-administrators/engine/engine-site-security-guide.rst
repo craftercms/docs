@@ -92,7 +92,7 @@ the next steps to create in the page content type a Repeating Group with a text 
        .. warning::
            The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by Crafter CMS.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
 
-           Remember that the values in ``authorizedRoles`` need to include the ``ROLE_`` prefix
+           The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
 
 #.  Add an Input control inside the Repeating Group, with the **Title** field set to "Role" and the **Name / Variable
     Name** field set to "role". Make this Input required by checking the checkbox under **Constraints** in the 

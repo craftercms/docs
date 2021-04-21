@@ -503,7 +503,7 @@ In the ``Repeating Group`` properties, set the Title field to “Authorized Role
    .. warning::
       The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by Crafter CMS.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
 
-      Remember that the values in ``authorizedRoles`` need to include the ``ROLE_`` prefix
+      The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
 
 Add an Input control inside the Repeating Group, with the **Title** field set to "Role" and the **Name / Variable
 Name** field set to "role". Make this Input required by checking the checkbox under **Constraints** in the
@@ -536,7 +536,7 @@ Scroll down to the ``Metadata`` section in the form to the ``Authorized Roles`` 
 
 |
 
-Let's setup the page to be available to users with the role ``user``.  Remember to use the prefix ``ROLE_`` for the values in ``authorizedRoles``
+Let's setup the page to be available to users with the role ``user``.  The prefix ``ROLE_`` for the values in ``authorizedRoles`` is optional.
 
 .. figure:: /_static/images/targeting/tagging-roles-tag-content-2.png
    :alt: Targeting - Authorized Roles Metadata in Content
