@@ -86,6 +86,10 @@ with ``authToken`` if possible:
 ||                          || Crafter Security Provider            ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
 
+   .. note::
+      The variables ``profile`` and ``authentication`` listed  above will be null in most cases and should not be used anymore
+
+
 The following variables are restricted by default, to use them see :ref:`access-to-services`
 
 +---------------------------+---------------------------------------+------------------------------------+
