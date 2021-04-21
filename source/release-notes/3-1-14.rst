@@ -31,7 +31,7 @@ Updates
   * Added support for loading external plugins in the RTE |br|
     See :ref:`adding-external-plugins` for more information
 
-* Upgraded AWS SDK library to 1.11.994 in various projects
+* Upgraded AWS SDK library to 1.11.1000 in various projects
 * Fixed Grab imports failing in the scriptProcessor |br|
   Remember that the grab must contain the following: ``initClass=false``
 
