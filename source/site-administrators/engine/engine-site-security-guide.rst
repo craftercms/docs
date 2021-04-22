@@ -87,8 +87,12 @@ the next steps to create in the page content type a Repeating Group with a text 
     .. image:: /_static/images/site-admin/authorized_roles_properties.png
         :alt: Engine Site Security Guide - Authorized Roles Properties
 
-    .. warning::
-        The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by Crafter CMS.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
+    |
+
+       .. warning::
+          The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by Crafter CMS.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
+
+          The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
 
 #.  Add an Input control inside the Repeating Group, with the **Title** field set to "Role" and the **Name / Variable
     Name** field set to "role". Make this Input required by checking the checkbox under **Constraints** in the 
@@ -190,6 +194,11 @@ you will need to replace all uses of the ``profile`` and ``authentication`` vari
 In templates and scripts you can replace all uses of ``profile`` with ``authToken`` and ``profile.attributes`` with
 ``authToken.principal.attributes``.
 
-.. note:: Some advanced uses like custom security filters will need to be updated to integrate with Spring Security
+   .. note:: Some advanced uses like custom security filters will need to be updated to integrate with Spring Security
+
+|
+
+   .. important::
+      **The variables** ``profile`` **and** ``authentication`` **will be null in most cases and should not be used anymore**
 
 .. |CustomUser| replace:: :javadoc_base_url:`CustomUser <engine/org/craftercms/engine/util/spring/security/CustomUser.html>`
