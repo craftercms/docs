@@ -25,7 +25,7 @@ Add the following lines with the regex for the item you wish not to be published
 
    |
 
-Items in the publishing blacklist will not be published but will instead be marked as published and logged in the tomcat log, why the item was not published.
+Items in the publishing blacklist will not be published but will instead be marked as published and logged (debug level) in the tomcat log, why the item was not published.
 
    .. code-block:: text
 
@@ -59,7 +59,7 @@ Upload an image under ``/static-assets/images/mytempimages``
    :width: 30 %
    :align: center
 
-Do a bulk publish by opening the **Sidebar** then click on **Site Config** -> **Publishing**.  Click on the **Bulk Publish** tab and enter ``/`` in the **Path to Publish** field then click on the **Publish** button.
+Publish the uploaded image by right-clicking on the image, then select **Approve & Publish**.  The **Approve for Publish** dialog will open up.  Select **Items should be published now**, then click on the **Submit** button.
 
 After publishing, open the **Sidebar** again and navigate to ``/static-assets/images/mytempimages``.  Notice that your file has been marked published.
 
@@ -74,10 +74,9 @@ Let's take a look at the tomcat log, notice that it was logged that the file we 
    :caption: *Tomcat log of item in publishing blacklist*
    :emphasize-lines: 3
 
-   [INFO] 2021-04-22T11:10:25,272 [studio.clockTaskExecutor-42] [job.StudioPublisherTask] | Starting publishing on environment live for site mysite
-   [DEBUG] 2021-04-22T11:10:25,339 [studio.clockTaskExecutor-42] [deployment.PublishingManagerImpl] | Environment is live, transition item to LIVE state mysite:/static-assets/images/mytempimages/26072150271_848c0008f0_o.jpg
-   [DEBUG] 2021-04-22T11:10:25,342 [studio.clockTaskExecutor-42] [deployment.PublishingManagerImpl] | File /static-assets/images/mytempimages/26072150271_848c0008f0_o.jpg of the site mysite will not be published because it matches the configured publishing blacklist regex patterns.
-   [INFO] 2021-04-22T11:10:25,362 [studio.clockTaskExecutor-42] [job.StudioPublisherTask] | Finished publishing environment live for site mysite
-
+   [INFO] 2021-04-22T12:48:24,903 [studio.clockTaskExecutor-36] [job.StudioPublisherTask] | Starting publishing on environment live for site mysite
+   [DEBUG] 2021-04-22T12:48:28,990 [studio.clockTaskExecutor-36] [deployment.PublishingManagerImpl] | Environment is live, transition item to LIVE state mysite:/static-assets/images/mytempimages/26072150271_848c0008f0_o.jpg
+   [DEBUG] 2021-04-22T12:48:28,992 [studio.clockTaskExecutor-36] [deployment.PublishingManagerImpl] | File /static-assets/images/mytempimages/26072150271_848c0008f0_o.jpg of the site mysite will not be published because it matches the configured publishing blacklist regex patterns.
+   [INFO] 2021-04-22T12:48:29,014 [studio.clockTaskExecutor-36] [job.StudioPublisherTask] | Finished publishing environment live for site mysite
 
 
