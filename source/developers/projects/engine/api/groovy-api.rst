@@ -25,6 +25,8 @@ scripts, page/component scripts and filter scripts):
 All scripts are executed in a sandbox to prevent insecure code from running, to change the configuration see 
 :ref:`script-sandbox-configuration`
 
+To create unit tests for your groovy code, see :ref:`here <unit-testing-groovy-code>`
+
 -------------------------
 Create a Script in Studio
 -------------------------
