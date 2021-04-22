@@ -193,6 +193,7 @@ Crafter Studio
    studio/debugging-upgrade-issues.rst
    studio/create-site-with-link-to-remote-repo.rst
    studio/session-timeout-settings.rst
+   studio/publishing-blacklist.rst
 
 |
 
