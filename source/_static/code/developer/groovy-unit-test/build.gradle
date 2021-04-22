@@ -1,0 +1,37 @@
+plugins {
+    id 'groovy'
+}
+
+sourceSets {
+    main {
+        groovy {
+            srcDir 'scripts/classes'
+        }
+    }
+
+    test {
+        groovy {
+            srcDir 'scripts/test/classes'
+        }
+
+        resources {
+            srcDir 'scripts/test/resources'
+        }
+    }
+}
+
+test {
+    useJUnit()
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation ('org.craftercms:crafter-engine:3.1.13:classes')
+    compile 'javax.servlet:servlet-api:2.5'
+
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:3.9.0'
+}
