@@ -4,6 +4,13 @@
 Crafter CMS 3.1.14
 ------------------
 
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+
+* Added support for a publishing blacklist |br|
+  See :ref:`publishing-blacklist` for more information
+
 ^^^^^^^
 Updates
 ^^^^^^^
@@ -15,7 +22,7 @@ Updates
   See :ref:`engine-headers-authentication` for more information on configuring header names
 
 * Optimized Git sync for faster Git log syncing in Studio |br|
-  See `here <https://github.com/craftercms/craftercms/issues/4506>`__ for more information
+  See `here <https://github.com/craftercms/craftercms/issues/4617>`__ for more information
 * Improved error messages that occur on write when system-processing is set to true |br|
   See `here <https://github.com/craftercms/craftercms/issues/4506>`__ for more information
 * Improved dashboard performance |br|
@@ -31,7 +38,7 @@ Updates
   * Added support for loading external plugins in the RTE |br|
     See :ref:`adding-external-plugins` for more information
 
-* Upgraded AWS SDK library to 1.11.994 in various projects
+* Upgraded AWS SDK library to 1.11.1000 in various projects
 * Fixed Grab imports failing in the scriptProcessor |br|
   Remember that the grab must contain the following: ``initClass=false``
 
