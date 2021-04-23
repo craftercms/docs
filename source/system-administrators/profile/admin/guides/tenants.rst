@@ -54,7 +54,8 @@ Fields
 +-----------------------+-------------+---------+------------------------------------------------+
 | Enable Single Sign-On |             | Boolean || If set to ``true`` Crafter Profile will enable|
 |                       |             |         || SSO security by looking for two properties in |
-|                       |             |         || HTTP headers: MELLON_username and MELLON_email|
+|                       |             |         || HTTP headers:                                 |
+|                       |             |         ||    CRAFTER_username and CRAFTER_email         |
 |                       |             |         || these names can be changed by changing Crafter|
 |                       |             |         || Profile security provider configuration. SSO  |
 |                       |             |         || is typically implemented using SAML2 and      |
@@ -68,6 +69,9 @@ Fields
 +-----------------------+-------------+---------+------------------------------------------------+
 | Attribute Definitions |             | List    || List of attributes that profiles can have     |
 +-----------------------+-------------+---------+------------------------------------------------+
+
+   .. note::
+      For Crafter CMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` instead of ``CRAFTER_`` and can't be changed via site configuration.
 
 ^^^^^^^^^^^^^^^^^^^^
 Profile Verification
