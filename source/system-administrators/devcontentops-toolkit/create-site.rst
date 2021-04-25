@@ -47,7 +47,7 @@ Options
        --key=<privateKey>    The path of the private key for authentication
    -n, --name=<remoteName>   The name of the remote
    -o, --orphan              Discards the history from the remote repository
-   -p, --profile=<profile>   The name of the profile
+   -p, --profile=<profile>   The name of the profile (a label to group related configurations)
        --password=<password> The password for authentication
        --push                Create a site and push to a remote repository
    -r, --remote              Enable the options for using a remote repository

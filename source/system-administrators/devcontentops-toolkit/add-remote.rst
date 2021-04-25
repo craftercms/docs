@@ -34,7 +34,7 @@ Options
                              The name of the environment
        --key=<privateKey>    The path of the private key for authentication
    -n, --name=<remoteName>   The name of the remote repository
-   -p, --profile=<profile>   The name of the profile
+   -p, --profile=<profile>   The name of the profile (a label to group related configurations)
        --password=<password> The password for authentication
    -s, --siteId=<siteId>     The id of the site
        --token=<token>       The token for authentication
