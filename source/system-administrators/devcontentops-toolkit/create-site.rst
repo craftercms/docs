@@ -37,17 +37,17 @@ Options
    -b, --branch=<remoteBranch>
                             The name of the remote branch
        --blueprint=<blueprint>
-                            The id of the site blueprint
+                             The id of the site blueprint
        --clone               Create a site cloning a remote repository
        --config=path         The folder to store configurations
    -d, --description=<description>
-                            The description for the site
+                             The description for the site
    -e, --environment=<environment>
-                            The name of the environment
+                             The name of the environment
        --key=<privateKey>    The path of the private key for authentication
    -n, --name=<remoteName>   The name of the remote
    -o, --orphan              Discards the history from the remote repository
-   -p, --profile=<profile>   The name of the profile
+   -p, --profile=<profile>   The name of the profile (a label to group related configurations)
        --password=<password> The password for authentication
        --push                Create a site and push to a remote repository
    -r, --remote              Enable the options for using a remote repository
