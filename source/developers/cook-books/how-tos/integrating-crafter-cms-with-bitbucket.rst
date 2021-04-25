@@ -52,11 +52,11 @@ Next, you want to log in to Crafter Studio as the admin user. The admin user has
 
 **Figure 3: Create site via Crafter Studio**
 
-Clicking Create Site will present you with the Create Site dialog. This dialog changes depending on what you choose. Below is an example of the dialog filled out in a way that creates your project locally, set the BitBucket repository as its upstream remote and pushes the initial project contents to the upstream repository.
+Clicking Create Site will present you with the Create Site dialog. This dialog changes depending on what you choose. Below is an example of the dialog filled out in a way that creates your project locally.  We will then add the BitBucket repository as its upstream remote and push the initial project contents to the upstream repository.
 
 Let’s walk through each part of ``Create Site``:
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-1.png
+.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-1.jpg
     :alt: Developer How Tos - Create Site Dialog Walk Through step 1
     :width: 70 %
     :align: center
@@ -68,42 +68,40 @@ Let’s walk through each part of ``Create Site``:
     :width: 70 %
     :align: center
 
-2. The next thing to do is give your site an ID. The ID itself doesn’t matter in a sense. It doesn’t need to match anything per se, technically speaking the only requirement is that it’s unique. That said, it’s a best practice to provide an ID that is meaningful/recognizable to the team. If your website is called FreshFlowers.com a good ID might be “freshflowerscom”
+2. The next thing to do is give your site an ID. The ID itself doesn’t matter in a sense. It doesn’t need to match anything per se, technically speaking the only requirement is that it’s unique. That said, it’s a best practice to provide an ID that is meaningful/recognizable to the team. If your website is called FreshFlowers.com a good ID might be “freshflowerscom”.
 
-3. Click on the **Push the site to a remote repository after creation** slider button to turn it on, which will display more fields  where we can fill in all the information for our remote Git repository.
+   Click on the **Review** button, then finally  click on the **Create Site** button to create your site.  Crafter CMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint.  Your site should be created in a short while.
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.png
-    :alt: Developer How Tos - Create Site Dialog Walk Through step 4 - 8
-    :width: 70 %
-    :align: center
+3. Once your site is created, the next step is to add a remote repository to your newly created site.  Open the **Sidebar** then click on **Site Tools** -> **Remote Repositories**, then click on the **New Repository** on the top right.
 
-4. With the **Push the site to a remote Git repository after creation** slider in the on position, Crafter Studio will create a new site based on the blueprint you chose, link the remote repository as an upstream and then once the blueprint is installed in the local repositories it will be pushed automatically to the upstream remote.
+   This will open up a dialog where we can fill in all the information for our remote repository.
 
-5. In the **Git Repo URL** field you must provide the link to the Git repository discussed in **Step #1**: ``https://bitbucket.org/myuser/mysweetdotcom.git``
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.png
+      :alt: Create Repository dialog to fill in information of remote repository being added to the site
+      :width: 70 %
+      :align: center
 
-6. Provide your credentials based on the authentication method selected.  In our example, we chose ``Username & Password`` as the authentication method and we'll need to fill in **Username** and **Password**
+   |
+
+4. In the **Remote Git Repository Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
+
+
+5. In the **Remote Git Repository URL** field you must provide the link to the Git repository discussed in **Step #1**: ``https://myuser@bitbucket.org/myuser/mysweetdotcom.git``
+
+6. Provide your credentials based on the authentication method selected.  For example, if we chose ``Username & Password`` as the authentication method, we'll need to fill in **Username** and **Password**
 
       .. note::
          .. include:: /includes/setup-ssh-keys.rst
 
+7. Once you're satisfied with your entries for your remote repository, click on the **Create** button.   Once complete we can now connect to the upstream and push the contents of the Sandbox repository to the remote by clicking on the ``Push`` button (button with the up arrow).
 
-7. In the **Git Remote Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-4.png
+      :alt: Remotes screen displaying newly added remote repository to site
+      :width: 90 %
+      :align: center
 
-8. Click **Review**.  The next screen will give you a chance to review your entries and make corrections as needed by clicking on the **Back** button
+   **Figure:: Site is created and a remote repository added**
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-4.png
-    :alt: Developer How Tos - Create Site Dialog Walk Through step 9
-    :width: 70 %
-    :align: center
-
-9. Once you're satisfied with your entries for creating your site, click on the **Create Site** button.  Crafter CMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint. Once complete it will connect to the upstream and push the contents of the Sandbox repository to the remote.
-
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-6.jpg
-    :alt: Developer How Tos - Site is created and the contents of the sandbox are automatically pushed to the upstream repository
-    :width: 70 %
-    :align: center
-
-**Figure:: Site is created and the contents of the sandbox are automatically pushed to the upstream repository**
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -149,14 +147,14 @@ Let’s consider for a moment that you’re a new developer joining the team. Th
 
 4. Fill out the Create Site Form as in a similar fashion described in Step 2 above, except this time, instead of selecting a blueprint, select the **Remote Git Repository** to create your site based on an existing upstream repository.  This can be your team’s branch or your own fork. The exact workflow is up to you.
 
-.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-1.png
+.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-1.jpg
     :alt: Developer How Tos - Setting up to work locally against the upstream
     :width: 70 %
     :align: center
 
 |
 
-.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-2.png
+.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-2.jpg
     :alt: Developer How Tos - Setting up to work locally against the upstream review entries
     :width: 50 %
     :align: center

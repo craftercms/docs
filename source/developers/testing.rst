@@ -20,7 +20,7 @@ For unit testing in Crafter CMS Software we use Junit, Mockito and Spring Test o
 - For more details on Spring Test, visit: http://docs.spring.io/spring-batch/reference/html/testing.html
 - For more details on Mockito, visit: http://site.mockito.org/
 
-
+See :ref:`unit-testing-groovy-code` for a unit test example.
 
 .. rubric:: Footnotes
 
