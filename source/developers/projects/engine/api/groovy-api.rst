@@ -25,7 +25,7 @@ scripts, page/component scripts and filter scripts):
 All scripts are executed in a sandbox to prevent insecure code from running, to change the configuration see 
 :ref:`script-sandbox-configuration`
 
-To create unit tests for your groovy code, see :ref:`here <unit-testing-groovy-code>`
+To create unit tests for your groovy code, see :ref:`unit-testing-groovy-code`
 
 -------------------------
 Create a Script in Studio
@@ -186,13 +186,26 @@ controller then must be placed in Scripts > controllers > sitemap.groovy. The co
 Page and Component Scripts
 ==========================
 
+.. |SiteItem| replace:: :javadoc_base_url:`SiteItem <engine/org/craftercms/engine/model/SiteItem.html>`
+.. |AllHttpScopesAndAppContextHashModel| replace:: :javadoc_base_url:`AllHttpScopesAndAppContextHashModel <engine/org/craftercms/engine/view/freemarker/AllHttpScopesAndAppContextHashModel.html>`
+
 Crafter page and components can have their own controller scripts too, that are executed before the page or component
-is rendered, and that can contribute to the model of the template. These scripts, besides the common variables, have
-the ``templateModel`` and the ``contentModel`` available. The ``templateModel`` is the actual map model of the
-template, and any variable put in it will be accessible directly in the template, eg. if the script has the line
-``templateModel.var = 5``, then in the template the var's value can be printed with ``${var}``. The ``contentModel``
-is the XML descriptor content, of type SiteItem. The scripts don't have to return any result, just populate the
-``templateModel``.
+is rendered, and that can contribute to the model of the template. These scripts, besides the common variables, have the following model related variables:
+
++-------------------------+-----------------------------------------------------------------------+
+|| Model Related Variable || Description                                                          |
++=========================+=======================================================================+
+|| ``contentModel``       || The XML descriptor content                                           |
+||                        || It is an instance of the |SiteItem| class                            |
++-------------------------+-----------------------------------------------------------------------+
+|| ``templateModel``      || The actual map model of the template                                 |
+||                        || It is an instance of the |AllHttpScopesAndAppContextHashModel| class |
++-------------------------+-----------------------------------------------------------------------+
+
+As mentioned in the table above, the ``templateModel`` is the actual map model of the template, and any variable
+put in it will be accessible directly in the template, eg. if the script has the line ``templateModel.var = 5``,
+then in the template the var's value can be printed with ``${var}``.
+The scripts don't have to return any result, just populate the ``templateModel``.
 
 There are 2 ways in which you can "bind" a script to a page or component:
 
