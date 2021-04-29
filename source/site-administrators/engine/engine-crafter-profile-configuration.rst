@@ -210,14 +210,18 @@ Normally, to add registration or sign up you just need to:
 Add Single Sign-On
 ==================
 
-Configure SSO headers with at least a MELLON_secure_key, MELLON_username, MELLON_email and MELLON_groups (which must be a comma separated list of string) in the header, then check in Crafter Profile Admin Console to make sure
+Configure SSO headers with at least a CRAFTER_secure_key, CRAFTER_username, CRAFTER_email and CRAFTER_groups (which must be a comma separated list of string) in the header, then check in Crafter Profile Admin Console to make sure
 that the Single sign-on enabled checkbox is selected in the tenant page.
 
 .. image:: /_static/images/sso_enabled.png
 
-All headers with the ``MELLON_`` prefix will be mapped, without the prefix, to the attributes you defined in the 
+All headers with the ``CRAFTER_`` prefix will be mapped, without the prefix, to the attributes you defined in the
 Crafter Profile tenant, when a new user needs to be created. So the configuration above will cause the Security 
 Provider to create a user with firstName, lastName and displayName attributes.
+
+   .. note::
+      For Crafter CMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` instead of ``CRAFTER_`` and can't be changed via site configuration.
+
 
 Add Facebook Login
 ==================
