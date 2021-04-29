@@ -30,7 +30,7 @@ Options
        --config=path         The folder to store configurations
    -e, --environment=<environment>
                              The name of the environment
-   -p, --profile=<profile>   The name of the profile
+   -p, --profile=<profile>   The name of the profile (a label to group related configurations)
        --path=<path>         The plugin source path (must be a local folder to
                               Crafter Studio)
    -s, --siteId=<siteId>     The id of the site
