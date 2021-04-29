@@ -36,7 +36,7 @@ Options
    -m, --mergeStrategy=none|ours|theirs
                              The merge strategy to use
    -n, --name=<remoteName>   The name of the remote
-   -p, --profile=<profile>   The name of the profile
+   -p, --profile=<profile>   The name of the profile (a label to group related configurations)
    -s, --siteId=<siteId>     The id of the site
 
 |

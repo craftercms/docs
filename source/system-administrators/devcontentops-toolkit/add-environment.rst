@@ -30,7 +30,7 @@ Options
        --config=path         The folder to store configurations
    -e, --environment=<environment>
                              The name of the environment
-   -p, --profile=<profile>   The name of the profile
+   -p, --profile=<profile>   The name of the profile (a label to group related configurations)
        --password            The password for authentication
    -u, --url=<url>           The URL of the server
        --username=<username> The username for authentication
