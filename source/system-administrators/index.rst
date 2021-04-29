@@ -69,7 +69,6 @@ Upgrading Crafter CMS
    :titlesonly:
 
    upgrade/index.rst
-   upgrade/docker/index.rst
 
 *********
 Authoring
