@@ -122,17 +122,17 @@ xstream
 **Dependency:** xstream |br|
 **URL:** https://search.maven.org/artifact/com.thoughtworks.xstream/xstream
 
+mxparser
+^^^^^^^^
+**Package:** io.github.x-stream |br|
+**Dependency:** mxparser |br|
+**URL:** https://search.maven.org/artifact/io.github.x-stream/mxparser
+
 xmlpull
 ^^^^^^^
 **Package:** xmlpull |br|
 **Dependency:** xmlpull |br|
 **URL:** https://search.maven.org/artifact/xmlpull/xmlpull
-
-xpp3_min
-^^^^^^^^
-**Package:** xpp3 |br|
-**Dependency:** xpp3_min |br|
-**URL:** https://search.maven.org/artifact/xpp3/xpp3_min
 
 dom4j
 ^^^^^
@@ -464,12 +464,6 @@ tika-core
 **Dependency:** tika-core |br|
 **URL:** https://search.maven.org/artifact/org.apache.tika/tika-core
 
-jakarta.activation
-^^^^^^^^^^^^^^^^^^
-**Package:** com.sun.activation |br|
-**Dependency:** jakarta.activation |br|
-**URL:** https://search.maven.org/artifact/com.sun.activation/jakarta.activation
-
 javax.annotation-api
 ^^^^^^^^^^^^^^^^^^^^
 **Package:** javax.annotation |br|
@@ -499,6 +493,12 @@ apache-mime4j-dom
 **Package:** org.apache.james |br|
 **Dependency:** apache-mime4j-dom |br|
 **URL:** https://search.maven.org/artifact/org.apache.james/apache-mime4j-dom
+
+dd-plist
+^^^^^^^^
+**Package:** com.googlecode.plist |br|
+**Dependency:** dd-plist |br|
+**URL:** https://search.maven.org/artifact/com.googlecode.plist/dd-plist
 
 xz
 ^^
@@ -542,17 +542,17 @@ preflight
 **Dependency:** preflight |br|
 **URL:** https://search.maven.org/artifact/org.apache.pdfbox/preflight
 
-xmpbox
-^^^^^^
-**Package:** org.apache.pdfbox |br|
-**Dependency:** xmpbox |br|
-**URL:** https://search.maven.org/artifact/org.apache.pdfbox/xmpbox
-
 jempbox
 ^^^^^^^
 **Package:** org.apache.pdfbox |br|
 **Dependency:** jempbox |br|
 **URL:** https://search.maven.org/artifact/org.apache.pdfbox/jempbox
+
+xmpbox
+^^^^^^
+**Package:** org.apache.pdfbox |br|
+**Dependency:** xmpbox |br|
+**URL:** https://search.maven.org/artifact/org.apache.pdfbox/xmpbox
 
 bcmail-jdk15on
 ^^^^^^^^^^^^^^
@@ -622,9 +622,9 @@ jackcess-encrypt
 
 isoparser
 ^^^^^^^^^
-**Package:** com.googlecode.mp4parser |br|
+**Package:** org.tallison |br|
 **Dependency:** isoparser |br|
-**URL:** https://search.maven.org/artifact/com.googlecode.mp4parser/isoparser
+**URL:** https://search.maven.org/artifact/org.tallison/isoparser
 
 metadata-extractor
 ^^^^^^^^^^^^^^^^^^
@@ -703,6 +703,12 @@ jakarta.ws.rs-api
 **Package:** jakarta.ws.rs |br|
 **Dependency:** jakarta.ws.rs-api |br|
 **URL:** https://search.maven.org/artifact/jakarta.ws.rs/jakarta.ws.rs-api
+
+jakarta.annotation-api
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** jakarta.annotation |br|
+**Dependency:** jakarta.annotation-api |br|
+**URL:** https://search.maven.org/artifact/jakarta.annotation/jakarta.annotation-api
 
 cxf-rt-security
 ^^^^^^^^^^^^^^^
@@ -787,6 +793,12 @@ bzip2
 **Package:** org.itadaki |br|
 **Dependency:** bzip2 |br|
 **URL:** https://search.maven.org/artifact/org.itadaki/bzip2
+
+jcip-annotations
+^^^^^^^^^^^^^^^^
+**Package:** net.jcip |br|
+**Dependency:** jcip-annotations |br|
+**URL:** https://search.maven.org/artifact/net.jcip/jcip-annotations
 
 jna
 ^^^
@@ -985,12 +997,6 @@ findbugs
 **Package:** com.google.code.findbugs |br|
 **Dependency:** findbugs |br|
 **URL:** https://search.maven.org/artifact/com.google.code.findbugs/findbugs
-
-jcip-annotations
-^^^^^^^^^^^^^^^^
-**Package:** net.jcip |br|
-**Dependency:** jcip-annotations |br|
-**URL:** https://search.maven.org/artifact/net.jcip/jcip-annotations
 
 jsr305
 ^^^^^^
@@ -1514,12 +1520,6 @@ chemistry-opencmis-commons-impl
 **Dependency:** chemistry-opencmis-commons-impl |br|
 **URL:** https://search.maven.org/artifact/org.apache.chemistry.opencmis/chemistry-opencmis-commons-impl
 
-woodstox-core-asl
-^^^^^^^^^^^^^^^^^
-**Package:** org.codehaus.woodstox |br|
-**Dependency:** woodstox-core-asl |br|
-**URL:** https://search.maven.org/artifact/org.codehaus.woodstox/woodstox-core-asl
-
 chemistry-opencmis-client-bindings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **Package:** org.apache.chemistry.opencmis |br|
@@ -1682,17 +1682,11 @@ jackson-databind
 **Dependency:** jackson-databind |br|
 **URL:** https://search.maven.org/artifact/com.fasterxml.jackson.core/jackson-databind
 
-aws-java-sdk-s3
-^^^^^^^^^^^^^^^
-**Package:** com.amazonaws |br|
-**Dependency:** aws-java-sdk-s3 |br|
-**URL:** https://search.maven.org/artifact/com.amazonaws/aws-java-sdk-s3
-
-aws-java-sdk-kms
+aws-java-sdk-sts
 ^^^^^^^^^^^^^^^^
 **Package:** com.amazonaws |br|
-**Dependency:** aws-java-sdk-kms |br|
-**URL:** https://search.maven.org/artifact/com.amazonaws/aws-java-sdk-kms
+**Dependency:** aws-java-sdk-sts |br|
+**URL:** https://search.maven.org/artifact/com.amazonaws/aws-java-sdk-sts
 
 aws-java-sdk-core
 ^^^^^^^^^^^^^^^^^
@@ -1717,6 +1711,18 @@ jmespath-java
 **Package:** com.amazonaws |br|
 **Dependency:** jmespath-java |br|
 **URL:** https://search.maven.org/artifact/com.amazonaws/jmespath-java
+
+aws-java-sdk-s3
+^^^^^^^^^^^^^^^
+**Package:** com.amazonaws |br|
+**Dependency:** aws-java-sdk-s3 |br|
+**URL:** https://search.maven.org/artifact/com.amazonaws/aws-java-sdk-s3
+
+aws-java-sdk-kms
+^^^^^^^^^^^^^^^^
+**Package:** com.amazonaws |br|
+**Dependency:** aws-java-sdk-kms |br|
+**URL:** https://search.maven.org/artifact/com.amazonaws/aws-java-sdk-kms
 
 aws-java-sdk-elastictranscoder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
