@@ -27,8 +27,15 @@ Updates
   See `here <https://github.com/craftercms/craftercms/issues/4506>`__ for more information
 * Improved dashboard performance |br|
   See `here <https://github.com/craftercms/craftercms/issues/4583>`__ for more information
-* Improved default filters added to Elasticsearch queries |br|
-  See `here <https://github.com/craftercms/craftercms/issues/4587>`__ for more information
+* Elasticsearch improvement and bug fix
+
+  * Improved default filters added to Elasticsearch queries |br|
+    See `here <https://github.com/craftercms/craftercms/issues/4587>`__ for more information
+  * Fixed Elasticsearch mappings for ints |br|
+    All existing content needs to be re-indexed for the fix to take effect. |br|
+    For more information on reindexing content, see :ref:`reindexing-content` or
+    :ref:`reindexing-content-in-prod`
+
 * Added support for encrypted properties when using CMIS |br|
   See `here <https://github.com/craftercms/craftercms/issues/4546>`__ for more information
 * RTE improvements
