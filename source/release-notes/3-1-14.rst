@@ -1,0 +1,81 @@
+.. index:: Crafter CMS 3.1.14 Release Notes
+
+------------------
+Crafter CMS 3.1.14
+------------------
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+
+* Added support for a publishing blacklist |br|
+  See :ref:`publishing-blacklist` for more information
+
+^^^^^^^
+Updates
+^^^^^^^
+* Added support for configurable header names when using Engine header authentication |br|
+
+  When using Engine header authentication, remember to update your SAML2 configuration to
+  use the prefix ``CRAFTER_``, or to update Engine to use your preferred prefix. |br|
+
+  See :ref:`engine-headers-authentication` for more information on configuring header names
+
+* Optimized Git sync for faster Git log syncing in Studio |br|
+  See `here <https://github.com/craftercms/craftercms/issues/4617>`__ for more information
+* Improved error messages that occur on write when system-processing is set to true |br|
+  See `here <https://github.com/craftercms/craftercms/issues/4506>`__ for more information
+* Improved dashboard performance |br|
+  See `here <https://github.com/craftercms/craftercms/issues/4583>`__ for more information
+* Elasticsearch improvement and bug fix
+
+  * Improved default filters added to Elasticsearch queries |br|
+    See `here <https://github.com/craftercms/craftercms/issues/4587>`__ for more information
+  * Fixed Elasticsearch mappings for ints |br|
+    All existing content needs to be re-indexed for the fix to take effect. |br|
+    For more information on reindexing content, see :ref:`reindexing-content` or
+    :ref:`reindexing-content-in-prod`
+
+* Added support for encrypted properties when using CMIS |br|
+  See `here <https://github.com/craftercms/craftercms/issues/4546>`__ for more information
+* RTE improvements
+
+  * Added support for RTE line wrap |br|
+    See `here <https://github.com/craftercms/craftercms/issues/4509>`__ for more information
+  * Added support for loading external plugins in the RTE |br|
+    See :ref:`adding-external-plugins` for more information
+
+* Upgraded AWS SDK library to 1.11.1000 in various projects
+* Fixed Grab imports failing in the scriptProcessor |br|
+  Remember that the grab must contain the following: ``initClass=false``
+
+     .. code-block:: groovy
+
+         @Grapes(
+             @Grab(group='com.akamai.edgegrid', module='edgegrid-signer-core', version='4.0.1', initClass=false)
+         )
+
+     |
+
+  See `here <https://github.com/craftercms/craftercms/issues/4614>`__ for more information
+
+Lot's of other small enhancements and bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 3.1.14 Milestone <https://github.com/craftercms/craftercms/milestone/71?closed=1>`_
+
+.. important::
+
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.14)
+
+    For Docker/Kuber deployments, see :ref:`upgrading-dockers`
+
+    Starting with JVM version 1.8.0_292, support for TLS v1.1 and earlier is disabled by default |br|
+    See :ref:`debugging_ssl_issues` if you encounter issues.
+
+    For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+    Please see :ref:`upgrade-notes-to-fix-backup-error` for some important notes when restoring backups created prior
+    to Crafter CMS 3.1.10, :ref:`upgrade-notes-for-re-encrypting-values` for some important notes on the re-encryption
+    process and :ref:`upgrade-notes-to-fix-stored-procedure-error` for some important notes on database errors.
+
+
