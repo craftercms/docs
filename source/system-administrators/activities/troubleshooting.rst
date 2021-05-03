@@ -14,3 +14,4 @@ This section details common problems you might encounter with Crafter CMS and ho
    ../studio/debugging-publishing-issues.rst
    ../deployer/debugging-deployer-issues.rst
    debugging-ssh-issues.rst
+   debugging-ssl-issues.rst
