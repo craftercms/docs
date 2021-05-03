@@ -8,9 +8,8 @@ Debugging SSL Handshake Issues
 
 In this section, we present an error that a user may encounter regarding SSL and how to fix the error.
 
-Java has decided to `disable support for TLS 1.0 and 1.1 <https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8202343>`__ in the latest Java version 1.8.0_292 as indicated in the
+Starting with JVM version 1.8.0_292, `support for TLS v1.1 and earlier is disabled <https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8202343>`__ by default as indicated in the
 `Consolidated Release Notes for JDK 8 and JDK 8 Update Releases <https://www.oracle.com/java/technologies/javase/8all-relnotes.html>`__ under ``security-libs/javax.net.ssl``.
-
 
 If you encounter the following error in your application:
 
@@ -46,7 +45,7 @@ Let's take a look at an example of re-enabling TLSv1 and TLSv1.1.
 
 Look for the ``java.security`` file in ``JDK_INSTALL_HOME/jre/lib/security``, and go to the property ``jdk.tls.disabledAlgorithms``:
 
-   .. code-block:: property
+   .. code-block:: properties
       :caption: *Example of jdk.tls.disabledAlgorithms property with TLSv1 and TLSV1.1 disabled*
 
       jdk.tls.disabledAlgorithms=SSLv3, TLSv1, TLSv1.1, RC4, DES, MD5withRSA, \
@@ -57,7 +56,7 @@ Look for the ``java.security`` file in ``JDK_INSTALL_HOME/jre/lib/security``, an
 
 To re-enable the versions, remove ``TLSv1`` and ``TLSv1.1`` from the property ``jdk.tls.disabledAlgorithms``
 
-   .. code-block:: property
+   .. code-block:: properties
       :caption: *Example of re-enabling TLSv1 and TLSV1.1*
 
       jdk.tls.disabledAlgorithms=SSLv3, RC4, DES, MD5withRSA, \

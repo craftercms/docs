@@ -69,7 +69,7 @@ For a full list of tickets, please visit: `GitHub 3.1.14 Milestone <https://gith
 
     For Docker/Kuber deployments, see :ref:`upgrading-dockers`
 
-    Java has decided to disable support for TLS versions minor to 1.2 in the latest Java version 1.8.0_292.
+    Starting with JVM version 1.8.0_292, support for TLS v1.1 and earlier is disabled by default |br|
     See :ref:`debugging_ssl_issues` if you encounter issues.
 
     For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
