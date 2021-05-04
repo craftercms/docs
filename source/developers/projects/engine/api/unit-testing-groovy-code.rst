@@ -14,6 +14,8 @@ For larger sites with complex services implemented in Groovy, it is very helpful
 
 This section details how to create unit tests for Crafter CMS Groovy code with Gradle.
 
+For more information on the classes of the variables that can be mocked for unit testing, see  :ref:`groovy-api`
+
 -----------------------------------
 Steps for Creating Groovy Unit Test
 -----------------------------------
