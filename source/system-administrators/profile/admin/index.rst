@@ -20,7 +20,7 @@ New Installation
 
 You can follow the instructions for building a complete bundle as described
 :ref:`here <installing-craftercms-from-gradle>`, if you add the parameter ``-Pcrafter.profile=true``
-the bundle will contain crafter-profile.war and crafter-profile-admin-console.war.
+the bundle will contain crafter-profile.war and crafter-profile-admin.war.
 
 ^^^^^^^^^^^^^^^^^^^^^
 Existing Installation
