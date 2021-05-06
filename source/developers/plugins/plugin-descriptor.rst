@@ -68,7 +68,7 @@ where the following fields are required:
 - ``plugin.id`` - a unique Id that is meaningful/recognizable to people who will be using the blueprint/plugin
 - ``plugin.name`` - blueprint/plugin name (For our blueprint example, it is the blueprint name shown in the
   **Choose Blueprint** screen of **Create Site**)
-- ``plugin.version`` - a version number for the blueprint
+- ``plugin.version`` - a version number for the blueprint/site plugin
 - ``plugin.crafterCmsVersions`` - Crafter CMS versions that the plugin is compatible with (look in the :ref:`release-notes`
   section for the versions available), and you'll need to keep this up to date
 - ``plugin.searchEngine`` - search engine your plugin requires, the only value possible at this time is``Elasticsearch``

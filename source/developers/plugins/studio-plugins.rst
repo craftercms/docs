@@ -1,6 +1,6 @@
 :orphan:
 
-:is-up-to-date: True
+:is-up-to-date: False
 
 .. index:: Crafter Studio Plugins, Studio Plugins, Plugins
 
