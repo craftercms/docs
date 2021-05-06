@@ -29,7 +29,7 @@ A site plugin can contain one or more extensions for Crafter CMS in a single pac
 .. _how-do-i-make-my-own-site-plugin:
 
 ---------------------------------
-How do I make my own site plugin?
+How Do I Make My Own Site Plugin?
 ---------------------------------
 
 ^^^^^^^^^^^^
@@ -198,15 +198,15 @@ Depending on the plugin type you are creating, this could be a JavaScript file, 
              form-definition.xml
 
 
-----------
-Publishing
-----------
+---------------------------
+Publishing Your Site Plugin
+---------------------------
 
 To publish a plugin in the Crafter CMS Marketplace you can follow the instructions in :ref:`marketplace_create_plugins`
 
-----------
-Installing
-----------
+------------------------
+Installing a Site Plugin
+------------------------
 
 Plugins may be installed a couple of ways depending on where the plugins are located:
 
@@ -321,3 +321,12 @@ After installing our plugin, we can now verify that our component plugin is avai
 
 |
 
+-------------------
+Site Plugin Example
+-------------------
+
+Crafter CMS provides a site plugin example available here: https://github.com/craftercms/site-plugin-example
+
+This plugin demonstrates a Site plugin with authoring and delivery code. It extends Crafter Studio with an API, a UI for content authors, and extends the delivery Site (in Crafter Engine) with an MVC (Model View Controller) with a content type (model), a FreeMarker template (view)
+
+It is published in the Crafter CMS Marketplace and can be installed to your site using ``Plugin Management`` in |siteConfig| through the Studio UI.  See :ref:`plugin-management` for more information on installing site plugins from the Crafter CMS Market[lace.
