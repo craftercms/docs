@@ -40,12 +40,11 @@ You'll need the following for creating your plugin:
 * A plugin descriptor file, ``craftercms-plugin.yaml``
 * Your plugin files
 
-The ``craftercms-plugin.yaml`` file contains information about your plugin, such as what license your plugin supports,
-which versions of Crafter CMS is supported, etc.
+The ``craftercms-plugin.yaml`` file contains information about your plugin, such as the license, the versions of Crafter CMS supported, and other configurations and metadata.
 
 See :ref:`craftercms-plugin-yaml-file` for more information on what's inside the plugin descriptor.
 
-Your plugin files/folders could be JavaScript files, XML files, etc. depending on the plugin type you're creating.
+Your plugin files/folders could be JavaScript files, XML files, Groovy scripts, images, CSS files, and more depending on the plugin type you're creating.
 
 ^^^^^^^^^^^^^^^^^^^
 Directory Structure
@@ -149,15 +148,15 @@ To create a plugin, a descriptor file  ``craftercms-plugin.yaml`` is required. B
          screenshots:
            - title: Crafter CMS
              description: Crafter CMS Example Plugin
-             url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/logo.svg"
+             url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/static-assets/.crafter/screenshots/default.png"
        developer:
          company:
            name: Crafter Software
            email: info@craftersoftware.com
            url: https://craftersoftware.com
        build:
-         id: c3d2a5444e6a24b5e0481d6ba87901d0b02716c8
-         date: 2019-03-18T00:00:00Z
+         id: 0220b902bff5cd22749e8ac46ec80eed314c3d67
+         date: 2021-03-18T00:00:00Z
        license:
          name: MIT
          url: https://opensource.org/licenses/MIT
@@ -179,6 +178,7 @@ Here are some things to note in the descriptor file:
 * ``plugin.version`` is a version number for the site plugin
 * ``plugin.description`` should contain a short description of the plugin and is displayed underneath the plugin name in the Crafter CMS Marketplace
 * ``plugin.website.url`` can be a page for more information on your site plugin or for announcing updates, reporting bugs, etc. from your user community.
+* ``plugin.media.url`` is the path to look for a representative image of the site plugin.
 * ``plugin.license`` is the license supported by the plugin
 * ``plugin.crafterCmsVersions`` contains the Crafter CMS version/s that the plugin is compatible with (look in the :ref:`release-notes` section for the versions available), and you'll need to keep this up to date
 

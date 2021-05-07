@@ -40,7 +40,7 @@ a blueprint.  Here's a sample taken from the  ``craftercms-plugin.yaml`` for the
       screenshots:
         - title: Home Page
           description: Screenshot of the homepage
-          url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/logo.svg"
+          url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/static-assets/.crafter/screenshots/default.png"
     developer:
       company:
         name: Crafter Software
@@ -48,14 +48,14 @@ a blueprint.  Here's a sample taken from the  ``craftercms-plugin.yaml`` for the
         url: https://craftersoftware.com/
     build:
       id: c3d2a5444e6a24b5e0481d6ba87901d0b02716c8
-      date: 2019-01-23T00:00:00Z
+      date: 2021-01-23T00:00:00Z
     license:
       name: MIT
       url: https://opensource.org/licenses/MIT
     crafterCmsVersions:
-      - major: 3
-        minor: 1
-        patch: 1
+      - major: 4
+        minor: 0
+        patch: 0
     crafterCmsEditions:
       - community
       - enterprise
@@ -72,6 +72,11 @@ where the following fields are required:
 - ``plugin.crafterCmsVersions`` - Crafter CMS versions that the plugin is compatible with (look in the :ref:`release-notes`
   section for the versions available), and you'll need to keep this up to date
 - ``plugin.searchEngine`` - search engine your plugin requires, the only value possible at this time is``Elasticsearch``
+
+|
+|
+
+For ``plugin.media.screenshots``, the url ``../master/static-assets/.crafter/screenshots/default.png`` is the default path for Crafter CMS to look for a default representative image of a plugin or blueprint
 
 .. note::
 

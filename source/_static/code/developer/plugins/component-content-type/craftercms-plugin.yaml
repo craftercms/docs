@@ -22,15 +22,15 @@ plugin:
     screenshots:
       - title: Crafter CMS
         description: Crafter CMS Example Component Plugin
-        url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/logo.svg"
+        url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/static-assets/.crafter/screenshots/default.png"
   developer:
     company:
       name: Crafter Software
       email: info@craftersoftware.com
       url: https://craftersoftware.com
   build:
-    id: c3d2a5444e6a24b5e0481d6ba87901d0b02716c8
-    date: 2019-03-18T00:00:00Z
+    id: 0220b902bff5cd22749e8ac46ec80eed314c3d67
+    date: 2021-03-18T00:00:00Z
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
