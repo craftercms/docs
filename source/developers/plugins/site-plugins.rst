@@ -245,6 +245,7 @@ To install the plugin ``sidebar-plugin`` to our site ``mysite``, we'll run the `
 
 |
 
+Remember that the connection to Crafter CMS needs to be setup via the ``add-environment`` command before using any of the ``crafter-cli`` commands.
 
 See :ref:`crafter-cli-copy-plugin` for more information on the ``copy-plugin`` command.
 
