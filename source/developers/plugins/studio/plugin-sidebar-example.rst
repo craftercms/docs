@@ -10,26 +10,24 @@ Crafter Studio Sidebar Plugin Example
 
 Let's take a look at an example of creating a Sidebar plugin in Studio using a site called ``mysite`` created using the **Website Editorial** blueprint.
 
-#. Create a folder under ``data/repos/site/mysite/sandbox/config/studio`` called ``plugins``
-#. Inside the ``plugins`` folder, create a directory called ``sidebar`` (or whatever your plugin type {yourPluginType} is)
-#. Inside the ``sidebar`` folder, create a directory called ``react-sample`` (or whatever your plugin name {yourPluginName} is)
+#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our sidebar site plugin.  We'll follow the convention listed in :ref:`studio-plugins` under the ``Site Plugin Directory Structure``.  For our example, PLUGIN_TYPE is ``sidebar`` and the PLUGIN_NAME is ``react-sample``
 
-      .. code-block:: text
-         :linenos:
-         :emphasize-lines: 8,9,10
+   In a local folder, create the descriptor file for your site plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin``, then create the folder ``authoring``.  Under the ``authoring`` folder, create the ``js`` folder.  Under the ``js`` folder, create the folder ``sidebar``.  Under the ``sidebar`` folder, create the folder ``react-sample``, which is the name of the sidebar site plugin we're building.  We will be placing the JS file implementing the sidebar site plugin under the ``react-sample`` folder.  In the example below, the JS file is ``main.js``
 
-         data/
-           repos/
-             sites/
-               mysite/
-                 sandbox/
-                   config/
-                     studio/
-                       plugins/
-                         sidebar/
-                           react-sample/
+   .. code-block:: text
+         :caption: *Form Engine Data Source Plugin Directory Structure*
 
-      |
+         <plugin-folder>/
+           craftercms-plugin.yaml
+           authoring/
+             js/
+               sidebar/
+                 react-sample/
+                   main.js
+
+   |
+
+   For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/sidebar-plugin``
 
 #. Inside the ``react-sample`` folder, create the javascript file for our plugin, ``main.js`` and copy the following into the file:
 
@@ -62,12 +60,15 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
 
       })();
 
-#. Remember to commit the files copied so Studio will pick it up.  Whenever you edit directly in the filesystem, you need to commit your changes to ensure they are properly reflected.
+   |
 
-      .. code-block:: bash
+#. After placing your JS file, the site plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
-         ➜  sandbox git:(master) ✗ git add config/studio/plugins/
-         ➜  sandbox git:(master) ✗ git commit -m "Add plugin file for sidebar"
+   When running a ``crafter-cli`` command, the connection to Crafter CMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the site ``mysite`` by running the following:
+
+      ..  code-block:: bash
+
+          ./crafter-cli copy-plugin -e local -s mysite --path /users/myuser/myplugins/form-datasource-plugin
 
       |
 
@@ -93,7 +94,9 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
             </params>
           </modulehook>
 
-#. Let's take a look at our plugin in action by viewing the **Dashboard** by clicking on the site name or the Crafter CMS logo at the top left of your browser:
+      |
+
+#. Let's take a look at our plugin in action by viewing the **Dashboard** or by clicking on the site name or the Crafter CMS logo at the top left of your browser:
 
    .. image:: /_static/images/developer/plugins/sidebar-plugin-in-action.png
       :align: center

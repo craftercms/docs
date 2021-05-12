@@ -1,49 +1,57 @@
 :orphan:
 
-:is-up-to-date: False
+:is-up-to-date: True
 
-.. index:: Crafter Studio Plugins, Studio Plugins, Plugins
+.. index:: Crafter Studio Site Plugins, Studio Site Plugins, Site Plugins
 
 .. _studio-plugins:
 
-======================
-Crafter Studio Plugins
-======================
+===========================
+Crafter Studio Site Plugins
+===========================
 
-Crater Studio plugins allow users to replace, extend or even create stand alone experiences to serve a particular use case or set of use cases.
-Studio plugins extend the authoring environment and can be pieces within Studio UI or have their own devoted page inside Studio, in which case plugin authors have a blank canvas to design their full plugin experience.
+Crater Studio site plugins allow users to replace, extend or even create stand alone experiences to serve a particular use case or set of use cases.
+Studio site plugins extend the authoring environment and can be pieces within Studio UI or have their own devoted page inside Studio, in which case plugin authors have a blank canvas to design their full plugin experience.
 
-Stand alone plugins can make use of Studio UI components using various possible mechanisms described below.
+Stand alone site plugins can make use of Studio UI components using various possible mechanisms described below.
 
-The Crafter Studio API that gets a file for a given plugin, the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile` facilitates extending Studio through plugins.
+The Crafter Studio API that gets a file for a given plugin, the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile` facilitates extending Studio through site plugins.
 
---------------------------
-Plugin Directory Structure
---------------------------
+------------------------------
+Site Plugin Directory Structure
+-------------------------------
 
-When using plugins, the JavaScript files and folders location for the plugins uses a convention where the files/folders needs to go in the following location:
+When using site plugins, the JavaScript files and folders location for the plugins uses a convention where the files/folders needs to go in the following location:
 
-* **Plugin** : $CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/config/studio/plugins/PLUGIN_ID/PLUGIN_TYPE/PLUGIN_NAME/PLUGIN_FILES_FOLDERS
+* **Plugin** : authoring/js/PLUGIN_TYPE/PLUGIN_NAME/PLUGIN_FILES_FOLDERS
 
 where:
 
-- **CRAFTER_HOME** : Studio location
-- **SITE_NAME** : Name of site where the plugin is to be added
-- **PLUGIN_ID** : The id of the plugin (e.g. org.craftercms.plugin)
 - **PLUGIN_TYPE** : Type of plugin, e.g. control, datasource, sidebar, app, etc.
 - **PLUGIN_NAME** : Name of  plugin
 - **PLUGIN_FILES_FOLDERS** : JavaScript and/or plugin build output files/folders containing the plugin implementation
 
-.. note:: When using an out-of-the-box blueprint to create your site, the ``plugins`` folder does not exist under ``CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/config/studio/`` and will need to be created by the user creating the plugins.
+-------------------------------------
+Creating a Crafter Studio Site Plugin
+-------------------------------------
+Let'a take a look at how to create a Crafter Studio site plugin.
 
+#. Create your site plugin e.g. a JavaScript file or React app
+#. Create the required directory structure as outlined above, and configure the descriptor file ``craftercms-plugin.yaml`` file for the plugin
 
---------------------------------
-Creating a Crafter Studio Plugin
---------------------------------
-Let'a take a look at how to create a Crafter Studio plugin.
+      .. code-block:: text
+         :linenos:
 
-#. Create your plugin e.g. a JavaScript file or React app
-#. Create the required directory structure as outlined above then add your plug-in to your site under the ``config/studio/plugins/{yourPluginType}/{yourPluginName}`` directory
+         {your_plugin_folder}/
+           craftercms-plugin.yaml
+           authoring/
+             js/
+               {yourPluginType}/
+                 {yourPluginName}/
+
+      |
+
+   Place your site plugin under the {yourPluginName} folder.  Next install your site plugin to your site using the ``crafter-cli`` command ``copy-plugin``.  This will install your Studio site plugin under the ``config/studio/plugins/js/{yourPluginId}/{yourPluginType}/{yourPluginName}`` directory
 
       .. code-block:: text
          :linenos:
@@ -52,22 +60,23 @@ Let'a take a look at how to create a Crafter Studio plugin.
            config/
              studio/
                plugins/
-                 {yourPluginType}/
-                   {yourPluginName}/
+                 js/
+                   {yourPluginId}/
+                     {yourPluginType}/
+                       {yourPluginName}/
 
       |
 
-#. Commit the new files added so it will be picked up by Studio
-#. If your plugin is inside Studio, setup needed configuration files, etc.
-#. See your plugin in action by refreshing your Studio browser if your plugin is inside Studio, otherwise visit: ``/studio/plugin?site={site}&type={yourPluginType}&name={yourPluginName}``
+#. If your site plugin is inside Studio, setup needed configuration files, etc.
+#. See your site plugin in action by refreshing your Studio browser if your site plugin is inside Studio, otherwise visit: ``/studio/plugin?site={site}&pluginId={yourPluginIdName}&type={yourPluginType}&name={yourPluginName}``
 
 .. note::
 
    Here are some things to keep in mind when creating your full screen plugins with its own route:
 
-   - If your entry file is not called ``index.js``, you must add ``&file={yourFile}`` to the above url to see your plugin in action
-   - The steps listed above will load your plugin in the page. Your plugin would need to bootstrap and do whatever it needs to do when loaded i.e.  it should render itself and for that, it may need to create a root element and append it to the body.
-   - Some of our components, services and utils — including the ``AuthMonitor`` — are published via the ``CrafterCMSNext`` (window.CrafterCMSNext) global variable. This means you could use them in your plugin.
+   - If your entry file is not called ``index.js``, you must add ``&file={yourFile}`` to the above url to see your site plugin in action
+   - The steps listed above will load your site plugin in the page. Your site plugin would need to bootstrap and do whatever it needs to do when loaded i.e.  it should render itself and for that, it may need to create a root element and append it to the body.
+   - Some of our components, services and utils — including the ``AuthMonitor`` — are published via the ``CrafterCMSNext`` (window.CrafterCMSNext) global variable. This means you could use them in your site plugin.
 
 
 -----------------------------------
@@ -108,36 +117,35 @@ React is already present in the Studio client runtime. You may access the lib(s)
 |
 
 
-You can use ``JSX``, ``TypeScript`` or any form of transpiling when developing your plugin. In this case, we suggest the following directory structure for your files:  ``{sandbox}/sources/{pluginSource}`` for the plugin source and ``{sandbox}/config/studio/plugins/{type}/{name}`` for the JavaScript and/or plugin build output files/folders containing the plugin implementation
+You can use ``JSX``, ``TypeScript`` or any form of transpiling when developing your site plugin. In this case, we suggest the following directory structure for your files:  ``sources/{pluginSource}`` for the site plugin source and ``{yourPluginFolder}/authoring/js/{type}/{name}`` for the JavaScript and/or site plugin build output files/folders containing the site plugin implementation
 
 .. code-block:: none
 
-   {sanbox}/
-     config/
-       studio/
-         plugins/
-           {yourPluginType}/     <= Your plugin "type"
-             {yourPluginName}/   <= Your plugin name
-               main.js         <= Your transpiled main/index plugin entry point
-     sources/
-       {pluginSource}            <= Your plugin source
+   {yourPluginFolder}/
+     authoring/
+       js/
+         {yourPluginType}/     <= Your plugin "type"
+           {yourPluginName}/   <= Your plugin name
+             main.js           <= Your transpiled main/index plugin entry point
+   sources/
+     {pluginSource}            <= Your plugin source
 
 
 |
 
-Your plugin's build script would then transpile your app and write the output on the plugin folder and commit that
-output so Studio can see it. If your plugin size allows, it is preferable to have a single bundled file. If you do
-need multiple files (e.g. more JS files, CSS files, other), you may have them; simply bear in mind that loading them
-into the page would need to be done through the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile` (i.e. it's not a regular web resource loaded
-via it's physical path).
+Your site plugin's build script would then transpile your app and write the output in the site plugin folder.  You can then install
+your newly created site plugin to test using the ``crafter-cli`` command ``copy-plugin``.  If your site plugin size allows,
+it is preferable to have a single bundled file. If you do need multiple files (e.g. more JS files, CSS files, other),
+you may have them; simply bear in mind that loading them into the page would need to be done through the ``getPluginFile``
+API found here :studio_swagger_url:`#/plugin/getPluginFile` (i.e. it's not a regular web resource loaded via it's physical path).
 
 To load a file, the URL would look like:
 
-  `/studio/api/2/plugin/file?siteId={siteId}&type={yourPluginType}&name={yourPluginName}&file={fileName}`
+  `/studio/1/plugin/file?siteId={siteId}&pluginId=(yourPluginId)&type={yourPluginType}&name={yourPluginName}&file={fileName}`
 
 For the above example directory structure, the URL for loading a file would look like:
 
-  `/studio/api/2/plugin/file?siteId={siteId}&type={yourPluginType}&name={yourPluginName}&file=main.js`
+  `/studio/1/plugin/file?siteId={siteId}&pluginId=(yourPluginId)&type={yourPluginType}&name={yourPluginName}&file=main.js`
 
 .. note::
   - In runtime, you may get the current site id by running `CStudioAuthoringContext.site`

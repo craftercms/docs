@@ -68,6 +68,8 @@ In a local folder, create the descriptor file for your site plugin ``craftercms-
               text-input/
                 main.js
 
+   |
+
 For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/form-control-plugin``
 
 In the JS file, please note that the ``CStudioAuthoring.Module`` is required and that the prefix for ``CStudioAuthoring.Module.moduleLoaded`` must be the name of the control.  For our example, the prefix is ``text-input`` as shown in the example.
@@ -75,6 +77,7 @@ In the JS file, please note that the ``CStudioAuthoring.Module`` is required and
 .. code-block:: js
     :linenos:
     :emphasize-lines: 51
+    :caption: *authoring/js/control/text-input/main.js*
 
     CStudioForms.Controls.textInput = CStudioForms.Controls.textInput ||
     function(id, form, owner, properties, constraints, readonly)  {
