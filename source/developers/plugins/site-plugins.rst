@@ -148,7 +148,7 @@ To create a plugin, a descriptor file  ``craftercms-plugin.yaml`` is required. B
          screenshots:
            - title: Crafter CMS
              description: Crafter CMS Example Plugin
-             url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/static-assets/.crafter/screenshots/default.png"
+             url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/screenshots/default.png"
        developer:
          company:
            name: Crafter Software
@@ -330,4 +330,4 @@ Crafter CMS provides a site plugin example available here: https://github.com/cr
 
 This plugin demonstrates a Site plugin with authoring and delivery code. It extends Crafter Studio with an API, a UI for content authors, and extends the delivery Site (in Crafter Engine) with an MVC (Model View Controller) with a content type (model), a FreeMarker template (view)
 
-It is published in the Crafter CMS Marketplace and can be installed to your site using ``Plugin Management`` in |siteConfig| through the Studio UI.  See :ref:`plugin-management` for more information on installing site plugins from the Crafter CMS Market[lace.
+It is published in the Crafter CMS Marketplace and can be installed to your site using ``Plugin Management`` in |siteConfig| through the Studio UI.  See :ref:`plugin-management` for more information on installing site plugins from the Crafter CMS Marketplace.
