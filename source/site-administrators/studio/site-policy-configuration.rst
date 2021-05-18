@@ -11,7 +11,7 @@ Site Policy Configuration
 The site policy configuration file allows the user to configure conditions for content being added to the site, such as
 minimum/maximum size of files, allowed mime-types of files, etc.
 
-To modify the sidebar configuration, click on |siteConfig| from the *Sidebar*, then click on **Configuration** and
+To modify the site policy configuration, click on |siteConfig| from the *Sidebar*, then click on **Configuration** and
 select **Site Policy Configuration** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-site-policy-config.jpg
