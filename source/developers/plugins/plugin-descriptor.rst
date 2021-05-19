@@ -76,7 +76,7 @@ where the following fields are required:
 |
 |
 
-For ``plugin.media.screenshots``, the url ``../master/static-assets/.crafter/screenshots/default.png`` is the default path for Crafter CMS to look for a default representative image of a plugin or blueprint
+For ``plugin.media.screenshots``, the url ``../master/.crafter/screenshots/default.png`` is the default path for Crafter CMS to look for a default representative image of a plugin or blueprint
 
 .. note::
 
