@@ -22,7 +22,7 @@ plugin:
     screenshots:
       - title: Crafter CMS
         description: Crafter CMS Example Component Plugin
-        url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/static-assets/.crafter/screenshots/default.png"
+        url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/screenshots/default.png"
   developer:
     company:
       name: Crafter Software
