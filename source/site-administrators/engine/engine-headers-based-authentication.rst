@@ -170,8 +170,8 @@ To add optional attributes, add the following inside the ``<headers>`` tag:
           <!-- Optional attribute mappings, allows to expose attributes from the external auth -->
           <attributes>
             <attribute>
-              <name>APP_ATTRIBUTE_NAME</name> <!-- The name of the attribute in the header -->
-              <field>name</field>             <!-- The name of the attribute in the authentication object -->
+              <name>APP_ATTRIBUTE_NAME</name>   <!-- The name of the attribute in the header, excluding the prefix -->
+              <field>name</field>               <!-- The name of the attribute in the authentication object -->
             </attribute>
           </attributes>
           ...
@@ -181,12 +181,12 @@ To add optional attributes, add the following inside the ``<headers>`` tag:
 
 where:
 
-* **name**: The name of the attribute in the header.  The ``APP_`` prefix shown above is just an example and could be
-  anything.
-* **field**: The name of the attribute in the authentication object.
+* **name**: The name of the attribute in the header, with the prefix removed.  (if your prefix is ``CRAFTER_`` then the 
+header value would be ``CRAFTER_APP_ATTRIBUTE_NAME``, and you should enter ``APP_ATTRIBUTE_NAME`` in this tag.)
+* **field**: The name of the attribute that will be created in the authentication object.
 
-To get the value of the attribute passed in the header, use the following ``authToken.principal.attributes.FIELD_NAME``,
- where ``FIELD_NAME`` is the name of the attribute in the authentication object
+To get the value of the attribute passed in the header, use the following ``authToken.principal.attributes.name``,
+ where ``name`` is the name of the attribute in the authentication object.
 
 -------
 Example
