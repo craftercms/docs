@@ -170,7 +170,7 @@ To add optional attributes, add the following inside the ``<headers>`` tag:
           <attributes>
             <attribute>
               <name>APP_ATTRIBUTE_NAME</name>   <!-- The name of the attribute in the header, excluding the prefix -->
-              <field>YOUR_FIELD_NAME</field>    <!-- The name of the attribute in the authentication object -->
+              <field>name</field>               <!-- The name of the attribute in the authentication object -->
             </attribute>
           </attributes>
           ...
@@ -184,8 +184,8 @@ where:
 header value would be ``CRAFTER_APP_ATTRIBUTE_NAME``, and you should enter ``APP_ATTRIBUTE_NAME`` in this tag.)
 * **field**: The name of the attribute that will be created in the authentication object.
 
-To get the value of the attribute passed in the header, use the following ``authToken.principal.attributes.YOUR_FIELD_NAME``,
- where ``YOUR_FIELD_NAME`` is the name of the attribute in the authentication object.
+To get the value of the attribute passed in the header, use the following ``authToken.principal.attributes.name``,
+ where ``name`` is the name of the attribute in the authentication object.
 
 -------
 Example
