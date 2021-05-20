@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 
 .. index:: Crafter Studio Plugin Host Page Examples, Studio Plugins, Plugins
 
@@ -25,7 +25,7 @@ Let's begin:
 #. Fill in the following fields with the values listed below:
 
    * **Site ID**: editorial
-   * **Git Repo URL**: https://github.com/rart/craftercms-editorial-ice
+   * **Git Repo URL**: https://github.com/craftercms/craftercms-editorial-ice
 
 #. Make the ``plugin_deploy.sh`` file executable under the *CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/sources* folder.  This is the script that builds and deploys the plugins.
 

@@ -405,7 +405,7 @@ rst_epilog = """
 .. |checkmark| unicode:: U+2713
 .. |ex| unicode:: U+2718
 
-.. |siteConfig| image:: /_static/images/configuration-site-config-icon.png
+.. |siteConfig| image:: /_static/images/configuration-site-tools-icon.png
                    :width: 15%
 
 .. |mainMenu| image:: /_static/images/main-menu-button.png
@@ -429,7 +429,7 @@ javadoc_version = '3.1.12'
 
 # swagger base and version
 studio_swagger_base = 'https://app.swaggerhub.com/apis/craftercms/studio/'
-studio_swagger_version = '3.1.8.2'
+studio_swagger_version = '4.0.0.12'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),
