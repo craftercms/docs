@@ -34,7 +34,7 @@ See :ref:`data-source-interface` for more information on form engine data source
 Site Plugin Directory Structure
 -------------------------------
 
-When using site plugins, the JS files location for the site plugins uses a convention where the data source files needs to go in the following location:
+When creating site plugins, the JS files location for the site plugins uses a convention where the data source files needs to go in the following location:
 
 * **Data Sources** : authoring/js/datasource/DATA_SOURCE_NAME/JS_FILE.js
 
@@ -156,6 +156,46 @@ In the JS file, please note that the ``CStudioAuthoring.Module`` is required and
 
 |
 
+.. _configure-descriptor-file-for-autowiring-datasource:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuring the Descriptor File to Wire the Plugin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To setup our form control to be automatically wired in the corresponding configuration file in Studio (which for a form control, is the Site Config Tools Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
+
+.. code-block:: yaml
+   :linenos:
+   :caption: *craftercms-plugin.yaml*
+
+   installation:
+    - type: form-datasource
+      element:
+        name: datasource
+        children:
+          - name: plugin
+            children:
+              - name: pluginId
+                value: org.craftercms.plugin.datasource
+              - name: type
+                value: datasource
+              - name: name
+                value: parent-content
+              - name: filename
+                value: main.js
+          - name: icon
+            children:
+              - name: class
+                value: fa-pencil-square-o
+
+|
+
+See :ref:`site-plugin-descriptor-file` for more information on setting up automatic wiring of your site plugin in Studio
+
+^^^^^^^^^^^^^^^
+Test the Plugin
+^^^^^^^^^^^^^^^
+
 After placing your JS file, the site plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
 When running a ``crafter-cli`` command, the connection to Crafter CMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the site ``mysite`` by running the following:
@@ -167,13 +207,9 @@ When running a ``crafter-cli`` command, the connection to Crafter CMS needs to b
    |
 
 
+Let's take a look at the auto-wiring performed during installation of the plugin.  Form data sources are setup in the ``site-config-tools.xml``  file.
 
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Configuring the Data Source to show up in Crafter Studio
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Add the site plugin data source's name to the list of data sources in the content type editor configuration
+The items we setup in the descriptor file for auto-wiring :ref:`above <configure-descriptor-file-for-autowiring-datasource>` should now be in the ``Site Config Tools`` configuration file, which can be accessed  by opening the ``Sidebar``, then clicking  on ``Site Tools`` -> ``Configuration``  ->  ``Site Config Tools``
 
 **Location (In Repository) SITENAME/config/studio/administration/site-config-tools.xml**
 
@@ -204,7 +240,7 @@ Add the site plugin data source's name to the list of data sources in the conten
 
 |
 
-Here's our site plugin data source added to the list of data sources in the site content types
+Here's our site plugin data source added to the list of data sources in content types
 
 .. image:: /_static/images/form-sources/datasource-plugin-added.png
     :width: 50 %

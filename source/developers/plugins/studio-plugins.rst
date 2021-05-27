@@ -1,6 +1,6 @@
 :orphan:
 
-:is-up-to-date: True
+:is-up-to-date: False
 
 .. index:: Crafter Studio Site Plugins, Studio Site Plugins, Site Plugins
 
@@ -17,7 +17,7 @@ Stand alone site plugins can make use of Studio UI components using various poss
 
 The Crafter Studio API that gets a file for a given plugin, the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile` facilitates extending Studio through site plugins.
 
-------------------------------
+-------------------------------
 Site Plugin Directory Structure
 -------------------------------
 
@@ -51,24 +51,26 @@ Let'a take a look at how to create a Crafter Studio site plugin.
 
       |
 
-   Place your site plugin under the {yourPluginName} folder.  Next install your site plugin to your site using the ``crafter-cli`` command ``copy-plugin``.  This will install your Studio site plugin under the ``config/studio/plugins/js/{yourPluginId}/{yourPluginType}/{yourPluginName}`` directory
+   Place your site plugin under the {yourPluginName} folder.
+
+#. If your site plugin is inside Studio, setup automatic wiring of your plugin to the corresponding configuration file through the descriptor file for supported installation types, otherwise, setup needed configuration files.   See :ref:`site-plugin-descriptor-file`  for more information on auto-wiring your plugin in Studio.
+#. See your site plugin in action by installing your plugin via the ``crafter-cli`` command ``copy-plugin`` if your site plugin is inside Studio, otherwise visit: ``/studio/plugin?site={site}&pluginId={yourPluginIdName}&type={yourPluginType}&name={yourPluginName}``
+
+   Installing your site plugin to your site using the ``crafter-cli`` command ``copy-plugin`` will install your Studio site plugin under the ``config/studio/plugins/js/{yourPluginId}/{yourPluginType}/{yourPluginName}`` directory
 
       .. code-block:: text
          :linenos:
 
-         {siteRoot}/
-           config/
-             studio/
-               plugins/
-                 js/
-                   {yourPluginId}/
-                     {yourPluginType}/
-                       {yourPluginName}/
+             {siteRoot}/
+               config/
+                 studio/
+                   plugins/
+                     js/
+                       {yourPluginId}/
+                         {yourPluginType}/
+                           {yourPluginName}/
 
-      |
-
-#. If your site plugin is inside Studio, setup needed configuration files, etc.
-#. See your site plugin in action by refreshing your Studio browser if your site plugin is inside Studio, otherwise visit: ``/studio/plugin?site={site}&pluginId={yourPluginIdName}&type={yourPluginType}&name={yourPluginName}``
+          |
 
 .. note::
 
