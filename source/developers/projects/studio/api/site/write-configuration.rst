@@ -2,11 +2,15 @@
 
 .. _crafter-studio-api-site-write-configuration:
 
-===================
-Write Configuration
-===================
+================================
+Write Configuration (deprecated)
+================================
 
 Write site configuration.
+
+.. important::
+   This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/configuration/writeConfiguration` for the current version.
+
 
 --------------------
 Resource Information
