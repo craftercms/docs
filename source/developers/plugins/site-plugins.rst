@@ -26,6 +26,7 @@ A site plugin can contain one or more extensions for Crafter CMS in a single pac
   * Add REST APIs and/or server-side code
   * Add 3rd party integrations to your web app
 
+
 .. _how-do-i-make-my-own-site-plugin:
 
 ---------------------------------
@@ -58,7 +59,7 @@ site plugin, your files/folders needs to go in the corresponding type of plugin 
 
   - ``content-types``
 
-    - ``component``: contains configuration files for components
+    - ``component``: contains configuration files for components, see :ref:`below <example-component-plugin>` for an example
     - ``page``: contains configuration files for pages
 
   - ``js``: contains files for Studio UI plugins, see :ref:`studio-plugins` for details
@@ -249,6 +250,8 @@ Remember that the connection to Crafter CMS needs to be setup via the ``add-envi
 
 See :ref:`crafter-cli-copy-plugin` for more information on the ``copy-plugin`` command.
 
+.. _example-component-plugin:
+
 ------------------------------
 Example Creating a Site Plugin
 ------------------------------
@@ -331,3 +334,28 @@ Crafter CMS provides a site plugin example available here: https://github.com/cr
 This plugin demonstrates a Site plugin with authoring and delivery code. It extends Crafter Studio with an API, a UI for content authors, and extends the delivery Site (in Crafter Engine) with an MVC (Model View Controller) with a content type (model), a FreeMarker template (view)
 
 It is published in the Crafter CMS Marketplace and can be installed to your site using ``Plugin Management`` in |siteConfig| through the Studio UI.  See :ref:`plugin-management` for more information on installing site plugins from the Crafter CMS Marketplace.
+
+
+.. figure:: /_static/images/developer/plugins/site-plugins/site-plugin-example.png
+   :align: center
+   :alt: Site Plugin Example in Plugin Management
+   :width: 20%
+
+|
+
+
+------------------
+Some More Examples
+------------------
+
+Here are some more site plugin examples to help you create your own plugins:
+
+^^^^^^^^^^^^^^^^^^
+Authoring Examples
+^^^^^^^^^^^^^^^^^^
+For more authoring examples of site plugins, see :ref:`studio-plugins`
+
+.. Add delivery example link here
+   ^^^^^^^^^^^^^^^^
+   Delivery Example
+   ^^^^^^^^^^^^^^^^

@@ -35,7 +35,7 @@ See :ref:`control-interface` for more information on form engine control interfa
 Site Plugin Directory Structure
 -------------------------------
 
-When using site plugins, the JS files location for the site plugins uses a convention where the files needs to go in the following location:
+When creating site plugins, the JS files location for the site plugins uses a convention where the files needs to go in the following location:
 
 * **Controls** : authoring/js/control/CONTROL_NAME/JS_FILE.js
 
@@ -133,6 +133,46 @@ In the JS file, please note that the ``CStudioAuthoring.Module`` is required and
 
 |
 
+.. _configure-descriptor-file-for-autowiring:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configuring the Descriptor File to Wire the Plugin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To setup our form control to be automatically wired in the corresponding configuration file in Studio (which for a form control, is the Site Config Tools Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
+
+.. code-block:: yaml
+   :linenos:
+   :caption: *craftercms-plugin.yaml*
+
+   installation:
+    - type: form-control
+      element:
+        name: control
+        children:
+          - name: plugin
+            children:
+              - name: pluginId
+                value: org.craftercms.plugin.control
+              - name: type
+                value: control
+              - name: name
+                value: text-input
+              - name: filename
+                value: main.js
+          - name: icon
+            children:
+              - name: class
+                value: fa-pencil-square-o
+
+|
+
+See :ref:`site-plugin-descriptor-file` for more information on setting up automatic wiring of your site plugin in Studio
+
+^^^^^^^^^^^^^^^
+Test the Plugin
+^^^^^^^^^^^^^^^
+
 After placing your JS file, the site plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
 When running a ``crafter-cli`` command, the connection to Crafter CMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the site ``mysite`` by running the following:
@@ -143,11 +183,10 @@ When running a ``crafter-cli`` command, the connection to Crafter CMS needs to b
 
    |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Configuring the Control to show up in Crafter Studio
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Add the site plugin control's name to the list of controls in the content type editor configuration after installing
+Let's take a look at the auto-wiring performed during installation of the plugin.  Form controls are setup in the ``site-config-tools.xml``  file.
+
+The items we setup in the descriptor file for auto-wiring :ref:`above <configure-descriptor-file-for-autowiring>` should now be in the ``Site Config Tools`` configuration file, which can be accessed  by opening the ``Sidebar``, then clicking  on ``Site Tools`` -> ``Configuration``  ->  ``Site Config Tools``
 
 **Location (In Repository) SITENAME/config/studio/administration/site-config-tools.xml**
 
@@ -165,7 +204,7 @@ Add the site plugin control's name to the list of controls in the content type e
         .
         <control>
             <plugin>
-                <pluginId>org.craftercms.plugin</pluginId>
+                <pluginId>org.craftercms.plugin.control</pluginId>
                 <type>control</type>
                 <name>text-input</name>
                 <filename>main.js</filename>
@@ -177,7 +216,7 @@ Add the site plugin control's name to the list of controls in the content type e
     </controls>
 
 
-Here's our site plugin control added to the list of controls in the site content types
+Here's our site plugin control added to the list of controls in content types
 
 .. image:: /_static/images/form-controls/control-plugin-added.png
     :width: 50 %
