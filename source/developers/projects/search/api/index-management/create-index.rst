@@ -31,6 +31,10 @@ Parameters
 +=========================+=============+===============+========================================+
 || id                     || String     || |checkmark|  || The index ID.                         |
 +-------------------------+-------------+---------------+----------------------------------------+
+|| token                  || String     || |checkmark|  || The access token.                     |
++-------------------------+-------------+---------------+----------------------------------------+
+
+The access token could be optional depending on the configuration.
 
 -------
 Example
@@ -40,7 +44,7 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/2/admin/index/create``
+``POST .../api/2/admin/index/create?token=myAccessToken``
 
 .. code-block:: json
 

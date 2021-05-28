@@ -38,6 +38,10 @@ Parameters
 ||                        ||            ||              || deleted. If ``ALL_DATA_AND_CONFIG``,  |
 ||                        ||            ||              || all data and configuration.           |
 +-------------------------+-------------+---------------+----------------------------------------+
+|| token                  || String     || |checkmark|  || The access token.                     |
++-------------------------+-------------+---------------+----------------------------------------+
+
+The access token could be optional depending on the configuration.
 
 -------
 Example
@@ -47,7 +51,7 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/2/admin/index/delete/mysite``
+``POST .../api/2/admin/index/delete/mysite?token=myAccessToken``
 
 .. code-block:: json
 

@@ -42,6 +42,10 @@ Parameters
 || {param}                || String     ||              || Any additional meta-data that needs   |
 ||                        ||            ||              || to be indexed along with the binary.  |
 +-------------------------+-------------+---------------+----------------------------------------+
+|| token                  || String     || |checkmark|  || The access token.                     |
++-------------------------+-------------+---------------+----------------------------------------+
+
+The access token could be optional depending on the configuration.
 
 -------
 Example
@@ -53,7 +57,7 @@ Request
 
 .. code-block:: none
 
-  POST .../api/2/search/update-content
+  POST .../api/2/search/update-content?token=myAccessToken
 
 .. code-block:: none
 

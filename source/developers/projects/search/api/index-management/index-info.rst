@@ -32,6 +32,10 @@ Parameters
 +=========================+=============+===============+========================================+
 || id                     || String     || |checkmark|  || The index ID.                         |
 +-------------------------+-------------+---------------+----------------------------------------+
+|| token                  || String     || |checkmark|  || The access token.                     |
++-------------------------+-------------+---------------+----------------------------------------+
+
+The access token could be optional depending on the configuration.
 
 -------
 Example
@@ -41,7 +45,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/2/admin/index/info/mysite``
+``GET .../api/2/admin/index/info/mysite?token=myAccessToken``
 
 ^^^^^^^^^^^^^^^
 Response (Solr)

@@ -37,6 +37,10 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------+
 || strip_root             || Boolean    || |checkmark|  || Remove the root node from field names |
 +-------------------------+-------------+---------------+----------------------------------------+
+|| token                  || String     || |checkmark|  || The access token.                     |
++-------------------------+-------------+---------------+----------------------------------------+
+
+The access token could be optional depending on the configuration.
 
 -------
 Example
@@ -48,7 +52,7 @@ Request
 
 .. code-block:: none
 
-  POST .../api/2/search/update?index_id=editorial&site=editorial&id=%2Fsite%2Fwebsite%2Farticles%2F2017%2F1%2Fwomen-styles-for-winter%2Findex.xml
+  POST .../api/2/search/update?index_id=editorial&site=editorial&id=%2Fsite%2Fwebsite%2Farticles%2F2017%2F1%2Fwomen-styles-for-winter%2Findex.xml&token=myAccessToken
 
 .. code-block:: xml
   :linenos:

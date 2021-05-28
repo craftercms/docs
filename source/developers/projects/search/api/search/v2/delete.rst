@@ -35,6 +35,10 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------+
 || id                     || String     || |checkmark|  || The document ID                       |
 +-------------------------+-------------+---------------+----------------------------------------+
+|| token                  || String     || |checkmark|  || The access token.                     |
++-------------------------+-------------+---------------+----------------------------------------+
+
+The access token could be optional depending on the configuration.
 
 -------
 Example
@@ -46,7 +50,7 @@ Request
 
 .. code-block:: none
 
-  POST .../api/2/search/delete
+  POST .../api/2/search/delete?token=myAccessToken
 
 .. code-block:: none
 

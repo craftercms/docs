@@ -31,6 +31,10 @@ Parameters
 +=========================+=============+===============+========================================+
 || index_id               || String     ||              || The index ID                          |
 +-------------------------+-------------+---------------+----------------------------------------+
+|| token                  || String     || |checkmark|  || The access token.                     |
++-------------------------+-------------+---------------+----------------------------------------+
+
+The access token could be optional depending on the configuration.
 
 ^^^^^^^^^^^^^^^^^^^^^
 Solr Query Parameters
@@ -72,7 +76,7 @@ Request
 
 .. code-block:: none
 
-  GET .../api/2/search/search?index_id=editorial&q=*&fq=content-type%3A%22page%2Farticle%22&rows=2&fl=localId
+  GET .../api/2/search/search?index_id=editorial&q=*&fq=content-type%3A%22page%2Farticle%22&rows=2&fl=localId&token=myAccessToken
 
 ^^^^^^^^
 Response
