@@ -49,7 +49,7 @@ To use a custom blacklist follow these steps:
       crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/groovy/blacklist
 
     .. note::
-      In Crafter CMS v3.1.14 and early the name of the property is ``crafter.engine.groovy.sandbox.blacklist``
+      In Crafter CMS v3.1.14 and prior, the name of the property is ``crafter.engine.groovy.sandbox.blacklist``
 
 #.  Restart Crafter CMS
 
@@ -77,7 +77,7 @@ required to add an extra parameter ``initClass=false`` in the annotations to pre
 Disabling the Sandbox Blacklist
 -------------------------------
 
-It is possible to disable the blacklist to allow the execution of most expressions, this is the recommended option in
+It is possible to disable the blacklist to allow the execution of most expressions, in
 case you need to use a considerable number of the expression included in the blacklist while keeping some basic
 restrictions. To disable the blacklist for all sites update the server configuration file
 :ref:`server-config.properties <engine-configuration-files>`:
