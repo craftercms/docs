@@ -99,7 +99,7 @@ It is possible to completely disable the Groovy sandbox for all scripts. To disa
 .. code-block:: none
   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
-  # Indicates if the sandbox should be enabled for all sites
+  # Indicates if the sandbox is enabled for all sites
   crafter.engine.groovy.sandbox.enable=false
 
 |
