@@ -44,10 +44,13 @@ To use a custom blacklist follow these steps:
     
     .. code-block:: none
       :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
-    
-      # Use a custom blacklist for the sandbox
-      crafter.engine.groovy.sandbox.blacklist=classpath:crafter/engine/extension/groovy/blacklist
-    
+
+      # The location of the blacklist to use for all sites (this will have no effect if the sandbox is disabled)
+      crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/groovy/blacklist
+
+    .. note::
+      In Crafter CMS v3.1.14 and prior, the name of the property is ``crafter.engine.groovy.sandbox.blacklist``
+
 #.  Restart Crafter CMS
 
 Now you can execute the same script without any issues.
@@ -70,6 +73,23 @@ required to add an extra parameter ``initClass=false`` in the annotations to pre
 
 |
 
+-------------------------------
+Disabling the Sandbox Blacklist
+-------------------------------
+
+It is possible to disable the blacklist to allow the execution of most expressions, in
+case you need to use a considerable number of the expression included in the blacklist while keeping some basic
+restrictions. To disable the blacklist for all sites update the server configuration file
+:ref:`server-config.properties <engine-configuration-files>`:
+
+.. code-block:: none
+  :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+  # Indicates if the blacklist should be enabled for all sites (this will have no effect if the sandbox is disabled)
+  crafter.engine.groovy.sandbox.blacklist.enable=false
+
+|
+
 ----------------------------
 Disabling the Groovy Sandbox
 ----------------------------
@@ -79,7 +99,7 @@ It is possible to completely disable the Groovy sandbox for all scripts. To disa
 .. code-block:: none
   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
-  # Disable the script sandbox for all sites
+  # Indicates if the sandbox is enabled for all sites
   crafter.engine.groovy.sandbox.enable=false
 
 |
