@@ -46,6 +46,7 @@ Step 2: Add the override configuration you require to the logging configuration 
         :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/logging.xml*
 
         <Logger name="org.craftercms.studio.api.v1.dal.DependencyMapper.calculatePublishingDependenciesForList" level="debug"/>
+
      |
 
      To set an entire package:
