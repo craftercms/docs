@@ -570,6 +570,19 @@ Remember to update these per installation and provide these tokens to the status
 ||                           || defaultManagementToken                                           |
 +----------------------------+-------------------------------------------------------------------+
 
+Here are the environment variables used for Access Tokens.
+Remember to update these per installation:
+
++----------------------------+-------------------------------------------------------------------+
+|| Access Token              || Description                                                      |
+|| Variable Name             +-------------------------------------------------------------------+
+||                           || Default Value                                                    |
++============================+===================================================================+
+|| SEARCH_ACCESS_TOKEN       || Access token for Crafter Search                                  |
+||                           +-------------------------------------------------------------------+
+||                           || defaultAccessToken                                               |
++----------------------------+-------------------------------------------------------------------+
+
 Here are the environment variables used to encrypt and decrypt values inside configuration files:
 
 +--------------------------+---------------------------------------------------------------------+
@@ -1131,5 +1144,3 @@ To clone the branch/tag of craftercms that you want to work with, run:
         git clone -b<branch> https://github.com/craftercms/craftercms/
 
 Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.  After cloning the desired branch, you can now init, build and bundle from a given tag/branch using the property `crafter.git.branch` as described in an earlier section :ref:`Git Properties<git-properties>`
-
-

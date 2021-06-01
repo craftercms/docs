@@ -49,10 +49,21 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
         export ENGINE_MANAGEMENT_TOKEN=${ENGINE_MANAGEMENT_TOKEN:="defaultManagementToken"}
         export DEPLOYER_MANAGEMENT_TOKEN=${DEPLOYER_MANAGEMENT_TOKEN:="defaultManagementToken"}
         export SEARCH_MANAGEMENT_TOKEN=${SEARCH_MANAGEMENT_TOKEN:="defaultManagementToken"}
-        export PROFILE_MANAGEMENT_TOKEN=${PROFILE_MANAGEMENT_TOKEN:="defaultManagementToken"}/*
+        export PROFILE_MANAGEMENT_TOKEN=${PROFILE_MANAGEMENT_TOKEN:="defaultManagementToken"}
         export SOCIAL_MANAGEMENT_TOKEN=${SOCIAL_MANAGEMENT_TOKEN:="defaultManagementToken"}
 
      |
+
+* Replace the default value for the access token used by Search
+
+    .. code-block:: sh
+       :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
+
+       # -------------------- Access tokens ----------------
+       # Please update this per installation.
+       export SEARCH_ACCESS_TOKEN=${SEARCH_ACCESS_TOKEN:="defaultAccessToken"}
+
+    |
 
 * Replace default values for the DB root password and the DB ``crafter`` user password before starting Crafter CMS for the very first time.
 

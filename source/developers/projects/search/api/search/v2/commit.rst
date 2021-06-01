@@ -31,6 +31,10 @@ Parameters
 +=========================+=============+===============+========================================+
 || index_id               || String     ||              || The index ID                          |
 +-------------------------+-------------+---------------+----------------------------------------+
+|| token                  || String     || |checkmark|  || The access token.                     |
++-------------------------+-------------+---------------+----------------------------------------+
+
+The access token could be optional depending on the configuration.
 
 -------
 Example
@@ -42,7 +46,7 @@ Request
 
 .. code-block:: none
 
-  POST .../api/2/commit/search
+  POST .../api/2/commit/search?token=myAccessToken
 
 .. code-block:: none
 
