@@ -146,7 +146,6 @@ Deployment
 
    deployment/bulk-golive
    deployment/get-available-publishing-channels
-   deployment/get-deployment-history
    deployment/get-scheduled-items
 
 ^^^^^^^
