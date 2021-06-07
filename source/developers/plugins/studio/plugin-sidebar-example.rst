@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 
 .. index:: Crafter Studio Sidebar Plugin Example, Studio Plugins, Plugins
 
@@ -10,7 +10,7 @@ Crafter Studio Sidebar Plugin Example
 
 Let's take a look at an example of creating a Sidebar plugin in Studio using a site called ``mysite`` created using the **Website Editorial** blueprint.
 
-#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our sidebar site plugin.  We'll follow the convention listed in :ref:`studio-plugins` under the ``Site Plugin Directory Structure``.  For our example, PLUGIN_TYPE is ``sidebar`` and the PLUGIN_NAME is ``react-sample``
+#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our sidebar site plugin.  We'll follow the convention listed in :ref:`plugin-directory-structure`.  For our example, PLUGIN_TYPE is ``sidebar`` and the PLUGIN_NAME is ``react-sample``
 
    In a local folder, create the descriptor file for your site plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin``, then create the folder ``authoring``.  Under the ``authoring`` folder, create the ``js`` folder.  Under the ``js`` folder, create the folder ``sidebar``.  Under the ``sidebar`` folder, create the folder ``react-sample``, which is the name of the sidebar site plugin we're building.  We will be placing the JS file implementing the sidebar site plugin under the ``react-sample`` folder.  In the example below, the JS file is ``main.js``
 
@@ -29,79 +29,98 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
 
    For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/sidebar-plugin``
 
-#. Inside the ``react-sample`` folder, create the javascript file for our plugin, ``main.js`` and copy the following into the file:
+#. Inside the ``react-sample`` folder, create two empty files, ``index.css`` and ``script.js``, then create the javascript file for our plugin, by using this plugin example https://github.com/rart/craftercms-ui-plugin-sample which will generate the ``index.modern.js`` file:
 
    .. code-block:: js
       :linenos:
-      :caption: *config/studio/plugins/sidebar/react-sample/main.js*
+      :caption: *config/studio/plugins/sidebar/react-sample/index.modern.js*
 
-      (function () {
+      var { createElement } = craftercms.libs.React;
+      var { makeStyles, createStyles, Typography } = craftercms.libs.MaterialUI;
+      var { useIntl } = craftercms.libs.ReactIntl;
+      var jss = craftercms.libs.jss && Object.prototype.hasOwnProperty.call(craftercms.libs.jss, 'default') ? craftercms.libs.jss['default'] : craftercms.libs.jss;
 
-        const { React, ReactDOM } = CrafterCMSNext;
+      ...
 
-        CStudioAuthoring.Module.moduleLoaded('react-sample', {
-          initialize(config) {
-            ReactDOM.render(
-              React.createElement(
-                'div',
-                {
-                  style: { margin: '10px 0' },
-                  onClick() {
-                    console.log(config);
-                  }
-                },
-                'Hello, this is a custom react plugin on the sidebar. ' +
-                'Click me to print my config values on the browser console.'
-              ),
-              config.containerEl
-            );
+        apps: [
+          {
+            route: '/yada-yada',
+            widget: { id: 'org.craftercms.sampleComponentLibraryPlugin.components.reactComponent' }
           }
-        });
+        ],
+        widgets: {
+          'org.craftercms.sampleComponentLibraryPlugin.components.reactComponent': ReactComponent,
+          'org.craftercms.sampleComponentLibraryPlugin.components.nonReactComponent': NonReactComponent
+        },
+        scripts: [
+          {
+            src: 'https://code.jquery.com/jquery-3.5.1.min.js',
+            integrity: 'sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=',
+            crossorigin: 'anonymous'
+          },
+          'script.js'
+        ],
+        stylesheets: ['index.css'],
+        themes: []
+      };
 
-      })();
+      export default plugin;
+
 
    |
 
-#. After placing your JS file, the site plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
+#. To setup our sidebar site plugin to be automatically wired in the corresponding configuration file in Studio (which for a sidebar, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
+
+   .. code-block:: yaml
+      :linenos:
+      :caption: *craftercms-plugin.yaml*
+
+      installation:
+        - type: preview-app
+          parent:
+            id: craftercms.components.ToolsPanel
+          element:
+            name: widget
+            attributes:
+              - name: id
+                value: org.craftercms.sampleComponentLibraryPlugin.components.reactComponent
+            children:
+              - name: plugin
+                attributes:
+                  - name: id
+                    value: org.craftercms.plugin
+                  - name: type
+                    value: sidebar
+                  - name: name
+                    value: react-sample
+                  - name: file
+                    value: index.modern.js
+
+   |
+
+   Remember to use the same value used in ``plugin.id`` for the ``installation.element.children.attributes.name`` which for our example is ``org.craftercms.plugin``
+
+#. After placing your plugin files and setting up auto-wiring, the site plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
+
+   .. image:: /_static/images/developer/plugins/site-plugins/sidebar-plugin-files.png
+      :align: center
+      :alt: Sidebar site plugin directory/files
+      :width: 30%
+
+   |
 
    When running a ``crafter-cli`` command, the connection to Crafter CMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the site ``mysite`` by running the following:
 
       ..  code-block:: bash
 
-          ./crafter-cli copy-plugin -e local -s mysite --path /users/myuser/myplugins/form-datasource-plugin
+          ./crafter-cli copy-plugin -e local -s mysite --path /users/myuser/myplugins/sidebar-plugin
 
       |
 
-#. The example we are working on is a plugin for the Studio Sidebar.  We'll now add our plugin to the sidebar configuration of our site.
-   Open the **Sidebar**, click on |siteConfig|, then **Configuration**.  From the dropdown box, select **Sidebar Configuration** and add the following:
+#. Let's take a look at our plugin in action by clicking on the Crafter CMS logo at the top left of your browser to open the sidebar:
 
-      .. code-block:: xml
-          :caption: *Sidebar Configuration*
-          :linenos:
-
-          <!-- Sample React Sidebar Widget -->
-          <modulehook>
-            <plugin>
-              <type>sidebar</type>
-              <name>react-sample</name>
-              <file>main.js</file>
-            </plugin>
-            <params>
-              <!--
-                Any config params you specify here, will
-                be passed to the "initialize" function of your plugin.
-              -->
-            </params>
-          </modulehook>
-
-      |
-
-#. Let's take a look at our plugin in action by viewing the **Dashboard** or by clicking on the site name or the Crafter CMS logo at the top left of your browser:
-
-   .. image:: /_static/images/developer/plugins/sidebar-plugin-in-action.png
+   .. image:: /_static/images/developer/plugins/site-plugins/sidebar-plugin-in-action.jpg
       :align: center
-      :alt: Active Environment Displayed in Site Config Configuration
+      :alt: Sidebar site plugin in action
 
-.. note::
-   Make sure the first parameter sent to ``moduleLoaded`` in your JavaScript file matches the value of the tag on the Sidebar Configuration XML file. If everything works but the plugin doesn't show, this could be the reason.
 
