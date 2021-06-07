@@ -270,7 +270,7 @@ logger              The processor's logger, http://www.slf4j.org/api/org/slf4j/L
 applicationContext  The application context of the current target, https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/ApplicationContext.html
 deployment          The current deployment, :javadoc_base_url:`deployer/org/craftercms/deployer/api/Deployment.html`
 execution           The execution for this processor, :javadoc_base_url:`deployer/org/craftercms/deployer/api/ProcessorExecution.html`
-filteredChangeSet   The filtered change set calculated by this processor before execution, :javadoc_base_url:`deployer/org/craftercms/deployer/api/ChangeSet.html`
+filteredChangeSet   A subset of ``originalChangeSet`` that matches the ``includeFiles`` pattern and not the ``excludeFiles`` pattern for this processor, :javadoc_base_url:`deployer/org/craftercms/deployer/api/ChangeSet.html`
 originalChangeSet   The original change set returned by the previous processors in the pipeline, :javadoc_base_url:`deployer/org/craftercms/deployer/api/ChangeSet.html`
 ==================  ===========
 
