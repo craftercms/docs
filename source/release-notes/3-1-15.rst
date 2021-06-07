@@ -1,0 +1,73 @@
+.. index:: Crafter CMS 3.1.15 Release Notes
+
+------------------
+Crafter CMS 3.1.15
+------------------
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+
+* Added a new deployer API for unlocking a target  |br|
+  See the :ref:`crafter-deployer-api-target-unlock` API for more information
+
+* Added access token for Search ``SEARCH_ACCESS_TOKEN`` |br|
+  Make sure to adjust your Search index management and content management API calls to supply your configured access token
+
+  See :ref:`securing-your-crafter-cms-install` for more information on replacing the default value for the access token used by Search
+
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Script and template sandbox improvements |br|
+
+  * The property ``crafter.engine.groovy.sandbox.blacklist`` has been renamed to ``crafter.engine.groovy.sandbox.blacklist.path``
+  * Added support for disabling the sandbox blacklist.  To disable the sandbox blacklist, set the following:
+
+      .. code-block:: none
+         :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+         # Indicates if the blacklist should be enabled for all sites (this will have no effect if the sandbox is disabled)
+         crafter.engine.groovy.sandbox.blacklist.enable=false
+
+      |
+
+
+  See :ref:`script-sandbox-configuration` for more information
+
+* Added support to allow plugins to consume Studio's theme for creating a consistent look and feel |br|
+  See `here <https://github.com/craftercms/craftercms/issues/4745>`__ for more information
+* ETag filter in preview is now disabled by default |br|
+  See `here <https://github.com/craftercms/craftercms/issues/4748>`__ for more information
+
+
+* RTE bug fixes
+
+  * Fixed content stuck in system processing when special characters are saved |br|
+    See `here <https://github.com/craftercms/craftercms/issues/4574>`__ for more information
+  * Fixed extra spaces added when inserting a template |br|
+    See `here <https://github.com/craftercms/craftercms/issues/4746>`__ for more information
+
+* Fixed *Approve & Publish* Timezone offset for Daylight Savings Time
+  See `here <https://github.com/craftercms/craftercms/issues/4593>`__ for more information
+
+Lot's of other small enhancements and bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 3.1.15 Milestone <https://github.com/craftercms/craftercms/milestone/72?closed=1>`_
+
+.. important::
+
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.15)
+
+    Starting with JVM version 1.8.0_292, support for TLS v1.1 and earlier is disabled by default |br|
+    See :ref:`debugging_ssl_issues` if you encounter issues.
+
+    For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+    Please see :ref:`upgrade-notes-to-fix-backup-error` for some important notes when restoring backups created prior
+    to Crafter CMS 3.1.10, :ref:`upgrade-notes-for-re-encrypting-values` for some important notes on the re-encryption
+    process and :ref:`upgrade-notes-to-fix-stored-procedure-error` for some important notes on database errors.
+
+
