@@ -50,8 +50,10 @@ Updates
   * Fixed extra spaces added when inserting a template |br|
     See `here <https://github.com/craftercms/craftercms/issues/4746>`__ for more information
 
-* Fixed *Approve & Publish* Timezone offset for Daylight Savings Time
+* Fixed *Approve & Publish* Timezone offset for Daylight Savings Time |br|
   See `here <https://github.com/craftercms/craftercms/issues/4593>`__ for more information
+
+* Optimized database and git synchronization |br|
 
 Lot's of other small enhancements and bug fixes :)
 
