@@ -23,6 +23,8 @@ If you encounter a Maven build failure in your application like the following:
 
    |
 
+This means your application is using an external HTTP repository URL.
+
 To disable blocking of external HTTP repositories, in the Maven settings (located in ``${maven.home}/conf/settings.xml`` or ``${user.home}/.m2/settings.xml``), the following entry must be removed/commented out:
 
    .. code-block:: xml
