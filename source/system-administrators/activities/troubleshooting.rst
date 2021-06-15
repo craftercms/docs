@@ -15,3 +15,4 @@ This section details common problems you might encounter with Crafter CMS and ho
    ../deployer/debugging-deployer-issues.rst
    debugging-ssh-issues.rst
    debugging-ssl-issues.rst
+   debugging-maven-issues.rst
