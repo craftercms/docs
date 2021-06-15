@@ -14,11 +14,11 @@ javax.servlet-api
 **Dependency:** javax.servlet-api |br|
 **URL:** https://search.maven.org/artifact/javax.servlet/javax.servlet-api
 
-mail
-^^^^
-**Package:** javax.mail |br|
-**Dependency:** mail |br|
-**URL:** https://search.maven.org/artifact/javax.mail/mail
+javax.mail
+^^^^^^^^^^
+**Package:** com.sun.mail |br|
+**Dependency:** javax.mail |br|
+**URL:** https://search.maven.org/artifact/com.sun.mail/javax.mail
 
 activation
 ^^^^^^^^^^
@@ -967,30 +967,6 @@ ivy
 **Package:** org.apache.ivy |br|
 **Dependency:** ivy |br|
 **URL:** https://search.maven.org/artifact/org.apache.ivy/ivy
-
-guava-collections
-^^^^^^^^^^^^^^^^^
-**Package:** com.google.guava |br|
-**Dependency:** guava-collections |br|
-**URL:** https://search.maven.org/artifact/com.google.guava/guava-collections
-
-guava-annotations
-^^^^^^^^^^^^^^^^^
-**Package:** com.google.guava |br|
-**Dependency:** guava-annotations |br|
-**URL:** https://search.maven.org/artifact/com.google.guava/guava-annotations
-
-guava-primitives
-^^^^^^^^^^^^^^^^
-**Package:** com.google.guava |br|
-**Dependency:** guava-primitives |br|
-**URL:** https://search.maven.org/artifact/com.google.guava/guava-primitives
-
-guava-base
-^^^^^^^^^^
-**Package:** com.google.guava |br|
-**Dependency:** guava-base |br|
-**URL:** https://search.maven.org/artifact/com.google.guava/guava-base
 
 findbugs
 ^^^^^^^^
