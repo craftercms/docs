@@ -33,6 +33,8 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------+
 || site_name              || String     || |checkmark|  || The target's site name (e.g mysite).  |
 +-------------------------+-------------+---------------+----------------------------------------+
+|| token                  || String     || |checkmark|  || The authorization token               |
++-------------------------+-------------+---------------+----------------------------------------+
 
 -------
 Example
@@ -42,7 +44,7 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/target/unlock/dev/mysite``
+``POST .../api/1/target/unlock/dev/mysite?token=defaultManagementToken``
 
 ^^^^^^^^
 Response
