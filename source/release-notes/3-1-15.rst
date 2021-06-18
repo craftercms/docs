@@ -21,6 +21,8 @@ New Features
 Updates
 ^^^^^^^
 
+* Optimized database and git synchronization for a better Crafter Studio experience |br|
+
 * Script and template sandbox improvements |br|
 
   * The property ``crafter.engine.groovy.sandbox.blacklist`` has been renamed to ``crafter.engine.groovy.sandbox.blacklist.path``
@@ -34,14 +36,12 @@ Updates
 
       |
 
-
   See :ref:`script-sandbox-configuration` for more information
 
 * Added support to allow plugins to consume Studio's theme for creating a consistent look and feel |br|
   See `here <https://github.com/craftercms/craftercms/issues/4745>`__ for more information
 * ETag filter in preview is now disabled by default |br|
   See `here <https://github.com/craftercms/craftercms/issues/4748>`__ for more information
-
 
 * RTE bug fixes
 
@@ -53,7 +53,14 @@ Updates
 * Fixed *Approve & Publish* Timezone offset for Daylight Savings Time |br|
   See `here <https://github.com/craftercms/craftercms/issues/4593>`__ for more information
 
-* Optimized database and git synchronization |br|
+* Fixed site creation with git remote failure when repository contains case sensitive files |br|
+  See `here <https://github.com/craftercms/craftercms/issues/4747>`__ for more information
+
+* Fixed dependency calculation when custom extensions for dependencies are configured |br|
+  See `here <https://github.com/craftercms/craftercms/issues/4439>`__ for more information
+
+* Optimized Dashboard backing APIs to enhance filtering speed |br|
+  See `here <https://github.com/craftercms/craftercms/issues/4795>`__ for more information
 
 Lot's of other small enhancements and bug fixes :)
 
