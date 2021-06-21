@@ -472,7 +472,7 @@ The following section of Studio's configuration overrides allows you to setup se
 Forwarded Headers
 -----------------
 
-The following section of Studio's configuration overrides allows you to to resolve the actual hostname and protocol when it is behind a load balancer or reverse proxy.
+The following section of Studio's configuration overrides allows you to configure forwarded headers to resolve the actual hostname and protocol when it is behind a load balancer or reverse proxy.
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*

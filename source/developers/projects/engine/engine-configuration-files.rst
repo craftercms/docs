@@ -26,3 +26,4 @@ These configuration files for Crafter Engine is located under  ``CRAFTER_HOME/bi
 
 The files can be accessed by opening the files using your favorite editor.  Any changes made to any of the files listed above will require a restart of Crafter.
 
+For more information on the properties in ``server-config.properties``, see :ref:`engine-config-override`
