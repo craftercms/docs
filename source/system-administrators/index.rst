@@ -142,6 +142,7 @@ Crafter Engine
    engine/configure-engine-multi-tenancy.rst
    engine/configure-engine-single-tenant.rst
    engine/turning-off-show-error.rst
+   engine/engine-configuration-overrides.rst
 
 
 ===============
