@@ -8,7 +8,9 @@
 Working with GraphQL
 ====================
 
-.. warning:: *GraphQL requires Elasticsearch.  If your site is using Crafter Search/Solr as the search engine, GraphQL will not work.*
+   .. warning::
+      *GraphQL requires Elasticsearch.  If your site is using Crafter Search/Solr as the search engine, GraphQL will not work.* |br|
+      *To update your sites to Elasticsearch, follow the guide* :ref:`migrate-site-to-elasticsearch`
 
 Crafter CMS provides built-in support for GraphQL to query content in any site without writing additional code.
 A GraphQL schema is generated independently for each site based on the content-type configuration that has been 

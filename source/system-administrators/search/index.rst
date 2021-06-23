@@ -6,6 +6,8 @@
 Crafter Search System Administration
 ====================================
 
+.. include:: /includes/crafter-search-solr-note.rst
+
 ------------------
 Solr Configuration
 ------------------
