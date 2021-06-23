@@ -17,6 +17,9 @@ Overview of Search Mechanics
 
 .. include:: /includes/how-search-works-solr.rst
 
+
+.. include:: /includes/crafter-search-solr-note.rst
+
 --------------------------------------
 Places Search Indexing Can Get Hung Up
 --------------------------------------

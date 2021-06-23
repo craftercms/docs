@@ -13,10 +13,13 @@ Crafter Search
     :width: 60 %
     :align: center
 
+|
+
 Crafter Search is the search facade for Crafter CMS. Crafter Search proxies the real search engine deployed behind it.
 
-.. note::
-    Crafter Search is supported for backward compatibility.  Crafter CMS's default search engine is Elasticsearch.
+|
+
+.. include:: /includes/crafter-search-solr-note.rst
 
 -----------
 Source Code

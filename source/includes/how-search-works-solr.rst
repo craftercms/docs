@@ -1,6 +1,7 @@
 ^^^^
 Flow
 ^^^^
+
 .. image:: /_static/images/search/search-mechanics-solr.png
    :alt: Crafter Studio Search Mechanics with Crafter Search
    :align: center

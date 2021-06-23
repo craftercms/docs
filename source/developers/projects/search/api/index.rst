@@ -17,6 +17,7 @@ The context for this API is ``/crafter-search/``, please prefix the API URLs wit
 
 |
 
+
 ----------------
 Index Management
 ----------------
@@ -51,3 +52,6 @@ Monitoring
   monitoring/memory
   monitoring/status
   monitoring/version
+
+
+.. include:: /includes/crafter-search-solr-note.rst

@@ -26,6 +26,8 @@ Crafter CMS supports 4 specific types of content queries:
 * Filtered Structural Queries. This enables you to query against the repository structure e.g. "Get all articles by author XYZ"
 * Content Item specific query.  This enables you to write queries inside of a given content item
 
+.. include:: /includes/crafter-search-solr-note.rst
+
 ^^^^^^^^^^^^^^^^^
 Make a Solr Query
 ^^^^^^^^^^^^^^^^^
