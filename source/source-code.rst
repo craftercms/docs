@@ -18,7 +18,6 @@ The primary projects are:
 * :ref:`crafter-deployer`
 * :ref:`crafter-docker-compose`
 * :ref:`crafter-engine`
-* :ref:`crafter-search`
 * :ref:`crafter-studio`
 * :ref:`crafter-profile`
 * :ref:`crafter-social`

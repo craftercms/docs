@@ -597,7 +597,7 @@ The following variable names are used by Crafter CMS.
 +----------------------+------------------------------------------------------------------+
 || merge-strategy      || Crafter Core/Engine "Merge Strategy" for content type           |
 +----------------------+------------------------------------------------------------------+
-|| id                  || reserved by Solr                                                |
+|| id                  || reserved for a unique identifier                                |
 +----------------------+------------------------------------------------------------------+
 || authorizedRoles     || Used to restrict pages based on roles                           |
 +----------------------+------------------------------------------------------------------+

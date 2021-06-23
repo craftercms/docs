@@ -158,17 +158,6 @@ Crafter Profile
 
 
 ==============
-Crafter Search
-==============
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   search/index.rst
-
-
-==============
 Crafter Social
 ==============
 

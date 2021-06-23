@@ -64,6 +64,7 @@ For delivery environments:
 
 .. note::
   For a detailed list of parameters see :ref:`crafter-deployer-api-target-create`
+
 |
 
 The create target operation will also create the new index in Elasticsearch.
@@ -94,11 +95,13 @@ however features like sorting, facets and highlighting will require code changes
 .. note::
   To take full advantage of Elasticsearch features it is recommended to replace query strings with other type of
   queries provided by the Elasticsearch DSL
+
 |
 
 .. warning::
   If you are using any customization or any advance feature from Solr, you will need to find an alternative using
   Elasticsearch.
+
 |
 
 To update your code there are two possible approaches:

@@ -73,34 +73,29 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 +-------------------------+------------------------------------------------------------------------+
 || **Synopsis**           || ``crafter.sh start|stop|debug|help``                                  |
 +-------------------------+------------------------------------------------------------------------+
-|| **Arguments**          || * ``start [withMongoDB] [withSolr] [skipElasticsearch] [skipMongoDB]``|
+|| **Arguments**          || * ``start [withMongoDB] [skipElasticsearch] [skipMongoDB]``           |
 ||                        ||   Starts all Crafter CMS services in this order                       |
 ||                        ||   Crafter Deployer, Elasticsearch, Apache Tomcat                      |
 ||                        ||   If withMongoDB is specified MongoDB will be started.                |
-||                        ||   If withSolr is specified Solr will be started.                      |
 ||                        ||   If skipElasticsearch is specified Elasticsearch will not be started.|
 ||                        ||   If skipMongoDB is specified MongoDB will not bestarted even if the  |
 ||                        ||   Crafter Profile war is present.                                     |
 ||                        || * ``stop``  Stops all Crafter CMS services in the same order as       |
 ||                        ||    they start.                                                        |
-||                        || * ``debug [withMongoDB] [withSolr] [skipElasticsearch] [skipMongoDB]``|
+||                        || * ``debug [withMongoDB] [skipElasticsearch] [skipMongoDB]``           |
 ||                        ||   Starts all Crafter CMS services with the JAVA remote                |
-||                        ||   debug port 5000 for Crafter Deployer, 5005 for Solr and 8000        |
+||                        ||   debug port 5000 for Crafter Deployer, and 8000                      |
 ||                        ||   for Apache Tomcat for the *Authoring Environment*                   |
 ||                        ||   Starts all Crafter CMS services with the JAVA remote debug port     |
-||                        ||   5001 for Crafter Deployer, 5006 for Solr and 9000 for Apache        |
+||                        ||   5001 for Crafter Deployer, and 9000 for Apache                      |
 ||                        ||   Tomcat for the *Delivery Environment*                               |
 ||                        ||   If withMongoDB is specified MongoDB will be started.                |
-||                        ||   If withSolr is specified Solr will be started.                      |
 ||                        ||   If skipElasticsearch is specified Elasticsearch will not be started.|
 ||                        ||   If skipMongoDB is specified MongoDB will not bestarted even if the  |
 ||                        ||   Crafter Profile war is present.                                     |
 ||                        || * ``start_deployer``  Starts Deployer                                 |
 ||                        || * ``stop_deployer``  Stops Deployer                                   |
 ||                        || * ``debug_deployer``  Starts Deployer in debug mode                   |
-||                        || * ``start_solr``  Starts Solr                                         |
-||                        || * ``stop_solr``  Stops Solr                                           |
-||                        || * ``debug_solr``  Starts Solr in debug mode                           |
 ||                        || * ``start_elasticsearch``  Starts Elasticsearch                       |
 ||                        || * ``stop_elasticsearch``  Stops Elasticsearch                         |
 ||                        || * ``debug_elasticsearch``  Starts Elasticsearch in debug mode         |
@@ -116,7 +111,6 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 ||                        || * ``status_social``  Prints the status of Crafter Social              |
 ||                        || * ``status_deployer``  Prints the status of Crafter Deployer          |
 ||                        || * ``status_search``  Prints the status of Crafter Search              |
-||                        || * ``status_solr``  Prints the status of Solr                          |
 ||                        || * ``status_elasticsearch``  Prints the status of Elasticsearch        |
 ||                        || * ``status_mariadb``  Prints the status of MariaDb                    |
 ||                        || * ``status_mongodb``  Prints the status of MongoDB                    |
@@ -145,7 +139,7 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 || **Description**        || Starts all needed Services to have a functional                     |
 ||                        || Crafter CMS *Authoring/Delivery Environment* with the JAVA remote   |
 ||                        || debug ports open and listening port 5000/5001 for Crafter Deployer, |
-||                        || 5005/5006 for Solr and 8000/9000 for Apache Tomcat                  |
+||                        || and 8000/9000 for Apache Tomcat                                     |
 +-------------------------+----------------------------------------------------------------------+
 
 +-------------------------+----------------------------------------------------------------------+
@@ -161,11 +155,11 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 ||                        || * ``stop``  Stops all Crafter CMS services in the same order as     |
 ||                        ||    they start.                                                      |
 ||                        || * ``debug`` Start all Crafter CMS services with the JAVA remote     |
-||                        ||    debug port 5000 for Crafter Deployer, 5005 for Solr and 8000     |
+||                        ||    debug port 5000 for Crafter Deployer, and 8000                   |
 ||                        ||    for Apache Tomcat for the *Authoring Environment*                |
 ||                        ||    Starts all Crafter CMS services with the JAVA remote debug port  |
-||                        ||    5001 for Crafter Deployer, 5006 for Solr and 9000 for Apache     |
-||                        ||    Tomcat for the *Delivery Environment*                            |
+||                        ||    5001 for Crafter Deployer, and 9000 for Apache Tomcat            |
+||                        ||    for the *Delivery Environment*                                   |
 ||                        || * ``help``  Prints script help                                      |
 +-------------------------+----------------------------------------------------------------------+
 
@@ -211,14 +205,6 @@ Here are the environment variables used for hosts and ports in ``crafter.sh``:
 || MAIL_PORT               || Crafter CMS mail port                                              |
 ||                         +---------------------------------------------------------------------+
 ||                         || 25                                                                 |
-+--------------------------+---------------------------------------------------------------------+
-|| SOLR_HOST               || Solr host                                                          |
-||                         +---------------------------------------------------------------------+
-||                         || localhost                                                          |
-+--------------------------+---------------------------------------------------------------------+
-|| SOLR_PORT               || Solr port                                                          |
-||                         +---------------------------------------------------------------------+
-||                         || 8694                                                               |
 +--------------------------+---------------------------------------------------------------------+
 || ES_HOST                 || Elasticsearch host                                                 |
 ||                         +---------------------------------------------------------------------+
@@ -280,10 +266,6 @@ Here are the environment variables used for URLs in ``crafter.sh``:
 || Variable Name           +---------------------------------------------------------------------+
 ||                         || Default Value                                                      |
 +==========================+=====================================================================+
-|| SOLR_URL                || Solr URL                                                           |
-||                         +---------------------------------------------------------------------+
-||                         || "http://$SOLR_HOST:$SOLR_PORT/solr"                                |
-+--------------------------+---------------------------------------------------------------------+
 || ES_URL                  || Elasticsearch URL                                                  |
 ||                         +---------------------------------------------------------------------+
 ||                         || "http://$ES_HOST:$ES_PORT"                                         |
@@ -320,10 +302,6 @@ Here are the environment variables used for Java options in ``crafter.sh``:
 || Variable Name           +---------------------------------------------------------------------+
 ||                         || Default Value                                                      |
 +==========================+=====================================================================+
-|| SOLR_JAVA_OPTS          || Solr Java options                                                  |
-||                         +---------------------------------------------------------------------+
-||                         || "-server -Xss1024K -Xmx1G"                                         |
-+--------------------------+---------------------------------------------------------------------+
 || ES_JAVA_OPTS            || Elasticsearch Java options                                         |
 ||                         +---------------------------------------------------------------------+
 ||                         || "-server -Xss1024K -Xmx1G"                                         |
@@ -396,31 +374,6 @@ Here are the environment variables used for Elasticsearch in ``crafter.sh``:
 ||                         +---------------------------------------------------------------------+
 ||                         ||                                                                    |
 +--------------------------+---------------------------------------------------------------------+
-
-Here are the environment variables used for Solr in ``crafter.sh``:
-
-+--------------------------+---------------------------------------------------------------------+
-|| Solr                    || Description                                                        |
-|| Variable Name           +---------------------------------------------------------------------+
-||                         || Default Value                                                      |
-+==========================+=====================================================================+
-|| SOLR_HOME               || Solr home directory                                                |
-||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_BIN_DIR/solr/server/solr                                  |
-+--------------------------+---------------------------------------------------------------------+
-|| SOLR_INDEXES_DIR        || Solr indexes directory                                             |
-||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_DATA_DIR/indexes                                          |
-+--------------------------+---------------------------------------------------------------------+
-|| SOLR_LOGS_DIR           || Solr log files directory                                           |
-||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_LOGS_DIR/solr                                             |
-+--------------------------+---------------------------------------------------------------------+
-|| SOLR_PID                || Solr process id file                                               |
-||                         +---------------------------------------------------------------------+
-||                         || $SOLR_INDEXES_DIR/solr.pid                                         |
-+--------------------------+---------------------------------------------------------------------+
-
 
 Here are the environment variables used for the Deployer in ``crafter.sh``:
 
@@ -620,10 +573,9 @@ To stop the authoring environment:
 Other Scripts
 ^^^^^^^^^^^^^
 
-For more information about Apache Tomcat, Solr, and Elasticsearch please refer to the following:
+For more information about Apache Tomcat, and Elasticsearch please refer to the following:
 
  * [Tomcat Script documentation](https://tomcat.apache.org/tomcat-8.5-doc/RUNNING.txt)
- * [Solr Script documentation](https://cwiki.apache.org/confluence/display/solr/Running+Solr)
  * [ElasticSEarch Script documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/starting-elasticsearch.html)
 
 
@@ -700,8 +652,8 @@ Here's a list of commands (Gradle tasks) available:
 ||              ||                                          ||             || - plugin-maker |
 +---------------+-------------------------------------------+--------------+-----------------+
 || upgrade      || Upgrades the installed Tomcat version,   || - None      || - None         |
-||              || Solr scripts, etc, without deleting your ||             ||                |
-||              || data then builds and deploys             ||             ||                |
+||              || etc, without deleting your data then     ||             ||                |
+||              || builds and deploys                       ||             ||                |
 +---------------+-------------------------------------------+--------------+-----------------+
 || selfupdate   || Updates the Crafter CMS project (gradle) || - None      || - None         |
 +---------------+-------------------------------------------+--------------+-----------------+
@@ -730,7 +682,7 @@ To build the authoring and delivery environments, run the following:
 The Gradle task above will:
 
 #. Delete any existing environments/module
-#. Download Apache Tomcat, Elasticsearch, Apache Solr and MongoDB (check the Gradle section on how to specify a version for each component)
+#. Download Apache Tomcat, Elasticsearch, and MongoDB (check the Gradle section on how to specify a version for each component)
 #. Build all Crafter CMS modules from the source (check the :ref:`git` section on how to update the source)
 #. Create the environment folders and copy all needed resources
 
@@ -855,15 +807,6 @@ In the section above, we discussed some of the Gradle tasks used for building, s
 
 Let's take a look at some examples of running a task.
 
-downloadSolr
-^^^^^^^^^^^^
-Downloads the configured Solr version and also verifies that the war file is ok against a sha1 signature.
-
-    .. code-block:: bash
-
-       ./gradlew downloadSolr
-
-
 downloadTomcat
 ^^^^^^^^^^^^^^
 Downloads the configured Tomcat version and also verifies that the zip file is ok against a sha1 signature.
@@ -891,8 +834,6 @@ Aside from the tasks that we can run, there are also some properties defined in 
 +---------------------------+--------------------------------------------------------------------+
 || ``groovy.version``       || Sets the groovy version to be downloaded used by                  |
 ||                          || *downloadGroovy* task                                             |
-+---------------------------+--------------------------------------------------------------------+
-|| ``solr.version``         || Sets the Solr version to be downloaded used by *downloadSolr* task|
 +---------------------------+--------------------------------------------------------------------+
 || ``elasticsearch.version``|| Sets the Elasticsearch version to be downloaded used by           |
 ||                          || *downloadElasticsearch* task.                                     |
@@ -944,10 +885,6 @@ Aside from the tasks that we can run, there are also some properties defined in 
 +-------------------------------------+----------------------------------------------------------+
 || ``authoring.elasticsearch.port``   || Authoring Elasticsearch port. Default value is 9201     |
 +-------------------------------------+----------------------------------------------------------+
-|| ``authoring.solr.port``            || Authoring Solr port. Default value is 8694              |
-+-------------------------------------+----------------------------------------------------------+
-|| ``authoring.solr.debug.port``      || Authoring Solr debug port. Default value is 5005        |
-+-------------------------------------+----------------------------------------------------------+
 || ``authoring.smtp.port``            || Authoring SMTP port. Default value is 25                |
 +-------------------------------------+----------------------------------------------------------+
 || ``authoring.mariadb.port``         || Authoring MariaDb port. Default value is 33306          |
@@ -981,10 +918,6 @@ Aside from the tasks that we can run, there are also some properties defined in 
 +------------------------------------+-----------------------------------------------------------+
 || ``delivery.elasticsearch.port``   || Delivery Elasticsearch port. Default value is 9202       |
 +------------------------------------+-----------------------------------------------------------+
-|| ``delivery.solr.port``            || Delivery Solr port. Default value is 8695                |
-+------------------------------------+-----------------------------------------------------------+
-|| ``delivery.solr.debug.port``      || Delivery Solr debug port. Default value is 5006          |
-+------------------------------------+-----------------------------------------------------------+
 || ``delivery.deployer.port``        || Delivery Deployer port. Default value is 9192            |
 +------------------------------------+-----------------------------------------------------------+
 || ``delivery.deployer.debug.port``  || Delivery Deployer debug port. Default value is 5001      |
@@ -1005,8 +938,6 @@ Aside from the tasks that we can run, there are also some properties defined in 
 || ``overwriteConfig``          || Overwrite configurations. Default value is false              |
 +-------------------------------+----------------------------------------------------------------+
 || ``backupAndReplaceConfig``   || Backup and replace configurations. Default value is false     |
-+-------------------------------+----------------------------------------------------------------+
-|| ``withSolr``                 || Start Solr.  Default value is false                           |
 +-------------------------------+----------------------------------------------------------------+
 
 .. _git-properties:

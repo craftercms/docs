@@ -14,9 +14,6 @@ How Search Works
 
 .. include:: /includes/how-search-works-es.rst
 
-.. note::
-   Elasticsearch is the default search engine used by Crafter CMS.  If you are using Crafter Search as your search engine, visit :ref:`debugging-search-solr`
-
 --------------------------------------
 Places Search Indexing Can Get Hung Up
 --------------------------------------

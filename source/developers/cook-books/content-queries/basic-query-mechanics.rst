@@ -21,35 +21,9 @@ Types of Content Queries
 
 Crafter CMS supports 4 specific types of content queries:
 
-* Cross content Solr queries. This enables you to query any/all content objects, by any group of properties)
 * Cross content Elasticsearch queries. This enables you to query any/all content objects, by any group of properties)
 * Filtered Structural Queries. This enables you to query against the repository structure e.g. "Get all articles by author XYZ"
 * Content Item specific query.  This enables you to write queries inside of a given content item
-
-^^^^^^^^^^^^^^^^^
-Make a Solr Query
-^^^^^^^^^^^^^^^^^
-
-.. note:: To use the search service described in this section, Solr needs to be started as described in 
-          :ref:`migrate-site-to-elasticsearch`
-
-The following code examples use the Crafter Search Service in Crafter Engine to get content.
-You can find the interface for this service :javadoc_base_url:`HERE <search/org/craftercms/search/service/SearchService.html>`
-
-.. code-block:: groovy
-
-    def queryStatement = "author:\"John Doe\""
-
-    def query = searchService.createQuery()
-    query.setQuery(queryStatement)
-    query.addFilterQuery("content-type:/component/article")
-
-    def executedQuery = searchService.search(query)
-    def itemsFound = executedQuery.response.numFound
-    def items = executedQuery.response.documents
-
-    return items
-
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Make an Elasticsearch Query

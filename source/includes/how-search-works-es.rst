@@ -1,6 +1,7 @@
 ^^^^
 Flow
 ^^^^
+
 .. image:: /_static/images/search/search-mechanics-es.png
    :alt: Crafter Studio Search Mechanics
    :align: center
