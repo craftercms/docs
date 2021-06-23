@@ -60,7 +60,6 @@ Crafter CMS comprises a number of projects, below are the project specific docum
    projects/commons/index
    projects/engine/index
    projects/studio/index
-   projects/search/index
    projects/deployer/index
    projects/profile/index
    projects/social/index
@@ -90,9 +89,6 @@ Below is a short set of links to other documentation for technology that Crafter
 ||               ||                             ||                                              |
 +----------------+------------------------------+-----------------------------------------------+
 || Elasticsearch || Search and content query    || https://www.elastic.co/products/elasticsearch|
-||               ||                             ||                                              |
-+----------------+------------------------------+-----------------------------------------------+
-|| Solr          || Search and content query    || http://lucene.apache.org/solr/resources.html |
 ||               ||                             ||                                              |
 +----------------+------------------------------+-----------------------------------------------+
 || MongoDB       || Crafter Profile and Social  || https://docs.mongodb.com                     |

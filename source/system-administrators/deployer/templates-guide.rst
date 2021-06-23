@@ -36,7 +36,7 @@ site repository.
 This target will:
 
 - Identify the changed files according to the local Git repository history
-- Index all site content in Elasticsearch (even if the site uses Crafter Search with Solr)
+- Index all site content in Elasticsearch
 
 **Parameters**
 
@@ -54,7 +54,7 @@ previewing the site.
 This target will:
 
 - Identify the changed files according to the local Git repository history
-- Index all site content in the appropriate search engine, Elasticsearch or Crafter Search with Solr
+- Index all site content in Elasticsearch
 - Rebuild Crafter Engine's site context when there are changes in configuration files or Groovy scripts
 - Clear Crafter Engine's cache
 - Rebuild Crafter Engine's site GraphQL schema when there are changes in content-type definitions
@@ -65,9 +65,6 @@ This target will:
 +--------------------------+----------+------------------------------------------------------------------------+
 |Name                      |Required  |Description                                                             |
 +==========================+==========+========================================================================+
-|``use_crafter_search``    |          |Indicates if the target should use Crafter Search with Solr instead of  |
-|                          |          |Elasticsearch                                                           |
-+--------------------------+----------+------------------------------------------------------------------------+
 |``disable_deploy_cron``   |          |Disables the cron job that runs deployments every certain amount of time|
 +--------------------------+----------+------------------------------------------------------------------------+
 |``notification_addresses``|          |The email addresses that should receive deployment notifications        |
@@ -87,7 +84,7 @@ This target will:
 - Clone the remote repository if needed
 - Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
 - Identify the changed files according to the Git repository history
-- Index all site content in the appropriate search engine, Elasticsearch or Crafter Search with Solr
+- Index all site content in the appropriate search engine, Elasticsearch
 - Rebuild Crafter Engine's site context when there are changes in configuration files or Groovy scripts
 - Clear Crafter Engine's cache
 - Rebuild Crafter Engine's site GraphQL schema when there are changes in content-type definitions
@@ -98,9 +95,6 @@ This target will:
 +------------------------------+----------+------------------------------------------------------------------------+
 |Name                          |Required  |Description                                                             |
 +==============================+==========+========================================================================+
-|``use_crafter_search``        |          |Indicates if the target should use Crafter Search with Solr instead of  |
-|                              |          |Elasticsearch                                                           |
-+------------------------------+----------+------------------------------------------------------------------------+
 |``disable_deploy_cron``       |          |Disables the cron job that runs deployments every certain amount of time|
 +------------------------------+----------+------------------------------------------------------------------------+
 |``repo_branch``               |          |The branch name of the remote Git repo to pull from                     |

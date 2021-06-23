@@ -362,41 +362,6 @@ Processor that runs a command line process.
     command: 'myapp -f --param1=value1'
 
 
-.. _deployer-search-indexing-processor:
-
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Search Indexing Processor
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Processor that indexes the files on the change set, using one or several BatchIndexer. After the files have been
-indexed it submits a commit.
-
-.. note::
-  This processor uses the Crafter Search API to index in Apache Solr, it should be used only for sites from ``3.0.x``
-  that will not be migrated to Elasticsearch.
-
-**Properties**
-
-+----------------------------------+--------+---------------------+---------------------------------------------------+
-|Name                              |Required|Default Value        |Description                                        |
-+==================================+========+=====================+===================================================+
-|``ignoreIndexId``                 |        |``false``            |If the index ID should be ignored                  |
-+----------------------------------+--------+---------------------+---------------------------------------------------+
-|``indexId``                       |        |Value of ``siteName``|The specific index ID to use                       |
-+----------------------------------+--------+---------------------+---------------------------------------------------+
-|``reindexItemsOnComponentUpdates``|        |``true``             |Flag that indicates that if a component is updated,|
-|                                  |        |                     |all other pages and components that include it     |
-|                                  |        |                     |should be updated too                              |
-+----------------------------------+--------+---------------------+---------------------------------------------------+
-
-**Example**
-
-.. code-block:: yaml
-  :linenos:
-  :caption: *Search Indexing Processor*
-
-  - processorName: searchIndexingProcessor
-
 .. _deployer-es-indexing-processor:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

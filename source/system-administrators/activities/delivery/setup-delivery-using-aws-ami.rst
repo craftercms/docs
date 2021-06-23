@@ -266,8 +266,6 @@ Successful execution of this command will produce output similar to the followin
 .. code-block:: bash
     :linenos:
 
-    Creating Solr Core...
-    Core created successfully
     Creating Deployer Target...
     Target created successfully
 
