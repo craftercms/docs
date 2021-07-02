@@ -789,6 +789,9 @@ There are a number of macros available for the content model designer to use in 
 +---------------------+--------------------------------------------------------------------------------+
 || {parentPath}       || Inserts the parent path of the component/page containing the upload controls  |
 +---------------------+--------------------------------------------------------------------------------+
+|| {parentPath[index]}|| Inserts the sub element of a parent path using an index, of the component/page|
+||                    || containing the upload controls                                                |
++---------------------+--------------------------------------------------------------------------------+
 || {yyyy}             || Inserts the current year (4 digit year)                                       |
 +---------------------+--------------------------------------------------------------------------------+
 || {mm}               || Inserts the current month (2-digit month of the year)                         |
