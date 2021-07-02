@@ -174,7 +174,6 @@ Content / Asset
    content/get-content-types
    content/get-item
    content/get-item-orders
-   content/get-item-states
    content/get-item-versions
    content/get-items-tree
    content/get-next-item-order
@@ -182,7 +181,6 @@ Content / Asset
    content/reorder-items
    content/revert-content
    content/search
-   content/set-item-state
    content/unlock-content
    content/write-content
 
