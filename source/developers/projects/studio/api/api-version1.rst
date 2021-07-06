@@ -26,10 +26,6 @@ Site Management
    site/monitor-content
    site/write-configuration
 
-.. note::
-   Some of the site management operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit: https://app.swaggerhub.com/apis/craftercms/studio
-
-
 ^^^^^^^^^^^^^^^
 Repo Management
 ^^^^^^^^^^^^^^^
