@@ -789,6 +789,9 @@ There are a number of macros available for the content model designer to use in 
 +---------------------+--------------------------------------------------------------------------------+
 || {parentPath}       || Inserts the parent path of the component/page containing the upload controls  |
 +---------------------+--------------------------------------------------------------------------------+
+|| {parentPath[index]}|| Inserts the sub element of a parent path using an index, of the component/page|
+||                    || containing the upload controls                                                |
++---------------------+--------------------------------------------------------------------------------+
 || {yyyy}             || Inserts the current year (4 digit year)                                       |
 +---------------------+--------------------------------------------------------------------------------+
 || {mm}               || Inserts the current month (2-digit month of the year)                         |
@@ -799,6 +802,28 @@ There are a number of macros available for the content model designer to use in 
 For an example of how the macros are used when modeling your content, the website_editorial blueprint uses some of the macros available in the content type Page -  Article.
 
 The section :ref:`item-specific-dependencies` above details the use of some of the macros in the website_editorial blueprint, content type Page -  Article.
+
+   .. note::
+      For both the ``parentPath`` and ``parentPath[index]`` macros, the path starts **without** ``/site/website`` and ``/site/components``.
+
+      For example, if in the repository the parent is a page, and the page URL in the repository is ``/site/website/en/about-us/index.xml``, then the parentPath is ``/en/about-us/index.xml``.
+
+      If in the repository the parent is a component, and the component URL in the repository is ``/site/components/en/products/myproduct.xml``, then the  parentPath is ``/en/products/myproduct.xml``.
+
+|
+|
+
+**Data Sources macro: parentPath[index]**
+
+The ``parentPath[index]`` macro provides resolution support for sub elements of a parent path in Crafter Studio.
+It pulls a single sub **/** of the parent path with the following syntax ``{parentpath[index]}``
+
+Here are some examples:
+
+If the parentPath is ``/en/mypage``, then to get the sub element ``en``, use **0** as the index in the macro like so  ``{parentpath[0]}``
+
+If the parentPath is ``/products/household/cleaning`` then to get  the sub  element ``household``, use **1** as the index in the macro like so ``{parentpath[1]}``
+
 
 ^^^^^^^^^^^
 Form Canvas
