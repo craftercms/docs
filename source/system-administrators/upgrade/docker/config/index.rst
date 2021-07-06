@@ -24,3 +24,5 @@ Configuration changes between Crafter CMS versions
    config-changes-3.1.10-to-3.1.11.rst
    config-changes-3.1.11-to-3.1.12.rst
    config-changes-3.1.12-to-3.1.13.rst
+   config-changes-3.1.13-to-3.1.14.rst
+   config-changes-3.1.14-to-3.1.15.rst
