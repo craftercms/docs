@@ -54,7 +54,16 @@ Directory Structure
 A site plugin consist of a group of files that are copied to the site repository when installed.  To create your own
 site plugin, your files/folders needs to go in the corresponding type of plugin folder, following the structure below:
 
+
+
 - ``craftercms-plugin.yaml``: the plugin descriptor, see :ref:`craftercms-plugin-yaml-file` for details
+
+- ``.crafter``
+
+  - ``screenshots``
+
+    - ``default.png`` : the default representative image of the plugin placed under the default path ``.crafter/screenshots/``
+
 - ``authoring``: contains all files related to Crafter Studio extensions
 
   - ``content-types``
@@ -114,6 +123,8 @@ the file:
 +------------------------------------------+---------------------------------------------------------------+
 | ``delivery/scripts/rest/*``              | ``/scripts/rest/<plugin id path>/*``                          |
 +------------------------------------------+---------------------------------------------------------------+
+
+.. _site-plugins-create-your-plugin:
 
 ^^^^^^^^^^^^^^^^^^
 Create your plugin
@@ -183,6 +194,9 @@ Here are some things to note in the descriptor file:
 * ``plugin.license`` is the license supported by the plugin
 * ``plugin.crafterCmsVersions`` contains the Crafter CMS version/s that the plugin is compatible with (look in the :ref:`release-notes` section for the versions available), and you'll need to keep this up to date
 
+|
+|
+
 The next requirement for creating your site plugin are the plugin files.
 Depending on the plugin type you are creating, this could be a JavaScript file, Freemarker template files, Groovy file, XML file, etc.  The plugin file/s should then be placed in a directory structure as described above depending on the site plugin created.  For example, say your plugin is a component content type, your plugin files should be placed under the directory  ``authoring/content-types/component``
 
@@ -199,17 +213,43 @@ Depending on the plugin type you are creating, this could be a JavaScript file, 
              form-definition.xml
 
 
+Crafter CMS uses a default path for Crafter CMS to look for a default representative image of a plugin, the url ``../.crafter/screenshots/``.  Here's a sample plugin files/directory with a default image to represent the plugin:
+
+  .. code-block:: text
+     :caption: *Example directory structure for a component content type site plugin with a default representative image*
+     :emphasize-lines: 1-3
+
+     .crafter/
+       screenshots/
+         default.png
+     authoring/
+       content-types/
+         component/
+           <your_component_name>/
+             config.xml
+             controller.groovy
+             form-definition.xml
+
+|
+|
+
 ---------------------------
 Publishing Your Site Plugin
 ---------------------------
 
 To publish a plugin in the Crafter CMS Marketplace you can follow the instructions in :ref:`marketplace_create_plugins`
 
+|
+|
+
 ------------------------
 Installing a Site Plugin
 ------------------------
 
 Plugins may be installed a couple of ways depending on where the plugins are located:
+
+|
+|
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Install a plugin from the Crafter CMS Marketplace
@@ -227,7 +267,8 @@ or the REST API:
 
 For more information on installing plugins from the Crafter CMS Marketplace using Crafter Studio, see :ref:`plugin-management`
 
-
+|
+|
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Install a plugin in development from a Studio local folder

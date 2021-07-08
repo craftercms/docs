@@ -160,6 +160,53 @@ Installing
 
    * No need to push, there’s no remote configured. You can also use any Git client. Now, it will be available when you create a new site.
 
+.. _adding-default-image-for-bp:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Adding a default image for a blueprint
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Crafter CMS uses a default path for Crafter CMS to look for a default representative image of a plugin or blueprint, the url ``../.crafter/screenshots/default.png``
+
+In the ``Sites`` screen where your sites are listed, if your site displays an image with the message **Screenshot not Set**, this means that there is no default image  under the ``.crafter/screenshots/`` folder in your blueprint:
+
+.. image:: /_static/images/developer/plugins/screenshot-not-set.jpg
+   :alt: Plugin Descriptor - Screenshot not Set
+   :width: 60%
+   :align: center
+
+|
+
+To replace the **Screenshot not Set** image for your blueprint, simply add an image file (e.g.  ``default.png``) under the ``.crafter/screenshots/`` folder of your blueprint.
+
+Let's take a look at an example of fixing the **Screenshot not Set** image for an installed site as seen in the above image.
+
+Below are the folders/files for the blueprint used to install the site ``Sample Site``:
+
+.. image:: /_static/images/developer/plugins/bp-files-w-o-default-image.png
+   :alt: Plugin Descriptor - Blueprint files and folders without a default image
+   :width: 30%
+   :align: center
+
+|
+
+We'll now fix the image displayed in the ``Sites`` screen after the blueprint is installed by adding a ``default.png``  file under the ``.crafter/screenshots/``  folder, so now, the blueprint files/folders looks like  this:
+
+.. image:: /_static/images/developer/plugins/bp-files-w-default-image.png
+   :alt: Plugin Descriptor - Blueprint files and folders with a default image added
+   :width: 30%
+   :align: center
+
+|
+
+When you create a site using the blueprint we fixed above, ``Another Sample Site`` for our example, the site will now have the default image we added to the blueprint:
+
+.. image:: /_static/images/developer/plugins/screenshot-default-set.jpg
+   :alt: Plugin Descriptor - Site created using a blueprint with a default image in ".crafter/screenshots`` folder
+   :width: 60%
+   :align: center
+
+|
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Adding a plugin descriptor
