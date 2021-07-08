@@ -43,30 +43,30 @@ Here's a sample taken from the  ``craftercms-plugin.yaml`` for the Empty bluepri
       website:
         name: Empty Blueprint
         url: https://craftercms.org
-    media:
-      screenshots:
-        - title: Home Page
-          description: Screenshot of the homepage
-          url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/screenshots/default.png"
-    developer:
-      company:
-        name: Crafter Software
-        email: info@craftersoftware.com
-        url: https://craftersoftware.com/
-    build:
-      id: c3d2a5444e6a24b5e0481d6ba87901d0b02716c8
-      date: 2021-01-23T00:00:00Z
-    license:
-      name: MIT
-      url: https://opensource.org/licenses/MIT
-    crafterCmsVersions:
-      - major: 4
-        minor: 0
-        patch: 0
-    crafterCmsEditions:
-      - community
-      - enterprise
-    searchEngine: Elasticsearch
+      media:
+        screenshots:
+          - title: Home Page
+            description: Screenshot of the homepage
+            url: /studio/static-assets/images/blueprints/empty/bp_empty.png
+      developer:
+        company:
+          name: Crafter Software
+          email: info@craftersoftware.com
+          url: https://craftersoftware.com/
+      build:
+        id: c3d2a5444e6a24b5e0481d6ba87901d0b02716c8
+        date: 2021-01-23T00:00:00Z
+      license:
+        name: MIT
+        url: https://opensource.org/licenses/MIT
+      crafterCmsVersions:
+        - major: 4
+          minor: 0
+          patch: 0
+      crafterCmsEditions:
+        - community
+        - enterprise
+      searchEngine: Elasticsearch
 
 where the following fields are required:
 
@@ -83,7 +83,7 @@ where the following fields are required:
 |
 |
 
-For ``plugin.media.screenshots``, the url ``../master/.crafter/screenshots/default.png`` is the default path for Crafter CMS to look for a default representative image of a plugin or blueprint
+For ``plugin.media.screenshots``, the url ``../.crafter/screenshots/default.png`` is the default path for Crafter CMS to look for a default representative image of a plugin or blueprint.  For more information on adding a default representative image for your blueprint see :ref:`adding-default-image-for-bp` and :ref:`site-plugins-create-your-plugin` for site plugins.
 
 .. note::
 
