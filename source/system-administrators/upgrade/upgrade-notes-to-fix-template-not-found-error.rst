@@ -5,16 +5,16 @@
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. _upgrade-to-3-1-15:
+.. _upgrade-notes-fix-template-not-found:
 
-====================================
-Upgrade Notes for Crafter CMS 3.1.15
-====================================
+=================================================
+Upgrade Notes for Fixing Template Not Found Error
+=================================================
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Template not found error
 ^^^^^^^^^^^^^^^^^^^^^^^^
-When upgrading, if a user encounters the following error:
+When upgrading to Crafter CMS version 3.1.15 or later, if a user encounters the following error:
 
   .. code-block:: text
 
