@@ -11,11 +11,14 @@ Updates
 * Fixed Dashboard issue of an item scheduled for publish stuck in processing  |br|
   See `here <https://github.com/craftercms/craftercms/issues/4809>`__ for more information
 
+* Added property for ``label`` form control to render in markup language HTML |br|
+  See `here <https://github.com/craftercms/craftercms/issues/4807>`__ for more information
+
 * Upgraded the embedded MariaDB to version 10.4.20 |br|
   For users on macOS, the embedded MariaDb upgrade requires macOS version 10.14 or later
 
 
-Lot's of other small enhancements and bug fixes :)
+Lots of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 3.1.16 Milestone <https://github.com/craftercms/craftercms/milestone/73?closed=1>`_
 

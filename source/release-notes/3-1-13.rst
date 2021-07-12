@@ -13,7 +13,7 @@ Updates
 * Improved Studio write processor pipeline |br|
   See `here <https://github.com/craftercms/craftercms/issues/4468>`__ for more information
 
-Lot's of other small enhancements and bug fixes :)
+Lots of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 3.1.13 Milestone <https://github.com/craftercms/craftercms/milestone/69?closed=1>`_
 

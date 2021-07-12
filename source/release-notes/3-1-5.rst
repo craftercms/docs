@@ -30,7 +30,7 @@ Updates
 * Added support for path style access configuration to all S3 client creations
 * Improved Content type administration UI
 
-Lot's of other small enhancements and bug fixes :)
+Lots of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 3.1.5 Milestone <https://github.com/craftercms/craftercms/milestone/58?closed=1>`_
 

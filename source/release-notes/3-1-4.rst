@@ -29,7 +29,7 @@ Updates
 * Improved ``Create Site`` dialog
 
 
-Lot's of other small enhancements and bug fixes :)
+Lots of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 3.1.4 Milestone <https://github.com/craftercms/craftercms/milestone/57?closed=1>`_
 

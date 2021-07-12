@@ -31,7 +31,7 @@ Updates
 
 * Bug fixes and performance improvements in auto-clustering |enterpriseOnly|
 
-Lot's of other small enhancements and bug fixes :)
+Lots of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 3.1.12 Milestone <https://github.com/craftercms/craftercms/milestone/68?closed=1>`_
 
