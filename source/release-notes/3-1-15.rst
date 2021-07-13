@@ -62,7 +62,7 @@ Updates
 * Optimized Dashboard backing APIs to enhance filtering speed |br|
   See `here <https://github.com/craftercms/craftercms/issues/4795>`__ for more information
 
-Lot's of other small enhancements and bug fixes :)
+Lots of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 3.1.15 Milestone <https://github.com/craftercms/craftercms/milestone/72?closed=1>`_
 
@@ -70,7 +70,7 @@ For a full list of tickets, please visit: `GitHub 3.1.15 Milestone <https://gith
 
     Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.15)
 
-    Before proceeding with updating your Crafter CMS install, please see :ref:`upgrade-to-3-1-15` for some important notes
+    Before proceeding with updating your Crafter CMS install, please see :ref:`upgrade-notes-fix-template-not-found` for some important notes
 
     Starting with JVM version 1.8.0_292, support for TLS v1.1 and earlier is disabled by default |br|
     See :ref:`debugging_ssl_issues` if you encounter issues.

@@ -31,7 +31,7 @@ New Features
 * Added Engine API to check if preview is enabled
 * Added support for user controlled publishing of soft and hard dependencies
 
-Lot's of other small enhancements and bug fixes :)
+Lots of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 3.1.1 Milestone <https://github.com/craftercms/craftercms/milestone/44?closed=1>`_
 
