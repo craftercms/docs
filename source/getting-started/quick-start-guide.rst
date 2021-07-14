@@ -160,6 +160,8 @@ To run Crafter CMS in a Docker container using Docker Compose, make sure the fol
 
    |
 
+#. If you are a developer and want to use your local IDE and other tools, follow :ref:`this <configuring-crafter-on-docker-for-local-dev-tools>` documentation to configure your docker container to support access to your sites via local IDE.
+
 #. Go into the authoring folder, then start the container by running ``docker-compose up``
 
    .. code-block:: bash
@@ -189,7 +191,7 @@ You may now follow the instructions listed in the guide :ref:`above:<installing-
 
 The console output when you start the container (as shown above) contains useful information that you can use to debug or monitor the status of Crafter CMS.  To view more of the logs, the Docker Desktop Dashboard provides a runtime view of all your containers and applications, including logs for monitoring/debugging Crafter CMS.  To access the Docker Desktop Dashboard, from the **Docker menu**, select **Dashboard**.
 
-.. image:: /_static/images/quick-start/docker-desktop-open-dashboard.png
+.. image:: /_static/images/quick-start/docker-desktop-open-dashboard.jpg
    :alt: Open Docker Desktop Dashboard
    :width: 25%
    :align: center
@@ -211,5 +213,3 @@ When the ``authoring`` application displayed above is selected, the application 
 For more information on Docker Desktop Dashboard, see https://docs.docker.com/desktop/dashboard/
 
 For more information on Crafter CMS Docker Compose, please see: https://github.com/craftercms/docker-compose.
-
-If you are a developer and want to use your local IDE and other tools, follow :ref:`this <configuring-crafter-on-docker-for-local-dev-tools>` documentation to configure your docker container to support access to your sites via local IDE.
