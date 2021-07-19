@@ -46,7 +46,7 @@ To use a custom blacklist follow these steps:
       :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
 
       # The location of the blacklist to use for all sites (this will have no effect if the sandbox is disabled)
-      crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/groovy/blacklist
+      crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/extension/groovy/blacklist
 
     .. note::
       In Crafter CMS v3.1.14 and prior, the name of the property is ``crafter.engine.groovy.sandbox.blacklist``
