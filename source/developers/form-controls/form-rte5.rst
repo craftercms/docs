@@ -7,7 +7,7 @@
 
 .. index:: Form Controls; Rich Text Editor (TinyMCE 5)
 
-.. _form-rte2:
+.. _form-rte5:
 
 ====================================
 Rich Text Editor (TinyMCE 5) Control
@@ -17,7 +17,7 @@ Rich Text Editor (TinyMCE 5) Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-rte2-example.png
+.. image:: /_static/images/form-controls/form-control-rte5-example.png
     :width: 50%
     :alt: RTE (TinyMCE 5) Example
     :align: center
@@ -26,7 +26,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-rte2-properties.png
+.. image:: /_static/images/form-controls/form-control-rte5-properties.png
     :width: 50%
     :alt: RTE (TinyMCE 5)
     :align: center
