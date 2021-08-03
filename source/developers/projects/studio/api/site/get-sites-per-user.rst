@@ -45,55 +45,56 @@ Example
 	GET .../api/1/services/api/1/site/get-per-user.json
 
 .. code-block:: json
-  :linenos:
+    :linenos:
 
-      {
-        "sites": [
-          {
-            "id": 2,
-            "siteUuid": "acbf5459-c5ab-4be1-be1a-a12571db9b7f",
-            "siteId": "myeditorial",
-            "name": "myeditorial",
-            "description": null,
-            "status": null,
-            "deleted": 0,
-            "liveUrl": null,
-            "lastCommitId": "ef874be1b167d229163dee4e70f1fa73a1f66401",
-            "publishingEnabled": 1,
-            "publishingStatusMessage": "ready|Ready",
-            "lastVerifiedGitlogCommitId": "ef874be1b167d229163dee4e70f1fa73a1f66401",
-            "sandboxBranch": "master",
-            "searchEngine": "Elasticsearch",
-            "publishedRepoCreated": 0,
-            "publishingLockOwner": "localhost/127.0.0.1",
-            "publishingLockHeartbeat": "2020-11-10T14:49:02-05:00",
-            "sitePublishedRepoCreated": false,
-            "siteDeleted": false
-          },
-          {
-            "id": 3,
-            "siteUuid": "b918ee26-a672-4363-989d-2743eeff4c43",
-            "siteId": "mysite",
-            "name": "mysite",
-            "description": null,
-            "status": null,
-            "deleted": 0,
-            "liveUrl": null,
-            "lastCommitId": "75f6057714737be8c9929bdb769fcb172ee769a8",
-            "publishingEnabled": 1,
-            "publishingStatusMessage": "ready|Ready",
-            "lastVerifiedGitlogCommitId": "75f6057714737be8c9929bdb769fcb172ee769a8",
-            "sandboxBranch": "master",
-            "searchEngine": "Elasticsearch",
-            "publishedRepoCreated": 0,
-            "publishingLockOwner": "localhost/127.0.0.1",
-            "publishingLockHeartbeat": "2020-11-10T14:49:01-05:00",
-            "sitePublishedRepoCreated": false,
-            "siteDeleted": false
-          }
-        ],
-        "total": 2
+    {
+      "sites":[
+        {
+          "id":4,
+          "siteUuid":"9f41ea2d-e8a0-4c05-8b91-a2a2eb9ee746",
+          "siteId":"hello",
+          "name":"hello",
+          "description":null,
+          "deleted":0,
+          "liveUrl":null,
+          "lastCommitId":"d2302a5753205afe0043e8380dd0fe20e1064334",
+          "publishingEnabled":1,
+          "publishingStatus":"ready",
+          "publishingStatusMessage":"Ready",
+          "lastVerifiedGitlogCommitId":"d2302a5753205afe0043e8380dd0fe20e1064334",
+          "sandboxBranch":"master",
+          "publishedRepoCreated":0,
+          "publishingLockOwner":null,
+          "publishingLockHeartbeat":null,
+          "state":"READY",
+          "lastSyncedGitlogCommitId":"d2302a5753205afe0043e8380dd0fe20e1064334",
+          "siteDeleted":false,"sitePublishedRepoCreated":false
+        },
+        {
+           "id":2,
+           "siteUuid":"a59df951-cf4d-45e3-8103-50ef1db9d51b",
+           "siteId":"my-site",
+           "name":"My Site",
+           "description":null,
+           "deleted":0,
+           "liveUrl":null,
+           "lastCommitId":"2421c262edaec6f9b75647cbb54e0b38ecf4462f",
+           "publishingEnabled":1,
+           "publishingStatus":"queued",
+           "publishingStatusMessage":"Items are queued for publishing",
+           "lastVerifiedGitlogCommitId":"2421c262edaec6f9b75647cbb54e0b38ecf4462f",
+           "sandboxBranch":"master",
+           "publishedRepoCreated":1,
+           "publishingLockOwner":null,
+           "publishingLockHeartbeat":null,
+           "state":"READY",
+           "lastSyncedGitlogCommitId":"2421c262edaec6f9b75647cbb54e0b38ecf4462f",
+           "siteDeleted":false,
+           "sitePublishedRepoCreated":true
         }
+      ],
+      "total":2
+    }
 
 --------
 Response
