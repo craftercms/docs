@@ -9,7 +9,12 @@ Updates
 ^^^^^^^
 
 * Fixed support for alternative multivalue postfixes e.g. *_mvs*  |br|
-  for existing sites the indexes need to be re-created (re-indexing will not fix it if the fields have already been mapped) |br|
+  For existing sites the indexes need to be re-created (re-indexing will not fix it if the fields have already been mapped) |br|
+
+  To recreate the indexes in a non-production environment, simply delete the indexes, trigger a normal reindex, and a new one will be created.  To trigger a noremal reindex,  you can follow the process :ref:`here <reindexing-content>`, starting in Step 2: Invoke the reprocessing.
+
+  For instructions on recreating the indexes in a production environment, follow the steps :ref:`here <reindexing-content-in-prod>`
+  see :ref:`reindexing-content`
 
   See `here <https://github.com/craftercms/craftercms/issues/4892>`__ for more information
 
