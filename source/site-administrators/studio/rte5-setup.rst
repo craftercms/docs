@@ -58,6 +58,12 @@ The default editor instance contains a menubar with most of the commonly used ed
 
    |
 
+     .. note::
+        On TinyMCE, buttons can be added through **toolbar(n)** or **toolbar** but the rte config only supports **toolbarItems(n)**.
+
+        Tiny's **toolbar(n)** are available only up to 4 through our **toolbarItems{1,2,3,4}**
+
+
 2. Click on the |rteMediaBtn| button to add the link to the YouTube video you'd like to embed in the RTE and to setup other parameters. In the **General** tab, fill in the **Source** field with the URL of the YouTube video you'd like to embed and finally, fill in the **Dimensions** field to the size desired.  Click on the **Ok** button.
 
    .. figure:: /_static/images/site-admin/rte/rte5-media-config.png
