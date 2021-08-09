@@ -1,0 +1,45 @@
+.. index:: Crafter CMS 3.1.17 Release Notes
+
+------------------
+Crafter CMS 3.1.17
+------------------
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Fixed multi-environment issue with configuration writes |br|
+  See `here <https://github.com/craftercms/craftercms/issues/4861>`__ for more information
+
+* Fixed support for alternative multivalue postfixes e.g. *_mvs*  |br|
+  For existing sites the indexes need to be recreated (re-indexing will not fix it if the fields have already been mapped) |br|
+
+  To recreate the indexes in a non-production environment, simply delete the indexes, trigger a normal reindex, and a new one will be created.  To trigger a normal reindex,  you can follow the process :ref:`here <reindexing-content>`, starting in Step 2: Invoke the reprocessing.
+
+  For instructions on recreating the indexes in a production environment, follow the steps :ref:`here <reindexing-content-in-prod>`
+  see :ref:`reindexing-content`
+
+  See `here <https://github.com/craftercms/craftercms/issues/4892>`__ for more information
+
+Lots of other small enhancements and bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 3.1.17 Milestone <https://github.com/craftercms/craftercms/milestone/74?closed=1>`_
+
+.. important::
+
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.17)
+
+    Starting with JVM version 1.8.0_292, support for TLS v1.1 and earlier is disabled by default |br|
+    See :ref:`debugging_ssl_issues` if you encounter issues.
+
+    For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+    Before proceeding with updating your Crafter CMS install, please see the following notes:
+
+    - :ref:`upgrade-notes-fix-template-not-found` for some important notes on template errors
+    - :ref:`upgrade-notes-to-fix-backup-error` for some important notes when restoring backups created prior to
+      Crafter CMS 3.1.10,
+    - :ref:`upgrade-notes-for-re-encrypting-values` for some important notes on the re-encryption process
+    - :ref:`upgrade-notes-to-fix-stored-procedure-error` for some important notes on database errors.
+
+
