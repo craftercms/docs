@@ -278,6 +278,12 @@ jackson-dataformat-yaml
 **Dependency:** jackson-dataformat-yaml |br|
 **URL:** https://search.maven.org/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml
 
+elasticsearch-geo
+^^^^^^^^^^^^^^^^^
+**Package:** org.elasticsearch |br|
+**Dependency:** elasticsearch-geo |br|
+**URL:** https://search.maven.org/artifact/org.elasticsearch/elasticsearch-geo
+
 lucene-core
 ^^^^^^^^^^^
 **Package:** org.apache.lucene |br|
