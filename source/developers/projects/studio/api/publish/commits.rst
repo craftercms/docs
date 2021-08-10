@@ -56,7 +56,7 @@ Request
 
     {
         "site_id" : "mysite",
-        "environment": "Live"
+        "environment": "live"
         "commit_ids" :
             [
                 "c89ee1cb2be4b41b0966d20c12d53b68ca70d74a",
