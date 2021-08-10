@@ -10,8 +10,8 @@ Configuring Crafter on Docker for Local Development Tools
 
 Sometimes you'll need to have the Authoring site repositories in your docker container available in the host filesystem, specially if you want to update the files from your IDE. To support access to your sites via a local IDE, we need to mount the Authoring site repositories directory to a host directory.
 
-.. note::
-   For Windows users, performance may be slow when using WSL2 (Windows Subsystem for Linux 2) and a mounted Authoring site repositories directory to a host directory
+   .. note::
+      Performance may be slow when using WSL2 (Windows Subsystem for Linux 2) and a mounted Authoring site repositories directory to a host directory
 
 
 Here are the steps:
