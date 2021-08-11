@@ -56,7 +56,13 @@ The default editor instance contains a menubar with most of the commonly used ed
       :width: 45%
       :align: center
 
-|
+   |
+
+     .. note::
+        On TinyMCE, buttons can be added through **toolbar(n)** or **toolbar** but the rte config only supports **toolbarItems(n)**.
+
+        Tiny's **toolbar(n)** are available only up to 4 through our **toolbarItems{1,2,3,4}**
+
 
 3. Save your changes, and your video should now be embedded in your page
 
