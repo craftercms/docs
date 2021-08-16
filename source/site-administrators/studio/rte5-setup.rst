@@ -2,7 +2,7 @@
 
 .. index:: Rich Text Editor (RTE TinyMCE 5) Setup; RTE Setup
 
-.. _rte2-setup:
+.. _rte5-setup:
 
 ======================================
 Rich Text Editor (RTE TinyMCE 5) Setup
@@ -35,7 +35,7 @@ Crafter Studio uses standard TinyMCE plugins.  To see the list of TinyMCE plugin
 See https://www.tiny.cloud/docs/plugins/opensource/ for more information on the TinyMCE plugins.
 
 
-.. |rteMediaBtn| image:: /_static/images/site-admin/rte/rte2-media-button.png
+.. |rteMediaBtn| image:: /_static/images/site-admin/rte/rte5-media-button.png
                    :width: 4%
 
 To add TinyMCE plugins to the toolbar, add the names listed in the **toolbar** tag in the TinyMCE plugin documentation to one of the toolbarItem tags in the configuration: ``<toolbarItems1>``, ``<toolbarItems2>``, ``<toolbarItems3>`` or ``<toolbarItems4>``.
@@ -48,12 +48,27 @@ Let's take a look at an example of using one of the TinyMCE plugins.
 
 The default editor instance contains a menubar with most of the commonly used editing tools.  Sometimes, you want handy buttons available so you don't have to find the tool you need from the menubar.  We'll add a media button to our editor instance to be able to embed a YouTube video:
 
-1. Add the button name **media** to one of the toolbarItem tags: ``<toolbarItems1>``.  An **Insert/Edit Embedded Media** button |rteMediaBtn| will now be available for users of the RTE.
+1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+2. Add the button name **media** to one of the toolbarItem tags: ``<toolbarItems1>``.  An **Insert/Edit Embedded Media** button |rteMediaBtn| will now be available for users of the RTE.
+
+   .. figure:: /_static/images/site-admin/rte/rte5-media-button-added.jpg
+      :alt: RTE Setup - Media button added to editor instance
+      :width: 75%
+      :align: center
+
+   |
+
+     .. note::
+        On TinyMCE, buttons can be added through **toolbar(n)** or **toolbar** but the rte config only supports **toolbarItems(n)**.
+
+        Tiny's **toolbar(n)** are available only up to 4 through our **toolbarItems{1,2,3,4}**
+
+
 2. Click on the |rteMediaBtn| button to add the link to the YouTube video you'd like to embed in the RTE and to setup other parameters. In the **General** tab, fill in the **Source** field with the URL of the YouTube video you'd like to embed and finally, fill in the **Dimensions** field to the size desired.  Click on the **Ok** button.
 
-   .. figure:: /_static/images/site-admin/rte/rte2-media-config.png
+   .. figure:: /_static/images/site-admin/rte/rte5-media-config.png
       :alt: RTE Setup - Insert/Edit Embedded Media Example
-      :width: 45%
+      :width: 35%
       :align: center
 
    |
@@ -276,6 +291,78 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
 
    |
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Adding support for valid child elements within a parent element
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TinyMCE provides an option to control what child elements can exist within specified parent elements.
+By adding/removing child elements that can exist within a parent element, you can force which elements are valid children of the parent element.
+
+To add/remove child elements to the list of valid child elements, add/remove the element in the **<validChildren />** tag in the RTE Configuration file.  To add a child element to a parent element, use a ``+`` before the parent element then enclose in square brackets the child element/s you want to add e.g. ``+a[div|p]``.  To remove a child element, use a ``-`` before the parent element then enclose in square brackets the child element/s you want to remove,  e.g. ``-a[img]``.  You can add multiple parent elements by using a comma separated list of parents with elements that should be added/removed as valid children
+
+   .. code-block:: xml
+      :caption: *Example adding/removing elements for the specified parent*
+
+      <validChildren>+body[style],-body[div],p[strong|a|#text]</validChildren>
+
+   |
+
+The example above shows you how to add **style** as a valid child of **body** and remove **div** as a valid child. It also forces only *strong* and **a** and *text contents* to be valid children of **p**.
+
+
+For more information on the TinyMCE ``valid_children`` option, see https://www.tiny.cloud/docs/configure/content-filtering/#valid_chiildren
+
+Example adding valid child elements to parent element
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Let's take a look at an example of how to add **div** and *text content* as valid children of **a** (html anchor) using the website editorial blueprint.
+
+1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+
+2. Scroll down to the ``<validChildren />`` tag, uncomment it and add **div** and text contents as child elements of **a** and save.
+
+   .. code-block:: xml
+      :caption: *RTE (TinyMCE 5) Configuration File*
+
+      <validChildren>+a[div|#text]</validChildren>
+
+   |
+
+3. We'll now disable ``Force Root Block p Tag`` and ``Force p tags New Lines`` so that markup we enter in the RTE code editor will remain unchanged after saving your changes.  Setting the ``Force Root Block p Tag``  option to false will never produce **p** tags on enter, or, automatically it will instead produce **br** elements and Shift+Enter will produce a **p**.
+
+   Open the *Article* content type by opening the **Sidebar**, then click on |siteConfig| -> *Content Types* -> *Article* -> *Open Type*.
+   Scroll down to the ``Sections Repeating Group`` field, then click on the ``section_html`` field, which is an RTE.
+
+   In the ``Properties Explorer`` on the right, remove the check mark on the property ``Force Root Block p Tag`` and ``Force p tags New Lines``.
+
+4. We'll now add markup in the RTE to test that **div** is now allowed to be a child element (nested) of parent element **a**.
+
+   Open the **Sidebar** then click on *Site Explorer* and edit one of the articles.  Navigate to ``/articles/2020/7/`` then right click on ``New ACME Phone Released Today`` and select ``Edit``.
+
+   Scroll down to the ``Content`` part of the form and under ``Sections``, click on ``Add Another``.
+
+   Click on the newly added section, then click on ``Tools`` -> ``Code Editor`` from the RTE menubar, then add the following:
+
+      .. code-block:: xml
+
+         <a href="#">
+           <div class="nesting_test_div">
+             <img src="/static-assets/images/castle-pic.jpg" alt="" />
+             <div class="nesting_test" title="Testing nesting elements">This is a test for nesting elements</div>
+           </div>
+         </a>
+
+      |
+
+   After saving your changes, preview the page and it should now display an image and text that's a link.  Re-open the RTE code editor and verify that the markup you inputted is unchanged.
+
+   .. figure:: /_static/images/site-admin/rte/rte-add-child-element-ex.jpg
+      :alt: RTE div child element added
+      :width: 85%
+      :align: center
+
+   |
+
+
 
 ---------------------
 Creating an RTE Setup
@@ -325,12 +412,12 @@ The RTE's configuration file looks like this:
 
 |
 
-You can access the ``RTE (TinyMCE 5) Configuration`` file by going to the **Sidebar** then clicking on  |siteConfig|.  In the **Site Config**, click on **Configuration**, then from the dropdown list, select ``RTE (TinyMCE 5) Configuration``
+You can access the ``RTE (TinyMCE 5) Configuration`` file by going to the **Sidebar** then clicking on  |siteConfig|.  In the **Site Config**, click on **Configuration**, then from the list, select ``RTE (TinyMCE 5) Configuration``
 
-.. figure:: /_static/images/site-admin/rte/rte2-setup-config-file-access.png
+.. figure:: /_static/images/site-admin/rte/rte5-setup-config-file-access.jpg
     :alt: RTE Setup - Open RTE Configuration File in Studio
     :align: center
-    :width: 60%
+    :width: 80%
 
 |
 
@@ -356,16 +443,10 @@ Attaching an RTE in a Form to an RTE Setup
 
 To attach an RTE setup to an RTE in a form, open the content type that you want to add an RTE to, then go to the **Properties Explorer** and click on RTE Configuration and type in an RTE setup name.
 
-.. figure:: /_static/images/site-admin/rte/rte2-setup-form.png
+.. figure:: /_static/images/site-admin/rte/rte5-setup-form.jpg
    :alt: RTE Setup - Add an RTE (TinyMCE 5) in the Form
    :align: center
 
 |
 
-In the image below, the RTE setup name used is **generic**.  Please see the section above on how to create an RTE Setup, where the example shows an RTE Setup named **generic**.
-
-.. figure:: /_static/images/site-admin/rte/rte2-setup-attach-config.png
-   :alt: RTE Setup - Attach an RTE in a Form to an RTE Setup
-   :align: center
-   :width: 50%
-
+In the image above, the RTE setup name used is **generic**.  Please see the section above on how to create an RTE Setup, where the example shows an RTE Setup named **generic**.
