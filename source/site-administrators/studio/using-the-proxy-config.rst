@@ -104,6 +104,9 @@ Let's begin:
           # that port too.
           WDS_SOCKET_PORT=3000
 
+     For Windows users on Docker, add ``DANGEROUSLY_DISABLE_HOST_CHECK=true`` to the ``.env.development`` file. |br|
+     Setting the environment variable ``DANGEROUSLY_DISABLE_HOST_CHECK`` to ``true`` disables the host check, which allows us to pretend that the the host header of the request and the listening address of the host are running on the same host and port which is important since browsers block cross-origin requests.  If not set, the user will see an ``Invalid Host header`` message in Studio.  Remember that **disabling the host check is insecure and should only be used in a development environment**.
+
      Remember to restart the React server for the settings to take effect.
 
        .. note:: If you're using the create-react-app, please note that ``react-scripts`` versions earlier than 3.4.0 does not support custom sockjs pathname for hot reloading the server.  Make sure that your ``react-scripts`` version used is 3.4.0 or above for the live reload work inside Crafter CMS to work.
@@ -146,6 +149,8 @@ Let's begin:
               <pattern>.*</pattern>
             </patterns>
           </server>
+
+     For users running Studio on Docker, use ``http://host.docker.internal:3000`` for the ``url`` of the React application.  Docker containers can access local services running on the host by connecting to ``host.docker.internal``.  See https://docs.docker.com/docker-for-windows/networking/#use-cases-and-workarounds for more information on connecting from a container to a service on the host.
 
      At this point, the preview we are seeing in Studio should be the one from our React application.
 
