@@ -322,7 +322,7 @@ The RTE (Rich Text Editor) is intended to provide an in-context editing experien
     :alt: Content Author - RTE Screen
 
 
-There are a number of tools available from the RTE out of the box for editing your content.  Custom tools may also be added to the RTE, depending on your needs.  Please see the developer section :ref:`rte2-setup` of the docs for more details.
+There are a number of tools available from the RTE out of the box for editing your content.  Custom tools may also be added to the RTE, depending on your needs.  Please see the developer section :ref:`rte5-setup` of the docs for more details.
 
 --------------
 Copying a Page
