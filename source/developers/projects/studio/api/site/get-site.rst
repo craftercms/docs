@@ -65,7 +65,7 @@ Example
     "state":"READY",
     "lastSyncedGitlogCommitId":"d2302a5753205afe0043e8380dd0fe20e1064334",
     "siteDeleted":false,
-    "sitePublishedRepoCreated":false}
+    "sitePublishedRepoCreated":false
   }
 
 --------
