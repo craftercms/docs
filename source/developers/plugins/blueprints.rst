@@ -197,7 +197,7 @@ The ``craftercms-plugin.yaml`` file contains information for use in Crafter CMS.
       screenshots:
         - title: Home Page
           description: Screenshot of the homepage
-          url: /studio/static-assets/images/blueprints/empty/bp_empty.png
+          url: .crafter/screenshots/default.png
     developer:
       company:
         name: Crafter Software
@@ -227,6 +227,8 @@ where the following fields are required:
 - ``plugin.version`` - a version number for the blueprint
 - ``plugin.crafterCmsVersions`` - Crafter CMS versions that the blueprint applies to (look in the :ref:`release-notes` section for the versions available)
 - ``plugin.searchEngine`` - search engine that will be used when a site is created from the blueprint (possible values are, ``CrafterSearch`` and ``Elasticsearch``)
+
+For the ``plugin.media.screenshots``, Crafter CMS uses a default path ``.crafter/screenshots/default.png`` to look for a default representative image of a plugin or blueprint.
 
    .. note:: For the images to be used for the ``screenshots`` in the ``craftercms-plugin.yaml`` file, we recommend using images with approximately a ``4:3`` aspect ratio (width to height), such as an image sized at 1200x800
 
