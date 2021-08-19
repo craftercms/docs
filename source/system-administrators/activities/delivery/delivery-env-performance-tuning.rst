@@ -15,31 +15,23 @@ Server Requirements
 -------------------
 Minimum Installation
 
-    * 4GB of RAM + 4GB Swap Space or Virtual Memory
-    * 3GB JVM Memory (-Xms 1G -Xmx 3G)
-    * 4 CPU Cores
+	* 8GB of RAM + 8GB Swap Space or Virtual Memory
+	* 4GB JVM Memory (-Xms 1G -Xmx 4G)
+	* 4 CPU Cores
 
-Medium Installation
-
-    * 8GB of RAM + 8GB Swap Space or Virtual Memory
-    * 4GB JVM Memory (-Xms 1G -Xmx 4G)
-    * 4 CPU Cores
-
-Large Installations
+Medium Installations
 
 	* 16GB+ of RAM + 16GB Swap Space or Virtual Memory
 	* 8GB+ JVM Memory (-Xms 2G -Xmx 8G)
 	* 8+ CPU Cores
 
-Extra Large Installations
+Large Installations
 
 	* 32GB+ of RAM + 16GB Swap Space or Virtual Memory
-	* 16GB+ of JVM Memory (-Xms 2G -Xmx 16G)
+	* 16GB+ of JVM Memory (-Xms 4G -Xmx 16G)
 	* 16+ CPU Cores
 
 Horizontal scaling can be very effective in scaling out delivery of content.
-
-.. [TBD: add request ranges for the installations listed above]
 
 -------------------------------------
 High-level Performance Considerations

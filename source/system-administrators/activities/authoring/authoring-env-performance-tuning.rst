@@ -11,22 +11,22 @@ This section describes ways on how to enhance the authoring environment performa
 -------------------
 Server Requirements
 -------------------
-Minimum Installation (~1-10 concurrent users per site, ~10 sites)
+Minimum Installation (~1-10 concurrent users, ~10 sites)
 
-	* 8GB of RAM + 8GB Swap Space or Virtual Memory
-	* 4GB JVM Memory (-Xms 1G -Xmx 4G)
-	* 2 CPU Cores
+	* 16GB of RAM + 16GB Swap Space or Virtual Memory
+	* 8GB JVM Memory (-Xms 1G -Xmx 8G)
+	* 4 CPU Cores
 
-Medium Installations (~11-25 concurrent users per site, ~25 sites)
+Medium Installations (~11-25 concurrent users, ~25 sites)
 
-	* 16GB+ of RAM + 16GB Swap Space or Virtual Memory
-	* 8GB+ JVM Memory (-Xms 2G -Xmx 8G)
-	* 4+ CPU Cores
+	* 32GB+ of RAM + 32GB Swap Space or Virtual Memory
+	* 16GB+ JVM Memory (-Xms 2G -Xmx 16G)
+	* 8+ CPU Cores
 
-Larger Installations (~26-100 concurrent users per site, ~100 sites)
+Larger Installations (~26-50 concurrent user, ~50 sites)
 
-	* 32GB+ of RAM + 16GB Swap Space or Virtual Memory
-	* 16GB+ of JVM Memory (-Xms 2G -Xmx 16G)
+	* 64GB+ of RAM + 64GB Swap Space or Virtual Memory
+	* 32GB+ of JVM Memory (-Xms 4G -Xmx 32G)
 	* 16+ CPU Cores
 
 Vertical scaling can be very effective in scaling out Crafter Studio.
