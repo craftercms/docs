@@ -20,7 +20,14 @@ simply ask Active cache for whatever the current response is.
 Prerequisites
 -------------
 
-* None
+**Enable active cache**
+
+Active cache is disabled by default.  To enable active cache, in the ``crafter-setenv.sh`` file under ``CRAFTER_HOME/bin``, set the Spring profile ``crafter.core.activeCache``
+
+   .. code-block:: yaml
+      :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
+
+      export SPRING_PROFILES_ACTIVE=crafter.core.activeCache
 
 ---------------------------------------
 Step 1: Specify the Cache Tick Duration
@@ -29,7 +36,7 @@ Step 1: Specify the Cache Tick Duration
 Crafter's cache implementation uses "ticks" to handle item expiration or refresh of items. A tick is an arbitrary period of time that is
 completely configurable, and by default it's 1 hour. So if an item is refreshed every 5 ticks, that means that it will be refreshed every 5 hours.
 If you need constant refreshment/expiration of items, we recommend each tick to be 1 minute. To change this go to your Crafter installation,
-and then in ``bin/apache-tomcat/shared/classes/crafter/engine/extension`` edit the ``server-config.properties`` an add the following property:
+and then in ``bin/apache-tomcat/shared/classes/crafter/engine/extension`` edit the :ref:`server-config.properties <engine-configuration-files>` and add the following property:
 
 .. code-block:: properties
 

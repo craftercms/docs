@@ -22,6 +22,43 @@ Crafter Engine also populates templates with other useful variables, described b
 
 .. include:: /includes/freemarker-variables.rst
 
+--------------------
+Rendering Components
+--------------------
+
+Crafter Engine provides the ``renderComponent`` macro that can be used to render components in any template:
+
+.. code-block:: html
+  :force:
+  :linenos:
+  :caption: Using the RenderComponent Macro
+
+  <!-- Render a component by referencing the path -->
+  <@renderComponent componentPath='/site/components/headers/header.xml' />
+
+  <!-- Render a component by referencing a shared component from the current item -->
+  <@renderComponent component=contentModel.mySharedComponent_o.item  />
+
+  <!-- Render a component by referencing an embedded component from the current item -->
+  <@renderComponent component=contentModel.myEmbeddedComponent_o.item />
+
+  <!-- Render an embedded component from another component instead of the current item -->
+  <#assign sharedItem = siteItemService.getSiteItem('/site/components/global.xml')/>
+  <@renderComponent parent=sharedItem component=sharedItem.myEmbeddedComponent_o.item />
+
+  <!-- Render a component passing additional variables -->
+  <!-- Inside the component's template 'theme' will be available as a global variable -->
+  <@renderComponent component=contentModel.myComponent.item additionalModel={ 'theme': contentModel.theme_s } />
+
+Parameters:
+
+* **componentPath**: a path for a shared component in the site
+* **component**: a XML node from a node selector field, supports both shared and embedded components
+* **parent**: the SiteItem to use as a parent in the case of embedded components (defaults to the current item
+  being rendered)
+* **additionalModel**: a Freemarker hash containing key-value pairs that can be used as global variables in the
+  component's template
+
 .. _templating-rendering-navigation:
 
 --------------------
@@ -31,7 +68,8 @@ Rendering Navigation
 Crafter Engine provides the option of rendering automatically the navigation for you, just by using the macro
 ``renderNavigation``:
 
-.. code-block:: guess
+.. code-block:: html
+  :force:
   :linenos:
   :caption: Using the Navigation Macro
 
@@ -58,7 +96,8 @@ Rendering Breadcrumbs
 Crafter also offers a ``renderBreadcrumb`` macro to easily generate a dynamic list with all the
 parent pages of a specific url.
 
-.. code-block:: guess
+.. code-block:: html
+  :force:
   :linenos:
   :caption: Using the Breadcrumb Macro
 
@@ -91,7 +130,8 @@ Engine includes a default implementation that can be found in ``templates/web/na
 and ``templates/web/navigation2/breadcrumb-macros.ftl`` but it also provides the option to use your
 own sets of macros, which you'll probably want since the navigation HTML is generally specific to the site.
 
-.. code-block:: guess
+.. code-block:: html
+  :force:
   :linenos:
   :caption: Default Nav Macros
 
@@ -125,7 +165,8 @@ own sets of macros, which you'll probably want since the navigation HTML is gene
      </li>
   </#macro>
 
-.. code-block:: guess
+.. code-block:: html
+  :force:
   :linenos:
   :caption: Default Breadcrumb Macros
 
@@ -140,7 +181,8 @@ own sets of macros, which you'll probably want since the navigation HTML is gene
 You can define your own macros in an additional Freemarker template and include and optional
 parameter with the namespace that was given in the ``import`` tag:
 
-.. code-block:: guess
+.. code-block:: html
+  :force:
   :linenos:
   :caption: Using Custom Navigation Macros
 
@@ -179,7 +221,8 @@ Running Scripts/Controllers
 
 Crafter Engine allows executing scripts/controllers from inside Freemarker templates by using the tag ``@crafter.controller``.  It requires a single parameter, ``path``, which is the path of the script/controller in the site:
 
-.. code-block:: guess
+.. code-block:: html
+   :force:
    :caption: Running Scripts/Controllers from inside Freemarker templates
 
    <@crafter.controller path=“/scripts/plugins/MyPlugin/1/get-tweets.groovy” />
@@ -248,7 +291,7 @@ templates then you should consider creating a Groovy class instead:
   }
 
 .. code-block:: xml
-  :caption: Site Application Context file
+  :caption: *Engine Site Application Context file - application-context.xml*
   :linenos:
 
   <!-- Add a bean definition using the new class -->
@@ -260,7 +303,7 @@ templates then you should consider creating a Groovy class instead:
   </bean>
 
 .. code-block:: xml
-  :caption: Site Configuration file
+  :caption: *Engine Site Configuration file - site-config.xml*
   :linenos:
 
   <!-- If needed the bean can use external configuration for easy management -->
@@ -286,3 +329,5 @@ templates then you should consider creating a Groovy class instead:
 
   All beans defined in the :ref:`Engine Site Application Context <engine-site-configuration-spring-configuration>`
   file will be available in templates.
+
+  For more information on Crafter Engine Site configuration files, see :ref:`engine-site-configuration-files`

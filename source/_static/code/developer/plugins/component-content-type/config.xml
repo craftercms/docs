@@ -1,0 +1,13 @@
+<content-type name="/component/mycomponent" is-wcm-type="true">
+<label>My Component</label>
+<form>/component/plugins/org/craftercms/mycomponent/mycomponent</form>
+<form-path>simple</form-path>
+<model-instance-path>NOT-USED-BY-SIMPLE-FORM-ENGINE</model-instance-path>
+<file-extension>xml</file-extension>
+<content-as-folder>false</content-as-folder>
+<previewable>false</previewable>
+<quickCreate>false</quickCreate>
+<quickCreatePath></quickCreatePath>
+<noThumbnail>true</noThumbnail>
+<image-thumbnail></image-thumbnail>
+</content-type>

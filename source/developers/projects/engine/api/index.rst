@@ -9,11 +9,11 @@ Crafter Engine API
 ==================
 
 .. note::
-    When simple multi-tenancy has been configured for Crafter Engine, make sure that the request includes the ``crafterSite`` parameter to set a site value.  Crafter Engine API's are site specific, and so, it needs to know the site when multi-tenancy has been configured for each request made.
+    When simple multi-tenancy has been configured for Crafter Engine, or when working in ``Preview`` mode, make sure that the request includes the ``crafterSite`` parameter to set a site value.  Crafter Engine API's are site specific, and so, it needs to know the site when multi-tenancy or preview mode has been configured for each request made.
 
     Here's an example to get an Item from the content store:
 
-    .. code-block:: guess
+    .. code-block:: text
 
         http://localhost:8080/api/1/site/content_store/item.json?url=/site/website/index.xml&crafterSite=mysite
 
@@ -29,6 +29,7 @@ Site Context
 	:maxdepth: 1
 
 	site/context/id
+	site/context/status
 	site/context/destroy
 	site/context/rebuild
 	site/context/graphql/rebuild
@@ -68,7 +69,6 @@ Site Content Store
 .. toctree::
 	:maxdepth: 1
 
-	site/content_store/descriptor
 	site/content_store/item
 	site/content_store/children
 	site/content_store/tree
@@ -141,4 +141,13 @@ Monitoring
 	monitoring/status
 	monitoring/version
 	monitoring/log
+
+------------------
+Crafter-Controller
+------------------
+
+.. toctree::
+	:maxdepth: 1
+
+	crafter-controller/component
 

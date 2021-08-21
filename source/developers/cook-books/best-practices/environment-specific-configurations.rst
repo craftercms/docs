@@ -23,8 +23,8 @@ for the staging and production servers. Crafter Engine provides a feature to eas
 configurations for all environments in the site repository.
 
 .. note::
-  In order to use this feature all Crafter Engine servers need to set a proper value for the
-  ``crafter.engine.environment`` property.
+    In order to use this feature all Crafter Engine servers need to set a proper value for the
+    ``crafter.engine.environment`` property.
 
 For this example assume the following values:
 

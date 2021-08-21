@@ -21,7 +21,8 @@ In the ``bin`` folder in your Crafter CMS delivery environment, we will use the 
 From your command line, navigate to your ``{Crafter-CMS-delivery-environment-directory}/bin/`` , and execute the init-site script. The following output of ``init-site.sh -h``
 explains how to use the script:
 
-  .. code-block:: guess
+  .. code-block:: bash
+    :force:
 
     usage: init-site [options] [site] [repo-path]
      -a,--notification-addresses <addresses>   A comma-separated list of email
@@ -46,6 +47,7 @@ explains how to use the script:
      -u,--username <username>                  The username for the remote Git
                                                repo, when using basic
                                                authentication
+
     EXAMPLES:
      Init a site from the default repo path (../../crafter-authoring/data/repos/sites/{sitename}/published)
          init-site mysite
@@ -73,15 +75,13 @@ Example #1: ``ssh://server1.example.com/path/to/repo``
 
 Example #2: ``ssh://jdoe@server2.example.com:63022/path/to/repo``
 
-.. note::
-    When using ssh, your keys need to be generated using **RSA** as the algorithm
-
-    .. include:: /includes/setup-ssh-keys.rst
+   .. note::
+      .. include:: /includes/setup-ssh-keys.rst
 
 If you are just working on another directory on disk for your delivery, you can just use the filesystem.  When your repository is local, make sure to use the absolute path.
 Here is an example site's published repo Git url when using a local repository:
 
-  .. code-block:: guess
+  .. code-block:: bash
 
       /opt/crafter/authoring/data/repos/sites/mysite/published
 

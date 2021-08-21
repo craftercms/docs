@@ -17,7 +17,7 @@ profiles you can follow the :ref:`profile-admin-console` guides.
 
 All configuration for Crafter Profile is managed using a properties file:
 
-  ``$TOMCAT_HOME/shared/classes/crafter/profile/extension/server-config.properties``
+  ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/profile/extension/server-config.properties``
 
 ---------------------
 MongoDB Configuration
@@ -245,7 +245,7 @@ templates and configure Crafter Profile to use them following this steps:
 
 The templates will have available the ``verificationLink`` variable.
 
-.. code-block:: guess
+.. code-block:: html
   :caption: Example Email Template
 
   Click on the link below to verify your Crafter Profile account.

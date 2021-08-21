@@ -18,6 +18,9 @@ to meet specific requirements. Some examples of the use cases that can be addres
   executed following the order defined in the configuration file and some processors require a specific position in the
   pipeline
 
+
+.. |failDep| replace:: ``failDeploymentOnFailure``
+
 --------------------------
 Main Deployment Processors
 --------------------------
@@ -27,20 +30,33 @@ detected by other processors. To process changed files a processor may interact 
 
 All deployment processors support the following properties:
 
-+------------------+--------+-------------+----------------------------------------------------------------------+
-|Name              |Required|Default Value|Description                                                           |
-+==================+========+=============+======================================================================+
-|``processorLabel``|        |None         |Label that other processors can use to jump to this one               |
-+------------------+--------+-------------+----------------------------------------------------------------------+
-|``jumpTo``        |        |None         |The label of the processor to jump to after a successful execution    |
-+------------------+--------+-------------+----------------------------------------------------------------------+
-|``includeFiles``  |        |None         |List of regular expressions to check the files that should be included|
-+------------------+--------+-------------+----------------------------------------------------------------------+
-|``excludeFiles``  |        |None         |List of regular expressions to check the files that should be excluded|
-+------------------+--------+-------------+----------------------------------------------------------------------+
-|``alwaysRun``     |        |``false``    |Indicates if the processor should run even if there are no changes in |
-|                  |        |             |the current deployment                                                |
-+------------------+--------+-------------+----------------------------------------------------------------------+
++-------------------+--------+-------------+----------------------------------------------------------------------+
+|Name               |Required|Default Value|Description                                                           |
++===================+========+=============+======================================================================+
+|``processorLabel`` |        |None         |Label that other processors can use to jump to this one               |
++-------------------+--------+-------------+----------------------------------------------------------------------+
+|``jumpTo``         |        |None         |The label of the processor to jump to after a successful execution    |
++-------------------+--------+-------------+----------------------------------------------------------------------+
+|``includeFiles``   |        |None         |List of regular expressions to check the files that should be included|
++-------------------+--------+-------------+----------------------------------------------------------------------+
+|``excludeFiles``   |        |None         |List of regular expressions to check the files that should be excluded|
++-------------------+--------+-------------+----------------------------------------------------------------------+
+|``alwaysRun``      |        |``false``    |Indicates if the processor should run even if there are no changes in |
+|                   |        |             |the current deployment                                                |
++-------------------+--------+-------------+----------------------------------------------------------------------+
+||failDep|          |        |``false``    |Enables failing a deployment when there's a processor failure         |
++-------------------+--------+-------------+----------------------------------------------------------------------+
+
+.. |lBranch| replace:: ``localRepoBranch``
+.. |URL| replace:: ``remoteRepo.url``
+.. |Name| replace:: ``remoteRepo.name``
+.. |Branch| replace:: ``remoteRepo.branch``
+.. |username| replace:: ``remoteRepo.username``
+.. |password| replace:: ``remoteRepo.password``
+
+.. |path| replace:: ``remoteRepo.ssh.privateKey.path``
+.. |passphrase| replace:: ``remoteRepo.ssh.privateKey.passphrase``
+
 
 ^^^^^^^^^^^^^^^^^^
 Git Pull Processor
@@ -52,41 +68,35 @@ Processor that clones/pulls a remote Git repository into a local path in the fil
 
 **Properties**
 
-Prefix: ``remoteRepo``
-
-+------------+-----------+-------------------------------+------------------------------------------------------------+
-|Name        |Required   |Default Value                  |Description                                                 |
-+============+===========+===============================+============================================================+
-|``url``     ||checkmark||                               |The URL of the remote Git repo to pull                      |
-+------------+-----------+-------------------------------+------------------------------------------------------------+
-|``name``    |           |``origin``                     | The name to use for the remote repo when pulling from it   |
-+------------+-----------+-------------------------------+------------------------------------------------------------+
-|``branch``  |           |The default branch in the repo |The branch of the remote Git repo to pull                   |
-+------------+-----------+-------------------------------+------------------------------------------------------------+
-|``username``|           |                               |The username for authentication with the remote Git repo.   |
-|            |           |                               |Not needed when SSH with RSA key pair authentication is used|
-+------------+-----------+-------------------------------+------------------------------------------------------------+
-|``password``|           |                               |The password for authentication with the remote Git repo.   |
-|            |           |                               |Not needed when SSH with RSA key pair authentication is used|
-+------------+-----------+-------------------------------+------------------------------------------------------------+
-
-
-Prefix: ``remoteRepo.ssh.privateKey``
-
-+--------------+--------+-------------+-----------------------------------------------------------------------------+
-|Name          |Required|Default Value|Description                                                                  |
-+==============+========+=============+=============================================================================+
-|``path``      |        |             |The SSH private key path, used only with SSH with RSA key pair authentication|
-+--------------+--------+-------------+-----------------------------------------------------------------------------+
-|``passphrase``|        |             |The SSH private key passphrase, used only with SSH withRSA key pair          |
-|              |        |             |authentication                                                               |
-+--------------+--------+-------------+-----------------------------------------------------------------------------+
++------------+-----------+-------------------------------+-------------------------------------------------------------+
+|Name        |Required   |Default Value                  |Description                                                  |
++============+===========+===============================+=============================================================+
+||URL|       ||checkmark||                               |The URL of the remote Git repo to pull                       |
++------------+-----------+-------------------------------+-------------------------------------------------------------+
+||Name|      |           |``origin``                     |The name to use for the remote repo when pulling from it     |
++------------+-----------+-------------------------------+-------------------------------------------------------------+
+||Branch|    |           |The default branch in the repo |The branch of the remote Git repo to pull                    |
++------------+-----------+-------------------------------+-------------------------------------------------------------+
+||username|  |           |                               |The username for authentication with the remote Git repo.    |
+|            |           |                               |Not needed when SSH with RSA key pair authentication is used |
++------------+-----------+-------------------------------+-------------------------------------------------------------+
+||password|  |           |                               |The password for authentication with the remote Git repo.    |
+|            |           |                               |Not needed when SSH with RSA key pair authentication is used |
++------------+-----------+-------------------------------+-------------------------------------------------------------+
+||path|      |           |                               |The SSH private key path, used only with SSH with RSA key    |
+|            |           |                               |pair authentication                                          |
++------------+-----------+-------------------------------+-------------------------------------------------------------+
+||passphrase||           |                               |The SSH private key passphrase, used only with SSH withRSA   |
+|            |           |                               |key pair authentication                                      |
++------------+-----------+-------------------------------+-------------------------------------------------------------+
+||failDep|   |           |``true``                       |Enables failing a deployment when there's a processor failure|
++------------+-----------+-------------------------------+-------------------------------------------------------------+
 
 **Example**
 
 .. code-block:: yaml
   :linenos:
-  :caption: Git Pull Processor using basic auth
+  :caption: *Git Pull Processor using basic auth*
 
   - processorName: gitPullProcessor
     remoteRepo:
@@ -97,7 +107,7 @@ Prefix: ``remoteRepo.ssh.privateKey``
 
 .. code-block:: yaml
   :linenos:
-  :caption: Git Pull Processor using SSH with RSA key pair
+  :caption: *Git Pull Processor using SSH with RSA key pair*
 
   - processorName: gitPullProcessor
     remoteRepo:
@@ -107,6 +117,8 @@ Prefix: ``remoteRepo.ssh.privateKey``
         privateKey:
           path: /home/myuser/myprivatekey
           passphrase: mypassphrase
+
+.. _deployer-git-diff-processor:
 
 ^^^^^^^^^^^^^^^^^^
 Git Diff Processor
@@ -122,21 +134,27 @@ the change set.
 
 **Properties**
 
-+-----------------+---------+-------------+---------------------------------------------------------------------+
-|Name             |Required |Default Value|Description                                                          |
-+=================+=========+=============+=====================================================================+
-|``includeGitLog``|         |``false``    |Indicates if the git log details should be included in the change set|
-+-----------------+---------+-------------+---------------------------------------------------------------------+
++---------------------+---------+-------------+---------------------------------------------------------------------+
+|Name                 |Required |Default Value|Description                                                          |
++=====================+=========+=============+=====================================================================+
+|``includeGitLog``    |         |``false``    |Indicates if the git log details should be included in the change set|
++---------------------+---------+-------------+---------------------------------------------------------------------+
+|``updateCommitStore``|         |``true``     |Indicates if the processed commit value should be modified           |
++---------------------+---------+-------------+---------------------------------------------------------------------+
+||failDep|            |         |``true``     |Enables failing a deployment when there's a processor failure        |
++---------------------+---------+-------------+---------------------------------------------------------------------+
 
 **Example**
 
 .. code-block:: yaml
   :linenos:
-  :caption: Git Diff Processor
+  :caption: *Git Diff Processor*
 
   - processorName: gitDiffProcessor
     includeGitLog: true
 
+
+.. _deployer-git-push-processor:
 
 ^^^^^^^^^^^^^^^^^^
 Git Push Processor
@@ -146,41 +164,37 @@ Processor that pushes a local repo to a remote Git repository.
 
 **Properties**
 
-Prefix: ``remoteRepo``
-
 +------------+-----------+-------------------------------+------------------------------------------------------------+
 |Name        |Required   |Default Value                  |Description                                                 |
 +============+===========+===============================+============================================================+
-|``url``     ||checkmark||                               |The URL of the remote Git repo to pull                      |
+||lBranch|   ||checkmark||                               |The branch of the local repo to push                        |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-|``name``    |           |``origin``                     | The name to use for the remote repo when pulling from it   |
+||URL|       ||checkmark||                               |The URL of the remote Git repo to push to                   |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-|``branch``  |           |The default branch in the repo |The branch of the remote Git repo to pull                   |
+||Branch|    |           |The default branch in the repo |The branch of the remote Git repo to push to                |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-|``username``|           |                               |The username for authentication with the remote Git repo.   |
+||username|  |           |                               |The username for authentication with the remote Git repo.   |
 |            |           |                               |Not needed when SSH with RSA key pair authentication is used|
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-|``password``|           |                               |The password for authentication with the remote Git repo.   |
+||password|  |           |                               |The password for authentication with the remote Git repo.   |
 |            |           |                               |Not needed when SSH with RSA key pair authentication is used|
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-
-
-Prefix: ``remoteRepo.ssh.privateKey``
-
-+--------------+--------+-------------+-----------------------------------------------------------------------------+
-|Name          |Required|Default Value|Description                                                                  |
-+==============+========+=============+=============================================================================+
-|``path``      |        |             |The SSH private key path, used only with SSH with RSA key pair authentication|
-+--------------+--------+-------------+-----------------------------------------------------------------------------+
-|``passphrase``|        |             |The SSH private key passphrase, used only with SSH withRSA key pair          |
-|              |        |             |authentication                                                               |
-+--------------+--------+-------------+-----------------------------------------------------------------------------+
+||path|      |           |                               |The SSH private key path, used only with SSH with RSA key   |
+|            |           |                               |pair authentication                                         |
++------------+-----------+-------------------------------+------------------------------------------------------------+
+||passphrase||           |                               |The SSH private key passphrase, used only with SSH withRSA  |
+|            |           |                               |key pair authentication                                     |
++------------+-----------+-------------------------------+------------------------------------------------------------+
+|``force``   |           |``false``                      |Sets the force preference for the push                      |
++------------+-----------+-------------------------------+------------------------------------------------------------+
+|``pushAll`` |           |``false``                      |If all local branches should be pushed to the remote        |
++------------+-----------+-------------------------------+------------------------------------------------------------+
 
 **Example**
 
 .. code-block:: yaml
   :linenos:
-  :caption: Git Push Processor using basic auth
+  :caption: *Git Push Processor using basic auth*
 
   - processorName: gitPushProcessor
     remoteRepo:
@@ -191,7 +205,7 @@ Prefix: ``remoteRepo.ssh.privateKey``
 
 .. code-block:: yaml
   :linenos:
-  :caption: Git Push Processor using SSH with RSA key pair
+  :caption: *Git Push Processor using SSH with RSA key pair*
 
   - processorName: gitPushProcessor
     remoteRepo:
@@ -201,6 +215,89 @@ Prefix: ``remoteRepo.ssh.privateKey``
         privateKey:
           path: /home/myuser/myprivatekey
           passphrase: mypassphrase
+
+.. _deployer-git-update-commit-id-processor:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Git Update Commit Id Processor
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Processor that updates the processed commits value with the current commit
+
+**Example**
+
+.. code-block:: yaml
+    :linenos:
+    :caption: *Git Update Commit Id Processor*
+
+    - processorName: gitUpdateCommitIdProcessor
+
+.. _deployer-script-processor:
+
+^^^^^^^^^^^^^^^^^^^^^^^
+Groovy Script Processor
+^^^^^^^^^^^^^^^^^^^^^^^
+
+A custom Groovy processor that can process published content.
+
+**Properties**
+
++------------+-----------+-------------------------------+------------------------------------------------------------+
+|Name        |Required   |Default Value                  |Description                                                 |
++============+===========+===============================+============================================================+
+|scriptPath  ||checkmark||                               |The relative path of the script to execute                  |
++------------+-----------+-------------------------------+------------------------------------------------------------+
+
+  .. note::  The default path scripts are loaded from is ``$CRAFTER_HOME/bin/crafter-deployer/processors/scripts``
+
+**Example**
+
+.. code-block:: yaml
+    :linenos:
+    :caption: *Groovy Script Processor*
+
+    - processorName: scriptProcessor
+      scriptPath: 'myscripts/mychanges.groovy'
+
+|
+
+The following variables are available for use in your scripts:
+
+==================  ===========
+Variable Name       Description
+==================  ===========
+logger              The processor's logger, http://www.slf4j.org/api/org/slf4j/Logger.html
+applicationContext  The application context of the current target, https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/ApplicationContext.html
+deployment          The current deployment, :javadoc_base_url:`deployer/org/craftercms/deployer/api/Deployment.html`
+execution           The execution for this processor, :javadoc_base_url:`deployer/org/craftercms/deployer/api/ProcessorExecution.html`
+filteredChangeSet   A subset of ``originalChangeSet`` that matches the ``includeFiles`` pattern and not the ``excludeFiles`` pattern for this processor, :javadoc_base_url:`deployer/org/craftercms/deployer/api/ChangeSet.html`
+originalChangeSet   The original change set returned by the previous processors in the pipeline, :javadoc_base_url:`deployer/org/craftercms/deployer/api/ChangeSet.html`
+==================  ===========
+
+|
+|
+
+Let's take a look at an example script that you can use for the Groovy script processor.
+Below is a script that only includes a file from the change set if a parameter is present in the deployment:
+
+.. code-block:: groovy
+   :caption: *Example Groovy script to be run by a script processor*
+   :linenos:
+
+   import org.craftercms.deployer.api.ChangeSet
+
+   logger.info("starting script execution")
+
+   def specialFile = "/site/website/expensive-page-to-index.xml"
+
+   // if the file has been changed but the param was not sent then remove it from the change set
+   if (originalChangeSet.getUpdatedFiles().contains(specialFile) && !deployment.getParam("index_expensive_page")) {
+       originalChangeSet.removeUpdatedFile(specialFile)
+   }
+
+   // return the new change set
+   return originalChangeSet
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 File Based Deployment Event Processor
@@ -223,10 +320,12 @@ reading a file from the repository.
 
 .. code-block:: yaml
   :linenos:
-  :caption: File Based Deployment Event Processor
+  :caption: *File Based Deployment Event Processor*
 
   - processorName: fileBasedDeploymentEventProcessor
     eventName: 'events.deployment.rebuildContext'
+
+.. _deployer-command-line-processor:
 
 ^^^^^^^^^^^^^^^^^^^^^^
 Command Line Processor
@@ -245,49 +344,25 @@ Processor that runs a command line process.
 +----------------------+-----------+--------------------+-------------------------------------------------------+
 |``processTimeoutSecs``|           |``30``              |The amount of seconds to wait for the process to finish|
 +----------------------+-----------+--------------------+-------------------------------------------------------+
+|``includeChanges``    |           |``false``           |Additional parameters will be added to the command     |
+|                      |           |                    |                                                       |
+|                      |           |                    ||includeChangesTrue|                                   |
++----------------------+-----------+--------------------+-------------------------------------------------------+
+
+.. |includeChangesTrue| replace:: **Example:** script.sh SITE_NAME OPERATION (CREATE | UPDATE | DELETE) FILE (relative path of the file)
 
 **Example**
 
 .. code-block:: yaml
   :linenos:
-  :caption: Command Line Processor
+  :caption: *Command Line Processor*
 
   - processorName: commandLineProcessor
     workingDir: '/home/myuser/myapp/bin'
     command: 'myapp -f --param1=value1'
 
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Search Indexing Processor
-^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Processor that indexes the files on the change set, using one or several BatchIndexer. After the files have been
-indexed it submits a commit.
-
-.. note::
-  This processor uses the Crafter Search API to index in Apache Solr, it should be used only for sites from ``3.0.x``
-  that will not be migrated to Elasticsearch.
-
-**Properties**
-
-+----------------------------------+--------+---------------------+---------------------------------------------------+
-|Name                              |Required|Default Value        |Description                                        |
-+==================================+========+=====================+===================================================+
-|``ignoreIndexId``                 |        |``false``            |If the index ID should be ignored                  |
-+----------------------------------+--------+---------------------+---------------------------------------------------+
-|``indexId``                       |        |Value of ``siteName``|The specific index ID to use                       |
-+----------------------------------+--------+---------------------+---------------------------------------------------+
-|``reindexItemsOnComponentUpdates``|        |``true``             |Flag that indicates that if a component is updated,|
-|                                  |        |                     |all other pages and components that include it     |
-|                                  |        |                     |should be updated too                              |
-+----------------------------------+--------+---------------------+---------------------------------------------------+
-
-**Example**
-
-.. code-block:: yaml
-  :linenos:
-  :caption: Search Indexing Processor
-
-  - processorName: searchIndexingProcessor
+.. _deployer-es-indexing-processor:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Elasticsearch Search Indexing Processor
@@ -314,7 +389,7 @@ indexed it submits a commit.
 
 .. code-block:: yaml
   :linenos:
-  :caption: Elasticsearch Indexing Processor
+  :caption: *Elasticsearch Indexing Processor*
 
   - processorName: elasticsearchIndexingProcessor
 
@@ -338,7 +413,7 @@ Processor that does a HTTP method call.
 
 .. code-block:: yaml
   :linenos:
-  :caption: HTTP Method Call Processor
+  :caption: *HTTP Method Call Processor*
 
   - processorName: httpMethodCallProcessor
     method: GET
@@ -362,10 +437,12 @@ Processor that stops the pipeline execution for a given number of seconds.
 
 .. code-block:: yaml
   :linenos:
-  :caption: Delay Processor
+  :caption: *Delay Processor*
 
   - processorName: delayProcessor
     seconds: 10
+
+.. _deployer-target-find-replace-processor:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Find And Replace Processor
@@ -379,19 +456,21 @@ Processor that replaces a pattern on the content of the created or updated files
 
 **Properties**
 
-+---------------+-----------+-------------+-------------------------------------+
-|Name           |Required   |Default Value|Description                          |
-+===============+===========+=============+=====================================+
-|``textPattern``||checkmark||             |Regular expression to search in files|
-+---------------+-----------+-------------+-------------------------------------+
-|``replacement``||checkmark||             |Expression to replace the matches    |
-+---------------+-----------+-------------+-------------------------------------+
++---------------+-----------+-------------+--------------------------------------------------------------+
+|Name           |Required   |Default Value|Description                                                   |
++===============+===========+=============+==============================================================+
+|``textPattern``||checkmark||             |Regular expression to search in files                         |
++---------------+-----------+-------------+--------------------------------------------------------------+
+|``replacement``||checkmark||             |Expression to replace the matches                             |
++---------------+-----------+-------------+--------------------------------------------------------------+
+||failDep|      |           |``true``     |Enables failing a deployment when there's a processor failure |
++---------------+-----------+-------------+--------------------------------------------------------------+
 
 **Example**
 
 .. code-block:: yaml
   :linenos:
-  :caption: Find And Replace Processor
+  :caption: *Find And Replace Processor*
 
   - processorName: findAndReplaceProcessor
     textPattern: (/static-assets/[^&quot;&lt;]+)
@@ -403,15 +482,23 @@ AWS Processors
 
 All deployment processors related to AWS services support the following properties:
 
-+-------------+--------+---------------------------+------------------+
-|Name         |Required|Default Value              |Description       |
-+=============+========+===========================+==================+
-|``region``   |        |If not provided the AWS SDK|The AWS Region    |
-+-------------+--------+                           +------------------+
-|``accessKey``|        |default providers will be  |The AWS Access Key|
-+-------------+--------+                           +------------------+
-|``secretKey``|        |used                       |The AWS Secret Key|
-+-------------+--------+---------------------------+------------------+
++-------------+-----------+---------------------------+-------------------------------------------------------------+
+|Name         |Required   |Default Value              |Description                                                  |
++=============+===========+===========================+=============================================================+
+|``region``   |           |If not provided the AWS SDK|The AWS Region                                               |
++-------------+-----------+                           +-------------------------------------------------------------+
+|``accessKey``|           |default providers will be  |The AWS Access Key                                           |
++-------------+-----------+                           +-------------------------------------------------------------+
+|``secretKey``|           |used                       |The AWS Secret Key                                           |
++-------------+-----------+---------------------------+-------------------------------------------------------------+
+|``url``      ||checkmark||                           |AWS S3 bucket URL to upload files                            |
++-------------+-----------+---------------------------+-------------------------------------------------------------+
+||failDep|    |           |``true``                   |Enables failing a deployment when there's a processor failure|
++-------------+-----------+---------------------------+-------------------------------------------------------------+
+
+|
+
+.. _deployer-s3-sync-processor:
 
 ~~~~~~~~~~~~~~~~~
 S3 Sync Processor
@@ -419,22 +506,49 @@ S3 Sync Processor
 
 Processor that syncs files to an AWS S3 Bucket.
 
-**Properties**
-
-+-------+-----------+-------------+---------------------------------+
-|Name   |Required   |Default Value|Description                      |
-+=======+===========+=============+=================================+
-|``url``||checkmark||             |AWS S3 bucket URL to upload files|
-+-------+-----------+-------------+---------------------------------+
 
 **Example**
 
 .. code-block:: yaml
   :linenos:
-  :caption: S3 Sync Processor
+  :caption: *S3 Sync Processor*
 
   - processorName: s3SyncProcessor
     url: s3://serverless-sites/site/mysite
+
+
+.. |defaultS3E| replace:: ``deployment-events.properties``
+
+.. _deployer-s3-deployment-events-processor:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+S3 Deployment Events Processor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Processor that uploads the deployment events to an AWS S3 Bucket
+
+**Properties**
+
++---------------------------+-----------+------------------+----------------------------------------------------------+
+|Name                       |Required   |Default Value     |Description                                               |
++===========================+===========+==================+==========================================================+
+|``deploymentEventsFileUrl``|           ||defaultS3E|      |URL of the deployment events file, relative to the local  |
+|                           |           |                  |git repo                                                  |
++---------------------------+-----------+------------------+----------------------------------------------------------+
+
+**Example**
+
+.. code-block:: yaml
+    :linenos:
+    :caption: *S3 Deployment Events Processor*
+
+    - processorName: s3DeploymentEventsProcessor
+      region: ${aws.region}
+      accessKey: ${aws.accessKey}
+      secretKey: ${aws.secretKey}
+      url: {{aws.s3.url}}
+
+
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Cloudfront Invalidation Processor
@@ -454,7 +568,7 @@ Processor that invalidates the changed files in the given AWS Cloudfront distrib
 
 .. code-block:: yaml
   :linenos:
-  :caption: S3 Sync Processor
+  :caption: *Cloud Front Invalidation Processor*
 
   - processorName: cloudfrontInvalidationProcessor
     distributions:
@@ -472,14 +586,14 @@ placed after all main deployment processors to work properly.
 File Output Processor
 ^^^^^^^^^^^^^^^^^^^^^
 
-Post processor that writes the deployment result to an output CSV file for later access, whenever a deployment fails or 
+Post processor that writes the deployment result to an output CSV file under ``CRAFTER_HOME/logs/deployer`` for later access, whenever a deployment fails or
 files were processed.
 
 **Example**
 
 .. code-block:: yaml
   :linenos:
-  :caption: File Output Processor
+  :caption: *File Output Processor*
 
   - processorName: fileOutputProcessor
 
@@ -514,12 +628,25 @@ were processed. The output file generated by the ``fileOutputProcessor`` is atta
 |``status``         |           |``ON_ANY_STATUS``              |Indicates for which deployment status emails should  | 
 |                   |           |                               |be sent                                              |
 +-------------------+-----------+-------------------------------+-----------------------------------------------------+
+|``status``         |           |``ON_ANY_STATUS``              |Indicates for which deployment status emails         |
+|                   |           |                               |should be sent.                                      |
+|                   |           |                               |                                                     |
+|                   |           |                               |Possible values:                                     |
+|                   |           |                               |                                                     |
+|                   |           |                               |- **ON_ANY_STATUS** Notifications sent for all       |
+|                   |           |                               |  deployments                                        |
+|                   |           |                               |- **ON_ANY_FAILURE** Notifications sent for          |
+|                   |           |                               |  deployments where at least one processor has failed|
+|                   |           |                               |- **ON_TOTAL_FAILURE** Notifications will be sent    |
+|                   |           |                               |  for deployments in which the general status        |
+|                   |           |                               |  indicates failure                                  |
++-------------------+-----------+-------------------------------+-----------------------------------------------------+
 
 **Example**
 
 .. code-block:: yaml
   :linenos:
-  :caption: Mail Notification Processor for any failure
+  :caption: *Mail Notification Processor for any failure*
 
   - processorName: mailNotificationProcessor
     to:
@@ -535,7 +662,7 @@ The following example shows how the deployment processors work together to deliv
 
 .. code-block:: yaml
   :linenos:
-  :caption: Serverless Delivery Pipeline
+  :caption: *Serverless Delivery Pipeline*
 
   pipeline:
     # -------------------- START OF MAIN PIPELINE --------------------

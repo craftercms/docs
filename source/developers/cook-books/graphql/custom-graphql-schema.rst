@@ -63,15 +63,21 @@ The following example shows how to customize the schema to integrate a service w
       :caption: ``/config/engine/application-context.xml``
       :linenos:
     
-      <!-- Enable placeholders support -->
-      <context:property-placeholder/>
-
-      <!-- Define the service bean -->
-      <bean id="omdbService" init-method="init"
-            class="org.craftercms.movies.omdb.OmdbService">
-        <property name="baseUrl" value="${omdb.baseUrl}"/>
-        <property name="apiKey" value="${omdb.apiKey}"/>
-      </bean>
+	<beans xmlns="http://www.springframework.org/schema/beans"
+	       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	       xmlns:context="http://www.springframework.org/schema/context">
+	
+	      <!-- Enable placeholders support -->
+	      <context:property-placeholder/>
+	
+	      <!-- Define the service bean -->
+	      <bean id="omdbService" init-method="init"
+	            class="org.craftercms.movies.omdb.OmdbService">
+	        <property name="baseUrl" value="${omdb.baseUrl}"/>
+	        <property name="apiKey" value="${omdb.apiKey}"/>
+	      </bean>
+	</beans>
 
 #.  Add the Groovy class for the service:
     
@@ -82,7 +88,7 @@ The following example shows how to customize the schema to integrate a service w
       package org.craftercms.movies.omdb
 
       // include a third-party library for easily calling the API
-      @Grab('io.github.http-builder-ng:http-builder-ng-core:1.0.4')
+      @Grab(value='io.github.http-builder-ng:http-builder-ng-core:1.0.4', initClass=false)
       import groovyx.net.http.HttpBuilder
 
       class OmdbService {
@@ -209,7 +215,7 @@ The following example shows how to customize the schema to integrate a service w
     
     #.  The first step is to define a generic entry type that includes all common fields present in movies and series:
     
-        .. code-block:: guess
+        .. code-block:: text
           :caption: GraphQL interface for all entries
           :linenos:
         
@@ -226,7 +232,7 @@ The following example shows how to customize the schema to integrate a service w
     #.  Next step is to define the concrete types for movies and series, those will have all fields from the parent
         type but include new ones:
         
-        .. code-block:: guess
+        .. code-block:: text
           :caption: GraphQL type for movies
           :linenos:
         
@@ -239,7 +245,7 @@ The following example shows how to customize the schema to integrate a service w
             Production: String!
           }
         
-        .. code-block:: guess
+        .. code-block:: text
           :caption: GraphQL type for series
           :linenos:
         
@@ -254,7 +260,7 @@ The following example shows how to customize the schema to integrate a service w
         
     #.  Finally the service call will be exposed using a wrapper type:
         
-        .. code-block:: guess
+        .. code-block:: text
           :caption: GraphQL type for the service
           :linenos:
         
@@ -413,4 +419,4 @@ The following example shows how to customize the schema to integrate a service w
 This is a very simple example that shows the basic features to integrate a service in the schema, but it is possible
 to use any GraphQL feature such as mutations to wrap a full REST API or database.
 
-.. |SchemaCustomizer| replace:: :javadoc_base_url:`SchemaCustomizer <engine/org/craftercms/engine/graphql/SchemaCustomizer.html>`
+.. |SchemaCustomizer| replace:: :javadoc_base_url:`SchemaCustomizer <engine/org/craftercms/engine/graphql/impl/SchemaCustomizer.html>`

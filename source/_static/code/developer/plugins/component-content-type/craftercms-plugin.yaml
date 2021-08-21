@@ -1,0 +1,43 @@
+# This file describes a plugin for use in Crafter CMS
+
+# The version of the format for this file
+descriptorVersion: 2
+
+# Describe the plugin
+plugin:
+  type: site
+  id: org.craftercms.plugin.mycomponent
+  name: My Component Site Plugin Example
+  tags:
+    - test
+  version:
+    major: 4
+    minor: 0
+    patch: 0
+  description: My simple component content type site plugin
+  website:
+    name: Component Content Type Site Plugin Example
+    url: https://craftersoftware.com
+  media:
+    screenshots:
+      - title: Crafter CMS
+        description: Crafter CMS Example Component Plugin
+        url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/screenshots/default.png"
+  developer:
+    company:
+      name: Crafter Software
+      email: info@craftersoftware.com
+      url: https://craftersoftware.com
+  build:
+    id: 0220b902bff5cd22749e8ac46ec80eed314c3d67
+    date: 2021-03-18T00:00:00Z
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  crafterCmsVersions:
+    - major: 4
+      minor: 0
+      patch: 0
+  crafterCmsEditions:
+    - community
+    - enterprise

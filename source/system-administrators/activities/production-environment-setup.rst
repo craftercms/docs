@@ -22,7 +22,7 @@ Setting up the production environment
    Alternatively, you can also install craftercms and start authoring by cloning the craftercms repo and building and deploying it using gradle.
 
       `git clone https://github.com/craftercms/craftercms.git`
-      `./gradlew init build deploy -Penv=authoring`
+      `./gradlew clone build deploy -Penv=authoring`
       `./gradlew start -Penv=authoring`
 
 #. Create your site in authoring. You can follow the guide :ref:`your_first_website` to use one of the out-of-the-box blueprints provided by Crafter CMS.
@@ -36,7 +36,7 @@ Setting up the production environment
    If using the alternate way of installing craftercms, to install and start the delivery, simply run the following:
 
       `git clone https://github.com/craftercms/craftercms.git`
-      `./gradlew init build deploy -Penv=delivery`
+      `./gradlew clone build deploy -Penv=delivery`
       `./gradlew start -Penv=delivery`
 
 #. After starting delivery, we'll setup the site we created in step 2 in our delivery instance. Crafter CMS comes with a script, ``init-site.sh``, to help
@@ -79,9 +79,10 @@ For more information on tuning your authoring environment for better performance
 Set Profile Cookies to Secure
 -----------------------------
 
-For production environments using Crafter Profile and/or the Security Provider, these properties should be added to ``shared/classes/crafter/engine/extension/server-config.properties`` to make the Crafter Profile cookies be sent only through HTTPS
+For production environments using Crafter Profile and/or the Security Provider, these properties should be added to  :ref:`server-config.properties <engine-configuration-files>` configuration file to make the Crafter Profile cookies be sent only through HTTPS
 
 .. code-block:: Properties
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
    :linenos:
 
    # Indicates whether the cookie should be only sent using a secure protocol, like HTTPS or SSL

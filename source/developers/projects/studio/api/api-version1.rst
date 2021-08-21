@@ -26,6 +26,10 @@ Site Management
    site/monitor-content
    site/write-configuration
 
+.. note::
+   Some of the site management operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit: https://app.swaggerhub.com/apis/craftercms/studio
+
+
 ^^^^^^^^^^^^^^^
 Repo Management
 ^^^^^^^^^^^^^^^
@@ -60,9 +64,6 @@ Security
 .. toctree::
    :maxdepth: 1
 
-   security/login
-   security/logout
-   security/validate-session
    security/get-user-permissions
    security/get-user-roles
 
@@ -145,7 +146,6 @@ Deployment
 
    deployment/bulk-golive
    deployment/get-available-publishing-channels
-   deployment/get-deployment-history
    deployment/get-scheduled-items
 
 ^^^^^^^
@@ -174,7 +174,6 @@ Content / Asset
    content/get-content-types
    content/get-item
    content/get-item-orders
-   content/get-item-states
    content/get-item-versions
    content/get-items-tree
    content/get-next-item-order
@@ -182,7 +181,6 @@ Content / Asset
    content/reorder-items
    content/revert-content
    content/search
-   content/set-item-state
    content/unlock-content
    content/write-content
 

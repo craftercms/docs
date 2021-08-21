@@ -14,9 +14,6 @@ How Search Works
 
 .. include:: /includes/how-search-works-es.rst
 
-.. note::
-   Elasticsearch is the default search engine used by Crafter CMS.  If you are using Crafter Search as your search engine, visit :ref:`debugging-search-solr`
-
 --------------------------------------
 Places Search Indexing Can Get Hung Up
 --------------------------------------
@@ -86,7 +83,7 @@ Please note the following default behavior of Elasticsearch monitoring the avail
 
 When an index is set as read-only the application log will show messages similar to this one
 
-.. code-block:: guess
+.. code-block:: none
 
    Caused by: ElasticsearchStatusException[Elasticsearch exception [type=cluster_block_exception, reason=blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];]]
 
@@ -94,7 +91,7 @@ When an index is set as read-only the application log will show messages similar
 
 In the Elasticsearch log the following message will be shown:
 
-.. code-block:: guess
+.. code-block:: none
 
    [2019-04-02T16:10:14,520][WARN ][o.e.c.r.a.DiskThresholdMonitor] [uKHC0qA] flood stage disk watermark [95%] exceeded on [uKHC0qAFSrWZguNmsWhFiQ][uKHC0qA][INSTALL_DIR/data/indexes-es/nodes/0] free: 10.5gb[4.5%], all indices on this node will be marked read-only
 

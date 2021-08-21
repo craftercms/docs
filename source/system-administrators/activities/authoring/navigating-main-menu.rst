@@ -24,13 +24,15 @@ Here are the list of tools available when using an out of the box blueprint.  Th
     :align: center
     :width: 40%
 
-The configuration files for the Main Menu is located in ``CRAFTER_AUTHORING_INSTALL/data/repos/global/configuration/`` where:
+The configuration files for the Main Menu is located in ``CRAFTER_HOME/data/repos/global/configuration/`` where:
 
-* **global-menu-config.xml** lets you setup the list of tools available from the Main Menu sidebar
-* **global-permission-mappings-config.xml** lets you configure the permissions to a role globally for the entire application
-* **global-role-mappings-config.xml** lets you configure the mapping between the group and the role
+* :ref:`global-menu-config.xml <global-menu-config>` lets you setup the list of tools available from the Main Menu sidebar
+* :ref:`global-permission-mappings-config.xml <global-permission-mappings-config>` lets you configure the permissions to a role globally for the entire application
+* :ref:`global-role-mappings-config.xml <global-role-mappings-config>` lets you configure the mapping between the group and the role
 
-The tools available in the Main Menu is configured similar to how the Site Config Sidebar is configured :ref:`here<site-config-tools>` using the configuration files mentioned above.
+The tools available in the Main Menu is configured similar to how the Site Config Sidebar is configured :ref:`here<site-config-tools>` using the :ref:`global menu config <global-menu-config>` configuration file mentioned above.
+
+.. _main-menu-tool-sites:
 
 -----
 Sites
@@ -41,6 +43,8 @@ Sites
     :alt: System Administrator - Main Menu Sites
     :align: center
     :width: 85%
+
+.. _main-menu-tool-users:
 
 -----
 Users
@@ -56,6 +60,8 @@ A user is anybody who uses Crafter CMS.  ``Users`` lets the administrator manage
 
 :ref:`users-group-management` contains more information on managing users and groups.
 
+.. _main-menu-tool-groups:
+
 ------
 Groups
 ------
@@ -70,6 +76,8 @@ A group consists of a collection of users.  ``Groups`` lets the administrator ma
 
 :ref:`users-group-management` contains more information on managing users and groups.
 
+.. _main-menu-tool-cluster:
+
 -------
 Cluster
 -------
@@ -79,6 +87,8 @@ Cluster
     :alt: System Administrator - Main Menu Cluster
     :align: center
     :width: 85%
+
+.. _main-menu-tool-audit:
 
 -----
 Audit
@@ -91,6 +101,8 @@ Audit logs displays the date, time, user and action performed to content in all 
     :width: 85%
 
 See :ref:`main-menu-audit` for more details on the audit logs
+
+.. _main-menu-tool-logging-levels:
 
 --------------
 Logging Levels
@@ -112,6 +124,8 @@ The lower your logging levels are set, the more verbose your logs will be.
 
 For more information on logging levels, see :ref:`override-logging-levels`
 
+.. _main-menu-tool-log-console:
+
 -----------
 Log Console
 -----------
@@ -127,3 +141,34 @@ The ``Log Console`` allows the user to view messages depending on what log level
 
 The ``Log Console`` here in the Main Menu is similar to a site ``Log Console`` described :ref:`here<studio-log-console>`.  The difference is the ``Log Console`` from the Main Menu can display logs for all the sites inside Studio, not just one site.
 
+.. _main-menu-tool-global-config:
+
+-------------
+Global Config
+-------------
+
+The ``Global Config`` allows the user to edit the system settings for Studio without access to the physical server.
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-global-config.png
+    :alt: System Administrator - Main Menu Global Config
+    :align: center
+    :width: 100%
+
+When making changes here, not all changes can/will take effect without a restart, so expect to have to **restart Studio** for most changes to take effect
+
+For more information on what you can configure from the ``Global Config``, see :ref:`main-menu-global-config`
+
+.. _main-menu-tool-encryption-tool:
+
+---------------
+Encryption Tool
+---------------
+
+The ``Encryption Tool`` allows the user to encrypt sensitive data such as access keys and passwords, that shouldn't be publicly available to anyone but developers and administrators
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-encryption-tool.png
+    :alt: System Administrator - Main Menu Encryption Tool
+    :align: center
+    :width: 100%
+
+For more information on how to use the encryption tool, see :ref:`main-menu-encryption-tool`.

@@ -27,7 +27,7 @@ results based on one or more fields.
 In this section, we will be using the most basic aggregation ``terms`` to provide a faceted search based on the 
 category of blog articles.
 
-.. image:: /_static/images/developer/search/faceted-search.png
+.. image:: /_static/images/developer/search/faceted-search.jpg
   :width: 90 %
   :align: center
 
@@ -35,11 +35,11 @@ First we must define the fields that will be used for the aggregation, in this c
 a ``categories`` field that uses a datasource to get values from a taxonomy in the site. For this case the name of the
 field in the Elasticsearch index is ``categories.item.value_smv``.
 
-.. image:: /_static/images/developer/search/model.png
+.. image:: /_static/images/developer/search/model.jpg
   :width: 90 %
   :align: center
 
-.. image:: /_static/images/developer/search/datasource.png
+.. image:: /_static/images/developer/search/datasource.jpg
   :width: 50 %
   :align: center
 
@@ -130,7 +130,8 @@ This step will change depending on the technology being used to display all info
 or a SPA using Angular, React or Vue. As an example we will use Handlebars templates that will be rendered using
 jQuery.
 
-.. code-block:: guess
+.. code-block:: html
+  :force:
   :linenos:
   :caption: Search result page templates
   
@@ -231,7 +232,7 @@ To create the REST endpoint, place the following Groovy file in your scripts fol
     // Execute the query and process the results
     return helper.getSuggestions(term)
 
-You will also need to create the helper classs in the scripts forlder
+You will also need to create the helper class in the scripts folder
 
 .. code-block:: groovy
   :linenos:
@@ -242,7 +243,7 @@ You will also need to create the helper classs in the scripts forlder
     class SuggestionHelper {
     	
     	static final String DEFAULT_CONTENT_TYPE_QUERY = "content-type:\"/page/article\""
-    	static final String DEFAULT_SEARCH_FIELD = "subject"
+    	static final String DEFAULT_SEARCH_FIELD = "subject_t"
     	
     	def elasticsearch
     	

@@ -33,8 +33,6 @@ Parameters
 +===============+=============+===============+==================================================+
 || site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| user         || String     || |checkmark|  || User executing request                          |
-+---------------+-------------+---------------+--------------------------------------------------+
 
 -------
 Example
@@ -44,9 +42,9 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
-    POST .../api/1/services/api/1/workflow/reject.json?site_id=mysite&user=test
+    POST .../api/1/services/api/1/workflow/reject.json?site_id=mysite
 
 .. code-block:: json
     :linenos:

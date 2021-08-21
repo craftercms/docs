@@ -40,7 +40,7 @@ Elasticsearch
 
 .. code-block:: xml
 
-  curl "http://{esHost}:{esPort}/{siteName}/_doc/_delete_by_query" -H "Content-Type: application/json" -d "{ "query": { "match_all": {} } }"
+  curl -X POST "http://{esHost}:{esPort}/{siteName}/_delete_by_query?pretty" -H 'Content-Type: application/json' -d'{ "query": { "match_all": {} } }'
 
 |
 
@@ -52,7 +52,11 @@ Elasticsearch
 || esPort              || Elasticsearch port                       || 9201                      |
 ||                     ||                                          || (default is 9201)         |
 +----------------------+-------------------------------------------+----------------------------+
-|| siteName            || The name of the site                     || my-site                   |
+|| siteName            || For Delivery, the name of the site       || my-site                   |
+||                     +-------------------------------------------+----------------------------+
+||                     || For Authoring, there are two indexes per || my-site-authoring         |
+||                     || site with the suffix of ``-preview`` and || my-site-preview           |
+||                     || ``-authoring``                           ||                           |
 +----------------------+-------------------------------------------+----------------------------+
 
 After sending the CURL command, you will then get a response like this:
@@ -78,56 +82,6 @@ After sending the CURL command, you will then get a response like this:
   }
 
 |
-
-Solr
-""""
-
-.. code-block:: xml
-
-    curl "http://{solrHost}:{solrPort}/solr/{siteName}/update/?commit=true" -H "Content-Type: text/xml" -d "<delete><query>*:*</query></delete>"
-
-|
-
-+----------------------+-------------------------------------------+----------------------------+
-|| Parameter Name      || Description                              || Example                   |
-+======================+===========================================+============================+
-|| solrHost            || Solr's hostname                          || localhost                 |
-+----------------------+-------------------------------------------+----------------------------+
-|| solrPort            || Solr's port.                             || 8694                      |
-||                     ||                                          || (default is 8694)         |
-+----------------------+-------------------------------------------+----------------------------+
-|| siteName            || The name of the site                     || my-site                   |
-+----------------------+-------------------------------------------+----------------------------+
-
-.. WARNING::
-  This action will delete all content matching the query, review carefully the Solr index & the site name before executing the command.
-
-After sending the CURL command, you will then get a response like this:
-
-.. code-block:: xml
-
-   <?xml version="1.0" encoding="UTF-8"?>
-   <response>
-      <lst name="responseHeader"><int name="status">0</int><int name="QTime">1690</int></lst>
-   </response>
-
-|
-
-^^^^^^^^^^^^^^^^^^
-Delete index files
-^^^^^^^^^^^^^^^^^^
-
-To delete any existing content in the index by deleting the index files, do the following:
-
-.. NOTE::
-  It is not recommended to modify index files directly for Elasticsearch, specially in a clustered environment.
-
-Solr
-""""
-
-#. Make sure Tomcat and Solr have been stopped.
-#. Delete the index ``data`` folder for the site you are reindexing (*INSTALL_DIRECTORY/data/indexes/{siteName}/data/*).
-#. Restart Tomcat/Solr
 
 -------------------------------
 Step 2: Invoke the reprocessing
@@ -159,7 +113,7 @@ To start reindexing/reprocessing, send the following CURL command:
 
 After sending the CURL command, you will get a response like this:
 
-.. code-block:: guess
+.. code-block:: json
 
    {"message":"OK"}
 
@@ -172,7 +126,7 @@ Step 3: Wait for indexing
 You will see indexing activity in the deployment log located in ``INSTALL_DIRECTORY/logs/deployer/crafter-deployer.out``. Indexing activity time is dependent on the amount of content which must be re-processed. When the
 deployment/indexing finishes you should see something like the following in the log:
 
-.. code-block:: guess
+.. code-block:: none
 
 	2017-07-25 16:52:03.762  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : ------------------------------------------------------------
 	2017-07-25 16:52:03.763  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : Deployment for editorial-preview finished in 2.359 secs

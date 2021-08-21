@@ -35,16 +35,14 @@ Parameters
 +---------------+-------------+---------------+--------------------------------------------------+
 || path         || String     ||              || Path of the content                             |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| user         || String     ||              || User to get his/hers permissions                |
-+---------------+-------------+---------------+--------------------------------------------------+
 
 -------
 Example
 -------
 
-.. code-block:: guess
+.. code-block:: none
 
-	GET .../api/1/services/api/1/security/get-user-permissions.json?site_id=mysite&path=/site/website/style/index.xml&user=admin
+	GET .../api/1/services/api/1/security/get-user-permissions.json?site_id=mysite&path=/site/website/style/index.xml
 
 .. code-block:: json
   :linenos:
@@ -53,13 +51,18 @@ Example
       "permissions":
           [
               "create folder",
+              "webdav_write",
               "read",
-              "publish",
-              "change content type",
+              "upload_content_cmis",
+              "list_cmis",
+              "webdav_read",
               "create content",
-              "create-site",
+              "s3 read",
+              "clone_content_cmis",
               "write",
-              "delete"
+              "s3 write",
+              "search_cmis"
+
           ]
   }
 

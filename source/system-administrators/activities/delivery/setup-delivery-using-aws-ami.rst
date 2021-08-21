@@ -42,7 +42,7 @@ To add the rule for SSH, click the ``Inbound traffic`` tab and then ``Add Rule``
     :align: center
     :alt: Crafter CMS AWS AMI Delivery Security Groups
 
-Once your have added SSH access and made any other tweaks you feel are necessary to your instance's configuration, click the ``Review`` tab and then click the ``Launch`` button.
+Once you have added SSH access and made any other tweaks you feel are necessary to your instance's configuration, click the ``Review`` tab and then click the ``Launch`` button.
 
 .. image:: /_static/images/ami/craftercms-aws-ami-delivery-review.jpg
     :width: 100 %
@@ -117,7 +117,7 @@ On your local machine, generate a public / private key pair.  On a terminal/cons
 .. code-block:: sh
    :linenos:
 
-   ssh-keygen -b 4096 -t rsa
+   ssh-keygen -m PEM -b 4096 -t rsa
 
 You will be prompted for the file name and a passphrase. Since Crafter will use this key as part of an automated process, do not enter a passphase (just hit enter when prompted.)
 
@@ -213,7 +213,7 @@ Now that both our public and private keys are installed on their respective serv
 
 SSH on to the delivery server as the ubuntu user and execute the following commands:
 
-.. code-block:: sh
+.. code-block:: bash
     :linenos:
 
     sudo su crafter
@@ -221,7 +221,7 @@ SSH on to the delivery server as the ubuntu user and execute the following comma
 
 It's important that you include the  **-o HostKeyAlgorithms=ssh-rsa** parameter in the initial SSH connection to the authoring server. Crafter expects the fingerprint to be stored in an RSA format. Once you execute the SSH command to log in to the authoring machine from the delivery machine as the crafter user. You will be prompted to verify the auhtenticity of the authoring server.  Type yes to confirm.  After this you will be logged in to the authoring server.  No further action is required. Type exit in to the command line of the authoring server to terminate the SSH session.
 
-.. code-block:: guess
+.. code-block:: text
     :linenos:
 
     The authenticity of host 'ec2-3-93-34-40.compute-1.amazonaws.com (172.31.79.17)' can't be established.
@@ -263,17 +263,15 @@ The SITE_ID parameter can be acquired from the authoring server. Log in to Craft
 
 Successful execution of this command will produce output similar to the following:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
-    Creating Solr Core...
-    Core created successfully
     Creating Deployer Target...
     Target created successfully
 
 Example:
 
-.. code-block:: sh
+.. code-block:: bash
     :linenos:
 
     init-site.sh -b live editorial ssh://crafter@ec2-3-93-34-40.compute-1.amazonaws.com:/opt/crafter/data/repos/sites/editorial/published
@@ -292,7 +290,7 @@ You can further verify that the deployment is working by watching the logs.  To 
 
 Look for output that is similar to the following:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     2019-04-17 21:39:00.001 INFO 4389 --- [pool-5-thread-1] o.c.d.impl.processors.GitPullProcessor : Cloning Git remote repository ssh://crafter@ec2-3-93-34-40.compute-1.amazonaws.com:/opt/crafter/data/repos/sites/editorial/published into /opt/crafter/data/repos/sites/editorial
@@ -301,7 +299,11 @@ Look for output that is similar to the following:
 ---------------------------------------------------------------
 Step 5: View the site on the delivery server from a web browser
 ---------------------------------------------------------------
+<<<<<<< Updated upstream
 Now that site has deployed it can be viewied via web browser. As previously mentioned, Crafter's delivery tier is multi-tenant.  A SITE_ID is used on the URL to indicate which tenant is to be displayed. To preview the site you initialized, open a browser and navigate to the following URL:
+=======
+Now that site has deployed it can be viewed via web browser. As previously mentioned, Crafter's delivery tier is multi-tenant.  A SITE_ID is used on the URL to indicate which tenant is to be displayed. To preview the site you initialized, open a browser and navigate to the following URL:
+>>>>>>> Stashed changes
 
 **http://[DELIVERY_DNS_NAME]?crafterSite=[SITE_ID]**
 

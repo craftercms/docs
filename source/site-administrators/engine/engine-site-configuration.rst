@@ -54,40 +54,200 @@ This example file contains the properties used by Crafter Engine:
   :linenos:
 
   <?xml version="1.0" encoding="UTF-8"?>
+    <!--
+      ~ Copyright (C) 2007-2021 Crafter Software Corporation. All Rights Reserved.
+      ~
+      ~ This program is free software: you can redistribute it and/or modify
+      ~ it under the terms of the GNU General Public License version 3 as published by
+      ~ the Free Software Foundation.
+      ~
+      ~ This program is distributed in the hope that it will be useful,
+      ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+      ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      ~ GNU General Public License for more details.
+      ~
+      ~ You should have received a copy of the GNU General Public License
+      ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+      -->
+
+    <!--
+      This file configures site properties used by Crafter Engine
+
+      Below are the properties used by Crafter Engine:
+
+      (General Properties)
+      <indexFileName />  (The name of a page's index file)
+      <defaultLocale />  (Default locale for the site)
+
+      (Navigation Properties)
+      <navigation>
+        <additionalFields /> (List of additional fields to include for dynamic navigation items)
+      </navigation>
+
+      (Single Page Application Properties (React JS, Angular, Vue.js, etc.))
+      <spa>
+        <enabled /> (Enable/disable SPA mode, default is false)
+        <viewName /> (The view name for the SPA (Single Page Application). Current view names can be a page URL (like /) or a template name (like /template/web/app.ftl). Default is /)
+      </spa>
+
+      (Compatibility properties)
+      <compatibility>
+          <disableFullModelTypeConversion /> Disables full content model type conversion for backwards compatibility mode (false by default)
+      </compatibility>
+
+      (Filter Properties)
+      <filters> (Defines the filter mappings)
+        <filter>
+          <script> (Specifies the complete path to the filter script)
+            <mapping>
+              <include /> (Contains Ant patterns (separated by comma) that request URLs should match for the filter to be executed)
+                or
+              <exclude /> (Contains patterns that the requests shouldn't match)
+            </mapping>
+          </script>
+        </filter>
+      </filters>
+
+      (CORS Properties)
+      <cors>
+        <enable>true</enable> (Enable/disable CORS headers, default is false)
+        (Values for each of the headers that will be added to responses)
+        <accessControlMaxAge>3600</accessControlMaxAge>
+        <accessControlAllowOrigin>*</accessControlAllowOrigin>
+        <accessControlAllowMethods>GET\, POST\, PUT</accessControlAllowMethods>
+        <accessControlAllowHeaders>Content-Type</accessControlAllowHeaders>
+        <accessControlAllowCredentials>true</accessControlAllowCredentials>
+      </cors>
+
+      (Content Targeting Properties)
+      <targeting>
+        <enabled /> (Enable/disable content targeting, default is false)
+        <rootFolders /> (Root folders handled for content targeting)
+        <excludePatterns /> (Regex patterns used to exclude certain paths from content targeting)
+        <availableTargetIds /> (Valid target IDs)
+        <fallbackTargetId /> (Target ID used as a last resort when resolving targeted content)
+        <mergeFolders /> (Sets whether the content of folders that have the same "family" of target IDs should be merged)
+        <redirectToTargetedUrl /> (Sets whether the request should be redirected when the targeted URL is different from the current URL)
+      </targeting>
+
+      (Profile Properties)
+      <profile>
+        <api>
+          <accessTokenId /> (The access token to use for the Crafter Profile REST calls.  This should always be specified on multi-tenant configurations)
+        </api>
+      </profile>
+
+      (Security Properties)
+      <security>
+        <saml>
+          <token/> (The expected value for the secure key request header)
+    	  <groups>
+    	    <group>
+    		  <name/> (The name of the group from the request header)
+    		  <role/> (The value to use for the role in the profile)
+    		</group>
+    	  </groups>
+    	  <attributes>
+    	    <attribute>
+    		  <name/> (The name of the request header for the attribute)
+    		  <field/> (The name of the field to use in the profile)
+    		</attribute>
+    	  </attributes>
+        </saml/>
+        <login>
+          <formUrl /> (The URL of the login form page)
+          <defaultSuccessUrl /> (The URL to redirect to if the login was successful and the user could not be redirected to the previous page)
+          <alwaysUseDefaultSuccessUrl /> (Sets whether to always redirect to the default success URL after a successful login)
+          <failureUrl /> (The URL to redirect to if the login fails)
+        </login>
+        <logout>
+          <successUrl /> (The URL to redirect after a successful logout)
+        </logout>
+        <accessDenied>
+          <errorPageUrl /> (The URL of the page to show when access has been denied to a user to a certain resource)
+        </accessDenied>
+        <urlRestrictions> (Contains any number of restriction elements)
+          <restriction> (Restriction element, access is denied if a request matches the URL, and the expression evaluates to false)
+            <url /> (URL pattern)
+            <expression /> (Spring EL expression)
+          </restriction>
+        </urlRestrictions>
+      </security>
+
+      (Social Properties)
+      <socialConnections>
+        <facebookConnectionFactory>
+          <appId /> (The Facebook app ID required for establishing connections with Facebook)
+          <appSecret /> (The Facebook app secret required for establishing connections with Facebook)
+        </facebookConnectionFactory>
+      </socialConnections>
+
+      (Job Properties)
+      <jobs>
+        <jobFolder> (Specifies a folder which will be looked up for scripts to be scheduled using a certain cron expression)
+          <path /> (Path absolute to the site root)
+          <cronExpression /> (Cron expression)
+        </jobFolder>
+        <job> (Specifies a single script job to be scheduled)
+          <path />
+          <cronExpression />
+        </job>
+      </jobs>
+
+      (Cache Warm Up properties)
+      <cache>
+        <warmUp>
+          <descriptorFolders /> The descriptor folders that need to be pre-loaded in cache, separated by comma.
+          <contentFolders /> The content folders that need to be preloaded in cache, separated by comma.
+        </warmUp>
+      </cache>
+
+      You can learn more about Crafter Engine site configuration here:
+      http://docs.craftercms.org/en/3.0/site-administrators/engine/engine-site-configuration.html
+
+  -->
+
   <site>
     <!-- General properties -->
     <indexFileName>index.xml</indexFileName>
     <defaultLocale>en</defaultLocale>
 
+    <!-- Navigation properties -->
+    <!--
+    <navigation>
+      <additionalFields>navIcon,componentType</additionalFields>
+    </navigation>
+    -->
+
     <!-- Compatibility properties -->
     <compatibility>
-        <disableFullModelTypeConversion>false</disableFullModelTypeConversion>
+      <disableFullModelTypeConversion>false</disableFullModelTypeConversion>
     </compatibility>
 
     <!-- Filter properties -->
     <filters>
-        <filter>
-          <script>/scripts/filters/testFilter1.groovy</script>
-          <mapping>
-              <include>/**</include>
-          </mapping>
-        </filter>
-        <filter>
-          <script>/scripts/filters/testFilter2.groovy</script>
-          <mapping>
-              <include>/**</include>
-          </mapping>
-        </filter>
-        <filter>
-          <script>/scripts/filters/testFilter3.groovy</script>
-          <mapping>
-              <include>/**</include>
-              <exclude>/static-assets/**</exclude>
-          </mapping>
-        </filter>
+      <filter>
+        <script>/scripts/filters/testFilter1.groovy</script>
+        <mapping>
+          <include>/**</include>
+        </mapping>
+      </filter>
+      <filter>
+        <script>/scripts/filters/testFilter2.groovy</script>
+        <mapping>
+          <include>/**</include>
+        </mapping>
+      </filter>
+      <filter>
+        <script>/scripts/filters/testFilter3.groovy</script>
+        <mapping>
+          <include>/**</include>
+          <exclude>/static-assets/**</exclude>
+        </mapping>
+      </filter>
     </filters>
 
-    <!-- CORS headers for REST API -->
+    <!-- CORS Properties -->
     <cors>
       <enable>true</enable>
       <accessControlMaxAge>3600</accessControlMaxAge>
@@ -117,6 +277,21 @@ This example file contains the properties used by Crafter Engine:
 
     <!-- Security properties -->
     <security>
+      <saml>
+        <token>SOME_RANDOM_TOKEN</token>
+        <groups>
+          <group>
+            <name>MEMBER</name>
+            <role>memberUser</role>
+          </group>
+        </groups>
+        <attributes>
+          <attribute>
+            <name>givenName</name>
+            <field>firstName</field>
+          </attribute>
+        </attributes>
+      </saml>
       <login>
         <formUrl>/signin</formUrl>
         <defaultSuccessUrl>/home</defaultSuccessUrl>
@@ -156,11 +331,23 @@ This example file contains the properties used by Crafter Engine:
         <cronExpression>0 0/15 * * * ?</cronExpression>
       </job>
     </jobs>
+
+    <!-- Cache Warm Up properties -->
+    <cache>
+      <warmUp>
+        <descriptorFolders>/site:3</descriptorFolders>
+        <contentFolders>/scripts,/templates</contentFolders>
+      </warmUp>
+    </cache>
   </site>
+
+|
 
 Crafter Engine Properties
  * **indexFileName:** The name of a page's index file (default is ``index.xml``).
  * **defaultLocale:** The default locale for the site. Used with content targeting through localization.
+ * **navigation.additionalFields:**  List of additional fields to include for dynamic navigation items (Example: *<additionalFields>myTitle_s,myAuthor_s,...</additionalFields>*)
+ * **spa:** Used for Single Page Application (SPA) Properties (React JS, Angular, Vue.js, etc.).  Contains ``<enabled>`` element which enables/disables SPA mode (default is false) and ``<viewName>`` element, the view name for the SPA (Single Page Application. Current view names can be a page URL (like ``/``) or a template name (like ``/template/web/app.ftl``). Default is ``/``)
  * **compatibility.disableFullModelTypeConversion:** Disables full content model type conversion for backwards compatibility mode (false by default)
 
    Up to and including version 2:
@@ -191,6 +378,9 @@ Crafter Engine Properties
    (see :doc:`/site-administrators/engine/content-targeting-guide`).
  * **profile.api.accessToken:** The access token to use for the Profile REST calls. This parameter should be always specified on
    multi-tenant configurations.
+ * **security.saml.token:** The expected value for the secure key request header
+ * **security.saml.groups:** Contains any number of ``<group>`` elements.  Each ``<group>`` element contains a ``<name>`` element (The name of the group from the request header) and a ``<role>`` element (The value to use for the role in the profile).
+ * **security.saml.attributes:** Contains any number of ``<attribute>`` elements.  Each ``<attribute>`` element contains a ``<name>`` element (The name of the request header for the attribute) and a ``<field>`` element (The name of the field to use in the profile).
  * **security.login.formUrl:** The URL of the login form page. The default is /login.
  * **security.login.defaultSuccessUrl:** The URL to redirect to if the login was successful and the user couldn't be redirected to the
    previous page. The default is /.
@@ -200,11 +390,15 @@ Crafter Engine Properties
  * **security.logout.successUrl:** The URL to redirect after a successful logout. The default is /.
  * **security.accessDenied.errorPageUrl:** The URL of the page to show when access has been denied to a user to a certain resource. The
    default is /access-denied.
- * **security.urlRestrictions:** Contains any number of restriction elements. Each restriction is formed by a URL pattern (``<url>``)
+ * **security.urlRestrictions:** Contains any number of restriction elements. Each restriction is formed by an Ant-style path pattern (``<url>``)
    and a Spring EL expression (``<expression>``) executed against the current profile. If a request matches the URL, and the expression
    evaluates to false, access is denied. For more information, check
    :javadoc_base_url:`UrlAccessRestrictionCheckingProcessor.java <profile/org/craftercms/security/processors/impl/UrlAccessRestrictionCheckingProcessor.html>`
    and :javadoc_base_url:`AccessRestrictionExpressionRoot.java <profile/org/craftercms/security/utils/spring/el/AccessRestrictionExpressionRoot.html>`
+
+     .. note::
+       For the ``<url>`` Ant-style path pattern, ``<url>/*</url>`` indicates just one level of the URL and ``<url>/**</url>`` indicates all urls.  For more information on Ant-style path pattern matching, see https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/util/AntPathMatcher.html
+
  * **socialConnections.facebookConnectionFactory.appId:** The Facebook app ID required for establishing connections with Facebook.
  * **socialConnections.facebookConnectionFactory.appSecret:** The Facebook app secret required for establishing connections with Facebook.
  * **jobs.jobFolder:** Specifies a folder which will be looked up for scripts to be scheduled using a certain cron expression. The folder
@@ -212,6 +406,8 @@ Crafter Engine Properties
    ``<cronExpression>``.
  * **jobs.job:** Specifies a single script job to be scheduled. The job path should be specified in ``<path>``, and the cron expression
    in ``<cronExpression>``.
+ * **cache.warmUp.descriptor.folders:** The descriptor folders that need to be pre-loaded in cache, separated by comma. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully preloaded. Example: *<descriptorFolders>/site:3</descriptorFolders>*
+ * **cache.warmUp.content.folders:** The content folders that need to be pre-loaded in cache, separated by comma. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully pre-loaded.  Example: *<contentFolders>/scripts,/templates</contentFolders>*
 
 .. note::
     Crafter Engine will not be able to load your Site Context if your configuration contains invalid XML
@@ -268,37 +464,3 @@ also have access to Engine's global properties (like ``crafter.engine.preview``)
 .. note::
     Crafter Engine will not be able to load your Site Context if your context file contains invalid XML,
     incorrect configuration or if your beans do not properly handle their own errors on initialization.
-
-------------------------------
-Encrypted Configuration Values
-------------------------------
-
-It's recommended that configuration properties like ``profile.api.accessToken``, ``socialConnections.facebookConnectionFactory.appId`` and
-``socialConnections.facebookConnectionFactory.appSecret`` be encrypted since they contain sensible data that shouldn't be publicly
-available to anyone but developers and administrators. In order to do that, follow the next steps (you need a system administrator for the
-first two steps):
-
-#. Encrypt the values with the Crafter Commons Encryption Tool. You can find instructions of how to use it in :ref:`crafter-commons-encryption-tool`.
-#. Configure a ``PbkAesTextEncryptor`` in ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/services-context.xml``
-   First constructor argument is the password and second argument is the salt, which should be the same as the ones used during the
-   encryption. The name of the bean should be `crafter.textEncryptor`:
-
-	.. code-block:: xml
-
-		<bean id="crafter.textEncryptor" class="org.craftercms.commons.crypto.impl.PbkAesTextEncryptor">
-		  <constructor-arg value="klanFogyetkonjo"/>
-		  <constructor-arg value="S25pT2RkeWk="/>
-		</bean>
-
-	.. WARNING ::
-	  Please do not use the same password and salt shown in the example. You should generate your own.
-
-#. Put the encrypted values in your site's `site-config.xml` in placeholders and with an `enc` prefix. Example:
-
-	.. code-block:: xml
-
-		<profile>
-		  <api>
-		    <accessTokenId>${enc:q3l5YNoKH38RldAkg6EAGjxlI7+K7Cl4iEmMJNlemNOjcuhaaQNPLwAB824QcJKCbEeLfsg+QSfHCYNcNP/yMw==}</accessTokenId>
-		  </api>
-		</profile>

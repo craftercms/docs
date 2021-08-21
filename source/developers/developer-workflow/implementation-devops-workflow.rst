@@ -1,8 +1,8 @@
 :is-up-to-date: True
 
-====================================================
-Implementation of the DevOps Workflow [Code Forward]
-====================================================
+=====================================
+Implementation of the DevOps Workflow 
+=====================================
 
 
 In the previous section entitled :ref:`code-repo-and-devops-workflow` we discussed the details and mechanics of the workflow that takes content from a feature branch all the way through to production.  We demonstrated:
@@ -10,7 +10,7 @@ In the previous section entitled :ref:`code-repo-and-devops-workflow` we discuss
 * How this process enables the development of multiple (any number of) features to take place simultaneously.
 * How stability and reliability is forged in to releases without needing to do project wide code freezes.
 * How content can flow backward from production to development environments at any time and code can flow forward from development to production without any code freezes
-* And how this process can be simplified and automated with Crafter CMS Git-based distributed repository platform and Code Forward, Content Back process.
+* And how this process can be simplified and automated with Crafter CMS Git-based distributed repository platform and DevContentOps process.
 
 In this section we'll cover the specific mechanics of facilitating this process at each step of the way.
 
@@ -20,6 +20,10 @@ For the sake of review below is the diagram that illustrates the full workflow.
      :alt: Developer Workflow - Full Development Workflow
      :width: 80 %
      :align: center
+
+|
+
+    .. include:: /includes/git-changes-note.rst
 
 ------------------------------------------
 GitFlow, the Process and GitFlow, the Tool
@@ -51,7 +55,7 @@ To create a branch you use the following GitFlow command:
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(master) git flow init
@@ -88,7 +92,7 @@ To create a branch you use the following GitFlow command:
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(master) git flow feature start MYFEATURE
@@ -116,7 +120,7 @@ To publish a branch you use the following GitFlow command
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(feature/MYFEATURE) git flow feature publish MYFEATURE
@@ -150,7 +154,7 @@ Now that the feature is present in the Remote Code Repository your team members 
 
 GitHub and Pull Requests
 ------------------------
-It’s common for GitHub projects to designate specific leads who have access to write in the main repository.  Other team members who do not have write access need to fork the repository (creating their own private, related version) where they have write access and can perform their work.   When their work is complete they can submit it for review and merge via  Pull Request.
+It’s common for GitHub projects to designate specific leads who have access to write in the main repository.  Other team members who do not have write access need to fork the repository (creating their own private, related version) where they have write access and can perform their work.  When their work is complete they can submit it for review and merge via  Pull Request.
 
 The pull request mechanism provides a check-point that potentially triggers a code review whenever a team member wants to give code to the rest of the team.
 Use of the Pull Request mechanism along with code reviews is a best practice and is recommended (but not required.)
@@ -167,7 +171,7 @@ To get branch you use the following GitFlow command
 
 Example:
 
-.. code-block:: guess
+.. code-block:: text
     :linenos:
 
     ➜  sandbox git:(feature/MYFEATURE) git flow feature pull origin MYFEATURE
@@ -202,7 +206,7 @@ Commit your work locally as code is ready.
 
 Push work up to remote
 ^^^^^^^^^^^^^^^^^^^^^^
-Once you have completed your work locally you will want to push it up to the Remote Code Repository (or your fork of it.)  Committing as you work locally is great.  It gives you a version history on your machine but ideally you want your work saved elsewhere each day as well.
+Once you have completed your work locally you will want to push it up to the Remote Code Repository (or your fork of it).  Committing as you work locally is great.  It gives you a version history on your machine but ideally you want your work saved elsewhere each day as well.
 
 Ideally you are working in your own personal fork of the Remote Code Repository.  If you are, you can push code to it at any time without fear of impacting anyone else.  If you are working directly against the feature branch and pushing code up to the Remote Code Repository directly make sure your updates don’t break things for the rest of your team.
 
@@ -212,7 +216,7 @@ To push your updates to the Remote Code Repository you use the following Git com
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(feature/MYFEATURE) git push origin feature/MYFEATURE
@@ -239,7 +243,7 @@ You are likely working on a fork of the actual Remote Code Repository.  This giv
 -----------------------------------
 Moving a Feature to Dev Environment
 -----------------------------------
-Once the team feels the feature is ready you’ll want to do system integration testing.  Basic SIT testing is performed in Dev environment.
+Once the team feels the feature is ready you’ll want to do system integration testing (SIT).  Basic SIT testing is performed in Dev environment.
 
 Dev and the other test environments have specific content on them.  Given this we must move our feature via an operation known as a “Cherry Pick.”  A cherry pick allows us to take a set (ideally one) of commit and move it.    Why one commit?  Because moving multiple commits around is more difficult and error prone.
 
@@ -280,7 +284,7 @@ To complete the squash of multiple commits into a single commit use the followin
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(feature/MYFEATURE) ✗ git commit -m "Combining all MYFEATURE Commits in to a single Commit ID"
@@ -299,7 +303,7 @@ To rebase the squashed commit at the tip of the Remote Code Repository use the f
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(feature/MYFEATURE) ✗ git commit -m "Combining all MYFEATURE Commits in to a single Commit ID"
@@ -318,7 +322,7 @@ To push the rebased commit up to the Remote Code Repository use the following Gi
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(feature/MYFEATURE) git push origin feature/MYFEATURE
@@ -348,7 +352,7 @@ To cherry pick the squashed feature commit use the following Git command:
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(evn-x) git cherry-pick 294235aa042c7dadd84ecd6b33ce7d02818c291d
@@ -373,7 +377,7 @@ To finalize a feature branch use the following GitFlow command:
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(feature/MYFEATURE) git flow feature finish MYFEATURE
@@ -400,7 +404,7 @@ To push the finalized work up to the remote repository use the following Git com
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(develop) git push origin develop
@@ -426,7 +430,7 @@ To push the branch removal up to the remote repository use the following Git com
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(develop) git push origin develop
@@ -455,7 +459,7 @@ To create a release branch use the following GitFlow command:
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(develop) git flow release start 1.2.0
@@ -483,7 +487,7 @@ To push the new branch to the Remote Code Repository use the following Git comma
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(release/1.2.0) git flow release publish 1.2.0
@@ -514,7 +518,7 @@ The process for moving a work from a release branch  to QA is exactly the same a
 ---------
 Releasing
 ---------
-Once the release has been QA approved and Load Testing Approved it’s time to go live. Now we’re going to move our code and configuration in the release to the production CMS..
+Once the release has been QA approved and Load Testing Approved it’s time to go live. Now we’re going to move our code and configuration in the release to the production CMS.
 
 Finalize the Release Branch
 ---------------------------
@@ -526,7 +530,7 @@ To finalize the release use the following GitFlow command:
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(master) git flow  release finish 1.2.0
@@ -550,7 +554,7 @@ To push the finalized release to the Remote Code Repository use the following Gi
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(master) git push origin master
@@ -571,7 +575,7 @@ Now make sure Develop has the latest release.  Ideally there is no real update h
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(master) git push origin develop
@@ -585,7 +589,7 @@ The finalize command creates a release tag for you locally.  Push this release t
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(master) git push origin --tags
@@ -605,7 +609,7 @@ Finally, the release branch was removed locally when it was finalized.  Push the
 
 Example:
 
-.. code-block:: guess
+.. code-block:: bash
     :linenos:
 
     ➜  sandbox git:(master) git push origin :release/1.2.0

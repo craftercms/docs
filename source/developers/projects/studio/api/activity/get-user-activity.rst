@@ -33,8 +33,6 @@ Parameters
 +===============+=============+===============+==================================================+
 || site_id      || String     || |checkmark|  || Site to use                                     |
 +---------------+-------------+---------------+--------------------------------------------------+
-|| user         || String     || |checkmark|  || Username to filter by                           |
-+---------------+-------------+---------------+--------------------------------------------------+
 || num          || Integer    || |checkmark|  || Number of records to retrieve                   |
 +---------------+-------------+---------------+--------------------------------------------------+
 || excludeLive  || Boolean    || |checkmark|  || Exclude live items from result set              |
@@ -49,9 +47,9 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
-    GET .../api/1/services/api/1/activity/get-user-activities.json?site_id=mysite&user=jane.doe&num=10&excludeLive=false&filterType=all``
+    GET .../api/1/services/api/1/activity/get-user-activities.json?site_id=mysite&num=10&excludeLive=false&filterType=all``
 
 ^^^^^^^^
 Response
@@ -59,7 +57,8 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: guess
+.. code-block:: json
+  :force:
   :linenos:
 
   {

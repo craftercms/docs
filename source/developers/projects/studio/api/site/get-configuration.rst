@@ -2,11 +2,15 @@
 
 .. _crafter-studio-api-site-get-configuration:
 
-=================
-Get Configuration
-=================
+==============================
+Get Configuration (deprecated)
+==============================
 
 Get configuration.
+
+.. important::
+   This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/configuration/getConfiguration` for the current version.
+
 
 --------------------
 Resource Information
@@ -44,7 +48,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     GET .../api/1/services/api/1/site/get-configuration.json?site_id=mysite&path=/site-config.xml
 

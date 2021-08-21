@@ -1,8 +1,6 @@
 +------------------------+--------------------------------------+---------------------------------+
 | Name                   | Description                          | API                             |
 +========================+======================================+=================================+
-| application            || The servlet context                 || `ServletContext`_              |
-+------------------------+--------------------------------------+---------------------------------+
 | request                || The current request                 || `HttpServletRequest`_          |
 +------------------------+--------------------------------------+---------------------------------+
 | response               || The current response                || `HttpServletResponse`_         |
@@ -22,6 +20,17 @@
 | locale                 || The current locale for the current  || `Locale`_                      |
 |                        || user                                ||                                |
 +------------------------+--------------------------------------+---------------------------------+
+| authToken              || The current authentication (if the  || `Authentication`_              |
+|                        || user has logged in), created by     ||                                |
+|                        || Spring Security                     ||                                |
++------------------------+--------------------------------------+---------------------------------+
+
+The following variables are provided for backward compatibility when using Crafter Profile, should be replaced
+with ``authToken`` if possible:
+
++------------------------+--------------------------------------+---------------------------------+
+| Name                   | Description                          | API                             |
++========================+======================================+=================================+
 | authentication         || The current authentication (if the  || |Authentication|               |
 |                        || user has logged in), created by the ||                                |
 |                        || Crafter Security Provider           ||                                |
@@ -29,6 +38,17 @@
 | profile                || The current profile (if the user    || |Profile|                      |
 |                        || has logged in), created by the      ||                                |
 |                        || Crafter Security Provider           ||                                |
++------------------------+--------------------------------------+---------------------------------+
+
+   .. note::
+      The variables ``profile`` **and** ``authentication`` listed  above will be null in most cases and should not be used anymore
+
+The following variables are restricted by default, to use them see :ref:`access-to-services`
+
++------------------------+--------------------------------------+---------------------------------+
+| Name                   | Description                          | API                             |
++========================+======================================+=================================+
+| application            || The servlet context                 || `ServletContext`_              |
 +------------------------+--------------------------------------+---------------------------------+
 
 .. _ServletContext: http://docs.oracle.com/javaee/6/api/javax/servlet/ServletContext.html
@@ -39,3 +59,4 @@
 .. _Locale: https://docs.oracle.com/javase/7/docs/api/java/util/Locale.html
 .. |Authentication| replace:: :javadoc_base_url:`Authentication <profile/org/craftercms/security/authentication/Authentication.html>`
 .. |Profile| replace:: :javadoc_base_url:`Profile <profile/org/craftercms/profile/api/Profile.html>`
+.. _Authentication: https://docs.spring.io/spring-security/site/docs/4.0.x/apidocs/org/springframework/security/core/Authentication.html

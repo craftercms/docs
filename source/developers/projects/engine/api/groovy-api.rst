@@ -22,6 +22,11 @@ scripts, page/component scripts and filter scripts):
 
 .. include:: /includes/request-groovy-variables.rst
 
+All scripts are executed in a sandbox to prevent insecure code from running, to change the configuration see 
+:ref:`script-sandbox-configuration`
+
+To create unit tests for your groovy code, see :ref:`unit-testing-groovy-code`
+
 -------------------------
 Create a Script in Studio
 -------------------------
@@ -171,7 +176,7 @@ controller then must be placed in Scripts > controllers > sitemap.groovy. The co
         }
     }
 
-    response.flush()
+    response.flushBuffer()
 
     return null
 
@@ -181,13 +186,27 @@ controller then must be placed in Scripts > controllers > sitemap.groovy. The co
 Page and Component Scripts
 ==========================
 
+.. |SiteItem| replace:: :javadoc_base_url:`SiteItem <engine/org/craftercms/engine/model/SiteItem.html>`
+.. |AllHttpScopesAndAppContextHashModel| replace:: :javadoc_base_url:`AllHttpScopesAndAppContextHashModel <engine/org/craftercms/engine/view/freemarker/AllHttpScopesAndAppContextHashModel.html>`
+
 Crafter page and components can have their own controller scripts too, that are executed before the page or component
-is rendered, and that can contribute to the model of the template. These scripts, besides the common variables, have
-the ``templateModel`` and the ``contentModel`` available. The ``templateModel`` is the actual map model of the
-template, and any variable put in it will be accessible directly in the template, eg. if the script has the line
-``templateModel.var = 5``, then in the template the var's value can be printed with ``${var}``. The ``contentModel``
-is the XML descriptor content, of type SiteItem. The scripts don't have to return any result, just populate the
-``templateModel``.
+is rendered, and that can contribute to the model of the template.
+These scripts, besides the common variables, have the following model related variables:
+
++-------------------------+-----------------------------------------------------------------------+
+|| Model Related Variable || Description                                                          |
++=========================+=======================================================================+
+|| ``contentModel``       || The XML descriptor content                                           |
+||                        || It is an instance of the |SiteItem| class                            |
++-------------------------+-----------------------------------------------------------------------+
+|| ``templateModel``      || The actual map model of the template                                 |
+||                        || It is an instance of the |AllHttpScopesAndAppContextHashModel| class |
++-------------------------+-----------------------------------------------------------------------+
+
+As mentioned in the table above, the ``templateModel`` is the actual map model of the template, and any variable
+put in it will be accessible directly in the template, eg. if the script has the line ``templateModel.var = 5``,
+then in the template the var's value can be printed with ``${var}``.
+The scripts don't have to return any result, just populate the ``templateModel``.
 
 There are 2 ways in which you can "bind" a script to a page or component:
 
@@ -197,7 +216,10 @@ There are 2 ways in which you can "bind" a script to a page or component:
 
 The following is an example of a component script. The component content type is ``/component/upcoming-events``. We can then place the
 script in Scripts > components > upcoming-events.groovy so that it is executed for all components of that type.
-::
+
+.. code-block:: groovy
+   :linenos:
+   :caption: *scripts/components/upcoming-events.groovy*
 
     import org.craftercms.engine.service.context.SiteContext
 
@@ -219,26 +241,29 @@ script in Scripts > components > upcoming-events.groovy so that it is executed f
     def events = []
     def searchResults = searchService.search(query)
     if (searchResults.response) {
-        searchResults.response.documents.each {
-            def event = [:]
-            def item = siteItemService.getSiteItem(it.localId)
+      searchResults.response.documents.each {
+        def event = [:]
+        def item = siteItemService.getSiteItem(it.localId)
 
-            event.image = item.image.text
-            event.title = item.title_s.text
-            event.date = DateUtils.parseModelValue(item.date_dt.text)
-            event.summary = item.summary_html.text
+        event.image = item.image.text
+        event.title = item.title_s.text
+        event.date = DateUtils.parseModelValue(item.date_dt.text)
+        event.summary = item.summary_html.text
 
-            events.add(event)
-        }
+        events.add(event)
+      }
     }
 
-    contentModel.events = events
+    templateModel.events = events
 
-You might notice that we're importing a ``utils.DateUtils`` class. This class is not part of Crafter CMS, but instead it is a Groovy class
-specific to the site. To be able to use this class, you should place it under Classes > groovy > utils and name it DateUtils.groovy,
-where everything after the groovy directory is part of the class' package. It's recommended for all Groovy classes to follow this
-convention.
-::
+
+
+In the above example, you will see that we're importing a ``utils.DateUtils`` class. This class is not part of Crafter CMS, but instead it is a site specific class written in Groovy.
+The class is/needs to be located at the following path ``scripts > classes > utils`` and is placed in a file called ``DateUtils.groovy``, like below:
+
+.. code-block:: groovy
+   :linenos:
+   :caption: *scripts/classes/utils/DateUtils.groovy*
 
     package utils
 
@@ -246,17 +271,17 @@ convention.
 
     class DateUtils {
 
-        static def parseModelValue(value){
-            def dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
-                dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
-            return dateFormat.parse(value)
-        }
+      static def parseModelValue(value){
+        def dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
+        return dateFormat.parse(value)
+      }
 
-        static def formatDateAsIso(date) {
-            def dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
-                dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
-            return dateFormat.format(date)
-        }
+      static def formatDateAsIso(date) {
+        def dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
+        eturn dateFormat.format(date)
+      }
 
     }
 

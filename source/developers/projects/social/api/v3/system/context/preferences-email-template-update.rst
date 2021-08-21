@@ -57,7 +57,7 @@ Request
 
   POST .../api/3/system/context/preferences/email
 
-.. code-block:: guess
+.. code-block:: none
 
   template=Sample template for email
   type=INSTANT

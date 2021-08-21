@@ -28,15 +28,15 @@ Resource Information
 Parameters
 ----------
 
-+---------------+-------------+---------------+--------------------------------------------------+
-|| Name         || Type       || Required     || Description                                     |
-+===============+=============+===============+==================================================+
-|| site_id      || String     || |checkmark|  || Site to use                                     |
-+---------------+-------------+---------------+--------------------------------------------------+
-|| user         || String     || |checkmark|  || User executing operation                        |
-+---------------+-------------+---------------+--------------------------------------------------+
-|| items        || String     || |checkmark|  || Array of paths to delete                        |
-+---------------+-------------+---------------+--------------------------------------------------+
++--------------------+-------------+---------------+--------------------------------------------------+
+|| Name              || Type       || Required     || Description                                     |
++====================+=============+===============+==================================================+
+|| site_id           || String     || |checkmark|  || Site to use                                     |
++--------------------+-------------+---------------+--------------------------------------------------+
+|| items             || String     || |checkmark|  || Array of paths to delete                        |
++--------------------+-------------+---------------+--------------------------------------------------+
+|| submissionComment || String     ||              || submission comment                              |
++--------------------+-------------+---------------+--------------------------------------------------+
 
 -------
 Example
@@ -46,9 +46,9 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
-    POST ../api/1/services/api/1/workflow/go-delete.json?deletedep=true&site_id=mysite&user=admin
+    POST ../api/1/services/api/1/workflow/go-delete.json?deletedep=true&site_id=mysite
 
 .. code-block:: json
     :linenos:
@@ -56,7 +56,8 @@ Request
     {
         "items" : [
             "/site/website/technology/index.xml"
-        ]
+        ],
+        "submissionComment": "my submission comment"
     }
 
 ^^^^^^^^

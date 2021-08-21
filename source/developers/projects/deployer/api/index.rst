@@ -13,22 +13,23 @@ Target Management
 -----------------
 
 .. toctree::
-	:maxdepth: 1
+   :maxdepth: 1
 
-	target-management/create-target
-	target-management/get-target
-	target-management/get-all-targets
-	target-management/delete-target
-	target-management/deploy-target
-	target-management/deploy-all-targets
+   target-management/create-target
+   target-management/get-target
+   target-management/get-all-targets
+   target-management/delete-target
+   target-management/deploy-target
+   target-management/deploy-all-targets
+   target-management/unlock-target
 
 ----------
 Monitoring
 ----------
 
 .. toctree::
-	:maxdepth: 1
+   :maxdepth: 1
 
-	monitoring/version
-	monitoring/status
-	monitoring/memory
+   monitoring/version
+   monitoring/status
+   monitoring/memory

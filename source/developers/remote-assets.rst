@@ -8,11 +8,11 @@
 Remote Assets
 -------------
 
-Remote assets are binary files, typically images, videos, pdf documents, etc. which are hosted outside of Crafter Studio.  Remote assets could be hosted in AWS, Box or some other server accessed through WebDAV, CMIS. etc.
+Remote assets are binary files, typically images, videos, pdf documents, etc. which are hosted outside of Crafter CMS.  Remote assets could be hosted in AWS S3 or compatible storage, Box or some other server accessed through WebDAV, CMIS. etc.
 
-Various data sources are available to help manage/use assets hosted outside of Crafter Studio in your site.  The ``Developer`` section contains some examples on how to store assets remotely, such as :ref:`use-s3-to-store-assets` and :ref:`use-box-to-store-assets`.  The ``Site Administrators`` section contains information on how to configure Crafter Studio to access services used for storing assets remotely here: :ref:`studio-configuration`.
+Various data sources are available to help manage/select assets hosted outside of Crafter CMS in your site.  The ``Developer`` section contains some examples on how to store assets remotely, such as :ref:`use-s3-to-store-assets` and :ref:`use-box-to-store-assets`.  The ``Site Administrators`` section contains information on how to configure Crafter CMS to access services used for storing assets remotely here: :ref:`studio-configuration`.
 
-Crafter Studio by default has the remote assets controller open up the remote repository for read access via the URL pattern ``/remote-assets/STORE-TYPE/PROFILE-ID/PATH-TO-ASSET``, where:
+Browser access to remote assets on your site is provided by Crafter Engine's remote assets controller via the URL pattern ``/remote-assets/STORE-TYPE/PROFILE-ID/PATH-TO-ASSET``, where:
 
    * **STORE-TYPE** the remote repository storage used, for our example above, **S3**
    * **PROFILE-ID** ID used to refer to remote repository profile
@@ -37,3 +37,19 @@ Sometimes you may want to disable access to remote repositories. To do this, in 
     </util:map>
 
 .. note:: Please take note that if you disable /remote-access in your authoring install, preview of remote assets will be broken.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+By-passing /remote-assets in Delivery for WebDAV
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To avoid proxying the WebDav ``/remote-assets`` in Delivery, the Delivery Deployer target should be configured to have a find and replace processor that changes the ``/remote-assets`` URL to an actual Apache static asset delivery URL.
+
+.. code-block:: yaml
+  :linenos:
+  :caption: {CRAFTER-DELIVERY-INSTALL}/data/deployer/targets/SITE-NAME-default.yaml
+
+  - processorName: findAndReplaceProcessor
+    textPattern: /remote-assets/webdav(/([^&quot;&lt;]+)
+    replacement: 'http://apache.static-asset.delivery.url$1'
+

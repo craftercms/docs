@@ -21,7 +21,7 @@ Sample
 ------
 
 .. code-block:: xml
-    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/box/box.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/box/box.xml*
     :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>
@@ -53,16 +53,20 @@ Sample
 
     -->
     <box>
+      <box>
         <profile>
-            <id>box-default</id>
-            <clientId>...</clientId>
-            <clientSecret>...</clientSecret>
-            <enterpriseId>...</enterpriseId>
-            <publicKeyId>...</publicKeyId>
-            <privateKey><![CDATA[...]]></privateKey>
-            <privateKeyPassword>...</privateKeyPassword>
-            <uploadFolder>videos</uploadFolder>
+          <id>box-default</id>
+          <clientId>...</clientId>
+          <clientSecret>...</clientSecret>
+          <enterpriseId>...</enterpriseId>
+          <publicKeyId>...</publicKeyId>
+          <privateKey>
+    <![CDATA[...]]>
+          </privateKey>
+          <privateKeyPassword>...</privateKeyPassword>
+          <uploadFolder>videos</uploadFolder>
         </profile>
+      </box>
     </box>
 
 |

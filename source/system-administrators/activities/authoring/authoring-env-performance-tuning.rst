@@ -11,22 +11,22 @@ This section describes ways on how to enhance the authoring environment performa
 -------------------
 Server Requirements
 -------------------
-Minimum Installation (~1-10 concurrent users per site, ~10 sites)
+Minimum Installation (~1-10 concurrent users, ~10 sites)
 
-	* 8GB of RAM + 8GB Swap Space or Virtual Memory
-	* 4GB JVM Memory (-Xms 1G -Xmx 4G)
-	* 2 CPU Cores
+	* 16GB of RAM + 16GB Swap Space or Virtual Memory
+	* 8GB JVM Memory (-Xms 1G -Xmx 8G)
+	* 4 CPU Cores
 
-Medium Installations (~11-25 concurrent users per site, ~25 sites)
+Medium Installations (~11-25 concurrent users, ~25 sites)
 
-	* 16GB+ of RAM + 16GB Swap Space or Virtual Memory
-	* 8GB+ JVM Memory (-Xms 2G -Xmx 8G)
-	* 4+ CPU Cores
+	* 32GB+ of RAM + 32GB Swap Space or Virtual Memory
+	* 16GB+ JVM Memory (-Xms 2G -Xmx 16G)
+	* 8+ CPU Cores
 
-Larger Installations (~26-100 concurrent users per site, ~100 sites)
+Larger Installations (~26-50 concurrent user, ~50 sites)
 
-	* 32GB+ of RAM + 16GB Swap Space or Virtual Memory
-	* 16GB+ of JVM Memory (-Xms 2G -Xmx 16G)
+	* 64GB+ of RAM + 64GB Swap Space or Virtual Memory
+	* 32GB+ of JVM Memory (-Xms 4G -Xmx 32G)
 	* 16+ CPU Cores
 
 Vertical scaling can be very effective in scaling out Crafter Studio.
@@ -60,7 +60,7 @@ Testing Raw Performance
 
 	* Example
 
-      .. code-block:: guess
+      .. code-block:: none
           :linenos:
 
           Timing cached reads:   24486 MB in  1.99 seconds = 12284.28 MB/sec
@@ -72,7 +72,7 @@ Testing Raw Performance
 
 	* Example
 
-      .. code-block:: guess
+      .. code-block:: bash
          :linenos:
 
          $ fio --randrepeat=1 --ioengine=libaio --gtod_reduce=1 --name=test --filename=test --bs=4k --iodepth=64 --size=4G --readwrite=randrw --rwmixread=75
@@ -100,7 +100,7 @@ Testing Raw Performance
 
 	* Example
 
-      .. code-block:: guess
+      .. code-block:: bash
          :linenos:
 
 	     $ ioping -c 10 .
@@ -168,7 +168,7 @@ Crafter CMS includes many subsystems that require additional file-handles be ava
 
 Our limits are:
 
-.. code-block:: guess
+.. code-block:: none
     :linenos:
 
     [Service]
@@ -182,9 +182,44 @@ Our limits are:
     # (locked-in-memory size)
     LimitMEMLOCK=infinity
     # (open files)
-    LimitNOFILE=64000
+    LimitNOFILE=65535
     # (processes/threads)
-    LimitNPROC=64000
+    LimitNPROC=65535
+
+|
+
+    The values listed above can be persistently set in the **limits.conf** file located at ``/etc/security/``
+
+Here's an example of how the items listed above will look like in a **limits.conf** file:
+
+  .. code-block:: text
+     :caption: */etc/security/limits.conf*
+
+     #[domain]        [type]  [item]   [value]
+     ...
+
+     *                -       fsize    infinity
+     *                -       cpu      infinity
+     *                -       as       infinity
+     *                -       memlock  infinity
+     *                -       nofile   65535
+     *                -       nproc    65535
+
+     ...
+
+  |
+
+where
+ * **domain:** can be a username, a group name, or a wildcard entry.
+ * **type:** can be *soft*, *hard* or *-*
+ * **item:** the resource to set the limit for
+
+For more information on types, other items, etc. that you can configure, see your OS man page for ``limits.conf`` (e.g. ``man limits.conf`` or  visit the online man page for your OS if available:: http://manpages.ubuntu.com/manpages/focal/en/man5/limits.conf.5.html )
+
+  .. note::
+
+     * On RHEL/CentOS: For the ``nproc`` setting, please use ``/etc/security/limits.d/90-nproc.conf``.  More information can be found `here <https://access.redhat.com/solutions/61334>`_
+     * On Ubuntu: The *limits.conf* file is ignored for processes started by *init.d* .  To apply the settings in *limits.conf* for processes started by *init.d*, open ``/etc/pam.d/su`` and uncomment the following: ``session required pam_limits.so``
 
 
 .. JVM Level
@@ -230,3 +265,8 @@ Using Default Settings for Larger Installations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Installations are pre-configured with settings that assume an average/smaller sized machines. Further OS defaults are not managed by Crafter. To get the best performance you should consider and adjust for your specific environment, hardware, business needs and best practices.
 
+---------------------------------
+Securing your Crafter CMS Install
+---------------------------------
+
+Crafter CMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`securing-your-crafter-cms-install`

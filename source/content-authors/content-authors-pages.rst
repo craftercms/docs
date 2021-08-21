@@ -14,16 +14,16 @@ Templates are used for page layouts in Crafter CMS.  A developer usually creates
 -------------
 Adding a Page
 -------------
-To add a page, in the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to create the content, then right click on the parent page and select *New Content*
+To add a page, in the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to create the content, then click on the three dots next to the parent page and select *Create Content*
 
-.. image:: /_static/images/page/page-add-new-content.png
-    :width: 40 %    
+.. image:: /_static/images/page/page-add-new-content.jpg
+    :width: 30 %
     :align: center
     :alt: Content Author - Add New Page Content
 
-You will then be prompted to choose a content type.  Select a starter page template from the list shown, then click *Ok* to open the form. If you need a template that's not available or want to modify the template, ask a developer to add/modify the template that you want.
+You will then be prompted to choose a content type.  Select a starter page template from the list shown. If you need a template that's not available or want to modify the template, ask a developer to add/modify the template that you want.
 
-.. image:: /_static/images/page/page-add-choose-content.png
+.. image:: /_static/images/page/page-add-choose-content.jpg
     :width: 75 %    
     :align: center
     :alt: Content Author - Add New Page Choose Content
@@ -32,15 +32,17 @@ A form will open containing the template selected. You can now start adding cont
 
 When data is entered into a field, the red 'x' will change to a green checkmark and the section bar will update with the new status.
 
-.. image:: /_static/images/page/page-add-template-open.png
+.. image:: /_static/images/page/page-add-template-open.jpg
     :width: 75 %    
     :align: center
     :alt: Content Author - Add New Page Open Template
 
-An action bar is available at the bottom of the screen that cannot be scrolled away. This bar allows users to Save & Close, Save Draft or Cancel.
+An action bar is available at the bottom of the screen that cannot be scrolled away. This bar allows users to Save, Save & Minimize, Save & Preview, Save & Close or Cancel and minimize/maximize the form.
 
-    * **Save Draft** will save the content entered on the form
-    * **Save & Close** will close the form and load the preview screen with the newly saved data.
+    * **Save** will save the content entered on the form and leave the New Page/Editing dialog open
+    * **Save & Minimize** will save the content entered on the form, then minimize the form
+    * **Save & Preview** will save the content entered on the form then close the form and load the preview screen with the newly saved data
+    * **Save & Close** will save the content then close the form.
     * **Cancel** will close the form without making any changes and will warn users if there are unsaved changes.
     * |pageActionBarMinMax| (arrow pointing up) will minimize/maximize the form.
 
@@ -62,7 +64,7 @@ Editing a Page
 --------------
 There are multiple ways to edit a page.  
     
-    #. In the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to edit the content, then right click and select **Edit**.  A form containing the page content you want to edit will open.
+    #. In the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to edit the content, then click on the three dots on the right and select **Edit**.  A form containing the page content you want to edit will open.
     
     #. In the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to edit the content and click on it to display the page.  Click on the pencil on the top right corner (context nav) to turn on in-context editing if it's not turned on yet.  Click on the pencil on top of the content you want to edit.  A form containing the page content you want to edit will open.
 
@@ -88,7 +90,7 @@ After selecting the page you want, click on the **History** menu of the context 
     :align: center
     :alt: Content Author - Access Page History
 
-Another way to view the history of a page is by right clicking on the page you want and then selecting **History**
+Another way to view the history of a page is by clicking on the three dots next to the page you want on the Sidebar and then selecting **History**
 
 .. image:: /_static/images/page/page-access-history-tree.png
     :width: 30 %
@@ -99,24 +101,28 @@ Another way to view the history of a page is by right clicking on the page you w
 ^^^^^^^^^^^^^^^
 Version History
 ^^^^^^^^^^^^^^^
-There are a number of things that you can do in the Version History dialog.  On the right hand side of the dialog, for each entry/version on the list, there are a number of actions that you can perform on the version you selected, represented by icons.    
+There are a number of things that you can do in the Version History dialog.  On the right hand side of the dialog, for each entry/version on the list, there are a number of actions that you can perform on the version you selected, accessible by clicking on the three dots next to it.
 
 +------------------------+--------------------------------------------------------+
 || Actions               || Description                                           |
 +========================+========================================================+
-|| View this version     || View details of the selected version of the page such |
+|| View                  || View details of the selected version of the page such |
 ||                       || as the creation date, last modified date, page content|
++------------------------+--------------------------------------------------------+
+|| Compare to ...        || Compares the selected version to the version selected |
+||                       || by the user                                           |
 +------------------------+--------------------------------------------------------+
 || Compare to current    || Compares the selected version to the current version  |
 ||                       || of the page                                           |
 +------------------------+--------------------------------------------------------+
-|| Revert to this version|| Reverts the page content to selected version          | 
+|| Compare to previous   || Compares the selected version to the previous version |
+||                       || of the page in the list                               |
++------------------------+--------------------------------------------------------+
+|| Revert to this version|| Reverts the page content to selected version          |
 +------------------------+--------------------------------------------------------+
 
-For each version listed, there's a checkbox on the left, allowing you to select two versions and then compare them by selecting the **Compare** button.  Please see figure below.
-
-.. image:: /_static/images/page/page-history.png
-    :width: 95 %
+.. image:: /_static/images/page/page-history.jpg
+    :width: 75 %
     :align: center
     :alt: Content Author - Page History
 
@@ -128,8 +134,8 @@ Form controls are the building blocks of forms.  It lets you get content into th
 
 Forms are the means by which content is captured in Crafter Studio. A form generally maps to or represents a type of object in the system for example a certain kind of page - like a section page or a banner or video. Let's look at some common elements of a form and examine some of the controls that we use to get content in to the system.
 
-.. image:: /_static/images/page/page-form.png
-    :width: 95 %
+.. image:: /_static/images/page/page-form.jpg
+    :width: 75 %
     :align: center
     :alt: Content Author - Page Form
 
@@ -142,13 +148,14 @@ An icon in front of the Section Label will display a red 'x' (when required fiel
 
 Every required field will have a red 'x' icon after it's Field Label.
 
-When data is entered into a field the red 'x' will change to a green check mark and the section bar will update with the new status. An action bar is available at the bottom of the screen that cannot be scrolled away. This bar allows users to Save & Close, Save Draft or Cancel, and minimize/maximize the form.
+When data is entered into a field the red 'x' will change to a green check mark and the section bar will update with the new status. An action bar is available at the bottom of the screen that cannot be scrolled away. This bar allows users to Save, Save & Minimize, Save & Preview, Save & Close or Cancel and minimize/maximize the form.
 
-**Save & Close** will close the New Page/Editing dialog and load the preview screen with the newly saved data.
-
-**Save Draft** will save your changes and leave the New Page/Editing dialog open
-
-**Cancel** will close the New Page/Editing screen without making any changes.
+* **Save** will save the content entered on the form and leave the New Page/Editing dialog open
+* **Save & Minimize** will save the content entered on the form, then minimize the form
+* **Save & Preview** will save the content entered on the form then close the form and load the preview screen with the newly saved data
+* **Save & Close** will save the content then close the form.
+* **Cancel** will close the form without making any changes and will warn users if there are unsaved changes.
+* |pageActionBarMinMax| (arrow pointing up) will minimize/maximize the form.
 
 The fields within each section are completely modular and can be applied to any given page as needed. This modularity allows us to craft edit pages for any new screens as they arise without the need for specific UI work on the edit screen.
 
@@ -177,7 +184,7 @@ Here are some controls that authors may encounter while editing content:
     :align: center
     :alt: Content Author - Form Control Text Area
 
-* Checkbox - Allows the user to make two choices, depending on what was setup.
+* Checkbox - Allows the user to make a choice, depending on what was setup.
 
 .. image:: /_static/images/page/form-control-checkbox.png
     :width: 20 %
@@ -190,7 +197,7 @@ Here are some controls that authors may encounter while editing content:
 * Rich text editors - What You See Is What You Get (WYSIWYG) editor that allows authors to arrange and style content without needing to know HTML.  Below is a more detailed description on working in the RTE.
 * Repeating Group - Group of controls (1 or more controls) that can be duplicated multiple times by clicking on **Add Another**.  If there are two or more instances, "Move Up" and "Move Down" links will be available which will move the group up or down in relation to the other group instances.
 
-.. image:: /_static/images/page/form-controls.png
+.. image:: /_static/images/page/form-controls.jpg
     :width: 75 %    
     :align: center
     :alt: Content Author - Form Controls
@@ -253,8 +260,8 @@ Drag and drop makes it easy for authors to visually assemble pages. Authors simp
 The drag and drop panel puts the page in component construction mode.  Regions on the page that are wired to accept components ("drop zones") are highlighted.  In the component construction mode, the user may drag an existing component or place a new component to be configured in the drop zone.  The user may also drag a component from one region to another.  Crafter Studio administrators can configure what components are available in this panel.
 
 
-.. image:: /_static/images/page/page-components.png
-    :width: 95 %    
+.. image:: /_static/images/page/page-components.jpg
+    :width: 65 %
     :align: center
     :alt: Content Author - Page Components
 
@@ -265,8 +272,8 @@ Drag and Drop Components
 
 The user may create new components by dragging components from the panel (**General** section) out and on to the screen.  A dialog is presented to the user when a new component is dropped on the screen so that the author can configure the component.
 
-.. image:: /_static/images/page/page-components-general.png
-    :width: 75 %    
+.. image:: /_static/images/page/page-components-general.jpg
+    :width: 50 %
     :align: center
     :alt: Content Author - Page Components General
 
@@ -275,14 +282,14 @@ The user may create new components by dragging components from the panel (**Gene
 The user may add existing components into the panel by clicking on **Browse Features**.  A list of existing components will be presented.  
 
 .. image:: /_static/images/page/page-components-browse-features.png
-    :width: 75 %    
+    :width: 50 %
     :align: center
     :alt: Content Author - Page Components Browse Features
 
 Select a component and the list will close then prompt you to place the component somewhere in the drop zone.
 
-.. image:: /_static/images/page/page-components-browse-selected.png
-    :width: 95 %    
+.. image:: /_static/images/page/page-components-browse-selected.jpg
+    :width: 75 %
     :align: center
     :alt: Content Author - Page Components Browse Selected
 
@@ -290,8 +297,8 @@ Select a component and the list will close then prompt you to place the componen
 
 Components inside the drop zones may be moved around to the desired position.  Simply click, then drag and drop to the desired position in the drop zone.  Notice the positions of the features in the image below compared to the image above.
 
-.. image:: /_static/images/page/page-components-move.png
-    :width: 75 %    
+.. image:: /_static/images/page/page-components-move.jpg
+    :width: 50 %
     :align: center
     :alt: Content Author - Page Components Move
 
@@ -299,8 +306,8 @@ Components inside the drop zones may be moved around to the desired position.  S
 
 To remove a component from the drop zone, simply click on the "x"
 
-.. image:: /_static/images/page/page-components-remove.png
-    :width: 75 %    
+.. image:: /_static/images/page/page-components-remove.jpg
+    :width: 50 %
     :align: center
     :alt: Content Author - Page Components Remove
 
@@ -309,31 +316,35 @@ Working in the Rich Text Editor(RTE)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The RTE (Rich Text Editor) is intended to provide an in-context editing experience from within a form (rather than a preview) that allows authors to arrange and style content without needing to know HTML.  In an RTE field, the RTE toolbar is at the top, and is always available regardless of how far down you scroll in the RTE field.
 
-.. image:: /_static/images/page/rte-screen.png
+.. image:: /_static/images/page/rte-screen.jpg
     :width: 75 %    
     :align: center
     :alt: Content Author - RTE Screen
 
 
-There are a number of tools available from the RTE out of the box for editing your content.  Custom tools may also be added to the RTE, depending on your needs.  Please see the developer section :ref:`rte2-setup` of the docs for more details.
+There are a number of tools available from the RTE out of the box for editing your content.  Custom tools may also be added to the RTE, depending on your needs.  Please see the developer section :ref:`rte5-setup` of the docs for more details.
 
 --------------
 Copying a Page
 --------------
 
-To copy a page, in the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to copy content, then right click on the page and select **Copy**
+To copy a page, in the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to copy content, then click on the three dots next to the page and select **Copy**
 
 .. image:: /_static/images/page/page-copy-menu.png
-    :width: 50 %
+    :width: 30 %
     :align: center
     :alt: Content Author - Copy Page Menu
 
-In the Sidebar panel, navigate to the level and location within the site navigation tree where you want to paste the copied content, then right click and select **Paste**
+|
+
+In the Sidebar panel, navigate to the level and location within the site navigation tree where you want to paste the copied content, then click on the three dots next to it and select **Paste**
 
 .. image:: /_static/images/page/page-paste-menu.png
-    :width: 50 %
+    :width: 30 %
     :align: center
     :alt: Content Author - Paste Page Menu
+
+|
 
 Depending on how the page content type has been modeled (dependencies), copying and pasting a page may also create copies of items in the page. These dependencies are setup by the developers when creating the content type.  Generally, when an item on a page is uploaded to the following locations: ``/site/components/item/.*`` or  ``/static-assets/item/.*``, when the page containing those items is copied, a copy of the uploaded items are created.
 

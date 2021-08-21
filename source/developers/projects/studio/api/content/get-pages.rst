@@ -48,7 +48,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     GET .../api/1/services/api/1/content/get-pages.json?site_id=mysite&path=/site/website/index.xml&depth=1&order=default
 

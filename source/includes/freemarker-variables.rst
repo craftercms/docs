@@ -49,9 +49,7 @@
 || siteConfig               || The current site Configuration       || `XMLConfiguration`_               |
 ||                          || loaded from /config/site.xml.        ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
-|| siteContext              || The current SiteContext              || |SiteContext|                     |
-+---------------------------+---------------------------------------+------------------------------------+
-|| application              || The servlet context                  || |ServletContextHashModel|         |
+|| siteContext              || The current SiteContext              || |SiteContextHashModel|            |
 +---------------------------+---------------------------------------+------------------------------------+
 || request                  || The current request                  || |HttpRequestHashModel|            |
 +---------------------------+---------------------------------------+------------------------------------+
@@ -66,6 +64,17 @@
 || locale                   || The current locale for the           || `Locale`_                         |
 ||                          || current user                         ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
+|| authToken                || The current authentication (if       || `Authentication`_                 |
+||                          || the user has logged in),             ||                                   |
+||                          || created by Spring Security           ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+
+The following variables are provided for backward compatibility when using Crafter Profile, should be replaced
+with ``authToken`` if possible:
+
++---------------------------+---------------------------------------+------------------------------------+
+|| Name                     || Description                          || Type                              |
++===========================+=======================================+====================================+
 || authentication           || The current authentication (if       || |Authentication|                  |
 ||                          || the user has logged in),             ||                                   |
 ||                          || created by the                       ||                                   |
@@ -75,6 +84,20 @@
 ||                          || user has logged in), created         ||                                   |
 ||                          || by the                               ||                                   |
 ||                          || Crafter Security Provider            ||                                   |
++---------------------------+---------------------------------------+------------------------------------+
+
+   .. note::
+      The variables ``profile`` and ``authentication`` listed  above will be null in most cases and should not be used anymore
+
+
+The following variables are restricted by default, to use them see :ref:`access-to-services`
+
++---------------------------+---------------------------------------+------------------------------------+
+|| Name                     || Description                          || Type                              |
++===========================+=======================================+====================================+
+|| application              || The servlet context                  || |ServletContextHashModel|         |
++---------------------------+---------------------------------------+------------------------------------+
+|| siteContext              || The current SiteContext              || |SiteContext|                     |
 +---------------------------+---------------------------------------+------------------------------------+
 
 .. |SiteItemService| replace:: :javadoc_base_url:`SiteItemService <engine/org/craftercms/engine/service/SiteItemService.html>`
@@ -94,6 +117,7 @@
 .. _XMLConfiguration: https://commons.apache.org/proper/commons-configuration/javadocs/v1.10/apidocs/org/apache/commons/configuration/XMLConfiguration.html
 .. |SiteContext| replace:: :javadoc_base_url:`SiteContext <engine/org/craftercms/engine/service/context/SiteContext.html>`
 .. |ServletContextHashModel| replace:: :javadoc_base_url:`ServletContextHashModel <engine/org/craftercms/engine/freemarker/ServletContextHashModel.html>`
+.. |SiteContextHashModel| replace:: :javadoc_base_url:`ServletContextHashModel <engine/org/craftercms/engine/util/freemarker/SiteContextHashModel.html>`
 .. |HttpRequestHashModel| replace:: :javadoc_base_url:`HttpRequestHashModel <engine/org/craftercms/engine/util/freemarker/HttpRequestHashModel.html>`
 .. _HttpRequestParametersHashModel: http://freemarker.org/docs/api/freemarker/ext/servlet/HttpRequestParametersHashModel.html
 .. _HttpSessionHashModel: http://freemarker.org/docs/api/freemarker/ext/servlet/HttpSessionHashModel.html
@@ -101,3 +125,4 @@
 .. _Locale: https://docs.oracle.com/javase/7/docs/api/java/util/Locale.html
 .. |Authentication| replace:: :javadoc_base_url:`Authentication <profile/org/craftercms/security/authentication/Authentication.html>`
 .. |Profile| replace:: :javadoc_base_url:`Profile <profile/org/craftercms/profile/api/Profile.html>`
+.. _Authentication: https://docs.spring.io/spring-security/site/docs/4.0.x/apidocs/org/springframework/security/core/Authentication.html

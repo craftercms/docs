@@ -33,6 +33,9 @@ Parameters
 +-------------------------+-------------+---------------+---------------------------------------+
 || url                    || String     || |checkmark|  || The folder's url (e.g /site/website) |
 +-------------------------+-------------+---------------+---------------------------------------+
+|| flatten                || Boolean    ||              || Indicates if included descriptors    |
+||                        ||            ||              || should be flattened                  |
++-------------------------+-------------+---------------+---------------------------------------+
 
 -------
 Example
@@ -41,7 +44,7 @@ Example
 ^^^^^^^
 Request
 ^^^^^^^
-.. code-block:: guess
+.. code-block:: text
 
   GET .../api/1/content_store/descriptor.json?contextId=405ffc233d075b010536bd2eb786b86c&url=/site/website/index.xml
 

@@ -21,32 +21,51 @@ Sample
 ------
 
 .. code-block:: xml
-    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/aws/aws.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/aws/aws.xml*
     :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!--
-        AWS profiles configuration file. This files configures 0 or more
-        AWS profiles with the information required by AWS services.
+      ~ Copyright (C) 2007-2020 Crafter Software Corporation. All Rights Reserved.
+      ~
+      ~ This program is free software: you can redistribute it and/or modify
+      ~ it under the terms of the GNU General Public License as published by
+      ~ the Free Software Foundation, either version 3 of the License, or
+      ~ (at your option) any later version.
+      ~
+      ~ This program is distributed in the hope that it will be useful,
+      ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+      ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      ~ GNU General Public License for more details.
+      ~
+      ~ You should have received a copy of the GNU General Public License
+      ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+      -->
 
-        For every profile you need to specify at least:
-            <profile>
-                <id/>
-                <credentials>
-                    <accessKey/>
-                    <secretKey/>
-                </credentials>
-                <region/>
-            </profile>
+    <!--
+      AWS profiles configuration file. This files configures 0 or more
+      AWS profiles with the information required by AWS services.
 
-            id:	a unique id for this profile, this will be referenced in the control defined in the content type
-            accessKey: AWS access key
-            secretKey: AWS secret key
-            region: AWS region for the service
+      For every profile you need to specify at least:
+      <profile>
+        <id/>
+        <credentials>
+          <accessKey/>
+          <secretKey/>
+        </credentials>
+        <region/>
+      </profile>
 
-            Every service can require additional properties.
+      id: a unique id for this profile, this will be referenced in the
+          control defined in the content type
+      accessKey: AWS access key
+      secretKey: AWS secret key
+      region: AWS region for the service
+
+       Every service can require additional properties.
     -->
     <aws>
+      <s3>
         <!--
 
         AWS S3 Profile
@@ -54,20 +73,25 @@ Sample
         Additional properties:
 
         <bucketName/>
+        <pathStyleAccess/>
 
         bucketName: name of the bucket where files will be uploaded
+        pathStyleAccess: indicates if path style access should be used for all requests (defaults to false)
 
         -->
         <profile>
-            <id>s3-default</id>
-            <credentials>
-                <accessKey>xxxxxxxxx</accessKey>
-                <secretKey>xxxxxxxxx</secretKey>
-            </credentials>
-            <region>us-west-1</region>
-            <bucketName>sample-input-bucket</bucketName>
+          <id>s3-default</id>
+          <credentials>
+            <accessKey>xxxxxxxxx</accessKey>
+            <secretKey>xxxxxxxxx</secretKey>
+          </credentials>
+          <region>us-west-1</region>
+          <bucketName>sample-input-bucket</bucketName>
+          <pathStyleAccess>true</pathStyleAccess>
         </profile>
+      </s3>
 
+      <elasticTranscoder>
         <!--
 
         AWS Elastic Transcoder Profile
@@ -75,15 +99,15 @@ Sample
         Additional properties:
 
         <pipelineId/>
-        <outputs>
+          <outputs>
             <output>
-                <presetId/>
-                <outputKeySuffix/>
+              <presetId/>
+              <outputKeySuffix/>
             </output>
 
             ...
 
-        </outputs>
+          </outputs>
 
         pipelineId: id of the pipeline that will be used for transcoding jobs
         outputs: list of outputs for the transcoding jobs
@@ -92,29 +116,31 @@ Sample
 
         -->
         <profile>
-            <id>elastic-transcoder-default</id>
-            <credentials>
-                <accessKey>xxxxxxxxx</accessKey>
-                <secretKey>xxxxxxxxx</secretKey>
-            </credentials>
-            <region>us-east-1</region>
-            <pipelineId>xxxxxxxx</pipelineId>
-            <outputs>
-                <output>
-                    <presetId>xxxxxxxxxx</presetId>
-                    <outputKeySuffix>-small.mp4</outputKeySuffix>
-                </output>
-                <output>
-                    <presetId>xxxxxxxxxxx</presetId>
-                    <outputKeySuffix>-medium.mp4</outputKeySuffix>
-                </output>
-                <output>
-                    <presetId>xxxxxxxxxxxx</presetId>
-                    <outputKeySuffix>-large.mp4</outputKeySuffix>
-                </output>
-            </outputs>
+          <id>elastic-transcoder-default</id>
+          <credentials>
+            <accessKey>xxxxxxxxx</accessKey>
+            <secretKey>xxxxxxxxx</secretKey>
+          </credentials>
+          <region>us-east-1</region>
+          <pipelineId>xxxxxxxx</pipelineId>
+          <outputs>
+            <output>
+              <presetId>xxxxxxxxxx</presetId>
+              <outputKeySuffix>-small.mp4</outputKeySuffix>
+            </output>
+            <output>
+              <presetId>xxxxxxxxxxx</presetId>
+              <outputKeySuffix>-medium.mp4</outputKeySuffix>
+            </output>
+            <output>
+              <presetId>xxxxxxxxxxxx</presetId>
+              <outputKeySuffix>-large.mp4</outputKeySuffix>
+            </output>
+          </outputs>
         </profile>
+      </elasticTranscoder>
 
+      <mediaConvert>
         <!--
 
         AWS MediaConvert Profile
@@ -135,18 +161,19 @@ Sample
 
         -->
         <profile>
-            <id>mediaconvert-default</id>
-            <credentials>
-                <accessKey>xxxxxxxxx</accessKey>
-                <secretKey>xxxxxxxxx</secretKey>
-            </credentials>
-            <region>us-west-1</region>
-            <endpoint>https://XXXXXXXX.mediaconvert.us-east-1.amazonaws.com</endpoint>
-            <role>arn:aws:iam::XXXXXXXXXXXX:role/...</role>
-            <queue>arn:aws:mediaconvert:us-east-1:XXXXXXXXXXXX:queues/...</queue>
-            <inputPath>example-bucket/folder/videos</inputPath>
-            <template>Example Template</template>
+          <id>mediaconvert-default</id>
+          <credentials>
+            <accessKey>xxxxxxxxx</accessKey>
+            <secretKey>xxxxxxxxx</secretKey>
+          </credentials>
+          <region>us-west-1</region>
+          <endpoint>https://XXXXXXXX.mediaconvert.us-east-1.amazonaws.com</endpoint>
+          <role>arn:aws:iam::XXXXXXXXXXXX:role/...</role>
+          <queue>arn:aws:mediaconvert:us-east-1:XXXXXXXXXXXX:queues/...</queue>
+          <inputPath>example-bucket/folder/videos</inputPath>
+          <template>Example Template</template>
         </profile>
+      </mediaConvert>
     </aws>
 
 |

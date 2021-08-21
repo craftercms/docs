@@ -16,8 +16,6 @@ You can change all the hosts and ports used for communication by the Crafter app
    # -------------------- Hosts and ports --------------------
    export MAIL_HOST=${MAIL_HOST:="localhost"}
    export MAIL_PORT=${MAIL_PORT:="25"}
-   export SOLR_HOST=${SOLR_HOST:="localhost"}
-   export SOLR_PORT=${SOLR_PORT:="8694"}
    export ES_HOST=${ES_HOST:="localhost"}
    export ES_PORT=${ES_PORT:="9201"}
    export DEPLOYER_HOST=${DEPLOYER_HOST:="localhost"}

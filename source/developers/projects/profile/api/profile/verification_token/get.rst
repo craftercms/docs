@@ -43,7 +43,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
   GET .../api/1/profile/verification_token/de60f56d-3a4b-4dec-b798-fb22b2964c14?accessTokenId=e8f5170c-877b-416f-b70f-4b09772f8e2d
 

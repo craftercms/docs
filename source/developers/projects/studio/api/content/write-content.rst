@@ -63,13 +63,13 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     POST ../api/1/services/api/1/content/write-content.json?site_id=mysite&phase=onSave&path=/site/website/index.xml&fileName=index.xml&user=admin&contentType=/page/home&unlock=true
 
 |
 
-.. code-block:: guess
+.. code-block:: xml
     :caption: Request body
 
         <page>
@@ -187,13 +187,14 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     POST ../api/1/services/api/1/content/write-content.json?site_id=mysite&phase=onSave&path=/templates/web/pages&fileName=home.ftl&user=admin&unlock=true
 
 |
 
-.. code-block:: guess
+.. code-block:: html
+    :force:
     :caption: Request body
 
         <#import "/templates/system/common/cstudio-support.ftl" as studio />
@@ -363,7 +364,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     POST ../api/1/services/api/1/content/write-content.json?site_id=mysite&phase=onSave&path=/static-assets&fileName=undefined&user=admin&unlock=true
 
@@ -382,7 +383,7 @@ This request needs to be sent with ``Content-Type=multipart/form-data`` with the
 
 Your request payload should look like this:
 
-.. code-block:: guess
+.. code-block:: none
 
    ------WebKitFormBoundaryl9p1lhdx4gWpuCMM
    Content-Disposition: form-data; name="site"

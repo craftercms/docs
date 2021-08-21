@@ -38,16 +38,34 @@ Parameters
 Example
 -------
 
-.. code-block:: guess
+.. code-block:: none
 
 	GET .../api/1/services/api/1/site/get.json?site_id=my-site
 
 .. code-block:: json
 
   {
-    "site_id" : "my-site",
-    "description" : "My very first site!",
-    "blueprint" : "empty"
+    "id":4,
+    "siteUuid":"9f41ea2d-e8a0-4c05-8b91-a2a2eb9ee746",
+    "siteId":"my-site",
+    "name":"my-site",
+    "description":"My very first site!",
+    "deleted":0,
+    "liveUrl":null,
+    "lastCommitId":
+    "d2302a5753205afe0043e8380dd0fe20e1064334",
+    "publishingEnabled":1,
+    "publishingStatus":"ready",
+    "publishingStatusMessage":"Ready",
+    "lastVerifiedGitlogCommitId":"d2302a5753205afe0043e8380dd0fe20e1064334",
+    "sandboxBranch":"master",
+    "publishedRepoCreated":0,
+    "publishingLockOwner":null,
+    "publishingLockHeartbeat":null,
+    "state":"READY",
+    "lastSyncedGitlogCommitId":"d2302a5753205afe0043e8380dd0fe20e1064334",
+    "siteDeleted":false,
+    "sitePublishedRepoCreated":false
   }
 
 --------

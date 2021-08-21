@@ -53,6 +53,9 @@ Here are the topics covered in this section:
    :maxdepth: 2
 
    navigating-site-config
-   users-groups-management
    configuration
    studio-logging
+
+|
+
+  .. include:: /includes/scripts-templates-security.rst

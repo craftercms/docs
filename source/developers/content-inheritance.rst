@@ -18,7 +18,7 @@ Content objects in Crafter CMS are essentially structured markup, XML by default
 
 Assume we have two objects, one called Parent and one called Child and they're set up as follows:
 
-**Parent**: Below you'll see a typical *level descriptor* which will be the parent of another object. You'll note the *level descriptor* defines multiple elements that are common to everything at this level in the hierarchy and below it. This *level descriptor* defines a primary CSS file ``main.css``, a common header component ``default-header.xml`` and a common footer component ``default-footer.xml``.
+**Parent**: Below you'll see a typical **level descriptor** which will be the parent of another object. You'll note the **level descriptor** defines multiple elements that are common to everything at this level in the hierarchy and below it. This **level descriptor** defines a primary CSS file ``main.css``, a common header component ``default-header.xml`` and a common footer component ``default-footer.xml``.
 
 .. code-block:: xml
     :linenos:
@@ -61,7 +61,7 @@ Assume we have two objects, one called Parent and one called Child and they're s
         	<lastModifiedDate_dt>10/8/2016 19:58:30</lastModifiedDate_dt>
 	</component>
 
-**Child**: Below is the XML file of a page residing under the above *level descriptor* and is setup to inherit from it. You'll note the definition of the ``merge-strategy`` as ``inherit-levels``, this invokes the level-based inheritance mechanics that require Crafter CMS to look at current and higher levels for files named ``crafter-level-descriptor.level.xml`` (this is configurable). You'll also note that this page doesn't specify the CSS file/group of files to include, nor will it need to specify the header nor footer components.
+**Child**: Below is the XML file of a page residing under the above **level descriptor** and is setup to inherit from it. You'll note the definition of the ``merge-strategy`` as ``inherit-levels``, this invokes the level-based inheritance mechanics that require Crafter CMS to look at current and higher levels for files named ``crafter-level-descriptor.level.xml`` (this is configurable). You'll also note that this page doesn't specify the CSS file/group of files to include, nor will it need to specify the header nor footer components.
 
 .. code-block:: xml
     :linenos:
@@ -90,7 +90,7 @@ Assume we have two objects, one called Parent and one called Child and they're s
 		</body>
 	</page>
 
-Crafter CMS will invoke the inheritance mechanics implemented in the merge strategy ``inherit-levels`` to merge the page and the *level descriptor* and the merge strategy will pull in the elements defined in the *level descriptor* into the child page before handing the new model (XML) to the rendering system. This means that when the page renders, the model will automatically contain the meta-data defined in the parent *level descriptor*. In our example above, the page will automatically inherit the meta-data fields ``cssGroup``, ``defaultHeader``, and ``defaultFooter``.
+Crafter CMS will invoke the inheritance mechanics implemented in the merge strategy ``inherit-levels`` to merge the page and the **level descriptor** and the merge strategy will pull in the elements defined in the **level descriptor** into the child page before handing the new model (XML) to the rendering system. This means that when the page renders, the model will automatically contain the meta-data defined in the parent **level descriptor**. In our example above, the page will automatically inherit the meta-data fields ``cssGroup``, ``defaultHeader``, and ``defaultFooter``.
 
 .. note:: When an element is defined by the **level descriptor** and then subsequently defined by a child, the child's definition overrides the **level descriptor**.
 
@@ -132,5 +132,124 @@ Out of the Box Strategies
 ||                      || ``/crafter-level-descriptor.xml``.                                    |
 +-----------------------+------------------------------------------------------------------------+
 
-.. TODO:: Describe how to add your own merge strategy. Describe merge cues.
+.. _inherit-levels-example:
+
+---------------------------------------------------
+Example of Out of the Box Strategy "inherit-levels"
+---------------------------------------------------
+
+Let's take a look at an example of the out of the box strategy ``inherit-levels`` used in the Website Editorial blueprint.
+
+Let's begin by looking at the home page of a site created using the Website Editorial blueprint.  Take note of the top (header) and left (left-rail) side of the page.
+
+.. image:: /_static/images/developer/content-inheritance/home-page-view.jpg
+    :width: 75%
+    :alt: Content Inheritance - Home Page
+    :align: center
+
+|
+
+Click on one of the category, say ``Entertainment`` and again take note of the top (header) and left (left-rail)side of the page.
+
+.. image:: /_static/images/developer/content-inheritance/category-page-view.jpg
+    :width: 75%
+    :alt: Content Inheritance - Home Page
+    :align: center
+
+|
+
+The top part of the page is the header and the left side is the left-rail.  As shown above, the two pages we previewed uses the same information for the header, while the left-rail uses the same information on the top part of it, but different information on the bottom part.
+
+.. image:: /_static/images/developer/content-inheritance/header-leftrail.jpg
+    :width: 75%
+    :alt: Content Inheritance - Home Page
+    :align: center
+
+|
+
+The Website Editorial blueprint uses a ``Section Defaults`` component content type (the level descriptor) to provide inherited values to all children and sibling content items, which for the example we are working on, is the header and the left-rail.  Below is the Section Defaults content type, showing us the content type as ``/component/level-descriptor`` with the merge strategy ``inherit-levels`` used, and two components, the header and the left-rail:
+
+.. image:: /_static/images/developer/content-inheritance/section-defaults-content-type.jpg
+    :width: 75%
+    :alt: Content Inheritance - Section Defaults Content Type
+    :align: center
+
+In the site tree below, we have two Section Defaults used, one residing under the **Home** folder (upper level in the site tree), and another residing under **articles** (lower level in the site tree in relation with the other Section Defaults defined).
+
+.. image:: /_static/images/developer/content-inheritance/site-tree-section-defaults.png
+    :width: 30%
+    :alt: Content Inheritance - Site tree showing section defaults
+    :align: center
+
+|
+
+As you preview the pages under **Home**, (*Style*, *Health*, *Techonology*, *Entertainment*, *Search Results*) you'll notice that the header and left-rail displayed is the same for all the pages.  Once you preview pages, under **articles**, we can see the left-rail displayed is now different.  This shows us how the Section Defaults under **articles** has overridden the Section Defaults under **Home**.
+
+Here's the Section Defaults under **Home**
+
+.. code-block:: xml
+    :linenos:
+    :caption: *Section Defaults under Home*
+    :emphasize-lines: 20
+
+    <component>
+      <content-type>/component/level-descriptor</content-type>	<display-template/>
+      <merge-strategy>inherit-levels</merge-strategy>
+      <placeInNav>false</placeInNav>
+      <file-name>crafter-level-descriptor.level.xml</file-name>
+      <objectGroupId>0a68</objectGroupId>
+      <objectId>0a68e8ad-77d8-0a58-e7bf-09a71fb3077b</objectId>
+      <folder-name/>
+      <header_o>	<item>	<key>/site/components/headers/header.xml</key>
+      <value>Header</value>
+      <include>/site/components/headers/header.xml</include>
+      <disableFlattening>false</disableFlattening>
+      </item></header_o>
+      <createdDate>2017-3-13T20:26:50.000Z</createdDate>
+      <createdDate_dt>2017-3-13T20:26:50.000Z</createdDate_dt>
+      <lastModifiedDate>2017-5-18T15:38:58.000Z</lastModifiedDate>
+      <lastModifiedDate_dt>2017-5-18T15:38:58.000Z</lastModifiedDate_dt>
+      <left-rail_o>	<item>	<key>/site/components/left-rails/left-rail-with-no-articles.xml</key>
+      <value>Left Rail with No Articles</value>
+      <include>/site/components/left-rails/left-rail-with-no-articles.xml</include>
+      <disableFlattening>false</disableFlattening>
+      </item></left-rail_o>
+    </component>
+
+|
+
+Here's the Section Defaults under **articles**
+
+.. code-block:: xml
+    :linenos:
+    :caption: *Section Defaults under Home*
+    :emphasize-lines: 11
+
+    <component>
+      <content-type>/component/level-descriptor</content-type>	<display-template/>
+      <merge-strategy>inherit-levels</merge-strategy>
+      <objectGroupId>d210</objectGroupId>
+      <objectId>d210349e-3f77-95c1-37b3-cab10816347f</objectId>
+      <file-name>crafter-level-descriptor.level.xml</file-name>
+      <folder-name/>
+      <header/>
+      <left-rail_o>	<item>	<key>/site/components/left-rails/left-rail-with-related-articles.xml</key>
+      <value>Left Rail with Related Articles</value>
+      <include>/site/components/left-rails/left-rail-with-related-articles.xml</include>
+      <disableFlattening>false</disableFlattening>
+      </item></left-rail_o>
+      <createdDate>2017-3-17T18:56:59.000Z</createdDate>
+      <createdDate_dt>2017-3-17T18:56:59.000Z</createdDate_dt>
+      <lastModifiedDate>2017-5-18T15:38:1.000Z</lastModifiedDate>
+      <lastModifiedDate_dt>2017-5-18T15:38:1.000Z</lastModifiedDate_dt>
+    </component>
+
+|
+
+As we can see from above, the left-rail component used for the Section Defaults under **Home** is different compared to the left-rail component used for the Section Defaults under **articles**.
+If a new article page is created under ``articles/2019/10/27``, it will inherit the Section Defaults under **articles**.
+
+
+.. .. TODO:: Describe how to add your own merge strategy. Describe merge cues.
+
 

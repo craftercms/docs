@@ -23,7 +23,7 @@ We'll first tackle Crafter CMS content management and deployment mechanics, then
 Content Management and Deployment Mechanics
 -------------------------------------------
 
-Crafter CMS is decoupled, composed of several microservices where content authoring and content delivery services are separated into their own distinct, subsystems.
+Crafter CMS is implemented with a decoupled architecture, composed of several microservices where content authoring and content delivery services are separated into their own distinct, subsystems.
 
 Authoring is supported via Crafter Studio (a web-based authoring tool) that sits on top of a headless Git-based repository and publishing system.  While content authors are performing their work, Crafter is managing all of the Git mechanics, managing locking, creating a time-machine like, Git-based version history and audit trail, all accessible via the Studio UI.
 
@@ -159,7 +159,7 @@ We'll then install the Crafter Studio (authoring instance). You can follow the :
 Alternatively, you can also install craftercms and start authoring by cloning the craftercms repo and building and deploying it using gradle.
 
    `git clone https://github.com/craftercms/craftercms.git`
-   `./gradlew init build deploy -Penv=authoring`
+   `./gradlew clone build deploy -Penv=authoring`
    `./gradlew start -Penv=authoring`
       
 Step 1: Create your upstream
@@ -184,52 +184,65 @@ Step 2: Create Your Project In Crafter Studio
 
 Next, you want to log in to Crafter Studio as the admin user. The admin user has the rights to create new projects (called sites.) Click **Create Site**.
 
-.. image:: /_static/images/developer/workflow/craftercms-createsite-1.png
+.. image:: /_static/images/developer/dev-cloud-platforms/create-site.png
     :alt: Developer Workflow - Create Site via Crafter Studio
     :width: 65 %
     :align: center
 
-Clicking **Create Site** will present you with the Create Site dialog. This dialog changes depending on what you choose. Below is an example of the dialog filled out in a way that creates your project locally, set the GitHub repository as its upstream remote and pushes the initial project contents to the upstream repository.
+|
+
+Clicking Create Site will present you with the Create Site dialog. This dialog changes depending on what you choose. Below is an example of the dialog filled out in a way that creates your project locally.  We will then add the Github repository as its upstream remote and push the initial project contents to the upstream repository.
 
 Let’s walk through each part of the dialog:
 
-.. image:: /_static/images/developer/workflow/create-site-then-push-1.png
-    :alt: Developer Workflow - Create Site Dialog in Crafter Studio, populating a bare upstream Git repository
-    :width: 70 %
-    :align: center
+.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-1.jpg
+   :alt: Developer How Tos - Create Site Dialog Walk Through step 1
+    :width: 50 %
+   :align: center
 
-1. The first thing you need to do is to choose your blueprint. There are several out of the box blueprints provided by default. Choose one of these or one of your own. For our example, we’ll choose Empty which is the “Hello World” of blueprints.
+1. The first thing you need to do is to choose your blueprint. There are several out of the box blueprints provided by default. Choose one of these or one of your own. For our example, we’ll choose the Website Editorial blueprint.
 
-.. image:: /_static/images/developer/workflow/create-site-then-push-2.png
-    :alt: Developer Workflow - Create Site Dialog in Crafter Studio, populating a bare upstream Git repository
-    :width: 70 %
-    :align: center
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-2.png
+      :alt: Developer How Tos - Create Site Dialog Walk Through step 2
+      :width: 70 %
+      :align: center
 
-2. The next thing to do is give your site an ID. The ID itself doesn’t matter in a sense. It doesn’t need to match anything per se, technically speaking the only requirement is that it’s unique. That said, it’s a best practice to provide an ID that is meaningful/recognizable to the team. If your website is called FreshFlowers.com a good ID might be “freshflowerscom”
-3. Click on the **Additional Developer Options** button, this will take you to the dialog where we can fill in all the information for our remote repository
+   |
 
-.. image:: /_static/images/developer/workflow/create-site-then-push-3.png
-    :alt: Developer Workflow - Create Site Dialog in Crafter Studio, populating a bare upstream Git repository
-    :width: 70 %
-    :align: center
+2. The next thing to do is give your site an ID. The ID itself doesn’t matter in a sense. It doesn’t need to match anything per se, technically speaking the only requirement is that it’s unique. That said, it’s a best practice to provide an ID that is meaningful/recognizable to the team. If your website is called FreshFlowers.com a good ID might be “freshflowerscom”.
 
-4. Next, because you plan to connect this project to an upstream repository, check the **Push the site to a remote Git repository after creation** checkbox.  This will then open a number of fields.  This means that Crafter Studio will create a new site based on the blueprint you chose, link the remote repository as an upstream and then once the blueprint is installed in the local Repositories it will be pushed automatically to the upstream remote.
-5. In the **Remote Git Repository Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
-6. In the **Remote Git Repository URL** field you must provide the link to the Git repository discussed in **Step #1**: https://github.com/myuser/devworkflowexample.git
-7. Provide your credentials based on the authentication method selected.  In our example, we chose ``Basic`` as the authentication method and we'll need to fill in **Remote Git Repository Username** and **Remote Git Repository Password**
-8. Click **Review Create**.  The next screen will give you a chance to review your entries and make corrections as needed by clicking on the **Previous step** button
+   Click on the **Review** button, then finally  click on the **Create Site** button to create your site.  Crafter CMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint.  Your site should be created in a short while.
 
-.. image:: /_static/images/developer/workflow/create-site-then-push-4.png
-    :alt: Developer Workflow - Create Site Dialog in Crafter Studio, populating a bare upstream Git repository
-    :width: 70 %
-    :align: center
+3. Once your site is created, the next step is to add a remote repository to your newly created site.  Open the **Sidebar** then click on **Site Tools** -> **Remote Repositories**, then click on the **New Repository** on the top right.
 
-9. Once you're satisfied with your entries for creating your site, click on the **Create** button.  Crafter CMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint. Once complete it will connect to the upstream and push the contents of the Sandbox repository to the remote.
+   This will open up a dialog where we can fill in all the information for our remote repository.
 
-.. image:: /_static/images/developer/workflow/site-created.png
-    :alt: Developer Workflow - Site is created and the contents of the sandbox are automatically pushed to the upstream repository
-    :width: 70 %
-    :align: center
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.png
+      :alt: Create Repository dialog to fill in information of remote repository being added to the site
+      :width: 70 %
+      :align: center
+
+   |
+
+4. In the **Remote Git Repository Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
+
+
+5. In the **Remote Git Repository URL** field you must provide the link to the Git repository discussed in **Step #1**: ``https://github.com/myuser/mysweetdotcom.git``
+
+6. Provide your credentials based on the authentication method selected.  For example, if we chose ``Username & Password`` as the authentication method, we'll need to fill in **Username** and **Password**
+
+      .. note::
+         .. include:: /includes/setup-ssh-keys.rst
+
+7. Once you're satisfied with your entries for your remote repository, click on the **Create** button.   Once complete we can now connect to the upstream and push the contents of the Sandbox repository to the remote by clicking on the ``Push`` button (button with the up arrow).
+
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-4.png
+      :alt: Remotes screen displaying newly added remote repository to site
+      :width: 90 %
+      :align: center
+
+   **Figure:: Site is created and a remote repository added**
+
 
 Step 3: Set up Your Delivery Nodes
 ----------------------------------
@@ -270,25 +283,20 @@ After setting up the topology above, if you just want to get a local environment
     :width: 70 %
     :align: center
 
-4. Fill out the Create Site Form as in a similar fashion described in Step 1 above, except this time, instead of selecting a blueprint, check the **Use a remote Git repository instead of a built in blueprint** checkbox to create your site based on an existing upstream repository. This can be your team’s branch or your own fork. The exact workflow is up to you.
+|
 
-.. figure:: /_static/images/developer/workflow/create-site-based-on-remote-2.png
-    :alt: Developer Workflow - Setting up to work locally against the upstream second screen
+4. Fill out the Create Site Form as in a similar fashion described in Step 2 above, except this time, instead of selecting a blueprint, select **Remote Git Repository** to create your site based on an existing upstream repository. This can be your team’s branch or your own fork. The exact workflow is up to you.
+
+.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-1.jpg
+    :alt: Developer How Tos - Setting up to work locally against the upstream
     :width: 70 %
     :align: center
 
 |
 
-.. figure:: /_static/images/developer/workflow/create-site-based-on-remote-3.png
-    :alt: Developer Workflow - Setting up to work locally against the upstream third screen
-    :width: 70 %
-    :align: center
+.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-2.jpg
+   :alt: Developer How Tos - Setting up to work locally against the upstream review entries
+   :width: 50 %
+   :align: center
 
-|
-
-.. figure:: /_static/images/developer/workflow/create-site-based-on-remote-4.png
-    :alt: Developer Workflow - Setting up to work locally against the upstream fourth screen
-    :width: 70 %
-    :align: center
-
-    **Set up a project based on existing remote Git repository via Crafter Studio**
+**Set up a project based on existing remote Git repository via Crafter Studio**

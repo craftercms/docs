@@ -31,4 +31,4 @@ RTEs Supported
    :titlesonly:
 
    rte-setup
-   rte2-setup
+   rte5-setup

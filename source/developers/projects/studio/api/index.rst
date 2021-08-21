@@ -8,12 +8,10 @@
 Crafter Studio API
 ==================
 
-There are 2 versions of Crafter Studio APIs.  **API version 2** contains the User and Group Management, UI, Cluster, Sites, Search, Audit, Monitoring, CMIS, Repository, Content and Schemas APIs.   All other APIs are in **API version 1**.
+There are 2 versions of Crafter Studio APIs.  **API version 2** contains the User and Group Management, UI, AWS, Cluster, Sites, Search, Audit, Monitoring, CMIS, Repository, Content, Configuration, Plugin, Dependency, Marketplace, WebDAV, Publishing, Security, Dashboard, Translation and Schemas APIs.   All other APIs are in **API version 1**.
 
 .. note::
-    This API is protected using a CSRF Token so all ``POST``, ``PUT`` and ``DELETE`` calls need to
-    include a cookie and a header with a matching value to work. The name of the cookie must be
-    ``XSRF-TOKEN`` and the header ``X-XSRF-TOKEN``.
+    This API can be used with JWT or HTTP Basic authentication.
 
     For more information on using Crafter Studio APIs, see :ref:`working-with-crafter-studios-api`
 

@@ -19,7 +19,7 @@ Example
 
 .. image:: /_static/images/form-controls/form-control-page-order-example.png
     :width: 30%
-    :alt: Form Control Page Order
+    :alt: Form Control Page Order Example
     :align: center
 
 -------------

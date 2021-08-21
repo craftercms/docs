@@ -46,7 +46,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     POST .../api/1/services/api/1/content/change-content-type.json?site_id=mysite&path=/site/website/health/index.xml&contentType=/page/generic
 
@@ -56,7 +56,7 @@ Response
 
 ``Status 200 OK``
 
-.. code-block:: guess
+.. code-block:: none
 
     N/A
 

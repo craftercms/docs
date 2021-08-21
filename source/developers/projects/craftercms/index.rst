@@ -73,37 +73,29 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 +-------------------------+------------------------------------------------------------------------+
 || **Synopsis**           || ``crafter.sh start|stop|debug|help``                                  |
 +-------------------------+------------------------------------------------------------------------+
-|| **Arguments**          || * ``start [withMongoDB] [withSolr] [skipElasticsearch] [skipMongoDB]``|
+|| **Arguments**          || * ``start [withMongoDB] [skipElasticsearch] [skipMongoDB]``           |
 ||                        ||   Starts all Crafter CMS services in this order                       |
 ||                        ||   Crafter Deployer, Elasticsearch, Apache Tomcat                      |
 ||                        ||   If withMongoDB is specified MongoDB will be started.                |
-||                        ||   If withSolr is specified Solr will be started.                      |
 ||                        ||   If skipElasticsearch is specified Elasticsearch will not be started.|
 ||                        ||   If skipMongoDB is specified MongoDB will not bestarted even if the  |
 ||                        ||   Crafter Profile war is present.                                     |
 ||                        || * ``stop``  Stops all Crafter CMS services in the same order as       |
 ||                        ||    they start.                                                        |
-||                        || * ``debug [withMongoDB] [withSolr] [skipElasticsearch] [skipMongoDB]``|
+||                        || * ``debug [withMongoDB] [skipElasticsearch] [skipMongoDB]``           |
 ||                        ||   Starts all Crafter CMS services with the JAVA remote                |
-||                        ||   debug port 5000 for Crafter Deployer, 5005 for Solr and 8000        |
+||                        ||   debug port 5000 for Crafter Deployer, and 8000                      |
 ||                        ||   for Apache Tomcat for the *Authoring Environment*                   |
 ||                        ||   Starts all Crafter CMS services with the JAVA remote debug port     |
-||                        ||   5001 for Crafter Deployer, 5006 for Solr and 9000 for Apache        |
+||                        ||   5001 for Crafter Deployer, and 9000 for Apache                      |
 ||                        ||   Tomcat for the *Delivery Environment*                               |
 ||                        ||   If withMongoDB is specified MongoDB will be started.                |
-||                        ||   If withSolr is specified Solr will be started.                      |
 ||                        ||   If skipElasticsearch is specified Elasticsearch will not be started.|
 ||                        ||   If skipMongoDB is specified MongoDB will not bestarted even if the  |
 ||                        ||   Crafter Profile war is present.                                     |
-||                        || * ``status`` Prints the status of Solr, Crafter Deployer and          |
-||                        ||    Crafter Studio (uptime, process id and version if applicable)      |
-||                        || * ``help``  Prints all options available                              |
 ||                        || * ``start_deployer``  Starts Deployer                                 |
 ||                        || * ``stop_deployer``  Stops Deployer                                   |
 ||                        || * ``debug_deployer``  Starts Deployer in debug mode                   |
-||                        || * ``start_solr``  Starts Solr                                         |
-||                        || * ``stop_solr``  Stops Solr                                           |
-||                        || * ``debug_solr``  Starts Solr in debug mode                           |
 ||                        || * ``start_elasticsearch``  Starts Elasticsearch                       |
 ||                        || * ``stop_elasticsearch``  Stops Elasticsearch                         |
 ||                        || * ``debug_elasticsearch``  Starts Elasticsearch in debug mode         |
@@ -112,18 +104,19 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 ||                        || * ``debug_tomcat``  Starts Apache Tomcat in debug mode                |
 ||                        || * ``start_mongodb``  Starts MongoDB                                   |
 ||                        || * ``stop_mongodb``  Stops MongoDB                                     |
+||                        || * ``status``  Prints the status of all Crafter CMS subsystems         |
 ||                        || * ``status_engine``  Prints the status of Crafter Engine              |
 ||                        || * ``status_studio``  Prints the status of Crafter Studio              |
 ||                        || * ``status_profile``  Prints the status of Crafter Profile            |
 ||                        || * ``status_social``  Prints the status of Crafter Social              |
 ||                        || * ``status_deployer``  Prints the status of Crafter Deployer          |
 ||                        || * ``status_search``  Prints the status of Crafter Search              |
-||                        || * ``status_solr``  Prints the status of Solr                          |
 ||                        || * ``status_elasticsearch``  Prints the status of Elasticsearch        |
 ||                        || * ``status_mariadb``  Prints the status of MariaDb                    |
 ||                        || * ``status_mongodb``  Prints the status of MongoDB                    |
 ||                        || * ``backup <name>``  Perform a backup of all data                     |
 ||                        || * ``restore <file>``  Perform a restore of all data                   |
+||                        || * ``upgradedb``  Perform database upgrade (mysql_upgrade)             |
 +-------------------------+------------------------------------------------------------------------+
 
 +-------------------------+----------------------------------------------------------------------+
@@ -146,13 +139,13 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 || **Description**        || Starts all needed Services to have a functional                     |
 ||                        || Crafter CMS *Authoring/Delivery Environment* with the JAVA remote   |
 ||                        || debug ports open and listening port 5000/5001 for Crafter Deployer, |
-||                        || 5005/5006 for Solr and 8000/9000 for Apache Tomcat                  |
+||                        || and 8000/9000 for Apache Tomcat                                     |
 +-------------------------+----------------------------------------------------------------------+
 
 +-------------------------+----------------------------------------------------------------------+
 || **Script**             || ``deployer.sh``                                                     |
 +-------------------------+----------------------------------------------------------------------+
-|| **Description**        || Script located in *$CRAFTER_HOME/crafter-deployer* which will       |
+|| **Description**        || Script located in *$CRAFTER_HOME/bin/crafter-deployer* which will   |
 ||                        || start,stop Crafter Deployer for the *Authoring/Delivery* environment|
 +-------------------------+----------------------------------------------------------------------+
 || **Synopsis**           || ``deployer.sh start|stop|debug|help``                               |
@@ -162,11 +155,11 @@ The Crafter CMS Authoring and Delivery scripts will help you on the basic startu
 ||                        || * ``stop``  Stops all Crafter CMS services in the same order as     |
 ||                        ||    they start.                                                      |
 ||                        || * ``debug`` Start all Crafter CMS services with the JAVA remote     |
-||                        ||    debug port 5000 for Crafter Deployer, 5005 for Solr and 8000     |
+||                        ||    debug port 5000 for Crafter Deployer, and 8000                   |
 ||                        ||    for Apache Tomcat for the *Authoring Environment*                |
 ||                        ||    Starts all Crafter CMS services with the JAVA remote debug port  |
-||                        ||    5001 for Crafter Deployer, 5006 for Solr and 9000 for Apache     |
-||                        ||    Tomcat for the *Delivery Environment*                            |
+||                        ||    5001 for Crafter Deployer, and 9000 for Apache Tomcat            |
+||                        ||    for the *Delivery Environment*                                   |
 ||                        || * ``help``  Prints script help                                      |
 +-------------------------+----------------------------------------------------------------------+
 
@@ -179,7 +172,7 @@ Here are the location environment variables used by ``crafter.sh``:
 +==========================+=====================================================================+
 || CRAFTER_HOME            || Crafter CMS *Authoring/Delivery* path                              |
 ||                         +---------------------------------------------------------------------+
-||                         || {Crafter-CMS-install-directory}/crafter-{env}/bin                  |
+||                         || {Crafter-CMS-install-directory}/crafter-{env}/                     |
 +--------------------------+---------------------------------------------------------------------+
 || CRAFTER_LOGS_DIR        || Crafter CMS logs file path                                         |
 ||                         +---------------------------------------------------------------------+
@@ -193,8 +186,12 @@ Here are the location environment variables used by ``crafter.sh``:
 ||                         +---------------------------------------------------------------------+
 ||                         || $CRAFTER_HOME/temp                                                 |
 +--------------------------+---------------------------------------------------------------------+
+|| CRAFTER_BACKUPS_DIR     || Crafter CMS backup directory path                                  |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_HOME/backups                                              |
++--------------------------+---------------------------------------------------------------------+
 
-Here are the environment variables used for hosts and ports in ``crafter(.sh/bat)``:
+Here are the environment variables used for hosts and ports in ``crafter.sh``:
 
 +--------------------------+---------------------------------------------------------------------+
 || Hosts and Ports         || Description                                                        |
@@ -208,14 +205,6 @@ Here are the environment variables used for hosts and ports in ``crafter(.sh/bat
 || MAIL_PORT               || Crafter CMS mail port                                              |
 ||                         +---------------------------------------------------------------------+
 ||                         || 25                                                                 |
-+--------------------------+---------------------------------------------------------------------+
-|| SOLR_HOST               || Solr host                                                          |
-||                         +---------------------------------------------------------------------+
-||                         || localhost                                                          |
-+--------------------------+---------------------------------------------------------------------+
-|| SOLR_PORT               || Solr port                                                          |
-||                         +---------------------------------------------------------------------+
-||                         || 8694                                                               |
 +--------------------------+---------------------------------------------------------------------+
 || ES_HOST                 || Elasticsearch host                                                 |
 ||                         +---------------------------------------------------------------------+
@@ -270,17 +259,13 @@ Here are the environment variables used for hosts and ports in ``crafter(.sh/bat
 ||                         || 8005                                                               |
 +--------------------------+---------------------------------------------------------------------+
 
-Here are the environment variables used for URLs in ``crafter(.sh/bat)``:
+Here are the environment variables used for URLs in ``crafter.sh``:
 
 +--------------------------+---------------------------------------------------------------------+
 || URLs                    || Description                                                        |
 || Variable Name           +---------------------------------------------------------------------+
 ||                         || Default Value                                                      |
 +==========================+=====================================================================+
-|| SOLR_URL                || Solr URL                                                           |
-||                         +---------------------------------------------------------------------+
-||                         || "http://$SOLR_HOST:$SOLR_PORT/solr"                                |
-+--------------------------+---------------------------------------------------------------------+
 || ES_URL                  || Elasticsearch URL                                                  |
 ||                         +---------------------------------------------------------------------+
 ||                         || "http://$ES_HOST:$ES_PORT"                                         |
@@ -317,10 +302,6 @@ Here are the environment variables used for Java options in ``crafter.sh``:
 || Variable Name           +---------------------------------------------------------------------+
 ||                         || Default Value                                                      |
 +==========================+=====================================================================+
-|| SOLR_JAVA_OPTS          || Solr Java options                                                  |
-||                         +---------------------------------------------------------------------+
-||                         || "-server -Xss1024K -Xmx1G"                                         |
-+--------------------------+---------------------------------------------------------------------+
 || ES_JAVA_OPTS            || Elasticsearch Java options                                         |
 ||                         +---------------------------------------------------------------------+
 ||                         || "-server -Xss1024K -Xmx1G"                                         |
@@ -343,11 +324,11 @@ Here are the environment variables used for Tomcat in ``crafter.sh``:
 +==========================+=====================================================================+
 || CATALINA_HOME           || Apache Tomcat files path                                           |
 ||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_HOME/apache-tomcat                                        |
+||                         || $CRAFTER_HOME/bin/apache-tomcat                                    |
 +--------------------------+---------------------------------------------------------------------+
 || CATALINA_PID            || Tomcat process id file save path                                   |
 ||                         +---------------------------------------------------------------------+
-||                         || $CATALINA_HOME/tomcat.pid                                          |
+||                         || $CATALINA_HOME/bin/tomcat.pid                                      |
 +--------------------------+---------------------------------------------------------------------+
 || CATALINA_LOGS_DIR       || Tomcat file logs path                                              |
 ||                         +---------------------------------------------------------------------+
@@ -360,10 +341,6 @@ Here are the environment variables used for Tomcat in ``crafter.sh``:
 || CATALINA_TMPDIR         || Tomcat temporary directory                                         |
 ||                         +---------------------------------------------------------------------+
 ||                         || $CRAFTER_TEMP_DIR/tomcat                                           |
-+--------------------------+---------------------------------------------------------------------+
-|| CRAFTER_APPLICATION_LOGS|| Crafter application log files path                                 |
-||                         +---------------------------------------------------------------------+
-||                         || $CATALINA_LOGS_DIR                                                 |
 +--------------------------+---------------------------------------------------------------------+
 
 Here are the environment variables used for Elasticsearch in ``crafter.sh``:
@@ -389,31 +366,14 @@ Here are the environment variables used for Elasticsearch in ``crafter.sh``:
 ||                         +---------------------------------------------------------------------+
 ||                         || $ES_HOME/elasticsearch.pid                                         |
 +--------------------------+---------------------------------------------------------------------+
-
-Here are the environment variables used for Solr in ``crafter.sh``:
-
-+--------------------------+---------------------------------------------------------------------+
-|| Solr                    || Description                                                        |
-|| Variable Name           +---------------------------------------------------------------------+
-||                         || Default Value                                                      |
-+==========================+=====================================================================+
-|| SOLR_HOME               || Solr home directory                                                |
+|| ES_USERNAME             || Elasticsearch username                                             |
 ||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_BIN_DIR/solr/server/solr                                  |
+||                         ||                                                                    |
 +--------------------------+---------------------------------------------------------------------+
-|| SOLR_INDEXES_DIR        || Solr indexes directory                                             |
+|| ES_PASSWORD             || Elasticsearch password                                             |
 ||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_DATA_DIR/indexes                                          |
+||                         ||                                                                    |
 +--------------------------+---------------------------------------------------------------------+
-|| SOLR_LOGS_DIR           || Solr log files directory                                           |
-||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_LOGS_DIR/solr                                             |
-+--------------------------+---------------------------------------------------------------------+
-|| SOLR_PID                || Solr process id file                                               |
-||                         +---------------------------------------------------------------------+
-||                         || $SOLR_INDEXES_DIR/solr.pid                                         |
-+--------------------------+---------------------------------------------------------------------+
-
 
 Here are the environment variables used for the Deployer in ``crafter.sh``:
 
@@ -424,7 +384,7 @@ Here are the environment variables used for the Deployer in ``crafter.sh``:
 +==========================+=====================================================================+
 || DEPLOYER_HOME           || Crafter Deployer jar files path                                    |
 ||                         +---------------------------------------------------------------------+
-||                         || $CRAFTER_HOME/crafter-deployer                                     |
+||                         || $CRAFTER_HOME/bin/crafter-deployer                                 |
 +--------------------------+---------------------------------------------------------------------+
 || DEPLOYER_DATA_DIR       || Deployer data files directory                                      |
 ||                         +---------------------------------------------------------------------+
@@ -491,8 +451,20 @@ Here are the environment variables used for MariaDb in ``crafter.sh``:
 ||                         +---------------------------------------------------------------------+
 ||                         ||                                                                    |
 +--------------------------+---------------------------------------------------------------------+
+|| MARIADB_USER            || MariaDb username                                                   |
+||                         +---------------------------------------------------------------------+
+||                         || crafter                                                            |
++--------------------------+---------------------------------------------------------------------+
+|| MARIADB_PASSWD          || MariaDb user password                                              |
+||                         +---------------------------------------------------------------------+
+||                         || crafter                                                            |
++--------------------------+---------------------------------------------------------------------+
+|| MARIADB_PID             || MariaDB process id file                                            |
+||                         +---------------------------------------------------------------------+
+||                         || $MARIADB_HOME/$HOSTNAME.pid                                        |
++--------------------------+---------------------------------------------------------------------+
 
-Here are the environment variables used for Git in ``crafter(.sh/bat)``:
+Here are the environment variables used for Git in ``crafter.sh``:
 
 +--------------------------+---------------------------------------------------------------------+
 || Git                     || Description                                                        |
@@ -504,6 +476,83 @@ Here are the environment variables used for Git in ``crafter(.sh/bat)``:
 ||                         || true                                                               |
 +--------------------------+---------------------------------------------------------------------+
 
+Here are the environment variables used for Management Tokens.
+Remember to update these per installation and provide these tokens to the status monitors:
+
++----------------------------+-------------------------------------------------------------------+
+|| Management Token          || Description                                                      |
+|| Variable Name             +-------------------------------------------------------------------+
+||                           || Default Value                                                    |
++============================+===================================================================+
+|| STUDIO_MANAGEMENT_TOKEN   || Authorization token for Studio                                   |
+||                           +-------------------------------------------------------------------+
+||                           || defaultManagementToken                                           |
++----------------------------+-------------------------------------------------------------------+
+|| ENGINE_MANAGEMENT_TOKEN   || Authorization token for Engine                                   |
+||                           +-------------------------------------------------------------------+
+||                           || defaultManagementToken                                           |
++----------------------------+-------------------------------------------------------------------+
+|| DEPLOYER_MANAGEMENT_TOKEN || Authorization token for Deployer                                 |
+||                           +-------------------------------------------------------------------+
+||                           || defaultManagementToken                                           |
++----------------------------+-------------------------------------------------------------------+
+|| SEARCH_MANAGEMENT_TOKEN   || Authorization token for Search                                   |
+||                           +-------------------------------------------------------------------+
+||                           || defaultManagementToken                                           |
++----------------------------+-------------------------------------------------------------------+
+|| PROFILE_MANAGEMENT_TOKEN  || Authorization token for Profile                                  |
+||                           +-------------------------------------------------------------------+
+||                           || defaultManagementToken                                           |
++----------------------------+-------------------------------------------------------------------+
+|| SOCIAL_MANAGEMENT_TOKEN   || Authorization token for Social                                   |
+||                           +-------------------------------------------------------------------+
+||                           || defaultManagementToken                                           |
++----------------------------+-------------------------------------------------------------------+
+
+Here are the environment variables used to encrypt and decrypt values inside configuration files:
+
++--------------------------+---------------------------------------------------------------------+
+|| Encryption              || Description                                                        |
+|| Variable Name           +---------------------------------------------------------------------+
+||                         || Default Value                                                      |
++==========================+=====================================================================+
+|| CRAFTER_ENCRYPTION_KEY  || Key used for encrypting properties                                 |
+||                         +---------------------------------------------------------------------+
+||                         || default_encryption_key                                             |
++--------------------------+---------------------------------------------------------------------+
+|| CRAFTER_ENCRYPTION_SALT || Salt used for encrypting properties                                |
+||                         +---------------------------------------------------------------------+
+||                         || default_encryption_salt                                            |
++--------------------------+---------------------------------------------------------------------+
+
+Here are the environment variables used to encrypt and decrypt values in the database:
+
++---------------------------------+---------------------------------------------------------------------+
+|| Encryption                     || Description                                                        |
+|| Variable Name                  +---------------------------------------------------------------------+
+||                                || Default Value                                                      |
++=================================+=====================================================================+
+|| CRAFTER_SYSTEM_ENCRYPTION_KEY  || Key used for encrypting database values                            |
+||                                +---------------------------------------------------------------------+
+||                                || <someDefaultKeyValue>                                              |
++---------------------------------+---------------------------------------------------------------------+
+|| CRAFTER_SYSTEM_ENCRYPTION_SALT || Salt used for encrypting database values                           |
+||                                +---------------------------------------------------------------------+
+||                                || <someDefaultSaltValue>                                             |
++---------------------------------+---------------------------------------------------------------------+
+
+Here are the configuration variables used in Crafter CMS:
+
++--------------------------+---------------------------------------------------------------------+
+|| Configuration           || Description                                                        |
+|| Variable Name           +---------------------------------------------------------------------+
+||                         || Default Value                                                      |
++==========================+=====================================================================+
+|| CRAFTER_ENVIRONMENT     || Name used for environment specific configurations in               |
+||                         || Studio, Engine and Deployer                                        |
+||                         +---------------------------------------------------------------------+
+||                         || default                                                            |
++--------------------------+---------------------------------------------------------------------+
 
 Let's look at an example on how to start an authoring environment using the scripts we discussed above.  To start the authoring environment, go to your Crafter CMS install folder then run the following:
 
@@ -524,10 +573,9 @@ To stop the authoring environment:
 Other Scripts
 ^^^^^^^^^^^^^
 
-For more information about Apache Tomcat, Solr, and Elasticsearch please refer to the following:
+For more information about Apache Tomcat, and Elasticsearch please refer to the following:
 
  * [Tomcat Script documentation](https://tomcat.apache.org/tomcat-8.5-doc/RUNNING.txt)
- * [Solr Script documentation](https://cwiki.apache.org/confluence/display/solr/Running+Solr)
  * [ElasticSEarch Script documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/starting-elasticsearch.html)
 
 
@@ -548,7 +596,7 @@ Here's a list of commands (Gradle tasks) available:
 || Command      || Description                              || Env Options || Module Options |
 || ``command``  ||                                          || ``env``     || ``module``     |
 +===============+===========================================+==============+=================+
-|| init         || Clones Crafter CMS                       || - None      || - None         |
+|| clone        || Clones Crafter CMS                       || - None      || - None         |
 +---------------+-------------------------------------------+--------------+-----------------+
 || build        || Build a module or an entire              || authoring   || - None         |
 ||              || environment                              ||             || - studio       |
@@ -604,8 +652,8 @@ Here's a list of commands (Gradle tasks) available:
 ||              ||                                          ||             || - plugin-maker |
 +---------------+-------------------------------------------+--------------+-----------------+
 || upgrade      || Upgrades the installed Tomcat version,   || - None      || - None         |
-||              || Solr scripts, etc, without deleting your ||             ||                |
-||              || data then builds and deploys             ||             ||                |
+||              || etc, without deleting your data then     ||             ||                |
+||              || builds and deploys                       ||             ||                |
 +---------------+-------------------------------------------+--------------+-----------------+
 || selfupdate   || Updates the Crafter CMS project (gradle) || - None      || - None         |
 +---------------+-------------------------------------------+--------------+-----------------+
@@ -617,7 +665,7 @@ Here's a list of commands (Gradle tasks) available:
     * If you don't specify the ``env`` parameter, it means all environments (where applicable).
     * In the current version of Crafter CMS, some services run in the same Web container, and that implies the stopping/starting of one of these services will cause other services to stop/start as well.
     * The Gradle task property ``moduleName`` accepts one or multiple module/s, separated by commas like this: ``./gradlew build -PmoduleName=search,studio``
-
+    * The ``clean`` command does not delete previously built environment folders ``crafter-authoring`` and ``crafter-delivery``. To build a fresh copy of these two, backup your custom data and delete both folders manually.
 
 Let's see some examples of running Gradle tasks here.
 
@@ -634,7 +682,7 @@ To build the authoring and delivery environments, run the following:
 The Gradle task above will:
 
 #. Delete any existing environments/module
-#. Download Apache Tomcat, Elasticsearch, Apache Solr and MongoDB (check the Gradle section on how to specify a version for each component)
+#. Download Apache Tomcat, Elasticsearch, and MongoDB (check the Gradle section on how to specify a version for each component)
 #. Build all Crafter CMS modules from the source (check the :ref:`git` section on how to update the source)
 #. Create the environment folders and copy all needed resources
 
@@ -759,15 +807,6 @@ In the section above, we discussed some of the Gradle tasks used for building, s
 
 Let's take a look at some examples of running a task.
 
-downloadSolr
-^^^^^^^^^^^^
-Downloads the configured Solr version and also verifies that the war file is ok against a sha1 signature.
-
-    .. code-block:: bash
-
-       ./gradlew downloadSolr
-
-
 downloadTomcat
 ^^^^^^^^^^^^^^
 Downloads the configured Tomcat version and also verifies that the zip file is ok against a sha1 signature.
@@ -795,8 +834,6 @@ Aside from the tasks that we can run, there are also some properties defined in 
 +---------------------------+--------------------------------------------------------------------+
 || ``groovy.version``       || Sets the groovy version to be downloaded used by                  |
 ||                          || *downloadGroovy* task                                             |
-+---------------------------+--------------------------------------------------------------------+
-|| ``solr.version``         || Sets the Solr version to be downloaded used by *downloadSolr* task|
 +---------------------------+--------------------------------------------------------------------+
 || ``elasticsearch.version``|| Sets the Elasticsearch version to be downloaded used by           |
 ||                          || *downloadElasticsearch* task.                                     |
@@ -848,10 +885,6 @@ Aside from the tasks that we can run, there are also some properties defined in 
 +-------------------------------------+----------------------------------------------------------+
 || ``authoring.elasticsearch.port``   || Authoring Elasticsearch port. Default value is 9201     |
 +-------------------------------------+----------------------------------------------------------+
-|| ``authoring.solr.port``            || Authoring Solr port. Default value is 8694              |
-+-------------------------------------+----------------------------------------------------------+
-|| ``authoring.solr.debug.port``      || Authoring Solr debug port. Default value is 5005        |
-+-------------------------------------+----------------------------------------------------------+
 || ``authoring.smtp.port``            || Authoring SMTP port. Default value is 25                |
 +-------------------------------------+----------------------------------------------------------+
 || ``authoring.mariadb.port``         || Authoring MariaDb port. Default value is 33306          |
@@ -885,10 +918,6 @@ Aside from the tasks that we can run, there are also some properties defined in 
 +------------------------------------+-----------------------------------------------------------+
 || ``delivery.elasticsearch.port``   || Delivery Elasticsearch port. Default value is 9202       |
 +------------------------------------+-----------------------------------------------------------+
-|| ``delivery.solr.port``            || Delivery Solr port. Default value is 8695                |
-+------------------------------------+-----------------------------------------------------------+
-|| ``delivery.solr.debug.port``      || Delivery Solr debug port. Default value is 5006          |
-+------------------------------------+-----------------------------------------------------------+
 || ``delivery.deployer.port``        || Delivery Deployer port. Default value is 9192            |
 +------------------------------------+-----------------------------------------------------------+
 || ``delivery.deployer.debug.port``  || Delivery Deployer debug port. Default value is 5001      |
@@ -909,8 +938,6 @@ Aside from the tasks that we can run, there are also some properties defined in 
 || ``overwriteConfig``          || Overwrite configurations. Default value is false              |
 +-------------------------------+----------------------------------------------------------------+
 || ``backupAndReplaceConfig``   || Backup and replace configurations. Default value is false     |
-+-------------------------------+----------------------------------------------------------------+
-|| ``withSolr``                 || Start Solr.  Default value is false                           |
 +-------------------------------+----------------------------------------------------------------+
 
 .. _git-properties:
@@ -938,11 +965,11 @@ Here's an example using one of the task properties, ``gitRepo``,  to get the lat
 
         ./gradlew update -Pcrafter.git.remote=upstream
 
-Here's another example on how to init, build and bundle from a given tag/branch.  Remember to clone the desired branch/tag of craftercms (As described in the next section :ref:`git`),  before running the command below:
+Here's another example on how to clone, build and bundle from a given tag/branch.  Remember to clone the desired branch/tag of craftercms (As described in the next section :ref:`git`),  before running the command below:
 
     .. code-block:: bash
 
-       ./gradlew init build deploy bundle -Pcrafter.git.branch={BRANCH}/{TAG NAME}
+       ./gradlew clone build deploy bundle -Pcrafter.git.branch={BRANCH}/{TAG NAME}
 
 Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.
 
@@ -961,15 +988,20 @@ Useful Git Commands
 
 Here are some useful Git commands for setting up our Crafter CMS project.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Copy Crafter CMS repository and initialize submodules
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  .. note::
+
+     You may notice a few ``.keep`` files in your repository.  Those ``.keep`` files are automatically generated by Studio when empty folders are created, since Git doesn't keep track of folders (and Studio does). It's best if you just leave them there and don't add them to ``.gitignore``
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Copy Crafter CMS repository and clone submodules
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     .. code-block:: bash
 
        git clone https://github.com/craftercms/craftercms.git
        cd craftercms
-       git submodule init
+       git submodule clone
 
 .. _update-submodules:
 
@@ -1016,6 +1048,6 @@ To clone the branch/tag of craftercms that you want to work with, run:
 
         git clone -b<branch> https://github.com/craftercms/craftercms/
 
-Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.  After cloning the desired branch, you can now init, build and bundle from a given tag/branch using the property `crafter.git.branch` as described in an earlier section :ref:`Git Properties<git-properties>`
+Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.  After cloning the desired branch, you can now clone, build and bundle from a given tag/branch using the property `crafter.git.branch` as described in an earlier section :ref:`Git Properties<git-properties>`
 
 

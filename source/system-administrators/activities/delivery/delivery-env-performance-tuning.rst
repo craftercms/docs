@@ -15,31 +15,23 @@ Server Requirements
 -------------------
 Minimum Installation
 
-    * 4GB of RAM + 4GB Swap Space or Virtual Memory
-    * 3GB JVM Memory (-Xms 1G -Xmx 3G)
-    * 4 CPU Cores
+	* 8GB of RAM + 8GB Swap Space or Virtual Memory
+	* 4GB JVM Memory (-Xms 1G -Xmx 4G)
+	* 4 CPU Cores
 
-Medium Installation
-
-    * 8GB of RAM + 8GB Swap Space or Virtual Memory
-    * 4GB JVM Memory (-Xms 1G -Xmx 4G)
-    * 4 CPU Cores
-
-Large Installations
+Medium Installations
 
 	* 16GB+ of RAM + 16GB Swap Space or Virtual Memory
 	* 8GB+ JVM Memory (-Xms 2G -Xmx 8G)
 	* 8+ CPU Cores
 
-Extra Large Installations
+Large Installations
 
 	* 32GB+ of RAM + 16GB Swap Space or Virtual Memory
-	* 16GB+ of JVM Memory (-Xms 2G -Xmx 16G)
+	* 16GB+ of JVM Memory (-Xms 4G -Xmx 16G)
 	* 16+ CPU Cores
 
 Horizontal scaling can be very effective in scaling out delivery of content.
-
-.. [TBD: add request ranges for the installations listed above]
 
 -------------------------------------
 High-level Performance Considerations
@@ -70,7 +62,7 @@ Testing Raw Performance
 
 	* Example
 
-      .. code-block:: guess
+      .. code-block:: bash
           :linenos:
 
           Timing cached reads:   24486 MB in  1.99 seconds = 12284.28 MB/sec
@@ -82,7 +74,7 @@ Testing Raw Performance
 
 	* Example
 
-      .. code-block:: guess
+      .. code-block:: bash
          :linenos:
 
          $ fio --randrepeat=1 --ioengine=libaio --gtod_reduce=1 --name=test --filename=test --bs=4k --iodepth=64 --size=4G --readwrite=randrw --rwmixread=75
@@ -110,7 +102,7 @@ Testing Raw Performance
 
 	* Example
 
-      .. code-block:: guess
+      .. code-block:: bash
          :linenos:
 
 	     $ ioping -c 10 .
@@ -178,7 +170,7 @@ Crafter CMS includes many subsystems that require additional file-handles be ava
 
 Our limits are:
 
-.. code-block:: guess
+.. code-block:: none
     :linenos:
 
     [Service]
@@ -240,3 +232,8 @@ Using Default Settings for Larger Installations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Installations are pre-configured with settings that assume an average/smaller sized machines. Further OS defaults are not managed by Crafter. To get the best performance you should consider and adjust for your specific environment, hardware, business needs and best practices.
 
+---------------------------------
+Securing your Crafter CMS Install
+---------------------------------
+
+Crafter CMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`securing-your-crafter-cms-install`

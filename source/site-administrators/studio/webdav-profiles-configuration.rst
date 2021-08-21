@@ -21,7 +21,7 @@ Sample
 ------
 
 .. code-block:: xml
-    :caption: {REPOSITORY_ROOT}/sites/SITENAME/config/studio/webdav/webdav.xml
+    :caption: CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/webdav/webdav.xml
     :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>
@@ -33,22 +33,32 @@ Sample
         <profile>
             <id/>
             <baseUrl/>
+            <deliveryBaseUrl/> (deprecated)
             <username/>
             <password/>
+            <preemptiveAuth/>
         </profile>
 
         id:	a unique id for this profile, this will be referenced in the
             control defined in the content type
         baseUrl: Full URL of the WebDAV server
+        deliveryBaseUrl: Full URL of the delivery server to override for files, deprecated and will be ignored
         username: WebDAV account username
         password: WebDAV account password
+        preemptiveAuth: Indicates if the client should use preemptiveAuth, defaults to false
     -->
     <webdav>
+      <webdav>
         <profile>
-            <id>webdav-default</id>
-            <baseUrl>...</baseUrl>
-            <username>...</username>
-            <password>...</password>
+          <id>webdav-default</id>
+          <baseUrl>...</baseUrl>
+          <username>...</username>
+          <password>...</password>
+          <preemptiveAuth>...</preemptiveAuth>
         </profile>
+      </webdav>
     </webdav>
 
+|
+
+  .. note:: Preemptive authentication may be needed if network timeouts are happening during uploads.  To enable preemptive authentication, simply set the option ``preemptiveAuth`` to ``true`` in the configuration file.

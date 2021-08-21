@@ -31,6 +31,11 @@ To add a remote repository for your site, click on the **New Repository** button
     :alt: Remote Repositories - New Repository
 	:align: center
 
+|
+
+   .. note::
+      For more information on errors that a user may encounter when using ssh keys with Crafter CMS, see :ref:`debugging_ssh_issues`
+
 --------------------
 Pull from Repository
 --------------------
@@ -55,6 +60,9 @@ You will then be given some options when Studio pulls from the remote repository
 Conflict Resolution
 ^^^^^^^^^^^^^^^^^^^
 When performing a pull from remote repository, Git is usually able to merge changes from the remote repository to your local files.  Sometimes, a line you edited in a file may have also been edited on the remote repository which will result in a merge conflict when you pull from the remote repository.  In this case, you will have to step in and tell Git what to do.  Crafter Studio supports resolving the conflict from the ``Remote Repositories`` dashboard.
+
+   .. note::
+      Remember not to use Studio as a git merge and conflict resolution platform. All merge conflicts should be resolved upstream before getting pulled into Studio.
 
 When you perform a pull from repository, and there's a conflict between your local files and the remote repository files, the message ``Pull from remote failed`` will appear:
 

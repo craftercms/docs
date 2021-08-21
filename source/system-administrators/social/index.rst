@@ -16,7 +16,7 @@ user generated content you can follow the :ref:`social-admin-console` guides.
 
 All configuration for Crafter Social is managed using a properties file:
 
-  ``$TOMCAT_HOME/shared/classes/crafter/social/extension/server-config.properties``
+  ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/social/extension/server-config.properties``
 
 ---------------------
 MongoDB Configuration
@@ -255,7 +255,7 @@ Enable ClamAV Virus Scanner
 1. Install ClamAV
 2. Edit the ClamAV configuration file to include the following properties:
 
-.. code-block:: guess
+.. code-block:: text
   :caption: clamd.conf
   :linenos:
 

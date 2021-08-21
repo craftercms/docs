@@ -14,17 +14,17 @@ System Requirements
 +------------------+-----------------------------------+-----------------------------------------+
 || Parameter Name  || Description                      || Prerequisites                          |
 +==================+===================================+=========================================+
-|| Crafter Studio  || Content authoring server         || Java 1.8                               |
+|| Crafter Studio  || Content authoring server         || Java 1.11                              |
 ||                 ||                                  || 4+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
-|| Crafter Engine  || Content delivery server          || Java 1.8                               |
+|| Crafter Engine  || Content delivery server          || Java 1.11                              |
 ||                 ||                                  || 2+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
-|| Crafter Profile || User profile and attribute store || Java 1.8                               |
+|| Crafter Profile || User profile and attribute store || Java 1.11                              |
 ||                 || (Optional component)             || MongoDB 3+ (included in the bundle)    |
 ||                 ||                                  || 1+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
-|| Crafter Social  || User Generated Content server    || Java 1.8                               |
+|| Crafter Social  || User Generated Content server    || Java 1.11                              |
 ||                 || (Optional component)             || MongoDB 3+ (included in the bundle)    |
 ||                 ||                                  || 1+ Gig of memory to JVM                |
 +------------------+-----------------------------------+-----------------------------------------+
@@ -42,10 +42,10 @@ Activities
    :maxdepth: 1
    :titlesonly:
 
-   activities/installing-and-verifying-prereq.rst
+   activities/installing.rst
    activities/backup-and-recovery.rst
    activities/clustering.rst
-   activities/configure-solrcloud-for-crafter.rst
+   devcontentops-toolkit/index.rst
    activities/logging.rst
    activities/production-environment-setup.rst
    activities/reindexing-content.rst
@@ -53,7 +53,12 @@ Activities
    activities/troubleshooting.rst
    activities/security/randomize-admin-passwd.rst
    activities/security/configure-studio-security.rst
-   activities/kubernetes/simple-kubernetes-deployment.rst
+   activities/security/configure-ssl-tls.rst
+   activities/security/setup-cloudfront-signed-cookies-in-crafter.rst
+   activities/kubernetes/index.rst
+   activities/language-support/add-new-language.rst
+   activities/encrypting-configuration-properties.rst
+   activities/management-token.rst
 
 *********************
 Upgrading Crafter CMS
@@ -75,10 +80,11 @@ Authoring
 
    activities/authoring/authoring-env-performance-tuning.rst
    activities/authoring/change-hosts-ports-on-your-auth-install.rst
-   activities/authoring/staging-env.rst
+   activities/authoring/staging.rst
    activities/authoring/setup-authoring-using-aws-ami.rst
    activities/sync-studio-database-with-repo.rst
    activities/authoring/navigating-main-menu.rst
+   activities/authoring/users-groups-management.rst
 
 ********
 Delivery
@@ -92,7 +98,7 @@ Delivery
    activities/delivery/configure-apache-vhost.rst
    activities/delivery/delivery-env-performance-tuning.rst
    activities/delivery/setup-site-for-delivery.rst
-   activities/delivery/setup-serverless-site.rst
+   activities/delivery/setup-serverless-delivery.rst
    activities/delivery/setup-delivery-using-aws-ami.rst
 
 *************************
@@ -122,6 +128,7 @@ Crafter Deployer
    deployer/processors-guide.rst
    deployer/templates-guide.rst
    deployer/debugging-deployer-issues.rst
+   deployer/elasticsearch-configuration-guide.rst
 
 
 ==============
@@ -135,6 +142,7 @@ Crafter Engine
    engine/configure-engine-multi-tenancy.rst
    engine/configure-engine-single-tenant.rst
    engine/turning-off-show-error.rst
+   engine/engine-configuration-overrides.rst
 
 
 ===============
@@ -147,17 +155,6 @@ Crafter Profile
 
    profile/index.rst
    profile/admin/index.rst
-
-
-==============
-Crafter Search
-==============
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   search/index.rst
 
 
 ==============
@@ -185,3 +182,8 @@ Crafter Studio
    studio/debugging-upgrade-issues.rst
    studio/create-site-with-link-to-remote-repo.rst
    studio/session-timeout-settings.rst
+   studio/publishing-blacklist.rst
+
+|
+
+  .. include:: /includes/scripts-templates-security.rst

@@ -16,21 +16,33 @@ Searching
 
 To do a search in Crafter Studio, point your mouse to the magnifying glass icon, which will then display the name of the icon, **Search** and then click on it.
 
-.. image:: /_static/images/page/page-toolbar-search.png
-    :width: 50 %
+*Search icon when previewing a page*
+
+.. image:: /_static/images/page/page-toolbar-search-1.png
+    :width: 45 %
     :align: center
-    :alt: Content Author - Search
+    :alt: Content Author - Search Icon Preview  Mode
+
+
+*Search icon when in the Dashboard*
+
+.. image:: /_static/images/page/page-toolbar-search-2.png
+    :width: 45 %
+    :align: center
+    :alt: Content Author - Search Icon Dashboard
+
+
 
 Search allows you to find objects in the system through keywords.  Each result is a content type of one sort or another.  An option to delete, edit/view and the content type is provided with each result.  You can view the results in a list or a grid, like below:
 
-.. image:: /_static/images/page/page-search.png
+.. image:: /_static/images/page/page-search.jpg
     :width: 95 %    
     :align: center
     :alt: Content Author - Page Search Results Grid View
 
 Here's the search results in list view:
 
-.. image:: /_static/images/page/search-results-list-view.png
+.. image:: /_static/images/page/search-results-list-view.jpg
     :width: 95 %
     :align: center
     :alt: Content Author - Page Search Results List View
@@ -52,7 +64,7 @@ Here's the search results in list view:
 
 **Result Selection**: Note the checkboxes for each result type .  Just as you can select multiple items on the dashboard and then interact with them in bulk, the same is true with search.  You will have checkboxes that allow you to choose many items and access to the context nav to take action on those items.  If you are selecting specific items for a control in a form you will be able to choose whatever number of items are expected by the control.
 
-.. image:: /_static/images/page/page-search-results-checkboxes.png
+.. image:: /_static/images/page/page-search-results-checkboxes.jpg
     :width: 95 %
     :align: center
     :alt: Content Author - Page Search Results Multiple Results Selected

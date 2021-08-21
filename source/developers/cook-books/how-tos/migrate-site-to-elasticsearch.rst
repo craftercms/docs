@@ -6,50 +6,20 @@
 Migrating a site from Solr to Elasticsearch
 ===========================================
 
-When upgrading to Crafter CMS 3.1 you can choose to keep existing sites without changes or update your code to use 
-Elasticsearch. For new sites it is highly recommended to always use Elasticsearch instead of Solr.
-
-.. _using-crafter-search-and-solr:
-
------------------------------
-Using Crafter Search and Solr
------------------------------
-
-All Crafter Search related services have been kept unchanged to assure that existing sites will work without any
-code change, however as Solr is no longer the default search engine it will not be started by default in any of the
-provided bundles.
-
-To start Solr you will need to add an extra parameter during startup:
-
-If you are using Gradle to start your environment you need to add a new parameter:
-
-``./gradlew start -PwithSolr=true``
-
-If you are using the startup, debug or crafter script you need to add a new parameter:
-
-``INSTALL_DIR/bin/startup.sh withSolr``
-
-``INSTALL_DIR/bin/debug.sh withSolr``
-
-``INSTALL_DIR/bin/crafter.sh start withSolr``
-
-Another option is to start Solr by itself using the crafter script:
-
-``INSTALL_DIR/bin/crafter.sh start_solr``
-
-Making sure that Solr is always started is the only requirement to keep existing sites unchanged.
+When upgrading to Crafter CMS 4.0 you need to update the code of all existing sites to use Elasticsearch if your site(s) were built to use Solr.
 
 -------------------------
 Updating to Elasticsearch
 -------------------------
 
-In case you decide to update your site to use Elasticsearch instead of Solr you can follow these steps:
+To update your site to use Elasticsearch instead of Solr you can follow these steps:
 
 #. Overwrite the target in the Deployer to use Elasticsearch instead of Solr
 #. Index all existing content in Elasticsearch
 #. Find all references to ``searchService`` in your FreeMarker templates and replace them with the Elasticsearch service
 #. Find all references to ``searchService`` in your Groovy scripts and replace them with the Elasticsearch service
 #. Delete the unused Solr core if needed (can be done using the Solr Admin UI or the ``data/indexes`` folder)
+#. Update ``craftercms-plugin.yaml`` to use Elasticsearch as the search engine
 
 ^^^^^^^^^^^^^^^^^^^^
 Overwrite the target
@@ -95,6 +65,8 @@ For delivery environments:
 .. note::
   For a detailed list of parameters see :ref:`crafter-deployer-api-target-create`
 
+|
+
 The create target operation will also create the new index in Elasticsearch.
 
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -120,8 +92,17 @@ Update the site code
 Because both Solr and Elasticsearch are based on Lucene, you will be able to keep most of your queries unchanged, 
 however features like sorting, facets and highlighting will require code changes.
 
-.. note:: If you are using any customization or any advance feature from Solr, you might not be able to easily update
-  your code to work with Elasticsearch, in this case you might need to consider running Solr as described before.
+.. note::
+  To take full advantage of Elasticsearch features it is recommended to replace query strings with other type of
+  queries provided by the Elasticsearch DSL
+
+|
+
+.. warning::
+  If you are using any customization or any advance feature from Solr, you will need to find an alternative using
+  Elasticsearch.
+
+|
 
 To update your code there are two possible approaches:
 
@@ -258,13 +239,13 @@ date math syntax described `here <https://www.elastic.co/guide/en/elasticsearch/
 
 **Example**
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Solr date math expression
 
   createdDate_dt: [ NOW-1MONTH/DAY TO NOW-2DAYS/DAY ]
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Elasticsearch date math expression
 
@@ -276,13 +257,13 @@ feature that replaces those fields `Multi-match query <https://www.elastic.co/gu
 
 **Example**
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Solr query for any field
 
   _text_: some keywords
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Elasticsearch query for any field (replacement for ``_text_``)
 
@@ -296,7 +277,7 @@ feature that replaces those fields `Multi-match query <https://www.elastic.co/gu
 
 Elasticsearch also offers the possibility to query fields with postfixes using wildcards
 
-.. code-block:: guess
+.. code-block:: text
   :linenos:
   :caption: Elasticsearch query for specific fields (replacement for ``_text_main_``)
 
@@ -308,3 +289,20 @@ Elasticsearch also offers the possibility to query fields with postfixes using w
       ]
     ]
   ]
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Update "craftercms-plugin.yaml" to use Elasticsearch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Your site has a ``craftercms-plugin.yaml`` file that contains information for use by Crafter CMS.
+We'll have to update the file to use Elasticsearch as the search engine.
+
+Edit your ``craftercms-plugin.yaml``, and change the following property:
+
+.. code-block:: yaml
+   :caption: *AUTHORING_INSTALL_DIR/data/repos/sites/YOURSITE/sandbox/craftercms-plugin.yaml*
+   :linenos:
+
+   searchEngine: Elasticsearch
+
+And make sure to commit your changes to ``craftercms-plugin.yaml``.

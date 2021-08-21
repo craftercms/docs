@@ -1,23 +1,41 @@
 :is-up-to-date: True
 
-.. index:: Clustering
+.. index:: Studio Clustering, Clustering
 
 .. _clustering:
 
-=================
-Studio Clustering
-=================
+==================================
+Studio Clustering |enterpriseOnly|
+==================================
 
-Any number of Crafter Studio instances can be clustered, where multiple servers, each with their own Crafter Studio installed, act like a single Crafter Studio to the end users.
+Crafter Studio can be clustered for high-availability. Two Crafter Studio instances are clustered as primary and secondary along with a Crafter Studio Arbiter to act as arbitrator.
 
-Crafter Studio by default is not configured for clustering.  This section describes how to configure Crafter Studio for clustering.  The configuration setup for one node or multiple nodes is the same.
+.. image:: /_static/images/system-admin/studio-enterprise-clustering.png
+   :alt: Crafter CMS - Studio Enterprise Clustering
+   :width: 60%
+   :align: center
 
+|
 
-.. image:: /_static/images/system-admin/studio-cluster.png
-    :alt: Crafter CMS Authoring Clustering
-    :width: 100%
-    :align: center
+When setting up a Studio cluster, a specific node needs to be started first as a
+reference point, then the other nodes (Studio and/or Arbiter) can join and form the cluster. This is known as cluster bootstrapping.
+Bootstrapping is the first step to introduce a node as Primary Component, which others will see as a reference
+point to sync up with.
 
+The Primary Component is a central concept on how to ensure that there is no opportunity for database inconsistency or
+divergence between the nodes in case of a network split. The Primary Component is a set of nodes that communicate
+with each other over the network and contains the majority of the nodes. There's no Primary Component yet when starting
+up a cluster, hence the need of the first node to bootstrap the Component. The other nodes will then look for the
+existing Primary Component to join.
+
+   .. note::
+      Studio nodes use an in-memory distributed data store to orchestrate the bootstrapping of the Primary Component, so
+      you don't need to do it. When the cluster is started, the nodes synchronize through the data store to
+      decide which one does the bootstrapping, and then the rest join the Primary Component.
+
+The cluster must have three nodes, two Studios and one ``Studio Arbiter``. This arbitrator functions as an odd node, to
+avoid split-brain situations and it can also provide a consistent application state snapshot, which is useful in
+making backups.
 
 ------------
 Requirements
@@ -25,127 +43,26 @@ Requirements
 
 Before we begin configuring Studio for clustering, the following must be setup:
 
-#. An external `MariaDB <https://mariadb.org/>`_ database, such as `Amazon RDS for MariaDB <https://aws.amazon.com/rds/mariadb>`_ , `Azure Database for MariaDB <https://azure.microsoft.com/en-us/services/mariadb/>`_ or setup a server with MariaDB which can be downloaded `here <https://downloads.mariadb.org/>`_.  Crafter Studio only supports MariaDB 10.1 for the shared database when clustering, so remember to use the MariaDB 10.1 Series
-#. A load balancer with sticky session support enabled
+* A DNS server directing traffic to the primary node, and can failover to the secondary node if the primary is not healthy
 
-----------------
-Clustering Setup
-----------------
+-----------------------------
+Configuring Studio Clustering
+-----------------------------
 
-To setup your Crafter Studio to be part of a cluster, open the ``studio-config-overrides.yaml`` file (found in your Authoring installation, under ``bin/apache-tomcat/shared/classes/crafter/studio/extension``)
+First, we'll take a look at an example of how to setup a two node cluster with Studio and a Studio Arbiter step by step, then, we'll take a look at an example of setting up Studio clustering using a Kubernetes deployment
 
-Below is a sample configuration to setup a server with Crafter Studio installed for clustering with the MariaDB database on 192.168.1.1 and the Crafter Studio being added to the cluster on 192.168.1.18:
+.. toctree::
+   :maxdepth: 1
 
-
-
-.. code-block:: yaml
-    :caption: bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml
-    :linenos:
-
-    ##################################################
-    ##                 Clustering                   ##
-    ##################################################
-    #-----------------------------------------------------------------------------
-    # IMPORTANT: When enabling clustering, please specify the environment variable
-    # SPRING_PROFILES_ACTIVE=crafter.studio.externalDb in your crafter-setenv.sh
-    # (or Docker/Kubernetes env variables). This will stop studio from starting
-    # its embedded DB.
-    # -----------------------------------------------------------------------------
-    # Clustering requires an external (not embedded) database, configure it below
-    # External MariaDB database connection string
-    studio.db.url: jdbc:mariadb://${env:MARIADB_HOST}:${env:MARIADB_PORT}/crafter?user=${env:MARIADB_USER}&password=${env:MARIADB_PASSWD}
-    # External MariaDB database connection string used to initialize database
-    # - If using a database with an already created schema and user (like AWS RDS):
-    # studio.db.initializer.url: ${studio.db.url}
-    # - If using a an empty database with root access to it:
-    studio.db.initializer.url: jdbc:mariadb://${env:MARIADB_HOST}:${env:MARIADB_PORT}?user=root&password=${env:MARIADB_ROOT_PASSWD}
-
-    # Cluster Syncers
-    # Sandbox Sync Job interval in milliseconds which is how often to sync the work-area
-    studio.clustering.sandboxSyncJob.interval: 2000
-    # Published Sync Job interval in milliseconds which is how often to sync the published repos
-    studio.clustering.publishedSyncJob.interval: 60000
-    # Cluster member after heartbeat stale for amount of minutes will be declared inactive
-    studio.clustering.heartbeatStale.timeLimit: 5
-    # Cluster member after being inactive for amount of minutes will be removed from cluster
-    studio.clustering.inactivity.timeLimit: 5
-
-    # Cluster member registration, this registers *this* server into the pool
-    # Cluster node registration data, remember to uncomment the next line
-    studio.clustering.node.registration:
-    #  this server's local address (reachable to other cluster members)
-      localAddress: ${env:CLUSTER_NODE_ADDRESS}
-    #  authentication type to access this server's local repository
-    #  possible values
-    #   - none (no authentication needed)
-    #   - basic (username/password authentication)
-    #   - key (ssh authentication)
-      authenticationType: basic
-    #  username to access this server's local repository
-      username: user
-    #  password to access this server's local repository
-      password: SuperSecurePassword
-    #  private key to access this server's local repository (multiline string)
-    #  privateKey: |
-    #    -----BEGIN PRIVATE KEY-----
-    #    privateKey
-    #    -----END PRIVATE KEY-----
-
-|
-
-Modify the values in the clustering section of your ``studio-config-overrides.yaml`` file with values from your setup and save the file.
-
-Notice the environment variables used in the configuration above.  The next step is to setup those environment variables above.  To setup the environment variables, open the ``crafter-setenv.sh`` file (found in your Authoring installation, under ``bin``) and modify the values of the variables listed below with values from your setup and save the file.  Remember to uncomment the ``SPRING_PROFILES_ACTIVE`` environment variable since we are using an external database.
-
-.. code-block:: sh
-   :caption: bin/crafter-setenv.sh
-   :linenos:
-
-   # -------------------- Spring Profiles --------------------
-   # Uncomment to enable an external DB for Studio and stop the embedded DB
-   export SPRING_PROFILES_ACTIVE=crafter.studio.externalDb
-
-   .
-   .
-   .
-   # -------------------- Hosts and ports --------------------
-   export MARIADB_HOST=${MARIADB_HOST:="192.168.1.1"}
-   export MARIADB_PORT=${MARIADB_PORT:="3306"}
-
-   # -------------------- MariaDB variables ------------------
-   export MARIADB_ROOT_PASSWD=
-
-   # -------------------- Clustering variables --------------------
-   export MARIADB_USER="crafter"
-   export MARIADB_PASSWD="crafter"
-   export CLUSTER_NODE_ADDRESS=${CLUSTER_NODE_ADDRESS:="192.168.1.18"}
-
-|
-
-After making all the necessary modifications, start Studio.
+   clustering/studio-clustering-two-nodes-with-arbiter
+   kubernetes/studio-clustering-with-kubernetes-deployment
 
 
-------------
-Cluster Menu
-------------
+-------
+How-tos
+-------
 
-To view nodes in the cluster in your browser, click on **Main Menu** on the top right, then click on **Cluster** from the menu on the left.  In the image below, we have one node in the cluster with local address 192.168.1.18 and authentication type used is basic:
+.. toctree::
+   :maxdepth: 1
 
-.. image:: /_static/images/system-admin/studio-cluster-1node.png
-    :alt: Crafter CMS Authoring Cluster with One Node
-    :width: 100%
-    :align: center
-
-As you start up new Crafter Studio nodes, they will automatically join the cluster, the **Cluster** menu will list them like below:
-
-.. image:: /_static/images/system-admin/studio-cluster-2node.png
-    :alt: Crafter CMS Authoring Cluster with Two Node
-    :width: 100%
-    :align: center
-
-In the cluster screen, it also gives an indication whether a node is **ACTIVE** (healthy) or **INACTIVE** (not healthy).  When a node is **INACTIVE**, the user is given an option to delete the node from the cluster immediately, or it will be automatically removed in time.
-
-.. image:: /_static/images/system-admin/studio-cluster-inactive-node.png
-    :alt: Crafter CMS Authoring Cluster with an Inactive Node
-    :width: 100%
-    :align: center
+   clustering/changing-git-url-format-in-cluster

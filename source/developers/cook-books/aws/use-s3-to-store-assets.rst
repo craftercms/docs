@@ -15,6 +15,16 @@ explains how to:
 * Upload documents to the S3 bucket using the AWS data sources and item selector control in Studio.
 * Generate public links that users can use to access these documents.
 
+|
+|
+
+   .. note::
+      The preferred way to store S3 files is to use the Blob Store since it can handle multiple buckets and is completely integrated in Crafter Studio, allowing you to upload and publish files in S3 as if they were in the local repo.
+
+      For more information on Blob Store, see :ref:`blob-stores-configuration`
+
+      For an example of setting up a blob store, see :ref:`here <publishing-assets-in-external-storage-example>`
+
 -------------
 Prerequisites
 -------------
@@ -60,15 +70,18 @@ bucket name for the actual bucket where you're storing the documents):
 
    <?xml version="1.0" encoding="UTF-8"?>
    <aws>
-     <profile>
-       <id>s3-default</id>
-       <credentials>
-         <accessKey>XXXXXXXXXX</accessKey>
-         <secretKey>XXXXXXXXXXXXXXXXXXXX</secretKey>
-       </credentials>
-       <region>us-east-1</region>
-       <bucketName>mybucket</bucketName>
-     </profile>
+     <version>2</version>
+     <s3>
+       <profile>
+         <id>s3-default</id>
+         <credentials>
+           <accessKey>XXXXXXXXXX</accessKey>
+           <secretKey>XXXXXXXXXXXXXXXXXXXX</secretKey>
+         </credentials>
+         <region>us-east-1</region>
+         <bucketName>mybucket</bucketName>
+       </profile>
+     </s3>
    </aws>
 
 |
@@ -110,7 +123,8 @@ data source, to the ``Page - Article`` content type. To do this:
     the ``Templates`` > ``web`` > ``pages`` > ``article.ftl``, add the following lines after the
     ``<#list contentModel.sections.item as item>...</#list>`` lines:
 
-    .. code-block:: guess
+    .. code-block:: html
+       :force:
        :linenos:
 
        <#if contentModel.attachments??>

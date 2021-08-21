@@ -17,7 +17,7 @@ Content Types in Crafter Studio
 Content Type Management in Crafter Studio is located in the |siteConfig|.
 
 .. image:: /_static/images/content-model/site-config-link.png
-	:width: 40%
+	:width: 30%
 	:alt: Site Config Link
 	:align: center
 
@@ -46,8 +46,8 @@ Content Type Model Definition
 -----------------------------
 Content models are defined via Crafter Studio's graphical modeling tool under Content Types:
 
-.. image:: /_static/images/content-model/content-type-management.png
-	:width: 50%
+.. image:: /_static/images/content-model/content-type-management.jpg
+	:width: 70%
 	:alt: Site Config - Content Types
 	:align: center
 
@@ -56,7 +56,7 @@ Content models are defined via Crafter Studio's graphical modeling tool under Co
 You can now either create a new content type or open an existing type. Creating a new content type brings up a dialog that requests some basic content type information.
 
 .. image:: /_static/images/content-model/create-content-type-1.png
-	:width: 40%
+	:width: 30%
 	:alt: Site Config - Create Content Type
 	:align: center
 
@@ -76,7 +76,7 @@ You now specify:
 Form Builder Basics
 ^^^^^^^^^^^^^^^^^^^
 
-.. figure:: /_static/images/content-model/create-content-type-2.png
+.. figure:: /_static/images/content-model/create-content-type-2.jpg
 	:alt: Content Type Editor
 	:align: center
 
@@ -100,7 +100,8 @@ Crafter Studio's Form Builder
 ||       || the selected item.                                                                   |
 +--------+---------------------------------------------------------------------------------------+
 || 4     || Form Controls: This is a list of available form controls for you to build your own   |
-||       || form with. Note that the list has a scrollbar for many types of useful controls.     |
+||       || form with. Note that the list can be expanded or collapsed and a search can also be  |
+||       || performed instead of scrolling through the list.                                     |
 ||       || Controls can be dragged from the controls list onto the form builder.                |
 +--------+---------------------------------------------------------------------------------------+
 || 5     || Data Sources: Shows the list of available data sources that can be attached to this  |
@@ -131,9 +132,12 @@ Properties of Content Types
 
 Let's select the content type itself, by clicking on the content type name at the top of the Form Builder and explore its properties.
 
-.. figure:: /_static/images/content-model/create-content-type-3.png
-	:alt: Properties Explorer
+.. image:: /_static/images/content-model/create-content-type-3.png
+    :width: 50%
+    :alt: Properties Explorer
 	:align: center
+
+|
 
 The fields available at this level are:
 
@@ -154,7 +158,8 @@ The fields available at this level are:
 || Configuration|| Contains config.xml which holds information about the content type such as the|
 ||              || limit where content can be created, is it previewable, etc.                   |
 +---------------+--------------------------------------------------------------------------------+
-|| Controller   ||                                                                               |
+|| Controller   || Contains controller.groovy which provides an extension/hook to authoring      |
+||              || lifecycle events.                                                             |
 +---------------+--------------------------------------------------------------------------------+
 || Display      || View template to use when rendering this content                              |
 || Template     ||                                                                               |
@@ -188,9 +193,9 @@ Limiting where a content type can be created is through the Configuration Proper
     :linenos:
 
     <paths>
-        <includes>
-            <pattern>REG_EXP_HERE</pattern>
-        </includes>
+      <includes>
+        <pattern>REG_EXP_HERE</pattern>
+      </includes>
     </paths>
 
 |
@@ -201,9 +206,9 @@ OR
     :linenos:
 
     <paths>
-	    <excludes>
-		    <pattern>REG_EXP_HERE</pattern>
-	    </excludes>
+      <excludes>
+        <pattern>REG_EXP_HERE</pattern>
+      </excludes>
     </paths>
 
 |
@@ -214,13 +219,16 @@ We'll look at an example of limiting where you can create content from the Websi
 
 From the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Content Types** then either create a new content type or open an existing content type.  In the image below, we have the content type **Page - Article** open for editing.  Go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name *config.xml*, click on that pencil to edit.
 
-.. figure:: /_static/images/content-model/form-engine-prop-configuration.png
+.. figure:: /_static/images/content-model/form-engine-prop-configuration.jpg
     :alt: Form Engine Properties Configuration
 	:align: center
 
+|
+
 To limit where this particular content type can be created, the tags, <paths><includes><pattern>some_regex_pattern</pattern></includes></paths> are included towards the bottom of the file.  Here, we can see that content type **Page - Article** can be created anywhere under */site/website/articles*
 
-.. figure:: /_static/images/content-model/form-engine-prop-config-file.png
+.. figure:: /_static/images/content-model/form-engine-prop-config-file.jpg
+    :width: 60%
     :alt: Form Engine Properties Configuration File config.xml
     :align: center
 
@@ -230,16 +238,16 @@ To limit where this particular content type can be created, the tags, <paths><in
     :linenos:
 
     <paths>
-        <includes>
-            <pattern>^/site/website/articles/.*</pattern>
-        </includes>
+      <includes>
+        <pattern>^/site/website/articles/.*</pattern>
+      </includes>
     </paths>
 
 |
 
-To see how the above tags/example works, go to the **Sidebar** and right click on the **Home** folder and select **New Content**.  Notice that content type **Page - Article** is not available from the content types listed.
+To see how the above tags/example works, go to the **Sidebar** and right click on the **Home** folder and select **Create Content**.  Notice that content type **Page - Article** is not available from the content types listed.
 
-.. figure:: /_static/images/content-model/form-engine-prop-config-sample-no.png
+.. figure:: /_static/images/content-model/form-engine-prop-config-sample-no.jpg
     :alt: Form Engine Properties Config File "Page - Articles" Not Available
     :align: center
 
@@ -247,7 +255,7 @@ To see how the above tags/example works, go to the **Sidebar** and right click o
 
 From the **Sidebar** again, navigate from the **Pages** folder to the /Home/articles/2016/12/ folder then right click and select **New Content**, notice that the content type **Page - Article** is available from the list.
 
-.. figure:: /_static/images/content-model/form-engine-prop-config-sample-yes.png
+.. figure:: /_static/images/content-model/form-engine-prop-config-sample-yes.jpg
     :alt: Form Engine Properties Config File "Page - Articles" Available
     :align: center
 
@@ -266,26 +274,28 @@ Enabling cascade on delete is configured through the content type **Configuratio
     :linenos:
 
     <delete-dependencies>
-	    <delete-dependency>
-		    <pattern>REG_EXP_HERE</pattern>
-		    <remove-empty-folder>false</remove-empty-folder>
-	    </delete-dependency>
+      <delete-dependency>
+        <pattern>REG_EXP_HERE</pattern>
+        <remove-empty-folder>false</remove-empty-folder>
+      </delete-dependency>
     </delete-dependencies>
+
+|
 
 We'll look at an example of how to enable cascade on delete on the **Page - Article** content type in the Website_editorial blueprint.
 
 From the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Content Types**, then **Open an existing content type**.  We will select the content type **Page - Article** for editing.  Next, go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name **config.xml**, click on that pencil to edit.
 
-We're going to enable cascade on delete for articles (**Page - Article** content type) containing images under ``/static-assets/images/page``, and we'll also delete empty folders under ``/static-assets/images/page`` by adding the following code in the **config.xml** file:
+We're going to enable cascade on delete for articles (**Page - Article** content type) containing images under ``/static-assets/item/images``, and we'll also delete empty folders under ``/static-assets/item/images`` by adding the following code in the **config.xml** file:
 
 .. code-block:: xml
     :linenos:
 
     <delete-dependencies>
-	    <delete-dependency>
-		    <pattern>(^/static-assets/images/page/.*)</pattern>
-		    <remove-empty-folder>true</remove-empty-folder>
-	    </delete-dependency>
+      <delete-dependency>
+        <pattern>(^/static-assets/item/images/.*)</pattern>
+        <remove-empty-folder>true</remove-empty-folder>
+      </delete-dependency>
     </delete-dependencies>
 
 |
@@ -298,9 +308,10 @@ To see cascade on delete in action, let's create a new article (**Page - Article
 
 |
 
-Let's look at the dependencies of our newly created article, where we expect the image under the ``static-assets/images/page`` will be deleted when we delete the article since we have configured cascade on delete for content type **Page - Article** for items under the directory ``static-assets/images/page``:
+Let's look at the dependencies of our newly created article, where we expect the image under the ``static-assets/items/images/2021/01/26`` will be deleted when we delete the article since we have configured cascade on delete for content type **Page - Article** for items under the directory ``static-assets/item/images``:
 
 .. figure:: /_static/images/content-model/new-article-dependencies.png
+    :width: 80%
     :alt: New article with image uploaded dependencies
     :align: center
 
@@ -326,12 +337,12 @@ Enabling copy dependencies is configured through the content type **Configuratio
 .. code-block:: xml
     :linenos:
 
-        <copy-dependencies>
-            <copy-dependency>
-                <pattern>REG_EXP_HERE</pattern>
-                <target>FOLDER_FOR_COPIES</target>
-            </copy-dependency>
-        </copy-dependencies>
+    <copy-dependencies>
+      <copy-dependency>
+        <pattern>REG_EXP_HERE</pattern>
+        <target>FOLDER_FOR_COPIES</target>
+      </copy-dependency>
+    </copy-dependencies>
 
 |
 
@@ -344,22 +355,23 @@ We're going to enable copy dependencies for articles (**Page - Article** content
 .. code-block:: xml
     :linenos:
 
-        <copy-dependencies>
-            <copy-dependency>
-                <pattern>(^/static-assets/images/.*)</pattern>
-                <target>/static-assets/images/articles/</target>
-            </copy-dependency>
-        </copy-dependencies>
+    <copy-dependencies>
+      <copy-dependency>
+        <pattern>(^/static-assets/images/.*)</pattern>
+        <target>/static-assets/images/articles/</target>
+      </copy-dependency>
+    </copy-dependencies>
 
 |
 
-Click on **Update**, then save changes made to the content type by clicking on **Save**.
+Click on **Save & Close**, then save changes made to the content type by clicking on **Save**.
 
 To see copy dependencies in action, let's copy an article under one of the article folders from the **Sidebar**.  First, we'll create the folder ``articles`` under ``/static-assets/images``.  Next, we'll navigate to ``articles/2016/12/Top Books For Young Women``.  Right click on the article and select **Copy**.  Navigate to ``articles/2016/7``, right click on the folder and select **Paste**.
 
 Let's look at the dependencies of our copied article, where we expect a copy of the image under the ``static-assets/images/articles`` will be located since we have configured cop dependencies for content type **Page - Article** for items under the directory ``static-assets/images``:
 
 .. figure:: /_static/images/content-model/copied-article-dependencies.png
+    :width: 80%
     :alt: Copy of article with copy of image
     :align: center
 
@@ -389,7 +401,7 @@ From the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Con
 
 Scroll to the ``Data Sources`` section, and click on **Upload Images**.  Notice the value in the **Repository Path** property, which is the path where to store the new file uploaded from desktop.
 
-.. figure:: /_static/images/content-model/item-specific-dependencies.png
+.. figure:: /_static/images/content-model/item-specific-dependencies.jpg
     :alt: Modeling content for item specific dependencies
     :align: center
 
@@ -414,6 +426,7 @@ The macros **{yyyy}**, **{mm}** and **{dd}** are available for content modelers 
 Let's take a look at item specific dependencies in action for copying and deleting content.  Let's create a new article (**Page-Article** content type) under one of the article folders in the **Sidebar**.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.  Note the location where the image is uploaded.
 
 .. figure:: /_static/images/content-model/new-article-item-dependencies.png
+    :width: 40%
     :alt: New article created with image uploaded from Desktop
     :align: center
 
@@ -424,6 +437,7 @@ From the **Sidebar**, navigate to the newly created article.  Right click on the
 Let's look at the dependencies of our copied article, where we expect a copy of the image under the ``/static-assets/item/images/2018/05/17`` will be located since we have taken advantage of the item specific dependencies regex pattern of ``/static-assets/item/*``.
 
 .. figure:: /_static/images/content-model/copied-article-item-dependencies.png
+    :width: 80%
     :alt: Copy of image uploaded from Desktop created when article was copied in dependencies
     :align: center
 
@@ -432,6 +446,7 @@ Let's look at the dependencies of our copied article, where we expect a copy of 
 Let's also take a look at the ``static-assets`` folder to see the copy of the uploaded image
 
 .. figure:: /_static/images/content-model/copied-article-sidebar.png
+    :width: 40%
     :alt: Copy of image uploaded from Desktop created when article was copied in Sidebar
     :align: center
 
@@ -461,6 +476,7 @@ Quick Create
 Quick create allows content authors to create content with as few clicks as possible through a button from the context nav for configured content types.
 
 .. figure:: /_static/images/content-model/quick-create-button.png
+    :width: 70%
     :alt: Context Nav showing the quick create button
     :align: center
 
@@ -469,6 +485,7 @@ Quick create allows content authors to create content with as few clicks as poss
 Let's take a look at an example on how to configure a content type to be available from the quick create button in the context nav for authors using the out of the box blueprint **Website Editorial**.  In the image below, we have a site named **mysite** with the quick create button expanded.  Notice that we have one content type available for quick create, the **Page - Article** content type.
 
 .. figure:: /_static/images/content-model/quick-create-btn-expanded.png
+    :width: 40%
     :alt: Context Nav showing the expanded quick create button
     :align: center
 
@@ -479,6 +496,7 @@ If you look at the site tree as shown above, most of the content (the articles) 
 To setup quick create for a content type, from the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Content Types**, then click on **Open Existing Type**.  We will select the content type **Page - Article** for editing.  Next, go to the **Properties Explorer** and scroll to the **Quick Create** section of the properties.
 
 .. figure:: /_static/images/content-model/quick-create-properties.png
+    :width: 50%
     :alt: Page - Article Content Type Quick Create Properties
     :align: center
 
@@ -488,11 +506,11 @@ Check the **Show in Quick Create** property to make the content type available f
 
 In the **Destination Path Pattern**, fill in the path pattern where the content created from quick create will be stored.  For our example, notice that the articles are arranged in the following folder structure:
 
-.. code-block:: guess
+.. code-block:: text
 
    /articles
-       /{year}
-           /{month}
+     /{year}
+       /{month}
 
 |
 
@@ -501,6 +519,7 @@ We will then put in ``/site/website/articles/{year}/{month}`` as the path patter
 Below is the site tree after using the quick create button to create a new article titled ``New article using quick create``, where the year and month folders were created for the new article using the value in the ``Destination Path Pattern`` property of the content type.
 
 .. figure:: /_static/images/content-model/quick-create-article-created.png
+    :width: 40%
     :alt: Article created using quick create
     :align: center
 
@@ -513,8 +532,11 @@ Form Controls
 Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. Crafter CMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`form-engine-control`.
 
 .. figure:: /_static/images/content-model/form-engine-controls.png
+    :width: 40%
     :alt: Form Engine Controls
 	:align: center
+
+|
 
 Each Form Control type has it's own properties and constraints.  Some constraints are common, like "Variable Name" and "Required" while others apply only to the type, e.g. Height and Width limitations on the Image Picker control.  
 
@@ -536,39 +558,90 @@ Every Form Control has a Variable Name property.  The Variable Name is used by t
 #. Use regex constraints on input boxes to enforce additional validation rules
 #. Do not use Reserved names.
 
+.. _reserved-variable-names:
+
 **Reserved Variable Names**
 
 The following variable names are used by Crafter CMS.
 
-+-------------------+----------------------------------------------------------+
-|| Variable Name    || Description                                             |
-+===================+==========================================================+
-|| file-name        || Used by the File Name and Auto File Name control.       |
-+-------------------+----------------------------------------------------------+
-|| internal-name    || Used by Crafter Studio to label the content object      |
-+-------------------+----------------------------------------------------------+
-|| placeInNav       || Used by the Page Order control.                         |
-+-------------------+----------------------------------------------------------+
-|| disabled         || Used to logically remove an object in content delivery. |
-+-------------------+----------------------------------------------------------+
-|| expired          || Used to logically remove an object after date           |
-+-------------------+----------------------------------------------------------+
-|| objectId         || UUID. Auto assigned by Crafter                          |
-+-------------------+----------------------------------------------------------+
-|| objectGroupId    || First part of objectId. Auto assigned by Crafter        |
-+-------------------+----------------------------------------------------------+
-|| createdDate      || create date. Auto assigned by Crafter                   |
-+-------------------+----------------------------------------------------------+
-|| lastModifiedDate || Last modified date. Auto assigned by Crafter            |
-+-------------------+----------------------------------------------------------+
-|| content-type     || Content type name                                       |
-+-------------------+----------------------------------------------------------+
-|| display-template || Path to default template for type                       |
-+-------------------+----------------------------------------------------------+
-|| merge-strategy   || Crafter Core/Engine "Merge Strategy" for content type   |
-+-------------------+----------------------------------------------------------+	 
-|| id               || reserved by Solr                                        |
-+-------------------+----------------------------------------------------------+
++----------------------+------------------------------------------------------------------+
+|| Variable Name       || Description                                                     |
++======================+==================================================================+
+|| file-name*          || Used by the File Name and Auto File Name control.               |
++----------------------+------------------------------------------------------------------+
+|| internal-name       || Used by Crafter Studio to label the content object              |
++----------------------+------------------------------------------------------------------+
+|| placeInNav          || Used by the Page Order control.                                 |
++----------------------+------------------------------------------------------------------+
+|| disabled            || Used to logically remove an object in content delivery.         |
++----------------------+------------------------------------------------------------------+
+|| expired             || Used to logically remove an object after date                   |
++----------------------+------------------------------------------------------------------+
+|| expired_dt          || Used to logically remove an object after date                   |
++----------------------+------------------------------------------------------------------+
+|| objectId            || UUID. Auto assigned by Crafter                                  |
++----------------------+------------------------------------------------------------------+
+|| objectGroupId       || First part of objectId. Auto assigned by Crafter                |
++----------------------+------------------------------------------------------------------+
+|| createdDate         || create date. Auto assigned by Crafter                           |
++----------------------+------------------------------------------------------------------+
+|| createdDate_dt      || Alternate name for create date. Auto assigned by Crafter        |
++----------------------+------------------------------------------------------------------+
+|| lastModifiedDate    || Last modified date. Auto assigned by Crafter                    |
++----------------------+------------------------------------------------------------------+
+|| lastModifiedDate_dt || Alternate name for last modified date. Auto assigned by Crafter |
++----------------------+------------------------------------------------------------------+
+|| content-type        || Content type name                                               |
++----------------------+------------------------------------------------------------------+
+|| display-template    || Path to default template for type                               |
++----------------------+------------------------------------------------------------------+
+|| merge-strategy      || Crafter Core/Engine "Merge Strategy" for content type           |
++----------------------+------------------------------------------------------------------+
+|| id                  || reserved for a unique identifier                                |
++----------------------+------------------------------------------------------------------+
+|| authorizedRoles     || Used to restrict pages based on roles                           |
++----------------------+------------------------------------------------------------------+
+|| role                || Contains the role required to access a page                     |
++----------------------+------------------------------------------------------------------+
+|| mime-type           || Mime-type name                                                  |
++----------------------+------------------------------------------------------------------+
+|| force-https         || HTTPS connection needs to be forced to access the page          |
++----------------------+------------------------------------------------------------------+
+|| navLabel            || Navigation label                                                |
++----------------------+------------------------------------------------------------------+
+|| redirect-url        || Redirect URL                                                    |
++----------------------+------------------------------------------------------------------+
+|| crafterSite         || Used to set the site value                                      |
++----------------------+------------------------------------------------------------------+
+|| localId             || Name of the field for paths.  Used by the deployer              |
++----------------------+------------------------------------------------------------------+
+|| rootId              || Root Id name.  Used by the deployer                             |
++----------------------+------------------------------------------------------------------+
+|| includedDescriptors || Included descriptors field name.  Used by the deployer          |
++----------------------+------------------------------------------------------------------+
+|| crafterPublishedDate|| The name for the publish date field.  Used by the deployer      |
++----------------------+------------------------------------------------------------------+
+|| disableFlattening   || Used to indicate if XML flattening should be disabled when      |
+||                     || indexing XML. Used by the deployer                              |
++----------------------+------------------------------------------------------------------+
+|| content             || Used by the deployer                                            |
++----------------------+------------------------------------------------------------------+
+|| contentType         || Name of field for mimeType.  Used by the deployer               |
++----------------------+------------------------------------------------------------------+
+|| width               || Used by the deployer                                            |
++----------------------+------------------------------------------------------------------+
+|| height              || Used by the deployer                                            |
++----------------------+------------------------------------------------------------------+
+|| contentLength       || Name of field for file size.  Used by the deployer              |
++----------------------+------------------------------------------------------------------+
+|| lastEditedOn        || Name of field for last edit date. Used by the deployer          |
++----------------------+------------------------------------------------------------------+
+|| internalName        || Name of field for internal name. Used by the deployer           |
++----------------------+------------------------------------------------------------------+
+
+\* **Note on file names**
+
+.. include:: /includes/valid-file-names.rst
 
 .. _variable-names-search-indexing:
 
@@ -608,6 +681,41 @@ To facilitate indexing, the following suffix should be appended to variable name
 || html tags ||        ||            ||                                                   |
 +------------+---------+-------------+----------------------------------------------------+
 
+Model fields require their respective data type postfix as listed above.  The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.
+
+When setting up reserved variable names for your model, remember to remove the postfix auto-added by the UI since the variable name needs to be exactly the same as listed :ref:`above<reserved-variable-names>`.
+
+Remember to also remove the postfix auto-added by the UI when using ``key`` or ``value`` for your variable names being setup as key-value pairs in a content type, such as the ``Taxonomy`` content type used in the Website Editorial blueprint.
+
+Please note that indexed ``text`` fields are case insensitive when performing a search, while ``string`` fields are case sensitive. Also, queries using ``string`` fields will only match full values besides being case sensitive.
+
+If performing a case insensitive search on a ``string`` field is desired, Crafter CMS provides a way by enabling tokenization of the field in the content type.  To enable tokenization of a ``string`` field in Studio, put a check in the checkbox labeled **Tokenize for Indexing** in the properties section of the content type field.  Below is the ``Page - Article`` content type in a site created using the Website Editorial blueprint, showing the field ``Author`` with the ``Tokenize for Indexing`` option:
+
+.. image:: /_static/images/content-model/tokenize-for-indexing-property.jpg
+   :alt: Enable case insensitive keyword search for string fields in content type by clicking on "Tokenize for Indexing"
+   :width: 90%
+   :align: left
+
+|
+
+It should also be noted that when the tokenize option is enabled, a second field will be created with the ``_t`` postfix.  This second field with the ``_t`` postfix should be used in queries to be case insensitive and match tokens.  In our example above, the field ``author_t`` should be used in queries instead of ``author_s`` to be case insensitive and match tokens.
+
+Let's take a look at an example of queries performed on a ``string`` field with ``tokenize`` enabled and compare the results of using the field with the ``_s`` postfix and the second field created when we enabled ``tokenize`` with the  ``_t`` postfix. We'll use the ``Author`` field shown above with ``Tokenize for Indexing`` enabled. Here are the results of the queries using the ``author_s`` and ``author_t`` fields:
+
++---------+-------------------+------------------+
+|Query	  |Matches author_s?  |Matches author_t? |
++=========+===================+==================+
+|Jane	  |No	              |Yes               |
++---------+-------------------+------------------+
+|jane	  |No	              |Yes               |
++---------+-------------------+------------------+
+|Jane Doe |Yes	              |Yes               |
++---------+-------------------+------------------+
+|jane doe |No	              |Yes               |
++---------+-------------------+------------------+
+|Jane doe |No	              |Yes               |
++---------+-------------------+------------------+
+
 .. _data-sources:
 
 ^^^^^^^^^^^^
@@ -615,15 +723,60 @@ Data Sources
 ^^^^^^^^^^^^
 .. index:: Data Sources
 
-.. figure:: /_static/images/content-model/form-engine-data-sources.png
-	:alt: Form Engine Data Sources
-	:align: center
+.. image:: /_static/images/content-model/form-engine-data-sources.jpg
+    :alt: Form Engine Data Sources
+    :width: 40%
+    :align: left
+
+|
 
 Data Sources are pickers that help pull in content from internal or external storage/systems.  For example, data source include: desktop video uploader, desktop image uploader, and so on. Crafter CMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
 
 Data Sources allows the content model designer to decide where different assets uploaded via different controls go (for instance icons, images, RTE related assets, etc.).  It has it's own properties, like "Repository Path", which specifies the path where assets are stored, which help keep the system consistent over time.  The storage destination designed in the model dictates how those assets are handled during a duplicate event (duplicate the asset or duplicate the reference to the asset).
 
-Form Engine Data Sources (please use the scrollbar to see more controls)
+There are a couple of data source that also dictates how components are handled during duplicate/copy events.  The :ref:`Shared Content<form-source-shared-content>` data source will duplicate/copy the reference to a component during a duplicate/copy event and is used for components that need to be shared across pages or components. For components that belong exclusively to a content object, use the :ref:`Embedded Content<form-source-embedded-content>` data source.
+
+The ``shared-content`` data sources also provides an option to allow users to search for existing items (``Enable Search Existing`` property) in addition to browsing.  This provides users ease of managing lots of items/assets.
+
+Data sources are usually used in conjunction with a control in the content type, for example, the :ref:`form-item-selector` is used for selecting files to be uploaded when bound with the :ref:`form-source-file-desktop` data source.
+
+Let's take a look at a shared content data source in a site created using the Video Center blueprint from the Marketplace.
+
+.. image:: /_static/images/content-model/create-site-video-center-bp.jpg
+    :alt: Form Engine Data Sources Example - Create Site Using Video Center Blueprint
+    :width: 70%
+    :align: left
+
+|
+
+Open the ``Sidebar`` then click on |siteConfig|.  Click on ``Content Types`` and select ``Stream``, then click on the ``Open Type`` button.  Scroll down  to the ``Data Sources`` section, then click on ``Origins``, a shared content data source.  Notice how a :ref:`form-item-selector` control is used for selecting shared content ``Origin``.  In the ``Properties Explorer`` on the right  side, put a check mark on  ``Enable Search Existing`` property so users can search for existing items.
+
+.. image:: /_static/images/content-model/shared-content-ds-enable-search-existing.jpg
+    :alt: Form Engine Data Sources Example - Shared Content Data Source
+    :width: 100%
+    :align: left
+
+|
+
+To see the property we setup in action, open the ``Sidebar``, then navigate to ``/streams``.  Right click on any of the items, say, ``AlphaGo``, then click on ``Edit``.  Scroll down to the ``Content`` section of the form.  In the ``Origin`` field, select the item next to it (``ShakaDemo``) then click on the ``x`` button to remove it.  We'll now add a new one, by clicking on the ``Add`` button, then select ``Search for Existing - Origins``.
+
+.. image:: /_static/images/content-model/author-search-for-existing.png
+   :alt: Form Engine Data Sources Example - Author Search for Existing Option
+   :width: 70%
+   :align: left
+
+|
+
+A search dialog will open displaying in a grid view, items the user can search through, select, filter, etc.  As we can see, the search option makes it easier for users to pick items instead of scrolling through all the available items, especially for say sites with hundreds or even thousands of items/assets.
+
+.. image:: /_static/images/content-model/author-search-for-existing-dialog.png
+   :alt: Form Engine Data Sources Example - Author Search for Existing Dialog
+   :width: 70%
+   :align: left
+
+|
+
+Form Engine Data Sources (please use the scrollbar to see more data sources)
 
 .. include:: form-sources/list-form-sources.rst
 
@@ -648,6 +801,9 @@ There are a number of macros available for the content model designer to use in 
 +---------------------+--------------------------------------------------------------------------------+
 || {parentPath}       || Inserts the parent path of the component/page containing the upload controls  |
 +---------------------+--------------------------------------------------------------------------------+
+|| {parentPath[index]}|| Inserts the sub element of a parent path using an index, of the component/page|
+||                    || containing the upload controls                                                |
++---------------------+--------------------------------------------------------------------------------+
 || {yyyy}             || Inserts the current year (4 digit year)                                       |
 +---------------------+--------------------------------------------------------------------------------+
 || {mm}               || Inserts the current month (2-digit month of the year)                         |
@@ -655,7 +811,31 @@ There are a number of macros available for the content model designer to use in 
 || {dd}               || Inserts the current day (2-digit day of the month)                            |
 +---------------------+--------------------------------------------------------------------------------+
 
-For an example of how the macros are used when modeling your content, the website_editorial blueprint uses some of the macros available in the content type Page -  Article.  The section :ref:`item-specific-dependencies` above details the use of some of the macros in the website_editorial blueprint, content type Page -  Article.
+For an example of how the macros are used when modeling your content, the website_editorial blueprint uses some of the macros available in the content type Page -  Article.
+
+The section :ref:`item-specific-dependencies` above details the use of some of the macros in the website_editorial blueprint, content type Page -  Article.
+
+   .. note::
+      For both the ``parentPath`` and ``parentPath[index]`` macros, the path starts **without** ``/site/website`` and ``/site/components``.
+
+      For example, if in the repository the parent is a page, and the page URL in the repository is ``/site/website/en/about-us/index.xml``, then the parentPath is ``/en/about-us/index.xml``.
+
+      If in the repository the parent is a component, and the component URL in the repository is ``/site/components/en/products/myproduct.xml``, then the  parentPath is ``/en/products/myproduct.xml``.
+
+|
+|
+
+**Data Sources macro: parentPath[index]**
+
+The ``parentPath[index]`` macro provides resolution support for sub elements of a parent path in Crafter Studio.
+It pulls a single sub **/** of the parent path with the following syntax ``{parentpath[index]}``
+
+Here are some examples:
+
+If the parentPath is ``/en/mypage``, then to get the sub element ``en``, use **0** as the index in the macro like so  ``{parentpath[0]}``
+
+If the parentPath is ``/products/household/cleaning`` then to get  the sub  element ``household``, use **1** as the index in the macro like so ``{parentpath[1]}``
+
 
 ^^^^^^^^^^^
 Form Canvas
@@ -680,29 +860,33 @@ View templates control how the model is rendered as HTML. Crafter uses `FreeMark
 
 An example view template
 
-.. code-block:: guess
+
+.. code-block:: html
+   :force:
    :linenos:
 
-	<#import "/templates/system/common/cstudio-support.ftl" as studio />
+   <#import "/templates/system/common/cstudio-support.ftl" as studio />
 
-	<!DOCTYPE html>
-	<html lang="en">
-		<head>
-	    		<!-- Basic Page Need
-	    		================================================== -->
-			<meta charset="utf-8">
-			<title>${contentModel.browser_title}</title>
-			<meta name="description" content="${contentModel.meta_description}">
-			<meta name="keywords" content="${contentModel.meta_keywords}">
-		</head>
-		<body>
-			<div class="body" <@studio.iceAttr iceGroup="body"/>>
-				${contentModel.body_html}
-			</div>
+   <!DOCTYPE html>
+   <html lang="en">
+     <head>
+       <!-- Basic Page Need
+       ================================================== -->
+       <meta charset="utf-8">
+       <title>${contentModel.browser_title}</title>
+       <meta name="description" content="${contentModel.meta_description}">
+       <meta name="keywords" content="${contentModel.meta_keywords}">
+     </head>
+     <body>
+       <div class="body" <@studio.iceAttr iceGroup="body"/>>
+         ${contentModel.body_html}
+       </div>
 
-			<#if (contentModel.analytics_script)??>${contentModel.analytics_script}</#if>
-		</body>
-	</html>
+       <#if (contentModel.analytics_script)??>${contentModel.analytics_script}</#if>
+     </body>
+   </html>
+
+|
 
 The simple example renders a simple HTML page with a very basic model. Let's review the model first:
 
@@ -767,20 +951,22 @@ script in Scripts > components > upcoming-events.groovy so that it is executed f
     def events = []
     def searchResults = searchService.search(query)
     if (searchResults.response) {
-        searchResults.response.documents.each {
-            def event = [:]
-            def item = siteItemService.getSiteItem(it.localId)
+      searchResults.response.documents.each {
+        def event = [:]
+        def item = siteItemService.getSiteItem(it.localId)
 
-            event.image = item.image.text
-            event.title = item.title_s.text
-            event.date = DateUtils.parseModelValue(item.date_dt.text)
-            event.summary = item.summary_html.text
+        event.image = item.image.text
+        event.title = item.title_s.text
+        event.date = DateUtils.parseModelValue(item.date_dt.text)
+        event.summary = item.summary_html.text
 
-            events.add(event)
-        }
+        events.add(event)
+      }
     }
 
-    contentModel.events = events
+    templateModel.events = events
+
+|
 
 You might notice that we're importing a ``utils.DateUtils`` class. This class is not part of Crafter CMS, but instead it is a Groovy class
 specific to the site. To be able to use this class, you should place it under Classes > groovy > utils and name it DateUtils.groovy,
@@ -796,24 +982,26 @@ convention.
 
     class DateUtils {
 
-        static def parseModelValue(value){
-            def dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
-                dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
-            return dateFormat.parse(value)
-        }
+      static def parseModelValue(value){
+        def dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
+        return dateFormat.parse(value)
+      }
 
-        static def formatDateAsIso(date) {
-            def dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
-                dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
-            return dateFormat.format(date)
-        }
-
+      static def formatDateAsIso(date) {
+        def dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
+        return dateFormat.format(date)
+      }
     }
 
-For more information on the FreeMarker (Templating) APIs, pleasee see :ref:`templating-api`.
+|
+
+For more information on the FreeMarker (Templating) APIs, please see :ref:`templating-api`.
 
 For more information on the Groovy APIs, please see :ref:`groovy-api`
 
+  .. include:: /includes/scripts-templates-security.rst
 
 ------------------------------
 Creating Content Type Examples

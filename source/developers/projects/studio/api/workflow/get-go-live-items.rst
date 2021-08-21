@@ -6,7 +6,7 @@
 Get Go Live Items
 =================
 
-Get items waiting for approval.
+Get items waiting for approval. Optionally, include in-progress items. Note, there can be a significant performance cost to including in-progress items.
 
 --------------------
 Resource Information
@@ -48,7 +48,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: guess
+.. code-block:: none
 
     GET .../api/1/services/api/1/workflow/get-go-live-items.json?site_id=mysite&sort=eventDate&ascending=false
 

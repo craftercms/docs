@@ -41,11 +41,11 @@ Configuration Guide
 Similar to other CrafterCMS components you can configure the Social Admin Console using a simple
 properties file placed in the following location:
 
-  ``INSTALL_DIR/apache-tomcat/shared/classes/crafter/social/management/extension/server-config.properties``
+  ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/social/management/extension/server-config.properties``
 
 You can change any of the default configuration, some of the more relevant properties are:
 
-.. code-block:: guess
+.. code-block:: properties
 
   crafter.social.app.rootUrl=
   crafter.social.app.name=crafter-social
