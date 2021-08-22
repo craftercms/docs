@@ -396,7 +396,8 @@ Authoring Examples
 ^^^^^^^^^^^^^^^^^^
 For more authoring examples of site plugins, see :ref:`studio-plugins`
 
-.. Add delivery example link here
-   ^^^^^^^^^^^^^^^^
-   Delivery Example
-   ^^^^^^^^^^^^^^^^
+
+^^^^^^^^^^^^^^^^
+Delivery Example
+^^^^^^^^^^^^^^^^
+For more delivery examples of site plugins, see :ref:`delivery-plugins`

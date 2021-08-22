@@ -2,12 +2,15 @@
 
 .. index:: Crafter CMS Plugins
 
+.. _plugins:
+
 =======
 Plugins
 =======
 
+Crafter CMS plugins extend the CMS and provide the users additional functionality.  It allows developers to create new experiences both for authors and end-users.  Plugins can be a single file or multiple files and directories.
 
-Crafter CMS plugins extend the CMS and provide the user additional functionality.  Plugins can be a single file or multiple files and directories.
+Developers may submit their plugins to the :ref:`Crafter CMS Marketplace <marketplace>`, which provides a home for the Crafter community to contribute, find, and use plugins.
 
 Here are the available plugin types:
 
@@ -15,6 +18,11 @@ Here are the available plugin types:
 * Site Plugins
 
 **Blueprints**
+
+.. image:: /_static/images/developer/plugins/marketplace-blueprints.jpg
+   :alt: Plugins - Marketplace Blueprints
+   :width: 60%
+   :align: center
 
 Blueprints provide an initial set of styles, pages, behaviors, content types and more.
 
@@ -25,6 +33,11 @@ Blueprints provide an initial set of styles, pages, behaviors, content types and
    blueprints
 
 **Site Plugins**
+
+.. image:: /_static/images/developer/plugins/marketplace-site-plugins.jpg
+   :alt: Plugins - Marketplace Site Plugins
+   :width: 60%
+   :align: center
 
 Site plugins allow users to either replace, extend or even create stand alone experiences to serve a particular
 use case or set of use cases.
