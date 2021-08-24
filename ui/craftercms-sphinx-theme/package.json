@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
-    "crafter": "gulp build:custom --sphinx --production",
+    "crafter": "./build.sh",
     "build": "gulp build --production"
   },
   "author": "Roy Art <royart@me.com>",
