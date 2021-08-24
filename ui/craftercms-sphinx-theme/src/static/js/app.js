@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import { addCopyBtns } from './lib/copyCode';
+import { addCopyBtns } from './copyCode';
 
 const _$ = $.noConflict(true);
 
