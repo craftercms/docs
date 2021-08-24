@@ -99,7 +99,7 @@ function sassCompile() {
     })
       .on('error', sass.logError))
     .pipe($.autoprefixer({
-      browsers: COMPATIBILITY
+      BROWSERSLIST: COMPATIBILITY
     }))
     //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS))) // <-- Uncomment to run UnCSS in production
     .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie9' })))
@@ -120,7 +120,8 @@ let webpackConfig = {
         ]
       }
     ]
-  }
+  },
+  mode: 'production'
 }
 // Combine JavaScript into one file
 // In production, the file is minified
