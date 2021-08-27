@@ -96,9 +96,12 @@ For ``plugin.media.screenshots``, the url ``../.crafter/screenshots/default.png`
 Site Plugin Descriptor File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Crafter CMS supports automatically wiring your site plugin to the corresponding configuration file in Studio during your site plugin installation.
+Crafter CMS supports automatically wiring your site plugin to the corresponding configuration file in Studio during
+your site plugin installation.
 
-To setup a site plugin to be automatically wired in the corresponding configuration file in Studio (for example, a form control, will be wired to the Site Config Tools Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
+To setup a site plugin to be automatically wired in the corresponding configuration file in Studio (for example, a
+form control, will be wired to the Site Config Tools Configuration file) during the installation, add the following
+to your ``craftercms-plugin.yaml`` descriptor file
 
 .. code-block:: yaml
    :linenos:
@@ -106,32 +109,41 @@ To setup a site plugin to be automatically wired in the corresponding configurat
 
    installation:
     - type: preview-app
-      parent:
-        id: craftercms.components.ToolsPanel
+      parentXpath: //widget[@id='craftercms.components.ToolsPanel']
+      testXpath: //plugin[@id='org.craftercms.plugin.sidebar']
       element:
-        name: widget
+        name: configuration
         children:
-        - name: plugin
-          attributes:
-          - name: id
-            value: org.craftercms.plugin.sidebar
-          - name: type
-            value: sidebar
-          - name: name
-            value: react-sample
-          - name: file
-            value: main.js
+        - name: widgets
+          children:
+          - name: widget
+            children:
+            - name: plugin
+              attributes:
+              - name: id
+                value: org.craftercms.plugin.sidebar
+              - name: type
+                value: sidebar
+              - name: name
+                value: react-sample
+              - name: file
+                value: main.js
 
 where:
 
 - ``installation.type`` is the type of site plugin for auto-wiring in Studio.
   Available values are **form-control**, **form-datasource** and **preview-app**
-- ``installation.parent.id`` contains the  Crafter CMS library to be used by the plugin, required when installation-type is *preview-app*
-- ``installation.element.name`` is the element name to be wired in your site configuration file so the plugin will show up in Studio
+- ``installation.parentXpath`` is an XPath selector for the element where the plugin will be added,
+  required when installation-type is *preview-app*
+- ``installation.testXpath`` is an XPath selector to check if the plugin is already present in the configuration
+- ``installation.element.name`` is the element name to be wired in your site configuration file so the plugin will
+  show up in Studio
   Available values are **control**, **datasource** and **widget**
-- ``installation.element.children`` contains any number of **name** and **children**  describing your plugin, such  as the icon to be  used  by your plugin if  applicable, or the plugin location, where:
+- ``installation.element.children`` contains any number of **name** and **children**  describing your plugin, such
+  as the icon to be  used  by your plugin if  applicable, or the plugin location, where:
   - ``name`` is the name of what's being described, e.g. **plugin** or **icon**
-  - ``children`` contains any number of **name** and **value** and can contain the class (icon), plugin id, plugin type, plugin name and plugin files/folders (plugin location) and its corresponding  values
+  - ``children`` contains any number of **name** and **value** and can contain the class (icon), plugin id, plugin
+    type, plugin name and plugin files/folders (plugin location) and its corresponding  values
 
 
 Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descriptor.
@@ -207,4 +219,3 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
 |
 
 See :ref:`studio-plugins` for examples of plugins auto-wired in Studio.
-
