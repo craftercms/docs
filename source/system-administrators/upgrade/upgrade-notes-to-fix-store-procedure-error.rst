@@ -41,7 +41,7 @@ After performing the steps above, you may now startup the authoring install.
 
       .. code-block:: bash
 
-         CRAFTER_HOME/bin/dbms/bin/mysqld --no-defaults --console --max_allowed_packet=64M --basedir=CRAFTER_HOME/bin/dbms --datadir=CRAFTER_HOME/data/db --port=33306 --socket=/private/tmp/MariaDB4j.33306.sock
+         CRAFTER_HOME/bin/dbms/bin/mysqld --no-defaults --console --max_allowed_packet=64M --basedir=CRAFTER_HOME/bin/dbms --datadir=CRAFTER_HOME/data/db --port=33306 --socket=/tmp/MariaDB4j.33306.sock
 
       |
 
@@ -49,14 +49,14 @@ After performing the steps above, you may now startup the authoring install.
 
       .. code-block:: bash
 
-         ➜  bin CRAFTER_HOME/bin/dbms/bin/mysqld --no-defaults --console --max_allowed_packet=64M --basedir=CRAFTER_HOME/bin/dbms --datadir=CRAFTER_HOME/data/db --port=33306 --socket=/private/tmp/MariaDB4j.33306.sock
+         ➜  bin CRAFTER_HOME/bin/dbms/bin/mysqld --no-defaults --console --max_allowed_packet=64M --basedir=CRAFTER_HOME/bin/dbms --datadir=CRAFTER_HOME/data/db --port=33306 --socket=/tmp/MariaDB4j.33306.sock
          2020-06-04  6:21:50 0 [Note] /Users/myuser/craftercms/crafter-authoring/bin/dbms/bin/mysqld (mysqld 10.4.6-MariaDB) starting as process 70558 ...
          2020-06-04  6:21:50 0 [Warning] Setting lower_case_table_names=2 because file system for /Users/myuser/craftercms/crafter-authoring/data/db/ is case insensitive
          2020-06-04  6:21:50 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
          ...
          2020-06-04  6:21:50 0 [Note] Added new Master_info '' to hash table
          2020-06-04  6:21:50 0 [Note] /Users/myuser/craftercms/crafter-authoring/bin/dbms/bin/mysqld: ready for connections.
-         Version: '10.4.6-MariaDB'  socket: '/private/tmp/MariaDB4j.33306.sock'  port: 33306  CrafterCms
+         Version: '10.4.6-MariaDB'  socket: '/tmp/MariaDB4j.33306.sock'  port: 33306  CrafterCms
 
       |
 
