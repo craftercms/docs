@@ -33,7 +33,7 @@ We're going to be using the "Website Editorial Blueprint".  Blueprints offer you
 
 Give the site a friendly name for the **Site Name** and a description.  Click on the ``Review`` button.
 
-.. image:: /_static/images/first-site/create-site-basic-info.jpg
+.. image:: /_static/images/first-site/create-site-basic-info.png
     :width: 100 %
     :align: center
     :alt: Your First Website - Create Site: Basic Information
@@ -60,7 +60,7 @@ When it's done you will be taken to the Home Page of your site:
     :align: center
     :alt: Your First Website - Home Page
 
-Your site is setup, we can now start adding/editing content!  To edit content you see on the page, click on **Edit** at the top (see above).  This will open a form (see below) where you can edit the page content.  To see other ways of editing page content, see :ref:`editing-a-page`.
+Your site is setup, we can now start adding/editing content!  To edit content you see on the page, click on the three dots next to the page url at the toolbar at the top, then select **Edit**.  This will open a form (see below) where you can edit the page content.  To see other ways of editing page content, see :ref:`editing-a-page`.
 
 .. image:: /_static/images/first-site/first-site-editing-content.jpg
     :width: 90 %
