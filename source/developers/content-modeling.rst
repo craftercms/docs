@@ -969,7 +969,7 @@ script in Scripts > components > upcoming-events.groovy so that it is executed f
 |
 
 You might notice that we're importing a ``utils.DateUtils`` class. This class is not part of Crafter CMS, but instead it is a Groovy class
-specific to the site. To be able to use this class, you should place it under Classes > groovy > utils and name it DateUtils.groovy,
+specific to the site. To be able to use this class, you should place it under ``scripts > classes`` and name it DateUtils.groovy,
 where everything after the groovy directory is part of the class' package. It's recommended for all Groovy classes to follow this
 convention.
 
