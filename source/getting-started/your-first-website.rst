@@ -183,7 +183,7 @@ We will add a feature by selecting **Create new embedded Feature** after you cli
     :align: center
     :alt: Your First Website - New Feature Added
 
-We will now add another feature, by selecting using the ``Browse Components`` tool in the Page Builder panel located on the right that is available when ``Edit Mode`` is on.  This will bring up a list of existing shared features in the blueprint.  Select one, then drag it to the drop target area on the page.  This will add your selected existing feature to the features section of the page.
+We will now add another feature, by using the ``Browse Components`` tool in the Page Builder panel located on the right that is available when ``Edit Mode`` is on.  This will bring up a list of existing shared features in the blueprint.  Select one, then drag it to the drop target area on the page.  This will add your selected existing feature to the features section of the page.
 
 .. image:: /_static/images/first-site/first-site-browse-for-existing.jpg
     :width: 100 %
