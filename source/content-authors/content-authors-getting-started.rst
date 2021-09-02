@@ -41,14 +41,14 @@ To log in to Crafter Studio:
     * Enter the following in the URL of your browser:  *http://SERVERNAMEHERE/studio*
     * Enter your user name
     * Enter your password
-    * Click "Sign in"
+    * Click "Log In"
 
 .. image:: /_static/images/content-author/login-screen-full.jpg
     :alt: Getting Started - Login Screen
-    :width: 95 %
+    :width: 85 %
     :align: center
     
-Note: You can change the language used for the Studio UI by selecting a language on the log in screen.
+Note: You can change the language used for the Studio UI by clicking on ``Language`` on the log in screen.
 
 ^^^^^
 Roles
