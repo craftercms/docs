@@ -2,11 +2,14 @@
 
 .. _crafter-studio-api-workflow-get-workflow-affected-paths:
 
-===========================
-Get Workflow Affected Paths
-===========================
+========================================
+Get Workflow Affected Paths (deprecated)
+========================================
 
 Get workflow affected paths.
+
+.. important::
+   This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/workflow/getWorkflowAffectedPaths` for the current version.
 
 --------------------
 Resource Information
