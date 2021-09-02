@@ -190,7 +190,7 @@ We will now add another feature, by using the ``Browse Components`` tool in the 
     :align: center
     :alt: Your First Website - Browse for Existing Features Component
 
-We will again add another feature, this time by using the ``Components`` tool in the Page Builder panel located on the right.  Click  on the ``Components`` tool and it will list all components that you can drag and drop onto drop targets on the page.  To click and drag a new feature onto the feature's drop target, click and drag ``Feature`` from the Page Builder panel on to the feature target zone on the page.  This will then add a new feature component on the page containing some default items that you can then modify.
+We will again add another feature, this time by using the ``Components`` tool in the Page Builder panel located on the right.  Click  on the ``Components`` tool and it will list all components that you can drag and drop onto drop targets on the page.  To click and drag a new feature onto the feature's drop target, click and drag ``Feature`` from the Page Builder panel on to the feature drop target area on the page.  This will then add a new feature component on the page containing some default items that you can then modify.
 
 .. image:: /_static/images/first-site/first-site-drop-zone.jpg
     :width: 100 %
