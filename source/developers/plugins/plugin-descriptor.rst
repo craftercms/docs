@@ -141,6 +141,7 @@ where:
   Available values are **control**, **datasource** and **widget**
 - ``installation.element.children`` contains any number of **name** and **children**  describing your plugin, such
   as the icon to be  used  by your plugin if  applicable, or the plugin location, where:
+
   - ``name`` is the name of what's being described, e.g. **plugin** or **icon**
   - ``children`` contains any number of **name** and **value** and can contain the class (icon), plugin id, plugin
     type, plugin name and plugin files/folders (plugin location) and its corresponding  values
