@@ -10,7 +10,11 @@ Quick Start Guide
 
 This section describes how to quickly install Crafter CMS and start crafting your experiences.  The steps listed below is intended to help the user start using Crafter CMS for development or evaluation only.
 
-   .. note:: **Windows support is now via Docker.**  If you are on a Windows operating system, please follow the guide :ref:`running-craftercms-in-docker` to start using Crafter CMS.
+   .. note::
+      **For Windows Users** |br|
+      Windows users needs to enable Windows Subsystem for Linux (WSL) and install a Linux distribution . |br|
+      All commands executed on the command line below needs to be executed in a terminal running on the WSL distro you installed.  Also, all items that needs to be downloaded and installed needs to be in WSL. |br|
+      See `here <https://docs.microsoft.com/en-us/windows/wsl/>`__ for more information on WSL.
 
 .. _installing-crafter-cms-from-archive-download:
 
