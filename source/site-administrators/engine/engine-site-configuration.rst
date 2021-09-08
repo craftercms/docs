@@ -86,8 +86,8 @@ This example file contains the properties used by Crafter Engine:
 
       (Single Page Application Properties (React JS, Angular, Vue.js, etc.))
       <spa>
-        <enabled /> (Enable/disable SPA mode, default is false)
-        <viewName /> (The view name for the SPA (Single Page Application). Current view names can be a page URL (like /) or a template name (like /template/web/app.ftl). Default is /)
+        <enabled /> (Enable/disable SPA (Single Page Application) mode, default is false)
+        <viewName /> (The view name for the SPA, which can be a page URL (like /) or a template name (like /template/web/app.ftl). Default is /)
       </spa>
 
       (Compatibility properties)
