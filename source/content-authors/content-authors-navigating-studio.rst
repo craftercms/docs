@@ -253,12 +253,12 @@ Every site has a preview.  This allows users to see, edit and test the site in a
 
 |
 
-^^^^^^^^^^^^^^^^^^
-Page Builder Panel
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
+Experience Builder Panel
+^^^^^^^^^^^^^^^^^^^^^^^^
 
     * When in preview mode your context navigation will show an additional control beside the publishing status.
-    * The ``Edit Mode`` switch turns on/off the Page Builder panel which allows you to use in-context editing and various tools for creating your page in a panel on the right
+    * The ``Edit Mode`` switch turns on/off the Experience Builder panel which allows you to use in-context editing and various tools for creating your page in a panel on the right
     * ``Search`` allows you to search for items such as components, images, etc. in your site
     * ``Components`` allows you to create a component and also lists all available components in your site which can then be dragged and dropped into your page
     * ``Browse Components`` allows you to browse for components which can then be dragged and dropped into your page
@@ -301,12 +301,12 @@ This pencil allows you to edit the content of the wired region, including the cu
 Search
 ^^^^^^
 
-The Browse Components tool allows you to search / select a content type in the site then display the existing components for that content type that can be dragged and dropped into the current page being viewed if there are configured drop targets in it
+The Search tool allows you to search for components and static assets in the site then display the results from which the user can drag and drop into the current page being viewed if there are configured drop targets in it
 
-.. image:: /_static/images/content-author/preview-page-builder-browse-components.png
-    :width: 30 %
+.. image:: /_static/images/content-author/preview-experience-builder-search.jpg
+    :width: 20 %
     :align: center
-    :alt: Navigating Studio - Page Builder Panel Browse Components
+    :alt: Navigating Studio - Experience Builder Panel Search Components and Static Assets
 
 |
 
@@ -316,21 +316,21 @@ The Components tool allows you to create new components by dragging components f
 
 .. image:: /_static/images/content-author/preview-page-components-list.png
     :width: 20 %
-    :alt: Navigating Studio - Page Builder Panel Page Components
+    :alt: Navigating Studio - Experience Builder Panel Page Components
 
 .. image:: /_static/images/content-author/preview-page-components-space.png
     :width: 5 %
 
 .. image:: /_static/images/content-author/preview-page-components.png
     :width: 20 %
-    :alt: Navigating Studio - Page Builder Panel Page Components
+    :alt: Navigating Studio - Experience Builder Panel Page Components
 
 .. image:: /_static/images/content-author/preview-page-components-space.png
     :width: 5 %
 
 .. image:: /_static/images/content-author/preview-page-components-instances.png
     :width: 20 %
-    :alt: Navigating Studio - Page Builder Panel Page Components Instances
+    :alt: Navigating Studio - Experience Builder Panel Page Components Instances
 
 |
 
@@ -340,7 +340,7 @@ Crafter Studio administrators can configure what components are available in thi
 .. image:: /_static/images/content-author/preview-page-components-drag.jpg
     :width: 85 %
     :align: center
-    :alt: Navigating Studio - Page Builder Panel Page Drag Component
+    :alt: Navigating Studio - Experience Builder Panel Page Drag Component
 
 |
 
@@ -351,7 +351,7 @@ The Browse Components tool allows you to search / select a content type in the s
 .. image:: /_static/images/content-author/preview-page-builder-browse-components.png
     :width: 30 %
     :align: center
-    :alt: Navigating Studio - Page Builder Panel Browse Components
+    :alt: Navigating Studio - Experience Builder Panel Browse Components
 
 |
 
@@ -360,7 +360,7 @@ When you drag a component into the page being previewed and there are no drop zo
 .. image:: /_static/images/content-author/preview-page-builder-no-drop-targets.png
     :width: 30 %
     :align: center
-    :alt: Navigating Studio - Page Builder Panel No Drop Targets
+    :alt: Navigating Studio - Experience Builder Panel No Drop Targets
 
 |
 
@@ -371,7 +371,7 @@ The Component Drop Targets tool allows you to select a content type in the site 
 .. image:: /_static/images/content-author/preview-page-builder-component-drop-targets.jpg
     :width: 70 %
     :align: center
-    :alt: Navigating Studio - Page Builder Panel Component Drop Targets
+    :alt: Navigating Studio - Experience Builder Panel Component Drop Targets
 
 |
 
@@ -382,7 +382,7 @@ The Assets tool allows you to search/list assets such as images that can be drag
 .. image:: /_static/images/content-author/preview-page-builder-assets.jpg
     :width: 30 %
     :align: center
-    :alt: Navigating Studio - Page Builder Panel Assets
+    :alt: Navigating Studio - Experience Builder Panel Assets
 
 |
 
@@ -393,7 +393,7 @@ The Audience Targeting tool allows you to view and set targeting attributes for 
 .. image:: /_static/images/content-author/preview-page-builder-audience-targeting.png
     :width: 30 %
     :align: center
-    :alt: Navigating Studio - Page Builder Panel Audience Targeting
+    :alt: Navigating Studio - Experience Builder Panel Audience Targeting
 
 |
 
@@ -405,7 +405,7 @@ The Page Explorer tool allows you to browse/list content items such as pages, co
 .. image:: /_static/images/content-author/preview-page-builder-page-explorer.png
     :width: 30 %
     :align: center
-    :alt: Navigating Studio - Page Builder Panel Page Explorer
+    :alt: Navigating Studio - Experience Builder Panel Page Explorer
 
 |
 
@@ -418,7 +418,7 @@ The phone and tablet can be rotated through the use of the rotation control next
 .. image:: /_static/images/content-author/preview-publishing-channel.jpg
     :width: 60 %
     :align: center
-    :alt: Navigating Studio - Page Builder Panel Device Simulator
+    :alt: Navigating Studio - Experience Builder Panel Device Simulator
 
 |
 
@@ -430,7 +430,7 @@ The Settings tool allows you to switch on/off the ``Edit Mode`` (in-context edit
 .. image:: /_static/images/content-author/preview-page-builder-settings.png
     :width: 30 %
     :align: center
-    :alt: Navigating Studio - Page Builder Panel Settings
+    :alt: Navigating Studio - Experience Builder Panel Settings
 
 |
 
@@ -449,7 +449,7 @@ The basic elements of the Contextual Navigation bar are:
     * Site Name and Site switcher: Displays the site's name and lets you switch the site being previewed through a dropdown
     * Quick Create: A shortcut for content authors to create configured content without having to navigate through the site tree.
     * Preview Address Bar: An area reserved for navigation buttons (back, forward and reload page), the address of the current  page being previewed, and an options link whose content will change based off of the current page view and user role.
-    * Edit Mode Switch: Toggles the in-context editing and Page Builder panel on/off
+    * Edit Mode Switch: Toggles the in-context editing and Experience Builder panel on/off
     * Publish Status: Allows the user to view the site's publish status.
     * Navigation Menu: Takes the user to a panel with ``Global`` and ``Site`` options containing various links such as Dashboard, About, Help, etc.
 
