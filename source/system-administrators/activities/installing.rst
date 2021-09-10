@@ -24,7 +24,7 @@ Remember to change the default values pre-configured when installing Crafter CMS
 Development Environment
 -----------------------
 
-The quick start guide provides instructions on setting up a development environment by installing Crafter CMS from the zip download or installing Crafter CMS from archive built by the Gradle environment builder
+The quick start guide provides instructions on setting up a development environment by installing Crafter CMS from the archive download or installing Crafter CMS from archive built by the Gradle environment builder
 
 * :ref:`installing-crafter-cms-from-archive-download`
 * :ref:`installing-craftercms-from-gradle`
