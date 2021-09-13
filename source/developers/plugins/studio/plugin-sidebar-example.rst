@@ -74,31 +74,36 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
    .. code-block:: yaml
       :linenos:
       :caption: *craftercms-plugin.yaml*
+      :emphasize-lines: 17-18
 
       installation:
-        - type: preview-app
-          parent:
-            id: craftercms.components.ToolsPanel
-          element:
-            name: widget
-            attributes:
+      - type: preview-app
+        parentXpath: //widget[@id='craftercms.components.ToolsPanel']
+        testXpath: //plugin[@id='org.craftercms.plugin.sidebar']
+        element:
+          name: configuration
+          children:
+          - name: widgets
+            children:
+            - name: widget
+              attributes:
               - name: id
                 value: org.craftercms.sampleComponentLibraryPlugin.components.reactComponent
-            children:
+              children:
               - name: plugin
                 attributes:
-                  - name: id
-                    value: org.craftercms.plugin
-                  - name: type
-                    value: sidebar
-                  - name: name
-                    value: react-sample
-                  - name: file
-                    value: index.modern.js
+                - name: id
+                  value: org.craftercms.plugin
+                - name: type
+                  value: sidebar
+                - name: name
+                  value: react-sample
+                - name: file
+                  value: index.modern.js
 
    |
 
-   Remember to use the same value used in ``plugin.id`` for the ``installation.element.children.attributes.name`` which for our example is ``org.craftercms.plugin``
+   Remember to use the same value used in ``plugin.id`` (found at the top of the descriptor file) for the installation section *plugin.id* which for our example is ``org.craftercms.plugin``
 
 #. After placing your plugin files and setting up auto-wiring, the site plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
@@ -123,4 +128,53 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
       :align: center
       :alt: Sidebar site plugin in action
 
+   |
 
+   Here's the auto-wired section in the configuration after installing the plugin:
+
+   .. code-block:: xml
+      :linenos:
+      :emphasize-lines: 31-36
+
+      <siteUi>
+        <widget id="craftercms.components.ToolsPanel">
+          <configuration>
+          <widgets>
+            <widget id="craftercms.components.ToolsPanelEmbeddedAppViewButton">
+               <configuration>
+                  <title id="words.dashboard" defaultMessage="Dashboard"/>
+                  <icon id="@material-ui/icons/DashboardRounded"/>
+                  <widget id="craftercms.components.Dashboard"/>
+               </configuration>
+            </widget>
+            <widget id="craftercms.components.ToolsPanelPageButton">
+               <configuration>
+                  <title id="previewSiteExplorerPanel.title" defaultMessage="Site Explorer"/>
+                  <icon id="craftercms.icons.SiteExplorer"/>
+               ...
+            </widget>
+            <widget id="craftercms.components.ToolsPanelPageButton">
+               <permittedRoles>
+                  <role>admin</role>
+                  <role>developer</role>
+               </permittedRoles>
+               <configuration>
+                  <title id="siteTools.title" defaultMessage="Site Tools"/>
+                  <icon id="@material-ui/icons/TuneRounded"/>
+                  <widgets>
+                     <widget id="craftercms.components.SiteToolsPanel"/>
+                  </widgets>
+               </configuration>
+            </widget>
+            <widget id="org.craftercms.sampleComponentLibraryPlugin.components.reactComponent">
+               <plugin id="org.craftercms.plugin"
+                       type="sidebar"
+                       name="react-sample"
+                       file="index.modern.js"/>
+            </widget>
+          </widgets>
+        </configuration>
+      </widget>
+      ...
+
+   |
