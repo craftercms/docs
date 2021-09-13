@@ -39,53 +39,47 @@ Here are the steps:
 
 #. Edit the ``docker-compose.yml`` file
 
-   Navigate to the ``authoring`` directory and open the ``docker-compose.yml`` file in an editor and add the following volume ``- c:/host/path/to/sites:/opt/crafter/data/repos/sites`` to both the ``tomcat`` and the ``deployer`` service (assume C is the shared drive, and replace the ``/host/path/to/sites`` for the actual host path):
+   Navigate to the ``authoring`` directory and open the ``docker-compose.yml`` file in an editor and edit the ``crafter_data`` volume like in the highlighted section below (assume C is the shared drive, and replace the ``/host/path/to/sites`` for the actual host path):
 
    .. code-block:: yaml
-       :emphasize-lines: 16,17,33,34
+       :emphasize-lines: 25-31
        :caption: *authoring/docker-compose.yml*
 
        ...
 
        tomcat:
-         image: craftercms/authoring_tomcat:3.1.4 # craftercms version flag
+         image: craftercms/authoring_tomcat:3.1.17 # craftercms version flag
          depends_on:
            - elasticsearch
            - deployer
          ports:
            - 8080:8080
-         volumes:
-           - crafter_data:/opt/crafter/data
-           - crafter_logs:/opt/crafter/logs
-           - crafter_temp:/opt/crafter/temp
-           # Elastic Search dirs needed for backup/restore
-           - elasticsearch_data:/opt/crafter/data/indexes-es
-           # Mount authoring sites repository to host directory
-           - c:/host/path/to/sites:/opt/crafter/data/repos/sites
-         environment:
-           - DEPLOYER_HOST=deployer
-           - DEPLOYER_PORT=9191
-           - ES_HOST=elasticsearch
-           - ES_PORT=9200
+         ...
+
        deployer:
-         image: craftercms/deployer:3.1.4 # craftercms version flag
+         image: craftercms/deployer:3.1.17 # craftercms version flag
          depends_on:
            - elasticsearch
          ports:
            - 9191:9191
-         volumes:
-           - crafter_data:/opt/crafter/data
-           - crafter_logs:/opt/crafter/logs
-           - crafter_temp:/opt/crafter/temp
-           # Mount authoring sites repository to host directory
-           - c:/host/path/to/sites:/opt/crafter/data/repos/sites
-         environment:
-           - TOMCAT_HOST=tomcat
-           - TOMCAT_HTTP_PORT=8080
-           - ES_HOST=elasticsearch
-           - ES_PORT=9200
+         ...
 
-       ...
+       volumes:
+         elasticsearch_data:
+           name: crafter_authoring_data_elasticsearch
+         elasticsearch_logs:
+           name: crafter_authoring_logs_elasticsearch
+         crafter_data:
+           driver: local
+           driver_opts:
+             o: bind
+             type: none
+             device: C:/host/path/to/sites
+            name: crafter_authoring_data
+         crafter_logs:
+           name: crafter_authoring_logs
+         crafter_temp:
+           name: crafter_authoring_temp
 
    |
 
