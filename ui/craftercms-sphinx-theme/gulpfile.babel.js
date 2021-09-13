@@ -12,6 +12,8 @@ import webpackStream from 'webpack-stream';
 import webpack2      from 'webpack';
 import named         from 'vinyl-named';
 
+var sass = require('gulp-sass')(require('sass'));
+
 // Load all Gulp plugins into one variable
 const $ = plugins();
 const uglify = require('gulp-uglify-es').default;
@@ -33,13 +35,13 @@ function loadConfig() {
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build:custom',
- gulp.series(clean, gulp.parallel(sphinx, sass, javascript, images, copy), rmDistSCSS));
+ gulp.series(clean, gulp.parallel(sphinx, sassCompile, javascript, images, copy), rmDistSCSS));
 
-gulp.task('build:update-css', sass);
+gulp.task('build:update-css', sassCompile);
 
 gulp.task('build', gulp.series(
   clean,
-  gulp.parallel(pages, sass, javascript, images, copy),
+  gulp.parallel(pages, sassCompile, javascript, images, copy),
   rmDistSCSS));
 
 // Build the site, run the server, and watch for file changes
@@ -89,15 +91,15 @@ function resetPages(done) {
 
 // Compile Sass into CSS
 // In production, the CSS is compressed
-function sass() {
+function sassCompile() {
   return gulp.src('src/static/scss/app.scss')
     .pipe($.sourcemaps.init())
-    .pipe($.sass({
+    .pipe(sass({
       includePaths: PATHS.sass
     })
-      .on('error', $.sass.logError))
+      .on('error', sass.logError))
     .pipe($.autoprefixer({
-      browsers: COMPATIBILITY
+      BROWSERSLIST: COMPATIBILITY
     }))
     //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS))) // <-- Uncomment to run UnCSS in production
     .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie9' })))
@@ -118,7 +120,8 @@ let webpackConfig = {
         ]
       }
     ]
-  }
+  },
+  mode: 'production'
 }
 // Combine JavaScript into one file
 // In production, the file is minified
@@ -163,7 +166,7 @@ function watch() {
   gulp.watch(PATHS.assets, copy);
   gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, browser.reload));
   gulp.watch('src/{layouts,partials}/**/*.html').on('all', gulp.series(resetPages, pages, browser.reload));
-  gulp.watch('src/static/scss/**/*.scss').on('all', sass);
+  gulp.watch('src/static/scss/**/*.scss').on('all', sassCompile);
   gulp.watch('src/static/js/**/*.js').on('all', gulp.series(javascript, browser.reload));
   gulp.watch('src/static/img/**/*').on('all', gulp.series(images, browser.reload));
 }
