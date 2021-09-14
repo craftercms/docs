@@ -138,9 +138,9 @@ where:
 - ``installation.testXpath`` is an XPath selector to check if the plugin is already present in the configuration
 - ``installation.element.name`` is the element name to be wired in your site configuration file so the plugin will
   show up in Studio
-  Available values are **control**, **datasource** and **widget**
-- ``installation.element.children`` contains any number of **name** and **children**  describing your plugin, such
-  as the icon to be  used  by your plugin if  applicable, or the plugin location, where:
+  Available values are **control** (for *form-control* installation type), **datasource** (for *form-datasource* installation type) and for *preview-app* installation type, the start of the section the plugin needs to be inserted in, e.g. *configuration*, etc.
+- ``installation.element.children`` contains any number of **name** and **children** describing your plugin, such
+  as the icon to be used by your plugin if applicable, or the plugin location, where:
 
   - ``name`` is the name of what's being described, e.g. **plugin** or **icon**
   - ``children`` contains any number of **name** and **value** and can contain the class (icon), plugin id, plugin
