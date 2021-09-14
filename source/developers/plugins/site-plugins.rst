@@ -26,8 +26,8 @@ A site plugin can contain one or more extensions for Crafter CMS in a single pac
   * Add REST APIs and/or server-side code
   * Add 3rd party integrations to your web app
 
-Site plugins allows the user to easily add/extend functionalities and features of a web app.
-Examples of features/functionalities a user may want to add to their web app may be a contact form, chat bot or Google analytics.
+Site plugins allows the user to easily add/extend functionality and features of a Web experience (site, mobile app) or the content authoring experience (authoring tools) or both.
+Examples of features/functionalities a user may want to add to their Web app may be a contact form, a chat bot or Website analytics.
 
 .. _how-do-i-make-my-own-site-plugin:
 
