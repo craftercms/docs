@@ -220,6 +220,6 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
 
 |
 
-For site plugins, the ``plugin.documentation`` serves as the help block for the plugin. It contains a URL to the plugin's readme file (a markdown file) containing information on how to use/configure the plugin whose content is displayed in the Crafter CMS Marketplace
+For site plugins, the ``plugin.documentation`` serves as the help block for the plugin. It contains a URL to the plugin's documentation file (must be in Markdown) containing information on how to use/configure the plugin. The documentation will appear alongside the plugin in Crafter Studio and the Crafter CMS Marketplace.
 
 See :ref:`studio-plugins` for examples of plugins auto-wired in Studio.
