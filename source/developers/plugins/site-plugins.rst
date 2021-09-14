@@ -441,12 +441,7 @@ For more authoring examples of creating site plugins, see :ref:`studio-plugins`
 
 Crafter CMS also provides various site plugin examples available from the `marketplace <https://marketplace.craftercms.org>`__ to help you create your own plugins.  These site plugins can be installed to your site using ``Plugin Management`` in |siteConfig| through the Studio UI.  See :ref:`plugin-management` for more information on installing site plugins from the Crafter CMS Marketplace.
 
-* `Tidio plugin <https://github.com/craftercms/chatbot-plugin/tree/tidio>`__ to add Tidio to a site
-* `LiveChat plugin <https://github.com/craftercms/chatbot-plugin/tree/livechat>`__ to add LiveChat to a site
-* `Quiq plugin <https://github.com/craftercms/chatbot-plugin/tree/quiq>`__  to add Quiq to a site
 * `Cliengo plugin <https://github.com/craftercms/chatbot-plugin/tree/cliengo>`__ to add Cliengo to a site
-* `Collect.chat plugin <https://github.com/craftercms/chatbot-plugin/tree/collect.chat>`__ to add Collect.chat to a site
-* `LivePerson plugin <https://github.com/craftercms/chatbot-plugin>`__ to add LivePerson to a site
 * `Image Carousel plugin <https://github.com/craftercms/carousel-plugin>`__ to add a highly configurable carousel plugin based on `Tiny Slider <https://github.com/ganlanyuan/tiny-slider/tree/v2.9.3>`__
 * `Contact Form plugin <https://github.com/craftercms/contact-form-plugin>`__ to add one or more contact forms to your site
 * `Google Analytics plugin <https://github.com/craftercms/google-analytics-plugin>`__ to add Google Analytics to your site
@@ -454,5 +449,4 @@ Crafter CMS also provides various site plugin examples available from the `marke
 * `Google Tag Manager plugin <https://github.com/craftercms/google-tag-manager-plugin>`__ to add Google Tag Manager to your site
 * `Sitemap plugin <https://github.com/craftercms/sitemap-plugin>`__ to generate a sitemap for your site
 * `YouTube plugin <https://github.com/craftercms/youtube-plugin>`__ to add YouTube videos to your site
-* `Redirect plugin <https://github.com/craftercms/redirect-plugin>`__ to add redirects in your site
-* `Groovy sandbox security plugin <https://github.com/craftercms/script-security-plugin>`__ forked from https://github.com/jenkinsci/script-security-plugin
+* `Redirect plugin <https://github.com/craftercms/redirect-plugin>`__ to add file-based redirects in your site
