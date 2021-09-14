@@ -171,6 +171,7 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
        minor: 0
        patch: 0
      description: My simple form control site plugin
+     documentation: "https://raw.githubusercontent.com/craftercms/contact-form-plugin/master/readme.md"
      website:
        name: Site Plugin Example
        url: https://github.com/craftercms/site-plugins-example
@@ -218,5 +219,7 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
                    value: fa-pencil-square-o
 
 |
+
+For site plugins, the ``plugin.documentation`` serves as the help block for the plugin. It contains a URL to the plugin's readme file (a markdown file) containing information on how to use/configure the plugin whose content is displayed in the Crafter CMS Marketplace
 
 See :ref:`studio-plugins` for examples of plugins auto-wired in Studio.
