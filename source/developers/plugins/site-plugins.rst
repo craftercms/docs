@@ -218,7 +218,7 @@ Here are some things to note in the descriptor file:
 * ``plugin.name`` is the name displayed in the Crafter CMS Marketplace.  Pick a unique name for your plugin.  You can check in the Crafter CMS Marketplace if the name you picked does not exist yet.  It's also a best practice to provide a name for your plugin that is meaningful or recognizable to users.  The name can be multiple words such as ``Site Plugin Example``
 * ``plugin.version`` is a version number for the site plugin
 * ``plugin.description`` should contain a short description of the plugin and is displayed underneath the plugin name in the Crafter CMS Marketplace
-* ``plugin.documentation`` serves as the help block for the plugin. It contains a URL to the plugin's readme file (a markdown file) containing information on how to use/configure the plugin whose content is displayed in the Crafter CMS Marketplace
+* ``plugin.documentation`` serves as the help block for the plugin. It contains a URL to the plugin's documentation file (must be in Markdown) containing information on how to use/configure the plugin. The documentation will appear alongside the plugin in Crafter Studio and the Crafter CMS Marketplace
 * ``plugin.website.url`` can be a page for more information on your site plugin or for announcing updates, reporting bugs, etc. from your user community.
 * ``plugin.media.url`` is the path to look for a representative image of the site plugin.
 * ``plugin.license`` is the license supported by the plugin
