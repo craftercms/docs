@@ -509,7 +509,7 @@ The menu/panel width can be resized freely by the user and will remember where y
              :alt: Workflow Icons - Modified
 
 .. |workflowDisabled| image:: /_static/images/content-author/workflow-icon-disabled.png
-             :width: 8%
+             :width: 12%
              :alt: Workflow Icons - Disabled
 
 .. |workflowNeverPub| image:: /_static/images/content-author/workflow-icon-new.png
