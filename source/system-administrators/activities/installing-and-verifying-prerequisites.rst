@@ -15,7 +15,7 @@
 Verifying Java Installs and Other Prerequisites
 ===============================================
 
-This section lists various prerequisites needed depending on the operating system and how to verify Java installs.  Please note that this section only applies to Linux/Unix/OS X operating systems
+This section lists various prerequisites needed depending on the operating system and how to verify Java installs.
 
 ------------
 Install Java
@@ -39,7 +39,7 @@ The command above should output something like this:
 
 .. code-block:: sh
 
-    java version "1.8.0_91"
+    java version "1.8.0_292"
 
 |
 
@@ -134,6 +134,13 @@ Linux Prerequisite
 
    On Fedora 22 and newer version: ``sudo dnf install ncurses-compat-libs``
 
+--------------------
+Windows Prerequisite
+--------------------
+
+For Windows users, WSL needs to be installed.
+
+See `here <https://docs.microsoft.com/en-us/windows/wsl/>`__ for more information on WSL.
 
 ----------------------------------
 Building with Gradle Prerequisites
@@ -141,9 +148,9 @@ Building with Gradle Prerequisites
 
 For building with Gradle for installing Crafter CMS, the following must be installed in your system:
 
-^^^^^^^^
-On Linux
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+On Linux/Windows WSL
+^^^^^^^^^^^^^^^^^^^^
 * Java 8
 * Git 2.x+
 * Maven 3.3.x+
