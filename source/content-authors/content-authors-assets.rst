@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 
 .. index:: Assets
 
@@ -23,7 +23,7 @@ Creating a folder
 ^^^^^^^^^^^^^^^^^
 If the file you are uploading does not belong in any of the existing folders, you can just create another folder to upload your file to by doing the following:
 
-Click on the three dots next to the folder **static-assets**, then select **Create Folder**
+Click on the three dots next to the folder **static-assets**, then select **New Folder**
 
 .. image:: /_static/images/page/page-asset-folders.jpg
     :alt: Static Assets - Create a Folder
@@ -43,7 +43,7 @@ Adding a file
 ^^^^^^^^^^^^^
 To add a file, from the folder **static-assets**, navigate to the folder you want to add the files to, then click on the three dots next to the folder and select **Upload**
 
-.. image:: /_static/images/page/page-asset-upload.png
+.. image:: /_static/images/page/page-asset-upload.jpg
     :alt: Static Assets - Upload a File
     :width: 40 %
     :align: center
@@ -53,11 +53,11 @@ To add a file, from the folder **static-assets**, navigate to the folder you wan
 The upload dialog will come up and if you have multiple files to upload, you can drag and drop or browse for files that you want to upload.
 
 .. image:: /_static/images/page/page-asset-bulk-upload.png
-    :alt: Static Assets - Bulk Upload File Dialog
+    :alt: Static Assets - Upload File/s Dialog
     :width: 50 %
     :align: center
 
-Click on the ``X`` to close the bulk upload dialog or click on the "Browse" button if you want to add more files
+Click on the ``X`` to close the  upload dialog or click on "Add more" if you want to add more files
 
 .. image:: /_static/images/page/page-asset-upload-done.png
    :alt: Static Assets - Bulk Upload Done Dialog
@@ -72,10 +72,10 @@ To delete an asset, navigate to the asset you want to delete in the site navigat
 
 .. image:: /_static/images/page/page-asset-delete.jpg
     :alt: Static Assets - Delete
-    :width: 30 %
+    :width: 40 %
     :align: center
 
-After clicking on delete, it will prompt you if you want to delete the listed files.  Click on the **Delete** button if you want to delete the listed files, or click on **Cancel** if you don't want to delete the asset.  
+Put a checkmark on ``By submitting, deleted items will be published immediately.`` to enable the **Delete** button.  Click on the **Delete** button if you want to delete the listed files, or click on **Cancel** if you don't want to delete the asset.
 
 .. image:: /_static/images/page/page-asset-confirm-delete.jpg
     :alt: Static Assets - Delete Confirmation Dialog
@@ -86,7 +86,7 @@ After clicking on the **Delete** button, a snackbar at the top right of your bro
 
 .. image:: /_static/images/page/page-asset-delete-submitted.png
     :alt: Static Assets - Delete Action Information Dialog
-    :width: 60 %
+    :width: 40 %
     :align: center
 
 ----------------
