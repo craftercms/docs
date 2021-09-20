@@ -10,7 +10,18 @@ Plugins
 
 Crafter CMS plugins extend the CMS and provide the users additional functionality.  It allows developers to create new experiences both for authors and end-users.  Plugins can be a single file or multiple files and directories.
 
-Developers may submit their plugins to the :ref:`Crafter CMS Marketplace <marketplace>`, which provides a home for the Crafter community to contribute, find, and use plugins.
+**Crafter CMS Marketplace**
+
+Developers may submit their plugins to the *Crafter CMS Marketplace*, which provides a home for the Crafter community to contribute, find, and use plugins.
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   marketplace/index
+
+|
+|
 
 Here are the available plugin types:
 
