@@ -225,3 +225,141 @@ Sample
         </context>
       </contexts>
     </contextNav>
+
+|
+
+****************
+Sidebar Excludes
+****************
+
+To hide items (exclude) in the sidebar, use
+
+.. code-block:: xml
+   :force:
+
+   ...
+   <excludes>
+     <exclude PATTERN_TO_NOT_MATCH/>
+     ...
+   </excludes>
+
+|
+
+where:
+
+* PATTERN_TO_NOT_MATCH contains patterns of items that will be hidden in the Sidebar
+
+Let's take a look at an example using the a site created from the Website Editorial blueprint, to hide the folder ``/site/website/articles/2017/3``.
+
+Here's the site tree before the ``2017/3`` folder is hidden
+
+.. image:: /_static/images/site-admin/sidebar-pages-folders.png
+   :alt: Configurations - Sidebar Configuration Folder Structure
+   :width: 25 %
+   :align: center
+
+|
+
+Here's the configuration to hide the folder:
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 9-11
+
+   <!-- Site IA Pages -->
+   <modulehook>
+     <name>wcm-root-folder</name>
+     <params>
+       <label>Pages</label>
+       <path>/site/website</path>
+       <showRootItem>true</showRootItem>
+       <onClick>preview</onClick>
+       <excludes>
+         <exclude>/site/website/articles/2017/3</exclude>
+       </excludes>
+     </params>
+   </modulehook>
+   ...
+
+|
+
+Here's the site tree with the folder ``2017/3`` hidden:
+
+.. image:: /_static/images/site-admin/sidebar-pages-folder-hidden.png
+   :alt: Configurations - Sidebar Configuration Folder Hidden
+   :width: 25 %
+   :align: center
+
+|
+
+
+**************************
+Sidebar Icon Customization
+**************************
+
+The default icon and icon colors of modules in the sidebar can be changed including when expanding/collapsing modules.
+
+Let's take a look at an example of putting a red border when ``Taxonomy`` is expanded and for ``Templates``, a red font color when expanded and a blue font color when collapsed
+
+Let's take a look at an example of changing the icon and icon color of the ``Dashboard`` module to use a tag as its icon, colored green and, to change the icon and color of ``Pages`` to a red anchor icon when the module is collapsed, and to a green cog when the module is expanded.
+
+Here's the default colors of the modules in the sidebar.  Pay close attention to the ``Dashboard`` and ``Pages`` widget colors.
+
+.. image:: /_static/images/site-admin/sidebar-widget-default-colors.png
+   :alt: Configurations - Sidebar Configuration Widget Default Colors
+   :width: 25 %
+   :align: center
+
+|
+
+Here's the configuration for changing the icon and color of ``Dashboard`` to a green tag icon, and changing the icon and color of ``Pages`` to a red anchor icon when the module is collapsed, and to a green cog when the module is expanded.
+
+.. code-block:: xml
+   :linenos:
+   :emphasize-lines: 8-21
+
+   <contextNav>
+     <modulehook>
+       <name>wcm-root-folder</name>
+       <params>
+         <showDivider>true</showDivider>
+         <label>Pages</label>
+         <path>/site/website</path>
+         <module-icon-open>       (optional module-icon-open customization - state open)
+           <class>fa-cog</class>  (change default icon - using Font Awesome class)
+           <styles>               (Change default icon styles - using css rules)
+             <color>green</color>
+             <font-size>16px</font-size>
+           </styles>
+         </module-icon-open>
+         <module-icon-closed>     (optional module-icon-closed customization - state close)
+           <class>fa-anchor</class>
+           <styles>
+             <color>red</color>
+             <font-size>16px</font-size>
+           </styles>
+         </module-icon-closed>
+         <showRootItem>true</showRootItem>
+         <onClick>preview</onClick>
+       </params>
+     </modulehook>
+   </contextNav>
+   ...
+
+|
+
+Here's the  sidebar with the icons and colors changed:
+
+.. image:: /_static/images/site-admin/sidebar-icon-color-changed.png
+   :alt: Configurations - Sidebar Configuration Module Default Colors and Icons Changed
+   :width: 25 %
+
+.. image:: /_static/images/site-admin/image-space.png
+   :width: 5 %
+
+
+.. image:: /_static/images/site-admin/sidebar-icon-expanded-changed.png
+   :alt: Configurations - Sidebar Configuration Module Default Icon Expanded Changed
+   :width: 25 %
+
+|
