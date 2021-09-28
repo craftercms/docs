@@ -4,17 +4,17 @@
 
 ..  _content_authors_targeting:
 
-=========
-Targeting
-=========
+==================
+Audience Targeting
+==================
 
-Targeting allows an author to see what the website would look like if it were being browsed by a user with a given set of attributes.  It also allows an author to tag the content being authored to the configured attributes on the site.
+Targeting allows an author to see what the site would look like if it were being browsed by a user with a given set of attributes.  It also allows an author to tag the content being authored to the configured attributes on the site.
 
 -------------
 Tagging Pages
 -------------
 
-When creating a page in the Website_editorial blueprint, content can be targeted to the page visitor's segment.  This is done by tagging which segment the page is targeted for.
+When creating a page in a site created using the Website Editorial blueprint, content can be targeted to the page visitor's segment.  This is done by tagging which segment the page is targeted for.
 
 To tag a page, in the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to tag the content, then right click and select **Edit**.
 Depending on how tagging was named/setup, go to the section for tagging content and check the box next to the attribute the page is targeted for.
@@ -38,16 +38,22 @@ Viewing the site with different segments
 
 The authoring environment can be configured with any number of predefined attributes for targeting. A set of attributes is like a profile, in fact it behaves exactly the same way but instead of setting up and signing in as specific users to test different scenarios authors can simply switch back and forth between the available configured attributes.
 
-To find out the current active targeting attributes, hover on the targeting image (bulls eye) |targetingIcon| displayed to the right of the context nav (on the upper right hand side of Studio) then click, and a dialog containing the current attribute values will appear.  You can have as many attributes as you need for your site.  To add other attributes, please see the section :ref:`targeting` in the developer's section of the documentation.    In the Website_editorial blueprint that we are using, the targeting attribute used is segments.
+To find out the current active targeting attributes, switch ``Edit Mode`` to on (found on the top right of Studio, which then opens the experience panel on the right hand side.  Click on ``Audience Targeting`` and the current attribute values will be displayed in the panel.  You can have as many attributes as you need for your site.  To add other attributes, please see the section :ref:`targeting` in the developer's section of the documentation.
 
-.. image:: /_static/images/page/page-targeting-curr-attributes.jpg
+.. image:: /_static/images/page/page-targeting-open.jpg
     :width: 80 %
     :align: center
 
-To view what the site would look like if it were being browsed by a certain segment, open the targeting dialog by clicking on the bulls eye |targetingIcon| on the upper right hand of Studio, and select the segment you would like to see the site with.
+In the Website Editorial blueprint that we are using, the targeting attribute used is ``Segment``.
 
-.. image:: /_static/images/page/page-targeting-segment.jpg
-    :width: 75 %    
+.. image:: /_static/images/page/page-targeting-curr-attributes.png
+    :width: 30 %
+    :align: center
+
+To view what the site would look like if it were being browsed by a certain segment, open ``Audience Targeting`` by switching on ``Edit Mode`` on the upper right hand of Studio, click on ``Audience Targeting`` then select the segment you would like to see the site with.
+
+.. image:: /_static/images/page/page-targeting-segment.png
+    :width: 30 %
     :align: center
     
 
