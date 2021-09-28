@@ -14,7 +14,7 @@ Targeting allows an author to see what the site would look like if it were being
 Tagging Pages
 -------------
 
-When creating a page in a siite created using the Website Editorial blueprint, content can be targeted to the page visitor's segment.  This is done by tagging which segment the page is targeted for.
+When creating a page in a site created using the Website Editorial blueprint, content can be targeted to the page visitor's segment.  This is done by tagging which segment the page is targeted for.
 
 To tag a page, in the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to tag the content, then right click and select **Edit**.
 Depending on how tagging was named/setup, go to the section for tagging content and check the box next to the attribute the page is targeted for.
