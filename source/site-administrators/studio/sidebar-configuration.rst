@@ -239,7 +239,7 @@ To hide items (exclude) in the sidebar, use
 
    ...
    <excludes>
-     <exclude PATTERN_TO_NOT_MATCH/>
+     <exclude PATTERN_TO_EXCLUDE/>
      ...
    </excludes>
 
@@ -247,7 +247,7 @@ To hide items (exclude) in the sidebar, use
 
 where:
 
-* PATTERN_TO_NOT_MATCH contains patterns of items that will be hidden in the Sidebar
+* PATTERN_TO_EXCLUDE is a prefix of items to hide from the Sidebar
 
 Let's take a look at an example using the a site created from the Website Editorial blueprint, to hide the folder ``/site/website/articles/2017/3``.
 
