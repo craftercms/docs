@@ -22,11 +22,7 @@
 
 .. |ctlRTE| image:: /_static/images/form-controls/ctl-rte.png
              :width: 105%
-             :alt: Form Controls - Rich Text Editor (TinyMCE 2)
-
-.. |ctlRTE5| image:: /_static/images/form-controls/ctl-rte5.png
-             :width: 105%
-             :alt: Form Controls - Rich Text Editor (TinyMCE 5)
+             :alt: Form Controls - Rich Text Editor
 
 .. |ctlDropdown| image:: /_static/images/form-controls/ctl-dropdown.png
              :width: 55%
@@ -117,10 +113,6 @@
 || |ctlRTE|              ||  A block of HTML.                                                    |
 ||                       ||                                                                      |
 ||                       ||  Details are in the :ref:`form-rte` page.                            |
-+------------------------+-----------------------------------------------------------------------+
-|| |ctlRTE5|             ||  A block of HTML.                                                    |
-||                       ||                                                                      |
-||                       ||  Details are in the :ref:`form-rte5` page.                           |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlDropdown|         ||  Dropdown list of items to pick from.                                |
 ||                       ||                                                                      |
