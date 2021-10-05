@@ -15,7 +15,7 @@ What is a Control
 A form control is a UX element to help authors capture and edit content and metadata properties.
 Crafter Studio form controls should be written in a way that makes them independent of the data they allow the user to select so that they can be (re)used across a wide range of data sets.
 
-.. image:: /_static/images/content-model/create-content-type-2.png
+.. image:: /_static/images/content-model/create-content-type-2.jpg
         :width: 75 %
         :alt: Content Type Editor
         :align: center
