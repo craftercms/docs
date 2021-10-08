@@ -13,6 +13,4 @@ The Rich Text Editor (RTE) allows authors to arrange and style content without n
    :maxdepth: 1
    :titlesonly:
 
-   components-in-rte
    inserting-links-to-pages-in-the-rte
-   upgrading-to-rte5
