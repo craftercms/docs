@@ -57,6 +57,9 @@ Crafter Studio administrators can also create and delete sites from this screen.
     :align: center
     :alt: Navigating Studio - Delete Site
 
+
+.. _account-management:
+
 ------------------
 Account Management
 ------------------

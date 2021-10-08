@@ -6,27 +6,27 @@
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
 
-.. index:: Main Menu Global Config
+.. index:: Navigation Menu Global Config, Global Config
 
-.. _main-menu-global-config:
+.. _nav-menu-global-config:
 
-=======================
-Main Menu Global Config
-=======================
+=============================
+Navigation Menu Global Config
+=============================
 
-Crafter CMS allows the user to edit the system settings for Studio without access to the physical server through ``Global Config`` under the |mainMenu| **Main Menu** in Studio.
-This global configuration file overrides the core configuration of Crafter Studio, ``studio-config.yaml``,  found in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio``, and the Studio configuration override file :ref:`studio-config-override.yaml <studio-configuration-files>` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` in your Authoring installation (for more information on this file, see :ref:`studio-config-override`.
+Crafter CMS allows the user to edit the system settings for Studio without access to the physical server through ``Global Config`` under the ``Navigation Menu`` in Studio.
+This global configuration file overrides the :ref:`core configuration of Crafter Studio <studio-core-configuration>`, ``studio-config.yaml``,  found in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio``, and the Studio configuration override file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` in your Authoring installation (for more information on this file, see :ref:`studio-config-override`.
 
 Changes made to this file will spread to all nodes in a Studio cluster automatically. Please note that not all changes to this file can/will take effect without a restart, so expect to have to **restart Studio for most changes to take effect**. If in a cluster, you'll need a rolling restart for all nodes to pick up the changes.
 
-To access the Global Config, click on the |mainMenu| **Main Menu** from the context nav, then click on ``Global Config``
+To access the Global Config, click on the ``Navigation Menu`` icon at the top right corner, then click on ``Global Config`` in the Global panel
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-global-config.png
-    :alt: System Administrator - Main Menu Log Console
+.. image:: /_static/images/system-admin/main-menu/main-menu-global-config.jpg
+    :alt: System Administrator - Navigation Menu Global Config
     :align: center
     :width: 100%
 
-Let's take a look at what we can configure from the Main Menu Global Config.
+Let's take a look at what we can configure from the Global Config.
 
 --------------------------
 SMTP Configuration (Email)

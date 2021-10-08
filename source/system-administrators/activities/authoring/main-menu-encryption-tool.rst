@@ -6,13 +6,13 @@
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
 
-.. index:: Main Menu Encryption Tool
+.. index:: Navigation Menu Encryption Tool
 
-.. _main-menu-encryption-tool:
+.. _nav-menu-encryption-tool:
 
-=========================
-Main Menu Encryption Tool
-=========================
+===============================
+Navigation Menu Encryption Tool
+===============================
 
 Crafter Studio provides an encryption tool for encrypting configuration properties like access keys or password, to keep these sensitive data, available only to developers and administrators.  The encryption algorithm used is PBE (Password Based Encryption) with AES, in which a password and a salt are specified to generate the key used on encryption/decryption.
 
@@ -46,7 +46,7 @@ Crafter Studio also provides the encryption tool to encrypt passwords, access ke
 Example
 -------
 
-Let's take a look at an example of using the encryption tool to encrypt a password.  From the |mainMenu|, click on ``Global Config`` and scroll down to the ``SMTP Configuration (Email)`` section. We're going to encrypt the value for ``studio.mail.password:``
+Let's take a look at an example of using the encryption tool to encrypt a password.  From the ``Navigation Menu``, click on ``Global Config`` and scroll down to the ``SMTP Configuration (Email)`` section. We're going to encrypt the value for ``studio.mail.password:``
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*

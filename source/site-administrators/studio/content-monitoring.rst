@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 
 .. index:: Content Monitoring
 
@@ -57,9 +57,9 @@ How to Configure Content Monitoring
 -----------------------------------
 
 Content monitoring can be configured through Crafter Studio.  Go to the **Sidebar**, then click on
-**Site Config** > **Configuration** > **Site Configuration**
+**Site Tools** > **Configuration** > **Site Configuration**
 
-.. image:: /_static/images/site-admin/site-configuration-open.png
+.. image:: /_static/images/site-admin/config-open-site-config.jpg
     :align: center
     :alt: Configuration - Open "Site Configuration"
 
@@ -128,6 +128,7 @@ The file can also be located in the following path:
 
 .. code-block:: xml
   :caption: Example Notification Template for Content Monitoring
+  :linenos:
 
   <notificationConfig>
   
