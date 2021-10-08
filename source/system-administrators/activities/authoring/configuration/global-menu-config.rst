@@ -10,9 +10,9 @@
 Global Menu Config
 ==================
 
-The Global Menu Config configuration file defines what modules are available for administration use when clicking on Main Menu from the top bar.
+The Global Menu Config configuration file defines what modules are available for administration use when clicking on the ``Navigation Menu`` from the top bar.
 
-To see the default modules available from the |mainMenu| Main Menu, see :ref:`navigating-main-menu`
+To see the default modules available from the ``Navigation Menu``, see :ref:`navigating-main-menu`
 
 Here is the default Global Menu Config configuration file.  To access the file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/`` then open the file ``global-menu-config.xml``.  Remember to restart Crafter so your changes to the file will take effect.
 

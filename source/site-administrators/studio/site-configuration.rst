@@ -10,196 +10,167 @@ Site Configuration
 
 The site configuration file contains the primary configuration for Crafter Studio's behavior. Each site has its own site configuration file that controls its behavior independently of other sites.
 
-To modify the site configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Site Configuration** from the dropdown list.
+To modify the site configuration, click on |siteConfig| from the *Sidebar*, then click on **Configuration** and select **Site Configuration** from the list.
 
-.. image:: /_static/images/site-admin/config-open-site-config.png
+.. image:: /_static/images/site-admin/config-open-site-config.jpg
     :alt: Configurations - Open Site Configuration
     :width: 65 %
     :align: center
+
+|
 
 ******
 Sample
 ******
 
+Here's a sample Site Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "site-config.xml"</a></summary>
+
+.. literalinclude:: /_static/code/site-admin/sample-site-config.xml
+   :language: xml
+   :linenos:
+
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+.. _studio-site-time-zone:
+
+**************
+Site Time Zone
+**************
+
+The :ref:`default dates and times <server-time-zone>` used for displays in Studio is UTC.  To customize how dates & times get displayed on Studio UI for a site, edit the following:
+
 .. code-block:: xml
-    :caption: CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/site-config.xml
-    :linenos:
+   :linenos:
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <site-config>
-      <version>7</version>
-      <wem-project>mysite</wem-project>
-      <display-name>mysite</display-name>
-      <default-timezone>EST5EDT</default-timezone>
+   <locale>
+     <!--
+     BCP 47 language tag (e.g. en-US) or unicode extension (e.g. "en-US-u-ca-buddhist").
+     Leave empty for using the user's browser locale (i.e. dates/times will be displayed in each users's system locale).
+     Specifying a locale code will apply those localization settings to *all* users regardless of their system settings
+     or location. For example, if "en-US", is specified, all users will see dates as month/day/year instead of day/month/year
+     regardless of their system (i.e. OS) locale preference.
+     -->
+     <localeCode/>
+     <!--
+     Use `dateTimeFormatOptions` to customize how dates & times get displayed on Studio UI.
+     For full list of options and docs, visit: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
+     -->
+     <dateTimeFormatOptions>
+     <!--
+     Specifying a time zone (i.e. `timeZone` element) will express dates/times across the UI in the time zone you specify
+     here. Leaving it unspecified, will display dates/times to each user in their own system time zone.
+     -->
+       <!--<timeZone>EST5EDT</timeZone>-->
+       <day>numeric</day>
+       <month>numeric</month>
+       <year>numeric</year>
+       <hour>numeric</hour>
+       <minute>numeric</minute>
+       <!--
+       Set `hour12` to "false" to show times in 24 hour format.
+       -->
+       <hour12>true</hour12>
+     </dateTimeFormatOptions>
+   </locale>
 
-      <!-- Site URLs. Default to http://localhost:8080 if blank -->
-      <site-urls>
-        <authoring-url></authoring-url>
-        <staging-url></staging-url>
-        <live-url></live-url>
-      </site-urls>
+|
 
-      <published-repository>
-        <enable-staging-environment>false</enable-staging-environment>
-      </published-repository>
+****************
+Enabling Staging
+****************
 
-      <publishing>
-        <comments>
-          <!-- Global setting would apply to all -->
-          <required>false</required>
-          <!-- Additional (also optional) specific overrides -->
-          <!-- <delete-required/> -->
-          <!-- <bulk-publish-required/> -->
-          <!-- <publish-by-commit-required/> -->
-        </comments>
-      </publishing>
+The ``staging`` publishing target is an intermediate publishing target where the site can be fully exercised.  To enable the ``staging`` publishing target, set the following to ``true``:
 
-      <form-engine>
-        <field-name-postfix>true</field-name-postfix>
-        <ignore-postfix-fields>
-          <field>internal-name</field>
-          <field>file-name</field>
-          <field>placeInNav</field>
-          <field>scripts</field>
-          <field>mime-type</field>
-          <field>force-https</field>
-          <field>navLabel</field>
-          <field>expired</field>
-          <field>key</field>
-          <field>value</field>
-          <field>items</field>
-          <field>redirect-url</field>
-          <field>authorizedRoles</field>
-          <field>role</field>
-          <field>disabled</field>
-        </ignore-postfix-fields>
-      </form-engine>
+.. code-block:: xml
 
-      <!--
-      Pattern that Studio will use to load plugin from the site repository
-      Required placeholders: ${type}, ${name}
-      -->
-      <plugin-folder-pattern>/config/studio/plugins/${type}/${name}</plugin-folder-pattern>
+   <published-repository>
+     <enable-staging-environment>false</enable-staging-environment>
+   </published-repository>
 
-      <repository rootPrefix="/site">
+|
 
-        <!-- default inheritance file name -->
-        <level-descriptor>crafter-level-descriptor.level.xml</level-descriptor>
+See :ref:`staging-env` for more information on how to setup the ``staging`` publishing target
 
-        <!-- The section below classifies items into folders for two dashboard widgets:
-        - Items Waiting For Approval
-        - Approved Scheduled Items
+***********************
+Escaping Content Fields
+***********************
 
-        Items that match the paths specified will be grouped together in the dashboard widget
-        -->
-        <folders>
-          <folder name="Pages" path="/website" read-direct-children="false" attach-root-prefix="true"/>
-          <folder name="Components" path="/components" read-direct-children="false" attach-root-prefix="true"/>
-          <folder name="Assets" path="/static-assets" read-direct-children="false" attach-root-prefix="false"/>
-          <folder name="Templates" path="/templates" read-direct-children="false" attach-root-prefix="false"/>
-        </folders>
+To add/remove escaped content fields, modify the following:
 
-        <!-- Item Patterns -->
-        <patterns>
-          <!-- The section below helps determine the type of content based on regex. This shows up in two places:
-          - The activity audit log.
-          - The UI icon used for the item
-          -->
+.. code-block:: xml
 
-          <pattern-group name="page">
-            <pattern>/site/website/([^&lt;]+)\.xml</pattern>
-          </pattern-group>
+   <!--
+   Specifies the regular expression patterns to match content type field
+   names that require CDATA escaping.
+   -->
+   <cdata-escaped-field-patterns>
+     <pattern>(_html|_t|_s|_smv|mvs)$</pattern>
+     <pattern>internal-name</pattern>
+   </cdata-escaped-field-patterns>
 
-          <pattern-group name="component">
-            <pattern>/site/components/([^&lt;]+)\.xml</pattern>
-            <pattern>/site/system/page-components/([^&lt;]+)\.xml</pattern>
-            <pattern>/site/component-bindings/([^&lt;]+)\.xml</pattern>
-            <pattern>/site/indexes/([^&lt;]+)\.xml</pattern>
-            <pattern>/site/resources/([^&lt;]+)\.xml</pattern>
-          </pattern-group>
+|
 
-          <pattern-group name="asset">
-            <pattern>/static-assets/([^&lt;"'\)]+)</pattern>
-          </pattern-group>
+For more information on escaping content fields, see the notes under :ref:`Variable Names and Search Indexing <variable-names-search-indexing>`
 
-          <pattern-group name="rendering-template">
-            <pattern>/templates/([^&lt;"]+)\.ftl</pattern>
-          </pattern-group>
+*******************
+Publishing Comments
+*******************
 
-          <pattern-group name="scripts">
-            <pattern>/scripts/([^&lt;"]+)\.groovy</pattern>
-          </pattern-group>
+To make comments mandatory for different publishing methods, simply set to ``true`` any applicable methods the site administrators want to require comments when publishing.
 
-          <!-- The section below enumerates the mime-types we can preview -->
-          <pattern-group name="previewable-mimetypes">
-            <pattern>image/(.*)</pattern>
-            <pattern>application/pdf</pattern>
-            <pattern>video/(.*)</pattern>
-            <pattern>application/msword</pattern>
-            <pattern>application/vnd.openxmlformats-officedocument.wordprocessingml.document</pattern>
-            <pattern>application/vnd.ms-excel</pattern>
-            <pattern>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</pattern>
-            <pattern>application/vnd.ms-powerpoint</pattern>
-          </pattern-group>
-        </patterns>
+.. code-block:: xml
 
-        <!-- The patterns below identify what is allowed to show up in the Dashboard widgets -->
-        <display-in-widget-patterns>
-            <display-in-widget-pattern>.*</display-in-widget-pattern>
-        </display-in-widget-patterns>
-      </repository>
-      <contentMonitoring>
-        <monitor>
-          <name>Content Expiring Tomorrow</name>
-          <query>expired_dt:[now+1d/d TO now+2d/d]</query>
-          <paths>
-            <path>
-              <name>All Site</name>
-              <pattern>/site/.*</pattern>
-              <emailTemplate>contentExpiringSoon</emailTemplate>
-              <emails>admin@example.com</emails>
-              <locale>en</locale>
-            </path>
-          </paths>
-        </monitor>
-        <monitor>
-          <name>Content Expiring In One Week</name>
-          <query>expired_dt:[now+7d/d TO now+8d/d]</query>
-          <paths>
-            <path>
-              <name>All Site</name>
-              <pattern>/site/.*</pattern>
-              <emailTemplate>contentExpiringSoon</emailTemplate>
-              <emails>admin@example.com</emails>
-              <locale>en</locale>
-            </path>
-          </paths>
-        </monitor>
-        <monitor>
-          <name>Content Expiring In One Month</name>
-          <query>expired_dt:[now+30d/d TO now+32d/d]</query>
-          <paths>
-            <path>
-              <name>All Site</name>
-              <pattern>/site/.*</pattern>
-              <emailTemplate>contentExpiringSoon</emailTemplate>
-              <emails>admin@example.com</emails>
-              <locale>en</locale>
-            </path>
-          </paths>
-        </monitor>
-        <monitor>
-          <name>Content Expiring In Two Months</name>
-          <query>expired_dt:[now+60d/d TO now+62d/d]</query>
-          <paths>
-            <path>
-              <name>All Site</name>
-              <pattern>/site/.*</pattern>
-              <emailTemplate>contentExpiringSoon</emailTemplate>
-              <emails>admin@example.com</emails>
-              <locale>en</locale>
-            </path>
-          </paths>
-        </monitor>
-      </contentMonitoring>
-    </site-config>
+   <publishing>
+     <comments>
+       <!-- Global setting would apply to all -->
+       <required>false</required>
+       <!-- Additional (also optional) specific overrides -->
+       <!-- <delete-required/> -->
+       <!-- <bulk-publish-required/> -->
+       <!-- <publish-by-commit-required/> -->
+       <!-- <publish-required/> -->
+     </comments>
+   </publishing>
+
+|
+
+See :ref:`publishing-and-status` for more information on the different publishing methods available from ``Site Tools``
+
+******************
+Content Monitoring
+******************
+
+Content monitoring allows you to configure watches and notifications on your site. To add content monitors, add the following:
+
+.. code-block:: xml
+
+   <contentMonitoring>
+     <monitor>
+       <name>Content Expiring Tomorrow</name>
+       <query>expired_dt:[now+1d/d TO now+2d/d]</query>
+       <paths>
+         <path>
+           <name>All Site</name>
+           <pattern>/site/.*</pattern>
+           <emailTemplate>contentExpiringSoon</emailTemplate>
+           <emails>admin@example.com</emails>
+           <locale>en</locale>
+         </path>
+       </paths>
+     </monitor>
+   </contentMonitoring>
+
+|
+
+See :ref:`content-monitoring` for more information on configuring content monitoring.

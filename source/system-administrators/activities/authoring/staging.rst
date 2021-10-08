@@ -31,7 +31,7 @@ Notice the pages published to staging and live with the same time in the above i
 Setting Up Staging per Site
 ---------------------------
 
-Staging is setup per site and by default is not enabled.  To enable staging for your site, click on |siteConfig| from the bottom of the **Sidebar**, then click on **Configuration** and select **Site Configuration** from the dropdown list.
+Staging is setup per site and by default is not enabled.  To enable staging for your site, click on |siteConfig| from the **Sidebar**, then click on **Configuration** and select **Site Configuration** from the list.
 
 Under the **<published-repository>** tags, set **<enable-staging-environment>** to ``true``.
 

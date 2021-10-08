@@ -60,7 +60,7 @@ The ``Encryption Tool`` allows the user to encrypt sensitive data such as access
    :align: center
    :width: 60%
 
-For more information on how to use the encryption tool, see :ref:`main-menu-encryption-tool`.
+For more information on how to use the encryption tool, see :ref:`nav-menu-encryption-tool`.
 
 -------------
 Configuration

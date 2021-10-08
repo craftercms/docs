@@ -4,25 +4,25 @@
 
 .. _navigating-main-menu:
 
-========================
-Navigating the Main Menu
-========================
+==============================
+Navigating the Navigation Menu
+==============================
 
-In this section, we discuss the Main Menu tools available in Studio.  To access, click the Main Menu icon |mainMenu| from the top right of the browser
+In this section, we discuss the Navigation Menu tools available in Studio.  To access, click the ``Navigation Menu`` icon from the top right of the browser
 
 .. image:: /_static/images/system-admin/main-menu/open-main-menu.png
-    :alt: System Administrator - Open Main Menu
+    :alt: System Administrator - Open Navigation Menu
     :align: center
-    :width: 45%
+    :width: 100%
 
 |
 
-Here are the list of tools available when using an out of the box blueprint.  The Main Menu tools described below are available to users belonging to the ``system_admin`` group.
+Here are the list of tools available when using an out of the box blueprint.  The ``Navigation Menu`` tools described below are available to users belonging to the ``system_admin`` group.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu.png
-    :alt: System Administrator - Main Menu
+    :alt: System Administrator - Navigation Menu
     :align: center
-    :width: 40%
+    :width: 20%
 
 The configuration files for the Main Menu is located in ``CRAFTER_HOME/data/repos/global/configuration/`` where:
 
@@ -40,7 +40,7 @@ Sites
 ``Sites`` contains a list of all the sites the logged in user has access to. The section :ref:`content-authors-navigating-studio` in ``Content Authors`` contains descriptions on some of the actions that can be performed from the Sites screen.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-sites.png
-    :alt: System Administrator - Main Menu Sites
+    :alt: System Administrator - Navigation Menu Sites
     :align: center
     :width: 85%
 
@@ -52,7 +52,7 @@ Users
 A user is anybody who uses Crafter CMS.  ``Users`` lets the administrator manage who has access to Crafter Studio.  See :ref:`users-management` for more information on ``Users``
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-users.png
-    :alt: System Administrator - Main Menu Users
+    :alt: System Administrator - Navigation Menu Users
     :align: center
     :width: 85%
 
@@ -68,7 +68,7 @@ Groups
 A group consists of a collection of users.  ``Groups`` lets the administrator manage groups, members belonging to a group, etc.  For more information on groups, see :ref:`groups-management`
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-groups.png
-    :alt: System Administrator - Main Menu Groups
+    :alt: System Administrator - Navigation Menu Groups
     :align: center
     :width: 85%
 
@@ -84,7 +84,7 @@ Cluster
 ``Cluster`` lets the administrator manage Studio clusters.  See :ref:`clustering` for more information on how to setup clustering and available actions from ``Cluster`` from the Main Menu
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-cluster.png
-    :alt: System Administrator - Main Menu Cluster
+    :alt: System Administrator - Navigation Menu Cluster
     :align: center
     :width: 85%
 
@@ -95,12 +95,12 @@ Audit
 -----
 Audit logs displays the date, time, user and action performed to content in all the sites available as well as actions performed in Studio such as logins/logouts, user removal, group addition, etc.
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-audit.png
-    :alt: System Administrator - Main Menu Audit
+.. image:: /_static/images/system-admin/main-menu/main-menu-audit.jpg
+    :alt: System Administrator - Navigation Menu Audit
     :align: center
     :width: 85%
 
-See :ref:`main-menu-audit` for more details on the audit logs
+See :ref:`nav-menu-audit` for more details on the audit logs
 
 .. _main-menu-tool-logging-levels:
 
@@ -117,8 +117,8 @@ There are 4 log levels defined in Crafter CMS.  These levels determine what mess
 
 The lower your logging levels are set, the more verbose your logs will be.
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-logging-levels.png
-    :alt: System Administrator - Main Menu Logging Levels
+.. image:: /_static/images/system-admin/main-menu/main-menu-logging-levels.jpg
+    :alt: System Administrator - Navigation Menu Logging Levels
     :align: center
     :width: 85%
 
@@ -133,7 +133,7 @@ Log Console
 The ``Log Console`` allows the user to view messages depending on what log levels and what Java packages have been set for tracking.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-log-console.png
-    :alt: System Administrator - Main Menu Log Console
+    :alt: System Administrator - Navigation Menu Log Console
     :align: center
     :width: 75%
 
@@ -149,14 +149,14 @@ Global Config
 
 The ``Global Config`` allows the user to edit the system settings for Studio without access to the physical server.
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-global-config.png
-    :alt: System Administrator - Main Menu Global Config
+.. image:: /_static/images/system-admin/main-menu/main-menu-global-config.jpg
+    :alt: System Administrator - Navigation Menu Global Config
     :align: center
     :width: 100%
 
 When making changes here, not all changes can/will take effect without a restart, so expect to have to **restart Studio** for most changes to take effect
 
-For more information on what you can configure from the ``Global Config``, see :ref:`main-menu-global-config`
+For more information on what you can configure from the ``Global Config``, see :ref:`nav-menu-global-config`
 
 .. _main-menu-tool-encryption-tool:
 
@@ -167,8 +167,34 @@ Encryption Tool
 The ``Encryption Tool`` allows the user to encrypt sensitive data such as access keys and passwords, that shouldn't be publicly available to anyone but developers and administrators
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-encryption-tool.png
-    :alt: System Administrator - Main Menu Encryption Tool
+    :alt: System Administrator - Navigation Menu Encryption Tool
     :align: center
     :width: 100%
 
-For more information on how to use the encryption tool, see :ref:`main-menu-encryption-tool`.
+For more information on how to use the encryption tool, see :ref:`nav-menu-encryption-tool`.
+
+----------------
+Token Management
+----------------
+
+The ``Token Management Tool`` allows the user to manage access tokens used to make API requests on behalf of the user
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-token-management.png
+    :alt: System Administrator - Navigation Menu Token Management Tool
+    :align: center
+    :width: 100%
+
+For more information on how to use the Token Management tool, see :ref:`working-with-crafter-studios-api`.
+
+-------
+Account
+-------
+The ``Account Tool`` allows the user to change the user's personal Crafter Studio settings like language or to change the user's password.
+
+.. image:: /_static/images/system-admin/main-menu/main-menu-account.jpg
+    :alt: System Administrator - Navigation Menu Account Tool
+    :align: center
+    :width: 100%
+
+For more information on how to use the Account tool, see :ref:`account-management`.
+
