@@ -177,7 +177,7 @@ Crafter Studio
    :maxdepth: 1
    :titlesonly:
 
-   studio/studio-configuration-overrides.rst
+   studio/studio-configuration-files.rst
    studio/debugging-publishing-issues.rst
    studio/debugging-upgrade-issues.rst
    studio/create-site-with-link-to-remote-repo.rst
