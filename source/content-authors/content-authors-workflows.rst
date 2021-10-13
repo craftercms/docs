@@ -147,7 +147,7 @@ You can also preview the article that you want to approve by clicking on the lin
      :align: center
      :alt: Workflow - Notification email to approve/reject request to approver
 
-Below is the dialog that loads after clicking on **Publish**.  The item scheduling selected in the dialog depends on what the requester has chosen when the request to publish was sent.  In the image below. the selected scheduling for the item is for the **Now**.  Click on **Submit** to publish the content now.
+Below is the dialog that loads after clicking on **Publish**.  The item scheduling selected in the dialog depends on what the requester has chosen when the request to publish was sent.  In the image below. the selected scheduling for the item is for the **Now**.  Click on **Publish** to publish the content now.
 
 .. image:: /_static/images/page/page-workflows-approve-publish-now.jpg
      :width: 75 %
@@ -205,7 +205,7 @@ To reject a request for publish, open the item for preview, then in the toolbar 
     :align: center
     :alt: Workflow - Reject request to publish from sidebar "Site Explorer"
 
-Approvers may pick canned rejection reasons from the drop-down menu. Once selected, the editable text area field will be filled with the corresponding rejection notice.
+Approvers may type their own rejection comments or pick canned rejection reasons from the drop-down menu. Once selected, the editable text area field will be filled with the corresponding rejection notice / ready for comments in the ``Rejection Comment`` box.
 
 .. image:: /_static/images/page/page-workflows-reject.jpg
     :width: 65 %
