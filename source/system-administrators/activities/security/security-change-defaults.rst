@@ -162,5 +162,5 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
      export STUDIO_REFRESH_TOKEN_NAME=${STUDIO_REFRESH_TOKEN_NAME:="refresh_token"}
      # Time in seconds for the expiration of the refresh token cookie
      export STUDIO_REFRESH_TOKEN_MAX_AGE=${STUDIO_REFRESH_TOKEN_MAX_AGE:=300}
-     # Indicates if the refresh token cookie should be secure
+     # Indicates if the refresh token cookie should be secure (should be true for production environments behind HTTPS)
      export STUDIO_REFRESH_TOKEN_SECURE=${STUDIO_REFRESH_TOKEN_SECURE:="false"}
