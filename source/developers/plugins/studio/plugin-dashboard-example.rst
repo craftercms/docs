@@ -90,7 +90,7 @@ Let's take a look at an example of creating a Dashboard plugin in Studio using a
 
       installation:
         - type: preview-app
-          parentXpath: //widget[@id='craftercms.components.Dashboard']
+          parentXpath: /siteUi/widget[@id='craftercms.components.Dashboard']
           testXpath: //plugin[@id='org.craftercms.plugin.dashboard']
           element:
             name: configuration
