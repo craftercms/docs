@@ -24,99 +24,110 @@ Here's a summary of macros and corresponding tag attributes used for enabling in
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 In-context Editing Pencils
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-The macro ``<@studio.iceAttr/>`` adds a pencil to open a form for the path
+Crafter provides macros for enabling in-context editing pencils.  The macro ``<@crafter.ELEMENT/>`` adds all the necessary markup to the tag for the in-context editing engine to pick up the field and allow authors to edit inline, and such, like so:
 
-<@studio.iceAttr/> Tag Attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-+----------------+------------------------------------+-------------------------------------------+
-| Attribute Name | Required                           | Expected Value                            |
-+================+====================================+===========================================+
-|| iceGroup      || No (unless path is not supplied)  || the label/id assigned to iceGroup on     |
-||               ||                                   || fields in your content model.            |
-+----------------+------------------------------------+-------------------------------------------+
-|| path          || No                                || the path of the item. This is typically  |
-||               || (unless iceGroup is not supplied) || just mode.storeUrl.                      |
-||               ||                                   ||                                          |
-||               ||                                   || If path is not supplied the system       |
-||               ||                                   || will assume the outermost object e.g.    |
-||               ||                                   || the page as the path.                    |
-+----------------+------------------------------------+-------------------------------------------+
-|| label         || No (but it's a best practice)     || UI will use label if it exists. Otherwise|
-||               ||                                   || the iceGroup or path will be used.       |
-+----------------+------------------------------------+-------------------------------------------+
-|| component     || Yes                               || a |SiteItem| object                      |
-+----------------+------------------------------------+-------------------------------------------+
+<@crafter.ELEMENT $model=MODEL $field=CONTENT_TYPE_FIELD $index=INDEX [$label=YOUR_LABEL]>
 
-|
+where: ELEMENT is the macro name which corresponds to most of the HTML elements.
 
-^^^^^^^^^^^^^^^^^^^
-Drag and Drop Zones
-^^^^^^^^^^^^^^^^^^^
-The macro ``<@studio.componentContainerAttr/>`` defines a drop zone for components
+<@crafter.ELEMENT/> Tag Attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-<@studio.componentContainerAttr/> Tag Attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-+----------------+------------------------------+------------------------------------------------+
-| Attribute Name | Required                     | Expected Value                                 |
-+================+==============================+================================================+
-|| target        || Yes                         || The name of the field in the parent model     |
-||               ||                             || where component references will be stored.    |
-||               ||                             ||                                               |
-||               ||                             || This is typically an item selector field type.|
-+----------------+------------------------------+------------------------------------------------+
-|| component     || Yes                         || a |SiteItem| object                           |
-+----------------+------------------------------+------------------------------------------------+
+.. list-table:: Macros for enabling in-context editing pencils
+   :widths: 20 30 50
+   :header-rows: 1
 
-|
+   * - Attribute Name
+     - Required
+     - Expected Value
+   * - model
+     - No (defaulted to the active ``contentModel`` and not required in most cases)
+     - The model
+   * - field
+     - Yes
+     - The id of the field on the content type
+   * - index
+     - Must be specified when working with collections, namely item selectors or repeat groups
+     - The index
+   * - label
+     - No (but it's a best practice)
+     - The system tooltip will show this custom label instead of the default one which is the name of the field in the content type definition
+
+See :ref:`in-context-editing-pencils` for a list of available macros used for enabling in-context editing
+
+.. _rendering-components-ice:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Rendering components from the target inside the container
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The macro ``<@renderComponent/>`` renders components
+The macro ``<@renderComponentCollection/>`` and ``<@renderRepeatCollection/>`` renders components
 
-<@renderComponent/> Tag Attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-+----------------+------------------------------+------------------------------------------------+
-| Attribute Name | Required                     | Expected Value                                 |
-+================+==============================+================================================+
-|| parent        || No                          || a |SiteItem| object                           |
-||               ||                             || Required if the component to be rendered is   |
-||               ||                             || not the current item                          |
-+----------------+------------------------------+------------------------------------------------+
-|| component     || Yes                         || a |SiteItem| object                           |
-+----------------+------------------------------+------------------------------------------------+
+<@renderComponentCollection/> Tag Attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|
+.. list-table:: <@renderComponentCollection/> Tag Attributes
+   :widths: 20 30 50
+   :header-rows: 1
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Identifying components in the template
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The macro ``<@studio.componentAttr/>`` identifies a component
+   * - Attribute Name
+     - Required
+     - Expected Value
+   * - field
+     - Yes
+     - The id of the field on the content type
+   * - tag
+     - No (defaulted to ``div`` and not required in most cases)
+     - Tag for the collection
+   * - itemTag
+     - No (defaulted to ``div`` and not required in most cases)
+     - Tag for item in collection
+   * - model
+     - No (defaulted to the active ``contentModel`` and not required in most cases)
+     - The model
+   * - attrs
+     - No
+     - Component collection attributes
+   * - itemAttrs
+     - No
+     - Attributes of a component
+   * - arguments
+     - No
+     - values passed to macro
+   * - attrs
+     - No
+     - Additional attributes
 
-<@studio.componentAttr/> Tag Attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-+----------------+------------------------------+-------------------------------------------------+
-| Attribute Name | Required                     | Expected Value                                  |
-+================+==============================+=================================================+
-|| path          || No                          || the path to the component. Typically this is   |
-||               ||                             || simply contentModel.storeUrl                   |
-+----------------+------------------------------+-------------------------------------------------+
-|| ice           || No                          || true or false. If true the component will      |
-||               ||                             || automatically render ICE (in context editing)  |
-||               ||                             || controls for you. This is helpful on simple    |
-||               ||                             || components. Larger components may be so complex|
-||               ||                             || that multiple ice elements make sense. In the  |
-||               ||                             || latter case omit this attribute or set it to   |
-||               ||                             || false and manually add your own ICE attributes |
-||               ||                             || to the component template                      |
-+----------------+------------------------------+-------------------------------------------------+
-|| iceGroup      || No (unless path is not      || the label/id assigned to iceGroup on           |
-||               || supplied)                   || fields in your content model.                  |
-+----------------+------------------------------+-------------------------------------------------+
-|| component     || Yes                         || a |SiteItem| object                            |
-+----------------+------------------------------+-------------------------------------------------+
 
-Take a look at :ref:`in-context-editing-ftl` for more details and examples on how to use the tag attributes for enabling in-context editing in Freemarker templates.
+<@renderRepeatCollection/> Tag Attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table:: <@renderRepeatCollection/> Tag Attributes
+   :widths: 20 30 50
+   :header-rows: 1
+
+   * - Attribute Name
+     - Required
+     - Expected Value
+   * - field
+     - Yes
+     - The id of the field on the content type
+   * - model
+     - No (defaulted to the active ``contentModel`` and not required in most cases)
+     - The model
+   * - containerTag
+     - No (defaulted to ``ul`` and not required in most cases)
+     - Tag for the repeat collection
+   * - containerAttributes
+     - Yes
+     - Attributes of container
+   * - itemTag
+     - No (defaulted to ``li`` and not required in most cases)
+     - Tag for an item in the repeat collection
+   * - itemAttributes
+     - No
+     - Attributes of an item in repeat collection
+
+Take a look at :ref:`in-context-editing-ftl` for more details and examples on enabling in-context editing in Freemarker templates.
 
 
 -------------------------------------------------
@@ -200,10 +211,10 @@ The following attributes identifies the outer div of a component and adds a penc
 
 |
 
-^^^^^^^^^^
-Drop Zones
-^^^^^^^^^^
-The following attributes identifies an element as a drop zone.
+^^^^^^^^^^^
+Drop Target
+^^^^^^^^^^^
+The following attributes identifies an element as a drop target.
 
 +---------------------------------+---------------------+-------------------------------------------+
 | Attribute Name                  | Required            | Expected Value                            |
