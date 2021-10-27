@@ -152,6 +152,45 @@ where:
 - **yourPluginName** : Name of  plugin
 - **yourPluginFilesAndFolders** : JavaScript and/or plugin build output files/folders containing the plugin implementation
 
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Plugins using Freemarker Templates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Crafter CMS provides a mechanism (a "hook") for adding markup/defining macros for plugins via Freemarker templates.  These templates, when the plugin has one of them will be automatically included in the site.
+
+Here are the supported templates:
+
+* **definitions.ftl**: can be used to define macros for the plugin
+* **head.ftl**: can be used to add markup in the HTML <head> element
+* **body_top.ftl**: can be used to add markup at the beginning of the HTML <body> element
+* **body_bottom.ftl**: can be used to add markup at the end of the HTML <body> element
+
+Place the template/s in the following location in your plugin:
+
+.. code-block:: text
+   :linenos:
+
+   {your_plugin_folder}/
+     craftercms-plugin.yaml
+     .crafter/
+       screenshots/
+         default.png
+     delivery/
+       templates/
+         definitions.ftl
+         head.ftl
+         body_top.ftl
+         body_bottom.ftl
+
+   |
+
+The Google Analytics plugin for Crafter CMS available from the `marketplace <https://marketplace.craftercms.org>`__
+uses a Freemarker template (*google--analytics-plugin/delivery/templates/head.ftl*) to add markup in the HTML <head> element.
+
+See https://github.com/craftercms/google-analytics-plugin/blob/master/delivery/templates/head.ftl for an example on what can be in included in the template.
+
+
+
 .. _site-plugins-create-your-plugin:
 
 ^^^^^^^^^^^^^^^^^^
