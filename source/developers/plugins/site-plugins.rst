@@ -182,7 +182,7 @@ Place the template/s in the following location in your plugin:
          body_top.ftl
          body_bottom.ftl
 
-   |
+|
 
 The Google Analytics plugin for Crafter CMS available from the `marketplace <https://marketplace.craftercms.org>`__
 uses a Freemarker template (*google--analytics-plugin/delivery/templates/head.ftl*) to add markup in the HTML <head> element.
@@ -304,6 +304,37 @@ Crafter CMS uses a default path for Crafter CMS to look for a default representa
 
 |
 |
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Reusing libraries written in Java in your plugin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some users may have some libraries written in Java that they may want to reuse in their plugin.
+To reuse those libraries, do the following:
+
+* Publish your JARs to Maven Central
+* Pull the JARs from Maven in a small Groovy script in your plugin via Grapes
+
+  If the JAR is available in Maven Central
+
+  .. code-block:: groovy
+     :caption: *Pull JAR available in Maven  Central via Grapes*
+
+     @Grab(value='com.company:my-java-plugin:1.0.0', initClass=false)
+     import com.company.java.Plugin // This class is made up, it can be anything
+
+  |
+
+  If the JAR is in a private Maven Repo
+
+  .. code-block:: groovy
+     :caption: *Pull JAR available in private Maven Repo via Grapes*
+
+     @GrabResolver(name='my-repo', root='http://maven.company.com/')
+     @Grab(value='com.company:my-java-plugin:1.0.0', initClass=false)
+     import com.company.java.Plugin // This class is made up, it can be anything
+
+  |
 
 ---------------------------
 Publishing Your Site Plugin
