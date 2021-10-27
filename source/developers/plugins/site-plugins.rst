@@ -319,7 +319,7 @@ To reuse those libraries, do the following:
   If the JAR is available in Maven Central
 
   .. code-block:: groovy
-     :caption: *Pull JAR available in Maven  Central via Grapes*
+     :caption: *Pull JAR available in Maven Central via Grapes*
 
      @Grab(value='com.example:my-java-plugin:1.0.0', initClass=false)
      import com.example.java.Plugin // This class is made up, it can be anything
