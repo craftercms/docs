@@ -152,6 +152,46 @@ where:
 - **yourPluginName** : Name of  plugin
 - **yourPluginFilesAndFolders** : JavaScript and/or plugin build output files/folders containing the plugin implementation
 
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Plugins using Freemarker Templates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Crafter CMS provides a mechanism (a "hook") for adding markup/defining macros for plugins via Freemarker templates.  These templates, when the plugin has one of them will be automatically included in the site.
+
+Here are the supported templates:
+
+* **definitions.ftl**: can be used to define macros for the plugin
+* **head.ftl**: can be used to add markup in the HTML <head> element
+* **body_top.ftl**: can be used to add markup at the beginning of the HTML <body> element
+* **body_bottom.ftl**: can be used to add markup at the end of the HTML <body> element
+
+Place the template/s in the following location in your plugin:
+
+.. code-block:: text
+   :linenos:
+   :emphasize-lines: 8-11
+
+   {your_plugin_folder}/
+     craftercms-plugin.yaml
+     .crafter/
+       screenshots/
+         default.png
+     delivery/
+       templates/
+         definitions.ftl
+         head.ftl
+         body_top.ftl
+         body_bottom.ftl
+
+|
+
+The Google Analytics plugin for Crafter CMS available from the `marketplace <https://marketplace.craftercms.org>`__
+uses a Freemarker template (*google--analytics-plugin/delivery/templates/head.ftl*) to add markup in the HTML <head> element.
+
+See https://github.com/craftercms/google-analytics-plugin/blob/master/delivery/templates/head.ftl for an example on what can be in included in the template.
+
+
+
 .. _site-plugins-create-your-plugin:
 
 ^^^^^^^^^^^^^^^^^^
@@ -265,6 +305,37 @@ Crafter CMS uses a default path for Crafter CMS to look for a default representa
 
 |
 |
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Reusing libraries written in Java in your plugin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some users may have some libraries written in Java that they may want to reuse in their plugin.
+To reuse those libraries, do the following:
+
+* Publish your JARs to Maven Central
+* Pull the JARs from Maven in a small Groovy script in your plugin via Grapes
+
+  If the JAR is available in Maven Central
+
+  .. code-block:: groovy
+     :caption: *Pull JAR available in Maven Central via Grapes*
+
+     @Grab(value='com.example:my-java-plugin:1.0.0', initClass=false)
+     import com.example.java.Plugin // This class is made up, it can be anything
+
+  |
+
+  If the JAR is in a private Maven Repo
+
+  .. code-block:: groovy
+     :caption: *Pull JAR available in private Maven Repo via Grapes*
+
+     @GrabResolver(name='my-repo', root='https://maven.example.com/')
+     @Grab(value='com.example:my-java-plugin:1.0.0', initClass=false)
+     import com.example.java.Plugin // This class is made up, it can be anything
+
+  |
 
 ---------------------------
 Publishing Your Site Plugin
