@@ -169,6 +169,7 @@ Place the template/s in the following location in your plugin:
 
 .. code-block:: text
    :linenos:
+   :emphasize-lines: 8-11
 
    {your_plugin_folder}/
      craftercms-plugin.yaml
