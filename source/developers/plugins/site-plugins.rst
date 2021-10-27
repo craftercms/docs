@@ -321,8 +321,8 @@ To reuse those libraries, do the following:
   .. code-block:: groovy
      :caption: *Pull JAR available in Maven  Central via Grapes*
 
-     @Grab(value='com.company:my-java-plugin:1.0.0', initClass=false)
-     import com.company.java.Plugin // This class is made up, it can be anything
+     @Grab(value='com.example:my-java-plugin:1.0.0', initClass=false)
+     import com.example.java.Plugin // This class is made up, it can be anything
 
   |
 
@@ -331,9 +331,9 @@ To reuse those libraries, do the following:
   .. code-block:: groovy
      :caption: *Pull JAR available in private Maven Repo via Grapes*
 
-     @GrabResolver(name='my-repo', root='http://maven.company.com/')
-     @Grab(value='com.company:my-java-plugin:1.0.0', initClass=false)
-     import com.company.java.Plugin // This class is made up, it can be anything
+     @GrabResolver(name='my-repo', root='https://maven.example.com/')
+     @Grab(value='com.example:my-java-plugin:1.0.0', initClass=false)
+     import com.example.java.Plugin // This class is made up, it can be anything
 
   |
 
