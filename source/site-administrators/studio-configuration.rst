@@ -55,7 +55,6 @@ Here are the settings that can be configured through Crafter Studio:
    studio/site-config-tools
    studio/site-config-configuration
    studio/site-policy-configuration
-   studio/targeting-configuration
    studio/user-interface-configuration
    studio/webdav-profiles-configuration
 

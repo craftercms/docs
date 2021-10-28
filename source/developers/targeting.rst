@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 
 .. index:: Targeting
 
@@ -20,7 +20,7 @@ Targeting Using Taxonomies
 Taxonomies allow you to organize your content to make it easy for your site users to browse what
 they want and deliver content appropriate for them. It also allows you to search for content faster.
 
-The :ref:`Content Authors - Targeting<content_authors_targeting>` section of the documentation,
+The :ref:`Content Authors - Audience Targeting<content_authors_targeting>` section of the documentation,
 describes how Content Authors can target content with taxonomies based on segments and how to view
 the site depending on who is browsing. This section describes how to add the segments and segment
 targeting on pages as seen in the Website Editorial blueprint, so that content authors can target
@@ -34,61 +34,84 @@ Configuring
 
 **Targeting Configuration**
 
-.. figure:: /_static/images/targeting/targeting-config-open.png
+.. figure:: /_static/images/site-admin/config-open-user-interface-config.jpg
     :alt: Targeting - Open Configuration
-    :width: 50 %
+    :width: 75 %
     :align: center
 
+|
+
 Targeting can be configured by clicking on |siteConfig| in the Sidebar, then clicking on
-**Configuration** and finally selecting **Targeting Configuration** from the dropdown box.
+**Configuration** and finally selecting **User Interface Configuration** from the dropdown box.
 Below is the sample configuration for Guy and Gal, that is used in the Website Editorial
 blueprint.
 
 The file can also be found in the path ``/config/studio/targeting/targeting-config.xml``
 
 .. code-block:: xml
-  :caption: Example targeting-config.xml
+  :caption: Example targeting configuration in the User Interface Configuration file
   :linenos:
+  :emphasize-lines: 10-31
 
-  <targeting>
-  
-    <property>
-      <name>segment</name>
-      <label>Segment</label>
-      <description>User segment.</description>
-      <type>dropdown</type>
-      <possible_values>
-        <value>guy</value>
-        <value>gal</value>
-        <value></value>
-      </possible_values>
-      <default_value></default_value>
-      <hint>Setting the segment will change content targeting to the audience selected.</hint>
-    </property>
-    
-    <property>
-      <name>name</name>
-      <label>Name</label>
-      <description>User's first and last name.</description>
-      <type>input</type>
-      <default_value>Joe Bloggs</default_value>
-      <hint>Enter user's first and last name.</hint>
-    </property>
-    
-  </targeting>
+  <widget id="craftercms.components.ToolsPanelPageButton">
+    <configuration>
+      <target id="icePanel"/>
+      <title id="previewAudiencesPanel.title" defaultMessage="Audience Targeting"/>
+      <icon id="@mui/icons-material/EmojiPeopleRounded"/>
+      <widgets>
+        <widget id="craftercms.components.PreviewAudiencesPanel">
+          <configuration>
+            <fields>
+              <segment>
+                <id>segment</id>
+                <name>Segment</name>
+                <description>User segment.</description>
+                <type>dropdown</type>
+                <defaultValue>anonymous</defaultValue>
+                <values>
+                  <value>
+                    <label>Guy</label>
+                    <value>guy</value>
+                  </value>
+                  <value>
+                    <label>Gal</label>
+                    <value>gal</value>
+                  </value>
+                  <value>
+                    <label>Anonymous</label>
+                    <value>anonymous</value>
+                  </value>
+                </values>
+                <helpText>Setting the segment will change content targeting to the audience selected.</helpText>
+              </segment>
+              <name>
+                <id>name</id>
+                <name>Name</name>
+                <description>User's first and last name.</description>
+                <type>input</type>
+                <helpText>Enter user's first and last name.</helpText>
+              </name>
+            </fields>
+          </configuration>
+        </widget>
+      </widgets>
+    </configuration>
+  </widget>
 
 **Segments List**
 
 Here's the list that will be used by the Website Editorial blueprint when modeling the segments
-into the content.  The list was created by right clicking on **Taxonomy** in the Sidebar, then
+into the content.  The list was created by right clicking on **Taxonomy** in the Sidebar ``Site Explorer``, then
 clicking on **New Content**.
 
 Here's the list after entering the desired segments:
 
-.. figure:: /_static/images/targeting/tagging-segments.png
+.. figure:: /_static/images/targeting/tagging-segments.jpg
     :alt: Targeting - Segments Taxonomy
     :width: 80 %
     :align: center
+
+|
 
 Here's the resulting xml file:
 
@@ -120,10 +143,10 @@ Model Criteria in Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We will now see how to add the segments you just configured into a page.  From the Sidebar, click
-on |siteConfig|, next click on **Content Types**.  Click on **Open Existing Types**, then select
-**Page - Articles**
+on |siteConfig|, next click on **Content Types**.  Select **Article**, then click on
+**Open Type**
 
-.. figure:: /_static/images/targeting/tagging-segments-model-open.png
+.. figure:: /_static/images/targeting/tagging-segments-model-open.jpg
     :alt: Targeting - Open Model
     :width: 80 %
     :align: center
@@ -134,7 +157,7 @@ In the Metadata section of the form, a *Grouped Checkboxes* control is used to m
 The control is then named **Segments**, with the *Data Source* property in the Properties Explorer
 Section set to *Segments*.
 
-.. figure:: /_static/images/targeting/tagging-segments-model.png
+.. figure:: /_static/images/targeting/tagging-segments-model.jpg
     :alt: Targeting - Model Taxonomy
     :width: 80 %
     :align: center
@@ -149,8 +172,8 @@ Now that we have modeled the criteria, we can now update the content. When you c
 page, you will see the grouped check boxes that we added in the previous section, in the Metadata
 section, ready for the content author to select which segment the page is targeted for. We will
 look at one of the articles in the blueprint, "Coffee is good for your health" as an example of
-content for targeting.  Click on the article from the Sidebar, then click on **Edit** in the
-context nav.  Notice that the article is targeted for both Guy and Gal (Guy and Gal checkbox
+content for targeting.  Click on the article from the Sidebar ``Site Explorer``, then click on **Edit** in the
+toolbar ``Options``.  Notice that the article is targeted for both Guy and Gal (Guy and Gal checkbox
 checked).
 
 .. figure:: /_static/images/targeting/targeting-segments-tag-content.png
@@ -218,12 +241,12 @@ Configuring
 ^^^^^^^^^^^
 
 Here's the list that will be used by the Website Editorial blueprint when modeling the categories
-into the content. The list was created by right clicking on **Taxonomy** in the Sidebar, then
+into the content. The list was created by right clicking on **Taxonomy** in the Sidebar ``Site Explorer``, then
 clicking on **New Content**.
 
 Here's the list after entering the desired categories:
 
-.. figure:: /_static/images/targeting/tagging-categories.png
+.. figure:: /_static/images/targeting/tagging-categories.jpg
     :alt: Targeting - Categories
     :width: 80 %
     :align: center
@@ -261,10 +284,10 @@ Model Criteria in Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We will now see how to add the categories you just configured into a page.  From the Sidebar, click
-on |siteConfig|, next click on **Content Types**.  Click on **Open Existing Types**, then select
-**Page - Articles**
+on |siteConfig|, next click on **Content Types**.  Select **Article**, then click on **Open Type**
 
-.. figure:: /_static/images/targeting/tagging-segments-model-open.png
+
+.. figure:: /_static/images/targeting/tagging-segments-model-open.jpg
     :alt: Targeting - Open Model Categories
     :width: 80 %
     :align: center
@@ -275,7 +298,7 @@ In the Metadata section of the form, a *Grouped Checkboxes* control is used to m
 The control is then named **Categories**, with the *Data Source* property in the Properties Explorer
 Section set to *categories*.
 
-.. figure:: /_static/images/targeting/tagging-categories-model.png
+.. figure:: /_static/images/targeting/tagging-categories-model.jpg
     :alt: Targeting - Model Categories
     :width: 80 %
     :align: center
@@ -290,8 +313,8 @@ Now that we have modeled the criteria, we can now target content. When you creat
 you will see the grouped check boxes that we added in the previous section, in the Metadata section,
 ready for the content author to select which category the page falls into. We will look at one of the
 articles in the blueprint, "Women Styles for Winter" as an example of targeting content based on
-category. Click on the article from the Sidebar, then click on **Edit** in the context nav. Notice
-that the article is targeted for the *Style* category.
+category. Click on the article from the Sidebar ``Site Explorer``, then click on **Edit** from the toolbar ``Options``.
+Notice that the article is targeted for the *Style* category.
 
 .. figure:: /_static/images/targeting/tagging-categories-tag-content.png
     :alt: Targeting - Categories Metadata in Content
@@ -330,8 +353,8 @@ target our pages can be used as navigation headings for the site.
 We'll now take a closer look on how our taxonomy for categories is used for displaying articles in
 the landing pages of our site. On the left rail of our site, click on **Health**, notice how all
 the articles listed on the page are targeted for category *Health*.  (To check the category for
-an article, just click on the article then click on **Edit** on the context nav at the top of the
-page. Go down to the *Metadata* section to see which category is selected.)
+an article, just click on the article then click on **Edit** on the toolbar ``Options`` (stacked three dots)
+at the top of the page. Go down to the *Metadata* section to see which category is selected.)
 
 .. figure:: /_static/images/targeting/tagging-categories-landing.jpg
     :alt: Targeting - Categories Landing Page
@@ -344,7 +367,7 @@ In order to display just the articles targeted for a certain category, a groovy 
 the page renders.  To do this, we need to create a script named after the page we want the script
 to run before rendering, under *scripts -> pages*   In the groovy script below, a query is sent to
 ask for all articles targeted for the requested category. (To see the script in Studio, from the
-Sidebar. navigate to scripts -> pages -> category-landing.groovy) Please see
+Sidebar ``Site Explorer``. navigate to scripts -> pages -> category-landing.groovy) Please see
 :ref:`content-type-controller-definition` for more details on binding a script to a page or component.
 
 .. code-block:: groovy
@@ -364,13 +387,12 @@ Sidebar. navigate to scripts -> pages -> category-landing.groovy) Please see
   templateModel.articles = articles
 
 Another way of using the categories tag is for displaying a list of related articles based on the
-article being browsed.  We will look at the content type component **Component - Articles Widget**
+article being browsed.  We will look at the content type component **Articles Widget**
 to see how this is done in our Website Editorial blueprint.  We will open the model for the
-component article widget by going to the *Sidebar*, then clicking on **Content Types -> Open
-Existing Type -> Component Articles Widget**
+component article widget by going to the Sidebar ``Site Tools``, then clicking on **Content Types -> Articles Widget -> Open Type**
 
-.. figure:: /_static/images/targeting/tagging-component-article-open.png
-    :alt: Targeting - Open Component Article Widget
+.. figure:: /_static/images/targeting/tagging-component-article-open.jpg
+    :alt: Targeting - Open Component Articles Widget
     :width: 80 %
     :align: center
 
@@ -380,18 +402,18 @@ In the dialog, notice the item selector control labeled **Controllers** with dat
 **Scripts**.  This picker will be used to select which script we want to run before the component
 renders in its container.
 
-.. figure:: /_static/images/targeting/tagging-component-article-form.png
+.. figure:: /_static/images/targeting/tagging-component-article-form.jpg
     :alt: Targeting - Form Component Article Widget
     :width: 80 %
     :align: center
 
 |
 
-We'll now take a look at the component created to display related articles. In the Sidebar,
-navigate to the **Components -> articles-widget** folder, then right click on **Related Articles
+We'll now take a look at the component created to display related articles. In the Sidebar ``Site Explorer``,
+navigate to the **components -> articles-widget** folder, then right click on **Related Articles
 Widget** and click on **Edit**
 
-.. figure:: /_static/images/targeting/tagging-component-related-open.png
+.. figure:: /_static/images/targeting/tagging-component-related-open.jpg
     :alt: Targeting - Open Component Related Articles
     :width: 40 %
     :align: center
@@ -401,28 +423,33 @@ Widget** and click on **Edit**
 In the **Controllers** section, you'll see the groovy script that will be run before rendering
 the component.
 
-.. figure:: /_static/images/targeting/tagging-component-related-form.png
+.. figure:: /_static/images/targeting/tagging-component-related-form.jpg
     :alt: Targeting - Open Component Related Articles
     :width: 80 %
     :align: center
 
 |
 
-To open the groovy script, click on the Sidebar and navigate the tree to **scripts -> components
-then right click on related-articles.groovy** and select **Edit**.  In the groovy script, it
+To open the groovy script, click on the Sidebar ``Site Explorer`` and navigate the path navigator tree to **scripts -> components**
+then right click on **related-articles.groovy** and select **Edit**.  In the groovy script, it
 sends a query for articles in the same category as the article being viewed, then passes on the
 articles to the template model of the component ready for rendering.
 
 .. code-block:: groovy
   :caption: Related Articles Component Script
   :linenos:
-  :emphasize-lines: 8
+  :emphasize-lines: 13
 
   import org.craftercms.sites.editorial.SearchHelper
   import org.craftercms.sites.editorial.ProfileUtils
 
-  def segment = ProfileUtils.getSegment(profile, siteItemService)
-  def searchHelper = new SearchHelper(searchService, urlTransformationService)
+  def segment = null
+
+  if (authToken) {
+    segment = ProfileUtils.getSegment(authToken.principal, siteItemService)
+  }
+
+  def searchHelper = new SearchHelper(elasticsearch, urlTransformationService)
   // articleCategories and articlePath should be provided as additionalModel of the component and
   // should be the categories of the current article
   def articles = searchHelper.searchArticles(false, articleCategories, segment, 0, 3, "-localId:\"${articlePath}\"")
@@ -459,21 +486,65 @@ Configuring
 ^^^^^^^^^^^
 
 Let's configure targeting based on roles by clicking on |siteConfig| in the Sidebar, then clicking on
-**Configuration** and finally selecting **Targeting Configuration** from the dropdown box.
-Below is the configuration for roles using the Website Editorial blueprint.
+**Configuration** and finally selecting **User Interface Configuration** from the dropdown box.
+
+Add the following to the ``Audience Targeting`` widget:
 
 .. code-block:: xml
-   :caption: **Example setting up targeting based on roles - targeting-config.xml**
-   :linenos:
 
-   <property>
-      <name>roles</name>
-      <label>Role</label>
-      <description>User role, e.g. ROLE_admin</description>
-      <type>input</type> <!-- valid types: dropdown, input -->
-      <default_value></default_value>
-      <hint>Setting the role will change content available based on role selected.</hint>
-   </property>
+   <roles>
+     <id>roles</id>
+     <name>Role</name>
+     <description>User role, e.g. ROLE_admin</description>
+     <type>input</type> <!-- valid types: dropdown, checkboxes, input -->
+     <helpText>Setting the role will change content available based on role selected.</helpText>
+   </roles>
+
+|
+
+Below is how the configuration for roles using the Website Editorial blueprint will look like:
+
+.. code-block:: xml
+   :caption: **Example setting up targeting based on roles - ui.xml**
+   :linenos:
+   :emphasize-lines: 26-32
+
+   <widget id="craftercms.components.ICEToolsPanel">
+     <configuration>
+       <widgets>
+         <widget id="craftercms.components.ToolsPanelPageButton">
+         ...
+         <widget id="craftercms.components.ToolsPanelPageButton">
+           <configuration>
+             <target id="icePanel"/>
+             <title id="previewAudiencesPanel.title" defaultMessage="Audience Targeting"/>
+             <icon id="@mui/icons-material/EmojiPeopleRounded"/>
+             <widgets>
+               <widget id="craftercms.components.PreviewAudiencesPanel">
+                 <configuration>
+                   <fields>
+                     <segment>
+                       <id>segment</id>
+                       ...
+                     </segment>
+                     <name>
+                       <id>name</id>
+                       <name>Name</name>
+                       <description>User's first and last name.</description>
+                       <type>input</type>
+                       <helpText>Enter user's first and last name.</helpText>
+                     </name>
+                     <roles>
+                       <id>roles</id>
+                       <name>Role</name>
+                       <description>User role, e.g. ROLE_admin</description>
+                       <type>input</type> <!-- valid types: dropdown, checkboxes, input -->
+                       <helpText>Setting the role will change content available based on role selected.</helpText>
+                     </roles>
+                   </fields>
+                 </configuration>
+               </widget>
+               ...
 
 |
 
@@ -482,10 +553,10 @@ Model Criteria in Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We will now see how to add the role(s) into a page.  From the Sidebar, click
-on |siteConfig|, next click on **Content Types**.  Click on **Open Existing Types**, then select
-**Page - Articles**
+on |siteConfig|, next click on **Content Types**.  Select **Article**, then select
+**Open Type**
 
-.. figure:: /_static/images/targeting/tagging-segments-model-open.png
+.. figure:: /_static/images/targeting/tagging-segments-model-open.jpg
    :alt: Targeting - Open Model Categories
    :width: 80 %
    :align: center
@@ -526,12 +597,12 @@ Now that we have modeled the criteria, we can now target content. When you creat
 you will see the repeating group control that we added in the previous section, in the Metadata section,
 ready for the content author to input which role is authorized to preview the page. We will look at one of the
 articles in the blueprint, "Top Books For Young Women" as an example of targeting content based on a
-role. Click on the article from the Sidebar, then click on **Edit** in the context nav.
+role. Click on the article from the Sidebar ``Site Explorer``, then click on **Edit** in the toolbar ``Options``.
 Scroll down to the ``Metadata`` section in the form to the ``Authorized Roles`` field.  Click on ``Add First Item``
 
 .. figure:: /_static/images/targeting/tagging-roles-tag-content-1.png
    :alt: Targeting - Authorized Roles Metadata in Content
-   :width: 60 %
+   :width: 70 %
    :align: center
 
 |
@@ -540,7 +611,7 @@ Let's setup the page to be available to users with the role ``user``.  The prefi
 
 .. figure:: /_static/images/targeting/tagging-roles-tag-content-2.png
    :alt: Targeting - Authorized Roles Metadata in Content
-   :width: 60 %
+   :width: 70 %
    :align: center
 
 |
@@ -555,7 +626,7 @@ as a user with the role ``ROLE_user``,
 
 .. figure:: /_static/images/targeting/tagging-roles-targeting.png
     :alt: Targeting - Set role ROLE_user
-    :width: 50 %
+    :width: 30 %
     :align: center
 
 |
