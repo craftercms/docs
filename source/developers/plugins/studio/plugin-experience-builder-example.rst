@@ -8,7 +8,7 @@
 Crafter Studio Experience Builder Plugin Example
 ================================================
 
-The Experience Builder is the panel on the right of Studio that is enabled by clicking on ``Edit mode (e)`` (pencil icon) or ``Move mode (m)`` ( two vertical ellipsis icon) on the top right of Studio or, by hitting the ``e`` or ``m`` key on your keyboard
+The Experience Builder panel is the panel on the right of Studio that is enabled by clicking on ``Edit mode`` (pencil icon) or ``Move mode`` (two vertical ellipsis icon) on the top right of Studio or, by hitting the ``e`` or ``m`` key on your keyboard
 
 .. image:: /_static/images/developer/plugins/site-plugins/experience-builder-panel.jpg
    :align: center

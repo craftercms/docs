@@ -8,7 +8,7 @@
 Crafter Studio Dashboard Plugin Example
 =======================================
 
-The site dashboard has different dashlets depending on your role that shows at a glance all items currently in workflow, all items recently modified by the current user, etc.
+The site dashboard contains different dashlets that show at a glance all items currently in workflow, all items recently modified by the current user, etc. Dashlets shown vary depending on the user's role.
 For more information on the Dashboard, see :ref:`here <site-dashboard>`
 
 .. image:: /_static/images/content-author/site-dashboard.jpg
@@ -141,6 +141,15 @@ Let's take a look at an example of creating a Dashboard plugin in Studio using a
       :alt: Dashboard site plugin in action
 
    |
+
+   You may also open the Dashboard anywhere via the Launcher, which is opened by clicking the ``apps`` icon on the top right:
+
+   .. image:: /_static/images/developer/plugins/site-plugins/open-dashboard-from-launcher.jpg
+      :align: center
+      :alt: Open Dashboard from the Launcher
+
+   |
+
 
    Here's the auto-wired section in the configuration after installing the plugin:
 
