@@ -329,3 +329,83 @@ Here's the  ``Site Explorer`` with the colors and border added:
    :width: 25 %
 
 |
+
+.. _targeting-configuration:
+
+******************
+Audience Targeting
+******************
+
+Audience Targeting allows an author to see what the site would look like if it were being browsed by a user with a given set of attributes.
+
+.. image:: /_static/images/page/page-targeting-open.jpg
+    :width: 80 %
+    :align: center
+
+|
+
+Here's the  ``Audience Targeting`` configuration out of the box for a site created using the Website Editorial blueprint:
+
+.. code-block:: xml
+   :caption: **Audience Targeting - ui.xml**
+   :linenos:
+
+   <widget id="craftercms.components.ICEToolsPanel">
+     <configuration>
+       <widgets>
+         <widget id="craftercms.components.ToolsPanelPageButton">
+         ...
+         <widget id="craftercms.components.ToolsPanelPageButton">
+           <configuration>
+             <target id="icePanel"/>
+             <title id="previewAudiencesPanel.title" defaultMessage="Audience Targeting"/>
+             <icon id="@mui/icons-material/EmojiPeopleRounded"/>
+             <widgets>
+               <widget id="craftercms.components.PreviewAudiencesPanel">
+                 <configuration>
+                   <fields>
+                     <segment>
+                       <id>segment</id>
+                       <name>Segment</name>
+                       <description>User segment.</description>
+                       <type>dropdown</type>
+                       <defaultValue>anonymous</defaultValue>
+                       <values>
+                         <value>
+                           <label>Guy</label>
+                           <value>guy</value>
+                         </value>
+                         <value>
+                           <label>Gal</label>
+                           <value>gal</value>
+                         </value>
+                         <value>
+                           <label>Anonymous</label>
+                           <value>anonymous</value>
+                         </value>
+                       </values>
+                       <helpText>Setting the segment will change content targeting to the audience selected.</helpText>
+                     </segment>
+                     <name>
+                       <id>name</id>
+                       <name>Name</name>
+                       <description>User's first and last name.</description>
+                       <type>input</type>
+                       <helpText>Enter user's first and last name.</helpText>
+                     </name>
+                   </fields>
+                 </configuration>
+               </widget>
+               ...
+
+|
+
+Here's how the above configuration looks like in the Experience Builder Panel in Studio:
+
+.. image:: /_static/images/page/page-targeting-curr-attributes.png
+    :width: 30 %
+    :align: center
+
+|
+
+See :ref:`targeting` for more information on configuring the targeting system of Crafter Studio to help provide Crafter Engine with fake user properties that help drive the targeting system, such as configuring targeting based on roles, etc. and :ref:`content_authors_targeting` for more information on how content authors use the audience targeting system configured.
