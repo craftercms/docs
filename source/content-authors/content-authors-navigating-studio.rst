@@ -301,19 +301,7 @@ This pencil allows you to edit the content of the wired region, including the cu
 
 To turn off in-context editing, click on the ``Switch off editing`` off switch icon at the top, which will then turn the ``Edit mode``/``Move mode`` icon to gray.
 
-Convenient keyboard shortcuts are provided for turning on/off in-context editing:
-
-* **e** toggle ``Edit mode`` ON/OFF
-* **z** disable in-context editing while held down (to click through)
-* **m** toggle ``Move mode`` ON/OFF
-* **?** get help
-
-
-.. image:: /_static/images/content-author/preview-in-context-editing-shortcuts.png
-    :width: 50 %
-    :align: center
-    :alt: Navigating Studio - Preview In-Context Editing Keyboard Shortcuts
-
+Convenient keyboard shortcuts are also provided, press ``?`` to see the list of commands.
 
 Search
 ^^^^^^
