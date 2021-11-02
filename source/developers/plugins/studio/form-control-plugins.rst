@@ -149,6 +149,21 @@ And once you are done, commit them with the following command:
 You can also use any Git client. Now, it will be available when you edit or create a new content type in your site.
 Remember that whenever you edit directly in the filesystem, you need to commit your changes to ensure they are properly reflected.
 
+Saving additional form control elements to XML
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To save additional elements from your form control into the XML content, call ``registerDynamicField`` from the form when initializing the form control.  When ``updateField`` is called, your element will be saved into the XML content.
+
+ .. code-block:: js
+
+    this.form.registerDynamicField(this.timezoneId);
+
+|
+
+See `here <https://github.com/craftercms/studio-ui/blob/support/3.1.x/static-assets/components/cstudio-forms/controls/date-time.js#L821>`__ for an example of calling ``registerDynamicField`` in the date-time form control code.
+
+
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Configuring the Control to show up in Crafter Studio
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
