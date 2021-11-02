@@ -133,6 +133,19 @@ In the JS file, please note that the ``CStudioAuthoring.Module`` is required and
 
 |
 
+Saving additional form control elements to XML
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To save additional elements from your form control into the XML content, call ``registerDynamicField`` from the form when initializing the form control.  When ``updateField`` is called, your element will be saved into the XML content.
+
+ .. code-block:: js
+
+    this.form.registerDynamicField(this.timezoneId);
+
+|
+
+See `here <https://github.com/craftercms/studio-ui/tree/develop/static-assets/components/cstudio-forms/controls/date-time.js#L865>`__ for an example of calling ``registerDynamicField`` in the date-time form control code.
+
 .. _configure-descriptor-file-for-autowiring:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
