@@ -261,7 +261,7 @@ Experience Builder Panel
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
     * When in preview mode your context navigation will show an additional control beside the publishing status.
-    * The ``Edit Mode`` switch turns on/off the Experience Builder panel which allows you to use in-context editing and various tools for creating your page in a panel on the right
+    * The ``Edit Mode`` and ``Move mode`` icons turns on the Experience Builder panel which allows you to use in-context editing and various tools for creating your page in a panel on the right
     * ``Search`` allows you to search for items such as components, images, etc. in your site
     * ``Components`` allows you to create a component and also lists all available components in your site which can then be dragged and dropped into your page
     * ``Browse Components`` allows you to browse for components which can then be dragged and dropped into your page
@@ -284,7 +284,7 @@ Experience Builder Panel
 In-Context Editing
 ^^^^^^^^^^^^^^^^^^
 
-When in-context editing is turned on (``Edit Mode`` is switched to on), it puts the page in construction mode.  When you hover your mouse around regions of the page that have been wired for in-context editing, a pencil will show up instead of the mouse cursor.
+When in-context editing is turned on (``Edit mode`` pencil is green or ``Move mode`` two vertical ellipsis is blue at the top), it puts the page in construction mode.  When you hover your mouse around regions of the page that have been wired for in-context editing, a pencil will show up instead of the mouse cursor.
 
 .. image:: /_static/images/content-author/preview-page-in-context-editing.jpg
     :width: 75 %
@@ -299,7 +299,9 @@ This pencil allows you to edit the content of the wired region, including the cu
     :align: center
     :alt: Navigating Studio - Preview In-Context Editing
 
+To turn off in-context editing, click on the ``Switch off editing`` off switch icon at the top, which will then turn the ``Edit mode``/``Move mode`` icon to gray.
 
+Convenient keyboard shortcuts are also provided, press ``?`` to see the list of commands.
 
 Search
 ^^^^^^
