@@ -47,9 +47,9 @@ The first step is to create a new index on Elasticsearch where you can index the
 Step 2: Content freeze
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Once you are about to start a re-index you need to freeze your authoring/editing activity.  If content is being updated
+Once you are about to start a reindex you need to freeze your authoring/editing activity.  If content is being updated
 in the live environment while you are rebuilding your indexes, you may miss updates.  Ask the authors not to publish
-during your re-index process.
+during your reindex process.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 3: Set up a new temporary target
@@ -66,12 +66,12 @@ different ID. The easiest way to do this is to:
 #. Change the ``siteName`` property value inside the YAML to the name of the new index (e.g. ``SITE_NAME_v2``).
 #. Copy the the YAML file back to the ``targets`` folder.
 
-^^^^^^^^^^^^^^^^
-Step 4: Re-index
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
+Step 4: Reindex
+^^^^^^^^^^^^^^^
 
 On a live environment, the Deployer will execute the deployment of a target on schedule every minute by default, so
-after creating the new temporary target the Deployer should pick it up automatically and start re-indexing. If the
+after creating the new temporary target the Deployer should pick it up automatically and start reindexing. If the
 Deployer is not working on a schedule, you can follow the process in :ref:`reindexing-content`, starting in
 ``Step 2: Invoke the reprocessing`` and using the ``siteName`` you set in the temporary target YAML.
 
@@ -93,7 +93,7 @@ finishes you should see something like the following in the log:
 Step 6: Swap indexes
 ^^^^^^^^^^^^^^^^^^^^
 
-Now that indexing is complete you need to load the re-indexed content. Execute the following command:
+Now that indexing is complete you need to load the reindexed content. Execute the following command:
 
 .. code-block:: bash
   :linenos:

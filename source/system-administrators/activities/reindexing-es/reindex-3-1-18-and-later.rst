@@ -17,17 +17,19 @@ The steps listed below for reindexing content without disrupting service in prod
 Step 1: Content freeze
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Once you are about to start a re-index you need to freeze your authoring/editing activity.  If content is being updated
+Once you are about to start a reindex you need to freeze your authoring/editing activity.  If content is being updated
 in the live environment while you are rebuilding your indexes, you may miss updates.  Ask the authors not to publish
-during your re-index process.
+during your reindex process.
 
 ^^^^^^^^^^^^^^^^^^^^^^
 Step 2: Recreate Index
 ^^^^^^^^^^^^^^^^^^^^^^
 
-To simplify recreating an index of a site using Elasticsearch, Crafter CMS provides an API tht recreates the underlying Elasticsearch index with the specified environment and site name.
+To simplify recreating an index of a site using Elasticsearch, Crafter CMS provides an API that recreates the underlying Elasticsearch index with the specified environment and site name.
 
 ``http://localhost:9191/api/1/target/recreate/{env}/{site_name}``
+
+Simply call the API above with the required parameters to recreate your site index.
 
 See :ref:`here <crafter-deployer-api-target-recreate>` for more information on the API.
 
