@@ -35,7 +35,7 @@ The first step is to create a new index on Elasticsearch where you can index the
    or no suffix), then use ``default-mapping.json``. The latest version of the mappings can be found
    `here <https://github.com/craftercms/search/tree/v3.1.17/crafter-search-elasticsearch/src/main/resources/crafter/elasticsearch>`_
 
-#. Use the Elasticsearch API `create index <https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html>`_ to create a new index and create the request based on the  mappings downloaded from the previous step
+#. Use the Elasticsearch API `create index <https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html>`_ to create a new index (e.g. SITE_NAME-ENV_v2) and create the request based on the  mappings downloaded from the previous step
 
 
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -58,15 +58,15 @@ different ID. The easiest way to do this is to:
    picking the new target while you're modifying it).
 #. Replace the original environment from the YAML file name with anything different than the original (e.g.
    ``SITE_NAME-ENV-temp.yaml``).
-#. Change the index name inside the YAML file by adding ``indexId:NEW_INDEX`` where the ``NEW_INDEX`` property value is the name of the new index created in the previous step, right after the line ``- processorName: authoringElasticsearchIndexingProcessor``
+#. Change the ``siteName`` property value inside the YAML to a new name (e.g. SITE_NAME_v2) and change the index name by adding ``indexId:NEW_INDEX`` where the ``NEW_INDEX`` property value is the name of the new index created in the previous step (e.g. SITIE_NAME-ENV_v2), right after the line ``- processorName: authoringElasticsearchIndexingProcessor``
 
    .. code-block:: yaml
-      :emphasiize-lines: 12
+      :emphasize-lines: 12
 
       version: '1.7'
       target:
       env: preview
-      siteName: mysite
+      siteName: SITE_NAME_v2
       ...
       deployment:
         scheduling:
@@ -74,7 +74,7 @@ different ID. The easiest way to do this is to:
         pipeline:
           - processorName: gitDiffProcessor
           - processorName: elasticsearchIndexingProcessor
-            indexId: mysite-preview_v2
+            indexId: SITE_NAME-ENV_v2
       ...
 
    |
@@ -88,7 +88,7 @@ Step 4: Reindex
 On a live environment, the Deployer will execute the deployment of a target on schedule every minute by default, so
 after creating the new temporary target the Deployer should pick it up automatically and start reindexing. If the
 Deployer is not working on a schedule, you can follow the process in :ref:`reindexing-content`, starting in
-``Step 2: Invoke the reprocessing`` and using the index name you set in the temporary target YAML.
+``Step 2: Invoke the reprocessing`` and using the site name you set in the temporary target YAML (e.g. SITE_NAME_v2).
 
 ^^^^^^^^^^^^
 Step 5: Wait
@@ -101,7 +101,7 @@ finishes you should see something like the following in the log:
 .. code-block:: none
 
   2017-07-25 16:52:03.762  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : ------------------------------------------------------------
-  2017-07-25 16:52:03.763  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : Deployment for SITE_NAME-ENV_v2 finished in 2.359 secs
+  2017-07-25 16:52:03.763  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : Deployment for SITE_NAME_v2-ENV finished in 2.359 secs
   2017-07-25 16:52:03.763  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : ------------------------------------------------------------
 
 ^^^^^^^^^^^^^^^^^^^^
