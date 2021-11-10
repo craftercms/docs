@@ -190,6 +190,30 @@ The final step is to trigger a new search when the user selects one of the value
    doSearch(queryParam, categories);
   });
 
+-----------------
+Multi-index Query
+-----------------
+
+Crafter CMS supports querying more than one Elasticsearch index in a single query.
+
+To search your site and other indexes, simply send a search query with a comma separated list of indexes/aliases (ES pointer to an index).  It will then search your site and the other indexes and return a single ranked result set
+
+.. image:: /_static/images/search/craftercms-multi-index-query.svg
+   :width: 80 %
+   :align: center
+
+Remember that all other Elasticsearch indexes/aliases to be searched need to be prefixed with the site name like this: ``SITENAME_{external-index-name}``.  When sending the query, remove the prefix ``SITENAME_`` from the other indexes/aliases.
+
+Here's how the query will look like for the above image of a multi-index query for the site ``acme`` (the SITENAME), and the CD database index ``acme_cd-database``:
+
+.. code-block:: groovy
+    :linenos:
+    :caption: *Search multiple indexes*
+
+    def result = elasticsearch.search(new SearchRequest('cd-database').source(builder))
+
+|
+
 ---------------------------------
 Implementing a Type-ahead Service
 ---------------------------------
