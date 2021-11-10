@@ -64,7 +64,7 @@ different ID. The easiest way to do this is to:
 #. Replace the original environment from the YAML file name with anything different than the original (e.g.
    ``SITE_NAME-temp.yaml``).
 #. Change the ``siteName`` property value inside the YAML to the name of the new index (e.g. ``SITE_NAME_v2``).
-#. Copy the the YAML file back to the ``targets`` folder.
+#. Copy the YAML file back to the ``targets`` folder.
 
 ^^^^^^^^^^^^^^^
 Step 4: Reindex

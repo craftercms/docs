@@ -28,19 +28,14 @@ The first step is to create a new index on Elasticsearch where you can index the
 
       # Example result
 
-      SITE_NAME   SITE_NAME_v1   - - -
+      SITE_NAME-ENV   SITE_NAME-ENV_v1   - - -
 
 #. Download the Elasticsearch mappings appropriate for the index. If the index is an authoring index (it has an
    -authoring suffix), then use ``authoring-mapping.json``. If it's any other index (it has a -preview suffix
    or no suffix), then use ``default-mapping.json``. The latest version of the mappings can be found
    `here <https://github.com/craftercms/search/tree/v3.1.17/crafter-search-elasticsearch/src/main/resources/crafter/elasticsearch>`_
 
-#. Create the new index using the next version and the settings file:
-
-   .. code-block:: bash
-      :linenos:
-
-      curl -s -X PUT http://ES_HOST:ES_PORT/SITE_NAME_v2 -H 'Content-Type: application/json' -d '@default-index-settings.json'
+#. Use the Elasticsearch API `create index <https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html>`_ to create a new index and create the request based on the  mappings downloaded from the previous step
 
 
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -62,9 +57,29 @@ different ID. The easiest way to do this is to:
 #. Copy and paste the target's YAML to somewhere temporary outside the ``targets`` folder (to avoid the Deployer from
    picking the new target while you're modifying it).
 #. Replace the original environment from the YAML file name with anything different than the original (e.g.
-   ``SITE_NAME-temp.yaml``).
-#. Change the ``siteName`` property value inside the YAML to the name of the new index (e.g. ``SITE_NAME_v2``).
-#. Copy the the YAML file back to the ``targets`` folder.
+   ``SITE_NAME-ENV-temp.yaml``).
+#. Change the index name inside the YAML file by adding ``indexId:NEW_INDEX`` where the ``NEW_INDEX`` property value is the name of the new index created in the previous step, right after the line ``- processorName: authoringElasticsearchIndexingProcessor``
+
+   .. code-block:: yaml
+      :emphasiize-lines: 12
+
+      version: '1.7'
+      target:
+      env: preview
+      siteName: mysite
+      ...
+      deployment:
+        scheduling:
+          enabled: false
+        pipeline:
+          - processorName: gitDiffProcessor
+          - processorName: elasticsearchIndexingProcessor
+            indexId: mysite-preview_v2
+      ...
+
+   |
+
+#. Copy the YAML file back to the ``targets`` folder.
 
 ^^^^^^^^^^^^^^^
 Step 4: Reindex
@@ -73,7 +88,7 @@ Step 4: Reindex
 On a live environment, the Deployer will execute the deployment of a target on schedule every minute by default, so
 after creating the new temporary target the Deployer should pick it up automatically and start reindexing. If the
 Deployer is not working on a schedule, you can follow the process in :ref:`reindexing-content`, starting in
-``Step 2: Invoke the reprocessing`` and using the ``siteName`` you set in the temporary target YAML.
+``Step 2: Invoke the reprocessing`` and using the index name you set in the temporary target YAML.
 
 ^^^^^^^^^^^^
 Step 5: Wait
@@ -86,7 +101,7 @@ finishes you should see something like the following in the log:
 .. code-block:: none
 
   2017-07-25 16:52:03.762  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : ------------------------------------------------------------
-  2017-07-25 16:52:03.763  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : Deployment for SITE_NAME_v2 finished in 2.359 secs
+  2017-07-25 16:52:03.763  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : Deployment for SITE_NAME-ENV_v2 finished in 2.359 secs
   2017-07-25 16:52:03.763  INFO 21896 --- [pool-2-thread-1] org.craftercms.deployer.impl.TargetImpl  : ------------------------------------------------------------
 
 ^^^^^^^^^^^^^^^^^^^^
@@ -101,8 +116,8 @@ Now that indexing is complete you need to load the reindexed content. Execute th
       curl -s -X POST 'http://ES_HOST:ES_PORT/_aliases' -H 'Content-Type: application/json' -d '
       {
         "actions": [
-          { "remove": { "index": "SITE_NAME_v1", "alias": "SITE_NAME" } },
-          { "add": { "index": "SITE_NAME_v2", "alias": "SITE_NAME" } }
+          { "remove": { "index": "SITE_NAME-ENV_v1", "alias": "SITE_NAME-ENV" } },
+          { "add": { "index": "SITE_NAME-ENV_v2", "alias": "SITE_NAME-ENV" } }
         ]
       }
       '
