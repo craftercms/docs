@@ -10,7 +10,7 @@ Performs a search operation in the Elasticsearch index of the current site resol
 
 .. note::
 	The request body must be a valid Elasticsearch JSON query as described in the 
-	`official docs <https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html>`_
+	`official docs <https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html>`_
 
 --------------------
 Resource Information
@@ -25,6 +25,18 @@ Resource Information
 +----------------------------+-------------------------------------------------------------+
 || Response Formats          || ``JSON``                                                   |
 +----------------------------+-------------------------------------------------------------+
+
+----------
+Parameters
+----------
+
++-------------------------+-------------+---------------+---------------------------------------+
+|| Name                   || Type       || Required     || Description                          |
++=========================+=============+===============+=======================================+
+|| index                  || String     ||              || Comma separated list of index names  |
+||                        ||            ||              || to be searched in addition to the    |
+||                        ||            ||              || current site                         |
++-------------------------+-------------+---------------+---------------------------------------+
 
 -------
 Example
