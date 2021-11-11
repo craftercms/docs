@@ -241,9 +241,9 @@ Crafter CMS supports the following search query parameters:
 * ignore_throttled
 * ignore_unavailable
 
-See `the official docs <https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html>`__ for more information on the above parameters.
+See `the official docs <https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-request-body.html>`__ for more information on the above parameters.
 
-For more information on ``indices_boost``, see `here <https://www.elastic.co/guide/en/elasticsearch//reference/current/search-multiple-indices.html#index-boost>`__
+For more information on ``indices_boost``, see `here <https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-request-index-boost.html#search-request-index-boost>`__
 
 ---------------------------------
 Implementing a Type-ahead Service

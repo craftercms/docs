@@ -11,7 +11,7 @@ See :ref:`search-elasticsearch-multi-index-query` for more information on perfor
 
 .. note::
 	The request body must be a valid Elasticsearch JSON query as described in the 
-	`official docs <https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html>`_
+	`official docs <https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-request-body.html>`__
 
 --------------------
 Resource Information
