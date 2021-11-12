@@ -36,11 +36,11 @@ a ``categories`` field that uses a datasource to get values from a taxonomy in t
 field in the Elasticsearch index is ``categories.item.value_smv``.
 
 .. image:: /_static/images/developer/search/model.jpg
-  :width: 90 %
+  :width: 75 %
   :align: center
 
 .. image:: /_static/images/developer/search/datasource.jpg
-  :width: 50 %
+  :width: 75 %
   :align: center
 
 To build the faceted search we must:
