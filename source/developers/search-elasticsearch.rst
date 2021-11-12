@@ -190,6 +190,8 @@ The final step is to trigger a new search when the user selects one of the value
    doSearch(queryParam, categories);
   });
 
+.. _search-elasticsearch-multi-index-query:
+
 -----------------
 Multi-index Query
 -----------------
@@ -214,7 +216,7 @@ Here's how the query will look like for the above image of a multi-index query f
 
 |
 
-.. code-block:: json
+.. code-block:: bash
     :linenos:
     :caption: *Search multiple indexes - REST example*
 
@@ -225,7 +227,10 @@ Here's how the query will look like for the above image of a multi-index query f
       }
     }
     '
+
 |
+
+See :ref:`here <crafter-engine-api-site-elasticsearch-search>` for more information on the Crafter Engine API ``search``.
 
 Crafter CMS supports the following search query parameters:
 

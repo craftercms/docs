@@ -6,7 +6,8 @@
 Search
 ======
 
-Performs a search operation in the Elasticsearch index of the current site resolved for the request.
+Performs a search operation in the Elasticsearch index of the current site resolved for the request and optional other indexes.
+See :ref:`search-elasticsearch-multi-index-query` for more information on performing a multiple index search.
 
 .. note::
 	The request body must be a valid Elasticsearch JSON query as described in the 
