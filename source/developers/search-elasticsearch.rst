@@ -190,6 +190,61 @@ The final step is to trigger a new search when the user selects one of the value
    doSearch(queryParam, categories);
   });
 
+.. _search-elasticsearch-multi-index-query:
+
+-----------------
+Multi-index Query
+-----------------
+
+Crafter CMS supports querying more than one Elasticsearch index in a single query.
+
+To search your site and other indexes, simply send a search query with a comma separated list of indexes/aliases (ES pointer to an index).  It will then search your site and the other indexes
+
+.. image:: /_static/images/search/craftercms-multi-index-query.svg
+   :width: 80 %
+   :align: center
+
+Remember that all other Elasticsearch indexes/aliases to be searched need to be prefixed with the site name like this: ``SITENAME_{external-index-name}``.  When sending the query, remove the prefix ``SITENAME_`` from the other indexes/aliases.
+
+Here's how the query will look like for the above image of a multi-index query for the site ``acme`` (the SITENAME), and the CD database index ``acme_cd-database``:
+
+.. code-block:: groovy
+    :linenos:
+    :caption: *Search multiple indexes - Groovy example*
+
+    def result = elasticsearch.search(new SearchRequest('cd-database').source(builder))
+
+|
+
+.. code-block:: bash
+    :linenos:
+    :caption: *Search multiple indexes - REST example*
+
+    curl -s -X POST "localhost:8080/api/1/site/elasticsearch/search?index=cd-database" -d '
+    {
+      "query" : {
+        "match_all" : {}
+      }
+    }
+    '
+
+|
+
+See :ref:`here <crafter-engine-api-site-elasticsearch-search>` for more information on the Crafter Engine API ``search``.
+
+Crafter CMS supports the following search query parameters:
+
+* indices_boost
+* search_type
+* allow_no_indices
+* expand_wildcards
+* ignore_throttled
+* ignore_unavailable
+
+See `the official docs <https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-request-body.html>`__ for more information on the above parameters.
+
+For more information on ``indices_boost``, see `here <https://www.elastic.co/guide/en/elasticsearch/reference/6.8/search-request-index-boost.html#search-request-index-boost>`__
+
 ---------------------------------
 Implementing a Type-ahead Service
 ---------------------------------
