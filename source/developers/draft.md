@@ -1,43 +1,25 @@
-# Crafter 4 Docs
+# Experience Builder
 
-## Table of contents
+Crafter CMS’ Experience Builder (XB) provides a UI layer on top of your applications that enables authors 
+with in-context editing (ICE) for all the model fields defined in the content types of pages and components. 
+Crafter CMS developers must integrate their applications with XB, essentially telling XB what field of the 
+model each element on the view represents.
 
-### Developers
+<figure: example page with a sample content type side by side showing the relation between page elements 
+and content type fields>
 
-* Plugins
-  * The z key
-  * The e & m keys
-  * ICE on hints (class & event)
-* Experience Builder
-* Creating Experience Builder enabled sites
-  * Freemarker
-  * React
-  * Other frameworks
-* Enabling Experience Builder on an existing site
-  * Freemarker
-  * React
-  * Other frameworks
+## Creating Experience Builder (XB) enabled sites
 
-### Authors
+The concrete integration strategy with XB depends on what kind of application you are developing. 
+Crafter CMS provides native XB integration for Freemarker and React applications. Other types of 
+applications (e.g. Angular, Vue, etc.) can still be integrated with XB through the underlying libraries 
+that power the Freemarker and React applications. For reference on how to integrate, please see the 
+sections below for your specific kind of application.
 
-* Experience Builder
-* Editing text
-* Editing Images
-* Editing …
+Overall, XB’s ICE engine works with a sort of coordinate system that you — the developer — use to 
+tell the CMS which field of the content type each element/component on your page/app maps to.
 
-## Experience Builder
-
-Crafter CMS’ Experience Builder (XB) provides an UI layer on top of your applications that enables authors with in-context editing (ICE) for all the model fields defined in the content types of pages and components. Crafter CMS developers must integrate their applications with XB, essentially telling XB what field of the model each element on the view represents.
-
-<figure: example page with a sample content type side by side showing the relation between page elements and content type fields>
-
-### Creating Experience Builder (XB) enabled sites
-
-The concrete integration strategy with XB depends on what kind of application you are developing. Crafter CMS provides native XB integration for Freemarker and React applications. Other types of applications (e.g. Angular, Vue, etc.) can still be integrated with XB through the underlying libraries that power the Freemarker and React applications. For reference on how to integrate, please see the sections below for your specific kind of application.
-
-Overall, XB’s ICE engine works with a sort of coordinate system that you — the developer — use to tell the CMS which field of the content type each element/component on your page/app maps to.
-
-The coordinate system is comprised of the following pieces of data:
+The coordinate system consists of the following pieces of data:
 * Path: the path in the file system relative to the site repository sandbox (e.g. `/site/components/features/main_feature.xml`).
 * Model id (a.ka. object id, local id): the internal GUID that every content object in Crafter CMS has (e.g. `5a06e244-64f4-4380-8619-1c726fe38e92`)
 * Field id: the id of the field in the content type (e.g. `heroTitleText_t`)
@@ -45,11 +27,14 @@ The coordinate system is comprised of the following pieces of data:
 * Index: When working with collections (e.g. component selectors or repeat groups), the index of the item within it’s container collection (e.g. `0`)
   * Indexes can be compound, comprised of the full path of indexes to that item in the collection (e.g. `0.1`).
 
-XB’s ICE engine requires — at times — what might be considered slightly more verbose markup structure than if one wouldn't’t be concerned with integrating with XB. In order for the system to be able to direct authors to every piece of the model as well as allowing them to edit in line, you need to register each piece of the model as an element on your app/page.
+XB’s ICE engine requires — at times — what might be considered slightly more verbose markup structure. 
+In order for the system to be able to direct authors to every piece of the model, as well as allowing 
+them to edit in line, you need to register each piece of the model as an element on your view.
 
-For example, consider a carousel, where the carousel is modelled as a Crafter CMS component that has a repeat group field called `slides_o` which has two inner fields called `caption_s` and `image_s`…
+For example, consider a carousel, where the carousel is modelled as a Crafter CMS component that has 
+a repeat group field called `slides_o` which has two inner fields called `caption_s` and `image_s`...
 
-Disregarding specific demands of any given carousel/slider library, the markup for a carousel may look like this:
+The markup for a carousel may look like this:
 
 ```html
   <div class=“carousel”>
@@ -81,7 +66,14 @@ In order to register each piece of the model, we would need to introduce a new e
 </div>
 ```
 
-You can vary exactly where to add this additional element exactly to suit your needs — or those of the libraries and frameworks that you use to develop your application. The important aspects are that each field is represented by an element on the page/app and that the hierarchy of the fields is followed by the hierarchy of your markup (i.e. the component element is the parent of the repeat group element which is a parent of the repeat group items which are parents of the repeat group item fields). For example, you could move the additional div to be the top wrapper — and hence represent the component instead of the repeat group. Naturally, then the repeat group would be represented by the div with the carousel class.
+You can vary exactly where to add this additional element to suit your needs — or those of the libraries 
+and frameworks that you use to develop your applications. The important aspects are that each field is 
+represented by an element on the page/app and that the hierarchy of the fields is followed by the 
+hierarchy of your markup (i.e. the component element is the parent of the repeat group element 
+which is a parent of the repeat group items which are parents of the repeat group item fields). 
+For example, you could move the additional div to be the top wrapper — and hence represent the component 
+instead of the repeat group. Naturally, then the repeat group would be represented by the div with the 
+carousel class.
 
 ```html
 <div><!-- Component (Carousel) -->
@@ -91,11 +83,14 @@ You can vary exactly where to add this additional element exactly to suit your n
 </div>
 ```
 
-#### Freemarker
+### Freemarker
 
-In Freemarker applications, in order to integrate with XB, you will use the macros included in the system which in turn will set all the right hints (i.e. html attributes) on the markup for the ICE engine to make things editable to authors.
+In Freemarker applications, in order to integrate with XB, you will use the macros that Crafter ships 
+out of the box, which in turn will set all the right hints (i.e. html attributes) on the markup for 
+the ICE engine to make things editable to authors.
 
-As mentioned earlier, you need to give XB's ICE engine the _coordinates_ to identify each model/field, so — in addition to their other arguments — each macro receives the following base parameters:
+As mentioned earlier, you need to give XB's ICE engine the _coordinates_ to identify each model/field, 
+so — in addition to their other arguments — each macro receives the following base parameters:
 
 - Model (`$model`)
   - By providing the model, internally we extract the path and model id (a.k.a object id).
@@ -109,13 +104,14 @@ As mentioned earlier, you need to give XB's ICE engine the _coordinates_ to iden
   
 For example, the following `div` element macro...
 
-```html
+```injectedfreemarker
 <@crafter.div $field="columns_o.items_o" $index="0.1">
   ...
 </@crafter.div>
 ```
 
-The above will print out to the html a div with all the relevant hints for the ICE engine to pick up this element as an editable zone. Such div would look as shown below:
+The above will print out to the html a div with all the relevant hints for the ICE engine to pick up 
+this element as an editable zone. Such div would look as shown below:
 
 ```html
 <div
@@ -128,13 +124,16 @@ The above will print out to the html a div with all the relevant hints for the I
 
 Start by importing the crafter freemarker library on to your freemarker template.
 
-```ftl
+```injectedfreemarker
 <#import "/templates/system/common/crafter.ftl" as crafter />
 ```
 
-Once you’ve imported `crafter.ftl`, you can start converting tags to editable elements by switching each of the tags that represent Crafter CMS content model fields, from plain html tags to a macro tag. Will use the previous carousel example to illustrate.
+Once you’ve imported `crafter.ftl`, you can start converting tags to editable elements by switching 
+each of the tags that represent Crafter CMS content model fields, from plain html tags to a macro tag. 
+Will use the previous carousel example to illustrate.
 
-As seen on the previous section, we introduced an additional element to represent the repeat group and we ended up with the following markup.
+As seen on the previous section, we introduced an additional element to represent the repeat group 
+and we ended up with the following markup.
 
 ```html
 <div class=“carousel”><!-- Component (Carousel) -->
@@ -151,7 +150,9 @@ As seen on the previous section, we introduced an additional element to represen
 </div>
 ```
 
-Assume you’re using a particular _CarouselJS_ library that requires the `div.carousel` element to be the direct parent of the `div.slide` elements; as mentioned earlier, we can flip around the elements for the component and the repeat group.
+Assume you’re using a particular _CarouselJS_ library that requires the `div.carousel` element to be 
+the direct parent of the `div.slide` elements; as mentioned earlier, we can flip around the elements 
+for the component and the repeat group.
 
 ```html
 <div><!-- Component (Carousel) -->
@@ -161,7 +162,9 @@ Assume you’re using a particular _CarouselJS_ library that requires the `div.c
 </div>
 ```
 
-Now, to start converting to editable zones, replace each tag, with the appropriate Crafter macro. For the most part, with some exceptions (read on), you just need to append `@crafter.` to every tag so that `<div>…</div>` ends up being `<@crafter.div>...</@crafter.div>`.
+Now, to start converting to editable zones, replace each tag, with the appropriate Crafter macro. 
+For the most part, with some exceptions (read on), you just need to append `@crafter.` to every tag 
+so that `<div>…</div>` ends up being `<@crafter.div>...</@crafter.div>`.
 
 Exceptions to simply appending `@crafter.` to the relevant tags are:
 * Page/Component root tags (Use `@crafter.componentRootTag`)
@@ -171,16 +174,17 @@ Exceptions to simply appending `@crafter.` to the relevant tags are:
 Following the conversion of the carousel example, first, mark the component root by using `@crafter.componentRootTag`. 
 See [macro docs]() for all the available customizations and configuration. 
 
-```html
+```injectedfreemarker
 <#import "/templates/system/common/crafter.ftl" as crafter />
 <@crafter.componentRootTag>
   ...
 </@crafter.componentRootTag>
 ```
 
-Next, let's do the repeat group, and it's items. We use `@crafter.renderRepeatGroup` to render repeat groups. See [macro docs]() for all the available customizations and configuration.
+Next, let's do the repeat group, and it's items. We use `@crafter.renderRepeatGroup` to render repeat 
+groups. See [macro docs]() for all the available customizations and configuration.
 
-```html
+```injectedfreemarker
 <@crafter.renderRepeatGroup
   $field="slides_o"
   $containerAttributes={ "class": "carousel" }
@@ -207,7 +211,7 @@ The `renderRepeatGroup` macro does several things for us:
 
 The complete Freemarker template for the carousel component now looks like below.
 
-```html
+```injectedfreemarker
 <#import "/templates/system/common/crafter.ftl" as crafter />
 <@crafter.componentRootTag>
   <@crafter.renderRepeatGroup
@@ -231,13 +235,52 @@ The complete Freemarker template for the carousel component now looks like below
 
 #### Freemarker Macros & Utilities
 
-##### initInContextEditing
+After importing `crafter.ftl`, you'll have available all the XB macros described below.
 
+```injectedfreemarker
+<#import "/templates/system/common/crafter.ftl" as crafter />
+```
 
+#### initInContextEditing
 
-##### Html elements tag macros
+Initializes the ICE engine and the communication between the page/app and studio. Call is required to 
+enable studio to control the page and for XB to enable ICE.
 
-Crafter provides a comprehensive list of macros for the most common html elements that are used to develop content-managed websites/webapps. All these tags provided are essentially an alias to the underlying `@crafter.tag` macro, which you can use when you wish to use an element that isn't provided in the out-of-the-box macros (e.g. if you're using custom html elements).
+The `initInContextEditing` macro is automatically invoked by the `<@crafter.body_bottom />` but you can opt out of it by invoking body_bottom with `initializeInContextEditing=false`.
+
+```injectedfreemarker
+<@crafter.body_bottom initializeInContextEditing=false />
+```
+
+In this case, you'll need to invoke `initInContextEditing` manually.
+
+| Parameter | Type | Description |
+| --------- | ---- | --- |
+| isAuthoring | boolean | Optional as it defaults to `modePreview` freemarker context variable. When isAuthoring=false, in context editing is skipped all together. Meant for running in production. |
+| props | JS object string | This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string, the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter's JavaScript libraries initialization.  |
+
+##### Examples
+
+```injectedfreemarker
+<@initInContextEditing />
+```
+
+```injectedfreemarker
+<@initInContextEditing props="{ themeOptions: { ... } }" />
+```
+
+```injectedfreemarker
+<@crafter.body_bottom iceProps="{ scrollElement: '#mainWrapper' }" />
+<#-- `body_bottom` internally invokes `initializeInContextEditing` -->
+```
+
+#### Html elements tag macros
+
+Crafter provides a comprehensive list of macros for the most common html elements that are used to 
+develop content-managed websites/webapps. All these tags provided are essentially an alias to the 
+underlying `@crafter.tag` macro, which you can use when you wish to use an element that isn't provided 
+in the out-of-the-box macros (e.g. if you're using custom html elements), or if you need to set which 
+tag to use dynamically (see examples below).
 
 The following tags are available:
 
@@ -255,24 +298,31 @@ The following tags are available:
 | $attributes | Html attributes to print on to the element. Particularly useful for attributes that you can't supply to the macro as a direct argument due to freemarker syntax restrictions. For example, `<div data-foo="bar">`, transforming it as `<@crafter.div data-foo="bar" ...>` would produce a freemarker exception; use `<@crafter.div $attrs={ "data-foo": "bar" } ...>` instead. |
 | $tag | Specify which tag to use. For example `<@crafter.tag $tag="article"... />` will print out an `<article>` tag. Use only if you're using `@crafter.tag`, which in most cases you don't need to as you can use the tag alias (e.g. `<@crafter.article ... />`). |
 
-###### Example
+##### Examples
 
-```html
-<#-- No `$field` necessary for the component root tag as it is not a field; it's a model. Also, no `$model`
-since by default it already uses `contentModel`; and, no `$index` since it's not an item of a collection. -->
+```injectedfreemarker
+<#-- No `$field` necessary for the component root tag as it is not a field; it's 
+a model. Also, no `$model` since by default it already uses `contentModel`; and, 
+no `$index` since it's not an item of a collection. -->
 <@crafter.section>
   <@crafter.h1 $field="heading_t">${contentModel.heading_t}</@crafter.h1>
 </@crafter.section>
 ```
 
-##### componentRootTag
+```injectedfreemarker
+<@crafter.tag $tag=(contentModel.headingLevel_s!'h2')>
+  <@crafter.span $field"text_s">${contentModel.text_s}</@crafter.span>
+</@crafter.tag>
+```
+
+#### componentRootTag
 
 ToDo: Possibly useless, will delete
 
-##### renderComponentCollection
+#### renderComponentCollection
 
 Used to render _Item Selector_ controls, which basically hold components. Internally, it prints out the
-tag for the field (item selector) and the tags for each of the container items.
+tag for the field (item selector) and the tags for each of the component container items.
 
 The way component collections are modelled on the ICE engine are in the following hierarchy:
 
@@ -294,20 +344,20 @@ Notice that the item tag is not the component tag itself. The component is conta
 
 | Parameters |       |
 | ---------- | ----- |
-| $model | The content model for which this element belongs to. `$model` is defaulted to the `contentModel` freemarker template context variable, so in most cases it is not necessary to specify it. Only required it when you want to use a different model. |
-| $field | The field id on the content type definition of the present model. When inside repeat groups, a dot-separated-string of the full field _path_ to the present field (e.g. `slides_o.image_s`). |
-| $index | When inside a collection (i.e. repeat group or component collection), the index of the present item. When nested inside repeat groups, the full index _path_ to this item (e.g. `0.1`). |
-| $fieldCarryover | When the control/field is nested inside repeat groups |
-| $indexCarryover | When the control/field is nested inside repeat groups |
-| $collection | By default, it is set to `$model[$field]`, so not required in most cases; however, you can manually specify the collection that will be looped when invoking the macro if you need to. |
+| $model | The content model that this element is associated to. `$model` is defaulted to the `contentModel` freemarker template context variable, so in most cases it is not necessary to specify it. Only required it when you want to use a different model. |
+| $field | The field id on the content type definition of the present model. Field is optional for component/page wrapper elements as those indeed aren't a field but represent the model itself. |
+| $index | When inside a collection (i.e. repeat group or component collection), the index of the present item within the collection. |
+| $fieldCarryover | When nested inside repeat groups, a dot-separated-string of the full field _path_ to the present field (e.g. `repeatOne_o.repeatTwo_s`) **without the current field itself**, as the macro puts them together. |
+| $indexCarryover | When nested inside repeat groups, the full index _path_ to this control (e.g. `0.1`). |
+| $collection | Contains the collection that the macro iterates through internally. By default, it is set to `$model[$field]`, so not required to specify in most cases; however, you can manually specify the collection that will be looped when invoking the macro if you need to. |
 | $containerAttributes | Html attributes to print on to the **field** element. |
-| $containerTag | The tag to use for the **field** itself. |
+| $containerTag | The tag to use for the **field** element. |
 | $itemTag | The tag to use for the **item**  tags. |
 | $itemAttributes | Html attributes to print on to the **item** elements. |
-| $nthItemAttributes | Html attributes to print by index. For example, `$nthItemAttributes={ 0: { "class": "active" } }` will apply the class named active only to the first item in the collection. |
-| arguments | Crafter's `renderComponent` macro supports supplying additional arguments to the component template context. You can send these via this argument. The `arguments` will be sent to all items. |
+| $nthItemAttributes | Html attributes to print by item index. For example, `$nthItemAttributes={ 0: { "class": "active" } }` will apply the class named active only to the first item in the collection. |
+| arguments | [Crafter's `renderComponent` macro]() supports supplying additional arguments to the component template context. You can send these via this argument. The `arguments` will be sent to all items. |
 
-##### Example
+#### Example
 
 ```html
 <@crafter.renderComponentCollection $field="mainContent_o" />
@@ -316,31 +366,36 @@ Notice that the item tag is not the component tag itself. The component is conta
 The sample above would print out the following html:
 
 ```html
-<!-- Field element --><section
+<!-- Field element -->
+<section
   data-craftercms-model-path="/site/website/index.xml"
   data-craftercms-model-id="8d7f21fa-5e09-00aa-8340-853b7db302da"
   data-craftercms-field-id="mainContent_o"
 >
-  <!-- Item 0 element --><div
+  <!-- Item 0 element -->
+  <div
     data-craftercms-model-path="/site/website/index.xml"
     data-craftercms-model-id="8d7f21fa-5e09-00aa-8340-853b7db302da"
     data-craftercms-field-id="mainContent_o"
     data-craftercms-index="0"
   >
-    <!-- Item 0 element --><div
+    <!-- Component @ Item 0 -->
+    <div
       data-craftercms-model-path="/site/components/component_hero/bd283e3b-3484-6b9e-b2d5-2a9e87128b69.xml"
       data-craftercms-model-id="bd283e3b-3484-6b9e-b2d5-2a9e87128b69"
     >
       ...
     </div>
   </div>
-  <!-- Item 1 element --><div
+  <!-- Item 1 element -->
+  <div
     data-craftercms-model-path="/site/website/index.xml"
     data-craftercms-model-id="8d7f21fa-5e09-00aa-8340-853b7db302da"
     data-craftercms-field-id="mainContent_o"
     data-craftercms-index="1"
   >
-    <!-- Component element --><div
+    <!-- Component @ Item 1 -->
+    <div
       data-craftercms-model-path="/site/website/index.xml"
       data-craftercms-model-id="2e8761a9-1268-581b-f8d0-52cad6a73e0a"
     >
@@ -350,32 +405,305 @@ The sample above would print out the following html:
 </section>
 ```
 
-##### renderRepeatGroup
+#### renderRepeatGroup
 
-##### mergeAttributes
+Used to render _Repeat group_ controls. Internally, it prints out the
+tag for the field (repeat group) and the tags for each of the items.
 
-##### forEach
+The way repeat group collections are modelled on the ICE engine are in the following hierarchy:
 
-##### cleanDotNotationString
+```
+<FieldTag>
+  <Item0>
+      ...
+  <Item1>
+      ...
+  <Item2>
+    <ComponentTag>
+      ...
+  ...
+```
 
-##### isEmptyCollection
-
-##### shouldAddEmptyStyles
-
-##### printIfIsEmptyCollection
-
-##### printIfPreview
-
-#### React
-
-##### Npm
-
-##### React Native
-
-#### Other frameworks
+Repeat groups introduce the possibility of having complex/compound `$field` and `$index` arguments when they contain nested repeat groups or component collections.
 
 
+| Parameters |       |
+| ---------- | ----- |
+| $model | The content model that this element is associated to. `$model` is defaulted to the `contentModel` freemarker template context variable, so in most cases it is not necessary to specify it. Only required it when you want to use a different model. |
+| $field | The field id on the content type definition of the present model. Field is optional for component/page wrapper elements as those indeed aren't a field but represent the model itself. |
+| $index | When inside a collection (i.e. repeat group or component collection), the index of the present item within the collection. |
+| $fieldCarryover | When nested inside repeat groups, a dot-separated-string of the full field _path_ to the present field (e.g. `repeatOne_o.repeatTwo_s`) **without the current field itself**, as the macro puts them together. |
+| $indexCarryover | When nested inside repeat groups, the full index _path_ to this control (e.g. `0.1`). |
+| $collection | Contains the collection that the macro iterates through internally. By default, it is set to `$model[$field]`, so not required to specify in most cases; however, you can manually specify the collection that will be looped when invoking the macro if you need to. |
+| $containerAttributes | Html attributes to print on to the **field** element. |
+| $containerTag | The tag to use for the **field** element. |
+| $itemTag | The tag to use for the **item**  tags. |
+| $itemAttributes | Html attributes to print on to the **item** elements. |
+| $nthItemAttributes | Html attributes to print by item index. For example, `$nthItemAttributes={ 0: { "class": "active" } }` will apply the class named active only to the first item in the collection. |
+| arguments | [Crafter's `renderComponent` macro]() supports supplying additional arguments to the component template context. You can send these via this argument. The `arguments` will be sent to all items. |
+
+
+##### Example
+
+```injectedfreemarker
+<@crafter.renderRepeatCollection
+  $containerTag="section"
+  $containerAttributes={ "class": "row" }
+  $itemTag="div"
+  $itemAttributes={ "class": "col" }
+  $field="columns_o";
+  <#-- Nested content values passed down by the macro: -->
+  item, index
+>
+  <@crafter.renderComponentCollection
+    $field="items_o"
+    $fieldCarryover="columns_o"
+    $indexCarryover="${index}"
+    $model=(contentModel + { "items_o": item.items_o })
+  />
+</@crafter.renderRepeatCollection>
+```
+
+The sample above would print out the following html:
+
+```html
+<!-- The repeat group field element (columns_o) -->
+<section
+  class="row"
+  data-craftercms-model-path="/site/website/index.xml"
+  data-craftercms-model-id="f830b94f-a6e9-09eb-9978-daafbfdf63ef"
+  data-craftercms-field-id="columns_o"
+>
+  <!-- Repeat group item 0 element (i.e. columns_o[0]) -->
+  <div
+    class="col"
+    data-craftercms-model-path="/site/website/index.xml"
+    data-craftercms-model-id="f830b94f-a6e9-09eb-9978-daafbfdf63ef"
+    data-craftercms-field-id="columns_o"
+    data-craftercms-index="0"
+  >
+    <!-- An item selector field named `items_o` that's inside the repeat group (i.e. columns_o[0].items_o) -->
+    <div
+      data-craftercms-model-path="/site/website/index.xml"
+      data-craftercms-model-id="f830b94f-a6e9-09eb-9978-daafbfdf63ef"
+      data-craftercms-field-id="columns_o.items_o"
+      data-craftercms-index="0"
+    >
+      <!-- columns_o[0].items_o[0] -->
+      <div
+        data-craftercms-model-path="/site/website/index.xml"
+        data-craftercms-model-id="f830b94f-a6e9-09eb-9978-daafbfdf63ef"
+        data-craftercms-field-id="columns_o.items_o"
+        data-craftercms-index="0.0"
+      >
+        <!-- Embedded component hosted @ columns_o[0].items_o[0] -->
+        <h2
+          class="heading-component-root"
+          data-craftercms-model-path="/site/website/index.xml"
+          data-craftercms-model-id="57a30ade-f167-5a8b-efbe-30ceb0771667"
+        >
+          <span
+            data-craftercms-model-path="/site/website/index.xml"
+            data-craftercms-model-id="57a30ade-f167-5a8b-efbe-30ceb0771667"
+            data-craftercms-field-id="text_s"
+          >
+            This is a heading
+          </span>
+        </h2>
+      </div>
+      <!-- columns_o[0].items_o[1] -->
+      <div
+        data-craftercms-model-path="/site/website/index.xml"
+        data-craftercms-model-id="f830b94f-a6e9-09eb-9978-daafbfdf63ef"
+        data-craftercms-field-id="columns_o.items_o"
+        data-craftercms-index="0.1"
+      >
+        <!-- Embedded component hosted @ columns_o[0].items_o[1] -->
+        <div
+          class="paragraph-component-root"
+          data-craftercms-model-path="/site/website/index.xml"
+          data-craftercms-model-id="fff36233-34d9-f476-0a35-00b507b9420b"
+        >
+          <p
+            data-craftercms-model-path="/site/website/index.xml"
+            data-craftercms-model-id="fff36233-34d9-f476-0a35-00b507b9420b"
+            data-craftercms-field-id="copy_t"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Repeat group item 1 element (i.e. columns_o[1]) -->
+  <div
+    class="col"
+    data-craftercms-model-path="/site/website/index.xml"
+    data-craftercms-model-id="f830b94f-a6e9-09eb-9978-daafbfdf63ef"
+    data-craftercms-field-id="columns_o"
+    data-craftercms-index="1"
+  >
+    <!-- An item selector field named `items_o` that's inside the repeat group (i.e. columns_o[1].items_o) -->
+    <div
+      data-craftercms-model-path="/site/website/index.xml"
+      data-craftercms-model-id="f830b94f-a6e9-09eb-9978-daafbfdf63ef"
+      data-craftercms-field-id="columns_o.items_o"
+      data-craftercms-index="1"
+    >
+      <!-- columns_o[1].items_o[0] -->
+      <div
+        data-craftercms-model-path="/site/website/index.xml"
+        data-craftercms-model-id="f830b94f-a6e9-09eb-9978-daafbfdf63ef"
+        data-craftercms-field-id="columns_o.items_o"
+        data-craftercms-index="1.0"
+      >
+        <!-- Embedded component hosted @ columns_o[1].items_o[0] -->
+        <span
+          data-craftercms-model-path="/site/website/index.xml"
+          data-craftercms-model-id="eb50be40-5755-5dfa-0ad0-15367b5cc685"
+        >
+          <img
+            src="https://place-hold.it/300"
+            alt=""
+            class=""
+            data-craftercms-model-path="/site/website/index.xml"
+            data-craftercms-model-id="eb50be40-5755-5dfa-0ad0-15367b5cc685"
+            data-craftercms-field-id="image_s"
+          >
+        </span>
+      </div>
+      <!-- columns_o[1].items_o[0] -->
+      <div
+        data-craftercms-model-path="/site/website/index.xml"
+        data-craftercms-model-id="f830b94f-a6e9-09eb-9978-daafbfdf63ef"
+        data-craftercms-field-id="columns_o.items_o"
+        data-craftercms-index="1.1"
+      >
+        <!-- Embedded component hosted @ columns_o[1].items_o[1] -->
+        <div
+          class="paragraph-component-root"
+          data-craftercms-model-path="/site/website/index.xml"
+          data-craftercms-model-id="4b68e47a-07a3-134f-a540-1b7907080cb0"
+        >
+          <p
+            data-craftercms-model-path="/site/website/index.xml"
+            data-craftercms-model-id="4b68e47a-07a3-134f-a540-1b7907080cb0"
+            data-craftercms-field-id="copy_t"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+#### forEach
+
+Useful for iterating through crafter collections.
+
+##### Examples
+
+```injectedfreemarker
+<@crafter.forEach contentModel.slides_o; slide, index>
+  <#assign
+    attributesByIndex = attributesByIndex + { index: { "data-bs-interval": "${slide.delayInterval_i?c}" } }
+  />
+</@crafter.forEach>
+```
+
+```injectedfreemarker
+<@crafter.forEach contentModel.slides_o; slide, index>
+  <button
+    type="button"
+    data-bs-target="#${rootElementId}"
+    data-bs-slide-to="${index}"
+    aria-label="Slide ${index}"
+    ${(initialActiveSlideIndex == index)?then('class="active" aria-current="true"', '')}
+  ></button>
+</@crafter.forEach>
+```
+
+#### cleanDotNotationString
+
+Takes a dot-separated-string and returns a string that doesn't have any dots at the beginning or 
+end of the string and that there aren't any consecutive dots.
+
+Useful when working with repeat groups in Crafter as these introduce the possibility of field/index
+carryovers and complex/compound fields (e.g. `field1.field2`) and indexes (e.g. `0.1`).
+
+```injectedfreemarker
+<#assign str1 = ".hello." />
+<#assign str2 = ".world." />
+${crafter.cleanDotNotationString("${str1}.${str2}")} 
+<#-- Output is hello.world -->
+```
+
+```injectedfreemarker
+${crafter.cleanDotNotationString("...foo...bar..")}
+<#-- Output is foo.bar -->
+```
+
+```injectedfreemarker
+${crafter.cleanDotNotationString("..")}
+<#-- Output is an empty string -->
+```
+
+#### isEmptyCollection
+
+Receives a Crafter collection and returns true if it's empty or false otherwise.
+
+#### printIfIsEmptyCollection
+
+Receives a collection and an optional output string. If the collection is empty it will print the 
+output string otherwise, it won't print anything. This macro only prints in Crafter Engine's _preview mode_.
+
+By default, the output string is `craftercms-is-empty`. Useful for example for adding this class to empty component or repeat group collections to create spacing for authors to drag stuff on to the field or edit it. 
+
+```injectedfreemarker
+<@crafter.renderComponentCollection
+  $field="mainContent_o"
+  $containerAttributes={ "class": crafter.printIfIsEmptyCollection(contentModel.mainContent_o) }
+/>
+```
+
+#### printIfPreview
+
+Receives a string which it will print if Crafter Engine is running in preview mode. Doesn't print 
+anything in delivery.
+
+```injectedfreemarker
+<#-- Import the "debug" version of the script in preview. -->
+<script src="/static-assets/js/bootstrap.bundle${crafter.printIfPreview('.debug')}.js"></script>
+```
+
+You can also use the freemarker context variable `modePreview` to do similar things; in fact, 
+`printIfPreview` uses it internally.
+
+```injectedfreemarker
+<#-- Import a in-context editing stylesheet only in preview. -->
+<#if modePreview><link href="/static-assets/css/ice.css" rel="stylesheet"></#if>
+```
+
+### React
+
+#### Npm
+
+#### React Native
+
+### Other Html or JavaScript applications
 
 
 
 
+
+
+
+**Plugins**
+
+- The z key
+- The e & m keys
+- ICE on hints (class & event)
