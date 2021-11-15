@@ -265,7 +265,7 @@ After importing ``crafter.ftl``\ , you'll have available all the XB macros descr
    <#import "/templates/system/common/crafter.ftl" as crafter />
 
 initInContextEditing
-~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""
 
 Initializes the ICE engine and the communication between the page/app and studio. Call is required to 
 enable studio to control the page and for XB to enable ICE.
@@ -309,7 +309,7 @@ Examples
    <#-- `body_bottom` internally invokes `initializeInContextEditing` -->
 
 Html elements tag macros
-~~~~~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""""""
 
 Crafter provides a comprehensive list of macros for the most common html elements that are used to 
 develop content-managed websites/webapps. All these tags provided are essentially an alias to the 
@@ -344,7 +344,7 @@ The following tags are available:
 
 
 Examples
-""""""""
+########
 
 .. code-block:: injectedfreemarker
 
@@ -362,12 +362,12 @@ Examples
    </@crafter.tag>
 
 componentRootTag
-~~~~~~~~~~~~~~~~
+""""""""""""""""
 
 ToDo: Possibly useless, will delete
 
 renderComponentCollection
-~~~~~~~~~~~~~~~~~~~~~~~~~
+"""""""""""""""""""""""""
 
 Used to render *Item Selector* controls, which basically hold components. Internally, it prints out the
 tag for the field (item selector) and the tags for each of the component container items.
@@ -417,14 +417,14 @@ Notice that the item tag is not the component tag itself. The component is conta
      - Html attributes to print on to the **item** elements.
    * - $nthItemAttributes
      - Html attributes to print by item index. For example, ``$nthItemAttributes={ 0: { "class": "active" } }`` will apply the class named active only to the first item in the collection.
-   * - arguments
-     - `Crafter's ``renderComponent`` macro <>`_ supports supplying additional arguments to the component template context. You can send these via this argument. The ``arguments`` will be sent to all items.
+   * - renderComponentArguments
+     - `Crafter's ``renderComponent`` macro <>`_ supports supplying additional arguments (\ ``additionalModel`` argument when used directly) to the component template context. You can send these via this parameter. The ``renderComponentArguments`` will be sent to all items.
 
 
 Example
-~~~~~~~
+#######
 
-.. code-block:: html
+.. code-block:: injectedfreemarker
 
    <@crafter.renderComponentCollection $field="mainContent_o" />
 
@@ -471,7 +471,7 @@ The sample above would print out the following html:
    </section>
 
 renderRepeatGroup
-~~~~~~~~~~~~~~~~~
+"""""""""""""""""
 
 Used to render *Repeat group* controls. Internally, it prints out the
 tag for the field (repeat group) and the tags for each of the items.
@@ -523,8 +523,8 @@ Repeat groups introduce the possibility of having complex/compound ``$field`` an
      - `Crafter's ``renderComponent`` macro <>`_ supports supplying additional arguments to the component template context. You can send these via this argument. The ``arguments`` will be sent to all items.
 
 
-Example
-"""""""
+Examples
+########
 
 .. code-block:: injectedfreemarker
 
@@ -683,12 +683,12 @@ The sample above would print out the following html:
    </section>
 
 forEach
-~~~~~~~
+"""""""
 
 Useful for iterating through crafter collections.
 
 Examples
-""""""""
+########
 
 .. code-block:: injectedfreemarker
 
@@ -711,7 +711,7 @@ Examples
    </@crafter.forEach>
 
 cleanDotNotationString
-~~~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""""
 
 Takes a dot-separated-string and returns a string that doesn't have any dots at the beginning or 
 end of the string and that there aren't any consecutive dots.
@@ -737,12 +737,12 @@ carryovers and complex/compound fields (e.g. ``field1.field2``\ ) and indexes (e
    <#-- Output is an empty string -->
 
 isEmptyCollection
-~~~~~~~~~~~~~~~~~
+"""""""""""""""""
 
 Receives a Crafter collection and returns true if it's empty or false otherwise.
 
 printIfIsEmptyCollection
-~~~~~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""""""
 
 Receives a collection and an optional output string. If the collection is empty it will print the 
 output string otherwise, it won't print anything. This macro only prints in Crafter Engine's *preview mode*.
@@ -757,7 +757,7 @@ By default, the output string is ``craftercms-is-empty``. Useful for example for
    />
 
 printIfPreview
-~~~~~~~~~~~~~~
+""""""""""""""
 
 Receives a string which it will print if Crafter Engine is running in preview mode. Doesn't print 
 anything in delivery.
@@ -775,8 +775,202 @@ You can also use the freemarker context variable ``modePreview`` to do similar t
    <#-- Import a in-context editing stylesheet only in preview. -->
    <#if modePreview><link href="/static-assets/css/ice.css" rel="stylesheet"></#if>
 
+navigation
+""""""""""
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Type
+     - Default
+     - Description
+   * - url
+     - string
+     - "/site/website"
+     - The url path to start printing breadcrumbs from.
+   * - showNavElement
+     - boolean
+     - true
+     - Whether to print a ``nav`` element wrapping the whole nav structure.
+   * - navElementClass
+     - string
+     - ""
+     - Class(es) to apply to the ``nav`` element.
+   * - containerElement
+     - string
+     - "ul"
+     - Parent tag for the nav items and nav item wrappers. Will be skipped if set to an empty string (i.e. ``""``\ ).
+   * - containerElementClass
+     - string
+     - ""
+     - Class(es) applied to the container element.
+   * - itemWrapperElement
+     - string
+     - "li"
+     - Element used to wrap links (e.g. in ``<li><a /></li>`` the ``li`` wraps the ``a``\ ). Will be skipped if set to an empty string (i.e. ``""``\ ).
+   * - itemWrapperClass
+     - string
+     - ""
+     - Attributes added to the nav item link wrapper (e.g. the ``li`` that wraps the ``a``\ ).
+   * - itemWrapperActiveClass
+     - string
+     - "active"
+     - Class added to the active nav item link wrapper (e.g. the ``li`` that wraps the ``a``\ ).
+   * - itemWrapperAttributes
+     - hash
+     - {}
+     - Attributes added to all nav item link wrapper (e.g. the ``li`` that wraps the ``a``\ ).
+   * - itemClass
+     - string
+     - ""
+     - Class(es) added to all nav item elements.
+   * - itemActiveClass
+     - string
+     - "active"
+     - 
+   * - itemAttributes
+     - hash
+     - {}
+     - 
+   * - hasSubItemItemClass
+     - string
+     - ""
+     - 
+   * - hasSubItemWrapperClass
+     - string
+     - ""
+     - 
+   * - hasSubItemItemAttributes
+     - hash
+     - {}
+     - 
+   * - subItemClass
+     - string
+     - ""
+     - 
+   * - subItemClassPrefix
+     - string
+     - "nav-level"
+     - 
+   * - subItemAttributes
+     - hash
+     - {}
+     - 
+   * - subItemWrapperClass
+     - string
+     - ""
+     - 
+   * - subItemWrapperClassPrefix
+     - string
+     - ""
+     - 
+   * - subItemContainerClass
+     - string
+     - ""
+     - 
+   * - depth
+     - number
+     - 1
+     - How many depth levels to print.
+   * - includeRoot
+     - boolean
+     - true
+     - Whether to print the root of the nav. For example, you may want to print the children of "Home" without Home itself, in which case you'd set to false.
+   * - inlineRootWithImmediateChildren
+     - boolean
+     - true
+     - Whether to print the root item on the same level as it's immediate children. For example you may want to print "Home" at the same level as its children to get something like ``Home • Products • About • Contact`` instead of having products, about and contact as a dropdown or indented within home in your UI.
+
+
+navigationItem
+""""""""""""""
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Type
+     - Default
+     - Description
+   * - TODO
+     - TODO
+     - TODO
+     - TODO
+
+
+breadcrumb
+""""""""""
+
+.. list-table::
+   :header-rows: 1
+
+   * - Parameter
+     - Type
+     - Default
+     - Description
+   * - url
+     - string
+     - "/site/website"
+     - The url path to start printing breadcrumbs from.
+   * - root
+     - string
+     - "/site/website"
+     - **TODO**
+   * - showNavElement
+     - boolean
+     - true
+     - Whether to wrap the whole navigation structure on a ``<nav />`` element.
+   * - navElementClass
+     - string
+     - ""
+     - Class(es) added to the ``nav`` element.
+   * - navElementAttributes
+     - hash
+     - {}
+     - Attributes added to the ``nav`` element.
+   * - containerElement
+     - string
+     - "ul"
+     - Parent tag for the nav items and nav item wrappers. Will be skipped if set to an empty string (i.e. ``""``\ ).
+   * - containerElementClass
+     - string
+     - ""
+     - Class(es) applied to the container element.
+   * - itemWrapperElement
+     - string
+     - "li"
+     - Element used to wrap links (e.g. in ``<li><a /></li>`` the ``li`` wraps the ``a``\ ). Will be skipped if set to an empty string (i.e. ``""``\ ).
+   * - itemWrapperClass
+     - string
+     - ""
+     - Attributes added to the nav item link wrapper (e.g. the ``li`` that wraps the ``a``\ ).
+   * - itemWrapperActiveClass
+     - string
+     - "active"
+     - Class added to the active nav item link wrapper (e.g. the ``li`` that wraps the ``a``\ ).
+   * - itemWrapperAttributes
+     - hash
+     - {}
+     - Attributes added to all nav item link wrapper (e.g. the ``li`` that wraps the ``a``\ ).
+   * - itemClass
+     - string
+     - ""
+     - Class(es) added to all nav item elements.
+   * - itemAttributes
+     - hash
+     - {}
+     - Attributes added to all nav item elements.
+   * - includeLinkInActiveItem
+     - boolean
+     - false
+     - Whether to render the active element as a link (i.e. ``a``\ ); otherwise rendered as a ``span``.
+
+
 React
 ^^^^^
+
+Crafter CMS provides react bindings for integrating with XB.
 
 Npm
 ~~~
@@ -786,6 +980,8 @@ React Native
 
 Other Html or JavaScript applications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+END
 
 **Plugins**
 
