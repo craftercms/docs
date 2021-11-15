@@ -2,7 +2,7 @@
 Experience Builder
 ==================
 
-Crafter CMS’ Experience Builder (XB) provides a UI layer on top of your applications that enables authors 
+Crafter CMS' Experience Builder (XB) provides a UI layer on top of your applications that enables authors 
 with in-context editing (ICE) for all the model fields defined in the content types of pages and components. 
 Crafter CMS developers must integrate their applications with XB, essentially telling XB what field of the 
 model each element on the view represents.
@@ -19,7 +19,7 @@ applications (e.g. Angular, Vue, etc.) can still be integrated with XB through t
 that power the Freemarker and React applications. For reference on how to integrate, please see the 
 sections below for your specific kind of application.
 
-Overall, XB’s ICE engine works with a sort of coordinate system that you — the developer — use to 
+Overall, XB's ICE engine works with a sort of coordinate system that you — the developer — use to 
 tell the CMS which field of the content type each element/component on your page/app maps to.
 
 The coordinate system consists of the following pieces of data:
@@ -31,11 +31,11 @@ The coordinate system consists of the following pieces of data:
 
   * Field ids may be compound, comprised of the full path to that field when such field is nested within repeat groups (e.g. ``carouselSlides_o.slideTitle_t``\ ).
 
-* Index: When working with collections (e.g. component selectors or repeat groups), the index of the item within it’s container collection (e.g. ``0``\ )
+* Index: When working with collections (e.g. component selectors or repeat groups), the index of the item within it's container collection (e.g. ``0``\ )
 
   * Indexes can be compound, comprised of the full path of indexes to that item in the collection (e.g. ``0.1``\ ).
 
-XB’s ICE engine requires — at times — what might be considered slightly more verbose markup structure. 
+XB's ICE engine requires — at times — what might be considered slightly more verbose markup structure. 
 In order for the system to be able to direct authors to every piece of the model, as well as allowing 
 them to edit in line, you need to register each piece of the model as an element on your view.
 
@@ -145,7 +145,7 @@ Start by importing the crafter freemarker library on to your freemarker template
 
    <#import "/templates/system/common/crafter.ftl" as crafter />
 
-Once you’ve imported ``crafter.ftl``\ , you can start converting tags to editable elements by switching 
+Once you've imported ``crafter.ftl``\ , you can start converting tags to editable elements by switching 
 each of the tags that represent Crafter CMS content model fields, from plain html tags to a macro tag. 
 Will use the previous carousel example to illustrate.
 
@@ -167,7 +167,7 @@ and we ended up with the following markup.
      </div>
    </div>
 
-Assume you’re using a particular *CarouselJS* library that requires the ``div.carousel`` element to be 
+Assume you're using a particular *CarouselJS* library that requires the ``div.carousel`` element to be 
 the direct parent of the ``div.slide`` elements; as mentioned earlier, we can flip around the elements 
 for the component and the repeat group.
 
