@@ -688,6 +688,8 @@ You can also use the freemarker context variable `modePreview` to do similar thi
 
 ##### navigation
 
+Prints out the navigation structure of a site in a customizable markup structure.
+
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
 | url | string | "/site/website" | The url path to start printing breadcrumbs from. |
@@ -700,26 +702,32 @@ You can also use the freemarker context variable `modePreview` to do similar thi
 | itemWrapperActiveClass | string | "active" | Class added to the active nav item link wrapper (e.g. the `li` that wraps the `a`). |
 | itemWrapperAttributes | hash | {} | Attributes added to all nav item link wrapper (e.g. the `li` that wraps the `a`). |
 | itemClass | string | "" | Class(es) added to all nav item elements. |
-| itemActiveClass | string | "active" |  |
-| itemAttributes | hash | {} |  |
-| hasSubItemItemClass | string | "" |  |
-| hasSubItemWrapperClass | string | "" |  |
-| hasSubItemItemAttributes | hash | {} |  |
-| subItemClass | string | "" |  |
-| subItemClassPrefix | string | "nav-level" |  |
-| subItemAttributes | hash | {} |  |
-| subItemWrapperClass | string | "" |  |
-| subItemWrapperClassPrefix | string | "" |  |
-| subItemContainerClass | string | "" |  |
+| itemActiveClass | string | "active" | Class(es) added to the active page (i.e. the page the user is on). |
+| itemAttributes | hash | {} | Attributes applied to the nav items. |
+| hasSubItemItemClass | string | "" | Class(es) applied to those items that have children. Applied to the nav item, not it's wrapper. |
+| hasSubItemWrapperClass | string | "" | Class(es) applied to the wrapper of those items that have children. |
+| hasSubItemItemAttributes | hash | {} | Attributes applied to items that have children. |
+| subItemClass | string | "" | Class(es) applied to items that are at least one level "down". |
+| subItemClassPrefix | string | "nav-level" | A class is created dynamically in the form of "${subItemClassPrefix}-${currentDepth}". You may customize the subItemClassPrefix to change the default from `nav-level-${depth}` to `${whatEverYouPlease}-${depth}`. |
+| subItemAttributes | hash | {} | Attributes applied to the items that are at least one level "down". |
+| subItemWrapperClass | string | "" | Class(es) applied to the wrapper of those items that are at least one level "down". |
+| subItemWrapperClassPrefix | string | "" | **If specified**, a class is created dynamically in the form of "${subItemWrapperClassPrefix}-${currentDepth}". |
+| subItemContainerClass | string | "" | Class(es) applied to the container at each depth level. |
 | depth | number | 1 | How many depth levels to print. |
 | includeRoot | boolean | true | Whether to print the root of the nav. For example, you may want to print the children of "Home" without Home itself, in which case you'd set to false. |
 | inlineRootWithImmediateChildren | boolean | true | Whether to print the root item on the same level as it's immediate children. For example you may want to print "Home" at the same level as its children to get something like `Home • Products • About • Contact` instead of having products, about and contact as a dropdown or indented within home in your UI. |
 
 ##### navigationItem
 
+Used internally by [the navigation macro](#navigation) to print each item.
+
+See the navigation macro
+
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
-| TODO | TODO | TODO | TODO |
+| * |  |  | See parameters for [the navigation macro](#navigation) as they are the same. |
+| currentDepth | number | 0 | The current level of depth that will get printed by this macro. |
+| navItem | object | {} | The navItem object that will be used to print. |
 
 ##### breadcrumb
 

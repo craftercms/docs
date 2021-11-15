@@ -778,6 +778,8 @@ You can also use the freemarker context variable ``modePreview`` to do similar t
 navigation
 """"""""""
 
+Prints out the navigation structure of a site in a customizable markup structure.
+
 .. list-table::
    :header-rows: 1
 
@@ -828,47 +830,47 @@ navigation
    * - itemActiveClass
      - string
      - "active"
-     - 
+     - Class(es) added to the active page (i.e. the page the user is on).
    * - itemAttributes
      - hash
      - {}
-     - 
+     - Attributes applied to the nav items.
    * - hasSubItemItemClass
      - string
      - ""
-     - 
+     - Class(es) applied to those items that have children. Applied to the nav item, not it's wrapper.
    * - hasSubItemWrapperClass
      - string
      - ""
-     - 
+     - Class(es) applied to the wrapper of those items that have children.
    * - hasSubItemItemAttributes
      - hash
      - {}
-     - 
+     - Attributes applied to items that have children.
    * - subItemClass
      - string
      - ""
-     - 
+     - Class(es) applied to items that are at least one level "down".
    * - subItemClassPrefix
      - string
      - "nav-level"
-     - 
+     - A class is created dynamically in the form of "${subItemClassPrefix}-${currentDepth}". You may customize the subItemClassPrefix to change the default from ``nav-level-${depth}`` to ``${whatEverYouPlease}-${depth}``.
    * - subItemAttributes
      - hash
      - {}
-     - 
+     - Attributes applied to the items that are at least one level "down".
    * - subItemWrapperClass
      - string
      - ""
-     - 
+     - Class(es) applied to the wrapper of those items that are at least one level "down".
    * - subItemWrapperClassPrefix
      - string
      - ""
-     - 
+     - **If specified**\ , a class is created dynamically in the form of "${subItemWrapperClassPrefix}-${currentDepth}".
    * - subItemContainerClass
      - string
      - ""
-     - 
+     - Class(es) applied to the container at each depth level.
    * - depth
      - number
      - 1
@@ -886,6 +888,10 @@ navigation
 navigationItem
 """"""""""""""
 
+Used internally by `the navigation macro <#navigation>`_ to print each item.
+
+See the navigation macro
+
 .. list-table::
    :header-rows: 1
 
@@ -893,10 +899,18 @@ navigationItem
      - Type
      - Default
      - Description
-   * - TODO
-     - TODO
-     - TODO
-     - TODO
+   * - *
+     - 
+     - 
+     - See parameters for `the navigation macro <#navigation>`_ as they are the same.
+   * - currentDepth
+     - number
+     - 0
+     - The current level of depth that will get printed by this macro.
+   * - navItem
+     - object
+     - {}
+     - The navItem object that will be used to print.
 
 
 breadcrumb
