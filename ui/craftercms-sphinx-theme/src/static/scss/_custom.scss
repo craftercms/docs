@@ -1,5 +1,6 @@
 @import "settings";
 @import "pygments";
+$code-block-background: #f9f8f8;
 
 #header {
   .no-topbar & {
@@ -15,7 +16,7 @@
 
 #content {
   padding: 2rem 1rem;
-  @media (min-width: 640px) { 
+  @media (min-width: 640px) {
     margin: 0 auto;
     padding-left: $sidebar-sm + 20;
   }
@@ -32,7 +33,7 @@
 .title-bar {
   background-color: $white;
   border-bottom: 1px solid $custom-light-gray;
-  
+
   .logo {
     left: 50%;
     width: 60px;
@@ -235,7 +236,7 @@
   background: #fff;
   .hll {
     font-weight: bold;
-  }    
+  }
 }
 
 
@@ -257,8 +258,8 @@
       &#google_translate_element .goog-te-gadget .goog-te-gadget-simple{
         border-radius: 6px;
       }
-    
-    } 
+
+    }
   }
 
 }
@@ -285,10 +286,16 @@
 
 div[class^="highlight-"] {
   position: relative;
+  border: 1px solid #ccc;
+  padding: 1em;
+  border-radius: 5px;
+  background: $code-block-background;
+  margin-bottom: 20px;
 
   .highlight {
-    overflow-x: scroll;
-    pre { 
+    overflow-x: auto;
+    background: $code-block-background;
+    pre {
       overflow: visible;
     }
   }
@@ -296,6 +303,12 @@ div[class^="highlight-"] {
   .highlighttable {
     table-layout: fixed;
     width: 100%;
+    margin-bottom: 0;
+
+    &> tbody {
+      border: none;
+      background: $code-block-background;
+    }
 
     .linenos {
       width: 60px;
