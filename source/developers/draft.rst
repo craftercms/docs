@@ -13,9 +13,8 @@ with in-context editing (ICE) for all the model fields defined in the content ty
 Crafter CMS developers must integrate their applications with XB, essentially telling XB what field of the 
 model each element on the view represents. See :ref:`content-modeling` to learn more about the model.
 
-.. TODO
-<figure: example page with a sample content type side by side showing the relation between page elements
-and content type fields>
+.. TODO insert <figure: example page with a sample content type side by side showing the relation between page elements
+   and content type fields>
 
 ----------------------------------------------
 Creating Experience Builder (XB) Enabled Sites
@@ -320,7 +319,7 @@ In that case, you'll need to invoke ``initInContextEditing`` manually.
      - Description
    * - isAuthoring
      - boolean
-     - Optional as it defaults to :ref:`printIfPreview <modePreview>` FreeMarker context variable. When isAuthoring=false, in context editing is skipped all together. Meant for running in production.
+     - Optional as it defaults to :ref:`modePreview <printIfPreview>` FreeMarker context variable. When isAuthoring=false, in context editing is skipped all together. Meant for running in production.
    * - props
      - JS object string
      - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string, the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter's JavaScript libraries initialization.
@@ -364,11 +363,11 @@ The following tags are available:
 ``td``, ``table``, ``abbr``, ``address``, ``aside``, ``audio``, ``video``, ``blockquote``, ``cite``, ``em``, ``code``, ``nav``,
 ``figure``, ``figcaption``, ``pre``, ``time``, ``map``, ``picture``, ``source``, ``meta``, ``title``
 
+.. TODO review the description
+
 .. list-table::
    :widths: 10 90
    :header-rows: 1
-
-.. TODO review the description
 
    * - Parameter
      - Description
@@ -421,7 +420,7 @@ Examples
 renderComponentCollection
 """""""""""""""""""""""""
 
-Used to render *Item Selector* controls, which basically hold components. Internally, it prints out the
+Used to render *Item Selector* controls, which hold components. Internally, it prints out the
 tag for the field (item selector) and the tags for each of the component container items.
 
 The way component collections are modelled on the ICE engine are in the following hierarchy:
@@ -440,8 +439,8 @@ The way component collections are modelled on the ICE engine are in the followin
        <ComponentTag>
          ...
 
-Note that the item tag is not the component tag itself. The component is contained by the item and it's not the item
-itself.
+Note that the item tag is not the component tag itself, instead, the component is contained by the item and it's
+not the item.
 
 .. list-table::
    :widths: 10 90
@@ -488,7 +487,6 @@ Example
 #######
 
 .. code-block:: text
-   :linenos:
 
    <@crafter.renderComponentCollection $field="mainContent_o" />
 
@@ -540,7 +538,7 @@ The sample above would print out the following html:
 renderRepeatGroup
 """""""""""""""""
 
-Used to render *Repeat group* controls. Internally, it prints out the
+Used to render *Repeat Group* controls. Internally, it prints out the
 tag for the field (repeat group) and the tags for each of the items.
 
 The way repeat group collections are modelled on the ICE engine are in the following hierarchy:
@@ -562,10 +560,11 @@ Repeat groups introduce the possibility of having complex/compound ``$field`` an
 contain nested repeat groups or component collections.
 
 .. list-table::
+   :widths: 10 90
    :header-rows: 1
 
    * - Parameters
-     -
+     - Description
    * - $model
      - The content model that this element is associated to. ``$model`` is defaulted to the ``contentModel`` FreeMarker
        template context variable, so in most cases it is not necessary to specify it. Only required it when you want
@@ -597,7 +596,7 @@ contain nested repeat groups or component collections.
      - Html attributes to print by item index. For example, ``$nthItemAttributes={ 0: { "class": "active" } }``
        will apply the class named active only to the first item in the collection.
    * - arguments
-     - Crafter CMS' :ref:`renderComponent <renderComponent macro>` supports supplying additional arguments to
+     - Crafter CMS' :ref:`renderComponent macro <renderComponent>` supports supplying additional arguments to
        the component template context. You can send these via this argument. The ``arguments`` will be sent
        to all items.
 
@@ -762,6 +761,8 @@ The sample above would print out the following html:
      </div>
    </section>
 
+.. _forEach:
+
 forEach
 """""""
 
@@ -792,6 +793,8 @@ Examples
      ></button>
    </@crafter.forEach>
 
+.. _cleanDotNotationString:
+
 cleanDotNotationString
 """"""""""""""""""""""
 
@@ -802,7 +805,6 @@ Useful when working with repeat groups in Crafter as these introduce the possibi
 carryovers and complex/compound fields (e.g. ``field1.field2``) and indexes (e.g. ``0.1``).
 
 .. code-block:: text
-   :linenos:
 
    <#assign str1 = ".hello." />
    <#assign str2 = ".world." />
@@ -810,33 +812,35 @@ carryovers and complex/compound fields (e.g. ``field1.field2``) and indexes (e.g
    <#-- Output is hello.world -->
 
 .. code-block:: text
-   :linenos:
 
    ${crafter.cleanDotNotationString("...foo...bar..")}
    <#-- Output is foo.bar -->
 
 .. code-block:: text
-   :linenos:
 
    ${crafter.cleanDotNotationString("..")}
    <#-- Output is an empty string -->
+
+.. _isEmptyCollection:
 
 isEmptyCollection
 """""""""""""""""
 
 Receives a Crafter collection and returns true if it's empty or false otherwise.
 
+.. _printIfIsEmptyCollection:
+
 printIfIsEmptyCollection
 """"""""""""""""""""""""
 
 Receives a collection and an optional output string. If the collection is empty it will print the
-output string otherwise, it won't print anything. This macro only prints in Crafter Engine's *preview mode*.
+output string, otherwise, it won't print anything. This macro only prints in Crafter Engine's *preview mode* (within
+Studio).
 
 By default, the output string is ``craftercms-is-empty``. Useful for example for adding this class to empty
 component or repeat group collections to create spacing for authors to drag stuff on to the field or edit it.
 
 .. code-block:: text
-   :linenos:
 
    <@crafter.renderComponentCollection
      $field="mainContent_o"
@@ -849,10 +853,9 @@ printIfPreview
 """"""""""""""
 
 Receives a string which it will print if Crafter Engine is running in preview mode. Doesn't print
-anything in delivery.
+anything if Engine is running the published site.
 
 .. code-block:: text
-   :linenos:
 
    <#-- Import the "debug" version of the script in preview. -->
    <script src="/static-assets/js/bootstrap.bundle${crafter.printIfPreview('.debug')}.js"></script>
@@ -861,7 +864,6 @@ You can also use the FreeMarker context variable ``modePreview`` to do similar t
 ``printIfPreview`` uses it internally.
 
 .. code-block:: text
-   :linenos:
 
    <#-- Import a in-context editing stylesheet only in preview. -->
    <#if modePreview><link href="/static-assets/css/ice.css" rel="stylesheet"></#if>
@@ -874,6 +876,7 @@ navigation
 Prints out the navigation structure of a site in a customizable markup structure.
 
 .. list-table::
+   :widths: 10 10 10 70
    :header-rows: 1
 
    * - Parameter
@@ -883,19 +886,19 @@ Prints out the navigation structure of a site in a customizable markup structure
    * - url
      - string
      - "/site/website"
-     - The url path to start printing breadcrumbs from.
+     - The URL path to start printing breadcrumbs from
    * - showNavElement
      - boolean
      - true
-     - Whether to print a ``nav`` element wrapping the whole nav structure.
+     - Whether to print a ``nav`` element wrapping the whole nav structure
    * - navElementClass
      - string
      - ""
-     - Class(es) to apply to the ``nav`` element.
+     - Class(es) to apply to the ``nav`` element
    * - containerElement
      - string
      - "ul"
-     - Parent tag for the nav items and nav item wrappers. Will be skipped if set to an empty string (i.e. ``""``).
+     - Parent tag for the nav items and nav item wrappers. Will be skipped if set to an empty string (i.e. ``""``)
    * - containerElementClass
      - string
      - ""
@@ -982,6 +985,7 @@ Prints out the navigation structure of a site in a customizable markup structure
        print "Home" at the same level as its children to get something like ``Home • Products • About • Contact``
        instead of having products, about and contact as a dropdown or indented within home in your UI.
 
+.. _navigationItem:
 
 navigationItem
 """"""""""""""
@@ -991,6 +995,7 @@ Used internally by `the navigation macro <#navigation>`_ to print each item.
 See the navigation macro
 
 .. list-table::
+   :widths: 10 10 10 70
    :header-rows: 1
 
    * - Parameter
@@ -1010,11 +1015,13 @@ See the navigation macro
      - {}
      - The navItem object that will be used to print.
 
+.. _breadcrumb:
 
 breadcrumb
 """"""""""
 
 .. list-table::
+   :widths: 10 10 10 70
    :header-rows: 1
 
    * - Parameter
