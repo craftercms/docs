@@ -8,9 +8,9 @@
 Experience Builder
 ==================
 
-Crafter CMS' Experience Builder (XB) provides a UI layer on top of your applications that enables authors 
-with in-context editing (ICE) for all the model fields defined in the content types of pages and components. 
-Crafter CMS developers must integrate their applications with XB, essentially telling XB what field of the 
+Crafter CMS' Experience Builder (XB) provides a UI layer on top of your applications that enables authors
+with in-context editing (ICE) for all the model fields defined in the content types of pages and components.
+Crafter CMS developers must integrate their applications with XB, essentially telling XB what field of the
 model each element on the view represents. See :ref:`content-modeling` to learn more about the model.
 
 .. TODO insert <figure: example page with a sample content type side by side showing the relation between page elements
@@ -20,10 +20,10 @@ model each element on the view represents. See :ref:`content-modeling` to learn 
 Creating Experience Builder (XB) Enabled Sites
 ----------------------------------------------
 
-The concrete integration strategy with XB depends on what kind of application you are developing. 
-Crafter CMS provides native XB integration for FreeMarker and React applications. Other types of 
-applications (e.g. Angular, Vue, etc.) can still be integrated with XB through the underlying libraries 
-that power the FreeMarker and React applications. For reference on how to integrate, please see the 
+The concrete integration strategy with XB depends on what kind of application you are developing.
+Crafter CMS provides native XB integration for FreeMarker and React applications. Other types of
+applications (e.g. Angular, Vue, etc.) can still be integrated with XB through the underlying libraries
+that power the FreeMarker and React applications. For reference on how to integrate, please see the
 sections below for your specific kind of application.
 
 Overall, XB's ICE engine works with a coordinate system that you — the developer — use to
@@ -45,10 +45,10 @@ The coordinate system consists of the following pieces of data:
   * Indexes can be compound, comprised of the full path of indexes to that item in the collection (e.g. ``0.1``)
 
 XB's ICE engine requires, at times, what might be considered slightly more verbose markup structure.
-In order for the system to be able to direct authors to every piece of the model, as well as allowing 
+In order for the system to be able to direct authors to every piece of the model, as well as allowing
 them to edit inline, you need to register each piece of the model as an element on your view.
 
-For example, consider a carousel, where the carousel is modelled as a Crafter CMS component that has 
+For example, consider a carousel, where the carousel is modelled as a Crafter CMS component that has
 a repeat group field called ``slides_o`` which has two inner fields called ``caption_s`` and ``image_s``.
 
 The markup for a carousel may look like this:
@@ -85,9 +85,9 @@ In order to register each piece of the model, we would need to introduce a new e
      </div>
    </div>
 
-You can vary exactly where to add this additional element to suit your needs — or those of the libraries 
-and frameworks that you use to develop your applications. The important aspects are that each field is 
-represented by an element on the page/app and that the hierarchy of the fields is followed by the 
+You can vary exactly where to add this additional element to suit your needs — or those of the libraries
+and frameworks that you use to develop your applications. The important aspects are that each field is
+represented by an element on the page/app and that the hierarchy of the fields is followed by the
 hierarchy of your markup.
 
 Meaning, the component element is the parent of the repeat group element which is a parent of the repeat group items
@@ -120,7 +120,7 @@ In FreeMarker applications, in order to integrate with XB, you will use the macr
 which in turn will set all the right hints (i.e. html attributes) on the markup for
 the ICE engine to make things editable to authors.
 
-As mentioned earlier, you need to give XB's ICE engine the *coordinates* to identify each model/field, 
+As mentioned earlier, you need to give XB's ICE engine the *coordinates* to identify each model/field,
 so, in addition to their other arguments, each macro receives the following base parameters:
 
 
@@ -1003,8 +1003,8 @@ See the navigation macro
      - Default
      - Description
    * - *
-     - 
-     - 
+     -
+     -
      - See parameters for `the navigation macro <#navigation>`_ as they are the same.
    * - currentDepth
      - number
@@ -1086,19 +1086,56 @@ breadcrumb
      - Whether to render the active element as a link (i.e. ``a``); otherwise rendered as a ``span``.
 
 
+^^^^^
 React
 ^^^^^
 
 Crafter CMS provides react bindings for integrating with XB.
 
+React bindings can be used either via npm or using the umd bundle that comes with Crafter CMS.
+
 Npm
 ~~~
+
+yada
+
+UMD Bundle
+~~~~~~~~~~
+
+craftercms-guest.umd.js
+craftercms-guest.no-react.umd.js
 
 React Native
 ~~~~~~~~~~~~
 
+React native...
+
+API
+~~~
+
+Api...
+
+ContentType
+"""""""""""
+
+<ContentType />
+
+RenderField
+"""""""""""
+
+<RenderField />
+
+useICE hook
+"""""""""""
+
+The useICE hook
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Other Html or JavaScript applications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+XB uses DOM events to power authoring. Because XB sits on top of your applications, you may need to
+make your applications aware of XB's behaviours to facilitate the authoring experience.
 
 END
 
