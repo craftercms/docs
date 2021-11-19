@@ -6,7 +6,7 @@
 Backup and Recovery
 ===================
 
-Crafter CMS out of the box comes with a script to backup and restore your environment.  The script provided will backup your environment including indexes, repos, mongodb, etc.  You can then use your favorite backup tools for backing up the script generated Crafter CMS environment backup file.
+Crafter CMS out of the box comes with a script to backup and restore your environment.  The script provided will backup your environment including indexes, repos, mongodb, etc.  You can then use your favorite backup tools for backing up the script-generated Crafter CMS environment backup file.
 
 ------
 Backup
