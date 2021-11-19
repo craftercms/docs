@@ -13,9 +13,8 @@ with in-context editing (ICE) for all the model fields defined in the content ty
 Crafter CMS developers must integrate their applications with XB, essentially telling XB what field of the 
 model each element on the view represents. See :ref:`content-modeling` to learn more about the model.
 
-.. TODO
-<figure: example page with a sample content type side by side showing the relation between page elements
-and content type fields>
+.. TODO insert <figure: example page with a sample content type side by side showing the relation between page elements
+   and content type fields>
 
 ----------------------------------------------
 Creating Experience Builder (XB) Enabled Sites
@@ -33,12 +32,15 @@ tell the CMS which field of the content type each element/component on your page
 The coordinate system consists of the following pieces of data:
 
 * **Path**: the path to the content item (e.g. ``/site/components/features/main_feature.xml``)
-* **Model ID (a.k.a. object ID, local ID)**: the internal GUID that every content object in Crafter CMS has (e.g. ``5a06e244-64f4-4380-8619-1c726fe38e92``)
+* **Model ID (a.k.a. object ID, local ID)**: the internal GUID that every content object in Crafter CMS has
+  (e.g. ``5a06e244-64f4-4380-8619-1c726fe38e92``)
 * **Field ID**: the ID of the field in the content type (e.g. ``heroTitleText_t``)
 
-  * Field IDs may be compound, comprised of the full path to that field when such field is nested within repeat groups (e.g. ``carouselSlides_o.slideTitle_t``)
+  * Field IDs may be compound, comprised of the full path to that field when such field is nested within repeat
+    groups (e.g. ``carouselSlides_o.slideTitle_t``)
 
-* **Index**: When working with collections (e.g. component selectors or repeat groups), the index of the item within it's container collection (e.g. ``0``)
+* **Index**: When working with collections (e.g. component selectors or repeat groups), the index of the item within
+  it's container collection (e.g. ``0``)
 
   * Indexes can be compound, comprised of the full path of indexes to that item in the collection (e.g. ``0.1``)
 
@@ -52,6 +54,7 @@ a repeat group field called ``slides_o`` which has two inner fields called ``cap
 The markup for a carousel may look like this:
 
 .. code-block:: html
+   :linenos:
 
      <div class="carousel">
        <div class="slide">
@@ -150,6 +153,7 @@ The above will print out to the HTML a ``div`` with all the relevant hints for t
 this element as editable. Such ``div`` would look as shown below:
 
 .. code-block:: html
+   :linenos:
 
    <div
      data-craftercms-model-path="/site/website/index.xml"
@@ -202,7 +206,9 @@ for the component and the repeat group.
 
 Now, to start converting the elements to be editable, replace each tag, with the appropriate Crafter CMS macro.
 Prepend ``@crafter.`` to every tag so that ``<div>…</div>`` becomes ``<@crafter.div>...</@crafter.div>``,
-``<h1>`` becomes ``<@crafter.h1>``, ``<img>`` becomes ``<@crafter.img>``, ``span`` becomes ``<@crafter.span>`` and so on.
+``<h1>`` becomes ``<@crafter.h1>``, ``<img>`` becomes ``<@crafter.img>``, ``span`` becomes ``<@crafter.span>``
+and so on.
+
 Exceptions to this are the following:
 
 * For repeat group field elements and their children, use ``@crafter.renderRepeatGroup``.
@@ -251,7 +257,7 @@ The ``renderRepeatGroup`` macro does several things for us:
   * It provides you with the ``item`` and ``index`` for each item, so you can use them appropriately as if you were
     iterating manually.
 
-The complete FreeMarker template for the carousel component now looks like below.
+The complete FreeMarker template for the carousel component becomes:
 
 .. code-block:: text
    :linenos:
@@ -295,15 +301,17 @@ initInContextEditing
 Initializes the ICE engine and the communication between the page/app and studio. Call is required to
 enable Studio to control the page and for XB to enable ICE.
 
-The ``initInContextEditing`` macro is automatically invoked by the ``<@crafter.body_bottom />`` but you can opt out of it by invoking body_bottom with ``initializeInContextEditing=false``.
+The ``initInContextEditing`` macro is automatically invoked by the ``<@crafter.body_bottom />`` but you can opt out
+of it by invoking body_bottom with ``initializeInContextEditing=false``.
 
 .. code-block:: text
-   
+
    <@crafter.body_bottom initializeInContextEditing=false />
 
-In this case, you'll need to invoke ``initInContextEditing`` manually.
+In that case, you'll need to invoke ``initInContextEditing`` manually.
 
 .. list-table::
+   :widths: 10 10 80
    :header-rows: 1
 
    * - Parameter
@@ -311,7 +319,7 @@ In this case, you'll need to invoke ``initInContextEditing`` manually.
      - Description
    * - isAuthoring
      - boolean
-     - Optional as it defaults to :ref:`printIfPreview <modePreview>` FreeMarker context variable. When isAuthoring=false, in context editing is skipped all together. Meant for running in production.
+     - Optional as it defaults to :ref:`modePreview <printIfPreview>` FreeMarker context variable. When isAuthoring=false, in context editing is skipped all together. Meant for running in production.
    * - props
      - JS object string
      - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string, the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter's JavaScript libraries initialization.
@@ -320,13 +328,17 @@ In this case, you'll need to invoke ``initInContextEditing`` manually.
 Examples
 """"""""
 
+.. TODO Add context to the examples below or find a way to make these look better/more meaningful when rendered
+
 .. code-block:: text
 
    <@initInContextEditing />
 
+
 .. code-block:: text
 
    <@initInContextEditing props="{ themeOptions: { ... } }" />
+
 
 .. code-block:: text
 
@@ -338,7 +350,7 @@ Examples
 Html elements tag macros
 """"""""""""""""""""""""
 
-Crafter provides a comprehensive list of macros for the most common html elements that are used to
+Crafter CMS provides a comprehensive list of macros for the most common html elements that are used to
 develop content-managed websites/webapps. All these tags provided are essentially an alias to the
 underlying ``@crafter.tag`` macro, which you can use when you wish to use an element that isn't provided
 in the out-of-the-box macros (e.g. if you're using custom html elements), or if you need to set which
@@ -351,21 +363,33 @@ The following tags are available:
 ``td``, ``table``, ``abbr``, ``address``, ``aside``, ``audio``, ``video``, ``blockquote``, ``cite``, ``em``, ``code``, ``nav``,
 ``figure``, ``figcaption``, ``pre``, ``time``, ``map``, ``picture``, ``source``, ``meta``, ``title``
 
+.. TODO review the description
+
 .. list-table::
+   :widths: 10 90
    :header-rows: 1
 
-   * - Parameters
-     -
+   * - Parameter
+     - Description
    * - $model
-     - The content model for which this element belongs to. ``$model`` is defaulted to the ``contentModel`` FreeMarker template context variable, so in most cases it is not necessary to specify it. Only required it when you want to use a different model.
+     - The content model for which this element belongs to. ``$model`` is defaulted to the ``contentModel`` FreeMarker
+       template context variable, so in most cases it is not necessary to specify it. Only required it when you want
+       to use a different model
    * - $field
-     - The field id on the content type definition of the present model. When inside repeat groups, a dot-separated-string of the full field *path* to the present field (e.g. ``slides_o.image_s``).
+     - The field id on the content type definition of the present model. When inside repeat groups,
+       a dot-separated-string of the full field *path* to the present field (e.g. ``slides_o.image_s``)
    * - $index
-     - When inside a collection (i.e. repeat group or component collection), the index of the present item. When nested inside repeat groups, the full index *path* to this item (e.g. ``0.1``).
+     - When inside a collection (i.e. repeat group or component collection), the index of the present item. When nested
+       inside repeat groups, the full index *path* to this item (e.g. ``0.1``)
    * - Html attributes
-     - For convenience, macro tags will print out to the html all the attributes you pass to them that aren't one of the Crafter custom arguments (i.e. $model, $field, etc). For example, if you have ``<div class="carousel">``, you can convert to a Crafter tag like ``<@crafter.div class="carousel" ...>``. If you use attributes that go against FreeMarker syntax (e.g. ``data-my-attribute="foo"``), use the ``$attrs`` argument of the macros instead.
+     - For convenience, macro tags will print out to the html all the attributes you pass to them that aren't one of
+       the Crafter custom arguments (i.e. $model, $field, etc). For example, if you have ``<div class="carousel">``,
+       you can convert to a Crafter tag like ``<@crafter.div class="carousel" ...>``. If you use attributes that
+       go against FreeMarker syntax (e.g. ``data-my-attribute="foo"``), use the ``$attrs`` argument of the macros
+       instead.
    * - $attributes
-     - Html attributes to print on to the element. Particularly useful for attributes that you can't supply to the macro as a direct argument due to FreeMarker syntax restrictions. For example, ``<div data-foo="bar">``, transforming it as ``<@crafter.div data-foo="bar" ...>`` would produce a FreeMarker exception; use ``<@crafter.div $attrs={ "data-foo": "bar" } ...>`` instead.
+     - Html attributes to print on to the element. Particularly useful for attributes that you can't supply to
+       the macro as a direct argument due to FreeMarker syntax restrictions. For example, ``<div data-foo="bar">``, transforming it as ``<@crafter.div data-foo="bar" ...>`` would produce a FreeMarker exception; use ``<@crafter.div $attrs={ "data-foo": "bar" } ...>`` instead.
    * - $tag
      - Specify which tag to use. For example ``<@crafter.tag $tag="article"... />`` will print out an ``<article>`` tag. Use only if you're using ``@crafter.tag``, which in most cases you don't need to as you can use the tag alias (e.g. ``<@crafter.article ... />``).
 
@@ -373,12 +397,14 @@ The following tags are available:
 Examples
 ########
 
+.. TODO document the examples
+
 .. code-block:: text
-   :linenos:
 
    <#-- No `$field` necessary for the component root tag as it is not a field; it's
-   a model. Also, no `$model` since by default it already uses `contentModel`; and,
-   no `$index` since it's not an item of a collection. -->
+        a model. Also, no `$model` since by default it already uses `contentModel`; and,
+        no `$index` since it's not an item of a collection. -->
+
    <@crafter.section>
      <@crafter.h1 $field="heading_t">${contentModel.heading_t}</@crafter.h1>
    </@crafter.section>
@@ -389,15 +415,18 @@ Examples
      <@crafter.span $field"text_s">${contentModel.text_s}</@crafter.span>
    </@crafter.tag>
 
+.. _renderComponentCollection:
+
 renderComponentCollection
 """""""""""""""""""""""""
 
-Used to render *Item Selector* controls, which basically hold components. Internally, it prints out the
+Used to render *Item Selector* controls, which hold components. Internally, it prints out the
 tag for the field (item selector) and the tags for each of the component container items.
 
 The way component collections are modelled on the ICE engine are in the following hierarchy:
 
 .. code-block:: text
+   :linenos:
 
    <FieldTag>
      <Item0>
@@ -409,27 +438,35 @@ The way component collections are modelled on the ICE engine are in the followin
      <Item2>
        <ComponentTag>
          ...
-     ...
 
-Notice that the item tag is not the component tag itself. The component is contained by the item; it's not the item itself.
+Note that the item tag is not the component tag itself, instead, the component is contained by the item and it's
+not the item.
 
 .. list-table::
+   :widths: 10 90
    :header-rows: 1
 
    * - Parameters
-     -
+     - Description
    * - $model
-     - The content model that this element is associated to. ``$model`` is defaulted to the ``contentModel`` FreeMarker template context variable, so in most cases it is not necessary to specify it. Only required it when you want to use a different model.
+     - The content model that this element is associated to. ``$model`` is defaulted to the ``contentModel`` FreeMarker
+       template context variable, so in most cases it is not necessary to specify it. Only required it when you want
+       to use a different model.
    * - $field
-     - The field id on the content type definition of the present model. Field is optional for component/page wrapper elements as those indeed aren't a field but represent the model itself.
+     - The field id on the content type definition of the present model. Field is optional for component/page wrapper
+       elements as those indeed aren't a field but represent the model itself.
    * - $index
-     - When inside a collection (i.e. repeat group or component collection), the index of the present item within the collection.
+     - When inside a collection (i.e. repeat group or component collection), the index of the present item within
+       the collection.
    * - $fieldCarryover
-     - When nested inside repeat groups, a dot-separated-string of the full field *path* to the present field (e.g. ``repeatOne_o.repeatTwo_s``) **without the current field itself**, as the macro puts them together.
+     - When nested inside repeat groups, a dot-separated-string of the full field *path* to the present field
+       (e.g. ``repeatOne_o.repeatTwo_s``) **without the current field itself**, as the macro puts them together.
    * - $indexCarryover
      - When nested inside repeat groups, the full index *path* to this control (e.g. ``0.1``).
    * - $collection
-     - Contains the collection that the macro iterates through internally. By default, it is set to ``$model[$field]``, so not required to specify in most cases; however, you can manually specify the collection that will be looped when invoking the macro if you need to.
+     - Contains the collection that the macro iterates through internally. By default, it is set to ``$model[$field]``,
+       so not required to specify in most cases; however, you can manually specify the collection that will be looped
+       when invoking the macro if you need to.
    * - $containerAttributes
      - Html attributes to print on to the **field** element.
    * - $containerTag
@@ -439,10 +476,12 @@ Notice that the item tag is not the component tag itself. The component is conta
    * - $itemAttributes
      - Html attributes to print on to the **item** elements.
    * - $nthItemAttributes
-     - Html attributes to print by item index. For example, ``$nthItemAttributes={ 0: { "class": "active" } }`` will apply the class named active only to the first item in the collection.
+     - Html attributes to print by item index. For example, ``$nthItemAttributes={ 0: { "class": "active" } }`` will
+       apply the class named active only to the first item in the collection.
    * - renderComponentArguments
-     - Crafter CMS' :ref:`renderComponent <renderComponent>` macro supports supplying additional arguments (``additionalModel`` argument when used directly) to the component template context. You can send these via this parameter. The ``renderComponentArguments`` will be sent to all items.
-
+     - Crafter CMS' :ref:`renderComponent <renderComponent>` macro supports supplying additional arguments
+       (``additionalModel`` argument when used directly) to the component template context. You can send these via
+       this parameter. The ``renderComponentArguments`` will be sent to all items.
 
 Example
 #######
@@ -499,12 +538,13 @@ The sample above would print out the following html:
 renderRepeatGroup
 """""""""""""""""
 
-Used to render *Repeat group* controls. Internally, it prints out the
+Used to render *Repeat Group* controls. Internally, it prints out the
 tag for the field (repeat group) and the tags for each of the items.
 
 The way repeat group collections are modelled on the ICE engine are in the following hierarchy:
 
 .. code-block:: text
+   :linenos:
 
    <FieldTag>
      <Item0>
@@ -516,25 +556,34 @@ The way repeat group collections are modelled on the ICE engine are in the follo
          ...
      ...
 
-Repeat groups introduce the possibility of having complex/compound ``$field`` and ``$index`` arguments when they contain nested repeat groups or component collections.
+Repeat groups introduce the possibility of having complex/compound ``$field`` and ``$index`` arguments when they
+contain nested repeat groups or component collections.
 
 .. list-table::
+   :widths: 10 90
    :header-rows: 1
 
    * - Parameters
-     -
+     - Description
    * - $model
-     - The content model that this element is associated to. ``$model`` is defaulted to the ``contentModel`` FreeMarker template context variable, so in most cases it is not necessary to specify it. Only required it when you want to use a different model.
+     - The content model that this element is associated to. ``$model`` is defaulted to the ``contentModel`` FreeMarker
+       template context variable, so in most cases it is not necessary to specify it. Only required it when you want
+       to use a different model.
    * - $field
-     - The field id on the content type definition of the present model. Field is optional for component/page wrapper elements as those indeed aren't a field but represent the model itself.
+     - The field id on the content type definition of the present model. Field is optional for component/page wrapper
+       elements as those indeed aren't a field but represent the model itself.
    * - $index
-     - When inside a collection (i.e. repeat group or component collection), the index of the present item within the collection.
+     - When inside a collection (i.e. repeat group or component collection), the index of the present item within
+       the collection.
    * - $fieldCarryover
-     - When nested inside repeat groups, a dot-separated-string of the full field *path* to the present field (e.g. ``repeatOne_o.repeatTwo_s``) **without the current field itself**, as the macro puts them together.
+     - When nested inside repeat groups, a dot-separated-string of the full field *path* to the present field
+       (e.g. ``repeatOne_o.repeatTwo_s``) **without the current field itself**, as the macro puts them together.
    * - $indexCarryover
      - When nested inside repeat groups, the full index *path* to this control (e.g. ``0.1``).
    * - $collection
-     - Contains the collection that the macro iterates through internally. By default, it is set to ``$model[$field]``, so not required to specify in most cases; however, you can manually specify the collection that will be looped when invoking the macro if you need to.
+     - Contains the collection that the macro iterates through internally. By default, it is set to
+       ``$model[$field]``, so not required to specify in most cases; however, you can manually specify
+       the collection that will be looped when invoking the macro if you need to.
    * - $containerAttributes
      - Html attributes to print on to the **field** element.
    * - $containerTag
@@ -544,10 +593,12 @@ Repeat groups introduce the possibility of having complex/compound ``$field`` an
    * - $itemAttributes
      - Html attributes to print on to the **item** elements.
    * - $nthItemAttributes
-     - Html attributes to print by item index. For example, ``$nthItemAttributes={ 0: { "class": "active" } }`` will apply the class named active only to the first item in the collection.
+     - Html attributes to print by item index. For example, ``$nthItemAttributes={ 0: { "class": "active" } }``
+       will apply the class named active only to the first item in the collection.
    * - arguments
-     - Crafter CMS' :ref:`renderComponent <renderComponent macro>` supports supplying additional arguments to the component template context. You can send these via this argument. The ``arguments`` will be sent to all items.
-
+     - Crafter CMS' :ref:`renderComponent macro <renderComponent>` supports supplying additional arguments to
+       the component template context. You can send these via this argument. The ``arguments`` will be sent
+       to all items.
 
 Examples
 ########
@@ -710,6 +761,8 @@ The sample above would print out the following html:
      </div>
    </section>
 
+.. _forEach:
+
 forEach
 """""""
 
@@ -719,6 +772,7 @@ Examples
 ########
 
 .. code-block:: text
+   :linenos:
 
    <@crafter.forEach contentModel.slides_o; slide, index>
      <#assign
@@ -727,6 +781,7 @@ Examples
    </@crafter.forEach>
 
 .. code-block:: text
+   :linenos:
 
    <@crafter.forEach contentModel.slides_o; slide, index>
      <button
@@ -737,6 +792,8 @@ Examples
        ${(initialActiveSlideIndex == index)?then('class="active" aria-current="true"', '')}
      ></button>
    </@crafter.forEach>
+
+.. _cleanDotNotationString:
 
 cleanDotNotationString
 """"""""""""""""""""""
@@ -764,18 +821,24 @@ carryovers and complex/compound fields (e.g. ``field1.field2``) and indexes (e.g
    ${crafter.cleanDotNotationString("..")}
    <#-- Output is an empty string -->
 
+.. _isEmptyCollection:
+
 isEmptyCollection
 """""""""""""""""
 
 Receives a Crafter collection and returns true if it's empty or false otherwise.
 
+.. _printIfIsEmptyCollection:
+
 printIfIsEmptyCollection
 """"""""""""""""""""""""
 
 Receives a collection and an optional output string. If the collection is empty it will print the
-output string otherwise, it won't print anything. This macro only prints in Crafter Engine's *preview mode*.
+output string, otherwise, it won't print anything. This macro only prints in Crafter Engine's *preview mode* (within
+Studio).
 
-By default, the output string is ``craftercms-is-empty``. Useful for example for adding this class to empty component or repeat group collections to create spacing for authors to drag stuff on to the field or edit it.
+By default, the output string is ``craftercms-is-empty``. Useful for example for adding this class to empty
+component or repeat group collections to create spacing for authors to drag stuff on to the field or edit it.
 
 .. code-block:: text
 
@@ -790,7 +853,7 @@ printIfPreview
 """"""""""""""
 
 Receives a string which it will print if Crafter Engine is running in preview mode. Doesn't print
-anything in delivery.
+anything if Engine is running the published site.
 
 .. code-block:: text
 
@@ -805,12 +868,15 @@ You can also use the FreeMarker context variable ``modePreview`` to do similar t
    <#-- Import a in-context editing stylesheet only in preview. -->
    <#if modePreview><link href="/static-assets/css/ice.css" rel="stylesheet"></#if>
 
+.. _navigation:
+
 navigation
 """"""""""
 
 Prints out the navigation structure of a site in a customizable markup structure.
 
 .. list-table::
+   :widths: 10 10 10 70
    :header-rows: 1
 
    * - Parameter
@@ -820,19 +886,19 @@ Prints out the navigation structure of a site in a customizable markup structure
    * - url
      - string
      - "/site/website"
-     - The url path to start printing breadcrumbs from.
+     - The URL path to start printing breadcrumbs from
    * - showNavElement
      - boolean
      - true
-     - Whether to print a ``nav`` element wrapping the whole nav structure.
+     - Whether to print a ``nav`` element wrapping the whole nav structure
    * - navElementClass
      - string
      - ""
-     - Class(es) to apply to the ``nav`` element.
+     - Class(es) to apply to the ``nav`` element
    * - containerElement
      - string
      - "ul"
-     - Parent tag for the nav items and nav item wrappers. Will be skipped if set to an empty string (i.e. ``""``).
+     - Parent tag for the nav items and nav item wrappers. Will be skipped if set to an empty string (i.e. ``""``)
    * - containerElementClass
      - string
      - ""
@@ -840,7 +906,8 @@ Prints out the navigation structure of a site in a customizable markup structure
    * - itemWrapperElement
      - string
      - "li"
-     - Element used to wrap links (e.g. in ``<li><a /></li>`` the ``li`` wraps the ``a``). Will be skipped if set to an empty string (i.e. ``""``).
+     - Element used to wrap links (e.g. in ``<li><a /></li>`` the ``li`` wraps the ``a``). Will be skipped if set
+       to an empty string (i.e. ``""``).
    * - itemWrapperClass
      - string
      - ""
@@ -884,7 +951,8 @@ Prints out the navigation structure of a site in a customizable markup structure
    * - subItemClassPrefix
      - string
      - "nav-level"
-     - A class is created dynamically in the form of "${subItemClassPrefix}-${currentDepth}". You may customize the subItemClassPrefix to change the default from ``nav-level-${depth}`` to ``${whatEverYouPlease}-${depth}``.
+     - A class is created dynamically in the form of "${subItemClassPrefix}-${currentDepth}". You may customize
+       the subItemClassPrefix to change the default from ``nav-level-${depth}`` to ``${whatEverYouPlease}-${depth}``.
    * - subItemAttributes
      - hash
      - {}
@@ -908,12 +976,16 @@ Prints out the navigation structure of a site in a customizable markup structure
    * - includeRoot
      - boolean
      - true
-     - Whether to print the root of the nav. For example, you may want to print the children of "Home" without Home itself, in which case you'd set to false.
+     - Whether to print the root of the nav. For example, you may want to print the children of "Home" without Home
+       itself, in which case you'd set to false.
    * - inlineRootWithImmediateChildren
      - boolean
      - true
-     - Whether to print the root item on the same level as it's immediate children. For example you may want to print "Home" at the same level as its children to get something like ``Home • Products • About • Contact`` instead of having products, about and contact as a dropdown or indented within home in your UI.
+     - Whether to print the root item on the same level as it's immediate children. For example you may want to
+       print "Home" at the same level as its children to get something like ``Home • Products • About • Contact``
+       instead of having products, about and contact as a dropdown or indented within home in your UI.
 
+.. _navigationItem:
 
 navigationItem
 """"""""""""""
@@ -923,6 +995,7 @@ Used internally by `the navigation macro <#navigation>`_ to print each item.
 See the navigation macro
 
 .. list-table::
+   :widths: 10 10 10 70
    :header-rows: 1
 
    * - Parameter
@@ -942,11 +1015,13 @@ See the navigation macro
      - {}
      - The navItem object that will be used to print.
 
+.. _breadcrumb:
 
 breadcrumb
 """"""""""
 
 .. list-table::
+   :widths: 10 10 10 70
    :header-rows: 1
 
    * - Parameter
