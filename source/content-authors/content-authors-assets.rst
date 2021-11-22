@@ -64,6 +64,37 @@ Click on the ``X`` to close the  upload dialog or click on "Add more" if you wan
    :width: 50 %
    :align: center
 
+Adding a file from one of the upload controls
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A file may also be added via one of the upload controls and data source in a content form, such as the ``Image`` control together with the ``Image uploaded from desktop`` data source.
+
+To upload using one of the controls, while editing a content form, click on the button for adding/replacing an asset which would give you an option to use an existing asset or to upload an asset.
+
+.. image:: /_static/images/page/page-asset-single-upload.jpg
+   :alt: Static Assets - Upload a file from a control/data source in the content form
+   :width: 60 %
+   :align: center
+
+|
+
+The upload dialog will come up.  Click on the ``Choose File`` button to browse for the file you want to upload.
+
+.. image:: /_static/images/page/page-asset-single-file-upload-dlg.jpg
+   :alt: Static Assets - Upload File Dialog
+   :width: 60 %
+   :align: center
+
+|
+
+Once the file is uploaded, the dialog will close and the asset will now be in the content form.
+
+.. image:: /_static/images/page/page-asset-single-file-upload-done.jpg
+   :alt: Static Assets - Single file upload done and asset in content form
+   :width: 60 %
+   :align: center
+
+
 ---------------
 Removing Assets
 ---------------
