@@ -17,8 +17,20 @@
 {% set upToDate = 'False' %}
 {% set upToDate_key = 'is-up-to-date' %}
 {% if check_meta and upToDate_key in meta %}
-{% set upToDate = meta.get(upToDate_key) %}
+  {% set upToDate = meta.get(upToDate_key) %}
 {% endif %}
+
+{% set sinceVersion = '' %}
+{% set sinceVersion_key = 'since-version' %}
+{%- if check_meta and sinceVersion_key in meta %}
+  {%- set sinceVersion = meta.get(sinceVersion_key) %}
+{%- endif %}
+
+{% set lastUpdatedVersion = '' %}
+{% set lastUpdatedVersion_key = 'last-updated' %}
+{%- if check_meta and lastUpdatedVersion_key in meta %}
+{%- set lastUpdatedVersion = meta.get(lastUpdatedVersion_key) %}
+{%- endif %}
 
 {# Set Search page to updated #}
 {% if title == _('Search') %}
@@ -191,6 +203,18 @@
                 <img src="{{ pathto('_static/img/under-review.svg', 1) }}"
                      alt="Document Under Review" />
                 {%- endif %}
+            </li>
+            <li class="version">
+              {% if sinceVersion %}
+                <br>
+                <b>Since:</b> {{ sinceVersion }}
+              {% endif %}
+
+              {% if lastUpdatedVersion %}
+                <br>
+              <b>Updated on:</b> {{ lastUpdatedVersion }}
+              {% endif %}
+
             </li>
         </ul>
     </div>

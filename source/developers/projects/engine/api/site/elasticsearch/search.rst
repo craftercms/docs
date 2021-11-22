@@ -1,4 +1,6 @@
 :is-up-to-date: True
+:since-version: 3.1.0
+:last-updated: 3.1.18
 
 .. _crafter-engine-api-site-elasticsearch-search:
 
