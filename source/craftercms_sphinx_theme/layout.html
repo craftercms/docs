@@ -29,7 +29,7 @@
 {% set lastUpdatedVersion = '' %}
 {% set lastUpdatedVersion_key = 'last-updated' %}
 {%- if check_meta and lastUpdatedVersion_key in meta %}
-{%- set lastUpdatedVersion = meta.get(lastUpdatedVersion_key) %}
+  {%- set lastUpdatedVersion = meta.get(lastUpdatedVersion_key) %}
 {%- endif %}
 
 {# Set Search page to updated #}
