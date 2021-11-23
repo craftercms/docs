@@ -17,19 +17,19 @@
 {% set upToDate = 'False' %}
 {% set upToDate_key = 'is-up-to-date' %}
 {% if check_meta and upToDate_key in meta %}
-  {% set upToDate = meta.get(upToDate_key) %}
+{% set upToDate = meta.get(upToDate_key) %}
 {% endif %}
 
 {% set sinceVersion = '' %}
 {% set sinceVersion_key = 'since-version' %}
 {%- if check_meta and sinceVersion_key in meta %}
-  {%- set sinceVersion = meta.get(sinceVersion_key) %}
+{%- set sinceVersion = meta.get(sinceVersion_key) %}
 {%- endif %}
 
 {% set lastUpdatedVersion = '' %}
 {% set lastUpdatedVersion_key = 'last-updated' %}
 {%- if check_meta and lastUpdatedVersion_key in meta %}
-  {%- set lastUpdatedVersion = meta.get(lastUpdatedVersion_key) %}
+{%- set lastUpdatedVersion = meta.get(lastUpdatedVersion_key) %}
 {%- endif %}
 
 {# Set Search page to updated #}
@@ -204,19 +204,19 @@
                alt="Document Under Review" />
           {%- endif %}
         </li>
-        <li class="versions">
+        <li class="versions_tags">
           {% if sinceVersion %}
           <span class="version">
-            <span class="version__label">Since</span>
-            <span class="version__number">{{ sinceVersion }}</span>
-          </span>
+                    <span class="version__label">Since</span>
+                    <span class="version__number">{{ sinceVersion }}</span>
+                </span>
           {% endif %}
 
           {% if lastUpdatedVersion %}
-            <span class="version">
-              <span class="version__label">Updated on</span>
-              <span class="version__number">{{ lastUpdatedVersion }}</span>
-            </span>
+          <span class="version">
+                    <span class="version__label">Updated on</span>
+                    <span class="version__number">{{ lastUpdatedVersion }}</span>
+                </span>
           {% endif %}
         </li>
       </ul>
