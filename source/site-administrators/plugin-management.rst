@@ -61,6 +61,16 @@ Install a plugin using the Studio ``Plugin Management`` Site Tool
    |
    |
 
+#. Or, you can also open |siteConfig| by clicking on the ``Navigation Menu`` at the top right of the screen then click on |siteConfig|
+
+   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-open-site-tools.jpg
+      :align: center
+      :alt: Crafter Studio Open Site Tools
+      :width: 80%
+
+   |
+   |
+
 #. Open ``Plugin Management``
 
    .. figure:: /_static/images/developer/plugins/site-plugins/plugins-management.jpg
@@ -91,7 +101,7 @@ Install a plugin using the Studio ``Plugin Management`` Site Tool
    |
    |
 
-   A snack bar informing the user of the plugin installation status (success/failure/etc.) will appear on the bottom left of the screen
+   A notification informing the user of the plugin installation status (success/failure/etc.) will appear on the bottom left of the screen
 
    .. figure:: /_static/images/developer/plugins/site-plugins/plugins-snackbar.jpg
       :align: center
@@ -116,8 +126,7 @@ Managing Installed Plugins
 ^^^^^^^^^^^^^^^^^^^^^^
 View Installed Plugins
 ^^^^^^^^^^^^^^^^^^^^^^
-
-To view the installed plugins in your site, open the ``Sidebar``.  Click on ``Site Tools``, then ``Plugin Management``.
+To view the installed plugins in your site, click on the ``Navigation Menu`` at the top right then click on |siteConfig| then finally click on ``Plugin Management``.
 
 .. figure:: /_static/images/developer/plugins/site-plugins/plugins-installed.jpg
    :align: center
@@ -146,9 +155,9 @@ To uninstall plugins in your site, open the ``Plugin Management`` dialog.  Click
 
 |
 
-For plugins with dependencies like the above, take note of the items in the list in the uninstall dialog.  These dependencies will need to be removed by the user after uninstalling the plugin.
+For plugins with dependencies like the above, take note of the items in the list in the uninstall dialog.  These dependencies will need to be removed by the user before or after uninstalling the plugin.
 
-After clicking on the ``Uninstall`` button, a snackbar will appear at the bottom left of the screen informing the user of the plugin uninstall status (success/failure/etc.).
+After clicking on the ``Uninstall`` button, a notification will appear at the bottom left of the screen informing the user of the plugin uninstall status (success/failure/etc.).
 
 .. figure:: /_static/images/developer/plugins/site-plugins/plugins-snackbar-uninstalled.jpg
    :align: center
@@ -157,4 +166,4 @@ After clicking on the ``Uninstall`` button, a snackbar will appear at the bottom
 
 |
 
-Remember to clean up (remove) references to the uninstalled plugin in your site after the plugin is successfully uninstalled.  
+Remember to clean up (remove) references to the uninstalled plugin in your site if not already done, after the plugin is successfully uninstalled.
