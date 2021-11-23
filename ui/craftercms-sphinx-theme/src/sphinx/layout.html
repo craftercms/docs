@@ -20,6 +20,18 @@
 {% set upToDate = meta.get(upToDate_key) %}
 {% endif %}
 
+{% set sinceVersion = '' %}
+{% set sinceVersion_key = 'since-version' %}
+{%- if check_meta and sinceVersion_key in meta %}
+{%- set sinceVersion = meta.get(sinceVersion_key) %}
+{%- endif %}
+
+{% set lastUpdatedVersion = '' %}
+{% set lastUpdatedVersion_key = 'last-updated' %}
+{%- if check_meta and lastUpdatedVersion_key in meta %}
+{%- set lastUpdatedVersion = meta.get(lastUpdatedVersion_key) %}
+{%- endif %}
+
 {# Set Search page to updated #}
 {% if title == _('Search') %}
 {% set upToDate = 'True' %}
@@ -181,25 +193,40 @@
     {% include "breadcrumbs.html" %}
 
     <div class="right-nav" align="right">
-        <ul>
-            <li id="google_translate_element"></li>
-            <li class="page-status">
-                {%- if upToDate == 'True' %}
-                <img src="{{ pathto('_static/img/up-to-date.svg', 1) }}"
-                     alt="Document Up to Date" />
-                {%- else %}
-                <img src="{{ pathto('_static/img/under-review.svg', 1) }}"
-                     alt="Document Under Review" />
-                {%- endif %}
-            </li>
-        </ul>
+      <ul>
+        <li id="google_translate_element"></li>
+        <li class="page-status">
+          {%- if upToDate == 'True' %}
+          <img src="{{ pathto('_static/img/up-to-date.svg', 1) }}"
+               alt="Document Up to Date" />
+          {%- else %}
+          <img src="{{ pathto('_static/img/under-review.svg', 1) }}"
+               alt="Document Under Review" />
+          {%- endif %}
+        </li>
+        <li class="versions">
+          {% if sinceVersion %}
+          <span class="version">
+                    <span class="version__label">Since</span>
+                    <span class="version__number">{{ sinceVersion }}</span>
+                </span>
+          {% endif %}
+
+          {% if lastUpdatedVersion %}
+          <span class="version">
+                    <span class="version__label">Updated on</span>
+                    <span class="version__number">{{ lastUpdatedVersion }}</span>
+                </span>
+          {% endif %}
+        </li>
+      </ul>
     </div>
-	<script type="text/javascript">
-		function googleTranslateElementInit() {
-	 	new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-		}
-	</script>
-	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <main class="rst-content" role="main">
       {% block body %}{% endblock %}
