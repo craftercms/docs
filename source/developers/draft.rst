@@ -54,7 +54,6 @@ a repeat group field called ``slides_o`` which has two inner fields called ``cap
 The markup for a carousel may look like this:
 
 .. code-block:: html
-   :linenos:
 
      <div class="carousel">
        <div class="slide">
@@ -70,7 +69,6 @@ The markup for a carousel may look like this:
 In order to register each piece of the model, we would need to introduce a new element.
 
 .. code-block:: html
-   :linenos:
 
    <div class="carousel">              <!-- Component (Carousel) -->
      <div>                             <!-- Repeating group (slides_o) — Additional element introduced -->
@@ -153,7 +151,6 @@ The above will print out to the HTML a ``div`` with all the relevant hints for t
 this element as editable. Such ``div`` would look as shown below:
 
 .. code-block:: html
-   :linenos:
 
    <div
      data-craftercms-model-path="/site/website/index.xml"
@@ -176,7 +173,6 @@ As seen on the previous section, we introduced an additional element to represen
 and we ended up with the following markup.
 
 .. code-block:: html
-   :linenos:
 
    <div class="carousel">              <!-- Component (Carousel) -->
      <div>                             <!-- Repeating group (slides_o) — Additional element introduced -->
@@ -196,7 +192,6 @@ the direct parent of the ``div.slide`` elements. As mentioned earlier, we can fl
 for the component and the repeat group.
 
 .. code-block:: html
-   :linenos:
 
    <div>                    <!-- Component (Carousel) -->
      <div class="carousel"> <!-- Repeating group (slides_o) -->
@@ -228,7 +223,6 @@ Next, let's do the repeat group and it's items. We use ``@crafter.renderRepeatGr
 groups. :ref:`renderRepeatGroup` for all the available customizations and configuration.
 
 .. code-block:: text
-   :linenos:
 
    <@crafter.renderRepeatGroup
      $field="slides_o"
@@ -260,7 +254,6 @@ The ``renderRepeatGroup`` macro does several things for us:
 The complete FreeMarker template for the carousel component becomes:
 
 .. code-block:: text
-   :linenos:
 
    <#import "/templates/system/common/crafter.ftl" as crafter />
    <@crafter.componentRootTag>
@@ -319,26 +312,31 @@ In that case, you'll need to invoke ``initInContextEditing`` manually.
      - Description
    * - isAuthoring
      - boolean
-     - Optional as it defaults to :ref:`modePreview <printIfPreview>` FreeMarker context variable. When isAuthoring=false, in context editing is skipped all together. Meant for running in production.
+     - Optional as it defaults to :ref:`modePreview <printIfPreview>` FreeMarker context variable. When
+       isAuthoring=false, in context editing is skipped all together. Meant for running in production.
    * - props
      - JS object string
-     - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string, the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter's JavaScript libraries initialization.
+     - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string,
+       the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter CMS'
+       JavaScript libraries initialization.
 
 
 Examples
 """"""""
 
-.. TODO Add context to the examples below or find a way to make these look better/more meaningful when rendered
+Basic Usage
 
 .. code-block:: text
 
    <@initInContextEditing />
 
+Customized Theme Options
 
 .. code-block:: text
 
    <@initInContextEditing props="{ themeOptions: { ... } }" />
 
+Customized ICE Initialization via ``body_bottom`` Hook
 
 .. code-block:: text
 
@@ -371,45 +369,51 @@ The following tags are available:
 
    * - Parameter
      - Description
-   * - $model
+   * - ``$model``
      - The content model for which this element belongs to. ``$model`` is defaulted to the ``contentModel`` FreeMarker
-       template context variable, so in most cases it is not necessary to specify it. Only required it when you want
-       to use a different model
-   * - $field
-     - The field id on the content type definition of the present model. When inside repeat groups,
+       template context variable denoting the current page or component, so in most cases it is not necessary
+       to specify it. This is only required to be specified if you're trying to use a different model than the default
+   * - ``$field``
+     - The field ID on the content type definition of the current model. When inside repeat groups,
        a dot-separated-string of the full field *path* to the present field (e.g. ``slides_o.image_s``)
-   * - $index
+   * - ``$index``
      - When inside a collection (i.e. repeat group or component collection), the index of the present item. When nested
        inside repeat groups, the full index *path* to this item (e.g. ``0.1``)
    * - Html attributes
-     - For convenience, macro tags will print out to the html all the attributes you pass to them that aren't one of
-       the Crafter custom arguments (i.e. $model, $field, etc). For example, if you have ``<div class="carousel">``,
-       you can convert to a Crafter tag like ``<@crafter.div class="carousel" ...>``. If you use attributes that
-       go against FreeMarker syntax (e.g. ``data-my-attribute="foo"``), use the ``$attrs`` argument of the macros
-       instead.
-   * - $attributes
+     - For convenience, macro tags will print out to the HTML all the attributes you pass to them that aren't one of
+       the Crafter custom arguments (i.e. ``$model``, ``$field``, etc). For example, if you have
+       ``<div class="carousel">``, you can convert to a Crafter tag like ``<@crafter.div class="carousel" ...>``.
+       If you use attributes that go against FreeMarker syntax (e.g. ``data-my-attribute="foo"``), use the
+       ``$attributes`` argument of the macros instead
+   * - ``$attributes``
      - Html attributes to print on to the element. Particularly useful for attributes that you can't supply to
-       the macro as a direct argument due to FreeMarker syntax restrictions. For example, ``<div data-foo="bar">``, transforming it as ``<@crafter.div data-foo="bar" ...>`` would produce a FreeMarker exception; use ``<@crafter.div $attrs={ "data-foo": "bar" } ...>`` instead.
-   * - $tag
-     - Specify which tag to use. For example ``<@crafter.tag $tag="article"... />`` will print out an ``<article>`` tag. Use only if you're using ``@crafter.tag``, which in most cases you don't need to as you can use the tag alias (e.g. ``<@crafter.article ... />``).
+       the macro as a direct argument due to FreeMarker syntax restrictions. For example, ``<div data-foo="bar">``,
+       transforming it as ``<@crafter.div data-foo="bar" ...>`` would produce a FreeMarker exception;
+       use ``<@crafter.div $attrs={ "data-foo": "bar" } ...>`` instead
+   * - ``$tag``
+     - Specify which tag to use. For example ``<@crafter.tag $tag="article"... />`` will print out an
+       ``<article>`` tag. Use only if you're using ``@crafter.tag``, which in most cases you don't need to as you
+       can use the tag alias (e.g. ``<@crafter.article ... />``)
 
 
 Examples
 ########
 
-.. TODO document the examples
+In a component template no ``$field`` is necessary for the component root tag as it is not a field; it's
+a model. Also, no ``$model`` since by default it already uses ``contentModel``; and, no ``$index`` since it's not
+an item of a collection.
 
 .. code-block:: text
-
-   <#-- No `$field` necessary for the component root tag as it is not a field; it's
-        a model. Also, no `$model` since by default it already uses `contentModel`; and,
-        no `$index` since it's not an item of a collection. -->
+   :emphasize-lines: 1
 
    <@crafter.section>
      <@crafter.h1 $field="heading_t">${contentModel.heading_t}</@crafter.h1>
    </@crafter.section>
 
+In this example, a dynamic tag is used to print the tag from the actual content model.
+
 .. code-block:: text
+   :emphasize-lines: 1
 
    <@crafter.tag $tag=(contentModel.headingLevel_s!'h2')>
      <@crafter.span $field"text_s">${contentModel.text_s}</@crafter.span>
@@ -426,7 +430,6 @@ tag for the field (item selector) and the tags for each of the component contain
 The way component collections are modelled on the ICE engine are in the following hierarchy:
 
 .. code-block:: text
-   :linenos:
 
    <FieldTag>
      <Item0>
@@ -448,37 +451,37 @@ not the item.
 
    * - Parameters
      - Description
-   * - $model
-     - The content model that this element is associated to. ``$model`` is defaulted to the ``contentModel`` FreeMarker
-       template context variable, so in most cases it is not necessary to specify it. Only required it when you want
-       to use a different model.
-   * - $field
-     - The field id on the content type definition of the present model. Field is optional for component/page wrapper
-       elements as those indeed aren't a field but represent the model itself.
-   * - $index
-     - When inside a collection (i.e. repeat group or component collection), the index of the present item within
-       the collection.
-   * - $fieldCarryover
+   * - ``$model``
+     - The content model for which this element belongs to. ``$model`` is defaulted to the ``contentModel`` FreeMarker
+       template context variable denoting the current page or component, so in most cases it is not necessary
+       to specify it. This is only required to be specified if you're trying to use a different model than the default
+   * - ``$field``
+     - The field ID on the content type definition of the current model. When inside repeat groups,
+       a dot-separated-string of the full field *path* to the present field (e.g. ``slides_o.image_s``)
+   * - ``$index``
+     - When inside a collection (i.e. repeat group or component collection), the index of the present item. When nested
+       inside repeat groups, the full index *path* to this item (e.g. ``0.1``)
+   * - ``$fieldCarryover``
      - When nested inside repeat groups, a dot-separated-string of the full field *path* to the present field
        (e.g. ``repeatOne_o.repeatTwo_s``) **without the current field itself**, as the macro puts them together.
-   * - $indexCarryover
+   * - ``$indexCarryover``
      - When nested inside repeat groups, the full index *path* to this control (e.g. ``0.1``).
-   * - $collection
+   * - ``$collection``
      - Contains the collection that the macro iterates through internally. By default, it is set to ``$model[$field]``,
        so not required to specify in most cases; however, you can manually specify the collection that will be looped
        when invoking the macro if you need to.
-   * - $containerAttributes
+   * - ``$containerAttributes``
      - Html attributes to print on to the **field** element.
-   * - $containerTag
+   * - ``$containerTag``
      - The tag to use for the **field** element.
-   * - $itemTag
+   * - ``$itemTag``
      - The tag to use for the **item**  tags.
-   * - $itemAttributes
+   * - ``$itemAttributes``
      - Html attributes to print on to the **item** elements.
-   * - $nthItemAttributes
+   * - ``$nthItemAttributes``
      - Html attributes to print by item index. For example, ``$nthItemAttributes={ 0: { "class": "active" } }`` will
        apply the class named active only to the first item in the collection.
-   * - renderComponentArguments
+   * - ``renderComponentArguments``
      - Crafter CMS' :ref:`renderComponent <renderComponent>` macro supports supplying additional arguments
        (``additionalModel`` argument when used directly) to the component template context. You can send these via
        this parameter. The ``renderComponentArguments`` will be sent to all items.
@@ -493,7 +496,6 @@ Example
 The sample above would print out the following html:
 
 .. code-block:: html
-   :linenos:
 
    <!-- Field element -->
    <section
@@ -544,7 +546,6 @@ tag for the field (repeat group) and the tags for each of the items.
 The way repeat group collections are modelled on the ICE engine are in the following hierarchy:
 
 .. code-block:: text
-   :linenos:
 
    <FieldTag>
      <Item0>
@@ -604,7 +605,6 @@ Examples
 ########
 
 .. code-block:: text
-   :linenos:
 
    <@crafter.renderRepeatCollection
      $containerTag="section"
@@ -626,7 +626,6 @@ Examples
 The sample above would print out the following html:
 
 .. code-block:: html
-   :linenos:
 
    <!-- The repeat group field element (columns_o) -->
    <section
@@ -772,7 +771,6 @@ Examples
 ########
 
 .. code-block:: text
-   :linenos:
 
    <@crafter.forEach contentModel.slides_o; slide, index>
      <#assign
@@ -781,7 +779,6 @@ Examples
    </@crafter.forEach>
 
 .. code-block:: text
-   :linenos:
 
    <@crafter.forEach contentModel.slides_o; slide, index>
      <button
@@ -1059,7 +1056,8 @@ breadcrumb
    * - itemWrapperElement
      - string
      - "li"
-     - Element used to wrap links (e.g. in ``<li><a /></li>`` the ``li`` wraps the ``a``). Will be skipped if set to an empty string (i.e. ``""``).
+     - Element used to wrap links (e.g. in ``<li><a /></li>`` the ``li`` wraps the ``a``). Will be skipped if set
+       to an empty string (i.e. ``""``).
    * - itemWrapperClass
      - string
      - ""
