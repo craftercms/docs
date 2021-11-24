@@ -282,6 +282,8 @@ The complete FreeMarker template for the carousel component becomes:
      </@crafter.renderRepeatGroup>
    </@crafter.componentRootTag>
 
+.. TODO Speak about the ice support classes, event capture overlay and special treatment for empty zones
+
 .. _macros:
 
 FreeMarker Macros & Utilities
@@ -292,6 +294,11 @@ After importing ``crafter.ftl``, you'll have all the available XB macros describ
 .. code-block:: text
 
    <#import "/templates/system/common/crafter.ftl" as crafter />
+
+
+.. TODO eventCaptureOverlay $onlyInPreview=false $tag="div" $attributes={} attrs
+const editModeClass = 'craftercms-ice-on';
+const zKeyClass = 'craftercms-ice-bypass';
 
 .. _initInContextEditing:
 
@@ -385,7 +392,7 @@ The following tags are available:
      - For convenience, macro tags will print out to the html all the attributes you pass to them that aren't one of
        the Crafter custom arguments (i.e. $model, $field, etc). For example, if you have ``<div class="carousel">``,
        you can convert to a Crafter tag like ``<@crafter.div class="carousel" ...>``. If you use attributes that
-       go against FreeMarker syntax (e.g. ``data-my-attribute="foo"``), use the ``$attrs`` argument of the macros
+       go against FreeMarker syntax (e.g. ``data-my-attribute="foo"``), use the ``$attributes`` argument of the macros
        instead.
    * - $attributes
      - Html attributes to print on to the element. Particularly useful for attributes that you can't supply to
@@ -828,24 +835,39 @@ isEmptyCollection
 
 Receives a Crafter collection and returns true if it's empty or false otherwise.
 
-.. _printIfIsEmptyCollection:
+.. emptyCollectionClass:
 
-printIfIsEmptyCollection
+emptyCollectionClass
 """"""""""""""""""""""""
 
-Receives a collection and an optional output string. If the collection is empty it will print the
-output string, otherwise, it won't print anything. This macro only prints in Crafter Engine's *preview mode* (within
-Studio).
+Receives a collection and, if the collection is empty it will print the print a *special* crafter class,
+otherwise, it won't print anything. This macro only prints in Crafter Engine's *preview mode*.
 
-By default, the output string is ``craftercms-is-empty``. Useful for example for adding this class to empty
-component or repeat group collections to create spacing for authors to drag stuff on to the field or edit it.
+The *special* class adds styles to the element so that it has a minimum height and
+width so that authors can visualize the area and drag components on it despite being empty — as otherwise,
+it would be invisible and virtually not editable.
+
+One should use this macro on empty component or repeat group collections.
+
+**Component collection**
 
 .. code-block:: text
 
    <@crafter.renderComponentCollection
      $field="mainContent_o"
-     $containerAttributes={ "class": crafter.printIfIsEmptyCollection(contentModel.mainContent_o) }
+     $containerAttributes={ "class": crafter.emptyCollectionClass(contentModel.mainContent_o) }
    />
+
+**Repeat group**
+
+.. code-block:: text
+
+   <@crafter.renderRepeatGroup
+     $field="slides_o"
+     $containerAttributes={ "class": crafter.emptyCollectionClass(contentModel.slides_o) }
+   />
+
+.. TODO emptyFieldClass
 
 .. _printIfPreview:
 
@@ -853,7 +875,7 @@ printIfPreview
 """"""""""""""
 
 Receives a string which it will print if Crafter Engine is running in preview mode. Doesn't print
-anything if Engine is running the published site.
+anything otherwise.
 
 .. code-block:: text
 
@@ -867,6 +889,19 @@ You can also use the FreeMarker context variable ``modePreview`` to do similar t
 
    <#-- Import a in-context editing stylesheet only in preview. -->
    <#if modePreview><link href="/static-assets/css/ice.css" rel="stylesheet"></#if>
+
+.. _printIfNotPreview
+
+printIfNotPreview
+"""""""""""""""
+
+Receives a string which it will print if Crafter Engine is not running in preview mode. Doesn't print
+anything otherwise.
+
+.. code-block:: text
+
+   <#-- Import the "minified" version of the script in delivery. -->
+   <script src="/static-assets/js/bootstrap.bundle${crafter.printIfNotPreview('.min')}.js"></script>
 
 .. _navigation:
 
