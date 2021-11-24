@@ -43,7 +43,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'edit_on_github',
     'sphinx.ext.extlinks',
-    'versions_tags'
+    'version_tag'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

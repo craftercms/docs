@@ -20,10 +20,22 @@
 {% set upToDate = meta.get(upToDate_key) %}
 {% endif %}
 
+{% set sinceLabel = '' %}
+{% set sinceLabel_key = 'since-label' %}
+{%- if check_meta and sinceLabel_key in meta %}
+{%- set sinceLabel = meta.get(sinceLabel_key) %}
+{%- endif %}
+
 {% set sinceVersion = '' %}
 {% set sinceVersion_key = 'since-version' %}
 {%- if check_meta and sinceVersion_key in meta %}
 {%- set sinceVersion = meta.get(sinceVersion_key) %}
+{%- endif %}
+
+{% set updatedOnLabel = '' %}
+{% set updatedOnLabel_key = 'updated-label' %}
+{%- if check_meta and updatedOnLabel_key in meta %}
+{%- set updatedOnLabel = meta.get(updatedOnLabel_key) %}
 {%- endif %}
 
 {% set lastUpdatedVersion = '' %}
@@ -204,19 +216,31 @@
                alt="Document Under Review" />
           {%- endif %}
         </li>
-        <li class="versions_tags">
+        <li class="versions-tags">
           {% if sinceVersion %}
-          <span class="version">
-                    <span class="version__label">Since</span>
-                    <span class="version__number">{{ sinceVersion }}</span>
-                </span>
+            <span class="version-tag">
+              <span class="version__label">
+                {% if sinceLabel %}
+                  {{ sinceLabel }}
+                {%- else %}
+                  Since
+                {%- endif %}
+              </span>
+              <span class="version__number">{{ sinceVersion }}</span>
+            </span>
           {% endif %}
 
           {% if lastUpdatedVersion %}
-          <span class="version">
-                    <span class="version__label">Updated on</span>
-                    <span class="version__number">{{ lastUpdatedVersion }}</span>
-                </span>
+            <span class="version-tag">
+              <span class="version__label">
+                {% if updatedOnLabel %}
+                  {{ updatedOnLabel }}
+                {%- else %}
+                  Updated On
+                {%- endif %}
+              </span>
+              <span class="version__number">{{ lastUpdatedVersion }}</span>
+            </span>
           {% endif %}
         </li>
       </ul>
