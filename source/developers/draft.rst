@@ -295,8 +295,8 @@ After importing ``crafter.ftl``, you'll have all the available XB macros describ
 
 
 .. TODO eventCaptureOverlay $onlyInPreview=false $tag="div" $attributes={} attrs
-const editModeClass = 'craftercms-ice-on';
-const zKeyClass = 'craftercms-ice-bypass';
+   const editModeClass = 'craftercms-ice-on';
+   const zKeyClass = 'craftercms-ice-bypass';
 
 .. _initInContextEditing:
 
@@ -887,13 +887,13 @@ You can also use the FreeMarker context variable ``modePreview`` to do similar t
    <#-- Import a in-context editing stylesheet only in preview. -->
    <#if modePreview><link href="/static-assets/css/ice.css" rel="stylesheet"></#if>
 
-.. _printIfNotPreview
+.. _printIfNotPreview:
 
 printIfNotPreview
-"""""""""""""""
+"""""""""""""""""
 
 Receives a string which it will print if Crafter Engine is not running in preview mode. Doesn't print
-anything otherwise.
+anything if Engine is running the published site.
 
 .. code-block:: text
 
@@ -1119,62 +1119,64 @@ breadcrumb
      - Whether to render the active element as a link (i.e. ``a``); otherwise rendered as a ``span``.
 
 
-^^^^^
-React
-^^^^^
+.. TODO
 
-Crafter CMS provides react bindings for integrating with XB.
+        ^^^^^
+        React
+        ^^^^^
 
-React bindings can be used either via npm or using the umd bundle that comes with Crafter CMS.
+        Crafter CMS provides react bindings for integrating with XB.
 
-Npm
-~~~
+        React bindings can be used either via npm or using the umd bundle that comes with Crafter CMS.
 
-yada
+        Npm
+        ~~~
 
-UMD Bundle
-~~~~~~~~~~
+        yada
 
-craftercms-guest.umd.js
-craftercms-guest.no-react.umd.js
+        UMD Bundle
+        ~~~~~~~~~~
 
-React Native
-~~~~~~~~~~~~
+        craftercms-guest.umd.js
+        craftercms-guest.no-react.umd.js
 
-React native...
+        React Native
+        ~~~~~~~~~~~~
 
-API
-~~~
+        React native...
 
-Api...
+        API
+        ~~~
 
-ContentType
-"""""""""""
+        Api...
 
-<ContentType />
+        ContentType
+        """""""""""
 
-RenderField
-"""""""""""
+        <ContentType />
 
-<RenderField />
+        RenderField
+        """""""""""
 
-useICE hook
-"""""""""""
+        <RenderField />
 
-The useICE hook
+        useICE hook
+        """""""""""
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Other Html or JavaScript applications
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        The useICE hook
 
-XB uses DOM events to power authoring. Because XB sits on top of your applications, you may need to
-make your applications aware of XB's behaviours to facilitate the authoring experience.
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        Other Html or JavaScript applications
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-END
+        XB uses DOM events to power authoring. Because XB sits on top of your applications, you may need to
+        make your applications aware of XB's behaviours to facilitate the authoring experience.
 
-**Plugins**
+        END
+
+        **Plugins**
 
 
-* The z key
-* The e & m keys
-* ICE on hints (class & event)
+        * The z key
+        * The e & m keys
+        * ICE on hints (class & event)
