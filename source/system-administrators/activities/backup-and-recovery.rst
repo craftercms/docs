@@ -8,9 +8,32 @@ Backup and Recovery
 
 Crafter CMS out of the box comes with a script to backup and restore your environment.  The script provided will backup your environment including indexes, repos, mongodb, etc.  You can then use your favorite backup tools for backing up the script-generated Crafter CMS environment backup file.
 
-------
-Backup
-------
+-------------
+Studio Backup
+-------------
+
+To backup Crafter CMS, you only need to backup Crafter Studio.
+
+Non-clustered Studio
+^^^^^^^^^^^^^^^^^^^^
+
+For non-clustered Studio instances, shutdown Crafter CMS then perform the backup. Once the backup is done, start it up again.
+This implies some downtime for authors.
+
+Clustered Studio
+^^^^^^^^^^^^^^^^
+
+For clustered instances, shutdown a replica, then perform the backup against that replica. Once the backup is done, start up
+the replica. This doesn't result in any downtime for authors.
+
+.. WARNING::
+
+Performing a backup while Crafter CMS is running is technically possible, but the resulting backup may not be viable.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Running the backup script
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
 To backup your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}/bin``, where ``{env}`` is the environment (either authoring or delivery) then run the following:
 
     .. code-block:: bash
