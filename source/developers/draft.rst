@@ -8,9 +8,9 @@
 Experience Builder
 ==================
 
-Crafter CMS' Experience Builder (XB) provides a UI layer on top of your applications that enables authors 
-with in-context editing (ICE) for all the model fields defined in the content types of pages and components. 
-Crafter CMS developers must integrate their applications with XB, essentially telling XB what field of the 
+Crafter CMS' Experience Builder (XB) provides a UI layer on top of your applications that enables authors
+with in-context editing (ICE) for all the model fields defined in the content types of pages and components.
+Crafter CMS developers must integrate their applications with XB, essentially telling XB what field of the
 model each element on the view represents. See :ref:`content-modeling` to learn more about the model.
 
 .. TODO insert <figure: example page with a sample content type side by side showing the relation between page elements
@@ -20,10 +20,10 @@ model each element on the view represents. See :ref:`content-modeling` to learn 
 Creating Experience Builder (XB) Enabled Sites
 ----------------------------------------------
 
-The concrete integration strategy with XB depends on what kind of application you are developing. 
-Crafter CMS provides native XB integration for FreeMarker and React applications. Other types of 
-applications (e.g. Angular, Vue, etc.) can still be integrated with XB through the underlying libraries 
-that power the FreeMarker and React applications. For reference on how to integrate, please see the 
+The concrete integration strategy with XB depends on what kind of application you are developing.
+Crafter CMS provides native XB integration for FreeMarker and React applications. Other types of
+applications (e.g. Angular, Vue, etc.) can still be integrated with XB through the underlying libraries
+that power the FreeMarker and React applications. For reference on how to integrate, please see the
 sections below for your specific kind of application.
 
 Overall, XB's ICE engine works with a coordinate system that you — the developer — use to
@@ -45,10 +45,10 @@ The coordinate system consists of the following pieces of data:
   * Indexes can be compound, comprised of the full path of indexes to that item in the collection (e.g. ``0.1``)
 
 XB's ICE engine requires, at times, what might be considered slightly more verbose markup structure.
-In order for the system to be able to direct authors to every piece of the model, as well as allowing 
+In order for the system to be able to direct authors to every piece of the model, as well as allowing
 them to edit inline, you need to register each piece of the model as an element on your view.
 
-For example, consider a carousel, where the carousel is modelled as a Crafter CMS component that has 
+For example, consider a carousel, where the carousel is modelled as a Crafter CMS component that has
 a repeat group field called ``slides_o`` which has two inner fields called ``caption_s`` and ``image_s``.
 
 The markup for a carousel may look like this:
@@ -83,9 +83,9 @@ In order to register each piece of the model, we would need to introduce a new e
      </div>
    </div>
 
-You can vary exactly where to add this additional element to suit your needs — or those of the libraries 
-and frameworks that you use to develop your applications. The important aspects are that each field is 
-represented by an element on the page/app and that the hierarchy of the fields is followed by the 
+You can vary exactly where to add this additional element to suit your needs — or those of the libraries
+and frameworks that you use to develop your applications. The important aspects are that each field is
+represented by an element on the page/app and that the hierarchy of the fields is followed by the
 hierarchy of your markup.
 
 Meaning, the component element is the parent of the repeat group element which is a parent of the repeat group items
@@ -118,7 +118,7 @@ In FreeMarker applications, in order to integrate with XB, you will use the macr
 which in turn will set all the right hints (i.e. html attributes) on the markup for
 the ICE engine to make things editable to authors.
 
-As mentioned earlier, you need to give XB's ICE engine the *coordinates* to identify each model/field, 
+As mentioned earlier, you need to give XB's ICE engine the *coordinates* to identify each model/field,
 so, in addition to their other arguments, each macro receives the following base parameters:
 
 
@@ -151,6 +151,7 @@ The above will print out to the HTML a ``div`` with all the relevant hints for t
 this element as editable. Such ``div`` would look as shown below:
 
 .. code-block:: html
+   :linenos:
 
    <div
      data-craftercms-model-path="/site/website/index.xml"
@@ -173,6 +174,7 @@ As seen on the previous section, we introduced an additional element to represen
 and we ended up with the following markup.
 
 .. code-block:: html
+   :linenos:
 
    <div class="carousel">              <!-- Component (Carousel) -->
      <div>                             <!-- Repeating group (slides_o) — Additional element introduced -->
@@ -192,6 +194,7 @@ the direct parent of the ``div.slide`` elements. As mentioned earlier, we can fl
 for the component and the repeat group.
 
 .. code-block:: html
+   :linenos:
 
    <div>                    <!-- Component (Carousel) -->
      <div class="carousel"> <!-- Repeating group (slides_o) -->
@@ -223,6 +226,7 @@ Next, let's do the repeat group and it's items. We use ``@crafter.renderRepeatGr
 groups. :ref:`renderRepeatGroup` for all the available customizations and configuration.
 
 .. code-block:: text
+   :linenos:
 
    <@crafter.renderRepeatGroup
      $field="slides_o"
@@ -254,6 +258,7 @@ The ``renderRepeatGroup`` macro does several things for us:
 The complete FreeMarker template for the carousel component becomes:
 
 .. code-block:: text
+   :linenos:
 
    <#import "/templates/system/common/crafter.ftl" as crafter />
    <@crafter.componentRootTag>
@@ -275,6 +280,8 @@ The complete FreeMarker template for the carousel component becomes:
      </@crafter.renderRepeatGroup>
    </@crafter.componentRootTag>
 
+.. TODO Speak about the ice support classes, event capture overlay and special treatment for empty zones
+
 .. _macros:
 
 FreeMarker Macros & Utilities
@@ -285,6 +292,11 @@ After importing ``crafter.ftl``, you'll have all the available XB macros describ
 .. code-block:: text
 
    <#import "/templates/system/common/crafter.ftl" as crafter />
+
+
+.. TODO eventCaptureOverlay $onlyInPreview=false $tag="div" $attributes={} attrs
+const editModeClass = 'craftercms-ice-on';
+const zKeyClass = 'craftercms-ice-bypass';
 
 .. _initInContextEditing:
 
@@ -312,31 +324,26 @@ In that case, you'll need to invoke ``initInContextEditing`` manually.
      - Description
    * - isAuthoring
      - boolean
-     - Optional as it defaults to :ref:`modePreview <printIfPreview>` FreeMarker context variable. When
-       isAuthoring=false, in context editing is skipped all together. Meant for running in production.
+     - Optional as it defaults to :ref:`modePreview <printIfPreview>` FreeMarker context variable. When isAuthoring=false, in context editing is skipped all together. Meant for running in production.
    * - props
      - JS object string
-     - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string,
-       the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter CMS'
-       JavaScript libraries initialization.
+     - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string, the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter's JavaScript libraries initialization.
 
 
 Examples
 """"""""
 
-Basic Usage
+.. TODO Add context to the examples below or find a way to make these look better/more meaningful when rendered
 
 .. code-block:: text
 
    <@initInContextEditing />
 
-Customized Theme Options
 
 .. code-block:: text
 
    <@initInContextEditing props="{ themeOptions: { ... } }" />
 
-Customized ICE Initialization via ``body_bottom`` Hook
 
 .. code-block:: text
 
@@ -825,24 +832,39 @@ isEmptyCollection
 
 Receives a Crafter collection and returns true if it's empty or false otherwise.
 
-.. _printIfIsEmptyCollection:
+.. emptyCollectionClass:
 
-printIfIsEmptyCollection
+emptyCollectionClass
 """"""""""""""""""""""""
 
-Receives a collection and an optional output string. If the collection is empty it will print the
-output string, otherwise, it won't print anything. This macro only prints in Crafter Engine's *preview mode* (within
-Studio).
+Receives a collection and, if the collection is empty it will print the print a *special* crafter class,
+otherwise, it won't print anything. This macro only prints in Crafter Engine's *preview mode*.
 
-By default, the output string is ``craftercms-is-empty``. Useful for example for adding this class to empty
-component or repeat group collections to create spacing for authors to drag stuff on to the field or edit it.
+The *special* class adds styles to the element so that it has a minimum height and
+width so that authors can visualize the area and drag components on it despite being empty — as otherwise,
+it would be invisible and virtually not editable.
+
+One should use this macro on empty component or repeat group collections.
+
+**Component collection**
 
 .. code-block:: text
 
    <@crafter.renderComponentCollection
      $field="mainContent_o"
-     $containerAttributes={ "class": crafter.printIfIsEmptyCollection(contentModel.mainContent_o) }
+     $containerAttributes={ "class": crafter.emptyCollectionClass(contentModel.mainContent_o) }
    />
+
+**Repeat group**
+
+.. code-block:: text
+
+   <@crafter.renderRepeatGroup
+     $field="slides_o"
+     $containerAttributes={ "class": crafter.emptyCollectionClass(contentModel.slides_o) }
+   />
+
+.. TODO emptyFieldClass
 
 .. _printIfPreview:
 
@@ -864,6 +886,19 @@ You can also use the FreeMarker context variable ``modePreview`` to do similar t
 
    <#-- Import a in-context editing stylesheet only in preview. -->
    <#if modePreview><link href="/static-assets/css/ice.css" rel="stylesheet"></#if>
+
+.. _printIfNotPreview
+
+printIfNotPreview
+"""""""""""""""
+
+Receives a string which it will print if Crafter Engine is not running in preview mode. Doesn't print
+anything otherwise.
+
+.. code-block:: text
+
+   <#-- Import the "minified" version of the script in delivery. -->
+   <script src="/static-assets/js/bootstrap.bundle${crafter.printIfNotPreview('.min')}.js"></script>
 
 .. _navigation:
 
@@ -1000,8 +1035,8 @@ See the navigation macro
      - Default
      - Description
    * - *
-     - 
-     - 
+     -
+     -
      - See parameters for `the navigation macro <#navigation>`_ as they are the same.
    * - currentDepth
      - number
@@ -1084,19 +1119,56 @@ breadcrumb
      - Whether to render the active element as a link (i.e. ``a``); otherwise rendered as a ``span``.
 
 
+^^^^^
 React
 ^^^^^
 
 Crafter CMS provides react bindings for integrating with XB.
 
+React bindings can be used either via npm or using the umd bundle that comes with Crafter CMS.
+
 Npm
 ~~~
+
+yada
+
+UMD Bundle
+~~~~~~~~~~
+
+craftercms-guest.umd.js
+craftercms-guest.no-react.umd.js
 
 React Native
 ~~~~~~~~~~~~
 
+React native...
+
+API
+~~~
+
+Api...
+
+ContentType
+"""""""""""
+
+<ContentType />
+
+RenderField
+"""""""""""
+
+<RenderField />
+
+useICE hook
+"""""""""""
+
+The useICE hook
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Other Html or JavaScript applications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+XB uses DOM events to power authoring. Because XB sits on top of your applications, you may need to
+make your applications aware of XB's behaviours to facilitate the authoring experience.
 
 END
 
