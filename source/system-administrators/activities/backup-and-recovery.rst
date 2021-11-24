@@ -8,41 +8,27 @@ Backup and Recovery
 
 Crafter CMS out of the box comes with a script to backup and restore your environment.  The script provided will backup your environment including indexes, repos, mongodb, etc.  You can then use your favorite backup tools for backing up the script-generated Crafter CMS environment backup file.
 
-------
-Backup
-------
+-------------
+Studio Backup
+-------------
 
-There are two ways to perform a backup of your environments:
+To backup Crafter CMS, you only need to backup Crafter Studio.
 
-- offline (cold): Crafter CMS is shutdown while performing the backup
-- online (hot): Crafter CMS is running while performing the backup
+Non-clustered Studio
+^^^^^^^^^^^^^^^^^^^^
 
-  If there are operations occurring in the environment that is being backed up while a backup is in progress, **the backup might contain data inconsistencies**.
+For non-clustered Studio instances, shutdown Crafter CMS then perform the backup. Once the backup is done, start it up again.
+This implies some downtime for authors.
 
-  When performing a backup while Crafter CMS is running, we recommend that no operations are performed for the duration of the backup process.  Please note that **there is no guarantee that a backup created while Crafter CMS is running is correct**.
+Clustered Studio
+^^^^^^^^^^^^^^^^
 
-^^^^^^^^^^^^^^^^^^^^^^^
-Production Environments
-^^^^^^^^^^^^^^^^^^^^^^^
+For clustered instances, shutdown a replica, then perform the backup against that replica. Once the backup is done, start up
+the replica. This doesn't result in any downtime for authors.
 
-To backup production environments, Crafter CMS needs to be shutdown while performing the backup.
+.. WARNING::
 
-Single Instance
-^^^^^^^^^^^^^^^
-For single instances, shutdown Crafter CMS then perform the backup.  Once the backup is done, simply start it up again.
-
-Cluster
-^^^^^^^
-For clusters, simply shutdown the replica, then perform the backup.  Once the backup is done, the replica can be started back up.
-
-^^^^^^^^^^^^^^^^^^^^^^^^
-Development Environments
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-To backup develop environments, there are two options.
-
-#. Shutdown Crafter CMS then perform the backup.  Once the backup is done, simply start it up again.
-#. Perform the backup while Crafter CMS is running.  Remember that hot backups may not be reliable.
+Performing a backup while Crafter CMS is running is technically possible, but the resulting backup may not be viable.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Running the backup script
