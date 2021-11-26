@@ -28,11 +28,11 @@ the replica. This doesn't result in any downtime for authors.
 
 .. WARNING::
 
-Performing a backup while Crafter CMS is running is technically possible, but the resulting backup may not be viable.
+   Performing a backup while Crafter CMS is running is technically possible, but the resulting backup may not be viable.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 Running the backup script
-^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 
 To backup your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}/bin``, where ``{env}`` is the environment (either authoring or delivery) then run the following:
 
