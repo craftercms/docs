@@ -2,51 +2,51 @@
 {%- set url_root = pathto('', 1) %}
 {%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
 {%- if not embedded and docstitle %}
-{%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
+  {%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
 {%- else %}
-{%- set titlesuffix = "" %}
+  {%- set titlesuffix = "" %}
 {%- endif %}
 {%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
 
 {% if meta is defined and meta is not none %}
-{% set check_meta = True %}
+  {% set check_meta = True %}
 {% else %}
-{% set check_meta = False %}
+  {% set check_meta = False %}
 {% endif %}
 
 {% set upToDate = 'False' %}
 {% set upToDate_key = 'is-up-to-date' %}
 {% if check_meta and upToDate_key in meta %}
-{% set upToDate = meta.get(upToDate_key) %}
+  {% set upToDate = meta.get(upToDate_key) %}
 {% endif %}
 
 {% set sinceLabel = '' %}
 {% set sinceLabel_key = 'since-label' %}
 {%- if check_meta and sinceLabel_key in meta %}
-{%- set sinceLabel = meta.get(sinceLabel_key) %}
+  {%- set sinceLabel = meta.get(sinceLabel_key) %}
 {%- endif %}
 
 {% set sinceVersion = '' %}
 {% set sinceVersion_key = 'since-version' %}
 {%- if check_meta and sinceVersion_key in meta %}
-{%- set sinceVersion = meta.get(sinceVersion_key) %}
+  {%- set sinceVersion = meta.get(sinceVersion_key) %}
 {%- endif %}
 
 {% set updatedOnLabel = '' %}
 {% set updatedOnLabel_key = 'updated-label' %}
 {%- if check_meta and updatedOnLabel_key in meta %}
-{%- set updatedOnLabel = meta.get(updatedOnLabel_key) %}
+  {%- set updatedOnLabel = meta.get(updatedOnLabel_key) %}
 {%- endif %}
 
 {% set lastUpdatedVersion = '' %}
 {% set lastUpdatedVersion_key = 'last-updated' %}
 {%- if check_meta and lastUpdatedVersion_key in meta %}
-{%- set lastUpdatedVersion = meta.get(lastUpdatedVersion_key) %}
+  {%- set lastUpdatedVersion = meta.get(lastUpdatedVersion_key) %}
 {%- endif %}
 
 {# Set Search page to updated #}
 {% if title == _('Search') %}
-{% set upToDate = 'True' %}
+  {% set upToDate = 'True' %}
 {% endif %}
 
 <!DOCTYPE html>
