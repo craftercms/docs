@@ -16,7 +16,8 @@ CV-2021120101
 **Vulnerability Type**  CWE-913: Improper Control of Dynamically-Managed Code Resources
 **Risk**		Medium
 **Description**         Spring SPEL Expression Language Injection
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23258
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23258
+
 ======================= ======================================================================================
 
 CV-2021120102
@@ -29,7 +30,7 @@ CV-2021120102
 **Vulnerability Type**  CWE-913: Improper Control of Dynamically-Managed Code Resources
 **Risk**		Medium
 **Description**         Groovy Sandbox Bypass
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23259
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23259
 ======================= ======================================================================================
 
 CV-2021120103
@@ -43,7 +44,7 @@ CV-2021120103
                         ('Cross-site Scripting')
 **Risk**		Medium
 **Description**         Stored XSS Vulnerability in File Name of the File Upload function
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23260
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23260
 ======================= ======================================================================================
 
 
@@ -57,7 +58,7 @@ CV-2021120104
 **Vulnerability Type**  CWE-703 Improper Check or Handling of Exceptional Conditions
 **Risk**		Medium
 **Description**         Overriding the system configuration file causes a denial of service
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23261
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23261
 ======================= ======================================================================================
 
 CV-2021120105
@@ -70,7 +71,7 @@ CV-2021120105
 **Vulnerability Type**  CWE-913 Improper Control of Dynamically-Managed Code Resources
 **Risk**		Medium
 **Description**         Snakeyaml deserialization vulnerability bypass
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23262
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23262
 ======================= ======================================================================================
 
 CV-2021120106
@@ -84,7 +85,7 @@ CV-2021120106
 **Risk**		Medium
 **Description**         Transmission of Private Resources into a New Sphere ('Resource Leak') in Crafter\
                         Engine
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23263
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23263
 ======================= ======================================================================================
 
 CV-2021120107
@@ -99,7 +100,7 @@ CV-2021120107
 **Risk**		High
 **Description**         Transmission of Private Resources into a New Sphere ('Resource Leak') and Exposure\
                         of Resource to Wrong Sphere in Crafter Search
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23264
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23264
 ======================= ======================================================================================
 
 CV-2020080101
@@ -113,7 +114,7 @@ CV-2020080101
 **Risk**		Medium
 **Description**         Authenticated attackers with developer privileges in Crafter Studio may execute OS \
 			commands via Groovy scripting.
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25802
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2020-25802
 ======================= ======================================================================================
 
 CV-2020080102
@@ -127,7 +128,7 @@ CV-2020080102
 **Risk**		Medium
 **Description**         Authenticated attackers with developer privileges in Crafter Studio may execute OS \
 			commands via deep inspection of FreeMarker template exposed objects.
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25803
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2020-25803
 ======================= ======================================================================================
 
 CV-2018120601
@@ -155,7 +156,7 @@ CV-2017061501
 **Risk**		High
 **Description**         An IDOR vulnerability exists which allows unauthenticated attackers to view and modify \
 			administrative data.
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15680
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2017-15680
 ======================= ======================================================================================
 
 CV-2017061502
@@ -169,7 +170,7 @@ CV-2017061502
 **Risk**		Critical
 **Description**         A directory traversal vulnerability exists which allows unauthenticated attackers to \
 			overwrite files from the operating system which can lead to RCE.
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15681
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2017-15681
 ======================= ======================================================================================
 
 CV-2017061503
@@ -183,7 +184,7 @@ CV-2017061503
 **Risk**		High
 **Description**         An unauthenticated attacker is able to inject malicious JavaScript code resulting in \
 			a stored/blind XSS in the admin panel.
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15682
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2017-15682
 ======================= ======================================================================================
 
 CV-2017061504
@@ -197,7 +198,7 @@ CV-2017061504
 **Risk**		High
 **Description**         An unauthenticated attacker is able to create a site with specially crafted XML that \
 			allows the retrieval of OS files out-of-band.
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15683
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2017-15683
 ======================= ======================================================================================
 
 CV-2017061505
@@ -211,7 +212,7 @@ CV-2017061505
 **Risk**		High
 **Description**         A directory traversal vulnerability exists which allows unauthenticated attackers to \
 			view files from the operating system.
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15684
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2017-15684
 ======================= ======================================================================================
 
 CV-2017061506
@@ -225,7 +226,7 @@ CV-2017061506
 **Risk**		High
 **Description**         An unauthenticated attacker is able to create a site with specially crafted XML that \
 			allows the retrieval of OS files out-of-band.
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15685
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2017-15685
 ======================= ======================================================================================
 
 CV-2017061507
@@ -239,5 +240,5 @@ CV-2017061507
 **Risk**		Medium
 **Description**         A reflected XSS vulnerability exists which allows remote attackers to steal users' \
 			cookies resulting in them hijacking their session.
-**CVE**                 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15686
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2017-15686
 ======================= ======================================================================================
