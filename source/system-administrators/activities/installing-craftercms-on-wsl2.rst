@@ -3,7 +3,6 @@
 :orphan:
 
 .. document does not appear in any toctree, and is only accessible via searching.
-   This document is deprecated and is provided as a reference only
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
 .. index:: Installing Crafter CMS on WSL 2
@@ -39,13 +38,13 @@ It is recommended we store all files in the WSL file system for better performan
 
 See https://docs.microsoft.com/en-us/windows/wsl/ for more information on WSL.
 
-.. _installing-crafter-cms-from-archive-download-wsl:
+.. _installing-crafter-cms-from-binary-download-wsl:
 
-------------------------------------------------
-Installing Crafter CMS from the Archive Download
-------------------------------------------------
+-----------------------------------------------
+Installing Crafter CMS from the Binary Download
+-----------------------------------------------
 
-Here are the steps to start using Crafter CMS for development or evaluation by installing Crafter CMS from the archive download:
+Here are the steps to start using Crafter CMS for development or evaluation by installing Crafter CMS from the binary download:
 
 #. **Download and install Java 8**
 
@@ -64,13 +63,13 @@ Here are the steps to start using Crafter CMS for development or evaluation by i
 
    |
 
-#. **Download Crafter CMS archive**
+#. **Download Crafter CMS binary**
 
-   Download the Crafter CMS install archive file from http://craftercms.org/downloads
+   Download the Crafter CMS install binary file from https://craftercms.org/downloads
 
-   Select ``crafter-cms-authoring-3.1.X.tar.gz``.  The ``.tar.gz`` file will install a fully functional Crafter Studio instance and a Crafter Engine in Preview Mode. Out of the box, the Studio instance uses a local directory as the repository and an embedded database, which allows a quick and easy set up for local development.
+   Select ``crafter-cms-authoring-VERSION.tar.gz``.  The ``.tar.gz`` file will install a fully functional authoring instance. Out of the box, the authoring instance uses a local directory as the repository and an embedded database, which allows a quick and easy set up for local development.
 
-   You can download the Crafter CMS archive directly onto the WSL file system from the Ubuntu terminal using ``wget`` or ``curl``, or, you can copy/move the archive file downloaded in the Windows file system to the WSL file system via the Ubuntu terminal or the Windows File Explorer.
+   You can download the Crafter CMS binary directly onto the WSL file system from the Ubuntu terminal using ``wget`` or ``curl``, or, you can copy/move the binary file downloaded in the Windows file system to the WSL file system via the Ubuntu terminal or the Windows File Explorer.
 
    The Linux (WSL) file system root directory is : ``\\wsl$\Ubuntu-20.04\home\<user name>\path\to\project``
 
@@ -83,14 +82,14 @@ Here are the steps to start using Crafter CMS for development or evaluation by i
 
    |
 
-#. **Extract the Crafter CMS archive**
+#. **Extract the Crafter CMS binary**
 
    Extract the contents in any directory.
 
    .. code-block:: sh
-      :caption: *Extract the contents of the Crafter CMS archive file to a directory*
+      :caption: *Extract the contents of the Crafter CMS binary file to a directory*
 
-      tar -zxvf crafter-cms-authoring-3.1.X.tar.gz -C /tmp/extract_to_some_directory/
+      tar -zxvf crafter-cms-authoring-VERSION.tar.gz -C /tmp/extract_to_some_directory/
 
    |
 
@@ -165,13 +164,13 @@ Here are the steps to start using Crafter CMS for development or evaluation by i
 
    After logging in, you should be redirected to the ``Sites`` screen, and you're now ready to create your first experience!
 
----------------------------------------------------------------------------
-Installing Crafter CMS From Archive Built By the Gradle Environment Builder
----------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Installing Crafter CMS From Binary Built By the Gradle Environment Builder
+--------------------------------------------------------------------------
 
-#. **Download and install required items for creating archives**
+#. **Download and install required items for creating binaries**
 
-   To create the archives(``*.tar.gz``) for installing Crafter CMS, the following must be installed in your system:
+   To create the binaries(``*.tar.gz``) for installing Crafter CMS, the following must be installed in your system:
 
    * Java 8
    * Git 2.x+
@@ -203,9 +202,9 @@ Installing Crafter CMS From Archive Built By the Gradle Environment Builder
 
     |
 
-#. **Build a deployable archive**
+#. **Build a deployable binary**
 
-   Build a deployable archive using the Gradle Environment Builder to generate the archives ``crafter-cms-authoring-3.1.X.tar.gz`` inside the *bundle* folder
+   Build a deployable binary using the Gradle Environment Builder to generate the binary ``crafter-cms-authoring-VERSION.tar.gz`` inside the *bundle* folder
 
    .. code-block:: bash
 
@@ -213,6 +212,6 @@ Installing Crafter CMS From Archive Built By the Gradle Environment Builder
 
    |
 
-#. Unpack the file (``crafter-cms-authoring-3.1.X.tar.gz``) into any directory.  You may now follow the instructions listed :ref:`above<installing-crafter-cms-from-archive-download-wsl>` starting from the step to ``Extract the Crafter CMS archive`` to start using Crafter CMS
+#. Unpack the file (``crafter-cms-authoring-VERSION.tar.gz``) into any directory.  You may now follow the instructions listed :ref:`above<installing-crafter-cms-from-binary-download-wsl>` starting from the step to ``Extract the Crafter CMS binary`` to start using Crafter CMS
 
 For more details on using the Gradle environment builder, please review: https://github.com/craftercms/craftercms/blob/master/README.

@@ -26,8 +26,8 @@ Development Environment
 
 The quick start guide provides instructions on setting up a development environment by installing Crafter CMS from the archive download or installing Crafter CMS from archive built by the Gradle environment builder
 
-* :ref:`installing-crafter-cms-from-archive-download`
-* :ref:`installing-craftercms-from-built-archive`
+* :ref:`installing-crafter-cms-from-binary-download`
+* :ref:`installing-craftercms-from-built-binary`
 
 To learn more about the developer workflow, see :ref:`devOps-workflow`.
 

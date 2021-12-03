@@ -17,7 +17,7 @@ Using Crafter Search and Solr
 
 All Crafter Search related services have been kept unchanged to assure that existing sites will work without any
 code change, however as Solr is no longer the default search engine it will not be started by default in any of the
-provided archives.
+provided binaries.
 
 To start Solr you will need to add an extra parameter during startup:
 

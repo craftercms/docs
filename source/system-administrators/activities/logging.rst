@@ -8,7 +8,7 @@ Logging
 
 Log files from several sources are created when running Crafter CMS.  These log files are useful for checking the status of Crafter CMS, for example, the success of actions/requests, warnings and error messages.  These logs can be used to provide more information about potential issues in the system or for debugging errors.  The log files can be found in ``$CRAFTER_DIR/crafter-authoring/logs/`` or in ``$CRAFTER_DIR/crafter-delivery/logs/`` depending on which environment you are running.  Effective use of these logs is an important part of maintaining your sites and are useful for keeping track of your system performance.  To that end, please make sure that you rotate the logs.
 
-Crafter CMS ships with a Tomcat Application Server, Elasticsearch, Solr, and MongoDB included in the archive.  There are five folders used by Crafter CMS for the log files,
+Crafter CMS ships with a Tomcat Application Server, Elasticsearch, Solr, and MongoDB included in the binary.  There are five folders used by Crafter CMS for the log files,
 
     - tomcat
     - elasticsearch

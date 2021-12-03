@@ -277,7 +277,7 @@ Setting Up to Work Locally Against the Upstream
 
 After setting up the topology above, if you just want to get a local environment up and going (say a new developer joining the team), follow these instructions:
 
-1. Install Crafter Studio locally (Source build or Binaries archive)
+1. Install Crafter Studio locally (Source build or binaries)
 2. Login as Admin
 3. Click **Create Site**
 
