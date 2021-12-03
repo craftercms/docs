@@ -13,16 +13,26 @@ This section describes how to quickly install Crafter CMS and start crafting you
 There are a couple of ways to setup Crafter CMS:
 
 * :ref:`Install from the archive download <installing-crafter-cms-from-archive-download>`
-* :ref:`Install from archive built by the Gradle environment builder <installing-craftercms-from-gradle>`
+* :ref:`Install from archive built by the Gradle environment builder <installing-craftercms-from-built-archive>`
 
    .. note::
       **For Windows Users** |br|
-      Windows users needs to enable Windows Subsystem for Linux (WSL) and install a Linux distribution . |br|
-      All commands executed on the command line below needs to be executed in a terminal running on the WSL distro you installed.  Also, all items that needs to be downloaded and installed needs to be in WSL. |br|
+      Windows users needs to install Windows Subsystem for Linux (WSL) by following the instructions `here <https://docs.microsoft.com/en-us/windows/wsl/install>`__ which will enable the required optional components, download the latest Linux kernel, set WSL 2 as your default, and install Ubuntu Linux for you. |br|
+
+      All commands below needs to be executed in a WSL 2 terminal.  Also, all items that needs to be downloaded and installed needs to be in WSL 2. |br|
+
+      .. figure:: /_static/images/quick-start/wsl2-ubuntu-window.png
+         :alt: Quick start - WSL 2 Ubuntu terminal
+          :width: 70 %
+          :align: center
+
+      |
 
       See `here <https://docs.microsoft.com/en-us/windows/wsl/>`__ for more information on WSL.
 
-      Crafter CMS may also be run via :ref:`Docker <running-craftercms-in-docker>`.  Note that the preferred method of installing and running Crafter CMS is via the archive through WSL as described here.
+      All the steps below applies to installing Crafter CMS via the WSL terminal.  See :ref:`here <installing-craftercms-on-wsl>` for detailed instructions on installing Crafter CMS on Windows via WSL
+
+      Crafter CMS may also be run via :ref:`Docker <running-craftercms-in-docker>`.  Note that the preferred method of installing and running Crafter CMS is via the archive through WSL 2 as described here.
 
 .. _installing-crafter-cms-from-archive-download:
 
@@ -113,7 +123,7 @@ Here are the steps to start using Crafter CMS for development or evaluation by i
 
    After logging in, you should be redirected to the ``Sites`` screen, and you're now ready to create your first experience!
 
-.. _installing-craftercms-from-gradle:
+.. _installing-craftercms-from-built-archive:
 
 ---------------------------------------------------------------------------
 Installing Crafter CMS From Archive Built By the Gradle Environment Builder
@@ -138,9 +148,9 @@ Installing Crafter CMS From Archive Built By the Gradle Environment Builder
 
     |
 
-#. **Build a deployable bundle**
+#. **Build a deployable archive**
 
-   Build a deployable bundle using the Gradle Environment Builder to generate the archives ``crafter-cms-authoring-3.1.X.tar.gz`` inside the *bundle* folder
+   Build a deployable archive using the Gradle Environment Builder to generate the archives ``crafter-cms-authoring-3.1.X.tar.gz`` inside the *bundle* folder
 
    .. code-block:: bash
 
