@@ -2,16 +2,16 @@
 {%- set url_root = pathto('', 1) %}
 {%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
 {%- if not embedded and docstitle %}
-{%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
+  {%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
 {%- else %}
-{%- set titlesuffix = "" %}
+  {%- set titlesuffix = "" %}
 {%- endif %}
 {%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
 
 {% if meta is defined and meta is not none %}
-{% set check_meta = True %}
+  {% set check_meta = True %}
 {% else %}
-{% set check_meta = False %}
+  {% set check_meta = False %}
 {% endif %}
 
 {% set upToDate = 'False' %}
@@ -20,10 +20,22 @@
   {% set upToDate = meta.get(upToDate_key) %}
 {% endif %}
 
+{% set sinceLabel = '' %}
+{% set sinceLabel_key = 'since-label' %}
+{%- if check_meta and sinceLabel_key in meta %}
+  {%- set sinceLabel = meta.get(sinceLabel_key) %}
+{%- endif %}
+
 {% set sinceVersion = '' %}
 {% set sinceVersion_key = 'since-version' %}
 {%- if check_meta and sinceVersion_key in meta %}
   {%- set sinceVersion = meta.get(sinceVersion_key) %}
+{%- endif %}
+
+{% set updatedOnLabel = '' %}
+{% set updatedOnLabel_key = 'updated-label' %}
+{%- if check_meta and updatedOnLabel_key in meta %}
+  {%- set updatedOnLabel = meta.get(updatedOnLabel_key) %}
 {%- endif %}
 
 {% set lastUpdatedVersion = '' %}
@@ -34,7 +46,7 @@
 
 {# Set Search page to updated #}
 {% if title == _('Search') %}
-{% set upToDate = 'True' %}
+  {% set upToDate = 'True' %}
 {% endif %}
 
 <!DOCTYPE html>
@@ -193,37 +205,52 @@
     {% include "breadcrumbs.html" %}
 
     <div class="right-nav" align="right">
-        <ul>
-            <li id="google_translate_element"></li>
-            <li class="page-status">
-                {%- if upToDate == 'True' %}
-                <img src="{{ pathto('_static/img/up-to-date.svg', 1) }}"
-                     alt="Document Up to Date" />
+      <ul>
+        <li id="google_translate_element"></li>
+        <li class="page-status">
+          {%- if upToDate == 'True' %}
+          <img src="{{ pathto('_static/img/up-to-date.svg', 1) }}"
+               alt="Document Up to Date" />
+          {%- else %}
+          <img src="{{ pathto('_static/img/under-review.svg', 1) }}"
+               alt="Document Under Review" />
+          {%- endif %}
+        </li>
+        <li class="versions-tags">
+          {% if sinceVersion %}
+            <span class="version-tag">
+              <span class="version__label">
+                {% if sinceLabel %}
+                  {{ sinceLabel }}
                 {%- else %}
-                <img src="{{ pathto('_static/img/under-review.svg', 1) }}"
-                     alt="Document Under Review" />
+                  Since
                 {%- endif %}
-            </li>
-            <li class="version">
-              {% if sinceVersion %}
-                <br>
-                <b>Since:</b> {{ sinceVersion }}
-              {% endif %}
+              </span>
+              <span class="version__number">{{ sinceVersion }}</span>
+            </span>
+          {% endif %}
 
-              {% if lastUpdatedVersion %}
-                <br>
-                <b>Updated on:</b> {{ lastUpdatedVersion }}
-              {% endif %}
-
-            </li>
-        </ul>
+          {% if lastUpdatedVersion %}
+            <span class="version-tag">
+              <span class="version__label">
+                {% if updatedOnLabel %}
+                  {{ updatedOnLabel }}
+                {%- else %}
+                  Updated On
+                {%- endif %}
+              </span>
+              <span class="version__number">{{ lastUpdatedVersion }}</span>
+            </span>
+          {% endif %}
+        </li>
+      </ul>
     </div>
-	<script type="text/javascript">
-		function googleTranslateElementInit() {
-	 	new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-		}
-	</script>
-	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <main class="rst-content" role="main">
       {% block body %}{% endblock %}
