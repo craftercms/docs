@@ -136,7 +136,7 @@ Upgrade Crafter CMS
 #. Review the release notes for the version you are upgrading to, which contains specific information on the changes 
    that have been made and how it may affect you when upgrading to that specific version.
 #. Backup your Crafter CMS 3.0.x install
-#. Download the Crafter CMS 3.1.0 bundle version and extract the files
+#. Download the Crafter CMS 3.1.0 archive version and extract the files
 #. In your Crafter CMS 3.0.x install, copy/paste or move the data folder ``CRAFTER_3.0.x_INSTALLATION/data`` to your new ``CRAFTER_3.1.0_INSTALLATION`` install folder
 #. Migrate sites to Elasticsearch (recommended) by following this guide: :ref:`migrate-site-to-elasticsearch`.
    You can continue using Crafter Search and Solr as the search engine, by following :ref:`using-crafter-search-and-solr`
