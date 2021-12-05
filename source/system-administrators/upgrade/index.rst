@@ -25,6 +25,5 @@ Here are the instructions for upgrading Crafter CMS based on how it was installe
    :maxdepth: 1
    :titlesonly:
 
-   upgrading-crafter-using-gradle.rst
-   upgrading-crafter-from-bundle.rst
+   upgrading-crafter.rst
    docker/index.rst

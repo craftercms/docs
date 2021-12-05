@@ -1,16 +1,16 @@
 :is-up-to-date: True
 
-.. index:: Upgrading Crafter CMS installed from a bundle, Upgrading
+.. index:: Upgrading Crafter CMS installed from a binary, Upgrading
 
-=============================================
-Upgrading Crafter CMS installed from a bundle
-=============================================
+=====================
+Upgrading Crafter CMS
+=====================
 
-This section details how to upgrade Crafter CMS installed from a bundle.
+This section details how to upgrade Crafter CMS installed on a server.
 
-Crafter CMS installed from a bundle provides a couple of scripts for upgrading your installation.
+Crafter CMS provides a couple of scripts for upgrading your installation.
 
-* :ref:`Running the upgrade script (upgrade-target) from a new bundle <upgrade-using-new-bundle>`
+* :ref:`Running the upgrade script (upgrade-target) from a new binary <upgrade-using-new-binary>`
 * :ref:`Running the upgrade script (start-upgrade) from your current installation <upgrade-using-current-install>`
 
 The upgrade script allows you to do an upgrade, where your bin directory is upgraded, keeping only Tomcat's shared folder, Tomcat's conf folder, the Elasticsearch config, the Deployer config folder, and the crafter-setenv scripts.
@@ -55,9 +55,9 @@ For config files that are different in the new release, the script gives you the
 
 
    .. note::
-      **Upgrading Crafter CMS bundle version 3.1.0**
+      **Upgrading Crafter CMS binary version 3.1.0**
 
-      Crafter CMS version 3.1.0 has the upgrade scripts disabled because the upgrade system was being refactored, and will need to use the ``upgrade-target`` script from a new bundle to upgrade your bundle install.  Please follow the steps in :ref:`upgrade-using-new-bundle` to upgrade your Crafter CMS install version 3.1.0.
+      Crafter CMS version 3.1.0 has the upgrade scripts disabled because the upgrade system was being refactored, and will need to use the ``upgrade-target`` script from a new binary to upgrade your install.  Please follow the steps in :ref:`upgrade-using-new-binary` to upgrade your Crafter CMS install version 3.1.0.
 
 |
 
@@ -71,22 +71,22 @@ Before starting your upgrade:
 
 #. **Backup Crafter CMS** just in case something goes wrong with the upgrade.
 
-   When upgrading Crafter CMS installed using a bundle, the upgrade scripts performs an automated backup of Crafter CMS, but it's recommended not to rely on the automated backup, just in case.  See :ref:`backup-and-recovery` for details on how to perform the backup of Crafter CMS
+   When upgrading Crafter CMS installed on a server, the upgrade scripts performs an automated backup of Crafter CMS, but it's recommended not to rely on the automated backup, just in case.  See :ref:`backup-and-recovery` for details on how to perform the backup of Crafter CMS
 
-#. **Manually shut down Crafter CMS**   For Crafter CMS installed using a bundle, the upgrade scripts shuts down Crafter CMS as one of the first steps, but it's also recommended not to rely on the automated shutting down just in case.
+#. **Manually shut down Crafter CMS**   For Crafter CMS installed on a server, the upgrade scripts shuts down Crafter CMS as one of the first steps, but it's also recommended not to rely on the automated shutting down just in case.
 
-   To shutdown Crafter CMS installed using a bundle, run the ``shutdown.sh`` script from the ``{Crafter-CMS-install-directory}/bin`` directory
+   To shutdown Crafter CMS, run the ``shutdown.sh`` script from the ``{Crafter-CMS-install-directory}/bin`` directory
 
 
-.. _upgrade-using-new-bundle:
+.. _upgrade-using-new-binary:
 
 -------------------------------------------------------
-Upgrade by running the upgrade script from a new bundle
+Upgrade by running the upgrade script from a new binary
 -------------------------------------------------------
 
 Download the Crafter CMS version you'd like to upgrade to, and extract the files.
 
-To upgrade your Crafter CMS bundle, we will use the ``upgrade-target`` script.  The upgrade script  is located in ``{Crafter-CMS-install-directory}/bin/upgrade`` of your newly downloaded bundle.  Here's the description for the script we are going to use:
+To upgrade your Crafter CMS binary, we will use the ``upgrade-target`` script.  The upgrade script  is located in ``{Crafter-CMS-install-directory}/bin/upgrade`` of your newly downloaded binary.  Here's the description for the script we are going to use:
 
     .. code-block:: bash
 
@@ -101,17 +101,17 @@ where:
     ``[options]`` is optional
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Steps for upgrading using the upgrade script from a new bundle
+Steps for upgrading using the upgrade script from a new binary
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Here are the steps for upgrading your Crafter CMS install version from a new bundle:
+Here are the steps for upgrading your Crafter CMS install version from a new biiniary:
 
-#. Download the Crafter CMS bundle version you'd like to upgrade to
-#. Extract the bundle from the previous step and go into the ``bin/upgrade`` folder
+#. Download the Crafter CMS binary version you'd like to upgrade to
+#. Extract the binary from the previous step and go into the ``bin/upgrade`` folder
 #. Run the ``upgrade-target`` script
 #. Change to the target folder and run the ``post-upgrade.sh`` script
 
-Here's an example of running the upgrade script ``upgrade-target`` from  a new bundle:
+Here's an example of running the upgrade script ``upgrade-target`` from  a new binary:
 
     .. code-block:: bash
 
@@ -128,12 +128,12 @@ Here's an example of running the ``post-upgrade.sh`` script:
 |
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Example upgrading using the upgrade script from a new bundle
+Example upgrading using the upgrade script from a new binary
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Let's take a look at an example of upgrading a Crafter CMS version 3.1.6 install (located in ``/Users/myuser/crafter``) to version 3.1.9 using the upgrade script from 3.1.9
 
-After downloading and extracting  Crafter CMS version 3.1.9 to ``/Users/myuser/crafter-3.1.9``, we are now ready to start upgrading by running the ``upgrade-target`` script from the 3.1.9 bundle.
+After downloading and extracting  Crafter CMS version 3.1.9 to ``/Users/myuser/crafter-3.1.9``, we are now ready to start upgrading by running the ``upgrade-target`` script from the 3.1.9 binary.
 
     .. code-block:: bash
         :force:
@@ -251,13 +251,13 @@ Crafter CMS version 3.1.x, excluding version 3.1.0,  contain the upgrade scripts
 
         usage: start-upgrade [options]
         -h,--help                 Show usage information
-        -p,--bundle-path <path>   The path of the Crafter bundle in the
+        -p,--bundle-path <path>   The path of the Crafter binary in the
                                   filesystem. If you specify this path the URL
                                   and version parameter will be ignored
-        -u,--bundle-url <url>     The URL of the Crafter bundle to download. If
+        -u,--bundle-url <url>     The URL of the Crafter binary to download. If
                                   you specify this URL the version parameter will
                                   be ignored
-        -v,--version <version>    The community version of the Crafter bundle to
+        -v,--version <version>    The community version of the Crafter binary to
                                   download
 
 |
@@ -273,7 +273,7 @@ Steps for upgrading using the upgrade script from your current install
 To upgrade your current Crafter CMS install:
 
 #. Go to your ``bin/upgrade`` folder
-#. Run the ``start-upgrade`` script.  The ``start-upgrade`` script downloads the Crafter CMS bundle version you would like to upgrade to.  This will create a script ``upgrade.sh`` in ``{Crafter-CMS-install-directory}/temp/upgrade``.
+#. Run the ``start-upgrade`` script.  The ``start-upgrade`` script downloads the Crafter CMS binary version you would like to upgrade to.  This will create a script ``upgrade.sh`` in ``{Crafter-CMS-install-directory}/temp/upgrade``.
 #. Go to ``{Crafter-CMS-install-directory}/temp/upgrade`` and run the ``upgrade.sh`` script
 #. Go to ``{Crafter-CMS-install-directory}/bin/upgrade`` and run the ``post-upgrade.sh`` script
 #. Delete the``{Crafter-CMS-install-directory}/temp/upgrade`` once your upgrade has been completed successfully
@@ -289,21 +289,21 @@ Here's an example to perform an upgrade of your current install to a certain ver
 
 |
 
-Here's an example to perform an upgrade of your current install using a bundle url
+Here's an example to perform an upgrade of your current install using a binary url
 
     .. code-block:: bash
 
-        $ ./start-upgrade.sh -u https://download/url/to/bundle
+        $ ./start-upgrade.sh -u https://download/url/to/binary
         $ cd ../../temp/upgrade
         $ ./upgrade.sh
 
 |
 
-Here's an example to perform an upgrade of your current install using the path where your bundle was downloaded
+Here's an example to perform an upgrade of your current install using the path where your binary was downloaded
 
     .. code-block:: bash
 
-        $ ./start-upgrade.sh -p /path/to/bundle
+        $ ./start-upgrade.sh -p /path/to/binary
         $ cd ../../temp/upgrade
         $ ./upgrade.sh
 
