@@ -53,6 +53,18 @@ For config files that are different in the new release, the script gives you the
 
 |
 
+   .. note::
+      When upgrading to Crafter CMS version 4.0.0 from a 3.1.x version, the environment variable `MARIADB_SOCKET_TIMEOUT <https://github.com/craftercms/craftercms/blob/develop/resources/env/authoring/bin/crafter-setenv.sh#L85>`__ in the ``{Crafter-CMS-install-directory}/bin/crafter-setenv.sh`` file of the Crafter CMS install you're running the upgrade script from may need to be increased depending on the size of the existing sites.
+
+      Here's an example where we increased it to 3x the default value:
+
+         .. code-block:: sh
+            :caption: *{Crafter-CMS-install-directory}/bin/crafter-setenv.sh*
+
+            export MARIADB_SOCKET_TIMEOUT=${MARIADB_SOCKET_TIMEOUT:="180000"}
+
+         |
+
 ----------------
 Before Upgrading
 ----------------
@@ -416,7 +428,7 @@ The next step is to run the ``upgrade`` script under the ``temp/upgrade`` folder
 
    |
 
-Finally we'll  run the ``post-upgrade`` script.  Remember to switch your JAVA_HOME environment variable to point to Java JDK 11 before running the ``post-upgrade`` script
+Finally we'll  run the ``post-upgrade`` script.  Remember to switch your JAVA_HOME environment variable to point to Java JDK 11 before running the ``post-upgrade`` script if you're upgrading from a 3.1.x release.
 
    .. code-block:: bash
       :emphasize-lines: 2,11
