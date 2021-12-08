@@ -22,7 +22,7 @@ Requirements
 
 * At least 3 servers running Linux (Remember that Studio's cluster runs only in Linux)
 * Enterprise version of Crafter CMS
-* If using an enterprise Crafter CMS installed from a binary download, ``Git`` is required by
+* If using an enterprise Crafter CMS installed from a binary archive, ``Git`` is required by
   Crafter CMS and may need to be installed if not already installed in the server.
 * Studio's clustering requires the ``libssl1.0.0`` (or ``libssl1.0.2``) shared library.
   Some Linux distros does not come with the library pre-installed and may need to be installed.

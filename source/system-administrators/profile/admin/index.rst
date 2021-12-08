@@ -18,9 +18,10 @@ Installation
 New Installation
 ^^^^^^^^^^^^^^^^
 
-You can follow the instructions for building a complete binary of Crafter CMS as described
-:ref:`here <installing-craftercms-from-built-binary>`, if you add the parameter ``-Pcrafter.profile=true``
-the binary will contain crafter-profile.war and crafter-profile-admin.war.
+You can follow the instructions for building a complete binary archive of Crafter CMS as described
+`here <https://github.com/craftercms/craftercms/blob/support/3.1.x/README.md>`__, if you add the
+parameter ``-Pcrafter.profile=true``the binary archive will contain ``crafter-profile.war`` and
+``crafter-profile-admin.war``.
 
 ^^^^^^^^^^^^^^^^^^^^^
 Existing Installation

@@ -24,10 +24,9 @@ Remember to change the default values pre-configured when installing Crafter CMS
 Development Environment
 -----------------------
 
-The quick start guide provides instructions on setting up a development environment by installing Crafter CMS from the binary download or installing Crafter CMS from binary built by the Gradle environment builder
+The quick start guide provides instructions on setting up a development environment by installing Crafter CMS from the prebuilt binaries
 
-* :ref:`installing-crafter-cms-from-binary-download`
-* :ref:`installing-craftercms-from-built-binary`
+* :ref:`installing-crafter-cms-from-prebuilt-binaries`
 
 To learn more about the developer workflow, see :ref:`devOps-workflow`.
 

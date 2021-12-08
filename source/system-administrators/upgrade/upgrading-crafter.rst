@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. index:: Upgrading Crafter CMS installed from a binary, Upgrading
+.. index:: Upgrading Crafter CMS, Upgrading
 
 =====================
 Upgrading Crafter CMS
@@ -10,7 +10,7 @@ This section details how to upgrade Crafter CMS installed on a server.
 
 Crafter CMS provides a couple of scripts for upgrading your installation.
 
-* :ref:`Running the upgrade script (upgrade-target) from a new binary <upgrade-using-new-binary>`
+* :ref:`Running the upgrade script (upgrade-target) from a new binary archive <upgrade-using-new-binary-archive>`
 * :ref:`Running the upgrade script (start-upgrade) from your current installation <upgrade-using-current-install>`
 
 The upgrade script allows you to do an upgrade, where your bin directory is upgraded, keeping only Tomcat's shared folder, Tomcat's conf folder, the Elasticsearch config, the Deployer config folder, and the crafter-setenv scripts.
@@ -53,14 +53,6 @@ For config files that are different in the new release, the script gives you the
 
 |
 
-
-   .. note::
-      **Upgrading Crafter CMS binary version 3.1.0**
-
-      Crafter CMS version 3.1.0 has the upgrade scripts disabled because the upgrade system was being refactored, and will need to use the ``upgrade-target`` script from a new binary to upgrade your install.  Please follow the steps in :ref:`upgrade-using-new-binary` to upgrade your Crafter CMS install version 3.1.0.
-
-|
-
 ----------------
 Before Upgrading
 ----------------
@@ -78,15 +70,15 @@ Before starting your upgrade:
    To shutdown Crafter CMS, run the ``shutdown.sh`` script from the ``{Crafter-CMS-install-directory}/bin`` directory
 
 
-.. _upgrade-using-new-binary:
+.. _upgrade-using-new-binary-archive:
 
--------------------------------------------------------
-Upgrade by running the upgrade script from a new binary
--------------------------------------------------------
+---------------------------------------------------------------
+Upgrade by running the upgrade script from a new binary archive
+---------------------------------------------------------------
 
 Download the Crafter CMS version you'd like to upgrade to, and extract the files.
 
-To upgrade your Crafter CMS binary, we will use the ``upgrade-target`` script.  The upgrade script  is located in ``{Crafter-CMS-install-directory}/bin/upgrade`` of your newly downloaded binary.  Here's the description for the script we are going to use:
+To upgrade your Crafter CMS, we will use the ``upgrade-target`` script.  The upgrade script  is located in ``{Crafter-CMS-install-directory}/bin/upgrade`` of your newly downloaded binary archive.  Here's the description for the script we are going to use:
 
     .. code-block:: bash
 
@@ -100,18 +92,18 @@ where:
 
     ``[options]`` is optional
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Steps for upgrading using the upgrade script from a new binary
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Steps for upgrading using the upgrade script from a new binary archive
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Here are the steps for upgrading your Crafter CMS install version from a new biiniary:
+Here are the steps for upgrading your Crafter CMS install version from a new binary archive:
 
-#. Download the Crafter CMS binary version you'd like to upgrade to
-#. Extract the binary from the previous step and go into the ``bin/upgrade`` folder
+#. Download the Crafter CMS binary archive version you'd like to upgrade to
+#. Extract the binary archive from the previous step and go into the ``bin/upgrade`` folder
 #. Run the ``upgrade-target`` script
 #. Change to the target folder and run the ``post-upgrade.sh`` script
 
-Here's an example of running the upgrade script ``upgrade-target`` from  a new binary:
+Here's an example of running the upgrade script ``upgrade-target`` from  a new binary archive:
 
     .. code-block:: bash
 
@@ -127,19 +119,19 @@ Here's an example of running the ``post-upgrade.sh`` script:
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Example upgrading using the upgrade script from a new binary
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Example upgrading using the upgrade script from a new binary archive
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Let's take a look at an example of upgrading a Crafter CMS version 3.1.6 install (located in ``/Users/myuser/crafter``) to version 3.1.9 using the upgrade script from 3.1.9
+Let's take a look at an example of upgrading a Crafter CMS version 3.1.17 install (located in ``/Users/myuser/crafter``) to version 4.0.0 using the upgrade script from 4.0.0
 
-After downloading and extracting  Crafter CMS version 3.1.9 to ``/Users/myuser/crafter-3.1.9``, we are now ready to start upgrading by running the ``upgrade-target`` script from the 3.1.9 binary.
+After downloading and extracting Crafter CMS version 4.0.0 to ``/Users/myuser/crafter-4.0.0``, we are now ready to start upgrading by running the ``upgrade-target`` script from the 4.0.0 binary archive.
 
     .. code-block:: bash
         :force:
         :emphasize-lines: 2,24-25,34-42,52-62,74
 
-        ➜  cd crafter-3.1.9/bin/upgrade
+        ➜  cd crafter-4.0.0/bin/upgrade
         ➜  ./upgrade-target.sh /Users/myuser/crafter
         hostname: illegal option -- i
         usage: hostname [-fs] [name-of-host]
@@ -157,17 +149,17 @@ After downloading and extracting  Crafter CMS version 3.1.9 to ``/Users/myuser/c
         ------------------------------------------------------------------------
         Stopping Tomcat
         ------------------------------------------------------------------------
-        Tomcat already shutdown or pid /Users/myuser/crafter-3.1.9/bin/apache-tomcat/tomcat.pid file not found
+        Tomcat already shutdown or pid /Users/myuser/crafter-4.0.0/bin/apache-tomcat/tomcat.pid file not found
         ------------------------------------------------------------------------
         Stopping Deployer
         ------------------------------------------------------------------------
-        Crafter Deployer already shutdown or pid /Users/myuser/crafter-3.1.9/bin/crafter-deployer/crafter-deployer.pid file not found
+        Crafter Deployer already shutdown or pid /Users/myuser/crafter-3.1.17/bin/crafter-deployer/crafter-deployer.pid file not found
         > Backup the data folder before upgrade? [(Y)es/(N)o]:
         > Backup the bin folder before upgrade? [(Y)es/(N)o]:
         ========================================================================
-        Upgrading Crafter 3.1.6 -> 3.1.9
+        Upgrading Crafter 3.1.17 -> 4.0.0
         ========================================================================
-        Synching files from /Users/myuser/crafter-3.1.9/bin to /Users/myuser/crafter/bin...
+        Synching files from /Users/myuser/crafter-3.1.17/bin to /Users/myuser/crafter/bin...
         [-] Deleting file migration/resources/site-template/config/studio/environment/environment-config.xml that doesn't exist in the new release
         [-] Deleting file migration/resources/site-template/config/studio/environment that doesn't exist in the new release
         [-] Deleting file elasticsearch/logs/gc.log.0.current that doesn't exist in the new release
@@ -228,7 +220,7 @@ After the ``upgrade-target`` script is finished running, the next step is to run
       hostname: illegal option -- i
       usage: hostname [-fs] [name-of-host]
       ========================================================================
-      Post-upgrade 3.1.6 -> 3.1.9
+      Post-upgrade 3.1.17 -> 4.0.0
       ========================================================================
       ========================================================================
       Post-upgrade completed
@@ -251,13 +243,13 @@ Crafter CMS version 3.1.x, excluding version 3.1.0,  contain the upgrade scripts
 
         usage: start-upgrade [options]
         -h,--help                 Show usage information
-        -p,--bundle-path <path>   The path of the Crafter binary in the
+        -p,--bundle-path <path>   The path of the Crafter binary archive in the
                                   filesystem. If you specify this path the URL
                                   and version parameter will be ignored
-        -u,--bundle-url <url>     The URL of the Crafter binary to download. If
+        -u,--bundle-url <url>     The URL of the Crafter binary archive to download. If
                                   you specify this URL the version parameter will
                                   be ignored
-        -v,--version <version>    The community version of the Crafter binary to
+        -v,--version <version>    The community version of the Crafter binary archive to
                                   download
 
 |
@@ -273,37 +265,41 @@ Steps for upgrading using the upgrade script from your current install
 To upgrade your current Crafter CMS install:
 
 #. Go to your ``bin/upgrade`` folder
-#. Run the ``start-upgrade`` script.  The ``start-upgrade`` script downloads the Crafter CMS binary version you would like to upgrade to.  This will create a script ``upgrade.sh`` in ``{Crafter-CMS-install-directory}/temp/upgrade``.
+#. Run the ``start-upgrade`` script.  The ``start-upgrade`` script downloads the Crafter CMS binary archive version you would like to upgrade to.  This will create a script ``upgrade.sh`` in ``{Crafter-CMS-install-directory}/temp/upgrade``.
 #. Go to ``{Crafter-CMS-install-directory}/temp/upgrade`` and run the ``upgrade.sh`` script
 #. Go to ``{Crafter-CMS-install-directory}/bin/upgrade`` and run the ``post-upgrade.sh`` script
+
+      .. note::
+         Crafter CMS 4.0.0 requires Java JDK 11.  When upgrading to Crafter CMS version 4.0.0 from a 3.1.x version, remember to switch your JAVA_HOME environment variable to point to Java JDK 11 before running the ``post-upgrade`` script
+
 #. Delete the``{Crafter-CMS-install-directory}/temp/upgrade`` once your upgrade has been completed successfully
 
 Here's an example to perform an upgrade of your current install to a certain version
 
     .. code-block:: bash
 
-        $ ./start-upgrade.sh -v 3.1.9
+        $ ./start-upgrade.sh -v 4.0.0
         $ cd ../../temp/upgrade
         $ ./upgrade.sh
 
 
 |
 
-Here's an example to perform an upgrade of your current install using a binary url
+Here's an example to perform an upgrade of your current install using a binary archive  url
 
     .. code-block:: bash
 
-        $ ./start-upgrade.sh -u https://download/url/to/binary
+        $ ./start-upgrade.sh -u https://download/url/to/binary/archive
         $ cd ../../temp/upgrade
         $ ./upgrade.sh
 
 |
 
-Here's an example to perform an upgrade of your current install using the path where your binary was downloaded
+Here's an example to perform an upgrade of your current install using the path where your binary archive was downloaded
 
     .. code-block:: bash
 
-        $ ./start-upgrade.sh -p /path/to/binary
+        $ ./start-upgrade.sh -p /path/to/binary/archive
         $ cd ../../temp/upgrade
         $ ./upgrade.sh
 
@@ -313,20 +309,20 @@ Here's an example to perform an upgrade of your current install using the path w
 Example running the upgrade script from your current install
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Let's take a look at an example of upgrading a Crafter CMS version 3.1.6 install (located in ``/Users/myuser/crafter``) to version 3.1.9 using the upgrade script in 3.1.6
+Let's take a look at an example of upgrading a Crafter CMS version 3.1.17 install (located in ``/Users/myuser/crafter``) to version 4.0.0 using the upgrade script in 3.1.17
 
-We'll perform an upgrade of 3.1.6 (current install) to 3.1.9
+We'll perform an upgrade of 3.1.17 (current install) to 4.0.0
 
    .. code-block:: bash
       :emphasize-lines: 1,18
       :caption: *Example output running the start-upgrade script*
 
-      ➜  ./start-upgrade.sh -v 3.1.9
+      ➜  ./start-upgrade.sh -v 4.0.0
       ============================================================
       Downloading Bundle
       ============================================================
-      Downloading bundle @ https://downloads.craftercms.org/3.1.9/crafter-cms-authoring-3.1.9.tar.gz...
-      Downloading md5sum @ https://downloads.craftercms.org/3.1.9/crafter-cms-authoring-3.1.9.tar.gz.md5...
+      Downloading bundle @ https://downloads.craftercms.org/4.0.0/crafter-cms-authoring-4.0.0.tar.gz...
+      Downloading md5sum @ https://downloads.craftercms.org/4.0.0/crafter-cms-authoring-4.0.0.tar.gz.md5...
       Doing checksum...
       ============================================================
       Extracting Bundle
@@ -374,7 +370,7 @@ The next step is to run the ``upgrade`` script under the ``temp/upgrade`` folder
       > Backup the data folder before upgrade? [(Y)es/(N)o]:
       > Backup the bin folder before upgrade? [(Y)es/(N)o]:
       ========================================================================
-      Upgrading Crafter 3.1.6 -> 3.1.9
+      Upgrading Crafter 3.1.17 -> 4.0.0
       ========================================================================
       Synching files from /Users/myuser/crafter/temp/upgrade/crafter/bin to /Users/myuser/crafter/bin...
       [-] Deleting file migration/resources/site-template/config/studio/environment/environment-config.xml that doesn't exist in the new release
@@ -420,7 +416,7 @@ The next step is to run the ``upgrade`` script under the ``temp/upgrade`` folder
 
    |
 
-Finally we'll  run the ``post-upgrade`` script
+Finally we'll  run the ``post-upgrade`` script.  Remember to switch your JAVA_HOME environment variable to point to Java JDK 11 before running the ``post-upgrade`` script
 
    .. code-block:: bash
       :emphasize-lines: 2,11
@@ -430,7 +426,7 @@ Finally we'll  run the ``post-upgrade`` script
       hostname: illegal option -- i
       usage: hostname [-fs] [name-of-host]
       ========================================================================
-      Post-upgrade 3.1.6 -> 3.1.9
+      Post-upgrade 3.1.17 -> 4.0.0
       ========================================================================
       ========================================================================
       Post-upgrade completed
@@ -447,7 +443,7 @@ You may now :ref:`start Crafter CMS <start-crafter-after-upgrade>` again
 Start Crafter CMS
 -----------------
 
-After performing the upgrade steps listed above (either by running the upgrade script from a new bundle or, by running the upgrade script from your current install) you may now start Crafter CMS by running the ``startup.sh`` script.
+After performing the upgrade steps listed above (either by running the upgrade script from a new binary archive or, by running the upgrade script from your current install) you may now start Crafter CMS by running the ``startup.sh`` script.
 
    .. code-block:: bash
 
@@ -474,7 +470,7 @@ After performing the upgrade steps listed above (either by running the upgrade s
       Using CATALINA_BASE:   /Users/myuser/crafter/bin/apache-tomcat
       Using CATALINA_HOME:   /Users/myuser/crafter/bin/apache-tomcat
       Using CATALINA_TMPDIR: /Users/myuser/crafter/temp/tomcat
-      Using JRE_HOME:        /Users/myuser/.jenv/versions/1.8.0.162
+      Using JRE_HOME:        /Users/myuser/.jenv/versions/11
       Using CLASSPATH:       /Users/myuser/crafter/bin/apache-tomcat/bin/bootstrap.jar:/Users/myuser/crafter/bin/apache-tomcat/bin/tomcat-juli.jar
       Using CATALINA_PID:    /Users/myuser/crafter/bin/apache-tomcat/tomcat.pid
       Tomcat started.

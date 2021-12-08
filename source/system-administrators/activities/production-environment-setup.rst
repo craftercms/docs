@@ -31,7 +31,7 @@ Setting up the production environment
 
    Installing the delivery instance is almost the same as installing the authoring instance.  The difference is, if you're installing from a binary built
    by the gradle environment builder, you need to download/use ``crafter-cms-delivery-VERSION.tar.gz``.  Follow the same steps used to
-   install your authoring environment using the delivery zip files.
+   install your authoring environment using the delivery tar files.
 
    If using the alternate way of installing craftercms, to install and start the delivery, simply run the following:
 
