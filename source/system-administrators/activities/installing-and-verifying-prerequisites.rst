@@ -3,7 +3,6 @@
 :orphan:
 
 .. document does not appear in any toctree, and is only accessible via searching.
-   This document is deprecated and is provided as a reference only
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
 
@@ -20,14 +19,14 @@ This section lists various prerequisites needed depending on the operating syste
 ------------
 Install Java
 ------------
-Download and install Java JDK 1.11 (either `Oracle <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_  or `OpenJDK <http://openjdk.java.net/>`_).
+Download and install Java JDK 11 (either `Oracle <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_  or `OpenJDK <http://openjdk.java.net/>`_).
 
 ^^^^^^^^^^^^^^^^^^^
 Verify Java Version
 ^^^^^^^^^^^^^^^^^^^
 
-Ensure that you are running Java 1.11.  To check,
-run the following command at the command prompt and make sure that the version displayed is Java 1.11:
+Ensure that you are running Java 11.  To check,
+run the following command at the command prompt and make sure that the version displayed is Java 11:
 
 .. code-block:: sh
 
@@ -148,9 +147,9 @@ Building with Gradle Prerequisites
 
 For building with Gradle for installing Crafter CMS, the following must be installed in your system:
 
-^^^^^^^^^^^^^^^^^^^^^^^
-On Linux/Wiindows WSL 2
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
+On Linux/Windows WSL 2
+^^^^^^^^^^^^^^^^^^^^^^
 * Java 11
 * Git 2.x+
 * Maven 3.3.x+
