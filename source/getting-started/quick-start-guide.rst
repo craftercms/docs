@@ -10,10 +10,9 @@ Quick Start Guide
 
 This section describes how to quickly install Crafter CMS and start crafting your experiences.  The steps listed below is intended to help the user start using Crafter CMS for development or evaluation only.
 
-There are a couple of ways to setup Crafter CMS:
+To setup Crafter CMS:
 
-* :ref:`Install from the binary download <installing-crafter-cms-from-binary-download>`
-* :ref:`Install from binary built by the Gradle environment builder <installing-craftercms-from-built-binary>`
+* :ref:`Install from prebuilt binaries download <installing-crafter-cms-from-prebuilt-binaries>`
 
    .. note::
       **For Windows Users** |br|
@@ -32,15 +31,15 @@ There are a couple of ways to setup Crafter CMS:
 
       All the steps below applies to installing Crafter CMS via the WSL terminal.  See :ref:`here <installing-craftercms-on-wsl>` for detailed instructions on installing Crafter CMS on Windows via WSL
 
-      Crafter CMS may also be run via :ref:`Docker <running-craftercms-in-docker>`.  Note that the preferred method of installing and running Crafter CMS is via the binary through WSL 2 as described here.
+      Crafter CMS may also be run via :ref:`Docker <running-craftercms-in-docker>`.  Note that the preferred method of installing and running Crafter CMS is via the binary archive through WSL 2 as described here.
 
-.. _installing-crafter-cms-from-binary-download:
+.. _installing-crafter-cms-from-prebuilt-binaries:
 
------------------------------------------------
-Installing Crafter CMS from the Binary Download
------------------------------------------------
+---------------------------------------------
+Installing Crafter CMS from Prebuilt Binaries
+---------------------------------------------
 
-Here are the steps to start using Crafter CMS for development or evaluation by installing Crafter CMS from the binary download:
+Here are the steps to start using Crafter CMS for development or evaluation by installing Crafter CMS from the binary archive download:
 
 #. **Download and install Java 8**
 
@@ -48,13 +47,13 @@ Here are the steps to start using Crafter CMS for development or evaluation by i
 
    Make sure that you have a ``JAVA_HOME`` environment variable that points to the root of the JDK install directory.  See :ref:`here<verify-java-home-env-var>` for more information on the ``JAVA_HOME`` environment variable
 
-#. **Download Crafter CMS binary**
+#. **Download Crafter CMS binaries**
 
-   Download the Crafter CMS install binary file from https://craftercms.org/downloads
+   Download the Crafter CMS install binary archive from https://craftercms.org/downloads
 
    Select ``crafter-cms-authoring-VERSION.tar.gz``.  The ``.tar.gz`` file will install a fully functional authoring instance. Out of the box, the authoring instance uses a local directory as the repository and an embedded database, which allows a quick and easy set up for local development.
 
-#. **Extract the Crafter CMS binary**
+#. **Extract the Crafter CMS binaries**
 
    Extract the contents in any directory.
 
@@ -122,42 +121,3 @@ Here are the steps to start using Crafter CMS for development or evaluation by i
 
 
    After logging in, you should be redirected to the ``Sites`` screen, and you're now ready to create your first experience!
-
-.. _installing-craftercms-from-built-binary:
-
---------------------------------------------------------------------------
-Installing Crafter CMS From Binary Built By the Gradle Environment Builder
---------------------------------------------------------------------------
-
-#. **Download and install required items for creating binaries**
-
-   To create the binaries (``*.tar.gz``) for installing Crafter CMS, the following must be installed in your system:
-
-   * Java 8
-   * Git 2.x+
-   * Maven 3.3.x+
-   * make and GCC
-
-   For more information on installing the required items and other prerequisites, see :ref:`Installing and verifying prerequisites<installing-and-verifying-prerequisites>`
-
-#. **Clone the Crafter CMS repo from GitHub**
-
-    .. code-block:: bash
-
-        git clone https://github.com/craftercms/craftercms.git
-
-    |
-
-#. **Build a deployable binary**
-
-   Build a deployable binary using the Gradle Environment Builder to generate the binary ``crafter-cms-authoring-VERSION.tar.gz`` inside the *bundle* folder
-
-   .. code-block:: bash
-
-      ./gradlew init build deploy bundle
-
-   |
-
-#. Unpack the file (``crafter-cms-authoring-VERSION.tar.gz``) into any directory.  You may now follow the instructions listed :ref:`above<installing-crafter-cms-from-binary-download>` starting from the step to ``Extract the Crafter CMS binary`` to start using Crafter CMS
-
-For more details on using the Gradle environment builder, please review: https://github.com/craftercms/craftercms/blob/master/README.md
