@@ -22,8 +22,7 @@ New Installation
 ^^^^^^^^^^^^^^^^
 
 You can follow the instructions for building a complete binary of Crafter CMS as described
-`here <https://github.com/craftercms/craftercms/blob/support/3.1.x/README.md>`__, if you add the
-parameter ``-Pcrafter.social=true` the binary archive will contain ``crafter-social.war`` and ``crafter-social-admin.war``.
+`here <https://github.com/craftercms/craftercms/blob/develop/README.md>`__.
 
 ^^^^^^^^^^^^^^^^^^^^^
 Existing Installation

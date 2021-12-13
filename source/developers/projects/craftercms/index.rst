@@ -772,24 +772,13 @@ Binaries will be saved as ``crafter-cms-authoring-VERSION.tar`` for the *Authori
 
 Using the common task property ``env`` lets you select what environment (authoring or delivery) will be generated.
 
-Let's look at an example using the two task property mentioned above:
+Let's look at an example using the task property mentioned above:
 
     .. code-block:: bash
 
         ./gradlew bundle -Penv=authoring
 
 The command above will generate an authoring binary archive in the bundles folder named ``crafter-cms-authoring-VERSION.tar.gz``.
-
-There are two more gradle bundle tasks available for use aside from ``bundle``:
-
-* ``delivery_bundle_tar`` - Archives as a Tar file delivery environment
-* ``authoring_bundle_tar`` - Archives as a Tar file authoring environment
-
-Here's an example using one of the above gradle task to generate an authoring binary archive:
-
-    .. code-block:: bash
-
-        ./gradlew authoring_bundle_tar
 
 .. _gradle-tasks:
 

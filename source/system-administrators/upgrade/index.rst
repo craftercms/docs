@@ -21,7 +21,7 @@ This section details the steps required to upgrade your Crafter CMS install.
      - 3.1.17
      - 3.1.18
 
-     If you are upgrading from a version other than the ones listed above, you would need to upgrade to the latest 3.1 release first before upgrading to 4.0.0.  See the 3.1 release’s Upgrading Crafter CMS page here: http://docs.craftercms.org
+     If you are upgrading from a version other than the ones listed above, you will need to upgrade to the latest 3.1 release first before upgrading to 4.0.0.  See the 3.1 release’s Upgrading Crafter CMS page here: https://docs.craftercms.org
 
 |
 

@@ -19,9 +19,7 @@ New Installation
 ^^^^^^^^^^^^^^^^
 
 You can follow the instructions for building a complete binary archive of Crafter CMS as described
-`here <https://github.com/craftercms/craftercms/blob/support/3.1.x/README.md>`__, if you add the
-parameter ``-Pcrafter.profile=true``the binary archive will contain ``crafter-profile.war`` and
-``crafter-profile-admin.war``.
+`here <https://github.com/craftercms/craftercms/blob/develop/README.md>`__.
 
 ^^^^^^^^^^^^^^^^^^^^^
 Existing Installation
