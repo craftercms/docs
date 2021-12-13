@@ -855,7 +855,7 @@ Let's look at an example using the task property mentioned above:
 
 The command above will generate an authoring binary archive in the bundles folder named ``crafter-cms-authoring-VERSION.tar.gz``.
 
-There are four more gradle bundle tasks available for use aside from ``bundle``:
+There are two more gradle bundle tasks available for use aside from ``bundle``:
 
 * ``delivery_bundle_tar`` - Archives as a Tar file delivery environment
 * ``authoring_bundle_tar`` - Archives as a Tar file authoring environment
