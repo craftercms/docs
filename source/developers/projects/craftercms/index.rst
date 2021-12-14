@@ -8,7 +8,7 @@
 Crafter CMS
 ###########
 
-This project is the parent project that builds everything and prepares a deployable bundle and a developer's environment.
+This project is the parent project that builds everything and prepares deployable binaries and a developer's environment.
 
 ***********
 Source Code
@@ -31,7 +31,7 @@ For every Crafter CMS repository, there are two long-running branches:
     * ``develop``: this is where development activities happen, and this branch is not meant to be stable
     * ``master``: this is stable and deployable
 
-If you're building a deployable Crafter CMS bundle, you'll need to clone the master branch:
+If you're building deployable Crafter CMS binaries, you'll need to clone the master branch:
 
     .. code-block:: bash
 
@@ -627,8 +627,8 @@ Here's a list of commands (Gradle tasks) available:
 ||              ||                                          ||             || - social       |
 ||              ||                                          ||             || - profile      |
 +---------------+-------------------------------------------+--------------+-----------------+
-|| bundle       || Build a deployable and distributable     || authoring   || - None         |
-||              || bundle                                   +--------------+                 |
+|| bundle       || Build deployable and distributable       || authoring   || - None         |
+||              || binaries                                 +--------------+                 |
 ||              ||                                          || delivery    ||                |
 +---------------+-------------------------------------------+--------------+-----------------+
 || start        || Start Crafter CMS                        || authoring   || - None         |
@@ -762,36 +762,23 @@ What this does under the hood is:
 BUNDLE
 ^^^^^^
 
-The Gradle task ``bundle`` will build a deployable and distributable bundle of Crafter CMS for the authoring and/or delivery environments.  This will generate zip and tar files ready to be unarchived and run.
+The Gradle task ``bundle`` will build deployable and distributable binaries of Crafter CMS for the authoring and/or delivery environments.  This will generate tar files ready to be unarchived and run.
 
     .. code-block:: bash
 
-       ./gradlew bundle [-Penv={env}] [-Pcrafter.bundle.archive={tar|zip}]
+       ./gradlew bundle [-Penv={env}]
 
-Archives will be saved as ``crafter-cms-authoring.tar`` and ``crafter-cms-authoring.zip`` for the *Authoring Environment* and ``crafter-cms-delivery.tar`` and ``crafter-cms-delivery.zip`` for the *Delivery Environment* in the ``bundles`` folder
+Binaries will be saved as ``crafter-cms-authoring-VERSION.tar`` for the *Authoring Environment* and ``crafter-cms-delivery-VERSION.tar`` for the *Delivery Environment* in the ``bundles`` folder
 
-Using the bundle task property ``crafter.bundle.archive`` lets you select what archive (tar or zip) will be generated, and the common task property ``env`` lets you select what environment (authoring or delivery) will be generated.
+Using the common task property ``env`` lets you select what environment (authoring or delivery) will be generated.
 
-Let's look at an example using the two task properties mentioned above:
-
-    .. code-block:: bash
-
-        ./gradlew bundle -Penv=authoring -Pcrafter.bundle.archive=zip
-
-The command above will generate an authoring zip bundle in the bundles folder named ``crafter-cms-authoring.zip``.  If the property ``crafter.bundle.archive`` is not specified, an authoring zip and tar file bundles will be generated.
-
-There are four more gradle bundle tasks available for use aside from ``bundle``:
-
-* ``delivery_bundle_tar`` - Bundles as a Tar file delivery environment
-* ``delivery_bundle_zip`` - Bundles as a Zip file delivery environment
-* ``authoring_bundle_tar`` - Bundles as a Tar file authoring environment
-* ``authoring_bundle_zip`` - Bundles as a Zip file authoring environment
-
-Here's an example using one of the above gradle task to generate an authoring zip bundle:
+Let's look at an example using the task property mentioned above:
 
     .. code-block:: bash
 
-        ./gradlew authoring_bundle_zip
+        ./gradlew bundle -Penv=authoring
+
+The command above will generate an authoring binary archive in the bundles folder named ``crafter-cms-authoring-VERSION.tar.gz``.
 
 .. _gradle-tasks:
 

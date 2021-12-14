@@ -16,7 +16,7 @@ Requirements
 
 To run Crafter CMS, the following are required:
 
-    - Java 1.11
+    - Java 11
     - 8+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
 
 Additional requirements for running Crafter CMS are listed here :ref:`Installing and verifying prerequisites<installing-and-verifying-prerequisites>`
@@ -43,8 +43,8 @@ JVMs (All components)
 
 The following JVMs are supported:
 
-    - OpenJDK 1.11
-    - Oracle JDK (HotSpot) 1.11
+    - OpenJDK 11
+    - Oracle JDK (HotSpot) 11
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Browsers (Crafter Studio & Crafter Social/Profile Admin Consoles)
