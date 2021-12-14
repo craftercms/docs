@@ -1082,11 +1082,11 @@ breadcrumb
    * - ``url``
      - string
      - "/site/website"
-     - The url path to start printing breadcrumbs from.
+     - The current URL used to build the breadcrumb.
    * - ``root``
      - string
      - "/site/website"
-     - **TODO**
+     - The starting point (root) of the breadcrumb
    * - ``showNavElement``
      - boolean
      - true
