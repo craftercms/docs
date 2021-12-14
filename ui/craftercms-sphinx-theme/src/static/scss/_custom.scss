@@ -15,7 +15,7 @@
 
 #content {
   padding: 2rem 1rem;
-  @media (min-width: 640px) { 
+  @media (min-width: 640px) {
     margin: 0 auto;
     padding-left: $sidebar-sm + 20;
   }
@@ -32,7 +32,7 @@
 .title-bar {
   background-color: $white;
   border-bottom: 1px solid $custom-light-gray;
-  
+
   .logo {
     left: 50%;
     width: 60px;
@@ -235,7 +235,7 @@
   background: #fff;
   .hll {
     font-weight: bold;
-  }    
+  }
 }
 
 
@@ -257,8 +257,8 @@
       &#google_translate_element .goog-te-gadget .goog-te-gadget-simple{
         border-radius: 6px;
       }
-    
-    } 
+
+    }
   }
 
 }
@@ -288,7 +288,7 @@ div[class^="highlight-"] {
 
   .highlight {
     overflow-x: scroll;
-    pre { 
+    pre {
       overflow: visible;
     }
   }
@@ -324,3 +324,9 @@ div[class^="highlight-"] {
   }
 }
 
+.code-inline, code {
+  background-color: rgb(175, 184, 193, 0.4);
+  color: rgb(40, 45, 50);
+  border-radius: 10px;
+  border: none;
+}
