@@ -36,6 +36,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uncss": "^1.0.1",
+    "gulp-uglify-es": "^3.0.0",
     "panini": "^1.6.3",
     "rimraf": "^3.0.0",
     "style-sherpa": "^1.0.0",
