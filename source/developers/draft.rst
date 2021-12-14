@@ -573,40 +573,36 @@ contain nested repeat groups or component collections.
 
    * - Parameters
      - Description
-   * - $model
-     - The content model that this element is associated to. ``$model`` is defaulted to the ``contentModel`` FreeMarker
-       template context variable, so in most cases it is not necessary to specify it. Only required it when you want
-       to use a different model.
-   * - $field
-     - The field id on the content type definition of the present model. Field is optional for component/page wrapper
-       elements as those indeed aren't a field but represent the model itself.
-   * - $index
-     - When inside a collection (i.e. repeat group or component collection), the index of the present item within
-       the collection.
-   * - $fieldCarryover
+   * - ``$model``
+     - The content model for which this element belongs to. ``$model`` is defaulted to the ``contentModel`` FreeMarker
+       template context variable denoting the current page or component, so in most cases it is not necessary
+       to specify it. This is only required to be specified if you're trying to use a different model than the default
+   * - ``$field``
+     - The field ID on the content type definition of the current model. When inside repeat groups,
+       a dot-separated-string of the full field *path* to the present field (e.g. ``slides_o.image_s``)
+   * - ``$index``
+     - When inside a collection (i.e. repeat group or component collection), the index of the present item. When nested
+       inside repeat groups, the full index *path* to this item (e.g. ``0.1``)
+   * - ``$fieldCarryover``
      - When nested inside repeat groups, a dot-separated-string of the full field *path* to the present field
        (e.g. ``repeatOne_o.repeatTwo_s``) **without the current field itself**, as the macro puts them together.
-   * - $indexCarryover
+   * - ``$indexCarryover``
      - When nested inside repeat groups, the full index *path* to this control (e.g. ``0.1``).
-   * - $collection
-     - Contains the collection that the macro iterates through internally. By default, it is set to
-       ``$model[$field]``, so not required to specify in most cases; however, you can manually specify
-       the collection that will be looped when invoking the macro if you need to.
-   * - $containerAttributes
+   * - ``$collection``
+     - Contains the collection that the macro iterates through internally. By default, it is set to ``$model[$field]``,
+       so not required to specify in most cases; however, you can manually specify the collection that will be looped
+       when invoking the macro if you need to.
+   * - ``$containerAttributes``
      - Html attributes to print on to the **field** element.
-   * - $containerTag
+   * - ``$containerTag``
      - The tag to use for the **field** element.
-   * - $itemTag
+   * - ``$itemTag``
      - The tag to use for the **item**  tags.
-   * - $itemAttributes
+   * - ``$itemAttributes``
      - Html attributes to print on to the **item** elements.
-   * - $nthItemAttributes
-     - Html attributes to print by item index. For example, ``$nthItemAttributes={ 0: { "class": "active" } }``
-       will apply the class named active only to the first item in the collection.
-   * - arguments
-     - Crafter CMS' :ref:`renderComponent macro <renderComponent>` supports supplying additional arguments to
-       the component template context. You can send these via this argument. The ``arguments`` will be sent
-       to all items.
+   * - ``$nthItemAttributes``
+     - Html attributes to print by item index. For example, ``$nthItemAttributes={ 0: { "class": "active" } }`` will
+       apply the class named active only to the first item in the collection.
 
 Examples
 ########
@@ -832,12 +828,12 @@ isEmptyCollection
 
 Receives a Crafter collection and returns true if it's empty or false otherwise.
 
-.. emptyCollectionClass:
+.. _emptyCollectionClass:
 
 emptyCollectionClass
-""""""""""""""""""""""""
+""""""""""""""""""""
 
-Receives a collection and, if the collection is empty it will print the print a *special* crafter class,
+Receives a collection and, if the collection is empty it will print a *special* crafter class,
 otherwise, it won't print anything. This macro only prints in Crafter Engine's *preview mode*.
 
 The *special* class adds styles to the element so that it has a minimum height and
@@ -864,7 +860,30 @@ One should use this macro on empty component or repeat group collections.
      $containerAttributes={ "class": crafter.emptyCollectionClass(contentModel.slides_o) }
    />
 
-.. TODO emptyFieldClass
+.. _emptyFieldClass:
+
+emptyFieldClass
+"""""""""""""""
+
+Receives a field value and, if the field has no content it will print a *special* crafter class,
+otherwise, it won't print anything. This macro only prints in Crafter Engine's *preview mode*.
+
+The *special* class adds styles to the element so that it has a minimum height and
+width so that authors can visualize the area and add content to this field — as otherwise,
+it would be invisible and virtually not editable.
+
+One should use this macro on empty fields.
+
+**Example**
+
+.. code-block:: text
+
+   <@crafter.h1
+      class="display-5 fw-bold ${crafter.emptyFieldClass(contentModel.title_s)}"
+      $field="title_s"
+   >
+      ${contentModel.title_s!''}
+   </@crafter.h1>
 
 .. _printIfPreview:
 
@@ -915,106 +934,106 @@ Prints out the navigation structure of a site in a customizable markup structure
      - Type
      - Default
      - Description
-   * - url
+   * - ``url``
      - string
      - "/site/website"
      - The URL path to start printing breadcrumbs from
-   * - showNavElement
+   * - ``showNavElement``
      - boolean
      - true
      - Whether to print a ``nav`` element wrapping the whole nav structure
-   * - navElementClass
+   * - ``navElementClass``
      - string
      - ""
      - Class(es) to apply to the ``nav`` element
-   * - containerElement
+   * - ``containerElement``
      - string
      - "ul"
      - Parent tag for the nav items and nav item wrappers. Will be skipped if set to an empty string (i.e. ``""``)
-   * - containerElementClass
+   * - ``containerElementClass``
      - string
      - ""
      - Class(es) applied to the container element.
-   * - itemWrapperElement
+   * - ``itemWrapperElement``
      - string
      - "li"
      - Element used to wrap links (e.g. in ``<li><a /></li>`` the ``li`` wraps the ``a``). Will be skipped if set
        to an empty string (i.e. ``""``).
-   * - itemWrapperClass
+   * - ``itemWrapperClass``
      - string
      - ""
      - Attributes added to the nav item link wrapper (e.g. the ``li`` that wraps the ``a``).
-   * - itemWrapperActiveClass
+   * - ``itemWrapperActiveClass``
      - string
      - "active"
-     - Class added to the active nav item link wrapper (e.g. the ``li`` that wraps the ``a``).
-   * - itemWrapperAttributes
+     - Class(es) added to the active nav item link wrapper (e.g. the ``li`` that wraps the ``a``).
+   * - ``itemWrapperAttributes``
      - hash
      - {}
      - Attributes added to all nav item link wrapper (e.g. the ``li`` that wraps the ``a``).
-   * - itemClass
+   * - ``itemClass``
      - string
      - ""
      - Class(es) added to all nav item elements.
-   * - itemActiveClass
+   * - ``itemActiveClass``
      - string
      - "active"
      - Class(es) added to the active page (i.e. the page the user is on).
-   * - itemAttributes
+   * - ``itemAttributes``
      - hash
      - {}
      - Attributes applied to the nav items.
-   * - hasSubItemItemClass
+   * - ``hasSubItemItemClass``
      - string
      - ""
      - Class(es) applied to those items that have children. Applied to the nav item, not it's wrapper.
-   * - hasSubItemWrapperClass
+   * - ``hasSubItemWrapperClass``
      - string
      - ""
      - Class(es) applied to the wrapper of those items that have children.
-   * - hasSubItemItemAttributes
+   * - ``hasSubItemItemAttributes``
      - hash
      - {}
      - Attributes applied to items that have children.
-   * - subItemClass
+   * - ``subItemClass``
      - string
      - ""
      - Class(es) applied to items that are at least one level "down".
-   * - subItemClassPrefix
+   * - ``subItemClassPrefix``
      - string
      - "nav-level"
-     - A class is created dynamically in the form of "${subItemClassPrefix}-${currentDepth}". You may customize
+     - A class is created dynamically in the form of ``${subItemClassPrefix}-${currentDepth}``. You may customize
        the subItemClassPrefix to change the default from ``nav-level-${depth}`` to ``${whatEverYouPlease}-${depth}``.
-   * - subItemAttributes
+   * - ``subItemAttributes``
      - hash
      - {}
      - Attributes applied to the items that are at least one level "down".
-   * - subItemWrapperClass
+   * - ``subItemWrapperClass``
      - string
      - ""
      - Class(es) applied to the wrapper of those items that are at least one level "down".
-   * - subItemWrapperClassPrefix
+   * - ``subItemWrapperClassPrefix``
      - string
      - ""
-     - **If specified**, a class is created dynamically in the form of "${subItemWrapperClassPrefix}-${currentDepth}".
-   * - subItemContainerClass
+     - **If specified**, a class is created dynamically in the form of ``${subItemWrapperClassPrefix}-${currentDepth}``.
+   * - ``subItemContainerClass``
      - string
      - ""
      - Class(es) applied to the container at each depth level.
-   * - depth
+   * - ``depth``
      - number
      - 1
      - How many depth levels to print.
-   * - includeRoot
+   * - ``includeRoot``
      - boolean
      - true
      - Whether to print the root of the nav. For example, you may want to print the children of "Home" without Home
        itself, in which case you'd set to false.
-   * - inlineRootWithImmediateChildren
+   * - ``inlineRootWithImmediateChildren``
      - boolean
      - true
      - Whether to print the root item on the same level as it's immediate children. For example you may want to
-       print "Home" at the same level as its children to get something like ``Home • Products • About • Contact``
+       print ``Home`` at the same level as its children to get something like ``Home • Products • About • Contact``
        instead of having products, about and contact as a dropdown or indented within home in your UI.
 
 .. _navigationItem:
@@ -1038,11 +1057,11 @@ See the navigation macro
      -
      -
      - See parameters for `the navigation macro <#navigation>`_ as they are the same.
-   * - currentDepth
+   * - ``currentDepth``
      - number
      - 0
      - The current level of depth that will get printed by this macro.
-   * - navItem
+   * - ``navItem``
      - object
      - {}
      - The navItem object that will be used to print.
@@ -1060,60 +1079,60 @@ breadcrumb
      - Type
      - Default
      - Description
-   * - url
+   * - ``url``
      - string
      - "/site/website"
      - The url path to start printing breadcrumbs from.
-   * - root
+   * - ``root``
      - string
      - "/site/website"
      - **TODO**
-   * - showNavElement
+   * - ``showNavElement``
      - boolean
      - true
      - Whether to wrap the whole navigation structure on a ``<nav />`` element.
-   * - navElementClass
+   * - ``navElementClass``
      - string
      - ""
      - Class(es) added to the ``nav`` element.
-   * - navElementAttributes
+   * - ``navElementAttributes``
      - hash
      - {}
      - Attributes added to the ``nav`` element.
-   * - containerElement
+   * - ``containerElement``
      - string
      - "ul"
      - Parent tag for the nav items and nav item wrappers. Will be skipped if set to an empty string (i.e. ``""``).
-   * - containerElementClass
+   * - ``containerElementClass``
      - string
      - ""
      - Class(es) applied to the container element.
-   * - itemWrapperElement
+   * - ``itemWrapperElement``
      - string
      - "li"
      - Element used to wrap links (e.g. in ``<li><a /></li>`` the ``li`` wraps the ``a``). Will be skipped if set
        to an empty string (i.e. ``""``).
-   * - itemWrapperClass
+   * - ``itemWrapperClass``
      - string
      - ""
      - Attributes added to the nav item link wrapper (e.g. the ``li`` that wraps the ``a``).
-   * - itemWrapperActiveClass
+   * - ``itemWrapperActiveClass``
      - string
      - "active"
      - Class added to the active nav item link wrapper (e.g. the ``li`` that wraps the ``a``).
-   * - itemWrapperAttributes
+   * - ``itemWrapperAttributes``
      - hash
      - {}
      - Attributes added to all nav item link wrapper (e.g. the ``li`` that wraps the ``a``).
-   * - itemClass
+   * - ``itemClass``
      - string
      - ""
      - Class(es) added to all nav item elements.
-   * - itemAttributes
+   * - ``itemAttributes``
      - hash
      - {}
      - Attributes added to all nav item elements.
-   * - includeLinkInActiveItem
+   * - ``includeLinkInActiveItem``
      - boolean
      - false
      - Whether to render the active element as a link (i.e. ``a``); otherwise rendered as a ``span``.
