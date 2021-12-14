@@ -11,28 +11,25 @@ This guide is intended to provide system administrators with the information and
 *******************
 System Requirements
 *******************
-+------------------+-----------------------------------+-----------------------------------------+
-|| Parameter Name  || Description                      || Prerequisites                          |
-+==================+===================================+=========================================+
-|| Crafter Studio  || Content authoring server         || Java 1.8                               |
-||                 ||                                  || 4+ Gig of memory to JVM                |
-+------------------+-----------------------------------+-----------------------------------------+
-|| Crafter Engine  || Content delivery server          || Java 1.8                               |
-||                 ||                                  || 2+ Gig of memory to JVM                |
-+------------------+-----------------------------------+-----------------------------------------+
-|| Crafter Profile || User profile and attribute store || Java 1.8                               |
-||                 || (Optional component)             || MongoDB 3+ (included in the bundle)    |
-||                 ||                                  || 1+ Gig of memory to JVM                |
-+------------------+-----------------------------------+-----------------------------------------+
-|| Crafter Social  || User Generated Content server    || Java 1.8                               |
-||                 || (Optional component)             || MongoDB 3+ (included in the bundle)    |
-||                 ||                                  || 1+ Gig of memory to JVM                |
-+------------------+-----------------------------------+-----------------------------------------+
++------------------+-----------------------------------+---------------------------------------------+
+|| Parameter Name  || Description                      || Prerequisites                              |
++==================+===================================+=============================================+
+|| Crafter Studio  || Content authoring server         || Java 1.8                                   |
+||                 ||                                  || 4+ Gig of memory to JVM                    |
++------------------+-----------------------------------+---------------------------------------------+
+|| Crafter Engine  || Content delivery server          || Java 1.8                                   |
+||                 ||                                  || 2+ Gig of memory to JVM                    |
++------------------+-----------------------------------+---------------------------------------------+
+|| Crafter Profile || User profile and attribute store || Java 1.8                                   |
+||                 || (Optional component)             || MongoDB 3+ (included in the binary archive)|
+||                 ||                                  || 1+ Gig of memory to JVM                    |
++------------------+-----------------------------------+---------------------------------------------+
+|| Crafter Social  || User Generated Content server    || Java 1.8                                   |
+||                 || (Optional component)             || MongoDB 3+ (included in the binary archive)|
+||                 ||                                  || 1+ Gig of memory to JVM                    |
++------------------+-----------------------------------+---------------------------------------------+
 
 * See :ref:`supported platforms<requirements_supported_platforms>` for a detailed list and description of supported components.
-
-.. note:: Crafter CMS is not yet compatible with Java 1.9. We are working on updating our code to make sure we are 100% compatible with the newest Java version.
-
 
 **********
 Activities

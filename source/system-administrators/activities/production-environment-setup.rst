@@ -30,7 +30,7 @@ Setting up the production environment
 #. Now that you have a site setup in authoring, the next thing to do is to setup your site in the delivery instance(s).  Let's begin the delivery installation.
 
    Installing the delivery instance is almost the same as installing the authoring instance.  The difference is, if you're installing from a zip or archive built
-   by the gradle environment builder, you need to download/use ``crafter-cms-delivery-3.1.X.tar.gz``.  Follow the same steps used to
+   by the gradle environment builder, you need to download/use ``crafter-cms-delivery-VERSION.tar.gz``.  Follow the same steps used to
    install your authoring environment using the delivery zip files.
 
    If using the alternate way of installing craftercms, to install and start the delivery, simply run the following:

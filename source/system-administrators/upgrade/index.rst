@@ -17,7 +17,7 @@ This section details the steps required to upgrade your Crafter CMS install.
 
        * If you are upgrading to version 3.1.10 or later release, you would need to upgrade to 3.1.9 first before upgrading to a later version.
 
-       * If you are upgrading from an earlier release (2.5.x), you would need to upgrade to 3.0.x first before performing the upgrade steps here.  See the 3.0 release’s Upgrading Crafter CMS page here: http://docs.craftercms.org
+       * If you are upgrading from an earlier release (2.5.x), you would need to upgrade to 3.0.x first before performing the upgrade steps here.  See the 3.0 release’s Upgrading Crafter CMS page here: https://docs.craftercms.org
 
 |
 
@@ -27,7 +27,6 @@ Here are the instructions for upgrading Crafter CMS based on how it was installe
    :maxdepth: 1
    :titlesonly:
 
-   upgrading-crafter-using-gradle.rst
-   upgrading-crafter-from-bundle.rst
+   upgrading-crafter.rst
    docker/index.rst
 
