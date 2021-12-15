@@ -46,19 +46,19 @@ Installing Crafter CMS from the Prebuilt Binaries
 
 Here are the steps to start using Crafter CMS for development or evaluation by installing Crafter CMS from the prebuilt binaries:
 
-#. **Download and install Java 8**
+#. **Download and install Java 11**
 
-   Download and install Java JDK 1.8 (either `Oracle <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_  or `OpenJDK <http://openjdk.java.net/>`_).
+   Download and install Java JDK 11 (either `Oracle <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_  or `OpenJDK <http://openjdk.java.net/>`_).
 
    Make sure that you have a ``JAVA_HOME`` environment variable that points to the root of the JDK install directory.  See :ref:`here<verify-java-home-env-var>` for more information on the ``JAVA_HOME`` environment variable
 
-   Here's an example of installing Java JDK 1.8 using ``apt`` then setup ``JAVA_HOME``
+   Here's an example of installing Java JDK 11 using ``apt`` then setup ``JAVA_HOME``
 
    .. code-block:: bash
-      :caption: *Install Java JDK 1.8 and setup JAVA_HOME*
+      :caption: *Install Java JDK 11 and setup JAVA_HOME*
 
-      sudo apt install openjdk-8-jdk
-      export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+      sudo apt install openjdk-11-jdk
+      export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
       export PATH=$PATH:$JAVA_HOME/bin
 
    |
