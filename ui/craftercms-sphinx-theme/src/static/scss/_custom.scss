@@ -368,3 +368,10 @@ div[class^="highlight-"] {
     margin-bottom: 10px;
   }
 }
+
+.code-inline, code {
+  background-color: rgb(175 184 193 / 40%);
+  color: rgb(40 45 50);
+  border-radius: 10px;
+  border: none;
+}

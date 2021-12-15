@@ -10,7 +10,7 @@ Deployer System Administration Guide
 How to Start/Stop the Deployer
 ------------------------------
 
-If you're using the Crafter CMS bundle, starting and stopping the Deployer is very easy. From the command line, navigate to the
+If you're using Crafter CMS installed on a server, starting and stopping the Deployer is very easy. From the command line, navigate to the
 {env-directory}, authoring or delivery environment folder, and then inside the ``bin`` folder, run ``./crafter.sh start_deployer`` to start
 the Deployer or ``./crafter.sh stop_deployer`` to stop the Deployer.
 
@@ -49,7 +49,7 @@ Target Configuration
 
 Each deployment target has it's own YAML configuration file, where the properties of the target and it's entire deployment pipeline is specified.
 Without this file the Deployer doesn't know of the existence of the target. By default these configuration files reside under
-``./config/targets`` (in the case of the Crafter CMS bundles, they're under ``CRAFTER_HOME/data/deployer/targets``).
+``./config/targets`` (in the case of the Crafter CMS installed on a server, they're under ``CRAFTER_HOME/data/deployer/targets``).
 
 Target configurations vary a lot between authoring and delivery, since an authoring target works on a local repository while a delivery target
 pulls the files from a remote repository. But target configurations between the same environment don't change a lot. Having said that, the
@@ -137,8 +137,7 @@ The Deployer out of the box provides the following processor beans:
   deployment. Must be the first processor in the list, since the rest of the processors all work on the local repository.
 
 * **gitDiffProcessor:** Calculates the diff between the latest commit in the local repository and the last commit processed,
-  which is usually stored under ``./processed-commits`` (in the bundle the folder is in
-  ``CRAFTER_HOME/data/deployer/processed-commits``). This diff is then used to build the change set of the deployment, so
+  which is usually stored under ``./processed-commits`` (in the folder ``CRAFTER_HOME/data/deployer/processed-commits``). This diff is then used to build the change set of the deployment, so
   this processor should be the second one in the list.
 
 * **searchIndexingProcessor:** grabs the files from the change set and sends them to Crafter Search for indexing. It
