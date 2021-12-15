@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _release-notes:
+.. _newIa-release-notes:
 
 =============
 Release Notes
