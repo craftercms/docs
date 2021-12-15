@@ -315,8 +315,8 @@ This example file contains the properties used by Crafter Engine:
     <!-- Social properties -->
     <socialConnections>
       <facebookConnectionFactory>
-        <appId>${enc:Nk4ZJWGGNIf9tt0X8BudixQhHekkBbG1AJE6myeqxp8=}</appId>
-        <appSecret>${enc:JOqVSAHHPYmIO8dC5VCz4KDBbKK466zKeAEowuDRqDammJ+07XmRbB+2ob5T8mg6gAEjDs5WxMuMiMPaDr4wOg==}</appSecret>
+        <appId>${enc:YOUR_ENCRYPTED_APP_ID}</appId>
+        <appSecret>${enc:YOUR_ENCRYPTED_APP_SECRET}</appSecret>
       </facebookConnectionFactory>
     </socialConnections>
 

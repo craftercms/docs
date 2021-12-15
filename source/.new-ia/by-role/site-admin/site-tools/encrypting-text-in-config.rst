@@ -77,8 +77,8 @@ Let's take a look at an example of encrypting the ``accessKey`` and ``securityKe
          <profile>
            <id>s3-default</id>
              <credentials>
-             <accessKey>AKIAIOSFODNN7EXAMPLE</accessKey>
-             <secretKey>wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</secretKey>
+             <accessKey>YOUR_ACCESS_KEY</accessKey>
+             <secretKey>YOUR_SECRET_KEY</secretKey>
            </credentials>
            <region>us-west-1</region>
            <bucketName>sample-input-bucket</bucketName>
@@ -92,8 +92,8 @@ Let's take a look at an example of encrypting the ``accessKey`` and ``securityKe
   .. code-block:: xml
      :caption: *{REPOSITORY_ROOT}/sites/SITENAME/config/studio/aws/aws.xml*
 
-     <accessKey encrypted="">AKIAIOSFODNN7EXAMPLE</accessKey>
-     <secretKey encrypted="">wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY</secretKey>
+     <accessKey encrypted="">YOUR_ACCESS_KEY</accessKey>
+     <secretKey encrypted="">YOUR_SECRET_KEY</secretKey>
 
   |
 
@@ -108,8 +108,8 @@ Let's take a look at an example of encrypting the ``accessKey`` and ``securityKe
   .. code-block:: xml
      :caption: *{REPOSITORY_ROOT}/sites/SITENAME/config/studio/aws/aws.xml*
 
-     <accessKey encrypted="true">${enc:OrV8g2KT7nb/oFnq4akNKWAfywS7vGwn1t+Gz/xOitx5BwCzJUvgoQeNRCbUw/uQ}</accessKey>
-     <secretKey encrypted="true">${enc:CKZgTvxVyxUyJ0H2DncLWF9N3x2o+dl5s/iEWYyj0blbNFxyqzGNU6TZy8B96FK55s2SOnSlvyvbfgblZqebYg==}</secretKey>
+     <accessKey encrypted="true">${enc:YOUR_ENCRYPTED_ACCESS_KEY}</accessKey>
+     <secretKey encrypted="true">${enc:YOUR_ENCRYPTED_SECRET_KEY}</secretKey>
 
   |
 

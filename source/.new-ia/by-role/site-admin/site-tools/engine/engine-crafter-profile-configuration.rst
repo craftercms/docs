@@ -42,7 +42,7 @@ next steps to create one:
 
           <profile>
               <api>
-                  <accessTokenId>6604d59a-fe1b-4cb3-a76f-bdb1eb61e8c2</accessTokenId>
+                  <accessTokenId>YOUR_ACCESS_TOKEN_ID</accessTokenId>
               </api>
           </profile>
 
@@ -52,7 +52,7 @@ next steps to create one:
         .. code-block:: properties
           :linenos:
 
-          crafter.profile.rest.client.accessToken.id=6604d59a-fe1b-4cb3-a76f-bdb1eb61e8c2
+          crafter.profile.rest.client.accessToken.id=YOUR_ACCESS_TOKEN_ID
 
 ------------------
 Add Authentication
@@ -240,7 +240,7 @@ Add Facebook Login
       <socialConnections>
           <facebookConnectionFactory>
               <appId>000000000000000</appId>
-              <appSecret>c852cb30cda311e488300800200c9a66</appSecret>
+              <appSecret>YOUR_APP_SECRET</appSecret>
           </facebookConnectionFactory>
       </socialConnections>
 
