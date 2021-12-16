@@ -1,0 +1,83 @@
+.. index:: Crafter CMS 4.0.0 rc1 Release Notes
+
+---------------------
+Crafter CMS 4.0.0 rc1
+---------------------
+
+Crafter CMS 4.0 rc1 requires Java 11
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+
+* New Studio UI |br|
+
+  - New React-based UI |br|
+  - New configuration mechanics of the UI that allow plugins to wire to almost every aspect of the experience. This opens the door for having different authoring experiences per site. |br|
+  - New In-Context Editing system, Experience Builder (XB): |br|
+
+    - Edit content in-place |br|
+    - Drag and drop components, assets to add/remove or rearrange your site (supports sites built with FreeMarker, React and can easily be extended to support Vue, Angular and other UI frameworks) |br|
+    - See :ref:`experience-builder` for more information |br|
+
+* Plugins! |br|
+
+  - New plugin system allowing developers to build plugins for a site (headless/templated) that provide:
+
+    - Authoring side extensions allowing content authors new tools to build the desired experience. This includes extending Crafter Studio’s functionality with server-side code, UI widgets, third-party integration, pre-baked content model items and more. Learn all about it :ref:`here <studio-plugins>`
+    - Delivery-side extensions that provide end-user widgets, server-side code, integration with third-party providers and more. Learn about it :ref:`here <create-a-site-plugin>`
+    - Host plugins are still supported, see :ref:`here <plugin-host-page-examples>`
+    - Plugins are starting to appear on the marketplace `here <https://marketplace.craftercms.org>`__
+    - Read the guide to building your own plugins  :ref:`here <how-do-i-make-my-own-site-plugin>`
+
+* Switched Crafter Studio’s authentication system to JWT |br|
+
+  - It’s now much easier to automate work with Crafter Studio APIs by issuing secure tokens for your automation jobs, see :ref:`working-with-crafter-studios-api` |br|
+  - Remember to replace default values for all the variables used to control the access tokens (JWT) used for Studio’s API.  See :ref:`here <securing-your-crafter-cms-install>` for more information on default values used for JWT |br|
+
+* Site Policy
+
+  Added a site-wide policy configuration that lets site administrators control:
+
+  - File name patterns (permissioning and automatic renaming of files)
+  - File mime-type
+  - File size
+
+  See :ref:`here <site-policy-configuration>` for more information on the Site Policy configuration
+
+* New Crafter CLI |br|
+
+  The Crafter CMS Command Line Interface (CLI), allows you to authenticate with Crafter CMS and exercise its APIs from a terminal or automation tools. |br|
+  See :ref:`here <devcontentops-toolkit>` for more information on the Crafter CLI
+
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Upgraded Elasticsearch version to 7.15.1
+
+* Added support for deleting content types |br|
+  See `here <https://github.com/craftercms/craftercms/issues/1631>`__ for more information
+
+* Added a user warning when deleting a dependency that is in use |br|
+  See `here <https://github.com/craftercms/craftercms/issues/2604>`__ for more information
+
+* Created a JS library for in-context editing (ICE) |br|
+  See https://npm.io/package/@craftercms/ice for more information
+
+* RTE improvements
+  Added support for pasting from MS Word to RTE
+
+
+Lot's of other small enhancements and bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 4.0.0 Milestone <https://github.com/craftercms/craftercms/milestone/45?closed=1>`_
+
+.. important::
+
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 4.0.0 rc1
+
+    For Linux installs, the Studio upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+
