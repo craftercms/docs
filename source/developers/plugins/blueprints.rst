@@ -94,7 +94,7 @@ Here are some best practices to help you:
             </paths>
 
        * You can also use this to enforce single page blueprints by using ``<excludes> <pattern>^/.*</pattern> </excludes>`` in your page type's config.xml, effectively forbidding from creating a new page.
-    * Ensure your blueprint supports :ref:`in-context-editing`.
+    * Ensure your blueprint supports :ref:`experience-builder`.
     * For most sites, you'll have to override Studio's default navigation menu tags. You can do this by reading :ref:`templating-rendering-navigation`.
 
 Above all, blueprints should be usable and simple.

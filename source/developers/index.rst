@@ -32,6 +32,7 @@ In depth concepts and guides follow.
       search-elasticsearch
       cook-books/graphql/index
       plugins/index
+      in-context-editing
       targeting
       redirect
       testing
