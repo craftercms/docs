@@ -239,7 +239,7 @@ Add Facebook Login
 
       <socialConnections>
           <facebookConnectionFactory>
-              <appId>000000000000000</appId>
+              <appId>YOUR_APP_ID</appId>
               <appSecret>YOUR_APP_SECRET</appSecret>
           </facebookConnectionFactory>
       </socialConnections>
