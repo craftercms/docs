@@ -249,9 +249,9 @@ Here's the Section Defaults under **articles**
 As we can see from above, the left-rail component used for the Section Defaults under **Home** is different compared to the left-rail component used for the Section Defaults under **articles**.
 If a new article page is created under ``articles/2019/10/27``, it will inherit the Section Defaults under **articles**.
 
----------------------------------------------------
-Create your own level descriptor
----------------------------------------------------
+--------------------------------
+Create Your Own Level Descriptor
+--------------------------------
 
 Let’s take a look at how to add another level descriptor to the Website Editorial blueprint.
 
