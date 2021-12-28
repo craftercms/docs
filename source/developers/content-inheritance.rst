@@ -249,6 +249,60 @@ Here's the Section Defaults under **articles**
 As we can see from above, the left-rail component used for the Section Defaults under **Home** is different compared to the left-rail component used for the Section Defaults under **articles**.
 If a new article page is created under ``articles/2019/10/27``, it will inherit the Section Defaults under **articles**.
 
+---------------------------------------------------
+Create your own level descriptor
+---------------------------------------------------
+
+Let’s take a look at how to add another level descriptor to the Website Editorial blueprint.
+
+Create a new content type with name such as ``custom-level-descriptor``:
+
+.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_content_type.png
+    :width: 50%
+    :alt: Content Inheritance - New level descriptor content type
+    :align: center
+
+Add ``file-name`` with default value ``crafter-level-descriptor.level`` and check ``Readonly`` option. You can also add more fields to the content type as needed. In this example, a *Custom Headline* text is added.
+
+.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_form.png
+    :width: 100%
+    :alt: Content Inheritance - New level descriptor content type form
+    :align: center
+
+Go to **Site Dashboard**, create a new folder ``article2`` under ``Home``, then copy some articles to this new location:
+
+.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_create_folder.png
+    :width: 30%
+    :alt: Content Inheritance - New level descriptor create folder
+    :align: center
+
+Create a new content with type ``/component/custom-level-descriptor`` under ``article2``:
+
+.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_content.png
+    :width: 100%
+    :alt: Content Inheritance - New level descriptor create folder
+    :align: center
+
+Update ``article.tlf`` template to include a new variable:
+
+.. code-block:: ftl
+    :linenos:
+
+    <#if contentModel.customHeadline_s??>
+        <h1>${contentModel.customHeadline_s}</h1>
+    </#if>
+
+.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_update_template.png
+    :width: 100%
+    :alt: Content Inheritance - New level descriptor update template
+    :align: center
+
+Click to preview article from ``article2`` folder, confirm that new variable from the level descriptor has been included:
+
+.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_preview.png
+    :width: 100%
+    :alt: Content Inheritance - New level descriptor preview
+    :align: center
 
 .. .. TODO:: Describe how to add your own merge strategy. Describe merge cues.
 
