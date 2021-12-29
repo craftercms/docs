@@ -25,41 +25,43 @@ Assume we have two objects, one called Parent and one called Child and they're s
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<component>
-        	<content-type>/component/level-descriptor</content-type>
-		<display-template/>
-        	<merge-strategy>inherit-levels</merge-strategy>
-        	<objectGroupId>4123</objectGroupId>
-        	<objectId>41d1c0c5-bfc9-8fe8-2461-dc57a82b6cab</objectId>
-        	<file-name>crafter-level-descriptor.level.xml</file-name>
-        	<folder-name/>
-        	<cssGroup>
-			<item>
-				<key>/static-assets/css/main.css</key>
-        			<value>/static-assets/css/main.css</value>
-        			<fileType_s>css</fileType_s>
-        		</item>
-		</cssGroup>
-        	<jsGroup/>
-        	<createdDate>2/7/2016 19:40:03</createdDate>
-        	<lastModifiedDate>10/8/2016 19:58:30</lastModifiedDate>
-        	<defaultHeader>
-			<item>
-				<key>/site/components/components/header/default-header.xml</key>
-        			<value>Default Header</value>
-        			<include>/site/components/components/header/default-header.xml</include>
-        			<disableFlattening>false</disableFlattening>
-        		</item>
-		</defaultHeader>
-        	<defaultFooter>
-			<item>
-				<key>/site/components/components/footer/default-footer.xml</key>
-        			<value>Default Footer</value>
-        			<include>/site/components/components/footer/default-footer.xml</include>
-        			<disableFlattening>false</disableFlattening>
-        		</item>
-		</defaultFooter>
-        	<lastModifiedDate_dt>10/8/2016 19:58:30</lastModifiedDate_dt>
+      <content-type>/component/level-descriptor</content-type>
+      <display-template/>
+      <merge-strategy>inherit-levels</merge-strategy>
+      <objectGroupId>4123</objectGroupId>
+      <objectId>41d1c0c5-bfc9-8fe8-2461-dc57a82b6cab</objectId>
+      <file-name>crafter-level-descriptor.level.xml</file-name>
+      <folder-name/>
+      <cssGroup>
+        <item>
+          <key>/static-assets/css/main.css</key>
+          <value>/static-assets/css/main.css</value>
+          <fileType_s>css</fileType_s>
+        </item>
+      </cssGroup>
+      <jsGroup/>
+      <createdDate>2/7/2016 19:40:03</createdDate>
+      <lastModifiedDate>10/8/2016 19:58:30</lastModifiedDate>
+      <defaultHeader>
+        <item>
+          <key>/site/components/components/header/default-header.xml</key>
+          <value>Default Header</value>
+          <include>/site/components/components/header/default-header.xml</include>
+          <disableFlattening>false</disableFlattening>
+        </item>
+      </defaultHeader>
+      <defaultFooter>
+        <item>
+          <key>/site/components/components/footer/default-footer.xml</key>
+          <value>Default Footer</value>
+          <include>/site/components/components/footer/default-footer.xml</include>
+          <disableFlattening>false</disableFlattening>
+        </item>
+      </defaultFooter>
+      <lastModifiedDate_dt>10/8/2016 19:58:30</lastModifiedDate_dt>
 	</component>
+
+|
 
 **Child**: Below is the XML file of a page residing under the above **level descriptor** and is setup to inherit from it. You'll note the definition of the ``merge-strategy`` as ``inherit-levels``, this invokes the level-based inheritance mechanics that require Crafter CMS to look at current and higher levels for files named ``crafter-level-descriptor.level.xml`` (this is configurable). You'll also note that this page doesn't specify the CSS file/group of files to include, nor will it need to specify the header nor footer components.
 
@@ -68,31 +70,33 @@ Assume we have two objects, one called Parent and one called Child and they're s
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<page>
-	        <content-type>/page/one-col-parallax</content-type>
-		<display-template>/templates/web/pages/one-col-parallax.ftl</display-template>
-	        <merge-strategy>inherit-levels</merge-strategy>
-	        <objectGroupId>9cef</objectGroupId>
-	        <objectId>001f0955-6da3-8b7a-4e6b-6b373139d0ba</objectId>
-	        <file-name>index.xml</file-name>
-	        <folder-name>child-page</folder-name>
-	        <internal-name>Child</internal-name>
-	        <navLabel>CHILD</navLabel>
-	        <title>Child Page</title>
-	        <headerOverlap>no-overlap</headerOverlap>
-	        <placeInNav>true</placeInNav>
-	        <orderDefault_f>12000</orderDefault_f>
-	        <description>This is the Child page.</description>
-	        <disabled>false</disabled>
-	        <createdDate>7/31/2016 16:52:39</createdDate>
-	        <lastModifiedDate>8/1/2016 18:55:09</lastModifiedDate>
-		<body>
-			<h1>Hello World</h1>
-		</body>
-	</page>
+      <content-type>/page/one-col-parallax</content-type>
+      <display-template>/templates/web/pages/one-col-parallax.ftl</display-template>
+      <merge-strategy>inherit-levels</merge-strategy>
+      <objectGroupId>9cef</objectGroupId>
+      <objectId>001f0955-6da3-8b7a-4e6b-6b373139d0ba</objectId>
+      <file-name>index.xml</file-name>
+      <folder-name>child-page</folder-name>
+      <internal-name>Child</internal-name>
+      <navLabel>CHILD</navLabel>
+      <title>Child Page</title>
+      <headerOverlap>no-overlap</headerOverlap>
+      <placeInNav>true</placeInNav>
+      <orderDefault_f>12000</orderDefault_f>
+      <description>This is the Child page.</description>
+      <disabled>false</disabled>
+      <createdDate>7/31/2016 16:52:39</createdDate>
+      <lastModifiedDate>8/1/2016 18:55:09</lastModifiedDate>
+      <body>
+        <h1>Hello World</h1>
+      </body>
+    </page>
+
+|
 
 Crafter CMS will invoke the inheritance mechanics implemented in the merge strategy ``inherit-levels`` to merge the page and the **level descriptor** and the merge strategy will pull in the elements defined in the **level descriptor** into the child page before handing the new model (XML) to the rendering system. This means that when the page renders, the model will automatically contain the meta-data defined in the parent **level descriptor**. In our example above, the page will automatically inherit the meta-data fields ``cssGroup``, ``defaultHeader``, and ``defaultFooter``.
 
-.. note:: When an element is defined by the **level descriptor** and then subsequently defined by a child, the child's definition overrides the **level descriptor**.
+  .. note:: When an element is defined by the **level descriptor** and then subsequently defined by a child, the child's definition overrides the **level descriptor**.
 
 This mechanism allows you to define meta-data that flows down the information architecture of the site such that an entire site can have defaults and those defaults can be overwritten by sections individual page. Some examples of real-life use of inheritance:
 
@@ -101,7 +105,9 @@ This mechanism allows you to define meta-data that flows down the information ar
 * Global headers and footers
 * Section meta-data (flows to all pages/subsections)
 
-.. note:: The ``inherit-levels`` mechanism allows you to set **level descriptors** at various levels of the information architecture with lower levels overriding upper levels.
+|
+
+  .. note:: The ``inherit-levels`` mechanism allows you to set **level descriptors** at various levels of the information architecture with lower levels overriding upper levels.
 
 What we discussed thus far is a single inheritance strategy implementation, ``inherit-levels``, the code to which is available here: `InheritLevelsMergeStrategy.java <https://github.com/craftercms/core/blob/master/src/main/java/org/craftercms/core/xml/mergers/impl/strategies/InheritLevelsMergeStrategy.java>`_. There are more inheritance strategies implemented out of the box with Crafter CMS and you can build your own to suit your needs.
 
@@ -173,6 +179,8 @@ The Website Editorial blueprint uses a ``Section Defaults`` component content ty
     :width: 75%
     :alt: Content Inheritance - Section Defaults Content Type
     :align: center
+
+|
 
 In the site tree below, we have two Section Defaults used, one residing under the **Home** folder (upper level in the site tree), and another residing under **articles** (lower level in the site tree in relation with the other Section Defaults defined).
 
@@ -262,6 +270,8 @@ Create a new content type with name such as ``custom-level-descriptor``:
     :alt: Content Inheritance - New level descriptor content type
     :align: center
 
+|
+
 Add ``file-name`` with default value ``crafter-level-descriptor.level`` and check ``Readonly`` option. You can also add more fields to the content type as needed. In this example, a *Custom Headline* text is added.
 
 .. image:: /_static/images/developer/content-inheritance/new_level_descriptor_form.png
@@ -269,41 +279,53 @@ Add ``file-name`` with default value ``crafter-level-descriptor.level`` and chec
     :alt: Content Inheritance - New level descriptor content type form
     :align: center
 
-Go to **Site Dashboard**, create a new folder ``article2`` under ``Home``, then copy some articles to this new location:
+|
+
+Go to the **Sidebar** site tree, create a new folder ``articles2`` under ``Home``, then copy some articles to this new location:
 
 .. image:: /_static/images/developer/content-inheritance/new_level_descriptor_create_folder.png
     :width: 30%
     :alt: Content Inheritance - New level descriptor create folder
     :align: center
 
-Create a new content with type ``/component/custom-level-descriptor`` under ``article2``:
+|
+
+Create a new content with type ``/component/custom-level-descriptor`` under ``articles2``:
 
 .. image:: /_static/images/developer/content-inheritance/new_level_descriptor_content.png
     :width: 100%
     :alt: Content Inheritance - New level descriptor create folder
     :align: center
 
-Update ``article.tlf`` template to include a new variable:
+|
 
-.. code-block:: ftl
+Update ``article.ftl`` template to include a new variable:
+
+.. code-block:: text
     :linenos:
 
     <#if contentModel.customHeadline_s??>
         <h1>${contentModel.customHeadline_s}</h1>
     </#if>
 
+|
+
 .. image:: /_static/images/developer/content-inheritance/new_level_descriptor_update_template.png
     :width: 100%
     :alt: Content Inheritance - New level descriptor update template
     :align: center
 
-Click to preview article from ``article2`` folder, confirm that new variable from the level descriptor has been included:
+|
+
+Click to preview article from ``articles2`` folder, confirm that new variable from the level descriptor has been included:
 
 .. image:: /_static/images/developer/content-inheritance/new_level_descriptor_preview.png
     :width: 100%
     :alt: Content Inheritance - New level descriptor preview
     :align: center
 
-.. TODO:: Describe how to add your own merge strategy. Describe merge cues.make html
+|
+
+.. .. TODO:: Describe how to add your own merge strategy. Describe merge cues.make html
 
 
