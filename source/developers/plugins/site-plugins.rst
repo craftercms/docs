@@ -186,9 +186,9 @@ Place the template/s in the following location in your plugin:
 |
 
 The Google Analytics plugin for Crafter CMS available from the `marketplace <https://marketplace.craftercms.org>`__
-uses a Freemarker template (*google--analytics-plugin/delivery/templates/head.ftl*) to add markup in the HTML <head> element.
+uses a Freemarker template (*google-analytics-plugin/delivery/templates/plugins/org/craftercms/plugin/google/analytics/head.ftl*) to add markup in the HTML <head> element.
 
-See https://github.com/craftercms/google-analytics-plugin/blob/master/delivery/templates/head.ftl for an example on what can be in included in the template.
+See https://github.com/craftercms/google-analytics-plugin/blob/master/delivery/templates/plugins/org/craftercms/plugin/google/analytics/head.ftl for an example on what can be in included in the template.
 
 
 
