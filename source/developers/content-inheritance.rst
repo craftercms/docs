@@ -40,8 +40,8 @@ Assume we have two objects, one called Parent and one called Child and they're s
         </item>
       </cssGroup>
       <jsGroup/>
-      <createdDate>2/7/2016 19:40:03</createdDate>
-      <lastModifiedDate>10/8/2016 19:58:30</lastModifiedDate>
+      <createdDate>2/7/2021 19:40:03</createdDate>
+      <lastModifiedDate>10/8/2021 19:58:30</lastModifiedDate>
       <defaultHeader>
         <item>
           <key>/site/components/components/header/default-header.xml</key>
@@ -58,7 +58,7 @@ Assume we have two objects, one called Parent and one called Child and they're s
           <disableFlattening>false</disableFlattening>
         </item>
       </defaultFooter>
-      <lastModifiedDate_dt>10/8/2016 19:58:30</lastModifiedDate_dt>
+      <lastModifiedDate_dt>10/8/2021 19:58:30</lastModifiedDate_dt>
 	</component>
 
 |
@@ -85,8 +85,8 @@ Assume we have two objects, one called Parent and one called Child and they're s
       <orderDefault_f>12000</orderDefault_f>
       <description>This is the Child page.</description>
       <disabled>false</disabled>
-      <createdDate>7/31/2016 16:52:39</createdDate>
-      <lastModifiedDate>8/1/2016 18:55:09</lastModifiedDate>
+      <createdDate>7/31/2021 16:52:39</createdDate>
+      <lastModifiedDate>8/1/2021 18:55:09</lastModifiedDate>
       <body>
         <h1>Hello World</h1>
       </body>
@@ -218,10 +218,10 @@ Here's the Section Defaults under **Home**
       <include>/site/components/headers/header.xml</include>
       <disableFlattening>false</disableFlattening>
       </item></header_o>
-      <createdDate>2017-3-13T20:26:50.000Z</createdDate>
-      <createdDate_dt>2017-3-13T20:26:50.000Z</createdDate_dt>
-      <lastModifiedDate>2017-5-18T15:38:58.000Z</lastModifiedDate>
-      <lastModifiedDate_dt>2017-5-18T15:38:58.000Z</lastModifiedDate_dt>
+      <createdDate>2021-3-13T20:26:50.000Z</createdDate>
+      <createdDate_dt>2021-3-13T20:26:50.000Z</createdDate_dt>
+      <lastModifiedDate>2021-5-18T15:38:58.000Z</lastModifiedDate>
+      <lastModifiedDate_dt>2021-5-18T15:38:58.000Z</lastModifiedDate_dt>
       <left-rail_o>	<item>	<key>/site/components/left-rails/left-rail-with-no-articles.xml</key>
       <value>Left Rail with No Articles</value>
       <include>/site/components/left-rails/left-rail-with-no-articles.xml</include>
@@ -251,10 +251,10 @@ Here's the Section Defaults under **articles**
       <include>/site/components/left-rails/left-rail-with-related-articles.xml</include>
       <disableFlattening>false</disableFlattening>
       </item></left-rail_o>
-      <createdDate>2017-3-17T18:56:59.000Z</createdDate>
-      <createdDate_dt>2017-3-17T18:56:59.000Z</createdDate_dt>
-      <lastModifiedDate>2017-5-18T15:38:1.000Z</lastModifiedDate>
-      <lastModifiedDate_dt>2017-5-18T15:38:1.000Z</lastModifiedDate_dt>
+      <createdDate>2021-3-17T18:56:59.000Z</createdDate>
+      <createdDate_dt>2021-3-17T18:56:59.000Z</createdDate_dt>
+      <lastModifiedDate>2021-5-18T15:38:1.000Z</lastModifiedDate>
+      <lastModifiedDate_dt>2021-5-18T15:38:1.000Z</lastModifiedDate_dt>
     </component>
 
 |
@@ -312,6 +312,8 @@ Update ``article.ftl`` template to include a new variable:
     <#if contentModel.customHeadline_s??>
         <h1>${contentModel.customHeadline_s}</h1>
     </#if>
+
+|
 
 .. image:: /_static/images/developer/content-inheritance/new_level_descriptor_update_template.jpg
     :width: 100%
