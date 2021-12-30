@@ -61,6 +61,16 @@ Install a plugin using the Studio ``Plugin Management`` Site Tool
    |
    |
 
+#. Or, you can also open |siteConfig| by clicking on the ``Navigation Menu`` at the top right of the screen then click on |siteConfig|
+
+   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-open-site-tools.jpg
+      :align: center
+      :alt: Crafter Studio Open Site Tools
+      :width: 80%
+
+   |
+   |
+
 #. Open ``Plugin Management``
 
    .. figure:: /_static/images/developer/plugins/site-plugins/plugins-management.jpg
@@ -83,7 +93,7 @@ Install a plugin using the Studio ``Plugin Management`` Site Tool
 
 #. Install the desired plugins by clicking on the ``Install`` button
 
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-install.png
+   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-install.jpg
       :align: center
       :alt: Crafter Studio Install Plugins
       :width: 80%
@@ -91,11 +101,11 @@ Install a plugin using the Studio ``Plugin Management`` Site Tool
    |
    |
 
-   A snack bar informing the user of the plugin installation status (success/failure/etc.) will appear on the top right
+   A notification informing the user of the plugin installation status (success/failure/etc.) will appear on the bottom left of the screen
 
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-snackbar.png
+   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-snackbar.jpg
       :align: center
-      :width: 40%
+      :width: 80%
       :alt: Crafter Studio Install Plugins Successful
 
    |
@@ -113,7 +123,10 @@ For more information on the API, see :studio_swagger_url:`#/marketplace/installP
 Managing Installed Plugins
 --------------------------
 
-To view the installed plugins in your site, open the ``Sidebar``.  Click on ``Site Tools``, then ``Plugin Management``.
+^^^^^^^^^^^^^^^^^^^^^^
+View Installed Plugins
+^^^^^^^^^^^^^^^^^^^^^^
+To view the installed plugins in your site, click on the ``Navigation Menu`` at the top right then click on |siteConfig| then finally click on ``Plugin Management``.
 
 .. figure:: /_static/images/developer/plugins/site-plugins/plugins-installed.jpg
    :align: center
@@ -121,3 +134,36 @@ To view the installed plugins in your site, open the ``Sidebar``.  Click on ``Si
    :width: 80%
 
 |
+
+^^^^^^^^^^^^^^^^^
+Uninstall Plugins
+^^^^^^^^^^^^^^^^^
+
+To uninstall plugins in your site, open the ``Plugin Management`` dialog.  Click on the trash can icon next to the plugin you want to uninstall.  A dialog will open to confirm the plugin to be uninstalled and a list of where the plugin is being used if applicable
+
+.. figure:: /_static/images/developer/plugins/site-plugins/plugin-uninstall-no-deps.png
+   :align: center
+   :alt: Crafter Studio Uninstall Plugin Dialog No Dependencies
+   :width: 80%
+
+|
+
+.. figure:: /_static/images/developer/plugins/site-plugins/plugins-uninstall.jpg
+   :align: center
+   :alt: Crafter Studio Uninstall Plugin Dialog with Dependencies
+   :width: 80%
+
+|
+
+For plugins with dependencies like the above, take note of the items in the list in the uninstall dialog.  These dependencies will need to be removed by the user before or after uninstalling the plugin.
+
+After clicking on the ``Uninstall`` button, a notification will appear at the bottom left of the screen informing the user of the plugin uninstall status (success/failure/etc.).
+
+.. figure:: /_static/images/developer/plugins/site-plugins/plugins-snackbar-uninstalled.jpg
+   :align: center
+   :alt: Crafter Studio Uninstall Plugin Dialog No Dependencies
+   :width: 80%
+
+|
+
+Remember to clean up (remove) references to the uninstalled plugin in your site if not already done, after the plugin is successfully uninstalled.
