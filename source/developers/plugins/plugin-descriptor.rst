@@ -132,7 +132,7 @@ to your ``craftercms-plugin.yaml`` descriptor file
 where:
 
 - ``installation.type`` is the type of site plugin for auto-wiring in Studio.
-  Available values are **form-control**, **form-datasource** and **preview-app**
+  Available values are **form-control**, **form-datasource**, **preview-app**, **site-filter** and **site-context**
 - ``installation.parentXpath`` is an XPath selector for the element where the plugin will be added,
   required when installation-type is *preview-app*
 - ``installation.testXpath`` is an XPath selector to check if the plugin is already present in the configuration
@@ -217,6 +217,53 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
                children:
                  - name: class
                    value: fa-pencil-square-o
+
+|
+
+Below is a sample for a site filter.
+
+.. code-block:: yaml
+   :caption: *Example installation for a site-filter*
+   :linenos:
+
+   installation:
+     - type: site-filter
+       elementXpath: //filter/script[text()='/scripts/filters/plugins/org/craftercms/plugin/filter/myFilter.groovy']
+       element:
+         name: filter
+         children:
+           - name: script
+             value: '/scripts/filters/plugins/org/craftercms/plugin/filter/myFilter.groovy'
+           - name: mapping
+             children:
+               - name: include
+                 value: '/**'
+
+|
+
+Below is a sample for the site context.
+
+.. code-block:: yaml
+   :caption: *Example installation for the site-context*
+   :linenos:
+
+   installation:
+     - type: site-context
+       elementXpath: //bean[@id='myBean']
+       element:
+         name: bean
+         attributes:
+           - name: id
+             value: myBean
+           - name: class
+             value: plugins.org.craftercms.plugin/context/MyClass
+         children:
+           - name: property
+             attributes:
+               - name: name
+                 value: siteItemService
+               - name: ref
+                 value: crafter.siteItemService
 
 |
 
