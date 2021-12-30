@@ -19,5 +19,7 @@ Here are the topics discussed in this section:
    :titlesonly:
 
    /developers/projects/engine/api/templating-api
-   experience-builder
 
+
+
+For more information on enabling in-context editing (ICE) in Freemarker applications, see the :ref:`Freemarker <xb-freemarker>` section in :ref:`experience-builder`
