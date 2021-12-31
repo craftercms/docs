@@ -19,6 +19,8 @@ Blueprints are Crafter CMS project templates.  It provides an initial set of sty
    :width: 65 %
    :align: center
 
+|
+
 The blueprint that comes out of the box with Crafter CMS, ``Website Editorial Blueprint``, provides us with an initial structure for our site, along with the site navigation, content inheritance, taxonomies for organizing the content such as categories and segments, which is also used for targeting content, static assets such as the initial images and fonts used for the site and configuration files for managing things like the segments for targeting, the permissions for all the items in the site, the role mappings, the RTE configuration, etc.  To see more of the ``Website Editorial Blueprint``, please see :ref:`your_first_website` where we create a site based on the ``Website Editorial Blueprint``.
 
 As mentioned earlier, blueprints allows us to generate sites with predefined layouts, contents and configuration.  Blueprints could be a site theme or an API only site.  New blueprints can be created from a site and added into Crafter CMS allowing the creation of more sites based on the new blueprint.  In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from Crafter CMS and an existing site is used to create a new blueprint.
@@ -43,21 +45,27 @@ If you have an existing pure HTML template (and if you don't, you can find free 
 	        :alt: Cook Books - Template Anatomy
 	        :align: center
 
+|
+
 Generally, pure HTML templates have a file structure similar to the picture above. To start, you'll want to copy all files except for ``index.html`` and any other ``.html`` files to your site's ``static-assets`` like this:
 
 .. image:: /_static/images/blueprint/blueprint-template-static-assets.png
-	        :width: 65%
+	        :width: 45%
 	        :alt: Copy folders to static-assets
 	        :align: center
 
+|
+
 HTML files will become Freemarker templates. For this cookbook, you'll see how to adapt an index.html page, then you'll be able to adapt other pages. Start by editing the main page's ftl template, and replacing its contents with the ``index.html``'s contents:
 
-.. image:: /_static/images/blueprint/blueprint-edit-freemarker.png
-	        :width: 65%
+.. image:: /_static/images/blueprint/blueprint-edit-freemarker.jpg
+	        :width: 45%
 	        :alt: Copy index.html contents to page ftl file.
 	        :align: center
 
-You should keep ``<#import "/templates/system/common/cstudio-support.ftl" as studio />`` at the very start, and add ``<@studio.toolSupport/>`` right before the ``body`` tag closes to have proper Studio support. Next, all resource locations are probably pointing to the wrong location. To fix this, replace every relative url that doesn't point to a page (this would include ``<link rel="stylesheet" href="`` tags for CSS files, ``<script src="`` for JS files, ``<img src="`` for image files, and ``<source src="`` for video and sound files) such that it starts with ``/static-assets/`` and points to the corresponding file.
+|
+
+You should keep ``<#import "/templates/system/common/crafter.ftl" as crafter />`` at the very start to have proper Studio support. Next, all resource locations are probably pointing to the wrong location. To fix this, replace every relative url that doesn't point to a page (this would include ``<link rel="stylesheet" href="`` tags for CSS files, ``<script src="`` for JS files, ``<img src="`` for image files, and ``<source src="`` for video and sound files) such that it starts with ``/static-assets/`` and points to the corresponding file.
 
 Modify the Rich Text Editor configuration so it uses your template's stylesheets. See :ref:`rte-configuration`
 
@@ -94,8 +102,7 @@ Here are some best practices to help you:
             </paths>
 
        * You can also use this to enforce single page blueprints by using ``<excludes> <pattern>^/.*</pattern> </excludes>`` in your page type's config.xml, effectively forbidding from creating a new page.
-    * Ensure your blueprint supports :ref:`in-context-editing`.
-    * For most sites, you'll have to override Studio's default navigation menu tags. You can do this by reading :ref:`templating-rendering-navigation`.
+    * Ensure your blueprint supports :ref:`experience-builder`.
 
 Above all, blueprints should be usable and simple.
 
@@ -122,6 +129,8 @@ Your site exists in ``{CRAFTER_HOME}/data/repos/sites/your-site-name``. Inside, 
 	        :width: 100%
 	        :alt: Copy ``scripts/``, ``site/``, ``static-assets/``, ``templates/``
 	        :align: center
+
+|
 
 In the previous screenshot, we didn't copy the ``config/`` folder. Why? (:ref:`Warnings <blueprint-site-vs-blueprint>`). You can either:
 
