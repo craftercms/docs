@@ -110,6 +110,8 @@ carousel class.
      </div>
    </div>
 
+.. _xb-freemarker:
+
 ^^^^^^^^^^
 FreeMarker
 ^^^^^^^^^^
