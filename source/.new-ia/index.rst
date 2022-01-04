@@ -30,7 +30,7 @@ Crafter CMS is a modern content management platform for building digital experie
 
 Crafter is a dynamic CMS based on Git and supports DevOps processes for code and content. It is also a hybrid-headless, API-first (GraphQL, REST, in-process) CMS, and that allows developers to use their favorite UI frameworks and tools.
 
-Crafter CMS differentiates itself from existing CMSs with its architecture: microservices-based, serverless, elastic and planet-wide scalability. To learn more, see the :ref:`architecture`.
+Crafter CMS differentiates itself from existing CMSs with its architecture: microservices-based, serverless, elastic and planet-wide scalability. To learn more, see the :ref:`newIa-architecture`.
 
 #############################
 When/where to use Crafter CMS
@@ -127,4 +127,20 @@ What's Crafter CMS's licensing terms?
 * Crafter CMS, the open source project is licensed under the GPLv3 Open Source license.
 * Customers who purchase Crafter Software's support subscription receive a commercial license that alleviates them from the terms of the open source license.
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   by-role/architect/index
+   by-role/author/index
+   by-role/developer/index
+   by-role/site-admin/index
+   by-role/system-admin/index
+   security/index
+   release-notes/index
+   contribute/index
+   roadmap/index
+   support/index
+   reference/index
+   getting-started/index
 

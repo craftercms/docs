@@ -1,19 +1,13 @@
 :is-up-to-date: True
 
-:orphan:
-
-.. document does not appear in any toctree, this file is referenced
-   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
-
-
 .. _newIa-running-craftercms-in-docker:
 
------------------------------------------
+=========================================
 Running Crafter CMS in a Docker Container
------------------------------------------
+=========================================
 
    .. note::
-      The preferred method of installing and running Crafter CMS is via the archive download or via the archive built by the Gradle environment builder.  See the :ref:`quick_start_guide` for more information on the preferred methods of installation.
+      The preferred method of installing and running Crafter CMS is via the archive download or via the archive built by the Gradle environment builder.  See the :ref:`newIa-installing-craftercms-on-wsl` for more information on the preferred methods of installation.
 
 To run Crafter CMS in a Docker container using Docker Compose, make sure the following are installed in your local system:
 
@@ -36,7 +30,7 @@ To run Crafter CMS in a Docker container using Docker Compose, make sure the fol
 
    |
 
-#. If you are a developer and want to use your local IDE and other tools, follow :ref:`this <configuring-crafter-on-docker-for-local-dev-tools>` documentation to configure your docker container to support access to your sites via local IDE.
+#. If you are a developer and want to use your local IDE and other tools, follow :ref:`this <newIa-configuring-crafter-on-docker-for-local-dev-tools>` documentation to configure your docker container to support access to your sites via local IDE.
 
 #. Go into the authoring folder, then start the container by running ``docker-compose up``
 
@@ -63,7 +57,7 @@ To run Crafter CMS in a Docker container using Docker Compose, make sure the fol
           tomcat_1         | 02-Jun-2020 14:26:47.448 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 54120 ms
 
 
-You may now follow the instructions listed in the guide :ref:`above:<installing-crafter-cms-from-archive-download>` starting from the step :ref:`Access Crafter Studio <accessing-crafter-studio>` to start using Crafter CMS.
+You may now follow the instructions listed in the guide for getting started with Crafter CMS starting from the step :ref:`Access Crafter Studio <accessing-crafter-studio>` to start using Crafter CMS.
 
 The console output when you start the container (as shown above) contains useful information that you can use to debug or monitor the status of Crafter CMS.  To view more of the logs, the Docker Desktop Dashboard provides a runtime view of all your containers and applications, including logs for monitoring/debugging Crafter CMS.  To access the Docker Desktop Dashboard, from the **Docker menu**, select **Dashboard**.
 
@@ -85,6 +79,12 @@ When the ``authoring`` application displayed above is selected, the application 
    :alt: Docker Desktop Dashboard
    :width: 80%
    :align: center
+
+
+.. toctree::
+   :maxdepth: 1
+
+   configure-crafter-on-docker-for-local-dev-tools
 
 For more information on Docker Desktop Dashboard, see https://docs.docker.com/desktop/dashboard/
 
