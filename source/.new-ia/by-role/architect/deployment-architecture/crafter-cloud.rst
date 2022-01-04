@@ -4,7 +4,9 @@
 Crafter Cloud
 =============
 
-Crafter Cloud provides you a fully-managed, enterprise  content management solution
-It is an elastically scalable, Crafter CMS based platform that's 100% hosted and managed by Crafter Software.  There's no need to manage any servers, networks or other infrastructure.
+Crafter Cloud provides a private SaaS offering of Crafter CMS. Crafter Cloud is:
+* Fully elastically scalable (based on Kubernetes)
+* High-availablity with disaster recovery
+* Fronted by a global CDN
 
-See https://craftersoftware.com/products/crafter-cloud/ for more information.
+See https://craftercms.com/products/crafter-cloud/ for more information.
