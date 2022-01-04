@@ -29,6 +29,7 @@ In depth concepts and guides follow.
       content-inheritance
       assets
       templates
+      experience-builder
       search-elasticsearch
       cook-books/graphql/index
       plugins/index
