@@ -55,7 +55,9 @@ New Features
 Updates
 ^^^^^^^
 
-* Upgraded Elasticsearch version to 7.15.1
+* Upgraded Elasticsearch version to 7.16.2
+
+* Upgraded Tomcat version to 9.0.53
 
 * Added support for deleting content types |br|
   See `here <https://github.com/craftercms/craftercms/issues/1631>`__ for more information
