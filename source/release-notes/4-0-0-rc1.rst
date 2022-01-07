@@ -24,8 +24,8 @@ New Features
 
   - New plugin system allowing developers to build plugins for a site (headless/templated) that provide:
 
-    - Authoring side extensions allowing content authors new tools to build the desired experience. This includes extending Crafter Studio’s functionality with server-side code, UI widgets, third-party integration, pre-baked content model items and more. Learn all about it :ref:`here <studio-plugins>`
-    - Delivery-side extensions that provide end-user widgets, server-side code, integration with third-party providers and more. Learn about it :ref:`here <create-a-site-plugin>`
+    - Authoring side extensions allowing content authors new tools to build the desired experience. This includes extending Crafter Studio’s functionality with server-side code, UI widgets, third-party integration, pre-baked content model items and more. Learn all about it :ref:`here <site-plugin>`
+    - Delivery-side extensions that provide end-user widgets, server-side code, integration with third-party providers and more. Learn about it :ref:`here <site-plugin>`
     - Host plugins are still supported, see :ref:`here <plugin-host-page-examples>`
     - Plugins are starting to appear on the marketplace `here <https://marketplace.craftercms.org>`__
     - Read the guide to building your own plugins  :ref:`here <how-do-i-make-my-own-site-plugin>`
