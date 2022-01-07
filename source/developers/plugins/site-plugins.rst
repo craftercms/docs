@@ -2,7 +2,7 @@
 
 .. index:: Create a Site Plugin, Plugin
 
-.. _create-a-site-plugin:
+.. _site-plugin:
 
 ============
 Site Plugins
