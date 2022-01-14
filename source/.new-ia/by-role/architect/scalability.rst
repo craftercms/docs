@@ -6,24 +6,48 @@ Scalability
 
 .. Horizontal and Geo
 
-Website scaling is a way to handle additional workloads by adjusting your infrastructure.  The increased workload could be anything from an influx of users to a large volume of simultaneous transactions or anything else that pushes the software beyond its designed capacity.
+Fundamental to scalability is:
+- Horizontal scalability
+- Minimizing bottlenecks
+- Maximizing concurrency
 
-With Crafter CMS, scalability is a fundamental part of the architecture. The software uses a Git-based repository, eliminating the bottlenecks a traditional database causes. It's also cloud-native and stateless, with a microservices architecture that makes scaling specific services with a platform like Kubernetes straightforward. It's also serverless, so components are completely decoupled from each other. The shared-nothing architecture means that everything can be scaled independently - up or down - so that you have a truly scalable and elastic CMS solution. With Crafter CMS, scaling your website performance is as simple as spinning up new instances - locally within a single region or globally across multiple regions.
+With CrafterCMS, scalability is a fundamental part of the architecture. CrafterCMS has a several core principals when
+it comes to content delivery:
+- Shared-nothing architecture
+- Stateless and Cloud Native
+- Minimal locking
+
+Let's elaborate the above.
+
+CrafterCMS delivery nodes share nothing. They don't share a database, a file system, memory, nor keep in sync with
+one another. They're completely independent. Therefore, these nodes can be added arbitrarily and can be in different
+datacenters and in different geographies regardless of the latency between the nodes since they don't communicate
+with one another.
+
+CrafterCMS delivery nodes are also stateless and cloud native. CrafterCMS delivery nodes run as a stateless set in
+Kubernetes and can pull content artifacts from remote storage for dynamic delivery.
+
+Finally, CrafterCMS delivery nodes try to avoid locks to maximize thread throughput. This makes the system scale both,
+vertically and horizontally very well.
 
 ------------
 Planet-scale
 ------------
 
-To support content authors and end-users across the globe, it's best to deploy Crafter CMS services close to the users. This guarantees fast, yet dynamic, responses to the users (CDNs are great, but they won't help you with dynamic or personalized responses).
+For global deployments where your users are spread across the planet, it's best to deploy CrafterCMS services
+close to the users where possible. This guarantees fast, yet dynamic, responses to the users (CDNs are great,
+but they won't help you with dynamic nor personalized responses).
 
-The authoring clusters are typically deployed closest to the content authors, whereas delivery clusters are spread across geographies where you have end-users. Delivery nodes can pull content from an arbitrary number of authoring nodes, and are typically deployed in geographies where your end-users are.
+Because CrafterCMS is made up of two main systems: authoring (content authors work here), delivery (content consumers
+consume from this tier), you can deploy different services in different regions depending on where the users are.
+
+The authoring clusters are typically deployed closest to the content authors, whereas delivery clusters are spread
+across geographies where you have end-users. Delivery nodes can pull content from an arbitrary number of authoring
+nodes, and are typically deployed in geographies where your end-users are.
 
 .. image:: /_static/images/architecture/global-delivery.jpg
     :width: 100%
-    :alt: Crafter CMS Geo Distributed Deployment
+    :alt: CrafterCMS Geo Distributed Deployment
     :align: center
 
 |
-
-Horizontal Scaling
-To scale horizontally, you provision new servers to run your software on - for example, with additional instances. With more instances of your software running, the workload can be distributed across them to process more of the workload at the same time.
