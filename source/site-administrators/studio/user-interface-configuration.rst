@@ -409,3 +409,73 @@ Here's how the above configuration looks like in the Experience Builder Panel in
 |
 
 See :ref:`targeting` for more information on configuring the targeting system of Crafter Studio to help provide Crafter Engine with fake user properties that help drive the targeting system, such as configuring targeting based on roles, etc. and :ref:`content_authors_targeting` for more information on how content authors use the audience targeting system configured.
+
+.. _rte-config-for-ice:
+
+****************************************
+RTE Configuration for In-context Editing
+****************************************
+
+To configure the RTE for in-context editing, add/edit the widget ``craftercms.components.TinyMCE``:
+
+.. code-block:: xml
+   :captioin: *Example RTE configuration for ICE*
+   :linenos:
+
+   <widget id="craftercms.components.TinyMCE">
+     <configuration>
+       <setups>
+         <setup id="generic">
+           <tinymceOptions>
+             <![CDATA[
+               {
+                 "menubar": true,
+                 "theme": "silver",
+                 "plugins": "print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount textpattern help acecode paste editform",
+                 "extended_valid_elements": "",
+                 "valid_children": "",
+                 "toolbar1": "formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat | editform",
+                 "toolbar2": "media",
+                 "code_editor_wrap": false,
+                 "toolbar_sticky": true,
+                 "image_advtab": true,
+                 "encoding": "xml",
+                 "relative_urls": false,
+                 "remove_script_host": false,
+                 "convert_urls": false,
+                 "remove_trailing_brs": false,
+                 "media_live_embeds": true,
+                 "autoresize_on_init": false,
+                 "autoresize_bottom_margin": 0,
+                 "menu": {
+                    "tools": { "title": "Tools", "items": "tinymcespellchecker code acecode wordcount" }
+                 },
+                 "automatic_uploads": true,
+                 "file_picker_types":  "image media file",
+                 "paste_data_images": true,
+                 "content_css": [],
+                 "content_style": "body {}",
+                 "contextmenu": false,
+                 "templates" : [
+                   {
+                     "title": "Test template 1",
+                     "content": "Test 1",
+                     "description": "Test1 Description "
+                   },
+                   {
+                     "title": "Test template 2",
+                     "content": "<div class='test'><h1>This is a title</h1><p>Look at this paragraph!</p></div>",
+                     "description": "Test 2 description"
+                    }
+                 ]
+               }
+            ]]>
+           </tinymceOptions>
+         </setup>
+       </setups>
+     </configuration>
+   </widget>
+
+|
+
+Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.  For more information on plugins/configuration descriptions and examples, see :ref:`rte-configuration`

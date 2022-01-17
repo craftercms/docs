@@ -28,13 +28,18 @@ What Out-of-the-Box Functionality Does Crafter Studio's RTE (TinyMCE 5) Support?
 
 Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.   You can find the documentation for these TinyMCE configurations and settings here: https://www.tiny.cloud/docs/
 
+There are two ways of editing content in Studio: (1) form-based editing and (2) In-context editing (ICE).  Form-based editing is done by clicking on ``Options`` (three dots next to the preview address bar at the top of the page, or the three dots next to the page in the Site Explorer tree), then selecting ``Edit``.  In-content editing is done by enabling the ``Edit mode`` by clicking on the pencil at the top right of the page (which turns green when enabled), then clicking on the section of the page you want to edit.
+
+This section details how to configure the RTE for form-based editing of content.  For more information on configuring the RTE for in-context editing (ICE), see :ref:`here <rte-config-for-ice>`
+
+
 ^^^^^^^^^^^^^^^
 TinyMCE plugins
 ^^^^^^^^^^^^^^^
 Crafter Studio uses standard TinyMCE plugins.  To see the list of TinyMCE plugins available in Studio, look for the ``<plugins />`` tag in the configuration:
 
 .. code-block:: xml
-   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-setup-tinymce5.xml*
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-config.xml*
 
    <plugins>
      print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template
@@ -60,7 +65,7 @@ Let's take a look at an example of using one of the TinyMCE plugins.
 
 The default editor instance contains a menubar with most of the commonly used editing tools.  Sometimes, you want handy buttons available so you don't have to find the tool you need from the menubar.  We'll add a media button to our editor instance to be able to embed a YouTube video:
 
-1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE Configuration*
 2. Add the button name **media** to one of the toolbarItem tags: ``<toolbarItems1>``.  An **Insert/Edit Embedded Media** button |rteMediaBtn| will now be available for users of the RTE.
 
    .. figure:: /_static/images/site-admin/rte/rte-media-button-added.jpg
@@ -93,6 +98,73 @@ The default editor instance contains a menubar with most of the commonly used ed
       :align: center
 
    |
+
+TinyMCE Plugin Template Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Let's take a look at another example of using the TinyMCE plugin, ``template``.
+
+The ``template`` plugin adds support for custom templates.  The default editor instance only adds the menu item ``Insert template...`` under the ``Insert`` menu.  On TinyMCE, it adds a menu item ``Insert template`` under the ``Insert`` menu and a toolbar button.
+
+To add a template to the RTE, simply add ``<template />`` under ``<setup />`` in the RTE configuration.
+Under ``<template />``, add ``title``, ``description`` and ``content``:
+
+.. code-block::xml
+
+   <config>
+     <setup>
+       ...
+
+       <template>
+         <title />
+         <description />
+         <content />
+       </template>
+     ...
+
+|
+
+Let us take a look at an example of adding two templates to the RTE configuration
+
+1. Open the RTE configuration file in your site by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE Configuration*
+
+2. Add in the following templates under ``<setup />``:
+
+   .. code-block:: xml
+      :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-config.xml*
+
+      <templates>
+        <template>
+          <title>Test template 1</title>
+          <content>Test 1</content>
+          <description>Test1 Description</description>
+        </template>
+        <template>
+          <title>Test template 2</title>
+          <content><![CDATA[
+            <div class="test">
+              <h1>This is a title</h1>
+              <p>Look at this paragraph!</p>
+            </div>
+            ]]>
+          </content>
+          <description>Test 2 description</description>
+        </template>
+      </templates>
+
+   |
+
+3. Save your changes.  The configured templates should now be available under ``Insert templates` of the ``Insert`` menu.
+
+   .. figure:: /_static/images/site-admin/rte/rte-template-plugin-example.png
+      :alt: RTE Setup - RTE template plugin example in action
+      :width: 65%
+      :align: center
+
+   |
+
+
+See https://www.tiny.cloud/docs/plugins/opensource/template/ for more information on the template plugin.
 
 .. _rte-add-allowable-elements:
 
