@@ -73,6 +73,80 @@ The default editor instance contains a menubar with most of the commonly used ed
 
 |
 
+TinyMCE Plugin Template Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Let's take a look at another example of using the TinyMCE plugin, ``template``.
+
+The ``template`` plugin adds support for custom templates.  The default editor instance only adds the menu item ``Insert template...`` under the ``Insert`` menu.  On TinyMCE, it adds a menu item ``Insert template`` under the ``Insert`` menu and a toolbar button.
+
+To add a template to the RTE, simply add ``<template />`` under ``<setup />`` in the RTE configuration.
+Under ``<template />``, add ``title``, ``description`` and ``content``:
+
+.. code-block::xml
+
+   <config>
+     <setup>
+       ...
+
+       <template>
+         <title />
+         <description />
+         <content />
+       </template>
+     ...
+
+|
+
+Let us take a look at an example of adding two templates to the RTE configuration
+
+1. Open the RTE configuration file in your site by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE Configuration*
+
+2. Add in the following templates under ``<setup />``:
+
+   .. code-block:: xml
+      :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-setup-tinymce5.xml*
+
+      <templates>
+        <template>
+          <title>Test template 1</title>
+          <content>Test 1</content>
+          <description>Test1 Description</description>
+        </template>
+        <template>
+          <title>Test template 2</title>
+          <content><![CDATA[
+            <div class="test">
+              <h1>This is a title</h1>
+              <p>Look at this paragraph!</p>
+            </div>
+            ]]>
+          </content>
+          <description>Test 2 description</description>
+        </template>
+      </templates>
+
+   |
+
+3. Save your changes.  The configured templates should now be available under ``Insert templates` of the ``Insert`` menu.
+
+   .. figure:: /_static/images/site-admin/rte/rte-insert-template.jpg
+      :alt: RTE Setup - RTE Insert menu
+      :width: 65%
+      :align: center
+
+   |
+
+   .. figure:: /_static/images/site-admin/rte/rte-template-plugin-example.png
+      :alt: RTE Setup - RTE template plugin example in action
+      :width: 65%
+      :align: center
+
+   |
+
+
+See https://www.tiny.cloud/docs/plugins/opensource/template/ for more information on the template plugin.
+
 .. _rte-add-allowable-elements:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
