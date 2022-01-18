@@ -4,13 +4,13 @@
 Crafter CMS 3.1.18
 ------------------
 
-^^^^^^^^^^^^
-New Features
-^^^^^^^^^^^^
+^^^^^^^^^^^
+New Feature
+^^^^^^^^^^^
 
 * Added support for querying more than one Elasticsearch index in a single query |br|
   See :ref:`here <search-elasticsearch-multi-index-query>` for more information on how
-  to preform a multi-index query
+  to perform a multi-index query
 
 ^^^^^^^
 Updates
