@@ -1,0 +1,68 @@
+.. index:: Crafter CMS 3.1.18 Release Notes
+
+------------------
+Crafter CMS 3.1.18
+------------------
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+
+* Added support for querying more than one Elasticsearch index in a single query |br|
+  See :ref:`here <search-elasticsearch-multi-index-query>` for more information on how
+  to preform a multi-index query
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Fixed the blob store target resolver issue on custom processor |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5201>`__ for more information
+
+* Added management tokens to status checks |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5172>`__ for more information
+
+* Fixed Studio search results when updating the search term while not on the first page of
+  original search results |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5082>`__ for more information
+
+* Fixed issue with request publish option when right clicking on an item in the site tree |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5058>`__ for more information
+
+* Fixed issue with history revert option for items with only the initial commit in history |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5057>`__ for more information
+
+* Fixed dependent documents query issue |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5053>`__ for more information
+
+* Fixed triggering of Preview deploy for clipboard operations |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5043>`__ for more information
+
+* Fixed Solr and Elasticsearch start up |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5026>`__ for more information
+
+* Fixed enforcing of text limits on RTE 2 text fields |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5009>`__ for more information
+
+Lots of other small enhancements and bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 3.1.18 Milestone <https://github.com/craftercms/craftercms/milestone/75?closed=1>`_
+
+.. important::
+
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.18)
+
+    Starting with JVM version 1.8.0_292, support for TLS v1.1 and earlier is disabled by default |br|
+    See :ref:`debugging_ssl_issues` if you encounter issues.
+
+    For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+    Before proceeding with updating your Crafter CMS install, please see the following notes:
+
+    - :ref:`upgrade-notes-fix-template-not-found` for some important notes on template errors
+    - :ref:`upgrade-notes-to-fix-backup-error` for some important notes when restoring backups created prior to
+      Crafter CMS 3.1.10,
+    - :ref:`upgrade-notes-for-re-encrypting-values` for some important notes on the re-encryption process
+    - :ref:`upgrade-notes-to-fix-stored-procedure-error` for some important notes on database errors.
+
+
