@@ -278,12 +278,6 @@ jackson-dataformat-yaml
 **Dependency:** jackson-dataformat-yaml |br|
 **URL:** https://search.maven.org/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml
 
-elasticsearch-geo
-^^^^^^^^^^^^^^^^^
-**Package:** org.elasticsearch |br|
-**Dependency:** elasticsearch-geo |br|
-**URL:** https://search.maven.org/artifact/org.elasticsearch/elasticsearch-geo
-
 lucene-core
 ^^^^^^^^^^^
 **Package:** org.apache.lucene |br|
@@ -470,12 +464,6 @@ tika-core
 **Dependency:** tika-core |br|
 **URL:** https://search.maven.org/artifact/org.apache.tika/tika-core
 
-javax.annotation-api
-^^^^^^^^^^^^^^^^^^^^
-**Package:** javax.annotation |br|
-**Dependency:** javax.annotation-api |br|
-**URL:** https://search.maven.org/artifact/javax.annotation/javax.annotation-api
-
 vorbis-java-tika
 ^^^^^^^^^^^^^^^^
 **Package:** org.gagravarr |br|
@@ -565,6 +553,12 @@ bcmail-jdk15on
 **Package:** org.bouncycastle |br|
 **Dependency:** bcmail-jdk15on |br|
 **URL:** https://search.maven.org/artifact/org.bouncycastle/bcmail-jdk15on
+
+bcutil-jdk15on
+^^^^^^^^^^^^^^
+**Package:** org.bouncycastle |br|
+**Dependency:** bcutil-jdk15on |br|
+**URL:** https://search.maven.org/artifact/org.bouncycastle/bcutil-jdk15on
 
 poi
 ^^^
@@ -710,12 +704,6 @@ jakarta.ws.rs-api
 **Dependency:** jakarta.ws.rs-api |br|
 **URL:** https://search.maven.org/artifact/jakarta.ws.rs/jakarta.ws.rs-api
 
-jakarta.annotation-api
-^^^^^^^^^^^^^^^^^^^^^^
-**Package:** jakarta.annotation |br|
-**Dependency:** jakarta.annotation-api |br|
-**URL:** https://search.maven.org/artifact/jakarta.annotation/jakarta.annotation-api
-
 cxf-rt-security
 ^^^^^^^^^^^^^^^
 **Package:** org.apache.cxf |br|
@@ -757,12 +745,6 @@ netcdf4
 **Package:** edu.ucar |br|
 **Dependency:** netcdf4 |br|
 **URL:** https://search.maven.org/artifact/edu.ucar/netcdf4
-
-jdom2
-^^^^^
-**Package:** org.jdom |br|
-**Dependency:** jdom2 |br|
-**URL:** https://search.maven.org/artifact/org.jdom/jdom2
 
 guava
 ^^^^^
@@ -902,6 +884,12 @@ jai-imageio-core
 **Dependency:** jai-imageio-core |br|
 **URL:** https://search.maven.org/artifact/com.github.jai-imageio/jai-imageio-core
 
+jdom2
+^^^^^
+**Package:** org.jdom |br|
+**Dependency:** jdom2 |br|
+**URL:** https://search.maven.org/artifact/org.jdom/jdom2
+
 metadata-extractor
 ^^^^^^^^^^^^^^^^^^
 **Package:** com.drewnoakes |br|
@@ -961,6 +949,12 @@ cglib
 **Package:** cglib |br|
 **Dependency:** cglib |br|
 **URL:** https://search.maven.org/artifact/cglib/cglib
+
+spatial4j
+^^^^^^^^^
+**Package:** org.locationtech.spatial4j |br|
+**Dependency:** spatial4j |br|
+**URL:** https://search.maven.org/artifact/org.locationtech.spatial4j/spatial4j
 
 groovy-all
 ^^^^^^^^^^
@@ -1436,6 +1430,12 @@ spring-test
 **Dependency:** spring-test |br|
 **URL:** https://search.maven.org/artifact/org.springframework/spring-test
 
+jakarta.annotation-api
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** jakarta.annotation |br|
+**Dependency:** jakarta.annotation-api |br|
+**URL:** https://search.maven.org/artifact/jakarta.annotation/jakarta.annotation-api
+
 exec
 ^^^^
 **Package:** ch.vorburger.exec |br|
@@ -1532,42 +1532,6 @@ cxf-core
 **Dependency:** cxf-core |br|
 **URL:** https://search.maven.org/artifact/org.apache.cxf/cxf-core
 
-jaxb-runtime
-^^^^^^^^^^^^
-**Package:** org.glassfish.jaxb |br|
-**Dependency:** jaxb-runtime |br|
-**URL:** https://search.maven.org/artifact/org.glassfish.jaxb/jaxb-runtime
-
-txw2
-^^^^
-**Package:** org.glassfish.jaxb |br|
-**Dependency:** txw2 |br|
-**URL:** https://search.maven.org/artifact/org.glassfish.jaxb/txw2
-
-istack-commons-runtime
-^^^^^^^^^^^^^^^^^^^^^^
-**Package:** com.sun.istack |br|
-**Dependency:** istack-commons-runtime |br|
-**URL:** https://search.maven.org/artifact/com.sun.istack/istack-commons-runtime
-
-stax-ex
-^^^^^^^
-**Package:** org.jvnet.staxex |br|
-**Dependency:** stax-ex |br|
-**URL:** https://search.maven.org/artifact/org.jvnet.staxex/stax-ex
-
-FastInfoset
-^^^^^^^^^^^
-**Package:** com.sun.xml.fastinfoset |br|
-**Dependency:** FastInfoset |br|
-**URL:** https://search.maven.org/artifact/com.sun.xml.fastinfoset/FastInfoset
-
-jakarta.activation-api
-^^^^^^^^^^^^^^^^^^^^^^
-**Package:** jakarta.activation |br|
-**Dependency:** jakarta.activation-api |br|
-**URL:** https://search.maven.org/artifact/jakarta.activation/jakarta.activation-api
-
 woodstox-core
 ^^^^^^^^^^^^^
 **Package:** com.fasterxml.woodstox |br|
@@ -1579,12 +1543,6 @@ xmlschema-core
 **Package:** org.apache.ws.xmlschema |br|
 **Dependency:** xmlschema-core |br|
 **URL:** https://search.maven.org/artifact/org.apache.ws.xmlschema/xmlschema-core
-
-jakarta.xml.bind-api
-^^^^^^^^^^^^^^^^^^^^
-**Package:** jakarta.xml.bind |br|
-**Dependency:** jakarta.xml.bind-api |br|
-**URL:** https://search.maven.org/artifact/jakarta.xml.bind/jakarta.xml.bind-api
 
 cxf-rt-bindings-soap
 ^^^^^^^^^^^^^^^^^^^^
@@ -1741,6 +1699,48 @@ sardine
 **Package:** com.github.lookfirst |br|
 **Dependency:** sardine |br|
 **URL:** https://search.maven.org/artifact/com.github.lookfirst/sardine
+
+jakarta.xml.bind-api
+^^^^^^^^^^^^^^^^^^^^
+**Package:** jakarta.xml.bind |br|
+**Dependency:** jakarta.xml.bind-api |br|
+**URL:** https://search.maven.org/artifact/jakarta.xml.bind/jakarta.xml.bind-api
+
+jakarta.activation-api
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** jakarta.activation |br|
+**Dependency:** jakarta.activation-api |br|
+**URL:** https://search.maven.org/artifact/jakarta.activation/jakarta.activation-api
+
+jaxb-runtime
+^^^^^^^^^^^^
+**Package:** org.glassfish.jaxb |br|
+**Dependency:** jaxb-runtime |br|
+**URL:** https://search.maven.org/artifact/org.glassfish.jaxb/jaxb-runtime
+
+txw2
+^^^^
+**Package:** org.glassfish.jaxb |br|
+**Dependency:** txw2 |br|
+**URL:** https://search.maven.org/artifact/org.glassfish.jaxb/txw2
+
+istack-commons-runtime
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** com.sun.istack |br|
+**Dependency:** istack-commons-runtime |br|
+**URL:** https://search.maven.org/artifact/com.sun.istack/istack-commons-runtime
+
+stax-ex
+^^^^^^^
+**Package:** org.jvnet.staxex |br|
+**Dependency:** stax-ex |br|
+**URL:** https://search.maven.org/artifact/org.jvnet.staxex/stax-ex
+
+FastInfoset
+^^^^^^^^^^^
+**Package:** com.sun.xml.fastinfoset |br|
+**Dependency:** FastInfoset |br|
+**URL:** https://search.maven.org/artifact/com.sun.xml.fastinfoset/FastInfoset
 
 Saxon-HE
 ^^^^^^^^
