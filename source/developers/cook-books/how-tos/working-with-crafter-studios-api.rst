@@ -133,32 +133,6 @@ Let's begin:
 
       ``curl -u <username>:<password> ...``
 
-      .. note::
-
-         When using Spring Security (HTTP basic auth), the session id changes by default after logging in.  Remember to make your application aware of the  session id change by picking up the new session.
-
-         Let's take a look at an example.  We'll login first, then validate the session.  Take note of the session id change after sending the second curl command below:
-
-         .. code-block:: bash
-            :caption: *Login and note the session id stored in session.txt*
-
-            curl -d '{ "username":"admin", "password":"admin" }' --cookie-jar session.txt --cookie "XSRF-TOKEN=A_VALUE" --header "X-XSRF-TOKEN:A_VALUE" --header "Content-Type: application/json" -X POST http://localhost:8080/studio/api/1/services/api/1/security/login.json --insecure
-
-         |
-
-         .. code-block:: bash
-            :caption: *Notice the session id has changed in session.txt*
-
-             curl -v --cookie-jar session.txt --cookie session.txt --cookie "XSRF-TOKEN=A_VALUE" --header "X-XSRF-TOKEN:A_VALUE" --header "Content-Type: application/json" -X GET "http://localhost:8080/studio/api/1/services/api/1/security/validate-session.json" --insecure
-
-         |
-
-         See  https://docs.spring.io/spring-security/site/faq/faq.html#faq-new-session-on-authentication
-
-            *Why does the session Id change when I authenticate through Spring Security?*
-
-            With the default configuration, Spring Security invalidates the existing session when the user authenticates and creates a new one, transferring the session data to it. The intention is to change the session identifier to prevent “session-fixation” attacks. You can find more about this online and in the reference manual.
-
 #. **Get a list of projects under management**
 
    We'll get a list of sites the user is authorized to work with

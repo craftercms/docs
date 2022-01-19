@@ -17,7 +17,7 @@ Types of plugins
   blueprints you can follow this guide: :ref:`create-a-blueprint`.
 
 - ``site``: This type of plugin can be used to add features to existing sites, it can include authoring and delivery
-  extensions. For more information about creating site plugins you can follow this guide: :ref:`create-a-site-plugin`
+  extensions. For more information about creating site plugins you can follow this guide: :ref:`site-plugin`
 
 .. _submit-plugin-to-marketplace:
 
