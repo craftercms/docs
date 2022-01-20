@@ -10,7 +10,7 @@ Studio Configuration
 
 This section details how to configure settings managed through Crafter Studio.
 
-To access the configuration settings in Crafter Studio, click on |siteConfig| in the Sidebar,
+To access the configuration settings in Crafter Studio, click on |siteTools| in the Sidebar,
 
 .. image:: /_static/images/site-admin/configuration-access.png
     :align: center
@@ -27,7 +27,7 @@ The following items are noted in the image above:
     #. This is the dropdown list that contains all the configurations that can be viewed/modified for your site.
     #. This is a short description of the current selected configuration file from the dropdown list.
     #. These are the available actions that can be selected for the current selected configuration file.
-    #. This allows the user to encrypt access keys, passwords and other sensitive information required by the current selected configuration file.  For more information on how to encrypt sensitive information in a configuration file through Studio, see :ref:`encrypting-text-in-a-configuration-file`
+    #. This allows the user to encrypt access keys, passwords and other sensitive information required by the current selected configuration file.  For more information on how to encrypt sensitive information in a configuration file through Studio, see :ref:`newIa-encrypting-text-in-a-configuration-file`
 
 Here are the settings that can be configured through Crafter Studio:
 
@@ -42,17 +42,12 @@ Here are the settings that can be configured through Crafter Studio:
    studio/code-editor-configuration
    studio/configure-notifications
    studio/content-monitoring
-   studio/contextual-navigation-config
    studio/dependency-resolver
-   studio/drag-n-drop-configuration
    studio/mime-types-configuration
    studio/permission-mappings
-   studio/preview-panel-configuration
    studio/role-mappings
    studio/rte-configuration
-   studio/sidebar-configuration
    studio/site-configuration
-   studio/site-config-tools
    studio/site-config-configuration
    studio/site-policy-configuration
    studio/user-interface-configuration
@@ -67,7 +62,7 @@ Crafter Studio supports creating multiple environments with different configurat
    studio/multi-environment-configurations
 
 
-Crafter CMS supports managing assets in external storage through workflow and publishing mechanics.  For more information, see below:
+CrafterCMS supports managing assets in external storage through workflow and publishing mechanics.  For more information, see below:
 
 .. toctree::
    :maxdepth: 1

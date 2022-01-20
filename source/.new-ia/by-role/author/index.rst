@@ -68,4 +68,4 @@ In this section we'll take a closer look on how authors uses the tools available
    authors-search
    authors-targeting
    authors-workflows
-
+   authors-xb
