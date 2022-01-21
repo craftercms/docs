@@ -4,6 +4,10 @@
 Availability
 ============
 
+Crafter CMS supports geo-distributed deployments with multiple data-centers per geography making the uptime of
+the delivery tier near 100%. Traffic to the content delivery system flows to the nearest healthy data-center providing
+speed and availability.
+
 Availability can be divided into High-Availability (HA) and Disaster Recovery (DR). Since CrafterCMS is two
 separate subsystems, delivery and authoring, then will describe HA and DR in the context of content delivery
 and then in the context of content authoring.
@@ -25,3 +29,14 @@ a data center or several data centers in a region will not bring down content de
 ---------
 Authoring
 ---------
+
+Content Authoring is the tier used by the few authors to generate content (XML, code, and static assets) to be
+published to the delivery tier. As such, there are much less stringent availability requirements for the authoring
+tier.
+
+The authoring application has built-in primary/replica clustering. Being a stateful application, the clustering
+is based on replicas following the primary with a fronting load-balancer that directs traffic to the primary
+while the primary node is healthy. Fail-over is automatic with the replica becoming a primary and switching its
+health status so the load-balancer directs traffic to it instead of the defunct primary.
+
+.. add a link to the studio clustering docs
