@@ -39,9 +39,6 @@ Recently Completed
 * GraphQL
 	- Query content in Engine via GraphQL
 	- GraphQL extensions: You can now change the GraphQL response and add in data from other sources with a small groovy script. GraphQL now pulls back data from Crafter CMS or other sources, and you can override whatever you like.
-* Elasticsearch
-	- Becomes the default search engine (we continue to support Solr)
-	- Full support for AWS Elasticsearch
 * Serverless Crafter CMS
 	- Full support for Kubernetes clustering vanilla or AWS EKS
 	- Crafter Engine backed by AWS S3 (or compatible services)
