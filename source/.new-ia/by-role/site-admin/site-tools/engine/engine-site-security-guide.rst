@@ -90,7 +90,7 @@ the next steps to create in the page content type a Repeating Group with a text 
     |
 
        .. warning::
-           The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by Crafter CMS.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
+           The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by Crafter CMS.  For a list of variable names used by Crafter CMS, see :ref:`newIa-form-control-variable-names` for more information
 
            The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
 
@@ -104,7 +104,7 @@ the next steps to create in the page content type a Repeating Group with a text 
     |
 
        .. warning::
-           The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as the ``role`` variable name is used by Crafter CMS for enforcing access to a page.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
+           The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as the ``role`` variable name is used by Crafter CMS for enforcing access to a page.  For a list of variable names used by Crafter CMS, see :ref:`newIa-form-control-variable-names` for more information
 
 
 #.  Save the changes. The added fields should look like this:

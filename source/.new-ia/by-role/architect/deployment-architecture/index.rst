@@ -14,5 +14,6 @@ Crafter CMS supports various deployments (both SaaS solutions and PaaS and self-
    aws
    azure
    gcp
+   oci
    on-prem
 

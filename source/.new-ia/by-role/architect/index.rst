@@ -21,7 +21,7 @@ Architect
      DR and Uptime
    API Reference
 
-This section details key concepts i
+This section details key concepts for CrafterCMS experience architects
 
 .. toctree::
    :maxdepth: 2
@@ -30,6 +30,6 @@ This section details key concepts i
    deployment-architecture/index
    headless
    templated
-   security
+   availability
    scalability
-
+   security
