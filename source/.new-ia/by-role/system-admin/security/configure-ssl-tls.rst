@@ -2,7 +2,7 @@
 
 .. index:: Configure SSL/TLS, SSL
 
-.. _configure-ssl-tls:
+.. _newIa-configure-ssl-tls:
 
 =================
 Configure SSL/TLS
@@ -32,7 +32,7 @@ CrafterCMS employs two deployment methods, traditional deployment and serverless
 Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Traditional Deployment
 --------------------------------------------------------------------------------------
 
-.. _create-keystore-file:
+.. _newIa-create-keystore-file:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 1: Create a keystore file
@@ -69,7 +69,7 @@ Java's ``keytool`` file allows the user to create self signed certificates.  For
 
 The command above will generate a file named ``.keystore`` in the users home directory.  Take note of the location as it will be used in the next step.
 
-.. _use-keystore-file-in-tomcat:
+.. _newIa-use-keystore-file-in-tomcat:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 2: Configure tomcat to use the keystore file
@@ -103,7 +103,7 @@ We'll use the above values for our CrafterCMS authoring example.  Save the chang
 
 For more information on configuring SSL/TLS on Tomcat, see https://tomcat.apache.org/tomcat-8.5-doc/ssl-howto.html
 
-.. _ssl-test-your-setup:
+.. _newIa-ssl-test-your-setup:
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 Step 3: Test your setup

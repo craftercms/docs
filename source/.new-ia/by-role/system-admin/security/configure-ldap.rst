@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-configure-ldap:
+.. _newIa-crafter-studio-configure-ldap:
 
 =============================
 Configure LDAP Authentication

@@ -4,15 +4,15 @@
    14.2.1 Prereq
    14.2.2 Install via Bundle
 
-.. index:: Installing Crafter CMS on Linux
+.. index:: Installing CrafterCMS on Linux
 
 .. _newIa-installing-craftercms-on-linux:
 
-===============================
-Installing Crafter CMS on Linux
-===============================
+==============================
+Installing CrafterCMS on Linux
+==============================
 
-This section describes in detail how to install/setup Crafter CMS on Linux.
+This section describes in detail how to install/setup CrafterCMS on Linux.
 
 -------------
 Prerequisites
@@ -24,19 +24,19 @@ Prerequisites
 
    Make sure that you have a ``JAVA_HOME`` environment variable that points to the root of the JDK install directory.  See :ref:`here<verify-java-home-env-var>` for more information on the ``JAVA_HOME`` environment variable
 
----------------------------------------------
-Installing Crafter CMS from Prebuilt Binaries
----------------------------------------------
+--------------------------------------------
+Installing CrafterCMS from Prebuilt Binaries
+--------------------------------------------
 
-Here are the steps to start using Crafter CMS for development or evaluation by installing Crafter CMS from the binary archive download:
+Here are the steps to start using CrafterCMS for development or evaluation by installing CrafterCMS from the binary archive download:
 
-#. **Download Crafter CMS binary**
+#. **Download CrafterCMS binary**
 
-   Download the Crafter CMS install binary file from https://craftercms.org/downloads
+   Download the CrafterCMS install binary file from https://craftercms.org/downloads
 
    Select ``crafter-cms-authoring-VERSION.tar.gz``.  The ``.tar.gz`` file will install a fully functional authoring instance. Out of the box, the authoring instance uses a local directory as the repository and an embedded database, which allows a quick and easy set up for local development.
 
-#. **Extract the Crafter CMS binaries**
+#. **Extract the CrafterCMS binaries**
 
    Extract the contents in any directory.
 
@@ -58,9 +58,9 @@ Here are the steps to start using Crafter CMS for development or evaluation by i
 
    |
 
-#. **Start Crafter CMS**
+#. **Start CrafterCMS**
 
-   **To start Crafter CMS:**
+   **To start CrafterCMS:**
 
    From the command line, navigate to the ``{Crafter-CMS-unzip-directory}/crafter/bin/`` directory, and execute the startup script:
 
@@ -72,10 +72,10 @@ Here are the steps to start using Crafter CMS for development or evaluation by i
 
       .. note::
 
-         *It takes a few seconds for Crafter CMS to startup and takes longer to startup the very first time you startup Crafter CMS.*
+         *It takes a few seconds for CrafterCMS to startup and takes longer to startup the very first time you startup CrafterCMS.*
 
 
-   **To stop Crafter CMS:**
+   **To stop CrafterCMS:**
 
    From the command line, navigate to the ``{Crafter-CMS-unzip-directory}/crafter/bin/`` directory, and execute the shutdown script:
 
@@ -85,7 +85,7 @@ Here are the steps to start using Crafter CMS for development or evaluation by i
 
    |
 
-   .. _accessing-crafter-studio:
+   .. _newIa-accessing-crafter-studio:
 
 #. **Access Crafter Studio**
 

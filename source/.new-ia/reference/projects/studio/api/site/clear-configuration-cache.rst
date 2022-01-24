@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-site-clear-configuration-cache:
+.. _newIa-crafter-studio-api-site-clear-configuration-cache:
 
 =========================
 Clear Configuration Cache

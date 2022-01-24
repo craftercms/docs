@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-content-get-next-item-order:
+.. _newIa-crafter-studio-api-content-get-next-item-order:
 
 ===================
 Get Next Item Order

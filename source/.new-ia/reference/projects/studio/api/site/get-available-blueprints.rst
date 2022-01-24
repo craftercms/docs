@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-site-get-available-blueprints:
+.. _newIa-crafter-studio-api-site-get-available-blueprints:
 
 ========================
 Get Available Blueprints

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-context-preferences-delete:
+.. _newIa-crafter-social-api-context-preferences-delete:
 
 ==========================
 Delete Context Preferences

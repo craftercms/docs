@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-repo-remove-remote:
+.. _newIa-crafter-studio-api-repo-remove-remote:
 
 ==========================
 Remove Remote (deprecated)

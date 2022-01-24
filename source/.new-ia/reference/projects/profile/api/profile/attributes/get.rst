@@ -1,7 +1,7 @@
 :is-up-to-date: True
 
 
-.. _crafter-profile-api-profile-attributes-get:
+.. _newIa-crafter-profile-api-profile-attributes-get:
 
 ==============
 Get Attributes

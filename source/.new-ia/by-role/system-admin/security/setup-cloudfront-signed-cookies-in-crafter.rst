@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _setup-cloudfront-signed-cookies-in-crafter:
+.. _newIa-setup-cloudfront-signed-cookies-in-crafter:
 
 =============================================
 Setup CloudFront Signed Cookies in CrafterCMS

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-authentication-persistent_login-refresh_token:
+.. _newIa-crafter-profile-api-authentication-persistent_login-refresh_token:
 
 ========================
 Refresh Persistent Login

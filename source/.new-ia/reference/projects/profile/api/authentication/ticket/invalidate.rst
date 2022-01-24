@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-authentication-ticket-invalidate:
+.. _newIa-crafter-profile-api-authentication-ticket-invalidate:
 
 =================
 Invalidate Ticket

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-site-get-per-user:
+.. _newIa-crafter-studio-api-site-get-per-user:
 
 ==================
 Get Sites per User

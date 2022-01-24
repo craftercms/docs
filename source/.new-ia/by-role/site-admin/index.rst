@@ -15,3 +15,30 @@
 ==================
 Site Administrator
 ==================
+
+---------------
+What is a site?
+---------------
+
+A site is a collection of related pages/components and assets.
+
+------------
+Localization
+------------
+
+----------
+Site Tools
+----------
+
+----------------
+Sidebar cabinets
+----------------
+
+------------------------
+Experience Builder (ICE)
+------------------------
+
+--------
+Security
+--------
+

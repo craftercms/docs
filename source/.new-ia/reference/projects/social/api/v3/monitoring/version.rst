@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-monitoring-version:
+.. _newIa-crafter-social-api-monitoring-version:
 
 ===========
 Get Version

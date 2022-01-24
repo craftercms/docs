@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-monitoring-status:
+.. _newIa-crafter-profile-api-monitoring-status:
 
 ==========
 Get Status

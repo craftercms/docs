@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-roles-remove:
+.. _newIa-crafter-profile-api-profile-roles-remove:
 
 ============
 Remove Roles

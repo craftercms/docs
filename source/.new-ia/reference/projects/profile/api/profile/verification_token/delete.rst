@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-verification_token-delete:
+.. _newIa-crafter-profile-api-profile-verification_token-delete:
 
 =========================
 Delete Verification Token

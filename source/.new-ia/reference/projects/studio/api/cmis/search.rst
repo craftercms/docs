@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-cmis-search:
+.. _newIa-crafter-studio-api-cmis-search:
 
 ========================
 Search CMIS (deprecated)

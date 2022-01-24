@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-repo-add-remote:
+.. _newIa-crafter-studio-api-repo-add-remote:
 
 =======================
 Add Remote (deprecated)

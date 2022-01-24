@@ -2,7 +2,7 @@
 
 .. index:: API; Crafter Profile
 
-.. _crafter-profile-api:
+.. _newIa-crafter-profile-api:
 
 ===================
 Crafter Profile API

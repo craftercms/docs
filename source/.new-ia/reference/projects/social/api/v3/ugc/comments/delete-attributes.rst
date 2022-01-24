@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-ugc-comments-delete-attributes:
+.. _newIa-crafter-social-api-ugc-comments-delete-attributes:
 
 =========================
 Delete Comment Attributes

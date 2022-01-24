@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-context-get-all:
+.. _newIa-crafter-social-api-context-get-all:
 
 =======================
 Get All Social Contexts

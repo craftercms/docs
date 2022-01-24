@@ -2,7 +2,7 @@
 
 .. index:: Studio SAML
 
-.. _crafter-studio-configure-studio-saml:
+.. _newIa-crafter-studio-configure-studio-saml:
 
 ===========================================
 Studio SAML2 Configuration |enterpriseOnly|

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-publish-publish-items:
+.. _newIa-crafter-studio-api-publish-publish-items:
 
 =============
 Publish Items

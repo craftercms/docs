@@ -10,7 +10,7 @@ Working with Pages
 
 This section describes how authors can create and use pages to manage content.
 
-Pages uses templates in Crafter CMS.  A developer usually creates the templates that authors can then use to manage content.
+Pages uses templates in CrafterCMS.  A developer usually creates the templates that authors can then use to manage content.
 
 -------------
 Adding a Page
@@ -82,7 +82,7 @@ There are multiple ways to edit a page.
 ----------
 Versioning
 ----------
-Crafter CMS tracks all changes to pages/contents/static assets in your site.  
+CrafterCMS tracks all changes to pages/contents/static assets in your site.
 
 All page changes/versions can be viewed, compared with other versions and reverted to an older version.  There are a couple of ways to view the History of your desired page.  Navigate to the page you want to view the history of from the site navigation tree.
 

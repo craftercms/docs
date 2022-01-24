@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-attributes-remove:
+.. _newIa-crafter-profile-api-profile-attributes-remove:
 
 =================
 Remove Attributes

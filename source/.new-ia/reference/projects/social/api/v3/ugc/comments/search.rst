@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-ugc-comments-search:
+.. _newIa-crafter-social-api-ugc-comments-search:
 
 ===============
 Search Comments

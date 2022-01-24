@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-workflow-submit-to-go-live:
+.. _newIa-crafter-studio-api-workflow-submit-to-go-live:
 
 ==================
 Request Publishing

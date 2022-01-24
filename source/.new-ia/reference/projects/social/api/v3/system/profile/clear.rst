@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-profile-clear:
+.. _newIa-crafter-social-api-profile-clear:
 
 ===========
 Clear Cache

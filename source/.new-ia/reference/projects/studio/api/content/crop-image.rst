@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-content-crop-image:
+.. _newIa-crafter-studio-api-content-crop-image:
 
 ==========
 Crop Image

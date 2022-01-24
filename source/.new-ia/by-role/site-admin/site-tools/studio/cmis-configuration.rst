@@ -31,11 +31,11 @@ Sample
         from.
 
     Items can be selected in one of two modes:
-    - Reference: the item selected is referenced via URL and Crafter CMS will
+    - Reference: the item selected is referenced via URL and CrafterCMS will
         simply insert a direct link to the CMIS repository so the end-user
         will pull the content directly from the CMIS repo
-    - Clone: the item selected is downloaded into Crafter CMS and the end-user
-        will pull the content from Crafter CMS
+    - Clone: the item selected is downloaded into CrafterCMS and the end-user
+        will pull the content from CrafterCMS
 
     For every repository you need to specify:
         <cmis>
@@ -65,7 +65,7 @@ Sample
         download-url-regex: a regular expression that includes the variable
             {item_id}. The regular expression contains the full download URL
             pattern to the item in the CMIS repository, and {item_id} will be
-            replaced by Crafter CMS with the selected item ID.
+            replaced by CrafterCMS with the selected item ID.
     -->
     <cmis>
         <repositories>

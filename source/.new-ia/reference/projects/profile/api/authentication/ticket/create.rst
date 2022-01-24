@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-authentication-ticket-create:
+.. _newIa-crafter-profile-api-authentication-ticket-create:
 
 =============
 Create Ticket

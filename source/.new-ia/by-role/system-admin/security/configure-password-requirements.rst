@@ -7,7 +7,7 @@
 
 .. index:: Configure Studio Password Requirements
 
-.. _crafter-studio-configure-password-requirements:
+.. _newIa-crafter-studio-configure-password-requirements:
 
 ======================================
 Configure Studio Password Requirements

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-reset_password:
+.. _newIa-crafter-profile-api-profile-reset_password:
 
 ==============
 Reset Password

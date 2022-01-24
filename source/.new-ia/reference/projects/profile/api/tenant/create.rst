@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-tenant-create:
+.. _newIa-crafter-profile-api-tenant-create:
 
 =============
 Create Tenant

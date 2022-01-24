@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-repo-push-to-remote:
+.. _newIa-crafter-studio-api-repo-push-to-remote:
 
 ===========================
 Push To Remote (deprecated)

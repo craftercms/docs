@@ -2,7 +2,7 @@
 
 .. index:: Roadmap
 
-.. _newIa-roadmap:
+.. _roadmap:
 
 =======
 Roadmap
@@ -35,17 +35,16 @@ Recently Completed
 * Enhanced Preview Proxy to connect to any remote server as the preview server
 	- This allows easier authoring of sites built with other programming languages and technologies
 * Managed Blob Stores
-	- Manage external blob stores (S3) assets as if they're Crafter CMS assets with full workflow and multi-environment support
+	- Manage external blob stores (S3) assets as if they're CrafterCMS assets with full workflow and multi-environment support
 * GraphQL
 	- Query content in Engine via GraphQL
-	- GraphQL extensions: You can now change the GraphQL response and add in data from other sources with a small groovy script. GraphQL now pulls back data from Crafter CMS or other sources, and you can override whatever you like.
+	- GraphQL extensions: You can now change the GraphQL response and add in data from other sources with a small groovy script. GraphQL now pulls back data from CrafterCMS or other sources, and you can override whatever you like.
 * Elasticsearch
-	- Becomes the default search engine (we continue to support Solr)
-	- Full support for AWS Elasticsearch
-* Serverless Crafter CMS
+       - Becomes the default search engine (Solr is no longer supported as of CrafterCMS v4.0)
+* Serverless CrafterCMS
 	- Full support for Kubernetes clustering vanilla or AWS EKS
 	- Crafter Engine backed by AWS S3 (or compatible services)
-	- Crafter CMS provided Docker images
+	- CrafterCMS provided Docker images
 	- Search is provided by Elasticsearch and is scaled separately
 * SPA Support I
 	- New JS library: basic JS all the way to Redux: https://www.npmjs.com/settings/craftercms/packages example application: https://github.com/craftercms/video-center-blueprint
@@ -70,4 +69,4 @@ Recently Completed
 	- WebDAV connector for uploading/linking to WebDAV assets
 	- AWS Media Services integration for video processing (upload, transcode, stream ABR video)
 * Crafter Engine
-	- URL Rewrite a la Apache mod_rewrite using http://tuckey.org/urlrewrite/ (this is different from Crafter's URL Transformation Engine)
+	- URL Rewrite a la Apache mod_rewrite using http://tuckey.org/urlrewrite/ (this is different from CrafterCMS's URL Transformation Engine)

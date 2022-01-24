@@ -22,7 +22,7 @@ Crafter Engine also populates templates with other useful variables, described b
 
 .. include:: /includes/freemarker-variables.rst
 
-.. _renderComponent:
+.. _newIa-renderComponent:
 
 --------------------
 Rendering Components
@@ -61,7 +61,7 @@ Parameters:
 * **additionalModel**: a Freemarker hash containing key-value pairs that can be used as global variables in the
   component's template
 
-.. _templating-rendering-navigation:
+.. _newIa-templating-rendering-navigation:
 
 --------------------
 Rendering Navigation
@@ -72,7 +72,7 @@ Crafter Engine provides the option of rendering automatically the navigation for
 
 See :ref:`navigation` for more information on the macro
 
-.. _templating-rendering-breadcrumbs:
+.. _newIa-templating-rendering-breadcrumbs:
 
 ---------------------
 Rendering Breadcrumbs

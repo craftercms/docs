@@ -14,7 +14,7 @@
 Plugin Management
 =================
 
-Site plugins extend Crafter Studio (authoring) and Crafter Engine and the site/web application (delivery).  It adds new features/functionality without adding code to Crafter CMS.
+Site plugins extend Crafter Studio (authoring) and Crafter Engine and the site/web application (delivery).  It adds new features/functionality without adding code to CrafterCMS.
 
 This section details how to manage plugins from the |siteConfig| Plugin Management module.
 
@@ -22,7 +22,7 @@ This section details how to manage plugins from the |siteConfig| Plugin Manageme
 Installing
 ----------
 
-Once a site plugin is published to the Crafter CMS Marketplace it can be installed using the
+Once a site plugin is published to the CrafterCMS Marketplace it can be installed using the
 Crafter Studio user interface or the REST API:
 
    .. note::
@@ -32,7 +32,7 @@ Crafter Studio user interface or the REST API:
       - ``list_plugins``
       - ``install_plugins``
 
-As mentioned above, there are two ways to install plugins from the Crafter CMS Marketplace:
+As mentioned above, there are two ways to install plugins from the CrafterCMS Marketplace:
 
 * Using the Studio ``Plugin Management`` Site Tool
 * Using the install plugin REST API
@@ -118,7 +118,7 @@ Install a plugin using the Studio ``Plugin Management`` Site Tool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Install a plugin using the install plugin REST API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Another way to install a plugin from the Crafter CMS marketplace is by using the install plugin REST API.
+Another way to install a plugin from the CrafterCMS marketplace is by using the install plugin REST API.
 
 For more information on the API, see :studio_swagger_url:`#/marketplace/installPlugin`
 

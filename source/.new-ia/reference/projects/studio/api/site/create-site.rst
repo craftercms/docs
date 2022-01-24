@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-site-create:
+.. _newIa-crafter-studio-api-site-create:
 
 ===========
 Create Site

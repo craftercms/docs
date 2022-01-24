@@ -2,7 +2,7 @@
 
 .. index:: Configuring Studio Security; Studio Security; Security
 
-.. _configuring-studio-security:
+.. _newIa-configuring-studio-security:
 
 ===========================
 Configuring Studio Security

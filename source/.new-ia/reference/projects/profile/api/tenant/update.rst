@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-tenant-update:
+.. _newIa-crafter-profile-api-tenant-update:
 
 =============
 Update Tenant

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-workflow-go-delete:
+.. _newIa-crafter-studio-api-workflow-go-delete:
 
 =========
 Go Delete

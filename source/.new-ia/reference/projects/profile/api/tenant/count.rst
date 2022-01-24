@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-tenant-count:
+.. _newIa-crafter-profile-api-tenant-count:
 
 =============
 Count Tenants

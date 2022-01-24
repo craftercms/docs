@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-activity-post-activity:
+.. _newIa-crafter-studio-api-activity-post-activity:
 
 =============
 Post Activity

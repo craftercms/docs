@@ -11,7 +11,7 @@ Author
    4.2 Authoring Tools
    4.3 Examples
 
-Authors creates, edits and submits content for experiences.  Crafter CMS's Crafter Studio provides the author an easy to use
+Authors creates, edits and submits content for experiences.  CrafterCMS's Crafter Studio provides the author an easy to use
 authoring and management system for developing and optimizing the content and dynamic site visitor experience for any
 and all of your Web properties.
 

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-range:
+.. _newIa-crafter-profile-api-profile-range:
 
 =====================
 Get Profiles By Range

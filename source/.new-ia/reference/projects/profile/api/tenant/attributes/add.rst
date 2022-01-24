@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-tenant-attributes-add:
+.. _newIa-crafter-profile-api-tenant-attributes-add:
 
 ==============
 Add Attributes

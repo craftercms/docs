@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-preview-sync-site:
+.. _newIa-crafter-studio-api-preview-sync-site:
 
 ============
 Preview Sync

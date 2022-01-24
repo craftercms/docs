@@ -8,7 +8,7 @@
 
 .. index:: Configure Authentication Chain;
 
-.. _configure-authentication-chain:
+.. _newIa-configure-authentication-chain:
 
 ==============================
 Configure Authentication Chain

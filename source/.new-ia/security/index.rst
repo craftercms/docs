@@ -8,7 +8,7 @@
 Security
 ========
 
-In this section you'll find links to Crafter CMS security processes, policies and advisories.
+In this section you'll find links to CrafterCMS security processes, policies and advisories.
 
 .. toctree::
    :maxdepth: 2

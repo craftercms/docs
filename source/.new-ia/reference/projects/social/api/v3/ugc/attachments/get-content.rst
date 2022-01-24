@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-ugc-attachments-get-content:
+.. _newIa-crafter-social-api-ugc-attachments-get-content:
 
 ======================
 Get Attachment Content

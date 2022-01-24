@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-dependency-get-dependant:
+.. _newIa-crafter-studio-api-dependency-get-dependant:
 
 ===================
 Get Dependant Items

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-ugc-comments-get-flagged:
+.. _newIa-crafter-social-api-ugc-comments-get-flagged:
 
 ====================
 Get Flagged Comments

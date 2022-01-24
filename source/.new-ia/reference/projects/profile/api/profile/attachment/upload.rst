@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-attachment-upload:
+.. _newIa-crafter-profile-api-profile-attachment-upload:
 
 =========================
 Upload Profile Attachment

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-by_existing_attribute:
+.. _newIa-crafter-profile-api-profile-by_existing_attribute:
 
 ===============================
 Get Profiles By Attribute Value

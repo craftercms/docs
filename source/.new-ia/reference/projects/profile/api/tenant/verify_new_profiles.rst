@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-tenant-verifiy_new_profiles:
+.. _newIa-crafter-profile-api-tenant-verifiy_new_profiles:
 
 ===================
 Verify New Profiles

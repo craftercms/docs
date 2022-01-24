@@ -6,7 +6,7 @@
 General Architecture
 ====================
 
-Crafter CMS distinguishes itself by its modern architecture, which in turn enables:
+CrafterCMS distinguishes itself by its modern architecture, which in turn enables:
 
 * Truly decoupled content management (and disconnected global delivery), composed of independent microservice-based components
 * Dynamic, personalized content delivery of every request at speed
@@ -21,12 +21,12 @@ Crafter CMS distinguishes itself by its modern architecture, which in turn enabl
 Modern Decoupled Architecture
 -----------------------------
 
-Crafter CMS is a truly decoupled content management system, yet it supports dynamic and personalized content
+CrafterCMS is a truly decoupled content management system, yet it supports dynamic and personalized content
 delivery. To understand this better, Crafter's decoupled architecture is as follows:
 
 .. image:: /_static/images/architecture/decoupled-overview.png
     :width: 100%
-    :alt: Crafter CMS Decoupled Overview
+    :alt: CrafterCMS Decoupled Overview
     :align: center
 
 |
@@ -39,12 +39,12 @@ A truly decoupled system will support disconnected delivery (think of a delivery
 
 .. image:: /_static/images/architecture/traditional-modern-decoupled.png
     :width: 100%
-    :alt: Crafter CMS Modern Decoupled
+    :alt: CrafterCMS Modern Decoupled
     :align: center
 
 |
 
-How can Crafter CMS deliver a dynamic experience? During ingestion, the delivery tier indexes the content into a local search engine and builds in-memory representation of content items to help drive the dynamic behavior. The search engine and in-memory store are local and therefore share nothing with other nodes, however, you're now able to search and build dynamic responses. These dynanmic responses can be driven by defined user personas along with user identity or prior user behavior. If you have a user store, behavior stream, or social media profile access, you can then tailor the content dynamically in real time. Crafter CMS has two *optional* modules that support this and can be combined/layered with other systems; Crafter Profile (user identity and behavior store), and Crafter Social (User-generated-content store).
+How can CrafterCMS deliver a dynamic experience? During ingestion, the delivery tier indexes the content into a local search engine and builds in-memory representation of content items to help drive the dynamic behavior. The search engine and in-memory store are local and therefore share nothing with other nodes, however, you're now able to search and build dynamic responses. These dynamic responses can be driven by defined user personas along with user identity or prior user behavior. If you have a user store, behavior stream, or social media profile access, you can then tailor the content dynamically in real time. CrafterCMS has two *optional* modules that support this and can be combined/layered with other systems; Crafter Profile (user identity and behavior store), and Crafter Social (User-generated-content store).
 
 -----------------------
 Application Development
@@ -52,12 +52,12 @@ Application Development
 
 .. image:: /_static/images/architecture/application-development.jpg
     :width: 100%
-    :alt: Application Development on Crafter CMS
+    :alt: Application Development on CrafterCMS
     :align: center
 
 |
 
-Crafter CMS is a very flexible platform, and features:
+CrafterCMS is a very flexible platform, and features:
 
 * Content access via API (extensible GraphQL / REST)
 

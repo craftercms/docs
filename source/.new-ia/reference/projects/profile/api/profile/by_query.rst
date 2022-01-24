@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-by_query:
+.. _newIa-crafter-profile-api-profile-by_query:
 
 =====================
 Get Profiles By Query

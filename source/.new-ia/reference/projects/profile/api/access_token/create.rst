@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-access_token-create:
+.. _newIa-crafter-profile-api-access_token-create:
 
 ===================
 Create Access Token

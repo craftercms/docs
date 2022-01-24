@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-attachment-all:
+.. _newIa-crafter-profile-api-profile-attachment-all:
 
 ===========================
 Get All Profile Attachments

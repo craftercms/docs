@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-configure-headers-based-auth:
+.. _newIa-crafter-studio-configure-headers-based-auth:
 
 ======================================
 Configure Headers Based Authentication

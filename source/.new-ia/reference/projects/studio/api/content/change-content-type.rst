@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-content-change-content-type:
+.. _newIa-crafter-studio-api-content-change-content-type:
 
 ===============
 Change Template

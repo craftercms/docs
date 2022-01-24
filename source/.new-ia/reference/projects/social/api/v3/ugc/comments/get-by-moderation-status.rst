@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-ugc-comments-get-by-moderation-status:
+.. _newIa-crafter-social-api-ugc-comments-get-by-moderation-status:
 
 =================================
 Get Comments By Moderation Status

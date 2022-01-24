@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-content-get-content-at-path:
+.. _newIa-crafter-studio-api-content-get-content-at-path:
 
 ===================
 Get Content at Path

@@ -4,7 +4,7 @@
 
 .. index:: Securing Your CrafterCMS Install, Change Defaults in CrafterCMS
 
-.. _securing-your-crafter-cms-install:
+.. _newIa-securing-your-crafter-cms-install:
 
 ================================
 Securing Your CrafterCMS Install

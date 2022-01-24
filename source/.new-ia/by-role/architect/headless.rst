@@ -35,7 +35,7 @@ Inheritance
 
 Having content authors enter the same meta-data/content for every content item where it doesn't change is both
 laborious and wasteful. It's best for common meta-data for a section or the whole application to be entered once
-and inherited by all child items. This is content inheritance, and the implementation in Crafter CMS is very
+and inherited by all child items. This is content inheritance, and the implementation in CrafterCMS is very
 powerful supporting many inheritance mechanisms. More on this
 
 .. todo add a link to the content inheritance article

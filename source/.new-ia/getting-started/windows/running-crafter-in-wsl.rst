@@ -2,11 +2,11 @@
 
 .. _newIa-installing-craftercms-on-wsl:
 
-=============================
-Installing Crafter CMS on WSL
-=============================
+============================
+Installing CrafterCMS on WSL
+============================
 
-Here are the steps to start using Crafter CMS for development or evaluation by installing Crafter CMS from the prebuilt binaries:
+Here are the steps to start using CrafterCMS for development or evaluation by installing CrafterCMS from the prebuilt binaries:
 
   .. note::
      All the commands/scripts in this section should be executed in your Ubuntu (or Linux distribution of choice) terminal.
@@ -16,7 +16,7 @@ Here are the steps to start using Crafter CMS for development or evaluation by i
      you've downloaded.
 
      .. figure:: /_static/images/system-admin/open-ubuntu-terminal.jpg
-        :alt: Setting up Crafter CMS in Windows - Open the Ubuntu terminal
+        :alt: Setting up CrafterCMS in Windows - Open the Ubuntu terminal
         :width: 70 %
         :align: center
 
@@ -47,35 +47,35 @@ Prerequisite
 
    |
 
----------------------------------------------
-Installing Crafter CMS from Prebuilt Binaries
----------------------------------------------
+--------------------------------------------
+Installing CrafterCMS from Prebuilt Binaries
+--------------------------------------------
 
-#. **Download Crafter CMS binaries**
+#. **Download CrafterCMS binaries**
 
-   Download the Crafter CMS install prebuilt binaries from https://craftercms.org/downloads
+   Download the CrafterCMS install prebuilt binaries from https://craftercms.org/downloads
 
    Select ``crafter-cms-authoring-VERSION.tar.gz``.  The ``.tar.gz`` file will install a fully functional authoring instance. Out of the box, the authoring instance uses a local directory as the repository and an embedded database, which allows a quick and easy set up for local development.
 
-   You can download the Crafter CMS prebuilt binaries directly onto the WSL file system from the Ubuntu terminal using ``wget`` or ``curl``, or, you can copy/move the prebuilt binaries in the Windows file system to the WSL file system via the Ubuntu terminal or the Windows File Explorer.
+   You can download the CrafterCMS prebuilt binaries directly onto the WSL file system from the Ubuntu terminal using ``wget`` or ``curl``, or, you can copy/move the prebuilt binaries in the Windows file system to the WSL file system via the Ubuntu terminal or the Windows File Explorer.
 
    The Linux (WSL) file system root directory is : ``\\wsl$\Ubuntu-20.04\home\<user name>\path\to\project``
 
    The Windows file system root directory is : ``/mnt/c/Users/<user name>/path/to/project$`` or ``C:\Users\<user name>\path\to\project``
 
    .. figure:: /_static/images/system-admin/accessing-wsl-fs-in-explorer.png
-      :alt: Setting up Crafter CMS in Windows - Accessing the WSL file system
+      :alt: Setting up CrafterCMS in Windows - Accessing the WSL file system
       :width: 70 %
       :align: center
 
    |
 
-#. **Extract the Crafter CMS binaries**
+#. **Extract the CrafterCMS binaries**
 
    Extract the contents in any directory.
 
    .. code-block:: sh
-      :caption: *Extract the contents of the Crafter CMS binary archive file to a directory*
+      :caption: *Extract the contents of the CrafterCMS binary archive file to a directory*
 
       tar -zxvf crafter-cms-authoring-VERSION.tar.gz -C /tmp/extract_to_some_directory/
 
@@ -84,7 +84,7 @@ Installing Crafter CMS from Prebuilt Binaries
    The extracted files should look like this:
 
    .. code-block:: none
-      :caption: *Crafter CMS extracted files directory structure*
+      :caption: *CrafterCMS extracted files directory structure*
 
       {Crafter-CMS-unzip-directory}
       |--crafter/
@@ -94,14 +94,14 @@ Installing Crafter CMS from Prebuilt Binaries
 
    |
 
-#. **Start Crafter CMS**
+#. **Start CrafterCMS**
 
-   **To start Crafter CMS:**
+   **To start CrafterCMS:**
 
    From the command line, navigate to the ``{Crafter-CMS-unzip-directory}/crafter/bin/`` directory, and execute the startup script:
 
    .. code-block:: sh
-      :caption: *Start Crafter CMS*
+      :caption: *Start CrafterCMS*
 
       ./startup.sh
 
@@ -109,24 +109,24 @@ Installing Crafter CMS from Prebuilt Binaries
 
       .. note::
 
-         *It takes a few seconds for Crafter CMS to startup and takes longer to startup the very first time you startup Crafter CMS.*
+         *It takes a few seconds for CrafterCMS to startup and takes longer to startup the very first time you startup CrafterCMS.*
 
    |
 
    .. figure:: /_static/images/system-admin/start-crafter-in-wsl2.png
-      :alt: Setting up Crafter CMS in Windows - Start Crafter CMS in WSL
+      :alt: Setting up CrafterCMS in Windows - Start CrafterCMS in WSL
       :width: 70 %
       :align: center
 
    |
 
 
-   **To stop Crafter CMS:**
+   **To stop CrafterCMS:**
 
    From the command line, navigate to the ``{Crafter-CMS-unzip-directory}/crafter/bin/`` directory, and execute the shutdown script:
 
    .. code-block:: sh
-      :caption: *Stop Crafter CMS*
+      :caption: *Stop CrafterCMS*
 
       ./shutdown.sh
 

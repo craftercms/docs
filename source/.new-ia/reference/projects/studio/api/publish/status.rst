@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-publish-status:
+.. _newIa-crafter-studio-api-publish-status:
 
 ==============
 Publish Status

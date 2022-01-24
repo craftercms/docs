@@ -19,7 +19,7 @@ In this section, we will create a site using an out-of-the-box blueprint called 
 - how to edit a section in the site
 - how to publish the page we created above
 
-It is assumed that you have followed the steps in the :ref:`Getting Started <newIa-getting-started>` to install Crafter CMS and login.
+It is assumed that you have followed the steps in the :ref:`Getting Started <newIa-getting-started>` to install CrafterCMS and login.
 
 Let's get started building your first editorial website!
 

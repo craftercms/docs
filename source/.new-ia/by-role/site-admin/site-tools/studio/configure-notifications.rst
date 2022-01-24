@@ -48,7 +48,7 @@ A full guide to FTL can be found here: http://freemarker.org/
 Template Variables
 ------------------
 
-Here are some template variables used in Crafter CMS:
+Here are some template variables used in CrafterCMS:
 
 Common Variables
 ----------------

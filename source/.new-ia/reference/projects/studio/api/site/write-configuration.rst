@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-site-write-configuration:
+.. _newIa-crafter-studio-api-site-write-configuration:
 
 ================================
 Write Configuration (deprecated)

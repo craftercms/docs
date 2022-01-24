@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-ugc-comments-update:
+.. _newIa-crafter-social-api-ugc-comments-update:
 
 ==============
 Update Comment

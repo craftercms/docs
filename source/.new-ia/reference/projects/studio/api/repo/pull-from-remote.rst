@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-repo-pull-from-remote:
+.. _newIa-crafter-studio-api-repo-pull-from-remote:
 
 =============================
 Pull From Remote (deprecated)

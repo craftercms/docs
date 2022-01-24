@@ -180,7 +180,7 @@ controller then must be placed in Scripts > controllers > sitemap.groovy. The co
     return null
 
 
-.. _page-and-component-scripts:
+.. _newIa-page-and-component-scripts:
 
 Page and Component Scripts
 ==========================

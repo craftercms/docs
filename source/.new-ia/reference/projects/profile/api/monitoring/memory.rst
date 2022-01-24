@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-monitoring-memory:
+.. _newIa-crafter-profile-api-monitoring-memory:
 
 ================
 Get Memory Stats

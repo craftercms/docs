@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-workflow-reject:
+.. _newIa-crafter-studio-api-workflow-reject:
 
 ======
 Reject

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-ugc-votes-neutral:
+.. _newIa-crafter-social-api-ugc-votes-neutral:
 
 ============
 Remove Votes

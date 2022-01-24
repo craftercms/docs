@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-repo-list-remote:
+.. _newIa-crafter-studio-api-repo-list-remote:
 
 =====================================
 List Remote Repositories (deprecated)

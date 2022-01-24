@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-content-get-item-versions:
+.. _newIa-crafter-studio-api-content-get-item-versions:
 
 =================
 Get Item Versions

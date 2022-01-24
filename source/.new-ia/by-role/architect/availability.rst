@@ -4,7 +4,7 @@
 Availability
 ============
 
-Crafter CMS supports geo-distributed deployments with multiple data-centers per geography making the uptime of
+CrafterCMS supports geo-distributed deployments with multiple data-centers per geography making the uptime of
 the delivery tier near 100%. Traffic to the content delivery system flows to the nearest healthy data-center providing
 speed and availability.
 

@@ -4,9 +4,9 @@
 
 .. _newIa-marketplace:
 
-=======================
-Crafter CMS Marketplace
-=======================
+======================
+CrafterCMS Marketplace
+======================
 
 |
 |

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-ugc-threads-get-comments:
+.. _newIa-crafter-social-api-ugc-threads-get-comments:
 
 ===================
 Get Thread Comments

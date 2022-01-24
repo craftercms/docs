@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-content-revert-content:
+.. _newIa-crafter-studio-api-content-revert-content:
 
 ===================
 Revert Content Item

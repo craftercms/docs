@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-delete:
+.. _newIa-crafter-profile-api-profile-delete:
 
 ==============
 Delete Profile

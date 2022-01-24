@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-disable:
+.. _newIa-crafter-profile-api-profile-disable:
 
 ===============
 Disable Profile

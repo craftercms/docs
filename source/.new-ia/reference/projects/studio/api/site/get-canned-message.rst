@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-site-get-canned-message:
+.. _newIa-crafter-studio-api-site-get-canned-message:
 
 ==================
 Get Canned Message

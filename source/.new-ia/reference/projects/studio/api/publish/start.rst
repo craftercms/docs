@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-publish-start:
+.. _newIa-crafter-studio-api-publish-start:
 
 ===============
 Start Publisher

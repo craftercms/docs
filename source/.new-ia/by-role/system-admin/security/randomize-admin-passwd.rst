@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _randomize-admin-password:
+.. _newIa-randomize-admin-password:
 
 =======================================================
 Randomize "admin" Password for CrafterCMS Fresh Install

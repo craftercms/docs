@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-repo-rebuild-database:
+.. _newIa-crafter-studio-api-repo-rebuild-database:
 
 =============================
 Rebuild Database (deprecated)

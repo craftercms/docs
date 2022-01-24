@@ -42,7 +42,7 @@ Here's a sample Site Configuration file (click on the triangle on the left to ex
 |
 |
 
-.. _studio-site-time-zone:
+.. _newIa-studio-site-time-zone:
 
 **************
 Site Time Zone

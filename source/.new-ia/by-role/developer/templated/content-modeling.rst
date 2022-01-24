@@ -655,7 +655,7 @@ The following variable names are used by CrafterCMS.
 
 .. include:: /includes/valid-file-names.rst
 
-.. _variable-names-search-indexing:
+.. _newIa-variable-names-search-indexing:
 
 **Variable Names and Search Indexing**
 
@@ -752,7 +752,7 @@ This default configuration can be modified by editing the element ``<cdata-escap
 
 |
 
-.. _data-sources:
+.. _newIa-data-sources:
 
 ^^^^^^^^^^^^
 Data Sources
@@ -816,7 +816,7 @@ Form Engine Data Sources (please use the scrollbar to see more data sources)
 
 .. include:: form-sources/list-form-sources.rst
 
-.. _macros-for-data-sources:
+.. _newIa-macros-for-data-sources:
 
 Macros for Data Sources
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -886,7 +886,7 @@ Like the Form Section Control, Repeating Group Control is also a container that 
 
 The canvas allows the form-based content capture only, and is used by content authors when they're in that mode. In-Context Editing will leverage the form components, but not the canvas when authors are in that mode. Learn more about In-Context Editing configuration in :ref:`experience-builder`.
 
-.. _content-view-templates:
+.. _newIa-content-view-templates:
 
 ---------------------------
 Content Type View Templates
@@ -945,7 +945,7 @@ The simple example renders a simple HTML page with a very basic model. Let's rev
 
 The `FreeMarker <http://freemarker.org>`_ language is supported. For detailed Freemarker documentation, please visit: `http://freemarker.org <http://freemarker.org>`_
 
-.. _content-type-controller-definition:
+.. _newIa-content-type-controller-definition:
 
 ----------------------------------
 Content Type Controller Definition

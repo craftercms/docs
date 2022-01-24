@@ -2,7 +2,7 @@
 
 .. index:: API; Crafter Studio
 
-.. _crafter-studio-api:
+.. _newIa-crafter-studio-api:
 
 ==================
 Crafter Studio API

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-count:
+.. _newIa-crafter-profile-api-profile-count:
 
 =================
 Get Profile Count

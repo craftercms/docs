@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-content-get-item:
+.. _newIa-crafter-studio-api-content-get-item:
 
 ================
 Get Content Item

@@ -8,7 +8,7 @@
 Custom GraphQL Schema
 =====================
 
-Crafter CMS provides a simple way to customize the built-in GraphQL schema. This feature can be used for integrating
+CrafterCMS provides a simple way to customize the built-in GraphQL schema. This feature can be used for integrating
 external services or transforming values to match special requirements. Once the schema has been customized it is
 possible to create apps or sites that interact only using GraphQL for getting both authored content & external services.
 

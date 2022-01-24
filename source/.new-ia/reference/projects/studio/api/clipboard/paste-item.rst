@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-clipboard-paste-item:
+.. _newIa-crafter-studio-api-clipboard-paste-item:
 
 ==========
 Paste Item

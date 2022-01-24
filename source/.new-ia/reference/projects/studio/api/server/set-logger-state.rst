@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-server-set-logger-state:
+.. _newIa-crafter-studio-api-server-set-logger-state:
 
 ================
 Set Logger State

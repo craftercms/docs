@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-workflow-get-workflow-affected-paths:
+.. _newIa-crafter-studio-api-workflow-get-workflow-affected-paths:
 
 ========================================
 Get Workflow Affected Paths (deprecated)

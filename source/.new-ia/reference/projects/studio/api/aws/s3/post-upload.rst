@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-s3-upload:
+.. _newIa-crafter-studio-api-s3-upload:
 
 ==========================
 AWS S3 Upload (deprecated)

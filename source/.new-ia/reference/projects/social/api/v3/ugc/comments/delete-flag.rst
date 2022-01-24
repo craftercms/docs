@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-ugc-comments-delete-flag:
+.. _newIa-crafter-social-api-ugc-comments-delete-flag:
 
 ===================
 Delete Comment Flag

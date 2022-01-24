@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-enable:
+.. _newIa-crafter-profile-api-profile-enable:
 
 ==============
 Enable Profile

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-cmis-clone:
+.. _newIa-crafter-studio-api-cmis-clone:
 
 ==========================================
 Clone a CMIS File into Studio (deprecated)

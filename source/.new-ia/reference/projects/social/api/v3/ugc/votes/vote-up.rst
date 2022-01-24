@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-ugc-votes-up:
+.. _newIa-crafter-social-api-ugc-votes-up:
 
 =======
 Vote Up

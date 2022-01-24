@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-change_password:
+.. _newIa-crafter-profile-api-profile-change_password:
 
 ===============
 Change Password

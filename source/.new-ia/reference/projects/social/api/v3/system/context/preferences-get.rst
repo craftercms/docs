@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-context-preferences-get:
+.. _newIa-crafter-social-api-context-preferences-get:
 
 =======================
 Get Context Preferences

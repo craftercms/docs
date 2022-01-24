@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-content-content-exists:
+.. _newIa-crafter-studio-api-content-content-exists:
 
 ==============
 Content Exists

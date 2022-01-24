@@ -8,15 +8,15 @@
    14.1.3 Docker
    14.1.3.1 Docker Desktop
 
-.. index:: Installing Crafter CMS on Windows
+.. index:: Installing CrafterCMS on Windows
 
 .. _newIa-installing-craftercms-on-windows:
 
-=================================
-Installing Crafter CMS on Windows
-=================================
+================================
+Installing CrafterCMS on Windows
+================================
 
-This section describes in detail how to install/setup Crafter CMS on Windows.
+This section describes in detail how to install/setup CrafterCMS on Windows.
 
 -------------
 Prerequisites
@@ -27,11 +27,11 @@ First, we need to install Windows Subsystem for Linux (WSL) by following the ins
 optional components, download the latest Linux kernel, set WSL 2 as your default, and install
 Ubuntu Linux for you.
 
-----------------------
-Installing Crafter CMS
-----------------------
+---------------------
+Installing CrafterCMS
+---------------------
 
-There are a couple of ways to install/run Crafter CMS on Windows
+There are a couple of ways to install/run CrafterCMS on Windows
 
 .. toctree::
    :maxdepth: 2
@@ -39,4 +39,4 @@ There are a couple of ways to install/run Crafter CMS on Windows
    running-crafter-in-wsl
    running-crafter-in-docker
 
-Note that the preferred method of installing and running Crafter CMS is via the binary archive through WSL as described :ref:`here <newIa-installing-craftercms-on-wsl>`.
+Note that the preferred method of installing and running CrafterCMS is via the binary archive through WSL as described :ref:`here <newIa-installing-craftercms-on-wsl>`.

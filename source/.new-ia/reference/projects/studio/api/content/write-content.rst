@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-content-write-content:
+.. _newIa-crafter-studio-api-content-write-content:
 
 =============
 Write Content

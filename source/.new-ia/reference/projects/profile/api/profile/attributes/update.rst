@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-attributes-update:
+.. _newIa-crafter-profile-api-profile-attributes-update:
 
 =================
 Update Attributes

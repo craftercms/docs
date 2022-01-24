@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-aws-s3-upload:
+.. _newIa-crafter-studio-api-aws-s3-upload:
 
 =========
 Transcode

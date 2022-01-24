@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-content-unlock-content:
+.. _newIa-crafter-studio-api-content-unlock-content:
 
 ===================
 Unlock Content Item

@@ -6,9 +6,9 @@
 Getting Started
 ===============
 
-This section lets you get started quickly on using Crafter CMS for development or evaluation.
+This section lets you get started quickly on using CrafterCMS for development or evaluation.
 
-How do I install Crafter CMS?
+How do I install CrafterCMS?
 
 .. toctree::
    :maxdepth: 2
@@ -36,7 +36,7 @@ If you are a developer gung-ho to start developing:
 
     * :ref:`newIa-developers`
 
-If you are a system administrator and would like to learn more about configuring/setting up Crafter CMS or to setup a production environment, here are some resources to get you going:
+If you are a system administrator and would like to learn more about configuring/setting up CrafterCMS or to setup a production environment, here are some resources to get you going:
 
     * :ref:`newIa-system-administrators`
     * :ref:`newIa-production-environment-setup`

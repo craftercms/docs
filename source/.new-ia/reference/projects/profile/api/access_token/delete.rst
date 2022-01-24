@@ -2,7 +2,7 @@
 
 .. .. include:: /includes/unicode-checkmark.rst
 
-.. _crafter-profile-api-access_token-delete:
+.. _newIa-crafter-profile-api-access_token-delete:
 
 ===================
 Delete Access Token

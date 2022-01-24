@@ -1,10 +1,10 @@
-.. index:: Crafter CMS 4.0.0 rc1 Release Notes
+.. index:: CrafterCMS 4.0.0 rc1 Release Notes
 
----------------------
-Crafter CMS 4.0.0 rc1
----------------------
+--------------------
+CrafterCMS 4.0.0 rc1
+--------------------
 
-Crafter CMS 4.0 rc1 requires Java 11
+CrafterCMS 4.0 rc1 requires Java 11
 
 ^^^^^^^^^^^^
 New Features
@@ -56,7 +56,7 @@ New Features
 
 * **New Crafter CLI** |br|
 
-  The Crafter CMS Command Line Interface (CLI) for DevContentOps, allows you to authenticate with Crafter CMS and exercise its APIs from a terminal or automation tools. |br|
+  The CrafterCMS Command Line Interface (CLI) for DevContentOps, allows you to authenticate with CrafterCMS and exercise its APIs from a terminal or automation tools. |br|
   See :ref:`here <devcontentops-toolkit>` for more information on the Crafter CLI
 
 
@@ -87,7 +87,7 @@ For a full list of tickets, please visit: `GitHub 4.0.0 Milestone <https://githu
 
 .. important::
 
-    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 4.0.0 rc1
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your CrafterCMS install to 4.0.0 rc1
 
     For Linux installs, the Studio upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
 

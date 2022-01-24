@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-tenant-delete:
+.. _newIa-crafter-profile-api-tenant-delete:
 
 =============
 Delete Tenant

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-authentication-persistent_login-delete:
+.. _newIa-crafter-profile-api-authentication-persistent_login-delete:
 
 =======================
 Delete Persistent Login

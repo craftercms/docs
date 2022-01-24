@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-cmis-upload:
+.. _newIa-crafter-studio-api-cmis-upload:
 
 ===========================================
 Upload an asset File into CMIS (deprecated)

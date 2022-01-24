@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-deployment-get-available-publishing-channels:
+.. _newIa-crafter-studio-api-deployment-get-available-publishing-channels:
 
 =================================
 Get available publishing channels

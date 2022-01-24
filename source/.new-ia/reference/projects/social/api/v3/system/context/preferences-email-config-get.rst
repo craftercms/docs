@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-social-api-context-preferences-email-config-get:
+.. _newIa-crafter-social-api-context-preferences-email-config-get:
 
 =======================
 Get Email Configuration

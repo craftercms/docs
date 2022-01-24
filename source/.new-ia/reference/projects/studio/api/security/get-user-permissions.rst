@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-security-get-user-permissions:
+.. _newIa-crafter-studio-api-security-get-user-permissions:
 
 ====================
 Get User Permissions

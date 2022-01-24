@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-content-rename-folder:
+.. _newIa-crafter-studio-api-content-rename-folder:
 
 =============
 Rename Folder

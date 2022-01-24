@@ -4,7 +4,7 @@
 Deployment Architecture
 =======================
 
-Crafter CMS supports various deployments (both SaaS solutions and PaaS and self-hosted solutions).
+CrafterCMS supports various deployments (both SaaS solutions and PaaS and self-hosted solutions).
 
 
 .. toctree::

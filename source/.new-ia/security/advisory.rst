@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. index:: Crafter CMS Security Advisories, Advisories
+.. index:: CrafterCMS Security Advisories, Advisories
 
 ===================
 Security Advisories

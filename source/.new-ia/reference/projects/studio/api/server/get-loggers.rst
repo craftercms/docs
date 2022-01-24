@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-server-get-loggers:
+.. _newIa-crafter-studio-api-server-get-loggers:
 
 ===========
 Get Loggers

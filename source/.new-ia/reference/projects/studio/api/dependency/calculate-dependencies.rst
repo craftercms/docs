@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-dependency-calculate-dependencies:
+.. _newIa-crafter-studio-api-dependency-calculate-dependencies:
 
 ======================
 Calculate Dependencies

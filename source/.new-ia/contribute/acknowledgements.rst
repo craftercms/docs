@@ -6,7 +6,7 @@
 
 Open Source Acknowledgements
 ============================
-Crafter CMS acknowledges the following Open Source Software used in this product:
+CrafterCMS acknowledges the following Open Source Software used in this product:
 
 javax.servlet-api
 ^^^^^^^^^^^^^^^^^

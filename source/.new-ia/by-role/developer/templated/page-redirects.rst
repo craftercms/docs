@@ -2,7 +2,7 @@
 
 .. index:: Page Redirect
 
-.. _page-redirect:
+.. _newIa-page-redirect:
 
 =========
 Redirects

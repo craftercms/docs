@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-workflow-get-go-live-items:
+.. _newIa-crafter-studio-api-workflow-get-go-live-items:
 
 =================
 Get Go Live Items

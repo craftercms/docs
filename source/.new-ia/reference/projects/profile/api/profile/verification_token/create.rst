@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-profile-api-profile-verification_token-create:
+.. _newIa-crafter-profile-api-profile-verification_token-create:
 
 =========================
 Create Verification Token

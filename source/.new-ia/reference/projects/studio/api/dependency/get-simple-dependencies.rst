@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. _crafter-studio-api-dependency-get-simple-dependencies:
+.. _newIa-crafter-studio-api-dependency-get-simple-dependencies:
 
 =======================
 Get Simple Dependencies
