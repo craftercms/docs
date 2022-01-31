@@ -14,7 +14,10 @@ Updates
   See `here <https://github.com/craftercms/craftercms/issues/5268>`__ for more information
 
 * Added support for adding configuration options to the RTE init function |br|
-  See :ref:`here <extending-rte-init-function>` for more information on how to
+  See :ref:`here <extending-rte-init-function>` for more information on how to add configuration options to the RTE init function
+
+* Added support for RTE paste callback hooks |br|
+  See :ref:`here <rte-paste-plugin-hooks>` for more information on how to use the RTE callback hooks
 
 
 For a full list of tickets, please visit: `GitHub 3.1.19 Milestone <https://github.com/craftercms/craftercms/milestone/76?closed=1>`_
