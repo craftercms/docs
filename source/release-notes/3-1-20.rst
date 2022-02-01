@@ -1,7 +1,7 @@
-.. index:: Crafter CMS 3.1.19 Release Notes
+.. index:: Crafter CMS 3.1.20 Release Notes
 
 ------------------
-Crafter CMS 3.1.19
+Crafter CMS 3.1.20
 ------------------
 
 This release includes a fix for an issue with the 3.1.18 release.
@@ -9,6 +9,8 @@ This release includes a fix for an issue with the 3.1.18 release.
 ^^^^^^^
 Updates
 ^^^^^^^
+
+* Upgraded Elasticsearch version to 6.8.23 |br|
 
 * Fixed indexing issue for a copy of a page |br|
   See `here <https://github.com/craftercms/craftercms/issues/5268>`__ for more information
@@ -20,11 +22,11 @@ Updates
   See :ref:`here <rte-paste-plugin-hooks>` for more information on how to use the RTE callback hooks
 
 
-For a full list of tickets, please visit: `GitHub 3.1.19 Milestone <https://github.com/craftercms/craftercms/milestone/76?closed=1>`_
+For a full list of tickets, please visit: `GitHub 3.1.20 Milestone <https://github.com/craftercms/craftercms/milestone/79?closed=1>`_
 
 .. important::
 
-    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.19)
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.20)
 
     Starting with JVM version 1.8.0_292, support for TLS v1.1 and earlier is disabled by default |br|
     See :ref:`debugging_ssl_issues` if you encounter issues.
