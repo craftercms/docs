@@ -77,7 +77,7 @@ The default editor instance contains a menubar with most of the commonly used ed
 
 TinyMCE paste plugin callback hooks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The TinyMCE paste plugin enables you to modify the pasted content before it gets inserted into the editor (``paste_preprocess``) and before it gets inserted into the editor but after it’s been parsed into a DOM structure (``paste_postprocess``).  For more information on these options, see https://www.tiny.cloud/docs/plugins/opensource/paste#paste_preprocess.
+The TinyMCE ``paste`` plugin enables you to modify the pasted content before it gets inserted into the editor (``paste_preprocess``) and before it gets inserted into the editor but after it’s been parsed into a DOM structure (``paste_postprocess``).  For more information on these options, see https://www.tiny.cloud/docs/plugins/opensource/paste#paste_preprocess.
 
 In order to hook into the callback (``paste_preprocess`` and ``paste_postprocess``), do the following in the RTE configuration:
 
@@ -94,8 +94,7 @@ In order to hook into the callback (``paste_preprocess`` and ``paste_postprocess
 
    |
 
-2) Create an :ref:`external plugin <adding-external-plugins>` by following the structure of the example plugin `here <https://github.com/craftercms/studio-ui/blob/support/3.1.x/static-assets/js/tinymce-plugins/craftercms_paste_extension/craftercms_tinymce_hooks.sample.js>`__
-
+2) Create an :ref:`external plugin <adding-external-plugins>` by following the structure of the example plugin `here <https://github.com/craftercms/studio-ui/blob/support/3.1.x/static-assets/js/tinymce-plugins/craftercms_paste_extension/craftercms_tinymce_hooks.sample.js>`__.  To modify the pasted content, add your code under ``paste_preprocess()`` or ``paste_postprocess()`` depending on your needs.
 
 3) Add the plugin created in the previous step as an external plugin under the ``craftercms_tinymce_hooks`` tag.
 
@@ -106,6 +105,12 @@ In order to hook into the callback (``paste_preprocess`` and ``paste_postprocess
 	    <craftercms_tinymce_hooks><![CDATA[/studio/api/2/plugin/file?siteId={site}&type=tinymce&name=craftercms_paste_extension&filename=samplepasteplugin.js]]></craftercms_tinymce_hooks>
       </external_plugins>
 
+   |
+
+   For more information on ``craftercms_tinymce_hooks``, see :ref:`here <extending-tinymce>`
+
+.. note::
+   When Tiny's ``paste`` plugin is included, ``craftercms_paste_cleanup`` extension is also enabled. CrafterCMS' extension performs some additional paste cleanup from what Tiny's plugin does. To disable these additional processing of the paste input, you may add ``<craftercms_paste_cleanup>false</craftercms_paste_cleanup>`` to the RTE configuration
 
 .. _rte-add-allowable-elements:
 
@@ -484,3 +489,17 @@ In the image below, the RTE setup name used is **generic**.  Please see the sect
 	:align: center
     :width: 50%
 
+
+.. _extending-tinymce:
+
+-----------------
+Extending TinyMCE
+-----------------
+
+CrafterCMS  provides a general tool for extending TinyMCE via the ``craftercms_tinymce_hooks``.   It currently allows for hooking into the following (as shown by the example `here <https://github.com/craftercms/studio-ui/blob/support/3.1.x/static-assets/js/tinymce-plugins/craftercms_paste_extension/craftercms_tinymce_hooks.sample.js>`__):
+
+- ``paste_preprocess`` callback
+- ``paste_postprocess`` callback
+- ``setup`` function
+
+To hook into the paste pre/post process of TinyMCE, see :ref:`here <rte-paste-plugin-hooks>`.
