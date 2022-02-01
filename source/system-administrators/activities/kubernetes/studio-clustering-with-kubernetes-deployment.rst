@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 
 .. index:: Setup Studio Clustering with Kubernetes Deployment, Clustering with Studio Example with Kubernetes
 
@@ -8,7 +8,7 @@
 Setup Studio Clustering with Kubernetes Deployment |enterpriseOnly|
 ===================================================================
 
-A Kubernetes deployment describes an applications life cycle, e.g. images to be used, the number of pods, etc. It creates pods based on a specified template.  Crafter CMS has an example kubernetes deployment for a Studio cluster with 2 nodes and a Studio Arbiter.  In this section, we'll take a look at this example Kubernetes deployment.
+A Kubernetes deployment describes an applications life cycle, e.g. images to be used, the number of pods, etc. It creates pods based on a specified template.  Crafter CMS has an example kubernetes deployment for a Studio cluster with 2 nodes.  In this section, we'll take a look at this example Kubernetes deployment.
 
 ------------
 Requirements
@@ -46,18 +46,11 @@ The requirements (listed above) is the same as specified in :ref:`simple-kuberne
                secrets/
                   .ssh/
                      config
-         arbiter/
-            arbiter-deployment.yaml
-            kustomization.yaml
-            resources/
-               config/
-                  hazelcast-config.yaml
 
   |
 
   The ``nodes`` folder contains the deployment files for setting up two authoring pods and hazelcast, which is used as an in-memory distributed data store to orchestrate the bootstrapping of Studio's Cluster.
 
-  The ``arbiter`` folder contains the deployment files for hazelcast and the Studio Arbiter, an arbitrator that functions as an odd node, since our authoring deployment only has two nodes, to avoid split-brain situations.
 
 ------------------------
 Setup Kubernetes Secrets
@@ -111,7 +104,7 @@ Create the SSH Keys Secret
 Start the Cluster
 -----------------
 
-The next step is to start the cluster.  When starting the cluster, remember to start the nodes first then the arbiter.
+The next step is to start the cluster.
 
 ^^^^^^^^^^^^^^^
 Start the nodes
@@ -182,36 +175,6 @@ We'll take a look at the tomcat logs, so, we'll move the cursor to the ``tomcat`
 
 |
 
-^^^^^^^^^^^^^^^^^
-Start the arbiter
-^^^^^^^^^^^^^^^^^
-
-Go to ``kubernetes-deployments/authoring/cluster/arbiter`` then run ``kubectl apply -f .``
-
-   .. code-block:: bash
-
-      ➜ kubectl apply -f .
-      configmap/arbiter-config-d6mbk26fgm created
-      service/arbiter-service created
-      deployment.apps/arbiter created
-
-Check the status by running ``kubectl get pods`` and you should see the arbiter listed
-
-   .. code-block:: bash
-
-      ➜  kubectl get pods
-      NAME                      READY   STATUS    RESTARTS   AGE
-      arbiter-f84d677c7-v6gkx   0/1     Running   0          38s
-      authoring-0               4/4     Running   1          9m31s
-      authoring-1               4/4     Running   1          9m31s
-
-.. image:: /_static/images/system-admin/clustering-k9s-arbiter-started.jpg
-   :alt: Studio Clustering using Kubernetes deployments - k9s Pods view, arbiter started
-   :width: 100%
-   :align: center
-
-|
-
 -------------
 Create a Site
 -------------
@@ -266,36 +229,7 @@ If we look at the Cluster through one of the nodes, you'll see the two nodes lis
 Shutdown the Cluster
 --------------------
 
-When shutting down the cluster, remember to shutdown the arbiter first, then the nodes.
-
-^^^^^^^^^^^^^^^^
-Shutdown Arbiter
-^^^^^^^^^^^^^^^^
-
-We'll shutdown the arbiter first, so go to the arbiter directory ``kubernetes-deployments/authoring/cluster/arbiter`` then run ``kubectl delete -k .``  This will delete resources (deployment, service, config map, stateful set) from a directory containing kustomization.yaml
-
-   .. code-block:: bash
-
-      ➜ kubectl delete -k .
-      configmap "arbiter-config-d6mbk26fgm" deleted
-      service "arbiter-service" deleted
-      deployment.apps "arbiter" deleted
-
-Once the arbiter has been completely terminated, we can now start shutting down the nodes.
-When we look at ``k9s``, notice that the ``arbiter`` pod is no longer listed
-
-.. image:: /_static/images/system-admin/clustering-k9s-arbiter-terminated.jpg
-   :alt: Studio Clustering using Kubernetes deployments - k9s arbiter terminated
-   :width: 100%
-   :align: center
-
-|
-
-^^^^^^^^^^^^^^
-Shutdown Nodes
-^^^^^^^^^^^^^^
-
-To shutdown the nodes, go to the nodes directory ``kubernetes-deployments/authoring/cluster/arbiter`` then run ``kubectl delete -k . --cascade=false``.  Again, this will delete resources (deployment, service, config map, stateful set) from a directory containing ``kustomization.yaml``
+To shutdown the nodes, go to the nodes directory ``kubernetes-deployments/authoring/cluster/nodes`` then run ``kubectl delete -k . --cascade=false``.  Again, this will delete resources (deployment, service, config map, stateful set) from a directory containing ``kustomization.yaml``
 
    .. code-block:: bash
 
