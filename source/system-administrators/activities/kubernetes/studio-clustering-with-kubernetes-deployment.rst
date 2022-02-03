@@ -233,7 +233,7 @@ To shutdown the nodes, go to the nodes directory ``kubernetes-deployments/author
 
    .. code-block:: bash
 
-      ➜  kubectl delete -k . --cascade=false
+      ➜  kubectl delete -k . --cascade=orphan
       clusterrolebinding.rbac.authorization.k8s.io "default-cluster" deleted
       configmap "authoring-studio-config-8ttt252b8f" deleted
       secret "authoring-crafter-license-hghgcdd8f6" deleted
@@ -242,7 +242,7 @@ To shutdown the nodes, go to the nodes directory ``kubernetes-deployments/author
       service "authoring-service" deleted
       statefulset.apps "authoring" deleted
 
-Shutting down the nodes one by one allows for a graceful shutdown of the cluster.  The ``cascade`` flag allows killing the pods (shutting down the nodes) one by one.  Remember to set the ``cascade`` flag to ``false``, otherwise it will kill both pods at the same time.
+Shutting down the nodes one by one allows for a graceful shutdown of the cluster.  The ``cascade`` flag allows killing the pods (shutting down the nodes) one by one.  Remember to set the ``cascade`` flag to ``orphan``, otherwise it will kill both pods at the same time.
 
 The next step is to terminate the pods one by one.  Terminate one pod first.  Make sure the pod has completely terminated, then terminate the remaining pod.
 
