@@ -281,6 +281,82 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
 
    |
 
+.. _extending-rte-init-function:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Adding configuration options to the init function
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Crafter Studio uses standard TinyMCE configuration options.
+The default editor instance contains most of the commonly used configuration options such as the selector, toolbar,
+plugin, etc. Sometimes, you may want to use a configuration option that is not in the default editor instance.  To add
+a configuration option to an editor instance, we use ``<extendedOptions />`` in the RTE configuration.
+Simply add the configuration options you would like to add in the ``<extendedOptions />`` tag.
+
+.. code-block:: xml
+
+   <extendedOptions>
+     <![CDATA[
+       {
+         "preview_styles": "font-size color"
+       }
+     ]]>
+   </extendedOptions>
+
+|
+|
+
+Most of the TinyMCE configuration options can be used except for the following which are set to read only:
+
+``target`` ``inline`` ``setup`` ``base_url`` ``encoding`` ``autosave_ask_before_unload`` ``autosave_interval``
+``autosave_prefix`` ``autosave_restore_when_empty`` ``autosave_retention`` ``file_picker_callback`` ``height``
+``file_picker_callback`` ``paste_postprocess`` ``images_upload_handler`` ``code_editor_inline``
+
+See https://www.tiny.cloud/docs/configure/ for more information on the configuration options of TinyMCE.
+
+Example adding a configuration option
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Let's take a look at an example of adding the ``fontsize_formats`` option to the init function to override the font
+sizes displayed in the **fontsizeselect** dropdown toolbar button and the **fontsizes** menu item
+
+.. image:: /_static/images/site-admin/rte/rte-default-font-sizes.png
+   :alt: *RTE default font sizes*
+   :width: 55%
+   :align: center
+
+|
+
+The default font sizes are: ``8pt 10pt 12pt 14pt 16pt 18pt 24pt 36pt 48pt`` as seen above.  For our example, we will add the following font sizes to the default: 9pt 11pt and 13pt
+
+1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+
+2. Add the configuration option ``fontsize_formats`` under the ``setup`` tag with the font sizes we want:
+
+   .. code-block:: xml
+
+      <config>
+        <setup>
+          ...
+          <extendedOptions>
+            <![CDATA[
+              {
+                "fontsize_formats": "8pt 9pt 10pt 11pt 12pt 13pt 14pt 16pt 18pt 24pt 36pt 48pt"
+              }
+            ]]>
+          </extendedOptions>
+          ...
+
+   |
+
+3. Let’s see the font sizes we added in action.  Preview a page with an RTE and start editing.  Click on the RTE toolbar
+   menu ``Format`` then select ``Font sizes``
+
+   .. image:: /_static/images/site-admin/rte/rte-edited-font-sizes.png
+      :alt: *RTE edited font sizes*
+      :width: 75%
+      :align: center
+
+   |
 
 ---------------------
 Creating an RTE Setup
