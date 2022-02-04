@@ -10,7 +10,7 @@ Crafter CLI Commands
 
    .. note::
 
-      The connection to Crafter CMS needs to be setup via the ``add-environment`` command before using the rest of the commands listed.
+      The connection to CrafterCMS needs to be setup via the ``add-environment`` command before using the rest of the commands listed.
 
 .. toctree::
    :maxdepth: 1
