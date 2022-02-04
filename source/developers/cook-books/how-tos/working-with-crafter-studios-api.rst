@@ -24,7 +24,7 @@ Let's begin:
 
    There are two authentication methods that can be used: JWT and HTTP Basic
 
-.. _access-tokens:
+   .. _access-tokens:
 
    **JWT Authentication**
 
@@ -109,7 +109,8 @@ Let's begin:
       ``curl -H 'Authentication: Bearer <access token>' ...``
 
    |
-   |
+
+   .. _http-basic-authentication:
 
    **HTTP Basic Authentication**
 
