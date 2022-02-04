@@ -16,13 +16,17 @@ In this section, we'll show the basics of interacting with Crafter Studio APIs b
 
 We’ll use CURL, a ubiquitous Linux command tool as our client.
 
-You can find the full Crafter Studio API for Crafter CMS :ref:`here<crafter-studio-api>`
+You can find the full Crafter Studio API for CrafterCMS :ref:`here<crafter-studio-api>`
 
 Let's begin:
 
 #. **Authentication**
 
    There are two authentication methods that can be used: JWT and HTTP Basic
+
+.. _access-tokens:
+
+   **JWT Authentication**
 
    JWT is a widely adopted standard for secure authentication and is the preferred way.
    HTTP Basic is simple but not as secure as JWT and for that reason it is disabled by default. However, it can be very
@@ -40,8 +44,8 @@ Let's begin:
 
    |
 
-   If you already have an access token you can skip to step 5, otherwise follow all steps to create a new
-   token:
+   If you already have an access token you can skip to step 5, otherwise follow all steps to **create a new
+   token**:
 
    1. Login to Crafter Studio
 
@@ -167,7 +171,7 @@ Let's begin:
 
    In the call above note:
 
-   We are passing in content as the POST body.  The content is in XML format.  In Crafter CMS, content objects are stored as simple XML documents.
-   We are passing a number of parameters that tell Crafter CMS where and how to store the content in the repository
+   We are passing in content as the POST body.  The content is in XML format.  In CrafterCMS, content objects are stored as simple XML documents.
+   We are passing a number of parameters that tell CrafterCMS where and how to store the content in the repository
 
 Using the above examples as a guide, we can now interact with any Crafter Studio API found :ref:`here<crafter-studio-api>`
