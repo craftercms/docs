@@ -48,7 +48,7 @@ Here's an example of issuing the ``add-environment`` command to setup the connec
 
       ➜  ./crafter-cli add-environment -e local -u http://localhost:8080 --token
       Enter value for --token (The access token for authentication):
-      Added
+      Environment added
 
    |
 
@@ -58,6 +58,6 @@ If you're using HTTP basic for authentication when issuing the ``add-environment
 
        ➜  ./crafter-cli add-environment -e local -u http://localhost:8080 --username john --password
        Enter value for --password (The password for authentication):
-       Added
+       Environment added
 
    |

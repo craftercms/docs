@@ -23,7 +23,7 @@ For the example below, we'll use ``local`` for the name, ``http://localhost:8080
 
       ➜  ./crafter-cli add-environment -e local -u http://localhost:8080 --token
       Enter value for --token (The access token for authentication):
-      Added
+      Environment added
 
    |
 
