@@ -72,7 +72,7 @@ site plugin, your files/folders needs to go in the corresponding type of plugin 
     - ``component``: contains configuration files for components, see :ref:`below <example-component-plugin>` for an example
     - ``page``: contains configuration files for pages
 
-  - ``js``: contains files for Studio UI plugins, see :ref:`studio-plugins` for details
+  - ``static-assets``: contains files for Studio UI plugins, see :ref:`studio-plugins` for details
   - ``scripts``
 
     - ``classes``: contains Groovy classes
@@ -102,7 +102,7 @@ the file:
 +------------------------------------------+---------------------------------------------------------------+
 | ``authoring/content-types/page/*``       | ``/config/studio/content-types/page/<plugin id path>/*``      |
 +------------------------------------------+---------------------------------------------------------------+
-| ``authoring/js/*``                       | ``/config/studio/plugins/js/<plugin id path>/*``              |
+| ``authoring/static-assets/*``            | ``/config/studio/static-assets/plugins/<plugin id path>/*``   |
 +------------------------------------------+---------------------------------------------------------------+
 | ``authoring/scripts/classes/*``          | ``/config/studio/plugins/scripts/classes/<plugin id path>/*`` |
 +------------------------------------------+---------------------------------------------------------------+
@@ -136,10 +136,12 @@ Here's an example directory structure for a site plugin:
           screenshots/
             default.png
         authoring/
-          js/
-            {yourPluginType}/
-              {yourPluginName}/
-                {yourPluginFilesAndFolders}
+          static-assets/
+            plugins/
+              {yourPluginId}/
+                {yourPluginType}/
+                  {yourPluginName}/
+                    {yourPluginFilesAndFolders}
         delivery/
           {yourPluginFilesAndFolders}
 
@@ -357,7 +359,7 @@ Plugins may be installed a couple of ways depending on where the plugins are loc
 
 After installing a site plugin, depending on the plugin you created, the site plugin will be be installed under the:
 
-* {siteRoot}/config/studio/plugins/js/{yourPluginId}/{yourPluginType}/{yourPluginName}/
+* {siteRoot}/config/studio/static-assets/plugins/{yourPluginId}/{yourPluginType}/{yourPluginName}/
 * {siteRoot}/config/studio/content-types/component/{yourPluginType}/{yourPluginName}/
 * {siteRoot}/config/studio/content-types/page/{yourPluginType}/{yourPluginName}/
 * {siteRoot}/templates/{yourPluginId}/{yourPluginType}/{yourPluginName}
