@@ -15,7 +15,7 @@ To run the command line tool (CrafterCMS Command line Interface (CLI) for DevCon
 * **crafter-cli:** - for users on a Linux/macOS operating system
 * **crafter-cli.bat** - for users on a Windows operating system
 
-When using the **crafter-cli**, we first need to setup the connection to CrafterCMS before we can use the other available commands.  To setup the connection, run the ``add-environment`` command,  provide a name, the url for a CrafterCMS authoring server and the authentication information.
+When using the **crafter-cli**, we first need to setup the connection to CrafterCMS before we can use the other available commands.  To setup the connection, run the :ref:`add-environment <crafter-cli-add-environment>` command,  provide a name, the url for a CrafterCMS authoring server and the authentication information.
 
 For the example below, we'll use ``local`` for the name, ``http://localhost:8080`` for the url, and your access token for the authentication.  See :ref:`here <access-tokens>` for the steps on how to create a token.  Leave the token blank, you will be prompted for the token after issuing the ``add-environment`` command:
 
