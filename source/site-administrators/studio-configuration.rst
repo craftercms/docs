@@ -16,18 +16,21 @@ To access the configuration settings in Crafter Studio, click on |siteConfig| in
     :align: center
     :alt: Open Configuration
 
-then click on **Configuration**.  After clicking on **Configuration**, you will see a dropdown list where you can select which configuration file you'd like to view/modify.  Below is one of the configuration files available to be viewed/modified.
+then click on **Configuration**.  After clicking on **Configuration**, you will see a list where you can select which configuration file you'd like to view/modify.  Below is one of the configuration files available to be viewed/modified.
 
 .. image:: /_static/images/site-admin/basic-configuration.jpg
     :align: center
     :alt: Basic Configuration
 
+|
+
 The following items are noted in the image above:
 
-    #. This is the dropdown list that contains all the configurations that can be viewed/modified for your site.
+    #. This is the list that contains all the configurations that can be viewed/modified for your site.
     #. This is a short description of the current selected configuration file from the dropdown list.
     #. These are the available actions that can be selected for the current selected configuration file.
     #. This allows the user to encrypt access keys, passwords and other sensitive information required by the current selected configuration file.  For more information on how to encrypt sensitive information in a configuration file through Studio, see :ref:`encrypting-text-in-a-configuration-file`
+    #. This allows the user to view the selected configuration's history
 
 Here are the settings that can be configured through Crafter Studio:
 
