@@ -23,10 +23,11 @@ Site Plugin Directory Structure
 
 When using site plugins, the JavaScript files and folders location for the plugins uses a convention where the files/folders needs to go in the following location:
 
-* **Plugin** : authoring/js/PLUGIN_TYPE/PLUGIN_NAME/PLUGIN_FILES_FOLDERS
+* **Plugin** : authoring/static-assets/plugins/PLUGIN_ID/PLUGIN_TYPE/PLUGIN_NAME/PLUGIN_FILES_FOLDERS
 
 where:
 
+- **PLUGIN_ID**   : A folder structure representing the plugin id
 - **PLUGIN_TYPE** : Type of plugin, e.g. control, datasource, sidebar, app, etc.
 - **PLUGIN_NAME** : Name of  plugin
 - **PLUGIN_FILES_FOLDERS** : JavaScript and/or plugin build output files/folders containing the plugin implementation
@@ -45,9 +46,11 @@ Let'a take a look at how to create a Crafter Studio site plugin.
          {your_plugin_folder}/
            craftercms-plugin.yaml
            authoring/
-             js/
-               {yourPluginType}/
-                 {yourPluginName}/
+             static-assets/
+               plugins/
+                 {yourPluginId}/
+                   {yourPluginType}/
+                     {yourPluginName}/
 
       |
 
@@ -56,7 +59,9 @@ Let'a take a look at how to create a Crafter Studio site plugin.
 #. If your site plugin is inside Studio, setup automatic wiring of your plugin to the corresponding configuration file through the descriptor file for supported installation types, otherwise, setup needed configuration files.   See :ref:`site-plugin-descriptor-file`  for more information on auto-wiring your plugin in Studio.
 #. See your site plugin in action by installing your plugin via the ``crafter-cli`` command ``copy-plugin`` if your site plugin is inside Studio, otherwise visit: ``/studio/plugin?site={site}&pluginId={yourPluginIdName}&type={yourPluginType}&name={yourPluginName}``
 
-   Installing your site plugin to your site using the ``crafter-cli`` command ``copy-plugin`` will install your Studio site plugin under the ``config/studio/plugins/js/{yourPluginId}/{yourPluginType}/{yourPluginName}`` directory
+   Installing your site plugin to your site using the ``crafter-cli`` command ``copy-plugin`` will install your Studio
+   site plugin under the ``config/studio/static-assets/plugins/{yourPluginId}/{yourPluginType}/{yourPluginName}``
+   directory
 
       .. code-block:: text
          :linenos:
@@ -64,8 +69,8 @@ Let'a take a look at how to create a Crafter Studio site plugin.
              {siteRoot}/
                config/
                  studio/
-                   plugins/
-                     js/
+                   static-assets/
+                     plugins/
                        {yourPluginId}/
                          {yourPluginType}/
                            {yourPluginName}/
@@ -119,16 +124,21 @@ React is already present in the Studio client runtime. You may access the lib(s)
 |
 
 
-You can use ``JSX``, ``TypeScript`` or any form of transpiling when developing your site plugin. In this case, we suggest the following directory structure for your files:  ``sources/{pluginSource}`` for the site plugin source and ``{yourPluginFolder}/authoring/js/{type}/{name}`` for the JavaScript and/or site plugin build output files/folders containing the site plugin implementation
+You can use ``JSX``, ``TypeScript`` or any form of transpiling when developing your site plugin. In this case, we
+suggest the following directory structure for your files:  ``sources/{pluginSource}`` for the site plugin source and
+``{yourPluginFolder}/authoring/static-assets/plugins/{pluginId}/{type}/{name}`` for the JavaScript and/or site plugin
+build output files/folders containing the site plugin implementation
 
 .. code-block:: none
 
    {yourPluginFolder}/
      authoring/
-       js/
-         {yourPluginType}/     <= Your plugin "type"
-           {yourPluginName}/   <= Your plugin name
-             main.js           <= Your transpiled main/index plugin entry point
+       static-assets/
+         plugins/
+           {yourPluginId}/
+             {yourPluginType}/     <= Your plugin "type"
+               {yourPluginName}/   <= Your plugin name
+                 main.js           <= Your transpiled main/index plugin entry point
    sources/
      {pluginSource}            <= Your plugin source
 

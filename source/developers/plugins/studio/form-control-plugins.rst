@@ -63,10 +63,14 @@ In a local folder, create the descriptor file for your site plugin ``craftercms-
       <plugin-folder>/
         craftercms-plugin.yaml
         authoring/
-          js/
-            control/
-              text-input/
-                main.js
+          static-assets/
+            plugins/
+              org/
+                craftercms/
+                  plugin/
+                    control/
+                      text-input/
+                        main.js
 
    |
 
@@ -235,4 +239,3 @@ Here's our site plugin control added to the list of controls in content types
     :width: 50 %
     :alt: Form Engine Control Site Plugin Added to Content Type
     :align: center
-

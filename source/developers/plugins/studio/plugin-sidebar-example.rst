@@ -20,10 +20,14 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
          <plugin-folder>/
            craftercms-plugin.yaml
            authoring/
-             js/
-               sidebar/
-                 react-sample/
-                   main.js
+             static-assets/
+               plugins/
+                 org/
+                   craftercms/
+                     plugin/
+                      sidebar/
+                        react-sample/
+                          main.js
 
    |
 
