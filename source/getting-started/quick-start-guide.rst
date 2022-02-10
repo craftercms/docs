@@ -70,8 +70,18 @@ Here are the steps to start using Crafter CMS for development or evaluation by i
          |--LICENSE
          |--README.txt
          |--bin/
+         |--data/
+            |--ssh/
+               |--config
+               |--known-hosts
 
    |
+
+   where:
+   - The ``bin`` folder contains various scripts for starting, stopping, etc.
+   - The ``data/ssh`` folder is the default ssh config location Crafter Studio and Crafter Deployer reads from |br|
+     To change the default location
+   - The ``known-hosts`` file contains key fingerprints for GitHub, GitLab and BitBucket
 
 #. **Start Crafter CMS**
 

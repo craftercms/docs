@@ -6,23 +6,7 @@
 Debugging Deployer Issues
 =========================
 
-----------------
-SSH Unknown Host
-----------------
-
-When configuring a Deployer target to connect to a remote host through SSH you might encounter the following error:
-
-.. code-block:: java
-
-	com.jcraft.jsch.JSchException: UnknownHostKey: SERVER_NAME. RSA key fingerprint is 50:db:75:ba:11:2f:43:c9:ab:14:40:6d:7f:a1:ee:e3
-
-|
-
-This normally means that the SSH host key from the remote server is stored in ECDSA format instead of RSA, under ``known_hosts``.
-The Deployer requires the host key to be RSA. To fix this do the following:
-
-#. Delete the ``~/.ssh/known_hosts`` file for the user that's running the Deployer.
-#. Connect to the remote server with the following command to add the RSA key: ``ssh -o HostKeyAlgorithms=ssh-rsa SERVER_NAME``.
+.. include:: /includes/ssh-unknown-host.rst
 
 ----------
 Git Errors
@@ -61,6 +45,12 @@ If the Deployer is not able to clone the remote repository and an error like bel
 
 |
 
-Try a manual clone from the command line: `git clone ssh://jdoe@server2.example.com:63022/path/to/repo`
+Try a manual clone from the command line:
+
+.. code-block:: bash
+
+   git clone ssh://jdoe@server2.example.com:63022/path/to/repo
+
+|
 
 If the manual clone works, it's very probable that there's a proxy between the servers.  The Deployer currently does not support connections through proxies but might get support in a future update.

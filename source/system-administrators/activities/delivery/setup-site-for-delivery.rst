@@ -8,15 +8,15 @@
 Setup Site for a Delivery Environment
 =====================================
 
-In this section, we will be working in the delivery environment of Crafter CMS and describing how to setup your site for a delivery environment.
+In this section, we will be working in the delivery environment of CrafterCMS and describing how to setup your site for a delivery environment.
 
 -----------------------------
 Setup Crafter Deployer Target
 -----------------------------
 
-Crafter CMS out of the box has a script to help you create your deployer target for the delivery environment.
+CrafterCMS out of the box has a script to help you create your deployer target for the delivery environment.
 
-In the ``bin`` folder in your Crafter CMS delivery environment, we will use the script ``init-site.sh`` to help us create the deployer target.
+In the ``bin`` folder in your CrafterCMS delivery environment, we will use the script ``init-site.sh`` to help us create the deployer target.
 
 From your command line, navigate to your ``{Crafter-CMS-delivery-environment-directory}/bin/`` , and execute the init-site script. The following output of ``init-site.sh -h``
 explains how to use the script:
@@ -86,7 +86,7 @@ Here is an example site's published repo Git url when using a local repository:
       /opt/crafter/authoring/data/repos/sites/mysite/published
 
 .. note::
-  * When using ``ssh``, you might see in the logs ``com.jcraft.jsch.JSchException: UnknownHostKey`` errors. These errors are common in Ubuntu, and are caused by known host keys being stored in non-RSA format. Please follow the instructions in :ref:`crafter-studio-debugging-deployer-issues` under ``SSH Unknown Host`` to resolve them.
+  * When using ``ssh``, you might see in the logs ``Caused by: org.apache.sshd.common.SshException: Server key did not validate`` errors. These error is caused by the server not in the known_host file. Please follow the instructions in :ref:`crafter-studio-debugging-deployer-issues` under ``SSH Unknown Host`` to resolve them.
 
   * ``Git`` needs to be installed in authoring when using SSH to connect the delivery to the authoring.
 
