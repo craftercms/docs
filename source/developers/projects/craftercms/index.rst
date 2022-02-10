@@ -648,7 +648,7 @@ Other Scripts
 For more information about Apache Tomcat, and Elasticsearch please refer to the following:
 
  * [Tomcat Script documentation](https://tomcat.apache.org/tomcat-8.5-doc/RUNNING.txt)
- * [ElasticSearch Script documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/starting-elasticsearch.html)
+ * [Elasticsearch Script documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/starting-elasticsearch.html)
 
 
 -------------------------------------------------

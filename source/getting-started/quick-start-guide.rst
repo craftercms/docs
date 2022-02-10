@@ -78,10 +78,11 @@ Here are the steps to start using Crafter CMS for development or evaluation by i
    |
 
    where:
+
    - The ``bin`` folder contains various scripts for starting, stopping, etc.
    - The ``data/ssh`` folder is the default ssh config location Crafter Studio and Crafter Deployer reads from |br|
-     To change the default location
-   - The ``known-hosts`` file contains key fingerprints for GitHub, GitLab and BitBucket
+     To change the default location, simply change the value of ``CRAFTER_SSH_CONFIG`` in the ``{Crafter-CMS-unzip-directory}/crafter/bin/crafter-setenv.sh`` file
+   - The ``known-hosts`` file contains key fingerprints for GitHub, GitLab and BitBucket and is where you can add additional fingerprints for other providers as needed
 
 #. **Start Crafter CMS**
 
