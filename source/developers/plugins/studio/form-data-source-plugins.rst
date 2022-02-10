@@ -63,10 +63,14 @@ In a local folder, create the descriptor file for your site plugin ``craftercms-
          <plugin-folder>/
            craftercms-plugin.yaml
            authoring/
-             js/
-               datasource/
-                 parent-content/
-                   main.js
+             static-assets/
+               plugins/
+                 org/
+                   craftercms/
+                     plugin/
+                      datasource/
+                        parent-content/
+                          main.js
 
    |
 
@@ -246,4 +250,3 @@ Here's our site plugin data source added to the list of data sources in content 
     :width: 50 %
     :alt: Form Engine Data Source Site Plugin Added to Content Type
     :align: center
-

@@ -300,22 +300,22 @@ After importing ``crafter.ftl``, you'll have all the available XB macros describ
    const editModeClass = 'craftercms-ice-on';
    const zKeyClass = 'craftercms-ice-bypass';
 
-.. _initInContextEditing:
+.. _initExperienceBuilder:
 
-initInContextEditing
+initExperienceBuilder
 """"""""""""""""""""
 
 Initializes the ICE engine and the communication between the page/app and studio. Call is required to
 enable Studio to control the page and for XB to enable ICE.
 
-The ``initInContextEditing`` macro is automatically invoked by the ``<@crafter.body_bottom />`` but you can opt out
+The ``initExperienceBuilder`` macro is automatically invoked by the ``<@crafter.body_bottom />`` but you can opt out
 of it by invoking body_bottom with ``initializeInContextEditing=false``.
 
 .. code-block:: text
 
    <@crafter.body_bottom initializeInContextEditing=false />
 
-In that case, you'll need to invoke ``initInContextEditing`` manually.
+In that case, you'll need to invoke ``initExperienceBuilder`` manually.
 
 .. list-table::
    :widths: 10 10 80
@@ -339,18 +339,18 @@ Examples
 
 .. code-block:: text
 
-   <@initInContextEditing />
+   <@initExperienceBuilder />
 
 
 .. code-block:: text
 
-   <@initInContextEditing props="{ themeOptions: { ... } }" />
+   <@initExperienceBuilder props="{ themeOptions: { ... } }" />
 
 
 .. code-block:: text
 
    <@crafter.body_bottom iceProps="{ scrollElement: '#mainWrapper' }" />
-   <#-- `body_bottom` internally invokes `initializeInContextEditing` -->
+   <#-- `body_bottom` internally invokes `initExperienceBuilder` -->
 
 .. _htmlElementTagMacros:
 
