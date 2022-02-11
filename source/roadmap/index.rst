@@ -12,12 +12,12 @@ The detailed roadmap is maintained in our issue planning and tracking system, an
 
 At a high-level, we're pursuing the objectives listed below in order:
 
+* Update all documentation to flow better and address use-cases more directly
+* New dashboard system and new dashboards
 * Content Modeling Tool: Modernize the content modeling tools
 * Form Engine: Rewrite the form engine
 * Improve Experience Builder (XB) support for SPA (React, Vue, Angular)
-* New dashboard system and new dashboards
 * Add Recycle Bin to the authoring system
-* Update all documentation to flow better and address use-cases more directly
 
 Recently Completed
 ------------------
