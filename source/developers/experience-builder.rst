@@ -8,9 +8,9 @@
 Experience Builder
 ==================
 
-Crafter CMS' Experience Builder (XB) provides a UI layer on top of your applications that enables authors
+CrafterCMS' Experience Builder (XB) provides a UI layer on top of your applications that enables authors
 with in-context editing (ICE) for all the model fields defined in the content types of pages and components.
-Crafter CMS developers must integrate their applications with XB, essentially telling XB what field of the
+CrafterCMS developers must integrate their applications with XB, essentially telling XB what field of the
 model each element on the view represents. See :ref:`content-modeling` to learn more about the model.
 
 .. TODO insert <figure: example page with a sample content type side by side showing the relation between page elements
@@ -21,7 +21,7 @@ Creating Experience Builder (XB) Enabled Sites
 ----------------------------------------------
 
 The concrete integration strategy with XB depends on what kind of application you are developing.
-Crafter CMS provides native XB integration for FreeMarker and React applications. Other types of
+CrafterCMS provides native XB integration for FreeMarker and React applications. Other types of
 applications (e.g. Angular, Vue, etc.) can still be integrated with XB through the underlying libraries
 that power the FreeMarker and React applications. For reference on how to integrate, please see the
 sections below for your specific kind of application.
@@ -32,7 +32,7 @@ tell the CMS which field of the content type each element/component on your page
 The coordinate system consists of the following pieces of data:
 
 * **Path**: the path to the content item (e.g. ``/site/components/features/main_feature.xml``)
-* **Model ID (a.k.a. object ID, local ID)**: the internal GUID that every content object in Crafter CMS has
+* **Model ID (a.k.a. object ID, local ID)**: the internal GUID that every content object in CrafterCMS has
   (e.g. ``5a06e244-64f4-4380-8619-1c726fe38e92``)
 * **Field ID**: the ID of the field in the content type (e.g. ``heroTitleText_t``)
 
@@ -48,7 +48,7 @@ XB's ICE engine requires, at times, what might be considered slightly more verbo
 In order for the system to be able to direct authors to every piece of the model, as well as allowing
 them to edit inline, you need to register each piece of the model as an element on your view.
 
-For example, consider a carousel, where the carousel is modelled as a Crafter CMS component that has
+For example, consider a carousel, where the carousel is modelled as a CrafterCMS component that has
 a repeat group field called ``slides_o`` which has two inner fields called ``caption_s`` and ``image_s``.
 
 The markup for a carousel may look like this:
@@ -116,7 +116,7 @@ carousel class.
 FreeMarker
 ^^^^^^^^^^
 
-In FreeMarker applications, in order to integrate with XB, you will use the macros provided by Crafter CMS,
+In FreeMarker applications, in order to integrate with XB, you will use the macros provided by CrafterCMS,
 which in turn will set all the right hints (i.e. html attributes) on the markup for
 the ICE engine to make things editable to authors.
 
@@ -126,7 +126,7 @@ so, in addition to their other arguments, each macro receives the following base
 
 * **Model** (``$model``)
 
-  * By providing the model, internally Crafter CMS extracts the path and model ID (a.k.a object ID)
+  * By providing the model, internally CrafterCMS extracts the path and model ID (a.k.a object ID)
   * Model is optional since by default it uses the ``contentModel`` FreeMarker context variable for the current template
 
     * If you need to use a different model, please specify the ``$model`` argument of the macros
@@ -169,7 +169,7 @@ Start by importing the crafter FreeMarker library on to your FreeMarker template
    <#import "/templates/system/common/crafter.ftl" as crafter />
 
 Once you've imported ``crafter.ftl``, you can start converting tags to editable elements by switching
-each of the tags that represent Crafter CMS content model fields, from plain HTML tags to a macro tag.
+each of the tags that represent CrafterCMS content model fields, from plain HTML tags to a macro tag.
 Will use the previous carousel example to illustrate.
 
 As seen on the previous section, we introduced an additional element to represent the repeat group
@@ -204,7 +204,7 @@ for the component and the repeat group.
      </div>
    </div>
 
-Now, to start converting the elements to be editable, replace each tag, with the appropriate Crafter CMS macro.
+Now, to start converting the elements to be editable, replace each tag, with the appropriate CrafterCMS macro.
 Prepend ``@crafter.`` to every tag so that ``<div>…</div>`` becomes ``<@crafter.div>...</@crafter.div>``,
 ``<h1>`` becomes ``<@crafter.h1>``, ``<img>`` becomes ``<@crafter.img>``, ``span`` becomes ``<@crafter.span>``
 and so on.
@@ -303,7 +303,7 @@ After importing ``crafter.ftl``, you'll have all the available XB macros describ
 .. _initExperienceBuilder:
 
 initExperienceBuilder
-""""""""""""""""""""
+"""""""""""""""""""""
 
 Initializes the ICE engine and the communication between the page/app and studio. Call is required to
 enable Studio to control the page and for XB to enable ICE.
@@ -357,7 +357,7 @@ Examples
 Html elements tag macros
 """"""""""""""""""""""""
 
-Crafter CMS provides a comprehensive list of macros for the most common html elements that are used to
+CrafterCMS provides a comprehensive list of macros for the most common html elements that are used to
 develop content-managed websites/webapps. All these tags provided are essentially an alias to the
 underlying ``@crafter.tag`` macro, which you can use when you wish to use an element that isn't provided
 in the out-of-the-box macros (e.g. if you're using custom html elements), or if you need to set which
@@ -491,7 +491,7 @@ not the item.
      - Html attributes to print by item index. For example, ``$nthItemAttributes={ 0: { "class": "active" } }`` will
        apply the class named active only to the first item in the collection.
    * - ``renderComponentArguments``
-     - Crafter CMS' :ref:`renderComponent <renderComponent>` macro supports supplying additional arguments
+     - CrafterCMS' :ref:`renderComponent <renderComponent>` macro supports supplying additional arguments
        (``additionalModel`` argument when used directly) to the component template context. You can send these via
        this parameter. The ``renderComponentArguments`` will be sent to all items.
 
@@ -1146,9 +1146,9 @@ breadcrumb
         React
         ^^^^^
 
-        Crafter CMS provides react bindings for integrating with XB.
+        CrafterCMS provides react bindings for integrating with XB.
 
-        React bindings can be used either via npm or using the umd bundle that comes with Crafter CMS.
+        React bindings can be used either via npm or using the umd bundle that comes with CrafterCMS.
 
         Npm
         ~~~
