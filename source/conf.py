@@ -89,7 +89,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['includes/*.rst']
+exclude_patterns = ['includes/*.rst', '.new-ia/includes/*.rst']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -409,6 +409,9 @@ rst_epilog = """
 .. |siteConfig| image:: /_static/images/configuration-site-tools-icon.png
                    :width: 15%
 
+.. |siteTools| image:: /_static/images/configuration-site-tools-icon.png
+                   :width: 15%
+
 .. |mainMenu| image:: /_static/images/main-menu-button.png
                    :width: 5%
 
@@ -430,7 +433,7 @@ javadoc_version = '4.0.0-rc1'
 
 # swagger base and version
 studio_swagger_base = 'https://app.swaggerhub.com/apis/craftercms/studio/'
-studio_swagger_version = '4.0.0.22'
+studio_swagger_version = '4.0.0.26'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),

@@ -30,7 +30,7 @@ CrafterCMS is a modern content management platform for building digital experien
 
 Crafter is a dynamic CMS based on Git and supports DevOps processes for code and content. It is also a hybrid-headless, API-first (GraphQL, REST, in-process) CMS, and that allows developers to use their favorite UI frameworks and tools.
 
-CrafterCMS differentiates itself from existing CMSs with its architecture: microservices-based, serverless, elastic and planet-wide scalability. To learn more, see the :ref:`newIa-architecture`.
+CrafterCMS differentiates itself from existing CMSs with its architecture: microservices-based, serverless, elastic and planet-wide scalability. To learn more, see the :ref:`newIa-general-architecture`.
 
 ############################
 When/where to use CrafterCMS

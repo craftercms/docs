@@ -17,7 +17,7 @@ The external storage could be in the cloud, such as AWS S3 or some other storage
 Configuring the External Storage
 --------------------------------
 First we'll need to setup the external storage to be used by CrafterCMS.
-To setup an external storage for assets, open the **Sidebar**, then click on |siteConfig| -> *Configurations*.  Select ``Blob Stores`` from the dropdown and fill in the required information.
+To setup an external storage for assets, open the **Sidebar**, then click on |siteTools| -> *Configurations*.  Select ``Blob Stores`` from the dropdown and fill in the required information.
 
 .. code-block:: xml
 
@@ -37,7 +37,7 @@ To setup an external storage for assets, open the **Sidebar**, then click on |si
 
 |
 
-To see more information on the Blob Stores configuration, see :ref:`blob-stores-configuration`
+To see more information on the Blob Stores configuration, see :ref:`newIa-blob-stores-configuration`
 
 After setting up the ``Blob Stores`` configuration, you may now use the external storage for uploading using the various upload methods provided by Crafter Studio, and publishing to live or staging if it's setup.
 
@@ -70,7 +70,7 @@ Let's begin:
 1. Enable Staging
 ^^^^^^^^^^^^^^^^^
 
-This step is optional but for our example, we wanted to be able to publish to staging, so in this step, we will first enable staging.  In your Studio, click on |siteConfig| -> *Configuration* -> *Site Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
+This step is optional but for our example, we wanted to be able to publish to staging, so in this step, we will first enable staging.  In your Studio, click on |siteTools| -> *Configuration* -> *Site Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
 
   .. code-block:: xml
      :emphasize-lines: 2
@@ -83,13 +83,13 @@ This step is optional but for our example, we wanted to be able to publish to st
 
   |
 
-For more information on staging, see :ref:`staging-env`
+For more information on staging, see :ref:`newIa-staging-env`
 
 ^^^^^^^^^^^^^^^^^^^
 2. Setup Blob Store
 ^^^^^^^^^^^^^^^^^^^
 
-In your Studio, click on |siteConfig| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 buckets for the preview, staging and live.
+In your Studio, click on |siteTools| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 buckets for the preview, staging and live.
 
    .. code-block:: xml
       :caption: *CRAFTER_HOME/data/repos/sites/sandbox/SITENAME/sandbox/config/studio/blob-stores-config.xml*
@@ -137,7 +137,7 @@ In your Studio, click on |siteConfig| -> *Configuration* -> *Blob Stores* and fi
 * **configuration:** configuration specific for the store type (For AWS S3, it requires credentials to access the buckets)
 
 
-To see more information on the Blob Stores configuration, see :ref:`blob-stores-configuration`
+To see more information on the Blob Stores configuration, see :ref:`newIa-blob-stores-configuration`
 
 
 ^^^^^^^^^^^^^^^
@@ -153,7 +153,7 @@ Let's take a closer look:
 
 #. One way of uploading files is through the use of a picker (image, video, item selector) with its corresponding data source with the ``Repository Path`` property set to the ``pattern`` we defined in the ``Blob Stores`` configuration file.
 
-   For our example, open the **Page - Article** content type by opening the **Sidebar**, then click on |siteConfig| -> *Content Types*, then choose the template name ``Page - Article``.
+   For our example, open the **Page - Article** content type by opening the **Sidebar**, then click on |siteConfig| -> *Content Types*, then choose the template name ``Article``.
 
    In the **Page - Article** content type, notice that the ``Repository Path`` property of the ``Upload Image`` data source is set to: ``/static-assets/item/images/{yyyy}/{mm}/{dd}/``, which falls into the file path pattern ``/static-assets/item/.*`` we setup in the ``Blob Stores`` configuration file
 
@@ -290,11 +290,11 @@ Let's begin:
 
      |
 
-   For more information on staging, see :ref:`staging-env`
+   For more information on staging, see :ref:`newIa-staging-env`
 
 2. **Setup Blob Store**
 
-   Setup ``staging`` in the Blob Store by adding the following to your ``Blob Stores`` configuration.  In your Studio, click on |siteConfig| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 bucket for staging.
+   Setup ``staging`` in the Blob Store by adding the following to your ``Blob Stores`` configuration.  In your Studio, click on |siteTools| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 bucket for staging.
 
      .. code-block:: xml
 
@@ -306,7 +306,7 @@ Let's begin:
      |
 
   
-   To see more information on the Blob Stores configuration, see :ref:`blob-stores-configuration`
+   To see more information on the Blob Stores configuration, see :ref:`newIa-blob-stores-configuration`
 
 #. **Copy assets in** ``live`` **to** ``staging`` **in external storage**
 

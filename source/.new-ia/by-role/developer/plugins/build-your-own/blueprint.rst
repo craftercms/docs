@@ -12,7 +12,7 @@ Blueprints
 What are Blueprints?
 --------------------
 
-Blueprints are CrafterCMS project templates.  It provides an initial set of styles, pages, behaviors, content types and more, containing one or more of the following: content types such as pages and components as described in :ref:`content-modeling`, static assets such as images, videos, etc., and site configuration files for managing items in the blueprint such as taxonomies (categories, segments), roles, permissions, etc.
+Blueprints are CrafterCMS project templates.  It provides an initial set of styles, pages, behaviors, content types and more, containing one or more of the following: content types such as pages and components as described in :ref:`newIa-content-modeling`, static assets such as images, videos, etc., and site configuration files for managing items in the blueprint such as taxonomies (categories, segments), roles, permissions, etc.
 
 .. image:: /_static/images/blueprint/blueprint-anatomy.png
    :alt: Blueprint Anatomy
@@ -25,7 +25,7 @@ The blueprint that comes out of the box with CrafterCMS, ``Website Editorial Blu
 
 As mentioned earlier, blueprints allows us to generate sites with predefined layouts, contents and configuration.  Blueprints could be a site theme or an API only site.  New blueprints can be created from a site and added into CrafterCMS allowing the creation of more sites based on the new blueprint.  In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from CrafterCMS and an existing site is used to create a new blueprint.
 
-Developers may submit their blueprints to the `CrafterCMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted blueprints are listed, and power users of CrafterCMS can create sites based on marketplace plugins directly from the ``Create Site`` dialog in the CMS. See :ref:`submit-plugin-to-marketplace` for more information on how to submit your blueprint to the marketplace.
+Developers may submit their blueprints to the `CrafterCMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted blueprints are listed, and power users of CrafterCMS can create sites based on marketplace plugins directly from the ``Create Site`` dialog in the CMS. See :ref:`newIa-submit-plugin-to-marketplace` for more information on how to submit your blueprint to the marketplace.
 
 -------------------------------
 How do I make my own Blueprint?
@@ -33,7 +33,7 @@ How do I make my own Blueprint?
 
 Start by following ``How do I install CrafterCMS`` :ref:`here <newIa-getting-started>`.
 
-Blueprints are almost the same as a site (:ref:`Warnings <blueprint-site-vs-blueprint>`). So, you can use a new site created from the ``Empty`` blueprint as the starting point for your blueprint. (See :ref:`newIa-your-first-editorial-website` but create it from the ``Empty`` blueprint).
+Blueprints are almost the same as a site (:ref:`Warnings <newIa-blueprint-site-vs-blueprint>`). So, you can use a new site created from the ``Empty`` blueprint as the starting point for your blueprint. (See :ref:`newIa-your-first-editorial-website` but create it from the ``Empty`` blueprint).
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Adapting an HTML template
@@ -75,9 +75,9 @@ At this point, you should have a static page that looks just how the template is
 Content Modeling
 ^^^^^^^^^^^^^^^^
 
-A powerful and extensible blueprint that can be used in a variety of pages and scenarios needs proper :ref:`content-modeling`, so you have to be familiar with it before proceeding.
+A powerful and extensible blueprint that can be used in a variety of pages and scenarios needs proper :ref:`newIa-content-modeling`, so you have to be familiar with it before proceeding.
 
-A good blueprint separates each meaningful chunk of HTML code into a component. For example, whether you implement an "Our Team" section using a repeating group or multiple "Teammate" shared components, it still has to be a separate type that only contains information related to "Our Team". Whether it is a Component or a Page, it shouldn't contain "Product" information. Once you have identified HTML chunks with a meaning, start by moving them into their type's ``template.ftl``. Next, replace any information with a variable from the ``contentModel`` (and add the respective control to the Content Type). Unless they are extremely simple, most pages will contain shared components, even if they are just a ``header`` and ``footer`` component provided by the :ref:`section-defaults`.
+A good blueprint separates each meaningful chunk of HTML code into a component. For example, whether you implement an "Our Team" section using a repeating group or multiple "Teammate" shared components, it still has to be a separate type that only contains information related to "Our Team". Whether it is a Component or a Page, it shouldn't contain "Product" information. Once you have identified HTML chunks with a meaning, start by moving them into their type's ``template.ftl``. Next, replace any information with a variable from the ``contentModel`` (and add the respective control to the Content Type). Unless they are extremely simple, most pages will contain shared components, even if they are just a ``header`` and ``footer`` component provided by the :ref:`newIa-section-defaults`.
 
 Here are some best practices to help you:
 
@@ -91,7 +91,7 @@ Here are some best practices to help you:
     * Prefer repeating groups over shared/embedded components. Shared/embedded components are ultimately more versatile, but if you are only going to repeat text, and that text is not going to appear outside the repeating group again, it's a better user experience to just use a repeating group.
 
        * Bear in mind that you can't have nested repeating groups, so only the innermost repetition can be a repeating group.
-    * You can set up folders for specific content types, and you can enforce them by using ``<paths>`` in your types' config.xml. Use ``includes`` whenever you want to *whitelist* some paths, and use ``excludes`` to *blacklist* some paths, but do not mix them.  For more examples, see :ref:`content-creation-permissions-section`
+    * You can set up folders for specific content types, and you can enforce them by using ``<paths>`` in your types' config.xml. Use ``includes`` whenever you want to *whitelist* some paths, and use ``excludes`` to *blacklist* some paths, but do not mix them.  For more examples, see :ref:`newIa-content-creation-permissions-section`
 
         .. code-block:: xml
 
@@ -111,7 +111,7 @@ Above all, blueprints should be usable and simple.
 Section Defaults
 ^^^^^^^^^^^^^^^^
 Section Defaults provides inherited values to all children and sibling content items.
-To learn more about content inheritance see :ref:`newIa-content-inheritance` and for an example to see how Section Defaults is used in the Website Editorial blueprint :ref:`inherit-levels-example` .
+To learn more about content inheritance see :ref:`newIa-content-inheritance` and for an example to see how Section Defaults is used in the Website Editorial blueprint :ref:`newIa-inherit-levels-example` .
 
 ---------
 Packaging
@@ -132,9 +132,9 @@ Your site exists in ``{CRAFTER_HOME}/data/repos/sites/your-site-name``. Inside, 
 
 |
 
-In the previous screenshot, we didn't copy the ``config/`` folder. Why? (:ref:`Warnings <blueprint-site-vs-blueprint>`). You can either:
+In the previous screenshot, we didn't copy the ``config/`` folder. Why? (:ref:`Warnings <newIa-blueprint-site-vs-blueprint>`). You can either:
 
-    * **Copy the config folder and modify** ``permission-mappings-config.xml`` and ``site-config.xml`` to use ``{siteName}`` again as explained in (:ref:`Warnings <blueprint-site-vs-blueprint>`)
+    * **Copy the config folder and modify** ``permission-mappings-config.xml`` and ``site-config.xml`` to use ``{siteName}`` again as explained in (:ref:`Warnings <newIa-blueprint-site-vs-blueprint>`)
     * **Keep config as is** and only copy the files you've modified. This will likely include the whole ``config/studio/content-types/`` folder and ``config/studio/preview-tools/components-config.xml`` for drag and drop.
     * **Keep your blueprint in a VCS** which will allow you to compare it against your changes and interactively see when to preserve the old version. This will also help you make any updates when blueprints get updated. You can either use Git or a visual diff tool.
 
@@ -146,7 +146,7 @@ Installing
 ----------
 
 #. Copy your blueprint folder into ``{CRAFTER_HOME}/data/repos/global/blueprints``.
-#. Check in your blueprint folder if it contains a ``craftercms-plugin.yaml`` file.  Add in the file if it does not exist by copying a ``craftercms-plugin.yaml`` file from one of the default blueprints, such as from the folder ``4000_empty``, which contains the empty blueprint and modifying it as needed.  See :ref:`craftercms-plugin-yaml-file` for details on the file
+#. Check in your blueprint folder if it contains a ``craftercms-plugin.yaml`` file.  Add in the file if it does not exist by copying a ``craftercms-plugin.yaml`` file from one of the default blueprints, such as from the folder ``4000_empty``, which contains the empty blueprint and modifying it as needed.  See :ref:`newIa-craftercms-plugin-yaml-file` for details on the file
 #. Once you do, commit the change to the global repo (``{CRAFTER_HOME}/data/repos/global/``) by using ``git``, and your blueprint will now start appearing when you try to create a new site.
 
    * Crafter 3 uses a vanilla version of Git, so regular Git commands work as intended. To commit your changes so Crafter can see it, head to ``{CRAFTER_HOME}/data/repos/global/blueprints`` and git add your modified files like this
@@ -221,7 +221,7 @@ When you create a site using the blueprint we fixed above, ``Another Sample Site
 Adding a plugin descriptor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-All blueprints need to include a plugin descriptor as described in :ref:`craftercms-plugin-yaml-file`
+All blueprints need to include a plugin descriptor as described in :ref:`newIa-craftercms-plugin-yaml-file`
 
 
 .. _newIa-passing-parameters-to-bp:
@@ -328,7 +328,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <newIa-use-s3-to-store-a
       </aws>
 
 
-#. Next we'll modify the content type ``Page - Article`` and the template for it, ``article.ftl`` to allow the user to select files to be uploaded like in the example :ref:`here <use-s3-to-store-assets>`.  We'll end up with two files modified.  The ``article.ftl`` and ``form-definition.xml`` files.
+#. Next we'll modify the content type ``Page - Article`` and the template for it, ``article.ftl`` to allow the user to select files to be uploaded like in the example :ref:`here <newIa-use-s3-to-store-assets>`.  We'll end up with two files modified.  The ``article.ftl`` and ``form-definition.xml`` files.
 
    .. code-block:: text
       :caption: *CRAFTER_HOME/data/repos/global/blueprints/1000_website_editorial/templates/web/pages/article.ftl*
@@ -402,7 +402,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <newIa-use-s3-to-store-a
 
    |
 
-#. Once your new site is up, users can upload files to S3 from an article page.  Let's verify the parameters you passed through the blueprint by checking the ``aws.xml`` file.  Open the **Sidebar**, then click on |siteConfig|.  Click on ``Configuration``, then select ``AWS Profiles`` from the dropdown.
+#. Once your new site is up, users can upload files to S3 from an article page.  Let's verify the parameters you passed through the blueprint by checking the ``aws.xml`` file.  Open the **Sidebar**, then click on |siteTools|.  Click on ``Configuration``, then select ``AWS Profiles`` from the dropdown.
 
    .. image:: /_static/images/blueprint/blueprint-param-added-verify.jpg
       :width: 80%

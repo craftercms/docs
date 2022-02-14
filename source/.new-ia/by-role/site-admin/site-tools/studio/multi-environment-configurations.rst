@@ -100,7 +100,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
       |
 
-#. Restart Studio.  To verify our newly setup environment, open the ``Sidebar`` and click on |siteConfig|, then select ``Configuration``.  Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations drop-down box:
+#. Restart Studio.  To verify our newly setup environment, open the ``Sidebar`` and click on |siteTools|, then select ``Configuration``.  Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations drop-down box:
 
    .. image:: /_static/images/site-admin/env-custom-configurations.png
       :align: center

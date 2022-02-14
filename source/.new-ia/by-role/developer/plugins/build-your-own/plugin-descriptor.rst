@@ -21,7 +21,7 @@ Here's a sample taken from the  ``craftercms-plugin.yaml`` for the Empty bluepri
     :caption: *craftercms-plugin.yaml file for the Empty blueprint*
     :linenos:
 
-    # This file describes a plugin for use in CrafterCMS
+    # This file describes a plugin for use in Crafter CMS
 
     # The version of the format for this file
     descriptorVersion: 2
@@ -76,14 +76,14 @@ where the following fields are required:
 - ``plugin.name`` - blueprint/plugin name (For our blueprint example, it is the blueprint name shown in the
   **Choose Blueprint** screen of **Create Site**)
 - ``plugin.version`` - a version number for the blueprint/site plugin
-- ``plugin.crafterCmsVersions`` - CrafterCMS versions that the plugin is compatible with (look in the :ref:`release-notes`
+- ``plugin.crafterCmsVersions`` - CrafterCMS versions that the plugin is compatible with (look in the :ref:`newIa-release-notes`
   section for the versions available), and you'll need to keep this up to date
 - ``plugin.searchEngine`` - search engine your plugin requires, the only value possible at this time is``Elasticsearch``
 
 |
 |
 
-For ``plugin.media.screenshots``, the url ``../.crafter/screenshots/default.png`` is the default path for CrafterCMS to look for a default representative image of a plugin or blueprint.  For more information on adding a default representative image for your blueprint see :ref:`adding-default-image-for-bp` and :ref:`site-plugins-create-your-plugin` for site plugins.
+For ``plugin.media.screenshots``, the url ``../.crafter/screenshots/default.png`` is the default path for CrafterCMS to look for a default representative image of a plugin or blueprint.  For more information on adding a default representative image for your blueprint see :ref:`newIa-adding-default-image-for-bp` and :ref:`newIa-site-plugins-create-your-plugin` for site plugins.
 
 .. note::
 
@@ -110,7 +110,7 @@ to your ``craftercms-plugin.yaml`` descriptor file
    installation:
     - type: preview-app
       parentXpath: //widget[@id='craftercms.components.ToolsPanel']
-      testXpath: //plugin[@id='org.craftercms.plugin.sidebar']
+      elementXpath: //plugin[@id='org.craftercms.sampleComponentLibraryPlugin.components.reactComponent']
       element:
         name: configuration
         children:
@@ -135,7 +135,7 @@ where:
   Available values are **form-control**, **form-datasource**, **preview-app**, **site-filter** and **site-context**
 - ``installation.parentXpath`` is an XPath selector for the element where the plugin will be added,
   required when installation-type is *preview-app*
-- ``installation.testXpath`` is an XPath selector to check if the plugin is already present in the configuration
+- ``installation.elementXpath`` is an XPath selector to check if the plugin is already present in the configuration and also used to remove the config when the plugin is uninstalled.  Required when installation-type is *preview-app*
 - ``installation.element.name`` is the element name to be wired in your site configuration file so the plugin will
   show up in Studio
   Available values are **control** (for *form-control* installation type), **datasource** (for *form-datasource* installation type) and for *preview-app* installation type, the start of the section the plugin needs to be inserted in, e.g. *configuration*, etc.
@@ -154,7 +154,7 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
    :linenos:
    :emphasize-lines: 44-62
 
-   # This file describes a plugin for use in CrafterCMS
+   # This file describes a plugin for use in Crafter CMS
 
    # The version of the format for this file
    descriptorVersion: 2
@@ -177,8 +177,8 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
        url: https://github.com/craftercms/site-plugins-example
      media:
        screenshots:
-         - title: CrafterCMS
-           description: CrafterCMS Example Plugin
+         - title: Crafter CMS
+           description: Crafter CMS Example Plugin
            url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/logo.svg"
      developer:
        company:
@@ -269,4 +269,4 @@ Below is a sample for the site context.
 
 For site plugins, the ``plugin.documentation`` serves as the help block for the plugin. It contains a URL to the plugin's documentation file (must be in Markdown) containing information on how to use/configure the plugin. The documentation will appear alongside the plugin in Crafter Studio and the CrafterCMS Marketplace.
 
-See :ref:`studio-plugins` for examples of plugins auto-wired in Studio.
+See :ref:`newIa-studio-plugins` for examples of plugins auto-wired in Studio.

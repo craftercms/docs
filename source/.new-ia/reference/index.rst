@@ -14,4 +14,5 @@ This section lists various references/resources to help you build your experienc
 
    projects
    api-reference
+   devcontentops-toolkit/index
    resources

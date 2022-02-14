@@ -50,7 +50,7 @@ Example
 -------
 Let's take a look at an example of encrypting the ``accessKey`` and ``securityKey`` for the AWS Profiles configuration.
 
-* Open the ``AWS Profiles`` configuration file by clicking on |siteConfig| -> ``Configuration``, then select ``AWS Profiles`` from the dropdown box
+* Open the ``AWS Profiles`` configuration file by clicking on |siteTools| -> ``Configuration``, then select ``AWS Profiles`` from the dropdown box
 * We will add an ``AWS S3 profile``.  Notice that the ``accessKey`` and ``secureKey`` is in the clear.
 
   .. code-block:: xml

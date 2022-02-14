@@ -10,7 +10,7 @@ Code Editor Configuration
 
 The code editor configuration file allows the user to create snippets/template code examples for use in Studio by other users in addition to the available `examples <https://github.com/craftercms/studio-ui/blob/master/static-assets/components/cstudio-forms/template-editor.js>`_ out of the box.
 
-To modify/add to the code editor configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Code Editor Configuration** from the dropdown list.
+To modify/add to the code editor configuration, click on |siteTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Code Editor Configuration** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-code-editor-config.png
     :alt: Configurations - Open Code Editor Configuration
@@ -77,7 +77,7 @@ Adding a Template Code Example
 
 Let's take a look at an example of adding the template code example for freemarker from above using a site created using the Website Editorial blueprint.
 
-#. Open the ``Sidebar`` and click on |siteConfig| ➜ ``Configuration`` ➜ ``Code Editor Configuration``
+#. Open the ``Sidebar`` and click on |siteTools| ➜ ``Configuration`` ➜ ``Code Editor Configuration``
 #. Uncomment the snippet ``freemarker-example`` and save your changes
 
    .. code-block:: xml

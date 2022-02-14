@@ -7,7 +7,7 @@ Configure LDAP Authentication
 =============================
 
 To configure LDAP authentication, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and uncomment the
-following lines to the :ref:`studio-config-override.yaml <studio-configuration-files>` file.
+following lines to the :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` file.
 
 .. note:: The values for the parameters listed below are just examples.  Remember to make any appropriate configuration changes according to your directory service in use.
 
@@ -77,8 +77,8 @@ Make sure that at least one of the **groupName** attribute of the LDAP user exis
 
 |
 
-To assign a role to a group, please follow the guide :ref:`role-mappings`.  To assign permissions to a role, please see :ref:`permission-mappings`
+To assign a role to a group, please follow the guide :ref:`newIa-role-mappings`.  To assign permissions to a role, please see :ref:`newIa-permission-mappings`
 
-For an example of setting up LDAP, see :ref:`setting-up-ldap-server-for-dev`
+For an example of setting up LDAP, see :ref:`newIa-setting-up-ldap-server-for-dev`
 
 

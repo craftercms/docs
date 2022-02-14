@@ -25,7 +25,7 @@ Another way to perform redirects is by using a ``/page/redirect`` content type c
 Create content type for redirecting
 -----------------------------------
 
-Open the **Sidebar** then click on |siteConfig|.  Click on **Content Types** -> **Create New Type**.  In the **Display Label** field, enter ``Page - Redirect`` and in the **Content Type Name** enter ``redirect``.  Remember to select **Type** as ``Page``.
+Open the **Sidebar** then click on |siteTools|.  Click on **Content Types** -> **Create New Type**.  In the **Display Label** field, enter ``Page - Redirect`` and in the **Content Type Name** enter ``redirect``.  Remember to select **Type** as ``Page``.
 
 .. image:: /_static/images/developer/redirect/create-redirect-content-type.png
     :alt: Redirect - Create redirect content type

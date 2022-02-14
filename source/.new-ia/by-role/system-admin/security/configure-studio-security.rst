@@ -29,4 +29,4 @@ To configure an external authentication method, please follow one of the guides 
 
 When using an external authentication method, user accounts are automatically created in the internal database upon each user's first successful login, using the attributes from the responses received.  Users added to the internal database after the user's first successful login through external authentication are marked as **Externally Managed**.
 
-CrafterCMS supports multiple security providers that appears like a single authentication module to users through authentication chaining.  See :ref:`configure-authentication-chain` to set up an authentication chain using a combination of the following authentication providers: LDAP, headers and internal database.
+CrafterCMS supports multiple security providers that appears like a single authentication module to users through authentication chaining.  See :ref:`newIa-configure-authentication-chain` to set up an authentication chain using a combination of the following authentication providers: LDAP, headers and internal database.

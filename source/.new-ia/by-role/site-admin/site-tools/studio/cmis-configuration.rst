@@ -9,7 +9,7 @@ CMIS Configuration
 ==================
 
 The CMIS configuration file allows you to configure 0 or more CMIS-capable respositories as data-sources for content authors to pick from.
-To modify the CMIS configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **CMIS Configuration** from the dropdown list.
+To modify the CMIS configuration, click on |siteTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **CMIS Configuration** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-cmis-config.png
     :alt: Configurations - Open CMIS Configuration

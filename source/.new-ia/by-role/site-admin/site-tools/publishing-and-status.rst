@@ -13,7 +13,7 @@
 Publishing and Status
 =====================
 
-The **Publishing** under |siteConfig| allows the user to view the publishing status, perform a bulk publish , to publish commits from sandbox repository by commit id and view the publishing queue.
+The **Publishing** under |siteTools| allows the user to view the publishing status, perform a bulk publish , to publish commits from sandbox repository by commit id and view the publishing queue.
 
 .. _newIa-publishing-status:
 
@@ -109,7 +109,7 @@ To publish by commit id, let's use a site created using the Website Editorial bl
 
   The commit id we want to publish by commit id is ``f47c9a5bae4184e7b5ff2cb03b90b8ff86adec37``
 
-- Go back to Studio and click on |siteConfig| -> Publishing
+- Go back to Studio and click on |siteTools| -> Publishing
 - Click on the ``Publish by Commit ID(s)`` tab
 - Paste the commit id from the step where we got the commit id, then click on the ``Publish`` button
 

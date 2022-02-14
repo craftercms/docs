@@ -8,23 +8,23 @@
 Navigating Site Tools
 =====================
 
-In this section, we discuss the available modules in the |siteConfig| **Sidebar** from any of the available out-of-the-box blueprints.  The modules available in the Site Tools Sidebar can be configured by following :ref:`site-config-tools`
+In this section, we discuss the available modules in the |siteTools| from any of the available out-of-the-box blueprints.  The modules available in the Site Tools can be configured in the  :ref:`newIa-user-interface-configuration`
 
-To get to |siteConfig|, click on the **Toggle Sidebar** icon (CrafterCMS logo with hamburger next to it) at the top left of your browser, if it's not yet open.
+To get to |siteTools|, click on the **Toggle Sidebar** icon (CrafterCMS logo with hamburger next to it) at the top left of your browser, if it's not yet open.
 
 .. image:: /_static/images/site-admin/open-sidebar.png
     :alt: Site Admin - Open Sidebar
     :align: center
     :width: 25%
 
-Once the **Sidebar** is open, click on |siteConfig|
+Once the **Sidebar** is open, click on |siteTools|
 
 .. image:: /_static/images/site-admin/open-site-config.png
     :alt: Site Admin - Click on Site Tools
     :align: center
     :width: 25%
 
-Here are the modules you can access from |siteConfig|
+Here are the modules you can access from |siteTools|
 
 .. image:: /_static/images/site-admin/site-config-menu.png
     :alt: Site Admin - Site Tools Modules
@@ -47,7 +47,7 @@ The Content Types module under **Site Tools** allows the user to view existing c
     :align: center
     :width: 60%
 
-For more information on content modeling and content types, see :ref:`content-modeling` in the Developer section
+For more information on content modeling and content types, see :ref:`newIa-content-modeling` in the Developer section
 
 ---------------
 Encryption Tool
@@ -60,7 +60,7 @@ The ``Encryption Tool`` allows the user to encrypt sensitive data such as access
    :align: center
    :width: 60%
 
-For more information on how to use the encryption tool, see :ref:`nav-menu-encryption-tool`.
+For more information on how to use the encryption tool, see :ref:`newIa-nav-menu-encryption-tool`.
 
 -------------
 Configuration
@@ -73,7 +73,7 @@ Configuration allows the user to configure the different settings in CrafterCMS 
     :align: center
     :width: 60%
 
-For more information on what settings can be configured, see :ref:`configuration`
+For more information on what settings can be configured, see :ref:`newIa-configuration`
 
 -----
 Audit
@@ -86,7 +86,7 @@ Audit logs displays the date, time, user and action performed to content in the 
     :align: center
     :width: 60%
 
-See :ref:`studio-logging` for some more information on viewing logs.
+See :ref:`newIa-studio-logging` for some more information on viewing logs.
 
 ---------------
 Workflow States
@@ -101,7 +101,7 @@ Workflow States allows the user to manually set the workflow state of every file
 
 
 
-For more details on manually setting workflow states, see :ref:`setting-workflow-states`
+For more details on manually setting workflow states, see :ref:`newIa-setting-workflow-states`
 
 -----------
 Log Console
@@ -114,7 +114,7 @@ The **Log Console** allows the user to view messages depending on what log level
     :align: center
     :width: 60%
 
-See :ref:`studio-log-console` for some more information on viewing logs.
+See :ref:`newIa-studio-log-console` for some more information on viewing logs.
 
 ----------
 Publishing
@@ -127,7 +127,7 @@ The **Publishing** module under **Site Config** allows the user to view the publ
     :align: center
     :width: 60%
 
-For more information on Publishing, see :ref:`publishing-and-status`
+For more information on Publishing, see :ref:`newIa-publishing-and-status`
 
 -------------------
 Remote Repositories
@@ -140,7 +140,7 @@ The **Remote Repositories** under **Site Config** allows the user to view remote
     :align: center
     :width: 60%
 
-For more information on Remote Repositories under |siteConfig|, see :ref:`remote-repositories`
+For more information on Remote Repositories under |siteTools|, see :ref:`newIa-remote-repositories`
 
 --------
 GraphiQL
@@ -153,7 +153,7 @@ CrafterCMS provides built-in support for GraphQL to query content in any site wi
     :align: center
     :width: 60%
 
-For more information on Studio support for GraphQL, see :ref:`working_with_graphql`
+For more information on Studio support for GraphQL, see :ref:`newIa-working_with_graphql`
 
 -----------------
 Plugin Management
@@ -167,4 +167,4 @@ The Site Tools **Plugin Management** allows the user to install and to view curr
    :align: center
    :width: 60%
 
-For more information on managing site plugins, see :ref:`plugin-management`
+For more information on managing site plugins, see :ref:`newIa-plugin-management`

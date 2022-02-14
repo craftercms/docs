@@ -9,7 +9,7 @@ Box Profiles Configuration
 ==========================
 
 The Box Profiles configuration file allows you to configure 0 or more Box profiles with the information required by Box services.
-To modify the Box Profiles configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Box Profiles** from the dropdown list.
+To modify the Box Profiles configuration, click on |siteTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Box Profiles** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-box-config.png
     :alt: Configurations - Open Box Profiles Configuration

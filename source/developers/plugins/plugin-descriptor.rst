@@ -4,11 +4,11 @@
 
 .. _craftercms-plugin-yaml-file:
 
------------------------------
-Crafter CMS Plugin Descriptor
------------------------------
+----------------------------
+CrafterCMS Plugin Descriptor
+----------------------------
 
-The ``craftercms-plugin.yaml`` file contains information for use in Crafter CMS.  We'll take a look at a file used for
+The ``craftercms-plugin.yaml`` file contains information for use in CrafterCMS.  We'll take a look at a file used for
 a blueprint and for a site plugin.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -76,14 +76,14 @@ where the following fields are required:
 - ``plugin.name`` - blueprint/plugin name (For our blueprint example, it is the blueprint name shown in the
   **Choose Blueprint** screen of **Create Site**)
 - ``plugin.version`` - a version number for the blueprint/site plugin
-- ``plugin.crafterCmsVersions`` - Crafter CMS versions that the plugin is compatible with (look in the :ref:`release-notes`
+- ``plugin.crafterCmsVersions`` - CrafterCMS versions that the plugin is compatible with (look in the :ref:`release-notes`
   section for the versions available), and you'll need to keep this up to date
 - ``plugin.searchEngine`` - search engine your plugin requires, the only value possible at this time is``Elasticsearch``
 
 |
 |
 
-For ``plugin.media.screenshots``, the url ``../.crafter/screenshots/default.png`` is the default path for Crafter CMS to look for a default representative image of a plugin or blueprint.  For more information on adding a default representative image for your blueprint see :ref:`adding-default-image-for-bp` and :ref:`site-plugins-create-your-plugin` for site plugins.
+For ``plugin.media.screenshots``, the url ``../.crafter/screenshots/default.png`` is the default path for CrafterCMS to look for a default representative image of a plugin or blueprint.  For more information on adding a default representative image for your blueprint see :ref:`adding-default-image-for-bp` and :ref:`site-plugins-create-your-plugin` for site plugins.
 
 .. note::
 
@@ -96,7 +96,7 @@ For ``plugin.media.screenshots``, the url ``../.crafter/screenshots/default.png`
 Site Plugin Descriptor File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Crafter CMS supports automatically wiring your site plugin to the corresponding configuration file in Studio during
+CrafterCMS supports automatically wiring your site plugin to the corresponding configuration file in Studio during
 your site plugin installation.
 
 To setup a site plugin to be automatically wired in the corresponding configuration file in Studio (for example, a
@@ -110,7 +110,7 @@ to your ``craftercms-plugin.yaml`` descriptor file
    installation:
     - type: preview-app
       parentXpath: //widget[@id='craftercms.components.ToolsPanel']
-      testXpath: //plugin[@id='org.craftercms.plugin.sidebar']
+      elementXpath: //plugin[@id='org.craftercms.sampleComponentLibraryPlugin.components.reactComponent']
       element:
         name: configuration
         children:
@@ -135,7 +135,7 @@ where:
   Available values are **form-control**, **form-datasource**, **preview-app**, **site-filter** and **site-context**
 - ``installation.parentXpath`` is an XPath selector for the element where the plugin will be added,
   required when installation-type is *preview-app*
-- ``installation.testXpath`` is an XPath selector to check if the plugin is already present in the configuration
+- ``installation.elementXpath`` is an XPath selector to check if the plugin is already present in the configuration and also used to remove the config when the plugin is uninstalled.  Required when installation-type is *preview-app*
 - ``installation.element.name`` is the element name to be wired in your site configuration file so the plugin will
   show up in Studio
   Available values are **control** (for *form-control* installation type), **datasource** (for *form-datasource* installation type) and for *preview-app* installation type, the start of the section the plugin needs to be inserted in, e.g. *configuration*, etc.

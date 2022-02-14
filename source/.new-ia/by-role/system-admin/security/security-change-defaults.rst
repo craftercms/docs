@@ -1,7 +1,5 @@
 :is-up-to-date: True
 
-:orphan:
-
 .. index:: Securing Your CrafterCMS Install, Change Defaults in CrafterCMS
 
 .. _newIa-securing-your-crafter-cms-install:
@@ -54,7 +52,7 @@ CrafterCMS installations are pre-configured with default passwords, tokens, keys
 
      |
 
-* Replace default values for the DB root password and the DB ``crafter`` user password before starting CrafterCMS for the very first time.
+* Replace default values for the DB root password, the DB ``crafter`` user password and the DB replication user password (if running in a primary/replica cluster) before starting CrafterCMS for the very first time.
 
      .. code-block:: sh
         :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
@@ -64,6 +62,8 @@ CrafterCMS installations are pre-configured with default passwords, tokens, keys
         export MARIADB_ROOT_PASSWD=${MARIADB_ROOT_PASSWD:="root"}
         ...
         export MARIADB_PASSWD=${MARIADB_PASSWD:="crafter"}
+        ...
+        export MARIADB_REPLICATION_PASSWD=${MARIADB_REPLICATION_PASSWD:="crafter_replication"}
 
      |
 
@@ -99,6 +99,16 @@ CrafterCMS installations are pre-configured with default passwords, tokens, keys
 
      Again, remember to replace ``MyNewCrafterPass`` with the actual password you want to set, and if you are connecting to the DB from another host, change ``localhost`` with the remote hostname or IP address.
 
+     To change the ``crafter_replication`` replication user password, run the following command, similar to changing the root password.
+
+       .. code-block:: bash
+
+          ALTER USER 'crafter_replication'@'localhost' IDENTIFIED BY 'MyNewReplicationPass';
+
+       |
+
+     Again, remember to replace ``MyNewReplicationPass`` with the actual password you want to set, and if you are connecting to the DB from another host, change ``localhost`` with the remote hostname or IP address.
+
   #. Stop Studio
   #. Update the values in the configuration file ``crafter-setenv.sh`` with the new password used in the previous step
 
@@ -115,7 +125,7 @@ CrafterCMS installations are pre-configured with default passwords, tokens, keys
 
   #. Restart Studio
 
-* Change the default Studio ``admin`` user password either by randomizing the ``admin`` password for a fresh install of Crafter Studio or by changing the password after logging in as user ``admin``.  For more information on randomizing the admin password for a fresh install, see :ref:`randomize-admin-password`.  For more information on changing user passwords, see :ref:`user-passwords`
+* Change the default Studio ``admin`` user password either by randomizing the ``admin`` password for a fresh install of Crafter Studio or by changing the password after logging in as user ``admin``.  For more information on randomizing the admin password for a fresh install, see :ref:`newIa-randomize-admin-password`.  For more information on changing user passwords, see :ref:`newIa-user-passwords`
 
 * Set session cookies as ``HTTP Only`` and ``Secure`` by setting the flags to ``true`` in your tomcat ``web.xml`` file
 

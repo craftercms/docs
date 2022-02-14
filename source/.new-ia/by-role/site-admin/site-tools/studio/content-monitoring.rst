@@ -114,7 +114,7 @@ Notification Templates Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Notification templates can be configured through Crafter Studio.  Go to the **Sidebar**, then click
-on |siteConfig| > **Configuration** > **Notification Configuration**
+on |siteTools| > **Configuration** > **Notification Configuration**
 
 .. figure:: /_static/images/site-admin/notification-config-open.png
   :align: center

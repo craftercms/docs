@@ -16,7 +16,7 @@ Plugin Management
 
 Site plugins extend Crafter Studio (authoring) and Crafter Engine and the site/web application (delivery).  It adds new features/functionality without adding code to CrafterCMS.
 
-This section details how to manage plugins from the |siteConfig| Plugin Management module.
+This section details how to manage plugins from the |siteTools| Plugin Management module.
 
 ----------
 Installing
@@ -53,7 +53,7 @@ Install a plugin using the Studio ``Plugin Management`` Site Tool
    |
    |
 
-#. Open |siteConfig|
+#. Open |siteTools|
 
    .. figure:: /_static/images/developer/plugins/site-plugins/plugins-site-tools.jpg
       :align: center
@@ -63,8 +63,8 @@ Install a plugin using the Studio ``Plugin Management`` Site Tool
    |
    |
 
-#. Or, you can also open |siteConfig| by clicking on the ``Navigation Menu`` at the top right of
-   the screen then click on |siteConfig|
+#. Or, you can also open |siteTools| by clicking on the ``Navigation Menu`` at the top right of
+   the screen then click on |siteTools|
 
    .. figure:: /_static/images/developer/plugins/site-plugins/plugins-open-site-tools.jpg
       :align: center
@@ -131,7 +131,7 @@ Managing Installed Plugins
 View Installed Plugins
 ^^^^^^^^^^^^^^^^^^^^^^
 To view the installed plugins in your site, click on the ``Navigation Menu`` at the top right then
-click on |siteConfig| then finally click on ``Plugin Management``.
+click on |siteTools| then finally click on ``Plugin Management``.
 
 .. figure:: /_static/images/developer/plugins/site-plugins/plugins-installed.jpg
    :align: center

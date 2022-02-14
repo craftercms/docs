@@ -10,7 +10,7 @@ Asset Processing Configuration
 
 Asset processing allows you to define transformations for static assets (currently only images), through a series of processor pipelines that are executed when the assets are uploaded to Studio.
 
-To modify the Asset Processing configuration, click on |siteConfig| from the bottom of the Sidebar, then click on **Configuration** and select **Asset Processing** from the dropdown list.
+To modify the Asset Processing configuration, click on |siteTools| from the bottom of the Sidebar, then click on **Configuration** and select **Asset Processing** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-asset-proc-config.png
     :alt: Configurations - Open Asset Processing Configuration

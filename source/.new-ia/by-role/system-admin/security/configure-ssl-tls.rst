@@ -149,13 +149,13 @@ Setting up SSL/TLS for CrafterCMS authoring and delivery in a Docker Container i
 
 * Step 4: Test your setup
 
-Let's take a look at an example of a CrafterCMS authoring running in a docker container.  For reference, here's the instruction for  :ref:`running-craftercms-in-docker`
+Let's take a look at an example of a CrafterCMS authoring running in a docker container.  For reference, here's the instruction for  :ref:`newIa-running-craftercms-in-docker`
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 1: Create keystore file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Follow the step above :ref:`create-keystore-file` to create your keystore file.  For convenience, copy the ``.keystore`` file where your ``docker-compose.yml`` files is, so your directory structure looks like:
+Follow the step above :ref:`newIa-create-keystore-file` to create your keystore file.  For convenience, copy the ``.keystore`` file where your ``docker-compose.yml`` files is, so your directory structure looks like:
 
 .. code-block:: text
 
@@ -178,7 +178,7 @@ Get a copy of the ``server.xml`` file from your container by running the followi
 |
 
 The command above will copy the ``server.xml`` file from your docker container to your current directory.
-Follow the step above :ref:`use-keystore-file-in-tomcat` to configure SSL/TLS Connector in the ``server.xml`` file you just copied from the docker container.
+Follow the step above :ref:`newIa-use-keystore-file-in-tomcat` to configure SSL/TLS Connector in the ``server.xml`` file you just copied from the docker container.
 
 Your directory should now contain the following:
 
@@ -260,5 +260,5 @@ To test your CrafterCMS authoring, open your browser and type in:
 
    *localhost:8443/studio*
 
-You should see similar screens as shown :ref:`above<ssl-test-your-setup>` when we setup SSL/TLS for a traditional deployment.
+You should see similar screens as shown :ref:`above<newIa-ssl-test-your-setup>` when we setup SSL/TLS for a traditional deployment.
 

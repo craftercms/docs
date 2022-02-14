@@ -9,7 +9,7 @@ Proxy Configuration
 ###################
 
 The proxy configuration file contains configuration for the preview proxy servers.
-To modify the proxy configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Proxy Config** from the dropdown list.
+To modify the proxy configuration, click on |siteTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Proxy Config** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-proxy-config.jpg
     :alt: Configurations - Open Proxy Configuration

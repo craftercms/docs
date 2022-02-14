@@ -135,7 +135,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
       |
 
-#. Restart Crafter.  To verify our newly setup environment, open the ``Sidebar`` and click on |siteConfig|, then select ``Configuration``.  Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations drop-down box and when you select the *Engine URL Rewrite Configuration (XML Style)*, it should display the file we created in one of the previous step:
+#. Restart Crafter.  To verify our newly setup environment, open the ``Sidebar`` and click on |siteTools|, then select ``Configuration``.  Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations drop-down box and when you select the *Engine URL Rewrite Configuration (XML Style)*, it should display the file we created in one of the previous step:
 
    .. image:: /_static/images/site-admin/env-custom-configurations.png
       :align: center

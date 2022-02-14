@@ -9,7 +9,7 @@ AWS Profiles Configuration
 ==========================
 
 The AWS Profiles configuration file allows you to configure 0 or more AWS profiles with the information required by AWS services.
-To modify the AWS Profiles configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **AWS Profiles** from the dropdown list.
+To modify the AWS Profiles configuration, click on |siteTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **AWS Profiles** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-aws-config.png
     :alt: Configurations - Open AWS Profiles Configuration

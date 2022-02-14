@@ -15,7 +15,7 @@ Audit Logs
 ----------
 CrafterCMS tracks the date, time, user and action performed to content through an audit log.
 
-To view the audit logs, from the **Sidebar**, click on |siteConfig|, then click on **Audit**
+To view the audit logs, from the **Sidebar**, click on |siteTools|, then click on **Audit**
 
 .. figure:: /_static/images/site-admin/logs-audit.png
     :alt: Crafter Studio Audit Logs
@@ -28,7 +28,7 @@ Log Console
 -----------
 CrafterCMS has a **Log Console** that allows you to view messages depending on what log levels and what Java packages have been set for tracking.
 
-To view logs in Crafter Studio, click on |siteConfig| from the **Sidebar**, then click on **Log Console**.  Looking inside the **Log Console**, messages we want to display are setup beforehand.  The messages displayed in the **Log Console** depends on what levels are set for the Java packages being run in CrafterCMS.
+To view logs in Crafter Studio, click on |siteTools| from the **Sidebar**, then click on **Log Console**.  Looking inside the **Log Console**, messages we want to display are setup beforehand.  The messages displayed in the **Log Console** depends on what levels are set for the Java packages being run in CrafterCMS.
 
 There are 4 log levels defined in CrafterCMS.  These levels determine what messages will be logged and displayed in the **Logging Console**.  Below are the 4 log levels available from the lowest to the highest:
 
@@ -39,7 +39,7 @@ There are 4 log levels defined in CrafterCMS.  These levels determine what messa
 
 The lower your logging levels are set, the more verbose your logs will be.
 
-We'll now go to the **Log Console** to start viewing the logs.  From the **Sidebar**, click on |siteConfig| -> **Log Console**.  To start viewing the logs, click on **Play/Pause** at the top to start viewing the log files
+We'll now go to the **Log Console** to start viewing the logs.  From the **Sidebar**, click on |siteTools| -> **Log Console**.  To start viewing the logs, click on **Play/Pause** at the top to start viewing the log files
 
 .. figure:: /_static/images/site-admin/logs-log-console.png
     :alt: Crafter Studio Log Console

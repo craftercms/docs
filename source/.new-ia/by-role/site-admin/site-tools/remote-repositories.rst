@@ -13,7 +13,7 @@
 Remote Repositories
 ===================
 
-The **Remote Repositories** under |siteConfig| allows the user to view remote repositories linked to the site and options to pull and push to the listed remote repositories.  It also allows the user to add a remote repository to the site.
+The **Remote Repositories** under |siteTools| allows the user to view remote repositories linked to the site and options to pull and push to the listed remote repositories.  It also allows the user to add a remote repository to the site.
 
 Below, we have a site **mysweetdotcom** with a link to a remote repository in GitHub:
 

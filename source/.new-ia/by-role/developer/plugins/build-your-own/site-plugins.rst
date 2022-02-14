@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 
 .. index:: Create a Site Plugin, Plugin
 
@@ -57,7 +57,7 @@ A site plugin consist of a group of files that are copied to the site repository
 site plugin, your files/folders needs to go in the corresponding type of plugin folder, following the structure below:
 
 
-- ``craftercms-plugin.yaml``: the plugin descriptor, see :ref:`craftercms-plugin-yaml-file` for details
+- ``craftercms-plugin.yaml``: the plugin descriptor, see :ref:`newIa-craftercms-plugin-yaml-file` for details
 
 - ``.crafter``
 
@@ -69,10 +69,10 @@ site plugin, your files/folders needs to go in the corresponding type of plugin 
 
   - ``content-types``
 
-    - ``component``: contains configuration files for components, see :ref:`below <example-component-plugin>` for an example
+    - ``component``: contains configuration files for components, see :ref:`below <newIa-example-component-plugin>` for an example
     - ``page``: contains configuration files for pages
 
-  - ``js``: contains files for Studio UI plugins, see :ref:`studio-plugins` for details
+  - ``static-assets``: contains files for Studio UI plugins, see :ref:`newIa-studio-plugins` for details
   - ``scripts``
 
     - ``classes``: contains Groovy classes
@@ -102,7 +102,7 @@ the file:
 +------------------------------------------+---------------------------------------------------------------+
 | ``authoring/content-types/page/*``       | ``/config/studio/content-types/page/<plugin id path>/*``      |
 +------------------------------------------+---------------------------------------------------------------+
-| ``authoring/js/*``                       | ``/config/studio/plugins/js/<plugin id path>/*``              |
+| ``authoring/static-assets/*``            | ``/config/studio/static-assets/plugins/<plugin id path>/*``   |
 +------------------------------------------+---------------------------------------------------------------+
 | ``authoring/scripts/classes/*``          | ``/config/studio/plugins/scripts/classes/<plugin id path>/*`` |
 +------------------------------------------+---------------------------------------------------------------+
@@ -136,21 +136,23 @@ Here's an example directory structure for a site plugin:
           screenshots/
             default.png
         authoring/
-          js/
-            {yourPluginType}/
-              {yourPluginName}/
-                {yourPluginFilesAndFolders}
+          static-assets/
+            plugins/
+              {yourPluginId}/
+                {yourPluginType}/
+                  {yourPluginName}/
+                    {yourAuthoringPluginFilesAndFolders}
         delivery/
-          {yourPluginFilesAndFolders}
+          {yourDeliveryPluginFilesAndFolders}
 
        |
 
 where:
 
-- **yourPluginFilesAndFolders** : Freemarker, Groovy and binary files/folders containing the plugin implementation
-- **yourPluginType** : Type of plugin, e.g. control, datasource, sidebar, app, etc.
+- **yourAuthoringPluginFilesAndFolders** : JavaScript, Freemarker, Groovy and binary files/folders containing the plugin implementation
+- **yourPluginType** : Type of plugin, e.g. control, datasource, sidebar, preview-app, etc.
 - **yourPluginName** : Name of  plugin
-- **yourPluginFilesAndFolders** : JavaScript and/or plugin build output files/folders containing the plugin implementation
+- **yourDeliveryPluginFilesAndFolders** : JavaScript and/or plugin build output files/folders containing the plugin implementation
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -262,7 +264,7 @@ Here are some things to note in the descriptor file:
 * ``plugin.website.url`` can be a page for more information on your site plugin or for announcing updates, reporting bugs, etc. from your user community.
 * ``plugin.media.url`` is the path to look for a representative image of the site plugin.
 * ``plugin.license`` is the license supported by the plugin
-* ``plugin.crafterCmsVersions`` contains the CrafterCMS version/s that the plugin is compatible with (look in the :ref:`release-notes` section for the versions available), and you'll need to keep this up to date
+* ``plugin.crafterCmsVersions`` contains the CrafterCMS version/s that the plugin is compatible with (look in the :ref:`newIa-release-notes` section for the versions available), and you'll need to keep this up to date
 
 |
 |
@@ -286,7 +288,7 @@ plugin files should be placed under the directory  ``authoring/content-types/com
              form-definition.xml
 
 
-CrafterCMS uses a default path to look for a default representative image of a plugin, the url ``../.crafter/screenshots/``.  Here's a sample plugin files/directory with a default image to represent the plugin:
+CrafterCMS uses a default path for CrafterCMS to look for a default representative image of a plugin, the url ``../.crafter/screenshots/``.  Here's a sample plugin files/directory with a default image to represent the plugin:
 
   .. code-block:: text
      :caption: *Example directory structure for a component content type site plugin with a default representative image*
@@ -341,7 +343,7 @@ To reuse those libraries, do the following:
 Publishing Your Site Plugin
 ---------------------------
 
-To publish a plugin in the CrafterCMS Marketplace you can follow the instructions in :ref:`marketplace_create_plugins`
+To publish a plugin in the CrafterCMS Marketplace you can follow the instructions in :ref:`newIa-marketplace_create_plugins`
 
 |
 |
@@ -357,7 +359,7 @@ Plugins may be installed a couple of ways depending on where the plugins are loc
 
 After installing a site plugin, depending on the plugin you created, the site plugin will be be installed under the:
 
-* {siteRoot}/config/studio/plugins/js/{yourPluginId}/{yourPluginType}/{yourPluginName}/
+* {siteRoot}/config/studio/static-assets/plugins/{yourPluginId}/{yourPluginType}/{yourPluginName}/
 * {siteRoot}/config/studio/content-types/component/{yourPluginType}/{yourPluginName}/
 * {siteRoot}/config/studio/content-types/page/{yourPluginType}/{yourPluginName}/
 * {siteRoot}/templates/{yourPluginId}/{yourPluginType}/{yourPluginName}
@@ -381,7 +383,7 @@ or the REST API:
       - ``install_plugins``
 
 
-For more information on installing plugins from the CrafterCMS Marketplace using Crafter Studio, see :ref:`plugin-management`
+For more information on installing plugins from the CrafterCMS Marketplace using Crafter Studio, see :ref:`newIa-plugin-management`
 
 |
 |
@@ -405,7 +407,7 @@ To install the plugin ``sidebar-plugin`` to our site ``mysite``, we'll run the `
 
 Remember that the connection to CrafterCMS needs to be setup via the ``add-environment`` command before using any of the ``crafter-cli`` commands.
 
-See :ref:`crafter-cli-copy-plugin` for more information on the ``copy-plugin`` command.
+See :ref:`newIa-crafter-cli-copy-plugin` for more information on the ``copy-plugin`` command.
 
 .. _newIa-example-component-plugin:
 
@@ -495,7 +497,7 @@ The plugin is now ready to be tested.  We'll install our plugin located  under `
 
 |
 
-After installing our plugin, we can now verify that our component plugin is available in |siteConfig| Content Types
+After installing our plugin, we can now verify that our component plugin is available in |siteTools| Content Types
 
 .. figure:: /_static/images/developer/plugins/site-plugins/plugins-sample-component.jpg
    :align: center
@@ -508,9 +510,9 @@ After installing our plugin, we can now verify that our component plugin is avai
 Some More Site Plugin Examples
 ------------------------------
 
-For more authoring examples of creating site plugins, see :ref:`studio-plugins`
+For more authoring examples of creating site plugins, see :ref:`newIa-studio-plugins`
 
-CrafterCMS also provides various site plugin examples available from the `marketplace <https://marketplace.craftercms.org>`__ to help you create your own plugins.  These site plugins can be installed to your site using ``Plugin Management`` in |siteConfig| through the Studio UI.  See :ref:`plugin-management` for more information on installing site plugins from the CrafterCMS Marketplace.
+CrafterCMS also provides various site plugin examples available from the `marketplace <https://marketplace.craftercms.org>`__ to help you create your own plugins.  These site plugins can be installed to your site using ``Plugin Management`` in |siteTools| through the Studio UI.  See :ref:`newIa-plugin-management` for more information on installing site plugins from the CrafterCMS Marketplace.
 
 * `Cliengo plugin <https://github.com/craftercms/chatbot-plugin/tree/cliengo>`__ to add Cliengo to a site
 * `Image Carousel plugin <https://github.com/craftercms/carousel-plugin>`__ to add a highly configurable carousel plugin based on `Tiny Slider <https://github.com/ganlanyuan/tiny-slider/tree/v2.9.3>`__
