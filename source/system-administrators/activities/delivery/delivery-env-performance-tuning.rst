@@ -146,7 +146,7 @@ NFS or similar protocols will increase latency and cause performance issues.
 
 **Use a device for each storage concern when possible**
 
-One optimization to raise effective IOPS of a system without buying very expensive storage devices is to distribute the load across many devices. Crafter CMS performs multiple reads/writes to disk from various concerns such as the database, the repository, logs, etc. with very different I/O patterns. For optimal performance, the server should have different storage systems (disks) mounted for different concerns, for example:
+One optimization to raise effective IOPS of a system without buying very expensive storage devices is to distribute the load across many devices. CrafterCMS performs multiple reads/writes to disk from various concerns such as the database, the repository, logs, etc. with very different I/O patterns. For optimal performance, the server should have different storage systems (disks) mounted for different concerns, for example:
 
 |    /dev/{dev0} -> /
 |    /dev/{dev1} -> /opt/crafter/data/repos
@@ -166,7 +166,7 @@ OS Level
 ^^^^^^^^^^^^
 Linux Ulimit
 ^^^^^^^^^^^^
-Crafter CMS includes many subsystems that require additional file-handles be available at the operating system level.
+CrafterCMS includes many subsystems that require additional file-handles be available at the operating system level.
 
 Our limits are:
 
@@ -233,7 +233,7 @@ Using Default Settings for Larger Installations
 Installations are pre-configured with settings that assume an average/smaller sized machines. Further OS defaults are not managed by Crafter. To get the best performance you should consider and adjust for your specific environment, hardware, business needs and best practices.
 
 ---------------------------------
-Securing your Crafter CMS Install
+Securing your CrafterCMS Install
 ---------------------------------
 
-Crafter CMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`securing-your-crafter-cms-install`
+CrafterCMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`securing-your-crafter-cms-install`

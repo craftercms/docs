@@ -21,7 +21,7 @@ Here's a sample taken from the  ``craftercms-plugin.yaml`` for the Empty bluepri
     :caption: *craftercms-plugin.yaml file for the Empty blueprint*
     :linenos:
 
-    # This file describes a plugin for use in Crafter CMS
+    # This file describes a plugin for use in CrafterCMS
 
     # The version of the format for this file
     descriptorVersion: 2
@@ -50,9 +50,9 @@ Here's a sample taken from the  ``craftercms-plugin.yaml`` for the Empty bluepri
             url: /studio/static-assets/images/blueprints/empty/bp_empty.png
       developer:
         company:
-          name: Crafter Software
-          email: info@craftersoftware.com
-          url: https://craftersoftware.com/
+          name: CrafterCMS
+          email: info@craftercms.com
+          url: https://craftercms.com/
       build:
         id: c3d2a5444e6a24b5e0481d6ba87901d0b02716c8
         date: 2021-01-23T00:00:00Z
@@ -154,7 +154,7 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
    :linenos:
    :emphasize-lines: 44-62
 
-   # This file describes a plugin for use in Crafter CMS
+   # This file describes a plugin for use in CrafterCMS
 
    # The version of the format for this file
    descriptorVersion: 2
@@ -177,14 +177,14 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
        url: https://github.com/craftercms/site-plugins-example
      media:
        screenshots:
-         - title: Crafter CMS
-           description: Crafter CMS Example Plugin
+         - title: CrafterCMS
+           description: CrafterCMS Example Plugin
            url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/logo.svg"
      developer:
        company:
-         name: Crafter Software
-         email: info@craftersoftware.com
-         url: https://craftersoftware.com
+         name: CrafterCMS
+         email: info@craftercms.com
+         url: https://craftercms.com
      build:
        id: f9d09cbf39167609bcca4e31f5d2475d0ef14f8a
        date: 2021-05-21T00:00:00Z
@@ -267,6 +267,6 @@ Below is a sample for the site context.
 
 |
 
-For site plugins, the ``plugin.documentation`` serves as the help block for the plugin. It contains a URL to the plugin's documentation file (must be in Markdown) containing information on how to use/configure the plugin. The documentation will appear alongside the plugin in Crafter Studio and the Crafter CMS Marketplace.
+For site plugins, the ``plugin.documentation`` serves as the help block for the plugin. It contains a URL to the plugin's documentation file (must be in Markdown) containing information on how to use/configure the plugin. The documentation will appear alongside the plugin in Crafter Studio and the CrafterCMS Marketplace.
 
 See :ref:`studio-plugins` for examples of plugins auto-wired in Studio.

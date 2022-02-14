@@ -8,9 +8,9 @@
 Configuring Studio Security
 ===========================
 
-Users are authenticated by Studio through the internal database by default.  Crafter CMS can be configured so that users are authenticated using an external authentication protocol such as Lightweight Directory Access Protocol (LDAP) or Security Assertion Markup Language (SAML).
+Users are authenticated by Studio through the internal database by default.  CrafterCMS can be configured so that users are authenticated using an external authentication protocol such as Lightweight Directory Access Protocol (LDAP) or Security Assertion Markup Language (SAML).
 
-Here's a list of security providers supported by Crafter CMS for accessing the repository:
+Here's a list of security providers supported by CrafterCMS for accessing the repository:
 
 - Studio SAML security
 - headers (use when authenticating via headers)
@@ -29,4 +29,4 @@ To configure an external authentication method, please follow one of the guides 
 
 When using an external authentication method, user accounts are automatically created in the internal database upon each user's first successful login, using the attributes from the responses received.  Users added to the internal database after the user's first successful login through external authentication are marked as **Externally Managed**.
 
-Crafter CMS supports multiple security providers that appears like a single authentication module to users through authentication chaining.  See :ref:`configure-authentication-chain` to set up an authentication chain using a combination of the following authentication providers: LDAP, headers and internal database.
+CrafterCMS supports multiple security providers that appears like a single authentication module to users through authentication chaining.  See :ref:`configure-authentication-chain` to set up an authentication chain using a combination of the following authentication providers: LDAP, headers and internal database.

@@ -8,10 +8,10 @@
 Groups Management
 =================
 
-Groups Management allows you to administrate the groups created on Crafter CMS. You can add, remove,
+Groups Management allows you to administrate the groups created on CrafterCMS. You can add, remove,
 edit, and manage the users that will belong to the groups and you can also add and remove groups.
 
-Here's a list of predefined groups and roles in Crafter CMS:
+Here's a list of predefined groups and roles in CrafterCMS:
 
 +---------------------+------------------------+----------------+
 || Group              || Description           || Role          |

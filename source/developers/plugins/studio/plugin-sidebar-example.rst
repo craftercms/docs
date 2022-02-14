@@ -118,7 +118,7 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
 
    |
 
-   When running a ``crafter-cli`` command, the connection to Crafter CMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the site ``mysite`` by running the following:
+   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the site ``mysite`` by running the following:
 
       ..  code-block:: bash
 
@@ -126,7 +126,7 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
 
       |
 
-#. Let's take a look at our plugin in action by clicking on the Crafter CMS logo at the top left of your browser to open the sidebar:
+#. Let's take a look at our plugin in action by clicking on the CrafterCMS logo at the top left of your browser to open the sidebar:
 
    .. image:: /_static/images/developer/plugins/site-plugins/sidebar-plugin-in-action.jpg
       :align: center

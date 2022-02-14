@@ -8,7 +8,7 @@
 Workflows
 =========
 
-This section describes the simple default workflow available from Crafter CMS.
+This section describes the simple default workflow available from CrafterCMS.
 
 ----------------------------------
 Workflow and Scheduled Deployments

@@ -147,4 +147,3 @@ What's CrafterCMS's licensing terms?
    support/index
    reference/index
    getting-started/index
-

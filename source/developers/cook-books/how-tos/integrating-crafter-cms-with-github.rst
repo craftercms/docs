@@ -1,14 +1,14 @@
 :is-up-to-date: True
 
-.. index:: Integrating Crafter CMS with GitHub
+.. index:: Integrating CrafterCMS with GitHub
 
 .. _integrating-crafter-cms-with-github:
 
-===================================
-Integrating Crafter CMS with GitHub
-===================================
+==================================
+Integrating CrafterCMS with GitHub
+==================================
 
-This section details how to create a new project in GitHub and then start a new project in Crafter CMS in a way that connects to GitHub as an upstream remote repository.
+This section details how to create a new project in GitHub and then start a new project in CrafterCMS in a way that connects to GitHub as an upstream remote repository.
 
 ---------------------------------------------
 Create a New Project and Connect it to GitHub
@@ -72,7 +72,7 @@ Let’s walk through each part of the dialog:
 
 2. The next thing to do is give your site an ID. The ID itself doesn’t matter in a sense. It doesn’t need to match anything per se, technically speaking the only requirement is that it’s unique. That said, it’s a best practice to provide an ID that is meaningful/recognizable to the team. If your website is called FreshFlowers.com a good ID might be “freshflowerscom”.
 
-   Click on the **Review** button, then finally  click on the **Create Site** button to create your site.  Crafter CMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint.  Your site should be created in a short while.
+   Click on the **Review** button, then finally  click on the **Create Site** button to create your site.  CrafterCMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint.  Your site should be created in a short while.
 
 3. Once your site is created, the next step is to add a remote repository to your newly created site.  Open the **Sidebar** then click on **Site Tools** -> **Remote Repositories**, then click on the **New Repository** on the top right.
 
@@ -135,13 +135,13 @@ Crafter Studio helps you manage and interact with your remote repositories via t
 
 Now you are ready to set up your entire development process and CI/CD automation.
 
----------------------------------------------------------------------
-Creating a Project in Crafter CMS Based on an Existing GitHub Project
----------------------------------------------------------------------
+--------------------------------------------------------------------
+Creating a Project in CrafterCMS Based on an Existing GitHub Project
+--------------------------------------------------------------------
 
 Let’s consider for a moment that you’re a new developer joining the team. The topology above is already set up and you just want to get a local environment up and going. Simple. Follow these instructions.
 
-1. Install Crafter Studio locally (`Binaries download <https://craftersoftware.com/downloads>`_ or `Source build <https://github.com/craftercms/craftercms>`_)
+1. Install Crafter Studio locally (`Binaries download <https://craftercms.com/downloads>`_ or `Source build <https://github.com/craftercms/craftercms>`_)
 2. Login as Admin
 3. Click Create Site
 

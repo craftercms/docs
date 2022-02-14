@@ -269,7 +269,7 @@ The following section of Studio's configuration overrides allows you to randomiz
 Mail Configuration
 ------------------
 
-The following section of Studio's configuration overrides allows you to setup the SMTP server to be used by Crafter CMS when sending emails
+The following section of Studio's configuration overrides allows you to setup the SMTP server to be used by CrafterCMS when sending emails
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
