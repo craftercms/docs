@@ -32,5 +32,5 @@ For production and other services support including:
     * Access to a system integration partner ecosystem
     * Author and developer training
 
-visit `Crafter Software <http://craftercms.com>`_ or email our team at `sales@craftercms.com <mailto:sales@craftercms.com>`_ with your inquiries.
+visit `CrafterCMS <http://craftercms.com>`_ or email our team at `sales@craftercms.com <mailto:sales@craftercms.com>`_ with your inquiries.
 

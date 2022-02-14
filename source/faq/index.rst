@@ -104,5 +104,5 @@ What's CrafterCMS's licensing terms?
 -------------------------------------
 
 * CrafterCMS, the open source project is licensed under the GPLv3 Open Source license.  
-* Customers who purchase Crafter Software's support subscription receive a commercial license that alleviates them from the terms of the open source license.
+* Customers who purchase CrafterCMS' support subscription receive a commercial license that alleviates them from the terms of the open source license.
 

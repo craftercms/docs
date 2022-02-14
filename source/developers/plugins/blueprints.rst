@@ -200,7 +200,7 @@ The ``craftercms-plugin.yaml`` file contains information for use in CrafterCMS. 
           url: .crafter/screenshots/default.png
     developer:
       company:
-        name: Crafter Software
+        name: CrafterCMS
         email: info@craftercms.com
         url: https://craftercms.com/
     build:
