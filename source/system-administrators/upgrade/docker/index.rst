@@ -4,9 +4,9 @@
 
 .. _upgrading-dockers:
 
-===================================================
+==================================================
 Docker/Kuber Instructions for Upgrading CrafterCMS
-===================================================
+==================================================
 
 This section details how to upgrade your CrafterCMS installations in Kubernetes or Docker Compose.
 

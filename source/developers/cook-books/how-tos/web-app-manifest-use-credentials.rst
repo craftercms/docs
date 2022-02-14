@@ -2,9 +2,9 @@
 
 .. index:: Web manifest usage in CrafterCMS, How to use a manifest with CrafterCMS, Web App Manifest, Manifest
 
-=================================
+================================
 Web Manifest Usage in CrafterCMS
-=================================
+================================
 
 Some web apps use a ``web app manifest``, a file that describes the web application.
 

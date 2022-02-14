@@ -9,9 +9,9 @@
 
 .. _installing-craftercms-on-wsl:
 
-===============================
+==============================
 Installing CrafterCMS on WSL 2
-===============================
+==============================
 
 This section describes in detail how to install/setup CrafterCMS on Windows via WSL 2.
 
@@ -40,9 +40,9 @@ See https://docs.microsoft.com/en-us/windows/wsl/ for more information on WSL.
 
 .. _installing-crafter-cms-on-wsl:
 
--------------------------------------------------
+------------------------------------------------
 Installing CrafterCMS from the Prebuilt Binaries
--------------------------------------------------
+------------------------------------------------
 
 Here are the steps to start using CrafterCMS for development or evaluation by installing CrafterCMS from the prebuilt binaries:
 

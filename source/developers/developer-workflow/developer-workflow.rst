@@ -4,9 +4,9 @@
 
 .. _devOps-workflow:
 
-=======================================================
+======================================================
 Introduction to the Developer Workflow with CrafterCMS
-=======================================================
+======================================================
 
 Development and content authoring are both a major part of producing digital experiences.  In this section, we'll take a look at the basic mechanics that support content authoring, publishing and developer workflow.
 

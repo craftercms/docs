@@ -4,15 +4,15 @@
 
 .. _setup-delivery-using-aws-ami:
 
-==================================================
+=================================================
 Setup CrafterCMS Delivery Using Crafter's AWS AMI
-==================================================
+=================================================
 
 This section details how to setup CrafterCMS delivery using Crafter's AWS AMI.
 
--------------------------------------------------------------------
+------------------------------------------------------------------
 Step 1: Launch an AWS EC2 instance using a CrafterCMS Delivery AMI
--------------------------------------------------------------------
+------------------------------------------------------------------
 
 Crafter provides a prebuilt AMI(s) for Crafter Engine, the delivery component of CrafterCMS. In this step we'll walk you through the initial launch of your instance. To get started, go to your EC2 dashboard and click ``Launch Instance`` AWS will prompt you to choose your AMI type/image.
 

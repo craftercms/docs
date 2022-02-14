@@ -4,9 +4,9 @@
 
 .. _integrating-crafter-cms-with-github:
 
-===================================
+==================================
 Integrating CrafterCMS with GitHub
-===================================
+==================================
 
 This section details how to create a new project in GitHub and then start a new project in CrafterCMS in a way that connects to GitHub as an upstream remote repository.
 
@@ -135,9 +135,9 @@ Crafter Studio helps you manage and interact with your remote repositories via t
 
 Now you are ready to set up your entire development process and CI/CD automation.
 
----------------------------------------------------------------------
+--------------------------------------------------------------------
 Creating a Project in CrafterCMS Based on an Existing GitHub Project
----------------------------------------------------------------------
+--------------------------------------------------------------------
 
 Let’s consider for a moment that you’re a new developer joining the team. The topology above is already set up and you just want to get a local environment up and going. Simple. Follow these instructions.
 

@@ -4,15 +4,15 @@
 
 .. _setup-authoring-using-aws-ami:
 
-===================================================
+==================================================
 Setup CrafterCMS Authoring Using Crafter's AWS AMI
-===================================================
+==================================================
 
 This section details how to setup CrafterCMS authoring using Crafter's AWS AMI.
 
---------------------------------------------------------------------
+-------------------------------------------------------------------
 Step 1: Launch an AWS EC2 instance using a CrafterCMS Authoring AMI
---------------------------------------------------------------------
+-------------------------------------------------------------------
 
 Crafter provides a prebuilt AMI(s) for Crafter Studio, the authoring component of CrafterCMS. In this step we'll walk you through the initial launch of your instance. To get started, go to your EC2 dashboard and click ``Launch Instance`` AWS will prompt you to choose your AMI type/image.
 

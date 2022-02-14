@@ -6,9 +6,9 @@
 
 .. _unit-testing-groovy-code:
 
-====================================
+===================================
 Unit Testing CrafterCMS Groovy Code
-====================================
+===================================
 
 For larger sites with complex services implemented in Groovy, it is very helpful to have a way to include unit tests in a way that can be easily integrated with CI/CD systems.
 

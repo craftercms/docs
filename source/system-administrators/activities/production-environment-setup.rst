@@ -4,9 +4,9 @@
 
 .. _production-environment-setup:
 
-===============================================
+==============================================
 Setting up a CrafterCMS production environment
-===============================================
+==============================================
 
 This section lets you get started on setting up your CrafterCMS for production. A production environment normally consists of one authoring instance
 and one or more delivery instances.

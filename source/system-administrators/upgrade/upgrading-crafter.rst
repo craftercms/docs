@@ -2,9 +2,9 @@
 
 .. index:: Upgrading CrafterCMS, Upgrading
 
-=====================
+====================
 Upgrading CrafterCMS
-=====================
+====================
 
 This section details how to upgrade CrafterCMS installed on a server.
 

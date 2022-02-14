@@ -4,9 +4,9 @@
 
 .. _architecture:
 
-========================
+=======================
 CrafterCMS Architecture
-========================
+=======================
 
 CrafterCMS distinguishes itself by its modern architecture, which in turn enables:
 
@@ -178,7 +178,7 @@ The application/site can then be delivered using whatever technology, and simply
         :align: center
 
 CrafterCMS Services
-====================
+===================
 
 CrafterCMS comprises a number of services that work together to deliver the solution. At a high level:
 

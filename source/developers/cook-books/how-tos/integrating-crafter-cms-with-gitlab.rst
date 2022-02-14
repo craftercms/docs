@@ -4,9 +4,9 @@
 
 .. _integrating-crafter-cms-with-gitlab:
 
-===================================
+==================================
 Integrating CrafterCMS with GitLab
-===================================
+==================================
 
 This section details how to create a new project in GitLab and then start a new project in CrafterCMS in a way that connects to GitLab as an upstream remote repository.
 
@@ -133,9 +133,9 @@ Crafter Studio helps you manage and interact with your remote repositories via t
 
 Now you are ready to set up your entire development process and CI/CD automation.
 
----------------------------------------------------------------------
+--------------------------------------------------------------------
 Creating a Project in CrafterCMS Based on an Existing GitLab Project
----------------------------------------------------------------------
+--------------------------------------------------------------------
 Let’s consider for a moment that you’re a new developer joining the team. The topology above is already set up and you just want to get a local environment up and going. Simple. Follow these instructions.
 
 1. Install Crafter Studio locally (`Binaries download <https://craftercms.com/downloads>`_ or `Source build <https://github.com/craftercms/craftercms>`_)

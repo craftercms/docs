@@ -7,8 +7,8 @@
 
 .. _docker-config-changes:
 
-==================================================
+=================================================
 Configuration changes between CrafterCMS versions
-==================================================
+=================================================
 
 .. Leave file in place for future configuration changes between CrafterCMS versions starting 3.2.0

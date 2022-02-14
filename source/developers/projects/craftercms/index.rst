@@ -4,9 +4,9 @@
 
 .. _crafter-cms:
 
-###########
+##########
 CrafterCMS
-###########
+##########
 
 This project is the parent project that builds everything and prepares deployable binaries and a developer's environment.
 
@@ -69,24 +69,24 @@ The CrafterCMS Authoring and Delivery scripts will help you on the basic startup
 || **Script**             || ``crafter.sh``                                                        |
 +-------------------------+------------------------------------------------------------------------+
 || **Description**        || Main Script to start and stop all needed Services to have a           |
-||                        || functional CrafterCMS *Authoring/Delivery Environment*               |
+||                        || functional CrafterCMS *Authoring/Delivery Environment*                |
 +-------------------------+------------------------------------------------------------------------+
 || **Synopsis**           || ``crafter.sh start|stop|debug|help``                                  |
 +-------------------------+------------------------------------------------------------------------+
 || **Arguments**          || * ``start [withMongoDB] [skipElasticsearch] [skipMongoDB]``           |
-||                        ||   Starts all CrafterCMS services in this order                       |
+||                        ||   Starts all CrafterCMS services in this order                        |
 ||                        ||   Crafter Deployer, Elasticsearch, Apache Tomcat                      |
 ||                        ||   If withMongoDB is specified MongoDB will be started.                |
 ||                        ||   If skipElasticsearch is specified Elasticsearch will not be started.|
 ||                        ||   If skipMongoDB is specified MongoDB will not bestarted even if the  |
 ||                        ||   Crafter Profile war is present.                                     |
-||                        || * ``stop``  Stops all CrafterCMS services in the same order as       |
+||                        || * ``stop``  Stops all CrafterCMS services in the same order as        |
 ||                        ||    they start.                                                        |
 ||                        || * ``debug [withMongoDB] [skipElasticsearch] [skipMongoDB]``           |
-||                        ||   Starts all CrafterCMS services with the JAVA remote                |
+||                        ||   Starts all CrafterCMS services with the JAVA remote                 |
 ||                        ||   debug port 5000 for Crafter Deployer, and 8000                      |
 ||                        ||   for Apache Tomcat for the *Authoring Environment*                   |
-||                        ||   Starts all CrafterCMS services with the JAVA remote debug port     |
+||                        ||   Starts all CrafterCMS services with the JAVA remote debug port      |
 ||                        ||   5001 for Crafter Deployer, and 9000 for Apache                      |
 ||                        ||   Tomcat for the *Delivery Environment*                               |
 ||                        ||   If withMongoDB is specified MongoDB will be started.                |
@@ -104,7 +104,7 @@ The CrafterCMS Authoring and Delivery scripts will help you on the basic startup
 ||                        || * ``debug_tomcat``  Starts Apache Tomcat in debug mode                |
 ||                        || * ``start_mongodb``  Starts MongoDB                                   |
 ||                        || * ``stop_mongodb``  Stops MongoDB                                     |
-||                        || * ``status``  Prints the status of all CrafterCMS subsystems         |
+||                        || * ``status``  Prints the status of all CrafterCMS subsystems          |
 ||                        || * ``status_engine``  Prints the status of Crafter Engine              |
 ||                        || * ``status_studio``  Prints the status of Crafter Studio              |
 ||                        || * ``status_profile``  Prints the status of Crafter Profile            |
@@ -123,21 +123,21 @@ The CrafterCMS Authoring and Delivery scripts will help you on the basic startup
 || **Synopsis**           || ``startup.sh``                                                      |
 +-------------------------+----------------------------------------------------------------------+
 || **Description**        || Starts all needed Services to have a functional                     |
-||                        || CrafterCMS *Authoring/Delivery Environment*                        |
+||                        || CrafterCMS *Authoring/Delivery Environment*                         |
 +-------------------------+----------------------------------------------------------------------+
 
 +-------------------------+----------------------------------------------------------------------+
 || **Synopsis**           || ``shutdown.sh``                                                     |
 +-------------------------+----------------------------------------------------------------------+
 || **Description**        || Stops all needed Services to have a functional                      |
-||                        || CrafterCMS *Authoring/Delivery Environment*                        |
+||                        || CrafterCMS *Authoring/Delivery Environment*                         |
 +-------------------------+----------------------------------------------------------------------+
 
 +-------------------------+----------------------------------------------------------------------+
 || **Synopsis**           || ``debug.sh``                                                        |
 +-------------------------+----------------------------------------------------------------------+
 || **Description**        || Starts all needed Services to have a functional                     |
-||                        || CrafterCMS *Authoring/Delivery Environment* with the JAVA remote   |
+||                        || CrafterCMS *Authoring/Delivery Environment* with the JAVA remote    |
 ||                        || debug ports open and listening port 5000/5001 for Crafter Deployer, |
 ||                        || and 8000/9000 for Apache Tomcat                                     |
 +-------------------------+----------------------------------------------------------------------+
@@ -150,14 +150,14 @@ The CrafterCMS Authoring and Delivery scripts will help you on the basic startup
 +-------------------------+----------------------------------------------------------------------+
 || **Synopsis**           || ``deployer.sh start|stop|debug|help``                               |
 +-------------------------+----------------------------------------------------------------------+
-|| **Arguments**          || * ``start`` Starts all CrafterCMS services in this order           |
+|| **Arguments**          || * ``start`` Starts all CrafterCMS services in this order            |
 ||                        ||    Crafter Deployer, Elasticsearch, Apache Tomcat                   |
-||                        || * ``stop``  Stops all CrafterCMS services in the same order as     |
+||                        || * ``stop``  Stops all CrafterCMS services in the same order as      |
 ||                        ||    they start.                                                      |
-||                        || * ``debug`` Start all CrafterCMS services with the JAVA remote     |
+||                        || * ``debug`` Start all CrafterCMS services with the JAVA remote      |
 ||                        ||    debug port 5000 for Crafter Deployer, and 8000                   |
 ||                        ||    for Apache Tomcat for the *Authoring Environment*                |
-||                        ||    Starts all CrafterCMS services with the JAVA remote debug port  |
+||                        ||    Starts all CrafterCMS services with the JAVA remote debug port   |
 ||                        ||    5001 for Crafter Deployer, and 9000 for Apache Tomcat            |
 ||                        ||    for the *Delivery Environment*                                   |
 ||                        || * ``help``  Prints script help                                      |
@@ -170,23 +170,23 @@ Here are the location environment variables used by ``crafter.sh``:
 ||                         +---------------------------------------------------------------------+
 ||                         || Default Value                                                      |
 +==========================+=====================================================================+
-|| CRAFTER_HOME            || CrafterCMS *Authoring/Delivery* path                              |
+|| CRAFTER_HOME            || CrafterCMS *Authoring/Delivery* path                               |
 ||                         +---------------------------------------------------------------------+
 ||                         || {Crafter-CMS-install-directory}/crafter-{env}/                     |
 +--------------------------+---------------------------------------------------------------------+
-|| CRAFTER_LOGS_DIR        || CrafterCMS logs file path                                         |
+|| CRAFTER_LOGS_DIR        || CrafterCMS logs file path                                          |
 ||                         +---------------------------------------------------------------------+
 ||                         || $CRAFTER_HOME/logs                                                 |
 +--------------------------+---------------------------------------------------------------------+
-|| CRAFTER_DATA_DIR        || CrafterCMS data file path                                         |
+|| CRAFTER_DATA_DIR        || CrafterCMS data file path                                          |
 ||                         +---------------------------------------------------------------------+
 ||                         || $CRAFTER_HOME/data                                                 |
 +--------------------------+---------------------------------------------------------------------+
-|| CRAFTER_TEMP_DIR        || CrafterCMS temporary directory path                               |
+|| CRAFTER_TEMP_DIR        || CrafterCMS temporary directory path                                |
 ||                         +---------------------------------------------------------------------+
 ||                         || $CRAFTER_HOME/temp                                                 |
 +--------------------------+---------------------------------------------------------------------+
-|| CRAFTER_BACKUPS_DIR     || CrafterCMS backup directory path                                  |
+|| CRAFTER_BACKUPS_DIR     || CrafterCMS backup directory path                                   |
 ||                         +---------------------------------------------------------------------+
 ||                         || $CRAFTER_HOME/backups                                              |
 +--------------------------+---------------------------------------------------------------------+
@@ -198,11 +198,11 @@ Here are the environment variables used for hosts and ports in ``crafter.sh``:
 || Variable Name           +---------------------------------------------------------------------+
 ||                         || Default Value                                                      |
 +==========================+=====================================================================+
-|| MAIL_HOST               || CrafterCMS mail host                                              |
+|| MAIL_HOST               || CrafterCMS mail host                                               |
 ||                         +---------------------------------------------------------------------+
 ||                         || localhost                                                          |
 +--------------------------+---------------------------------------------------------------------+
-|| MAIL_PORT               || CrafterCMS mail port                                              |
+|| MAIL_PORT               || CrafterCMS mail port                                               |
 ||                         +---------------------------------------------------------------------+
 ||                         || 25                                                                 |
 +--------------------------+---------------------------------------------------------------------+
@@ -596,7 +596,7 @@ Here's a list of commands (Gradle tasks) available:
 || Command      || Description                              || Env Options || Module Options |
 || ``command``  ||                                          || ``env``     || ``module``     |
 +===============+===========================================+==============+=================+
-|| clone        || Clones CrafterCMS                       || - None      || - None         |
+|| clone        || Clones CrafterCMS                       || - None      || - None          |
 +---------------+-------------------------------------------+--------------+-----------------+
 || build        || Build a module or an entire              || authoring   || - None         |
 ||              || environment                              ||             || - studio       |
@@ -631,11 +631,11 @@ Here's a list of commands (Gradle tasks) available:
 ||              || binaries                                 +--------------+                 |
 ||              ||                                          || delivery    ||                |
 +---------------+-------------------------------------------+--------------+-----------------+
-|| start        || Start CrafterCMS                        || authoring   || - None         |
+|| start        || Start CrafterCMS                        || authoring   || - None          |
 ||              ||                                          +--------------+                 |
 ||              ||                                          || delivery    ||                |
 +---------------+-------------------------------------------+--------------+-----------------+
-|| stop         || Stop CrafterCMS                         || authoring   || - None         |
+|| stop         || Stop CrafterCMS                         || authoring   || - None          |
 ||              ||                                          +--------------+                 |
 ||              ||                                          || delivery    ||                |
 +---------------+-------------------------------------------+--------------+-----------------+
@@ -655,7 +655,7 @@ Here's a list of commands (Gradle tasks) available:
 ||              || etc, without deleting your data then     ||             ||                |
 ||              || builds and deploys                       ||             ||                |
 +---------------+-------------------------------------------+--------------+-----------------+
-|| selfupdate   || Updates the CrafterCMS project (gradle) || - None      || - None         |
+|| selfupdate   || Updates the CrafterCMS project (gradle) || - None      || - None          |
 +---------------+-------------------------------------------+--------------+-----------------+
 || clean        || Delete all compiled objects              || - None      || - None         |
 +---------------+-------------------------------------------+--------------+-----------------+

@@ -4,9 +4,9 @@
 
 .. _integrating-crafter-cms-with-cloud-platform:
 
-=============================================================
+============================================================
 Integrating CrafterCMS with cloud hosted developer platforms
-=============================================================
+============================================================
 
 Many development teams use cloud hosted developer platforms to assist with their development process.   Crafter’s Git based CMS supports developers working against remote repositories like GitLab, Github, Bitbucket, and others.
 

@@ -4,9 +4,9 @@
 
 .. _working-with-url-filters:
 
-===========================================================
+==========================================================
 Working With URL Interceptor/Servlet Filters in CrafterCMS
-===========================================================
+==========================================================
 
 In this section, we’ll learn the specific mechanics of creating and configuring a filter in CrafterCMS.
 
