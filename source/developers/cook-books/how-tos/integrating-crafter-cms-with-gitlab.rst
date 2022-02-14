@@ -138,7 +138,7 @@ Creating a Project in Crafter CMS Based on an Existing GitLab Project
 ---------------------------------------------------------------------
 Let’s consider for a moment that you’re a new developer joining the team. The topology above is already set up and you just want to get a local environment up and going. Simple. Follow these instructions.
 
-1. Install Crafter Studio locally (`Binaries download <https://craftersoftware.com/downloads>`_ or `Source build <https://github.com/craftercms/craftercms>`_)
+1. Install Crafter Studio locally (`Binaries download <https://craftercms.com/downloads>`_ or `Source build <https://github.com/craftercms/craftercms>`_)
 2. Login as Admin
 3. Fill out the Create Site Form as in a similar fashion described in Step 2 above, except this time, instead of selecting a blueprint, select the **Remote Git Repository** to create your site based on an existing upstream repository.  This can be your team’s branch or your own fork. The exact workflow is up to you.
 

@@ -201,8 +201,8 @@ The ``craftercms-plugin.yaml`` file contains information for use in Crafter CMS.
     developer:
       company:
         name: Crafter Software
-        email: info@craftersoftware.com
-        url: https://craftersoftware.com/
+        email: info@craftercms.com
+        url: https://craftercms.com/
     build:
       id: c3d2a5444e6a24b5e0481d6ba87901d0b02716c8
       date: 2019-01-23T00:00:00Z
