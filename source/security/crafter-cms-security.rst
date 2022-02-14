@@ -16,7 +16,7 @@ This section is limited in scope to the following:
     * Auditing 3rd party libraries and software
     * Auditing Crafter CMS
     * Auditing machine images
-    * Auditing and securing Crafter Cloud (Crafter Software’s SaaS offering of Crafter CMS)
+    * Auditing and securing Crafter Cloud (CrafterCMS' SaaS offering of Crafter CMS)
     * OWASP Top 10 Mitigation
 
 -----------
@@ -142,8 +142,8 @@ Many older or poorly configured XML processors evaluate external entity referenc
 
 How does Crafter CMS help mitigate this risk?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* Crafter Software audits all XML reading, writing and manipulating 3rd party libraries as part of the release process. Those libraries are kept up-to-date per security advisories.
-* Crafter CMS disables XML external entity and DTD processing in all XML parsers in the application, as per the OWASP Cheat Sheet 'XXE Prevention'.
+* CrafterCMS audits all XML reading, writing and manipulating 3rd party libraries as part of the release process. Those libraries are kept up-to-date per security advisories.
+* CrafterCMS disables XML external entity and DTD processing in all XML parsers in the application, as per the OWASP Cheat Sheet 'XXE Prevention'.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -161,8 +161,8 @@ How does Crafter CMS help mitigate this risk?
 * Crafter CMS enforces proper use of parameters for API calls.
 * Log access control failures
 * Authentication sessions along with related tokens and cookies are invalidated upon logout.
-* Crafter Software recommends that the applications developed on Crafter CMS must manage authentication mechanics per OWASP best practices.
-* Crafter CMS doesn’t use nor require CORS.
+* CrafterCMS recommends that the applications developed on CrafterCMS must manage authentication mechanics per OWASP best practices.
+* CrafterCMS doesn’t use nor require CORS.
 * Crafter Studio denies all unauthenticated access by default.
 
 
@@ -176,7 +176,7 @@ Security misconfiguration is the most commonly seen issue. This is commonly a re
 
 How does Crafter CMS help mitigate this risk?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* Crafter Software recommends using OWASP best practices in the buildout and deployment of Crafter CMS into various environments.
+* CrafterCMS recommends using OWASP best practices in the buildout and deployment of Crafter CMS into various environments.
 
     * These bests practices are adhered to in Crafter Cloud (the SaaS version of Crafter CMS)
 
@@ -186,7 +186,7 @@ How does Crafter CMS help mitigate this risk?
         * A segmented application architecture that provides effective, and secure separation between components.
         * Automated processes that perform security patches in all environments.
 
-    * Many of these bests practices are prebaked into the Amazon AWS Marketplace AMIs sold by Crafter Software.
+    * Many of these bests practices are prebaked into the Amazon AWS Marketplace AMIs sold by CrafterCMS.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -210,10 +210,10 @@ What is it?
 ^^^^^^^^^^^
 Insecure deserialization often leads to remote code execution. Even if deserialization flaws do not result in remote code execution, they can be used to perform attacks, including replay attacks, injection attacks, and privilege escalation attacks.
 
-How does Crafter CMS help mitigate this risk?
+How does CrafterCMS help mitigate this risk?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* Crafter CMS only serializes and deserializes data into JSON.
-* Crafter Software audits all JSON reading, writing and manipulating 3rd party libraries as part of the release process. Those libraries are kept up-to-date per security advisories.
+* CrafterCMS only serializes and deserializes data into JSON.
+* CrafterCMS audits all JSON reading, writing and manipulating 3rd party libraries as part of the release process. Those libraries are kept up-to-date per security advisories.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -231,11 +231,11 @@ How does Crafter CMS help mitigate this risk?
 
 * During the release process
 
-    * Crafter Software audits and updates code per a full security scan of the software
+    * CrafterCMS audits and updates code per a full security scan of the software
     * All 3rd party software is downloaded from the original authority and checksums validated
     * AWS Marketplace AMIs are scanned by AWS Inspector,  https://aws.amazon.com/inspector/
 
-* Crafter Software recommends organizations perform their own security audits for all additional 3rd party dependencies for their application per OWASP best practices.
+* CrafterCMS recommends organizations perform their own security audits for all additional 3rd party dependencies for their application per OWASP best practices.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -246,10 +246,10 @@ What is it?
 Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems, and tamper, extract, or destroy data. Most breach studies show time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.
 
 
-How does Crafter CMS help mitigate this risk?
+How does CrafterCMS help mitigate this risk?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* Crafter CMS components log all activity to standard logging servers.
-* Crafter Software recommends:
+* CrafterCMS components log all activity to standard logging servers.
+* CrafterCMS recommends:
 
     * Application developed on Crafter CMS log all critical events.
     * Logs are processed by monitors and alarms are triggered per OWASP best practices.

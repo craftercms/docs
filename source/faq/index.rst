@@ -100,9 +100,9 @@ You can find out more about contributing bug reports, code, documentations and t
 
 
 -------------------------------------
-What's Crafter CMS's licensing terms?
+What's CrafterCMS's licensing terms?
 -------------------------------------
 
-* Crafter CMS, the open source project is licensed under the GPLv3 Open Source license.  
-* Customers who purchase Crafter Software's support subscription receive a commercial license that alleviates them from the terms of the open source license.
+* CrafterCMS, the open source project is licensed under the GPLv3 Open Source license.  
+* Customers who purchase CrafterCMS' support subscription receive a commercial license that alleviates them from the terms of the open source license.
 

@@ -12,7 +12,7 @@ Site Plugins
 What are site plugins?
 ----------------------
 
-A site plugin can contain one or more extensions for Crafter CMS in a single package. These extensions can:
+A site plugin can contain one or more extensions for CrafterCMS in a single package. These extensions can:
 
 * **Extend Crafter Studio (authoring)**
 
@@ -229,12 +229,12 @@ To create a plugin, a descriptor file  ``craftercms-plugin.yaml`` is required. B
          url: https://github.com/craftercms/site-plugins-example
        media:
          screenshots:
-           - title: Crafter CMS
-             description: Crafter CMS Example Plugin
+           - title: CrafterCMS
+             description: CrafterCMS Example Plugin
              url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/screenshots/default.png"
        developer:
          company:
-           name: Crafter Software
+           name: CrafterCMS
            email: info@craftercms.com
            url: https://craftercms.com
        license:

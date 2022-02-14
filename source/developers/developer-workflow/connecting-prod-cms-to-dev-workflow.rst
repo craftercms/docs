@@ -8,9 +8,9 @@
 Connecting the Production CMS to the Development Workflow
 =========================================================
 
-In this section we’re going to illustrate how the production CMS is “connected with” and participates in the development workflow to support Crafter Software’s DevContentOps process.
+In this section we’re going to illustrate how the production CMS is “connected with” and participates in the development workflow to support CrafterCMS' DevContentOps process.
 
-The Production CMS instance is connected to the development workflow at the repository level.  Crafter CMS’s authoring components sit on top of Crafter’s Git-based repository.  Git is a distributed repository -- and we leverage this fact to support the movement of code and content between production and the development process.
+The Production CMS instance is connected to the development workflow at the repository level.  Crafter CMS’s authoring components sit on top of CrafterCMS' Git-based repository.  Git is a distributed repository -- and we leverage this fact to support the movement of code and content between production and the development process.
 
 -----------------------------------------------------
 The Link Between Production Authoring and Development
@@ -18,7 +18,7 @@ The Link Between Production Authoring and Development
 
 Typically a development  process is supported by a Git repository with workflow and tooling on top of it.  Organizations use a wide variety of solutions both on-prem and in the cloud including BitBucket, GitHub, GitLab and others.  It’s the **Master** branch that serves as the root of the DevOps workflow. For further reference we’ll call this Master branch in this repository the Production Code repository.  It’s worth noting that any Git-based repository will work. That said, a Git repository that has a Web UI and integration hooks on top of it (like the examples mentioned) is ideal.
 
-At a very high level, the project for your site (e.g., my.com) in your Production Crafter CMS’ authoring server Crafter Studio is configured to be “connected” with your production code repository.
+At a very high level, the project for your site (e.g., my.com) in your Production Crafter CMS' authoring server Crafter Studio is configured to be “connected” with your production code repository.
 
 Said more simply, your Production Content repository and process is connected with your Production Code repository and process (as shown in the figure below).  In effect they are one, distributed repository.
 
