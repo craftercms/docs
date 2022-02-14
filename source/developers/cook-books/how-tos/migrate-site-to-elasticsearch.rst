@@ -6,7 +6,7 @@
 Migrating a site from Solr to Elasticsearch
 ===========================================
 
-When upgrading to Crafter CMS 4.0 you need to update the code of all existing sites to use Elasticsearch if your site(s) were built to use Solr.
+When upgrading to CrafterCMS 4.0 you need to update the code of all existing sites to use Elasticsearch if your site(s) were built to use Solr.
 
 -------------------------
 Updating to Elasticsearch
@@ -294,7 +294,7 @@ Elasticsearch also offers the possibility to query fields with postfixes using w
 Update "craftercms-plugin.yaml" to use Elasticsearch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Your site has a ``craftercms-plugin.yaml`` file that contains information for use by Crafter CMS.
+Your site has a ``craftercms-plugin.yaml`` file that contains information for use by CrafterCMS.
 We'll have to update the file to use Elasticsearch as the search engine.
 
 Edit your ``craftercms-plugin.yaml``, and change the following property:

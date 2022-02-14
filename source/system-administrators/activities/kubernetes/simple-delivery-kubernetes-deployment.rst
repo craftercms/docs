@@ -8,7 +8,7 @@
 Simple Delivery Kubernetes Deployment
 =====================================
 
-A Kubernetes deployment describes an applications life cycle, e.g. images to be used, the number of pods, etc. It creates pods based on a specified template.  Crafter CMS has an example Kubernetes deployment for a simple delivery.  In this section, we'll take a look at this example Kubernetes deployment.
+A Kubernetes deployment describes an applications life cycle, e.g. images to be used, the number of pods, etc. It creates pods based on a specified template.  CrafterCMS has an example Kubernetes deployment for a simple delivery.  In this section, we'll take a look at this example Kubernetes deployment.
 
 ------------
 Requirements
@@ -29,7 +29,7 @@ In addition to that, we need the following:
   To setup an authoring pod, you can follow  :ref:`setup-simple-authoring-with-kubernetes-deployment` or :ref:`setup-studio-clustering-with-kubernetes-deployment`.  Take note of the keys used in your Authoring setup.  We will be using the same ssh keys for our simple delivery setup.
   For this guide, we will use a simple Authoring with a single instance Kubernetes deployment to pull site content from.
 
-* Kubernetes deployment files for Crafter CMS Simple Delivery, found here: https://github.com/craftercms/kubernetes-deployments/
+* Kubernetes deployment files for CrafterCMS Simple Delivery, found here: https://github.com/craftercms/kubernetes-deployments/
 
      .. code-block:: sh
 
@@ -109,7 +109,7 @@ Another way of checking the status of the deployments/pods/etc. is by running ``
    |
 
 .. image:: /_static/images/system-admin/simple-delivery-k9s-start.jpg
-   :alt: Crafter CMS Simple Delivery Kubernetes Deployment
+   :alt: CrafterCMS Simple Delivery Kubernetes Deployment
    :width: 100%
    :align: center
 

@@ -10,7 +10,7 @@ In the previous section entitled :ref:`code-repo-and-devops-workflow` we discuss
 * How this process enables the development of multiple (any number of) features to take place simultaneously.
 * How stability and reliability is forged in to releases without needing to do project wide code freezes.
 * How content can flow backward from production to development environments at any time and code can flow forward from development to production without any code freezes
-* And how this process can be simplified and automated with Crafter CMS Git-based distributed repository platform and DevContentOps process.
+* And how this process can be simplified and automated with CrafterCMS Git-based distributed repository platform and DevContentOps process.
 
 In this section we'll cover the specific mechanics of facilitating this process at each step of the way.
 
@@ -185,7 +185,7 @@ Perform your code and config updates.
 
 Can I Work in My IDE?
 ^^^^^^^^^^^^^^^^^^^^^
-Yes. Your IDE and debugger are now able to be fully integrated with Crafter CMS.  Go ahead and sit your IDE project directly on top of your checked out feature branch.
+Yes. Your IDE and debugger are now able to be fully integrated with CrafterCMS.  Go ahead and sit your IDE project directly on top of your checked out feature branch.
 
     * Any changes you make and commit will be detected by Crafter Studio if it’s also running locally.
     * Remember to .gitignore any IDE or local developer specific files so these do not flow off your machine.

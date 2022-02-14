@@ -1,4 +1,4 @@
-1.1 What is Crafter CMS
-1.2 When/where to use Crafter CMS
-1.3 Who uses Crafter CMS
+1.1 What is CrafterCMS
+1.2 When/where to use CrafterCMS
+1.3 Who uses CrafterCMS
 1.4 FAQ

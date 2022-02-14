@@ -6,7 +6,7 @@
 System Administrators
 #####################
 
-This guide is intended to provide system administrators with the information and access to the tools they need to install and maintain Crafter CMS components.
+This guide is intended to provide system administrators with the information and access to the tools they need to install and maintain CrafterCMS components.
 
 *******************
 System Requirements
@@ -58,7 +58,7 @@ Activities
    activities/management-token.rst
 
 *********************
-Upgrading Crafter CMS
+Upgrading CrafterCMS
 *********************
 
 .. toctree::

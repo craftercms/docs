@@ -21,7 +21,7 @@ Installation
 New Installation
 ^^^^^^^^^^^^^^^^
 
-You can follow the instructions for building a complete binary of Crafter CMS as described
+You can follow the instructions for building a complete binary of CrafterCMS as described
 `here <https://github.com/craftercms/craftercms/blob/develop/README.md>`__.
 
 ^^^^^^^^^^^^^^^^^^^^^

@@ -1,11 +1,11 @@
 :is-up-to-date: True
 
-.. index:: Introduction to the Developer Workflow with Crafter CMS, Developer Workflow
+.. index:: Introduction to the Developer Workflow with CrafterCMS, Developer Workflow
 
 .. _devOps-workflow:
 
 =======================================================
-Introduction to the Developer Workflow with Crafter CMS
+Introduction to the Developer Workflow with CrafterCMS
 =======================================================
 
 Development and content authoring are both a major part of producing digital experiences.  In this section, we'll take a look at the basic mechanics that support content authoring, publishing and developer workflow.
@@ -17,13 +17,13 @@ Here's a typical developer process and set of environments which must be followe
     :width: 100 %
     :align: center
 
-We'll first tackle Crafter CMS content management and deployment mechanics, then the DevOps workflow and finally how to setup the workflow.
+We'll first tackle CrafterCMS content management and deployment mechanics, then the DevOps workflow and finally how to setup the workflow.
 
 -------------------------------------------
 Content Management and Deployment Mechanics
 -------------------------------------------
 
-Crafter CMS is implemented with a decoupled architecture, composed of several microservices where content authoring and content delivery services are separated into their own distinct, subsystems.
+CrafterCMS is implemented with a decoupled architecture, composed of several microservices where content authoring and content delivery services are separated into their own distinct, subsystems.
 
 Authoring is supported via Crafter Studio (a web-based authoring tool) that sits on top of a headless Git-based repository and publishing system.  While content authors are performing their work, Crafter is managing all of the Git mechanics, managing locking, creating a time-machine like, Git-based version history and audit trail, all accessible via the Studio UI.
 
@@ -211,7 +211,7 @@ Let’s walk through each part of the dialog:
 
 2. The next thing to do is give your site an ID. The ID itself doesn’t matter in a sense. It doesn’t need to match anything per se, technically speaking the only requirement is that it’s unique. That said, it’s a best practice to provide an ID that is meaningful/recognizable to the team. If your website is called FreshFlowers.com a good ID might be “freshflowerscom”.
 
-   Click on the **Review** button, then finally  click on the **Create Site** button to create your site.  Crafter CMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint.  Your site should be created in a short while.
+   Click on the **Review** button, then finally  click on the **Create Site** button to create your site.  CrafterCMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint.  Your site should be created in a short while.
 
 3. Once your site is created, the next step is to add a remote repository to your newly created site.  Open the **Sidebar** then click on **Site Tools** -> **Remote Repositories**, then click on the **New Repository** on the top right.
 
@@ -266,7 +266,7 @@ Now that your upstream repository is initialized in GitHub you can set up any de
     :width: 70 %
     :align: center
 
-    **Full DevOps “Code Forward, Content Back” workflow for CI/CD with Crafter CMS leveraging Git mechanics and DevOps automation**
+    **Full DevOps “Code Forward, Content Back” workflow for CI/CD with CrafterCMS leveraging Git mechanics and DevOps automation**
 
 -----------------------------------------------
 Setting Up to Work Locally Against the Upstream

@@ -8,13 +8,13 @@
 Publishing Blacklist
 ====================
 
-Crafter CMS allows creating a publishing blacklist to prevent certain unwanted items from being published.
+CrafterCMS allows creating a publishing blacklist to prevent certain unwanted items from being published.
 
 A comma separated list of regexes is used to configure items that should not be published.
 
 To configure the publishing blacklist, using your favorite editor open ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml`` or open the Global Studio Configuration Override file **studio-config-override.yaml** located under ``CRAFTER_HOME/data/repos/global/configuration`` that can be accessed from Studio from the ``Main Menu`` under ``Global Config``.
 
-Add the following lines with the regex for the item you wish not to be published.  By default, ``.keep`` files are not published by Crafter CMS.  Just add a ``,`` then your regex after ``.*/\.keep``:
+Add the following lines with the regex for the item you wish not to be published.  By default, ``.keep`` files are not published by CrafterCMS.  Just add a ``,`` then your regex after ``.*/\.keep``:
 
    .. code-block:: yaml
       :caption: *studio-config-override.yaml*

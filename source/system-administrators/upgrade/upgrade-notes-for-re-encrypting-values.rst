@@ -11,9 +11,9 @@
 Upgrade Notes for Re-encrypting Values
 ======================================
 
-Crafter CMS uses the Apache commons-codec library for encrypting/decrypting sensitive information.  Crafter CMS 3.1.8 and earlier versions was expecting the salt to be encoded in base64 but because of a bug in the Apache commons-codec library, invalid characters were being used to encrypt the values.
+CrafterCMS uses the Apache commons-codec library for encrypting/decrypting sensitive information.  CrafterCMS 3.1.8 and earlier versions was expecting the salt to be encoded in base64 but because of a bug in the Apache commons-codec library, invalid characters were being used to encrypt the values.
 
-To prevent this from causing issues, the upgrade manager will automatically re-encrypt values for installations upgraded to **Crafter CMS 3.1.9 and later 3.1.x** versions.
+To prevent this from causing issues, the upgrade manager will automatically re-encrypt values for installations upgraded to **CrafterCMS 3.1.9 and later 3.1.x** versions.
 
 However, there may be some cases that the upgrade manager may not be able to automatically re-encrypt values and a manual re-encryption will be required.  The range of valid base64 characters are: ``A–Z``, ``a–z``, ``0–9``, ``+``, ``/`` and ``=``.  If any of the values encrypted contained other characters aside from the ones previously listed, say an ``@`` character, the re-encryption process being performed by the upgrade manager will fail with a message that looks like the following:
 
@@ -31,15 +31,15 @@ Manually Re-encrypt Values
 
 **To manually re-encrypt values you'll need the following:**
 
-#. Crafter CMS command line encryption tool version **3.1.8 or earlier** for decrypting the existing values with the bad base64 salt
-#. Crafter CMS command line encryption tool version **3.1.9 or later** for encrypting the old values (the ones decrypted) using the new salt
+#. CrafterCMS command line encryption tool version **3.1.8 or earlier** for decrypting the existing values with the bad base64 salt
+#. CrafterCMS command line encryption tool version **3.1.9 or later** for encrypting the old values (the ones decrypted) using the new salt
 
 **To re-encrypt values:**
 
 #. Find all values that need to be re-encrypted e.g. configuration files & remote repository credentials
 
-#. For this step, we need to use the Crafter CMS command line encryption tool version 3.1.8 or earlier.  |br|
-   Using the old key and salt, decrypt the values using the Crafter CMS command line encryption tool (See :ref:`crafter-commons-encryption-tool` for more information on the tool).
+#. For this step, we need to use the CrafterCMS command line encryption tool version 3.1.8 or earlier.  |br|
+   Using the old key and salt, decrypt the values using the CrafterCMS command line encryption tool (See :ref:`crafter-commons-encryption-tool` for more information on the tool).
 
    Run the following command to decrypt the values:
 
@@ -51,7 +51,7 @@ Manually Re-encrypt Values
 
    where:
 
-   * **JARNAME:** The Crafter CMS command line encryption tool *crafter-commons-utilities-VERSION-enctool.jar*.  Remember to replace ``VERSION`` in the jar name with the actual version you are using, e.g. ``3.1.8`` or ``3.1.6``, etc.
+   * **JARNAME:** The CrafterCMS command line encryption tool *crafter-commons-utilities-VERSION-enctool.jar*.  Remember to replace ``VERSION`` in the jar name with the actual version you are using, e.g. ``3.1.8`` or ``3.1.6``, etc.
    * **CIPHER_TEXT:** The old encrypted value we want to decrypt
    * **PASSWORD:** The key for decrypting the value
    * **BASE64_SALT:** The old salt for decrypting the value
@@ -65,7 +65,7 @@ Manually Re-encrypt Values
 
       |
 
-#. For this step, we need to use the Crafter CMS command line encryption tool version 3.1.9 or later.  |br|
+#. For this step, we need to use the CrafterCMS command line encryption tool version 3.1.9 or later.  |br|
    Choose a new salt then encrypt all values and replace the old ones with the new encrypted values.  Run the following command to encrypt the values using the new salt:
 
       .. code-block:: bash
@@ -76,7 +76,7 @@ Manually Re-encrypt Values
 
    where:
 
-   * **JARNAME:** The Crafter CMS command line encryption tool *crafter-commons-utilities-VERSION-enctool.jar*.  Remember to replace ``VERSION`` in the jar name with the actual version you are using, e.g. ``3.1.9`` or ``3.1.10``, etc.
+   * **JARNAME:** The CrafterCMS command line encryption tool *crafter-commons-utilities-VERSION-enctool.jar*.  Remember to replace ``VERSION`` in the jar name with the actual version you are using, e.g. ``3.1.9`` or ``3.1.10``, etc.
    * **CLEAR_TEXT:** The value we want to encrypt
    * **PASSWORD:** The key for encrypting the value
    * **NEW_SALT:** The new salt for encrypting the value
@@ -88,7 +88,7 @@ Manually Re-encrypt Values
          $ java -jar crafter-commons-utilities-3.1.10-enctool.jar -e mySup3rsecret#@hello -p klanFogyetkonjo -s Sdf25pT2RkeWk=
          Cipher text (in Base 64): CCE-V1#fQ5sZ3zfIezQzmWl38+FPph2BwVsLstkwGeWuqKAhbFCN3I1PM3ahAHkrMYCytFV
 
-#. After updating configuration files that needs to be re-encrypted, commit the files by using ``git`` so the changes will be picked up by Crafter CMS.
+#. After updating configuration files that needs to be re-encrypted, commit the files by using ``git`` so the changes will be picked up by CrafterCMS.
 
       .. code-block:: bash
 

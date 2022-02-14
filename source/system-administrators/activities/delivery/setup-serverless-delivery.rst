@@ -6,7 +6,7 @@
 Setup Serverless Delivery
 =========================
 
-Crafter CMS can be configured to serve sites directly from AWS services, following this guide you will:
+CrafterCMS can be configured to serve sites directly from AWS services, following this guide you will:
 
 - Create a AWS Elasticsearch domain (optional)
 - Configure a Crafter Studio in an authoring environment to call the Crafter Deployer to create an AWS CloudFormation 
@@ -18,8 +18,8 @@ Prerequisites
 -------------
 
 - An AWS account
-- A Crafter CMS authoring environment
-- A Crafter CMS delivery environment
+- A CrafterCMS authoring environment
+- A CrafterCMS delivery environment
 
 --------------------------------------------------------------
 Step 1: Create an Elasticsearch Domain for Delivery (optional)

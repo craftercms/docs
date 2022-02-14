@@ -1,11 +1,11 @@
 :is-up-to-date: True
 
-.. index:: How to change hosts and ports on your Crafter CMS Authoring install; How to change ports
+.. index:: How to change hosts and ports on your CrafterCMS Authoring install; How to change ports
 
 .. _how-to-change-hosts-ports-on-your-crafter-authoring-install:
 
 ========================================================================================
-How To Change the Hosts and Ports on Your Crafter CMS Authoring Environment Installation
+How To Change the Hosts and Ports on Your CrafterCMS Authoring Environment Installation
 ========================================================================================
 
 You can change all the hosts and ports used for communication by the Crafter applications in 

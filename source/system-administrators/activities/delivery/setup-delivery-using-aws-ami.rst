@@ -1,37 +1,37 @@
 :is-up-to-date: True
 
-.. index:: Setup Crafter CMS Delivery Using Crafter's AWS AMI
+.. index:: Setup CrafterCMS Delivery Using Crafter's AWS AMI
 
 .. _setup-delivery-using-aws-ami:
 
 ==================================================
-Setup Crafter CMS Delivery Using Crafter's AWS AMI
+Setup CrafterCMS Delivery Using Crafter's AWS AMI
 ==================================================
 
-This section details how to setup Crafter CMS delivery using Crafter's AWS AMI.
+This section details how to setup CrafterCMS delivery using Crafter's AWS AMI.
 
 -------------------------------------------------------------------
-Step 1: Launch an AWS EC2 instance using a Crafter CMS Delivery AMI
+Step 1: Launch an AWS EC2 instance using a CrafterCMS Delivery AMI
 -------------------------------------------------------------------
 
-Crafter provides a prebuilt AMI(s) for Crafter Engine, the delivery component of Crafter CMS. In this step we'll walk you through the initial launch of your instance. To get started, go to your EC2 dashboard and click ``Launch Instance`` AWS will prompt you to choose your AMI type/image.
+Crafter provides a prebuilt AMI(s) for Crafter Engine, the delivery component of CrafterCMS. In this step we'll walk you through the initial launch of your instance. To get started, go to your EC2 dashboard and click ``Launch Instance`` AWS will prompt you to choose your AMI type/image.
 
 .. image:: /_static/images/ami/craftercms-aws-ami-delivery-launch-instance.jpg
     :width: 100 %
     :align: center
-    :alt: Crafter CMS AWS AMI Delivery Launch Instance
+    :alt: CrafterCMS AWS AMI Delivery Launch Instance
 
-You can find Crafter CMS Delivery by entering the keywords ``Crafter CMS Delivery`` in the search box as shown below. You will find a number of options in the search results.
+You can find CrafterCMS Delivery by entering the keywords ``CrafterCMS Delivery`` in the search box as shown below. You will find a number of options in the search results.
 
-* Crafter CMS Community Delivery is our open source version
-* Crafter CMS Enterprise Delivery is our supported enterprise version
+* CrafterCMS Community Delivery is our open source version
+* CrafterCMS Enterprise Delivery is our supported enterprise version
 
 Click ``Select`` on the AMI type you want to use and then follow the launch instance/configuration wizard to determine the sizing and networking details for your instance. Please note, we recommend "C" class machines for best results with typical production use.
 
 .. image:: /_static/images/ami/craftercms-aws-ami-delivery-select.jpg
     :width: 100 %
     :align: center
-    :alt: Crafter CMS AWS AMI Delivery Select
+    :alt: CrafterCMS AWS AMI Delivery Select
 
 The launch instance wizard gives you the ability to tweak your instance's configuration details. In the next step we will connect to the machine with SSH via a terminal/console inorder to acquire the administrators initial login password for the Crafter Studio web application. You will need to add SSH to your inbound security settings for the instance to complete the next step and acquire the password. To do so, click the ``Configure Security Group`` tab.
 
@@ -40,28 +40,28 @@ To add the rule for SSH, click the ``Inbound traffic`` tab and then ``Add Rule``
 .. image:: /_static/images/ami/craftercms-aws-ami-delivery-security-groups.jpg
     :width: 100 %
     :align: center
-    :alt: Crafter CMS AWS AMI Delivery Security Groups
+    :alt: CrafterCMS AWS AMI Delivery Security Groups
 
 Once you have added SSH access and made any other tweaks you feel are necessary to your instance's configuration, click the ``Review`` tab and then click the ``Launch`` button.
 
 .. image:: /_static/images/ami/craftercms-aws-ami-delivery-review.jpg
     :width: 100 %
     :align: center
-    :alt: Crafter CMS AWS AMI Delivery Review
+    :alt: CrafterCMS AWS AMI Delivery Review
 
 After clicking ``Launch``, AWS will request that you select a public key for administrative console access to the machine. You will need access to this key in the next step in order to retrieve the administrator's password for Crafter Studio. Create or choose an existing key and click ``Launch Instances``
 
 .. image:: /_static/images/ami/craftercms-aws-ami-selectkey.jpg
     :width: 100 %
     :align: center
-    :alt: Crafter CMS AWS AMI Delivery Select Key
+    :alt: CrafterCMS AWS AMI Delivery Select Key
 
 Once you click ``Launch instances`` AWS will start and initialize the instance. This may take a minute or two.
 
 .. image:: /_static/images/ami/craftercms-aws-ami-starting.jpg
     :width: 100 %
     :align: center
-    :alt: Crafter CMS AWS AMI Delivery AMI Starting
+    :alt: CrafterCMS AWS AMI Delivery AMI Starting
 
 ---------------------------------------------
 Step 2: Access the Crafter Engine via the Web
@@ -74,27 +74,27 @@ To access the login screen open a web browser and navigate to http://DNS_NAME_OR
 .. image:: /_static/images/ami/craftercms-aws-ami-delivery-engine-running.jpg
     :width: 100 %
     :align: center
-    :alt: Crafter CMS AWS AMI Delivery Engine Running
+    :alt: CrafterCMS AWS AMI Delivery Engine Running
 
 You can find the IP address and/or DNS name in several locations on your AWS administration console shown here:
 
 .. image:: /_static/images/ami/craftercms-aws-ami-delivery-ipdns.jpg
     :width: 100 %
     :align: center
-    :alt: Crafter CMS AWS AMI Delivery IP DNS
+    :alt: CrafterCMS AWS AMI Delivery IP DNS
 
 -----------------------------------------------------------
 Step 3: Configure Crafter Engine to deliver published sites
 -----------------------------------------------------------
 
-Crafter Engine is now up and running. However, in order to deliver content, its deployer must be configured to monitor a published repository for one or more sites. A delivery engine is multi-tenant and can deliver many sites. Each site must be configured or "initialized" such that the deployer monitors a Git repository for published updates. Crafter CMS's delivery tier has a decoupled, shared-nothing architecture that makes it cloud native and elastically scalable. You can read more about this architecture here: :ref:`architecture`
+Crafter Engine is now up and running. However, in order to deliver content, its deployer must be configured to monitor a published repository for one or more sites. A delivery engine is multi-tenant and can deliver many sites. Each site must be configured or "initialized" such that the deployer monitors a Git repository for published updates. CrafterCMS's delivery tier has a decoupled, shared-nothing architecture that makes it cloud native and elastically scalable. You can read more about this architecture here: :ref:`architecture`
 
 In this section we'll show you how to configure a Crafter Delivery instance to monitor a published Git repository and delivery content for a given site. The simplest topology for this is to directly monitor the published repository of a project on the authoring instance. This is what we will configure. Let's get started.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 3.1: Configure authoring instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In order to complete step 3, you must have a Crafter CMS authoring instance running.  If you do not, please follow these instructions to set an instance:
+In order to complete step 3, you must have a CrafterCMS authoring instance running.  If you do not, please follow these instructions to set an instance:
 
 :ref:`setup-authoring-using-aws-ami`
 
@@ -126,7 +126,7 @@ Once the keygen process completes you should find a file at the location you spe
 .. image:: /_static/images/ami/craftercms-ssh-rsa-keygen.jpg
     :width: 100 %
     :align: center
-    :alt: Crafter CMS AWS AMI Delivery SSH RSA keygen
+    :alt: CrafterCMS AWS AMI Delivery SSH RSA keygen
 
 3.2.2: Install the public key on the authoring server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -259,7 +259,7 @@ The SITE_ID parameter can be acquired from the authoring server. Log in to Craft
 .. image:: /_static/images/ami/craftercms-siteid.jpg
     :width: 100 %
     :align: center
-    :alt: Crafter CMS AWS AMI Delivery Site Id
+    :alt: CrafterCMS AWS AMI Delivery Site Id
 
 Successful execution of this command will produce output similar to the following:
 
@@ -279,7 +279,7 @@ Example:
 .. image:: /_static/images/ami/craftercms-aws-ami-initsite.png
     :width: 100 %
     :align: center
-    :alt: Crafter CMS AWS AMI Delivery initsite
+    :alt: CrafterCMS AWS AMI Delivery initsite
 
 You can further verify that the deployment is working by watching the logs.  To watch the logs use the following command:
 
@@ -314,7 +314,7 @@ Example:
 .. image:: /_static/images/ami/craftercms-aws-ami-delivery-viewsite.jpg
     :width: 100 %
     :align: center
-    :alt: Crafter CMS AWS AMI Delivery View Site
+    :alt: CrafterCMS AWS AMI Delivery View Site
 
 .. note::
    The **SITE_ID** parameter is typically added automatically to all requests for a given site by a webserver "virtual host" configured for each site/tenant that sits in front of Crafter Engine. You can learn more about this here: :ref:`configure-apache-vhost-for-production`
@@ -329,10 +329,10 @@ To further test publishing, log in to Crafter Studio for the given site, make an
 .. image:: /_static/images/ami/craftercms-approve-publish.png
     :width: 100 %
     :align: center
-    :alt: Crafter CMS AWS AMI Delivery Approve & Publish
+    :alt: CrafterCMS AWS AMI Delivery Approve & Publish
 
 -----------------------
 Step 7: Setup complete!
 -----------------------
-Your setup and configuration of your Crafter CMS Delivery on AWS is now complete!
+Your setup and configuration of your CrafterCMS Delivery on AWS is now complete!
 

@@ -11,7 +11,7 @@ Support
 Community Support
 -----------------
 
-The source code in Crafter CMS is licensed under the GPLv3 and is publicly available at GitHub `here <https://github.com/craftercms>`_ . 
+The source code in CrafterCMS is licensed under the GPLv3 and is publicly available at GitHub `here <https://github.com/craftercms>`_ . 
 If you have any questions, please look in the following:
 
 	* `Slack <https://join.slack.com/t/craftercms/shared_invite/enQtNDg0NzI3NzA0NjMwLThkOWQwOWVlYWM5NzIyODZjZjQ2MTY1OTliM2EyZDI3ZjFjY2EwYWNlYjgyZGMwMWM3ZjZkZmNiYTJkZDgzMzc>`_
@@ -19,7 +19,7 @@ If you have any questions, please look in the following:
 	* `Q&A at StackOverflow <https://stackoverflow.com/questions/tagged/crafter-cms>`_
 	* `IRC <https://webchat.freenode.net/#craftercms>`_ or point your IRC client to ``irc.freenode.net`` channel ``#craftercms``
 
-For additional resources, please visit the `Crafter CMS developer community <http://craftercms.org>`_.
+For additional resources, please visit the `CrafterCMS developer community <http://craftercms.org>`_.
 
 Enterprise Support
 ------------------

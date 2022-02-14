@@ -8,7 +8,7 @@
 Getting Started on Authoring
 ============================
 
-This section contains an overview on how an Author works in Crafter CMS.  Content authors creates, edits and submits content for a site.  Crafter CMS's Crafter Studio provides the content author an easy to use authoring and management system for developing and optimizing the content and dynamic site visitor experience for any and all of your Web properties.
+This section contains an overview on how an Author works in CrafterCMS.  Content authors creates, edits and submits content for a site.  CrafterCMS's Crafter Studio provides the content author an easy to use authoring and management system for developing and optimizing the content and dynamic site visitor experience for any and all of your Web properties.
 
 .. include:: /includes/how-craftercms-works.rst
 
