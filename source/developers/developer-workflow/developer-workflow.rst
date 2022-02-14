@@ -1,11 +1,11 @@
 :is-up-to-date: True
 
-.. index:: Introduction to the Developer Workflow with Crafter CMS, Developer Workflow
+.. index:: Introduction to the Developer Workflow with CrafterCMS, Developer Workflow
 
 .. _devOps-workflow:
 
 =======================================================
-Introduction to the Developer Workflow with Crafter CMS
+Introduction to the Developer Workflow with CrafterCMS
 =======================================================
 
 Development and content authoring are both a major part of producing digital experiences.  In this section, we'll take a look at the basic mechanics that support content authoring, publishing and developer workflow.
@@ -17,13 +17,13 @@ Here's a typical developer process and set of environments which must be followe
     :width: 100 %
     :align: center
 
-We'll first tackle Crafter CMS content management and deployment mechanics, then the DevOps workflow and finally how to setup the workflow.
+We'll first tackle CrafterCMS content management and deployment mechanics, then the DevOps workflow and finally how to setup the workflow.
 
 -------------------------------------------
 Content Management and Deployment Mechanics
 -------------------------------------------
 
-Crafter CMS is implemented with a decoupled architecture, composed of several microservices where content authoring and content delivery services are separated into their own distinct, subsystems.
+CrafterCMS is implemented with a decoupled architecture, composed of several microservices where content authoring and content delivery services are separated into their own distinct, subsystems.
 
 Authoring is supported via Crafter Studio (a web-based authoring tool) that sits on top of a headless Git-based repository and publishing system.  While content authors are performing their work, Crafter is managing all of the Git mechanics, managing locking, creating a time-machine like, Git-based version history and audit trail, all accessible via the Studio UI.
 
@@ -237,7 +237,7 @@ Let’s walk through each part of the dialog:
    :width: 60 %
    :align: center
 
-9. Once you're satisfied with your entries for creating your site, click on the **Create Site** button.  Crafter CMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint. Once complete it will connect to the upstream and push the contents of the Sandbox repository to the remote.
+9. Once you're satisfied with your entries for creating your site, click on the **Create Site** button.  CrafterCMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint. Once complete it will connect to the upstream and push the contents of the Sandbox repository to the remote.
 
 .. image:: /_static/images/developer/workflow/site-created.png
     :alt: Developer Workflow - Site is created and the contents of the sandbox are automatically pushed to the upstream repository
@@ -269,7 +269,7 @@ Now that your upstream repository is initialized in GitHub you can set up any de
     :width: 70 %
     :align: center
 
-    **Full DevOps “Code Forward, Content Back” workflow for CI/CD with Crafter CMS leveraging Git mechanics and DevOps automation**
+    **Full DevOps “Code Forward, Content Back” workflow for CI/CD with CrafterCMS leveraging Git mechanics and DevOps automation**
 
 -----------------------------------------------
 Setting Up to Work Locally Against the Upstream

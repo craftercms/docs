@@ -1,7 +1,7 @@
-Crafter CMS is a web content and experience management solution that allows organizations to build and manage rich online experiences on the web, mobile, social, and all digital online channels.
+CrafterCMS is a web content and experience management solution that allows organizations to build and manage rich online experiences on the web, mobile, social, and all digital online channels.
 
 -------------------------------
-How Authors Work in Crafter CMS
+How Authors Work in CrafterCMS
 -------------------------------
   
 .. raw:: html

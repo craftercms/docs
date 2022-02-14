@@ -1,14 +1,14 @@
 :is-up-to-date: True
 
-.. index:: Integrating Crafter CMS with BitBucket
+.. index:: Integrating CrafterCMS with BitBucket
 
 .. _integrating-crafter-cms-with-bitbucket:
 
 ======================================
-Integrating Crafter CMS with BitBucket
+Integrating CrafterCMS with BitBucket
 ======================================
 
-This section details how to create a new project in BitBucket and then start a new project in Crafter CMS in a way that connects to BitBucket as an upstream remote repository.
+This section details how to create a new project in BitBucket and then start a new project in CrafterCMS in a way that connects to BitBucket as an upstream remote repository.
 
 ------------------------------------------------
 Create a New Project and Connect it to BitBucket
@@ -95,7 +95,7 @@ Let’s walk through each part of ``Create Site``:
     :width: 70 %
     :align: center
 
-9. Once you're satisfied with your entries for creating your site, click on the **Create Site** button.  Crafter CMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint. Once complete it will connect to the upstream and push the contents of the Sandbox repository to the remote.
+9. Once you're satisfied with your entries for creating your site, click on the **Create Site** button.  CrafterCMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint. Once complete it will connect to the upstream and push the contents of the Sandbox repository to the remote.
 
 .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-6.jpg
     :alt: Developer How Tos - Site is created and the contents of the sandbox are automatically pushed to the upstream repository
@@ -131,7 +131,7 @@ Crafter Studio helps you manage and interact with your remote repositories via t
 Now you are ready to set up your entire development process and CI/CD automation.
 
 ------------------------------------------------------------------------
-Creating a Project in Crafter CMS Based on an Existing BitBucket Project
+Creating a Project in CrafterCMS Based on an Existing BitBucket Project
 ------------------------------------------------------------------------
 Let’s consider for a moment that you’re a new developer joining the team. The topology above is already set up and you just want to get a local environment up and going. Simple. Follow these instructions.
 

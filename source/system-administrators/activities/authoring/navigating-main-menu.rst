@@ -49,7 +49,7 @@ Sites
 -----
 Users
 -----
-A user is anybody who uses Crafter CMS.  ``Users`` lets the administrator manage who has access to Crafter Studio.  See :ref:`users-management` for more information on ``Users``
+A user is anybody who uses CrafterCMS.  ``Users`` lets the administrator manage who has access to Crafter Studio.  See :ref:`users-management` for more information on ``Users``
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-users.png
     :alt: System Administrator - Main Menu Users
@@ -108,7 +108,7 @@ See :ref:`main-menu-audit` for more details on the audit logs
 Logging Levels
 --------------
 
-There are 4 log levels defined in Crafter CMS.  These levels determine what messages will be logged and displayed in the **Logging Console**.  Below are the 4 log levels available from the lowest to the highest:
+There are 4 log levels defined in CrafterCMS.  These levels determine what messages will be logged and displayed in the **Logging Console**.  Below are the 4 log levels available from the lowest to the highest:
 
     - debug: displays things useful for debugging
     - info: displays informational messages like progress of the application, etc

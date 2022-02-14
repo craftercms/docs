@@ -14,7 +14,7 @@ Upgrade Notes for Fixing Template Not Found Error
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Template not found error
 ^^^^^^^^^^^^^^^^^^^^^^^^
-When upgrading to Crafter CMS version 3.1.15 or later, if a user encounters the following error:
+When upgrading to CrafterCMS version 3.1.15 or later, if a user encounters the following error:
 
   .. code-block:: text
 

@@ -8,7 +8,7 @@
 Your First Website
 ==================
 
-This section assumes that you have followed the steps in the :ref:`Quick Start Guide <quick_start_guide>` to get Crafter CMS and login. We will be using an out-of-the-box blueprint, called "Website_Editorial" to create your first website.
+This section assumes that you have followed the steps in the :ref:`Quick Start Guide <quick_start_guide>` to get CrafterCMS and login. We will be using an out-of-the-box blueprint, called "Website_Editorial" to create your first website.
 
 Let's get started building your first website!
 
@@ -221,7 +221,7 @@ To remove a feature, select a feature from the list and click on the **X** butto
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Publishing Your New/Edited Page
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Your site is published after creating the site from the Website_Editorial blueprint.  If you make edits to any of the pages or created new pages, it will need to be published for your site visitors to see the changes.  There are a couple of ways to publish your page edits.  The first thing you need to do is to navigate to the page you want to publish in the Site Navigation Tree (Enabled by clicking on **Sidebar** on the right of the Crafter CMS logo on the upper left hand corner of Studio).  After navigating to the page you want to publish, there are two ways to publish:
+Your site is published after creating the site from the Website_Editorial blueprint.  If you make edits to any of the pages or created new pages, it will need to be published for your site visitors to see the changes.  There are a couple of ways to publish your page edits.  The first thing you need to do is to navigate to the page you want to publish in the Site Navigation Tree (Enabled by clicking on **Sidebar** on the right of the CrafterCMS logo on the upper left hand corner of Studio).  After navigating to the page you want to publish, there are two ways to publish:
 
 - Click on the page you want to publish.  In the context menu, click on **Approve & Publish**
 - Right click on the page you want to publish from the Site Navigation Tree, then click on **Approve & Publish**

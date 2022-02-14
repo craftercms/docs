@@ -1,7 +1,7 @@
-.. index:: Crafter CMS 3.1.1 Release Notes
+.. index:: CrafterCMS 3.1.1 Release Notes
 
 -----------------
-Crafter CMS 3.1.1
+CrafterCMS 3.1.1
 -----------------
 
 ^^^^^^^
@@ -36,6 +36,6 @@ Lots of other small enhancements and bug fixes :)
 For a full list of tickets, please visit: `GitHub 3.1.1 Milestone <https://github.com/craftercms/craftercms/milestone/44?closed=1>`_
 
 .. important::
-    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your CrafterCMS install to 3.1.1
 
     For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``

@@ -6,7 +6,7 @@
 Upgrading to RTE TinyMCE 5
 ==========================
 
-When upgrading to Crafter CMS 3.1 you can choose to keep your existing sites without changes to the RTEs (RTE TinyMCE 2) in use or upgrade the RTE to RTE TinyMCE 5.  For new sites created using the default blueprints, the default RTE in use is the RTE TinyMCE 5.
+When upgrading to CrafterCMS 3.1 you can choose to keep your existing sites without changes to the RTEs (RTE TinyMCE 2) in use or upgrade the RTE to RTE TinyMCE 5.  For new sites created using the default blueprints, the default RTE in use is the RTE TinyMCE 5.
 
 ---------------------
 Updating to TinyMCE 5

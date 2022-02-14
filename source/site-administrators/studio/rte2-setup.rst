@@ -8,7 +8,7 @@
 Rich Text Editor (RTE TinyMCE 5) Setup
 ======================================
 
-Crafter CMS provides support for TinyMCE 5.  This section details how to setup RTE (TinyMCE 5).
+CrafterCMS provides support for TinyMCE 5.  This section details how to setup RTE (TinyMCE 5).
 
 --------------------------------------------------------------------------------
 What Out-of-the-Box Functionality Does Crafter Studio's RTE (TinyMCE 5) Support?

@@ -12,7 +12,7 @@ Working with GraphQL
       *GraphQL requires Elasticsearch.  If your site is using Crafter Search/Solr as the search engine, GraphQL will not work.* |br|
       *To update your sites to Elasticsearch, follow the guide* :ref:`migrate-site-to-elasticsearch`
 
-Crafter CMS provides built-in support for GraphQL to query content in any site without writing additional code.
+CrafterCMS provides built-in support for GraphQL to query content in any site without writing additional code.
 A GraphQL schema is generated independently for each site based on the content-type configuration that has been 
 created using Crafter Studio, and the schema is automatically updated after any change is detected.
 
@@ -26,7 +26,7 @@ To implement a site that uses GraphQL you would follow a workflow like this:
 All content changes made by authors in Crafter Studio will be immediately available in GraphQL queries.
 
 When a change is made in the content model, for example adding a new field or creating a new content-type, the
-GraphQL schema will be rebuilt to reflect the same changes. So for a Crafter CMS site that uses GraphQL queries the
+GraphQL schema will be rebuilt to reflect the same changes. So for a CrafterCMS site that uses GraphQL queries the
 development process would look like this:
 
 1. Developers define the base content model
@@ -36,7 +36,7 @@ development process would look like this:
 5. Publishers publish to live both the content model configuration & the content updates
 6. Crafter Deployer will handle the GraphQL schema rebuild in delivery
 
-You can also use the Crafter CMS GraphQL API from an external site or application, however in this case you will need to
+You can also use the CrafterCMS GraphQL API from an external site or application, however in this case you will need to
 handle the schema reload using third party tools.
 
 --------------------------------
@@ -81,7 +81,7 @@ GraphQL Examples
 ----------------
 
 Here you can find some examples on how to query content using GraphQL. The following examples use the built-in 
-``Website Editorial`` blueprint but the same concepts apply to any Crafter CMS site.
+``Website Editorial`` blueprint but the same concepts apply to any CrafterCMS site.
 
 For each content-type in the site you will find a field in the root Query, the name of the field is based on the
 name of the content-type so for ``/page/article`` the field will be ``page_article``.
@@ -93,7 +93,7 @@ of ``items``.
   field name contains the dash ``-`` character it will be replaced with a double underscore ``__``. To avoid 
   unnecessary long names it is suggested to use only ``_`` or ``camelCase`` notation if possible.
 
-One of simplest GraphQL queries you can run in Crafter CMS sites is to find all items of a given content-type.
+One of simplest GraphQL queries you can run in CrafterCMS sites is to find all items of a given content-type.
 
 .. code-block:: text
   :linenos:

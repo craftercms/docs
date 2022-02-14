@@ -8,7 +8,7 @@
 Setup Studio Clustering with Kubernetes Deployment |enterpriseOnly|
 ===================================================================
 
-A Kubernetes deployment describes an applications life cycle, e.g. images to be used, the number of pods, etc. It creates pods based on a specified template.  Crafter CMS has an example kubernetes deployment for a Studio cluster with 2 nodes and a Studio Arbiter.  In this section, we'll take a look at this example Kubernetes deployment.
+A Kubernetes deployment describes an applications life cycle, e.g. images to be used, the number of pods, etc. It creates pods based on a specified template.  CrafterCMS has an example kubernetes deployment for a Studio cluster with 2 nodes and a Studio Arbiter.  In this section, we'll take a look at this example Kubernetes deployment.
 
 ------------
 Requirements
@@ -25,7 +25,7 @@ errors. In Minikube, to start a node with this characteristics, you can run a co
 The requirements (listed above) is the same as specified in :ref:`simple-kubernetes-deployment`.  In addition to that, we need the following:
 
 * `k9s <https://k9scli.io/>`__ for viewing the status of the pods, the logs, etc
-* Kubernetes deployment files for Crafter CMS Authoring cluster, found here: https://github.com/craftercms/kubernetes-deployments/
+* Kubernetes deployment files for CrafterCMS Authoring cluster, found here: https://github.com/craftercms/kubernetes-deployments/
 
      .. code-block:: sh
 
@@ -148,7 +148,7 @@ Another way of checking the status of the deployments/pods/etc. is by running ``
    |
 
 .. image:: /_static/images/system-admin/clustering-k9s-start.jpg
-   :alt: Crafter CMS Clustering of Studio Enterprise view using k9s
+   :alt: CrafterCMS Clustering of Studio Enterprise view using k9s
    :width: 100%
    :align: center
 
@@ -337,4 +337,4 @@ We can now delete the remaining pod ``authoring-1`` by following the steps above
       ➜  kubectl delete pods authoring-1
       pod "authoring-1" deleted
 
-For more information on the Crafter CMS Authoring Cluster, see the ``README.md`` file here: https://github.com/craftercms/kubernetes-deployments/tree/master/authoring/cluster
+For more information on the CrafterCMS Authoring Cluster, see the ``README.md`` file here: https://github.com/craftercms/kubernetes-deployments/tree/master/authoring/cluster

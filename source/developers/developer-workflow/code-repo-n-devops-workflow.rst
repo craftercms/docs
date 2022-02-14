@@ -56,7 +56,7 @@ We'll take a look at a development process, where there are two environments, ea
 #. Dev:  Development and integration testing
 #. QA: Quality Assurance environment
 
-At various points in the development process a feature or a group of features (a release) need to go to a lower environment such as development or QA for testing.  Because Crafter CMS uses a Git-based repository, environments can sit on top of specific branches, allowing you to easily look at a release.
+At various points in the development process a feature or a group of features (a release) need to go to a lower environment such as development or QA for testing.  Because CrafterCMS uses a Git-based repository, environments can sit on top of specific branches, allowing you to easily look at a release.
 
 The typical process for moving code through the environments can be summarized in the following way:
 

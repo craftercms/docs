@@ -8,11 +8,11 @@
 Roles and Permissions
 =====================
 
-To access Crafter CMS, a user must be allowed access rights to certain areas of the site (access rights/ permissions).  For example, if a user wants to create, edit or submit content, the user needs to have those specific permissions.  Here, we see that the user requires multiple permissions.  For simplicity, permissions are grouped together into **roles**.  A role is a set of allowed actions/activities.  An **author** role, for example, has access to create, edit and submit content.
+To access CrafterCMS, a user must be allowed access rights to certain areas of the site (access rights/ permissions).  For example, if a user wants to create, edit or submit content, the user needs to have those specific permissions.  Here, we see that the user requires multiple permissions.  For simplicity, permissions are grouped together into **roles**.  A role is a set of allowed actions/activities.  An **author** role, for example, has access to create, edit and submit content.
 
 To define permissions for users, they need to be a member of a group.  A group is a collection of users with a role assigned.  Groups are used to simplify management as changes made to the rights of the group applies to all the users belonging to that group.  For our example above of a user that wants to create, edit or submit content, the user should be assigned to a group with the **author** role.
 
-Out of the box, Crafter CMS supports the following roles/groups:
+Out of the box, CrafterCMS supports the following roles/groups:
 
 ============== ================= =========================================================
 Role           Group             Description

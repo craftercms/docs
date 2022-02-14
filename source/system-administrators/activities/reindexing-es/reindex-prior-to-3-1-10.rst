@@ -8,10 +8,10 @@
 .. _reindex-content-prior-to-3-1-10:
 
 -------------------------------------------------------------------------------
-Reindexing Content Using Elasticsearch for Crafter CMS versions prior to 3.1.10
+Reindexing Content Using Elasticsearch for CrafterCMS versions prior to 3.1.10
 -------------------------------------------------------------------------------
 
-The steps listed below for reindexing content without disrupting service in production using Elasticsearch applies only to Crafter CMS versions prior to 3.1.10
+The steps listed below for reindexing content without disrupting service in production using Elasticsearch applies only to CrafterCMS versions prior to 3.1.10
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 1: Create a new index
