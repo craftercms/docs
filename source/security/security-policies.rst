@@ -23,7 +23,7 @@ Security Issues
 Submitting Security Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We request that customers, implementation partners, bounty-hunters, and users report security issues privately by emailing security@craftersoftware.com or via the support portal (for customers and partners).
+We request that customers, implementation partners, bounty-hunters, and users report security issues privately by emailing security@craftercms.com or via the support portal (for customers and partners).
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 Security Issue Workflow

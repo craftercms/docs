@@ -415,7 +415,7 @@ rst_epilog = """
 .. |enterpriseOnly| image:: /_static/images/ee-only-badge.svg
                       :alt: Enterprise only feature
                       :class: ee-only-badge
-                      :target: https://craftersoftware.com
+                      :target: https://craftercms.com
 
 .. # define a hard line break for HTML
 .. |br| raw:: html

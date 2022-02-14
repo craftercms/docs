@@ -235,11 +235,8 @@ To create a plugin, a descriptor file  ``craftercms-plugin.yaml`` is required. B
        developer:
          company:
            name: Crafter Software
-           email: info@craftersoftware.com
-           url: https://craftersoftware.com
-       build:
-         id: 0220b902bff5cd22749e8ac46ec80eed314c3d67
-         date: 2021-03-18T00:00:00Z
+           email: info@craftercms.com
+           url: https://craftercms.com
        license:
          name: MIT
          url: https://opensource.org/licenses/MIT
