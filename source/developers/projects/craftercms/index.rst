@@ -596,7 +596,7 @@ Here's a list of commands (Gradle tasks) available:
 || Command      || Description                              || Env Options || Module Options |
 || ``command``  ||                                          || ``env``     || ``module``     |
 +===============+===========================================+==============+=================+
-|| clone        || Clones CrafterCMS                       || - None      || - None          |
+|| clone        || Clones CrafterCMS                        || - None      || - None         |
 +---------------+-------------------------------------------+--------------+-----------------+
 || build        || Build a module or an entire              || authoring   || - None         |
 ||              || environment                              ||             || - studio       |
@@ -631,11 +631,11 @@ Here's a list of commands (Gradle tasks) available:
 ||              || binaries                                 +--------------+                 |
 ||              ||                                          || delivery    ||                |
 +---------------+-------------------------------------------+--------------+-----------------+
-|| start        || Start CrafterCMS                        || authoring   || - None          |
+|| start        || Start CrafterCMS                         || authoring   || - None         |
 ||              ||                                          +--------------+                 |
 ||              ||                                          || delivery    ||                |
 +---------------+-------------------------------------------+--------------+-----------------+
-|| stop         || Stop CrafterCMS                         || authoring   || - None          |
+|| stop         || Stop CrafterCMS                          || authoring   || - None         |
 ||              ||                                          +--------------+                 |
 ||              ||                                          || delivery    ||                |
 +---------------+-------------------------------------------+--------------+-----------------+
@@ -655,7 +655,7 @@ Here's a list of commands (Gradle tasks) available:
 ||              || etc, without deleting your data then     ||             ||                |
 ||              || builds and deploys                       ||             ||                |
 +---------------+-------------------------------------------+--------------+-----------------+
-|| selfupdate   || Updates the CrafterCMS project (gradle) || - None      || - None          |
+|| selfupdate   || Updates the CrafterCMS project (gradle)  || - None      || - None         |
 +---------------+-------------------------------------------+--------------+-----------------+
 || clean        || Delete all compiled objects              || - None      || - None         |
 +---------------+-------------------------------------------+--------------+-----------------+
