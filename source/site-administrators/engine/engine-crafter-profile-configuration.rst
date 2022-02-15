@@ -220,7 +220,7 @@ Crafter Profile tenant, when a new user needs to be created. So the configuratio
 Provider to create a user with firstName, lastName and displayName attributes.
 
    .. note::
-      For Crafter CMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` instead of ``CRAFTER_`` and can't be changed via site configuration.
+      For CrafterCMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` instead of ``CRAFTER_`` and can't be changed via site configuration.
 
 
 Add Facebook Login

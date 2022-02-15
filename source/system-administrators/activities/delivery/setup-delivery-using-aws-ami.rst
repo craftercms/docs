@@ -1,20 +1,20 @@
 :is-up-to-date: True
 
-.. index:: Setup CrafterCMS Delivery Using CrafterCMS' AWS AMI
+.. index:: Setup CrafterCMS Delivery Using Crafter's AWS AMI
 
 .. _setup-delivery-using-aws-ami:
 
-===================================================
-Setup CrafterCMS Delivery Using CrafterCMS' AWS AMI
-===================================================
+=================================================
+Setup CrafterCMS Delivery Using Crafter's AWS AMI
+=================================================
 
-This section details how to setup CrafterCMS delivery using CrafterCMS' AWS AMI.
+This section details how to setup CrafterCMS delivery using Crafter's AWS AMI.
 
 ------------------------------------------------------------------
 Step 1: Launch an AWS EC2 instance using a CrafterCMS Delivery AMI
 ------------------------------------------------------------------
 
-CrafterCMS provides a prebuilt AMI(s) for Crafter Engine, the delivery component of CrafterCMS. In this step we'll walk you through the initial launch of your instance. To get started, go to your EC2 dashboard and click ``Launch Instance`` AWS will prompt you to choose your AMI type/image.
+Crafter provides a prebuilt AMI(s) for Crafter Engine, the delivery component of CrafterCMS. In this step we'll walk you through the initial launch of your instance. To get started, go to your EC2 dashboard and click ``Launch Instance`` AWS will prompt you to choose your AMI type/image.
 
 .. image:: /_static/images/ami/craftercms-aws-ami-delivery-launch-instance.jpg
     :width: 100 %
@@ -24,7 +24,7 @@ CrafterCMS provides a prebuilt AMI(s) for Crafter Engine, the delivery component
 You can find CrafterCMS Delivery by entering the keywords ``CrafterCMS Delivery`` in the search box as shown below. You will find a number of options in the search results.
 
 * CrafterCMS Community Delivery is our open source version
-* CrafterMS Enterprise Delivery is our supported enterprise version
+* CrafterCMS Enterprise Delivery is our supported enterprise version
 
 Click ``Select`` on the AMI type you want to use and then follow the launch instance/configuration wizard to determine the sizing and networking details for your instance. Please note, we recommend "C" class machines for best results with typical production use.
 
@@ -87,7 +87,7 @@ You can find the IP address and/or DNS name in several locations on your AWS adm
 Step 3: Configure Crafter Engine to deliver published sites
 -----------------------------------------------------------
 
-Crafter Engine is now up and running. However, in order to deliver content, its deployer must be configured to monitor a published repository for one or more sites. A delivery engine is multi-tenant and can deliver many sites. Each site must be configured or "initialized" such that the deployer monitors a Git repository for published updates. CrafterCMS' delivery tier has a decoupled, shared-nothing architecture that makes it cloud native and elastically scalable. You can read more about this architecture here: :ref:`architecture`
+Crafter Engine is now up and running. However, in order to deliver content, its deployer must be configured to monitor a published repository for one or more sites. A delivery engine is multi-tenant and can deliver many sites. Each site must be configured or "initialized" such that the deployer monitors a Git repository for published updates. CrafterCMS's delivery tier has a decoupled, shared-nothing architecture that makes it cloud native and elastically scalable. You can read more about this architecture here: :ref:`architecture`
 
 In this section we'll show you how to configure a Crafter Delivery instance to monitor a published Git repository and delivery content for a given site. The simplest topology for this is to directly monitor the published repository of a project on the authoring instance. This is what we will configure. Let's get started.
 

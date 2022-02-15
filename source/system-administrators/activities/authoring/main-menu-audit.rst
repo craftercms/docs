@@ -13,7 +13,7 @@
 Navigation Menu Audit
 =====================
 
-Crafter CMS tracks the date, time, user and action performed to content and the system through an audit log.
+CrafterCMS tracks the date, time, user and action performed to content and the system through an audit log.
 
 To view the audit logs, from the top right of your browser, click on the ``Navigation Menu`` icon, then click on ``Audit``.
 

@@ -6,18 +6,18 @@
 Backup and Recovery
 ===================
 
-Crafter CMS out of the box comes with a script to backup and restore your environment.  The script provided will backup your environment including indexes, repos, mongodb, etc.  You can then use your favorite backup tools for backing up the script-generated Crafter CMS environment backup file.
+CrafterCMS out of the box comes with a script to backup and restore your environment.  The script provided will backup your environment including indexes, repos, mongodb, etc.  You can then use your favorite backup tools for backing up the script-generated CrafterCMS environment backup file.
 
 -------------
 Studio Backup
 -------------
 
-To backup Crafter CMS, you only need to backup Crafter Studio.
+To backup CrafterCMS, you only need to backup Crafter Studio.
 
 Non-clustered Studio
 ^^^^^^^^^^^^^^^^^^^^
 
-For non-clustered Studio instances, shutdown Crafter CMS then perform the backup. Once the backup is done, start it up again.
+For non-clustered Studio instances, shutdown CrafterCMS then perform the backup. Once the backup is done, start it up again.
 This implies some downtime for authors.
 
 Clustered Studio
@@ -28,7 +28,7 @@ the replica. This doesn't result in any downtime for authors.
 
 .. WARNING::
 
-   Performing a backup while Crafter CMS is running is technically possible, but the resulting backup may not be viable.
+   Performing a backup while CrafterCMS is running is technically possible, but the resulting backup may not be viable.
 
 -------------------------
 Running the backup script
@@ -67,7 +67,7 @@ If no filename has been specified, the backup file will be named either ``crafte
 --------
 Recovery
 --------
-To restore your backup, make sure that Crafter CMS is not running.  To restore your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}/bin``, where ``{env}`` is the environment (either authoring or delivery) then run the following:
+To restore your backup, make sure that CrafterCMS is not running.  To restore your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}/bin``, where ``{env}`` is the environment (either authoring or delivery) then run the following:
 
     .. code-block:: bash
 

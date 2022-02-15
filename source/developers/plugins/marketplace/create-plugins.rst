@@ -48,7 +48,7 @@ is ready to be submitted you can follow these steps:
     #.  Click the ``Install it for free`` button
     
         .. figure:: /_static/images/developer/marketplace/github-marketplace-install.png
-          :alt: Crafter CMS Marketplace GitHub App Installation
+          :alt: CrafterCMS Marketplace GitHub App Installation
           :align: center
           :width: 40%
 
@@ -103,5 +103,5 @@ is ready to be submitted you can follow these steps:
   Make sure to always change the plugin version in the ``craftercms-plugin.yaml`` the next time you create a tag or
   the submit process will fail
 
-  Also remember to set your GitHub repository to public so Crafter can pull from the repository. If you're interested in private plugins/marketplace, you'll need to switch to the Enterprise Edition of Crafter CMS.
+  Also remember to set your GitHub repository to public so Crafter can pull from the repository. If you're interested in private plugins/marketplace, you'll need to switch to the Enterprise Edition of CrafterCMS.
 

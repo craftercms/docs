@@ -28,7 +28,7 @@ Let's take a look at the fields where the remote repository details needs to be 
 #. In the **Git Repo URL** field you must provide the link to the Git repository you would like to use
 #. In the **Authentication** field you must select the authentication method to be used to access the Git repository in the previous field.
 
-   Crafter CMS supports the following authentication types to use to access remote repository:
+   CrafterCMS supports the following authentication types to use to access remote repository:
 
     - **Authentication not required (Public URL)** - no credentials needed to access remote repository
     - **Username & Password** - for this method, you will be asked for a **Remote Git Repository Username** and a **Remote Git Repository Password**.  Supply your username and password

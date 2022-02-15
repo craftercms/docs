@@ -10,7 +10,7 @@ Engine Multi-Target Configuration
 
 There are some cases where the Engine configuration files need to have different values per publishing target.  Say for a production environment where you have **staging** to test out your site and **live** , the site to be used by end users, you may need different SAML authentication mechanics or different URL rewrites.
 
-The :ref:`engine-multi-environment-configurations` section detailed how to setup Engine configuration files per environment.  Crafter CMS
+The :ref:`engine-multi-environment-configurations` section detailed how to setup Engine configuration files per environment.  CrafterCMS
 supports overriding Engine configuration files, not just per environment, but also per publishing target.
 It supports a base configuration per environment with the ability to override per publishing target.
 

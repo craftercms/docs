@@ -1,14 +1,14 @@
 :is-up-to-date: True
 
-.. index:: Upgrading Crafter CMS; Upgrading
+.. index:: Upgrading CrafterCMS; Upgrading
 
 .. _upgrading-craftercms:
 
 =====================
-Upgrading Crafter CMS
+Upgrading CrafterCMS
 =====================
 
-This section details the steps required to upgrade your Crafter CMS install.
+This section details the steps required to upgrade your CrafterCMS install.
 
 .. WARNING::
    * This guide assumes that you're trying to upgrade a site from a stock 3.1.x Studio and with some slight Studio configuration changes. If your site configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
@@ -21,11 +21,11 @@ This section details the steps required to upgrade your Crafter CMS install.
      - 3.1.17
      - 3.1.18
 
-     If you are upgrading from a version other than the ones listed above, you will need to upgrade to one of the above listed supported upgrade paths release version first before upgrading to 4.0.0.  See the 3.1 release’s Upgrading Crafter CMS page here: https://docs.craftercms.org
+     If you are upgrading from a version other than the ones listed above, you will need to upgrade to one of the above listed supported upgrade paths release version first before upgrading to 4.0.0.  See the 3.1 release’s Upgrading CrafterCMS page here: https://docs.craftercms.org
 
 |
 
-Here are the instructions for upgrading Crafter CMS based on how it was installed:
+Here are the instructions for upgrading CrafterCMS based on how it was installed:
 
 .. toctree::
    :maxdepth: 1

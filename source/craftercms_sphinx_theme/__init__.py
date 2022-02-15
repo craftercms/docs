@@ -1,5 +1,5 @@
 """
-Sphinx theme for Crafter CMS docs.
+Sphinx theme for CrafterCMS docs.
 From https://github.com/craftercms/craftercms-sphinx-theme.
 """
 

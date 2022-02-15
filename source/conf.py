@@ -61,9 +61,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Crafter CMS'
+project = u'CrafterCMS'
 copyright = u"%s, Crafter Software Corporation"% str(date.today().year)
-author = u'Crafter Software Corporation'
+author = u'CrafterCMS'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -138,7 +138,7 @@ html_show_sphinx = False
 html_theme_options = {
     "analytics_id": "UA-40677244-9",
     "topbar_items": [
-        {"text":"Crafter CMS Site", "link":"//craftercms.org"}
+        {"text":"CrafterCMS Site", "link":"//craftercms.org"}
     ],
     "has_sidebar_top_text": False,
     "sidebar_top_text": "&#x26A0; We are currently updating this version of our documentation to match this release. Please bear with us."
@@ -254,8 +254,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'CrafterCMS.tex', u'Crafter CMS Documentation',
-   u'Crafter Software Corporation', 'manual'),
+  (master_doc, 'CrafterCMS.tex', u'CrafterCMS Documentation',
+   u'CrafterCMS', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -284,7 +284,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'craftercms', u'Crafter CMS Documentation',
+    (master_doc, 'craftercms', u'CrafterCMS Documentation',
      [author], 1)
 ]
 
@@ -298,8 +298,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'Crafter CMS', u'Crafter CMS Documentation',
-   author, 'Crafter CMS', 'Open Source Java-based Web CMS.',
+  (master_doc, 'CrafterCMS', u'CrafterCMS Documentation',
+   author, 'CrafterCMS', 'Open Source Java-based Web CMS.',
    'Miscellaneous'),
 ]
 
@@ -415,7 +415,7 @@ rst_epilog = """
 .. |enterpriseOnly| image:: /_static/images/ee-only-badge.svg
                       :alt: Enterprise only feature
                       :class: ee-only-badge
-                      :target: https://craftersoftware.com
+                      :target: https://craftercms.com
 
 .. # define a hard line break for HTML
 .. |br| raw:: html
