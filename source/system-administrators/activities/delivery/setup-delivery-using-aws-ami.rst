@@ -112,14 +112,14 @@ The delivery instance's deployer can use any git protocol to communicate with th
 
 3.2.1: Create a public / private key pair
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-On your local machine, generate a public / private key pair.  On a terminal/console execute the following command:
+On your local machine, generate a public / private key pair using ``ssh-keygen``.  CrafterCMS supports RSA, ECDSA-384, ECDSA-521 and ed25519 SSH keys.  For example, to generate RSA keys, on a terminal/console execute the following command:
 
 .. code-block:: sh
    :linenos:
 
    ssh-keygen -m PEM -b 4096 -t rsa
 
-You will be prompted for the file name and a passphrase. Since Crafter will use this key as part of an automated process, do not enter a passphase (just hit enter when prompted.)
+You will be prompted for the file name and a passphrase. Since CrafterCMS will use this key as part of an automated process, do not enter a passphrase (just hit enter when prompted.)
 
 Once the keygen process completes you should find a file at the location you specified. This is your private key.  You will find another file at the same location with a .pub extension.  This is your public key.
 
@@ -136,14 +136,14 @@ The next step is to upload and install our public key onto the authoring instanc
 
 You can upload the public key from your local machine to the authoring server by executing a file transfer via the scp command in a terminal window.
 
-The command takes the following form: scp -i [PATH_TO_UBUNTU_USERS_PIVATE_KEY] [PATH_TO_GENERATED_PUBLIC_KEY] ubuntu@[DNS_NAME_OF_DELIVERY_INSTNCE]:~/crafter.pub
+The command takes the following form: scp -i [PATH_TO_UBUNTU_USERS_PRIVATE_KEY] [PATH_TO_GENERATED_PUBLIC_KEY] ubuntu@[DNS_NAME_OF_DELIVERY_INSTANCE]:/opt/crafter/data/ssh/crafter.pub
 
 Example:
 
 .. code-block:: sh
     :linenos:
 
-    scp -i ~/user-test-aws.pem ~/Desktop/crafter.pub ubuntu@ec2-3-93-34-40.compute-1.amazonaws.com:~/crafter.pub
+    scp -i ~/user-test-aws.pem ~/Desktop/crafter.pub ubuntu@ec2-3-93-34-40.compute-1.amazonaws.com:/opt/crafter/data/ssh/crafter.pub
 
 **Install the public key on the authoring server**
 
@@ -154,14 +154,13 @@ To do this, SSH on to the authoring server as the ubuntu user and execute the fo
 .. code-block:: sh
     :linenos:
 
-    sudo mkdir -p /home/crafter/.ssh
-    sudo touch /home/crafter/.ssh/authorized_keys
-    sudo chown -R crafter:crafter /home/crafter/.ssh
+    sudo touch /opt/crafter/data/ssh/authorized_keys
+    sudo chown -R crafter:crafter /opt/crafter/data/ssh
     sudo su -
     cd /home/ubuntu/
-    cat crafter.pub >> /home/crafter/.ssh/authorized_keys
-    sudo chown -R crafter:crafter /home/crafter/.ssh
-    sudo ls -al /home/crafter/.ssh
+    cat crafter.pub >> /opt/crafter/data/ssh/authorized_keys
+    sudo chown -R crafter:/opt/crafter/data/ssh
+    sudo ls -al /opt/crafter/data/ssh
     exit
 
 The **ls** command will help you verify that the key has been added to the authorized_keys file and that crafter is the owner of the file.  The output should look similar to the following:
@@ -182,14 +181,14 @@ The next step is to upload and install our private key onto the delivery instanc
 
 You can upload the private key from your local machine to the delivery server by executing a file transfer via the scp command in a terminal window.
 
-The command takes the following form: **scp -i [PATH_TO_UBUNTU_USERS_PIVATE_KEY] [PATH_TO_GENERATED_PRIVATE_KEY] ubuntu@[DNS_NAME_OF_DELIVERY_INSTNCE]:~/crafter**
+The command takes the following form: **scp -i [PATH_TO_UBUNTU_USERS_PIVATE_KEY] [PATH_TO_GENERATED_PRIVATE_KEY] ubuntu@[DNS_NAME_OF_DELIVERY_INSTNCE]:/opt/crafter/data/ssh**
 
 Example:
 
 .. code-block:: sh
     :linenos:
 
-     scp -i ~/user-test-aws.pem ~/Desktop/crafter ubuntu@ec2-34-293-227-96.compute-1.amazonaws.com:~/crafter
+     scp -i ~/user-test-aws.pem ~/Desktop/crafter ubuntu@ec2-34-293-227-96.compute-1.amazonaws.com:/opt/crafter/data/ssh
 
 **Install the private key on the delivery server**
 
@@ -200,12 +199,14 @@ To do this, SSH on to the delivery server as the ubuntu user and execute the fol
 .. code-block:: sh
     :linenos:
 
-    sudo cp crafter /home/crafter/.ssh/id_rsa
+    sudo cp crafter /opt/crafter/data/ssh/id_rsa
 
 .. code-block:: sh
     :linenos:
 
-    sudo chown crafter:crafter /home/crafter/.ssh/id_rsa
+    sudo chown crafter:crafter /opt/crafter/data/ssh/id_rsa
+
+Remember to replace ``id_rsa`` in the above commands with the correct private key filename, e.g. ``id_dsa``, ``id_ecdsa``, ``id_ed25519`` depending on the type of key generated via the ``ssh-keygen`` command.
 
 3.2.4 Log in to the authoring server from the delivery server(s) using SSH
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -219,7 +220,9 @@ SSH on to the delivery server as the ubuntu user and execute the following comma
     sudo su crafter
     ssh -o HostKeyAlgorithms=ssh-rsa crafter@ec2-3-93-34-40.compute-1.amazonaws.com
 
-It's important that you include the  **-o HostKeyAlgorithms=ssh-rsa** parameter in the initial SSH connection to the authoring server. Crafter expects the fingerprint to be stored in an RSA format. Once you execute the SSH command to log in to the authoring machine from the delivery machine as the crafter user. You will be prompted to verify the auhtenticity of the authoring server.  Type yes to confirm.  After this you will be logged in to the authoring server.  No further action is required. Type exit in to the command line of the authoring server to terminate the SSH session.
+Remember to change the ``HostKeyAlgorithm`` parameter value depending on the type of key being used,
+e.g. ``ssh-rsa`` or ``ssh-ed25519``  or ``ecdsa-sha2-nistp521``.
+Once you execute the SSH command to log in to the authoring machine from the delivery machine as the crafter user, you will be prompted to verify the authenticity of the authoring server.  Type yes to confirm.  After this you will be logged in to the authoring server.  No further action is required. Type ``exit`` in to the command line of the authoring server to terminate the SSH session.
 
 .. code-block:: text
     :linenos:
@@ -235,10 +238,10 @@ It's important that you include the  **-o HostKeyAlgorithms=ssh-rsa** parameter 
 
     exit
 
----------------------------------------------------
-Step 4: Intitialize the site on the delivery server
----------------------------------------------------
-Now that secure communication is established between the authoring and delivery instances, we can initialize any number of sites to be delivered by the delivery instance. It's verys simple to initialize a site on the delivery instance. To do so:
+--------------------------------------------------
+Step 4: Initialize the site on the delivery server
+--------------------------------------------------
+Now that secure communication is established between the authoring and delivery instances, we can initialize any number of sites to be delivered by the delivery instance. It's very simple to initialize a site on the delivery instance. To do so:
 
 SSH to the delivery server and execute the following command in the **/opt/crafter/bin** directory as the **crafter** user:
 
@@ -299,11 +302,8 @@ Look for output that is similar to the following:
 ---------------------------------------------------------------
 Step 5: View the site on the delivery server from a web browser
 ---------------------------------------------------------------
-<<<<<<< Updated upstream
-Now that site has deployed it can be viewied via web browser. As previously mentioned, Crafter's delivery tier is multi-tenant.  A SITE_ID is used on the URL to indicate which tenant is to be displayed. To preview the site you initialized, open a browser and navigate to the following URL:
-=======
+
 Now that site has deployed it can be viewed via web browser. As previously mentioned, Crafter's delivery tier is multi-tenant.  A SITE_ID is used on the URL to indicate which tenant is to be displayed. To preview the site you initialized, open a browser and navigate to the following URL:
->>>>>>> Stashed changes
 
 **http://[DELIVERY_DNS_NAME]?crafterSite=[SITE_ID]**
 

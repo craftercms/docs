@@ -103,6 +103,10 @@ Here are the steps to start using CrafterCMS for development or evaluation by in
          |--LICENSE
          |--README.txt
          |--bin/
+         |--data/
+            |--ssh/
+               |--config
+               |--known-hosts
 
    |
 

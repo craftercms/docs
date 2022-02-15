@@ -78,7 +78,7 @@ The CrafterCMS Authoring and Delivery scripts will help you on the basic startup
 ||                        ||   Crafter Deployer, Elasticsearch, Apache Tomcat                      |
 ||                        ||   If withMongoDB is specified MongoDB will be started.                |
 ||                        ||   If skipElasticsearch is specified Elasticsearch will not be started.|
-||                        ||   If skipMongoDB is specified MongoDB will not bestarted even if the  |
+||                        ||   If skipMongoDB is specified MongoDB will not be started even if the |
 ||                        ||   Crafter Profile war is present.                                     |
 ||                        || * ``stop``  Stops all CrafterCMS services in the same order as        |
 ||                        ||    they start.                                                        |
@@ -91,7 +91,7 @@ The CrafterCMS Authoring and Delivery scripts will help you on the basic startup
 ||                        ||   Tomcat for the *Delivery Environment*                               |
 ||                        ||   If withMongoDB is specified MongoDB will be started.                |
 ||                        ||   If skipElasticsearch is specified Elasticsearch will not be started.|
-||                        ||   If skipMongoDB is specified MongoDB will not bestarted even if the  |
+||                        ||   If skipMongoDB is specified MongoDB will not be started even if the |
 ||                        ||   Crafter Profile war is present.                                     |
 ||                        || * ``start_deployer``  Starts Deployer                                 |
 ||                        || * ``stop_deployer``  Stops Deployer                                   |
@@ -172,7 +172,7 @@ Here are the location environment variables used by ``crafter.sh``:
 +==========================+=====================================================================+
 || CRAFTER_HOME            || CrafterCMS *Authoring/Delivery* path                               |
 ||                         +---------------------------------------------------------------------+
-||                         || {Crafter-CMS-install-directory}/crafter-{env}/                     |
+||                         || {CrafterCMS-install-directory}/crafter-{env}/                      |
 +--------------------------+---------------------------------------------------------------------+
 || CRAFTER_LOGS_DIR        || CrafterCMS logs file path                                          |
 ||                         +---------------------------------------------------------------------+
@@ -258,6 +258,10 @@ Here are the environment variables used for hosts and ports in ``crafter.sh``:
 ||                         +---------------------------------------------------------------------+
 ||                         || 8005                                                               |
 +--------------------------+---------------------------------------------------------------------+
+| TOMCAT_DEBUG_PORT        || Tomcat debug port                                                  |
+||                         +---------------------------------------------------------------------+
+||                         || 8000                                                               |
++--------------------------+---------------------------------------------------------------------+
 
 Here are the environment variables used for URLs in ``crafter.sh``:
 
@@ -281,10 +285,6 @@ Here are the environment variables used for URLs in ``crafter.sh``:
 || ENGINE_URL              || Crafter Engine URL                                                 |
 ||                         +---------------------------------------------------------------------+
 ||                         || "http://$TOMCAT_HOST:$TOMCAT_HTTP_PORT/studio"                     |
-+--------------------------+---------------------------------------------------------------------+
-|| SEARCH_URL              || Crafter Search URL                                                 |
-||                         +---------------------------------------------------------------------+
-||                         || "http://$TOMCAT_HOST:$TOMCAT_HTTP_PORT/crafter-search"             |
 +--------------------------+---------------------------------------------------------------------+
 || PROFILE_URL             || Crafter Profile URL                                                |
 ||                         +---------------------------------------------------------------------+
@@ -350,6 +350,10 @@ Here are the environment variables used for Elasticsearch in ``crafter.sh``:
 || Variable Name           +---------------------------------------------------------------------+
 ||                         || Default Value                                                      |
 +==========================+=====================================================================+
+|| ES_JAVA_HOME            || Elasticsearch Java home directory                                  |
+||                         +---------------------------------------------------------------------+
+||                         || $JAVA_HOME                                                         |
++--------------------------+---------------------------------------------------------------------+
 || ES_HOME                 || Elasticsearch home directory                                       |
 ||                         +---------------------------------------------------------------------+
 ||                         || $CRAFTER_BIN_DIR/elasticsearch/bin                                 |
@@ -439,6 +443,10 @@ Here are the environment variables used for MariaDb in ``crafter.sh``:
 || Variable Name           +---------------------------------------------------------------------+
 ||                         || Default Value                                                      |
 +==========================+=====================================================================+
+|| MARIADB_SCHEMA          || MariaDb schema                                                     |
+||                         +---------------------------------------------------------------------+
+||                         || crafter                                                            |
++--------------------------+---------------------------------------------------------------------+
 || MARIADB_HOME            || MariaDb files path                                                 |
 ||                         +---------------------------------------------------------------------+
 ||                         || $CRAFTER_BIN_DIR/dbms                                              |
@@ -446,6 +454,10 @@ Here are the environment variables used for MariaDb in ``crafter.sh``:
 || MARIADB_DATA_DIR        || MariaDb data directory                                             |
 ||                         +---------------------------------------------------------------------+
 ||                         || $CRAFTER_DATA_DIR/db                                               |
++--------------------------+---------------------------------------------------------------------+
+|| MARIADB_ROOT_USER       || MariaDb root username                                              |
+||                         +---------------------------------------------------------------------+
+||                         ||                                                                    |
 +--------------------------+---------------------------------------------------------------------+
 || MARIADB_ROOT_PASSWD     || MariaDb root password                                              |
 ||                         +---------------------------------------------------------------------+
@@ -458,6 +470,14 @@ Here are the environment variables used for MariaDb in ``crafter.sh``:
 || MARIADB_PASSWD          || MariaDb user password                                              |
 ||                         +---------------------------------------------------------------------+
 ||                         || crafter                                                            |
++--------------------------+---------------------------------------------------------------------+
+|| MARIADB_SOCKET_TIMEOUT  || MariaDB socket timeout                                             |
+||                         +---------------------------------------------------------------------+
+||                         || 60000                                                              |
++--------------------------+---------------------------------------------------------------------+
+|| MARIADB_TCP_TIMEOUT     || MariaDB TCP timeout                                                |
+||                         +---------------------------------------------------------------------+
+||                         || 120                                                                |
 +--------------------------+---------------------------------------------------------------------+
 || MARIADB_PID             || MariaDB process id file                                            |
 ||                         +---------------------------------------------------------------------+
@@ -493,10 +513,6 @@ Remember to update these per installation and provide these tokens to the status
 ||                           || defaultManagementToken                                           |
 +----------------------------+-------------------------------------------------------------------+
 || DEPLOYER_MANAGEMENT_TOKEN || Authorization token for Deployer                                 |
-||                           +-------------------------------------------------------------------+
-||                           || defaultManagementToken                                           |
-+----------------------------+-------------------------------------------------------------------+
-|| SEARCH_MANAGEMENT_TOKEN   || Authorization token for Search                                   |
 ||                           +-------------------------------------------------------------------+
 ||                           || defaultManagementToken                                           |
 +----------------------------+-------------------------------------------------------------------+
@@ -554,6 +570,62 @@ Here are the configuration variables used in CrafterCMS:
 ||                         || default                                                            |
 +--------------------------+---------------------------------------------------------------------+
 
+Here are the SSH variables used in CrafterCMS:
+
++--------------------------+---------------------------------------------------------------------+
+|| Configuration           || Description                                                        |
+|| Variable Name           +---------------------------------------------------------------------+
+||                         || Default Value                                                      |
++==========================+=====================================================================+
+|| CRAFTER_SSH_CONFIG      || CrafterCMS folder path for the SSH configuration                   |
+||                         +---------------------------------------------------------------------+
+||                         || $CRAFTER_DATA_DIR/ssh                                              |
++--------------------------+---------------------------------------------------------------------+
+
+Here are the environment variables used for Studio's access tokens for API's:
+
++--------------------------------+---------------------------------------------------------------+
+|| Configuration                 || Description                                                  |
+|| Variable Name                 +---------------------------------------------------------------+
+||                               || Default Value                                                |
++================================+===============================================================+
+|| STUDIO_TOKEN_ISSUER           || Issuer for generated tokens                                  |
+||                               +---------------------------------------------------------------+
+||                               || Crafter Studio                                               |
++--------------------------------+---------------------------------------------------------------+
+|| STUDIO_TOKEN_VALID_ISSUERS    || Issuer for generated tokens                                  |
+||                               +---------------------------------------------------------------+
+||                               || Crafter Studio                                               |
++--------------------------------+---------------------------------------------------------------+
+|| STUDIO_TOKEN_AUDIENCE         || Audience for generation and validation of access tokens      |
+||                               +---------------------------------------------------------------+
+||                               ||                                                              |
++--------------------------------+---------------------------------------------------------------+
+|| STUDIO_TOKEN_TIMEOUT          || Expiration time of access tokens in minutes                  |
+||                               +---------------------------------------------------------------+
+||                               || 5                                                            |
++--------------------------------+---------------------------------------------------------------+
+|| STUDIO_TOKEN_SIGN_PASSWORD    || Password for signing the access tokens                       |
+||                               +---------------------------------------------------------------+
+||                               ||                                                              |
++--------------------------------+---------------------------------------------------------------+
+|| STUDIO_TOKEN_ENCRYPT_PASSWORD || Password for encrypting the access tokens                    |
+||                               +---------------------------------------------------------------+
+||                               ||                                                              |
++--------------------------------+---------------------------------------------------------------+
+|| STUDIO_REFRESH_TOKEN_NAME     || Name of the cookie to store the refresh token                |
+||                               +---------------------------------------------------------------+
+||                               || refresh_token                                                |
++--------------------------------+---------------------------------------------------------------+
+|| STUDIO_REFRESH_TOKEN_MAX      || Expiration time of the refresh token cookie in seconds       |
+||                               +---------------------------------------------------------------+
+||                               || 300                                                          |
++--------------------------------+---------------------------------------------------------------+
+|| STUDIO_REFRESH_TOKEN_SECURE   || Indicates if refresh token cookie should be secure           |
+||                               +---------------------------------------------------------------+
+||                               || false                                                        |
++--------------------------------+---------------------------------------------------------------+
+
 Let's look at an example on how to start an authoring environment using the scripts we discussed above.  To start the authoring environment, go to your CrafterCMS install folder then run the following:
 
     .. code-block:: bash
@@ -576,7 +648,7 @@ Other Scripts
 For more information about Apache Tomcat, and Elasticsearch please refer to the following:
 
  * [Tomcat Script documentation](https://tomcat.apache.org/tomcat-8.5-doc/RUNNING.txt)
- * [ElasticSEarch Script documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/starting-elasticsearch.html)
+ * [Elasticsearch Script documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/starting-elasticsearch.html)
 
 
 -------------------------------------------------

@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 
 .. index:: Setup Studio Clustering with Kubernetes Deployment, Clustering with Studio Example with Kubernetes
 
