@@ -76,7 +76,7 @@ Properties prefix: ``crafter.search.solr.admin.``
 Crafter Field Properties
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-These properties define fields used internally by all Crafter CMS components, you should only change
+These properties define fields used internally by all CrafterCMS components, you should only change
 them if you are building a custom version of other components such as Crafter Studio or Engine.
 
 Properties prefix: ``crafter.search.solr.field.``

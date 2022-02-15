@@ -12,18 +12,18 @@ Blueprints
 What are Blueprints?
 --------------------
 
-Blueprints are Crafter CMS project templates.  It provides an initial set of styles, pages, behaviors, content types and more, containing one or more of the following: content types such as pages and components as described in :ref:`content-modeling`, static assets such as images, videos, etc., and site configuration files for managing items in the blueprint such as taxonomies (categories, segments), roles, permissions, etc.
+Blueprints are CrafterCMS project templates.  It provides an initial set of styles, pages, behaviors, content types and more, containing one or more of the following: content types such as pages and components as described in :ref:`content-modeling`, static assets such as images, videos, etc., and site configuration files for managing items in the blueprint such as taxonomies (categories, segments), roles, permissions, etc.
 
 .. image:: /_static/images/blueprint/blueprint-anatomy.png
    :alt: Cook Books - Blueprint Anatomy
    :width: 65 %
    :align: center
 
-The blueprint that comes out of the box with Crafter CMS, ``Website Editorial Blueprint``, provides us with an initial structure for our site, along with the site navigation, content inheritance, taxonomies for organizing the content such as categories and segments, which is also used for targeting content, static assets such as the initial images and fonts used for the site and configuration files for managing things like the segments for targeting, the permissions for all the items in the site, the role mappings, the RTE configuration, etc.  To see more of the ``Website Editorial Blueprint``, please see :ref:`your_first_website` where we create a site based on the ``Website Editorial Blueprint``.
+The blueprint that comes out of the box with CrafterCMS, ``Website Editorial Blueprint``, provides us with an initial structure for our site, along with the site navigation, content inheritance, taxonomies for organizing the content such as categories and segments, which is also used for targeting content, static assets such as the initial images and fonts used for the site and configuration files for managing things like the segments for targeting, the permissions for all the items in the site, the role mappings, the RTE configuration, etc.  To see more of the ``Website Editorial Blueprint``, please see :ref:`your_first_website` where we create a site based on the ``Website Editorial Blueprint``.
 
-As mentioned earlier, blueprints allows us to generate sites with predefined layouts, contents and configuration.  Blueprints could be a site theme or an API only site.  New blueprints can be created from a site and added into Crafter CMS allowing the creation of more sites based on the new blueprint.  In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from Crafter CMS and an existing site is used to create a new blueprint.
+As mentioned earlier, blueprints allows us to generate sites with predefined layouts, contents and configuration.  Blueprints could be a site theme or an API only site.  New blueprints can be created from a site and added into CrafterCMS allowing the creation of more sites based on the new blueprint.  In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from CrafterCMS and an existing site is used to create a new blueprint.
 
-Developers may submit their blueprints to the `Crafter CMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted blueprints are listed, and power users of Crafter CMS can create sites based on marketplace plugins directly from the ``Create Site`` dialog in the CMS. See :ref:`submit-plugin-to-marketplace` for more information on how to submit your blueprint to the marketplace.
+Developers may submit their blueprints to the `CrafterCMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted blueprints are listed, and power users of CrafterCMS can create sites based on marketplace plugins directly from the ``Create Site`` dialog in the CMS. See :ref:`submit-plugin-to-marketplace` for more information on how to submit your blueprint to the marketplace.
 
 -------------------------------
 How do I make my own Blueprint?
@@ -166,12 +166,12 @@ Installing
 What's in the craftercms-plugin.yaml file?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``craftercms-plugin.yaml`` file contains information for use in Crafter CMS.  We'll take a look at a file used for a blueprint.  Here's a sample taken from the  ``craftercms-plugin.yaml`` for the Empty blueprint.
+The ``craftercms-plugin.yaml`` file contains information for use in CrafterCMS.  We'll take a look at a file used for a blueprint.  Here's a sample taken from the  ``craftercms-plugin.yaml`` for the Empty blueprint.
 
 .. code-block:: yaml
     :linenos:
 
-    # This file describes a plugin for use in Crafter CMS
+    # This file describes a plugin for use in CrafterCMS
 
     # The version of the format for this file
     descriptorVersion: 2
@@ -200,9 +200,9 @@ The ``craftercms-plugin.yaml`` file contains information for use in Crafter CMS.
           url: .crafter/screenshots/default.png
     developer:
       company:
-        name: Crafter Software
-        email: info@craftersoftware.com
-        url: https://craftersoftware.com/
+        name: CrafterCMS
+        email: info@craftercms.com
+        url: https://craftercms.com/
     build:
       id: c3d2a5444e6a24b5e0481d6ba87901d0b02716c8
       date: 2019-01-23T00:00:00Z
@@ -225,10 +225,10 @@ where the following fields are required:
 - ``plugin.id`` - a unique Id that is meaningful/recognizable to people who will be using the blueprint/plugin
 - ``plugin.name`` - blueprint/plugin name (For our blueprint example, it is the blueprint name shown in the **Choose Blueprint** screen of **Create Site**)
 - ``plugin.version`` - a version number for the blueprint
-- ``plugin.crafterCmsVersions`` - Crafter CMS versions that the blueprint applies to (look in the :ref:`release-notes` section for the versions available)
+- ``plugin.crafterCmsVersions`` - CrafterCMS versions that the blueprint applies to (look in the :ref:`release-notes` section for the versions available)
 - ``plugin.searchEngine`` - search engine that will be used when a site is created from the blueprint (possible values are, ``CrafterSearch`` and ``Elasticsearch``)
 
-For the ``plugin.media.screenshots``, Crafter CMS uses a default path ``.crafter/screenshots/default.png`` to look for a default representative image of a plugin or blueprint.
+For the ``plugin.media.screenshots``, CrafterCMS uses a default path ``.crafter/screenshots/default.png`` to look for a default representative image of a plugin or blueprint.
 
    .. note:: For the images to be used for the ``screenshots`` in the ``craftercms-plugin.yaml`` file, we recommend using images with approximately a ``4:3`` aspect ratio (width to height), such as an image sized at 1200x800
 
@@ -236,7 +236,7 @@ For the ``plugin.media.screenshots``, Crafter CMS uses a default path ``.crafter
 
 Passing Parameters to Blueprints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Some parameters may need to be passed to the blueprint instead of left in the blueprint, say, AWS credentials, Box credentials, CommerceTools credentials, etc.  Crafter CMS supports passing parameters to blueprints during creation.
+Some parameters may need to be passed to the blueprint instead of left in the blueprint, say, AWS credentials, Box credentials, CommerceTools credentials, etc.  CrafterCMS supports passing parameters to blueprints during creation.
 
 To add parameters to be passed to blueprints, simply add the following to the ``craftercms-plugin.yaml`` file
 
@@ -276,7 +276,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>
       :caption: *{CRAFTER_HOME}/data/repos/global/blueprints/1000_website_editorial/craftercms-plugin.yaml*
       :emphasize-lines: 13-31
 
-      # This file describes a plugin for use in Crafter CMS
+      # This file describes a plugin for use in CrafterCMS
 
       # The version of the format for this file
       descriptorVersion: 2

@@ -10,7 +10,7 @@ Deployer System Administration Guide
 How to Start/Stop the Deployer
 ------------------------------
 
-If you're using Crafter CMS installed on a server, starting and stopping the Deployer is very easy. From the command line, navigate to the
+If you're using CrafterCMS installed on a server, starting and stopping the Deployer is very easy. From the command line, navigate to the
 {env-directory}, authoring or delivery environment folder, and then inside the ``bin`` folder, run ``./crafter.sh start_deployer`` to start
 the Deployer or ``./crafter.sh stop_deployer`` to stop the Deployer.
 
@@ -49,7 +49,7 @@ Target Configuration
 
 Each deployment target has it's own YAML configuration file, where the properties of the target and it's entire deployment pipeline is specified.
 Without this file the Deployer doesn't know of the existence of the target. By default these configuration files reside under
-``./config/targets`` (in the case of the Crafter CMS installed on a server, they're under ``CRAFTER_HOME/data/deployer/targets``).
+``./config/targets`` (in the case of the CrafterCMS installed on a server, they're under ``CRAFTER_HOME/data/deployer/targets``).
 
 Target configurations vary a lot between authoring and delivery, since an authoring target works on a local repository while a delivery target
 pulls the files from a remote repository. But target configurations between the same environment don't change a lot. Having said that, the

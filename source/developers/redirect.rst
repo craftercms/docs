@@ -8,16 +8,16 @@
 Redirects
 =========
 
-A redirect sends users from one URL to another URL.  Crafter CMS provides a couple of ways to setup redirects.
+A redirect sends users from one URL to another URL.  CrafterCMS provides a couple of ways to setup redirects.
 
 --------------------------------
 Redirect using the Tuckey Filter
 --------------------------------
 
-Crafter CMS comes with tuckey filter, a Java Web Filter which allows you to rewrite URLs, like Apache's mod_rewrite, for setting up rewrite rules.  For more details on how to use the filter in Crafter CMS for setting up rewrite rules, please see: :ref:`configure-url-rewrite`
+CrafterCMS comes with tuckey filter, a Java Web Filter which allows you to rewrite URLs, like Apache's mod_rewrite, for setting up rewrite rules.  For more details on how to use the filter in CrafterCMS for setting up rewrite rules, please see: :ref:`configure-url-rewrite`
 
 --------------------------------------------
-Redirect using a content type in Crafter CMS
+Redirect using a content type in CrafterCMS
 --------------------------------------------
 
 Another way to perform redirects is by using a ``/page/redirect`` content type containing a field named ``redirect-url`` which Crafter Engine picks up, then acts on.  Let's take a look at an example where we want the URL **localhost:8080/fashion** to redirect to the category landing page for style **localhost:8080/style**

@@ -21,8 +21,8 @@ Requirements
 ------------
 
 * At least 3 servers running Linux (Remember that Studio's cluster runs only in Linux)
-* Enterprise version of Crafter CMS
-* If using an enterprise Crafter CMS installed from a binary archive, ``Git`` is required by Crafter CMS and may need to be installed if not already installed in the server.
+* Enterprise version of CrafterCMS
+* If using an enterprise CrafterCMS installed from a binary archive, ``Git`` is required by CrafterCMS and may need to be installed if not already installed in the server.
 * Studio's cluster requires the ``libssl1.0.0`` (or ``libssl1.0.2``) shared library.
   Some Linux distros does not come with the library pre-installed and may need to be installed.
 
@@ -30,7 +30,7 @@ Requirements
 Configuring Nodes in the Cluster
 --------------------------------
 
-#. Install the Enterprise version of Crafter CMS on all the nodes
+#. Install the Enterprise version of CrafterCMS on all the nodes
 #. Configure the Git **repository clustering** for all nodes by configuring the following settings in the
    :ref:`studio-config-override.yaml <studio-configuration-files>` file.
 

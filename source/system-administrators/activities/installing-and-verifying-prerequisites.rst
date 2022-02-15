@@ -138,7 +138,7 @@ Linux Prerequisite
 Windows Prerequisite
 --------------------
 
-For Windows users, WSL 2 needs to be installed.  All Crafter CMS scripts/commands to be executed and items that needs to be downloaded and installed needs to be in WSL 2.
+For Windows users, WSL 2 needs to be installed.  All CrafterCMS scripts/commands to be executed and items that needs to be downloaded and installed needs to be in WSL 2.
 
 Follow the instructions `here <https://docs.microsoft.com/en-us/windows/wsl/install>`__ to install WSL 2.
 
@@ -146,7 +146,7 @@ Follow the instructions `here <https://docs.microsoft.com/en-us/windows/wsl/inst
 Building with Gradle Prerequisites
 ----------------------------------
 
-For building with Gradle for installing Crafter CMS, the following must be installed in your system:
+For building with Gradle for installing CrafterCMS, the following must be installed in your system:
 
 ^^^^^^^^^^^^^^^^^^^^^^
 On Linux/Windows WSL 2

@@ -8,7 +8,7 @@
 .. _docker-config-changes:
 
 ==================================================
-Configuration changes between Crafter CMS versions
+Configuration changes between CrafterCMS versions
 ==================================================
 
 .. toctree::

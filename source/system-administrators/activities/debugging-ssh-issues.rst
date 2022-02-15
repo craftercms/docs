@@ -6,7 +6,7 @@
 Debugging SSH Key Issues
 ========================
 
-In this section, we present a few errors that a user may encounter when using ssh keys with Crafter CMS and how to fix the errors.
+In this section, we present a few errors that a user may encounter when using ssh keys with CrafterCMS and how to fix the errors.
 
 ----------------
 SSH Unknown Host

@@ -60,7 +60,7 @@ To get to Account Management:
 ^^^^^^^^^^^^^^
 Site Dashboard
 ^^^^^^^^^^^^^^
-Each site has a Site Dashboard.  To view a site's dashboard, click on the Crafter CMS logo at the top left of the screen, or click on **Dashboard** at the top of the Sidebar.  This screen is an overview of the workflow for that given site.  The site dashboard has different widgets depending on your role.
+Each site has a Site Dashboard.  To view a site's dashboard, click on the CrafterCMS logo at the top left of the screen, or click on **Dashboard** at the top of the Sidebar.  This screen is an overview of the workflow for that given site.  The site dashboard has different widgets depending on your role.
 
 Each dashboard has a header
 
@@ -284,7 +284,7 @@ The basic elements of the Contextual Navigation bar are:
     * Search: Allows a user to search all site content or choose a subset of content to search from the drop-down menu (Please see the later section on Search for more details about the search field.)
     * Publish Status: Allows the user to view the site's publish status.
     * Main Menu: Allows the user (depending on permissions granted to the user) to view/edit sites, the groups, the users, etc..
-    * Help: Provides the user a shortcut to Crafter CMS documentation and the about screen, listing the Crafter Studio version, etc.
+    * Help: Provides the user a shortcut to CrafterCMS documentation and the about screen, listing the Crafter Studio version, etc.
     * Username: Allows a user to log out of the system or manage settings.
     
 .. image:: /_static/images/content-author/site-context-nav.jpg

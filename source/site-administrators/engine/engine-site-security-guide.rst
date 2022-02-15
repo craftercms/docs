@@ -90,7 +90,7 @@ the next steps to create in the page content type a Repeating Group with a text 
     |
 
        .. warning::
-          The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by Crafter CMS.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
+          The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS.  For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
           The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
 
@@ -102,7 +102,7 @@ the next steps to create in the page content type a Repeating Group with a text 
         :alt: Engine Site Security Guide - Role Properties
 
     .. warning::
-        The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as the ``role`` variable name is used by Crafter CMS for enforcing access to a page.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
+        The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page.  For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
 
 #.  Save the changes. The added fields should look like this:
@@ -128,7 +128,7 @@ Restrict URLs
 =============
 
 Sometimes it is not enough to restrict a single page. Sometimes you need to restrict an entire site subtree, or 
-restrict several static assets. For this, Crafter CMS provides configuration parameters that allow you to restrict 
+restrict several static assets. For this, CrafterCMS provides configuration parameters that allow you to restrict 
 access based on URL patterns. You just need to add configuration similar to the following in Config > Engine Site Configuration:
 
 .. code-block:: xml

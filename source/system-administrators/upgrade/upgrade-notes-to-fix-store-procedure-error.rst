@@ -11,7 +11,7 @@
 Upgrade Notes for Fixing Stored Procedure Error
 ===============================================
 
-After upgrading to Crafter CMS 3.1.10 or later versions it is possible that the stored procedures created by
+After upgrading to CrafterCMS 3.1.10 or later versions it is possible that the stored procedures created by
 Crafter Studio are missing the right user and the startup process will be stopped with an error similar to this:
 
 .. code-block:: bash
@@ -26,7 +26,7 @@ Crafter Studio are missing the right user and the startup process will be stoppe
 To get the authoring install working, do the following:
 
 .. note::
-  If it is possible to start the previous version of Crafter CMS you can skip the step to start the database
+  If it is possible to start the previous version of CrafterCMS you can skip the step to start the database
 
 |
 

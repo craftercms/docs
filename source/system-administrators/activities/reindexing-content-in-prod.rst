@@ -14,9 +14,9 @@ In these scenarios you need a process for building the index off line and swappi
 Using Elasticsearch
 -------------------
 
-#. :ref:`Crafter CMS versions prior to 3.1.10 <reindex-content-prior-to-3-1-10>`
-#. :ref:`Crafter CMS versions 3.1.10 to 3.1.17 <reindex-content-for-3-1-10-to-3-1-17>`
-#. :ref:`Crafter CMS versions 3.1.18 or later <reindex-content-3-1-18-and-later>`
+#. :ref:`CrafterCMS versions prior to 3.1.10 <reindex-content-prior-to-3-1-10>`
+#. :ref:`CrafterCMS versions 3.1.10 to 3.1.17 <reindex-content-for-3-1-10-to-3-1-17>`
+#. :ref:`CrafterCMS versions 3.1.18 or later <reindex-content-3-1-18-and-later>`
 
 ----------
 Using Solr

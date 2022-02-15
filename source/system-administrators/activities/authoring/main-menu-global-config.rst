@@ -14,7 +14,7 @@
 Main Menu Global Config
 =======================
 
-Crafter CMS allows the user to edit the system settings for Studio without access to the physical server through ``Global Config`` under the |mainMenu| **Main Menu** in Studio.
+CrafterCMS allows the user to edit the system settings for Studio without access to the physical server through ``Global Config`` under the |mainMenu| **Main Menu** in Studio.
 This global configuration file overrides the core configuration of Crafter Studio, ``studio-config.yaml``,  found in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio``, and the Studio configuration override file :ref:`studio-config-override.yaml <studio-configuration-files>` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` in your Authoring installation (for more information on this file, see :ref:`studio-config-override`.
 
 Changes made to this file will spread to all nodes in a Studio cluster automatically. Please note that not all changes to this file can/will take effect without a restart, so expect to have to **restart Studio for most changes to take effect**. If in a cluster, you'll need a rolling restart for all nodes to pick up the changes.
@@ -127,7 +127,7 @@ For more information, see :ref:`crafter-studio-configure-password-requirements`
 Configure Authentication Chain
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Crafter CMS allows configuration of multiple authentication providers in a chain that are then iterated through until either the user is authenticated and granted access or authentication fails and an *HTTP 401 Unauthorized* is returned to the user.
+CrafterCMS allows configuration of multiple authentication providers in a chain that are then iterated through until either the user is authenticated and granted access or authentication fails and an *HTTP 401 Unauthorized* is returned to the user.
 
 The following section of Studio's global config allows you to configure an authentication chain.
 

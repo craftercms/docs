@@ -1,4 +1,4 @@
-After upgrading your Crafter CMS install, you will need to recreate the Solr cores and reindex all content.
+After upgrading your CrafterCMS install, you will need to recreate the Solr cores and reindex all content.
 
 For Authoring environments, use the following commands to upgrade the Preview cores:
 
