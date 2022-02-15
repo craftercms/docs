@@ -1,6 +1,6 @@
 :is-up-to-date: True
 
-.. index:: Crafter CMS Security Advisories, Advisories
+.. index:: CrafterCMS Security Advisories, Advisories
 
 ===================
 Security Advisories
@@ -103,6 +103,8 @@ CV-2021120107
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23264
 ======================= ======================================================================================
 
+.. _cv-2020080101:
+
 CV-2020080101
 =============
 
@@ -116,6 +118,8 @@ CV-2020080101
 			commands via Groovy scripting.
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2020-25802
 ======================= ======================================================================================
+
+.. _cv-2020080102:
 
 CV-2020080102
 =============

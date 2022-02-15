@@ -8,23 +8,23 @@
 Installing
 ==========
 
-This section describes various ways of installing/setting up Crafter CMS.
+This section describes various ways of installing/setting up CrafterCMS.
 
 
-First we'll take a look at the requirements and supported platform for installing/setting up Crafter CMS
+First we'll take a look at the requirements and supported platform for installing/setting up CrafterCMS
 
 .. toctree::
    :maxdepth: 2
 
    /system-administrators/requirements-supported-platforms
 
-Remember to change the default values pre-configured when installing Crafter CMS for a secure installation.  See :ref:`securing-your-crafter-cms-install` for more information.
+Remember to change the default values pre-configured when installing CrafterCMS for a secure installation.  See :ref:`securing-your-crafter-cms-install` for more information.
 
 -----------------------
 Development Environment
 -----------------------
 
-The quick start guide provides instructions on setting up a development environment by installing Crafter CMS from the prebuilt binaries
+The quick start guide provides instructions on setting up a development environment by installing CrafterCMS from the prebuilt binaries
 
 * :ref:`installing-crafter-cms-from-prebuilt-binaries`
 
@@ -45,7 +45,7 @@ The guide below provides instructions on how to setup a production environment
 Using Crafter's AWS AMI
 -----------------------
 
-Setup Crafter CMS authoring and delivery using Crafter's AWS AMI.
+Setup CrafterCMS authoring and delivery using Crafter's AWS AMI.
 
 .. toctree::
    :maxdepth: 1

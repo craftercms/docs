@@ -8,7 +8,7 @@
 Your First Website
 ==================
 
-This section assumes that you have followed the steps in the :ref:`Quick Start Guide <quick_start_guide>` to get Crafter CMS and login. We will be using an out-of-the-box blueprint, called "Website_Editorial" to create your first website.
+This section assumes that you have followed the steps in the :ref:`Quick Start Guide <quick_start_guide>` to get CrafterCMS and login. We will be using an out-of-the-box blueprint, called "Website_Editorial" to create your first website.
 
 Let's get started building your first website!
 

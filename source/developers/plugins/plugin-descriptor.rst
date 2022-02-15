@@ -5,10 +5,10 @@
 .. _craftercms-plugin-yaml-file:
 
 -----------------------------
-Crafter CMS Plugin Descriptor
+CrafterCMS Plugin Descriptor
 -----------------------------
 
-The ``craftercms-plugin.yaml`` file contains information for use in Crafter CMS.  We'll take a look at a file used for
+The ``craftercms-plugin.yaml`` file contains information for use in CrafterCMS.  We'll take a look at a file used for
 a blueprint and for a site plugin.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -21,7 +21,7 @@ Here's a sample taken from the  ``craftercms-plugin.yaml`` for the Empty bluepri
     :caption: *craftercms-plugin.yaml file for the Empty blueprint*
     :linenos:
 
-    # This file describes a plugin for use in Crafter CMS
+    # This file describes a plugin for use in CrafterCMS
 
     # The version of the format for this file
     descriptorVersion: 2
@@ -50,9 +50,9 @@ Here's a sample taken from the  ``craftercms-plugin.yaml`` for the Empty bluepri
             url: /studio/static-assets/images/blueprints/empty/bp_empty.png
       developer:
         company:
-          name: Crafter Software
-          email: info@craftersoftware.com
-          url: https://craftersoftware.com/
+          name: CrafterCMS
+          email: info@craftercms.com
+          url: https://craftercms.com/
       build:
         id: c3d2a5444e6a24b5e0481d6ba87901d0b02716c8
         date: 2021-01-23T00:00:00Z
@@ -76,14 +76,14 @@ where the following fields are required:
 - ``plugin.name`` - blueprint/plugin name (For our blueprint example, it is the blueprint name shown in the
   **Choose Blueprint** screen of **Create Site**)
 - ``plugin.version`` - a version number for the blueprint/site plugin
-- ``plugin.crafterCmsVersions`` - Crafter CMS versions that the plugin is compatible with (look in the :ref:`release-notes`
+- ``plugin.crafterCmsVersions`` - CrafterCMS versions that the plugin is compatible with (look in the :ref:`release-notes`
   section for the versions available), and you'll need to keep this up to date
 - ``plugin.searchEngine`` - search engine your plugin requires, the only value possible at this time is``Elasticsearch``
 
 |
 |
 
-For ``plugin.media.screenshots``, the url ``../.crafter/screenshots/default.png`` is the default path for Crafter CMS to look for a default representative image of a plugin or blueprint.  For more information on adding a default representative image for your blueprint see :ref:`adding-default-image-for-bp` and :ref:`site-plugins-create-your-plugin` for site plugins.
+For ``plugin.media.screenshots``, the url ``../.crafter/screenshots/default.png`` is the default path for CrafterCMS to look for a default representative image of a plugin or blueprint.  For more information on adding a default representative image for your blueprint see :ref:`adding-default-image-for-bp` and :ref:`site-plugins-create-your-plugin` for site plugins.
 
 .. note::
 
@@ -96,7 +96,7 @@ For ``plugin.media.screenshots``, the url ``../.crafter/screenshots/default.png`
 Site Plugin Descriptor File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Crafter CMS supports automatically wiring your site plugin to the corresponding configuration file in Studio during
+CrafterCMS supports automatically wiring your site plugin to the corresponding configuration file in Studio during
 your site plugin installation.
 
 To setup a site plugin to be automatically wired in the corresponding configuration file in Studio (for example, a
@@ -154,7 +154,7 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
    :linenos:
    :emphasize-lines: 44-62
 
-   # This file describes a plugin for use in Crafter CMS
+   # This file describes a plugin for use in CrafterCMS
 
    # The version of the format for this file
    descriptorVersion: 2
@@ -177,14 +177,14 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
        url: https://github.com/craftercms/site-plugins-example
      media:
        screenshots:
-         - title: Crafter CMS
-           description: Crafter CMS Example Plugin
+         - title: CrafterCMS
+           description: CrafterCMS Example Plugin
            url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/logo.svg"
      developer:
        company:
-         name: Crafter Software
-         email: info@craftersoftware.com
-         url: https://craftersoftware.com
+         name: CrafterCMS
+         email: info@craftercms.com
+         url: https://craftercms.com
      build:
        id: f9d09cbf39167609bcca4e31f5d2475d0ef14f8a
        date: 2021-05-21T00:00:00Z
@@ -267,6 +267,6 @@ Below is a sample for the site context.
 
 |
 
-For site plugins, the ``plugin.documentation`` serves as the help block for the plugin. It contains a URL to the plugin's documentation file (must be in Markdown) containing information on how to use/configure the plugin. The documentation will appear alongside the plugin in Crafter Studio and the Crafter CMS Marketplace.
+For site plugins, the ``plugin.documentation`` serves as the help block for the plugin. It contains a URL to the plugin's documentation file (must be in Markdown) containing information on how to use/configure the plugin. The documentation will appear alongside the plugin in Crafter Studio and the CrafterCMS Marketplace.
 
 See :ref:`studio-plugins` for examples of plugins auto-wired in Studio.

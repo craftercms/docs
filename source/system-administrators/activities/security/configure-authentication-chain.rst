@@ -14,7 +14,7 @@
 Configure Authentication Chain
 ==============================
 
-Crafter CMS supports multiple security providers and allows configuration of multiple authentication providers in a chain that are then iterated through until either the user is authenticated and granted access or authentication fails and an HTTP 401 Unauthorized is returned to the user.  This allows Studio to support multiple security providers that appears like a single authentication module to users.
+CrafterCMS supports multiple security providers and allows configuration of multiple authentication providers in a chain that are then iterated through until either the user is authenticated and granted access or authentication fails and an HTTP 401 Unauthorized is returned to the user.  This allows Studio to support multiple security providers that appears like a single authentication module to users.
 
 .. image:: /_static/images/system-admin/authentication-chain.png
     :alt: Static Assets - Authentication Chaining

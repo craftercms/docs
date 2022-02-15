@@ -2,11 +2,11 @@
 
 .. _simple-kubernetes-deployment:
 
-=========================================================
-Deploying a Simple Crafter CMS installation in Kubernetes
-=========================================================
+========================================================
+Deploying a Simple CrafterCMS installation in Kubernetes
+========================================================
 
-This tutorial shows you how to deploy a simple Crafter CMS installation in a Kubernetes cluster. The installation 
+This tutorial shows you how to deploy a simple CrafterCMS installation in a Kubernetes cluster. The installation 
 consists of one Authoring Pod, one Delivery Pod and one Elasticsearch Pod, and it's mainly intended for development 
 and testing, not for production.
 

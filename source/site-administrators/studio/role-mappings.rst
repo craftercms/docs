@@ -93,7 +93,7 @@ Description
 Default Site Roles
 ------------------
 
-Crafter CMS comes with predefined roles out of the box for sites.
+CrafterCMS comes with predefined roles out of the box for sites.
 Here's a list of predefined roles for sites:
 
 * **admin**: Users with the ``admin`` role have access to site configuration files, creating/editing layouts, templates, taxonomies, content types, scripts, etc. in addition to creating and editing content, as well as the ability to approve and reject workflow

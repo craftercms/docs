@@ -16,7 +16,7 @@ Setup a Serverless Site
 
       *This document has been* **deprecated** *and is provided as a reference only.  Please see* :ref:`setup-serverless-delivery` *for the updated version.*
 
-Crafter CMS can be configured to serve sites directly from AWS services, following this guide you will:
+CrafterCMS can be configured to serve sites directly from AWS services, following this guide you will:
 
 - Configure the Crafter Deployer of an authoring environment to upload files to AWS S3 and index to AWS Elasticsearch.
 - Configure the Crafter Engine of a delivery environment to read files from AWS S3 and query to AWS Elasticsearch.
@@ -26,8 +26,8 @@ Prerequisites
 -------------
 
 - An AWS account
-- A Crafter CMS authoring environment
-- A Crafter CMS delivery environment
+- A CrafterCMS authoring environment
+- A CrafterCMS delivery environment
 
 ----------------------------------------------------
 Step 1: Create the site in the authoring environment

@@ -4,14 +4,14 @@
 Using War Overlays with Crafter Engine
 ======================================
 
-Crafter Engine, the delivery component of Crafter CMS is completely programmable with scripted Groovy.
+Crafter Engine, the delivery component of CrafterCMS is completely programmable with scripted Groovy.
 From time to time:
 
 - you may find that you want to build classes in Java directly
 - or you may need to include dependencies in a deployment where Ivy and Grapes are not an option
 - or you may need to modify the ``web.xml`` of the engine WAR file for some reason.
 
-These scenarios are an exception but they do come up. For these scenarios, you want to create a `Maven WAR Overlay <https://maven.apache.org/plugins/maven-war-plugin/overlays.html>`_.  Overlays allow you to add and override contents of Crafter CMS component WARs like Crafter Studio, Engine, Profile, and Social.
+These scenarios are an exception but they do come up. For these scenarios, you want to create a `Maven WAR Overlay <https://maven.apache.org/plugins/maven-war-plugin/overlays.html>`_.  Overlays allow you to add and override contents of CrafterCMS component WARs like Crafter Studio, Engine, Profile, and Social.
 
 An overlay is a very simple maven project that downloads a specific version of Crafter Engine (specified in the POM file), downloads the additional dependencies you require, builds your source code that’s specific to your project, packages it to a jar and then combines all of these into a new WAR file.
 
@@ -170,4 +170,4 @@ Similar output to the following is expected:
 Step 4: Deploy Your New WAR
 ---------------------------
 
-In the project folder, you will now see a target folder with a ``ROOT.war`` in it.  This is your new WAR file.  You can now place this in the ``webapps`` folder of your Crafter CMS authoring or delivery server.
+In the project folder, you will now see a target folder with a ``ROOT.war`` in it.  This is your new WAR file.  You can now place this in the ``webapps`` folder of your CrafterCMS authoring or delivery server.

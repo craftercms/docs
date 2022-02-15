@@ -12,7 +12,7 @@ User passwords
 Changing Your Password
 ----------------------
 
-Every user logged in to Crafter CMS can change their own password.
+Every user logged in to CrafterCMS can change their own password.
 
 #. To change your own password, click on **<User Name>** at the top right of Studio, then select **Settings**
 

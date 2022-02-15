@@ -5,10 +5,10 @@ Source Code
 ***********
 
 ####################
-Crafter CMS Projects
+CrafterCMS Projects
 ####################
 
-GitHub hosts `Crafter CMS <https://github.com/craftercms/>`_ and is made up of a number of software projects that work together to make up Crafter CMS.
+GitHub hosts `CrafterCMS <https://github.com/craftercms/>`_ and is made up of a number of software projects that work together to make up CrafterCMS.
 
 The primary projects are:
 
@@ -22,4 +22,4 @@ The primary projects are:
 * :ref:`crafter-profile`
 * :ref:`crafter-social`
 
-There are a number of additional projects within Crafter CMS that help complete it, including a project for this very documentation.
+There are a number of additional projects within CrafterCMS that help complete it, including a project for this very documentation.
