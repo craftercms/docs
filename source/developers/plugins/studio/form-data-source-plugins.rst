@@ -195,7 +195,7 @@ To setup our form control to be automatically wired in the corresponding configu
 
    installation:
     - type: form-datasource
-      elementXpath: //control/plugin[pluginId='org.craftercms.plugin.exampleds']
+      elementXpath: //datasource/plugin[pluginId='org.craftercms.plugin.exampleds']
       element:
         name: datasource
         children:

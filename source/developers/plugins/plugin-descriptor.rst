@@ -124,7 +124,7 @@ to your ``craftercms-plugin.yaml`` descriptor file
             - name: plugin
               attributes:
               - name: id
-                value: org.craftercms.plugin
+                value: org.craftercms.plugin.sidebar
               - name: type
                 value: sidebar
               - name: name
@@ -232,7 +232,7 @@ Below is a sample for a data source.
 
    installation:
      - type: form-datasource
-       elementXpath: //control/plugin[pluginId='org.craftercms.plugin.datasource']
+       elementXpath: //datasource/plugin[pluginId='org.craftercms.plugin.datasource']
        element:
          name: datasource
          children:
