@@ -4,9 +4,9 @@
 
 .. _craftercms-plugin-yaml-file:
 
------------------------------
+----------------------------
 CrafterCMS Plugin Descriptor
------------------------------
+----------------------------
 
 The ``craftercms-plugin.yaml`` file contains information for use in CrafterCMS.  We'll take a look at a file used for
 a blueprint and for a site plugin.
@@ -110,24 +110,27 @@ to your ``craftercms-plugin.yaml`` descriptor file
    installation:
     - type: preview-app
       parentXpath: //widget[@id='craftercms.components.ToolsPanel']
-      testXpath: //plugin[@id='org.craftercms.plugin.sidebar']
+      elementXpath: //plugin[@id='org.craftercms.sampleComponentLibraryPlugin.components.reactComponent']
       element:
         name: configuration
         children:
         - name: widgets
           children:
           - name: widget
+            attributes:
+            - name: id
+              value: org.craftercms.sampleComponentLibraryPlugin.components.reactComponent
             children:
             - name: plugin
               attributes:
               - name: id
-                value: org.craftercms.plugin.sidebar
+                value: org.craftercms.plugin
               - name: type
                 value: sidebar
               - name: name
                 value: react-sample
               - name: file
-                value: main.js
+                value: index.modern.js
 
 where:
 
@@ -135,7 +138,7 @@ where:
   Available values are **form-control**, **form-datasource**, **preview-app**, **site-filter** and **site-context**
 - ``installation.parentXpath`` is an XPath selector for the element where the plugin will be added,
   required when installation-type is *preview-app*
-- ``installation.testXpath`` is an XPath selector to check if the plugin is already present in the configuration
+- ``installation.elementXpath`` is an XPath selector to check if the plugin is already present in the configuration and used to remove the config when the plugin is uninstalled
 - ``installation.element.name`` is the element name to be wired in your site configuration file so the plugin will
   show up in Studio
   Available values are **control** (for *form-control* installation type), **datasource** (for *form-datasource* installation type) and for *preview-app* installation type, the start of the section the plugin needs to be inserted in, e.g. *configuration*, etc.
@@ -200,6 +203,7 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
        - enterprise
      installation:
        - type: form-control
+         elementXpath: //control/plugin[pluginId='org.craftercms.plugin.control']
          element:
            name: control
            children:
@@ -217,6 +221,68 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
                children:
                  - name: class
                    value: fa-pencil-square-o
+
+|
+
+Below is a sample for a data source.
+
+.. code-block:: yaml
+   :caption: *Example installation for a data source*
+   :linenos:
+
+   installation:
+     - type: form-datasource
+       elementXpath: //control/plugin[pluginId='org.craftercms.plugin.datasource']
+       element:
+         name: datasource
+         children:
+           - name: plugin
+             children:
+               - name: pluginId
+                 value: org.craftercms.plugin.datasource
+               - name: type
+                 value: datasource
+               - name: name
+                 value: text-input
+               - name: filename
+                 value: main.js
+               - name: icon
+                 children:
+               - name: class
+                 value: fa-pencil-square-o
+
+|
+
+Below is a sample for a preview-app.
+
+.. code-block:: yaml
+   :caption: *Example installation for a preview-app*
+   :linenos:
+
+   installation:
+     - type: preview-app
+       parentXpath: //widget[@id='craftercms.components.ToolsPanel']
+       elementXpath: //plugin[@id='org.craftercms.sampleComponentLibraryPlugin.components.reactComponent']
+       element:
+         name: configuration
+         children:
+         - name: widgets
+           children:
+           - name: widget
+             attributes:
+             - name: id
+               value: org.craftercms.sampleComponentLibraryPlugin.components.reactComponent
+             children:
+             - name: plugin
+               attributes:
+               - name: id
+                 value: org.craftercms.plugin
+               - name: type
+                 value: sidebar
+               - name: name
+                 value: react-sample
+               - name: file
+                 value: index.modern.js
 
 |
 
