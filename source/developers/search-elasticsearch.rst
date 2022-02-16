@@ -78,7 +78,7 @@ as key and the configuration depending on the type.
     ]
   ])
 
-In the previous example we include a ``terms`` agregation called ``categories`` that will return all found values for
+In the previous example we include a ``terms`` aggregation called ``categories`` that will return all found values for
 the field ``categories.item.value_smv`` that have at least 1 article assigned.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -282,7 +282,7 @@ To create the REST endpoint, place the following Groovy file in your scripts fol
     // Obtain the text from the request parameters
     def term = params.term
 
-    def helper = new SuggestionHelper(elasticsearch)
+    def helper = new SuggestionHelper(elasticsearchClient)
 
     // Execute the query and process the results
     return helper.getSuggestions(term)
@@ -295,33 +295,35 @@ You will also need to create the helper class in the scripts folder
   
     package org.craftercms.sites.editorial
 
+    import co.elastic.clients.elasticsearch.core.SearchRequest
+    import org.craftercms.search.elasticsearch.client.ElasticsearchClientWrapper
+
     class SuggestionHelper {
     	
     	static final String DEFAULT_CONTENT_TYPE_QUERY = "content-type:\"/page/article\""
     	static final String DEFAULT_SEARCH_FIELD = "subject_t"
     	
-    	def elasticsearch
+    	ElasticsearchClientWrapper elasticsearchClient
     	
     	String contentTypeQuery = DEFAULT_CONTENT_TYPE_QUERY
     	String searchField = DEFAULT_SEARCH_FIELD
     	
-    	SuggestionHelper(elasticsearch) {
-    		this.elasticsearch = elasticsearch
+    	SuggestionHelper(elasticsearchClient) {
+    		this.elasticsearchClient = elasticsearchClient
     	}
     	
     	def getSuggestions(String term) {
-    		def queryStr = "${contentTypeQuery} AND ${searchField}:*${term}*"
+		  def queryStr = "${contentTypeQuery} AND ${searchField}:*${term}*"
+		  def result = elasticsearchClient.search(SearchRequest.of(r -> r
+			.query(q -> q
+				.queryString(s -> s
+					.query(queryStr)
+				)
+			)
+		  ), Map)
 
-    		def result = elasticsearch.search([
-    			query: [
-    				query_string: [
-    					query: queryStr as String
-    				]
-    			]
-    		])
-
-    		return process(result)
-    	}
+		  return process(result)
+	    }
     	
     	def process(result) {
     		def processed = result.hits.hits*.getSourceAsMap().collect { doc ->
