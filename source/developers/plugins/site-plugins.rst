@@ -149,10 +149,9 @@ Here's an example directory structure for a site plugin:
 
 where:
 
-- **yourPluginFilesAndFolders** : Freemarker, Groovy and binary files/folders containing the plugin implementation
 - **yourPluginType** : Type of plugin, e.g. control, datasource, sidebar, app, etc.
 - **yourPluginName** : Name of  plugin
-- **yourPluginFilesAndFolders** : JavaScript and/or plugin build output files/folders containing the plugin implementation
+- **yourPluginFilesAndFolders** : JavaScript, Freemarker, Groovy, binary and/or plugin build output files/folders containing the plugin implementation
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -53,9 +53,6 @@ Here's a sample taken from the  ``craftercms-plugin.yaml`` for the Empty bluepri
           name: CrafterCMS
           email: info@craftercms.com
           url: https://craftercms.com/
-      build:
-        id: c3d2a5444e6a24b5e0481d6ba87901d0b02716c8
-        date: 2021-01-23T00:00:00Z
       license:
         name: MIT
         url: https://opensource.org/licenses/MIT
@@ -66,7 +63,6 @@ Here's a sample taken from the  ``craftercms-plugin.yaml`` for the Empty bluepri
       crafterCmsEditions:
         - community
         - enterprise
-      searchEngine: Elasticsearch
 
 where the following fields are required:
 
@@ -78,7 +74,6 @@ where the following fields are required:
 - ``plugin.version`` - a version number for the blueprint/site plugin
 - ``plugin.crafterCmsVersions`` - CrafterCMS versions that the plugin is compatible with (look in the :ref:`release-notes`
   section for the versions available), and you'll need to keep this up to date
-- ``plugin.searchEngine`` - search engine your plugin requires, the only value possible at this time is``Elasticsearch``
 
 |
 |
@@ -188,9 +183,6 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
          name: CrafterCMS
          email: info@craftercms.com
          url: https://craftercms.com
-     build:
-       id: f9d09cbf39167609bcca4e31f5d2475d0ef14f8a
-       date: 2021-05-21T00:00:00Z
      license:
        name: MIT
        url: https://opensource.org/licenses/MIT
