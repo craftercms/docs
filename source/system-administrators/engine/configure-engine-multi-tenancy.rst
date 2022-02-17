@@ -33,6 +33,11 @@ The root folder path, as shown below, needs to be configured to include a substi
 This variable will be resolved by Crafter Engine for each request. There are two possible
 configurations to resolve this value.
 
+- simple multi-tenancy
+- mapped multi-tenancy
+
+We recommend using simple multi-tenancy with a web server like Apache or a CDN in front of Crafter Engine
+
 ------------------------------
 Configure Simple Multi-Tenancy
 ------------------------------
@@ -76,20 +81,30 @@ After you have made the required changes and reloaded the ROOT.war file, each re
 the site using either a cookie or a query parameter. This will allow you to easily change the
 current site from the URL.
 
+
   ``HOST:PORT/?crafterSite=site1`` will render the home page for ``site1``
   
   ``HOST:PORT/?crafterSite=site2`` will render the home page for ``site2``
 
-.. WARNING::
-  Using this configuration you need to be sure that the first request includes the ``crafterSite``
-  parameter so that the site value is set in the cookie for the next requests.
+|
+
+Aside from the ``crafterSite`` parameter, a header can be sent to specify the site name, called
+``X-Crafter-Site`` for changing the current site.  This is very useful when Crafter Engine is used
+together with CDNs that can send headers, like AWS CloudFront
+
+  .. WARNING::
+    Using this configuration you need to be sure that the first request specifies the site name by
+    including the ``crafterSite`` parameter (or the ``X-Crafter-Site`` header) so that the site value
+    is set in the cookie for the next requests.
+
+|
+
+
+
 
 ------------------------------
 Configure Mapped Multi-Tenancy
 ------------------------------
-
-This is the recommended approach for production environments because this configuration will
-guarantee that all requests will be able to resolve the right site.
 
 To enable this mode you need to change the following :ref:`Crafter Engine configuration files <engine-configuration-files>`:
 
