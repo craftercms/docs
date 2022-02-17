@@ -36,8 +36,6 @@ configurations to resolve this value.
 - simple multi-tenancy
 - mapped multi-tenancy
 
-We recommend using simple multi-tenancy with a web server like Apache or a CDN in front of Crafter Engine
-
 ------------------------------
 Configure Simple Multi-Tenancy
 ------------------------------
@@ -99,8 +97,7 @@ together with CDNs that can send headers, like AWS CloudFront
 
 |
 
-
-
+We recommend using simple multi-tenancy with a web server like Apache or a CDN in front of Crafter Engine
 
 ------------------------------
 Configure Mapped Multi-Tenancy
