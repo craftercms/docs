@@ -36,7 +36,8 @@ configurations to resolve this value.
 - simple multi-tenancy
 - mapped multi-tenancy
 
-We recommend using simple multi-tenancy with a web server like Apache or a CDN in front of Crafter Engine
+Simple multi-tenancy is the recommended configuration in most cases, with an Apache HTTP server, NGINX, or CDN
+proxying Crafter Engine.
 
 ------------------------------
 Configure Simple Multi-Tenancy
