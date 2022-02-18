@@ -279,7 +279,6 @@ To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>
         id: org.craftercms.blueprint.editorial
         name: Website Editorial Blueprint
       ...
-      searchEngine: Elasticsearch
       parameters:
         - label: Access Key
           name: accessKey
