@@ -324,4 +324,4 @@ Now that we have our controller, we just need to add code to the freemarker temp
 
 |
 
-As you can see from the controller we just added, the controller is used to customize your page by enabling you to run codes before the page is rendered.  To find out more about groovy APIs in Crafter CMS, please see the section :ref:`groovy-api`.
+As you can see from the controller we just added, the controller is used to customize your page by enabling you to run codes before the page is rendered.  To find out more about groovy APIs in CrafterCMS, please see the section :ref:`groovy-api`.

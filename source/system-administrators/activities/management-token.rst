@@ -8,10 +8,10 @@
 Management Tokens
 =================
 
-Crafter CMS uses authorization tokens for the Studio, Engine, Deployer, Search, Profile and Social modules.
+CrafterCMS uses authorization tokens for the Studio, Engine, Deployer, Search, Profile and Social modules.
 These tokens need to be passed as a parameter when using context (``/api/1/site/context/*``), cache (``/api/1/site/cache/*``) and monitoring (``/api/1/monitoring/*``, ``/studio/api/2/monitoring/*``, ``/crafter-profile/api/1/monitoring/*`` and ``/crafter-social/api/3/monitoring/*``) APIs, to allow access to the APIs.
 
-Crafter CMS provides default values for the tokens.
+CrafterCMS provides default values for the tokens.
 To change the default management authorization tokens, open ``bin/crafter-setenv.sh`` and change ``defaultManagementToken`` to desired token value:
 
     .. code-block:: sh

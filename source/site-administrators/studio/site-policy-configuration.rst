@@ -11,7 +11,7 @@ Site Policy Configuration
 The site policy configuration file allows the user to configure conditions for content being added to the site, such as
 minimum/maximum size of files, etc.
 
-Crafter CMS supports the following site policies:
+CrafterCMS supports the following site policies:
 
 - Filename allowed patterns and automatic renaming rules
 - File size limits

@@ -12,7 +12,7 @@ the availability of the external service. Further, if the response of the extern
 then there may be no real need to call out to it on each request you receive.
 
 In this case what you want to do is cache the request from the external service and have your service attempt to get the content from the cache.
-Active cache is a built in Crafter CMS capability that makes building these sort of solutions much easier.
+Active cache is a built in CrafterCMS capability that makes building these sort of solutions much easier.
 You tell Active Cache what you want, how to get it and how often to refresh it in the background.  From there on, you
 simply ask Active cache for whatever the current response is.
 

@@ -104,7 +104,7 @@ It is also possible to change the prefix and names for the headers:
 |
 
    .. note::
-      For Crafter CMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` and can't be changed via site configuration
+      For CrafterCMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` and can't be changed via site configuration
 
 
 The default value of the token is ``my_secure_token``.  Remember to replace the default value by setting

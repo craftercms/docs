@@ -22,7 +22,7 @@ The main files for configuring Crafter Engine are the following:
 | logging.xml                   | Contains loggers, appenders, etc.                              |
 +-------------------------------+----------------------------------------------------------------+
 
-These configuration files for Crafter Engine is located under  ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension``, where ``CRAFTER_HOME`` is the install directory of your Crafter CMS authoring or delivery environment.
+These configuration files for Crafter Engine is located under  ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension``, where ``CRAFTER_HOME`` is the install directory of your CrafterCMS authoring or delivery environment.
 
 The files can be accessed by opening the files using your favorite editor.  Any changes made to any of the files listed above will require a restart of Crafter.
 

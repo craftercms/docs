@@ -78,15 +78,15 @@ Processor that clones/pulls a remote Git repository into a local path in the fil
 ||Branch|    |           |The default branch in the repo |The branch of the remote Git repo to pull                    |
 +------------+-----------+-------------------------------+-------------------------------------------------------------+
 ||username|  |           |                               |The username for authentication with the remote Git repo.    |
-|            |           |                               |Not needed when SSH with RSA key pair authentication is used |
+|            |           |                               |Not needed when SSH with key pair authentication is used     |
 +------------+-----------+-------------------------------+-------------------------------------------------------------+
 ||password|  |           |                               |The password for authentication with the remote Git repo.    |
-|            |           |                               |Not needed when SSH with RSA key pair authentication is used |
+|            |           |                               |Not needed when SSH with key pair authentication is used     |
 +------------+-----------+-------------------------------+-------------------------------------------------------------+
-||path|      |           |                               |The SSH private key path, used only with SSH with RSA key    |
+||path|      |           |                               |The SSH private key path, used only with SSH with key        |
 |            |           |                               |pair authentication                                          |
 +------------+-----------+-------------------------------+-------------------------------------------------------------+
-||passphrase||           |                               |The SSH private key passphrase, used only with SSH withRSA   |
+||passphrase||           |                               |The SSH private key passphrase, used only with SSH with      |
 |            |           |                               |key pair authentication                                      |
 +------------+-----------+-------------------------------+-------------------------------------------------------------+
 ||failDep|   |           |``true``                       |Enables failing a deployment when there's a processor failure|
@@ -107,7 +107,7 @@ Processor that clones/pulls a remote Git repository into a local path in the fil
 
 .. code-block:: yaml
   :linenos:
-  :caption: *Git Pull Processor using SSH with RSA key pair*
+  :caption: *Git Pull Processor using SSH with key pair*
 
   - processorName: gitPullProcessor
     remoteRepo:
@@ -174,15 +174,15 @@ Processor that pushes a local repo to a remote Git repository.
 ||Branch|    |           |The default branch in the repo |The branch of the remote Git repo to push to                |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
 ||username|  |           |                               |The username for authentication with the remote Git repo.   |
-|            |           |                               |Not needed when SSH with RSA key pair authentication is used|
+|            |           |                               |Not needed when SSH with key pair authentication is used    |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
 ||password|  |           |                               |The password for authentication with the remote Git repo.   |
-|            |           |                               |Not needed when SSH with RSA key pair authentication is used|
+|            |           |                               |Not needed when SSH with key pair authentication is used    |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-||path|      |           |                               |The SSH private key path, used only with SSH with RSA key   |
+||path|      |           |                               |The SSH private key path, used only with SSH with key       |
 |            |           |                               |pair authentication                                         |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
-||passphrase||           |                               |The SSH private key passphrase, used only with SSH withRSA  |
+||passphrase||           |                               |The SSH private key passphrase, used only with SSH with     |
 |            |           |                               |key pair authentication                                     |
 +------------+-----------+-------------------------------+------------------------------------------------------------+
 |``force``   |           |``false``                      |Sets the force preference for the push                      |
@@ -205,7 +205,7 @@ Processor that pushes a local repo to a remote Git repository.
 
 .. code-block:: yaml
   :linenos:
-  :caption: *Git Push Processor using SSH with RSA key pair*
+  :caption: *Git Push Processor using SSH with key pair*
 
   - processorName: gitPushProcessor
     remoteRepo:

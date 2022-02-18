@@ -1,10 +1,10 @@
 :is-up-to-date: True
 
-===========================
-Troubleshooting Crafter CMS
-===========================
+==========================
+Troubleshooting CrafterCMS
+==========================
 
-This section details common problems you might encounter with Crafter CMS and how to solve them.
+This section details common problems you might encounter with CrafterCMS and how to solve them.
 
 .. toctree::
    :maxdepth: 1

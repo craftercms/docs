@@ -16,13 +16,17 @@ In this section, we'll show the basics of interacting with Crafter Studio APIs b
 
 We’ll use CURL, a ubiquitous Linux command tool as our client.
 
-You can find the full Crafter Studio API for Crafter CMS :ref:`here<crafter-studio-api>`
+You can find the full Crafter Studio API for CrafterCMS :ref:`here<crafter-studio-api>`
 
 Let's begin:
 
 #. **Authentication**
 
    There are two authentication methods that can be used: JWT and HTTP Basic
+
+   .. _access-tokens:
+
+   **JWT Authentication**
 
    JWT is a widely adopted standard for secure authentication and is the preferred way.
    HTTP Basic is simple but not as secure as JWT and for that reason it is disabled by default. However, it can be very
@@ -40,8 +44,8 @@ Let's begin:
 
    |
 
-   If you already have an access token you can skip to step 5, otherwise follow all steps to create a new
-   token:
+   If you already have an access token you can skip to step 5, otherwise follow all steps to **create a new
+   token**:
 
    1. Login to Crafter Studio
 
@@ -105,7 +109,8 @@ Let's begin:
       ``curl -H 'Authentication: Bearer <access token>' ...``
 
    |
-   |
+
+   .. _http-basic-authentication:
 
    **HTTP Basic Authentication**
 
@@ -132,32 +137,6 @@ Let's begin:
       ``--user`` or ``-u``
 
       ``curl -u <username>:<password> ...``
-
-      .. note::
-
-         When using Spring Security (HTTP basic auth), the session id changes by default after logging in.  Remember to make your application aware of the  session id change by picking up the new session.
-
-         Let's take a look at an example.  We'll login first, then validate the session.  Take note of the session id change after sending the second curl command below:
-
-         .. code-block:: bash
-            :caption: *Login and note the session id stored in session.txt*
-
-            curl -d '{ "username":"admin", "password":"admin" }' --cookie-jar session.txt --cookie "XSRF-TOKEN=A_VALUE" --header "X-XSRF-TOKEN:A_VALUE" --header "Content-Type: application/json" -X POST http://localhost:8080/studio/api/1/services/api/1/security/login.json --insecure
-
-         |
-
-         .. code-block:: bash
-            :caption: *Notice the session id has changed in session.txt*
-
-             curl -v --cookie-jar session.txt --cookie session.txt --cookie "XSRF-TOKEN=A_VALUE" --header "X-XSRF-TOKEN:A_VALUE" --header "Content-Type: application/json" -X GET "http://localhost:8080/studio/api/1/services/api/1/security/validate-session.json" --insecure
-
-         |
-
-         See  https://docs.spring.io/spring-security/site/faq/faq.html#faq-new-session-on-authentication
-
-            *Why does the session Id change when I authenticate through Spring Security?*
-
-            With the default configuration, Spring Security invalidates the existing session when the user authenticates and creates a new one, transferring the session data to it. The intention is to change the session identifier to prevent “session-fixation” attacks. You can find more about this online and in the reference manual.
 
 #. **Get a list of projects under management**
 
@@ -193,7 +172,7 @@ Let's begin:
 
    In the call above note:
 
-   We are passing in content as the POST body.  The content is in XML format.  In Crafter CMS, content objects are stored as simple XML documents.
-   We are passing a number of parameters that tell Crafter CMS where and how to store the content in the repository
+   We are passing in content as the POST body.  The content is in XML format.  In CrafterCMS, content objects are stored as simple XML documents.
+   We are passing a number of parameters that tell CrafterCMS where and how to store the content in the repository
 
 Using the above examples as a guide, we can now interact with any Crafter Studio API found :ref:`here<crafter-studio-api>`

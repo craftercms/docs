@@ -8,15 +8,15 @@
 Publishing Assets in External Storage
 =====================================
 
-Crafter CMS supports managing assets in external storage through workflow and publishing mechanics.
+CrafterCMS supports managing assets in external storage through workflow and publishing mechanics.
 This allows uploading assets to an external storage for preview, that can then be published to either a live or a staging (depending on if staging is setup for your Crafter install) external storage, thus making the external assets available to delivery only after the assets have been published to the live external storage.
 
-The external storage could be in the cloud, such as AWS S3 or some other storage solution that is outside of where Crafter CMS is installed.
+The external storage could be in the cloud, such as AWS S3 or some other storage solution that is outside of where CrafterCMS is installed.
 
 --------------------------------
 Configuring the External Storage
 --------------------------------
-First we'll need to setup the external storage to be used by Crafter CMS.
+First we'll need to setup the external storage to be used by CrafterCMS.
 To setup an external storage for assets, open the **Sidebar**, then click on |siteConfig| -> *Configurations*.  Select ``Blob Stores`` from the dropdown and fill in the required information.
 
 .. code-block:: xml

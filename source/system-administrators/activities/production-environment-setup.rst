@@ -1,14 +1,14 @@
 :is-up-to-date: True
 
-.. index:: Setting up a Crafter CMS production environment, Production Environment
+.. index:: Setting up a CrafterCMS production environment, Production Environment
 
 .. _production-environment-setup:
 
-===============================================
-Setting up a Crafter CMS production environment
-===============================================
+==============================================
+Setting up a CrafterCMS production environment
+==============================================
 
-This section lets you get started on setting up your Crafter CMS for production. A production environment normally consists of one authoring instance
+This section lets you get started on setting up your CrafterCMS for production. A production environment normally consists of one authoring instance
 and one or more delivery instances.
 
 Before we begin, please review the following for requirements and supported platforms: :ref:`requirements_supported_platforms`
@@ -25,13 +25,13 @@ Setting up the production environment
       `./gradlew clone build deploy -Penv=authoring`
       `./gradlew start -Penv=authoring`
 
-#. Create your site in authoring. You can follow the guide :ref:`your_first_website` to use one of the out-of-the-box blueprints provided by Crafter CMS.
+#. Create your site in authoring. You can follow the guide :ref:`your_first_website` to use one of the out-of-the-box blueprints provided by CrafterCMS.
 
 #. Now that you have a site setup in authoring, the next thing to do is to setup your site in the delivery instance(s).  Let's begin the delivery installation.
 
-   Installing the delivery instance is almost the same as installing the authoring instance.  The difference is, if you're installing from a zip or archive built
-   by the gradle environment builder, you need to download/use ``crafter-cms-delivery-3.1.X.tar.gz``.  Follow the same steps used to
-   install your authoring environment using the delivery zip files.
+   Installing the delivery instance is almost the same as installing the authoring instance.  The difference is, if you're installing from a binary built
+   by the gradle environment builder, you need to download/use ``crafter-cms-delivery-VERSION.tar.gz``.  Follow the same steps used to
+   install your authoring environment using the delivery tar files.
 
    If using the alternate way of installing craftercms, to install and start the delivery, simply run the following:
 
@@ -39,7 +39,7 @@ Setting up the production environment
       `./gradlew clone build deploy -Penv=delivery`
       `./gradlew start -Penv=delivery`
 
-#. After starting delivery, we'll setup the site we created in step 2 in our delivery instance. Crafter CMS comes with a script, ``init-site.sh``, to help
+#. After starting delivery, we'll setup the site we created in step 2 in our delivery instance. CrafterCMS comes with a script, ``init-site.sh``, to help
    us setup our site for delivery.
 
       `./init-site.sh [options] [site] [repo-path]`
@@ -57,7 +57,7 @@ For more information on using gradle, please see :ref:`crafter-cms`.
 Server Hardware Configuration Consideration
 -------------------------------------------
 
-Crafter CMS performs multiple reads/writes to disk from various concerns such as the database, the repository, logs, etc. with very different I/O patterns.  One of the primary factor for hardware bottlenecks is disk I/O.
+CrafterCMS performs multiple reads/writes to disk from various concerns such as the database, the repository, logs, etc. with very different I/O patterns.  One of the primary factor for hardware bottlenecks is disk I/O.
 
 For optimal performance, the server should have different storage systems (disks) mounted for different concerns, for example:
 
@@ -99,7 +99,7 @@ System Configuration for Elasticsearch
 
 Elasticsearch uses a lot of file descriptors or file handles.  Elasticsearch recommends increasing the number of open file descriptors for the user running Elasticsearch to 65,536 or higher.
 
-Crafter CMS uses the .zip ELasticsearch package.  When using the .zip package, the system settings for increasing the number of open file descriptors can be configured:
+CrafterCMS uses the .zip ELasticsearch package.  When using the .zip package, the system settings for increasing the number of open file descriptors can be configured:
 
 * temporarily with ``ulimit``, or
 * permanently in ``/etc/security/limits.conf``

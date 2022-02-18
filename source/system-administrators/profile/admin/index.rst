@@ -18,9 +18,8 @@ Installation
 New Installation
 ^^^^^^^^^^^^^^^^
 
-You can follow the instructions for building a complete bundle as described
-:ref:`here <installing-craftercms-from-gradle>`, if you add the parameter ``-Pcrafter.profile=true``
-the bundle will contain crafter-profile.war and crafter-profile-admin.war.
+You can follow the instructions for building a complete binary archive of CrafterCMS as described
+`here <https://github.com/craftercms/craftercms/blob/develop/README.md>`__.
 
 ^^^^^^^^^^^^^^^^^^^^^
 Existing Installation
@@ -34,7 +33,7 @@ To deploy the application you only need to move the WAR file into ``$CRAFTER_HOM
 Configuration Guide
 -------------------
 
-Similar to other Crafter CMS components you can configure the Profile Admin Console using a simple
+Similar to other CrafterCMS components you can configure the Profile Admin Console using a simple
 properties file placed in the following location:
 
   ``$CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/profile/management/extension/server-config.properties``

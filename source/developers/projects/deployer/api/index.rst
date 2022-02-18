@@ -22,6 +22,7 @@ Target Management
    target-management/deploy-target
    target-management/deploy-all-targets
    target-management/unlock-target
+   target-management/recreate-index
 
 ----------
 Monitoring

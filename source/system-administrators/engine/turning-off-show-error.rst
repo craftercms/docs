@@ -4,7 +4,7 @@
 Turn Off Show Error
 ===================
 
-Templates in Crafter CMS will display the errors in line with content as they encounter them to help the template developer during the coding process.  On production environments, you do not want the errors to show up because it will highlight site issues and expose information that may be a security concern.  
+Templates in CrafterCMS will display the errors in line with content as they encounter them to help the template developer during the coding process.  On production environments, you do not want the errors to show up because it will highlight site issues and expose information that may be a security concern.  
 
 ------
 Step 1

@@ -10,7 +10,7 @@ Navigating Site Tools
 
 In this section, we discuss the available modules in the |siteConfig| **Sidebar** from any of the available out-of-the-box blueprints.  The modules available in the Site Tools Sidebar can be configured by following :ref:`site-config-tools`
 
-To get to |siteConfig|, click on the **Toggle Sidebar** icon (Crafter CMS logo with hamburger next to it) at the top left of your browser, if it's not yet open.
+To get to |siteConfig|, click on the **Toggle Sidebar** icon (CrafterCMS logo with hamburger next to it) at the top left of your browser, if it's not yet open.
 
 .. image:: /_static/images/site-admin/open-sidebar.png
     :alt: Site Admin - Open Sidebar
@@ -66,7 +66,7 @@ For more information on how to use the encryption tool, see :ref:`nav-menu-encry
 Configuration
 -------------
 
-Configuration allows the user to configure the different settings in Crafter CMS for the site.
+Configuration allows the user to configure the different settings in CrafterCMS for the site.
 
 .. image:: /_static/images/site-admin/site-config-configuration.jpg
     :alt: Site Admin - Site Config Configuration
@@ -146,7 +146,7 @@ For more information on Remote Repositories under |siteConfig|, see :ref:`remote
 GraphiQL
 --------
 
-Crafter CMS provides built-in support for GraphQL to query content in any site without writing additional code.  **GraphiQL** is a simple GraphQL client that you can use in Crafter Studio to run GraphQL queries and explore the schema documentation for a site without the need of any other tool.
+CrafterCMS provides built-in support for GraphQL to query content in any site without writing additional code.  **GraphiQL** is a simple GraphQL client that you can use in Crafter Studio to run GraphQL queries and explore the schema documentation for a site without the need of any other tool.
 
 .. image:: /_static/images/site-admin/site-config-graphiql.jpg
     :alt: Site Admin - Site Config GraohiQL

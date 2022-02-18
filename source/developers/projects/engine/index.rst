@@ -10,7 +10,7 @@ Crafter Engine
 
 Crafter Engine provides content delivery services to power any type of Web or mobile application. It consumes content published through Crafter Studio and provides developers with the foundation for quickly building high-performance, flexible Web and mobile applications.
 
-Building content rich applications backed by Crafter CMS requires you use one of the following APIs to gain access to your content. You have many choices here:
+Building content rich applications backed by CrafterCMS requires you use one of the following APIs to gain access to your content. You have many choices here:
 
 * JavaScript API (great for SPAs and/or AJAX)
 * GraphQL (great for SPAs and/or AJAX)

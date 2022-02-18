@@ -6,7 +6,8 @@
 Migrating a site from Solr to Elasticsearch
 ===========================================
 
-When upgrading to Crafter CMS 4.0 you need to update the code of all existing sites to use Elasticsearch if your site(s) were built to use Solr.
+When upgrading to CrafterCMS 4.0 you need to update the code of all existing sites to use Elasticsearch if your site(s)
+were built to use Solr.
 
 -------------------------
 Updating to Elasticsearch
@@ -16,8 +17,8 @@ To update your site to use Elasticsearch instead of Solr you can follow these st
 
 #. Overwrite the target in the Deployer to use Elasticsearch instead of Solr
 #. Index all existing content in Elasticsearch
-#. Find all references to ``searchService`` in your FreeMarker templates and replace them with the Elasticsearch service
-#. Find all references to ``searchService`` in your Groovy scripts and replace them with the Elasticsearch service
+#. Find all references to ``searchService`` in your FreeMarker templates and replace them with the Elasticsearch client
+#. Find all references to ``searchService`` in your Groovy scripts and replace them with the Elasticsearch client
 #. Delete the unused Solr core if needed (can be done using the Solr Admin UI or the ``data/indexes`` folder)
 #. Update ``craftercms-plugin.yaml`` to use Elasticsearch as the search engine
 
@@ -56,9 +57,9 @@ For delivery environments:
       "template_name": "remote",
       "repo_url": "INSTALL_DIR/data/repos/sites/SITE_NAME/published",
       "repo_branch": "live",
-      
+
       ... any additional settings like git credentials ...
-    
+
       "replace": true
     }'
 
@@ -89,7 +90,7 @@ To reindex all existing content execute the following command:
 Update the site code
 ^^^^^^^^^^^^^^^^^^^^
 
-Because both Solr and Elasticsearch are based on Lucene, you will be able to keep most of your queries unchanged, 
+Because both Solr and Elasticsearch are based on Lucene, you will be able to keep most of your queries unchanged,
 however features like sorting, facets and highlighting will require code changes.
 
 .. note::
@@ -106,29 +107,6 @@ however features like sorting, facets and highlighting will require code changes
 
 To update your code there are two possible approaches:
 
-#. Use the Elasticsearch Java API:
-
-  - Instead of using a Query object from Crafter Search, use a 
-    `SearchRequest <https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/java-rest-high-search.html>`_ 
-    and a `SearchSourceBuilder <https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/java-rest-high-search.html#_using_the_searchsourcebuilder>`_
-    from Elasticsearch
-  - Instead of using the Solr parameters for sorting, use a 
-    `SortBuilder <https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/java-rest-high-search.html#_specifying_sorting>`_
-    from Elasticsearch
-  - Instead of using the Solr parameters for facets, use the 
-    `AggregationBuilders <https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/java-rest-high-search.html#java-rest-high-search-request-building-aggs>`_ 
-    from Elasticsearch
-  - Instead of using the Solr parameters for highlighting, use a 
-    `HighlightBuilder <https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/java-rest-high-search.html#java-rest-high-search-request-highlighting>`_
-    from Elasticsearch
-
-#. Use the Elasticsearch DSL Query:
-
-  - Instead of using a Query object from Crafter Search, use a simple Groovy map object
-
-In both approaches the result will be a `SearchResponse <https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/java-rest-high-search.html#java-rest-high-search-response>`_
-object from Elasticsearch
-
 **Examples**
 
 This is a basic example of replacing Crafter Search service with Elasticsearch
@@ -140,95 +118,56 @@ This is a basic example of replacing Crafter Search service with Elasticsearch
   def q = "${userTerm}~1 OR *${userTerm}*"
 
   def query = searchService.createQuery()
-        query.setQuery(q)
-        query.setStart(start)
-        query.setRows(rows)
-        query.setParam("sort", "createdDate_dt asc")
-        query.setHighlight(true)
-        query.setHighlightFields(HIGHLIGHT_FIELDS)
+  query.setQuery(q)
+  query.setStart(start)
+  query.setRows(rows)
+  query.setParam("sort", "createdDate_dt asc")
+  query.setHighlight(true)
+  query.setHighlightFields(HIGHLIGHT_FIELDS)
 
   def result = searchService.search(query)
-  
+
   def documents = result.response.documents
-  def highlighting = result.highlighting  
+  def highlighting = result.highlighting
 
-Using the Elasticsearch Java API the code will look like this:
-
-.. code-block:: groovy
-  :linenos:
-  :caption: Elasticsearch Java API
-
-  // Elasticsearch imports
-  import org.elasticsearch.action.search.SearchRequest
-  import org.elasticsearch.index.query.QueryBuilders
-  import org.elasticsearch.search.builder.SearchSourceBuilder
-  import org.elasticsearch.search.sort.FieldSortBuilder
-  import org.elasticsearch.search.sort.SortOrder
-
-  ...
-
-  // Elasticsearch highlight builder
-  def highlighter = SearchSourceBuilder.highlight()
-  HIGHLIGHT_FIELDS.each{ field -> highlighter.field(field) }
-  
-  def q = "${userTerm}~1 OR *${userTerm}*"
-  
-  // Elasticsearch source builder
-  def builder = new SearchSourceBuilder()
-      .query(QueryBuilders.queryStringQuery(q))
-      .from(start)
-      .size(rows)
-      .sort(new FieldSortBuilder("createdDate_dt").order(SortOrder.ASC))
-      .highlighter(highlighter)
-  
-  // Execute the query
-  def result = elasticsearch.search(new SearchRequest().source(builder))
-  
-  // Elasticsearch response (highlight results are part of each SearchHit object)
-  def documents = result.hits.hits
-
-For additional information you can read the official 
-`API documentation <https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/java-rest-high-search.html>`_.  
-
-Using the Elasticsearch Query DSL the code will look like this:
+Using the Elasticsearch Client the code will look like this:
 
 .. code-block:: groovy
   :linenos:
-  :caption: Elasticsearch Query DSL
+  :caption: Elasticsearch Client
 
-  // No additional imports are needed
+  import co.elastic.clients.elasticsearch._types.SortOrder
 
-  def highlighter = []
-  HIGHLIGHT_FIELDS.each{ field -> highlighter[field] = [:] }
-  
   def q = "${userTerm}~1 OR *${userTerm}*"
-  
-  // Execute the query
-  def result = elasticsearch.search([
-    query: [
-      query_string: [
-        query: q as String
-      ]
-    ],
-    from: start,
-    size: rows,
-    sort: [
-      [
-        createdDate_dt: [
-          order: "asc"
-        ]
-      ]
-    ],
-    highlight: [
-      fields: highlighter
-    ]
-  ])
-  
-  // Elasticsearch response (highlight results are part of each SearchHit object)
-  def documents = result.hits.hits
 
-For additional information you can read the official 
-`DSL documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html>`_.
+  // Execute the query
+  def result = elasticsearchClient(r -> r
+    .query(q -> q
+      .queryString(s -> s
+        .query(q as String)
+      )
+    )
+    .from(start)
+    .size(rows)
+    .sort(s -> s
+      .field(f -> f
+        .field(createdDate_dt)
+        .order(SortOrder.Asc)
+      )
+    )
+    .highlight(h -> {
+      HIGHLIGHT_FIELDS.each { field ->
+        h.fields(field, f -> f)
+      }
+    })
+  , Map)
+
+  // Elasticsearch response (highlight results are part of each hit object)
+  def documents = result.hits().hits()
+
+For additional information you can read the official
+`Java Client documentation <https://www.elastic.co/guide/en/elasticsearch/client/java-api-client/current/index.html>`_
+and `DSL documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html>`_.
 
 Notice in the given example that the query string didn't change, you will need to update only the code
 that builds and executes the query. However Elasticsearch provides new query types and features that you
@@ -267,13 +206,10 @@ feature that replaces those fields `Multi-match query <https://www.elastic.co/gu
   :linenos:
   :caption: Elasticsearch query for any field (replacement for ``_text_``)
 
-  [
-    query: [
-      multi_match: [
-        query: "some keywords"
-      ]
-    ]
-  ]
+
+  .multiMatch(m -> m
+    .query('some keywords')
+  )
 
 Elasticsearch also offers the possibility to query fields with postfixes using wildcards
 
@@ -281,28 +217,41 @@ Elasticsearch also offers the possibility to query fields with postfixes using w
   :linenos:
   :caption: Elasticsearch query for specific fields (replacement for ``_text_main_``)
 
-  [
-    query: [
-      multi_match: [
-        query: "some keywords",
-        fields: ["*_t", "*_txt", "*_html"]
-      ]
-    ]
-  ]
+  .multiMatch(m -> m
+    .query('some keywords')
+    .fields('*_t', '*_txt', '*_html')
+  )
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Update "craftercms-plugin.yaml" to use Elasticsearch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Your site has a ``craftercms-plugin.yaml`` file that contains information for use by Crafter CMS.
+Your site has a ``craftercms-plugin.yaml`` file that contains information for use by CrafterCMS.
 We'll have to update the file to use Elasticsearch as the search engine.
 
-Edit your ``craftercms-plugin.yaml``, and change the following property:
+Edit your ``craftercms-plugin.yaml``, and remove the following property:
 
 .. code-block:: yaml
    :caption: *AUTHORING_INSTALL_DIR/data/repos/sites/YOURSITE/sandbox/craftercms-plugin.yaml*
    :linenos:
 
-   searchEngine: Elasticsearch
+   searchEngine: CrafterSearch
 
 And make sure to commit your changes to ``craftercms-plugin.yaml``.
+
+=======================================================
+Migrating a site from the previous Elasticsearch client
+=======================================================
+
+CrafterCMS 4.0 provides two different Elasticsearch clients, this is because Elasticsearch has released a new Java API
+Client to replace the Rest High Level Client and during the transition period both will work. So if you are upgrading
+from CrafterCMS 3.1 and your site already uses Elasticsearch it will continue to work with some small changes, but it
+is highly recommended to migrate to the new client to avoid any issues in future releases when the Rest High Level
+Client is completely removed.
+
+Migrating to the new Elasticsearch client should not require too much effort:
+
+- If the existing code uses the builder classes you will need to replace them with the equivalent in the new client
+- If the existing code uses a map DSL it only needs to be replaced with the new lambda structure
+
+For additional information about the new client you can read the official `documentation <https://www.elastic.co/guide/en/elasticsearch/client/java-api-client/current/api-conventions.html>`_

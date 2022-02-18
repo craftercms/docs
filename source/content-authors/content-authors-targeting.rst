@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 
 .. index:: Targeting
 
@@ -38,7 +38,7 @@ Viewing the site with different segments
 
 The authoring environment can be configured with any number of predefined attributes for targeting. A set of attributes is like a profile, in fact it behaves exactly the same way but instead of setting up and signing in as specific users to test different scenarios authors can simply switch back and forth between the available configured attributes.
 
-To find out the current active targeting attributes, switch ``Edit Mode`` to on (found on the top right of Studio, which then opens the experience panel on the right hand side.  Click on ``Audience Targeting`` and the current attribute values will be displayed in the panel.  You can have as many attributes as you need for your site.  To add other attributes, please see the section :ref:`targeting` in the developer's section of the documentation.
+To find out the current active targeting attributes, switch ``Edit Mode`` to on (pencil icon found on the top right of Studio, which then opens the experience builder panel on the right hand side).  Click on ``Audience Targeting`` and the current attribute values will be displayed in the panel.  You can have as many attributes as you need for your site.  To add other attributes, please see the section :ref:`targeting` in the developer's section of the documentation.
 
 .. image:: /_static/images/page/page-targeting-open.jpg
     :width: 80 %

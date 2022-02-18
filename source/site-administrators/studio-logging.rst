@@ -8,12 +8,12 @@
 Viewing Logs Through Crafter Studio
 ===================================
 
-Various log files are created when running Crafter CMS.  This section details the logs available for viewing through Crafter Studio.
+Various log files are created when running CrafterCMS.  This section details the logs available for viewing through Crafter Studio.
 
 ----------
 Audit Logs
 ----------
-Crafter CMS tracks the date, time, user and action performed to content through an audit log.
+CrafterCMS tracks the date, time, user and action performed to content through an audit log.
 
 To view the audit logs, from the **Sidebar**, click on |siteConfig|, then click on **Audit**
 
@@ -26,11 +26,11 @@ To view the audit logs, from the **Sidebar**, click on |siteConfig|, then click 
 -----------
 Log Console
 -----------
-Crafter CMS has a **Log Console** that allows you to view messages depending on what log levels and what Java packages have been set for tracking.
+CrafterCMS has a **Log Console** that allows you to view messages depending on what log levels and what Java packages have been set for tracking.
 
-To view logs in Crafter Studio, click on |siteConfig| from the **Sidebar**, then click on **Log Console**.  Looking inside the **Log Console**, messages we want to display are setup beforehand.  The messages displayed in the **Log Console** depends on what levels are set for the Java packages being run in Crafter CMS.
+To view logs in Crafter Studio, click on |siteConfig| from the **Sidebar**, then click on **Log Console**.  Looking inside the **Log Console**, messages we want to display are setup beforehand.  The messages displayed in the **Log Console** depends on what levels are set for the Java packages being run in CrafterCMS.
 
-There are 4 log levels defined in Crafter CMS.  These levels determine what messages will be logged and displayed in the **Logging Console**.  Below are the 4 log levels available from the lowest to the highest:
+There are 4 log levels defined in CrafterCMS.  These levels determine what messages will be logged and displayed in the **Logging Console**.  Below are the 4 log levels available from the lowest to the highest:
 
     - debug: displays things useful for debugging
     - info: displays informational messages like progress of the application, etc

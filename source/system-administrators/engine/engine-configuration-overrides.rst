@@ -150,3 +150,18 @@ The Groovy sandbox is enabled by default.
 |
 
 For more information on configuring the Groovy sandbox, see :ref:`here <script-sandbox-configuration>`
+
+--------------------------------------
+Static Methods in Freemarker Templates
+--------------------------------------
+
+The following allows you to configure access to static methods in Freemarker templates.
+Access to static methods in Freemarker templates is disabled by default.
+
+.. code-block:: properties
+   :linenos:
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+   # Indicates if access for static methods should be allowed in Freemarker templates
+   crafter.engine.freemarker.statics.enable=false
+

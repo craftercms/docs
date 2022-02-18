@@ -12,18 +12,20 @@ Blueprints
 What are Blueprints?
 --------------------
 
-Blueprints are Crafter CMS project templates.  It provides an initial set of styles, pages, behaviors, content types and more, containing one or more of the following: content types such as pages and components as described in :ref:`content-modeling`, static assets such as images, videos, etc., and site configuration files for managing items in the blueprint such as taxonomies (categories, segments), roles, permissions, etc.
+Blueprints are CrafterCMS project templates.  It provides an initial set of styles, pages, behaviors, content types and more, containing one or more of the following: content types such as pages and components as described in :ref:`content-modeling`, static assets such as images, videos, etc., and site configuration files for managing items in the blueprint such as taxonomies (categories, segments), roles, permissions, etc.
 
 .. image:: /_static/images/blueprint/blueprint-anatomy.png
    :alt: Cook Books - Blueprint Anatomy
    :width: 65 %
    :align: center
 
-The blueprint that comes out of the box with Crafter CMS, ``Website Editorial Blueprint``, provides us with an initial structure for our site, along with the site navigation, content inheritance, taxonomies for organizing the content such as categories and segments, which is also used for targeting content, static assets such as the initial images and fonts used for the site and configuration files for managing things like the segments for targeting, the permissions for all the items in the site, the role mappings, the RTE configuration, etc.  To see more of the ``Website Editorial Blueprint``, please see :ref:`your_first_website` where we create a site based on the ``Website Editorial Blueprint``.
+|
 
-As mentioned earlier, blueprints allows us to generate sites with predefined layouts, contents and configuration.  Blueprints could be a site theme or an API only site.  New blueprints can be created from a site and added into Crafter CMS allowing the creation of more sites based on the new blueprint.  In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from Crafter CMS and an existing site is used to create a new blueprint.
+The blueprint that comes out of the box with CrafterCMS, ``Website Editorial Blueprint``, provides us with an initial structure for our site, along with the site navigation, content inheritance, taxonomies for organizing the content such as categories and segments, which is also used for targeting content, static assets such as the initial images and fonts used for the site and configuration files for managing things like the segments for targeting, the permissions for all the items in the site, the role mappings, the RTE configuration, etc.  To see more of the ``Website Editorial Blueprint``, please see :ref:`your_first_website` where we create a site based on the ``Website Editorial Blueprint``.
 
-Developers may submit their blueprints to the `Crafter CMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted blueprints are listed, and power users of Crafter CMS can create sites based on marketplace plugins directly from the ``Create Site`` dialog in the CMS. See :ref:`submit-plugin-to-marketplace` for more information on how to submit your blueprint to the marketplace.
+As mentioned earlier, blueprints allows us to generate sites with predefined layouts, contents and configuration.  Blueprints could be a site theme or an API only site.  New blueprints can be created from a site and added into CrafterCMS allowing the creation of more sites based on the new blueprint.  In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from CrafterCMS and an existing site is used to create a new blueprint.
+
+Developers may submit their blueprints to the `CrafterCMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted blueprints are listed, and power users of CrafterCMS can create sites based on marketplace plugins directly from the ``Create Site`` dialog in the CMS. See :ref:`submit-plugin-to-marketplace` for more information on how to submit your blueprint to the marketplace.
 
 -------------------------------
 How do I make my own Blueprint?
@@ -43,21 +45,27 @@ If you have an existing pure HTML template (and if you don't, you can find free 
 	        :alt: Cook Books - Template Anatomy
 	        :align: center
 
+|
+
 Generally, pure HTML templates have a file structure similar to the picture above. To start, you'll want to copy all files except for ``index.html`` and any other ``.html`` files to your site's ``static-assets`` like this:
 
 .. image:: /_static/images/blueprint/blueprint-template-static-assets.png
-	        :width: 65%
+	        :width: 45%
 	        :alt: Copy folders to static-assets
 	        :align: center
 
+|
+
 HTML files will become Freemarker templates. For this cookbook, you'll see how to adapt an index.html page, then you'll be able to adapt other pages. Start by editing the main page's ftl template, and replacing its contents with the ``index.html``'s contents:
 
-.. image:: /_static/images/blueprint/blueprint-edit-freemarker.png
-	        :width: 65%
+.. image:: /_static/images/blueprint/blueprint-edit-freemarker.jpg
+	        :width: 45%
 	        :alt: Copy index.html contents to page ftl file.
 	        :align: center
 
-You should keep ``<#import "/templates/system/common/cstudio-support.ftl" as studio />`` at the very start, and add ``<@studio.toolSupport/>`` right before the ``body`` tag closes to have proper Studio support. Next, all resource locations are probably pointing to the wrong location. To fix this, replace every relative url that doesn't point to a page (this would include ``<link rel="stylesheet" href="`` tags for CSS files, ``<script src="`` for JS files, ``<img src="`` for image files, and ``<source src="`` for video and sound files) such that it starts with ``/static-assets/`` and points to the corresponding file.
+|
+
+You should keep ``<#import "/templates/system/common/crafter.ftl" as crafter />`` at the very start to have proper Studio support. Next, all resource locations are probably pointing to the wrong location. To fix this, replace every relative url that doesn't point to a page (this would include ``<link rel="stylesheet" href="`` tags for CSS files, ``<script src="`` for JS files, ``<img src="`` for image files, and ``<source src="`` for video and sound files) such that it starts with ``/static-assets/`` and points to the corresponding file.
 
 Modify the Rich Text Editor configuration so it uses your template's stylesheets. See :ref:`rte-configuration`
 
@@ -94,8 +102,7 @@ Here are some best practices to help you:
             </paths>
 
        * You can also use this to enforce single page blueprints by using ``<excludes> <pattern>^/.*</pattern> </excludes>`` in your page type's config.xml, effectively forbidding from creating a new page.
-    * Ensure your blueprint supports :ref:`in-context-editing`.
-    * For most sites, you'll have to override Studio's default navigation menu tags. You can do this by reading :ref:`templating-rendering-navigation`.
+    * Ensure your blueprint supports :ref:`experience-builder`.
 
 Above all, blueprints should be usable and simple.
 
@@ -122,6 +129,8 @@ Your site exists in ``{CRAFTER_HOME}/data/repos/sites/your-site-name``. Inside, 
 	        :width: 100%
 	        :alt: Copy ``scripts/``, ``site/``, ``static-assets/``, ``templates/``
 	        :align: center
+
+|
 
 In the previous screenshot, we didn't copy the ``config/`` folder. Why? (:ref:`Warnings <blueprint-site-vs-blueprint>`). You can either:
 
@@ -166,7 +175,7 @@ Installing
 Adding a default image for a blueprint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Crafter CMS uses a default path for Crafter CMS to look for a default representative image of a plugin or blueprint, the url ``../.crafter/screenshots/default.png``
+CrafterCMS uses a default path for CrafterCMS to look for a default representative image of a plugin or blueprint, the url ``../.crafter/screenshots/default.png``
 
 In the ``Sites`` screen where your sites are listed, if your site displays an image with the message **Screenshot not Set**, this means that there is no default image  under the ``.crafter/screenshots/`` folder in your blueprint:
 
@@ -219,7 +228,7 @@ All blueprints need to include a plugin descriptor as described in :ref:`crafter
 
 Passing Parameters to Blueprints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Some parameters may need to be passed to the blueprint instead of left in the blueprint, say, AWS credentials, Box credentials, CommerceTools credentials, etc.  Crafter CMS supports passing parameters to blueprints during creation.
+Some parameters may need to be passed to the blueprint instead of left in the blueprint, say, AWS credentials, Box credentials, CommerceTools credentials, etc.  CrafterCMS supports passing parameters to blueprints during creation.
 
 To add parameters to be passed to blueprints, simply add the following to the ``craftercms-plugin.yaml`` file
 
@@ -259,7 +268,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>
       :caption: *{CRAFTER_HOME}/data/repos/global/blueprints/1000_website_editorial/craftercms-plugin.yaml*
       :emphasize-lines: 13-31
 
-      # This file describes a plugin for use in Crafter CMS
+      # This file describes a plugin for use in CrafterCMS
 
       # The version of the format for this file
       descriptorVersion: 2

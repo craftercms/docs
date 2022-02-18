@@ -27,7 +27,7 @@ To define the connection between MongoDB and Engine, add the URI in the config f
 
 where:
    * {host} - required, server address to connect to
-   * {port} - optional, with a default value of :27020 in Crafter CMS Authoring
+   * {port} - optional, with a default value of :27020 in CrafterCMS Authoring
    * {database} - optional, name of the database to authenticate if the connection string includes authentication credentials.
 
 For more details on the Connection String URI format, see https://docs.mongodb.com/manual/reference/connection-string/
