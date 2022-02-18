@@ -1,33 +1,30 @@
 :is-up-to-date: True
 
-.. index:: Setup a Two Node Cluster with Studio and a Studio Arbiter, Clustering with Studio Example
+.. index:: Setup a Two Node Cluster with Studio, Clustering with Studio Example
 
-.. _setup-a-two-node-cluster-with-studio-and-a-studio-arbiter:
+.. _setup-a-two-node-cluster-with-studio:
 
-==========================================================================
-Setup a Two Node Cluster with Studio and a Studio Arbiter |enterpriseOnly|
-==========================================================================
+=====================================================
+Setup a Two Node Cluster with Studio |enterpriseOnly|
+=====================================================
 
-Let's take a look at an example of how to setup a two node cluster with Studio and a Studio Arbiter.
+Let's take a look at an example of how to setup a two node cluster with Studio.
 
 To setup a two node cluster with Studio we'll need to do the following:
 
 #. Configure Nodes in the Cluster
 #. Start the Nodes in the Cluster
-#. Setup and Run the Studio Arbiter
 
 ------------
 Requirements
 ------------
 
-* At least 3 servers running Linux (Remember that Studio's cluster runs only in Linux)
-* Enterprise version of CrafterCMS
-* If using an enterprise CrafterCMS installed from a binary archive, ``Git`` is required by
-  CrafterCMS and may need to be installed if not already installed in the server.
+* At least 2 servers running Linux (Remember that Studio's cluster runs only in Linux)
+* Enterprise version of Crafter CMS
+* If using an enterprise Crafter CMS installed from a binary archive, ``Git`` is required by
+  Crafter CMS and may need to be installed if not already installed in the server.
 * Studio's clustering requires the ``libssl1.0.0`` (or ``libssl1.0.2``) shared library.
   Some Linux distros does not come with the library pre-installed and may need to be installed.
-
-.. TODO:: Validate if git is required for enterprise CrafterCMS installed from a binary archive
 
 --------------------------------
 Configuring Nodes in the Cluster
@@ -131,7 +128,7 @@ Configuring Nodes in the Cluster
       studio.db.cluster.grastate.location: ${studio.db.dataPath}/grastate.dat
       # DB cluster name
       studio.db.cluster.name: ${env:MARIADB_CLUSTER_NAME}
-      # Count for the number of Studio cluster members (without counting the arbiter)
+      # Count for the number of Studio cluster members
       studio.db.cluster.nodes.count: ${env:MARIADB_CLUSTER_NODE_COUNT}
       # DB cluster address of the local node (which will be seen by other members of the cluster)
       studio.db.cluster.nodes.local.address: ${env:MARIADB_CLUSTER_NODE_ADDRESS}
@@ -157,9 +154,8 @@ Configuring Nodes in the Cluster
    .. code-block:: sh
       :caption: *bin/crafter-setenv.sh*
 
-      # Uncomment to enable clustering of Studio
-      export SPRING_PROFILES_ACTIVE=crafter.studio.dbCluster
-
+      # Uncomment to enable primary/replica clustering
+      export SPRING_PROFILES_ACTIVE=crafter.studio.dbClusterPrimaryReplica
       ...
 
       # -------------------- Cluster variables -------------------
@@ -170,18 +166,39 @@ Configuring Nodes in the Cluster
       export MARIADB_CLUSTER_NODE_COUNT=${MARIADB_CLUSTER_NODE_COUNT:="2"}
       export MARIADB_CLUSTER_NODE_ADDRESS=${MARIADB_CLUSTER_NODE_ADDRESS:="$(hostname -i)"}
       export MARIADB_CLUSTER_NODE_NAME=${MARIADB_CLUSTER_NODE_NAME:="$(hostname)"}
-      export MARIADB_CLUSTER_RETRY_AUTOCOMMIT=${MARIADB_CLUSTER_RETRY_AUTOCOMMIT:="5"}
+      # Uncomment to enable primary/replica clustering
+      # CRAFTER_DB_CLUSTER_SERVER_ID must have different value across cluster nodes. Value is numeric with range 1 to 4294967295
+
+      IP="$CLUSTER_NODE_ADDRESS"
+
+      OCTET_0=`expr match "$IP" '\([0-9]\+\)\..*'`
+      OCTET_1=`expr match "$IP" '[0-9]\+\.\([0-9]\+\)\..*'`
+      OCTET_2=`expr match "$IP" '[0-9]\+\.[0-9]\+\.\([0-9]\+\)\..*'`
+      OCTET_3=`expr match "$IP" '[0-9]\+\.[0-9]\+\.[0-9]\+\.\([0-9]\+\)'`
+
+
+      BIN=$(($((OCTET_0 * $((256**3))))+$((OCTET_1 * $((256**2))))+$((OCTET_2 * 256))+$((OCTET_3 * 1))))
+
+      # CRAFTER_DB_CLUSTER_SERVER_ID must have different value across cluster nodes. Value is numeric with range 1 to 4294967295
+      export CRAFTER_DB_CLUSTER_SERVER_ID=${CRAFTER_DB_CLUSTER_SERVER_ID:="$BIN"}
+      # Cluster bin log base name for primary replica replication
+      export CRAFTER_DB_CLUSTER_LOG_BASENAME=${CRAFTER_DB_CLUSTER_LOG_BASENAME:="crafter_cluster"}
+      # Cluster wait interval for replica to be ready on startup
+      export CRAFTER_DB_CLUSTER_REPLICA_READY_WAIT_INTERVAL=${CRAFTER_DB_CLUSTER_REPLICA_READY_WAIT_INTERVAL:="30000"}
+      # Database replication user
+      export MARIADB_REPLICATION_USER=${MARIADB_REPLICATION_USER:="crafter_replication"}
+      # Database replication password
+      export MARIADB_REPLICATION_PASSWD=${MARIADB_REPLICATION_PASSWD:="crafter_replication"}
 
    |
 
    where:
 
-   - **SPRING_PROFILES_ACTIVE**: with the value ``crafter.studio.dbCluster``, enables clustering
+   - **SPRING_PROFILES_ACTIVE**: with the value ``crafter.studio.dbClusterPrimaryReplica``, enables primary/replica clustering
    - **CLUSTER_NODE_ADDRESS**: hostname or IP of the local node to be registered in the Git repository cluster, should
      be reachable to other cluster members.
    - **MARIADB_CLUSTER_NAME**: name of the MariaDB cluster.
-   - **MARIADB_CLUSTER_NODE_COUNT**: the number of Studio nodes in the cluster. The Studio Arbiter node is not included
-     in the count.
+   - **MARIADB_CLUSTER_NODE_COUNT**: the number of Studio nodes in the cluster.
    - **MARIADB_CLUSTER_NODE_ADDRESS**: hostname of IP of the local node to be registered to the MariaDB cluster, should
      be reachable to other cluster members.
    - **MARIADB_CLUSTER_NODE_NAME**: name of cluster node to be registered to the MariaDB cluster.
@@ -208,8 +225,8 @@ Configuring Nodes in the Cluster
             tcp-ip:
               enabled: true
               member-list:
-                - 192.168.1.100
-                - 192.168.1.101
+                - 192.168.56.1
+                - 192.168.56.114
 
    |
 
@@ -250,46 +267,43 @@ timeout in :ref:`studio-config-override.yaml <studio-configuration-files>`, unde
 To check that the cluster is up, you can inspect the ``$CRAFTER_HOME/logs/tomcat/catalina.out`` of the nodes for
 the following entries:
 
-- Bootstrap of the DB cluster (one of the nodes):
+- Primary starting up (one of the nodes):
 
   .. code-block:: none
 
-    [INFO] 2020-04-08T18:00:06,140 [localhost-startStop-1] [cluster.DbClusterSynchronizationServiceImpl] | Synchronizing startup of node 192.168.28.251 with DB cluster 'studio_db_cluster'
-    [INFO] 2020-04-08T18:00:06,192 [localhost-startStop-1] [cluster.DbClusterSynchronizationServiceImpl] | All 2 DB cluster members have started up
-    [INFO] 2020-04-08T18:00:06,218 [localhost-startStop-1] [cluster.DbClusterSynchronizationServiceImpl] | DB cluster is new. This node will bootstrap the cluster
-    [INFO] 2020-04-08T18:00:06,220 [localhost-startStop-1] [cluster.DbClusterSynchronizationServiceImpl] | Local DB cluster node will bootstrap cluster
+    [INFO] 2022-01-28T18:07:54,009 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Synchronizing startup of node 192.168.56.1 with DB cluster 'studio_db_cluster'
+    28-Jan-2022 18:07:54.016 INFO [main] com.hazelcast.internal.partition.impl.PartitionStateManager.null [192.168.56.1]:5701 [dev] [4.2.4] Initializing cluster partition table arrangement...
+    [INFO] 2022-01-28T18:07:54,178 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Waiting for initial report of all 2 DB cluster members...
 
     ...
 
-    [INFO] 2020-04-08T18:00:06,524 [localhost-startStop-1] [mariadb4j.DB] | Database startup complete.
-    [INFO] 2020-04-08T18:00:06,615 [localhost-startStop-1] [cluster.DbClusterSynchronizationServiceImpl] | Local DB cluster node is synced
+    [INFO] 2022-01-28T18:08:24,237 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Waiting for initial report of all 2 DB cluster members...
+    [INFO] 2022-01-28T18:08:54,241 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | All 2 DB cluster members have started up
+    [ERROR] 2022-01-28T18:08:54,242 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] |
 
-    ...
+    DbPrimaryReplicaClusterMember {address='192.168.56.1', port='33306', name='192.168.56.1', status='null', timestamp=1643389674007, primary=false, file='null', position=0, replica=false, ioRunning='null', sqlRunning='null', secondsBehindMaster=9223372036854775807}
 
-    [INFO] 2020-04-08T18:00:11,915 [localhost-startStop-1] [cluster.DbClusterSynchronizationServiceImpl] | Context refreshed. Status of DB cluster node will switch to 'Active'
+
+    [INFO] 2022-01-28T18:08:54,251 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Local DB cluster node will start primary.
+    [INFO] 2022-01-28T18:08:54,252 [main] [mariadb4j.DB] | Starting up the database...
 
   |
 
-- Rest of the nodes joining the cluster:
+- Rest of the nodes:
 
   .. code-block:: none
 
-    [INFO] 2020-04-08T17:59:59,026 [localhost-startStop-1] [cluster.DbClusterSynchronizationServiceImpl] | Synchronizing startup of node 192.168.10.29 with DB cluster 'studio_db_cluster'
-    [INFO] 2020-04-08T17:59:59,459 [localhost-startStop-1] [cluster.DbClusterSynchronizationServiceImpl] | Waiting for initial report of all 2 DB cluster members...
-    [INFO] 2020-04-08T18:00:29,466 [localhost-startStop-1] [cluster.DbClusterSynchronizationServiceImpl] | All 2 DB cluster members have started up
-    [INFO] 2020-04-08T18:00:29,492 [localhost-startStop-1] [cluster.DbClusterSynchronizationServiceImpl] | This DB cluster node is new, and cluster is already being bootstrapped by another node
-    [INFO] 2020-04-08T18:00:29,495 [localhost-startStop-1] [cluster.DbClusterSynchronizationServiceImpl] | Waiting for DB cluster to bootstrap...
-    [INFO] 2020-04-08T18:00:59,499 [localhost-startStop-1] [cluster.DbClusterSynchronizationServiceImpl] | DB cluster bootstrapped
-    [INFO] 2020-04-08T18:00:59,501 [localhost-startStop-1] [cluster.DbClusterSynchronizationServiceImpl] | Local DB cluster node will join cluster gcomm://192.168.28.251
+    [INFO] 2022-01-28T18:08:28,078 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Synchronizing startup of node 192.168.56.114 with DB cluster 'studio_db_cluster'
+    [INFO] 2022-01-28T18:08:28,153 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Waiting for initial report of all 2 DB cluster members...
+    [INFO] 2022-01-28T18:08:58,167 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | All 2 DB cluster members have started up
+    [ERROR] 2022-01-28T18:08:58,169 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] |
 
-    ...
+    DbPrimaryReplicaClusterMember {address='192.168.56.114', port='33306', name='192.168.56.114', status='null', timestamp=1643389708075, primary=false, file='null', position=0, replica=false, ioRunning='null', sqlRunning='null', secondsBehindMaster=9223372036854775807}
 
-    [INFO] 2020-04-08T18:01:04,063 [localhost-startStop-1] [mariadb4j.DB] | Database startup complete.
-    [INFO] 2020-04-08T18:01:04,165 [localhost-startStop-1] [cluster.DbClusterSynchronizationServiceImpl] | Local DB cluster node is synced
 
-    ...
-
-    [INFO] 2020-04-08T18:01:09,266 [localhost-startStop-1] [cluster.DbClusterSynchronizationServiceImpl] | Context refreshed. Status of DB cluster node will switch to 'Active'
+    [INFO] 2022-01-28T18:08:58,183 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | Waiting for primary to start...
+    [INFO] 2022-01-28T18:09:28,195 [main] [cluster.DbPrimaryReplicaClusterSynchronizationServiceImpl] | primary started
+    [INFO] 2022-01-28T18:09:28,202 [main] [mariadb4j.DB] | Starting up the database...
 
   |
 
@@ -315,62 +329,5 @@ nodes and verifying that your cluster size is 2:
       | wsrep_cluster_size | 2     |
       +--------------------+-------+
       1 row in set (0.001 sec)
-
-   |
-
-------------------------
-Setup the Studio Arbiter
-------------------------
-
-Whenever the number of Studios in the cluster is an even number, the Studio Arbiter needs to be started.
-To setup the Studio Arbiter:
-
-.. note:: Studio Arbiter can't run on any authoring server because it needs to use the same ports that Studio uses.
-
-|
-
-#. Copy the Studio Arbiter executable to a new server, the file is located at:
-
-   ``$CRAFTER_HOME/bin/studio-arbiter/studio-arbiter.jar``
-
-#. Configure the Arbiter by setting the following environment variables:
-
-   - ``CLUSTER_NAME``: The name of the cluster to join (defaults to ``studio_db_cluster``)
-   - ``HAZELCAST_CONFIG``: The path for the Hazelcast YAML configuration (defaults to ``config/hazelcast-config.yaml``)
-
-   |
-
-   .. code-block:: bash
-      :caption: Example configuration for the Studio Arbiter
-
-      # Studio Arbiter configuration
-      export CLUSTER_NAME=studio_db_cluster
-      export HAZELCAST_CONFIG=/opt/studio-arbiter/config/hazelcast-config.yaml
-
-   |
-
-#. Run the arbiter ``java -jar studio-arbiter.jar``. To check that the arbiter is running and part of the
-   cluster, you can check the cluster size by logging into MariaDB from one of the Studio nodes and verify
-   that your cluster size is now 3:
-
-#. From the command line in the server, go to ``$CRAFTER_HOME/bin/dbms/bin`` and run the ``mysql`` program
-
-   .. code-block:: bash
-
-      ./mysql -S /tmp/MariaDB4j.33306.sock
-
-   |
-
-#. Inside the MySQL client, run ``show status like 'wsrep_cluster_size'``:
-
-   .. code-block:: none
-
-      MariaDB [(none)]> show status like 'wsrep_cluster_size';
-      +---------------------+-------+
-      | Variable_name       | Value |
-      +---------------------+-------+
-      | wsrep_cluster_size  | 3     |
-      +---------------------+-------+
-      1 row in set (0.000 sec)
 
    |
