@@ -178,7 +178,8 @@ Here are some examples of plugins that run inside the Studio UI, and plugins tha
    studio/plugin-experience-builder-example
    studio/plugin-toolbar-example
    studio/plugin-dashboard-example
-   studio/plugin-sitetools-example
+   studio/plugin-projecttools-example
+   studio/plugin-navmenu-example
    studio/form-control-plugins
    studio/form-data-source-plugins
    studio/plugin-host-page-examples

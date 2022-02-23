@@ -8,7 +8,9 @@
 Crafter Studio Experience Builder Plugin Example
 ================================================
 
-The Experience Builder panel is the panel on the right of Studio that is enabled by clicking on ``Edit mode`` (pencil icon) or ``Move mode`` (two vertical ellipsis icon) on the top right of Studio or, by hitting the ``e`` or ``m`` key on your keyboard
+The Experience Builder panel is the panel on the right of Studio that is enabled by clicking on
+``Edit mode`` (pencil icon) or ``Move mode`` (two vertical ellipsis icon) on the top right of
+Studio or, by hitting the ``e`` or ``m`` key on your keyboard
 
 .. image:: /_static/images/developer/plugins/site-plugins/experience-builder-panel.jpg
    :align: center
@@ -17,67 +19,54 @@ The Experience Builder panel is the panel on the right of Studio that is enabled
 
 |
 
-Let's take a look at an example of creating an experience builder panel plugin in Studio using a site called ``My Site`` created using the **Website Editorial** blueprint.
+Let's take a look at an example of creating an experience builder panel plugin in Studio using
+a site called ``My Site`` created using the **Website Editorial** blueprint.
 
-#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our experience builder site plugin.  We'll follow the convention listed in :ref:`plugin-directory-structure`.  For our example, PLUGIN_TYPE is ``experiencebuilder`` and the PLUGIN_NAME is ``react-sample``
+#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our experience builder site plugin.  We'll follow the convention listed in :ref:`plugin-directory-structure`.  For our example, PLUGIN_TYPE is ``experiencebuilder`` and the PLUGIN_NAME is ``test-experiencebuilder``
 
-   In a local folder, create the descriptor file for your site plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin``, then create the folder ``authoring``.  Under the ``authoring`` folder, create the ``js`` folder.  Under the ``js`` folder, create the folder ``experiencebuilder``.  Under the ``experiencebuilder`` folder, create the folder ``react-sample``, which is the name of the experience builder site plugin we're building.  We will be placing the JS file implementing the experience builder site plugin under the ``react-sample`` folder.  In the example below, the JS file is ``index.modern.js``
+   In a local folder, create the descriptor file for your site plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.experiencebuilder``, then create the following folder structure:
 
    .. code-block:: text
-         :caption: *Experience Builder Panel Plugin Directory Structure*
+         :caption: *Experience Builder Plugin Directory Structure*
 
          <plugin-folder>/
            craftercms-plugin.yaml
            authoring/
-             js/
-               experiencebuilder/
-                 react-sample/
-                   index.modern.js
+             static-assets/
+               plugins/
+                 org/
+                   craftercms/
+                     plugin/
+                       experiencebuilder/
+                         experiencebuilder/
+                           test-experiencebuilder/
+
+   |
+
+   We will be placing the JS file implementing the toolbar site plugin under the
+   ``test-experiencebuilder`` folder.  For our example, the <plugin-folder> is located here:
+   ``/users/myuser/myplugins/experiencebuilder-plugin``
 
    |
 
    For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/experiencebuilder-plugin``
 
-#. Inside the ``react-sample`` folder, create two empty files, ``index.css`` and ``script.js``, then create the javascript file for our plugin, by using this plugin example https://github.com/rart/craftercms-ui-plugin-sample which will generate the ``index.modern.js`` file:
+#. Inside the ``test-experiencebuilder`` folder, create two empty files, ``index.css`` and ``script.js``, then create the javascript file for our plugin, by using the following plugin example file ``index.modern.js`` (Click on the triangle on the left to expand/collapse):
 
-   .. code-block:: js
+   .. raw:: html
+
+      <details>
+      <summary><a>Sample experience builder plugin file "index.modern.js".</a></summary>
+
+   .. literalinclude:: /_static/code/plugins/experiencebuilder/index.modern.js
+      :language: js
       :linenos:
-      :caption: *config/studio/plugins/experiencebuilder/react-sample/index.modern.js*
 
-      var { createElement } = craftercms.libs.React;
-      var React = craftercms.libs.React && Object.prototype.hasOwnProperty.call(craftercms.libs.React, 'default') ? craftercms.libs.React['default'] : craftercms.libs.React;
-      var { Typography } = craftercms.libs.MaterialUI;
-      var { useIntl } = craftercms.libs.ReactIntl;
-      var _utils = craftercms.libs.MaterialUI && Object.prototype.hasOwnProperty.call(craftercms.libs.MaterialUI, 'default') ? craftercms.libs.MaterialUI['default'] : craftercms.libs.MaterialUI;
-      var createEmotion = craftercms.libs.createEmotion && Object.prototype.hasOwnProperty.call(craftercms.libs.createEmotion, 'default') ? craftercms.libs.createEmotion['default'] : craftercms.libs.createEmotion;
+   .. raw:: html
 
-      ...
+      </details>
 
-        apps: [
-          {
-            route: '/yada-yada',
-            widget: { id: 'org.craftercms.sampleComponentLibraryPlugin.components.reactComponent' }
-          }
-        ],
-        widgets: {
-          'org.craftercms.sampleComponentLibraryPlugin.components.reactComponent': ReactComponent,
-          'org.craftercms.sampleComponentLibraryPlugin.components.nonReactComponent': NonReactComponent
-        },
-        scripts: [
-          {
-            src: 'https://code.jquery.com/jquery-3.5.1.min.js',
-            integrity: 'sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=',
-            crossorigin: 'anonymous'
-          },
-          'script.js'
-        ],
-        stylesheets: ['index.css'],
-        themes: []
-      };
-
-      export default plugin;
-
-
+   |
    |
 
 #. To setup our experience builder site plugin to be automatically wired in the corresponding configuration file in Studio (which for an experience builder, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
@@ -121,11 +110,11 @@ Let's take a look at an example of creating an experience builder panel plugin i
    .. image:: /_static/images/developer/plugins/site-plugins/experiencebuilder-plugin-files.png
       :align: center
       :alt: Experience Builder site plugin directory/files
-      :width: 50%
+      :width: 80%
 
    |
 
-   When running a ``crafter-cli`` command, the connection to Crafter CMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the site ``mysite`` by running the following:
+   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the site ``mysite`` by running the following:
 
       ..  code-block:: bash
 
@@ -135,9 +124,10 @@ Let's take a look at an example of creating an experience builder panel plugin i
 
 #. Let's take a look at our plugin in action by clicking on the pencil icon at the top right of your browser to open the experience builder panel
 
-   .. image:: /_static/images/developer/plugins/site-plugins/experiencebuilder-plugin-in-action.jpg
+   .. image:: /_static/images/developer/plugins/site-plugins/experiencebuilder-plugin-in-action.png
       :align: center
       :alt: Experience Builder site plugin in action
+      :width: 30%
 
    |
 
@@ -163,7 +153,7 @@ Let's take a look at an example of creating an experience builder panel plugin i
                 </configuration>
               </widget>
               ...
-              <widget id="org.craftercms.sampleComponentLibraryPlugin.components.reactComponent">
+              <widget id="org.craftercms.sampleExperienceBuilderPlugin.components.reactComponent">
                 <plugin id="org.craftercms.plugin"
                         type="experiencebuilder"
                         name="test-experiencebuilder"

@@ -22,7 +22,7 @@ Let's take a look at an example of creating a Dashboard plugin in Studio using a
 
 #. The first thing we have to do is to create the folder structure where we will be placing the JS file for our dashboard site plugin.  We'll follow the convention listed in :ref:`plugin-directory-structure`.  For our example, PLUGIN_TYPE is ``dashboard`` and the PLUGIN_NAME is ``test-dashboard``
 
-   In a local folder, create the descriptor file for your site plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin``, then create the folder ``authoring``.  Under the ``authoring`` folder, create the ``js`` folder.  Under the ``js`` folder, create the folder ``dashboard``.  Under the ``dashboard`` folder, create the folder ``test-dashboard``, which is the name of the dashboard site plugin we're building.  We will be placing the JS file implementing the dashboard site plugin under the ``react-sample`` folder.  In the example below, the JS file is ``main.js``
+   In a local folder, create the descriptor file for your site plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.exampletoolbar``, then create the following folder structure:
 
    .. code-block:: text
          :caption: *Dashboard Plugin Directory Structure*
@@ -30,53 +30,36 @@ Let's take a look at an example of creating a Dashboard plugin in Studio using a
          <plugin-folder>/
            craftercms-plugin.yaml
            authoring/
-             js/
-               dashboard/
-                 test-dashboard/
-                   main.js
+             static-assets/
+               plugins/
+                 org/
+                   craftercms/
+                     plugin/
+                       exampledashboard/
+                         dashboard/
+                           test-dashboard/
 
    |
 
-   For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/dashboard-plugin``
+   We will be placing the JS file implementing the toolbar site plugin under the ``test-toolbar`` folder
+   For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/toolbar-plugin``
 
-#. Inside the ``test-dashboard`` folder, create two empty files, ``index.css`` and ``script.js``, then create the javascript file for our plugin, by using this plugin example https://github.com/rart/craftercms-ui-plugin-sample which will generate the ``index.modern.js`` file:
+#. Inside the ``test-dashboard`` folder, create two empty files, ``index.css`` and ``script.js``, then create the javascript file for our plugin, by using the following plugin example file ``index.modern.js`` (Click on the triangle on the left to expand/collapse):
 
-   .. code-block:: js
+   .. raw:: html
+
+      <details>
+      <summary><a>Sample dashboard plugin file "index.modern.js".</a></summary>
+
+   .. literalinclude:: /_static/code/plugins/dashboard/index.modern.js
+      :language: js
       :linenos:
-      :caption: *config/studio/plugins/dashboard/test-dashboard/index.modern.js*
 
-      var { createElement } = craftercms.libs.React;
-      var { makeStyles, createStyles, Typography } = craftercms.libs.MaterialUI;
-      var { useIntl } = craftercms.libs.ReactIntl;
-      var jss = craftercms.libs.jss && Object.prototype.hasOwnProperty.call(craftercms.libs.jss, 'default') ? craftercms.libs.jss['default'] : craftercms.libs.jss;
+   .. raw:: html
 
-      ...
+      </details>
 
-        apps: [
-          {
-            route: '/yada-yada',
-            widget: { id: 'org.craftercms.sampleComponentLibraryPlugin.components.reactComponent' }
-          }
-        ],
-        widgets: {
-          'org.craftercms.sampleComponentLibraryPlugin.components.reactComponent': ReactComponent,
-          'org.craftercms.sampleComponentLibraryPlugin.components.nonReactComponent': NonReactComponent
-        },
-        scripts: [
-          {
-            src: 'https://code.jquery.com/jquery-3.5.1.min.js',
-            integrity: 'sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=',
-            crossorigin: 'anonymous'
-          },
-          'script.js'
-        ],
-        stylesheets: ['index.css'],
-        themes: []
-      };
-
-      export default plugin;
-
-
+   |
    |
 
 #. To setup our dashboard site plugin to be automatically wired in the corresponding configuration file in Studio (which for a dashboard, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
@@ -122,7 +105,7 @@ Let's take a look at an example of creating a Dashboard plugin in Studio using a
    .. image:: /_static/images/developer/plugins/site-plugins/dashboard-plugin-files.png
       :align: center
       :alt: Dashboard site plugin directory/files
-      :width: 50%
+      :width: 80%
 
    |
 
@@ -134,9 +117,9 @@ Let's take a look at an example of creating a Dashboard plugin in Studio using a
 
       |
 
-#. Let's take a look at our plugin in action by clicking on the Crafter CMS logo at the top left of your browser to open the sidebar, then click on ``Dashboard``:
+#. Let's take a look at our plugin in action by clicking on the CrafterCMS logo at the top left of your browser to open the sidebar, then click on ``Dashboard``:
 
-   .. image:: /_static/images/developer/plugins/site-plugins/dashboard-plugin-in-action.jpg
+   .. image:: /_static/images/developer/plugins/site-plugins/dashboard-plugin-in-action.png
       :align: center
       :alt: Dashboard site plugin in action
 

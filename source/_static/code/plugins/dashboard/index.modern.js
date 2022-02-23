@@ -148,7 +148,7 @@ var jsxRuntime = createCommonjsModule(function (module) {
 }
 });
 
-var ViewSidebar = createCommonjsModule(function (module, exports) {
+var Visibility = createCommonjsModule(function (module, exports) {
 
 
 
@@ -162,13 +162,13 @@ var _createSvgIcon = interopRequireDefault(createSvgIcon);
 
 
 var _default = (0, _createSvgIcon.default)( /*#__PURE__*/(0, jsxRuntime.jsx)("path", {
-  d: "M16 20H2V4h14v16zm2-12h4V4h-4v4zm0 12h4v-4h-4v4zm0-6h4v-4h-4v4z"
-}), 'ViewSidebar');
+  d: "M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+}), 'Visibility');
 
 exports.default = _default;
 });
 
-var ViewSidebarIcon = /*@__PURE__*/getDefaultExportFromCjs(ViewSidebar);
+var VisibilityIcon = /*@__PURE__*/getDefaultExportFromCjs(Visibility);
 
 var ReactComponent = function (_a) {
     var text = _a.text;
@@ -179,8 +179,8 @@ var ReactComponent = function (_a) {
             border: '2px solid #000',
             textAlign: 'center'
         } },
-        createElement(ViewSidebarIcon, null),
-        "Sidebar plugin test",
+        createElement(VisibilityIcon, null),
+        "Dashboard plugin example",
         text,
         ".",
         ' ',
@@ -228,7 +228,7 @@ var es = {
 
 // var PluginDescriptor = craftercms.libs.StudioUI && Object.prototype.hasOwnProperty.call(craftercms.libs.StudioUI, 'default') ? craftercms.libs.StudioUI['default'] : craftercms.libs.StudioUI
 var plugin /*: PluginDescriptor */ = {
-    id: 'org.craftercms.sampleSidebarPlugin',
+    id: 'org.craftercms.sampleDashboardPlugin',
     name: 'Sample component library',
     description: 'An example plugin of a component library',
     author: 'Roy Art',
@@ -240,12 +240,12 @@ var plugin /*: PluginDescriptor */ = {
     apps: [
         {
             route: '/yada-yada',
-            widget: { id: 'org.craftercms.sampleSidebarPlugin.components.reactComponent' }
+            widget: { id: 'org.craftercms.sampleDashboardPlugin.components.reactComponent' }
         }
     ],
     widgets: {
-        'org.craftercms.sampleSidebarPlugin.components.reactComponent': ReactComponent,
-        'org.craftercms.sampleSidebarPlugin.components.nonReactComponent': NonReactComponent
+        'org.craftercms.sampleDashboardPlugin.components.reactComponent': ReactComponent,
+        'org.craftercms.sampleDashboardPlugin.components.nonReactComponent': NonReactComponent
     },
     scripts: [
         {

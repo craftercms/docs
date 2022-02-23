@@ -406,7 +406,7 @@ rst_epilog = """
 .. |checkmark| unicode:: U+2713
 .. |ex| unicode:: U+2718
 
-.. |siteConfig| image:: /_static/images/configuration-site-tools-icon.png
+.. |siteConfig| image:: /_static/images/project-tools.png
                    :width: 15%
 
 .. |mainMenu| image:: /_static/images/main-menu-button.png

@@ -148,7 +148,7 @@ var jsxRuntime = createCommonjsModule(function (module) {
 }
 });
 
-var ViewSidebar = createCommonjsModule(function (module, exports) {
+var Navigation = createCommonjsModule(function (module, exports) {
 
 
 
@@ -162,13 +162,13 @@ var _createSvgIcon = interopRequireDefault(createSvgIcon);
 
 
 var _default = (0, _createSvgIcon.default)( /*#__PURE__*/(0, jsxRuntime.jsx)("path", {
-  d: "M16 20H2V4h14v16zm2-12h4V4h-4v4zm0 12h4v-4h-4v4zm0-6h4v-4h-4v4z"
-}), 'ViewSidebar');
+  d: "M12 2 4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"
+}), 'Navigation');
 
 exports.default = _default;
 });
 
-var ViewSidebarIcon = /*@__PURE__*/getDefaultExportFromCjs(ViewSidebar);
+var NavigationIcon = /*@__PURE__*/getDefaultExportFromCjs(Navigation);
 
 var ReactComponent = function (_a) {
     var text = _a.text;
@@ -179,8 +179,8 @@ var ReactComponent = function (_a) {
             border: '2px solid #000',
             textAlign: 'center'
         } },
-        createElement(ViewSidebarIcon, null),
-        "Sidebar plugin test",
+        createElement(NavigationIcon, null),
+        "Nav Menu plugin example",
         text,
         ".",
         ' ',
@@ -228,7 +228,7 @@ var es = {
 
 // var PluginDescriptor = craftercms.libs.StudioUI && Object.prototype.hasOwnProperty.call(craftercms.libs.StudioUI, 'default') ? craftercms.libs.StudioUI['default'] : craftercms.libs.StudioUI
 var plugin /*: PluginDescriptor */ = {
-    id: 'org.craftercms.sampleSidebarPlugin',
+    id: 'org.craftercms.sampleNavMenuPlugin',
     name: 'Sample component library',
     description: 'An example plugin of a component library',
     author: 'Roy Art',
@@ -240,12 +240,12 @@ var plugin /*: PluginDescriptor */ = {
     apps: [
         {
             route: '/yada-yada',
-            widget: { id: 'org.craftercms.sampleSidebarPlugin.components.reactComponent' }
+            widget: { id: 'org.craftercms.sampleNavMenuPlugin.components.reactComponent' }
         }
     ],
     widgets: {
-        'org.craftercms.sampleSidebarPlugin.components.reactComponent': ReactComponent,
-        'org.craftercms.sampleSidebarPlugin.components.nonReactComponent': NonReactComponent
+        'org.craftercms.sampleNavMenuPlugin.components.reactComponent': ReactComponent,
+        'org.craftercms.sampleNavMenuPlugin.components.nonReactComponent': NonReactComponent
     },
     scripts: [
         {

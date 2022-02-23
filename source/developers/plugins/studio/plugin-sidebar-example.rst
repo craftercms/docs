@@ -12,10 +12,10 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
 
 #. The first thing we have to do is to create the folder structure where we will be placing the JS file for our sidebar site plugin.  We'll follow the convention listed in :ref:`plugin-directory-structure`.  For our example, PLUGIN_TYPE is ``sidebar`` and the PLUGIN_NAME is ``react-sample``
 
-   In a local folder, create the descriptor file for your site plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin``, then create the folder ``authoring``.  Under the ``authoring`` folder, create the ``static-assets`` folder.  Under the ``static-assets`` folder, create the folder ``plugins``.  Under the ``plugins`` folder, create the folder ``org``.  Under the ``org`` folder, create the folder ``craftercms``.  Under the ``craftercms`` folder, create the folder ``plugin``.  Under the ``plugin`` folder, create the folder ``sidebar``.  Under the ``sidebar`` folder, create the folder ``react-sample``, which is the name of the sidebar site plugin we're building.  We will be placing the JS file implementing the sidebar site plugin under the ``react-sample`` folder.  In the example below, the JS file is ``main.js``
+   In a local folder, create the descriptor file for your site plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.examplesidebar``, then create the following folder structure:
 
    .. code-block:: text
-         :caption: *Form Engine Data Source Plugin Directory Structure*
+         :caption: *Sidebar Plugin Directory Structure*
 
          <plugin-folder>/
            craftercms-plugin.yaml
@@ -25,12 +25,13 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
                  org/
                    craftercms/
                      plugin/
-                      sidebar/
-                        react-sample/
-                          main.js
+                       examplesidebar/
+                         sidebar/
+                           reaact-sample/
 
    |
 
+   We will be placing the JS file implementing the toolbar site plugin under the ``react-sample`` folder
    For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/sidebar-plugin``
 
 #. Inside the ``react-sample`` folder, create two empty files, ``index.css`` and ``script.js``, then create the javascript file for our plugin, by using the following plugin example file ``index.modern.js`` (Click on the triangle on the left to expand/collapse):
@@ -59,29 +60,29 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
       :emphasize-lines: 17-18
 
       installation:
-      - type: preview-app
-        parentXpath: //widget[@id='craftercms.components.ToolsPanel']
-        elementXpath: //plugin[@id='org.craftercms.sampleComponentLibraryPlugin.components.reactComponent']
-        element:
-          name: configuration
-          children:
-          - name: widgets
+        - type: preview-app
+          parentXpath: //widget[@id='craftercms.components.ToolsPanel']
+          elementXpath: //plugin[@id='org.craftercms.sampleSidebarPlugin.components.reactComponent']
+          element:
+            name: configuration
             children:
-            - name: widget
-              attributes:
-              - name: id
-                value: org.craftercms.sampleComponentLibraryPlugin.components.reactComponent
+            - name: widgets
               children:
-              - name: plugin
+              - name: widget
                 attributes:
                 - name: id
-                  value: org.craftercms.plugin
-                - name: type
-                  value: sidebar
-                - name: name
-                  value: react-sample
-                - name: file
-                  value: index.modern.js
+                  value: org.craftercms.sampleSidebarPlugin.components.reactComponent
+                children:
+                - name: plugin
+                  attributes:
+                  - name: id
+                    value: org.craftercms.plugin.examplesidebar
+                  - name: type
+                    value: sidebar
+                  - name: name
+                    value: react-sample
+                  - name: file
+                    value: index.modern.js
 
    |
 
@@ -92,7 +93,7 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
    .. image:: /_static/images/developer/plugins/site-plugins/sidebar-plugin-files.png
       :align: center
       :alt: Sidebar site plugin directory/files
-      :width: 30%
+      :width: 70%
 
    |
 
@@ -106,9 +107,10 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
 
 #. Let's take a look at our plugin in action by clicking on the CrafterCMS logo at the top left of your browser to open the sidebar:
 
-   .. image:: /_static/images/developer/plugins/site-plugins/sidebar-plugin-in-action.jpg
+   .. image:: /_static/images/developer/plugins/site-plugins/sidebar-plugin-in-action.png
       :align: center
       :alt: Sidebar site plugin in action
+      :width: 30%
 
    |
 
@@ -148,7 +150,7 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
                   </widgets>
                </configuration>
             </widget>
-            <widget id="org.craftercms.sampleComponentLibraryPlugin.components.reactComponent">
+            <widget id="org.craftercms.sampleSidebarPlugin.components.reactComponent">
                <plugin id="org.craftercms.plugin"
                        type="sidebar"
                        name="react-sample"
