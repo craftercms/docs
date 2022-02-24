@@ -32,3 +32,4 @@ Configuration changes between CrafterCMS versions
    config-changes-3.1.18-to-3.1.19.rst
    config-changes-3.1.19-to-3.1.20.rst
    config-changes-3.1.20-to-3.1.21.rst
+   config-changes-3.1.21-to-3.1.22.rst
