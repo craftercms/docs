@@ -1,14 +1,14 @@
 :is-up-to-date: True
 
-.. index:: Navigating Site Tools
+.. index:: Navigating Project Tools
 
 .. _navigating-site-tools:
 
-=====================
-Navigating Site Tools
-=====================
+========================
+Navigating Project Tools
+========================
 
-In this section, we discuss the available modules in the |siteConfig| **Sidebar** from any of the available out-of-the-box blueprints.  The modules available in the Site Tools Sidebar can be configured by following :ref:`site-config-tools`
+In this section, we discuss the available modules in the |siteConfig| dialog from any of the available out-of-the-box blueprints.  The modules available in the Project Tools can be configured by following :ref:`user-interface-configuration`
 
 To get to |siteConfig|, click on the **Toggle Sidebar** icon (CrafterCMS logo with hamburger next to it) at the top left of your browser, if it's not yet open.
 
@@ -20,14 +20,14 @@ To get to |siteConfig|, click on the **Toggle Sidebar** icon (CrafterCMS logo wi
 Once the **Sidebar** is open, click on |siteConfig|
 
 .. image:: /_static/images/site-admin/open-site-config.png
-    :alt: Site Admin - Click on Site Tools
+    :alt: Site Admin - Click on Project Tools
     :align: center
     :width: 25%
 
 Here are the modules you can access from |siteConfig|
 
 .. image:: /_static/images/site-admin/site-config-menu.png
-    :alt: Site Admin - Site Tools Modules
+    :alt: Site Admin - Project Tools Modules
     :align: center
     :width: 25%
 
@@ -40,10 +40,10 @@ Content Types contains the following:
 * View: The view template that will render the content, typically to HTML markup
 * Controller: The controller that handles the incoming request for the page or component
 
-The Content Types module under **Site Tools** allows the user to view existing content types and to create new content types
+The Content Types module under **Project Tools** allows the user to view existing content types and to create new content types
 
 .. image:: /_static/images/site-admin/site-config-content-types.jpg
-    :alt: Site Administrator - Site Tools Content Types
+    :alt: Site Administrator - Project Tools Content Types
     :align: center
     :width: 60%
 
@@ -56,7 +56,7 @@ Encryption Tool
 The ``Encryption Tool`` allows the user to encrypt sensitive data such as access keys and passwords, that shouldn't be publicly available to anyone but developers and administrators
 
 .. image:: /_static/images/site-admin/site-tools-encryption-tool.png
-   :alt: Site Administrator - Site Tools Encryption Tool
+   :alt: Site Administrator - Project Tools Encryption Tool
    :align: center
    :width: 60%
 
@@ -66,10 +66,10 @@ For more information on how to use the encryption tool, see :ref:`nav-menu-encry
 Configuration
 -------------
 
-Configuration allows the user to configure the different settings in CrafterCMS for the site.
+Configuration allows the user to configure the different settings in CrafterCMS for the project.
 
 .. image:: /_static/images/site-admin/site-config-configuration.jpg
-    :alt: Site Admin - Site Config Configuration
+    :alt: Site Admin - Project Tools Configuration
     :align: center
     :width: 60%
 
@@ -79,10 +79,10 @@ For more information on what settings can be configured, see :ref:`configuration
 Audit
 -----
 
-Audit logs displays the date, time, user and action performed to content in the site:
+Audit logs displays the date, time, user and action performed to content in the project:
 
 .. image:: /_static/images/site-admin/site-config-audit.jpg
-    :alt: Site Admin - Site Config Audit
+    :alt: Site Admin - Project Tools Audit
     :align: center
     :width: 60%
 
@@ -92,10 +92,10 @@ See :ref:`studio-logging` for some more information on viewing logs.
 Workflow States
 ---------------
 
-Workflow States allows the user to manually set the workflow state of every file in the site.
+Workflow States allows the user to manually set the workflow state of every file in the project.
 
 .. image:: /_static/images/site-admin/site-config-workflow-states.png
-    :alt: Site Admin - Site Config Workflow States
+    :alt: Site Admin - Project Tools Workflow States
     :align: center
     :width: 60%
 
@@ -110,7 +110,7 @@ Log Console
 The **Log Console** allows the user to view messages depending on what log levels and what Java packages have been set for tracking.
 
 .. image:: /_static/images/site-admin/site-config-log-console.png
-    :alt: Site Admin - Site Config Log Console
+    :alt: Site Admin - Project Tools Log Console
     :align: center
     :width: 60%
 
@@ -120,10 +120,10 @@ See :ref:`studio-log-console` for some more information on viewing logs.
 Publishing
 ----------
 
-The **Publishing** module under **Site Config** allows the user to view the publishing status, perform a bulk publish or to publish content using commit ID(s)
+The **Publishing** module under **Project Tools** allows the user to view the publishing status, perform a bulk publish or to publish content using commit ID(s)
 
 .. image:: /_static/images/site-admin/site-config-publishing.jpg
-    :alt: Site Admin - Site Config Publishing
+    :alt: Site Admin - Project Tools Publishing
     :align: center
     :width: 60%
 
@@ -133,10 +133,10 @@ For more information on Publishing, see :ref:`publishing-and-status`
 Remote Repositories
 -------------------
 
-The **Remote Repositories** under **Site Config** allows the user to view remote repositories linked to the site and options to pull and push to the listed remote repositories.  It also allows the user to add a remote repository to the site.
+The **Remote Repositories** under **Project Tools** allows the user to view remote repositories linked to the project and options to pull and push to the listed remote repositories.  It also allows the user to add a remote repository to the project.
 
 .. image:: /_static/images/site-admin/site-config-remote-repositories.png
-    :alt: Site Admin - Site Config Remote Repositories
+    :alt: Site Admin - Project Tools Remote Repositories
     :align: center
     :width: 60%
 
@@ -146,10 +146,10 @@ For more information on Remote Repositories under |siteConfig|, see :ref:`remote
 GraphiQL
 --------
 
-CrafterCMS provides built-in support for GraphQL to query content in any site without writing additional code.  **GraphiQL** is a simple GraphQL client that you can use in Crafter Studio to run GraphQL queries and explore the schema documentation for a site without the need of any other tool.
+CrafterCMS provides built-in support for GraphQL to query content in any project without writing additional code.  **GraphiQL** is a simple GraphQL client that you can use in Crafter Studio to run GraphQL queries and explore the schema documentation for a project without the need of any other tool.
 
 .. image:: /_static/images/site-admin/site-config-graphiql.jpg
-    :alt: Site Admin - Site Config GraohiQL
+    :alt: Site Admin - Project Tools GraohiQL
     :align: center
     :width: 60%
 
@@ -160,10 +160,10 @@ Plugin Management
 -----------------
 
 Site plugins extend Crafter Studio (authoring) and Crafter Engine and the site/web application (delivery).
-The Site Tools **Plugin Management** allows the user to install and to view currently installed, site plugins
+The Project Tools **Plugin Management** allows the user to install and to view currently installed, site plugins
 
 .. image:: /_static/images/site-admin/site-config-plugin-mgmt.png
-   :alt: Site Admin - Site Config Plugin Management
+   :alt: Site Admin - Project Tools Plugin Management
    :align: center
    :width: 60%
 

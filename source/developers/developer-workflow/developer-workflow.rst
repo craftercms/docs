@@ -34,7 +34,7 @@ Authoring is supported via Crafter Studio (a web-based authoring tool) that sits
 
 Crafter’s publish mechanism deploys content from the Authoring system to the Delivery system.  Content logically flows from the authoring environment to the delivery environment. The mechanism for this, given the underlying Git repo, is a “pull” type interaction.
 
-Each delivery node has a Deployer agent that coordinates deployment activities on the node for each site that is being delivered on that node.
+Each delivery node has a Deployer agent that coordinates deployment activities on the node for each project that is being delivered on that node.
 
 * Delivery nodes can initiate deployment pulls either on a scheduled interval (a “duty cycle”), on-demand via an API call, or both.
 * The Deployer performs a number of activities beyond receiving and updating content on the delivery node. A list of post-commit processors is run. These can be used to execute updates on search indexes, clear caches and perform other such operations.
@@ -60,7 +60,7 @@ Only approved content is published to the delivery environment. Crafter manages 
 
 The underlying Git repositories and related workflow for Authoring require no setup at all. When you create a project in Crafter Studio it automatically creates the local **Sandbox** and **Published** repositories. When you add a new **Delivery** node a simple command line script is run on that node that configures the node’s deployer to replicate and process content from the **Published** repository from authoring.
 
-   * Instructions for creating a site can be found :ref:`here <your_first_website>` .
+   * Instructions for creating a project can be found :ref:`here <your_first_website>` .
    * Instructions for initializing a delivery node can be found :ref:`here <setup-site-for-delivery>`.
 
 ---------------
@@ -69,7 +69,7 @@ DevOps Workflow
 
 Content Authors can edit and preview content via Crafter Studio.  Edits are saved in the Git-based repository **Sandbox**. On approval, edits are moved to the repository **Published**.  Crafter Studio handles all of the mechanics for authors. Authors simply click edit and make changes, perform reviews and publish work via the UI. In the background, Crafter Studio will lock content, perform commits and take any other actions necessary to perform the low-level repository tasks necessary.
 
-The authoring environment is akin to a work and test area for the authors. Relative to the live site or app the content authors are deploying content to, the Crafter Studio (and the **Sandbox** repository) where they edit, preview and approve content is what we would call a lower environment. Work is promoted from the lower environment (authoring) to the live environment (delivery.)
+The authoring environment is akin to a work and test area for the authors. Relative to the live project or app the content authors are deploying content to, the Crafter Studio (and the **Sandbox** repository) where they edit, preview and approve content is what we would call a lower environment. Work is promoted from the lower environment (authoring) to the live environment (delivery.)
 
 Let's take a look at a typical developer workflow that’s integrated with the production authoring environment.  In this diagram, you will find a mechanism for both a “code forward” activity in which code can be moved through a development process through to production as well as a “content back” activity in which production content, including in-process content, can be brought back to lower development environments, including local development machines.
 
@@ -182,43 +182,43 @@ On GitHub, once created you will see the following screen. Here you will note th
 Step 2: Create Your Project In Crafter Studio
 ---------------------------------------------
 
-Next, you want to log in to Crafter Studio as the admin user. The admin user has the rights to create new projects (called sites.) Click **Create Site**.
+Next, you want to log in to Crafter Studio as the admin user. The admin user has the rights to create new projects (called projectss.) Click **Create Project**.
 
 .. image:: /_static/images/developer/dev-cloud-platforms/create-site.png
-    :alt: Developer Workflow - Create Site via Crafter Studio
+    :alt: Developer Workflow - Create Project via Crafter Studio
     :width: 65 %
     :align: center
 
 |
 
-Clicking Create Site will present you with the Create Site dialog. This dialog changes depending on what you choose. Below is an example of the dialog filled out in a way that creates your project locally.  We will then add the Github repository as its upstream remote and push the initial project contents to the upstream repository.
+Clicking Create Project will present you with the Create Project dialog. This dialog changes depending on what you choose. Below is an example of the dialog filled out in a way that creates your project locally.  We will then add the Github repository as its upstream remote and push the initial project contents to the upstream repository.
 
 Let’s walk through each part of the dialog:
 
 .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-1.jpg
-   :alt: Developer How Tos - Create Site Dialog Walk Through step 1
+   :alt: Developer How Tos - Create Project Dialog Walk Through step 1
     :width: 50 %
    :align: center
 
 1. The first thing you need to do is to choose your blueprint. There are several out of the box blueprints provided by default. Choose one of these or one of your own. For our example, we’ll choose the Website Editorial blueprint.
 
    .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-2.png
-      :alt: Developer How Tos - Create Site Dialog Walk Through step 2
+      :alt: Developer How Tos - Create Project Dialog Walk Through step 2
       :width: 70 %
       :align: center
 
    |
 
-2. The next thing to do is give your site an ID. The ID itself doesn’t matter in a sense. It doesn’t need to match anything per se, technically speaking the only requirement is that it’s unique. That said, it’s a best practice to provide an ID that is meaningful/recognizable to the team. If your website is called FreshFlowers.com a good ID might be “freshflowerscom”.
+2. The next thing to do is give your project an ID. The ID itself doesn’t matter in a sense. It doesn’t need to match anything per se, technically speaking the only requirement is that it’s unique. That said, it’s a best practice to provide an ID that is meaningful/recognizable to the team. If your website is called FreshFlowers.com a good ID might be “freshflowerscom”.
 
-   Click on the **Review** button, then finally  click on the **Create Site** button to create your site.  CrafterCMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint.  Your site should be created in a short while.
+   Click on the **Review** button, then finally  click on the **Create Project** button to create your project.  CrafterCMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint.  Your project should be created in a short while.
 
-3. Once your site is created, the next step is to add a remote repository to your newly created site.  Open the **Sidebar** then click on **Site Tools** -> **Remote Repositories**, then click on the **New Repository** on the top right.
+3. Once your project is created, the next step is to add a remote repository to your newly created project.  Open the **Sidebar** then click on **Project Tools** -> **Remote Repositories**, then click on the **New Repository** on the top right.
 
    This will open up a dialog where we can fill in all the information for our remote repository.
 
    .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.png
-      :alt: Create Repository dialog to fill in information of remote repository being added to the site
+      :alt: Create Repository dialog to fill in information of remote repository being added to the project
       :width: 70 %
       :align: center
 
@@ -237,11 +237,11 @@ Let’s walk through each part of the dialog:
 7. Once you're satisfied with your entries for your remote repository, click on the **Create** button.   Once complete we can now connect to the upstream and push the contents of the Sandbox repository to the remote by clicking on the ``Push`` button (button with the up arrow).
 
    .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-4.png
-      :alt: Remotes screen displaying newly added remote repository to site
+      :alt: Remotes screen displaying newly added remote repository to project
       :width: 90 %
       :align: center
 
-   **Figure:: Site is created and a remote repository added**
+   **Figure:: Project is created and a remote repository added**
 
 
 Step 3: Set up Your Delivery Nodes
@@ -251,7 +251,7 @@ Now that your project is created you can set up the rest of your production envi
 
 When you add a new delivery node a simple command line script is run on that node that configures it to replicate and process content from the “Published” repository from authoring.
 
-Instructions for creating a site can be found :ref:`here <your_first_website>` .
+Instructions for creating a project can be found :ref:`here <your_first_website>` .
 
 Instructions for initializing a delivery node can be found :ref:`here <setup-site-for-delivery>`.    
 
@@ -276,7 +276,7 @@ After setting up the topology above, if you just want to get a local environment
 
 1. Install Crafter Studio locally (Binaries download or Source build)
 2. Login as Admin
-3. Click **Create Site**
+3. Click **Create Project**
 
 .. figure:: /_static/images/developer/workflow/create-site-based-on-remote-1.png
     :alt: Developer Workflow - Setting up to work locally against the upstream
@@ -285,7 +285,7 @@ After setting up the topology above, if you just want to get a local environment
 
 |
 
-4. Fill out the Create Site Form as in a similar fashion described in Step 2 above, except this time, instead of selecting a blueprint, select **Remote Git Repository** to create your site based on an existing upstream repository. This can be your team’s branch or your own fork. The exact workflow is up to you.
+4. Fill out the Create Project Form as in a similar fashion described in Step 2 above, except this time, instead of selecting a blueprint, select **Remote Git Repository** to create your project based on an existing upstream repository. This can be your team’s branch or your own fork. The exact workflow is up to you.
 
 .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-1.jpg
     :alt: Developer How Tos - Setting up to work locally against the upstream

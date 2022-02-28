@@ -14,7 +14,7 @@ Crafter Studio's search backend is based on Elasticsearch.  This section describ
 Searching
 ---------
 
-To do a search in Crafter Studio, point your mouse to the navigation menu icon on the top right, which will display the name of the icon, **Navigation Menu**, click on it then select **Search** under ``Site``
+To do a search in Crafter Studio, point your mouse to the navigation menu icon on the top right, which will display the name of the icon, **Navigation Menu**, click on it then select **Search** under ``Project``
 
 .. image:: /_static/images/content-author/search-site-icon.jpg
     :width: 75 %

@@ -104,5 +104,5 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
    .. image:: /_static/images/site-admin/env-custom-configurations.png
       :align: center
-      :alt: Active Environment Displayed in Site Config Configuration
+      :alt: Active Environment Displayed in Project Config Configuration
 

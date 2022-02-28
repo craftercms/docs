@@ -20,13 +20,13 @@ Prerequisites
 -------------
 
 * Create a Box profile to upload the assets.
-* Create a site based on the Editorial blueprint.
+* Create a project based on the Editorial blueprint.
 
 -------------------------------------------
 Step 1: Add the Box configuration in Studio
 -------------------------------------------
 
-Go to |siteConfig| > ``Configurations`` and in the dropdown select Box Profiles. If you click on View Sample, you’ll see the available configuration profiles. In particular, the configuration for a Box profile is the following:
+Go to |siteConfig| > ``Configuration`` and in the dropdown select Box Profiles. If you click on View Sample, you’ll see the available configuration profiles. In particular, the configuration for a Box profile is the following:
 
 .. code-block:: xml
     :linenos:
@@ -83,7 +83,7 @@ For this guide, the Box Profiles should look like this (replace the ``...``'s fo
 Step 2: Enable the Box File Upload Control
 ------------------------------------------
 
-In |siteConfig| > Configurations > Site Config Tools, in the <controls> section, enable the Box File Upload by adding the following lines:
+In |siteConfig| > Configuration > Project Config Tools, in the <controls> section, enable the Box File Upload by adding the following lines:
 
 .. code-block:: xml
     :linenos:
@@ -102,10 +102,10 @@ In |siteConfig| > Configurations > Site Config Tools, in the <controls> section,
 Step 3: Add the Box File Upload Control to the content type
 -----------------------------------------------------------
 
-For our example, we'll add an ``Attachments`` field, which is of type ``box-file-upload``, to the ``Page - Article``
+For our example, we'll add an ``Attachments`` field, which is of type ``box-file-upload``, to the ``Article``
 content type. To do this:
 
-#. Go to ``Site Config`` and open the ``Page - Article`` content type definition.
+#. Go to ``Project Tools`` and open the ``Article`` content type definition.
 #. At the end of the *Content* section, add a ``Box File Upload`` control with Title *Attachments* and Name *attachments* (the control has a property called Profile ID. If you changed the name of ``profile.id`` in step 1, you need to change it in the property too).  Remember to put a check mark on the ``Enable Upload`` and ``Enable Multiple Selection`` properties of the **Box File Upload** control so the users will be able to upload assets to Box and be able to select multiple assets.
 
 

@@ -34,7 +34,7 @@ We will be looking at the workflow steps in this section.  Workflow is managed t
 Submitting Content for Approval
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After creating/editing content, a request to publish content can be done by clicking on **Publish**.  A **Publish** submission can be initiated from a preview screen through the toolbar by cliicking on the three dots next to the address bar or by clicking on the three dots next to the article in the Sidebar ``Site Explorer`` (for single items), or from the Dashboard (where items can be batch checked).
+After creating/editing content, a request to publish content can be done by clicking on **Publish**.  A **Publish** submission can be initiated from a preview screen through the toolbar by cliicking on the three dots next to the address bar or by clicking on the three dots next to the article in the Sidebar (for single items), or from the Dashboard (where items can be batch checked).
 
 Initiate a Publish through the toolbar at the top:
 
@@ -55,7 +55,7 @@ Initiate Publish batch checked through the dashboard:
     :align: center
     :alt: Workflow - Request batch items for publish through Dashboard
 
-Initiate Publish by clicking on the three dots next to the content from the Sidebar ``Site Explorer``:
+Initiate Publish by clicking on the three dots next to the content from the Sidebar:
 
 .. image:: /_static/images/page/page-workflows-publish3a.png
     :width: 30 %
@@ -87,14 +87,14 @@ Users with permission to publish can also make changes and request approval for 
      :alt: Workflow - Request publish approval dialog
 
 
-After clicking on the **Submit** or **Schedule** button (depending on the option selected for publishing now or later), a notification email will be sent to the site's approvers.  Notice also, that the toolbar now displays the icon for **Submitted**
+After clicking on the **Submit** or **Schedule** button (depending on the option selected for publishing now or later), a notification email will be sent to the project's approvers.  Notice also, that the toolbar now displays the icon for **Submitted**
 
 .. image:: /_static/images/page/page-workflows-submitted-context-nav.jpg
      :width: 75 %
      :align: center
      :alt: Workflow - Request publish submitted context nav updated icon and text
 
-You'll also notice the **Submitted** icon is displayed next to the content item in the Sidebar ``Site Explorer`` for the content you just submitted a request for publish and contains the text **Submitted for live**
+You'll also notice the **Submitted** icon is displayed next to the content item in the Sidebar for the content you just submitted a request for publish and contains the text **Submitted for live**
 
 .. image:: /_static/images/page/page-workflows-submitted-nav-tree.png
      :width: 25 %
@@ -125,14 +125,14 @@ One way is by going to the dashboard, then in the **Items Waiting For Approval**
      :align: center
      :alt: Workflow - Approve & publish dashboard option
 
-Another way to access the **Publish** option is by going to the Sidebar ``Site Explorer``, then navigate to the article you want to approve, then click on **Options** (the three dots next to it).
+Another way to access the **Publish** option is by going to the Sidebar, then navigate to the article you want to approve, then click on **Options** (the three dots next to it).
 
 .. image:: /_static/images/page/page-workflows-nav-tree-approve.jpg
      :width: 40 %
      :align: center
      :alt: Workflow - Approve & publish Sidebar nav tree option
 
-Yet another way to access the **Publish** option is by going to the Sidebar ``Site Explorer`` and then navigating to the article and opening it for preview.  After opening the article for preview, go to the toolbar and click on **Options** (three dots) next to the address bar.
+Yet another way to access the **Publish** option is by going to the Sidebar and then navigating to the article and opening it for preview.  After opening the article for preview, go to the toolbar and click on **Options** (three dots) next to the address bar.
 
 .. image:: /_static/images/page/page-workflows-context-nav-approve.jpg
      :width: 85 %
@@ -203,7 +203,7 @@ To reject a request for publish, open the item for preview, then in the toolbar 
 .. image:: /_static/images/page/page-workflows-nav-tree-reject.jpg
     :width: 50 %
     :align: center
-    :alt: Workflow - Reject request to publish from sidebar "Site Explorer"
+    :alt: Workflow - Reject request to publish from Sidebar
 
 Approvers may type their own rejection comments or pick canned rejection reasons from the drop-down menu. Once selected, the editable text area field will be filled with the corresponding rejection notice / ready for comments in the ``Rejection Comment`` box.
 

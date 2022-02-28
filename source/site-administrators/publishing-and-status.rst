@@ -23,15 +23,15 @@ Status
 
 The **Status** tab allows the user to view the publishing status, such as the following:
 
-- User status: User {username} disabled publishing for site on {datetime}
-- User status: User {username} enabled publishing for site on {datetime}
+- User status: User {username} disabled publishing for project on {datetime}
+- User status: User {username} enabled publishing for project on {datetime}
 - Error status: Stopped while trying to publish item: {item_path} on {datetime}
 - Publishing status: Currently publishing package: {package_id} on {datetime}
 
 It also allows the user to **Start** or **Stop** Studio publishing
 
 .. image:: /_static/images/site-admin/site-config-publish-status.png
-    :alt: Site Config Publishing - Status
+    :alt: Project Tools Publishing - Status
 	:align: center
 
 |
@@ -39,7 +39,7 @@ It also allows the user to **Start** or **Stop** Studio publishing
 Publishing is locked when content is being published.  From the Status tab, you can unlock publishing by clicking on the ``unlock`` button that is displayed during content publishing.
 
 .. image:: /_static/images/site-admin/site-config-unlock-publish.png
-    :alt: Site Config Publishing - Unlock icon
+    :alt: Project Tools Publishing - Unlock icon
  	:align: center
 
 |
@@ -47,7 +47,7 @@ Publishing is locked when content is being published.  From the Status tab, you 
 After clicking on the ``unlock`` button, the user will be prompted to confirm the action:
 
 .. image:: /_static/images/site-admin/site-config-unlock-publish-confirm.png
-    :alt: Site Config Publishing - Unlock icon
+    :alt: Project Tools Publishing - Unlock icon
     :width: 50%
     :align: center
 
@@ -59,10 +59,10 @@ Bulk Publish
 
 The **Bulk Publish** tab allows the user to publish multiple items under the specified path.  Bulk publish should be used to publish changes made in Studio via the UI.
 
-For example, using the Website Editorial blueprint, to publish all the articles in the year 2017, in the **Path to Publish** field, enter ``/site/website/articles/2017``.  To publish everything in your site, the user will enter ``/`` in the **Path to Publish** field
+For example, using the Website Editorial blueprint, to publish all the articles in the year 2017, in the **Path to Publish** field, enter ``/site/website/articles/2017``.  To publish everything in your project, the user will enter ``/`` in the **Path to Publish** field
 
 .. image:: /_static/images/site-admin/site-config-publish-bulk.png
-    :alt: Site Config Publishing - Bulk Publishing
+    :alt: Project Tools Publishing - Bulk Publishing
 	:align: center
 
 -----------------------
@@ -72,7 +72,7 @@ Publish by Commit ID(s)
 Crafter Studio also allows the user to publish commits from sandbox repository by commit id.  Publish by commit ID(s) must be used for changes made via direct git actions against the repository or pulled from a remote repository.
 
 .. image:: /_static/images/site-admin/site-config-publish-commit-id.png
-    :alt: Site Config Publishing - Publish by Commit ID(s)
+    :alt: Project Tools Publishing - Publish by Commit ID(s)
 	:align: center
 
 |
@@ -81,7 +81,7 @@ Crafter Studio also allows the user to publish commits from sandbox repository b
 
 |
 
-To publish by commit id, let's use a site created using the Website Editorial blueprint and follow the steps below:
+To publish by commit id, let's use a project created using the Website Editorial blueprint and follow the steps below:
 
 - Edit the Home page (/site/website/index.xm) from the command line or anywhere other than Studio
 - From the command line, commit your changes
@@ -122,7 +122,7 @@ Publishing Queue
 The **Publishing Queue** tab allows the user to see the items(publishing packages) that are in the queue for publishing.
 
 .. image:: /_static/images/site-admin/site-config-publish-queue.png
-    :alt: Site Config Publishing - Publishing Queue
+    :alt: Project Tools Publishing - Publishing Queue
 	:align: center
 
 |
@@ -142,7 +142,7 @@ The **Publishing Queue** tab allows the user to see the items(publishing package
 
 
 .. image:: /_static/images/site-admin/site-config-publishing-package.png
-    :alt: Site Config Publishing - Publishing Package
+    :alt: Project Tools Publishing - Publishing Package
 	:align: center
 
 |
@@ -164,7 +164,7 @@ You can filter the publishing queue displayed, based on the following:
 
 
 .. image:: /_static/images/site-admin/site-config-publish-queue-filter.png
-    :alt: Site Config Publishing - Publishing Queue Filters
+    :alt: Project Tools Publishing - Publishing Queue Filters
     :width: 35 %
     :align: center
 
@@ -175,7 +175,7 @@ Filtering shows packages where one or more items in the package match.  The defa
 Below, we have the filter set to display items in the ``COMPLETED`` state
 
 .. image:: /_static/images/site-admin/site-config-publish-queue-filter-completed.png
-    :alt: Site Config Publishing - Publishing Queue Filter Completed
+    :alt: Project Tools Publishing - Publishing Queue Filter Completed
     :align: center
 
 |
@@ -183,6 +183,6 @@ Below, we have the filter set to display items in the ``COMPLETED`` state
 Packages in the ``READY_FOR_LIVE`` state can be selected and the publishing package cancelled.  In the image below, we have two publishing packages selected with the ``Cancel Selected`` button clicked and confirming if the user wants to set the state of the selected publishing packages to state ``CANCELLED``
 
 .. image:: /_static/images/site-admin/site-config-publish-queue-filter-cancel.png
-    :alt: Site Config Publishing - Publishing Queue Filter Completed
+    :alt: Project Tools Publishing - Publishing Queue Filter Completed
     :align: center
 
