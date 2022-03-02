@@ -30,14 +30,8 @@ The root folder path, as shown below, needs to be configured to include a substi
 
 |
 
-This variable will be resolved by Crafter Engine for each request. There are two possible
-configurations to resolve this value.
-
-- simple multi-tenancy
-- mapped multi-tenancy
-
-Simple multi-tenancy is the recommended configuration in most cases, with an Apache HTTP server, NGINX, or CDN
-proxying Crafter Engine.
+This variable will be resolved by Crafter Engine for each request. To resolve this value, simply configure
+simple multi-tenancy, with an Apache HTTP server, NGINX, or CDN proxying Crafter Engine.
 
 ------------------------------
 Configure Simple Multi-Tenancy
@@ -99,61 +93,3 @@ together with CDNs that can send headers, like AWS CloudFront
     is set in the cookie for the next requests.
 
 |
-
-------------------------------
-Configure Mapped Multi-Tenancy
-------------------------------
-
-To enable this mode you need to change the following :ref:`Crafter Engine configuration files <engine-configuration-files>`:
-
-.. code-block:: xml
-    :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/services-context.xml*
-
-    <?xml version="1.0" encoding="UTF-8"?>
-        <beans xmlns="http://www.springframework.org/schema/beans"
-               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
-               xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-                               http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-        
-        <import resource="classpath*:crafter/engine/mode/multi-tenant/mapped/services-context.xml"/>
-        
-    </beans>
-
-|
-
-.. code-block:: xml
-    :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/rendering-context.xml*
-
-    <?xml version="1.0" encoding="UTF-8"?>
-        <beans xmlns="http://www.springframework.org/schema/beans"
-               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
-               xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-                               http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-        
-        <import resource="classpath*:crafter/engine/mode/multi-tenant/mapped/rendering-context.xml"/>
-        
-    </beans>
-
-|
-
-You also need to define a mapping from domain names to site names in a properties file:
-
-.. code-block:: properties
-    :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/site-mappings.properties*
-
-    site1.com=site1
-    www.site1.com=site1
-    site2.com=site2
-    www.site2.com=site2
-
-|
-
-After you have made the required changes and reloaded the ROOT.war file, each request will resolve
-the site using the domain name of the server. For example a request to 
-\http://www.site1.com/foo/bar will look for a file ``/foo/bar/index.xml`` in ``site1``.
-
-.. NOTE::
-  Using this configuration it is not possible to access a site using internal addresses like
-  ``localhost`` or ``127.0.0.1``. You will need to change the hostname for the server or manage
-  virtual hosts using an HTTP server.
-
