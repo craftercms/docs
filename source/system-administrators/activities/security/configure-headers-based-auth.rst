@@ -2,9 +2,9 @@
 
 .. _crafter-studio-configure-headers-based-auth:
 
-======================================
-Configure Headers Based Authentication
-======================================
+=======================================================
+Configure Headers Based Authentication |enterpriseOnly|
+=======================================================
 
 Crafter Studio is able to integrate with any authentication system that sends custom HTTP headers containing information that will be used to authenticate the user in Studio.  This section details how to setup Studio for headers based authentication.
 
