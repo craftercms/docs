@@ -430,7 +430,6 @@ To configure the RTE for in-context editing, add/edit the widget ``craftercms.co
              <![CDATA[
                {
                  "menubar": true,
-                 "theme": "silver",
                  "plugins": "print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount textpattern help acecode paste editform",
                  "extended_valid_elements": "",
                  "valid_children": "",
