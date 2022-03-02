@@ -60,7 +60,7 @@ Only approved content is published to the delivery environment. Crafter manages 
 
 The underlying Git repositories and related workflow for Authoring require no setup at all. When you create a project in Crafter Studio it automatically creates the local **Sandbox** and **Published** repositories. When you add a new **Delivery** node a simple command line script is run on that node that configures the node’s deployer to replicate and process content from the **Published** repository from authoring.
 
-   * Instructions for creating a project can be found :ref:`here <your_first_website>` .
+   * Instructions for creating a project can be found :ref:`here <your_first_project>` .
    * Instructions for initializing a delivery node can be found :ref:`here <setup-site-for-delivery>`.
 
 ---------------
@@ -251,7 +251,7 @@ Now that your project is created you can set up the rest of your production envi
 
 When you add a new delivery node a simple command line script is run on that node that configures it to replicate and process content from the “Published” repository from authoring.
 
-Instructions for creating a project can be found :ref:`here <your_first_website>` .
+Instructions for creating a project can be found :ref:`here <your_first_project>` .
 
 Instructions for initializing a delivery node can be found :ref:`here <setup-site-for-delivery>`.    
 

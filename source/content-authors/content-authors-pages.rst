@@ -308,7 +308,7 @@ Components inside the drop targets may be moved around to the desired position. 
 
 To remove a component from the drop target, just drag the feature to the trash bin that appears on the bottom right of the screen when dragging around a component.
 
-.. image:: /_static/images/first-site/first-site-drag-n-drop-delete.jpg
+.. image:: /_static/images/first-project/first-project-drag-n-drop-delete.jpg
     :width: 80 %
     :align: center
     :alt: Content Author - Drag and Drop Delete

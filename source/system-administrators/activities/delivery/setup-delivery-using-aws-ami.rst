@@ -100,7 +100,7 @@ In order to complete step 3, you must have a CrafterCMS authoring instance runni
 
 
 After your authoring instance is set up and configured, follow this guide to create a simple site.
-:ref:`your_first_website`
+:ref:`your_first_project`
 
 Crafter will automatically "publish" the initial state of the site for youfor you which will give you the prerequisites for the rest of step 3.
 
@@ -324,7 +324,7 @@ This configuration and other advanced topology topics such as load balancing are
 -------------------------------------------------------------------------------
 Step 6: Make an update in authoring and see it published on the delivery server
 -------------------------------------------------------------------------------
-To further test publishing, log in to Crafter Studio for the given site, make an edit and then approve the edit for publish. In a few moments you will see your updates in the web browser on the delivery server.  You can find step by step instructions on editing and publishing here: :ref:`your_first_website`
+To further test publishing, log in to Crafter Studio for the given site, make an edit and then approve the edit for publish. In a few moments you will see your updates in the web browser on the delivery server.  You can find step by step instructions on editing and publishing here: :ref:`your_first_project`
 
 .. image:: /_static/images/ami/craftercms-approve-publish.png
     :width: 100 %

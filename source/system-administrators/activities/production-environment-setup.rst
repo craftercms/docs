@@ -25,7 +25,7 @@ Setting up the production environment
       `./gradlew clone build deploy -Penv=authoring`
       `./gradlew start -Penv=authoring`
 
-#. Create your site in authoring. You can follow the guide :ref:`your_first_website` to use one of the out-of-the-box blueprints provided by CrafterCMS.
+#. Create your site in authoring. You can follow the guide :ref:`your_first_project` to use one of the out-of-the-box blueprints provided by CrafterCMS.
 
 #. Now that you have a site setup in authoring, the next thing to do is to setup your site in the delivery instance(s).  Let's begin the delivery installation.
 
