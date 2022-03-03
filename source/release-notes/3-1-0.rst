@@ -1,7 +1,7 @@
-.. index:: Crafter CMS 3.1.0 Release Notes
+.. index:: CrafterCMS 3.1.0 Release Notes
 
 -----------------
-Crafter CMS 3.1.0
+CrafterCMS 3.1.0
 -----------------
 
 ^^^^^^^^^^^^
@@ -10,7 +10,7 @@ New Features
 
 * Added Elasticsearch support
 
-  - The default search engine for Crafter CMS is now Elasticsearch (we continue to support Solr)
+  - The default search engine for CrafterCMS is now Elasticsearch (we continue to support Solr)
   - Full support for AWS Elasticsearch as well as vanilla Elasticsearch
   - Improved Studio search with new search backend based on Elasticsearch
 
@@ -19,13 +19,13 @@ New Features
   - Added Crafter Studio clustering
   - Added Studio form engine TinyMCE 5 support
   - Added Studio upgrade engine that performs site and blueprint upgrades automatically moving forward
-  - Added Video Center Blueprint, a live, live-to-VOD, and video serving site on Crafter CMS.
+  - Added Video Center Blueprint, a live, live-to-VOD, and video serving site on CrafterCMS.
 
 * Serverless Delivery
 
   - Full support for Kubernetes clustering vanilla or AWS EKS
   - Crafter Engine backed by AWS S3 (or compatible services)
-  - Added native Docker support.  Crafter CMS provided Docker images now available
+  - Added native Docker support.  CrafterCMS provided Docker images now available
   - Search is provided by Elasticsearch and is scaled separately
 
 * Added GraphQL support (Studio and Engine)
@@ -60,4 +60,4 @@ For a full list of tickets, please visit: `GitHub 3.1.0 Milestone <https://githu
 
 .. important::
 
-    Please see :ref:`upgrade-to-3-1-0` for instructions on how to update your Crafter CMS install and for some important notes about the update.
+    Please see :ref:`upgrade-to-3-1-0` for instructions on how to update your CrafterCMS install and for some important notes about the update.

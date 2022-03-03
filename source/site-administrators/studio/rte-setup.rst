@@ -7,7 +7,7 @@
 Rich Text Editor (RTE TinyMCE 2) Setup
 ======================================
 
-Crafter CMS provides support for TinyMCE 2.  This section details how to setup RTE (TinyMCE 2).
+CrafterCMS provides support for TinyMCE 2.  This section details how to setup RTE (TinyMCE 2).
 
 --------------------------------------------------------------------------------
 What Out-of-the-Box Functionality Does Crafter Studio's RTE (TinyMCE 2) Support?
@@ -348,7 +348,7 @@ Follow the instructions here: :ref:`using-components-in-rte` to setup the compon
 Inserting Smart Tables
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Crafter CMS provides a plugin for inserting a table that holds its formatting as the user adds rows and columns. To turn on table controls in the RTE, do the following:
+CrafterCMS provides a plugin for inserting a table that holds its formatting as the user adds rows and columns. To turn on table controls in the RTE, do the following:
 
 #. Add the **insert-predefined-table** module in the ``<rteModules>``.
 #. Add **predefinedTable** and **tablecontrols** to one of the toolbars: ``<toolbarItems1>``

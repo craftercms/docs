@@ -1,0 +1,43 @@
+.. index:: CrafterCMS 3.1.21 Release Notes
+
+-----------------
+CrafterCMS 3.1.21
+-----------------
+
+This release includes a fix for an issue with the 3.1.20 release.
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Fixed S3DeploymentEventsProcessor issues |br|
+  The S3DeploymentEventsProcessor now pushes to the correct path. |br|
+  Removed adding the ``sitename`` automatically at the beginning of all S3 paths the Deployer pushes S3 content to, and instead offer a ``{siteName}`` macro that can be used to specify the site name in the S3 path |br|
+
+  See `here <https://github.com/craftercms/craftercms/issues/5291>`__ for more information
+
+* Fixed issues with text containing ``-`` or ``_`` in the content type ``filename`` control |br|
+  A new text typed in the content type filename control containing a ``-`` (dash) or a ``_`` (underscore) is now not removed |br|
+
+  See `here <https://github.com/craftercms/craftercms/issues/5294>`__ for more information
+
+For a full list of tickets, please visit: `GitHub 3.1.21 Milestone <https://github.com/craftercms/craftercms/milestone/80?closed=1>`_
+
+.. important::
+
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your CrafterCMS install to 3.1.1 (applies to 3.1.21)
+
+    Starting with JVM version 1.8.0_292, support for TLS v1.1 and earlier is disabled by default |br|
+    See :ref:`debugging_ssl_issues` if you encounter issues.
+
+    For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+    Before proceeding with updating your CrafterCMS install, please see the following notes:
+
+    - :ref:`upgrade-notes-fix-template-not-found` for some important notes on template errors
+    - :ref:`upgrade-notes-to-fix-backup-error` for some important notes when restoring backups created prior to
+      CrafterCMS 3.1.10,
+    - :ref:`upgrade-notes-for-re-encrypting-values` for some important notes on the re-encryption process
+    - :ref:`upgrade-notes-to-fix-stored-procedure-error` for some important notes on database errors.
+
+

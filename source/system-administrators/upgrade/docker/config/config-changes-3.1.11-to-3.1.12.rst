@@ -3,7 +3,7 @@
 .. _docker-config-changes-3-1-11-to-3-1-12:
 
 ===========================================================================
-Configuration changes between Crafter CMS version 3.1.11 and version 3.1.12 
+Configuration changes between CrafterCMS version 3.1.11 and version 3.1.12 
 ===========================================================================
 
 The following is the list of configuration files that have changed from 3.1.11 to 3.1.12 (all are relative to the Crafter 

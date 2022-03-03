@@ -8,7 +8,7 @@
 Content Modeling
 ================
 
-Every content object in Crafter CMS is an object associated with a Content Model. Content Models allow you to add structure to your content and facilitate consumption via various visual representations or via APIs. One of the great things about Crafter CMS content models is that your content can be semi-structured which allows content authors the freedom to be as creative as they'd like to be, but provide the template/UI and API developers enough structure to produce solid multi-channel renditions of the content. This section will walk you through Content Type management in Crafter Studio to help you create the models that best fit your requirements.
+Every content object in CrafterCMS is an object associated with a Content Model. Content Models allow you to add structure to your content and facilitate consumption via various visual representations or via APIs. One of the great things about CrafterCMS content models is that your content can be semi-structured which allows content authors the freedom to be as creative as they'd like to be, but provide the template/UI and API developers enough structure to produce solid multi-channel renditions of the content. This section will walk you through Content Type management in Crafter Studio to help you create the models that best fit your requirements.
 
 -------------------------------
 Content Types in Crafter Studio
@@ -518,7 +518,7 @@ Below is the site tree after using the quick create button to create a new artic
 Form Controls
 ^^^^^^^^^^^^^
 
-Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. Crafter CMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`form-engine-control`.
+Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. CrafterCMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`form-engine-control`.
 
 .. figure:: /_static/images/content-model/form-engine-controls.png
     :alt: Form Engine Controls
@@ -550,7 +550,7 @@ Every Form Control has a Variable Name property.  The Variable Name is used by t
 
 **Reserved Variable Names**
 
-The following variable names are used by Crafter CMS.
+The following variable names are used by CrafterCMS.
 
 +----------------------+------------------------------------------------------------------+
 || Variable Name       || Description                                                     |
@@ -635,7 +635,7 @@ The following variable names are used by Crafter CMS.
 
 **Variable Names and Search Indexing**
 
-Crafter CMS indexes your content in the search index using your content model variable name as the field name.
+CrafterCMS indexes your content in the search index using your content model variable name as the field name.
 
 To facilitate indexing, the following suffix should be appended to variable names depending on the variable data type:
 
@@ -677,7 +677,7 @@ Remember to also remove the postfix auto-added by the UI when using ``key`` or `
 
 Please note that indexed ``text`` fields are case insensitive when performing a search, while ``string`` fields are case sensitive. Also, queries using ``string`` fields will only match full values besides being case sensitive.
 
-If performing a case insensitive search on a ``string`` field is desired, Crafter CMS provides a way by enabling tokenization of the field in the content type.  To enable tokenization of a ``string`` field in Studio, put a check in the checkbox labeled **Tokenize for Indexing** in the properties section of the content type field.  Below is the ``Page - Article`` content type in a site created using the Website Editorial blueprint, showing the field ``Author`` with the ``Tokenize for Indexing`` option:
+If performing a case insensitive search on a ``string`` field is desired, CrafterCMS provides a way by enabling tokenization of the field in the content type.  To enable tokenization of a ``string`` field in Studio, put a check in the checkbox labeled **Tokenize for Indexing** in the properties section of the content type field.  Below is the ``Page - Article`` content type in a site created using the Website Editorial blueprint, showing the field ``Author`` with the ``Tokenize for Indexing`` option:
 
 .. image:: /_static/images/content-model/tokenize-for-indexing-property.jpg
    :alt: Enable case insensitive keyword search for string fields in content type by clicking on "Tokenize for Indexing"
@@ -718,7 +718,7 @@ Data Sources
 
 |
 
-Data Sources are pickers that help pull in content from internal or external storage/systems.  For example, data source include: desktop video uploader, desktop image uploader, and so on. Crafter CMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
+Data Sources are pickers that help pull in content from internal or external storage/systems.  For example, data source include: desktop video uploader, desktop image uploader, and so on. CrafterCMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
 
 Data Sources allows the content model designer to decide where different assets uploaded via different controls go (for instance icons, images, RTE related assets, etc.).  It has it's own properties, like "Repository Path", which specifies the path where assets are stored, which help keep the system consistent over time.  The storage destination designed in the model dictates how those assets are handled during a duplicate event (duplicate the asset or duplicate the reference to the asset).
 
@@ -844,7 +844,7 @@ The canvas allows the form-based content capture only, and is used by content au
 Content Type View Templates
 ---------------------------
 
-View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the primary Crafter CMS model or additional model (via APIs, please read :ref:`groovy-api` for that topic).
+View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the primary CrafterCMS model or additional model (via APIs, please read :ref:`groovy-api` for that topic).
 
 An example view template
 
@@ -956,7 +956,7 @@ script in Scripts > components > upcoming-events.groovy so that it is executed f
 
 |
 
-You might notice that we're importing a ``utils.DateUtils`` class. This class is not part of Crafter CMS, but instead it is a Groovy class
+You might notice that we're importing a ``utils.DateUtils`` class. This class is not part of CrafterCMS, but instead it is a Groovy class
 specific to the site. To be able to use this class, you should place it under ``scripts > classes`` and name it DateUtils.groovy,
 where everything after the groovy directory is part of the class' package. It's recommended for all Groovy classes to follow this
 convention.

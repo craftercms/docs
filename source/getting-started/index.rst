@@ -6,7 +6,7 @@
 Getting Started
 ===============
 
-This section lets you get started quickly on using Crafter CMS for development or evaluation.
+This section lets you get started quickly on using CrafterCMS for development or evaluation.
 
 .. toctree::
    :maxdepth: 2
@@ -28,7 +28,7 @@ If you are a developer gung-ho to start developing, here are a couple resources 
     * :ref:`developers`
     * :ref:`developer_cookbooks`
 
-If you are a system administrator and would like to learn more about configuring/setting up Crafter CMS or to setup a production environment, here are some resources to get you going:
+If you are a system administrator and would like to learn more about configuring/setting up CrafterCMS or to setup a production environment, here are some resources to get you going:
 
     * :ref:`system-administrators`
     * :ref:`production-environment-setup`

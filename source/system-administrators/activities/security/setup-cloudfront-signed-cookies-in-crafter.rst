@@ -3,11 +3,11 @@
 .. _setup-cloudfront-signed-cookies-in-crafter:
 
 ==============================================
-Setup CloudFront Signed Cookies in Crafter CMS
+Setup CloudFront Signed Cookies in CrafterCMS
 ==============================================
 
 One way to provide access to restricted content through AWS CloudFront is to use signed cookies.
-This section details how to setup CloudFront signed cookies for Crafter CMS with SSO.
+This section details how to setup CloudFront signed cookies for CrafterCMS with SSO.
 
 From the  `AWS documentation <https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-cookies.html>`__
 

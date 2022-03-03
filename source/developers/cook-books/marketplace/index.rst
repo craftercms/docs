@@ -8,7 +8,7 @@
 Crafter Marketplace
 ===================
 
-Crafter CMS marketplace provides a home for the Crafter community to contribute, find, and use plugins.  Crafter CMS ``plugins`` extend the CMS and provide the user additional functionality.
+CrafterCMS marketplace provides a home for the Crafter community to contribute, find, and use plugins.  CrafterCMS ``plugins`` extend the CMS and provide the user additional functionality.
 
 
 .. toctree::
@@ -17,4 +17,4 @@ Crafter CMS marketplace provides a home for the Crafter community to contribute,
 
    create-plugins
 
-For more information on the Crafter CMS Marketplace, see https://marketplace.craftercms.org
+For more information on the CrafterCMS Marketplace, see https://marketplace.craftercms.org

@@ -10,7 +10,7 @@ Overriding Logging Levels
 
 There are times when you'd like to see more log details, say when there are problems, so you can narrow down what is happening and address it.  Overriding the logging levels allows you to see more or less details in your installation depending on your needs.
 
-Crafter CMS comes with classes and packages set to logging level INFO out of the box.  To change the logging levels of your Crafter CMS installation, you can do one of the following:
+CrafterCMS comes with classes and packages set to logging level INFO out of the box.  To change the logging levels of your CrafterCMS installation, you can do one of the following:
 
 ------------------------------
 Temporarily Set Logging Levels

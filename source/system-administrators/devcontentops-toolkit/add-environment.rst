@@ -8,7 +8,7 @@
 add-environment
 ===============
 
-Adds the configuration to connect to Crafter CMS
+Adds the configuration to connect to CrafterCMS
 
 -----
 Usage
@@ -41,7 +41,7 @@ Options
 Example
 -------
 
-Here's an example of issuing the ``add-environment`` command to setup the connection to Crafter CMS.  We'll use ``local`` for the name, ``http://localhost:8080`` for the url, and username ``john`` for the authentication.  Leave the password blank, you will be prompted for the password after issuing the ``add-environment`` command:
+Here's an example of issuing the ``add-environment`` command to setup the connection to CrafterCMS.  We'll use ``local`` for the name, ``http://localhost:8080`` for the url, and username ``john`` for the authentication.  Leave the password blank, you will be prompted for the password after issuing the ``add-environment`` command:
 
    .. code-block:: bash
 

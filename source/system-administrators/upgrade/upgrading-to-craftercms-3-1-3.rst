@@ -8,7 +8,7 @@
 .. _upgrade-to-3-1-3:
 
 ===============================================================================
-Docker/Kuber Instructions for Upgrading to Crafter CMS 3.1.3 from 3.1.0 version
+Docker/Kuber Instructions for Upgrading to CrafterCMS 3.1.3 from 3.1.0 version
 ===============================================================================
 
 To upgrade 3.1.0 Docker/Kuber deployments to 3.1.3:

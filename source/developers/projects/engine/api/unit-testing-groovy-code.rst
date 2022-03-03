@@ -2,17 +2,17 @@
 
 :orphan:
 
-..  index:: Unit Testing Crafter CMS Groovy Code, unit test
+..  index:: Unit Testing CrafterCMS Groovy Code, unit test
 
 .. _unit-testing-groovy-code:
 
 ====================================
-Unit Testing Crafter CMS Groovy Code
+Unit Testing CrafterCMS Groovy Code
 ====================================
 
 For larger sites with complex services implemented in Groovy, it is very helpful to have a way to include unit tests in a way that can be easily integrated with CI/CD systems.
 
-This section details how to create unit tests for Crafter CMS Groovy code with Gradle.
+This section details how to create unit tests for CrafterCMS Groovy code with Gradle.
 
 For more information on the classes of the variables that can be mocked for unit testing, see  :ref:`groovy-api`
 

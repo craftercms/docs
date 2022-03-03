@@ -16,9 +16,9 @@ Using the Proxy Configuration
 
 A proxy server, or proxy for short, is an application or system that acts as a middleman between requests from clients for resources such as a file or web page for example, and the server that provides those resources.  Whenever a request is made by a client, the request gets sent to the proxy that then evaluates the request and then performs the required transactions.  Proxies forwards web requests, act as a firewall and web filter, provide shared network connections, and cache data to speed up common requests.  It helps to simplify/control the complexity of the request, and can provide additional benefits such as load balancing, privacy or security.
 
-Crafter CMS supports a proxy system to proxy GraphQL, Engine, NodeJS or other application delivery systems.  Whenever Crafter Engine receives a request, it is matched against the patterns of each server and the first match would then get the request sent to the server with the matching pattern.  In some systems, multiple servers are used for Elasticsearch, Studio, etc.  Using the proxy helps simplify the system.
+CrafterCMS supports a proxy system to proxy GraphQL, Engine, NodeJS or other application delivery systems.  Whenever Crafter Engine receives a request, it is matched against the patterns of each server and the first match would then get the request sent to the server with the matching pattern.  In some systems, multiple servers are used for Elasticsearch, Studio, etc.  Using the proxy helps simplify the system.
 
-One of the benefits of using the proxy in Crafter CMS is that it can connect to any remote server as the preview server, which allows for easier authoring of sites built with other programming languages and technology.  For example, you would like to work on a React application within Studio.  What is normally included inside Studio is the build output of the React application, so that a user making edits to the React code would need to build the React code then copy it into Studio in order to preview the changes.  This becomes cumbersome when developing, as many edits are normally done before reaching the final version of the React app.  Using the proxy, the user can preview the React app in Studio and is able to work on both the React app and Crafter CMS.
+One of the benefits of using the proxy in CrafterCMS is that it can connect to any remote server as the preview server, which allows for easier authoring of sites built with other programming languages and technology.  For example, you would like to work on a React application within Studio.  What is normally included inside Studio is the build output of the React application, so that a user making edits to the React code would need to build the React code then copy it into Studio in order to preview the changes.  This becomes cumbersome when developing, as many edits are normally done before reaching the final version of the React app.  Using the proxy, the user can preview the React app in Studio and is able to work on both the React app and CrafterCMS.
 
 Let's take a look at an example of setting up the proxy for a React application.
 
@@ -98,8 +98,8 @@ Let's begin:
           # the site. Manually set the here otherwise.
           REACT_APP_BASE_URL=http://localhost:8080
 
-          # If you're using the Crafter CMS's Preview Proxy to view the dev mode app inside Preview,
-          # configuring the port makes live reload work inside the Crafter CMS Preview frame.
+          # If you're using the CrafterCMS's Preview Proxy to view the dev mode app inside Preview,
+          # configuring the port makes live reload work inside the CrafterCMS Preview frame.
           # If you're using any other port to run your webpack dev server, you should adjust this to
           # that port too.
           WDS_SOCKET_PORT=3000
@@ -110,7 +110,7 @@ Let's begin:
 
      Remember to restart the React server for the settings to take effect.
 
-       .. note:: If you're using the create-react-app, please note that ``react-scripts`` versions earlier than 3.4.0 does not support custom sockjs pathname for hot reloading the server.  Make sure that your ``react-scripts`` version used is 3.4.0 or above for the live reload work inside Crafter CMS to work.
+       .. note:: If you're using the create-react-app, please note that ``react-scripts`` versions earlier than 3.4.0 does not support custom sockjs pathname for hot reloading the server.  Make sure that your ``react-scripts`` version used is 3.4.0 or above for the live reload work inside CrafterCMS to work.
 
 
 #. Setup Studio

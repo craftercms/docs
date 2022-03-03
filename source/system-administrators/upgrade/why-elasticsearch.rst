@@ -13,17 +13,17 @@
 Why Elasticsearch
 =================
 
-Starting version 3.1, the default search engine used by Crafter CMS is Elasticsearch. The motivation for having Elasticsearch as the default search engine for Crafter CMS is the following:
+Starting version 3.1, the default search engine used by CrafterCMS is Elasticsearch. The motivation for having Elasticsearch as the default search engine for CrafterCMS is the following:
 
-1. Solr doesn't cluster and scale as well as Elasticsearch and that would have held back Crafter CMS's serverless mode
+1. Solr doesn't cluster and scale as well as Elasticsearch and that would have held back CrafterCMS's serverless mode
 2. AWS doesn't directly support Solr (AWS CloudSearch, while based on Solr, has an AWS specific API). Whereas Elasticsearch is the same on AWS or elsewhere.
 
 -------------------------------
-Crafter CMS Search Architecture
+CrafterCMS Search Architecture
 -------------------------------
 
 .. image:: /_static/images/search/search-arch.png
-   :alt: Crafter CMS Search Architecture
+   :alt: CrafterCMS Search Architecture
    :align: center
 
 

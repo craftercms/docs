@@ -93,7 +93,7 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
             </params>
           </modulehook>
 
-#. Let's take a look at our plugin in action by viewing the **Dashboard** by clicking on the site name or the Crafter CMS logo at the top left of your browser:
+#. Let's take a look at our plugin in action by viewing the **Dashboard** by clicking on the site name or the CrafterCMS logo at the top left of your browser:
 
    .. image:: /_static/images/developer/plugins/sidebar-plugin-in-action.png
       :align: center

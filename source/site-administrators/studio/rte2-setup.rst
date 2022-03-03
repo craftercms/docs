@@ -8,7 +8,7 @@
 Rich Text Editor (RTE TinyMCE 5) Setup
 ======================================
 
-Crafter CMS provides support for TinyMCE 5.  This section details how to setup RTE (TinyMCE 5).
+CrafterCMS provides support for TinyMCE 5.  This section details how to setup RTE (TinyMCE 5).
 
 --------------------------------------------------------------------------------
 What Out-of-the-Box Functionality Does Crafter Studio's RTE (TinyMCE 5) Support?
@@ -146,6 +146,47 @@ Let us take a look at an example of adding two templates to the RTE configuratio
 
 
 See https://www.tiny.cloud/docs/plugins/opensource/template/ for more information on the template plugin.
+
+
+.. _rte-paste-plugin-hooks:
+
+TinyMCE paste plugin callback hooks
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The TinyMCE ``paste`` plugin enables you to modify the pasted content before it gets inserted into the editor (``paste_preprocess``) and before it gets inserted into the editor but after it’s been parsed into a DOM structure (``paste_postprocess``).  For more information on these options, see https://www.tiny.cloud/docs/plugins/opensource/paste#paste_preprocess.
+
+In order to hook into the callback (``paste_preprocess`` and ``paste_postprocess``), do the following in the RTE configuration:
+
+1) Add the default ``paste`` plugin in the ``<plugins />`` tag
+
+   .. code-block:: xml
+      :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-setup-tinymce5.xml*
+
+      <plugins>
+        print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template
+        codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount
+        textpattern help acecode paste
+      </plugins>
+
+   |
+
+2) Create an :ref:`external plugin <adding-external-plugins>` by following the structure of the example plugin `here <https://github.com/craftercms/studio-ui/blob/support/3.1.x/static-assets/js/tinymce-plugins/craftercms_paste_extension/craftercms_tinymce_hooks.sample.js>`__.  To modify the pasted content, add your code under ``paste_preprocess()`` or ``paste_postprocess()`` depending on your needs.
+
+3) Add the plugin created in the previous step as an external plugin under the ``craftercms_tinymce_hooks`` tag.
+
+   .. code-block:: xml
+      :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-setup-tinymce5.xml*
+
+      <external_plugins>
+	    <craftercms_tinymce_hooks><![CDATA[/studio/api/2/plugin/file?siteId={site}&type=tinymce&name=craftercms_paste_extension&filename=samplepasteplugin.js]]></craftercms_tinymce_hooks>
+      </external_plugins>
+
+   |
+
+   For more information on ``craftercms_tinymce_hooks``, see :ref:`here <extending-tinymce>`
+
+.. note::
+   When Tiny's ``paste`` plugin is included, ``craftercms_paste_cleanup`` extension is also enabled. CrafterCMS' extension performs some additional paste cleanup from what Tiny's plugin does. To disable these additional processing of the paste input, you may add ``<craftercms_paste_cleanup>false</craftercms_paste_cleanup>`` to the RTE configuration
+
 
 .. _rte-add-allowable-elements:
 
@@ -355,6 +396,82 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
 
    |
 
+.. _extending-rte-init-function:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Adding configuration options to the init function
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Crafter Studio uses standard TinyMCE configuration options.
+The default editor instance contains most of the commonly used configuration options such as the selector, toolbar,
+plugin, etc. Sometimes, you may want to use a configuration option that is not in the default editor instance.  To add
+a configuration option to an editor instance, we use ``<extendedOptions />`` in the RTE configuration.
+Simply add the configuration options you would like to add in the ``<extendedOptions />`` tag.
+
+.. code-block:: xml
+
+   <extendedOptions>
+     <![CDATA[
+       {
+         "preview_styles": "font-size color"
+       }
+     ]]>
+   </extendedOptions>
+
+|
+|
+
+Most of the TinyMCE configuration options can be used except for the following which are set to read only:
+
+``target`` ``inline`` ``setup`` ``base_url`` ``encoding`` ``autosave_ask_before_unload`` ``autosave_interval``
+``autosave_prefix`` ``autosave_restore_when_empty`` ``autosave_retention`` ``file_picker_callback`` ``height``
+``file_picker_callback`` ``paste_postprocess`` ``images_upload_handler`` ``code_editor_inline``
+
+See https://www.tiny.cloud/docs/configure/ for more information on the configuration options of TinyMCE.
+
+Example adding a configuration option
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Let's take a look at an example of adding the ``fontsize_formats`` option to the init function to override the font
+sizes displayed in the **fontsizeselect** dropdown toolbar button and the **fontsizes** menu item
+
+.. image:: /_static/images/site-admin/rte/rte-default-font-sizes.png
+   :alt: *RTE default font sizes*
+   :width: 55%
+   :align: center
+
+|
+
+The default font sizes are: ``8pt 10pt 12pt 14pt 16pt 18pt 24pt 36pt 48pt`` as seen above.  For our example, we will add the following font sizes to the default: 9pt 11pt and 13pt
+
+1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+
+2. Add the configuration option ``fontsize_formats`` under the ``setup`` tag with the font sizes we want:
+
+   .. code-block:: xml
+
+      <config>
+        <setup>
+          ...
+          <extendedOptions>
+            <![CDATA[
+              {
+                "fontsize_formats": "8pt 9pt 10pt 11pt 12pt 13pt 14pt 16pt 18pt 24pt 36pt 48pt"
+              }
+            ]]>
+          </extendedOptions>
+          ...
+
+   |
+
+3. Let’s see the font sizes we added in action.  Preview a page with an RTE and start editing.  Click on the RTE toolbar
+   menu ``Format`` then select ``Font sizes``
+
+   .. image:: /_static/images/site-admin/rte/rte-edited-font-sizes.png
+      :alt: *RTE edited font sizes*
+      :width: 75%
+      :align: center
+
+   |
 
 ---------------------
 Creating an RTE Setup
@@ -448,3 +565,17 @@ In the image below, the RTE setup name used is **generic**.  Please see the sect
 	:align: center
     :width: 50%
 
+
+.. _extending-tinymce:
+
+-----------------
+Extending TinyMCE
+-----------------
+
+CrafterCMS  provides a general tool for extending TinyMCE via the ``craftercms_tinymce_hooks``.   It currently allows for hooking into the following (as shown by the example `here <https://github.com/craftercms/studio-ui/blob/support/3.1.x/static-assets/js/tinymce-plugins/craftercms_paste_extension/craftercms_tinymce_hooks.sample.js>`__):
+
+- ``paste_preprocess`` callback
+- ``paste_postprocess`` callback
+- ``setup`` function
+
+To hook into the paste pre/post process of TinyMCE, see :ref:`here <rte-paste-plugin-hooks>`.

@@ -8,10 +8,10 @@
 .. _reindex-content-3-1-18-and-later:
 
 --------------------------------------------------------------------------------
-Reindexing Content Using Elasticsearch for Crafter CMS versions 3.1.18 and later
+Reindexing Content Using Elasticsearch for CrafterCMS versions 3.1.18 and later
 --------------------------------------------------------------------------------
 
-The steps listed below for reindexing content without disrupting service in production using Elasticsearch applies only to Crafter CMS versions 3.1.18 and later
+The steps listed below for reindexing content without disrupting service in production using Elasticsearch applies only to CrafterCMS versions 3.1.18 and later
 
 ^^^^^^^^^^^^^^^^^^^^^^
 Step 1: Content freeze
@@ -25,7 +25,7 @@ during your reindex process.
 Step 2: Recreate Index
 ^^^^^^^^^^^^^^^^^^^^^^
 
-To simplify recreating an index of a site using Elasticsearch, Crafter CMS provides an API that recreates the underlying Elasticsearch index with the specified environment and site name.
+To simplify recreating an index of a site using Elasticsearch, CrafterCMS provides an API that recreates the underlying Elasticsearch index with the specified environment and site name.
 
 ``http://localhost:9191/api/1/target/recreate/{env}/{site_name}``
 

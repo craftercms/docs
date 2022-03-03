@@ -18,7 +18,7 @@ Installation
 New Installation
 ^^^^^^^^^^^^^^^^
 
-You can follow the instructions for building a complete binary archive of Crafter CMS as described
+You can follow the instructions for building a complete binary archive of CrafterCMS as described
 `here <https://github.com/craftercms/craftercms/blob/support/3.1.x/README.md>`__.
 
 ^^^^^^^^^^^^^^^^^^^^^
@@ -33,7 +33,7 @@ To deploy the application you only need to move the WAR file into ``$CRAFTER_HOM
 Configuration Guide
 -------------------
 
-Similar to other Crafter CMS components you can configure the Profile Admin Console using a simple
+Similar to other CrafterCMS components you can configure the Profile Admin Console using a simple
 properties file placed in the following location:
 
   ``$CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/profile/management/extension/server-config.properties``

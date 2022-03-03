@@ -1,7 +1,7 @@
-.. index:: Crafter CMS 3.1.12 Release Notes
+.. index:: CrafterCMS 3.1.12 Release Notes
 
 ------------------
-Crafter CMS 3.1.12
+CrafterCMS 3.1.12
 ------------------
 
 ^^^^^^^^^^^^
@@ -37,12 +37,12 @@ For a full list of tickets, please visit: `GitHub 3.1.12 Milestone <https://gith
 
 .. important::
 
-    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.12)
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your CrafterCMS install to 3.1.1 (applies to 3.1.12)
 
     For Docker/Kuber deployments, see :ref:`upgrading-dockers`
 
     For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
 
     Please see :ref:`upgrade-notes-to-fix-backup-error` for some important notes when restoring backups created prior
-    to Crafter CMS 3.1.10, :ref:`upgrade-notes-for-re-encrypting-values` for some important notes on the re-encryption
+    to CrafterCMS 3.1.10, :ref:`upgrade-notes-for-re-encrypting-values` for some important notes on the re-encryption
     process and :ref:`upgrade-notes-to-fix-stored-procedure-error` for some important notes on database errors.

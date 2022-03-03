@@ -1,20 +1,20 @@
-.. index:: Crafter CMS 3.1.3 Release Notes
+.. index:: CrafterCMS 3.1.3 Release Notes
 
 -----------------
-Crafter CMS 3.1.3
+CrafterCMS 3.1.3
 -----------------
 
 ^^^^^^^
 Updates
 ^^^^^^^
 
-* Fixed bug where field name postfixes were enforced on Crafter CMS reserved fields for older upgraded sites
+* Fixed bug where field name postfixes were enforced on CrafterCMS reserved fields for older upgraded sites
 
 For a full list of tickets, please visit: `GitHub 3.1.3 Milestone <https://github.com/craftercms/craftercms/milestone/56?closed=1>`_
 
 .. important::
 
-    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.3)
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your CrafterCMS install to 3.1.1 (applies to 3.1.3)
 
     For Docker/Kuber deployments, see :ref:`upgrade-to-3-1-3` for instructions on how to upgrade from 3.1.0 to 3.1.3
 

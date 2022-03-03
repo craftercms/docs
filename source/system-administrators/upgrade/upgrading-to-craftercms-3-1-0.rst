@@ -8,15 +8,15 @@
 .. _upgrade-to-3-1-0:
 
 =============================================================================
-Instructions for Upgrading to Crafter CMS 3.1.0 from a previous 3.0.x version
+Instructions for Upgrading to CrafterCMS 3.1.0 from a previous 3.0.x version
 =============================================================================
-This section details how to upgrade your Crafter CMS installation to version 3.1.0
+This section details how to upgrade your CrafterCMS installation to version 3.1.0
 
 ----------------
 Before Upgrading
 ----------------
 
-Starting with version 3.1.0, Crafter CMS has an upgrade manager that automatically upgrades the system, some configuration files and blueprints.  Here's a list of items auto handled by the upgrade manager when you start Crafter CMS:
+Starting with version 3.1.0, CrafterCMS has an upgrade manager that automatically upgrades the system, some configuration files and blueprints.  Here's a list of items auto handled by the upgrade manager when you start CrafterCMS:
 
 #. **Site Config updates**
 
@@ -28,7 +28,7 @@ Starting with version 3.1.0, Crafter CMS has an upgrade manager that automatical
       :alt: Crafter Studio Site Config
       :align: center
 
-   The following items are auto added/removed from your site after starting your new Crafter CMS install:
+   The following items are auto added/removed from your site after starting your new CrafterCMS install:
 
    * Remote Repository tool is auto added
    * Groups tool is auto removed
@@ -37,7 +37,7 @@ Starting with version 3.1.0, Crafter CMS has an upgrade manager that automatical
 
 #. **Version File Added**
 
-   Starting with version 3.1.0 Crafter CMS will use a special file studio_version.xml to track the version of each site and automatically apply upgrades for future releases.  The studio_version.xml file is auto installed and looks like this:
+   Starting with version 3.1.0 CrafterCMS will use a special file studio_version.xml to track the version of each site and automatically apply upgrades for future releases.  The studio_version.xml file is auto installed and looks like this:
 
    .. code-block:: xml
        :caption: /config/studio/studio_version.xml
@@ -49,11 +49,11 @@ Starting with version 3.1.0, Crafter CMS has an upgrade manager that automatical
 
    .. note::
 
-       If your site is heavily customized and you would like to prevent Crafter CMS from trying to upgrade it in the future you can set the version value to any random string, for example <version>DISABLED</version>.
+       If your site is heavily customized and you would like to prevent CrafterCMS from trying to upgrade it in the future you can set the version value to any random string, for example <version>DISABLED</version>.
 
 #. **Managed Configuration Files**
 
-   Starting in version 3.1.0 Crafter CMS will also track an individual version for some configurations files
+   Starting in version 3.1.0 CrafterCMS will also track an individual version for some configurations files
    in order to keep them up to date.  These configuration files are auto updated by the upgrade manager
 
    .. note::
@@ -64,7 +64,7 @@ Starting with version 3.1.0, Crafter CMS has an upgrade manager that automatical
 
       If one of the files do not contain a version tag then all existing upgrades will be applied.
 
-   This is the list of files currently managed by Crafter CMS:
+   This is the list of files currently managed by CrafterCMS:
 
    - ``/config/studio/role-mappings-config.xml``
      Current version: 2.
@@ -82,7 +82,7 @@ Starting with version 3.1.0, Crafter CMS has an upgrade manager that automatical
 
 #. **Groups Update**
 
-   Groups are now at the system level instead of per site.  As mentioned above, the Groups tool has been removed from |siteConfig| and is now in the Main Menu.  By default, Crafter CMS has the following groups available after a fresh install: ``system_admin``, ``site_admin``, ``site_author``, ``site_developer``, ``site_publisher``, and ``site_reviewer``.  Users added to the system_admin group has the role **system_admin** that has permissions to create users, create site, add users to groups, etc.  Users added to any of the default groups has permissions for all sites created in Studio.
+   Groups are now at the system level instead of per site.  As mentioned above, the Groups tool has been removed from |siteConfig| and is now in the Main Menu.  By default, CrafterCMS has the following groups available after a fresh install: ``system_admin``, ``site_admin``, ``site_author``, ``site_developer``, ``site_publisher``, and ``site_reviewer``.  Users added to the system_admin group has the role **system_admin** that has permissions to create users, create site, add users to groups, etc.  Users added to any of the default groups has permissions for all sites created in Studio.
 
 #. **Site Membership Update**
 
@@ -110,7 +110,7 @@ Starting with version 3.1.0, Crafter CMS has an upgrade manager that automatical
 Some More Things to Note
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-There are a few more things to note when upgrading to Crafter CMS 3.1 from 3.0.
+There are a few more things to note when upgrading to CrafterCMS 3.1 from 3.0.
 
 #. Studio authentication now uses a chain, with the internal database as the Studio default authentication.  For more information, see :ref:`configuring-studio-security`
 
@@ -118,7 +118,7 @@ There are a few more things to note when upgrading to Crafter CMS 3.1 from 3.0.
 
 #. The headers based authentication configuration has been updated. The ``groups`` header value should just be a comma separated list of groups that a user belongs to.  In the previous version, 3.0.x, the ``groups`` header value contained a comma separated list of sites and groups.  Please update the ``groups`` header value of users to contain only a comma separated list of groups the user belongs to.  Please see :ref:`crafter-studio-configure-headers-based-auth` for the updated configuration.
 
-#. The default search engine for Crafter CMS is now Elasticsearch as opposed to Solr, learn more at :ref:`why-elasticsearch`.
+#. The default search engine for CrafterCMS is now Elasticsearch as opposed to Solr, learn more at :ref:`why-elasticsearch`.
 
    * If you're happy with Solr, you can keep using it as it is fully supported. However, please bear in mind:
 
@@ -127,23 +127,23 @@ There are a few more things to note when upgrading to Crafter CMS 3.1 from 3.0.
 
    * If you'd like to switch to Elasticsearch, please read :ref:`migrate-site-to-elasticsearch`.
 
-Let's begin upgrading your Crafter CMS install.
+Let's begin upgrading your CrafterCMS install.
 
 -------------------
-Upgrade Crafter CMS
+Upgrade CrafterCMS
 -------------------
 
 #. Review the release notes for the version you are upgrading to, which contains specific information on the changes 
    that have been made and how it may affect you when upgrading to that specific version.
-#. Backup your Crafter CMS 3.0.x install
-#. Download the Crafter CMS 3.1.0 binary archive version and extract the files
-#. In your Crafter CMS 3.0.x install, copy/paste or move the data folder ``CRAFTER_3.0.x_INSTALLATION/data`` to your new ``CRAFTER_3.1.0_INSTALLATION`` install folder
+#. Backup your CrafterCMS 3.0.x install
+#. Download the CrafterCMS 3.1.0 binary archive version and extract the files
+#. In your CrafterCMS 3.0.x install, copy/paste or move the data folder ``CRAFTER_3.0.x_INSTALLATION/data`` to your new ``CRAFTER_3.1.0_INSTALLATION`` install folder
 #. Migrate sites to Elasticsearch (recommended) by following this guide: :ref:`migrate-site-to-elasticsearch`.
    You can continue using Crafter Search and Solr as the search engine, by following :ref:`using-crafter-search-and-solr`
-#. Start your upgraded Crafter CMS, then follow the steps below for :ref:`create-authoring-targets`, :ref:`update-index-format-preview-targets` and :ref:`update-paths-in-targets` for all upgraded sites.
+#. Start your upgraded CrafterCMS, then follow the steps below for :ref:`create-authoring-targets`, :ref:`update-index-format-preview-targets` and :ref:`update-paths-in-targets` for all upgraded sites.
 
    * If a site has not been migrated to Elasticsearch, follow additionally the steps under :ref:`updates-for-solr`.
-   * If a site uses a default dependency resolver configuration file from a previous Crafter CMS installation version, consider deleting your dependency resolver configuration file and it will then use the default dependency resolver configuration with rules matching what's in this sample ``CRAFTER_3.1.0_INSTALLATION/data/repos/global/configuration/dependency/resolver-config.xml``
+   * If a site uses a default dependency resolver configuration file from a previous CrafterCMS installation version, consider deleting your dependency resolver configuration file and it will then use the default dependency resolver configuration with rules matching what's in this sample ``CRAFTER_3.1.0_INSTALLATION/data/repos/global/configuration/dependency/resolver-config.xml``
    * If a site has a customized dependency resolver configuration file, please compare your dependency resolver configuration with the default dependency resolver file ``CRAFTER_3.1.0_INSTALLATION/data/repos/global/configuration/dependency/resolver-config.xml`` and make changes as required.
 
 #. Verify that the authoring and delivery environments are functioning as intended.
@@ -153,7 +153,7 @@ Upgrade Crafter CMS
 ------------------------
 Create Authoring Targets
 ------------------------
-Starting with Crafter CMS 3.1.0, Studio will use Elasticsearch to index all sites to provide the new features in the
+Starting with CrafterCMS 3.1.0, Studio will use Elasticsearch to index all sites to provide the new features in the
 authoring search. For all existing sites a new target must be created using the Deployer API:
 
 #.  Create the new target:

@@ -12,7 +12,7 @@ When developing templates or scripts only a small list of services are available
 services with the following steps.
 
 --------------------
-Crafter CMS Services
+CrafterCMS Services
 --------------------
 
 If your site includes a custom application context with services, you can make them available by adding them to the

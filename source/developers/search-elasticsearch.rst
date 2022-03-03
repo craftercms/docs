@@ -10,7 +10,7 @@ Search with Elasticsearch
 Querying Content
 ----------------
 
-To see the types of content queries you can make in Crafter CMS, please see :ref:`basic-query-mechanics`
+To see the types of content queries you can make in CrafterCMS, please see :ref:`basic-query-mechanics`
 
 -----------------------------
 Implementing a Faceted Search
@@ -196,7 +196,7 @@ The final step is to trigger a new search when the user selects one of the value
 Multi-index Query
 -----------------
 
-Crafter CMS supports querying more than one Elasticsearch index in a single query.
+CrafterCMS supports querying more than one Elasticsearch index in a single query.
 
 To search your site and other indexes, simply send a search query with a comma separated list of indexes/aliases (ES pointer to an index).  It will then search your site and the other indexes
 
@@ -232,7 +232,7 @@ Here's how the query will look like for the above image of a multi-index query f
 
 See :ref:`here <crafter-engine-api-site-elasticsearch-search>` for more information on the Crafter Engine API ``search``.
 
-Crafter CMS supports the following search query parameters:
+CrafterCMS supports the following search query parameters:
 
 * indices_boost
 * search_type

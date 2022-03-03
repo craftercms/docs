@@ -49,9 +49,9 @@ To use a custom blacklist follow these steps:
       crafter.engine.groovy.sandbox.blacklist.path=classpath:crafter/engine/groovy/blacklist
 
     .. note::
-      In Crafter CMS v3.1.14 and prior, the name of the property is ``crafter.engine.groovy.sandbox.blacklist``
+      In CrafterCMS v3.1.14 and prior, the name of the property is ``crafter.engine.groovy.sandbox.blacklist``
 
-#.  Restart Crafter CMS
+#.  Restart CrafterCMS
 
 Now you can execute the same script without any issues.
 

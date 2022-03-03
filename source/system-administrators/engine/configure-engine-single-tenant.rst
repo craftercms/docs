@@ -8,7 +8,7 @@
 Configure Single-Tenancy in Engine
 ==================================
 
-.. note:: *This guide applies only to the* **delivery environment** *of Crafter CMS*
+.. note:: *This guide applies only to the* **delivery environment** *of CrafterCMS*
 
 Crafter Engine by default is setup for multi-tenancy (multiple sites handled by a single Crafter Engine).  There are instances where the deployment is for a single site.
 This guide explains how to setup Crafter Engine for single tenancy.

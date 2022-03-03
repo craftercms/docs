@@ -8,7 +8,7 @@
 .. _docker-config-changes:
 
 ==================================================
-Configuration changes between Crafter CMS versions
+Configuration changes between CrafterCMS versions
 ==================================================
 
 .. toctree::
@@ -28,3 +28,8 @@ Configuration changes between Crafter CMS versions
    config-changes-3.1.14-to-3.1.15.rst
    config-changes-3.1.15-to-3.1.16.rst
    config-changes-3.1.16-to-3.1.17.rst
+   config-changes-3.1.17-to-3.1.18.rst
+   config-changes-3.1.18-to-3.1.19.rst
+   config-changes-3.1.19-to-3.1.20.rst
+   config-changes-3.1.20-to-3.1.21.rst
+   config-changes-3.1.21-to-3.1.22.rst

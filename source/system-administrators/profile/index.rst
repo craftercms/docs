@@ -11,7 +11,7 @@ profiles you can follow the :ref:`profile-admin-console` guides.
 
 .. NOTE::
   This guide assumes that you have already installed and configured MongoDB, or you've used
-  Crafter CMS's Gradle build system (which will install MongoDB for you). You can find more
+  CrafterCMS's Gradle build system (which will install MongoDB for you). You can find more
   information in the official documentation: https://docs.mongodb.com/manual/installation/
 
 

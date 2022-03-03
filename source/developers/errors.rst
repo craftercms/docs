@@ -10,7 +10,7 @@ Errors
 Error Codes
 -----------
 
-When things go wrong with an API request, an error message is generated.  These error messages contain an error code and a short description of what went wrong with the request.  Below is a list of error codes you might encounter when using Crafter CMS and example responses for the corresponding error code:
+When things go wrong with an API request, an error message is generated.  These error messages contain an error code and a short description of what went wrong with the request.  Below is a list of error codes you might encounter when using CrafterCMS and example responses for the corresponding error code:
 
 ========== ===================== ============================================
 Error Code Description           Response Body Example

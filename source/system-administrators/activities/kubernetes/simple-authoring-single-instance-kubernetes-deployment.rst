@@ -8,7 +8,7 @@
 Simple Authoring with a Single Instance Kubernetes Deployment
 =============================================================
 
-A Kubernetes deployment describes an applications life cycle, e.g. images to be used, the number of pods, etc. It creates pods based on a specified template.  Crafter CMS has an example Kubernetes deployment for a simple authoring with a single instance.  In this section, we'll take a look at this example Kubernetes deployment.
+A Kubernetes deployment describes an applications life cycle, e.g. images to be used, the number of pods, etc. It creates pods based on a specified template.  CrafterCMS has an example Kubernetes deployment for a simple authoring with a single instance.  In this section, we'll take a look at this example Kubernetes deployment.
 
 ------------
 Requirements
@@ -25,7 +25,7 @@ errors. In Minikube, to start a node with this characteristics, you can run a co
 In addition to that, we need the following:
 
 * `k9s <https://k9scli.io/>`__ for viewing the status of the pods, the logs, etc
-* Kubernetes deployment files for Crafter CMS Simple Authoring with a single instance, found here: https://github.com/craftercms/kubernetes-deployments/
+* Kubernetes deployment files for CrafterCMS Simple Authoring with a single instance, found here: https://github.com/craftercms/kubernetes-deployments/
 
      .. code-block:: sh
 
@@ -124,7 +124,7 @@ Another way of checking the status of the deployments/pods/etc. is by running ``
    |
 
 .. image:: /_static/images/system-admin/simple-authoring-k9s-start.jpg
-   :alt: Crafter CMS Simple Authoring with Single Instance Kubernetes Deployment
+   :alt: CrafterCMS Simple Authoring with Single Instance Kubernetes Deployment
    :width: 100%
    :align: center
 

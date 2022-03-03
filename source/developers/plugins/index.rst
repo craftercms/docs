@@ -1,13 +1,13 @@
 :is-up-to-date: True
 
-.. index:: Crafter CMS Plugins
+.. index:: CrafterCMS Plugins
 
 =======
 Plugins
 =======
 
 
-Crafter CMS plugins extend the CMS and provide the user additional functionality.  Plugins can be a single file or multiple files and directories.
+CrafterCMS plugins extend the CMS and provide the user additional functionality.  Plugins can be a single file or multiple files and directories.
 
 Here are the available plugin types:
 

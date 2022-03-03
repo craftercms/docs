@@ -15,7 +15,7 @@ Crafter Search
 
 |
 
-Crafter Search is the search facade for Crafter CMS. Crafter Search proxies the real search engine deployed behind it.
+Crafter Search is the search facade for CrafterCMS. Crafter Search proxies the real search engine deployed behind it.
 
 |
 

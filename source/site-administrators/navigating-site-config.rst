@@ -50,7 +50,7 @@ For more information on content modeling and content types, see :ref:`content-mo
 Configuration
 -------------
 
-Configuration allows the user to configure the different settings in Crafter CMS for the site.
+Configuration allows the user to configure the different settings in CrafterCMS for the site.
 
 .. image:: /_static/images/site-admin/site-config-configuration.png
     :alt: Site Admin - Site Config Configuration
@@ -122,7 +122,7 @@ For more information on Remote Repositories under |siteConfig|, see :ref:`remote
 GraphiQL
 --------
 
-Crafter CMS provides built-in support for GraphQL to query content in any site without writing additional code.  **GraphiQL** is a simple GraphQL client that you can use in Crafter Studio to run GraphQL queries and explore the schema documentation for a site without the need of any other tool.
+CrafterCMS provides built-in support for GraphQL to query content in any site without writing additional code.  **GraphiQL** is a simple GraphQL client that you can use in Crafter Studio to run GraphQL queries and explore the schema documentation for a site without the need of any other tool.
 
 .. image:: /_static/images/site-admin/site-config-graphiql.png
     :alt: Site Admin - Site Config GraohiQL

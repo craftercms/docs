@@ -1,14 +1,14 @@
 :is-up-to-date: True
 
-.. index:: Upgrading Crafter CMS; Upgrading; Docker; Kubernetes
+.. index:: Upgrading CrafterCMS; Upgrading; Docker; Kubernetes
 
 .. _upgrading-dockers:
 
 ===================================================
-Docker/Kuber Instructions for Upgrading Crafter CMS
+Docker/Kuber Instructions for Upgrading CrafterCMS
 ===================================================
 
-This section details how to upgrade your Crafter CMS installations in Kubernetes or Docker Compose.
+This section details how to upgrade your CrafterCMS installations in Kubernetes or Docker Compose.
 
 ------------------------
 Upgrading Docker Compose
@@ -18,9 +18,9 @@ These upgrade instructions are for both ``authoring`` and ``delivery`` compose p
 
 #. Run ``docker-compose down`` to fully stop the environment.
 #. If you are using a clone of https://github.com/craftercms/docker-compose, then just pull the latest changes. If 
-   you're using your own Docker Compose files, then remember to update the versions of the Crafter CMS Docker images. 
-#. Check the release notes of the new Crafter CMS version (:ref:`release-notes`) for upgrades to Elasticsearch (and 
-   Solr if you're using the Crafter CMS images with Solr support). If there has been an upgrade, then also update the 
+   you're using your own Docker Compose files, then remember to update the versions of the CrafterCMS Docker images. 
+#. Check the release notes of the new CrafterCMS version (:ref:`release-notes`) for upgrades to Elasticsearch (and 
+   Solr if you're using the CrafterCMS images with Solr support). If there has been an upgrade, then also update the 
    Elasticsearch/Solr image versions.
 #. Check the configuration file changes between the previous version and the new version: :ref:`docker-config-changes`.
    If you have overwritten any of them in a volume, we recommend you do the following:
@@ -42,9 +42,9 @@ Upgrading Kubernetes Deployments
 
 These upgrade instructions are for both Authoring and Delivery deployments:
 
-#. Update the Crafter CMS image versions in your deployment files. 
-#. Check the release notes of the new Crafter CMS version (:ref:`release-notes`) for upgrades to Elasticsearch (and 
-   Solr if you're using the Crafter CMS images with Solr support). If there has been an upgrade, then also update the 
+#. Update the CrafterCMS image versions in your deployment files. 
+#. Check the release notes of the new CrafterCMS version (:ref:`release-notes`) for upgrades to Elasticsearch (and 
+   Solr if you're using the CrafterCMS images with Solr support). If there has been an upgrade, then also update the 
    Elasticsearch/Solr image versions in your deployment files.
 #. Check the configuration file changes between the previous version and the new version: :ref:`docker-config-changes`.
    If you have overwritten any of them in a ``ConfigMap`` or ``Secret``, we recommend you do the following:

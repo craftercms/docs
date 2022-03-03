@@ -1,7 +1,7 @@
-.. index:: Crafter CMS 3.1.8 Release Notes
+.. index:: CrafterCMS 3.1.8 Release Notes
 
 -----------------
-Crafter CMS 3.1.8
+CrafterCMS 3.1.8
 -----------------
 
 ^^^^^^^^^^^^
@@ -21,9 +21,9 @@ New Features
   *See* :ref:`crafter-deployer-processors-guide` *for more information.*
 
 * Added support for automatically updating ES index settings |br|
-  Whenever the Elasticsearch index settings are updated, for example, a new field has been added for a release, the ES index settings will be automatically updated by the Crafter CMS upgrade manager.  The updated index containing the new settings will be named the current index version name incremented by 1, e.g. let's say the current index is ``mysite-authoring_v1``, after the upgrade, the new index will now be ``mysite-authoring_v2``
+  Whenever the Elasticsearch index settings are updated, for example, a new field has been added for a release, the ES index settings will be automatically updated by the CrafterCMS upgrade manager.  The updated index containing the new settings will be named the current index version name incremented by 1, e.g. let's say the current index is ``mysite-authoring_v1``, after the upgrade, the new index will now be ``mysite-authoring_v2``
 
-  The ES index settings will be automatically updated when upgrading to Crafter CMS 3.1.8 for users upgrading from Crafter CMS 3.1.6 and earlier, and also for users upgrading from Crafter CMS 3.1.7 where a manual update of the ES index settings has not been performed.  The automatic update is triggered when upgrading to 3.1.8 as mentioned above because of an update in the ES index settings (`input fields tokenize in repeating groups <https://github.com/craftercms/craftercms/issues/4118>`__) in Crafter CMS 3.1.7.
+  The ES index settings will be automatically updated when upgrading to CrafterCMS 3.1.8 for users upgrading from CrafterCMS 3.1.6 and earlier, and also for users upgrading from CrafterCMS 3.1.7 where a manual update of the ES index settings has not been performed.  The automatic update is triggered when upgrading to 3.1.8 as mentioned above because of an update in the ES index settings (`input fields tokenize in repeating groups <https://github.com/craftercms/craftercms/issues/4118>`__) in CrafterCMS 3.1.7.
 
 
 ^^^^^^^
@@ -84,11 +84,11 @@ For a full list of tickets, please visit: `GitHub 3.1.8 Milestone <https://githu
 
 .. important::
 
-    Please see :ref:`upgrading-craftercms` for instructions on how to update your Crafter CMS install to 3.1.1 (applies to 3.1.8)
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your CrafterCMS install to 3.1.1 (applies to 3.1.8)
 
     For Docker/Kuber deployments, see :ref:`upgrading-dockers`
 
     For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
 
-    Please see :ref:`upgrade-notes-to-fix-backup-error` for some important notes when updating to Crafter CMS 3.1.8
+    Please see :ref:`upgrade-notes-to-fix-backup-error` for some important notes when updating to CrafterCMS 3.1.8
 

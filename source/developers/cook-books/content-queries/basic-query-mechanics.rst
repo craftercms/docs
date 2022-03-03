@@ -6,7 +6,7 @@
 Basic Query Mechanics
 =====================
 
-This cook book is intended to help you understand the types of content queries you can make in Crafter CMS.
+This cook book is intended to help you understand the types of content queries you can make in CrafterCMS.
 
 -------------
 Prerequisites
@@ -19,7 +19,7 @@ Prerequisites
 Types of Content Queries
 ------------------------
 
-Crafter CMS supports 4 specific types of content queries:
+CrafterCMS supports 4 specific types of content queries:
 
 * Cross content Solr queries. This enables you to query any/all content objects, by any group of properties)
 * Cross content Elasticsearch queries. This enables you to query any/all content objects, by any group of properties)

@@ -47,7 +47,7 @@ Here's a sample config-list.xml file:
         </file>
 
       The elements are:
-      - module: Crafter CMS module
+      - module: CrafterCMS module
       - path: the path to the file. This path is rooted in /config/<module> off the base of the site/blueprint
       - title: the title of this file. This should be a key into the string-table in Studio's localization string table
           "base.js", if no entry is found, Studio will use the string you have here as is

@@ -1,9 +1,9 @@
 :is-up-to-date: True
 
-.. index:: Web manifest usage in Crafter CMS, How to use a manifest with Crafter CMS, Web App Manifest, Manifest
+.. index:: Web manifest usage in CrafterCMS, How to use a manifest with CrafterCMS, Web App Manifest, Manifest
 
 =================================
-Web Manifest Usage in Crafter CMS
+Web Manifest Usage in CrafterCMS
 =================================
 
 Some web apps use a ``web app manifest``, a file that describes the web application.
@@ -28,9 +28,9 @@ To allow the web app manifest to use cookies and credentials, ``crossOrigin="use
 
     |
 
-Crafter CMS requires cookies to be sent for site selection.  If your site/app uses a ``web app manifest``, we need to allow the ``web app manifest`` to use cookies and credentials.
+CrafterCMS requires cookies to be sent for site selection.  If your site/app uses a ``web app manifest``, we need to allow the ``web app manifest`` to use cookies and credentials.
 
-Let's take a look at an example of a site in Crafter CMS that uses a ``web app manifest``, and how to allow it to use cookies and credentials.
+Let's take a look at an example of a site in CrafterCMS that uses a ``web app manifest``, and how to allow it to use cookies and credentials.
 
 Create a site using the ``Video Center`` blueprint, available from the **marketplace** tab in the ``Create Site`` dialog.
 Below is an example of where we would add ``crossOrigin="use-credentials"`` in the manifest tag to allow the ``web app manifest`` to use cookies and credentials.
