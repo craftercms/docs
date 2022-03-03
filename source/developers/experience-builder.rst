@@ -20,11 +20,20 @@ model each element on the view represents. See :ref:`content-modeling` to learn 
 Creating Experience Builder (XB) Enabled Sites
 ----------------------------------------------
 
-The concrete integration strategy with XB depends on what kind of application you are developing.
+The concrete integration strategy with XB depends on what kind of application you are developing, however,
+overall all you need to do is mark the content element that display CrafterCMS content and initialize XB.
 CrafterCMS provides native XB integration for FreeMarker and React applications. Other types of
-applications (e.g. Angular, Vue, etc.) can still be integrated with XB through the underlying libraries
+applications (e.g. Angular, Vue, etc.) can be integrated with XB through the underlying libraries
 that power the FreeMarker and React applications. For reference on how to integrate, please see the
 sections below for your specific kind of application.
+
+To integrate with XB, all you need to do is:
+
+* Register or mark CrafterCMS content field elements: you tell the system what HTML element represents
+  any give model field. Registration can be manual (i.e. invoking specific methods from the XB JavaScript
+  libraries), or by putting a specific set of attributes on each tag.
+* Initialize XB. Which can also be done manually or by invoking specific methods of the XB JavaScript
+  libraries.
 
 Overall, XB's ICE engine works with a coordinate system that you — the developer — use to
 tell the CMS which field of the content type each element/component on your page/app maps to.
@@ -109,6 +118,64 @@ carousel class.
        ...
      </div>
    </div>
+
+^^^^^^^^^^^
+Rules of XB
+^^^^^^^^^^^
+
+.. TODO: Find better title?
+
+* The HTML element that is registered with XB as a field must contain only that content, unwrapped.
+
+  * Elements that represent fields of type text, html and other simple values, should print the content
+    value directly inside of them without intermediate elements.
+
+      .. list-table::
+         :header-rows: 1
+
+         * - Incorrect
+           - Correct
+         * - .. code-block:: html
+
+                  <div><!-- Title field (title_s) -->
+                     <em>
+                       ${title_s}
+                     </em>
+                  </div>
+           - .. code-block:: html
+
+                  <div>
+                     <em><!-- Title field (title_s) -->
+                       ${title_s}
+                     </em>
+                  </div>
+
+  * Elements that represent collections (i.e. repeat groups or component collections), must have their
+    item elements as direct children.
+
+      .. list-table::
+         :header-rows: 1
+
+         * - Incorrect
+           - Correct
+         * - .. code-block:: html
+
+                  <div><!-- Component collection field (components_o) -->
+                     <div class="column">
+                        <div class="feature><!-- Component collection item (components_o) -->
+                           ...
+                        </div>
+                     </div>
+                  </div>
+           - .. code-block:: html
+
+                  <div><!-- Component collection field (components_o) -->
+                     <div class="column"><!-- Component collection item (components_o) -->
+                        <div class="feature>
+                           ...
+                        </div>
+                     </div>
+                  </div>
 
 .. _xb-freemarker:
 
@@ -1139,65 +1206,253 @@ breadcrumb
      - false
      - Whether to render the active element as a link (i.e. ``a``); otherwise rendered as a ``span``.
 
+^^^^^^^^^^^^^^^^^^^^^^^
+JavaScript Applications
+^^^^^^^^^^^^^^^^^^^^^^^
+
+XB offers a set of JavaScript (JS) libraries and utilities that you can use in various scenarios.
+When writing JS-powered applications including Single-page applications — like when using React,
+Angular, Vue or similar — all you need to do is invoke the various XB methods relevant to your application.
+
+The simplest integration strategy for JS applications consist of marking the relevant HTML elements
+which represent a content model field, with a set of attributes that CrafterCMS sdk libraries generate for you based on a content
+model that you've previously fetched.
+
+You may also dig deep into the system and manage the field element registrations manually to suit your
+application needs.
+
+Usage
+~~~~~
+
+XB JS libraries can be used either via npm by importing ``@craftercms/experience-builder`` or using the
+JS umd bundle and adding it into your app's runtime.
+
+React
+~~~~~
+
+CrafterCMS provides React bindings for integrating with XB. Because XB itself is a React application,
+React presents the tightest, most native integration with XB as it will essentially run as part of your
+app instead of as a parallel application like when using other technologies.
+
+React bindings can be used either via npm or using the umd bundle that comes with CrafterCMS.
+
+The components available for using on your React applications are listed below.
+
+ExperienceBuilder
+"""""""""""""""""
+
+This is the main component that orchestrates and enables all of the In-context Editing. You must declare
+this component only once and it should be a parent of all the XB-enabled components.
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Prop
+     - Type
+     - Default
+     - Description
+   * - ``isAuthoring``
+     - boolean
+     - (Required)
+     - It controls the adding or bypassing of authoring tools. Should send true when
+       running in Studio and authoring tools should be enabled. Authoring tools are completely
+       absent when set to false.
+   * - ``isHeadlessMode``
+     - boolean
+     - false
+     - If your App consumes content from CrafterCMS in a headless way, certain options (e.g. editing
+       the freemarker template or controller) aren't applicable. Setting headless mode to true will
+       disable XB options that aren't relevant to headless application such as SPAs.
+   * - ``themeOptions``
+     - `MUI's ThemeOptions <https://mui.com/customization/theming>`__
+     - XB's defaults
+     - XB is powered by MUI. This argument allows you to customize MUI theme options and override
+       XB's defaults.
+   * - ``sxOverrides``
+     - ExperienceBuilderStylesSx
+     - XB's defaults
+     - You may change XB-specific theming through this argument
+   * - ``documentDomain``
+     - string
+     - null
+     - You may specify a ``documentDomain`` if your preview runs on a different domain than Studio does.
+       than Studio.
+   * - ``scrollElement``
+     - string
+     - html, body
+     - You may specify a different element for XB to scroll when scrolling the user to specific
+       CrafterCMS field elements.
+
+Model
+"""""
+
+Use this component to render elements that represent the **models themselves** (i.e. CrafterCMS pages or
+components, not their fields).
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Prop
+     - Type
+     - Default
+     - Description
+   * - ``model``
+     - Object (ContentInstance)
+     - (Required)
+     - The model being rendered
+   * - ``component``
+     - string | React.ElementType
+     - "div"
+     - The component to be rendered
+   * - ``componentProps``
+     - Object
+     - undefined
+     - Any props sent to the ``Model`` component that aren't own props are forwarded down to the rendered
+       component so in most cases you needn't use ``componentProps``. There may be cases where your target
+       component has a prop name that matches a prop of ``Model`` so to avoid it swallowing the prop
+       and not reaching your target component, you may send the prop(s) via ``componentProps`` instead.
+
+ContentType
+"""""""""""
+
+Use this component to render a specific component of your own library based on the content type of the
+model. ``ContentType`` component works with a "content type map" which you must supply as a prop. The
+content type map, is essentially a plain object, a lookup table of your components indexed by content
+type id. You may use it in conjunction with ``React.lazy`` to optimize your app; specially considering the
+content type map should contain all the possible components that you will be rendering via ``ContentType``
+component on a given piece of your app.
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Prop
+     - Type
+     - Default
+     - Description
+   * - ``model``
+     - Object (ContentInstance)
+     - (Required)
+     - The model being rendered
+   * - ``contentTypeMap``
+     - Object
+     - (Required)
+     - A map of components indexed by CrafterCMS content type id. The content type id of the model passed
+       will is used to pick from the map the component that should render said model.
+   * - ``notFoundComponent``
+     - React.ComponentType
+     -
+     - If the model passed to ``ContentType`` is ``null``, it's taken as a 404 and the notFoundComponent
+       is rendered.
+   * - ``notMappedComponent``
+     - React.ComponentType
+     -
+     - If the content type of the model is not found in the ``contentTypeMap``, the ``notMappedComponent``
+       is rendered.
+
+RenderField
+"""""""""""
+
+Use this component to render CrafterCMS model **fields**. Although it can also render collection-type
+fields, CrafterCMS provides specific components (see below) to render component collections or repeat groups.
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Prop
+     - Type
+     - Default
+     - Description
+   * - ``model``
+     -
+     -
+     -
+
+RenderComponents
+""""""""""""""""
+
+Use this component to render item selectors that hold components. This component renders the field
+element (i.e. the item selector), the item element, and the component itself.
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Prop
+     - Type
+     - Default
+     - Description
+   * - ``model``
+     -
+     -
+     -
+
+RenderRepeat
+""""""""""""
+
+Use this component to render repeat groups and their items. This component renders the field element
+(i.e. the repeat group), the item element and render each item via a function supplied by you, which
+is provided with the item, the index in the collection, the computed compound index (when applicable)
+and the collection itself.
+
+Angular, Vue and Other JS Applications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The easiest way to integrate XB with you JS application is by putting attributes on each HTML element that
+represents models, fields or items of CrafterCMS content type and then invoking XB initializer.
 
 .. TODO
+      Npm
+      ~~~
 
-        ^^^^^
-        React
-        ^^^^^
+      yada
 
-        CrafterCMS provides react bindings for integrating with XB.
+      UMD Bundle
+      ~~~~~~~~~~
 
-        React bindings can be used either via npm or using the umd bundle that comes with CrafterCMS.
+      craftercms-guest.umd.js
+      craftercms-guest.no-react.umd.js
 
-        Npm
-        ~~~
+      React Native
+      ~~~~~~~~~~~~
 
-        yada
+      React native...
 
-        UMD Bundle
-        ~~~~~~~~~~
+      API
+      ~~~
 
-        craftercms-guest.umd.js
-        craftercms-guest.no-react.umd.js
+      Api...
 
-        React Native
-        ~~~~~~~~~~~~
+      ContentType
+      """""""""""
 
-        React native...
+      <ContentType />
 
-        API
-        ~~~
+      RenderField
+      """""""""""
 
-        Api...
+      <RenderField />
 
-        ContentType
-        """""""""""
+      useICE hook
+      """""""""""
 
-        <ContentType />
+      The useICE hook
 
-        RenderField
-        """""""""""
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      Other Html or JavaScript applications
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-        <RenderField />
+      XB uses DOM events to power authoring. Because XB sits on top of your applications, you may need to
+      make your applications aware of XB's behaviours to facilitate the authoring experience.
 
-        useICE hook
-        """""""""""
+      END
 
-        The useICE hook
-
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        Other Html or JavaScript applications
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-        XB uses DOM events to power authoring. Because XB sits on top of your applications, you may need to
-        make your applications aware of XB's behaviours to facilitate the authoring experience.
-
-        END
-
-        **Plugins**
+      **Plugins**
 
 
-        * The z key
-        * The e & m keys
-        * ICE on hints (class & event)
+      * The z key
+      * The e & m keys
+      * ICE on hints (class & event)
