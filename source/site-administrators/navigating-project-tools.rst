@@ -2,7 +2,7 @@
 
 .. index:: Navigating Project Tools
 
-.. _navigating-site-tools:
+.. _navigating-project-tools:
 
 ========================
 Navigating Project Tools

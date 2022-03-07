@@ -17,7 +17,7 @@ From this screen you can navigate to any project.  Your projects can be viewed e
 
 Here's the **Projects** screen with the projects in a list:
 
-.. image:: /_static/images/content-author/my-sites-screen.png
+.. image:: /_static/images/content-author/my-projects-screen.png
     :width: 75 %    
     :align: center
     :alt: Navigating Studio - My Projects Screen List View
@@ -26,33 +26,36 @@ Here's the **Projects** screen with the projects in a list:
 
 Here's the **Projects** screen with the projects in a grid:
 
-.. image:: /_static/images/content-author/my-sites-screen-grid.jpg
+.. image:: /_static/images/content-author/my-projects-screen-grid.jpg
     :width: 75 %
     :align: center
     :alt: Navigating Studio - My Projects Screen Grid View
 
+|
+
 You can get back to the **Projects** screen by:
     * Clicking on the ``Navigation Menu`` icon at the top right corner, then click on "Projects" on the top left of the *Global* panel
-    * Or logging out (sign out) and logging back in (sign in) by selecting the ``Navigation Menu`` icon at the top right corner, then click on the logout icon on the bottom right of the *Global* panel
 
-.. image:: /_static/images/content-author/get-to-my-sites-1.jpg
+.. image:: /_static/images/content-author/get-to-my-projects-1.jpg
     :width: 65 %
     :align: center
-    :alt: Navigating Studio - Get to My Projects Screen Crafter logo
+    :alt: Navigating Studio - Get to My Projects Screen via the Navigation Menu
 
 |
 
-.. image:: /_static/images/content-author/get-to-my-sites-2.jpg
+.. image:: /_static/images/content-author/get-to-my-projects-2.jpg
     :width: 65 %
     :align: center
     :alt: Navigating Studio - Get to My Projects Screen
+
+|
 
 ^^^^^^^^^^^^^^^^
 Projects (Admin)
 ^^^^^^^^^^^^^^^^
 Crafter Studio administrators can also create and delete projects from this screen.
 
-.. image:: /_static/images/content-author/site-delete.jpg
+.. image:: /_static/images/content-author/project-delete.jpg
     :width: 75 %    
     :align: center
     :alt: Navigating Studio - Delete Project
@@ -69,7 +72,7 @@ To get to Account Management:
     * Click on the ``Navigation Menu`` icon at the top right corner
     * Click on **Account** under *Global*
 
-.. image:: /_static/images/content-author/site-account.jpg
+.. image:: /_static/images/content-author/project-account.png
     :width: 65 %
     :align: center
     :alt: Navigating Studio - Open My Account Settings Screen
@@ -81,7 +84,7 @@ To get to Account Management:
     :align: center
     :alt: Navigating Studio - Account Settings Screen
 
-.. _site-dashboard:
+.. _project-dashboard:
 
 -----------------
 Project Dashboard
@@ -90,7 +93,7 @@ Each project has a Project Dashboard.  To view a project's dashboard, click on t
 
 Access the ``Dashboard`` from the ``Navigation Menu``
 
-.. image:: /_static/images/content-author/site-dashboard-alt.jpg
+.. image:: /_static/images/content-author/project-dashboard-alt.jpg
     :width: 65 %
     :align: center
     :alt: Navigating Studio - Project Dashboard from the Navigation Menu
@@ -99,7 +102,7 @@ Access the ``Dashboard`` from the ``Navigation Menu``
 
 Access the ``Dashboard`` from the ``Sidebar``
 
-.. image:: /_static/images/content-author/site-dashboard-sidebar.jpg
+.. image:: /_static/images/content-author/project-dashboard-sidebar.jpg
     :width: 65 %
     :align: center
     :alt: Navigating Studio - Project Dashboard from Sidebar
@@ -113,25 +116,25 @@ Each dashboard has a header
 
    Expand Collapse control.  Each widget can be closed and opened to hide the items shown by the widget.  This setting is remembered by your browser
 
-   Widget title and count.  Most widgets include a count at the end of the name for the number of items in the widget
+   Dashlet title and count.  Most dashlets include a count at the end of the name for the number of items in the widget
 
-   Widget level options.  Options are different on each widget
+   Dashlet level options.  Options are different on each widget
 
-   Show count.  Some widgets allow the author to decide how many items they want to see in the widget
+   Show count.  Some dashlets allow the author to decide how many items they want to see in the dashlet
 
-   Content "type" filter:  Some widgets allow you to filter them by a broad content type (All, Pages, Components)
+   Content "type" filter:  Some dashlets allow you to filter them by a broad content type (All, Pages, Components)
 
 |
 |
 
-.. image:: /_static/images/content-author/site-dashboard.jpg
+.. image:: /_static/images/content-author/project-dashboard.jpg
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Project Dashboard
 
 |
 
-For the dashboard shown above, here are the widgets listed:
+For the dashboard shown above, here are the dashlets listed:
 
     * Items Waiting for Approval
         * Shows all items currently in workflow
@@ -227,7 +230,7 @@ For the dashboard shown above, here are the widgets listed:
 |
 |
 
-.. image:: /_static/images/content-author/site-dashboard-selected.jpg
+.. image:: /_static/images/content-author/project-dashboard-selected.jpg
    :width: 95 %
    :align: center
    :alt: Navigating Studio - Dashboard Selected
@@ -249,7 +252,7 @@ Every project has a preview.  This allows users to see, edit and test the projec
     * Author can change the targeting attributes used to view the project
     * Author can view the publish status of the project
 
-.. image:: /_static/images/content-author/site-preview.jpg
+.. image:: /_static/images/content-author/project-preview.jpg
    :width: 95 %
    :align: center
    :alt: Navigating Studio - Project Preview
@@ -315,9 +318,9 @@ The Search tool allows you to search for components and static assets in the pro
 
 |
 
-Components
-^^^^^^^^^^
-The Components tool allows you to create new components by dragging components from the panel and on to the screen to configured drop targets.  A new component with default values will then be visible and ready for editing when a new component is dropped on the screen.
+Add Components
+^^^^^^^^^^^^^^
+The ``Add Components`` tool allows you to create new components by dragging components from the panel and on to the screen to configured drop targets.  A new component with default values will then be visible and ready for editing when a new component is dropped on the screen.
 
 .. image:: /_static/images/content-author/preview-page-components-list.png
     :width: 20 %
@@ -339,7 +342,7 @@ The Components tool allows you to create new components by dragging components f
 
 |
 
-You may drag around a component from one position to a different position.
+You may drag around a component from one position to a different position by enabling the ``Move mode`` (by clicking the ``Move mode`` icon at the top right, or by using the keyboard shortcut).
 Crafter Studio administrators can configure what components are available in this panel.
 
 .. image:: /_static/images/content-author/preview-page-components-drag.jpg
@@ -360,10 +363,10 @@ The Browse Components tool allows you to search / select a content type in the p
 
 |
 
-When you drag a component into the page being previewed and there are no drop zones configured in the page, you will see a snackbar like below:
+When you drag a component into the page being previewed and there are no drop zones configured in the page, you will see a snack bar like below:
 
-.. image:: /_static/images/content-author/preview-page-builder-no-drop-targets.png
-    :width: 30 %
+.. image:: /_static/images/content-author/preview-page-builder-no-drop-targets.jpg
+    :width: 80 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel No Drop Targets
 
@@ -456,27 +459,32 @@ The basic elements of the Contextual Navigation bar are:
     * Preview Address Bar: An area reserved for navigation buttons (back, forward and reload page), the address of the current  page being previewed, and an options link whose content will change based off of the current page view and user role.
     * Edit Mode Switch: Toggles the in-context editing and Experience Builder panel on/off
     * Publish Status: Allows the user to view the project's publish status.
+    * Search: Allows the user to search for items in the project
     * Navigation Menu: Takes the user to a panel with ``Global`` and ``Project`` options containing various links such as Dashboard, About, Help, etc.
 
-.. image:: /_static/images/content-author/site-context-nav.jpg
+.. image:: /_static/images/content-author/project-context-nav.jpg
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Project Context Navigation
+
+|
 
 Sidebar
 ^^^^^^^
 The sidebar opens a menu that allows access to the following:
 
-    - *Dashboard:* An overview of the workflow for that given project.  See :ref:`above <site-dashboard>` for more information
+    - *Dashboard:* An overview of the workflow for that given project.  See :ref:`above <project-dashboard>` for more information
     - *Project Explorer:* Allows navigation to all pages, components and documents in the system
-    - *Project Tools (available depending on your role):* Contains project administration tools such as Plugin Management, Encryption Tool, etc.  See :ref:`here <navigating-site-tools>` for more information
+    - *Project Tools (available depending on your role):* Contains project administration tools such as Plugin Management, Encryption Tool, etc.  See :ref:`here <navigating-project-tools>` for more information
 
 The menu/panel width can be resized freely by the user and will remember where you set the length and width on your browser
 
-.. image:: /_static/images/content-author/sidebar-panel-width.png
+.. image:: /_static/images/content-author/sidebar-panel-width.jpg
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Sidebar Panel menu width
+
+|
 
 **Project Explorer**
 
@@ -486,10 +494,12 @@ The menu/panel width can be resized freely by the user and will remember where y
 * Root folders allow a user to drill in to a hierarchy of content. If the item is previewable it will also be clickable.
 * Clicking on an item will take the author to a preview of the item.
 
-.. image:: /_static/images/content-author/site-tools-path-nav.png
+.. image:: /_static/images/content-author/project-tools-path-nav.png
     :width: 25 %
     :align: center
     :alt: Navigating Studio - Project Tools Navigation
+
+|
 
 * Clicking the three dots next to each item or right-clicking on an item provides the user options whose content will change based off of the item selected and user role.
 

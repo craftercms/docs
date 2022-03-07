@@ -16,14 +16,14 @@ Searching
 
 To do a search in Crafter Studio, point your mouse to the navigation menu icon on the top right, which will display the name of the icon, **Navigation Menu**, click on it then select **Search** under ``Project``
 
-.. image:: /_static/images/content-author/search-site-icon.jpg
+.. image:: /_static/images/content-author/search-project-icon.jpg
     :width: 75 %
     :align: center
     :alt: Content Author - Search from Navigation Menu
 
-You can also access **Search** by clicking on the magnifyiing glass icon on the top right, which will then display the name of the icon, **Search**, when you point your mouse on the icon.
+You can also access **Search** by clicking on the magnifying glass icon on the top right, which will then display the name of the icon, **Search**, when you point your mouse on the icon.
 
-.. image:: /_static/images/content-author/search-site-icon-toolbar.png
+.. image:: /_static/images/content-author/search-project-icon-toolbar.png
     :width: 100 %
     :align: center
     :alt: Content Author - Search from Toolbar
