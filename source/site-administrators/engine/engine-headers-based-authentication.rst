@@ -4,9 +4,9 @@
 
 .. _engine-headers-authentication:
 
-===================================
-Engine Headers Based Authentication
-===================================
+====================================================
+Engine Headers Based Authentication |enterpriseOnly|
+====================================================
 
 Crafter Engine is able to integrate with any authentication system that sends custom HTTP headers containing
 information that will be used to authenticate the user in Engine.  This section details how to setup Engine for
