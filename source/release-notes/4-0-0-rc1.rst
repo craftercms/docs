@@ -1,8 +1,8 @@
 .. index:: CrafterCMS 4.0.0 rc1 Release Notes
 
----------------------
+--------------------
 CrafterCMS 4.0.0 rc1
----------------------
+--------------------
 
 CrafterCMS 4.0 rc1 requires Java 11
 
@@ -83,11 +83,15 @@ Updates
 
 Lot's of other small enhancements and bug fixes :)
 
-For a full list of tickets, please visit: `GitHub 4.0.0 Milestone <https://github.com/craftercms/craftercms/milestone/45?closed=1>`_
+For a full list of tickets, please visit: `GitHub 4.0.0 rc1 Milestone <https://github.com/craftercms/craftercms/milestone/45?closed=1>`_
 
 .. important::
 
-    Please see :ref:`upgrading-craftercms` for instructions on how to update your CrafterCMS install to 4.0.0 rc1
+    Please see :ref:`Breaking changes in 4.0.0 <breaking-changes-4-0-0>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install to 4.0.0 rc1,
+    please see :ref:`upgrading-craftercms`
 
     For Linux installs, the Studio upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
 
