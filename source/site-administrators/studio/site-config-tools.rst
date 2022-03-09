@@ -1,23 +1,23 @@
 :is-up-to-date: True
 
-.. index:: Site Config Tools
+.. index:: Project Config Tools
 
 .. _site-config-tools:
 
-=================
-Site Config Tools
-=================
+====================
+Project Config Tools
+====================
 
-The Site Config tools configuration file defines what modules are available for administration use when clicking on |siteConfig| from the Sidebar. This configuration is unique in that a configuration file exists in the following location of each site: ``SITENAME/config/studio/administration/tools.xml``
+The Project Config tools configuration file defines what modules are available for administration use when clicking on |siteConfig| from the Sidebar. This configuration is unique in that a configuration file exists in the following location of each project: ``SITENAME/config/studio/administration/tools.xml``
 
 .. image:: /_static/images/site-admin/configuration-tool-config.png
     :align: center
-    :alt: Site Config Tools
+    :alt: Project Config Tools
 
-To modify the site config tools configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Site Config Tools** from the dropdown list.
+To modify the project config tools configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Project Config Tools** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-site-config-tools.png
-    :alt: Configurations - Open Site Config Tools
+    :alt: Configurations - Open Project Config Tools
     :width: 65 %
     :align: center
 
@@ -510,10 +510,10 @@ Tool                 Description
 ==================== =====================================================================
 content-types        Allows you to create/modify content types
 admin-configurations Contains all the configuration files managed through Crafter Studio
-groups               Allows you to manage site groups and group membership
-audit                Allows you to view your site activity log
+groups               Allows you to manage project groups and group membership
+audit                Allows you to view your project activity log
 bulkoperations       Allows you to publish multiple items at once
-workflow-states      Contains a list of all files in the site with its corresponding state
+workflow-states      Contains a list of all files in the project with its corresponding state
 log-view             Allows you to tail logs depending on what logging levels are set
 logging              Allows you to set logging levels for the log console
 ==================== =====================================================================

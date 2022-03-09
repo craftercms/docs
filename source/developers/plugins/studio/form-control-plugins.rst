@@ -47,7 +47,7 @@ where:
 ---------------------------------------
 Form Engine Control Site Plugin Example
 ---------------------------------------
-Let's take a look at an example of a control site plugin.  We will be adding a control named ``text-input`` to the site ``mysite``.
+Let's take a look at an example of a control site plugin.  We will be adding a control named ``text-input`` to the project ``mysite``.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Form Engine Control Code
@@ -178,7 +178,7 @@ See `here <https://github.com/craftercms/studio-ui/tree/develop/static-assets/co
 Configuring the Descriptor File to Wire the Plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To setup our form control to be automatically wired in the corresponding configuration file in Studio (which for a form control, is the Site Config Tools Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
+To setup our form control to be automatically wired in the corresponding configuration file in Studio (which for a form control, is the Project Config Tools Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
 
 .. code-block:: yaml
    :linenos:
@@ -215,7 +215,7 @@ Test the Plugin
 
 After placing your JS file, the site plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
-When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the site ``mysite`` by running the following:
+When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``mysite`` by running the following:
 
    ..  code-block:: bash
 
@@ -226,7 +226,7 @@ When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be
 
 Let's take a look at the auto-wiring performed during installation of the plugin.  Form controls are setup in the ``site-config-tools.xml``  file.
 
-The items we setup in the descriptor file for auto-wiring :ref:`above <configure-descriptor-file-for-autowiring>` should now be in the ``Site Config Tools`` configuration file, which can be accessed  by opening the ``Sidebar``, then clicking  on ``Site Tools`` -> ``Configuration``  ->  ``Site Config Tools``
+The items we setup in the descriptor file for auto-wiring :ref:`above <configure-descriptor-file-for-autowiring>` should now be in the ``Project Config Tools`` configuration file, which can be accessed  by opening the ``Sidebar``, then clicking  on ``Project Tools`` -> ``Configuration``  ->  ``Project Config Tools``
 
 **Location (In Repository) SITENAME/config/studio/administration/site-config-tools.xml**
 

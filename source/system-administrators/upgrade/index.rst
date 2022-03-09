@@ -4,14 +4,14 @@
 
 .. _upgrading-craftercms:
 
-=====================
+====================
 Upgrading CrafterCMS
-=====================
+====================
 
 This section details the steps required to upgrade your CrafterCMS install.
 
 .. WARNING::
-   * This guide assumes that you're trying to upgrade a site from a stock 3.1.x Studio and with some slight Studio configuration changes. If your site configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
+   * This guide assumes that you're trying to upgrade a project from a stock 3.1.x Studio and with some slight Studio configuration changes. If your project configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
 
    * The following release versions are able to upgrade to 4.0.0
 

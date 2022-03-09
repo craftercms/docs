@@ -61,7 +61,7 @@
 +------------------------+---------------------------------------+--------------------------------+
 || logger                || The GroovyUtils SLF4J logger         || `Logger`_                     |
 +------------------------+---------------------------------------+--------------------------------+
-|| siteConfig            || The current site Configuration,      || `XMLConfiguration`_           |
+|| siteConfig            || The current project Configuration,   || `XMLConfiguration`_           |
 ||                       || loaded from /config/site.xml.        ||                               |
 +------------------------+---------------------------------------+--------------------------------+
 || siteContext           || The current SiteContext              || |SiteContext|                 |

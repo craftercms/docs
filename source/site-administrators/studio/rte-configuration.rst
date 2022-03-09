@@ -464,7 +464,7 @@ The RTE's configuration file looks like this:
 
 |
 
-You can access the ``RTE (TinyMCE 5) Configuration`` file by going to the **Sidebar** then clicking on  |siteConfig|.  In the **Site Config**, click on **Configuration**, then from the list, select ``RTE (TinyMCE 5) Configuration``
+You can access the ``RTE (TinyMCE 5) Configuration`` file by going to the **Sidebar** then clicking on  |siteConfig|.  In the **Project Tools**, click on **Configuration**, then from the list, select ``RTE (TinyMCE 5) Configuration``
 
 .. figure:: /_static/images/site-admin/rte/rte-setup-config-file-access.jpg
    :alt: RTE Setup - Open RTE Configuration File in Studio

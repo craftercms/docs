@@ -47,11 +47,11 @@ After setting up the ``Blob Stores`` configuration, you may now use the external
 Example
 -------
 
-Let's take a look at an example of setting up an external storage for preview, staging and live and then uploading and finally publishing assets to the external storage we setup.  In the example, we will use AWS S3 as the external storage and the Website Editorial blueprint in Crafter Studio to create our site.
+Let's take a look at an example of setting up an external storage for preview, staging and live and then uploading and finally publishing assets to the external storage we setup.  In the example, we will use AWS S3 as the external storage and the Website Editorial blueprint in Crafter Studio to create our project.
 
 **Prerequisites:**
 
-#. Site created using the Website Editorial blueprint.
+#. Project created using the Website Editorial blueprint.
 #. AWS S3 bucket/s. A single bucket can be used as long as all the ``publishingTarget`` uses a unique ``prefix``, or a separate bucket can be created for each ``publishingTarget``, or a combination of both.
 
    For our example, we will be using two buckets.  One for authoring and another for delivery.  The following buckets were setup in AWS S3: *my-authoring-bucket* for authoring (used by publishing target ``preview`` with the prefix *sandbox* and publishing target ``staging`` with the prefix *staging*) and *my-deli-bucket* for delivery.
@@ -70,7 +70,7 @@ Let's begin:
 1. Enable Staging
 ^^^^^^^^^^^^^^^^^
 
-This step is optional but for our example, we wanted to be able to publish to staging, so in this step, we will first enable staging.  In your Studio, click on |siteConfig| -> *Configuration* -> *Site Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
+This step is optional but for our example, we wanted to be able to publish to staging, so in this step, we will first enable staging.  In your Studio, click on |siteConfig| -> *Configuration* -> *Project Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
 
   .. code-block:: xml
      :emphasize-lines: 2
@@ -162,7 +162,7 @@ Let's take a closer look:
       :alt: Setup data source to use the file path pattern in Blob Stores
       :width: 95%
 
-   Let's change the image used in one of the articles in the site.
+   Let's change the image used in one of the articles in the project.
 
    From the **Sidebar**, navigate to ``/articles/2016/6`` then right click on ``Coffee is Good for Your Health`` then select ``Edit``.
 
@@ -252,19 +252,19 @@ When the file/s are published to ``live``, the file/s get published to the ``my-
 
 |
 
--------------------------------------
-Setting up Staging for Existing Sites
--------------------------------------
+----------------------------------------
+Setting up Staging for Existing Projects
+----------------------------------------
 
-When adding the ``staging`` publishing target to an established site that uses external storage, Studio does not clone the assets in external storage for ``live`` into ``staging``.  Performing a bulk publish to ``staging`` also does not work at this time.  This is because Studio does not publish to ``staging``, assets in a LIVE, UNEDITED state.
+When adding the ``staging`` publishing target to an established project that uses external storage, Studio does not clone the assets in external storage for ``live`` into ``staging``.  Performing a bulk publish to ``staging`` also does not work at this time.  This is because Studio does not publish to ``staging``, assets in a LIVE, UNEDITED state.
 
 To sync the external storage for ``staging`` with ``live``, you must copy the assets in the ``live`` external storage to the ``staging`` external storage.
 
-Let's take a look at an example of adding ``staging`` to an existing site.
+Let's take a look at an example of adding ``staging`` to an existing project.
 
 **Prerequisites:**
 
-#. Site created using the Website Editorial blueprint with external storage setup for ``live`` and assets already published to ``live`` (See example above for setting up external storage for a site.  Remember to not setup ``staging`` as we will be doing it in this example)
+#. Project created using the Website Editorial blueprint with external storage setup for ``live`` and assets already published to ``live`` (See example above for setting up external storage for a project.  Remember to not setup ``staging`` as we will be doing it in this example)
 #. AWS S3 bucket to be used by the ``staging`` publishing target.  For our example, we will be using the bucket ``my-staging`` setup in AWS S3.
 
 **Here are the steps:**
@@ -277,7 +277,7 @@ Let's begin:
 
 #. **Enable staging**
 
-   In your Studio, click on |siteConfig| -> *Configuration* -> *Site Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
+   In your Studio, click on |siteConfig| -> *Configuration* -> *Project Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
 
      .. code-block:: xml
         :emphasize-lines: 2

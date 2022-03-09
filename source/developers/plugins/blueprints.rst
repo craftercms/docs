@@ -12,7 +12,7 @@ Blueprints
 What are Blueprints?
 --------------------
 
-Blueprints are CrafterCMS project templates.  It provides an initial set of styles, pages, behaviors, content types and more, containing one or more of the following: content types such as pages and components as described in :ref:`content-modeling`, static assets such as images, videos, etc., and site configuration files for managing items in the blueprint such as taxonomies (categories, segments), roles, permissions, etc.
+Blueprints are CrafterCMS project templates.  It provides an initial set of styles, pages, behaviors, content types and more, containing one or more of the following: content types such as pages and components as described in :ref:`content-modeling`, static assets such as images, videos, etc., and project configuration files for managing items in the blueprint such as taxonomies (categories, segments), roles, permissions, etc.
 
 .. image:: /_static/images/blueprint/blueprint-anatomy.png
    :alt: Cook Books - Blueprint Anatomy
@@ -21,11 +21,11 @@ Blueprints are CrafterCMS project templates.  It provides an initial set of styl
 
 |
 
-The blueprint that comes out of the box with CrafterCMS, ``Website Editorial Blueprint``, provides us with an initial structure for our site, along with the site navigation, content inheritance, taxonomies for organizing the content such as categories and segments, which is also used for targeting content, static assets such as the initial images and fonts used for the site and configuration files for managing things like the segments for targeting, the permissions for all the items in the site, the role mappings, the RTE configuration, etc.  To see more of the ``Website Editorial Blueprint``, please see :ref:`your_first_website` where we create a site based on the ``Website Editorial Blueprint``.
+The blueprint that comes out of the box with CrafterCMS, ``Website Editorial Blueprint``, provides us with an initial structure for our project, along with the project navigation, content inheritance, taxonomies for organizing the content such as categories and segments, which is also used for targeting content, static assets such as the initial images and fonts used for the project and configuration files for managing things like the segments for targeting, the permissions for all the items in the project, the role mappings, the RTE configuration, etc.  To see more of the ``Website Editorial Blueprint``, please see :ref:`your_first_project` where we create a project based on the ``Website Editorial Blueprint``.
 
-As mentioned earlier, blueprints allows us to generate sites with predefined layouts, contents and configuration.  Blueprints could be a site theme or an API only site.  New blueprints can be created from a site and added into CrafterCMS allowing the creation of more sites based on the new blueprint.  In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from CrafterCMS and an existing site is used to create a new blueprint.
+As mentioned earlier, blueprints allows us to generate projects with predefined layouts, contents and configuration.  Blueprints could be a project theme or an API only project.  New blueprints can be created from a project and added into CrafterCMS allowing the creation of more projectss based on the new blueprint.  In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from CrafterCMS and an existing project is used to create a new blueprint.
 
-Developers may submit their blueprints to the `CrafterCMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted blueprints are listed, and power users of CrafterCMS can create sites based on marketplace plugins directly from the ``Create Site`` dialog in the CMS. See :ref:`submit-plugin-to-marketplace` for more information on how to submit your blueprint to the marketplace.
+Developers may submit their blueprints to the `CrafterCMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted blueprints are listed, and power users of CrafterCMS can create projects based on marketplace plugins directly from the ``Create Project`` dialog in the CMS. See :ref:`submit-plugin-to-marketplace` for more information on how to submit your blueprint to the marketplace.
 
 -------------------------------
 How do I make my own Blueprint?
@@ -33,7 +33,7 @@ How do I make my own Blueprint?
 
 Start by :ref:`quick_start_guide`.
 
-Blueprints are almost the same as a site (:ref:`Warnings <blueprint-site-vs-blueprint>`). So, you can use a new site created from the ``Empty`` blueprint as the starting point for your blueprint. (See :ref:`your_first_website` but create it from the ``Empty`` blueprint).
+Blueprints are almost the same as a project (:ref:`Warnings <blueprint-site-vs-blueprint>`). So, you can use a new project created from the ``Empty`` blueprint as the starting point for your blueprint. (See :ref:`your_first_project` but create it from the ``Empty`` blueprint).
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Adapting an HTML template
@@ -47,7 +47,7 @@ If you have an existing pure HTML template (and if you don't, you can find free 
 
 |
 
-Generally, pure HTML templates have a file structure similar to the picture above. To start, you'll want to copy all files except for ``index.html`` and any other ``.html`` files to your site's ``static-assets`` like this:
+Generally, pure HTML templates have a file structure similar to the picture above. To start, you'll want to copy all files except for ``index.html`` and any other ``.html`` files to your project's ``static-assets`` like this:
 
 .. image:: /_static/images/blueprint/blueprint-template-static-assets.png
 	        :width: 45%
@@ -82,9 +82,9 @@ A good blueprint separates each meaningful chunk of HTML code into a component. 
 Here are some best practices to help you:
 
     * Prefix all your Content Type's display label with either "Component - " or "Page - " as appropriate.
-    * Make use of **Section Defaults**. Most sites will have a site logo that will be used all throughout the site, this is a perfect use case for Section Defaults.
+    * Make use of **Section Defaults**. Most projects will have a project logo that will be used all throughout the project, this is a perfect use case for Section Defaults.
 
-       * Additionally, since Section Defaults have inheritance mechanics, a child folder that's meant to have private pages could have it's own Section Defaults that overrides the normal site logo with a more private looking one, signalling users that they are in the intranet.
+       * Additionally, since Section Defaults have inheritance mechanics, a child folder that's meant to have private pages could have it's own Section Defaults that overrides the normal project logo with a more private looking one, signalling users that they are in the intranet.
        * You can apply this similarly for headers, footers, log in floating forms, and many more.
     * Use drag and drop but keep it to a minimum. At the moment, you can't limit what kind of components can be dropped into a container, so this enormous amount of flexibility can make for a confusing user experience. Picture having a page with a group of sections, that each contains headers. If both sections and headers are drag and droppable, an user could accidentally drop a section inside another section without noticing instead of just reordering. It could be more comfortable that only sections are drag and droppable.
     * You can use label controls to add additional information to the content type's form. This is useful to add tips or additional information for advanced controls.
@@ -121,7 +121,7 @@ Suppose ``{CRAFTER_HOME}`` is the path to your Crafter installation so that it c
 
 Blueprints reside in ``{CRAFTER_HOME}/data/repos/global/blueprints`` since Crafter 3.0. Each folder corresponds to a blueprint (You may notice the empty and website_editorial blueprint folders), you can start by copying the ``empty`` folder and renaming it to your blueprint’s name, like "my_blueprint".
 
-Your site exists in ``{CRAFTER_HOME}/data/repos/sites/your-site-name``. Inside, you'll notice 2 repos, ``sandbox`` and ``published``. Inside of either of them, lie the site's folders, but since ``sandbox`` contains your site as it currently exists in your Studio preview, we'll be grabbing the files from this one. You need to move this site's folders into an external folder named as your blueprint, but avoid copying the ``.git/`` folder contained there, as it's unnecessary for the final distributable package and may even contain sensitive information.
+Your project exists in ``{CRAFTER_HOME}/data/repos/sites/your-site-name``. Inside, you'll notice 2 repos, ``sandbox`` and ``published``. Inside of either of them, lie the project's folders, but since ``sandbox`` contains your project as it currently exists in your Studio preview, we'll be grabbing the files from this one. You need to move this project's folders into an external folder named as your blueprint, but avoid copying the ``.git/`` folder contained there, as it's unnecessary for the final distributable package and may even contain sensitive information.
 
 .. note:: Don't merge folders, before copying any folder, delete the existing one so any renamed or deleted files don't persist.
 
@@ -138,7 +138,7 @@ In the previous screenshot, we didn't copy the ``config/`` folder. Why? (:ref:`W
     * **Keep config as is** and only copy the files you've modified. This will likely include the whole ``config/studio/content-types/`` folder and ``config/studio/preview-tools/components-config.xml`` for drag and drop.
     * **Keep your blueprint in a VCS** which will allow you to compare it against your changes and interactively see when to preserve the old version. This will also help you make any updates when blueprints get updated. You can either use Git or a visual diff tool.
 
-Now that you have merged your "site" with the Empty blueprint in the proper way, the resulting folder is ready to be distributed. To install, follow the next steps.
+Now that you have merged your "project" with the Empty blueprint in the proper way, the resulting folder is ready to be distributed. To install, follow the next steps.
 
 
 ----------
@@ -147,9 +147,9 @@ Installing
 
 #. Copy your blueprint folder into ``{CRAFTER_HOME}/data/repos/global/blueprints``.
 #. Check in your blueprint folder if it contains a ``craftercms-plugin.yaml`` file.  Add in the file if it does not exist by copying a ``craftercms-plugin.yaml`` file from one of the default blueprints, such as from the folder ``4000_empty``, which contains the empty blueprint and modifying it as needed.  See :ref:`craftercms-plugin-yaml-file` for details on the file
-#. Once you do, commit the change to the global repo (``{CRAFTER_HOME}/data/repos/global/``) by using ``git``, and your blueprint will now start appearing when you try to create a new site.
+#. Once you do, commit the change to the global repo (``{CRAFTER_HOME}/data/repos/global/``) by using ``git``, and your blueprint will now start appearing when you try to create a new project.
 
-   * Crafter 3 uses a vanilla version of Git, so regular Git commands work as intended. To commit your changes so Crafter can see it, head to ``{CRAFTER_HOME}/data/repos/global/blueprints`` and git add your modified files like this
+   * CrafterCMS uses a vanilla version of Git, so regular Git commands work as intended. To commit your changes so Crafter can see it, head to ``{CRAFTER_HOME}/data/repos/global/blueprints`` and git add your modified files like this
 
      .. code-block:: sh
 
@@ -167,7 +167,7 @@ Installing
 
         git commit -m "<the commit’s description>"
 
-   * No need to push, there’s no remote configured. You can also use any Git client. Now, it will be available when you create a new site.
+   * No need to push, there’s no remote configured. You can also use any Git client. Now, it will be available when you create a new project.
 
 .. _adding-default-image-for-bp:
 
@@ -177,7 +177,7 @@ Adding a default image for a blueprint
 
 CrafterCMS uses a default path for CrafterCMS to look for a default representative image of a plugin or blueprint, the url ``../.crafter/screenshots/default.png``
 
-In the ``Sites`` screen where your sites are listed, if your site displays an image with the message **Screenshot not Set**, this means that there is no default image  under the ``.crafter/screenshots/`` folder in your blueprint:
+In the ``Projects`` screen where your projects are listed, if your project displays an image with the message **Screenshot not Set**, this means that there is no default image  under the ``.crafter/screenshots/`` folder in your blueprint:
 
 .. image:: /_static/images/developer/plugins/screenshot-not-set.jpg
    :alt: Plugin Descriptor - Screenshot not Set
@@ -188,9 +188,9 @@ In the ``Sites`` screen where your sites are listed, if your site displays an im
 
 To replace the **Screenshot not Set** image for your blueprint, simply add an image file (e.g.  ``default.png``) under the ``.crafter/screenshots/`` folder of your blueprint.
 
-Let's take a look at an example of fixing the **Screenshot not Set** image for an installed site as seen in the above image.
+Let's take a look at an example of fixing the **Screenshot not Set** image for an installed project as seen in the above image.
 
-Below are the folders/files for the blueprint used to install the site ``Sample Site``:
+Below are the folders/files for the blueprint used to install the project ``Sample Site``:
 
 .. image:: /_static/images/developer/plugins/bp-files-w-o-default-image.png
    :alt: Plugin Descriptor - Blueprint files and folders without a default image
@@ -199,7 +199,7 @@ Below are the folders/files for the blueprint used to install the site ``Sample 
 
 |
 
-We'll now fix the image displayed in the ``Sites`` screen after the blueprint is installed by adding a ``default.png``  file under the ``.crafter/screenshots/``  folder, so now, the blueprint files/folders looks like  this:
+We'll now fix the image displayed in the ``Projects`` screen after the blueprint is installed by adding a ``default.png``  file under the ``.crafter/screenshots/``  folder, so now, the blueprint files/folders looks like  this:
 
 .. image:: /_static/images/developer/plugins/bp-files-w-default-image.png
    :alt: Plugin Descriptor - Blueprint files and folders with a default image added
@@ -208,10 +208,10 @@ We'll now fix the image displayed in the ``Sites`` screen after the blueprint is
 
 |
 
-When you create a site using the blueprint we fixed above, ``Another Sample Site`` for our example, the site will now have the default image we added to the blueprint:
+When you create a project using the blueprint we fixed above, ``Another Sample Site`` for our example, the project will now have the default image we added to the blueprint:
 
 .. image:: /_static/images/developer/plugins/screenshot-default-set.jpg
-   :alt: Plugin Descriptor - Site created using a blueprint with a default image in ".crafter/screenshots`` folder
+   :alt: Plugin Descriptor - Project created using a blueprint with a default image in ".crafter/screenshots`` folder
    :width: 60%
    :align: center
 
@@ -245,7 +245,7 @@ To add parameters to be passed to blueprints, simply add the following to the ``
 
 where:
 
-- ``label``: Label to display for parameter on Create Site dialog
+- ``label``: Label to display for parameter on Create Project dialog
 - ``name``: Name of the parameter in *camelCase* notation
 - ``type``: Type of the parameter, possible values are ``STRING`` and ``PASSWORD``.  The default is ``STRING``
 - ``description``: Description of the parameter
@@ -257,16 +257,16 @@ To use the parameters in configuration files, simply use ``${plugin:PARAM_NAME}`
 **Example**
 
 Let's take a look at an example of adding parameters to the **Website Editorial** blueprint.
-In our example, we will be passing AWS credentials when the site is created to be used for storing files in an S3 bucket and will setup the configuration file that will be using the passed parameters, along with the changes required in the content type and template so users can upload files to S3 once the site is up.
+In our example, we will be passing AWS credentials when the project is created to be used for storing files in an S3 bucket and will setup the configuration file that will be using the passed parameters, along with the changes required in the content type and template so users can upload files to S3 once the project is up.
 
-To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>` guide, but instead of manually adding the AWS credentials so the user can upload files, we'll pass the AWS credentials through the blueprint when the site is created.
+To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>` guide, but instead of manually adding the AWS credentials so the user can upload files, we'll pass the AWS credentials through the blueprint when the project is created.
 
 #. The first thing we need to do is to add the parameters to the ``craftercms-plugin.yaml`` file of the Website Editorial blueprint.  Open the ``craftercms-plugin.yaml`` which is under the ``{CRAFTER_HOME}/data/repos/global/blueprints/1000_website_editorial`` folder and add the following lines to the end of the file:
 
    .. code-block:: yaml
       :linenos:
       :caption: *{CRAFTER_HOME}/data/repos/global/blueprints/1000_website_editorial/craftercms-plugin.yaml*
-      :emphasize-lines: 13-31
+      :emphasize-lines: 12-30
 
       # This file describes a plugin for use in CrafterCMS
 
@@ -301,7 +301,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>
 
    |
 
-#. Next, we'll add the ``aws.xml`` file which will contain all the parameters passed from the blueprint which we'll use to create an S3 profile, so files can be uploaded to an S3 bucket. To access the parameters passed from the blueprint when the site was created, simply use ``${plugin:PARAM_NAME}``, where PARAM_NAME is the name of the parameter passed through the blueprint that you would like to use.
+#. Next, we'll add the ``aws.xml`` file which will contain all the parameters passed from the blueprint which we'll use to create an S3 profile, so files can be uploaded to an S3 bucket. To access the parameters passed from the blueprint when the project was created, simply use ``${plugin:PARAM_NAME}``, where PARAM_NAME is the name of the parameter passed through the blueprint that you would like to use.
 
    Create the folder ``aws`` under ``CRAFTER_HOME/data/repos/global/blueprints/config`` then inside the newly create folder, create the file ``aws.xml``.  Add the following inside the file:
 
@@ -390,48 +390,48 @@ To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>
 
    |
 
-#. Refresh your browser.  We will now try creating a site using the **Website Editorial** blueprint to see the parameters we added to the blueprint earlier.
+#. Refresh your browser.  We will now try creating a project using the **Website Editorial** blueprint to see the parameters we added to the blueprint earlier.
 
-   Click on the ``Main Menu`` ➜ ``Sites`` ➜ ``Create Site`` button, then finally select the ``Website Editorial`` blueprint.  You will then be presented with the ``Create Site`` dialog.  Notice that the parameters we added to the ``craftercms-plugin.yaml`` file is near the bottom of dialog.  The values entered there will now be available to the site being created which for our example, will be used for the AWS profile in ``aws.xml``.  Enter the requested information then click on ``Create Site``
+   Click on the ``Navigation Menu`` ➜ ``Projects`` ➜ ``Create Project`` button, then finally select the ``Website Editorial`` blueprint.  You will then be presented with the ``Create Project`` dialog.  Notice that the parameters we added to the ``craftercms-plugin.yaml`` file is near the bottom of dialog.  The values entered there will now be available to the project being created which for our example, will be used for the AWS profile in ``aws.xml``.  Enter the requested information then click on ``Create Project``
 
    .. image:: /_static/images/blueprint/blueprint-param-added.jpg
       :width: 80%
-      :alt: Parameter added in Create Site
+      :alt: Parameter added in Create Project
       :align: center
 
    |
 
-#. Once your new site is up, users can upload files to S3 from an article page.  Let's verify the parameters you passed through the blueprint by checking the ``aws.xml`` file.  Open the **Sidebar**, then click on |siteConfig|.  Click on ``Configuration``, then select ``AWS Profiles`` from the dropdown.
+#. Once your new project is up, users can upload files to S3 from an article page.  Let's verify the parameters you passed through the blueprint by checking the ``aws.xml`` file.  Open the **Sidebar**, then click on |siteConfig|.  Click on ``Configuration``, then select ``AWS Profiles`` from the dropdown.
 
    .. image:: /_static/images/blueprint/blueprint-param-added-verify.jpg
       :width: 80%
-      :alt: Parameter added in Create Site
+      :alt: Parameter added in Create Project
       :align: center
 
    |
 
 
--------------------------------------
-Editing as a Site vs Editing directly
--------------------------------------
+----------------------------------------
+Editing as a Project vs Editing directly
+----------------------------------------
 
-Since a blueprint is very similar in its layout to a site, you can modify a blueprint by modifying a site created with that blueprint and then merging the changes. This has several benefits:
+Since a blueprint is very similar in its layout to a project, you can modify a blueprint by modifying a project created with that blueprint and then merging the changes. This has several benefits:
 
-* You can quickly see the effects of your modifications on Studio's preview site.
+* You can quickly see the effects of your modifications on Studio's preview project.
 * You can create components, pages, and other file types through Studio, providing you with base templates, snippets, and type-specific UIs.
 
 .. _blueprint-site-vs-blueprint:
 
 .. warning:: However
 
-    * The ``config/`` folder contains multiple configuration files with the site name. In blueprints, this is generically represented with ``{siteName}``, so you must either only edit config files directly on the blueprint's filesystem, or carefully replace your preview site name with ``{siteName}`` as appropriate. Having an initial version of the blueprint (when it was just copy of the Empty blueprint before making it a site) in a Git repository will be helpful for this.
+    * The ``config/`` folder contains multiple configuration files with the project name. In blueprints, this is generically represented with ``{siteName}``, so you must either only edit config files directly on the blueprint's filesystem, or carefully replace your preview project name with ``{siteName}`` as appropriate. Having an initial version of the blueprint (when it was just copy of the Empty blueprint before making it a project) in a Git repository will be helpful for this.
 
-       * Specifically, ``permission-mappings-config.xml`` and ``site-config.xml`` use ``{siteName}`` in a way where Studio replaces it with the site's name when creating a site. Sample files keep their ``{siteName}``.
+       * Specifically, ``permission-mappings-config.xml`` and ``site-config.xml`` use ``{siteName}`` in a way where Studio replaces it with the project's name when creating a project. Sample files keep their ``{siteName}``.
        * ``permission-mappings-config.xml`` uses it in ``<site id="{siteName}">``
        * ``site-config.xml`` uses it in ``<wem-project>{siteName}</wem-project>`` and ``<display-name>{siteName}</display-name>``
 
-    * Each site is made up of 2 different Git repos, ``sandbox`` and ``published``. Inside of either of them, lie the site's folders and also the ``.git/`` folder. You need to move this site folders back to the blueprint folder, but avoid copying this ``.git/`` folder, as it's unnecessary for the final distributable package and may even contain sensitive information.
+    * Each project is made up of 2 different Git repos, ``sandbox`` and ``published``. Inside of either of them, lie the project's folders and also the ``.git/`` folder. You need to move this project folders back to the blueprint folder, but avoid copying the ``.git/`` folder, as it's unnecessary for the final distributable package and may even contain sensitive information.
 
 Remember that whenever you edit directly in the filesystem, you need to commit your changes to ensure they are properly reflected.
 
-Small edits after the initial development may be faster by editing the blueprint directly and testing by creating a new site.
+Small edits after the initial development may be faster by editing the blueprint directly and testing by creating a new project.

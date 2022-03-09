@@ -70,7 +70,7 @@ where the following fields are required:
 - ``plugin.type`` - ``blueprint`` or ``site`` depending on the type of plugin you're building
 - ``plugin.id`` - a unique Id that is meaningful/recognizable to people who will be using the blueprint/plugin
 - ``plugin.name`` - blueprint/plugin name (For our blueprint example, it is the blueprint name shown in the
-  **Choose Blueprint** screen of **Create Site**)
+  **Choose Blueprint** screen of **Create Project**)
 - ``plugin.version`` - a version number for the blueprint/site plugin
 - ``plugin.crafterCmsVersions`` - CrafterCMS versions that the plugin is compatible with (look in the :ref:`release-notes`
   section for the versions available), and you'll need to keep this up to date
@@ -95,7 +95,7 @@ CrafterCMS supports automatically wiring your site plugin to the corresponding c
 your site plugin installation.
 
 To setup a site plugin to be automatically wired in the corresponding configuration file in Studio (for example, a
-form control, will be wired to the Site Config Tools Configuration file) during the installation, add the following
+form control, will be wired to the Project Config Tools Configuration file) during the installation, add the following
 to your ``craftercms-plugin.yaml`` descriptor file
 
 .. code-block:: yaml
@@ -134,7 +134,7 @@ where:
 - ``installation.parentXpath`` is an XPath selector for the element where the plugin will be added,
   required when installation-type is *preview-app*
 - ``installation.elementXpath`` is an XPath selector to check if the plugin is already present in the configuration and used to remove the config when the plugin is uninstalled
-- ``installation.element.name`` is the element name to be wired in your site configuration file so the plugin will
+- ``installation.element.name`` is the element name to be wired in your project configuration file so the plugin will
   show up in Studio
   Available values are **control** (for *form-control* installation type), **datasource** (for *form-datasource* installation type) and for *preview-app* installation type, the start of the section the plugin needs to be inserted in, e.g. *configuration*, etc.
 - ``installation.element.children`` contains any number of **name** and **children** describing your plugin, such
@@ -150,7 +150,7 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
 .. code-block:: yaml
    :caption: *Example craftercms-plugin.yaml file for a form-control site plugin*
    :linenos:
-   :emphasize-lines: 44-62
+   :emphasize-lines: 42-60
 
    # This file describes a plugin for use in CrafterCMS
 

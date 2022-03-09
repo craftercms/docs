@@ -43,7 +43,7 @@ To setup an environment for engine configuration files, do the following:
 Example
 -------
 
-Let's take a look at an example of creating a new environment, called ``mycustomenv`` with the ``urlrewrite.xml`` file overridden in the new environment for a site created using the Website Editorial blueprint:
+Let's take a look at an example of creating a new environment, called ``mycustomenv`` with the ``urlrewrite.xml`` file overridden in the new environment for a project created using the Website Editorial blueprint:
 
 #. We'll create a folder called ``env`` under ``data/repos/site/mysite/sandbox/config/engine``
 
@@ -139,7 +139,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
    .. image:: /_static/images/site-admin/env-custom-configurations.png
       :align: center
-      :alt: Active Environment Displayed in Site Config Configuration
+      :alt: Active Environment Displayed in Project Tools Configuration
 
    |
 

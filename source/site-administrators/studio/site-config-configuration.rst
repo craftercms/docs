@@ -1,16 +1,16 @@
 :is-up-to-date: True
 
-.. index:: Site Config Configuration
+.. index:: Configurations
 
 .. highlight:: xml
 
 .. _site-config-configuration:
 
-=========================
-Site Config Configuration
-=========================
+==============
+Configurations
+==============
 
-The Site Config configuration file allows you to specify which items can be accessed from the dropdown list in **Site Config** -> **Configuration**.
+The Configurations configuration file allows you to specify which items can be accessed from the dropdown list in **Project Tools** -> **Configuration**.
 
 To find this configuration xml through studio follow the next instructions:
 

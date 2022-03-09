@@ -12,12 +12,12 @@ Content Monitoring
 What is Content Monitoring?
 ---------------------------
 
-Content Monitoring is a feature that allows you to configure watches and notifications on your site.
+Content Monitoring is a feature that allows you to configure watches and notifications on your project.
 This will provide an easy way to detect unwanted or outdated content.
 
-The monitoring process always runs in Studio for all existing sites once a day at noon (time zone of the server) and sends notifications indicating the items detected by the content monitors.  Content monitors are managed independently for each site and are highly customizable.
+The monitoring process always runs in Studio for all existing projects once a day at noon (time zone of the server) and sends notifications indicating the items detected by the content monitors.  Content monitors are managed independently for each project and are highly customizable.
 
-All the built-in blueprints in Studio include a default configuration for monitors and users just need to add the field ``expired_dt`` in the content type they want monitored.  We'll take a look at an example later on of adding the ``expired_dt`` field in one of the content type of a site using the Website Editorial blueprint.
+All the built-in blueprints in Studio include a default configuration for monitors and users just need to add the field ``expired_dt`` in the content type they want monitored.  We'll take a look at an example later on of adding the ``expired_dt`` field in one of the content type of a project using the Website Editorial blueprint.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Content Monitor Properties
@@ -57,11 +57,11 @@ How to Configure Content Monitoring
 -----------------------------------
 
 Content monitoring can be configured through Crafter Studio.  Go to the **Sidebar**, then click on
-**Site Tools** > **Configuration** > **Site Configuration**
+**Project Tools** > **Configuration** > **Project Configuration**
 
 .. image:: /_static/images/site-admin/config-open-site-config.jpg
     :align: center
-    :alt: Configuration - Open "Site Configuration"
+    :alt: Configuration - Open "Project Configuration"
 
 The file can also be located in the following path:
 
@@ -221,13 +221,13 @@ Content Expiration
 
 For more information on supported time units that you can use for your query, see https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#date-math
 
------------------------------------------------------------------------------------------
-Example Content Monitoring Setup for a Site Created Using the Website Editorial Blueprint
------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
+Example Content Monitoring Setup for a Project Created Using the Website Editorial Blueprint
+--------------------------------------------------------------------------------------------
 
-Let's take a look at content monitoring for a site created using the Website Editorial blueprint.
+Let's take a look at content monitoring for a project created using the Website Editorial blueprint.
 
-Open the ``Sidebar`` then click on ``Site Config`` -> ``Configuration``, then select ``Site Configuration`` from the drop down.  Notice that the monitor is checking for content that's about to expire by looking at the ``expired_dt`` field.  The following content monitoring is setup by default in all the built-in blueprints:
+Open the ``Sidebar`` then click on ``Project Tools`` -> ``Configuration``, then select ``Project Configuration`` from the drop down.  Notice that the monitor is checking for content that's about to expire by looking at the ``expired_dt`` field.  The following content monitoring is setup by default in all the built-in blueprints:
 
 .. code-block:: xml
    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/site-config.xml*
@@ -291,7 +291,7 @@ Open the ``Sidebar`` then click on ``Site Config`` -> ``Configuration``, then se
 
 We need to setup the ``expired_dt`` field for the content types that we want monitored.  For our example, we'll add the ``expired_dt`` field to the ``Page - Article`` content type.
 
-Open the ``Sidebar`` then click on ``Site Config`` -> ``Content Types``.  Select the ``Page - Article`` content type.  Drag a ``Date/Time`` control into the  ``Page Properties`` form section.  Set the ``Title`` to ``Expire Date`` and the ``Name/Variable Name`` to ``expired_dt``.  Save your changes.
+Open the ``Sidebar`` then click on ``Project Tools`` -> ``Content Types``.  Select the ``Article`` content type.  Drag a ``Date/Time`` control into the  ``Page Properties`` form section.  Set the ``Title`` to ``Expire Date`` and the ``Name/Variable Name`` to ``expired_dt``.  Save your changes.
 
 .. figure:: /_static/images/site-admin/content-mon-add-field-exp.png
    :align: center

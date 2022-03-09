@@ -6,7 +6,7 @@
 Write Configuration (deprecated)
 ================================
 
-Write site configuration.
+Write project configuration.
 
 .. important::
    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/configuration/writeConfiguration` for the current version.

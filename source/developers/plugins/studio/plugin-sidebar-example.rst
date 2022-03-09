@@ -8,7 +8,7 @@
 Crafter Studio Sidebar Plugin Example
 =====================================
 
-Let's take a look at an example of creating a Sidebar plugin in Studio using a site called ``mysite`` created using the **Website Editorial** blueprint.
+Let's take a look at an example of creating a Sidebar plugin in Studio using a project called ``mysite`` created using the **Website Editorial** blueprint.
 
 #. The first thing we have to do is to create the folder structure where we will be placing the JS file for our sidebar site plugin.  We'll follow the convention listed in :ref:`plugin-directory-structure`.  For our example, PLUGIN_TYPE is ``sidebar`` and the PLUGIN_NAME is ``react-sample``
 
@@ -96,7 +96,7 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
 
    |
 
-   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the site ``mysite`` by running the following:
+   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``mysite`` by running the following:
 
       ..  code-block:: bash
 

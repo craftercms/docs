@@ -53,7 +53,7 @@ next steps (you need a system administrator for the first step):
 
 The encrypted properties work in the following files:
 
- - Engine Site Configuration (``/config/engine/site-config.xml``)
+ - Engine Project Configuration (``/config/engine/site-config.xml``)
  - Studio AWS Profiles (``/config/studio/aws/aws.xml``)
  - Studio Box Profiles (``/config/studio/box/box.xml``)
  - Studio WebDAV Profiles (``/config/studio/webdav/webdav.xml``)

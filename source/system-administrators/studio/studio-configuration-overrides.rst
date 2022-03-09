@@ -41,11 +41,11 @@ The following section of Studio's configuration overrides allows you to do the f
    # Git repository branch for the `staging` publishing target, default "staging"
    # studio.repo.published.staging: staging
 
-------------------
-Site Configuration
-------------------
+---------------------
+Project Configuration
+---------------------
 
-The following section of Studio's configuration overrides allows you to setup your site configuration
+The following section of Studio's configuration overrides allows you to setup your project configuration
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*

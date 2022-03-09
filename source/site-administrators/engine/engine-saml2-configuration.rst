@@ -85,11 +85,11 @@ Requirements
   If Crafter Engine will be behind a load balancer or proxy server, the XML Service Provider descriptor needs to use
   the public URL for the Identity Provider to be able to communicate
 
------------------------------
-Update the Site Configuration
------------------------------
+--------------------------------
+Update the Project Configuration
+--------------------------------
 
-SAML2 authentication can be enabled by updating the site configuration to include the following properties:
+SAML2 authentication can be enabled by updating the project configuration to include the following properties:
 
 .. code-block:: xml
   :linenos:
@@ -152,8 +152,8 @@ Properties Details
 +====================================+===========================================+=====================================+
 |``enable``                          |Indicates if SAML2 is enabled or not       |``false``                            |
 +------------------------------------+-------------------------------------------+-------------------------------------+
-|``reverseProxy``                    |Indicates if the site is running behind a  |``false``                            |
-|                                    |reverse proxy or load balancer and the     |                                     |
+|``reverseProxy``                    |Indicates if the project is running behind |``false``                            |
+|                                    |a reverse proxy or load balancer and the   |                                     |
 |                                    |request to the IdP should use the          |                                     |
 |                                    |``context.*`` properties                   |                                     |
 +------------------------------------+-------------------------------------------+-------------------------------------+
@@ -235,14 +235,14 @@ Properties Details
 Commit the required files
 -------------------------
 
-You will need to add & commit the keystore and descriptor files manually to the site repository, the location will
+You will need to add & commit the keystore and descriptor files manually to the project repository, the location will
 depend on the configuration used. The following example uses the default locations:
 
 .. code-block:: bash
   :linenos:
   :caption: Adding the SAML2 files
 
-  cd <PATH TO SITE REPOSITORY>
+  cd <PATH TO PROJECT REPOSITORY>
   mkdir config/engine/saml2
   cp ~/keystore.jks config/engine/saml2/
   cp ~/idp.xml config/engine/saml2/
@@ -252,7 +252,7 @@ depend on the configuration used. The following example uses the default locatio
 
 After completing those steps you should be able to test the SAML2 authentication, if there are no configuration or
 communication errors you will be redirected to the SSO login page when trying to access a secured page and then 
-automatically return to your site in Crafter Engine.
+automatically return to your project in Crafter Engine.
 
 .. note::
   If you are configuring SAML2 authentication in an authoring environment, you need to make sure that your IDP is

@@ -52,7 +52,7 @@ Here are the topics covered in this section:
 .. toctree::
    :maxdepth: 2
 
-   navigating-site-config
+   navigating-project-tools
    configuration
    studio-logging
 

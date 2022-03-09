@@ -6,21 +6,21 @@
 Environment Specific Configurations
 ===================================
 
-This section explains how to configure sites depending on the environment where they are deployed,
+This section explains how to configure projects depending on the environment where they are deployed,
 this is useful for managing values such as paths or database connections without the need to change
 any code directly in the servers.
 
-------------------------------
-Using Site Configuration Files
-------------------------------
+---------------------------------
+Using Project Configuration Files
+---------------------------------
 
 This is the preferred way to manage configurations because changes only require to publish the
 files from Crafter Studio to take effect.
 
 The perfect example is how to manage a database connection that will change depending on the server
-where the site is deployed: for example the address, name or port of the database could change
+where the project is deployed: for example the address, name or port of the database could change
 for the staging and production servers. Crafter Engine provides a feature to easily include the
-configurations for all environments in the site repository.
+configurations for all environments in the project repository.
 
 .. note::
     In order to use this feature all Crafter Engine servers need to set a proper value for the
@@ -107,18 +107,18 @@ bean that will always connect to the right database:
 Using Server Configuration Files
 --------------------------------
 
-This option is less flexible than using the site configuration files because any change will require
+This option is less flexible than using the project configuration files because any change will require
 a server restart to take effect.
 
-Crafter Engine allows to override site configuration using files outside of the repository, usually
+Crafter Engine allows to override project configuration using files outside of the repository, usually
 these will be managed by the system administrator instead of the developers and will add some
 complexity to the setup process and keeping all environments updated.
 
-~~~~~~~~~~~~~~~~~~
-Site Configuration
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+Project Configuration
+~~~~~~~~~~~~~~~~~~~~~
 
-For each site you can provide an external set of configuration files in the shared folder of the
+For each project you can provide an external set of configuration files in the shared folder of the
 application server:
 
 ``TOMCAT/shared/classes/crafter/engine/extension/sites/{siteName}/site-config.xml``
@@ -129,13 +129,13 @@ Global Configuration
 ~~~~~~~~~~~~~~~~~~~~
 
 One last option is to include your property as part of the global Crafter Engine configuration, the
-only advantage of this approach is that the property will be available to all sites and the value
-doesn't need to be repeated if it is needed by more than one site.
+only advantage of this approach is that the property will be available to all projects and the value
+doesn't need to be repeated if it is needed by more than one project.
 
 ``TOMCAT/shared/classes/crafter/engine/extension/server-config.properties``
 
 .. code-block:: properties
-  :caption: Crafter Engine Global Configuration (shared by all sites deployed in the server)
+  :caption: Crafter Engine Global Configuration (shared by all projects deployed in the server)
   :linenos:
   
   db.uri=mongodb://delivery-db:27020/deliverydb?maxPoolSize=10&minPoolSize=5&maxIdleTimeMS=1000
