@@ -1238,6 +1238,8 @@ React bindings can be used either via npm or using the umd bundle that comes wit
 
 The components available for using on your React applications are listed below.
 
+.. _ExperienceBuilder:
+
 ExperienceBuilder
 """""""""""""""""
 
@@ -1277,7 +1279,6 @@ this component only once and it should be a parent of all the XB-enabled compone
      - string
      - null
      - You may specify a ``documentDomain`` if your preview runs on a different domain than Studio does.
-       than Studio.
    * - ``scrollElement``
      - string
      - html, body
@@ -1309,10 +1310,11 @@ components, not their fields).
    * - ``componentProps``
      - Object
      - undefined
-     - Any props sent to the ``Model`` component that aren't own props are forwarded down to the rendered
-       component so in most cases you needn't use ``componentProps``. There may be cases where your target
-       component has a prop name that matches a prop of ``Model`` so to avoid it swallowing the prop
-       and not reaching your target component, you may send the prop(s) via ``componentProps`` instead.
+     - Any props sent at the root that aren't own props are forwarded down to the rendered
+       component so in most cases you needn't use ``componentProps``. There may be cases where your
+       target component has a prop name that matches in name with a prop of the CrafterCMS React
+       component so to avoid it swallowing the prop and not reaching your target component, you may
+       send the prop(s) via ``componentProps`` instead.
 
 ContentType
 """""""""""
@@ -1367,9 +1369,42 @@ fields, CrafterCMS provides specific components (see below) to render component 
      - Default
      - Description
    * - ``model``
-     -
-     -
-     -
+     - Object (ContentInstance)
+     - (Required)
+     - The model being rendered
+   * - ``fieldId``
+     - string
+     - (Required)
+     - The id of the field to render
+   * - ``index``
+     - string | number
+     - undefined
+     - If applicable, the index withing the parent collections.
+   * - ``component``
+     - string | React.ElementType
+     - "div"
+     - The component to be rendered
+   * - ``componentProps``
+     - Object
+     - undefined
+     - Any props sent at the root that aren't own props are forwarded down to the rendered
+       component so in most cases you needn't use ``componentProps``. There may be cases where your
+       target component has a prop name that matches in name with a prop of the CrafterCMS React
+       component so to avoid it swallowing the prop and not reaching your target component, you may
+       send the prop(s) via ``componentProps`` instead.
+   * - ``renderTarget``
+     - string
+     - "children"
+     - The value(s) to be rendered will be passed with this prop name to the target element type
+       (see ``component`` prop). By default, the value is passed as children, but if you were to
+       render for example an image, you would do ``<RenderField ... component="img" renderTarget="src" />``
+   * - ``render``
+     - function
+     - (value, fieldId) => value
+     - If you need to do custom rendering logic for the value of the field being rendered, you may
+       supply a ``render`` function. The function receives the field value and the ``fieldId``
+
+.. _RenderComponents:
 
 RenderComponents
 """"""""""""""""
@@ -1385,10 +1420,31 @@ element (i.e. the item selector), the item element, and the component itself.
      - Type
      - Default
      - Description
-   * - ``model``
+   * - ``*``
      -
      -
-     -
+     - ``RenderComponents`` shares all the `RenderRepeat <#rendereepeat>`_ props.
+   * - ``contentTypeMap``
+     - Object
+     - (Required)
+     - A map of components indexed by CrafterCMS content type id. The content type id of the model
+       passed will is used to pick from the map the component that should render said model.
+   * - ``contentTypeProps``
+     - Props Object
+     - {}
+     - Props to be passed down to the ``ContentType`` component — which renders your target component
+       based on the ``contentTypeMap``. Props will be passed all the way down to the target component.
+   * - ``nthContentTypeProps``
+     - Record<number, object>
+     - ``{}``
+     - You can pass specific props to components based on their index in the collection with this prop.
+   * - ``renderItem``
+     - function
+     - (component, index) => <ContentType ... />
+     - If the default component renderer is not sufficient for your use case, you can supply a custom
+       renderer which is invoked with the current component and the current index in the collection.
+
+.. _RenderRepeat:
 
 RenderRepeat
 """"""""""""
@@ -1398,11 +1454,170 @@ Use this component to render repeat groups and their items. This component rende
 is provided with the item, the index in the collection, the computed compound index (when applicable)
 and the collection itself.
 
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Prop
+     - Type
+     - Default
+     - Description
+   * - ``model``
+     - Object (ContentInstance)
+     - (Required)
+     - The model being rendered
+   * - ``fieldId``
+     - string
+     - (Required)
+     - The id of the repeat group field
+   * - ``index``
+     - string | number
+     - undefined
+     - When nested inside other repeats, the index inside the parent repeat
+   * - ``component``
+     - React.ElementType
+     - "div"
+     - The React component to render the field element as
+   * - ``componentProps``
+     - Object
+     - undefined
+     - Any props sent at the root that aren't own props are forwarded down to the rendered
+       component so in most cases you needn't use ``componentProps``. There may be cases where your
+       target component has a prop name that matches in name with a prop of the CrafterCMS React
+       component so to avoid it swallowing the prop and not reaching your target component, you may
+       send the prop(s) via ``componentProps`` instead.
+   * - ``itemComponent``
+     - React.ElementType
+     - "div"
+     -
+   * - ``itemProps``
+     - Object
+     - undefined
+     -
+   * - ``itemKeyGenerator``
+     - function
+     - (item, index) => index
+     - A function that receives the item and the current index and should return the ``key``
+       (React special's prop attribute) to be used on the item being rendered. By default, just the
+       current index is used, so you can make the key more robust through this prop.
+   * - ``renderItem``
+     - function
+     - (Required)
+     - Should return/render the inner item (``RenderRepeat`` renders the field and item elements,
+       you're responsible of rendering the fields of each item). The function receives the item,
+       the compound index (nested collections), the index in the current repeat collection and the
+       collection itself.
+
 Angular, Vue and Other JS Applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The easiest way to integrate XB with you JS application is by putting attributes on each HTML element that
-represents models, fields or items of CrafterCMS content type and then invoking XB initializer.
+The easiest way to integrate XB with your JS application is by putting attributes on each HTML element that
+represents a model, field or item of a CrafterCMS content type and then invoking XB initializer.
+
+.. _fetchIsAuthoring:
+
+fetchIsAuthoring
+""""""""""""""""
+
+This function checks against the specified CrafterCMS server if it is running against an authoring server.
+When running in authoring, in-context editing tools should be enabled in the application whilst in
+delivery (i.e. "production"), they should not.
+
+The function returns a promise which will resolve as true or false. This value should be fetch early
+on your application bootstrap and cached for the rest of the app lifecycle. Depending on the value,
+you should then carry on to initialize XB or bypass it's initialization and assume the app is running
+in "production", where authoring tools are completely absent.
+
+.. TODO Internally it uses `crafterConf < add docs on readme and link to them >`_
+
+.. code-block:: js
+
+      import { fetchIsAuthoring, initExperienceBuilder } from '@craftercms/experience-builder';
+
+      // Check if we're in authoring
+      fetchIsAuthoring().then((isAuthoring) => {
+         // If we're in authoring, initialize XB
+         if (isAuthoring) {
+            initExperienceBuilder()
+         }
+      })
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Parameter
+     - Type
+     - Default
+     - Description
+   * - ``config``
+     - Record<'baseUrl' | 'site', string>
+     - undefined
+     - You can supply a baseUrl and/or site to make the check. ``fetchIsAuthoring`` uses ``crafterConf``
+       (from ``@craftercms/classes`` package) values when not supplied.
+
+.. TODO
+      Is addAuthoringSupport still needed? If used via npm, everything is imported from the package and,
+      if imported as a script, everything is already loaded.
+
+      addAuthoringSupport
+      """""""""""""""""""
+
+      Add authoring support will import the XB scripts on to your page.
+
+.. _getICEAttributes:
+
+getICEAttributes
+""""""""""""""""
+
+Use this method to get the set of attributes to place on each element that represents a CrafterCMS
+model, field or item. Once you've fetched your content, you'd invoke ``getICEAttributes`` and it will
+return all the necessary attributes to inform the system how to make such element editable in XB.
+
+You should first set all the attributes on your markup and afterwards, invoke `initExperienceBuilder <#initexperiencebuilder>`_
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Parameter
+     - Type
+     - Default
+     - Description
+   * - ``config``
+     - `ICEConfig <https://github.com/craftercms/studio-ui/blob/33b003c49fdde3ea00e1d95ca02d9f1e6869b301/ui/guest/src/index.tsx#L40>`_
+     - (Required)
+     - You must supply at a minimum the ``model`` and ``isAuthoring``. The ``fieldId`` must be
+       supplied when the artifact being rendered is a field. The ``index`` must be specified when
+       the artifact being rendered is inside a collection (repeat groups or item selectors).
+
+.. _initExperienceBuilder:
+
+initExperienceBuilder
+"""""""""""""""""""""
+
+Use this method to initialize experience builder once you have printed all the attributes (see
+`getICEAttributes <#geticeattributes>`_) on your markup.
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Parameter
+     - Type
+     - Default
+     - Description
+   * - ``props``
+     - `ExperienceBuilderProps <#experiencebuilder>`_
+     - (Required)
+     - See `XB props <#experiencebuilder>`_.
+
+Example Applications
+~~~~~~~~~~~~~~~~~~~~
+
+- `React Example <https://github.com/craftercms/wordify-blueprint/tree/react>`_
+- `Next JS Example <https://github.com/rart/craftercms-example-nextjs>`_
+- `Angular Example <https://github.com/phuongnq/craftercms-example-angular>`_
 
 .. TODO
       Npm
