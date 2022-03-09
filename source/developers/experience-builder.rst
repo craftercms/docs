@@ -137,17 +137,15 @@ Rules of XB
            - Correct
          * - .. code-block:: html
 
-                  <div><!-- Title field (title_s) -->
-                     <em>
-                       ${title_s}
-                     </em>
+                  <!-- Author field (author_s) -->
+                  <div class="byline">
+                     by ${author_s}
                   </div>
            - .. code-block:: html
 
-                  <div>
-                     <em><!-- Title field (title_s) -->
-                       ${title_s}
-                     </em>
+                  <div class="byline">
+                     by
+                     <!-- Author field (author_s) --><span>${author_s}</span>
                   </div>
 
   * Elements that represent collections (i.e. repeat groups or component collections), must have their
@@ -160,17 +158,21 @@ Rules of XB
            - Correct
          * - .. code-block:: html
 
-                  <div><!-- Component collection field (components_o) -->
+                  <!-- Component collection field (components_o) -->
+                  <div>
                      <div class="column">
-                        <div class="feature><!-- Component collection item (components_o) -->
+                        <!-- Component collection item (components_o) -->
+                        <div class="feature>
                            ...
                         </div>
                      </div>
                   </div>
            - .. code-block:: html
 
-                  <div><!-- Component collection field (components_o) -->
-                     <div class="column"><!-- Component collection item (components_o) -->
+                  <!-- Component collection field (components_o) -->
+                  <div>
+                     <!-- Component collection item (components_o) -->
+                     <div class="column">
                         <div class="feature>
                            ...
                         </div>
