@@ -1344,7 +1344,7 @@ component on a given piece of your app.
      - Object
      - (Required)
      - A map of components indexed by CrafterCMS content type id. The content type id of the model passed
-       will is used to pick from the map the component that should render said model.
+       will be used to pick from the map the component that should render said model.
    * - ``notFoundComponent``
      - React.ComponentType
      -
@@ -1381,7 +1381,7 @@ fields, CrafterCMS provides specific components (see below) to render component 
    * - ``index``
      - string | number
      - undefined
-     - If applicable, the index withing the parent collections.
+     - If applicable, the index within the parent collections.
    * - ``component``
      - string | React.ElementType
      - "div"
@@ -1430,7 +1430,7 @@ element (i.e. the item selector), the item element, and the component itself.
      - Object
      - (Required)
      - A map of components indexed by CrafterCMS content type id. The content type id of the model
-       passed will is used to pick from the map the component that should render said model.
+       passed will be used to pick from the map the component that should render said model.
    * - ``contentTypeProps``
      - Props Object
      - {}
@@ -1452,9 +1452,9 @@ RenderRepeat
 """"""""""""
 
 Use this component to render repeat groups and their items. This component renders the field element
-(i.e. the repeat group), the item element and render each item via a function supplied by you, which
-is provided with the item, the index in the collection, the computed compound index (when applicable)
-and the collection itself.
+(i.e. the repeat group) and the item element. The body of each repeat group item is rendered by a function
+supplied by you, which is provided with the item, the index in the collection, the computed compound
+index (when applicable) and the collection itself.
 
 .. list-table::
    :widths: 10 10 10 70
@@ -1506,7 +1506,7 @@ and the collection itself.
      - function
      - (Required)
      - Should return/render the inner item (``RenderRepeat`` renders the field and item elements,
-       you're responsible of rendering the fields of each item). The function receives the item,
+       you're responsible for rendering the fields of each item). The function receives the item,
        the compound index (nested collections), the index in the current repeat collection and the
        collection itself.
 
@@ -1525,7 +1525,7 @@ This function checks against the specified CrafterCMS server if it is running ag
 When running in authoring, in-context editing tools should be enabled in the application whilst in
 delivery (i.e. "production"), they should not.
 
-The function returns a promise which will resolve as true or false. This value should be fetch early
+The function returns a promise which will resolve as true or false. This value should be fetched early
 on your application bootstrap and cached for the rest of the app lifecycle. Depending on the value,
 you should then carry on to initialize XB or bypass it's initialization and assume the app is running
 in "production", where authoring tools are completely absent.
