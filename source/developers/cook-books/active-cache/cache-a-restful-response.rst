@@ -24,10 +24,34 @@ Prerequisites
 
 Active cache is disabled by default.  To enable active cache, in the ``crafter-setenv.sh`` file under ``CRAFTER_HOME/bin``, set the Spring profile ``crafter.core.activeCache``
 
-   .. code-block:: yaml
-      :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
+.. code-block:: yaml
+   :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
 
-      export SPRING_PROFILES_ACTIVE=crafter.core.activeCache
+   export SPRING_PROFILES_ACTIVE=crafter.core.activeCache
+
+|
+
+**Include crafter.cacheTemplate to the list of allowed beans**
+
+To do this go to your Crafter installation, and then in ``bin/apache-tomcat/shared/classes/crafter/engine/extension`` edit the :ref:`server-config.properties <engine-configuration-files>` and add the the ``crafter.cacheTemplate`` to ``crafter.engine.defaultPublicBeans``:
+
+.. code-block:: properties
+   :caption: *bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+   # Patterns for beans that should always be accessible from the site application context
+   crafter.engine.defaultPublicBeans=crafter\\.(targetIdManager|targetedUrlStrategy|cacheTemplate))
+
+|
+
+In some cases, restrictions need to be disabled.  To disable all restrictions, set ``crafter.engine.disableVariableRestrictions`` to ``true``:
+
+.. code-block:: properties
+   :caption: *bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+   # Indicates if the whole servlet & spring context should be available for templates & scripts
+   crafter.engine.disableVariableRestrictions=true
+
+|
 
 ---------------------------------------
 Step 1: Specify the Cache Tick Duration
@@ -39,9 +63,12 @@ If you need constant refreshment/expiration of items, we recommend each tick to 
 and then in ``bin/apache-tomcat/shared/classes/crafter/engine/extension`` edit the :ref:`server-config.properties <engine-configuration-files>` and add the following property:
 
 .. code-block:: properties
+   :caption: *bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
 	# The timespan of a single "tick". 60 000 == 1 minute
 	crafter.core.cache.tick.frequency=60000
+
+|
 
 --------------------------------
 Step 2: Create a REST Controller

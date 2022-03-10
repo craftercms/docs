@@ -2,9 +2,9 @@
 
 .. _crafter-studio-configure-ldap:
 
-=============================
-Configure LDAP Authentication
-=============================
+==============================================
+Configure LDAP Authentication |enterpriseOnly|
+==============================================
 
 To configure LDAP authentication, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and uncomment the
 following lines to the :ref:`studio-config-override.yaml <studio-configuration-files>` file.

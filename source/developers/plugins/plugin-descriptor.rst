@@ -53,9 +53,6 @@ Here's a sample taken from the  ``craftercms-plugin.yaml`` for the Empty bluepri
           name: CrafterCMS
           email: info@craftercms.com
           url: https://craftercms.com/
-      build:
-        id: c3d2a5444e6a24b5e0481d6ba87901d0b02716c8
-        date: 2021-01-23T00:00:00Z
       license:
         name: MIT
         url: https://opensource.org/licenses/MIT
@@ -66,7 +63,6 @@ Here's a sample taken from the  ``craftercms-plugin.yaml`` for the Empty bluepri
       crafterCmsEditions:
         - community
         - enterprise
-      searchEngine: Elasticsearch
 
 where the following fields are required:
 
@@ -74,11 +70,10 @@ where the following fields are required:
 - ``plugin.type`` - ``blueprint`` or ``site`` depending on the type of plugin you're building
 - ``plugin.id`` - a unique Id that is meaningful/recognizable to people who will be using the blueprint/plugin
 - ``plugin.name`` - blueprint/plugin name (For our blueprint example, it is the blueprint name shown in the
-  **Choose Blueprint** screen of **Create Site**)
+  **Choose Blueprint** screen of **Create Project**)
 - ``plugin.version`` - a version number for the blueprint/site plugin
 - ``plugin.crafterCmsVersions`` - CrafterCMS versions that the plugin is compatible with (look in the :ref:`release-notes`
   section for the versions available), and you'll need to keep this up to date
-- ``plugin.searchEngine`` - search engine your plugin requires, the only value possible at this time is``Elasticsearch``
 
 |
 |
@@ -100,7 +95,7 @@ CrafterCMS supports automatically wiring your site plugin to the corresponding c
 your site plugin installation.
 
 To setup a site plugin to be automatically wired in the corresponding configuration file in Studio (for example, a
-form control, will be wired to the Site Config Tools Configuration file) during the installation, add the following
+form control, will be wired to the Project Config Tools Configuration file) during the installation, add the following
 to your ``craftercms-plugin.yaml`` descriptor file
 
 .. code-block:: yaml
@@ -117,6 +112,9 @@ to your ``craftercms-plugin.yaml`` descriptor file
         - name: widgets
           children:
           - name: widget
+            attributes:
+            - name: id
+              value: org.craftercms.sampleComponentLibraryPlugin.components.reactComponent
             children:
             - name: plugin
               attributes:
@@ -127,7 +125,7 @@ to your ``craftercms-plugin.yaml`` descriptor file
               - name: name
                 value: react-sample
               - name: file
-                value: main.js
+                value: index.modern.js
 
 where:
 
@@ -135,8 +133,8 @@ where:
   Available values are **form-control**, **form-datasource**, **preview-app**, **site-filter** and **site-context**
 - ``installation.parentXpath`` is an XPath selector for the element where the plugin will be added,
   required when installation-type is *preview-app*
-- ``installation.elementXpath`` is an XPath selector to check if the plugin is already present in the configuration and also used to remove the config when the plugin is uninstalled.  Required when installation-type is *preview-app*
-- ``installation.element.name`` is the element name to be wired in your site configuration file so the plugin will
+- ``installation.elementXpath`` is an XPath selector to check if the plugin is already present in the configuration and used to remove the config when the plugin is uninstalled
+- ``installation.element.name`` is the element name to be wired in your project configuration file so the plugin will
   show up in Studio
   Available values are **control** (for *form-control* installation type), **datasource** (for *form-datasource* installation type) and for *preview-app* installation type, the start of the section the plugin needs to be inserted in, e.g. *configuration*, etc.
 - ``installation.element.children`` contains any number of **name** and **children** describing your plugin, such
@@ -152,7 +150,7 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
 .. code-block:: yaml
    :caption: *Example craftercms-plugin.yaml file for a form-control site plugin*
    :linenos:
-   :emphasize-lines: 44-62
+   :emphasize-lines: 42-60
 
    # This file describes a plugin for use in CrafterCMS
 
@@ -185,9 +183,6 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
          name: CrafterCMS
          email: info@craftercms.com
          url: https://craftercms.com
-     build:
-       id: f9d09cbf39167609bcca4e31f5d2475d0ef14f8a
-       date: 2021-05-21T00:00:00Z
      license:
        name: MIT
        url: https://opensource.org/licenses/MIT
@@ -200,6 +195,7 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
        - enterprise
      installation:
        - type: form-control
+         elementXpath: //control/plugin[pluginId='org.craftercms.plugin.control']
          element:
            name: control
            children:
@@ -217,6 +213,68 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
                children:
                  - name: class
                    value: fa-pencil-square-o
+
+|
+
+Below is a sample for a data source.
+
+.. code-block:: yaml
+   :caption: *Example installation for a data source*
+   :linenos:
+
+   installation:
+     - type: form-datasource
+       elementXpath: //datasource/plugin[pluginId='org.craftercms.plugin.datasource']
+       element:
+         name: datasource
+         children:
+           - name: plugin
+             children:
+               - name: pluginId
+                 value: org.craftercms.plugin.datasource
+               - name: type
+                 value: datasource
+               - name: name
+                 value: text-input
+               - name: filename
+                 value: main.js
+               - name: icon
+                 children:
+               - name: class
+                 value: fa-pencil-square-o
+
+|
+
+Below is a sample for a preview-app.
+
+.. code-block:: yaml
+   :caption: *Example installation for a preview-app*
+   :linenos:
+
+   installation:
+     - type: preview-app
+       parentXpath: //widget[@id='craftercms.components.ToolsPanel']
+       elementXpath: //plugin[@id='org.craftercms.sampleComponentLibraryPlugin.components.reactComponent']
+       element:
+         name: configuration
+         children:
+         - name: widgets
+           children:
+           - name: widget
+             attributes:
+             - name: id
+               value: org.craftercms.sampleComponentLibraryPlugin.components.reactComponent
+             children:
+             - name: plugin
+               attributes:
+               - name: id
+                 value: org.craftercms.plugin
+               - name: type
+                 value: sidebar
+               - name: name
+                 value: react-sample
+               - name: file
+                 value: index.modern.js
 
 |
 

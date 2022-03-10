@@ -142,6 +142,6 @@ Welcome to Crafter Studio! Your initial installation and setup is complete.
 
 From here you can create sites, administer users/group and manage your admin user's account settings.
 
-Follow this guide to create your first website or headless CMS project: :ref:`your_first_website`
+Follow this guide to create your first website or headless CMS project: :ref:`your_first_project`
 
 Follow this guide to setup a Delivery instance of CrafterCMS on AWS: :ref:`setup-delivery-using-aws-ami`

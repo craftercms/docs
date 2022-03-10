@@ -37,17 +37,17 @@ Site Plugin Directory Structure
 
 When creating site plugins, the JS files location for the site plugins uses a convention where the files needs to go in the following location:
 
-* **Controls** : authoring/js/control/CONTROL_NAME/JS_FILE.js
+* **Controls** : authoring/static-assets/plugins/{yourPluginId}/control/{yourPluginName}/JS_FILE.js
 
 where:
 
-- **CONTROL_NAME** : Name of form engine control site plugin
-- **JS_FILE.js** : JavaScript file containing the control/data source interface implementation
+- **{yourPluginName}** : Name of form engine control site plugin
+- **JS_FILE.js** : JavaScript file containing the control interface implementation
 
 ---------------------------------------
 Form Engine Control Site Plugin Example
 ---------------------------------------
-Let's take a look at an example of a control site plugin.  We will be adding a control named ``text-input`` to the site ``mysite``.
+Let's take a look at an example of a control site plugin.  We will be adding a control named ``text-input`` to the project ``mysite``.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Form Engine Control Code
@@ -55,7 +55,9 @@ Form Engine Control Code
 
 The first thing we have to do is to create the folder structure where we will be placing the JS file for our control.  We'll follow the convention listed above in :ref:`plugin-directory-structure`
 
-In a local folder, create the descriptor file for your site plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin``, then create the folder ``authoring``.  Under the ``authoring`` folder, create the ``js`` folder.  Under the ``js`` folder,  create the folder ``control``.  Under the ``control`` folder, create the folder ``text-input``, which is the name of the control we're building.  We will be placing the JS file implementing the control interface under the ``text-input`` folder.  In the example below, the JS file is ``main.js``
+In a local folder, create the descriptor file for your site plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.excontrol``, then create the folder ``authoring``.  Under the ``authoring`` folder, create the ``static-assets`` folder.  Under the ``static-assets`` folder, create the folder ``plugins``.
+
+We will now create the folders following the plugin id path name, ``org.craftercms.plugin.excontrol``.  Under the ``plugins`` folder, create the folder ``org``.  Under the ``org`` folder, create the folder ``craftercms``.  Under the ``craftercms`` folder, create the folder ``plugin``.  Under the ``plugin`` folder, create the folder ``excontrol``.  Next, we'll create the folder for the plugin type, ``control``.  Under the ``excontrol`` folder, create the folder ``control``.  Under the ``control`` folder, create the folder ``text-input``, which is the name of the control we're building.  We will be placing the JS file implementing the control interface under the ``text-input`` folder.  In the example below, the JS file is ``main.js``
 
    .. code-block:: text
       :caption: *Form Engine Control Plugin Directory Structure*
@@ -68,9 +70,10 @@ In a local folder, create the descriptor file for your site plugin ``craftercms-
               org/
                 craftercms/
                   plugin/
-                    control/
-                      text-input/
-                        main.js
+                    excontrol/
+                      control/
+                        text-input/
+                          main.js
 
    |
 
@@ -137,6 +140,25 @@ In the JS file, please note that the ``CStudioAuthoring.Module`` is required and
 
 |
 
+Here's the complete example form control plugin file for the ``text-input`` control (Click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample form control plugin file "main.js".</a></summary>
+
+.. literalinclude:: /_static/code/plugins/control/main.js
+    :language: js
+    :linenos:
+
+.. raw:: html
+
+   </details>
+
+|
+|
+
+
 Saving additional form control elements to XML
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -156,7 +178,7 @@ See `here <https://github.com/craftercms/studio-ui/tree/develop/static-assets/co
 Configuring the Descriptor File to Wire the Plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To setup our form control to be automatically wired in the corresponding configuration file in Studio (which for a form control, is the Site Config Tools Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
+To setup our form control to be automatically wired in the corresponding configuration file in Studio (which for a form control, is the Project Config Tools Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
 
 .. code-block:: yaml
    :linenos:
@@ -164,13 +186,14 @@ To setup our form control to be automatically wired in the corresponding configu
 
    installation:
     - type: form-control
+      elementXpath: //control/plugin[pluginId='org.craftercms.plugin.excontrol']
       element:
         name: control
         children:
           - name: plugin
             children:
               - name: pluginId
-                value: org.craftercms.plugin.control
+                value: org.craftercms.plugin.excontrol
               - name: type
                 value: control
               - name: name
@@ -192,7 +215,7 @@ Test the Plugin
 
 After placing your JS file, the site plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
-When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the site ``mysite`` by running the following:
+When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``mysite`` by running the following:
 
    ..  code-block:: bash
 
@@ -203,7 +226,7 @@ When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be
 
 Let's take a look at the auto-wiring performed during installation of the plugin.  Form controls are setup in the ``site-config-tools.xml``  file.
 
-The items we setup in the descriptor file for auto-wiring :ref:`above <configure-descriptor-file-for-autowiring>` should now be in the ``Site Config Tools`` configuration file, which can be accessed  by opening the ``Sidebar``, then clicking  on ``Site Tools`` -> ``Configuration``  ->  ``Site Config Tools``
+The items we setup in the descriptor file for auto-wiring :ref:`above <configure-descriptor-file-for-autowiring>` should now be in the ``Project Config Tools`` configuration file, which can be accessed  by opening the ``Sidebar``, then clicking  on ``Project Tools`` -> ``Configuration``  ->  ``Project Config Tools``
 
 **Location (In Repository) SITENAME/config/studio/administration/site-config-tools.xml**
 
@@ -221,7 +244,7 @@ The items we setup in the descriptor file for auto-wiring :ref:`above <configure
         .
         <control>
             <plugin>
-                <pluginId>org.craftercms.plugin.control</pluginId>
+                <pluginId>org.craftercms.plugin.excontrol</pluginId>
                 <type>control</type>
                 <name>text-input</name>
                 <filename>main.js</filename>

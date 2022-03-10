@@ -33,12 +33,12 @@ or the REST API:
 
 As mentioned above, there are two ways to install plugins from the CrafterCMS Marketplace:
 
-* Using the Studio ``Plugin Management`` Site Tool
+* Using the Studio ``Plugin Management`` Project Tool
 * Using the install plugin REST API
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Install a plugin using the Studio ``Plugin Management`` Site Tool
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Install a plugin using the Studio ``Plugin Management`` Project Tool
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Login to Crafter Studio
 #. Open the left sidebar by clicking on the Crafter logo with the hamburger icon next to it at the top left of your screen
@@ -55,7 +55,7 @@ Install a plugin using the Studio ``Plugin Management`` Site Tool
 
    .. figure:: /_static/images/developer/plugins/site-plugins/plugins-site-tools.jpg
       :align: center
-      :alt: Crafter Studio Site Tools
+      :alt: Crafter Studio Project Tools
       :width: 80%
 
    |
@@ -65,7 +65,7 @@ Install a plugin using the Studio ``Plugin Management`` Site Tool
 
    .. figure:: /_static/images/developer/plugins/site-plugins/plugins-open-site-tools.jpg
       :align: center
-      :alt: Crafter Studio Open Site Tools
+      :alt: Crafter Studio Open Project Tools
       :width: 80%
 
    |
@@ -126,7 +126,7 @@ Managing Installed Plugins
 ^^^^^^^^^^^^^^^^^^^^^^
 View Installed Plugins
 ^^^^^^^^^^^^^^^^^^^^^^
-To view the installed plugins in your site, click on the ``Navigation Menu`` at the top right then click on |siteConfig| then finally click on ``Plugin Management``.
+To view the installed plugins in your project, click on the ``Navigation Menu`` at the top right then click on |siteConfig| then finally click on ``Plugin Management``.
 
 .. figure:: /_static/images/developer/plugins/site-plugins/plugins-installed.jpg
    :align: center
@@ -139,7 +139,7 @@ To view the installed plugins in your site, click on the ``Navigation Menu`` at 
 Uninstall Plugins
 ^^^^^^^^^^^^^^^^^
 
-To uninstall plugins in your site, open the ``Plugin Management`` dialog.  Click on the trash can icon next to the plugin you want to uninstall.  A dialog will open to confirm the plugin to be uninstalled and a list of where the plugin is being used if applicable
+To uninstall plugins in your project, open the ``Plugin Management`` dialog.  Click on the trash can icon next to the plugin you want to uninstall.  A dialog will open to confirm the plugin to be uninstalled and a list of where the plugin is being used if applicable
 
 .. figure:: /_static/images/developer/plugins/site-plugins/plugin-uninstall-no-deps.png
    :align: center
@@ -166,4 +166,4 @@ After clicking on the ``Uninstall`` button, a notification will appear at the bo
 
 |
 
-Remember to clean up (remove) references to the uninstalled plugin in your site if not already done, after the plugin is successfully uninstalled.
+Remember to clean up (remove) references to the uninstalled plugin in your project if not already done, after the plugin is successfully uninstalled.

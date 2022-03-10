@@ -33,9 +33,9 @@ To setup CrafterCMS:
 
 .. _installing-crafter-cms-from-prebuilt-binaries:
 
----------------------------------------------
+--------------------------------------------
 Installing CrafterCMS from Prebuilt Binaries
----------------------------------------------
+--------------------------------------------
 
 Here are the steps to start using CrafterCMS for development or evaluation by installing CrafterCMS from the binary archivedownload:
 
@@ -70,10 +70,21 @@ Here are the steps to start using CrafterCMS for development or evaluation by in
          |--LICENSE
          |--README.txt
          |--bin/
+         |--data/
+            |--ssh/
+               |--config
+               |--known-hosts
 
    |
 
-#. **Start CrafterCMS**
+   where:
+
+   - The ``bin`` folder contains various scripts for starting, stopping, etc.
+   - The ``data/ssh`` folder is the default ssh config location Crafter Studio and Crafter Deployer reads from |br|
+     To change the default location, simply change the value of ``CRAFTER_SSH_CONFIG`` in the ``{Crafter-CMS-unzip-directory}/crafter/bin/crafter-setenv.sh`` file
+   - The ``known-hosts`` file contains key fingerprints for GitHub, GitLab and BitBucket and is where you can add additional fingerprints for other providers as needed
+
+#. **Start Crafter CMS**
 
    **To start CrafterCMS:**
 

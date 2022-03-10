@@ -176,3 +176,30 @@ CrafterCMS installations are pre-configured with default passwords, tokens, keys
      export STUDIO_REFRESH_TOKEN_MAX_AGE=${STUDIO_REFRESH_TOKEN_MAX_AGE:=300}
      # Indicates if the refresh token cookie should be secure (should be true for production environments behind HTTPS)
      export STUDIO_REFRESH_TOKEN_SECURE=${STUDIO_REFRESH_TOKEN_SECURE:="false"}
+
+* Crafter Studio and Crafter Deployer by default reads SSH configuration from ``CRAFTER_HOME/data/ssh``.
+
+  The default SSH configuration location contains the following:
+
+  .. code-block:: none
+
+     |--CRAFTER_HOME/
+        |--data/
+           |--ssh/
+              |--config
+              |--known-hosts
+
+  |
+
+  To change the default location of SSH configuration, simply change the value of ``CRAFTER_SSH_CONFIG`` in the ``CRAFTER_HOME/bin/crafter-setenv.sh`` file
+
+  .. code-block:: sh
+     :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
+
+     # -------------------- SSH variables --------------------
+     # The path of the folder used for the SSH configuration
+     export CRAFTER_SSH_CONFIG=${CRAFTER_SSH_CONFIG:="$CRAFTER_DATA_DIR/ssh"}
+
+  |
+
+  The ``known-hosts`` file contains key fingerprints for GitHub, GitLab and BitBucket and is where you can add additional fingerprints for other providers as needed

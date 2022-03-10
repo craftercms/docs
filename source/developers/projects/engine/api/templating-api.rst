@@ -54,7 +54,7 @@ Crafter Engine provides the ``renderComponent`` macro that can be used to render
 
 Parameters:
 
-* **componentPath**: a path for a shared component in the site
+* **componentPath**: a path for a shared component in the project
 * **component**: a XML node from a node selector field, supports both shared and embedded components
 * **parent**: the SiteItem to use as a parent in the case of embedded components (defaults to the current item
   being rendered)
@@ -106,7 +106,7 @@ See :ref:`breadcrumb` for more information on the macro
 
   Engine includes a default implementation that can be found in ``templates/web/navigation2/nav-macros.ftl``
   and ``templates/web/navigation2/breadcrumb-macros.ftl`` but it also provides the option to use your
-  own sets of macros, which you'll probably want since the navigation HTML is generally specific to the site.
+  own sets of macros, which you'll probably want since the navigation HTML is generally specific to the project.
 
   .. code-block:: html
     :force:
@@ -199,7 +199,7 @@ See :ref:`breadcrumb` for more information on the macro
 Running Scripts/Controllers
 ---------------------------
 
-Crafter Engine allows executing scripts/controllers from inside Freemarker templates by using the tag ``@crafter.controller``.  It requires a single parameter, ``path``, which is the path of the script/controller in the site:
+Crafter Engine allows executing scripts/controllers from inside Freemarker templates by using the tag ``@crafter.controller``.  It requires a single parameter, ``path``, which is the path of the script/controller in the project:
 
 .. code-block:: html
    :force:
@@ -271,7 +271,7 @@ templates then you should consider creating a Groovy class instead:
   }
 
 .. code-block:: xml
-  :caption: *Engine Site Application Context file - application-context.xml*
+  :caption: *Engine Project Application Context file - application-context.xml*
   :linenos:
 
   <!-- Add a bean definition using the new class -->
@@ -283,7 +283,7 @@ templates then you should consider creating a Groovy class instead:
   </bean>
 
 .. code-block:: xml
-  :caption: *Engine Site Configuration file - site-config.xml*
+  :caption: *Engine Project Configuration file - site-config.xml*
   :linenos:
 
   <!-- If needed the bean can use external configuration for easy management -->
@@ -307,7 +307,7 @@ templates then you should consider creating a Groovy class instead:
 
 .. note::
 
-  All beans defined in the :ref:`Engine Site Application Context <engine-site-configuration-spring-configuration>`
+  All beans defined in the :ref:`Engine Project Application Context <engine-site-configuration-spring-configuration>`
   file will be available in templates.
 
-  For more information on Crafter Engine Site configuration files, see :ref:`engine-site-configuration-files`
+  For more information on Crafter Engine Project configuration files, see :ref:`engine-site-configuration-files`

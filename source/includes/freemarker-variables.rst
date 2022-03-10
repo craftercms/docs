@@ -46,7 +46,7 @@
 ||                          || ``crafter.engine.environment``       ||                                   |
 ||                          || property                             ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
-|| siteConfig               || The current site Configuration       || `XMLConfiguration`_               |
+|| siteConfig               || The current project Configuration    || `XMLConfiguration`_               |
 ||                          || loaded from /config/site.xml.        ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
 || siteContext              || The current SiteContext              || |SiteContextHashModel|            |

@@ -14,24 +14,24 @@
 Setting Workflow States
 =======================
 
-There are times when a file/item in your site gets in a state that you would want to manually correct.  Workflow States allows the user to manually set the workflow state of every file in the site.
+There are times when a file/item in your project gets in a state that you would want to manually correct.  Workflow States allows the user to manually set the workflow state of every file in the project.
 
-To manually set the workflow state of a file in your site, find the file/s you'd like to change the workflow state and put a checkmark on the box next to it.  Towards the top of your browser, right next to your site name, click on **Set States**
+To manually set the workflow state of a file in your project, find the file/s you'd like to change the workflow state and put a checkmark on the box next to it.  Towards the top of your browser, right next to your project name, click on **Set States**
 
 .. image:: /_static/images/site-admin/site-config-workflow-states.jpg
-    :alt: Site Admin - Site Config Set Workflow States
+    :alt: Site Admin - Project Tools Set Workflow States
     :align: center
 
 A dialog will launch prompting you to select the state you would like to set your selection to, by clicking on the dropdown box
 
 .. image:: /_static/images/site-admin/site-config-select-state-dialog.png
-    :alt: Site Admin - Site Config Select Workflow State Dialog
+    :alt: Site Admin - Project Tools Select Workflow State Dialog
     :align: center
 
 Select the desired state from the dropdown box and click on the **Set States** button
 
 .. image:: /_static/images/site-admin/site-config-avail-workflow-state.png
-    :alt: Site Admin - Site Config Available Workflow States
+    :alt: Site Admin - Project Tools Available Workflow States
     :align: center
 
 Here are the available workflow states:

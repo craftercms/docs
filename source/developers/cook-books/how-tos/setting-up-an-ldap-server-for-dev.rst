@@ -10,13 +10,13 @@ Setting up an LDAP server for development/testing using Apache Directory Studio
 
 In this section, we will describe how to setup an LDAP server using Apache Directory Studio to test the LDAP authentication in Crafter Studio.
 
-First, we'll configure LDAP authentication in Crafter Studio, then proceed to install and setup the LDAP server using Apache Directory Studio, then finally login to Crafter Studio with the users setup in the LDAP server.
+First, we'll configure LDAP authentication in Crafter Studio |enterpriseOnly| , then proceed to install and setup the LDAP server using Apache Directory Studio, then finally login to Crafter Studio with the users setup in the LDAP server.
 
------------------------------------------------
-Configure LDAP authentication in Crafter Studio
------------------------------------------------
+----------------------------------------------------------------
+Configure LDAP authentication in Crafter Studio |enterpriseOnly|
+----------------------------------------------------------------
 
-We will first configure LDAP authentication in Crafter Studio.  In your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>`.  (The server url, bindDN and password are all default values of the Apache Directory Studio)  Stop and restart Crafter Studio after making your changes.
+We will first configure LDAP authentication in Crafter Studio |enterpriseOnly|.  In your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>`.  (The server url, bindDN and password are all default values of the Apache Directory Studio)  Stop and restart Crafter Studio after making your changes.
 
 .. code-block:: yaml
    :linenos:

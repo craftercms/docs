@@ -1,28 +1,28 @@
 :is-up-to-date: True
 
-.. index:: Engine Site Configuration
+.. index:: Engine Project Configuration
 
 .. _engine-site-configuration:
 
-=========================
-Engine Site Configuration
-=========================
+============================
+Engine Project Configuration
+============================
 
 Crafter Engine provides a flexible configuration system that allows site administrators to change
-the behavior of the site without the need to modify any code. Some properties are used by Crafter
+the behavior of the project without the need to modify any code. Some properties are used by Crafter
 Engine itself, but developers can also add any custom property they need for their code. All
 properties will be available for developers in the Freemarker templates and Groovy scripts using the
 ``siteConfig`` variable.
 
 XML Configuration Files
  - ``/config/engine/site-config.xml``
-   Main XML configuration for the site, this file will always be loaded by Crafter Engine. This file can
-   be accessed easily from any site created through the out-of-the-box blueprints, by navigating from the
-   Studio dashboard to ``Site Config`` > ``Configuration``, and finally picking up the ``Engine Site
+   Main XML configuration for the project, this file will always be loaded by Crafter Engine. This file can
+   be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the
+   Studio dashboard to ``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project
    Configuration`` option from the dropdown.
 
 	 .. image:: /_static/images/site-admin/engine-site-config.jpg
-			 :alt: Engine Site Configuration
+			 :alt: Engine Project Configuration
 
 
  - ``/config/engine/{crafterEnv}-site-config.xml``
@@ -30,7 +30,7 @@ XML Configuration Files
    ``crafter.engine.environment`` property matches the `crafterEnv` placeholder in the file name.
  - ``$TOMCAT/shared/classes/crafter/engine/extension/sites/{siteName}/site-config.xml``
    External XML configuration, this file will be always loaded by Crafter Engine when present and
-   will allow to change configurations without having to modify the files in the site repository.
+   will allow to change configurations without having to modify the files in the project repository.
 
 .. NOTE ::
   Properties will be overridden according to the order the files are loaded which is the same as
@@ -187,7 +187,7 @@ This example file contains the properties used by Crafter Engine:
         </warmUp>
       </cache>
 
-      You can learn more about Crafter Engine site configuration here:
+      You can learn more about Crafter Engine project configuration here:
       http://docs.craftercms.org/en/3.0/site-administrators/engine/engine-site-configuration.html
 
   -->
@@ -330,7 +330,7 @@ This example file contains the properties used by Crafter Engine:
 
 Crafter Engine Properties
  * **indexFileName:** The name of a page's index file (default is ``index.xml``).
- * **defaultLocale:** The default locale for the site. Used with content targeting through localization.
+ * **defaultLocale:** The default locale for the project. Used with content targeting through localization.
  * **navigation.additionalFields:**  List of additional fields to include for dynamic navigation items (Example: *<additionalFields>myTitle_s,myAuthor_s,...</additionalFields>*)
  * **spa:** Used for Single Page Application (SPA) Properties (React JS, Angular, Vue.js, etc.).  Contains ``<enabled>`` element which enables/disables SPA mode (default is false) and ``<viewName>`` element, the view name for the SPA (Single Page Application. Current view names can be a page URL (like ``/``) or a template name (like ``/template/web/app.ftl``). Default is ``/``)
  * **compatibility.disableFullModelTypeConversion:** Disables full content model type conversion for backwards compatibility mode (false by default)
@@ -387,7 +387,7 @@ Crafter Engine Properties
  * **socialConnections.facebookConnectionFactory.appId:** The Facebook app ID required for establishing connections with Facebook.
  * **socialConnections.facebookConnectionFactory.appSecret:** The Facebook app secret required for establishing connections with Facebook.
  * **jobs.jobFolder:** Specifies a folder which will be looked up for scripts to be scheduled using a certain cron expression. The folder
-   path should be specified with ``<path>``, and should be absolute to the site root. The cron expressions is specified in
+   path should be specified with ``<path>``, and should be absolute to the project root. The cron expressions is specified in
    ``<cronExpression>``.
  * **jobs.job:** Specifies a single script job to be scheduled. The job path should be specified in ``<path>``, and the cron expression
    in ``<cronExpression>``.
@@ -395,7 +395,7 @@ Crafter Engine Properties
  * **cache.warmUp.content.folders:** The content folders that need to be pre-loaded in cache, separated by comma. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully pre-loaded.  Example: *<contentFolders>/scripts,/templates</contentFolders>*
 
 .. note::
-    Crafter Engine will not be able to load your Site Context if your configuration contains invalid XML
+    Crafter Engine will not be able to load your Project Context if your configuration contains invalid XML
     or incorrect configuration.
 
 .. _engine-site-configuration-spring-configuration:
@@ -404,16 +404,16 @@ Crafter Engine Properties
 Spring Configuration
 --------------------
 
-Each site can also have it's own Spring application context. Just as with site-config.xml, beans
+Each project can also have it's own Spring application context. Just as with site-config.xml, beans
 can be overwritten using the following locations:
 
 Spring Configuration Files
- - ``/config/engine/application-context.xml`` (This file can be accessed easily from any site created
-   through the out-of-the-box blueprints, by navigating from the Studio dashboard to ``Site Config``
-   > ``Configuration``, and finally picking up the ``Engine Site Application Context`` option from the dropdown).
+ - ``/config/engine/application-context.xml`` (This file can be accessed easily from any project created
+   through the out-of-the-box blueprints, by navigating from the Studio dashboard to ``Project Tools``
+   > ``Configuration``, and finally picking up the ``Engine Project Application Context`` option from the dropdown).
 
 	 .. image:: /_static/images/site-admin/engine-site-application-context.jpg
-			 :alt: Engine Site Application Context
+			 :alt: Engine Project Application Context
 
  - ``/config/engine/{crafterEnv}-application-context.xml``
  - ``$TOMCAT/shared/classes/crafter/engine/extension/sites/{siteName}/application-context.xml``
@@ -447,5 +447,5 @@ like ``${myvalue}``. By making the placeholder configurer inherit from crafter.p
 also have access to Engine's global properties (like ``crafter.engine.preview``).
 
 .. note::
-    Crafter Engine will not be able to load your Site Context if your context file contains invalid XML,
+    Crafter Engine will not be able to load your Project Context if your context file contains invalid XML,
     incorrect configuration or if your beans do not properly handle their own errors on initialization.
