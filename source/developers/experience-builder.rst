@@ -224,7 +224,7 @@ See :ref:`htmlElementTagMacros` for all the available customizations and configu
      ...
    </@crafter.div>
 
-Next, let's do the repeat group and it's items. We use ``@crafter.renderRepeatGroup`` to render repeat
+Next, let's do the repeat group and its items. We use ``@crafter.renderRepeatGroup`` to render repeat
 groups. :ref:`renderRepeatGroup` for all the available customizations and configuration.
 
 .. code-block:: text
