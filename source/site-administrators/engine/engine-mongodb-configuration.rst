@@ -37,7 +37,7 @@ Create a GMongo client
 ----------------------
 To access Mongo from Groovy, we'll use a GMongo client.  We'll need to add some beans in `/config/engine/application-context.xml`.  (This file can be accessed easily from any site created through the out-of-the-box blueprints, by navigating from the Studio dashboard to Site Config > Configuration, and finally picking up the **Engine Site Application Context** option from the dropdown).
 
-.. code-block:: java
+.. code-block:: xml
     :linenos:
 
     <beans xmlns="http://www.springframework.org/schema/beans"
