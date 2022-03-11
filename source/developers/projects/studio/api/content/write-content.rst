@@ -399,7 +399,7 @@ Your request payload should look like this:
    ------WebKitFormBoundaryl9p1lhdx4gWpuCMM
    Content-Disposition: form-data; name="site"
 
-   mysite
+   myeditorial
    ------WebKitFormBoundaryl9p1lhdx4gWpuCMM
    Content-Disposition: form-data; name="path"
 
