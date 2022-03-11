@@ -65,12 +65,12 @@ Request
 
 .. code-block:: none
 
-    POST ../api/1/services/api/1/content/write-content.json?site_id=mysite&phase=onSave&path=/site/website/index.xml&fileName=index.xml&user=admin&contentType=/page/home&unlock=true
+    POST ../api/1/services/api/1/content/write-content.json?site_id=myeditorial&phase=onSave&path=/site/website/index.xml&fileName=index.xml&user=admin&contentType=/page/home&unlock=true
 
 |
 
 .. code-block:: xml
-    :caption: Request body
+    :caption: *Request body*
 
         <page>
     	    <content-type>/page/home</content-type>	<display-template>/templates/web/pages/home.ftl</display-template>
@@ -82,10 +82,10 @@ Request
     	    <objectGroupId  >8d7f</objectGroupId>
     	    <objectId  >8d7f21fa-5e09-00aa-8340-853b7db302da</objectId>
     	    <folder-name  ></folder-name>
-    	    <createdDate  >2017-1-31T16:18:14.000Z</createdDate>
-    	    <createdDate_dt  >2017-1-31T16:18:14.000Z</createdDate_dt>
-    	    <lastModifiedDate  >2017-12-22T21:49:29.275Z</lastModifiedDate>
-    	    <lastModifiedDate_dt  >2017-12-22T21:49:29.275Z</lastModifiedDate_dt>
+    	    <createdDate  >2021-1-31T16:18:14.000Z</createdDate>
+    	    <createdDate_dt  >2021-1-31T16:18:14.000Z</createdDate_dt>
+    	    <lastModifiedDate  >2021-12-22T21:49:29.275Z</lastModifiedDate>
+    	    <lastModifiedDate_dt  >2021-12-22T21:49:29.275Z</lastModifiedDate_dt>
     	    <title  >Editorial</title>
     	    <hero_text  >&lt;p&gt;Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.&lt;/p&gt;</hero_text>
     	    <hero_title  >&lt;h1&gt;&lt;span&gt;Hi, I&amp;rsquo;m Editorial&lt;/span&gt;&lt;/h1&gt;
@@ -189,104 +189,115 @@ Request
 
 .. code-block:: none
 
-    POST ../api/1/services/api/1/content/write-content.json?site_id=mysite&phase=onSave&path=/templates/web/pages&fileName=home.ftl&user=admin&unlock=true
+    POST ../api/1/services/api/1/content/write-content.json?site=myeditorial&phase=onSave&path=/templates/web/pages&fileName=home.ftl&unlock=true
 
 |
 
 .. code-block:: html
     :force:
-    :caption: Request body
+    :caption: *Request body*
 
-        <#import "/templates/system/common/cstudio-support.ftl" as studio />
-        <!DOCTYPE HTML>
-        <!--
-            Editorial by HTML5 UP
-            html5up.net | @ajlkn
-            Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-        -->
-        <!-- example -->
-        <html>
-            <head>
-                <title>${contentModel.title}</title>
-                <meta charset="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-                <!--[if lte IE 8]><script src="/static-assets/js/ie/html5shiv.js"></script><![endif]-->
-                <link rel="stylesheet" href="/static-assets/css/main.css" />
-                <!--[if lte IE 9]><link rel="stylesheet" href="/static-assets/css/ie9.css" /><![endif]-->
-                <!--[if lte IE 8]><link rel="stylesheet" href="/static-assets/css/ie8.css" /><![endif]-->
-                <link rel="stylesheet" href="/static-assets/css/jquery-ui.min.css" />
-            </head>
-            <body>
-                <!-- Wrapper -->
-                    <div id="wrapper">
-                        <!-- Main -->
-                            <div id="main">
-                                <div class="inner">
-                                    <!-- Header -->
-                                    <@renderComponent component=contentModel.header.item />
-                                    <!-- Banner -->
-                                        <section id="banner" <@studio.iceAttr iceGroup="hero"/>>
-                                            <div class="content">
-                                                <header>${contentModel.hero_title}</header>
-                                                ${contentModel.hero_text}
-                                            </div>
-                                            <span class="image object">
-                                                <img src="${contentModel.hero_image !""}" alt="" />
-                                            </span>
-                                        </section>
-                                    <!-- Section -->
-                                        <section <@studio.iceAttr iceGroup="features"/>>
-                                            <header class="major">
-                                                <h2>${contentModel.features_title}</h2>
-                                            </header>
-                                            <div class="features" <@studio.componentContainerAttr target="features" objectId=contentModel.objectId/>>
-                                                <#if contentModel.features?? && contentModel.features.item??>
-                                                  <#list contentModel.features.item as feature>
-                                                      <@renderComponent component=feature />
-                                                  </#list>
-                                                </#if>
-                                            </div>
-                                        </section>
-                                    <!-- Section -->
-                                        <section>
-                                            <header class="major">
-                                                <h2>Featured Articles</h2>
-                                            </header>
-                                            <div class="posts">
-                                                <#list articles as article>
-                                                <article>
-                                                    <a href="${article.url}" class="image">
-                                                        <#if article.image??>
-                                                            <#assign articleImage = article.image/>
-                                                        <#else>
-                                                            <#assign articleImage = "/static-assets/images/placeholder.png"/>
-                                                        </#if>
-                                                        <img src="${articleImage}" alt="" />
-                                                    </a>
-                                                    <h3><a href="${article.url}">${article.title}</a></h3>
-                                                    <p>${article.summary}</p>
-                                                    <ul class="actions">
-                                                        <li><a href="${article.url}" class="button">More</a></li>
-                                                    </ul>
-                                                </article>
-                                                </#list>
-                                            </div>
-                                        </section>
-                                </div>
-                            </div>
-                        <!-- Left Rail -->
-                        <@renderComponent component=contentModel.left\-rail.item />
+    <#import "/templates/system/common/cstudio-support.ftl" as studio />
+
+    <!DOCTYPE HTML>
+    <!--
+      Editorial by HTML5 UP
+      html5up.net | @ajlkn
+      Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+      Test write-content
+    -->
+    <html>
+      <head>
+        <title>${contentModel.title_t}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    	<!--[if lte IE 8]><script src="/static-assets/js/ie/html5shiv.js"></script><![endif]-->
+    	<link rel="stylesheet" href="/static-assets/css/main.css?v=${siteContext.siteName}" />
+    	<!--[if lte IE 9]><link rel="stylesheet" href="/static-assets/css/ie9.css" /><![endif]-->
+    	<!--[if lte IE 8]><link rel="stylesheet" href="/static-assets/css/ie8.css" /><![endif]-->
+    	<link rel="stylesheet" href="/static-assets/css/jquery-ui.min.css" />
+      </head>
+      <body>
+    	<!-- Wrapper -->
+          <div id="wrapper">
+
+            <!-- Main -->
+              <div id="main">
+                <div class="inner">
+
+                  <!-- Header -->
+                  <@renderComponent component=contentModel.header_o.item />
+
+                  <!-- Banner -->
+                  <section id="banner" <@studio.iceAttr iceGroup="hero"/>>
+                    <div class="content">
+                      <header>${contentModel.hero_title_html}</header>
+                      ${contentModel.hero_text_html}
                     </div>
-                <!-- Scripts -->
-                    <script src="/static-assets/js/jquery.min.js"></script>
-                    <script src="/static-assets/js/jquery-ui.min.js"></script>
-                    <script src="/static-assets/js/skel.min.js"></script>
-                    <script src="/static-assets/js/util.js"></script>
-                    <!--[if lte IE 8]><script src="/static-assets/js/ie/respond.min.js"></script><![endif]-->
-                    <script src="/static-assets/js/main.js"></script>
-                <@studio.toolSupport/>
-            </body>
-        </html>
+                    <span class="image object">
+                      <img src="${contentModel.hero_image_s !""}" alt="" />
+                    </span>
+                  </section>
+
+                  <!-- Section -->
+                  <section <@studio.iceAttr iceGroup="features"/>>
+                    <header class="major">
+                      <h2>${contentModel.features_title_t}</h2>
+                    </header>
+                    <div class="features" <@studio.componentContainerAttr target="features_o" component=contentModel/>>
+                      <#if contentModel.features_o?? && contentModel.features_o.item??>
+                        <#list contentModel.features_o.item as feature>
+                          <@renderComponent component=feature />
+                        </#list>
+                      </#if>
+                    </div>
+                  </section>
+
+                  <!-- Section -->
+                  <section>
+                    <header class="major">
+                      <h2>Featured Articles</h2>
+                    </header>
+                    <div class="posts">
+                      <#list articles as article>
+                        <article>
+                          <a href="${article.url}" class="image">
+                            <#if article.image??>
+                              <#assign articleImage = article.image/>
+                            <#else>
+                              <#assign articleImage = "/static-assets/images/placeholder.png"/>
+                            </#if>
+                            <img src="${articleImage}" alt="" />
+                          </a>
+                          <h3><a href="${article.url}">${article.title}</a></h3>
+                          <p>${article.summary}</p>
+                          <ul class="actions">
+                            <li><a href="${article.url}" class="button">More</a></li>
+                          </ul>
+                        </article>
+                      </#list>
+                    </div>
+                  </section>
+
+                </div>
+              </div>
+
+          <!-- Left Rail -->
+          <@renderComponent component=contentModel.left\-rail_o.item />
+
+        </div>
+
+    	<!-- Scripts -->
+        <script src="/static-assets/js/jquery.min.js"></script>
+    	<script src="/static-assets/js/jquery-ui.min.js"></script>
+    	<script src="/static-assets/js/skel.min.js"></script>
+    	<script src="/static-assets/js/util.js"></script>
+    	<!--[if lte IE 8]><script src="/static-assets/js/ie/respond.min.js"></script><![endif]-->
+    	<script src="/static-assets/js/main.js?v=${siteContext.siteName}"></script>
+
+        <@studio.toolSupport/>
+      </body>
+    </html>
 
     |
 
@@ -366,7 +377,7 @@ Request
 
 .. code-block:: none
 
-    POST ../api/1/services/api/1/content/write-content.json?site_id=mysite&phase=onSave&path=/static-assets&fileName=undefined&user=admin&unlock=true
+    POST ../api/1/services/api/1/content/write-content.json?site=myeditorial&phase=onSave&path=/static-assets&fileName=undefined&user=admin&unlock=true
 
 |
 
@@ -374,7 +385,7 @@ This request needs to be sent with ``Content-Type=multipart/form-data`` with the
 
     Text Part:
 
-    * field: ``site``    value: mysite (the site id)
+    * field: ``site``    value: myeditorial (the site id)
     * field: ``path``    value: /static-assets (the folder in your site where you want to upload your file)
 
     File Part:
@@ -388,7 +399,7 @@ Your request payload should look like this:
    ------WebKitFormBoundaryl9p1lhdx4gWpuCMM
    Content-Disposition: form-data; name="site"
 
-   mysite
+   myeditorial
    ------WebKitFormBoundaryl9p1lhdx4gWpuCMM
    Content-Disposition: form-data; name="path"
 
