@@ -8,7 +8,7 @@
 Content Modeling
 ================
 
-Every content object in Crafter CMS is an object associated with a Content Model. Content Models allow you to add structure to your content and facilitate consumption via various visual representations or via APIs. One of the great things about Crafter CMS content models is that your content can be semi-structured which allows content authors the freedom to be as creative as they'd like to be, but provide the template/UI and API developers enough structure to produce solid multi-channel renditions of the content. This section will walk you through Content Type management in Crafter Studio to help you create the models that best fit your requirements.
+Every content object in CrafterCMS is an object associated with a Content Model. Content Models allow you to add structure to your content and facilitate consumption via various visual representations or via APIs. One of the great things about CrafterCMS content models is that your content can be semi-structured which allows content authors the freedom to be as creative as they'd like to be, but provide the template/UI and API developers enough structure to produce solid multi-channel renditions of the content. This section will walk you through Content Type management in Crafter Studio to help you create the models that best fit your requirements.
 
 -------------------------------
 Content Types in Crafter Studio
@@ -18,7 +18,7 @@ Content Type Management in Crafter Studio is located in the |siteConfig|.
 
 .. image:: /_static/images/content-model/site-config-link.png
     :width: 30%
-    :alt: Site Config Link
+    :alt: Project Tools Link
     :align: center
 
 Content Types are limited to two core types: Pages and Components. Both are made up of three ingredients:
@@ -48,7 +48,7 @@ Content models are defined via Crafter Studio's graphical modeling tool under Co
 
 .. image:: /_static/images/content-model/content-type-management.jpg
 	:width: 70%
-	:alt: Site Config - Content Types
+	:alt: Project Tools - Content Types
 	:align: center
 
 |
@@ -57,7 +57,7 @@ You can now either create a new content type or open an existing type. Creating 
 
 .. image:: /_static/images/content-model/create-content-type-1.png
 	:width: 30%
-	:alt: Site Config - Create Content Type
+	:alt: Project Tools - Create Content Type
 	:align: center
 
 |
@@ -302,7 +302,7 @@ We're going to enable cascade on delete for articles (**Article** content type) 
 
 |
 
-To see cascade on delete in action, let's create a new article (**Article** content type) under one of the article folders in the **Site Explorer**.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.
+To see cascade on delete in action, let's create a new article (**Article** content type) under one of the article folders in the Sidebar.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.
 
 .. figure:: /_static/images/content-model/new-article-image-uploaded.jpg
     :alt: New article with image uploaded activity list in Dashboard
@@ -319,7 +319,7 @@ Let's look at the dependencies of our newly created article, where we expect the
 
 |
 
-Open the **Site Explorer** and navigate to the newly created article.  Right click on the newly created article and select **Delete**.  Open the **Dashboard** and notice the items listed as deleted in the **My Recent Activity** widget.
+Open the Sidebar and navigate to the newly created article.  Right click on the newly created article and select **Delete**.  Open the **Dashboard** and notice the items listed as deleted in the **My Recent Activity** widget.
 
 .. figure:: /_static/images/content-model/new-article-child-items-deleted.jpg
     :alt: New article with image uploaded deleted activity list in Dashboard
@@ -423,9 +423,9 @@ To take advantage of item specific dependencies for copying and deleting, we wil
 
 `/static-assets/item/images/2020/05/17/`
 
-The macros **{yyyy}**, **{mm}** and **{dd}** are available for content modelers to use to better organize their site items.  To see other macros available for content modelers, see :ref:`macros-for-data-sources`.
+The macros **{yyyy}**, **{mm}** and **{dd}** are available for content modelers to use to better organize their project items.  To see other macros available for content modelers, see :ref:`macros-for-data-sources`.
 
-Let's take a look at item specific dependencies in action for copying and deleting content.  Let's create a new article (**Article** content type) under one of the article folders in the **Site Explorer**.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.  Note the location where the image is uploaded.
+Let's take a look at item specific dependencies in action for copying and deleting content.  Let's create a new article (**Article** content type) under one of the article folders in the Sidebar.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.  Note the location where the image is uploaded.
 
 .. figure:: /_static/images/content-model/new-article-item-dependencies.png
     :width: 40%
@@ -454,7 +454,7 @@ Let's also take a look at the ``static-assets`` folder to see the copy of the up
 
 |
 
-Now let's take a look at what happens when we delete content with item specific dependencies.  From the **Site Explorer**, navigate to the article that we created.  Right click on the article and select **Delete**.  Click on the **Delete** button when the Delete dialog appears.  Notice the items that will be deleted when we delete the article.
+Now let's take a look at what happens when we delete content with item specific dependencies.  From the Sidebar, navigate to the article that we created.  Right click on the article and select **Delete**.  Click on the **Delete** button when the Delete dialog appears.  Notice the items that will be deleted when we delete the article.
 
 .. figure:: /_static/images/content-model/delete-article-dialog.jpg
     :alt: Delete dialog showing items to be deleted
@@ -484,7 +484,7 @@ Quick create allows content authors to create content with as few clicks as poss
 
 |
 
-Let's take a look at an example on how to configure a content type to be available from the quick create button in the context nav for authors using the out of the box blueprint **Website Editorial**.  In the image below, we have a site named **My Site** with the quick create button expanded.  Notice that we have one content type available for quick create, the **Article** content type.
+Let's take a look at an example on how to configure a content type to be available from the quick create button in the context nav for authors using the out of the box blueprint **Website Editorial**.  In the image below, we have a project named **My Site** with the quick create button expanded.  Notice that we have one content type available for quick create, the **Article** content type.
 
 .. figure:: /_static/images/content-model/quick-create-btn-expanded.png
     :width: 35%
@@ -493,7 +493,7 @@ Let's take a look at an example on how to configure a content type to be availab
 
 |
 
-If you look at the site tree as shown above, most of the content (the articles) is organized in a dated folder structure.  Adding quick create for the **Article** content type lets the content author skip having to open the **Site Explorer**, then navigate through the path navigation tree, create the year/month folder if it does not exist yet, then finally create their content.
+If you look at the site tree as shown above, most of the content (the articles) is organized in a dated folder structure.  Adding quick create for the **Article** content type lets the content author skip having to open the Sidebar, then navigate through the path navigation tree, create the year/month folder if it does not exist yet, then finally create their content.
 
 To setup quick create for a content type, from the **Sidebar**, click on |siteConfig| at the bottom.  Next, click on **Content Types**.  We will select the content type **Article** for editing.  Next, go to the **Properties Explorer** and scroll to the **Quick Create** section of the properties.
 
@@ -531,7 +531,7 @@ Below is the site tree after using the quick create button to create a new artic
 Form Controls
 ^^^^^^^^^^^^^
 
-Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. Crafter CMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`form-engine-control`.
+Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. CrafterCMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`form-engine-control`.
 
 .. figure:: /_static/images/content-model/form-engine-controls.png
     :width: 40%
@@ -564,7 +564,7 @@ Every Form Control has a Variable Name property.  The Variable Name is used by t
 
 **Reserved Variable Names**
 
-The following variable names are used by Crafter CMS.
+The following variable names are used by CrafterCMS.
 
 +----------------------+------------------------------------------------------------------+
 || Variable Name       || Description                                                     |
@@ -649,7 +649,7 @@ The following variable names are used by Crafter CMS.
 
 **Variable Names and Search Indexing**
 
-Crafter CMS indexes your content in the search index using your content model variable name as the field name.
+CrafterCMS indexes your content in the search index using your content model variable name as the field name.
 
 To facilitate indexing, the following suffix should be appended to variable names depending on the variable data type:
 
@@ -691,7 +691,7 @@ Remember to also remove the postfix auto-added by the UI when using ``key`` or `
 
 Please note that indexed ``text`` fields are case insensitive when performing a search, while ``string`` fields are case sensitive. Also, queries using ``string`` fields will only match full values besides being case sensitive.
 
-If performing a case insensitive search on a ``string`` field is desired, Crafter CMS provides a way by enabling tokenization of the field in the content type.  To enable tokenization of a ``string`` field in Studio, put a check in the checkbox labeled **Tokenize for Indexing** in the properties section of the content type field.  Below is the ``Article`` content type in a site created using the Website Editorial blueprint, showing the field ``Author`` with the ``Tokenize for Indexing`` option:
+If performing a case insensitive search on a ``string`` field is desired, CrafterCMS provides a way by enabling tokenization of the field in the content type.  To enable tokenization of a ``string`` field in Studio, put a check in the checkbox labeled **Tokenize for Indexing** in the properties section of the content type field.  Below is the ``Article`` content type in a project created using the Website Editorial blueprint, showing the field ``Author`` with the ``Tokenize for Indexing`` option:
 
 .. image:: /_static/images/content-model/tokenize-for-indexing-property.jpg
    :alt: Enable case insensitive keyword search for string fields in content type by clicking on "Tokenize for Indexing"
@@ -718,7 +718,7 @@ Let's take a look at an example of queries performed on a ``string`` field with 
 |Jane doe |No	              |Yes               |
 +---------+-------------------+------------------+
 
-Another thing to note is since Crafter CMS stores content as XML files, certain content fields which contain special characters must be escaped. By default, Crafter CMS will escape content fields of types:
+Another thing to note is since CrafterCMS stores content as XML files, certain content fields which contain special characters must be escaped. By default, CrafterCMS will escape content fields of types:
 
 * HTML (_html)
 * Text (_t)
@@ -726,7 +726,7 @@ Another thing to note is since Crafter CMS stores content as XML files, certain 
 * Multi-valued string (_smv, _mvs)
 * Internal-name (internal-name)
 
-This default configuration can be modified by editing the element ``<cdata-escaped-field-patterns>`` in the configuration file ``Site Configuration`` from the ``Site Tools`` -> ``Configuration``
+This default configuration can be modified by editing the element ``<cdata-escaped-field-patterns>`` in the configuration file ``Project Configuration`` from the ``Project Tools`` -> ``Configuration``
 
 .. code-block:: xml
    :linenos:
@@ -756,7 +756,7 @@ Data Sources
 
 |
 
-Data Sources are pickers that help pull in content from internal or external storage/systems.  For example, data source include: desktop video uploader, desktop image uploader, and so on. Crafter CMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
+Data Sources are pickers that help pull in content from internal or external storage/systems.  For example, data source include: desktop video uploader, desktop image uploader, and so on. CrafterCMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
 
 Data Sources allows the content model designer to decide where different assets uploaded via different controls go (for instance icons, images, RTE related assets, etc.).  It has it's own properties, like "Repository Path", which specifies the path where assets are stored, which help keep the system consistent over time.  The storage destination designed in the model dictates how those assets are handled during a duplicate event (duplicate the asset or duplicate the reference to the asset).
 
@@ -766,10 +766,10 @@ The ``shared-content`` data sources also provides an option to allow users to se
 
 Data sources are usually used in conjunction with a control in the content type, for example, the :ref:`form-item-selector` is used for selecting files to be uploaded when bound with the :ref:`form-source-file-desktop` data source.
 
-Let's take a look at a shared content data source in a site created using the Video Center blueprint from the Marketplace.
+Let's take a look at a shared content data source in a project created using the Video Center blueprint from the Marketplace.
 
 .. image:: /_static/images/content-model/create-site-video-center-bp.jpg
-    :alt: Form Engine Data Sources Example - Create Site Using Video Center Blueprint
+    :alt: Form Engine Data Sources Example - Create Project Using Video Center Blueprint
     :width: 70%
     :align: left
 
@@ -784,7 +784,7 @@ Open the ``Sidebar`` then click on |siteConfig|.  Click on ``Content Types`` and
 
 |
 
-To see the property we setup in action, open the ``Site Explorer``, then navigate to ``/streams``.  Right click on any of the items, say, ``AlphaGo``, then click on ``Edit``.  Scroll down to the ``Content`` section of the form.  In the ``Origin`` field, select the item next to it (``ShakaDemo``) then click on the ``x`` button to remove it.  We'll now add a new one, by clicking on the ``Add`` button, then select ``Search for Existing - Origins``.
+To see the property we setup in action, open the Sidebar, then navigate to ``/streams``.  Right click on any of the items, say, ``AlphaGo``, then click on ``Edit``.  Scroll down to the ``Content`` section of the form.  In the ``Origin`` field, select the item next to it (``ShakaDemo``) then click on the ``x`` button to remove it.  We'll now add a new one, by clicking on the ``Add`` button, then select ``Search for Existing - Origins``.
 
 .. image:: /_static/images/content-model/author-search-for-existing.png
    :alt: Form Engine Data Sources Example - Author Search for Existing Option
@@ -793,7 +793,7 @@ To see the property we setup in action, open the ``Site Explorer``, then navigat
 
 |
 
-A search dialog will open displaying in a grid view, items the user can search through, select, filter, etc.  As we can see, the search option makes it easier for users to pick items instead of scrolling through all the available items, especially for say sites with hundreds or even thousands of items/assets.
+A search dialog will open displaying in a grid view, items the user can search through, select, filter, etc.  As we can see, the search option makes it easier for users to pick items instead of scrolling through all the available items, especially for say projects with hundreds or even thousands of items/assets.
 
 .. image:: /_static/images/content-model/author-search-for-existing-dialog.png
    :alt: Form Engine Data Sources Example - Author Search for Existing Dialog
@@ -810,7 +810,7 @@ Form Engine Data Sources (please use the scrollbar to see more data sources)
 
 Macros for Data Sources
 ^^^^^^^^^^^^^^^^^^^^^^^
-There are a number of macros available for the content model designer to use in data sources. These macros are used when uploading assets to better organize site items, usually in the **Repository Path** property of the data source for uploading.  Here are the available macros:
+There are a number of macros available for the content model designer to use in data sources. These macros are used when uploading assets to better organize project items, usually in the **Repository Path** property of the data source for uploading.  Here are the available macros:
 
 +---------------------+--------------------------------------------------------------------------------+
 || Macro              || Description                                                                   |
@@ -882,7 +882,7 @@ The canvas allows the form-based content capture only, and is used by content au
 Content Type View Templates
 ---------------------------
 
-View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the primary Crafter CMS model or additional model (via APIs, please read :ref:`groovy-api` for that topic).
+View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the primary CrafterCMS model or additional model (via APIs, please read :ref:`groovy-api` for that topic).
 
 An example view template
 
@@ -994,8 +994,8 @@ script in Scripts > components > upcoming-events.groovy so that it is executed f
 
 |
 
-You might notice that we're importing a ``utils.DateUtils`` class. This class is not part of Crafter CMS, but instead it is a Groovy class
-specific to the site. To be able to use this class, you should place it under ``scripts > classes`` and name it DateUtils.groovy,
+You might notice that we're importing a ``utils.DateUtils`` class. This class is not part of CrafterCMS, but instead it is a Groovy class
+specific to the project. To be able to use this class, you should place it under ``scripts > classes`` and name it DateUtils.groovy,
 where everything after the groovy directory is part of the class' package. It's recommended for all Groovy classes to follow this
 convention.
 

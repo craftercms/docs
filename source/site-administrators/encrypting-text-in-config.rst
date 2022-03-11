@@ -28,9 +28,9 @@ Crafter Studio uses a default key and salt for the encryption tool.  To set the 
 
 |
 
-The encrypted properties work in the following site configuration files:
+The encrypted properties work in the following project configuration files:
 
- - Engine Site Configuration (``/config/engine/site-config.xml``)
+ - Engine Project Configuration (``/config/engine/site-config.xml``)
  - Studio AWS Profiles (``/config/studio/aws/aws.xml``)
  - Studio Box Profiles (``/config/studio/box/box.xml``)
  - Studio WebDAV Profiles (``/config/studio/webdav/webdav.xml``)

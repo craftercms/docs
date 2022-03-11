@@ -15,7 +15,7 @@ Here are the steps for configuring Engine to use mongoDB:
 -------------------------
 Configure the MongoDB URI
 -------------------------
-To define the connection between MongoDB and Engine, add the URI in the config file `/config/engine/site-config.xml`.  (This file can be accessed easily from any site created through the out-of-the-box blueprints, by navigating from the Studio dashboard to Site Config > Configuration, and finally picking up the **Engine Site Configuration** option from the dropdown).
+To define the connection between MongoDB and Engine, add the URI in the config file `/config/engine/site-config.xml`.  (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio dashboard to Project Tools > Configuration, and finally picking up the **Engine Project Configuration** option from the dropdown).
 
 .. code-block:: xml
 
@@ -27,7 +27,7 @@ To define the connection between MongoDB and Engine, add the URI in the config f
 
 where:
    * {host} - required, server address to connect to
-   * {port} - optional, with a default value of :27020 in Crafter CMS Authoring
+   * {port} - optional, with a default value of :27020 in CrafterCMS Authoring
    * {database} - optional, name of the database to authenticate if the connection string includes authentication credentials.
 
 For more details on the Connection String URI format, see https://docs.mongodb.com/manual/reference/connection-string/
@@ -35,7 +35,7 @@ For more details on the Connection String URI format, see https://docs.mongodb.c
 ----------------------
 Create a GMongo client
 ----------------------
-To access Mongo from Groovy, we'll use a GMongo client.  We'll need to add some beans in `/config/engine/application-context.xml`.  (This file can be accessed easily from any site created through the out-of-the-box blueprints, by navigating from the Studio dashboard to Site Config > Configuration, and finally picking up the **Engine Site Application Context** option from the dropdown).
+To access Mongo from Groovy, we'll use a GMongo client.  We'll need to add some beans in `/config/engine/application-context.xml`.  (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio dashboard to Project Tools > Configuration, and finally picking up the **Engine Site Application Context** option from the dropdown).
 
 .. code-block:: java
     :linenos:
@@ -86,12 +86,12 @@ Publish configuration to Delivery
 Until this point all changes have been made from Crafter Studio so they will only affect immediately
 the authoring environment, for a delivery environment you will need to publish the changed files.
 
-This can be done from the Studio site dashboard with the following steps:
+This can be done from the Studio project dashboard with the following steps:
 
-1. Go to Studio's site dashboard
+1. Go to Studio's project dashboard
 
 .. image:: /_static/images/site-admin/mongo/open-site-dashboard.png
-   :alt: Studio Site Dashboard
+   :alt: Studio Project Dashboard
    :width: 40 %
    :align: center
 
@@ -99,32 +99,32 @@ This can be done from the Studio site dashboard with the following steps:
 configuration files
 
 .. image:: /_static/images/site-admin/mongo/my-recent-activity.png
-   :alt: Studio Site Dashboard - My Recent Activity
+   :alt: Studio Project Dashboard - My Recent Activity
    :width: 70 %
    :align: center
 
 3. Select all configuration files updated in the previous sections
 
 .. image:: /_static/images/site-admin/mongo/my-recent-activity-config.png
-   :alt: Studio Site Dashboard - My Recent Activity
+   :alt: Studio Project Dashboard - My Recent Activity
    :width: 70 %
    :align: center
 
 4. Click ``Approve & Publish`` from the contextual menu
 
 .. image:: /_static/images/site-admin/mongo/approve-and-publish-context-menu.png
-   :alt: Studio Site Dashboard - Contextual Menu
+   :alt: Studio Project Dashboard - Contextual Menu
    :width: 70 %
    :align: center
 
 5. Click ``Submit`` to close the publish dialog
 
 .. image:: /_static/images/site-admin/mongo/publish-dialog.png
-   :alt: Studio Site Dashboard - Approve & Publish Dialog
+   :alt: Studio Project Dashboard - Approve & Publish Dialog
    :width: 70 %
    :align: center
 
-Once the files are deployed to the delivery node and the site context is reloaded the new
+Once the files are deployed to the delivery node and the project context is reloaded the new
 Configuration will take effect.
 
 --------------------------------

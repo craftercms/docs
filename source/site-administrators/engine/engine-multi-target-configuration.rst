@@ -8,9 +8,9 @@
 Engine Multi-Target Configuration
 =================================
 
-There are some cases where the Engine configuration files need to have different values per publishing target.  Say for a production environment where you have **staging** to test out your site and **live** , the site to be used by end users, you may need different SAML authentication mechanics or different URL rewrites.
+There are some cases where the Engine configuration files need to have different values per publishing target.  Say for a production environment where you have **staging** to test out your project and **live** , the project to be used by end users, you may need different SAML authentication mechanics or different URL rewrites.
 
-The :ref:`engine-multi-environment-configurations` section detailed how to setup Engine configuration files per environment.  Crafter CMS
+The :ref:`engine-multi-environment-configurations` section detailed how to setup Engine configuration files per environment.  CrafterCMS
 supports overriding Engine configuration files, not just per environment, but also per publishing target.
 It supports a base configuration per environment with the ability to override per publishing target.
 
@@ -79,7 +79,7 @@ To override a configuration file in any of the publishing targets
 Example
 -------
 
-Let's take a look at an example of overriding the Site Configuration used by Engine ``site-config.xml`` for the **staging** and **live** publishing targets so that each target has a different SAML authentication mechanics (different identity provider in ``staging`` and ``live``).  In our example, we will use a site created using the Website Editorial blueprint named **mysite**
+Let's take a look at an example of overriding the Project Configuration used by Engine ``site-config.xml`` for the **staging** and **live** publishing targets so that each target has a different SAML authentication mechanics (different identity provider in ``staging`` and ``live``).  In our example, we will use a project created using the Website Editorial blueprint named **mysite**
 
 #. Add the new configuration file/s for overriding to **Configurations** under |siteConfig| -> **Configuration**.  We will be overriding the ``site-config.xml`` file in the **staging** and **live** publishing targets, so we will add to the configuration a ``site-config.staging.xml`` and ``site-config.live.xml`` files.
 
@@ -91,15 +91,15 @@ Let's take a look at an example of overriding the Site Configuration used by Eng
       <file>
         <module>engine</module>
         <path>site-config.staging.xml</path>
-        <title>Engine Site Configuration Staging</title>
-        <description>Site Configuration used by Engine for the Staging publishing target</description>
+        <title>Engine Project Configuration Staging</title>
+        <description>Project Configuration used by Engine for the Staging publishing target</description>
         <samplePath>sample-engine-site-config.xml</samplePath>
       </file>
       <file>
         <module>engine</module>
         <path>site-config.live.xml</path>
-        <title>Engine Site Configuration Live</title>
-        <description>Site Configuration used by Engine for the Live publishing target</description>
+        <title>Engine Project Configuration Live</title>
+        <description>Project Configuration used by Engine for the Live publishing target</description>
         <samplePath>sample-engine-site-config.xml</samplePath>
       </file>
 
@@ -108,7 +108,7 @@ Let's take a look at an example of overriding the Site Configuration used by Eng
 #. The configurations we added above will now be available from |siteConfig| -> **Configuration**.
 
    .. image:: /_static/images/site-admin/site-config-override-added.jpg
-      :alt: Multi-target Configuration - Site Config override configuration files now listed in "Site Config" -> "Configuration"
+      :alt: Multi-target Configuration - Project Tools override configuration files now listed in "Project Tools" -> "Configuration"
       :width: 55 %
       :align: center
 
@@ -165,7 +165,7 @@ Let's take a look at an example of overriding the Site Configuration used by Eng
 
 #. Publish ``site-config.live.xml`` to live and ``site-config.staging.xml`` to staging.
 
-   To publish the override configuration files setup above, open the **Dashboard** by clicking on the site name at the top left of the screen.  Scroll to the **My Recent Activity** widget.
+   To publish the override configuration files setup above, open the **Dashboard** by clicking on the project name at the top left of the screen.  Scroll to the **My Recent Activity** widget.
 
    .. image:: /_static/images/site-admin/view-override-config-on-dashboard.png
       :alt: Multi-target Configuration - New configuration files listed in the "My Recent Activity" widget in the Dashboard
@@ -185,7 +185,7 @@ Let's take a look at an example of overriding the Site Configuration used by Eng
 
    To publish the ``site-config.staging.xml`` file to publishing target ``staging`` put a check mark next to the file in the widget, then click on ``Approve & Publish`` from the context nav.  Remember to set the ``Publishing Target`` to **staging** in the ``Approve for Publish`` dialog.
 
-   The Engine ``site-config.live.xml`` configuration will now be loaded when viewing your site in ``live`` and the Engine ``site-config.staging.xml`` configuration will now be loaded when viewing your site in ``staging`` instead of the default Engine ``site-config.xml`` files
+   The Engine ``site-config.live.xml`` configuration will now be loaded when viewing your project in ``live`` and the Engine ``site-config.staging.xml`` configuration will now be loaded when viewing your project in ``staging`` instead of the default Engine ``site-config.xml`` files
 
 
 

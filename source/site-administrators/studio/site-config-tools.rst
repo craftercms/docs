@@ -1,23 +1,23 @@
 :is-up-to-date: True
 
-.. index:: Site Config Tools
+.. index:: Project Config Tools
 
 .. _site-config-tools:
 
-=================
-Site Config Tools
-=================
+====================
+Project Config Tools
+====================
 
-The Site Config tools configuration file defines what modules are available for administration use when clicking on |siteConfig| from the Sidebar. This configuration is unique in that a configuration file exists in the following location of each site: ``SITENAME/config/studio/administration/tools.xml``
+The Project Config tools configuration file defines what modules are available for administration use when clicking on |siteConfig| from the Sidebar. This configuration is unique in that a configuration file exists in the following location of each project: ``SITENAME/config/studio/administration/tools.xml``
 
 .. image:: /_static/images/site-admin/configuration-tool-config.png
     :align: center
-    :alt: Site Config Tools
+    :alt: Project Config Tools
 
-To modify the site config tools configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Site Config Tools** from the dropdown list.
+To modify the project config tools configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Project Config Tools** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-site-config-tools.png
-    :alt: Configurations - Open Site Config Tools
+    :alt: Configurations - Open Project Config Tools
     :width: 65 %
     :align: center
 
@@ -31,22 +31,6 @@ Here is a sample tools configuration file.
     :linenos:
 
     <?xml version="1.0" encoding="UTF-8"?>
-    <!--
-      ~ Copyright (C) 2007-2019 Crafter Software Corporation. All Rights Reserved.
-      ~
-      ~ This program is free software: you can redistribute it and/or modify
-      ~ it under the terms of the GNU General Public License as published by
-      ~ the Free Software Foundation, either version 3 of the License, or
-      ~ (at your option) any later version.
-      ~
-      ~ This program is distributed in the hope that it will be useful,
-      ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-      ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      ~ GNU General Public License for more details.
-      ~
-      ~ You should have received a copy of the GNU General Public License
-      ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
-      -->
 
     <!--
       Site Configuration Tools
@@ -526,10 +510,10 @@ Tool                 Description
 ==================== =====================================================================
 content-types        Allows you to create/modify content types
 admin-configurations Contains all the configuration files managed through Crafter Studio
-groups               Allows you to manage site groups and group membership
-audit                Allows you to view your site activity log
+groups               Allows you to manage project groups and group membership
+audit                Allows you to view your project activity log
 bulkoperations       Allows you to publish multiple items at once
-workflow-states      Contains a list of all files in the site with its corresponding state
+workflow-states      Contains a list of all files in the project with its corresponding state
 log-view             Allows you to tail logs depending on what logging levels are set
 logging              Allows you to set logging levels for the log console
 ==================== =====================================================================

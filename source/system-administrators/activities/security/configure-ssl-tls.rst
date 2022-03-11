@@ -8,7 +8,7 @@
 Configure SSL/TLS
 =================
 
-To configure SSL/TLS for Crafter CMS authoring and delivery, do the following:
+To configure SSL/TLS for CrafterCMS authoring and delivery, do the following:
 
 * Step 1: Create a keystore file
 
@@ -26,10 +26,10 @@ From ``tomcat.apache.org`` :
 
    Transport Layer Security (TLS) and its predecessor, Secure Sockets Layer (SSL), are technologies which allow web browsers and web servers to communicate over a secured connection. This means that the data being sent is encrypted by one side, transmitted, then decrypted by the other side before processing. This is a two-way process, meaning that both the server AND the browser encrypt all traffic before sending out data.*
 
-Crafter CMS employs two deployment methods, traditional deployment and serverless deployment.  Let's take a look at an example of how to configure SSL/TLS in a traditional deployment and serverless (docker container) deployment:
+CrafterCMS employs two deployment methods, traditional deployment and serverless deployment.  Let's take a look at an example of how to configure SSL/TLS in a traditional deployment and serverless (docker container) deployment:
 
 --------------------------------------------------------------------------------------
-Configuring SSL/TLS for Crafter CMS Authoring and Delivery in a Traditional Deployment
+Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Traditional Deployment
 --------------------------------------------------------------------------------------
 
 .. _create-keystore-file:
@@ -99,7 +99,7 @@ where:
 * **keystoreFile** : path to your keystore file created from the previous step
 * **keystorePass** : password used when keystore file was created from the previous step
 
-We'll use the above values for our Crafter CMS authoring example.  Save the changes and restart Crafter CMS authoring/delivery.
+We'll use the above values for our CrafterCMS authoring example.  Save the changes and restart CrafterCMS authoring/delivery.
 
 For more information on configuring SSL/TLS on Tomcat, see https://tomcat.apache.org/tomcat-8.5-doc/ssl-howto.html
 
@@ -109,7 +109,7 @@ For more information on configuring SSL/TLS on Tomcat, see https://tomcat.apache
 Step 3: Test your setup
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-To test your Crafter CMS authoring, open your browser and type in:
+To test your CrafterCMS authoring, open your browser and type in:
 
    *localhost:8443/studio*
 
@@ -130,10 +130,10 @@ From the above screen, just click on ``Advanced``, then allow it to proceed to `
 |
 
 --------------------------------------------------------------------------------
-Configuring SSL/TLS for Crafter CMS Authoring and Delivery in a Docker Container
+Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Docker Container
 --------------------------------------------------------------------------------
 
-Setting up SSL/TLS for Crafter CMS authoring and delivery in a Docker Container is similar to the steps done for Crafter CMS Authoring and Delivery installed in a server, which just a few differences.
+Setting up SSL/TLS for CrafterCMS authoring and delivery in a Docker Container is similar to the steps done for CrafterCMS Authoring and Delivery installed in a server, which just a few differences.
 
 * Step 1: Create a keystore file
 
@@ -149,7 +149,7 @@ Setting up SSL/TLS for Crafter CMS authoring and delivery in a Docker Container 
 
 * Step 4: Test your setup
 
-Let's take a look at an example of a Crafter CMS authoring running in a docker container.  For reference, here's the instruction for  :ref:`running-craftercms-in-docker`
+Let's take a look at an example of a CrafterCMS authoring running in a docker container.  For reference, here's the instruction for  :ref:`running-craftercms-in-docker`
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 1: Create keystore file
@@ -159,7 +159,7 @@ Follow the step above :ref:`create-keystore-file` to create your keystore file. 
 
 .. code-block:: text
 
-   Crafter CMS authoring
+   CrafterCMS authoring
      |-- docker-compose.yml
      |-- .keystore
 
@@ -184,7 +184,7 @@ Your directory should now contain the following:
 
 .. code-block:: text
 
-   Crafter CMS authoring
+   CrafterCMS authoring
      |-- docker-compose.yml
      |-- .keystore
      |-- server.xml
@@ -256,7 +256,7 @@ Restart your docker container.
 Step 4: Test your setup
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-To test your Crafter CMS authoring, open your browser and type in:
+To test your CrafterCMS authoring, open your browser and type in:
 
    *localhost:8443/studio*
 

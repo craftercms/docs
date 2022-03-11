@@ -6,9 +6,9 @@
 Logging
 =======
 
-Log files from several sources are created when running Crafter CMS.  These log files are useful for checking the status of Crafter CMS, for example, the success of actions/requests, warnings and error messages.  These logs can be used to provide more information about potential issues in the system or for debugging errors.  The log files can be found in ``$CRAFTER_DIR/crafter-authoring/logs/`` or in ``$CRAFTER_DIR/crafter-delivery/logs/`` depending on which environment you are running.  Effective use of these logs is an important part of maintaining your sites and are useful for keeping track of your system performance.  To that end, please make sure that you rotate the logs.
+Log files from several sources are created when running CrafterCMS.  These log files are useful for checking the status of CrafterCMS, for example, the success of actions/requests, warnings and error messages.  These logs can be used to provide more information about potential issues in the system or for debugging errors.  The log files can be found in ``$CRAFTER_DIR/crafter-authoring/logs/`` or in ``$CRAFTER_DIR/crafter-delivery/logs/`` depending on which environment you are running.  Effective use of these logs is an important part of maintaining your sites and are useful for keeping track of your system performance.  To that end, please make sure that you rotate the logs.
 
-Crafter CMS ships with a Tomcat Application Server, Elasticsearch, and MongoDB included in the binary archive.  There are five folders used by Crafter CMS for the log files,
+CrafterCMS ships with a Tomcat Application Server, Elasticsearch, and MongoDB included in the binary archive.  There are five folders used by CrafterCMS for the log files,
 
     - tomcat
     - elasticsearch
@@ -54,7 +54,7 @@ Tomcat Log Files
 
 File: catalina.out
 
-This log file contains all messages pertaining to all java packages run by Crafter CMS.  It is used for tracking the success of requests/actions and logging helpful warning and error messages.  You'll also notice that in the same folder are the catalina historical log files, which are useful for checking logs for a certain date.  There are other log files created in the same folder that may be of interest to you depending on what you are investigating/debugging, but, the log file **catalina.out** is the one we usually look at to check the status of our system.
+This log file contains all messages pertaining to all java packages run by CrafterCMS.  It is used for tracking the success of requests/actions and logging helpful warning and error messages.  You'll also notice that in the same folder are the catalina historical log files, which are useful for checking logs for a certain date.  There are other log files created in the same folder that may be of interest to you depending on what you are investigating/debugging, but, the log file **catalina.out** is the one we usually look at to check the status of our system.
 
 To tail the catalina log file in the authoring environment:
 
@@ -98,7 +98,7 @@ This log file contains all messages pertaining to Elasticsearch.
 Using custom appenders
 ----------------------
 
-All Crafter CMS components use Apache Log4j2 for logging and you can easily include custom configurations to change
+All CrafterCMS components use Apache Log4j2 for logging and you can easily include custom configurations to change
 the logging behavior. If you want to use any of the built-in appenders from Log4j2 such as the JDBC or SMTP appenders
 you only need to add them in the appropriate configuration file. For more details on the provided appenders you can
 visit the `official documentation <https://logging.apache.org/log4j/2.x/manual/appenders.html>`_.
@@ -107,7 +107,7 @@ visit the `official documentation <https://logging.apache.org/log4j/2.x/manual/a
 Logging configurations
 ^^^^^^^^^^^^^^^^^^^^^^
 
-You can update the logging configuration depending on the Crafter CMS component that you need to change:
+You can update the logging configuration depending on the CrafterCMS component that you need to change:
 
 * Crafter Engine: ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/engine/extension/logging.xml``
 * Crafter Studio: ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/studio/extension/logging.xml``
@@ -118,7 +118,7 @@ You can update the logging configuration depending on the Crafter CMS component 
 
 .. warning::
   It is highly recommended to only add new appenders or do small changes to existing ones, if existing appenders are
-  removed or the configuration is broken some Crafter CMS components could stop working.
+  removed or the configuration is broken some CrafterCMS components could stop working.
 
 ^^^^^^^^^^^^^^^^^^^^^
 Add a custom appender

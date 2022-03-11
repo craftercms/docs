@@ -356,6 +356,12 @@ hppc
 **Dependency:** hppc |br|
 **URL:** https://search.maven.org/artifact/com.carrotsearch/hppc
 
+lz4-java
+^^^^^^^^
+**Package:** org.lz4 |br|
+**Dependency:** lz4-java |br|
+**URL:** https://search.maven.org/artifact/org.lz4/lz4-java
+
 t-digest
 ^^^^^^^^
 **Package:** com.tdunning |br|
@@ -373,6 +379,12 @@ jna
 **Package:** org.elasticsearch |br|
 **Dependency:** jna |br|
 **URL:** https://search.maven.org/artifact/org.elasticsearch/jna
+
+elasticsearch-plugin-classloader
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.elasticsearch |br|
+**Dependency:** elasticsearch-plugin-classloader |br|
+**URL:** https://search.maven.org/artifact/org.elasticsearch/elasticsearch-plugin-classloader
 
 elasticsearch-rest-client
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -427,6 +439,24 @@ compiler
 **Package:** com.github.spullara.mustache.java |br|
 **Dependency:** compiler |br|
 **URL:** https://search.maven.org/artifact/com.github.spullara.mustache.java/compiler
+
+elasticsearch-java
+^^^^^^^^^^^^^^^^^^
+**Package:** co.elastic.clients |br|
+**Dependency:** elasticsearch-java |br|
+**URL:** https://search.maven.org/artifact/co.elastic.clients/elasticsearch-java
+
+jakarta.json-api
+^^^^^^^^^^^^^^^^
+**Package:** jakarta.json |br|
+**Dependency:** jakarta.json-api |br|
+**URL:** https://search.maven.org/artifact/jakarta.json/jakarta.json-api
+
+parsson
+^^^^^^^
+**Package:** org.eclipse.parsson |br|
+**Dependency:** parsson |br|
+**URL:** https://search.maven.org/artifact/org.eclipse.parsson/parsson
 
 tika-parsers
 ^^^^^^^^^^^^
@@ -710,12 +740,6 @@ netcdf4
 **Dependency:** netcdf4 |br|
 **URL:** https://search.maven.org/artifact/edu.ucar/netcdf4
 
-jdom2
-^^^^^
-**Package:** org.jdom |br|
-**Dependency:** jdom2 |br|
-**URL:** https://search.maven.org/artifact/org.jdom/jdom2
-
 grib
 ^^^^
 **Package:** edu.ucar |br|
@@ -829,6 +853,12 @@ jai-imageio-core
 **Package:** com.github.jai-imageio |br|
 **Dependency:** jai-imageio-core |br|
 **URL:** https://search.maven.org/artifact/com.github.jai-imageio/jai-imageio-core
+
+jdom2
+^^^^^
+**Package:** org.jdom |br|
+**Dependency:** jdom2 |br|
+**URL:** https://search.maven.org/artifact/org.jdom/jdom2
 
 bcmail-jdk15on
 ^^^^^^^^^^^^^^
@@ -1316,11 +1346,47 @@ smiley-http-proxy-servlet
 **Dependency:** smiley-http-proxy-servlet |br|
 **URL:** https://search.maven.org/artifact/org.mitre.dsmiley.httpproxy/smiley-http-proxy-servlet
 
-jsch
-^^^^
-**Package:** com.jcraft |br|
-**Dependency:** jsch |br|
-**URL:** https://search.maven.org/artifact/com.jcraft/jsch
+org.eclipse.jgit.ssh.apache
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.eclipse.jgit |br|
+**Dependency:** org.eclipse.jgit.ssh.apache |br|
+**URL:** https://search.maven.org/artifact/org.eclipse.jgit/org.eclipse.jgit.ssh.apache
+
+sshd-osgi
+^^^^^^^^^
+**Package:** org.apache.sshd |br|
+**Dependency:** sshd-osgi |br|
+**URL:** https://search.maven.org/artifact/org.apache.sshd/sshd-osgi
+
+sshd-sftp
+^^^^^^^^^
+**Package:** org.apache.sshd |br|
+**Dependency:** sshd-sftp |br|
+**URL:** https://search.maven.org/artifact/org.apache.sshd/sshd-sftp
+
+sshd-core
+^^^^^^^^^
+**Package:** org.apache.sshd |br|
+**Dependency:** sshd-core |br|
+**URL:** https://search.maven.org/artifact/org.apache.sshd/sshd-core
+
+sshd-common
+^^^^^^^^^^^
+**Package:** org.apache.sshd |br|
+**Dependency:** sshd-common |br|
+**URL:** https://search.maven.org/artifact/org.apache.sshd/sshd-common
+
+bcprov-jdk15on
+^^^^^^^^^^^^^^
+**Package:** org.bouncycastle |br|
+**Dependency:** bcprov-jdk15on |br|
+**URL:** https://search.maven.org/artifact/org.bouncycastle/bcprov-jdk15on
+
+eddsa
+^^^^^
+**Package:** net.i2p.crypto |br|
+**Dependency:** eddsa |br|
+**URL:** https://search.maven.org/artifact/net.i2p.crypto/eddsa
 
 commons-beanutils
 ^^^^^^^^^^^^^^^^^
@@ -1549,18 +1615,6 @@ JavaEWAH
 **Package:** com.googlecode.javaewah |br|
 **Dependency:** JavaEWAH |br|
 **URL:** https://search.maven.org/artifact/com.googlecode.javaewah/JavaEWAH
-
-org.eclipse.jgit.ssh.jsch
-^^^^^^^^^^^^^^^^^^^^^^^^^
-**Package:** org.eclipse.jgit |br|
-**Dependency:** org.eclipse.jgit.ssh.jsch |br|
-**URL:** https://search.maven.org/artifact/org.eclipse.jgit/org.eclipse.jgit.ssh.jsch
-
-jzlib
-^^^^^
-**Package:** com.jcraft |br|
-**Dependency:** jzlib |br|
-**URL:** https://search.maven.org/artifact/com.jcraft/jzlib
 
 testng
 ^^^^^^
@@ -2023,12 +2077,6 @@ bcpkix-jdk15on
 **Package:** org.bouncycastle |br|
 **Dependency:** bcpkix-jdk15on |br|
 **URL:** https://search.maven.org/artifact/org.bouncycastle/bcpkix-jdk15on
-
-bcprov-jdk15on
-^^^^^^^^^^^^^^
-**Package:** org.bouncycastle |br|
-**Dependency:** bcprov-jdk15on |br|
-**URL:** https://search.maven.org/artifact/org.bouncycastle/bcprov-jdk15on
 
 bcutil-jdk15on
 ^^^^^^^^^^^^^^

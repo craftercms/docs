@@ -8,7 +8,15 @@
 sync-from
 =========
 
+|
+
 Sync the content of a site from a remote repository
+
+|
+
+   .. note::
+
+      The connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command before using the command listed here.
 
 -----
 Usage

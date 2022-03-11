@@ -9,14 +9,14 @@ Content Targeting Guide
 =======================
 
 Crafter Engine provides the ability to render content adapted to specific users, depending on different aspects like geographical location,
-language, preferences, etc. Content that is targeted to users is known in Crafter CMS as targeted content.
+language, preferences, etc. Content that is targeted to users is known in CrafterCMS as targeted content.
 
 --------------------------------
 Language-Based Localized Content
 --------------------------------
 
 The most common form of targeted content is language-based localization, which is enabled just by specifying some configuration in the
-Engine's Site Config (see :ref:`engine-site-configuration`):
+Engine's Project Config (see :ref:`engine-site-configuration`):
 
 .. code-block:: xml
 
@@ -63,7 +63,7 @@ As stated before, the most popular case for targeted content is language-based l
 to target content according to the user's region, country, age, gender, etc. For these cases, a little bit more of coding and configuration
 is needed:
 
-#.  Implement the ``org.craftercms.engine.targeting.TargetIdManager`` and put it under your site's Classes > groovy folder, with any
+#.  Implement the ``org.craftercms.engine.targeting.TargetIdManager`` and put it under your project's Classes > groovy folder, with any
     folders that should be part of the Java package in-between (e.g. Classes > groovy > services > targeting >
     RegionAndCountryTargetIdManager):
 
@@ -79,7 +79,7 @@ is needed:
     *   ``getAvailableTargetIds()`` returns a list with all the supported target IDs. In case of the *region_country* solution,
         the list would contain all the possible region/country combinations, like *na*, *na_us*, *na_ca*, *lan*, *lan_cr*, etc.
 
-#.  Add the ``TargetIdManager`` implementation as a Spring bean in your site's application-context.xml (Config > spring >
+#.  Add the ``TargetIdManager`` implementation as a Spring bean in your project's application-context.xml (Config > spring >
     application-context.xml) with the name ``crafter.targetIdManager``:
 
     .. code-block:: xml
@@ -95,7 +95,7 @@ be grouped under locale folders. So pages for *en* would be put under /site/webs
 
 But sometimes it's more useful to have content for different targets to be under the same location. And for those cases, Engine can
 resolve targeted content by file prefix, like index_en.xml, index_en_US.xml, index_fr.xml, etc. To enable this, add the following bean
-to your site's application-context.xml (Config > spring > application-context.xml), which will override the targeted content by folder
+to your project's application-context.xml (Config > spring > application-context.xml), which will override the targeted content by folder
 strategy:
 
 .. code-block:: xml

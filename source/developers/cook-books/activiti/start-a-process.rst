@@ -4,7 +4,7 @@
 Start an Activiti Process via Rest Script
 =========================================
 
-This cook book is designed to provide the most straight forward example of a Crafter CMS REST service being used to start an Activiti Process.
+This cook book is designed to provide the most straight forward example of a CrafterCMS REST service being used to start an Activiti Process.
 
 -------------
 Prerequisites

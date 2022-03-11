@@ -7,7 +7,7 @@
 Configuring Apache Virtual Host for Production
 ==============================================
 
-This section will show you a sample Apache virtual host configuration for your Crafter CMS site.
+This section will show you a sample Apache virtual host configuration for your CrafterCMS site.
 
 Here's the sample configuration for setting up a vhost for production:
 
@@ -17,7 +17,7 @@ Here's the sample configuration for setting up a vhost for production:
     <VirtualHost *:80>
         ServerName example.com
 
-        # Path where your actual Crafter CMS site resides on the server
+        # Path where your actual CrafterCMS site resides on the server
         DocumentRoot /path_to_crafter/crafter/data/repos/sites/mysite
 
         RewriteEngine On

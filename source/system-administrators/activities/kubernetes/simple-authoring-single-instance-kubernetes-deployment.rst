@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 
 .. index:: Simple Authoring with a Single Instance Kubernetes Deployment, Example Kubernetes deployment of simple Authoring with a single instance
 
@@ -8,7 +8,7 @@
 Simple Authoring with a Single Instance Kubernetes Deployment
 =============================================================
 
-A Kubernetes deployment describes an applications life cycle, e.g. images to be used, the number of pods, etc. It creates pods based on a specified template.  Crafter CMS has an example Kubernetes deployment for a simple authoring with a single instance.  In this section, we'll take a look at this example Kubernetes deployment.
+A Kubernetes deployment describes an applications life cycle, e.g. images to be used, the number of pods, etc. It creates pods based on a specified template.  CrafterCMS has an example Kubernetes deployment for a simple authoring with a single instance.  In this section, we'll take a look at this example Kubernetes deployment.
 
 ------------
 Requirements
@@ -25,7 +25,7 @@ errors. In Minikube, to start a node with this characteristics, you can run a co
 In addition to that, we need the following:
 
 * `k9s <https://k9scli.io/>`__ for viewing the status of the pods, the logs, etc
-* Kubernetes deployment files for Crafter CMS Simple Authoring with a single instance, found here: https://github.com/craftercms/kubernetes-deployments/
+* Kubernetes deployment files for CrafterCMS Simple Authoring with a single instance, found here: https://github.com/craftercms/kubernetes-deployments/
 
      .. code-block:: sh
 
@@ -67,23 +67,10 @@ Create the SSH Keys Secret
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Go to ``kubernetes-deployments/authoring/simple/resources/secrets/.ssh``.  This is where we will create the ssh keys.
-
-#. Run ``ssh-keygen -m PEM -b 4096 -t rsa -C "your_email@example.com"`` to generate the key pair. When being asked for the
-   filename of the key, just enter ``id_rsa`` (so that the keys are saved in the current folder). Do not provide a
+#. Run ``ssh-keygen`` to generate the key pair (e.g. ``ssh-keygen -t ecdsa -b 521 -C "your_email@example.com"``).
+   When asked for the filename of the key, just enter a filename e.g. ``id_rsa``, ``id_dsa``, ``id_ecdsa`` or ``id_ed25519`` depending
+   on the type of key selected (so that the keys are saved in the current folder). Do not provide a
    passphrase.
-
-      .. note::
-         Crafter requires the key to be ``RSA`` and does not support keys generated using an algorithm other than ``RSA``.  The Jsch library that Jgit uses only supports ``RSA`` and does not support other keys such as OpenSSH.  Make sure when you generate the key to specify the type as ``rsa``:
-
-         .. code-block:: sh
-
-            ➜ ssh-keygen -m PEM -b 4096 -t rsa -C "your_email@example.com"
-
-         |
-
-         Check that the file starts with the following header: ``-----BEGIN RSA PRIVATE KEY-----`` to verify that the key is using ``RSA``.
-         Crafter also currently doesn't support using a passphrase with SSH keys.  Remember to **NOT** use a passphrase when creating your keys.
-
 #. Create a copy of the public key and name it ``authorized_keys``
 
       .. code-block:: sh
@@ -124,7 +111,7 @@ Another way of checking the status of the deployments/pods/etc. is by running ``
    |
 
 .. image:: /_static/images/system-admin/simple-authoring-k9s-start.jpg
-   :alt: Crafter CMS Simple Authoring with Single Instance Kubernetes Deployment
+   :alt: CrafterCMS Simple Authoring with Single Instance Kubernetes Deployment
    :width: 100%
    :align: center
 

@@ -9,12 +9,12 @@ Working with Pages
 ==================
 
 This section describes how content authors can create and use pages to manage content.
-Templates are used for page layouts in Crafter CMS.  A developer usually creates the templates that authors can then use to manage content.
+Templates are used for page layouts in CrafterCMS.  A developer usually creates the templates that authors can then use to manage content.
 
 -------------
 Adding a Page
 -------------
-To add a page, in the Sidebar panel, open ``Site Explorer`` then click on **Pages**.  Navigate to the level and location within the path navigation tree where you want to create the content, then click on the three dots next to the parent page and select *New Content*
+To add a page, in the Sidebar panel, then click on **Pages**.  Navigate to the level and location within the path navigation tree where you want to create the content, then click on the three dots next to the parent page and select *New Content*
 
 .. image:: /_static/images/page/page-add-new-content.jpg
     :width: 50 %
@@ -66,11 +66,11 @@ Editing a Page
 --------------
 There are multiple ways to edit a page.  
     
-    #. In the Sidebar panel under ``Site Explorer``, click on **Pages**.  Navigate to the level and location within the path navigation tree where you want to edit the content, then click on the three dots on the right and select **Edit**.  A form containing the page content you want to edit will open.
+    #. In the Sidebar panel click on **Pages**.  Navigate to the level and location within the path navigation tree where you want to edit the content, then click on the three dots on the right and select **Edit**.  A form containing the page content you want to edit will open.
     
-    #. In the Sidebar panel under ``Site Explorer``, click on **Pages**.  Navigate to the level and location within the path navigation tree where you want to edit the content and click on it to preview the page.  Toggle ``Edit Mode`` to on (switch at the top right corner) to turn on in-context editing and the experience builder panel, if it's not turned on yet.  Move your mouse over to the area you would like the edit.  As you're moving the mouse around the page, notice that the cursor changes to a pencil on editable sections.  Click anywhere editable on the page to start editing.
+    #. In the Sidebar panel click on **Pages**.  Navigate to the level and location within the path navigation tree where you want to edit the content and click on it to preview the page.  Toggle ``Edit Mode`` to on (switch at the top right corner) to turn on in-context editing and the experience builder panel, if it's not turned on yet.  Move your mouse over to the area you would like the edit.  As you're moving the mouse around the page, notice that the cursor changes to a pencil on editable sections.  Click anywhere editable on the page to start editing.
 
-    #. In the Sidebar panel under ``Site Explorer``, click on **Pages**.  Navigate to the level and location within the path navigation tree where you want to edit the content and click on it to preview the page.  Click the three dots next to the address url on the toolbar found at the top of your screen. Click on ``Edit``.  A form containing the page content you want to edit will open.
+    #. In the Sidebar panel click on **Pages**.  Navigate to the level and location within the path navigation tree where you want to edit the content and click on it to preview the page.  Click the three dots next to the address url on the toolbar found at the top of your screen. Click on ``Edit``.  A form containing the page content you want to edit will open.
 
 .. image:: /_static/images/page/page-edit.jpg
     :width: 95 %
@@ -81,9 +81,9 @@ There are multiple ways to edit a page.
 ----------
 Versioning
 ----------
-Crafter CMS tracks all changes to pages/contents/static assets in your site.  
+CrafterCMS tracks all changes to pages/contents/static assets in your project.
 
-All page changes/versions can be viewed, compared with other versions and reverted to an older version.  There are a couple of ways to view the History of your desired page.  Navigate to the page you want to view the history of from the site navigation tree.
+All page changes/versions can be viewed, compared with other versions and reverted to an older version.  There are a couple of ways to view the History of your desired page.  Navigate to the page you want to view the history of from the project navigation tree.
 
 After selecting the page you want, click on ``Options`` (the three dots next to the address url at the top of your browser) then select **History**.
 
@@ -92,7 +92,7 @@ After selecting the page you want, click on ``Options`` (the three dots next to 
     :align: center
     :alt: Content Author - Access Page History
 
-Another way to view the history of a page is by clicking on the three dots next to the page you want on the Sidebar ``Site Explorer`` and then selecting **History**
+Another way to view the history of a page is by clicking on the three dots next to the page you want on the Sidebar and then selecting **History**
 
 .. image:: /_static/images/page/page-access-history-tree.jpg
     :width: 60 %
@@ -308,7 +308,7 @@ Components inside the drop targets may be moved around to the desired position. 
 
 To remove a component from the drop target, just drag the feature to the trash bin that appears on the bottom right of the screen when dragging around a component.
 
-.. image:: /_static/images/first-site/first-site-drag-n-drop-delete.jpg
+.. image:: /_static/images/first-project/first-project-drag-n-drop-delete.jpg
     :width: 80 %
     :align: center
     :alt: Content Author - Drag and Drop Delete
@@ -330,7 +330,7 @@ There are a number of tools available from the RTE out of the box for editing yo
 Copying a Page
 --------------
 
-To copy a page, in the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the site navigation tree where you want to copy content, then click on the three dots next to the page and select **Copy**
+To copy a page, in the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the project navigation tree where you want to copy content, then click on the three dots next to the page and select **Copy**
 
 .. image:: /_static/images/page/page-copy-menu.jpg
     :width: 30 %
@@ -339,7 +339,7 @@ To copy a page, in the Sidebar panel, click on the **Pages** folder.  Navigate t
 
 |
 
-In the Sidebar panel, navigate to the level and location within the site navigation tree where you want to paste the copied content, then click on the three dots next to it and select **Paste**
+In the Sidebar panel, navigate to the level and location within the project navigation tree where you want to paste the copied content, then click on the three dots next to it and select **Paste**
 
 .. image:: /_static/images/page/page-paste-menu.jpg
     :width: 30 %

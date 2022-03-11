@@ -11,7 +11,7 @@ Page Content Type
 Page content types are top level container types that lets you define the layout/structure and functionality of content/components.  To create a new page content type, click on |siteConfig| from the **Sidebar**
 
 .. figure:: /_static/images/templates/templates-site-config.jpg
-	:alt: Template Site Config
+	:alt: Template Project Tools
 	:align: center
 
 |
@@ -136,7 +136,7 @@ View
 ^^^^
 
 We'll now build the view for our template, which is the freemarker template file that renders the content, typically to HTML markup.
-There are two ways to create the freemarker template file for our template.  One way is to open the **Sidebar** menu in Studio, then navigate to the **Templates** folder, depending on how your site is setup, you may want to navigate to the subfolder in your Templates folder where you want to create the freemarker template file.  Once you are in the desired subfolder, right click on that folder then select **Create Template**
+There are two ways to create the freemarker template file for our template.  One way is to open the **Sidebar** menu in Studio, then navigate to the **Templates** folder, depending on how your project is setup, you may want to navigate to the subfolder in your Templates folder where you want to create the freemarker template file.  Once you are in the desired subfolder, right click on that folder then select **Create Template**
 
 .. figure:: /_static/images/templates/templates-ftl-create-sidebar.png
     :alt: Template Create FTL from Sidebar
@@ -324,4 +324,4 @@ Now that we have our controller, we just need to add code to the freemarker temp
 
 |
 
-As you can see from the controller we just added, the controller is used to customize your page by enabling you to run codes before the page is rendered.  To find out more about groovy APIs in Crafter CMS, please see the section :ref:`groovy-api`.
+As you can see from the controller we just added, the controller is used to customize your page by enabling you to run codes before the page is rendered.  To find out more about groovy APIs in CrafterCMS, please see the section :ref:`groovy-api`.

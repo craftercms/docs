@@ -2,15 +2,15 @@
 
 :orphan:
 
-.. index:: Securing Your Crafter CMS Install, Change Defaults in Crafter CMS
+.. index:: Securing Your CrafterCMS Install, Change Defaults in CrafterCMS
 
 .. _securing-your-crafter-cms-install:
 
-=================================
-Securing Your Crafter CMS Install
-=================================
+================================
+Securing Your CrafterCMS Install
+================================
 
-Crafter CMS installations are pre-configured with default passwords, tokens, keys, etc.  These default values are intended for initial testing, installation and configuration.  We recommend changing the default values for the following parameters to secure your Crafter CMS installation:
+CrafterCMS installations are pre-configured with default passwords, tokens, keys, etc.  These default values are intended for initial testing, installation and configuration.  We recommend changing the default values for the following parameters to secure your CrafterCMS installation:
 
 * Replace default values for configuration files encryption key and salt
 
@@ -24,7 +24,7 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
 
      |
 
-* Replace the default values for database values encryption key and salt. Remember that these values should **not** be changed after Crafter CMS has been started if the installation has one or more of the following:
+* Replace the default values for database values encryption key and salt. Remember that these values should **not** be changed after CrafterCMS has been started if the installation has one or more of the following:
 
   * Remote repository passwords and keys
   * Cluster passwords and keys
@@ -54,7 +54,7 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
 
      |
 
-* Replace default values for the DB root password and the DB ``crafter`` user password before starting Crafter CMS for the very first time.
+* Replace default values for the DB root password, the DB ``crafter`` user password and the DB replication user password (if running in a primary/replica cluster) before starting CrafterCMS for the very first time.
 
      .. code-block:: sh
         :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
@@ -64,10 +64,12 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
         export MARIADB_ROOT_PASSWD=${MARIADB_ROOT_PASSWD:="root"}
         ...
         export MARIADB_PASSWD=${MARIADB_PASSWD:="crafter"}
+        ...
+        export MARIADB_REPLICATION_PASSWD=${MARIADB_REPLICATION_PASSWD:="crafter_replication"}
 
      |
 
-  To change the values after the initial start of Crafter CMS, do the following:
+  To change the values after the initial start of CrafterCMS, do the following:
 
   #. Manually change the DB passwords
 
@@ -98,6 +100,16 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
        |
 
      Again, remember to replace ``MyNewCrafterPass`` with the actual password you want to set, and if you are connecting to the DB from another host, change ``localhost`` with the remote hostname or IP address.
+
+     To change the ``crafter_replication`` replication user password, run the following command, similar to changing the root password.
+
+       .. code-block:: bash
+
+          ALTER USER 'crafter_replication'@'localhost' IDENTIFIED BY 'MyNewReplicationPass';
+
+       |
+
+     Again, remember to replace ``MyNewReplicationPass`` with the actual password you want to set, and if you are connecting to the DB from another host, change ``localhost`` with the remote hostname or IP address.
 
   #. Stop Studio
   #. Update the values in the configuration file ``crafter-setenv.sh`` with the new password used in the previous step
@@ -164,3 +176,30 @@ Crafter CMS installations are pre-configured with default passwords, tokens, key
      export STUDIO_REFRESH_TOKEN_MAX_AGE=${STUDIO_REFRESH_TOKEN_MAX_AGE:=300}
      # Indicates if the refresh token cookie should be secure (should be true for production environments behind HTTPS)
      export STUDIO_REFRESH_TOKEN_SECURE=${STUDIO_REFRESH_TOKEN_SECURE:="false"}
+
+* Crafter Studio and Crafter Deployer by default reads SSH configuration from ``CRAFTER_HOME/data/ssh``.
+
+  The default SSH configuration location contains the following:
+
+  .. code-block:: none
+
+     |--CRAFTER_HOME/
+        |--data/
+           |--ssh/
+              |--config
+              |--known-hosts
+
+  |
+
+  To change the default location of SSH configuration, simply change the value of ``CRAFTER_SSH_CONFIG`` in the ``CRAFTER_HOME/bin/crafter-setenv.sh`` file
+
+  .. code-block:: sh
+     :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
+
+     # -------------------- SSH variables --------------------
+     # The path of the folder used for the SSH configuration
+     export CRAFTER_SSH_CONFIG=${CRAFTER_SSH_CONFIG:="$CRAFTER_DATA_DIR/ssh"}
+
+  |
+
+  The ``known-hosts`` file contains key fingerprints for GitHub, GitLab and BitBucket and is where you can add additional fingerprints for other providers as needed

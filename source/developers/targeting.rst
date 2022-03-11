@@ -8,8 +8,8 @@
 Content Targeting
 =================
 
-Targeting is a Crafter CMS feature that allows delivering the right experience, with the right
-content, to the right people at the right time.  Crafter CMS provides the ability to render content
+Targeting is a CrafterCMS feature that allows delivering the right experience, with the right
+content, to the right people at the right time.  CrafterCMS provides the ability to render content
 adapted to specific users, depending on different aspects like geographical location, language,
 preferences, etc. The following sections describe how you can use this feature to organize content.
 
@@ -17,12 +17,12 @@ preferences, etc. The following sections describe how you can use this feature t
 Targeting Using Taxonomies
 --------------------------
 
-Taxonomies allow you to organize your content to make it easy for your site users to browse what
+Taxonomies allow you to organize your content to make it easy for your project users to browse what
 they want and deliver content appropriate for them. It also allows you to search for content faster.
 
 The :ref:`Content Authors - Audience Targeting<content_authors_targeting>` section of the documentation,
 describes how Content Authors can target content with taxonomies based on segments and how to view
-the site depending on who is browsing. This section describes how to add the segments and segment
+the project depending on who is browsing. This section describes how to add the segments and segment
 targeting on pages as seen in the Website Editorial blueprint, so that content authors can target
 their content.
 
@@ -101,7 +101,7 @@ The file can also be found in the path ``/config/studio/targeting/targeting-conf
 **Segments List**
 
 Here's the list that will be used by the Website Editorial blueprint when modeling the segments
-into the content.  The list was created by right clicking on **Taxonomy** in the Sidebar ``Site Explorer``, then
+into the content.  The list was created by right clicking on **Taxonomy** in the Sidebar, then
 clicking on **New Content**.
 
 Here's the list after entering the desired segments:
@@ -172,7 +172,7 @@ Now that we have modeled the criteria, we can now update the content. When you c
 page, you will see the grouped check boxes that we added in the previous section, in the Metadata
 section, ready for the content author to select which segment the page is targeted for. We will
 look at one of the articles in the blueprint, "Coffee is good for your health" as an example of
-content for targeting.  Click on the article from the Sidebar ``Site Explorer``, then click on **Edit** in the
+content for targeting.  Click on the article from the Sidebar, then click on **Edit** in the
 toolbar ``Options``.  Notice that the article is targeted for both Guy and Gal (Guy and Gal checkbox
 checked).
 
@@ -228,7 +228,7 @@ Targeting Using Categories
 
 Another way of using taxonomies for organizing content is by targeting pages based on categories.
 First, decide on the categories that you'd like to use. After deciding on the categories, we will
-now work on adding in metadata to our site that content authors can use. In the Website Editorial
+now work on adding in metadata to our project that content authors can use. In the Website Editorial
 blueprint, the following categories are used:
 
 - Health
@@ -241,7 +241,7 @@ Configuring
 ^^^^^^^^^^^
 
 Here's the list that will be used by the Website Editorial blueprint when modeling the categories
-into the content. The list was created by right clicking on **Taxonomy** in the Sidebar ``Site Explorer``, then
+into the content. The list was created by right clicking on **Taxonomy** in the Sidebar, then
 clicking on **New Content**.
 
 Here's the list after entering the desired categories:
@@ -313,7 +313,7 @@ Now that we have modeled the criteria, we can now target content. When you creat
 you will see the grouped check boxes that we added in the previous section, in the Metadata section,
 ready for the content author to select which category the page falls into. We will look at one of the
 articles in the blueprint, "Women Styles for Winter" as an example of targeting content based on
-category. Click on the article from the Sidebar ``Site Explorer``, then click on **Edit** from the toolbar ``Options``.
+category. Click on the article from the Sidebar, then click on **Edit** from the toolbar ``Options``.
 Notice that the article is targeted for the *Style* category.
 
 .. figure:: /_static/images/targeting/tagging-categories-tag-content.png
@@ -328,8 +328,8 @@ Build Dynamic Components
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 After updating the content, we can now see how we can use the categories we just setup on displaying
-content. Let's take a look at the homepage of our site.  On the left side of the page, you can see
-the left rail of our site.  If your screen is not wide enough, look at the top left corner of the
+content. Let's take a look at the homepage of our project.  On the left side of the page, you can see
+the left rail of our project.  If your screen is not wide enough, look at the top left corner of the
 page, there is a hamburger icon/button (multiple lines in red that sort of looks like a hamburger),
 click on that icon to display the left rail.
 
@@ -341,7 +341,7 @@ click on that icon to display the left rail.
 |
 
 Let us look at the navigation menu on the left rail.  As you can see, the categories we used to
-target our pages can be used as navigation headings for the site.
+target our pages can be used as navigation headings for the project.
 
 .. figure:: /_static/images/targeting/tagging-categories-left-rail.jpg
     :alt: Targeting - Categories Left Rail
@@ -351,7 +351,7 @@ target our pages can be used as navigation headings for the site.
 |
 
 We'll now take a closer look on how our taxonomy for categories is used for displaying articles in
-the landing pages of our site. On the left rail of our site, click on **Health**, notice how all
+the landing pages of our project. On the left rail of our project, click on **Health**, notice how all
 the articles listed on the page are targeted for category *Health*.  (To check the category for
 an article, just click on the article then click on **Edit** on the toolbar ``Options`` (stacked three dots)
 at the top of the page. Go down to the *Metadata* section to see which category is selected.)
@@ -367,7 +367,7 @@ In order to display just the articles targeted for a certain category, a groovy 
 the page renders.  To do this, we need to create a script named after the page we want the script
 to run before rendering, under *scripts -> pages*   In the groovy script below, a query is sent to
 ask for all articles targeted for the requested category. (To see the script in Studio, from the
-Sidebar ``Site Explorer``. navigate to scripts -> pages -> category-landing.groovy) Please see
+Sidebar. navigate to scripts -> pages -> category-landing.groovy) Please see
 :ref:`content-type-controller-definition` for more details on binding a script to a page or component.
 
 .. code-block:: groovy
@@ -389,7 +389,7 @@ Sidebar ``Site Explorer``. navigate to scripts -> pages -> category-landing.groo
 Another way of using the categories tag is for displaying a list of related articles based on the
 article being browsed.  We will look at the content type component **Articles Widget**
 to see how this is done in our Website Editorial blueprint.  We will open the model for the
-component article widget by going to the Sidebar ``Site Tools``, then clicking on **Content Types -> Articles Widget -> Open Type**
+component article widget by going to the Sidebar ``Project Tools``, then clicking on **Content Types -> Articles Widget -> Open Type**
 
 .. figure:: /_static/images/targeting/tagging-component-article-open.jpg
     :alt: Targeting - Open Component Articles Widget
@@ -409,7 +409,7 @@ renders in its container.
 
 |
 
-We'll now take a look at the component created to display related articles. In the Sidebar ``Site Explorer``,
+We'll now take a look at the component created to display related articles. In the Sidebar,
 navigate to the **components -> articles-widget** folder, then right click on **Related Articles
 Widget** and click on **Edit**
 
@@ -430,7 +430,7 @@ the component.
 
 |
 
-To open the groovy script, click on the Sidebar ``Site Explorer`` and navigate the path navigator tree to **scripts -> components**
+To open the groovy script, click on the Sidebar and navigate the path navigator tree to **scripts -> components**
 then right click on **related-articles.groovy** and select **Edit**.  In the groovy script, it
 sends a query for articles in the same category as the article being viewed, then passes on the
 articles to the template model of the component ready for rendering.
@@ -474,7 +474,7 @@ Targeting Using Roles
 ---------------------
 
 Another way of organizing content is by targeting pages based on role(s).  First, decide on the roles you'd
-like to use.  After deciding on the roles, we will now work on adding in metadata to our site that content
+like to use.  After deciding on the roles, we will now work on adding in metadata to our project that content
 authors can use. Using the Website Editorial blueprint, for example, we can have the following roles for targeting purposes:
 
 - ROLE_user
@@ -572,7 +572,7 @@ In the ``Repeating Group`` properties, set the Title field to “Authorized Role
 |
 
    .. warning::
-      The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by Crafter CMS.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
+      The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS.  For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
       The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
 
@@ -586,7 +586,7 @@ Name** field set to "role". Make this Input required by checking the checkbox un
 |
 
     .. warning::
-       The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_s``, as the ``role`` variable name is used by Crafter CMS for enforcing access to a page.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
+       The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_s``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page.  For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
 
 ^^^^^^^^^^^^^^^^^^
@@ -597,7 +597,7 @@ Now that we have modeled the criteria, we can now target content. When you creat
 you will see the repeating group control that we added in the previous section, in the Metadata section,
 ready for the content author to input which role is authorized to preview the page. We will look at one of the
 articles in the blueprint, "Top Books For Young Women" as an example of targeting content based on a
-role. Click on the article from the Sidebar ``Site Explorer``, then click on **Edit** in the toolbar ``Options``.
+role. Click on the article from the Sidebar, then click on **Edit** in the toolbar ``Options``.
 Scroll down to the ``Metadata`` section in the form to the ``Authorized Roles`` field.  Click on ``Add First Item``
 
 .. figure:: /_static/images/targeting/tagging-roles-tag-content-1.png

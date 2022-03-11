@@ -8,54 +8,57 @@
 Navigating Around Crafter Studio
 ================================
 
------
-Sites
------
-**Sites** is the first screen you will encounter after logging in to Crafter Studio.  This screen lists all of the websites you have been granted permission to.
-From this screen you can navigate to any site.  Your sites can be viewed either in a list or in a grid.
+--------
+Projects
+--------
+**Projects** is the first screen you will encounter after logging in to Crafter Studio.  This screen lists all of the projects you have been granted permission to.
+From this screen you can navigate to any project.  Your projects can be viewed either in a list or in a grid.
 
 
-Here's the **Sites** screen with the sites in a list:
+Here's the **Projects** screen with the projects in a list:
 
-.. image:: /_static/images/content-author/my-sites-screen.png
+.. image:: /_static/images/content-author/my-projects-screen.png
     :width: 75 %    
     :align: center
-    :alt: Navigating Studio - My Sites Screen List View
+    :alt: Navigating Studio - My Projects Screen List View
 
 |
 
-Here's the **Sites** screen with the sites in a grid:
+Here's the **Projects** screen with the projects in a grid:
 
-.. image:: /_static/images/content-author/my-sites-screen-grid.jpg
+.. image:: /_static/images/content-author/my-projects-screen-grid.jpg
     :width: 75 %
     :align: center
-    :alt: Navigating Studio - My Sites Screen Grid View
-
-You can get back to the **Sites** screen by:
-    * Clicking on the ``Navigation Menu`` icon at the top right corner, then click on "Sites" on the top left of the *Global* panel
-    * Or logging out (sign out) and logging back in (sign in) by selecting the ``Navigation Menu`` icon at the top right corner, then click on the logout icon on the bottom right of the *Global* panel
-
-.. image:: /_static/images/content-author/get-to-my-sites-1.jpg
-    :width: 65 %
-    :align: center
-    :alt: Navigating Studio - Get to My Sites Screen Crafter logo
+    :alt: Navigating Studio - My Projects Screen Grid View
 
 |
 
-.. image:: /_static/images/content-author/get-to-my-sites-2.jpg
+You can get back to the **Projects** screen by:
+    * Clicking on the ``Navigation Menu`` icon at the top right corner, then click on "Projects" on the top left of the *Global* panel
+
+.. image:: /_static/images/content-author/get-to-my-projects-1.jpg
     :width: 65 %
     :align: center
-    :alt: Navigating Studio - Get to My Sites Screen
+    :alt: Navigating Studio - Get to My Projects Screen via the Navigation Menu
 
-^^^^^^^^^^^^^
-Sites (Admin)
-^^^^^^^^^^^^^
-Crafter Studio administrators can also create and delete sites from this screen.
+|
 
-.. image:: /_static/images/content-author/site-delete.jpg
+.. image:: /_static/images/content-author/get-to-my-projects-2.jpg
+    :width: 65 %
+    :align: center
+    :alt: Navigating Studio - Get to My Projects Screen
+
+|
+
+^^^^^^^^^^^^^^^^
+Projects (Admin)
+^^^^^^^^^^^^^^^^
+Crafter Studio administrators can also create and delete projects from this screen.
+
+.. image:: /_static/images/content-author/project-delete.jpg
     :width: 75 %    
     :align: center
-    :alt: Navigating Studio - Delete Site
+    :alt: Navigating Studio - Delete Project
 
 
 .. _account-management:
@@ -69,7 +72,7 @@ To get to Account Management:
     * Click on the ``Navigation Menu`` icon at the top right corner
     * Click on **Account** under *Global*
 
-.. image:: /_static/images/content-author/site-account.jpg
+.. image:: /_static/images/content-author/project-account.png
     :width: 65 %
     :align: center
     :alt: Navigating Studio - Open My Account Settings Screen
@@ -81,57 +84,57 @@ To get to Account Management:
     :align: center
     :alt: Navigating Studio - Account Settings Screen
 
-.. _site-dashboard:
+.. _project-dashboard:
 
---------------
-Site Dashboard
---------------
-Each site has a Site Dashboard.  To view a site's dashboard, click on the ``Navigation Menu`` icon at the top right corner of the screen, or click on **Dashboard** at the top of the Sidebar.
+-----------------
+Project Dashboard
+-----------------
+Each project has a Project Dashboard.  To view a project's dashboard, click on the ``Navigation Menu`` icon at the top right corner of the screen, or click on **Dashboard** at the top of the Sidebar.
 
 Access the ``Dashboard`` from the ``Navigation Menu``
 
-.. image:: /_static/images/content-author/site-dashboard-alt.jpg
+.. image:: /_static/images/content-author/project-dashboard-alt.jpg
     :width: 65 %
     :align: center
-    :alt: Navigating Studio - Site Dashboard from the Navigation Menu
+    :alt: Navigating Studio - Project Dashboard from the Navigation Menu
 
 |
 
 Access the ``Dashboard`` from the ``Sidebar``
 
-.. image:: /_static/images/content-author/site-dashboard-sidebar.jpg
+.. image:: /_static/images/content-author/project-dashboard-sidebar.jpg
     :width: 65 %
     :align: center
-    :alt: Navigating Studio - Site Dashboard from Sidebar
+    :alt: Navigating Studio - Project Dashboard from Sidebar
 
 |
 
 
-This screen is an overview of the workflow for that given site.  The site dashboard has different widgets depending on your role.
+This screen is an overview of the workflow for that given project.  The project dashboard has different widgets depending on your role.
 
 Each dashboard has a header
 
    Expand Collapse control.  Each widget can be closed and opened to hide the items shown by the widget.  This setting is remembered by your browser
 
-   Widget title and count.  Most widgets include a count at the end of the name for the number of items in the widget
+   Dashlet title and count.  Most dashlets include a count at the end of the name for the number of items in the widget
 
-   Widget level options.  Options are different on each widget
+   Dashlet level options.  Options are different on each widget
 
-   Show count.  Some widgets allow the author to decide how many items they want to see in the widget
+   Show count.  Some dashlets allow the author to decide how many items they want to see in the dashlet
 
-   Content "type" filter:  Some widgets allow you to filter them by a broad content type (All, Pages, Components)
+   Content "type" filter:  Some dashlets allow you to filter them by a broad content type (All, Pages, Components)
 
 |
 |
 
-.. image:: /_static/images/content-author/site-dashboard.jpg
+.. image:: /_static/images/content-author/project-dashboard.jpg
     :width: 95 %
     :align: center
-    :alt: Navigating Studio - Site Dashboard
+    :alt: Navigating Studio - Project Dashboard
 
 |
 
-For the dashboard shown above, here are the widgets listed:
+For the dashboard shown above, here are the dashlets listed:
 
     * Items Waiting for Approval
         * Shows all items currently in workflow
@@ -161,7 +164,7 @@ For the dashboard shown above, here are the widgets listed:
 
             |workflowPage|:	A page is exactly what you would expect, it's a URI addressable object that represents a web page or resource.
 
-            |workflowComponent|: A component is an object that is generally not URI addressable on the website.  Examples are objects like Banners, Touts, Sidebar content etc. Components are usually re-usable assets that can be assigned and shared across many pages.
+            |workflowComponent|: A component is an object that is generally not URI addressable on the project.  Examples are objects like Banners, Touts, Sidebar content etc. Components are usually re-usable assets that can be assigned and shared across many pages.
 
             |workflowTaxonomy|: A taxonomy is an object the same as a component used for classifying items.
 
@@ -191,7 +194,7 @@ For the dashboard shown above, here are the widgets listed:
 
             |workflowNeverPub|:	You will find a * asterisk at the end of a content object's name if the content has never been pushed live. This helps authors quickly identify which objects that are in progress are already live and which ones are entirely new.
 
-            |workflowDisabled|:	You will find that some objects have a strike-through on their name, this means that the object is not deleted but it should not be displayed on the site.  It's essentially a logical delete.  Imagine a scenario where you need to take an object down immediately because of an inaccuracy while you make corrections.  Disable is perfect for this and several other scenarios.
+            |workflowDisabled|:	You will find that some objects have a strike-through on their name, this means that the object is not deleted but it should not be displayed on the project.  It's essentially a logical delete.  Imagine a scenario where you need to take an object down immediately because of an inaccuracy while you make corrections.  Disable is perfect for this and several other scenarios.
 
             |workflowInWorkflow|: Any item which carries the blue flag is in some sort of workflow
 
@@ -227,7 +230,7 @@ For the dashboard shown above, here are the widgets listed:
 |
 |
 
-.. image:: /_static/images/content-author/site-dashboard-selected.jpg
+.. image:: /_static/images/content-author/project-dashboard-selected.jpg
    :width: 95 %
    :align: center
    :alt: Navigating Studio - Dashboard Selected
@@ -240,19 +243,19 @@ For the dashboard shown above, here are the widgets listed:
 Preview
 -------
 
-Every site has a preview.  This allows users to see, edit and test the site in a safe authoring sandbox prior to publishing changes.
+Every project has a preview.  This allows users to see, edit and test the project in a safe authoring sandbox prior to publishing changes.
 
-    * Preview is a fully functional site but in a safe-to-edit environment.
+    * Preview is a fully functional project but in a safe-to-edit environment.
     * The top center shows workflow status and options (three dots) for the current page
     * Author can change the type of preview from one channel to another
     * Author can turn on in-context and drag and drop editing features
-    * Author can change the targeting attributes used to view the site
-    * Author can view the publish status of the site
+    * Author can change the targeting attributes used to view the project
+    * Author can view the publish status of the project
 
-.. image:: /_static/images/content-author/site-preview.jpg
+.. image:: /_static/images/content-author/project-preview.jpg
    :width: 95 %
    :align: center
-   :alt: Navigating Studio - Site Preview
+   :alt: Navigating Studio - Project Preview
 
 |
 
@@ -262,13 +265,13 @@ Experience Builder Panel
 
     * When in preview mode your context navigation will show an additional control beside the publishing status.
     * The ``Edit Mode`` and ``Move mode`` icons turns on the Experience Builder panel which allows you to use in-context editing and various tools for creating your page in a panel on the right
-    * ``Search`` allows you to search for items such as components, images, etc. in your site
-    * ``Components`` allows you to create a component and also lists all available components in your site which can then be dragged and dropped into your page
+    * ``Search`` allows you to search for items such as components, images, etc. in your project
+    * ``Components`` allows you to create a component and also lists all available components in your project which can then be dragged and dropped into your page
     * ``Browse Components`` allows you to browse for components which can then be dragged and dropped into your page
     * ``Component Drop Targets`` allows you to select a content type, which then shows you the drag and drop area for that content type
-    * ``Assets`` allows you to search/list assets such as images in the site
-    * ``Audience Targeting`` allows you to view and set targeting attributes for the site.
-    * ``Page Explorer`` allows you to browse/list pages in the site
+    * ``Assets`` allows you to search/list assets such as images in the project
+    * ``Audience Targeting`` allows you to view and set targeting attributes for the project.
+    * ``Page Explorer`` allows you to browse/list pages in the project
     * ``Device Simulator`` allows you to change the type of preview from one device to another e.g. phone to tablet
     * ``Settings`` allows you to turns on/off in-context editing and setup highlighting of drop zones
 
@@ -306,7 +309,7 @@ Convenient keyboard shortcuts are also provided, press ``?`` to see the list of 
 Search
 ^^^^^^
 
-The Search tool allows you to search for components and static assets in the site then display the results from which the user can drag and drop into the current page being viewed if there are configured drop targets in it
+The Search tool allows you to search for components and static assets in the project then display the results from which the user can drag and drop into the current page being viewed if there are configured drop targets in it
 
 .. image:: /_static/images/content-author/preview-experience-builder-search.jpg
     :width: 20 %
@@ -315,9 +318,9 @@ The Search tool allows you to search for components and static assets in the sit
 
 |
 
-Components
-^^^^^^^^^^
-The Components tool allows you to create new components by dragging components from the panel and on to the screen to configured drop targets.  A new component with default values will then be visible and ready for editing when a new component is dropped on the screen.
+Add Components
+^^^^^^^^^^^^^^
+The ``Add Components`` tool allows you to create new components by dragging components from the panel and on to the screen to configured drop targets.  A new component with default values will then be visible and ready for editing when a new component is dropped on the screen.
 
 .. image:: /_static/images/content-author/preview-page-components-list.png
     :width: 20 %
@@ -339,7 +342,7 @@ The Components tool allows you to create new components by dragging components f
 
 |
 
-You may drag around a component from one position to a different position.
+You may drag around a component from one position to a different position by enabling the ``Move mode`` (by clicking the ``Move mode`` icon at the top right, or by using the keyboard shortcut).
 Crafter Studio administrators can configure what components are available in this panel.
 
 .. image:: /_static/images/content-author/preview-page-components-drag.jpg
@@ -351,7 +354,7 @@ Crafter Studio administrators can configure what components are available in thi
 
 Browse Components
 ^^^^^^^^^^^^^^^^^
-The Browse Components tool allows you to search / select a content type in the site then display the existing components for that content type that can be dragged and dropped into the current page being viewed if there are configured drop targets in it
+The Browse Components tool allows you to search / select a content type in the project then display the existing components for that content type that can be dragged and dropped into the current page being viewed if there are configured drop targets in it
 
 .. image:: /_static/images/content-author/preview-page-builder-browse-components.png
     :width: 30 %
@@ -360,10 +363,10 @@ The Browse Components tool allows you to search / select a content type in the s
 
 |
 
-When you drag a component into the page being previewed and there are no drop zones configured in the page, you will see a snackbar like below:
+When you drag a component into the page being previewed and there are no drop zones configured in the page, you will see a snack bar like below:
 
-.. image:: /_static/images/content-author/preview-page-builder-no-drop-targets.png
-    :width: 30 %
+.. image:: /_static/images/content-author/preview-page-builder-no-drop-targets.jpg
+    :width: 80 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel No Drop Targets
 
@@ -371,7 +374,7 @@ When you drag a component into the page being previewed and there are no drop zo
 
 Component Drop Targets
 ^^^^^^^^^^^^^^^^^^^^^^
-The Component Drop Targets tool allows you to select a content type in the site then display the configured drop target for that content type on the current page being previewed
+The Component Drop Targets tool allows you to select a content type in the project then display the configured drop target for that content type on the current page being previewed
 
 .. image:: /_static/images/content-author/preview-page-builder-component-drop-targets.jpg
     :width: 70 %
@@ -382,7 +385,7 @@ The Component Drop Targets tool allows you to select a content type in the site 
 
 Assets
 ^^^^^^
-The Assets tool allows you to search/list assets such as images that can be dragged into configured drop targets in the site
+The Assets tool allows you to search/list assets such as images that can be dragged into configured drop targets in the project
 
 .. image:: /_static/images/content-author/preview-page-builder-assets.jpg
     :width: 30 %
@@ -393,7 +396,7 @@ The Assets tool allows you to search/list assets such as images that can be drag
 
 Audience Targeting
 ^^^^^^^^^^^^^^^^^^
-The Audience Targeting tool allows you to view and set targeting attributes for the site
+The Audience Targeting tool allows you to view and set targeting attributes for the project
 
 .. image:: /_static/images/content-author/preview-page-builder-audience-targeting.png
     :width: 30 %
@@ -405,7 +408,7 @@ The Audience Targeting tool allows you to view and set targeting attributes for 
 
 Page Explorer
 ^^^^^^^^^^^^^
-The Page Explorer tool allows you to browse/list content items such as pages, components and level descriptors in the site and make edits to them by clicking on the three dots next to the content item that appears when you hover your mouse on it
+The Page Explorer tool allows you to browse/list content items such as pages, components and level descriptors in the project and make edits to them by clicking on the three dots next to the content item that appears when you hover your mouse on it
 
 .. image:: /_static/images/content-author/preview-page-builder-page-explorer.png
     :width: 30 %
@@ -416,7 +419,7 @@ The Page Explorer tool allows you to browse/list content items such as pages, co
 
 Device Simulator
 ^^^^^^^^^^^^^^^^
-The Device Simulator tool allows an author to review the current page in the context of all devices supported by the website.
+The Device Simulator tool allows an author to review the current page in the context of all devices supported by the project.
 
 The phone and tablet can be rotated through the use of the rotation control next to the width and height input boxes.
 
@@ -451,34 +454,39 @@ other options relative to the page you are looking at, content you have selected
 The basic elements of the Contextual Navigation bar are:
 
     * Branded Logo Button: Toggles the sidebar on/off.
-    * Site Name and Site switcher: Displays the site's name and lets you switch the site being previewed through a dropdown
-    * Quick Create: A shortcut for content authors to create configured content without having to navigate through the site tree.
+    * Project Name and Project switcher: Displays the project's name and lets you switch the project being previewed through a dropdown
+    * Quick Create: A shortcut for content authors to create configured content without having to navigate through the project tree.
     * Preview Address Bar: An area reserved for navigation buttons (back, forward and reload page), the address of the current  page being previewed, and an options link whose content will change based off of the current page view and user role.
     * Edit Mode Switch: Toggles the in-context editing and Experience Builder panel on/off
-    * Publish Status: Allows the user to view the site's publish status.
-    * Navigation Menu: Takes the user to a panel with ``Global`` and ``Site`` options containing various links such as Dashboard, About, Help, etc.
+    * Publish Status: Allows the user to view the project's publish status.
+    * Search: Allows the user to search for items in the project
+    * Navigation Menu: Takes the user to a panel with ``Global`` and ``Project`` options containing various links such as Dashboard, About, Help, etc.
 
-.. image:: /_static/images/content-author/site-context-nav.jpg
+.. image:: /_static/images/content-author/project-context-nav.jpg
     :width: 95 %
     :align: center
-    :alt: Navigating Studio - Site Context Navigation
+    :alt: Navigating Studio - Project Context Navigation
+
+|
 
 Sidebar
 ^^^^^^^
 The sidebar opens a menu that allows access to the following:
 
-    - *Dashboard:* An overview of the workflow for that given site.  See :ref:`above <site-dashboard>` for more information
-    - *Site Explorer:* Allows navigation to all pages, components and documents in the system
-    - *Site Tools (available depending on your role):* Contains site administration tools such as Plugin Management, Encryption Tool, etc.  See :ref:`here <navigating-site-tools>` for more information
+    - *Dashboard:* An overview of the workflow for that given project.  See :ref:`above <project-dashboard>` for more information
+    - *Project Explorer:* Allows navigation to all pages, components and documents in the system
+    - *Project Tools (available depending on your role):* Contains project administration tools such as Plugin Management, Encryption Tool, etc.  See :ref:`here <navigating-project-tools>` for more information
 
 The menu/panel width can be resized freely by the user and will remember where you set the length and width on your browser
 
-.. image:: /_static/images/content-author/sidebar-panel-width.png
+.. image:: /_static/images/content-author/sidebar-panel-width.jpg
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Sidebar Panel menu width
 
-**Site Explorer**
+|
+
+**Project Explorer**
 
 * Users can have multiple navigation paths / path tree open at the same time e.g. templates, pages, etc.
 * If closed, the menu should retain it's last state when re-opened.
@@ -486,10 +494,12 @@ The menu/panel width can be resized freely by the user and will remember where y
 * Root folders allow a user to drill in to a hierarchy of content. If the item is previewable it will also be clickable.
 * Clicking on an item will take the author to a preview of the item.
 
-.. image:: /_static/images/content-author/site-tools-path-nav.png
+.. image:: /_static/images/content-author/project-tools-path-nav.png
     :width: 25 %
     :align: center
-    :alt: Navigating Studio - Site Tools Navigation
+    :alt: Navigating Studio - Project Tools Navigation
+
+|
 
 * Clicking the three dots next to each item or right-clicking on an item provides the user options whose content will change based off of the item selected and user role.
 

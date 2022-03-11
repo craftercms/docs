@@ -8,7 +8,7 @@
 Crafter Core
 ============
 
-Crafter Core is the content rendering library for Crafter CMS.
+Crafter Core is the content rendering library for CrafterCMS.
 
 -----------
 Source Code
@@ -36,6 +36,6 @@ ReST API
 Configuration
 -------------
 
-Crafter Core is configured through the rest of the projects comprising Crafter CMS.
+Crafter Core is configured through the rest of the projects comprising CrafterCMS.
 
 

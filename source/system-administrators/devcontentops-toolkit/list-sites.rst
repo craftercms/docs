@@ -4,11 +4,19 @@
 
 .. _crafter-cli-list-sites:
 
-============
+==========
 list-sites
-============
+==========
+
+|
 
 List the sites that the current user can access
+
+|
+
+   .. note::
+
+      The connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command before using the command listed here.
 
 -----
 Usage

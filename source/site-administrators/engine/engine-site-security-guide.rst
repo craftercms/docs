@@ -1,20 +1,20 @@
 :is-up-to-date: True
 
-.. index:: Engine Site Security Guide
+.. index:: Engine Project Security Guide
 
 .. highlight:: groovy
    :linenothreshold: 5
 
 .. _engine-site-security-guide:
 
-==========================
-Engine Site Security Guide
-==========================
+=============================
+Engine Project Security Guide
+=============================
 
 The following guide will help you configure Crafter Engine to:
 
 #. Add authentication for your website.
-#. Add authorization so that access to certain pages and URLs of your site are restricted.
+#. Add authorization so that access to certain pages and URLs of your project are restricted.
 
 Crafter Engine is able to integrate with multiple authentication providers:
 
@@ -68,7 +68,7 @@ To add logout, just add a link in the global header that points to /crafter-secu
 Add Authorization
 -----------------
 
-Adding authorization allows restricted access to certain pages and URLs of your site depending on what is setup.
+Adding authorization allows restricted access to certain pages and URLs of your project depending on what is setup.
 
 Restrict Pages
 ==============
@@ -85,12 +85,12 @@ the next steps to create in the page content type a Repeating Group with a text 
     field to "authorizedRoles."
 
     .. image:: /_static/images/site-admin/authorized_roles_properties.png
-        :alt: Engine Site Security Guide - Authorized Roles Properties
+        :alt: Engine Project Security Guide - Authorized Roles Properties
 
     |
 
        .. warning::
-           The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by Crafter CMS.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
+           The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS.  For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
            The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
 
@@ -99,18 +99,18 @@ the next steps to create in the page content type a Repeating Group with a text 
     **Required** field in the **Properties Explorer**.
 
     .. image:: /_static/images/site-admin/role_properties.png
-        :alt: Engine Site Security Guide - Role Properties
+        :alt: Engine Project Security Guide - Role Properties
 
     |
 
        .. warning::
-           The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as the ``role`` variable name is used by Crafter CMS for enforcing access to a page.  For a list of variable names used by Crafter CMS, see :ref:`form-control-variable-names` for more information
+           The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page.  For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
 
 #.  Save the changes. The added fields should look like this:
 
     .. image:: /_static/images/site-admin/authorization_section.png
-        :alt: Engine Site Security Guide - Authorization Section
+        :alt: Engine Project Security Guide - Authorization Section
 
     |
 
@@ -129,9 +129,9 @@ by Crafter Engine is described below:
 Restrict URLs
 =============
 
-Sometimes it is not enough to restrict a single page. Sometimes you need to restrict an entire site subtree, or 
-restrict several static assets. For this, Crafter CMS provides configuration parameters that allow you to restrict 
-access based on URL patterns. You just need to add configuration similar to the following in Config > Engine Site Configuration:
+Sometimes it is not enough to restrict a single page. Sometimes you need to restrict an entire project subtree, or
+restrict several static assets. For this, CrafterCMS provides configuration parameters that allow you to restrict 
+access based on URL patterns. You just need to add configuration similar to the following in Config > Engine Project Configuration:
 
 .. code-block:: xml
     :linenos:
@@ -188,7 +188,7 @@ authentication provider used, but you can always obtain an instance of |CustomUs
 Migrating from Crafter Profile
 ==============================
 
-Prior to version ``3.1.5`` Crafter Profile was the only security provider available, all sites created in previous
+Prior to version ``3.1.5`` Crafter Profile was the only security provider available, all projects created in previous
 versions will continue to work without any changes, however if you need to migrate to a different provider like SAML2
 you will need to replace all uses of the ``profile`` and ``authentication`` variables, both have been replaced with
 ``authToken``.

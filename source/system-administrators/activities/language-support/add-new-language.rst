@@ -153,7 +153,7 @@ Remember to change the language code in the all the ``registerBundle`` calls in 
 
      {
        "blueprint.by": "バイ",
-       "blueprint.crafterCMS": "Crafter CMS",
+       "blueprint.crafterCMS": "CrafterCMS",
        "blueprint.license": "ライセンス",
        ...
 

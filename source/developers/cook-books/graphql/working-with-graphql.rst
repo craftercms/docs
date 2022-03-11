@@ -8,31 +8,31 @@
 Working with GraphQL
 ====================
 
-Crafter CMS provides built-in support for GraphQL to query content in any site without writing additional code.
-A GraphQL schema is generated independently for each site based on the content-type configuration that has been 
+CrafterCMS provides built-in support for GraphQL to query content in any project without writing additional code.
+A GraphQL schema is generated independently for each project based on the content-type configuration that has been
 created using Crafter Studio, and the schema is automatically updated after any change is detected.
 
-To implement a site that uses GraphQL you would follow a workflow like this:
+To implement a project that uses GraphQL you would follow a workflow like this:
 
-1. Create a new site (if needed, for existing sites skip to step number 3)
-2. Define the content model for your site
-3. Obtain the GraphQL schema for your site, you can use the provided GraphiQL client or any third party client
-4. Develop GraphQL queries to use in your site or external app
+1. Create a new project (if needed, for existing projects skip to step number 3)
+2. Define the content model for your project
+3. Obtain the GraphQL schema for your project, you can use the provided GraphiQL client or any third party client
+4. Develop GraphQL queries to use in your project or external app
 
 All content changes made by authors in Crafter Studio will be immediately available in GraphQL queries.
 
 When a change is made in the content model, for example adding a new field or creating a new content-type, the
-GraphQL schema will be rebuilt to reflect the same changes. So for a Crafter CMS site that uses GraphQL queries the
+GraphQL schema will be rebuilt to reflect the same changes. So for a CrafterCMS project that uses GraphQL queries the
 development process would look like this:
 
 1. Developers define the base content model
-2. Developers define the site base GraphQL queries to use the latest schema
+2. Developers define the project base GraphQL queries to use the latest schema
 3. Content authors create content based on the model
 4. Publishers review & approve the author's work
 5. Publishers publish to live both the content model configuration & the content updates
 6. Crafter Deployer will handle the GraphQL schema rebuild in delivery
 
-You can also use the Crafter CMS GraphQL API from an external site or application, however in this case you will need to
+You can also use the CrafterCMS GraphQL API from an external project or application, however in this case you will need to
 handle the schema reload using third party tools.
 
 --------------------------------
@@ -40,11 +40,11 @@ Using GraphiQL in Crafter Studio
 --------------------------------
 
 GraphiQL is a simple GraphQL client that you can use in Crafter Studio to run GraphQL queries and explore the schema 
-documentation for a site without the need of any other tool. To access GraphiQL follow these steps:
+documentation for a project without the need of any other tool. To access GraphiQL follow these steps:
 
 1. Login to Crafter Studio
-2. Click ``Dashboard`` next to the name of your site
-3. Click ``Site Config`` in the left sidebar
+2. Click on the CrafterCMS logo to toggle the sidebar open
+3. Click ``Project Tools`` in the left sidebar
 4. Click ``GraphiQL`` in the left sidebar
 
 To explore the GraphQL schema you can click the ``Docs`` icon on the right side:
@@ -77,9 +77,9 @@ GraphQL Examples
 ----------------
 
 Here you can find some examples on how to query content using GraphQL. The following examples use the built-in 
-``Website Editorial`` blueprint but the same concepts apply to any Crafter CMS site.
+``Website Editorial`` blueprint but the same concepts apply to any CrafterCMS project.
 
-For each content-type in the site you will find a field in the root Query, the name of the field is based on the
+For each content-type in the project you will find a field in the root Query, the name of the field is based on the
 name of the content-type so for ``/page/article`` the field will be ``page_article``.
 These fields contain two sub-fields, one is the ``total`` number of items found by the query and the other is a list
 of ``items``.
@@ -89,7 +89,7 @@ of ``items``.
   field name contains the dash ``-`` character it will be replaced with a double underscore ``__``. To avoid 
   unnecessary long names it is suggested to use only ``_`` or ``camelCase`` notation if possible.
 
-One of simplest GraphQL queries you can run in Crafter CMS sites is to find all items of a given content-type.
+One of simplest GraphQL queries you can run in CrafterCMS projects is to find all items of a given content-type.
 
 .. code-block:: text
   :linenos:

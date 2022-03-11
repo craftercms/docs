@@ -4,26 +4,26 @@
 
 .. _engine-site-configuration-files:
 
-Engine Site Configuration Files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Engine Project Configuration Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The main configuration files related to Crafter Engine for a site are the following:
+The main configuration files related to Crafter Engine for a project are the following:
 
-+----------------------------------------------+--------------------------------------------------+
-| Configuration File                           | Description                                      |
-+==============================================+==================================================+
-|| Engine Site Configuration                   | Contains site properties used by Crafter Engine  |
-|| ``site-config.xml``                         |                                                  |
-+----------------------------------------------+--------------------------------------------------+
-|| Engine Site Application Context             | Contains bean definitions for the site context   |
-|| ``application-context.xml``                 | associated with the webapp                       |
-+----------------------------------------------+--------------------------------------------------+
-|| Engine URL Rewrite Configuration (XML Style)| Contains URL rewrite rules                       |
-|| ``urlrewrite.xml``                          |                                                  |
-+----------------------------------------------+--------------------------------------------------+
++----------------------------------------------+---------------------------------------------------+
+| Configuration File                           | Description                                       |
++==============================================+===================================================+
+|| Engine Project Configuration                | Contains project properties used by Crafter Engine|
+|| ``site-config.xml``                         |                                                   |
++----------------------------------------------+---------------------------------------------------+
+|| Engine Project Application Context          | Contains bean definitions for the project context |
+|| ``application-context.xml``                 | associated with the webapp                        |
++----------------------------------------------+---------------------------------------------------+
+|| Engine URL Rewrite Configuration (XML Style)| Contains URL rewrite rules                        |
+|| ``urlrewrite.xml``                          |                                                   |
++----------------------------------------------+---------------------------------------------------+
 
-These site configuration files are located under ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine`` where ``CRAFTER_HOME`` is the install directory of your Crafter CMS and ``SITENAME`` is the name of the site being configured.
+These projecct configuration files are located under ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine`` where ``CRAFTER_HOME`` is the install directory of your CrafterCMS and ``SITENAME`` is the name of the project being configured.
 
 These files can be accessed by navigating from the Studio Sidebar to |siteConfig| ➜ ``Configuration``, then selecting the desired Engine configuration option from the dropdown.
 
-For more information on how to configure site settings related to Crafter Engine see :ref:`engine_configuration`
+For more information on how to configure project settings related to Crafter Engine see :ref:`engine_configuration`

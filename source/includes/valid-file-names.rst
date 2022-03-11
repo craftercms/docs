@@ -1,4 +1,4 @@
-Crafter CMS supports the following characters in file and folder names:
+CrafterCMS supports the following characters in file and folder names:
 
 ``Alphanumeric, ,_,-,(,)``
 

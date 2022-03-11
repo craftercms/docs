@@ -6,7 +6,7 @@
 Tenants Management
 ==================
 
-Tenants can be used to organize profiles separating them by company or department or site.  This
+Tenants can be used to organize profiles separating them by company or department or project.  This
 allows better control over data access by the applications.
 
 After the installation there is only one tenant named ``default``, it will include the roles and
@@ -71,13 +71,13 @@ Fields
 +-----------------------+-------------+---------+------------------------------------------------+
 
    .. note::
-      For Crafter CMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` instead of ``CRAFTER_`` and can't be changed via site configuration.
+      For CrafterCMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` instead of ``CRAFTER_`` and can't be changed via project configuration.
 
 ^^^^^^^^^^^^^^^^^^^^
 Profile Verification
 ^^^^^^^^^^^^^^^^^^^^
 
-If your site or application will be open to the general public, it is a good idea to avoid spam by
+If your project or application will be open to the general public, it is a good idea to avoid spam by
 enabling the profile verification feature. When a tenant has this feature enabled and you
 include the ``crafter.profile.management.profile.verificationUrl`` property in the configuration,
 all new users will receive a verification email and the profile will be enabled only when the
@@ -96,7 +96,7 @@ process is completed.
 Roles
 ^^^^^
 
-Roles are simple strings used to differentiate users for business logic.  In your site or
+Roles are simple strings used to differentiate users for business logic.  In your project or
 application you can check if a profile has certain roles to choose what content they can see
 or change.
 
@@ -113,7 +113,7 @@ make sure only the appropriate users are able to change sensitive content.
 Attribute Definitions
 ^^^^^^^^^^^^^^^^^^^^^
 
-A tenant can have any number of custom attributes according to the needs of each site or
+A tenant can have any number of custom attributes according to the needs of each project or
 application.  The attributes are used to store meta data used in the business logic.
 When a new profile is created you can set a value for each one of the attributes defined in the
 tenant.

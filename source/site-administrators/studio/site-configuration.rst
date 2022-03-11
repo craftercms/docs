@@ -1,19 +1,19 @@
 :is-up-to-date: True
 
-.. index:: Site Configuration
+.. index:: Project Configuration
 
 .. _site-configuration:
 
-##################
-Site Configuration
-##################
+#####################
+Project Configuration
+#####################
 
-The site configuration file contains the primary configuration for Crafter Studio's behavior. Each site has its own site configuration file that controls its behavior independently of other sites.
+The project configuration file contains the primary configuration for Crafter Studio's behavior. Each project has its own project configuration file that controls its behavior independently of other projects.
 
-To modify the site configuration, click on |siteConfig| from the *Sidebar*, then click on **Configuration** and select **Site Configuration** from the list.
+To modify the project configuration, click on |siteConfig| from the *Sidebar*, then click on **Configuration** and select **Project Configuration** from the list.
 
 .. image:: /_static/images/site-admin/config-open-site-config.jpg
-    :alt: Configurations - Open Site Configuration
+    :alt: Configurations - Open Project Configuration
     :width: 65 %
     :align: center
 
@@ -23,7 +23,7 @@ To modify the site configuration, click on |siteConfig| from the *Sidebar*, then
 Sample
 ******
 
-Here's a sample Site Configuration file (click on the triangle on the left to expand/collapse):
+Here's a sample Project Configuration file (click on the triangle on the left to expand/collapse):
 
 .. raw:: html
 
@@ -44,11 +44,11 @@ Here's a sample Site Configuration file (click on the triangle on the left to ex
 
 .. _studio-site-time-zone:
 
-**************
-Site Time Zone
-**************
+*****************
+Project Time Zone
+*****************
 
-The :ref:`default dates and times <server-time-zone>` used for displays in Studio is UTC.  To customize how dates & times get displayed on Studio UI for a site, edit the following:
+The :ref:`default dates and times <server-time-zone>` used for displays in Studio is UTC.  To customize how dates & times get displayed on Studio UI for a project, edit the following:
 
 .. code-block:: xml
    :linenos:
@@ -90,7 +90,7 @@ The :ref:`default dates and times <server-time-zone>` used for displays in Studi
 Enabling Staging
 ****************
 
-The ``staging`` publishing target is an intermediate publishing target where the site can be fully exercised.  To enable the ``staging`` publishing target, set the following to ``true``:
+The ``staging`` publishing target is an intermediate publishing target where the project can be fully exercised.  To enable the ``staging`` publishing target, set the following to ``true``:
 
 .. code-block:: xml
 
@@ -145,13 +145,13 @@ To make comments mandatory for different publishing methods, simply set to ``tru
 
 |
 
-See :ref:`publishing-and-status` for more information on the different publishing methods available from ``Site Tools``
+See :ref:`publishing-and-status` for more information on the different publishing methods available from ``Project Tools``
 
 ******************
 Content Monitoring
 ******************
 
-Content monitoring allows you to configure watches and notifications on your site. To add content monitors, add the following:
+Content monitoring allows you to configure watches and notifications on your project. To add content monitors, add the following:
 
 .. code-block:: xml
 

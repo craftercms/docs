@@ -9,13 +9,13 @@
 .. _running-craftercms-in-docker:
 
 -----------------------------------------
-Running Crafter CMS in a Docker Container
+Running CrafterCMS in a Docker Container
 -----------------------------------------
 
    .. note::
-      The preferred method of installing and running Crafter CMS is via the prebuilt binaries.  See the :ref:`quick_start_guide` for more information on the preferred method of installation.
+      The preferred method of installing and running CrafterCMS is via the prebuilt binaries.  See the :ref:`quick_start_guide` for more information on the preferred method of installation.
 
-To run Crafter CMS in a Docker container using Docker Compose, make sure the following are installed in your local system:
+To run CrafterCMS in a Docker container using Docker Compose, make sure the following are installed in your local system:
 
 * Docker (https://docs.docker.com/install/)
 * Docker Compose (https://docs.docker.com/compose/install/)
@@ -28,7 +28,7 @@ To run Crafter CMS in a Docker container using Docker Compose, make sure the fol
     :width: 80%
     :align: center
 
-#. Clone the Crafter CMS Docker Compose repo from GitHub
+#. Clone the CrafterCMS Docker Compose repo from GitHub
 
    .. code-block:: bash
 
@@ -63,9 +63,9 @@ To run Crafter CMS in a Docker container using Docker Compose, make sure the fol
           tomcat_1         | 02-Jun-2020 14:26:47.448 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 54120 ms
 
 
-You may now follow the instructions listed in the guide :ref:`above:<installing-crafter-cms-from-prebuilt-binaries>` starting from the step :ref:`Access Crafter Studio <accessing-crafter-studio>` to start using Crafter CMS.
+You may now follow the instructions listed in the guide :ref:`above:<installing-crafter-cms-from-prebuilt-binaries>` starting from the step :ref:`Access Crafter Studio <accessing-crafter-studio>` to start using CrafterCMS.
 
-The console output when you start the container (as shown above) contains useful information that you can use to debug or monitor the status of Crafter CMS.  To view more of the logs, the Docker Desktop Dashboard provides a runtime view of all your containers and applications, including logs for monitoring/debugging Crafter CMS.  To access the Docker Desktop Dashboard, from the **Docker menu**, select **Dashboard**.
+The console output when you start the container (as shown above) contains useful information that you can use to debug or monitor the status of CrafterCMS.  To view more of the logs, the Docker Desktop Dashboard provides a runtime view of all your containers and applications, including logs for monitoring/debugging CrafterCMS.  To access the Docker Desktop Dashboard, from the **Docker menu**, select **Dashboard**.
 
 .. image:: /_static/images/quick-start/docker-desktop-open-dashboard.jpg
    :alt: Open Docker Desktop Dashboard
@@ -88,4 +88,4 @@ When the ``authoring`` application displayed above is selected, the application 
 
 For more information on Docker Desktop Dashboard, see https://docs.docker.com/desktop/dashboard/
 
-For more information on Crafter CMS Docker Compose, please see: https://github.com/craftercms/docker-compose.
+For more information on CrafterCMS Docker Compose, please see: https://github.com/craftercms/docker-compose.

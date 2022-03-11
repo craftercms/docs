@@ -4,9 +4,9 @@
 
 .. _engine-headers-authentication:
 
-===================================
-Engine Headers Based Authentication
-===================================
+====================================================
+Engine Headers Based Authentication |enterpriseOnly|
+====================================================
 
 Crafter Engine is able to integrate with any authentication system that sends custom HTTP headers containing
 information that will be used to authenticate the user in Engine.  This section details how to setup Engine for
@@ -25,12 +25,12 @@ allow exposing attributes from the external authentication authority.
 Configure Engine for Headers Based Authentication
 -------------------------------------------------
 
-To enable Engine headers based authentication, open the Engine site configuration file ``site-config.xml``.
+To enable Engine headers based authentication, open the Engine project configuration file ``site-config.xml``.
 
 Set ``security.headers.standalone`` to ``true``
 
    .. code-block:: xml
-      :caption: *Engine Site Configuration  - Enable headers authentication*
+      :caption: *Engine Project Configuration  - Enable headers authentication*
       :emphasize-lines: 4
 
       <security>
@@ -46,7 +46,7 @@ Next, configure the URLs you require authentication by setting ``url`` to desire
 ``isAuthenticated()`` like below:
 
    .. code-block:: xml
-      :caption: *Engine Site Configuration  - setup url restrictions*
+      :caption: *Engine Project Configuration  - setup url restrictions*
       :emphasize-lines: 3-6
 
       <security>
@@ -74,7 +74,7 @@ From the above configuration, here are the headers that Engine expects to be pro
 It is also possible to change the prefix and names for the headers:
 
 .. code-block:: xml
-   :caption: *Engine Site Configuration  - change default header names*
+   :caption: *Engine Project Configuration  - change default header names*
    :linenos:
 
    <security>
@@ -104,7 +104,7 @@ It is also possible to change the prefix and names for the headers:
 |
 
    .. note::
-      For Crafter CMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` and can't be changed via site configuration
+      For CrafterCMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` and can't be changed via project configuration
 
 
 The default value of the token is ``my_secure_token``.  Remember to replace the default value by setting
@@ -112,7 +112,7 @@ The default value of the token is ``my_secure_token``.  Remember to replace the 
 ``CHANGE_MY_TOKEN_VALUE``
 
    .. code-block:: xml
-      :caption: *Engine Site Configuration  - Change the default value of the token*
+      :caption: *Engine Project Configuration  - Change the default value of the token*
       :emphasize-lines: 4
 
       <security>
@@ -129,7 +129,7 @@ Optional Role Mappings
 To add optional role mappings, add the following inside the ``<headers>`` tag:
 
    .. code-block:: xml
-      :caption: *Engine Site Configuration  - setup optional role mappings in header*
+      :caption: *Engine Project Configuration  - setup optional role mappings in header*
       :emphasize-lines: 5-8
 
       <security>
@@ -160,7 +160,7 @@ Optional Attributes
 To add optional attributes, add the following inside the ``<headers>`` tag:
 
    .. code-block:: xml
-      :caption: *Engine Site Configuration  - setup optional attributes in header*
+      :caption: *Engine Project Configuration  - setup optional attributes in header*
       :linenos:
       :emphasize-lines: 5-10
 
@@ -192,7 +192,7 @@ To get the value of the attribute passed in the header, use the following ``auth
 Example
 -------
 
-Let's take a look at an example of setting up Engine headers authentication using a site created using the Website
+Let's take a look at an example of setting up Engine headers authentication using a project created using the Website
 Editorial blueprint named ``mysite``.  We will also change the default value for the token header. We'll then take a
 look at an example of setting up Engine headers authentication with optional role mappings and attribute.
 
@@ -202,16 +202,16 @@ Simple Example Setting Up Engine Headers Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Open the Engine ``site-config.xml`` file in Studio, by navigating from the ``Sidebar`` to
-``Site Config`` > ``Configuration``, and finally picking up the ``Engine Site Configuration`` option from the dropdown.
+``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project Configuration`` option from the dropdown.
 
 You can also access the ``site-config.xml`` using your favorite editor under
 ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/site-config.xml``
 
 Add the following, where we are enabling Engine headers authentication and requiring authentication for all URLs in the
-site in addition to changing the default value for the token to ``my_updated_token``. :
+project in addition to changing the default value for the token to ``my_updated_token``. :
 
    .. code-block:: xml
-      :caption: *Engine Site Configuration  - Example enabling headers authentication*
+      :caption: *Engine Project Configuration  - Example enabling headers authentication*
 
       <?xml version="1.0" encoding="UTF-8"?>
       <site>
@@ -268,15 +268,15 @@ We'll now take a look at another example where we setup optional role mappings a
 
 We'll setup the ``admin`` and the ``user`` roles and add the attribute ``APP_FULL_NAME``.  We'll try to restrict
 access to ``/articles/**`` for users with the ``user`` or ``admin`` role, then we'll try to display the
-``APP_FULL_NAME`` value passed from the headers in our site.
+``APP_FULL_NAME`` value passed from the headers in our project.
 
 Open the Engine ``site-config.xml`` file in Studio, by navigating from the ``Sidebar`` to
-``Site Config`` > ``Configuration``, and finally picking up the ``Engine Site Configuration`` option from the dropdown.
+``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project Configuration`` option from the dropdown.
 
 Add the following to setup the ``admin`` and ``user`` role, and the attribute ``APP_FULL_NAME``:
 
    .. code-block:: xml
-      :caption: *Engine Site Configuration  - Example Engine headers authentication with optional role mappings and attribute*
+      :caption: *Engine Project Configuration  - Example Engine headers authentication with optional role mappings and attribute*
       :linenos:
       :emphasize-lines: 5, 13-22, 24-29
 

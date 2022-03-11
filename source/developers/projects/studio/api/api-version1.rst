@@ -145,7 +145,6 @@ Deployment
    :maxdepth: 1
 
    deployment/bulk-golive
-   deployment/get-available-publishing-channels
    deployment/get-scheduled-items
 
 ^^^^^^^
