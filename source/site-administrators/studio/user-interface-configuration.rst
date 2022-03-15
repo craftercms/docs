@@ -419,7 +419,7 @@ RTE Configuration for In-context Editing
 To configure the RTE for in-context editing, add/edit the widget ``craftercms.components.TinyMCE``:
 
 .. code-block:: xml
-   :captioin: *Example RTE configuration for ICE*
+   :caption: *Example RTE configuration for ICE*
    :linenos:
 
    <widget id="craftercms.components.TinyMCE">

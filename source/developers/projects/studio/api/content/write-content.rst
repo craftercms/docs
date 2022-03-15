@@ -195,7 +195,7 @@ Request
 
 .. code-block:: html
     :force:
-        :caption: *Request body*
+    :caption: *Request body*
 
     <#import "/templates/system/common/cstudio-support.ftl" as studio />
 
@@ -299,7 +299,7 @@ Request
       </body>
     </html>
 
-    |
+|
 
 Response
 ^^^^^^^^
