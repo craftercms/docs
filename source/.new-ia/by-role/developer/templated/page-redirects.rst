@@ -48,7 +48,7 @@ Save the changes by clicking on the ``Save`` button.  A dialog will pop up with 
 Create the page for redirecting
 -------------------------------
 
-Go back to site preview or dashboard and open the **Sidebar**.  Right click on ``Home`` and select ``New Content``.  Select the content type ``Page - Redirect`` created above.  Fill in **Page URL** with ``fashion``, **Internal Name** with ``fashion`` and **Redirect URL** with ``/style`` since we want the page to redirect to the category landing page for style, then click on **Save and Close**
+Go back to project preview or dashboard and open the **Sidebar**.  Right click on ``Home`` and select ``New Content``.  Select the content type ``Page - Redirect`` created above.  Fill in **Page URL** with ``fashion``, **Internal Name** with ``fashion`` and **Redirect URL** with ``/style`` since we want the page to redirect to the category landing page for style, then click on **Save and Close**
 
 .. image:: /_static/images/developer/redirect/page-redirect-fashion.png
     :alt: Redirect - Page redirect - fashion
@@ -61,4 +61,4 @@ Go back to preview or the dashboard.  In the **Sidebar**, click on **fashion** u
 
 Publish the page **fashion** to make it available in delivery.  To test it out in delivery, after publishing, in your browser, type in ``localhost:9080/fashion``.  You should then be taken to the category landing page for style.
 
-Next, let's try redirecting to another site instead of another page in our site.  Edit the **fashion** page by right clicking on **fashion** in the **Sidebar** and selecting **Edit**.  In the **Redirect URL** field, enter ``https://www.google.com``. Save and publish the changes.  Go back to your browser and type in ``localhost:9080/fashion``, the page should go to ``https://www.google.com``.
+Next, let's try redirecting to another project instead of another page in our project.  Edit the **fashion** page by right clicking on **fashion** in the **Sidebar** and selecting **Edit**.  In the **Redirect URL** field, enter ``https://www.google.com``. Save and publish the changes.  Go back to your browser and type in ``localhost:9080/fashion``, the page should go to ``https://www.google.com``.

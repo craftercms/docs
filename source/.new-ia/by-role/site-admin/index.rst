@@ -26,9 +26,9 @@ A site is a collection of related pages/components and assets.
 Localization
 ------------
 
-----------
-Site Tools
-----------
+-------------
+Project Tools
+-------------
 
 ----------------
 Sidebar cabinets

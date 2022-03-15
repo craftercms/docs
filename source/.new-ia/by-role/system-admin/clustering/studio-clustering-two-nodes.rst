@@ -20,9 +20,9 @@ Requirements
 ------------
 
 * At least 2 servers running Linux (Remember that Studio's cluster runs only in Linux)
-* Enterprise version of Crafter CMS
-* If using an enterprise Crafter CMS installed from a binary archive, ``Git`` is required by
-  Crafter CMS and may need to be installed if not already installed in the server.
+* Enterprise version of CrafterCMS
+* If using an enterprise CrafterCMS installed from a binary archive, ``Git`` is required by
+  CrafterCMS and may need to be installed if not already installed in the server.
 * Studio's clustering requires the ``libssl1.0.0`` (or ``libssl1.0.2``) shared library.
   Some Linux distros does not come with the library pre-installed and may need to be installed.
 
@@ -30,7 +30,7 @@ Requirements
 Configuring Nodes in the Cluster
 --------------------------------
 
-#. Install the Enterprise version of Crafter CMS on all the nodes
+#. Install the Enterprise version of CrafterCMS on all the nodes
 #. Configure the Git **repository clustering** for all nodes by configuring the following settings in the
    :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` file.
 
@@ -185,7 +185,10 @@ Configuring Nodes in the Cluster
       export CRAFTER_DB_CLUSTER_LOG_BASENAME=${CRAFTER_DB_CLUSTER_LOG_BASENAME:="crafter_cluster"}
       # Cluster wait interval for replica to be ready on startup
       export CRAFTER_DB_CLUSTER_REPLICA_READY_WAIT_INTERVAL=${CRAFTER_DB_CLUSTER_REPLICA_READY_WAIT_INTERVAL:="30000"}
-
+      # Database replication user
+      export MARIADB_REPLICATION_USER=${MARIADB_REPLICATION_USER:="crafter_replication"}
+      # Database replication password
+      export MARIADB_REPLICATION_PASSWD=${MARIADB_REPLICATION_PASSWD:="crafter_replication"}
 
    |
 

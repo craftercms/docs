@@ -8,9 +8,9 @@ Working with Dates and Time Zones in Freemarker
 
 There are times when we need to display dates in a certain format.  Things that we may want to format the dates displayed are dates in Email templates, dates in web pages, etc.  Freemarker has built-ins for dates to help with formatting displays.  To use a built-in, you need to use a ``?``, then the built-in.
 
-Let's look at some examples on how to use the Freemarker date built-ins.  We'll use a site created by using the Website_editorial blueprint.
+Let's look at some examples on how to use the Freemarker date built-ins.  We'll use a project created by using the Website_editorial blueprint.
 
-First, let's set the time zone in Crafter Engine.  From the **Sidebar**, click on |siteTools|, then click on **Configuration**.  Select **Engine Site Configuration** from the dropdown list, then enter the following into the configuration:
+First, let's set the time zone in Crafter Engine.  From the **Sidebar**, click on |siteTools|, then click on **Configuration**.  Select **Engine Project Configuration** from the dropdown list, then enter the following into the configuration:
 
 .. code-block:: xml
 
@@ -19,7 +19,7 @@ First, let's set the time zone in Crafter Engine.  From the **Sidebar**, click o
         <timeZone>America/Los_Angeles</timeZone>
     </site>
 
-We can now use the time zone we specified in the Engine Site Configuration file.  To access the time zone from the configuration, we use the freemarker variable ``siteTools`` provided by Crafter Engine to templates.  For more information on other variables available in the template, please see :ref:`templating-api`
+We can now use the time zone we specified in the Engine Project Configuration file.  To access the time zone from the configuration, we use the freemarker variable ``siteTools`` provided by Crafter Engine to templates.  For more information on other variables available in the template, please see :ref:`templating-api`
 
 We'll now edit the ``article.ftl`` template file, to display the date/time the article was created.
 
@@ -69,7 +69,7 @@ Which will output this:
     Wednesday, December 28, 2016, 05:00 AM (UTC)
 
 
-As you can see from the last two examples, the date and time the article was created is in UTC.  If we want to display it in the time zone specified in the `Engine Site Configuration` file, do the following:
+As you can see from the last two examples, the date and time the article was created is in UTC.  If we want to display it in the time zone specified in the `Engine Project Configuration` file, do the following:
 
 .. code-block:: html
 
@@ -87,7 +87,7 @@ Which will output this:
 Using the Freemarker time_zone and date_time Setting
 ----------------------------------------------------
 
-If we want to set the time zone used by the template to display dates, Freemarker provides a ``time_zone`` setting.  Once you set the time zone, all date displays will be in the time zone specified.  Let's set all the date and time display in the time zone we specified in the `Engine Site Config` file.
+If we want to set the time zone used by the template to display dates, Freemarker provides a ``time_zone`` setting.  Once you set the time zone, all date displays will be in the time zone specified.  Let's set all the date and time display in the time zone we specified in the `Engine Project Config` file.
 
 .. code-block:: html
     :force:

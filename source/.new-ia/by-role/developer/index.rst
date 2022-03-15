@@ -6,9 +6,13 @@
 Developers
 **********
 
-This section focuses on how to build content rich applications backed by CrafterCMS.  It covers the basic topics you need to define a content type and render that content as part of a page, component or service.  It also covers topics like building queries, accessing services and extending the core platforms.
+This section focuses on how to build content rich applications backed by CrafterCMS.  It covers
+the basic topics you need to define a content type and render that content as part of a page,
+component or service.  It also covers topics like building queries, accessing services and extending
+the core platforms.
 
-Developers need to be comfortable with Content Modeling (how to represent content in CrafterCMS for your application to retrieve said content), and how to access content items from your application/site.
+Developers need to be comfortable with Content Modeling (how to represent content in CrafterCMS
+for your application to retrieve said content), and how to access content items from your application/site.
 
 **Define Content**
 
@@ -60,4 +64,7 @@ Below is a short set of links to other documentation for technology that Crafter
 +----------------+------------------------------+-----------------------------------------------+
 
 .. note::
-   CrafterCMS is a Git-based CMS.  Please note that **your system's global git ignore file (list of rules for ignoring files in every Git repository on your computer) is respected by CrafterCMS**.  In case you find some of your content not being committed into CrafterCMS, check your global git ignore file to verify the content you're committing is not being ignored.
+   CrafterCMS is a Git-based CMS.  Please note that **your system's global git ignore file (list of
+   rules for ignoring files in every Git repository on your computer) is respected by CrafterCMS**.
+   In case you find some of your content not being committed into CrafterCMS, check your global
+   git ignore file to verify the content you're committing is not being ignored.

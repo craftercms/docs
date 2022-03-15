@@ -98,9 +98,9 @@ CrafterCMS will invoke the inheritance mechanics implemented in the merge strate
 
   .. note:: When an element is defined by the **level descriptor** and then subsequently defined by a child, the child's definition overrides the **level descriptor**.
 
-This mechanism allows you to define meta-data that flows down the information architecture of the site such that an entire site can have defaults and those defaults can be overwritten by sections individual page. Some examples of real-life use of inheritance:
+This mechanism allows you to define meta-data that flows down the information architecture of the project such that an entire project can have defaults and those defaults can be overwritten by sections individual page. Some examples of real-life use of inheritance:
 
-* Site logo
+* Project logo
 * Global stylesheet and JS includes
 * Global headers and footers
 * Section meta-data (flows to all pages/subsections)
@@ -146,7 +146,7 @@ Example of Out of the Box Strategy "inherit-levels"
 
 Let's take a look at an example of the out of the box strategy ``inherit-levels`` used in the Website Editorial blueprint.
 
-Let's begin by looking at the home page of a site created using the Website Editorial blueprint.  Take note of the top (header) and left (left-rail) side of the page.
+Let's begin by looking at the home page of a project created using the Website Editorial blueprint.  Take note of the top (header) and left (left-rail) side of the page.
 
 .. image:: /_static/images/developer/content-inheritance/home-page-view.jpg
     :width: 75%
@@ -182,7 +182,7 @@ The Website Editorial blueprint uses a ``Section Defaults`` component content ty
 
 |
 
-In the site explorer screens below, we have two section defaults (``crafter-level-descriptor.level.xml``) used, one residing under the **Home** folder, and another residing under **articles** folder.
+In the site tree screens below, we have two section defaults (``crafter-level-descriptor.level.xml``) used, one residing under the **Home** folder, and another residing under **articles** folder.
 
 .. image:: /_static/images/developer/content-inheritance/site-tree-section-default-home.png
     :width: 30%
@@ -286,7 +286,7 @@ Add ``file-name`` with default value ``crafter-level-descriptor.level`` and chec
 
 |
 
-Go to **Site Explorer**, create a new folder ``articles2`` under ``Home``, then copy some articles to this new location:
+Go to the Sidebar, create a new folder ``articles2`` under ``Home``, then copy some articles to this new location:
 
 .. image:: /_static/images/developer/content-inheritance/new_level_descriptor_create_folder.png
     :width: 30%

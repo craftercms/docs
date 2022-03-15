@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 
 .. index:: Rich Text Editor (RTE) Configuration;
 .. _newIa-rte-configuration:
@@ -28,13 +28,18 @@ What Out-of-the-Box Functionality Does Crafter Studio's RTE (TinyMCE 5) Support?
 
 Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.   You can find the documentation for these TinyMCE configurations and settings here: https://www.tiny.cloud/docs/
 
+There are two ways of editing content in Studio: (1) form-based editing and (2) In-context editing (ICE).  Form-based editing is done by clicking on ``Options`` (three dots next to the preview address bar at the top of the page, or the three dots next to the page in the Site Explorer tree), then selecting ``Edit``.  In-content editing is done by enabling the ``Edit mode`` by clicking on the pencil at the top right of the page (which turns green when enabled), then clicking on the section of the page you want to edit.
+
+This section details how to configure the RTE for form-based editing of content.  For more information on configuring the RTE for in-context editing (ICE), see :ref:`here <rte-config-for-ice>`
+
+
 ^^^^^^^^^^^^^^^
 TinyMCE plugins
 ^^^^^^^^^^^^^^^
 Crafter Studio uses standard TinyMCE plugins.  To see the list of TinyMCE plugins available in Studio, look for the ``<plugins />`` tag in the configuration:
 
 .. code-block:: xml
-   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-setup-tinymce5.xml*
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-config.xml*
 
    <plugins>
      print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template
@@ -60,7 +65,7 @@ Let's take a look at an example of using one of the TinyMCE plugins.
 
 The default editor instance contains a menubar with most of the commonly used editing tools.  Sometimes, you want handy buttons available so you don't have to find the tool you need from the menubar.  We'll add a media button to our editor instance to be able to embed a YouTube video:
 
-1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE Configuration*
 2. Add the button name **media** to one of the toolbarItem tags: ``<toolbarItems1>``.  An **Insert/Edit Embedded Media** button |rteMediaBtn| will now be available for users of the RTE.
 
    .. figure:: /_static/images/site-admin/rte/rte-media-button-added.jpg
@@ -93,6 +98,114 @@ The default editor instance contains a menubar with most of the commonly used ed
       :align: center
 
    |
+
+TinyMCE Plugin Template Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Let's take a look at another example of using the TinyMCE plugin, ``template``.
+
+The ``template`` plugin adds support for custom templates.  The default editor instance only adds the menu item ``Insert template...`` under the ``Insert`` menu.  On TinyMCE, it adds a menu item ``Insert template`` under the ``Insert`` menu and a toolbar button.
+
+To add a template to the RTE, simply add ``<template />`` under ``<setup />`` in the RTE configuration.
+Under ``<template />``, add ``title``, ``description`` and ``content``:
+
+.. code-block::xml
+
+   <config>
+     <setup>
+       ...
+
+       <template>
+         <title />
+         <description />
+         <content />
+       </template>
+     ...
+
+|
+
+Let us take a look at an example of adding two templates to the RTE configuration
+
+1. Open the RTE configuration file in your site by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE Configuration*
+
+2. Add in the following templates under ``<setup />``:
+
+   .. code-block:: xml
+      :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-config.xml*
+
+      <templates>
+        <template>
+          <title>Test template 1</title>
+          <content>Test 1</content>
+          <description>Test1 Description</description>
+        </template>
+        <template>
+          <title>Test template 2</title>
+          <content><![CDATA[
+            <div class="test">
+              <h1>This is a title</h1>
+              <p>Look at this paragraph!</p>
+            </div>
+            ]]>
+          </content>
+          <description>Test 2 description</description>
+        </template>
+      </templates>
+
+   |
+
+3. Save your changes.  The configured templates should now be available under ``Insert templates` of the ``Insert`` menu.
+
+   .. figure:: /_static/images/site-admin/rte/rte-template-plugin-example.png
+      :alt: RTE Setup - RTE template plugin example in action
+      :width: 65%
+      :align: center
+
+   |
+
+
+See https://www.tiny.cloud/docs/plugins/opensource/template/ for more information on the template plugin.
+
+.. _newIa-rte-paste-plugin-hooks:
+
+TinyMCE paste plugin callback hooks
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The TinyMCE ``paste`` plugin enables you to modify the pasted content before it gets inserted into the editor (``paste_preprocess``) and before it gets inserted into the editor but after it’s been parsed into a DOM structure (``paste_postprocess``).  For more information on these options, see https://www.tiny.cloud/docs/plugins/opensource/paste#paste_preprocess.
+
+In order to hook into the callback (``paste_preprocess`` and ``paste_postprocess``), do the following in the RTE configuration:
+
+1) Add the default ``paste`` plugin in the ``<plugins />`` tag
+
+   .. code-block:: xml
+      :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-setup-tinymce5.xml*
+
+      <plugins>
+        print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template
+        codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount
+        textpattern help acecode paste
+
+      </plugins>
+
+   |
+
+2) Create an :ref:`external plugin <adding-external-plugins>` by following the structure of the example plugin `here <https://github.com/craftercms/studio-ui/blob/support/3.1.x/static-assets/js/tinymce-plugins/craftercms_paste_extension/craftercms_tinymce_hooks.sample.js>`__.  To modify the pasted content, add your code under ``paste_preprocess()`` or ``paste_postprocess()`` depending on your needs.
+
+3) Add the plugin created in the previous step as an external plugin under the ``craftercms_tinymce_hooks`` tag.
+
+   .. code-block:: xml
+      :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-setup-tinymce5.xml*
+
+      <external_plugins>
+	    <craftercms_tinymce_hooks><![CDATA[/studio/api/2/plugin/file?siteId={site}&type=tinymce&name=craftercms_paste_extension&filename=samplepasteplugin.js]]></craftercms_tinymce_hooks>
+      </external_plugins>
+
+   |
+
+   For more information on ``craftercms_tinymce_hooks``, see :ref:`here <extending-tinymce>`
+
+.. note::
+   When Tiny's ``paste`` plugin is included, ``craftercms_paste_cleanup`` extension is also enabled. CrafterCMS' extension performs some additional paste cleanup from what Tiny's plugin does. To disable these additional processing of the paste input, you may add ``<craftercms_paste_cleanup>false</craftercms_paste_cleanup>`` to the RTE configuration
+
 
 .. _newIa-rte-add-allowable-elements:
 
@@ -202,7 +315,7 @@ TinyMCE provides an option to specify URLS to plugins outside the tinymce plugin
 
 For more information on the Tiny MCE external_plugins option, see https://www.tiny.cloud/docs/configure/integration-and-setup/#external_plugins
 
-The Crafter Studio developer does not have full control of the tinymce initialization.  To add a custom button to the toolbar in Crafter Studio, it would be done using the external plugin route since, what TinyMCE docs advise – i.e. using the ``setup`` function to add the button – is not viable in Studio without creating a :ref:`form control plugin <building-plugins-controls>` where they'd have full control of tinymce initialization.
+The Crafter Studio developer does not have full control of the tinymce initialization.  To add a custom button to the toolbar in Crafter Studio, it would be done using the external plugin route since, what TinyMCE docs advise – i.e. using the ``setup`` function to add the button – is not viable in Studio without creating a :ref:`form control plugin <newIa-building-plugins-controls>` where they'd have full control of tinymce initialization.
 
 To add an external plugin, use the tag ``<external_plugins />`` in the RTE configuration.
 Use the Crafter Studio API that gets a file for a given plugin, the getPluginFile API found here https://app.swaggerhub.com/apis/craftercms/studio/3.1.14.0#/plugin/getPluginFile to get the Tiny MCE external plugin file to pass to the RTE.
@@ -237,7 +350,7 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
 
    |
 
-4. Finally, we'll create our plugin file and add it in to Studio.  See :ref:`studio-plugins` for more information on creating a Crafter Studio plugin.
+4. Finally, we'll create our plugin file and add it in to Studio.  See :ref:`newIa-studio-plugins` for more information on creating a Crafter Studio plugin.
 
    * Using information from step 2 for our external plugin, create the required directory structure for the plugin file, then create our plugin file named ``plugin.js``
 
@@ -424,7 +537,7 @@ The RTE's configuration file looks like this:
 
 |
 
-You can access the ``RTE (TinyMCE 5) Configuration`` file by going to the **Sidebar** then clicking on  |siteConfig|.  In the **Site Config**, click on **Configuration**, then from the list, select ``RTE (TinyMCE 5) Configuration``
+You can access the ``RTE (TinyMCE 5) Configuration`` file by going to the **Sidebar** then clicking on  |siteConfig|.  In the **Project Tools**, click on **Configuration**, then from the list, select ``RTE (TinyMCE 5) Configuration``
 
 .. figure:: /_static/images/site-admin/rte/rte-setup-config-file-access.jpg
    :alt: RTE Setup - Open RTE Configuration File in Studio
@@ -462,3 +575,17 @@ To attach an RTE setup to an RTE in a form, open the content type that you want 
 |
 
 In the image above, the RTE setup name used is **generic**.  Please see the section above on how to create an RTE Setup, where the example shows an RTE Setup named **generic**.
+
+.. _newIa-extending-tinymce:
+
+-----------------
+Extending TinyMCE
+-----------------
+
+CrafterCMS  provides a general tool for extending TinyMCE via the ``craftercms_tinymce_hooks``.   It currently allows for hooking into the following (as shown by the example `here <https://github.com/craftercms/studio-ui/blob/master/static-assets/js/tinymce-plugins/craftercms_paste_extension/craftercms_tinymce_hooks.sample.js>`__):
+
+- ``paste_preprocess`` callback
+- ``paste_postprocess`` callback
+- ``setup`` function
+
+To hook into the paste pre/post process of TinyMCE, see :ref:`here <newIa-rte-paste-plugin-hooks>`.

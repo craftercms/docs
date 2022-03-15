@@ -60,7 +60,7 @@ That's the model for the component content type Articles - Widget.  Remember tha
 View
 ^^^^
 
-We'll now look at the view for our template, which is the freemarker template file that renders the content, typically to HTML markup.  There are two ways to create the freemarker template file for our template.  One way is to open the **Sidebar** menu in Studio, then navigate to the **Templates** folder, depending on how your site is setup, you may want to navigate to the subfolder in your Templates folder where you want to create the freemarker template file.  Once you are in the desired subfolder, right click on that folder then select **Create Template**.  In our example here, we navigated to **Templates->templates->components**, then right click on the **components** folder then select *Create Template*
+We'll now look at the view for our template, which is the freemarker template file that renders the content, typically to HTML markup.  There are two ways to create the freemarker template file for our template.  One way is to open the **Sidebar** menu in Studio, then navigate to the **Templates** folder, depending on how your project is setup, you may want to navigate to the subfolder in your Templates folder where you want to create the freemarker template file.  Once you are in the desired subfolder, right click on that folder then select **Create Template**.  In our example here, we navigated to **Templates->templates->components**, then right click on the **components** folder then select *Create Template*
 
 .. figure:: /_static/images/templates/templates-comp-create-controller.png
     :alt: Template Component Create Controller
@@ -114,7 +114,7 @@ Our view template is now done.  Next we'll see how to create a controller for ou
 Controller
 ^^^^^^^^^^
 
-We will look at a controller that allows us to display the latest article entries in the sidebar of our site.
+We will look at a controller that allows us to display the latest article entries in the sidebar of our project.
 
 There are two ways to bind a script/controller to a page/component.  The first way, as we have seen in the previous section :ref:`newIa-content-type-page` is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type.  We'll show the other way how to bind a script to a page/component in this section, by adding an item selector to the model with a corresponding data source **Shared Content** named ``scripts``.  When we were looking at the model for our content type template (articles-widget), you may have noticed that there is an item selector named **Controllers** with a corresponding data source shared content named **Scripts**, we are now going to look at a script that can be used by the item selector of our content type.
 
@@ -159,7 +159,7 @@ A dialog will then open where you can start entering your script.  Let's take a 
 
 |
 
-After creating your controller, you would then need to create a component that will use the script just created.  Let's take a look at the component named *Latest Articles Widget* under the **Components** folder in the Sidebar which uses the script we looked at earlier.  Preview your site or click on the Dashboard.  Click on the Sidebar and navigate to **Components** -> **components** -> **articles-widget**.  To create a new component, right click on the folder, then select **New Content**, which will open the form containing the model we looked at earlier for articles-widget:
+After creating your controller, you would then need to create a component that will use the script just created.  Let's take a look at the component named *Latest Articles Widget* under the **Components** folder in the Sidebar which uses the script we looked at earlier.  Preview your project or click on the Dashboard.  Click on the Sidebar and navigate to **Components** -> **components** -> **articles-widget**.  To create a new component, right click on the folder, then select **New Content**, which will open the form containing the model we looked at earlier for articles-widget:
 
 .. figure:: /_static/images/templates/templates-comp-articles-widget.jpg
     :alt: Template Create New Type Component Dialog

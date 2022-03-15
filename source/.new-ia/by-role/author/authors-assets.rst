@@ -7,9 +7,9 @@
 ===================
 Working with Assets
 ===================
-This section describes how authors can add/manage assets.
 
-Assets are binary files, typically images, videos, etc. which can be uploaded directly by Authors from the site navigation tree to CrafterCMS.
+Assets are binary files, typically images, videos, etc. which can be uploaded directly by Authors from
+the project navigation tree to CrafterCMS.
 
 .. note::
 	.. include:: /includes/valid-file-names.rst
@@ -17,12 +17,15 @@ Assets are binary files, typically images, videos, etc. which can be uploaded di
 -------------
 Adding Assets
 -------------
-To upload a file (images, videos, etc.), in the Site Content Panel click on **Static Assets**, then click again on the folder named **static-assets**.  This will show you a list of folders containing assets already uploaded, such as images, fonts, etc.  
+To upload a file (images, videos, etc.), in the Sidebar click on **Static Assets**, then click again on
+the folder named **static-assets**.  This will show you a list of folders containing assets already uploaded,
+such as images, fonts, etc.
 
 ^^^^^^^^^^^^^^^^^
 Creating a folder
 ^^^^^^^^^^^^^^^^^
-If the file you are uploading does not belong in any of the existing folders, you can just create another folder to upload your file to by doing the following:
+If the file you are uploading does not belong in any of the existing folders, you can just create another
+folder to upload your file to by doing the following:
 
 Click on the three dots next to the folder **static-assets**, then select **New Folder**
 
@@ -31,6 +34,7 @@ Click on the three dots next to the folder **static-assets**, then select **New 
     :width: 40 %
     :align: center
 
+|
 
 Enter a name for the new folder then click on the **Create** button.
 
@@ -39,10 +43,13 @@ Enter a name for the new folder then click on the **Create** button.
     :width: 30 %
     :align: center
 
+|
+
 ^^^^^^^^^^^^^
 Adding a file
 ^^^^^^^^^^^^^
-To add a file, from the folder **static-assets**, navigate to the folder you want to add the files to, then click on the three dots next to the folder and select **Upload**
+To add a file, from the folder **static-assets**, navigate to the folder you want to add the files to,
+then click on the three dots next to the folder and select **Upload**
 
 .. image:: /_static/images/page/page-asset-upload.jpg
     :alt: Static Assets - Upload a File
@@ -51,12 +58,15 @@ To add a file, from the folder **static-assets**, navigate to the folder you wan
 
 |
 
-The upload dialog will come up and if you have multiple files to upload, you can drag and drop or browse for files that you want to upload.
+The upload dialog will come up and if you have multiple files to upload, you can drag and drop or browse
+    for files that you want to upload.
 
 .. image:: /_static/images/page/page-asset-bulk-upload.png
     :alt: Static Assets - Upload File/s Dialog
     :width: 50 %
     :align: center
+
+|
 
 Click on the ``X`` to close the  upload dialog or click on "Add more" if you want to add more files
 
@@ -65,12 +75,16 @@ Click on the ``X`` to close the  upload dialog or click on "Add more" if you wan
    :width: 50 %
    :align: center
 
+|
+
 Adding a file from one of the upload controls
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A file may also be added via one of the upload controls and data source in a content form, such as the ``Image`` control together with the ``Image uploaded from desktop`` data source.
+A file may also be added via one of the upload controls and data source in a content form, such as
+the ``Image`` control together with the ``Image uploaded from desktop`` data source.
 
-To upload using one of the controls, while editing a content form, click on the button for adding/replacing an asset which would give you an option to use an existing asset or to upload an asset.
+To upload using one of the controls, while editing a content form, click on the button for
+adding/replacing an asset which would give you an option to use an existing asset or to upload an asset.
 
 .. image:: /_static/images/page/page-asset-single-upload.jpg
    :alt: Static Assets - Upload a file from a control/data source in the content form
@@ -95,42 +109,58 @@ Once the file is uploaded, the dialog will close and the asset will now be in th
    :width: 60 %
    :align: center
 
+|
 
 ---------------
 Removing Assets
 ---------------
 
-To delete an asset, navigate to the asset you want to delete in the site navigation tree.  Click on the three dots next to the asset, then select **Delete**
+To delete an asset, navigate to the asset you want to delete in the project navigation tree.  Click on the
+three dots next to the asset, then select **Delete**
 
 .. image:: /_static/images/page/page-asset-delete.jpg
     :alt: Static Assets - Delete
     :width: 40 %
     :align: center
 
-Put a checkmark on ``By submitting, deleted items will be published immediately.`` to enable the **Delete** button.  Click on the **Delete** button if you want to delete the listed files, or click on **Cancel** if you don't want to delete the asset.
+|
+
+Put a checkmark on ``By submitting, deleted items will be published immediately.`` to enable the
+**Delete** button.  Click on the **Delete** button if you want to delete the listed files, or
+click on **Cancel** if you don't want to delete the asset.
 
 .. image:: /_static/images/page/page-asset-confirm-delete.jpg
     :alt: Static Assets - Delete Confirmation Dialog
     :width: 60 %
     :align: center
 
-After clicking on the **Delete** button, a snackbar at the top right of your browser will appear to inform you that the item/asset has been pushed for delete.
+|
+
+After clicking on the **Delete** button, a snackbar at the top right of your browser will appear
+to inform you that the item/asset has been pushed for delete.
 
 .. image:: /_static/images/page/page-asset-delete-submitted.png
     :alt: Static Assets - Delete Action Information Dialog
     :width: 40 %
     :align: center
 
+|
+
 ----------------
 Asset Versioning
 ----------------
-All changes to static assets are tracked and can be reverted to an older version.  For static assets, like images, videos, etc., to access the History dialog, select the static asset that you want to view the history of from the site navigation tree, under the folder **Static Assets**, then click on the **History** menu of the context navigation menu at the top of your browser or, click on the three dots next to the asset you want to view then select **History**
+All changes to static assets are tracked and can be reverted to an older version.  For static assets,
+like images, videos, etc., to access the History dialog, select the static asset that you want to view
+the history of from the project navigation tree, under the folder **Static Assets**, then click on the
+**History** menu of the context navigation menu at the top of your browser or, click on the three dots
+next to the asset you want to view then select **History**
 
 .. image:: /_static/images/page/page-asset-access-history.jpg
     :alt: Static Assets - Open History
     :width: 50 %
     :align: center
 
+|
 
 Notice that for assets, you can only revert to the version selected.
 

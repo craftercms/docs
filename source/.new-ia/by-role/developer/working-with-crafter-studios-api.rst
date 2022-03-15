@@ -140,7 +140,7 @@ Let's begin:
 
 #. **Get a list of projects under management**
 
-   We'll get a list of sites the user is authorized to work with
+   We'll get a list of es the user is authorized to work with
    :ref:`newIa-crafter-studio-api-site-get-per-user`
 
    .. code-block:: bash
@@ -149,7 +149,7 @@ Let's begin:
 
    |
 
-   After issuing the CURL command you will get a response that contains sites your user has access to:
+   After issuing the CURL command you will get a response that contains projects your user has access to:
 
    .. code-block:: json
 

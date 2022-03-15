@@ -80,12 +80,12 @@ Step 3: Configure the Filter to Execute
 
 Now we need to tell the filter which resources to execute for by configuring the order of execution, the URL resource patterns it should execute on and the request method types that it should apply to. To do this we modify the Crafter Engine /Config/site.xml.
 
-From the **Sidebar**, click on |siteTools|.  Click on **Configuration**.  Select **Engine Site Configuration** from the dropdown.
+From the **Sidebar**, click on |siteTools|.  Click on **Configuration**.  Select **Engine Project Configuration** from the dropdown.
 
 .. image:: /_static/images/developer/working-with-filters/select-engine-site-config.png
    :width: 75 %
    :align: center
-   :alt: Working with Filters - Open Engine Site Configuration
+   :alt: Working with Filters - Open Engine Project Configuration
 
 Add the following filters tags to your site.xml. This will run your filter on every kind of request for all URLs.
 

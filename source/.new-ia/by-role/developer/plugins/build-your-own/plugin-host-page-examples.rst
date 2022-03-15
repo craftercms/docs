@@ -17,14 +17,14 @@ There are three examples available each with a different setup:
 * **Modern**: also a react-based app that does not use the ``create-react-app``, but uses a modern setup (transpilation and bundling). This one has a watch mode that transpiles, bundles and commits on every change; it’s quite nice but git log will get a fair amount of history since, when developing and testing, developers do loads of changes/saves. This can be mitigated by, developing, doing all the work and once you’re in a happy place ``git reset {commit}`` to clean the log and only commit the significant milestones.
 
 
-To view the three sample setups listed above, we'll need to create a site from a remote Git repository with **Site ID** ``editorial``, which contains the source for the three examples.  We would then build and deploy the plugins using the provided script.  The script builds or copies a Studio plugin depending on what is in the root, places it according to the plugin directory structure, then commits the files in the ``plugins`` directory so Studio can see the changes.  After running the script, the plugin page is now available for viewing.
+To view the three sample setups listed above, we'll need to create a project from a remote Git repository with **Project ID** ``editorial``, which contains the source for the three examples.  We would then build and deploy the plugins using the provided script.  The script builds or copies a Studio plugin depending on what is in the root, places it according to the plugin directory structure, then commits the files in the ``plugins`` directory so Studio can see the changes.  After running the script, the plugin page is now available for viewing.
 
 Let's begin:
 
-#. From **Sites**, click on **Create Site**, then select ``Remote Git Repository`` from the *Private Blueprints* tab.
+#. From **Projects**, click on **Create Project**, then select ``Remote Git Repository`` from the *Private Blueprints* tab.
 #. Fill in the following fields with the values listed below:
 
-   * **Site ID**: editorial
+   * **Project ID**: editorial
    * **Git Repo URL**: https://github.com/craftercms/craftercms-editorial-ice
 
 #. Make the ``plugin_deploy.sh`` file executable under the *CRAFTER_HOME/data/repos/sites/SITE_NAME/sandbox/sources* folder.  This is the script that builds and deploys the plugins.

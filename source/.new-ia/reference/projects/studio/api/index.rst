@@ -13,7 +13,7 @@ There are 2 versions of Crafter Studio APIs.  **API version 2** contains the Use
 .. note::
     This API can be used with JWT or HTTP Basic authentication.
 
-    For more information on using Crafter Studio APIs, see :ref:`newIa-working-with-crafter-studios-api`
+    For more information on using Crafter Studio APIs, see :ref:`working-with-crafter-studios-api`
 
 -------------
 API Version 2

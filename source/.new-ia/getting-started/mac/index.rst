@@ -103,6 +103,6 @@ Here are the steps to start using CrafterCMS for development or evaluation by in
       * **password:** admin
 
 
-   After logging in, you should be redirected to the ``Sites`` screen, and you're now ready to create your first experience!
+   After logging in, you should be redirected to the ``Projects`` screen, and you're now ready to create your first experience!
 
 

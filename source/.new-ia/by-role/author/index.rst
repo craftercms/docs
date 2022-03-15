@@ -12,7 +12,7 @@ Author
    4.3 Examples
 
 Authors creates, edits and submits content for experiences.  CrafterCMS's Crafter Studio provides the author an easy to use
-authoring and management system for developing and optimizing the content and dynamic site visitor experience for any
+authoring and management system for developing and optimizing the content and dynamic project visitor experience for any
 and all of your Web properties.
 
 The :ref:`site administrator <newIa-site-admin>` and the :ref:`developer <newIa-developer>` sets things up before an
@@ -24,7 +24,7 @@ authoring environment and how authors manages content.
 * Authors work in Crafter Studio
 
   * It is a web based application. There is nothing to install.
-  * It is multi-tenant so you can manage as many sites as you need to
+  * It is multi-tenant so you can manage as many projects as you need to
   * It provides a safe environment to make and preview content changes
   * All changes are versioned and audited
   * Once ready, content is submitted to workflow for approval
@@ -39,7 +39,7 @@ authoring environment and how authors manages content.
   * Crafter Engine is a high performance, Spring MVC based content delivery engine.
   * Crafter Engine delivers highly personalized HTML (and other markup) based content and Content APIS (Content as a Service).
   * Crafter Engine is multi-channel.  It supports Responsive Design and Adaptive Design as well as Content as API(s)
-  * Crafter Engine is multi-tenant so you can deliver as many sites as you need to.
+  * Crafter Engine is multi-tenant so you can deliver as many projects as you need to.
 
 -----------------
 Authoring Screens
