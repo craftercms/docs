@@ -369,7 +369,7 @@ After importing ``crafter.ftl``, you'll have all the available XB macros describ
    const editModeClass = 'craftercms-ice-on';
    const zKeyClass = 'craftercms-ice-bypass';
 
-.. _initExperienceBuilder:
+.. _freemarker-initExperienceBuilder:
 
 initExperienceBuilder
 """""""""""""""""""""
@@ -1425,7 +1425,7 @@ element (i.e. the item selector), the item element, and the component itself.
    * - ``*``
      -
      -
-     - ``RenderComponents`` shares all the `RenderRepeat <#rendereepeat>`_ props.
+     - ``RenderComponents`` shares all the `RenderRepeat <#renderrepeat>`__ props.
    * - ``contentTypeMap``
      - Object
      - (Required)
@@ -1593,13 +1593,13 @@ You should first set all the attributes on your markup and afterwards, invoke `i
        supplied when the artifact being rendered is a field. The ``index`` must be specified when
        the artifact being rendered is inside a collection (repeat groups or item selectors).
 
-.. _initExperienceBuilder:
+.. _js-app-initExperienceBuilder:
 
 initExperienceBuilder
 """""""""""""""""""""
 
 Use this method to initialize experience builder once you have printed all the attributes (see
-`getICEAttributes <#geticeattributes>`_) on your markup.
+`getICEAttributes <#geticeattributes>`__) on your markup.
 
 .. list-table::
    :widths: 10 10 10 70
