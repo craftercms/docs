@@ -53,6 +53,8 @@ Securing content access and providing role-based access to different content ite
 enterprise-grade content-rich application. It's critical that the security be implemented at the content API-level.
 CrafterCMS provides enterprise-grade authentication and authorization mechanics to help achieve this.
 
+.. todo link to the architect-level security article
+
 Authentication
 ==============
 
@@ -78,4 +80,4 @@ In-Context Editing
 CrafterCMS provides an SDK that lets developers focused on a headless use-case add the tools content authors expect,
 like visual in-context and in-place editing of Web content regardless of the development platform and tools.
 
-.. todo add a link to the SDK and ICE
+.. todo add a link to the SDK and XB
