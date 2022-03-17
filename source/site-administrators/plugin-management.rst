@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -15,7 +16,7 @@ Plugin Management
 
 Site plugins extend Crafter Studio (authoring) and Crafter Engine and the site/web application (delivery).  It adds new features/functionality without adding code to CrafterCMS.
 
-This section details how to manage plugins from the |siteConfig| Plugin Management module.
+This section details how to manage plugins from the |projectTools| Plugin Management module.
 
 ----------
 Installing
@@ -51,9 +52,9 @@ Install a plugin using the Studio ``Plugin Management`` Project Tool
    |
    |
 
-#. Open |siteConfig|
+#. Open |projectTools|
 
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-site-tools.jpg
+   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-project-tools.jpg
       :align: center
       :alt: Crafter Studio Project Tools
       :width: 80%
@@ -61,9 +62,9 @@ Install a plugin using the Studio ``Plugin Management`` Project Tool
    |
    |
 
-#. Or, you can also open |siteConfig| by clicking on the ``Navigation Menu`` at the top right of the screen then click on |siteConfig|
+#. Or, you can also open |projectTools| by clicking on the ``Navigation Menu`` at the top right of the screen then click on |projectTools|
 
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-open-site-tools.jpg
+   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-open-project-tools.jpg
       :align: center
       :alt: Crafter Studio Open Project Tools
       :width: 80%
@@ -126,7 +127,7 @@ Managing Installed Plugins
 ^^^^^^^^^^^^^^^^^^^^^^
 View Installed Plugins
 ^^^^^^^^^^^^^^^^^^^^^^
-To view the installed plugins in your project, click on the ``Navigation Menu`` at the top right then click on |siteConfig| then finally click on ``Plugin Management``.
+To view the installed plugins in your project, click on the ``Navigation Menu`` at the top right then click on |projectTools| then finally click on ``Plugin Management``.
 
 .. figure:: /_static/images/developer/plugins/site-plugins/plugins-installed.jpg
    :align: center

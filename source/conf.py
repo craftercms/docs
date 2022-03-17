@@ -409,8 +409,8 @@ rst_epilog = """
 .. |siteConfig| image:: /_static/images/configuration-site-tools-icon.png
                    :width: 15%
 
-.. |siteTools| image:: /_static/images/configuration-site-tools-icon.png
-                   :width: 15%
+.. |projectTools| image:: /_static/images/configuration-project-tools-icon.png
+                   :width: 14%
 
 .. |mainMenu| image:: /_static/images/main-menu-button.png
                    :width: 5%

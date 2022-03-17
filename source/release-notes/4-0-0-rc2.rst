@@ -1,8 +1,8 @@
-.. index:: Crafter CMS 4.0.0 rc2 Release Notes
+.. index:: CrafterCMS 4.0.0 rc2 Release Notes
 
----------------------
-Crafter CMS 4.0.0 rc2
----------------------
+--------------------
+CrafterCMS 4.0.0 rc2
+--------------------
 
 ^^^^^^^^^^^^
 New Features
