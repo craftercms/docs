@@ -8,7 +8,7 @@
 Page Content Type
 =================
 
-Page content types are top level container types that lets you define the layout/structure and functionality of content/components.  To create a new page content type, click on |siteTools| from the **Sidebar**
+Page content types are top level container types that lets you define the layout/structure and functionality of content/components.  To create a new page content type, click on |projectTools| from the **Sidebar**
 
 .. figure:: /_static/images/templates/templates-site-config.jpg
 	:alt: Template Project Config

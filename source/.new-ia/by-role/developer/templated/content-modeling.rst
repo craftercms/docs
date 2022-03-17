@@ -17,7 +17,7 @@ Every content object in CrafterCMS is an object associated with a Content Model.
 Content Types in Crafter Studio
 -------------------------------
 
-Content Type Management in Crafter Studio is located in the |siteTools|.
+Content Type Management in Crafter Studio is located in the |projectTools|.
 
 .. image:: /_static/images/content-model/site-tools-link.png
    :width: 30%
@@ -225,7 +225,7 @@ You can only use one of either include or exclude. Use Include when you need to 
 
 We'll look at an example of limiting where you can create content from the Website_Editorial blueprint that comes out of the box.
 
-From the **Sidebar**, click on |siteTools|.  Next, click on **Content Types** then either create a new content type or open an existing content type.  In the image below, we have the content type **Article** open for editing.  Go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name *config.xml*, click on that pencil to edit.
+From the **Sidebar**, click on |projectTools|.  Next, click on **Content Types** then either create a new content type or open an existing content type.  In the image below, we have the content type **Article** open for editing.  Go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name *config.xml*, click on that pencil to edit.
 
 .. figure:: /_static/images/content-model/form-engine-prop-configuration.jpg
     :alt: Form Engine Properties Configuration
@@ -294,7 +294,7 @@ Enabling cascade on delete is configured through the content type **Configuratio
 
 We'll look at an example of how to enable cascade on delete on the **Article** content type in the Website_editorial blueprint.
 
-From the **Sidebar**, click on |siteTools|.  Next, click on **Content Types**.  We will select the content type **Article** for editing.  Next, go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name **config.xml**, click on that pencil to edit.
+From the **Sidebar**, click on |projectTools|.  Next, click on **Content Types**.  We will select the content type **Article** for editing.  Next, go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name **config.xml**, click on that pencil to edit.
 
 We're going to enable cascade on delete for articles (**Article** content type) containing images under ``/static-assets/item/images``, and we'll also delete empty folders under ``/static-assets/item/images`` by adding the following code in the **config.xml** file:
 
@@ -358,7 +358,7 @@ Enabling copy dependencies is configured through the content type **Configuratio
 
 We'll look at an example of how to enable copy dependencies on the **Article** content type in the website editorial blueprint.
 
-From the **Sidebar**, click on |siteTools| at the bottom.  Next, click on **Content Types**.  We will select the content type **Article** for editing.  Next, go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name **config.xml**, click on that pencil to edit.
+From the **Sidebar**, click on |projectTools| at the bottom.  Next, click on **Content Types**.  We will select the content type **Article** for editing.  Next, go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name **config.xml**, click on that pencil to edit.
 
 We're going to enable copy dependencies for articles (**Article** content type) containing images under ``/static-assets/images/`` and placing the copies in folder ``/static-assets/images/articles/`` by adding the following code in the **config.xml** file:
 
@@ -407,7 +407,7 @@ Below is the regex pattern for item specific dependencies:
 
 Item specific dependencies are configured during content type creation.  We'll look at an example of how content is modeled to take advantage of item specific dependencies, using the **Article** content type in the website editorial blueprint.
 
-From the **Sidebar**, click on |siteTools| at the bottom.  Next, click on **Content Types**.  We will select the content type **Article** for editing.
+From the **Sidebar**, click on |projectTools| at the bottom.  Next, click on **Content Types**.  We will select the content type **Article** for editing.
 
 Scroll to the ``Data Sources`` section, and click on **Upload Images**.  Notice the value in the **Repository Path** property, which is the path where to store the new file uploaded from desktop.
 
@@ -503,7 +503,7 @@ Let's take a look at an example on how to configure a content type to be availab
 
 If you look at the site tree as shown above, most of the content (the articles) is organized in a dated folder structure.  Adding quick create for the **Article** content type lets the content author skip having to open the Sidebar, then navigate through the path navigation tree, create the year/month folder if it does not exist yet, then finally create their content.
 
-To setup quick create for a content type, from the **Sidebar**, click on |siteTools| at the bottom.  Next, click on **Content Types**.  We will select the content type **Article** for editing.  Next, go to the **Properties Explorer** and scroll to the **Quick Create** section of the properties.
+To setup quick create for a content type, from the **Sidebar**, click on |projectTools| at the bottom.  Next, click on **Content Types**.  We will select the content type **Article** for editing.  Next, go to the **Properties Explorer** and scroll to the **Quick Create** section of the properties.
 
 .. figure:: /_static/images/content-model/quick-create-properties.png
     :width: 50%
@@ -785,7 +785,7 @@ Let's take a look at a shared content data source in a project created using the
 
 |
 
-Open the ``Sidebar`` then click on |siteTools|.  Click on ``Content Types`` and select ``Stream``, then click on the ``Open Type`` button.  Scroll down  to the ``Data Sources`` section, then click on ``Origins``, a shared content data source.  Notice how a :ref:`newIa-form-item-selector` control is used for selecting shared content ``Origin``.  In the ``Properties Explorer`` on the right  side, put a check mark on  ``Enable Search Existing`` property so users can search for existing items.
+Open the ``Sidebar`` then click on |projectTools|.  Click on ``Content Types`` and select ``Stream``, then click on the ``Open Type`` button.  Scroll down  to the ``Data Sources`` section, then click on ``Origins``, a shared content data source.  Notice how a :ref:`newIa-form-item-selector` control is used for selecting shared content ``Origin``.  In the ``Properties Explorer`` on the right  side, put a check mark on  ``Enable Search Existing`` property so users can search for existing items.
 
 .. image:: /_static/images/content-model/shared-content-ds-enable-search-existing.jpg
     :alt: Form Engine Data Sources Example - Shared Content Data Source

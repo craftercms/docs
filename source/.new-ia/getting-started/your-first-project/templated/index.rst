@@ -103,7 +103,7 @@ We'll be adding a new article to the project.  To add a new article (or a new pa
 
 We'll then select the page template we want.  Since we are adding a new article to the project, we will be selecting the template **Article**
 
-.. image:: /_static/images/first-project/first-project-select-page-template.jpg
+.. image:: /_static/images/first-project/first-project-select-page-template.png
    :width: 80 %
    :align: center
    :alt: Your First Website - Select Page Template

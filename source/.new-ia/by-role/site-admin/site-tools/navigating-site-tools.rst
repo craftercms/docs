@@ -8,23 +8,23 @@
 Navigating Site Tools
 =====================
 
-In this section, we discuss the available modules in the |siteTools| from any of the available out-of-the-box blueprints.  The modules available in the Site Tools can be configured in the  :ref:`newIa-user-interface-configuration`
+In this section, we discuss the available modules in the |projectTools| from any of the available out-of-the-box blueprints.  The modules available in the Site Tools can be configured in the  :ref:`newIa-user-interface-configuration`
 
-To get to |siteTools|, click on the **Toggle Sidebar** icon (CrafterCMS logo with hamburger next to it) at the top left of your browser, if it's not yet open.
+To get to |projectTools|, click on the **Toggle Sidebar** icon (CrafterCMS logo with hamburger next to it) at the top left of your browser, if it's not yet open.
 
 .. image:: /_static/images/site-admin/open-sidebar.png
     :alt: Site Admin - Open Sidebar
     :align: center
     :width: 25%
 
-Once the **Sidebar** is open, click on |siteTools|
+Once the **Sidebar** is open, click on |projectTools|
 
 .. image:: /_static/images/site-admin/open-site-config.png
     :alt: Site Admin - Click on Site Tools
     :align: center
     :width: 25%
 
-Here are the modules you can access from |siteTools|
+Here are the modules you can access from |projectTools|
 
 .. image:: /_static/images/site-admin/site-config-menu.png
     :alt: Site Admin - Site Tools Modules
@@ -140,7 +140,7 @@ The **Remote Repositories** under **Site Config** allows the user to view remote
     :align: center
     :width: 60%
 
-For more information on Remote Repositories under |siteTools|, see :ref:`newIa-remote-repositories`
+For more information on Remote Repositories under |projectTools|, see :ref:`newIa-remote-repositories`
 
 --------
 GraphiQL

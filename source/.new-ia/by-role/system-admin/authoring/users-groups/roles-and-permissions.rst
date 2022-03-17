@@ -33,11 +33,11 @@ See :ref:`newIa-groups-management` for more information on administrating groups
 Sites
 -----
 
-To edit permissions for a site role, in Studio, from the *Sidebar*, click on |siteTools| -> *Configuration* -> *Permission Mapping*.  See :ref:`newIa-permission-mappings` for more information on permissions and the default permissions assigned to roles.
+To edit permissions for a site role, in Studio, from the *Sidebar*, click on |projectTools| -> *Configuration* -> *Permission Mapping*.  See :ref:`newIa-permission-mappings` for more information on permissions and the default permissions assigned to roles.
 
-To add/edit a role for a site, in Studio, from the *Sidebar*, click on |siteTools| -> *Configuration* -> *Role Mapping*. See :ref:`newIa-role-mappings` for more information.
+To add/edit a role for a site, in Studio, from the *Sidebar*, click on |projectTools| -> *Configuration* -> *Role Mapping*. See :ref:`newIa-role-mappings` for more information.
 
-The items for interaction/tools available from the **Sidebar** depending on the user role can be configured in Studio, from the *Sidebar*, click on |siteTools| -> *Configuration* -> *Sidebar Configuration*. See :ref:`newIa-sidebar-configuration` for more information.
+The items for interaction/tools available from the **Sidebar** depending on the user role can be configured in Studio, from the *Sidebar*, click on |projectTools| -> *Configuration* -> *Sidebar Configuration*. See :ref:`newIa-sidebar-configuration` for more information.
 
 .. TODO update page
 

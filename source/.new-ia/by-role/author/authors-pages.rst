@@ -223,7 +223,7 @@ Editing Controls
 Here are some controls that authors may encounter while editing content:
 
 * Dropdowns - Allows the user to select an item from the list.  When not selecting an item from the dropdown,
-the selected item is shown on the box.
+  the selected item is shown on the box.
 
 .. image:: /_static/images/page/form-control-dropdown-expand.png
     :width: 40 %    

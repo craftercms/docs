@@ -54,8 +54,8 @@ First, we'll take a look at an example of how to setup a two node cluster with S
 .. toctree::
    :maxdepth: 1
 
-   clustering/studio-clustering-two-nodes
-   kubernetes/studio-clustering-with-kubernetes-deployment
+   studio-clustering-two-nodes
+   ../kubernetes/studio-clustering-with-kubernetes-deployment
 
 
 -------
@@ -65,4 +65,4 @@ How-tos
 .. toctree::
    :maxdepth: 1
 
-   clustering/changing-git-url-format-in-cluster
+   changing-git-url-format-in-cluster

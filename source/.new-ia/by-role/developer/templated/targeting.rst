@@ -41,7 +41,7 @@ Configuring
 
 |
 
-Targeting can be configured by clicking on |siteTools| in the Sidebar, then clicking on
+Targeting can be configured by clicking on |projectTools| in the Sidebar, then clicking on
 **Configuration** and finally selecting **User Interface Configuration** from the dropdown box.
 Below is the sample configuration for Guy and Gal, that is used in the Website Editorial
 blueprint.
@@ -143,7 +143,7 @@ Model Criteria in Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We will now see how to add the segments you just configured into a page.  From the Sidebar, click
-on |siteTools|, next click on **Content Types**.  Select **Article**, then click on
+on |projectTools|, next click on **Content Types**.  Select **Article**, then click on
 **Open Type**
 
 .. figure:: /_static/images/targeting/tagging-segments-model-open.jpg
@@ -284,7 +284,7 @@ Model Criteria in Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We will now see how to add the categories you just configured into a page.  From the Sidebar, click
-on |siteTools|, next click on **Content Types**.  Select **Article**, then click on **Open Type**
+on |projectTools|, next click on **Content Types**.  Select **Article**, then click on **Open Type**
 
 
 .. figure:: /_static/images/targeting/tagging-segments-model-open.jpg
@@ -485,7 +485,7 @@ authors can use. Using the Website Editorial blueprint, for example, we can have
 Configuring
 ^^^^^^^^^^^
 
-Let's configure targeting based on roles by clicking on |siteTools| in the Sidebar, then clicking on
+Let's configure targeting based on roles by clicking on |projectTools| in the Sidebar, then clicking on
 **Configuration** and finally selecting **User Interface Configuration** from the dropdown box.
 
 Add the following to the ``Audience Targeting`` widget:
@@ -553,7 +553,7 @@ Model Criteria in Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We will now see how to add the role(s) into a page.  From the Sidebar, click
-on |siteTools|, next click on **Content Types**.  Select **Article**, then select
+on |projectTools|, next click on **Content Types**.  Select **Article**, then select
 **Open Type**
 
 .. figure:: /_static/images/targeting/tagging-segments-model-open.jpg

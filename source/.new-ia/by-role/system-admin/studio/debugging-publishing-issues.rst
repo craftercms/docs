@@ -48,7 +48,7 @@ To discover which item is blocking publishing, the most common method is to insp
 Once you determine where the publishing queue is blocked/stuck, you can determine the reason by inspecting the log files and the repository.
 
 If it is possible to fix the publishing queue blockage, the system should be allowed to continue normally.
-After the queue has been unblocked, the publishing process needs to be enabled again.  This can be done through Studio, by clicking on the ``Start`` button in |siteTools| -> ``Publishing`` -> ``Status``.  :ref:`newIa-publishing-status` contains more information on the Publishing Status tab in Studio.
+After the queue has been unblocked, the publishing process needs to be enabled again.  This can be done through Studio, by clicking on the ``Start`` button in |projectTools| -> ``Publishing`` -> ``Status``.  :ref:`newIa-publishing-status` contains more information on the Publishing Status tab in Studio.
 Another way to enable the publishing process is to call the :ref:`newIa-crafter-studio-api-publish-start` Rest API to start publishing.
 
 If it is not possible to fix the publishing queue blockage, a workaround can be applied to unblock publishing. The workaround can be any valid intervention on the database and the repository to simulate the publishing process.
@@ -95,7 +95,7 @@ To avoid unnecessary operations and confusion within the system, the database sh
 
 |
 
-After successful manual syncing of repositories the publishing process needs to be enabled again. This can be done through Studio, by clicking on the ``Start`` button in |siteTools| -> ``Publishing`` -> ``Status``.  :ref:`newIa-publishing-status` contains more information on the Publishing Status tab in Studio.
+After successful manual syncing of repositories the publishing process needs to be enabled again. This can be done through Studio, by clicking on the ``Start`` button in |projectTools| -> ``Publishing`` -> ``Status``.  :ref:`newIa-publishing-status` contains more information on the Publishing Status tab in Studio.
 Another way to enable the publishing process is to call the :ref:`newIa-crafter-studio-api-publish-start` Rest API to start publishing.
 
 --------------------------------------------------

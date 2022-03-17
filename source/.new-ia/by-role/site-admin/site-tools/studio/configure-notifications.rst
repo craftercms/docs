@@ -29,7 +29,7 @@ Where
             ...
         </notificationConfig>
 
-This can be modified/accessed through Crafter Studio, by going to the **Sidebar**, then clicking on |siteTools| -> **Configuration** -> **Notification Configuration**
+This can be modified/accessed through Crafter Studio, by going to the **Sidebar**, then clicking on |projectTools| -> **Configuration** -> **Notification Configuration**
 
 .. image:: /_static/images/site-admin/notification-config-open.png
     :align: center

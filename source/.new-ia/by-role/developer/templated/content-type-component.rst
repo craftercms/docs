@@ -10,7 +10,7 @@ Component Content Type
 
 Component content type templates are very similar to page content type templates, as mentioned in :ref:`newIa-content-modeling`, the only difference between components and pages is that components cannot render by itself, it needs a container to render into.  In this section, we will look at the component content type, **Component - Articles Widget** found in the Website_Editorial blueprint that shows you how to create a component content type that can be rendered in the sidebar.
 
-To create a new component content type, click on |siteTools| in the **Sidebar**.  Click on **Content Types**, then select **Create New Type**.  Enter a Display Label and content type name for your new template, then select **Component** as Type and then click on the **Create** button.
+To create a new component content type, click on |projectTools| in the **Sidebar**.  Click on **Content Types**, then select **Create New Type**.  Enter a Display Label and content type name for your new template, then select **Component** as Type and then click on the **Create** button.
 
 .. figure:: /_static/images/templates/templates-component-new.png
     :alt: Template Create New Type Component Dialog

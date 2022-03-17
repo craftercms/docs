@@ -17,7 +17,7 @@ The external storage could be in the cloud, such as AWS S3 or some other storage
 Configuring the External Storage
 --------------------------------
 First we'll need to setup the external storage to be used by CrafterCMS.
-To setup an external storage for assets, open the **Sidebar**, then click on |siteTools| -> *Configurations*.  Select ``Blob Stores`` from the dropdown and fill in the required information.
+To setup an external storage for assets, open the **Sidebar**, then click on |projectTools| -> *Configurations*.  Select ``Blob Stores`` from the dropdown and fill in the required information.
 
 .. code-block:: xml
 
@@ -70,7 +70,7 @@ Let's begin:
 1. Enable Staging
 ^^^^^^^^^^^^^^^^^
 
-This step is optional but for our example, we wanted to be able to publish to staging, so in this step, we will first enable staging.  In your Studio, click on |siteTools| -> *Configuration* -> *Site Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
+This step is optional but for our example, we wanted to be able to publish to staging, so in this step, we will first enable staging.  In your Studio, click on |projectTools| -> *Configuration* -> *Site Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
 
   .. code-block:: xml
      :emphasize-lines: 2
@@ -89,7 +89,7 @@ For more information on staging, see :ref:`newIa-staging-env`
 2. Setup Blob Store
 ^^^^^^^^^^^^^^^^^^^
 
-In your Studio, click on |siteTools| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 buckets for the preview, staging and live.
+In your Studio, click on |projectTools| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 buckets for the preview, staging and live.
 
    .. code-block:: xml
       :caption: *CRAFTER_HOME/data/repos/sites/sandbox/SITENAME/sandbox/config/studio/blob-stores-config.xml*
@@ -294,7 +294,7 @@ Let's begin:
 
 2. **Setup Blob Store**
 
-   Setup ``staging`` in the Blob Store by adding the following to your ``Blob Stores`` configuration.  In your Studio, click on |siteTools| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 bucket for staging.
+   Setup ``staging`` in the Blob Store by adding the following to your ``Blob Stores`` configuration.  In your Studio, click on |projectTools| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 bucket for staging.
 
      .. code-block:: xml
 

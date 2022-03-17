@@ -494,7 +494,7 @@ The plugin is now ready to be tested.  We'll install our plugin located  under `
 
 |
 
-After installing our plugin, we can now verify that our component plugin is available in |siteTools| Content Types
+After installing our plugin, we can now verify that our component plugin is available in |projectTools| Content Types
 
 .. figure:: /_static/images/developer/plugins/site-plugins/plugins-sample-component.jpg
    :align: center
@@ -509,7 +509,7 @@ Some More Site Plugin Examples
 
 For more authoring examples of creating site plugins, see :ref:`newIa-studio-plugins`
 
-CrafterCMS also provides various site plugin examples available from the `marketplace <https://marketplace.craftercms.org>`__ to help you create your own plugins.  These site plugins can be installed to your project using ``Plugin Management`` in |siteTools| through the Studio UI.  See :ref:`newIa-plugin-management` for more information on installing site plugins from the CrafterCMS Marketplace.
+CrafterCMS also provides various site plugin examples available from the `marketplace <https://marketplace.craftercms.org>`__ to help you create your own plugins.  These site plugins can be installed to your project using ``Plugin Management`` in |projectTools| through the Studio UI.  See :ref:`newIa-plugin-management` for more information on installing site plugins from the CrafterCMS Marketplace.
 
 * `Cliengo plugin <https://github.com/craftercms/chatbot-plugin/tree/cliengo>`__ to add Cliengo to a project
 * `Image Carousel plugin <https://github.com/craftercms/carousel-plugin>`__ to add a highly configurable carousel plugin based on `Tiny Slider <https://github.com/ganlanyuan/tiny-slider/tree/v2.9.3>`__

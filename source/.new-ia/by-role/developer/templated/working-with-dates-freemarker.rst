@@ -10,7 +10,7 @@ There are times when we need to display dates in a certain format.  Things that 
 
 Let's look at some examples on how to use the Freemarker date built-ins.  We'll use a project created by using the Website_editorial blueprint.
 
-First, let's set the time zone in Crafter Engine.  From the **Sidebar**, click on |siteTools|, then click on **Configuration**.  Select **Engine Project Configuration** from the dropdown list, then enter the following into the configuration:
+First, let's set the time zone in Crafter Engine.  From the **Sidebar**, click on |projectTools|, then click on **Configuration**.  Select **Engine Project Configuration** from the dropdown list, then enter the following into the configuration:
 
 .. code-block:: xml
 
