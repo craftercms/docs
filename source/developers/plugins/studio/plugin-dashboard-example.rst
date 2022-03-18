@@ -8,17 +8,17 @@
 Crafter Studio Dashboard Plugin Example
 =======================================
 
-The site dashboard contains different dashlets that show at a glance all items currently in workflow, all items recently modified by the current user, etc. Dashlets shown vary depending on the user's role.
-For more information on the Dashboard, see :ref:`here <site-dashboard>`
+The project dashboard contains different dashlets that show at a glance all items currently in workflow, all items recently modified by the current user, etc. Dashlets shown vary depending on the user's role.
+For more information on the Dashboard, see :ref:`here <project-dashboard>`
 
-.. image:: /_static/images/content-author/site-dashboard.jpg
+.. image:: /_static/images/content-author/project-dashboard.jpg
    :align: center
    :alt: Studio Dashboard
    :width: 80%
 
 |
 
-Let's take a look at an example of creating a Dashboard plugin in Studio using a site called ``My Site`` created using the **Website Editorial** blueprint.
+Let's take a look at an example of creating a Dashboard plugin in Studio using a project called ``My Site`` created using the **Website Editorial** blueprint.
 
 #. The first thing we have to do is to create the folder structure where we will be placing the JS file for our dashboard site plugin.  We'll follow the convention listed in :ref:`plugin-directory-structure`.  For our example, PLUGIN_TYPE is ``dashboard`` and the PLUGIN_NAME is ``test-dashboard``
 
@@ -99,7 +99,7 @@ Let's take a look at an example of creating a Dashboard plugin in Studio using a
 
    |
 
-   When running a ``crafter-cli`` command, the connection to Crafter CMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the site ``mysite`` by running the following:
+   When running a ``crafter-cli`` command, the connection to Crafter CMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``mysite`` by running the following:
 
       ..  code-block:: bash
 

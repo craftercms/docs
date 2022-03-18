@@ -20,7 +20,7 @@ Studio or, by hitting the ``e`` or ``m`` key on your keyboard
 |
 
 Let's take a look at an example of creating an experience builder panel plugin in Studio using
-a site called ``My Site`` created using the **Website Editorial** blueprint.
+a project called ``My Site`` created using the **Website Editorial** blueprint.
 
 #. The first thing we have to do is to create the folder structure where we will be placing the JS file for our experience builder site plugin.  We'll follow the convention listed in :ref:`plugin-directory-structure`.  For our example, PLUGIN_TYPE is ``experiencebuilder`` and the PLUGIN_NAME is ``test-experiencebuilder``
 
@@ -103,7 +103,7 @@ a site called ``My Site`` created using the **Website Editorial** blueprint.
 
    |
 
-   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the site ``mysite`` by running the following:
+   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``mysite`` by running the following:
 
       ..  code-block:: bash
 
