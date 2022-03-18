@@ -18,7 +18,7 @@ For more information on the Navigation Menu, see :ref:`here <navigating-main-men
 
 |
 
-Let's take a look at an example of creating a Navigation Menu plugin in Studio using a site called ``My Site`` created using the **Website Editorial** blueprint.
+Let's take a look at an example of creating a Navigation Menu plugin in Studio using a project called ``My Site`` created using the **Website Editorial** blueprint.
 
 #. The first thing we have to do is to create the folder structure where we will be placing the JS file for our navigation menu site plugin.  We'll follow the convention listed in :ref:`plugin-directory-structure`.  For our example, PLUGIN_TYPE is ``navmenu`` and the PLUGIN_NAME is ``test-navmenu``
 
@@ -103,7 +103,7 @@ Let's take a look at an example of creating a Navigation Menu plugin in Studio u
 
    |
 
-   When running a ``crafter-cli`` command, the connection to Crafter CMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the site ``mysite`` by running the following:
+   When running a ``crafter-cli`` command, the connection to Crafter CMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``mysite`` by running the following:
 
       ..  code-block:: bash
 

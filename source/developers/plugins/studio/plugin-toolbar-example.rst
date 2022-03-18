@@ -18,7 +18,7 @@ The toolbar is a fixed element at the top of Studio.  It provides contextual wor
 
 |
 
-Let's take a look at an example of creating a toolbar plugin in Studio using a site called ``My Site`` created using the **Website Editorial** blueprint.
+Let's take a look at an example of creating a toolbar plugin in Studio using a project called ``My Site`` created using the **Website Editorial** blueprint.
 
 #. The first thing we have to do is to create the folder structure where we will be placing the JS file for our toolbar site plugin.  We'll follow the convention listed in :ref:`plugin-directory-structure`.  For our example, PLUGIN_TYPE is ``toolbar`` and the PLUGIN_NAME is ``test-toolbar``
 
@@ -51,7 +51,7 @@ Let's take a look at an example of creating a toolbar plugin in Studio using a s
    Inside the ``test-toolbar`` folder, create two empty files, ``index.css`` and ``script.js``,
    and place the ``index.modern.js`` file in it.
 
-#. To setup our toolbar site plugin to be automatically wired in the corresponding configuration file in Studio (which for a site tools tool, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
+#. To setup our toolbar site plugin to be automatically wired in the corresponding configuration file in Studio (which for a toolbar tool, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
 
    .. code-block:: yaml
       :linenos:
@@ -98,7 +98,7 @@ Let's take a look at an example of creating a toolbar plugin in Studio using a s
 
    |
 
-   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the site ``mysite`` by running the following:
+   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``mysite`` by running the following:
 
       ..  code-block:: bash
 
