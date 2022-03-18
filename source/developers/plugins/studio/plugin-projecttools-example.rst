@@ -49,23 +49,13 @@ called ``My Site`` created using the **Website Editorial** blueprint.
    We will be placing the JS file implementing the toolbar site plugin under the ``test-project-tools``
    folder.  For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/projecttools-plugin``
 
-#. Inside the ``test-project-tools`` folder, create two empty files, ``index.css`` and ``script.js``, then create the javascript file for our plugin, by using the following plugin example file ``index.modern.js`` (Click on the triangle on the left to expand/collapse):
+#. We'll create the javascript file for our plugin by following the instructions in the plugin example
+   `here <https://github.com/craftercms/craftercms-ui-plugin-sample>`__ which will generate the
+   ``index.modern.js`` file.
 
-   .. raw:: html
+   Inside the ``test-project-tools`` folder, create two empty files, ``index.css`` and ``script.js``,
+   and place the ``index.modern.js`` file in it.
 
-      <details>
-      <summary><a>Sample Project Tools plugin file "index.modern.js".</a></summary>
-
-   .. literalinclude:: /_static/code/plugins/project-tools/index.modern.js
-      :language: js
-      :linenos:
-
-   .. raw:: html
-
-      </details>
-
-   |
-   |
 
 #. To setup our ``Project Tools`` tool site plugin to be automatically wired in the corresponding configuration file in Studio (which for a site tools tool, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
 

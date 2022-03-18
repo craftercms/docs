@@ -34,23 +34,13 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a s
    We will be placing the JS file implementing the toolbar site plugin under the ``react-sample`` folder
    For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/sidebar-plugin``
 
-#. Inside the ``react-sample`` folder, create two empty files, ``index.css`` and ``script.js``, then create the javascript file for our plugin, by using the following plugin example file ``index.modern.js`` (Click on the triangle on the left to expand/collapse):
+#. We'll create the javascript file for our plugin by following the instructions in the plugin example
+   `here <https://github.com/craftercms/craftercms-ui-plugin-sample>`__ which will generate the
+   ``index.modern.js`` file.
 
-   .. raw:: html
+   Inside the ``react-sample`` folder, create two empty files, ``index.css`` and ``script.js``,
+   and place the ``index.modern.js`` file in it.
 
-      <details>
-      <summary><a>Sample sidebar plugin file "index.modern.js".</a></summary>
-
-   .. literalinclude:: /_static/code/plugins/sidebar/index.modern.js
-       :language: js
-       :linenos:
-
-   .. raw:: html
-
-      </details>
-
-   |
-   |
 
 #. To setup our sidebar site plugin to be automatically wired in the corresponding configuration file in Studio (which for a sidebar, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
 

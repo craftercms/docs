@@ -44,23 +44,12 @@ Let's take a look at an example of creating a toolbar plugin in Studio using a s
    We will be placing the JS file implementing the toolbar site plugin under the ``test-toolbar`` folder
    For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/toolbar-plugin``
 
-#. Inside the ``test-toolbar`` folder, create two empty files, ``index.css`` and ``script.js``, then create the javascript file for our plugin, by using the following plugin example file ``index.modern.js`` (Click on the triangle on the left to expand/collapse):
+#. We'll create the javascript file for our plugin by following the instructions in the plugin example
+   `here <https://github.com/craftercms/craftercms-ui-plugin-sample>`__ which will generate the
+   ``index.modern.js`` file.
 
-   .. raw:: html
-
-      <details>
-      <summary><a>Sample toolbar plugin file "index.modern.js".</a></summary>
-
-   .. literalinclude:: /_static/code/plugins/toolbar/index.modern.js
-      :language: js
-      :linenos:
-
-   .. raw:: html
-
-      </details>
-
-   |
-   |
+   Inside the ``test-toolbar`` folder, create two empty files, ``index.css`` and ``script.js``,
+   and place the ``index.modern.js`` file in it.
 
 #. To setup our toolbar site plugin to be automatically wired in the corresponding configuration file in Studio (which for a site tools tool, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
 
