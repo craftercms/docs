@@ -401,7 +401,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>
 
    |
 
-#. Once your new project is up, users can upload files to S3 from an article page.  Let's verify the parameters you passed through the blueprint by checking the ``aws.xml`` file.  Open the **Sidebar**, then click on |siteConfig|.  Click on ``Configuration``, then select ``AWS Profiles`` from the dropdown.
+#. Once your new project is up, users can upload files to S3 from an article page.  Let's verify the parameters you passed through the blueprint by checking the ``aws.xml`` file.  Open the **Sidebar**, then click on |projectTools|.  Click on ``Configuration``, then select ``AWS Profiles`` from the dropdown.
 
    .. image:: /_static/images/blueprint/blueprint-param-added-verify.jpg
       :width: 80%

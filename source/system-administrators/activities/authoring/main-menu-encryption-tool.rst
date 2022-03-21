@@ -40,7 +40,7 @@ To access the Studio encryption tool, from the top right of your browser, click 
 
 To encrypt a password, access key, etc., simply enter the password, access key, etc. in the ``Raw Text`` field, then click on ``Encrypt Text``.  This will generate the encrypted password, access key, etc. that you then simply need to paste in the configuration file.
 
-Crafter Studio also provides the encryption tool to encrypt passwords, access keys or other sensitive information in a configuration file managed through Crafter Studio in |siteConfig| -> ``Configuration``.  See :ref:`encrypting-text-in-a-configuration-file` for more information.
+Crafter Studio also provides the encryption tool to encrypt passwords, access keys or other sensitive information in a configuration file managed through Crafter Studio in |projectTools| -> ``Configuration``.  See :ref:`encrypting-text-in-a-configuration-file` for more information.
 
 -------
 Example

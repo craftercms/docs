@@ -133,7 +133,7 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a p
                   <role>developer</role>
                </permittedRoles>
                <configuration>
-                  <title id="siteTools.title" defaultMessage="Site Tools"/>
+                  <title id="siteTools.title" defaultMessage="Project Tools"/>
                   <icon id="@material-ui/icons/TuneRounded"/>
                   <widgets>
                      <widget id="craftercms.components.SiteToolsPanel"/>

@@ -31,7 +31,7 @@ Notice the pages published to staging and live with the same time in the above i
 Setting Up Staging per Project
 ------------------------------
 
-Staging is setup per project and by default is not enabled.  To enable staging for your project, click on |siteConfig| from the **Sidebar**, then click on **Configuration** and select **Project Configuration** from the list.
+Staging is setup per project and by default is not enabled.  To enable staging for your project, click on |projectTools| from the **Sidebar**, then click on **Configuration** and select **Project Configuration** from the list.
 
 Under the **<published-repository>** tags, set **<enable-staging-environment>** to ``true``.
 

@@ -15,7 +15,7 @@ The drag and drop configuration file defines the categories and their correspond
 
 To find this configuration xml through studio follow the next instructions:
 
-#. Click on |siteConfig| located in the **Sidebar**.
+#. Click on |projectTools| located in the **Sidebar**.
 #. Choose **Configuration** from the menu.
 #. Select **Preview Components Configuration**.
 

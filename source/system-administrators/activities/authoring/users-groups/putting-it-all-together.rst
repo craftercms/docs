@@ -41,7 +41,7 @@ Create a new role
 
 We'll now create a new role for the new group we just created.
 
-#. To create a new role, click on |siteConfig| from the **Sidebar**, then click on **Configuration**.
+#. To create a new role, click on |projectTools| from the **Sidebar**, then click on **Configuration**.
 #. From the dropdown box, select **Role Mappings**
 #. Add your new group and role in the editor
 
@@ -80,7 +80,7 @@ For more information about role mappings, please see: :ref:`role-mappings`
 Adding permissions
 ------------------
 
-#. To add permissions to the new role we just created, click on |siteConfig| from the **Sidebar**, then click on **Configuration**.
+#. To add permissions to the new role we just created, click on |projectTools| from the **Sidebar**, then click on **Configuration**.
 #. From the dropdown box, select **Permissions Mappings**
 #. Add in the permissions that you would like to give to the new role that we just created.  For our example below, we are giving the role **newseditor** permission to publish from the dashboard and the following permissions for the **news** folder and **assets** folder:
 

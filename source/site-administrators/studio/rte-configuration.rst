@@ -65,7 +65,7 @@ Let's take a look at an example of using one of the TinyMCE plugins.
 
 The default editor instance contains a menubar with most of the commonly used editing tools.  Sometimes, you want handy buttons available so you don't have to find the tool you need from the menubar.  We'll add a media button to our editor instance to be able to embed a YouTube video:
 
-1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE Configuration*
+1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE Configuration*
 2. Add the button name **media** to one of the toolbarItem tags: ``<toolbarItems1>``.  An **Insert/Edit Embedded Media** button |rteMediaBtn| will now be available for users of the RTE.
 
    .. figure:: /_static/images/site-admin/rte/rte-media-button-added.jpg
@@ -126,7 +126,7 @@ Under ``<template />``, add ``title``, ``description`` and ``content``:
 
 Let us take a look at an example of adding two templates to the RTE configuration
 
-1. Open the RTE configuration file in your site by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE Configuration*
+1. Open the RTE configuration file in your site by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE Configuration*
 
 2. Add in the following templates under ``<setup />``:
 
@@ -226,7 +226,7 @@ Example allowing script element
 
 Let's take a look at an example of adding ``<script />`` to the allowable elements (rule set).  We'll be using a site created using the Website Editorial blueprint.
 
-1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
 
 2. Scroll down to ``<extendedElements />`` tag and add ``script`` and save.
 
@@ -276,7 +276,7 @@ You can also add custom elements to the rule set and can be done by simply addin
 
    .. note:: Case sensitive custom elements are not supported in TinyMCE 5.  Remember to **use only lowercase for custom elements** (e.g. ``myattr`` is supported but *myAttr* is not supported).
 
-1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
 
 2. Scroll down to ``<extendedElements />`` tag and add ``mycustomtag`` and save.
 
@@ -325,7 +325,7 @@ Example External Plugin
 Let's take a look at an example of a simple external plugin that creates a custom button which inserts text in the RTE.
 We'll load our external plugin (a custom button) and add it to the RTE's toolbar.  For our example, we'll be using a site created using the empty blueprint named ``hello``.
 
-1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
 
 2. We'll add the configuration for TinyMCE to load the plugin using Crafter Studio's getPluginFile API. We achieve this by using the ``<external_plugins />`` tag and adding child tags with the id of the plugin as tag name and the target URL as the tag's content |br|
 
@@ -441,7 +441,7 @@ Example adding valid child elements to parent element
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Let's take a look at an example of how to add **div** and *text content* as valid children of **a** (html anchor) using the website editorial blueprint.
 
-1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |siteConfig| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
 
 2. Scroll down to the ``<validChildren />`` tag, uncomment it and add **div** and text contents as child elements of **a** and save.
 
@@ -454,7 +454,7 @@ Let's take a look at an example of how to add **div** and *text content* as vali
 
 3. We'll now disable ``Force Root Block p Tag`` and ``Force p tags New Lines`` so that markup we enter in the RTE code editor will remain unchanged after saving your changes.  Setting the ``Force Root Block p Tag``  option to false will never produce **p** tags on enter, or, automatically it will instead produce **br** elements and Shift+Enter will produce a **p**.
 
-   Open the *Article* content type by opening the **Sidebar**, then click on |siteConfig| -> *Content Types* -> *Article* -> *Open Type*.
+   Open the *Article* content type by opening the **Sidebar**, then click on |projectTools| -> *Content Types* -> *Article* -> *Open Type*.
    Scroll down to the ``Sections Repeating Group`` field, then click on the ``section_html`` field, which is an RTE.
 
    In the ``Properties Explorer`` on the right, remove the check mark on the property ``Force Root Block p Tag`` and ``Force p tags New Lines``.
@@ -537,7 +537,7 @@ The RTE's configuration file looks like this:
 
 |
 
-You can access the ``RTE (TinyMCE 5) Configuration`` file by going to the **Sidebar** then clicking on  |siteConfig|.  In the **Project Tools**, click on **Configuration**, then from the list, select ``RTE (TinyMCE 5) Configuration``
+You can access the ``RTE (TinyMCE 5) Configuration`` file by going to the **Sidebar** then clicking on  |projectTools|.  In the **Project Tools**, click on **Configuration**, then from the list, select ``RTE (TinyMCE 5) Configuration``
 
 .. figure:: /_static/images/site-admin/rte/rte-setup-config-file-access.jpg
    :alt: RTE Setup - Open RTE Configuration File in Studio

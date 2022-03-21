@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 
 :orphan:
 
@@ -18,7 +18,7 @@ There are times when a file/item in your project gets in a state that you would 
 
 To manually set the workflow state of a file in your project, find the file/s you'd like to change the workflow state and put a checkmark on the box next to it.  Towards the top of your browser, right next to your project name, click on **Set States**
 
-.. image:: /_static/images/site-admin/site-config-workflow-states.jpg
+.. image:: /_static/images/site-admin/project-tools-workflow-states.jpg
     :alt: Site Admin - Project Tools Set Workflow States
     :align: center
 
