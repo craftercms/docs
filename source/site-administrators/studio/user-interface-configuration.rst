@@ -88,7 +88,7 @@ Let's take a look at the sidebar widget as an example.  The sidebar widget is a 
 
 |
 
-To modify the user interface configuration, click on |siteConfig| from the *Sidebar*, then click on **Configuration**
+To modify the user interface configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration**
 and select **User Interface Configuration** from the list.
 
 .. image:: /_static/images/site-admin/config-open-user-interface-config.jpg

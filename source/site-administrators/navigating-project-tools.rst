@@ -8,23 +8,23 @@
 Navigating Project Tools
 ========================
 
-In this section, we discuss the available modules in the |siteConfig| dialog from any of the available out-of-the-box blueprints.  The modules available in the Project Tools can be configured by following :ref:`user-interface-configuration`
+In this section, we discuss the available modules in the |projectTools| dialog from any of the available out-of-the-box blueprints.  The modules available in the Project Tools can be configured by following :ref:`user-interface-configuration`
 
-To get to |siteConfig|, click on the **Toggle Sidebar** icon (CrafterCMS logo with hamburger next to it) at the top left of your browser, if it's not yet open.
+To get to |projectTools|, click on the **Toggle Sidebar** icon (CrafterCMS logo with hamburger next to it) at the top left of your browser, if it's not yet open.
 
 .. image:: /_static/images/site-admin/open-sidebar.png
     :alt: Site Admin - Open Sidebar
     :align: center
     :width: 25%
 
-Once the **Sidebar** is open, click on |siteConfig|
+Once the **Sidebar** is open, click on |projectTools|
 
 .. image:: /_static/images/site-admin/open-site-config.png
     :alt: Site Admin - Click on Project Tools
     :align: center
     :width: 25%
 
-Here are the modules you can access from |siteConfig|
+Here are the modules you can access from |projectTools|
 
 .. image:: /_static/images/site-admin/site-config-menu.png
     :alt: Site Admin - Project Tools Modules
@@ -140,7 +140,7 @@ The **Remote Repositories** under **Project Tools** allows the user to view remo
     :align: center
     :width: 60%
 
-For more information on Remote Repositories under |siteConfig|, see :ref:`remote-repositories`
+For more information on Remote Repositories under |projectTools|, see :ref:`remote-repositories`
 
 --------
 GraphiQL

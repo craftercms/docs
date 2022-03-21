@@ -8,13 +8,13 @@
 Project Config Tools
 ====================
 
-The Project Config tools configuration file defines what modules are available for administration use when clicking on |siteConfig| from the Sidebar. This configuration is unique in that a configuration file exists in the following location of each project: ``SITENAME/config/studio/administration/tools.xml``
+The Project Config tools configuration file defines what modules are available for administration use when clicking on |projectTools| from the Sidebar. This configuration is unique in that a configuration file exists in the following location of each project: ``SITENAME/config/studio/administration/tools.xml``
 
 .. image:: /_static/images/site-admin/configuration-tool-config.png
     :align: center
     :alt: Project Config Tools
 
-To modify the project config tools configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Project Config Tools** from the dropdown list.
+To modify the project config tools configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Project Config Tools** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-site-config-tools.png
     :alt: Configurations - Open Project Config Tools

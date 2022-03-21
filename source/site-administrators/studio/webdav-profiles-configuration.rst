@@ -9,7 +9,7 @@ WebDAV Profiles Configuration
 =============================
 
 The WebDAV Profiles configuration file allows you to configure 0 or more profiles with the information required to connect to a WebDAV server.
-To modify the WebDAV Profiles configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **WebDAV Profiles** from the dropdown list.
+To modify the WebDAV Profiles configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **WebDAV Profiles** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-webdav-config.png
     :alt: Configurations - Open WebDAV Profiles Configuration

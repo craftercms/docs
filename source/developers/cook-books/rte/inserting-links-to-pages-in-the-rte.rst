@@ -15,7 +15,7 @@ This section details how to setup the Rich Text Editor (RTE) to allow a user to 
 Basic Setup and Configuration
 -----------------------------
 
-#. Open the content type with the Rich Text Editor (RTE) to be setup.  Open the **Sidebar** and click on |siteConfig| and select **Content Types**.  Select the content type with the RTE you'd like to setup, then click on the **Open Type** button.
+#. Open the content type with the Rich Text Editor (RTE) to be setup.  Open the **Sidebar** and click on |projectTools| and select **Content Types**.  Select the content type with the RTE you'd like to setup, then click on the **Open Type** button.
 #. Setup the data source to select a page from the site.  From the content model definition, go to the **Data Sources** panel and drag ``File Browse`` to the the ``Data Sources`` section of the form and fill in the following properties:
 
    * Title : Data source title to show on the form e.g. ``Pages``
@@ -32,7 +32,7 @@ Example
 
 Let's take a look at an example using a site created using the ``Website Editorial`` blueprint.  We will setup the RTE in the ``Page - Article`` content type to allow a user to browse or search for pages and insert links to them.  We will first setup the RTE, then see it in action.
 
-#. Open the content type with the Rich Text Editor (RTE) to be setup.  Open the **Sidebar** and click on |siteConfig| and select **Content Types**.  Click on **Open Existing Type**, and select the content type ``Page - Article`` then click on the **Open Type** button.
+#. Open the content type with the Rich Text Editor (RTE) to be setup.  Open the **Sidebar** and click on |projectTools| and select **Content Types**.  Click on **Open Existing Type**, and select the content type ``Page - Article`` then click on the **Open Type** button.
 
 #. Setup the data source to select a page from the site.  From the content model definition, go to the **Data Sources** panel and drag ``File Browse`` to the the ``Data Sources`` section of the form.
 

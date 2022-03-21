@@ -10,7 +10,7 @@ Site Administrators
 
 This section details activities related to site administration in CrafterCMS. The content is oriented towards CrafterCMS administration primarily through the Crafter Studio UI.
 
-Most configuration files can be accessed through Crafter Studio through the **Sidebar -> |siteConfig| -> Configuration**. but can also be modified by accessing the files directly.  Please note that it is recommended that changes to configuration files be done through the Crafter Studio UI.
+Most configuration files can be accessed through Crafter Studio through the **Sidebar -> |projectTools| -> Configuration**. but can also be modified by accessing the files directly.  Please note that it is recommended that changes to configuration files be done through the Crafter Studio UI.
 
 For the site repository, the site structure looks like this::
 

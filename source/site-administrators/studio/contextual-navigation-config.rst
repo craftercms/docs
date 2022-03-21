@@ -9,7 +9,7 @@ Contextual Navigation Configuration
 ###################################
 
 The contextual navigation configuration file drives the top contextual navigation bar.
-To modify the contextual navigation configuration, click on |siteConfig| from the bottom of the *Sidebar*, then click on **Configuration** and select **Contextual Navigation Configuration** from the dropdown list.
+To modify the contextual navigation configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Contextual Navigation Configuration** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-context-nav-config.png
     :alt: Configurations - Open Contextual Navigation Configuration

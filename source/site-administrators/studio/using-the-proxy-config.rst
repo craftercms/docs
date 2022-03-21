@@ -127,7 +127,7 @@ Let's begin:
 
    * Setup the proxy for the video center React application we started above
 
-     Open the **Sidebar**, click on |siteConfig|, then click on **Configuration**.  Select **Proxy Config** from the dropdown menu.
+     Open the **Sidebar**, click on |projectTools|, then click on **Configuration**.  Select **Proxy Config** from the dropdown menu.
 
      .. image:: /_static/images/site-admin/config-open-proxy-config.jpg
         :alt: Configurations - Open Proxy Configuration

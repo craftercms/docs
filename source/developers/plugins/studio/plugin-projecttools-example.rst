@@ -8,8 +8,8 @@
 Crafter Studio Project Tools Plugin Example
 ===========================================
 
-|siteConfig| contains tools that site administrators use for daily activities.  For more information
-on the available tools in |siteConfig|, see :ref:`navigating-project-tools`
+|projectTools| contains tools that site administrators use for daily activities.  For more information
+on the available tools in |projectTools|, see :ref:`navigating-project-tools`
 
 .. image:: /_static/images/developer/plugins/site-plugins/studio-project-tools.png
    :align: center
