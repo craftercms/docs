@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 
 .. index::  Studio Logging, Viewing Logs Through Crafter Studio
 
