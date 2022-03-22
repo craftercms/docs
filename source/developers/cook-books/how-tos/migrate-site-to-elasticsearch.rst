@@ -239,6 +239,8 @@ Edit your ``craftercms-plugin.yaml``, and remove the following property:
 
 And make sure to commit your changes to ``craftercms-plugin.yaml``.
 
+.. _migrating-a-site-from-previous-elasticsearch-client:
+
 =======================================================
 Migrating a site from the previous Elasticsearch client
 =======================================================
