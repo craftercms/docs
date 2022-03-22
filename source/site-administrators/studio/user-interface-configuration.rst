@@ -47,11 +47,16 @@ Here's an annotated version of some of the widgets in the user interface shown i
 
 |
 
-Let's take a look at the sidebar widget as an example.  The sidebar widget is a panel located on the left side of Studio.  The Sidebar contains, the ``Dashboard``, ``Site Explorer`` and the ``Site Tools``, which are also widgets.  Here's the configuration:
+.. _sidebar-widget:
+
+Let's take a look at the sidebar widget as an example.  The Sidebar widget is a panel located on the left
+side of Studio.  The Sidebar contains, the ``Dashboard``, various path navigators and path navigator trees
+such as ``Pages``, ``Components``, etc., and the ``Project Tools``, which are also widgets.
+Here's the configuration:
 
 .. code-block:: xml
    :linenos:
-   :emphasize-lines: 4-6,11-13, 19-25
+   :emphasize-lines: 4-6,11-14, 39-45
 
    <widget id="craftercms.components.ToolsPanel">
      <configuration>
@@ -59,32 +64,53 @@ Let's take a look at the sidebar widget as an example.  The sidebar widget is a 
          <widget id="craftercms.components.ToolsPanelEmbeddedAppViewButton">
            <configuration>
              <title id="words.dashboard" defaultMessage="Dashboard"/>
-             <icon id="@material-ui/icons/DashboardRounded"/>
+             <icon id="@mui/icons-material/DashboardRounded"/>
              <widget id="craftercms.components.Dashboard"/>
            </configuration>
          </widget>
-         <widget id="craftercms.components.ToolsPanelPageButton">
+         <widget id="craftercms.components.PathNavigator">
            <configuration>
-             <title id="previewSiteExplorerPanel.title" defaultMessage="Site Explorer"/>
-             <icon id="craftercms.icons.SiteExplorer"/>
-             <widgets>
-               <widget id="craftercms.components.PathNavigator">
-               ...
-          </widget>
-          <widget id="craftercms.components.ToolsPanelPageButton">
-            <permittedRoles>
-              <role>admin</role>
-              <role>developer</role>
-            </permittedRoles>
-            <configuration>
-              <title id="siteTools.title" defaultMessage="Site Tools"/>
-              <icon id="@material-ui/icons/TuneRounded"/>
-              <widgets>
-                <widget id="craftercms.components.SiteToolsPanel"/>
-              </widgets>
-            </configuration>
-          </widget>
-          ...
+             <id>Pages</id>
+             <label>Pages</label>
+             <icon id="@mui/icons-material/DescriptionOutlined"/>
+             <rootPath>/site/website</rootPath>
+             <locale>en</locale>
+           </configuration>
+         </widget>
+         <widget id="craftercms.components.PathNavigator">
+           <configuration>
+             <id>Components</id>
+             <label>Components</label>
+             <icon id="craftercms.icons.Component"/>
+             <rootPath>/site/components</rootPath>
+             <locale>en</locale>
+           </configuration>
+         </widget>
+         <widget id="craftercms.components.PathNavigator">
+           <configuration>
+             <id>Taxonomy</id>
+             <label>Taxonomy</label>
+             <icon id="@mui/icons-material/LocalOfferOutlined"/>
+             <rootPath>/site/taxonomy</rootPath>
+             <locale>en</locale>
+           </configuration>
+         </widget>
+         ...
+         <widget id="craftercms.components.ToolsPanelEmbeddedAppViewButton">
+           <permittedRoles>
+             <role>admin</role>
+             <role>developer</role>
+           </permittedRoles>
+           <configuration>
+             <title id="siteTools.title" defaultMessage="Site Tools"/>
+             <icon id="@mui/icons-material/ConstructionRounded"/>
+             <widget id="craftercms.components.EmbeddedSiteTools"/>
+           </configuration>
+         </widget>
+       </widgets>
+     </configuration>
+   </widget>
+   ...
 
 |
 
@@ -142,7 +168,7 @@ Simply add the following to the widget you want available only to users with the
 
 where ALLOWED ROLE is a role defined in Studio that is allowed to access the widget.  See :ref:`roles-and-permissions` for a list of default roles in Crafter Studio
 
-Let's take a look at an example in the configuration where access to the ``Site Tools`` widget is limited to users with the roles ``admin`` and ``developer``.
+Let's take a look at an example in the configuration where access to the ``Project Tools`` widget is limited to users with the roles ``admin`` and ``developer``.
 
 .. code-block:: xml
    :linenos:
@@ -164,20 +190,20 @@ Let's take a look at an example in the configuration where access to the ``Site 
 
 |
 
-Here's the sidebar when a user with role ``admin`` is logged in.  Notice that ``Site Tools`` is available in the sidebar
+Here's the sidebar when a user with role ``admin`` is logged in.  Notice that ``Project Tools`` is available in the sidebar
 
 .. image:: /_static/images/site-admin/ui-config-permitted-roles-admin.png
    :alt: Configurations - User Interface Configuration Permitted Roles Admin
-   :width: 25 %
+   :width: 20 %
    :align: center
 
 |
 
-Here's the sidebar when a user with role ``author`` is logged in.  Notice that ``Site Tools`` is not available in the sidebar
+Here's the sidebar when a user with role ``author`` is logged in.  Notice that ``Project Tools`` is not available in the sidebar
 
 .. image:: /_static/images/site-admin/ui-config-permitted-roles-author.png
    :alt: Configurations - User Interface Configuration Permitted Roles Admin
-   :width: 25 %
+   :width: 20 %
    :align: center
 
 |
@@ -189,7 +215,7 @@ Here's the sidebar when a user with role ``author`` is logged in.  Notice that `
 Sidebar Excludes
 ****************
 
-To hide items (exclude) in ``Site Explorer``, use
+To hide items (exclude) in the Sidebar such as path navigators and path navigator trees, use
 
 .. code-block:: xml
    :force:
@@ -204,15 +230,15 @@ To hide items (exclude) in ``Site Explorer``, use
 
 where:
 
-* PATTERN_TO_EXCLUDE is a prefix of items to hide from the Sidebar ``Site Explorer``
+* PATTERN_TO_EXCLUDE is a prefix of items to hide from the Sidebar
 
-Let's take a look at an example using the a site created from the Website Editorial blueprint, to hide the folder ``/site/website/articles/2021/3``.
+Let's take a look at an example using a project created from the Website Editorial blueprint, to hide the folder ``/site/website/articles/2021/3``.
 
-Here's the site tree before the ``2021/3`` folder is hidden
+Here's the Sidebar before the ``2021/3`` folder is hidden
 
 .. image:: /_static/images/site-admin/ui-folders.png
    :alt: Configurations - User Interface Configuration Folder Structure
-   :width: 25 %
+   :width: 20 %
    :align: center
 
 |
@@ -244,11 +270,11 @@ Here's the configuration to hide the folder:
 
 |
 
-Here's the site tree with the folder ``2021/3`` hidden:
+Here's the Sidebar with the folder ``2021/3`` hidden:
 
 .. image:: /_static/images/site-admin/ui-folder-hidden.png
    :alt: Configurations - User Interface Configuration Folder Hidden
-   :width: 25 %
+   :width: 20 %
    :align: center
 
 |
@@ -259,11 +285,11 @@ Here's the site tree with the folder ``2021/3`` hidden:
 Sidebar Widget Icon/Container
 *****************************
 
-Colors, background colors, borders (css properties) etc can be added to widgets in the sidebar ``Site Explorer`` when expanding/collapsing a widget via the ``icon`` and ``container`` properties.
+Colors, background colors, borders (css properties) etc can be added to widgets in the Sidebar when expanding/collapsing a widget via the ``icon`` and ``container`` properties.
 
 Let's take a look at an example of putting a red border when ``Taxonomy`` is expanded and for ``Templates``, a red font color when expanded and a blue font color when collapsed
 
-Here's the default colors of widgets in the ``Site Explorer``
+Here's the default colors of widgets in the Sidebar
 
 .. image:: /_static/images/site-admin/ui-widget-default-colors.jpg
    :alt: Configurations - User Interface Configuration Widget Default Colors
@@ -314,7 +340,7 @@ Here's the configuration for putting a red border when ``Taxonomy`` is expanded 
 
 Remember that children of ``expandedStyle`` & ``collapsedStyle`` should be camelCased standard css properties.
 
-Here's the  ``Site Explorer`` with the colors and border added:
+Here's the Sidebar with the colors and border added:
 
 .. image:: /_static/images/site-admin/ui-widget-color-added.jpg
    :alt: Configurations - User Interface Configuration Widget Default Colors
@@ -336,7 +362,8 @@ Here's the  ``Site Explorer`` with the colors and border added:
 Audience Targeting
 ******************
 
-Audience Targeting allows an author to see what the site would look like if it were being browsed by a user with a given set of attributes.
+Audience Targeting allows an author to see what the project would look like if it were being browsed
+by a user with a given set of attributes.
 
 .. image:: /_static/images/page/page-targeting-open.jpg
     :width: 80 %
@@ -344,7 +371,7 @@ Audience Targeting allows an author to see what the site would look like if it w
 
 |
 
-Here's the  ``Audience Targeting`` configuration out of the box for a site created using the Website Editorial blueprint:
+Here's the  ``Audience Targeting`` configuration out of the box for a project created using the Website Editorial blueprint:
 
 .. code-block:: xml
    :caption: **Audience Targeting - ui.xml**
