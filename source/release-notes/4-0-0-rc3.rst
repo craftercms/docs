@@ -12,6 +12,11 @@ New Features
 * Unlock permission added and can be assigned to a role |br|
   See `here <https://github.com/craftercms/craftercms/issues/3690>`__ for more information
 
+* Added support for deployment mode for deployer processors |br|
+  Supported modes currently are `PUBLISH` and `SEARCH_INDEX`.
+  See :ref:`here <crafter-deployer-api-target-deploy>` and :ref:`here <crafter-deployer-api-target-deploy>`
+  for more information
+
 
 ^^^^^^^
 Updates
@@ -22,6 +27,10 @@ Updates
 
 * Improved handling of blank fields |br|
   See `here <https://github.com/craftercms/craftercms/issues/5366>`__ for more information
+
+* Upgraded Tika to 2.3.0
+
+* Upgraded SpringBoot to 2.6.4
 
 Lot's of other small enhancements and bug fixes :)
 
