@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:since-version: 4.0.0
 
 .. index:: Site Policy Configuration
 
@@ -7,6 +8,9 @@
 #########################
 Site Policy Configuration
 #########################
+.. version_tag::
+   :label: Since
+   :version: 4.0.0
 
 The site policy configuration file allows the user to configure conditions for content being added to the site, such as
 minimum/maximum size of files, etc.
