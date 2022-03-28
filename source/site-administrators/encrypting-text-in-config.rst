@@ -97,7 +97,7 @@ Let's take a look at an example of encrypting the ``accessKey`` and ``securityKe
 
   |
 
-  .. image:: /_static/images/site-admin/config-encrypt-text-1.png
+  .. image:: /_static/images/site-admin/config-encrypt-text-1.jpg
      :align: center
      :alt: Add "encrypted=""" attribute to "accessKey" and "secureKey"
 
@@ -113,7 +113,7 @@ Let's take a look at an example of encrypting the ``accessKey`` and ``securityKe
 
   |
 
-  .. image:: /_static/images/site-admin/config-encrypt-text-2.png
+  .. image:: /_static/images/site-admin/config-encrypt-text-2.jpg
      :align: center
      :alt: "accessKey" and "secureKey" now encrypted
 

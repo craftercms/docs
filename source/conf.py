@@ -410,7 +410,7 @@ rst_epilog = """
                    :width: 14%
 
 .. |mainMenu| image:: /_static/images/main-menu-button.png
-                   :width: 5%
+                   :width: 3%
 
 .. |enterpriseOnly| image:: /_static/images/ee-only-badge.svg
                       :alt: Enterprise only feature
