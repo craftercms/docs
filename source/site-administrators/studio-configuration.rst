@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 
 .. index:: Configuration; Crafter Studio
 
@@ -10,7 +10,7 @@ Studio Configuration
 
 This section details how to configure settings managed through Crafter Studio.
 
-To access the configuration settings in Crafter Studio, click on |siteConfig| in the Sidebar,
+To access the configuration settings in Crafter Studio, click on |projectTools| in the Sidebar,
 
 .. image:: /_static/images/site-admin/configuration-access.png
     :align: center

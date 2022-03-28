@@ -36,7 +36,7 @@ Prerequisites
 Step 1: Add the S3 configuration in Studio
 ------------------------------------------
 
-Go to |siteConfig| > ``Configurations`` and in the dropdown select ``AWS Profiles``. If you click on
+Go to |projectTools| > ``Configurations`` and in the dropdown select ``AWS Profiles``. If you click on
 ``View Sample``, you'll see the available configuration profiles. In particular, the configuration for an S3
 profile is the following:
 
@@ -93,7 +93,7 @@ Step 2: Add the controls and data source for uploading files to your S3 bucket t
 For our example, we'll add an ``Attachment`` field, which is of type ``node-selector`` that is bound to an AWS file upload
 data source, to the ``Page - Article`` content type. To do this:
 
-#. Go to |siteConfig| and open the ``Page - Article`` content type definition.
+#. Go to |projectTools| and open the ``Page - Article`` content type definition.
 #. We'll add a data source where to upload our files.  At the end of the **Data Sources** section, add a ``File Uploaded to S3 Repository`` data source with Title **S3 Upload** and Name **s3Upload**.  In the **Profile Id** property, enter the name of ``profile.id`` configured in step 1.
 
    .. image:: /_static/images/guides/s3/attachments-datasource.png

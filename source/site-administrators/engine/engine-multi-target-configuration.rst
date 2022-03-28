@@ -31,7 +31,7 @@ Overriding Engine Configuration Files per Publishing Target
 -----------------------------------------------------------
 To override a configuration file in any of the publishing targets
 
-#. Add the new configuration file/s for overriding to **Configurations** under |siteConfig| -> **Configuration**
+#. Add the new configuration file/s for overriding to **Configurations** under |projectTools| -> **Configuration**
 
    .. image:: /_static/images/site-admin/configuration.png
       :alt: Multi-target Configuration - Open Configurations
@@ -64,7 +64,7 @@ To override a configuration file in any of the publishing targets
 
    For more information on **Configurations** config file, see :ref:`site-config-configuration`
 
-#. Fill in your desired additions/modifications to the override configuration file.  Refresh your browser.  The configuration file you added from above should now be available from |siteConfig| -> **Configuration**.  Open the new configuration file and make the necessary additions/modifications for the override file then save your changes.
+#. Fill in your desired additions/modifications to the override configuration file.  Refresh your browser.  The configuration file you added from above should now be available from |projectTools| -> **Configuration**.  Open the new configuration file and make the necessary additions/modifications for the override file then save your changes.
 
    .. image:: /_static/images/site-admin/new-configuration-added.jpg
       :alt: Multi-target Configuration - New configuration files added to dropdown list
@@ -81,7 +81,7 @@ Example
 
 Let's take a look at an example of overriding the Project Configuration used by Engine ``site-config.xml`` for the **staging** and **live** publishing targets so that each target has a different SAML authentication mechanics (different identity provider in ``staging`` and ``live``).  In our example, we will use a project created using the Website Editorial blueprint named **mysite**
 
-#. Add the new configuration file/s for overriding to **Configurations** under |siteConfig| -> **Configuration**.  We will be overriding the ``site-config.xml`` file in the **staging** and **live** publishing targets, so we will add to the configuration a ``site-config.staging.xml`` and ``site-config.live.xml`` files.
+#. Add the new configuration file/s for overriding to **Configurations** under |projectTools| -> **Configuration**.  We will be overriding the ``site-config.xml`` file in the **staging** and **live** publishing targets, so we will add to the configuration a ``site-config.staging.xml`` and ``site-config.live.xml`` files.
 
    .. code-block:: xml
       :caption: *Configurations* - *SITENAME/sandbox/config/studio/administration/config-list.xml*
@@ -105,7 +105,7 @@ Let's take a look at an example of overriding the Project Configuration used by 
 
    |
 
-#. The configurations we added above will now be available from |siteConfig| -> **Configuration**.
+#. The configurations we added above will now be available from |projectTools| -> **Configuration**.
 
    .. image:: /_static/images/site-admin/site-config-override-added.jpg
       :alt: Multi-target Configuration - Project Tools override configuration files now listed in "Project Tools" -> "Configuration"

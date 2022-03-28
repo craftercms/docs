@@ -18,7 +18,7 @@ CrafterCMS supports the following site policies:
 - MIME-type limits
 - Content-type limits
 
-To modify the site policy configuration, click on |siteConfig| from the *Sidebar*, then click on **Configuration** and
+To modify the site policy configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration** and
 select **Site Policy Configuration** from the dropdown list.
 
 .. image:: /_static/images/site-admin/config-open-site-policy-config.jpg

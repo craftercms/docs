@@ -10,7 +10,7 @@ Project Configuration
 
 The project configuration file contains the primary configuration for Crafter Studio's behavior. Each project has its own project configuration file that controls its behavior independently of other projects.
 
-To modify the project configuration, click on |siteConfig| from the *Sidebar*, then click on **Configuration** and select **Project Configuration** from the list.
+To modify the project configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration** and select **Project Configuration** from the list.
 
 .. image:: /_static/images/site-admin/config-open-site-config.jpg
     :alt: Configurations - Open Project Configuration

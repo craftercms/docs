@@ -26,7 +26,7 @@ Prerequisites
 Step 1: Add the Box configuration in Studio
 -------------------------------------------
 
-Go to |siteConfig| > ``Configuration`` and in the dropdown select Box Profiles. If you click on View Sample, you’ll see the available configuration profiles. In particular, the configuration for a Box profile is the following:
+Go to |projectTools| > ``Configuration`` and in the dropdown select Box Profiles. If you click on View Sample, you’ll see the available configuration profiles. In particular, the configuration for a Box profile is the following:
 
 .. code-block:: xml
     :linenos:
@@ -83,7 +83,7 @@ For this guide, the Box Profiles should look like this (replace the ``...``'s fo
 Step 2: Enable the Box File Upload Control
 ------------------------------------------
 
-In |siteConfig| > Configuration > Project Config Tools, in the <controls> section, enable the Box File Upload by adding the following lines:
+In |projectTools| > Configuration > Project Config Tools, in the <controls> section, enable the Box File Upload by adding the following lines:
 
 .. code-block:: xml
     :linenos:

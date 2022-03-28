@@ -9,7 +9,7 @@ Working with Dates and Time Zones in Groovy
 
 There are times when we need to do some date operations or parse dates or format dates to a desired format.  Groovy has extensions that allows us to work with dates more easily. We'll use a project created using the "Website_editorial" blueprint, and add a script that will run when we preview an article page.
 
-First, let's set the time zone in Crafter Engine.  From the **Sidebar**, click on |siteConfig|, then click on **Configuration**.  Select **Engine Project Configuration** from the dropdown list, then enter the following into the configuration:
+First, let's set the time zone in Crafter Engine.  From the **Sidebar**, click on |projectTools|, then click on **Configuration**.  Select **Engine Project Configuration** from the dropdown list, then enter the following into the configuration:
 
 .. code-block:: xml
 
