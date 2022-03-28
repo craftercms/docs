@@ -54,12 +54,16 @@ To explore the GraphQL schema you can click the ``Docs`` icon on the right side:
         :alt: GraphiQL
         :align: center
 
+|
+
 GraphiQL provides a convenient search navigation to quickly find a specific type or field:
 
 .. image:: /_static/images/developer/graphql/graphiql-doc.png
         :width: 75%
         :alt: GraphiQL Schema Documentation Explorer
         :align: center
+
+|
 
 To test GraphQL queries type them in the left text editor, GraphiQL will provide suggestions and validate the query
 against the schema in real time.
@@ -68,6 +72,8 @@ against the schema in real time.
         :width: 75%
         :alt: GraphiQL Query Editor
         :align: center
+
+|
 
 .. note::
     If the GraphQL server host name used is not ``localhost``, the ``<graphql-server-url />`` in your proxy configuration file needs to be set to the appropriate url.  For more information on the proxy configuration file, see: :ref:`proxy-configuration`
@@ -103,8 +109,8 @@ One of simplest GraphQL queries you can run in CrafterCMS projects is to find al
       items { # list of items found
         # content-type fields that will be returned 
         # (names are based on the content-type configuration)
-        title
-        author
+        title_t
+        author_s
         date_dt
       }
     }
@@ -188,8 +194,8 @@ will return only the first five items found.
       items { # list of items found
         # content-type fields that will be returned 
         # (names are based on the content-type configuration)
-        title
-        author
+        title_t
+        author_s
         date_dt
       }
     }
@@ -211,8 +217,8 @@ the ``sortBy`` and ``sortOrder`` parameters. For example you can use the ``date_
       items { # list of items found
         # content-type fields that will be returned 
         # (names are based on the content-type configuration)
-        title
-        author
+        title_t
+        author_s
         date_dt
       }
     }
@@ -234,9 +240,9 @@ a specific author.
       items { # list of items found
         # content-type fields that will be returned 
         # (names are based on the content-type configuration)
-        title
+        title_t
         # only return articles from this author
-        author (filter: { matches: "Jane" })
+        author_s (filter: { matches: "Jane" })
         date_dt
       }
     }
@@ -253,8 +259,8 @@ Additionally you can create complex filters using expressions like ``and``, ``or
     page_article {
       total
       items {
-        title
-        author
+        title_t
+        author_s
         date_dt
         # Filter articles that are not featured
         featured_b (
@@ -303,9 +309,9 @@ You can also include fields from child components in your model, this applies to
       items { # list of items found
         # content-type fields that will be returned 
         # (names are based on the content-type configuration)
-        title
+        title_t
         # only return articles from this author
-        author (filter: { matches: "Jane" }) 
+        author_s (filter: { matches: "Jane" })
         date_dt
         categories {
           item {
@@ -361,8 +367,8 @@ queries by extracting repeated fields or request specific fields for different c
       items {
         # Fragment spread
         ... CommonFields
-        title
-        author
+        title_t
+        author_s
       }
     }
     
@@ -371,8 +377,8 @@ queries by extracting repeated fields or request specific fields for different c
       items {
         # Fragment spread
         ... CommonFields
-        title
-        icon
+        title_t
+        icon_s
       }
     }
   }
@@ -392,13 +398,13 @@ queries by extracting repeated fields or request specific fields for different c
         
         # Query for fields from specific types
         ... on page_article {
-          title
-          author
+          title_t
+          author_s
         }
         
         ... on component_feature {
-          title
-          icon
+          title_t
+          icon_s
         }
       }
     }
