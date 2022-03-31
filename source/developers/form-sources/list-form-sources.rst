@@ -1,11 +1,11 @@
 .. _list-form-engine-data-sources:
 
-.. |ctlChildContent| image:: /_static/images/form-sources/ds-child-content.png
-             :width: 93%
-             :alt: Form Data Sources - Child Content
+.. |ctlDropTargets| image:: /_static/images/form-sources/ds-drop-targets.png
+             :width: 50%
+             :alt: Form Data Sources - Drop Targets
 
 .. |ctlSharedContent| image:: /_static/images/form-sources/ds-shared-content.png
-             :width: 60%
+             :width: 55%
              :alt: Form Data Sources - Shared Content
 
 .. |ctlEmbeddedContent| image:: /_static/images/form-sources/ds-embedded-content.png
@@ -116,18 +116,18 @@
              :width: 75%
              :alt: Form Data Sources - Static Key Value Pairs
 
-.. |ctlSiteComp| image:: /_static/images/form-sources/ds-site-comp.png
-             :width: 58%
-             :alt: Form Data Sources - Site Component
+.. |ctlProjectComp| image:: /_static/images/form-sources/ds-project-comp.png
+             :width: 68%
+             :alt: Form Data Sources - Project Component
 
 +----------------------------+-------------------------------------------------------------------+
 || Datasource                || Description                                                      |
 +============================+===================================================================+
+|| |ctlDropTargets|          || Details are in the :ref:`form-source-drop-targets` page.         |
++----------------------------+-------------------------------------------------------------------+
 || |ctlSharedContent|        || Details are in the :ref:`form-source-shared-content` page.       |
 +----------------------------+-------------------------------------------------------------------+
 || |ctlEmbeddedContent|      || Details are in the :ref:`form-source-embedded-content` page.     |
-+----------------------------+-------------------------------------------------------------------+
-|| |ctlChildContent|         || Details are in the :ref:`form-source-child-content` page.        |
 +----------------------------+-------------------------------------------------------------------+
 || |ctlImgDt|                || Details are in the :ref:`form-source-image-desktop` page.        |
 +----------------------------+-------------------------------------------------------------------+
@@ -181,5 +181,5 @@
 +----------------------------+-------------------------------------------------------------------+
 || |ctlKVPair|               || Details are in the :ref:`form-source-kvp` page.                  |
 +----------------------------+-------------------------------------------------------------------+
-|| |ctlSiteComp|             || Details are in the :ref:`form-source-site-component` page.       |
+|| |ctlProjectComp|          || Details are in the :ref:`form-source-project-component` page.    |
 +----------------------------+-------------------------------------------------------------------+
