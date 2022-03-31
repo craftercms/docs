@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -14,9 +15,11 @@ Video from S3 Repository Data Source
 ====================================
 
 .. image:: /_static/images/form-sources/form-source-s3-video-repo.png
-    :width: 50%
+    :width: 30%
     :alt: Source Control Video From S3 Repository
     :align: center
+
+|
 
 -------------
 Configuration
@@ -26,6 +29,8 @@ Configuration
     :width: 50%
     :alt: Source Control Video From S3 Repository Configuration
     :align: center
+
+|
 
 .. include:: /includes/form-sources/form-source-field-basics.rst
 

@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -17,8 +18,8 @@ Rich Text Editor Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-rte-example.png
-    :width: 50%
+.. image:: /_static/images/form-controls/form-control-rte-example.jpg
+    :width: 60%
     :alt: RTE Example
     :align: center
 
@@ -26,8 +27,8 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-rte-properties.png
-    :width: 50%
+.. image:: /_static/images/form-controls/form-control-rte-properties.jpg
+    :width: 30%
     :alt: RTE
     :align: center
 
@@ -77,7 +78,8 @@ Configuration
 ||                       || * |fileUploadToS3|                                                   |
 ||                       || * |sharedContent|                                                    |
 ||                       || * |embeddedContent|                                                  |
-||                       || * |siteComponent|                                                    |
+||                       || * |projectComponent|                                                 |
+||                       || * |dropTargets|                                                      |
 +------------------------+-----------------------------------------------------------------------+
 
 .. |imgUploadFromDesktop| replace:: :ref:`Image Uploaded from Desktop <form-source-image-desktop>`
@@ -108,4 +110,5 @@ Configuration
 .. |fileUploadToS3| replace:: :ref:`File Uploaded to S3 Repository <form-source-s3-file-upload>`
 .. |sharedContent| replace:: :ref:`Shared Content <form-source-shared-content>`
 .. |embeddedContent| replace:: :ref:`Embedded Content <form-source-embedded-content>`
-.. |siteComponent| replace:: :ref:`Site Component <form-source-site-component>`
+.. |projectComponent| replace:: :ref:`Project Component <form-source-project-component>`
+.. |dropTargets| replace:: :ref:`Project Component <form-source-drop-targets>`
