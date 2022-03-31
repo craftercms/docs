@@ -21,7 +21,7 @@
              :alt: Form Controls - Text Area
 
 .. |ctlRTE| image:: /_static/images/form-controls/ctl-rte.png
-             :width: 105%
+             :width: 75%
              :alt: Form Controls - Rich Text Editor
 
 .. |ctlDropdown| image:: /_static/images/form-controls/ctl-dropdown.png

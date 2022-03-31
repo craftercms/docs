@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Content Modeling, Modeling, Content Model
 
@@ -16,7 +17,7 @@ Content Types in Crafter Studio
 
 Content Type Management in Crafter Studio is located in the |projectTools|.
 
-.. image:: /_static/images/content-model/site-config-link.png
+.. image:: /_static/images/content-model/project-tools-link.png
     :width: 30%
     :alt: Project Tools Link
     :align: center
@@ -123,7 +124,7 @@ Crafter Studio's Form Builder
 ||       || To configure a data source, click on it and then edit the properties                 |
 ||       || in the Properties Explorer.                                                          |
 +--------+---------------------------------------------------------------------------------------+
-|| 9     || Save or Cancel the changes to the Content Type.                                      |
+|| 9     || Save, Save & Close, Save & Minimize or Cancel the changes to the Content Type.       |
 +--------+---------------------------------------------------------------------------------------+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -310,7 +311,7 @@ To see cascade on delete in action, let's create a new article (**Article** cont
 
 |
 
-Let's look at the dependencies of our newly created article, where we expect the image under the ``static-assets/items/images/2021/01/26`` will be deleted when we delete the article since we have configured cascade on delete for content type **Article** for items under the directory ``static-assets/item/images``:
+Let's look at the dependencies of our newly created article, where we expect the image under the ``static-assets/items/images/2022/03/29`` will be deleted when we delete the article since we have configured cascade on delete for content type **Article** for items under the directory ``static-assets/item/images``:
 
 .. figure:: /_static/images/content-model/new-article-dependencies.png
     :width: 80%
@@ -464,7 +465,7 @@ Now let's take a look at what happens when we delete content with item specific 
 
 Open the **Dashboard** and notice the items that are deleted.  We deleted an article, and since the image is located in a path matching the regex pattern for item specific dependencies, the image is deleted along with the article.
 
-.. figure:: /_static/images/content-model/delete-article-sidebar.jpg
+.. figure:: /_static/images/content-model/delete-article-sidebar.png
     :alt: Sidebar and Dashboard showing items that were deleted when the article was deleted
     :align: center
 
@@ -484,7 +485,7 @@ Quick create allows content authors to create content with as few clicks as poss
 
 |
 
-Let's take a look at an example on how to configure a content type to be available from the quick create button in the context nav for authors using the out of the box blueprint **Website Editorial**.  In the image below, we have a project named **My Site** with the quick create button expanded.  Notice that we have one content type available for quick create, the **Article** content type.
+Let's take a look at an example on how to configure a content type to be available from the quick create button in the context nav for authors using the out of the box blueprint **Website Editorial**.  In the image below, we have a project named **My Editorial** with the quick create button expanded.  Notice that we have one content type available for quick create, the **Article** content type.
 
 .. figure:: /_static/images/content-model/quick-create-btn-expanded.png
     :width: 35%
@@ -493,7 +494,7 @@ Let's take a look at an example on how to configure a content type to be availab
 
 |
 
-If you look at the site tree as shown above, most of the content (the articles) is organized in a dated folder structure.  Adding quick create for the **Article** content type lets the content author skip having to open the Sidebar, then navigate through the path navigation tree, create the year/month folder if it does not exist yet, then finally create their content.
+If you look at the project tree as shown above, most of the content (the articles) is organized in a dated folder structure.  Adding quick create for the **Article** content type lets the content author skip having to open the Sidebar, then navigate through the project tree, create the year/month folder if it does not exist yet, then finally create their content.
 
 To setup quick create for a content type, from the **Sidebar**, click on |projectTools| at the bottom.  Next, click on **Content Types**.  We will select the content type **Article** for editing.  Next, go to the **Properties Explorer** and scroll to the **Quick Create** section of the properties.
 
@@ -518,7 +519,7 @@ In the **Destination Path Pattern**, fill in the path pattern where the content 
 
 We will then put in ``/site/website/articles/{year}/{month}`` as the path pattern, which will put the new content into the year and month folder when the content author used quick create.
 
-Below is the site tree after using the quick create button to create a new article titled ``New article using quick create``, where the year and month folders were created for the new article using the value in the ``Destination Path Pattern`` property of the content type.
+Below is the project tree after using the quick create button to create a new article titled ``New article using quick create``, where the year and month folders were created for the new article using the value in the ``Destination Path Pattern`` property of the content type.
 
 .. figure:: /_static/images/content-model/quick-create-article-created.png
     :width: 40%
@@ -760,6 +761,11 @@ Data Sources are pickers that help pull in content from internal or external sto
 
 Data Sources allows the content model designer to decide where different assets uploaded via different controls go (for instance icons, images, RTE related assets, etc.).  It has it's own properties, like "Repository Path", which specifies the path where assets are stored, which help keep the system consistent over time.  The storage destination designed in the model dictates how those assets are handled during a duplicate event (duplicate the asset or duplicate the reference to the asset).
 
+.. _shared-and-embedded-content:
+
+Shared and Embedded Content Data Sources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 There are a couple of data source that also dictates how components are handled during duplicate/copy events.  The :ref:`Shared Content<form-source-shared-content>` data source will duplicate/copy the reference to a component during a duplicate/copy event and is used for components that need to be shared across pages or components. For components that belong exclusively to a content object, use the :ref:`Embedded Content<form-source-embedded-content>` data source.
 
 The ``shared-content`` data sources also provides an option to allow users to search for existing items (``Enable Search Existing`` property) in addition to browsing.  This provides users ease of managing lots of items/assets.
@@ -801,6 +807,9 @@ A search dialog will open displaying in a grid view, items the user can search t
    :align: left
 
 |
+
+List of Data Sources
+^^^^^^^^^^^^^^^^^^^^
 
 Form Engine Data Sources (please use the scrollbar to see more data sources)
 
