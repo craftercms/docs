@@ -1,8 +1,8 @@
-.. index:: CrafterCMS 4.0.0 rc3 Release Notes
+.. index:: CrafterCMS 4.0.0 Release Notes
 
---------------------
-CrafterCMS 4.0.0 rc3
---------------------
+----------------
+CrafterCMS 4.0.0
+----------------
 
 
 ^^^^^^^^^^^^
@@ -28,20 +28,23 @@ Updates
 * Improved handling of blank fields |br|
   See `here <https://github.com/craftercms/craftercms/issues/5366>`__ for more information
 
+* Disabled copy action of Home page |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5345>`__ for more information
+
 * Upgraded Tika to 2.3.0
 
 * Upgraded SpringBoot to 2.6.4
 
 Lot's of other small enhancements and bug fixes :)
 
-For a full list of tickets, please visit: `GitHub 4.0.0 rc3 Milestone <https://github.com/craftercms/craftercms/milestone/78?closed=1>`_
+For a full list of tickets, please visit: `GitHub 4.0.0 Milestone <https://github.com/craftercms/craftercms/milestone/78?closed=1>`_
 
 .. important::
 
     Please see :ref:`Breaking changes <breaking-changes-4-0-0>` for breaking changes and other
     things to consider before upgrading
 
-    For instructions on how to update your CrafterCMS install to 4.0.0 rc1 (applies to 4.0.0 rc3),
+    For instructions on how to update your CrafterCMS install to 4.0.0 rc1 (applies to 4.0.0),
     please see :ref:`upgrading-craftercms`
 
     For Linux installs, the Studio upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
