@@ -31,12 +31,14 @@ Crafter Studio uses a default key and salt for the encryption tool.  To set the 
 
 |
 
-To access the Studio encryption tool, from the top right of your browser, click on the ``Main Menu`` icon |mainMenu|, then click on ``Encryption Tool`` from the ``Main Menu`` sidebar.
+To access the Studio encryption tool, from the top right of your browser, click on the ``Navigation Menu`` icon |mainMenu|, then click on ``Encryption Tool`` under *Global*.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-encryption-tool.png
     :alt: System Administrator - Main Menu Encryption Tool
     :align: center
     :width: 100%
+
+Note that the encryption tool may also be accessed through the |projectTools| ``Encryption Tool`` of any project in Studio.
 
 To encrypt a password, access key, etc., simply enter the password, access key, etc. in the ``Raw Text`` field, then click on ``Encrypt Text``.  This will generate the encrypted password, access key, etc. that you then simply need to paste in the configuration file.
 
@@ -86,14 +88,14 @@ Let's begin:
      .. image:: /_static/images/system-admin/main-menu/main-menu-encryption-tool-raw-text.png
         :alt: System Administrator - Main Menu Encryption Tool Enter Raw Text
         :align: center
-        :width: 100%
+        :width: 70%
 
    * Click on the ``Encrypt Text`` button.  The encrypted text will be displayed below the ``Raw Text`` field and copied onto the clipboard
 
      .. image:: /_static/images/system-admin/main-menu/main-menu-encryption-text-encrypted.png
         :alt: System Administrator - Main Menu Encryption Tool Text Encrypted
         :align: center
-        :width: 100%
+        :width: 70%
 
 #. Use the encrypted password
 

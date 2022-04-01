@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -14,9 +15,11 @@ Shared Content Data Source
 ==========================
 
 .. image:: /_static/images/form-sources/form-source-shared-content.png
-    :width: 50%
-    :alt: Form Control Input 1
+    :width: 30%
+    :alt: Form Source Shared Content
     :align: center
+
+|
 
 -------------
 Configuration
@@ -24,8 +27,10 @@ Configuration
 
 .. image:: /_static/images/form-sources/form-source-shared-content-conf.png
     :width: 50%
-    :alt: Form Control Input 1
+    :alt: Form Shared Content Fields
     :align: center
+
+|
 
 .. include:: /includes/form-sources/form-source-field-basics.rst
 

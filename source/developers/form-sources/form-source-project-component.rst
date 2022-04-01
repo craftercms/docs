@@ -1,31 +1,36 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. index:: Data Sources; Site Component
+.. index:: Data Sources; Project Component
 
-.. _form-source-site-component:
+.. _form-source-project-component:
 
-==========================
-Site Component Data Source
-==========================
+=============================
+Project Component Data Source
+=============================
 
-.. image:: /_static/images/form-sources/form-source-site-component.png
-    :width: 50%
-    :alt: Form Control Data Source Site Component
+.. image:: /_static/images/form-sources/form-source-project-component.png
+    :width: 30%
+    :alt: Form Control Data Source Project Component
     :align: center
+
+|
 
 -------------
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-site-component-conf.png
+.. image:: /_static/images/form-sources/form-source-project-component-conf.png
     :width: 50%
-    :alt: Form Control Data Source Site Component Configuration
+    :alt: Form Control Data Source Project Component Configuration
     :align: center
+
+|
 
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
@@ -40,15 +45,17 @@ Configuration
 Creating an XML file for the data source
 ----------------------------------------
 
-The Site Component Data Source uses xml files to get the components that are going to be used. You can
+The Project Component Data Source uses xml files to get the components that are going to be used. You can
 create your own component to use as data source by following the instructions on :ref:`creating a component<content-type-component>` and just skip creating the view and controller part of the content type if needed.
 
-.. image:: /_static/images/form-sources/form-source-site-component-example.png
-    :width: 80%
-    :alt: Form Control Data Source Site Component Example
+.. image:: /_static/images/form-sources/form-source-project-component-example.png
+    :width: 65%
+    :alt: Form Control Data Source Project Component Example
     :align: center
 
-Here's a sample xml snippet of a site component data source file:
+|
+
+Here's a sample xml snippet of a project component data source file:
 
 .. code-block:: xml
 
