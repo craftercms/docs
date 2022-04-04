@@ -26,9 +26,11 @@ This section covers changes that might affect your CrafterCMS projects, as well 
 
 - **Upgrading 3.1.x sites** |br|
 
-  - CrafterCMS 4.0.0 has a new Studio UI.  To get the same Sidebar you're used to, update the :ref:`user-interface-configuration`
-  - Update your Elasticsearch code to match the latest Elasticsearch changes.  Elasticsearch has released
-    a new Java API Client to replace the Rest High Level Client.
+  - CrafterCMS 4.0.0 has a new Studio UI.  To get the same Sidebar you're used to, update
+    the :ref:`user-interface-configuration`
+  - Update your Elasticsearch code to match the latest Elasticsearch changes.  Elasticsearch
+    has released a new Java API Client to replace the Rest High Level Client.
+
     See :ref:`migrating-a-site-from-previous-elasticsearch-client` for more information on
     upgrading to the latest Elasticsearch client and query mechanism
   - Update ICE to move to :ref:`XB <experience-builder>` (if desired).
