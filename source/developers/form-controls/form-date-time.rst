@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -18,18 +19,22 @@ Example
 -------
 
 .. image:: /_static/images/form-controls/form-control-date-time-example.png
-    :width: 50%
+    :width: 60%
     :alt: Form Control Date-Time Example
     :align: center
+
+|
 
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-date-time-properties.png
-    :width: 50%
+    :width: 40%
     :alt: Form Control Date-Time Properties
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 

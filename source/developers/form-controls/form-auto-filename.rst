@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -18,9 +19,11 @@ Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-autofilename-properties.png
-    :width: 50%
+    :width: 40%
     :alt: Form Control Autofilename Properties
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 

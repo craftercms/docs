@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -18,18 +19,22 @@ Example
 -------
 
 .. image:: /_static/images/form-controls/form-control-grouped-checkboxes-example.png
-    :width: 50%
+    :width: 60%
     :alt: Form Control Grouped Checkboxes Example
     :align: center
+
+|
 
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-grouped-checkboxes.png
-    :width: 50%
+    :width: 40%
     :alt: Form Control Grouped Checkboxes Properties
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
@@ -38,11 +43,17 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Properties            || * Data Source: Source that will populate the checkboxes.             |
 ||                       || * Show Select All: To select/unselect all options.                   |
+||                       || * List Direction: To display the options horizontally or vertically  |
 ||                       || * Read Only: Make field read-only (can't be changed by the author).  |
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || * Minimum Selection: Set a minimum amount of checkboxes to be        |
 ||                       ||   selected.                                                          |
 +------------------------+-----------------------------------------------------------------------+
-|| Related Data Sources  || * Configured List of Pairs.                                          |
-||                       || * Static Key Value Pairs.                                            |
+|| Related Data Sources  || * |projectComponent|                                                 |
+||                       || * |keyValuePair|                                                     |
+||                       || * |sharedContent|                                                    |
 +------------------------+-----------------------------------------------------------------------+
+
+.. |projectComponent| replace:: :ref:`Project Component <form-source-project-component>`
+.. |keyValuePair| replace:: :ref:`Static Key Value Pairs <form-source-kvp>`
+.. |sharedContent| replace:: :ref:`Shared Content <form-source-shared-content>`

@@ -23,6 +23,8 @@ Example
     :alt: RTE Example
     :align: center
 
+|
+
 -------------
 Configuration
 -------------
@@ -31,6 +33,8 @@ Configuration
     :width: 30%
     :alt: RTE
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
@@ -111,4 +115,4 @@ Configuration
 .. |sharedContent| replace:: :ref:`Shared Content <form-source-shared-content>`
 .. |embeddedContent| replace:: :ref:`Embedded Content <form-source-embedded-content>`
 .. |projectComponent| replace:: :ref:`Project Component <form-source-project-component>`
-.. |dropTargets| replace:: :ref:`Project Component <form-source-drop-targets>`
+.. |dropTargets| replace:: :ref:`Drop Targets <form-source-drop-targets>`
