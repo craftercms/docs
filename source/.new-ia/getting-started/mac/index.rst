@@ -24,6 +24,11 @@ Prerequisites
 
    Make sure that you have a ``JAVA_HOME`` environment variable that points to the root of the JDK install directory.  See :ref:`here<verify-java-home-env-var>` for more information on the ``JAVA_HOME`` environment variable
 
+#. **Download and install Git 2.20.1 or later+**
+
+   ``Git`` 2.20.1 or later is required by CrafterCMS and may need to be installed if not already
+   installed in the server.
+
 --------------------------------------------
 Installing CrafterCMS from Prebuilt Binaries
 --------------------------------------------

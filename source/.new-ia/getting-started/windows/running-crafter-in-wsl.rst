@@ -47,6 +47,12 @@ Prerequisite
 
    |
 
+#. **Download and install Git 2.20.1 or later+**
+
+   ``Git`` 2.20.1 or later is required by CrafterCMS and may need to be installed if not already
+   installed in the server.
+
+
 --------------------------------------------
 Installing CrafterCMS from Prebuilt Binaries
 --------------------------------------------
