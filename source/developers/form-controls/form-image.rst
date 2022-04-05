@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -18,18 +19,22 @@ Example
 -------
 
 .. image:: /_static/images/form-controls/form-control-image-example.png
-    :width: 50%
+    :width: 60%
     :alt: Form Control Image Example
     :align: center
+
+|
 
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-image.png
-    :width: 50%
+    :width: 40%
     :alt: Form Control Image
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
@@ -42,8 +47,9 @@ Configuration
 ||                       || * Thumbnail Width: Width of thumbnail image.                         |
 ||                       || * Thumbnail Height: Height of thumbnail image.                       |
 ||                       || * Data Source: Source where the image will be loaded.                |
+||                       || * Read Only: Make field read-only (can't be changed by the author).  |
 +------------------------+-----------------------------------------------------------------------+
-|| Constraints           || * Read Only: Make field read-only (can't be changed by the author).  |
+|| Constraints           || * Required: Make field required to fill out.                         |
 +------------------------+-----------------------------------------------------------------------+
 || Related Data Sources  || * |imgUploadFromDesktop|                                             |
 ||                       || * |imgFromRepo|                                                      |

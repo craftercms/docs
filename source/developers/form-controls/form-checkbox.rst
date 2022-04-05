@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -18,18 +19,29 @@ Example
 -------
 
 .. image:: /_static/images/form-controls/form-control-checkbox-example.png
-    :width: 30%
+    :width: 10%
     :alt: Form Control Checkbox Example
     :align: center
+
+|
+
+.. image:: /_static/images/form-controls/form-control-checkbox-example2.png
+    :width: 10%
+    :alt: Form Control Checkbox Checked Example
+    :align: center
+
+|
 
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-checkbox-properties.png
-    :width: 50%
+    :width: 40%
     :alt: Form Control Checkbox Properties
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 

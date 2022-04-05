@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -16,18 +17,22 @@ Video Control
 -------
 Example
 -------
-.. image:: /_static/images/form-controls/form-control-video-example.png
-    :width: 80%
+.. image:: /_static/images/form-controls/form-control-video-example.jpg
+    :width: 90%
     :alt: Form Control Video Example
     :align: center
+
+|
 
 -------------
 Configuration
 -------------
 .. image:: /_static/images/form-controls/form-control-video.png
-    :width: 50%
+    :width: 40%
     :alt: Form Control Video
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 

@@ -1,4 +1,5 @@
-:is-up-to-date: True
+:is-up-to-date: False
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -21,13 +22,19 @@ Example
     :alt: Form Control Transcoded Video Example
     :align: center
 
+|
+
+.. todo: update image above
+
 -------------
 Configuration
 -------------
 .. image:: /_static/images/form-controls/form-control-transcoded-video.png
-    :width: 50%
+    :width: 40%
     :alt: Form Control Transcoded Video
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 

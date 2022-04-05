@@ -18,18 +18,22 @@ Example
 -------
 
 .. image:: /_static/images/form-controls/form-control-locale-selector-example.png
-      :width: 60%
+      :width: 70%
       :alt: Form Control - Locale Selector Control Example
       :align: center
+
+|
 
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-locale-selector-properties.png
-    :width: 50%
+    :width: 40%
     :alt: Form Control Locale Selector Properties
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 

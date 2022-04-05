@@ -19,18 +19,29 @@ Example
 -------
 
 .. image:: /_static/images/form-controls/form-control-item-selector-example.png
-    :width: 50%
+    :width: 60%
     :alt: Form Control Item Selector Example
     :align: center
+
+|
+
+.. image:: /_static/images/form-controls/form-control-item-selector-example2.png
+    :width: 60%
+    :alt: Form Control Item Selector Example
+    :align: center
+
+|
 
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-item-selector.png
-    :width: 50%
+    :width: 40%
     :alt: Form Control Item Selector Properties
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
@@ -42,7 +53,8 @@ Configuration
 ||                       || * Item Manager: Source where the items will be selected/created.     |
 ||                       || * Read Only: Make field read-only (can't be changed by the author).  |
 ||                       || * Disable Flattening for Search.                                     |
-||                       || * Use single value filename.                                         |
+||                       || * Use single value filename (backward compat).                       |
+||                       || * Use ``_mvs`` postfix (backward compat).                            |
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || * Allow Duplicate: Allows adding the same item more than once.       |
 +------------------------+-----------------------------------------------------------------------+
@@ -71,4 +83,4 @@ Configuration
 .. |sharedContent| replace:: :ref:`Shared Content <form-source-shared-content>`
 .. |embeddedContent| replace:: :ref:`Embedded Content <form-source-embedded-content>`
 .. |projectComponent| replace:: :ref:`Project Component <form-source-project-component>`
-.. |dropTargets| replace:: :ref:`Project Component <form-source-drop-targets>`
+.. |dropTargets| replace:: :ref:`Drop Targets <form-source-drop-targets>`
