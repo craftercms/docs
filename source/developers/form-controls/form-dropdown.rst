@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -18,18 +19,29 @@ Example
 -------
 
 .. image:: /_static/images/form-controls/form-control-dropdown-example.png
-    :width: 30%
+    :width: 50%
     :alt: Form Control Dropdown Example
     :align: center
+
+|
+
+.. image:: /_static/images/form-controls/form-control-dropdown-example2.png
+    :width: 50%
+    :alt: Form Control Dropdown Expanded Example
+    :align: center
+
+|
 
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-dropdown.png
-    :width: 50%
+    :width: 40%
     :alt: Form Control Dropdown Properties
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
@@ -43,6 +55,13 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || * Required: Make field required to fill out.                         |
 +------------------------+-----------------------------------------------------------------------+
-|| Related Data Sources  || * Configured List of Pairs                                           |
-||                       || * Static Key Value Pairs                                             |
+|| Related Data Sources  || * |projectComponent|                                                 |
+||                       || * |keyValuePair|                                                     |
+||                       || * |sharedContent|                                                    |
 +------------------------+-----------------------------------------------------------------------+
+
+.. |projectComponent| replace:: :ref:`Project Component <form-source-project-component>`
+.. |keyValuePair| replace:: :ref:`Static Key Value Pairs <form-source-kvp>`
+.. |sharedContent| replace:: :ref:`Shared Content <form-source-shared-content>`
+
+

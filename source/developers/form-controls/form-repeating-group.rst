@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -16,10 +17,12 @@ Repeating Group Control
 -------
 Example
 -------
-.. image:: /_static/images/form-controls/form-control-repeating-group-example.png
+.. image:: /_static/images/form-controls/form-control-repeating-group-example.jpg
     :width: 80%
     :alt: Form Control Repeating Group Example
     :align: center
+
+|
 
 -------------
 Configuration
@@ -28,6 +31,8 @@ Configuration
     :width: 50%
     :alt: Form Control Repeating Group
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 

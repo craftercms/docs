@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -18,27 +19,32 @@ Example
 -------
 
 .. image:: /_static/images/form-controls/form-control-filename-example.png
-    :width: 50%
+    :width: 60%
     :alt: Form Control Filename Example
     :align: center
+
+|
 
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-filename-properties.png
-    :width: 50%
+    :width: 40%
     :alt: Form Control Filename Properties
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
 +------------------------+-----------------------------------------------------------------------+
 || Description/Purpose   || Simple text filename.                                                |
 +------------------------+-----------------------------------------------------------------------+
-|| Properties            || * Size: How much of the input to show on the author input form.      |
-||                       || * Max Length: Maximum number of characters to accept as input.       |
+|| Properties            || * Max Length: Maximum number of characters to accept as input.       |
 ||                       || * Read Only: Make field read-only (can't be changed by the author).  |
+||                       || * Allow Edit Without Warning: Make field give the user a warning that|
+||                       ||   editing the field may result in broken references and links.       |
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || None.                                                                |
 +------------------------+-----------------------------------------------------------------------+

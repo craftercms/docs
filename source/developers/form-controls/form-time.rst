@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -29,7 +30,7 @@ Example
     :alt: Form Control Time Example 2
     :align: center
 
-
+|
 
 -------------
 Configuration
@@ -39,6 +40,8 @@ Configuration
     :width: 35%
     :alt: Form Control Time Properties
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 

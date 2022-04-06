@@ -28,11 +28,11 @@ Here's a sample Project Configuration file (click on the triangle on the left to
 .. raw:: html
 
    <details>
-   <summary><a>Sample "site-config.xml"</a></summary>
+   <summary><a>Sample Project Configuration</a></summary>
 
 .. literalinclude:: /_static/code/site-admin/sample-site-config.xml
-   :language: xml
-   :linenos:
+      :language: xml
+      :linenos:
 
 
 .. raw:: html

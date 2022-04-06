@@ -151,7 +151,7 @@ For building with Gradle for installing CrafterCMS, the following must be instal
 On Linux/Windows WSL 2
 ^^^^^^^^^^^^^^^^^^^^^^
 * Java 11
-* Git 2.x+
+* Git 2.20.1+
 * Maven 3.3.x+
 * make and GCC
 
@@ -175,7 +175,7 @@ On Linux/Windows WSL 2
 On macOS
 ^^^^^^^^
 * Java 11
-* Git 2.x+
+* Git 2.20.1+
 * Maven 3.3.x+
 * make and GCC, which can be installed from ``XCode Command Line Tools``
 

@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -17,7 +18,7 @@ Form Section Control
 Example
 -------
 .. image:: /_static/images/form-controls/form-control-form-section-example.png
-    :width: 80%
+    :width: 60%
     :alt: Form Control Form Section Example
     :align: center
 
@@ -28,6 +29,8 @@ Configuration
     :width: 50%
     :alt: Form Control Form Section Example
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
