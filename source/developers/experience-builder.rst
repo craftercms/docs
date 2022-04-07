@@ -1618,8 +1618,8 @@ Example Applications
 ~~~~~~~~~~~~~~~~~~~~
 
 - `React Example <https://github.com/craftercms/wordify-blueprint/tree/react>`_
-- `Next JS Example <https://github.com/rart/craftercms-example-nextjs>`_
-- `Angular Example <https://github.com/phuongnq/craftercms-example-angular>`_
+- `Next JS Example <https://github.com/craftercms/craftercms-example-nextjs>`_
+- `Angular Example <https://github.com/craftercms/craftercms-example-angular>`_
 
 .. TODO
       Npm
