@@ -11,18 +11,18 @@ Crafter Studio Navigation Menu Plugin Example
 The Navigation Menu contains tools that are used for daily activities by users.
 For more information on the Navigation Menu, see :ref:`here <navigating-main-menu>`
 
-.. image:: /_static/images/developer/plugins/site-plugins/open-dashboard-from-launcher.jpg
+.. image:: /_static/images/developer/plugins/project-plugins/open-dashboard-from-launcher.jpg
    :align: center
    :alt: Navigation Menu
    :width: 80%
 
 |
 
-Let's take a look at an example of creating a Navigation Menu plugin in Studio using a project called ``My Site`` created using the **Website Editorial** blueprint.
+Let's take a look at an example of creating a Navigation Menu plugin in Studio using a project called ``My Editorial`` created using the **Website Editorial** blueprint.
 
-#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our navigation menu site plugin.  We'll follow the convention listed in :ref:`plugin-directory-structure`.  For our example, PLUGIN_TYPE is ``navmenu`` and the PLUGIN_NAME is ``test-navmenu``
+#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our navigation menu project plugin.  We'll follow the convention listed in :ref:`plugin-directory-structure`.  For our example, PLUGIN_TYPE is ``navmenu`` and the PLUGIN_NAME is ``test-navmenu``
 
-   In a local folder, create the descriptor file for your site plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.examplenavmenu``, then create the following folder structure:
+   In a local folder, create the descriptor file for your project plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.examplenavmenu``, then create the following folder structure:
 
    .. code-block:: text
          :caption: *Dashboard Plugin Directory Structure*
@@ -41,7 +41,7 @@ Let's take a look at an example of creating a Navigation Menu plugin in Studio u
 
    |
 
-   We will be placing the JS file implementing the toolbar site plugin under the ``test-navmenu`` folder
+   We will be placing the JS file implementing the toolbar project plugin under the ``test-navmenu`` folder
    For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/navmenu-plugin``
 
 #. We'll create the javascript file for our plugin by following the instructions in the plugin example
@@ -52,7 +52,7 @@ Let's take a look at an example of creating a Navigation Menu plugin in Studio u
    and place the ``index.modern.js`` file in it.
 
 
-#. To setup our navigation menu site plugin to be automatically wired in the corresponding configuration file in Studio (which for the navigation menu, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
+#. To setup our navigation menu project plugin to be automatically wired in the corresponding configuration file in Studio (which for the navigation menu, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
 
    .. code-block:: yaml
       :linenos:
@@ -94,28 +94,28 @@ Let's take a look at an example of creating a Navigation Menu plugin in Studio u
 
    Remember to use the same value used in ``plugin.id`` (found at the top of the descriptor file) for the installation section *plugin.id* which for our example is ``org.craftercms.plugin``
 
-#. After placing your plugin files and setting up auto-wiring, the site plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
+#. After placing your plugin files and setting up auto-wiring, the project plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
-   .. image:: /_static/images/developer/plugins/site-plugins/navmenu-plugin-files.png
+   .. image:: /_static/images/developer/plugins/project-plugins/navmenu-plugin-files.png
       :align: center
-      :alt: Navigation Menu site plugin directory/files
+      :alt: Navigation Menu project plugin directory/files
       :width: 80%
 
    |
 
-   When running a ``crafter-cli`` command, the connection to Crafter CMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``mysite`` by running the following:
+   When running a ``crafter-cli`` command, the connection to Crafter CMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``my-editorial`` by running the following:
 
       ..  code-block:: bash
 
-          ./crafter-cli copy-plugin -e local -s mysite --path /users/myuser/myplugins/navmenu-plugin
+          ./crafter-cli copy-plugin -e local -s my-editorial --path /users/myuser/myplugins/navmenu-plugin
 
       |
 
 #. Let's take a look at our plugin in action by clicking on the Navigation Menu icon on the top right:
 
-   .. image:: /_static/images/developer/plugins/site-plugins/navmenu-plugin-in-action.png
+   .. image:: /_static/images/developer/plugins/project-plugins/navmenu-plugin-in-action.png
       :align: center
-      :alt: Navigation Menu site plugin in action
+      :alt: Navigation Menu project plugin in action
 
    |
 

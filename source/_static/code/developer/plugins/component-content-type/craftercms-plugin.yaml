@@ -7,16 +7,16 @@ descriptorVersion: 2
 plugin:
   type: site
   id: org.craftercms.plugin.mycomponent
-  name: My Component Site Plugin Example
+  name: My Component Project Plugin Example
   tags:
     - test
   version:
     major: 4
     minor: 0
     patch: 0
-  description: My simple component content type site plugin
+  description: My simple component content type project plugin
   website:
-    name: Component Content Type Site Plugin Example
+    name: Component Content Type Project Plugin Example
     url: https://craftercms.com
   media:
     screenshots:

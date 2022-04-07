@@ -1,18 +1,18 @@
 :is-up-to-date: True
 
-.. index:: Create a Site Plugin, Plugin
+.. index:: Create a Project Plugin, Plugin
 
-.. _site-plugin:
+.. _project-plugin:
 
-============
-Site Plugins
-============
+===============
+Project Plugins
+===============
 
-----------------------
-What are site plugins?
-----------------------
+-------------------------
+What are project plugins?
+-------------------------
 
-A site plugin can contain one or more extensions for CrafterCMS in a single package. These extensions can:
+A project plugin can contain one or more extensions for CrafterCMS in a single package. These extensions can:
 
 * **Extend Crafter Studio (authoring)**
 
@@ -20,20 +20,22 @@ A site plugin can contain one or more extensions for CrafterCMS in a single pack
   * Add new Form Engine extensions including data sources and components
   * Add server-side code and services that drive the Studio UI extensions
 
-* **Extend Crafter Engine and the site/web application (delivery)**
+* **Extend Crafter Engine and the project/web application (delivery)**
 
   * Add new content types along with their Groovy controllers and FreeMarker templates
   * Add REST APIs and/or server-side code
   * Add 3rd party integrations to your web app
 
-Site plugins allows the user to easily add/extend functionality and features of a Web experience (site, mobile app) or the content authoring experience (authoring tools) or both.
-Examples of features/functionalities a user may want to add to their Web app may be a contact form, a chat bot or Website analytics.
+Project plugins allows the user to easily add/extend functionality and features of a Web experience
+(site, mobile app) or the content authoring experience (authoring tools) or both.
+Examples of features/functionalities a user may want to add to their Web app may be a contact form,
+a chat bot or Website analytics.
 
-.. _how-do-i-make-my-own-site-plugin:
+.. _how-do-i-make-my-own-project-plugin:
 
----------------------------------
-How Do I Make My Own Site Plugin?
----------------------------------
+------------------------------------
+How Do I Make My Own Project Plugin?
+------------------------------------
 
 ^^^^^^^^^^^^
 Requirements
@@ -43,18 +45,21 @@ You'll need the following for creating your plugin:
 * A plugin descriptor file, ``craftercms-plugin.yaml``
 * Your plugin files
 
-The ``craftercms-plugin.yaml`` file contains information about your plugin, such as the license, the versions of CrafterCMS supported, and other configurations and metadata.
+The ``craftercms-plugin.yaml`` file contains information about your plugin, such as the license,
+the versions of CrafterCMS supported, and other configurations and metadata.
 
 See :ref:`craftercms-plugin-yaml-file` for more information on what's inside the plugin descriptor.
 
-Your plugin files/folders could be JavaScript files, XML files, Groovy scripts, images, CSS files, and more depending on the plugin type you're creating.
+Your plugin files/folders could be JavaScript files, XML files, Groovy scripts, images, CSS files,
+and more depending on the plugin type you're creating.
 
 ^^^^^^^^^^^^^^^^^^^
 Directory Structure
 ^^^^^^^^^^^^^^^^^^^
 
-A site plugin consist of a group of files that are copied to the site repository when installed.  To create your own
-site plugin, your files/folders needs to go in the corresponding type of plugin folder, following the structure below:
+A project plugin consist of a group of files that are copied to the project repository when installed.
+To create your own project plugin, your files/folders needs to go in the corresponding type of
+plugin folder, following the structure below:
 
 
 - ``craftercms-plugin.yaml``: the plugin descriptor, see :ref:`craftercms-plugin-yaml-file` for details
@@ -91,12 +96,12 @@ site plugin, your files/folders needs to go in the corresponding type of plugin 
     - ``pages``: contains Groovy scripts for pages
     - ``rest``: contains Groovy REST scripts
 
-An easy way to develop new plugins is to start with an empty site and when all the files are ready copy them to a new
-repository following the given structure. However all references should be updated to match the final destination of
-the file:
+An easy way to develop new plugins is to start with an empty project and when all the files are ready
+copy them to a new repository following the given structure. However all references should be updated
+to match the final destination of the file:
 
 +------------------------------------------+---------------------------------------------------------------+
-| Location in the plugin repository        | Location in the site repository                               |
+| Location in the plugin repository        | Location in the project repository                            |
 +==========================================+===============================================================+
 | ``authoring/content-types/component/*``  | ``/config/studio/content-types/component/<plugin id path>/*`` |
 +------------------------------------------+---------------------------------------------------------------+
@@ -125,7 +130,7 @@ the file:
 | ``delivery/scripts/rest/*``              | ``/scripts/rest/<plugin id path>/*``                          |
 +------------------------------------------+---------------------------------------------------------------+
 
-Here's an example directory structure for a site plugin:
+Here's an example directory structure for a project plugin:
 
    .. code-block:: text
       :linenos:
@@ -157,7 +162,9 @@ where:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Plugins using Freemarker Templates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-CrafterCMS provides a mechanism (a "hook") for adding markup/defining macros for plugins via Freemarker templates.  These templates, when the plugin has one of them will be automatically included in the site.
+CrafterCMS provides a mechanism (a "hook") for adding markup/defining macros for plugins via
+Freemarker templates.  These templates, when the plugin has one of them will be automatically
+included in the project.
 
 Here are the supported templates:
 
@@ -193,17 +200,17 @@ See https://github.com/craftercms/google-analytics-plugin/blob/master/delivery/t
 
 
 
-.. _site-plugins-create-your-plugin:
+.. _project-plugins-create-your-plugin:
 
 ^^^^^^^^^^^^^^^^^^
 Create your plugin
 ^^^^^^^^^^^^^^^^^^
 
-To create a plugin, a descriptor file  ``craftercms-plugin.yaml`` is required. Below is an example site plugin descriptor file.
+To create a plugin, a descriptor file  ``craftercms-plugin.yaml`` is required. Below is an example project plugin descriptor file.
 
   .. code-block:: yaml
      :linenos:
-     :caption: *Example craftercms-plugin.yaml file for a site plugin*
+     :caption: *Example craftercms-plugin.yaml file for a project plugin*
 
      # This file describes a plugin for use in CrafterCMS
 
@@ -214,17 +221,17 @@ To create a plugin, a descriptor file  ``craftercms-plugin.yaml`` is required. B
      plugin:
        type: site
        id: org.craftercms.plugin.test
-       name: Site Plugin Example
+       name: Project Plugin Example
        tags:
          - test
        version:
          major: 3
          minor: 0
          patch: 1
-       description: A simple example for site plugins
+       description: A simple example for project plugins
        documentation: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/readme.md"
        website:
-         name: Site Plugin Example
+         name: Project Plugin Example
          url: https://github.com/craftercms/site-plugins-example
        media:
          screenshots:
@@ -251,28 +258,28 @@ To create a plugin, a descriptor file  ``craftercms-plugin.yaml`` is required. B
 
 Here are some things to note in the descriptor file:
 
-* ``plugin.type`` should be set to ``site`` for site plugins
-* ``plugin.id`` is a unique Id that is meaningful/recognizable to people who will be using the site plugin
-* ``plugin.name`` is the name displayed in the CrafterCMS Marketplace.  Pick a unique name for your plugin.  You can check in the CrafterCMS Marketplace if the name you picked does not exist yet.  It's also a best practice to provide a name for your plugin that is meaningful or recognizable to users.  The name can be multiple words such as ``Site Plugin Example``
-* ``plugin.version`` is a version number for the site plugin
+* ``plugin.type`` should be set to ``site`` for project plugins
+* ``plugin.id`` is a unique Id that is meaningful/recognizable to people who will be using the project plugin
+* ``plugin.name`` is the name displayed in the CrafterCMS Marketplace.  Pick a unique name for your plugin.  You can check in the CrafterCMS Marketplace if the name you picked does not exist yet.  It's also a best practice to provide a name for your plugin that is meaningful or recognizable to users.  The name can be multiple words such as ``Project Plugin Example``
+* ``plugin.version`` is a version number for the project plugin
 * ``plugin.description`` should contain a short description of the plugin and is displayed underneath the plugin name in the CrafterCMS Marketplace
 * ``plugin.documentation`` serves as the help block for the plugin. It contains a URL to the plugin's documentation file (must be in Markdown) containing information on how to use/configure the plugin. The documentation will appear alongside the plugin in Crafter Studio and the CrafterCMS Marketplace
-* ``plugin.website.url`` can be a page for more information on your site plugin or for announcing updates, reporting bugs, etc. from your user community.
-* ``plugin.media.url`` is the path to look for a representative image of the site plugin.
+* ``plugin.website.url`` can be a page for more information on your project plugin or for announcing updates, reporting bugs, etc. from your user community.
+* ``plugin.media.url`` is the path to look for a representative image of the project plugin.
 * ``plugin.license`` is the license supported by the plugin
 * ``plugin.crafterCmsVersions`` contains the CrafterCMS version/s that the plugin is compatible with (look in the :ref:`release-notes` section for the versions available), and you'll need to keep this up to date
 
 |
 |
 
-The next requirement for creating your site plugin are the plugin files.
+The next requirement for creating your project plugin are the plugin files.
 Depending on the plugin type you are creating, this could be a JavaScript file, Freemarker template files,
 Groovy file, XML file, etc.  The plugin file/s should then be placed in a directory structure as described
-above depending on the site plugin created.  For example, say your plugin is a component content type, your
+above depending on the project plugin created.  For example, say your plugin is a component content type, your
 plugin files should be placed under the directory  ``authoring/content-types/component``
 
   .. code-block:: text
-     :caption: *Example directory structure for a component content type site plugin*
+     :caption: *Example directory structure for a component content type project plugin*
      :emphasize-lines: 4-7
 
      authoring/
@@ -287,7 +294,7 @@ plugin files should be placed under the directory  ``authoring/content-types/com
 CrafterCMS uses a default path for CrafterCMS to look for a default representative image of a plugin, the url ``../.crafter/screenshots/``.  Here's a sample plugin files/directory with a default image to represent the plugin:
 
   .. code-block:: text
-     :caption: *Example directory structure for a component content type site plugin with a default representative image*
+     :caption: *Example directory structure for a component content type project plugin with a default representative image*
      :emphasize-lines: 1-3
 
      .crafter/
@@ -335,25 +342,25 @@ To reuse those libraries, do the following:
 
   |
 
----------------------------
-Publishing Your Site Plugin
----------------------------
+------------------------------
+Publishing Your Project Plugin
+------------------------------
 
 To publish a plugin in the CrafterCMS Marketplace you can follow the instructions in :ref:`marketplace_create_plugins`
 
 |
 |
 
-------------------------
-Installing a Site Plugin
-------------------------
+---------------------------
+Installing a Project Plugin
+---------------------------
 
 Plugins may be installed a couple of ways depending on where the plugins are located:
 
 * Install a plugin from the CrafterCMS Marketplace
 * Install a plugin in development from a Studio local folder
 
-After installing a site plugin, depending on the plugin you created, the site plugin will be be installed under the:
+After installing a project plugin, depending on the plugin you created, the project plugin will be be installed under the:
 
 * {siteRoot}/config/studio/static-assets/plugins/{yourPluginId}/{yourPluginType}/{yourPluginName}/
 * {siteRoot}/config/studio/content-types/component/{yourPluginType}/{yourPluginName}/
@@ -365,10 +372,10 @@ After installing a site plugin, depending on the plugin you created, the site pl
 |
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Install a plugin from the CrafterCMS Marketplace
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Once a site plugin is published to the CrafterCMS Marketplace it can be installed using the Crafter Studio user interface
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Once a project plugin is published to the CrafterCMS Marketplace it can be installed using the Crafter Studio user interface
 or the REST API:
 
    .. note::
@@ -387,16 +394,16 @@ For more information on installing plugins from the CrafterCMS Marketplace using
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Install a plugin in development from a Studio local folder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-For developers who want to test out their plugins before submitting to the CrafterCMS Marketplace, CrafterCMS provides a CLI command ``copy-plugin`` for installing a plugin from a Studio local folder into a site using the ``crafter-cli``.
+For developers who want to test out their plugins before submitting to the CrafterCMS Marketplace, CrafterCMS provides a CLI command ``copy-plugin`` for installing a plugin from a Studio local folder into a project using the ``crafter-cli``.
 
 Let's take a look at an example to show how to install a plugin using the CrafterCMS cli ``copy-plugin`` command.
-We'll use a site named ``mysite`` where we will be installing the plugin, and the plugin we want to install located in ``/Users/myuser/plugins/sidebar-plugin``
+We'll use a project named ``myeditorial`` where we will be installing the plugin, and the plugin we want to install located in ``/Users/myuser/plugins/sidebar-plugin``
 
-To install the plugin ``sidebar-plugin`` to our site ``mysite``, we'll run the ``copy-plugin`` command like below:
+To install the plugin ``sidebar-plugin`` to our project ``myeditorial``, we'll run the ``copy-plugin`` command like below:
 
 .. code-block:: bash
 
-      ➜  ./crafter-cli copy-plugin -e local -s editorial --path /users/myuser/plugins/sidebar-plugin
+      ➜  ./crafter-cli copy-plugin -e local -s myeditorial --path /users/myuser/plugins/sidebar-plugin
       OK
 
 |
@@ -407,9 +414,9 @@ See :ref:`crafter-cli-copy-plugin` for more information on the ``copy-plugin`` c
 
 .. _example-component-plugin:
 
-------------------------------
-Example Creating a Site Plugin
-------------------------------
+---------------------------------
+Example Creating a Project Plugin
+---------------------------------
 
 Let's take a look at an example of creating a component content type plugin named ``My Component``
 
@@ -425,7 +432,7 @@ First, we'll configure the descriptor file ``craftercms-plugin.yaml`` file for o
 We'll then create the directory structure for a component content type plugin ``authoring/content-types/component/*``, to place our plugin files in,
 
    .. code-block:: text
-      :caption: *Directory structure for component content type site plugin My Component*
+      :caption: *Directory structure for component content type project plugin My Component*
       :emphasize-lines: 4-7
 
       authoring/
@@ -484,7 +491,7 @@ Here are the plugin files:
 |
 
 
-The plugin is now ready to be tested.  We'll install our plugin located  under ``/users/myuser/component-plugin`` using the ``crafter-cli`` command ``copy-plugin`` to test it out to a site named editorial
+The plugin is now ready to be tested.  We'll install our plugin located  under ``/users/myuser/component-plugin`` using the ``crafter-cli`` command ``copy-plugin`` to test it out to a project named editorial
 
 .. code-block:: bash
 
@@ -495,27 +502,27 @@ The plugin is now ready to be tested.  We'll install our plugin located  under `
 
 After installing our plugin, we can now verify that our component plugin is available in |projectTools| Content Types
 
-.. figure:: /_static/images/developer/plugins/site-plugins/plugins-sample-component.jpg
+.. figure:: /_static/images/developer/plugins/project-plugins/plugins-sample-component.jpg
    :align: center
-   :alt: Example component content type plugin now available in site editorial
+   :alt: Example component content type plugin now available in project editorial
    :width: 80%
 
 |
 
-------------------------------
-Some More Site Plugin Examples
-------------------------------
+---------------------------------
+Some More Project Plugin Examples
+---------------------------------
 
-For more authoring examples of creating site plugins, see :ref:`studio-plugins`
+For more authoring examples of creating project plugins, see :ref:`studio-plugins`
 
-CrafterCMS also provides various site plugin examples available from the `marketplace <https://marketplace.craftercms.org>`__ to help you create your own plugins.  These site plugins can be installed to your site using ``Plugin Management`` in |projectTools| through the Studio UI.  See :ref:`plugin-management` for more information on installing site plugins from the CrafterCMS Marketplace.
+CrafterCMS also provides various project plugin examples available from the `marketplace <https://marketplace.craftercms.org>`__ to help you create your own plugins.  These project plugins can be installed to your project using ``Plugin Management`` in |projectTools| through the Studio UI.  See :ref:`plugin-management` for more information on installing project plugins from the CrafterCMS Marketplace.
 
-* `Cliengo plugin <https://github.com/craftercms/chatbot-plugin/tree/cliengo>`__ to add Cliengo to a site
+* `Cliengo plugin <https://github.com/craftercms/chatbot-plugin/tree/cliengo>`__ to add Cliengo to a project
 * `Image Carousel plugin <https://github.com/craftercms/carousel-plugin>`__ to add a highly configurable carousel plugin based on `Tiny Slider <https://github.com/ganlanyuan/tiny-slider/tree/v2.9.3>`__
-* `Contact Form plugin <https://github.com/craftercms/contact-form-plugin>`__ to add one or more contact forms to your site
-* `Google Analytics plugin <https://github.com/craftercms/google-analytics-plugin>`__ to add Google Analytics to your site
-* `Google Maps plugin <https://github.com/craftercms/googlemaps-plugin>`__ to add Google Maps to your site
-* `Google Tag Manager plugin <https://github.com/craftercms/google-tag-manager-plugin>`__ to add Google Tag Manager to your site
-* `Sitemap plugin <https://github.com/craftercms/sitemap-plugin>`__ to generate a sitemap for your site
-* `YouTube plugin <https://github.com/craftercms/youtube-plugin>`__ to add YouTube videos to your site
-* `Redirect plugin <https://github.com/craftercms/redirect-plugin>`__ to add file-based redirects in your site
+* `Contact Form plugin <https://github.com/craftercms/contact-form-plugin>`__ to add one or more contact forms to your project
+* `Google Analytics plugin <https://github.com/craftercms/google-analytics-plugin>`__ to add Google Analytics to your project
+* `Google Maps plugin <https://github.com/craftercms/googlemaps-plugin>`__ to add Google Maps to your project
+* `Google Tag Manager plugin <https://github.com/craftercms/google-tag-manager-plugin>`__ to add Google Tag Manager to your project
+* `Sitemap plugin <https://github.com/craftercms/sitemap-plugin>`__ to generate a sitemap for your project
+* `YouTube plugin <https://github.com/craftercms/youtube-plugin>`__ to add YouTube videos to your project
+* `Redirect plugin <https://github.com/craftercms/redirect-plugin>`__ to add file-based redirects in your project

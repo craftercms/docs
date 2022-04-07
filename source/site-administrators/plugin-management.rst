@@ -14,7 +14,7 @@
 Plugin Management
 =================
 
-Site plugins extend Crafter Studio (authoring) and Crafter Engine and the site/web application (delivery).  It adds new features/functionality without adding code to CrafterCMS.
+Project plugins extend Crafter Studio (authoring) and Crafter Engine and the site/web application (delivery).  It adds new features/functionality without adding code to CrafterCMS.
 
 This section details how to manage plugins from the |projectTools| Plugin Management module.
 
@@ -22,7 +22,7 @@ This section details how to manage plugins from the |projectTools| Plugin Manage
 Installing
 ----------
 
-Once a site plugin is published to the CrafterCMS Marketplace it can be installed using the Crafter Studio user interface
+Once a project plugin is published to the CrafterCMS Marketplace it can be installed using the Crafter Studio user interface
 or the REST API:
 
    .. note::
@@ -44,7 +44,7 @@ Install a plugin using the Studio ``Plugin Management`` Project Tool
 #. Login to Crafter Studio
 #. Open the left sidebar by clicking on the Crafter logo with the hamburger icon next to it at the top left of your screen
 
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-sidebar.jpg
+   .. figure:: /_static/images/developer/plugins/project-plugins/plugins-sidebar.jpg
       :align: center
       :alt: Crafter Studio open the sidebar
       :width: 80%
@@ -54,7 +54,7 @@ Install a plugin using the Studio ``Plugin Management`` Project Tool
 
 #. Open |projectTools|
 
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-project-tools.jpg
+   .. figure:: /_static/images/developer/plugins/project-plugins/plugins-project-tools.jpg
       :align: center
       :alt: Crafter Studio Project Tools
       :width: 80%
@@ -64,7 +64,7 @@ Install a plugin using the Studio ``Plugin Management`` Project Tool
 
 #. Or, you can also open |projectTools| by clicking on the ``Navigation Menu`` at the top right of the screen then click on |projectTools|
 
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-open-project-tools.jpg
+   .. figure:: /_static/images/developer/plugins/project-plugins/plugins-open-project-tools.jpg
       :align: center
       :alt: Crafter Studio Open Project Tools
       :width: 80%
@@ -74,7 +74,7 @@ Install a plugin using the Studio ``Plugin Management`` Project Tool
 
 #. Open ``Plugin Management``
 
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-management.jpg
+   .. figure:: /_static/images/developer/plugins/project-plugins/plugins-management.jpg
       :align: center
       :alt: Crafter Studio Plugin Management
       :width: 80%
@@ -84,7 +84,7 @@ Install a plugin using the Studio ``Plugin Management`` Project Tool
 
 #. Click ``Search & install``
 
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-search.png
+   .. figure:: /_static/images/developer/plugins/project-plugins/plugins-search.png
       :align: center
       :alt: Crafter Studio Search Plugins
       :width: 80%
@@ -94,7 +94,7 @@ Install a plugin using the Studio ``Plugin Management`` Project Tool
 
 #. Install the desired plugins by clicking on the ``Install`` button
 
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-install.jpg
+   .. figure:: /_static/images/developer/plugins/project-plugins/plugins-install.jpg
       :align: center
       :alt: Crafter Studio Install Plugins
       :width: 80%
@@ -104,7 +104,7 @@ Install a plugin using the Studio ``Plugin Management`` Project Tool
 
    A notification informing the user of the plugin installation status (success/failure/etc.) will appear on the bottom left of the screen
 
-   .. figure:: /_static/images/developer/plugins/site-plugins/plugins-snackbar.jpg
+   .. figure:: /_static/images/developer/plugins/project-plugins/plugins-snackbar.jpg
       :align: center
       :width: 80%
       :alt: Crafter Studio Install Plugins Successful
@@ -129,7 +129,7 @@ View Installed Plugins
 ^^^^^^^^^^^^^^^^^^^^^^
 To view the installed plugins in your project, click on the ``Navigation Menu`` at the top right then click on |projectTools| then finally click on ``Plugin Management``.
 
-.. figure:: /_static/images/developer/plugins/site-plugins/plugins-installed.jpg
+.. figure:: /_static/images/developer/plugins/project-plugins/plugins-installed.jpg
    :align: center
    :alt: Crafter Studio Installed Plugins
    :width: 80%
@@ -142,14 +142,14 @@ Uninstall Plugins
 
 To uninstall plugins in your project, open the ``Plugin Management`` dialog.  Click on the trash can icon next to the plugin you want to uninstall.  A dialog will open to confirm the plugin to be uninstalled and a list of where the plugin is being used if applicable
 
-.. figure:: /_static/images/developer/plugins/site-plugins/plugin-uninstall-no-deps.png
+.. figure:: /_static/images/developer/plugins/project-plugins/plugin-uninstall-no-deps.png
    :align: center
    :alt: Crafter Studio Uninstall Plugin Dialog No Dependencies
    :width: 80%
 
 |
 
-.. figure:: /_static/images/developer/plugins/site-plugins/plugins-uninstall.jpg
+.. figure:: /_static/images/developer/plugins/project-plugins/plugins-uninstall.jpg
    :align: center
    :alt: Crafter Studio Uninstall Plugin Dialog with Dependencies
    :width: 80%
@@ -160,7 +160,7 @@ For plugins with dependencies like the above, take note of the items in the list
 
 After clicking on the ``Uninstall`` button, a notification will appear at the bottom left of the screen informing the user of the plugin uninstall status (success/failure/etc.).
 
-.. figure:: /_static/images/developer/plugins/site-plugins/plugins-snackbar-uninstalled.jpg
+.. figure:: /_static/images/developer/plugins/project-plugins/plugins-snackbar-uninstalled.jpg
    :align: center
    :alt: Crafter Studio Uninstall Plugin Dialog No Dependencies
    :width: 80%
