@@ -181,12 +181,12 @@ For more information on Studio support for GraphQL, see :ref:`working_with_graph
 Plugin Management
 -----------------
 
-Site plugins extend Crafter Studio (authoring) and Crafter Engine and the site/web application (delivery).
-The Project Tools **Plugin Management** allows the user to install and to view currently installed, site plugins
+Project plugins extend Crafter Studio (authoring) and Crafter Engine and the site/web application (delivery).
+The Project Tools **Plugin Management** allows the user to install and to view currently installed, project plugins
 
 .. image:: /_static/images/site-admin/project-tools-plugin-mgmt.jpg
    :alt: Site Admin - Project Tools Plugin Management
    :align: center
    :width: 60%
 
-For more information on managing site plugins, see :ref:`plugin-management`
+For more information on managing project plugins, see :ref:`plugin-management`

@@ -26,7 +26,7 @@ Developers may submit their plugins to the *CrafterCMS Marketplace*, which provi
 Here are the available plugin types:
 
 * Blueprints
-* Site Plugins
+* Project Plugins
 
 **Blueprints**
 
@@ -43,18 +43,18 @@ Blueprints provide an initial set of styles, pages, behaviors, content types and
 
    blueprints
 
-**Site Plugins**
+**Project Plugins**
 
 .. image:: /_static/images/developer/plugins/marketplace-site-plugins.jpg
-   :alt: Plugins - Marketplace Site Plugins
+   :alt: Plugins - Marketplace Project Plugins
    :width: 60%
    :align: center
 
-Site plugins allow users to either replace, extend or even create stand alone experiences to serve a particular
+Project plugins allow users to either replace, extend or even create stand alone experiences to serve a particular
 use case or set of use cases.
 
 .. toctree::
    :maxdepth: 1
    :titlesonly:
 
-   site-plugins
+   project-plugins

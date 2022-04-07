@@ -15,7 +15,7 @@ It shows different projections of the content in addition to other tools to assi
 and site administration.
 
 The UI is made up of configurable widgets and can be extended or modified by adding/removing/configuring widgets.
-Plugins can make use of this by adding themselves to the UI where required.  See :ref:`site-plugin-descriptor-file` for more information on how a plugin can be wired in the user interface configuration.
+Plugins can make use of this by adding themselves to the UI where required.  See :ref:`project-plugin-descriptor-file` for more information on how a plugin can be wired in the user interface configuration.
 
 Here's a screenshot of Studio showing some of the widgets in the UI in red circles that are defined in the user interface configuration.
 
