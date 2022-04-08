@@ -127,7 +127,7 @@ todo_include_todos = True
 #html_theme = 'alabaster'
 #html_theme = 'sphinx_rtd_theme'
 
-# https://github.com/rart/craftercms-sphinx-theme
+# ui/craftercms-sphinx-theme
 html_theme = 'craftercms_sphinx_theme'
 
 html_show_sphinx = False

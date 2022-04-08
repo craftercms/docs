@@ -11,8 +11,11 @@
 Breaking Changes in CrafterCMS 4.0.0
 ====================================
 
-This section covers changes that might affect your CrafterCMS projects, as well as other considerations before upgrading.  Please review the following and apply changes as required:
+This section covers changes that might affect your CrafterCMS projects, as well as other considerations
+before upgrading.  Please review the following and apply changes as required:
 
+- CrafterCMS 4.0.x requires Java 11 and Git.  See :ref:`requirements_supported_platforms` for more
+  information on CrafterCMS requirements.
 
 - ``nodeSelectors`` now always return an array, even if it's an array of a single item |br|
   See the following for more information on the change in return values:
