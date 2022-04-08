@@ -107,7 +107,7 @@ Updates
 * Added support for deleting content types |br|
   See `here <https://github.com/craftercms/craftercms/issues/1631>`__ for more information
 
-* Updated JS library for in-context editing (ICE) |br|
+* Updated the JavaScript SDK for in-context editing (ICE) |br|
   See https://npm.io/package/@craftercms/ice for more information
 
 * RTE improvements
