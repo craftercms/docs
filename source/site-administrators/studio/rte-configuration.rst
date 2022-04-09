@@ -22,11 +22,11 @@ Here are some things to consider for setting up effective RTEs:
 #. Toolbar is configured with only what is required for the specific use case (reducing options makes it easier for editors)
 #. If plugins like ``insert component``, ``insert layout`` and so on are enabled it should be fully configured.
 
---------------------------------------------------------------------------------
-What Out-of-the-Box Functionality Does Crafter Studio's RTE (TinyMCE 5) Support?
---------------------------------------------------------------------------------
+--------------------------------------------------------------------
+What Out-of-the-Box Functionality Does Crafter Studio's RTE Support?
+--------------------------------------------------------------------
 
-Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.   You can find the documentation for these TinyMCE configurations and settings here: https://www.tiny.cloud/docs/
+Our RTE is based on TinyMCE 5 (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.   You can find the documentation for these TinyMCE configurations and settings here: https://www.tiny.cloud/docs/
 
 There are two ways of editing content in Studio: (1) form-based editing and (2) In-context editing (ICE).  Form-based editing is done by clicking on ``Options`` (three dots next to the preview address bar at the top of the page, or the three dots next to the page in the Site Explorer tree), then selecting ``Edit``.  In-content editing is done by enabling the ``Edit mode`` by clicking on the pencil at the top right of the page (which turns green when enabled), then clicking on the section of the page you want to edit.
 
@@ -226,7 +226,7 @@ Example allowing script element
 
 Let's take a look at an example of adding ``<script />`` to the allowable elements (rule set).  We'll be using a site created using the Website Editorial blueprint.
 
-1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE Configuration*
 
 2. Scroll down to ``<extendedElements />`` tag and add ``script`` and save.
 
@@ -276,7 +276,7 @@ You can also add custom elements to the rule set and can be done by simply addin
 
    .. note:: Case sensitive custom elements are not supported in TinyMCE 5.  Remember to **use only lowercase for custom elements** (e.g. ``myattr`` is supported but *myAttr* is not supported).
 
-1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE Configuration*
 
 2. Scroll down to ``<extendedElements />`` tag and add ``mycustomtag`` and save.
 
@@ -325,7 +325,7 @@ Example External Plugin
 Let's take a look at an example of a simple external plugin that creates a custom button which inserts text in the RTE.
 We'll load our external plugin (a custom button) and add it to the RTE's toolbar.  For our example, we'll be using a site created using the empty blueprint named ``hello``.
 
-1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE Configuration*
 
 2. We'll add the configuration for TinyMCE to load the plugin using Crafter Studio's getPluginFile API. We achieve this by using the ``<external_plugins />`` tag and adding child tags with the id of the plugin as tag name and the target URL as the tag's content |br|
 
@@ -441,12 +441,12 @@ Example adding valid child elements to parent element
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Let's take a look at an example of how to add **div** and *text content* as valid children of **a** (html anchor) using the website editorial blueprint.
 
-1. Open the RTE (TinyMCE 5) configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE (TinyMCE 5) Configuration*
+1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE Configuration*
 
 2. Scroll down to the ``<validChildren />`` tag, uncomment it and add **div** and text contents as child elements of **a** and save.
 
    .. code-block:: xml
-      :caption: *RTE (TinyMCE 5) Configuration File*
+      :caption: *RTE Configuration File*
 
       <validChildren>+a[div|#text]</validChildren>
 
@@ -537,7 +537,7 @@ The RTE's configuration file looks like this:
 
 |
 
-You can access the ``RTE (TinyMCE 5) Configuration`` file by going to the **Sidebar** then clicking on  |projectTools|.  In the **Project Tools**, click on **Configuration**, then from the list, select ``RTE (TinyMCE 5) Configuration``
+You can access the ``RTE Configuration`` file by going to the **Sidebar** then clicking on  |projectTools|.  In the **Project Tools**, click on **Configuration**, then from the list, select ``RTE Configuration``
 
 .. figure:: /_static/images/site-admin/rte/rte-setup-config-file-access.jpg
    :alt: RTE Setup - Open RTE Configuration File in Studio
@@ -546,7 +546,7 @@ You can access the ``RTE (TinyMCE 5) Configuration`` file by going to the **Side
 
 |
 
-Inside the ``<config>`` tag, there can be multiple ``<setup>`` tags. Each represents a possible RTE configuration that can be specified to be used by a RTE control. To add your own configuration, create a new ``<setup>`` tag.  Each ``<setup>`` tag contains:
+Inside the ``<config>`` tag, there can be multiple ``<setup>`` tags. Each setup represents a possible RTE configuration that can be specified to be used by a RTE control. To add your own configuration, create a new ``<setup>`` tag.  Each ``<setup>`` tag contains:
 
 * An ``<id>`` tag with the name that must be specified for an RTE control to use this configuration.
 * ``<rteStylesheets>`` tag that may contain multiple ``<link>`` tags. Each link tag represents a link to a CSS stylesheet that will be used so that the RTE matches the look and feel of the site.
@@ -569,7 +569,7 @@ Attaching an RTE in a Form to an RTE Setup
 To attach an RTE setup to an RTE in a form, open the content type that you want to add an RTE to, then go to the **Properties Explorer** and click on RTE Configuration and type in an RTE setup name.
 
 .. figure:: /_static/images/site-admin/rte/rte-setup-form.jpg
-   :alt: RTE Setup - Add an RTE (TinyMCE 5) in the Form
+   :alt: RTE Setup - Add an RTE in the Form
    :align: center
 
 |
