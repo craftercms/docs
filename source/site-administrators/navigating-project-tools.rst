@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Navigating Project Tools
 
@@ -147,20 +148,20 @@ The **Publishing** module under **Project Tools** allows the user to view the pu
 
 For more information on Publishing, see :ref:`publishing-and-status`
 
--------------------
-Remote Repositories
--------------------
+---
+Git
+---
 
-The **Remote Repositories** under **Project Tools** allows the user to view remote repositories linked to the project and options to pull and push to the listed remote repositories.  It also allows the user to add a remote repository to the project.
+The **Git** under **Project Tools** allows the user to perform Git operations such as viewing remote repositories linked to the project and options to pull and push to the listed remote repositories.  It also allows the user to add a remote repository to the project.
 
-.. image:: /_static/images/site-admin/project-tools-remote-repositories.jpg
-    :alt: Site Admin - Project Tools Remote Repositories
+.. image:: /_static/images/site-admin/project-tools-git.png
+    :alt: Site Admin - Project Tools Git
     :align: center
     :width: 60%
 
 |
 
-For more information on Remote Repositories under |projectTools|, see :ref:`remote-repositories`
+For more information on Git under |projectTools|, see :ref:`project-tools-git`
 
 --------
 GraphiQL
@@ -187,6 +188,6 @@ The Project Tools **Plugin Management** allows the user to install and to view c
 .. image:: /_static/images/site-admin/project-tools-plugin-mgmt.jpg
    :alt: Site Admin - Project Tools Plugin Management
    :align: center
-   :width: 60%
+   :width: 70%
 
 For more information on managing project plugins, see :ref:`plugin-management`
