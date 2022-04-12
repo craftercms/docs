@@ -418,7 +418,7 @@ Examples
 
 .. code-block:: text
 
-   <@crafter.body_bottom iceProps="{ scrollElement: '#mainWrapper' }" />
+   <@crafter.body_bottom props="{ scrollElement: '#mainWrapper' }" />
    <#-- `body_bottom` internally invokes `initExperienceBuilder` -->
 
 .. _htmlElementTagMacros:
