@@ -24,8 +24,14 @@ before upgrading.  Please review the following and apply changes as required:
   - https://github.com/craftercms/craftercms/issues/2268
 
 - Elasticsearch has breaking changes, for example: ``totalHits`` must now be called ``totalHits.value`` |br|
-  See `here <https://www.elastic.co/guide/en/elasticsearch/reference/7.16/es-release-notes.html>`__
-  for more information on Elasticsearch breaking changes
+  See `here <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/breaking-changes.html>`__ for more
+  information on Elasticsearch breaking changes.
+
+  Please note that most of the breaking changes are from Elasticsearch 6.8 to 7.0.  Please take a look at the
+  breaking changes listed for Elasticsearch 7.0 for more information.
+
+
+.. _compatibility-with-3.1.x:
 
 - **Upgrading 3.1.x sites** |br|
 
