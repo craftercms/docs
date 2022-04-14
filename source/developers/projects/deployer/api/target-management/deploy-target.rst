@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-deployer-api-target-deploy:
 
@@ -26,21 +27,47 @@ Resource Information
 Parameters
 ----------
 
-+-------------------------+-------------+---------------+----------------------------------------------------------+
-|| Name                   || Type       || Required     || Description                                             |
-+=========================+=============+===============+==========================================================+
-|| env                    || String     || |checkmark|  || The target's environment (e.g dev).                     |
-+-------------------------+-------------+---------------+----------------------------------------------------------+
-|| site_name              || String     || |checkmark|  || The target's site name (e.g mysite).                    |
-+-------------------------+-------------+---------------+----------------------------------------------------------+
-|| reprocess_all_files    || Boolean    ||              || If all files in the target's repo should be reprocessed.|
-+-------------------------+-------------+---------------+----------------------------------------------------------+
-|| from_commit_id         || String     ||              || The id of the commit to start processing changes        |
-+-------------------------+-------------+---------------+----------------------------------------------------------+
-|| deployment_mode        || String     ||              || The deployment mode to execute. Possible values:        |
-||                        ||            ||              || ``PUBLISH``: All processors will run                    |
-||                        ||            ||              || ``SEARCH_INDEX``: Only the indexing processor will run  |
-+-------------------------+-------------+---------------+----------------------------------------------------------+
+.. list-table::
+   :widths: 20 10 12 50
+   :header-rows: 1
+
+   * - Name
+     - Type
+     - Required
+     - Description
+   * - env
+     - String
+     - |checkmark|
+     - The target's environment (e.g dev).
+   * - site_name
+     - Boolean
+     - |checkmark|
+     - The target's project name (e.g my-editorial).
+   * - reprocess_all_files
+     - Boolean
+     -
+     - If all files in all the target repos should be reprocessed.
+   * - from_commit_id
+
+       .. version_tag::
+          :label: Since
+          :version: 4.0.0
+
+     - String
+     -
+     - The id of the commit to start processing changes
+   * - deployment_mode
+
+       .. version_tag::
+          :label: Since
+          :version: 4.0.0
+
+     - String
+     -
+     - The deployment mode to execute. Possible values: |br|
+       ``PUBLISH``: All processors will run |br|
+       ``SEARCH_INDEX``: Only the indexing processor will run
+
 
 -------
 Example

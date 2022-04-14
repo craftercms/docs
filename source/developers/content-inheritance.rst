@@ -14,7 +14,7 @@ CrafterCMS support content inheritance out of the box, and supports it via a plu
 Content Inheritance Basics
 --------------------------
 
-Content objects in CrafterCMS are essentially structured markup, XML by default, and house data authored via Crafter Studio by content authors. Content objects are typically structured as a tree which naturally suits the notion of inheriting from a parent (not to say that the inheritance mechanics are limited to that topology). Inheritance works as follows:
+Content objects in CrafterCMS are essentially structured markup, XML by default, and house data authored via Crafter Studio by content authors. Content objects are typically organized into a tree structure, which naturally suits the notion of inheriting from a parent (not to say that the inheritance mechanics are limited to that topology). Inheritance works as follows:
 
 Assume we have two objects, one called Parent and one called Child and they're set up as follows:
 
@@ -94,11 +94,11 @@ Assume we have two objects, one called Parent and one called Child and they're s
 
 |
 
-CrafterCMS will invoke the inheritance mechanics implemented in the merge strategy ``inherit-levels`` to merge the page and the **level descriptor** and the merge strategy will pull in the elements defined in the **level descriptor** into the child page before handing the new model (XML) to the rendering system. This means that when the page renders, the model will automatically contain the meta-data defined in the parent **level descriptor**. In our example above, the page will automatically inherit the meta-data fields ``cssGroup``, ``defaultHeader``, and ``defaultFooter``.
+CrafterCMS will invoke the inheritance mechanics implemented in the merge strategy ``inherit-levels`` to merge the page and the **level descriptor** and the merge strategy will pull in the elements defined in the **level descriptor** into the child page before handing the new model (XML) to the rendering system. This means that when the page renders, the model will automatically contain the meta-data defined in the parent **level descriptor**. In our example above, the page will automatically inherit the fields ``cssGroup``, ``defaultHeader``, and ``defaultFooter``.
 
   .. note:: When an element is defined by the **level descriptor** and then subsequently defined by a child, the child's definition overrides the **level descriptor**.
 
-This mechanism allows you to define meta-data that flows down the information architecture of the site such that an entire site can have defaults and those defaults can be overwritten by sections individual page. Some examples of real-life use of inheritance:
+This mechanism allows you to define data that flows down the information architecture of the site such that an entire site can have defaults, and those defaults can be overwritten by sections individual page. Some examples of real-life use of inheritance:
 
 * Site logo
 * Global stylesheet and JS includes
@@ -155,7 +155,7 @@ Let's begin by looking at the home page of a site created using the Website Edit
 
 |
 
-Click on one of the category, say ``Entertainment`` and again take note of the top (header) and left (left-rail)side of the page.
+Click on one of the category, say ``Entertainment`` and again take note of the top (header) and left (left-rail) side of the page.
 
 .. image:: /_static/images/developer/content-inheritance/category-page-view.jpg
     :width: 75%
