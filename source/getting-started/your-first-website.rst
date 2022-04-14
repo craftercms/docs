@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Create Your First Project
 
@@ -83,7 +84,7 @@ Your project is setup, we can now start adding/editing content!  To edit content
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Adding a new article page to the project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-We'll be adding a new article to the project.  To add a new article (or a new page), navigate to the level and location within the site navigation tree in the Sidebar where we want to create the new page.  In this case, we are adding an article under **articles** -> **2021** -> **3**.  Click on the three dots next to the folder, then select **New Content**
+We'll be adding a new article to the project.  To add a new article (or a new page), navigate to the level and location within the path navigator in the Sidebar where we want to create the new page.  In this case, we are adding an article under **articles** -> **2021** -> **3**.  Click on the three dots next to the folder, then select **New Content**
 
 .. image:: /_static/images/first-project/first-project-new-content.jpg
     :width: 50 %
@@ -94,7 +95,7 @@ We'll be adding a new article to the project.  To add a new article (or a new pa
 
 We'll then select the page template we want.  Since we are adding a new article to the project, we will be selecting the template **Article**
 
-.. image:: /_static/images/first-project/first-project-select-page-template.png
+.. image:: /_static/images/first-project/first-project-select-page-template.jpg
     :width: 80 %
     :align: center
     :alt: Your First Project - Select Page Template
@@ -309,9 +310,10 @@ Your project is not yet published after creating the project from the Website Ed
 
 |
 
-You will then be prompted whether you want to publish the page now (**Now**), or publish the page at a later date and time (**Later**).
 
-.. image:: /_static/images/first-project/first-project-publish-option.jpg
+You will then be prompted whether you want to publish the page now (**Now**), or publish the page at a later date and time (**Later**).  If this is the very first publish request, the user will be notified that the entire project will be published like below:
+
+.. image:: /_static/images/first-project/first-project-publish-option.png
     :width: 100 %
     :align: center
     :alt: Your First Project - Publish Options

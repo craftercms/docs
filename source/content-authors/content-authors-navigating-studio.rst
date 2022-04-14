@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Navigating Studio
 
@@ -192,23 +193,25 @@ For the dashboard shown above, here are the dashlets listed:
 
             Workflow States help authors and content managers understand at a glance what is going on with the content at a high level.  Is it Live?  Is it work in progress?  Is it currently checked out? In some sort of approval process?
 
-            |workflowNeverPub|:	You will find a * asterisk at the end of a content object's name if the content has never been pushed live. This helps authors quickly identify which objects that are in progress are already live and which ones are entirely new.
+            |workflowNeverPub|:	The content has never been pushed live. This helps authors quickly identify which objects that are in progress are already live and which ones are entirely new.
 
-            |workflowDisabled|:	You will find that some objects have a strike-through on their name, this means that the object is not deleted but it should not be displayed on the project.  It's essentially a logical delete.  Imagine a scenario where you need to take an object down immediately because of an inaccuracy while you make corrections.  Disable is perfect for this and several other scenarios.
-
-            |workflowInWorkflow|: Any item which carries the blue flag is in some sort of workflow
-
-            Submitted for Delete:	Items which carry the * red X * but are editable and previewable have been submitted for delete
-
-            |workflowDeleted|: Items which carry the * red X * but are not editable and previewable are deleted.  You will only see these items in dashboards which show historical data
- 
             |workflowEdited|: Edited means that the item has been edited since it was made live. Items move to edited as soon as they are created or when they are edited.
+
+            |workflowDeleted|: Items which carry the red trash can icon but are not editable and previewable are deleted.  You will only see these items in dashboards which show historical data
 
             |workflowLocked|: A locked item is currently in the process of being edited by another author.
 
             |workflowProcessing|: Item is currently being handled by the system
 
-            |workflowScheduled|: Item has a launch schedule associated with it
+            |workflowSubmittedForLive|: |br|
+            |workflowSubmittedForStaging|: Any item which carries the airplane icon is in some sort of workflow
+
+            |workflowScheduledForLive|: |br|
+            |workflowScheduledForStaging|: Item has a launch schedule associated with it
+
+            |workflowPublishing|: Item is currently being published
+
+            |workflowDisabled|:	You will find that some objects have a red circle with a slash in the middle, this means that the object is not deleted but it should not be displayed on the project.  It's essentially a logical delete.  Imagine a scenario where you need to take an object down immediately because of an inaccuracy while you make corrections.  Disable is perfect for this and several other scenarios.
 
             **Publishing Status/Target**
 
@@ -225,7 +228,7 @@ For the dashboard shown above, here are the dashlets listed:
 
         Items in the dashboard has a icons which shows the type and current workflow status of the item
 
-        Clicking on ``Options`` (the three dots next to the item) shows the type and current workflow status of the item, plus all oprions available e.g. ``Edit``, ``Publish``, etc.
+        Clicking on ``Options`` (the three dots next to the item) shows the type and current workflow status of the item, plus all options available e.g. ``Edit``, ``Publish``, etc.
 
 |
 |
@@ -490,11 +493,11 @@ The menu/panel width can be resized freely by the user and will remember where y
 
 * Users can have multiple navigation paths / path tree open at the same time e.g. templates, pages, etc.
 * If closed, the menu should retain it's last state when re-opened.
-* Each item listed has item state and publish target icons next to them
+* Each item listed has item state and item type icons next to them
 * Root folders allow a user to drill in to a hierarchy of content. If the item is previewable it will also be clickable.
 * Clicking on an item will take the author to a preview of the item.
 
-.. image:: /_static/images/content-author/project-tools-path-nav.png
+.. image:: /_static/images/content-author/project-tools-path-nav.jpg
     :width: 25 %
     :align: center
     :alt: Navigating Studio - Project Tools Navigation
@@ -535,14 +538,25 @@ The menu/panel width can be resized freely by the user and will remember where y
              :width: 12%
              :alt: Workflow Icons - Deleted
 
-.. |workflowScheduled| image:: /_static/images/content-author/workflow-icon-scheduled.png
-             :width: 14%
-             :alt: Workflow Icons - Scheduled
+.. |workflowScheduledForLive| image:: /_static/images/content-author/workflow-icon-scheduled-for-live.png
+             :width: 21%
+             :alt: Workflow Icons - Scheduled for live
 
-.. |workflowInWorkflow| image:: /_static/images/content-author/workflow-icon-submitted.png
-             :width: 14%
-             :alt: Workflow Icons - Submitted
+.. |workflowScheduledForStaging| image:: /_static/images/content-author/workflow-icon-scheduled-for-staging.png
+             :width: 23%
+             :alt: Workflow Icons - Scheduled for staging
 
+.. |workflowSubmittedForLive| image:: /_static/images/content-author/workflow-icon-submitted-for-live.png
+             :width: 21%
+             :alt: Workflow Icons - Submitted for live
+
+.. |workflowSubmittedForStaging| image:: /_static/images/content-author/workflow-icon-submitted-for-staging.png
+             :width: 23%
+             :alt: Workflow Icons - Submitted for staging
+
+.. |workflowPublishing| image:: /_static/images/content-author/workflow-icon-publishing.png
+             :width: 14%
+             :alt: Workflow Icons - Publishing
 
 .. Start of Item Types icons=============================================================
 
