@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:since-version: 4.0.0
 
 .. index:: User Interface Configuration
 
@@ -21,7 +22,7 @@ Here's a screenshot of Studio showing some of the widgets in the UI in red circl
 
 .. image:: /_static/images/site-admin/ui-config-widgets.jpg
    :alt: Configurations - User Interface Configuration Widgets
-   :width: 75 %
+   :width: 85 %
    :align: center
 
 |
@@ -40,7 +41,7 @@ Here's an annotated version of some of the widgets in the user interface shown i
      <widget id="craftercms.components.TinyMCE">...</widget>        TinyMCE widget
      <references>
         <reference id="craftercms.siteTools">...</reference>
-        <reference id="craftercms.freemarkerCodeSnippets">...</referrence>
+        <reference id="craftercms.freemarkerCodeSnippets">...</reference>
         <reference id="craftercms.groovyCodeSnippets">...</reference>
      </references>
    </siteUI>
@@ -238,7 +239,7 @@ Here's the Sidebar before the ``2021/3`` folder is hidden
 
 .. image:: /_static/images/site-admin/ui-folders.png
    :alt: Configurations - User Interface Configuration Folder Structure
-   :width: 20 %
+   :width: 30 %
    :align: center
 
 |
@@ -247,26 +248,20 @@ Here's the configuration to hide the folder:
 
 .. code-block:: xml
    :linenos:
-   :emphasize-lines: 13-15
+   :emphasize-lines: 8-10
 
-   <widget id="craftercms.components.ToolsPanelPageButton">
+   <widget id="craftercms.components.PathNavigator">
      <configuration>
-       <title id="previewSiteExplorerPanel.title" defaultMessage="Site Explorer"/>
-       <icon id="craftercms.icons.SiteExplorer"/>
-       <widgets>
-         <widget id="craftercms.components.PathNavigator">
-           <configuration>
-             <id>Pages</id>
-             <label>Pages</label>
-             <icon id="@material-ui/icons/DescriptionOutlined" />
-             <rootPath>/site/website</rootPath>
-             <locale>en</locale>
-             <excludes>
-               <exclude>/site/website/articles/2021/3</exclude>
-             </excludes>
-           </configuration>
-         </widget>
-         ...
+       <id>Pages</id>
+       <label>Pages</label>
+       <icon id="@mui/icons-material/DescriptionOutlined"/>
+       <rootPath>/site/website</rootPath>
+       <locale>en</locale>
+       <excludes>
+         <exclude>/site/website/articles/2021/3</exclude>
+       </excludes>
+     </configuration>
+   </widget>
 
 |
 
@@ -274,7 +269,7 @@ Here's the Sidebar with the folder ``2021/3`` hidden:
 
 .. image:: /_static/images/site-admin/ui-folder-hidden.png
    :alt: Configurations - User Interface Configuration Folder Hidden
-   :width: 20 %
+   :width: 30 %
    :align: center
 
 |
@@ -291,7 +286,7 @@ Let's take a look at an example of putting a red border when ``Taxonomy`` is exp
 
 Here's the default colors of widgets in the Sidebar
 
-.. image:: /_static/images/site-admin/ui-widget-default-colors.jpg
+.. image:: /_static/images/site-admin/ui-widget-default-colors.png
    :alt: Configurations - User Interface Configuration Widget Default Colors
    :width: 25 %
    :align: center
@@ -308,7 +303,7 @@ Here's the configuration for putting a red border when ``Taxonomy`` is expanded 
      <configuration>
        <id>Taxonomy</id>
        <label>Taxonomy</label>
-       <icon id="@material-ui/icons/LocalOfferOutlined"/>
+       <icon id="@mui/icons-material/LocalOfferOutlined"/>
        <container>
          <expandedStyle>
            <border>solid</border>
@@ -342,8 +337,8 @@ Remember that children of ``expandedStyle`` & ``collapsedStyle`` should be camel
 
 Here's the Sidebar with the colors and border added:
 
-.. image:: /_static/images/site-admin/ui-widget-color-added.jpg
-   :alt: Configurations - User Interface Configuration Widget Default Colors
+.. image:: /_static/images/site-admin/ui-widget-color-added.png
+   :alt: Configurations - User Interface Configuration Widget Border and Colors Added
    :width: 25 %
 
 .. image:: /_static/images/content-author/preview-page-components-space.png
