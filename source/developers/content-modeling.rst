@@ -153,8 +153,8 @@ The fields available at this level are:
 +---------------+--------------------------------------------------------------------------------+
 || Content Type || System name and path of this content type (read only)                         |
 +---------------+--------------------------------------------------------------------------------+
-|| Preview      ||                                                                               |
-|| Image        ||                                                                               |
+|| Preview      || An image that reflects what an instance of this content item might look like. |
+|| Image        || It will be shown in the user interface when creating new content instances.   |
 +---------------+--------------------------------------------------------------------------------+
 || Configuration|| Contains config.xml which holds information about the content type such as the|
 ||              || limit where content can be created, is it previewable, etc.                   |
