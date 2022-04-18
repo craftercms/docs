@@ -51,13 +51,13 @@ Here are the settings that can be configured through Crafter Studio:
    studio/mime-types-configuration
    studio/permission-mappings
    studio/preview-panel-configuration
+   studio/project-configuration
+   studio/project-policy-configuration
    studio/role-mappings
    studio/rte-configuration
    studio/sidebar-configuration
-   studio/site-configuration
    studio/site-config-tools
    studio/site-config-configuration
-   studio/site-policy-configuration
    studio/user-interface-configuration
    studio/webdav-profiles-configuration
 

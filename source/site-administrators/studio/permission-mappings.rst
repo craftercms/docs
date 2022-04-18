@@ -57,7 +57,7 @@ the role the permission **Publish** to the scope ~DASHBOARD~. For example:
         </allowed-permissions>
       </rule>
 
-To modify/view the permission mappings for your site in Studio, click on |projectTools| at the bottom of the *Sidebar*, then click on **Configurations** and select **Permissions Mapping** from the dropdown list.
+To modify/view the permission mappings for your site in Studio, click on |projectTools| at the bottom of the *Sidebar*, then click on **Configurations** and select **Permissions Mapping** from the list.
 
 .. image:: /_static/images/site-admin/config-open-permission-mappings.jpg
     :alt: Configurations - Open Permission Mappings
@@ -97,46 +97,56 @@ List of available permissions
 Permission                 Description
 ========================== ================================================================================
 add_remote                 User is permitted to add a remote repository
+audit_log                  User is permitted to access the audit log
 cancel_failed_pull         User is permitted to cancel a failed pull from a repository
 cancel_publish             User is permitted to cancel a publish request
-Change Content Type        User is permitted to change content type
+change content type        User is permitted to change content type
 clone_content_cmis         User is permitted to clone content from a CMIS repository
 commit_resolution          User is permitted to commit resolution
 content_create             User is permitted to create new content
-content_delete             User is permitted to delete content
-content_read               User is permitted to read content
-content_write              User is permitted to user is permitted to edit content
-edit_site                  User is permitted to edit site
-encryption_tool            User is permitted to encrypt a text value
 folder_create              User is permitted to create new folder
-get_children               User is permitted to call getChildren* APIs for browsing site content
+create_cluster             User is permitted to create cluster
+create_groups              User is permitted to create new groups
+create_users               User is permitted to create new users
+create-site                User is permitted to create projects
+delete_cluster             User is permitted to delete clusters
+content_delete             User is permitted to delete content
+delete_groups              User is permitted to delete groups
+delete_users               User is permitted to delete users
+edit_site                  User is permitted to edit sites
+encryption_tool            User is permitted to access the encryption tool
+get_children               User is permitted to call getChildren* APIs for browsing project content
 get_publishing_queue       User is permitted to get the list of packages in the publishing queue
-install_plugins            User is permitted to install plugins
-item_unlock                User is permitted to unlock items
 list_cmis                  User is permitted to list files and folders in a CMIS repository with an optional range for pagination
-list_plugins               User is permitted to list installed plugins
-list_remotes               User is permitted to list remote repositories for a site
+list_remotes               User is permitted to list remote repositories for a project
 publish                    User is permitted to approve submitted content for publishing or publish content
-publish_clear_lock         User is permitted to clear locks in publishing queue (for cluster env, only one node can publish at same time)
-publish_status             User is permitted to see publishing status for site
-pull_from_remote           User is permitted to pull content from remote repository to site content repository
-push_to_remote             User is permitted to push content to remote repository from site content repository
+pull_from_remote           User is permitted to pull content from remote repository to project content repository
+push_to_remote             User is permitted to push content to remote repository from project content repository
+content_read               User is permitted to read content
+read_cluster               User is permitted to read cluster
+read_groups                User is permitted to read groups
+read_logs                  User is permitted to read logs
+read_users                 User is permitted to read logs
 rebuild_database           User is permitted to rebuild Crafter Studio’s database and object state with the underlying repository
-remove_plugins             User is permitted to remove installed plugins
-remove_remote              User is permitted to remove remote repository from site content repository
+remove_remote              User is permitted to remove remote repository from project content repository
 resolve_conflict           User is permitted to resolve a conflict for a file by accepting ours or theirs
-S3 Read                    User is permitted to get a list of items from an S3 bucket
-S3 Write                   User is permitted to upload a file to an S3 bucket
+s3 read                    User is permitted to get a list of items from an S3 bucket
+s3 write                   User is permitted to upload a file to an S3 bucket
 search_cmis                User is permitted to search files and folders in a CMIS repository with an optional range for pagination
-site_diff_conflicted_file  User is permitted to get the difference between ``ours`` and ``theirs`` for a conflicted file for a site
-site_status                User is permitted to get status of repository for a site
-unlock_repository          User is permitted to unlock repository
+site_diff_conflicted_file  User is permitted to get the difference between ``ours`` and ``theirs`` for a conflicted file for a project
+site_status                User is permitted to get status of repository for a project
+update_cluster             User is permitted to update cluster
+update_groups              User is permitted to update groups
+update_users               User is permitted to update users
 upload_content_cmis        User is permitted to upload an asset file to CMIS repository
 webdav_read                User is permitted to get a list of items from a WebDAV server
 webdav_write               User is permitted to upload a file to a WebDAV server
-write_configuration        User is permitted to write configuration content for site
+content_write              User is permitted to user is permitted to edit content
+write_configuration        User is permitted to write configuration content for project
+write_global_configuration User is permitted to write global configuration content for Studio
+list_plugins               User is permitted to list installed plugins
+install_plugins            User is permitted to install plugins
 ========================== ================================================================================
-
 
     ``/permissions/site/role@name``
         Role name

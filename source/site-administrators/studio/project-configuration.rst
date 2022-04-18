@@ -1,18 +1,21 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Project Configuration
 
-.. _site-configuration:
+.. _project-configuration:
 
 #####################
 Project Configuration
 #####################
 
-The project configuration file contains the primary configuration for Crafter Studio's behavior. Each project has its own project configuration file that controls its behavior independently of other projects.
+The project configuration file contains the primary configuration for Crafter Studio's behavior. Each project has
+its own project configuration file that controls its behavior independently of other projects.
 
-To modify the project configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration** and select **Project Configuration** from the list.
+To modify the project configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration**
+and select **Project Configuration** from the list.
 
-.. image:: /_static/images/site-admin/config-open-site-config.jpg
+.. image:: /_static/images/site-admin/config-open-project-config.jpg
     :alt: Configurations - Open Project Configuration
     :width: 65 %
     :align: center
@@ -48,7 +51,8 @@ Here's a sample Project Configuration file (click on the triangle on the left to
 Project Time Zone
 *****************
 
-The :ref:`default dates and times <server-time-zone>` used for displays in Studio is UTC.  To customize how dates & times get displayed on Studio UI for a project, edit the following:
+The :ref:`default dates and times <server-time-zone>` used for displays in Studio is UTC.  To customize how
+dates & times get displayed on Studio UI for a project, edit the following:
 
 .. code-block:: xml
    :linenos:
@@ -90,7 +94,8 @@ The :ref:`default dates and times <server-time-zone>` used for displays in Studi
 Enabling Staging
 ****************
 
-The ``staging`` publishing target is an intermediate publishing target where the project can be fully exercised.  To enable the ``staging`` publishing target, set the following to ``true``:
+The ``staging`` publishing target is an intermediate publishing target where the project can be fully exercised.
+To enable the ``staging`` publishing target, set the following to ``true``:
 
 .. code-block:: xml
 
@@ -127,7 +132,8 @@ For more information on escaping content fields, see the notes under :ref:`Varia
 Publishing Comments
 *******************
 
-To make comments mandatory for different publishing methods, simply set to ``true`` any applicable methods the site administrators want to require comments when publishing.
+To make comments mandatory for different publishing methods, simply set to ``true`` any applicable methods the
+site administrators want to require comments when publishing.
 
 .. code-block:: xml
 
@@ -146,6 +152,32 @@ To make comments mandatory for different publishing methods, simply set to ``tru
 |
 
 See :ref:`publishing-and-status` for more information on the different publishing methods available from ``Project Tools``
+
+.. _project-config-require-peer-review:
+
+************************************
+Requiring Peer Review for Publishing
+************************************
+.. version_tag::
+   :label: Since
+   :version: 4.0.0
+
+A publisher review workflow option is available to make approval of a publish request mandatory for users with
+publish permission.  To enable the publisher review workflow option, set ``requirePeerReview`` to ``true``.
+
+.. code-block:: xml
+
+   <!--
+        This workflow parameter disallows users with _Publish_ permission from publishing their own work.
+        Work performed by a user must be approved by a different reviewer before it can be published.
+        Set the value to true to enable this feature.
+   -->
+   <workflow>
+     <publisher>
+       <requirePeerReview>true</requirePeerReview>
+     </publisher>
+   </workflow>
+
 
 ******************
 Content Monitoring
