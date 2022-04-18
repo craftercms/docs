@@ -59,7 +59,7 @@ How to Configure Content Monitoring
 Content monitoring can be configured through Crafter Studio.  Go to the **Sidebar**, then click on
 **Project Tools** > **Configuration** > **Project Configuration**
 
-.. image:: /_static/images/site-admin/config-open-site-config.jpg
+.. image:: /_static/images/site-admin/config-open-project-config.jpg
     :align: center
     :alt: Configuration - Open "Project Configuration"
 
