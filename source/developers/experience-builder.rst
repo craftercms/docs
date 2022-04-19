@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:since-version: 4.0.0
 
 .. index:: Experience Builder, In-Context Editing, ICE
 
@@ -357,6 +358,16 @@ The complete FreeMarker template for the carousel component becomes:
 
 FreeMarker Macros & Utilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are three macros in ``crafter.ftl``:
+
+- ``head``: used to inject templates from plugins
+- ``body_top``: used to inject templates from plugins
+- ``body_bottom``: used to inject templates from plugins and is also used by ICE as detailed below
+
+See :ref:`here <plugins-using-freemarker-templates>` for more information on injecting templates from plugins.
+
+|
 
 After importing ``crafter.ftl``, you'll have all the available XB macros described below.
 
