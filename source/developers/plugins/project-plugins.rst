@@ -158,6 +158,7 @@ where:
 - **yourPluginName** : Name of  plugin
 - **yourPluginFilesAndFolders** : JavaScript, Freemarker, Groovy, binary and/or plugin build output files/folders containing the plugin implementation
 
+.. _plugins-using-freemarker-templates:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Plugins using Freemarker Templates
