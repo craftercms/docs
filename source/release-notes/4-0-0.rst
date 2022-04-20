@@ -21,13 +21,13 @@ New Features
     - Improved My Projects experience
     - And more...
 
-  - New In-Context Editing system, Experience Builder (XB): |br|
+  - Experience Builder (XB) - a new In-Context Editing system: |br|
 
     - Edit content in-place |br|
-    - Drag and drop components, assets to add/remove or rearrange your project (supports projects
-      built with FreeMarker, React and can easily be extended to support Vue, Angular and other
-      UI frameworks) |br|
-    - New Experience Builder SDK `here <https://www.npmjs.com/package/@craftercms/experience-builder>`__
+    - Drag and drop components and assets to build and rearrange pages
+      - Supports projects built with FreeMarker, React, and can easily be extended to support Vue, Angular and other
+        UI frameworks |br|
+    - New Experience Builder package in the SDK `here <https://www.npmjs.com/package/@craftercms/experience-builder>`__
     - See :ref:`experience-builder` for more information |br|
 
   - New configuration mechanics of the UI that allow plugins to wire to almost every aspect of
