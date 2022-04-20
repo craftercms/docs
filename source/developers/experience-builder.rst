@@ -369,7 +369,7 @@ The ``head``, ``body_bottom`` and ``body_top`` are macros that should be positio
 name suggests.  Their purpose is to print strategic scripts, stylesheets or otherwise executions that should
 take place in those moments of the page rendering or be printed in that position.
 Plugins use these “hooks” to inject themselves on the right location so it’s important for ftl templates to
-position them in accordance to their name. For example, a google tag manager plugin will want to get injected
+position them in accordance to their name. For example, a Google Tag Manager plugin will want to get injected
 early on in the ``head`` so it will print it’s script in the ``<@head />`` hook.
 
 
