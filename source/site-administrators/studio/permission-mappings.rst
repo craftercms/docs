@@ -126,7 +126,7 @@ content_read               User is permitted to read content
 read_cluster               User is permitted to read cluster
 read_groups                User is permitted to read groups
 read_logs                  User is permitted to read logs
-read_users                 User is permitted to read logs
+read_users                 User is permitted to read users
 rebuild_database           User is permitted to rebuild Crafter Studio’s database and object state with the underlying repository
 remove_remote              User is permitted to remove remote repository from project content repository
 resolve_conflict           User is permitted to resolve a conflict for a file by accepting ours or theirs
@@ -141,7 +141,7 @@ update_users               User is permitted to update users
 upload_content_cmis        User is permitted to upload an asset file to CMIS repository
 webdav_read                User is permitted to get a list of items from a WebDAV server
 webdav_write               User is permitted to upload a file to a WebDAV server
-content_write              User is permitted to user is permitted to edit content
+content_write              User is permitted to edit content
 write_configuration        User is permitted to write configuration content for project
 write_global_configuration User is permitted to write global configuration content for Studio
 list_plugins               User is permitted to list installed plugins
