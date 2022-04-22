@@ -4,19 +4,18 @@
 
 .. _documentation-standard:
 
-======================
+######################
 Documentation Standard
-======================
+######################
 
 Please view the source of this document to view and follow the template.
 
-----
+****
 Text
-----
+****
 
-^^^^^
 Style
-^^^^^
+=====
 
 ``monospaced text is done using``  
 
@@ -37,9 +36,8 @@ Style
 
     **bold**
 
-^^^^^
 Links
-^^^^^
+=====
 
 External URL with Tag: `URL <http://example.com>`_
 
@@ -60,29 +58,28 @@ Sphinx-doc reference: :ref:`content-view-templates`
 	Sphinx-doc reference: :ref:`content-view-templates`
 
 
-^^^^^^^
 Anchors
-^^^^^^^
+=======
 
 .. code-block:: rst
 
    .. _documentation-templates:
 
---------------------------------------------------
-Titles, Sections, sub-sections and sub-subsections
---------------------------------------------------
+***************************************************
+Titles, Sections, sub-sections, and sub-subsections
+***************************************************
 
-# with overline, for parts
+``#`` with overline, for parts
 
-* with overline, for chapters
+``*`` with overline, for chapters
 
-= for sections
+``=`` for sections
 
-- for subsections
+``-`` for subsections
 
-^ for subsubsections
+``^`` for subsubsections
 
-" for paragraphs
+``"`` for paragraphs
 
 Of course, you are free to use your own marker characters (see the `reST documentation <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#sections>`_), and use a deeper nesting level, but keep in mind that most target formats (HTML, LaTeX) have a limited supported nesting depth.
 
@@ -122,13 +119,12 @@ For example
 
 	Text...
 
-------------------
+******************
 Images and Figures
-------------------
+******************
 
-^^^^^
 Image
-^^^^^
+=====
 
 We recommend uploaded images be no wider than 1280px.
 
@@ -139,9 +135,8 @@ We recommend uploaded images be no wider than 1280px.
 	        :alt: Admin Console Link
 	        :align: center
 
-^^^^^^
 Figure
-^^^^^^
+======
 
 .. code-block:: rst
 
@@ -149,13 +144,12 @@ Figure
 	        :alt: Properties Explorer
 	        :align: center
 
----------------------
+*********************
 Bullets and Numbering
----------------------
+*********************
 
-^^^^^^^
 Bullets
-^^^^^^^
+=======
 
 .. code-block:: rst
 
@@ -163,9 +157,8 @@ Bullets
 	* lorem ipsum
 	* lorem ipsum
 
-^^^^^^^^^^^^^^^^
 Numbered bullets
-^^^^^^^^^^^^^^^^
+================
 
 .. code-block:: rst
 
@@ -173,9 +166,9 @@ Numbered bullets
 	#. lorem ipsum
 	#. lorem ipsum
 
--------------------------
+*************************
 Notes, Todos and Warnings
--------------------------
+*************************
 
 .. code-block:: rst
 
@@ -193,13 +186,12 @@ Notes, Todos and Warnings
 
 	.. warning:: Warning!
 
-------
+******
 Tables
-------
+******
 
-^^^^^^^^^^^^^
 Simple Tables
-^^^^^^^^^^^^^
+=============
 
 .. note:: The number of characters per line is no more than 99. Please copy the template and start with it and don't make the lines any longer.
 
@@ -213,9 +205,8 @@ Simple Tables
 	Row 2 Column 1  Row 2 Column 2
 	=============== =================================================================================
 
-^^^^^^^^^^^^^^
 Complex Tables
-^^^^^^^^^^^^^^
+==============
 
 .. note:: The number of characters per line is no more than 99. Please copy the template and start with it and don't make the lines any longer.
 
@@ -231,13 +222,12 @@ Complex Tables
 	|| Row 2 Column 1 || Row 1 Column 2 Line 3 (merged cell)                                         |
 	+-----------------+------------------------------------------------------------------------------+
 
------------
+***********
 Code Blocks
------------
+***********
 
-^^^^
 HTML
-^^^^
+====
 
 .. code-block:: rst
 
@@ -264,9 +254,8 @@ HTML
         	</body>
         </html>
 
-^^^^^^
 Groovy
-^^^^^^
+======
 
 .. code-block:: rst
 
@@ -293,9 +282,9 @@ Groovy
 		
 		contentModel.events = events
 
-------------------------
+************************
 Include Another Document
-------------------------
+************************
 
 .. code-block:: rst
 
