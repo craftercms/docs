@@ -12,19 +12,23 @@ Studio's Core Configuration
 
 The core configuration file for Crafter Studio ``studio-config.yaml`` is located under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio`` and contains pre-configured settings.
 
-Remember that we **do not recommend** making changes to the core configuration file ``studio-config.yaml``.  There are two override files available to make changes to the pre-configured settings in the core configuration file for Crafter Studio:
+Remember that we **do not recommend** making changes to the core configuration file ``studio-config.yaml``.
+There are two override files available to make changes to the pre-configured settings in the core configuration
+file for Crafter Studio:
 
 * :ref:`CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml <studio-config-override>`
 * :ref:`CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml <nav-menu-global-config>`
 
 The above override configuration articles lists some settings that you may want to override in Crafter Studio.
 
-Let's take a look at some of the pre-configured settings in ``studio-config.yaml`` that you may want to override using the two files mentioned above.
+Let's take a look at some of the pre-configured settings in ``studio-config.yaml`` that you may want to override
+using the two files mentioned above.
 
 ---------------
 Commit Messages
 ---------------
-Here are the default commit messages when someone makes content changes and can be customized by overriding them using one of the override files.
+Here are the default commit messages when someone makes content changes and can be customized by overriding them
+using one of the override files.
 
 .. code-block:: yaml
    :linenos:
@@ -74,3 +78,25 @@ The default server time zone used by Studio is UTC and can be overridden using o
 |
 
 See :ref:`studio-site-time-zone` for more information on how to customize site dates & times displayed on Studio UI
+
+.. _editable-mime-types:
+
+-------------------
+Editable Mime Types
+-------------------
+
+Here's the default list of MIME-types editable in Studio:
+
+.. code-block:: yaml
+
+   # Item MIME-types that are editable directly in Crafter Studio
+   studio.content.item.editableTypes:
+    - text/plain
+    - text/html
+    - text/css
+    - text/x-freemarker
+    - application/javascript
+    - application/json
+    - application/xml
+    - application/xhtml+xml
+

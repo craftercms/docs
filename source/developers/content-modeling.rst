@@ -18,7 +18,7 @@ Content Types in Crafter Studio
 Content Type Management in Crafter Studio is located in the |projectTools|.
 
 .. image:: /_static/images/content-model/project-tools-link.png
-    :width: 30%
+    :width: 60%
     :alt: Project Tools Link
     :align: center
 
@@ -153,8 +153,8 @@ The fields available at this level are:
 +---------------+--------------------------------------------------------------------------------+
 || Content Type || System name and path of this content type (read only)                         |
 +---------------+--------------------------------------------------------------------------------+
-|| Preview      ||                                                                               |
-|| Image        ||                                                                               |
+|| Preview      || An image that reflects what an instance of this content item might look like. |
+|| Image        || It will be shown in the user interface when creating new content instances.   |
 +---------------+--------------------------------------------------------------------------------+
 || Configuration|| Contains config.xml which holds information about the content type such as the|
 ||              || limit where content can be created, is it previewable, etc.                   |
@@ -305,13 +305,13 @@ We're going to enable cascade on delete for articles (**Article** content type) 
 
 To see cascade on delete in action, let's create a new article (**Article** content type) under one of the article folders in the Sidebar.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.
 
-.. figure:: /_static/images/content-model/new-article-image-uploaded.jpg
+.. figure:: /_static/images/content-model/new-article-image-uploaded.png
     :alt: New article with image uploaded activity list in Dashboard
     :align: center
 
 |
 
-Let's look at the dependencies of our newly created article, where we expect the image under the ``static-assets/items/images/2022/03/29`` will be deleted when we delete the article since we have configured cascade on delete for content type **Article** for items under the directory ``static-assets/item/images``:
+Let's look at the dependencies of our newly created article, where we expect the image under the ``static-assets/items/images/2022/04/22`` will be deleted when we delete the article since we have configured cascade on delete for content type **Article** for items under the directory ``static-assets/item/images``:
 
 .. figure:: /_static/images/content-model/new-article-dependencies.png
     :width: 80%
@@ -327,6 +327,10 @@ Open the Sidebar and navigate to the newly created article.  Right click on the 
     :align: center
 
 |
+
+Note that there are default/configured protected folders that can't be deleted.
+See :ref:`here <project-config-protected-folders>` for more information.
+
 
 .. _copy-dependencies-configuration:
 
