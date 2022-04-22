@@ -206,3 +206,51 @@ Content monitoring allows you to configure watches and notifications on your pro
 |
 
 See :ref:`content-monitoring` for more information on configuring content monitoring.
+
+.. _project-config-protected-folders:
+
+*****************
+Protected Folders
+*****************
+
+The protected folders settings allows you to configure paths that can't be deleted, renamed or moved in addition to
+the following paths that are protected by default:
+
+- ``/site/website/index.xml``
+- ``/site/components``
+- ``/site/taxonomy``
+- ``/static-assets``
+- ``/templates``
+- ``/scripts``
+- ``/sources``
+
+To add protected folder/s in your project, add your folder path/s like below:
+
+.. code-block:: xml
+
+   <protected-folders-patterns>
+     <pattern>/YOUR/FOLDER/PATH/PATTERN</pattern>
+     <pattern>/MORE/FOLDER/PATH/PATTERN</pattern>
+     ...
+   </protected-folders-patterns>
+
+|
+
+Remember to replace ``/YOUR/FOLDER/PATH/PATTERN`` and ``/MORE/FOLDER/PATH/PATTERN`` with the actual folder path
+pattern/s that you would like to be protected.
+
+To see an example of configured protected folders, create a site using the ``Video Center`` blueprint from the
+Public Marketplace in the ``Create Site`` dialog then open the
+``Sidebar`` -> |projectTools| -> ``Configuration`` -> ``Project Configuration``.  Scroll down to the
+``<protected-folders-patterns>`` tag:
+
+.. code-block:: xml
+
+   <!--
+   Prevent deleting, renaming or cutting root folders of sidebar
+   -->
+   <protected-folders-patterns>
+     <pattern>/site/streams</pattern>
+     <pattern>/site/videos</pattern>
+     <pattern>/site/origins</pattern>
+   </protected-folders-patterns>
