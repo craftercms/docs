@@ -3,7 +3,7 @@
 
 .. index:: Site Policy Configuration
 
-.. _site-policy-configuration:
+.. _project-policy-configuration:
 
 #########################
 Site Policy Configuration

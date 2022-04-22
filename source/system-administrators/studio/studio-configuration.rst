@@ -77,7 +77,7 @@ The default server time zone used by Studio is UTC and can be overridden using o
 
 |
 
-See :ref:`studio-site-time-zone` for more information on how to customize site dates & times displayed on Studio UI
+See :ref:`studio-project-time-zone` for more information on how to customize site dates & times displayed on Studio UI
 
 .. _editable-mime-types:
 

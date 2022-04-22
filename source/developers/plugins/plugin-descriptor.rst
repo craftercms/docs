@@ -279,6 +279,8 @@ Below is a sample for a preview-app.
 
 |
 
+.. _plugin-descriptor-servlet-filter:
+
 Below is a sample for a site filter.
 
 .. code-block:: yaml
