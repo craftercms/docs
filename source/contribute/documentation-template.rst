@@ -72,29 +72,54 @@ Anchors
 Titles, Sections, sub-sections and sub-subsections
 --------------------------------------------------
 
+# with overline, for parts
+
+* with overline, for chapters
+
+= for sections
+
+- for subsections
+
+^ for subsubsections
+
+" for paragraphs
+
+Of course, you are free to use your own marker characters (see the `reST documentation <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#sections>`_), and use a deeper nesting level, but keep in mind that most target formats (HTML, LaTeX) have a limited supported nesting depth.
+
+For example
+
 .. code-block:: rst
 
-	=====
+	#####
 	Title
-	=====
+	#####
 	
 	Text...
 	
-	-------
+	*******
+	Heading
+	*******
+	
+	Text...
+	
 	Section
-	-------
+	=======
 	
 	Text...
 	
-	^^^^^^^^^^^
 	Sub-section
-	^^^^^^^^^^^
+	-----------
 	
 	Text...
-	
+
 	Sub-sub-section
 	^^^^^^^^^^^^^^^
-	
+
+	Text...
+
+	Paragraph
+	"""""""""
+
 	Text...
 
 ------------------
