@@ -1,10 +1,11 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Configurations
 
 .. highlight:: xml
 
-.. _site-config-configuration:
+.. _project-config-configuration:
 
 ==============
 Configurations
@@ -35,7 +36,7 @@ Here's a sample config-list.xml file:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!--
-      This file configures the list of configurations available in the SiteConfig section for this site/blueprint.
+      This file configures the list of configurations available in the Project Tools section for this project/blueprint.
 
       For every configuration you'd like to make editable, you need:
         <file>
@@ -48,7 +49,7 @@ Here's a sample config-list.xml file:
 
       The elements are:
       - module: CrafterCMS module
-      - path: the path to the file. This path is rooted in /config/<module> off the base of the site/blueprint
+      - path: the path to the file. This path is rooted in /config/<module> off the base of the project/blueprint
       - title: the title of this file. This should be a key into the string-table in Studio's localization string table
           "base.js", if no entry is found, Studio will use the string you have here as is
       - description: the description of this file.  This should be a key into the string-table in Studio's localization

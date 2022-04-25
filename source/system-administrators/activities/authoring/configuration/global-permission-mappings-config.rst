@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -12,7 +13,7 @@ Global Permission Mappings Config
 
 The global permission mappings configuration file lets you configure the permissions to a role globally for the entire application
 
-Permissions per site are managed within Crafter Studio's UI.  See :ref:`permission-mappings` for more information on site permissions.
+Permissions per project are managed within Crafter Studio's UI.  See :ref:`permission-mappings` for more information on project permissions.
 
 Here's the default global permissions configuration.  It contains the permissions mappings for the roles defined in the :ref:`global role mappings configuration <global-role-mappings-config>` file.  To access the file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/`` then open the file ``global-permission-mappings-config.xml``.  Remember to restart CrafterCMS so your changes to the file will take effect.
 
@@ -21,7 +22,7 @@ Here's the default global permissions configuration.  It contains the permission
    :linenos:
 
    <!--
-     This file contains global permissions configuration for Crafter Studio. Permissions per site are managed
+     This file contains global permissions configuration for Crafter Studio. Permissions per project are managed
      within Crafter Studio's UI.
 
      The structure of this file is:
@@ -125,38 +126,38 @@ folder_create              User is permitted to create new folder
 create_cluster             User is permitted to access the :ref:`main-menu-tool-cluster` from the Main Menu for managing clusters
 create_groups              User is permitted to access the :ref:`main-menu-tool-groups` from the Main Menu for managing groups
 create_users               User is permitted to access the :ref:`main-menu-tool-users` from the Main Menu for managing users
-create-site                User is permitted to access the :ref:`main-menu-tool-sites` from the Main Menu for managing sites
+create-site                User is permitted to access the :ref:`main-menu-tool-projects` from the Main Menu for managing projects
 delete_cluster             User is permitted to delete a member of the cluster
 delete_groups              User is permitted to delete a group
 delete_users               User is permitted to delete a user
-edit_site                  User is permitted to edit site
+edit_site                  User is permitted to edit project
 encryption_tool            User is permitted to access the :ref:`main-menu-tool-encryption-tool` from the Main Menu to encrypt a text value
-get_children               User is permitted to call getChildren* APIs for browsing site content
+get_children               User is permitted to call getChildren* APIs for browsing project content
 get_publishing_queue       User is permitted to get the list of packages in the publishing queue
 install_plugins            User is permitted to install plugins
 item_unlock                User is permitted to unlock items
 list_cmis                  User is permitted to list files and folders in a CMIS repository with an optional range for pagination
-list_remotes               User is permitted to list remote repositories for a site
-list_plugins               User is permitted to list plugins installed for a site
+list_remotes               User is permitted to list remote repositories for a project
+list_plugins               User is permitted to list plugins installed for a project
 manage_access_token        User is permitted access to manage (create,remove, etc.) access tokens
 publish                    User is permitted to approve submitted content for publishing or publish content
-publish_status             User is permitted to see publishing status for site
-pull_from_remote           User is permitted to pull content from remote repository to site content repository
-push_to_remote             User is permitted to push content to remote repository from site content repository
+publish_status             User is permitted to see publishing status for project
+pull_from_remote           User is permitted to pull content from remote repository to project content repository
+push_to_remote             User is permitted to push content to remote repository from project content repository
 read_cluster               User is permitted to read all the members of the cluster
 read_groups                User is permitted to get all groups
 read_logs                  User is permitted to access the **Logging Levels** and **Log Console** tools from the Main Menu
 read_users                 User is permitted to get all users
 rebuild_database           User is permitted to rebuild Crafter Studio’s database and object state with the underlying repository
 remove_plugins             User is permitted to remove installed plugins
-remove_remote              User is permitted to remove remote repository from site content repository
+remove_remote              User is permitted to remove remote repository from project content repository
 resolve_conflict           User is permitted to resolve a conflict for a file by accepting ours or theirs
 S3 Read                    User is permitted to get a list of items from an S3 bucket
 S3 Write                   User is permitted to upload a file to an S3 bucket
 search_cmis                User is permitted to search files and folders in a CMIS repository with an optional range for pagination
-site_delete                User is permitted to delete a site
-site_diff_conflicted_file  User is permitted to get the difference between ``ours`` and ``theirs`` for a conflicted file for a site
-site_status                User is permitted to get status of repository for a site
+site_delete                User is permitted to delete a project
+site_diff_conflicted_file  User is permitted to get the difference between ``ours`` and ``theirs`` for a conflicted file for a project
+site_status                User is permitted to get status of repository for a project
 unlock_repository          User is permitted to unlock repository
 update_cluster             User is permitted to update the cluster
 update_groups              User is permitted to update groups
@@ -164,6 +165,6 @@ update_users               User is permitted to update user
 upload_content_cmis        User is permitted to upload an asset file to CMIS repository
 webdav_read                User is permitted to get a list of items from a WebDAV server
 webdav_write               User is permitted to upload a file to a WebDAV server
-write_configuration        User is permitted to write configuration content for site
+write_configuration        User is permitted to write configuration content for project
 write_global_configuration User is permitted access to the :ref:`main-menu-tool-global-config` tool from the Main Menu
 ========================== ================================================================================

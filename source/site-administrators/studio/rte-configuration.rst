@@ -30,7 +30,7 @@ Our RTE is based on TinyMCE 5 (https://www.tiny.cloud/) and can leverage all con
 
 There are two ways of editing content in Studio: (1) form-based editing and (2) In-context editing (ICE).  Form-based editing is done by clicking on ``Options`` (three dots next to the preview address bar at the top of the page, or the three dots next to the page in the Site Explorer tree), then selecting ``Edit``.  In-content editing is done by enabling the ``Edit mode`` by clicking on the pencil at the top right of the page (which turns green when enabled), then clicking on the section of the page you want to edit.
 
-This section details how to configure the RTE for form-based editing of content.  For more information on configuring the RTE for in-context editing (ICE), see :ref:`here <rte-config-for-ice>`
+This section details how to configure the RTE for form-based editing of content.  For more information on configuring the RTE for in-context editing (ICE), see :ref:`here <rte-config>`
 
 
 ^^^^^^^^^^^^^^^

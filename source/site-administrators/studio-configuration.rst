@@ -42,22 +42,15 @@ Here are the settings that can be configured through Crafter Studio:
    studio/blob-stores
    studio/box-profiles-configuration
    studio/cmis-configuration
-   studio/code-editor-configuration
    studio/configure-notifications
    studio/content-monitoring
-   studio/contextual-navigation-config
    studio/dependency-resolver
-   studio/drag-n-drop-configuration
-   studio/mime-types-configuration
    studio/permission-mappings
-   studio/preview-panel-configuration
    studio/project-configuration
    studio/project-policy-configuration
-   studio/role-mappings
+   studio/project-config-configuration
    studio/rte-configuration
-   studio/sidebar-configuration
-   studio/site-config-tools
-   studio/site-config-configuration
+   studio/role-mappings
    studio/user-interface-configuration
    studio/webdav-profiles-configuration
 
