@@ -8,7 +8,7 @@
 Configure Multi-Tenancy in Engine
 =================================
 
-.. note:: *This guide applies only to the* **delivery environment** *of CrafterCMS*
+  .. note:: *This guide applies only to the* **delivery environment** *of CrafterCMS*
 
 One instance of Crafter Engine can handle multiple sites (multi-tenancy). This guide explains how
 to setup Crafter Engine for multi-tenancy.
@@ -93,3 +93,7 @@ together with CDNs that can send headers, like AWS CloudFront
     is set in the cookie for the next requests.
 
 |
+
+  .. note::
+
+     .. include:: /includes/project-identification-precedence.rst
