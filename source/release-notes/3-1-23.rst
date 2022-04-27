@@ -18,8 +18,8 @@ Updates
 
 * UI improvements |br|
 
-  - Fixed issue with browse window for pickers when the tree is deep |br|
-    See `here <https://github.com/craftercms/craftercms/issues/5384>`__ for more information
+  - Improved Audit Report User drop down |br|
+    See `here <https://github.com/craftercms/craftercms/issues/5493>`__ for more information
 
   - Added support to unselect/select all children when copying a page or folder |br|
     See `here <https://github.com/craftercms/craftercms/issues/5361>`__ for more information
