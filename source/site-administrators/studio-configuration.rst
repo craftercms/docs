@@ -52,7 +52,7 @@ Here are the settings that can be configured through Crafter Studio:
    studio/permission-mappings
    studio/preview-panel-configuration
    studio/project-configuration
-   studio/project-policy-configuration
+   studio/site-policy-configuration
    studio/role-mappings
    studio/rte-configuration
    studio/sidebar-configuration
