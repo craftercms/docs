@@ -8,7 +8,7 @@
 Configure Multi-Tenancy in Engine
 =================================
 
-.. note:: *This guide applies only to the* **delivery environment** *of CrafterCMS*
+  .. note:: *This guide applies only to the* **delivery environment** *of CrafterCMS*
 
 One instance of Crafter Engine can handle multiple sites (multi-tenancy). This guide explains how
 to setup Crafter Engine for multi-tenancy.
@@ -83,6 +83,12 @@ current site from the URL.
 .. WARNING::
   Using this configuration you need to be sure that the first request includes the ``crafterSite``
   parameter so that the site value is set in the cookie for the next requests.
+
+|
+
+.. note::
+
+   .. include:: /includes/site-identification-precedence.rst
 
 ------------------------------
 Configure Mapped Multi-Tenancy
