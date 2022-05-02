@@ -19,10 +19,12 @@ To find this configuration xml through studio follow the next instructions:
 #. Choose **Configuration** from the menu.
 #. Select **Configurations**.
 
-.. image:: /_static/images/site-admin/configuration.png
+.. image:: /_static/images/site-admin/configuration.jpg
     :alt: Configurations - Open Configurations
-    :width: 65 %
+    :width: 55 %
     :align: center
+
+|
 
 ------
 Sample
@@ -36,28 +38,28 @@ Here's a sample config-list.xml file:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!--
-      This file configures the list of configurations available in the Project Tools section for this project/blueprint.
+     This file configures the list of configurations available in the SiteConfig section for this site/blueprint.
 
-      For every configuration you'd like to make editable, you need:
-        <file>
-          <module />
-          <path />
-          <title />
-          <description />
-          <samplePath />
-        </file>
+     For every configuration you'd like to make editable, you need:
+       <file>
+         <module />
+         <path />
+         <title />
+         <description />
+         <samplePath />
+       </file>
 
-      The elements are:
-      - module: CrafterCMS module
-      - path: the path to the file. This path is rooted in /config/<module> off the base of the project/blueprint
-      - title: the title of this file. This should be a key into the string-table in Studio's localization string table
-          "base.js", if no entry is found, Studio will use the string you have here as is
-      - description: the description of this file.  This should be a key into the string-table in Studio's localization
-          string table "base.js", if no entry is found, Studio will use the string you have here as is
-      - samplePath: the path to a sample file to help the user update the file
+     The elements are:
+     - module: CrafterCMS module
+     - path: the path to the file. This path is rooted in /config/<module> off the base of the site/blueprint
+     - title: the title of this file. This should be a key into the string-table in Studio's localization string table
+       "base.js", if no entry is found, Studio will use the string you have here as is
+     - description: the description of this file.  This should be a key into the string-table in Studio's localization
+       string table "base.js", if no entry is found, Studio will use the string you have here as is
+     - samplePath: the path to a sample file to help the user update the file
     -->
     <config>
-      <version>8</version>
+      <version>4.0.1</version>
       <files>
         <file>
           <module>studio</module>
@@ -65,55 +67,6 @@ Here's a sample config-list.xml file:
           <title>confTabSiteConfiguration</title>
           <description>confTabSiteConfigurationDesc</description>
           <samplePath>sample-site-config.xml</samplePath>
-        </file>
-        <file>
-          <module>studio</module>
-          <path>context-nav/sidebar.xml</path>
-          <title>confTabSidebarConf</title>
-          <description>confTabSidebarConfDesc</description>
-          <samplePath>sample-sidebar.xml</samplePath>
-        </file>
-        <file>
-          <module>studio</module>
-          <path>form-control-config/rte/rte-setup.xml</path>
-          <title>confTabRTEConf</title>
-          <description>confTabRTEConfDesc</description>
-          <samplePath>sample-form-control-rte-setup.xml</samplePath>
-        </file>
-        <file>
-          <module>studio</module>
-          <path>form-control-config/rte/rte-setup-tinymce5.xml</path>
-          <title>confTabRTEtMCE5Conf</title>
-          <description>confTabRTEtMCE5ConfDesc</description>
-          <samplePath>sample-form-control-rte-setup-tinymce5.xml</samplePath>
-        </file>
-        <file>
-          <module>studio</module>
-          <path>code-editor-config.xml</path>
-          <title>confTabCodeEditorConf</title>
-          <description>confTabCodeEditorConfDesc</description>
-          <samplePath>sample-code-editor-config.xml</samplePath>
-        </file>
-        <file>
-          <module>studio</module>
-          <path>preview-tools/components-config.xml</path>
-          <title>confTabPreviewComponentsConf</title>
-          <description>confTabPreviewComponentsConfDesc</description>
-          <samplePath>sample-preview-components-config.xml</samplePath>
-        </file>
-        <file>
-          <module>studio</module>
-          <path>targeting/targeting-config.xml</path>
-          <title>confTabTargetingConfiguration</title>
-          <description>confTabTargetingConfigurationDesc</description>
-          <samplePath>sample-targeting-config.xml</samplePath>
-        </file>
-        <file>
-          <module>studio</module>
-          <path>preview-tools/panel.xml</path>
-          <title>confTabPreviewPanelConf</title>
-          <description>confTabconfTabPreviewPanelConfDesc</description>
-          <samplePath>sample-preview-panel.xml</samplePath>
         </file>
         <file>
           <module>studio</module>
@@ -145,13 +98,6 @@ Here's a sample config-list.xml file:
         </file>
         <file>
           <module>studio</module>
-          <path>context-nav/contextual-nav.xml</path>
-          <title>confTabContextualNavigationConf</title>
-          <description>confTabContextualNavigationConfDesc</description>
-          <samplePath>sample-contextual-nav.xml</samplePath>
-        </file>
-        <file>
-          <module>studio</module>
           <path>administration/site-config-tools.xml</path>
           <title>confTabSiteConf</title>
           <description>confTabSiteConfDesc</description>
@@ -163,13 +109,6 @@ Here's a sample config-list.xml file:
           <title>confTabConfigurations</title>
           <description>confTabConfDesc</description>
           <samplePath>sample-config-list.xml</samplePath>
-        </file>
-        <file>
-          <module>studio</module>
-          <path>mime-type.xml</path>
-          <title>Mime Types</title>
-          <description>mime Types</description>
-          <samplePath>sample-mime-type.xml</samplePath>
         </file>
         <file>
           <module>engine</module>
@@ -188,62 +127,82 @@ Here's a sample config-list.xml file:
         <file>
           <module>engine</module>
           <path>urlrewrite.xml</path>
-          <title>Engine URL Rewrite Configuration (XML Style)</title>
-          <description>Engine URL Rewrite Configuration (XML Style)</description>
+          <title>confTabEngineUrlRewriteConf</title>
+          <description>confTabEngineUrlRewriteConfDesc</description>
           <samplePath>sample-urlrewrite.xml</samplePath>
         </file>
         <file>
           <module>studio</module>
           <path>dependency/resolver-config.xml</path>
-          <title>Dependency Resolver Configuration</title>
-          <description>Dependency Resolver Configuration</description>
+          <title>confTabDependencyResolverConf</title>
+          <description>confTabDependencyResolverConfDesc</description>
           <samplePath>sample-resolver-config.xml</samplePath>
         </file>
         <file>
           <module>studio</module>
           <path>aws/aws.xml</path>
-          <title>AWS Profiles</title>
-          <description>AWS Profiles</description>
+          <title>confTabAWSProfiles</title>
+          <description>confTabAWSProfilesDesc</description>
           <samplePath>sample-aws.xml</samplePath>
         </file>
         <file>
           <module>studio</module>
           <path>box/box.xml</path>
-          <title>Box Profiles</title>
-          <description>Box Profiles</description>
+          <title>confTabBoxProfiles</title>
+          <description>confTabBoxProfilesDesc</description>
           <samplePath>sample-box.xml</samplePath>
         </file>
         <file>
           <module>studio</module>
           <path>webdav/webdav.xml</path>
-          <title>WebDAV Profiles</title>
-          <description>WebDAV Profiles</description>
+          <title>confTabWebDAVProfiles</title>
+          <description>confTabWebDAVProfilesDesc</description>
           <samplePath>sample-webdav.xml</samplePath>
         </file>
         <file>
           <module>studio</module>
           <path>asset-processing/asset-processing-config.xml</path>
-          <title>Asset Processing</title>
-          <description>Asset Processing</description>
+          <title>confTabAssetProcessing</title>
+          <description>confTabAssetProcessingDesc</description>
           <samplePath>sample-asset-processing-config.xml</samplePath>
         </file>
         <file>
           <module>studio</module>
           <path>blob-stores-config.xml</path>
-          <title>Blob Stores</title>
-          <description>Blob Stores</description>
+          <title>confTabBlobStores</title>
+          <description>confTabBlobStoresDesc</description>
           <samplePath>sample-blob-stores-config.xml</samplePath>
         </file>
         <file>
           <module>engine</module>
           <path>proxy-config.xml</path>
-          <title>Proxy Config</title>
-          <description>Proxy Config</description>
-          <samplePath>sample-blob-stores-config.xml</samplePath>
+          <title>confTabProxyConfig</title>
+          <description>confTabProxyConfigDesc</description>
+          <samplePath>sample-proxy-config.xml</samplePath>
         </file>
-       </files>
+        <file>
+          <module>studio</module>
+          <path>translation-config.xml</path>
+          <title>confTabTranslationConf</title>
+          <description>confTabTranslationConfDesc</description>
+          <samplePath>sample-translation-config.xml</samplePath>
+        </file>
+        <file>
+          <module>studio</module>
+          <path>site-policy-config.xml</path>
+          <title>confTabSitePolicyConf</title>
+          <description>confTabSitePolicyConfDesc</description>
+          <samplePath>sample-site-policy-config.xml</samplePath>
+        </file>
+        <file>
+          <module>studio</module>
+          <path>ui.xml</path>
+          <title>confTabUiConf</title>
+          <description>confTabUiConfDesc</description>
+          <samplePath>sample-ui.xml</samplePath>
+        </file>
+      </files>
     </config>
-
 
 -----------
 Description
@@ -280,6 +239,8 @@ You can click on the **View Sample** button to see a configuration file example.
     :align: center
     :alt: Basic Configuration Sample
 
+|
+
 
 -------------------------------
 Adding a new configuration file
@@ -287,7 +248,7 @@ Adding a new configuration file
 
 To add a new configuration file please follow the steps below.
 
-#. Add file tags to the configuration list xml file (config-list.xml).
+#. Add file tags to the ``Configurations`` list xml file (config-list.xml).
 
    .. code-block:: xml
       :caption: *CRAFTER_HOME/data/repos/sites/sandbox/SITENAME/sandbox/config/studio/administration/config-list.xml*
@@ -305,16 +266,21 @@ To add a new configuration file please follow the steps below.
             :align: center
             :alt: Basic Configuration Step 1
 
+   |
+
 #. Click on the **Save** button
 
     .. image:: /_static/images/site-admin/basic-configuration-step2.jpg
         :align: center
         :alt: Basic Configuration Step 2
 
-#. Go to configuration tab, then open the dropdown and finally look for your new configuration file
+    |
 
-    .. image:: /_static/images/site-admin/basic-configuration-step3.png
+#. Go to ``Configuration``, then finally look for your new configuration file
+
+    .. image:: /_static/images/site-admin/basic-configuration-step3.jpg
         :width: 70%
         :align: center
         :alt: Basic Configuration Step 3
 
+    |

@@ -438,7 +438,9 @@ See :ref:`targeting` for more information on configuring the targeting system of
 RTE Configuration
 *****************
 
-To configure the RTE for in-context editing, add/edit the widget ``craftercms.components.TinyMCE``:
+There are two ways of editing content in Studio: (1) form-based editing and (2) In-context editing (ICE).  Form-based editing is done by clicking on ``Options`` (three dots next to the preview address bar at the top of the page, or the three dots next to the page in the Sidebar), then selecting ``Edit``.  In-context editing is done by enabling the ``Edit mode`` by clicking on the pencil at the top right of the page (which turns green when enabled), then clicking on the section of the page you want to edit.
+
+To configure the RTE, add/edit the widget ``craftercms.components.TinyMCE``:
 
 .. code-block:: xml
    :caption: *Example RTE configuration*
@@ -481,9 +483,12 @@ To configure the RTE for in-context editing, add/edit the widget ``craftercms.co
        </setups>
      </configuration>
    </widget>
+
 |
 
 Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.
+
+To learn more about configuring the RTE, see :ref:`here <rte-configuration>`
 
 .. _project-tools-configuration:
 
@@ -491,8 +496,37 @@ Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all confi
 Project Tools Configuration
 ***************************
 
-The Project Config tools configuration file defines what modules are available for administration use when
+The Project Config tools configuration section defines what modules are available for administration use when
 clicking on |projectTools| from the Sidebar.
+
+.. code-block:: xml
+   :linenos:
+
+   <references>
+   		<reference id="craftercms.siteTools">
+   			<tools>
+   				<tool>
+   					<title id="dropTargetsMessages.contentTypes" defaultMessage="Content Types"/>
+   					<icon id="@mui/icons-material/WidgetsOutlined"/>
+   					<url>content-types</url>
+   					<widget id="craftercms.components.ContentTypeManagement"/>
+   				</tool>
+   				<tool>
+   					<title id="GlobalMenu.EncryptionToolEntryLabel"
+   					       defaultMessage="Encryption Tool"/>
+   					<icon id="@mui/icons-material/LockOutlined"/>
+   					<url>encrypt-tool</url>
+   					<widget id="craftercms.components.SiteEncryptTool"/>
+   				</tool>
+   				<tool>
+   					<title id="words.configuration" defaultMessage="Configuration"/>
+   					<icon id="@mui/icons-material/SettingsApplicationsOutlined"/>
+   					<url>configuration</url>
+   					<widget id="craftercms.components.SiteConfigurationManagement"/>
+   				</tool>
+   				...
+
+|
 
 List of available tools
 -----------------------

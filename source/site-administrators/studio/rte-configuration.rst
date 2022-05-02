@@ -1,4 +1,10 @@
-:is-up-to-date: True
+:is-up-to-date: False
+:last-updated: 4.0.0
+
+:orphan:
+
+.. document does not appear in any toctree, and is only accessible via searching.
+   use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
 .. index:: Rich Text Editor (RTE) Configuration;
 .. _rte-configuration:
@@ -16,9 +22,9 @@ Common Configurations for Effective RTEs
 Here are some things to consider for setting up effective RTEs:
 
 #. The rich text editor's width should be set to the same width as the region it is intended to edit
-#. Site style sheet of your site is imported so it can be applied to the RTE
-#. Site styles are being applied appropriately to the markup in the RTE.  Note that sometimes styles in CSS are so aggressively specified that the RTE cannot pick them up.
-#. Formats and styles are configured to match the part of the site being edited
+#. Project style sheet of your project is imported so it can be applied to the RTE
+#. Project styles are being applied appropriately to the markup in the RTE.  Note that sometimes styles in CSS are so aggressively specified that the RTE cannot pick them up.
+#. Formats and styles are configured to match the part of the project being edited
 #. Toolbar is configured with only what is required for the specific use case (reducing options makes it easier for editors)
 #. If plugins like ``insert component``, ``insert layout`` and so on are enabled it should be fully configured.
 
@@ -28,24 +34,28 @@ What Out-of-the-Box Functionality Does Crafter Studio's RTE Support?
 
 Our RTE is based on TinyMCE 5 (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.   You can find the documentation for these TinyMCE configurations and settings here: https://www.tiny.cloud/docs/
 
-There are two ways of editing content in Studio: (1) form-based editing and (2) In-context editing (ICE).  Form-based editing is done by clicking on ``Options`` (three dots next to the preview address bar at the top of the page, or the three dots next to the page in the Site Explorer tree), then selecting ``Edit``.  In-content editing is done by enabling the ``Edit mode`` by clicking on the pencil at the top right of the page (which turns green when enabled), then clicking on the section of the page you want to edit.
-
-This section details how to configure the RTE for form-based editing of content.  For more information on configuring the RTE for in-context editing (ICE), see :ref:`here <rte-config>`
-
 
 ^^^^^^^^^^^^^^^
 TinyMCE plugins
 ^^^^^^^^^^^^^^^
-Crafter Studio uses standard TinyMCE plugins.  To see the list of TinyMCE plugins available in Studio, look for the ``<plugins />`` tag in the configuration:
+Crafter Studio uses standard TinyMCE plugins.  To see the list of TinyMCE plugins available in Studio,
+look for  ``plugins`` in the configuration:
 
 .. code-block:: xml
-   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-config.xml*
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/ui.xml*
+   :emphasize-lines: 10
 
-   <plugins>
-     print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template
-     codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount
-     textpattern help acecode
-   </plugins>
+   <widget id="craftercms.components.TinyMCE">
+     <configuration>
+       <setups>
+         <setup id="generic">
+           <!-- Configuration options: https://www.tiny.cloud/docs/configure/ -->
+           <!-- Plugins: https://www.tiny.cloud/docs/plugins/opensource/ -->
+           <tinymceOptions>{
+             "menubar": true,
+             "theme": "silver",
+             "plugins": "print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount textpattern help acecode paste editform",
+   ...
 
 |
 
@@ -55,18 +65,37 @@ See https://www.tiny.cloud/docs/plugins/opensource/ for more information on the 
 .. |rteMediaBtn| image:: /_static/images/site-admin/rte/rte-media-button.png
                    :width: 4%
 
-To add TinyMCE plugins to the toolbar, add the names listed in the **toolbar** tag in the TinyMCE plugin documentation to one of the toolbarItem tags in the configuration: ``<toolbarItems1>``, ``<toolbarItems2>``, ``<toolbarItems3>`` or ``<toolbarItems4>``.
+To add TinyMCE buttons to the toolbar, add the names listed in the **toolbar** tag in the TinyMCE plugin documentation to ``toolbar(n)`` in the configuration.
+
+Crafter Studio by default adds plugins to ``toolbar1`` as seen in the example below.
+
+.. code-block:: xml
+
+   ...
+   "toolbar1": "formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat | editform",
+   ...
+
+|
 
 See https://www.tiny.cloud/docs/configure/editor-appearance/#toolbarn for more information on the toolbar(n) option of Tiny MCE
 
-TinyMCE Plugin Example
-^^^^^^^^^^^^^^^^^^^^^^
-Let's take a look at an example of using one of the TinyMCE plugins.
+TinyMCE Plugin Toolbar Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Let's take a look at an example of using one of the TinyMCE plugins to add a button in the toolbar.
 
-The default editor instance contains a menubar with most of the commonly used editing tools.  Sometimes, you want handy buttons available so you don't have to find the tool you need from the menubar.  We'll add a media button to our editor instance to be able to embed a YouTube video:
+We'll add a media button to our editor instance to be able to embed a YouTube video:
 
-1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE Configuration*
-2. Add the button name **media** to one of the toolbarItem tags: ``<toolbarItems1>``.  An **Insert/Edit Embedded Media** button |rteMediaBtn| will now be available for users of the RTE.
+1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *User Interface Configuration*
+2. Add ``toolbar2`` and the button name **media** like below:
+
+   .. code-block:: xml
+      :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/ui.xml*
+      :emphasize-lines: 2
+
+      "toolbar1": "formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat",
+      "toolbar2": "media",
+
+   An **Insert/Edit Embedded Media** button |rteMediaBtn| will now be available for users of the RTE.
 
    .. figure:: /_static/images/site-admin/rte/rte-media-button-added.jpg
       :alt: RTE Setup - Media button added to editor instance
@@ -74,12 +103,6 @@ The default editor instance contains a menubar with most of the commonly used ed
       :align: center
 
    |
-
-     .. note::
-        On TinyMCE, buttons can be added through **toolbar(n)** or **toolbar** but the rte config only supports **toolbarItems(n)**.
-
-        Tiny's **toolbar(n)** are available only up to 4 through our **toolbarItems{1,2,3,4}**
-
 
 2. Click on the |rteMediaBtn| button to add the link to the YouTube video you'd like to embed in the RTE and to setup other parameters. In the **General** tab, fill in the **Source** field with the URL of the YouTube video you'd like to embed and finally, fill in the **Dimensions** field to the size desired.  Click on the **Ok** button.
 
@@ -104,57 +127,64 @@ TinyMCE Plugin Template Example
 
 Let's take a look at another example of using the TinyMCE plugin, ``template``.
 
-The ``template`` plugin adds support for custom templates.  The default editor instance only adds the menu item ``Insert template...`` under the ``Insert`` menu.  On TinyMCE, it adds a menu item ``Insert template`` under the ``Insert`` menu and a toolbar button.
+The ``template`` plugin adds support for custom templates.  The default editor instance only adds the menu item ``Insert template...`` under the ``Insert`` menu in the menubar.  On TinyMCE, it adds a menu item ``Insert template`` under the ``Insert`` menu and a toolbar button.
 
-To add a template to the RTE, simply add ``<template />`` under ``<setup />`` in the RTE configuration.
-Under ``<template />``, add ``title``, ``description`` and ``content``:
+To add a template to the RTE, simply add ``templates`` under ``setup`` in the RTE configuration.
+Under ``templates``, add ``title``, ``description`` and ``content``:
 
 .. code-block::xml
+   :linenos:
+   :emphasize-lines: 11-17
 
-   <config>
-     <setup>
-       ...
-
-       <template>
-         <title />
-         <description />
-         <content />
-       </template>
-     ...
+   <widget id="craftercms.components.TinyMCE">
+   <configuration>
+     <setups>
+       <setup id="...">
+          ...
+          <tinymceOptions>
+            <![CDATA[
+              {
+                "menubar": true,
+                ...
+                "templates" : [
+                  {
+                    "title": "Your Template Title",
+                    "content": "Your template content",
+                    "description": "Your Template Description "
+                   },
+                ]
+             }
+        ]]>
+        ...
 
 |
 
 Let us take a look at an example of adding two templates to the RTE configuration
 
-1. Open the RTE configuration file in your site by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE Configuration*
+1. Open the RTE configuration file in your project by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *User Interface Configuration*
 
-2. Add in the following templates under ``<setup />``:
+2. Scroll down to the TinyMCE section and add in the following templates under ``<setup />``:
 
    .. code-block:: xml
-      :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-config.xml*
+      :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/ui.xml*
+      :linenos:
 
-      <templates>
-        <template>
-          <title>Test template 1</title>
-          <content>Test 1</content>
-          <description>Test1 Description</description>
-        </template>
-        <template>
-          <title>Test template 2</title>
-          <content><![CDATA[
-            <div class="test">
-              <h1>This is a title</h1>
-              <p>Look at this paragraph!</p>
-            </div>
-            ]]>
-          </content>
-          <description>Test 2 description</description>
-        </template>
-      </templates>
+      "templates" : [
+        {
+          "title": "Test template 1",
+          "content": "Test 1",
+          "description": "Test1 Description "
+        },
+        {
+          "title": "Test template 2",
+          "content": "<div class='test'><h1>This is a title</h1><p>Look at this paragraph!</p></div>",
+          "description": "Test 2 description"
+        }
+      ]
 
    |
 
-3. Save your changes.  The configured templates should now be available under ``Insert templates` of the ``Insert`` menu.
+3. Save your changes.  The configured templates should now be available under ``Insert templates`` of the ``Insert`` menu.
 
    .. figure:: /_static/images/site-admin/rte/rte-template-plugin-example.png
       :alt: RTE Setup - RTE template plugin example in action
@@ -174,30 +204,25 @@ The TinyMCE ``paste`` plugin enables you to modify the pasted content before it 
 
 In order to hook into the callback (``paste_preprocess`` and ``paste_postprocess``), do the following in the RTE configuration:
 
-1) Add the default ``paste`` plugin in the ``<plugins />`` tag
+1) Add the default ``paste`` plugin in the ``<plugins />`` tag if not already included
 
    .. code-block:: xml
-      :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-setup-tinymce5.xml*
+      :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/ui.xml*
 
-      <plugins>
-        print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template
-        codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount
-        textpattern help acecode paste
-
-      </plugins>
+      "plugins": "print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount textpattern help acecode paste"
 
    |
 
-2) Create an :ref:`external plugin <adding-external-plugins>` by following the structure of the example plugin `here <https://github.com/craftercms/studio-ui/blob/support/3.1.x/static-assets/js/tinymce-plugins/craftercms_paste_extension/craftercms_tinymce_hooks.sample.js>`__.  To modify the pasted content, add your code under ``paste_preprocess()`` or ``paste_postprocess()`` depending on your needs.
+2) Create an :ref:`external plugin <adding-external-plugins>` by following the structure of the example plugin `here <https://github.com/craftercms/studio-ui/blob/develop/static-assets/js/tinymce-plugins/craftercms_paste_extension/craftercms_tinymce_hooks.sample.js>`__.  To modify the pasted content, add your code under ``paste_preprocess()`` or ``paste_postprocess()`` depending on your needs.
 
 3) Add the plugin created in the previous step as an external plugin under the ``craftercms_tinymce_hooks`` tag.
 
    .. code-block:: xml
-      :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-setup-tinymce5.xml*
+      :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/ui.xml*
 
-      <external_plugins>
-	    <craftercms_tinymce_hooks><![CDATA[/studio/api/2/plugin/file?siteId={site}&type=tinymce&name=craftercms_paste_extension&filename=samplepasteplugin.js]]></craftercms_tinymce_hooks>
-      </external_plugins>
+      "external_plugins": {
+        "craftercms_tinymce_hooks": "/studio/api/2/plugin/file?siteId={site}&type=tinymce&name=craftercms_paste_extension&filename=samplepasteplugin.js"
+      }
 
    |
 
@@ -213,32 +238,32 @@ In order to hook into the callback (``paste_preprocess`` and ``paste_postprocess
 Adding Allowable Elements
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Tiny MCE allows only a certain set of elements (HTML tags) as valid (rule set) by default in the code editor and will strip elements not in the allowable list  when it outputs its HTML.  For example, if you try adding in the ``<script />`` element , or the ``<iframe />`` element, it will be stripped out of the HTML output.  To add specific elements that should also be valid, in addition to the existing rule set, we use the ``<extendedElements />`` in the RTE configuration.  Simply add the elements you would like added to the existing rule set in the ``<extendedElements />`` tag in RTE Configuration file.
+Tiny MCE allows only a certain set of elements (HTML tags) as valid (rule set) by default in the code editor and will strip elements not in the allowable list  when it outputs its HTML.  For example, if you try adding in the ``<script />`` element , or the ``<iframe />`` element, it will be stripped out of the HTML output.  To add specific elements that should also be valid, in addition to the existing rule set, we use the ``extended_valid_elements`` in the RTE configuration.  Simply add the elements you would like added to the existing rule set in the ``<extended_valid_elements />`` tag in RTE Configuration file.
 
 .. code-block:: xml
 
-   <extendedElements>script,mycustomtag</extendedElements>   <!-- elements whitelist (won't be stripped out) -->
+   "extended_valid_elements": "script mycustomtag",   <!-- elements whitelist (won't be stripped out) -->
 
 |
 
 Example allowing script element
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Let's take a look at an example of adding ``<script />`` to the allowable elements (rule set).  We'll be using a site created using the Website Editorial blueprint.
+Let's take a look at an example of adding ``<script />`` to the allowable elements (rule set).  We'll be using a project created using the Website Editorial blueprint.
 
-1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE Configuration*
+1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *User Interface Configuration* then scroll down to the ``craftercms.components.TinyMCE`` widget section
 
-2. Scroll down to ``<extendedElements />`` tag and add ``script`` and save.
+2. Scroll down to ``extended_valid_elements`` and add ``script`` and save.
 
    .. code-block:: xml
 
-      <extendedElements>script</extendedElements>   <!-- elements whitelist (won't be stripped out) -->
+      "extended_valid_elements": "script"   <!-- elements whitelist (won't be stripped out) -->
 
    |
 
 3. We'll now add ``<script />`` in the RTE to verify it works.
 
-   Open the **Sidebar** and edit one of the articles.  Navigate to ``/articles/2016/7/`` then right click on ``New ACME Phone Released Today`` and select ``Edit``.
+   Open the **Sidebar** and edit one of the articles.  Navigate to ``/articles/2020/7/`` then right click on ``New ACME Phone Released Today`` and select ``Edit``.
 
    Scroll down to the ``Content`` part of the form and Under ``Sections``, click on ``Add Another``
 
@@ -266,29 +291,31 @@ Let's take a look at an example of adding ``<script />`` to the allowable elemen
       :width: 45%
       :align: center
 
+   |
+
    Please note that TinyMCE gives this warning when allowing script elements (<script />):
 
       .. Warning:: Allowing script elements (<script>) in TinyMCE exposes users to cross-site scripting (XSS) attacks.
 
 Example allowing a custom element
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-You can also add custom elements to the rule set and can be done by simply adding the custom tag to ``<extendedElements />``.  Let's take a look at an example of adding the tag  ``mycustomtag`` to the rule set.
+You can also add custom elements to the rule set and can be done by simply adding the custom tag to ``extended_valid_elements``.  Let's take a look at an example of adding the tag  ``mycustomtag`` to the rule set.
 
    .. note:: Case sensitive custom elements are not supported in TinyMCE 5.  Remember to **use only lowercase for custom elements** (e.g. ``myattr`` is supported but *myAttr* is not supported).
 
-1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE Configuration*
+1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *User Interface Configuration* then scroll down to the ``craftercms.components.TinyMCE`` widget section
 
-2. Scroll down to ``<extendedElements />`` tag and add ``mycustomtag`` and save.
+2. Scroll down to ``extended_valid_elements``  and add ``mycustomtag`` and save.
 
    .. code-block:: xml
 
-      <extendedElements>script,mycustomtag</extendedElements>   <!-- elements whitelist (won't be stripped out) -->
+      "extended_valid_elements": [ "script", "mycustomtag"]
 
    |
 
 3. We'll now add the ``<mycustomtag />`` in the RTE to verify it works.
 
-   Open the **Sidebar** and edit one of the articles.  Navigate to ``/articles/2016/7/`` then right click on ``New ACME Phone Released Today`` and select ``Edit``.
+   Open the **Sidebar** and edit one of the articles.  Navigate to ``/articles/2020/7/`` then right click on ``New ACME Phone Released Today`` and select ``Edit``.
 
    Scroll down to the ``Content`` part of the form and Under ``Sections``, click on one of the section, then click on ``Tools`` -> ``Code Editor`` from the RTE menubar, then use  ``<mycustomtag />``
 
@@ -342,11 +369,11 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
       {site}: a macro that inserts the current siteId
 
 
-3. Add the custom button we're creating to the toolbar of the RTE.  Scroll to the ``<toolbarItems2 />`` tag and add the custom button we are creating ``my_button``
+3. Add the custom button we're creating to the toolbar of the RTE.  Scroll to the ``toolbar(n)`` tag and add the custom button we are creating ``my_button`` to ``toolbar2``
 
    .. code-block:: xml
 
-      <toolbarItems2>my_button</toolbarItems2>
+      "toolbar2": "my_button"
 
    |
 
