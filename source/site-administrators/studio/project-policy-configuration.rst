@@ -1,18 +1,18 @@
 :is-up-to-date: True
 :since-version: 4.0.0
 
-.. index:: Site Policy Configuration
+.. index:: Project Policy Configuration
 
-.. _site-policy-configuration:
+.. _project-policy-configuration:
 
-#########################
-Site Policy Configuration
-#########################
+############################
+Project Policy Configuration
+############################
 .. version_tag::
    :label: Since
    :version: 4.0.0
 
-The site policy configuration file allows the user to configure conditions for content being added to the site, such as
+The project policy configuration file allows the user to configure conditions for content being added to the site, such as
 minimum/maximum size of files, etc.
 
 CrafterCMS supports the following site policies:
@@ -22,11 +22,11 @@ CrafterCMS supports the following site policies:
 - MIME-type limits
 - Content-type limits
 
-To modify the site policy configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration** and
-select **Site Policy Configuration** from the dropdown list.
+To modify the project policy configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration** and
+select **Project Policy Configuration** from the dropdown list.
 
-.. image:: /_static/images/site-admin/config-open-site-policy-config.jpg
-   :alt: Configurations - Open Site Policy Configuration
+.. image:: /_static/images/site-admin/config-open-project-policy-config.jpg
+   :alt: Configurations - Open Project Policy Configuration
    :width: 35 %
    :align: center
 

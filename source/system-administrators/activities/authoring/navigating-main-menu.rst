@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Navigating the Main Menu
 
@@ -30,9 +31,9 @@ The configuration files for the Main Menu is located in ``CRAFTER_HOME/data/repo
 * :ref:`global-permission-mappings-config.xml <global-permission-mappings-config>` lets you configure the permissions to a role globally for the entire application
 * :ref:`global-role-mappings-config.xml <global-role-mappings-config>` lets you configure the mapping between the group and the role
 
-The tools available in the Main Menu is configured similar to how the Project Tools Sidebar is configured :ref:`here<site-config-tools>` using the :ref:`global menu config <global-menu-config>` configuration file mentioned above.
+The tools available in the Main Menu is configured similar to how the Project Tools Sidebar is configured :ref:`here<project-tools-configuration>` using the :ref:`global menu config <global-menu-config>` configuration file mentioned above.
 
-.. _main-menu-tool-sites:
+.. _main-menu-tool-projects:
 
 --------
 Projects
