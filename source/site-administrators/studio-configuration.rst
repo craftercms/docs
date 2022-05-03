@@ -55,7 +55,6 @@ Here are the settings that can be configured through Crafter Studio:
    studio/project-configuration
    studio/project-policy-configuration
    studio/role-mappings
-   studio/translation-configuration
    studio/user-interface-configuration
    studio/webdav-profiles-configuration
 

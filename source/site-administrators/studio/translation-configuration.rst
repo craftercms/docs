@@ -1,5 +1,4 @@
-:is-up-to-date: True
-:since-version: 4.0.0
+:is-up-to-date: False
 
 .. index:: Translation Configuration
 
@@ -8,6 +7,10 @@
 #########################
 Translation Configuration
 #########################
+
+  .. warning::
+
+     **This feature is not yet supported. It will be available in a future release**
 
 The translation configuration defines supported languages and how to resolve them
 

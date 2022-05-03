@@ -9,9 +9,9 @@
 Content Type Editor Config
 ==========================
 
-The Content Type Editor Config configuration file defines what tools are available iin the Content Type Editor.
+The Content Type Editor Config configuration file defines what tools are available in the Content Type Editor.
 This configuration is unique in that a configuration file exists in the following location of
-each project: ``SITENAME/config/studio/administration/tools.xml``
+each project: ``SITENAME/config/studio/administration/site-config-tools.xml``
 
 .. image:: /_static/images/site-admin/configuration-tool-config.png
     :align: center
