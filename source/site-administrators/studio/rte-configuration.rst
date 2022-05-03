@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.0
 
 :orphan:
@@ -14,7 +14,9 @@ Rich Text Editor Configuration
 ==============================
 
 RTEs are more effective/productive for authors  when they are configured properly for the specific type of content the author is managing.  A properly and effectively configured RTE has the right styles, menu options and so on.
-Every RTE in the system can have a different look  and feel, different editing/menu options, available styles, components and other configurations.  You can also SHARE setups between similar RTEs in your project.  This document will help you understand how to configure RTEs in Crafter Studio.
+Every RTE in the system can have a different look  and feel, different editing/menu options, available styles, components and other configurations.  You can also SHARE setups between similar RTEs in your project.
+
+This document describes how to configure various configuration options and plugins for the RTE in the :ref:`User Interface Configuration <user-interface-configuration>` file.
 
 ----------------------------------------
 Common Configurations for Effective RTEs
@@ -204,7 +206,7 @@ The TinyMCE ``paste`` plugin enables you to modify the pasted content before it 
 
 In order to hook into the callback (``paste_preprocess`` and ``paste_postprocess``), do the following in the RTE configuration:
 
-1) Add the default ``paste`` plugin in the ``<plugins />`` tag if not already included
+1) Add the default ``paste`` plugin in ``plugins`` if not already included
 
    .. code-block:: xml
       :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/ui.xml*
@@ -221,7 +223,7 @@ In order to hook into the callback (``paste_preprocess`` and ``paste_postprocess
       :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/ui.xml*
 
       "external_plugins": {
-        "craftercms_tinymce_hooks": "/studio/api/2/plugin/file?siteId={site}&type=tinymce&name=craftercms_paste_extension&filename=samplepasteplugin.js"
+        "craftercms_tinymce_hooks": "/studio/1/plugin/file?siteId={site}&pluginId=craftercms&type=tinymce&name=craftercms_paste_extension&filename=samplepasteplugin.js"
       }
 
    |
@@ -344,23 +346,23 @@ For more information on the Tiny MCE external_plugins option, see https://www.ti
 
 The Crafter Studio developer does not have full control of the tinymce initialization.  To add a custom button to the toolbar in Crafter Studio, it would be done using the external plugin route since, what TinyMCE docs advise – i.e. using the ``setup`` function to add the button – is not viable in Studio without creating a :ref:`form control plugin <building-plugins-controls>` where they'd have full control of tinymce initialization.
 
-To add an external plugin, use the tag ``<external_plugins />`` in the RTE configuration.
-Use the Crafter Studio API that gets a file for a given plugin, the getPluginFile API found here https://app.swaggerhub.com/apis/craftercms/studio/3.1.14.0#/plugin/getPluginFile to get the Tiny MCE external plugin file to pass to the RTE.
+To add an external plugin, use ``external_plugins`` in the RTE configuration.
+Use the Crafter Studio API that gets a file for a given plugin, the getPluginFile API found here :studio_swagger_url:`#/plugin/getPluginFile` to get the Tiny MCE external plugin file to pass to the RTE.
 
 Example External Plugin
 ^^^^^^^^^^^^^^^^^^^^^^^
 Let's take a look at an example of a simple external plugin that creates a custom button which inserts text in the RTE.
 We'll load our external plugin (a custom button) and add it to the RTE's toolbar.  For our example, we'll be using a site created using the empty blueprint named ``hello``.
 
-1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE Configuration*
+1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *User Interface Configuration* then scroll down to the ``craftercms.components.TinyMCE`` widget section
 
-2. We'll add the configuration for TinyMCE to load the plugin using Crafter Studio's getPluginFile API. We achieve this by using the ``<external_plugins />`` tag and adding child tags with the id of the plugin as tag name and the target URL as the tag's content |br|
+2. We'll add the configuration for TinyMCE to load the plugin using Crafter Studio's getPluginFile API. We achieve this by using  ``external_plugins`` and adding child tags with the id of the plugin as tag name and the target URL as the tag's content |br|
 
    .. code-block:: xml
 
-      <external_plugins>
-        <my_button><![CDATA[/studio/1/plugin/file?siteId={site}&type=tinymce&name=my_button&filename=plugin.js]]></my_button>
-      </external_plugins>
+      "external_plugins": {
+        "my_button": "/studio/1/plugin/file?siteId={site}&pluginId=my_button&type=tinymce&name=my_button&filename=plugin.js"
+      }
 
    |
 
@@ -450,12 +452,12 @@ Adding support for valid child elements within a parent element
 TinyMCE provides an option to control what child elements can exist within specified parent elements.
 By adding/removing child elements that can exist within a parent element, you can force which elements are valid children of the parent element.
 
-To add/remove child elements to the list of valid child elements, add/remove the element in the **<validChildren />** tag in the RTE Configuration file.  To add a child element to a parent element, use a ``+`` before the parent element then enclose in square brackets the child element/s you want to add e.g. ``+a[div|p]``.  To remove a child element, use a ``-`` before the parent element then enclose in square brackets the child element/s you want to remove,  e.g. ``-a[img]``.  You can add multiple parent elements by using a comma separated list of parents with elements that should be added/removed as valid children
+To add/remove child elements to the list of valid child elements, add/remove the element in the **valid_children** tag in the RTE Configuration file.  To add a child element to a parent element, use a ``+`` before the parent element then enclose in square brackets the child element/s you want to add e.g. ``+a[div|p]``.  To remove a child element, use a ``-`` before the parent element then enclose in square brackets the child element/s you want to remove,  e.g. ``-a[img]``.  You can add multiple parent elements by using a comma separated list of parents with elements that should be added/removed as valid children
 
    .. code-block:: xml
       :caption: *Example adding/removing elements for the specified parent*
 
-      <validChildren>+body[style],-body[div],p[strong|a|#text]</validChildren>
+      "valid_children" : "+body[style],-body[div],p[strong|a|#text]"
 
    |
 
@@ -468,14 +470,14 @@ Example adding valid child elements to parent element
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Let's take a look at an example of how to add **div** and *text content* as valid children of **a** (html anchor) using the website editorial blueprint.
 
-1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *RTE Configuration*
+1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *User Interface Configuration* then scroll down to the ``craftercms.components.TinyMCE`` widget section
 
-2. Scroll down to the ``<validChildren />`` tag, uncomment it and add **div** and text contents as child elements of **a** and save.
+2. Add ``valid_children`` and add **div** and text contents as child elements of **a** and save.
 
    .. code-block:: xml
       :caption: *RTE Configuration File*
 
-      <validChildren>+a[div|#text]</validChildren>
+      "valid_children": "+a[div|#text]"
 
    |
 
@@ -494,16 +496,16 @@ Let's take a look at an example of how to add **div** and *text content* as vali
 
    Click on the newly added section, then click on ``Tools`` -> ``Code Editor`` from the RTE menubar, then add the following:
 
-      .. code-block:: xml
+   .. code-block:: xml
 
-         <a href="#">
-           <div class="nesting_test_div">
-             <img src="/static-assets/images/castle-pic.jpg" alt="" />
-             <div class="nesting_test" title="Testing nesting elements">This is a test for nesting elements</div>
-           </div>
-         </a>
+      <a href="#">
+        <div class="nesting_test_div">
+          <img src="/static-assets/images/castle-pic.jpg" alt="" />
+          <div class="nesting_test" title="Testing nesting elements">This is a test for nesting elements</div>
+        </div>
+      </a>
 
-      |
+   |
 
    After saving your changes, preview the page and it should now display an image and text that's a link.  Re-open the RTE code editor and verify that the markup you inputted is unchanged.
 
@@ -523,48 +525,61 @@ Creating an RTE Setup
 The RTE's configuration file looks like this:
 
 .. code-block:: xml
-   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/form-control-config/rte/rte-config.xml*
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/ui.xml*
    :linenos:
+   :emphasize-lines: 7
 
    <?xml version="1.0" encoding="UTF-8"?>
-   <!--
-     This file configures Studio's Rich Text Editor (RTE), and it supports several configuration profiles, where the
-     content model selects which profile to use for which RTE field in the forms.
-   -->
-   <config>
-     <setup>
-       <id>generic</id> <!-- This starts a profile configuration -->
-
-       <rteStylesheets> <!-- This informs the RTE to use the CSS files -->
-         <!-- <link>/static-assets/css/rte/rte.css</link> -->
-       </rteStylesheets>
-
-       <rteStyleOverride>
-         body {
-           <!-- styles -->
-         }
-       </rteStyleOverride>
-
-       <plugins>
-         print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template
-       	 codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount
-       	 textpattern help acecode
-       </plugins>
-
-       <extendedElements>script,mycustomtag</extendedElements>   <!-- elements whitelist (won't be stripped out) -->
-
-       <toolbarItems1>
-         formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat
-       </toolbarItems1>
-       <toolbarItems2></toolbarItems2>
-       <toolbarItems3></toolbarItems3>
-       <toolbarItems4></toolbarItems4>
-     </setup>
-   </config>
+   <siteUi>
+     ...
+     <widget id="craftercms.components.TinyMCE">
+        <configuration>
+          <setups>
+            <setup id="generic">
+              <!-- Configuration options: https://www.tiny.cloud/docs/configure/ -->
+              <!-- Plugins: https://www.tiny.cloud/docs/plugins/opensource/ -->
+              <tinymceOptions>
+                <![CDATA[
+                  {
+                    "menubar": true,
+                    "theme": "silver",
+                    "plugins": "print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount textpattern help acecode paste",
+                    "extended_valid_elements": "",
+                    "valid_children": "",
+                    "toolbar1": "formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat",
+                    "code_editor_wrap": false,
+                    "toolbar_sticky": true,
+                    "image_advtab": true,
+                    "encoding": "xml",
+                    "relative_urls": false,
+                    "remove_script_host": false,
+                    "convert_urls": false,
+                    "remove_trailing_brs": false,
+                    "media_live_embeds": true,
+                    "autoresize_on_init": false,
+                    "autoresize_bottom_margin": 0,
+                    "menu": {
+                      "tools": { "title": "Tools", "items": "tinymcespellchecker code acecode wordcount" }
+                      },
+                      "automatic_uploads": true,
+                      "file_picker_types":  "image media file",
+                      "paste_data_images": true,
+                      "templates": [],
+                      "content_css": [],
+                      "content_style": "body {}",
+                      "contextmenu": false
+                    }
+                  ]]>
+                </tinymceOptions>
+              </setup>
+            </setups>
+          </configuration>
+        </widget>
+        ...
 
 |
 
-You can access the ``RTE Configuration`` file by going to the **Sidebar** then clicking on  |projectTools|.  In the **Project Tools**, click on **Configuration**, then from the list, select ``RTE Configuration``
+You can access the ``RTE Configuration`` file by going to the **Sidebar** then clicking on  |projectTools|.  In the **Project Tools**, click on **Configuration**, then from the list, select ``User Interface Configuration``.  Scroll down to the ``craftercms.components.TinyMCE`` widget section.
 
 .. figure:: /_static/images/site-admin/rte/rte-setup-config-file-access.jpg
    :alt: RTE Setup - Open RTE Configuration File in Studio
@@ -573,21 +588,10 @@ You can access the ``RTE Configuration`` file by going to the **Sidebar** then c
 
 |
 
-Inside the ``<config>`` tag, there can be multiple ``<setup>`` tags. Each setup represents a possible RTE configuration that can be specified to be used by a RTE control. To add your own configuration, create a new ``<setup>`` tag.  Each ``<setup>`` tag contains:
+Inside the ``<setups>`` tag, there can be multiple ``<setup>`` tags. Each setup represents a possible RTE configuration that can be specified to be used by a RTE control. To add your own configuration, create a new ``<setup>`` tag.  Each ``<setup>`` tag contains:
 
 * An ``<id>`` tag with the name that must be specified for an RTE control to use this configuration.
-* ``<rteStylesheets>`` tag that may contain multiple ``<link>`` tags. Each link tag represents a link to a CSS stylesheet that will be used so that the RTE matches the look and feel of the site.
-
-  .. code-block:: xml
-
-     <link>
-       <loadFromPreview>true</loadFromPreview>
-       <url>/static-assets/css/main.css</url>
-     </link>
-
-* ``<rteStyleOverride>`` tag that may contain other tags for changing the looks and feel of your site.
-* ``<plugins>`` contains the plugins available to the editor.  You can specify any plugin as named in `Tiny MCE Plugins List <https://www.tiny.cloud/docs/plugins/>`_.  Separate items from one another with a space " ".
-* ``<toolbarItems1>`` and similar contain the toolbar buttons in the RTE. You can specify any plugin toolbar item listed in the plugins above.  They will be featured in the same order as specified here, and separators can be specified with ``|``.   Separate toolbar items as well as ``|`` separators from one another with a space " ".
+* An ``<tinymceOptions>`` tag containing TinyMCE Configuration options (see https://www.tiny.cloud/docs/configure/ for more information) and plugins (see https://www.tiny.cloud/docs/plugins/opensource/ for more information)
 
 ------------------------------------------
 Attaching an RTE in a Form to an RTE Setup
