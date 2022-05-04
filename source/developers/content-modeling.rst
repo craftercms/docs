@@ -650,6 +650,14 @@ The following variable names are used by CrafterCMS.
 
 .. include:: /includes/valid-file-names.rst
 
+|
+
+   .. note::
+
+      A note on the ``crafterSite`` reserved variable name
+
+      .. include:: /includes/project-identification-precedence.rst
+
 .. _variable-names-search-indexing:
 
 **Variable Names and Search Indexing**

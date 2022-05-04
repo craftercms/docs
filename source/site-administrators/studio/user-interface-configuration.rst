@@ -432,65 +432,52 @@ Here's how the above configuration looks like in the Experience Builder Panel in
 
 See :ref:`targeting` for more information on configuring the targeting system of Crafter Studio to help provide Crafter Engine with fake user properties that help drive the targeting system, such as configuring targeting based on roles, etc. and :ref:`content_authors_targeting` for more information on how content authors use the audience targeting system configured.
 
-.. _rte-config-for-ice:
+.. _rte-config:
 
-****************************************
-RTE Configuration for In-context Editing
-****************************************
+*****************
+RTE Configuration
+*****************
 
-To configure the RTE for in-context editing, add/edit the widget ``craftercms.components.TinyMCE``:
+There are two ways of editing content in Studio: (1) form-based editing and (2) In-context editing (ICE).  Form-based editing is done by clicking on ``Options`` (three dots next to the preview address bar at the top of the page, or the three dots next to the page in the Sidebar), then selecting ``Edit``.  In-context editing is done by enabling the ``Edit mode`` by clicking on the pencil at the top right of the page (which turns green when enabled), then clicking on the section of the page you want to edit.
+
+To configure the RTE, add/edit the widget ``craftercms.components.TinyMCE``:
 
 .. code-block:: xml
-   :caption: *Example RTE configuration for ICE*
+   :caption: *Example RTE configuration*
    :linenos:
 
    <widget id="craftercms.components.TinyMCE">
      <configuration>
        <setups>
          <setup id="generic">
-           <tinymceOptions>
-             <![CDATA[
-               {
-                 "menubar": true,
-                 "plugins": "print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount textpattern help acecode paste editform",
-                 "extended_valid_elements": "",
-                 "valid_children": "",
-                 "toolbar1": "formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat | editform",
-                 "toolbar2": "media",
-                 "code_editor_wrap": false,
-                 "toolbar_sticky": true,
-                 "image_advtab": true,
-                 "encoding": "xml",
-                 "relative_urls": false,
-                 "remove_script_host": false,
-                 "convert_urls": false,
-                 "remove_trailing_brs": false,
-                 "media_live_embeds": true,
-                 "autoresize_on_init": false,
-                 "autoresize_bottom_margin": 0,
-                 "menu": {
-                    "tools": { "title": "Tools", "items": "tinymcespellchecker code acecode wordcount" }
-                 },
-                 "automatic_uploads": true,
-                 "file_picker_types":  "image media file",
-                 "paste_data_images": true,
-                 "content_css": [],
-                 "content_style": "body {}",
-                 "contextmenu": false,
-                 "templates" : [
-                   {
-                     "title": "Test template 1",
-                     "content": "Test 1",
-                     "description": "Test1 Description "
-                   },
-                   {
-                     "title": "Test template 2",
-                     "content": "<div class='test'><h1>This is a title</h1><p>Look at this paragraph!</p></div>",
-                     "description": "Test 2 description"
-                    }
-                 ]
-               }
-            ]]>
+           <!-- Configuration options: https://www.tiny.cloud/docs/configure/ -->
+           <!-- Plugins: https://www.tiny.cloud/docs/plugins/opensource/ -->
+           <tinymceOptions>{
+             "menubar": true,
+             "theme": "silver",
+             "plugins": "print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount textpattern help acecode paste editform",
+             "extended_valid_elements": "",
+             "valid_children": "",
+             "toolbar1": "formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat | editform",
+             "code_editor_wrap": false,
+             "toolbar_sticky": true,
+             "image_advtab": true,
+             "encoding": "xml",
+             "relative_urls": false,
+             "remove_script_host": false,
+             "convert_urls": false,
+             "remove_trailing_brs": false,
+             "media_live_embeds": true,
+             "autoresize_on_init": false,
+             "autoresize_bottom_margin": 0,
+             "menu": { "tools": { "title": "Tools", "items": "tinymcespellchecker code acecode wordcount" } },
+             "automatic_uploads": true,
+             "file_picker_types": "image media file",
+             "paste_data_images": true,
+             "templates": [],
+             "content_css": [],
+             "content_style": "body {}",
+             "contextmenu": false }
            </tinymceOptions>
          </setup>
        </setups>
@@ -499,4 +486,66 @@ To configure the RTE for in-context editing, add/edit the widget ``craftercms.co
 
 |
 
-Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.  For more information on plugins/configuration descriptions and examples, see :ref:`rte-configuration`
+Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.
+
+To learn more about configuring the RTE, see :ref:`here <rte-configuration>`
+
+.. _project-tools-configuration:
+
+***************************
+Project Tools Configuration
+***************************
+
+The Project Config tools configuration section defines what modules are available for administration use when
+clicking on |projectTools| from the Sidebar.
+
+.. code-block:: xml
+   :linenos:
+
+   <references>
+   		<reference id="craftercms.siteTools">
+   			<tools>
+   				<tool>
+   					<title id="dropTargetsMessages.contentTypes" defaultMessage="Content Types"/>
+   					<icon id="@mui/icons-material/WidgetsOutlined"/>
+   					<url>content-types</url>
+   					<widget id="craftercms.components.ContentTypeManagement"/>
+   				</tool>
+   				<tool>
+   					<title id="GlobalMenu.EncryptionToolEntryLabel"
+   					       defaultMessage="Encryption Tool"/>
+   					<icon id="@mui/icons-material/LockOutlined"/>
+   					<url>encrypt-tool</url>
+   					<widget id="craftercms.components.SiteEncryptTool"/>
+   				</tool>
+   				<tool>
+   					<title id="words.configuration" defaultMessage="Configuration"/>
+   					<icon id="@mui/icons-material/SettingsApplicationsOutlined"/>
+   					<url>configuration</url>
+   					<widget id="craftercms.components.SiteConfigurationManagement"/>
+   				</tool>
+   				...
+
+|
+
+List of available tools
+-----------------------
+
+Here's a list of available tools defined in the Website_Editorial blueprint.
+
+==================== =====================================================================
+Tool                 Description
+==================== =====================================================================
+Content Types        Allows you to create/modify content types
+Encryption Tool      Allows the user to encrypt sensitive data such as access keys and passwords
+Configuration        Contains all the configuration files managed through Crafter Studio
+Audit                Allows you to view your project activity log
+Workflow States      Contains a list of all files in the project with its corresponding state
+Log Console          Allows you to tail logs depending on what logging levels are set
+Publishing           Allows the user to view the publishing status, perform a bulk publish or to publish content using commit ID(s)
+Git                  Allows the user to perform Git operations
+GraphQL              Allows the user run GraphQL queries and explore the schema documentation for a project without the need of any other tool
+Plugin Management    Allows the user to install and to view currently installed, project plugins
+==================== =====================================================================
+
+See :ref:`navigating-project-tools` for more information on the available tools in ``Project Tools``.

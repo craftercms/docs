@@ -1,4 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Configuration; Crafter Studio
 
@@ -14,9 +15,12 @@ To access the configuration settings in Crafter Studio, click on |projectTools| 
 
 .. image:: /_static/images/site-admin/configuration-access.png
     :align: center
+    :width: 25%
     :alt: Open Configuration
 
-then click on **Configuration**.  After clicking on **Configuration**, you will see a list where you can select which configuration file you'd like to view/modify.  Below is one of the configuration files available to be viewed/modified.
+then click on **Configuration**.  After clicking on **Configuration**, you will see a list where
+you can select which configuration file you'd like to view/modify.  Below is one of the configuration
+files available to be viewed/modified.
 
 .. image:: /_static/images/site-admin/basic-configuration.jpg
     :align: center
@@ -26,7 +30,7 @@ then click on **Configuration**.  After clicking on **Configuration**, you will 
 
 The following items are noted in the image above:
 
-    #. This is the list that contains all the configurations that can be viewed/modified for your site.
+    #. This is the list that contains all the configurations that can be viewed/modified for your project.
     #. This is a short description of the current selected configuration file from the dropdown list.
     #. These are the available actions that can be selected for the current selected configuration file.
     #. This allows the user to encrypt access keys, passwords and other sensitive information required by the current selected configuration file.  For more information on how to encrypt sensitive information in a configuration file through Studio, see :ref:`encrypting-text-in-a-configuration-file`
@@ -42,22 +46,15 @@ Here are the settings that can be configured through Crafter Studio:
    studio/blob-stores
    studio/box-profiles-configuration
    studio/cmis-configuration
-   studio/code-editor-configuration
-   studio/configure-notifications
+   studio/configurations
    studio/content-monitoring
-   studio/contextual-navigation-config
+   studio/content-type-editor-config
    studio/dependency-resolver
-   studio/drag-n-drop-configuration
-   studio/mime-types-configuration
-   studio/permission-mappings
-   studio/preview-panel-configuration
+   studio/notification-configuration
+   studio/permissions-mapping
    studio/project-configuration
-   studio/project-policy-configuration
+   studio/site-policy-configuration
    studio/role-mappings
-   studio/rte-configuration
-   studio/sidebar-configuration
-   studio/site-config-tools
-   studio/site-config-configuration
    studio/user-interface-configuration
    studio/webdav-profiles-configuration
 

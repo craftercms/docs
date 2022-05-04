@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Role Mappings
 
@@ -10,9 +11,9 @@ Role Mappings
 
 Users only sees the items that they have been granted access to based on the permissions granted to the Role they have been assigned to.  The role mappings configuration file defines the mapping between the group that the user belongs to and the studio authoring role.  To modify the role mappings, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Role Mappings** from the dropdown list.
 
-.. image:: /_static/images/site-admin/config-open-role-mappings.png
+.. image:: /_static/images/site-admin/config-open-role-mappings.jpg
     :alt: Configurations - Open Role Mappings
-    :width: 65 %
+    :width: 55 %
     :align: center
 
 ------
