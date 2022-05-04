@@ -62,7 +62,7 @@ To modify/view the permission mappings for your site in Studio, click on |projec
 
 .. image:: /_static/images/site-admin/config-open-permission-mappings.jpg
     :alt: Configurations - Open Permission Mappings
-    :width: 65 %
+    :width: 45 %
     :align: center
 
 ------
