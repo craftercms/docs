@@ -220,6 +220,7 @@ In order to hook into the callback (``paste_preprocess`` and ``paste_postprocess
 3) Add the plugin created in the previous step as an external plugin under the ``craftercms_tinymce_hooks`` tag.
 
    .. code-block:: xml
+      :force:
       :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/ui.xml*
 
       "external_plugins": {
@@ -359,6 +360,7 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
 2. We'll add the configuration for TinyMCE to load the plugin using Crafter Studio's getPluginFile API. We achieve this by using  ``external_plugins`` and adding child tags with the id of the plugin as tag name and the target URL as the tag's content |br|
 
    .. code-block:: xml
+      :force:
 
       "external_plugins": {
         "my_button": "/studio/1/plugin/file?siteId={site}&pluginId=my_button&type=tinymce&name=my_button&filename=plugin.js"
