@@ -203,3 +203,15 @@ CrafterCMS installations are pre-configured with default passwords, tokens, keys
   |
 
   The ``known-hosts`` file contains key fingerprints for GitHub, GitLab and BitBucket and is where you can add additional fingerprints for other providers as needed
+
+* Out of the box, CrafterCMS allows access from any origin.  We recommend disabling CORS if it's not needed.
+  In cases where CORS is needed, instead of ``*``, the allowed origins should be a list of specific domains
+  like the following:
+
+  .. code-block:: yaml
+
+     studio.cors.origins: 'https://*.mydomain.com,https://*.anotherdomain.com'
+
+  |
+
+  See the following for configuring CORS in your CrafterCMS install:  :ref:`Crafter Studio CORS config <studio-config-override-cors>` :ref:`Crafter Engine CORS config<engine-project-configuration>` :ref:`Crafter Social CORS config <social-system-cors>`
