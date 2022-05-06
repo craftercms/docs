@@ -156,7 +156,7 @@ Restrictions on what authenticated users are allowed to do are often not properl
 
 
 How does CrafterCMS help mitigate this risk?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * CrafterCMS implements access controls at both the UI and API layers of the system.
 * CrafterCMS enforces proper use of parameters for API calls.
 * Log access control failures
@@ -175,7 +175,7 @@ Security misconfiguration is the most commonly seen issue. This is commonly a re
 
 
 How does CrafterCMS help mitigate this risk?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * CrafterCMS recommends using OWASP best practices in the buildout and deployment of CrafterCMS into various environments.
 
     * These bests practices are adhered to in Crafter Cloud (the SaaS version of CrafterCMS)
@@ -197,7 +197,7 @@ What is it?
 XSS flaws occur whenever an application includes untrusted data in a new web page without proper validation or escaping, or updates an existing web page with user-supplied data using a browser API that can create HTML or JavaScript. XSS allows attackers to execute scripts in the victim's browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites.
 
 How does CrafterCMS help mitigate this risk?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * As a platform, CrafterCMS allows for applications to be developed upon it. Those applications or marketplace blueprints, based on frameworks and coding practices used to create them, may be vulnerable. It is the responsibility of the applications built upon CrafterCMS to ensure they are not vulnerable to XSS.
 * CrafterCMS provides developers with the tools required to configure and restrict Cross Origin Requests (CORS).
 * Crafter Studio is audited for XSS attacks and does scrub all user input and API parameters.
@@ -211,7 +211,7 @@ What is it?
 Insecure deserialization often leads to remote code execution. Even if deserialization flaws do not result in remote code execution, they can be used to perform attacks, including replay attacks, injection attacks, and privilege escalation attacks.
 
 How does CrafterCMS help mitigate this risk?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * CrafterCMS only serializes and deserializes data into JSON.
 * CrafterCMS audits all JSON reading, writing and manipulating 3rd party libraries as part of the release process. Those libraries are kept up-to-date per security advisories.
 
@@ -224,7 +224,7 @@ What is it?
 Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts.
 
 How does CrafterCMS help mitigate this risk?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Continuous scanning during development
 
     * CrafterCMS’s 3rd party dependencies are continuously scanned and reported on per code submission
@@ -247,15 +247,15 @@ Insufficient logging and monitoring, coupled with missing or ineffective integra
 
 
 How does CrafterCMS help mitigate this risk?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * CrafterCMS components log all activity to standard logging servers.
 * CrafterCMS recommends:
 
     * Application developed on CrafterCMS log all critical events.
     * Logs are processed by monitors and alarms are triggered per OWASP best practices.
 
----------------------------------
+--------------------------------
 Securing your CrafterCMS Install
----------------------------------
+--------------------------------
 
 CrafterCMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`securing-your-crafter-cms-install`

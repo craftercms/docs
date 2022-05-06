@@ -67,11 +67,12 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 #. We will now copy the configuration file for the ``ui.xml`` that we want to override in the new environment we are setting up, inside our ``mycustomenv`` folder, following the folder structure under ``config/studio``.  For our example, the ``ui.xml`` file is under ``config/studio/``:
 
       .. code-block:: text
-         :emphasize-lines: 5
+         :emphasize-lines: 3
 
          env/
            mycustomenv/
              ui.xml
+
       |
 
 #. Remember to commit the files copied so Studio will pick it up.
