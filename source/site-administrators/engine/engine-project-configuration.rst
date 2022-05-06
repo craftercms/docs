@@ -2,7 +2,7 @@
 
 .. index:: Engine Project Configuration
 
-.. _engine-site-configuration:
+.. _engine-project-configuration:
 
 ============================
 Engine Project Configuration
@@ -351,6 +351,10 @@ Crafter Engine Properties
    The elements ``<accessControlMaxAge>``, ``<accessControlAllowOrigin>``, ``<accessControlAllowMethods>``,
    ``<accessControlAllowHeaders>`` and ``<accessControlAllowCredentials>`` have the values that will be
    copied to each response.
+
+   ``<accessControlAllowOrigin>`` values are split using ``,``.  Remember that
+   commas inside patterns need to be escaped with a ``\``,
+   like this: ``<accessControlAllowOrigin>http://localhost:[8000\,3000],http://*.other.domain</accessControlAllowOrigin>``
  * **targeting.enabled**:``true`` if content targeting should be enabled. Defaults to false.
  * **targeting.rootFolders:** The root folders that should be handled for content targeting.
  * **targeting.excludePatterns:** Regex patterns that are used to exclude certain paths from content targeting.
