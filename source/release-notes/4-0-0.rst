@@ -128,6 +128,13 @@ Updates
 * Fixed format for dates when copying |br|
   See `here <https://github.com/craftercms/craftercms/issues/5268>`__ for more information
 
+* Added support for regex patterns in CORS origins for Studio, Engine, Profile and Social|br|
+
+  Values in the CORS origins are split using ``,``.  Remember that commas inside patterns need to
+  be escaped with a ``\`` like: ``studio.cors.origins: 'http://localhost:[8000\,3000],http://*.domain1.com'``
+
+  See `here <https://github.com/craftercms/craftercms/issues/5381>`__ for more information
+
 Lot's of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 4.0.0 Milestone <https://github.com/craftercms/craftercms/milestone/78?closed=1>`_
