@@ -19,7 +19,7 @@ XML Configuration Files
    Main XML configuration for the project, this file will always be loaded by Crafter Engine. This file can
    be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the
    Studio dashboard to ``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project
-   Configuration`` option from the dropdown.
+   Configuration`` option from the list.
 
 	 .. image:: /_static/images/site-admin/engine-site-config.jpg
 			 :alt: Engine Project Configuration
