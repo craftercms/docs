@@ -53,7 +53,7 @@ Here are the settings that can be configured through Crafter Studio:
    studio/notification-configuration
    studio/permissions-mapping
    studio/project-configuration
-   studio/site-policy-configuration
+   studio/project-policy-configuration
    studio/role-mappings
    studio/user-interface-configuration
    studio/webdav-profiles-configuration
