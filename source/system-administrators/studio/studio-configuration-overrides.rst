@@ -357,6 +357,7 @@ The following section of Studio's configuration overrides allows you to setup St
    #    privateKey
    #    -----END PRIVATE KEY-----
 
+.. _studio-config-override-cors:
 
 ----
 CORS
@@ -367,6 +368,7 @@ The following section of Studio's configuration overrides allows you to setup CO
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
    :linenos:
+   :emphasize-lines: 10
 
    ################################################################
    ##                             CORS                           ##
@@ -386,6 +388,10 @@ The following section of Studio's configuration overrides allows you to setup CO
    # studio.cors.credentials: true
    # Value for the Access-Control-Max-Age header
    # studio.cors.maxage: -1
+
+The CORS origins accepts regex patterns.  Values are split using ``,``.  Remember that commas inside
+patterns need to be escaped with a ``\`` like:
+``studio.cors.origins: 'http://localhost:[8000\,3000],http://*.other.domain'``
 
 ------
 Search

@@ -258,7 +258,7 @@ You should now see the Home page displayed
 
 |
 
-See :ref:`engine-site-configuration` for more information on how to access the ``site-config.xml`` file.
+See :ref:`engine-project-configuration` for more information on how to access the ``site-config.xml`` file.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Example Setting Up Engine Headers Authentication with Optional Role Mappings and Attributes

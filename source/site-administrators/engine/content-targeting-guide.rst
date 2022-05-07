@@ -16,7 +16,7 @@ Language-Based Localized Content
 --------------------------------
 
 The most common form of targeted content is language-based localization, which is enabled just by specifying some configuration in the
-Engine's Project Config (see :ref:`engine-site-configuration`):
+Engine's Project Config (see :ref:`engine-project-configuration`):
 
 .. code-block:: xml
 

@@ -98,5 +98,5 @@ Crafter Engine's source code is managed in GitHub: https://github.com/craftercms
 Configuration
 -------------
 
-* :ref:`engine-site-configuration`
+* :ref:`engine-project-configuration`
 * :ref:`engine-site-security-guide`
