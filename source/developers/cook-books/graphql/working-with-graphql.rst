@@ -240,7 +240,7 @@ a specific author.
         # (names are based on the content-type configuration)
         title
         # only return articles from this author
-        author (filter: { matches: "Jane" })
+        author (filter: { equals: "Jane Doe" })
         date_dt
       }
     }
@@ -271,7 +271,7 @@ Additionally you can create complex filters using expressions like ``and``, ``or
           }
         )
         # Filter articles from category style or health
-        categories {
+        categories_o {
           item {
             key (
               filter: {
@@ -309,9 +309,9 @@ You can also include fields from child components in your model, this applies to
         # (names are based on the content-type configuration)
         title
         # only return articles from this author
-        author (filter: { matches: "Jane" }) 
+        author (filter: { equals: "Jane Doe" })
         date_dt
-        categories {
+        categories_o {
           item {
             # only return articles from this category
             key (filter: { matches: "health" }) 
