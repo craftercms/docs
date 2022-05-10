@@ -62,18 +62,6 @@ spring-context-support
 **Dependency:** spring-context-support |br|
 **URL:** https://search.maven.org/artifact/org.springframework/spring-context-support
 
-spring-expression
-^^^^^^^^^^^^^^^^^
-**Package:** org.springframework |br|
-**Dependency:** spring-expression |br|
-**URL:** https://search.maven.org/artifact/org.springframework/spring-expression
-
-spring-web
-^^^^^^^^^^
-**Package:** org.springframework |br|
-**Dependency:** spring-web |br|
-**URL:** https://search.maven.org/artifact/org.springframework/spring-web
-
 spring-webmvc
 ^^^^^^^^^^^^^
 **Package:** org.springframework |br|
@@ -458,29 +446,143 @@ parsson
 **Dependency:** parsson |br|
 **URL:** https://search.maven.org/artifact/org.eclipse.parsson/parsson
 
-tika-parsers
-^^^^^^^^^^^^
-**Package:** org.apache.tika |br|
-**Dependency:** tika-parsers |br|
-**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parsers
-
 tika-core
 ^^^^^^^^^
 **Package:** org.apache.tika |br|
 **Dependency:** tika-core |br|
 **URL:** https://search.maven.org/artifact/org.apache.tika/tika-core
 
-vorbis-java-tika
-^^^^^^^^^^^^^^^^
-**Package:** org.gagravarr |br|
-**Dependency:** vorbis-java-tika |br|
-**URL:** https://search.maven.org/artifact/org.gagravarr/vorbis-java-tika
+tika-parsers-standard-package
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parsers-standard-package |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parsers-standard-package
+
+tika-parser-apple-module
+^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-apple-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-apple-module
+
+tika-parser-zip-commons
+^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-zip-commons |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-zip-commons
+
+dd-plist
+^^^^^^^^
+**Package:** com.googlecode.plist |br|
+**Dependency:** dd-plist |br|
+**URL:** https://search.maven.org/artifact/com.googlecode.plist/dd-plist
+
+tika-parser-audiovideo-module
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-audiovideo-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-audiovideo-module
+
+tika-parser-cad-module
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-cad-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-cad-module
+
+tika-parser-code-module
+^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-code-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-code-module
+
+jhighlight
+^^^^^^^^^^
+**Package:** org.codelibs |br|
+**Dependency:** jhighlight |br|
+**URL:** https://search.maven.org/artifact/org.codelibs/jhighlight
+
+parso
+^^^^^
+**Package:** com.epam |br|
+**Dependency:** parso |br|
+**URL:** https://search.maven.org/artifact/com.epam/parso
 
 jmatio
 ^^^^^^
 **Package:** org.tallison |br|
 **Dependency:** jmatio |br|
 **URL:** https://search.maven.org/artifact/org.tallison/jmatio
+
+tika-parser-crypto-module
+^^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-crypto-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-crypto-module
+
+tika-parser-digest-commons
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-digest-commons |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-digest-commons
+
+tika-parser-font-module
+^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-font-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-font-module
+
+fontbox
+^^^^^^^
+**Package:** org.apache.pdfbox |br|
+**Dependency:** fontbox |br|
+**URL:** https://search.maven.org/artifact/org.apache.pdfbox/fontbox
+
+tika-parser-html-module
+^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-html-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-html-module
+
+tika-parser-html-commons
+^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-html-commons |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-html-commons
+
+boilerpipe
+^^^^^^^^^^
+**Package:** de.l3s.boilerpipe |br|
+**Dependency:** boilerpipe |br|
+**URL:** https://search.maven.org/artifact/de.l3s.boilerpipe/boilerpipe
+
+tika-parser-image-module
+^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-image-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-image-module
+
+jai-imageio-core
+^^^^^^^^^^^^^^^^
+**Package:** com.github.jai-imageio |br|
+**Dependency:** jai-imageio-core |br|
+**URL:** https://search.maven.org/artifact/com.github.jai-imageio/jai-imageio-core
+
+jbig2-imageio
+^^^^^^^^^^^^^
+**Package:** org.apache.pdfbox |br|
+**Dependency:** jbig2-imageio |br|
+**URL:** https://search.maven.org/artifact/org.apache.pdfbox/jbig2-imageio
+
+tika-parser-mail-module
+^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-mail-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-mail-module
+
+tika-parser-mail-commons
+^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-mail-commons |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-mail-commons
 
 apache-mime4j-core
 ^^^^^^^^^^^^^^^^^^
@@ -494,89 +596,17 @@ apache-mime4j-dom
 **Dependency:** apache-mime4j-dom |br|
 **URL:** https://search.maven.org/artifact/org.apache.james/apache-mime4j-dom
 
-dd-plist
-^^^^^^^^
-**Package:** com.googlecode.plist |br|
-**Dependency:** dd-plist |br|
-**URL:** https://search.maven.org/artifact/com.googlecode.plist/dd-plist
+tika-parser-microsoft-module
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-microsoft-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-microsoft-module
 
-xz
-^^
-**Package:** org.tukaani |br|
-**Dependency:** xz |br|
-**URL:** https://search.maven.org/artifact/org.tukaani/xz
-
-parso
-^^^^^
-**Package:** com.epam |br|
-**Dependency:** parso |br|
-**URL:** https://search.maven.org/artifact/com.epam/parso
-
-dec
-^^^
-**Package:** org.brotli |br|
-**Dependency:** dec |br|
-**URL:** https://search.maven.org/artifact/org.brotli/dec
-
-pdfbox
-^^^^^^
-**Package:** org.apache.pdfbox |br|
-**Dependency:** pdfbox |br|
-**URL:** https://search.maven.org/artifact/org.apache.pdfbox/pdfbox
-
-fontbox
-^^^^^^^
-**Package:** org.apache.pdfbox |br|
-**Dependency:** fontbox |br|
-**URL:** https://search.maven.org/artifact/org.apache.pdfbox/fontbox
-
-pdfbox-tools
-^^^^^^^^^^^^
-**Package:** org.apache.pdfbox |br|
-**Dependency:** pdfbox-tools |br|
-**URL:** https://search.maven.org/artifact/org.apache.pdfbox/pdfbox-tools
-
-preflight
-^^^^^^^^^
-**Package:** org.apache.pdfbox |br|
-**Dependency:** preflight |br|
-**URL:** https://search.maven.org/artifact/org.apache.pdfbox/preflight
-
-jempbox
-^^^^^^^
-**Package:** org.apache.pdfbox |br|
-**Dependency:** jempbox |br|
-**URL:** https://search.maven.org/artifact/org.apache.pdfbox/jempbox
-
-xmpbox
-^^^^^^
-**Package:** org.apache.pdfbox |br|
-**Dependency:** xmpbox |br|
-**URL:** https://search.maven.org/artifact/org.apache.pdfbox/xmpbox
-
-poi
-^^^
-**Package:** org.apache.poi |br|
-**Dependency:** poi |br|
-**URL:** https://search.maven.org/artifact/org.apache.poi/poi
-
-commons-math3
-^^^^^^^^^^^^^
-**Package:** org.apache.commons |br|
-**Dependency:** commons-math3 |br|
-**URL:** https://search.maven.org/artifact/org.apache.commons/commons-math3
-
-SparseBitSet
-^^^^^^^^^^^^
-**Package:** com.zaxxer |br|
-**Dependency:** SparseBitSet |br|
-**URL:** https://search.maven.org/artifact/com.zaxxer/SparseBitSet
-
-poi-scratchpad
-^^^^^^^^^^^^^^
-**Package:** org.apache.poi |br|
-**Dependency:** poi-scratchpad |br|
-**URL:** https://search.maven.org/artifact/org.apache.poi/poi-scratchpad
+java-libpst
+^^^^^^^^^^^
+**Package:** com.pff |br|
+**Dependency:** java-libpst |br|
+**URL:** https://search.maven.org/artifact/com.pff/java-libpst
 
 poi-ooxml
 ^^^^^^^^^
@@ -584,11 +614,11 @@ poi-ooxml
 **Dependency:** poi-ooxml |br|
 **URL:** https://search.maven.org/artifact/org.apache.poi/poi-ooxml
 
-poi-ooxml-schemas
-^^^^^^^^^^^^^^^^^
+poi-ooxml-lite
+^^^^^^^^^^^^^^
 **Package:** org.apache.poi |br|
-**Dependency:** poi-ooxml-schemas |br|
-**URL:** https://search.maven.org/artifact/org.apache.poi/poi-ooxml-schemas
+**Dependency:** poi-ooxml-lite |br|
+**URL:** https://search.maven.org/artifact/org.apache.poi/poi-ooxml-lite
 
 xmlbeans
 ^^^^^^^^
@@ -614,29 +644,17 @@ jackcess-encrypt
 **Dependency:** jackcess-encrypt |br|
 **URL:** https://search.maven.org/artifact/com.healthmarketscience.jackcess/jackcess-encrypt
 
-isoparser
-^^^^^^^^^
-**Package:** org.tallison |br|
-**Dependency:** isoparser |br|
-**URL:** https://search.maven.org/artifact/org.tallison/isoparser
+tika-parser-miscoffice-module
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-miscoffice-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-miscoffice-module
 
-metadata-extractor
-^^^^^^^^^^^^^^^^^^
-**Package:** org.tallison |br|
-**Dependency:** metadata-extractor |br|
-**URL:** https://search.maven.org/artifact/org.tallison/metadata-extractor
-
-xmpcore-shaded
-^^^^^^^^^^^^^^
-**Package:** org.tallison.xmp |br|
-**Dependency:** xmpcore-shaded |br|
-**URL:** https://search.maven.org/artifact/org.tallison.xmp/xmpcore-shaded
-
-boilerpipe
-^^^^^^^^^^
-**Package:** de.l3s.boilerpipe |br|
-**Dependency:** boilerpipe |br|
-**URL:** https://search.maven.org/artifact/de.l3s.boilerpipe/boilerpipe
+tika-parser-news-module
+^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-news-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-news-module
 
 rome
 ^^^^
@@ -650,29 +668,59 @@ rome-utils
 **Dependency:** rome-utils |br|
 **URL:** https://search.maven.org/artifact/com.rometools/rome-utils
 
-vorbis-java-core
-^^^^^^^^^^^^^^^^
-**Package:** org.gagravarr |br|
-**Dependency:** vorbis-java-core |br|
-**URL:** https://search.maven.org/artifact/org.gagravarr/vorbis-java-core
+tika-parser-ocr-module
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-ocr-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-ocr-module
 
-juniversalchardet
-^^^^^^^^^^^^^^^^^
-**Package:** com.googlecode.juniversalchardet |br|
-**Dependency:** juniversalchardet |br|
-**URL:** https://search.maven.org/artifact/com.googlecode.juniversalchardet/juniversalchardet
+tika-parser-pdf-module
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-pdf-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-pdf-module
 
-jhighlight
-^^^^^^^^^^
-**Package:** org.codelibs |br|
-**Dependency:** jhighlight |br|
-**URL:** https://search.maven.org/artifact/org.codelibs/jhighlight
+pdfbox
+^^^^^^
+**Package:** org.apache.pdfbox |br|
+**Dependency:** pdfbox |br|
+**URL:** https://search.maven.org/artifact/org.apache.pdfbox/pdfbox
 
-java-libpst
-^^^^^^^^^^^
-**Package:** com.pff |br|
-**Dependency:** java-libpst |br|
-**URL:** https://search.maven.org/artifact/com.pff/java-libpst
+pdfbox-tools
+^^^^^^^^^^^^
+**Package:** org.apache.pdfbox |br|
+**Dependency:** pdfbox-tools |br|
+**URL:** https://search.maven.org/artifact/org.apache.pdfbox/pdfbox-tools
+
+pdfbox-debugger
+^^^^^^^^^^^^^^^
+**Package:** org.apache.pdfbox |br|
+**Dependency:** pdfbox-debugger |br|
+**URL:** https://search.maven.org/artifact/org.apache.pdfbox/pdfbox-debugger
+
+jempbox
+^^^^^^^
+**Package:** org.apache.pdfbox |br|
+**Dependency:** jempbox |br|
+**URL:** https://search.maven.org/artifact/org.apache.pdfbox/jempbox
+
+tika-parser-pkg-module
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-pkg-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-pkg-module
+
+xz
+^^
+**Package:** org.tukaani |br|
+**Dependency:** xz |br|
+**URL:** https://search.maven.org/artifact/org.tukaani/xz
+
+dec
+^^^
+**Package:** org.brotli |br|
+**Dependency:** dec |br|
+**URL:** https://search.maven.org/artifact/org.brotli/dec
 
 junrar
 ^^^^^^
@@ -680,113 +728,17 @@ junrar
 **Dependency:** junrar |br|
 **URL:** https://search.maven.org/artifact/com.github.junrar/junrar
 
-cxf-rt-rs-client
-^^^^^^^^^^^^^^^^
-**Package:** org.apache.cxf |br|
-**Dependency:** cxf-rt-rs-client |br|
-**URL:** https://search.maven.org/artifact/org.apache.cxf/cxf-rt-rs-client
+tika-parser-text-module
+^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-text-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-text-module
 
-cxf-rt-frontend-jaxrs
-^^^^^^^^^^^^^^^^^^^^^
-**Package:** org.apache.cxf |br|
-**Dependency:** cxf-rt-frontend-jaxrs |br|
-**URL:** https://search.maven.org/artifact/org.apache.cxf/cxf-rt-frontend-jaxrs
-
-jakarta.ws.rs-api
+juniversalchardet
 ^^^^^^^^^^^^^^^^^
-**Package:** jakarta.ws.rs |br|
-**Dependency:** jakarta.ws.rs-api |br|
-**URL:** https://search.maven.org/artifact/jakarta.ws.rs/jakarta.ws.rs-api
-
-cxf-rt-security
-^^^^^^^^^^^^^^^
-**Package:** org.apache.cxf |br|
-**Dependency:** cxf-rt-security |br|
-**URL:** https://search.maven.org/artifact/org.apache.cxf/cxf-rt-security
-
-commons-exec
-^^^^^^^^^^^^
-**Package:** org.apache.commons |br|
-**Dependency:** commons-exec |br|
-**URL:** https://search.maven.org/artifact/org.apache.commons/commons-exec
-
-opennlp-tools
-^^^^^^^^^^^^^
-**Package:** org.apache.opennlp |br|
-**Dependency:** opennlp-tools |br|
-**URL:** https://search.maven.org/artifact/org.apache.opennlp/opennlp-tools
-
-json-simple
-^^^^^^^^^^^
-**Package:** com.googlecode.json-simple |br|
-**Dependency:** json-simple |br|
-**URL:** https://search.maven.org/artifact/com.googlecode.json-simple/json-simple
-
-openjson
-^^^^^^^^
-**Package:** com.github.openjson |br|
-**Dependency:** openjson |br|
-**URL:** https://search.maven.org/artifact/com.github.openjson/openjson
-
-jul-to-slf4j
-^^^^^^^^^^^^
-**Package:** org.slf4j |br|
-**Dependency:** jul-to-slf4j |br|
-**URL:** https://search.maven.org/artifact/org.slf4j/jul-to-slf4j
-
-netcdf4
-^^^^^^^
-**Package:** edu.ucar |br|
-**Dependency:** netcdf4 |br|
-**URL:** https://search.maven.org/artifact/edu.ucar/netcdf4
-
-grib
-^^^^
-**Package:** edu.ucar |br|
-**Dependency:** grib |br|
-**URL:** https://search.maven.org/artifact/edu.ucar/grib
-
-bzip2
-^^^^^
-**Package:** org.itadaki |br|
-**Dependency:** bzip2 |br|
-**URL:** https://search.maven.org/artifact/org.itadaki/bzip2
-
-jcip-annotations
-^^^^^^^^^^^^^^^^
-**Package:** net.jcip |br|
-**Dependency:** jcip-annotations |br|
-**URL:** https://search.maven.org/artifact/net.jcip/jcip-annotations
-
-jna
-^^^
-**Package:** net.java.dev.jna |br|
-**Dependency:** jna |br|
-**URL:** https://search.maven.org/artifact/net.java.dev.jna/jna
-
-cdm
-^^^
-**Package:** edu.ucar |br|
-**Dependency:** cdm |br|
-**URL:** https://search.maven.org/artifact/edu.ucar/cdm
-
-udunits
-^^^^^^^
-**Package:** edu.ucar |br|
-**Dependency:** udunits |br|
-**URL:** https://search.maven.org/artifact/edu.ucar/udunits
-
-ehcache-core
-^^^^^^^^^^^^
-**Package:** net.sf.ehcache |br|
-**Dependency:** ehcache-core |br|
-**URL:** https://search.maven.org/artifact/net.sf.ehcache/ehcache-core
-
-httpservices
-^^^^^^^^^^^^
-**Package:** edu.ucar |br|
-**Dependency:** httpservices |br|
-**URL:** https://search.maven.org/artifact/edu.ucar/httpservices
+**Package:** com.googlecode.juniversalchardet |br|
+**Dependency:** juniversalchardet |br|
+**URL:** https://search.maven.org/artifact/com.googlecode.juniversalchardet/juniversalchardet
 
 commons-csv
 ^^^^^^^^^^^
@@ -794,65 +746,59 @@ commons-csv
 **Dependency:** commons-csv |br|
 **URL:** https://search.maven.org/artifact/org.apache.commons/commons-csv
 
-sis-utility
-^^^^^^^^^^^
-**Package:** org.apache.sis.core |br|
-**Dependency:** sis-utility |br|
-**URL:** https://search.maven.org/artifact/org.apache.sis.core/sis-utility
+tika-parser-xml-module
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-xml-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-xml-module
 
-sis-netcdf
-^^^^^^^^^^
-**Package:** org.apache.sis.storage |br|
-**Dependency:** sis-netcdf |br|
-**URL:** https://search.maven.org/artifact/org.apache.sis.storage/sis-netcdf
+tika-parser-xmp-commons
+^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-xmp-commons |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-xmp-commons
 
-sis-storage
-^^^^^^^^^^^
-**Package:** org.apache.sis.storage |br|
-**Dependency:** sis-storage |br|
-**URL:** https://search.maven.org/artifact/org.apache.sis.storage/sis-storage
-
-sis-feature
-^^^^^^^^^^^
-**Package:** org.apache.sis.core |br|
-**Dependency:** sis-feature |br|
-**URL:** https://search.maven.org/artifact/org.apache.sis.core/sis-feature
-
-sis-referencing
-^^^^^^^^^^^^^^^
-**Package:** org.apache.sis.core |br|
-**Dependency:** sis-referencing |br|
-**URL:** https://search.maven.org/artifact/org.apache.sis.core/sis-referencing
-
-sis-metadata
-^^^^^^^^^^^^
-**Package:** org.apache.sis.core |br|
-**Dependency:** sis-metadata |br|
-**URL:** https://search.maven.org/artifact/org.apache.sis.core/sis-metadata
-
-geoapi
+xmpbox
 ^^^^^^
-**Package:** org.opengis |br|
-**Dependency:** geoapi |br|
-**URL:** https://search.maven.org/artifact/org.opengis/geoapi
-
-sentiment-analysis-parser
-^^^^^^^^^^^^^^^^^^^^^^^^^
-**Package:** edu.usc.ir |br|
-**Dependency:** sentiment-analysis-parser |br|
-**URL:** https://search.maven.org/artifact/edu.usc.ir/sentiment-analysis-parser
-
-jbig2-imageio
-^^^^^^^^^^^^^
 **Package:** org.apache.pdfbox |br|
-**Dependency:** jbig2-imageio |br|
-**URL:** https://search.maven.org/artifact/org.apache.pdfbox/jbig2-imageio
+**Dependency:** xmpbox |br|
+**URL:** https://search.maven.org/artifact/org.apache.pdfbox/xmpbox
 
-jai-imageio-core
+vorbis-java-tika
 ^^^^^^^^^^^^^^^^
-**Package:** com.github.jai-imageio |br|
-**Dependency:** jai-imageio-core |br|
-**URL:** https://search.maven.org/artifact/com.github.jai-imageio/jai-imageio-core
+**Package:** org.gagravarr |br|
+**Dependency:** vorbis-java-tika |br|
+**URL:** https://search.maven.org/artifact/org.gagravarr/vorbis-java-tika
+
+vorbis-java-core
+^^^^^^^^^^^^^^^^
+**Package:** org.gagravarr |br|
+**Dependency:** vorbis-java-core |br|
+**URL:** https://search.maven.org/artifact/org.gagravarr/vorbis-java-core
+
+poi-scratchpad
+^^^^^^^^^^^^^^
+**Package:** org.apache.poi |br|
+**Dependency:** poi-scratchpad |br|
+**URL:** https://search.maven.org/artifact/org.apache.poi/poi-scratchpad
+
+poi
+^^^
+**Package:** org.apache.poi |br|
+**Dependency:** poi |br|
+**URL:** https://search.maven.org/artifact/org.apache.poi/poi
+
+SparseBitSet
+^^^^^^^^^^^^
+**Package:** com.zaxxer |br|
+**Dependency:** SparseBitSet |br|
+**URL:** https://search.maven.org/artifact/com.zaxxer/SparseBitSet
+
+commons-math3
+^^^^^^^^^^^^^
+**Package:** org.apache.commons |br|
+**Dependency:** commons-math3 |br|
+**URL:** https://search.maven.org/artifact/org.apache.commons/commons-math3
 
 jdom2
 ^^^^^
@@ -1153,6 +1099,12 @@ findbugs
 **Package:** com.google.code.findbugs |br|
 **Dependency:** findbugs |br|
 **URL:** https://search.maven.org/artifact/com.google.code.findbugs/findbugs
+
+jcip-annotations
+^^^^^^^^^^^^^^^^
+**Package:** net.jcip |br|
+**Dependency:** jcip-annotations |br|
+**URL:** https://search.maven.org/artifact/net.jcip/jcip-annotations
 
 bcel-findbugs
 ^^^^^^^^^^^^^
@@ -1508,6 +1460,36 @@ spring-aop
 **Dependency:** spring-aop |br|
 **URL:** https://search.maven.org/artifact/org.springframework/spring-aop
 
+spring-websocket
+^^^^^^^^^^^^^^^^
+**Package:** org.springframework |br|
+**Dependency:** spring-websocket |br|
+**URL:** https://search.maven.org/artifact/org.springframework/spring-websocket
+
+spring-web
+^^^^^^^^^^
+**Package:** org.springframework |br|
+**Dependency:** spring-web |br|
+**URL:** https://search.maven.org/artifact/org.springframework/spring-web
+
+spring-messaging
+^^^^^^^^^^^^^^^^
+**Package:** org.springframework |br|
+**Dependency:** spring-messaging |br|
+**URL:** https://search.maven.org/artifact/org.springframework/spring-messaging
+
+spring-security-messaging
+^^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.springframework.security |br|
+**Dependency:** spring-security-messaging |br|
+**URL:** https://search.maven.org/artifact/org.springframework.security/spring-security-messaging
+
+spring-expression
+^^^^^^^^^^^^^^^^^
+**Package:** org.springframework |br|
+**Dependency:** spring-expression |br|
+**URL:** https://search.maven.org/artifact/org.springframework/spring-expression
+
 commons-dbcp2
 ^^^^^^^^^^^^^
 **Package:** org.apache.commons |br|
@@ -1748,11 +1730,35 @@ jakarta.activation-api
 **Dependency:** jakarta.activation-api |br|
 **URL:** https://search.maven.org/artifact/jakarta.activation/jakarta.activation-api
 
+tomcat-embed-websocket
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tomcat.embed |br|
+**Dependency:** tomcat-embed-websocket |br|
+**URL:** https://search.maven.org/artifact/org.apache.tomcat.embed/tomcat-embed-websocket
+
+tomcat-embed-core
+^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tomcat.embed |br|
+**Dependency:** tomcat-embed-core |br|
+**URL:** https://search.maven.org/artifact/org.apache.tomcat.embed/tomcat-embed-core
+
+tomcat-annotations-api
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tomcat |br|
+**Dependency:** tomcat-annotations-api |br|
+**URL:** https://search.maven.org/artifact/org.apache.tomcat/tomcat-annotations-api
+
 exec
 ^^^^
 **Package:** ch.vorburger.exec |br|
 **Dependency:** exec |br|
 **URL:** https://search.maven.org/artifact/ch.vorburger.exec/exec
+
+commons-exec
+^^^^^^^^^^^^
+**Package:** org.apache.commons |br|
+**Dependency:** commons-exec |br|
+**URL:** https://search.maven.org/artifact/org.apache.commons/commons-exec
 
 mariadb-java-client
 ^^^^^^^^^^^^^^^^^^^
@@ -2107,12 +2113,6 @@ gson
 **Package:** com.google.code.gson |br|
 **Dependency:** gson |br|
 **URL:** https://search.maven.org/artifact/com.google.code.gson/gson
-
-nekohtml
-^^^^^^^^
-**Package:** net.sourceforge.nekohtml |br|
-**Dependency:** nekohtml |br|
-**URL:** https://search.maven.org/artifact/net.sourceforge.nekohtml/nekohtml
 
 xercesImpl
 ^^^^^^^^^^
