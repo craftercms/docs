@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Engine Headers Based Authentication
 
@@ -61,7 +62,7 @@ Next, configure the URLs you require authentication by setting ``url`` to desire
 
    |
 
-See :ref:`engine-site-security-guide-restrict-urls` for more information on expressions that cam be used.
+See :ref:`engine-project-security-guide-restrict-urls` for more information on expressions that cam be used.
 
 From the above configuration, here are the headers that Engine expects to be provided:
 
