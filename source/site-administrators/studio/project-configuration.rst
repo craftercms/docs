@@ -45,7 +45,7 @@ Here's a sample Project Configuration file (click on the triangle on the left to
 |
 |
 
-.. _studio-site-time-zone:
+.. _studio-project-time-zone:
 
 *****************
 Project Time Zone
