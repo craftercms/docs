@@ -62,7 +62,7 @@ Next, configure the URLs you require authentication by setting ``url`` to desire
 
    |
 
-See :ref:`engine-project-security-guide-restrict-urls` for more information on expressions that cam be used.
+See :ref:`engine-project-security-guide-restrict-urls` for more information on expressions that can be used.
 
 From the above configuration, here are the headers that Engine expects to be provided:
 
@@ -194,7 +194,7 @@ Example
 -------
 
 Let's take a look at an example of setting up Engine headers authentication using a project created using the Website
-Editorial blueprint named ``mysite``.  We will also change the default value for the token header. We'll then take a
+Editorial blueprint named ``My Editorial``.  We will also change the default value for the token header. We'll then take a
 look at an example of setting up Engine headers authentication with optional role mappings and attribute.
 
 
@@ -203,7 +203,7 @@ Simple Example Setting Up Engine Headers Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Open the Engine ``site-config.xml`` file in Studio, by navigating from the ``Sidebar`` to
-``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project Configuration`` option from the dropdown.
+``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project Configuration`` option from the list.
 
 You can also access the ``site-config.xml`` using your favorite editor under
 ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/site-config.xml``
@@ -235,9 +235,9 @@ Save your changes and remember to publish the file ``/config/engine/site-config.
 authentication in action in delivery.
 
 Now, try viewing the Home page without the header attributes required, by entering in your browser
-``localhost:9080?crafterSite=mysite``.  The Home page will not be displayed without the required header attributes.
+``localhost:9080?crafterSite=my-editorial``.  The Home page will not be displayed without the required header attributes.
 
-.. image:: /_static/images/site-admin/engine-headers-delivery-not-sent.jpg
+.. image:: /_static/images/site-admin/engine-headers-delivery-not-sent.png
    :align: center
    :width: 75%
    :alt: Website Editorial Home Page view without the headers sent

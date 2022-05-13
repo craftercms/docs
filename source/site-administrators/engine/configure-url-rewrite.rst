@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: URL Rewrite
 
@@ -14,7 +15,7 @@ CrafterCMS comes with the Tuckey URLRewrite filter, a Java Web Filter with funct
 
 To add a URL rewrite rule, in Studio, open the **Sidebar** then click on |projectTools|.  Click on **Configuration** then select **Engine URL Rewrite Configuration (XML Style)**.
 
-.. image:: /_static/images/site-admin/config-urlrewrite-select.png
+.. image:: /_static/images/site-admin/config-urlrewrite-select.jpg
     :alt: Configurations - Open URL Rewrite Configuration
     :width: 65 %
     :align: center

@@ -33,7 +33,7 @@ To override a configuration file in any of the publishing targets
 
 #. Add the new configuration file/s for overriding to **Configurations** under |projectTools| -> **Configuration**
 
-   .. image:: /_static/images/site-admin/configuration.png
+   .. image:: /_static/images/site-admin/configuration.jpg
       :alt: Multi-target Configuration - Open Configurations
       :width: 55 %
       :align: center
