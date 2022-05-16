@@ -25,8 +25,10 @@ New Features
 
     - Edit content in-place |br|
     - Drag and drop components and assets to build and rearrange pages
+
       - Supports projects built with FreeMarker, React, and can easily be extended to support Vue, Angular and other
         UI frameworks |br|
+
     - New Experience Builder package in the SDK `here <https://www.npmjs.com/package/@craftercms/experience-builder>`__
     - See :ref:`experience-builder` for more information |br|
 
