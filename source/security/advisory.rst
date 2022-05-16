@@ -19,7 +19,7 @@ CV-2022051603
                         Studio of Crafter CMS allows authenticated developers to execute OS commands via \
                         FreeMarker static methods.
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23267
-
+**Credit**              Kai Zhao (ToTU Security Team), https://github.com/happyhacking-k
 ======================= ======================================================================================
 
 CV-2022051602
@@ -34,7 +34,7 @@ CV-2022051602
 **Description**         An anonymous user can craft a URL with text that ends up in the log viewer as is.\
                         The text can then include textual messages to mislead the administrator.
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23266
-
+**Credit**              Faizan Wani, https://github.com/faizanw8
 ======================= ======================================================================================
 
 CV-2022051601
@@ -48,7 +48,7 @@ CV-2022051601
 **Risk**                Low
 **Description**         A logged-in and authenticated user with a Reviewer Role may lock a content item.
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23265
-
+**Credit**              Faizan Wani, https://github.com/faizanw8
 ======================= ======================================================================================
 
 CV-2021120101
@@ -62,7 +62,7 @@ CV-2021120101
 **Risk**		Medium
 **Description**         Spring SPEL Expression Language Injection
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23258
-
+**Credit**              Kai Zhao (ToTU Security Team), https://github.com/happyhacking-k
 ======================= ======================================================================================
 
 CV-2021120102
@@ -76,6 +76,7 @@ CV-2021120102
 **Risk**		Medium
 **Description**         Groovy Sandbox Bypass
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23259
+**Credit**              Kai Zhao (ToTU Security Team), https://github.com/happyhacking-k
 ======================= ======================================================================================
 
 CV-2021120103
@@ -90,6 +91,7 @@ CV-2021120103
 **Risk**		Medium
 **Description**         Stored XSS Vulnerability in File Name of the File Upload function
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23260
+**Credit**              Kai Zhao (ToTU Security Team), https://github.com/happyhacking-k
 ======================= ======================================================================================
 
 
@@ -104,6 +106,7 @@ CV-2021120104
 **Risk**		Medium
 **Description**         Overriding the system configuration file causes a denial of service
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23261
+**Credit**              Kai Zhao (ToTU Security Team), https://github.com/happyhacking-k
 ======================= ======================================================================================
 
 CV-2021120105
@@ -117,6 +120,7 @@ CV-2021120105
 **Risk**		Medium
 **Description**         Snakeyaml deserialization vulnerability bypass
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23262
+**Credit**              Kai Zhao (ToTU Security Team), https://github.com/happyhacking-k
 ======================= ======================================================================================
 
 CV-2021120106
@@ -131,6 +135,7 @@ CV-2021120106
 **Description**         Transmission of Private Resources into a New Sphere ('Resource Leak') in Crafter\
                         Engine
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23263
+**Credit**              Carlos Ortiz, https://github.com/cortiz
 ======================= ======================================================================================
 
 CV-2021120107
@@ -146,9 +151,8 @@ CV-2021120107
 **Description**         Transmission of Private Resources into a New Sphere ('Resource Leak') and Exposure\
                         of Resource to Wrong Sphere in Crafter Search
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23264
+**Credit**              Sparsh Kulshrestha, https://github.com/sparshkulshrestha
 ======================= ======================================================================================
-
-.. _cv-2020080101:
 
 CV-2020080101
 =============
@@ -162,9 +166,8 @@ CV-2020080101
 **Description**         Authenticated attackers with developer privileges in Crafter Studio may execute OS \
 			commands via Groovy scripting.
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2020-25802
+**Credit**              Kai Zhao (ToTU Security Team), https://github.com/happyhacking-k
 ======================= ======================================================================================
-
-.. _cv-2020080102:
 
 CV-2020080102
 =============
@@ -178,6 +181,7 @@ CV-2020080102
 **Description**         Authenticated attackers with developer privileges in Crafter Studio may execute OS \
 			commands via deep inspection of FreeMarker template exposed objects.
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2020-25803
+**Credit**              Alvaro Muñoz (GitHub), https://github.com/pwntester
 ======================= ======================================================================================
 
 CV-2018120601
@@ -192,6 +196,7 @@ CV-2018120601
 **Description**         Authenticated attackers with developer privileges in Crafter Studio may execute OS \
 			commands via FreeMarker templates.
 **CVE**                 https://nvd.nist.gov/vuln/detail/CVE-2018-19907
+**Credit**              Buxu, https://github.com/buxu
 ======================= ======================================================================================
 
 CV-2017061501
@@ -206,6 +211,7 @@ CV-2017061501
 **Description**         An IDOR vulnerability exists which allows unauthenticated attackers to view and modify \
 			administrative data.
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2017-15680
+**Credit**              Jasmin Landry, https://github.com/JR0ch17
 ======================= ======================================================================================
 
 CV-2017061502
@@ -220,6 +226,7 @@ CV-2017061502
 **Description**         A directory traversal vulnerability exists which allows unauthenticated attackers to \
 			overwrite files from the operating system which can lead to RCE.
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2017-15681
+**Credit**              Jasmin Landry, https://github.com/JR0ch17
 ======================= ======================================================================================
 
 CV-2017061503
@@ -234,6 +241,7 @@ CV-2017061503
 **Description**         An unauthenticated attacker is able to inject malicious JavaScript code resulting in \
 			a stored/blind XSS in the admin panel.
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2017-15682
+**Credit**              Jasmin Landry, https://github.com/JR0ch17
 ======================= ======================================================================================
 
 CV-2017061504
@@ -248,6 +256,7 @@ CV-2017061504
 **Description**         An unauthenticated attacker is able to create a site with specially crafted XML that \
 			allows the retrieval of OS files out-of-band.
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2017-15683
+**Credit**              Jasmin Landry, https://github.com/JR0ch17
 ======================= ======================================================================================
 
 CV-2017061505
@@ -262,6 +271,7 @@ CV-2017061505
 **Description**         A directory traversal vulnerability exists which allows unauthenticated attackers to \
 			view files from the operating system.
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2017-15684
+**Credit**              Jasmin Landry, https://github.com/JR0ch17
 ======================= ======================================================================================
 
 CV-2017061506
@@ -276,6 +286,7 @@ CV-2017061506
 **Description**         An unauthenticated attacker is able to create a site with specially crafted XML that \
 			allows the retrieval of OS files out-of-band.
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2017-15685
+**Credit**              Jasmin Landry, https://github.com/JR0ch17
 ======================= ======================================================================================
 
 CV-2017061507
@@ -290,4 +301,5 @@ CV-2017061507
 **Description**         A reflected XSS vulnerability exists which allows remote attackers to steal users' \
 			cookies resulting in them hijacking their session.
 **CVE**                 https://www.cve.org/CVERecord?id=CVE-2017-15686
+**Credit**              Jasmin Landry, https://github.com/JR0ch17
 ======================= ======================================================================================
