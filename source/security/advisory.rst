@@ -6,6 +6,51 @@
 Security Advisories
 ===================
 
+CV-2022051603
+=============
+
+======================= ======================================================================================
+**Date**                2022.05.16
+======================= ======================================================================================
+**Affected Versions**   **3.1** < 3.1.18
+**Vulnerability Type**  CWE-913 Improper Control of Dynamically-Managed Code Resources
+**Risk**                High
+**Description**         Improper Control of Dynamically-Managed Code Resources vulnerability in Crafter \
+                        Studio of Crafter CMS allows authenticated developers to execute OS commands via \
+                        FreeMarker static methods.
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23267
+
+======================= ======================================================================================
+
+CV-2022051602
+=============
+
+======================= ======================================================================================
+**Date**                2022.05.16
+======================= ======================================================================================
+**Affected Versions**   **3.1** < 3.1.18
+**Vulnerability Type**  CWE-117 Improper Output Neutralization for Logs
+**Risk**                Medium
+**Description**         An anonymous user can craft a URL with text that ends up in the log viewer as is.\
+                        The text can then include textual messages to mislead the administrator.
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23266
+
+======================= ======================================================================================
+
+CV-2022051601
+=============
+
+======================= ======================================================================================
+**Date**                2022.05.16
+======================= ======================================================================================
+**Affected Versions**   **3.1** < 3.1.18
+**Vulnerability Type**  CWE-269 Improper Privilege Management
+**Risk**                Low
+**Description**         A logged-in and authenticated user with a Reviewer Role may lock a content item.
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2021-23265
+
+======================= ======================================================================================
+
 CV-2021120101
 =============
 
