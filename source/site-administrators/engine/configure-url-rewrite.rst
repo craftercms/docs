@@ -17,7 +17,7 @@ To add a URL rewrite rule, in Studio, open the **Sidebar** then click on |projec
 
 .. image:: /_static/images/site-admin/config-urlrewrite-select.jpg
     :alt: Configurations - Open URL Rewrite Configuration
-    :width: 65 %
+    :width: 45 %
     :align: center
 
 |
@@ -50,7 +50,7 @@ Below is a sample URL rewrite configuration.
 
 |
 
-After saving the configuration, remember to publish the configuration file just saved (``urlrewrite.xml`` file).  To publish the configuration file, from the **Sidebar**, click on **Dashboard**.  In the **My Recent Activity** widget, check the box next to the ``urlrewrite.xml`` file, and click **Approve & Publish** from the context nav to publish.
+After saving the configuration, remember to publish the configuration file just saved (``urlrewrite.xml`` file).  To publish the configuration file, from the **Sidebar**, click on **Dashboard**.  In the **My Recent Activity** dashlet, check the box next to the ``urlrewrite.xml`` file, and click **Publish** from the context nav to publish.
 
 .. image:: /_static/images/site-admin/publish-urlrewrite.png
     :alt: Configurations - Publish URL Rewrite Config File from Dashboard

@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Configure Engine to use MongoDB
 
@@ -88,14 +89,14 @@ the authoring environment, for a delivery environment you will need to publish t
 
 This can be done from the Studio project dashboard with the following steps:
 
-1. Go to Studio's project dashboard
+1. Go to Studio's project dashboard via the Navigation Menu on the top right or via the Sidebar
 
-.. image:: /_static/images/site-admin/mongo/open-site-dashboard.png
-   :alt: Studio Project Dashboard
-   :width: 40 %
-   :align: center
+.. image:: /_static/images/content-author/project-dashboard-sidebar.jpg
+    :width: 65 %
+    :align: center
+    :alt: Studio - Project Dashboard from Sidebar
 
-2. Locate ``My Recent Activity`` section and change the filter to ``All`` to display the
+2. Locate the ``My Recent Activity`` dashlet and change the filter to ``All`` to display the
 configuration files
 
 .. image:: /_static/images/site-admin/mongo/my-recent-activity.png
@@ -110,17 +111,17 @@ configuration files
    :width: 70 %
    :align: center
 
-4. Click ``Approve & Publish`` from the contextual menu
+4. Click ``Publish`` from the contextual menu
 
 .. image:: /_static/images/site-admin/mongo/approve-and-publish-context-menu.png
    :alt: Studio Project Dashboard - Contextual Menu
    :width: 70 %
    :align: center
 
-5. Click ``Submit`` to close the publish dialog
+5. Click ``Publish`` to close the publish dialog
 
 .. image:: /_static/images/site-admin/mongo/publish-dialog.png
-   :alt: Studio Project Dashboard - Approve & Publish Dialog
+   :alt: Studio Project Dashboard - Publish Dialog
    :width: 70 %
    :align: center
 
