@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Site Administrators
 
@@ -12,7 +13,7 @@ This section details activities related to site administration in CrafterCMS. Th
 
 Most configuration files can be accessed through Crafter Studio through the **Sidebar -> |projectTools| -> Configuration**. but can also be modified by accessing the files directly.  Please note that it is recommended that changes to configuration files be done through the Crafter Studio UI.
 
-For the site repository, the site structure looks like this::
+For the project repository, the project structure looks like this::
 
         {REPOSITORY_ROOT}/sites/SITENAME/sandbox/
             config
@@ -20,13 +21,8 @@ For the site repository, the site structure looks like this::
                 studio
                     administration
                     content-types
-                    context-nav
                     data-sources
                     dependency
-                    environment
-                    form-control-config
-                    preview-tools
-                    targeting
                     workflow
             scripts
                 classes

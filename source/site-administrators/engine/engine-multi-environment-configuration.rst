@@ -1,4 +1,5 @@
-:is-up-to-date: True
+:is-up-to-date: False
+:last-updated: 4.0.0
 
 .. index:: Engine Multi-Environment Configuration
 
@@ -22,7 +23,7 @@ Setting up an environment
 
 To setup an environment for engine configuration files, do the following:
 
-#. Create a folder under ``data/repos/site/mysite/sandbox/config/engine`` called ``env``
+#. Create a folder under ``data/repos/site/myproject/sandbox/config/engine`` called ``env``
 #. Inside the folder, create a directory called ``myenv`` (or whatever you want to call the environment)
 #. Copy the configuration file you want to override in the new environment you are setting up, inside your ``myenv`` folder
 #. Remember to commit the files copied so Studio will pick it up.
@@ -45,7 +46,7 @@ Example
 
 Let's take a look at an example of creating a new environment, called ``mycustomenv`` with the ``urlrewrite.xml`` file overridden in the new environment for a project created using the Website Editorial blueprint:
 
-#. We'll create a folder called ``env`` under ``data/repos/site/mysite/sandbox/config/engine``
+#. We'll create a folder called ``env`` under ``data/repos/site/myproject/sandbox/config/engine``
 
       .. code-block:: text
          :linenos:
@@ -54,7 +55,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
          data/
            repos/
              sites/
-               mysite/
+               myproject/
                  sandbox/
                    config/
                      engine/
@@ -74,7 +75,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
      |
 
-   We will redirect the page to ``/articles/2017/12/Top Books For Young Women`` when the page ``/articles/2016/12/Top Books For Young Women`` is previewed.  Copy the following inside the ``urlrewrite.xml`` file.
+   We will redirect the page to ``/articles/2021/12/Top Books For Young Women`` when the page ``/articles/2020/12/Top Books For Young Women`` is previewed.  Copy the following inside the ``urlrewrite.xml`` file.
 
      .. code-block:: xml
         :linenos:
@@ -83,19 +84,19 @@ Let's take a look at an example of creating a new environment, called ``mycustom
         <?xml version="1.0" encoding="utf-8"?>
         <urlrewrite>
           <rule>
-            <from>/articles/2016/12/(.*)$</from>
-            <to type="redirect">/articles/2017/12/$1</to>
+            <from>/articles/2020/12/(.*)$</from>
+            <to type="redirect">/articles/2021/12/$1</to>
           </rule>
         </urlrewrite>
 
      |
 
-   For our example, the folder ``articles/2016/12`` was copied to ``articles/2017`` with the page under ``articles/2017/12``, modified to display the title as a dupe.  This was done so when we click on the page under ``articles/2016/12``, we can easily tell that it's being redirected to the page under ``articles/2017/12``.  Of course, you can also just look at the url of the page previewed to verify that it was redirected to the right page.
+   For our example, the folder ``articles/2020/12`` was copied to ``articles/2021`` with the page under ``articles/2021/12``, modified to display the title as a dupe.  This was done so when we click on the page under ``articles/2020/12``, we can easily tell that it's being redirected to the page under ``articles/2021/12``.  Of course, you can also just look at the url of the page previewed to verify that it was redirected to the right page.
 
    .. image:: /_static/images/site-admin/env-copy-page-for-urlrewrite.png
        :align: center
        :width: 35%
-       :alt: Folder with page copied from 2016 to 2017
+       :alt: Folder with page copied from 2020 to 2021
 
    |
 
@@ -143,7 +144,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
    |
 
-   Let's verify that our *urlrewrite.xml* is in effect.  From the *Sidebar*, click on *Home* -> *Entertainment* -> *Top Books For Young Women*  or, navigate to */articles/2016/12/* and click on *Top Books For Young Women*.
+   Let's verify that our *urlrewrite.xml* is in effect.  From the *Sidebar*, click on *Home* -> *Entertainment* -> *Top Books For Young Women*  or, navigate to */articles/2020/12/* and click on *Top Books For Young Women*.
 
    .. image:: /_static/images/site-admin/env-preview-page.jpg
       :align: center
@@ -151,4 +152,4 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
    |
 
-   The preview page should take you to */articles/2017/12/Top Books For Young Women*
+   The preview page should take you to */articles/2021/12/Top Books For Young Women*

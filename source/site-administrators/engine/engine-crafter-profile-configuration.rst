@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Engine Crafter Profile Configuration
 
@@ -9,7 +10,7 @@ Engine Crafter Profile Configuration
 ====================================
 
    .. note:: This guide includes Crafter Profile specific configuration only, for a general guide see
-             :ref:`engine-site-security-guide`
+             :ref:`engine-project-security-guide`
 
 Crafter Engine needs access tokens to use Crafter Profile's API. Each project must have it's own access token. Follow the
 next steps to create one:

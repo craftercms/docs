@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Engine Project Configuration
 
@@ -21,7 +22,7 @@ XML Configuration Files
    Studio dashboard to ``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project
    Configuration`` option from the list.
 
-	 .. image:: /_static/images/site-admin/engine-site-config.jpg
+	 .. image:: /_static/images/site-admin/engine-project-config.jpg
 			 :alt: Engine Project Configuration
 
 
@@ -416,7 +417,7 @@ Spring Configuration Files
    through the out-of-the-box blueprints, by navigating from the Studio dashboard to ``Project Tools``
    > ``Configuration``, and finally picking up the ``Engine Project Application Context`` option from the dropdown).
 
-	 .. image:: /_static/images/site-admin/engine-site-application-context.jpg
+	 .. image:: /_static/images/site-admin/engine-project-application-context.jpg
 			 :alt: Engine Project Application Context
 
  - ``/config/engine/{crafterEnv}-application-context.xml``

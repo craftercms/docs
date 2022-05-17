@@ -1,11 +1,12 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Engine Project Security Guide
 
 .. highlight:: groovy
    :linenothreshold: 5
 
-.. _engine-site-security-guide:
+.. _engine-project-security-guide:
 
 =============================
 Engine Project Security Guide
@@ -13,7 +14,7 @@ Engine Project Security Guide
 
 The following guide will help you configure Crafter Engine to:
 
-#. Add authentication for your website.
+#. Add authentication for your project.
 #. Add authorization so that access to certain pages and URLs of your project are restricted.
 
 Crafter Engine is able to integrate with multiple authentication providers:
@@ -124,7 +125,7 @@ by Crafter Engine is described below:
 #.  If the page has the role ``Authenticated``, just authentication is needed.
 #.  If the page has any other roles, the user needs to be authenticated and have any of those roles.
 
-.. _engine-site-security-guide-restrict-urls:
+.. _engine-project-security-guide-restrict-urls:
 
 Restrict URLs
 =============
