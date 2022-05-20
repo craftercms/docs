@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Override Logging Levels
 
@@ -16,15 +17,17 @@ CrafterCMS comes with classes and packages set to logging level INFO out of the 
 Temporarily Set Logging Levels
 ------------------------------
 
-To temporarily set the logging levels for specific classes through the Main Menu panel:
+To temporarily set the logging levels for specific classes through the Navigation Menu:
 
 * From the Global menu, click on **Logging Levels**
 * Find the class/package you want to change the log level, then set the level by selecting from the dropdown the desired log level.
 
 .. figure:: /_static/images/site-admin/logs-logging-levels.jpg
     :alt: Crafter Studio Logging Levels
-    :width: 65%
+    :width: 75%
     :align: center
+
+|
 
 .. note:: Remember that changes to the logging levels through Studio only live from one restart of the application to the next.
 
@@ -38,7 +41,7 @@ Step 1: Identify the package/class you want to modify logging levels for
      The first step is identifying the package or class you want to change the levels for.  Specifying the logging level at the package granularity e.g.: ``org.craftercms.studio.api.v1.dal.DependencyMapper``, will modify all classes under that package.  Specifying logging levels at the class granularity, e.g.: ``org.craftercms.studio.api.v1.dal.DependencyMapper.calculatePublishingDependenciesForList``, modifies only the levels for that specific class.
 
 Step 2: Add the override configuration you require to the logging configuration file ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/logging.xml``.
-     Available logging levels are debug, info, warn, error.  Debug is the lowest logging level and Error is the highest.  The lower your logging levels are set, the more verbose your logs will be.
+     Available logging levels are all, debug, info, warn, error, fatal, trace, off.  Debug is the lowest logging level and Fatal is the highest.  The lower your logging levels are set, the more verbose your logs will be.
 
      To set a specific class to a higher log level (giving us less detail in the logs), add the following lines:
 
