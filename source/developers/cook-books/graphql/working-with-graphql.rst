@@ -36,9 +36,9 @@ development process would look like this:
 You can also use the CrafterCMS GraphQL API from an external project or application, however in this case you will need to
 handle the schema reload using third party tools.
 
---------------------------------
-Using GraphiQL in Crafter Studio
---------------------------------
+-------------------------------
+Using GraphQL in Crafter Studio
+-------------------------------
 
 GraphiQL is a simple GraphQL client that you can use in Crafter Studio to run GraphQL queries and explore the schema 
 documentation for a project without the need of any other tool. To access GraphiQL follow these steps:
@@ -50,9 +50,9 @@ documentation for a project without the need of any other tool. To access Graphi
 
 To explore the GraphQL schema you can click the ``Docs`` icon on the right side:
 
-.. image:: /_static/images/developer/graphql/graphiql.png
+.. image:: /_static/images/developer/graphql/graphql.png
         :width: 75%
-        :alt: GraphiQL
+        :alt: GraphQL
         :align: center
 
 |
