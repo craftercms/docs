@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.0
 
 .. index:: Engine Headers Based Authentication
@@ -269,7 +269,7 @@ We'll now take a look at another example where we setup optional role mappings a
 
 We'll setup the ``admin`` and the ``user`` roles and add the attribute ``APP_FULL_NAME``.  We'll try to restrict
 access to ``/articles/**`` for users with the ``user`` or ``admin`` role, then we'll try to display the
-``APP_FULL_NAME`` value passed from the headers in our project.
+``APP_FULL_NAME`` value passed from the headers in our project.  Remember that the ``ROLE_`` prefix is required
 
 Open the Engine ``site-config.xml`` file in Studio, by navigating from the ``Sidebar`` to
 ``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project Configuration`` option from the dropdown.
@@ -293,14 +293,15 @@ Add the following to setup the ``admin`` and ``user`` role, and the attribute ``
           <token>my_updated_token</token>
           <!-- Optional role mappings, allows to map names from the external auth to simple role names to use in the page or url restrictions -->
           <!-- The APP_ prefix is just an example, the values can be anything -->
+          <!-- The ROLE_ prefix is is required for the name of the role -->
           <groups>
             <group>
               <name>APP_ADMIN</name> <!-- The name of the group in the header -->
-              <role>admin</role>     <!-- The name of the role in the authentication object -->
+              <role>ROLE_admin</role>     <!-- The name of the role in the authentication object -->
             </group>
             <group>
               <name>APP_USER</name> <!-- The name of the group in the header -->
-              <role>user</role>     <!-- The name of the role in the authentication object -->
+              <role>ROLE_user</role>     <!-- The name of the role in the authentication object -->
             </group>
           </groups>
           <!-- Optional attribute mappings, allows to expose attributes from the external auth -->
@@ -360,7 +361,7 @@ Studio, then navigate to ``/templates/web/components/`` then right click on ``he
 The ``authToken.principal.attributes.name`` contains the value passed for ``APP_FULL_NAME`` in the header
 
    .. code-block:: text
-      :emphasize-lines: 5
+      :emphasize-lines: 5-6
       :caption: */templates/web/components/header.ftl*
       :linenos:
 
