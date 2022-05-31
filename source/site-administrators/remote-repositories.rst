@@ -46,11 +46,23 @@ To get updates from the remote repositories, click on the down arrow next to the
     :alt: Remote Repositories - Pull from Remote Repository
 	:align: center
 
-You will then be given some options when Studio pulls from the remote repository:
+|
+
+A dialog will open for pulling:
+
+.. image:: /_static/images/site-admin/site-config-pull-from-remote-dlg.png
+    :alt: Remote Repositories - Pull from Remote Repository Dialog
+    :align: center
+
+|
+
+You will then be given some options for the merge strategy when Studio pulls from the remote repository by clicking on the dropdown:
 
 .. image:: /_static/images/site-admin/site-config-pull-from-remote-options.png
     :alt: Remote Repositories - Pull from Remote Repository Options
     :align: center
+
+|
 
 - Accept Ours: Accept the local's version of the site and overwrite the remote version if different
 - Accept Theirs: Accept the remote's version of the site and overwrite the local version if different
