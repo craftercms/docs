@@ -163,16 +163,16 @@ The **Git** under **Project Tools** allows the user to perform Git operations su
 
 For more information on Git under |projectTools|, see :ref:`project-tools-git`
 
---------
-GraphiQL
---------
+-------
+GraphQL
+-------
 
 CrafterCMS provides built-in support for GraphQL to query content in any project without writing additional code.  **GraphiQL** is a simple GraphQL client that you can use in Crafter Studio to run GraphQL queries and explore the schema documentation for a project without the need of any other tool.
 
-.. image:: /_static/images/site-admin/project-tools-graphiql.jpg
+.. image:: /_static/images/site-admin/project-tools-graphql.jpg
     :alt: Site Admin - Project Tools GraohiQL
     :align: center
-    :width: 60%
+    :width: 70%
 
 |
 

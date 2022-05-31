@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.0
 
 .. index:: Engine Multi-Environment Configuration
@@ -23,7 +23,7 @@ Setting up an environment
 
 To setup an environment for engine configuration files, do the following:
 
-#. Create a folder under ``data/repos/site/myproject/sandbox/config/engine`` called ``env``
+#. Create a folder under ``data/repos/sites/myproject/sandbox/config/engine`` called ``env``
 #. Inside the folder, create a directory called ``myenv`` (or whatever you want to call the environment)
 #. Copy the configuration file you want to override in the new environment you are setting up, inside your ``myenv`` folder
 #. Remember to commit the files copied so Studio will pick it up.
@@ -46,7 +46,7 @@ Example
 
 Let's take a look at an example of creating a new environment, called ``mycustomenv`` with the ``urlrewrite.xml`` file overridden in the new environment for a project created using the Website Editorial blueprint:
 
-#. We'll create a folder called ``env`` under ``data/repos/site/myproject/sandbox/config/engine``
+#. We'll create a folder called ``env`` under ``data/repos/sites/my-editorial/sandbox/config/engine``
 
       .. code-block:: text
          :linenos:
@@ -55,7 +55,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
          data/
            repos/
              sites/
-               myproject/
+               my-editorial/
                  sandbox/
                    config/
                      engine/
