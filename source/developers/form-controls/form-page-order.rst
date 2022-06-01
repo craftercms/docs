@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -18,18 +19,29 @@ Example
 -------
 
 .. image:: /_static/images/form-controls/form-control-page-order-example.png
-    :width: 30%
+    :width: 60%
     :alt: Form Control Page Order Example
     :align: center
+
+|
+
+.. image:: /_static/images/form-controls/form-control-page-order-example2.png
+    :width: 50%
+    :alt: Form Control Page Order Control Example
+    :align: center
+
+|
 
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-page-order-properties.png
-    :width: 50%
+    :width: 40%
     :alt: Form Control Page Order
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 

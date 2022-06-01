@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:since-version: 4.0.0
 
 .. index:: Crafter CLI Commands, Crafter Command Line Interface Commands
 

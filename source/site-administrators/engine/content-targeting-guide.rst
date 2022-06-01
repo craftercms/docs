@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Engine Content Targeting Guide
 
@@ -16,7 +17,7 @@ Language-Based Localized Content
 --------------------------------
 
 The most common form of targeted content is language-based localization, which is enabled just by specifying some configuration in the
-Engine's Project Config (see :ref:`engine-site-configuration`):
+Engine's Project Config (see :ref:`engine-project-configuration`):
 
 .. code-block:: xml
 
@@ -46,9 +47,9 @@ configuration posted above:
     for the current user again is *es_CR*. Under *es_CR* just the "Contact Us" page exists, but under *en* there are more: "Products",
     "About Us" and "Contact Us". By setting ``mergeFolders`` as true, the final pages that are displayed in the navigation would be
     /site/website/en/products, /site/website/en/about-us and /site/website/es_CR/contact-us.
-#.  Normally, if a user goes to mysite.com/contact-us, and the current locale is *es_CR*, then page to be rendered would be resolved to
-    /site/website/es_CR/contact-us, but the browser navigation bar would still show mysite.com/contact-us. If
-    ``targeting.redirectToTargetedUrl`` is set to true, then instead the user is redirected first to mysite.com/es_CR/contact-us.
+#.  Normally, if a user goes to my-editorial.com/contact-us, and the current locale is *es_CR*, then page to be rendered would be resolved to
+    /site/website/es_CR/contact-us, but the browser navigation bar would still show my-editorial.com/contact-us. If
+    ``targeting.redirectToTargetedUrl`` is set to true, then instead the user is redirected first to my-editoriaal.com/es_CR/contact-us.
 
 It's important to point out that if a page exists several times under the same "family" of locales, like *en* (fallback), *es* and *es_CR*,
 and the merge strategy for the page is ``targetedContent``, the content is inherited following the path of the most general locale to the

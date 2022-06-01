@@ -11,7 +11,7 @@ Crafter Studio Project Tools Plugin Example
 |projectTools| contains tools that site administrators use for daily activities.  For more information
 on the available tools in |projectTools|, see :ref:`navigating-project-tools`
 
-.. image:: /_static/images/developer/plugins/site-plugins/studio-project-tools.png
+.. image:: /_static/images/developer/plugins/project-plugins/studio-project-tools.png
    :align: center
    :alt: Studio Project Tools
    :width: 80%
@@ -19,13 +19,13 @@ on the available tools in |projectTools|, see :ref:`navigating-project-tools`
 |
 
 Let's take a look at an example of creating a ``Project Tools`` tool plugin in Studio using a project
-called ``My Site`` created using the **Website Editorial** blueprint.
+called ``My Editorial`` created using the **Website Editorial** blueprint.
 
 #. The first thing we have to do is to create the folder structure where we will be placing the JS file
-   for our project tools tool site plugin.  We'll follow the convention listed in :ref:`plugin-directory-structure`.
+   for our project tools tool project plugin.  We'll follow the convention listed in :ref:`plugin-directory-structure`.
    For our example, PLUGIN_TYPE is ``project-tools`` and the PLUGIN_NAME is ``test-project-tools``
 
-   In a local folder, create the descriptor file for your site plugin ``craftercms-plugin.yaml`` with
+   In a local folder, create the descriptor file for your project plugin ``craftercms-plugin.yaml`` with
    the ``plugin.id`` set to ``org.craftercms.plugin.exampleprojecttools``, then create the following
    folder structure:
 
@@ -46,7 +46,7 @@ called ``My Site`` created using the **Website Editorial** blueprint.
 
    |
 
-   We will be placing the JS file implementing the toolbar site plugin under the ``test-project-tools``
+   We will be placing the JS file implementing the toolbar project plugin under the ``test-project-tools``
    folder.  For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/projecttools-plugin``
 
 #. We'll create the javascript file for our plugin by following the instructions in the plugin example
@@ -57,7 +57,7 @@ called ``My Site`` created using the **Website Editorial** blueprint.
    and place the ``index.modern.js`` file in it.
 
 
-#. To setup our ``Project Tools`` tool site plugin to be automatically wired in the corresponding configuration file in Studio (which for a project tools tool, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
+#. To setup our ``Project Tools`` tool project plugin to be automatically wired in the corresponding configuration file in Studio (which for a project tools tool, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
 
    .. code-block:: yaml
       :linenos:
@@ -105,28 +105,28 @@ called ``My Site`` created using the **Website Editorial** blueprint.
 
    Remember to use the same value used in ``plugin.id`` (found at the top of the descriptor file) for the installation section *plugin.id* which for our example is ``org.craftercms.plugin.exampleprojecttools``
 
-#. After placing your plugin files and setting up auto-wiring, the site plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
+#. After placing your plugin files and setting up auto-wiring, the project plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
-   .. image:: /_static/images/developer/plugins/site-plugins/project-tools-plugin-files.png
+   .. image:: /_static/images/developer/plugins/project-plugins/project-tools-plugin-files.png
       :align: center
-      :alt: Project Tools tool site plugin directory/files
+      :alt: Project Tools tool project plugin directory/files
       :width: 80%
 
    |
 
-   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``my-site`` by running the following:
+   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``my-editorial`` by running the following:
 
       ..  code-block:: bash
 
-          ./crafter-cli copy-plugin -e local -s my-site --path /users/myuser/myplugins/project-tools-plugin
+          ./crafter-cli copy-plugin -e local -s my-editorial --path /users/myuser/myplugins/project-tools-plugin
 
       |
 
 #. Let's take a look at our plugin in action by clicking on the CrafterCMS logo at the top left of your browser to open the sidebar, then click on ``Project Tools``:
 
-   .. image:: /_static/images/developer/plugins/site-plugins/project-tools-plugin-in-action.png
+   .. image:: /_static/images/developer/plugins/project-plugins/project-tools-plugin-in-action.png
       :align: center
-      :alt: Project Tools site plugin in action
+      :alt: Project Tools project plugin in action
 
    |
 
@@ -149,7 +149,7 @@ called ``My Site`` created using the **Website Editorial** blueprint.
                 <widget id="craftercms.components.PluginManagement"/>
               </tool>
               <tool>
-                <title id="test.sitetool" defaultMessage="Test Adding Site Tool"/>
+                <title id="test.sitetool" defaultMessage="Test Adding Project Tool"/>
                 <icon id="@mui/icons-material/WidgetsOutlined"/>
                 <url>test</url>
                 <widget id="org.craftercms.sampleProjectToolsPlugin.components.reactComponent">

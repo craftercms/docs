@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -18,9 +19,11 @@ Example
 -------
 
 .. image:: /_static/images/form-controls/form-control-text-area-example.png
-    :width: 50%
+    :width: 60%
     :alt: Form Control Text Area Example
     :align: center
+
+|
 
 -------------
 Configuration
@@ -30,6 +33,8 @@ Configuration
     :width: 50%
     :alt: Form Control Text Area
     :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
@@ -41,6 +46,7 @@ Configuration
 ||                       || * Max Length: Maximum number of characters to accept as input.       |
 ||                       || * Allow Resize: Allows the resizing feature of the text area.        |
 ||                       || * Read Only: Make field read-only (can't be changed by the author).  |
+||                       || * Escape Content: Escape special characters in this field            |
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || * Required: Make field required to fill out.                         |
 +------------------------+-----------------------------------------------------------------------+

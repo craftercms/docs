@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -22,6 +23,8 @@ Example
         :alt: Form Control Numeric Input Example
         :align: center
 
+|
+
 -------------
 Configuration
 -------------
@@ -30,6 +33,8 @@ Configuration
         :width: 45%
         :alt: Form Control Numeric Input Properties
         :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 

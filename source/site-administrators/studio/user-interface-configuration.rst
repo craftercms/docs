@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:since-version: 4.0.0
 
 .. index:: User Interface Configuration
 
@@ -15,13 +16,13 @@ It shows different projections of the content in addition to other tools to assi
 and site administration.
 
 The UI is made up of configurable widgets and can be extended or modified by adding/removing/configuring widgets.
-Plugins can make use of this by adding themselves to the UI where required.  See :ref:`site-plugin-descriptor-file` for more information on how a plugin can be wired in the user interface configuration.
+Plugins can make use of this by adding themselves to the UI where required.  See :ref:`project-plugin-descriptor-file` for more information on how a plugin can be wired in the user interface configuration.
 
 Here's a screenshot of Studio showing some of the widgets in the UI in red circles that are defined in the user interface configuration.
 
 .. image:: /_static/images/site-admin/ui-config-widgets.jpg
    :alt: Configurations - User Interface Configuration Widgets
-   :width: 75 %
+   :width: 85 %
    :align: center
 
 |
@@ -40,7 +41,7 @@ Here's an annotated version of some of the widgets in the user interface shown i
      <widget id="craftercms.components.TinyMCE">...</widget>        TinyMCE widget
      <references>
         <reference id="craftercms.siteTools">...</reference>
-        <reference id="craftercms.freemarkerCodeSnippets">...</referrence>
+        <reference id="craftercms.freemarkerCodeSnippets">...</reference>
         <reference id="craftercms.groovyCodeSnippets">...</reference>
      </references>
    </siteUI>
@@ -238,7 +239,7 @@ Here's the Sidebar before the ``2021/3`` folder is hidden
 
 .. image:: /_static/images/site-admin/ui-folders.png
    :alt: Configurations - User Interface Configuration Folder Structure
-   :width: 20 %
+   :width: 30 %
    :align: center
 
 |
@@ -247,26 +248,20 @@ Here's the configuration to hide the folder:
 
 .. code-block:: xml
    :linenos:
-   :emphasize-lines: 13-15
+   :emphasize-lines: 8-10
 
-   <widget id="craftercms.components.ToolsPanelPageButton">
+   <widget id="craftercms.components.PathNavigator">
      <configuration>
-       <title id="previewSiteExplorerPanel.title" defaultMessage="Site Explorer"/>
-       <icon id="craftercms.icons.SiteExplorer"/>
-       <widgets>
-         <widget id="craftercms.components.PathNavigator">
-           <configuration>
-             <id>Pages</id>
-             <label>Pages</label>
-             <icon id="@material-ui/icons/DescriptionOutlined" />
-             <rootPath>/site/website</rootPath>
-             <locale>en</locale>
-             <excludes>
-               <exclude>/site/website/articles/2021/3</exclude>
-             </excludes>
-           </configuration>
-         </widget>
-         ...
+       <id>Pages</id>
+       <label>Pages</label>
+       <icon id="@mui/icons-material/DescriptionOutlined"/>
+       <rootPath>/site/website</rootPath>
+       <locale>en</locale>
+       <excludes>
+         <exclude>/site/website/articles/2021/3</exclude>
+       </excludes>
+     </configuration>
+   </widget>
 
 |
 
@@ -274,7 +269,7 @@ Here's the Sidebar with the folder ``2021/3`` hidden:
 
 .. image:: /_static/images/site-admin/ui-folder-hidden.png
    :alt: Configurations - User Interface Configuration Folder Hidden
-   :width: 20 %
+   :width: 30 %
    :align: center
 
 |
@@ -291,7 +286,7 @@ Let's take a look at an example of putting a red border when ``Taxonomy`` is exp
 
 Here's the default colors of widgets in the Sidebar
 
-.. image:: /_static/images/site-admin/ui-widget-default-colors.jpg
+.. image:: /_static/images/site-admin/ui-widget-default-colors.png
    :alt: Configurations - User Interface Configuration Widget Default Colors
    :width: 25 %
    :align: center
@@ -308,7 +303,7 @@ Here's the configuration for putting a red border when ``Taxonomy`` is expanded 
      <configuration>
        <id>Taxonomy</id>
        <label>Taxonomy</label>
-       <icon id="@material-ui/icons/LocalOfferOutlined"/>
+       <icon id="@mui/icons-material/LocalOfferOutlined"/>
        <container>
          <expandedStyle>
            <border>solid</border>
@@ -342,8 +337,8 @@ Remember that children of ``expandedStyle`` & ``collapsedStyle`` should be camel
 
 Here's the Sidebar with the colors and border added:
 
-.. image:: /_static/images/site-admin/ui-widget-color-added.jpg
-   :alt: Configurations - User Interface Configuration Widget Default Colors
+.. image:: /_static/images/site-admin/ui-widget-color-added.png
+   :alt: Configurations - User Interface Configuration Widget Border and Colors Added
    :width: 25 %
 
 .. image:: /_static/images/content-author/preview-page-components-space.png
@@ -437,65 +432,52 @@ Here's how the above configuration looks like in the Experience Builder Panel in
 
 See :ref:`targeting` for more information on configuring the targeting system of Crafter Studio to help provide Crafter Engine with fake user properties that help drive the targeting system, such as configuring targeting based on roles, etc. and :ref:`content_authors_targeting` for more information on how content authors use the audience targeting system configured.
 
-.. _rte-config-for-ice:
+.. _rte-config:
 
-****************************************
-RTE Configuration for In-context Editing
-****************************************
+*****************
+RTE Configuration
+*****************
 
-To configure the RTE for in-context editing, add/edit the widget ``craftercms.components.TinyMCE``:
+There are two ways of editing content in Studio: (1) form-based editing and (2) In-context editing (ICE).  Form-based editing is done by clicking on ``Options`` (three dots next to the preview address bar at the top of the page, or the three dots next to the page in the Sidebar), then selecting ``Edit``.  In-context editing is done by enabling the ``Edit mode`` by clicking on the pencil at the top right of the page (which turns green when enabled), then clicking on the section of the page you want to edit.
+
+To configure the RTE, add/edit the widget ``craftercms.components.TinyMCE``:
 
 .. code-block:: xml
-   :caption: *Example RTE configuration for ICE*
+   :caption: *Example RTE configuration*
    :linenos:
 
    <widget id="craftercms.components.TinyMCE">
      <configuration>
        <setups>
          <setup id="generic">
-           <tinymceOptions>
-             <![CDATA[
-               {
-                 "menubar": true,
-                 "plugins": "print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount textpattern help acecode paste editform",
-                 "extended_valid_elements": "",
-                 "valid_children": "",
-                 "toolbar1": "formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat | editform",
-                 "toolbar2": "media",
-                 "code_editor_wrap": false,
-                 "toolbar_sticky": true,
-                 "image_advtab": true,
-                 "encoding": "xml",
-                 "relative_urls": false,
-                 "remove_script_host": false,
-                 "convert_urls": false,
-                 "remove_trailing_brs": false,
-                 "media_live_embeds": true,
-                 "autoresize_on_init": false,
-                 "autoresize_bottom_margin": 0,
-                 "menu": {
-                    "tools": { "title": "Tools", "items": "tinymcespellchecker code acecode wordcount" }
-                 },
-                 "automatic_uploads": true,
-                 "file_picker_types":  "image media file",
-                 "paste_data_images": true,
-                 "content_css": [],
-                 "content_style": "body {}",
-                 "contextmenu": false,
-                 "templates" : [
-                   {
-                     "title": "Test template 1",
-                     "content": "Test 1",
-                     "description": "Test1 Description "
-                   },
-                   {
-                     "title": "Test template 2",
-                     "content": "<div class='test'><h1>This is a title</h1><p>Look at this paragraph!</p></div>",
-                     "description": "Test 2 description"
-                    }
-                 ]
-               }
-            ]]>
+           <!-- Configuration options: https://www.tiny.cloud/docs/configure/ -->
+           <!-- Plugins: https://www.tiny.cloud/docs/plugins/opensource/ -->
+           <tinymceOptions>{
+             "menubar": true,
+             "theme": "silver",
+             "plugins": "print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount textpattern help acecode paste editform",
+             "extended_valid_elements": "",
+             "valid_children": "",
+             "toolbar1": "formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat | editform",
+             "code_editor_wrap": false,
+             "toolbar_sticky": true,
+             "image_advtab": true,
+             "encoding": "xml",
+             "relative_urls": false,
+             "remove_script_host": false,
+             "convert_urls": false,
+             "remove_trailing_brs": false,
+             "media_live_embeds": true,
+             "autoresize_on_init": false,
+             "autoresize_bottom_margin": 0,
+             "menu": { "tools": { "title": "Tools", "items": "tinymcespellchecker code acecode wordcount" } },
+             "automatic_uploads": true,
+             "file_picker_types": "image media file",
+             "paste_data_images": true,
+             "templates": [],
+             "content_css": [],
+             "content_style": "body {}",
+             "contextmenu": false }
            </tinymceOptions>
          </setup>
        </setups>
@@ -504,4 +486,66 @@ To configure the RTE for in-context editing, add/edit the widget ``craftercms.co
 
 |
 
-Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.  For more information on plugins/configuration descriptions and examples, see :ref:`rte-configuration`
+Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.
+
+To learn more about configuring the RTE, see :ref:`here <rte-configuration>`
+
+.. _project-tools-configuration:
+
+***************************
+Project Tools Configuration
+***************************
+
+The Project Config tools configuration section defines what modules are available for administration use when
+clicking on |projectTools| from the Sidebar.
+
+.. code-block:: xml
+   :linenos:
+
+   <references>
+   		<reference id="craftercms.siteTools">
+   			<tools>
+   				<tool>
+   					<title id="dropTargetsMessages.contentTypes" defaultMessage="Content Types"/>
+   					<icon id="@mui/icons-material/WidgetsOutlined"/>
+   					<url>content-types</url>
+   					<widget id="craftercms.components.ContentTypeManagement"/>
+   				</tool>
+   				<tool>
+   					<title id="GlobalMenu.EncryptionToolEntryLabel"
+   					       defaultMessage="Encryption Tool"/>
+   					<icon id="@mui/icons-material/LockOutlined"/>
+   					<url>encrypt-tool</url>
+   					<widget id="craftercms.components.SiteEncryptTool"/>
+   				</tool>
+   				<tool>
+   					<title id="words.configuration" defaultMessage="Configuration"/>
+   					<icon id="@mui/icons-material/SettingsApplicationsOutlined"/>
+   					<url>configuration</url>
+   					<widget id="craftercms.components.SiteConfigurationManagement"/>
+   				</tool>
+   				...
+
+|
+
+List of available tools
+-----------------------
+
+Here's a list of available tools defined in the Website_Editorial blueprint.
+
+==================== =====================================================================
+Tool                 Description
+==================== =====================================================================
+Content Types        Allows you to create/modify content types
+Encryption Tool      Allows the user to encrypt sensitive data such as access keys and passwords
+Configuration        Contains all the configuration files managed through Crafter Studio
+Audit                Allows you to view your project activity log
+Workflow States      Contains a list of all files in the project with its corresponding state
+Log Console          Allows you to tail logs depending on what logging levels are set
+Publishing           Allows the user to view the publishing status, perform a bulk publish or to publish content using commit ID(s)
+Git                  Allows the user to perform Git operations
+GraphQL              Allows the user run GraphQL queries and explore the schema documentation for a project without the need of any other tool
+Plugin Management    Allows the user to install and to view currently installed, project plugins
+==================== =====================================================================
+
+See :ref:`navigating-project-tools` for more information on the available tools in ``Project Tools``.

@@ -18,6 +18,7 @@ To run CrafterCMS, the following are required:
 
     - Java 11
     - 8+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
+    - Git 2.20.1 and later
 
 Additional requirements for running CrafterCMS are listed here :ref:`Installing and verifying prerequisites<installing-and-verifying-prerequisites>`
 

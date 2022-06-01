@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Proxy Configuration
 
@@ -13,7 +14,7 @@ To modify the proxy configuration, click on |projectTools| from the bottom of th
 
 .. image:: /_static/images/site-admin/config-open-proxy-config.jpg
     :alt: Configurations - Open Proxy Configuration
-    :width: 55 %
+    :width: 45 %
     :align: center
 
 ******
@@ -41,38 +42,46 @@ Sample
      </server>
    -->
    <proxy-config>
-     <version>2</version>
+     <version>1</version>
      <servers>
-       <server>
-         <id>static-assets</id>
-         <url>http://localhost:8080</url>
-         <patterns>
-           <pattern>/static-assets/.*</pattern>
-         </patterns>
-       </server>
-       <server>
-         <id>graphql</id>
-         <url>http://localhost:8080</url>
-         <patterns>
-           <pattern>/api/1/site/graphql.*</pattern>
-         </patterns>
-       </server>
-       <server>
-         <id>engine</id>
-         <url>http://localhost:8080</url>
-         <patterns>
-           <pattern>/api/1/.*</pattern>
-         </patterns>
-       </server>
-       <server>
-         <id>preview</id>
-         <url>http://localhost:8080</url>
-         <patterns>
-           <pattern>.*</pattern>
-         </patterns>
-       </server>
-     </servers>
-   </proxy-config>
+       <!-- Proxy all GraphQL requests to this server (can be any HTTP compatible GraphQL server) -->
+         <server>
+           <id>graphql</id>
+           <url>http://my-graphql-server</url>
+           <patterns>
+             <pattern>/api/1/site/graphql.*</pattern>
+           </patterns>
+         </server>
+
+         <!-- Proxy all Crafter Engine API requests to this server -->
+         <server>
+           <id>engine</id>
+           <url>http://my-crafter-egine-server</url>
+           <patterns>
+             <pattern>/api/.*</pattern>
+           </patterns>
+         </server>
+
+         <!-- Proxy all Crafter Engine static-assets requests to this server -->
+         <server>
+           <id>static-assets</id>
+           <url>http://my-crafter-engine-server</url>
+           <patterns>
+             <pattern>/static-assets/.*</pattern>
+           </patterns>
+         </server>
+
+         <!-- Proxy any other request to this server (can be any web or application server) -->
+         <server>
+           <id>preview</id>
+           <url>http://my-web-server</url>
+           <patterns>
+             <pattern>.*</pattern>
+           </patterns>
+         </server>
+      </servers>
+    </proxy-config>
+
 
 |
 

@@ -1,4 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Working with GraphQL
 
@@ -35,9 +36,9 @@ development process would look like this:
 You can also use the CrafterCMS GraphQL API from an external project or application, however in this case you will need to
 handle the schema reload using third party tools.
 
---------------------------------
-Using GraphiQL in Crafter Studio
---------------------------------
+-------------------------------
+Using GraphQL in Crafter Studio
+-------------------------------
 
 GraphiQL is a simple GraphQL client that you can use in Crafter Studio to run GraphQL queries and explore the schema 
 documentation for a project without the need of any other tool. To access GraphiQL follow these steps:
@@ -45,13 +46,13 @@ documentation for a project without the need of any other tool. To access Graphi
 1. Login to Crafter Studio
 2. Click on the CrafterCMS logo to toggle the sidebar open
 3. Click ``Project Tools`` in the left sidebar
-4. Click ``GraphiQL`` in the left sidebar
+4. Click ``GraphQL`` in the left sidebar
 
 To explore the GraphQL schema you can click the ``Docs`` icon on the right side:
 
-.. image:: /_static/images/developer/graphql/graphiql.png
+.. image:: /_static/images/developer/graphql/graphql.png
         :width: 75%
-        :alt: GraphiQL
+        :alt: GraphQL
         :align: center
 
 |
@@ -242,7 +243,7 @@ a specific author.
         # (names are based on the content-type configuration)
         title_t
         # only return articles from this author
-        author_s (filter: { matches: "Jane" })
+        author_s (filter: { equals: "Jane Doe" })
         date_dt
       }
     }
@@ -273,7 +274,7 @@ Additionally you can create complex filters using expressions like ``and``, ``or
           }
         )
         # Filter articles from category style or health
-        categories {
+        categories_o {
           item {
             key (
               filter: {
@@ -311,9 +312,9 @@ You can also include fields from child components in your model, this applies to
         # (names are based on the content-type configuration)
         title_t
         # only return articles from this author
-        author_s (filter: { matches: "Jane" })
+        author_s (filter: { equals: "Jane Doe" })
         date_dt
-        categories {
+        categories_o {
           item {
             # only return articles from this category
             key (filter: { matches: "health" }) 
@@ -329,20 +330,20 @@ type fields).
 
 .. code-block:: text
    :linenos:
-   :caption: Query for 2016 and 2017 articles using aliases
+   :caption: Query for 2020 and 2021 articles using aliases
 
    # root query
    {
-     # query for 2016 articles
-     articlesOf2016: page_article {
+     # query for 2020 articles
+     articlesOf2020: page_article {
        items {
-         localId(filter: {regex: ".*2016.*"})
+         localId(filter: {regex: ".*2020.*"})
        }
      },
-     # query for 2017 articles
-     articlesOf2017: page_article {
+     # query for 2021 articles
+     articlesOf2021: page_article {
        items {
-         localId(filter: {regex: ".*2017.*"})
+         localId(filter: {regex: ".*2021.*"})
        }
      }  
    }

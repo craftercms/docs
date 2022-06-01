@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.1
 
 :orphan:
 
@@ -171,20 +172,15 @@ The following section of Studio's configuration overrides allows you to randomiz
    # studio.db.initializer.randomAdminPassword.length: 16
    # Random admin password allowed chars
    # studio.db.initializer.randomAdminPassword.chars: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*_=+-/
-   # HTTP Session timeout for studio (value is in minutes).
-   # studio.security.sessionTimeout: 60
-   # Defines security provider for accessing repository. Possible values
-   # - db (users are stored in database)
-   # - ldap (users are imported from LDAP into the database)
-   # - headers (use when authenticating via headers)
-   # studio.security.type: ldap
+   # Time in minutes after which active users will be required to login again
+   # studio.security.sessionTimeout: 480
+   # Time in minutes after which inactive users will be required to login again
+   # studio.security.inactivityTimeout: 30
    #
    # Salt for encrypting
-   studio.security.cipher.salt: ${env:CRAFTER_SYSTEM_ENCRYPTION_KEY}
+   studio.security.cipher.salt: ${env:CRAFTER_SYSTEM_ENCRYPTION_SALT}
    # Key for encrypting
-   studio.security.cipher.key: ${env:CRAFTER_SYSTEM_ENCRYPTION_SALT}
-   # Enable password requirements validation
-   # studio.security.passwordRequirements.enabled: false
+   studio.security.cipher.key: ${env:CRAFTER_SYSTEM_ENCRYPTION_KEY}
    # Password requirements validation regular expression
    # The supported capture group keys are:
    #   hasNumbers
@@ -196,70 +192,14 @@ The following section of Studio's configuration overrides allows you to randomiz
    #   maxLength
    #   minMaxLength
    # studio.security.passwordRequirements.validationRegex: ^(?=(?<hasNumbers>.*[0-9]))(?=(?<hasLowercase>.*[a-z]))(?=(?<hasUppercase>.*[A-Z]))(?=(?<hasSpecialChars>.*[~|!`,;\/@#$%^&+=]))(?<minLength>.{8,})$
-   # Studio authentication chain configuration
-   # studio.authentication.chain:
-     # Authentication provider type
-     # - provider: HEADERS
-       # Authentication via headers enabled
-       # enabled: false
-       # Authentication header for secure key
-       # secureKeyHeader: secure_key
-       # Authentication headers secure key that is expected to match secure key value from headers
-       # Typically this is placed in the header by the authentication agent
-       # secureKeyHeaderValue: secure
-       # Authentication header for username
-       # usernameHeader: username
-       # Authentication header for first name
-       # firstNameHeader: firstname
-       # Authentication header for last name
-       # lastNameHeader: lastname
-       # Authentication header for email
-       # emailHeader: email
-       # Authentication header for groups: comma separated list of sites and groups
-       #   Example:
-       #   site_author,site_xyz_developer
-       # groupsHeader: groups
-       # Enable/disable logout for headers authenticated users (SSO)
-       # logoutEnabled: false
-       # If logout is enabled for headers authenticated users (SSO), set the endpoint of the SP or IdP logout, which should
-       # be called after local logout. The {baseUrl} macro is provided so that the browser is redirected back to Studio
-       # after logout (https://STUDIO_SERVER:STUDIO_PORT/studio)
-       # logoutUrl: /YOUR_DOMAIN/logout?ReturnTo={baseUrl}
-     # Authentication provider type
-     # - provider: LDAP
-       # Authentication via LDAP enabled
-       # enabled: false
-       # LDAP Server url
-       # ldapUrl: ldap://localhost:389
-       # LDAP bind DN (user)
-       # ldapUsername: cn=Manager,dc=my-domain,dc=com
-       # LDAP bind password
-       # ldapPassword: secret
-       # LDAP base context (directory root)
-       # ldapBaseContext: dc=my-domain,dc=com
-       # LDAP username attribute
-       # usernameLdapAttribute: uid
-       # LDAP first name attribute
-       # firstNameLdapAttribute: cn
-       # LDAP last name attribute
-       # lastNameLdapAttribute: sn
-       # Authentication header for email
-       # emailLdapAttribute: mail
-       # LDAP groups attribute
-       # groupNameLdapAttribute: crafterGroup
-       # LDAP groups attribute name regex
-       # groupNameLdapAttributeRegex: .*
-       # LDAP groups attribute match index
-       # groupNameLdapAttributeMatchIndex: 0
-     # Authentication provider type
-     # - provider: DB
-       # Authentication via DB enabled
-       # enabled: true
 
    # The key used for encryption of configuration properties
    studio.security.encryption.key: ${env:CRAFTER_ENCRYPTION_KEY}
    # The salt used for encryption of configuration properties
    studio.security.encryption.salt: ${env:CRAFTER_ENCRYPTION_SALT}
+
+   # The path of the folder used for the SSH configuration
+   studio.security.ssh.config: ${env:CRAFTER_SSH_CONFIG}
 
    # Defines name used for environment specific configuration. It is used for environment overrides in studio. Default value is default.
    studio.configuration.environment.active: ${env:CRAFTER_ENVIRONMENT}
@@ -298,65 +238,8 @@ The following section of Studio's configuration overrides allows you to setup th
    # Enable/disable (value true/false) debug mode for email service. Enabling debug mode allows tracking/debugging communication between email service and SMTP server.
    # studio.mail.debug: false
 
-----------
-Clustering
-----------
 
-The following section of Studio's configuration overrides allows you to setup Studio for clustering.  See :ref:`clustering` for more information
-
-.. code-block:: yaml
-   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
-   :linenos:
-
-   ##################################################
-   ##                 Clustering                   ##
-   ##################################################
-   #-----------------------------------------------------------------------------
-   # IMPORTANT: To enable clustering, please specify the environment variable
-   # SPRING_PROFILES_ACTIVE=crafter.studio.dbCluster in your crafter-setenv.sh
-   # (or Docker/Kubernetes env variables).
-   # Also configure the appropiate MARIADB env variables
-   # -----------------------------------------------------------------------------
-
-   # Cluster Git URL format for synching members.
-   # - Typical SSH URL format: ssh://{username}@{localAddress}{absolutePath}
-   # - Typical HTTPS URL format: https://{localAddress}/repos/sites
-   # studio.clustering.sync.urlFormat: ssh://{username}@{localAddress}{absolutePath}
-
-   # Cluster Syncers
-   # Sandbox Sync Job interval in milliseconds which is how often to sync the work-area
-   # studio.clustering.sandboxSyncJob.interval: 2000
-   # Published Sync Job interval in milliseconds which is how often to sync the published repos
-   # studio.clustering.publishedSyncJob.interval: 60000
-   # Global Repo Sync Job interval in milliseconds which is how often to sync the global repo
-   # studio.clustering.globalRepoSyncJob.interval: 45000
-   # Cluster member after heartbeat stale for amount of minutes will be declared inactive
-   # studio.clustering.heartbeatStale.timeLimit: 5
-   # Cluster member after being inactive for amount of minutes will be removed from cluster
-   # studio.clustering.inactivity.timeLimit: 5
-
-   # Cluster member registration, this registers *this* server into the pool
-   # Cluster node registration data, remember to uncomment the next line
-   # studio.clustering.node.registration:
-   #  This server's local address (reachable to other cluster members). You can also specify a different port by
-   #  attaching :PORT to the adddress (e.g 192.168.1.200:2222)
-   #  localAddress: ${env:CLUSTER_NODE_ADDRESS}
-   #  Authentication type to access this server's local repository
-   #  possible values
-   #   - none (no authentication needed)
-   #   - basic (username/password authentication)
-   #   - key (ssh authentication)
-   #  authenticationType: none
-   #  Username to access this server's local repository
-   #  username: user
-   #  Password to access this server's local repository
-   #  password: SuperSecurePassword
-   #  Private key to access this server's local repository (multiline string)
-   #  privateKey: |
-   #    -----BEGIN PRIVATE KEY-----
-   #    privateKey
-   #    -----END PRIVATE KEY-----
-
+.. _studio-config-override-cors:
 
 ----
 CORS
@@ -367,6 +250,7 @@ The following section of Studio's configuration overrides allows you to setup CO
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
    :linenos:
+   :emphasize-lines: 10
 
    ################################################################
    ##                             CORS                           ##
@@ -386,6 +270,10 @@ The following section of Studio's configuration overrides allows you to setup CO
    # studio.cors.credentials: true
    # Value for the Access-Control-Max-Age header
    # studio.cors.maxage: -1
+
+The CORS origins accepts regex patterns.  Values are split using ``,``.  Remember that commas inside
+patterns need to be escaped with a ``\`` like:
+``studio.cors.origins: 'http://localhost:[8000\,3000],http://*.other.domain'``
 
 ------
 Search
@@ -412,8 +300,8 @@ The following section of Studio's configuration overrides allows you to setup th
    studio.search.timeout.socket: -1
    # The number of threads to use, if set to -1 the default will be used
    studio.search.threads: -1
-
-
+   # Indicates if keep alive should be enabled for sockets used by the search client, defaults to false
+   studio.search.keepAlive: false
 
 -------------------
 Serverless Delivery
@@ -487,3 +375,57 @@ The following section of Studio's configuration overrides allows you to configur
        # Indicates if Forwarded or X-Forwarded headers should be used when resolving the client-originated protocol and
        # address. Enable when Studio is behind a reverse proxy or load balancer that sends these
        studio.forwarded.headers.enabled: false
+
+-------------
+Access Tokens
+-------------
+
+.. version_tag::
+   :label: Since
+   :version: 4.0.0
+
+
+The following section of Studio's configuration overrides allows you to configure settings for the Studio access tokens.  For more information on how access tokens are used, see :ref:`working-with-crafter-studios-api`
+
+.. code-block:: yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+   :linenos:
+
+   ##################################################
+   ##               Access Tokens                  ##
+   ##################################################
+
+   # Issuer for the generated access tokens
+   studio.security.token.issuer: ${env:STUDIO_TOKEN_ISSUER}
+   # List of accepted issuers for validation of access tokens (separated by commas)
+   studio.security.token.validIssuers: ${env:STUDIO_TOKEN_VALID_ISSUERS}
+   # The audience for generation and validation of access tokens (if empty the instance id will be used)
+   studio.security.token.audience: ${env:STUDIO_TOKEN_AUDIENCE}
+   # Time in minutes for the expiration of the access tokens
+   studio.security.token.timeout: ${env:STUDIO_TOKEN_TIMEOUT}
+   # Password for signing the access tokens (needs to be equal or greater than 512 bits in length)
+   studio.security.token.password.sign: ${env:STUDIO_TOKEN_SIGN_PASSWORD}
+   # Password for encrypting the access tokens
+   studio.security.token.password.encrypt: ${env:STUDIO_TOKEN_ENCRYPT_PASSWORD}
+   # Name of the cookie to store the refresh token
+   studio.security.token.cookie.name: ${env:STUDIO_REFRESH_TOKEN_NAME}
+   # Time in seconds for the expiration of the refresh token cookie
+   studio.security.token.cookie.maxAge: ${env:STUDIO_REFRESH_TOKEN_MAX_AGE}
+   # Indicates if the refresh token cookie should be secure (should be true for production environments behind HTTPS)
+   studio.security.token.cookie.secure: ${env:STUDIO_REFRESH_TOKEN_SECURE}
+
+-------------------------
+crafterSite Cookie Domain
+-------------------------
+.. version_tag::
+   :label: Since
+   :version: 4.0.1
+
+The following section of Studio's configuration overrides allows you to set the ``crafterSite`` cookie at the base domain instead of a subdomain, to allow visibility of the ``crafterSite`` cookie across subdomains.
+
+.. code-block:: yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+   :linenos:
+
+   # Use base domain instead of subdomain for the crafterSite cookie
+   studio.cookie.useBaseDomain: false

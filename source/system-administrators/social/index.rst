@@ -210,6 +210,8 @@ Properties prefix: ``studio.social.system.tentanConfig.``
 |                           |          || by the cache                                           |
 +---------------------------+----------+---------------------------------------------------------+
 
+.. _social-system-cors:
+
 Properties prefix: ``studio.social.system.cors.``
 
 Using these properties you can control the `Cross-Origin Resource Sharing` settings to assure
@@ -236,6 +238,9 @@ your sites and applications are able to access the Crafter Social API.
 | accessControlAllowCredentials | false               || Value for the header                    |
 |                               |                     || ``Access-Control-Allow-Credentials``    |
 +-------------------------------+---------------------+------------------------------------------+
+
+For the CORS origin, values are split using ``,``.  Remember that commas inside
+patterns need to be escaped with a ``\`` like this: ``http://localhost:[8000\,3000],http://other.domain``
 
 .. _crafter-social-av:
 

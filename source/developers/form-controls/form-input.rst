@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -22,14 +23,18 @@ Example
         :alt: Form Control Input Example
         :align: center
 
+|
+
 -------------
 Configuration
 -------------
 
 .. image:: /_static/images/form-controls/form-control-input-1.png
-        :width: 50%
+        :width: 40%
         :alt: Form Control Input
         :align: center
+
+|
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
@@ -41,7 +46,8 @@ Configuration
 || Properties            || * Max Length: Maximum number of characters to accept as input.       |
 ||                       || * Read Only: Make field read-only (can't be changed by the author).  |
 ||                       || * Tokenize for Indexing: Make the object searchable by this field.   |
-+------------------------+-----------------------------------------------------------------------+
+||                       || * Escape Content: Escape special characters in this field            |
+++-----------------------+-----------------------------------------------------------------------+
 || Constraints           || * Required: Make field required to fill out.                         |
 ||                       || * Match Pattern: Field must match a regex to be accepted.            |
 +------------------------+-----------------------------------------------------------------------+

@@ -1,4 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index::  Studio Logging, Viewing Logs Through Crafter Studio
 
@@ -18,8 +19,10 @@ CrafterCMS tracks the date, time, user and action performed to content through a
 To view the audit logs, from the **Sidebar**, click on |projectTools|, then click on **Audit**
 
 .. figure:: /_static/images/site-admin/logs-audit.png
-    :alt: Crafter Studio Audit Logs
+    :alt: Crafter Studio Project Audit Logs
 	:align: center
+
+|
 
 .. _studio-log-console:
 
@@ -44,5 +47,7 @@ We'll now go to the **Log Console** to start viewing the logs.  From the **Sideb
 .. figure:: /_static/images/site-admin/logs-log-console.png
     :alt: Crafter Studio Log Console
 	:align: center
+
+|
 
 For more information on logging levels, see :ref:`override-logging-levels`

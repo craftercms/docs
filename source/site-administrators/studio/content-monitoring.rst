@@ -1,4 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Content Monitoring
 
@@ -59,7 +60,7 @@ How to Configure Content Monitoring
 Content monitoring can be configured through Crafter Studio.  Go to the **Sidebar**, then click on
 **Project Tools** > **Configuration** > **Project Configuration**
 
-.. image:: /_static/images/site-admin/config-open-site-config.jpg
+.. image:: /_static/images/site-admin/config-open-project-config.jpg
     :align: center
     :alt: Configuration - Open "Project Configuration"
 
@@ -116,8 +117,9 @@ Notification Templates Configuration
 Notification templates can be configured through Crafter Studio.  Go to the **Sidebar**, then click
 on |projectTools| > **Configuration** > **Notification Configuration**
 
-.. figure:: /_static/images/site-admin/notification-config-open.png
+.. figure:: /_static/images/site-admin/notification-config-open.jpg
   :align: center
+  :width: 50%
   :alt: Configuration - Open "Notification Configuration"
 
 |

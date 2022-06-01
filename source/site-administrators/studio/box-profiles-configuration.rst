@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Box Profiles Configuration
 
@@ -8,12 +9,14 @@
 Box Profiles Configuration
 ==========================
 
-The Box Profiles configuration file allows you to configure 0 or more Box profiles with the information required by Box services.
-To modify the Box Profiles configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Box Profiles** from the dropdown list.
+The Box Profiles configuration file allows you to configure 0 or more Box profiles with the information
+required by Box services.
+To modify the Box Profiles configuration, click on |projectTools| from the bottom of the *Sidebar*,
+then click on **Configuration** and select **Box Profiles** from the list.
 
-.. image:: /_static/images/site-admin/config-open-box-config.png
+.. image:: /_static/images/site-admin/config-open-box-config.jpg
     :alt: Configurations - Open Box Profiles Configuration
-    :width: 65 %
+    :width: 55 %
     :align: center
 
 ------

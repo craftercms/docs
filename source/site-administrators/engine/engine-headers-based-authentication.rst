@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Engine Headers Based Authentication
 
@@ -61,7 +62,7 @@ Next, configure the URLs you require authentication by setting ``url`` to desire
 
    |
 
-See :ref:`engine-site-security-guide-restrict-urls` for more information on expressions that cam be used.
+See :ref:`engine-project-security-guide-restrict-urls` for more information on expressions that can be used.
 
 From the above configuration, here are the headers that Engine expects to be provided:
 
@@ -193,7 +194,7 @@ Example
 -------
 
 Let's take a look at an example of setting up Engine headers authentication using a project created using the Website
-Editorial blueprint named ``mysite``.  We will also change the default value for the token header. We'll then take a
+Editorial blueprint named ``My Editorial``.  We will also change the default value for the token header. We'll then take a
 look at an example of setting up Engine headers authentication with optional role mappings and attribute.
 
 
@@ -202,7 +203,7 @@ Simple Example Setting Up Engine Headers Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Open the Engine ``site-config.xml`` file in Studio, by navigating from the ``Sidebar`` to
-``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project Configuration`` option from the dropdown.
+``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project Configuration`` option from the list.
 
 You can also access the ``site-config.xml`` using your favorite editor under
 ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/site-config.xml``
@@ -234,9 +235,9 @@ Save your changes and remember to publish the file ``/config/engine/site-config.
 authentication in action in delivery.
 
 Now, try viewing the Home page without the header attributes required, by entering in your browser
-``localhost:9080?crafterSite=mysite``.  The Home page will not be displayed without the required header attributes.
+``localhost:9080?crafterSite=my-editorial``.  The Home page will not be displayed without the required header attributes.
 
-.. image:: /_static/images/site-admin/engine-headers-delivery-not-sent.jpg
+.. image:: /_static/images/site-admin/engine-headers-delivery-not-sent.png
    :align: center
    :width: 75%
    :alt: Website Editorial Home Page view without the headers sent
@@ -258,7 +259,7 @@ You should now see the Home page displayed
 
 |
 
-See :ref:`engine-site-configuration` for more information on how to access the ``site-config.xml`` file.
+See :ref:`engine-project-configuration` for more information on how to access the ``site-config.xml`` file.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Example Setting Up Engine Headers Authentication with Optional Role Mappings and Attributes
@@ -268,7 +269,7 @@ We'll now take a look at another example where we setup optional role mappings a
 
 We'll setup the ``admin`` and the ``user`` roles and add the attribute ``APP_FULL_NAME``.  We'll try to restrict
 access to ``/articles/**`` for users with the ``user`` or ``admin`` role, then we'll try to display the
-``APP_FULL_NAME`` value passed from the headers in our project.
+``APP_FULL_NAME`` value passed from the headers in our project.  Remember that the ``ROLE_`` prefix is required
 
 Open the Engine ``site-config.xml`` file in Studio, by navigating from the ``Sidebar`` to
 ``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project Configuration`` option from the dropdown.
@@ -292,14 +293,15 @@ Add the following to setup the ``admin`` and ``user`` role, and the attribute ``
           <token>my_updated_token</token>
           <!-- Optional role mappings, allows to map names from the external auth to simple role names to use in the page or url restrictions -->
           <!-- The APP_ prefix is just an example, the values can be anything -->
+          <!-- The ROLE_ prefix is is required for the name of the role -->
           <groups>
             <group>
               <name>APP_ADMIN</name> <!-- The name of the group in the header -->
-              <role>admin</role>     <!-- The name of the role in the authentication object -->
+              <role>ROLE_admin</role>     <!-- The name of the role in the authentication object -->
             </group>
             <group>
               <name>APP_USER</name> <!-- The name of the group in the header -->
-              <role>user</role>     <!-- The name of the role in the authentication object -->
+              <role>ROLE_user</role>     <!-- The name of the role in the authentication object -->
             </group>
           </groups>
           <!-- Optional attribute mappings, allows to expose attributes from the external auth -->
@@ -359,7 +361,7 @@ Studio, then navigate to ``/templates/web/components/`` then right click on ``he
 The ``authToken.principal.attributes.name`` contains the value passed for ``APP_FULL_NAME`` in the header
 
    .. code-block:: text
-      :emphasize-lines: 5
+      :emphasize-lines: 5-6
       :caption: */templates/web/components/header.ftl*
       :linenos:
 

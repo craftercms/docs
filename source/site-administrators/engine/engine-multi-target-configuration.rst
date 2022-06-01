@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Engine Multi-Target Configuration
 
@@ -33,9 +34,9 @@ To override a configuration file in any of the publishing targets
 
 #. Add the new configuration file/s for overriding to **Configurations** under |projectTools| -> **Configuration**
 
-   .. image:: /_static/images/site-admin/configuration.png
+   .. image:: /_static/images/site-admin/configuration.jpg
       :alt: Multi-target Configuration - Open Configurations
-      :width: 55 %
+      :width: 45 %
       :align: center
 
    |
@@ -45,6 +46,8 @@ To override a configuration file in any of the publishing targets
    - *configuration-to-be-overridden.preview.xml*
    - *configuration-to-be-overridden.staging.xml*
    - *configuration-to-be-overridden.live.xml*
+
+   |
 
    Say, to add a ``urlrewrite.xml`` file override for **staging**, add the following in the **Configurations**
 
@@ -62,7 +65,7 @@ To override a configuration file in any of the publishing targets
 
      |
 
-   For more information on **Configurations** config file, see :ref:`site-config-configuration`
+   For more information on **Configurations** config file, see :ref:`project-config-configuration`
 
 #. Fill in your desired additions/modifications to the override configuration file.  Refresh your browser.  The configuration file you added from above should now be available from |projectTools| -> **Configuration**.  Open the new configuration file and make the necessary additions/modifications for the override file then save your changes.
 
@@ -107,7 +110,7 @@ Let's take a look at an example of overriding the Project Configuration used by 
 
 #. The configurations we added above will now be available from |projectTools| -> **Configuration**.
 
-   .. image:: /_static/images/site-admin/site-config-override-added.jpg
+   .. image:: /_static/images/site-admin/project-config-override-added.jpg
       :alt: Multi-target Configuration - Project Tools override configuration files now listed in "Project Tools" -> "Configuration"
       :width: 55 %
       :align: center
@@ -121,7 +124,7 @@ Let's take a look at an example of overriding the Project Configuration used by 
       :caption: *SITENAME/sandbox/config/engine/site-config.staging.xml*
 
       <site>
-        <version>2</version>
+        <version>4.0.1</version>
 
         <security>
           <saml2>
@@ -165,16 +168,16 @@ Let's take a look at an example of overriding the Project Configuration used by 
 
 #. Publish ``site-config.live.xml`` to live and ``site-config.staging.xml`` to staging.
 
-   To publish the override configuration files setup above, open the **Dashboard** by clicking on the project name at the top left of the screen.  Scroll to the **My Recent Activity** widget.
+   To publish the override configuration files setup above, open the **Dashboard** via the Navigation Menu on the top right or via the Sidebar.  Scroll to the **My Recent Activity** dashlet.
 
    .. image:: /_static/images/site-admin/view-override-config-on-dashboard.png
-      :alt: Multi-target Configuration - New configuration files listed in the "My Recent Activity" widget in the Dashboard
+      :alt: Multi-target Configuration - New configuration files listed in the "My Recent Activity" dashlet in the Dashboard
       :width: 85 %
       :align: center
 
    |
 
-   To publish the ``site-config.live.xml`` configuration file to publishing target ``live``, put a check mark next to the file in the widget, then click on ``Approve & Publish`` from the context nav.  Remember to set the ``Publishing Target`` to **live** in the ``Approve for Publish`` dialog
+   To publish the ``site-config.live.xml`` configuration file to publishing target ``live``, put a check mark next to the file in the dashlet, then click on ``Publish`` from the context nav.  Remember to set the ``Publishing Target`` to **live** in the ``Publish`` dialog
 
    .. image:: /_static/images/site-admin/publish-override-file.jpg
       :alt: Multi-target Configuration - Set "Publishing Target" to "live" in dialog for site-config.live.xml
@@ -183,7 +186,7 @@ Let's take a look at an example of overriding the Project Configuration used by 
 
    |
 
-   To publish the ``site-config.staging.xml`` file to publishing target ``staging`` put a check mark next to the file in the widget, then click on ``Approve & Publish`` from the context nav.  Remember to set the ``Publishing Target`` to **staging** in the ``Approve for Publish`` dialog.
+   To publish the ``site-config.staging.xml`` file to publishing target ``staging`` put a check mark next to the file in the dashlet, then click on ``Publish`` from the context nav.  Remember to set the ``Publishing Target`` to **staging** in the ``Publish`` dialog.
 
    The Engine ``site-config.live.xml`` configuration will now be loaded when viewing your project in ``live`` and the Engine ``site-config.staging.xml`` configuration will now be loaded when viewing your project in ``staging`` instead of the default Engine ``site-config.xml`` files
 

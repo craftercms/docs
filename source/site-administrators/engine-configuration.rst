@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Engine Configuration
 
@@ -13,8 +14,8 @@ This section details how to configure settings related to Crafter Engine, Crafte
 .. toctree::
    :maxdepth: 1
 
-   engine/engine-site-configuration
-   engine/engine-site-security-guide
+   engine/engine-project-configuration
+   engine/engine-project-security-guide
    engine/engine-saml2-configuration
    engine/engine-headers-based-authentication
    engine/engine-crafter-profile-configuration

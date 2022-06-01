@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _crafter-deployer-api-target-deploy-all:
 
@@ -26,15 +27,29 @@ Resource Information
 Parameters
 ----------
 
-+-------------------------+-------------+---------------+-------------------------------------------------------------+
-|| Name                   || Type       || Required     || Description                                                |
-+=========================+=============+===============+=============================================================+
-|| reprocess_all_files    || Boolean    ||              || If all files in all the target repos should be reprocessed.|
-+-------------------------+-------------+---------------+-------------------------------------------------------------+
-|| deployment_mode        || String     ||              || The deployment mode to execute. Possible values:           |
-||                        ||            ||              || ``PUBLISH``: All processors will run                       |
-||                        ||            ||              || ``SEARCH_INDEX``: Only the indexing processor will run     |
-+-------------------------+-------------+---------------+-------------------------------------------------------------+
+.. list-table::
+   :widths: 20 10 12 50
+   :header-rows: 1
+
+   * - Name
+     - Type
+     - Required
+     - Description
+   * - reprocess_all_files
+     - Boolean
+     -
+     - If all files in all the target repos should be reprocessed.
+   * - deployment_mode
+
+       .. version_tag::
+          :label: Since
+          :version: 4.0.0
+
+     - String
+     -
+     - The deployment mode to execute. Possible values: |br|
+       ``PUBLISH``: All processors will run |br|
+       ``SEARCH_INDEX``: Only the indexing processor will run
 
 -------
 Example

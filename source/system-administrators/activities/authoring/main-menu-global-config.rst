@@ -228,6 +228,9 @@ The following section of Studio's global config allows you to setup Cross-Origin
    # The active environment for multi environment configuration, e.g. qa, prod, dev
    # studio.configuration.environment.active: ENV
 
+For the CORS origins, values are split using ``,``.  Remember that commas inside patterns need to be escaped with a ``\``
+like: ``studio.cors.origins: 'http://localhost:[8000\,3000],http://*.other.domain'``
+
 ----------
 Clustering
 ----------

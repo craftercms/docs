@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:since-version: 4.0.0
 
 .. index:: Crafter CLI Command copy-plugin, copy-plugin
 
@@ -10,7 +11,7 @@ copy-plugin
 
 |
 
-Copies a plugin from a Studio local folder into a site
+Copies a plugin from a Studio local folder into a project
 
 |
 
@@ -57,4 +58,4 @@ Example
    |
 
 
-See :ref:`how-do-i-make-my-own-site-plugin` for the folder structure required for your plugin and more information on creating a plugin
+See :ref:`how-do-i-make-my-own-project-plugin` for the folder structure required for your plugin and more information on creating a plugin

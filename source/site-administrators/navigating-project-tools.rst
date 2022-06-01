@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Navigating Project Tools
 
@@ -147,31 +148,31 @@ The **Publishing** module under **Project Tools** allows the user to view the pu
 
 For more information on Publishing, see :ref:`publishing-and-status`
 
--------------------
-Remote Repositories
--------------------
+---
+Git
+---
 
-The **Remote Repositories** under **Project Tools** allows the user to view remote repositories linked to the project and options to pull and push to the listed remote repositories.  It also allows the user to add a remote repository to the project.
+The **Git** under **Project Tools** allows the user to perform Git operations such as viewing remote repositories linked to the project and options to pull and push to the listed remote repositories.  It also allows the user to add a remote repository to the project.
 
-.. image:: /_static/images/site-admin/project-tools-remote-repositories.jpg
-    :alt: Site Admin - Project Tools Remote Repositories
+.. image:: /_static/images/site-admin/project-tools-git.png
+    :alt: Site Admin - Project Tools Git
     :align: center
     :width: 60%
 
 |
 
-For more information on Remote Repositories under |projectTools|, see :ref:`remote-repositories`
+For more information on Git under |projectTools|, see :ref:`project-tools-git`
 
---------
-GraphiQL
---------
+-------
+GraphQL
+-------
 
 CrafterCMS provides built-in support for GraphQL to query content in any project without writing additional code.  **GraphiQL** is a simple GraphQL client that you can use in Crafter Studio to run GraphQL queries and explore the schema documentation for a project without the need of any other tool.
 
-.. image:: /_static/images/site-admin/project-tools-graphiql.jpg
+.. image:: /_static/images/site-admin/project-tools-graphql.jpg
     :alt: Site Admin - Project Tools GraohiQL
     :align: center
-    :width: 60%
+    :width: 70%
 
 |
 
@@ -181,12 +182,12 @@ For more information on Studio support for GraphQL, see :ref:`working_with_graph
 Plugin Management
 -----------------
 
-Site plugins extend Crafter Studio (authoring) and Crafter Engine and the site/web application (delivery).
-The Project Tools **Plugin Management** allows the user to install and to view currently installed, site plugins
+Project plugins extend Crafter Studio (authoring) and Crafter Engine and the site/web application (delivery).
+The Project Tools **Plugin Management** allows the user to install and to view currently installed, project plugins
 
 .. image:: /_static/images/site-admin/project-tools-plugin-mgmt.jpg
    :alt: Site Admin - Project Tools Plugin Management
    :align: center
-   :width: 60%
+   :width: 70%
 
-For more information on managing site plugins, see :ref:`plugin-management`
+For more information on managing project plugins, see :ref:`plugin-management`

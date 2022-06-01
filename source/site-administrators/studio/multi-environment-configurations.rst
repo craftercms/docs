@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Multi-Environment Configuration
 
@@ -10,7 +11,7 @@ Multi-Environment Configuration
 
 Users may want multiple environments setup with different configurations for each environment, e.g. QA, Prod, Dev, etc.  To setup an environment, do the following:
 
-#. Create a folder under ``CRAFTER_HOME/data/repos/site/mysite/sandbox/config/studio`` called ``env``
+#. Create a folder under ``CRAFTER_HOME/data/repos/site/my-awesome-editorial/sandbox/config/studio`` called ``env``
 #. Inside the folder, create a directory called ``myenv`` (or whatever you want to call the environment)
 #. Copy the configuration file you want to override in the new environment you are setting up, inside your ``myenv`` folder
    following the folder structure under ``config/studio``.
@@ -34,49 +35,43 @@ Example
 
 Let's take a look at an example of creating a new environment, called ``mycustomenv`` with the ``rte-setup-tinymce5.xml`` file overridden in the new environment:
 
-#. We'll create a folder called ``env`` under ``CRAFTER_HOME/data/repos/site/mysite/sandbox/config/studio``
+#. We'll create a folder called ``env`` under ``CRAFTER_HOME/data/repos/site/my-awesome-editorial/sandbox/config/studio``
 
       .. code-block:: text
          :linenos:
-         :emphasize-lines: 14
+         :emphasize-lines: 12
 
          data/
            repos/
              sites/
-               mysite/
+               my-awesome-editorial/
                  sandbox/
                    config/
                      studio/
                        administration/
-                       code-editor-config.xml
                        content-types/
-                       context-nav/
                        data-sources/
                        dependency/
                        env/
-                       form-control-config/
-                       mime-type.xml
                        permission-mappings-config.xml
-                       preview-tools/
                        role-mappings-config.xml
                        site-config.xml
                        studio_version.xml
-                       targeting/
+                       translation-config.xml
+                       ui.xml
                        workflow/
 
       |
 
 #. Inside the ``env`` folder, create a directory called ``mycustomenv``
-#. We will now copy the configuration file for the ``rte-setup-tinymce5.xml`` that we want to override in the new environment we are setting up, inside our ``mycustomenv`` folder, following the folder structure under ``config/studio``.  For our example, the ``rte-setup-tinymce5.xml`` file is under ``config/studio/form-control-config/rte``:
+#. We will now copy the configuration file for the ``ui.xml`` that we want to override in the new environment we are setting up, inside our ``mycustomenv`` folder, following the folder structure under ``config/studio``.  For our example, the ``ui.xml`` file is under ``config/studio/``:
 
       .. code-block:: text
-         :emphasize-lines: 5
+         :emphasize-lines: 3
 
          env/
            mycustomenv/
-             form-control-config/
-               rte/
-                 rte-setup-tinymce5.xml
+             ui.xml
 
       |
 
@@ -85,7 +80,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
       .. code-block:: bash
 
          ➜  sandbox git:(master) ✗ git add .
-         ➜  sandbox git:(master) ✗ git commit -m "Add updated rte-setup-tinymce5.xml file for mycustomenv"
+         ➜  sandbox git:(master) ✗ git commit -m "Add updated ui.xml file for mycustomenv"
 
       |
 
@@ -100,9 +95,9 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
       |
 
-#. Restart Studio.  To verify our newly setup environment, open the ``Sidebar`` and click on |projectTools|, then select ``Configuration``.  Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations drop-down box:
+#. Restart Studio.  To verify our newly setup environment, open the ``Sidebar`` and click on |projectTools|, then select ``Configuration``.  Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations list:
 
-   .. image:: /_static/images/site-admin/env-custom-configurations.png
+   .. image:: /_static/images/site-admin/env-custom-configurations.jpg
       :align: center
       :alt: Active Environment Displayed in Project Config Configuration
 

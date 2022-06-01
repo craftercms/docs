@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -38,7 +39,16 @@ To access the Studio encryption tool, from the top right of your browser, click 
     :align: center
     :width: 100%
 
+|
+
 Note that the encryption tool may also be accessed through the |projectTools| ``Encryption Tool`` of any project in Studio.
+
+.. image:: /_static/images/system-admin/project-tools-encryption-tool.png
+    :alt: Project Tools - Encryption Tool
+    :align: center
+    :width: 80%
+
+|
 
 To encrypt a password, access key, etc., simply enter the password, access key, etc. in the ``Raw Text`` field, then click on ``Encrypt Text``.  This will generate the encrypted password, access key, etc. that you then simply need to paste in the configuration file.
 
