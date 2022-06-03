@@ -54,9 +54,17 @@ To get updates from the remote repositories, click on the down arrow next to the
     :alt: Git - Pull from Remote Repository
 	:align: center
 
+    |
+
+A dialog will open for pulling:
+
+.. image:: /_static/images/site-admin/project-tools-pull-from-remote-dlg.png
+    :alt: Remote Repositories - Pull from Remote Repository Dialog
+    :align: center
+
 |
 
-You will then be given some options when Studio pulls from the remote repository:
+You will then be given some options for the merge strategy when Studio pulls from the remote repository by clicking on the dropdown:
 
 .. image:: /_static/images/site-admin/project-tools-pull-from-remote-options.png
     :alt: Git - Pull from Remote Repository Options
