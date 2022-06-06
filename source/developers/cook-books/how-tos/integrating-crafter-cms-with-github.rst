@@ -156,7 +156,7 @@ Let’s consider for a moment that you’re a new developer joining the team. Th
 
 4. Fill out the Create Site Form as in a similar fashion described in Step 2 above, except this time, instead of selecting a blueprint, select the **Remote Git Repository** to create your site based on an existing upstream repository.  This can be your team’s branch or your own fork. The exact workflow is up to you.
 
-   .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-1.png
+   .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-1.jpg
       :alt: Developer How Tos - Setting up to work locally against the upstream
       :width: 70 %
       :align: center
