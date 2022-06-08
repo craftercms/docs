@@ -30,18 +30,18 @@ is required, it is possible to override the blacklist configuration. Configurati
 Using a custom blacklist
 ------------------------
 
-Crafter Engine includes a default blacklist that you can find 
+Crafter Engine includes a default blacklist that you can find
 `here <https://github.com/craftercms/engine/blob/develop/src/main/resources/crafter/engine/groovy/blacklist>`_. Make sure you review the branch/tag you're using.
 
 To use a custom blacklist follow these steps:
 
 #.  Copy the default blacklist file to your classpath, for example:
-    
+
     ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/groovy/blacklist``
-    
+
 #.  Remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
 #.  Update the :ref:`server-config.properties <engine-configuration-files>` configuration file to load the custom blacklist:
-    
+
     .. code-block:: none
       :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
 
@@ -68,7 +68,7 @@ required to add an extra parameter ``initClass=false`` in the annotations to pre
   :caption: Example grapes annotations
 
   @Grab(group='org.apache.commons', module='commons-pool2', version='2.8.0', initClass=false)
-  
+
   @Grab(value='org.apache.commons:commons-pool2:2.8.0', initClass=false)
 
 |
@@ -112,7 +112,7 @@ There are some limitations that should be noted when working with the Groovy San
 
 One limitation is that an exception is thrown during execution when a Groovy class has a property and a getter method for the property.  Here's an example code that throws an exception during execution:
 
-   .. code-block::
+   .. code-block:: groovy
 
       class Test {
         private String message
@@ -165,7 +165,7 @@ There are a couple of things you can do to get around the exception being thrown
 * Do not use getter methods and instead access the property directly |br|
   Using the example above, we'll access the property directly:
 
-     .. code-block::
+     .. code-block:: groovy
 
         class Test {
           private String message
@@ -181,7 +181,7 @@ There are a couple of things you can do to get around the exception being thrown
 * Use a different name for the property and the getter method |br|
   Again, using the example above, we'll use a different name from the property for the getter method:
 
-     .. code-block::
+     .. code-block:: groovy
 
         class Test {
           private String theMessage
@@ -198,3 +198,23 @@ There are a couple of things you can do to get around the exception being thrown
 
      |
 
+
+Another limitation is that when the Groovy Sandbox is enabled the square
+brackets ```[]``` can only be used to access positions in arrays and lists or
+entries in maps, it is not allowed to access properties on objects. For
+example the following call will fail:
+
+  .. code-block:: groovy
+
+    def name = 'someProperty'
+    someObject[name]
+
+**Workaround**
+
+To avoid this issue it is possible to use dynamic properties with the dot
+notation:
+
+  .. code-block:: groovy
+
+    def name = 'someProperty'
+    someObject."$name"
