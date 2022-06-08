@@ -103,7 +103,7 @@ Here is a sample Git url using ssh:
 or alternatively for ssh:
 `[user@]host.xz:path/to/repo/`
 
-.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-1.png
+.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-1.jpg
    :alt: Developer How Tos - Setting up to work locally against the upstream
    :width: 70 %
    :align: center
@@ -115,7 +115,7 @@ Click on the **Review** button, then finally, the **Create Site** button.
 
 .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-2.png
    :alt: Developer How Tos - Setting up to work locally against the upstream review entries
-   :width: 50 %
+   :width: 70 %
    :align: center
 
 |
