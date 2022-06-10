@@ -54,6 +54,8 @@ Crafter Engine is able to integrate with multiple authentication providers:
              <button type="submit">Sign in</button>
          </form>
 
+       |
+
    **Add Logout**
 
 
