@@ -16,6 +16,10 @@ The following guide will help you configure Crafter Engine to:
 #. Add authentication for your website.
 #. Add authorization so that access to certain pages and URLs of your site are restricted.
 
+------------------
+Add Authentication
+------------------
+
 Crafter Engine is able to integrate with multiple authentication providers:
 
 #. **Using SAML2**
@@ -24,45 +28,43 @@ Crafter Engine is able to integrate with multiple authentication providers:
 
 #. **Using Crafter Profile**
 
-   To configure Crafter Profile, follow the instructions: :ref:`engine-crafter-profile-configuration`
+   To configure Crafter Profile, follow the instructions: :ref:`engine-crafter-profile-configuration` then do the following:
 
-------------------
-Add Authentication
-------------------
+   **Add Login**
 
-Add Login
-=========
+   To add a login page:
 
-To add a login page:
+   #.  In Crafter Studio, create a Home > Login page.
+   #.  The page template should contain a form that POSTs to /crafter-security-login, sending the ``username``,
+       ``password`` and ``rememberMe`` parameters, like in the following snippet:
 
-#.  In Crafter Studio, create a Home > Login page.
-#.  The page template should contain a form that POSTs to /crafter-security-login, sending the ``username``, 
-    ``password`` and ``rememberMe`` parameters, like in the following snippet:
+       .. code-block:: html
+         :linenos:
+
+         <form action="/crafter-security-login" method="post">
+           <label for="username">Username: </label>
+           <input type="text" name="username"/>
+           <br/>
+           <label for="password">Password: </label>
+           <input type="password" name="password"/>
+           <br/>
+           <input type="checkbox" name="rememberMe" value="true">Remember Me</input>
+           <br/>
+           <button type="submit">Sign in</button>
+         </form>
+
+       |
+
+   **Add Logout**
+
+   To add logout, just add a link in the global header that points to /crafter-security-logout:
 
    .. code-block:: html
-     :linenos:
+      :linenos:
 
-     <form action="/crafter-security-login" method="post">
-         <label for="username">Username: </label>
-         <input type="text" name="username"/>
-         <br/>
-         <label for="password">Password: </label>
-         <input type="password" name="password"/>
-         <br/>
-         <input type="checkbox" name="rememberMe" value="true">Remember Me</input>
-         <br/>
-         <button type="submit">Sign in</button>
-     </form>
+      <a href="/crafter-security-logout">Log Out</a>
 
-Add Logout
-==========
-
-To add logout, just add a link in the global header that points to /crafter-security-logout:
-
-.. code-block:: html
- :linenos:
-
- <a href="/crafter-security-logout">Log Out</a>
+   |
 
 -----------------
 Add Authorization
