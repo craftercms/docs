@@ -10,6 +10,13 @@ Simple Authoring with a Single Instance Kubernetes Deployment
 
 A Kubernetes deployment describes an applications life cycle, e.g. images to be used, the number of pods, etc. It creates pods based on a specified template.  CrafterCMS has an example Kubernetes deployment for a simple authoring with a single instance.  In this section, we'll take a look at this example Kubernetes deployment.
 
+.. TODO: Update screens and text once https://github.com/craftercms/craftercms/issues/5285 is done
+
+|
+
+   .. note::
+      This section needs an update once the kubernetes deployment files are updated `here <https://github.com/craftercms/craftercms/issues/5285>`__
+
 ------------
 Requirements
 ------------

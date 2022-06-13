@@ -10,6 +10,13 @@ This tutorial shows you how to deploy a simple CrafterCMS installation in a Kube
 consists of one Authoring Pod, one Delivery Pod and one Elasticsearch Pod, and it's mainly intended for development
 and testing, not for production.
 
+.. TODO: Update screens and text once https://github.com/craftercms/craftercms/issues/5285 is done
+
+|
+
+   .. note::
+      This section needs an update once the kubernetes deployment files are updated `here <https://github.com/craftercms/craftercms/issues/5285>`__
+
 --------------
 Pre-requisites
 --------------
@@ -70,6 +77,15 @@ Copy the following Kubernetes deployment configuration files somewhere in your m
    :language: yaml
    :caption: delivery-deployment.yaml
    :linenos:
+
+.. note::
+   The latest deployment files for authoring and delivery are available here:
+
+   - `authoring-deployment.yaml <https://github.com/craftercms/kubernetes-deployments/blob/master/authoring/simple/authoring-deployment.yaml>`__
+   - `delivery-deployment.yaml <https://github.com/craftercms/kubernetes-deployments/blob/master/delivery/simple/delivery-deployment.yaml>`__
+
+   Remember to update the Elasticsearch version in the Elasticsearch deployment file to the Elasticsearch version used in the authoring and delivery deployment files used.
+
 
 --------------------------
 Apply the Deployment Files
