@@ -12,12 +12,13 @@ The detailed roadmap is maintained in our issue planning and tracking system, an
 
 At a high-level, we're pursuing the objectives listed below in order:
 
+* Improve Experience Builder (XB) support for SPA (React, Vue, Angular)
 * Update all documentation to flow better and address use-cases more directly
+* Add Recycle Bin to the authoring system
 * New dashboard system and new dashboards
 * Content Modeling Tool: Modernize the content modeling tools
 * Form Engine: Rewrite the form engine
-* Improve Experience Builder (XB) support for SPA (React, Vue, Angular)
-* Add Recycle Bin to the authoring system
+* Time-travel mechanics to preview sites across time
 
 Recently Completed
 ------------------
@@ -28,7 +29,6 @@ Recently Completed
 		- In-place editing
 		- Out of the box and marketplace components
 		- Improved drag and drop mechanics
-	- Time-travel mechanics to preview sites across time
 * Crafter Studio Marketplace: Pull in authoring extensions for your site from the marketplace
 * Engine Plugin Marketplace: Pull in widgets for your app from the marketplace
 * Enhanced Preview Proxy to connect to any remote server as the preview server
