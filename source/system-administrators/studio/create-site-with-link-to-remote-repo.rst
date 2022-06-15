@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.1
 
 .. index:: Site Creation with Remote Repositories, Remote Repositories
 
@@ -76,6 +77,8 @@ Click on the **Review** button, then finally, the **Create Site** button.
     :alt: Create Site Dialog in Crafter Studio, review entries
     :width: 70 %
     :align: center
+
+|
 
 Your site should be created in a short while, and then pushed on to the remote bare Git repository specified in the field **Git Repo URL**.  Remember that the remote repository needs to be a bare git repository, otherwise the site creation will fail.
 

@@ -1,12 +1,13 @@
 :is-up-to-date: True
+:last-updated: 4.0.1
 
 .. index:: Integrating CrafterCMS with GitHub
 
 .. _integrating-crafter-cms-with-github:
 
-===================================
+==================================
 Integrating CrafterCMS with GitHub
-===================================
+==================================
 
 This section details how to create a new project in GitHub and then start a new project in CrafterCMS in a way that connects to GitHub as an upstream remote repository.
 
@@ -63,12 +64,16 @@ Let’s walk through each part of the dialog:
     :width: 70 %
     :align: center
 
+|
+
 1. The first thing you need to do is to choose your blueprint. There are several out of the box blueprints provided by default. Choose one of these or one of your own. For our example, we’ll choose the Website Editorial blueprint.
 
 .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-2.png
     :alt: Developer How Tos - Create Site Dialog Walk Through step 2
     :width: 70 %
     :align: center
+
+|
 
 2. The next thing to do is give your site an ID. The ID itself doesn’t matter in a sense. It doesn’t need to match anything per se, technically speaking the only requirement is that it’s unique. That said, it’s a best practice to provide an ID that is meaningful/recognizable to the team. If your website is called FreshFlowers.com a good ID might be “freshflowerscom”
 
@@ -78,6 +83,8 @@ Let’s walk through each part of the dialog:
     :alt: Developer How Tos - Create Site Dialog Walk Through step 4 - 8
     :width: 70 %
     :align: center
+
+|
 
 4. With the **Push the site to a remote Git repository after creation** slider in the on position, Crafter Studio will create a new site based on the blueprint you chose, link the remote repository as an upstream and then once the blueprint is installed in the local repositories it will be pushed automatically to the upstream remote.
 
@@ -96,6 +103,8 @@ Let’s walk through each part of the dialog:
     :alt: Developer How Tos - Create Site Dialog Walk Through step 5
     :width: 70 %
     :align: center
+
+|
 
 9. Once you're satisfied with your entries for creating your site, click on the **Create Site** button.  CrafterCMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint. Once complete it will connect to the upstream and push the contents of the Sandbox repository to the remote.
 
@@ -137,9 +146,9 @@ Crafter Studio helps you manage and interact with your remote repositories via t
 
 Now you are ready to set up your entire development process and CI/CD automation.
 
----------------------------------------------------------------------
+--------------------------------------------------------------------
 Creating a Project in CrafterCMS Based on an Existing GitHub Project
----------------------------------------------------------------------
+--------------------------------------------------------------------
 
 Let’s consider for a moment that you’re a new developer joining the team. The topology above is already set up and you just want to get a local environment up and going. Simple. Follow these instructions.
 
