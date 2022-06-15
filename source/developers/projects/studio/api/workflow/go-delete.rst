@@ -2,11 +2,14 @@
 
 .. _crafter-studio-api-workflow-go-delete:
 
-=========
-Go Delete
-=========
+======================
+Go Delete (deprecated)
+======================
 
 Go delete workflow.
+
+.. important::
+   This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/content/contentDelete` for the current version.
 
 --------------------
 Resource Information
