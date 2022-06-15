@@ -258,6 +258,60 @@ Client is completely removed.
 Migrating to the new Elasticsearch client should not require too much effort:
 
 - If the existing code uses the builder classes you will need to replace them with the equivalent in the new client
+
+Example:
+
+.. code-block:: groovy
+  :caption: Groovy code with ES 6.x Builders
+
+  import org.elasticsearch.action.search.SearchRequest
+  import org.elasticsearch.index.search.MatchQuery
+
+  import static org.elasticsearch.index.query.QueryBuilders.boolQuery
+  import static org.elasticsearch.search.builder.SearchSourceBuilder.searchSource
+
+  def query = boolQuery()
+  query.should(matchQuery('content-type', '/component/article'))
+  def builder = searchSource().query(query)
+
+  def searchResponse = elasticsearch.search(new SearchRequest().source(builder))
+
+
 - If the existing code uses a map DSL it only needs to be replaced with the new lambda structure
+
+Example:
+
+.. code-block:: groovy
+  :caption: Groovy code with ES 6.x Maps
+
+  def searchResponse = elasticsearch.search([
+    query: [
+      bool: [
+        should: [
+          [ match: [ 'content-type': '/component/article' ] ],
+        ]
+      ]
+    ]
+  ])
+
+For both cases the equivalent code using the new ES API Client is the same:
+
+.. code-block:: groovy
+  :caption: Groovy code with ES 7.x API Client
+
+  def searchResponse = elasticsearchClient.search(r -> r
+    query(q -> q
+      bool(b -> b
+        should(s -> s
+          match(m -> m
+            .field('content-type')
+            .query(v -> v
+              .stringValue('/component/article')
+            )
+          )
+        )
+      )
+    ),
+    Map.class)
 
 For additional information about the new client you can read the official `documentation <https://www.elastic.co/guide/en/elasticsearch/client/java-api-client/current/api-conventions.html>`_
