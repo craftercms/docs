@@ -35,8 +35,6 @@ Your output should look something like this:
 
 |
 
-Check that the file starts with the following header: ``-----BEGIN RSA PRIVATE KEY-----`` to verify that the key is using ``RSA``.
-
 After generating your private and public keys, you will need to add your new public key to where your remote git repository is located.  If you are using GitHub, you will need to add your public key (e.g., ``id_rsa.pub``) into your GitHub account.  If your remote Git repository is hosted on a server, you will need to copy your public key (e.g., ``id_rsa.pub``) to the host server.
 
 

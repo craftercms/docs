@@ -1,4 +1,5 @@
 :is-up-to-date: False
+:last-updated: 4.0.1
 
 .. _simple-kubernetes-deployment:
 
@@ -10,7 +11,7 @@ This tutorial shows you how to deploy a simple CrafterCMS installation in a Kube
 consists of one Authoring Pod, one Delivery Pod and one Elasticsearch Pod, and it's mainly intended for development
 and testing, not for production.
 
-.. TODO: Update screens and text once https://github.com/craftercms/craftercms/issues/5285 is done
+.. TODO: Revisit and update screens and text once https://github.com/craftercms/craftercms/issues/5285 is done
 
 |
 
@@ -61,30 +62,60 @@ an SSH public/private key pair for authentication and provide the key pair as a 
 Create the Deployment files
 ---------------------------
 
-Copy the following Kubernetes deployment configuration files somewhere in your machine:
+Copy the following Kubernetes deployment configuration files somewhere in your machine (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "elasticsearch-deployment.yaml"</a></summary>
 
 .. literalinclude:: /_static/code/kubernetes/simple/elasticsearch-deployment.yaml
    :language: yaml
    :caption: elasticsearch-deployment.yaml
    :linenos:
 
+.. raw:: html
+
+   </details>
+
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "authoring-deployment.yaml"</a></summary>
+
 .. literalinclude:: /_static/code/kubernetes/simple/authoring-deployment.yaml
    :language: yaml
    :caption: authoring-deployment.yaml
    :linenos:
+
+.. raw:: html
+
+   </details>
+
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "delivery-deployment.yaml"</a></summary>
 
 .. literalinclude:: /_static/code/kubernetes/simple/delivery-deployment.yaml
    :language: yaml
    :caption: delivery-deployment.yaml
    :linenos:
 
+.. raw:: html
+
+   </details>
+
+
 .. note::
-   The latest deployment files for authoring and delivery are available here:
+   The latest example deployment files for authoring and delivery are available here:
 
    - `authoring-deployment.yaml <https://github.com/craftercms/kubernetes-deployments/blob/master/authoring/simple/authoring-deployment.yaml>`__
    - `delivery-deployment.yaml <https://github.com/craftercms/kubernetes-deployments/blob/master/delivery/simple/delivery-deployment.yaml>`__
 
-   Remember to update the Elasticsearch version in the Elasticsearch deployment file to the Elasticsearch version used in the authoring and delivery deployment files used.
+   Remember to update the Elasticsearch version in the Elasticsearch deployment file to the Elasticsearch version used in the authoring and delivery image files used.
 
 
 --------------------------
