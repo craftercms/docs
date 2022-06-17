@@ -54,7 +54,7 @@ To get updates from the remote repositories, click on the down arrow next to the
     :alt: Git - Pull from Remote Repository
 	:align: center
 
-    |
+|
 
 A dialog will open for pulling:
 
