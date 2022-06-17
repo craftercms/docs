@@ -4,9 +4,9 @@
 
 .. _devOps-workflow:
 
-=======================================================
+======================================================
 Introduction to the Developer Workflow with CrafterCMS
-=======================================================
+======================================================
 
 Development and content authoring are both a major part of producing digital experiences.  In this section, we'll take a look at the basic mechanics that support content authoring, publishing and developer workflow.
 
@@ -215,7 +215,7 @@ Let’s walk through each part of the dialog:
 
 3. Click on the **Push the site to a remote repository after creation** slider button to turn it on, which will display more fields  where we can fill in all the information for our remote Git repository.
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.png
+.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.jpg
    :alt: Developer How Tos - Create Site Dialog Walk Through step 4 - 8
    :width: 70 %
    :align: center
@@ -290,7 +290,7 @@ After setting up the topology above, if you just want to get a local environment
 
 4. Fill out the Create Site Form as in a similar fashion described in Step 2 above, except this time, instead of selecting a blueprint, select **Remote Git Repository** to create your site based on an existing upstream repository. This can be your team’s branch or your own fork. The exact workflow is up to you.
 
-.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-1.png
+.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-1.jpg
     :alt: Developer How Tos - Setting up to work locally against the upstream
     :width: 70 %
     :align: center
