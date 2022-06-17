@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.1
 
 .. index:: Project Creation with Remote Repositories, Remote Repositories
 
@@ -18,14 +19,16 @@ A **Create Project** dialog will be launched.  For both options, there will be a
 
 Let's take a look at the fields where the remote repository details needs to be filled in:
 
-.. image:: /_static/images/system-admin/remote-repo-info.jpg
+.. image:: /_static/images/system-admin/remote-repo-info.png
    :alt: System Administrator - Remote Repository Details
    :width: 55 %
    :align: center
 
 |
 
+#. In the **Git Branch** field, you can supply a branch name, but can be left blank, which in turn would default to the ``master`` branch.
 #. In the **Git Repo URL** field you must provide the link to the Git repository you would like to use
+#. In the **Git Remote Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
 #. In the **Authentication** field you must select the authentication method to be used to access the Git repository in the previous field.
 
    CrafterCMS supports the following authentication types to use to access remote repository:
@@ -35,8 +38,6 @@ Let's take a look at the fields where the remote repository details needs to be 
     - **Token** - for this method, you will be asked for a **Remote Git Repository Username** (if required) and a **Remote Git Repository Token**.  This method is usually used when two-factor authentication is configured on the remote repository to be accessed. Supply your username if required and token.
     - **Private Key** - for this method, you will be asked for a **Remote Git Repository Private Key**.  This method is a key-based authentication.  Supply your private key.
 
-#. In the **Git Branch** field, you can supply a branch name, but can be left blank, which in turn would default to the ``master`` branch.
-#. In the **Git Remote Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
 
 -------------------------------------------------------------------------
 Create project based on a blueprint then add a remote bare Git repository
@@ -52,7 +53,7 @@ To create a project based on a blueprint then add a remote bare git repository, 
 
 |
 
-The next step is to fill in the **Project ID** and **Projecct Name**, then click on the **Review** button, then finally  click on the **Create Project** button to create your project.  Your project should be created in a short while.
+The next step is to fill in the **Project ID** and **Project Name**, then click on the **Review** button, then finally  click on the **Create Project** button to create your project.  Your project should be created in a short while.
 
 .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-2.png
     :alt: Create Project Dialog in Crafter Studio, fill in Project ID
@@ -114,9 +115,9 @@ or alternatively for ssh:
 Click on the **Review** button, then finally, the **Create Project** button.
 
 
-.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-2.jpg
+.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-2.png
    :alt: Developer How Tos - Setting up to work locally against the upstream review entries
-   :width: 50 %
+   :width: 70 %
    :align: center
 
 |

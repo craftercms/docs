@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.1
 
 .. index:: Create Your First Project
 
@@ -19,7 +19,7 @@ Creating your project from out of the box blueprint Website Editorial
 After logging in, you'll see the Projects screen (Below).  Click on **Create Project**
 
 .. image:: /_static/images/first-project/projects-screen.png
-    :width: 100 %
+    :width: 80 %
     :align: center
     :alt: Your First Project - Projects Screen
 
@@ -30,7 +30,7 @@ In the **Create Project** screen, the user is presented with the available bluep
 We're going to be using the "Website Editorial Blueprint".  Blueprints offer you a starting point for your project. New blueprints can be created and installed into the system.  Click on **Use** for the "Website Editorial Blueprint".
 
 .. image:: /_static/images/first-project/create-project-choose-bp.jpg
-    :width: 100 %
+    :width: 80 %
     :align: center
     :alt: Your First Project - Create Project: Choose a Blueprint
 
@@ -39,7 +39,7 @@ We're going to be using the "Website Editorial Blueprint".  Blueprints offer you
 Give the project a friendly name for the **Project Name** and a description.  Click on the ``Review`` button.
 
 .. image:: /_static/images/first-project/create-project-basic-info.png
-    :width: 100 %
+    :width: 80 %
     :align: center
     :alt: Your First Project - Create Project: Basic Information
 
@@ -48,7 +48,7 @@ Give the project a friendly name for the **Project Name** and a description.  Cl
 The next step is to review your entries and finally create your new project.  Click on the **Create Project** button and wait for the system to create your project based on the blueprint.
 
 .. image:: /_static/images/first-project/create-project-review-create.png
-    :width: 100 %
+    :width: 80 %
     :align: center
     :alt: Your First Project - Create Project: Review and Create
 
@@ -57,7 +57,7 @@ The next step is to review your entries and finally create your new project.  Cl
 A spinner will appear while it's creating the following: configuration, project content, and permissions based on the template provided by the blueprint.
 
 .. image:: /_static/images/first-project/creating-spinner.png
-    :width: 100 %
+    :width: 80 %
     :align: center
     :alt: Your First Project - Creating a Project Spinner Dialog
 
@@ -66,7 +66,7 @@ A spinner will appear while it's creating the following: configuration, project 
 When it's done you will be taken to the Home Page of your project:
 
 .. image:: /_static/images/first-project/home-page.jpg
-    :width: 100 %
+    :width: 80 %
     :align: center
     :alt: Your First Project - Home Page
 
@@ -105,7 +105,7 @@ We'll then select the page template we want.  Since we are adding a new article 
 We'll start filling out the form for our new article, "Where to find cherry blossoms in Virginia".  For the **Page URL**, replace spaces with dashes.  You can write the **Internal Name** and **Title** however you like as long as it is 50 characters or less as indicated on the right of the input boxes.  For the **Header** and **Left Rail**, we will be using the default provided by the template.
 
 .. image:: /_static/images/first-project/first-project-page-properties.jpg
-    :width: 100 %
+    :width: 90 %
     :align: center
     :alt: Your First Project - Page Properties
 
@@ -114,7 +114,7 @@ We'll start filling out the form for our new article, "Where to find cherry blos
 The next section on the form is the **Metadata** section, where we can select the category for our article, the targeted segments of the article and whether our new article should be added to the **Featured** section.  Our new article, will be under **Entertainment** for the **Categories** and the targeted segments is **Gal**.  We will also be placing our new article in the **Featured** section.
 
 .. image:: /_static/images/first-project/first-project-page-metadata.jpg
-    :width: 100 %
+    :width: 90 %
     :align: center
     :alt: Your First Project - Page Metadata Section
 
@@ -123,7 +123,7 @@ The next section on the form is the **Metadata** section, where we can select th
 Finally, we add our blurb in the **Content** section of the form.  Here, we fill out the **Subject**, **Author**, **Date**, **Summary**, **Image** and **Section**, which contains the content of our article.
 
 .. image:: /_static/images/first-project/first-project-page-content.jpg
-    :width: 100 %
+    :width: 90 %
     :align: center
     :alt: Your First Project - Page Content Section
 
@@ -132,7 +132,7 @@ Finally, we add our blurb in the **Content** section of the form.  Here, we fill
 Here's the project, with our newly created article in the featured section.
 
 .. image:: /_static/images/first-project/first-project-home-page.jpg
-    :width: 100 %
+    :width: 90 %
     :align: center
     :alt: Your First Project - Newly Created Project Home Page
 
@@ -159,7 +159,7 @@ We can also edit the **Contact Us** section itself by editing the ``Contact Widg
 To edit the **Contact Us** section in the left rail, open the Sidebar then navigate to ``components`` -> ``contact``.  Click on the three dots next to ``Contact Widget`` then select ``Edit``.
 
 .. image:: /_static/images/first-project/first-project-edit-left-rail.jpg
-    :width: 100 %
+    :width: 90 %
     :align: center
     :alt: Your First Project - Edit the Contact Us section in the Left Rail
 
@@ -168,7 +168,7 @@ To edit the **Contact Us** section in the left rail, open the Sidebar then navig
 Let's edit the "Left Rail with Latest Articles" by clicking on ``Options`` (three dots) next to it, then selecting ``Edit``.  A form with all the editable content of the left rail will appear.  Go to the **Widgets** section of the form, select **Contact Widget** and then click on the **Edit** button on the right of the list of widgets.
 
 .. image:: /_static/images/first-project/first-project-form-left-rail.jpg
-    :width: 100 %
+    :width: 90 %
     :align: center
     :alt: Your First Project - Left Rail Form
 
@@ -177,7 +177,7 @@ Let's edit the "Left Rail with Latest Articles" by clicking on ``Options`` (thre
 A form containing all the editable fields in the **Contact Us** section will appear.  Modify the fields that you want to change.
 
 .. image:: /_static/images/first-project/first-project-contact-widget.jpg
-    :width: 100 %
+    :width: 90 %
     :align: center
     :alt: Your First Project - Contact Widget
 
@@ -199,7 +199,7 @@ Editing the features section, "Erat lacinia"
 We will now edit the features section in our blueprint.  The features in this section has been configured as components, as you will see in the images below.  There are multiple ways of editing the features section in the blueprint.
 
 .. image:: /_static/images/first-project/first-project-add-features-drag-n-drop.jpg
-    :width: 100 %
+    :width: 90 %
     :align: center
     :alt: Your First Project - Add Features through Drag and Drop
 
@@ -208,7 +208,7 @@ We will now edit the features section in our blueprint.  The features in this se
 We'll start out by adding a feature using the pencil  that appears when you hover your mouse over the middle of the features section as shown in the image above.  Click on the section then select ``Edit``.  A form will open containing the content of the section.  As you can see in the image below, there are currently four features in the section.
 
 .. image:: /_static/images/first-project/first-project-pencil-edit.jpg
-    :width: 100 %
+    :width: 90 %
     :align: center
     :alt: Your First Project - Edit by Clicking on the Pencil
 
@@ -235,7 +235,7 @@ We will add a feature by selecting **Create new embedded Feature** after you cli
 We will now add another feature, by using the ``Browse Components`` tool in the Experience Builder panel located on the right that is available when ``Edit Mode`` is on.  This will bring up a list of existing shared features in the blueprint.  Select one, then drag it to the drop target area on the page.  This will add your selected existing feature to the features section of the page.
 
 .. image:: /_static/images/first-project/first-project-browse-for-existing.jpg
-    :width: 100 %
+    :width: 90 %
     :align: center
     :alt: Your First Project - Browse for Existing Features Component
 
@@ -244,7 +244,7 @@ We will now add another feature, by using the ``Browse Components`` tool in the 
 We will again add another feature, this time by using the ``Add Components`` tool in the Experience Builder panel located on the right.  Click  on the ``Add Components`` tool and it will list all components that you can drag and drop onto drop targets on the page.  To click and drag a new feature onto the feature's drop target, click and drag ``Feature`` from the Page Builder panel on to the feature drop target area on the page.  This will then add a new feature component on the page containing some default items that you can then modify.
 
 .. image:: /_static/images/first-project/first-project-drop-zone.jpg
-    :width: 100 %
+    :width: 90 %
     :align: center
     :alt: Your First Project - Drag and Drop Zone
 
@@ -253,7 +253,7 @@ We will again add another feature, this time by using the ``Add Components`` too
 From inside the drop zone, you may also re-arrange the features by clicking and dragging on a feature and placing it in your desired position.
 
 .. image:: /_static/images/first-project/first-project-drag-n-drop.jpg
-    :width: 100 %
+    :width: 90 %
     :align: center
     :alt: Your First Project - Drag and Drop
 
@@ -304,7 +304,7 @@ Your project is not yet published after creating the project from the Website Ed
 - Click on the three dots next to the page you want to publish from the Sidebar, then click on **Publish**
 
 .. image:: /_static/images/first-project/first-project-publish.jpg
-    :width: 100 %
+    :width: 90 %
     :align: center
     :alt: Your First Project - Publish Your New Content
 
@@ -314,7 +314,7 @@ Your project is not yet published after creating the project from the Website Ed
 You will then be prompted whether you want to publish the page now (**Now**), or publish the page at a later date and time (**Later**).  If this is the very first publish request, the user will be notified that the entire project will be published like below:
 
 .. image:: /_static/images/first-project/first-project-publish-option.png
-    :width: 100 %
+    :width: 90 %
     :align: center
     :alt: Your First Project - Publish Options
 
