@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Integrating CrafterCMS with cloud hosted developer platforms
 

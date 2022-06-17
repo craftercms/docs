@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.1
 
 .. index:: Integrating CrafterCMS with GitLab
 
@@ -149,7 +150,7 @@ Let’s consider for a moment that you’re a new developer joining the team. Th
 
    |
 
-   .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-gitlab-clone-2.jpg
+   .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-gitlab-clone-2.png
       :alt: Developer How Tos - Setting up to work locally against the upstream review entries
-      :width: 50 %
+      :width: 70 %
       :align: center
