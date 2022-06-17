@@ -79,7 +79,7 @@ Let’s walk through each part of the dialog:
 
 3. Click on the **Push the site to a remote repository after creation** slider button to turn it on, which will display more fields  where we can fill in all the information for our remote Git repository.
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3-github.png
+.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3-github.jpg
     :alt: Developer How Tos - Create Site Dialog Walk Through step 4 - 8
     :width: 70 %
     :align: center
@@ -90,12 +90,12 @@ Let’s walk through each part of the dialog:
 
 5. In the **Git Repo URL** field you must provide the link to the Git repository discussed in **Step #1**: ``https://github.org/myuser/mysweetdotcom.git``
 
-6. Provide your credentials based on the authentication method selected.  In our example, we chose ``Username & Password`` as the authentication method and we'll need to fill in **Username** and **Password**
+6. In the **Git Remote Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
+
+7. Provide your credentials based on the authentication method selected.  In our example, we chose ``Username & Password`` as the authentication method and we'll need to fill in **Username** and **Password**
 
       .. note::
          .. include:: /includes/setup-ssh-keys.rst
-
-7. In the **Git Remote Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
 
 8. Click **Review**.  The next screen will give you a chance to review your entries and make corrections as needed by clicking on the **Back** button
 

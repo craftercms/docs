@@ -19,14 +19,16 @@ A **Create Site** dialog will be launched.  This dialog changes depending on wha
 
 Let's take a look at the fields where the remote repository details needs to be filled in:
 
-.. image:: /_static/images/system-admin/remote-repo-info.png
+.. image:: /_static/images/system-admin/remote-repo-info.jpg
    :alt: System Administrator - Remote Repository Details
    :width: 55 %
    :align: center
 
 |
 
+#. In the **Git Branch** field, you can supply a branch name, but can be left blank, which in turn would default to the ``master`` branch.
 #. In the **Git Repo URL** field you must provide the link to the Git repository you would like to use
+#. In the **Git Remote Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
 #. In the **Authentication** field you must select the authentication method to be used to access the Git repository in the previous field.
 
    CrafterCMS supports the following authentication types to use to access remote repository:
@@ -35,9 +37,6 @@ Let's take a look at the fields where the remote repository details needs to be 
     - **Username & Password** - for this method, you will be asked for a **Remote Git Repository Username** and a **Remote Git Repository Password**.  Supply your username and password
     - **Token** - for this method, you will be asked for a **Remote Git Repository Username** (if required) and a **Remote Git Repository Token**.  This method is usually used when two-factor authentication is configured on the remote repository to be accessed. Supply your username if required and token.
     - **Private Key** - for this method, you will be asked for a **Remote Git Repository Private Key**.  This method is a key-based authentication.  Supply your private key.
-
-#. In the **Git Branch** field, you can supply a branch name, but can be left blank, which in turn would default to the ``master`` branch.
-#. In the **Git Remote Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
 
 ------------------------------------------------------------------------
 Create site based on a blueprint then push to remote bare Git repository
@@ -64,7 +63,7 @@ The next step is to fill in the **Site ID**
 
 Click on the **Push the site to a remote Git repository after creation** slider button, this will open up the options where we can fill in all the information for our remote repository as described above.
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.png
+.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.jpg
     :alt: Create Site Dialog in Crafter Studio, populating a bare upstream Git repository
     :width: 70 %
     :align: center

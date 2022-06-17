@@ -77,7 +77,7 @@ Let’s walk through each part of ``Create Site``:
 
 3. Click on the **Push the site to a remote repository after creation** slider button to turn it on, which will display more fields  where we can fill in all the information for our remote Git repository.
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.png
+.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.jpg
     :alt: Developer How Tos - Create Site Dialog Walk Through step 4 - 8
     :width: 70 %
     :align: center
@@ -169,5 +169,5 @@ Let’s consider for a moment that you’re a new developer joining the team. Th
 
 .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-2.png
     :alt: Developer How Tos - Setting up to work locally against the upstream review entries
-    :width: 50 %
+    :width: 70 %
     :align: center
