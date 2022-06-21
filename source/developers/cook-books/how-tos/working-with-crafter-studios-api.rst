@@ -111,7 +111,7 @@ Let's begin:
       Most HTTP clients provide built-in support for access token athentication, in the case of curl you will need
       to use the header option ``--header`` or ``-H``
 
-      ``curl -H 'Authentication: Bearer <access token>' ...``
+      ``curl -H 'Authorization: Bearer <access token>' ...``
 
    |
 
