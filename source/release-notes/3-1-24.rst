@@ -44,6 +44,14 @@ Updates
 * Added check of folder ownership before doing a ``chown`` |br|
   See `here <https://github.com/craftercms/craftercms/issues/5625>`__ for more information
 
+* Fix sort order of Studio search results |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5654>`__ for more information
+
+* Fix site creation failure when session times out |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5655>`__ for more information
+
+* Fix site deletion issue  |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5656>`__ for more information
 
 For a full list of tickets, please visit: `GitHub 3.1.24 Milestone <https://github.com/craftercms/craftercms/milestone/84?closed=1>`_
 
