@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:since-version: 4.0.0
 
 .. index:: Experience Builder, In-Context Editing, ICE
 
@@ -11,14 +12,14 @@ Experience Builder
 CrafterCMS' Experience Builder (XB) provides a UI layer on top of your applications that enables authors
 with in-context editing (ICE) for all the model fields defined in the content types of pages and components.
 CrafterCMS developers must integrate their applications with XB, essentially telling XB what field of the
-model each element on the view represents. See :ref:`content-modeling` to learn more about the model.
+model each element on the view represents. See :ref:`newIa-content-modeling` to learn more about the model.
 
 .. TODO insert <figure: example page with a sample content type side by side showing the relation between page elements
    and content type fields>
 
--------------------------------------------------
-Creating Experience Builder (XB) Enabled Projects
--------------------------------------------------
+----------------------------------------------
+Creating Experience Builder (XB) Enabled Sites
+----------------------------------------------
 
 The concrete integration strategy with XB depends on what kind of application you are developing, however,
 overall all you need to do is mark the content element that display CrafterCMS content and initialize XB.
@@ -284,7 +285,7 @@ Exceptions to this are the following:
 * For item selector controls that hold components to be rendered, use ``@crafter.renderComponentCollection``.
 
 To convert the carousel example, first, mark the component root by using ``@crafter.div``.
-See :ref:`htmlElementTagMacros` for all the available customizations and configuration.
+See :ref:`newIa-htmlElementTagMacros` for all the available customizations and configuration.
 
 .. code-block:: text
 
@@ -294,7 +295,7 @@ See :ref:`htmlElementTagMacros` for all the available customizations and configu
    </@crafter.div>
 
 Next, let's do the repeat group and its items. We use ``@crafter.renderRepeatGroup`` to render repeat
-groups. :ref:`renderRepeatGroup` for all the available customizations and configuration.
+groups. :ref:`newIa-renderRepeatGroup` for all the available customizations and configuration.
 
 .. code-block:: text
    :linenos:
@@ -358,6 +359,24 @@ The complete FreeMarker template for the carousel component becomes:
 FreeMarker Macros & Utilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+There are three macros in ``crafter.ftl``:
+
+- ``head``: used to inject templates from plugins
+- ``body_top``: used to inject templates from plugins
+- ``body_bottom``: used to inject templates from plugins and is also used by ICE as detailed below
+
+The ``head``, ``body_bottom`` and ``body_top`` are macros that should be positioned in those positions that the
+name suggests.  Their purpose is to print strategic scripts, stylesheets or otherwise executions that should
+take place in those moments of the page rendering or be printed in that position.
+Plugins use these “hooks” to inject themselves on the right location so it’s important for ftl templates to
+position them in accordance to their name. For example, a Google Tag Manager plugin will want to get injected
+early on in the ``head`` so it will print it’s script in the ``<@head />`` hook.
+
+
+See :ref:`here <newIa-plugins-using-freemarker-templates>` for more information on injecting templates from plugins.
+
+|
+
 After importing ``crafter.ftl``, you'll have all the available XB macros described below.
 
 .. code-block:: text
@@ -395,7 +414,7 @@ In that case, you'll need to invoke ``initExperienceBuilder`` manually.
      - Description
    * - isAuthoring
      - boolean
-     - Optional as it defaults to :ref:`modePreview <printIfPreview>` FreeMarker context variable. When isAuthoring=false, in context editing is skipped all together. Meant for running in production.
+     - Optional as it defaults to :ref:`modePreview <newIa-printIfPreview>` FreeMarker context variable. When isAuthoring=false, in context editing is skipped all together. Meant for running in production.
    * - props
      - JS object string
      - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string, the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter's JavaScript libraries initialization.
@@ -418,7 +437,7 @@ Examples
 
 .. code-block:: text
 
-   <@crafter.body_bottom iceProps="{ scrollElement: '#mainWrapper' }" />
+   <@crafter.body_bottom xbProps="{ scrollElement: '#mainWrapper' }" />
    <#-- `body_bottom` internally invokes `initExperienceBuilder` -->
 
 .. _newIa-htmlElementTagMacros:
@@ -560,7 +579,7 @@ not the item.
      - Html attributes to print by item index. For example, ``$nthItemAttributes={ 0: { "class": "active" } }`` will
        apply the class named active only to the first item in the collection.
    * - ``renderComponentArguments``
-     - CrafterCMS' :ref:`renderComponent <renderComponent>` macro supports supplying additional arguments
+     - CrafterCMS' :ref:`renderComponent <newIa-renderComponent>` macro supports supplying additional arguments
        (``additionalModel`` argument when used directly) to the component template context. You can send these via
        this parameter. The ``renderComponentArguments`` will be sent to all items.
 
@@ -962,7 +981,7 @@ printIfPreview
 """"""""""""""
 
 Receives a string which it will print if Crafter Engine is running in preview mode. Doesn't print
-anything if Engine is running the published project.
+anything if Engine is running the published site.
 
 .. code-block:: text
 
@@ -983,7 +1002,7 @@ printIfNotPreview
 """""""""""""""""
 
 Receives a string which it will print if Crafter Engine is not running in preview mode. Doesn't print
-anything if Engine is running the published project.
+anything if Engine is running the published site.
 
 .. code-block:: text
 
@@ -995,7 +1014,7 @@ anything if Engine is running the published project.
 navigation
 """"""""""
 
-Prints out the navigation structure of a project in a customizable markup structure.
+Prints out the navigation structure of a site in a customizable markup structure.
 
 .. list-table::
    :widths: 10 10 10 70
@@ -1425,7 +1444,7 @@ element (i.e. the item selector), the item element, and the component itself.
    * - ``*``
      -
      -
-     - ``RenderComponents`` shares all the `RenderRepeat <#rendereepeat>`_ props.
+     - ``RenderComponents`` shares all the `RenderRepeat <#renderrepeat>`__ props.
    * - ``contentTypeMap``
      - Object
      - (Required)
@@ -1593,13 +1612,13 @@ You should first set all the attributes on your markup and afterwards, invoke `i
        supplied when the artifact being rendered is a field. The ``index`` must be specified when
        the artifact being rendered is inside a collection (repeat groups or item selectors).
 
-.. _newIa-initExperienceBuilder:
+.. _newIa-js-app-initExperienceBuilder:
 
 initExperienceBuilder
 """""""""""""""""""""
 
 Use this method to initialize experience builder once you have printed all the attributes (see
-`getICEAttributes <#geticeattributes>`_) on your markup.
+`getICEAttributes <#geticeattributes>`__) on your markup.
 
 .. list-table::
    :widths: 10 10 10 70
@@ -1618,8 +1637,8 @@ Example Applications
 ~~~~~~~~~~~~~~~~~~~~
 
 - `React Example <https://github.com/craftercms/wordify-blueprint/tree/react>`_
-- `Next JS Example <https://github.com/rart/craftercms-example-nextjs>`_
-- `Angular Example <https://github.com/phuongnq/craftercms-example-angular>`_
+- `Next JS Example <https://github.com/craftercms/craftercms-example-nextjs>`_
+- `Angular Example <https://github.com/craftercms/craftercms-example-angular>`_
 
 .. TODO
       Npm

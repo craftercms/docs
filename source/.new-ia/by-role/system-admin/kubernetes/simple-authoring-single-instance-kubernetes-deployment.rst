@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Simple Authoring with a Single Instance Kubernetes Deployment, Example Kubernetes deployment of simple Authoring with a single instance
 

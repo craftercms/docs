@@ -42,5 +42,5 @@ Crafter Engine's source code is managed in GitHub: https://github.com/craftercms
 Configuration
 -------------
 
-* :ref:`newIa-engine-site-configuration`
-* :ref:`newIa-engine-site-security-guide`
+* :ref:`newIa-engine-project-configuration`
+* :ref:`newIa-engine-project-security-guide`

@@ -11,7 +11,7 @@
 Groovy API
 ==========
 
-A lot of functionality and site customization can be done through Groovy scripts in Crafter, no need to code in Java! By using Groovy
+A lot of functionality and project customization can be done through Groovy scripts in Crafter, no need to code in Java! By using Groovy
 scripts, you can create RESTful services, MVC controllers, code that runs before a page or component is rendered, servlet filters and
 scheduled jobs. Crafter also provides a bunch of useful global variables that can be used in all the different types of scripts available:
 
@@ -23,9 +23,9 @@ scripts, page/component scripts and filter scripts):
 .. include:: /includes/request-groovy-variables.rst
 
 All scripts are executed in a sandbox to prevent insecure code from running, to change the configuration see 
-:ref:`script-sandbox-configuration`
+:ref:`newIa-script-sandbox-configuration`
 
-To create unit tests for your groovy code, see :ref:`unit-testing-groovy-code`
+To create unit tests for your groovy code, see :ref:`newIa-unit-testing-groovy-code`
 
 -------------------------
 Create a Script in Studio

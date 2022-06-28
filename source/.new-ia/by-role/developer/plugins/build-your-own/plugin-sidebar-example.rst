@@ -8,14 +8,14 @@
 Crafter Studio Sidebar Plugin Example
 =====================================
 
-Let's take a look at an example of creating a Sidebar plugin in Studio using a project called ``mysite`` created using the **Website Editorial** blueprint.
+Let's take a look at an example of creating a Sidebar plugin in Studio using a project called ``My Editorial`` created using the **Website Editorial** blueprint.
 
-#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our sidebar site plugin.  We'll follow the convention listed in :ref:`newIa-plugin-directory-structure`.  For our example, PLUGIN_TYPE is ``sidebar`` and the PLUGIN_NAME is ``react-sample``
+#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our sidebar project plugin.  We'll follow the convention listed in :ref:`newIa-plugin-directory-structure`.  For our example, PLUGIN_TYPE is ``sidebar`` and the PLUGIN_NAME is ``react-sample``
 
-   In a local folder, create the descriptor file for your site plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin``, then create the folder ``authoring``.  Under the ``authoring`` folder, create the ``static-assets`` folder.  Under the ``static-assets`` folder, create the folder ``plugins``.  Under the ``plugins`` folder, create the folder ``org``.  Under the ``org`` folder, create the folder ``craftercms``.  Under the ``craftercms`` folder, create the folder ``plugin``.  Under the ``plugin`` folder, create the folder ``sidebar``.  Under the ``sidebar`` folder, create the folder ``react-sample``, which is the name of the sidebar site plugin we're building.  We will be placing the JS file implementing the sidebar site plugin under the ``react-sample`` folder.  In the example below, the JS file is ``main.js``
+   In a local folder, create the descriptor file for your project plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.examplesidebar``, then create the following folder structure:
 
    .. code-block:: text
-         :caption: *Form Engine Data Source Plugin Directory Structure*
+         :caption: *Sidebar Plugin Directory Structure*
 
          <plugin-folder>/
            craftercms-plugin.yaml
@@ -25,33 +25,24 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a p
                  org/
                    craftercms/
                      plugin/
-                      sidebar/
-                        react-sample/
-                          main.js
+                       examplesidebar/
+                         sidebar/
+                           reaact-sample/
 
    |
 
+   We will be placing the JS file implementing the toolbar project plugin under the ``react-sample`` folder
    For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/sidebar-plugin``
 
-#. Inside the ``react-sample`` folder, create two empty files, ``index.css`` and ``script.js``, then create the javascript file for our plugin, by using the following plugin example file ``index.modern.js`` (Click on the triangle on the left to expand/collapse):
+#. We'll create the javascript file for our plugin by following the instructions in the plugin example
+   `here <https://github.com/craftercms/craftercms-ui-plugin-sample>`__ which will generate the
+   ``index.modern.js`` file.
 
-   .. raw:: html
+   Inside the ``react-sample`` folder, create two empty files, ``index.css`` and ``script.js``,
+   and place the ``index.modern.js`` file in it.
 
-      <details>
-      <summary><a>Sample sidebar plugin file "index.modern.js".</a></summary>
 
-   .. literalinclude:: /_static/code/plugins/sidebar/index.modern.js
-       :language: js
-       :linenos:
-
-   .. raw:: html
-
-      </details>
-
-   |
-   |
-
-#. To setup our sidebar site plugin to be automatically wired in the corresponding configuration file in Studio (which for a sidebar, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
+#. To setup our sidebar project plugin to be automatically wired in the corresponding configuration file in Studio (which for a sidebar, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
 
    .. code-block:: yaml
       :linenos:
@@ -59,56 +50,57 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a p
       :emphasize-lines: 17-18
 
       installation:
-      - type: preview-app
-        parentXpath: //widget[@id='craftercms.components.ToolsPanel']
-        elementXpath: //plugin[@id='org.craftercms.sampleComponentLibraryPlugin.components.reactComponent']
-        element:
-          name: configuration
-          children:
-          - name: widgets
+        - type: preview-app
+          parentXpath: //widget[@id='craftercms.components.ToolsPanel']
+          elementXpath: //plugin[@id='org.craftercms.sampleSidebarPlugin.components.reactComponent']
+          element:
+            name: configuration
             children:
-            - name: widget
-              attributes:
-              - name: id
-                value: org.craftercms.sampleComponentLibraryPlugin.components.reactComponent
+            - name: widgets
               children:
-              - name: plugin
+              - name: widget
                 attributes:
                 - name: id
-                  value: org.craftercms.plugin
-                - name: type
-                  value: sidebar
-                - name: name
-                  value: react-sample
-                - name: file
-                  value: index.modern.js
+                  value: org.craftercms.sampleSidebarPlugin.components.reactComponent
+                children:
+                - name: plugin
+                  attributes:
+                  - name: id
+                    value: org.craftercms.plugin.examplesidebar
+                  - name: type
+                    value: sidebar
+                  - name: name
+                    value: react-sample
+                  - name: file
+                    value: index.modern.js
 
    |
 
    Remember to use the same value used in ``plugin.id`` (found at the top of the descriptor file) for the installation section *plugin.id* which for our example is ``org.craftercms.plugin``
 
-#. After placing your plugin files and setting up auto-wiring, the site plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
+#. After placing your plugin files and setting up auto-wiring, the project plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
-   .. image:: /_static/images/developer/plugins/site-plugins/sidebar-plugin-files.png
+   .. image:: /_static/images/developer/plugins/project-plugins/sidebar-plugin-files.png
       :align: center
-      :alt: Sidebar site plugin directory/files
-      :width: 30%
+      :alt: Sidebar project plugin directory/files
+      :width: 70%
 
    |
 
-   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <newIa-crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``mysite`` by running the following:
+   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <newIa-crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``my-editorial`` by running the following:
 
       ..  code-block:: bash
 
-          ./crafter-cli copy-plugin -e local -s mysite --path /users/myuser/myplugins/sidebar-plugin
+          ./crafter-cli copy-plugin -e local -s my-editorial --path /users/myuser/myplugins/sidebar-plugin
 
       |
 
 #. Let's take a look at our plugin in action by clicking on the CrafterCMS logo at the top left of your browser to open the sidebar:
 
-   .. image:: /_static/images/developer/plugins/site-plugins/sidebar-plugin-in-action.jpg
+   .. image:: /_static/images/developer/plugins/project-plugins/sidebar-plugin-in-action.png
       :align: center
-      :alt: Sidebar site plugin in action
+      :alt: Sidebar project plugin in action
+      :width: 30%
 
    |
 
@@ -141,14 +133,14 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a p
                   <role>developer</role>
                </permittedRoles>
                <configuration>
-                  <title id="siteTools.title" defaultMessage="Site Tools"/>
+                  <title id="siteTools.title" defaultMessage="Project Tools"/>
                   <icon id="@material-ui/icons/TuneRounded"/>
                   <widgets>
                      <widget id="craftercms.components.SiteToolsPanel"/>
                   </widgets>
                </configuration>
             </widget>
-            <widget id="org.craftercms.sampleComponentLibraryPlugin.components.reactComponent">
+            <widget id="org.craftercms.sampleSidebarPlugin.components.reactComponent">
                <plugin id="org.craftercms.plugin"
                        type="sidebar"
                        name="react-sample"

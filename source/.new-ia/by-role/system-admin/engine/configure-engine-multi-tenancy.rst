@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Multi-Tenancy, Configuration; Crafter Engine Multi-Tenancy
 
@@ -8,7 +9,7 @@
 Configure Multi-Tenancy in Engine
 =================================
 
-.. note:: *This guide applies only to the* **delivery environment** *of CrafterCMS*
+  .. note:: *This guide applies only to the* **delivery environment** *of CrafterCMS*
 
 One instance of Crafter Engine can handle multiple sites (multi-tenancy). This guide explains how
 to setup Crafter Engine for multi-tenancy.
@@ -21,7 +22,7 @@ configuration using the Spring context files.
 Configure the Root Folder Path
 ------------------------------
 
-The root folder path, as shown below, needs to be configured to include a substitution variable ``{siteName}`` in the :ref:`server-config.properties <engine-configuration-files>` file:
+The root folder path, as shown below, needs to be configured to include a substitution variable ``{siteName}`` in the :ref:`server-config.properties <newIa-engine-configuration-files>` file:
 
 .. code-block:: properties
   :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
@@ -40,7 +41,7 @@ Configure Simple Multi-Tenancy
 Using this mode you can easily support multiple sites without any additional configuration in
 external components.
 
-To enable this mode you need to change the following :ref:`Crafter Engine configuration files <engine-configuration-files>`:
+To enable this mode you need to change the following :ref:`Crafter Engine configuration files <newIa-engine-configuration-files>`:
 
 .. code-block:: xml
     :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/services-context.xml*
@@ -50,9 +51,9 @@ To enable this mode you need to change the following :ref:`Crafter Engine config
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
                xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
+        
            <import resource="classpath*:crafter/engine/mode/multi-tenant/simple/services-context.xml"/>
-
+        
         </beans>
 
 |
@@ -65,9 +66,9 @@ To enable this mode you need to change the following :ref:`Crafter Engine config
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
                xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
+        
            <import resource="classpath*:crafter/engine/mode/multi-tenant/simple/rendering-context.xml"/>
-
+        
         </beans>
 
 |
@@ -78,7 +79,7 @@ current site from the URL.
 
 
   ``HOST:PORT/?crafterSite=site1`` will render the home page for ``site1``
-
+  
   ``HOST:PORT/?crafterSite=site2`` will render the home page for ``site2``
 
 |
@@ -93,3 +94,7 @@ together with CDNs that can send headers, like AWS CloudFront
     is set in the cookie for the next requests.
 
 |
+
+  .. note::
+
+     .. include:: /includes/project-identification-precedence.rst

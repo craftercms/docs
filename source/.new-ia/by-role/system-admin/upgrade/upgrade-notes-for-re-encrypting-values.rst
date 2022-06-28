@@ -97,7 +97,7 @@ Manually Re-encrypt Values
 
       |
 
-   For the remote repository credentials, you could also just remove the existing remotes, then add them again to avoid manually changing the database.  See :ref:`newIa-remote-repositories` for more information on adding/removing remotes in Studio
+   For the remote repository credentials, you could also just remove the existing remotes, then add them again to avoid manually changing the database.  See :ref:`newIa-project-tools-git` for more information on adding/removing remotes in Studio
 
 
 

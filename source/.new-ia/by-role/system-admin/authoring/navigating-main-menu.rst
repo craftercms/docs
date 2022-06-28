@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Navigating the Main Menu
 
@@ -30,17 +31,17 @@ The configuration files for the Main Menu is located in ``CRAFTER_HOME/data/repo
 * :ref:`global-permission-mappings-config.xml <newIa-global-permission-mappings-config>` lets you configure the permissions to a role globally for the entire application
 * :ref:`global-role-mappings-config.xml <newIa-global-role-mappings-config>` lets you configure the mapping between the group and the role
 
-The tools available in the Main Menu is configured similar to how the Site Config Sidebar is configured :ref:`here<newIa-site-config-tools>` using the :ref:`global menu config <global-menu-config>` configuration file mentioned above.
+The tools available in the Main Menu is configured similar to how the Project Tools Sidebar is configured :ref:`here <newIa-project-tools-configuration>` using the :ref:`global menu config <newIa-global-menu-config>` configuration file mentioned above.
 
-.. _newIa-main-menu-tool-sites:
+.. _newIa-main-menu-tool-projects:
 
------
-Sites
------
-``Sites`` contains a list of all the sites the logged in user has access to. The section :ref:`newIa-content-authors-navigating-studio` in ``Content Authors`` contains descriptions on some of the actions that can be performed from the Sites screen.
+--------
+Projects
+--------
+``Projects`` contains a list of all the projects the logged in user has access to. The section :ref:`newIa-author-screens` in ``Content Authors`` contains descriptions on some of the actions that can be performed from the Projects screen.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-sites.png
-    :alt: System Administrator - Navigation Menu Sites
+    :alt: System Administrator - Navigation Menu Projects
     :align: center
     :width: 85%
 
@@ -93,7 +94,7 @@ Cluster
 -----
 Audit
 -----
-Audit logs displays the date, time, user and action performed to content in all the sites available as well as actions performed in Studio such as logins/logouts, user removal, group addition, etc.
+Audit logs displays the date, time, user and action performed to content in all the projects available as well as actions performed in Studio such as logins/logouts, user removal, group addition, etc.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-audit.jpg
     :alt: System Administrator - Navigation Menu Audit
@@ -139,7 +140,7 @@ The ``Log Console`` allows the user to view messages depending on what log level
 
 :ref:`newIa-override-logging-levels` contains more information on how to track Java packages with the corresponding log levels desired.
 
-The ``Log Console`` here in the Main Menu is similar to a site ``Log Console`` described :ref:`here<newIa-studio-log-console>`.  The difference is the ``Log Console`` from the Main Menu can display logs for all the sites inside Studio, not just one site.
+The ``Log Console`` here in the Main Menu is similar to a project ``Log Console`` described :ref:`here <newIa-studio-log-console>`.  The difference is the ``Log Console`` from the Main Menu can display logs for all the projects inside Studio, not just one project.
 
 .. _newIa-main-menu-tool-global-config:
 

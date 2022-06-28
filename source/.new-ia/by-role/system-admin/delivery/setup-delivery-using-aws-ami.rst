@@ -1,4 +1,5 @@
 :is-up-to-date: False
+:last-updated: 4.0.0
 
 .. index:: Setup CrafterCMS Delivery Using Crafter's AWS AMI
 
@@ -100,9 +101,9 @@ In order to complete step 3, you must have a CrafterCMS authoring instance runni
 
 
 After your authoring instance is set up and configured, follow this guide to create a simple site.
-:ref:`newIa-your_first_website`
+:ref:`newIa-your-first-editorial-project`
 
-Crafter will automatically "publish" the initial state of the site for youfor you which will give you the prerequisites for the rest of step 3.
+Crafter will automatically "publish" the initial state of the site for you for you which will give you the prerequisites for the rest of step 3.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 3.2: Establish SSH-based communication between the delivery instance and the authoring instance
@@ -324,7 +325,7 @@ This configuration and other advanced topology topics such as load balancing are
 -------------------------------------------------------------------------------
 Step 6: Make an update in authoring and see it published on the delivery server
 -------------------------------------------------------------------------------
-To further test publishing, log in to Crafter Studio for the given site, make an edit and then approve the edit for publish. In a few moments you will see your updates in the web browser on the delivery server.  You can find step by step instructions on editing and publishing here: :ref:`newIa-your_first_website`
+To further test publishing, log in to Crafter Studio for the given site, make an edit and then approve the edit for publish. In a few moments you will see your updates in the web browser on the delivery server.  You can find step by step instructions on editing and publishing here: :ref:`newIa-your-first-editorial-project`
 
 .. image:: /_static/images/ami/craftercms-approve-publish.png
     :width: 100 %

@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -14,9 +15,11 @@ Static Key Value Pairs Data Source
 ==================================
 
 .. image:: /_static/images/form-sources/form-source-kvp.png
-    :width: 50%
+    :width: 30%
     :alt: Source Control Static Key Value Pairs
     :align: center
+
+|
 
 -------------
 Configuration
@@ -26,6 +29,8 @@ Configuration
     :width: 50%
     :alt: Form Static Key Value Pairs
     :align: center
+
+|
 
 .. include:: /includes/form-sources/form-source-field-basics.rst
 

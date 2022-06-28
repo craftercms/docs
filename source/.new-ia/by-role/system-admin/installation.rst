@@ -28,9 +28,9 @@ Development Environment
 
 The quick start guide provides instructions on setting up a development environment by installing Crafter CMS from the prebuilt binaries
 
-* :ref:`installing-crafter-cms-from-prebuilt-binaries`
+* :ref:`newIa-getting-started`
 
-To learn more about the developer workflow, see :ref:`devOps-workflow`.
+To learn more about the developer workflow, see :ref:`newIa-devOps-workflow`.
 
 ----------------------
 Production Environment

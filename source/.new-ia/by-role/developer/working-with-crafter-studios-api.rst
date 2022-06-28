@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Working with Crafter Studio's APIs
 
@@ -16,7 +17,7 @@ In this section, we'll show the basics of interacting with Crafter Studio APIs b
 
 We’ll use CURL, a ubiquitous Linux command tool as our client.
 
-You can find the full Crafter Studio API for CrafterCMS :ref:`here<newIa-crafter-studio-api>`
+You can find the full Crafter Studio API for CrafterCMS :ref:`here<crafter-studio-api>`
 
 Let's begin:
 
@@ -27,6 +28,10 @@ Let's begin:
    .. _newIa-access-tokens:
 
    **JWT Authentication**
+
+   .. version_tag::
+      :label: Since
+      :version: 4.0.0
 
    JWT is a widely adopted standard for secure authentication and is the preferred way.
    HTTP Basic is simple but not as secure as JWT and for that reason it is disabled by default. However, it can be very
@@ -110,7 +115,7 @@ Let's begin:
 
    |
 
-   .. _http-basic-authentication:
+   .. _newIa-http-basic-authentication:
 
    **HTTP Basic Authentication**
 
@@ -140,7 +145,7 @@ Let's begin:
 
 #. **Get a list of projects under management**
 
-   We'll get a list of es the user is authorized to work with
+   We'll get a list of sites the user is authorized to work with
    :ref:`newIa-crafter-studio-api-site-get-per-user`
 
    .. code-block:: bash
@@ -149,7 +154,7 @@ Let's begin:
 
    |
 
-   After issuing the CURL command you will get a response that contains projects your user has access to:
+   After issuing the CURL command you will get a response that contains sites your user has access to:
 
    .. code-block:: json
 
@@ -175,4 +180,4 @@ Let's begin:
    We are passing in content as the POST body.  The content is in XML format.  In CrafterCMS, content objects are stored as simple XML documents.
    We are passing a number of parameters that tell CrafterCMS where and how to store the content in the repository
 
-Using the above examples as a guide, we can now interact with any Crafter Studio API found :ref:`here<newIa-crafter-studio-api>`
+Using the above examples as a guide, we can now interact with any Crafter Studio API found :ref:`here <newIa-crafter-studio-api>`

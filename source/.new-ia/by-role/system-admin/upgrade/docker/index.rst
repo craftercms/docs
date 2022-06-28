@@ -41,7 +41,7 @@ Upgrading Kubernetes Deployments
 These upgrade instructions are for both Authoring and Delivery deployments:
 
 #. Update the Crafter CMS image versions in your deployment files. 
-#. Check the release notes of the new Crafter CMS version (:ref:`release-notes`) for upgrades to Elasticsearch.
+#. Check the release notes of the new Crafter CMS version (:ref:`newIa-release-notes`) for upgrades to Elasticsearch.
    If there has been an upgrade, then also update the Elasticsearch image versions in your deployment files.
 #. Check the configuration file changes between the previous version and the new version.
    If you have overwritten any of them in a ``ConfigMap`` or ``Secret``, we recommend you do the following:
@@ -53,7 +53,7 @@ These upgrade instructions are for both Authoring and Delivery deployments:
       upgrading to is 3.1.5, then copy your configuration overrides to the 3.1.5 version of the file).
    #. Replace the file in the ``ConfigMap`` or ``Secret`` with the new configuration file with your changes.
 
-#. Check the :ref:`release-notes` for any other additional tasks you need to perform.
+#. Check the :ref:`newIa-release-notes` for any other additional tasks you need to perform.
 #. Apply the updated deployment files (``kubectl apply``) so the containers are restarted and the configuration 
    changes detected.  
 #. Monitor the Kubernetes logs for any upgrade errors.

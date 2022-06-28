@@ -90,87 +90,87 @@
 || |ctlFormSection|      ||  Create a new section in the form, this is to help the content       |
 ||                       ||  authors by segmenting a form into sections of similar concern.      |
 ||                       ||                                                                      |
-||                       ||  Details are in the :ref:`form-section` page.                        |
+||                       ||  Details are in the :ref:`newIa-form-section` page.                  |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlRepeatGrp|        ||  Repeating groups are used when the form has one or several controls |
 ||                       ||  that repeat to capture the same data as records. For example: a     |
 ||                       ||  list of images in a carousel, or a list of widgets on a page.       |
 ||                       ||                                                                      |
-||                       ||  Details are in the :ref:`form-repeating-group` page.                |
+||                       ||  Details are in the :ref:`newIa-form-repeating-group` page.          |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlInput|            ||  A simple textual input line.                                        |
 ||                       ||                                                                      |
-||                       ||  Details are in the :ref:`form-input` page.                          |
+||                       ||  Details are in the :ref:`newIa-form-input` page.                    |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlNumericInput|     ||  A simple numeric input line.                                        |
 ||                       ||                                                                      |
-||                       ||  Details are in the :ref:`form-numeric-input` page.                  |
+||                       ||  Details are in the :ref:`newIa-form-numeric-input` page.            |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlTxtArea|          ||  A simple block of plain text.                                       |
 ||                       ||                                                                      |
-||                       ||  Details are in the :ref:`form-text-area` page.                      |
+||                       ||  Details are in the :ref:`newIa-form-text-area` page.                |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlRTE|              ||  A block of HTML.                                                    |
 ||                       ||                                                                      |
-||                       ||  Details are in the :ref:`form-rte` page.                            |
+||                       ||  Details are in the :ref:`newIa-form-rte` page.                      |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlDropdown|         ||  Dropdown list of items to pick from.                                |
 ||                       ||                                                                      |
-||                       ||  Details are in the :ref:`form-dropdown` page.                       |
+||                       ||  Details are in the :ref:`newIa-form-dropdown` page.                 |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlDtTime|           ||  Date and Time field with a picker.                                  |
 ||                       ||                                                                      |
-||                       ||  Details are in the :ref:`form-date-time` page.                      |
+||                       ||  Details are in the :ref:`newIa-form-date-time` page.                |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlTime|             ||  Time field with a picker.                                           |
 ||                       ||                                                                      |
-||                       ||  Details are in the :ref:`form-time` page.                           |
+||                       ||  Details are in the :ref:`newIa-form-time` page.                     |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlCheckBox|         ||  True/False checkbox.                                                |
 ||                       ||                                                                      |
-||                       ||  Details are in the :ref:`form-checkbox` page.                       |
+||                       ||  Details are in the :ref:`newIa-form-checkbox` page.                 |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlGrpChkBox|        || Several checkboxes (true/false).                                     |
 ||                       ||                                                                      |
-||                       || Details are in the :ref:`form-grouped-checkboxes` page.              |
+||                       || Details are in the :ref:`newIa-form-grouped-checkboxes` page.        |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlItemSel|          || Item selector from a Data Source                                     |
 ||                       ||                                                                      |
-||                       || Details are in the :ref:`form-item-selector` page.                   |
+||                       || Details are in the :ref:`newIa-form-item-selector` page.             |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlImage|            ||  Image selector from a Data Source.                                  |
 ||                       ||                                                                      |
-||                       ||  Details are in the :ref:`form-image` page.                          |
+||                       ||  Details are in the :ref:`newIa-form-image` page.                    |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlVideo|            ||  Video selector from a Data Source.                                  |
 ||                       ||                                                                      |
-||                       ||  Details are in the :ref:`form-video` page.                          |
+||                       ||  Details are in the :ref:`newIa-form-video` page.                    |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlTranscodedVideo|  ||  Transcoded Video selector from Video Transcoding Data Source.       |
 ||                       ||                                                                      |
-||                       ||  Details are in the :ref:`form-transcoded-video` page.               |
+||                       ||  Details are in the :ref:`newIa-form-transcoded-video` page.         |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlLabel|            || Displays text                                                        |
 ||                       ||                                                                      |
-||                       || Details are in the :ref:`form-label` page.                           |
+||                       || Details are in the :ref:`newIa-form-label` page.                     |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlPageOrder|        || Allows changing the page order                                       |
 ||                       ||                                                                      |
-||                       || Details are in the :ref:`form-page-order` page.                      |
+||                       || Details are in the :ref:`newIa-form-page-order` page.                |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlFileName|         || A simple text filename                                               |
 ||                       ||                                                                      |
-||                       || Details are in the :ref:`form-filename` page.                        |
+||                       || Details are in the :ref:`newIa-form-filename` page.                  |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlAutoFn|           ||                                                                      |
 ||                       ||                                                                      |
-||                       || Details are in the :ref:`form-auto-filename` page.                   |
+||                       || Details are in the :ref:`newIa-form-auto-filename` page.             |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlInternalName|     ||                                                                      |
 ||                       ||                                                                      |
-||                       || Details are in the :ref:`form-internal-name` page.                   |
+||                       || Details are in the :ref:`newIa-form-internal-name` page.             |
 +------------------------+-----------------------------------------------------------------------+
 || |ctlLocaleSel|        ||                                                                      |
 ||                       ||                                                                      |
-||                       || Details are in the :ref:`form-locale-selector` page.                 |
+||                       || Details are in the :ref:`newIa-form-locale-selector` page.           |
 +------------------------+-----------------------------------------------------------------------+

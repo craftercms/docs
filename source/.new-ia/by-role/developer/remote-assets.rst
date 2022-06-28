@@ -14,9 +14,9 @@ accessed through WebDAV, CMIS. etc.
 
 Various data sources are available to help manage/select assets hosted outside of CrafterCMS in your
 project.  The ``Developer`` section contains some examples on how to store assets remotely, such as
-:ref:`use-s3-to-store-assets` and :ref:`use-box-to-store-assets`.  The ``Site Administrators`` section
+:ref:`newIa-use-s3-to-store-assets` and :ref:`newIa-use-box-to-store-assets`.  The ``Site Administrators`` section
 contains information on how to configure CrafterCMS to access services used for storing assets remotely
-here: :ref:`studio-configuration`.
+here: :ref:`newIa-studio-configuration`.
 
 Browser access to remote assets on your site is provided by Crafter Engine's remote assets controller
 via the URL pattern ``/remote-assets/STORE-TYPE/PROFILE-ID/PATH-TO-ASSET``, where:

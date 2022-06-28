@@ -1,4 +1,5 @@
 :is-up-to-date: False
+:last-updated: 4.0.0
 
 .. 3.2.2.1.1 When to model as a page vs component
    3.2.2.2 Shared components vs embedded components
@@ -24,7 +25,7 @@ Content Type Management in Crafter Studio is located in the |projectTools|.
    :alt: Project Tools Link
    :align: center
 
-Content Types are limited to two core types: Pages and Components. Both are made up of three ingredients:
+Content Types are limited to two core types: **Pages** and **Components**. Both are made up of three ingredients:
 
 #. Model: The content pieces that will be captured from the content authors for the page or component
 #. View: The view template that will render the content, typically to HTML markup
@@ -312,7 +313,7 @@ We're going to enable cascade on delete for articles (**Article** content type) 
 
 To see cascade on delete in action, let's create a new article (**Article** content type) under one of the article folders in the Sidebar.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.
 
-.. figure:: /_static/images/content-model/new-article-image-uploaded.jpg
+.. figure:: /_static/images/content-model/new-article-image-uploaded.png
     :alt: New article with image uploaded activity list in Dashboard
     :align: center
 
@@ -472,7 +473,7 @@ Now let's take a look at what happens when we delete content with item specific 
 
 Open the **Dashboard** and notice the items that are deleted.  We deleted an article, and since the image is located in a path matching the regex pattern for item specific dependencies, the image is deleted along with the article.
 
-.. figure:: /_static/images/content-model/delete-article-sidebar.jpg
+.. figure:: /_static/images/content-model/delete-article-sidebar.png
     :alt: Sidebar and Dashboard showing items that were deleted when the article was deleted
     :align: center
 

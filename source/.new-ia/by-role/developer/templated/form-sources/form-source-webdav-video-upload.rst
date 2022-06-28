@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -14,9 +15,11 @@ WebDAV Video Upload Data Source
 ===============================
 
 .. image:: /_static/images/form-sources/form-source-webdav-video-upload-repo.png
-    :width: 50%
+    :width: 30%
     :alt: Source Control File Upload WebDAV
     :align: center
+
+|
 
 -------------
 Configuration
@@ -26,6 +29,8 @@ Configuration
     :width: 50%
     :alt: Source Control File Upload WebDAV
     :align: center
+
+|
 
 .. include:: /includes/form-sources/form-source-field-basics.rst
 

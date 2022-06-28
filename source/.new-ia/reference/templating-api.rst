@@ -70,7 +70,7 @@ Rendering Navigation
 Crafter Engine provides the option of rendering automatically the navigation for you, just by using the macro
 ``navigation``
 
-See :ref:`navigation` for more information on the macro
+See :ref:`newIa-navigation` for more information on the macro
 
 .. _newIa-templating-rendering-breadcrumbs:
 
@@ -81,7 +81,7 @@ Rendering Breadcrumbs
 Crafter also offers a ``renderBreadcrumb`` macro to easily generate a dynamic list with all the
 parent pages of a specific url.
 
-See :ref:`breadcrumb` for more information on the macro
+See :ref:`newIa-breadcrumb` for more information on the macro
 
 ..
   Todo: Review the section below if still applicable
@@ -307,7 +307,7 @@ templates then you should consider creating a Groovy class instead:
 
 .. note::
 
-  All beans defined in the :ref:`Engine Site Application Context <engine-site-configuration-spring-configuration>`
+  All beans defined in the :ref:`Engine Site Application Context <newIa-engine-site-configuration-spring-configuration>`
   file will be available in templates.
 
-  For more information on Crafter Engine Site configuration files, see :ref:`engine-site-configuration-files`
+  For more information on Crafter Engine Site configuration files, see :ref:`newIa-engine-site-configuration-files`

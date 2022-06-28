@@ -14,7 +14,7 @@ A redirect sends users from one URL to another URL.  CrafterCMS provides a coupl
 Redirect using the Tuckey Filter
 --------------------------------
 
-CrafterCMS comes with tuckey filter, a Java Web Filter which allows you to rewrite URLs, like Apache's mod_rewrite, for setting up rewrite rules.  For more details on how to use the filter in CrafterCMS for setting up rewrite rules, please see: :ref:`configure-url-rewrite`
+CrafterCMS comes with tuckey filter, a Java Web Filter which allows you to rewrite URLs, like Apache's mod_rewrite, for setting up rewrite rules.  For more details on how to use the filter in CrafterCMS for setting up rewrite rules, please see: :ref:`newIa-configure-url-rewrite`
 
 -------------------------------------------
 Redirect using a content type in CrafterCMS

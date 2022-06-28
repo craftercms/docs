@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -42,4 +43,4 @@ Configuration
 || Related Data Sources  || * |mediaConvertTranscode|                                            |
 +------------------------+-----------------------------------------------------------------------+
 
-.. |mediaConvertTranscode| replace:: :ref:`Video Transcoding From S3 Repository <form-source-mediaconvert-transcode>`
+.. |mediaConvertTranscode| replace:: :ref:`Video Transcoding From S3 Repository <newIa-form-source-mediaconvert-transcode>`

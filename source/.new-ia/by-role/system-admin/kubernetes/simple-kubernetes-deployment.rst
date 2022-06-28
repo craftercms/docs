@@ -1,4 +1,5 @@
-:is-up-to-date: True
+:is-up-to-date: False
+:last-updated: 4.0.1
 
 .. _newIa-simple-kubernetes-deployment:
 
@@ -7,8 +8,15 @@ Deploying a Simple CrafterCMS installation in Kubernetes
 ========================================================
 
 This tutorial shows you how to deploy a simple CrafterCMS installation in a Kubernetes cluster. The installation
-consists of one Authoring Pod, one Delivery Pod and one Elasticsearch Pod, and it's mainly intended for development 
+consists of one Authoring Pod, one Delivery Pod and one Elasticsearch Pod, and it's mainly intended for development
 and testing, not for production.
+
+.. TODO: Revisit and update screens and text once https://github.com/craftercms/craftercms/issues/5285 is done
+
+|
+
+   .. note::
+      This section needs an update once the kubernetes deployment files are updated `here <https://github.com/craftercms/craftercms/issues/5285>`__
 
 --------------
 Pre-requisites
@@ -29,23 +37,10 @@ Create the SSH Keys Secret
 The Delivery Pod will need SSH access to the Authoring Pod to pull the site content. For this, you need to generate 
 an SSH public/private key pair for authentication and provide the key pair as a Kubernetes Secret to the Pods:
 
-#. Run ``ssh-keygen -m PEM -b 4096 -t rsa -C "your_email@example.com"`` to generate the key pair. When being asked for the
-   filename of the key, just enter ``id_rsa`` (so that the keys are saved in the current folder). Do not provide a 
+#. Run ``ssh-keygen`` to generate the key pair (e.g. ``ssh-keygen -t ecdsa -b 521 -C "your_email@example.com"``).
+   When asked for the filename of the key, just enter a filename e.g. ``id_rsa``, ``id_dsa``, ``id_ecdsa`` or ``id_ed25519`` depending
+   on the type of key selected (so that the keys are saved in the current folder). Do not provide a
    passphrase.
-
-      .. note::
-         Crafter requires the key to be ``RSA`` and does not support keys generated using an algorithm other than ``RSA``.  The Jsch library that Jgit uses only supports ``RSA`` and does not support other keys such as OpenSSH.  Make sure when you generate the key to specify the type as ``rsa``:
-
-         .. code-block:: sh
-
-            ssh-keygen -m PEM -b 4096 -t rsa -C "your_email@example.com"
-
-         |
-
-         Check that the file starts with the following header: ``-----BEGIN RSA PRIVATE KEY-----`` to verify that the key is using ``RSA``.
-         Crafter also currently doesn't support using a passphrase with SSH keys.  Remember to **NOT** use a passphrase when creating your keys.
-
-
 #. Create a copy of the public key and rename it to ``authorized_keys``: ``cp id_rsa.pub authorized_keys``.
 #. In the same folder, create a ``config`` file with the following, to disable ``StrictHostKeyChecking`` for automatic 
    connection to the Authoring SSH server:
@@ -67,22 +62,61 @@ an SSH public/private key pair for authentication and provide the key pair as a 
 Create the Deployment files
 ---------------------------
 
-Copy the following Kubernetes deployment configuration files somewhere in your machine:
+Copy the following Kubernetes deployment configuration files somewhere in your machine (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "elasticsearch-deployment.yaml"</a></summary>
 
 .. literalinclude:: /_static/code/kubernetes/simple/elasticsearch-deployment.yaml
    :language: yaml
    :caption: elasticsearch-deployment.yaml
    :linenos:
 
+.. raw:: html
+
+   </details>
+
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "authoring-deployment.yaml"</a></summary>
+
 .. literalinclude:: /_static/code/kubernetes/simple/authoring-deployment.yaml
    :language: yaml
    :caption: authoring-deployment.yaml
    :linenos:
 
+.. raw:: html
+
+   </details>
+
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "delivery-deployment.yaml"</a></summary>
+
 .. literalinclude:: /_static/code/kubernetes/simple/delivery-deployment.yaml
    :language: yaml
    :caption: delivery-deployment.yaml
    :linenos:
+
+.. raw:: html
+
+   </details>
+
+
+.. note::
+   The latest example deployment files for authoring and delivery are available here:
+
+   - `authoring-deployment.yaml <https://github.com/craftercms/kubernetes-deployments/blob/master/authoring/simple/authoring-deployment.yaml>`__
+   - `delivery-deployment.yaml <https://github.com/craftercms/kubernetes-deployments/blob/master/delivery/simple/delivery-deployment.yaml>`__
+
+   Remember to update the Elasticsearch version in the Elasticsearch deployment file to the Elasticsearch version used in the authoring and delivery image files used.
+
 
 --------------------------
 Apply the Deployment Files
@@ -138,7 +172,7 @@ replace the pod name and the site name with the actual values):
    kubectl exec -it DELIVERY_POD_NAME --container deployer -- gosu crafter ./bin/init-site.sh SITE_NAME ssh://authoring-ssh-service/opt/crafter/data/repos/sites/SITE_NAME/published
 
 This command will create the Deployer site target and create the index in Elasticsearch. After a minute or two, the 
-Deployer should have pulled the site content from Authoring (you can check it by gettting the Delivery Deployer log: 
+Deployer should have pulled the site content from Authoring (you can check it by getting the Delivery Deployer log:
 ``kubectl logs -c deployer DELIVERY_POD_NAME``).
 
 Now you can access the site in Delivery:

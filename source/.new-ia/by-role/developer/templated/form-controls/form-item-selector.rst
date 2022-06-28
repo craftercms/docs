@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -47,7 +48,6 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Related Data Sources  || * |sharedContent|                                                    |
 ||                       || * |embeddedContent|                                                  |
-||                       || * |siteComponent|                                                    |
 ||                       || * |fileUploadFromDesktop|                                            |
 ||                       || * |fileFromRepo|                                                     |
 ||                       || * |fileFromCMIS|                                                     |
@@ -58,14 +58,13 @@ Configuration
 ||                       || * |fileUploadToS3|                                                   |
 +------------------------+-----------------------------------------------------------------------+
 
-.. |fileUploadFromDesktop| replace:: :ref:`File Uploaded From Desktop <form-source-file-desktop>`
-.. |fileFromRepo| replace:: :ref:`File from Repository <form-source-file-browse>`
-.. |fileFromCMIS| replace:: :ref:`File from CMIS Repository <form-source-cmis-repo>`
-.. |fileUploadToCMIS| replace:: :ref:`File Uploaded to CMIS Repository <form-source-cmis-upload>`
-.. |fileFromWebDAV| replace:: :ref:`File from WebDAV Repository <form-source-webdav-file-repo>`
-.. |fileUploadToWebDAV| replace:: :ref:`File Uploaded to WebDAV Repository <form-source-webdav-file-upload>`
-.. |fileFromS3| replace:: :ref:`File From S3 Repository <form-source-s3-file-repo>`
-.. |fileUploadToS3| replace:: :ref:`File Uploaded to S3 Repository <form-source-s3-file-upload>`
-.. |sharedContent| replace:: :ref:`Shared Content <form-source-shared-content>`
-.. |embeddedContent| replace:: :ref:`Embedded Content <form-source-embedded-content>`
-.. |siteComponent| replace:: :ref:`Site Component <form-source-site-component>`
+.. |fileUploadFromDesktop| replace:: :ref:`File Uploaded From Desktop <newIa-form-source-file-desktop>`
+.. |fileFromRepo| replace:: :ref:`File from Repository <newIa-form-source-file-browse>`
+.. |fileFromCMIS| replace:: :ref:`File from CMIS Repository <newIa-form-source-cmis-repo>`
+.. |fileUploadToCMIS| replace:: :ref:`File Uploaded to CMIS Repository <newIa-form-source-cmis-upload>`
+.. |fileFromWebDAV| replace:: :ref:`File from WebDAV Repository <newIa-form-source-webdav-file-repo>`
+.. |fileUploadToWebDAV| replace:: :ref:`File Uploaded to WebDAV Repository <newIa-form-source-webdav-file-upload>`
+.. |fileFromS3| replace:: :ref:`File From S3 Repository <newIa-form-source-s3-file-repo>`
+.. |fileUploadToS3| replace:: :ref:`File Uploaded to S3 Repository <newIa-form-source-s3-file-upload>`
+.. |sharedContent| replace:: :ref:`Shared Content <newIa-form-source-shared-content>`
+.. |embeddedContent| replace:: :ref:`Embedded Content <newIa-form-source-embedded-content>`

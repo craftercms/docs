@@ -49,7 +49,7 @@ documentation for a site without the need of any other tool. To access GraphiQL 
 
 To explore the GraphQL schema you can click the ``Docs`` icon on the right side:
 
-.. image:: /_static/images/developer/graphql/graphiql.png
+.. image:: /_static/images/developer/graphql/graphql.png
         :width: 75%
         :alt: GraphiQL
         :align: center
@@ -70,7 +70,7 @@ against the schema in real time.
         :align: center
 
 .. note::
-    If the GraphQL server host name used is not ``localhost``, the ``<graphql-server-url />`` in your proxy configuration file needs to be set to the appropriate url.  For more information on the proxy configuration file, see: :ref:`proxy-configuration`
+    If the GraphQL server host name used is not ``localhost``, the ``<graphql-server-url />`` in your proxy configuration file needs to be set to the appropriate url.  For more information on the proxy configuration file, see: :ref:`newIa-proxy-configuration`
 
 ----------------
 GraphQL Examples

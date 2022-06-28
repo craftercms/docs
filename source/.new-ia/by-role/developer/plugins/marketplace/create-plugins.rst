@@ -12,12 +12,12 @@ Create Plugins for the Crafter Marketplace
 Types of plugins
 ----------------
 
-- ``blueprint``: This type of plugin can be used as a template to create sites, it includes support for parameters
-  to allow dynamic sites that use API keys or passwords for external services. For more information about creating
+- ``blueprint``: This type of plugin can be used as a template to create projects, it includes support for parameters
+  to allow dynamic projects that use API keys or passwords for external services. For more information about creating
   blueprints you can follow this guide: :ref:`newIa-create-a-blueprint`.
 
-- ``site``: This type of plugin can be used to add features to existing sites, it can include authoring and delivery
-  extensions. For more information about creating site plugins you can follow this guide: :ref:`newIa-site-plugin`
+- ``site``: This type of plugin can be used to add features to existing projects, it can include authoring and delivery
+  extensions. For more information about creating project plugins you can follow this guide: :ref:`newIa-project-plugin`
 
 .. _newIa-submit-plugin-to-marketplace:
 

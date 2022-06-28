@@ -11,6 +11,7 @@ This section lists various references/resources to help you build your experienc
 .. toctree::
    :maxdepth: 1
    :titlesonly:
+   :hidden:
 
    projects
    api-reference

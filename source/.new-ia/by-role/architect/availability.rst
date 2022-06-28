@@ -1,4 +1,5 @@
 :is-up-to-date: False
+:since-version: 4.0.0
 
 ============
 Availability
@@ -39,4 +40,4 @@ is based on replicas following the primary with a fronting load-balancer that di
 while the primary node is healthy. Fail-over is automatic with the replica becoming a primary and switching its
 health status so the load-balancer directs traffic to it instead of the defunct primary.
 
-.. todo add a link to the studio clustering docs
+More information on clustering :ref:`here <newIa-clustering>`

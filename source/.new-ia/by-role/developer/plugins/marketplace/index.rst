@@ -29,4 +29,4 @@ CrafterCMS marketplace provides a home for the Crafter community to contribute, 
 
 For more information on the CrafterCMS Marketplace, see https://marketplace.craftercms.org
 
-For more information on developing plugins for the marketplace, see :ref:`here <building-your-own-plugins>`
+For more information on developing plugins for the marketplace, see :ref:`here <newIa-building-your-own-plugins>`

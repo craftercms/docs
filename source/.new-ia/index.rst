@@ -1,8 +1,9 @@
 :is-up-to-date: False
+:last-updated: 4.0.0
 
-==================================
-CrafterCMS |version| Documentation
-==================================
+#########################################
+CrafterCMS |version| Documentation (beta)
+#########################################
 
 .. default-domain:: craftercms
 
@@ -15,9 +16,9 @@ CrafterCMS |version| Documentation
 This documentation introduces key concepts in CrafterCMS |version|, presents the authoring and development environment, and provides operational and administrative considerations and procedures as well as a comprehensive reference section.
 
 
-##################
+==================
 What is CrafterCMS
-##################
+==================
 
 CrafterCMS is a modern content management platform for building digital experience applications including:
 
@@ -32,27 +33,27 @@ Crafter is a dynamic CMS based on Git and supports DevOps processes for code and
 
 CrafterCMS differentiates itself from existing CMSs with its architecture: microservices-based, serverless, elastic and planet-wide scalability. To learn more, see the :ref:`newIa-general-architecture`.
 
-############################
+============================
 When/where to use CrafterCMS
-############################
+============================
 
 .. todo: Fill in
 
-###################
+===================
 Who uses CrafterCMS
-###################
+===================
 
 .. todo: Fill in
 
-###
+===
 FAQ
-###
+===
 
 --------------------------------
 What do I need to run CrafterCMS
 --------------------------------
 
-Follow these instructions to run CrafterCMS and to download and install Crafter on your machine or server: :ref:`Quick Start Guide <getting-started>`
+Follow these instructions to run CrafterCMS and to download and install Crafter on your machine or server: :ref:`Quick Start Guide <newIa-getting-started>`
 
 -------------------------------------------------------------------------------
 Does CrafterCMS require Git?  My company uses XYZ source code control system...
@@ -132,9 +133,10 @@ What's CrafterCMS's licensing terms?
 * Customers who purchase CrafterCMS's support subscription receive a commercial license that alleviates them from the terms of the open source license.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :hidden:
 
+   getting-started/index
    by-role/architect/index
    by-role/author/index
    by-role/developer/index
@@ -146,4 +148,3 @@ What's CrafterCMS's licensing terms?
    roadmap/index
    support/index
    reference/index
-   getting-started/index

@@ -16,11 +16,11 @@ for your application to retrieve said content), and how to access content items 
 
 **Define Content**
 
-To get started with content modeling, read: :ref:`content-modeling`.
+To get started with content modeling, read: :ref:`newIa-content-modeling`.
 
 **Retrieve Content**
 
-To get started with content access/APIs, read: :ref:`crafter-engine`.
+To get started with content access/APIs, read: :ref:`newIa-crafter-engine`.
 
 In depth concepts and guides follow.
 

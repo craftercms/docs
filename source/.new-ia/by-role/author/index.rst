@@ -1,4 +1,5 @@
 :is-up-to-date: False
+:last-updated: 4.0.0
 
 .. _newIa-author:
 
@@ -15,7 +16,7 @@ Authors creates, edits and submits content for experiences.  CrafterCMS's Crafte
 authoring and management system for developing and optimizing the content and dynamic project visitor experience for any
 and all of your Web properties.
 
-The :ref:`site administrator <newIa-site-admin>` and the :ref:`developer <newIa-developer>` sets things up before an
+The :ref:`site administrator <newIa-site-admin>` and the :ref:`developer <newIa-developers>` sets things up before an
 author begins contributing content for the web experience being built. This section contains information on the
 authoring environment and how authors manages content.
 
@@ -44,6 +45,9 @@ authoring environment and how authors manages content.
 -----------------
 Authoring Screens
 -----------------
+
+Here we'll take a look at various screens in Crafter Studio an author may encounter.
+
 .. toctree::
    :maxdepth: 2
 
@@ -53,12 +57,7 @@ Authoring Screens
 Authoring Tools
 ---------------
 
-
---------
-Examples
---------
-
-In this section we'll take a closer look on how authors uses the tools available in Crafter Studio for creating content.
+Here we'll take a look at the tools provided by Crafter Studio for creating/managing content in experiences.
 
 .. toctree::
    :maxdepth: 2
@@ -69,3 +68,17 @@ In this section we'll take a closer look on how authors uses the tools available
    authors-targeting
    authors-workflows
    authors-xb
+
+--------
+Examples
+--------
+
+Here we'll take a look at examples of authors at work.
+
+.. todo: add examples
+
+.. toctree::
+   :maxdepth: 2
+
+   authors-pages
+

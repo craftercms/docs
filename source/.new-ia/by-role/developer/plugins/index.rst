@@ -60,7 +60,7 @@ use case or set of use cases.
 |
 |
 
-.. _building-your-own-plugins:
+.. _newIa-building-your-own-plugins:
 
 -------------------------
 Building Your Own Plugins
@@ -71,6 +71,6 @@ Building Your Own Plugins
    :titlesonly:
 
    build-your-own/blueprint
-   build-your-own/site-plugins
+   build-your-own/project-plugins
 
 

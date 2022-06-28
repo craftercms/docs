@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 :orphan:
 
@@ -18,6 +19,8 @@ Video from Repository Data Source
     :alt: Source Control Video From Repository
     :align: center
 
+|
+
 -------------
 Configuration
 -------------
@@ -26,6 +29,8 @@ Configuration
     :width: 50%
     :alt: Source Control Video From Repository Configuration
     :align: center
+
+|
 
 .. include:: /includes/form-sources/form-source-field-basics.rst
 

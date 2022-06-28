@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Delivery Environment Performance Tuning
 
@@ -236,4 +237,4 @@ Installations are pre-configured with settings that assume an average/smaller si
 Securing your Crafter CMS Install
 ---------------------------------
 
-Crafter CMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`securing-your-crafter-cms-install`
+Crafter CMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`newIa-securing-your-crafter-cms-install`

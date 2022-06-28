@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _newIa-working-with-dates-in-freemarker:
 
@@ -19,7 +20,7 @@ First, let's set the time zone in Crafter Engine.  From the **Sidebar**, click o
         <timeZone>America/Los_Angeles</timeZone>
     </site>
 
-We can now use the time zone we specified in the Engine Project Configuration file.  To access the time zone from the configuration, we use the freemarker variable ``siteTools`` provided by Crafter Engine to templates.  For more information on other variables available in the template, please see :ref:`templating-api`
+We can now use the time zone we specified in the Engine Project Configuration file.  To access the time zone from the configuration, we use the freemarker variable ``siteTools`` provided by Crafter Engine to templates.  For more information on other variables available in the template, please see :ref:`newIa-templating-api`
 
 We'll now edit the ``article.ftl`` template file, to display the date/time the article was created.
 

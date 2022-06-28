@@ -6,7 +6,7 @@
    14.4.2 Site Example (P)
    14.4.2.1 Editorial
 
-.. _newIa-your-first-editorial-website:
+.. _newIa-your-first-editorial-project:
 
 ==============================
 Your First Project (templated)
@@ -103,7 +103,7 @@ We'll be adding a new article to the project.  To add a new article (or a new pa
 
 We'll then select the page template we want.  Since we are adding a new article to the project, we will be selecting the template **Article**
 
-.. image:: /_static/images/first-project/first-project-select-page-template.png
+.. image:: /_static/images/first-project/first-project-select-page-template.jpg
    :width: 80 %
    :align: center
    :alt: Your First Website - Select Page Template
@@ -306,7 +306,7 @@ Your project is not yet published after creating the project from the Website_Ed
 
    You will then be prompted whether you want to publish the page now (**Now**), or publish the page at a later date and time (**Later**).
 
-.. image:: /_static/images/first-project/first-project-publish-option.jpg
+.. image:: /_static/images/first-project/first-project-publish-option.png
    :width: 100 %
    :align: center
    :alt: Your First Website - Publish Options

@@ -1,6 +1,7 @@
 :orphan:
 
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. _newIa-craftercms-plugin-yaml-file:
 
@@ -9,7 +10,7 @@ CrafterCMS Plugin Descriptor
 ----------------------------
 
 The ``craftercms-plugin.yaml`` file contains information for use in CrafterCMS.  We'll take a look at a file used for
-a blueprint and for a site plugin.
+a blueprint and for a project plugin.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Blueprint Descriptor File
@@ -67,39 +68,37 @@ Here's a sample taken from the  ``craftercms-plugin.yaml`` for the Empty bluepri
 where the following fields are required:
 
 - ``descriptorVersion`` - The version of the format for this file which is currently 2
-- ``plugin.type`` - ``blueprint`` or ``site`` depending on the type of plugin you're building
+- ``plugin.type`` - ``blueprint`` or ``site`` depending on the type of plugin you're building.
+  Remember to set the value to ``blueprint`` for blueprints and ``site`` for project plugins
 - ``plugin.id`` - a unique Id that is meaningful/recognizable to people who will be using the blueprint/plugin
 - ``plugin.name`` - blueprint/plugin name (For our blueprint example, it is the blueprint name shown in the
   **Choose Blueprint** screen of **Create Project**)
-- ``plugin.version`` - a version number for the blueprint/site plugin
+- ``plugin.version`` - a version number for the blueprint/project plugin
 - ``plugin.crafterCmsVersions`` - CrafterCMS versions that the plugin is compatible with (look in the :ref:`newIa-release-notes`
   section for the versions available), and you'll need to keep this up to date
 
 |
 |
 
-For ``plugin.media.screenshots``, the url ``../.crafter/screenshots/default.png`` is the default
-path for CrafterCMS to look for a default representative image of a plugin or blueprint.
-For more information on adding a default representative image for your blueprint
-see :ref:`newIa-adding-default-image-for-bp` and :ref:`newIa-site-plugins-create-your-plugin` for site plugins.
+For ``plugin.media.screenshots``, the url ``../.crafter/screenshots/default.png`` is the default path for CrafterCMS to look for a default representative image of a plugin or blueprint.  For more information on adding a default representative image for your blueprint see :ref:`newIa-adding-default-image-for-bp` and :ref:`newIa-project-plugins-create-your-plugin` for project plugins.
 
 .. note::
 
   For the images to be used for the ``screenshots`` in the ``craftercms-plugin.yaml`` file, we recommend
   using images with approximately a ``4:3`` aspect ratio (width to height), such as an image sized at 1200x800
 
-.. _newIa-site-plugin-descriptor-file:
+.. _newIa-project-plugin-descriptor-file:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Site Plugin Descriptor File
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Project Plugin Descriptor File
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-CrafterCMS supports automatically wiring your site plugin to the corresponding configuration file in Studio during
-your site plugin installation.
+CrafterCMS supports automatically wiring your project plugin to the corresponding configuration
+file in Studio during your project plugin installation.
 
-To setup a site plugin to be automatically wired in the corresponding configuration file in Studio (for example, a
-form control, will be wired to the Project Config Tools Configuration file) during the installation, add the following
-to your ``craftercms-plugin.yaml`` descriptor file
+To setup a project plugin to be automatically wired in the corresponding configuration file in
+Studio (for example, a form control, will be wired to the Project Config Tools Configuration file)
+during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
 
 .. code-block:: yaml
    :linenos:
@@ -132,17 +131,14 @@ to your ``craftercms-plugin.yaml`` descriptor file
 
 where:
 
-- ``installation.type`` is the type of site plugin for auto-wiring in Studio.
+- ``installation.type`` is the type of project plugin for auto-wiring in Studio.
   Available values are **form-control**, **form-datasource**, **preview-app**, **site-filter** and **site-context**
 - ``installation.parentXpath`` is an XPath selector for the element where the plugin will be added,
   required when installation-type is *preview-app*
-- ``installation.elementXpath`` is an XPath selector to check if the plugin is already present
-  in the configuration and used to remove the config when the plugin is uninstalled
-- ``installation.element.name`` is the element name to be wired in your project configuration file
-  so the plugin will show up in Studio
-  Available values are **control** (for *form-control* installation type), **datasource**
-  (for *form-datasource* installation type) and for *preview-app* installation type, the start of
-  the section the plugin needs to be inserted in, e.g. *configuration*, etc.
+- ``installation.elementXpath`` is an XPath selector to check if the plugin is already present in the configuration and used to remove the config when the plugin is uninstalled
+- ``installation.element.name`` is the element name to be wired in your project configuration file so the plugin will
+  show up in Studio
+  Available values are **control** (for *form-control* installation type), **datasource** (for *form-datasource* installation type) and for *preview-app* installation type, the start of the section the plugin needs to be inserted in, e.g. *configuration*, etc.
 - ``installation.element.children`` contains any number of **name** and **children** describing your plugin, such
   as the icon to be used by your plugin if applicable, or the plugin location, where:
 
@@ -154,7 +150,7 @@ where:
 Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descriptor.
 
 .. code-block:: yaml
-   :caption: *Example craftercms-plugin.yaml file for a form-control site plugin*
+   :caption: *Example craftercms-plugin.yaml file for a form-control project plugin*
    :linenos:
    :emphasize-lines: 42-60
 
@@ -167,17 +163,17 @@ Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descripto
    plugin:
      type: site
      id: org.craftercms.plugin.control
-     name: My Form Control Site Plugin Example
+     name: My Form Control Project Plugin Example
      tags:
        - test
      version:
        major: 3
        minor: 0
        patch: 0
-     description: My simple form control site plugin
+     description: My simple form control project plugin
      documentation: "https://raw.githubusercontent.com/craftercms/contact-form-plugin/master/readme.md"
      website:
-       name: Site Plugin Example
+       name: Project Plugin Example
        url: https://github.com/craftercms/site-plugins-example
      media:
        screenshots:
@@ -284,6 +280,8 @@ Below is a sample for a preview-app.
 
 |
 
+.. _newIa-plugin-descriptor-servlet-filter:
+
 Below is a sample for a site filter.
 
 .. code-block:: yaml
@@ -331,9 +329,6 @@ Below is a sample for the site context.
 
 |
 
-For site plugins, the ``plugin.documentation`` serves as the help block for the plugin.
-It contains a URL to the plugin's documentation file (must be in Markdown) containing
-information on how to use/configure the plugin. The documentation will appear alongside
-the plugin in Crafter Studio and the CrafterCMS Marketplace.
+For project plugins, the ``plugin.documentation`` serves as the help block for the plugin. It contains a URL to the plugin's documentation file (must be in Markdown) containing information on how to use/configure the plugin. The documentation will appear alongside the plugin in Crafter Studio and the CrafterCMS Marketplace.
 
 See :ref:`newIa-studio-plugins` for examples of plugins auto-wired in Studio.

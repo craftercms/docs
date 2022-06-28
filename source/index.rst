@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 ==================================
 CrafterCMS |version| Documentation
@@ -41,6 +42,12 @@ This Manual introduces key concepts in CrafterCMS, presents the authoring and de
    :maxdepth: 1
 
    Acknowledgements </acknowledgements/index>
+
+.. toctree::
+   :maxdepth: 3
+   :hidden:
+
+   CrafterCMS docs Beta </.new-ia/index>
 
 
 Indices and tables

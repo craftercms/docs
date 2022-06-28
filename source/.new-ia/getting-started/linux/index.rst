@@ -14,6 +14,8 @@ Installing CrafterCMS on Linux
 
 This section describes in detail how to install/setup CrafterCMS on Linux.
 
+.. _newIa-linux-prerequisites:
+
 -------------
 Prerequisites
 -------------
@@ -24,7 +26,7 @@ Prerequisites
    or `OpenJDK <http://openjdk.java.net/>`_).
 
    Make sure that you have a ``JAVA_HOME`` environment variable that points to the root of the
-   JDK install directory.  See :ref:`here<verify-java-home-env-var>` for more information on
+   JDK install directory.  See :ref:`here <newIa-verify-java-home-env-var>` for more information on
    the ``JAVA_HOME`` environment variable
 
 #. **Download and install Git 2.20.1 or later+**

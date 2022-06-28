@@ -258,4 +258,4 @@ How does CrafterCMS help mitigate this risk?
 Securing your CrafterCMS Install
 --------------------------------
 
-CrafterCMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`securing-your-crafter-cms-install`
+CrafterCMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`newIa-securing-your-crafter-cms-install`

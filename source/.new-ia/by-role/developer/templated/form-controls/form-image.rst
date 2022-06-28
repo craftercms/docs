@@ -55,11 +55,11 @@ Configuration
 ||                       || * |imgUploadToS3|                                                    |
 +------------------------+-----------------------------------------------------------------------+
 
-.. |imgUploadFromDesktop| replace:: :ref:`Image Uploaded from Desktop <form-source-image-desktop>`
-.. |imgFromRepo| replace:: :ref:`Image from Repository <form-source-image-repo>`
-.. |imgFromCMIS| replace:: :ref:`Image from CMIS Repository <form-source-cmis-image-repo>`
-.. |imgUploadToCMIS| replace:: :ref:`Image Uploaded to CMIS Repository <form-source-cmis-image-upload>`
-.. |imgFromWebDAV| replace:: :ref:`Image from WebDAV Repository <form-source-webdav-image-repo>`
-.. |imgUploadToWebDAV| replace:: :ref:`Image Uploaded to WebDAV Repository <form-source-webdav-image-upload>`
-.. |imgFromS3| replace:: :ref:`Image From S3 Repository <form-source-s3-image-repo>`
-.. |imgUploadToS3| replace:: :ref:`Image Uploaded to S3 Repository <form-source-s3-image-upload>`
+.. |imgUploadFromDesktop| replace:: :ref:`Image Uploaded from Desktop <newIa-form-source-image-desktop>`
+.. |imgFromRepo| replace:: :ref:`Image from Repository <newIa-form-source-image-repo>`
+.. |imgFromCMIS| replace:: :ref:`Image from CMIS Repository <newIa-form-source-cmis-image-repo>`
+.. |imgUploadToCMIS| replace:: :ref:`Image Uploaded to CMIS Repository <newIa-form-source-cmis-image-upload>`
+.. |imgFromWebDAV| replace:: :ref:`Image from WebDAV Repository <newIa-form-source-webdav-image-repo>`
+.. |imgUploadToWebDAV| replace:: :ref:`Image Uploaded to WebDAV Repository <newIa-form-source-webdav-image-upload>`
+.. |imgFromS3| replace:: :ref:`Image From S3 Repository <newIa-form-source-s3-image-repo>`
+.. |imgUploadToS3| replace:: :ref:`Image Uploaded to S3 Repository <newIa-form-source-s3-image-upload>`

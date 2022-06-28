@@ -31,7 +31,7 @@ taxonomies for organizing the content such as categories and segments, which is 
 content, static assets such as the initial images and fonts used for the project and configuration files
 for managing things like the segments for targeting, the permissions for all the items in the project,
 the role mappings, the RTE configuration, etc.  To see more of the ``Website Editorial Blueprint``,
-please see :ref:`newIa-your-first-editorial-website` where we create a project based on the
+please see :ref:`newIa-your-first-editorial-project` where we create a project based on the
 ``Website Editorial Blueprint``.
 
 As mentioned earlier, blueprints allows us to generate projects with predefined layouts, contents and
@@ -53,7 +53,7 @@ Start by following ``How do I install CrafterCMS`` :ref:`here <newIa-getting-sta
 
 Blueprints are almost the same as a project (:ref:`Warnings <newIa-blueprint-site-vs-blueprint>`).
 So, you can use a new project created from the ``Empty`` blueprint as the starting point for your
-blueprint. (See :ref:`newIa-your-first-editorial-website` but create it from the ``Empty`` blueprint).
+blueprint. (See :ref:`newIa-your-first-editorial-project` but create it from the ``Empty`` blueprint).
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Adapting an HTML template

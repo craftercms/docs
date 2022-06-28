@@ -1,4 +1,5 @@
 :is-up-to-date: False
+:last-updated: 4.0.0
 
 .. index:: Author Experience Builder
 
@@ -12,4 +13,4 @@ CrafterCMS’ Experience Builder (XB) enables authors with in-context editing (I
 
 This section describes how authors can use the Experience Builder for adding/editing content.
 
-:ref:`experience-builder-panel-screens`
+:ref:`newIa-experience-builder-panel-screens`

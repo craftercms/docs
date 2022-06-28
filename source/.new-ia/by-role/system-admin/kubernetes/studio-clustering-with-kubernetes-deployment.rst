@@ -1,4 +1,5 @@
 :is-up-to-date: False
+:last-updated: 4.0.0
 
 .. index:: Setup Studio Clustering with Kubernetes Deployment, Clustering with Studio Example with Kubernetes
 
@@ -9,6 +10,13 @@ Setup Studio Clustering with Kubernetes Deployment |enterpriseOnly|
 ===================================================================
 
 A Kubernetes deployment describes an applications life cycle, e.g. images to be used, the number of pods, etc. It creates pods based on a specified template.  Crafter CMS has an example kubernetes deployment for a Studio cluster with 2 nodes.  In this section, we'll take a look at this example Kubernetes deployment.
+
+.. TODO: Update screens and text once https://github.com/craftercms/craftercms/issues/5285 is done
+
+|
+
+   .. note::
+      This section needs an update once the kubernetes deployment files for primary/replica clustering are updated `here <https://github.com/craftercms/craftercms/issues/5285>`__
 
 ------------
 Requirements
@@ -74,6 +82,10 @@ This guide details setting up Authoring pods in a cluster, but once you setup th
 Create the SSH Keys Secret
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. TODO: Update to include ssh config changes done in https://github.com/craftercms/craftercms/issues/5257
+..       which added support for the following algorithms: ``RSA``, ``ECDSA``, ``ED25519`` or ``DSA``
+..       Verify once https://github.com/craftercms/craftercms/issues/5285 is done
+
 #. Go to ``kubernetes-deployments/authoring/cluster/nodes/resources/secrets/.ssh``.  This is where we will create the ssh keys.
 
 #. Run ``ssh-keygen -m PEM -b 4096 -t rsa -C "your_email@example.com"`` to generate the key pair. When being asked for the
@@ -91,6 +103,11 @@ Create the SSH Keys Secret
 
          Check that the file starts with the following header: ``-----BEGIN RSA PRIVATE KEY-----`` to verify that the key is using ``RSA``.
          Crafter also currently doesn't support using a passphrase with SSH keys.  Remember to **NOT** use a passphrase when creating your keys.
+
+         |
+         |
+
+         *This section needs an update as CrafterCMS now supports the following algorithms for generating the key pair: RSA, ECDSA, ED25519 or DSA*
 
 #. Create a copy of the public key and name it ``authorized_keys``
 
