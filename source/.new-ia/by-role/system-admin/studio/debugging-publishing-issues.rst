@@ -12,7 +12,7 @@ When publishing fails, here are some things to consider to help track down the c
 Inspect Publishing Queue
 ------------------------
 
-The publishing queue (items that are in the queue for publishing) can be viewed through Studio from the |projectTools| -> ``Publishing`` -> ``Publishing Queue`` tab.  Here, the user can narrow down the queue for inspection by specifying filters.  For more information see :ref:`publishing-queue`
+The publishing queue (items that are in the queue for publishing) can be viewed through Studio from the |projectTools| -> ``Publishing`` -> ``Publishing Queue`` tab.  Here, the user can narrow down the queue for inspection by specifying filters.  For more information see :ref:`newIa-publishing-queue`
 
 .. image:: /_static/images/site-admin/site-config-publishing-queue-all.png
     :alt: Debugging Publishing Issues - Inspect Publishing Queue
@@ -48,8 +48,8 @@ To discover which item is blocking publishing, the most common method is to insp
 Once you determine where the publishing queue is blocked/stuck, you can determine the reason by inspecting the log files and the repository.
 
 If it is possible to fix the publishing queue blockage, the system should be allowed to continue normally.
-After the queue has been unblocked, the publishing process needs to be enabled again.  This can be done through Studio, by clicking on the ``Start`` button in |projectTools| -> ``Publishing`` -> ``Status``.  :ref:`publishing-status` contains more information on the Publishing Status tab in Studio.
-Another way to enable the publishing process is to call the :ref:`crafter-studio-api-publish-start` Rest API to start publishing.
+After the queue has been unblocked, the publishing process needs to be enabled again.  This can be done through Studio, by clicking on the ``Start`` button in |projectTools| -> ``Publishing`` -> ``Status``.  :ref:`newIa-publishing-status` contains more information on the Publishing Status tab in Studio.
+Another way to enable the publishing process is to call the :ref:`newIa-crafter-studio-api-publish-start` Rest API to start publishing.
 
 If it is not possible to fix the publishing queue blockage, a workaround can be applied to unblock publishing. The workaround can be any valid intervention on the database and the repository to simulate the publishing process.
 
@@ -95,8 +95,8 @@ To avoid unnecessary operations and confusion within the system, the database sh
 
 |
 
-After successful manual syncing of repositories the publishing process needs to be enabled again. This can be done through Studio, by clicking on the ``Start`` button in |projectTools| -> ``Publishing`` -> ``Status``.  :ref:`publishing-status` contains more information on the Publishing Status tab in Studio.
-Another way to enable the publishing process is to call the :ref:`crafter-studio-api-publish-start` Rest API to start publishing.
+After successful manual syncing of repositories the publishing process needs to be enabled again. This can be done through Studio, by clicking on the ``Start`` button in |projectTools| -> ``Publishing`` -> ``Status``.  :ref:`newIa-publishing-status` contains more information on the Publishing Status tab in Studio.
+Another way to enable the publishing process is to call the :ref:`newIa-crafter-studio-api-publish-start` Rest API to start publishing.
 
 -----------------------------------------------------
 Publishing Issues When Moving Projects Around in Disk
@@ -163,4 +163,4 @@ It's possible for the publisher to lock itself out upon a cluster restart where 
 
 To unlock publishing, open the ``Sidebar`` in Studio, then click on ``Project Tools`` ->  ``Publishing``.  Click on the ``Status`` tab then click on the ``unlock publishing`` button (button with open padlock).  Next, follow the instructions in the dialog to confirm action in order to unlock the publisher.
 
-See :ref:`publishing-status` for more details on the unlock publisher button.
+See :ref:`newIa-publishing-status` for more details on the unlock publisher button.

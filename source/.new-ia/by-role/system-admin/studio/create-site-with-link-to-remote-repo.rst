@@ -18,7 +18,7 @@ A **Create Site** dialog will be launched.  For both options, there will be a sc
 
 Let's take a look at the fields where the remote repository details needs to be filled in:
 
-.. image:: /_static/images/system-admin/remote-repo-info.jpg
+.. image:: /_static/images/system-admin/remote-repo-info.png
    :alt: System Administrator - Remote Repository Details
    :width: 55 %
    :align: center
@@ -114,7 +114,7 @@ or alternatively for ssh:
 Click on the **Review** button, then finally, the **Create Site** button.
 
 
-.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-2.jpg
+.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-2.png
    :alt: Developer How Tos - Setting up to work locally against the upstream review entries
    :width: 50 %
    :align: center
