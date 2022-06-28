@@ -460,9 +460,9 @@ Content Type Specific tool configuration
 List of available content type form controls
 --------------------------------------------
 
-.. include:: /by-role/developer/templated/form-controls/list-form-controls.rst
+.. include:: /.new-ia/by-role/developer/templated/form-controls/list-form-controls.rst
 
 List of available content type data sources
 -------------------------------------------
 
-.. include:: /by-role/developer/templated/form-sources/list-form-sources.rst
+.. include:: /.new-ia/by-role/developer/templated/form-sources/list-form-sources.rst
