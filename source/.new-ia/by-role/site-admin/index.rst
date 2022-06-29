@@ -73,7 +73,10 @@ Project Tools
 
 |projectTools| contains project administration tools such as Plugin Management, Encryption Tool, etc.
 
-:ref:`newIa-navigating-project-tools`
+.. toctree::
+   :maxdepth: 3
+
+   project-tools/index
 
 ----------------
 Sidebar cabinets

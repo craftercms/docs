@@ -17,7 +17,7 @@ This section contains information on how to configure the different settings in 
 Here are settings that can be configured for your CrafterCMS experience.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    studio-configuration
    engine-configuration
