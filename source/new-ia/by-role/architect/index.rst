@@ -34,3 +34,4 @@ This section details key concepts for CrafterCMS experience architects
    availability
    scalability
    security
+   api-reference
