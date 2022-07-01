@@ -134,7 +134,6 @@ What's CrafterCMS's licensing terms?
 
 .. toctree::
    :maxdepth: 3
-   :hidden:
 
    getting-started/index
    by-role/architect/index
