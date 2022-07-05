@@ -1,0 +1,55 @@
+$accent-color: rgb(170, 0, 0)
+
+// Side bar
+.wy-side-nav-search
+  background-color: $accent-color
+  &>a
+    img.logo
+      width: 180px
+  input[type=text]
+    border-color: transparent
+
+// Main content
+.wy-nav-content
+  max-width: 100%
+
+// List of tags / google translation
+.right-nav
+  overflow: hidden
+  ul
+    list-style: none
+    overflow: hidden
+    li
+      float: right
+      margin: 0 0 14px 10px
+      &.page-status img
+        width: 158px
+      &#google_translate_element .goog-te-gadget .goog-te-gadget-simple
+        border-radius: 6px
+  .version-tag
+    color: #fff
+    display: inline-block
+    background: #595959
+    border-radius: 5px
+    font-size: 15px
+    &.inline
+      margin-bottom: 10px
+    .version__label
+      margin-right: 0
+      display: inline-block
+      padding: 5px 10px
+    .version__number
+      background-color: #2284bb
+      margin-left: 0
+      display: inline-block
+      padding: 5px 10px
+      border-radius: 0 5px 5px 0
+  .versions-tags
+    .inline
+      display: inline-block
+      margin-bottom: 10px
+
+// Breadcrumbs
+.wy-breadcrumbs
+  a
+    color: $accent-color
