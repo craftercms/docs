@@ -11,7 +11,4 @@ cp -rf sphinx_rtd_theme ../source/_themes
 
 git add ../source/_themes/sphinx_rtd_theme
 
-echo "Delete build output directory"
-rm -rf sphinx_rtd_theme
-
 echo "Build finished"
