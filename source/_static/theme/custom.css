@@ -8,6 +8,10 @@
   border-color: transparent;
 }
 
+.wy-side-nav-search>div.version {
+  color: #fff;
+}
+
 /* Main content */
 .wy-nav-content {
   max-width: 1600px;
@@ -63,7 +67,7 @@
   display: inline-block;
   margin-bottom: 10px;
 }
-/* TODO: Color? */
+
 .wy-breadcrumbs a {
   color: #a00;
 }
@@ -72,4 +76,17 @@
     height: 40px !important;
     position: relative !important;
     top: -14px !important;
+}
+
+/* Footer section */
+
+.rst-versions.shift-up {
+  overflow-y: auto;
+}
+
+.rst-versions .craftercms-site {
+  border-top: 1px solid;
+  padding-top: 10px;
+  margin-top: 10px;
+  text-align: right;
 }

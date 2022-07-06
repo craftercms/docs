@@ -341,7 +341,30 @@
     {%- endif %}
   {%- endif %}
 
-  {%- block footer %} {% endblock %}
+  {%- block footer %}
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="{{ _('Versions') }}">
+      <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> CrafterCMS</span>
+        v: {{ version }}
+        <span class="fa fa-caret-down"></span>
+      </span>
+    <div class="rst-other-versions">
+      <dl>
+        <dt>{{ _('Versions') }}</dt>
+        {%- if versions %}
+          {%- for version in versions %}
+            <dd><a href="en/{{ version }}/index.html">{{ version }}</a></dd>
+          {%- endfor %}
+        {%- endif %}
+      </dl>
+      <dl class="craftercms-site">
+        <dd>
+          <a href="https://craftercms.org/" target="_blank" rel="noopener noreferrer">CrafterCMS Site</a>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  {%- endblock %}
 
 </body>
 </html>

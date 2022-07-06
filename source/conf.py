@@ -72,7 +72,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -97,7 +97,6 @@ html_theme = "sphinx_rtd_theme"
 html_theme_path = ["_themes", ]
 html_theme_options = {
     'logo_only': True,
-    'display_version': False,
     'style_nav_header_background': '#D70015'
 }
 html_css_files = ['theme/custom.css']
@@ -132,6 +131,11 @@ htmlhelp_basename = 'CrafterCMSdoc'
 html_logo = '_static/theme/logo.svg'
 
 html_scaled_image_link = False
+
+# Add versions for the bottom menu
+html_context = {
+    'versions': ['4.0', '3.1']
+}
 
 # -- Options for LaTeX output ------------------------------------------------
 
