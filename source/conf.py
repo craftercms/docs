@@ -131,6 +131,7 @@ htmlhelp_basename = 'CrafterCMSdoc'
 
 html_logo = '_static/theme/logo.svg'
 
+html_scaled_image_link = False
 
 # -- Options for LaTeX output ------------------------------------------------
 
