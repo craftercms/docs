@@ -97,8 +97,10 @@ html_theme = "sphinx_rtd_theme"
 html_theme_path = ["_themes", ]
 html_theme_options = {
     'logo_only': True,
-    'display_version': False
+    'display_version': False,
+    'style_nav_header_background': '#D70015'
 }
+html_css_files = ['theme/custom.css']
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -127,7 +129,7 @@ html_static_path = ['_static']
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'CrafterCMSdoc'
 
-html_logo = '_static/images/logo.svg'
+html_logo = '_static/theme/logo.svg'
 
 
 # -- Options for LaTeX output ------------------------------------------------

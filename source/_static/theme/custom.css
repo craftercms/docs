@@ -1,4 +1,74 @@
-@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+/* Side bar*/
+
+.wy-side-nav-search>a img.logo {
+  width: 180px;
+}
+
+.wy-side-nav-search input[type=text] {
+  border-color: transparent;
+}
+
+/* Main content */
+.wy-nav-content {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* List of tags / google translation */
+.right-nav {
+  overflow: hidden;
+}
+
+.right-nav ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+.right-nav ul li {
+  float: right;
+  margin: 0 0 14px 10px;
+}
+
+.right-nav ul li.page-status img {
+  width: 158px;
+}
+
+.right-nav ul #google_translate_element .goog-te-gadget .goog-te-gadget-simple {
+  border-radius: 6px;
+}
+
+.right-nav .version-tag {
+  color: #fff;
+  display: inline-block;
+  background: #595959;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.right-nav .version-tag.inline {
+  margin-bottom: 10px;
+}
+.right-nav .version-tag .version__label {
+  margin-right: 0;
+  display: inline-block;
+  padding: 5px 10px;
+}
+.right-nav .version-tag .version__number {
+  background-color: #2284bb;
+  margin-left: 0;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 0 5px 5px 0;
+}
+.right-nav .versions-tags .inline {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+/* TODO: Color? */
+.wy-breadcrumbs a {
+  color: #a00;
+}
+
+  /* TODO: check those css styles */
 
 .admonition-title {
   font-size: 1.5rem !important;
@@ -56,9 +126,6 @@
       margin-top: .7rem; }
 #toc li.current > a {
   color: #555; }
-
-/*# sourceMappingURL=custom.css.map */
-
 
 .ee-only-badge {
     height: 40px;
