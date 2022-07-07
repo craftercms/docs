@@ -132,6 +132,8 @@ html_logo = '_static/theme/logo.svg'
 
 html_scaled_image_link = False
 
+html_favicon = "_static/images/favicon.ico"
+
 # Add versions for the bottom menu
 html_context = {
     'versions': ['4.0', '3.1']

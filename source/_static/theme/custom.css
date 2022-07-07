@@ -90,3 +90,8 @@
   margin-top: 10px;
   text-align: right;
 }
+
+/* Code blocks */
+.highlight .err {
+  border: none;
+}
