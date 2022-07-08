@@ -1,0 +1,97 @@
+/* Side bar*/
+
+.wy-side-nav-search>a img.logo {
+  width: 180px;
+}
+
+.wy-side-nav-search input[type=text] {
+  border-color: transparent;
+}
+
+.wy-side-nav-search>div.version {
+  color: #fff;
+}
+
+/* Main content */
+.wy-nav-content {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* List of tags / google translation */
+.right-nav {
+  overflow: hidden;
+}
+
+.right-nav ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+.right-nav ul li {
+  float: right;
+  margin: 0 0 14px 10px;
+}
+
+.right-nav ul li.page-status img {
+  width: 158px;
+}
+
+.right-nav ul #google_translate_element .goog-te-gadget .goog-te-gadget-simple {
+  border-radius: 6px;
+}
+
+.right-nav .version-tag {
+  color: #fff;
+  display: inline-block;
+  background: #595959;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.right-nav .version-tag.inline {
+  margin-bottom: 10px;
+}
+.right-nav .version-tag .version__label {
+  margin-right: 0;
+  display: inline-block;
+  padding: 5px 10px;
+}
+.right-nav .version-tag .version__number {
+  background-color: #2284bb;
+  margin-left: 0;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 0 5px 5px 0;
+}
+.right-nav .versions-tags .inline {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.wy-breadcrumbs a {
+  color: #a00;
+}
+
+.ee-only-badge {
+    height: 40px !important;
+    position: relative !important;
+    top: -14px !important;
+}
+
+/* Footer section */
+
+.rst-versions.shift-up {
+  overflow-y: auto;
+}
+
+.rst-versions .craftercms-site {
+  border-top: 1px solid;
+  padding-top: 10px;
+  margin-top: 10px;
+  text-align: right;
+}
+
+/* Code blocks */
+.highlight .err {
+  border: none;
+}
