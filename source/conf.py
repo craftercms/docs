@@ -29,7 +29,7 @@ author = u'CrafterCMS'
 # The short X.Y version.
 version = u'3.1'
 # The full version, including alpha/beta/rc tags.
-release = u'3.1.23'
+release = u'3.1.24'
 
 
 # -- General configuration ---------------------------------------------------
@@ -77,7 +77,7 @@ language = 'en'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['includes/*.rst', '.new-ia/includes/*.rst']
+exclude_patterns = ['includes/*.rst']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
@@ -218,8 +218,8 @@ rst_epilog = """
 .. |checkmark| unicode:: U+2713
 .. |ex| unicode:: U+2718
 
-.. |projectTools| image:: /_static/images/configuration-project-tools-icon.png
-                   :width: 14%
+.. |siteConfig| image:: /_static/images/configuration-site-config-icon.png
+                   :width: 15%
 
 .. |mainMenu| image:: /_static/images/main-menu-button.png
                    :width: 3%
@@ -238,11 +238,11 @@ rst_epilog = """
 
 # Javadoc home and version
 javadoc_base = 'http://javadoc.craftercms.org/'
-javadoc_version = '4.0.0'
+javadoc_version = '3.1.24'
 
 # swagger base and version
 studio_swagger_base = 'https://app.swaggerhub.com/apis/craftercms/studio/'
-studio_swagger_version = '4.0.0.26'
+studio_swagger_version = '3.1.24'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),
