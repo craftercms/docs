@@ -8,7 +8,8 @@
 JavaScript Libraries
 ====================
 
-CrafterCMS has a collection of JavaScript libraries that enable easy interaction with several CrafterCMS modules/utilities for creating websites and applications.
+CrafterCMS has a collection of JavaScript libraries that enable easy interaction with several
+CrafterCMS modules/utilities for creating websites and applications.
 
 The libraries have the following npm package names:
 

@@ -27,11 +27,16 @@ Templated
      SAML2 intranet
      Blogs
 
-CrafterCMS embeds FreeMarker to provide a high-performance, clean, flexible, and tolerant of syntax variance, templating engine to render HTML directly from CrafterCMS.
+CrafterCMS embeds FreeMarker to provide a high-performance, clean, flexible, and tolerant of syntax
+variance, templating engine to render HTML directly from CrafterCMS.
 
-CrafterCMS allows developers to model the content as general reusable items, and fold those into pages. Pages aggregate content from components as needed and are associated with a FreeMarker template that can render the final page. The choice of HTML tools and frameworks doesn’t matter to CrafterCMS. Developers can use whatever front-end technology they want. For development React, Vue, Angular, Flutter or similar SPA, please see :ref:`here <newIa-developer-headless>`
+It allows developers to model the content as general reusable items, and fold those into pages.
+Pages aggregate content from components as needed and are associated with a FreeMarker template that
+can render the final page. The choice of HTML tools and frameworks doesn’t matter to CrafterCMS.
+Developers can use whatever front-end technology they want. For development React, Vue, Angular, Flutter
+or similar SPA, please see :ref:`here <newIa-developer-headless>`
 
-This section details building templated projects, its purpose and examples.
+The following details building templated projects, its purpose and examples.
 
 .. toctree::
    :maxdepth: 1

@@ -35,19 +35,31 @@ Content Types are limited to two core types: **Pages** and **Components**. Both 
 Pages
 ^^^^^
 
-Pages are top-level container types. Pages hold content, and optionally components. Content within pages is made up of various types, for example content can be a date, an image, or a rich text field.
+Pages are top-level container types. Pages hold content, and optionally components. Content within
+pages is made up of various types, for example content can be a date, an image, or a rich text field.
 
 ^^^^^^^^^^
 Components
 ^^^^^^^^^^
 
-Components only differ from pages in that they can't render by themselves, instead, they must render within a container page or another component.
+Components only differ from pages in that they can't render by themselves, instead, they must render
+within a container page or another component.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 When to model as a page vs component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Model content as a component for meaningful chunks of content, say content containing all things
+about our "Our Team", or say, content containing all things for a header or footer.
 
-.. todo: Fill in
+Model content as a page for content made up of various texts, images, components, etc.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Shared components vs embedded components
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Components may be shared or embedded.  Embedded components belong exclusively to a content object,
+while a shared component is shared across pages or components.  For more information on how to
+use embedded and shared components, see :ref:`here <newIa-component-handling>`
 
 .. _newIa-content-model:
 
@@ -771,6 +783,8 @@ Data Sources are pickers that help pull in content from internal or external sto
 
 Data Sources allows the content model designer to decide where different assets uploaded via different controls go (for instance icons, images, RTE related assets, etc.).  It has it's own properties, like "Repository Path", which specifies the path where assets are stored, which help keep the system consistent over time.  The storage destination designed in the model dictates how those assets are handled during a duplicate event (duplicate the asset or duplicate the reference to the asset).
 
+.. _newIa-component-handling:
+
 There are a couple of data source that also dictates how components are handled during duplicate/copy events.  The :ref:`Shared Content<newIa-form-source-shared-content>` data source will duplicate/copy the reference to a component during a duplicate/copy event and is used for components that need to be shared across pages or components. For components that belong exclusively to a content object, use the :ref:`Embedded Content<newIa-form-source-embedded-content>` data source.
 
 The ``shared-content`` data sources also provides an option to allow users to search for existing items (``Enable Search Existing`` property) in addition to browsing.  This provides users ease of managing lots of items/assets.
@@ -885,7 +899,7 @@ Controls on the canvas are configured by clicking on the control, and then editi
 Two controls have a special significance to the form canvas: :ref:`newIa-form-section` and :ref:`newIa-form-repeating-group`. Form Section Control creates a form section that can be expanded and collapsed and holds within it other controls. This is typically used to group together controls that cover a similar concern and help provide the content authors with a clear and organized form when editing in form mode.
 Like the Form Section Control, Repeating Group Control is also a container that holds other controls, but the purpose is to allow a set of controls to repeat as configured. This is typically used to allow content authors to enter a set of meta-data and repeat it as many times as desired and permitted by configuration.
 
-The canvas allows the form-based content capture only, and is used by content authors when they're in that mode. In-Context Editing will leverage the form components, but not the canvas when authors are in that mode. Learn more about In-Context Editing configuration in :ref:`newIa-experience-builder`.
+The canvas allows the form-based content capture only, and is used by content authors when they're in that mode. In-Context Editing will leverage the form components, but not the canvas when authors are in that mode. Learn more about In-Context Editing configuration for templated projects in :ref:`newIa-templated-xb` and headless projects :ref:`newIa-headless-xb` .
 
 .. _newIa-content-view-templates:
 

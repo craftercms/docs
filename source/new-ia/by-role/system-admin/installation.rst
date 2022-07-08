@@ -1,4 +1,5 @@
 :is-up-to-date: False
+:last-updated: 4.0.0
 
 .. _newIa-system-admin-installation:
 
@@ -10,7 +11,7 @@ Installation
    6.2.2 Tuning Delivery
    6.2.3 Clustering
 
-This section describes various ways of installing/setting up Crafter CMS,
+This section describes various ways of installing/setting up CrafterCMS and how to tune CrafterCMS
 
 
 First we'll take a look at the requirements and supported platform for installing/setting up Crafter CMS
@@ -20,37 +21,36 @@ First we'll take a look at the requirements and supported platform for installin
 
    /system-administrators/requirements-supported-platforms
 
-Remember to change the default values pre-configured when installing Crafter CMS for a secure installation.  See :ref:`newIa-securing-your-crafter-cms-install` for more information.
+Remember to change the default values pre-configured when installing Crafter CMS for a secure installation.
+See :ref:`newIa-securing-your-crafter-cms-install` for more information.
 
------------------------
-Development Environment
------------------------
+CrafterCMS provides the following methods for installing CrafterCMS depending on your environment
+and in addition, instructions on setting up CrafterCMS using Crafter's AWS AMI:
 
-The quick start guide provides instructions on setting up a development environment by installing Crafter CMS from the prebuilt binaries
 
-* :ref:`newIa-getting-started`
+#. Development Environment
 
-To learn more about the developer workflow, see :ref:`newIa-devOps-workflow`.
+   The quick start guide provides instructions on setting up a development environment by installing Crafter CMS from the prebuilt binaries
 
-----------------------
-Production Environment
-----------------------
+   * :ref:`newIa-getting-started`
 
-The guide below provides instructions on how to setup a production environment
+   To learn more about the developer workflow, see :ref:`newIa-devOps-workflow`.
 
-.. toctree::
-   :maxdepth: 2
+#. Production Environment
 
-   production-environment-setup
+   The guide below provides instructions on how to setup a production environment
 
------------------------
-Using Crafter's AWS AMI
------------------------
+   .. toctree::
+      :maxdepth: 2
 
-Setup Crafter CMS authoring and delivery using Crafter's AWS AMI.
+      production-environment-setup
 
-.. toctree::
-   :maxdepth: 1
+#. Using Crafter's AWS AMI
 
-   authoring/setup-authoring-using-aws-ami
-   delivery/setup-delivery-using-aws-ami
+   Setup Crafter CMS authoring and delivery using Crafter's AWS AMI.
+
+   .. toctree::
+      :maxdepth: 1
+
+      authoring/setup-authoring-using-aws-ami
+      delivery/setup-delivery-using-aws-ami

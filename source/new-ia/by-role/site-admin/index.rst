@@ -71,12 +71,15 @@ To customize how dates & times get displayed on Studio UI for a project
 Project Tools
 -------------
 
-|projectTools| contains project administration tools such as Plugin Management, Encryption Tool, etc.
+|projectTools| contains project administration tools such as Configurations, Plugin Management, Encryption Tool, etc.
+The following contains more information on administration tools
 
 .. toctree::
    :maxdepth: 3
 
    project-tools/index
+
+
 
 ----------------
 Sidebar cabinets
