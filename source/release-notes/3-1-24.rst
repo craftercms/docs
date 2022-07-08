@@ -1,0 +1,78 @@
+.. index:: CrafterCMS 3.1.24 Release Notes
+
+-----------------
+CrafterCMS 3.1.24
+-----------------
+
+This release includes fixes for issues with the release version 3.1.23.
+
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+
+* Added `publishAll API <https://app.swaggerhub.com/apis/craftercms/studio/3.1.24#/publishing/publishAll>`__  for bulk publishing all |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5591>`__ for more information
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Added support for disallowing uploads of SVG files from the image picker |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5569>`__ for more information
+
+* Fixed workflow states not being updated issue  |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5607>`__ for more information
+
+* Added support for executing Groovy filters in all types of requests |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5603>`__ for more information
+
+* Fixed issue with Studio and Deployer ``index.lock``  |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5600>`__ for more information
+
+* Boosted the ``internal-name``, ``localId`` and ``title`` fields in search |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5616>`__ for more information
+
+* Improved project creation dialogs |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5615>`__ for more information
+
+* Fixed commits being added as unprocessed on site creation issue |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5613>`__ for more information
+
+* Email notification enhancements |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5588>`__ for more information
+
+* Added check of folder ownership before doing a ``chown`` |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5625>`__ for more information
+
+* Fix sort order of Studio search results |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5654>`__ for more information
+
+* Fix site creation failure when session times out |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5655>`__ for more information
+
+* Fix site deletion issue  |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5656>`__ for more information
+
+* Fix cache clearing issue with the deployment events watcher  |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5677>`__ for more information
+
+For a full list of tickets, please visit: `GitHub 3.1.24 Milestone <https://github.com/craftercms/craftercms/milestone/84?closed=1>`_
+
+.. important::
+
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your CrafterCMS install to 3.1.1 (applies to 3.1.24)
+
+    Starting with JVM version 1.8.0_292, support for TLS v1.1 and earlier is disabled by default |br|
+    See :ref:`debugging_ssl_issues` if you encounter issues.
+
+    For Linux installs, the embedded MariaDB upgrade requires the library ``libaio`` which is not installed by default in some Linux distributions.  Please see the section on **Linux Prerequisites** in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+    Before proceeding with updating your CrafterCMS install, please see the following notes:
+
+    - :ref:`upgrade-notes-fix-template-not-found` for some important notes on template errors
+    - :ref:`upgrade-notes-to-fix-backup-error` for some important notes when restoring backups created prior to
+      CrafterCMS 3.1.10,
+    - :ref:`upgrade-notes-for-re-encrypting-values` for some important notes on the re-encryption process
+    - :ref:`upgrade-notes-to-fix-stored-procedure-error` for some important notes on database errors.
+
+
