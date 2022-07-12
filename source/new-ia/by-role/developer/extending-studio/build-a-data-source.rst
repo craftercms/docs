@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Build a Form Engine Data Source
 
@@ -23,7 +24,7 @@ Form Engine data sources are #5 in the image above.
 
 Out of the box data sources are:
 
-.. include:: ../form-sources/list-form-sources.rst
+.. include:: ../templated/form-sources/list-form-sources.rst
 
 -----------------------------------
 The anatomy of a Data Source Plugin

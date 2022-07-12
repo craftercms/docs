@@ -24,8 +24,9 @@ First we'll take a look at the requirements and supported platform for installin
 Remember to change the default values pre-configured when installing Crafter CMS for a secure installation.
 See :ref:`newIa-securing-your-crafter-cms-install` for more information.
 
-CrafterCMS provides the following methods for installing CrafterCMS depending on your environment
-and in addition, instructions on setting up CrafterCMS using Crafter's AWS AMI:
+CrafterCMS provides the following methods for setting up CrafterCMS depending on your environment
+and in addition, instructions on setting up CrafterCMS using Crafter's AWS AMI,  clustering  and
+deploying CrafterCMS ni Kubernetes:
 
 
 #. Development Environment
@@ -54,3 +55,47 @@ and in addition, instructions on setting up CrafterCMS using Crafter's AWS AMI:
 
       authoring/setup-authoring-using-aws-ami
       delivery/setup-delivery-using-aws-ami
+
+#. Clustering
+
+   Setup Crafter Studio for high-availability via clustering
+
+   .. toctree::
+      :maxdepth: 1
+
+      clustering/clustering
+
+#. Deploying CrafterCMS in Kubernetes
+
+   .. toctree::
+      :maxdepth: 1
+
+      kubernetes/index
+
+----------------
+Tuning Authoring
+----------------
+
+.. toctree::
+   :maxdepth: 1
+
+   authoring/authoring-env-performance-tuning
+   authoring/navigating-main-menu
+   authoring/users-groups-management
+   authoring/change-hosts-ports-on-your-auth-install
+   authoring/staging
+   authoring/sync-studio-database-with-repo
+
+---------------
+Tuning Delivery
+---------------
+
+.. toctree::
+   :maxdepth: 1
+
+   delivery/delivery-env-performance-tuning
+
+----------
+Clustering
+----------
+

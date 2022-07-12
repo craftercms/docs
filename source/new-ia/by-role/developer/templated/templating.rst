@@ -25,3 +25,16 @@ To render components, see :ref:`newIa-renderComponent`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Rendering nested components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+----------------
+More information
+----------------
+
+Below we'll take a look at some examples on how to use the Freemarker date built-ins:
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   working-with-dates-freemarker
+

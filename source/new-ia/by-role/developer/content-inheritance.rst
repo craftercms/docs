@@ -110,7 +110,7 @@ means that when the page renders, the model will automatically contain the meta-
 ``cssGroup``, ``defaultHeader``, and ``defaultFooter``.
 
   .. note:: When an element is defined by the **level descriptor** and then subsequently defined by a child,
-the child's definition overrides the **level descriptor**.
+     the child's definition overrides the **level descriptor**.
 
 This mechanism allows you to define meta-data that flows down the information architecture of the project
 such that an entire project can have defaults and those defaults can be overwritten by sections individual
