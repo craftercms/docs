@@ -1,8 +1,10 @@
 .. index:: CrafterCMS 3.1.11 Release Notes
 
-------------------
+-----------------
 CrafterCMS 3.1.11
-------------------
+-----------------
+
+*Released November 25, 2020*
 
 ^^^^^^^
 Updates

@@ -1,8 +1,10 @@
 .. index:: CrafterCMS 3.1.2 Release Notes
 
------------------
+----------------
 CrafterCMS 3.1.2
------------------
+----------------
+
+*Released September 6, 2019*
 
 ^^^^^^^
 Updates

@@ -1,8 +1,10 @@
 .. index:: CrafterCMS 3.1.16 Release Notes
 
-------------------
+-----------------
 CrafterCMS 3.1.16
-------------------
+-----------------
+
+*Released July 12, 2021*
 
 ^^^^^^^
 Updates
