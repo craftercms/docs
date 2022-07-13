@@ -4,6 +4,8 @@
 CrafterCMS 3.1.23
 -----------------
 
+*Released April 27, 2022*
+
 This release includes fixes for issues with the release version 3.1.22.
 
 ^^^^^^^

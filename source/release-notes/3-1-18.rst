@@ -1,8 +1,10 @@
 .. index:: CrafterCMS 3.1.18 Release Notes
 
-------------------
+-----------------
 CrafterCMS 3.1.18
-------------------
+-----------------
+
+*Released January 19, 2022*
 
 ^^^^^^^^^^^
 New Feature

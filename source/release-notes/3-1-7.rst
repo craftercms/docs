@@ -1,8 +1,10 @@
 .. index:: CrafterCMS 3.1.7 Release Notes
 
------------------
+----------------
 CrafterCMS 3.1.7
------------------
+----------------
+
+*Released June 3, 2020*
 
 ^^^^^^^^^^^^
 New Features
