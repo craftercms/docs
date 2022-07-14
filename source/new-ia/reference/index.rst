@@ -9,9 +9,8 @@ Reference
 This section lists various references/resources to help you build your experiences
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
-   :hidden:
 
    projects
    api-reference

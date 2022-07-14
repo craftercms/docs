@@ -26,7 +26,7 @@ See :ref:`newIa-securing-your-crafter-cms-install` for more information.
 
 CrafterCMS provides the following methods for setting up CrafterCMS depending on your environment
 and in addition, instructions on setting up CrafterCMS using Crafter's AWS AMI,  clustering  and
-deploying CrafterCMS ni Kubernetes:
+deploying CrafterCMS in Kubernetes:
 
 
 #. Development Environment
@@ -60,10 +60,7 @@ deploying CrafterCMS ni Kubernetes:
 
    Setup Crafter Studio for high-availability via clustering
 
-   .. toctree::
-      :maxdepth: 1
-
-      clustering/clustering
+   * :ref:`newIa-clustering`
 
 #. Deploying CrafterCMS in Kubernetes
 
@@ -75,6 +72,8 @@ deploying CrafterCMS ni Kubernetes:
 ----------------
 Tuning Authoring
 ----------------
+Below you'll find instructions how to enhance the authoring environment performance and how to
+setup various things for your authoring install
 
 .. toctree::
    :maxdepth: 1
@@ -89,13 +88,31 @@ Tuning Authoring
 ---------------
 Tuning Delivery
 ---------------
+Below you'll find instructions how to enhance the delivery environment performance and how to
+setup various things for your delivery install
 
 .. toctree::
    :maxdepth: 1
 
    delivery/delivery-env-performance-tuning
+   delivery/change-hosts-ports-on-your-delivery-install
+   delivery/configure-apache-vhost
+   delivery/setup-site-for-delivery
+   delivery/setup-serverless-site
+   delivery/setup-serverless-delivery
 
 ----------
 Clustering
 ----------
+
+Here's some more information on setting up and configuring your cluster
+
+.. toctree::
+   :maxdepth: 1
+
+   clustering/clustering
+   clustering/changing-git-url-format-in-cluster
+   clustering/studio-clustering-two-nodes
+
+
 

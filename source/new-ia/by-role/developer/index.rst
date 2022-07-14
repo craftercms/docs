@@ -12,7 +12,7 @@ component or service.  It also covers topics like building queries, accessing se
 the core platforms and the developer workflow (DevContentOps).
 
 Developers need to be comfortable with Content Modeling (how to represent content in CrafterCMS
-for your application to retrieve said content), and how to access content items from your application/site.
+for your application to retrieve said content), and how to access content items from your application/project.
 
 The following gets you started with content modeling, content retrieval, and more:
 
@@ -52,8 +52,8 @@ To search for content in your project:
 |
 
 While developing your project, there are times when you’d like to see more log details, to figure out what
-is happening and address it as needed.  Overriding the logging levels allows you
-to see more or less details depending on your needs.
+is happening and address it as needed.  Overriding the logging levels allows you to see more or less
+details depending on your needs.
 
 .. toctree::
    :maxdepth: 1
