@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Build a Form Engine Control
 
@@ -24,7 +25,7 @@ Form Engine controls are #4 in the image above.
 
 Out of the box controls are:
 
-.. include:: ../form-controls/list-form-controls.rst
+.. include:: ../templated/form-controls/list-form-controls.rst
 
 -------------------------------
 The anatomy of a Control Plugin

@@ -1,4 +1,3 @@
-
 .. index:: CrafterCMS 4.0.0 Release Notes
 
 ----------------
@@ -32,7 +31,7 @@ New Features
         UI frameworks |br|
 
     - New Experience Builder package in the SDK `here <https://www.npmjs.com/package/@craftercms/experience-builder>`__
-    - See :ref:`newIa-experience-builder` for more information |br|
+    - See :ref:`newIa-templated-xb` and :ref:`newIa-headless-xb` for more information |br|
 
   - New configuration mechanics of the UI that allow plugins to wire to almost every aspect of
     the experience. This opens the door for having different authoring experiences per project. |br|

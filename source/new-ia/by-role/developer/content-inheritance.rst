@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Content Inheritance, Inheritance
 
@@ -8,17 +9,24 @@
 Content Inheritance
 ===================
 
-CrafterCMS support content inheritance out of the box, and supports it via a pluggable mechanism that allows developers to augment or override what's out of the box.
+CrafterCMS support content inheritance out of the box, and supports it via a pluggable mechanism that
+allows developers to augment or override what's out of the box.
 
 --------------------------
 Content Inheritance Basics
 --------------------------
 
-Content objects in CrafterCMS are essentially structured markup, XML by default, and house data authored via Crafter Studio by content authors. Content objects are typically structured as a tree which naturally suits the notion of inheriting from a parent (not to say that the inheritance mechanics are limited to that topology). Inheritance works as follows:
+Content objects in CrafterCMS are essentially structured markup, XML by default, and house data authored
+via Crafter Studio by content authors. Content objects are typically structured as a tree which naturally
+suits the notion of inheriting from a parent (not to say that the inheritance mechanics are limited to
+that topology). Inheritance works as follows:
 
 Assume we have two objects, one called Parent and one called Child and they're set up as follows:
 
-**Parent**: Below you'll see a typical **level descriptor** which will be the parent of another object. You'll note the **level descriptor** defines multiple elements that are common to everything at this level in the hierarchy and below it. This **level descriptor** defines a primary CSS file ``main.css``, a common header component ``default-header.xml`` and a common footer component ``default-footer.xml``.
+**Parent**: Below you'll see a typical **level descriptor** which will be the parent of another object.
+You'll note the **level descriptor** defines multiple elements that are common to everything at this level
+in the hierarchy and below it. This **level descriptor** defines a primary CSS file ``main.css``, a common
+header component ``default-header.xml`` and a common footer component ``default-footer.xml``.
 
 .. code-block:: xml
     :linenos:
@@ -94,11 +102,19 @@ Assume we have two objects, one called Parent and one called Child and they're s
 
 |
 
-CrafterCMS will invoke the inheritance mechanics implemented in the merge strategy ``inherit-levels`` to merge the page and the **level descriptor** and the merge strategy will pull in the elements defined in the **level descriptor** into the child page before handing the new model (XML) to the rendering system. This means that when the page renders, the model will automatically contain the meta-data defined in the parent **level descriptor**. In our example above, the page will automatically inherit the meta-data fields ``cssGroup``, ``defaultHeader``, and ``defaultFooter``.
+CrafterCMS will invoke the inheritance mechanics implemented in the merge strategy ``inherit-levels`` to merge
+the page and the **level descriptor** and the merge strategy will pull in the elements defined in the
+**level descriptor** into the child page before handing the new model (XML) to the rendering system. This
+means that when the page renders, the model will automatically contain the meta-data defined in the parent
+**level descriptor**. In our example above, the page will automatically inherit the meta-data fields
+``cssGroup``, ``defaultHeader``, and ``defaultFooter``.
 
-  .. note:: When an element is defined by the **level descriptor** and then subsequently defined by a child, the child's definition overrides the **level descriptor**.
+  .. note:: When an element is defined by the **level descriptor** and then subsequently defined by a child,
+     the child's definition overrides the **level descriptor**.
 
-This mechanism allows you to define meta-data that flows down the information architecture of the project such that an entire project can have defaults and those defaults can be overwritten by sections individual page. Some examples of real-life use of inheritance:
+This mechanism allows you to define meta-data that flows down the information architecture of the project
+such that an entire project can have defaults and those defaults can be overwritten by sections individual
+page. Some examples of real-life use of inheritance:
 
 * Project logo
 * Global stylesheet and JS includes
@@ -107,9 +123,11 @@ This mechanism allows you to define meta-data that flows down the information ar
 
 |
 
-  .. note:: The ``inherit-levels`` mechanism allows you to set **level descriptors** at various levels of the information architecture with lower levels overriding upper levels.
+  .. note:: The ``inherit-levels`` mechanism allows you to set **level descriptors** at various levels of
+            the information architecture with lower levels overriding upper levels.
 
-What we discussed thus far is a single inheritance strategy implementation, ``inherit-levels``, the code to which is available here: `InheritLevelsMergeStrategy.java <https://github.com/craftercms/core/blob/master/src/main/java/org/craftercms/core/xml/mergers/impl/strategies/InheritLevelsMergeStrategy.java>`_. There are more inheritance strategies implemented out of the box with CrafterCMS and you can build your own to suit your needs.
+What we discussed thus far is a single inheritance strategy implementation, ``inherit-levels``, the code
+to which is available here: `InheritLevelsMergeStrategy.java <https://github.com/craftercms/core/blob/master/src/main/java/org/craftercms/core/xml/mergers/impl/strategies/InheritLevelsMergeStrategy.java>`_. There are more inheritance strategies implemented out of the box with CrafterCMS and you can build your own to suit your needs.
 
 -------------------------
 Out of the Box Strategies
@@ -144,9 +162,11 @@ Out of the Box Strategies
 Example of Out of the Box Strategy "inherit-levels"
 ---------------------------------------------------
 
-Let's take a look at an example of the out of the box strategy ``inherit-levels`` used in the Website Editorial blueprint.
+Let's take a look at an example of the out of the box strategy ``inherit-levels`` used in the Website
+Editorial blueprint.
 
-Let's begin by looking at the home page of a project created using the Website Editorial blueprint.  Take note of the top (header) and left (left-rail) side of the page.
+Let's begin by looking at the home page of a project created using the Website Editorial blueprint.
+Take note of the top (header) and left (left-rail) side of the page.
 
 .. image:: /_static/images/developer/content-inheritance/home-page-view.jpg
     :width: 75%
@@ -155,7 +175,8 @@ Let's begin by looking at the home page of a project created using the Website E
 
 |
 
-Click on one of the category, say ``Entertainment`` and again take note of the top (header) and left (left-rail)side of the page.
+Click on one of the category, say ``Entertainment`` and again take note of the top (header) and
+left (left-rail)side of the page.
 
 .. image:: /_static/images/developer/content-inheritance/category-page-view.jpg
     :width: 75%
@@ -164,7 +185,9 @@ Click on one of the category, say ``Entertainment`` and again take note of the t
 
 |
 
-The top part of the page is the header and the left side is the left-rail.  As shown above, the two pages we previewed uses the same information for the header, while the left-rail uses the same information on the top part of it, but different information on the bottom part.
+The top part of the page is the header and the left side is the left-rail.  As shown above, the
+    two pages we previewed uses the same information for the header, while the left-rail uses the
+    same information on the top part of it, but different information on the bottom part.
 
 .. image:: /_static/images/developer/content-inheritance/header-leftrail.jpg
     :width: 75%
@@ -173,7 +196,11 @@ The top part of the page is the header and the left side is the left-rail.  As s
 
 |
 
-The Website Editorial blueprint uses a ``Section Defaults`` component content type (the level descriptor) to provide inherited values to all children and sibling content items, which for the example we are working on, is the header and the left-rail.  Below is the Section Defaults content type, showing us the content type as ``/component/level-descriptor`` with the merge strategy ``inherit-levels`` used, and two components, the header and the left-rail:
+The Website Editorial blueprint uses a ``Section Defaults`` component content type (the level descriptor)
+to provide inherited values to all children and sibling content items, which for the example we are
+working on, is the header and the left-rail.  Below is the Section Defaults content type, showing us the
+content type as ``/component/level-descriptor`` with the merge strategy ``inherit-levels`` used, and two
+components, the header and the left-rail:
 
 .. image:: /_static/images/developer/content-inheritance/section-defaults-content-type.jpg
     :width: 75%
@@ -182,7 +209,8 @@ The Website Editorial blueprint uses a ``Section Defaults`` component content ty
 
 |
 
-In the site tree screens below, we have two section defaults (``crafter-level-descriptor.level.xml``) used, one residing under the **Home** folder, and another residing under **articles** folder.
+In the site tree screens below, we have two section defaults (``crafter-level-descriptor.level.xml``) used,
+one residing under the **Home** folder, and another residing under **articles** folder.
 
 .. image:: /_static/images/developer/content-inheritance/site-tree-section-default-home.png
     :width: 30%
@@ -196,7 +224,10 @@ In the site tree screens below, we have two section defaults (``crafter-level-de
 
 |
 
-As you preview the pages under **Home**, (*Style*, *Health*, *Techonology*, *Entertainment*, *Search Results*) you'll notice that the header and left-rail displayed is the same for all the pages.  Once you preview pages, under **articles**, we can see the left-rail displayed is now different.  This shows us how the Section Defaults under **articles** has overridden the Section Defaults under **Home**.
+As you preview the pages under **Home**, (*Style*, *Health*, *Techonology*, *Entertainment*, *Search Results*)
+you'll notice that the header and left-rail displayed is the same for all the pages.  Once you preview pages,
+under **articles**, we can see the left-rail displayed is now different.  This shows us how the Section
+Defaults under **articles** has overridden the Section Defaults under **Home**.
 
 Here's the Section Defaults under **Home**
 
@@ -259,8 +290,10 @@ Here's the Section Defaults under **articles**
 
 |
 
-As we can see from above, the left-rail component used for the Section Defaults under **Home** is different compared to the left-rail component used for the Section Defaults under **articles**.
-If a new article page is created under ``articles/2019/10/27``, it will inherit the Section Defaults under **articles**.
+As we can see from above, the left-rail component used for the Section Defaults under **Home** is different
+compared to the left-rail component used for the Section Defaults under **articles**.
+If a new article page is created under ``articles/2019/10/27``, it will inherit the Section Defaults under
+**articles**.
 
 --------------------------------
 Create Your Own Level Descriptor
@@ -277,7 +310,8 @@ Create a new content type with name such as ``custom-level-descriptor``:
 
 |
 
-Add ``file-name`` with default value ``crafter-level-descriptor.level`` and check ``Readonly`` option. You can also add more fields to the content type as needed. In this example, a *Custom Headline* text is added.
+Add ``file-name`` with default value ``crafter-level-descriptor.level`` and check ``Readonly`` option.
+You can also add more fields to the content type as needed. In this example, a *Custom Headline* text is added.
 
 .. image:: /_static/images/developer/content-inheritance/new_level_descriptor_form.png
     :width: 100%
@@ -322,7 +356,8 @@ Update ``article.ftl`` template to include a new variable:
 
 |
 
-Click to preview article from ``article2`` folder, confirm that new variable from the level descriptor has been included:
+Click to preview article from ``article2`` folder, confirm that new variable from the level descriptor
+has been included:
 
 .. image:: /_static/images/developer/content-inheritance/new_level_descriptor_preview.jpg
     :width: 100%
@@ -331,6 +366,6 @@ Click to preview article from ``article2`` folder, confirm that new variable fro
 
 |
 
-.. .. TODO:: Describe how to add your own merge strategy. Describe merge cues.
+.. .. TODO: Describe how to add your own merge strategy. Describe merge cues.
 
 

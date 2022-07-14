@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 :last-updated: 4.0.0
 
 .. index:: Site Administrators Project Tools
@@ -18,6 +18,7 @@ Here are the topics covered in this section:
 
    navigating-project-tools
    configuration
+   environment-specific-configurations
    studio-logging
 
 |

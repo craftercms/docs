@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
 
 .. index:: Connecting the Production CMS to the Development Workflow, Development Workflow
 
@@ -8,7 +9,8 @@
 Connecting the Production CMS to the Development Workflow
 =========================================================
 
-In this section we’re going to illustrate how the production CMS is “connected with” and participates in the development workflow to support CrafterCMS' DevContentOps process.
+In this section we’re going to illustrate how the production CMS is “connected with” and participates
+in the development workflow to support CrafterCMS' DevContentOps process.
 
 The Production CMS instance is connected to the development workflow at the repository level.  CrafterCMS’s authoring components sit on top of CrafterCMS' Git-based repository.  Git is a distributed repository -- and we leverage this fact to support the movement of code and content between production and the development process.
 

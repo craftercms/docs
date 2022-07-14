@@ -140,7 +140,7 @@ Here are some best practices to help you:
             </paths>
 
        * You can also use this to enforce single page blueprints by using ``<excludes> <pattern>^/.*</pattern> </excludes>`` in your page type's config.xml, effectively forbidding from creating a new page.
-    * Ensure your blueprint supports :ref:`newIa-experience-builder`.
+    * Ensure your blueprint supports :ref:`newIa-templated-xb`  or :ref:`newIa-headless-xb` depending on your project.
 
 Above all, blueprints should be usable and simple.
 

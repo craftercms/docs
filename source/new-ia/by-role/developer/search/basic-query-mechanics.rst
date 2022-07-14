@@ -7,7 +7,7 @@
 Basic Query Mechanics
 =====================
 
-This cook book is intended to help you understand the types of content queries you can make in CrafterCMS.
+This section is intended to help you understand the types of content queries you can make in CrafterCMS.
 
 -------------
 Prerequisites

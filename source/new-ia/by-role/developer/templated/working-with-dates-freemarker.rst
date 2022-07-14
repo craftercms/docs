@@ -9,7 +9,7 @@ Working with Dates and Time Zones in Freemarker
 
 There are times when we need to display dates in a certain format.  Things that we may want to format the dates displayed are dates in Email templates, dates in web pages, etc.  Freemarker has built-ins for dates to help with formatting displays.  To use a built-in, you need to use a ``?``, then the built-in.
 
-Let's look at some examples on how to use the Freemarker date built-ins.  We'll use a project created by using the Website_editorial blueprint.
+Let's look at some examples on how to use the Freemarker date built-ins.  We'll use a project created by using the Website Editorial blueprint.
 
 First, let's set the time zone in Crafter Engine.  From the **Sidebar**, click on |projectTools|, then click on **Configuration**.  Select **Engine Project Configuration** from the dropdown list, then enter the following into the configuration:
 

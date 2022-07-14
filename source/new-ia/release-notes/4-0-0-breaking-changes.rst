@@ -42,4 +42,5 @@ before upgrading.  Please review the following and apply changes as required:
 
     See :ref:`newIa-migrating-a-site-from-previous-elasticsearch-client` for more information on
     upgrading to the latest Elasticsearch client and query mechanism
-  - Update ICE to move to :ref:`XB <newIa-experience-builder>` (if desired).
+  - Update ICE to move to :ref:`XB <newIa-templated-xb>` or :ref:`XB <newIa-headless-xb>`
+    depending on your project(if desired).
