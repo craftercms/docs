@@ -5,7 +5,7 @@
 CrafterCMS 4.0.0
 ----------------
 
-Released May 12, 2022
+*Released May 12, 2022*
 
 ^^^^^^^^^^^^
 New Features
