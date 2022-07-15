@@ -180,6 +180,7 @@ Crafter Studio
    studio/create-site-with-link-to-remote-repo.rst
    studio/session-timeout-settings.rst
    studio/publishing-blacklist.rst
+   upgrade/upgrading-in-context-editing.rst
 
 |
 

@@ -193,6 +193,7 @@ the ICE engine to make things editable to authors.
 As mentioned earlier, you need to give XB's ICE engine the *coordinates* to identify each model/field,
 so, in addition to their other arguments, each macro receives the following base parameters:
 
+.. _xbAttributes:
 
 * **Model** (``$model``)
 
@@ -354,7 +355,7 @@ The complete FreeMarker template for the carousel component becomes:
 
 .. TODO Speak about the ice support classes, event capture overlay and special treatment for empty zones
 
-.. _macros:
+.. _xbMacros:
 
 FreeMarker Macros & Utilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1227,6 +1228,8 @@ breadcrumb
      - false
      - Whether to render the active element as a link (i.e. ``a``); otherwise rendered as a ``span``.
 
+.. _xbJsApps:
+
 ^^^^^^^^^^^^^^^^^^^^^^^
 JavaScript Applications
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -1247,6 +1250,8 @@ Usage
 
 XB JS libraries can be used either via npm by importing ``@craftercms/experience-builder`` or using the
 JS umd bundle and adding it into your app's runtime.
+
+.. _xb-react-bindings:
 
 React
 ~~~~~
