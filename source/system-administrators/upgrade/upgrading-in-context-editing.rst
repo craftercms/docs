@@ -210,5 +210,5 @@ Coda
 
 Have questions or suggestions?
 
-- Review to :ref:`XB docs <experience-builder>`
+- Review :ref:`XB docs <experience-builder>`
 - Ping us on `slack <https://craftercms.com/slack>`_ or `discord <https://craftercms.com/discord>`_
