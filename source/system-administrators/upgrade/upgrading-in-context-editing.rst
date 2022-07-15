@@ -200,7 +200,14 @@ You should replace the usage of the old package with the new.
 - The use of ``getDropZoneAttributes`` is also replaced with getICEAttributes, no special function is
   needed with the new function. All fields would use getICEAttributes.
 
-- The ``reportNavigation`` method is replaced by :ref:`initExperienceBuilder <js-app-initExperienceBuilder>`
+- The ``reportNavigation`` method is `replaced` by :ref:`initExperienceBuilder <js-app-initExperienceBuilder>`.
+  If you are using report navigation, there's a good chance you should initialize XB manually; for that purpose,
+  you should add ``initializeInContextEditing=false`` to your ``crafter.body_bottom`` invocation (i.e.
+  ``<@crafter.body_bottom initializeInContextEditing=false />``). Once you've done that, you're responsible
+  for initializing XB programmatically on your own using ``initExperienceBuilder``. You should invoke,
+  ``initExperienceBuilder`` after each new page is rendered and you want to tell Studio it is now viewing
+  a different page. Before initializing a new view, once the navigation has occurred you should invoke
+  the unmount function that's returned by ``initExperienceBuilder`` (e.g. ``initExperienceBuilder({ ... }).unmount()``).
 
 - The new package too exports ``fetchIsAuthoring`` and ``addAuthoringSupport`` and the methods on both packages are equivalent.
 
