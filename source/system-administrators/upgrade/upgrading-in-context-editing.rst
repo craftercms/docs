@@ -15,7 +15,7 @@ to the 4.x Experience Builder system. If you're starting your site from scratch,
 
 .. Motivation
 
-CrafterCMS 4 has new mechanism that enable authors to edit the content directly in its preview, short-cut
+CrafterCMS 4 has new mechanisms that enable authors to edit the content directly in its preview, short-cut
 menus to open specific pieces of the content form, better and more reliable drag and drop of components and
 assets from desktop or from the new Assets Panel.
 
@@ -44,7 +44,7 @@ For example:
     <!-- Declares a component drop target called `features_o` -->
     <div class="features" <@studio.componentContainerAttr target="features_o" component=contentModel/>>...</div>
 
-On the new world, ICE groups are now deprecated as authors now have more granular access to fields,
+On XB, ICE groups are now deprecated as authors now have more granular access to fields,
 being able to open the content for a single field or more direct manipulation in a WYSIWYG-style depending
 on the field type. Developers no longer need to declare "ice groups" on the content model.
 
@@ -102,13 +102,13 @@ Starting with simple values (e.g. strings printed on tags), locate each of the f
 
 For example, ``By <span>${contentModel.authorName_s}</span>`` is correct since the interpolated value
 is alone in its container tag, as opposed to ``<span>By ${contentModel.authorName_s}</span>``, where
-there's a piece of text is inside the same element as the interpolation.
+there's a piece of text inside the same element as the interpolation.
 
 Once you've located the interpolations and made sure each expression is alone in its element, replace
 the plain-html tag with a CrafterCMS macro.
 
 For example ``<span>${contentModel.authorName_s}</span>`` would become ``<@crafter.span>${contentModel.authorName_s}</@crafter.span>``.
-In addition to converting the plain tag to a macro, you most specify some additional metadata depending
+In addition to converting the plain tag to a macro, you must specify some additional metadata depending
 on the portion of the model that you're working with. Typically, interpolations refer to a field of
 the model, which is the missing piece of metadata on the latter example. Add the ``$field`` attribute
 to your model with the value being the field id of what you're printing.
@@ -118,7 +118,7 @@ to your model with the value being the field id of what you're printing.
     <@crafter.span $field="authorName_s">${contentModel.authorName_s}</@crafter.span>
 
 Most HTML tags have an :ref:`equivalent macro <xbMacros>`, but if you happen to be using a *rare*
-or custom tag that doesn't have a macro, use you can use the ``@crafter.tag`` macro, which will print
+or custom tag that doesn't have a macro, you can use the ``@crafter.tag`` macro, which will print
 any tag you specify in it's ``$tag`` argument.
 
 .. code-block:: html
@@ -135,7 +135,7 @@ of component collections or repeat groups.
 Previous macros you're using to render a collection (e.g. ``componentContainerAttr``, ``componentContainerAttr``,
 ``draggableComponent``) should be replaced with either :ref:`renderComponentCollection` or
 :ref:`renderRepeatGroup`. In case the new macros don't quite fit your use case, first,
-consider the reason why they don't and preferably update your app to work with these macros do. In
+consider the reason why they don't and preferably update your app to work with these macros. In
 case of a valid complex scenario where these macros don't fit your use case, to enable XB you need to
 manually follow the necessary collection markup structure where you have an element representing the
 field itself, an element for each item in the collection and in the case of components, an element
@@ -148,7 +148,7 @@ their item elements.
 JavaScript
 ----------
 
-The approach to upgrade JavaScript application will depend on how you first integrated your app with ICE.
+The approach to upgrade JavaScript applications will depend on how you first integrated your app with ICE.
 If you didn't have in-context editing on your app, head to :ref:`XB docs <xbJsApps>` to learn how to integrate.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -174,7 +174,7 @@ The new attributes you would be setting are
 
 - ``data-craftercms-model-id``: the UUID of the model you're rendering (i.e. the value of the ``objectId`` tag on the xml)
 - ``data-craftercms-model-path``: path to the model you're rendering
-- ``data-craftercms-field-id``: the id of the field withing the content model (only applicable for fields, not for models)
+- ``data-craftercms-field-id``: the id of the field within the content model (only applicable for fields, not for models)
 - ``data-craftercms-index``: the index within the collection (only applicable for collection items, or fields nested inside the repeat group)
 
 As mentioned before, the recommended approach is to use the JavaScript SDK, specifically the
@@ -191,7 +191,7 @@ Migrating from ``@craftercms/ice``
 The ``@craftercms/ice`` package is superseded by `@craftercms/experience-builder <https://www.npmjs.com/package/@craftercms/experience-builder>`_.
 You should replace the usage of the old package with the new.
 
-- The new package too exports function :ref:`getICEAttributes` to get the attributes you must set
+- The new package also exports function :ref:`getICEAttributes` to get the attributes you must set
   onto your elements. Their arguments are fairly similar but not identical so be sure to update the
   arguments too.
 
@@ -209,7 +209,7 @@ You should replace the usage of the old package with the new.
   a different page. Before initializing a new view, once the navigation has occurred you should invoke
   the unmount function that's returned by ``initExperienceBuilder`` (e.g. ``initExperienceBuilder({ ... }).unmount()``).
 
-- The new package too exports ``fetchIsAuthoring`` and ``addAuthoringSupport`` and the methods on both packages are equivalent.
+- The new package also exports ``fetchIsAuthoring`` and ``addAuthoringSupport`` and the methods on both packages are equivalent.
 
 ----
 Coda
