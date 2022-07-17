@@ -10,8 +10,8 @@ Upgrading In Context Editing
 
 CrafterCMS 3.x and below had mechanisms for "in-context editing" (ICE) which are now deprecated when
 upgrading to CrafterCMS 4.x. This article contains information on how to move from the 3.x ICE system
-to the 4.x Experience Builder system. If you're starting your site from scratch, please refer to the
-:ref:`Experience builder (XB) docs <experience-builder>`.
+to the 4.x Experience Builder (XB) system. If you're starting your site from scratch, please refer to the
+:ref:`Experience builder docs <experience-builder>`.
 
 .. Motivation
 
@@ -28,10 +28,10 @@ editor like before.
 .. How to...
 
 ----------
-Freemarker
+FreeMarker
 ----------
 
-Former pre-version-four ICE relied on the use of freemarker macros invoked in between your regular html
+Prior to version 4 ICE relied on the use of FreeMarker macros invoked in between your regular HTML
 tags.
 
 For example:
@@ -44,7 +44,7 @@ For example:
     <!-- Declares a component drop target called `features_o` -->
     <div class="features" <@studio.componentContainerAttr target="features_o" component=contentModel/>>...</div>
 
-On XB, ICE groups are now deprecated as authors now have more granular access to fields,
+In XB, ICE groups are now deprecated as authors now have more granular access to fields,
 being able to open the content for a single field or more direct manipulation in a WYSIWYG-style depending
 on the field type. Developers no longer need to declare "ice groups" on the content model.
 
@@ -52,7 +52,7 @@ on the field type. Developers no longer need to declare "ice groups" on the cont
 Beginning Migration
 ^^^^^^^^^^^^^^^^^^^
 
-To begin migration, start by locating all the old ``cstudio-support.ftl`` import on your freemarker templates.
+To begin migration, start by locating all the old ``cstudio-support.ftl`` import on your FreeMarker templates.
 
 .. code-block:: html
 
@@ -97,15 +97,15 @@ and that element needs to be marked with the relevant attributes which the new o
 Simple Values
 ^^^^^^^^^^^^^
 
-Starting with simple values (e.g. strings printed on tags), locate each of the freemarker interpolation expressions
-(i.e. ``${contentModel.someFieldId}``). Make sure that the interpolation expression is by itself on a html tag.
+Starting with simple values (e.g. strings printed on tags), locate each of the FreeMarker interpolation expressions
+(i.e. ``${contentModel.someFieldId}``). Make sure that the interpolation expression is by itself on a HTML tag.
 
 For example, ``By <span>${contentModel.authorName_s}</span>`` is correct since the interpolated value
 is alone in its container tag, as opposed to ``<span>By ${contentModel.authorName_s}</span>``, where
 there's a piece of text inside the same element as the interpolation.
 
 Once you've located the interpolations and made sure each expression is alone in its element, replace
-the plain-html tag with a CrafterCMS macro.
+the plain-HTML tag with a CrafterCMS macro.
 
 For example ``<span>${contentModel.authorName_s}</span>`` would become ``<@crafter.span>${contentModel.authorName_s}</@crafter.span>``.
 In addition to converting the plain tag to a macro, you must specify some additional metadata depending
@@ -151,9 +151,9 @@ JavaScript
 The approach to upgrade JavaScript applications will depend on how you first integrated your app with ICE.
 If you didn't have in-context editing on your app, head to :ref:`XB docs <xbJsApps>` to learn how to integrate.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Migrating from manual attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Migrating From Setting Attributes Manually
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you manually set the data attributes on your elements, technically, you could replace the old attributes
 with the new. However, the best approach would be to use `CrafterCMS JavaScript SDK libraries <https://www.npmjs.com/search?q=%40craftercms>`_
@@ -185,7 +185,7 @@ attributes to your elements in whatever way suits your app. If you're using Reac
 :ref:`React-specific bindings <xb-react-bindings>` that the package offers.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Migrating from ``@craftercms/ice``
+Migrating From ``@craftercms/ice``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The ``@craftercms/ice`` package is superseded by `@craftercms/experience-builder <https://www.npmjs.com/package/@craftercms/experience-builder>`_.

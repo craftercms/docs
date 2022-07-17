@@ -1251,7 +1251,7 @@ Usage
 ~~~~~
 
 XB JS libraries can be used either via npm by importing ``@craftercms/experience-builder`` or using the
-JS umd bundle and adding it into your app's runtime.
+JS :abbr:`UMD (Universal Module Definition)` bundle and adding it into your app's runtime.
 
 .. _xb-react-bindings:
 
