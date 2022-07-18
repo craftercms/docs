@@ -210,12 +210,3 @@ You should replace the usage of the old package with the new.
   the unmount function that's returned by ``initExperienceBuilder`` (e.g. ``initExperienceBuilder({ ... }).unmount()``).
 
 - The new package also exports ``fetchIsAuthoring`` and ``addAuthoringSupport`` and the methods on both packages are equivalent.
-
-----
-Coda
-----
-
-Have questions or suggestions?
-
-- Review :ref:`XB docs <experience-builder>`
-- Ping us on `slack <https://craftercms.com/slack>`_ or `discord <https://craftercms.com/discord>`_
