@@ -17,6 +17,9 @@ model each element on the view represents. See :ref:`content-modeling` to learn 
 .. TODO insert <figure: example page with a sample content type side by side showing the relation between page elements
    and content type fields>
 
+If you`re starting from a 3.x ICE system, see :ref:`upgrading-in-context-editing` for more information on how
+to move from the 3.x ICE system to the 4.x Experience Builder (XB) system discussed here.
+
 ----------------------------------------------
 Creating Experience Builder (XB) Enabled Sites
 ----------------------------------------------

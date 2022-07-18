@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:since-version: 4.0.0
+:last-updated: 4.0.1
 
 .. index:: User Interface Configuration
 
@@ -551,8 +551,9 @@ clicking on |projectTools| from the Sidebar.
 
 |
 
+
 List of available tools
------------------------
+=======================
 
 Here's a list of available tools defined in the Website_Editorial blueprint.
 

@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.1
 
 ..  _developers:
 
@@ -30,6 +31,7 @@ In depth concepts and guides follow.
       assets
       templates
       experience-builder
+      upgrading-in-context-editing
       search-elasticsearch
       cook-books/graphql/index
       plugins/index
