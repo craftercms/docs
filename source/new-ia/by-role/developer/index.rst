@@ -23,6 +23,8 @@ The following gets you started with content modeling, content retrieval, and mor
    headless/index
    templated/index
    plugins/index
+   working-with-crafter-studios-api
+   working-with-filters
 
 |
 
@@ -47,6 +49,18 @@ To search for content in your project:
    :titlesonly:
 
    content-search
+
+|
+|
+
+CrafterCMS allows content targeting by providing the ability to render content adapted to specific users,
+depending on different aspects like geographical location, language, preferences, etc.
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   targeting
 
 |
 |
