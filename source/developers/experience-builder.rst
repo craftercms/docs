@@ -193,6 +193,7 @@ the ICE engine to make things editable to authors.
 As mentioned earlier, you need to give XB's ICE engine the *coordinates* to identify each model/field,
 so, in addition to their other arguments, each macro receives the following base parameters:
 
+.. _xbAttributes:
 
 * **Model** (``$model``)
 
@@ -354,7 +355,7 @@ The complete FreeMarker template for the carousel component becomes:
 
 .. TODO Speak about the ice support classes, event capture overlay and special treatment for empty zones
 
-.. _macros:
+.. _xbMacros:
 
 FreeMarker Macros & Utilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -419,6 +420,8 @@ In that case, you'll need to invoke ``initExperienceBuilder`` manually.
      - JS object string
      - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string, the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter's JavaScript libraries initialization.
 
+When invoked, ``initExperienceBuilder`` returns an object with an ``unmount`` prop/function, which
+would indeed `unmount` XB from the current page.
 
 Examples
 """"""""
@@ -1227,6 +1230,8 @@ breadcrumb
      - false
      - Whether to render the active element as a link (i.e. ``a``); otherwise rendered as a ``span``.
 
+.. _xbJsApps:
+
 ^^^^^^^^^^^^^^^^^^^^^^^
 JavaScript Applications
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -1246,7 +1251,9 @@ Usage
 ~~~~~
 
 XB JS libraries can be used either via npm by importing ``@craftercms/experience-builder`` or using the
-JS umd bundle and adding it into your app's runtime.
+JS :abbr:`UMD (Universal Module Definition)` bundle and adding it into your app's runtime.
+
+.. _xb-react-bindings:
 
 React
 ~~~~~
