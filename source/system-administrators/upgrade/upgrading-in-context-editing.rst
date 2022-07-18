@@ -31,7 +31,7 @@ editor like before.
 FreeMarker
 ----------
 
-Prior to version 4 ICE relied on the use of FreeMarker macros invoked in between your regular HTML
+Prior to version 4, ICE relied on the use of FreeMarker macros invoked in between your regular HTML
 tags.
 
 For example:
