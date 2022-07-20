@@ -41,29 +41,29 @@
   border-radius: 6px;
 }
 
-.right-nav .version-tag {
+.version-tag {
   color: #fff;
   display: inline-block;
   background: #595959;
   border-radius: 5px;
   font-size: 15px;
 }
-.right-nav .version-tag.inline {
+.version-tag.inline {
   margin-bottom: 10px;
 }
-.right-nav .version-tag .version__label {
+.version-tag .version__label {
   margin-right: 0;
   display: inline-block;
   padding: 5px 10px;
 }
-.right-nav .version-tag .version__number {
+.version-tag .version__number {
   background-color: #2284bb;
   margin-left: 0;
   display: inline-block;
   padding: 5px 10px;
   border-radius: 0 5px 5px 0;
 }
-.right-nav .versions-tags .inline {
+.versions-tags .inline {
   display: inline-block;
   margin-bottom: 10px;
 }
