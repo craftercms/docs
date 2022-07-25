@@ -22,91 +22,23 @@ To modify the Blob Stores configuration, click on |projectTools| from the bottom
 Sample
 ------
 
-.. code-block:: xml
+Here's a sample Blob Stores Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample "blob-stores-config.xml"</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-blob-stores-config.xml
     :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/blob-stores-config.xml*
+    :language: xml
     :linenos:
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!--
-      Blob stores configuration file.
+.. raw:: html
 
-      For every store you need to specify:
-      <blobStore>
-        <id/>
-        <type/>
-        <pattern/>
-        <mappings>
-          <mapping>
-            <publishingTarget/>
-            <storeTarget/>
-            <prefix/>
-          </mapping>
-        </mappings>
-        <configuration/>
-      </blobStore>
+   </details>
 
-      id:	a unique id for the store
-      type: the type of store to use
-      pattern: the regex to match file paths
-      mappings.mapping.publishingTarget: the name of the publishing storeTarget (preview, staging, live)
-      mappings.mapping.storeTarget: the name of the storeTarget inside the store
-      mappings.mapping.prefix: the prefix to use for all paths (optional)
-      configuration: configuration specific for the store type
-
-      Every store can require additional properties.
-    -->
-    <blobStores>
-      <!--
-        AWS S3 Store
-
-        Configuration properties:
-
-        <credentials>
-          <accessKey/>
-          <secretKey/>
-        </credentials>
-        <region/>
-        <endpoint/>
-        <pathStyleAccess/>
-
-        credentials.accessKey: AWS access key (optional)
-        credentials.secretKey: AWS secret key (optional)
-        region: AWS region for the service (optional)
-        pathStyleAccess: indicates if path style access should be used for all requests (defaults to false)
-
-      -->
-
-      <blobStore>
-        <id>s3-store</id>
-        <type>s3BlobStore</type>
-        <pattern>/static-assets/s3/.*</pattern>
-        <mappings>
-          <mapping>
-            <publishingTarget>preview</publishingTarget>
-            <storeTarget>my-authoring-bucket</storeTarget>
-            <prefix>sandbox</prefix>
-          </mapping>
-          <mapping>
-            <publishingTarget>staging</publishingTarget>
-            <storeTarget>my-authoring-bucket</storeTarget>
-            <prefix>staging</prefix>
-          </mapping>
-          <mapping>
-            <publishingTarget>live</publishingTarget>
-            <storeTarget>my-delivery-bucket</storeTarget>
-          </mapping>
-        </mappings>
-        <configuration>
-          <credentials>
-            <accessKey>xxxxxxxxx</accessKey>
-            <secretKey>xxxxxxxxx</secretKey>
-          </credentials>
-          <region>us-west-1</region>
-          <pathStyleAccess>true</pathStyleAccess>
-        </configuration>
-      </blobStore>
-    </blobStores>
-
-    |
+|
+|
 
 See :ref:`publishing-assets-in-external-storage` for an example of using the blob stores configuration

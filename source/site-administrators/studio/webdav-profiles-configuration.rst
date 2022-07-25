@@ -20,46 +20,23 @@ To modify the WebDAV Profiles configuration, click on |projectTools| from the bo
 ------
 Sample
 ------
+Here's a sample WebDAV Profiles Configuration file (click on the triangle on the left to expand/collapse):
 
-.. code-block:: xml
-    :caption: CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/webdav/webdav.xml
+.. raw:: html
+
+   <details>
+   <summary><a>Sample WebDAV profiles configuration</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-webdav.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/webdav/webdav.xml*
+    :language: xml
     :linenos:
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!--
-        WebDAV profiles configuration file. This files configures 0 or more
-        profiles with the information required to connect to a WebDAV server.
+.. raw:: html
 
-        For every profile you need to specify:
-        <profile>
-            <id/>
-            <baseUrl/>
-            <deliveryBaseUrl/> (deprecated)
-            <username/>
-            <password/>
-            <preemptiveAuth/>
-        </profile>
+   </details>
 
-        id:	a unique id for this profile, this will be referenced in the
-            control defined in the content type
-        baseUrl: Full URL of the WebDAV server
-        deliveryBaseUrl: Full URL of the delivery server to override for files, deprecated and will be ignored
-        username: WebDAV account username
-        password: WebDAV account password
-        preemptiveAuth: Indicates if the client should use preemptiveAuth, defaults to false
-    -->
-    <webdav>
-      <webdav>
-        <profile>
-          <id>webdav-default</id>
-          <baseUrl>...</baseUrl>
-          <username>...</username>
-          <password>...</password>
-          <preemptiveAuth>...</preemptiveAuth>
-        </profile>
-      </webdav>
-    </webdav>
-
+|
 |
 
   .. note:: Preemptive authentication may be needed if network timeouts are happening during uploads.  To enable preemptive authentication, simply set the option ``preemptiveAuth`` to ``true`` in the configuration file.

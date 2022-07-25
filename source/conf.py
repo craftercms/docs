@@ -52,7 +52,8 @@ extensions = [
     'edit_on_github',
     'sphinx.ext.extlinks',
     'version_tag',
-    'sphinx_copybutton'
+    'sphinx_copybutton',
+    'sphinxext.remoteliteralinclude'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
