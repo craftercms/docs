@@ -1,6 +1,9 @@
 :is-up-to-date: True
+:since-version: 4.0.1
 
 .. index:: Upgrading CrafterCMS, Upgrading
+
+.. _upgrading-in-context-editing:
 
 ============================
 Upgrading In Context Editing
@@ -37,6 +40,7 @@ tags.
 For example:
 
 .. code-block:: html
+    :force:
 
     <!-- Declare an element which should show a pencil that opens
     <section id="banner" <@studio.iceAttr iceGroup="hero"/>>...</section>
@@ -55,12 +59,14 @@ Beginning Migration
 To begin migration, start by locating all the old ``cstudio-support.ftl`` import on your FreeMarker templates.
 
 .. code-block:: html
+    :force:
 
     <#import "/templates/system/common/cstudio-support.ftl" as studio />
 
 Replace the ``cstudio-support.ftl`` import with the new ``crafter.ftl``,
 
 .. code-block:: html
+    :force:
 
     <#import "/templates/system/common/crafter.ftl" as crafter />
 
@@ -69,6 +75,7 @@ Remove the ``@studio.toolSupport`` macro call and add ``<@crafter.head/>`` to yo
 bottom of your body tag.
 
 .. code-block:: html
+    :force:
 
     <html>
     <head>
@@ -114,6 +121,7 @@ the model, which is the missing piece of metadata on the latter example. Add the
 to your model with the value being the field id of what you're printing.
 
 .. code-block:: html
+    :force:
 
     <@crafter.span $field="authorName_s">${contentModel.authorName_s}</@crafter.span>
 
@@ -122,6 +130,7 @@ or custom tag that doesn't have a macro, you can use the ``@crafter.tag`` macro,
 any tag you specify in it's ``$tag`` argument.
 
 .. code-block:: html
+    :force:
 
     <@crafter.tag $tag="author-name" $field="authorName_s">${contentModel.authorName_s}</@crafter.tag>
 
