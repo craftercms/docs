@@ -42,6 +42,9 @@ Updates
 * Improved asset panel to show full path on hover or as part of card |br|
   See `here <https://github.com/craftercms/craftercms/issues/5678>`__ for more information
 
+* Fix cache clearing issue with the deployment events watcher |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5677>`__ for more information
+
 * Fixed issue with files containing parenthesis in its name |br|
   See `here <https://github.com/craftercms/craftercms/issues/5675>`__ for more information
 
