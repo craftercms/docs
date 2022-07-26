@@ -136,7 +136,7 @@ Here's a sample User Interface Configuration file (click on the triangle on the 
    <details>
    <summary><a>Sample "ui.xml"</a></summary>
 
-.. literalinclude:: /_static/code/site-admin/sample-ui.xml
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-ui.xml
    :language: xml
    :linenos:
 

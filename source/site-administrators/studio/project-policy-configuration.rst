@@ -34,49 +34,22 @@ select **Project Policy Configuration** from the dropdown list.
 ******
 Sample
 ******
+Here's a sample Project Policy Configuration file (click on the triangle on the left to expand/collapse):
 
-.. code-block:: xml
-   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/site-policy-config.xml*
-   :linenos:
+.. raw:: html
 
-   <?xml version="1.0" encoding="UTF-8" ?>
+   <details>
+   <summary><a>Sample project policy configuration</a></summary>
 
-   <site-policy>
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-site-policy-config.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/site-policy-config.xml*
+    :language: xml
+    :linenos:
 
-     <!--
-       This file can contain any number of statements to control the content added to the site:
+.. raw:: html
 
-       <statement>
-         <target-path-pattern/> (Regular expression that will be compared against the path of the content)
-
-         <permitted>
-           (All elements in this section are optional and can be used in any combination)
-
-           <minimum-file-size/> (Minimum size of the file in bytes)
-           <maximum-file-size/> (Maximum size of the file in bytes)
-
-           <mime-types/> (Comma separated list of MIME types, also support wildcards)
-
-           <content-types/> (Comma separated list of content-types)
-
-           <path>
-             <source-regex/> (Regular expression to validate the full path of the file)
-             <target-regex caseTransform="lowercase"/> (Expression to transform the full path of the file)
-           </path>
-
-         </permitted>
-       </statement>
-      -->
-
-     <!-- Example: only allow images of less than 1 MB -->
-     <statement>
-       <target-path-pattern>/static-assets/images/.*</target-path-pattern>
-       <permitted>
-         <maximum-file-size>1000000</maximum-file-size>
-         <mime-types>image/*</mime-types>
-       </permitted>
-     </statement>
-
-   </site-policy>
+   </details>
 
 |
+|
+

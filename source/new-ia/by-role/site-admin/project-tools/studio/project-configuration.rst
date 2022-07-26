@@ -33,9 +33,9 @@ Here's a sample Project Configuration file (click on the triangle on the left to
    <details>
    <summary><a>Sample Project Configuration</a></summary>
 
-.. literalinclude:: /_static/code/site-admin/sample-site-config.xml
-      :language: xml
-      :linenos:
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-site-config.xml
+     :language: xml
+     :linenos:
 
 
 .. raw:: html

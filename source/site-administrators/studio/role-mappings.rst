@@ -19,65 +19,24 @@ Users only sees the items that they have been granted access to based on the per
 ------
 Sample
 ------
+Here's a sample Role Mappings Configuration file (click on the triangle on the left to expand/collapse):
 
-.. code-block:: xml
-    :caption: *CRAFTER_HOME/data/repos/sites/sandbox/SITENAME/sandbox/config/studio/role-mappings-config.xml*
+.. raw:: html
+
+   <details>
+   <summary><a>Sample role mappings configuration</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-role-mappings-config.xml
+    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/role-mappings-config.xml*
+    :language: xml
     :linenos:
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!-- role-mappings-config.xml
+.. raw:: html
 
-        This file maps groups to roles.
+   </details>
 
-        The structure of this file:
-
-        <role-mappings>
-            <groups>
-                <group name="site_admin">
-                    <role>admin</role>
-                </group>
-                <group name="site_developer">
-                    <role>developer</role>
-                </group>
-                <group name="site_author">
-                    <role>author</role>
-                </group>
-                <group name="site_publisher">
-                    <role>publisher</role>
-                </group>
-                <group name="site_reviewer">
-                    <role>reviewer</role>
-                </group>
-            </groups>
-        </role-mappings>
-
-
-        Please note that by default, projects are created with the groups and roles above. However, if LDAP authentication
-        is configured, additional groups will be automatically created for the project as project members sign in via LDAP.
-        Those new groups can then be mapped to roles in this file. This then allows LDAP managed users to automatically
-        get roles within a project based on their LDAP group membership.
-
-    -->
-    <role-mappings>
-        <version>2</version>
-        <groups>
-            <group name="site_admin">
-                <role>admin</role>
-            </group>
-            <group name="site_developer">
-                <role>developer</role>
-            </group>
-            <group name="site_author">
-                <role>author</role>
-            </group>
-            <group name="site_publisher">
-                <role>publisher</role>
-            </group>
-            <group name="site_reviewer">
-                <role>reviewer</role>
-            </group>
-        </groups>
-    </role-mappings>
+|
+|
 
 
 -----------
