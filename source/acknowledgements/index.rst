@@ -746,6 +746,18 @@ commons-csv
 **Dependency:** commons-csv |br|
 **URL:** https://search.maven.org/artifact/org.apache.commons/commons-csv
 
+tika-parser-webarchive-module
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-webarchive-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-webarchive-module
+
+jwarc
+^^^^^
+**Package:** org.netpreserve |br|
+**Dependency:** jwarc |br|
+**URL:** https://search.maven.org/artifact/org.netpreserve/jwarc
+
 tika-parser-xml-module
 ^^^^^^^^^^^^^^^^^^^^^^
 **Package:** org.apache.tika |br|
