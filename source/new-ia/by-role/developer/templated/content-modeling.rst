@@ -20,7 +20,7 @@ Content Types in Crafter Studio
 
 Content Type Management in Crafter Studio is located in the |projectTools|.
 
-.. image:: /_static/images/content-model/site-tools-link.png
+.. image:: /_static/images/content-model/project-tools-link.png
    :width: 30%
    :alt: Project Tools Link
    :align: center
@@ -29,7 +29,7 @@ Content Types are limited to two core types: **Pages** and **Components**. Both 
 
 #. Model: The content pieces that will be captured from the content authors for the page or component
 #. View: The view template that will render the content, typically to HTML markup
-#. Controller: The controller that handles the incoming request for the page or component
+#. Controller: The controller   that handles the incoming request for the page or component
 
 ^^^^^
 Pages

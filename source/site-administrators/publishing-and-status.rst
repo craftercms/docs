@@ -48,9 +48,7 @@ Publishing is locked when content is being published.  From the Status tab, you 
 
 After clicking on the ``unlock`` button, the user will be prompted to confirm the action:
 
-.. todo: check if image below needs to be updated
-
-.. image:: /_static/images/site-admin/site-config-unlock-publish-confirm.png
+.. image:: /_static/images/site-admin/project-tools-unlock-publish-confirm.png
     :alt: Project Tools Publishing - Unlock icon
     :width: 50%
     :align: center

@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.1
 
 .. _crafter-studio-debugging-publishing-issues:
 
@@ -12,9 +13,9 @@ When publishing fails, here are some things to consider to help track down the c
 Inspect Publishing Queue
 ------------------------
 
-The publishing queue (items that are in the queue for publishing) can be viewed through Studio from the |projectTools| -> ``Publishing`` -> ``Publishing Queue`` tab.  Here, the user can narrow down the queue for inspection by specifying filters.  For more information see :ref:`publishing-queue`
+The publishing queue (items that are in the queue for publishing) can be viewed through Studio from |projectTools| -> ``Publishing``, then scroll down to the ``Publishing Queue``.  Here, the user can narrow down the queue for inspection by specifying filters.  For more information see :ref:`publishing-queue`
 
-.. image:: /_static/images/site-admin/site-config-publishing-queue-all.png
+.. image:: /_static/images/site-admin/project-tools-publishing-queue-all.png
     :alt: Debugging Publishing Issues - Inspect Publishing Queue
 	:align: center
 
