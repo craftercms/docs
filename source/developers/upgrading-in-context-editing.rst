@@ -13,7 +13,7 @@ Upgrading In Context Editing
 
 CrafterCMS 3.x and below had mechanisms for "in-context editing" (ICE) which are now deprecated when
 upgrading to CrafterCMS 4.x. This article contains information on how to move from the 3.x ICE system
-to the 4.x Experience Builder (XB) system. If you're starting your site from scratch, please refer to the
+to the 4.x Experience Builder (XB) system. If you're starting your project from scratch, please refer to the
 :ref:`Experience builder docs <experience-builder>`.
 
 .. Motivation

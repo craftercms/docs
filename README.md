@@ -16,6 +16,9 @@ Then, install `pipenv`
 
 `$ sudo pip install pipenv`
 
+and the extension
+pip3 install sphinxext-remoteliteralinclude
+
 Finally, install dependencies and activate the pipenv shell
 
 `$ pipenv install`

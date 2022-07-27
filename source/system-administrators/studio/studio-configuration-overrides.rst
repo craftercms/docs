@@ -414,6 +414,8 @@ The following section of Studio's configuration overrides allows you to configur
    # Indicates if the refresh token cookie should be secure (should be true for production environments behind HTTPS)
    studio.security.token.cookie.secure: ${env:STUDIO_REFRESH_TOKEN_SECURE}
 
+.. _crafterSite-cookie-domain:
+
 -------------------------
 crafterSite Cookie Domain
 -------------------------
