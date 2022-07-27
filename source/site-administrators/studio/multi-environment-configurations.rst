@@ -29,6 +29,10 @@ Users may want multiple environments setup with different configurations for eac
 
 #. Restart Studio
 
+.. note:: Once an environment has been created, when adding a new configuration file to the environment,
+   the file must be created in the repo and not through Studio UI.  Remember to commit the new file
+   created for the environment so Studio will pick it up
+
 -------
 Example
 -------
