@@ -21,3 +21,9 @@ Configuration
 -------------
 
 Crafter Commons is configured through the rest of the projects comprising CrafterCMS.
+
+----
+Tool
+----
+Crafter Commons provides a command line tool that can be used to encrypt/decrypt text.
+See :ref:`newIa-crafter-commons-encryption-tool` for more information

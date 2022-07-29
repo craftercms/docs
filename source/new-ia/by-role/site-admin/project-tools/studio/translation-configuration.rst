@@ -1,11 +1,11 @@
 :is-up-to-date: False
 
-.. index:: Translation Configuration
-
 :orphan:
 
 .. document does not appear in any toctree, and is only accessible via searching.
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
+
+.. index:: Translation Configuration
 
 .. _newIa-translation-configuration:
 

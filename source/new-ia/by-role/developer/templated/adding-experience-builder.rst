@@ -17,6 +17,9 @@ model each element on the view represents. See :ref:`newIa-content-modeling` to 
 .. TODO insert <figure: example page with a sample content type side by side showing the relation between page elements
    and content type fields>
 
+If you`re starting from a 3.x ICE system, see :ref:`newIa-upgrading-in-context-editing-templated` for more information
+on how to move from the 3.x ICE system to the 4.x Experience Builder (XB) system discussed here.
+
 ----------------------------------------------
 Creating Experience Builder (XB) Enabled Sites
 ----------------------------------------------
@@ -193,6 +196,7 @@ the ICE engine to make things editable to authors.
 As mentioned earlier, you need to give XB's ICE engine the *coordinates* to identify each model/field,
 so, in addition to their other arguments, each macro receives the following base parameters:
 
+.. _newIa-xbAttributes:
 
 * **Model** (``$model``)
 
@@ -354,7 +358,7 @@ The complete FreeMarker template for the carousel component becomes:
 
 .. TODO Speak about the ice support classes, event capture overlay and special treatment for empty zones
 
-.. _newIa-macros:
+.. _newIa-xbMacros:
 
 FreeMarker Macros & Utilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

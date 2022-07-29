@@ -3,9 +3,9 @@
 
 .. _newIa-system-admin-installation:
 
-============
-Installation
-============
+==========================
+Installation and Upgrading
+==========================
 
 .. 6.2.1 Tuning Authoring
    6.2.2 Tuning Delivery
@@ -114,5 +114,13 @@ Here's some more information on setting up and configuring your cluster
    clustering/changing-git-url-format-in-cluster
    clustering/studio-clustering-two-nodes
 
+---------
+Upgrading
+---------
 
+Here's how to upgrade your Crafter CMS installations in Kubernetes or Docker Compose, or a server
 
+.. toctree::
+   :maxdepth: 2
+
+   upgrade/index

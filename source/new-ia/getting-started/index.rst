@@ -42,7 +42,6 @@ If you are a system administrator and would like to learn more about configuring
     * :ref:`newIa-system-administrators`
     * :ref:`newIa-production-environment-setup`
 
-.. todo: fix the link to "newIa-production-environment-setup"
 
 Looking for support? The following page will get you started:
 

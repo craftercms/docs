@@ -24,7 +24,7 @@ This section details the steps required to upgrade your CrafterCMS install.
 
 |
 
-Here are the instructions for upgrading CrafterCMS based on how it was installed:
+Here are the instructions for upgrading CrafterCMS based on how it was installed (on a server or via Kubernetes/Docker Compose):
 
 .. toctree::
    :maxdepth: 1
@@ -32,3 +32,13 @@ Here are the instructions for upgrading CrafterCMS based on how it was installed
 
    upgrading-crafter.rst
    docker/index.rst
+
+For more information on adding upgrade scripts for your customizations such as changes to Crafter Studio's configuration or database:
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   add-to-upgrade-scripts.rst
+
+

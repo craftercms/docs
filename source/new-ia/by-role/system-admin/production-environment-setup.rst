@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.1
 
 .. index:: Setting up a CrafterCMS production environment, Production Environment
 
@@ -20,25 +20,13 @@ Setting up the production environment
 
 #. We'll first install the authoring instance. You can follow the :ref:`newIa-getting-started` to install and start authoring.
 
-   Alternatively, you can also install craftercms and start authoring by cloning the craftercms repo and building and deploying it using gradle.
-
-      `git clone https://github.com/craftercms/craftercms.git`
-      `./gradlew clone build deploy -Penv=authoring`
-      `./gradlew start -Penv=authoring`
-
 #. Create your site in authoring. You can follow the guide :ref:`newIa-your-first-editorial-project` to use one of the out-of-the-box blueprints provided by Crafter CMS.
 
 #. Now that you have a site setup in authoring, the next thing to do is to setup your site in the delivery instance(s).  Let's begin the delivery installation.
 
-   Installing the delivery instance is almost the same as installing the authoring instance.  The difference is, if you're installing from a binary built
-   by the gradle environment builder, you need to download/use ``crafter-cms-delivery-VERSION.tar.gz``.  Follow the same steps used to
-   install your authoring environment using the delivery tar files.
-
-   If using the alternate way of installing craftercms, to install and start the delivery, simply run the following:
-
-      `git clone https://github.com/craftercms/craftercms.git`
-      `./gradlew clone build deploy -Penv=delivery`
-      `./gradlew start -Penv=delivery`
+   Installing the delivery instance is almost the same as installing the authoring instance.  The
+   difference is, you need to download/use ``crafter-cms-delivery-VERSION.tar.gz``.  Follow the
+   same steps used to install your authoring environment using the delivery binary files.
 
 #. After starting delivery, we'll setup the site we created in step 2 in our delivery instance. Crafter CMS comes with a script, ``init-site.sh``, to help
    us setup our site for delivery.
