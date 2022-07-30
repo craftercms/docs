@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. index:: Crafter Studio Toolbar Plugin Example, Studio Plugins, Plugins
 

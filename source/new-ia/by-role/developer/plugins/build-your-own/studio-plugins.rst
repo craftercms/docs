@@ -1,6 +1,6 @@
-:orphan:
-
 :is-up-to-date: False
+:orphan:
+:nosearch:
 
 .. index:: Crafter Studio Project Plugins, Studio Project Plugins, Project Plugins
 

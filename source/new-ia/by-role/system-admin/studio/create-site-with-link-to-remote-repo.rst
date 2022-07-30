@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. index:: Site Creation with Remote Repositories, Remote Repositories
 

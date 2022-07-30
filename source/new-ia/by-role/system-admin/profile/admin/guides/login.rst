@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 ===========================
 Accessing the Admin Console

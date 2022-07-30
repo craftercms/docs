@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. index:: Putting it all together - Users, Groups, Roles and Permissions
 

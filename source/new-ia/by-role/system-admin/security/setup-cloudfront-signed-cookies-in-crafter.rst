@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. _newIa-setup-cloudfront-signed-cookies-in-crafter:
 

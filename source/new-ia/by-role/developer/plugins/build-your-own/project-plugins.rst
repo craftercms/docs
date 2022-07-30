@@ -1,6 +1,8 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+:nosearch:
+
 .. index:: Create a Project Plugin, Plugin
 
 .. _newIa-project-plugin:

@@ -1,5 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
+:nosearch:
 
 .. index:: Setup a Two Node Cluster with Studio, Clustering with Studio Example
 

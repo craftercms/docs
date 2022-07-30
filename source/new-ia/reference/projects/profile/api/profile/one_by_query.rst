@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. _newIa-crafter-profile-api-profile-one_by_query:
 

@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. index:: Crafter Marketplace, Marketplace
 

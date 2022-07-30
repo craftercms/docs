@@ -1,8 +1,9 @@
+:is-up-to-date: True
+:nosearch:
+
 .. Section outline
    9.1 Source Code
    9.2 Acknowledgements
-
-:is-up-to-date: True
 
 .. _newIa-contribute:
 

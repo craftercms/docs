@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. index:: Building Form Engine Controls Project Plugins, Form Control Project Plugins, Project Plugins
 

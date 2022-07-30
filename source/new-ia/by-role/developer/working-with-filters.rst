@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. index:: Working With URL Interceptor/Servlet Filters in Crafter CMS
 

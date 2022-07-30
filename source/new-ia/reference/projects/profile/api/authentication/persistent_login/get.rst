@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. _newIa-crafter-profile-api-authentication-persistent_login-get:
 
