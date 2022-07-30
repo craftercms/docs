@@ -1,5 +1,5 @@
 
-.. _marketplacePluginStructure:
+.. _marketplace-plugin-structure:
 
 ==========
 Marketplace Plugin Structure

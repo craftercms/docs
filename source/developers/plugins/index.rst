@@ -16,8 +16,8 @@ ready-to-use contact form, a chat bot or integrations with third-party analytics
 
 On the other hand, authoring extensions open the door for developers to customize and extend Crafter
 Studio. Through authoring extensions, Studio UI can be extended by including new widgets into specific
-portions of the UI or by creating complete applications that run in their own private route within
-Crafter Studio.
+portions of the UI or by creating complete applications that run in their own
+:ref:`private route within Crafter Studio <plugin-host-page>`.
 
 For further excitement, developers may submit their plugins to the :ref:`CrafterCMS Marketplace <marketplace>`,
 which provides a home for the Crafter community to contribute, find, and use plugins.
@@ -43,6 +43,9 @@ There are two main types of CrafterCMS plugins:
    Marketplace plugins can be installed on projects directly from CrafterCMS
 
 * :ref:`Blueprints <create-a-blueprint>` are templates to start your CrafterCMS project from; they may provide styles, pages, behaviors, content types and more.
-* :ref:`Extensions <project-plugin>` allow developers to create components and applications that can be used to extend authoring and delivery.
+* :ref:`Extensions <project-plugin>` allow developers to create components and applications that can be used to extend authoring and delivery. There are two types of extensions:
+
+  * :ref:`plugins-authoring-extensions`
+  * :ref:`plugins-delivery-extensions`
 
 Visit the respective links above for further details and guides to create your own.

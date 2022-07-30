@@ -68,13 +68,15 @@ If you're using this simple structure, you're free to manage your plugin sources
 (if there's any) inside its directory as you please.
 
 If you do plan to publish or wish to manage via the cli, you'll need to follow the
-:ref:`marketplace plugin structure <marketplacePluginStructure>`.
+:ref:`marketplace plugin structure <marketplace-plugin-structure>`.
 
 .. note:: If you started with the simple structure, you're always able to migrate into the full package structure at a later stage.
 
 .. raw:: html
 
    <hr>
+
+.. _plugins-authoring-extensions:
 
 ------
 Authoring Extensions
@@ -139,6 +141,8 @@ Through authoring extensions you can add your own service API rest scripts.
 
 For example, you may want to create an API to connect and/or monitor AWS services and create a
 `UI extension <UI Widgets and Standalone Apps_>`_ to consume your APIs.
+
+.. _plugins-delivery-extensions:
 
 -------------------
 Delivery Extensions
