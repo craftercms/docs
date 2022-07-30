@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 sphinx-rtd-theme = "*"
 sphinx-copybutton = "*"
+sphinxext-remoteliteralinclude = "*"
 
 [dev-packages]
 

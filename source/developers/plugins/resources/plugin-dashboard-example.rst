@@ -45,11 +45,11 @@ Let's take a look at an example of creating a Dashboard plugin in Studio using a
    For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/toolbar-plugin``
 
 #. We'll create the javascript file for our plugin by following the instructions in the plugin example
-   `here <https://github.com/craftercms/craftercms-ui-plugin-sample>`__ which will generate the
-   ``index.modern.js`` file.
+   `here <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-component-library>`__ which will generate the
+   ``index.js`` file.
 
    Inside the ``test-dashboard`` folder, create two empty files, ``index.css`` and ``script.js``,
-   and place the ``index.modern.js`` file in it.
+   and place the ``index.js`` file in it.
 
 
 #. To setup our dashboard project plugin to be automatically wired in the corresponding configuration file in Studio (which for a dashboard, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
@@ -84,7 +84,7 @@ Let's take a look at an example of creating a Dashboard plugin in Studio using a
                   - name: name
                     value: test-dashboard
                   - name: file
-                    value: index.modern.js
+                    value: index.js
 
        |
 
@@ -147,7 +147,7 @@ Let's take a look at an example of creating a Dashboard plugin in Studio using a
                 <plugin id="org.craftercms.plugin.dashboard"
                         type="dashboard"
                         name="test-dashboard"
-                        file="index.modern.js"/>
+                        file="index.js"/>
               </widget>
               ...
 

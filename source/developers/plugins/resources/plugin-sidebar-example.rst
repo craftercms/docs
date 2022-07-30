@@ -35,11 +35,11 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a p
    For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/sidebar-plugin``
 
 #. We'll create the javascript file for our plugin by following the instructions in the plugin example
-   `here <https://github.com/craftercms/craftercms-ui-plugin-sample>`__ which will generate the
-   ``index.modern.js`` file.
+   `here <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-component-library>`__ which will generate the
+   ``index.js`` file.
 
    Inside the ``react-sample`` folder, create two empty files, ``index.css`` and ``script.js``,
-   and place the ``index.modern.js`` file in it.
+   and place the ``index.js`` file in it.
 
 
 #. To setup our sidebar project plugin to be automatically wired in the corresponding configuration file in Studio (which for a sidebar, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
@@ -72,13 +72,15 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a p
                   - name: name
                     value: react-sample
                   - name: file
-                    value: index.modern.js
+                    value: index.js
 
    |
 
    Remember to use the same value used in ``plugin.id`` (found at the top of the descriptor file) for the installation section *plugin.id* which for our example is ``org.craftercms.plugin``
 
 #. After placing your plugin files and setting up auto-wiring, the project plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
+
+.. TODO: this image needs updating. File is no longer called `index.modern.js`
 
    .. image:: /_static/images/developer/plugins/project-plugins/sidebar-plugin-files.png
       :align: center
@@ -144,7 +146,7 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a p
                <plugin id="org.craftercms.plugin"
                        type="sidebar"
                        name="react-sample"
-                       file="index.modern.js"/>
+                       file="index.js"/>
             </widget>
           </widgets>
         </configuration>

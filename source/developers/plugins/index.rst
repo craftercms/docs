@@ -8,53 +8,41 @@
 Plugins
 =======
 
-CrafterCMS plugins extend the CMS and provide the users additional functionality.  It allows developers to create new experiences both for authors and end-users.  Plugins can be a single file or multiple files and directories.
+CrafterCMS plugins allow developers to create extensions to both authoring and delivery.
 
-**CrafterCMS Marketplace**
+Delivery extensions can provide features, functionalities and full experiences that can be used in
+the delivery side of CrafterCMS projects (i.e. sites, mobile apps, etc). Examples of these are a
+ready-to-use contact form, a chat bot or integrations with third-party analytics software.
 
-Developers may submit their plugins to the *CrafterCMS Marketplace*, which provides a home for the Crafter community to contribute, find, and use plugins.
+On the other hand, authoring extensions open the door for developers to customize and extend Crafter
+Studio. Through authoring extensions, Studio UI can be extended by including new widgets into specific
+portions of the UI or by creating complete applications that run in their own private route within
+Crafter Studio.
 
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
+For further excitement, developers may submit their plugins to the :ref:`CrafterCMS Marketplace <marketplace>`,
+which provides a home for the Crafter community to contribute, find, and use plugins.
 
-   marketplace/index
+There are two main types of CrafterCMS plugins:
 
-|
-|
+.. TODO: The Create Site dialog screenshot reads "site" instead of "blueprint". Must update screen capture.
 
-Here are the available plugin types:
+.. figure:: /_static/images/developer/plugins/marketplace-blueprints.jpg
+   :alt: CrafterCMS plugins dialog showing marketplace plugins
+   :width: 320px
+   :figwidth: 320px
+   :align: right
 
-* Blueprints
-* Project Plugins
+   Blueprints can be used directly from CrafterCMS when creating a new project
 
-**Blueprints**
+.. figure:: /_static/images/developer/plugins/marketplace-site-plugins.jpg
+   :alt: CrafterCMS plugins dialog showing marketplace plugins
+   :width: 320px
+   :figwidth: 320px
+   :align: right
 
-.. image:: /_static/images/developer/plugins/marketplace-blueprints.jpg
-   :alt: Plugins - Marketplace Blueprints
-   :width: 60%
-   :align: center
+   Marketplace plugins can be installed on projects directly from CrafterCMS
 
-Blueprints provide an initial set of styles, pages, behaviors, content types and more.
+* :ref:`Blueprints <create-a-blueprint>` are templates to start your CrafterCMS project from; they may provide styles, pages, behaviors, content types and more.
+* :ref:`Extensions <project-plugin>` allow developers to create components and applications that can be used to extend authoring and delivery.
 
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   blueprints
-
-**Project Plugins**
-
-.. image:: /_static/images/developer/plugins/marketplace-site-plugins.jpg
-   :alt: Plugins - Marketplace Project Plugins
-   :width: 60%
-   :align: center
-
-Project plugins allow users to either replace, extend or even create stand alone experiences to serve a particular
-use case or set of use cases.
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   project-plugins
+Visit the respective links above for further details and guides to create your own.

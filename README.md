@@ -16,9 +16,6 @@ Then, install `pipenv`
 
 `$ sudo pip install pipenv`
 
-and the extension
-pip3 install sphinxext-remoteliteralinclude
-
 Finally, install dependencies and activate the pipenv shell
 
 `$ pipenv install`
@@ -36,3 +33,8 @@ To clear the build folder run
 
 `$ make clean`
 
+## Development Live Reload
+
+This project allows rebuilding and reloading the browser on every change: `https://pypi.org/project/sphinx-autobuild`
+
+Run `$ pip3 install sphinx-autobuild` to install and `sphinx-autobuild docs/source docs/build/html` to start the live reload server.

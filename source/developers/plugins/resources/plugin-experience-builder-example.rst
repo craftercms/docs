@@ -52,11 +52,11 @@ a project called ``My Editorial`` created using the **Website Editorial** bluepr
    For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/experiencebuilder-plugin``
 
 #. We'll create the javascript file for our plugin by following the instructions in the plugin example
-   `here <https://github.com/craftercms/craftercms-ui-plugin-sample>`__ which will generate the
-   ``index.modern.js`` file.
+   `here <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-component-library>`__ which will generate the
+   ``index.js`` file.
 
    Inside the ``test-experiencebuilder`` folder, create two empty files, ``index.css`` and ``script.js``,
-   and place the ``index.modern.js`` file in it.
+   and place the ``index.js`` file in it.
 
 #. To setup our experience builder project plugin to be automatically wired in the corresponding configuration file in Studio (which for an experience builder, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
 
@@ -88,7 +88,7 @@ a project called ``My Editorial`` created using the **Website Editorial** bluepr
                   - name: name
                     value: test-experiencebuilder
                   - name: file
-                    value: index.modern.js
+                    value: index.js
 
    |
 
@@ -146,7 +146,7 @@ a project called ``My Editorial`` created using the **Website Editorial** bluepr
                 <plugin id="org.craftercms.plugin"
                         type="experiencebuilder"
                         name="test-experiencebuilder"
-                        file="index.modern.js"/>
+                        file="index.js"/>
               </widget>
              </widgets>
           </configuration>

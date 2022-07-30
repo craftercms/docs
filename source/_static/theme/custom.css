@@ -73,9 +73,9 @@
 }
 
 .ee-only-badge {
-    height: 40px !important;
-    position: relative !important;
-    top: -14px !important;
+  height: 40px !important;
+  position: relative !important;
+  top: -14px !important;
 }
 
 /* Footer section */
@@ -95,3 +95,33 @@
 .highlight .err {
   border: none;
 }
+
+/* region sphinx-tabs */
+
+.sphinx-tabs[role="tablist"] {
+  margin-bottom: 10px;
+}
+
+.sphinx-tabs-tab {
+  border-width: 1px;
+  border-color: #e1e4e5;
+  border-style: solid;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+}
+
+.sphinx-tabs-tab[aria-selected="true"] {
+  border-bottom-color: transparent;
+  background-color: #f8f8f8;
+}
+
+.sphinx-tabs .code-tab {
+  margin-top: -1px;
+}
+
+.sphinx-tabs .code-tab > div {
+  margin-top: 0;
+}
+
+/* endregion */

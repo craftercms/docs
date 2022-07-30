@@ -50,11 +50,11 @@ called ``My Editorial`` created using the **Website Editorial** blueprint.
    folder.  For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/projecttools-plugin``
 
 #. We'll create the javascript file for our plugin by following the instructions in the plugin example
-   `here <https://github.com/craftercms/craftercms-ui-plugin-sample>`__ which will generate the
-   ``index.modern.js`` file.
+   `here <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-component-library>`__ which will generate the
+   ``index.js`` file.
 
    Inside the ``test-project-tools`` folder, create two empty files, ``index.css`` and ``script.js``,
-   and place the ``index.modern.js`` file in it.
+   and place the ``index.js`` file in it.
 
 
 #. To setup our ``Project Tools`` tool project plugin to be automatically wired in the corresponding configuration file in Studio (which for a project tools tool, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
@@ -99,7 +99,7 @@ called ``My Editorial`` created using the **Website Editorial** blueprint.
                   - name: name
                     value: test-project-tools
                   - name: file
-                    value: index.modern.js
+                    value: index.js
 
    |
 
@@ -156,7 +156,7 @@ called ``My Editorial`` created using the **Website Editorial** blueprint.
                    <plugin id="org.craftercms.plugin.exampleprojecttools"
                            type="project-tool"
                            name="test-project-tools"
-                           file="index.modern.js"/>
+                           file="index.js"/>
                 </widget>
               </tool>
             </tools>

@@ -12,18 +12,19 @@ Blueprints
 What are Blueprints?
 --------------------
 
-Blueprints are CrafterCMS project templates.  It provides an initial set of styles, pages, behaviors, content types and more, containing one or more of the following: content types such as pages and components as described in :ref:`content-modeling`, static assets such as images, videos, etc., and project configuration files for managing items in the blueprint such as taxonomies (categories, segments), roles, permissions, etc.
+Blueprints are CrafterCMS project templates. They provide an initial set of styles, pages, behaviors,
+content types and more, containing one or more of the following: content types such as pages and components
+as described in :ref:`content-modeling`, static assets such as images, videos, etc., and project configuration
+files for managing items in the blueprint such as taxonomies (categories, segments), roles, permissions, etc.
 
 .. image:: /_static/images/blueprint/blueprint-anatomy.png
    :alt: Cook Books - Blueprint Anatomy
-   :width: 65 %
-   :align: center
-
-|
+   :width: 30%
+   :align: right
 
 The blueprint that comes out of the box with CrafterCMS, ``Website Editorial Blueprint``, provides us with an initial structure for our project, along with the project navigation, content inheritance, taxonomies for organizing the content such as categories and segments, which is also used for targeting content, static assets such as the initial images and fonts used for the project and configuration files for managing things like the segments for targeting, the permissions for all the items in the project, the role mappings, the RTE configuration, etc.  To see more of the ``Website Editorial Blueprint``, please see :ref:`your_first_project` where we create a project based on the ``Website Editorial Blueprint``.
 
-As mentioned earlier, blueprints allows us to generate projects with predefined layouts, contents and configuration.  Blueprints could be a project theme or an API only project.  New blueprints can be created from a project and added into CrafterCMS allowing the creation of more projectss based on the new blueprint.  In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from CrafterCMS and an existing project is used to create a new blueprint.
+As mentioned earlier, blueprints allow us to generate projects with predefined layouts, contents and configuration.  Blueprints could be a project theme or an API only project.  New blueprints can be created from a project and added into CrafterCMS allowing the creation of more projectss based on the new blueprint.  In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from CrafterCMS and an existing project is used to create a new blueprint.
 
 Developers may submit their blueprints to the `CrafterCMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted blueprints are listed, and power users of CrafterCMS can create projects based on marketplace plugins directly from the ``Create Project`` dialog in the CMS. See :ref:`submit-plugin-to-marketplace` for more information on how to submit your blueprint to the marketplace.
 
