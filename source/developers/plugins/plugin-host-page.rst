@@ -26,7 +26,7 @@ the PH requires three to five query string arguments.
    ``type``     (required) The name of the category directory inside `{sandbox}/config/studio/plugins` directory
    ``name``     (required) The name of the plugin directory inside `{sandbox}/config/studio/plugins/{type}` directory
    ``file``     index.js   The name of the file you want the PH to load. Can be either an HTML or JavaScript file
-   ``pluginId``            The plugin id when the app is nested under a plugin id directory
+   ``id``                  The plugin id when the app is nested under a plugin id directory
    ============ ========== ==========
 
 Visiting this page without any arguments would show a message stating the arguments are missing. You must
