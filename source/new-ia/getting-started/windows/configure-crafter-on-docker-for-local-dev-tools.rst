@@ -1,4 +1,5 @@
 :is-up-to-date: false
+:nosearch:
 
 .. index:: Configuring CrafterCMS on Docker for Local Development Tools
 

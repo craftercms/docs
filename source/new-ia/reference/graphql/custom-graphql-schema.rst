@@ -1,4 +1,5 @@
 :is-up-to-date: False
+:nosearch:
 
 .. index:: Custom GraphQL Schema
 

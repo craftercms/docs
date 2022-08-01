@@ -1,5 +1,5 @@
 :is-up-to-date: True
-
+:nosearch:
 :orphan:
 
 .. document does not appear in any toctree, this file is referenced

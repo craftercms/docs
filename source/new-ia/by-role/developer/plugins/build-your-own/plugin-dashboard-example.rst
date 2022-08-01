@@ -1,4 +1,5 @@
 :is-up-to-date: False
+:nosearch:
 
 .. index:: Crafter Studio Dashboard Plugin Example, Studio Plugins, Plugins
 

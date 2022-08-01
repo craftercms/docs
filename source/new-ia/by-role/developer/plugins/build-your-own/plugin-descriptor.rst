@@ -1,7 +1,9 @@
-:orphan:
-
 :is-up-to-date: True
 :last-updated: 4.0.0
+
+:orphan:
+:nosearch:
+
 
 .. _newIa-craftercms-plugin-yaml-file:
 

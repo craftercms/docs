@@ -1,6 +1,6 @@
 :is-up-to-date: True
 :since-version: 4.0.0
-
+:nosearch:
 :orphan:
 
 .. document does not appear in any toctree, this file is referenced

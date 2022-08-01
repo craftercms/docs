@@ -1,5 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
+:nosearch:
 
 .. index:: Introduction to the Developer Workflow with CrafterCMS, Developer Workflow
 

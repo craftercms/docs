@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. index:: Securing Your CrafterCMS Install, Change Defaults in CrafterCMS
 

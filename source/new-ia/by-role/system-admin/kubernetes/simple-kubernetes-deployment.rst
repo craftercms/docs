@@ -1,5 +1,6 @@
 :is-up-to-date: False
 :last-updated: 4.0.1
+:nosearch:
 
 .. _newIa-simple-kubernetes-deployment:
 

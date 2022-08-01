@@ -1,4 +1,6 @@
 :is-up-to-date: True
+:since-version: 4.0.0
+:nosearch:
 
 .. index:: CrafterCMS Security Processes, Security, Security Processes
 

@@ -1,4 +1,5 @@
 :is-up-to-date: False
+:nosearch:
 
 .. index:: Crafter Studio Navigation Menu Plugin Example, Studio Plugins, Plugins
 

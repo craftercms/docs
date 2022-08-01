@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. index:: Building Form Engine Data Source Project Plugins, Form  Data Source Project Plugin, Project Plugins
 

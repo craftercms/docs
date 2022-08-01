@@ -1,5 +1,6 @@
 :is-up-to-date: True
 :since-version: 4.0.0
+:nosearch:
 
 .. _newIa-content-search:
 
