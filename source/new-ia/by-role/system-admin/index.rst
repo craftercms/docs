@@ -20,3 +20,4 @@ they need to install and maintain CrafterCMS components.
    security
    backup-and-restore
    disaster-recovery
+   troubleshooting
