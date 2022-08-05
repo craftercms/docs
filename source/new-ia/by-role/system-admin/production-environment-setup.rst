@@ -1,5 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.1
+:nosearch:
 
 .. index:: Setting up a CrafterCMS production environment, Production Environment
 

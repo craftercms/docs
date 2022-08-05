@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. index:: Upgrading Crafter CMS; Upgrading; Docker; Kubernetes
 

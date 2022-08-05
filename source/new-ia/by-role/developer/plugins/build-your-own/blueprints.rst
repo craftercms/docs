@@ -1,9 +1,10 @@
 :is-up-to-date: True
 :last-updated: 4.0.1
+:nosearch:
 
 .. index:: Create a Project Blueprint, Project Blueprint
 
-.. _create-a-blueprint:
+.. _newIa-create-a-blueprint:
 
 ==================
 Project Blueprints
@@ -13,7 +14,7 @@ Project Blueprints
 What are Project Blueprints?
 ----------------------------
 
-Project blueprints are CrafterCMS project templates.  It provides an initial set of styles, pages, behaviors, content types and more, containing one or more of the following: content types such as pages and components as described in :ref:`content-modeling`, static assets such as images, videos, etc., and project configuration files for managing items in the project blueprint such as taxonomies (categories, segments), roles, permissions, etc.
+Project blueprints are CrafterCMS project templates.  It provides an initial set of styles, pages, behaviors, content types and more, containing one or more of the following: content types such as pages and components as described in :ref:`newIa-content-modeling`, static assets such as images, videos, etc., and project configuration files for managing items in the project blueprint such as taxonomies (categories, segments), roles, permissions, etc.
 
 .. image:: /_static/images/blueprint/blueprint-anatomy.png
    :alt: Cook Books - Blueprint Anatomy
@@ -22,19 +23,19 @@ Project blueprints are CrafterCMS project templates.  It provides an initial set
 
 |
 
-The project blueprint that comes out of the box with CrafterCMS, ``Website Editorial Blueprint``, provides us with an initial structure for our project, along with the project navigation, content inheritance, taxonomies for organizing the content such as categories and segments, which is also used for targeting content, static assets such as the initial images and fonts used for the project and configuration files for managing things like the segments for targeting, the permissions for all the items in the project, the role mappings, the RTE configuration, etc.  To see more of the ``Website Editorial Blueprint``, please see :ref:`your_first_project` where we create a project based on the ``Website Editorial Blueprint``.
+The project blueprint that comes out of the box with CrafterCMS, ``Website Editorial Blueprint``, provides us with an initial structure for our project, along with the project navigation, content inheritance, taxonomies for organizing the content such as categories and segments, which is also used for targeting content, static assets such as the initial images and fonts used for the project and configuration files for managing things like the segments for targeting, the permissions for all the items in the project, the role mappings, the RTE configuration, etc.  To see more of the ``Website Editorial Blueprint``, please see :ref:`newIa-your-first-editorial-project` where we create a project based on the ``Website Editorial Blueprint``.
 
 As mentioned earlier, project blueprints allows us to generate projects with predefined layouts, contents and configuration.  Blueprints could be a project theme or an API only project.  New project blueprints can be created from a project and added into CrafterCMS allowing the creation of more projects based on the new project blueprint.  In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from CrafterCMS and an existing project is used to create a new project blueprint.
 
-Developers may submit their project blueprints to the `CrafterCMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted project blueprints are listed, and power users of CrafterCMS can create projects based on marketplace plugins directly from the ``Create Project`` dialog in the CMS. See :ref:`submit-plugin-to-marketplace` for more information on how to submit your project blueprint to the marketplace.
+Developers may submit their project blueprints to the `CrafterCMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted project blueprints are listed, and power users of CrafterCMS can create projects based on marketplace plugins directly from the ``Create Project`` dialog in the CMS. See :ref:`newIa-submit-plugin-to-marketplace` for more information on how to submit your project blueprint to the marketplace.
 
 ---------------------------------------
 How do I make my own Project Blueprint?
 ---------------------------------------
 
-Start by :ref:`quick_start_guide`.
+Start by following ``How do I install CrafterCMS`` :ref:`here <newIa-getting-started>`.
 
-Blueprints are almost the same as a project (:ref:`Warnings <blueprint-project-vs-blueprint>`). So, you can use a new project created from the ``Empty`` project blueprint as the starting point for your project blueprint. (See :ref:`your_first_project` but create it from the ``Empty`` project blueprint).
+Blueprints are almost the same as a project (:ref:`Warnings <newIa-blueprint-project-vs-blueprint>`). So, you can use a new project created from the ``Empty`` project blueprint as the starting point for your project blueprint. (See :ref:`newIa-your-first-editorial-project` but create it from the ``Empty`` project blueprint).
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Adapting an HTML template
@@ -68,7 +69,7 @@ HTML files will become Freemarker templates. For this cookbook, you'll see how t
 
 You should keep ``<#import "/templates/system/common/crafter.ftl" as crafter />`` at the very start to have proper Studio support. Next, all resource locations are probably pointing to the wrong location. To fix this, replace every relative url that doesn't point to a page (this would include ``<link rel="stylesheet" href="`` tags for CSS files, ``<script src="`` for JS files, ``<img src="`` for image files, and ``<source src="`` for video and sound files) such that it starts with ``/static-assets/`` and points to the corresponding file.
 
-Modify the Rich Text Editor configuration so it uses your template's stylesheets. See :ref:`rte-configuration`
+Modify the Rich Text Editor configuration so it uses your template's stylesheets. See :ref:`newIa-rte-configuration`
 
 At this point, you should have a static page that looks just how the template is supposed to look. For every other HTML page, you have to either create a new page content type and, like with index, replace its ftl template with the page's source; or, generalize the content type, with proper content modeling, such that multiple pages share a single ftl template and vary only in the components they contain. Let's see some tips for this.
 
@@ -76,9 +77,9 @@ At this point, you should have a static page that looks just how the template is
 Content Modeling
 ^^^^^^^^^^^^^^^^
 
-A powerful and extensible project blueprint that can be used in a variety of pages and scenarios needs proper :ref:`content-modeling`, so you have to be familiar with it before proceeding.
+A powerful and extensible project blueprint that can be used in a variety of pages and scenarios needs proper :ref:`newIa-content-modeling`, so you have to be familiar with it before proceeding.
 
-A good project blueprint separates each meaningful chunk of HTML code into a component. For example, whether you implement an "Our Team" section using a repeating group or multiple "Teammate" shared components, it still has to be a separate type that only contains information related to "Our Team". Whether it is a Component or a Page, it shouldn't contain "Product" information. Once you have identified HTML chunks with a meaning, start by moving them into their type's ``template.ftl``. Next, replace any information with a variable from the ``contentModel`` (and add the respective control to the Content Type). Unless they are extremely simple, most pages will contain shared components, even if they are just a ``header`` and ``footer`` component provided by the :ref:`section-defaults`.
+A good project blueprint separates each meaningful chunk of HTML code into a component. For example, whether you implement an "Our Team" section using a repeating group or multiple "Teammate" shared components, it still has to be a separate type that only contains information related to "Our Team". Whether it is a Component or a Page, it shouldn't contain "Product" information. Once you have identified HTML chunks with a meaning, start by moving them into their type's ``template.ftl``. Next, replace any information with a variable from the ``contentModel`` (and add the respective control to the Content Type). Unless they are extremely simple, most pages will contain shared components, even if they are just a ``header`` and ``footer`` component provided by the :ref:`newIa-section-defaults`.
 
 Here are some best practices to help you:
 
@@ -92,7 +93,7 @@ Here are some best practices to help you:
     * Prefer repeating groups over shared/embedded components. Shared/embedded components are ultimately more versatile, but if you are only going to repeat text, and that text is not going to appear outside the repeating group again, it's a better user experience to just use a repeating group.
 
        * Bear in mind that you can't have nested repeating groups, so only the innermost repetition can be a repeating group.
-    * You can set up folders for specific content types, and you can enforce them by using ``<paths>`` in your types' config.xml. Use ``includes`` whenever you want to *whitelist* some paths, and use ``excludes`` to *blacklist* some paths, but do not mix them.  For more examples, see :ref:`content-creation-permissions-section`
+    * You can set up folders for specific content types, and you can enforce them by using ``<paths>`` in your types' config.xml. Use ``includes`` whenever you want to *whitelist* some paths, and use ``excludes`` to *blacklist* some paths, but do not mix them.  For more examples, see :ref:`newIa-content-creation-permissions-section`
 
         .. code-block:: xml
 
@@ -103,16 +104,16 @@ Here are some best practices to help you:
             </paths>
 
        * You can also use this to enforce single page project blueprints by using ``<excludes> <pattern>^/.*</pattern> </excludes>`` in your page type's config.xml, effectively forbidding from creating a new page.
-    * Ensure your project blueprint supports :ref:`experience-builder`.
+    * Ensure your project blueprint supports Experience Builder (xb), more information on xb :ref:`here <newIa-templated-xb>` or :ref:`here <newIa-headless-xb>`.
 
 Above all, project blueprints should be usable and simple.
 
-.. _section-defaults:
+.. _newIa-section-defaults:
 
 Section Defaults
 ^^^^^^^^^^^^^^^^
 Section Defaults provides inherited values to all children and sibling content items.
-To learn more about content inheritance see :ref:`content-inheritance` and for an example to see how Section Defaults is used in the Website Editorial project blueprint :ref:`inherit-levels-example` .
+To learn more about content inheritance see :ref:`newIa-content-inheritance` and for an example to see how Section Defaults is used in the Website Editorial project blueprint :ref:`newIa-inherit-levels-example` .
 
 ---------
 Packaging
@@ -133,9 +134,9 @@ Your project exists in ``{CRAFTER_HOME}/data/repos/sites/your-project-name``. In
 
 |
 
-In the previous screenshot, we didn't copy the ``config/`` folder. Why? (:ref:`Warnings <blueprint-project-vs-blueprint>`). You can either:
+In the previous screenshot, we didn't copy the ``config/`` folder. Why? (:ref:`Warnings <newIa-blueprint-project-vs-blueprint>`). You can either:
 
-    * **Copy the config folder and modify** ``permission-mappings-config.xml`` and ``site-config.xml`` to use ``{siteName}`` again as explained in (:ref:`Warnings <blueprint-project-vs-blueprint>`)
+    * **Copy the config folder and modify** ``permission-mappings-config.xml`` and ``site-config.xml`` to use ``{siteName}`` again as explained in (:ref:`Warnings <newIa-blueprint-project-vs-blueprint>`)
     * **Keep config as is** and only copy the files you've modified. This will likely include the whole ``config/studio/content-types/`` folder and ``config/studio/preview-tools/components-config.xml`` for drag and drop.
     * **Keep your project blueprint in a VCS** which will allow you to compare it against your changes and interactively see when to preserve the old version. This will also help you make any updates when project blueprints get updated. You can either use Git or a visual diff tool.
 
@@ -147,7 +148,7 @@ Installing
 ----------
 
 #. Copy your project blueprint folder into ``{CRAFTER_HOME}/data/repos/global/blueprints``.
-#. Check in your project blueprint folder if it contains a ``craftercms-plugin.yaml`` file.  Add in the file if it does not exist by copying a ``craftercms-plugin.yaml`` file from one of the default project blueprints, such as from the folder ``4000_empty``, which contains the empty project blueprint and modifying it as needed.  See :ref:`craftercms-plugin-yaml-file` for details on the file
+#. Check in your project blueprint folder if it contains a ``craftercms-plugin.yaml`` file.  Add in the file if it does not exist by copying a ``craftercms-plugin.yaml`` file from one of the default project blueprints, such as from the folder ``4000_empty``, which contains the empty project blueprint and modifying it as needed.  See :ref:`newIa-craftercms-plugin-yaml-file` for details on the file
 #. Once you do, commit the change to the global repo (``{CRAFTER_HOME}/data/repos/global/``) by using ``git``, and your project blueprint will now start appearing when you try to create a new project.
 
    * CrafterCMS uses a vanilla version of Git, so regular Git commands work as intended. To commit your changes so Crafter can see it, head to ``{CRAFTER_HOME}/data/repos/global/blueprints`` and git add your modified files like this
@@ -170,7 +171,7 @@ Installing
 
    * No need to push, there’s no remote configured. You can also use any Git client. Now, it will be available when you create a new project.
 
-.. _adding-default-image-for-bp:
+.. _newIa-adding-default-image-for-bp:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Adding a default image for a project blueprint
@@ -222,10 +223,10 @@ When you create a project using the project blueprint we fixed above, ``Another 
 Adding a plugin descriptor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-All project blueprints need to include a plugin descriptor as described in :ref:`craftercms-plugin-yaml-file`
+All project blueprints need to include a plugin descriptor as described in :ref:`newIa-craftercms-plugin-yaml-file`
 
 
-.. _passing-parameters-to-bp:
+.. _newIa-passing-parameters-to-bp:
 
 Passing Parameters to Project Blueprints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -260,7 +261,7 @@ To use the parameters in configuration files, simply use ``${plugin:PARAM_NAME}`
 Let's take a look at an example of adding parameters to the **Website Editorial** project blueprint.
 In our example, we will be passing AWS credentials when the project is created to be used for storing files in an S3 bucket and will setup the configuration file that will be using the passed parameters, along with the changes required in the content type and template so users can upload files to S3 once the project is up.
 
-To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>` guide, but instead of manually adding the AWS credentials so the user can upload files, we'll pass the AWS credentials through the project blueprint when the project is created.
+To store files in an S3 bucket, we'll follow :ref:`this <newIa-use-s3-to-store-assets>` guide, but instead of manually adding the AWS credentials so the user can upload files, we'll pass the AWS credentials through the project blueprint when the project is created.
 
 #. The first thing we need to do is to add the parameters to the ``craftercms-plugin.yaml`` file of the Website Editorial project blueprint.  Open the ``craftercms-plugin.yaml`` which is under the ``{CRAFTER_HOME}/data/repos/global/blueprints/1000_website_editorial`` folder and add the following lines to the end of the file:
 
@@ -328,7 +329,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>
       </aws>
 
 
-#. Next we'll modify the content type ``Page - Article`` and the template for it, ``article.ftl`` to allow the user to select files to be uploaded like in the example :ref:`here <use-s3-to-store-assets>`.  We'll end up with two files modified.  The ``article.ftl`` and ``form-definition.xml`` files.
+#. Next we'll modify the content type ``Page - Article`` and the template for it, ``article.ftl`` to allow the user to select files to be uploaded like in the example :ref:`here <newIa-use-s3-to-store-assets>`.  We'll end up with two files modified.  The ``article.ftl`` and ``form-definition.xml`` files.
 
    .. code-block:: text
       :caption: *CRAFTER_HOME/data/repos/global/blueprints/1000_website_editorial/templates/web/pages/article.ftl*
@@ -421,7 +422,7 @@ Since a project blueprint is very similar in its layout to a project, you can mo
 * You can quickly see the effects of your modifications on Studio's preview project.
 * You can create components, pages, and other file types through Studio, providing you with base templates, snippets, and type-specific UIs.
 
-.. _blueprint-project-vs-blueprint:
+.. _newIa-blueprint-project-vs-blueprint:
 
 .. warning:: However
 

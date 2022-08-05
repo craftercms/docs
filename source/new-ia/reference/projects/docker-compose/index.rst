@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. index:: Projects; CrafterCMS Docker Compose; Docker Compose
 

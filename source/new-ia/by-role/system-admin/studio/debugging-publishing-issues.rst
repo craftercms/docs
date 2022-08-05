@@ -1,5 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.1
+:nosearch:
 
 .. _newIa-crafter-studio-debugging-publishing-issues:
 

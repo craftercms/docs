@@ -1,5 +1,6 @@
 :is-up-to-date: False
 :last-updated: 4.0.0
+:nosearch:
 
 .. index:: Setup CrafterCMS Delivery Using Crafter's AWS AMI
 

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
-
+:nosearch:
 :orphan:
 
 .. index:: Studio's Configuration

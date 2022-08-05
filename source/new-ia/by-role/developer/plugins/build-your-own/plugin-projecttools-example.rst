@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. index:: Crafter Studio Project Tools Plugin Example, Studio Plugins, Plugins
 

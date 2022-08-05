@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. index:: Configuring Apache Virtual Host for Production, Configuring Apache vhost
 .. _newIa-configure-apache-vhost-for-production:

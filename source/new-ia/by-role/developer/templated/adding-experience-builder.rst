@@ -1,7 +1,8 @@
-.. index:: Experience Builder, In-Context Editing, ICE
-
 :is-up-to-date: False
 :since-version: 4.0.0
+:nosearch:
+
+.. index:: Experience Builder, In-Context Editing, ICE
 
 .. _newIa-templated-xb:
 

@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:nosearch:
 
 .. index:: Simple Delivery Kubernetes Deployment, Example Kubernetes deployment of simple Delivery
 

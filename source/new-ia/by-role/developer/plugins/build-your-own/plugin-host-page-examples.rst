@@ -1,4 +1,5 @@
 :is-up-to-date: False
+:nosearch:
 
 .. index:: Crafter Studio Plugin Host Page Examples, Studio Plugins, Plugins
 
