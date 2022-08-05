@@ -1,18 +1,18 @@
 :is-up-to-date: True
 
-.. index:: Create a Project Plugin, Plugin
+.. index:: Create a Plugin, Plugins
 
-.. _project-plugin:
+.. _plugins:
 
-===============
-Project Plugins
-===============
+=======
+Plugins
+=======
 
--------------------------
-What are project plugins?
--------------------------
+-----------------
+What are plugins?
+-----------------
 
-A project plugin can contain one or more extensions for CrafterCMS in a single package. These extensions can:
+A plugin can contain one or more extensions for CrafterCMS in a single package. These extensions can:
 
 * **Extend Crafter Studio (authoring)**
 
@@ -26,16 +26,16 @@ A project plugin can contain one or more extensions for CrafterCMS in a single p
   * Add REST APIs and/or server-side code
   * Add 3rd party integrations to your web app
 
-Project plugins allows the user to easily add/extend functionality and features of a Web experience
+Plugins allows the user to easily add/extend functionality and features of a Web experience
 (site, mobile app) or the content authoring experience (authoring tools) or both.
 Examples of features/functionalities a user may want to add to their Web app may be a contact form,
 a chat bot or Website analytics.
 
-.. _how-do-i-make-my-own-project-plugin:
+.. _how-do-i-make-my-own-plugin:
 
-------------------------------------
-How Do I Make My Own Project Plugin?
-------------------------------------
+----------------------------
+How Do I Make My Own Plugin?
+----------------------------
 
 ^^^^^^^^^^^^
 Requirements
@@ -347,7 +347,7 @@ To reuse those libraries, do the following:
 Publishing Your Project Plugin
 ------------------------------
 
-To publish a plugin in the CrafterCMS Marketplace you can follow the instructions in :ref:`marketplace_create_plugins`
+To publish a plugin in the CrafterCMS Marketplace you can follow the instructions in :ref:`marketplace_create_extensions`
 
 |
 |

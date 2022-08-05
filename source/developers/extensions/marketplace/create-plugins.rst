@@ -1,23 +1,23 @@
 :is-up-to-date: True
 
-.. index:: Create Plugins for the Crafter Marketplace
+.. index:: Create Extensions for the Crafter Marketplace
 
-.. _marketplace_create_plugins:
+.. _marketplace_create_extensions:
 
-==========================================
-Create Plugins for the Crafter Marketplace
-==========================================
+=============================================
+Create Extensions for the Crafter Marketplace
+=============================================
 
-----------------
-Types of plugins
-----------------
+-------------------
+Types of extensions
+-------------------
 
-- ``blueprint``: This type of plugin can be used as a template to create sites, it includes support for parameters
+- ``blueprint``: This type of extension (blueprint) can be used as a template to create projects, it includes support for parameters
   to allow dynamic sites that use API keys or passwords for external services. For more information about creating
   blueprints you can follow this guide: :ref:`create-a-blueprint`.
 
-- ``site``: This type of plugin can be used to add features to existing sites, it can include authoring and delivery
-  extensions. For more information about creating project plugins you can follow this guide: :ref:`project-plugin`
+- ``site``: This type of extension (plugin) can be used to add features to existing projects, it can include authoring
+  and delivery extensions. For more information about creating project plugins you can follow this guide: :ref:`plugins`
 
 .. _submit-plugin-to-marketplace:
 

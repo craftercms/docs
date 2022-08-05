@@ -58,4 +58,5 @@ Example
    |
 
 
-See :ref:`how-do-i-make-my-own-project-plugin` for the folder structure required for your plugin and more information on creating a plugin
+See :ref:`how-do-i-make-my-own-plugin` for the folder structure required for your plugin and more information on
+creating a plugin
