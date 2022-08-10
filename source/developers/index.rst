@@ -34,7 +34,7 @@ In depth concepts and guides follow.
       upgrading-in-context-editing
       search-elasticsearch
       cook-books/graphql/index
-      plugins/index
+      extensions/index
       targeting
       redirect
       testing
