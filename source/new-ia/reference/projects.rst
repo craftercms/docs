@@ -11,7 +11,7 @@ Projects
 CrafterCMS comprises a number of projects:
 
 .. list-table::
-   :widths: 10 10 80
+   :widths: 10 10 20
    :header-rows: 1
 
    * - Project
@@ -55,7 +55,7 @@ CrafterCMS comprises a number of projects:
    * - .. toctree::
           :maxdepth: 1
 
-          projects/engine/index
+          projects/studio/index
 
      - https://github.com/craftercms/studio
      - Crafter Studio provides all the content management services to enable authoring, management, and publishing of all content.

@@ -4,9 +4,9 @@
 
 .. _newIa-system-admin-installation:
 
-============
-Installation
-============
+==========================
+Installation and Upgrading
+==========================
 
 .. 6.2.1 Tuning Authoring
    6.2.2 Tuning Delivery
@@ -20,7 +20,7 @@ First we'll take a look at the requirements and supported platform for installin
 .. toctree::
    :maxdepth: 2
 
-   /system-administrators/requirements-supported-platforms
+   requirements-supported-platforms
 
 Remember to change the default values pre-configured when installing Crafter CMS for a secure installation.
 See :ref:`newIa-securing-your-crafter-cms-install` for more information.
@@ -85,6 +85,8 @@ setup various things for your authoring install
    authoring/change-hosts-ports-on-your-auth-install
    authoring/staging
    authoring/sync-studio-database-with-repo
+   studio/studio-configuration-files
+   studio/publishing-blacklist
 
 ---------------
 Tuning Delivery
@@ -115,5 +117,13 @@ Here's some more information on setting up and configuring your cluster
    clustering/changing-git-url-format-in-cluster
    clustering/studio-clustering-two-nodes
 
+---------
+Upgrading
+---------
 
+Here's how to upgrade your Crafter CMS installations in Kubernetes, Docker Compose, or a server
 
+.. toctree::
+   :maxdepth: 2
+
+   upgrade/index

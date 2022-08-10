@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:orphan:
 :nosearch:
 
 .. _newIa-crafter-commons-encryption-tool:

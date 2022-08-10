@@ -16,6 +16,9 @@ model each element on the view represents. See :ref:`newIa-content-modeling` to 
 .. TODO insert <figure: example page with a sample content type side by side showing the relation between page elements
    and content type fields>
 
+If you`re starting from a 3.x ICE system, see :ref:`newIa-upgrading-in-context-editing-headless` for more information
+on how to move from the 3.x ICE system to the 4.x Experience Builder (XB) system discussed here.
+
 ----------------------------------------------
 Creating Experience Builder (XB) Enabled Sites
 ----------------------------------------------
@@ -179,6 +182,8 @@ Rules of XB
                      </div>
                   </div>
 
+.. _newIa-xbJsApps:
+
 ^^^^^^^^^^^^^^^^^^^^^^^
 JavaScript Applications
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -199,6 +204,8 @@ Usage
 
 XB JS libraries can be used either via npm by importing ``@craftercms/experience-builder`` or using the
 JS umd bundle and adding it into your app's runtime.
+
+.. _newIa-xb-react-bindings:
 
 React
 ~~~~~

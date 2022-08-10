@@ -11,7 +11,7 @@ This section contains links to configuration for consideration when securing Cra
 .. toctree::
    :maxdepth: 1
 
-   security/security-change-defaults
+   security/securing-your-craftercms-install
    security/configure-password-requirements
    security/randomize-admin-passwd
    security/configure-studio-security

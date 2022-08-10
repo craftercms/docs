@@ -24,6 +24,7 @@ This section details building headless projects, its purpose and examples.
    content-modeling
    accessing-content
    adding-experience-builder
+   upgrading-in-context-editing
    custom-api
    security
    examples/index
