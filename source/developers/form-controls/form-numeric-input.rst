@@ -18,7 +18,7 @@ Numeric Input Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-numeric-input-example.png
+.. image:: /_static/images/form-controls/form-control-numeric-input-example.webp
         :width: 60%
         :alt: Form Control Numeric Input Example
         :align: center
@@ -29,7 +29,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-numeric-input.png
+.. image:: /_static/images/form-controls/form-control-numeric-input.webp
         :width: 45%
         :alt: Form Control Numeric Input Properties
         :align: center

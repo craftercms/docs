@@ -20,7 +20,7 @@ To find this configuration xml through studio follow the next instructions:
 #. Choose **Configuration** from the menu.
 #. Select **Configurations**.
 
-.. image:: /_static/images/site-admin/configuration.jpg
+.. image:: /_static/images/site-admin/configuration.webp
     :alt: Configurations - Open Configurations
     :width: 55 %
     :align: center
@@ -236,7 +236,7 @@ Sample File
 
 You can click on the **View Sample** button to see a configuration file example.
 
-.. image:: /_static/images/site-admin/basic-configuration-sample.jpg
+.. image:: /_static/images/site-admin/basic-configuration-sample.webp
     :align: center
     :alt: Basic Configuration Sample
 
@@ -263,7 +263,7 @@ To add a new configuration file please follow the steps below.
       </file>
 
 
-   .. image:: /_static/images/site-admin/basic-configuration-step1.jpg
+   .. image:: /_static/images/site-admin/basic-configuration-step1.webp
             :align: center
             :alt: Basic Configuration Step 1
 
@@ -271,7 +271,7 @@ To add a new configuration file please follow the steps below.
 
 #. Click on the **Save** button
 
-    .. image:: /_static/images/site-admin/basic-configuration-step2.jpg
+    .. image:: /_static/images/site-admin/basic-configuration-step2.webp
         :align: center
         :alt: Basic Configuration Step 2
 
@@ -279,7 +279,7 @@ To add a new configuration file please follow the steps below.
 
 #. Go to ``Configuration``, then finally look for your new configuration file
 
-    .. image:: /_static/images/site-admin/basic-configuration-step3.jpg
+    .. image:: /_static/images/site-admin/basic-configuration-step3.webp
         :width: 70%
         :align: center
         :alt: Basic Configuration Step 3

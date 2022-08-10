@@ -14,7 +14,7 @@
 File Browse Data Source
 =======================
 
-.. image:: /_static/images/form-sources/form-source-file-browse.png
+.. image:: /_static/images/form-sources/form-source-file-browse.webp
     :width: 30%
     :alt: Source Control File Browse
     :align: center
@@ -25,7 +25,7 @@ File Browse Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-file-browse-conf.png
+.. image:: /_static/images/form-sources/form-source-file-browse-conf.webp
     :width: 50%
     :alt: Source Control File Browse Configuration
     :align: center

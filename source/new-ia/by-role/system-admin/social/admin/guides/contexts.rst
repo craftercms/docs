@@ -14,7 +14,7 @@ List All
 
 To list all existing Social Contexts you can click the ``Contexts`` link in the left sidebar.
 
-.. figure:: /_static/images/social-admin/contexts.png
+.. figure:: /_static/images/social-admin/contexts.webp
   :align: center
   :alt: Crafter Social contexts
 
@@ -25,7 +25,7 @@ Create New Context
 To create a new Social Context you only need to provide a name in the input and then click the add
 button.
 
-.. figure:: /_static/images/social-admin/contexts-new.png
+.. figure:: /_static/images/social-admin/contexts-new.webp
   :align: center
   :alt: Crafter Social new contexts
 

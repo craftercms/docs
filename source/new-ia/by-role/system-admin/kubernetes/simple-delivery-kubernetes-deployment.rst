@@ -116,7 +116,7 @@ Another way of checking the status of the deployments/pods/etc. is by running ``
 
    |
 
-.. image:: /_static/images/system-admin/simple-delivery-k9s-start.jpg
+.. image:: /_static/images/system-admin/simple-delivery-k9s-start.webp
    :alt: CrafterCMS Simple Delivery Kubernetes Deployment
    :width: 100%
    :align: center
@@ -135,7 +135,7 @@ For example: ``kubectl logs -f -c tomcat delivery-0``
 
 To view the logs in a pod using k9s, from the ``Pods`` view, select the pod you would like to view the logs of using your keyboard arrow keys, then hit enter to view the containers in the pod.
 
-.. image:: /_static/images/system-admin/simple-delivery-k9s-containers.jpg
+.. image:: /_static/images/system-admin/simple-delivery-k9s-containers.webp
    :alt: Simple Delivery Kubernetes deployments - k9s container views
    :width: 100%
    :align: center
@@ -144,7 +144,7 @@ To view the logs in a pod using k9s, from the ``Pods`` view, select the pod you 
 
 We'll take a look at the tomcat logs, so, we'll move the cursor to the ``tomcat`` container, then press the letter ``l``.
 
-.. image:: /_static/images/system-admin/simple-delivery-k9s-logs.jpg
+.. image:: /_static/images/system-admin/simple-delivery-k9s-logs.webp
    :alt: Simple Delivery Kubernetes deployments - k9s log views
    :width: 100%
    :align: center
@@ -175,7 +175,7 @@ Here's the output when we setup the site in the ``delivery-1`` pod:
 
 To setup the site in Delivery using ``k9s``, from the ``Pods`` view, select the Delivery pod you would like to setup using your keyboard arrow keys, then hit enter to view the containers in the pod.  Move the cursor to the ``deployer`` container, then press ``s`` to open a shell to the deployer.
 
-.. image:: /_static/images/system-admin/simple-delivery-k9s-deployer-shell.png
+.. image:: /_static/images/system-admin/simple-delivery-k9s-deployer-shell.webp
    :alt: Simple Delivery Kubernetes deployments - k9s deployer shell opened
    :width: 100%
    :align: center
@@ -201,7 +201,7 @@ Next, we'll run the ``init-site.sh`` script to create the deployer target.  Go t
 
 You can check the deployer logs to verify that the target has been created. From the ``Pods`` view, select the Delivery pod you're working on, then hit enter to view the containers in the pod. Move the cursor to the ``deployer`` container, then press ``l`` to open the deployer logs.
 
-.. image:: /_static/images/system-admin/simple-delivery-k9s-deployer-logs.jpg
+.. image:: /_static/images/system-admin/simple-delivery-k9s-deployer-logs.webp
    :alt: Simple Delivery Kubernetes deployments - k9s deployer log opened
    :width: 100%
    :align: center
@@ -230,7 +230,7 @@ Here's an example forwarding local port ``9081`` to the tomcat port in the ``del
 
 To forward a local port to the tomcat port in a pod using k9s, from the ``Pods`` view, select the pod you would like to port forward to using your keyboard arrow keys, then hit enter to view the containers in the pod.  We'll forward the local port to the tomcat port, so, we'll move the cursor to the ``tomcat`` container, then press ``<shift> + f``.  A dialog  will then open where you can enter the desired local port and address to use for port forwarding
 
-.. image:: /_static/images/system-admin/simple-delivery-k9s-port-forward.jpg
+.. image:: /_static/images/system-admin/simple-delivery-k9s-port-forward.webp
    :alt: Simple Delivery Kubernetes deployments - k9s port forward
    :width: 100%
    :align: center
@@ -241,7 +241,7 @@ Change the value of ``Local Port`` to your desired value.  For our example, we'r
 
 We can now view the site in Delivery from the pod by entering ``localhost:9080?crafterSite=mysite`` or ``localhost:9081?crafterSite=mysite`` in your browser.
 
-.. image:: /_static/images/system-admin/simple-delivery-site-in-browser.jpg
+.. image:: /_static/images/system-admin/simple-delivery-site-in-browser.webp
    :alt: Simple Delivery Kubernetes deployments - Access site in delivery
    :width: 100%
    :align: center

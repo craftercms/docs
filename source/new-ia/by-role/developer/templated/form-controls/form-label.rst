@@ -17,7 +17,7 @@ Label Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-label-example.png
+.. image:: /_static/images/form-controls/form-control-label-example.webp
     :width: 50%
     :alt: Form Control Label Example
     :align: center
@@ -26,7 +26,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-label-properties.png
+.. image:: /_static/images/form-controls/form-control-label-properties.webp
     :width: 50%
     :alt: Form Control Label
     :align: center

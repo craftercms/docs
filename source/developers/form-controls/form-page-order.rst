@@ -18,14 +18,14 @@ Page Order Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-page-order-example.png
+.. image:: /_static/images/form-controls/form-control-page-order-example.webp
     :width: 60%
     :alt: Form Control Page Order Example
     :align: center
 
 |
 
-.. image:: /_static/images/form-controls/form-control-page-order-example2.png
+.. image:: /_static/images/form-controls/form-control-page-order-example2.webp
     :width: 50%
     :alt: Form Control Page Order Control Example
     :align: center
@@ -36,7 +36,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-page-order-properties.png
+.. image:: /_static/images/form-controls/form-control-page-order-properties.webp
     :width: 40%
     :alt: Form Control Page Order
     :align: center

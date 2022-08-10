@@ -21,12 +21,12 @@ Depending on how tagging was named/setup, go to the section for tagging content 
 
 In the example below, targeting is in the **Metadata** section, under **Segments**, where the available segments are Anonymous, Guy and Gal, and the page is currently tagged for the segment **Guy**.
 
-.. image:: /_static/images/page/page-targeting-tags.png
+.. image:: /_static/images/page/page-targeting-tags.webp
     :width: 75 %    
     :align: center
 
 
-.. |targetingIcon| image:: /_static/images/content-author/page-targeting-icon.png
+.. |targetingIcon| image:: /_static/images/content-author/page-targeting-icon.webp
                       :width: 3%
                       :alt: Targeting Icon
 
@@ -40,39 +40,39 @@ The authoring environment can be configured with any number of predefined attrib
 
 To find out the current active targeting attributes, switch ``Edit Mode`` to on (pencil icon found on the top right of Studio, which then opens the experience builder panel on the right hand side).  Click on ``Audience Targeting`` and the current attribute values will be displayed in the panel.  You can have as many attributes as you need for your project.  To add other attributes, please see the section :ref:`targeting` in the developer's section of the documentation.
 
-.. image:: /_static/images/page/page-targeting-open.jpg
+.. image:: /_static/images/page/page-targeting-open.webp
     :width: 80 %
     :align: center
 
 In the Website Editorial blueprint that we are using, the targeting attribute used is ``Segment``.
 
-.. image:: /_static/images/page/page-targeting-curr-attributes.png
+.. image:: /_static/images/page/page-targeting-curr-attributes.webp
     :width: 30 %
     :align: center
 
 To view what the project would look like if it were being browsed by a certain segment, open ``Audience Targeting`` by switching on ``Edit Mode`` on the upper right hand of Studio, click on ``Audience Targeting`` then select the segment you would like to see the project with.
 
-.. image:: /_static/images/page/page-targeting-segment.png
+.. image:: /_static/images/page/page-targeting-segment.webp
     :width: 30 %
     :align: center
     
 
 Below is a page with the segment set to **Anonymous**.  Notice the articles available on the page.
 
-.. image:: /_static/images/page/page-targeting-anonymous.jpg
+.. image:: /_static/images/page/page-targeting-anonymous.webp
     :width: 75 %    
     :align: center
 
 Selecting a different segment than the currently selected one, will cause the preview for all channels to immediately respond with content for a user with the attributes selected.  Below, the segment **Guy** is selected.  Notice the articles available on the page has changed to display only articles targeted to segment **Guy**
 
 
-.. image:: /_static/images/page/page-targeting-guy.jpg
+.. image:: /_static/images/page/page-targeting-guy.webp
     :width: 75 %    
     :align: center
 
 Here, the segment **Gal** is selected.  Again, notice the articles available on the page.
 
-.. image:: /_static/images/page/page-targeting-gal.jpg
+.. image:: /_static/images/page/page-targeting-gal.webp
     :width: 75 %    
     :align: center    
 

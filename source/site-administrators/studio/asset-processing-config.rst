@@ -13,7 +13,7 @@ Asset processing allows you to define transformations for static assets (current
 
 To modify the Asset Processing configuration, click on |projectTools| from the bottom of the Sidebar, then click on **Configuration** and select **Asset Processing** from the dropdown list.
 
-.. image:: /_static/images/site-admin/config-open-asset-proc-config.jpg
+.. image:: /_static/images/site-admin/config-open-asset-proc-config.webp
     :alt: Configurations - Open Asset Processing Configuration
     :width: 65 %
     :align: center

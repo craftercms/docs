@@ -70,7 +70,7 @@ Here are a few things to take note of when configuring LDAP authentication in St
 
 Make sure that at least one of the **groupName** attribute of the LDAP user exists in Studio and has Roles and Permission setup.  If there is no **groupName** attribute setup in Studio with Roles and Permissions, please make sure that the system administrator assigns a role to at least one group in Studio so the user can access the site, otherwise, once the user gets into the **Sites** screen and tries to Preview the site or view the dashboard, the user will get a notification that the site is invalid.
 
-    .. image:: /_static/images/system-admin/ldap-user-group-no-role-assigned.png
+    .. image:: /_static/images/system-admin/ldap-user-group-no-role-assigned.webp
         :alt: System Admin LDAP Config - LDAP user group attribute not assigned to a role
         :width: 35 %
         :align: center

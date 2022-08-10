@@ -26,7 +26,7 @@ next steps to create one:
        .. note::
           Authentication by default is done against a tenant with the same name as your project.  See :ref:`profile-admin-tenants` for more information on creating a tenant.
 
-    .. image:: /_static/images/new_access_token.png
+    .. image:: /_static/images/new_access_token.webp
 
     |
 
@@ -214,7 +214,7 @@ Add Single Sign-On
 Configure SSO headers with at least a CRAFTER_secure_key, CRAFTER_username, CRAFTER_email and CRAFTER_groups (which must be a comma separated list of string) in the header, then check in Crafter Profile Admin Console to make sure
 that the Single sign-on enabled checkbox is selected in the tenant page.
 
-.. image:: /_static/images/sso_enabled.png
+.. image:: /_static/images/sso_enabled.webp
 
 All headers with the ``CRAFTER_`` prefix will be mapped, without the prefix, to the attributes you defined in the
 Crafter Profile tenant, when a new user needs to be created. So the configuration above will cause the Security 
@@ -231,7 +231,7 @@ Add Facebook Login
     attribute is needed to store the Facebook connection info. To add this attribute to the Tenant, go to Crafter 
     Profile Admin Console, select the Tenant and then add the attribute.
 
-    .. image:: /_static/images/connections_attribute.png
+    .. image:: /_static/images/connections_attribute.webp
 
 #.  Add the Facebook appSecret and appKey to your project's config (in Studio, Config > Engine Project Configuration), like this:
 

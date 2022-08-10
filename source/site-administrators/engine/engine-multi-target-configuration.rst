@@ -34,7 +34,7 @@ To override a configuration file in any of the publishing targets
 
 #. Add the new configuration file/s for overriding to **Configurations** under |projectTools| -> **Configuration**
 
-   .. image:: /_static/images/site-admin/configuration.jpg
+   .. image:: /_static/images/site-admin/configuration.webp
       :alt: Multi-target Configuration - Open Configurations
       :width: 45 %
       :align: center
@@ -69,7 +69,7 @@ To override a configuration file in any of the publishing targets
 
 #. Fill in your desired additions/modifications to the override configuration file.  Refresh your browser.  The configuration file you added from above should now be available from |projectTools| -> **Configuration**.  Open the new configuration file and make the necessary additions/modifications for the override file then save your changes.
 
-   .. image:: /_static/images/site-admin/new-configuration-added.jpg
+   .. image:: /_static/images/site-admin/new-configuration-added.webp
       :alt: Multi-target Configuration - New configuration files added to dropdown list
       :width: 55 %
       :align: center
@@ -110,7 +110,7 @@ Let's take a look at an example of overriding the Project Configuration used by 
 
 #. The configurations we added above will now be available from |projectTools| -> **Configuration**.
 
-   .. image:: /_static/images/site-admin/project-config-override-added.jpg
+   .. image:: /_static/images/site-admin/project-config-override-added.webp
       :alt: Multi-target Configuration - Project Tools override configuration files now listed in "Project Tools" -> "Configuration"
       :width: 55 %
       :align: center
@@ -170,7 +170,7 @@ Let's take a look at an example of overriding the Project Configuration used by 
 
    To publish the override configuration files setup above, open the **Dashboard** via the Navigation Menu on the top right or via the Sidebar.  Scroll to the **My Recent Activity** dashlet.
 
-   .. image:: /_static/images/site-admin/view-override-config-on-dashboard.png
+   .. image:: /_static/images/site-admin/view-override-config-on-dashboard.webp
       :alt: Multi-target Configuration - New configuration files listed in the "My Recent Activity" dashlet in the Dashboard
       :width: 85 %
       :align: center
@@ -179,7 +179,7 @@ Let's take a look at an example of overriding the Project Configuration used by 
 
    To publish the ``site-config.live.xml`` configuration file to publishing target ``live``, put a check mark next to the file in the dashlet, then click on ``Publish`` from the context nav.  Remember to set the ``Publishing Target`` to **live** in the ``Publish`` dialog
 
-   .. image:: /_static/images/site-admin/publish-override-file.jpg
+   .. image:: /_static/images/site-admin/publish-override-file.webp
       :alt: Multi-target Configuration - Set "Publishing Target" to "live" in dialog for site-config.live.xml
       :width: 55 %
       :align: center

@@ -31,7 +31,7 @@ Here are the steps:
 
    Make sure the drive with the directory that will contain the sites is a shared drive by clicking on Docker Desktop ``Preferences`` -> ``Resources`` -> ``File Sharing``)
 
-   .. image:: /_static/images/developer/docker/docker-desktop-file-sharing.png
+   .. image:: /_static/images/developer/docker/docker-desktop-file-sharing.webp
        :alt: Docker Desktop - File Sharing
        :width: 65 %
        :align: center
@@ -89,7 +89,7 @@ Here are the steps:
 
    Go to the Authoring browser URL and create a site.  In the image below, site ``mysite`` was created using the website editorial blueprint:
 
-   .. image:: /_static/images/developer/docker/docker-install-site-created.jpg
+   .. image:: /_static/images/developer/docker/docker-install-site-created.webp
       :alt: Docker Desktop - File Sharing
       :width: 65 %
       :align: center
@@ -102,7 +102,7 @@ Here are the steps:
 
    Let's take a look at an example of modifying a file in your host directory then verifying that the changes are reflected in your site.  In your browser, open the ``Sidebar``, then navigate to ``scripts`` -> ``pages`` then right click on ``home.groovy`` and select ``edit``.
 
-   .. image:: /_static/images/developer/docker/docker-install-script-file-orig.png
+   .. image:: /_static/images/developer/docker/docker-install-script-file-orig.webp
       :alt: Docker Desktop - unedited script file in browser
       :width: 65 %
       :align: center
@@ -111,7 +111,7 @@ Here are the steps:
 
    We'll now edit the same ``home.groovy`` file from the host directory using any of your favorite IDE.  For our example, the files in the site were put in a project in IntelliJ IDEA, and some text was added to the comments
 
-   .. image:: /_static/images/developer/docker/docker-install-script-file-on-host.png
+   .. image:: /_static/images/developer/docker/docker-install-script-file-on-host.webp
       :alt: Docker Desktop - Edited script file on host
       :width: 65 %
       :align: center
@@ -140,7 +140,7 @@ Here are the steps:
 
    Finally, let's check the ``home.groovy`` file from Studio to verify that changes we made from the host are reflected on Studio, by opening the file in Studio again:
 
-   .. image:: /_static/images/developer/docker/docker-install-script-file-edited.png
+   .. image:: /_static/images/developer/docker/docker-install-script-file-edited.webp
       :alt: Docker Desktop - Edited script file from host in Studio
       :width: 65 %
       :align: center

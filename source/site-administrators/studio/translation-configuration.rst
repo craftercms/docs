@@ -22,7 +22,7 @@ The translation configuration defines supported languages and how to resolve the
 To modify the translation configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration**
 and select **Translation Configuration** from the list.
 
-.. image:: /_static/images/site-admin/config-open-translation-config.jpg
+.. image:: /_static/images/site-admin/config-open-translation-config.webp
    :alt: Configurations - Open Translation Configuration
    :width: 55 %
    :align: center

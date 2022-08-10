@@ -12,7 +12,7 @@ Studio Clustering |enterpriseOnly|
 
 Crafter Studio can be clustered for high-availability.
 
-.. image:: /_static/images/system-admin/studio-enterprise-clustering.png
+.. image:: /_static/images/system-admin/studio-enterprise-clustering.webp
    :alt: CrafterCMS - Studio Enterprise Clustering
    :width: 75%
    :align: center

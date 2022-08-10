@@ -37,7 +37,7 @@ Let's take a look at an example using a site created using the ``Website Editori
 
 #. Setup the data source to select a page from the site.  From the content model definition, go to the **Data Sources** panel and drag ``File Browse`` to the the ``Data Sources`` section of the form.
 
-   .. figure:: /_static/images/developer/rte-add-file-browse-ds.jpg
+   .. figure:: /_static/images/developer/rte-add-file-browse-ds.webp
       :alt: Allow user to browse pages and insert link - add "File Browse" data source
       :width: 75%
       :align: center
@@ -50,7 +50,7 @@ Let's take a look at an example using a site created using the ``Website Editori
    * Name : pages
    * Repository Path : /site/website
 
-   .. figure:: /_static/images/developer/rte-setup-ds-for-page-link.jpg
+   .. figure:: /_static/images/developer/rte-setup-ds-for-page-link.webp
       :alt: Allow user to browse pages and insert link - data source setup
       :width: 75%
       :align: center
@@ -59,7 +59,7 @@ Let's take a look at an example using a site created using the ``Website Editori
 
 #. Bind the data source setup above to the RTE.  From the content model definition, click on the RTE ``Section``. Next, go to the **Properties Explorer** panel and scroll to the ``File Manager`` property.  Put a check mark on the box next to ``Pages``, the data source previously setup, to bind it to the RTE.
 
-   .. figure:: /_static/images/developer/rte-link-bind-ds.jpg
+   .. figure:: /_static/images/developer/rte-link-bind-ds.webp
       :alt: Allow user to browse pages and insert link - bind the data source to RTE
       :width: 75%
       :align: center
@@ -75,7 +75,7 @@ Let's now take a look at the data source we setup and bound to the RTE in action
 #. Edit the article, then scroll down to the ``Section``
 #. Select a word in the RTE.  For our example, let's highlight the first word, ``Class``, then click on ``Insert/edit link`` from the toolbar
 
-   .. figure:: /_static/images/developer/rte-select-word.jpg
+   .. figure:: /_static/images/developer/rte-select-word.webp
       :alt: Allow user to browse pages and insert link - select "Class" then click on "Insert/edit link"
       :width: 75%
       :align: center
@@ -84,7 +84,7 @@ Let's now take a look at the data source we setup and bound to the RTE in action
 
 #. Click on the button next to ``URL`` then select ``Pages``.  This is the data source we setup.
 
-   .. figure:: /_static/images/developer/rte-insert-edit-link.png
+   .. figure:: /_static/images/developer/rte-insert-edit-link.webp
       :alt: Allow user to browse pages and insert link - Click on button next to "URL" then click on "Pages"
       :width: 35%
       :align: center
@@ -93,7 +93,7 @@ Let's now take a look at the data source we setup and bound to the RTE in action
 
 #. Select a page to link to.  We will link the page ``/article/2017/2/top-romantic-valentine-movies`` to the selected text in our RTE
 
-   .. figure:: /_static/images/developer/rte-select-page-to-link-to.jpg
+   .. figure:: /_static/images/developer/rte-select-page-to-link-to.webp
       :alt: Allow user to browse pages and insert link - Click on button next to "URL" then click on "Pages"
       :width: 55%
       :align: center
@@ -102,7 +102,7 @@ Let's now take a look at the data source we setup and bound to the RTE in action
 
 #. Save the link.
 
-   .. figure:: /_static/images/developer/rte-save-link.jpg
+   .. figure:: /_static/images/developer/rte-save-link.webp
       :alt: Allow user to browse pages and insert link - Save the link"
       :width: 35%
       :align: center
@@ -111,7 +111,7 @@ Let's now take a look at the data source we setup and bound to the RTE in action
 
 #. The link is now setup.
 
-   .. figure:: /_static/images/developer/rte-link-to-page-created.jpg
+   .. figure:: /_static/images/developer/rte-link-to-page-created.webp
       :alt: Allow user to browse pages and insert link - Link created on word "Class" in RTE"
       :width: 75%
       :align: center

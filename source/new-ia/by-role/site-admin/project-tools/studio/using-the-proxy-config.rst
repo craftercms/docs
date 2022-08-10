@@ -76,7 +76,7 @@ Let's begin:
 
      The command above will open a browser window where we can view the app
 
-     .. image:: /_static/images/site-admin/vcbp-preview.jpg
+     .. image:: /_static/images/site-admin/vcbp-preview.webp
         :alt: Video Center Blueprint preview on "localhost:3000"
         :width: 70 %
         :align: center
@@ -117,7 +117,7 @@ Let's begin:
 
      From the **Main Menu**, click on **Sites**, then click on the **Create Site** button.  This will open the **Create Site** dialog.  Click on the **Public Marketplace** tab.  Look for **Video Center**, then click on the **Use** button, fill in the required information then click on the **Review** button, then finally the **Create Site** button.  This **Video Center** blueprint we selected from the Marketplace is the same react application
 
-     .. image:: /_static/images/site-admin/vcbp-marketplace.jpg
+     .. image:: /_static/images/site-admin/vcbp-marketplace.webp
         :alt: Select Video Center blueprint from the Public Marketplace
         :width: 70 %
         :align: center
@@ -129,7 +129,7 @@ Let's begin:
 
      Open the **Sidebar**, click on |projectTools|, then click on **Configuration**.  Select **Proxy Config** from the dropdown menu.
 
-     .. image:: /_static/images/site-admin/config-open-proxy-config.jpg
+     .. image:: /_static/images/site-admin/config-open-proxy-config.webp
         :alt: Configurations - Open Proxy Configuration
         :width: 55 %
         :align: center
@@ -169,7 +169,7 @@ Let's begin:
 
      Save your changes.  Notice that in the React app preview (localhost:3000), the page is reloaded with our changes now visible.  Now let's take a look at Studio.  Notice that Studio preview has reloaded and the changes we made in the React app is now visible.
 
-     .. image:: /_static/images/site-admin/vcbp-react-app-edited.jpg
+     .. image:: /_static/images/site-admin/vcbp-react-app-edited.webp
         :alt: Changes made in the React app now visible in the Studio preview
         :width: 70 %
         :align: center

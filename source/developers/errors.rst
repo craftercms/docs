@@ -64,13 +64,13 @@ Example
 
 Adding a Custom Error Page for the ``404 Not Found`` code:
 
-.. figure:: /_static/images/error-page-default.png
+.. figure:: /_static/images/error-page-default.webp
         :alt: Default Error Page
         :align: center
         
         Before adding a custom error page.
 
-.. figure:: /_static/images/error-page-custom.png
+.. figure:: /_static/images/error-page-custom.webp
         :alt: Custom Error Page
         :align: center
         

@@ -18,14 +18,14 @@ Dropdown Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-dropdown-example.png
+.. image:: /_static/images/form-controls/form-control-dropdown-example.webp
     :width: 50%
     :alt: Form Control Dropdown Example
     :align: center
 
 |
 
-.. image:: /_static/images/form-controls/form-control-dropdown-example2.png
+.. image:: /_static/images/form-controls/form-control-dropdown-example2.webp
     :width: 50%
     :alt: Form Control Dropdown Expanded Example
     :align: center
@@ -36,7 +36,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-dropdown.png
+.. image:: /_static/images/form-controls/form-control-dropdown.webp
     :width: 40%
     :alt: Form Control Dropdown Properties
     :align: center

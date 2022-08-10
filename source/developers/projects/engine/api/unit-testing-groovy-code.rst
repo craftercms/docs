@@ -140,7 +140,7 @@ Example
 
 Let's take a look at an example of a groovy unit test in a site created using the empty blueprint with a custom groovy script, ``MyService``
 
-.. image:: /_static/images/developer/unit-test/unit-test-groovy-sample-service.png
+.. image:: /_static/images/developer/unit-test/unit-test-groovy-sample-service.webp
     :alt: Unit Testing Groovy - Sample Service
     :width: 35 %
     :align: center
@@ -189,7 +189,7 @@ Write your unit test code
 
 Next, we'll write the unit test code.
 
-.. image:: /_static/images/developer/unit-test/unit-test-groovy-sample-unit-test.png
+.. image:: /_static/images/developer/unit-test/unit-test-groovy-sample-unit-test.webp
    :alt: Unit Testing Groovy - Sample Service
    :width: 35 %
    :align: center
@@ -233,7 +233,7 @@ Finally, we can run our unit test by running ``gradle test``
 
 Let's take a look at the result of our unit test which can be found here: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/build/reports/tests/test/index.html*
 
-.. image:: /_static/images/developer/unit-test/unit-test-build-result.png
+.. image:: /_static/images/developer/unit-test/unit-test-build-result.webp
    :alt: Unit Testing Groovy - Unit test  build report
    :width: 75 %
    :align: center

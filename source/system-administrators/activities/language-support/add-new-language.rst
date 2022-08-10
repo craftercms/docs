@@ -189,7 +189,7 @@ Remember to change the language code in the all the ``registerBundle`` calls in 
 
 Don't forget to build and deploy.  To test your changes, from the login screen, click on the language dropdown box, and you should see the new language we just added.
 
-.. image:: /_static/images/system-admin/login-new-lang.png
+.. image:: /_static/images/system-admin/login-new-lang.webp
    :align: center
    :width: 35 %
    :alt: Japanese Language Added

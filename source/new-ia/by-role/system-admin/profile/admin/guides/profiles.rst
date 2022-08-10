@@ -17,7 +17,7 @@ List & Search
 You can list all existing profiles for a given tenant by clicking the ``List Profiles`` link in the
 left sidebar.
 
-.. figure:: /_static/images/profile-admin/profiles-list.png
+.. figure:: /_static/images/profile-admin/profiles-list.webp
   :align: center
   :alt: Crafter Profile admin profiles list
 
@@ -35,7 +35,7 @@ Create New Profile
 
 To create a new profile you can click the ``New Profile`` link in the left sidebar.
 
-.. figure:: /_static/images/profile-admin/profiles-new.png
+.. figure:: /_static/images/profile-admin/profiles-new.webp
   :align: center
   :alt: Crafter Profile admin new profiles
 
@@ -80,7 +80,7 @@ Update Profile
 
 From the list page you can click the ID of a profile to open the update page:
 
-.. figure:: /_static/images/profile-admin/profiles-update.png
+.. figure:: /_static/images/profile-admin/profiles-update.webp
   :align: center
   :alt: Crafter Profile admin update profiles
 

@@ -8,7 +8,7 @@
 Crafter Deployer
 ================
 
-.. figure:: /_static/images/architecture/crafter-deployer.png
+.. figure:: /_static/images/architecture/crafter-deployer.webp
    :alt: Crafter Deployer
    :width: 60 %
    :align: center

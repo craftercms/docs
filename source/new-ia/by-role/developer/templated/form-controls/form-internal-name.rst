@@ -17,7 +17,7 @@ Internal Name Control
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-internal-name-properties.png
+.. image:: /_static/images/form-controls/form-control-internal-name-properties.webp
     :width: 50%
     :alt: Form Control Internal Name Properties
     :align: center

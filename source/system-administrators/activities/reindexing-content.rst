@@ -138,7 +138,7 @@ Step 4: Check deployment results
 
 When the deployer finishes the process it will write in the ``INSTALL_DIRECTORY/logs/deployer/`` folder a CSV file named ``{siteName}-{environment}-deployments.csv`` with the final status of the deployment, similar to this:
 
-.. image:: /_static/images/system-admin/deploy-results-csv.png
+.. image:: /_static/images/system-admin/deploy-results-csv.webp
    :alt: Cook Books - Reindexing Deployment Results CSV File
    :width: 85 %
    :align: center

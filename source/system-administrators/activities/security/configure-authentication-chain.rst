@@ -16,7 +16,7 @@ Configure Authentication Chain
 
 CrafterCMS supports multiple security providers and allows configuration of multiple authentication providers in a chain that are then iterated through until either the user is authenticated and granted access or authentication fails and an HTTP 401 Unauthorized is returned to the user.  This allows Studio to support multiple security providers that appears like a single authentication module to users.
 
-.. image:: /_static/images/system-admin/authentication-chain.png
+.. image:: /_static/images/system-admin/authentication-chain.webp
     :alt: Static Assets - Authentication Chaining
     :width: 70 %
     :align: center
@@ -128,7 +128,7 @@ Below is a sample configuration for the authentication chain.  There are four au
 
 In the configuration above, when a user tries to authenticate, the user's credentials will be passed first to the headers authentication provider.  If the authentication succeeds, the processing in the chain is done and the user is allowed to proceed.  If the authentication fails, the user credentials will then be passed to LDAP1.  If authentication is successful, processing in the chain is done, otherwise, the user credentials are then passed on to LDAP2.  LDAP2 will then try to authenticate user.  If successful, processing in the chain is done, otherwise, the user credentials are then passed to the final provider in the chain, the internal database.  The final provider in the chain then determines whether the user is successfully authenticated or rejected and sent an HTTP 401 Unauthorized message.  Below is a diagram showing the authentication chain process using the above configuration:
 
-.. image:: /_static/images/system-admin/auth-chain-example.png
+.. image:: /_static/images/system-admin/auth-chain-example.webp
     :alt: Static Assets - Example Authentication Chain Process
     :width: 80 %
     :align: center

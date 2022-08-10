@@ -21,7 +21,7 @@ Content Types in Crafter Studio
 
 Content Type Management in Crafter Studio is located in the |projectTools|.
 
-.. image:: /_static/images/content-model/project-tools-link.png
+.. image:: /_static/images/content-model/project-tools-link.webp
    :width: 30%
    :alt: Project Tools Link
    :align: center
@@ -69,7 +69,7 @@ Content Type Model Definition
 -----------------------------
 Content models are defined via Crafter Studio's graphical modeling tool under Content Types:
 
-.. image:: /_static/images/content-model/content-type-management.jpg
+.. image:: /_static/images/content-model/content-type-management.webp
     :width: 70%
     :alt: Project Config - Content Types
     :align: center
@@ -78,7 +78,7 @@ Content models are defined via Crafter Studio's graphical modeling tool under Co
 
 You can now either create a new content type or open an existing type. Creating a new content type brings up a dialog that requests some basic content type information.
 
-.. image:: /_static/images/content-model/create-content-type-1.png
+.. image:: /_static/images/content-model/create-content-type-1.webp
     :width: 30%
     :alt: Project Config - Create Content Type
     :align: center
@@ -98,7 +98,7 @@ You now specify:
 Form Builder Basics
 ^^^^^^^^^^^^^^^^^^^
 
-.. figure:: /_static/images/content-model/create-content-type-2.jpg
+.. figure:: /_static/images/content-model/create-content-type-2.webp
     :alt: Content Type Editor
 	:align: center
 
@@ -154,7 +154,7 @@ Properties of Content Types
 
 Let's select the content type itself, by clicking on the content type name at the top of the Form Builder and explore its properties.
 
-.. image:: /_static/images/content-model/create-content-type-3.png
+.. image:: /_static/images/content-model/create-content-type-3.webp
     :width: 50%
     :alt: Properties Explorer
    	:align: center
@@ -241,7 +241,7 @@ We'll look at an example of limiting where you can create content from the Websi
 
 From the **Sidebar**, click on |projectTools|.  Next, click on **Content Types** then either create a new content type or open an existing content type.  In the image below, we have the content type **Article** open for editing.  Go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name *config.xml*, click on that pencil to edit.
 
-.. figure:: /_static/images/content-model/form-engine-prop-configuration.jpg
+.. figure:: /_static/images/content-model/form-engine-prop-configuration.webp
     :alt: Form Engine Properties Configuration
 	:align: center
 
@@ -249,7 +249,7 @@ From the **Sidebar**, click on |projectTools|.  Next, click on **Content Types**
 
 To limit where this particular content type can be created, the tags, <paths><includes><pattern>some_regex_pattern</pattern></includes></paths> are included towards the bottom of the file.  Here, we can see that content type **Article** can be created anywhere under */site/website/articles*
 
-.. figure:: /_static/images/content-model/form-engine-prop-config-file.jpg
+.. figure:: /_static/images/content-model/form-engine-prop-config-file.webp
     :width: 80%
     :alt: Form Engine Properties Configuration File config.xml
     :align: center
@@ -269,7 +269,7 @@ To limit where this particular content type can be created, the tags, <paths><in
 
 To see how the above tags/example works, go to the **Sidebar** and right click on the **Home** folder and select **New Content**.  Notice that content type **Article** is not available from the content types listed.
 
-.. figure:: /_static/images/content-model/form-engine-prop-config-sample-no.jpg
+.. figure:: /_static/images/content-model/form-engine-prop-config-sample-no.webp
     :alt: Form Engine Properties Config File "Articles" Not Available
     :width: 70%
     :align: center
@@ -278,7 +278,7 @@ To see how the above tags/example works, go to the **Sidebar** and right click o
 
 From the **Sidebar** again, navigate from the **Pages** folder to the /Home/articles/2020/12/ folder then right click and select **New Content**, notice that the content type **Article** is available from the list.
 
-.. figure:: /_static/images/content-model/form-engine-prop-config-sample-yes.jpg
+.. figure:: /_static/images/content-model/form-engine-prop-config-sample-yes.webp
     :alt: Form Engine Properties Config File "Article" Available
     :width: 70%
     :align: center
@@ -326,7 +326,7 @@ We're going to enable cascade on delete for articles (**Article** content type) 
 
 To see cascade on delete in action, let's create a new article (**Article** content type) under one of the article folders in the Sidebar.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.
 
-.. figure:: /_static/images/content-model/new-article-image-uploaded.png
+.. figure:: /_static/images/content-model/new-article-image-uploaded.webp
     :alt: New article with image uploaded activity list in Dashboard
     :align: center
 
@@ -334,7 +334,7 @@ To see cascade on delete in action, let's create a new article (**Article** cont
 
 Let's look at the dependencies of our newly created article, where we expect the image under the ``static-assets/items/images/2021/01/26`` will be deleted when we delete the article since we have configured cascade on delete for content type **Article** for items under the directory ``static-assets/item/images``:
 
-.. figure:: /_static/images/content-model/new-article-dependencies.png
+.. figure:: /_static/images/content-model/new-article-dependencies.webp
     :width: 80%
     :alt: New article with image uploaded dependencies
     :align: center
@@ -343,7 +343,7 @@ Let's look at the dependencies of our newly created article, where we expect the
 
 Open the Sidebar and navigate to the newly created article.  Right click on the newly created article and select **Delete**.  Open the **Dashboard** and notice the items listed as deleted in the **My Recent Activity** widget.
 
-.. figure:: /_static/images/content-model/new-article-child-items-deleted.jpg
+.. figure:: /_static/images/content-model/new-article-child-items-deleted.webp
    :alt: New article with image uploaded deleted activity list in Dashboard
    :align: center
 
@@ -394,7 +394,7 @@ To see copy dependencies in action, let's copy an article under one of the artic
 
 Let's look at the dependencies of our copied article, where we expect a copy of the image under the ``static-assets/images/articles`` will be located since we have configured cop dependencies for content type **Article** for items under the directory ``static-assets/images``:
 
-.. figure:: /_static/images/content-model/copied-article-dependencies.jpg
+.. figure:: /_static/images/content-model/copied-article-dependencies.webp
     :width: 80%
     :alt: Copy of article with copy of image
     :align: center
@@ -425,7 +425,7 @@ From the **Sidebar**, click on |projectTools| at the bottom.  Next, click on **C
 
 Scroll to the ``Data Sources`` section, and click on **Upload Images**.  Notice the value in the **Repository Path** property, which is the path where to store the new file uploaded from desktop.
 
-.. figure:: /_static/images/content-model/item-specific-dependencies.jpg
+.. figure:: /_static/images/content-model/item-specific-dependencies.webp
     :alt: Modeling content for item specific dependencies
     :align: center
 
@@ -449,7 +449,7 @@ The macros **{yyyy}**, **{mm}** and **{dd}** are available for content modelers 
 
 Let's take a look at item specific dependencies in action for copying and deleting content.  Let's create a new article (**Article** content type) under one of the article folders in the Sidebar.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.  Note the location where the image is uploaded.
 
-.. figure:: /_static/images/content-model/new-article-item-dependencies.png
+.. figure:: /_static/images/content-model/new-article-item-dependencies.webp
     :width: 40%
     :alt: New article created with image uploaded from Desktop
     :align: center
@@ -460,7 +460,7 @@ From the **Sidebar**, navigate to the newly created article.  Right click on the
 
 Let's look at the dependencies of our copied article, where we expect a copy of the image under the ``/static-assets/item/images/2021/10/05`` will be located since we have taken advantage of the item specific dependencies regex pattern of ``/static-assets/item/*``.
 
-.. figure:: /_static/images/content-model/copied-article-item-dependencies.jpg
+.. figure:: /_static/images/content-model/copied-article-item-dependencies.webp
     :width: 80%
     :alt: Copy of image uploaded from Desktop created when article was copied in dependencies
     :align: center
@@ -469,7 +469,7 @@ Let's look at the dependencies of our copied article, where we expect a copy of 
 
 Let's also take a look at the ``static-assets`` folder to see the copy of the uploaded image
 
-.. figure:: /_static/images/content-model/copied-article-sidebar.png
+.. figure:: /_static/images/content-model/copied-article-sidebar.webp
     :width: 40%
     :alt: Copy of image uploaded from Desktop created when article was copied in Sidebar
     :align: center
@@ -478,7 +478,7 @@ Let's also take a look at the ``static-assets`` folder to see the copy of the up
 
 Now let's take a look at what happens when we delete content with item specific dependencies.  From the Sidebar, navigate to the article that we created.  Right click on the article and select **Delete**.  Click on the **Delete** button when the Delete dialog appears.  Notice the items that will be deleted when we delete the article.
 
-.. figure:: /_static/images/content-model/delete-article-dialog.jpg
+.. figure:: /_static/images/content-model/delete-article-dialog.webp
     :alt: Delete dialog showing items to be deleted
     :align: center
 
@@ -486,7 +486,7 @@ Now let's take a look at what happens when we delete content with item specific 
 
 Open the **Dashboard** and notice the items that are deleted.  We deleted an article, and since the image is located in a path matching the regex pattern for item specific dependencies, the image is deleted along with the article.
 
-.. figure:: /_static/images/content-model/delete-article-sidebar.png
+.. figure:: /_static/images/content-model/delete-article-sidebar.webp
     :alt: Sidebar and Dashboard showing items that were deleted when the article was deleted
     :align: center
 
@@ -499,7 +499,7 @@ Quick Create
 
 Quick create allows content authors to create content with as few clicks as possible through a button from the context nav for configured content types.
 
-.. figure:: /_static/images/content-model/quick-create-button.png
+.. figure:: /_static/images/content-model/quick-create-button.webp
     :width: 100%
     :alt: Context Nav showing the quick create button
     :align: center
@@ -508,7 +508,7 @@ Quick create allows content authors to create content with as few clicks as poss
 
 Let's take a look at an example on how to configure a content type to be available from the quick create button in the context nav for authors using the out of the box blueprint **Website Editorial**.  In the image below, we have a project named **My Site** with the quick create button expanded.  Notice that we have one content type available for quick create, the **Article** content type.
 
-.. figure:: /_static/images/content-model/quick-create-btn-expanded.png
+.. figure:: /_static/images/content-model/quick-create-btn-expanded.webp
     :width: 35%
     :alt: Context Nav showing the expanded quick create button
     :align: center
@@ -519,7 +519,7 @@ If you look at the site tree as shown above, most of the content (the articles) 
 
 To setup quick create for a content type, from the **Sidebar**, click on |projectTools| at the bottom.  Next, click on **Content Types**.  We will select the content type **Article** for editing.  Next, go to the **Properties Explorer** and scroll to the **Quick Create** section of the properties.
 
-.. figure:: /_static/images/content-model/quick-create-properties.png
+.. figure:: /_static/images/content-model/quick-create-properties.webp
     :width: 50%
     :alt: Article Content Type Quick Create Properties
     :align: center
@@ -542,7 +542,7 @@ We will then put in ``/site/website/articles/{year}/{month}`` as the path patter
 
 Below is the site tree after using the quick create button to create a new article titled ``New article using quick create``, where the year and month folders were created for the new article using the value in the ``Destination Path Pattern`` property of the content type.
 
-.. figure:: /_static/images/content-model/quick-create-article-created.png
+.. figure:: /_static/images/content-model/quick-create-article-created.webp
     :width: 40%
     :alt: Article created using quick create
     :align: center
@@ -557,7 +557,7 @@ Form Controls
 
 Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. CrafterCMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`newIa-form-engine-control`.
 
-.. figure:: /_static/images/content-model/form-engine-controls.png
+.. figure:: /_static/images/content-model/form-engine-controls.webp
     :width: 40%
     :alt: Form Engine Controls
    	:align: center
@@ -717,7 +717,7 @@ Please note that indexed ``text`` fields are case insensitive when performing a 
 
 If performing a case insensitive search on a ``string`` field is desired, CrafterCMS provides a way by enabling tokenization of the field in the content type.  To enable tokenization of a ``string`` field in Studio, put a check in the checkbox labeled **Tokenize for Indexing** in the properties section of the content type field.  Below is the ``Article`` content type in a project created using the Website Editorial blueprint, showing the field ``Author`` with the ``Tokenize for Indexing`` option:
 
-.. image:: /_static/images/content-model/tokenize-for-indexing-property.jpg
+.. image:: /_static/images/content-model/tokenize-for-indexing-property.webp
    :alt: Enable case insensitive keyword search for string fields in content type by clicking on "Tokenize for Indexing"
    :width: 90%
    :align: left
@@ -773,7 +773,7 @@ Data Sources
 ^^^^^^^^^^^^
 .. index:: Data Sources
 
-.. image:: /_static/images/content-model/form-engine-data-sources.jpg
+.. image:: /_static/images/content-model/form-engine-data-sources.webp
     :alt: Form Engine Data Sources
     :width: 40%
     :align: left
@@ -794,7 +794,7 @@ Data sources are usually used in conjunction with a control in the content type,
 
 Let's take a look at a shared content data source in a project created using the Video Center blueprint from the Marketplace.
 
-.. image:: /_static/images/content-model/create-site-video-center-bp.jpg
+.. image:: /_static/images/content-model/create-site-video-center-bp.webp
     :alt: Form Engine Data Sources Example - Create Project Using Video Center Blueprint
     :width: 70%
     :align: left
@@ -803,7 +803,7 @@ Let's take a look at a shared content data source in a project created using the
 
 Open the ``Sidebar`` then click on |projectTools|.  Click on ``Content Types`` and select ``Stream``, then click on the ``Open Type`` button.  Scroll down  to the ``Data Sources`` section, then click on ``Origins``, a shared content data source.  Notice how a :ref:`newIa-form-item-selector` control is used for selecting shared content ``Origin``.  In the ``Properties Explorer`` on the right  side, put a check mark on  ``Enable Search Existing`` property so users can search for existing items.
 
-.. image:: /_static/images/content-model/shared-content-ds-enable-search-existing.jpg
+.. image:: /_static/images/content-model/shared-content-ds-enable-search-existing.webp
     :alt: Form Engine Data Sources Example - Shared Content Data Source
     :width: 100%
     :align: left
@@ -812,7 +812,7 @@ Open the ``Sidebar`` then click on |projectTools|.  Click on ``Content Types`` a
 
 To see the property we setup in action, open the Sidebar, then navigate to ``/streams``.  Right click on any of the items, say, ``AlphaGo``, then click on ``Edit``.  Scroll down to the ``Content`` section of the form.  In the ``Origin`` field, select the item next to it (``ShakaDemo``) then click on the ``x`` button to remove it.  We'll now add a new one, by clicking on the ``Add`` button, then select ``Search for Existing - Origins``.
 
-.. image:: /_static/images/content-model/author-search-for-existing.png
+.. image:: /_static/images/content-model/author-search-for-existing.webp
    :alt: Form Engine Data Sources Example - Author Search for Existing Option
    :width: 70%
    :align: left
@@ -821,7 +821,7 @@ To see the property we setup in action, open the Sidebar, then navigate to ``/st
 
 A search dialog will open displaying in a grid view, items the user can search through, select, filter, etc.  As we can see, the search option makes it easier for users to pick items instead of scrolling through all the available items, especially for say projects with hundreds or even thousands of items/assets.
 
-.. image:: /_static/images/content-model/author-search-for-existing-dialog.png
+.. image:: /_static/images/content-model/author-search-for-existing-dialog.webp
    :alt: Form Engine Data Sources Example - Author Search for Existing Dialog
    :width: 70%
    :align: left

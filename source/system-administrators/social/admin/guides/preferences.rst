@@ -16,7 +16,7 @@ Notifications Preferences
 You can access the email notifications by clicking the ``Notification Preferences`` link in the
 left sidebar.
 
-.. figure:: /_static/images/social-admin/preferences.png
+.. figure:: /_static/images/social-admin/preferences.webp
   :align: center
   :alt: Crafter Social Admin Console Preferences
 
@@ -114,7 +114,7 @@ These preferences allow you change the behavior of Crafter Social depending on t
 for example one context could send daily notifications and others send them weekly instead. You can
 access them by clicking the ``Tenant Preferences`` link in the left sidebar.
 
-.. figure:: /_static/images/social-admin/preferences-tenant.png
+.. figure:: /_static/images/social-admin/preferences-tenant.webp
   :align: center
   :alt: Crafter Social Admin tenant preferences
 
@@ -159,7 +159,7 @@ include custom configuration from the Admin Console. When you click the ``Add`` 
 set new properties with any name and value. If you are not using a custom Crafter Social WAR all
 custom properties will be ignored.
 
-.. figure:: /_static/images/social-admin/preferences-tenant-new.png
+.. figure:: /_static/images/social-admin/preferences-tenant-new.webp
   :align: center
   :width: 75%
   :alt: Crafter Social new tenant preferences

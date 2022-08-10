@@ -18,7 +18,7 @@ Internal Name Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-internal-name-example.png
+.. image:: /_static/images/form-controls/form-control-internal-name-example.webp
     :width: 60%
     :alt: Form Control Internal Name Example
     :align: center
@@ -29,7 +29,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-internal-name-properties.png
+.. image:: /_static/images/form-controls/form-control-internal-name-properties.webp
     :width: 40%
     :alt: Form Control Internal Name Properties
     :align: center

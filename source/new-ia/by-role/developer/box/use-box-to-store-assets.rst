@@ -110,7 +110,7 @@ content type. To do this:
 #. At the end of the *Content* section, add a ``Box File Upload`` control with Title *Attachments* and Name *attachments* (the control has a property called Profile ID. If you changed the name of ``profile.id`` in step 1, you need to change it in the property too).  Remember to put a check mark on the ``Enable Upload`` and ``Enable Multiple Selection`` properties of the **Box File Upload** control so the users will be able to upload assets to Box and be able to select multiple assets.
 
 
-.. image:: /_static/images/guides/box/attachments-controls.png
+.. image:: /_static/images/guides/box/attachments-controls.webp
     :alt: Box Assets - Attachments Controls
     :align: center
 
@@ -141,7 +141,7 @@ should appear underneath the last content sections when the page is rendered. To
 
 For example, after adding a couple of PDF catalogs in the *Men Styles For Winter* article:
 
-.. image:: /_static/images/guides/box/attachments-form.png
+.. image:: /_static/images/guides/box/attachments-form.webp
    :alt: Box Assets - Attachments Form
    :align: center
 
@@ -149,7 +149,7 @@ For example, after adding a couple of PDF catalogs in the *Men Styles For Winter
 
 The bottom of the page looks like this when you preview your page:
 
-.. image:: /_static/images/guides/box/attachments-view.png
+.. image:: /_static/images/guides/box/attachments-view.webp
    :alt: Box - Attachments View
    :align: center
 
@@ -162,6 +162,6 @@ Step 6: Publish the changes
 The next step is to publish the changes.  Remember to publish not just the page where we added the Box assets,
 but also the ``article.ftl`` and the ``box.xml`` files too.
 
-.. image:: /_static/images/guides/box/attachments-publish.png
+.. image:: /_static/images/guides/box/attachments-publish.webp
    :alt: Box Assets - Publish Changes
    :align: center

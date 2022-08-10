@@ -25,7 +25,7 @@ Modern Decoupled Architecture
 CrafterCMS is a truly decoupled content management system, yet it supports dynamic and personalized content
 delivery. To understand this better, Crafter's decoupled architecture is as follows:
 
-.. image:: /_static/images/architecture/decoupled-overview.png
+.. image:: /_static/images/architecture/decoupled-overview.webp
         :width: 100%
         :alt: CrafterCMS Decoupled Overview
         :align: center
@@ -36,7 +36,7 @@ In contrast, many coupled CMSs do claim to be decoupled, but are really not. The
 
 A truly decoupled system will support disconnected delivery (think of a delivery tier that's running in a submarine or on a cruise ship). While running disconnected delivery nodes is an extreme example, it's a good test of the true scalability of the delivery tier of a CMS.
 
-.. image:: /_static/images/architecture/traditional-modern-decoupled.png
+.. image:: /_static/images/architecture/traditional-modern-decoupled.webp
         :width: 100%
         :alt: CrafterCMS Modern Decoupled
         :align: center
@@ -46,7 +46,7 @@ How can CrafterCMS deliver a dynamic experience? During ingestion, the delivery 
 Application Development
 =======================
 
-.. image:: /_static/images/architecture/application-development.jpg
+.. image:: /_static/images/architecture/application-development.webp
 		:width: 100%
 		:alt: Application Development on CrafterCMS
 		:align: center
@@ -78,7 +78,7 @@ Serverless Deployment
 
 Starting with CrafterCMS 3.1, serverless delivery is supported via Docker, Kubernetes, and S3 or S3-compatible storage tier. This allows for very fast scaling up/down and a true planet-scale deployment.
 
-.. image:: /_static/images/architecture/serverless-deployment-architecture.png
+.. image:: /_static/images/architecture/serverless-deployment-architecture.webp
         :width: 100%
         :alt: CrafterCMS Serverless Deployment
         :align: center
@@ -88,7 +88,7 @@ Traditional Deployment
 
 If you're not quite ready for serverless deployment, CrafterCMS deploys quite nicely in a traditional server/scale-group architecture. Here is a typical deployment at a high-level:
 
-.. image:: /_static/images/architecture/typical-deployment.png
+.. image:: /_static/images/architecture/typical-deployment.webp
         :width: 100%
         :alt: CrafterCMS Typical Real-life Deployment
         :align: center
@@ -100,7 +100,7 @@ To support content authors and end-users across the globe, it's best to deploy C
 
 The authoring clusters are typically deployed closest to the content authors, whereas delivery clusters are spread across geographies where you have end-users. Delivery nodes can pull content from an arbitrary number of authoring nodes, and are typically deployed in geographies where your end-users are.
 
-.. image:: /_static/images/architecture/global-delivery.jpg
+.. image:: /_static/images/architecture/global-delivery.webp
         :width: 100%
         :alt: CrafterCMS Geo Distributed Deployment
         :align: center
@@ -117,7 +117,7 @@ CrafterCMS tries to be fair to all three primary stakeholders:
 
 It's quite hard to provide a good experience to all three stakeholders, and the CMS architecture plays a crucial role in creating the necessary balance. Consider:
 
-.. image:: /_static/images/architecture/stakeholder-fairness.jpg
+.. image:: /_static/images/architecture/stakeholder-fairness.webp
         :width: 100%
         :alt: CrafterCMS Stakeholder Equality
         :align: center
@@ -143,7 +143,7 @@ CrafterCMS is Git-based. That means that Crafter applications/sites are actually
 * Authors work against the same Git repo using a GUI (Crafter Studio), without being aware of Git
 * Operations maintains well-known and proven foundational persistence tier, Git, and use that to flow content and code forward and back
 
-.. image:: /_static/images/architecture/git-data-flow.jpg
+.. image:: /_static/images/architecture/git-data-flow.webp
         :width: 100%
         :alt: CrafterCMS Git-based Workflow
         :align: center
@@ -154,7 +154,7 @@ Enterprise Content Platform
 
 CrafterCMS can be further leveraged as an enterprise-wide, content-as-a-service provider. Thanks to being a multi-tenant CMS, any number of authors can manage content for any number of sites/applications, and Crafter can either deliver the applications, or simply provide content snippets to existing applications.
 
-.. image:: /_static/images/architecture/enterprise-content-platform.png
+.. image:: /_static/images/architecture/enterprise-content-platform.webp
         :width: 100%
         :alt: CrafterCMS Enterprise Content Platform
         :align: center
@@ -172,7 +172,7 @@ It's also not an all or nothing. Existing applications/sites can leverage Crafte
 
 The application/site can then be delivered using whatever technology, and simply use Crafter to deliver specific content tiles and assets.
 
-.. image:: /_static/images/architecture/partial-delivery.jpg
+.. image:: /_static/images/architecture/partial-delivery.webp
         :width: 100%
         :alt: CrafterCMS Partial Delivery
         :align: center

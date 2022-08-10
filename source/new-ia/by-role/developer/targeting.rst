@@ -35,7 +35,7 @@ Configuring
 
 **Targeting Configuration**
 
-.. figure:: /_static/images/site-admin/config-open-user-interface-config.jpg
+.. figure:: /_static/images/site-admin/config-open-user-interface-config.webp
     :alt: Targeting - Open Configuration
     :width: 75 %
     :align: center
@@ -107,7 +107,7 @@ clicking on **New Content**.
 
 Here's the list after entering the desired segments:
 
-.. figure:: /_static/images/targeting/tagging-segments.jpg
+.. figure:: /_static/images/targeting/tagging-segments.webp
     :alt: Targeting - Segments Taxonomy
     :width: 80 %
     :align: center
@@ -147,7 +147,7 @@ We will now see how to add the segments you just configured into a page.  From t
 on |projectTools|, next click on **Content Types**.  Select **Article**, then click on
 **Open Type**
 
-.. figure:: /_static/images/targeting/tagging-segments-model-open.jpg
+.. figure:: /_static/images/targeting/tagging-segments-model-open.webp
     :alt: Targeting - Open Model
     :width: 80 %
     :align: center
@@ -158,7 +158,7 @@ In the Metadata section of the form, a *Grouped Checkboxes* control is used to m
 The control is then named **Segments**, with the *Data Source* property in the Properties Explorer
 Section set to *Segments*.
 
-.. figure:: /_static/images/targeting/tagging-segments-model.jpg
+.. figure:: /_static/images/targeting/tagging-segments-model.webp
     :alt: Targeting - Model Taxonomy
     :width: 80 %
     :align: center
@@ -177,7 +177,7 @@ content for targeting.  Click on the article from the Sidebar, then click on **E
 toolbar ``Options``.  Notice that the article is targeted for both Guy and Gal (Guy and Gal checkbox
 checked).
 
-.. figure:: /_static/images/targeting/targeting-segments-tag-content.png
+.. figure:: /_static/images/targeting/targeting-segments-tag-content.webp
     :alt: Targeting - Segments Metadata in Content
     :width: 80 %
     :align: center
@@ -192,7 +192,7 @@ After targeting the content, we will now see how we can display pages depending 
 logged in. Let's take a look at the home page of the Website Editorial blueprint. We are browsing
 as an user with the segment Gal, and we're looking at the featured articles:
 
-.. figure:: /_static/images/targeting/tagging-segments-home-page.jpg
+.. figure:: /_static/images/targeting/tagging-segments-home-page.webp
     :alt: Targeting - Targeted Home Page
     :width: 80 %
     :align: center
@@ -247,7 +247,7 @@ clicking on **New Content**.
 
 Here's the list after entering the desired categories:
 
-.. figure:: /_static/images/targeting/tagging-categories.jpg
+.. figure:: /_static/images/targeting/tagging-categories.webp
     :alt: Targeting - Categories
     :width: 80 %
     :align: center
@@ -288,7 +288,7 @@ We will now see how to add the categories you just configured into a page.  From
 on |projectTools|, next click on **Content Types**.  Select **Article**, then click on **Open Type**
 
 
-.. figure:: /_static/images/targeting/tagging-segments-model-open.jpg
+.. figure:: /_static/images/targeting/tagging-segments-model-open.webp
     :alt: Targeting - Open Model Categories
     :width: 80 %
     :align: center
@@ -299,7 +299,7 @@ In the Metadata section of the form, a *Grouped Checkboxes* control is used to m
 The control is then named **Categories**, with the *Data Source* property in the Properties Explorer
 Section set to *categories*.
 
-.. figure:: /_static/images/targeting/tagging-categories-model.jpg
+.. figure:: /_static/images/targeting/tagging-categories-model.webp
     :alt: Targeting - Model Categories
     :width: 80 %
     :align: center
@@ -317,7 +317,7 @@ articles in the blueprint, "Women Styles for Winter" as an example of targeting 
 category. Click on the article from the Sidebar, then click on **Edit** from the toolbar ``Options``.
 Notice that the article is targeted for the *Style* category.
 
-.. figure:: /_static/images/targeting/tagging-categories-tag-content.png
+.. figure:: /_static/images/targeting/tagging-categories-tag-content.webp
     :alt: Targeting - Categories Metadata in Content
     :width: 80 %
     :align: center
@@ -334,7 +334,7 @@ the left rail of our project.  If your screen is not wide enough, look at the to
 page, there is a hamburger icon/button (multiple lines in red that sort of looks like a hamburger),
 click on that icon to display the left rail.
 
-.. figure:: /_static/images/targeting/tagging-hamburger-icon.jpg
+.. figure:: /_static/images/targeting/tagging-hamburger-icon.webp
     :alt: Targeting - Hamburger Icon
     :width: 80 %
     :align: center
@@ -344,7 +344,7 @@ click on that icon to display the left rail.
 Let us look at the navigation menu on the left rail.  As you can see, the categories we used to
 target our pages can be used as navigation headings for the project.
 
-.. figure:: /_static/images/targeting/tagging-categories-left-rail.jpg
+.. figure:: /_static/images/targeting/tagging-categories-left-rail.webp
     :alt: Targeting - Categories Left Rail
     :width: 80 %
     :align: center
@@ -357,7 +357,7 @@ the articles listed on the page are targeted for category *Health*.  (To check t
 an article, just click on the article then click on **Edit** on the toolbar ``Options`` (stacked three dots)
 at the top of the page. Go down to the *Metadata* section to see which category is selected.)
 
-.. figure:: /_static/images/targeting/tagging-categories-landing.jpg
+.. figure:: /_static/images/targeting/tagging-categories-landing.webp
     :alt: Targeting - Categories Landing Page
     :width: 80 %
     :align: center
@@ -392,7 +392,7 @@ article being browsed.  We will look at the content type component **Articles Wi
 to see how this is done in our Website Editorial blueprint.  We will open the model for the
 component article widget by going to the Sidebar ``Site Tools``, then clicking on **Content Types -> Articles Widget -> Open Type**
 
-.. figure:: /_static/images/targeting/tagging-component-article-open.jpg
+.. figure:: /_static/images/targeting/tagging-component-article-open.webp
     :alt: Targeting - Open Component Articles Widget
     :width: 80 %
     :align: center
@@ -403,7 +403,7 @@ In the dialog, notice the item selector control labeled **Controllers** with dat
 **Scripts**.  This picker will be used to select which script we want to run before the component
 renders in its container.
 
-.. figure:: /_static/images/targeting/tagging-component-article-form.jpg
+.. figure:: /_static/images/targeting/tagging-component-article-form.webp
     :alt: Targeting - Form Component Article Widget
     :width: 80 %
     :align: center
@@ -414,7 +414,7 @@ We'll now take a look at the component created to display related articles. In t
 navigate to the **components -> articles-widget** folder, then right click on **Related Articles
 Widget** and click on **Edit**
 
-.. figure:: /_static/images/targeting/tagging-component-related-open.jpg
+.. figure:: /_static/images/targeting/tagging-component-related-open.webp
     :alt: Targeting - Open Component Related Articles
     :width: 40 %
     :align: center
@@ -424,7 +424,7 @@ Widget** and click on **Edit**
 In the **Controllers** section, you'll see the groovy script that will be run before rendering
 the component.
 
-.. figure:: /_static/images/targeting/tagging-component-related-form.jpg
+.. figure:: /_static/images/targeting/tagging-component-related-form.webp
     :alt: Targeting - Open Component Related Articles
     :width: 80 %
     :align: center
@@ -463,7 +463,7 @@ category, then the left rail is expanded by clicking on the hamburger icon at th
 the page.  In the left rail, we can see the related articles to the one currently being viewed
 in the page (articles tagged for category Health).
 
-.. figure:: /_static/images/targeting/tagging-component-related-display.jpg
+.. figure:: /_static/images/targeting/tagging-component-related-display.webp
     :alt: Targeting - Script Component Related Articles
     :width: 80 %
     :align: center
@@ -557,7 +557,7 @@ We will now see how to add the role(s) into a page.  From the Sidebar, click
 on |projectTools|, next click on **Content Types**.  Select **Article**, then select
 **Open Type**
 
-.. figure:: /_static/images/targeting/tagging-segments-model-open.jpg
+.. figure:: /_static/images/targeting/tagging-segments-model-open.webp
    :alt: Targeting - Open Model Categories
    :width: 80 %
    :align: center
@@ -567,7 +567,7 @@ on |projectTools|, next click on **Content Types**.  Select **Article**, then se
 From the Controls list on the right, select ``Repeating Group`` and add it to the ``Metadata`` Form Section.
 In the ``Repeating Group`` properties, set the Title field to “Authorized Roles” and the Name / Variable Name field to “authorizedRoles.”
 
-.. image:: /_static/images/site-admin/authorized_roles_properties.png
+.. image:: /_static/images/site-admin/authorized_roles_properties.webp
    :alt: Engine Project Security Guide - Authorized Roles Properties
 
 |
@@ -581,7 +581,7 @@ Add an Input control inside the Repeating Group, with the **Title** field set to
 Name** field set to "role". Make this Input required by checking the checkbox under **Constraints** in the
 **Required** field in the **Properties Explorer**.
 
-.. image:: /_static/images/site-admin/role_properties.png
+.. image:: /_static/images/site-admin/role_properties.webp
    :alt: Engine Project Security Guide - Role Properties
 
 |
@@ -601,7 +601,7 @@ articles in the blueprint, "Top Books For Young Women" as an example of targetin
 role. Click on the article from the Sidebar, then click on **Edit** in the toolbar ``Options``.
 Scroll down to the ``Metadata`` section in the form to the ``Authorized Roles`` field.  Click on ``Add First Item``
 
-.. figure:: /_static/images/targeting/tagging-roles-tag-content-1.png
+.. figure:: /_static/images/targeting/tagging-roles-tag-content-1.webp
    :alt: Targeting - Authorized Roles Metadata in Content
    :width: 70 %
    :align: center
@@ -610,7 +610,7 @@ Scroll down to the ``Metadata`` section in the form to the ``Authorized Roles`` 
 
 Let's setup the page to be available to users with the role ``user``.  The prefix ``ROLE_`` for the values in ``authorizedRoles`` is optional.
 
-.. figure:: /_static/images/targeting/tagging-roles-tag-content-2.png
+.. figure:: /_static/images/targeting/tagging-roles-tag-content-2.webp
    :alt: Targeting - Authorized Roles Metadata in Content
    :width: 70 %
    :align: center
@@ -625,7 +625,7 @@ After targeting the content, we will now see how we can display pages depending 
 user has. Let's take a look at the home page of the Website Editorial blueprint. We are browsing
 as a user with the role ``ROLE_user``,
 
-.. figure:: /_static/images/targeting/tagging-roles-targeting.png
+.. figure:: /_static/images/targeting/tagging-roles-targeting.webp
     :alt: Targeting - Set role ROLE_user
     :width: 30 %
     :align: center
@@ -634,7 +634,7 @@ as a user with the role ``ROLE_user``,
 
 and we're looking at the ``Entertainment`` category page.  Notice that the article we setup with role ``ROLE_user`` is listed:
 
-.. figure:: /_static/images/targeting/tagging-roles-entertainment-page.jpg
+.. figure:: /_static/images/targeting/tagging-roles-entertainment-page.webp
     :alt: Targeting - Entertainment category landing page with role targeting set to ROLE_user
     :width: 80 %
     :align: center
@@ -647,7 +647,7 @@ By using ``authorizedRoles`` (Used to restrict pages based on roles) and
 Now, let's change the role to ``ROLE_admin`` and notice that the article ``Top Books For Young Women`` is not listed
 in the ``Entertainment`` category page.
 
-.. figure:: /_static/images/targeting/tagging-roles-entertainment-page-2.jpg
+.. figure:: /_static/images/targeting/tagging-roles-entertainment-page-2.webp
     :alt: Targeting - Entertainment category landing page with role targeting set to ROLE_user
     :width: 80 %
     :align: center

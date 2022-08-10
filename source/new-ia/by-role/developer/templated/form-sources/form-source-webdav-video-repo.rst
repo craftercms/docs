@@ -14,7 +14,7 @@
 Video from WebDAV Repository Data Source
 ========================================
 
-.. image:: /_static/images/form-sources/form-source-webdav-video-repo.png
+.. image:: /_static/images/form-sources/form-source-webdav-video-repo.webp
     :width: 30%
     :alt: Source Control Video From WebDAV Repository
     :align: center
@@ -25,7 +25,7 @@ Video from WebDAV Repository Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-webdav-conf.png
+.. image:: /_static/images/form-sources/form-source-webdav-conf.webp
     :width: 50%
     :alt: Source Control Video From WebDAV Repository Configuration
     :align: center

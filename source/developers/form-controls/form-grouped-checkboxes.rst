@@ -18,7 +18,7 @@ Grouped Checkboxes Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-grouped-checkboxes-example.png
+.. image:: /_static/images/form-controls/form-control-grouped-checkboxes-example.webp
     :width: 60%
     :alt: Form Control Grouped Checkboxes Example
     :align: center
@@ -29,7 +29,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-grouped-checkboxes.png
+.. image:: /_static/images/form-controls/form-control-grouped-checkboxes.webp
     :width: 40%
     :alt: Form Control Grouped Checkboxes Properties
     :align: center

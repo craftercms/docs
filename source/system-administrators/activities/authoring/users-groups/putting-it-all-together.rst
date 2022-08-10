@@ -28,7 +28,7 @@ Let's begin by creating a new group.
 
 Below are the information used to create a new group:
 
-.. image:: /_static/images/site-admin/new-group.png
+.. image:: /_static/images/site-admin/new-group.webp
      :alt: Group - Create a New Group
      :width: 100%
      :align: center

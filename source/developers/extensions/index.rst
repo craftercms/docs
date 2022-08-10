@@ -62,7 +62,7 @@ Extensions submitted to the CrafterCMS Marketplace can be used directly from Cra
 When creating a project in CrafterCMS, a list of the available blueprints from the CrafterCMS marketplace is
 displayed for the user to choose from like below:
 
-.. image:: /_static/images/developer/plugins/marketplace-blueprints.jpg
+.. image:: /_static/images/developer/plugins/marketplace-blueprints.webp
    :alt: Marketplace Blueprints
    :width: 60%
    :align: center
@@ -70,7 +70,7 @@ displayed for the user to choose from like below:
 As mentioned above, plugins published in the CrafterCMS marketplace can be installed on projects in CrafterCMS
 via the :ref:`Plugin Management <plugin-management>` tool:
 
-.. image:: /_static/images/developer/plugins/marketplace-site-plugins.jpg
+.. image:: /_static/images/developer/plugins/marketplace-site-plugins.webp
    :alt: Marketplace Plugins
    :width: 60%
    :align: center

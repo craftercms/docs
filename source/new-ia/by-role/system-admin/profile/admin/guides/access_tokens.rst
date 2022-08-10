@@ -28,7 +28,7 @@ List All
 
 To view all existing Access Tokens you can click the ``List Access Tokens`` link in the left sidebar.
 
-.. figure:: /_static/images/profile-admin/access-tokens-list.png
+.. figure:: /_static/images/profile-admin/access-tokens-list.webp
   :align: center
   :alt: Crafter Profile access tokens list
 
@@ -44,7 +44,7 @@ View Details
 
 From the List Access Tokens page you can click the ID of an existing record to display the details:
 
-.. figure:: /_static/images/profile-admin/access-tokens-view.png
+.. figure:: /_static/images/profile-admin/access-tokens-view.webp
   :align: center
   :alt: Crafter Profile access tokens view
 
@@ -58,7 +58,7 @@ Create a New Access Token
 
 To create a new Access Token you can click the ``New Access Token`` link in the left sidebar.
 
-.. figure:: /_static/images/profile-admin/access-tokens-new.png
+.. figure:: /_static/images/profile-admin/access-tokens-new.webp
    :align: center
    :alt: Crafter Profile access tokens new
 
@@ -89,7 +89,7 @@ Fields
 Example Tenant Permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: /_static/images/profile-admin/access-tokens-permissions.png
+.. figure:: /_static/images/profile-admin/access-tokens-permissions.webp
   :align: center
   :alt: Crafter Profile access tokens permissions
 

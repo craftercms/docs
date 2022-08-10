@@ -26,7 +26,7 @@ Modern Decoupled Architecture
 CrafterCMS is a truly decoupled content management system, yet it supports dynamic and personalized content
 delivery. To understand this better, Crafter's decoupled architecture is as follows:
 
-.. image:: /_static/images/architecture/decoupled-overview.png
+.. image:: /_static/images/architecture/decoupled-overview.webp
     :width: 100%
     :alt: CrafterCMS Decoupled Overview
     :align: center
@@ -39,7 +39,7 @@ In contrast, many coupled CMSs do claim to be decoupled, but are really not. The
 
 A truly decoupled system will support disconnected delivery (think of a delivery tier that's running in a submarine or on a cruise ship). While running disconnected delivery nodes is an extreme example, it's a good test of the true scalability of the delivery tier of a CMS.
 
-.. image:: /_static/images/architecture/traditional-modern-decoupled.png
+.. image:: /_static/images/architecture/traditional-modern-decoupled.webp
     :width: 100%
     :alt: CrafterCMS Modern Decoupled
     :align: center
@@ -52,7 +52,7 @@ How can CrafterCMS deliver a dynamic experience? During ingestion, the delivery 
 Application Development
 -----------------------
 
-.. image:: /_static/images/architecture/application-development.jpg
+.. image:: /_static/images/architecture/application-development.webp
     :width: 100%
     :alt: Application Development on CrafterCMS
     :align: center

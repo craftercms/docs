@@ -17,14 +17,14 @@ Time Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-time-example.png
+.. image:: /_static/images/form-controls/form-control-time-example.webp
     :width: 65%
     :alt: Form Control Time Example 1
     :align: center
 
 |
 
-.. image:: /_static/images/form-controls/form-control-time-example2.png
+.. image:: /_static/images/form-controls/form-control-time-example2.webp
     :width: 65%
     :alt: Form Control Time Example 2
     :align: center
@@ -35,7 +35,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-time-properties.png
+.. image:: /_static/images/form-controls/form-control-time-properties.webp
     :width: 35%
     :alt: Form Control Time Properties
     :align: center

@@ -13,7 +13,7 @@
 Configured List of Pairs Data Source
 ====================================
 
-.. image:: /_static/images/form-sources/form-source-list-pairs.png
+.. image:: /_static/images/form-sources/form-source-list-pairs.webp
     :width: 50%
     :alt: Source Control Configured List of Pairs
     :align: center
@@ -22,7 +22,7 @@ Configured List of Pairs Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-list-pairs-conf.png
+.. image:: /_static/images/form-sources/form-source-list-pairs-conf.webp
     :width: 50%
     :alt: Source Control Configured List of Pairs Configuration
     :align: center

@@ -14,7 +14,7 @@
 Video Uploaded from Desktop Data Source
 =======================================
 
-.. image:: /_static/images/form-sources/form-source-video-desktop.png
+.. image:: /_static/images/form-sources/form-source-video-desktop.webp
     :width: 30%
     :alt: Source Control Video From Desktop
     :align: center
@@ -25,7 +25,7 @@ Video Uploaded from Desktop Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-video-desktop-conf.png
+.. image:: /_static/images/form-sources/form-source-video-desktop-conf.webp
     :width: 50%
     :alt: Source Control Video From Desktop
     :align: center

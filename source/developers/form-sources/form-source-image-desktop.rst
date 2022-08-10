@@ -14,7 +14,7 @@
 Image Uploaded from Desktop Data Source
 =======================================
 
-.. image:: /_static/images/form-sources/form-source-image-desktop.png
+.. image:: /_static/images/form-sources/form-source-image-desktop.webp
     :width: 30%
     :alt: Source Control Image From Desktop
     :align: center
@@ -25,7 +25,7 @@ Image Uploaded from Desktop Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-image-desktop-conf.png
+.. image:: /_static/images/form-sources/form-source-image-desktop-conf.webp
     :width: 50%
     :alt: Form Control Input 1
     :align: center

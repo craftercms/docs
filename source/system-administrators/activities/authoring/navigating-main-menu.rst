@@ -11,7 +11,7 @@ Navigating the Navigation Menu
 
 In this section, we discuss the Navigation Menu tools available in Studio.  To access, click the ``Navigation Menu`` icon from the top right of the browser
 
-.. image:: /_static/images/system-admin/main-menu/open-main-menu.png
+.. image:: /_static/images/system-admin/main-menu/open-main-menu.webp
     :alt: System Administrator - Open Navigation Menu
     :align: center
     :width: 100%
@@ -20,7 +20,7 @@ In this section, we discuss the Navigation Menu tools available in Studio.  To a
 
 Here are the list of tools available when using an out of the box blueprint.  The ``Navigation Menu`` tools described below are available to users belonging to the ``system_admin`` group.
 
-.. image:: /_static/images/system-admin/main-menu/main-menu.png
+.. image:: /_static/images/system-admin/main-menu/main-menu.webp
     :alt: System Administrator - Navigation Menu
     :align: center
     :width: 20%
@@ -40,7 +40,7 @@ Projects
 --------
 ``Projects`` contains a list of all the projects the logged in user has access to. The section :ref:`content-authors-navigating-studio` in ``Content Authors`` contains descriptions on some of the actions that can be performed from the Projects screen.
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-sites.png
+.. image:: /_static/images/system-admin/main-menu/main-menu-sites.webp
     :alt: System Administrator - Navigation Menu Projects
     :align: center
     :width: 85%
@@ -52,7 +52,7 @@ Users
 -----
 A user is anybody who uses CrafterCMS.  ``Users`` lets the administrator manage who has access to Crafter Studio.  See :ref:`users-management` for more information on ``Users``
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-users.png
+.. image:: /_static/images/system-admin/main-menu/main-menu-users.webp
     :alt: System Administrator - Navigation Menu Users
     :align: center
     :width: 85%
@@ -68,7 +68,7 @@ Groups
 ------
 A group consists of a collection of users.  ``Groups`` lets the administrator manage groups, members belonging to a group, etc.  For more information on groups, see :ref:`groups-management`
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-groups.png
+.. image:: /_static/images/system-admin/main-menu/main-menu-groups.webp
     :alt: System Administrator - Navigation Menu Groups
     :align: center
     :width: 85%
@@ -84,7 +84,7 @@ Cluster
 -------
 ``Cluster`` lets the administrator manage Studio clusters.  See :ref:`clustering` for more information on how to setup clustering and available actions from ``Cluster`` from the Main Menu
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-cluster.png
+.. image:: /_static/images/system-admin/main-menu/main-menu-cluster.webp
     :alt: System Administrator - Navigation Menu Cluster
     :align: center
     :width: 85%
@@ -96,7 +96,7 @@ Audit
 -----
 Audit logs displays the date, time, user and action performed to content in all the projects available as well as actions performed in Studio such as logins/logouts, user removal, group addition, etc.
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-audit.jpg
+.. image:: /_static/images/system-admin/main-menu/main-menu-audit.webp
     :alt: System Administrator - Navigation Menu Audit
     :align: center
     :width: 85%
@@ -118,7 +118,7 @@ There are 4 log levels defined in CrafterCMS.  These levels determine what messa
 
 The lower your logging levels are set, the more verbose your logs will be.
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-logging-levels.jpg
+.. image:: /_static/images/system-admin/main-menu/main-menu-logging-levels.webp
     :alt: System Administrator - Navigation Menu Logging Levels
     :align: center
     :width: 85%
@@ -133,7 +133,7 @@ Log Console
 
 The ``Log Console`` allows the user to view messages depending on what log levels and what Java packages have been set for tracking.
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-log-console.png
+.. image:: /_static/images/system-admin/main-menu/main-menu-log-console.webp
     :alt: System Administrator - Navigation Menu Log Console
     :align: center
     :width: 75%
@@ -150,7 +150,7 @@ Global Config
 
 The ``Global Config`` allows the user to edit the system settings for Studio without access to the physical server.
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-global-config.jpg
+.. image:: /_static/images/system-admin/main-menu/main-menu-global-config.webp
     :alt: System Administrator - Navigation Menu Global Config
     :align: center
     :width: 100%
@@ -167,7 +167,7 @@ Encryption Tool
 
 The ``Encryption Tool`` allows the user to encrypt sensitive data such as access keys and passwords, that shouldn't be publicly available to anyone but developers and administrators
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-encryption-tool.png
+.. image:: /_static/images/system-admin/main-menu/main-menu-encryption-tool.webp
     :alt: System Administrator - Navigation Menu Encryption Tool
     :align: center
     :width: 100%
@@ -180,7 +180,7 @@ Token Management
 
 The ``Token Management Tool`` allows the user to manage access tokens used to make API requests on behalf of the user
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-token-management.png
+.. image:: /_static/images/system-admin/main-menu/main-menu-token-management.webp
     :alt: System Administrator - Navigation Menu Token Management Tool
     :align: center
     :width: 100%
@@ -192,7 +192,7 @@ Account
 -------
 The ``Account Tool`` allows the user to change the user's personal Crafter Studio settings like language or to change the user's password.
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-account.jpg
+.. image:: /_static/images/system-admin/main-menu/main-menu-account.webp
     :alt: System Administrator - Navigation Menu Account Tool
     :align: center
     :width: 100%

@@ -26,7 +26,7 @@ To open your Ubuntu terminal, click on the Ubuntu icon from the Start menu, or, 
 command prompt, type ``ubuntu`` or ``ubuntu1604`` or ``ubuntu2004`` depending on the version
 you've downloaded.
 
-.. figure:: /_static/images/system-admin/open-ubuntu-terminal.jpg
+.. figure:: /_static/images/system-admin/open-ubuntu-terminal.webp
    :alt: Setting up CrafterCMS in Windows - Open the Ubuntu terminal
    :width: 70 %
    :align: center
@@ -75,7 +75,7 @@ Here are the steps to start using CrafterCMS for development or evaluation by in
 
    The Windows file system root directory is : ``/mnt/c/Users/<user name>/path/to/project$`` or ``C:\Users\<user name>\path\to\project``
 
-   .. figure:: /_static/images/system-admin/accessing-wsl-fs-in-explorer.png
+   .. figure:: /_static/images/system-admin/accessing-wsl-fs-in-explorer.webp
       :alt: Setting up CrafterCMS in Windows - Accessing the WSL file system
       :width: 70 %
       :align: center
@@ -129,7 +129,7 @@ Here are the steps to start using CrafterCMS for development or evaluation by in
 
    |
 
-   .. figure:: /_static/images/system-admin/start-crafter-in-wsl2.png
+   .. figure:: /_static/images/system-admin/start-crafter-in-wsl2.webp
       :alt: Setting up CrafterCMS in Windows - Start CrafterCMS in WSL
       :width: 70 %
       :align: center

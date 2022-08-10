@@ -17,7 +17,7 @@ Checkbox Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-checkbox-example.png
+.. image:: /_static/images/form-controls/form-control-checkbox-example.webp
     :width: 30%
     :alt: Form Control Checkbox Example
     :align: center
@@ -26,7 +26,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-checkbox-properties.png
+.. image:: /_static/images/form-controls/form-control-checkbox-properties.webp
     :width: 50%
     :alt: Form Control Checkbox Properties
     :align: center

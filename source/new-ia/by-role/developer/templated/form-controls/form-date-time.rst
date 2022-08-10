@@ -17,7 +17,7 @@ Date/Time Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-date-time-example.png
+.. image:: /_static/images/form-controls/form-control-date-time-example.webp
     :width: 50%
     :alt: Form Control Date-Time Example
     :align: center
@@ -26,7 +26,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-date-time-properties.png
+.. image:: /_static/images/form-controls/form-control-date-time-properties.webp
     :width: 50%
     :alt: Form Control Date-Time Properties
     :align: center

@@ -1,86 +1,86 @@
 .. _newIa-list-form-engine-controls:
 
-.. |ctlFormSection| image:: /_static/images/form-controls/ctl-form-section.png
+.. |ctlFormSection| image:: /_static/images/form-controls/ctl-form-section.webp
              :width: 60%
              :alt: Form Controls - Form Section
 
-.. |ctlRepeatGrp| image:: /_static/images/form-controls/ctl-repeat-grp.png
+.. |ctlRepeatGrp| image:: /_static/images/form-controls/ctl-repeat-grp.webp
              :width: 75%
              :alt: Form Controls - Repeating Group
 
-.. |ctlInput| image:: /_static/images/form-controls/ctl-input.png
+.. |ctlInput| image:: /_static/images/form-controls/ctl-input.webp
              :width: 35%
              :alt: Form Controls - Input
 
-.. |ctlNumericInput| image:: /_static/images/form-controls/ctl-numeric-input.png
+.. |ctlNumericInput| image:: /_static/images/form-controls/ctl-numeric-input.webp
              :width: 65%
              :alt: Form Controls - Numeric Input
 
-.. |ctlTxtArea| image:: /_static/images/form-controls/ctl-text-area.png
+.. |ctlTxtArea| image:: /_static/images/form-controls/ctl-text-area.webp
              :width: 45%
              :alt: Form Controls - Text Area
 
-.. |ctlRTE| image:: /_static/images/form-controls/ctl-rte.png
+.. |ctlRTE| image:: /_static/images/form-controls/ctl-rte.webp
              :width: 105%
              :alt: Form Controls - Rich Text Editor
 
-.. |ctlDropdown| image:: /_static/images/form-controls/ctl-dropdown.png
+.. |ctlDropdown| image:: /_static/images/form-controls/ctl-dropdown.webp
              :width: 55%
              :alt: Form Controls - Dropdown
 
-.. |ctlTime| image:: /_static/images/form-controls/ctl-time.png
+.. |ctlTime| image:: /_static/images/form-controls/ctl-time.webp
              :width: 35%
              :alt: Form Controls - Time
 
-.. |ctlDtTime| image:: /_static/images/form-controls/ctl-date-time.png
+.. |ctlDtTime| image:: /_static/images/form-controls/ctl-date-time.webp
              :width: 60%
              :alt: Form Controls - Date Time
 
-.. |ctlCheckBox| image:: /_static/images/form-controls/ctl-check-box.png
+.. |ctlCheckBox| image:: /_static/images/form-controls/ctl-check-box.webp
              :width: 55%
              :alt: Form Controls - Check Box
 
-.. |ctlGrpChkBox| image:: /_static/images/form-controls/ctl-grp-check-box.png
+.. |ctlGrpChkBox| image:: /_static/images/form-controls/ctl-grp-check-box.webp
              :width: 90%
              :alt: Form Controls - Grouped Check Box
 
-.. |ctlItemSel| image:: /_static/images/form-controls/ctl-item-sel.png
+.. |ctlItemSel| image:: /_static/images/form-controls/ctl-item-sel.webp
              :width: 65%
              :alt: Form Controls - Item Selector
 
-.. |ctlImage| image:: /_static/images/form-controls/ctl-image.png
+.. |ctlImage| image:: /_static/images/form-controls/ctl-image.webp
              :width: 40%
              :alt: Form Controls - Image
 
-.. |ctlVideo| image:: /_static/images/form-controls/ctl-video.png
+.. |ctlVideo| image:: /_static/images/form-controls/ctl-video.webp
              :width: 35%
              :alt: Form Controls - Video
 
-.. |ctlTranscodedVideo| image:: /_static/images/form-controls/ctl-transcoded-video.png
+.. |ctlTranscodedVideo| image:: /_static/images/form-controls/ctl-transcoded-video.webp
              :width: 80%
              :alt: Form Controls - Transcoded Video
 
-.. |ctlLabel| image:: /_static/images/form-controls/ctl-label.png
+.. |ctlLabel| image:: /_static/images/form-controls/ctl-label.webp
              :width: 35%
              :alt: Form Controls - Label
 
-.. |ctlPageOrder| image:: /_static/images/form-controls/ctl-page-order.png
+.. |ctlPageOrder| image:: /_static/images/form-controls/ctl-page-order.webp
              :width: 50%
              :alt: Form Controls - Page Order
 
-.. |ctlFileName| image:: /_static/images/form-controls/ctl-file-name.png
+.. |ctlFileName| image:: /_static/images/form-controls/ctl-file-name.webp
              :width: 50%
              :alt: Form Controls - File Name
 
-.. |ctlAutoFn| image:: /_static/images/form-controls/ctl-auto-filename.png
+.. |ctlAutoFn| image:: /_static/images/form-controls/ctl-auto-filename.webp
              :width: 65%
              :alt: Form Controls - Auto Filename
 
-.. |ctlInternalName| image:: /_static/images/form-controls/ctl-internal-name.png
+.. |ctlInternalName| image:: /_static/images/form-controls/ctl-internal-name.webp
              :width: 65%
              :alt: Form Controls - Internal Name
 
-.. |ctlLocaleSel| image:: /_static/images/form-controls/ctl-locale-selector.png
+.. |ctlLocaleSel| image:: /_static/images/form-controls/ctl-locale-selector.webp
              :width: 65%
              :alt: Form Controls - Locale Selector
 

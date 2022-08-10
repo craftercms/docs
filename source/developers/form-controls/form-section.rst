@@ -17,7 +17,7 @@ Form Section Control
 -------
 Example
 -------
-.. image:: /_static/images/form-controls/form-control-form-section-example.png
+.. image:: /_static/images/form-controls/form-control-form-section-example.webp
     :width: 60%
     :alt: Form Control Form Section Example
     :align: center
@@ -25,7 +25,7 @@ Example
 -------------
 Configuration
 -------------
-.. image:: /_static/images/form-controls/form-control-form-section.png
+.. image:: /_static/images/form-controls/form-control-form-section.webp
     :width: 50%
     :alt: Form Control Form Section Example
     :align: center

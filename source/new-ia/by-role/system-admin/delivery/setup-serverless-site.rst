@@ -65,7 +65,7 @@ S3 Bucket
 #. Enter the ``Bucket name`` (for example, ``craftercms-sites``), choose the region, leave the defaults on the
    next 2 steps and finally click on ``Create``.
 
-   .. image:: /_static/images/system-admin/serverless/create-bucket.png
+   .. image:: /_static/images/system-admin/serverless/create-bucket.webp
       :alt: Serverless Site - Create S3 Bucket
       :align: center
 
@@ -97,7 +97,7 @@ Elasticsearch
 #. Click on ``Create a new domain``.
 #. Select a ``Deployment Type`` and on the Elasticsearch version, pick the latest ``6.x`` (currently it's ``6.5``).
 
-   .. image:: /_static/images/system-admin/serverless/es-deployment-type.png
+   .. image:: /_static/images/system-admin/serverless/es-deployment-type.webp
       :alt: Serverless Site - Elasticsearch Deployment Type
       :align: center
 
@@ -109,7 +109,7 @@ Elasticsearch
 #. On ``Network Configuration``, we recommend you pick the VPC where your authoring and delivery nodes reside. If
    they're not running on an Amazon VPC, then pick ``Public Access``.
 
-   .. image:: /_static/images/system-admin/serverless/es-network-access.png
+   .. image:: /_static/images/system-admin/serverless/es-network-access.webp
       :alt: Serverless Site - Elasticsearch Network Access
       :align: center
 
@@ -117,7 +117,7 @@ Elasticsearch
 
 #. Select the ``Access Policy`` that fits your Crafter environment, and click on ``Next``.
 
-   .. image:: /_static/images/system-admin/serverless/es-access-policy.png
+   .. image:: /_static/images/system-admin/serverless/es-access-policy.webp
       :alt: Serverless Site - Elasticsearch Access Policy
       :align: center
 
@@ -127,7 +127,7 @@ Elasticsearch
 #. Wait for a few minutes until the domain is ready. Copy the ``Endpoint``. You'll need this URL later to configure
    the Deployer and Delivery Engine which will need access to the Elasticsearch.
 
-   .. image:: /_static/images/system-admin/serverless/es-endpoint.png
+   .. image:: /_static/images/system-admin/serverless/es-endpoint.webp
       :alt: Serverless Site - Elasticsearch Endpoint
       :align: center
 
@@ -141,7 +141,7 @@ CloudFront Distribution
 #. Click on ``Create Distribution``.
 #. In ``Select a delivery method for your content``, click on ``Get Started`` under ``Web``.
 
-   .. image:: /_static/images/system-admin/serverless/cf-delivery-method.png
+   .. image:: /_static/images/system-admin/serverless/cf-delivery-method.webp
       :alt: Serverless Site - CloudFront Delivery Method
       :align: center
 
@@ -155,7 +155,7 @@ CloudFront Distribution
    #. Select ``Create a New Identity`` in ``Origin Access Identity``.
    #. Select ``Yes, Update Bucket Policy`` in ``Grant Read Permissions on Bucket``.
 
-   .. image:: /_static/images/system-admin/serverless/cf-origin-settings.png
+   .. image:: /_static/images/system-admin/serverless/cf-origin-settings.webp
       :alt: Serverless Site - CloudFront Origin Settings
       :align: center
 
@@ -165,7 +165,7 @@ CloudFront Distribution
        ``Whitelist`` and add the following headers: ``Access-Control-Request-Headers``, ``Access-Control-Request-Method``
        and ``Origin``.
 
-   .. image:: /_static/images/system-admin/serverless/cf-whitelist-headers.png
+   .. image:: /_static/images/system-admin/serverless/cf-whitelist-headers.webp
       :alt: Serverless Site - CloudFront Whitelist Headers
       :align: center
 
@@ -175,7 +175,7 @@ CloudFront Distribution
 #. On the left sidebar, click on ``Distributions``. You should see the distribution been created (``In Progress``
    status). Take note of the distribution ``ID`` and ``Domain Name`` for the next steps.
 
-   .. image:: /_static/images/system-admin/serverless/cf-domain.png
+   .. image:: /_static/images/system-admin/serverless/cf-domain.webp
       :alt: Serverless Site - CloudFront ID and Domain Name
       :align: center
 
@@ -303,13 +303,13 @@ Step 4: Test the Delivery Site
 #. Start the delivery environment: ``DELIVERY_INSTALL_DIR/bin/startup.sh``
 #. Open a browser and go to `<http://localhost:9080?crafterSite=editorial>`_.
 
-   .. image:: /_static/images/system-admin/serverless/editorial-screenshot.png
+   .. image:: /_static/images/system-admin/serverless/editorial-screenshot.webp
       :alt: Serverless Site - Editorial Screenshot
       :align: center
 
 #. Verify that the static-assets are being served from the CloudFront distribution (in Chrome, you can do this by
        right-clicking an image and then clicking on ``Inspect``).
 
-   .. image:: /_static/images/system-admin/serverless/static-asset-inspect.png
+   .. image:: /_static/images/system-admin/serverless/static-asset-inspect.webp
       :alt: Serverless Site - Static Asset Inspect
       :align: center

@@ -25,7 +25,7 @@ on the workflow option.  To setup the email addresses, please see the section **
 :ref:`newIa-configure-notifications` and  :ref:`newIa-users-group-management`. Below is a diagram showing
 the default workflow steps.
 
-.. image:: /_static/images/page/page-workflow-diagram.jpg
+.. image:: /_static/images/page/page-workflow-diagram.webp
     :width: 75 %
     :align: center
     :alt: Workflow - Diagram
@@ -35,7 +35,7 @@ the default workflow steps.
 We will be looking at the workflow steps in this section.  Workflow is managed through dialogs.  Below
 is a sample dialog:
 
-.. image:: /_static/images/page/page-workflows.jpg
+.. image:: /_static/images/page/page-workflows.webp
     :width: 65 %
     :align: center
     :alt: Workflow - Sample dialog
@@ -53,14 +53,14 @@ Sidebar (for single items), or from the Dashboard (where items can be batch chec
 
 Initiate a Publish through the toolbar at the top:
 
-.. image:: /_static/images/page/page-workflows-publish-1a.png
+.. image:: /_static/images/page/page-workflows-publish-1a.webp
     :width: 85 %
     :align: center
     :alt: Workflow - Request publish through the toolbar at the top
 
 |
 
-.. image:: /_static/images/page/page-workflows-publish-1b.jpg
+.. image:: /_static/images/page/page-workflows-publish-1b.webp
     :width: 85 %
     :align: center
     :alt: Workflow - Request publish through the toolbar at the top
@@ -69,7 +69,7 @@ Initiate a Publish through the toolbar at the top:
 
 Initiate Publish batch checked through the dashboard:
 
-.. image:: /_static/images/page/page-workflows-publish2.png
+.. image:: /_static/images/page/page-workflows-publish2.webp
     :width: 85 %
     :align: center
     :alt: Workflow - Request batch items for publish through Dashboard
@@ -78,14 +78,14 @@ Initiate Publish batch checked through the dashboard:
 
 Initiate Publish by clicking on the three dots next to the content from the Sidebar:
 
-.. image:: /_static/images/page/page-workflows-publish3a.png
+.. image:: /_static/images/page/page-workflows-publish3a.webp
     :width: 30 %
     :align: center
     :alt: Workflow - Request publish by right clicking on content in nav tree
 
 |
 
-.. image:: /_static/images/page/page-workflows-publish3b.jpg
+.. image:: /_static/images/page/page-workflows-publish3b.webp
     :width: 45 %
     :align: center
     :alt: Workflow - Request publish by right clicking on content in nav tree
@@ -95,14 +95,14 @@ Initiate Publish by clicking on the three dots next to the content from the Side
 When sending the request for publish, you have the option of requesting to publish your content now,
     or to schedule publishing of your content at a later time and date.
 
-.. image:: /_static/images/page/page-workflows-request-publish-now.jpg
+.. image:: /_static/images/page/page-workflows-request-publish-now.webp
     :width: 65 %
     :align: center
     :alt: Workflow - Request publish now dialog
 
 |
 
-.. image:: /_static/images/page/page-workflows-request-publish-later.jpg
+.. image:: /_static/images/page/page-workflows-request-publish-later.webp
      :width: 65 %
      :align: center
      :alt: Workflow - Request publish later dialog
@@ -112,7 +112,7 @@ When sending the request for publish, you have the option of requesting to publi
 Users with permission to publish can also make changes and request approval for publishing their changes
     by checking the ``Request approval`` checkbox in the Publish dialog
 
-.. image:: /_static/images/page/page-workflows-request-publish.jpg
+.. image:: /_static/images/page/page-workflows-request-publish.webp
      :width: 65 %
      :align: center
      :alt: Workflow - Request publish approval dialog
@@ -123,7 +123,7 @@ After clicking on the **Submit** or **Schedule** button (depending on the option
 now or later), a notification email will be sent to the project's approvers.  Notice also, that the
 toolbar now displays the icon for **Submitted**
 
-.. image:: /_static/images/page/page-workflows-submitted-context-nav.jpg
+.. image:: /_static/images/page/page-workflows-submitted-context-nav.webp
      :width: 75 %
      :align: center
      :alt: Workflow - Request publish submitted context nav updated icon and text
@@ -133,7 +133,7 @@ toolbar now displays the icon for **Submitted**
 You'll also notice the **Submitted** icon is displayed next to the content item in the Sidebar for the
 content you just submitted a request for publish and contains the text **Submitted for live**
 
-.. image:: /_static/images/page/page-workflows-submitted-nav-tree.png
+.. image:: /_static/images/page/page-workflows-submitted-nav-tree.webp
      :width: 25 %
      :align: center
      :alt: Workflow - Request publish submitted Sidebar nav tree content updated icon
@@ -142,7 +142,7 @@ content you just submitted a request for publish and contains the text **Submitt
 
 The **Submitted** icon also appears next to the content submitted for publish in the dashboard:
 
-.. image:: /_static/images/page/page-workflows-submitted-dashboard.png
+.. image:: /_static/images/page/page-workflows-submitted-dashboard.webp
      :width: 85 %
      :align: center
      :alt: Workflow - Request publish submitted dashboard updated icon
@@ -164,7 +164,7 @@ approving a publish request.  One way is by going to the dashboard, then in the
 **Items Waiting For Approval** dashlet, look for the article you want to approve, then put a check
 mark next to it.
 
-.. image:: /_static/images/page/page-workflows-dashboard-approve.png
+.. image:: /_static/images/page/page-workflows-dashboard-approve.webp
      :width: 75 %
      :align: center
      :alt: Workflow - Approve & publish dashboard option
@@ -174,7 +174,7 @@ mark next to it.
 Another way to access the **Publish** option is by going to the Sidebar, then navigate to the article you
 want to approve, then click on **Options** (the three dots next to it).
 
-.. image:: /_static/images/page/page-workflows-nav-tree-approve.jpg
+.. image:: /_static/images/page/page-workflows-nav-tree-approve.webp
      :width: 40 %
      :align: center
      :alt: Workflow - Approve & publish Sidebar nav tree option
@@ -185,7 +185,7 @@ Yet another way to access the **Publish** option is by going to the Sidebar and 
 article and opening it for preview.  After opening the article for preview, go to the toolbar and click
 on **Options** (three dots) next to the address bar.
 
-.. image:: /_static/images/page/page-workflows-context-nav-approve.jpg
+.. image:: /_static/images/page/page-workflows-context-nav-approve.webp
      :width: 85 %
      :align: center
      :alt: Workflow - Approve & publish context nav option
@@ -199,7 +199,7 @@ content.  To modify/setup your notification emails, please contact your site adm
 details on how to configure your notification emails, see the section for Site Administrators in
 :ref:`newIa-configure-notifications`
 
-.. image:: /_static/images/page/page-workflows-notification-email-reviewer.png
+.. image:: /_static/images/page/page-workflows-notification-email-reviewer.webp
      :width: 40 %
      :align: center
      :alt: Workflow - Notification email to approve/reject request to approver
@@ -210,7 +210,7 @@ Below is the dialog that loads after clicking on **Publish**.  The item scheduli
 depends on what the requester has chosen when the request to publish was sent.  In the image below. the
 selected scheduling for the item is for the **Now**.  Click on **Publish** to publish the content now.
 
-.. image:: /_static/images/page/page-workflows-approve-publish-now.jpg
+.. image:: /_static/images/page/page-workflows-approve-publish-now.webp
      :width: 75 %
      :align: center
      :alt: Workflow - Approve publish now
@@ -221,7 +221,7 @@ In the image below, the requester sent the request to publish with a schedule.  
 button to schedule the publishing of the item.  The dialog with the date and time when selecting the **Later**
 radio button allows the approver to schedule or reschedule the submitted item.
 
-.. image:: /_static/images/page/page-workflows-approve-publish-later.jpg
+.. image:: /_static/images/page/page-workflows-approve-publish-later.webp
      :width: 75 %
      :align: center
      :alt: Workflow - Approve publish later
@@ -231,21 +231,21 @@ radio button allows the approver to schedule or reschedule the submitted item.
 Once an item has been scheduled to be published, notice the workflow icon next to the article in the
 **Sidebar** nav tree, the dashboard and in the context nav when you preview the scheduled for publish item.
 
-.. image:: /_static/images/page/page-workflows-context-nav-scheduled.png
+.. image:: /_static/images/page/page-workflows-context-nav-scheduled.webp
      :width: 75 %
      :align: center
      :alt: Workflow - Context nav scheduled Icon
 
 |
 
-.. image:: /_static/images/page/page-workflows-dashboard-scheduled.png
+.. image:: /_static/images/page/page-workflows-dashboard-scheduled.webp
      :width: 75 %
      :align: center
      :alt: Workflow - Dashboard scheduled Icon
 
 |
 
-.. image:: /_static/images/page/page-workflows-nav-tree-scheduled.png
+.. image:: /_static/images/page/page-workflows-nav-tree-scheduled.webp
      :width: 30 %
      :align: center
      :alt: Workflow - Nav tree scheduled Icon
@@ -255,7 +255,7 @@ Once an item has been scheduled to be published, notice the workflow icon next t
 The dashboard allows batches of scheduled and non-scheduled items to be pushed live at the same time.
 Clicking on **Publish** will change the schedule of all items to be pushed live at the same time.
 
-.. image:: /_static/images/page/page-workflows-batch-approve-request.jpg
+.. image:: /_static/images/page/page-workflows-batch-approve-request.webp
      :width: 85 %
      :align: center
      :alt: Workflow - Batch approve request to publish
@@ -269,21 +269,21 @@ To reject a request for publish, open the item for preview, then in the toolbar 
 Another way to access the **Reject** option is by opening the dashboard and placing a check mark next to the
 item to be rejected, **Reject** should now be available in the context nav.
 
-.. image:: /_static/images/page/page-workflows-context-nav-reject.jpg
+.. image:: /_static/images/page/page-workflows-context-nav-reject.webp
     :width: 75 %
     :align: center
     :alt: Workflow - Reject request to publish from toolbar
 
 |
 
-.. image:: /_static/images/page/page-workflows-dashboard-reject.jpg
+.. image:: /_static/images/page/page-workflows-dashboard-reject.webp
     :width: 75 %
     :align: center
     :alt: Workflow - Reject request to publish from dashboard
 
 |
 
-.. image:: /_static/images/page/page-workflows-nav-tree-reject.jpg
+.. image:: /_static/images/page/page-workflows-nav-tree-reject.webp
     :width: 50 %
     :align: center
     :alt: Workflow - Reject request to publish from Sidebar
@@ -294,7 +294,7 @@ Approvers may type their own rejection comments or pick canned rejection reasons
 Once selected, the editable text area field will be filled with the corresponding rejection notice / ready
 for comments in the ``Rejection Comment`` box.
 
-.. image:: /_static/images/page/page-workflows-reject.jpg
+.. image:: /_static/images/page/page-workflows-reject.webp
     :width: 65 %
     :align: center
     :alt: Workflow - Reject request to publish
@@ -304,7 +304,7 @@ for comments in the ``Rejection Comment`` box.
 Once an item has been rejected, a notification email will be sent to the requester.  Below is an example
 notification email of rejection:
 
-.. image:: /_static/images/page/page-workflows-reject-notification-email.png
+.. image:: /_static/images/page/page-workflows-reject-notification-email.webp
     :width: 75 %
     :align: center
     :alt: Workflow - Rejection notification email

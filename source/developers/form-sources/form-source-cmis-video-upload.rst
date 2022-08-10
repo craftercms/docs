@@ -14,7 +14,7 @@
 Video from CMIS Repository Data Source
 ======================================
 
-.. image:: /_static/images/form-sources/form-source-cmis-video-upload.png
+.. image:: /_static/images/form-sources/form-source-cmis-video-upload.webp
     :width: 30%
     :alt: Source Control Video Upload to CMIS Repository
     :align: center
@@ -25,7 +25,7 @@ Video from CMIS Repository Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-cmis-upload-conf.png
+.. image:: /_static/images/form-sources/form-source-cmis-upload-conf.webp
     :width: 50%
     :alt: Source Control Video Upload to CMIS Repository Configuration
     :align: center

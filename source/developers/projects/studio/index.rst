@@ -8,7 +8,7 @@
 Crafter Studio
 ==============
 
-.. figure:: /_static/images/architecture/crafter-studio.png
+.. figure:: /_static/images/architecture/crafter-studio.webp
     :alt: Crafter Studio
     :width: 60 %
     :align: center

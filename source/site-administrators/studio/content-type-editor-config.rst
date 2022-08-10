@@ -13,7 +13,7 @@ The Content Type Editor Config configuration file defines what tools are availab
 This configuration is unique in that a configuration file exists in the following location of
 each project: ``SITENAME/config/studio/administration/site-config-tools.xml``
 
-.. image:: /_static/images/site-admin/configuration-tool-config.png
+.. image:: /_static/images/site-admin/configuration-tool-config.webp
     :align: center
     :width: 25%
     :alt: Content Type Editor Config
@@ -21,7 +21,7 @@ each project: ``SITENAME/config/studio/administration/site-config-tools.xml``
 To modify the Content Type Editor Config configuration, click on |projectTools| from the bottom of the *Sidebar*,
 then click on **Configuration** and select **Content Type Editor Config** from the list.
 
-.. image:: /_static/images/site-admin/config-open-content-type-editor-config.jpg
+.. image:: /_static/images/site-admin/config-open-content-type-editor-config.webp
     :alt: Configurations - Open Content Type Editor Config Tools
     :width: 65 %
     :align: center

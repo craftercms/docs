@@ -31,7 +31,7 @@ Crafter Studio by default requires passwords to meet the following validation re
 
 The password requirements configured here are displayed to the user when resetting a password or creating a user.
 
-.. image:: /_static/images/system-admin/password-requirements.png
+.. image:: /_static/images/system-admin/password-requirements.webp
     :alt: System Administrator - Password Requirements Display
     :align: center
     :width: 65%
@@ -77,7 +77,7 @@ Here's an example where the validation regex requires at least two numbers, wher
 
    # studio.security.passwordRequirements.validationRegex: ^(?=(?<MustHaveAtLeastTwoNumbers>.*[0-9].*[0-9]))(?=(?<hasLowercase>.*[a-z]))(?=(?<hasUppercase>.*[A-Z]))(?=(?<hasSpecialChars>.*[~|!`,;\/@#$%^&+=]))(?<minLength>.{8,})$
 
-.. image:: /_static/images/system-admin/password-requirements-mod.png
+.. image:: /_static/images/system-admin/password-requirements-mod.webp
     :alt: System Administrator - Password Requirements Display
     :align: center
     :width: 65%

@@ -25,7 +25,7 @@ CrafterCMS supports the following site policies:
 To modify the project policy configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration** and
 select **Project Policy Configuration** from the dropdown list.
 
-.. image:: /_static/images/site-admin/config-open-project-policy-config.jpg
+.. image:: /_static/images/site-admin/config-open-project-policy-config.webp
    :alt: Configurations - Open Project Policy Configuration
    :width: 35 %
    :align: center

@@ -169,7 +169,7 @@ Editorial blueprint.
 Let's begin by looking at the home page of a project created using the Website Editorial blueprint.
 Take note of the top (header) and left (left-rail) side of the page.
 
-.. image:: /_static/images/developer/content-inheritance/home-page-view.jpg
+.. image:: /_static/images/developer/content-inheritance/home-page-view.webp
     :width: 75%
     :alt: Content Inheritance - Home Page
     :align: center
@@ -179,7 +179,7 @@ Take note of the top (header) and left (left-rail) side of the page.
 Click on one of the category, say ``Entertainment`` and again take note of the top (header) and
 left (left-rail)side of the page.
 
-.. image:: /_static/images/developer/content-inheritance/category-page-view.jpg
+.. image:: /_static/images/developer/content-inheritance/category-page-view.webp
     :width: 75%
     :alt: Content Inheritance - Home Page
     :align: center
@@ -190,7 +190,7 @@ The top part of the page is the header and the left side is the left-rail.  As s
     two pages we previewed uses the same information for the header, while the left-rail uses the
     same information on the top part of it, but different information on the bottom part.
 
-.. image:: /_static/images/developer/content-inheritance/header-leftrail.jpg
+.. image:: /_static/images/developer/content-inheritance/header-leftrail.webp
     :width: 75%
     :alt: Content Inheritance - Home Page
     :align: center
@@ -203,7 +203,7 @@ working on, is the header and the left-rail.  Below is the Section Defaults cont
 content type as ``/component/level-descriptor`` with the merge strategy ``inherit-levels`` used, and two
 components, the header and the left-rail:
 
-.. image:: /_static/images/developer/content-inheritance/section-defaults-content-type.jpg
+.. image:: /_static/images/developer/content-inheritance/section-defaults-content-type.webp
     :width: 75%
     :alt: Content Inheritance - Section Defaults Content Type
     :align: center
@@ -213,12 +213,12 @@ components, the header and the left-rail:
 In the site tree screens below, we have two section defaults (``crafter-level-descriptor.level.xml``) used,
 one residing under the **Home** folder, and another residing under **articles** folder.
 
-.. image:: /_static/images/developer/content-inheritance/site-tree-section-default-home.png
+.. image:: /_static/images/developer/content-inheritance/site-tree-section-default-home.webp
     :width: 30%
     :alt: Content Inheritance - Site tree showing home folder section defaults
     :align: center
 
-.. image:: /_static/images/developer/content-inheritance/site-tree-section-default-articles.png
+.. image:: /_static/images/developer/content-inheritance/site-tree-section-default-articles.webp
     :width: 30%
     :alt: Content Inheritance - Site tree showing articles folder section default
     :align: center
@@ -304,7 +304,7 @@ Let’s take a look at how to add another level descriptor to the Website Editor
 
 Create a new content type with name such as ``custom-level-descriptor``:
 
-.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_content_type.png
+.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_content_type.webp
     :width: 30%
     :alt: Content Inheritance - New level descriptor content type
     :align: center
@@ -314,7 +314,7 @@ Create a new content type with name such as ``custom-level-descriptor``:
 Add ``file-name`` with default value ``crafter-level-descriptor.level`` and check ``Readonly`` option.
 You can also add more fields to the content type as needed. In this example, a *Custom Headline* text is added.
 
-.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_form.png
+.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_form.webp
     :width: 100%
     :alt: Content Inheritance - New level descriptor content type form
     :align: center
@@ -323,7 +323,7 @@ You can also add more fields to the content type as needed. In this example, a *
 
 Go to the Sidebar, create a new folder ``articles2`` under ``Home``, then copy some articles to this new location:
 
-.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_create_folder.png
+.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_create_folder.webp
     :width: 30%
     :alt: Content Inheritance - New level descriptor create folder
     :align: center
@@ -332,7 +332,7 @@ Go to the Sidebar, create a new folder ``articles2`` under ``Home``, then copy s
 
 Create a new content with type ``/component/custom-level-descriptor`` under ``articles2``:
 
-.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_content.png
+.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_content.webp
     :width: 100%
     :alt: Content Inheritance - New level descriptor create folder
     :align: center
@@ -350,7 +350,7 @@ Update ``article.ftl`` template to include a new variable:
 
 |
 
-.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_update_template.jpg
+.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_update_template.webp
     :width: 100%
     :alt: Content Inheritance - New level descriptor update template
     :align: center
@@ -360,7 +360,7 @@ Update ``article.ftl`` template to include a new variable:
 Click to preview article from ``article2`` folder, confirm that new variable from the level descriptor
 has been included:
 
-.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_preview.jpg
+.. image:: /_static/images/developer/content-inheritance/new_level_descriptor_preview.webp
     :width: 100%
     :alt: Content Inheritance - New level descriptor preview
     :align: center

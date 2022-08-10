@@ -14,7 +14,7 @@
 WebDAV Image Upload Data Source
 ===============================
 
-.. image:: /_static/images/form-sources/form-source-webdav-image-upload-repo.png
+.. image:: /_static/images/form-sources/form-source-webdav-image-upload-repo.webp
     :width: 30%
     :alt: Source Control File Upload WebDAV
     :align: center
@@ -25,7 +25,7 @@ WebDAV Image Upload Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-webdav-conf.png
+.. image:: /_static/images/form-sources/form-source-webdav-conf.webp
     :width: 50%
     :alt: Source Control File Upload WebDAV
     :align: center

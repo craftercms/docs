@@ -11,7 +11,7 @@ Crafter Studio Navigation Menu Plugin Example
 The Navigation Menu contains tools that are used for daily activities by users.
 For more information on the Navigation Menu, see :ref:`here <navigating-main-menu>`
 
-.. image:: /_static/images/developer/plugins/project-plugins/open-dashboard-from-launcher.jpg
+.. image:: /_static/images/developer/plugins/project-plugins/open-dashboard-from-launcher.webp
    :align: center
    :alt: Navigation Menu
    :width: 80%
@@ -96,7 +96,7 @@ Let's take a look at an example of creating a Navigation Menu plugin in Studio u
 
 #. After placing your plugin files and setting up auto-wiring, the project plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
-   .. image:: /_static/images/developer/plugins/project-plugins/navmenu-plugin-files.png
+   .. image:: /_static/images/developer/plugins/project-plugins/navmenu-plugin-files.webp
       :align: center
       :alt: Navigation Menu project plugin directory/files
       :width: 80%
@@ -113,7 +113,7 @@ Let's take a look at an example of creating a Navigation Menu plugin in Studio u
 
 #. Let's take a look at our plugin in action by clicking on the Navigation Menu icon on the top right:
 
-   .. image:: /_static/images/developer/plugins/project-plugins/navmenu-plugin-in-action.png
+   .. image:: /_static/images/developer/plugins/project-plugins/navmenu-plugin-in-action.webp
       :align: center
       :alt: Navigation Menu project plugin in action
 

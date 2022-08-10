@@ -17,7 +17,7 @@ CrafterCMS tracks the date, time, user and action performed to content and the s
 
 To view the audit logs, from the top right of your browser, click on the ``Navigation Menu`` icon, then click on ``Audit``.
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-audit.jpg
+.. image:: /_static/images/system-admin/main-menu/main-menu-audit.webp
     :alt: System Administrator - Main Menu Audit
     :align: center
     :width: 85%
@@ -30,7 +30,7 @@ Audit Logs Site Filter
 ----------------------
 ``Site`` filters the log by site .  Clicking on ``Site`` gives you a list of all the sites in Studio and the option to see system logs or logs for all the sites.
 
-.. image:: /_static/images/system-admin/main-menu/audit-site-filter.png
+.. image:: /_static/images/system-admin/main-menu/audit-site-filter.webp
     :alt: System Administrator - Main Menu Audit Site Filter
     :align: center
     :width: 85%
@@ -40,7 +40,7 @@ Audit Logs User Filter
 ----------------------
 ``User`` filters the log by user name.  Clicking on ``User`` gives you a list of all the users in Studio and the option to see logs for all users.
 
-.. image:: /_static/images/system-admin/main-menu/audit-user-filter.png
+.. image:: /_static/images/system-admin/main-menu/audit-user-filter.webp
     :alt: System Administrator - Main Menu Audit User Filter
     :align: center
     :width: 85%
@@ -50,7 +50,7 @@ Audit Logs Operations Filter
 ----------------------------
 ``Operations`` filters the log by operations.  Clicking on ``Operations`` gives you a list of all operations logged.
 
-.. image:: /_static/images/system-admin/main-menu/audit-operations-filter.png
+.. image:: /_static/images/system-admin/main-menu/audit-operations-filter.webp
     :alt: System Administrator - Main Menu Audit Operations Filter
     :align: center
     :width: 85%
@@ -89,7 +89,7 @@ Audit Logs Options Filter
 
 ``Options`` filters the log based on date range, cluster node id, origins (Git or API) or path.
 
-.. image:: /_static/images/system-admin/main-menu/audit-options-filter.png
+.. image:: /_static/images/system-admin/main-menu/audit-options-filter.webp
     :alt: System Administrator - Main Menu Audit Options Filter
     :align: center
     :width: 85%

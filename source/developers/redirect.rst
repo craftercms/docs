@@ -27,7 +27,7 @@ Create content type for redirecting
 
 Open the **Sidebar** then click on |projectTools|.  Click on **Content Types** -> **Create New Type**.  In the **Display Label** field, enter ``Page - Redirect`` and in the **Content Type Name** enter ``redirect``.  Remember to select **Type** as ``Page``.
 
-.. image:: /_static/images/developer/redirect/create-redirect-content-type.png
+.. image:: /_static/images/developer/redirect/create-redirect-content-type.webp
     :alt: Redirect - Create redirect content type
     :width: 45 %
     :align: center
@@ -36,7 +36,7 @@ Open the **Sidebar** then click on |projectTools|.  Click on **Content Types** -
 
 After clicking on the **Create** button, the form for the content type will open.  Add an ``Input`` control in the properties and set the **Title** as ``Redirect URL`` and the **Name / Variable Name** as ``redirect-url``
 
-.. image:: /_static/images/developer/redirect/page-redirect-content-type-form.png
+.. image:: /_static/images/developer/redirect/page-redirect-content-type-form.webp
     :alt: Redirect - Page redirect content type form
     :width: 75 %
     :align: center
@@ -50,7 +50,7 @@ Create the page for redirecting
 
 Go back to site preview or dashboard and open the **Sidebar**.  Right click on ``Home`` and select ``New Content``.  Select the content type ``Page - Redirect`` created above.  Fill in **Page URL** with ``fashion``, **Internal Name** with ``fashion`` and **Redirect URL** with ``/style`` since we want the page to redirect to the category landing page for style, then click on **Save and Close**
 
-.. image:: /_static/images/developer/redirect/page-redirect-fashion.png
+.. image:: /_static/images/developer/redirect/page-redirect-fashion.webp
     :alt: Redirect - Page redirect - fashion
     :width: 75 %
     :align: center

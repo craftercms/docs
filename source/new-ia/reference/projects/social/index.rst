@@ -9,7 +9,7 @@
 Crafter Social
 ==============
 
-.. figure:: /_static/images/architecture/crafter-social.png
+.. figure:: /_static/images/architecture/crafter-social.webp
     :alt: Crafter Social
     :width: 60 %
     :align: center

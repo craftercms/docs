@@ -18,7 +18,7 @@ Item Selector Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-item-selector-example.png
+.. image:: /_static/images/form-controls/form-control-item-selector-example.webp
     :width: 50%
     :alt: Form Control Item Selector Example
     :align: center
@@ -27,7 +27,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-item-selector.png
+.. image:: /_static/images/form-controls/form-control-item-selector.webp
     :width: 50%
     :alt: Form Control Item Selector Properties
     :align: center

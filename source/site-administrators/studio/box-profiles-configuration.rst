@@ -14,7 +14,7 @@ required by Box services.
 To modify the Box Profiles configuration, click on |projectTools| from the bottom of the *Sidebar*,
 then click on **Configuration** and select **Box Profiles** from the list.
 
-.. image:: /_static/images/site-admin/config-open-box-config.jpg
+.. image:: /_static/images/site-admin/config-open-box-config.webp
     :alt: Configurations - Open Box Profiles Configuration
     :width: 55 %
     :align: center

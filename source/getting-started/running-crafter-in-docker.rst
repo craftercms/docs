@@ -23,7 +23,7 @@ To run CrafterCMS in a Docker container using Docker Compose, make sure the foll
 
 **For Windows and Mac, we recommend you give Docker Desktop at least 8GB of RAM and 4 CPUs. To do this, go to Docker Desktop's Preferences > Resources > Advanced, and then change the resource limits.**
 
-.. image:: /_static/images/quick-start/docker-advanced-settings.png
+.. image:: /_static/images/quick-start/docker-advanced-settings.webp
     :alt: Docker Desktop Advanced Settings
     :width: 80%
     :align: center
@@ -67,21 +67,21 @@ You may now follow the instructions listed in the guide :ref:`above:<installing-
 
 The console output when you start the container (as shown above) contains useful information that you can use to debug or monitor the status of CrafterCMS.  To view more of the logs, the Docker Desktop Dashboard provides a runtime view of all your containers and applications, including logs for monitoring/debugging CrafterCMS.  To access the Docker Desktop Dashboard, from the **Docker menu**, select **Dashboard**.
 
-.. image:: /_static/images/quick-start/docker-desktop-open-dashboard.jpg
+.. image:: /_static/images/quick-start/docker-desktop-open-dashboard.webp
    :alt: Open Docker Desktop Dashboard
    :width: 25%
    :align: center
 
 This will open a dialog displaying the running application with a list of containers running inside the application when you expand the application
 
-.. image:: /_static/images/quick-start/docker-desktop-dashboard-list.png
+.. image:: /_static/images/quick-start/docker-desktop-dashboard-list.webp
    :alt: Docker Desktop Dashboard Container List
    :width: 80%
    :align: center
 
 When the ``authoring`` application displayed above is selected, the application view will open and list all the containers running on the application and display a detailed logs view
 
-.. image:: /_static/images/quick-start/docker-desktop-dashboard.jpg
+.. image:: /_static/images/quick-start/docker-desktop-dashboard.webp
    :alt: Docker Desktop Dashboard
    :width: 80%
    :align: center

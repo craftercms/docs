@@ -13,7 +13,7 @@ Search Profiles
 
 To find a specific profile you can click the ``Search Profiles`` link in the left sidebar.
 
-.. figure:: /_static/images/social-admin/profiles.png
+.. figure:: /_static/images/social-admin/profiles.webp
   :align: center
   :alt: Crafter Social search profiles
 
@@ -29,7 +29,7 @@ Update Roles
 
 From the search page you can click the ID of the profile to see the details:
 
-.. figure:: /_static/images/social-admin/profile.png
+.. figure:: /_static/images/social-admin/profile.webp
   :align: center
   :alt: Crafter Social profile
 

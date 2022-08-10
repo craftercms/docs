@@ -23,7 +23,7 @@ To temporarily set the logging levels for specific classes through the Navigatio
 * From the Global menu, click on **Logging Levels**
 * Find the class/package you want to change the log level, then set the level by selecting from the dropdown the desired log level.
 
-.. figure:: /_static/images/site-admin/logs-logging-levels.jpg
+.. figure:: /_static/images/site-admin/logs-logging-levels.webp
     :alt: Crafter Studio Logging Levels
     :width: 75%
     :align: center

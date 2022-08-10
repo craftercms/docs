@@ -20,7 +20,7 @@ To setup CrafterCMS:
 
       All commands below needs to be executed in a WSL 2 terminal.  Also, all items that needs to be downloaded and installed needs to be in WSL 2. |br|
 
-      .. figure:: /_static/images/quick-start/wsl2-ubuntu-window.png
+      .. figure:: /_static/images/quick-start/wsl2-ubuntu-window.webp
          :alt: Quick start - WSL 2 Ubuntu terminal
          :width: 70 %
          :align: center

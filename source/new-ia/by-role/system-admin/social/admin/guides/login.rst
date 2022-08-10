@@ -8,7 +8,7 @@ Accessing the Admin Console
 Once the WAR file has been deployed, you can access the application in the following URL: 
 ``HOST:PORT/crafter-social-admin``
 
-.. figure:: /_static/images/social-admin/login.png
+.. figure:: /_static/images/social-admin/login.webp
   :align: center
   :width: 50%
   :alt: Crafter Social Admin Console Login

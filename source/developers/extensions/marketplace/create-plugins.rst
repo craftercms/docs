@@ -38,7 +38,7 @@ is ready to be submitted you can follow these steps:
     
     #.  Open a browser and go to `<https://github.com/marketplace/crafter-marketplace>`_
     
-        .. figure:: /_static/images/developer/marketplace/github-marketplace.png
+        .. figure:: /_static/images/developer/marketplace/github-marketplace.webp
           :alt: Crafter Marketplace GitHub App
           :align: center
           :width: 80%
@@ -47,7 +47,7 @@ is ready to be submitted you can follow these steps:
     
     #.  Click the ``Install it for free`` button
     
-        .. figure:: /_static/images/developer/marketplace/github-marketplace-install.png
+        .. figure:: /_static/images/developer/marketplace/github-marketplace-install.webp
           :alt: CrafterCMS Marketplace GitHub App Installation
           :align: center
           :width: 40%
@@ -56,7 +56,7 @@ is ready to be submitted you can follow these steps:
     
     #.  Click the ``Complete order and begin installation`` button
     
-        .. figure:: /_static/images/developer/marketplace/github-marketplace-review.png
+        .. figure:: /_static/images/developer/marketplace/github-marketplace-review.webp
           :alt: Crafter Marketplace GitHub App Installation
           :align: center
           :width: 80%
@@ -65,7 +65,7 @@ is ready to be submitted you can follow these steps:
     
     #.  Select the repositories for your plugins and click the ``Install`` button
     
-        .. figure:: /_static/images/developer/marketplace/github-marketplace-repos.png
+        .. figure:: /_static/images/developer/marketplace/github-marketplace-repos.webp
           :alt: Crafter Marketplace GitHub App Configuration
           :align: center
           :width: 80%
@@ -79,7 +79,7 @@ is ready to be submitted you can follow these steps:
 
         |
         
-        .. figure:: /_static/images/developer/marketplace/github-marketplace-settings.png
+        .. figure:: /_static/images/developer/marketplace/github-marketplace-settings.webp
           :alt: Crafter Marketplace GitHub App Configuration
           :align: center
           :width: 80%

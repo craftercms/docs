@@ -15,7 +15,7 @@ its own project configuration file that controls its behavior independently of o
 To modify the project configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration**
 and select **Project Configuration** from the list.
 
-.. image:: /_static/images/site-admin/config-open-project-config.jpg
+.. image:: /_static/images/site-admin/config-open-project-config.webp
     :alt: Configurations - Open Project Configuration
     :width: 65 %
     :align: center

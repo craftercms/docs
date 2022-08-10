@@ -16,7 +16,7 @@ What are Project Blueprints?
 
 Project blueprints are CrafterCMS project templates.  It provides an initial set of styles, pages, behaviors, content types and more, containing one or more of the following: content types such as pages and components as described in :ref:`newIa-content-modeling`, static assets such as images, videos, etc., and project configuration files for managing items in the project blueprint such as taxonomies (categories, segments), roles, permissions, etc.
 
-.. image:: /_static/images/blueprint/blueprint-anatomy.png
+.. image:: /_static/images/blueprint/blueprint-anatomy.webp
    :alt: Cook Books - Blueprint Anatomy
    :width: 65 %
    :align: center
@@ -43,7 +43,7 @@ Adapting an HTML template
 
 If you have an existing pure HTML template (and if you don't, you can find free ones, even with commercial friendly licenses like MIT and some flavors of Creative Commons), you can adapt it into a project blueprint.
 
-.. image:: /_static/images/blueprint/blueprint-sample-template-anatomy.png
+.. image:: /_static/images/blueprint/blueprint-sample-template-anatomy.webp
 	        :alt: Cook Books - Template Anatomy
 	        :align: center
 
@@ -51,7 +51,7 @@ If you have an existing pure HTML template (and if you don't, you can find free 
 
 Generally, pure HTML templates have a file structure similar to the picture above. To start, you'll want to copy all files except for ``index.html`` and any other ``.html`` files to your project's ``static-assets`` like this:
 
-.. image:: /_static/images/blueprint/blueprint-template-static-assets.png
+.. image:: /_static/images/blueprint/blueprint-template-static-assets.webp
 	        :width: 45%
 	        :alt: Copy folders to static-assets
 	        :align: center
@@ -60,7 +60,7 @@ Generally, pure HTML templates have a file structure similar to the picture abov
 
 HTML files will become Freemarker templates. For this cookbook, you'll see how to adapt an index.html page, then you'll be able to adapt other pages. Start by editing the main page's ftl template, and replacing its contents with the ``index.html``'s contents:
 
-.. image:: /_static/images/blueprint/blueprint-edit-freemarker.jpg
+.. image:: /_static/images/blueprint/blueprint-edit-freemarker.webp
 	        :width: 45%
 	        :alt: Copy index.html contents to page ftl file.
 	        :align: center
@@ -127,7 +127,7 @@ Your project exists in ``{CRAFTER_HOME}/data/repos/sites/your-project-name``. In
 
 .. note:: Don't merge folders, before copying any folder, delete the existing one so any renamed or deleted files don't persist.
 
-.. image:: /_static/images/blueprint/blueprint-package-copy-site.png
+.. image:: /_static/images/blueprint/blueprint-package-copy-site.webp
 	        :width: 100%
 	        :alt: Copy ``scripts/``, ``site/``, ``static-assets/``, ``templates/``
 	        :align: center
@@ -181,7 +181,7 @@ CrafterCMS uses a default path for CrafterCMS to look for a default representati
 
 In the ``Projects`` screen where your projects are listed, if your project displays an image with the message **Screenshot not Set**, this means that there is no default image  under the ``.crafter/screenshots/`` folder in your project blueprint:
 
-.. image:: /_static/images/developer/plugins/screenshot-not-set.jpg
+.. image:: /_static/images/developer/plugins/screenshot-not-set.webp
    :alt: Plugin Descriptor - Screenshot not Set
    :width: 60%
    :align: center
@@ -194,7 +194,7 @@ Let's take a look at an example of fixing the **Screenshot not Set** image for a
 
 Below are the folders/files for the project blueprint used to install the project ``Sample Site``:
 
-.. image:: /_static/images/developer/plugins/bp-files-w-o-default-image.png
+.. image:: /_static/images/developer/plugins/bp-files-w-o-default-image.webp
    :alt: Plugin Descriptor - Blueprint files and folders without a default image
    :width: 30%
    :align: center
@@ -203,7 +203,7 @@ Below are the folders/files for the project blueprint used to install the projec
 
 We'll now fix the image displayed in the ``Projects`` screen after the project blueprint is installed by adding a ``default.png``  file under the ``.crafter/screenshots/``  folder, so now, the project blueprint files/folders looks like  this:
 
-.. image:: /_static/images/developer/plugins/bp-files-w-default-image.png
+.. image:: /_static/images/developer/plugins/bp-files-w-default-image.webp
    :alt: Plugin Descriptor - Blueprint files and folders with a default image added
    :width: 30%
    :align: center
@@ -212,7 +212,7 @@ We'll now fix the image displayed in the ``Projects`` screen after the project b
 
 When you create a project using the project blueprint we fixed above, ``Another Sample Site`` for our example, the project will now have the default image we added to the project blueprint:
 
-.. image:: /_static/images/developer/plugins/screenshot-default-set.jpg
+.. image:: /_static/images/developer/plugins/screenshot-default-set.webp
    :alt: Plugin Descriptor - Project created using a project blueprint with a default image in ".crafter/screenshots`` folder
    :width: 60%
    :align: center
@@ -396,7 +396,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <newIa-use-s3-to-store-a
 
    Click on the ``Navigation Menu`` ➜ ``Projects`` ➜ ``Create Project`` button, then finally select the ``Website Editorial`` project blueprint.  You will then be presented with the ``Create Project`` dialog.  Notice that the parameters we added to the ``craftercms-plugin.yaml`` file is near the bottom of dialog.  The values entered there will now be available to the project being created which for our example, will be used for the AWS profile in ``aws.xml``.  Enter the requested information then click on ``Create Project``
 
-   .. image:: /_static/images/blueprint/blueprint-param-added.jpg
+   .. image:: /_static/images/blueprint/blueprint-param-added.webp
       :width: 80%
       :alt: Parameter added in Create Project
       :align: center
@@ -405,7 +405,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <newIa-use-s3-to-store-a
 
 #. Once your new project is up, users can upload files to S3 from an article page.  Let's verify the parameters you passed through the project blueprint by checking the ``aws.xml`` file.  Open the **Sidebar**, then click on |projectTools|.  Click on ``Configuration``, then select ``AWS Profiles`` from the dropdown.
 
-   .. image:: /_static/images/blueprint/blueprint-param-added-verify.jpg
+   .. image:: /_static/images/blueprint/blueprint-param-added-verify.webp
       :width: 80%
       :alt: Parameter added in Create Project
       :align: center

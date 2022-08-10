@@ -14,7 +14,7 @@ List All
 
 To view all existing Security Actions you can click the ``Security Actions`` link in the left sidebar.
 
-.. figure:: /_static/images/social-admin/security.png
+.. figure:: /_static/images/social-admin/security.webp
   :align: center
   :alt: Crafter Social security
 

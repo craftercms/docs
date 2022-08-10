@@ -13,7 +13,7 @@ Crafter Studio extracts and tracks dependencies between content items to assist 
 
 To modify the Dependency Resolver configuration, click on |projectTools| from the bottom of the Sidebar, then click on **Configuration** and select **Dependency Resolver** from the dropdown list.
 
-.. image:: /_static/images/site-admin/config-open-dependency-config.jpg
+.. image:: /_static/images/site-admin/config-open-dependency-config.webp
     :alt: Configurations - Open Dependency Resolver Configuration
     :width: 65 %
     :align: center

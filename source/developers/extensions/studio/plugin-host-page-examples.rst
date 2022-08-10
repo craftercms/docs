@@ -77,7 +77,7 @@ Let's begin:
 
    To view the **vanilla** plugin, visit: ``/studio/plugin?site=editorial&type=apps&name=vanilla``
 
-   .. image:: /_static/images/developer/plugins/plugin-vanilla.png
+   .. image:: /_static/images/developer/plugins/plugin-vanilla.webp
       :align: center
       :width: 85%
       :alt: Vanilla Plugin Page Example
@@ -86,7 +86,7 @@ Let's begin:
 
    To view the **react-app** plugin, visit ``/studio/plugin?site=editorial&type=apps&name=react-app&file=index.html``.  Notice that for the ``react-app`` plugin, the entry file is not ``index.js``, so the entry file was specified in the call by adding ``&file=index.html``
 
-   .. image:: /_static/images/developer/plugins/plugin-react-app.png
+   .. image:: /_static/images/developer/plugins/plugin-react-app.webp
       :align: center
       :width: 85%
       :alt: Modern Plugin Page Example
@@ -95,7 +95,7 @@ Let's begin:
 
    To view the **modern** plugin, visit ``/studio/plugin?site=editorial&type=apps&name=modern``
 
-   .. image:: /_static/images/developer/plugins/plugin-modern.png
+   .. image:: /_static/images/developer/plugins/plugin-modern.webp
       :align: center
       :width: 85%
       :alt: Modern Plugin Page Example

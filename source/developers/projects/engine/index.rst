@@ -83,7 +83,7 @@ Crafter Engine's Java Doc is here: :javadoc_base_url:`engine/index.html`
 Crafter Engine Architecture
 ---------------------------
 
-.. figure:: /_static/images/architecture/crafter-engine.png
+.. figure:: /_static/images/architecture/crafter-engine.webp
     :alt: Crafter Engine
     :width: 60 %
     :align: center

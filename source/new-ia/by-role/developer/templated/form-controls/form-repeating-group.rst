@@ -17,7 +17,7 @@ Repeating Group Control
 -------
 Example
 -------
-.. image:: /_static/images/form-controls/form-control-repeating-group-example.jpg
+.. image:: /_static/images/form-controls/form-control-repeating-group-example.webp
     :width: 80%
     :alt: Form Control Repeating Group Example
     :align: center
@@ -25,7 +25,7 @@ Example
 -------------
 Configuration
 -------------
-.. image:: /_static/images/form-controls/form-control-repeating-group.png
+.. image:: /_static/images/form-controls/form-control-repeating-group.webp
     :width: 50%
     :alt: Form Control Repeating Group
     :align: center

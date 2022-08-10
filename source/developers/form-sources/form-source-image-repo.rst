@@ -14,7 +14,7 @@
 Image from Repository Data Source
 =================================
 
-.. image:: /_static/images/form-sources/form-source-image-repo.png
+.. image:: /_static/images/form-sources/form-source-image-repo.webp
     :width: 30%
     :alt: Source Control Image From Repository
     :align: center
@@ -25,7 +25,7 @@ Image from Repository Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-image-repo-conf.png
+.. image:: /_static/images/form-sources/form-source-image-repo-conf.webp
     :width: 50%
     :alt: Source Control Image From Repository Configuration
     :align: center

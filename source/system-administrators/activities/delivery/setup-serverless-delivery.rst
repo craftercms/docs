@@ -40,7 +40,7 @@ To create an AWS Elasticsearch domain please do the following:
 #. Click on ``Create a new domain``.
 #. Select ``Deployment Type`` and on the Elasticsearch version, pick ``7.2``.
 
-   .. image:: /_static/images/system-admin/serverless/es-deployment-type.png
+   .. image:: /_static/images/system-admin/serverless/es-deployment-type.webp
       :alt: Serverless Site - Elasticsearch Deployment Type
       :align: center
 
@@ -51,7 +51,7 @@ To create an AWS Elasticsearch domain please do the following:
 #. On ``Network Configuration``, we recommend you pick the VPC where your delivery nodes reside. If they're not running 
    on an Amazon VPC, then pick ``Public Access``.
 
-   .. image:: /_static/images/system-admin/serverless/es-network-access.png
+   .. image:: /_static/images/system-admin/serverless/es-network-access.webp
       :alt: Serverless Site - Elasticsearch Network Access
       :align: center
 
@@ -60,7 +60,7 @@ To create an AWS Elasticsearch domain please do the following:
 #. Select the ``Access Policy`` that fits your Crafter environment, and click on ``Next`` (if on the same VPC as 
    delivery, we recommend ``Do not require signing request with IAM credential``).
 
-   .. image:: /_static/images/system-admin/serverless/es-access-policy.png
+   .. image:: /_static/images/system-admin/serverless/es-access-policy.webp
       :alt: Serverless Site - Elasticsearch Access Policy
       :align: center
 
@@ -70,7 +70,7 @@ To create an AWS Elasticsearch domain please do the following:
 #. Wait for a few minutes until the domain is ready. Copy the ``Endpoint``. You'll need this URL later to configure
    the Deployer and Delivery Engine which will need access to the Elasticsearch.
 
-   .. image:: /_static/images/system-admin/serverless/es-endpoint.png
+   .. image:: /_static/images/system-admin/serverless/es-endpoint.webp
       :alt: Serverless Site - Elasticsearch Endpoint
       :align: center
 
@@ -379,7 +379,7 @@ Step 4: Create the Site in the Authoring Environment
    the status should change to ``CREATE_COMPLETE``, which tells the Crafter Deployer that it is able to start 
    uploading files to S3.
 
-   .. image:: /_static/images/system-admin/serverless/cloudformation.png
+   .. image:: /_static/images/system-admin/serverless/cloudformation.webp
       :alt: Serverless Site - CloudFormation
       :align: center
 
@@ -509,7 +509,7 @@ Step 5: Test the Delivery Site
 
 Open a browser and go to ``https://DOMAIN_OF_YOUR_CLOUDFRONT``. You should be able to see your Editorial site!
 
-.. image:: /_static/images/system-admin/serverless/editorial-screenshot.png
+.. image:: /_static/images/system-admin/serverless/editorial-screenshot.webp
    :alt: Serverless Site - Editorial Screenshot
    :align: center
 

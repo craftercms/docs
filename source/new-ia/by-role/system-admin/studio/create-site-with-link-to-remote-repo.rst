@@ -19,7 +19,7 @@ A **Create Site** dialog will be launched.  For both options, there will be a sc
 
 Let's take a look at the fields where the remote repository details needs to be filled in:
 
-.. image:: /_static/images/system-admin/remote-repo-info.png
+.. image:: /_static/images/system-admin/remote-repo-info.webp
    :alt: System Administrator - Remote Repository Details
    :width: 55 %
    :align: center
@@ -46,7 +46,7 @@ Create site based on a blueprint then add a remote bare Git repository
 
 To create a site based on a blueprint then add a remote bare git repository, click on **Create Site** from **Sites**, then select the blueprint you would like to use
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-1.jpg
+.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-1.webp
     :alt: Create Site Dialog in Crafter Studio, select a blueprint
     :width: 70 %
     :align: center
@@ -55,7 +55,7 @@ To create a site based on a blueprint then add a remote bare git repository, cli
 
 The next step is to fill in the **Site ID** and **Site Name**, then click on the **Review** button, then finally  click on the **Create Site** button to create your site.  Your site should be created in a short while.
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-2.png
+.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-2.webp
     :alt: Create Site Dialog in Crafter Studio, fill in Site ID
     :width: 70 %
     :align: center
@@ -65,7 +65,7 @@ The next step is to fill in the **Site ID** and **Site Name**, then click on the
 Once your site is created, the next step is to add a remote repository to your newly created site.  Open the **Sidebar** then click on **Site Config** -> **Remote Repositories**, then click on the **New Repository** on the top right.
 This will open up a dialog where we can fill in all the information for our remote repository as described above.  Click on the **Create** button after filling in the required information.
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.png
+.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.webp
     :alt: Create Repository dialog to fill in information of remote repository being added to the site
     :width: 70 %
     :align: center
@@ -74,7 +74,7 @@ This will open up a dialog where we can fill in all the information for our remo
 
 Your site should now have a remote repository listed in the **Remotes** screen
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-4.png
+.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-4.webp
     :alt: Remotes screen displaying newly added remote repository to site
     :width: 70 %
     :align: center
@@ -89,7 +89,7 @@ Creating a site based on a remote Git repository is basically exporting a site f
 
 To create a site based on remote Git repository, after clicking on **Create Site**, Click on **Remote Git Repository** in the **Private Blueprints** tab create site screen
 
-.. figure:: /_static/images/developer/dev-cloud-platforms/create-site-based-on-remote-1.jpg
+.. figure:: /_static/images/developer/dev-cloud-platforms/create-site-based-on-remote-1.webp
     :alt: Developer How Tos - Setting up to work locally against the upstream
     :width: 70 %
     :align: center
@@ -105,7 +105,7 @@ Here is a sample Git url using ssh:
 or alternatively for ssh:
 `[user@]host.xz:path/to/repo/`
 
-.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-1.jpg
+.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-1.webp
    :alt: Developer How Tos - Setting up to work locally against the upstream
    :width: 70 %
    :align: center
@@ -115,7 +115,7 @@ or alternatively for ssh:
 Click on the **Review** button, then finally, the **Create Site** button.
 
 
-.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-2.png
+.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-2.webp
    :alt: Developer How Tos - Setting up to work locally against the upstream review entries
    :width: 50 %
    :align: center
@@ -129,14 +129,14 @@ In case you want to publish the entire site, follow these optional steps:
 
 #. In the site you just imported, click on **Site Tools**, then click on **Publishing**
 
-   .. image:: /_static/images/system-admin/publishing.png
+   .. image:: /_static/images/system-admin/publishing.webp
       :alt: System Administrator - Bulk Publishing"
       :width: 20 %
       :align: center
 
 #. In the **Publishing** screen, click on the **Bulk Publish** tab, and in the **Path to Publish** field, just enter ``/``, then click on the **Publish**   button to publish the whole site.
 
-   .. image:: /_static/images/system-admin/bulk-publish-site.png
+   .. image:: /_static/images/system-admin/bulk-publish-site.webp
       :alt: System Administrator - Bulk Publish the whole site filled in"
       :width: 65 %
       :align: center

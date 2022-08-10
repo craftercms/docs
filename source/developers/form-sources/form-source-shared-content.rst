@@ -14,7 +14,7 @@
 Shared Content Data Source
 ==========================
 
-.. image:: /_static/images/form-sources/form-source-shared-content.png
+.. image:: /_static/images/form-sources/form-source-shared-content.webp
     :width: 30%
     :alt: Form Source Shared Content
     :align: center
@@ -25,7 +25,7 @@ Shared Content Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-shared-content-conf.png
+.. image:: /_static/images/form-sources/form-source-shared-content-conf.webp
     :width: 50%
     :alt: Form Shared Content Fields
     :align: center

@@ -506,7 +506,7 @@ The plugin is now ready to be tested.  We'll install our plugin located  under `
 
 After installing our plugin, we can now verify that our component plugin is available in |projectTools| Content Types
 
-.. figure:: /_static/images/developer/plugins/project-plugins/plugins-sample-component.jpg
+.. figure:: /_static/images/developer/plugins/project-plugins/plugins-sample-component.webp
    :align: center
    :alt: Example component content type plugin now available in project editorial
    :width: 80%

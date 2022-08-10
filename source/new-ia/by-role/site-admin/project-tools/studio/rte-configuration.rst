@@ -65,7 +65,7 @@ look for  ``plugins`` in the configuration:
 See https://www.tiny.cloud/docs/plugins/opensource/ for more information on the TinyMCE plugins.
 
 
-.. |rteMediaBtn| image:: /_static/images/site-admin/rte/rte-media-button.png
+.. |rteMediaBtn| image:: /_static/images/site-admin/rte/rte-media-button.webp
                    :width: 4%
 
 To add TinyMCE buttons to the toolbar, add the names listed in the **toolbar** tag in the TinyMCE plugin documentation to ``toolbar(n)`` in the configuration.
@@ -100,7 +100,7 @@ We'll add a media button to our editor instance to be able to embed a YouTube vi
 
    An **Insert/Edit Embedded Media** button |rteMediaBtn| will now be available for users of the RTE.
 
-   .. figure:: /_static/images/site-admin/rte/rte-media-button-added.jpg
+   .. figure:: /_static/images/site-admin/rte/rte-media-button-added.webp
       :alt: RTE Setup - Media button added to editor instance
       :width: 75%
       :align: center
@@ -109,7 +109,7 @@ We'll add a media button to our editor instance to be able to embed a YouTube vi
 
 2. Click on the |rteMediaBtn| button to add the link to the YouTube video you'd like to embed in the RTE and to setup other parameters. In the **General** tab, fill in the **Source** field with the URL of the YouTube video you'd like to embed and finally, fill in the **Dimensions** field to the size desired.  Click on the **Ok** button.
 
-   .. figure:: /_static/images/site-admin/rte/rte-media-config.png
+   .. figure:: /_static/images/site-admin/rte/rte-media-config.webp
       :alt: RTE Setup - Insert/Edit Embedded Media Example
       :width: 35%
       :align: center
@@ -118,7 +118,7 @@ We'll add a media button to our editor instance to be able to embed a YouTube vi
 
 3. Save your changes, and your video should now be embedded in your page
 
-   .. figure:: /_static/images/site-admin/rte/rte-media-preview.jpg
+   .. figure:: /_static/images/site-admin/rte/rte-media-preview.webp
       :alt: RTE Setup - YouTube video embedded in page, inserted through the RTE
       :width: 65%
       :align: center
@@ -189,7 +189,7 @@ Let us take a look at an example of adding two templates to the RTE configuratio
 
 3. Save your changes.  The configured templates should now be available under ``Insert templates`` of the ``Insert`` menu.
 
-   .. figure:: /_static/images/site-admin/rte/rte-template-plugin-example.png
+   .. figure:: /_static/images/site-admin/rte/rte-template-plugin-example.webp
       :alt: RTE Setup - RTE template plugin example in action
       :width: 65%
       :align: center
@@ -273,7 +273,7 @@ Let's take a look at an example of adding ``<script />`` to the allowable elemen
 
 4. Click on the newly added section, then click on ``Tools`` -> ``Code Editor`` from the RTE menubar.
 
-   .. figure:: /_static/images/site-admin/rte/rte-open-code-editor.png
+   .. figure:: /_static/images/site-admin/rte/rte-open-code-editor.webp
       :alt: RTE Setup - Open RTE code editor
       :width: 85%
       :align: center
@@ -290,7 +290,7 @@ Let's take a look at an example of adding ``<script />`` to the allowable elemen
 
 6. Preview the page.  A dialog saying ``Hello`` should pop up before the page is displayed
 
-   .. figure:: /_static/images/site-admin/rte/rte-script-run.png
+   .. figure:: /_static/images/site-admin/rte/rte-script-run.webp
       :alt: RTE Setup - Preview page with <script /> added in RTE
       :width: 45%
       :align: center
@@ -329,7 +329,7 @@ You can also add custom elements to the rule set and can be done by simply addin
 
       |
 
-   .. figure:: /_static/images/site-admin/rte/rte-custom-tag-added.png
+   .. figure:: /_static/images/site-admin/rte/rte-custom-tag-added.webp
       :alt: RTE Setup - Open RTE code editor
       :width: 85%
       :align: center
@@ -432,7 +432,7 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
    Edit the ``Home`` page by opening the ``Sidebar`` then under ``Pages``, right-click on ``Home``, then select edit. |br|
    Scroll down to the ``Main Content`` section of the form to view the RTE.  Notice that the button we created is in the toolbar.
 
-   .. figure:: /_static/images/site-admin/rte/rte-custom-button-added.jpg
+   .. figure:: /_static/images/site-admin/rte/rte-custom-button-added.webp
       :alt: RTE showing custom button
       :width: 85%
       :align: center
@@ -441,7 +441,7 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
 
    Click on our custom button in the RTE ``My Button``, and the line *Content added from my button.* will be inserted into the RTE
 
-   .. figure:: /_static/images/site-admin/rte/rte-custom-button-clicked.jpg
+   .. figure:: /_static/images/site-admin/rte/rte-custom-button-clicked.webp
       :alt: RTE custom button clicked - text inserted in RTE
       :width: 85%
       :align: center
@@ -512,7 +512,7 @@ Let's take a look at an example of how to add **div** and *text content* as vali
 
    After saving your changes, preview the page and it should now display an image and text that's a link.  Re-open the RTE code editor and verify that the markup you inputted is unchanged.
 
-   .. figure:: /_static/images/site-admin/rte/rte-add-child-element-ex.jpg
+   .. figure:: /_static/images/site-admin/rte/rte-add-child-element-ex.webp
       :alt: RTE div child element added
       :width: 85%
       :align: center
@@ -584,7 +584,7 @@ The RTE's configuration file looks like this:
 
 You can access the ``RTE Configuration`` file by going to the **Sidebar** then clicking on  |projectTools|.  In the **Project Tools**, click on **Configuration**, then from the list, select ``User Interface Configuration``.  Scroll down to the ``craftercms.components.TinyMCE`` widget section.
 
-.. figure:: /_static/images/site-admin/rte/rte-setup-config-file-access.jpg
+.. figure:: /_static/images/site-admin/rte/rte-setup-config-file-access.webp
    :alt: RTE Setup - Open RTE Configuration File in Studio
    :align: center
    :width: 80%
@@ -602,7 +602,7 @@ Attaching an RTE in a Form to an RTE Setup
 
 To attach an RTE setup to an RTE in a form, open the content type that you want to add an RTE to, then go to the **Properties Explorer** and click on RTE Configuration and type in an RTE setup name.
 
-.. figure:: /_static/images/site-admin/rte/rte-setup-form.jpg
+.. figure:: /_static/images/site-admin/rte/rte-setup-form.webp
    :alt: RTE Setup - Add an RTE in the Form
    :align: center
 

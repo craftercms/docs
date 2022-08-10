@@ -14,7 +14,7 @@
 Drop Targets Data Source
 ========================
 
-.. image:: /_static/images/form-sources/form-source-drop-targets.png
+.. image:: /_static/images/form-sources/form-source-drop-targets.webp
     :width: 30%
     :alt: Form Source Drop Targets
     :align: center
@@ -25,7 +25,7 @@ Drop Targets Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-shared-content-conf.png
+.. image:: /_static/images/form-sources/form-source-shared-content-conf.webp
     :width: 50%
     :alt: Form Source Drop Targets Fields
     :align: center

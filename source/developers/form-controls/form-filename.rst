@@ -18,7 +18,7 @@ Filename Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-filename-example.png
+.. image:: /_static/images/form-controls/form-control-filename-example.webp
     :width: 60%
     :alt: Form Control Filename Example
     :align: center
@@ -29,7 +29,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-filename-properties.png
+.. image:: /_static/images/form-controls/form-control-filename-properties.webp
     :width: 40%
     :alt: Form Control Filename Properties
     :align: center

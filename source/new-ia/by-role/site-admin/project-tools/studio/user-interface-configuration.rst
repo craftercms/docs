@@ -21,7 +21,7 @@ Plugins can make use of this by adding themselves to the UI where required.  See
 
 Here's a screenshot of Studio showing some of the widgets in the UI in red circles that are defined in the user interface configuration.
 
-.. image:: /_static/images/site-admin/ui-config-widgets.jpg
+.. image:: /_static/images/site-admin/ui-config-widgets.webp
    :alt: Configurations - User Interface Configuration Widgets
    :width: 85 %
    :align: center
@@ -119,7 +119,7 @@ Here's the configuration:
 To modify the user interface configuration, click on |projectTools| from the *Sidebar*, then click on **Configuration**
 and select **User Interface Configuration** from the list.
 
-.. image:: /_static/images/site-admin/config-open-user-interface-config.jpg
+.. image:: /_static/images/site-admin/config-open-user-interface-config.webp
    :alt: Configurations - Open User Interface Configuration
    :width: 85 %
    :align: center
@@ -194,7 +194,7 @@ Let's take a look at an example in the configuration where access to the ``Proje
 
 Here's the sidebar when a user with role ``admin`` is logged in.  Notice that ``Project Tools`` is available in the sidebar
 
-.. image:: /_static/images/site-admin/ui-config-permitted-roles-admin.png
+.. image:: /_static/images/site-admin/ui-config-permitted-roles-admin.webp
    :alt: Configurations - User Interface Configuration Permitted Roles Admin
    :width: 20 %
    :align: center
@@ -203,7 +203,7 @@ Here's the sidebar when a user with role ``admin`` is logged in.  Notice that ``
 
 Here's the sidebar when a user with role ``author`` is logged in.  Notice that ``Project Tools`` is not available in the sidebar
 
-.. image:: /_static/images/site-admin/ui-config-permitted-roles-author.png
+.. image:: /_static/images/site-admin/ui-config-permitted-roles-author.webp
    :alt: Configurations - User Interface Configuration Permitted Roles Admin
    :width: 20 %
    :align: center
@@ -238,7 +238,7 @@ Let's take a look at an example using a project created from the Website Editori
 
 Here's the Sidebar before the ``2021/3`` folder is hidden
 
-.. image:: /_static/images/site-admin/ui-folders.png
+.. image:: /_static/images/site-admin/ui-folders.webp
    :alt: Configurations - User Interface Configuration Folder Structure
    :width: 30 %
    :align: center
@@ -268,7 +268,7 @@ Here's the configuration to hide the folder:
 
 Here's the Sidebar with the folder ``2021/3`` hidden:
 
-.. image:: /_static/images/site-admin/ui-folder-hidden.png
+.. image:: /_static/images/site-admin/ui-folder-hidden.webp
    :alt: Configurations - User Interface Configuration Folder Hidden
    :width: 30 %
    :align: center
@@ -287,7 +287,7 @@ Let's take a look at an example of putting a red border when ``Taxonomy`` is exp
 
 Here's the default colors of widgets in the Sidebar
 
-.. image:: /_static/images/site-admin/ui-widget-default-colors.png
+.. image:: /_static/images/site-admin/ui-widget-default-colors.webp
    :alt: Configurations - User Interface Configuration Widget Default Colors
    :width: 25 %
    :align: center
@@ -338,15 +338,15 @@ Remember that children of ``expandedStyle`` & ``collapsedStyle`` should be camel
 
 Here's the Sidebar with the colors and border added:
 
-.. image:: /_static/images/site-admin/ui-widget-color-added.png
+.. image:: /_static/images/site-admin/ui-widget-color-added.webp
    :alt: Configurations - User Interface Configuration Widget Border and Colors Added
    :width: 25 %
 
-.. image:: /_static/images/content-author/preview-page-components-space.png
+.. image:: /_static/images/content-author/preview-page-components-space.webp
    :width: 5 %
 
 
-.. image:: /_static/images/site-admin/ui-widget-template-color.jpg
+.. image:: /_static/images/site-admin/ui-widget-template-color.webp
    :alt: Configurations - User Interface Configuration Widget Default Colors
    :width: 25 %
 
@@ -361,7 +361,7 @@ Audience Targeting
 Audience Targeting allows an author to see what the project would look like if it were being browsed
 by a user with a given set of attributes.
 
-.. image:: /_static/images/page/page-targeting-open.jpg
+.. image:: /_static/images/page/page-targeting-open.webp
     :width: 80 %
     :align: center
 
@@ -425,7 +425,7 @@ Here's the  ``Audience Targeting`` configuration out of the box for a project cr
 
 Here's how the above configuration looks like in the Experience Builder Panel in Studio:
 
-.. image:: /_static/images/page/page-targeting-curr-attributes.png
+.. image:: /_static/images/page/page-targeting-curr-attributes.webp
     :width: 30 %
     :align: center
 

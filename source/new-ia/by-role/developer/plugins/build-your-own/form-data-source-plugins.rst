@@ -269,7 +269,7 @@ The items we setup in the descriptor file for auto-wiring :ref:`above <newIa-con
 
 Here's our project plugin data source added to the list of data sources in content types
 
-.. image:: /_static/images/form-sources/datasource-plugin-added.png
+.. image:: /_static/images/form-sources/datasource-plugin-added.webp
     :width: 50 %
     :alt: Form Engine Data Source Project Plugin Added to Content Type
     :align: center

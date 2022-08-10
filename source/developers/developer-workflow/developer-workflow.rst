@@ -12,7 +12,7 @@ Development and content authoring are both a major part of producing digital exp
 
 Here's a typical developer process and set of environments which must be followed in order to get new functionality to production.
 
-.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-Typical-DevOps-Workflow-1024x335.png
+.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-Typical-DevOps-Workflow-1024x335.webp
     :alt: Developer Workflow - Typical developer process and set of environments
     :width: 100 %
     :align: center
@@ -27,7 +27,7 @@ CrafterCMS is implemented with a decoupled architecture, composed of several mic
 
 Authoring is supported via Crafter Studio (a web-based authoring tool) that sits on top of a headless Git-based repository and publishing system.  While content authors are performing their work, Crafter is managing all of the Git mechanics, managing locking, creating a time-machine like, Git-based version history and audit trail, all accessible via the Studio UI.
 
-.. image:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-decoupled-tech.png
+.. image:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-decoupled-tech.webp
     :alt: Developer Workflow - Authors work in Sandbox. Delivery nodes pull from Published
     :width: 70 %
     :align: center
@@ -42,7 +42,7 @@ Each delivery node has a Deployer agent that coordinates deployment activities o
 * The Crafter Deployer takes care of managing the synchronization of the delivery node’s clone authoring repository from the authoring environment.
 * Git-mechanics ensure content is in sync
 
-.. image:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-Git-Publish-768x393.jpg
+.. image:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-Git-Publish-768x393.webp
     :alt: Developer Workflow - Crafter’s Dynamic CMS Publishing via Git
     :width: 70 %
     :align: center
@@ -53,7 +53,7 @@ Only approved content is published to the delivery environment. Crafter manages 
 * Crafter Studio takes care of moving approved work between Sandbox and Published repositories.
 * Delivery nodes monitor the published repository for updates.
 
-.. image:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-Sandbox-Published-768x470.jpg
+.. image:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-Sandbox-Published-768x470.webp
     :alt: Developer Workflow - Authors work in Sandbox. Delivery nodes pull from Published
     :width: 70 %
     :align: center
@@ -73,7 +73,7 @@ The authoring environment is akin to a work and test area for the authors. Relat
 
 Let's take a look at a typical developer workflow that’s integrated with the production authoring environment.  In this diagram, you will find a mechanism for both a “code forward” activity in which code can be moved through a development process through to production as well as a “content back” activity in which production content, including in-process content, can be brought back to lower development environments, including local development machines.
 
-.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-DEVOPS-FLOW-1024x603.jpg
+.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-DEVOPS-FLOW-1024x603.webp
     :alt: Developer Workflow - Typical DevOps Workflow
     :width: 70 %
     :align: center
@@ -86,7 +86,7 @@ Step 1: Create an Upstream Repository
 
 In order to facilitate a developer workflow, you want to establish an upstream repository for your Sandbox in your production authoring environment. Any Git repository will work. It’s typical to use a Git repository that has a UI/Workflow atop of it such as GitHub, Bitbucket, GitLab and other similar systems. The upstream repository is the root of the developer workflow.
 
-.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-flow-1-768x496.png
+.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-flow-1-768x496.webp
     :alt: Developer Workflow - Create upstream repository
     :width: 70 %
     :align: center
@@ -99,7 +99,7 @@ Note that the repository is what the Git community refers to as an “upstream�
 
 You will want to keep the upstream repository up to date with authoring. The best way to accomplish this is to use a DevOps automation platform such as Jenkins or Bamboo to orchestrate a push to the upstream on a schedule. Keeping the upstream repository up to date with the authoring Sandbox repository provides downstream development and testing repositories with the latest content and helps to avoid conflicts when it’s time to promote from the upstream repository to the authoring Sandbox repository.
 
-.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-FLOW-2-1024x693.jpg
+.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-FLOW-2-1024x693.webp
     :alt: Developer Workflow - Use Automation to Sync Sandbox with the Upstream
     :width: 70 %
     :align: center
@@ -110,7 +110,7 @@ Step 3: Use the Upstream Repository to Support Development and Testing Environme
 
 From this upstream repository, you will feed all lower environments and branch for each of your development efforts. From the upstream repository, you can support any development process and supply content to any development or testing environment. Lower environments may consist of Authoring and Delivery, or just Authoring, or just Delivery. It depends on the needs. For example, Development often contains both Authoring and Delivery, while QA tends to focus only on Delivery. Simple “Git pull” mechanics are used to move code and content from the upstream repository, typically from a branch.
 
-.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-flow3-1024x726.jpg
+.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-flow3-1024x726.webp
     :alt: Developer Workflow - Use the Upstream Repository to Support Development and Testing Environments and Workflow
     :width: 70 %
     :align: center
@@ -122,7 +122,7 @@ Step 4: Merge Code Updates Into the Upstream Master and Pull them to the Product
 When you are ready to move code from a development branch to the authoring Sandbox you will first merge the work into the master of the upstream repository. You can do merge all of your commits or you can merge them into a single commit by using the Git rebase command. By Squashing all of the commits into a single commit you make it easier to move the workaround as a single unit. Merges are typically done via pull requests on repositories that support development workflow.
 Once the merge operation is complete in the upstream repository your automation will carry that work to the production authoring Sandbox.
 
-.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-flow4-1024x603.jpg
+.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-flow4-1024x603.webp
     :alt: Developer Workflow - Merge Code Updates Into the Upstream Master and Pull them to the Production Authoring Sandbox Repository
     :width: 70 %
     :align: center
@@ -133,7 +133,7 @@ Step 5: Use Crafter Studio’s Publish Commits API to Publish Code to Delivery
 
 Once your development work is in the Production Sandbox you will want to publish it. To do this Crafter Studio provides a REST API that will trigger the publishing on one or more commits. Simply call Crafter Studio’s Publish Commits REST API (/api/1/services/api/1/publish/commits.json) via the DevOps automation platform passing the required parameters including the commit IDs to be published and Crafter Studio will move the work to the Published repository from which it will be replicated to your delivery nodes.
 
-.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-flow5-1024x821.jpg
+.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-flow5-1024x821.webp
     :alt: Developer Workflow - Use Crafter Studio’s Publish Commits API to Publish Code to Delivery
     :width: 70 %
     :align: center
@@ -167,14 +167,14 @@ Step 1: Create your upstream
 
 Create an empty repository in your upstream (GitHub, Bitbucket etc.) The specific steps depend on the repository you are using. The key here is that you want to create an empty or what’s sometimes called a “bare” repository.
 
-.. image:: /_static/images/developer/workflow/craftercms-bare-repo-768x594.jpg
+.. image:: /_static/images/developer/workflow/craftercms-bare-repo-768x594.webp
     :alt: Developer Workflow - Create a bare repo in Git
     :width: 70 %
     :align: center    
 
 On GitHub, once created you will see the following screen. Here you will note the repository URL (https://github.com/myuser/devworkflowexample.git) which you will need for the next step. Also, if you’re trying to create an upstream for an existing project, you’ll find the instructions below in the “push an existing repository from the command line” section.
 
-.. image:: /_static/images/developer/workflow/craftercms-bare-repo-2-768x569.jpg
+.. image:: /_static/images/developer/workflow/craftercms-bare-repo-2-768x569.webp
     :alt: Developer Workflow - Bare repo created in Git
     :width: 70 %
     :align: center
@@ -184,7 +184,7 @@ Step 2: Create Your Project In Crafter Studio
 
 Next, you want to log in to Crafter Studio as the admin user. The admin user has the rights to create new projects (called projectss.) Click **Create Project**.
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site.png
+.. image:: /_static/images/developer/dev-cloud-platforms/create-site.webp
     :alt: Developer Workflow - Create Project via Crafter Studio
     :width: 65 %
     :align: center
@@ -195,14 +195,14 @@ Clicking Create Project will present you with the Create Project dialog. This di
 
 Let’s walk through each part of the dialog:
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-1.jpg
+.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-1.webp
    :alt: Developer How Tos - Create Project Dialog Walk Through step 1
     :width: 50 %
    :align: center
 
 1. The first thing you need to do is to choose your blueprint. There are several out of the box blueprints provided by default. Choose one of these or one of your own. For our example, we’ll choose the Website Editorial blueprint.
 
-   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-2.png
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-2.webp
       :alt: Developer How Tos - Create Project Dialog Walk Through step 2
       :width: 70 %
       :align: center
@@ -217,7 +217,7 @@ Let’s walk through each part of the dialog:
 
    This will open up a dialog where we can fill in all the information for our remote repository.
 
-   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.png
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.webp
       :alt: Create Repository dialog to fill in information of remote repository being added to the project
       :width: 70 %
       :align: center
@@ -236,7 +236,7 @@ Let’s walk through each part of the dialog:
 
 7. Once you're satisfied with your entries for your remote repository, click on the **Create** button.   Once complete we can now connect to the upstream and push the contents of the Sandbox repository to the remote by clicking on the ``Push`` button (button with the up arrow).
 
-   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-4.png
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-4.webp
       :alt: Remotes screen displaying newly added remote repository to project
       :width: 90 %
       :align: center
@@ -261,7 +261,7 @@ Step 4: Set up your Developer Workflow and Lower Environments
 Now that your upstream repository is initialized in GitHub you can set up any developer workflow you want. It’s typical to consider Master to be in-sync with the Production Authoring Sandbox. Given that, you don’t want to work in Master. Create branches to isolate development work from work that’s ready to move to Production Authoring. Below is an example topology that shows multiple environments and developer workflow that include feature branches, developer forms, and local developer clones.
 
 
-.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-full-flow-example-768x337.png
+.. figure:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-full-flow-example-768x337.webp
     :alt: Developer Workflow - Set up Developer Workflow and Lower Environments
     :width: 70 %
     :align: center
@@ -278,7 +278,7 @@ After setting up the topology above, if you just want to get a local environment
 2. Login as Admin
 3. Click **Create Project**
 
-.. figure:: /_static/images/developer/workflow/create-site-based-on-remote-1.png
+.. figure:: /_static/images/developer/workflow/create-site-based-on-remote-1.webp
     :alt: Developer Workflow - Setting up to work locally against the upstream
     :width: 70 %
     :align: center
@@ -287,14 +287,14 @@ After setting up the topology above, if you just want to get a local environment
 
 4. Fill out the Create Project Form as in a similar fashion described in Step 2 above, except this time, instead of selecting a blueprint, select **Remote Git Repository** to create your project based on an existing upstream repository. This can be your team’s branch or your own fork. The exact workflow is up to you.
 
-.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-1.jpg
+.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-1.webp
     :alt: Developer How Tos - Setting up to work locally against the upstream
     :width: 70 %
     :align: center
 
 |
 
-.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-2.jpg
+.. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-2.webp
    :alt: Developer How Tos - Setting up to work locally against the upstream review entries
    :width: 50 %
    :align: center

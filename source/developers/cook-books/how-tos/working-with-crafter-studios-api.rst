@@ -54,7 +54,7 @@ Let's begin:
 
    1. Login to Crafter Studio
 
-      .. figure:: /_static/images/jwt/global-menu.png
+      .. figure:: /_static/images/jwt/global-menu.webp
         :width: 70%
         :alt: Crafter Studio - Global Menu
         :align: center
@@ -63,7 +63,7 @@ Let's begin:
 
    2. Open the ``Token Management`` tool
 
-      .. figure:: /_static/images/jwt/token-management.png
+      .. figure:: /_static/images/jwt/token-management.webp
         :width: 70%
         :alt: Crafter Studio - Token Management
         :align: center
@@ -75,7 +75,7 @@ Let's begin:
       The only required field for the access token is the label to identify it, however, it is also recommended to set
       an expiration date to minimize the risk of lost or stolen tokens being used without being noticed.
 
-      .. figure:: /_static/images/jwt/create-token.png
+      .. figure:: /_static/images/jwt/create-token.webp
         :width: 70%
         :alt: Crafter Studio - Create Access Token
         :align: center
@@ -84,7 +84,7 @@ Let's begin:
 
       Once the expiration date is reached the access token will stop working automatically.
 
-      .. figure:: /_static/images/jwt/create-token-2.png
+      .. figure:: /_static/images/jwt/create-token-2.webp
         :width: 70%
         :alt: Crafter Studio - Access Token Expiration
         :align: center
@@ -99,7 +99,7 @@ Let's begin:
       If an access token is lost or exposed in any way it should be disabled or completely deleted to avoid any
       possible use.
 
-      .. figure:: /_static/images/jwt/token-management-2.png
+      .. figure:: /_static/images/jwt/token-management-2.webp
         :width: 70%
         :alt: Crafter Studio - Token Management
         :align: center

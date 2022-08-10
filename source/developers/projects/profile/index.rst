@@ -8,7 +8,7 @@
 Crafter Profile
 ===============
 
-.. figure:: /_static/images/architecture/crafter-profile.png
+.. figure:: /_static/images/architecture/crafter-profile.webp
     :alt: Crafter Profile
     :width: 60 %
     :align: center

@@ -11,7 +11,7 @@ CrafterCMS Marketplace
 |
 |
 
-.. image:: /_static/images/developer/marketplace/marketplace.jpg
+.. image:: /_static/images/developer/marketplace/marketplace.webp
    :alt: CrafterCMS Marketplace
    :width: 60%
    :align: center

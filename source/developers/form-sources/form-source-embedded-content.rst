@@ -14,7 +14,7 @@
 Embedded Content Data Source
 ============================
 
-.. image:: /_static/images/form-sources/form-source-embedded-content.png
+.. image:: /_static/images/form-sources/form-source-embedded-content.webp
     :width: 30%
     :alt: Form Source Embedded Content
     :align: center
@@ -25,7 +25,7 @@ Embedded Content Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-embedded-content-conf.png
+.. image:: /_static/images/form-sources/form-source-embedded-content-conf.webp
     :width: 50%
     :alt: Form Source Embedded Content Fields
     :align: center

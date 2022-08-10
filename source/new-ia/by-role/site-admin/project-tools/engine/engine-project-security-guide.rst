@@ -86,7 +86,7 @@ the next steps to create in the page content type a Repeating Group with a text 
 #.  In the Repeating Group properties, set the **Title** field to "Authorized Roles" and the **Name / Variable Name** 
     field to "authorizedRoles."
 
-    .. image:: /_static/images/site-admin/authorized_roles_properties.png
+    .. image:: /_static/images/site-admin/authorized_roles_properties.webp
         :alt: Engine Project Security Guide - Authorized Roles Properties
 
     |
@@ -100,7 +100,7 @@ the next steps to create in the page content type a Repeating Group with a text 
     Name** field set to "role". Make this Input required by checking the checkbox under **Constraints** in the 
     **Required** field in the **Properties Explorer**.
 
-    .. image:: /_static/images/site-admin/role_properties.png
+    .. image:: /_static/images/site-admin/role_properties.webp
         :alt: Engine Project Security Guide - Role Properties
 
     |
@@ -111,7 +111,7 @@ the next steps to create in the page content type a Repeating Group with a text 
 
 #.  Save the changes. The added fields should look like this:
 
-    .. image:: /_static/images/site-admin/authorization_section.png
+    .. image:: /_static/images/site-admin/authorization_section.webp
         :alt: Engine Project Security Guide - Authorization Section
 
     |

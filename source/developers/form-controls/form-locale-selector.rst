@@ -17,7 +17,7 @@ Locale Selector Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-locale-selector-example.png
+.. image:: /_static/images/form-controls/form-control-locale-selector-example.webp
       :width: 70%
       :alt: Form Control - Locale Selector Control Example
       :align: center
@@ -28,7 +28,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-locale-selector-properties.png
+.. image:: /_static/images/form-controls/form-control-locale-selector-properties.webp
     :width: 40%
     :alt: Form Control Locale Selector Properties
     :align: center

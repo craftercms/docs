@@ -18,7 +18,7 @@ From this screen you can navigate to any project.  Your projects can be viewed e
 
 Here's the **Projects** screen with the projects in a list:
 
-.. image:: /_static/images/content-author/my-projects-screen.png
+.. image:: /_static/images/content-author/my-projects-screen.webp
     :width: 75 %    
     :align: center
     :alt: Navigating Studio - My Projects Screen List View
@@ -27,7 +27,7 @@ Here's the **Projects** screen with the projects in a list:
 
 Here's the **Projects** screen with the projects in a grid:
 
-.. image:: /_static/images/content-author/my-projects-screen-grid.jpg
+.. image:: /_static/images/content-author/my-projects-screen-grid.webp
     :width: 75 %
     :align: center
     :alt: Navigating Studio - My Projects Screen Grid View
@@ -37,14 +37,14 @@ Here's the **Projects** screen with the projects in a grid:
 You can get back to the **Projects** screen by:
     * Clicking on the ``Navigation Menu`` icon at the top right corner, then click on "Projects" on the top left of the *Global* panel
 
-.. image:: /_static/images/content-author/get-to-my-projects-1.jpg
+.. image:: /_static/images/content-author/get-to-my-projects-1.webp
     :width: 65 %
     :align: center
     :alt: Navigating Studio - Get to My Projects Screen via the Navigation Menu
 
 |
 
-.. image:: /_static/images/content-author/get-to-my-projects-2.jpg
+.. image:: /_static/images/content-author/get-to-my-projects-2.webp
     :width: 65 %
     :align: center
     :alt: Navigating Studio - Get to My Projects Screen
@@ -56,7 +56,7 @@ Projects (Admin)
 ^^^^^^^^^^^^^^^^
 Crafter Studio administrators can also create and delete projects from this screen.
 
-.. image:: /_static/images/content-author/project-delete.jpg
+.. image:: /_static/images/content-author/project-delete.webp
     :width: 75 %    
     :align: center
     :alt: Navigating Studio - Delete Project
@@ -73,14 +73,14 @@ To get to Account Management:
     * Click on the ``Navigation Menu`` icon at the top right corner
     * Click on **Account** under *Global*
 
-.. image:: /_static/images/content-author/project-account.png
+.. image:: /_static/images/content-author/project-account.webp
     :width: 65 %
     :align: center
     :alt: Navigating Studio - Open My Account Settings Screen
 
 |
 
-.. image:: /_static/images/content-author/settings-account-management.jpg
+.. image:: /_static/images/content-author/settings-account-management.webp
     :width: 75 %    
     :align: center
     :alt: Navigating Studio - Account Settings Screen
@@ -94,7 +94,7 @@ Each project has a Project Dashboard.  To view a project's dashboard, click on t
 
 Access the ``Dashboard`` from the ``Navigation Menu``
 
-.. image:: /_static/images/content-author/project-dashboard-alt.jpg
+.. image:: /_static/images/content-author/project-dashboard-alt.webp
     :width: 65 %
     :align: center
     :alt: Navigating Studio - Project Dashboard from the Navigation Menu
@@ -103,7 +103,7 @@ Access the ``Dashboard`` from the ``Navigation Menu``
 
 Access the ``Dashboard`` from the ``Sidebar``
 
-.. image:: /_static/images/content-author/project-dashboard-sidebar.jpg
+.. image:: /_static/images/content-author/project-dashboard-sidebar.webp
     :width: 65 %
     :align: center
     :alt: Navigating Studio - Project Dashboard from Sidebar
@@ -128,7 +128,7 @@ Each dashboard has a header
 |
 |
 
-.. image:: /_static/images/content-author/project-dashboard.jpg
+.. image:: /_static/images/content-author/project-dashboard.webp
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Project Dashboard
@@ -233,7 +233,7 @@ For the dashboard shown above, here are the dashlets listed:
 |
 |
 
-.. image:: /_static/images/content-author/project-dashboard-selected.jpg
+.. image:: /_static/images/content-author/project-dashboard-selected.webp
    :width: 95 %
    :align: center
    :alt: Navigating Studio - Dashboard Selected
@@ -255,7 +255,7 @@ Every project has a preview.  This allows users to see, edit and test the projec
     * Author can change the targeting attributes used to view the project
     * Author can view the publish status of the project
 
-.. image:: /_static/images/content-author/project-preview.jpg
+.. image:: /_static/images/content-author/project-preview.webp
    :width: 95 %
    :align: center
    :alt: Navigating Studio - Project Preview
@@ -281,7 +281,7 @@ Experience Builder Panel
 |
 |
 
-.. image:: /_static/images/content-author/preview-in-context-editing.jpg
+.. image:: /_static/images/content-author/preview-in-context-editing.webp
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Preview In-Context Editing
@@ -292,7 +292,7 @@ In-Context Editing
 
 When in-context editing is turned on (``Edit mode`` pencil is green or ``Move mode`` two vertical ellipsis is blue at the top), it puts the page in construction mode.  When you hover your mouse around regions of the page that have been wired for in-context editing, a pencil will show up instead of the mouse cursor.
 
-.. image:: /_static/images/content-author/preview-page-in-context-editing.jpg
+.. image:: /_static/images/content-author/preview-page-in-context-editing.webp
     :width: 75 %
     :align: center
     :alt: Navigating Studio - Preview Page In-Context Editing
@@ -300,7 +300,7 @@ When in-context editing is turned on (``Edit mode`` pencil is green or ``Move mo
 
 This pencil allows you to edit the content of the wired region, including the current page's template and controller depending on your user account permissions
 
-.. image:: /_static/images/content-author/preview-in-context-edit.jpg
+.. image:: /_static/images/content-author/preview-in-context-edit.webp
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Preview In-Context Editing
@@ -314,7 +314,7 @@ Search
 
 The Search tool allows you to search for components and static assets in the project then display the results from which the user can drag and drop into the current page being viewed if there are configured drop targets in it
 
-.. image:: /_static/images/content-author/preview-experience-builder-search.jpg
+.. image:: /_static/images/content-author/preview-experience-builder-search.webp
     :width: 20 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel Search Components and Static Assets
@@ -325,21 +325,21 @@ Add Components
 ^^^^^^^^^^^^^^
 The ``Add Components`` tool allows you to create new components by dragging components from the panel and on to the screen to configured drop targets.  A new component with default values will then be visible and ready for editing when a new component is dropped on the screen.
 
-.. image:: /_static/images/content-author/preview-page-components-list.png
+.. image:: /_static/images/content-author/preview-page-components-list.webp
     :width: 20 %
     :alt: Navigating Studio - Experience Builder Panel Page Components
 
-.. image:: /_static/images/content-author/preview-page-components-space.png
+.. image:: /_static/images/content-author/preview-page-components-space.webp
     :width: 5 %
 
-.. image:: /_static/images/content-author/preview-page-components.png
+.. image:: /_static/images/content-author/preview-page-components.webp
     :width: 20 %
     :alt: Navigating Studio - Experience Builder Panel Page Components
 
-.. image:: /_static/images/content-author/preview-page-components-space.png
+.. image:: /_static/images/content-author/preview-page-components-space.webp
     :width: 5 %
 
-.. image:: /_static/images/content-author/preview-page-components-instances.png
+.. image:: /_static/images/content-author/preview-page-components-instances.webp
     :width: 20 %
     :alt: Navigating Studio - Experience Builder Panel Page Components Instances
 
@@ -348,7 +348,7 @@ The ``Add Components`` tool allows you to create new components by dragging comp
 You may drag around a component from one position to a different position by enabling the ``Move mode`` (by clicking the ``Move mode`` icon at the top right, or by using the keyboard shortcut).
 Crafter Studio administrators can configure what components are available in this panel.
 
-.. image:: /_static/images/content-author/preview-page-components-drag.jpg
+.. image:: /_static/images/content-author/preview-page-components-drag.webp
     :width: 85 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel Page Drag Component
@@ -359,7 +359,7 @@ Browse Components
 ^^^^^^^^^^^^^^^^^
 The Browse Components tool allows you to search / select a content type in the project then display the existing components for that content type that can be dragged and dropped into the current page being viewed if there are configured drop targets in it
 
-.. image:: /_static/images/content-author/preview-page-builder-browse-components.png
+.. image:: /_static/images/content-author/preview-page-builder-browse-components.webp
     :width: 30 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel Browse Components
@@ -368,7 +368,7 @@ The Browse Components tool allows you to search / select a content type in the p
 
 When you drag a component into the page being previewed and there are no drop zones configured in the page, you will see a snack bar like below:
 
-.. image:: /_static/images/content-author/preview-page-builder-no-drop-targets.jpg
+.. image:: /_static/images/content-author/preview-page-builder-no-drop-targets.webp
     :width: 80 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel No Drop Targets
@@ -379,7 +379,7 @@ Component Drop Targets
 ^^^^^^^^^^^^^^^^^^^^^^
 The Component Drop Targets tool allows you to select a content type in the project then display the configured drop target for that content type on the current page being previewed
 
-.. image:: /_static/images/content-author/preview-page-builder-component-drop-targets.jpg
+.. image:: /_static/images/content-author/preview-page-builder-component-drop-targets.webp
     :width: 70 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel Component Drop Targets
@@ -390,7 +390,7 @@ Assets
 ^^^^^^
 The Assets tool allows you to search/list assets such as images that can be dragged into configured drop targets in the project
 
-.. image:: /_static/images/content-author/preview-page-builder-assets.jpg
+.. image:: /_static/images/content-author/preview-page-builder-assets.webp
     :width: 30 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel Assets
@@ -401,7 +401,7 @@ Audience Targeting
 ^^^^^^^^^^^^^^^^^^
 The Audience Targeting tool allows you to view and set targeting attributes for the project
 
-.. image:: /_static/images/content-author/preview-page-builder-audience-targeting.png
+.. image:: /_static/images/content-author/preview-page-builder-audience-targeting.webp
     :width: 30 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel Audience Targeting
@@ -413,7 +413,7 @@ Page Explorer
 ^^^^^^^^^^^^^
 The Page Explorer tool allows you to browse/list content items such as pages, components and level descriptors in the project and make edits to them by clicking on the three dots next to the content item that appears when you hover your mouse on it
 
-.. image:: /_static/images/content-author/preview-page-builder-page-explorer.png
+.. image:: /_static/images/content-author/preview-page-builder-page-explorer.webp
     :width: 30 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel Page Explorer
@@ -426,7 +426,7 @@ The Device Simulator tool allows an author to review the current page in the con
 
 The phone and tablet can be rotated through the use of the rotation control next to the width and height input boxes.
 
-.. image:: /_static/images/content-author/preview-publishing-channel.jpg
+.. image:: /_static/images/content-author/preview-publishing-channel.webp
     :width: 60 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel Device Simulator
@@ -438,7 +438,7 @@ Settings
 
 The Settings tool allows you to switch on/off the ``Edit Mode`` (in-context editing) and setup highlighting of drop targets
 
-.. image:: /_static/images/content-author/preview-page-builder-settings.png
+.. image:: /_static/images/content-author/preview-page-builder-settings.webp
     :width: 30 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel Settings
@@ -465,7 +465,7 @@ The basic elements of the Contextual Navigation bar are:
     * Search: Allows the user to search for items in the project
     * Navigation Menu: Takes the user to a panel with ``Global`` and ``Project`` options containing various links such as Dashboard, About, Help, etc.
 
-.. image:: /_static/images/content-author/project-context-nav.jpg
+.. image:: /_static/images/content-author/project-context-nav.webp
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Project Context Navigation
@@ -482,7 +482,7 @@ The sidebar opens a menu that allows access to the following:
 
 The menu/panel width can be resized freely by the user and will remember where you set the length and width on your browser
 
-.. image:: /_static/images/content-author/sidebar-panel-width.jpg
+.. image:: /_static/images/content-author/sidebar-panel-width.webp
     :width: 95 %
     :align: center
     :alt: Navigating Studio - Sidebar Panel menu width
@@ -497,7 +497,7 @@ The menu/panel width can be resized freely by the user and will remember where y
 * Root folders allow a user to drill in to a hierarchy of content. If the item is previewable it will also be clickable.
 * Clicking on an item will take the author to a preview of the item.
 
-.. image:: /_static/images/content-author/project-tools-path-nav.jpg
+.. image:: /_static/images/content-author/project-tools-path-nav.webp
     :width: 25 %
     :align: center
     :alt: Navigating Studio - Project Tools Navigation
@@ -506,7 +506,7 @@ The menu/panel width can be resized freely by the user and will remember where y
 
 * Clicking the three dots next to each item or right-clicking on an item provides the user options whose content will change based off of the item selected and user role.
 
-.. image:: /_static/images/content-author/sidebar-right-click-menu.jpg
+.. image:: /_static/images/content-author/sidebar-right-click-menu.webp
     :width: 80 %
     :align: center
     :alt: Navigating Studio - Sidebar Right Click Menu
@@ -514,113 +514,113 @@ The menu/panel width can be resized freely by the user and will remember where y
 
 .. workflow icons=======================================================================================================
 
-.. |workflowLocked| image:: /_static/images/content-author/workflow-icon-locked.png
+.. |workflowLocked| image:: /_static/images/content-author/workflow-icon-locked.webp
              :width: 12%
              :alt: Workflow Icons - Locked for Edit
 
-.. |workflowProcessing| image:: /_static/images/content-author/workflow-icon-system-processing.png
+.. |workflowProcessing| image:: /_static/images/content-author/workflow-icon-system-processing.webp
              :width: 19%
              :alt: Workflow Icons - System Processing
 
-.. |workflowEdited| image:: /_static/images/content-author/workflow-icon-modified.png
+.. |workflowEdited| image:: /_static/images/content-author/workflow-icon-modified.webp
              :width: 13%
              :alt: Workflow Icons - Modified
 
-.. |workflowDisabled| image:: /_static/images/content-author/workflow-icon-disabled.png
+.. |workflowDisabled| image:: /_static/images/content-author/workflow-icon-disabled.webp
              :width: 12%
              :alt: Workflow Icons - Disabled
 
-.. |workflowNeverPub| image:: /_static/images/content-author/workflow-icon-new.png
+.. |workflowNeverPub| image:: /_static/images/content-author/workflow-icon-new.webp
              :width: 10%
              :alt: Workflow Icons - New
 
-.. |workflowDeleted| image:: /_static/images/content-author/workflow-icon-deleted.png
+.. |workflowDeleted| image:: /_static/images/content-author/workflow-icon-deleted.webp
              :width: 12%
              :alt: Workflow Icons - Deleted
 
-.. |workflowScheduledForLive| image:: /_static/images/content-author/workflow-icon-scheduled-for-live.png
+.. |workflowScheduledForLive| image:: /_static/images/content-author/workflow-icon-scheduled-for-live.webp
              :width: 21%
              :alt: Workflow Icons - Scheduled for live
 
-.. |workflowScheduledForStaging| image:: /_static/images/content-author/workflow-icon-scheduled-for-staging.png
+.. |workflowScheduledForStaging| image:: /_static/images/content-author/workflow-icon-scheduled-for-staging.webp
              :width: 23%
              :alt: Workflow Icons - Scheduled for staging
 
-.. |workflowSubmittedForLive| image:: /_static/images/content-author/workflow-icon-submitted-for-live.png
+.. |workflowSubmittedForLive| image:: /_static/images/content-author/workflow-icon-submitted-for-live.webp
              :width: 21%
              :alt: Workflow Icons - Submitted for live
 
-.. |workflowSubmittedForStaging| image:: /_static/images/content-author/workflow-icon-submitted-for-staging.png
+.. |workflowSubmittedForStaging| image:: /_static/images/content-author/workflow-icon-submitted-for-staging.webp
              :width: 23%
              :alt: Workflow Icons - Submitted for staging
 
-.. |workflowPublishing| image:: /_static/images/content-author/workflow-icon-publishing.png
+.. |workflowPublishing| image:: /_static/images/content-author/workflow-icon-publishing.webp
              :width: 14%
              :alt: Workflow Icons - Publishing
 
 .. Start of Item Types icons=============================================================
 
-.. |workflowComponent| image:: /_static/images/content-author/workflow-icon-component.png
+.. |workflowComponent| image:: /_static/images/content-author/workflow-icon-component.webp
              :width: 18%
              :alt: Item Types Icons - Component
 
-.. |workflowPage| image:: /_static/images/content-author/workflow-icon-page.png
+.. |workflowPage| image:: /_static/images/content-author/workflow-icon-page.webp
              :width: 11%
              :alt: Item Types Icons - Page
 
-.. |workflowFolder| image:: /_static/images/content-author/workflow-icon-folder.png
+.. |workflowFolder| image:: /_static/images/content-author/workflow-icon-folder.webp
              :width: 12%
              :alt: Item Types Icons - Folder
 
-.. |workflowLevelDescriptor| image:: /_static/images/content-author/workflow-icon-level-descriptor.png
+.. |workflowLevelDescriptor| image:: /_static/images/content-author/workflow-icon-level-descriptor.webp
              :width: 22%
              :alt: Item Types Icons - levelDescriptor
 
-.. |workflowTemplateScript| image:: /_static/images/content-author/workflow-icon-template-script.png
+.. |workflowTemplateScript| image:: /_static/images/content-author/workflow-icon-template-script.webp
              :width: 27%
              :alt: Item Types Icons - Template/Script
 
-.. |workflowGroovy| image:: /_static/images/content-author/workflow-icon-groovy.png
+.. |workflowGroovy| image:: /_static/images/content-author/workflow-icon-groovy.webp
              :width: 21%
              :alt: Item Types Icons - Groovy
 
-.. |workflowTaxonomy| image:: /_static/images/content-author/workflow-icon-taxonomy.png
+.. |workflowTaxonomy| image:: /_static/images/content-author/workflow-icon-taxonomy.webp
              :width: 17%
              :alt: Item Types Icons - Taxonomy
 
-.. |workflowImage| image:: /_static/images/content-author/workflow-icon-image.png
+.. |workflowImage| image:: /_static/images/content-author/workflow-icon-image.webp
              :width: 13%
              :alt: Item Types Icons - Image
 
-.. |workflowJavaScript| image:: /_static/images/content-author/workflow-icon-js.png
+.. |workflowJavaScript| image:: /_static/images/content-author/workflow-icon-js.webp
              :width: 16%
              :alt: Item Types Icons - JavaScript
 
-.. |workflowJson| image:: /_static/images/content-author/workflow-icon-json.png
+.. |workflowJson| image:: /_static/images/content-author/workflow-icon-json.webp
              :width: 13%
              :alt: Item Types Icons - Json
 
-.. |workflowHTML| image:: /_static/images/content-author/workflow-icon-html.png
+.. |workflowHTML| image:: /_static/images/content-author/workflow-icon-html.webp
              :width: 13%
              :alt: Item Types Icons - Html
 
-.. |workflowPlainText| image:: /_static/images/content-author/workflow-icon-plain-text.png
+.. |workflowPlainText| image:: /_static/images/content-author/workflow-icon-plain-text.webp
              :width: 16%
              :alt: Item Types Icons - Plain Text
 
-.. |workflowXML| image:: /_static/images/content-author/workflow-icon-xml.png
+.. |workflowXML| image:: /_static/images/content-author/workflow-icon-xml.webp
              :width: 13%
              :alt: Item Types Icons - Xml
 
-.. |workflowIcon| image:: /_static/images/content-author/workflow-icon-icon.png
+.. |workflowIcon| image:: /_static/images/content-author/workflow-icon-icon.webp
              :width: 13%
              :alt: Item Types Icons - Icon
 
-.. |workflowFont| image:: /_static/images/content-author/workflow-icon-font.png
+.. |workflowFont| image:: /_static/images/content-author/workflow-icon-font.webp
              :width: 11%
              :alt: Workflow Icons - Font
 
-.. |workflowCss| image:: /_static/images/content-author/workflow-icon-css.png
+.. |workflowCss| image:: /_static/images/content-author/workflow-icon-css.webp
              :width: 10%
              :alt: Workflow Icons - CSS
 
@@ -628,10 +628,10 @@ The menu/panel width can be resized freely by the user and will remember where y
 
 .. Start of Publishing Status/Target  icons=============================================================
 
-.. |publishStaging| image:: /_static/images/content-author/publish-target-icon-staged.png
+.. |publishStaging| image:: /_static/images/content-author/publish-target-icon-staged.webp
              :width: 11%
              :alt: Publishing Status/Target Icons - Staged
 
-.. |publishLive| image:: /_static/images/content-author/publish-target-icon-live.png
+.. |publishLive| image:: /_static/images/content-author/publish-target-icon-live.webp
              :width: 10%
              :alt: Item Types Icons - Live

@@ -42,7 +42,7 @@ CrafterCMS supports two types of plugins:
 
 Project Blueprints provide an initial set of styles, pages, behaviors, content types and more.
 
-.. image:: /_static/images/developer/plugins/marketplace-blueprints.jpg
+.. image:: /_static/images/developer/plugins/marketplace-blueprints.webp
    :alt: Plugins - Marketplace Blueprints
    :width: 60%
    :align: center
@@ -54,7 +54,7 @@ Project Blueprints provide an initial set of styles, pages, behaviors, content t
 Project plugins allow users to either replace, extend or even create stand alone experiences to
 serve a particular use case or set of use cases.
 
-.. image:: /_static/images/developer/plugins/marketplace-site-plugins.jpg
+.. image:: /_static/images/developer/plugins/marketplace-site-plugins.webp
    :alt: Plugins - Marketplace Site Plugins
    :width: 60%
    :align: center

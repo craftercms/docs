@@ -28,7 +28,7 @@ Building content rich applications backed by CrafterCMS requires you use one of 
 Crafter Engine Architecture
 ---------------------------
 
-.. figure:: /_static/images/architecture/crafter-engine.png
+.. figure:: /_static/images/architecture/crafter-engine.webp
     :alt: Crafter Engine
     :width: 60 %
     :align: center

@@ -17,7 +17,7 @@ Page Order Control
 Example
 -------
 
-.. image:: /_static/images/form-controls/form-control-page-order-example.png
+.. image:: /_static/images/form-controls/form-control-page-order-example.webp
     :width: 30%
     :alt: Form Control Page Order Example
     :align: center
@@ -26,7 +26,7 @@ Example
 Configuration
 -------------
 
-.. image:: /_static/images/form-controls/form-control-page-order-properties.png
+.. image:: /_static/images/form-controls/form-control-page-order-properties.webp
     :width: 50%
     :alt: Form Control Page Order
     :align: center

@@ -14,7 +14,7 @@ This section details how to configure settings managed through Crafter Studio.
 
 To access the configuration settings in Crafter Studio, click on |projectTools| in the Sidebar,
 
-.. image:: /_static/images/site-admin/configuration-access.png
+.. image:: /_static/images/site-admin/configuration-access.webp
     :align: center
     :width: 25%
     :alt: Open Configuration
@@ -23,7 +23,7 @@ then click on **Configuration**.  After clicking on **Configuration**, you will 
 you can select which configuration file you'd like to view/modify.  Below is one of the configuration
 files available to be viewed/modified.
 
-.. image:: /_static/images/site-admin/basic-configuration.jpg
+.. image:: /_static/images/site-admin/basic-configuration.webp
     :align: center
     :alt: Basic Configuration
 

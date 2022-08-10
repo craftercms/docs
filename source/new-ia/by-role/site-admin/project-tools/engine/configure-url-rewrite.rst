@@ -16,7 +16,7 @@ CrafterCMS comes with the Tuckey URLRewrite filter, a Java Web Filter with funct
 
 To add a URL rewrite rule, in Studio, open the **Sidebar** then click on |projectTools|.  Click on **Configuration** then select **Engine URL Rewrite Configuration (XML Style)**.
 
-.. image:: /_static/images/site-admin/config-urlrewrite-select.jpg
+.. image:: /_static/images/site-admin/config-urlrewrite-select.webp
     :alt: Configurations - Open URL Rewrite Configuration
     :width: 45 %
     :align: center
@@ -53,7 +53,7 @@ Below is a sample URL rewrite configuration.
 
 After saving the configuration, remember to publish the configuration file just saved (``urlrewrite.xml`` file).  To publish the configuration file, from the **Sidebar**, click on **Dashboard**.  In the **My Recent Activity** dashlet, check the box next to the ``urlrewrite.xml`` file, and click **Publish** from the context nav to publish.
 
-.. image:: /_static/images/site-admin/publish-urlrewrite.png
+.. image:: /_static/images/site-admin/publish-urlrewrite.webp
     :alt: Configurations - Publish URL Rewrite Config File from Dashboard
     :width: 85 %
     :align: center

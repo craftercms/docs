@@ -20,7 +20,7 @@ List All
 
 To view all existing tenants you can click the ``List Tenants`` link in the left sidebar.
 
-.. figure:: /_static/images/profile-admin/tenants-list.png
+.. figure:: /_static/images/profile-admin/tenants-list.webp
   :align: center
   :alt: Crafter Profile admin tenants list
 
@@ -36,7 +36,7 @@ Create New Tenant
 
 You can create a new tenant by clicking the ``New Tenant`` link in the left sidebar.
 
-.. figure:: /_static/images/profile-admin/tenants-new.png
+.. figure:: /_static/images/profile-admin/tenants-new.webp
   :align: center
   :alt: Crafter Profile admin new tenant
 
@@ -84,7 +84,7 @@ include the ``crafter.profile.management.profile.verificationUrl`` property in t
 all new users will receive a verification email and the profile will be enabled only when the
 process is completed.
 
-.. figure:: /_static/images/profile-admin/verification-mail.png
+.. figure:: /_static/images/profile-admin/verification-mail.webp
   :align: center
   :alt: Crafter Profile admin verification mail
 
@@ -119,7 +119,7 @@ application.  The attributes are used to store meta data used in the business lo
 When a new profile is created you can set a value for each one of the attributes defined in the
 tenant.
 
-.. figure:: /_static/images/profile-admin/tenants-update-attr.png
+.. figure:: /_static/images/profile-admin/tenants-update-attr.webp
   :align: center
   :alt: Crafter Profile update tenants attributes
 
@@ -156,7 +156,7 @@ Update Tenant
 
 From the list page you can click the name of a tenant to open the update page:
 
-.. figure:: /_static/images/profile-admin/tenants-update.png
+.. figure:: /_static/images/profile-admin/tenants-update.webp
   :align: center
   :alt: Crafter Profile update tenants
 

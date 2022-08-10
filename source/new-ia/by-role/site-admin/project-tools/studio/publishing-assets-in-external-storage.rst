@@ -158,7 +158,7 @@ Let's take a closer look:
 
    In the **Page - Article** content type, notice that the ``Repository Path`` property of the ``Upload Image`` data source is set to: ``/static-assets/item/images/{yyyy}/{mm}/{dd}/``, which falls into the file path pattern ``/static-assets/item/.*`` we setup in the ``Blob Stores`` configuration file
 
-   .. image:: /_static/images/site-admin/ext-storage/setup-datasource.png
+   .. image:: /_static/images/site-admin/ext-storage/setup-datasource.webp
       :align: center
       :alt: Setup data source to use the file path pattern in Blob Stores
       :width: 95%
@@ -169,7 +169,7 @@ Let's take a closer look:
 
    Scroll down to the ``Content`` section, then click on the ``Replace`` button next to the **Image** field, then select ``Upload Images``.  Select the file you want to upload.  In our example, the file ``new1.png`` will be uploaded to ``static-assets/item/images/2020/03/27``.
 
-   .. image:: /_static/images/site-admin/ext-storage/upload-image-with-picker.png
+   .. image:: /_static/images/site-admin/ext-storage/upload-image-with-picker.webp
       :align: center
       :alt: Upload image using an image picker
       :width: 95%
@@ -178,7 +178,7 @@ Let's take a closer look:
 
    After uploading the file, we should see it in the AWS S3 bucket for authoring ``my-authoring-bucket`` in the sandbox:
 
-   .. image:: /_static/images/site-admin/ext-storage/picker-uploaded-img-in-bucket.png
+   .. image:: /_static/images/site-admin/ext-storage/picker-uploaded-img-in-bucket.webp
       :align: center
       :alt: Image uploaded using the image picker is now in the S3 bucket
       :width: 95%
@@ -189,7 +189,7 @@ Let's take a closer look:
 
    In the example below, two files were uploaded to the ``docs`` folder.
 
-   .. image:: /_static/images/site-admin/ext-storage/uploaded-files-to-s3.png
+   .. image:: /_static/images/site-admin/ext-storage/uploaded-files-to-s3.webp
        :align: center
        :alt: "s3" folder created under "static-assets"
        :width: 35%
@@ -198,7 +198,7 @@ Let's take a closer look:
 
    When you upload files to the ``docs`` folder, the files get uploaded to the ``sandbox`` of the ``my-authoring-bucket`` previously setup.
 
-   .. image:: /_static/images/site-admin/ext-storage/s3-preview-bucket.png
+   .. image:: /_static/images/site-admin/ext-storage/s3-preview-bucket.webp
        :align: center
        :alt: Files in preview in "s3" my-authoring-bucket
        :width: 85%
@@ -213,7 +213,7 @@ The next step in our example is to publish the files to ``staging``.  To publish
 
 The ``Approve for Publish`` dialog will come up.  Remember to select ``staging`` for the ``Publishing Options``
 
-.. image:: /_static/images/site-admin/ext-storage/publish-to-staging.png
+.. image:: /_static/images/site-admin/ext-storage/publish-to-staging.webp
     :align: center
     :alt: Publish file to staging in Studio
     :width: 65%
@@ -222,7 +222,7 @@ The ``Approve for Publish`` dialog will come up.  Remember to select ``staging``
 
 When the file/s are published to ``staging``, the files get published to the ``staging`` branch of the ``my-authoring-bucket`` in s3.
 
-.. image:: /_static/images/site-admin/ext-storage/s3-staging-bucket.png
+.. image:: /_static/images/site-admin/ext-storage/s3-staging-bucket.webp
     :align: center
     :alt: Published files to staging in "s3" my-authoring-bucket
     :width: 85%
@@ -237,7 +237,7 @@ Finally, we'll publish the file/s to ``live``.  To publish a file to ``live``, n
 
 The ``Approve for Publish`` dialog will come up.  Remember to select ``live`` for the ``Publishing Options``
 
-.. image:: /_static/images/site-admin/ext-storage/publish-to-live.png
+.. image:: /_static/images/site-admin/ext-storage/publish-to-live.webp
     :align: center
     :alt: Publish file to live in Studio
     :width: 65%
@@ -246,7 +246,7 @@ The ``Approve for Publish`` dialog will come up.  Remember to select ``live`` fo
 
 When the file/s are published to ``live``, the file/s get published to the ``my-deli-bucket`` in s3.
 
-.. image:: /_static/images/site-admin/ext-storage/s3-delivery-bucket.png
+.. image:: /_static/images/site-admin/ext-storage/s3-delivery-bucket.webp
     :align: center
     :alt: Published file/s to live in "s3" my-delivery-bucket
     :width: 85%
@@ -313,7 +313,7 @@ Let's begin:
 
    In your AWS console, copy the contents of your delivery bucket
 
-   .. image:: /_static/images/site-admin/ext-storage/s3-copy-delivery.png
+   .. image:: /_static/images/site-admin/ext-storage/s3-copy-delivery.webp
       :align: center
       :alt: Copy assets in the delivery bucket
       :width: 85%
@@ -322,7 +322,7 @@ Let's begin:
 
    Paste the copied content into the staging bucket ``my-staging``
 
-   .. image:: /_static/images/site-admin/ext-storage/s3-staging-bucket-content.png
+   .. image:: /_static/images/site-admin/ext-storage/s3-staging-bucket-content.webp
       :align: center
       :alt: Assets copied from delivery bucket to staging bucket
       :width: 85%

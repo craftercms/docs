@@ -11,7 +11,7 @@ Crafter Studio Project Tools Plugin Example
 |projectTools| contains tools that site administrators use for daily activities.  For more information
 on the available tools in |projectTools|, see :ref:`navigating-project-tools`
 
-.. image:: /_static/images/developer/plugins/project-plugins/studio-project-tools.png
+.. image:: /_static/images/developer/plugins/project-plugins/studio-project-tools.webp
    :align: center
    :alt: Studio Project Tools
    :width: 80%
@@ -107,7 +107,7 @@ called ``My Editorial`` created using the **Website Editorial** blueprint.
 
 #. After placing your plugin files and setting up auto-wiring, the project plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
-   .. image:: /_static/images/developer/plugins/project-plugins/project-tools-plugin-files.png
+   .. image:: /_static/images/developer/plugins/project-plugins/project-tools-plugin-files.webp
       :align: center
       :alt: Project Tools tool project plugin directory/files
       :width: 80%
@@ -124,7 +124,7 @@ called ``My Editorial`` created using the **Website Editorial** blueprint.
 
 #. Let's take a look at our plugin in action by clicking on the CrafterCMS logo at the top left of your browser to open the sidebar, then click on ``Project Tools``:
 
-   .. image:: /_static/images/developer/plugins/project-plugins/project-tools-plugin-in-action.png
+   .. image:: /_static/images/developer/plugins/project-plugins/project-tools-plugin-in-action.webp
       :align: center
       :alt: Project Tools project plugin in action
 

@@ -25,7 +25,7 @@ If the file you are uploading does not belong in any of the existing folders, yo
 
 Click on the three dots next to the folder **static-assets**, then select **New Folder**
 
-.. image:: /_static/images/page/page-asset-folders.jpg
+.. image:: /_static/images/page/page-asset-folders.webp
     :alt: Static Assets - Create a Folder
     :width: 40 %
     :align: center
@@ -33,7 +33,7 @@ Click on the three dots next to the folder **static-assets**, then select **New 
 
 Enter a name for the new folder then click on the **Create** button.
 
-.. image:: /_static/images/page/page-asset-create-folder.png
+.. image:: /_static/images/page/page-asset-create-folder.webp
     :alt: Static Assets - Create Folder Dialog
     :width: 30 %
     :align: center
@@ -43,7 +43,7 @@ Adding a file
 ^^^^^^^^^^^^^
 To add a file, from the folder **static-assets**, navigate to the folder you want to add the files to, then click on the three dots next to the folder and select **Upload**
 
-.. image:: /_static/images/page/page-asset-upload.jpg
+.. image:: /_static/images/page/page-asset-upload.webp
     :alt: Static Assets - Upload a File
     :width: 40 %
     :align: center
@@ -52,14 +52,14 @@ To add a file, from the folder **static-assets**, navigate to the folder you wan
 
 The upload dialog will come up and if you have multiple files to upload, you can drag and drop or browse for files that you want to upload.
 
-.. image:: /_static/images/page/page-asset-bulk-upload.png
+.. image:: /_static/images/page/page-asset-bulk-upload.webp
     :alt: Static Assets - Upload File/s Dialog
     :width: 50 %
     :align: center
 
 Click on the ``X`` to close the  upload dialog or click on "Add more" if you want to add more files
 
-.. image:: /_static/images/page/page-asset-upload-done.png
+.. image:: /_static/images/page/page-asset-upload-done.webp
    :alt: Static Assets - Bulk Upload Done Dialog
    :width: 50 %
    :align: center
@@ -71,7 +71,7 @@ A file may also be added via one of the upload controls and data source in a con
 
 To upload using one of the controls, while editing a content form, click on the button for adding/replacing an asset which would give you an option to use an existing asset or to upload an asset.
 
-.. image:: /_static/images/page/page-asset-single-upload.jpg
+.. image:: /_static/images/page/page-asset-single-upload.webp
    :alt: Static Assets - Upload a file from a control/data source in the content form
    :width: 60 %
    :align: center
@@ -80,7 +80,7 @@ To upload using one of the controls, while editing a content form, click on the 
 
 The upload dialog will come up.  Click on the ``Choose File`` button to browse for the file you want to upload.
 
-.. image:: /_static/images/page/page-asset-single-file-upload-dlg.jpg
+.. image:: /_static/images/page/page-asset-single-file-upload-dlg.webp
    :alt: Static Assets - Upload File Dialog
    :width: 60 %
    :align: center
@@ -89,7 +89,7 @@ The upload dialog will come up.  Click on the ``Choose File`` button to browse f
 
 Once the file is uploaded, the dialog will close and the asset will now be in the content form.
 
-.. image:: /_static/images/page/page-asset-single-file-upload-done.jpg
+.. image:: /_static/images/page/page-asset-single-file-upload-done.webp
    :alt: Static Assets - Single file upload done and asset in content form
    :width: 60 %
    :align: center
@@ -101,21 +101,21 @@ Removing Assets
 
 To delete an asset, navigate to the asset you want to delete in the site navigation tree.  Click on the three dots next to the asset, then select **Delete**
 
-.. image:: /_static/images/page/page-asset-delete.jpg
+.. image:: /_static/images/page/page-asset-delete.webp
     :alt: Static Assets - Delete
     :width: 40 %
     :align: center
 
 Put a checkmark on ``By submitting, deleted items will be published immediately.`` to enable the **Delete** button.  Click on the **Delete** button if you want to delete the listed files, or click on **Cancel** if you don't want to delete the asset.
 
-.. image:: /_static/images/page/page-asset-confirm-delete.jpg
+.. image:: /_static/images/page/page-asset-confirm-delete.webp
     :alt: Static Assets - Delete Confirmation Dialog
     :width: 60 %
     :align: center
 
 After clicking on the **Delete** button, a snackbar at the top right of your browser will appear to inform you that the item/asset has been pushed for delete.
 
-.. image:: /_static/images/page/page-asset-delete-submitted.png
+.. image:: /_static/images/page/page-asset-delete-submitted.webp
     :alt: Static Assets - Delete Action Information Dialog
     :width: 40 %
     :align: center
@@ -125,7 +125,7 @@ Asset Versioning
 ----------------
 All changes to static assets are tracked and can be reverted to an older version.  For static assets, like images, videos, etc., to access the History dialog, select the static asset that you want to view the history of from the site navigation tree, under the folder **Static Assets**, then click on the **History** menu of the context navigation menu at the top of your browser or, click on the three dots next to the asset you want to view then select **History**
 
-.. image:: /_static/images/page/page-asset-access-history.jpg
+.. image:: /_static/images/page/page-asset-access-history.webp
     :alt: Static Assets - Open History
     :width: 50 %
     :align: center
@@ -133,7 +133,7 @@ All changes to static assets are tracked and can be reverted to an older version
 
 Notice that for assets, you can only revert to the version selected.
 
-.. image:: /_static/images/page/page-asset-history.jpg
+.. image:: /_static/images/page/page-asset-history.webp
     :alt: Static Assets - History Dialog
     :width: 65 %
     :align: center

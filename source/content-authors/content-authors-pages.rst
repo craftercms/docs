@@ -16,14 +16,14 @@ Adding a Page
 -------------
 To add a page, in the Sidebar panel, then click on **Pages**.  Navigate to the level and location within the path navigation tree where you want to create the content, then click on the three dots next to the parent page and select *New Content*
 
-.. image:: /_static/images/page/page-add-new-content.jpg
+.. image:: /_static/images/page/page-add-new-content.webp
     :width: 50 %
     :align: center
     :alt: Content Author - Add New Page Content
 
 You will then be prompted to choose a content type.  Select a starter page template from the list shown. If you need a template that's not available or want to modify the template, ask a developer to add/modify the template that you want.
 
-.. image:: /_static/images/page/page-add-choose-content.jpg
+.. image:: /_static/images/page/page-add-choose-content.webp
     :width: 75 %    
     :align: center
     :alt: Content Author - Add New Page Choose Content
@@ -32,7 +32,7 @@ A form will open containing the template selected. You can now start adding cont
 
 When data is entered into a field, the red 'x' will change to a green checkmark and the section bar will update with the new status.
 
-.. image:: /_static/images/page/page-add-template-open.jpg
+.. image:: /_static/images/page/page-add-template-open.webp
     :width: 75 %    
     :align: center
     :alt: Content Author - Add New Page Open Template
@@ -47,14 +47,14 @@ An action bar is available at the bottom of the screen that cannot be scrolled a
 
 To minimize the form, click on the ``-`` at the top of the Content Form right next to the ``x``.  When a form is minimized, it will appear at the bottom right of the screen with an arrow pointing up next to it.  To maximize the form, simply click on that arrow pointing up.
 
-.. image:: /_static/images/page/page-add-minimized.jpg
+.. image:: /_static/images/page/page-add-minimized.webp
     :width: 75%
     :align: center
     :alt: Page - Action Bar Minimize/Maximize Icon
 
 An error form will appear when you try to *Save and Close* without filling out all the required fields.
 
-.. image:: /_static/images/page/page-save-error.png
+.. image:: /_static/images/page/page-save-error.webp
     :width: 50 %    
     :align: center
     :alt: Content Author - Page Save Error
@@ -72,7 +72,7 @@ There are multiple ways to edit a page.
 
     #. In the Sidebar panel click on **Pages**.  Navigate to the level and location within the path navigation tree where you want to edit the content and click on it to preview the page.  Click the three dots next to the address url on the toolbar found at the top of your screen. Click on ``Edit``.  A form containing the page content you want to edit will open.
 
-.. image:: /_static/images/page/page-edit.jpg
+.. image:: /_static/images/page/page-edit.webp
     :width: 95 %
     :align: center
     :alt: Content Author - Edit a Page
@@ -87,14 +87,14 @@ All page changes/versions can be viewed, compared with other versions and revert
 
 After selecting the page you want, click on ``Options`` (the three dots next to the address url at the top of your browser) then select **History**.
 
-.. image:: /_static/images/page/page-access-history.png
+.. image:: /_static/images/page/page-access-history.webp
     :width: 95 %
     :align: center
     :alt: Content Author - Access Page History
 
 Another way to view the history of a page is by clicking on the three dots next to the page you want on the Sidebar and then selecting **History**
 
-.. image:: /_static/images/page/page-access-history-tree.jpg
+.. image:: /_static/images/page/page-access-history-tree.webp
     :width: 60 %
     :align: center
     :alt: Content Author - Page Access History Tree
@@ -123,7 +123,7 @@ There are a number of things that you can do in the Version History dialog.  On 
 || Revert to this version|| Reverts the page content to selected version          |
 +------------------------+--------------------------------------------------------+
 
-.. image:: /_static/images/page/page-history.jpg
+.. image:: /_static/images/page/page-history.webp
     :width: 75 %
     :align: center
     :alt: Content Author - Page History
@@ -136,7 +136,7 @@ Form controls are the building blocks of forms.  It lets you get content into th
 
 Forms are the means by which content is captured in Crafter Studio. A form generally maps to or represents a type of object in the system for example a certain kind of page - like a section page or a banner or video. Let's look at some common elements of a form and examine some of the controls that we use to get content in to the system.
 
-.. image:: /_static/images/page/page-form.jpg
+.. image:: /_static/images/page/page-form.webp
     :width: 75 %
     :align: center
     :alt: Content Author - Page Form
@@ -169,26 +169,26 @@ Here are some controls that authors may encounter while editing content:
 
 * Dropdowns - Allows the user to select an item from the list.  When not selecting an item from the dropdown, the selected item is shown on the box.
 
-.. image:: /_static/images/page/form-control-dropdown-expand.png
+.. image:: /_static/images/page/form-control-dropdown-expand.webp
     :width: 40 %    
     :align: center
     :alt: Content Author - Form Control Dropdown Expanded
 
-.. image:: /_static/images/page/form-controls-dropdown.png
+.. image:: /_static/images/page/form-controls-dropdown.webp
     :width: 40 %    
     :align: center
     :alt: Content Author - Form Controls Dropdown
 
 * Text areas - Allows the user to enter text up to the character limit indicated at the bottom of the text area input box.
 
-.. image:: /_static/images/page/form-control-text-area.png
+.. image:: /_static/images/page/form-control-text-area.webp
     :width: 50 %    
     :align: center
     :alt: Content Author - Form Control Text Area
 
 * Checkbox - Allows the user to make a choice, depending on what was setup.
 
-.. image:: /_static/images/page/form-control-checkbox.png
+.. image:: /_static/images/page/form-control-checkbox.webp
     :width: 15 %
     :align: center
     :alt: Content Author - Form Control Checkbox
@@ -199,64 +199,64 @@ Here are some controls that authors may encounter while editing content:
 * Rich text editors - What You See Is What You Get (WYSIWYG) editor that allows authors to arrange and style content without needing to know HTML.  Below is a more detailed description on working in the RTE.
 * Repeating Group - Group of controls (1 or more controls) that can be duplicated multiple times by clicking on **Add Another**.  If there are two or more instances, "Move Up" and "Move Down" links will be available which will move the group up or down in relation to the other group instances.
 
-.. image:: /_static/images/page/form-controls.jpg
+.. image:: /_static/images/page/form-controls.webp
     :width: 65 %
     :align: center
     :alt: Content Author - Form Controls
 
 |
 
-.. image:: /_static/images/page/form-controls-2.jpg
+.. image:: /_static/images/page/form-controls-2.webp
     :width: 65 %
     :align: center
     :alt: Content Author - Form Controls Repeating Group and RTE
 
 * Image pickers - Allows the user to select an image from whatever source is allowed, such as Upload Image or Existing Image (asset uploaded to the system).  To select an image, click on **Add** (when there's no image selected yet) or **Replace** to change the selected image
 
-.. image:: /_static/images/page/form-control-image-picker.jpg
+.. image:: /_static/images/page/form-control-image-picker.webp
     :width: 60 %    
     :align: center
     :alt: Content Author - Form Control Image Picker
 
 * Video pickers - Allows the user to select a video from whatever source is allowed, such as Upload Video (video to be uploaded) or Existing Video (asset uploaded to the system).  To select a video, click on **Add** (when there's no video selected yet) or **Replace** to change the selected video.
 
-.. image:: /_static/images/page/form-control-video-picker.png
+.. image:: /_static/images/page/form-control-video-picker.webp
     :width: 60 %
     :align: center
     :alt: Content Author - Form Control Video Picker
 
 * Page Order - Allows the user to change the position of the page in the navigation structure.  To change the position of the page, select **Yes**, an **Edit Position** button will appear.  Click on the **Edit Position** button, a form will appear that lets the user drag and drop the position of the page the user is editing, called **Current Page**.  The first time navigation is turned on for the page, the **Current Page** will always default to the top position.
 
-.. image:: /_static/images/page/form-control-page-order-no.png
+.. image:: /_static/images/page/form-control-page-order-no.webp
     :width: 60 %
     :align: center
     :alt: Content Author - Form Control No Page Order
 
-.. image:: /_static/images/page/form-control-page-order-yes.png
+.. image:: /_static/images/page/form-control-page-order-yes.webp
     :width: 60 %
     :align: center
     :alt: Content Author - Form Control Yes Page Order
 
-.. image:: /_static/images/page/form-control-page-order.png
+.. image:: /_static/images/page/form-control-page-order.webp
     :width: 50 %    
     :align: center
     :alt: Content Author - Form Control Page Order
             
 * Item Selector - Allows the user to select an item from configured sources.  Clicking the **Add** button opens a menu that lets the user pick from the list.  Clicking on **Add & Close** or **Add Selection** adds the selected item to the selector list
 
-.. image:: /_static/images/form-controls/form-control-item-selector.png
+.. image:: /_static/images/form-controls/form-control-item-selector.webp
     :width: 50 %    
     :align: center
     :alt: Content Author - Form Control Item Selector
 
-.. image:: /_static/images/page/form-control-item-select.png
+.. image:: /_static/images/page/form-control-item-select.webp
     :width: 70 %
     :align: center
     :alt: Content Author - Form Control Item Select
 
 * File name - Allows the user to enter a name for the file.  Whitespaces are replaced by a dash automatically and a maximum length for the name is specified next to the filename input box.
 
-.. image:: /_static/images/page/form-control-filename.png
+.. image:: /_static/images/page/form-control-filename.webp
     :width: 70 %
     :align: center
     :alt: Content Author - Form Control Filename
@@ -269,7 +269,7 @@ Drag and drop makes it easy for authors to visually assemble pages. Authors simp
 The ``Edit Mode`` switch puts the page in component construction mode.  Regions on the page that are wired to accept components ("drop target") are highlighted.  In the component construction mode, the user may drag an existing component or place a new component to be configured in the drop target.  The user may also drag a component from one region to another.  Crafter Studio administrators can configure what components are available in this panel.
 
 
-.. image:: /_static/images/page/page-components.jpg
+.. image:: /_static/images/page/page-components.webp
     :width: 75 %
     :align: center
     :alt: Content Author - Page Components
@@ -281,7 +281,7 @@ Drag and Drop Components
 
 The user may create new components by dragging components from the experience builder panel (**Component** section) out and on to the drop target on the screen.  A new component with default values will then be visible and ready for editing when a new component is dropped on the screen.
 
-.. image:: /_static/images/page/page-components-new.jpg
+.. image:: /_static/images/page/page-components-new.webp
     :width: 50 %
     :align: center
     :alt: Content Author - Page Components New
@@ -290,7 +290,7 @@ The user may create new components by dragging components from the experience bu
 
 The user may add existing components into the panel by clicking on **Browse Components**.  A list of existing components will be presented that can be dragged and dropped into the drop target
 
-.. image:: /_static/images/content-author/preview-page-builder-browse-components.png
+.. image:: /_static/images/content-author/preview-page-builder-browse-components.webp
     :width: 30 %
     :align: center
     :alt: Content Author - Experience Builder Panel Browse Components
@@ -299,7 +299,7 @@ The user may add existing components into the panel by clicking on **Browse Comp
 
 Components inside the drop targets may be moved around to the desired position.  Simply click, then drag and drop to the desired position in the drop target.
 
-.. image:: /_static/images/content-author/preview-page-components-drag.jpg
+.. image:: /_static/images/content-author/preview-page-components-drag.webp
     :width: 85 %
     :align: center
     :alt: Content Author - Experience Builder Panel Page Drag Component
@@ -308,7 +308,7 @@ Components inside the drop targets may be moved around to the desired position. 
 
 To remove a component from the drop target, just drag the feature to the trash bin that appears on the bottom right of the screen when dragging around a component.
 
-.. image:: /_static/images/first-project/first-project-drag-n-drop-delete.jpg
+.. image:: /_static/images/first-project/first-project-drag-n-drop-delete.webp
     :width: 80 %
     :align: center
     :alt: Content Author - Drag and Drop Delete
@@ -318,7 +318,7 @@ Working in the Rich Text Editor(RTE)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The RTE (Rich Text Editor) is intended to provide an in-context editing experience from within a form (rather than a preview) that allows authors to arrange and style content without needing to know HTML.  In an RTE field, the RTE toolbar is at the top, and is always available regardless of how far down you scroll in the RTE field.
 
-.. image:: /_static/images/page/rte-screen.png
+.. image:: /_static/images/page/rte-screen.webp
     :width: 75 %    
     :align: center
     :alt: Content Author - RTE Screen
@@ -332,7 +332,7 @@ Copying a Page
 
 To copy a page, in the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location within the project navigation tree where you want to copy content, then click on the three dots next to the page and select **Copy**
 
-.. image:: /_static/images/page/page-copy-menu.jpg
+.. image:: /_static/images/page/page-copy-menu.webp
     :width: 30 %
     :align: center
     :alt: Content Author - Copy Page Menu
@@ -341,7 +341,7 @@ To copy a page, in the Sidebar panel, click on the **Pages** folder.  Navigate t
 
 In the Sidebar panel, navigate to the level and location within the project navigation tree where you want to paste the copied content, then click on the three dots next to it and select **Paste**
 
-.. image:: /_static/images/page/page-paste-menu.jpg
+.. image:: /_static/images/page/page-paste-menu.webp
     :width: 30 %
     :align: center
     :alt: Content Author - Paste Page Menu

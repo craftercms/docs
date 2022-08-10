@@ -13,7 +13,7 @@
 Child Content Data Source (Deprecated)
 ======================================
 
-.. image:: /_static/images/form-sources/form-source-child-content.png
+.. image:: /_static/images/form-sources/form-source-child-content.webp
     :width: 50%
     :alt: Form Control Input 1
     :align: center
@@ -25,7 +25,7 @@ Child Content Data Source (Deprecated)
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-child-content-conf.png
+.. image:: /_static/images/form-sources/form-source-child-content-conf.webp
     :width: 50%
     :alt: Form Control Input 1
     :align: center

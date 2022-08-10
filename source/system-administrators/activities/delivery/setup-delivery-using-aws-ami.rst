@@ -16,7 +16,7 @@ Step 1: Launch an AWS EC2 instance using a CrafterCMS Delivery AMI
 
 Crafter provides a prebuilt AMI(s) for Crafter Engine, the delivery component of CrafterCMS. In this step we'll walk you through the initial launch of your instance. To get started, go to your EC2 dashboard and click ``Launch Instance`` AWS will prompt you to choose your AMI type/image.
 
-.. image:: /_static/images/ami/craftercms-aws-ami-delivery-launch-instance.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-delivery-launch-instance.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Delivery Launch Instance
@@ -28,7 +28,7 @@ You can find CrafterCMS Delivery by entering the keywords ``CrafterCMS Delivery`
 
 Click ``Select`` on the AMI type you want to use and then follow the launch instance/configuration wizard to determine the sizing and networking details for your instance. Please note, we recommend "C" class machines for best results with typical production use.
 
-.. image:: /_static/images/ami/craftercms-aws-ami-delivery-select.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-delivery-select.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Delivery Select
@@ -37,28 +37,28 @@ The launch instance wizard gives you the ability to tweak your instance's config
 
 To add the rule for SSH, click the ``Inbound traffic`` tab and then ``Add Rule`` to configure SSH. You can restrict the inbound traffic for SSH in the source column. To allow SSH from anywhere you can enter a CIDR of 0.0.0.0/0. Use the ports and IP masks/policies that align with your needs.
 
-.. image:: /_static/images/ami/craftercms-aws-ami-delivery-security-groups.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-delivery-security-groups.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Delivery Security Groups
 
 Once you have added SSH access and made any other tweaks you feel are necessary to your instance's configuration, click the ``Review`` tab and then click the ``Launch`` button.
 
-.. image:: /_static/images/ami/craftercms-aws-ami-delivery-review.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-delivery-review.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Delivery Review
 
 After clicking ``Launch``, AWS will request that you select a public key for administrative console access to the machine. You will need access to this key in the next step in order to retrieve the administrator's password for Crafter Studio. Create or choose an existing key and click ``Launch Instances``
 
-.. image:: /_static/images/ami/craftercms-aws-ami-selectkey.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-selectkey.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Delivery Select Key
 
 Once you click ``Launch instances`` AWS will start and initialize the instance. This may take a minute or two.
 
-.. image:: /_static/images/ami/craftercms-aws-ami-starting.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-starting.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Delivery AMI Starting
@@ -71,14 +71,14 @@ In this step we want to prove that the application is up and running now that ou
 
 To access the login screen open a web browser and navigate to http://DNS_NAME_OR_IP_ADDRESS.
 
-.. image:: /_static/images/ami/craftercms-aws-ami-delivery-engine-running.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-delivery-engine-running.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Delivery Engine Running
 
 You can find the IP address and/or DNS name in several locations on your AWS administration console shown here:
 
-.. image:: /_static/images/ami/craftercms-aws-ami-delivery-ipdns.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-delivery-ipdns.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Delivery IP DNS
@@ -123,7 +123,7 @@ You will be prompted for the file name and a passphrase. Since CrafterCMS will u
 
 Once the keygen process completes you should find a file at the location you specified. This is your private key.  You will find another file at the same location with a .pub extension.  This is your public key.
 
-.. image:: /_static/images/ami/craftercms-ssh-rsa-keygen.jpg
+.. image:: /_static/images/ami/craftercms-ssh-rsa-keygen.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Delivery SSH RSA keygen
@@ -259,7 +259,7 @@ When the init-site.sh command is executed without any parameters, parameter docu
 
 The SITE_ID parameter can be acquired from the authoring server. Log in to Crafter Studio and "Preview" the site you wish to initialize and you will find the SITE_ID in the URL.
 
-.. image:: /_static/images/ami/craftercms-siteid.jpg
+.. image:: /_static/images/ami/craftercms-siteid.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Delivery Site Id
@@ -279,7 +279,7 @@ Example:
 
     init-site.sh -b live editorial ssh://crafter@ec2-3-93-34-40.compute-1.amazonaws.com:/opt/crafter/data/repos/sites/editorial/published
 
-.. image:: /_static/images/ami/craftercms-aws-ami-initsite.png
+.. image:: /_static/images/ami/craftercms-aws-ami-initsite.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Delivery initsite
@@ -311,7 +311,7 @@ Example:
 
 **http://ec2-34-239-227-96.compute-1.amazonaws.com?crafterSite=editorial**
 
-.. image:: /_static/images/ami/craftercms-aws-ami-delivery-viewsite.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-delivery-viewsite.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Delivery View Site
@@ -326,7 +326,7 @@ Step 6: Make an update in authoring and see it published on the delivery server
 -------------------------------------------------------------------------------
 To further test publishing, log in to Crafter Studio for the given site, make an edit and then approve the edit for publish. In a few moments you will see your updates in the web browser on the delivery server.  You can find step by step instructions on editing and publishing here: :ref:`your_first_project`
 
-.. image:: /_static/images/ami/craftercms-approve-publish.png
+.. image:: /_static/images/ami/craftercms-approve-publish.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Delivery Approve & Publish

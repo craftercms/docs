@@ -13,7 +13,7 @@ it should be accepted or not.
 You can start the moderation process by clicking the ``Moderation Dashboard`` link in the left
 sidebar.
 
-.. figure:: /_static/images/social-admin/moderation.png
+.. figure:: /_static/images/social-admin/moderation.webp
   :align: center
   :alt: Crafter Social moderation
 
@@ -34,7 +34,7 @@ Unmoderated
 New content that no one has reviewed. Items in this status will not be visible for the end users
 and is available for updates from the moderators in order to remove inappropriate content.
 
-.. figure:: /_static/images/social-admin/moderation-unmoderated.png
+.. figure:: /_static/images/social-admin/moderation-unmoderated.webp
   :align: center
   :alt: Crafter Social unmoderated
 
@@ -52,7 +52,7 @@ Approved
 Content that has already been reviewed and accepted. Items in this status will be visible for the
 end users but can still be updated or removed by the moderators.
 
-.. figure:: /_static/images/social-admin/moderation-approved.png
+.. figure:: /_static/images/social-admin/moderation-approved.webp
   :align: center
   :alt: Crafter Social moderation approved
 
@@ -70,7 +70,7 @@ Spam
 Content that has already been reviewed but was considered as irrelevant.  Items in this state can
 be set as ``Unmoderated`` again.
 
-.. figure:: /_static/images/social-admin/moderation-spam.png
+.. figure:: /_static/images/social-admin/moderation-spam.webp
   :align: center
   :alt: Crafter Social spam
 
@@ -85,7 +85,7 @@ Trash
 Content that has already been reviewed but should be discarded. Items in this state can not be
 recovered and the only option available is to delete them from the database.
 
-.. figure:: /_static/images/social-admin/moderation-trash.png
+.. figure:: /_static/images/social-admin/moderation-trash.webp
   :align: center
   :alt: Crafter Social trash
 

@@ -37,7 +37,7 @@ Below is an example of where we would add ``crossOrigin="use-credentials"`` in t
 
 Open the **Sidebar** then navigate to ``static-assets/app``, then right click on ``index.html`` and select ``Edit``
 
-.. image:: /_static/images/guides/pwa/edit-manifest-tag.png
+.. image:: /_static/images/guides/pwa/edit-manifest-tag.webp
    :alt: Web App Manifest - Open "index.html"
    :width: 40 %
    :align: center

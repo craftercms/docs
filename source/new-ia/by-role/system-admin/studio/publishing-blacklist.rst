@@ -55,7 +55,7 @@ Save your changes and restart Studio.
 
 Upload an image under ``/static-assets/images/mytempimages``
 
-.. image:: /_static/images/system-admin/studio/publishing-blacklist-example.png
+.. image:: /_static/images/system-admin/studio/publishing-blacklist-example.webp
    :alt: System Administrator - Publishing blacklist example file uploaded that will not be published"
    :width: 30 %
    :align: center
@@ -64,7 +64,7 @@ Publish the uploaded image by right-clicking on the image, then select **Approve
 
 After publishing, open the **Sidebar** again and navigate to ``/static-assets/images/mytempimages``.  Notice that your file has been marked published.
 
-.. image:: /_static/images/system-admin/studio/publishing-blacklist-example-published.png
+.. image:: /_static/images/system-admin/studio/publishing-blacklist-example-published.webp
    :alt: System Administrator - Publishing blacklist example file published"
    :width: 45 %
    :align: center

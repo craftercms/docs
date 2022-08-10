@@ -17,13 +17,13 @@ Every user logged in to CrafterCMS can change their own password.
 
 #. To change your own password, click on **<User Name>** at the top right of Studio, then select **Settings**
 
-   .. image:: /_static/images/users/your-passwd-open.png
+   .. image:: /_static/images/users/your-passwd-open.webp
        :alt: Users - Open Dialog with User Name
        :align: center
 
 #. In the **Change Password** section of the dialog, enter your current password in the **Current Password** field.
 
-   .. image:: /_static/images/users/your-passwd-change.png
+   .. image:: /_static/images/users/your-passwd-change.webp
        :alt: Users - User Settings Dialog to Change Password
        :align: center
 
@@ -31,7 +31,7 @@ Every user logged in to CrafterCMS can change their own password.
 #. Re-enter the new password into the **Confirm Password** field.
 #. Click on the **Submit** button.  A notification will appear that the profile has been updated.
 
-   .. image:: /_static/images/users/change-passwd-notification.png
+   .. image:: /_static/images/users/change-passwd-notification.webp
        :alt: Users - Password Change Notification
        :width: 50%
        :align: center

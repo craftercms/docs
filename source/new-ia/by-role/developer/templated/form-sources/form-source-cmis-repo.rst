@@ -14,7 +14,7 @@
 CMIS Repository Data Source
 ===========================
 
-.. image:: /_static/images/form-sources/form-source-cmis-repo.png
+.. image:: /_static/images/form-sources/form-source-cmis-repo.webp
     :width: 30%
     :alt: Source Control CMIS Repository
     :align: center
@@ -25,7 +25,7 @@ CMIS Repository Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-cmis-repo-conf.png
+.. image:: /_static/images/form-sources/form-source-cmis-repo-conf.webp
     :width: 50%
     :alt: Source Control CMIS Repository Configuration
     :align: center

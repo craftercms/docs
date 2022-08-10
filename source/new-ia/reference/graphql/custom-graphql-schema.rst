@@ -405,14 +405,14 @@ The following example shows how to customize the schema to integrate a service w
     
     For movies the ``Production`` field is returned:
     
-    .. image:: /_static/images/developer/graphql/custom/movies.png
+    .. image:: /_static/images/developer/graphql/custom/movies.webp
       :width: 90%
       :alt: GraphQL OMDb query returning movies
       :align: center
 
     For series the ``totalSeasons`` is returned:
 
-    .. image:: /_static/images/developer/graphql/custom/series.png
+    .. image:: /_static/images/developer/graphql/custom/series.webp
       :width: 90%
       :alt: GraphQL OMDb query returning series
       :align: center

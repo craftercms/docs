@@ -14,7 +14,7 @@
 Video Upload then Transcode from S3 using MediaConvert Data Source
 ==================================================================
 
-.. image:: /_static/images/form-sources/form-source-s3-transcode.png
+.. image:: /_static/images/form-sources/form-source-s3-transcode.webp
     :width: 30%
     :alt: Source Control Video Transcoding from S3 Repository
     :align: center
@@ -25,7 +25,7 @@ Video Upload then Transcode from S3 using MediaConvert Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-s3-transcode-conf.png
+.. image:: /_static/images/form-sources/form-source-s3-transcode-conf.webp
     :width: 50%
     :alt: Source Control Video Transcoding from S3 Repository Properties
     :align: center

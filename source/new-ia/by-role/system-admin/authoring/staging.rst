@@ -11,7 +11,7 @@ CrafterCMS supports an intermediate publishing target, named ``staging``, where 
 
 When staging is setup, the **Request Publish** and **Approve for Publish** dialogs gives the user the option to select to which publishing target to publish to:
 
-.. image:: /_static/images/system-admin/staging-publish-option.jpg
+.. image:: /_static/images/system-admin/staging-publish-option.webp
     :width: 75 %
     :align: center
     :alt: System Administrator - Staging Setup for Publish dialogs
@@ -20,7 +20,7 @@ When staging is setup, the **Request Publish** and **Approve for Publish** dialo
 
 Users with access to the following widgets in the dashboard will see a column named **Publishing Target** indicating which publishing target an item has been/would be published to: ``Items Waiting For Approval``, ``Approved Scheduled Items`` and ``Recently Published``
 
-.. image:: /_static/images/system-admin/staging-dashboard.png
+.. image:: /_static/images/system-admin/staging-dashboard.webp
     :width: 75 %
     :align: center
     :alt: System Administrator - Dashboard

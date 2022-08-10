@@ -13,7 +13,7 @@ Blob Stores Configuration
 The Blob Stores configuration file allows you to configure 0 or more stores for assets with the corresponding information required by the store being used.
 To modify the Blob Stores configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Blob Stores** from the list.
 
-.. image:: /_static/images/site-admin/config-open-blob-stores.jpg
+.. image:: /_static/images/site-admin/config-open-blob-stores.webp
     :alt: Configurations - Open Blob Stores Configuration
     :width: 65 %
     :align: center

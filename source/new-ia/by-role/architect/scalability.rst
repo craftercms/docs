@@ -47,7 +47,7 @@ The authoring clusters are typically deployed closest to the content authors, wh
 across geographies where you have end-users. Delivery nodes can pull content from an arbitrary number of authoring
 nodes, and are typically deployed in geographies where your end-users are.
 
-.. image:: /_static/images/architecture/global-delivery.jpg
+.. image:: /_static/images/architecture/global-delivery.webp
     :width: 100%
     :alt: CrafterCMS Geo Distributed Deployment
     :align: center

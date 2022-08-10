@@ -218,10 +218,10 @@ rst_epilog = """
 .. |checkmark| unicode:: U+2713
 .. |ex| unicode:: U+2718
 
-.. |projectTools| image:: /_static/images/configuration-project-tools-icon.png
+.. |projectTools| image:: /_static/images/configuration-project-tools-icon.webp
                    :width: 14%
 
-.. |mainMenu| image:: /_static/images/main-menu-button.png
+.. |mainMenu| image:: /_static/images/main-menu-button.webp
                    :width: 3%
 
 .. |enterpriseOnly| image:: /_static/images/ee-only-badge.svg

@@ -19,13 +19,13 @@ There are times when a file/item in your project gets in a state that you would 
 
 To manually set the workflow state of a file in your project, find the file/s you'd like to change the workflow state and put a checkmark on the box next to it.  Towards the top of your browser, click on **Edit**
 
-.. image:: /_static/images/site-admin/project-tools-workflow-states.jpg
+.. image:: /_static/images/site-admin/project-tools-workflow-states.webp
     :alt: Site Admin - Project Tools Set Workflow States
     :align: center
 
 A dialog will launch prompting you to set the state for your selection, by clicking on the slider next to the state you want to set, then click on the ``Confirm`` button
 
-.. image:: /_static/images/site-admin/project-config-select-state-dialog.png
+.. image:: /_static/images/site-admin/project-config-select-state-dialog.webp
     :alt: Site Admin - Project Tools Select Workflow State Dialog
     :width: 70%
     :align: center

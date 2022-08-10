@@ -12,7 +12,7 @@ Crafter Studio Toolbar Plugin Example
 The toolbar is a fixed element at the top of Studio.  It provides contextual workflow and other options relative to the page you are looking at, content you have selected or tool you are using.
 
 
-.. image:: /_static/images/developer/plugins/project-plugins/studio-toolbar.png
+.. image:: /_static/images/developer/plugins/project-plugins/studio-toolbar.webp
    :align: center
    :alt: Studio Toolbar
    :width: 80%
@@ -92,7 +92,7 @@ Let's take a look at an example of creating a toolbar plugin in Studio using a p
 
 #. After placing your plugin files and setting up auto-wiring, the project plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
-   .. image:: /_static/images/developer/plugins/project-plugins/toolbar-plugin-files.png
+   .. image:: /_static/images/developer/plugins/project-plugins/toolbar-plugin-files.webp
       :align: center
       :alt: Toolbar project plugin directory/files
       :width: 80%
@@ -109,7 +109,7 @@ Let's take a look at an example of creating a toolbar plugin in Studio using a p
 
 #. Let's take a look at our plugin in action by refreshing your browser:
 
-   .. image:: /_static/images/developer/plugins/project-plugins/toolbar-plugin-in-action.png
+   .. image:: /_static/images/developer/plugins/project-plugins/toolbar-plugin-in-action.webp
       :align: center
       :alt: Toolbar project plugin in action
       :width: 100%

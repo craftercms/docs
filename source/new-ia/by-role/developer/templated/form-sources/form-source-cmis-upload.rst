@@ -14,7 +14,7 @@
 CMIS File Upload Data Source
 ============================
 
-.. image:: /_static/images/form-sources/form-source-cmis-upload.png
+.. image:: /_static/images/form-sources/form-source-cmis-upload.webp
     :width: 30%
     :alt: Source Control CMIS File Upload
     :align: center
@@ -25,7 +25,7 @@ CMIS File Upload Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-cmis-upload-conf.png
+.. image:: /_static/images/form-sources/form-source-cmis-upload-conf.webp
     :width: 50%
     :alt: Source Control CMIS File Upload Configuration
     :align: center

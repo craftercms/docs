@@ -91,7 +91,7 @@ This can be done from the Studio project dashboard with the following steps:
 
 1. Go to Studio's project dashboard via the Navigation Menu on the top right or via the Sidebar
 
-.. image:: /_static/images/content-author/project-dashboard-sidebar.jpg
+.. image:: /_static/images/content-author/project-dashboard-sidebar.webp
     :width: 65 %
     :align: center
     :alt: Studio - Project Dashboard from Sidebar
@@ -99,28 +99,28 @@ This can be done from the Studio project dashboard with the following steps:
 2. Locate the ``My Recent Activity`` dashlet and change the filter to ``All`` to display the
 configuration files
 
-.. image:: /_static/images/site-admin/mongo/my-recent-activity.png
+.. image:: /_static/images/site-admin/mongo/my-recent-activity.webp
    :alt: Studio Project Dashboard - My Recent Activity
    :width: 70 %
    :align: center
 
 3. Select all configuration files updated in the previous sections
 
-.. image:: /_static/images/site-admin/mongo/my-recent-activity-config.png
+.. image:: /_static/images/site-admin/mongo/my-recent-activity-config.webp
    :alt: Studio Project Dashboard - My Recent Activity
    :width: 70 %
    :align: center
 
 4. Click ``Publish`` from the contextual menu
 
-.. image:: /_static/images/site-admin/mongo/approve-and-publish-context-menu.png
+.. image:: /_static/images/site-admin/mongo/approve-and-publish-context-menu.webp
    :alt: Studio Project Dashboard - Contextual Menu
    :width: 70 %
    :align: center
 
 5. Click ``Publish`` to close the publish dialog
 
-.. image:: /_static/images/site-admin/mongo/publish-dialog.png
+.. image:: /_static/images/site-admin/mongo/publish-dialog.webp
    :alt: Studio Project Dashboard - Publish Dialog
    :width: 70 %
    :align: center

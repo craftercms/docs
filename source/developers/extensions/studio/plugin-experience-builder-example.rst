@@ -12,7 +12,7 @@ The Experience Builder panel is the panel on the right of Studio that is enabled
 ``Edit mode`` (pencil icon) or ``Move mode`` (two vertical ellipsis icon) on the top right of
 Studio or, by hitting the ``e`` or ``m`` key on your keyboard
 
-.. image:: /_static/images/developer/plugins/project-plugins/experience-builder-panel.jpg
+.. image:: /_static/images/developer/plugins/project-plugins/experience-builder-panel.webp
    :align: center
    :alt: Experience Builder Panel
    :width: 80%
@@ -96,7 +96,7 @@ a project called ``My Editorial`` created using the **Website Editorial** bluepr
 
 #. After placing your plugin files and setting up auto-wiring, the project plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
-   .. image:: /_static/images/developer/plugins/project-plugins/experiencebuilder-plugin-files.png
+   .. image:: /_static/images/developer/plugins/project-plugins/experiencebuilder-plugin-files.webp
       :align: center
       :alt: Experience Builder project plugin directory/files
       :width: 80%
@@ -113,7 +113,7 @@ a project called ``My Editorial`` created using the **Website Editorial** bluepr
 
 #. Let's take a look at our plugin in action by clicking on the pencil icon at the top right of your browser to open the experience builder panel
 
-   .. image:: /_static/images/developer/plugins/project-plugins/experiencebuilder-plugin-in-action.png
+   .. image:: /_static/images/developer/plugins/project-plugins/experiencebuilder-plugin-in-action.webp
       :align: center
       :alt: Experience Builder project plugin in action
       :width: 30%

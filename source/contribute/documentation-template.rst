@@ -130,7 +130,7 @@ We recommend uploaded images be no wider than 1280px.
 
 .. code-block:: rst
 
-	.. image:: /_static/images/admin-console-link.png
+	.. image:: /_static/images/admin-console-link.webp
 	        :width: 25%
 	        :alt: Admin Console Link
 	        :align: center
@@ -140,7 +140,7 @@ Figure
 
 .. code-block:: rst
 
-	.. figure:: /_static/images/create-content-type-3.png
+	.. figure:: /_static/images/create-content-type-3.webp
 	        :alt: Properties Explorer
 	        :align: center
 

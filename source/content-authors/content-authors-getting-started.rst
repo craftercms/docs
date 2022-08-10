@@ -43,7 +43,7 @@ To log in to Crafter Studio:
     * Enter your password
     * Click "Log In"
 
-.. image:: /_static/images/content-author/login-screen-full.jpg
+.. image:: /_static/images/content-author/login-screen-full.webp
     :alt: Getting Started - Login Screen
     :width: 85 %
     :align: center

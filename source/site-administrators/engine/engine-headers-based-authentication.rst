@@ -237,7 +237,7 @@ authentication in action in delivery.
 Now, try viewing the Home page without the header attributes required, by entering in your browser
 ``localhost:9080?crafterSite=my-editorial``.  The Home page will not be displayed without the required header attributes.
 
-.. image:: /_static/images/site-admin/engine-headers-delivery-not-sent.png
+.. image:: /_static/images/site-admin/engine-headers-delivery-not-sent.webp
    :align: center
    :width: 75%
    :alt: Website Editorial Home Page view without the headers sent
@@ -252,7 +252,7 @@ This time, try viewing the Home page with the following header attributes and va
 
 You should now see the Home page displayed
 
-.. image:: /_static/images/site-admin/engine-headers-delivery-sent.jpg
+.. image:: /_static/images/site-admin/engine-headers-delivery-sent.webp
    :align: center
    :width: 75%
    :alt: Website Editorial Home Page view with the headers sent
@@ -330,7 +330,7 @@ is not available and will display the following message: ``The user doesn't have
 In our example below, we tried previewing the article ``Top Books For Young Women`` with the headers listed above and
 is shown the message below:
 
-.. image:: /_static/images/site-admin/engine-headers-no-role.jpg
+.. image:: /_static/images/site-admin/engine-headers-no-role.webp
    :align: center
    :width: 75%
    :alt: Website Editorial Article Page view without the proper role for the user
@@ -347,7 +347,7 @@ Let's now try sending the headers again, but this time with the role ``APP_USER`
 
 Notice that this time, we are able to preview the article correctly
 
-.. image:: /_static/images/site-admin/engine-headers-w-role.jpg
+.. image:: /_static/images/site-admin/engine-headers-w-role.webp
    :align: center
    :width: 75%
    :alt: Website Editorial Article Page view without the proper role for the user
@@ -394,7 +394,7 @@ Note that when sending the attribute ``APP_FULL_NAME`` in the header, the header
 
 When we preview a page, the value in the custom header is displayed:
 
-.. image:: /_static/images/site-admin/engine-headers-APP-USER-NAME-displayed.jpg
+.. image:: /_static/images/site-admin/engine-headers-APP-USER-NAME-displayed.webp
    :align: center
    :width: 75%
    :alt: Website Editorial Article Page view with the value of APP_USER_NAME displayed

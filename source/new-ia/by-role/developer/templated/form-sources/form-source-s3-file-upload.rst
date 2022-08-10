@@ -14,7 +14,7 @@
 S3 File Upload Data Source
 ==========================
 
-.. image:: /_static/images/form-sources/form-source-s3-file-upload-repo.png
+.. image:: /_static/images/form-sources/form-source-s3-file-upload-repo.webp
     :width: 30%
     :alt: Source Control File Upload S3
     :align: center
@@ -25,7 +25,7 @@ S3 File Upload Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-webdav-conf.png
+.. image:: /_static/images/form-sources/form-source-webdav-conf.webp
     :width: 50%
     :alt: Source Control S3 Repository Configuration
     :align: center

@@ -32,7 +32,7 @@ The **Status** section allows the user to view the publishing status, such as th
 
 It also allows the user to **Start** or **Stop** Studio publishing
 
-.. image:: /_static/images/site-admin/project-tools-publish-status.png
+.. image:: /_static/images/site-admin/project-tools-publish-status.webp
     :alt: Project Tools Publishing - Status
 	:align: center
 
@@ -40,7 +40,7 @@ It also allows the user to **Start** or **Stop** Studio publishing
 
 Publishing is locked when content is being published.  From the Status tab, you can unlock publishing by clicking on the ``unlock`` button that is displayed during content publishing.
 
-.. image:: /_static/images/site-admin/project-tools-unlock-publish.png
+.. image:: /_static/images/site-admin/project-tools-unlock-publish.webp
     :alt: Project Tools Publishing - Unlock icon
  	:align: center
 
@@ -48,7 +48,7 @@ Publishing is locked when content is being published.  From the Status tab, you 
 
 After clicking on the ``unlock`` button, the user will be prompted to confirm the action:
 
-.. image:: /_static/images/site-admin/project-tools-unlock-publish-confirm.png
+.. image:: /_static/images/site-admin/project-tools-unlock-publish-confirm.webp
     :alt: Project Tools Publishing - Unlock icon
     :width: 50%
     :align: center
@@ -62,7 +62,7 @@ Publish on demand
 The **Publish on Demand** section allows the user to publish changes made in Studio via the UI and
 to publish commits from sandbox repository by commit id.
 
-.. image:: /_static/images/site-admin/project-tools-publish-on-demand.png
+.. image:: /_static/images/site-admin/project-tools-publish-on-demand.webp
     :alt: Project Tools Publishing - Publish on Demand
 	:align: center
 
@@ -75,7 +75,7 @@ The **Publish changes made in Studio via the UI** selection allows the user to p
 
 For example, using the Website Editorial blueprint, to publish all the articles in the year 2021, in the **Path to Publish** field, enter ``/site/website/articles/2021``.  To publish everything in your project, the user will enter ``/`` in the **Path to Publish** field
 
-.. image:: /_static/images/site-admin/project-tools-publish-bulk.png
+.. image:: /_static/images/site-admin/project-tools-publish-bulk.webp
     :alt: Project Tools Publishing - Publish changes made in Studio via the UI
 	:align: center
 
@@ -86,7 +86,7 @@ Publish by Commit/tag ID(s)
 
 The **Publish changes made via direct git actions against the repository or pulled from a remote repository** allows the user to publish by tags or commits ids
 
-.. image:: /_static/images/site-admin/project-tools-publish-commit-id.png
+.. image:: /_static/images/site-admin/project-tools-publish-commit-id.webp
     :alt: Project Tools Publishing - Publish by Commit ID(s)
 	:align: center
 
@@ -137,7 +137,7 @@ Publishing Queue
 
 The **Publishing Queue** tab allows the user to see the items(publishing packages) that are in the queue for publishing.
 
-.. image:: /_static/images/site-admin/project-tools-publish-queue.png
+.. image:: /_static/images/site-admin/project-tools-publish-queue.webp
     :alt: Project Tools Publishing - Publishing Queue
 	:align: center
 
@@ -157,7 +157,7 @@ The **Publishing Queue** tab allows the user to see the items(publishing package
     * The ``content path``
 
 
-.. image:: /_static/images/site-admin/project-tools-publishing-package.png
+.. image:: /_static/images/site-admin/project-tools-publishing-package.webp
     :alt: Project Tools Publishing - Publishing Package
 	:align: center
 
@@ -179,7 +179,7 @@ You can filter the publishing queue displayed, based on the following:
     * **Blocked**: Item is blocking the publishing queue
 
 
-.. image:: /_static/images/site-admin/project-tools-publish-queue-filter.png
+.. image:: /_static/images/site-admin/project-tools-publish-queue-filter.webp
     :alt: Project Tools Publishing - Publishing Queue Filters
     :width: 35 %
     :align: center
@@ -190,7 +190,7 @@ Filtering shows packages where one or more items in the package match.  The defa
 
 Below, we have the filter set to display items in the ``COMPLETED`` state
 
-.. image:: /_static/images/site-admin/project-tools-publish-queue-filter-completed.png
+.. image:: /_static/images/site-admin/project-tools-publish-queue-filter-completed.webp
     :alt: Project Tools Publishing - Publishing Queue Filter Completed
     :align: center
 
@@ -198,7 +198,7 @@ Below, we have the filter set to display items in the ``COMPLETED`` state
 
 Packages in the ``READY_FOR_LIVE`` state can be selected and the publishing package cancelled.  In the image below, we have two publishing packages selected with the ``Cancel Selected`` button clicked and confirming if the user wants to set the state of the selected publishing packages to state ``CANCELLED``
 
-.. image:: /_static/images/site-admin/project-tools-publish-queue-filter-cancel.png
+.. image:: /_static/images/site-admin/project-tools-publish-queue-filter-cancel.webp
     :alt: Project Tools Publishing - Publishing Queue Filter Completed
     :align: center
 

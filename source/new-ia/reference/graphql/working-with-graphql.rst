@@ -50,14 +50,14 @@ documentation for a site without the need of any other tool. To access GraphiQL 
 
 To explore the GraphQL schema you can click the ``Docs`` icon on the right side:
 
-.. image:: /_static/images/developer/graphql/graphql.png
+.. image:: /_static/images/developer/graphql/graphql.webp
         :width: 75%
         :alt: GraphiQL
         :align: center
 
 GraphiQL provides a convenient search navigation to quickly find a specific type or field:
 
-.. image:: /_static/images/developer/graphql/graphiql-doc.png
+.. image:: /_static/images/developer/graphql/graphiql-doc.webp
         :width: 75%
         :alt: GraphiQL Schema Documentation Explorer
         :align: center
@@ -65,7 +65,7 @@ GraphiQL provides a convenient search navigation to quickly find a specific type
 To test GraphQL queries type them in the left text editor, GraphiQL will provide suggestions and validate the query
 against the schema in real time.
 
-.. image:: /_static/images/developer/graphql/graphiql-query.png
+.. image:: /_static/images/developer/graphql/graphiql-query.webp
         :width: 75%
         :alt: GraphiQL Query Editor
         :align: center

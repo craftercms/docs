@@ -14,7 +14,7 @@
 Video from Repository Data Source
 =================================
 
-.. image:: /_static/images/form-sources/form-source-video-repo.png
+.. image:: /_static/images/form-sources/form-source-video-repo.webp
     :width: 50%
     :alt: Source Control Video From Repository
     :align: center
@@ -25,7 +25,7 @@ Video from Repository Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-video-repo-conf.png
+.. image:: /_static/images/form-sources/form-source-video-repo-conf.webp
     :width: 50%
     :alt: Source Control Video From Repository Configuration
     :align: center

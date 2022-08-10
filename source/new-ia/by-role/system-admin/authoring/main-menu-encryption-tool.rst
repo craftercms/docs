@@ -34,7 +34,7 @@ Crafter Studio uses a default key and salt for the encryption tool.  To set the 
 
 To access the Studio encryption tool, from the top right of your browser, click on the ``Main Menu`` icon |mainMenu|, then click on ``Encryption Tool`` from the ``Main Menu`` sidebar.
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-encryption-tool.png
+.. image:: /_static/images/system-admin/main-menu/main-menu-encryption-tool.webp
     :alt: System Administrator - Main Menu Encryption Tool
     :align: center
     :width: 100%
@@ -84,14 +84,14 @@ Let's begin:
    * To encrypt the ``studio.mail.password``, click on |mainMenu|, then click on ``Encryption Tool``
    * Enter the password in the ``Raw Text`` field
 
-     .. image:: /_static/images/system-admin/main-menu/main-menu-encryption-tool-raw-text.png
+     .. image:: /_static/images/system-admin/main-menu/main-menu-encryption-tool-raw-text.webp
         :alt: System Administrator - Main Menu Encryption Tool Enter Raw Text
         :align: center
         :width: 100%
 
    * Click on the ``Encrypt Text`` button.  The encrypted text will be displayed below the ``Raw Text`` field and copied onto the clipboard
 
-     .. image:: /_static/images/system-admin/main-menu/main-menu-encryption-text-encrypted.png
+     .. image:: /_static/images/system-admin/main-menu/main-menu-encryption-text-encrypted.webp
         :alt: System Administrator - Main Menu Encryption Tool Text Encrypted
         :align: center
         :width: 100%

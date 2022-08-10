@@ -17,7 +17,7 @@ Step 1: Launch an AWS EC2 instance using a CrafterCMS Authoring AMI
 
 Crafter provides a prebuilt AMI(s) for Crafter Studio, the authoring component of CrafterCMS. In this step we'll walk you through the initial launch of your instance. To get started, go to your EC2 dashboard and click ``Launch Instance`` AWS will prompt you to choose your AMI type/image.
 
-.. image:: /_static/images/ami/craftercms-aws-ami-authoring-launch-instance.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-launch-instance.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Authoring Launch Instance
@@ -29,7 +29,7 @@ You can find CrafterCMS Authoring by entering the keywords ``CrafterCMS Authorin
 
 Click ``Select`` on the AMI type you want to use and then follow the launch instance/configuration wizard to determine the sizing and networking details for your instance. Please note, we recommend compute optimized / "C-class" machines for best results with typical production use.
 
-.. image:: /_static/images/ami/craftercms-aws-ami-authoring-choose-ami.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-choose-ami.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Authoring Choose AMI
@@ -39,28 +39,28 @@ The launch instance wizard gives you the ability to tweak your instance's config
 
 To add the rule for SSH, click the ``Inbound traffic`` tab and then ``Add Rule`` to configure SSH. You can restrict the inbound traffic for SSH in the source column. To allow SSH from anywhere you can enter a CIDR of 0.0.0.0/0. Use the ports and IP masks/policies that align with your needs.
 
-.. image:: /_static/images/ami/craftercms-aws-ami-authoring-configure-security-group.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-configure-security-group.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Authoring Configure Security Group
 
 Once you have added SSH access and made any other tweaks you feel are necessary to your instance's configuration, click the ``Review`` tab and then click the ``Launch`` button.
 
-.. image:: /_static/images/ami/craftercms-aws-ami-authoring-review1.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-review1.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Authoring Review
 
 After clicking ``Launch``, AWS will request that you **select a public key for administrative console access to the machine**. You will need access to this key in the next step in order to retrieve the administrator's password for Crafter Studio. Create or choose an existing key and click ``Launch Instances``
 
-.. image:: /_static/images/ami/craftercms-aws-ami-authoring-launch-2.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-launch-2.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Authoring Launch
 
 Once you click ``Launch instances`` AWS will start and initialize the instance. This may take a minute or two.
 
-.. image:: /_static/images/ami/craftercms-aws-ami-authoring-initializing1.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-initializing1.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Authoring Initializing
@@ -73,14 +73,14 @@ In this step we want to prove that the application is up and running now that ou
 
 To access the login screen open a web browser and navigate to http://DNS_NAME_OR_IP_ADDRESS/studio.
 
-.. image:: /_static/images/ami/craftercms-aws-ami-authoring-login.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-login.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Authoring Login
 
 You can find the IP address and/or DNS name in several locations on your AWS administration console shown here:
 
-.. image:: /_static/images/ami/craftercms-aws-ami-authoring-public-ip-and-dns.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-public-ip-and-dns.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Authoring Public IP and DNS
@@ -98,7 +98,7 @@ To acquire the initial password you must log in to the instance via SSH. Open a 
 
     ssh -i ./PATH/TO/PEM/keys.pem ubuntu@IP-ADDRESS
 
-.. image:: /_static/images/ami/craftercms-aws-ami-authoring-ssh.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-ssh.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Authoring SSH
@@ -118,7 +118,7 @@ Once logged in you will execute a simple script to acquire the password. To do s
 
 The password will print out in the console. Copy this password into your clipboard and proceed to the next step.
 
-.. image:: /_static/images/ami/craftercms-aws-ami-authoring-get-admin-password1.png
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-get-admin-password1.webp
     :width: 65 %
     :align: center
     :alt: CrafterCMS AWS AMI Authoring Get Admin Password
@@ -131,7 +131,7 @@ Now that we have the randomly generated admin password for Crafter Studio we can
 
 In your web browser, navigate to http://DNS_NAME/studio and then enter admin as the Email/Username, paste the password you acquired from Step 3 then click "Sign In."
 
-.. image:: /_static/images/ami/craftercms-aws-ami-authoring-login.jpg
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-login.webp
     :width: 100 %
     :align: center
     :alt: CrafterCMS AWS AMI Authoring Login

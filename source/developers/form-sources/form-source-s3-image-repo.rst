@@ -14,7 +14,7 @@
 Image from S3 Repository Data Source
 ====================================
 
-.. image:: /_static/images/form-sources/form-source-s3-image-repo.png
+.. image:: /_static/images/form-sources/form-source-s3-image-repo.webp
     :width: 30%
     :alt: Source Control Image From S3 Repository
     :align: center
@@ -25,7 +25,7 @@ Image from S3 Repository Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-webdav-conf.png
+.. image:: /_static/images/form-sources/form-source-webdav-conf.webp
     :width: 50%
     :alt: Source Control Image From S3 Repository Configuration
     :align: center

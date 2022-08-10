@@ -117,7 +117,7 @@ Another way of checking the status of the deployments/pods/etc. is by running ``
 
    |
 
-.. image:: /_static/images/system-admin/simple-authoring-k9s-start.jpg
+.. image:: /_static/images/system-admin/simple-authoring-k9s-start.webp
    :alt: CrafterCMS Simple Authoring with Single Instance Kubernetes Deployment
    :width: 100%
    :align: center
@@ -136,7 +136,7 @@ For example: ``kubectl logs -f -c tomcat authoring-0``
 
 To view the logs in a pod using k9s, from the ``Pods`` view, select the pod you would like to view the logs of using your keyboard arrow keys, then hit enter to view the containers in the pod.
 
-.. image:: /_static/images/system-admin/simple-authoring-k9s-containers.jpg
+.. image:: /_static/images/system-admin/simple-authoring-k9s-containers.webp
    :alt: Simple Authoring with a Single Instance using Kubernetes deployments - k9s container views
    :width: 100%
    :align: center
@@ -145,7 +145,7 @@ To view the logs in a pod using k9s, from the ``Pods`` view, select the pod you 
 
 We'll take a look at the tomcat logs, so, we'll move the cursor to the ``tomcat`` container, then press the letter ``l``.
 
-.. image:: /_static/images/system-admin/simple-authoring-k9s-logs.jpg
+.. image:: /_static/images/system-admin/simple-authoring-k9s-logs.webp
    :alt: Simple Authoring with a Single Instance using Kubernetes deployments - k9s log views
    :width: 100%
    :align: center
@@ -174,7 +174,7 @@ Here's an example forwarding local port 8080 to the tomcat in the ``authoring-0`
 
 To forward a local port to the tomcat port in a pod using k9s, from the ``Pods`` view, select the pod you would like to port forward to using your keyboard arrow keys, then hit enter to view the containers in the pod.  We'll forward the local port to the tomcat port, so, we'll move the cursor to the ``tomcat`` container, then press ``<shift> + f``.  A dialog  will then open where you can enter the desired local port and address to use for port forwarding
 
-.. image:: /_static/images/system-admin/simple-authoring-k9s-port-forward-dialog.jpg
+.. image:: /_static/images/system-admin/simple-authoring-k9s-port-forward-dialog.webp
    :alt: Simple Authoring with a single instance using Kubernetes deployments - k9s port forward
    :width: 100%
    :align: center
@@ -186,7 +186,7 @@ Change the value of ``Local Port`` to your desired value.  For our example, we'r
 
 We can now access Studio from the pod using ``localhost:8080/studio`` in your browser and create a site.
 
-.. image:: /_static/images/system-admin/simple-authoring-k9s-port-forwarded-8080.jpg
+.. image:: /_static/images/system-admin/simple-authoring-k9s-port-forwarded-8080.webp
    :alt: Simple Authoring with a single instance using Kubernetes deployments - k9s port forward of local port 8080
    :width: 100%
    :align: center

@@ -60,7 +60,7 @@ How to Configure Content Monitoring
 Content monitoring can be configured through Crafter Studio.  Go to the **Sidebar**, then click on
 **Project Tools** > **Configuration** > **Project Configuration**
 
-.. image:: /_static/images/site-admin/config-open-project-config.jpg
+.. image:: /_static/images/site-admin/config-open-project-config.webp
     :align: center
     :alt: Configuration - Open "Project Configuration"
 
@@ -117,7 +117,7 @@ Notification Templates Configuration
 Notification templates can be configured through Crafter Studio.  Go to the **Sidebar**, then click
 on |projectTools| > **Configuration** > **Notification Configuration**
 
-.. figure:: /_static/images/site-admin/notification-config-open.jpg
+.. figure:: /_static/images/site-admin/notification-config-open.webp
   :align: center
   :width: 50%
   :alt: Configuration - Open "Notification Configuration"
@@ -190,7 +190,7 @@ Each item will have the following properties:
 - internalName
 - url (only present if the item is a page)
 
-.. figure:: /_static/images/site-admin/expired-content-email.png
+.. figure:: /_static/images/site-admin/expired-content-email.webp
   :align: center
   :alt: Example Content Monitor Notification Email
 
@@ -295,7 +295,7 @@ We need to setup the ``expired_dt`` field for the content types that we want mon
 
 Open the ``Sidebar`` then click on ``Project Tools`` -> ``Content Types``.  Select the ``Article`` content type.  Drag a ``Date/Time`` control into the  ``Page Properties`` form section.  Set the ``Title`` to ``Expire Date`` and the ``Name/Variable Name`` to ``expired_dt``.  Save your changes.
 
-.. figure:: /_static/images/site-admin/content-mon-add-field-exp.png
+.. figure:: /_static/images/site-admin/content-mon-add-field-exp.webp
    :align: center
    :alt: Content Monitoring - Add "expired_dt" field to content type
 
@@ -303,7 +303,7 @@ Open the ``Sidebar`` then click on ``Project Tools`` -> ``Content Types``.  Sele
 
 We have a monitor for content expiring tomorrow as shown above.  We'll set one of the articles to expire the next day.  For our example. we'll set the ``Expire Date`` of the article *Top Books For Young Women*
 
-.. figure:: /_static/images/site-admin/content-mon-update-article-exp.png
+.. figure:: /_static/images/site-admin/content-mon-update-article-exp.webp
    :align: center
    :alt: Content Monitoring - Set article to expire the next day
 

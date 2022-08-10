@@ -16,7 +16,7 @@ In this section we'll cover the specific mechanics of facilitating this process 
 
 For the sake of review below is the diagram that illustrates the full workflow.
 
-.. image:: /_static/images/developer/workflow/full-gitflow-workflow.png
+.. image:: /_static/images/developer/workflow/full-gitflow-workflow.webp
      :alt: Developer Workflow - Full Development Workflow
      :width: 80 %
      :align: center

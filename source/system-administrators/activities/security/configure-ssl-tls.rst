@@ -115,14 +115,14 @@ To test your CrafterCMS authoring, open your browser and type in:
 
 Since we are using a self-signed certificate, you'll get a message similar to this depending on your browser:
 
-.. figure:: /_static/images/system-admin/ssl-connection-not-private.png
+.. figure:: /_static/images/system-admin/ssl-connection-not-private.webp
     :alt: Connection not private message using a self signed certificate
     :width: 80 %
     :align: center
 
 From the above screen, just click on ``Advanced``, then allow it to proceed to ``localhost::8443``, and you will then be taken to the login screen of Crafter Studio
 
-.. figure:: /_static/images/system-admin/ssl-login-not-secure.png
+.. figure:: /_static/images/system-admin/ssl-login-not-secure.webp
     :alt: Connection not private message using a self signed certificate
     :width: 90 %
     :align: center

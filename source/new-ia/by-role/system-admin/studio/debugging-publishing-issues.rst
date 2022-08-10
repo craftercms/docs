@@ -16,7 +16,7 @@ Inspect Publishing Queue
 
 The publishing queue (items that are in the queue for publishing) can be viewed through Studio from |projectTools| -> ``Publishing``, then scroll down to the ``Publishing Queue``.  Here, the user can narrow down the queue for inspection by specifying filters.  For more information see :ref:`newIa-publishing-queue`
 
-.. image:: /_static/images/site-admin/project-tools-publishing-queue-all.png
+.. image:: /_static/images/site-admin/project-tools-publishing-queue-all.webp
     :alt: Debugging Publishing Issues - Inspect Publishing Queue
 	:align: center
 

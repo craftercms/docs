@@ -81,7 +81,7 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a p
 
 #. After placing your plugin files and setting up auto-wiring, the project plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
-   .. image:: /_static/images/developer/plugins/project-plugins/sidebar-plugin-files.png
+   .. image:: /_static/images/developer/plugins/project-plugins/sidebar-plugin-files.webp
       :align: center
       :alt: Sidebar project plugin directory/files
       :width: 70%
@@ -98,7 +98,7 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a p
 
 #. Let's take a look at our plugin in action by clicking on the CrafterCMS logo at the top left of your browser to open the sidebar:
 
-   .. image:: /_static/images/developer/plugins/project-plugins/sidebar-plugin-in-action.png
+   .. image:: /_static/images/developer/plugins/project-plugins/sidebar-plugin-in-action.webp
       :align: center
       :alt: Sidebar project plugin in action
       :width: 30%

@@ -93,7 +93,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
    For our example, the folder ``articles/2020/12`` was copied to ``articles/2021`` with the page under ``articles/2021/12``, modified to display the title as a dupe.  This was done so when we click on the page under ``articles/2020/12``, we can easily tell that it's being redirected to the page under ``articles/2021/12``.  Of course, you can also just look at the url of the page previewed to verify that it was redirected to the right page.
 
-   .. image:: /_static/images/site-admin/env-copy-page-for-urlrewrite.png
+   .. image:: /_static/images/site-admin/env-copy-page-for-urlrewrite.webp
        :align: center
        :width: 35%
        :alt: Folder with page copied from 2020 to 2021
@@ -102,7 +102,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
    Here's the original page:
 
-   .. image:: /_static/images/site-admin/env-original-page.jpg
+   .. image:: /_static/images/site-admin/env-original-page.webp
       :align: center
       :alt: Original page before being redirected
 
@@ -110,7 +110,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
    Here's the page we want to be redirected to when previewing the page above:
 
-   .. image:: /_static/images/site-admin/env-redirect-page.jpg
+   .. image:: /_static/images/site-admin/env-redirect-page.webp
       :align: center
       :alt: Page we want to be redirected to
 
@@ -138,7 +138,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
 #. Restart Crafter.  To verify our newly setup environment, open the ``Sidebar`` and click on |projectTools|, then select ``Configuration``.  Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations drop-down box and when you select the *Engine URL Rewrite Configuration (XML Style)*, it should display the file we created in one of the previous step:
 
-   .. image:: /_static/images/site-admin/env-custom-configurations.jpg
+   .. image:: /_static/images/site-admin/env-custom-configurations.webp
       :align: center
       :alt: Active Environment Displayed in Project Tools Configuration
 
@@ -146,7 +146,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
    Let's verify that our *urlrewrite.xml* is in effect.  From the *Sidebar*, click on *Home* -> *Entertainment* -> *Top Books For Young Women*  or, navigate to */articles/2020/12/* and click on *Top Books For Young Women*.
 
-   .. image:: /_static/images/site-admin/env-preview-page.jpg
+   .. image:: /_static/images/site-admin/env-preview-page.webp
       :align: center
       :alt: Preview the page mentioned in the urlrewrite.xml that will be redirected
 

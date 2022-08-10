@@ -98,7 +98,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
 #. Restart Studio.  To verify our newly setup environment, open the ``Sidebar`` and click on |projectTools|, then select ``Configuration``.  Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations list:
 
-   .. image:: /_static/images/site-admin/env-custom-configurations.jpg
+   .. image:: /_static/images/site-admin/env-custom-configurations.webp
       :align: center
       :alt: Active Environment Displayed in Project Config Configuration
 

@@ -17,7 +17,7 @@ Transcoded Video Control
 -------
 Example
 -------
-.. image:: /_static/images/form-controls/form-control-transcoded-video-example.png
+.. image:: /_static/images/form-controls/form-control-transcoded-video-example.webp
     :width: 80%
     :alt: Form Control Transcoded Video Example
     :align: center
@@ -29,7 +29,7 @@ Example
 -------------
 Configuration
 -------------
-.. image:: /_static/images/form-controls/form-control-transcoded-video.png
+.. image:: /_static/images/form-controls/form-control-transcoded-video.webp
     :width: 40%
     :alt: Form Control Transcoded Video
     :align: center

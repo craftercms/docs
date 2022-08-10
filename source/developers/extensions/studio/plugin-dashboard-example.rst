@@ -11,7 +11,7 @@ Crafter Studio Dashboard Plugin Example
 The project dashboard contains different dashlets that show at a glance all items currently in workflow, all items recently modified by the current user, etc. Dashlets shown vary depending on the user's role.
 For more information on the Dashboard, see :ref:`here <project-dashboard>`
 
-.. image:: /_static/images/content-author/project-dashboard.jpg
+.. image:: /_static/images/content-author/project-dashboard.webp
    :align: center
    :alt: Studio Dashboard
    :width: 80%
@@ -92,7 +92,7 @@ Let's take a look at an example of creating a Dashboard plugin in Studio using a
 
 #. After placing your plugin files and setting up auto-wiring, the project plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
-   .. image:: /_static/images/developer/plugins/project-plugins/dashboard-plugin-files.png
+   .. image:: /_static/images/developer/plugins/project-plugins/dashboard-plugin-files.webp
       :align: center
       :alt: Dashboard project plugin directory/files
       :width: 80%
@@ -109,7 +109,7 @@ Let's take a look at an example of creating a Dashboard plugin in Studio using a
 
 #. Let's take a look at our plugin in action by clicking on the CrafterCMS logo at the top left of your browser to open the sidebar, then click on ``Dashboard``:
 
-   .. image:: /_static/images/developer/plugins/project-plugins/dashboard-plugin-in-action.png
+   .. image:: /_static/images/developer/plugins/project-plugins/dashboard-plugin-in-action.webp
       :align: center
       :alt: Dashboard project plugin in action
 
@@ -117,7 +117,7 @@ Let's take a look at an example of creating a Dashboard plugin in Studio using a
 
    You may also open the Dashboard anywhere via the Launcher, which is opened by clicking the ``apps`` icon on the top right:
 
-   .. image:: /_static/images/developer/plugins/project-plugins/open-dashboard-from-launcher.jpg
+   .. image:: /_static/images/developer/plugins/project-plugins/open-dashboard-from-launcher.webp
       :align: center
       :alt: Open Dashboard from the Launcher
 

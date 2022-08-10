@@ -12,7 +12,7 @@ Proxy Configuration
 The proxy configuration file contains configuration for the preview proxy servers.
 To modify the proxy configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Proxy Config** from the dropdown list.
 
-.. image:: /_static/images/site-admin/config-open-proxy-config.jpg
+.. image:: /_static/images/site-admin/config-open-proxy-config.webp
     :alt: Configurations - Open Proxy Configuration
     :width: 45 %
     :align: center

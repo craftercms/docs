@@ -14,7 +14,7 @@
 Project Component Data Source
 =============================
 
-.. image:: /_static/images/form-sources/form-source-project-component.png
+.. image:: /_static/images/form-sources/form-source-project-component.webp
     :width: 30%
     :alt: Form Control Data Source Project Component
     :align: center
@@ -25,7 +25,7 @@ Project Component Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-project-component-conf.png
+.. image:: /_static/images/form-sources/form-source-project-component-conf.webp
     :width: 50%
     :alt: Form Control Data Source Project Component Configuration
     :align: center
@@ -48,7 +48,7 @@ Creating an XML file for the data source
 The Project Component Data Source uses xml files to get the components that are going to be used. You can
 create your own component to use as data source by following the instructions on :ref:`creating a component<content-type-component>` and just skip creating the view and controller part of the content type if needed.
 
-.. image:: /_static/images/form-sources/form-source-project-component-example.png
+.. image:: /_static/images/form-sources/form-source-project-component-example.webp
     :width: 65%
     :alt: Form Control Data Source Project Component Example
     :align: center

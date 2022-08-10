@@ -96,7 +96,7 @@ data source, to the ``Page - Article`` content type. To do this:
 #. Go to |projectTools| and open the ``Page - Article`` content type definition.
 #. We'll add a data source where to upload our files.  At the end of the **Data Sources** section, add a ``File Uploaded to S3 Repository`` data source with Title **S3 Upload** and Name **s3Upload**.  In the **Profile Id** property, enter the name of ``profile.id`` configured in step 1.
 
-   .. image:: /_static/images/guides/s3/attachments-datasource.png
+   .. image:: /_static/images/guides/s3/attachments-datasource.webp
       :alt: AWS S3 Assets - Attachments Data Sources
       :align: center
       :width: 65%
@@ -108,7 +108,7 @@ data source, to the ``Page - Article`` content type. To do this:
 #. Add an ``Input`` control inside the repeating group with Title **Attachment Name** and Name **attachmentName**.
 #. Add an ``Item Selector`` control with Title **Attachment** and Name **attachment**.  We will bind the data source we added above to the ``Item Selector`` control by opening the Properties, then scroll to ``Item Manager`` and check the box next to the data source we added earlier, **S3 Upload**
 
-   .. image:: /_static/images/guides/s3/attachments-controls.png
+   .. image:: /_static/images/guides/s3/attachments-controls.webp
       :alt: AWS S3 Assets - Attachments Controls
       :align: center
       :width: 65%
@@ -146,7 +146,7 @@ If all the previous steps have been done correctly, you should be able to add an
 should appear underneath the last content sections when the page is rendered. For example, after adding a couple of
 PDF catalogs in the *Men Styles For Winter* article:
 
-.. image:: /_static/images/guides/s3/attachments-form.png
+.. image:: /_static/images/guides/s3/attachments-form.webp
    :alt: AWS S3 Assets - Attachments Form
    :align: center
 
@@ -154,7 +154,7 @@ PDF catalogs in the *Men Styles For Winter* article:
 
 The bottom of the page looks like this when you preview your page:
 
-.. image:: /_static/images/guides/s3/attachments-view.png
+.. image:: /_static/images/guides/s3/attachments-view.webp
    :alt: AWS S3 Assets - Attachments View
    :align: center
 
@@ -167,6 +167,6 @@ Step 4: Publish the changes
 The next step is to publish the changes.  Remember to publish not just the page where we added the S3 assets,
 but also the ``article.ftl`` and the ``aws.xml`` files too.
 
-.. image:: /_static/images/guides/s3/attachments-publish.png
+.. image:: /_static/images/guides/s3/attachments-publish.webp
    :alt: AWS S3 Assets - Publish Changes
    :align: center

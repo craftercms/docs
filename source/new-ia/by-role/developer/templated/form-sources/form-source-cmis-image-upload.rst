@@ -14,7 +14,7 @@
 Image Upload to CMIS Repository Data Source
 ===========================================
 
-.. image:: /_static/images/form-sources/form-source-cmis-img-upload.png
+.. image:: /_static/images/form-sources/form-source-cmis-img-upload.webp
     :width: 30%
     :alt: Source Control Image Upload to CMIS Repository
     :align: center
@@ -25,7 +25,7 @@ Image Upload to CMIS Repository Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-cmis-upload-conf.png
+.. image:: /_static/images/form-sources/form-source-cmis-upload-conf.webp
     :width: 50%
     :alt: Source Control Image Upload to CMIS Repository Configuration
     :align: center

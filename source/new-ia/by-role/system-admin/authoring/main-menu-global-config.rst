@@ -21,7 +21,7 @@ Changes made to this file will spread to all nodes in a Studio cluster automatic
 
 To access the Global Config, click on the ``Navigation Menu`` icon at the top right corner, then click on ``Global Config`` in the Global panel
 
-.. image:: /_static/images/system-admin/main-menu/main-menu-global-config.jpg
+.. image:: /_static/images/system-admin/main-menu/main-menu-global-config.webp
     :alt: System Administrator - Navigation Menu Global Config
     :align: center
     :width: 100%
