@@ -16,8 +16,8 @@ Types of extensions
   to allow dynamic sites that use API keys or passwords for external services. For more information about creating
   blueprints you can follow this guide: :ref:`create-a-blueprint`.
 
-- ``site``: This type of extension (plugin) can be used to add features to existing projects, it can include authoring
-  and delivery extensions. For more information about creating project plugins you can follow this guide: :ref:`plugins`
+- ``plugin``: This type of extension can be used to add features to existing projects, it can include authoring
+  and delivery extensions. For more information about creating plugins you can follow this guide: :ref:`plugins`
 
 .. _submit-plugin-to-marketplace:
 
