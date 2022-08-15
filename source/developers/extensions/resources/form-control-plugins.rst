@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-update: 4.0.1
 
 .. index:: Building Form Engine Controls Project Plugins, Form Control Project Plugins, Project Plugins
 
@@ -8,7 +9,7 @@
 Building Form Engine Control Project Plugins
 ============================================
 
-In :ref:`form-engine-control`, we learned how to build form engine controls placed in the Studio war file.  Crafter Studio also allows project plugins for form engine controls through the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile`
+In :ref:`form-engine-control`, we learned how to build form engine controls placed in the Studio war file.  Crafter Studio also allows plugins for form engine controls through the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile`
 
 ---------------------------------------
 The anatomy of a Control Project Plugin
@@ -35,19 +36,19 @@ See :ref:`control-interface` for more information on form engine control interfa
 Project Plugin Directory Structure
 ----------------------------------
 
-When creating project plugins, the JS files location for the project plugins uses a convention where the files needs to go in the following location:
+When creating plugins, the JS files location for the plugins uses a convention where the files needs to go in the following location:
 
 * **Controls** : authoring/static-assets/plugins/{yourPluginId}/control/{yourPluginName}/JS_FILE.js
 
 where:
 
-- **{yourPluginName}** : Name of form engine control project plugin
+- **{yourPluginName}** : Name of form engine control plugin
 - **JS_FILE.js** : JavaScript file containing the control interface implementation
 
 ------------------------------------------
 Form Engine Control Project Plugin Example
 ------------------------------------------
-Let's take a look at an example of a control project plugin.  We will be adding a control named ``text-input`` to the project ``My Editorial``.
+Let's take a look at an example of a control plugin.  We will be adding a control named ``text-input`` to the ``My Editorial``.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Form Engine Control Code
@@ -55,7 +56,7 @@ Form Engine Control Code
 
 The first thing we have to do is to create the folder structure where we will be placing the JS file for our control.  We'll follow the convention listed above in :ref:`plugin-directory-structure`
 
-In a local folder, create the descriptor file for your project plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.excontrol``, then create the folder ``authoring``.  Under the ``authoring`` folder, create the ``static-assets`` folder.  Under the ``static-assets`` folder, create the folder ``plugins``.
+In a local folder, create the descriptor file for your plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.excontrol``, then create the folder ``authoring``.  Under the ``authoring`` folder, create the ``static-assets`` folder.  Under the ``static-assets`` folder, create the folder ``plugins``.
 
 We will now create the folders following the plugin id path name, ``org.craftercms.plugin.excontrol``.  Under the ``plugins`` folder, create the folder ``org``.  Under the ``org`` folder, create the folder ``craftercms``.  Under the ``craftercms`` folder, create the folder ``plugin``.  Under the ``plugin`` folder, create the folder ``excontrol``.  Next, we'll create the folder for the plugin type, ``control``.  Under the ``excontrol`` folder, create the folder ``control``.  Under the ``control`` folder, create the folder ``text-input``, which is the name of the control we're building.  We will be placing the JS file implementing the control interface under the ``text-input`` folder.  In the example below, the JS file is ``main.js``
 
@@ -207,13 +208,13 @@ To setup our form control to be automatically wired in the corresponding configu
 
 |
 
-See :ref:`project-plugin-descriptor-file` for more information on setting up automatic wiring of your project plugin in Studio
+See :ref:`plugin-descriptor-file` for more information on setting up automatic wiring of your plugin in Studio
 
 ^^^^^^^^^^^^^^^
 Test the Plugin
 ^^^^^^^^^^^^^^^
 
-After placing your JS file, the project plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
+After placing your JS file, the plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
 When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``my-editorial`` by running the following:
 
@@ -256,7 +257,7 @@ The items we setup in the descriptor file for auto-wiring :ref:`above <configure
     </controls>
 
 
-Here's our project plugin control added to the list of controls in content types
+Here's our plugin control added to the list of controls in content types
 
 .. image:: /_static/images/form-controls/control-plugin-added.webp
     :width: 50 %

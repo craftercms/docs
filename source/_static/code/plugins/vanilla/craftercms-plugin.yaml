@@ -1,0 +1,41 @@
+# This file describes a plugin for use in Crafter CMS
+
+# The version of the format for this file
+descriptorVersion: 2
+
+# Describe the plugin
+plugin:
+  type: site
+  id: org.craftercms.plugin.vanilla
+  name: Vanilla Plugin Host Example
+  tags:
+    - test
+  version:
+    major: 4
+    minor: 0
+    patch: 0
+  description: A simple plugin host example
+  website:
+    name: Plugin Host Vanilla Example
+    url: https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-vanilla
+  media:
+    screenshots:
+      - title: CrafterCMS
+        description: CrafterCMS Example Plugin
+        url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/logo.svg"
+  developer:
+    company:
+      name: Crafter Software
+      email: info@craftersoftware.com
+      url: https://craftersoftware.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  crafterCmsVersions:
+    - major: 4
+      minor: 0
+      patch: 1
+  crafterCmsEditions:
+    - community
+    - enterprise
+
