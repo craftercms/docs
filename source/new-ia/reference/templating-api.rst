@@ -200,14 +200,14 @@ See :ref:`newIa-breadcrumb` for more information on the macro
 Running Scripts/Controllers
 ---------------------------
 
-Crafter Engine allows executing scripts/controllers from inside Freemarker templates by using the tag ``@crafter.controller``.  It requires a single parameter, ``path``, which is the path of the script/controller in the site:
+Crafter Engine allows executing scripts/controllers from inside Freemarker templates by using the tag ``@controller``.  It requires a single parameter, ``path``, which is the path of the script/controller in the site:
 
 .. code-block:: html
    :force:
    :caption: Running Scripts/Controllers from inside Freemarker templates
 
-   <@crafter.controller path=“/scripts/plugins/MyPlugin/1/get-tweets.groovy” />
-   <@crafter.controller path=“/scripts/plugins/MyPlugin/1/get-fbs.groovy” />
+   <@controller path=“/scripts/plugins/MyPlugin/1/get-tweets.groovy” />
+   <@controller path=“/scripts/plugins/MyPlugin/1/get-fbs.groovy” />
 
 
 ------------------------
