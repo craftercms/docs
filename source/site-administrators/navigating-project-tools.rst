@@ -137,7 +137,7 @@ See :ref:`studio-log-console` for some more information on viewing logs.
 Publishing
 ----------
 
-The **Publishing** module under **Project Tools** allows the user to view the publishing status, perform a bulk publish or to publish content using commit ID(s)
+The **Publishing** module under **Project Tools** allows the user to view the publishing status and publishing queue, to perform a bulk publish, to publish content by path  or to publish content using commit ID(s)
 
 .. image:: /_static/images/site-admin/project-tools-publishing.webp
     :alt: Site Admin - Project Tools Publishing
