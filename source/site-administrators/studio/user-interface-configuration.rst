@@ -123,7 +123,9 @@ and select **User Interface Configuration** from the list.
    :width: 85 %
    :align: center
 
-|
+.. raw:: html
+
+   <hr>
 
 ******
 Sample
@@ -144,9 +146,7 @@ Here's a sample User Interface Configuration file (click on the triangle on the 
 .. raw:: html
 
    </details>
-
-|
-|
+   <hr>
 
 .. _widget-permissions:
 
@@ -207,8 +207,9 @@ Here's the sidebar when a user with role ``author`` is logged in.  Notice that `
    :width: 20 %
    :align: center
 
-|
+.. raw:: html
 
+   <hr>
 
 .. _sidebar-excludes:
 
@@ -272,7 +273,9 @@ Here's the Sidebar with the folder ``2021/3`` hidden:
    :width: 30 %
    :align: center
 
-|
+.. raw:: html
+
+   <hr>
 
 .. _sidebar-widget-icon-colors:
 
@@ -374,6 +377,58 @@ Icon Options
 - ``expandedStyle``: a set of CSS rules applied to the icon when expanded
 - ``collapsedStyle``: a set of CSS rules applied to the icon when collapsed
 
+.. raw:: html
+
+   <hr>
+
+.. _spa-sources-sidebar-cabinet:
+
+***************************
+SPA Sources Sidebar Cabinet
+***************************
+
+Users may want to manage (edit/view) SPA sources in their projects through Studio.
+To view/edit SPA sources, simply add another ``PathNavigator`` widget, named ``sources``,
+in the Sidebar widget like below:
+
+.. code-block:: xml
+   :caption: **SPA sources - ui.xml**
+   :linenos:
+   :emphasize-lines: 6-14
+
+   <siteUI>
+     <widget id="craftercms.components.ToolsPanel">
+       <configuration>
+         <widgets>
+           ...
+           <widget id="craftercms.components.PathNavigator">
+             <configuration>
+               <id>Sources</id>
+               <label>Sources</label>
+               <icon id="@mui/icons-material/InsertDriveFileOutlined"/>
+               <rootPath>/sources/</rootPath>
+               <locale>en</locale>
+             </configuration>
+           </widget>
+           ...
+
+
+.. Note:: Adding SPA sources in top folders other than ``/sources`` is not supported.  Also note that
+   items under ``/sources`` is excluded from search.
+
+The ``Video Center`` blueprint from the marketplace contains an example of SPA sources managed in Studio
+(``/sources`` added to the sidebar).
+
+.. image:: /_static/images/site-admin/sources-folder-sidebar-ex.webp
+   :alt: Configurations - User Interface Configuration Sources Widget in Sidebar
+   :width: 90 %
+   :align: center
+
+
+.. raw:: html
+
+   <hr>
+
 .. _targeting-configuration:
 
 ******************
@@ -455,6 +510,10 @@ Here's how the above configuration looks like in the Experience Builder Panel in
 
 See :ref:`targeting` for more information on configuring the targeting system of Crafter Studio to help provide Crafter Engine with fake user properties that help drive the targeting system, such as configuring targeting based on roles, etc. and :ref:`content_authors_targeting` for more information on how content authors use the audience targeting system configured.
 
+.. raw:: html
+
+   <hr>
+
 .. _rte-config:
 
 *****************
@@ -512,6 +571,10 @@ To configure the RTE, add/edit the widget ``craftercms.components.TinyMCE``:
 Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.
 
 To learn more about configuring the RTE, see :ref:`here <rte-configuration>`
+
+.. raw:: html
+
+   <hr>
 
 .. _project-tools-configuration:
 
