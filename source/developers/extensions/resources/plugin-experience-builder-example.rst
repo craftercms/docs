@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.1
 
 .. index:: Crafter Studio Experience Builder Panel Plugin Example, Studio Plugins, Plugins
 
@@ -22,9 +23,9 @@ Studio or, by hitting the ``e`` or ``m`` key on your keyboard
 Let's take a look at an example of creating an experience builder panel plugin in Studio using
 a project called ``My Editorial`` created using the **Website Editorial** blueprint.
 
-#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our experience builder project plugin.  We'll follow the convention listed in :ref:`plugin-directory-structure`.  For our example, PLUGIN_TYPE is ``experiencebuilder`` and the PLUGIN_NAME is ``test-experiencebuilder``
+#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our experience builder plugin.  We'll follow the convention listed in :ref:`ui-plugin-directory-structure`.  For our example, CATEGORY is ``experiencebuilder`` and the NAME is ``test-experiencebuilder``
 
-   In a local folder, create the descriptor file for your project plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.experiencebuilder``, then create the following folder structure:
+   In a local folder, create the descriptor file for your plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.experiencebuilder``, then create the following folder structure:
 
    .. code-block:: text
          :caption: *Experience Builder Plugin Directory Structure*
@@ -43,7 +44,7 @@ a project called ``My Editorial`` created using the **Website Editorial** bluepr
 
    |
 
-   We will be placing the JS file implementing the toolbar project plugin under the
+   We will be placing the JS file implementing the toolbar plugin under the
    ``test-experiencebuilder`` folder.  For our example, the <plugin-folder> is located here:
    ``/users/myuser/myplugins/experiencebuilder-plugin``
 
@@ -52,13 +53,13 @@ a project called ``My Editorial`` created using the **Website Editorial** bluepr
    For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/experiencebuilder-plugin``
 
 #. We'll create the javascript file for our plugin by following the instructions in the plugin example
-   `here <https://github.com/craftercms/craftercms-ui-plugin-sample>`__ which will generate the
-   ``index.modern.js`` file.
+   `here <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-component-library>`__ which will generate the
+   ``index.js`` file.
 
    Inside the ``test-experiencebuilder`` folder, create two empty files, ``index.css`` and ``script.js``,
-   and place the ``index.modern.js`` file in it.
+   and place the ``index.js`` file in it.
 
-#. To setup our experience builder project plugin to be automatically wired in the corresponding configuration file in Studio (which for an experience builder, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
+#. To setup our experience builder plugin to be automatically wired in the corresponding configuration file in Studio (which for an experience builder, is the User Interface Configuration file) during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
 
    .. code-block:: yaml
       :linenos:
@@ -88,17 +89,17 @@ a project called ``My Editorial`` created using the **Website Editorial** bluepr
                   - name: name
                     value: test-experiencebuilder
                   - name: file
-                    value: index.modern.js
+                    value: index.js
 
    |
 
    Remember to use the same value used in ``plugin.id`` (found at the top of the descriptor file) for the installation section *plugin.id* which for our example is ``org.craftercms.plugin``
 
-#. After placing your plugin files and setting up auto-wiring, the project plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
+#. After placing your plugin files and setting up auto-wiring, the plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
    .. image:: /_static/images/developer/plugins/project-plugins/experiencebuilder-plugin-files.webp
       :align: center
-      :alt: Experience Builder project plugin directory/files
+      :alt: Experience Builder plugin directory/files
       :width: 80%
 
    |
@@ -115,7 +116,7 @@ a project called ``My Editorial`` created using the **Website Editorial** bluepr
 
    .. image:: /_static/images/developer/plugins/project-plugins/experiencebuilder-plugin-in-action.webp
       :align: center
-      :alt: Experience Builder project plugin in action
+      :alt: Experience Builder plugin in action
       :width: 30%
 
    |
@@ -146,7 +147,7 @@ a project called ``My Editorial`` created using the **Website Editorial** bluepr
                 <plugin id="org.craftercms.plugin"
                         type="experiencebuilder"
                         name="test-experiencebuilder"
-                        file="index.modern.js"/>
+                        file="index.js"/>
               </widget>
              </widgets>
           </configuration>

@@ -53,7 +53,8 @@ extensions = [
     'sphinx.ext.extlinks',
     'version_tag',
     'sphinx_copybutton',
-    'sphinxext.remoteliteralinclude'
+    'sphinxext.remoteliteralinclude',
+    'sphinx_tabs.tabs'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

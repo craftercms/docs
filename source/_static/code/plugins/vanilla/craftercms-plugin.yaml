@@ -6,23 +6,23 @@ descriptorVersion: 2
 # Describe the plugin
 plugin:
   type: site
-  id: org.craftercms.plugin.mycomponent
-  name: My Component Plugin Example
+  id: org.craftercms.plugin.vanilla
+  name: Vanilla Plugin Host Example
   tags:
     - test
   version:
     major: 4
     minor: 0
     patch: 0
-  description: My simple component content type plugin
+  description: A simple plugin host example
   website:
-    name: Component Content Type Plugin Example
-    url: https://craftercms.com
+    name: Plugin Host Vanilla Example
+    url: https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-vanilla
   media:
     screenshots:
       - title: CrafterCMS
-        description: CrafterCMS Example Component Plugin
-        url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/screenshots/default.png"
+        description: CrafterCMS Example Plugin
+        url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/logo.svg"
   developer:
     company:
       name: CrafterCMS
@@ -34,7 +34,8 @@ plugin:
   crafterCmsVersions:
     - major: 4
       minor: 0
-      patch: 0
+      patch: 1
   crafterCmsEditions:
     - community
     - enterprise
+

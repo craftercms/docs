@@ -26,7 +26,7 @@ The blueprint that comes out of the box with CrafterCMS, ``Website Editorial Blu
 
 As mentioned earlier, blueprints allows us to generate projects with predefined layouts, contents and configuration.  Blueprints could be a project theme or an API only project.  New blueprints can be created from a project and added into CrafterCMS allowing the creation of more projects based on the new blueprint.  In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from CrafterCMS and an existing project is used to create a new blueprint.
 
-Developers may submit their blueprints to the `CrafterCMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted blueprints are listed, and power users of CrafterCMS can create projects based on marketplace plugins directly from the ``Create Project`` dialog in the CMS. See :ref:`submit-plugin-to-marketplace` for more information on how to submit your blueprint to the marketplace.
+Developers may submit their blueprints to the `CrafterCMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted blueprints are listed, and power users of CrafterCMS can create projects based on marketplace plugins directly from the ``Create Project`` dialog in the CMS. See :ref:`submit-extension-to-marketplace` for more information on how to submit your blueprint to the marketplace.
 
 -------------------------------
 How do I make my own Blueprint?
@@ -147,7 +147,7 @@ Installing
 ----------
 
 #. Copy your blueprint folder into ``{CRAFTER_HOME}/data/repos/global/blueprints``.
-#. Check in your blueprint folder if it contains a ``craftercms-plugin.yaml`` file.  Add in the file if it does not exist by copying a ``craftercms-plugin.yaml`` file from one of the default blueprints, such as from the folder ``4000_empty``, which contains the empty blueprint and modifying it as needed.  See :ref:`craftercms-plugin-yaml-file` for details on the file
+#. Check in your blueprint folder if it contains a ``craftercms-plugin.yaml`` file.  Add in the file if it does not exist by copying a ``craftercms-plugin.yaml`` file from one of the default blueprints, such as from the folder ``4000_empty``, which contains the empty blueprint and modifying it as needed.  See :ref:`blueprint-descriptor-file` for details on the file
 #. Once you do, commit the change to the global repo (``{CRAFTER_HOME}/data/repos/global/``) by using ``git``, and your  blueprint will now start appearing when you try to create a new project.
 
    * CrafterCMS uses a vanilla version of Git, so regular Git commands work as intended. To commit your changes so Crafter can see it, head to ``{CRAFTER_HOME}/data/repos/global/blueprints`` and git add your modified files like this
@@ -222,7 +222,7 @@ When you create a project using the blueprint we fixed above, ``Another Sample S
 Adding a plugin descriptor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-All blueprints need to include a plugin descriptor as described in :ref:`craftercms-plugin-yaml-file`
+All blueprints need to include a plugin descriptor as described in :ref:`blueprint-descriptor-file`
 
 
 .. _passing-parameters-to-bp:

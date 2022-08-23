@@ -1,102 +1,135 @@
 :orphan:
 
 :is-up-to-date: True
+:last-updated: 4.0.1
 
-.. _craftercms-plugin-yaml-file:
+.. _plugin-descriptor-file:
 
-----------------------------
+============================
 CrafterCMS Plugin Descriptor
-----------------------------
+============================
 
-The ``craftercms-plugin.yaml`` file contains information for use in CrafterCMS.  We'll take a look at a file used for
-a blueprint and for a project plugin.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Blueprint Descriptor File
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Here's a sample taken from the  ``craftercms-plugin.yaml`` for the Empty blueprint.
+The ``craftercms-plugin.yaml`` file contains information for use in CrafterCMS.  This descriptor file contains
+information about your extension, such as the license, the versions of CrafterCMS supported, and other
+configurations and metadata.  In this section, we'll take a look at a plugin descriptor file.
 
 .. code-block:: yaml
-    :caption: *craftercms-plugin.yaml file for the Empty blueprint*
-    :linenos:
+     :linenos:
+     :caption: *Sample plugin descriptor file*
 
-    # This file describes a plugin for use in CrafterCMS
+     # This file describes a plugin for use in CrafterCMS
 
-    # The version of the format for this file
-    descriptorVersion: 2
+     # The version of the format for this file
+     descriptorVersion: 2
 
-    # Describe the plugin
-    plugin:
-      type: blueprint
-      id: org.craftercms.blueprint.empty
-      name: Empty Blueprint
-      tags:
-        - blueprint
-        - website
-      version:
-        major: 1
-        minor: 0
-        patch: 0
-      description: |
-        Simple empty blueprint
-      website:
-        name: Empty Blueprint
-        url: https://craftercms.org
-      media:
-        screenshots:
-          - title: Home Page
-            description: Screenshot of the homepage
-            url: /studio/static-assets/images/blueprints/empty/bp_empty.png
-      developer:
-        company:
-          name: CrafterCMS
-          email: info@craftercms.com
-          url: https://craftercms.com/
-      license:
-        name: MIT
-        url: https://opensource.org/licenses/MIT
-      crafterCmsVersions:
-        - major: 4
-          minor: 0
-          patch: 0
-      crafterCmsEditions:
-        - community
-        - enterprise
+     # Describe the plugin
+     plugin:
+       type: site
+       id: org.craftercms.plugin.test
+       name: Project Plugin Example
+       tags:
+         - test
+       version:
+         major: 3
+         minor: 0
+         patch: 1
+       description: A simple example for project plugins
+       documentation: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/readme.md"
+       website:
+         name: Plugin Example
+         url: https://github.com/craftercms/site-plugins-example
+       media:
+         screenshots:
+           - title: CrafterCMS
+             description: CrafterCMS Example Plugin
+             url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/screenshots/default.png"
+       developer:
+         company:
+           name: CrafterCMS
+           email: info@craftercms.com
+           url: https://craftercms.com
+       license:
+         name: MIT
+         url: https://opensource.org/licenses/MIT
+       crafterCmsVersions:
+         - major: 4
+           minor: 0
+           patch: 0
+       crafterCmsEditions:
+         - community
+         - enterprise
+       # Option auto-wiring section
+       # installation:
 
-where the following fields are required:
+Here are some things to note in the descriptor file:
 
-- ``descriptorVersion`` - The version of the format for this file which is currently 2
-- ``plugin.type`` - ``blueprint`` or ``site`` depending on the type of plugin you're building.
-  Remember to set the value to ``blueprint`` for blueprints and ``site`` for project plugins
-- ``plugin.id`` - a unique Id that is meaningful/recognizable to people who will be using the blueprint/plugin
-- ``plugin.name`` - blueprint/plugin name (For our blueprint example, it is the blueprint name shown in the
-  **Choose Blueprint** screen of **Create Project**)
-- ``plugin.version`` - a version number for the blueprint/project plugin
-- ``plugin.crafterCmsVersions`` - CrafterCMS versions that the plugin is compatible with (look in the :ref:`release-notes`
-  section for the versions available), and you'll need to keep this up to date
+.. list-table:: Descriptor file fields
+   :widths: 25 25 50
+   :header-rows: 1
 
-|
-|
-
-For ``plugin.media.screenshots``, the url ``../.crafter/screenshots/default.png`` is the default path for CrafterCMS to look for a default representative image of a plugin or blueprint.  For more information on adding a default representative image for your blueprint see :ref:`adding-default-image-for-bp` and :ref:`project-plugins-create-your-plugin` for project plugins.
+   * - Field
+     - Required
+     - Description
+   * - descriptorVersion
+     - |checkmark|
+     - The version of the format for this file which is currently 2
+   * - plugin.type
+     - |checkmark|
+     - Set the value to ``site``
+   * - plugin.id
+     - |checkmark|
+     - A unique Id that is meaningful/recognizable to people who will be using the plugin
+   * - plugin.name
+     - |checkmark|
+     - The name displayed in the CrafterCMS Marketplace. |br|
+       Pick a unique name for your plugin. You can check in the CrafterCMS Marketplace if |br|
+       the name you picked does not exist yet.  It's also a best practice to provide a name |br|
+       for your plugin that is meaningful or recognizable to users. |br|
+       The name can be multiple words such as ``Contact Form``
+   * - plugin.version
+     - |checkmark|
+     - The version number for the plugin
+   * - plugin.description
+     -
+     - Contains a short description of the plugin and is displayed underneath the plugin name in |br|
+       the CrafterCMS Marketplace
+   * - plugin.documentation
+     -
+     - Serves as the help block for the plugin. It contains a URL to the plugin's documentation file |br|
+       (must be in Markdown) containing information on how to use/configure the plugin. The documentation |br|
+       will appear alongside the plugin in Crafter Studio and the CrafterCMS Marketplace
+   * - plugin.website.url
+     -
+     - Can be a page for more information on your plugin or for announcing updates, reporting bugs, etc. |br|
+       from your user community.
+   * - plugin.media.url
+     -
+     - The path to look for a representative image of the plugin. |br|
+       CrafterCMS uses a default path for CrafterCMS to look for a default representative image of a plugin,|br|
+       the url ``../.crafter/screenshots/``.
+   * - plugin.license
+     -
+     - The license supported by the plugin
+   * - plugin.crafterCmsVersions
+     - |checkmark|
+     - Contains the CrafterCMS version/s that the plugin is compatible with |br|
+       (look in the :ref:`release-notes` section for the versions available), and you'll need to keep |br|
+       this up to date
 
 .. note::
 
   For the images to be used for the ``screenshots`` in the ``craftercms-plugin.yaml`` file, we recommend
   using images with approximately a ``4:3`` aspect ratio (width to height), such as an image sized at 1200x800
 
-.. _project-plugin-descriptor-file:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Project Plugin Descriptor File
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------
+Auto-wiring
+-----------
+CrafterCMS supports automatically wiring your plugin to the corresponding configuration
+file in Studio during your plugin installation.
 
-CrafterCMS supports automatically wiring your project plugin to the corresponding configuration
-file in Studio during your project plugin installation.
-
-To setup a project plugin to be automatically wired in the corresponding configuration file in
-Studio (for example, a form control, will be wired to the Project Config Tools Configuration file)
+To setup a plugin to be automatically wired in the corresponding configuration file in
+Studio (for example, a form control, will be wired to the Content Type Editor Configuration file)
 during the installation, add the following to your ``craftercms-plugin.yaml`` descriptor file
 
 .. code-block:: yaml
@@ -130,7 +163,7 @@ during the installation, add the following to your ``craftercms-plugin.yaml`` de
 
 where:
 
-- ``installation.type`` is the type of project plugin for auto-wiring in Studio.
+- ``installation.type`` is the type of plugin for auto-wiring in Studio.
   Available values are **form-control**, **form-datasource**, **preview-app**, **site-filter** and **site-context**
 - ``installation.parentXpath`` is an XPath selector for the element where the plugin will be added,
   required when installation-type is *preview-app*
@@ -145,189 +178,150 @@ where:
   - ``children`` contains any number of **name** and **value** and can contain the class (icon), plugin id, plugin
     type, plugin name and plugin files/folders (plugin location) and its corresponding  values
 
-
-Below is a sample ``craftercms-plugin.yaml`` for a form control plugin descriptor.
-
-.. code-block:: yaml
-   :caption: *Example craftercms-plugin.yaml file for a form-control project plugin*
-   :linenos:
-   :emphasize-lines: 42-60
-
-   # This file describes a plugin for use in CrafterCMS
-
-   # The version of the format for this file
-   descriptorVersion: 2
-
-   # Describe the plugin
-   plugin:
-     type: site
-     id: org.craftercms.plugin.control
-     name: My Form Control Project Plugin Example
-     tags:
-       - test
-     version:
-       major: 3
-       minor: 0
-       patch: 0
-     description: My simple form control project plugin
-     documentation: "https://raw.githubusercontent.com/craftercms/contact-form-plugin/master/readme.md"
-     website:
-       name: Project Plugin Example
-       url: https://github.com/craftercms/site-plugins-example
-     media:
-       screenshots:
-         - title: CrafterCMS
-           description: CrafterCMS Example Plugin
-           url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/logo.svg"
-     developer:
-       company:
-         name: CrafterCMS
-         email: info@craftercms.com
-         url: https://craftercms.com
-     license:
-       name: MIT
-       url: https://opensource.org/licenses/MIT
-     crafterCmsVersions:
-       - major: 4
-         minor: 0
-         patch: 0
-     crafterCmsEditions:
-       - community
-       - enterprise
-     installation:
-       - type: form-control
-         elementXpath: //control/plugin[pluginId='org.craftercms.plugin.control']
-         element:
-           name: control
-           children:
-             - name: plugin
-               children:
-                 - name: pluginId
-                   value: org.craftercms.plugin.control
-                 - name: type
-                   value: control
-                 - name: name
-                   value: text-input
-                 - name: filename
-                   value: main.js
-             - name: icon
-               children:
-                 - name: class
-                   value: fa-pencil-square-o
-
-|
-
-Below is a sample for a data source.
-
-.. code-block:: yaml
-   :caption: *Example installation for a data source*
-   :linenos:
-
-   installation:
-     - type: form-datasource
-       elementXpath: //datasource/plugin[pluginId='org.craftercms.plugin.datasource']
-       element:
-         name: datasource
-         children:
-           - name: plugin
-             children:
-               - name: pluginId
-                 value: org.craftercms.plugin.datasource
-               - name: type
-                 value: datasource
-               - name: name
-                 value: text-input
-               - name: filename
-                 value: main.js
-               - name: icon
-                 children:
-               - name: class
-                 value: fa-pencil-square-o
-
-|
-
-Below is a sample for a preview-app.
-
-.. code-block:: yaml
-   :caption: *Example installation for a preview-app*
-   :linenos:
-
-   installation:
-     - type: preview-app
-       parentXpath: //widget[@id='craftercms.components.ToolsPanel']
-       elementXpath: //plugin[@id='org.craftercms.sampleComponentLibraryPlugin.components.reactComponent']
-       element:
-         name: configuration
-         children:
-         - name: widgets
-           children:
-           - name: widget
-             attributes:
-             - name: id
-               value: org.craftercms.sampleComponentLibraryPlugin.components.reactComponent
-             children:
-             - name: plugin
-               attributes:
-               - name: id
-                 value: org.craftercms.plugin
-               - name: type
-                 value: sidebar
-               - name: name
-                 value: react-sample
-               - name: file
-                 value: index.modern.js
-
 |
 
 .. _plugin-descriptor-servlet-filter:
 
-Below is a sample for a site filter.
+Below are examples on how to setup auto-wiring in Studio for various plugin types:
 
-.. code-block:: yaml
-   :caption: *Example installation for a site-filter*
-   :linenos:
+.. tabs::
+   .. tab:: form-control
 
-   installation:
-     - type: site-filter
-       elementXpath: //filter/script[text()='/scripts/filters/plugins/org/craftercms/plugin/filter/myFilter.groovy']
-       element:
-         name: filter
-         children:
-           - name: script
-             value: '/scripts/filters/plugins/org/craftercms/plugin/filter/myFilter.groovy'
-           - name: mapping
-             children:
-               - name: include
-                 value: '/**'
+      Below is a sample auto-wiring setup for a form control.
 
-|
+      .. code-block:: yaml
+         :caption: *Example installation for a form-control*
+         :linenos:
 
-Below is a sample for the site context.
+         installation:
+           - type: form-control
+             elementXpath: //control/plugin[pluginId='org.craftercms.plugin.control']
+             element:
+               name: control
+               children:
+                 - name: plugin
+                   children:
+                     - name: pluginId
+                       value: org.craftercms.plugin.control
+                     - name: type
+                       value: control
+                     - name: name
+                       value: text-input
+                     - name: filename
+                       value: main.js
+                 - name: icon
+                   children:
+                     - name: class
+                       value: fa-pencil-square-o
 
-.. code-block:: yaml
-   :caption: *Example installation for the site-context*
-   :linenos:
+   .. tab:: datasource
 
-   installation:
-     - type: site-context
-       elementXpath: //bean[@id='myBean']
-       element:
-         name: bean
-         attributes:
-           - name: id
-             value: myBean
-           - name: class
-             value: plugins.org.craftercms.plugin/context/MyClass
-         children:
-           - name: property
-             attributes:
-               - name: name
-                 value: siteItemService
-               - name: ref
-                 value: crafter.siteItemService
+      Below is a sample auto-wiring setup for a data source.
 
-|
+      .. code-block:: yaml
+         :caption: *Example installation for a data source*
+         :linenos:
 
-For project plugins, the ``plugin.documentation`` serves as the help block for the plugin. It contains a URL to the plugin's documentation file (must be in Markdown) containing information on how to use/configure the plugin. The documentation will appear alongside the plugin in Crafter Studio and the CrafterCMS Marketplace.
+         installation:
+           - type: form-datasource
+             elementXpath: //datasource/plugin[pluginId='org.craftercms.plugin.datasource']
+             element:
+               name: datasource
+               children:
+                 - name: plugin
+                   children:
+                     - name: pluginId
+                       value: org.craftercms.plugin.datasource
+                     - name: type
+                       value: datasource
+                     - name: name
+                       value: text-input
+                     - name: filename
+                       value: main.js
+                     - name: icon
+                       children:
+                     - name: class
+                       value: fa-pencil-square-o
 
-See :ref:`studio-plugins` for examples of plugins auto-wired in Studio.
+   .. tab:: preview-app
+
+      Below is a sample auto-wiring setup for a preview-app.
+
+      .. code-block:: yaml
+         :caption: *Example installation for a preview-app*
+         :linenos:
+
+         installation:
+           - type: preview-app
+             parentXpath: //widget[@id='craftercms.components.ToolsPanel']
+             elementXpath: //plugin[@id='org.craftercms.sampleComponentLibraryPlugin.components.reactComponent']
+             element:
+               name: configuration
+               children:
+               - name: widgets
+                 children:
+                 - name: widget
+                   attributes:
+                   - name: id
+                     value: org.craftercms.sampleComponentLibraryPlugin.components.reactComponent
+                   children:
+                   - name: plugin
+                     attributes:
+                     - name: id
+                       value: org.craftercms.plugin
+                     - name: type
+                       value: sidebar
+                     - name: name
+                       value: react-sample
+                     - name: file
+                       value: index.modern.js
+
+   .. tab:: servlet-filter
+
+      Below is a sample auto-wiring setup for a site filter.
+
+      .. code-block:: yaml
+         :caption: *Example installation for a site-filter*
+         :linenos:
+
+         installation:
+           - type: site-filter
+             elementXpath: //filter/script[text()='/scripts/filters/plugins/org/craftercms/plugin/filter/myFilter.groovy']
+             element:
+               name: filter
+               children:
+                 - name: script
+                   value: '/scripts/filters/plugins/org/craftercms/plugin/filter/myFilter.groovy'
+                 - name: mapping
+                   children:
+                     - name: include
+                       value: '/**'
+
+   .. tab:: site-context
+
+      Below is a sample auto-wiring setup for the site context.
+
+      .. code-block:: yaml
+         :caption: *Example installation for the site-context*
+         :linenos:
+
+         installation:
+           - type: site-context
+             elementXpath: //bean[@id='myBean']
+             element:
+               name: bean
+               attributes:
+                 - name: id
+                   value: myBean
+                 - name: class
+                   value: plugins.org.craftercms.plugin/context/MyClass
+               children:
+                 - name: property
+                   attributes:
+                     - name: name
+                       value: siteItemService
+                     - name: ref
+                       value: crafter.siteItemService
+
+
+See :ref:`here <plugins-authoring-guides>` for examples of plugins auto-wired in Studio.

@@ -81,5 +81,5 @@ via the :ref:`Plugin Management <plugin-management>` tool:
    :titlesonly:
    :hidden:
 
-   marketplace/index
+   craftercms-marketplace
 
