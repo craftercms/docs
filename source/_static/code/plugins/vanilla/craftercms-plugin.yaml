@@ -1,4 +1,4 @@
-# This file describes a plugin for use in Crafter CMS
+# This file describes a plugin for use in CrafterCMS
 
 # The version of the format for this file
 descriptorVersion: 2
@@ -25,9 +25,9 @@ plugin:
         url: "https://raw.githubusercontent.com/craftercms/site-plugin-example/master/.crafter/logo.svg"
   developer:
     company:
-      name: Crafter Software
-      email: info@craftersoftware.com
-      url: https://craftersoftware.com
+      name: CrafterCMS
+      email: info@craftercms.com
+      url: https://craftercms.com
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
