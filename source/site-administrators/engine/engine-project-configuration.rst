@@ -15,7 +15,8 @@ Engine itself, but developers can also add any custom property they need for the
 properties will be available for developers in the Freemarker templates and Groovy scripts using the
 ``siteConfig`` variable.
 
-XML Configuration Files
+**XML Configuration Files**
+
  - ``/config/engine/site-config.xml``
    Main XML configuration for the project, this file will always be loaded by Crafter Engine. This file can
    be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the
@@ -24,6 +25,8 @@ XML Configuration Files
 
 	 .. image:: /_static/images/site-admin/engine-project-config.webp
 			 :alt: Engine Project Configuration
+
+     |
 
 
  - ``/config/engine/{crafterEnv}-site-config.xml``
@@ -66,7 +69,8 @@ This example file contains the properties used by Crafter Engine (click on the t
 |
 |
 
-Crafter Engine Properties
+**Crafter Engine Properties**
+
  * **indexFileName:** The name of a page's index file (default is ``index.xml``).
  * **defaultLocale:** The default locale for the project. Used with content targeting through localization.
  * **navigation.additionalFields:**  List of additional fields to include for dynamic navigation items (Example: *<additionalFields>myTitle_s,myAuthor_s,...</additionalFields>*)
@@ -85,14 +89,17 @@ Crafter Engine Properties
    path to the filter script, and a ``<mapping>`` element. In the ``<mapping>`` element, the ``<include>`` element contains the Ant
    patterns (separated by comma) that request URLs should match for the filter to be executed, while the ``<exclude>`` element contains
    the patterns that requests shouldn't match.
- * **cors.enable**:``true`` if CORS headers should be added to REST API responses. Defaults to false.
+ * **cors.enable**:``true`` if CORS headers should be added to REST API responses when not in preview mode.  Defaults to false. |br|
    The elements ``<accessControlMaxAge>``, ``<accessControlAllowOrigin>``, ``<accessControlAllowMethods>``,
    ``<accessControlAllowHeaders>`` and ``<accessControlAllowCredentials>`` have the values that will be
    copied to each response.
 
-   ``<accessControlAllowOrigin>`` values are split using ``,``.  Remember that
-   commas inside patterns need to be escaped with a ``\``,
-   like this: ``<accessControlAllowOrigin>http://localhost:[8000\,3000],http://*.other.domain</accessControlAllowOrigin>``
+   ``<accessControlAllowOrigin>`` values are split using ``,``.  Remember that commas inside patterns need
+   to be escaped with a ``\``, like this: ``<accessControlAllowOrigin>http://localhost:[8000\,3000],http://*.other.domain</accessControlAllowOrigin>``
+
+   .. note::
+      When engine is in preview mode, it is a proxy and therefore will not add CORS headers to REST API responses even if CORS is enabled.
+
  * **targeting.enabled**:``true`` if content targeting should be enabled. Defaults to false.
  * **targeting.rootFolders:** The root folders that should be handled for content targeting.
  * **targeting.excludePatterns:** Regex patterns that are used to exclude certain paths from content targeting.
@@ -133,8 +140,11 @@ Crafter Engine Properties
    ``<cronExpression>``.
  * **jobs.job:** Specifies a single script job to be scheduled. The job path should be specified in ``<path>``, and the cron expression
    in ``<cronExpression>``.
- * **cache.warmUp.descriptor.folders:** The descriptor folders that need to be pre-loaded in cache, separated by comma. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully preloaded. Example: *<descriptorFolders>/site:3</descriptorFolders>*
- * **cache.warmUp.content.folders:** The content folders that need to be pre-loaded in cache, separated by comma. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully pre-loaded.  Example: *<contentFolders>/scripts,/templates</contentFolders>*
+ * **cache.warmUp.descriptor.folders:** The descriptor folders that need to be pre-loaded in cache, separated by comma, when not in preview mode. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully preloaded. Example: *<descriptorFolders>/site:3</descriptorFolders>*
+ * **cache.warmUp.content.folders:** The content folders that need to be pre-loaded in cache, separated by comma, when not in preview mode. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully pre-loaded.  Example: *<contentFolders>/scripts,/templates</contentFolders>*
+
+   .. note::
+      Cache and ActiveCache do not function the same way as specified above when engine is in preview because the preview server does not cache to ensure the latest updates are seen immediately.
 
 .. note::
     Crafter Engine will not be able to load your Project Context if your configuration contains invalid XML

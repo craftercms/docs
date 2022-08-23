@@ -16,6 +16,9 @@ Active cache is a built in CrafterCMS capability that makes building these sort 
 You tell Active Cache what you want, how to get it and how often to refresh it in the background.  From there on, you
 simply ask Active cache for whatever the current response is.
 
+.. note::
+   Remember that caching only works when Crafter Engine is NOT in preview mode.  This is because when in preview mode, the preview server does not cache to ensure the latest updates are seen immediately.
+
 -------------
 Prerequisites
 -------------
