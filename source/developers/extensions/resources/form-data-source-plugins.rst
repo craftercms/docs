@@ -56,9 +56,9 @@ Form Engine Data Source Code
 
 The first thing we have to do is to create the folder structure where we will be placing the JS file for our data source.  We'll follow the convention listed above in :ref:`plugin-ds-directory-structure`
 
-In a local folder, create the descriptor file for your plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.exampleds``, then create the folder ``authoring``.  Under the ``authoring`` folder, create the ``static-assets`` folder.  Under the ``static-assets`` folder, create the folder ``plugins``.
+In a local folder, create the descriptor file for your plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.examples``, then create the folder ``authoring``.  Under the ``authoring`` folder, create the ``static-assets`` folder.  Under the ``static-assets`` folder, create the folder ``plugins``.
 
-We will now create the folders following the plugin id path name, ``org.craftercms.plugin.exampleds``.  Under the ``plugins`` folder, create the folder ``org``.  Under the ``org`` folder, create the folder ``craftercms``.  Under the ``craftercms`` folder, create the folder ``plugin``.  Next, we'll create the folder for the plugin type, ``datasource``.  Under the ``plugin`` folder, create the folder ``datasource``.  Under the ``datasource`` folder, create the folder ``parent-content``, which is the name of the data source we're building.  We will be placing the JS file implementing the data source interface under the ``parent-content`` folder.  In the example below, the JS file is ``main.js``
+We will now create the folders following the plugin id path name, ``org.craftercms.plugin.examples``.  Under the ``plugins`` folder, create the folder ``org``.  Under the ``org`` folder, create the folder ``craftercms``.  Under the ``craftercms`` folder, create the folder ``plugin``.  Next, we'll create the folder for the plugin type, ``datasource``.  Under the ``plugin`` folder, create the folder ``datasource``.  Under the ``datasource`` folder, create the folder ``parent-content``, which is the name of the data source we're building.  We will be placing the JS file implementing the data source interface under the ``parent-content`` folder.  In the example below, the JS file is ``main.js``
 
 .. code-block:: text
       :caption: *Form Engine Data Source Plugin Directory Structure*
@@ -71,7 +71,7 @@ We will now create the folders following the plugin id path name, ``org.crafterc
               org/
                 craftercms/
                   plugin/
-                    exampleds/
+                    examples/
                       datasource/
                         parent-content/
                           main.js
@@ -86,7 +86,7 @@ In the JS file, please note that the ``CStudioAuthoring.Module`` is required and
 .. code-block:: js
     :linenos:
     :emphasize-lines: 73
-    :caption: *authoring/static-assets/plugins/org/craftercms/plugin/exampleds/datasource/parent-content/main.js*
+    :caption: *authoring/static-assets/plugins/org/craftercms/plugin/examples/datasource/parent-content/main.js*
 
     CStudioForms.Datasources.ParentContent= CStudioForms.Datasources.ParentContent ||
     function(id, form, properties, constraints)  {
@@ -196,14 +196,14 @@ To setup our form control to be automatically wired in the corresponding configu
 
    installation:
     - type: form-datasource
-      elementXpath: //datasource/plugin[pluginId='org.craftercms.plugin.exampleds']
+      elementXpath: //datasource/plugin[pluginId='org.craftercms.plugin.examples']
       element:
         name: datasource
         children:
           - name: plugin
             children:
               - name: pluginId
-                value: org.craftercms.plugin.exampleds
+                value: org.craftercms.plugin.examples
               - name: type
                 value: datasource
               - name: name
@@ -254,7 +254,7 @@ The items we setup in the descriptor file for auto-wiring :ref:`above <configure
         .
         <datasource>
             <plugin>
-                <pluginId>org.craftercms.plugin.exampleds</pluginId>
+                <pluginId>org.craftercms.plugin.examples</pluginId>
                 <type>datasource</type>
                 <name>parent-content</name>
                 <filename>main.js</filename>
