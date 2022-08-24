@@ -41,7 +41,7 @@ There are two main types of CrafterCMS Extensions:
   On the other hand, authoring plugins open the door for developers to customize and extend Crafter
   Studio. Through authoring extensions, Studio UI can be extended by including new widgets into specific
   portions of the UI or by creating complete applications that run in their own
-  ``private route within Crafter Studio`` <add link here>.
+  :ref:`private route within Crafter Studio <plugin-host-page>`.
 
   For more information on plugins, see :ref:`here <plugins>`
 
