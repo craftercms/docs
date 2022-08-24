@@ -16,7 +16,7 @@ The Production CMS instance is connected to the development workflow at the repo
 The Link Between Production Authoring and Development
 -----------------------------------------------------
 
-Typically a development  process is supported by a Git repository with workflow and tooling on top of it.  Organizations use a wide variety of solutions both on-prem and in the cloud including BitBucket, GitHub, GitLab and others.  It’s the **Master** branch that serves as the root of the DevOps workflow. For further reference we’ll call this Master branch in this repository the Production Code repository.  It’s worth noting that any Git-based repository will work. That said, a Git repository that has a Web UI and integration hooks on top of it (like the examples mentioned) is ideal.
+Typically a development  process is supported by a Git repository with workflow and tooling on top of it.  Organizations use a wide variety of solutions both on-prem and in the cloud including BitBucket, GitHub, GitLab and others.  It’s the **Master** branch that serves as the root of the DevContentOps workflow. For further reference we’ll call this Master branch in this repository the Production Code repository.  It’s worth noting that any Git-based repository will work. That said, a Git repository that has a Web UI and integration hooks on top of it (like the examples mentioned) is ideal.
 
 At a very high level, the project for your site (e.g., my.com) in your Production CrafterCMS' authoring server Crafter Studio is configured to be “connected” with your production code repository.
 
@@ -36,7 +36,7 @@ Content Authoring and Publishing
 
 The first thing to understand in the process is how content is published to the Production delivery servers.
 
-.. image:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-Sandbox-Published-768x470.webp
+.. image:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevContentOps-Sandbox-Published-768x470.webp
       :alt: Developer Workflow - Authors work in Sandbox. Delivery nodes pull from Published
       :width: 60 %
       :align: center
@@ -47,15 +47,15 @@ When the author publishes content via the UI, CrafterCMS moves content from the 
 
 Remote delivery nodes (or deployment depots) run a Crafter Deployment agent called Crafter Deployer.  The deployer updates the local content on it’s server by either a duty cycle or on an API invocation.  Crafter Deployer creates and manages a remote clone of the **Published** repository from the Authoring server.  A clone is a local Git repository with an upstream relationship with a remote repository (typically on another server and addressed via HTTPS or SSH.)  In most cases SSH is used by the delivery server to talk to the Authoring server and access the **Published** Git repository.
 
------------------------------------------------------------
-Connecting Content Authoring to Developer Workflow / DevOps
------------------------------------------------------------
+------------------------------------------------------------------
+Connecting Content Authoring to Developer Workflow / DevContentOps
+------------------------------------------------------------------
 
-The next thing to understand is exactly how your Production content repository and authoring process is “connected” with your Production code repository and DevOps process.  As previously indicated, the primary point of integration is via the distributed repository.
+The next thing to understand is exactly how your Production content repository and authoring process is “connected” with your Production code repository and DevContentOps process.  As previously indicated, the primary point of integration is via the distributed repository.
 
 Now that we’ve got a bit more content on the repository architecture for a site under Studio we can better illustrate the relationship between Studio’s repositories and the Production code repository.
 
-.. image:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevOps-flow-1-768x496.webp
+.. image:: /_static/images/developer/workflow/craftercms-CMS-Meets-DevContentOps-flow-1-768x496.webp
      :alt: Developer Workflow - Create upstream repository
      :width: 70 %
      :align: center
@@ -89,7 +89,7 @@ Syncing the two repositories is done in two steps.
 
 #. Second you push the merged, unconflicted repository back to the remote.  This makes content from the authoring process available to the development process.
 
-Syncing (pull / push) the repositories is triggered via two distinct API calls (one to pull from a remote and the other to push to a remote.)   It’s possible to trigger these activities manually or on a schedule.  The frequency of triggering the sync depends on how often the development process needs the production content.  The APIs are most often triggered via DevOps automation platforms like Jenkins, Travis, Bamboo and so on.
+Syncing (pull / push) the repositories is triggered via two distinct API calls (one to pull from a remote and the other to push to a remote.)   It’s possible to trigger these activities manually or on a schedule.  The frequency of triggering the sync depends on how often the development process needs the production content.  The APIs are most often triggered via DevContentOps automation platforms like Jenkins, Travis, Bamboo and so on.
 
 .. image:: /_static/images/developer/workflow/syncing-content-repo.webp
      :alt: Developer Workflow - Syncing the Content Repository and the Code Repository

@@ -1,13 +1,11 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
-:nosearch:
 
-=====================================
-Implementation of the DevOps Workflow 
-=====================================
+============================================
+Implementation of the DevContentOps Workflow
+============================================
 
 
-In the previous section entitled :ref:`newIa-code-repo-and-devops-workflow` we discussed the details and mechanics of the workflow that takes content from a feature branch all the way through to production.  We demonstrated:
+In the previous section entitled :ref:`code-repo-and-devcontentops-workflow` we discussed the details and mechanics of the workflow that takes content from a feature branch all the way through to production.  We demonstrated:
 
 * How this process enables the development of multiple (any number of) features to take place simultaneously.
 * How stability and reliability is forged in to releases without needing to do project wide code freezes.
@@ -31,7 +29,7 @@ For the sake of review below is the diagram that illustrates the full workflow.
 GitFlow, the Process and GitFlow, the Tool
 ------------------------------------------
 
-GitFlow is an industry standard branching strategy that supports goals we have for enabling parallel development and release of high-quality, robust features and fixes.  Please refer to the previous section entitled :ref:`newIa-code-repo-and-devops-workflow` for an overview of this process and details on how it is applied.  A more detailed description of the GitFlow process can be found here: https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+GitFlow is an industry standard branching strategy that supports goals we have for enabling parallel development and release of high-quality, robust features and fixes.  Please refer to the previous section entitled :ref:`code-repo-and-devcontentops-workflow` for an overview of this process and details on how it is applied.  A more detailed description of the GitFlow process can be found here: https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
 
 GitFlow is also the name of a tool that reduces the number of steps (commands required to be executed) in order to support the GitFlow process.  The GitFlow tools is NOT required in order to support the GitFlow Process. This is stated only to illustrate the separation between the process and the tool.  It’s standard in the industry to use both the process and the tool.
 https://gist.github.com/JamesMGreene/cdd0ac49f90c987e45ac
@@ -41,7 +39,7 @@ This document assumes the use of both the GitFlow process and the GitFlow tool t
 * Who will need the GitFlow plugin?
 
     * Developers
-    * DevOps admins
+    * DevContentOps admins
     * The automation server
 
 * Where do I get the GitFlow toolset plugin

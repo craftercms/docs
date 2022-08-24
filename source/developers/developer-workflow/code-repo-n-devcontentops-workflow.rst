@@ -1,12 +1,12 @@
 :is-up-to-date: True
 
-.. _code-repo-and-devops-workflow:
+.. _code-repo-and-devcontentops-workflow:
 
-=================================
-Code Repository & DevOps Workflow
-=================================
+========================================
+Code Repository & DevContentOps Workflow
+========================================
 
-The main goal of the development/DevOps workflow is to enable simple parallel development, testing and release of features and fixes by multiple teams.  Organizations that use Git for source code management support this objective through a standardized Git branching and workflow strategy known as GitFlow.  In the following section we’ll break this standard branching strategy down into two parts:  Feature Development and Release.
+The main goal of the development/DevContentOps workflow is to enable simple parallel development, testing and release of features and fixes by multiple teams.  Organizations that use Git for source code management support this objective through a standardized Git branching and workflow strategy known as GitFlow.  In the following section we’ll break this standard branching strategy down into two parts:  Feature Development and Release.
 
 -------------------
 Feature Development

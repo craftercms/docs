@@ -36,7 +36,7 @@ deploying CrafterCMS in Kubernetes:
 
    * :ref:`newIa-getting-started`
 
-   To learn more about the developer workflow, see :ref:`newIa-devOps-workflow`.
+   To learn more about the developer workflow, see :ref:`newIa-devContentOps-workflow`.
 
 #. Production Environment
 

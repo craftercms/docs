@@ -17,7 +17,7 @@ This section explains the basic mechanics of DevContentOps, which supports conte
       :titlesonly:
 
       developer-workflow
-      code-repo-n-devops-workflow
+      code-repo-n-devcontentops-workflow
       connecting-prod-cms-to-dev-workflow
       implementation-prod-repo-sync
-      implementation-devops-workflow
+      implementation-devcontentops-workflow

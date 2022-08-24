@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 
 .. index:: Configuration and Implementation: Production Content Repository <--> Code Repository Sync and Code Release Publishing
 
@@ -103,7 +103,7 @@ The synchronization of the Production content repository (Sandbox) on Production
 Automating the Pull / Push of Code and Content
 ----------------------------------------------
 
-We will use Jenkins in our example here to automate DevOps (sync the Authoring Code Repository with the Remote Code Repository).
+We will use Jenkins in our example here to automate DevContentOps (sync the Authoring Code Repository with the Remote Code Repository).
 
 Sync Script
 ^^^^^^^^^^^
