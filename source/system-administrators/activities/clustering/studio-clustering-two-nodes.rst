@@ -306,8 +306,8 @@ the following entries:
 
   |
 
-You can also check that the cluster is working by logging into MariaDB with the ``mysql`` client from one of the Studio
-nodes and verifying that your cluster size is 2:
+You can also check that the cluster is working by logging into MariaDB with the ``mysql`` client from the
+primary or the replica and checking the status:
 
 #. From the command line in the server, go to ``$CRAFTER_HOME/bin/dbms/bin`` and run the ``mysql`` program
 
@@ -317,16 +317,41 @@ nodes and verifying that your cluster size is 2:
 
    |
 
-#. Inside the MySQL client, run ``show status like 'wsrep_cluster_size'``:
+#. Inside the MySQL client, run the following:
+
+   *Primary*: ``SHOW MASTER STATUS\G``
 
    .. code-block:: none
 
-      MariaDB [(none)]> show status like 'wsrep_cluster_size';
-      +--------------------+-------+
-      | Variable_name      | Value |
-      +--------------------+-------+
-      | wsrep_cluster_size | 2     |
-      +--------------------+-------+
-      1 row in set (0.001 sec)
+      MariaDB [crafter]> SHOW MASTER STATUS\G
+      *************************** 1. row ***************************
+                  File: crafter_cluster-bin.000001
+              Position: 2812853
+          Binlog_Do_DB:
+      Binlog_Ignore_DB:
+      1 row in set (0.000 sec)
+
+   |
+
+   *Replica*: ``SHOW SLAVE STATUS\G``
+
+   .. code-block:: none
+
+      MariaDB [crafter]> SHOW SLAVE STATUS\G                                                                                                                                                                                                                                                                                                      [42/1943]
+      *************************** 1. row ***************************
+                Slave_IO_State: Waiting for master to send event
+                   Master_Host: 172.31.70.118
+                   Master_User: crafter_replication
+                   Master_Port: 33306
+                 Connect_Retry: 60
+               Master_Log_File: crafter_cluster-bin.000001
+           Read_Master_Log_Pos: 2776943
+                Relay_Log_File: crafter_cluster-relay-bin.000004
+                 Relay_Log_Pos: 656828
+         Relay_Master_Log_File: crafter_cluster-bin.000001
+              Slave_IO_Running: Yes
+             Slave_SQL_Running: Yes
+             .....
+             ........
 
    |
