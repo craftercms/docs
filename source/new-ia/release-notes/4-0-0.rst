@@ -45,12 +45,12 @@ New Features
     - Authoring side extensions allowing content authors new tools to build the desired experience.
       This includes extending Crafter Studio’s functionality with server-side code, UI widgets,
       third-party integration, pre-baked content model items and more. Learn all about it
-      :ref:`here <newIa-project-plugin>`
+      :ref:`here <newIa-plugins>`
     - Delivery-side extensions that provide end-user widgets, server-side code, integration with
-      third-party providers and more. Learn about it :ref:`here <newIa-project-plugin>`
+      third-party providers and more. Learn about it :ref:`here <newIa-plugins>`
     - Host plugins are still supported, see :ref:`here <newIa-plugin-host-page-examples>`
     - Plugins are starting to appear on the marketplace `here <https://marketplace.craftercms.org>`__
-    - Read the guide to building your own plugins  :ref:`here <newIa-how-do-i-make-my-own-project-plugin>`
+    - Read the guide to building your own plugins  :ref:`here <newIa-how-do-i-make-my-own-plugin>`
 
   - Added support for a plugin to add servlet filters |br|
     See `here <https://github.com/craftercms/craftercms/issues/4938>`__ for more information
