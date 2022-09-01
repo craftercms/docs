@@ -709,7 +709,7 @@ If performing a case insensitive search on a ``string`` field is desired, Crafte
 .. image:: /_static/images/content-model/tokenize-for-indexing-property.webp
    :alt: Enable case insensitive keyword search for string fields in content type by clicking on "Tokenize for Indexing"
    :width: 90%
-   :align: left
+   :align: center
 
 |
 
@@ -765,7 +765,7 @@ Data Sources
 .. image:: /_static/images/content-model/form-engine-data-sources.webp
     :alt: Form Engine Data Sources
     :width: 40%
-    :align: left
+    :align: center
 
 |
 
@@ -789,7 +789,7 @@ Let's take a look at a shared content data source in a project created using the
 .. image:: /_static/images/content-model/create-site-video-center-bp.webp
     :alt: Form Engine Data Sources Example - Create Project Using Video Center Blueprint
     :width: 70%
-    :align: left
+    :align: center
 
 |
 
@@ -798,7 +798,7 @@ Open the ``Sidebar`` then click on |projectTools|.  Click on ``Content Types`` a
 .. image:: /_static/images/content-model/shared-content-ds-enable-search-existing.webp
     :alt: Form Engine Data Sources Example - Shared Content Data Source
     :width: 100%
-    :align: left
+    :align: center
 
 |
 
@@ -807,7 +807,7 @@ To see the property we setup in action, open the Sidebar, then navigate to ``/st
 .. image:: /_static/images/content-model/author-search-for-existing.webp
    :alt: Form Engine Data Sources Example - Author Search for Existing Option
    :width: 70%
-   :align: left
+   :align: center
 
 |
 
@@ -816,7 +816,7 @@ A search dialog will open displaying in a grid view, items the user can search t
 .. image:: /_static/images/content-model/author-search-for-existing-dialog.webp
    :alt: Form Engine Data Sources Example - Author Search for Existing Dialog
    :width: 70%
-   :align: left
+   :align: center
 
 |
 
