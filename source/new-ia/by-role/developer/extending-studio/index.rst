@@ -16,7 +16,7 @@ While much of Crafter Studio is configurable, projects sometimes want to change 
 that does not exist in the base platform.  Crafter Studio is designed as a framework that supports
 extension.  This section details the code based extension points for Crafter Studio.
 
-For more information on extending Crafter Studio via plugins, see :ref:`here <newIa-studio-plugins>`
+For more information on extending Crafter Studio via plugins, see :ref:`here <newIa-plugins>`
 
 ######################
 Form Engine Extensions

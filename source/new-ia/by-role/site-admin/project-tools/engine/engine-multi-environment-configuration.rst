@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.2
 :nosearch:
 
 .. index:: Engine Multi-Environment Configuration
@@ -154,3 +154,69 @@ Let's take a look at an example of creating a new environment, called ``mycustom
    |
 
    The preview page should take you to */articles/2021/12/Top Books For Young Women*
+
+.. raw:: html
+
+   <hr>
+
+------------------------------------------------------
+SAML2 Multi-Environment Configuration |enterpriseOnly|
+------------------------------------------------------
+
+When configuring SAML2 in an environment-specific project configuration file (*site-config.xml*), since the
+SAML2 configuration folder sits outside the environment folder, you can point to environment-specific SAML2
+files in the SAML2 folder for the following path/file configuration of SAML2:
+
++------------------------------------+-------------------------------------------+-------------------------------------+
+|| Property                          || Description                              || Default Value                      |
++====================================+===========================================+=====================================+
+|``keystore.path``                   |The path of the keystore file in the repo  |``/config/engine/saml2/keystore.jks``|
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``identityProviderDescriptor``      |The path of the identity provider metadata |``/config/engine/saml2/idp.xml``     |
+|                                    |XML descriptor in the repo                 |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+|``serviceProviderDescriptor``       |The path of the service provider metadata  |``/config/engine/saml2/sp.xml``      |
+|                                    |XML descriptor in the repo                 |                                     |
++------------------------------------+-------------------------------------------+-------------------------------------+
+
+Use the format ``/config/engine/saml2/saml2-path-file-config-{myCustomEnv}.***`` for naming your SAML2 environment
+specific configuration files where ``{myCustomEnv}`` is the name of your environment.
+
+^^^^^^^
+Example
+^^^^^^^
+
+Say we're setting up SAML2 files for an environment named ``dev``.  Using the format mentioned above, our environment
+specific SAML2 files will be the following:
+
+- ``/config/engine/saml2/keystore-dev.jks``
+- ``/config/engine/saml2/idp-dev.xml``
+- ``/config/engine/saml2/sp-dev.xml``
+
+Below is the SAML2 configuration using the above files in the project configuration file:
+
+.. code-block:: xml
+   :caption: *Example SAML2 configuration for a custom environment*
+   :emphasize-lines: 5,15,17
+
+   <saml2>
+     ...
+     <keystore>
+       <defaultCredential>abc-crafter-saml</defaultCredential>
+       <path>/config/engine/saml2/keystore-dev.jks</path>
+       <password encrypted="true">${enc:value}</password>
+       <credentials>
+         <credential>
+           <name>abc-crafter-saml</name>
+           <password encrypted="true">${enc:value}</password>
+         </credential>
+       </credentials>
+     </keystore>
+     <identityProviderName>http://www.okta.com/abc</identityProviderName>
+     <identityProviderDescriptor>/config/engine/saml2/idp-dev.xml</identityProviderDescriptor>
+     <serviceProviderName>https://intranet.abc.org/saml/SSO</serviceProviderName>
+     <serviceProviderDescription>/config/engine/saml2/sp-dev.xml</serviceProviderDescription>
+   </saml2>
+
+
+See :ref:`engine-saml2-configuration` for more information on configuring SAML2.

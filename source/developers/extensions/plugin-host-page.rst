@@ -1,6 +1,8 @@
 :is-up-to-date: True
 :last-updated: 4.0.1
 
+:orphan:
+
 .. _plugin-host-page:
 
 ===========

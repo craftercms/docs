@@ -24,55 +24,23 @@ then click on **Configuration** and select **Box Profiles** from the list.
 Sample
 ------
 
-.. code-block:: xml
-    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/box/box.xml*
-    :linenos:
+Here's a sample Box Profiles Configuration file (click on the triangle on the left to expand/collapse):
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!--
-        Box profiles configuration file. This files configures 0 or more
-        profiles with the information required by the Box API.
+.. raw:: html
 
-        For every profile you need to specify:
-        <profile>
-            <id/>
-            <clientId/>
-            <clientSecret/>
-            <enterpriseId/>
-            <publicKeyId/>
-            <privateKey/>
-            <privateKeyPassword/>
-            <uploadFolder/>
-        </profile>
+   <details>
+   <summary><a>Sample "box.xml"</a></summary>
 
-        id:	a unique id for this profile, this will be referenced in the
-            control defined in the content type
-        clientId: Box client id
-        clientSecret: Box client secret
-        enterpriseId: Box enterprise id
-        publicKeyId: Box public key id
-        privateKey: Actual private key text in a CDATA
-        privateKeyPassword: Password used to decrypt the private key
-        uploadFolder: Name of the folder where files will be uploaded
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-box.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/box/box.xml*
+   :language: xml
+   :linenos:
 
-    -->
-    <box>
-      <box>
-        <profile>
-          <id>box-default</id>
-          <clientId>...</clientId>
-          <clientSecret>...</clientSecret>
-          <enterpriseId>...</enterpriseId>
-          <publicKeyId>...</publicKeyId>
-          <privateKey>
-    <![CDATA[...]]>
-          </privateKey>
-          <privateKeyPassword>...</privateKeyPassword>
-          <uploadFolder>videos</uploadFolder>
-        </profile>
-      </box>
-    </box>
+.. raw:: html
 
+   </details>
+
+|
 |
 
 -----------------
