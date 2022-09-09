@@ -50,13 +50,33 @@ Before we begin configuring Studio for clustering, the following must be setup:
 Configuring Studio Clustering
 -----------------------------
 
-First, we'll take a look at an example of how to setup a two node cluster with Studio step by step, then, we'll take a look at an example of setting up Studio clustering using a Kubernetes deployment
+First, we'll take a look at an example of how to setup a two node cluster with Studio step by step, then, we'll take a
+look at an example of setting up Studio clustering using a Kubernetes deployment
 
 .. toctree::
    :maxdepth: 1
 
    clustering/studio-clustering-two-nodes
    kubernetes/studio-clustering-with-kubernetes-deployment
+
+.. _cluster-multi-region-considerations:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Multi-Region Considerations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+For clusters with nodes in multi-regions utilizing S3 buckets, AWS provides solutions for handling multi-region
+deployments of S3 buckets.
+
+AWS supports access points for managing access to a shared bucket on S3.
+For more information on Amazon S3 Access Points, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html
+
+For clusters with S3 buckets located in multiple AWS regions, Amazon S3 Multi-Region Access Points provide a global
+endpoint that applications can use to fulfill requests from.
+For more information on Multi-Region Access Points in Amazon S3, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPoints.html
+
+AWS S3 also supports bucket replication (S3 replication) irrespective of the region they belong to, which provides data
+protection against disasters, minimizing latency, etc.  For more information on S3 bucket replication for use with
+multi-region access points, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointBucketReplication.html
 
 
 -------
