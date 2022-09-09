@@ -322,6 +322,8 @@ prior to publishing changes.
 
 |
 
+.. _newIa-experience-builder-panel-screens:
+
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Experience Builder Panel
 ^^^^^^^^^^^^^^^^^^^^^^^^
