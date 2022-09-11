@@ -29,7 +29,7 @@ author = u'CrafterCMS'
 # The short X.Y version.
 version = u'3.1'
 # The full version, including alpha/beta/rc tags.
-release = u'3.1.25'
+release = u'3.1.26'
 
 
 # -- General configuration ---------------------------------------------------
@@ -238,7 +238,7 @@ rst_epilog = """
 
 # Javadoc home and version
 javadoc_base = 'http://javadoc.craftercms.org/'
-javadoc_version = '3.1.25'
+javadoc_version = '3.1.26'
 
 # swagger base and version
 studio_swagger_base = 'https://app.swaggerhub.com/apis/craftercms/studio/'
