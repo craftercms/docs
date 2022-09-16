@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.2
 
 .. index:: Studio Clustering, Clustering
 
@@ -38,6 +38,10 @@ existing Primary Component to join.
 
 Once the cluster is up, one node in the cluster is elected to be the primary and the rest of the node(s) as replica(s).
 
+.. raw:: html
+
+   <hr>
+
 ------------
 Requirements
 ------------
@@ -45,6 +49,10 @@ Requirements
 Before we begin configuring Studio for clustering, the following must be setup:
 
 * A DNS server directing traffic to the primary node, and can failover to the replica node if the primary is not healthy
+
+.. raw:: html
+
+   <hr>
 
 -----------------------------
 Configuring Studio Clustering
@@ -78,6 +86,10 @@ AWS S3 also supports bucket replication (S3 replication) irrespective of the reg
 protection against disasters, minimizing latency, etc.  For more information on S3 bucket replication for use with
 multi-region access points, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointBucketReplication.html
 
+.. raw:: html
+
+   <hr>
+
 
 -------
 How-tos
@@ -87,3 +99,4 @@ How-tos
    :maxdepth: 1
 
    clustering/changing-git-url-format-in-cluster
+   clustering/cluster-troubleshooting
