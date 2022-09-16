@@ -6,34 +6,74 @@
 
 First, you need to install Python 3 and PIP (if not already present on your system):
 
-`$ sudo apt-get install python3-pip`
+```
+sudo apt-get install python3-pip
+```
 
 You might need to update PIP right away
 
-`$ pip3 install -U pip`
+```
+pip3 install -U pip
+```
 
 Then, install `pipenv`
 
-`$ sudo pip install pipenv`
+```
+sudo pip install pipenv
+```
 
-and the extension
-pip3 install sphinxext-remoteliteralinclude
+Finally, install dependencies
 
-Finally, install dependencies and activate the pipenv shell
+```
+pipenv install
+```
 
-`$ pipenv install`
-`$ pipenv shell`
+and activate the pipenv shell
+
+```
+pipenv shell
+```
+
+#### Install Extensions
+
+Install the following required extensions
+
+- [sphinx-tabs](https://pypi.org/project/sphinx-tabs/) extension
+  ```
+  pip install sphinx-tabs
+  ```
+- [sphinx-copybutton](https://pypi.org/project/sphinx-copybutton/) extension extension
+  ```  
+  pip install sphinx-copybutton
+  ``` 
+- [sphinxext-remoteliteralinclude](https://pypi.org/project/sphinxext-remoteliteralinclude/) extension
+  ```
+  pip3 install sphinxext-remoteliteralinclude
+  ```
+
+- [Sphinx read the docs theme](https://pypi.org/project/sphinx-rtd-theme/)
+  ```
+  pip install sphinx_rtd_theme
+  ```
 
 ## Building CrafterCMS documentation
 
 After meeting all requirements, you're ready to build the docs by running this command:
 
-`$ make html`
+```
+make html
+```
 
-And the docs will be under `build` folder.
+The docs will be under `build` folder.
 
 To clear the build folder run
 
-`$ make clean`
+```
+make clean
+```
 
+---
+**NOTE**
+Remember that when building the docs you need to activate the pipenv shell.
 
+---

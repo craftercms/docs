@@ -6,6 +6,38 @@
 Security Advisories
 ===================
 
+CV-2022091302
+=============
+
+======================= ======================================================================================
+**Date**                2022.09.13
+======================= ======================================================================================
+**Affected Versions**   **3.1** < 3.1.23
+**Vulnerability Type**  CWE-913 Improper Control of Dynamically-Managed Code Resources
+**Risk**                Medium
+**Description**         Improper Control of Dynamically-Managed Code Resources vulnerability in Crafter \
+                        Studio of Crafter CMS allows authenticated developers to execute OS commands via \
+                        Groovy Sandbox Bypass.
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2022-40635
+**Credit**              Matei "Mal" Badanoiu, https://github.com/mbadanoiu
+======================= ======================================================================================
+
+CV-2022091301
+=============
+
+======================= ======================================================================================
+**Date**                2022.09.13
+======================= ======================================================================================
+**Affected Versions**   **3.1** < 3.1.23
+**Vulnerability Type**  CWE-913 Improper Control of Dynamically-Managed Code Resources
+**Risk**                Medium
+**Description**         Improper Control of Dynamically-Managed Code Resources vulnerability in Crafter \
+                        Studio of Crafter CMS allows authenticated developers to execute OS commands via \
+                        FreeMarker SSTI.
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2022-40634
+**Credit**              Matei "Mal" Badanoiu, https://github.com/mbadanoiu
+======================= ======================================================================================
+
 CV-2022051603
 =============
 

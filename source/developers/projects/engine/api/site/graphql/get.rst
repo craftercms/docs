@@ -48,7 +48,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/site/graphql.json?query={page_article{items{title}}}``
+``GET .../api/1/site/graphql.json?query={page_article{items{title_t}}}``
 
 ^^^^^^^^
 Response
