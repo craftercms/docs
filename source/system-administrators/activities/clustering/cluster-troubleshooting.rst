@@ -47,7 +47,7 @@ sync failure.  From the logs, you can also determine if it was a DB or a Git syn
 DB sync failure
 ---------------
 
-For a DB sync failure, the logs will contain a message like :ref:`this <cluster-troubleshooting-git-sync-fail-log`
+For a DB sync failure, the logs will contain a message like :ref:`this <cluster-troubleshooting-git-sync-fail-log>`
 as seen above and the following email will be sent:
 
 .. image:: /_static/images/system-admin/cluster-db-sync-fail.webp
@@ -64,7 +64,7 @@ The workaround can be any valid intervention on the database
 Git sync failure
 ----------------
 
-For a Git sync failure, the logs will contain a message like :ref:`this <cluster-troubleshooting-db-sync-fail-log`
+For a Git sync failure, the logs will contain a message like :ref:`this <cluster-troubleshooting-db-sync-fail-log>`
 as seen above and the following email will be sent:
 
 .. image:: /_static/images/system-admin/cluster-git-sync-fail.webp
