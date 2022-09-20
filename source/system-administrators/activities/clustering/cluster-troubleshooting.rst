@@ -17,11 +17,17 @@ Whenever your cluster has a Git or DB sync failure, the following logs may appea
 
 .. _cluster-troubleshooting-git-sync-fail-log:
 
-<add sample log of failed Git sync>
+.. code-block:: text
+   :caption: *Sample log for a cluster Git sync failure*
+
+   <add sample log of failed Git sync>
 
 .. _cluster-troubleshooting-db-sync-fail-log:
 
-<add sample log of failed DB sync>
+.. code-block:: text
+   :caption: *Sample log for a cluster DB sync failure*
+
+   <add sample log of failed DB sync>
 
 An email will also be sent to configured recipients to inform them of the failure.
 
@@ -41,9 +47,15 @@ sync failure.  From the logs, you can also determine if it was a DB or a Git syn
 DB sync failure
 ---------------
 
-For a DB sync failure, the following email will be sent:
+For a DB sync failure, the logs will contain a message like :ref:`this <cluster-troubleshooting-git-sync-fail-log`
+as seen above and the following email will be sent:
 
-<add sample email of failed DB sync>
+.. image:: /_static/images/system-admin/cluster-db-sync-fail.webp
+   :alt: CrafterCMS - Studio Enterprise Clustering DB sync failure email
+   :width: 35%
+   :align: center
+
+|
 
 The workaround can be any valid intervention on the database
 
@@ -52,9 +64,15 @@ The workaround can be any valid intervention on the database
 Git sync failure
 ----------------
 
-For a Git sync failure
+For a Git sync failure, the logs will contain a message like :ref:`this <cluster-troubleshooting-db-sync-fail-log`
+as seen above and the following email will be sent:
 
-<add sample log of failed Git sync>
+.. image:: /_static/images/system-admin/cluster-git-sync-fail.webp
+   :alt: CrafterCMS - Studio Enterprise Clustering Git sync failure email
+   :width: 35%
+   :align: center
+
+|
 
 If there is any divergent history, the node will fail to startup and the admins would need to remove any commits
 "ahead" of primary branch.  That would apply for all repositories (global, site sandbox, site published).
