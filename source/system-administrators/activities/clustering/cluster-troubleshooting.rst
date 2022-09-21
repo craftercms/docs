@@ -29,7 +29,7 @@ Whenever your cluster has a Git or DB sync failure, the following logs may appea
 
    <add sample log of failed DB sync>
 
-An email will also be sent to configured recipients to inform them of the failure.
+An email will also be sent to the configured list of recipients to inform them of the failure.
 
 This section discusses how to fix the sync failure in your cluster.
 
