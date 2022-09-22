@@ -39,7 +39,6 @@ In depth concepts and guides follow.
       redirect
       testing
       errors
-      extending-studio/index
       developer-workflow/index
 
 |

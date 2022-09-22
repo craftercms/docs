@@ -9,7 +9,24 @@
 Building Form Engine Data Source Project Plugins
 ================================================
 
-In :ref:`form-engine-data-source`, we learned how to build form engine data sources placed in the Studio war file.  Crafter Studio also allows plugins for form engine data sources through the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile`
+Crafter Studio allows plugins for form engine data sources through the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile`
+
+---------------------
+What is a Data Source
+---------------------
+
+Crafter Studio form controls should be written in a way that makes them independent of the data they allow the user to select so that they can be (re)used across a wide range of data sets. To accomplish this objective we use a data source pattern where by the form control widget code is concerned with rendering and facilitating the data capture/selection process but delegates the retrieval of the content to a separate swappable component interface known as a data source.
+
+.. image:: /_static/images/content-model/create-content-type-2.webp
+   :width: 75 %
+   :alt: Content Type Editor
+   :align: center
+
+Form Engine data sources are #5 in the image above.
+
+Out of the box data sources are:
+
+.. include:: ../../form-sources/list-form-sources.rst
 
 -------------------------------------------
 The anatomy of a Data Source Project Plugin
@@ -19,15 +36,61 @@ Data Sources consist of (at a minimum)
 
 * A single javascript file which implements the data source interface.
 
-	* Unlike in the previous section :ref:`form-engine-data-source`, the JS file name and the data source name in the configuration does not need to be the same.  The JS file name can be any meaningful name, different from the data source name in the configuration.
+	* The JS file name and the data source name in the configuration does not need to be the same.  The JS file name can be any meaningful name, different from the data source name in the configuration.
 
 * Configuration in a Crafter Studio project to make that data source available for use.
 
----------
-Interface
----------
+.. _data-source-interface:
 
-See :ref:`data-source-interface` for more information on form engine data source interface.
+---------------------
+Data Source Interface
+---------------------
+
+**Data Source Interface**
+
+.. code-block:: javascript
+    :linenos:
+
+    /**
+     * Constructor: Where .X is substituted with your class name
+     */
+    CStudioForms.Datasources.ConfiguredList = CStudioForms.Datasources.X ||
+    function(id, form, properties, constraints)  {
+    }
+
+    /**
+     * Extension of the base class
+     */
+    YAHOO.extend(CStudioForms.Datasources.X, CStudioForms.CStudioFormDatasource, {
+
+    	/**
+         * Return a user friendly name for the data source (will show up in content type builder UX
+         */
+    	getLabel: function() {  },
+
+    	/**
+    	 * return a string that represents the type of data returned by the data source
+    	 * This is often of type "item"
+    	 */
+    	getInterface: function() { },
+
+    	/**
+    	 * return a string that represents the kind of data source (this is the same as the file name)
+    	 */
+        getName: function() { },
+
+    	/**
+    	 * return a list of properties supported by the data source.
+    	 * properties is an array of objects with the following structure { label: "", name: "", type: "" }
+    	 */
+    	getSupportedProperties: function() { },
+
+    	/**
+    	 * method responsible for getting the actual values.  Caller must pass callback which meets interface:
+    	 * { success: function(list) {}, failure: function(exception) }
+    	 */
+    	getList: function(cb) { }
+    });
 
 .. _plugin-ds-directory-structure:
 
