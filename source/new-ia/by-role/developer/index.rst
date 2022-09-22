@@ -91,10 +91,7 @@ The following looks at the developer workflow in depth:
    developer-workflow/index
 
 
-Crafter Studio is designed as a framework that supports extension.  There are a couple of ways
-to extend Studio.  One way is via :ref:`plugins <newIa-plugins>` and another way is via
-code based extension points as described :ref:`here <newIa-extending-crafter-studio>`
-
+Crafter Studio is designed as a framework that supports extension.  To extend Studio, use :ref:`plugins <newIa-plugins>`.
 Below is a short set of links to other documentation for technology that CrafterCMS leverages:
 
 +----------------+------------------------------+-----------------------------------------------+
