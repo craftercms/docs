@@ -63,7 +63,7 @@ Only approved content is published to the delivery environment. Crafter manages 
 The underlying Git repositories and related workflow for Authoring require no setup at all. When you create a project in Crafter Studio it automatically creates the local **Sandbox** and **Published** repositories. When you add a new **Delivery** node a simple command line script is run on that node that configures the node’s deployer to replicate and process content from the **Published** repository from authoring.
 
    * Instructions for creating a project can be found :ref:`here <newIa-your-first-editorial-project>` .
-   * Instructions for initializing a delivery node can be found :ref:`here <newIa-setup-site-for-delivery>`.
+   * Instructions for initializing a delivery node can be found :ref:`here <newIa-setup-project-for-delivery>`.
 
 ----------------------
 DevContentOps Workflow
@@ -186,7 +186,7 @@ Step 2: Create Your Project In Crafter Studio
 
 Next, you want to log in to Crafter Studio as the admin user. The admin user has the rights to create new projects (called projectss.) Click **Create Project**.
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site.webp
+.. image:: /_static/images/developer/dev-cloud-platforms/create-project.webp
     :alt: Developer Workflow - Create Project via Crafter Studio
     :width: 65 %
     :align: center
@@ -197,14 +197,14 @@ Clicking Create Project will present you with the Create Project dialog. This di
 
 Let’s walk through each part of the dialog:
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-1.webp
+.. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-1.webp
    :alt: Developer How Tos - Create Project Dialog Walk Through step 1
     :width: 50 %
    :align: center
 
 1. The first thing you need to do is to choose your blueprint. There are several out of the box blueprints provided by default. Choose one of these or one of your own. For our example, we’ll choose the Website Editorial blueprint.
 
-   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-2.webp
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-2.webp
       :alt: Developer How Tos - Create Project Dialog Walk Through step 2
       :width: 70 %
       :align: center
@@ -219,7 +219,7 @@ Let’s walk through each part of the dialog:
 
    This will open up a dialog where we can fill in all the information for our remote repository.
 
-   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.webp
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-3.webp
       :alt: Create Repository dialog to fill in information of remote repository being added to the project
       :width: 70 %
       :align: center
@@ -238,7 +238,7 @@ Let’s walk through each part of the dialog:
 
 7. Once you're satisfied with your entries for your remote repository, click on the **Create** button.   Once complete we can now connect to the upstream and push the contents of the Sandbox repository to the remote by clicking on the ``Push`` button (button with the up arrow).
 
-   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-4.webp
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-4.webp
       :alt: Remotes screen displaying newly added remote repository to project
       :width: 90 %
       :align: center
@@ -255,7 +255,7 @@ When you add a new delivery node a simple command line script is run on that nod
 
 Instructions for creating a project can be found :ref:`here <newIa-your-first-editorial-project>` .
 
-Instructions for initializing a delivery node can be found :ref:`here <newIa-setup-site-for-delivery>`.
+Instructions for initializing a delivery node can be found :ref:`here <newIa-setup-project-for-delivery>`.
 
 Step 4: Set up your Developer Workflow and Lower Environments
 -------------------------------------------------------------
@@ -280,7 +280,7 @@ After setting up the topology above, if you just want to get a local environment
 2. Login as Admin
 3. Click **Create Project**
 
-.. figure:: /_static/images/developer/workflow/create-site-based-on-remote-1.webp
+.. figure:: /_static/images/developer/workflow/create-project-based-on-remote-1.webp
     :alt: Developer Workflow - Setting up to work locally against the upstream
     :width: 70 %
     :align: center

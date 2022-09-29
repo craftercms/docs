@@ -57,9 +57,9 @@ Activities
    activities/encrypting-configuration-properties.rst
    activities/management-token.rst
 
-*********************
+********************
 Upgrading CrafterCMS
-*********************
+********************
 
 .. toctree::
    :maxdepth: 1
@@ -94,7 +94,7 @@ Delivery
    activities/delivery/change-hosts-ports-on-your-delivery-install.rst
    activities/delivery/configure-apache-vhost.rst
    activities/delivery/delivery-env-performance-tuning.rst
-   activities/delivery/setup-site-for-delivery.rst
+   activities/delivery/setup-project-for-delivery.rst
    activities/delivery/setup-serverless-delivery.rst
    activities/delivery/setup-delivery-using-aws-ami.rst
 
@@ -177,7 +177,7 @@ Crafter Studio
    studio/studio-configuration-files.rst
    studio/debugging-publishing-issues.rst
    studio/debugging-upgrade-issues.rst
-   studio/create-site-with-link-to-remote-repo.rst
+   studio/create-project-with-link-to-remote-repo.rst
    studio/session-timeout-settings.rst
    studio/publishing-blacklist.rst
 

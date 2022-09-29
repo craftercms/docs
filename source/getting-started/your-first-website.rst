@@ -9,13 +9,15 @@
 Your First Project
 ==================
 
-This section assumes that you have followed the steps in the :ref:`Quick Start Guide <quick_start_guide>` to get CrafterCMS and login. We will be using an out-of-the-box blueprint, called "Website Editorial" to create your first project.
+This section assumes that you have followed the steps in the :ref:`Quick Start Guide <quick_start_guide>` to get
+CrafterCMS and login. We will be using an out-of-the-box blueprint, called "Website Editorial" to create your
+first project.
 
 Let's get started building your first project!
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------------------------
 Creating your project from out of the box blueprint Website Editorial
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------------------------
 After logging in, you'll see the Projects screen (Below).  Click on **Create Project**
 
 .. image:: /_static/images/first-project/projects-screen.webp
@@ -25,9 +27,14 @@ After logging in, you'll see the Projects screen (Below).  Click on **Create Pro
 
 |
 
-In the **Create Project** screen, the user is presented with the available blueprints or the option to use a remote Git repository instead of selecting a blueprint from the list.  To see all available blueprints, scroll through the two tabs available, ``Private Blueprints`` which contains default blueprints available out of the box from Crafter Studio including the option to use a remote Git repository to create a new project, and ``Public Marketplace``. which contains blueprints submitted to `Crafter's Marketplace <https://github.com/marketplace/crafter-marketplace>`_
+In the **Create Project** screen, the user is presented with the available blueprints or the option to use a remote
+Git repository instead of selecting a blueprint from the list.  CrafterCMS provides default blueprints available out
+of the box from Crafter Studio  and the ``Public Marketplace``. which contains blueprints submitted to
+`Crafter's Marketplace <https://github.com/marketplace/crafter-marketplace>`_ to create a new project. To see all
+available blueprints, just scroll down the screen.
 
-We're going to be using the "Website Editorial Blueprint".  Blueprints offer you a starting point for your project. New blueprints can be created and installed into the system.  Click on **Use** for the "Website Editorial Blueprint".
+We're going to be using the "Website Editorial Blueprint".  Blueprints offer you a starting point for your project.
+New blueprints can be created and installed into the system.  Click on **Use** for the "Website Editorial Blueprint".
 
 .. image:: /_static/images/first-project/create-project-choose-bp.webp
     :width: 80 %
@@ -81,9 +88,9 @@ Your project is setup, we can now start adding/editing content!  To edit content
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------
 Adding a new article page to the project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------
 We'll be adding a new article to the project.  To add a new article (or a new page), navigate to the level and location within the path navigator in the Sidebar where we want to create the new page.  In this case, we are adding an article under **articles** -> **2021** -> **3**.  Click on the three dots next to the folder, then select **New Content**
 
 .. image:: /_static/images/first-project/first-project-new-content.webp
@@ -147,9 +154,9 @@ You can add more pages or modify/remove the existing pages from the blueprint, d
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------
 Updating the Contact Us section in the sidebar
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------
 
 Another thing that we may want to modify from the blueprint, is the left rail.  For this example, we are going to modify the **Contact Us** section in the left rail (contact widget).
 
@@ -192,9 +199,9 @@ Here's the Sidebar with the **Contact Us** section updated.  Notice that you can
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------
 Editing the features section, "Erat lacinia"
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------
 
 We will now edit the features section in our blueprint.  The features in this section has been configured as components, as you will see in the images below.  There are multiple ways of editing the features section in the blueprint.
 
@@ -295,9 +302,9 @@ Another way to remove a feature, is to edit the features section, then select a 
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 Publishing Your New/Edited Page
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 Your project is not yet published after creating the project from the Website Editorial blueprint.  Once your project is published, if you make edits to any of the pages or created new pages, it will need to be published for your project visitors to see the changes.  There are a couple of ways to publish your content edits.  The first thing you need to do is to navigate to the item you want to publish in the Sidebar toggled on/off by clicking on the CrafterCMS logo with the hamburger icon on the upper left hand corner of Studio.  After navigating to the item you want to publish, there are two ways to publish:
 
 - Click on the item you want to publish.  In the toolbar at the top, click on the three dots next to the page address url, then select **Publish**
