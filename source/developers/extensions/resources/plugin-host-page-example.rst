@@ -1,13 +1,13 @@
 :is-up-to-date: True
 
-.. index:: Crafter Studio Plugin Host Plugin Example, Studio Plugins, Plugins
+.. index:: Crafter Studio Full Screen Plugin Example, Studio Plugins, Plugins
 
-.. _plugin-vanilla-example:
+.. _full-screen-plugin-example:
 
 =========================================
-Crafter Studio Plugin Host Plugin Example
+Crafter Studio Full Screen Plugin Example
 =========================================
-Here we'll take a look at an example of creating a plugin for a plugin host page using the
+Here we'll take a look at an example of creating a Full Screen Plugin for the plugin host page using the
 `Vanilla example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-vanilla>`__
 
 For more information on the plugin host, see :ref:`here <plugin-host-page>`
