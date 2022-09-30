@@ -1,16 +1,15 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
-:nosearch:
 
-.. index:: Setup Site for a Delivery Environment
+.. index:: Setup Project for a Delivery Environment
 
-.. _newIa-setup-site-for-delivery:
+.. _setup-project-for-delivery:
 
-=====================================
-Setup Site for a Delivery Environment
-=====================================
+========================================
+Setup Project for a Delivery Environment
+========================================
 
-In this section, we will be working in the delivery environment of CrafterCMS and describing how to setup your site for a delivery environment.
+In this section, we will be working in the delivery environment of CrafterCMS and describing how to
+setup your project for a delivery environment.
 
 -----------------------------
 Setup Crafter Deployer Target
@@ -81,14 +80,14 @@ Example #2: ``ssh://jdoe@server2.example.com:63022/path/to/repo``
       .. include:: /includes/setup-ssh-keys.rst
 
 If you are just working on another directory on disk for your delivery, you can just use the filesystem.  When your repository is local, make sure to use the absolute path.
-Here is an example site's published repo Git url when using a local repository:
+Here is an example project's published repo Git url when using a local repository:
 
   .. code-block:: bash
 
-      /opt/crafter/authoring/data/repos/sites/mysite/published
+      /opt/crafter/authoring/data/repos/sites/my-project/published
 
 .. note::
-  * When using ``ssh``, you might see in the logs ``com.jcraft.jsch.JSchException: UnknownHostKey`` errors. These errors are common in Ubuntu, and are caused by known host keys being stored in non-RSA format. Please follow the instructions in :ref:`newIa-crafter-studio-debugging-deployer-issues` under ``SSH Unknown Host`` to resolve them.
+  * When using ``ssh``, you might see in the logs ``Caused by: org.apache.sshd.common.SshException: Server key did not validate`` errors. These error is caused by the server not in the known_host file. Please follow the instructions in :ref:`crafter-studio-debugging-deployer-issues` under ``SSH Unknown Host`` to resolve them.
 
   * ``Git`` needs to be installed in authoring when using SSH to connect the delivery to the authoring.
 
@@ -97,43 +96,44 @@ Here is an example site's published repo Git url when using a local repository:
     To get the location of Git, run the following command: ``which git-upload-pack``
 
 
------------------------------
-Viewing your Site for Testing
------------------------------
+--------------------------------
+Viewing your Project for Testing
+--------------------------------
 
-To test viewing your site, open a browser and type in the url of your site.
+To test viewing your project, open a browser and type in the url of your project.
 
-If you have multiple sites setup, to view a certain site, in your browser, enter the following:
-
-.. code-block:: sh
-
-    <your url>?crafterSite=<site name>
-
-Here we have an example of a delivery setup in another directory on disk (local), where there are two sites, ``myawesomesite`` and ``helloworld``
-
-.. image:: /_static/images/system-admin/site-list.webp
-    :width: 100 %
-    :align: center
-    :alt: Setup Site for Delivery - Site List
-
-To set the site to the ``helloworld`` site, in your browser, type in
+If you have multiple projects setup, to view a certain project, in your browser, enter the following:
 
 .. code-block:: sh
 
-    http://localhost:9080?crafterSite=helloworld
+    <your url>?crafterSite=<project id>
 
-.. image:: /_static/images/system-admin/site-hello.webp
+Here we have an example of a delivery setup in another directory on disk (local), where there are two projects,
+``my-awesome-editorial`` and ``hello-world``
+
+.. image:: /_static/images/system-admin/project-list.webp
     :width: 100 %
     :align: center
-    :alt: Setup Site for Delivery - Hello World Site
+    :alt: Setup Project for Delivery - Project List
 
-To set the site to the ``myawesomesite``, in your browser, type in
+To set the ``crafterSite`` to the ``hello-world`` project, in your browser, type in
 
 .. code-block:: sh
 
-    http://localhost:9080?crafterSite=myawesomesite
+    http://localhost:9080?crafterSite=hello-world
 
-.. image:: /_static/images/system-admin/site-awesome.webp
+.. image:: /_static/images/system-admin/project-hello.webp
     :width: 100 %
     :align: center
-    :alt: Setup Site for Delivery - My Awesome Site
+    :alt: Setup Project for Delivery - Hello World Project
+
+To set the site to the ``my-awesome-editorial``, in your browser, type in
+
+.. code-block:: sh
+
+    http://localhost:9080?crafterSite=my-awesome-editorial
+
+.. image:: /_static/images/system-admin/project-awesome.webp
+    :width: 100 %
+    :align: center
+    :alt: Setup Project for Delivery - My Awesome Editorial

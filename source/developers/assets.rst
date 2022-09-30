@@ -8,7 +8,7 @@
 Assets
 ------
 
-Assets are media (images, videos, etc.) or document files used in your site.  Assets can reside locally within Studio under ``/static-assets`` or outside of Studio from another server.
+Assets are media (images, videos, etc.) or document files used in your project.  Assets can reside locally within Studio under ``/static-assets`` or outside of Studio from another server.
 
 To view assets in Studio, open the **Sidebar** by clicking on hamburger icon (three horizontal lines stacked on top of each other) at the top left of your browser, if it's not yet open
 
