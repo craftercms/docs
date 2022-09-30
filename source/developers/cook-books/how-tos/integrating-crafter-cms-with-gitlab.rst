@@ -75,7 +75,7 @@ Let’s walk through each part of the dialog:
 
    Click on the **Review** button, then finally  click on the **Create Project** button to create your project.  CrafterCMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint.  Your project should be created in a short while.
 
-3. Once your project is created, the next step is to add a remote repository to your newly created project.  Open the **Sidebar** then click on **Project Tools** -> **Remote Repositories**, then click on the **New Repository** on the top right.
+3. Once your project is created, the next step is to add a remote repository to your newly created project.  Open the **Sidebar** then click on **Project Tools** -> **Git**, then click on the **New Remote** button on the top right.
 
    This will open up a dialog where we can fill in all the information for our remote repository.
 
@@ -98,7 +98,7 @@ Let’s walk through each part of the dialog:
 
 7. Once you're satisfied with your entries for your remote repository, click on the **Create** button.   Once complete we can now connect to the upstream and push the contents of the Sandbox repository to the remote by clicking on the ``Push`` button (button with the up arrow).
 
-   .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-4.webp
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-4-gitlab.webp
       :alt: Remotes screen displaying newly added remote repository to project
       :width: 90 %
       :align: center

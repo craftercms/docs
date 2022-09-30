@@ -8,7 +8,7 @@
 Working with Assets
 ===================
 
-Assets are binary files, typically images, videos, etc. which can be uploaded directly by Authors from the site navigation tree to CrafterCMS.
+Assets are binary files, typically images, videos, etc. which can be uploaded directly by Authors from the sidebar navigation tree to CrafterCMS.
 
 .. note::
 	.. include:: /includes/valid-file-names.rst
@@ -16,7 +16,7 @@ Assets are binary files, typically images, videos, etc. which can be uploaded di
 -------------
 Adding Assets
 -------------
-To upload a file (images, videos, etc.), in the Site Content Panel click on **Static Assets**, then click again on the folder named **static-assets**.  This will show you a list of folders containing assets already uploaded, such as images, fonts, etc.  
+To upload a file (images, videos, etc.), in the Sidebar click on **Static Assets**, then click again on the folder named **static-assets**.  This will show you a list of folders containing assets already uploaded, such as images, fonts, etc.
 
 ^^^^^^^^^^^^^^^^^
 Creating a folder
@@ -123,7 +123,7 @@ After clicking on the **Delete** button, a snackbar at the top right of your bro
 ----------------
 Asset Versioning
 ----------------
-All changes to static assets are tracked and can be reverted to an older version.  For static assets, like images, videos, etc., to access the History dialog, select the static asset that you want to view the history of from the site navigation tree, under the folder **Static Assets**, then click on the **History** menu of the context navigation menu at the top of your browser or, click on the three dots next to the asset you want to view then select **History**
+All changes to static assets are tracked and can be reverted to an older version.  For static assets, like images, videos, etc., to access the History dialog, select the static asset that you want to view the history of from the navigation tree, under the folder **Static Assets**, then click on the **History** menu of the context navigation menu at the top of your browser or, click on the three dots next to the asset you want to view then select **History**
 
 .. image:: /_static/images/page/page-asset-access-history.webp
     :alt: Static Assets - Open History
