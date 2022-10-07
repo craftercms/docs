@@ -3,7 +3,7 @@
 
 .. index:: Create a Plugin, Plugins
 
-.. _plugins:
+.. _newIa-plugins:
 
 =======
 Plugins
@@ -18,7 +18,7 @@ A plugin can contain one or more extensions for CrafterCMS in a single package. 
 * **Extend Crafter Studio (authoring)**
 
   * Add Studio authoring widgets that drive the Sidebar and other UI elements
-  * Add embedded applications that render in their own page within Studio (see :ref:`Plugin Host <plugin-host>`)
+  * Add embedded applications that render in their own page within Studio (see :ref:`Plugin Host <newIa-plugin-host>`)
   * Add new Form Engine extensions including data sources and components
   * Add server-side code and services that drive the Studio UI extensions
 
@@ -33,7 +33,7 @@ Plugins allows the user to easily add/extend functionality and features of a Web
 Examples of features/functionalities a user may want to add to their Web app may be a contact form,
 a chat bot or Website analytics.
 
-.. _plugins-authoring:
+.. _newIa-plugins-authoring:
 
 ^^^^^^^^^^^^^^^^^
 Authoring Plugins
@@ -48,7 +48,7 @@ UI Widgets and Standalone Apps
 There are two types of UI plugins
 
 - UI widgets to be used around the different plugable sections of Studio UI
-- Standalone apps that run in the :ref:`Plugin Host <plugin-host>`
+- Standalone apps that run in the :ref:`Plugin Host page <newIa-plugin-host>`
 
 Plugins can access Studio client-side components (React), services and utilities through two main mechanisms:
 
@@ -91,7 +91,7 @@ Through authoring plugins you can add your own service API rest scripts.
 For example, you may want to create an API to connect and/or monitor AWS services and create a
 `UI extension <UI Widgets and Standalone Apps_>`_ to consume your APIs.
 
-.. _plugins-delivery:
+.. _newIa-plugins-delivery:
 
 ^^^^^^^^^^^^^^^^
 Delivery Plugins
@@ -127,7 +127,7 @@ the rendering template of a content type or a Freemarker template hook (explaine
 you can add templates to render your extension content types or to add functionality to pages
 via the Freemarker template hooks.
 
-.. _plugins-using-freemarker-templates:
+.. _newIa-plugins-using-freemarker-templates:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Freemarker Template Hooks
@@ -174,7 +174,7 @@ See https://github.com/craftercms/google-analytics-plugin/blob/master/delivery/t
 
    <hr>
 
-.. _how-do-i-make-my-own-plugin:
+.. _newIa-how-do-i-make-my-own-plugin:
 
 ----------------------------
 How Do I Make My Own Plugin?
@@ -191,7 +191,7 @@ You'll need the following for creating your plugin:
 The ``craftercms-plugin.yaml`` file contains information about your plugin, such as the license,
 the versions of CrafterCMS supported, and other configurations and metadata.
 
-See :ref:`plugin-descriptor-file` for more information on what's inside the plugin descriptor.
+See :ref:`newIa-plugin-descriptor-file` for more information on what's inside the plugin descriptor.
 
 Your plugin files/folders could be JavaScript files, XML files, Groovy scripts, images, CSS files,
 and more depending on the plugin type you're creating.
@@ -205,7 +205,7 @@ To create your own plugin, your files/folders needs to go in the corresponding t
 plugin folder, following the structure below:
 
 
-- ``craftercms-plugin.yaml``: the plugin descriptor, see :ref:`plugin-descriptor-file` for details
+- ``craftercms-plugin.yaml``: the plugin descriptor, see :ref:`newIa-plugin-descriptor-file` for details
 
 - ``.crafter``
 
@@ -217,7 +217,7 @@ plugin folder, following the structure below:
 
   - ``content-types``
 
-    - ``component``: contains configuration files for components, see :ref:`below <example-component-plugin>` for an example
+    - ``component``: contains configuration files for components, see :ref:`below <newIa-example-component-plugin>` for an example
     - ``page``: contains configuration files for pages
 
   - ``static-assets``: contains files for Studio UI plugins
@@ -273,11 +273,11 @@ to match the final destination of the file:
 | ``delivery/scripts/rest/*``              | ``/scripts/rest/<plugin id path>/*``                          |
 +------------------------------------------+---------------------------------------------------------------+
 
-Your plugin is installed in a project via the :ref:`marketplace <plugin-install-from-marketplace>`
-or via :ref:`copy-plugin <crafter-cli-copy-plugin>` CLI command, your plugin descriptor containing the
+Your plugin is installed in a project via the :ref:`marketplace <newIa-plugin-install-from-marketplace>`
+or via :ref:`copy-plugin <newIa-crafter-cli-copy-plugin>` CLI command, your plugin descriptor containing the
 directory structure will be read and corresponding plugin files copied to the project.
 
-.. _ui-plugin-directory-structure:
+.. _newIa-ui-plugin-directory-structure:
 
 UI Plugin Directory Structure
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -336,13 +336,13 @@ a skeleton plugin directory structure for your use.  You can use the repository 
 create your plugin.  Simply fill in the plugin descriptor file ``craftercms-plugin.yaml`` file and
 remove items you don't need
 
-.. _plugins-create-your-plugin-files:
+.. _newIa-plugins-create-your-plugin-files:
 
 ^^^^^^^^^^^^^^^^^^
 Create your plugin
 ^^^^^^^^^^^^^^^^^^
 To create a plugin, a descriptor file ``craftercms-plugin.yaml`` is required.
-:ref:`This <plugin-descriptor-file>` article contains more information on what's in the file and
+:ref:`This <newIa-plugin-descriptor-file>` article contains more information on what's in the file and
 an example file.
 
 The next requirement for creating your plugin are the plugin files.
@@ -420,7 +420,7 @@ To reuse those libraries, do the following:
 Publishing Your Plugin
 ----------------------
 
-To publish a plugin in the CrafterCMS Marketplace you can follow the instructions in :ref:`marketplace-create-extensions`
+To publish a plugin in the CrafterCMS Marketplace you can follow the instructions in :ref:`newIa-marketplace-create-extensions`
 
 .. raw:: html
 
@@ -435,8 +435,8 @@ Retrieving Extension Assets
 At the low level, Crafter Studio APIs provide an endpoint that gets a file for a given plugin, (i.e.
 :studio_swagger_url:`#/plugin/getPluginFile`). This API takes care of setting all the right headers
 for whatever kind of asset you're retrieving (JavaScript, CSS, image, etc). There are also higher level
-mechanisms for developers to load and use plugins like the :ref:`Plugin host <plugin-host>`
-or through the :ref:`Crafter CLI <crafter-cli-commands>`.
+mechanisms for developers to load and use plugins like the :ref:`Plugin host <newIa-plugin-host>`
+or through the :ref:`Crafter CLI <newIa-crafter-cli-commands>`.
 
 If you need to *manually* load assets from your plugin (e.g set the ``src`` of a ``<script />``,
 set the ``href`` of a ``<link />``, set the ``src`` of an ``<img />``, etc.), you should use the following URL
@@ -457,8 +457,8 @@ Installing a Plugin
 
 Plugins may be installed a couple of ways depending on where the plugins are located:
 
-* :ref:`plugin-install-from-marketplace`
-* :ref:`plugin-install-from-local-folder`
+* :ref:`newIa-plugin-install-from-marketplace`
+* :ref:`newIa-plugin-install-from-local-folder`
 
 After installing a plugin, depending on the plugin you created, the plugin will be be installed under the:
 
@@ -470,7 +470,7 @@ After installing a plugin, depending on the plugin you created, the plugin will 
 * {siteRoot}/scripts/{yourScriptType}/{yourPluginId}/{yourPluginType}/{yourPluginName}
 
 
-.. _plugin-install-from-marketplace:
+.. _newIa-plugin-install-from-marketplace:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Install a plugin from the CrafterCMS Marketplace
@@ -486,9 +486,9 @@ or the REST API:
       - ``install_plugins``
 
 
-For more information on installing plugins from the CrafterCMS Marketplace using Crafter Studio, see :ref:`plugin-management`
+For more information on installing plugins from the CrafterCMS Marketplace using Crafter Studio, see :ref:`newIa-plugin-management`
 
-.. _plugin-install-from-local-folder:
+.. _newIa-plugin-install-from-local-folder:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Install a plugin in development from a Studio local folder
@@ -512,13 +512,13 @@ like below:
 Remember that the connection to CrafterCMS needs to be setup via the ``add-environment`` command before
 using any of the ``crafter-cli`` commands.
 
-See :ref:`crafter-cli-copy-plugin` for more information on the ``copy-plugin`` command.
+See :ref:`newIa-crafter-cli-copy-plugin` for more information on the ``copy-plugin`` command.
 
 .. raw:: html
 
    <hr>
 
-.. _example-component-plugin:
+.. _newIa-example-component-plugin:
 
 -------------------------
 Example Creating a Plugin
@@ -622,7 +622,7 @@ Some More Examples & Resources
 
 Here are some more examples and resources to help you create your plugins
 
-.. _plugins-authoring-guides:
+.. _newIa-plugins-authoring-guides:
 
 ^^^^^^
 Guides
@@ -655,7 +655,7 @@ Below are more authoring examples of creating plugins:
 Example Plugins
 ^^^^^^^^^^^^^^^
 
-CrafterCMS also provides various plugin examples available from the `marketplace <https://marketplace.craftercms.org>`__ to help you create your own plugins.  These plugins can be installed to your project using ``Plugin Management`` in |projectTools| through the Studio UI.  See :ref:`plugin-management` for more information on installing plugins from the CrafterCMS Marketplace.
+CrafterCMS also provides various plugin examples available from the `marketplace <https://marketplace.craftercms.org>`__ to help you create your own plugins.  These plugins can be installed to your project using ``Plugin Management`` in |projectTools| through the Studio UI.  See :ref:`newIa-plugin-management` for more information on installing plugins from the CrafterCMS Marketplace.
 
 * `Cliengo plugin <https://github.com/craftercms/chatbot-plugin/tree/cliengo>`__ to add Cliengo to a project
 * `Image Carousel plugin <https://github.com/craftercms/carousel-plugin>`__ to add a highly configurable carousel plugin based on `Tiny Slider <https://github.com/ganlanyuan/tiny-slider/tree/v2.9.3>`__
