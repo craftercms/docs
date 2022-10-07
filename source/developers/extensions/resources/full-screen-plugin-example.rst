@@ -10,7 +10,7 @@ Crafter Studio Full Screen Plugin Example
 Here we'll take a look at an example of creating a Full Screen Plugin for the plugin host page using the
 `Vanilla example <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-vanilla>`__
 
-For more information on the plugin host, see :ref:`here <plugin-host-page>`
+For more information on the plugin host, see :ref:`here <plugin-host>`
 
 For this example, as outlined in the vanilla example referenced above, we will need a project created using the
 ``Website  Editorial Blueprint``.  We'll name the project ``editorial-neue``.

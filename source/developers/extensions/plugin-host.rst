@@ -3,7 +3,7 @@
 
 :orphan:
 
-.. _plugin-host-page:
+.. _plugin-host:
 
 ===========
 Plugin Host
