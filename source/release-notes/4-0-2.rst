@@ -31,6 +31,9 @@ Updates
   - Snakeyaml to version 1.33
   - Mockito to version 4.8.0
 
+* Fixed issue with page URL validation check |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5817>`__ for more information
+
 * Fixed issue with ``parentPath`` macro in embedded components |br|
   See `here <https://github.com/craftercms/craftercms/issues/5808>`__ for more information
 
@@ -52,6 +55,15 @@ Updates
 * Fixed issue when duplicating pages with images |br|
   See `here <https://github.com/craftercms/craftercms/issues/5722>`__ for more information
 
+* Added icon at the top right section of image preview dialog for switching background modes |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5710>`__ for more information
+
+* Fixed issue with group checkboxes control |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5695>`__ for more information
+
+* Fixed issue with deployment events watcher |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5677>`__ for more information
+
 * Updated Policy Engine configuration  |br|
   The Policy Engine configuration by default now replaces parenthesis with dashes.
   See `here <https://github.com/craftercms/craftercms/issues/5676>`__ for more information
@@ -72,7 +84,7 @@ For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1
 .. important::
 
     Please see :ref:`Breaking changes <breaking-changes-4-0-0>` for breaking changes and other
-    things to consider before upgrading
+    things to consider before upgrading          
 
     For instructions on how to update your CrafterCMS install to 4.0.0 (applies to 4.0.2),
     please see :ref:`upgrading-craftercms`
