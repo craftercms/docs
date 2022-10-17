@@ -18,7 +18,7 @@ A plugin can contain one or more extensions for CrafterCMS in a single package. 
 * **Extend Crafter Studio (authoring)**
 
   * Add Studio authoring widgets that drive the Sidebar and other UI elements
-  * Add embedded applications that render in their own page within Studio (see :ref:`Plugin Host page <plugin-host-page>`)
+  * Add embedded applications that render in their own page within Studio (see :ref:`Plugin Host <plugin-host>`)
   * Add new Form Engine extensions including data sources and components
   * Add server-side code and services that drive the Studio UI extensions
 
@@ -48,7 +48,7 @@ UI Widgets and Standalone Apps
 There are two types of UI plugins
 
 - UI widgets to be used around the different plugable sections of Studio UI
-- Standalone apps that run in the :ref:`Plugin Host page <plugin-host-page>`
+- Standalone apps that run in the :ref:`Plugin Host <plugin-host>`
 
 Plugins can access Studio client-side components (React), services and utilities through two main mechanisms:
 
@@ -435,7 +435,7 @@ Retrieving Extension Assets
 At the low level, Crafter Studio APIs provide an endpoint that gets a file for a given plugin, (i.e.
 :studio_swagger_url:`#/plugin/getPluginFile`). This API takes care of setting all the right headers
 for whatever kind of asset you're retrieving (JavaScript, CSS, image, etc). There are also higher level
-mechanisms for developers to load and use plugins like the :ref:`Plugin host page <plugin-host-page>`
+mechanisms for developers to load and use plugins like the :ref:`Plugin host <plugin-host>`
 or through the :ref:`Crafter CLI <crafter-cli-commands>`.
 
 If you need to *manually* load assets from your plugin (e.g set the ``src`` of a ``<script />``,
@@ -648,7 +648,7 @@ Below are more authoring examples of creating plugins:
    resources/plugin-navmenu-example
    resources/form-control-plugins
    resources/form-data-source-plugins
-   resources/plugin-host-page-example
+   resources/full-screen-plugin-example
 
 
 ^^^^^^^^^^^^^^^

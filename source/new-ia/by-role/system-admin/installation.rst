@@ -100,7 +100,7 @@ setup various things for your delivery install
    delivery/delivery-env-performance-tuning
    delivery/change-hosts-ports-on-your-delivery-install
    delivery/configure-apache-vhost
-   delivery/setup-site-for-delivery
+   delivery/setup-project-for-delivery
    delivery/setup-serverless-site
    delivery/setup-serverless-delivery
 

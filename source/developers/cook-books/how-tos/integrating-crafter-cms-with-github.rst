@@ -48,7 +48,7 @@ Step 2: Create Your Project In Crafter Studio
 
 Next, you want to log in to Crafter Studio as the admin user. The admin user has the rights to create new projects (called projects.) Click Create Project.
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site.webp
+.. image:: /_static/images/developer/dev-cloud-platforms/create-project.webp
     :alt: How-Tos - Project screen in Crafter Studio
     :width: 70 %
     :align: center
@@ -59,14 +59,14 @@ Clicking Create Project will present you with the Create Project dialog. This di
 
 Let’s walk through each part of the dialog:
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-1.webp
+.. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-1.webp
     :alt: Developer How Tos - Create Project Dialog Walk Through step 1
     :width: 70 %
     :align: center
 
 1. The first thing you need to do is to choose your blueprint. There are several out of the box blueprints provided by default. Choose one of these or one of your own. For our example, we’ll choose the Website Editorial blueprint.
 
-.. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-2.webp
+.. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-2.webp
     :alt: Developer How Tos - Create Project Dialog Walk Through step 2
     :width: 70 %
     :align: center
@@ -75,11 +75,11 @@ Let’s walk through each part of the dialog:
 
    Click on the **Review** button, then finally  click on the **Create Project** button to create your project.  CrafterCMS will create the local repositories, search index and internal data structures required to support the project and install the blueprint.  Your project should be created in a short while.
 
-3. Once your project is created, the next step is to add a remote repository to your newly created project.  Open the **Sidebar** then click on **Project Tools** -> **Remote Repositories**, then click on the **New Repository** on the top right.
+3. Once your project is created, the next step is to add a remote repository to your newly created project.  Open the **Sidebar** then click on **Project Tools** -> **Git**, then click on the **New Remote** button on the top right.
 
    This will open up a dialog where we can fill in all the information for our remote repository.
 
-   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-3.webp
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-3.webp
       :alt: Create Repository dialog to fill in information of remote repository being added to the project
       :width: 70 %
       :align: center
@@ -98,7 +98,7 @@ Let’s walk through each part of the dialog:
 
 7. Once you're satisfied with your entries for your remote repository, click on the **Create** button.   Once complete we can now connect to the upstream and push the contents of the Sandbox repository to the remote by clicking on the ``Push`` button (button with the up arrow).
 
-   .. image:: /_static/images/developer/dev-cloud-platforms/create-site-then-push-4.webp
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-4.webp
       :alt: Remotes screen displaying newly added remote repository to project
       :width: 90 %
       :align: center
@@ -112,7 +112,7 @@ Step 3: Check GitHub to Make Sure Your Project is There
 
 Go back to your Github project and refresh the screen.  You will see the contents of your CMS project in the repository.
 
-.. image:: /_static/images/developer/dev-cloud-platforms/craftercms-github-site-created-syncd.webp
+.. image:: /_static/images/developer/dev-cloud-platforms/craftercms-github-project-created-syncd.webp
     :alt: How-Tos - Your project in GitHub
     :width: 80 %
     :align: center
@@ -125,7 +125,7 @@ Your project is there!
 Pushing and Pulling from the Remote Repository
 ----------------------------------------------
 
-Crafter Studio helps you manage and interact with your remote repositories via the user interface and via API.  Using Crafter Studio’s remote repositories console, you can add any remotes to the project you like and sync with them via pull and push operations at any time.
+Crafter Studio helps you manage and interact with your remote repositories via the user interface and via API.  Using Crafter Studio’s git console, you can add any remotes to the project you like and sync with them via pull and push operations at any time.
 
 .. image:: /_static/images/developer/dev-cloud-platforms/craftercms-github-remotes.webp
     :alt: Developer How-Tos - Pushing and Pulling from the Remote Repository
@@ -146,7 +146,7 @@ Let’s consider for a moment that you’re a new developer joining the team. Th
 2. Login as Admin
 3. Click Create Project
 
-   .. figure:: /_static/images/developer/dev-cloud-platforms/create-site-based-on-remote-1.webp
+   .. figure:: /_static/images/developer/dev-cloud-platforms/create-project-based-on-remote-1.webp
       :alt: Developer How Tos - Setting up to work locally against the upstream
       :width: 70 %
       :align: center

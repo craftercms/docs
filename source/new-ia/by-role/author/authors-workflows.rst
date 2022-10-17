@@ -119,6 +119,9 @@ Users with permission to publish can also make changes and request approval for 
 
 |
 
+To make approval mandatory for publish requests for users with publish permission,
+see :ref:`here <newIa-project-config-require-peer-review>`.
+
 After clicking on the **Submit** or **Schedule** button (depending on the option selected for publishing
 now or later), a notification email will be sent to the project's approvers.  Notice also, that the
 toolbar now displays the icon for **Submitted**

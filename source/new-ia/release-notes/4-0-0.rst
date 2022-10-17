@@ -48,7 +48,7 @@ New Features
       :ref:`here <newIa-plugins>`
     - Delivery-side extensions that provide end-user widgets, server-side code, integration with
       third-party providers and more. Learn about it :ref:`here <newIa-plugins>`
-    - Host plugins are still supported, see :ref:`here <newIa-plugin-host-page-examples>`
+    - Host plugins are still supported, see :ref:`here <newIa-full-screen-plugin-example>`
     - Plugins are starting to appear on the marketplace `here <https://marketplace.craftercms.org>`__
     - Read the guide to building your own plugins  :ref:`here <newIa-how-do-i-make-my-own-plugin>`
 

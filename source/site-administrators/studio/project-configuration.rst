@@ -239,8 +239,8 @@ To add protected folder/s in your project, add your folder path/s like below:
 Remember to replace ``/YOUR/FOLDER/PATH/PATTERN`` and ``/MORE/FOLDER/PATH/PATTERN`` with the actual folder path
 pattern/s that you would like to be protected.
 
-To see an example of configured protected folders, create a site using the ``Video Center`` blueprint from the
-Public Marketplace in the ``Create Site`` dialog then open the
+To see an example of configured protected folders, create a project using the ``Video Center`` blueprint from the
+Public Marketplace in the ``Create Project`` dialog then open the
 ``Sidebar`` -> |projectTools| -> ``Configuration`` -> ``Project Configuration``.  Scroll down to the
 ``<protected-folders-patterns>`` tag:
 

@@ -3,14 +3,14 @@
 
 :orphan:
 
-.. _plugin-host-page:
+.. _plugin-host:
 
 ===========
 Plugin Host
 ===========
 
 The Plugin Host is a special route within Studio that provides an empty canvas for custom
-authoring apps to render.
+authoring apps (:ref:`full-screen-plugin-example`) to render.
 
 Apps developed to run on the plugin host are solely responsible for rendering the entire UI of the page and
 are able to access all of Studio UI components and apis through the ``window.craftercms`` global
