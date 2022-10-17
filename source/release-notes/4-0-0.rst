@@ -46,7 +46,7 @@ New Features
       :ref:`here <plugins>`
     - Delivery-side extensions that provide end-user widgets, server-side code, integration with
       third-party providers and more. Learn about it :ref:`here <plugins>`
-    - Host plugins are still supported, see :ref:`here <plugin-host-page-examples>`
+    - Host plugins are still supported, see :ref:`here <full-screen-plugin-example>`
     - Plugins are starting to appear on the marketplace `here <https://marketplace.craftercms.org>`__
     - Read the guide to building your own plugins  :ref:`here <how-do-i-make-my-own-plugin>`
 

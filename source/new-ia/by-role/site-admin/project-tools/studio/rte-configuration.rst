@@ -382,7 +382,7 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
 
    |
 
-4. Finally, we'll create our plugin file and add it in to Studio.  See :ref:`newIa-studio-plugins` for more information on creating a Crafter Studio plugin.
+4. Finally, we'll create our plugin file and add it in to Studio.  See :ref:`newIa-plugins` for more information on creating a Crafter Studio plugin.
 
    * Using information from step 2 for our external plugin, create the required directory structure for the plugin file, then create our plugin file named ``plugin.js``
 

@@ -9,7 +9,25 @@
 Building Form Engine Control Project Plugins
 ============================================
 
-In :ref:`form-engine-control`, we learned how to build form engine controls placed in the Studio war file.  Crafter Studio also allows plugins for form engine controls through the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile`
+Crafter Studio allows plugins for form engine controls through the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile`
+
+-----------------
+What is a Control
+-----------------
+
+A form control is a UX element to help authors capture and edit content and metadata properties.
+Crafter Studio form controls should be written in a way that makes them independent of the data they allow the user to select so that they can be (re)used across a wide range of data sets.
+
+.. image:: /_static/images/content-model/create-content-type-2.webp
+   :width: 75 %
+   :alt: Content Type Editor
+   :align: center
+
+Form Engine controls are #4 in the image above.
+
+Out of the box controls are:
+
+.. include:: ../../form-controls/list-form-controls.rst
 
 ---------------------------------------
 The anatomy of a Control Project Plugin
@@ -19,16 +37,77 @@ Form Engine Control consist of (at a minimum)
 
 * A single javascript file which implements the control interface.
 
-    * Unlike in the previous section :ref:`form-engine-control`, the JS file name and the control name in the configuration does not need to be the same.  The JS file name can be any meaningful name, different from the control name in the configuration.
+    * The JS file name and the control name in the configuration does not need to be the same.  The JS file name can be any meaningful name, different from the control name in the configuration.
 
 * Configuration in a Crafter Studio project to make that control available for use
 
+.. _control-interface:
 
----------
-Interface
----------
+-----------------
+Control Interface
+-----------------
 
-See :ref:`control-interface` for more information on form engine control interface.
+.. code-block:: javascript
+    :linenos:
+
+    /**
+     * Constructor: Where .X is substituted with your class name
+     * ID is the variable name
+     * FORM is the form object
+     * OWNER is the parent section/form
+     * PROPERTIES is the collection of configured property values
+     * CONSTRAINTS is the collection of configured constraint values
+     * READONLY is a true/false flag indicating re-only mode
+     */
+    CStudioForms.Controls.X = CStudioForms.Controls.X ||
+    function(id, form, owner, properties, constraints, readonly)  { }
+
+    YAHOO.extend(CStudioForms.Controls.X, CStudioForms.CStudioFormField, {
+
+      /**
+       * Return a user friendly name for the control (will show up in content type builder UX)
+       */
+      getLabel: function() { },
+
+      /**
+       * method is called by the engine when the value of the control is changed
+       */
+      _onChange: function(evt, obj) { },
+
+      /**
+       * method is called by the engine to invoke the control to render.  The control is responsible for creating and managing its own HTML.
+       * CONFIG is a structure containing the form definition and other control configuration
+       * CONTAINER EL is the containing element the control is to render in to.
+       */
+      render: function(config, containerEl) { },
+
+       /**
+        * returns the current value of the control
+        */
+       getValue: function() { },
+
+       /**
+        * sets the value of the control
+        */
+       setValue: function(value) { },
+
+       /**
+        * return a string that represents the kind of control (this is the same as the file name)
+        */
+       getName: function() {  },
+
+       /**
+        * return a list of properties supported by the control.
+        * properties is an array of objects with the following structure { label: "", name: "", type: "" }
+        */
+       getSupportedProperties: function() { },
+
+       /**
+        * return a list of constraints supported by the control.
+        * constraints is an array of objects with the following structure { label: "", name: "", type: "" }
+        */
+       getSupportedConstraints: function() { }
+    });
 
 .. _plugin-directory-structure:
 

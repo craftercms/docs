@@ -42,7 +42,7 @@ To do this go to your Crafter installation, and then in ``bin/apache-tomcat/shar
    :caption: *bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
 
    # Patterns for beans that should always be accessible from the site application context
-   crafter.engine.defaultPublicBeans=crafter\\.(targetIdManager|targetedUrlStrategy|cacheTemplate))
+   crafter.engine.defaultPublicBeans=crafter\\.(targetIdManager|targetedUrlStrategy|cacheTemplate)
 
 |
 

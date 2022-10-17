@@ -536,7 +536,7 @@ Below is the project tree after using the quick create button to create a new ar
 Form Controls
 ^^^^^^^^^^^^^
 
-Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. CrafterCMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`form-engine-control`.
+Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. CrafterCMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`building-plugins-controls`.
 
 .. figure:: /_static/images/content-model/form-engine-controls.webp
     :width: 40%
@@ -709,7 +709,7 @@ If performing a case insensitive search on a ``string`` field is desired, Crafte
 .. image:: /_static/images/content-model/tokenize-for-indexing-property.webp
    :alt: Enable case insensitive keyword search for string fields in content type by clicking on "Tokenize for Indexing"
    :width: 90%
-   :align: left
+   :align: center
 
 |
 
@@ -765,11 +765,11 @@ Data Sources
 .. image:: /_static/images/content-model/form-engine-data-sources.webp
     :alt: Form Engine Data Sources
     :width: 40%
-    :align: left
+    :align: center
 
 |
 
-Data Sources are pickers that help pull in content from internal or external storage/systems.  For example, data source include: desktop video uploader, desktop image uploader, and so on. CrafterCMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
+Data Sources are pickers that help pull in content from internal or external storage/systems.  For example, data source include: desktop video uploader, desktop image uploader, and so on. CrafterCMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`building-plugins-form-ds`.
 
 Data Sources allows the content model designer to decide where different assets uploaded via different controls go (for instance icons, images, RTE related assets, etc.).  It has it's own properties, like "Repository Path", which specifies the path where assets are stored, which help keep the system consistent over time.  The storage destination designed in the model dictates how those assets are handled during a duplicate event (duplicate the asset or duplicate the reference to the asset).
 
@@ -789,7 +789,7 @@ Let's take a look at a shared content data source in a project created using the
 .. image:: /_static/images/content-model/create-site-video-center-bp.webp
     :alt: Form Engine Data Sources Example - Create Project Using Video Center Blueprint
     :width: 70%
-    :align: left
+    :align: center
 
 |
 
@@ -798,7 +798,7 @@ Open the ``Sidebar`` then click on |projectTools|.  Click on ``Content Types`` a
 .. image:: /_static/images/content-model/shared-content-ds-enable-search-existing.webp
     :alt: Form Engine Data Sources Example - Shared Content Data Source
     :width: 100%
-    :align: left
+    :align: center
 
 |
 
@@ -807,7 +807,7 @@ To see the property we setup in action, open the Sidebar, then navigate to ``/st
 .. image:: /_static/images/content-model/author-search-for-existing.webp
    :alt: Form Engine Data Sources Example - Author Search for Existing Option
    :width: 70%
-   :align: left
+   :align: center
 
 |
 
@@ -816,7 +816,7 @@ A search dialog will open displaying in a grid view, items the user can search t
 .. image:: /_static/images/content-model/author-search-for-existing-dialog.webp
    :alt: Form Engine Data Sources Example - Author Search for Existing Dialog
    :width: 70%
-   :align: left
+   :align: center
 
 |
 

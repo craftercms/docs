@@ -17,7 +17,7 @@ CrafterCMS distinguishes itself by its modern architecture, which in turn enable
 * Shared-nothing, serverless, delivery architecture (planet-scale)
 * Front-end agnostic (bring your favorite UI framework or use as a headless CMS)
 * Equal support for all three CMS stakeholders: content authors, developers and system administrators
-* Build new apps or weave into existing apps and sites
+* Build new apps or weave into existing apps and projects
 
 Modern Decoupled Architecture
 =============================
@@ -124,7 +124,7 @@ It's quite hard to provide a good experience to all three stakeholders, and the 
 
 Traditional CMSs cater to content authors and web editors, and some do so very well. However, developers are then forced to develop in outdated or proprietary frameworks using difficult workflows. Additionally, operations has a hard time supporting these workflows, especially when it comes to code deployments or moving production content back to lower environments.
 
-Some modern headless CMSs do a better job supporting developer's choice of development framework. Operations can be simpler with SaaS-based headless CMSs, but that means up-time, performance, security, etc. is now in the hands of a third party; same for global distribution. If the headless CMS is on-premises, then potentially similar workflow problems may exist. Importanty, authors are simply underserved here as they can't manage the content in-context and are left to edit headless forms without the ability to drag and drop, nor can they see the content they're editing change the site/application in real time.
+Some modern headless CMSs do a better job supporting developer's choice of development framework. Operations can be simpler with SaaS-based headless CMSs, but that means up-time, performance, security, etc. is now in the hands of a third party; same for global distribution. If the headless CMS is on-premises, then potentially similar workflow problems may exist. More importantly, authors are simply underserved here as they can't manage the content in-context and are left to edit headless forms without the ability to drag and drop, nor can they see the content they're editing change the project/application in real time.
 
 CrafterCMS, on the other hand, provides:
 
@@ -137,9 +137,9 @@ CrafterCMS, on the other hand, provides:
 Git-based CMS
 =============
 
-CrafterCMS is Git-based. That means that Crafter applications/sites are actually stored in Git repositories from the outset (except for large binaries that go to bucket storage), and that enables some very effective workflows. Consider:
+CrafterCMS is Git-based. That means that Crafter applications/projects are actually stored in Git repositories from the outset (except for large binaries that go to bucket storage), and that enables some very effective workflows. Consider:
 
-* Developers work against the Git repo that holds the site/app directly using their IDEs and tools
+* Developers work against the Git repo that holds the project/app directly using their IDEs and tools
 * Authors work against the same Git repo using a GUI (Crafter Studio), without being aware of Git
 * Operations maintains well-known and proven foundational persistence tier, Git, and use that to flow content and code forward and back
 
@@ -152,7 +152,7 @@ CrafterCMS is Git-based. That means that Crafter applications/sites are actually
 Enterprise Content Platform
 ===========================
 
-CrafterCMS can be further leveraged as an enterprise-wide, content-as-a-service provider. Thanks to being a multi-tenant CMS, any number of authors can manage content for any number of sites/applications, and Crafter can either deliver the applications, or simply provide content snippets to existing applications.
+CrafterCMS can be further leveraged as an enterprise-wide, content-as-a-service provider. Thanks to being a multi-tenant CMS, any number of authors can manage content for any number of projects/applications, and Crafter can either deliver the applications, or simply provide content snippets to existing applications.
 
 .. image:: /_static/images/architecture/enterprise-content-platform.webp
         :width: 100%
@@ -163,14 +163,14 @@ CrafterCMS can be further leveraged as an enterprise-wide, content-as-a-service 
 Content Enable Existing Applications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It's also not an all or nothing. Existing applications/sites can leverage Crafter to retrieve content as:
+It's also not an all or nothing. Existing applications/projects can leverage Crafter to retrieve content as:
 
 * JSON
 * XML
 * HTML snippets
 * iFrame tiles
 
-The application/site can then be delivered using whatever technology, and simply use Crafter to deliver specific content tiles and assets.
+The application/project can then be delivered using whatever technology, and simply use Crafter to deliver specific content tiles and assets.
 
 .. image:: /_static/images/architecture/partial-delivery.webp
         :width: 100%
