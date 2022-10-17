@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.2
 :nosearch:
 
 .. index:: Setup a Two Node Cluster with Studio, Clustering with Studio Example
@@ -37,22 +37,26 @@ Configuring Nodes in the Cluster
    .. code-block:: yaml
       :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
+      ##################################################
+      ##                 Clustering                   ##
+      ##################################################
+      # -------------------------------------------------------------------------------------
+      # IMPORTANT: To enable clustering, please specify the following Spring profile
+      # in your crafter-setenv.sh:
+      #  - SPRING_PROFILES_ACTIVE=crafter.studio.dbClusterPrimaryReplica
+      #    You will need to uncomment the Hazelcast and Studio DB Cluster property sections too
+      # -------------------------------------------------------------------------------------
+
       # Cluster Git URL format for synching members.
       # - Typical SSH URL format: ssh://{username}@{localAddress}{absolutePath}
       # - Typical HTTPS URL format: https://{localAddress}/repos/sites
       studio.clustering.sync.urlFormat: ssh://{username}@{localAddress}{absolutePath}
 
-      # Cluster Syncers
-      # Cluster member after heartbeat stale for amount of minutes will be declared inactive
-      studio.clustering.heartbeatStale.timeLimit: 5
-      # Cluster member after being inactive for amount of minutes will be removed from cluster
-      studio.clustering.inactivity.timeLimit: 5
-
       # Cluster member registration, this registers *this* server into the pool
       # Cluster node registration data, remember to uncomment the next line
       studio.clustering.node.registration:
       #  This server's local address (reachable to other cluster members). You can also specify a different port by
-      #  attaching :PORT to the adddress (e.g 192.168.1.200:2222)
+      #  attaching :PORT to the address (e.g 192.168.1.200:2222)
       #  localAddress: ${env:CLUSTER_NODE_ADDRESS}
       #  Authentication type to access this server's local repository
       #  possible values
@@ -122,10 +126,6 @@ Configuring Nodes in the Cluster
       ##################################################
       ##                Studio DB Cluster             ##
       ##################################################
-      # DB cluster library location
-      # studio.db.cluster.lib.location: ${env:CRAFTER_BIN_DIR}/dbms/libs/galera/libgalera_smm.so
-      # The path where the grastate.dat file resides
-      studio.db.cluster.grastate.location: ${studio.db.dataPath}/grastate.dat
       # DB cluster name
       studio.db.cluster.name: ${env:MARIADB_CLUSTER_NAME}
       # Count for the number of Studio cluster members
@@ -142,9 +142,7 @@ Configuring Nodes in the Cluster
       studio.db.cluster.nodes.startup.wait.timeout: 300
       #Time in seconds before giving up on waiting for cluster bootstrap to complete (at least a node is active,
       # which means the node is synced AND its Studio has finished starting up)
-      studio.db.cluster.bootrap.wait.timeout: 180
-      # Time in seconds before giving up on the local node to finish synching with the cluster
-      studio.db.cluster.nodes.local.synced.wait.timeout: 180
+      studio.db.cluster.bootstrap.wait.timeout: 180
 
    |
 
@@ -154,7 +152,7 @@ Configuring Nodes in the Cluster
    .. code-block:: sh
       :caption: *bin/crafter-setenv.sh*
 
-      # Uncomment to enable primary/replica clustering
+      # Uncomment to enable clustering
       export SPRING_PROFILES_ACTIVE=crafter.studio.dbClusterPrimaryReplica
       ...
 
@@ -307,8 +305,8 @@ the following entries:
 
   |
 
-You can also check that the cluster is working by logging into MariaDB with the ``mysql`` client from one of the Studio
-nodes and verifying that your cluster size is 2:
+You can also check that the cluster is working by logging into MariaDB with the ``mysql`` client from the
+primary or the replica and checking the status:
 
 #. From the command line in the server, go to ``$CRAFTER_HOME/bin/dbms/bin`` and run the ``mysql`` program
 
@@ -318,16 +316,41 @@ nodes and verifying that your cluster size is 2:
 
    |
 
-#. Inside the MySQL client, run ``show status like 'wsrep_cluster_size'``:
+#. Inside the MySQL client, run the following:
+
+   *Primary*: ``SHOW MASTER STATUS\G``
 
    .. code-block:: none
 
-      MariaDB [(none)]> show status like 'wsrep_cluster_size';
-      +--------------------+-------+
-      | Variable_name      | Value |
-      +--------------------+-------+
-      | wsrep_cluster_size | 2     |
-      +--------------------+-------+
-      1 row in set (0.001 sec)
+      MariaDB [crafter]> SHOW MASTER STATUS\G
+      *************************** 1. row ***************************
+                  File: crafter_cluster-bin.000001
+              Position: 2812853
+          Binlog_Do_DB:
+      Binlog_Ignore_DB:
+      1 row in set (0.000 sec)
+
+   |
+
+   *Replica*: ``SHOW SLAVE STATUS\G``
+
+   .. code-block:: none
+
+      MariaDB [crafter]> SHOW SLAVE STATUS\G                                                                                                                                                                                                                                                                                                      [42/1943]
+      *************************** 1. row ***************************
+                Slave_IO_State: Waiting for master to send event
+                   Master_Host: 172.31.70.118
+                   Master_User: crafter_replication
+                   Master_Port: 33306
+                 Connect_Retry: 60
+               Master_Log_File: crafter_cluster-bin.000001
+           Read_Master_Log_Pos: 2776943
+                Relay_Log_File: crafter_cluster-relay-bin.000004
+                 Relay_Log_Pos: 656828
+         Relay_Master_Log_File: crafter_cluster-bin.000001
+              Slave_IO_Running: Yes
+             Slave_SQL_Running: Yes
+             .....
+             ........
 
    |
