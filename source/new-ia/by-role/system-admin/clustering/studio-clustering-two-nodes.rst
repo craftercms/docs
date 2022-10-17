@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.2
 :nosearch:
 
 .. index:: Setup a Two Node Cluster with Studio, Clustering with Studio Example
@@ -331,3 +331,6 @@ nodes and verifying that your cluster size is 2:
       1 row in set (0.001 sec)
 
    |
+
+
+For information on errors you may encounter in your cluster, see :ref:`newIa-cluster-troubleshooting`.
