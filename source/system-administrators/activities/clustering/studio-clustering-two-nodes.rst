@@ -25,6 +25,10 @@ Requirements
 * Studio's clustering requires the ``libssl1.0.0`` (or ``libssl1.0.2``) shared library.
   Some Linux distros does not come with the library pre-installed and may need to be installed.
 
+.. raw:: html
+
+   <hr>
+
 --------------------------------
 Configuring Nodes in the Cluster
 --------------------------------
@@ -251,6 +255,9 @@ Configuring Nodes in the Cluster
          `Kubernetes Hazelcast Plugin  <https://github.com/hazelcast/hazelcast-kubernetes>`_ documentation
          in your Kubernetes cluster, before even starting any Studio pods.
 
+.. raw:: html
+
+   <hr>
 
 ---------------------------------
 Starting the Nodes in the Cluster
@@ -261,6 +268,15 @@ in close succession, one after the other. If you take more than 5 minutes to sta
 the nodes already running will timeout while trying to synchronize for bootstrapping (you can configure this
 timeout in :ref:`studio-config-override.yaml <studio-configuration-files>`, under the property ``studio.db.cluster.nodes.startup.wait.timeout``).
 
+There are a few ways to check that the cluster is running.
+
+- via logs
+- via the status
+- via the Global Transaction ID
+
+^^^^^^^^
+Via Logs
+^^^^^^^^
 To check that the cluster is up, you can inspect the ``$CRAFTER_HOME/logs/tomcat/catalina.out`` of the nodes for
 the following entries:
 
@@ -303,6 +319,10 @@ the following entries:
     [INFO] 2022-01-28T18:09:28,202 [main] [mariadb4j.DB] | Starting up the database...
 
   |
+
+^^^^^^^^^^^^^^
+Via the Status
+^^^^^^^^^^^^^^
 
 You can also check that the cluster is working by logging into MariaDB with the ``mysql`` client from the
 primary or the replica and checking the status:
@@ -353,3 +373,63 @@ primary or the replica and checking the status:
              ........
 
    |
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Via the Global Transaction ID
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+On a primary server, all database updates are written into the binary log as binlog events. A replica server
+connects to the primary and reads the binlog events, then applies the events locally to replicate
+the changes in the primary.  For each event group (transaction) in the binlog, a unique id is attached
+to it, called the ``Global Transaction ID`` or ``GTID``.
+
+To check our cluster, we can check the ``gtid_current_pos`` system variable in the primary and
+the ``gtid_slave_pos`` system variable in the replica.
+
+The ``gtid_current_pos`` system variable contains the GTID of the last transaction applied to the database
+for each replication domain. The value is read-only, but it is updated whenever a transaction is written
+to the binary log and/or replicated by a replica thread, and that transaction's GTID is considered newer
+than the current GTID for that domain.
+
+The ``gtid_slave_pos`` system variable contains the GTID of the last transaction applied to the database by the server's replica threads for each replication domain. This system variable's value is automatically updated whenever a replica thread applies an event group.
+
+To learn more about the global transaction ID, see https://mariadb.com/kb/en/gtid/
+
+To check the ``gtid_current_pos`` and ``gtid_slave_pos`` system variables, log into MariaDB with the
+``mysql`` client from the primary or the replica:
+
+#. From the command line in the server, go to ``$CRAFTER_HOME/bin/dbms/bin`` and run the ``mysql`` program
+
+   .. code-block:: bash
+
+      ./mysql -S /tmp/MariaDB4j.33306.sock
+
+   |
+
+#. Inside the MySQL client, run the following:
+
+   *Primary*: ``SELECT @@GLOBAL.gtid_current_pos;``
+
+   .. code-block:: none
+
+      MariaDB [(none)]> SELECT @@GLOBAL.gtid_current_pos;
+      +---------------------------+
+      | @@GLOBAL.gtid_current_pos |
+      +---------------------------+
+      | 0-167772164-2132          |
+      +---------------------------+
+      1 row in set (0.000 sec)
+
+   *Replica*: ``SELECT @@GLOBAL.gtid_slave_pos;``
+
+   .. code-block:: none
+
+      MariaDB [(none)]> SELECT @@GLOBAL.gtid_slave_pos;
+      +-------------------------+
+      | @@GLOBAL.gtid_slave_pos |
+      +-------------------------+
+      | 0-167772164-2145        |
+      +-------------------------+
+      1 row in set (0.000 sec)
+
+
