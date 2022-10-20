@@ -82,7 +82,76 @@ as seen :ref:`above <cluster-troubleshooting-git-sync-fail-log>` and the followi
 |
 
 After reviewing the node states (logs and the database), the fix can be any valid intervention on the database.
-After fixing the database, the node may then be restarted.
+Before performing any valid intervention on the database, it will need to be started first, then the user needs to login.
+
+#. The first thing that needs to be done is to start the database.  To start the database, run the following:
+
+   .. code-block:: bash
+
+      CRAFTER_HOME/bin/dbms/bin/mysqld --no-defaults --console --basedir=CRAFTER_HOME/bin/dbms --datadir=CRAFTER_HOME/data/db --port=33306 --socket=/tmp/MariaDB4j.33306.sock --max_allowed_packet=128M --max-connections=500
+
+   This is the output when running the command above:
+
+   .. code-block:: bash
+
+      /opt/crafter/bin/dbms/bin/mysqld --no-defaults --console --basedir=/opt/crafter/bin/dbms --datadir=/opt/crafter/data/db --port=33306 --socket=/tmp/MariaDB4j.33306.sock --max_allowed_packet=128M --max-connections=500
+      2022-10-20 19:49:22 0 [Note] ./mysqld (mysqld 10.4.20-MariaDB) starting as process 8862 ...
+      2022-10-20 19:49:23 0 [Note] InnoDB: Using Linux native AIO
+      2022-10-20 19:49:23 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+      2022-10-20 19:49:23 0 [Note] InnoDB: Uses event mutexes
+      2022-10-20 19:49:23 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+      2022-10-20 19:49:23 0 [Note] InnoDB: Number of pools: 1
+      2022-10-20 19:49:23 0 [Note] InnoDB: Using SSE2 crc32 instructions
+      2022-10-20 19:49:23 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+      2022-10-20 19:49:23 0 [Note] InnoDB: Completed initialization of buffer pool
+      2022-10-20 19:49:23 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+      2022-10-20 19:49:23 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+      2022-10-20 19:49:23 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+      2022-10-20 19:49:23 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+      2022-10-20 19:49:23 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+      2022-10-20 19:49:23 0 [Note] InnoDB: Waiting for purge to start
+      2022-10-20 19:49:23 0 [Note] InnoDB: 10.4.20 started; log sequence number 1389822; transaction id 407
+      2022-10-20 19:49:23 0 [Note] InnoDB: Loading buffer pool(s) from /opt/crafter/data/db/ib_buffer_pool
+      2022-10-20 19:49:23 0 [Note] Plugin 'FEEDBACK' is disabled.
+      2022-10-20 19:49:23 0 [Note] Server socket created on IP: '::'.
+      2022-10-20 19:49:23 0 [Note] InnoDB: Buffer pool(s) load completed at 221020 19:49:23
+      2022-10-20 19:49:23 0 [Note] Reading of all Master_info entries succeeded
+      2022-10-20 19:49:23 0 [Note] Added new Master_info '' to hash table
+      2022-10-20 19:49:23 0 [Note] ./mysqld: ready for connections.
+      Version: '10.4.20-MariaDB'  socket: '/tmp/MariaDB4j.33306.sock'  port: 33306  MariaDB Server
+
+#. Login to the database by running the following command then entering the database root password:
+
+   .. code-block:: bash
+
+      CRAFTER_HOME/bin/dbms/bin/mysql -u <db_root_user> -p --socket=/tmp/MariaDB4j.33306.sock
+
+   |
+
+   The <db_root_user> by default is ``root`` with password set to ``root`` or empty.  Remember to replace
+   <db_root_user> with the actual ``root`` user (MARIADB_ROOT_USER) value and enter the actual password
+   (MARIADB_ROOT_PASSWD) value used in your system, which can be found in the ``crafter-setenv.sh`` file
+   under the ``CRAFTER_HOME/bin`` folder.
+
+   In the sample run below, the default root user ``root`` is used and the corresponding password:
+
+   .. code-block:: text
+
+      ./mysql -u root -p --socket=/tmp/MariaDB4j.33306.sock
+      Enter password:
+      Welcome to the MariaDB monitor.  Commands end with ; or \g.
+      Your MariaDB connection id is 8
+      Server version: 10.4.20-MariaDB MariaDB Server
+
+      Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+      Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+      MariaDB [(none)]>
+
+
+The intervention on the database may now be performed once the admin is logged in to the database.
+After performing the fix, stop the database then restart the node.
 
 If an admin reviews the node states and thinks everything is fine but still receives DB sync errors, the admin
 may decide if MariaDB should ignore those errors and continue. To ignore the errors, a manual intervention is
