@@ -1,5 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.2
+:nosearch:
 
 .. index:: Setup a Two Node Cluster with Studio, Clustering with Studio Example
 
@@ -55,6 +56,11 @@ Configuring Nodes in the Cluster
       # - Typical HTTPS URL format: https://{localAddress}/repos/sites
       studio.clustering.sync.urlFormat: ssh://{username}@{localAddress}{absolutePath}
 
+      # Notifications
+      #studio.notification.cluster.startupError.subject: "Action Required: Studio Cluster Error"
+      #studio.notification.cluster.startupError.template: startupError.ftl
+      #studio.notification.cluster.startupError.recipients: admin@example.com
+
       # Cluster member registration, this registers *this* server into the pool
       # Cluster node registration data, remember to uncomment the next line
       studio.clustering.node.registration:
@@ -103,6 +109,17 @@ Configuring Nodes in the Cluster
 
             Host *.hostnamespace
                 StrictHostKeyChecking no
+
+   |
+   |
+
+   .. _newIa-authoring-cluster-startup-failure-notification-config:
+
+   To configure a list of email recipients to inform them of a startup failure, uncomment and configure the following:
+
+   - **studio.notification.cluster.startupError.subject**: subject for the email
+   - **studio.notification.cluster.startupError.template**: template used for the email message
+   - **studio.notification.cluster.startupError.recipients**: list of emails to send the notification, must be separated by commas.
 
    |
    |
@@ -351,6 +368,7 @@ primary or the replica and checking the status:
 
    |
 
+
    *Replica*: ``SHOW SLAVE STATUS\G``
 
    .. code-block:: none
@@ -433,3 +451,4 @@ To check the ``gtid_current_pos`` and ``gtid_slave_pos`` system variables, log i
       1 row in set (0.000 sec)
 
 
+For information on errors you may encounter in your cluster, see :ref:`newIa-authoring-cluster-troubleshooting`.
