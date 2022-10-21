@@ -112,7 +112,7 @@ Configuring Nodes in the Cluster
    |
    |
 
-   .. _cluster-startup-failure-notification-config:
+   .. _authoring-cluster-startup-failure-notification-config:
 
    To configure a list of email recipients to inform them of a startup failure, uncomment and configure the following:
 
@@ -449,4 +449,4 @@ To check the ``gtid_current_pos`` and ``gtid_slave_pos`` system variables, log i
       1 row in set (0.000 sec)
 
 
-For information on errors you may encounter in your cluster, see :ref:`cluster-troubleshooting`.
+For information on errors you may encounter in your cluster, see :ref:`authoring-cluster-troubleshooting`.

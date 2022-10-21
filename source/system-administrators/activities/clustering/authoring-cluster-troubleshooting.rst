@@ -1,30 +1,30 @@
 :is-up-to-date: True
 :last-updated: 4.0.2
 
-.. index:: Troubleshooting, Studio Clustering, Cluster Troubleshooting
+.. index:: Troubleshooting, Studio Clustering, Authoring Cluster Troubleshooting
 
-.. _cluster-troubleshooting:
+.. _authoring-cluster-troubleshooting:
 
-========================================
-Cluster Troubleshooting |enterpriseOnly|
-========================================
+==================================================
+Authoring-Cluster Troubleshooting |enterpriseOnly|
+==================================================
 
-Whenever your cluster has a Git or DB sync failure, the following logs may appear:
+Whenever your authoring cluster has a Git or DB sync failure, the following logs may appear:
 
-.. _cluster-troubleshooting-git-sync-fail-log:
+.. _authoring-cluster-troubleshooting-git-sync-fail-log:
 
 .. code-block:: text
-   :caption: *Sample log for a cluster Git sync startup failure*
+   :caption: *Sample log for an authoring cluster Git sync startup failure*
 
    [ERROR] 2022-10-19T17:22:24,358 [main] [validation.ReplicaNodeRepositoryCheck] | Branch 'master' in repository '/opt/crafter/cluster/crafter/data/repos/sites/ed123/sandbox/.git' has commits ahead of the primary node at '172.31.70.118'
    [ERROR] 2022-10-19T17:22:24,359 [main] [validation.NodeStateCheckerImpl] | Failed to start Crafter Studio cluster node due to start-up conflicts. Please review the logs and resolve the conflicts.
    [ERROR] 2022-10-19T17:22:24,598 [main] [cluster.StudioClusterUtils] | Error notification email has been sent
    ...
 
-.. _cluster-troubleshooting-db-sync-fail-log:
+.. _authoring-cluster-troubleshooting-db-sync-fail-log:
 
 .. code-block:: text
-   :caption: *Sample log for a cluster DB sync startup failure*
+   :caption: *Sample log for an authoring cluster DB sync startup failure*
 
    Caused by: org.craftercms.studio.api.v2.exception.DbClusterStartupException: Failed to start DB replica: Error 'Duplicate entry '4' for key 'PRIMARY'' on query. Default database: 'crafter'. Query: 'INSERT INTO audit (organization_id, site_id, operation, operation_timestamp, origin, primary_target_id,
         primary_target_type, primary_target_subtype, primary_target_value, actor_id, actor_details, cluster_node_id)
@@ -42,11 +42,11 @@ Whenever your cluster has a Git or DB sync failure, the following logs may appea
 An email will also be sent to the configured list of recipients to inform them of the failure.
 
 See the :ref:`setup-a-two-node-cluster-with-studio` article then scroll to the
-:ref:`failure notification properties <cluster-startup-failure-notification-config>` section
+:ref:`failure notification properties <authoring-cluster-startup-failure-notification-config>` section
 for more information on how to configure the list of recipients to be informed in case of a
-startup failure in the cluster.
+startup failure in the authoring cluster.
 
-This section discusses how to fix the sync failure in your cluster.
+This section discusses how to fix the sync failure in your authoring cluster.
 
 
 .. raw:: html
@@ -73,7 +73,7 @@ For a DB sync failure, the logs will contain a message like below:
    Failed to start DB replica:
    ...
 
-as seen :ref:`above <cluster-troubleshooting-git-sync-fail-log>` and the following email will be sent if configured:
+as seen :ref:`above <authoring-cluster-troubleshooting-git-sync-fail-log>` and the following email will be sent if configured:
 
 .. image:: /_static/images/system-admin/cluster-db-sync-fail.webp
    :alt: CrafterCMS - Studio Enterprise Clustering DB sync failure email
@@ -169,7 +169,7 @@ For a Git sync failure, the logs will contain a message like below:
    Branch 'master' in repository '/opt/crafter/data/repos/sites/ed123/sandbox/.git' has commits ahead of the primary node
    ...
 
-as seen :ref:`above <cluster-troubleshooting-git-sync-fail-log>` and the following email will be sent if configured:
+as seen :ref:`above <authoring-cluster-troubleshooting-git-sync-fail-log>` and the following email will be sent if configured:
 
 .. image:: /_static/images/system-admin/cluster-git-sync-fail.webp
    :alt: CrafterCMS - Studio Enterprise Clustering Git sync failure email

@@ -100,4 +100,4 @@ How-tos
    :maxdepth: 1
 
    changing-git-url-format-in-cluster
-   cluster-troubleshooting
+   authoring-cluster-troubleshooting

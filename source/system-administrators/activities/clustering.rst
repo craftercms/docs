@@ -99,4 +99,4 @@ How-tos
    :maxdepth: 1
 
    clustering/changing-git-url-format-in-cluster
-   clustering/cluster-troubleshooting
+   clustering/authoring-cluster-troubleshooting
