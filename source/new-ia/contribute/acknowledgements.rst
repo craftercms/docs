@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.2
 :nosearch:
 
 .. index:: Open Source Acknowledgements
@@ -51,12 +51,6 @@ HikariCP-java7
 **Package:** com.zaxxer |br|
 **Dependency:** HikariCP-java7 |br|
 **URL:** https://search.maven.org/artifact/com.zaxxer/HikariCP-java7
-
-commons-codec
-^^^^^^^^^^^^^
-**Package:** commons-codec |br|
-**Dependency:** commons-codec |br|
-**URL:** https://search.maven.org/artifact/commons-codec/commons-codec
 
 spring-context-support
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -748,6 +742,18 @@ commons-csv
 **Dependency:** commons-csv |br|
 **URL:** https://search.maven.org/artifact/org.apache.commons/commons-csv
 
+tika-parser-webarchive-module
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-webarchive-module |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-webarchive-module
+
+jwarc
+^^^^^
+**Package:** org.netpreserve |br|
+**Dependency:** jwarc |br|
+**URL:** https://search.maven.org/artifact/org.netpreserve/jwarc
+
 tika-parser-xml-module
 ^^^^^^^^^^^^^^^^^^^^^^
 **Package:** org.apache.tika |br|
@@ -1342,24 +1348,6 @@ eddsa
 **Dependency:** eddsa |br|
 **URL:** https://search.maven.org/artifact/net.i2p.crypto/eddsa
 
-commons-beanutils
-^^^^^^^^^^^^^^^^^
-**Package:** commons-beanutils |br|
-**Dependency:** commons-beanutils |br|
-**URL:** https://search.maven.org/artifact/commons-beanutils/commons-beanutils
-
-commons-collections
-^^^^^^^^^^^^^^^^^^^
-**Package:** commons-collections |br|
-**Dependency:** commons-collections |br|
-**URL:** https://search.maven.org/artifact/commons-collections/commons-collections
-
-javax.activation
-^^^^^^^^^^^^^^^^
-**Package:** com.sun.activation |br|
-**Dependency:** javax.activation |br|
-**URL:** https://search.maven.org/artifact/com.sun.activation/javax.activation
-
 aspectjrt
 ^^^^^^^^^
 **Package:** org.aspectj |br|
@@ -1383,6 +1371,30 @@ semver4j
 **Package:** com.vdurmont |br|
 **Dependency:** semver4j |br|
 **URL:** https://search.maven.org/artifact/com.vdurmont/semver4j
+
+commons-codec
+^^^^^^^^^^^^^
+**Package:** commons-codec |br|
+**Dependency:** commons-codec |br|
+**URL:** https://search.maven.org/artifact/commons-codec/commons-codec
+
+commons-beanutils
+^^^^^^^^^^^^^^^^^
+**Package:** commons-beanutils |br|
+**Dependency:** commons-beanutils |br|
+**URL:** https://search.maven.org/artifact/commons-beanutils/commons-beanutils
+
+commons-collections
+^^^^^^^^^^^^^^^^^^^
+**Package:** commons-collections |br|
+**Dependency:** commons-collections |br|
+**URL:** https://search.maven.org/artifact/commons-collections/commons-collections
+
+javax.activation
+^^^^^^^^^^^^^^^^
+**Package:** com.sun.activation |br|
+**Dependency:** javax.activation |br|
+**URL:** https://search.maven.org/artifact/com.sun.activation/javax.activation
 
 ibatis-sqlmap
 ^^^^^^^^^^^^^
@@ -2092,12 +2104,6 @@ bcutil-jdk15on
 **Dependency:** bcutil-jdk15on |br|
 **URL:** https://search.maven.org/artifact/org.bouncycastle/bcutil-jdk15on
 
-tinify
-^^^^^^
-**Package:** com.tinify |br|
-**Dependency:** tinify |br|
-**URL:** https://search.maven.org/artifact/com.tinify/tinify
-
 okhttp
 ^^^^^^
 **Package:** com.squareup.okhttp3 |br|
@@ -2109,6 +2115,30 @@ okio
 **Package:** com.squareup.okio |br|
 **Dependency:** okio |br|
 **URL:** https://search.maven.org/artifact/com.squareup.okio/okio
+
+kotlin-stdlib-common
+^^^^^^^^^^^^^^^^^^^^
+**Package:** org.jetbrains.kotlin |br|
+**Dependency:** kotlin-stdlib-common |br|
+**URL:** https://search.maven.org/artifact/org.jetbrains.kotlin/kotlin-stdlib-common
+
+kotlin-stdlib
+^^^^^^^^^^^^^
+**Package:** org.jetbrains.kotlin |br|
+**Dependency:** kotlin-stdlib |br|
+**URL:** https://search.maven.org/artifact/org.jetbrains.kotlin/kotlin-stdlib
+
+annotations
+^^^^^^^^^^^
+**Package:** org.jetbrains |br|
+**Dependency:** annotations |br|
+**URL:** https://search.maven.org/artifact/org.jetbrains/annotations
+
+tinify
+^^^^^^
+**Package:** com.tinify |br|
+**Dependency:** tinify |br|
+**URL:** https://search.maven.org/artifact/com.tinify/tinify
 
 gson
 ^^^^
