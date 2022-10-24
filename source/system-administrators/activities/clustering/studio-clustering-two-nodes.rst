@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.2
 
 .. index:: Setup a Two Node Cluster with Studio, Clustering with Studio Example
 
@@ -25,6 +25,10 @@ Requirements
 * Studio's clustering requires the ``libssl1.0.0`` (or ``libssl1.0.2``) shared library.
   Some Linux distros does not come with the library pre-installed and may need to be installed.
 
+.. raw:: html
+
+   <hr>
+
 --------------------------------
 Configuring Nodes in the Cluster
 --------------------------------
@@ -36,22 +40,31 @@ Configuring Nodes in the Cluster
    .. code-block:: yaml
       :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
+      ##################################################
+      ##                 Clustering                   ##
+      ##################################################
+      # -------------------------------------------------------------------------------------
+      # IMPORTANT: To enable clustering, please specify the following Spring profile
+      # in your crafter-setenv.sh:
+      #  - SPRING_PROFILES_ACTIVE=crafter.studio.dbClusterPrimaryReplica
+      #    You will need to uncomment the Hazelcast and Studio DB Cluster property sections too
+      # -------------------------------------------------------------------------------------
+
       # Cluster Git URL format for synching members.
       # - Typical SSH URL format: ssh://{username}@{localAddress}{absolutePath}
       # - Typical HTTPS URL format: https://{localAddress}/repos/sites
       studio.clustering.sync.urlFormat: ssh://{username}@{localAddress}{absolutePath}
 
-      # Cluster Syncers
-      # Cluster member after heartbeat stale for amount of minutes will be declared inactive
-      studio.clustering.heartbeatStale.timeLimit: 5
-      # Cluster member after being inactive for amount of minutes will be removed from cluster
-      studio.clustering.inactivity.timeLimit: 5
+      # Notifications
+      #studio.notification.cluster.startupError.subject: "Action Required: Studio Cluster Error"
+      #studio.notification.cluster.startupError.template: startupError.ftl
+      #studio.notification.cluster.startupError.recipients: admin@example.com
 
       # Cluster member registration, this registers *this* server into the pool
       # Cluster node registration data, remember to uncomment the next line
       studio.clustering.node.registration:
       #  This server's local address (reachable to other cluster members). You can also specify a different port by
-      #  attaching :PORT to the adddress (e.g 192.168.1.200:2222)
+      #  attaching :PORT to the address (e.g 192.168.1.200:2222)
       #  localAddress: ${env:CLUSTER_NODE_ADDRESS}
       #  Authentication type to access this server's local repository
       #  possible values
@@ -99,6 +112,17 @@ Configuring Nodes in the Cluster
    |
    |
 
+   .. _authoring-cluster-startup-failure-notification-config:
+
+   To configure a list of email recipients to inform them of a startup failure, uncomment and configure the following:
+
+   - **studio.notification.cluster.startupError.subject**: subject for the email
+   - **studio.notification.cluster.startupError.template**: template used for the email message
+   - **studio.notification.cluster.startupError.recipients**: list of emails to send the notification, must be separated by commas.
+
+   |
+   |
+
    Configure the Hazelcast configuration file location in Studio, by uncommenting ``studio.hazelcast.config.location``.  You will create the Hazelcast configuration file in a later step.
 
    .. code-block:: yaml
@@ -121,10 +145,6 @@ Configuring Nodes in the Cluster
       ##################################################
       ##                Studio DB Cluster             ##
       ##################################################
-      # DB cluster library location
-      # studio.db.cluster.lib.location: ${env:CRAFTER_BIN_DIR}/dbms/libs/galera/libgalera_smm.so
-      # The path where the grastate.dat file resides
-      studio.db.cluster.grastate.location: ${studio.db.dataPath}/grastate.dat
       # DB cluster name
       studio.db.cluster.name: ${env:MARIADB_CLUSTER_NAME}
       # Count for the number of Studio cluster members
@@ -141,9 +161,7 @@ Configuring Nodes in the Cluster
       studio.db.cluster.nodes.startup.wait.timeout: 300
       #Time in seconds before giving up on waiting for cluster bootstrap to complete (at least a node is active,
       # which means the node is synced AND its Studio has finished starting up)
-      studio.db.cluster.bootrap.wait.timeout: 180
-      # Time in seconds before giving up on the local node to finish synching with the cluster
-      studio.db.cluster.nodes.local.synced.wait.timeout: 180
+      studio.db.cluster.bootstrap.wait.timeout: 180
 
    |
 
@@ -153,7 +171,7 @@ Configuring Nodes in the Cluster
    .. code-block:: sh
       :caption: *bin/crafter-setenv.sh*
 
-      # Uncomment to enable primary/replica clustering
+      # Uncomment to enable clustering
       export SPRING_PROFILES_ACTIVE=crafter.studio.dbClusterPrimaryReplica
       ...
 
@@ -253,6 +271,9 @@ Configuring Nodes in the Cluster
          `Kubernetes Hazelcast Plugin  <https://github.com/hazelcast/hazelcast-kubernetes>`_ documentation
          in your Kubernetes cluster, before even starting any Studio pods.
 
+.. raw:: html
+
+   <hr>
 
 ---------------------------------
 Starting the Nodes in the Cluster
@@ -263,6 +284,15 @@ in close succession, one after the other. If you take more than 5 minutes to sta
 the nodes already running will timeout while trying to synchronize for bootstrapping (you can configure this
 timeout in :ref:`studio-config-override.yaml <studio-configuration-files>`, under the property ``studio.db.cluster.nodes.startup.wait.timeout``).
 
+There are a few ways to check that the cluster is running.
+
+- via logs
+- via the status
+- via the Global Transaction ID
+
+^^^^^^^^
+Via Logs
+^^^^^^^^
 To check that the cluster is up, you can inspect the ``$CRAFTER_HOME/logs/tomcat/catalina.out`` of the nodes for
 the following entries:
 
@@ -306,8 +336,12 @@ the following entries:
 
   |
 
-You can also check that the cluster is working by logging into MariaDB with the ``mysql`` client from one of the Studio
-nodes and verifying that your cluster size is 2:
+^^^^^^^^^^^^^^
+Via the Status
+^^^^^^^^^^^^^^
+
+You can also check that the cluster is working by logging into MariaDB with the ``mysql`` client from the
+primary or the replica and checking the status:
 
 #. From the command line in the server, go to ``$CRAFTER_HOME/bin/dbms/bin`` and run the ``mysql`` program
 
@@ -317,16 +351,102 @@ nodes and verifying that your cluster size is 2:
 
    |
 
-#. Inside the MySQL client, run ``show status like 'wsrep_cluster_size'``:
+#. Inside the MySQL client, run the following:
+
+   *Primary*: ``SHOW MASTER STATUS\G``
 
    .. code-block:: none
 
-      MariaDB [(none)]> show status like 'wsrep_cluster_size';
-      +--------------------+-------+
-      | Variable_name      | Value |
-      +--------------------+-------+
-      | wsrep_cluster_size | 2     |
-      +--------------------+-------+
-      1 row in set (0.001 sec)
+      MariaDB [crafter]> SHOW MASTER STATUS\G
+      *************************** 1. row ***************************
+                  File: crafter_cluster-bin.000001
+              Position: 2812853
+          Binlog_Do_DB:
+      Binlog_Ignore_DB:
+      1 row in set (0.000 sec)
 
    |
+
+   *Replica*: ``SHOW SLAVE STATUS\G``
+
+   .. code-block:: none
+
+      MariaDB [crafter]> SHOW SLAVE STATUS\G
+      *************************** 1. row ***************************
+                Slave_IO_State: Waiting for master to send event
+                   Master_Host: 172.31.70.118
+                   Master_User: crafter_replication
+                   Master_Port: 33306
+                 Connect_Retry: 60
+               Master_Log_File: crafter_cluster-bin.000001
+           Read_Master_Log_Pos: 2776943
+                Relay_Log_File: crafter_cluster-relay-bin.000004
+                 Relay_Log_Pos: 656828
+         Relay_Master_Log_File: crafter_cluster-bin.000001
+              Slave_IO_Running: Yes
+             Slave_SQL_Running: Yes
+             .....
+             ........
+
+   |
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Via the Global Transaction ID
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+On a primary server, all database updates are written into the binary log as binlog events. A replica server
+connects to the primary and reads the binlog events, then applies the events locally to replicate
+the changes in the primary.  For each event group (transaction) in the binlog, a unique id is attached
+to it, called the ``Global Transaction ID`` or ``GTID``.
+
+To check our cluster, we can check the ``gtid_current_pos`` system variable in the primary and
+the ``gtid_slave_pos`` system variable in the replica.
+
+The ``gtid_current_pos`` system variable contains the GTID of the last transaction applied to the database
+for each replication domain. The value is read-only, but it is updated whenever a transaction is written
+to the binary log and/or replicated by a replica thread, and that transaction's GTID is considered newer
+than the current GTID for that domain.
+
+The ``gtid_slave_pos`` system variable contains the GTID of the last transaction applied to the database by the server's replica threads for each replication domain. This system variable's value is automatically updated whenever a replica thread applies an event group.
+
+To learn more about the global transaction ID, see https://mariadb.com/kb/en/gtid/
+
+To check the ``gtid_current_pos`` and ``gtid_slave_pos`` system variables, log into MariaDB with the
+``mysql`` client from the primary or the replica:
+
+#. From the command line in the server, go to ``$CRAFTER_HOME/bin/dbms/bin`` and run the ``mysql`` program
+
+   .. code-block:: bash
+
+      ./mysql -S /tmp/MariaDB4j.33306.sock
+
+   |
+
+#. Inside the MySQL client, run the following:
+
+   *Primary*: ``SELECT @@GLOBAL.gtid_current_pos;``
+
+   .. code-block:: none
+
+      MariaDB [(none)]> SELECT @@GLOBAL.gtid_current_pos;
+      +---------------------------+
+      | @@GLOBAL.gtid_current_pos |
+      +---------------------------+
+      | 0-167772164-2132          |
+      +---------------------------+
+      1 row in set (0.000 sec)
+
+   *Replica*: ``SELECT @@GLOBAL.gtid_slave_pos;``
+
+   .. code-block:: none
+
+      MariaDB [(none)]> SELECT @@GLOBAL.gtid_slave_pos;
+      +-------------------------+
+      | @@GLOBAL.gtid_slave_pos |
+      +-------------------------+
+      | 0-167772164-2145        |
+      +-------------------------+
+      1 row in set (0.000 sec)
+
+
+For information on errors you may encounter in your cluster, see :ref:`authoring-cluster-troubleshooting`.

@@ -36,7 +36,7 @@ Setting up the production environment
 
       `./init-site.sh [options] [site] [repo-path]`
 
-   See the guide :ref:`setup-site-for-delivery` for more information on setting up your site for delivery.
+   See the guide :ref:`setup-project-for-delivery` for more information on setting up your site for delivery.
 
 #. For the rest of the delivery instances, you can just repeat the previous 2 steps for each one of them, or alternatively just duplicate the delivery installation
    directory for each instance.

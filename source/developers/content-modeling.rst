@@ -536,7 +536,7 @@ Below is the project tree after using the quick create button to create a new ar
 Form Controls
 ^^^^^^^^^^^^^
 
-Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. CrafterCMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`form-engine-control`.
+Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. CrafterCMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`building-plugins-controls`.
 
 .. figure:: /_static/images/content-model/form-engine-controls.webp
     :width: 40%
@@ -769,7 +769,7 @@ Data Sources
 
 |
 
-Data Sources are pickers that help pull in content from internal or external storage/systems.  For example, data source include: desktop video uploader, desktop image uploader, and so on. CrafterCMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`form-engine-data-source`.
+Data Sources are pickers that help pull in content from internal or external storage/systems.  For example, data source include: desktop video uploader, desktop image uploader, and so on. CrafterCMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`building-plugins-form-ds`.
 
 Data Sources allows the content model designer to decide where different assets uploaded via different controls go (for instance icons, images, RTE related assets, etc.).  It has it's own properties, like "Repository Path", which specifies the path where assets are stored, which help keep the system consistent over time.  The storage destination designed in the model dictates how those assets are handled during a duplicate event (duplicate the asset or duplicate the reference to the asset).
 
