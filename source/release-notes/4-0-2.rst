@@ -31,6 +31,9 @@ Updates
   - Snakeyaml to version 1.33
   - Mockito to version 4.8.0
 
+* Added cache control support to proxy configuration |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5824>`__ for more information
+
 * Fixed issue with page URL validation check |br|
   See `here <https://github.com/craftercms/craftercms/issues/5817>`__ for more information
 
@@ -73,9 +76,13 @@ Updates
 * Fixed issue with DB connection resets |br|
   See `here <https://github.com/craftercms/craftercms/issues/5048>`__ for more information
 
+* Renamed ``Drop Targets`` data source to ``Components`` and ``Project Component`` data source to ``Simple Taxonomy`` |br|
+
+* Enhanced Crafter Studio clustering |br|
+
 * Fixed issue with branding image files in upgrade scripts |br|
 
-Lot's of other small enhancements and bug fixes :)
+Lots of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 4.0.2 Milestone <https://github.com/craftercms/craftercms/milestone/87?closed=1>`_
 

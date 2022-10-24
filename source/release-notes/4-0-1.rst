@@ -97,7 +97,7 @@ Updates
   See `here <https://github.com/craftercms/craftercms/issues/5126>`__ for more information
 
 
-Lot's of other small enhancements and bug fixes :)
+Lots of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 4.0.1 Milestone <https://github.com/craftercms/craftercms/milestone/85?closed=1>`_
 
