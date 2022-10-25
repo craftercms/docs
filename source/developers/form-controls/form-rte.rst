@@ -82,8 +82,8 @@ Configuration
 ||                       || * |fileUploadToS3|                                                   |
 ||                       || * |sharedContent|                                                    |
 ||                       || * |embeddedContent|                                                  |
-||                       || * |projectComponent|                                                 |
-||                       || * |dropTargets|                                                      |
+||                       || * |simpleTaxonomy|                                                   |
+||                       || * |components|                                                       |
 +------------------------+-----------------------------------------------------------------------+
 
 .. |imgUploadFromDesktop| replace:: :ref:`Image Uploaded from Desktop <form-source-image-desktop>`
@@ -114,5 +114,5 @@ Configuration
 .. |fileUploadToS3| replace:: :ref:`File Uploaded to S3 Repository <form-source-s3-file-upload>`
 .. |sharedContent| replace:: :ref:`Shared Content <form-source-shared-content>`
 .. |embeddedContent| replace:: :ref:`Embedded Content <form-source-embedded-content>`
-.. |projectComponent| replace:: :ref:`Project Component <form-source-project-component>`
-.. |dropTargets| replace:: :ref:`Drop Targets <form-source-drop-targets>`
+.. |simpleTaxonomy| replace:: :ref:`Project Component <form-source-simple-taxonomy>`
+.. |components| replace:: :ref:`Drop Targets <form-source-components>`

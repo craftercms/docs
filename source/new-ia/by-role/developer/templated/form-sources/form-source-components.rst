@@ -1,22 +1,22 @@
 :is-up-to-date: True
-:since-version: 4.0.0
-
+:since-version: 4.0.2
+:nosearch:
 :orphan:
 
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. index:: Data Sources; Drop Targets
+.. index:: Data Sources; Components
 
-.. _form-source-drop-targets:
+.. _newIa-form-source-components:
 
-========================
-Drop Targets Data Source
-========================
+======================
+Components Data Source
+======================
 
-.. image:: /_static/images/form-sources/form-source-drop-targets.webp
+.. image:: /_static/images/form-sources/form-source-components.webp
     :width: 30%
-    :alt: Form Source Drop Targets
+    :alt: Form Source Components
     :align: center
 
 |
@@ -25,9 +25,9 @@ Drop Targets Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-shared-content-conf.webp
+.. image:: /_static/images/form-sources/form-source-components-conf.webp
     :width: 50%
-    :alt: Form Source Drop Targets Fields
+    :alt: Form Source Components Fields
     :align: center
 
 |

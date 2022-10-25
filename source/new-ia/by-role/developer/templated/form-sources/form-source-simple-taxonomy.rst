@@ -1,22 +1,22 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
-
+:last-updated: 4.0.2
+:nosearch:
 :orphan:
 
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. index:: Data Sources; Project Component
+.. index:: Data Sources; Simple Taxonomy
 
-.. _form-source-project-component:
+.. _newIa-form-source-simple-taxonomy:
 
-=============================
-Project Component Data Source
-=============================
+===========================
+Simple Taxonomy Data Source
+===========================
 
-.. image:: /_static/images/form-sources/form-source-project-component.webp
+.. image:: /_static/images/form-sources/form-source-simple-taxonomy.webp
     :width: 30%
-    :alt: Form Control Data Source Project Component
+    :alt: Form Control Data Source Simple Taxonomy
     :align: center
 
 |
@@ -25,9 +25,9 @@ Project Component Data Source
 Configuration
 -------------
 
-.. image:: /_static/images/form-sources/form-source-project-component-conf.webp
+.. image:: /_static/images/form-sources/form-source-simple-taxonomy-conf.webp
     :width: 50%
-    :alt: Form Control Data Source Project Component Configuration
+    :alt: Form Control Data Source Simple Taxonomy Configuration
     :align: center
 
 |
@@ -45,17 +45,17 @@ Configuration
 Creating an XML file for the data source
 ----------------------------------------
 
-The Project Component Data Source uses xml files to get the components that are going to be used. You can
-create your own component to use as data source by following the instructions on :ref:`creating a component<content-type-component>` and just skip creating the view and controller part of the content type if needed.
+The Simple Taxonomy Data Source uses xml files to get the components that are going to be used. You can
+create your own component to use as data source by following the instructions on :ref:`newIa-creating a component<content-type-component>` and just skip creating the view and controller part of the content type if needed.
 
-.. image:: /_static/images/form-sources/form-source-project-component-example.webp
+.. image:: /_static/images/form-sources/form-source-simple-taxonomy-example.webp
     :width: 65%
-    :alt: Form Control Data Source Project Component Example
+    :alt: Form Control Data Source Simple Taxonomy Example
     :align: center
 
 |
 
-Here's a sample xml snippet of a project component data source file:
+Here's a sample xml snippet of a simple taxonomy data source file:
 
 .. code-block:: xml
 
