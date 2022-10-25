@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.0
+:last-updated: 4.0.2
 
 .. index:: Setup Studio Clustering with Kubernetes Deployment, Clustering with Studio Example with Kubernetes
 
@@ -9,283 +9,154 @@
 Setup Studio Clustering with Kubernetes Deployment |enterpriseOnly|
 ===================================================================
 
-A Kubernetes deployment describes an applications life cycle, e.g. images to be used, the number of pods, etc. It creates pods based on a specified template.  Crafter CMS has an example kubernetes deployment for a Studio cluster with 2 nodes.  In this section, we'll take a look at this example Kubernetes deployment.
+Crafter CMS has an example Kubernetes deployment for a Studio cluster with 2 nodes, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/develop/authoring/cluster. This guide covers how to install this example in a Kubernetes cluster.
 
-.. TODO: Update screens and text once https://github.com/craftercms/craftercms/issues/5285 is done
-
-|
-
-   .. note::
-      This section needs an update once the kubernetes deployment files for primary/replica clustering are updated `here <https://github.com/craftercms/craftercms/issues/5285>`__
+.. important::
+   This guide assumes you have a working understanding of Kubernetes
 
 ------------
 Requirements
 ------------
 
-You need to have a Kubernetes cluster, and the ``kubectl`` command-line tool must be configured to communicate with your
-cluster. If you do not already have a cluster, you can create one by using Minikube:
-https://github.com/kubernetes/minikube.
+You will need an AWS EKS cluster, with the AWS Load Balancer Controller installed (https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html), in order to use the cluster example as-is.
 
-The nodes in your cluster should at least have 4 CPUs and 8 GB of space, to avoid performance issues and out of memory
-errors. In Minikube, to start a node with this characteristics, you can run a command similar to the following:
-``minikube start --cpus 4 --memory 8192``.
+If you can't use an EKS cluster, your Kubernetes infraestructure needs to provide Load Balancers or some other kind of Ingress that is able to handle an active-passive deployment, where the active pod that should receive all traffic returns 
+HTTP 200 on its healthcheck, while the passive pods that are on standby return HTTP 202. The Load Balancer should be able to also seamlessly switch between pods when an active becomes passive (200 -> 202) and a passive becomes active (202 -> 200).
 
-The requirements (listed above) is the same as specified in :ref:`simple-kubernetes-deployment`.  In addition to that, we need the following:
+Each Authoring cluster node is a StatefulSet Pod in Kubernetes, and requires at least 4 CPUs and 16 GB of space, to avoid performance issues and out of memory errors. So we recommend having Kubernetes nodes of a similar size to the Pod requirements,
+in different availability zones, so one Pod runs per availability zone. 
 
-* `k9s <https://k9scli.io/>`__ for viewing the status of the pods, the logs, etc
-* Kubernetes deployment files for CrafterCMS Authoring cluster, found here: https://github.com/craftercms/kubernetes-deployments/
-
-     .. code-block:: sh
-
-        ➜ git clone https://github.com/craftercms/kubernetes-deployments.git
-
-  The deployment files that we need for our example is under the ``kubernetes-deployments/authoring/cluster`` folder::
-
-      kubernetes-deployments/authoring/cluster
-         nodes/
-            authoring-deployment.yaml
-            hazelcast-rbac.yaml
-            kustomization.yaml
-            resources/
-               config/
-                  studio/
-                     hazelcast-config.yaml
-                     studio-config-override.yaml
-               secrets/
-                  .ssh/
-                     config
-
-  |
-
-  The ``nodes`` folder contains the deployment files for setting up two authoring pods and hazelcast, which is used as an in-memory distributed data store to orchestrate the bootstrapping of Studio's Cluster.
-
+If you're using bigger nodes that are capable of running multiple Pods, make sure that the Authoring Pods are spread evenly through availability zones by specifying Pod Affinity/Anti-Affinity (you will need to modify the example configuration): 
+https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity 
 
 ------------------------
 Setup Kubernetes Secrets
 ------------------------
 
-From https://kubernetes.io/docs/concepts/configuration/secret/
+The repository https://github.com/craftercms/kubernetes-deployments/ has a folder set aside for placing required Kubernetes Secrets: ``kubernetes-deployments/authoring/cluster/resources/secrets``
 
-.. code-block:: text
+This is where we will place the enterprise license to be used by the images in the deployment. Remember to name your license file ``crafter.lic``
 
-   "Kubernetes Secrets let you store and manage sensitive information, such as passwords, OAuth tokens, and ssh keys."
+Also, you will need an SSL certficate and private key valid for the Authoring Pods cluster addresses. Each Pod's address is specified in the ``CLUSTER_NODE_ADDRESS`` environment variable in ``authoring.yaml``. In the example, this 
+value is ``$(POD_NAME).authoring-svc-headless.craftercms``, which is a standard FQDN for a Kubernetes StatefulSet Pod: ``pod-hostname.headless-service-name.namespace``. For more information on Kubernetes DNS, see 
+https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/.
 
-|
+.. warning::
+   Our DB cluster limits the DB node addresses to be no longer than 60 characters, so even though ``$(POD_NAME).authoring-svc-headless.craftercms.svc.cluster.local`` is another cluster node address alternative, 
+   it can't be used.
 
-The deployment files cloned from https://github.com/craftercms/kubernetes-deployments/ has a folder set aside for placing confidential information, ``kubernetes-deployments/authoring/cluster/nodes/resources/secrets``
+In order to generate a valid self-signed SSL certificate, you can do the following:
 
-This is where we will place the enterprise license to be used by the images in the deployment.  Remember to name your license file to ``crafter.lic``
-
-This guide details setting up Authoring pods in a cluster, but once you setup the Delivery pod, it will need SSH access to the Authoring pods to pull site content. For this, you need to generate an SSH public/private key pair for authentication and provide the key pair as a Kubernetes Secret to the Pods.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-Create the SSH Keys Secret
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. TODO: Update to include ssh config changes done in https://github.com/craftercms/craftercms/issues/5257
-..       which added support for the following algorithms: ``RSA``, ``ECDSA``, ``ED25519`` or ``DSA``
-..       Verify once https://github.com/craftercms/craftercms/issues/5285 is done
-
-#. Go to ``kubernetes-deployments/authoring/cluster/nodes/resources/secrets/.ssh``.  This is where we will create the ssh keys.
-
-#. Run ``ssh-keygen -m PEM -b 4096 -t rsa -C "your_email@example.com"`` to generate the key pair. When being asked for the
-   filename of the key, just enter ``id_rsa`` (so that the keys are saved in the current folder). Do not provide a
-   passphrase.
-
-      .. note::
-         Crafter requires the key to be ``RSA`` and does not support keys generated using an algorithm other than ``RSA``.  The Jsch library that Jgit uses only supports ``RSA`` and does not support other keys such as OpenSSH.  Make sure when you generate the key to specify the type as ``rsa``:
-
-         .. code-block:: sh
-
-            ➜ ssh-keygen -m PEM -b 4096 -t rsa -C "your_email@example.com"
-
-         |
-
-         Check that the file starts with the following header: ``-----BEGIN RSA PRIVATE KEY-----`` to verify that the key is using ``RSA``.
-         Crafter also currently doesn't support using a passphrase with SSH keys.  Remember to **NOT** use a passphrase when creating your keys.
-
-         |
-         |
-
-         *This section needs an update as CrafterCMS now supports the following algorithms for generating the key pair: RSA, ECDSA, ED25519 or DSA*
-
-#. Create a copy of the public key and name it ``authorized_keys``
-
-      .. code-block:: sh
-
-         ➜ cp id_rsa.pub authorized_keys
-
-
+#. Go into the ``kubernetes-deployments/authoring/cluster/resources/secrets/git-https-server`` folder.
+#. Run ``openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt`` and follow the prompts. It's up to you what to enter in each field, *EXCEPT* for the Common Name (CN). This should match
+   the Pods' base domain name. If following the example, the CN value should be ``*.authoring-svc-headless.craftercms``.
 
 -----------------
 Start the Cluster
 -----------------
 
-The next step is to start the cluster.
+Go to ``kubernetes-deployments/authoring/cluster``, then run ``kubectl apply -k .``
 
-^^^^^^^^^^^^^^^
-Start the nodes
-^^^^^^^^^^^^^^^
+This should deploy all necessary resources in Kubernetes. You can monitor the status of the cluster nodes by running ``kubectl get -n craftercms pods``.
 
-Go to ``kubernetes-deployments/authoring/cluster/nodes`` then run ``kubectl apply -k .``
+Each Pod has 4 containers, and initially only some of those containers will appear as ready:
 
    .. code-block:: bash
 
-      ➜ kubectl apply -k .
-      clusterrolebinding.rbac.authorization.k8s.io/default-cluster unchanged
-      configmap/authoring-studio-config-8ttt252b8f created
-      secret/authoring-crafter-license-f2tf6946hb unchanged
-      secret/authoring-ssh-keys-t4gb554959 unchanged
-      service/authoring-service-headless unchanged
-      service/authoring-service unchanged
-      statefulset.apps/authoring configured
-
-Check the status of the deployments by running ``kubectl get deployments``, and the status of the Pods by running ``kubectl get pods``.  Here's a sample output when running ``kubectl get pods``:
-
-   .. code-block:: bash
-
-      ➜ kubectl get pods
+      ➜  ~ kubectl get -n craftercms pods
       NAME          READY   STATUS    RESTARTS   AGE
-      authoring-0   2/4     Running   0          87s
-      authoring-1   2/4     Running   0          87s
+      authoring-0   1/4     Running   0          21s
+      authoring-1   1/4     Running   0          21s
 
-Another way of checking the status of the deployments/pods/etc. is by running ``k9s`` on the command line, which will open up a text-based user interface:
-
-   .. code-block:: bash
-
-      ➜ k9s
-
-   |
-
-.. image:: /_static/images/system-admin/clustering-k9s-start.webp
-   :alt: CrafterCMS Clustering of Studio Enterprise view using k9s
-   :width: 100%
-   :align: center
-
-|
-
-Once it comes up, you will see the two new pods created.
-
-You can tail the logs of the ``tomcat`` and ``deployer`` containers, with the ``kubectl`` command:
+When all containers show as ready (both Pods show ```READY 4/4``), then the cluster is fully initialized:
 
    .. code-block:: bash
 
-      kubectl logs -f -c CONTAINER_NAME POD_NAME
+      ➜  ~ kubectl get -n craftercms pods
+      NAME          READY   STATUS    RESTARTS   AGE
+      authoring-0   4/4     Running   0          8m43s
+      authoring-1   4/4     Running   0          8m43s
 
-For example: ``kubectl logs -f -c tomcat authoring-deployment-5df746c4d8-lv9gd``
+Another way to monitor the Pods is by tailing the Tomcat container log with the ``kubectl logs -n craftercms -f tomcat authoring-0`` command and look for the ``Server startup in [XXXXX] milliseconds`` message:
 
-To view the logs in a pod using k9s, from the ``Pods`` view, select the pod you would like to view the logs of using your keyboard arrow keys, then hit enter to view the containers in the pod.
+   .. code-block:: bash
 
-.. image:: /_static/images/system-admin/clustering-k9s-containers.webp
-   :alt: Studio Clustering using Kubernetes deployments - k9s container views
-   :width: 100%
-   :align: center
-
-|
-
-We'll take a look at the tomcat logs, so, we'll move the cursor to the ``tomcat`` container, then press the letter ``l``.
-
-.. image:: /_static/images/system-admin/clustering-k9s-logs.webp
-   :alt: Studio Clustering using Kubernetes deployments - k9s log views
-   :width: 100%
-   :align: center
-
-|
+      [INFO] 2022-10-17T19:59:31,135 [main] [cluster.StudioPrimaryReplicaUtils] | This server is a replica node in a cluster, it will not perform any write                                                                                                                                                                                                                            │
+      17-Oct-2022 19:59:31.152 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/usr/local/tomcat/webapps/studio.war] has finished in [139,582] ms                                                                                                                                                                                  │
+      17-Oct-2022 19:59:31.157 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]                                                                                                                                                                                                                                                         │
+      17-Oct-2022 19:59:31.170 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [168732] milliseconds
 
 -------------
-Create a Site
+Access Studio
 -------------
 
-To be able to access applications in a cluster in Kubernetes, we need to use port forwarding.  To access Studio, we will forward a local port to the tomcat port in the pod.  We will forward local port ``8080`` for the ``tomcat`` container in the first pod, and local port ``8081`` for the ``tomcat`` container in the second pod.
+You can easily access Studio through the Authoring load balancer. To get the load balancer address, run ``kubectl get -n craftercms ingress``. The load balancer address is the one in the ``ADDRESS`` column of the ``authoring-ingress``.
 
-``kubectl port-forward`` allows using resource name, such as a pod name, to select a matching pod to port forward to.  To forward a local port to a port of a pod, run the following:
+.. code-block:: bash
 
-   .. code-block:: bash
+   ➜  ~ kubectl get -n craftercms ingress
+   NAME                          CLASS   HOSTS   ADDRESS                                                                            PORTS   AGE
+   authoring-git-https-ingress   alb     *       internal-k8s-crafterc-authorin-8830e79fae-1816184747.us-east-1.elb.amazonaws.com   80      24m
+   authoring-ingress             alb     *       k8s-crafterc-authorin-2f4ed3b88b-532889167.us-east-1.elb.amazonaws.com             80      24m
 
-      kubectl port-forward pods/POD_NAME LOCAL_PORT:POD_PORT
+-------------------------
+Setup Delivery (optional)
+-------------------------
 
-Here's an example forwarding local port 8080 to the tomcat in the ``authoring-0`` pod:
+You can use the Delivery Simple example under https://github.com/craftercms/kubernetes-deployments/tree/develop/delivery/simple with this Authoring cluster example:
 
-   .. code-block:: bash
+#. The Authoring Cluster example creates an internal load balancer that can be used by the Delivery Deployer to pull the published content from Authoring. The load balancer will need to have a valid domain name and SSL certificate.
+   Follow the next steps to setup a DNS record and a certificate for the load balancer in AWS:
+   #. Create a Route 53 CNAME record for the domain name. The record needs to be in a Private Hosted Zone (https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-private.html), since the load balancer is internal, and 
+      the zone needs to be associated to the VPC of the EKS cluster where you deployed the Authoring Cluster example. If the hosted zone is in a different account than where the VPC resides, see this guide: 
+      https://aws.amazon.com/premiumsupport/knowledge-center/route53-private-hosted-zone/.
 
-      ➜  kubectl port-forward pods/authoring-0 8080:8080
-      Forwarding from 127.0.0.1:8080 -> 8080
-      Forwarding from [::1]:8080 -> 8080
+      .. image:: /_static/images/system-admin/clustering-internal-lb-route53-record-wizard.webp
+         :alt: Studio Clustering using Kubernetes deployments - Route 53 record for internal load balancer
+         :width: 100%
+         :align: center
 
-To forward a local port to the tomcat port in a pod using k9s, from the ``Pods`` view, select the pod you would like to port forward to using your keyboard arrow keys, then hit enter to view the containers in the pod.  We'll forward the local port to the tomcat port, so, we'll move the cursor to the ``tomcat`` container, then press ``<shift> + f``.  A dialog  will then open where you can enter the desired local port and address to use for port forwarding
+   #. Create a certificate in the AWS Certificate Manager. Enter the domain name used in the previous step and make sure you select DNS validation as the validation method.
 
-.. image:: /_static/images/system-admin/clustering-k9s-port-forward-dialog.webp
-   :alt: Studio Clustering using Kubernetes deployments - k9s port forward
-   :width: 100%
-   :align: center
+      .. image:: /_static/images/system-admin/clustering-internal-lb-certificate-wizard.webp
+         :alt: Studio Clustering using Kubernetes deployments - Certificate for internal load balancer
+         :width: 100%
+         :align: center
 
-|
+   #. Click on the Certificate ID to open the details of the certificate. On the Domains section, you will see a CNAME name and CNAME value. You will need to copy those and create a Route 53 record in the *Public* Hosted Zone (not the Private Hosted Zone 
+      mentioned previously) of the domain so that the certificate is validated.
 
+      .. image:: /_static/images/system-admin/clustering-internal-lb-certificate-validation-records.webp
+         :alt: Studio Clustering using Kubernetes deployments - Certificate for internal load balancer
+         :width: 100%
+         :align: center
 
-Change the value of ``Local Port`` to your desired value.  For our example, we're using local port ``8080`` for the ``authoring-0`` pod and local port ``8081`` for the ``authoring-1`` pod.  After making desired changes, move the cursor to ``Ok`` then hit the enter key to save your changes.
+#. In the ``kubernetes-deployments/authoring/cluster/authoring-deployment.yaml`` file, uncomment the commented lines under the ``authoring-git-https-ingress`` configuration, and fill the value of ``alb.ingress.kubernetes.io/certificate-arn`` with the 
+   ARN of the certificate just created. After that, run ``kubectl apply -k .`` in the folder to apply the changes.
 
-We can now access Studio from either pods using ``localhost:8080/studio`` or ``localhost:8081/studio`` in your browser
+.. code-block:: yaml
 
-.. image:: /_static/images/system-admin/clustering-k9s-port-forwarded-8081.webp
-   :alt: Studio Clustering using Kubernetes deployments - k9s port forward of local port 8081
-   :width: 100%
-   :align: center
+   # alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+   # alb.ingress.kubernetes.io/ssl-redirect: '443'
+   # alb.ingress.kubernetes.io/certificate-arn: ''    
 
-|
+#. Create a site in Authoring and make sure it's fully published
+#. Run ``kubectl apply -k .`` in ``kubernetes-deployments/delivery/simple``. Monitor the Pods coming up with ``kubectl get -n craftercms pods``. There should only be one Delivery Pod.
+#. After the Delivery Pod has started, run ``kubectl exec -n craftercms -it delivery-0 -c deployer -- gosu crafter bash`` to open a Bash shell to the Deployer container.
+#. Run ``./bin/init-site.sh -u crafter -p crafter editorial https://<domain-name>/repos/sites/<site-name>/published`` to create a Deployer target that will pull the published content for the recently created site. Before executing the command, make sure 
+   to replace ``<domain-name>`` with the internal LB domain name and ``<site-name>`` with the name of the site.
+#. Get the Delivery LB address with ``kubectl get -n craftercms ingress`` and access the site by entering ``http://<delivery-lb-address>?crafterSite=<site-name>`` (replacing the ``<>`` placeholders of course).
 
-If we look at the Cluster through one of the nodes, you'll see the two nodes listed like below:
+--------------------------------------
+Updating and Shutting Down the Cluster
+--------------------------------------
 
-.. image:: /_static/images/system-admin/clustering-2-nodes-setup.webp
-   :alt: Studio Clustering using Kubernetes deployments - Two nodes listed in Studio Main Menu - Cluster
-   :width: 100%
-   :align: center
+The Authoring Cluster's ``StatefulSet`` is configured with ``.spec.updateStrategy`` ``OnDelete``. This means that whenever the Kubernetes configuration for the ``StatefulSet`` is updated, you will need to manually delete the Pods to create new Pods in order 
+for the modifications to be reflected. We prefer this ``updateStrategy`` instead of ``RollingUpdate`` so administrators can restart the cluster replicas first (by killing their Pods), wait for them to come up, and finally restart the primary, whenever a small 
+update to the configuration needs to be applied (like changing a small flag in one of the Crafter configuration files under ``/opt/crafter/bin/apache-tomcat/shared/classes``).
 
-|
+For bigger updates, like a version upgrade or any other update that could cause modifications to the site content or the database, progresively scaling down the StatefulSet is recommended, by running 
+``kubectl scale statefulsets authoring --replicas=<current-replicas-minus-1>``, waiting until each Pod has been fully terminated before scaling down again, until all Pods are down. Then you can scale the StatefulSet up to the original number of 
+Pods (so that they can all synchronized on startup).
 
---------------------
-Shutdown the Cluster
---------------------
-
-To shutdown the nodes, go to the nodes directory ``kubernetes-deployments/authoring/cluster/nodes`` then run ``kubectl delete -k . --cascade=false``.  Again, this will delete resources (deployment, service, config map, stateful set) from a directory containing ``kustomization.yaml``
-
-   .. code-block:: bash
-
-      ➜  kubectl delete -k . --cascade=orphan
-      clusterrolebinding.rbac.authorization.k8s.io "default-cluster" deleted
-      configmap "authoring-studio-config-8ttt252b8f" deleted
-      secret "authoring-crafter-license-hghgcdd8f6" deleted
-      secret "authoring-ssh-keys-t4gb554959" deleted
-      service "authoring-service-headless" deleted
-      service "authoring-service" deleted
-      statefulset.apps "authoring" deleted
-
-Shutting down the nodes one by one allows for a graceful shutdown of the cluster.  The ``cascade`` flag allows killing the pods (shutting down the nodes) one by one.  Remember to set the ``cascade`` flag to ``orphan``, otherwise it will kill both pods at the same time.
-
-The next step is to terminate the pods one by one.  Terminate one pod first.  Make sure the pod has completely terminated, then terminate the remaining pod.
-
-Using ``k9s``, we'll delete the ``authoring-0`` pod.  Move the cursor to the ``authoring-0`` pod, then hit the ``<ctrl> + d`` keys on your keyboard.  A dialog will come up to verify deleting the pod.  Move the cursor to ``OK`` then hit enter.
-
-.. image:: /_static/images/system-admin/clustering-k9s-delete-pod.webp
-   :alt: Studio Clustering using Kubernetes deployments - k9s delete a pod
-   :width: 100%
-   :align: center
-
-|
-
-Wait until the pod has finished terminating, then  we can terminate the remaining pod.
-
-.. image:: /_static/images/system-admin/clustering-k9s-authoring-0-terminating.webp
-   :alt: Studio Clustering using Kubernetes deployments - k9s
-   :width: 100%
-   :align: center
-
-|
-
-We can now delete the remaining pod ``authoring-1`` by following the steps above using ``k9s`` or, you can also run ``kubectl delete pods <pod_name>`` to delete
-
-   .. code-block:: bash
-
-      ➜  kubectl delete pods authoring-1
-      pod "authoring-1" deleted
-
-For more information on the CrafterCMS Authoring Cluster, see the ``README.md`` file here: https://github.com/craftercms/kubernetes-deployments/tree/master/authoring/cluster
+If you just want to shutdown the entire cluster, scale down the StatefulSet as described above.
