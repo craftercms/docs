@@ -124,7 +124,7 @@ You can use the Delivery Simple example under https://github.com/craftercms/kube
          :align: center
 
    #. Click on the Certificate ID to open the details of the certificate. On the Domains section, you will see a CNAME name and CNAME value. You will need to copy those and create a Route 53 record in the *Public* Hosted Zone (not the Private Hosted Zone 
-      mentioned previosly) of the domain so that the certificate is validated.
+      mentioned previously) of the domain so that the certificate is validated.
 
       .. image:: /_static/images/system-admin/clustering-internal-lb-certificate-validation-records.webp
          :alt: Studio Clustering using Kubernetes deployments - Certificate for internal load balancer
