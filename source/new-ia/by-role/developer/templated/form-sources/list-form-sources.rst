@@ -1,8 +1,8 @@
 .. _list-form-engine-data-sources:
 
-.. |ctlDropTargets| image:: /_static/images/form-sources/ds-drop-targets.webp
+.. |ctlComponents| image:: /_static/images/form-sources/ds-components.webp
              :width: 50%
-             :alt: Form Data Sources - Drop Targets
+             :alt: Form Data Sources - Components
 
 .. |ctlSharedContent| image:: /_static/images/form-sources/ds-shared-content.webp
              :width: 55%
@@ -116,9 +116,9 @@
              :width: 75%
              :alt: Form Data Sources - Static Key Value Pairs
 
-.. |ctlProjectComp| image:: /_static/images/form-sources/ds-project-comp.webp
+.. |ctlSimpleTaxonomy| image:: /_static/images/form-sources/ds-simple-taxonomy.webp
              :width: 68%
-             :alt: Form Data Sources - Project Component
+             :alt: Form Data Sources - Simple Taxonomy
 
 |
 
@@ -128,8 +128,8 @@
 
    * - Datasource
      - Description
-   * - |ctlDropTargets|
-     - Details are in the :ref:`newIa-form-source-drop-targets` page.
+   * - |ctlComponents|
+     - Details are in the :ref:`newIa-form-source-components` page.
    * - |ctlSharedContent|
      - Details are in the :ref:`newIa-form-source-shared-content` page.
    * - |ctlEmbeddedContent|
@@ -186,5 +186,5 @@
      - Details are in the :ref:`newIa-form-source-video-repo` page.
    * - |ctlKVPair|
      - Details are in the :ref:`newIa-form-source-kvp` page.
-   * - |ctlProjectComp|
-     - Details are in the :ref:`newIa-form-source-project-component` page.
+   * - |ctlSimpleTaxonomy|
+     - Details are in the :ref:`newIa-form-source-simple-taxonomy` page.

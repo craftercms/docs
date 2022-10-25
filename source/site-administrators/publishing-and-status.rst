@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.2
 
 :orphan:
 
@@ -129,8 +129,13 @@ To publish by commit id, let's use a project created using the Website Editorial
 - Select the ``Publish changes made via direct git actions against the repository or pulled from a remote repository`` radio button
 - Paste the commit id from the step where we got the commit id, then click on the ``Publish`` button
 
+.. _publish-everything:
+
 Publish all changes on the repo
 -------------------------------
+.. version_tag::
+   :label: Since
+   :version: 4.0.2
 
 The **Publish everything** selection allows the user to publish all changes on the repo to the publishing
 target you choose.

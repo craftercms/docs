@@ -49,11 +49,11 @@ Configuration
 || Constraints           || * Minimum Selection: Set a minimum amount of checkboxes to be        |
 ||                       ||   selected.                                                          |
 +------------------------+-----------------------------------------------------------------------+
-|| Related Data Sources  || * |projectComponent|                                                 |
+|| Related Data Sources  || * |simpleTaxonomy|                                                   |
 ||                       || * |keyValuePair|                                                     |
 ||                       || * |sharedContent|                                                    |
 +------------------------+-----------------------------------------------------------------------+
 
-.. |projectComponent| replace:: :ref:`Project Component <form-source-project-component>`
+.. |simpleTaxonomy| replace:: :ref:`Project Component <form-source-simple-taxonomy>`
 .. |keyValuePair| replace:: :ref:`Static Key Value Pairs <form-source-kvp>`
 .. |sharedContent| replace:: :ref:`Shared Content <form-source-shared-content>`
