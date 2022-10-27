@@ -113,9 +113,9 @@ Let's begin:
 
 #. Setup Studio
 
-   * Create a site using the video center blueprint from the Public Marketplace.
+   * Create a project using the video center blueprint from the Public Marketplace.
 
-     From the **Main Menu**, click on **Sites**, then click on the **Create Site** button.  This will open the **Create Site** dialog.  Click on the **Public Marketplace** tab.  Look for **Video Center**, then click on the **Use** button, fill in the required information then click on the **Review** button, then finally the **Create Site** button.  This **Video Center** blueprint we selected from the Marketplace is the same react application
+     From the **Main Menu**, click on **Projects**, then click on the **Create Project** button.  This will open the **Create Project** dialog.  Look for **Video Center**, then click on the **Use** button, fill in the required information then click on the **Review** button, then finally the **Create Site** button.  This **Video Center** blueprint we selected from the Marketplace is the same react application
 
      .. image:: /_static/images/site-admin/vcbp-marketplace.webp
         :alt: Select Video Center blueprint from the Public Marketplace

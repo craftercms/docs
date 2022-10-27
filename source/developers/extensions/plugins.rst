@@ -163,7 +163,7 @@ like below:
              body_bottom.ftl
 
 
-The Google Analytics plugin for CrafterCMS available from the `marketplace <https://marketplace.craftercms.org>`__
+The Google Analytics plugin for CrafterCMS available from the `marketplace <https://craftercms.com/marketplace>`__
 uses a Freemarker template (*google-analytics-plugin/delivery/templates/plugins/org/craftercms/plugin/google/analytics/head.ftl*) to add markup in the HTML <head> element.
 
 See https://github.com/craftercms/google-analytics-plugin/blob/master/delivery/templates/plugins/org/craftercms/plugin/google/analytics/head.ftl for an example on what can be in included in the template.
@@ -655,7 +655,7 @@ Below are more authoring examples of creating plugins:
 Example Plugins
 ^^^^^^^^^^^^^^^
 
-CrafterCMS also provides various plugin examples available from the `marketplace <https://marketplace.craftercms.org>`__ to help you create your own plugins.  These plugins can be installed to your project using ``Plugin Management`` in |projectTools| through the Studio UI.  See :ref:`plugin-management` for more information on installing plugins from the CrafterCMS Marketplace.
+CrafterCMS also provides various plugin examples available from the `marketplace <https://craftercms.com/marketplace>`__ to help you create your own plugins.  These plugins can be installed to your project using ``Plugin Management`` in |projectTools| through the Studio UI.  See :ref:`plugin-management` for more information on installing plugins from the CrafterCMS Marketplace.
 
 * `Cliengo plugin <https://github.com/craftercms/chatbot-plugin/tree/cliengo>`__ to add Cliengo to a project
 * `Image Carousel plugin <https://github.com/craftercms/carousel-plugin>`__ to add a highly configurable carousel plugin based on `Tiny Slider <https://github.com/ganlanyuan/tiny-slider/tree/v2.9.3>`__

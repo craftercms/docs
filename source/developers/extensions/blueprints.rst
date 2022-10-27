@@ -26,7 +26,8 @@ The blueprint that comes out of the box with CrafterCMS, ``Website Editorial Blu
 
 As mentioned earlier, blueprints allows us to generate projects with predefined layouts, contents and configuration.  Blueprints could be a project theme or an API only project.  New blueprints can be created from a project and added into CrafterCMS allowing the creation of more projects based on the new blueprint.  In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from CrafterCMS and an existing project is used to create a new blueprint.
 
-Developers may submit their blueprints to the `CrafterCMS Marketplace <http://marketplace.craftercms.org>`__. Users can browse the marketplace catalog where submitted blueprints are listed, and power users of CrafterCMS can create projects based on marketplace plugins directly from the ``Create Project`` dialog in the CMS. See :ref:`submit-extension-to-marketplace` for more information on how to submit your blueprint to the marketplace.
+Developers may submit their blueprints to the `Crafter Marketplace <https://github.com/marketplace/crafter-marketplace>`__. Users can browse the `CrafterCMS Marketplace catalog <https://craftercms.com/marketplace/>`__  where submitted blueprints are listed, and power users of CrafterCMS can create projects based on marketplace plugins directly from the ``Create Project`` dialog in the CMS. See :ref:`submit-extension-to-marketplace` for more information on how to submit your blueprint to the marketplace.
+
 
 -------------------------------
 How do I make my own Blueprint?

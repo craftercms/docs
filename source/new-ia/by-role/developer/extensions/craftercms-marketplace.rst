@@ -14,12 +14,12 @@ CrafterCMS Marketplace
 
 .. image:: /_static/images/developer/marketplace/marketplace.webp
    :alt: CrafterCMS Marketplace
-   :width: 60%
+   :width: 80%
    :align: center
 
 |
 
-The CrafterCMS marketplace provides a home for the CrafterCMS community to contribute, find, and use extensions.
+The `CrafterCMS marketplace <https://craftercms.com/marketplace/>`__ provides a home for the CrafterCMS community to contribute, find, and use extensions.
 CrafterCMS ``extensions`` extend the CMS and provide the user additional functionality.
 
 This section provides information on creating and how to submit your extensions so that it's available to the
@@ -134,7 +134,7 @@ is ready to be submitted you can follow these steps:
 
    <hr>
 
-For more information on the CrafterCMS Marketplace, see https://marketplace.craftercms.org
+For more information on the CrafterCMS Marketplace, see https://craftercms.com/marketplace/
 
 For more information on developing extensions for the marketplace, see :ref:`here <newIa-extensions>`
 

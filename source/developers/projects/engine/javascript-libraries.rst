@@ -18,7 +18,7 @@ The libraries have the following npm package names:
 * `@craftercms/redux <https://www.npmjs.com/package/@craftercms/redux>`__ - Contains tools for integrating your application with Crafter Engine and Crafter Search using Redux as the state container.
 * `@craftercms/search <https://www.npmjs.com/package/@craftercms/search>`__ - Contains tools for integrating your application with Crafter Search.
 * `@craftercms/utils <https://www.npmjs.com/package/@craftercms/utils>`__ - Contains various utilities useful when developing with CrafterCMS
-* `@craftercms/ice <https://www.npmjs.com/package/@craftercms/ice>`__ - Contains JavaScript utilities to use CrafterCMS In Context Editing in your Apps and Sites
+* `@craftercms/ice <https://www.npmjs.com/package/@craftercms/ice>`__ - Contains JavaScript utilities to use CrafterCMS In Context Editing in your Apps and Projects
 
 
-See the blueprint `Video Center <https://marketplace.craftercms.org/blueprints/org.craftercms.blueprint.videoCenter>`__ in the *Public Marketplace* when creating a site in Crafter Studio for an example of using the above JavaScript libraries.
+See the blueprint `Video Center <https://craftercms.com/marketplace/video-center-blueprint>`__ in the *Public Marketplace* section when creating a project in Crafter Studio for an example of using the above JavaScript libraries.

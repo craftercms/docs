@@ -12,7 +12,7 @@ From `Google <https://developers.google.com/web/fundamentals/web-app-manifest>`_
 
    The web app manifest is a simple JSON file that tells the browser about your web application and how it should behave when ‘installed’ on the user’s mobile device or desktop.
 
-To tell the browser about the manifest, a link tag is added to all pages of your site:
+To tell the browser about the manifest, a link tag is added to all pages of your project:
 
     .. code-block:: html
 
@@ -28,11 +28,11 @@ To allow the web app manifest to use cookies and credentials, ``crossOrigin="use
 
     |
 
-CrafterCMS requires cookies to be sent for site selection.  If your site/app uses a ``web app manifest``, we need to allow the ``web app manifest`` to use cookies and credentials.
+CrafterCMS requires cookies to be sent for project selection.  If your project/app uses a ``web app manifest``, we need to allow the ``web app manifest`` to use cookies and credentials.
 
-Let's take a look at an example of a site in CrafterCMS that uses a ``web app manifest``, and how to allow it to use cookies and credentials.
+Let's take a look at an example of a project in CrafterCMS that uses a ``web app manifest``, and how to allow it to use cookies and credentials.
 
-Create a site using the ``Video Center`` blueprint, available from the **marketplace** tab in the ``Create Site`` dialog.
+Create a project using the ``Video Center`` blueprint, available from the **marketplace** section in the ``Create Project`` dialog.
 Below is an example of where we would add ``crossOrigin="use-credentials"`` in the manifest tag to allow the ``web app manifest`` to use cookies and credentials.
 
 Open the **Sidebar** then navigate to ``static-assets/app``, then right click on ``index.html`` and select ``Edit``
