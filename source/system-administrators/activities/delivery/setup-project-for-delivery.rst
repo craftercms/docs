@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. index:: Setup Project for a Delivery Environment
 

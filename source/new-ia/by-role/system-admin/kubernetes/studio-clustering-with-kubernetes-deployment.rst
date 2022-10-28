@@ -1,5 +1,5 @@
-:is-up-to-date: False
-:last-updated: 4.0.2
+:is-up-to-date: True
+:last-updated: 4.0.3
 
 .. index:: Setup Studio Clustering with Kubernetes Deployment, Clustering with Studio Example with Kubernetes
 
@@ -37,7 +37,7 @@ The repository https://github.com/craftercms/kubernetes-deployments/ has a folde
 
 This is where we will place the enterprise license to be used by the images in the deployment. Remember to name your license file ``crafter.lic``
 
-Also, you will need an SSL certficate and private key valid for the Authoring Pods cluster addresses. Each Pod's address is specified in the ``CLUSTER_NODE_ADDRESS`` environment variable in ``authoring.yaml``. In the example, this 
+Also, you will need an SSL certificate and private key valid for the Authoring Pods cluster addresses. Each Pod's address is specified in the ``CLUSTER_NODE_ADDRESS`` environment variable in ``authoring.yaml``. In the example, this
 value is ``$(POD_NAME).authoring-svc-headless.craftercms``, which is a standard FQDN for a Kubernetes StatefulSet Pod: ``pod-hostname.headless-service-name.namespace``. For more information on Kubernetes DNS, see 
 https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/.
 
@@ -109,7 +109,7 @@ You can use the Delivery Simple example under https://github.com/craftercms/kube
    Follow the next steps to setup a DNS record and a certificate for the load balancer in AWS:
 
    #. Create a Route 53 CNAME record for the domain name. The record needs to be in a Private Hosted Zone (https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-private.html), since the load balancer is internal, and 
-      the zone needs to be associated to the VPC of the EKS cluster where you deployed the Authoring Cluster example. If the hosted zone is in a different account than where the VPC resides, see this guide: 
+      the zone needs to be associated to the VPC of the EKS cluster where you deployed the Authoring Cluster example. If the hosted zone is in a different account than where the VPC resides, see this guide:
       https://aws.amazon.com/premiumsupport/knowledge-center/route53-private-hosted-zone/.
 
       .. image:: /_static/images/system-admin/clustering-internal-lb-route53-record-wizard.webp

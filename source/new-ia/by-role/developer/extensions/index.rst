@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.1
+:last-updated: 4.0.3
 
 .. index:: CrafterCMS Extensions
 
@@ -52,14 +52,14 @@ There are two main types of CrafterCMS Extensions:
 
      plugins
 
-**CrafterCMS Marketplace**
+**Crafter Marketplace**
 
-Developers may submit their extensions to the :ref:`CrafterCMS Marketplace <newIa-marketplace>`, which provides a
+Developers may submit their extensions to the :ref:`Crafter Marketplace <newIa-marketplace>`, which provides a
 home for the Crafter community to contribute, find, and use extensions.
 
-Extensions submitted to the CrafterCMS Marketplace can be used directly from CrafterCMS.
+Extensions submitted to the Crafter Marketplace can be used directly from CrafterCMS.
 
-When creating a project in CrafterCMS, a list of the available blueprints from the CrafterCMS marketplace is
+When creating a project in CrafterCMS, a list of the available blueprints from the Crafter Marketplace is
 displayed for the user to choose from like below:
 
 .. image:: /_static/images/developer/plugins/marketplace-blueprints.webp
@@ -67,7 +67,7 @@ displayed for the user to choose from like below:
    :width: 60%
    :align: center
 
-As mentioned above, plugins published in the CrafterCMS marketplace can be installed on projects in CrafterCMS
+As mentioned above, plugins published in the Crafter Marketplace can be installed on projects in CrafterCMS
 via the :ref:`Plugin Management <newIa-plugin-management>` tool:
 
 .. image:: /_static/images/developer/plugins/marketplace-site-plugins.webp

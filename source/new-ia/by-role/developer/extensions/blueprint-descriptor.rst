@@ -1,7 +1,7 @@
 :orphan:
 
 :is-up-to-date: True
-:last-updated: 4.0.1
+:last-updated: 4.0.3
 
 .. _newIa-blueprint-descriptor-file:
 
@@ -82,8 +82,8 @@ Here are some things to note in the descriptor file:
      - A unique Id that is meaningful/recognizable to people who will be using the blueprint
    * - plugin.name
      - |checkmark|
-     - The name displayed in the CrafterCMS Marketplace. |br|
-       Pick a unique name for your blueprint.  You can check in the CrafterCMS Marketplace if |br|
+     - The name displayed in the Crafter Marketplace. |br|
+       Pick a unique name for your blueprint.  You can check in the Crafter Marketplace if |br|
        the name you picked does not exist yet. |br|
        It's also a best practice to provide a name for your blueprint that is meaningful or |br|
        recognizable to users.  The name can be multiple words such as ``Video Center``
@@ -93,7 +93,7 @@ Here are some things to note in the descriptor file:
    * - plugin.description
      -
      - Contains a short description of the blueprint and is displayed underneath the blueprint name in |br|
-       the CrafterCMS Marketplace
+       the Crafter Marketplace
    * - plugin.website.url
      -
      - Can be a page for more information on your blueprint or for announcing updates, reporting bugs, etc. |br|

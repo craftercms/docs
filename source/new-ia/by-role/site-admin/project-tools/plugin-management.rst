@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 :nosearch:
 :orphan:
 
@@ -22,7 +22,7 @@ This section details how to manage plugins from the |projectTools| Plugin Manage
 Installing
 ----------
 
-Once a project plugin is published to the CrafterCMS Marketplace it can be installed using the Crafter Studio user interface
+Once a project plugin is published to the Crafter Marketplace it can be installed using the Crafter Studio user interface
 or the REST API:
 
    .. note::
@@ -32,7 +32,7 @@ or the REST API:
       - ``list_plugins``
       - ``install_plugins``
 
-As mentioned above, there are two ways to install plugins from the CrafterCMS Marketplace:
+As mentioned above, there are two ways to install plugins from the Crafter Marketplace:
 
 * Using the Studio ``Plugin Management`` Project Tool
 * Using the install plugin REST API
@@ -115,7 +115,7 @@ Install a plugin using the Studio ``Plugin Management`` Project Tool
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Install a plugin using the install plugin REST API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Another way to install a plugin from the CrafterCMS marketplace is by using the install plugin REST API.
+Another way to install a plugin from the Crafter Marketplace is by using the install plugin REST API.
 
 For more information on the API, see :studio_swagger_url:`#/marketplace/installPlugin`
 

@@ -18,7 +18,7 @@ A proxy server, or proxy for short, is an application or system that acts as a m
 
 CrafterCMS supports a proxy system to proxy GraphQL, Engine, NodeJS or other application delivery systems.  Whenever Crafter Engine receives a request, it is matched against the patterns of each server and the first match would then get the request sent to the server with the matching pattern.  In some systems, multiple servers are used for Elasticsearch, Studio, etc.  Using the proxy helps simplify the system.
 
-One of the benefits of using the proxy in CrafterCMS is that it can connect to any remote server as the preview server, which allows for easier authoring of sites built with other programming languages and technology.  For example, you would like to work on a React application within Studio.  What is normally included inside Studio is the build output of the React application, so that a user making edits to the React code would need to build the React code then copy it into Studio in order to preview the changes.  This becomes cumbersome when developing, as many edits are normally done before reaching the final version of the React app.  Using the proxy, the user can preview the React app in Studio and is able to work on both the React app and CrafterCMS.
+One of the benefits of using the proxy in CrafterCMS is that it can connect to any remote server as the preview server, which allows for easier authoring of projects built with other programming languages and technology.  For example, you would like to work on a React application within Studio.  What is normally included inside Studio is the build output of the React application, so that a user making edits to the React code would need to build the React code then copy it into Studio in order to preview the changes.  This becomes cumbersome when developing, as many edits are normally done before reaching the final version of the React app.  Using the proxy, the user can preview the React app in Studio and is able to work on both the React app and CrafterCMS.
 
 Let's take a look at an example of setting up the proxy for a React application.
 
@@ -95,7 +95,7 @@ Let's begin:
           # try to find the crafterSite cookie which, provided you're
           # running both your local crafter and node dev web server for
           # the app are the same, it should be set for you when you created
-          # the site. Manually set the here otherwise.
+          # the project. Manually set the here otherwise.
           REACT_APP_BASE_URL=http://localhost:8080
 
           # If you're using the CrafterCMS's Preview Proxy to view the dev mode app inside Preview,
@@ -113,9 +113,9 @@ Let's begin:
 
 #. Setup Studio
 
-   * Create a site using the video center blueprint from the Public Marketplace.
+   * Create a project using the video center blueprint from the Public Marketplace.
 
-     From the **Main Menu**, click on **Sites**, then click on the **Create Site** button.  This will open the **Create Site** dialog.  Click on the **Public Marketplace** tab.  Look for **Video Center**, then click on the **Use** button, fill in the required information then click on the **Review** button, then finally the **Create Site** button.  This **Video Center** blueprint we selected from the Marketplace is the same react application
+     From the **Main Menu**, click on **Project**, then click on the **Create Project** button.  This will open the **Create Site** dialog.  Look for **Video Center**, then click on the **Use** button, fill in the required information then click on the **Review** button, then finally the **Create Site** button.  This **Video Center** blueprint we selected from the Marketplace is the same react application
 
      .. image:: /_static/images/site-admin/vcbp-marketplace.webp
         :alt: Select Video Center blueprint from the Public Marketplace

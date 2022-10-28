@@ -91,7 +91,7 @@ Using the Experience Builder Panel
 ----------------------------------
 
 Let's take  a look at an example of editing a post using the experience builder (XB) panel in a project
-created using the ``Wordify`` blueprint from the marketplace.
+created using the ``Wordify`` blueprint from the Marketplace.
 
 We'll change the picture in the ``Bio`` section of one of the posts. Let's preview the post
 ``How to Find the Video Games of Your Youth``.  Turn on the XB panel by clicking on the pencil icon
