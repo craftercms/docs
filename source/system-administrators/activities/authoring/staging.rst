@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. _staging-env:
 
@@ -51,6 +52,8 @@ To view your project with respect to the staging preview, we need to set it up f
         ./init-site.sh -b staging mysite-staging /path/to/published/repo
 
 |
+
+.. include:: /includes/ssh-private-key.rst
 
 -------------------------
 Syncing Staging with Live
