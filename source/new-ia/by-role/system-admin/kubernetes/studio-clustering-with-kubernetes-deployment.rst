@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.2
+:last-updated: 4.0.3
 
 .. index:: Setup Studio Clustering with Kubernetes Deployment, Clustering with Studio Example with Kubernetes
 
@@ -141,12 +141,15 @@ You can use the Delivery Simple example under https://github.com/craftercms/kube
    # alb.ingress.kubernetes.io/ssl-redirect: '443'
    # alb.ingress.kubernetes.io/certificate-arn: ''    
 
-#. Create a site in Authoring and make sure it's fully published
+#. Create a project in Authoring and make sure it's fully published
 #. Run ``kubectl apply -k .`` in ``kubernetes-deployments/delivery/simple``. Monitor the Pods coming up with ``kubectl get -n craftercms pods``. There should only be one Delivery Pod.
 #. After the Delivery Pod has started, run ``kubectl exec -n craftercms -it delivery-0 -c deployer -- gosu crafter bash`` to open a Bash shell to the Deployer container.
-#. Run ``./bin/init-site.sh -u crafter -p crafter editorial https://<domain-name>/repos/sites/<site-name>/published`` to create a Deployer target that will pull the published content for the recently created site. Before executing the command, make sure 
-   to replace ``<domain-name>`` with the internal LB domain name and ``<site-name>`` with the name of the site.
-#. Get the Delivery LB address with ``kubectl get -n craftercms ingress`` and access the site by entering ``http://<delivery-lb-address>?crafterSite=<site-name>`` (replacing the ``<>`` placeholders of course).
+#. Run ``./bin/init-site.sh -u crafter -p crafter editorial https://<domain-name>/repos/sites/<site-name>/published`` to create a Deployer target that will pull the published content for the recently created project. Before executing the command, make sure
+   to replace ``<domain-name>`` with the internal LB domain name and ``<site-name>`` with the name of the project.
+
+   .. include:: /includes/ssh-private-key.rst
+
+#. Get the Delivery LB address with ``kubectl get -n craftercms ingress`` and access the project by entering ``http://<delivery-lb-address>?crafterSite=<site-name>`` (replacing the ``<>`` placeholders of course).
 
 --------------------------------------
 Updating and Shutting Down the Cluster
@@ -156,7 +159,7 @@ The Authoring Cluster's ``StatefulSet`` is configured with ``.spec.updateStrateg
 for the modifications to be reflected. We prefer this ``updateStrategy`` instead of ``RollingUpdate`` so administrators can restart the cluster replicas first (by killing their Pods), wait for them to come up, and finally restart the primary, whenever a small 
 update to the configuration needs to be applied (like changing a small flag in one of the Crafter configuration files under ``/opt/crafter/bin/apache-tomcat/shared/classes``).
 
-For bigger updates, like a version upgrade or any other update that could cause modifications to the site content or the database, progresively scaling down the StatefulSet is recommended, by running 
+For bigger updates, like a version upgrade or any other update that could cause modifications to the project content or the database, progressively scaling down the StatefulSet is recommended, by running
 ``kubectl scale statefulsets authoring --replicas=<current-replicas-minus-1>``, waiting until each Pod has been fully terminated before scaling down again, until all Pods are down. Then you can scale the StatefulSet up to the original number of 
 Pods (so that they can all synchronized on startup).
 

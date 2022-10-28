@@ -1,4 +1,6 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
+
 :nosearch:
 
 .. _newIa-backup-and-recovery:
@@ -93,4 +95,6 @@ If you're restoring the authoring environment, Studio will be started by the res
       **OR**
 
       * Re-initialize the delivery environment by deleting the ``data`` folder under ``{Crafter-CMS-install-directory}/crafter-delivery/`` and running the init-site.sh script for all sites
+
+        .. include:: /includes/ssh-private-key.rst
 

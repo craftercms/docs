@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. index:: Setup CrafterCMS Delivery Using Crafter's AWS AMI
 
@@ -83,13 +84,13 @@ You can find the IP address and/or DNS name in several locations on your AWS adm
     :align: center
     :alt: CrafterCMS AWS AMI Delivery IP DNS
 
------------------------------------------------------------
-Step 3: Configure Crafter Engine to deliver published sites
------------------------------------------------------------
+--------------------------------------------------------------
+Step 3: Configure Crafter Engine to deliver published projects
+--------------------------------------------------------------
 
-Crafter Engine is now up and running. However, in order to deliver content, its deployer must be configured to monitor a published repository for one or more sites. A delivery engine is multi-tenant and can deliver many sites. Each site must be configured or "initialized" such that the deployer monitors a Git repository for published updates. CrafterCMS's delivery tier has a decoupled, shared-nothing architecture that makes it cloud native and elastically scalable. You can read more about this architecture here: :ref:`architecture`
+Crafter Engine is now up and running. However, in order to deliver content, its deployer must be configured to monitor a published repository for one or more projects. A delivery engine is multi-tenant and can deliver many projects. Each project must be configured or "initialized" such that the deployer monitors a Git repository for published updates. CrafterCMS's delivery tier has a decoupled, shared-nothing architecture that makes it cloud native and elastically scalable. You can read more about this architecture here: :ref:`architecture`
 
-In this section we'll show you how to configure a Crafter Delivery instance to monitor a published Git repository and delivery content for a given site. The simplest topology for this is to directly monitor the published repository of a project on the authoring instance. This is what we will configure. Let's get started.
+In this section we'll show you how to configure a Crafter Delivery instance to monitor a published Git repository and delivery content for a given project. The simplest topology for this is to directly monitor the published repository of a project on the authoring instance. This is what we will configure. Let's get started.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 3.1: Configure authoring instance
@@ -99,10 +100,10 @@ In order to complete step 3, you must have a CrafterCMS authoring instance runni
 :ref:`setup-authoring-using-aws-ami`
 
 
-After your authoring instance is set up and configured, follow this guide to create a simple site.
+After your authoring instance is set up and configured, follow this guide to create a simple project.
 :ref:`your_first_project`
 
-Crafter will automatically "publish" the initial state of the site for youfor you which will give you the prerequisites for the rest of step 3.
+Crafter will automatically "publish" the initial state of the project for you for you which will give you the prerequisites for the rest of step 3.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 3.2: Establish SSH-based communication between the delivery instance and the authoring instance
@@ -238,10 +239,10 @@ Once you execute the SSH command to log in to the authoring machine from the del
 
     exit
 
---------------------------------------------------
-Step 4: Initialize the site on the delivery server
---------------------------------------------------
-Now that secure communication is established between the authoring and delivery instances, we can initialize any number of sites to be delivered by the delivery instance. It's very simple to initialize a site on the delivery instance. To do so:
+-----------------------------------------------------
+Step 4: Initialize the project on the delivery server
+-----------------------------------------------------
+Now that secure communication is established between the authoring and delivery instances, we can initialize any number of projects to be delivered by the delivery instance. It's very simple to initialize a project on the delivery instance. To do so:
 
 SSH to the delivery server and execute the following command in the **/opt/crafter/bin** directory as the **crafter** user:
 
@@ -250,14 +251,18 @@ SSH to the delivery server and execute the following command in the **/opt/craft
 
     init-site.sh
 
-When the init-site.sh command is executed without any parameters, parameter documentation will be presented. We'll use the following parameters in our example based on our public/private key setup that we did in the previous steps:
+When the init-site.sh command is executed without any parameters, parameter documentation will be presented.
+
+.. include:: /includes/ssh-private-key.rst
+
+We'll use the following parameters in our example based on our public/private key setup that we did in the previous steps:
 
 .. code-block:: sh
     :linenos:
 
     init-site.sh -b live [SITE_ID] ssh://crafter@[DNS_NAME_OF_AUTHORING_SERVER]:/opt/crafter/data/repos/sites/[SITE_ID]/published
 
-The SITE_ID parameter can be acquired from the authoring server. Log in to Crafter Studio and "Preview" the site you wish to initialize and you will find the SITE_ID in the URL.
+The SITE_ID parameter can be acquired from the authoring server. Log in to Crafter Studio and "Preview" the project you wish to initialize and you will find the SITE_ID in the URL.
 
 .. image:: /_static/images/ami/craftercms-siteid.webp
     :width: 100 %
@@ -299,11 +304,11 @@ Look for output that is similar to the following:
     2019-04-17 21:39:00.001 INFO 4389 --- [pool-5-thread-1] o.c.d.impl.processors.GitPullProcessor : Cloning Git remote repository ssh://crafter@ec2-3-93-34-40.compute-1.amazonaws.com:/opt/crafter/data/repos/sites/editorial/published into /opt/crafter/data/repos/sites/editorial
     2019-04-17 21:39:00.806 INFO 4389 --- [pool-5-thread-1] o.c.d.impl.processors.GitPullProcessor : Successfully cloned Git remote repository ssh://crafter@ec2-3-93-34-40.compute-1.amazonaws.com:/opt/crafter/data/repos/sites/editorial/published into /opt/crafter/data/repos/sites/editorial
 
----------------------------------------------------------------
-Step 5: View the site on the delivery server from a web browser
----------------------------------------------------------------
+------------------------------------------------------------------
+Step 5: View the project on the delivery server from a web browser
+------------------------------------------------------------------
 
-Now that site has deployed it can be viewed via web browser. As previously mentioned, Crafter's delivery tier is multi-tenant.  A SITE_ID is used on the URL to indicate which tenant is to be displayed. To preview the site you initialized, open a browser and navigate to the following URL:
+Now that project has deployed it can be viewed via web browser. As previously mentioned, Crafter's delivery tier is multi-tenant.  A SITE_ID is used on the URL to indicate which tenant is to be displayed. To preview the project you initialized, open a browser and navigate to the following URL:
 
 **http://[DELIVERY_DNS_NAME]?crafterSite=[SITE_ID]**
 
@@ -317,14 +322,14 @@ Example:
     :alt: CrafterCMS AWS AMI Delivery View Site
 
 .. note::
-   The **SITE_ID** parameter is typically added automatically to all requests for a given site by a webserver "virtual host" configured for each site/tenant that sits in front of Crafter Engine. You can learn more about this here: :ref:`configure-apache-vhost-for-production`
+   The **SITE_ID** parameter is typically added automatically to all requests for a given project by a webserver "virtual host" configured for each project/tenant that sits in front of Crafter Engine. You can learn more about this here: :ref:`configure-apache-vhost-for-production`
 
 This configuration and other advanced topology topics such as load balancing are outside the scope of a basic installation.
 
 -------------------------------------------------------------------------------
 Step 6: Make an update in authoring and see it published on the delivery server
 -------------------------------------------------------------------------------
-To further test publishing, log in to Crafter Studio for the given site, make an edit and then approve the edit for publish. In a few moments you will see your updates in the web browser on the delivery server.  You can find step by step instructions on editing and publishing here: :ref:`your_first_project`
+To further test publishing, log in to Crafter Studio for the given project, make an edit and then approve the edit for publish. In a few moments you will see your updates in the web browser on the delivery server.  You can find step by step instructions on editing and publishing here: :ref:`your_first_project`
 
 .. image:: /_static/images/ami/craftercms-approve-publish.webp
     :width: 100 %

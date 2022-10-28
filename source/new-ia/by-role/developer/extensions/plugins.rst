@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.1
+:last-updated: 4.0.3
 
 .. index:: Create a Plugin, Plugins
 
@@ -163,7 +163,7 @@ like below:
              body_bottom.ftl
 
 
-The Google Analytics plugin for CrafterCMS available from the `marketplace <https://craftercms.com/marketplace>`__
+The Google Analytics plugin for CrafterCMS available from the `Marketplace <https://craftercms.com/marketplace>`__
 uses a Freemarker template (*google-analytics-plugin/delivery/templates/plugins/org/craftercms/plugin/google/analytics/head.ftl*) to add markup in the HTML <head> element.
 
 See https://github.com/craftercms/google-analytics-plugin/blob/master/delivery/templates/plugins/org/craftercms/plugin/google/analytics/head.ftl for an example on what can be in included in the template.
@@ -273,7 +273,7 @@ to match the final destination of the file:
 | ``delivery/scripts/rest/*``              | ``/scripts/rest/<plugin id path>/*``                          |
 +------------------------------------------+---------------------------------------------------------------+
 
-Your plugin is installed in a project via the :ref:`marketplace <newIa-plugin-install-from-marketplace>`
+Your plugin is installed in a project via the :ref:`Marketplace <newIa-plugin-install-from-marketplace>`
 or via :ref:`copy-plugin <newIa-crafter-cli-copy-plugin>` CLI command, your plugin descriptor containing the
 directory structure will be read and corresponding plugin files copied to the project.
 
@@ -420,7 +420,7 @@ To reuse those libraries, do the following:
 Publishing Your Plugin
 ----------------------
 
-To publish a plugin in the CrafterCMS Marketplace you can follow the instructions in :ref:`newIa-marketplace-create-extensions`
+To publish a plugin in the Crafter Marketplace you can follow the instructions in :ref:`newIa-marketplace-create-extensions`
 
 .. raw:: html
 
@@ -472,10 +472,10 @@ After installing a plugin, depending on the plugin you created, the plugin will 
 
 .. _newIa-plugin-install-from-marketplace:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Install a plugin from the CrafterCMS Marketplace
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Once a plugin is published to the CrafterCMS Marketplace it can be installed using the Crafter Studio user interface
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Install a plugin from the Crafter Marketplace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Once a plugin is published to the Crafter Marketplace it can be installed using the Crafter Studio user interface
 or the REST API:
 
    .. note::
@@ -486,14 +486,14 @@ or the REST API:
       - ``install_plugins``
 
 
-For more information on installing plugins from the CrafterCMS Marketplace using Crafter Studio, see :ref:`newIa-plugin-management`
+For more information on installing plugins from the Crafter Marketplace using Crafter Studio, see :ref:`newIa-plugin-management`
 
 .. _newIa-plugin-install-from-local-folder:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Install a plugin in development from a Studio local folder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-For developers who want to test out their plugins before submitting to the CrafterCMS Marketplace, CrafterCMS
+For developers who want to test out their plugins before submitting to the Crafter Marketplace, CrafterCMS
 provides a CLI command ``copy-plugin`` for installing a plugin from a Studio local folder into a project using
 the ``crafter-cli``.
 
@@ -655,7 +655,7 @@ Below are more authoring examples of creating plugins:
 Example Plugins
 ^^^^^^^^^^^^^^^
 
-CrafterCMS also provides various plugin examples available from the `marketplace <https://craftercms.com/marketplace>`__ to help you create your own plugins.  These plugins can be installed to your project using ``Plugin Management`` in |projectTools| through the Studio UI.  See :ref:`newIa-plugin-management` for more information on installing plugins from the CrafterCMS Marketplace.
+CrafterCMS also provides various plugin examples available from the `Marketplace <https://craftercms.com/marketplace>`__ to help you create your own plugins.  These plugins can be installed to your project using ``Plugin Management`` in |projectTools| through the Studio UI.  See :ref:`newIa-plugin-management` for more information on installing plugins from the Crafter Marketplace.
 
 * `Cliengo plugin <https://github.com/craftercms/chatbot-plugin/tree/cliengo>`__ to add Cliengo to a project
 * `Image Carousel plugin <https://github.com/craftercms/carousel-plugin>`__ to add a highly configurable carousel plugin based on `Tiny Slider <https://github.com/ganlanyuan/tiny-slider/tree/v2.9.3>`__

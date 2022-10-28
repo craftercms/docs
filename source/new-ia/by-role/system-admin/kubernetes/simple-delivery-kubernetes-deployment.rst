@@ -1,4 +1,6 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
+
 :nosearch:
 
 .. index:: Simple Delivery Kubernetes Deployment, Example Kubernetes deployment of simple Delivery
@@ -33,9 +35,9 @@ errors. In Minikube, to start a node with this characteristics, you can run a co
 In addition to that, we need the following:
 
 * `k9s <https://k9scli.io/>`__ for viewing the status of the pods, the logs, etc
-* An Authoring pod with a site published to ``live`` to pull site content from.
+* An Authoring pod with a project published to ``live`` to pull project content from.
   To setup an authoring pod, you can follow  :ref:`newIa-setup-simple-authoring-with-kubernetes-deployment` or :ref:`newIa-setup-studio-clustering-with-kubernetes-deployment`.  Take note of the keys used in your Authoring setup.  We will be using the same ssh keys for our simple delivery setup.
-  For this guide, we will use a simple Authoring with a single instance Kubernetes deployment to pull site content from.
+  For this guide, we will use a simple Authoring with a single instance Kubernetes deployment to pull project content from.
 
 * Kubernetes deployment files for CrafterCMS Simple Delivery, found here: https://github.com/craftercms/kubernetes-deployments/
 
@@ -72,7 +74,7 @@ From https://kubernetes.io/docs/concepts/configuration/secret/
 
 The deployment files cloned from https://github.com/craftercms/kubernetes-deployments/ has a folder set aside for placing confidential information, ``kubernetes-deployments/delivery/simple/resources/secrets``
 
-We'll need SSH access to the Authoring pod/s to pull site content. We'll be copying over the contents of the ``.ssh`` folder of your Authoring setup.
+We'll need SSH access to the Authoring pod/s to pull project content. We'll be copying over the contents of the ``.ssh`` folder of your Authoring setup.
 
 The guides :ref:`newIa-setup-simple-authoring-with-kubernetes-deployment` and :ref:`newIa-setup-studio-clustering-with-kubernetes-deployment` have details on how to setup an Authoring pod, where an SSH public/private key pair for authentication is generated and provided as a Kubernetes secret to the pods.
 
@@ -151,18 +153,22 @@ We'll take a look at the tomcat logs, so, we'll move the cursor to the ``tomcat`
 
 |
 
-------------------------------
-Bootstrap the Site in Delivery
-------------------------------
-Now you need to setup the site in Delivery. If you don’t know the name of the Delivery Pod yet, run ``kubectl get pods`` and check for the one that has a name like delivery-XX. Then, run the following command (remember to replace the pod name and the site name with the actual values):
+---------------------------------
+Bootstrap the Project in Delivery
+---------------------------------
+Now you need to setup the project in Delivery. If you don’t know the name of the Delivery Pod yet, run ``kubectl get pods`` and check for the one that has a name like delivery-XX. Then, run the following command (remember to replace the pod name and the project name with the actual values):
 
    .. code-block:: bash
 
       ➜ kubectl exec -it DELIVERY_POD_NAME --container deployer -- gosu crafter ./bin/init-site.sh SITE_NAME ssh://authoring-service/opt/crafter/data/repos/sites/SITE_NAME/published
 
-This command will create the Deployer site target and create the index in Elasticsearch. After a minute or two, the Deployer should have pulled the site content from Authoring (you can check it by gettting the Delivery Deployer log: ``kubectl logs -c deployer DELIVERY_POD_NAME``).
+This command will create the Deployer project target and create the index in Elasticsearch.
 
-Here's the output when we setup the site in the ``delivery-1`` pod:
+.. include:: /includes/ssh-private-key.rst
+
+After a minute or two, the Deployer should have pulled the project content from Authoring (you can check it by getting the Delivery Deployer log: ``kubectl logs -c deployer DELIVERY_POD_NAME``).
+
+Here's the output when we setup the project in the ``delivery-1`` pod:
 
    .. code-block:: bash
 
@@ -173,7 +179,7 @@ Here's the output when we setup the site in the ``delivery-1`` pod:
 
    |
 
-To setup the site in Delivery using ``k9s``, from the ``Pods`` view, select the Delivery pod you would like to setup using your keyboard arrow keys, then hit enter to view the containers in the pod.  Move the cursor to the ``deployer`` container, then press ``s`` to open a shell to the deployer.
+To setup the project in Delivery using ``k9s``, from the ``Pods`` view, select the Delivery pod you would like to setup using your keyboard arrow keys, then hit enter to view the containers in the pod.  Move the cursor to the ``deployer`` container, then press ``s`` to open a shell to the deployer.
 
 .. image:: /_static/images/system-admin/simple-delivery-k9s-deployer-shell.webp
    :alt: Simple Delivery Kubernetes deployments - k9s deployer shell opened
@@ -199,6 +205,8 @@ Next, we'll run the ``init-site.sh`` script to create the deployer target.  Go t
       Creating Deployer Target...
       Target created successfully
 
+.. include:: /includes/ssh-private-key.rst
+
 You can check the deployer logs to verify that the target has been created. From the ``Pods`` view, select the Delivery pod you're working on, then hit enter to view the containers in the pod. Move the cursor to the ``deployer`` container, then press ``l`` to open the deployer logs.
 
 .. image:: /_static/images/system-admin/simple-delivery-k9s-deployer-logs.webp
@@ -208,9 +216,9 @@ You can check the deployer logs to verify that the target has been created. From
 
 |
 
-We can now access the site in Delivery.
+We can now access the project in Delivery.
 
-To be able to access applications in Kubernetes, we need to use port forwarding.  To access the site in Delivery, we will forward a local port to the tomcat port in the pod.  We will forward a local port to the ``tomcat`` container in the pod.
+To be able to access applications in Kubernetes, we need to use port forwarding.  To access the project in Delivery, we will forward a local port to the tomcat port in the pod.  We will forward a local port to the ``tomcat`` container in the pod.
 
 ``kubectl port-forward`` allows using resource name, such as a pod name, to select a matching pod to port forward to.  To forward a local port to a port of a pod, run the following:
 
@@ -239,7 +247,7 @@ To forward a local port to the tomcat port in a pod using k9s, from the ``Pods``
 
 Change the value of ``Local Port`` to your desired value.  For our example, we're using local port ``9080`` for the ``delivery-0`` pod.  After making desired changes, move the cursor to ``Ok`` then hit the enter key to save your changes.
 
-We can now view the site in Delivery from the pod by entering ``localhost:9080?crafterSite=mysite`` or ``localhost:9081?crafterSite=mysite`` in your browser.
+We can now view the project in Delivery from the pod by entering ``localhost:9080?crafterSite=mysite`` or ``localhost:9081?crafterSite=mysite`` in your browser.
 
 .. image:: /_static/images/system-admin/simple-delivery-site-in-browser.webp
    :alt: Simple Delivery Kubernetes deployments - Access site in delivery

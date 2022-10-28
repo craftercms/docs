@@ -32,7 +32,7 @@ CrafterCMS requires cookies to be sent for project selection.  If your project/a
 
 Let's take a look at an example of a project in CrafterCMS that uses a ``web app manifest``, and how to allow it to use cookies and credentials.
 
-Create a project using the ``Video Center`` blueprint, available from the **marketplace** section in the ``Create Project`` dialog.
+Create a project using the ``Video Center`` blueprint, available from the **Marketplace** section in the ``Create Project`` dialog.
 Below is an example of where we would add ``crossOrigin="use-credentials"`` in the manifest tag to allow the ``web app manifest`` to use cookies and credentials.
 
 Open the **Sidebar** then navigate to ``static-assets/app``, then right click on ``index.html`` and select ``Edit``

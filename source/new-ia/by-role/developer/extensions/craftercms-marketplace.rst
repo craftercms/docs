@@ -1,35 +1,35 @@
 :is-up-to-date: True
-:last-updated: 4.0.1
+:last-updated: 4.0.3
 
-.. index:: CrafterCMS Marketplace, Marketplace
+.. index:: Crafter Marketplace, Marketplace
 
 .. _newIa-marketplace:
 
-======================
-CrafterCMS Marketplace
-======================
+===================
+Crafter Marketplace
+===================
 
 |
 |
 
 .. image:: /_static/images/developer/marketplace/marketplace.webp
-   :alt: CrafterCMS Marketplace
+   :alt: Crafter Marketplace
    :width: 80%
    :align: center
 
 |
 
-The `CrafterCMS marketplace <https://craftercms.com/marketplace/>`__ provides a home for the CrafterCMS community to contribute, find, and use extensions.
+The `Crafter Marketplace <https://craftercms.com/marketplace/>`__ provides a home for the CrafterCMS community to contribute, find, and use extensions.
 CrafterCMS ``extensions`` extend the CMS and provide the user additional functionality.
 
 This section provides information on creating and how to submit your extensions so that it's available to the
-community via the marketplace
+community via the Marketplace
 
 .. _newIa-marketplace-create-extensions:
 
-------------------------------------------------
-Create Extensions for the CrafterCMS Marketplace
-------------------------------------------------
+---------------------------------------------
+Create Extensions for the Crafter Marketplace
+---------------------------------------------
 
 ^^^^^^^^^^^^^^^^^^^
 Types of extensions
@@ -62,7 +62,7 @@ is ready to be submitted you can follow these steps:
     #. Open a browser and go to `<https://github.com/marketplace/crafter-marketplace>`_
 
        .. figure:: /_static/images/developer/marketplace/github-marketplace.webp
-           :alt: CrafterCMS Marketplace GitHub App
+           :alt: Crafter Marketplace GitHub App
            :align: center
            :width: 80%
 
@@ -71,7 +71,7 @@ is ready to be submitted you can follow these steps:
     #. Click the ``Install it for free`` button
 
        .. figure:: /_static/images/developer/marketplace/github-marketplace-install.webp
-          :alt: CrafterCMS Marketplace GitHub App Installation
+          :alt: Crafter Marketplace GitHub App Installation
           :align: center
           :width: 40%
 
@@ -80,7 +80,7 @@ is ready to be submitted you can follow these steps:
     #. Click the ``Complete order and begin installation`` button
 
        .. figure:: /_static/images/developer/marketplace/github-marketplace-review.webp
-          :alt: CrafterCMS Marketplace GitHub App Installation
+          :alt: Crafter Marketplace GitHub App Installation
           :align: center
           :width: 80%
 
@@ -89,7 +89,7 @@ is ready to be submitted you can follow these steps:
     #. Select the repositories for your plugins and click the ``Install`` button
 
        .. figure:: /_static/images/developer/marketplace/github-marketplace-repos.webp
-          :alt: CrafterCMS Marketplace GitHub App Configuration
+          :alt: Crafter Marketplace GitHub App Configuration
           :align: center
           :width: 80%
 
@@ -103,7 +103,7 @@ is ready to be submitted you can follow these steps:
 
 
        .. figure:: /_static/images/developer/marketplace/github-marketplace-settings.webp
-          :alt: CrafterCMS Marketplace GitHub App Configuration
+          :alt: Crafter Marketplace GitHub App Configuration
           :align: center
           :width: 80%
 
@@ -117,7 +117,7 @@ is ready to be submitted you can follow these steps:
 
     ``git push --tags``
 
-#. The CrafterCMS Marketplace will automatically detect the new tag in your repository and will start processing
+#. The Crafter Marketplace will automatically detect the new tag in your repository and will start processing
     a new version for your extension (or a new extension if it doesn't exit yet)
 
 #. You will receive an email notification to the address configured in your GitHub account.
@@ -127,14 +127,14 @@ is ready to be submitted you can follow these steps:
   the submit process will fail
 
   Also remember to set your GitHub repository to public so Crafter can pull from the repository. If you're interested
-  in private extensions/marketplace, you'll need to switch to the Enterprise Edition of CrafterCMS.
+  in private extensions/Marketplace, you'll need to switch to the Enterprise Edition of CrafterCMS.
 
 
 .. raw:: html
 
    <hr>
 
-For more information on the CrafterCMS Marketplace, see https://craftercms.com/marketplace/
+For more information on the Crafter Marketplace, see https://craftercms.com/marketplace/
 
-For more information on developing extensions for the marketplace, see :ref:`here <newIa-extensions>`
+For more information on developing extensions for the Marketplace, see :ref:`here <newIa-extensions>`
 

@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. index:: Simple Delivery Kubernetes Deployment, Example Kubernetes deployment of simple Delivery
 
@@ -159,7 +160,11 @@ Now you need to setup the site in Delivery. If you don’t know the name of the 
 
       ➜ kubectl exec -it DELIVERY_POD_NAME --container deployer -- gosu crafter ./bin/init-site.sh SITE_NAME ssh://authoring-service/opt/crafter/data/repos/sites/SITE_NAME/published
 
-This command will create the Deployer site target and create the index in Elasticsearch. After a minute or two, the Deployer should have pulled the site content from Authoring (you can check it by gettting the Delivery Deployer log: ``kubectl logs -c deployer DELIVERY_POD_NAME``).
+This command will create the Deployer site target and create the index in Elasticsearch.
+
+.. include:: /includes/ssh-private-key.rst
+
+After a minute or two, the Deployer should have pulled the site content from Authoring (you can check it by getting the Delivery Deployer log: ``kubectl logs -c deployer DELIVERY_POD_NAME``).
 
 Here's the output when we setup the site in the ``delivery-1`` pod:
 
@@ -197,6 +202,8 @@ Next, we'll run the ``init-site.sh`` script to create the deployer target.  Go t
       crafter@delivery-0:/opt/crafter/bin$ ./init-site.sh mysite ssh://authoring-service/opt/crafter/data/repos/sites/mysite/published
       Creating Deployer Target...
       Target created successfully
+
+.. include:: /includes/ssh-private-key.rst
 
 You can check the deployer logs to verify that the target has been created. From the ``Pods`` view, select the Delivery pod you're working on, then hit enter to view the containers in the pod. Move the cursor to the ``deployer`` container, then press ``l`` to open the deployer logs.
 

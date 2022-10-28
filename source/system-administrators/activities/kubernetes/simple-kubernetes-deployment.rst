@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.1
+:last-updated: 4.0.3
 
 .. _simple-kubernetes-deployment:
 
@@ -171,9 +171,12 @@ replace the pod name and the site name with the actual values):
   
    kubectl exec -it DELIVERY_POD_NAME --container deployer -- gosu crafter ./bin/init-site.sh SITE_NAME ssh://authoring-ssh-service/opt/crafter/data/repos/sites/SITE_NAME/published
 
-This command will create the Deployer site target and create the index in Elasticsearch. After a minute or two, the 
-Deployer should have pulled the site content from Authoring (you can check it by gettting the Delivery Deployer log: 
-``kubectl logs -c deployer DELIVERY_POD_NAME``).
+This command will create the Deployer site target and create the index in Elasticsearch.
+
+.. include:: /includes/ssh-private-key.rst
+
+After a minute or two, the Deployer should have pulled the site content from Authoring (you can check it by
+getting the Delivery Deployer log: ``kubectl logs -c deployer DELIVERY_POD_NAME``).
 
 Now you can access the site in Delivery:
 
