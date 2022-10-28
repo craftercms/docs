@@ -21,20 +21,22 @@ Setting up the production environment
 
 #. We'll first install the authoring instance. You can follow the :ref:`newIa-getting-started` to install and start authoring.
 
-#. Create your site in authoring. You can follow the guide :ref:`newIa-your-first-editorial-project` to use one of the out-of-the-box blueprints provided by Crafter CMS.
+#. Create your project in authoring. You can follow the guide :ref:`newIa-your-first-editorial-project` to use one of the out-of-the-box blueprints provided by Crafter CMS.
 
-#. Now that you have a site setup in authoring, the next thing to do is to setup your site in the delivery instance(s).  Let's begin the delivery installation.
+#. Now that you have a project setup in authoring, the next thing to do is to setup your project in the delivery instance(s).  Let's begin the delivery installation.
 
    Installing the delivery instance is almost the same as installing the authoring instance.  The
    difference is, you need to download/use ``crafter-cms-delivery-VERSION.tar.gz``.  Follow the
    same steps used to install your authoring environment using the delivery binary files.
 
-#. After starting delivery, we'll setup the site we created in step 2 in our delivery instance. Crafter CMS comes with a script, ``init-site.sh``, to help
-   us setup our site for delivery.
+#. After starting delivery, we'll setup the project we created in step 2 in our delivery instance. CrafterCMS comes with
+   a script, ``init-site.sh``, to help us setup our project for delivery.
 
-      `./init-site.sh [options] [site] [repo-path]`
+      `./init-site.sh [options] [project] [repo-path]`
 
-   See the guide :ref:`newIa-setup-project-for-delivery` for more information on setting up your site for delivery.
+   .. include:: /includes/ssh-private-key.rst
+
+   See the guide :ref:`newIa-setup-project-for-delivery` for more information on setting up your project for delivery.
 
 #. For the rest of the delivery instances, you can just repeat the previous 2 steps for each one of them, or alternatively just duplicate the delivery installation
    directory for each instance.
