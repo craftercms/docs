@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 :nosearch:
 
 .. _newIa-staging-env:
@@ -50,6 +51,8 @@ To view your project with respect to the staging preview, we need to set it up f
     .. code-block:: bash
 
         ./init-site.sh -b staging mysite-staging /path/to/published/repo
+
+.. include:: /includes/ssh-private-key.rst
 
 |
 

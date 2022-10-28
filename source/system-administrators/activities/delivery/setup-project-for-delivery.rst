@@ -35,11 +35,9 @@ explains how to use the script:
                                                key (when the key is passphrase
                                                protected)
      -h,--help                                 Show usage information
-     -k,--private-key <path>                   The path to the private key, if
-                                               it's not under the default path
-                                               (~/.ssh/id_rsa), when
-                                               authenticating through SSH to
-                                               the remote Git repo
+     -k,--private-key <path>                   The path to the private key, when
+                                               using private-key authentication
+                                               through SSH to the remote Git repo
      -p,--password <password>                  The password for the remote Git
                                                repo, when using basic
                                                authentication
@@ -58,9 +56,6 @@ explains how to use the script:
          init-site -b master mysite /opt/crafter/authoring/data/repos/sites/mysite/published
      Init a site that is in a remote HTTPS repo with username/password authentication
          init-site -u jdoe -p jdoe1234 mysite https://github.com/jdoe/mysite.git
-     Init a site that is in a remote SSH repo with public/private key authentication (default private key path
-     with no passphrase)
-         init-site mysite ssh://myserver/opt/crater/sites/mysite
      Init a site that is in a remote SSH repo with public/private key authentication (specific private key path
      with no passphrase)
          init-site -k ~/.ssh/jdoe_key mysite ssh://myserver/opt/crater/sites/mysite
@@ -68,6 +63,7 @@ explains how to use the script:
      with passphrase)
          init-site -k ~/.ssh/jdoe_key -f jdoe123 mysite ssh://myserver/opt/crater/sites/mysite
 
+.. include:: /includes/ssh-private-key.rst
 
 We recommend using Secure Shell (SSH) with your site's published repo Git url and for authentication, to use either username/password authentication or public/private key
 authentication. The SSH Git URL format is: ``ssh://[user@]host.xz[:port]/path/to/repo/`` where sections between **[]** are optional.

@@ -1,5 +1,6 @@
 :is-up-to-date: False
-:last-updated: 4.0.1
+:last-updated: 4.0.3
+
 :nosearch:
 
 .. _newIa-simple-kubernetes-deployment:
@@ -35,7 +36,7 @@ errors. In Minikube, to start a node with this characteristics, you can run a co
 Create the SSH Keys Secret
 --------------------------
 
-The Delivery Pod will need SSH access to the Authoring Pod to pull the site content. For this, you need to generate 
+The Delivery Pod will need SSH access to the Authoring Pod to pull the project content. For this, you need to generate
 an SSH public/private key pair for authentication and provide the key pair as a Kubernetes Secret to the Pods:
 
 #. Run ``ssh-keygen`` to generate the key pair (e.g. ``ssh-keygen -t ecdsa -b 521 -C "your_email@example.com"``).
@@ -157,27 +158,30 @@ The response should be like this:
   
    http://192.168.39.5:31242
 
-From your browser then, just enter the URL with ``/studio`` at the end, login to Studio, and create a site from
-any of the available blueprints or pull an existing site from a remote repository.
+From your browser then, just enter the URL with ``/studio`` at the end, login to Studio, and create a project from
+any of the available blueprints or pull an existing project from a remote repository.
 
 ------------------------------
 Bootstrap the Site in Delivery
 ------------------------------
 
-Now you need to setup the site in Delivery. If you don't know the name of the Delivery Pod yet, run ``kubectl get pods``
+Now you need to setup the project in Delivery. If you don't know the name of the Delivery Pod yet, run ``kubectl get pods``
 and check for the one that has a name like ``delivery-deployment-XXXXX``. Then, run the following command (remember to
-replace the pod name and the site name with the actual values):
+replace the pod name and the project name with the actual values):
 
 .. code-block:: bash
   
    kubectl exec -it DELIVERY_POD_NAME --container deployer -- gosu crafter ./bin/init-site.sh SITE_NAME ssh://authoring-ssh-service/opt/crafter/data/repos/sites/SITE_NAME/published
 
-This command will create the Deployer site target and create the index in Elasticsearch. After a minute or two, the 
-Deployer should have pulled the site content from Authoring (you can check it by getting the Delivery Deployer log:
-``kubectl logs -c deployer DELIVERY_POD_NAME``).
+This command will create the Deployer project target and create the index in Elasticsearch.
 
-Now you can access the site in Delivery:
+.. include:: /includes/ssh-private-key.rst
+
+After a minute or two, the Deployer should have pulled the project content from Authoring (you can check it by getting
+the Delivery Deployer log: ``kubectl logs -c deployer DELIVERY_POD_NAME``).
+
+Now you can access the project in Delivery:
 
 #. Get the delivery endpoint URL (in Minikube: ``minikube service delivery-service --url``).
-#. From your browser, enter the URL with ``?crafterSite=SITE_NAME`` at the end. You should see your site. Also, when
+#. From your browser, enter the URL with ``?crafterSite=SITE_NAME`` at the end. You should see your project. Also, when
    making a change in Authoring and publishing it, the change will be reflected in Delivery after a minute.

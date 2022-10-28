@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.2
+:last-updated: 4.0.3
 
 .. index:: Setup Studio Clustering with Kubernetes Deployment, Clustering with Studio Example with Kubernetes
 
@@ -20,7 +20,7 @@ Requirements
 
 You will need an AWS EKS cluster, with the AWS Load Balancer Controller installed (https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html), in order to use the cluster example as-is.
 
-If you can't use an EKS cluster, your Kubernetes infraestructure needs to provide Load Balancers or some other kind of Ingress that is able to handle an active-passive deployment, where the active pod that should receive all traffic returns 
+If you can't use an EKS cluster, your Kubernetes infrastructure needs to provide Load Balancers or some other kind of Ingress that is able to handle an active-passive deployment, where the active pod that should receive all traffic returns
 HTTP 200 on its healthcheck, while the passive pods that are on standby return HTTP 202. The Load Balancer should be able to also seamlessly switch between pods when an active becomes passive (200 -> 202) and a passive becomes active (202 -> 200).
 
 Each Authoring cluster node is a StatefulSet Pod in Kubernetes, and requires at least 4 CPUs and 16 GB of space, to avoid performance issues and out of memory errors. So we recommend having Kubernetes nodes of a similar size to the Pod requirements,
@@ -37,7 +37,7 @@ The repository https://github.com/craftercms/kubernetes-deployments/ has a folde
 
 This is where we will place the enterprise license to be used by the images in the deployment. Remember to name your license file ``crafter.lic``
 
-Also, you will need an SSL certficate and private key valid for the Authoring Pods cluster addresses. Each Pod's address is specified in the ``CLUSTER_NODE_ADDRESS`` environment variable in ``authoring.yaml``. In the example, this 
+Also, you will need an SSL certificate and private key valid for the Authoring Pods cluster addresses. Each Pod's address is specified in the ``CLUSTER_NODE_ADDRESS`` environment variable in ``authoring.yaml``. In the example, this
 value is ``$(POD_NAME).authoring-svc-headless.craftercms``, which is a standard FQDN for a Kubernetes StatefulSet Pod: ``pod-hostname.headless-service-name.namespace``. For more information on Kubernetes DNS, see 
 https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/.
 
@@ -107,6 +107,7 @@ You can use the Delivery Simple example under https://github.com/craftercms/kube
 
 #. The Authoring Cluster example creates an internal load balancer that can be used by the Delivery Deployer to pull the published content from Authoring. The load balancer will need to have a valid domain name and SSL certificate.
    Follow the next steps to setup a DNS record and a certificate for the load balancer in AWS:
+
    #. Create a Route 53 CNAME record for the domain name. The record needs to be in a Private Hosted Zone (https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-private.html), since the load balancer is internal, and 
       the zone needs to be associated to the VPC of the EKS cluster where you deployed the Authoring Cluster example. If the hosted zone is in a different account than where the VPC resides, see this guide: 
       https://aws.amazon.com/premiumsupport/knowledge-center/route53-private-hosted-zone/.
@@ -140,12 +141,15 @@ You can use the Delivery Simple example under https://github.com/craftercms/kube
    # alb.ingress.kubernetes.io/ssl-redirect: '443'
    # alb.ingress.kubernetes.io/certificate-arn: ''    
 
-#. Create a site in Authoring and make sure it's fully published
+#. Create a project in Authoring and make sure it's fully published
 #. Run ``kubectl apply -k .`` in ``kubernetes-deployments/delivery/simple``. Monitor the Pods coming up with ``kubectl get -n craftercms pods``. There should only be one Delivery Pod.
 #. After the Delivery Pod has started, run ``kubectl exec -n craftercms -it delivery-0 -c deployer -- gosu crafter bash`` to open a Bash shell to the Deployer container.
-#. Run ``./bin/init-site.sh -u crafter -p crafter editorial https://<domain-name>/repos/sites/<site-name>/published`` to create a Deployer target that will pull the published content for the recently created site. Before executing the command, make sure 
-   to replace ``<domain-name>`` with the internal LB domain name and ``<site-name>`` with the name of the site.
-#. Get the Delivery LB address with ``kubectl get -n craftercms ingress`` and access the site by entering ``http://<delivery-lb-address>?crafterSite=<site-name>`` (replacing the ``<>`` placeholders of course).
+#. Run ``./bin/init-site.sh -u crafter -p crafter editorial https://<domain-name>/repos/sites/<site-name>/published`` to create a Deployer target that will pull the published content for the recently created project. Before executing the command, make sure
+   to replace ``<domain-name>`` with the internal LB domain name and ``<site-name>`` with the name of the project.
+
+   .. include:: /includes/ssh-private-key.rst
+
+#. Get the Delivery LB address with ``kubectl get -n craftercms ingress`` and access the project by entering ``http://<delivery-lb-address>?crafterSite=<site-name>`` (replacing the ``<>`` placeholders of course).
 
 --------------------------------------
 Updating and Shutting Down the Cluster
@@ -155,7 +159,7 @@ The Authoring Cluster's ``StatefulSet`` is configured with ``.spec.updateStrateg
 for the modifications to be reflected. We prefer this ``updateStrategy`` instead of ``RollingUpdate`` so administrators can restart the cluster replicas first (by killing their Pods), wait for them to come up, and finally restart the primary, whenever a small 
 update to the configuration needs to be applied (like changing a small flag in one of the Crafter configuration files under ``/opt/crafter/bin/apache-tomcat/shared/classes``).
 
-For bigger updates, like a version upgrade or any other update that could cause modifications to the site content or the database, progresively scaling down the StatefulSet is recommended, by running 
+For bigger updates, like a version upgrade or any other update that could cause modifications to the project content or the database, progresively scaling down the StatefulSet is recommended, by running
 ``kubectl scale statefulsets authoring --replicas=<current-replicas-minus-1>``, waiting until each Pod has been fully terminated before scaling down again, until all Pods are down. Then you can scale the StatefulSet up to the original number of 
 Pods (so that they can all synchronized on startup).
 
