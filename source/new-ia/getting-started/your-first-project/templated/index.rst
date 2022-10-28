@@ -36,7 +36,7 @@ After logging in, you'll see the Projects screen (Below).  Click on **Create Pro
 
 |
 
-In the **Create Project** screen, the user is presented with the available blueprints or the option to use a remote Git repository instead of selecting a blueprint from the list.  To see all available blueprints, scroll through the dialog to see ``Private Blueprints`` which contains default blueprints available out of the box from Crafter Studio including the option to use a remote Git repository to create a new project, and ``Public Marketplace`` blueprints which contains blueprints submitted to `Crafter's Marketplace <https://github.com/marketplace/crafter-marketplace>`__
+In the **Create Project** screen, the user is presented with the available blueprints or the option to use a remote Git repository instead of selecting a blueprint from the list.  To see all available blueprints, scroll through the dialog to see ``Private Blueprints`` which contains default blueprints available out of the box from Crafter Studio including the option to use a remote Git repository to create a new project, and ``Public Marketplace`` blueprints which contains blueprints submitted to `Crafter Marketplace <https://github.com/marketplace/crafter-marketplace>`__
 
 We're going to be using the "Website Editorial Blueprint".  Blueprints offer you a starting point for your website. New blueprints can be created and installed into the system.  Click on **Use** for the "Website Editorial Blueprint".
 
