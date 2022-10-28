@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.1
+:last-updated: 4.0.3
 
 .. _simple-kubernetes-deployment:
 

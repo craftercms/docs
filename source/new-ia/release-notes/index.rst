@@ -14,6 +14,7 @@ release's release notes page here: http://docs.craftercms.org
 
    .. note:: CrafterCMS 4.0.x requires Java 11
 
+.. include:: /new-ia/release-notes/4-0-2.rst
 
 .. include:: /new-ia/release-notes/4-0-1.rst
 

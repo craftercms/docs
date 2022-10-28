@@ -1,7 +1,7 @@
 :orphan:
 
 :is-up-to-date: True
-:last-updated: 4.0.1
+:last-updated: 4.0.3
 
 .. _plugin-descriptor-file:
 
@@ -81,8 +81,8 @@ Here are some things to note in the descriptor file:
      - A unique Id that is meaningful/recognizable to people who will be using the plugin
    * - plugin.name
      - |checkmark|
-     - The name displayed in the CrafterCMS Marketplace. |br|
-       Pick a unique name for your plugin. You can check in the CrafterCMS Marketplace if |br|
+     - The name displayed in the Crafter Marketplace. |br|
+       Pick a unique name for your plugin. You can check in the Crafter Marketplace if |br|
        the name you picked does not exist yet.  It's also a best practice to provide a name |br|
        for your plugin that is meaningful or recognizable to users. |br|
        The name can be multiple words such as ``Contact Form``
@@ -92,12 +92,12 @@ Here are some things to note in the descriptor file:
    * - plugin.description
      -
      - Contains a short description of the plugin and is displayed underneath the plugin name in |br|
-       the CrafterCMS Marketplace
+       the Crafter Marketplace
    * - plugin.documentation
      -
      - Serves as the help block for the plugin. It contains a URL to the plugin's documentation file |br|
        (must be in Markdown) containing information on how to use/configure the plugin. The documentation |br|
-       will appear alongside the plugin in Crafter Studio and the CrafterCMS Marketplace
+       will appear alongside the plugin in Crafter Studio and the Crafter Marketplace
    * - plugin.website.url
      -
      - Can be a page for more information on your plugin or for announcing updates, reporting bugs, etc. |br|

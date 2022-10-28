@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.3
 
 .. index:: Setup Studio Clustering with Kubernetes Deployment, Clustering with Studio Example with Kubernetes
@@ -109,7 +109,7 @@ You can use the Delivery Simple example under https://github.com/craftercms/kube
    Follow the next steps to setup a DNS record and a certificate for the load balancer in AWS:
 
    #. Create a Route 53 CNAME record for the domain name. The record needs to be in a Private Hosted Zone (https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-private.html), since the load balancer is internal, and 
-      the zone needs to be associated to the VPC of the EKS cluster where you deployed the Authoring Cluster example. If the hosted zone is in a different account than where the VPC resides, see this guide: 
+      the zone needs to be associated to the VPC of the EKS cluster where you deployed the Authoring Cluster example. If the hosted zone is in a different account than where the VPC resides, see this guide:
       https://aws.amazon.com/premiumsupport/knowledge-center/route53-private-hosted-zone/.
 
       .. image:: /_static/images/system-admin/clustering-internal-lb-route53-record-wizard.webp
@@ -159,8 +159,8 @@ The Authoring Cluster's ``StatefulSet`` is configured with ``.spec.updateStrateg
 for the modifications to be reflected. We prefer this ``updateStrategy`` instead of ``RollingUpdate`` so administrators can restart the cluster replicas first (by killing their Pods), wait for them to come up, and finally restart the primary, whenever a small 
 update to the configuration needs to be applied (like changing a small flag in one of the Crafter configuration files under ``/opt/crafter/bin/apache-tomcat/shared/classes``).
 
-For bigger updates, like a version upgrade or any other update that could cause modifications to the project content or the database, progresively scaling down the StatefulSet is recommended, by running
-``kubectl scale statefulsets authoring --replicas=<current-replicas-minus-1>``, waiting until each Pod has been fully terminated before scaling down again, until all Pods are down. Then you can scale the StatefulSet up to the original number of 
+For bigger updates, like a version upgrade or any other update that could cause modifications to the project content or the database, progressively scaling down the StatefulSet is recommended, by running
+``kubectl scale statefulsets authoring --replicas=<current-replicas-minus-1>``, waiting until each Pod has been fully terminated before scaling down again, until all Pods are down. Then you can scale the StatefulSet up to the original number of
 Pods (so that they can all synchronized on startup).
 
 If you just want to shutdown the entire cluster, scale down the StatefulSet as described above.
