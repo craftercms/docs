@@ -29,8 +29,8 @@ After logging in, you'll see the Projects screen (Below).  Click on **Create Pro
 
 In the **Create Project** screen, the user is presented with the available blueprints or the option to use a remote
 Git repository instead of selecting a blueprint from the list.  CrafterCMS provides default blueprints available out
-of the box from Crafter Studio  and the ``Public Marketplace``, which contains blueprints submitted to
-`Crafter Marketplace <https://github.com/marketplace/crafter-marketplace>`_ to create a new project. To see all
+of the box from Crafter Studio  and the ``Public Marketplace``, which contains blueprints submitted to the
+`Crafter Marketplace GitHub App <https://github.com/marketplace/crafter-marketplace>`_ to create a new project. To see all
 available blueprints, just scroll down the screen.
 
 We're going to be using the "Website Editorial Blueprint".  Blueprints offer you a starting point for your project.
