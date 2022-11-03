@@ -86,6 +86,8 @@ AWS S3 also supports bucket replication (S3 replication) irrespective of the reg
 protection against disasters, minimizing latency, etc.  For more information on S3 bucket replication for use with
 multi-region access points, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointBucketReplication.html
 
+Here's some more information on S3 replication: https://aws.amazon.com/about-aws/whats-new/2020/12/amazon-s3-replication-adds-support-two-way-replication/
+
 .. raw:: html
 
    <hr>
