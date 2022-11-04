@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 :nosearch:
 
 .. index:: Putting it all together - Users, Groups, Roles and Permissions
@@ -9,11 +10,17 @@
 Putting it all together - Users, Groups, Roles and Permissions
 ==============================================================
 
-In this section, we'll see how users, groups, roles and permissions work together in giving users access to certain folders in a site.
+In this section, we'll see how users, groups, roles and permissions work together in giving users access to
+certain folders in a project.
 
-We'll create a new role, group and user, add permissions for the new role and finally assign the newly created user to the new group setup.
+We'll create a new role, group and user, add permissions for the new role and finally assign the newly
+created user to the new group setup.
 
-In preparation for our example, we will be using the Website_editorial blueprint.  We'll add a **news** folder under **Home**, by navigating to **Pages** -> **Home**, then right click on **Home** and select **New Folder**.  Enter *news* in the **Folder Name** field.  We will be using the **news** folder for our example in setting up permissions to folders based on roles.  Users assigned to the **newseditor** role will then have access to publish and add/edit content in the **news** folder.
+In preparation for our example, we will be using the Website editorial blueprint.  We'll add a **news** folder
+under **Home**, by navigating to **Pages** -> **Home**, then right click on **Home** and select **New Folder**.
+Enter *news* in the **Folder Name** field.  We will be using the **news** folder for our example in setting up
+permissions to folders based on roles.  Users assigned to the **newseditor** role will then have access to
+publish and add/edit content in the **news** folder.
 
 ------------------
 Create a new group
@@ -21,11 +28,11 @@ Create a new group
 
 Let's begin by creating a new group.
 
-#. To create a new group, click on |mainMenu| **Main Menu** from the top right, then click on **Groups**.
-#. Click on the **New Group** button.
+#. To create a new group, click on |mainMenu| **Navigation Menu** from the top right, then click on **Groups**.
+#. Click on the **Create Group** button.
 #. Enter a name for the new group being created in the **Display Name** field.
 #. Enter a description of the new group being created in the **Description** field.
-#. Click on the **Create** button. A notification will appear that your new group has been created.
+#. Click on the **Save** button. A notification will appear that your new group has been created.
 
 Below are the information used to create a new group:
 
@@ -34,7 +41,7 @@ Below are the information used to create a new group:
      :width: 100%
      :align: center
 
-For more information on adding a new group to a site, please see :ref:`newIa-create-a-new-group`
+For more information on adding a new group to a project, please see :ref:`newIa-create-a-new-group`
 
 -----------------
 Create a new role
@@ -43,7 +50,7 @@ Create a new role
 We'll now create a new role for the new group we just created.
 
 #. To create a new role, click on |projectTools| from the **Sidebar**, then click on **Configuration**.
-#. From the dropdown box, select **Role Mappings**
+#. From the list, select **Role Mappings**
 #. Add your new group and role in the editor
 
    .. code-block:: xml
