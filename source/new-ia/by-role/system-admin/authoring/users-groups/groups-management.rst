@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 :nosearch:
 
 .. index:: Groups Management
@@ -31,11 +31,13 @@ Here's a list of predefined groups and roles in CrafterCMS:
 || site_publisher     || Site publisher        || publisher     |
 +---------------------+------------------------+----------------+
 
-You can add more groups defined whenever needed.  The list above is just a starting point for when you first create your project.  The following sections will give you more details on users and groups.  The next sections, Permission Mappings and Role Mappings describes how to setup/assign permissions and roles.
+You can add more groups defined whenever needed.  The list above is just a starting point for when you first
+create your project.  The following sections will give you more details on users and groups.  The next sections,
+Permission Mappings and Role Mappings describes how to setup/assign permissions and roles.
 
 To find this section through studio follow the next instructions:
 
-#. Click on ``Main Menu`` |mainMenu| at the top right of your browser.
+#. Click on ``Navigation Menu`` |mainMenu| at the top right of your browser.
 #. Click on **Groups** from the main menu on the left side of your browser.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-groups.webp
@@ -47,9 +49,11 @@ To find this section through studio follow the next instructions:
 Searching Groups
 ----------------
 
-You can search for groups by their properties (Display Name, Description), simply enter your search term into the search bar and it will show results that match your search term.
+You can search for groups by their properties (Display Name, Description), simply enter your search term
+into the search bar by clicking on the magnifying glass icon on the top right and it will show results
+that match your search term.
 
-.. image:: /_static/images/groups/site-config-groups-search.webp
+.. image:: /_static/images/groups/groups-search.webp
     :width: 60%
     :alt: Groups Management Search
     :align: center
@@ -60,24 +64,25 @@ You can search for groups by their properties (Display Name, Description), simpl
 Adding a New Group
 ------------------
 
-To create a new group, you just need to click on the "**New Group**" button,
+To create a new group, you just need to click on the "**Create Group**" button,
 
-.. image:: /_static/images/groups/site-config-groups-new-btn.webp
+.. image:: /_static/images/groups/groups-new-btn.webp
     :width: 60%
     :alt: Main Menu - Groups New
     :align: center
 
-then, a modal dialog will show up with the required fields for the group creation.  Enter a display name and a short description for the new group.
-After filling the form, click on **Create**, and the new group will show in the groups table.
+then, a modal dialog will show up with the required fields for the group creation.
+Enter a display name and a short description for the new group.
+After filling the form, click on **Save**, and the new group will show in the groups table.
 
-.. image:: /_static/images/groups/site-config-groups-create.webp
+.. image:: /_static/images/groups/groups-create.webp
     :width: 60%
     :alt: Main Menu - Groups Create Dialog
     :align: center
 
 A notification of successful group creation will pop up for a few seconds after clicking on the **Create** button.
 
-.. image:: /_static/images/groups/site-config-groups-created-notification.webp
+.. image:: /_static/images/groups/groups-created-notification.webp
    :width: 40%
    :alt: Main Menu - Groups Created Notification
    :align: center
@@ -86,23 +91,20 @@ A notification of successful group creation will pop up for a few seconds after 
 Removing a Group
 ----------------
 
-To remove a group, select a group from the list and click on the trash can icon to the right of the group you would like to remove.
+To remove a group, select a group from the list which will open a dialog for the selected group.
+Click on the trash can icon on the top right of the group dialog.
 
-.. image:: /_static/images/groups/site-config-groups-remove-icon.webp
+.. image:: /_static/images/groups/groups-remove-icon.webp
    :width: 60%
    :alt: Main Menu - Groups Remove Icon
    :align: center
 
-A confirmation dialog will appear asking you if you want to delete the group.  Click on **Yes** to remove the group.
-
-.. image:: /_static/images/groups/site-config-groups-remove-confirm.webp
-   :width: 40%
-   :alt: Main Menu - Groups Remove Confirmation
-   :align: center
+A confirmation popup will appear asking you if you want to delete the group, as seen above.
+Click on **Yes** to remove the group.
 
 On successful removal of the group, a notification will appear for a few seconds that the group has been deleted.
 
-.. image:: /_static/images/groups/site-config-groups-removed-notification.webp
+.. image:: /_static/images/groups/groups-removed-notification.webp
    :width: 40%
    :alt: Main Menu - Groups Removed Notification
    :align: center
@@ -111,16 +113,11 @@ On successful removal of the group, a notification will appear for a few seconds
 Editing an Existing Group
 -------------------------
 
-To edit a group, click on the pencil located at the right side of the group on the list,
+To edit a group, select a group from the list which will open a dialog for the selected group.
+In this dialog, you can modify the group description, just click on the **Save** button after making your
+changes.  You can also add/remove users from the group.  Finally, you'll see a list of all users that belong to the group.  To return to the list of all groups in your project, click on the **X** at the top right of the dialog.
 
-.. image:: /_static/images/groups/site-config-groups-edit-btn.webp
-    :width: 80%
-    :alt: Main Menu - Groups Edit Icon
-    :align: center
-
-then, a modal dialog will show up. In this dialog, you can modify the group name and description, just click on the **Save** button after making your changes to either group name or description.  You can also add/remove users from the group.  Finally, you'll see a list of all users that belong to the group.  To return to the list of all groups in your project, click on **Back to groups** at the top right of the dialog.
-
-.. image:: /_static/images/groups/site-config-groups-edit.webp
+.. image:: /_static/images/groups/groups-edit.webp
     :width: 60%
     :alt: Main Menu - Groups Edit
     :align: center
@@ -131,23 +128,27 @@ then, a modal dialog will show up. In this dialog, you can modify the group name
 Adding Users to a Group
 -----------------------
 
-To add a user to a group, pick the group you want to add users, then click the pencil to the right of the group name, the same as the instructions listed above for editing a group, then click in the search box labeled **Add new members** and type in the name, username or email of the user you want to add to the group.
+To add a user to a group, click on the group you want to add users.  In the ``Users`` column found on the left
+in the ``Edit Group Members`` section, you can click on the search box then type in the name, username or
+email of the user you want to add to the group.
 
-.. image:: /_static/images/groups/site-config-groups-add-user-search.webp
+.. image:: /_static/images/groups/groups-add-user-search.webp
     :width: 60%
     :alt: Main Menu - Groups Add User Search
     :align: center
 
-Notice that it will give you a list of matching users, select the user you want to add and if you want to add some more users to the group, just type in the names, then click on the **Add members** button.
+Notice that it will give you a list of matching users, select the user you want to add by clicking on the
+checkbox next to it, and if you want to add some more users to the group, just type in the names, and put
+a checkmark next to them, then click on the **>** (greater than icon) button.
 
-.. image:: /_static/images/groups/site-config-groups-add-members.webp
+.. image:: /_static/images/groups/groups-add-members.webp
     :width: 60%
     :alt: Main Menu - Groups Add Members
     :align: center
 
-It will then give you a notification that the users has been successfully added to the group.  Notice that the added user is now listed in the member list at the bottom of the page.
+It will then give you a notification that the user(s) has been successfully added to the group.
 
-.. image:: /_static/images/groups/site-config-groups-users-added-notification.webp
+.. image:: /_static/images/groups/groups-users-added-notification.webp
     :width: 40%
     :alt: Main Menu - Groups Members Added Notification
     :align: center
@@ -156,16 +157,21 @@ It will then give you a notification that the users has been successfully added 
 Removing Users from a Group
 ---------------------------
 
-To remove a user from the group, click on the trash can icon to the right of the user.
+To remove a user from a group, click on the group you want to remove users.  In the ``Members`` column
+found on the right in the ``Edit Group Members`` section, you can click on the search box then type in
+the name, username or email of the user you want to remove from the group.  Select the user you want to
+remove from the group by clicking on the checkbox next to it, and if you want to remove some more users
+from the group, just type in the names and put a checkmark next to them, then click on
+the **<** (less than icon) button.
 
-.. image:: /_static/images/groups/site-config-groups-remove-user.webp
+.. image:: /_static/images/groups/groups-remove-user.webp
     :width: 60%
     :alt: Main Menu - Groups Remove Members
     :align: center
 
-It will then ask you for confirmation if you want to delete the user from the group, click on **Yes** to delete the user from the group.
+It will then give you a notification that the user(s) has been successfully deleted from the group.
 
-.. image:: /_static/images/groups/site-config-groups-delete-user-confirm.webp
+.. image:: /_static/images/groups/groups-remove-user-confirm.webp
     :width: 40%
-    :alt: Main Menu - Groups Remove Members Confirmation
+    :alt: Main Menu - Groups Members Removed Notification
     :align: center
