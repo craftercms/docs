@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.2
+:last-updated: 4.0.3
 
 :orphan:
 
@@ -50,10 +50,15 @@ After clicking on the ``unlock`` button, the user will be prompted to confirm th
 
 .. image:: /_static/images/site-admin/project-tools-unlock-publish-confirm.webp
     :alt: Project Tools Publishing - Unlock icon
-    :width: 50%
+    :width: 35%
     :align: center
 
 |
+
+.. raw:: html
+
+   <hr>
+
 
 -----------------
 Publish on demand
@@ -65,6 +70,15 @@ to publish commits from sandbox repository by commit id.
 .. image:: /_static/images/site-admin/project-tools-publish-on-demand.webp
     :alt: Project Tools Publishing - Publish on Demand
 	:align: center
+
+|
+
+The user will first be asked to publish the entire project, if the project has not yet been published:
+
+.. image:: /_static/images/site-admin/project-tools-publish-on-demand-initial.webp
+    :alt: Project Tools Publishing - Initial Publish
+	:align: center
+    :width: 75%
 
 |
 

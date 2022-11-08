@@ -22,7 +22,7 @@ The main configuration files related to Crafter Engine for a project are the fol
 || ``urlrewrite.xml``                          |                                                   |
 +----------------------------------------------+---------------------------------------------------+
 
-These projecct configuration files are located under ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine`` where ``CRAFTER_HOME`` is the install directory of your CrafterCMS and ``SITENAME`` is the name of the project being configured.
+These project configuration files are located under ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine`` where ``CRAFTER_HOME`` is the install directory of your CrafterCMS and ``SITENAME`` is the name of the project being configured.
 
 These files can be accessed by navigating from the Studio Sidebar to |projectTools| ➜ ``Configuration``, then selecting the desired Engine configuration option from the dropdown.
 
