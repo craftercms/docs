@@ -26,6 +26,7 @@ The following gets you started with content modeling, content retrieval, and mor
    extensions/index
    working-with-crafter-studios-api
    working-with-filters
+   working-with-dates-groovy
 
 |
 

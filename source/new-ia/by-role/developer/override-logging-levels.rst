@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 :nosearch:
 
 .. index:: Override Logging Levels
@@ -42,7 +42,7 @@ Step 1: Identify the package/class you want to modify logging levels for
      The first step is identifying the package or class you want to change the levels for.  Specifying the logging level at the package granularity e.g.: ``org.craftercms.studio.api.v1.dal.DependencyMapper``, will modify all classes under that package.  Specifying logging levels at the class granularity, e.g.: ``org.craftercms.studio.api.v1.dal.DependencyMapper.calculatePublishingDependenciesForList``, modifies only the levels for that specific class.
 
 Step 2: Add the override configuration you require to the logging configuration file ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/logging.xml``.
-     Available logging levels are all, debug, info, warn, error, fatal, trace, off.  Debug is the lowest logging level and Fatal is the highest.  The lower your logging levels are set, the more verbose your logs will be.
+     Available logging levels are all, trace, debug, info, warn, error, off.  All is the lowest logging level and Error is the highest.  The lower your logging levels are set, the more verbose your logs will be.
 
      To set a specific class to a higher log level (giving us less detail in the logs), add the following lines:
 
