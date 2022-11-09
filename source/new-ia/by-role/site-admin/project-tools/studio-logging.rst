@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 :nosearch:
 
 .. index::  Studio Logging, Viewing Logs Through Crafter Studio
@@ -34,12 +34,15 @@ CrafterCMS has a **Log Console** that allows you to view messages depending on w
 
 To view logs in Crafter Studio, click on |projectTools| from the **Sidebar**, then click on **Log Console**.  Looking inside the **Log Console**, messages we want to display are setup beforehand.  The messages displayed in the **Log Console** depends on what levels are set for the Java packages being run in CrafterCMS.
 
-There are 4 log levels defined in CrafterCMS.  These levels determine what messages will be logged and displayed in the **Logging Console**.  Below are the 4 log levels available from the lowest to the highest:
+There are 7 log levels defined in CrafterCMS.  These levels determine what messages will be logged and displayed in the **Logging Console**.  Below are the 4 log levels available from the lowest to the highest:
 
+    - all: turns on all logging
+    - trace: displays informational events tracing the path of code execution in a program
     - debug: displays things useful for debugging
     - info: displays informational messages like progress of the application, etc
     - warn: displays potentially harmful situations that might cause problems
     - error: displays anything that may be fatal to the operation/causes a problem
+    - off: turns off all logging
 
 The lower your logging levels are set, the more verbose your logs will be.
 
