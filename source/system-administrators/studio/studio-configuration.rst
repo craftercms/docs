@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 :orphan:
 
@@ -100,3 +101,21 @@ Here's the default list of MIME-types editable in Studio:
     - application/xml
     - application/xhtml+xml
 
+.. _cache-settings:
+
+--------------
+Cache Settings
+--------------
+
+Here's the cache control settings for templates and assets:
+
+.. code-block:: yaml
+
+    # If Studio should cache its FreeMarker templates
+    studio.cache.templates: true
+    # Indicates if the browser should cache responses for static-assets
+    studio.cache.assets.enabled: true
+    # The max age in seconds that the browser should cache responses for requests matching `studio.cache.assets.maxAge.includeUrls`
+    studio.cache.assets.maxAge: 3600
+    # The urls that should include max-age=<studio.cache.assets.maxAge> in Cache-Control header. Other urls will be set to default max-age=0, must-revalidate
+    studio.cache.assets.maxAge.includeUrls: /static-assets/**,/1/plugin/file/**
