@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 :nosearch:
 
 .. index:: Blob Stores Configuration
@@ -41,5 +41,23 @@ Here's a sample Blob Stores Configuration file (click on the triangle on the lef
 
 |
 |
+
+For better security and control, we recommend setting an AWS profile via the ``crafter-setenv.sh`` file instead of
+configuring the encrypted credentials in the blob stores configuration file.
+
+To set an AWS profile, using your favorite editor, open ``CRAFTER_HOME/bin/crafter-setenv.sh`` and add the following:
+
+.. code-block:: bash
+
+   export AWS_PROFILE=YOUR_AWS_PROFILE
+
+|
+
+*where* ``YOUR_AWS_PROFILE`` is the AWS profile you wish to use for the blob store.  See :ref:`here <newIa-aws-profile-configuration>`
+for more information on configuring AWS profiles.
+
+When using an AWS profile, you can now remove the ``<credentials />`` section in your blob stores configuration file.
+
+Remember to restart your CrafterCMS install for the changes you made to take effect.
 
 See :ref:`newIa-publishing-assets-in-external-storage` for an example of using the blob stores configuration
