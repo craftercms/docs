@@ -47,6 +47,7 @@ Activities
    activities/production-environment-setup.rst
    activities/reindexing-content.rst
    activities/reindexing-content-in-prod.rst
+   activities/reverse-proxy-configuration.rst
    activities/troubleshooting.rst
    activities/security/randomize-admin-passwd.rst
    activities/security/configure-studio-security.rst
@@ -79,6 +80,7 @@ Authoring
    activities/authoring/change-hosts-ports-on-your-auth-install.rst
    activities/authoring/staging.rst
    activities/authoring/setup-authoring-using-aws-ami.rst
+   activities/authoring/configure-apache-vhost-authoring.rst
    activities/sync-studio-database-with-repo.rst
    activities/authoring/navigating-main-menu.rst
    activities/authoring/users-groups-management.rst
@@ -92,7 +94,7 @@ Delivery
    :titlesonly:
 
    activities/delivery/change-hosts-ports-on-your-delivery-install.rst
-   activities/delivery/configure-apache-vhost.rst
+   activities/delivery/configure-apache-vhost-delivery.rst
    activities/delivery/delivery-env-performance-tuning.rst
    activities/delivery/setup-project-for-delivery.rst
    activities/delivery/setup-serverless-delivery.rst

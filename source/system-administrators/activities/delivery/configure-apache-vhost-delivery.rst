@@ -1,14 +1,14 @@
 :is-up-to-date: True
-:nosearch:
+:last-updated: 4.0.3
 
 .. index:: Configuring Apache Virtual Host for Production, Configuring Apache vhost
-.. _newIa-configure-apache-vhost-for-production:
+.. _configure-apache-vhost-for-production:
 
 ==============================================
 Configuring Apache Virtual Host for Production
 ==============================================
 
-This section will show you a sample Apache virtual host configuration for your Crafter CMS site.
+This section will show you a sample Apache virtual host configuration for your CrafterCMS project in delivery.
 
 Here's the sample configuration for setting up a vhost for production:
 
@@ -18,14 +18,14 @@ Here's the sample configuration for setting up a vhost for production:
     <VirtualHost *:80>
         ServerName example.com
 
-        # Path where your actual Crafter CMS site resides on the server
-        DocumentRoot /path_to_crafter/crafter/data/repos/sites/mysite
+        # Path where your actual CrafterCMS site resides on the server
+        DocumentRoot /path_to_crafter/crafter/data/repos/sites/myproject
 
         RewriteEngine On
 
         # Assign crafter site/tenant for this vhost
-        # Remember to change mysite to your actual site name
-        RewriteRule (.*) $1?crafterSite=mysite [QSA,PT]
+        # Remember to change myproject to your actual site name
+        RewriteRule (.*) $1?crafterSite=myproject [QSA,PT]
 
         # Block outside access to management services
         RewriteRule ^/api/1/cache / [NC,PT,L]
@@ -48,14 +48,14 @@ Here's the sample configuration for setting up a vhost for production:
         ProxyPass /static-assets !
 
         # Send requests to Engine's Tomcat
-        ProxyPass / ajp://localhost:9009/
-        ProxyPassReverse / ajp://localhost:9009/
+        ProxyPass / http://localhost:9080/
+        ProxyPassReverse / http://localhost:9080/
 
         # This is where errors related to this virtual host are stored
-        ErrorLog ${APACHE_LOG_DIR}/mysite-error.log
+        ErrorLog ${APACHE_LOG_DIR}/myproject-error.log
         # This is where access logs are stored
-        CustomLog ${APACHE_LOG_DIR}/mysite-access.log combined
-      </VirtualHost>
+        CustomLog ${APACHE_LOG_DIR}/myproject-access.log combined
+    </VirtualHost>
 
 |
 
