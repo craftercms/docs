@@ -80,7 +80,6 @@ Authoring
    activities/authoring/change-hosts-ports-on-your-auth-install.rst
    activities/authoring/staging.rst
    activities/authoring/setup-authoring-using-aws-ami.rst
-   activities/authoring/configure-authoring-reverse-proxy.rst
    activities/sync-studio-database-with-repo.rst
    activities/authoring/navigating-main-menu.rst
    activities/authoring/users-groups-management.rst
@@ -94,7 +93,6 @@ Delivery
    :titlesonly:
 
    activities/delivery/change-hosts-ports-on-your-delivery-install.rst
-   activities/delivery/configure-delivery-reverse-proxy.rst
    activities/delivery/delivery-env-performance-tuning.rst
    activities/delivery/setup-project-for-delivery.rst
    activities/delivery/setup-serverless-delivery.rst

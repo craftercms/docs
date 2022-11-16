@@ -80,7 +80,6 @@ setup various things for your authoring install
    :maxdepth: 1
 
    authoring/authoring-env-performance-tuning
-   authoring/configure-authoring-reverse-proxy
    authoring/navigating-main-menu
    authoring/users-groups-management
    authoring/change-hosts-ports-on-your-auth-install
@@ -100,7 +99,6 @@ setup various things for your delivery install
 
    delivery/delivery-env-performance-tuning
    delivery/change-hosts-ports-on-your-delivery-install
-   delivery/configure-delivery-reverse-proxy
    delivery/setup-project-for-delivery
    delivery/setup-serverless-site
    delivery/setup-serverless-delivery
