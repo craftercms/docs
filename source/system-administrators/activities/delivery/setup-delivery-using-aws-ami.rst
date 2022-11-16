@@ -322,7 +322,7 @@ Example:
     :alt: CrafterCMS AWS AMI Delivery View Site
 
 .. note::
-   The **SITE_ID** parameter is typically added automatically to all requests for a given project by a webserver "virtual host" configured for each project/tenant that sits in front of Crafter Engine. You can learn more about this here: :ref:`configure-apache-vhost-for-production`
+   The **SITE_ID** parameter is typically added automatically to all requests for a given project by a webserver "virtual host" configured for each project/tenant that sits in front of Crafter Engine. You can learn more about this here: :ref:`configure-reverse-proxy-for-production`
 
 This configuration and other advanced topology topics such as load balancing are outside the scope of a basic installation.
 

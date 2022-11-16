@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :since-version: 4.0.3
 
-.. index:: Reverse Proxy Configuration, Configuring Apache Virtual Host, Configuring Apache vhost
+.. index:: Reverse Proxy Configuration, Configuring Apache Virtual Host, Configuring Apache vhost, Apache HTTPd, Configure Reverse Proxy
 
 .. _reverse-proxy-configuration:
 
@@ -65,6 +65,6 @@ Depending on your setup, the following CrafterCMS properties may need to be setu
 
 The following examples show how to configure a reverse proxy with Apache for your CrafterCMS authoring and delivery installs:
 
-- :ref:`Authoring install <configure-apache-vhost-for-authoring>`
-- :ref:`Delivery install <configure-apache-vhost-for-production>`
+- :ref:`Authoring install <configure-reverse-proxy-for-authoring>`
+- :ref:`Delivery install <configure-reverse-proxy-for-production>`
 

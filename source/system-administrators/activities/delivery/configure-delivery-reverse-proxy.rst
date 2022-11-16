@@ -1,16 +1,15 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
 
-.. index:: Configuring Apache Virtual Host for Production, Configuring Apache vhost
-.. _configure-apache-vhost-for-production:
+.. index:: Configuring Apache HTTPd for Production, Configure Reverse Proxy
 
-==============================================
-Configuring Apache Virtual Host for Production
-==============================================
+.. _configure-reverse-proxy-for-production:
 
-This section will show you a sample Apache virtual host configuration for your CrafterCMS project in delivery.
+==========================================
+Configuring a Reverse Proxy for Production
+==========================================
 
-Here's the sample configuration for setting up a vhost for production:
+This section will show you an example reverse proxy using Apache 2 HTTPd vhost configuration for production.
 
 .. code-block:: apache
     :linenos:
@@ -18,7 +17,7 @@ Here's the sample configuration for setting up a vhost for production:
     <VirtualHost *:80>
         ServerName example.com
 
-        # Path where your actual CrafterCMS site resides on the server
+        # Path where your actual CrafterCMS project resides on the server
         DocumentRoot /path_to_crafter/crafter/data/repos/sites/myproject
 
         RewriteEngine On
@@ -59,4 +58,4 @@ Here's the sample configuration for setting up a vhost for production:
 
 |
 
-For more information on Apache Virtual Host, see: http://httpd.apache.org/docs/current/vhosts/index.html
+For more information on Apache HTTPd, see: http://httpd.apache.org/docs/current/vhosts/index.html

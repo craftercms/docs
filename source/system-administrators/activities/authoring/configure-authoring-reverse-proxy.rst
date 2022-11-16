@@ -1,21 +1,19 @@
 :is-up-to-date: True
 :since-version: 4.0.3
 
-.. index:: Configuring Apache Virtual Host for Authoring, Configuring Apache vhost
+.. index:: Configuring Apache HTTPd for Authoring, Configure Reverse Proxy
 
-.. _configure-apache-vhost-for-authoring:
+.. _configure-reverse-proxy-for-authoring:
 
-=============================================
-Configuring Apache Virtual Host for Authoring
-=============================================
+=========================================
+Configuring a Reverse Proxy for Authoring
+=========================================
 
 .. version_tag::
    :label: Since
    :version: 4.0.3
 
-This section will show you a sample Apache virtual host configuration for your CrafterCMS project in authoring.
-
-Here's the sample configuration for setting up a vhost for Studio:
+This section will show you an example reverse proxy using Apache 2 HTTPd vhost configuration for Crafter Studio.
 
 .. code-block:: apache
     :linenos:
@@ -38,4 +36,4 @@ Here's the sample configuration for setting up a vhost for Studio:
 
 |
 
-For more information on Apache Virtual Host, see: http://httpd.apache.org/docs/current/vhosts/index.html
+For more information on Apache HTTPd, see: http://httpd.apache.org/docs/current/vhosts/index.html

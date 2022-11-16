@@ -4,7 +4,7 @@
 
 .. index:: Configuring Apache Virtual Host for Authoring, Configuring Apache vhost
 
-.. _newIa-configure-apache-vhost-for-authoring:
+.. _newIa-configure-reverse-proxy-for-authoring:
 
 =============================================
 Configuring Apache Virtual Host for Authoring

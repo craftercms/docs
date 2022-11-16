@@ -69,7 +69,7 @@ The following examples show how to configure a reverse proxy with Apache for you
 .. toctree::
    :maxdepth: 1
 
-   Authoring install <authoring/configure-apache-vhost-authoring>
-   Delivery install <delivery/configure-apache-vhost-delivery>
+   Authoring install <authoring/configure-authoring-reverse-proxy>
+   Delivery install <delivery/configure-delivery-reverse-proxy>
 
 
