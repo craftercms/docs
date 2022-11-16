@@ -42,7 +42,10 @@ Here's a sample Blob Stores Configuration file (click on the triangle on the lef
 |
 
 For better security and control, we recommend setting an AWS profile via the ``crafter-setenv.sh`` file instead of
-configuring the encrypted credentials in the blob stores configuration file.
+configuring the encrypted credentials in the blob stores configuration file.  This allows you to have an IAM user
+per developer, which is a better approach than a single user whose credentials are included (encrypted) in the
+configuration file. In this way, if you need to rotate or remove the credentials of a single user, the access of
+other users won't be affected.
 
 To set an AWS profile, using your favorite editor, open ``CRAFTER_HOME/bin/crafter-setenv.sh`` and add the following:
 
