@@ -15,14 +15,14 @@ Installation and Upgrading
 This section describes various ways of installing/setting up CrafterCMS and how to tune CrafterCMS
 
 
-First we'll take a look at the requirements and supported platform for installing/setting up Crafter CMS
+First we'll take a look at the requirements and supported platform for installing/setting up CrafterCMS
 
 .. toctree::
    :maxdepth: 2
 
    requirements-supported-platforms
 
-Remember to change the default values pre-configured when installing Crafter CMS for a secure installation.
+Remember to change the default values pre-configured when installing CrafterCMS for a secure installation.
 See :ref:`newIa-securing-your-crafter-cms-install` for more information.
 
 CrafterCMS provides the following methods for setting up CrafterCMS depending on your environment
@@ -32,7 +32,7 @@ deploying CrafterCMS in Kubernetes:
 
 #. Development Environment
 
-   The quick start guide provides instructions on setting up a development environment by installing Crafter CMS from the prebuilt binaries
+   The quick start guide provides instructions on setting up a development environment by installing CrafterCMS from the prebuilt binaries
 
    * :ref:`newIa-getting-started`
 
@@ -49,7 +49,7 @@ deploying CrafterCMS in Kubernetes:
 
 #. Using Crafter's AWS AMI
 
-   Setup Crafter CMS authoring and delivery using Crafter's AWS AMI.
+   Setup CrafterCMS authoring and delivery using Crafter's AWS AMI.
 
    .. toctree::
       :maxdepth: 1
@@ -99,7 +99,6 @@ setup various things for your delivery install
 
    delivery/delivery-env-performance-tuning
    delivery/change-hosts-ports-on-your-delivery-install
-   delivery/configure-apache-vhost
    delivery/setup-project-for-delivery
    delivery/setup-serverless-site
    delivery/setup-serverless-delivery
@@ -121,7 +120,7 @@ Here's some more information on setting up and configuring your cluster
 Upgrading
 ---------
 
-Here's how to upgrade your Crafter CMS installations in Kubernetes, Docker Compose, or a server
+Here's how to upgrade your CrafterCMS installations in Kubernetes, Docker Compose, or a server
 
 .. toctree::
    :maxdepth: 2

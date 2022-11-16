@@ -359,6 +359,8 @@ The following section of Studio's configuration overrides allows you to setup se
    #       # The alternate domains names (besides *.cloudfront.net) for the CloudFront CDN (optional when target template is aws-cloudformed-s3)
    #       alternateCloudFrontDomainNames:
 
+.. _studio-config-forwarded-headers:
+
 -----------------
 Forwarded Headers
 -----------------
