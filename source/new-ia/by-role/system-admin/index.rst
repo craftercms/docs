@@ -16,6 +16,7 @@ they need to install and maintain CrafterCMS components.
 
    deployment-architecture
    installation
+   reverse-proxy-configuration
    performance-and-scaling
    security
    backup-and-restore

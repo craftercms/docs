@@ -74,6 +74,8 @@ The following allows you to configure the following:
 
 |
 
+.. _engine-forwarded-headers:
+
 -----------------
 Forwarded Headers
 -----------------
