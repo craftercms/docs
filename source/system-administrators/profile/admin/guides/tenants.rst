@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. _profile-admin-tenants:
 
@@ -69,9 +70,6 @@ Fields
 +-----------------------+-------------+---------+------------------------------------------------+
 | Attribute Definitions |             | List    || List of attributes that profiles can have     |
 +-----------------------+-------------+---------+------------------------------------------------+
-
-   .. note::
-      For CrafterCMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` instead of ``CRAFTER_`` and can't be changed via project configuration.
 
 ^^^^^^^^^^^^^^^^^^^^
 Profile Verification

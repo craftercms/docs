@@ -84,7 +84,7 @@ Here are the steps to start using CrafterCMS for development or evaluation by in
      To change the default location, simply change the value of ``CRAFTER_SSH_CONFIG`` in the ``{Crafter-CMS-unzip-directory}/crafter/bin/crafter-setenv.sh`` file
    - The ``known-hosts`` file contains key fingerprints for GitHub, GitLab and BitBucket and is where you can add additional fingerprints for other providers as needed
 
-#. **Start Crafter CMS**
+#. **Start CrafterCMS**
 
    **To start CrafterCMS:**
 
