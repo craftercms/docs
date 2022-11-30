@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 :nosearch:
 :orphan:
 
@@ -29,7 +29,7 @@ Here are some things to consider for setting up effective RTEs:
 #. Project styles are being applied appropriately to the markup in the RTE.  Note that sometimes styles in CSS are so aggressively specified that the RTE cannot pick them up.
 #. Formats and styles are configured to match the part of the project being edited
 #. Toolbar is configured with only what is required for the specific use case (reducing options makes it easier for editors)
-#. If plugins like ``insert component``, ``insert layout`` and so on are enabled it should be fully configured.
+#. If plugins like ``insert layout`` and so on are enabled it should be fully configured.
 
 --------------------------------------------------------------------
 What Out-of-the-Box Functionality Does Crafter Studio's RTE Support?
