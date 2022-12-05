@@ -64,3 +64,14 @@ When using an AWS profile, you can now remove the ``<credentials />`` section in
 Remember to restart your CrafterCMS install for the changes you made to take effect.
 
 See :ref:`newIa-publishing-assets-in-external-storage` for an example of using the blob stores configuration
+
+-----------------------
+Using AWS Service Roles
+-----------------------
+
+CrafterCMS supports AWS access without using access/secret keys, by setting AWS service roles on your machine
+
+Simply follow the instructions here for attaching an IAM role to your instance:
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role
+
+Remember to remove the ``<credentials />`` section in your blob stores configuration file.
