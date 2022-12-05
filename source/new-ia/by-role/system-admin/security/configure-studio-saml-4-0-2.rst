@@ -3,13 +3,13 @@
 :nosearch:
 :orphan:
 
-.. index:: Studio SAML
+.. index:: Studio SAML, Studio SAML version 4.0.2 and earlier
 
 .. _newIa-crafter-studio-configure-studio-saml-up-to-4-0-2:
 
-===========================================
-Studio SAML2 Configuration |enterpriseOnly|
-===========================================
+=============================================================================
+Studio SAML2 Configuration for CrafterCMS v4.0.2 and Earlier |enterpriseOnly|
+=============================================================================
 
 .. warning::
 
