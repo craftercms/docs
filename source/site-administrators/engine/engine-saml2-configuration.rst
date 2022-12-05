@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:since-version: 4.0.3
 
 .. index:: Engine SAML2 Configuration
 
@@ -8,252 +8,157 @@
 ===========================================
 Engine SAML2 Configuration |enterpriseOnly|
 ===========================================
+.. version_tag::
+   :label: Since
+   :version: 4.0.3
 
-.. note:: This guide includes SAML2 specific configuration only, for a general guide see 
-          :ref:`engine-project-security-guide`
+.. important::
+   *This document only applies to* **CrafterCMS version 4.0.3 and later** |br|
+   *Please see* :ref:`here <engine-saml2-configuration-up-to-4-0-2>` *for version 4.0.2 and earlier.*
+
+.. note:: This guide includes SAML2 specific configuration only, for a general guide see
+   :ref:`engine-project-security-guide`
+
+|
+|
 
 Crafter Engine can be configured to support SAML2 SSO out of the box without using any additional plugin.
+
 
 ------------
 Requirements
 ------------
 
 #.  A SAML2 compatible Identity Provider properly configured, this configuration will not be covered here
-#.  A Java KeyStore file containing all needed keys & certificates, this can be generated with the Java Keytool or any 
-    other compatible tool. For example:
-    
-    ``keytool -genkey -alias CREDENTIAL_NAME -keystore keystore.jks -storepass STORE_PASSWORD``
-    
-    .. note:: Some versions of the Keytool support a different password for the keystore and the key generated, you
-              will be prompted for one or you can add the ``-keypass KEY_PASSWORD`` parameter.
+#.  A private key and certificate.  This can be generated like so:
 
-    Take note of the values of the following options used to generate your keystore that will be used later for 
-    configuring Engine:
+    ``openssl req -newkey rsa:2048 -nodes -keyout rp-private.key -x509 -days 365 -out rp-certificate.crt``
 
-    * **alias**: The value used for this option wil be used in the ``keystore.defaultCredential`` and 
-      ``keystore.credentials.credential.name`` properties
-    * **storepass**: The value used for this option will be used in the ``keystore.password`` property
-    * **keypass**: The value used for this option will be used in the ``keystore.credentials.credential.password`` 
-      property
-    
-#.  XML descriptors for the Identity Provider and the Service Provider (Crafter Engine). The descriptor for Crafter
-    Engine can be generated following these steps:
-    
-    #.  Export the X509 certificate from the key store file:
-    
-        ``keytool -export -alias CREDENTIAL_NAME -keystore keystore.jks -rfc -file CREDENTIAL_NAME.cer``
-    
-    #.  Create the XML descriptor, either using a `third party tool <https://www.samltool.com/sp_metadata.php>`_ or
-        manually. The descriptor should look like this:
-       
-        .. code-block:: xml
-          :caption: Example SAML 2.0 Service Provider Metadata
-          :emphasize-lines: 2,3,7,14,18,20
-       
-          <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-          <md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="<Entity ID>">
-            <md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-              <md:KeyDescriptor use="signing">
-                <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-                  <ds:X509Data>
-                    <ds:X509Certificate><Certificate></ds:X509Certificate>
-                  </ds:X509Data>
-                </ds:KeyInfo>
-              </md:KeyDescriptor>
-              <md:KeyDescriptor use="encryption">
-                <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-                  <ds:X509Data>
-                    <ds:X509Certificate><Certificate></ds:X509Certificate>
-                  </ds:X509Data>
-                </ds:KeyInfo>
-              </md:KeyDescriptor>
-              <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="<Logout URL>"/>
-              <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
-              <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="<SAML URL>" index="0" isDefault="true"/>
-            </md:SPSSODescriptor>
-          </md:EntityDescriptor>
-        
-        Replacing the following values:
-        
-        - **Entity ID**: Unique identifier for the service provider
-        - **AuthnRequestsSigned**: indicates if the service provider will sign authentication requests
-        - **WantAssertionsSigned**: indicates if the service provider requires signed assertions
-        - **Certificate**: The content of the certificate obtained in the previous step
-        - **Logout URL**: The full URL for the service provider logout endpoint (``ENGINE_URL/saml/logout``)
-        - **SAML URL**: The full URL for the service provider SSO processing endpoint (``ENGINE_URL/saml/SSO``)
+    Take note of the values of the following options used to generate your key and certificate that will be
+    used later for configuring Crafter Engine:
 
-.. note::
-  If Crafter Engine will be behind a load balancer or proxy server, the XML Service Provider descriptor needs to use
-  the public URL for the Identity Provider to be able to communicate
+    * **keyout**: The value used for this option wil be used in the ``crafter.security.saml.rp.privateKey.location`` property
+    * **out**: The value used for this option will be used in the ``crafter.security.saml.rp.certificate.location`` property
 
 --------------------------------
 Update the Project Configuration
 --------------------------------
+To configure Engine SAML2, in your Delivery installation, we need to enable SAML security then we'll setup the required SAML configuration properties.
 
-SAML2 authentication can be enabled by updating the project configuration to include the following properties:
+To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.sh`` file and uncomment the line ``export SPRING_PROFILES_ACTIVE=crafter.engine.samlSecurity``:
 
-.. code-block:: xml
-  :linenos:
-  :caption: Example SAML2 configuration
+.. code-block:: sh
+   :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
 
-  <security>
-     <saml2>
-        <enable>true</enable>
-        <reverseProxy>true</reverseProxy>
-        <context>
-          <forwardedProtoHeaderName>X-Forwarded-Proto</forwardedProtoHeaderName>
-          <forwardedHostHeaderName>X-Forwarded-Host</forwardedHostHeaderName>
-          <forwardedPortHeaderName>X-Forwarded-Port</forwardedPortHeaderName>
-          <scheme>https</scheme>
-          <serverName>myproxy</serverName>
-          <serverPort>80</serverPort>
-          <contextPath>/app</contextPath>
-        </context>
-        <profile>
-          <passive>true</passive>
-          <forceAuthN>true</forceAuthN>
-          <includeScoping>false</includeScoping>
-        </profile>
-        <attributes>
-          <mappings>
-            <mapping>
-              <name>DisplayName</name>
-              <attribute>fullName</attribute>
-            </mapping>
-          </mappings>
-        </attributes>
-        <role>
-           <mappings>
-              <mapping>
-                 <name>editor</name>
-                 <role>ROLE_EDITOR</role>
-              </mapping>
-           </mappings>
-        </role>
-        <keystore>
-           <defaultCredential>my-site</defaultCredential>
-           <password>superSecretPassword</password>
-           <credentials>
-              <credential>
-                 <name>my-site</name>
-                 <password>anotherSecretPassword</password>
-              </credential>
-           </credentials>
-        </keystore>
-        <identityProviderName>My IDP</identityProviderName>
-        <serviceProviderName>Crafter Engine</serviceProviderName>
-     </saml2>
-  </security>
+   # -------------------- Spring Profiles --------------------
+   ...
+   # Uncomment to enable SAML security
+   export SPRING_PROFILES_ACTIVE=crafter.engine.samlSecurity
+   # For multiple active spring profiles, create comma separated list
 
-^^^^^^^^^^^^^^^^^^
-Properties Details
-^^^^^^^^^^^^^^^^^^
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|| Property                          || Description                              || Default Value                      |
-+====================================+===========================================+=====================================+
-|``enable``                          |Indicates if SAML2 is enabled or not       |``false``                            |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``reverseProxy``                    |Indicates if the project is running behind |``false``                            |
-|                                    |a reverse proxy or load balancer and the   |                                     |
-|                                    |request to the IdP should use the          |                                     |
-|                                    |``context.*`` properties                   |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``context.forwardedProtoHeaderName``|The name of the header for the protocol    |``X-Forwarded-Proto``                |
-|                                    |(set by the reverse proxy/load balancer)   |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``context.forwardedHostHeaderName`` |The name of the header for the host        |``X-Forwarded-Host``                 |
-|                                    |(set by the reverse proxy/load balancer)   |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``context.forwardedPortHeaderName`` |The name of the header for the port        |``X-Forwarded-Port``                 |
-|                                    |(set by the reverse proxy/load balancer)   |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``context.scheme``                  |The protocol to use ``http`` or ``https``  |                                     |
-|                                    |(overwrites the forwarded header)          |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``context.serverName``              |The name of the server                     |                                     |
-|                                    |(overwrites the forwarded header)          |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``context.serverPort``              |The port of the server                     |``0``                                |
-|                                    |(overwrites the forwarded header)          |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``context.contextPath``             |The context path of the application        |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``profile.passive``                 |Sets the value for ``IsPassive`` in the    |``false``                            |
-|                                    |SAML request                               |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``profile.forceAuthN``              |Sets the value for ``ForceAuthn`` in the   |``false``                            |
-|                                    |SAML request                               |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``profile.includeScoping``          |Indicates if scoping element should be     |``true``                             |
-|                                    |included in the requests sent to IdP       |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``attributes.mappings.mapping``     |List of mappings to apply for attributes,  |                                     |
-|                                    |every attribute sent by the IDP will be    |                                     |
-|                                    |compared against this list and will be     |                                     |
-|                                    |available as described in                  |                                     |
-|                                    |:ref:`engine-security-access-attributes`.  |                                     |
-|                                    |Each mapping is comprised of the original  |                                     |
-|                                    |``name`` of the attribute, sent by the IDP,|                                     |
-|                                    |and ``attribute`` which will be the new    |                                     |
-|                                    |name of the attribute in Engine            |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``role.key``                        |Name of the role attribute sent by the IDP |``Role``                             |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``role.mappings.mapping``           |List of mappings to apply for roles, every |                                     |
-|                                    |role sent by the IDP will be compared      |                                     |
-|                                    |against this list. Each mapping is         |                                     |
-|                                    |comprised of the original ``name`` of the  |                                     |
-|                                    |role, sent by the IDP, and ``role`` which  |                                     |
-|                                    |will be the new name of the role in Engine |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``keystore.defaultCredential``      |The name of the default credential to use  |                                     |
-|                                    |(should also be defined in                 |                                     |
-|                                    |``keystore.credentials.credential``)       |                                     |                                        
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``keystore.path``                   |The path of the keystore file in the repo  |``/config/engine/saml2/keystore.jks``|
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``keystore.password``               |The password of the keystore file          |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``keystore.credentials.credential`` |List of credentials in the keystore. Each  |                                     |
-|                                    |credential is comprised of a ``name`` and  |                                     |
-|                                    |a ``password``                             |                                     | 
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``identityProviderName``            |The name of the identity provider to use   |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``identityProviderDescriptor``      |The path of the identity provider metadata |``/config/engine/saml2/idp.xml``     |
-|                                    |XML descriptor in the repo                 |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``serviceProviderName``             |The name of the service provider to use    |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
-|``serviceProviderDescriptor``       |The path of the service provider metadata  |``/config/engine/saml2/sp.xml``      |
-|                                    |XML descriptor in the repo                 |                                     |
-+------------------------------------+-------------------------------------------+-------------------------------------+
+|
 
-.. note:: If your keystore does not support different passwords for each key, then you should use the same value
-          provided for ``-storepass`` in ``keystore.password`` and ``keystore.credentials.credential.password``
+Next we'll setup SAML configuration properties.  Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension`` and add/uncomment the following lines to :ref:`server-config.properties <engine-config-override>` (of course, make any appropriate configuration changes according to your system):
 
--------------------------
-Commit the required files
--------------------------
+.. code-block:: properties
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+   :linenos:
 
-You will need to add & commit the keystore and descriptor files manually to the project repository, the location will
-depend on the configuration used. The following example uses the default locations:
+   #############################
+   # SAML2 Security Properties #
+   #############################
+   # SAML attributes mapping
+   crafter.security.saml.attributes.mappings=DisplayName:fullname,Avatar:profilePicture
+   # SAML roles mapping
+   crafter.security.saml.roles.mappings=editor:ROLE_EDITOR
+   # SAML attribute role key
+   crafter.security.saml.attributeName.role=Role
+   ###############################################################
+   ##         SAML Security Relying Party (SP) configuration    ##
+   ###############################################################
+   # {baseUrl} and {registrationId} are pre-defined macros and should not be modified
+   # SAML relying party (SP) registration ID. {registrationId} macro will be replaced with this value
+   crafter.security.saml.rp.registration.id=SSO
+   # SAML relying party (SP) entity ID and metadata endpoint
+   crafter.security.saml.rp.entity.id={baseUrl}/saml/metadata
+   # SAML relying party (SP) login processing url. Must end with {registrationId}
+   crafter.security.saml.rp.loginProcessingUrl=/saml/{registrationId}
+   # SAML relying party (SP) assertion consumer service location. Must end with {registrationId}
+   crafter.security.saml.rp.assertion.consumer.service.location={baseUrl}/saml/{registrationId}
+   # SAML relying party (SP) assertion consumer service biding (POST or REDIRECT)
+   crafter.security.saml.rp.assertion.consumer.service.binding=POST
+   # SAML relying party (SP) logout URL
+   crafter.security.saml.rp.logoutUrl=/saml/logout
+   # SAML relying party (SP) single logout service location
+   crafter.security.saml.rp.logout.service.location={baseUrl}/saml/logout
+   # SAML relying party (SP) logout service binding (POST or REDIRECT)
+   crafter.security.saml.rp.logout.service.binding=POST
+   # SAML relying party (SP) metadata endpoint
+   crafter.security.saml.rp.metadata.endpoint=/saml/metadata
+   # SAML relying party (SP) private key location
+   crafter.security.saml.rp.privateKey.location=classpath:crafter/engine/extension/saml/rp-private.key
+   # SAML relying party (SP) certificate location
+   crafter.security.saml.rp.certificate.location=classpath:crafter/engine/extension/saml/rp-certificate.crt
+   ###############################################################
+   ##      SAML Security Asserting Party (IdP) configuration    ##
+   ###############################################################
+   # SAML asserting party (IdP) entity ID:
+   crafter.security.saml.ap.entityId=https://ap.example.org/ap-entity-id
+   # SAML asserting party (IdP) single sign on service location
+   crafter.security.saml.ap.single.signOn.service.location=https://ap.example.org/sso/saml
+   # SAML asserting party (IdP) single sign on service binding (POST or REDIRECT)
+   crafter.security.saml.ap.single.signOn.service.binding=POST
+   # SAML asserting party (IdP) logout service location
+   crafter.security.saml.ap.single.logout.service.location=https://ap.example.org/slo/saml
+   # SAML asserting party (IdP) logout service binding (POST or REDIRECT)
+   crafter.security.saml.ap.single.logout.service.binding=POST
+   # SAML asserting party (IdP) want authn request signed
+   crafter.security.saml.ap.want.authn.request.signed=false
+   # SAML asserting party (IdP) certificate location
+   crafter.security.saml.ap.certificate.location=classpath:crafter/engine/extension/saml/idp-certificate.crt
+   ###############################################################
+   ##            SAML Security other configuration              ##
+   ###############################################################
+   # SAML Web SSO profile options: authenticate the user silently
+   crafter.security.saml.webSSOProfileOptions.passive=false
+   # SAML Web SSO profile options: force user to re-authenticate
+   crafter.security.saml.webSSOProfileOptions.forceAuthn=false
 
-.. code-block:: bash
-  :linenos:
-  :caption: Adding the SAML2 files
+|
 
-  cd <PATH TO PROJECT REPOSITORY>
-  mkdir config/engine/saml2
-  cp ~/keystore.jks config/engine/saml2/
-  cp ~/idp.xml config/engine/saml2/
-  cp ~/sp.xml config/engine/saml2
-  git add .
-  git commit -m "Add SAML2 config files"
+where
 
-After completing those steps you should be able to test the SAML2 authentication, if there are no configuration or
-communication errors you will be redirected to the SSO login page when trying to access a secured page and then 
-automatically return to your project in Crafter Engine.
+- ``crafter.security.saml.attributes.mappings``: List of mappings to apply for attributes, every attribute sent
+  by the IDP will be compared against this list and will be available as described in Access User Attributes.
+  Each mapping is comprised of the original name of the attribute, sent by the IDP, and attribute which will
+  be the new name of the attribute in Engine
+- ``crafter.security.saml.roles.mappings``:List of mappings to apply for roles, every role sent by the IDP will
+  be compared against this list. Each mapping is comprised of the original name of the role, sent by the IDP,
+  and role which will be the new name of the role in Engine
+- ``crafter.security.saml.rp.privateKey.location``: The path of the relying party (SP) private key in the classpath
+- ``crafter.security.saml.rp.certificate.location``: The path of the relying party (SP) certificate in the classpath
+- ``crafter.security.saml.ap.entityId``: The asserting party (IdP) entity ID
+- ``crafter.security.saml.ap.single.signOn.service.location``: The asserting party (IdP) single sign on URL
+- ``crafter.security.saml.ap.single.logout.service.location``: The asserting party (IdP) single logout URL
+- ``crafter.security.saml.ap.certificate.location``:  The path of the asserting party (IdP) certificate in the classpath
+- ``crafter.security.saml.webSSOProfileOptions.passive``: Indicates if user is authenticated silently
+- ``crafter.security.saml.webSSOProfileOptions.forceAuthn``: Indicates if user will be forced to re-authenticate
+
+The classpath is located in your CrafterCMS installation, under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes``.  As shown in the example above, the relying party private key is located in your CrafterCMS installation under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/saml`` folder.
+
+.. code-block:: properties
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+   # SAML relying party (SP) private key location
+   crafter.security.saml.rp.privateKey.location=classpath:crafter/engine/extension/saml/rp-private.key
+
+|
+
+Restart your installation after configuring the above.
+
+You should now be able to test the SAML2 authentication and if there are no configuration or
+communication errors you will be redirected to the SSO login page when trying to access a
+secured page and then automatically return to your project in Crafter Engine.
 
 .. note::
   If you are configuring SAML2 authentication in an authoring environment, you need to make sure that your IDP is

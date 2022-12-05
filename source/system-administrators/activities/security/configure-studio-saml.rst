@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.3
+:since-version: 4.0.3
 
 .. index:: Studio SAML2 Configuration, Studio SAML2
 
