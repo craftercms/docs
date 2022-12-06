@@ -1,85 +1,36 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 :nosearch:
 
-.. index:: Studio SAML
+.. index:: Studio SAML2 Configuration, Studio SAML2
 
 .. _newIa-crafter-studio-configure-studio-saml:
 
 ===========================================
 Studio SAML2 Configuration |enterpriseOnly|
 ===========================================
+.. version_tag::
+   :label: Since
+   :version: 4.0.3
 
 Crafter Studio can be configured to support SAML2 SSO out of the box without using any additional plugin.
+
+.. important::
+   *This document only applies to* **CrafterCMS version 4.0.3 and later** |br|
+   *Please see* :ref:`here <newIa-crafter-studio-configure-studio-saml-up-to-4-0-2>` *for version 4.0.2 and earlier.*
 
 ------------
 Requirements
 ------------
-#.  A SAML2 compatible Identity Provider properly configured, this configuration will not be covered here
-#.  A Java KeyStore file containing all needed keys & certificates, this can be generated with the Java Keytool or any
-    other compatible tool. For example:
+#.  A SAML2 compatible Identity Provider (IdP) properly configured, this configuration will not be covered here
+#.  A private key and certificate.  This can be generated like so:
 
-    ``keytool -genkey -alias CREDENTIAL_NAME -keystore keystore.jks -storepass STORE_PASSWORD``
+    ``openssl req -newkey rsa:2048 -nodes -keyout rp-private.key -x509 -days 365 -out rp-certificate.crt``
 
-       .. note:: Some versions of the Keytool support a different password for the keystore and the key generated, you
-          will be prompted for one or you can add the ``-keypass KEY_PASSWORD`` parameter.
+    Take note of the values of the following options used to generate your key and certificate that will be used later for configuring Studio:
 
-    Take note of the values of the following options used to generate your keystore that will be used later for configuring Studio:
-
-    * **alias**: The value used for this option wil be used in the ``studio.security.saml.keystore.alias`` property
-    * **storepass**: The value used for this option will be used in the ``studio.security.saml.keystore.storePassword`` property
-    * **keypass**: The value used for this option will be used in the ``studio.security.saml.keystore.keyPassword`` property
-
-#.  XML descriptors for the Identity Provider and the Service Provider (Crafter Studio). The descriptor for Crafter
-    Studio can be generated following these steps:
-
-    #.  Export the X509 certificate from the key store file:
-
-        ``keytool -export -alias CREDENTIAL_NAME -keystore keystore.jks -rfc -file CREDENTIAL_NAME.cer``
-
-    #.  Create the XML descriptor, either using a `third party tool <https://www.samltool.com/sp_metadata.php>`_ or
-        manually. The descriptor should look like this:
-
-        .. code-block:: xml
-             :caption: Example SAML 2.0 Service Provider Metadata
-             :emphasize-lines: 2,3,7,14,18,20
-
-              <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-              <md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="<Entity ID>">
-                <md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-                  <md:KeyDescriptor use="signing">
-                    <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-                      <ds:X509Data>
-                        <ds:X509Certificate><Certificate></ds:X509Certificate>
-                      </ds:X509Data>
-                    </ds:KeyInfo>
-                  </md:KeyDescriptor>
-                  <md:KeyDescriptor use="encryption">
-                    <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-                      <ds:X509Data>
-                        <ds:X509Certificate><Certificate></ds:X509Certificate>
-                      </ds:X509Data>
-                    </ds:KeyInfo>
-                  </md:KeyDescriptor>
-                  <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="<Logout URL>"/>
-                  <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
-                  <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="<SAML URL>" index="0" isDefault="true"/>
-                </md:SPSSODescriptor>
-              </md:EntityDescriptor>
-
-        |
-
-        Replacing the following values:
-
-        - **Entity ID**: Unique identifier for the service provider
-        - **AuthnRequestsSigned**: indicates if the service provider will sign authentication requests
-        - **WantAssertionsSigned**: indicates if the service provider requires signed assertions
-        - **Certificate**: The content of the certificate obtained in the previous step
-        - **Logout URL**: The full URL for the service provider logout endpoint (``STUDIO_URL/saml/logout``)
-        - **SAML URL**: The full URL for the service provider SSO processing endpoint (``STUDIO_URL/saml/SSO``)
-
-.. note::
-  If Crafter Studio will be behind a load balancer or proxy server, the XML Service Provider descriptor needs to use
-  the public URL for the Identity Provider to be able to communicate
+    * **keyout**: The value used for this option wil be used in the ``studio.security.saml.rp.privateKey.location`` property
+    * **out**: The value used for this option will be used in the ``studio.security.saml.rp.certificate.location`` property
 
 ---------
 Configure
@@ -94,13 +45,13 @@ To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.s
 
    # -------------------- Spring Profiles --------------------
    ...
-   # Uncomment to enable SAML security
+   # Uncomment to enable Crafter Studio SAML2 security
    export SPRING_PROFILES_ACTIVE=crafter.studio.samlSecurity
    # For multiple active spring profiles, create comma separated list
 
 |
 
-Next we'll setup SAML configuration properties.  Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+Next we'll setup SAML configuration properties.  Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add/uncomment the following lines to :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -109,52 +60,66 @@ Next we'll setup SAML configuration properties.  Go to ``CRAFTER_HOME/bin/apache
    ###############################################################
    ##               SAML Security                               ##
    ###############################################################
-   # SAML security enabled
-   studio.security.saml.enabled: true
    # SAML attribute name for email
-   studio.security.saml.attributeName.email: email
+   # studio.security.saml.attributeName.email: email
    # SAML attribute name for first name
-   studio.security.saml.attributeName.firstName: givenName
+   # studio.security.saml.attributeName.firstName: givenName
    # SAML attribute name for last name
-   studio.security.saml.attributeName.lastName: surname
+   # studio.security.saml.attributeName.lastName: surname
    # SAML attribute name for group
-   studio.security.saml.attributeName.group: Role
-   # Service Provider Metadata location (classpath resource)
-   studio.security.saml.metadata.location.serviceProvider: "/crafter/studio/extension/saml/sp-metadata.xml"
-   # IDP Metadata location (classpath resource)
-   studio.security.saml.metadata.location.idp: "/crafter/studio/extension/saml/idp-metadata.xml"
-   # SAML keystore location
-   studio.security.saml.keystore.location: classpath:crafter/studio/extension/saml/keystore.jks
-   # SAML keystore store password
-   studio.security.saml.keystore.storePassword: crafterstore
-   # SAML keystore key password
-   studio.security.saml.keystore.keyPassword: crafterkey
-   # SAML keystore alias
-   studio.security.saml.keystore.alias: crafterstudio
-   # SAML logout URL
-   studio.security.saml.logoutUrl: /studio/saml/logout
-   # Enable SAML configuration used when Studio is behind a reverse proxy or load balancer
-   # studio.security.saml.reverseProxy.enabled: false
-   # The header name that contains the public URL (matching the SAML SP URL) hostname
-   # studio.security.saml.reverseProxy.forwardedHostHeaderName: X-Forwarded-Host
-   # The header name that contains the public URL (matching the SAML SP URL) port
-   # studio.security.saml.reverseProxy.forwardedPortHeaderName: X-Forwarded-Port
-   # The header name that contains the public URL (matching the SAML SP URL) protocol
-   # studio.security.saml.reverseProxy.forwardedProtoHeaderName: X-Forwarded-Proto
-   # The scheme or protocol of the public URL (matching the SAML SP URL). Use if you want to overwrite the forwarded header
-   # studio.security.saml.reverseProxy.scheme:
-   # The server name or hostname of the public URL (matching the SAML SP URL). Use if you want to overwrite the forwarded header
-   # studio.security.saml.reverseProxy.serverName:
-   # The port of the public URL (matching the SAML SP URL). Use if you want to overwrite the forwarded header
-   # studio.security.saml.reverseProxy.serverPort: 0
-   # The context path of the public URL (matching the SAML SP URL)
-   # studio.security.saml.reverseProxy.contextPath:
+   # studio.security.saml.attributeName.group: Role
+   ###############################################################
+   ##         SAML Security Relying Party (SP) configuration    ##
+   ###############################################################
+   # {baseUrl} and {registrationId} are pre-defined macros and should not be modified
+   # SAML relying party (SP) registration ID. {registrationId} macro will be replaced with this value
+   # studio.security.saml.rp.registration.id: SSO
+   # SAML relying party (SP) entity ID
+   # studio.security.saml.rp.entity.id: "{baseUrl}/saml/metadata"
+   # SAML relying party (SP) login processing url. Must end with {registrationId}
+   # studio.security.saml.rp.loginProcessingUrl: "/saml/{registrationId}"
+   # SAML relying party (SP) assertion consumer service location. Must end with {registrationId}
+   # studio.security.saml.rp.assertion.consumer.service.location: "{baseUrl}/saml/{registrationId}"
+   # SAML relying party (SP) assertion consumer service biding (POST or REDIRECT)
+   # studio.security.saml.rp.assertion.consumer.service.binding: POST
+   # SAML logout URL without prefix /studio
+   # studio.security.saml.rp.logoutUrl: /saml/logout
+   # SAML relying party (SP) single logout service location
+   # studio.security.saml.rp.logout.service.location: "{baseUrl}/saml/logout"
+   # SAML relying party (SP) logout service binding (POST or REDIRECT)
+   # studio.security.saml.rp.logout.service.binding: POST
+   # SAML relying party (SP) metadata endpoint
+   # studio.security.saml.rp.metadata.endpoint: /saml/metadata
+   # SAML relying party (SP) private key location
+   # studio.security.saml.rp.privateKey.location: classpath:crafter/studio/extension/saml/rp-private.key
+   # SAML relying party (SP) certificate location
+   # studio.security.saml.rp.certificate.location: classpath:crafter/studio/extension/saml/rp-certificate.crt
+   ###############################################################
+   ##      SAML Security Asserting Party (IdP) configuration    ##
+   ###############################################################
+   # SAML asserting party (IdP) entity ID:
+   # studio.security.saml.ap.entityId: https://ap.example.org/ap-entity-id
+   # SAML asserting party (IdP) single sign on service location
+   # studio.security.saml.ap.single.signOn.service.location: https://ap.example.org/sso/saml
+   # SAML asserting party (IdP) single sign on service binding (POST or REDIRECT)
+   # studio.security.saml.ap.single.signOn.service.binding: POST
+   # SAML asserting party (IdP) logout service location
+   # studio.security.saml.ap.single.logout.service.location: https://ap.example.org/slo/saml
+   # SAML asserting party (IdP) logout service binding (POST or REDIRECT)
+   # studio.security.saml.ap.single.logout.service.binding: POST
+   # SAML asserting party (IdP) want authn request signed
+   # studio.security.saml.ap.want.authn.request.signed: false
+   # SAML asserting party (IdP) certificate location
+   # studio.security.saml.ap.certificate.location: classpath:crafter/studio/extension/saml/idp-certificate.crt
+   ###############################################################
+   ##            SAML Security other configuration              ##
+   ###############################################################
    # SAML Web SSO profile options: authenticate the user silently
    # studio.security.saml.webSSOProfileOptions.passive: false
    # SAML Web SSO profile options: force user to re-authenticate
    # studio.security.saml.webSSOProfileOptions.forceAuthn: false
 
-   |
+|
 
 where
 
@@ -166,30 +131,22 @@ where
      - ``studio.security.saml.attributeName.lastName``
      - ``studio.security.saml.attributeName.group``
 
-- ``studio.security.saml.metadata.location.serviceProvider``: The path of the service provider metadata XML descriptor in the classpath
-- ``studio.security.saml.metadata.location.idp``: The path of the identity provider metadata XML descriptor in the classpath
-- ``studio.security.saml.keystore.location``: The path of the keystore file in the classpath
-- ``studio.security.saml.keystore.storePassword``: The password of the keystore file
-- ``studio.security.saml.keystore.keyPassword``: The password of the key
-- ``studio.security.saml.keystore.alias``: Keystore entry identifier (unique string to identify the key entry)
-- ``studio.security.saml.reverseProxy.enabled``: Indicates if SAML configuration used when Studio is behind a reverse proxy or load balancer is enabled or not
-- ``studio.security.saml.reverseProxy.forwardedHostHeaderName``: The header name that contains the public URL (matching the SAML SP URL) hostname
-- ``studio.security.saml.reverseProxy.forwardedPortHeaderName``: The header name that contains the public URL (matching the SAML SP URL) port
-- ``studio.security.saml.reverseProxy.forwardedProtoHeaderName``:  The header name that contains the public URL (matching the SAML SP URL) protocol
-- ``studio.security.saml.reverseProxy.scheme``: The scheme or protocol of the public URL (matching the SAML SP URL). Use if you want to overwrite the forwarded header
-- ``studio.security.saml.reverseProxy.serverName``: The server name or hostname of the public URL (matching the SAML SP URL). Use if you want to overwrite the forwarded header
-- ``studio.security.saml.reverseProxy.serverPort``: The port of the public URL (matching the SAML SP URL). Use if you want to overwrite the forwarded header
-- ``studio.security.saml.reverseProxy.contextPath``: The context path of the public URL (matching the SAML SP URL)
+- ``studio.security.saml.rp.privateKey.location``: The path of the relying party (SP) private key in the classpath
+- ``studio.security.saml.rp.certificate.location``: The path of the relying party (SP) certificate in the classpath
+- ``studio.security.saml.ap.entityId``: The asserting party (IdP) entity ID
+- ``studio.security.saml.ap.single.signOn.service.location``: The asserting party (IdP) single sign on URL
+- ``studio.security.saml.ap.single.logout.service.location``: The asserting party (IdP) single logout URL
+- ``studio.security.saml.ap.certificate.location``:  The path of the asserting party (IdP) certificate in the classpath
 - ``studio.security.saml.webSSOProfileOptions.passive``: Indicates if user is authenticated silently
 - ``studio.security.saml.webSSOProfileOptions.forceAuthn``: Indicates if user will be forced to re-authenticate
 
-The classpath is located in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes``.  As shown in the example above, the identity provider metadata XML descriptor is located in your Authoring installation under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/saml`` folder.
+The classpath is located in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes``.  As shown in the example above, the relying party private key is located in your Authoring installation under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/saml`` folder.
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
 
-   # IDP Metadata location (classpath resource)
-   studio.security.saml.metadata.location.idp: "/crafter/studio/extension/saml/idp-metadata.xml"
+   # SAML relying party (SP) private key location
+   studio.security.saml.rp.privateKey.location: classpath:crafter/studio/extension/saml/rp-private.key
 
 |
 
