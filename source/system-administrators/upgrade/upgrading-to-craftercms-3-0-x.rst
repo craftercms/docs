@@ -10,9 +10,9 @@
 
 .. _upgrading-craftercms-to-3-0-x:
 
-==========================================================
+=========================================================
 Instructions for Upgrading to CrafterCMS 3.0.x from 2.5.x
-==========================================================
+=========================================================
 This section details how to upgrade your CrafterCMS installation to 3.0.x
 
 .. WARNING::
@@ -23,7 +23,7 @@ Before Upgrading
 ----------------
 Here are the steps for upgrading your CrafterCMS install to 3.0.x.  Please review the steps listed below before starting your upgrade.
 
-#. Review the `release notes <https://docs.craftercms.org/en/3.0/release-notes/index.html>`__ for the version you are upgrading to, which contains specific information on the changes that have been made and how it may affect you when upgrading to that specific version.
+#. Review the release notes for the version you are upgrading to, which contains specific information on the changes that have been made and how it may affect you when upgrading to that specific version.
 #. Backup your existing CrafterCMS installation.  For more information on how to perform the backup, please see the documentation on :ref:`backup-and-recovery`
 #. Upgrade your CrafterCMS to the new version by following the instructions listed for the version you are upgrading to.
 #. Start your upgraded CrafterCMS, and verify that the authoring and delivery environments are functioning as intended.
