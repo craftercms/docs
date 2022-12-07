@@ -4,9 +4,9 @@
 
 .. _upgrading-craftercms:
 
-=====================
+====================
 Upgrading CrafterCMS
-=====================
+====================
 
 This section details the steps required to upgrade your CrafterCMS install.
 
