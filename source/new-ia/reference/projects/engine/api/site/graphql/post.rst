@@ -1,4 +1,6 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
+
 :nosearch:
 
 .. _newIa-crafter-engine-api-site-graphql-query-post:
@@ -45,14 +47,14 @@ Request
       page_article {
         total
         items {
-          title
-          author(filter:{matches:$author})
+          title_t
+          author_s(filter:{equals:$author})
           date_dt
         }
       }
     }",
     "variables": "{
-      \"author\": \"Jane\"
+      \"author\": \"Jane Doe\"
     }"
   }
   
@@ -69,52 +71,27 @@ Response
   {
     "data": {
       "page_article": {
-        "total": 9,
+        "total": 4,
         "items": [
           {
-            "title": "New ACME Phone Released Today",
-            "author": "John Doe",
-            "date_dt": "2016-07-03T04:00:00Z"
+            "title_t": "Women Styles for Winter",
+            "author_s": "Jane Doe",
+            "date_dt": "2021-01-03T05:00:00Z"
           },
           {
-            "title": "Top Clubs In Virginia",
-            "author": "John Doe",
-            "date_dt": "2017-03-05T05:00:00Z"
+            "title_t": "Top Books For Young Women",
+            "author_s": "Jane Doe",
+            "date_dt": "2020-12-28T05:00:00Z"
           },
           {
-            "title": "Coffee is Good for Your Health",
-            "author": "John Doe",
-            "date_dt": "2016-06-14T04:00:00Z"
+            "title_t": "5 Popular Diets for Women",
+            "author_s": "Jane Doe",
+            "date_dt": "2021-03-14T04:00:00Z"
           },
           {
-            "title": "5 Popular Diets for Women",
-            "author": "Jane Doe",
-            "date_dt": "2017-03-14T04:00:00Z"
-          },
-          {
-            "title": "Top Romantic Valentine Movies",
-            "author": "Jane Doe",
-            "date_dt": "2017-02-14T05:00:00Z"
-          },
-          {
-            "title": "10 Tips to Get a Six Pack",
-            "author": "John Doe",
-            "date_dt": "2017-02-08T05:00:00Z"
-          },
-          {
-            "title": "Women Styles for Winter",
-            "author": "Jane Doe",
-            "date_dt": "2017-01-03T05:00:00Z"
-          },
-          {
-            "title": "Men Styles For Winter",
-            "author": "John Doe",
-            "date_dt": "2017-01-05T05:00:00Z"
-          },
-          {
-            "title": "Top Books For Young Women",
-            "author": "Jane Doe",
-            "date_dt": "2016-12-28T05:00:00Z"
+            "title_t": "Top Romantic Valentine Movies",
+            "author_s": "Jane Doe",
+            "date_dt": "2021-02-14T05:00:00Z"
           }
         ]
       }

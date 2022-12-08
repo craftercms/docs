@@ -1,4 +1,6 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
+
 :nosearch:
 
 .. _newIa-crafter-engine-api-site-graphql-query-get:
@@ -49,7 +51,7 @@ Example
 Request
 ^^^^^^^
 
-``GET .../api/1/site/graphql.json?query={page_article{items{title}}}``
+``GET .../api/1/site/graphql.json?query={page_article{items{title_t}}}``
 
 ^^^^^^^^
 Response
@@ -65,31 +67,31 @@ Response
       "page_article": {
         "items": [
           {
-            "title": "New ACME Phone Released Today"
+            "title_t": "New ACME Phone Released Today"
           },
           {
-            "title": "Top Clubs In Virginia"
+            "title_t": "Top Clubs In Virginia"
           },
           {
-            "title": "Coffee is Good for Your Health"
+            "title_t": "Coffee is Good for Your Health"
           },
           {
-            "title": "5 Popular Diets for Women"
+            "title_t": "5 Popular Diets for Women"
           },
           {
-            "title": "Top Romantic Valentine Movies"
+            "title_t": "Top Romantic Valentine Movies"
           },
           {
-            "title": "10 Tips to Get a Six Pack"
+            "title_t": "10 Tips to Get a Six Pack"
           },
           {
-            "title": "Women Styles for Winter"
+            "title_t": "Women Styles for Winter"
           },
           {
-            "title": "Men Styles For Winter"
+            "title_t": "Men Styles For Winter"
           },
           {
-            "title": "Top Books For Young Women"
+            "title_t": "Top Books For Young Women"
           }
         ]
       }
