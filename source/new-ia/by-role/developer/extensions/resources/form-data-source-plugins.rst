@@ -35,7 +35,7 @@ The anatomy of a Data Source Project Plugin
 
 Data Sources consist of (at a minimum)
 
-* A single javascript file which implements the data source interface.
+* A single JavaScript file which implements the data source interface.
 
 	* The JS file name and the data source name in the configuration does not need to be the same.  The JS file name can be any meaningful name, different from the data source name in the configuration.
 

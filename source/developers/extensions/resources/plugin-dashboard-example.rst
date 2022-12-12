@@ -45,7 +45,7 @@ Let's take a look at an example of creating a Dashboard plugin in Studio using a
    We will be placing the JS file implementing the toolbar plugin under the ``test-toolbar`` folder
    For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/toolbar-plugin``
 
-#. We'll create the javascript file for our plugin by following the instructions in the plugin example
+#. We'll create the JavaScript file for our plugin by following the instructions in the plugin example
    `here <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-component-library>`__ which will generate the
    ``index.js`` file.
 

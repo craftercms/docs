@@ -63,11 +63,11 @@ Content Type Specific tool configuration
     ``/config/tools/tool/controls``
         List of available content type form controls
     ``/config/tools/tool/controls/control``
-        Control name (javascript control module name)
+        Control name (JavaScript control module name)
     ``/config/tools/tool/datasources``
         List of available datasources for content type form controls
     ``/config/tools/tool/datasources/datasource``
-        Datasource name (javascript datasource module name)
+        Datasource name (JavaScript datasource module name)
     ``/config/tools/tool/objectTypes``
         List of available object types
     ``/config/tools/tool/objectTypes/type``
