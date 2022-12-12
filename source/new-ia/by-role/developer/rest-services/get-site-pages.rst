@@ -7,7 +7,7 @@
 Get Pages for a Given Site
 ==========================
 
-In this example we c that returns the list of Pages in a site.
+In this example we create a simple RESTful service that returns the list of Pages in a site.
 The service is parameterized to allow the caller to set a starting point and depth.
 
 -------------
