@@ -8,7 +8,7 @@
 Active Cache a RESTful Response
 ===============================
 
-This cookbook will demonstrate how to create a RESTful service in Crafter Engine that has predictable performance
+This section will demonstrate how to create a RESTful service in Crafter Engine that has predictable performance
 and reliability when your service relies on an external service.
 
 Any time your services depend on another service there is a cause for concern.  You can't control the performance or

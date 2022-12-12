@@ -34,11 +34,11 @@ Basic Setup and Configuration
 Example
 -------
 
-Let's take a look at an example using a site created using the ``Website Editorial`` blueprint.  We will setup the RTE in the ``Page - Article`` content type to allow a user to browse or search for pages and insert links to them.  We will first setup the RTE, then see it in action.
+Let's take a look at an example using a site created using the ``Website Editorial`` blueprint.  We will setup the RTE in the ``Article`` content type to allow a user to browse or search for pages and insert links to them.  We will first setup the RTE, then see it in action.
 
-#. Open the content type with the Rich Text Editor (RTE) to be setup.  Open the **Sidebar** and click on |projectTools| and select **Content Types**.  Click on **Open Existing Type**, and select the content type ``Page - Article`` then click on the **Open Type** button.
+#. Open the content type with the Rich Text Editor (RTE) to be setup.  Open the **Sidebar** and click on |projectTools| and select **Content Types**.  Click on **Open Existing Type**, and select the content type ``Article`` then click on the **Open Type** button.
 
-#. Setup the data source to select a page from the site.  From the content model definition, go to the **Data Sources** panel and drag ``File Browse`` to the the ``Data Sources`` section of the form.
+#. Setup the data source to select a page from the site.  From the content model definition, go to the **Data Sources** panel and drag ``File Browse`` to the ``Data Sources`` section of the form.
 
    .. figure:: /_static/images/developer/rte-add-file-browse-ds.webp
       :alt: Allow user to browse pages and insert link - add "File Browse" data source

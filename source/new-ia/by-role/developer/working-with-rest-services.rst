@@ -17,4 +17,3 @@ Here are some examples of creating RESTful services in CrafterCMS:
    rest-services/get-site-pages
    rest-services/render-components-as-json
    rest-services/cache-a-restful-response
-   rest-services/start-a-process

@@ -10,7 +10,7 @@ Render Page Components as JSON
 
 CaaS (Content as a Service) is a common need in today's multi-channel world.  Typically CaaS use cases
 require that the content is devoid of presentation markup so that the consumer can present the content
-as it desires.  Other times consumers may wish to pull rendered content.  This cookbook provides a simple
+as it desires.  Other times consumers may wish to pull rendered content.  This provides a simple
 REST example (a single Groovy based rest controller script) that will give you a way to render all of the
 components associated to a page.
 
