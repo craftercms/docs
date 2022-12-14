@@ -31,6 +31,10 @@ Here are some things to consider for setting up effective RTEs:
 #. Toolbar is configured with only what is required for the specific use case (reducing options makes it easier for editors)
 #. If plugins like ``insert layout`` and so on are enabled it should be fully configured.
 
+.. raw:: html
+
+   <hr>
+
 --------------------------------------------------------------------
 What Out-of-the-Box Functionality Does Crafter Studio's RTE Support?
 --------------------------------------------------------------------
@@ -520,6 +524,9 @@ Let's take a look at an example of how to add **div** and *text content* as vali
    |
 
 
+.. raw:: html
+
+   <hr>
 
 ---------------------
 Creating an RTE Setup
@@ -596,6 +603,10 @@ Inside the ``<setups>`` tag, there can be multiple ``<setup>`` tags. Each setup 
 * An ``<id>`` tag with the name that must be specified for an RTE control to use this configuration.
 * An ``<tinymceOptions>`` tag containing TinyMCE Configuration options (see https://www.tiny.cloud/docs/configure/ for more information) and plugins (see https://www.tiny.cloud/docs/plugins/opensource/ for more information)
 
+.. raw:: html
+
+   <hr>
+
 ------------------------------------------
 Attaching an RTE in a Form to an RTE Setup
 ------------------------------------------
@@ -609,6 +620,23 @@ To attach an RTE setup to an RTE in a form, open the content type that you want 
 |
 
 In the image above, the RTE setup name used is **generic**.  Please see the section above on how to create an RTE Setup, where the example shows an RTE Setup named **generic**.
+
+.. raw:: html
+
+   <hr>
+
+------------------------------------------
+Configure RTE for Inserting Links to Pages
+------------------------------------------
+
+The following document details how to setup the Rich Text Editor (RTE) to allow a user to browse or
+search for pages and insert links to them.
+
+- :ref:`newIa-inserting-links-to-pages-in-rte`
+
+.. raw:: html
+
+   <hr>
 
 .. _newIa-extending-tinymce:
 

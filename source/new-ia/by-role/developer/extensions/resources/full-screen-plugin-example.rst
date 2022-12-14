@@ -55,7 +55,7 @@ For this example, as outlined in the vanilla example referenced above, we will n
       </details>
 
 
-#. We'll copy the javascript file ``index.js`` found `here <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-vanilla>`__
+#. We'll copy the JavaScript file ``index.js`` found `here <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-vanilla>`__
    for our plugin
 
 #. After placing your plugin file, the plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.

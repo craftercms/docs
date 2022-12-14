@@ -35,7 +35,7 @@ The anatomy of a Control Project Plugin
 
 Form Engine Control consist of (at a minimum)
 
-* A single javascript file which implements the control interface.
+* A single JavaScript file which implements the control interface.
 
     * The JS file name and the control name in the configuration does not need to be the same.  The JS file name can be any meaningful name, different from the control name in the configuration.
 

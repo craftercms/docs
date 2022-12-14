@@ -23,7 +23,7 @@ Building content rich applications backed by CrafterCMS requires you use one of 
    :maxdepth: 1
    :titlesonly:
 
-   javascript-libraries
+   javascript-sdk
    graphql/index
    rest-api
    templating-api

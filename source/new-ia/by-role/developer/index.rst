@@ -1,4 +1,6 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
+
 :nosearch:
 
 ..  _newIa-developers:
@@ -27,10 +29,18 @@ The following gets you started with content modeling, content retrieval, and mor
    working-with-crafter-studios-api
    working-with-filters
    working-with-dates-groovy
+   working-with-rest-services
 
 |
 
    .. include:: /includes/scripts-templates-security.rst
+
+.. raw:: html
+
+   <hr>
+
+
+**Content Inheritance**
 
 CrafterCMS also supports content inheritance out of the box, and supports it via a pluggable mechanism
 that allows developers to augment or override what’s out of the box. Below is more information on
@@ -44,6 +54,12 @@ content inheritance:
 
 |
 
+.. raw:: html
+
+   <hr>
+
+**Content Search**
+
 To search for content in your project:
 
 .. toctree::
@@ -53,7 +69,12 @@ To search for content in your project:
    content-search
 
 |
-|
+
+.. raw:: html
+
+   <hr>
+
+**Targeting**
 
 CrafterCMS allows content targeting by providing the ability to render content adapted to specific users,
 depending on different aspects like geographical location, language, preferences, etc.
@@ -67,18 +88,32 @@ depending on different aspects like geographical location, language, preferences
 |
 |
 
+.. raw:: html
+
+   <hr>
+
+**Logs**
+
 While developing your project, there are times when you’d like to see more log details, to figure out what
 is happening and address it as needed.  Overriding the logging levels allows you to see more or less
 details depending on your needs.
+
+These logs/data may also be moved to another location if desired.
 
 .. toctree::
    :maxdepth: 1
    :titlesonly:
 
    override-logging-levels
+   resources/change-log-data-folder-location
 
+|
 
+.. raw:: html
 
+   <hr>
+
+**Developer Workflow (DevContentOps)**
 
 CrafterCMS supports content authoring, publishing and developer workflow and how to configure
 and implement it, the basic mechanics of DevContentOps.
@@ -91,8 +126,24 @@ The following looks at the developer workflow in depth:
 
    developer-workflow/index
 
+|
 
-Crafter Studio is designed as a framework that supports extension.  To extend Studio, use :ref:`plugins <newIa-plugins>`.
+.. raw:: html
+
+   <hr>
+
+**Extending Studio**
+
+While much of Crafter Studio is configurable, projects sometimes want to change or add functionality that
+does not exist in the base platform.Crafter Studio is designed as a framework that supports extensions.
+To extend Studio, use :ref:`plugins <newIa-plugins>`.
+
+.. raw:: html
+
+   <hr>
+
+**More Resources**
+
 Below is a short set of links to other documentation for technology that CrafterCMS leverages:
 
 +----------------+------------------------------+-----------------------------------------------+

@@ -422,7 +422,7 @@ In that case, you'll need to invoke ``initExperienceBuilder`` manually.
      - Optional as it defaults to :ref:`modePreview <newIa-printIfPreview>` FreeMarker context variable. When isAuthoring=false, in context editing is skipped all together. Meant for running in production.
    * - props
      - JS object string
-     - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string, the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter's JavaScript libraries initialization.
+     - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string, the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter's JavaScript SDK initialization.
 
 
 Examples
