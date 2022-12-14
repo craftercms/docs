@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:since-version: 4.0.0
+:last-updated: 4.0.3
 
 .. index:: Experience Builder, In-Context Editing, ICE
 
@@ -8,6 +8,9 @@
 ==================
 Experience Builder
 ==================
+.. version_tag::
+   :label: Since
+   :version: 4.0.0
 
 CrafterCMS' Experience Builder (XB) provides a UI layer on top of your applications that enables authors
 with in-context editing (ICE) for all the model fields defined in the content types of pages and components.
@@ -421,7 +424,7 @@ In that case, you'll need to invoke ``initExperienceBuilder`` manually.
      - Optional as it defaults to :ref:`modePreview <printIfPreview>` FreeMarker context variable. When isAuthoring=false, in context editing is skipped all together. Meant for running in production.
    * - props
      - JS object string
-     - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string, the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter's JavaScript libraries initialization.
+     - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string, the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter's JavaScript SDK initialization.
 
 When invoked, ``initExperienceBuilder`` returns an object with an ``unmount`` prop/function, which
 would indeed `unmount` XB from the current page.
