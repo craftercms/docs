@@ -113,7 +113,7 @@ displaying a pop up with your plugin host app at a time of your choosing in Stud
 
 .. tabs::
 
-  .. code-tab:: javascript Using Npm Package
+  .. code-tab:: JavaScript Using Npm Package
 
     import { showWidgetDialog } from '@craftercms/studio-ui/state/actions/dialogs';
     import { useDispatch } from 'react-redux';
@@ -131,7 +131,7 @@ displaying a pop up with your plugin host app at a time of your choosing in Stud
       })
     );
 
-  .. code-tab:: javascript Using Browser Runtime
+  .. code-tab:: JavaScript Using Browser Runtime
 
     const dispatch = craftercms.getStore().dispatch;
     dispatch({

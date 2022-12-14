@@ -353,7 +353,7 @@ REST endpoint from a browser and get a result similar to this:
 Build the UI
 ^^^^^^^^^^^^
 
-The front end experience is built with HTML, Javascript and specifically AJAX.
+The front end experience is built with HTML, JavaScript and specifically AJAX.
 
 Requirements
 ^^^^^^^^^^^^

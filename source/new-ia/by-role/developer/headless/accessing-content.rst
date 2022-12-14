@@ -39,8 +39,11 @@ There are various ways assets can be stored and accessed
    ../box/index
 
 ----------------------
-Crafter Javascript SDK
+Crafter JavaScript SDK
 ----------------------
 
 For retrieving content and navigation using APIs offered by CrafterCMS, use the
-`@craftercms/content <https://www.npmjs.com/package/@craftercms/content>`__ library npm package name
+`@craftercms/content <https://www.npmjs.com/package/@craftercms/content>`__ JavaScript SDK npm package name
+
+For more information on other CrafterCMS JavaScript SDK npm packages, see :ref:`javascript-sdk`
+
