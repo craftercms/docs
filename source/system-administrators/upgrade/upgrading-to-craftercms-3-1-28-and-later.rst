@@ -24,7 +24,7 @@ as needed, in your authoring and delivery installs:
 |
 
 .. code-block:: sh
-   :caption: *CRAFTER_HOME/bin/apache-tomcat/setenv.sh*
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/bin/setenv.sh*
 
    JAVA_OPTS="$JAVA_OPTS -Dtomcat.shutdown.port=$TOMCAT_SHUTDOWN_PORT -Dorg.owasp.esapi.SecurityConfiguration=$CRAFTER_ESAPI_DEFAULT_CONFIGURATION"
 
