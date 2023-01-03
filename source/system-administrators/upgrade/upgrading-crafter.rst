@@ -2,9 +2,9 @@
 
 .. index:: Upgrading CrafterCMS, Upgrading
 
-=====================
+====================
 Upgrading CrafterCMS
-=====================
+====================
 
 This section details how to upgrade CrafterCMS installed on a server.
 
@@ -444,9 +444,9 @@ You may now :ref:`start CrafterCMS <start-crafter-after-upgrade>` again
 
 .. _start-crafter-after-upgrade:
 
------------------
+----------------
 Start CrafterCMS
------------------
+----------------
 
 After performing the upgrade steps listed above (either by running the upgrade script from a new binary archive or, by running the upgrade script from your current install) you may now start CrafterCMS by running the ``startup.sh`` script.
 

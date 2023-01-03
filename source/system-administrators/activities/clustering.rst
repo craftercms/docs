@@ -8,7 +8,8 @@
 Studio Clustering |enterpriseOnly|
 ==================================
 
-Crafter Studio can be clustered for high-availability. Two Crafter Studio instances are clustered as primary and secondary along with a Crafter Studio Arbiter to act as arbitrator.
+Crafter Studio can be clustered for high-availability. In the image below, two Crafter Studio instances are clustered
+as primary and secondary along with a Crafter Studio Arbiter to act as arbitrator.
 
 .. image:: /_static/images/system-admin/studio-enterprise-clustering.png
    :alt: CrafterCMS - Studio Enterprise Clustering
@@ -17,8 +18,8 @@ Crafter Studio can be clustered for high-availability. Two Crafter Studio instan
 
 |
 
-When setting up a Studio cluster, a specific node needs to be started first as a
-reference point, then the other nodes (Studio and/or Arbiter) can join and form the cluster. This is known as cluster bootstrapping.
+When setting up a Studio cluster, a specific node needs to be started first as a reference point, then the other
+nodes (Studio and/or Arbiter) can join and form the cluster. This is known as cluster bootstrapping.
 Bootstrapping is the first step to introduce a node as Primary Component, which others will see as a reference
 point to sync up with.
 
@@ -33,9 +34,18 @@ existing Primary Component to join.
       you don't need to do it. When the cluster is started, the nodes synchronize through the data store to
       decide which one does the bootstrapping, and then the rest join the Primary Component.
 
-The cluster must have three nodes, two Studios and one ``Studio Arbiter``. This arbitrator functions as an odd node, to
-avoid split-brain situations and it can also provide a consistent application state snapshot, which is useful in
-making backups.
+The cluster must have three nodes at the minimum, so in case there's only two Studios in the cluster, a Studio Arbiter
+must be started too.  This arbitrator functions as an odd node, to avoid split-brain situations and it can also provide
+a consistent application state snapshot, which is useful in making backups.
+
+**A node in the cluster needs to be set as a primary publisher** before any publishing can happen.  We recommend setting
+the primary publishing node from the load balancer, if possible.  Note that a node in the cluster will not publish on boot.
+
+To set a node as the primary publishing node, issue the cluster setClusterPrimary API:
+
+   :studio_swagger_url:`#/cluster/setClusterPrimary`
+
+It is not recommended to switch the primary publishing node often.  Only switch the primary publishing node to a healthy node during a failover.
 
 ------------
 Requirements

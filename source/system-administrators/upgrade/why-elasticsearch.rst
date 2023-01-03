@@ -18,9 +18,9 @@ Starting version 3.1, the default search engine used by CrafterCMS is Elasticsea
 1. Solr doesn't cluster and scale as well as Elasticsearch and that would have held back CrafterCMS's serverless mode
 2. AWS doesn't directly support Solr (AWS CloudSearch, while based on Solr, has an AWS specific API). Whereas Elasticsearch is the same on AWS or elsewhere.
 
--------------------------------
+------------------------------
 CrafterCMS Search Architecture
--------------------------------
+------------------------------
 
 .. image:: /_static/images/search/search-arch.png
    :alt: CrafterCMS Search Architecture
