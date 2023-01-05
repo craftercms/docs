@@ -13,8 +13,7 @@ Working with Sass in CrafterCMS
 
 |
 
-CrafterCMS does not directly support Sass and compiling to CSS, but, you can use any UI toolchain you wish
-to compile to CSS.
+CrafterCMS does not directly compile Sass to CSS, but, you can use any UI toolchain you wish to compile to CSS.
 
 When working with Sass in CrafterCMS, you can do the following to compile your Sass code to CSS then commit the
 built CSS file to Studio:
@@ -30,7 +29,7 @@ built CSS file to Studio:
 
    |
 
-#. Inside the ``sources`` folder, you can yarn init a UI toolchain where you yarn add sass and
+#. Inside the ``sources`` folder, you can ``yarn init`` a UI toolchain where you ``yarn add sass`` and
    add a build script to your ``package.json``.
 
    |
@@ -51,7 +50,7 @@ built CSS file to Studio:
 
    .. code-block:: bash
 
-      git add static-assets/css/{Your css file/s}
+      git add static-assets/css/{Your css files}
       git commit -m "{Add your comment here}"
 
    |
