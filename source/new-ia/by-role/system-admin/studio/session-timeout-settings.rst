@@ -71,7 +71,7 @@ in minutes for users.
 
 |
 
-Make sure to stop and **restart Studio** after making your change.
+Make sure to stop and **restart Studio** after making your changes.
 
 ---------------------------------
 Change Session Inactivity Timeout
