@@ -51,7 +51,8 @@ Here's a summary of the session timeouts available in CrafterCMS:
        *Location:* |br|
        *CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/web.xml* |br| |br|
        The amount of time of user inactivity, tracked by Tomcat, before requiring the user to re-authenticate. |br|
-       This is overridden by the Studio session inactivity timeout.
+       This value must be greater than or equal to ``inactivityTimeout`` since that timeout can and does kick in |br|
+       before this one.
 
 
 -------------------------------
@@ -70,7 +71,7 @@ in minutes for users.
 
 |
 
-Make sure to stop and **restart your Studio** after making your change.
+Make sure to stop and **restart Studio** after making your change.
 
 ---------------------------------
 Change Session Inactivity Timeout
@@ -110,7 +111,7 @@ To change the session inactivity timeout, follow the instructions below:
 
 Remember to keep the Studio session inactivity timeout ``inactivityTimeout`` from the :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` file less than the Tomcat ``session-timeout`` from the ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/web.xml`` file.
 
-Make sure to stop and **restart your Studio after making your changes**.
+Make sure to stop and **restart Studio after making your changes**.
 
 You can also change the Studio session timeouts from the |mainMenu| **Main Menu** in Studio under ``Global Config``
 
