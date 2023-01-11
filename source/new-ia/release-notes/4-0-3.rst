@@ -31,6 +31,24 @@ Updates
      studio.cache.assets.maxAge.includeUrls: /static-assets/**,/1/plugin/file/**
      ...
 
+* Added support for previewing PDF assets in Studio  |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5735>`__ for more information
+
+* Updated Group management dashboard to sort groups alphabetically |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5742>`__ for more information
+
+* Updated Moment Timezone library  |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5855>`__ for more information
+
+* Added support for sorting assets by Name/Recently uploaded  |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5879>`__ for more information
+
+* Fixed issue with image cropper for existing images |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5889>`__ for more information+
+
+* Fixed issue with session inactivity timeout |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5889>`__ for more information
+
 Lots of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 4.0.3 Milestone <https://github.com/craftercms/craftercms/milestone/91?closed=1>`_
