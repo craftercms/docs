@@ -38,13 +38,9 @@ Repo Management
 .. toctree::
    :maxdepth: 1
 
-   repo/add-remote
    repo/pull-from-remote
    repo/push-to-remote
-   repo/rebuild-database
-   repo/remove-remote
    repo/sync-from-repo
-   repo/list-remote
 
 .. note::
   Some of the repo management operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit: https://app.swaggerhub.com/apis/craftercms/studio
