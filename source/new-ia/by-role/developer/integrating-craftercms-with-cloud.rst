@@ -1,0 +1,364 @@
+:is-up-to-date: True
+:last-updated: 4.0.3
+
+:nosearch:
+
+.. index:: Integrating CrafterCMS with cloud hosted developer platforms
+
+.. _newIa-integrating-craftercms-with-cloud-hosted-developer-platform:
+
+============================================================
+Integrating CrafterCMS with Cloud Hosted Developer Platforms
+============================================================
+
+Many development teams use cloud hosted developer platforms to assist with their development process.
+Crafter's Git based CMS supports developers working against remote repositories like GitLab, Github,
+Bitbucket, and others.
+
+.. image:: /_static/images/developer/dev-cloud-platforms/cloud-hosted-development-platform.webp
+    :alt: How-Tos - Cloud Hosted Development Platform
+    :width: 100 %
+    :align: center
+
+|
+
+By supporting this kind of architecture, CrafterCMS provides a very simple way to flow code forward from
+a developer and her team all the way up through the CI/CD process to production.  We also support a
+very simple way for any developer or any environment to easily update itself with the latest content
+from production.
+
+Below are details on how to create a new project in your cloud hosted developer platform and then start a
+new project in CrafterCMS in a way that connects to your cloud hosted developer platform as an upstream
+remote repository.
+
+---------------------------------------------------------------------------
+Create a New Project and Connect it to Your Cloud Hosted Developer Platform
+---------------------------------------------------------------------------
+
+We'll first create a project in your cloud hosted developer platform of choice, then we'll create a project
+in Studio, and link the two projects.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 1: Create a Project in Your Cloud Hosted Developer Platform
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The first step is to create a project your choice of cloud hosted developer platform.  Here, we'll show
+examples on how to create a project in GitHub, GitLab and BitBucket
+
+.. tabs::
+   .. tab:: GitHub
+
+      .. image:: /_static/images/developer/dev-cloud-platforms/craftercms-github-create-repo.webp
+         :alt: How-Tos - Create a project in GitHub
+         :width: 70 %
+         :align: center
+
+      **Figure 1: Create a project in GitHub**
+
+      #. Select ``Blank Project`` to create a bare project
+      #. Enter your project name
+      #. Provide a project description
+      #. Choose your security level
+      #. Do not initialize the repository with a readme
+      #. Click ``Create repository``
+
+      Once your repository is created you will see a screen similar to the one below.  You want to make
+      note of the Git URL for the project.  You will need this URL in the next step.
+
+      .. image:: /_static/images/developer/dev-cloud-platforms/craftercms-github-create-repo-url.webp
+         :alt: How-Tos - New project in GitHub
+         :width: 70 %
+         :align: center
+
+      **Figure 2: New Project in GitHub**
+
+   .. tab:: GitLab
+
+      .. image:: /_static/images/developer/dev-cloud-platforms/craftercms-gitlab-create-repo.webp
+         :alt: How-Tos - Create a project in GitLab
+         :width: 70 %
+         :align: center
+
+      **Figure 1: Create a project in GitLab**
+
+      #. Select ``Blank Project`` to create a bare project
+      #. Enter your project name
+      #. Provide a project description
+      #. Choose your security level
+      #. Click ``Create project``
+
+      Once your repository is created you will see a screen similar to the one below.  You want to
+      make note of the Git URL for the project.  You will need this URL in the next step.
+
+      .. image:: /_static/images/developer/dev-cloud-platforms/craftercms-gitlab-create-repo-url.webp
+         :alt: How-Tos - New project in GitLab
+         :width: 70 %
+         :align: center
+
+      **Figure 2: New Project in GitLab**
+
+
+   .. tab:: BitBucket
+
+      .. image:: /_static/images/developer/dev-cloud-platforms/crafter-cms-bitbucket-create-repo.webp
+         :alt: How-Tos - Create a project in BitBucket
+         :width: 70 %
+         :align: center
+
+      **Figure 1: Create a project in BitBucket**
+
+      #. Create project
+      #. Enter your project name
+      #. Choose your security level
+      #. Do not initialize the repository with a readme
+      #. Click ``Create repository``
+
+      Once your repository is created you will see a screen similar to the one below.  You want to
+      make note of the Git URL for the project.  You will need this URL in the next step.
+
+      .. image:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-create-bare-repo.webp
+         :alt: How-Tos - New project in BitBucket
+         :width: 70 %
+         :align: center
+
+      **Figure 2: New Project in BitBucket**
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 2: Create Your Project In Crafter Studio
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Next, you want to log in to Crafter Studio as the ``admin`` user. The ``admin`` user has the rights to create
+new projects.  Click ``Create Project``.
+
+.. image:: /_static/images/developer/dev-cloud-platforms/create-project.webp
+   :alt: How-Tos - Project screen in Crafter Studio
+   :width: 70 %
+   :align: center
+
+**Figure 3: Create project via Crafter Studio**
+
+Clicking ``Create Project`` will present you with the ``Create Project`` dialog. This dialog changes depending
+on what you choose. Below is an example of the dialog filled out in a way that creates your project locally.
+We will then add your repository in a cloud platform of your choice as its upstream remote and push the
+initial project contents to the upstream repository.
+
+Let’s walk through each part of the dialog:
+
+.. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-1.webp
+   :alt: Developer How Tos - Create Project Dialog Walk Through step 1
+   :width: 70 %
+   :align: center
+
+1. The first thing you need to do is to choose your blueprint. There are several out of the box blueprints
+   provided by default. Choose one of these or one of your own. For our example, we’ll choose the
+   ``Website Editorial`` blueprint.
+
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-2.webp
+      :alt: Developer How Tos - Create Project Dialog Walk Through step 2
+      :width: 70 %
+      :align: center
+
+2. The next thing to do is give your project an ID. The ID itself doesn’t matter in a sense. It doesn’t
+   need to match anything per se, technically speaking the only requirement is that it’s unique. That said,
+   it’s a best practice to provide an ID that is meaningful/recognizable to the team. If your website is
+   called ``FreshFlowers.com`` a good ID might be ``freshflowerscom``.
+
+   Click on the **Review** button, then finally  click on the **Create Project** button to create your project.
+   CrafterCMS will create the local repositories, search index and internal data structures required to support
+   the project and install the blueprint.  Your project should be created in a short while.
+
+3. Once your project is created, the next step is to add a remote repository to your newly created project.
+   Open the **Sidebar** then click on **Project Tools** -> **Git**, then click on the **New Remote** button
+   on the top right.
+
+   This will open up a dialog where we can fill in all the information for our remote repository.
+
+   .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-3.webp
+      :alt: Create Repository dialog to fill in information of remote repository being added to the project
+      :width: 70 %
+      :align: center
+
+   |
+
+4. In the **Remote Git Repository Name** field you want to provide a repository name that makes sense. It’s
+   common to use “origin” or “upstream.”
+
+5. In the **Remote Git Repository URL** field you must provide the link to the Git repository discussed in
+   **Step #1**, e.g. ``https://github.com/myuser/mysweetdotcom.git``
+
+6. Provide your credentials based on the authentication method selected.  For example, if we chose
+   ``Username & Password`` as the authentication method, we'll need to fill in **Username** and **Password**
+
+      .. note::
+         .. include:: /includes/setup-ssh-keys.rst
+
+7. Once you're satisfied with your entries for your remote repository, click on the **Create** button.
+   Once complete we can now connect to the upstream and push the contents of the Sandbox repository to
+   the remote by clicking on the ``Push`` button (button with the up arrow).
+
+   .. tabs::
+      .. tab:: GitHub
+
+         .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-4.webp
+            :alt: Remotes screen displaying newly added remote repository to project
+            :width: 90 %
+            :align: center
+
+         **Figure:: Project is created and a remote repository added**
+
+      .. tab:: GitLab
+
+         .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-4-gitlab.webp
+            :alt: Remotes screen displaying newly added remote repository to project
+            :width: 90 %
+            :align: center
+
+         **Figure:: Project is created and a remote repository added**
+
+      .. tab:: BitBucket
+
+         .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-4-bitbucket.webp
+            :alt: Remotes screen displaying newly added remote repository to project
+            :width: 90 %
+            :align: center
+
+         **Figure:: Project is created and a remote repository added**
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 3: Check Your Cloud Hosted Developer Platform Project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Finally we'll check our cloud hosted developer platform to make sure our project is in the repository.
+
+.. tabs::
+   .. tab:: GitHub
+
+      Go back to your Github project and refresh the screen.  You will see the contents of your
+      project in the repository.
+
+      .. image:: /_static/images/developer/dev-cloud-platforms/craftercms-github-project-created-syncd.webp
+         :alt: How-Tos - Your project in GitHub
+         :width: 80 %
+         :align: center
+
+      Your project is there!
+
+   .. tab:: GitLab
+
+      Go back to your GitLab project and refresh the screen.  You will see the contents of your
+      project in the repository.
+
+      .. image:: /_static/images/developer/dev-cloud-platforms/craftercms-gitlab-project-created-syncd.webp
+         :alt: How-Tos - Your project in GitLab
+         :width: 70 %
+         :align: center
+
+      Your project is there!
+
+   .. tab:: BitBucket
+
+      Go back to your BitBucket project and refresh the screen.  You will see the contents of your
+      project in the repository.
+
+      .. image:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-repo-created.webp
+         :alt: Developer How-Tos - BitBucket project created
+         :width: 70 %
+         :align: center
+
+      Your project is there!
+
+----------------------------------------------
+Pushing and Pulling from the Remote Repository
+----------------------------------------------
+
+Crafter Studio helps you manage and interact with your remote repositories via the user interface and via API.
+Using Crafter Studio’s git console, you can add any remotes to the project you like and sync with them via
+pull and push operations at any time.
+
+.. tabs::
+   .. tab:: GitHub
+
+      .. image:: /_static/images/developer/dev-cloud-platforms/craftercms-github-remotes.webp
+         :alt: Developer How-Tos - Pushing and Pulling from the Remote Repository
+         :width: 100 %
+         :align: center
+
+   .. tab:: GitLab
+
+      .. image:: /_static/images/developer/dev-cloud-platforms/craftercms-gitlab-remotes.webp
+         :alt: How-Tos - Pushing and Pulling from the Remote Repository
+         :width: 100 %
+         :align: center
+
+   .. tab:: Bitbucket
+
+      .. image:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-remotes.webp
+         :alt: Developer How-Tos - Pushing and Pulling from the Remote Repository
+         :width: 100 %
+         :align: center
+
+Now you are ready to set up your entire development process and CI/CD automation.
+
+--------------------------------------------------------------------
+Creating a Project in CrafterCMS Based on an Existing GitHub Project
+--------------------------------------------------------------------
+
+Let’s consider for a moment that you’re a new developer joining the team. The topology above is already set up
+and you just want to get a local environment up and going. Simple. Follow these instructions.
+
+1. Install Crafter Studio locally (`Binaries download <https://craftercms.com/downloads>`_)
+2. Login as Admin
+3. Click Create Project
+
+.. figure:: /_static/images/developer/workflow/create-project-based-on-remote-1.webp
+   :alt: Developer How Tos - Setting up to work locally against the upstream
+   :width: 70 %
+   :align: center
+
+|
+
+4. Fill out the Create Project Form as in a similar fashion described in Step 2 above, except this time,
+   instead of selecting a blueprint, select the **Remote Git Repository** to create your project based
+   on an existing upstream repository.  This can be your team’s branch or your own fork.
+   The exact workflow is up to you.
+
+   .. tabs::
+      .. tab:: GitHub
+
+         .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-1.webp
+            :alt: Developer How Tos - Setting up to work locally against the upstream
+            :width: 70 %
+            :align: center
+
+         |
+
+         .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-github-clone-2.webp
+            :alt: Developer How Tos - Setting up to work locally against the upstream review entries
+            :width: 70 %
+            :align: center
+
+      .. tab:: GitLab
+
+         .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-gitlab-clone-1.webp
+            :alt: Developer How Tos - Setting up to work locally against the upstream
+            :width: 70 %
+            :align: center
+
+         |
+
+         .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-gitlab-clone-2.webp
+            :alt: Developer How Tos - Setting up to work locally against the upstream review entries
+            :width: 70 %
+            :align: center
+
+      .. tab:: BitBucket
+
+         .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-1.webp
+            :alt: Developer How Tos - Setting up to work locally against the upstream
+            :width: 70 %
+            :align: center
+
+         |
+
+         .. figure:: /_static/images/developer/dev-cloud-platforms/craftercms-bitbucket-clone-2.webp
+            :alt: Developer How Tos - Setting up to work locally against the upstream review entries
+            :width: 70 %
+            :align: center

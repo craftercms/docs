@@ -20,17 +20,12 @@ for your application to retrieve said content), and how to access content items 
 The following gets you started with content modeling, content retrieval, and more:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
 
    headless/index
    templated/index
    extensions/index
-   working-with-crafter-studios-api
-   working-with-filters
-   working-with-dates-groovy
-   working-with-rest-services
-   working-with-sass
 
 |
 
@@ -114,6 +109,38 @@ These logs/data may also be moved to another location if desired.
 
    <hr>
 
+**Resources**
+
+Here are some articles to help you work in CrafterCMS, such as
+interacting with Crafter Studio APIs, working with dates, etc.
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   working-with-crafter-studios-api
+   working-with-filters
+   working-with-dates-groovy
+   working-with-rest-services
+   working-with-sass
+   loading-content
+
+For developers using cloud hosted development platforms such as ``GitHub``, ``GitLab``, etc.,
+CrafterCMS supports developers working against cloud hosted development platforms and below is
+how to set it up:
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   integrating-craftercms-with-cloud
+
+|
+
+.. raw:: html
+
+   <hr>
+
 **Developer Workflow (DevContentOps)**
 
 CrafterCMS supports content authoring, publishing and developer workflow and how to configure
@@ -136,7 +163,7 @@ The following looks at the developer workflow in depth:
 **Extending Studio**
 
 While much of Crafter Studio is configurable, projects sometimes want to change or add functionality that
-does not exist in the base platform.Crafter Studio is designed as a framework that supports extensions.
+does not exist in the base platform.  Crafter Studio is designed as a framework that supports extensions.
 To extend Studio, use :ref:`plugins <newIa-plugins>`.
 
 .. raw:: html
