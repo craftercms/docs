@@ -38,8 +38,6 @@ Repo Management
 .. toctree::
    :maxdepth: 1
 
-   repo/pull-from-remote
-   repo/push-to-remote
    repo/sync-from-repo
 
 .. note::
