@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.2
+:last-updated: 4.0.3
 
 .. index:: Simple Authoring with a Single Instance Kubernetes Deployment, Example Kubernetes deployment of simple Authoring with a single instance
 
@@ -9,7 +9,7 @@
 Simple Authoring With a Single Instance Kubernetes Deployment
 =============================================================
 
-Crafter CMS has an example Kubernetes deployment for an Authoring with a single instance, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/master/authoring/cluster. This guide covers how to install this example in a Kubernetes cluster.
+CrafterCMS has an example Kubernetes deployment for an Authoring with a single instance, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/master/authoring/cluster. This guide covers how to install this example in a Kubernetes cluster.
 
 .. important::
    This guide assumes you have a working understanding of Kubernetes
@@ -36,7 +36,7 @@ and key for authentication and provide them as Kubernetes Secrets to the Pods.
 Choose if SSH/HTTPS as Git protocol
 -----------------------------------
 
-Deployer containers in Delivery environments can use either SSH or HTTPS to pull changes from the published repositories in Authoring. Kubernetes configuration uunder ``kubernetes-deployments/authoring/simple`` that's only pertinent to a certain 
+Deployer containers in Delivery environments can use either SSH or HTTPS to pull changes from the published repositories in Authoring. Kubernetes configuration under ``kubernetes-deployments/authoring/simple`` that's only pertinent to a certain 
 protocol will start with the comment ``Uncomment if using Git (HTTPS|SSH)``. Make sure only the configuration lines corresponding to the protocol you decide to use are uncommented, and comment the configuration related to the other protocol.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -72,7 +72,7 @@ Create the ``craftercms`` namespace if it doesn't exist yet.
       ➜  kubectl create namespace craftercms
       namespace/craftercms created
 
-If using ``minikube``, pre-pull the Authoring and Elasticsearch images to avoid ``context deadline exceeded`` errors (change ``CRAFTERCMS_VERSION`` for the actual Crafter version, e.g. 4.0.2).
+If using ``minikube``, pre-pull the Authoring and Elasticsearch images to avoid ``context deadline exceeded`` errors (change ``CRAFTERCMS_VERSION`` for the actual CrafterCMS version, e.g. 4.0.2).
 
    .. code-block:: bash
 

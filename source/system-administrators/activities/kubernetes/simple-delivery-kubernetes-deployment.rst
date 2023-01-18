@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.2
+:last-updated: 4.0.3
 
 .. index:: Simple Delivery Kubernetes Deployment, Example Kubernetes deployment of simple Delivery
 
@@ -9,7 +9,7 @@
 Simple Delivery Kubernetes Deployment
 =====================================
 
-Crafter CMS has an example Kubernetes deployment for a Delivery with a single instance, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/master/delivery/cluster. This guide covers how to install this example in a Kubernetes cluster.
+CrafterCMS has an example Kubernetes deployment for a Delivery with a single instance, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/master/delivery/cluster. This guide covers how to install this example in a Kubernetes cluster.
 
 .. important::
    This guide assumes you have a working understanding of Kubernetes
@@ -23,7 +23,7 @@ You need to have a Kubernetes cluster, and the ``kubectl`` command-line tool mus
 The nodes in your cluster should at least have 4 CPUs and 16 GB of space, to avoid performance issues and out of memory errors. In Minikube, to start a node with this characteristics, you can run a command similar to the following:
 ``minikube start --cpus 4 --memory 16384``.
 
-In addition to that, you need tan Authoring pod with a site published to ``live`` to pull site content from.
+In addition to that, you need an Authoring pod with a project published to ``live`` to pull site content from.
 
 .. important::
    If you need to setup an Authoring environment, refer to :ref:`setup-simple-authoring-with-kubernetes-deployment`. **DO NOT** use :ref:`setup-studio-clustering-with-kubernetes-deployment`, which is not compatible with this guide.
@@ -42,7 +42,7 @@ If you previously setup Authoring with Git HTTPS access:
 
 * Copy the ``server.crt`` file from ``kubernetes-deployments/authoring/simple/resources/secrets/git-https-server`` to ``kubernetes-deployments/delivery/simple/resources/secrets/git-https-server``
 
-Please also make sure that you uncommnent the Kubernetes configuration lines under ``kubernetes-deployments/delivery/simple`` that start with ``Uncomment if using the Git (HTTPS|SSH) server`` (comment the configuration related to the other protocol).
+Please also make sure that you uncomment the Kubernetes configuration lines under ``kubernetes-deployments/delivery/simple`` that start with ``Uncomment if using the Git (HTTPS|SSH) server`` (comment the configuration related to the other protocol).
 
 --------------------
 Start the Deployment
@@ -102,7 +102,7 @@ For example: ``kubectl logs -n craftercms -f -c tomcat authoring-0``
 Bootstrap the Site in Delivery
 ------------------------------
 
-You will need to run the ``init-site.sh`` in order to setup the site in Delivery. Either of the following commands will create the Deployer site target and create the index in Elasticsearch.
+You will need to run the ``init-site.sh`` in order to setup the project in Delivery. Either of the following commands will create the Deployer site target and create the index in Elasticsearch.
 
 If Authoring is running with the Git SSH server container:
 
@@ -117,7 +117,7 @@ If Authoring is running with the Git SSH server container:
       SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
       Target created successfully
 
-   .. include:: /includes/ssh-private-key.rst
+  .. include:: /includes/ssh-private-key.rst
 
 If Authoring is running with the Git HTTPS server container:
 
@@ -135,9 +135,9 @@ If Authoring is running with the Git HTTPS server container:
    .. important::
       The example configuration files include the Git HTTPS credentials in plain text, for simplicity. If setting up Delivery in production, make sure to properly create the credentials as Secrets.
 
-After a minute or two, the Deployer should have pulled the site content from Authoring (you can check it by getting the Delivery Deployer log: ``kubectl logs -n craftercms -c deployer delivery-0``).
+After a minute or two, the Deployer should have pulled the project content from Authoring (you can check it by getting the Delivery Deployer log: ``kubectl logs -n craftercms -c deployer delivery-0``).
 
-You can now access the site in Delivery, by forwarding a local port to port 8080 of the pod, with the ``kubectl port-forward`` command:
+You can now access the project in Delivery, by forwarding a local port to port 8080 of the pod, with the ``kubectl port-forward`` command:
 
    .. code-block:: bash
 
@@ -151,7 +151,7 @@ Here's an example of forwarding local port 9080 to the 8080 port of the ``delive
       Forwarding from 127.0.0.1:9080 -> 8080
       Forwarding from [::1]:9080 -> 8080
 
-We can now view the site in Delivery from the pod by entering ``localhost:9080?crafterSite=mysite`` in your browser.
+We can now view the project in Delivery from the pod by entering ``localhost:9080?crafterSite=mysite`` in your browser.
 
 .. image:: /_static/images/system-admin/simple-delivery-site-in-browser.webp
    :alt: Simple Delivery Kubernetes deployments - Access site in delivery
