@@ -1,7 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.3
-
-:nosearch:
+:last-updated: 4.0.2
 
 .. index:: Simple Delivery Kubernetes Deployment, Example Kubernetes deployment of simple Delivery
 
@@ -11,243 +9,159 @@
 Simple Delivery Kubernetes Deployment
 =====================================
 
-A Kubernetes deployment describes an applications life cycle, e.g. images to be used, the number of pods, etc. It creates pods based on a specified template.  CrafterCMS has an example Kubernetes deployment for a simple delivery.  In this section, we'll take a look at this example Kubernetes deployment.
+Crafter CMS has an example Kubernetes deployment for a Delivery with a single instance, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/master/delivery/cluster. This guide covers how to install this example in a Kubernetes cluster.
 
-.. TODO: Update screens and text once https://github.com/craftercms/craftercms/issues/5285 is done
-
-|
-
-   .. note::
-      This section needs an update once the kubernetes deployment files are updated `here <https://github.com/craftercms/craftercms/issues/5285>`__
+.. important::
+   This guide assumes you have a working understanding of Kubernetes
 
 ------------
 Requirements
 ------------
 
-You need to have a Kubernetes cluster, and the ``kubectl`` command-line tool must be configured to communicate with your
-cluster. If you do not already have a cluster, you can create one by using Minikube:
-https://github.com/kubernetes/minikube.
+You need to have a Kubernetes cluster, and the ``kubectl`` command-line tool must be configured to communicate with your cluster. If you do not already have a cluster, you can create one by using Minikube: https://github.com/kubernetes/minikube.
 
-The nodes in your cluster should at least have 4 CPUs and 8 GB of space, to avoid performance issues and out of memory
-errors. In Minikube, to start a node with this characteristics, you can run a command similar to the following:
-``minikube start --cpus 4 --memory 8192``.
+The nodes in your cluster should at least have 4 CPUs and 16 GB of space, to avoid performance issues and out of memory errors. In Minikube, to start a node with this characteristics, you can run a command similar to the following:
+``minikube start --cpus 4 --memory 16384``.
 
-In addition to that, we need the following:
+In addition to that, you need tan Authoring pod with a site published to ``live`` to pull site content from.
 
-* `k9s <https://k9scli.io/>`__ for viewing the status of the pods, the logs, etc
-* An Authoring pod with a project published to ``live`` to pull project content from.
-  To setup an authoring pod, you can follow  :ref:`newIa-setup-simple-authoring-with-kubernetes-deployment` or :ref:`newIa-setup-studio-clustering-with-kubernetes-deployment`.  Take note of the keys used in your Authoring setup.  We will be using the same ssh keys for our simple delivery setup.
-  For this guide, we will use a simple Authoring with a single instance Kubernetes deployment to pull project content from.
-
-* Kubernetes deployment files for CrafterCMS Simple Delivery, found here: https://github.com/craftercms/kubernetes-deployments/
-
-     .. code-block:: sh
-
-        ➜ git clone https://github.com/craftercms/kubernetes-deployments.git
-
-  The deployment files that we need for our example is under the ``kubernetes-deployments/delivery/simple`` folder::
-
-      kubernetes-deployments/delivery/simple
-         resources/
-            config/
-               studio/
-                  studio-config-override.yaml
-            secrets/
-               .ssh/
-                  config
-         authoring-deployment.yaml
-         kustomization.yaml
-
-  |
+.. important::
+   If you need to setup an Authoring environment, refer to :ref:`setup-simple-authoring-with-kubernetes-deployment`. **DO NOT** use :ref:`setup-studio-clustering-with-kubernetes-deployment`, which is not compatible with this guide.
 
 ------------------------
 Setup Kubernetes Secrets
 ------------------------
 
-From https://kubernetes.io/docs/concepts/configuration/secret/
+The deployment files cloned from https://github.com/craftercms/kubernetes-deployments/ have a folder set aside for placing confidential information, ``kubernetes-deployments/delivery/simple/resources/secrets``.
 
-.. code-block:: text
+If you previously setup Authoring with Git SSH access:
 
-   "Kubernetes Secrets let you store and manage sensitive information, such as passwords, OAuth tokens, and ssh keys."
+* Copy the ``id_rsa`` and ``id_rsa.pub`` files from ``kubernetes-deployments/authoring/simple/resources/secrets/git-ssh-server`` to ``kubernetes-deployments/delivery/simple/resources/secrets/git-ssh-server``
 
-|
+If you previously setup Authoring with Git HTTPS access:
 
-The deployment files cloned from https://github.com/craftercms/kubernetes-deployments/ has a folder set aside for placing confidential information, ``kubernetes-deployments/delivery/simple/resources/secrets``
+* Copy the ``server.crt`` file from ``kubernetes-deployments/authoring/simple/resources/secrets/git-https-server`` to ``kubernetes-deployments/delivery/simple/resources/secrets/git-https-server``
 
-We'll need SSH access to the Authoring pod/s to pull project content. We'll be copying over the contents of the ``.ssh`` folder of your Authoring setup.
-
-The guides :ref:`newIa-setup-simple-authoring-with-kubernetes-deployment` and :ref:`newIa-setup-studio-clustering-with-kubernetes-deployment` have details on how to setup an Authoring pod, where an SSH public/private key pair for authentication is generated and provided as a Kubernetes secret to the pods.
-
-First, we'll go to the ``.ssh`` folder of our simple delivery deployment, then copy over the contents of the ``.ssh`` folder in the Authoring setup.
-
-   .. code-block:: bash
-
-      ➜ cd kubernetes-deployments/delivery/simple/resources/secrets/.ssh
-      ➜ cp kubernetes-deployments/authoring/simple/resources/secrets/.ssh/* .
+Please also make sure that you uncommnent the Kubernetes configuration lines under ``kubernetes-deployments/delivery/simple`` that start with ``Uncomment if using the Git (HTTPS|SSH) server`` (comment the configuration related to the other protocol).
 
 --------------------
 Start the Deployment
 --------------------
+
+Create the ``craftercms`` namespace if it doesn't exist yet.
+
+   .. code-block:: bash
+
+      ➜  kubectl create namespace craftercms
+      namespace/craftercms created
+
+   |
+
+If using ``minikube``, pre-pull the Authoring and Elasticsearch images to avoid ``context deadline exceeded`` errors (change ``CRAFTERCMS_VERSION`` for the actual Crafter version, e.g. 4.0.2).
+
+   .. code-block:: bash
+
+      ➜  minikube image pull craftercms/delivery_tomcat:4.0.2
+      ➜  minikube image pull docker.elastic.co/elasticsearch/elasticsearch:7.17.1
+
+   |
 
 Go to ``kubernetes-deployments/delivery/simple`` then run ``kubectl apply -k .``
 
    .. code-block:: bash
 
       ➜  kubectl apply -k .
-      secret/delivery-ssh-keys-868d5g494k created
-      service/delivery-service-headless created
+      kubectl apply -k .
+      secret/ssh-keys-h5244t449m created
+      service/delivery-svc-headless created
       statefulset.apps/delivery created
-
-Check the status of the deployments by running ``kubectl get deployments``, and the status of the Pods by running ``kubectl get pods``.  Here's a sample output when running ``kubectl get pods``:
-
-   .. code-block:: bash
-
-      ➜  simple git:(support/3.1.x) kubectl get pods
-      NAME          READY   STATUS    RESTARTS   AGE
-      authoring-0   4/4     Running   0          116m
-      delivery-0    3/3     Running   0          8m55s
-      delivery-1    3/3     Running   0          6m13s
-
-Note that for the sample simple delivery Kubernetes deployment, two delivery pods are setup and for the simple authoring deployment, only one authoring pod is setup.
-
-Another way of checking the status of the deployments/pods/etc. is by running ``k9s`` on the command line, which will open up a text-based user interface:
-
-   .. code-block:: bash
-
-      ➜ k9s
 
    |
 
-.. image:: /_static/images/system-admin/simple-delivery-k9s-start.webp
-   :alt: CrafterCMS Simple Delivery Kubernetes Deployment
-   :width: 100%
-   :align: center
+Check the status of the Delivery StatefulSet by running ``kubectl get -n craftercms deployments``, and the status of the Pods by running ``kubectl get -n craftercms pods``.
 
-|
+   .. code-block:: bash
 
-Once it comes up, you will see the new pod created.
+      ➜  kubectl get -n craftercms statefulsets
+      NAME        READY   AGE
+      authoring   1/1     20m
+      delivery    1/1     2m10s
+   
+   |
+
+   .. code-block:: bash
+
+      ➜  kubectl get -n craftercms pods 
+      NAME          READY   STATUS    RESTARTS   AGE
+      authoring-0   4/4     Running   0          21m
+      delivery-0    3/3     Running   0          3m25s
+
+   |
+
+Once it comes up, you will see the new pod in ``RUNNING`` status, with 3 containers ``READY``.
 
 You can tail the logs of the ``tomcat`` and ``deployer`` containers, with the ``kubectl`` command:
 
    .. code-block:: bash
 
-      kubectl logs -f -c CONTAINER_NAME POD_NAME
+      kubectl logs -n craftercms -f -c CONTAINER_NAME POD_NAME
 
-For example: ``kubectl logs -f -c tomcat delivery-0``
+For example: ``kubectl logs -n craftercms -f -c tomcat authoring-0``
 
-To view the logs in a pod using k9s, from the ``Pods`` view, select the pod you would like to view the logs of using your keyboard arrow keys, then hit enter to view the containers in the pod.
+------------------------------
+Bootstrap the Site in Delivery
+------------------------------
 
-.. image:: /_static/images/system-admin/simple-delivery-k9s-containers.webp
-   :alt: Simple Delivery Kubernetes deployments - k9s container views
-   :width: 100%
-   :align: center
+You will need to run the ``init-site.sh`` in order to setup the site in Delivery. Either of the following commands will create the Deployer site target and create the index in Elasticsearch.
 
-|
+If Authoring is running with the Git SSH server container:
 
-We'll take a look at the tomcat logs, so, we'll move the cursor to the ``tomcat`` container, then press the letter ``l``.
-
-.. image:: /_static/images/system-admin/simple-delivery-k9s-logs.webp
-   :alt: Simple Delivery Kubernetes deployments - k9s log views
-   :width: 100%
-   :align: center
-
-|
-
----------------------------------
-Bootstrap the Project in Delivery
----------------------------------
-Now you need to setup the project in Delivery. If you don’t know the name of the Delivery Pod yet, run ``kubectl get pods`` and check for the one that has a name like delivery-XX. Then, run the following command (remember to replace the pod name and the project name with the actual values):
+* Run ``kubectl exec -n craftercms -it delivery-0 --container deployer -- gosu crafter ./bin/init-site.sh -k /opt/crafter/data/ssh/id_rsa SITE_NAME ssh://authoring-svc-headless/opt/crafter/data/repos/sites/SITE_NAME/published``
 
    .. code-block:: bash
 
-      ➜ kubectl exec -it DELIVERY_POD_NAME --container deployer -- gosu crafter ./bin/init-site.sh SITE_NAME ssh://authoring-service/opt/crafter/data/repos/sites/SITE_NAME/published
-
-This command will create the Deployer project target and create the index in Elasticsearch.
-
-.. include:: /includes/ssh-private-key.rst
-
-After a minute or two, the Deployer should have pulled the project content from Authoring (you can check it by getting the Delivery Deployer log: ``kubectl logs -c deployer DELIVERY_POD_NAME``).
-
-Here's the output when we setup the project in the ``delivery-1`` pod:
-
-   .. code-block:: bash
-
-      ➜  kubectl exec -it delivery-1 --container deployer -- gosu crafter ./bin/init-site.sh mysite ssh://authoring-service/opt/crafter/data/repos/sites/mysite/published
-
+      ➜ kubectl exec -n craftercms -it delivery-0 --container deployer -- gosu crafter ./bin/init-site.sh -k /opt/crafter/data/ssh/id_rsa mysite ssh://authoring-svc-headless/opt/crafter/data/repos/sites/mysite/published
       Creating Deployer Target...
+      SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+      SLF4J: Defaulting to no-operation (NOP) logger implementation
+      SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
       Target created successfully
 
-   |
+  .. include:: /includes/ssh-private-key.rst
 
-To setup the project in Delivery using ``k9s``, from the ``Pods`` view, select the Delivery pod you would like to setup using your keyboard arrow keys, then hit enter to view the containers in the pod.  Move the cursor to the ``deployer`` container, then press ``s`` to open a shell to the deployer.
+If Authoring is running with the Git HTTPS server container:
 
-.. image:: /_static/images/system-admin/simple-delivery-k9s-deployer-shell.webp
-   :alt: Simple Delivery Kubernetes deployments - k9s deployer shell opened
-   :width: 100%
-   :align: center
-
-|
-
-We'll switch to user ``crafter`` first by  running the command ``gosu crafter bash``
+* Run ``kubectl exec -n craftercms -it delivery-0 --container deployer -- gosu crafter ./bin/init-site.sh -u crafter -p crafter SITE_NAME https://authoring-svc-headless/repos/sites/SITE_NAME/published``
 
    .. code-block:: bash
 
-      <<K9s-Shell>> Pod: default/delivery-0 | Container: deployer
-      root@delivery-0:/opt/crafter# gosu crafter bash
-      crafter@delivery-0:/opt/crafter$
-
-Next, we'll run the ``init-site.sh`` script to create the deployer target.  Go to the ``bin`` folder, then run ``init-site.sh SITENAME  ssh://authoring-service/opt/crafter/data/repos/sites/SITENAME/published``
-
-   .. code-block:: bash
-
-      crafter@delivery-0:/opt/crafter$ cd bin
-      crafter@delivery-0:/opt/crafter/bin$ ./init-site.sh mysite ssh://authoring-service/opt/crafter/data/repos/sites/mysite/published
+      ➜ kubectl exec -n craftercms -it delivery-0 --container deployer -- gosu crafter ./bin/init-site.sh -u crafter -p crafter mysite https://authoring-svc-headless/repos/sites/mysite/published
       Creating Deployer Target...
+      SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+      SLF4J: Defaulting to no-operation (NOP) logger implementation
+      SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
       Target created successfully
 
-.. include:: /includes/ssh-private-key.rst
+   .. important::
+      The example configuration files include the Git HTTPS credentials in plain text, for simplicity. If setting up Delivery in production, make sure to properly create the credentials as Secrets.
 
-You can check the deployer logs to verify that the target has been created. From the ``Pods`` view, select the Delivery pod you're working on, then hit enter to view the containers in the pod. Move the cursor to the ``deployer`` container, then press ``l`` to open the deployer logs.
+After a minute or two, the Deployer should have pulled the site content from Authoring (you can check it by getting the Delivery Deployer log: ``kubectl logs -n craftercms -c deployer delivery-0``).
 
-.. image:: /_static/images/system-admin/simple-delivery-k9s-deployer-logs.webp
-   :alt: Simple Delivery Kubernetes deployments - k9s deployer log opened
-   :width: 100%
-   :align: center
-
-|
-
-We can now access the project in Delivery.
-
-To be able to access applications in Kubernetes, we need to use port forwarding.  To access the project in Delivery, we will forward a local port to the tomcat port in the pod.  We will forward a local port to the ``tomcat`` container in the pod.
-
-``kubectl port-forward`` allows using resource name, such as a pod name, to select a matching pod to port forward to.  To forward a local port to a port of a pod, run the following:
+You can now access the site in Delivery, by forwarding a local port to port 8080 of the pod, with the ``kubectl port-forward`` command:
 
    .. code-block:: bash
 
-      kubectl port-forward pods/POD_NAME LOCAL_PORT:POD_PORT
+      kubectl port-forward -n craftercms pods/POD_NAME LOCAL_PORT:POD_PORT
 
-Here's an example forwarding local port ``9081`` to the tomcat port in the ``delivery-1`` pod:
+Here's an example of forwarding local port 9080 to the 8080 port of the ``delivery-0`` pod:
 
    .. code-block:: bash
 
-      ➜  kubectl port-forward pods/delivery-1 9081:8080
-      Forwarding from 127.0.0.1:9081 -> 8080
-      Forwarding from [::1]:9081 -> 8080
+      ➜  kubectl port-forward -n craftercms pods/delivery-0 9080:8080
+      Forwarding from 127.0.0.1:9080 -> 8080
+      Forwarding from [::1]:9080 -> 8080
 
-   |
-
-To forward a local port to the tomcat port in a pod using k9s, from the ``Pods`` view, select the pod you would like to port forward to using your keyboard arrow keys, then hit enter to view the containers in the pod.  We'll forward the local port to the tomcat port, so, we'll move the cursor to the ``tomcat`` container, then press ``<shift> + f``.  A dialog  will then open where you can enter the desired local port and address to use for port forwarding
-
-.. image:: /_static/images/system-admin/simple-delivery-k9s-port-forward.webp
-   :alt: Simple Delivery Kubernetes deployments - k9s port forward
-   :width: 100%
-   :align: center
-
-|
-
-Change the value of ``Local Port`` to your desired value.  For our example, we're using local port ``9080`` for the ``delivery-0`` pod.  After making desired changes, move the cursor to ``Ok`` then hit the enter key to save your changes.
-
-We can now view the project in Delivery from the pod by entering ``localhost:9080?crafterSite=mysite`` or ``localhost:9081?crafterSite=mysite`` in your browser.
+We can now view the site in Delivery from the pod by entering ``localhost:9080?crafterSite=mysite`` in your browser.
 
 .. image:: /_static/images/system-admin/simple-delivery-site-in-browser.webp
    :alt: Simple Delivery Kubernetes deployments - Access site in delivery
@@ -256,4 +170,4 @@ We can now view the project in Delivery from the pod by entering ``localhost:908
 
 |
 
-Also, when making a change in Authoring and publishing it, the change will be reflected in Delivery after a minute.
+Also, now when making a change in Authoring and publishing it, the change will be reflected in Delivery after a minute.
