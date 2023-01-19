@@ -161,7 +161,6 @@ for the modifications to be reflected. We prefer this ``updateStrategy`` instead
 update to the configuration needs to be applied (like changing a small flag in one of the Crafter configuration files under ``/opt/crafter/bin/apache-tomcat/shared/classes``).
 
 For bigger updates, like a version upgrade or any other update that could cause modifications to the project content or the database, progressively scaling down the StatefulSet is recommended, by running
-``kubectl scale statefulsets authoring --replicas=<current-replicas-minus-1>``, waiting until each Pod has been fully terminated before scaling down again, until all Pods are down. Then you can scale the StatefulSet up to the original number of
-Pods (so that they can all synchronized on startup).
+``kubectl scale statefulsets authoring --replicas=<current-replicas-minus-1>``, waiting until each Pod has been fully terminated before scaling down again, until all Pods are down. Then you can scale the StatefulSet up to the original number of Pods (so that they can all synchronized on startup).
 
 If you just want to shutdown the entire cluster, scale down the StatefulSet as described above.
