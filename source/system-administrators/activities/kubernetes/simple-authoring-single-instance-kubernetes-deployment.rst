@@ -29,15 +29,13 @@ Setup Kubernetes Secrets
 
 The deployment files cloned from https://github.com/craftercms/kubernetes-deployments/ have a folder set aside for placing confidential information, ``kubernetes-deployments/authoring/simple/resources/secrets``
 
-This guide details setting up an Authoring pod, but once you setup the Delivery pod, it will need SSH or HTTPS access to the Authoring pod to pull site content. For this, you need to generate an SSH public/private key pair or an HTTPS SSL certificate 
-and key for authentication and provide them as Kubernetes Secrets to the Pods.
+This guide details setting up an Authoring pod, but once you setup the Delivery pod, it will need SSH or HTTPS access to the Authoring pod to pull site content. For this, you need to generate an SSH public/private key pair or an HTTPS SSL certificate and key for authentication and provide them as Kubernetes Secrets to the Pods.
 
 -----------------------------------
 Choose if SSH/HTTPS as Git protocol
 -----------------------------------
 
-Deployer containers in Delivery environments can use either SSH or HTTPS to pull changes from the published repositories in Authoring. Kubernetes configuration under ``kubernetes-deployments/authoring/simple`` that's only pertinent to a certain 
-protocol will start with the comment ``Uncomment if using Git (HTTPS|SSH)``. Make sure only the configuration lines corresponding to the protocol you decide to use are uncommented, and comment the configuration related to the other protocol.
+Deployer containers in Delivery environments can use either SSH or HTTPS to pull changes from the published repositories in Authoring. Kubernetes configuration under ``kubernetes-deployments/authoring/simple`` that's only pertinent to a certain protocol will start with the comment ``Uncomment if using Git (HTTPS|SSH)``. Make sure only the configuration lines corresponding to the protocol you decide to use are uncommented, and comment the configuration related to the other protocol.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Create the SSH Keys Secrets (SSH mode only)
