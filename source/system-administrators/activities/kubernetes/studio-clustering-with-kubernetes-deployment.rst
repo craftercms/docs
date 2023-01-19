@@ -9,7 +9,7 @@
 Setup Studio Clustering with Kubernetes Deployment |enterpriseOnly|
 ===================================================================
 
-CrafterCMS has an example Kubernetes deployment for a Studio cluster with 2 nodes, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/develop/authoring/cluster. This guide covers how to install this example in a Kubernetes cluster.
+CrafterCMS has an example Kubernetes deployment for a Studio cluster with 2 nodes, which you can get from https://github.com/craftercms/kubernetes-deployments/tree/master/authoring/cluster. This guide covers how to install this example in a Kubernetes cluster.
 
 .. important::
    This guide assumes you have a working understanding of Kubernetes
@@ -103,7 +103,7 @@ You can easily access Studio through the Authoring load balancer. To get the loa
 Setup Delivery (optional)
 -------------------------
 
-You can use the Delivery Simple example under https://github.com/craftercms/kubernetes-deployments/tree/develop/delivery/simple with this Authoring cluster example:
+You can use the Delivery Simple example under https://github.com/craftercms/kubernetes-deployments/tree/master/delivery/simple with this Authoring cluster example:
 
 #. The Authoring Cluster example creates an internal load balancer that can be used by the Delivery Deployer to pull the published content from Authoring. The load balancer will need to have a valid domain name and SSL certificate.
    Follow the next steps to setup a DNS record and a certificate for the load balancer in AWS:

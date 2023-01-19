@@ -6,25 +6,7 @@
 Deploying CrafterCMS in Kubernetes
 ==================================
 
-To deploy a simple CrafterCMS installation in a Kubernetes cluster, follow the guide below.
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   simple-kubernetes-deployment
-
-
-CrafterCMS also provides Kubernetes example deployments, which can be found here: https://github.com/craftercms/kubernetes-deployments.
-
-From https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
-
-.. code-block:: text
-
-   A Deployment provides declarative updates for Pods ReplicaSets.
-
-|
-
+CrafterCMS provides Kubernetes example deployments, which can be found here: https://github.com/craftercms/kubernetes-deployments.
 
 The following gives examples of using the CrafterCMS provided Kubernetes example deployments:
 
