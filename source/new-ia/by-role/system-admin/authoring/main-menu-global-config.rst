@@ -1,4 +1,6 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
+
 :nosearch:
 :orphan:
 
@@ -102,23 +104,25 @@ Password Requirements Validation
 
 Password requirements validation allows the admin to setup rules that ensures users create passwords based on an organizations password security policy.
 
-The following section of Studio's global config allows you to setup password requirements validation through a regular expression
+The following section of Studio's global config allows you to setup password requirements minimum complexity
+through the property ``studio.security.passwordRequirements.minimumComplexity``:
 
 .. code-block:: yaml
    :linenos:
    :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
 
-   # Password requirements validation regular expression
-   # The supported capture group keys are:
-   #   hasNumbers
-   #   hasLowercase
-   #   hasUppercase
-   #   hasSpecialChars
-   #   noSpaces
-   #   minLength
-   #   maxLength
-   #   minMaxLength
-   # studio.security.passwordRequirements.validationRegex: ^(?=(?<hasNumbers>.*[0-9]))(?=(?<hasLowercase>.*[a-z]))(?=(?<hasUppercase>.*[A-Z]))(?=(?<hasSpecialChars>.*[~|!`,;\/@#$%^&+=]))(?<minLength>.{8,})$
+   # Password requirements minimum complexity
+   # This is based on https://github.com/dropbox/zxcvbn
+   # The minimum complexity corresponds to the password score
+   # You can try this out here https://lowe.github.io/tryzxcvbn/
+   #  score      # Integer from 0-4 (useful for implementing a strength bar)
+   #  0 # too guessable: risky password. (guesses < 10^3)
+   #  1 # very guessable: protection from throttled online attacks. (guesses < 10^6)
+   #  2 # somewhat guessable: protection from unthrottled online attacks. (guesses < 10^8)
+   #  3 # safely unguessable: moderate protection from offline slow-hash scenario. (guesses < 10^10)
+   #  4 # very unguessable: strong protection from offline slow-hash scenario. (guesses >= 10^10)
+   # The default value is 3
+   # studio.security.passwordRequirements.minimumComplexity: 3
 
 
 For more information, see :ref:`newIa-crafter-studio-configure-password-requirements`
