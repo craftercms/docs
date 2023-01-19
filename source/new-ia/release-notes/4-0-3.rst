@@ -10,6 +10,15 @@ CrafterCMS 4.0.3
 
 This release includes fixes for issues with the release version 4.0.2
 
+^^^^^^^^^^^^
+New Features
+^^^^^^^^^^^^
+
+* Crafter Studio now uses `zxcvbn <https://github.com/dropbox/zxcvbn>`__ for password strength management |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5816>`__ for more information
+
+  For more information on configuring the password requirements, see :ref:`crafter-studio-configure-password-requirements`
+
 ^^^^^^^
 Updates
 ^^^^^^^
@@ -36,11 +45,6 @@ Updates
 
 * Updated Group management dashboard to sort groups alphabetically |br|
   See `here <https://github.com/craftercms/craftercms/issues/5742>`__ for more information
-
-* Updated password minimum requirements |br|
-  See `here <https://github.com/craftercms/craftercms/issues/5816>`__ for more information
-
-  For more information on configuring the password requirements, see :ref:`newIa-crafter-studio-configure-password-requirements`
 
 * Updated Moment Timezone library  |br|
   See `here <https://github.com/craftercms/craftercms/issues/5855>`__ for more information
