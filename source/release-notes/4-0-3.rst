@@ -35,6 +35,11 @@ Updates
 * Updated Group management dashboard to sort groups alphabetically |br|
   See `here <https://github.com/craftercms/craftercms/issues/5742>`__ for more information
 
+* Updated password minimum requirements |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5816>`__ for more information
+
+  For more information on configuring the password requirements, see :ref:`crafter-studio-configure-password-requirements`
+
 * Updated Moment Timezone library  |br|
   See `here <https://github.com/craftercms/craftercms/issues/5855>`__ for more information
 
@@ -45,9 +50,12 @@ Updates
   See `here <https://github.com/craftercms/craftercms/issues/5889>`__ for more information+
 
 * Fixed issue with session inactivity timeout |br|
-  See `here <https://github.com/craftercms/craftercms/issues/5889>`__ for more information
+  See `here <https://github.com/craftercms/craftercms/issues/5891>`__ for more information
 
   For more information on session timeouts, see :ref:`changing-session-timeout`
+
+* Improved logging for script not found errors |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5904>`__ for more information
 
 Lots of other small enhancements and bug fixes :)
 
