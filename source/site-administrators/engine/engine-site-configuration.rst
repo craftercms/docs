@@ -392,8 +392,8 @@ Crafter Engine Properties
    ``<cronExpression>``.
  * **jobs.job:** Specifies a single script job to be scheduled. The job path should be specified in ``<path>``, and the cron expression
    in ``<cronExpression>``.
- * **cache.warmUp.descriptor.folders:** The descriptor folders that need to be pre-loaded in cache, separated by comma. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully preloaded. Example: *<descriptorFolders>/site:3</descriptorFolders>*
- * **cache.warmUp.content.folders:** The content folders that need to be pre-loaded in cache, separated by comma. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully pre-loaded.  Example: *<contentFolders>/scripts,/templates</contentFolders>*
+ * **cache.warmUp.descriptorFolders:** The descriptor folders that need to be pre-loaded in cache, separated by comma. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully preloaded. Example: *<descriptorFolders>/site:3</descriptorFolders>*
+ * **cache.warmUp.contentFolders:** The content folders that need to be pre-loaded in cache, separated by comma. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully pre-loaded.  Example: *<contentFolders>/scripts,/templates</contentFolders>*
 
 .. note::
     Crafter Engine will not be able to load your Site Context if your configuration contains invalid XML
