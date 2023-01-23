@@ -140,8 +140,8 @@ This example file contains the properties used by Crafter Engine (click on the t
    ``<cronExpression>``.
  * **jobs.job:** Specifies a single script job to be scheduled. The job path should be specified in ``<path>``, and the cron expression
    in ``<cronExpression>``.
- * **cache.warmUp.descriptor.folders:** The descriptor folders that need to be pre-loaded in cache, separated by comma, when not in preview mode. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully preloaded. Example: *<descriptorFolders>/site:3</descriptorFolders>*
- * **cache.warmUp.content.folders:** The content folders that need to be pre-loaded in cache, separated by comma, when not in preview mode. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully pre-loaded.  Example: *<contentFolders>/scripts,/templates</contentFolders>*
+ * **cache.warmUp.descriptorFolders:** The descriptor folders that need to be pre-loaded in cache, separated by comma, when not in preview mode. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully preloaded. Example: *<descriptorFolders>/site:3</descriptorFolders>*
+ * **cache.warmUp.contentFolders:** The content folders that need to be pre-loaded in cache, separated by comma, when not in preview mode. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully pre-loaded.  Example: *<contentFolders>/scripts,/templates</contentFolders>*
 
    .. note::
       Cache and ActiveCache do not function the same way as specified above when engine is in preview because the preview server does not cache to ensure the latest updates are seen immediately.
