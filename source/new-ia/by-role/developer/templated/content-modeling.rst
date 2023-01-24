@@ -600,10 +600,12 @@ The following variable names are used by CrafterCMS.
 || placeInNav          || Used by the Page Order control.                                 |
 +----------------------+------------------------------------------------------------------+
 || disabled            || Used to logically remove an object in content delivery.         |
+||                     || For more information, see :ref:`newIa-disabling-a-page`         |
 +----------------------+------------------------------------------------------------------+
 || expired             || Used to logically remove an object after date                   |
 +----------------------+------------------------------------------------------------------+
 || expired_dt          || Used to logically remove an object after date                   |
+||                     || For more information, see :ref:`content-monitoring`             |
 +----------------------+------------------------------------------------------------------+
 || objectId            || UUID. Auto assigned by Crafter                                  |
 +----------------------+------------------------------------------------------------------+
@@ -638,6 +640,7 @@ The following variable names are used by CrafterCMS.
 || redirect-url        || Redirect URL                                                    |
 +----------------------+------------------------------------------------------------------+
 || crafterSite         || Used to set the site value                                      |
+||                     || See note in :ref:`crafter-engine-api` for more information      |
 +----------------------+------------------------------------------------------------------+
 || localId             || Name of the field for paths.  Used by the deployer              |
 +----------------------+------------------------------------------------------------------+
