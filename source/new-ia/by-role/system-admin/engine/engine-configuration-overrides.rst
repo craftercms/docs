@@ -173,7 +173,7 @@ Access to static methods in Freemarker templates is disabled by default.
 Cache
 -----
 
-The following allows you to configure folders to be preloaded in cache:
+The following allows you to configure folders to be preloaded in the cache:
 
 .. code-block:: properties
 
@@ -186,9 +186,9 @@ The following allows you to configure folders to be preloaded in cache:
 
 where:
 
-  - The descriptor folders are paths that contain XML that needs to be parsed, loaded and merged e.g for inheritance.
+  - The descriptor folders are paths that contain XML that needs to be parsed, loaded and merged e.g. for inheritance.
     Most of the time this would be folders under ``/site``
 
-  - The content folders are mostly static, non-processed content, e.g scripts, templates, static-assets
+  - The content folders are mostly static, non-processed content, e.g. scripts, templates, static-assets
 
 For all projects, the cache is preloaded using the above configuration. CrafterCMS warms up the cache on every publish and startup.  Note also that what's cache warmed will be warmed on every publish and startup and will live as long as nothing kicks it out of the cache due to least recently used (LRU) cache.

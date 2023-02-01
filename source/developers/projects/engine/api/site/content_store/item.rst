@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. _crafter-engine-api-site-content_store-item:
 
@@ -28,14 +29,14 @@ Resource Information
 Parameters
 ----------
 
-+-------------------+-------------+---------------+----------------------------------------------+
-|| Name             || Type       || Required     || Description                                 |
-+===================+=============+===============+==============================================+
-|| url              || String     || |checkmark|  || The item's url (e.g /site/website/index.xml)|
-+-------------------+-------------+---------------+----------------------------------------------+
-|| flatten          || Boolean    ||              || Indicates if included descriptors           |
-||                  ||            ||              || should be flattened                         |
-+-------------------+-------------+---------------+----------------------------------------------+
++-------------------+-------------+---------------+-----------------------------------------------+
+|| Name             || Type       || Required     || Description                                  |
++===================+=============+===============+===============================================+
+|| url              || String     || |checkmark|  || The item's url (e.g. /site/website/index.xml)|
++-------------------+-------------+---------------+-----------------------------------------------+
+|| flatten          || Boolean    ||              || Indicates if included descriptors            |
+||                  ||            ||              || should be flattened                          |
++-------------------+-------------+---------------+-----------------------------------------------+
 
 -----------------
 Response Elements
@@ -48,7 +49,7 @@ For successful requests, an HTTP 200 response is sent back with the following el
 +===================+============================================================================+
 || name             || Name of item being retrieved (e.g. *index.xml*                            |
 +-------------------+----------------------------------------------------------------------------+
-|| url              || The item's URL (e.g */site/website/index.xml*)                            |
+|| url              || The item's URL (e.g. */site/website/index.xml*)                           |
 +-------------------+----------------------------------------------------------------------------+
 || descriptorUrl    || The item's descriptor URL (e.g. for a folder: */site/website.meta.xml*,   |
 ||                  || for a page: */site/website/index.xml*)                                    |
