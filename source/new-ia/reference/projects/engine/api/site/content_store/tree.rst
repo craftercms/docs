@@ -1,4 +1,6 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
+
 :nosearch:
 
 .. _newIa-crafter-engine-api-site-content_store-tree:
@@ -30,7 +32,7 @@ Parameters
 +-------------+-------------+---------------+----------------------------------------------------+
 || Name       || Type       || Required     || Description                                       |
 +=============+=============+===============+====================================================+
-|| url        || String     || |checkmark|  || The folder's URL (e.g /site/website/)             |
+|| url        || String     || |checkmark|  || The folder's URL (e.g. /site/website/)            |
 +-------------+-------------+---------------+----------------------------------------------------+
 || depth      || Integer    ||              || Amount of levels to include (unlimited by default)|
 +-------------+-------------+---------------+----------------------------------------------------+

@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 
 .. _crafter-deployer-api-target-deploy:
 
@@ -38,11 +38,11 @@ Parameters
    * - env
      - String
      - |checkmark|
-     - The target's environment (e.g dev).
+     - The target's environment (e.g. dev).
    * - site_name
      - Boolean
      - |checkmark|
-     - The target's project name (e.g my-editorial).
+     - The target's project name (e.g. my-editorial).
    * - reprocess_all_files
      - Boolean
      -

@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. _crafter-deployer-templates-guide:
 
@@ -15,15 +16,15 @@ Built-in Templates
 
 All target templates support the following parameters:
 
-+-------------+-----------+-----------------------------------+
-|Name         |Required   |Description                        |
-+=============+===========+===================================+
-|``env``      ||checkmark||The target’s environment (e.g dev) |
-+-------------+-----------+-----------------------------------+
-|``site_name``||checkmark||The target’s site name (e.g mysite)|
-+-------------+-----------+-----------------------------------+
-|``repo_url`` ||checkmark||The target's repository URL        |
-+-------------+-----------+-----------------------------------+
++-------------+-----------+------------------------------------+
+|Name         |Required   |Description                         |
++=============+===========+====================================+
+|``env``      ||checkmark||The target’s environment (e.g. dev) |
++-------------+-----------+------------------------------------+
+|``site_name``||checkmark||The target’s site name (e.g. mysite)|
++-------------+-----------+------------------------------------+
+|``repo_url`` ||checkmark||The target's repository URL         |
++-------------+-----------+------------------------------------+
 
 ^^^^^^^^^^^^^^^^
 Authoring Target

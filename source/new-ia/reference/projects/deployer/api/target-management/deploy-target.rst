@@ -1,4 +1,6 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
+
 :nosearch:
 
 .. _newIa-crafter-deployer-api-target-deploy:
@@ -30,9 +32,9 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------------------------+
 || Name                   || Type       || Required     || Description                                             |
 +=========================+=============+===============+==========================================================+
-|| env                    || String     || |checkmark|  || The target's environment (e.g dev).                     |
+|| env                    || String     || |checkmark|  || The target's environment (e.g. dev).                    |
 +-------------------------+-------------+---------------+----------------------------------------------------------+
-|| site_name              || String     || |checkmark|  || The target's site name (e.g mysite).                    |
+|| site_name              || String     || |checkmark|  || The target's site name (e.g. mysite).                   |
 +-------------------------+-------------+---------------+----------------------------------------------------------+
 || reprocess_all_files    || Boolean    ||              || If all files in the target's repo should be reprocessed.|
 +-------------------------+-------------+---------------+----------------------------------------------------------+

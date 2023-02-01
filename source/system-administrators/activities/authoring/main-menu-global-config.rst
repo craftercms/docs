@@ -273,7 +273,7 @@ The following section of Studio's global config allows you to setup Studio clust
    # Cluster node registration data, remember to uncomment the next line
    # studio.clustering.node.registration:
    #  This server's local address (reachable to other cluster members). You can also specify a different port by
-   #  attaching :PORT to the adddress (e.g 192.168.1.200:2222)
+   #  attaching :PORT to the address (e.g. 192.168.1.200:2222)
    #  localAddress: ${env:CLUSTER_NODE_ADDRESS}
    #  Authentication type to access this server's local repository
    #  possible values
