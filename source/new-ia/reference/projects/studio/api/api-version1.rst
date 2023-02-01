@@ -73,21 +73,6 @@ Monitoring
   Monitoring operations are only available in the new API, for more information, please visit: 
   https://app.swaggerhub.com/apis/craftercms/studio
 
-^^^^
-CMIS
-^^^^
-
-.. toctree::
-   :maxdepth: 1
-
-   cmis/list
-   cmis/search
-   cmis/clone
-   cmis/upload
-
-.. note::
-    The CMIS operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit: https://app.swaggerhub.com/apis/craftercms/studio
-
 ^^^^^^^
 Publish
 ^^^^^^^

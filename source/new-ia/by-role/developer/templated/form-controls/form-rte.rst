@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 :nosearch:
 :orphan:
 
@@ -52,8 +52,6 @@ Configuration
 || Related Data Sources  || Image Manager                                                        |
 ||                       || * |imgUploadFromDesktop|                                             |
 ||                       || * |imgFromRepo|                                                      |
-||                       || * |imgFromCMIS|                                                      |
-||                       || * |imgUploadToCMIS|                                                  |
 ||                       || * |imgFromWebDAV|                                                    |
 ||                       || * |imgUploadToWebDAV|                                                |
 ||                       || * |imgFromS3|                                                        |
@@ -61,8 +59,6 @@ Configuration
 ||                       || Video Manager                                                        |
 ||                       || * |vidUploadFromDesktop|                                             |
 ||                       || * |vidFromRepo|                                                      |
-||                       || * |vidFromCMIS|                                                      |
-||                       || * |vidUploadToCMIS|                                                  |
 ||                       || * |vidFromWebDAV|                                                    |
 ||                       || * |vidUploadToWebDAV|                                                |
 ||                       || * |vidFromS3|                                                        |
@@ -70,8 +66,6 @@ Configuration
 ||                       || File Manager                                                         |
 ||                       || * |fileUploadFromDesktop|                                            |
 ||                       || * |fileFromRepo|                                                     |
-||                       || * |fileFromCMIS|                                                     |
-||                       || * |fileUploadToCMIS|                                                 |
 ||                       || * |fileFromWebDAV|                                                   |
 ||                       || * |fileUploadToWebDAV|                                               |
 ||                       || * |fileFromS3|                                                       |
@@ -82,8 +76,6 @@ Configuration
 
 .. |imgUploadFromDesktop| replace:: :ref:`Image Uploaded from Desktop <newIa-form-source-image-desktop>`
 .. |imgFromRepo| replace:: :ref:`Image from Repository <newIa-form-source-image-repo>`
-.. |imgFromCMIS| replace:: :ref:`Image from CMIS Repository <newIa-form-source-cmis-image-repo>`
-.. |imgUploadToCMIS| replace:: :ref:`Image Uploaded to CMIS Repository <newIa-form-source-cmis-image-upload>`
 .. |imgFromWebDAV| replace:: :ref:`Image from WebDAV Repository <newIa-form-source-webdav-image-repo>`
 .. |imgUploadToWebDAV| replace:: :ref:`Image Uploaded to WebDAV Repository <newIa-form-source-webdav-image-upload>`
 .. |imgFromS3| replace:: :ref:`Image From S3 Repository <newIa-form-source-s3-image-repo>`
@@ -91,8 +83,6 @@ Configuration
 
 .. |vidUploadFromDesktop| replace:: :ref:`Video Uploaded From Desktop <newIa-form-source-video-desktop>`
 .. |vidFromRepo| replace:: :ref:`Video from Repository <newIa-form-source-video-repo>`
-.. |vidFromCMIS| replace:: :ref:`Video from CMIS Repository <newIa-form-source-cmis-video-repo>`
-.. |vidUploadToCMIS| replace:: :ref:`Video Uploaded to CMIS Repository <newIa-form-source-cmis-video-upload>`
 .. |vidFromWebDAV| replace:: :ref:`Video from WebDAV Repository <newIa-form-source-webdav-video-repo>`
 .. |vidUploadToWebDAV| replace:: :ref:`Video Uploaded to WebDAV Repository <newIa-form-source-webdav-video-upload>`
 .. |vidFromS3| replace:: :ref:`Video From S3 Repository <newIa-form-source-s3-video-repo>`
@@ -100,8 +90,6 @@ Configuration
 
 .. |fileUploadFromDesktop| replace:: :ref:`File Uploaded From Desktop <newIa-form-source-file-desktop>`
 .. |fileFromRepo| replace:: :ref:`File from Repository <newIa-form-source-file-browse>`
-.. |fileFromCMIS| replace:: :ref:`File from CMIS Repository <newIa-form-source-cmis-repo>`
-.. |fileUploadToCMIS| replace:: :ref:`File Uploaded to CMIS Repository <newIa-form-source-cmis-upload>`
 .. |fileFromWebDAV| replace:: :ref:`File from WebDAV Repository <newIa-form-source-webdav-file-repo>`
 .. |fileUploadToWebDAV| replace:: :ref:`File Uploaded to WebDAV Repository <newIa-form-source-webdav-file-upload>`
 .. |fileFromS3| replace:: :ref:`File From S3 Repository <newIa-form-source-s3-file-repo>`
