@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. _crafter-core-api-content_store-item:
 
@@ -31,7 +32,7 @@ Parameters
 +=========================+=============+===============+=======================================+
 || contextId              || String     || |checkmark|  || The context id                       |
 +-------------------------+-------------+---------------+---------------------------------------+
-|| url                    || String     || |checkmark|  || The folder's url (e.g /site/website) |
+|| url                    || String     || |checkmark|  || The folder's url (e.g. /site/website)|
 +-------------------------+-------------+---------------+---------------------------------------+
 || flatten                || Boolean    ||              || Indicates if included descriptors    |
 ||                        ||            ||              || should be flattened                  |

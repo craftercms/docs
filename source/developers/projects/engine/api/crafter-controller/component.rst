@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. _crafter-engine-api-crafter-controller-component:
 
@@ -30,7 +31,7 @@ Parameters
 || Name             || Type       || Required     || Description                                 |
 +===================+=============+===============+==============================================+
 || path             || String     || |checkmark|  || Path to the component                       |
-||                  ||            ||              || (e.g /site/components/headers/header.xml)   |
+||                  ||            ||              || (e.g. /site/components/headers/header.xml)  |
 +-------------------+-------------+---------------+----------------------------------------------+
 
 -------

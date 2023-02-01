@@ -1,4 +1,6 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
+
 :nosearch:
 
 .. _newIa-crafter-core-api-content_store-children:
@@ -32,7 +34,7 @@ Parameters
 +=========================+=============+===============+=======================================+
 || contextId              || String     || |checkmark|  || The context id                       |
 +-------------------------+-------------+---------------+---------------------------------------+
-|| url                    || String     || |checkmark|  || The folder's url (e.g /site/website) |
+|| url                    || String     || |checkmark|  || The folder's url (e.g. /site/website)|
 +-------------------------+-------------+---------------+---------------------------------------+
 
 -------

@@ -438,7 +438,7 @@ for whatever kind of asset you're retrieving (JavaScript, CSS, image, etc). Ther
 mechanisms for developers to load and use plugins like the :ref:`Plugin host <newIa-plugin-host>`
 or through the :ref:`Crafter CLI <newIa-crafter-cli-commands>`.
 
-If you need to *manually* load assets from your plugin (e.g set the ``src`` of a ``<script />``,
+If you need to *manually* load assets from your plugin (e.g. set the ``src`` of a ``<script />``,
 set the ``href`` of a ``<link />``, set the ``src`` of an ``<img />``, etc.), you should use the following URL
 
 ``/studio/1/plugin/file?siteId={siteId}&type={yourPluginType}&name={yourPluginName}&file={fileName}``

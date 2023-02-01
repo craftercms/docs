@@ -1,5 +1,6 @@
 :is-up-to-date: True
-:last-updated: 4.0.2
+:last-updated: 4.0.3
+
 :nosearch:
 
 .. index:: Setup a Two Node Cluster with Studio, Clustering with Studio Example
@@ -65,7 +66,7 @@ Configuring Nodes in the Cluster
       # Cluster node registration data, remember to uncomment the next line
       studio.clustering.node.registration:
       #  This server's local address (reachable to other cluster members). You can also specify a different port by
-      #  attaching :PORT to the address (e.g 192.168.1.200:2222)
+      #  attaching :PORT to the address (e.g. 192.168.1.200:2222)
       #  localAddress: ${env:CLUSTER_NODE_ADDRESS}
       #  Authentication type to access this server's local repository
       #  possible values
