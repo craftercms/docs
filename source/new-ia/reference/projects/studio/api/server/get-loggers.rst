@@ -1,4 +1,6 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
+
 :nosearch:
 
 .. _newIa-crafter-studio-api-server-get-loggers:
@@ -252,10 +254,6 @@ Example
             },
             {
                 "name": "org.apache.http.impl.execchain.RedirectExec",
-                "level": "info"
-            },
-            {
-                "name": "org.craftercms.studio.impl.v1.service.cmis.CmisServiceImpl",
                 "level": "info"
             },
             {

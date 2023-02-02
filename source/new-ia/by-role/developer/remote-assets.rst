@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 :nosearch:
 
 .. index:: Remote Assets, Assets
@@ -11,7 +12,7 @@ Remote Assets
 
 Remote assets are binary files, typically images, videos, pdf documents, etc. which are hosted outside
 of CrafterCMS.  Remote assets could be hosted in AWS S3 or compatible storage, Box or some other server
-accessed through WebDAV, CMIS. etc.
+accessed through WebDAV, etc.
 
 Various data sources are available to help manage/select assets hosted outside of CrafterCMS in your
 project.  The ``Developer`` section contains some examples on how to store assets remotely, such as

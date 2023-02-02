@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 :nosearch:
 :orphan:
 
@@ -50,8 +50,6 @@ Configuration
 ||                       || * |embeddedContent|                                                  |
 ||                       || * |fileUploadFromDesktop|                                            |
 ||                       || * |fileFromRepo|                                                     |
-||                       || * |fileFromCMIS|                                                     |
-||                       || * |fileUploadToCMIS|                                                 |
 ||                       || * |fileFromWebDAV|                                                   |
 ||                       || * |fileUploadToWebDAV|                                               |
 ||                       || * |fileFromS3|                                                       |
@@ -60,8 +58,6 @@ Configuration
 
 .. |fileUploadFromDesktop| replace:: :ref:`File Uploaded From Desktop <newIa-form-source-file-desktop>`
 .. |fileFromRepo| replace:: :ref:`File from Repository <newIa-form-source-file-browse>`
-.. |fileFromCMIS| replace:: :ref:`File from CMIS Repository <newIa-form-source-cmis-repo>`
-.. |fileUploadToCMIS| replace:: :ref:`File Uploaded to CMIS Repository <newIa-form-source-cmis-upload>`
 .. |fileFromWebDAV| replace:: :ref:`File from WebDAV Repository <newIa-form-source-webdav-file-repo>`
 .. |fileUploadToWebDAV| replace:: :ref:`File Uploaded to WebDAV Repository <newIa-form-source-webdav-file-upload>`
 .. |fileFromS3| replace:: :ref:`File From S3 Repository <newIa-form-source-s3-file-repo>`

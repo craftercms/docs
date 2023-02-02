@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. _crafter-studio-api-security-get-user-permissions:
 
@@ -53,15 +54,11 @@ Example
               "create folder",
               "webdav_write",
               "read",
-              "upload_content_cmis",
-              "list_cmis",
               "webdav_read",
               "create content",
               "s3 read",
-              "clone_content_cmis",
               "write",
               "s3 write",
-              "search_cmis"
 
           ]
   }

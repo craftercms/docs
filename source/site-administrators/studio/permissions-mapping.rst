@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 
 .. index:: Permission Mappings
 
@@ -102,7 +102,6 @@ audit_log                  User is permitted to access the audit log
 cancel_failed_pull         User is permitted to cancel a failed pull from a repository
 cancel_publish             User is permitted to cancel a publish request
 change content type        User is permitted to change content type
-clone_content_cmis         User is permitted to clone content from a CMIS repository
 commit_resolution          User is permitted to commit resolution
 content_create             User is permitted to create new content
 folder_create              User is permitted to create new folder
@@ -118,7 +117,6 @@ edit_site                  User is permitted to edit sites
 encryption_tool            User is permitted to access the encryption tool
 get_children               User is permitted to call getChildren* APIs for browsing project content
 get_publishing_queue       User is permitted to get the list of packages in the publishing queue
-list_cmis                  User is permitted to list files and folders in a CMIS repository with an optional range for pagination
 list_remotes               User is permitted to list remote repositories for a project
 publish                    User is permitted to approve submitted content for publishing or publish content
 pull_from_remote           User is permitted to pull content from remote repository to project content repository
@@ -133,13 +131,11 @@ remove_remote              User is permitted to remove remote repository from pr
 resolve_conflict           User is permitted to resolve a conflict for a file by accepting ours or theirs
 s3 read                    User is permitted to get a list of items from an S3 bucket
 s3 write                   User is permitted to upload a file to an S3 bucket
-search_cmis                User is permitted to search files and folders in a CMIS repository with an optional range for pagination
 site_diff_conflicted_file  User is permitted to get the difference between ``ours`` and ``theirs`` for a conflicted file for a project
 site_status                User is permitted to get status of repository for a project
 update_cluster             User is permitted to update cluster
 update_groups              User is permitted to update groups
 update_users               User is permitted to update users
-upload_content_cmis        User is permitted to upload an asset file to CMIS repository
 webdav_read                User is permitted to get a list of items from a WebDAV server
 webdav_write               User is permitted to upload a file to a WebDAV server
 content_write              User is permitted to edit content

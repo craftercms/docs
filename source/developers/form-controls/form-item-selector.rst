@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 
 :orphan:
 
@@ -64,8 +64,6 @@ Configuration
 ||                       || * |components|                                                       |
 ||                       || * |fileUploadFromDesktop|                                            |
 ||                       || * |fileFromRepo|                                                     |
-||                       || * |fileFromCMIS|                                                     |
-||                       || * |fileUploadToCMIS|                                                 |
 ||                       || * |fileFromWebDAV|                                                   |
 ||                       || * |fileUploadToWebDAV|                                               |
 ||                       || * |fileFromS3|                                                       |
@@ -74,8 +72,6 @@ Configuration
 
 .. |fileUploadFromDesktop| replace:: :ref:`File Uploaded From Desktop <form-source-file-desktop>`
 .. |fileFromRepo| replace:: :ref:`File from Repository <form-source-file-browse>`
-.. |fileFromCMIS| replace:: :ref:`File from CMIS Repository <form-source-cmis-repo>`
-.. |fileUploadToCMIS| replace:: :ref:`File Uploaded to CMIS Repository <form-source-cmis-upload>`
 .. |fileFromWebDAV| replace:: :ref:`File from WebDAV Repository <form-source-webdav-file-repo>`
 .. |fileUploadToWebDAV| replace:: :ref:`File Uploaded to WebDAV Repository <form-source-webdav-file-upload>`
 .. |fileFromS3| replace:: :ref:`File From S3 Repository <form-source-s3-file-repo>`

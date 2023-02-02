@@ -40,7 +40,7 @@ If you are a developer gung-ho to start developing:
 
 If you are a system administrator and would like to learn more about configuring/setting up CrafterCMS or to setup a production environment, here are some resources to get you going:
 
-    * :ref:`newIa-system-administrators`
+    * :ref:`newIa-system-admin`
     * :ref:`newIa-production-environment-setup`
 
 
