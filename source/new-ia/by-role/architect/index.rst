@@ -30,10 +30,10 @@ This section details key concepts for CrafterCMS experience architects
 
    general-architecture
    deployment-architecture
+   composable
    headless
    templated
    availability
    scalability
    security
    api-reference
-   marketplace
