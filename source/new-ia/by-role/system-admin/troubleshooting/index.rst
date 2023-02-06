@@ -13,9 +13,8 @@ This section details common problems you might encounter with CrafterCMS and how
    :titlesonly:
 
    debugging-search-elasticsearch.rst
-   studio/debugging-publishing-issues.rst
-   studio/debugging-upgrade-issues.rst
-   studio/session-timeout-settings.rst
-   deployer/debugging-deployer-issues.rst
+   debugging-publishing-issues.rst
+   debugging-upgrade-issues.rst
+   debugging-deployer-issues.rst
    debugging-ssh-issues.rst
    debugging-ssl-issues.rst

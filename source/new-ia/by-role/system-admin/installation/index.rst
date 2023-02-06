@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 :nosearch:
 
 .. _newIa-system-admin-installation:
@@ -7,10 +7,6 @@
 ==========================
 Installation and Upgrading
 ==========================
-
-.. 6.2.1 Tuning Authoring
-   6.2.2 Tuning Delivery
-   6.2.3 Clustering
 
 This section describes various ways of installing/setting up CrafterCMS and how to tune CrafterCMS
 
@@ -85,8 +81,6 @@ setup various things for your authoring install
    authoring/change-hosts-ports-on-your-auth-install
    authoring/staging
    authoring/sync-studio-database-with-repo
-   studio/studio-configuration-files
-   studio/publishing-blacklist
 
 ---------------
 Tuning Delivery

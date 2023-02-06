@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 :nosearch:
 
 .. _newIa-system-admin:
@@ -15,11 +15,10 @@ they need to install and maintain CrafterCMS components.
    :maxdepth: 1
 
    deployment-architecture
-   installation
-   configuration
-   reverse-proxy-configuration
+   installation/index
+   configuration/index
    performance-and-scaling
-   security
+   security/index
    backup-and-restore
    disaster-recovery
-   troubleshooting
+   troubleshooting/index
