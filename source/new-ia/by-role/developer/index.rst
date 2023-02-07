@@ -23,18 +23,12 @@ The following gets you started with content modeling, content retrieval, and mor
    :maxdepth: 1
    :titlesonly:
 
+   composable/index
    headless/index
    templated/index
-   extensions/index
-   working-with-crafter-studios-api
-   working-with-filters
-   working-with-dates-groovy
-   working-with-rest-services
-   working-with-sass
+   devcontentops/index
 
 |
-
-   .. include:: /includes/scripts-templates-security.rst
 
 .. raw:: html
 

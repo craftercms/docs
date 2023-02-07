@@ -50,11 +50,11 @@ For the project repository, the project structure looks like this::
                 system
                 web
 
----------------
-What is a site?
----------------
+-----------------------
+What is a Project/Site?
+-----------------------
 
-A site is a collection of related pages/components and assets.
+A project or a site is a collection of related pages/components and assets.
 
 ------------
 Localization
@@ -83,16 +83,19 @@ The following contains more information on administration tools
 
 
 ----------------
-Sidebar cabinets
+Sidebar Cabinets
 ----------------
 
 .. todo: insert picture here of sidebar cabinets and description
-
-------------------------
-Experience Builder (ICE)
-------------------------
 
 --------
 Security
 --------
 
+----------
+Composable
+----------
+
+^^^^^^^^^^^^^^^^^^^^^^^
+Experience Builder (XB)
+^^^^^^^^^^^^^^^^^^^^^^^
