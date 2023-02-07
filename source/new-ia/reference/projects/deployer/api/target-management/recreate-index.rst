@@ -47,7 +47,7 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/target/recreate/dev/mysite``
+``POST .../api/1/target/recreate/dev/mysite?token=defaultManagementToken``
 
 ^^^^^^^^
 Response
