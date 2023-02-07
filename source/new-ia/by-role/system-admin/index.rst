@@ -4,9 +4,9 @@
 
 .. _newIa-system-admin:
 
-====================
-System Administrator
-====================
+============================
+For the System Administrator
+============================
 
 This section is intended to provide system administrators with the information and access to the tools
 they need to install and maintain CrafterCMS components.
@@ -17,8 +17,9 @@ they need to install and maintain CrafterCMS components.
    deployment-architecture
    installation/index
    configuration/index
-   performance-and-scaling
+   performance-and-scaling/index
+   upgrade/index
    security/index
-   backup-and-restore
+   maintenance/index
    disaster-recovery
-   troubleshooting/index
+

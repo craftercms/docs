@@ -29,7 +29,7 @@ Step 1: Create an Elasticsearch Domain for Delivery (optional)
 
 Since serverless delivery requires a single Elasticsearch endpoint readable by all Engine instances, we recommend you
 create an AWS Elasticsearch domain for delivery. If you don't want to use an AWS Elasticsearch domain then you should
-create and mantain your own Elasticsearch cluster.
+create and maintain your own Elasticsearch cluster.
 
    .. important:: Authoring can also use an Elasticsearch domain, but be aware that in a clustered authoring environment
                   each authoring instance requires a separate Elasticsearch instance. If you try to use the same ES domain

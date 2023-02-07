@@ -13,6 +13,8 @@ This section details how to configure various CrafterCMS modules such as Crafter
 .. toctree::
    :maxdepth: 1
 
+   reverse-proxy-configuration
+
    studio/studio-configuration
    studio/session-timeout-settings
    studio/publishing-blacklist
