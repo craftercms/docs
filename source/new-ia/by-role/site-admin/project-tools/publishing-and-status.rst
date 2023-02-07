@@ -142,6 +142,27 @@ To publish by commit id, let's use a project created using the Website Editorial
 - Select the ``Publish changes made via direct git actions against the repository or pulled from a remote repository`` radio button
 - Paste the commit id from the step where we got the commit id, then click on the ``Publish`` button
 
+.. _newIa-publish-everything:
+
+Publish all changes on the repo
+-------------------------------
+.. version_tag::
+   :label: Since
+   :version: 4.0.2
+
+The **Publish everything** selection allows the user to publish all changes on the repo to the publishing
+target you choose.
+
+For example, using the Website Editorial blueprint, to publish all the changes made in the sandbox repo,
+simply select ``Publish everything`` and then choose the publishing target, then click on the ``Publish`` button.
+
+
+.. image:: /_static/images/site-admin/project-tools-publish-bulk.webp
+   :alt: Project Tools Publishing - Publish changes made in Studio via the UI
+   :align: center
+
+|
+
 .. _newIa-publishing-queue:
 
 ----------------

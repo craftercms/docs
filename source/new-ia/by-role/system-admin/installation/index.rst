@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 :nosearch:
 
 .. _newIa-system-admin-installation:
@@ -8,11 +8,7 @@
 Installation and Upgrading
 ==========================
 
-.. 6.2.1 Tuning Authoring
-   6.2.2 Tuning Delivery
-   6.2.3 Clustering
-
-This section describes various ways of installing/setting up CrafterCMS and how to tune CrafterCMS
+This section describes various ways of installing/setting up CrafterCMS
 
 
 First we'll take a look at the requirements and supported platform for installing/setting up CrafterCMS
@@ -29,14 +25,11 @@ CrafterCMS provides the following methods for setting up CrafterCMS depending on
 and in addition, instructions on setting up CrafterCMS using Crafter's AWS AMI,  clustering  and
 deploying CrafterCMS in Kubernetes:
 
+The quick start guide provides instructions on setting up a development environment by installing CrafterCMS from the prebuilt binaries
 
-#. Development Environment
+* :ref:`newIa-getting-started`
 
-   The quick start guide provides instructions on setting up a development environment by installing CrafterCMS from the prebuilt binaries
-
-   * :ref:`newIa-getting-started`
-
-   To learn more about the developer workflow, see :ref:`newIa-devContentOps-workflow`.
+To learn more about the developer workflow, see :ref:`newIa-devContentOps-workflow`.
 
 #. Production Environment
 
@@ -85,8 +78,6 @@ setup various things for your authoring install
    authoring/change-hosts-ports-on-your-auth-install
    authoring/staging
    authoring/sync-studio-database-with-repo
-   studio/studio-configuration-files
-   studio/publishing-blacklist
 
 ---------------
 Tuning Delivery
