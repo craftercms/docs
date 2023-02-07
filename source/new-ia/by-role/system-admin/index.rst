@@ -1,12 +1,12 @@
 :is-up-to-date: False
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 :nosearch:
 
 .. _newIa-system-admin:
 
-====================
-System Administrator
-====================
+============================
+For the System Administrator
+============================
 
 This section is intended to provide system administrators with the information and access to the tools
 they need to install and maintain CrafterCMS components.
@@ -15,11 +15,11 @@ they need to install and maintain CrafterCMS components.
    :maxdepth: 1
 
    deployment-architecture
-   installation
-   configuration
-   reverse-proxy-configuration
-   performance-and-scaling
-   security
-   backup-and-restore
+   installation/index
+   configuration/index
+   performance-and-scaling/index
+   upgrade/index
+   security/index
+   maintenance/index
    disaster-recovery
-   troubleshooting
+

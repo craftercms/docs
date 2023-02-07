@@ -66,7 +66,7 @@ look at an example of setting up Studio clustering using a Kubernetes deployment
    :maxdepth: 1
 
    studio-clustering-two-nodes
-   ../kubernetes/studio-clustering-with-kubernetes-deployment
+   ../../../kubernetes/studio-clustering-with-kubernetes-deployment
 
 .. _newIa-cluster-multi-region-considerations:
 
