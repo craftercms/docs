@@ -46,7 +46,6 @@ Here are the settings that can be configured through Crafter Studio:
    studio/aws-profiles-configuration
    studio/blob-stores
    studio/box-profiles-configuration
-   studio/cmis-configuration
    studio/configurations
    studio/content-monitoring
    studio/content-type-editor-config

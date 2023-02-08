@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. _crafter-deployer-api-target-recreate:
 
@@ -29,9 +30,9 @@ Parameters
 +-------------------------+-------------+---------------+----------------------------------------+
 || Name                   || Type       || Required     || Description                           |
 +=========================+=============+===============+========================================+
-|| env                    || String     || |checkmark|  || The target's environment (e.g dev).   |
+|| env                    || String     || |checkmark|  || The target's environment (e.g. dev).  |
 +-------------------------+-------------+---------------+----------------------------------------+
-|| site_name              || String     || |checkmark|  || The target's site name (e.g mysite).  |
+|| site_name              || String     || |checkmark|  || The target's site name (e.g. mysite). |
 +-------------------------+-------------+---------------+----------------------------------------+
 || token                  || String     || |checkmark|  || The authorization token               |
 +-------------------------+-------------+---------------+----------------------------------------+
@@ -44,7 +45,7 @@ Example
 Request
 ^^^^^^^
 
-``POST .../api/1/target/recreate/dev/mysite``
+``POST .../api/1/target/recreate/dev/mysite?token=defaultManagementToken``
 
 ^^^^^^^^
 Response

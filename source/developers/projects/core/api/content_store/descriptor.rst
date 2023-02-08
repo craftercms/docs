@@ -31,7 +31,7 @@ Parameters
 +=========================+=============+===============+=======================================+
 || contextId              || String     || |checkmark|  || The context id                       |
 +-------------------------+-------------+---------------+---------------------------------------+
-|| url                    || String     || |checkmark|  || The folder's url (e.g /site/website) |
+|| url                    || String     || |checkmark|  || The folder's url (e.g. /site/website)|
 +-------------------------+-------------+---------------+---------------------------------------+
 || flatten                || Boolean    ||              || Indicates if included descriptors    |
 ||                        ||            ||              || should be flattened                  |

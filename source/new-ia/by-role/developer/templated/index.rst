@@ -47,7 +47,6 @@ The following details building templated projects, its purpose and examples.
    templating
    groovy-controllers
    adding-experience-builder
-   upgrading-in-context-editing
    page-redirects
    security
    examples/index

@@ -1,16 +1,6 @@
 :is-up-to-date: False
 :nosearch:
 
-.. Section Outline
-   5.1 What is a site
-   5.2 Localization
-   5.2.1 Per user timezone or one timezone for all users
-   5.3 Site Tools
-   5.4 Sidebar cabinets
-   5.5 Experience Builder (ICE)
-   5.6 Security
-   5.6.1 Roles and permissions
-
 .. _newIa-site-admin:
 
 ==================
@@ -50,11 +40,11 @@ For the project repository, the project structure looks like this::
                 system
                 web
 
----------------
-What is a site?
----------------
+-----------------------
+What is a Project/Site?
+-----------------------
 
-A site is a collection of related pages/components and assets.
+A project or a site is a collection of related pages/components and assets.
 
 ------------
 Localization
@@ -83,16 +73,19 @@ The following contains more information on administration tools
 
 
 ----------------
-Sidebar cabinets
+Sidebar Cabinets
 ----------------
 
 .. todo: insert picture here of sidebar cabinets and description
-
-------------------------
-Experience Builder (ICE)
-------------------------
 
 --------
 Security
 --------
 
+----------
+Composable
+----------
+
+^^^^^^^^^^^^^^^^^^^^^^^
+Experience Builder (XB)
+^^^^^^^^^^^^^^^^^^^^^^^
