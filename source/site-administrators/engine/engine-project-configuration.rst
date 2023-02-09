@@ -146,6 +146,17 @@ This example file contains the properties used by Crafter Engine (click on the t
    .. note::
       Cache and ActiveCache do not function the same way as specified above when engine is in preview because the preview server does not cache to ensure the latest updates are seen immediately.
 
+ * **headerMappings.mapping.urlPattern** Ant path pattern to match for adding headers to response
+ * **headerMappings.mapping.headers** The headers that will be added to responses.  Each ``<header>`` element must contain a ``<name>``
+   element that specifies the name of the header e.g. ``Cache-Control``, and a ``<value>`` element containing directives, etc. (separated by comma)
+   e.g. ``max-age=60\, s-maxage=300``.
+
+   The ``Cache-Control`` header inserted to responses by default is set to ``No-Cache`` and leaves the caching to the reverse-proxy or CDN.
+   Using ``headerMappings`` allows specifying caching policies such as how an item is cached, maximum age before expiring, etc.
+   via the ``Cache-Control`` header.
+
+   See `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control>`__ for a list of available directives to use with ``Cache-Control``.
+
 .. note::
     Crafter Engine will not be able to load your Project Context if your configuration contains invalid XML
     or incorrect configuration.
