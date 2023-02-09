@@ -15,8 +15,7 @@ they need to install and maintain CrafterCMS components.
    :maxdepth: 1
 
    deployment-architecture
-   installation/index
-   configuration/index
+   installation-and-configuration/index
    performance-and-scaling/index
    upgrade/index
    security/index
