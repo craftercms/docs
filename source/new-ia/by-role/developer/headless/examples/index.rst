@@ -6,10 +6,6 @@
 Examples
 ========
 
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   react-spa
-   other-spa
-   mobile
+.. react-spa
+    other-spa
+    mobile

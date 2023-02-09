@@ -46,6 +46,8 @@ After clicking on the **Create** button, the form for the content type will open
 
 Save the changes by clicking on the ``Save`` button.  A dialog will pop up with a warning that there is no template associated with the content type.  The content type does not need a template, so just click on ``Save``.
 
+.. TODO Reconsider the topic below. Should it be left to the plugin?
+
 Create the page for redirecting
 -------------------------------
 
