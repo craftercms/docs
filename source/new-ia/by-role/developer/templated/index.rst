@@ -33,20 +33,20 @@ variance, templating engine to render HTML directly from CrafterCMS.
 
 It allows developers to model the content as general reusable items, and fold those into pages.
 Pages aggregate content from components as needed and are associated with a FreeMarker template that
-can render the final page. The choice of HTML tools and frameworks doesn’t matter to CrafterCMS.
+can render the final page. The choice of HTML tools and frameworks doesn't matter to CrafterCMS.
 Developers can use whatever front-end technology they want. For development React, Vue, Angular, Flutter
 or similar SPA, please see :ref:`here <newIa-developer-headless>`
 
 The following details building templated projects, its purpose and examples.
 
 .. toctree::
-   :maxdepth: 1
-   :titlesonly:
+    :maxdepth: 1
+    :titlesonly:
 
-   content-modeling
-   templating
-   groovy-controllers
-   adding-experience-builder
-   page-redirects
-   security
-   examples/index
+    ../common/content-modeling
+    content-access
+    templating
+    ../common/adding-experience-builder
+    ../common/security
+    ../common/redirects
+    examples/index
