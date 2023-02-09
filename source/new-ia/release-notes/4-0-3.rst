@@ -17,14 +17,27 @@ New Features
 * Crafter Studio now uses `zxcvbn <https://github.com/dropbox/zxcvbn>`__ for password strength management |br|
   See `here <https://github.com/craftercms/craftercms/issues/5816>`__ for more information
 
-  For more information on configuring the password requirements, see :ref:`crafter-studio-configure-password-requirements`
+  For more information on configuring the password requirements, see :ref:`newIa-crafter-studio-configure-password-requirements`
+
+* Added support for adding headers to responses when there are matched configuration patterns in
+  the Engine Project Configuration file |br|
+
+  Crafter Engine now supports configuring ``Cache-Control`` headers via the :ref:`newIa-engine-project-configuration` file,
+  using the ``headerMappings`` property.  By default, it will follow the cache policies configured, where before, it
+  was set to ``no-cache``.
+
+  If you're using a reverse-proxy or a CDN, no changes are required since caching is done by the reverse-proxy/CDN.
+
+  See :ref:`newIa-engine-project-configuration` for more information on configuring response headers
+
+  See `here <https://github.com/craftercms/craftercms/issues/5909>`__ for more information
 
 ^^^^^^^
 Updates
 ^^^^^^^
 
 * Updated Studio and Engine SAML to use the new Spring Security |br|
-  See :ref:`engine-saml2-configuration` and :ref:`crafter-studio-configure-studio-saml` for more information.
+  See :ref:`newIa-engine-saml2-configuration` and :ref:`newIa-crafter-studio-configure-studio-saml` for more information.
 
 * The property ``studio.cache.assets.maxAge`` in the Studio configuration file is changed from minutes to seconds |br|
 
@@ -58,7 +71,7 @@ Updates
 * Fixed issue with session inactivity timeout |br|
   See `here <https://github.com/craftercms/craftercms/issues/5891>`__ for more information
 
-  For more information on session timeouts, see :ref:`changing-session-timeout`
+  For more information on session timeouts, see :ref:`newIa-changing-session-timeout`
 
 * Improved logging for script not found errors |br|
   See `here <https://github.com/craftercms/craftercms/issues/5904>`__ for more information
@@ -67,18 +80,18 @@ Lots of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 4.0.3 Milestone <https://github.com/craftercms/craftercms/milestone/91?closed=1>`_
 
-For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+For information on upgrading 3.1.x sites, see :ref:`here <newIa-compatibility-with-3.1.x>`
 
 .. important::
 
-    Please see :ref:`Breaking changes <breaking-changes-4-0-3>` for breaking changes and other
+    Please see :ref:`Breaking changes <newIa-breaking-changes-4-0-3>` for breaking changes and other
     things to consider before upgrading
 
-    Please see :ref:`Breaking changes <breaking-changes-4-0-0>` for breaking changes and other
+    Please see :ref:`Breaking changes <newIa-breaking-changes-4-0-0>` for breaking changes and other
     things to consider before upgrading
 
     For instructions on how to update your CrafterCMS install to 4.0.0 (applies to 4.0.2),
-    please see :ref:`upgrading-craftercms`
+    please see :ref:`newIa-upgrading-craftercms`
 
     When using private key SSH authentication in the ``init-site.sh`` script, the private key path must be set explicitly. |br|
     Please see :ref:`newIa-setup-project-for-delivery` for more information on using the ``-k`` option of ``init-site.sh`` to
@@ -86,7 +99,7 @@ For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1
 
     For Linux installs, the Studio upgrade requires the library ``libaio`` which is not installed
     by default in some Linux distributions.  Please see the section on **Linux Prerequisites**
-    in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+    in :ref:`newIa-linux-prerequisites` for instructions on how to install the library ``libaio``
 
 |
 |

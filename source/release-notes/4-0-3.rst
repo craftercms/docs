@@ -17,6 +17,19 @@ New Features
 
   For more information on configuring the password requirements, see :ref:`crafter-studio-configure-password-requirements`
 
+* Added support for adding headers to responses when there are matched configuration patterns in
+  the Engine Project Configuration file |br|
+
+  Crafter Engine now supports configuring ``Cache-Control`` headers via the :ref:`engine-project-configuration` file,
+  using the ``headerMappings`` property.  By default, it will follow the cache policies configured, where before, it
+  was set to ``no-cache``.
+
+  If you're using a reverse-proxy or a CDN, no changes are required since caching is done by the reverse-proxy/CDN.
+
+  See :ref:`engine-project-configuration` for more information on configuring response headers
+
+  See `here <https://github.com/craftercms/craftercms/issues/5909>`__ for more information
+
 
 ^^^^^^^
 Updates
