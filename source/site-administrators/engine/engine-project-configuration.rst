@@ -146,9 +146,74 @@ This example file contains the properties used by Crafter Engine (click on the t
    .. note::
       Cache and ActiveCache do not function the same way as specified above when engine is in preview because the preview server does not cache to ensure the latest updates are seen immediately.
 
+ * **headerMappings.mapping.urlPattern** Ant path pattern to match for adding headers to response
+ * **headerMappings.mapping.headers** The headers that will be added to responses.  Each ``<header>`` element must contain a ``<name>``
+   element that specifies the name of the header e.g. ``Cache-Control``, and a ``<value>`` element containing directives, etc. (separated by an escaped comma)
+   e.g. ``max-age=60\, s-maxage=300``.
+
 .. note::
     Crafter Engine will not be able to load your Project Context if your configuration contains invalid XML
     or incorrect configuration.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Setting HTTP Response Headers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CrafterCMS supports adding headers to responses when there are matched configuration patterns in
+the Engine Project Configuration file |br|
+
+To setup HTTP response headers, do the following:
+- Configure the Ant path pattern to match for adding headers to response in **headerMappings.mapping.urlPattern**
+- Configure the ``<header>`` element and the `<value>`` element ` with your desired values under **headerMappings.mapping.headers**.
+
+.. code-block:: xml
+    :emphasize-lines: 3, 6-7
+
+    <headerMappings>
+      <mapping>
+        <urlPattern>/**/*.pdf</urlPattern>
+        <headers>
+          <header>
+            <name>X-Crafter-Document</name>
+            <value>true</value>
+          </header>
+        </headers>
+      </mapping>
+    </headerMappings>
+
+
+Setting Cache Headers
+^^^^^^^^^^^^^^^^^^^^^
+Cache headers allows specifying caching policies such as how an item is cached, maximum age before expiring, etc.
+These headers are extremely useful for indicating cache TTLs to CDNs and browsers on certain requests.
+
+To setup cache headers, do the following:
+
+- Configure the Ant path pattern to match for adding headers to response in **headerMappings.mapping.urlPattern**
+- Configure the ``<header>`` element with the value ``Cache-Control`` and the element ``<value>`` with your desired Cache-Control
+  directive under **headerMappings.mapping.headers**.
+
+  See `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control>`__ for a list of available directives
+  to use with ``Cache-Control``.
+
+Your configuration should look something like below:
+
+.. code-block:: xml
+    :emphasize-lines: 3, 6-7
+
+        <headerMappings>
+          <mapping>
+            <urlPattern>/articles/**</urlPattern>
+            <headers>
+              <header>
+                <name>Cache-Control</name>
+                <value>max-age=60\, s-maxage=300</value>
+              </header>
+            <headers>
+          </mapping>
+        </headerMappings>
+
+
+Please note that the ``Cache-Control`` header inserted to responses by default is set to ``No-Cache``.
 
 .. _engine-site-configuration-spring-configuration:
 
