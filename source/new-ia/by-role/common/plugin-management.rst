@@ -3,8 +3,6 @@
 :nosearch:
 :orphan:
 
-.. TODO: point to the article in common instead of repeating here
-
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 

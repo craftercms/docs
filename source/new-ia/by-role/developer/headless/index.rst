@@ -18,13 +18,12 @@ author content items and then retrieve that content for your SPA, iOS, Android o
 This section details building headless projects, its purpose and examples.
 
 .. toctree::
-   :maxdepth: 1
-   :titlesonly:
+    :maxdepth: 1
+    :titlesonly:
 
-   content-modeling
-   accessing-content
-   adding-experience-builder
-   upgrading-in-context-editing
-   custom-api
-   security
-   examples/index
+    content-modeling
+    content-access
+    ../common/adding-experience-builder
+    security
+    ../common/redirects
+    examples/index

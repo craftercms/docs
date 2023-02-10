@@ -3,7 +3,7 @@
 
 :nosearch:
 
-..  _newIa-developers:
+..  _newIa-developer:
 
 **********
 Developers
@@ -27,6 +27,7 @@ The following gets you started with content modeling, content retrieval, and mor
    headless/index
    templated/index
    devcontentops/index
+   upgrade/index
 
 |
 

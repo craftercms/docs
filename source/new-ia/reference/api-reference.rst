@@ -13,8 +13,8 @@ Building content rich applications backed by CrafterCMS requires you use one of 
 * GraphQL (great for SPAs and/or AJAX)
 * REST API (great for SPAs and/or AJAX)
 * FreeMarker (great for HTML with server-side HTML production)
-* Groovy (great for business logic with access to content or configuration/parameterization)
-* Java (for embedding your business logic/app within Crafter Engine)
+* Groovy (great for full control of the API endpoints and response shape)
+* Java (can be accessed from Groovy and gives full access to Engine)
 
 |
 |
