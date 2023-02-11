@@ -98,6 +98,10 @@ This example file contains the properties used by Crafter Engine (click on the t
    commas inside patterns need to be escaped with a ``\``,
    like this: ``<accessControlAllowOrigin>http://localhost:[8000\,3000],http://*.other.domain</accessControlAllowOrigin>``
 
+   ``<accessControlAllowMethods>`` and ``<accessControlAllowHeaders>`` values are split using ``,``.  Remember to escape the commas ``,`` separating
+   the values like this: ``<accessControlAllowHeaders>X-Custom-Header\, Content-Type</accessControlAllowHeaders>`` or
+   ``<accessControlAllowMethods>GET\, OPTIONS</accessControlAllowMethods>``
+
    .. note::
       When engine is in preview mode, it is a proxy and therefore will not add CORS headers to REST API responses even if CORS is enabled.
 
