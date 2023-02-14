@@ -2,11 +2,18 @@
 :last-updated: 4.0.0
 :nosearch:
 
-.. _newIa-sync_studio_database_with_repo:
+.. _newIa-working-in-your-ide:
 
-===========================================
-Synchronize Studio Database With Repository
-===========================================
+===================
+Working in Your IDE
+===================
+
+.. While Crafter Studio can help with basic code development, it's not an IDE. It's possible and encouraged for developers to work in their own IDEs against a local git repository, and upon a commit or merge, Crafter Studio will pick up the changes and sync up with the developer's work that was done in the IDE.
+
+.. Please review the DevContentOps?? article for best practices on that.
+
+
+
 
 Sometimes the Git repository and the Studio database can become out of sync, for example, if you import content into the repository from
 another environment. This is fixed by synchronizing the Studio database with the repository which is done automatically by Studio.

@@ -44,9 +44,15 @@ The following details building templated projects, its purpose and examples.
     :titlesonly:
 
     ../common/content-modeling
-    content-access
+    ../common/content-access
     templating
     ../common/adding-experience-builder
     ../common/security
     ../common/redirects
-    examples/index
+
+--------------------------
+Example Templated Projects
+--------------------------
+
+.. Editorial
+    Pick a few BPs

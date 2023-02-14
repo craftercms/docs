@@ -13,7 +13,7 @@ Composable
 ----------
 Extensions
 ----------
-.. Extensions as facilitator of composability
+.. Extensions as facilitator of composability -- todo link to extensions/index
 
 ^^^^^^^^^^
 Blueprints

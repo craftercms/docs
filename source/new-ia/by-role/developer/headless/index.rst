@@ -21,9 +21,26 @@ This section details building headless projects, its purpose and examples.
     :maxdepth: 1
     :titlesonly:
 
-    content-modeling
-    content-access
+    ../common/content-modeling
+    ../common/content-access
     ../common/adding-experience-builder
-    security
+    ../common/security
     ../common/redirects
-    examples/index
+
+-------------------------
+Example Headless Projects
+-------------------------
+^^^^^^^^^^^^^^^^
+Single Page Apps
+^^^^^^^^^^^^^^^^
+.. TODO clean up
+
+- Wordify React
+- Video Center
+
+^^^^^^^^^^^^^
+Pure Headless
+^^^^^^^^^^^^^
+
+- Headless Blog
+- Headless Store
