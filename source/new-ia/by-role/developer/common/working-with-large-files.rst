@@ -4,9 +4,9 @@
 
 .. index:: Storing Large Files
 
-===================
-Storing Large Files
-===================
+========================
+Working with Large Files
+========================
 
 .. Git doesn't like large binary files, and therefore it's best to keep these out of the git repository. CrafterCMS allows for a number of external storage mechanisms to be integrated into your project.
     These include: S3, WebDAV, Box, and more via plugins.
@@ -23,4 +23,9 @@ Storing Large Files
    :titlesonly:
 
    use-s3-to-store-assets
+
+.. Working with images
+    asset processing link
+
+.. Working with video files
    upload-transcode-video
