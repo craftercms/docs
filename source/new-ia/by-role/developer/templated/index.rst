@@ -43,7 +43,7 @@ The following details building templated projects, its purpose and examples.
     :maxdepth: 1
     :titlesonly:
 
-    ../common/content-modeling
+    ../common/content-modeling/content-modeling
     ../common/content-access
     templating
     ../common/adding-experience-builder
