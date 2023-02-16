@@ -167,3 +167,14 @@ To add a custom appender you can follow these steps:
 .. warning::
   Because Log4j2 only loads classes during initialization if there is a change in the custom appender JAR those will 
   not be caught by the reconfiguration feature and you must restart the app context or tomcat.
+
+---------------------------
+*crafter.sh* Script Logging
+---------------------------
+
+To capture the output of the ``crafter.sh`` script in a log file, set the environment variable
+``CRAFTER_SCRIPT_LOG`` to point to a log file like below:
+
+.. code-block:: bash
+
+   export CRAFTER_SCRIPT_LOG=${CRAFTER_SCRIPT_LOG:="/your/path/output-file.log}"
