@@ -1,6 +1,8 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
+:nosearch:
 
-.. _logging:
+.. _newIa-logging:
 
 =======
 Logging

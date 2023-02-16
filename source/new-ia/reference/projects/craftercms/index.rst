@@ -71,6 +71,8 @@ The CrafterCMS Authoring and Delivery scripts will help you on the basic startup
 +-------------------------+------------------------------------------------------------------------+
 || **Description**        || Main Script to start and stop all needed Services to have a           |
 ||                        || functional CrafterCMS *Authoring/Delivery Environment*                |
+||                        || To log the output of the script to a file, set the environment        |
+||                        || variable CRAFTER_SCRIPT_LOG to point to a log file                    |
 +-------------------------+------------------------------------------------------------------------+
 || **Synopsis**           || ``crafter.sh start|stop|debug|help``                                  |
 +-------------------------+------------------------------------------------------------------------+
