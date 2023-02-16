@@ -22,10 +22,13 @@ This section details building headless projects, its purpose and examples.
     :titlesonly:
 
     ../common/content-modeling
+    ../common/content-modeling/information-architecture
     ../common/content-access
+    ../../../reference/groovy-api
     ../common/adding-experience-builder
     ../common/security
     ../common/redirects
+    ../common/servlet-filters
 
 -------------------------
 Example Headless Projects

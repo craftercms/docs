@@ -44,11 +44,17 @@ The following details building templated projects, its purpose and examples.
     :titlesonly:
 
     ../common/content-modeling/content-modeling
+    ../common/content-modeling/information-architecture
     ../common/content-access
     templating
+    ../../../reference/groovy-api
     ../common/adding-experience-builder
     ../common/security
     ../common/redirects
+    ../common/servlet-filters
+    working-with-sass
+
+.. Consider adding a section for detailed topics below the bigger topics
 
 --------------------------
 Example Templated Projects
