@@ -6,6 +6,22 @@
 Security Advisories
 ===================
 
+CV-2023021701
+=============
+
+======================= ======================================================================================
+**Date**                2023.02.17
+======================= ======================================================================================
+**Affected Versions**   **4.0** <= 4.0.1, **3.1** =< 3.1.26
+**Vulnerability Type**  CWE-89 Improper Neutralization of Special Elements used in an SQL Command
+                        ('SQL Injection')
+**Risk**                Medium
+**Description**         Authenticated administrators can perform a SQL Injection attack against the authoring
+                        database that holds Studio users, groups, and item workflow states.
+**CVE**                 https://www.cve.org/CVERecord?id=CVE-2023-26020
+**Credit**              Gil Correia, gil.correia@devoteam.com
+======================= ======================================================================================
+
 CV-2022091302
 =============
 
