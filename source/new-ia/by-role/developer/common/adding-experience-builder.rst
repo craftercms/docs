@@ -2,13 +2,15 @@
 :since-version: 4.0.0
 :nosearch:
 
-.. index:: Experience Builder, In-Context Editing, ICE
-
-.. _newIa-templated-xb:
+.. _newIa-xb:
 
 ======================================
 Adding Experience Builder to a Project
 ======================================
+
+.. version_tag::
+   :label: Since
+   :version: 4.0.0
 
 CrafterCMS' Experience Builder (XB) provides a UI layer on top of your applications that enables authors
 with in-context editing (ICE) for all the model fields defined in the content types of pages and components.
@@ -18,8 +20,8 @@ model each element on the view represents. See :ref:`newIa-content-modeling` to 
 .. TODO insert <figure: example page with a sample content type side by side showing the relation between page elements
    and content type fields>
 
-If you`re starting from a 3.x ICE system, see :ref:`newIa-upgrading-in-context-editing-templated` for more information
-on how to move from the 3.x ICE system to the 4.x Experience Builder (XB) system discussed here.
+If you`re starting from a 3.x ICE system, see :ref:`newIa-upgrading-in-context-editing` for more information on how
+to move from the 3.x ICE system to the 4.x Experience Builder (XB) system discussed here.
 
 ----------------------------------------------
 Creating Experience Builder (XB) Enabled Sites
@@ -230,14 +232,14 @@ this element as editable. Such ``div`` would look as shown below:
 .. code-block:: html
    :linenos:
 
-   <div
-     data-craftercms-model-path="/site/website/index.xml"
-     data-craftercms-model-id="f830b94f-a6e9-09eb-9978-daafbfdf63ef"
-     data-craftercms-field-id="columns_o.items_o"
-     data-craftercms-index="0.1"
-   >...</div>
+       <div
+         data-craftercms-model-path="/site/website/index.xml"
+         data-craftercms-model-id="f830b94f-a6e9-09eb-9978-daafbfdf63ef"
+         data-craftercms-field-id="columns_o.items_o"
+         data-craftercms-index="0.1"
+       >...</div>
 
-Start by importing the crafter FreeMarker library on to your FreeMarker template.
+    Start by importing the crafter FreeMarker library on to your FreeMarker template.
 
 .. code-block:: text
 
@@ -253,18 +255,18 @@ and we ended up with the following markup.
 .. code-block:: html
    :linenos:
 
-   <div class="carousel">              <!-- Component (Carousel) -->
-     <div>                             <!-- Repeating group (slides_o) — Additional element introduced -->
-       <div class="slide">             <!-- Repeat group item (slides_o[0]) -->
-         <img src="slide1.png" alt=""> <!-- Repeat group item field (slides_o[0].images_s) -->
-         <h2>Slide One</h2>            <!-- Repeat group item field (slides_o[0].caption_s) -->
+       <div class="carousel">              <!-- Component (Carousel) -->
+         <div>                             <!-- Repeating group (slides_o) — Additional element introduced -->
+           <div class="slide">             <!-- Repeat group item (slides_o[0]) -->
+             <img src="slide1.png" alt=""> <!-- Repeat group item field (slides_o[0].images_s) -->
+             <h2>Slide One</h2>            <!-- Repeat group item field (slides_o[0].caption_s) -->
+           </div>
+           <div class="slide">             <!-- Repeat group item (slides_o[1]) -->
+             <img src="slide2.png" alt=""> <!-- Repeat group item field (slides_o[1].images_s) -->
+             <h2>Slide Two</h2>            <!-- Repeat group item field (slides_o[1].caption_s) -->
+           </div>
+         </div>
        </div>
-       <div class="slide">             <!-- Repeat group item (slides_o[1]) -->
-         <img src="slide2.png" alt=""> <!-- Repeat group item field (slides_o[1].images_s) -->
-         <h2>Slide Two</h2>            <!-- Repeat group item field (slides_o[1].caption_s) -->
-       </div>
-     </div>
-   </div>
 
 Assume you're using a particular *CarouselJS* library that requires the ``div.carousel`` element to be
 the direct parent of the ``div.slide`` elements. As mentioned earlier, we can flip around the elements
@@ -273,11 +275,11 @@ for the component and the repeat group.
 .. code-block:: html
    :linenos:
 
-   <div>                    <!-- Component (Carousel) -->
-     <div class="carousel"> <!-- Repeating group (slides_o) -->
-       ...
-     </div>
-   </div>
+       <div>                    <!-- Component (Carousel) -->
+         <div class="carousel"> <!-- Repeating group (slides_o) -->
+           ...
+         </div>
+       </div>
 
 Now, to start converting the elements to be editable, replace each tag, with the appropriate CrafterCMS macro.
 Prepend ``@crafter.`` to every tag so that ``<div>…</div>`` becomes ``<@crafter.div>...</@crafter.div>``,
@@ -305,24 +307,24 @@ groups. :ref:`newIa-renderRepeatGroup` for all the available customizations and 
 .. code-block:: text
    :linenos:
 
-   <@crafter.renderRepeatGroup
-     $field="slides_o"
-     $containerAttributes={ "class": "carousel" }
-     $itemAttributes={ "class": "slide" };
-     item, index
-   >
-     <@crafter.img
-       $field="slides_o.image_s"
-       $index="${index}"
-       src="${item.image_s}"
-       alt=""
-     />
-     <@crafter.h2 $field="slides_o.caption_s" $index="${index}">
-       ${item.caption_html!''}
-     </@crafter.h2>
-   </@crafter.renderRepeatGroup>
+       <@crafter.renderRepeatGroup
+         $field="slides_o"
+         $containerAttributes={ "class": "carousel" }
+         $itemAttributes={ "class": "slide" };
+         item, index
+       >
+         <@crafter.img
+           $field="slides_o.image_s"
+           $index="${index}"
+           src="${item.image_s}"
+           alt=""
+         />
+         <@crafter.h2 $field="slides_o.caption_s" $index="${index}">
+           ${item.caption_html!''}
+         </@crafter.h2>
+       </@crafter.renderRepeatGroup>
 
-The ``renderRepeatGroup`` macro does several things for us:
+    The ``renderRepeatGroup`` macro does several things for us:
 
 
 * Prints the repeat group *container element*
@@ -337,25 +339,25 @@ The complete FreeMarker template for the carousel component becomes:
 .. code-block:: text
    :linenos:
 
-   <#import "/templates/system/common/crafter.ftl" as crafter />
-   <@crafter.componentRootTag>
-     <@crafter.renderRepeatGroup
-       $field="slides_o"
-       $containerAttributes={ "class": "carousel" }
-       $itemAttributes={ "class": "slide" };
-       item, index
-     >
-       <@crafter.img
-         $field="slides_o.image_s"
-         $index="${index}"
-         src="${item.image_s!''}"
-         alt=""
-       />
-       <@crafter.h2 $field="slides_o.caption_s" $index="${index}">
-         ${item.caption_html!''}
-       </@crafter.h2>
-     </@crafter.renderRepeatGroup>
-   </@crafter.componentRootTag>
+       <#import "/templates/system/common/crafter.ftl" as crafter />
+       <@crafter.componentRootTag>
+         <@crafter.renderRepeatGroup
+           $field="slides_o"
+           $containerAttributes={ "class": "carousel" }
+           $itemAttributes={ "class": "slide" };
+           item, index
+         >
+           <@crafter.img
+             $field="slides_o.image_s"
+             $index="${index}"
+             src="${item.image_s!''}"
+             alt=""
+           />
+           <@crafter.h2 $field="slides_o.caption_s" $index="${index}">
+             ${item.caption_html!''}
+           </@crafter.h2>
+         </@crafter.renderRepeatGroup>
+       </@crafter.componentRootTag>
 
 .. TODO Speak about the ice support classes, event capture overlay and special treatment for empty zones
 
@@ -424,6 +426,8 @@ In that case, you'll need to invoke ``initExperienceBuilder`` manually.
      - JS object string
      - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string, the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter's JavaScript SDK initialization.
 
+When invoked, ``initExperienceBuilder`` returns an object with an ``unmount`` prop/function, which
+would indeed `unmount` XB from the current page.
 
 Examples
 """"""""
@@ -508,18 +512,18 @@ an item of a collection.
 .. code-block:: text
    :emphasize-lines: 1
 
-   <@crafter.section>
-     <@crafter.h1 $field="heading_t">${contentModel.heading_t}</@crafter.h1>
-   </@crafter.section>
+       <@crafter.section>
+         <@crafter.h1 $field="heading_t">${contentModel.heading_t}</@crafter.h1>
+       </@crafter.section>
 
-In this example, a dynamic tag is used to print the tag from the actual content model.
+    In this example, a dynamic tag is used to print the tag from the actual content model.
 
 .. code-block:: text
    :emphasize-lines: 1
 
-   <@crafter.tag $tag=(contentModel.headingLevel_s!'h2')>
-     <@crafter.span $field"text_s">${contentModel.text_s}</@crafter.span>
-   </@crafter.tag>
+       <@crafter.tag $tag=(contentModel.headingLevel_s!'h2')>
+         <@crafter.span $field"text_s">${contentModel.text_s}</@crafter.span>
+       </@crafter.tag>
 
 .. _newIa-renderComponentCollection:
 
@@ -1232,3 +1236,472 @@ breadcrumb
      - false
      - Whether to render the active element as a link (i.e. ``a``); otherwise rendered as a ``span``.
 
+.. _newIa-xbJsApps:
+
+^^^^^^^^^^^^^^^^^^^^^^^
+JavaScript Applications
+^^^^^^^^^^^^^^^^^^^^^^^
+
+XB offers a set of JavaScript (JS) libraries and utilities that you can use in various scenarios.
+When writing JS-powered applications including Single-page applications — like when using React,
+Angular, Vue or similar — all you need to do is invoke the various XB methods relevant to your application.
+
+The simplest integration strategy for JS applications consist of marking the relevant HTML elements
+which represent a content model field, with a set of attributes that CrafterCMS sdk libraries generate for you based on a content
+model that you've previously fetched.
+
+You may also dig deep into the system and manage the field element registrations manually to suit your
+application needs.
+
+Usage
+~~~~~
+
+XB JS libraries can be used either via npm by importing ``@craftercms/experience-builder`` or using the
+JS :abbr:`UMD (Universal Module Definition)` bundle and adding it into your app's runtime.
+
+.. _newIa-xb-react-bindings:
+
+React
+~~~~~
+
+CrafterCMS provides React bindings for integrating with XB. Because XB itself is a React application,
+React presents the tightest, most native integration with XB as it will essentially run as part of your
+app instead of as a parallel application like when using other technologies.
+
+React bindings can be used either via npm or using the umd bundle that comes with CrafterCMS.
+
+The components available for using on your React applications are listed below.
+
+.. _newIa-ExperienceBuilder:
+
+ExperienceBuilder
+"""""""""""""""""
+
+This is the main component that orchestrates and enables all of the In-context Editing. You must declare
+this component only once and it should be a parent of all the XB-enabled components.
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Prop
+     - Type
+     - Default
+     - Description
+   * - ``isAuthoring``
+     - boolean
+     - (Required)
+     - It controls the adding or bypassing of authoring tools. Should send true when
+       running in Studio and authoring tools should be enabled. Authoring tools are completely
+       absent when set to false.
+   * - ``isHeadlessMode``
+     - boolean
+     - false
+     - If your App consumes content from CrafterCMS in a headless way, certain options (e.g. editing
+       the freemarker template or controller) aren't applicable. Setting headless mode to true will
+       disable XB options that aren't relevant to headless application such as SPAs.
+   * - ``themeOptions``
+     - `MUI's ThemeOptions <https://mui.com/customization/theming>`__
+     - XB's defaults
+     - XB is powered by MUI. This argument allows you to customize MUI theme options and override
+       XB's defaults.
+   * - ``sxOverrides``
+     - ExperienceBuilderStylesSx
+     - XB's defaults
+     - You may change XB-specific theming through this argument
+   * - ``documentDomain``
+     - string
+     - null
+     - You may specify a ``documentDomain`` if your preview runs on a different domain than Studio does.
+   * - ``scrollElement``
+     - string
+     - html, body
+     - You may specify a different element for XB to scroll when scrolling the user to specific
+       CrafterCMS field elements.
+
+Model
+"""""
+
+Use this component to render elements that represent the **models themselves** (i.e. CrafterCMS pages or
+components, not their fields).
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Prop
+     - Type
+     - Default
+     - Description
+   * - ``model``
+     - Object (ContentInstance)
+     - (Required)
+     - The model being rendered
+   * - ``component``
+     - string | React.ElementType
+     - "div"
+     - The component to be rendered
+   * - ``componentProps``
+     - Object
+     - undefined
+     - Any props sent at the root that aren't own props are forwarded down to the rendered
+       component so in most cases you needn't use ``componentProps``. There may be cases where your
+       target component has a prop name that matches in name with a prop of the CrafterCMS React
+       component so to avoid it swallowing the prop and not reaching your target component, you may
+       send the prop(s) via ``componentProps`` instead.
+
+ContentType
+"""""""""""
+
+Use this component to render a specific component of your own library based on the content type of the
+model. ``ContentType`` component works with a "content type map" which you must supply as a prop. The
+content type map, is essentially a plain object, a lookup table of your components indexed by content
+type id. You may use it in conjunction with ``React.lazy`` to optimize your app; specially considering the
+content type map should contain all the possible components that you will be rendering via ``ContentType``
+component on a given piece of your app.
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Prop
+     - Type
+     - Default
+     - Description
+   * - ``model``
+     - Object (ContentInstance)
+     - (Required)
+     - The model being rendered
+   * - ``contentTypeMap``
+     - Object
+     - (Required)
+     - A map of components indexed by CrafterCMS content type id. The content type id of the model passed
+       will be used to pick from the map the component that should render said model.
+   * - ``notFoundComponent``
+     - React.ComponentType
+     -
+     - If the model passed to ``ContentType`` is ``null``, it's taken as a 404 and the notFoundComponent
+       is rendered.
+   * - ``notMappedComponent``
+     - React.ComponentType
+     -
+     - If the content type of the model is not found in the ``contentTypeMap``, the ``notMappedComponent``
+       is rendered.
+
+RenderField
+"""""""""""
+
+Use this component to render CrafterCMS model **fields**. Although it can also render collection-type
+fields, CrafterCMS provides specific components (see below) to render component collections or repeat groups.
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Prop
+     - Type
+     - Default
+     - Description
+   * - ``model``
+     - Object (ContentInstance)
+     - (Required)
+     - The model being rendered
+   * - ``fieldId``
+     - string
+     - (Required)
+     - The id of the field to render
+   * - ``index``
+     - string | number
+     - undefined
+     - If applicable, the index within the parent collections.
+   * - ``component``
+     - string | React.ElementType
+     - "div"
+     - The component to be rendered
+   * - ``componentProps``
+     - Object
+     - undefined
+     - Any props sent at the root that aren't own props are forwarded down to the rendered
+       component so in most cases you needn't use ``componentProps``. There may be cases where your
+       target component has a prop name that matches in name with a prop of the CrafterCMS React
+       component so to avoid it swallowing the prop and not reaching your target component, you may
+       send the prop(s) via ``componentProps`` instead.
+   * - ``renderTarget``
+     - string
+     - "children"
+     - The value(s) to be rendered will be passed with this prop name to the target element type
+       (see ``component`` prop). By default, the value is passed as children, but if you were to
+       render for example an image, you would do ``<RenderField ... component="img" renderTarget="src" />``
+   * - ``render``
+     - function
+     - (value, fieldId) => value
+     - If you need to do custom rendering logic for the value of the field being rendered, you may
+       supply a ``render`` function. The function receives the field value and the ``fieldId``
+
+.. _newIa-RenderComponents:
+
+RenderComponents
+""""""""""""""""
+
+Use this component to render item selectors that hold components. This component renders the field
+element (i.e. the item selector), the item element, and the component itself.
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Prop
+     - Type
+     - Default
+     - Description
+   * - ``*``
+     -
+     -
+     - ``RenderComponents`` shares all the `RenderRepeat <#renderrepeat>`__ props.
+   * - ``contentTypeMap``
+     - Object
+     - (Required)
+     - A map of components indexed by CrafterCMS content type id. The content type id of the model
+       passed will be used to pick from the map the component that should render said model.
+   * - ``contentTypeProps``
+     - Props Object
+     - {}
+     - Props to be passed down to the ``ContentType`` component — which renders your target component
+       based on the ``contentTypeMap``. Props will be passed all the way down to the target component.
+   * - ``nthContentTypeProps``
+     - Record<number, object>
+     - ``{}``
+     - You can pass specific props to components based on their index in the collection with this prop.
+   * - ``renderItem``
+     - function
+     - (component, index) => <ContentType ... />
+     - If the default component renderer is not sufficient for your use case, you can supply a custom
+       renderer which is invoked with the current component and the current index in the collection.
+
+.. _newIa-RenderRepeat:
+
+RenderRepeat
+""""""""""""
+
+Use this component to render repeat groups and their items. This component renders the field element
+(i.e. the repeat group) and the item element. The body of each repeat group item is rendered by a function
+supplied by you, which is provided with the item, the index in the collection, the computed compound
+index (when applicable) and the collection itself.
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Prop
+     - Type
+     - Default
+     - Description
+   * - ``model``
+     - Object (ContentInstance)
+     - (Required)
+     - The model being rendered
+   * - ``fieldId``
+     - string
+     - (Required)
+     - The id of the repeat group field
+   * - ``index``
+     - string | number
+     - undefined
+     - When nested inside other repeats, the index inside the parent repeat
+   * - ``component``
+     - React.ElementType
+     - "div"
+     - The React component to render the field element as
+   * - ``componentProps``
+     - Object
+     - undefined
+     - Any props sent at the root that aren't own props are forwarded down to the rendered
+       component so in most cases you needn't use ``componentProps``. There may be cases where your
+       target component has a prop name that matches in name with a prop of the CrafterCMS React
+       component so to avoid it swallowing the prop and not reaching your target component, you may
+       send the prop(s) via ``componentProps`` instead.
+   * - ``itemComponent``
+     - React.ElementType
+     - "div"
+     -
+   * - ``itemProps``
+     - Object
+     - undefined
+     -
+   * - ``itemKeyGenerator``
+     - function
+     - (item, index) => index
+     - A function that receives the item and the current index and should return the ``key``
+       (React special's prop attribute) to be used on the item being rendered. By default, just the
+       current index is used, so you can make the key more robust through this prop.
+   * - ``renderItem``
+     - function
+     - (Required)
+     - Should return/render the inner item (``RenderRepeat`` renders the field and item elements,
+       you're responsible for rendering the fields of each item). The function receives the item,
+       the compound index (nested collections), the index in the current repeat collection and the
+       collection itself.
+
+Angular, Vue and Other JS Applications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The easiest way to integrate XB with your JS application is by putting attributes on each HTML element that
+represents a model, field or item of a CrafterCMS content type and then invoking XB initializer.
+
+.. _newIa-fetchIsAuthoring:
+
+fetchIsAuthoring
+""""""""""""""""
+
+This function checks against the specified CrafterCMS server if it is running against an authoring server.
+When running in authoring, in-context editing tools should be enabled in the application whilst in
+delivery (i.e. "production"), they should not.
+
+The function returns a promise which will resolve as true or false. This value should be fetched early
+on your application bootstrap and cached for the rest of the app lifecycle. Depending on the value,
+you should then carry on to initialize XB or bypass it's initialization and assume the app is running
+in "production", where authoring tools are completely absent.
+
+.. TODO Internally it uses `crafterConf < add docs on readme and link to them >`_
+
+.. code-block:: js
+
+      import { fetchIsAuthoring, initExperienceBuilder } from '@craftercms/experience-builder';
+
+      // Check if we're in authoring
+      fetchIsAuthoring().then((isAuthoring) => {
+         // If we're in authoring, initialize XB
+         if (isAuthoring) {
+            initExperienceBuilder()
+         }
+      })
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Parameter
+     - Type
+     - Default
+     - Description
+   * - ``config``
+     - Record<'baseUrl' | 'site', string>
+     - undefined
+     - You can supply a baseUrl and/or site to make the check. ``fetchIsAuthoring`` uses ``crafterConf``
+       (from ``@craftercms/classes`` package) values when not supplied.
+
+.. TODO
+   Is addAuthoringSupport still needed? If used via npm, everything is imported from the package and,
+   if imported as a script, everything is already loaded.
+
+addAuthoringSupport
+"""""""""""""""""""
+
+Add authoring support will import the XB scripts on to your page.
+
+.. _newIa-getICEAttributes:
+
+getICEAttributes
+""""""""""""""""
+
+Use this method to get the set of attributes to place on each element that represents a CrafterCMS
+model, field or item. Once you've fetched your content, you'd invoke ``getICEAttributes`` and it will
+return all the necessary attributes to inform the system how to make such element editable in XB.
+
+You should first set all the attributes on your markup and afterwards, invoke `initExperienceBuilder <#initexperiencebuilder>`_
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Parameter
+     - Type
+     - Default
+     - Description
+   * - ``config``
+     - `ICEConfig <https://github.com/craftercms/studio-ui/blob/33b003c49fdde3ea00e1d95ca02d9f1e6869b301/ui/guest/src/index.tsx#L40>`_
+     - (Required)
+     - You must supply at a minimum the ``model`` and ``isAuthoring``. The ``fieldId`` must be
+       supplied when the artifact being rendered is a field. The ``index`` must be specified when
+       the artifact being rendered is inside a collection (repeat groups or item selectors).
+
+.. _newIa-js-app-initExperienceBuilder:
+
+initExperienceBuilder
+"""""""""""""""""""""
+
+Use this method to initialize experience builder once you have printed all the attributes (see
+`getICEAttributes <#geticeattributes>`__) on your markup.
+
+.. list-table::
+   :widths: 10 10 10 70
+   :header-rows: 1
+
+   * - Parameter
+     - Type
+     - Default
+     - Description
+   * - ``props``
+     - `ExperienceBuilderProps <#experiencebuilder>`_
+     - (Required)
+     - See `XB props <#experiencebuilder>`_.
+
+Example Applications
+~~~~~~~~~~~~~~~~~~~~
+
+- `React Example <https://github.com/craftercms/wordify-blueprint/tree/react>`_
+- `Next JS Example <https://github.com/craftercms/craftercms-example-nextjs>`_
+- `Angular Example <https://github.com/craftercms/craftercms-example-angular>`_
+
+.. TODO
+   Npm
+   ~~~
+
+      yada
+
+      UMD Bundle
+      ~~~~~~~~~~
+
+      craftercms-guest.umd.js
+      craftercms-guest.no-react.umd.js
+
+      React Native
+      ~~~~~~~~~~~~
+
+      React native...
+
+      API
+      ~~~
+
+      Api...
+
+      ContentType
+      """""""""""
+
+      <ContentType />
+
+      RenderField
+      """""""""""
+
+      <RenderField />
+
+      useICE hook
+      """""""""""
+
+      The useICE hook
+
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      Other Html or JavaScript applications
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      XB uses DOM events to power authoring. Because XB sits on top of your applications, you may need to
+      make your applications aware of XB's behaviours to facilitate the authoring experience.
+
+      END
+
+      **Plugins**
+
+
+      * The z key
+      * The e & m keys
+      * ICE on hints (class & event)

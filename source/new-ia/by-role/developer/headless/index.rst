@@ -18,11 +18,32 @@ author content items and then retrieve that content for your SPA, iOS, Android o
 This section details building headless projects, its purpose and examples.
 
 .. toctree::
-   :maxdepth: 1
-   :titlesonly:
+    :maxdepth: 1
+    :titlesonly:
 
-   content-modeling
-   content-access
-   adding-experience-builder
-   security
-   examples/index
+    ../common/content-modeling
+    ../common/content-modeling/information-architecture
+    ../common/content-access
+    ../../../reference/groovy-api
+    ../common/adding-experience-builder
+    ../common/security
+    ../common/redirects
+    ../common/servlet-filters
+
+-------------------------
+Example Headless Projects
+-------------------------
+^^^^^^^^^^^^^^^^
+Single Page Apps
+^^^^^^^^^^^^^^^^
+.. TODO clean up
+
+- Wordify React
+- Video Center
+
+^^^^^^^^^^^^^
+Pure Headless
+^^^^^^^^^^^^^
+
+- Headless Blog
+- Headless Store

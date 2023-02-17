@@ -5,12 +5,12 @@
 .. _newIa-working-with-dates-in-freemarker:
 
 ===============================================
-Working with Dates and Time Zones in Freemarker
+Working with Dates and Time Zones in FreeMarker
 ===============================================
 
-There are times when we need to display dates in a certain format.  Things that we may want to format the dates displayed are dates in Email templates, dates in web pages, etc.  Freemarker has built-ins for dates to help with formatting displays.  To use a built-in, you need to use a ``?``, then the built-in.
+There are times when we need to display dates in a certain format.  Things that we may want to format the dates displayed are dates in Email templates, dates in web pages, etc.  FreeMarker has built-ins for dates to help with formatting displays.  To use a built-in, you need to use a ``?``, then the built-in.
 
-Let's look at some examples on how to use the Freemarker date built-ins.  We'll use a project created by using the Website Editorial blueprint.
+Let's look at some examples on how to use the FreeMarker date built-ins.  We'll use a project created by using the Website Editorial blueprint.
 
 First, let's set the time zone in Crafter Engine.  From the **Sidebar**, click on |projectTools|, then click on **Configuration**.  Select **Engine Project Configuration** from the dropdown list, then enter the following into the configuration:
 
@@ -21,12 +21,12 @@ First, let's set the time zone in Crafter Engine.  From the **Sidebar**, click o
         <timeZone>America/Los_Angeles</timeZone>
     </site>
 
-We can now use the time zone we specified in the Engine Project Configuration file.  To access the time zone from the configuration, we use the freemarker variable ``siteTools`` provided by Crafter Engine to templates.  For more information on other variables available in the template, please see :ref:`newIa-templating-api`
+We can now use the time zone we specified in the Engine Project Configuration file.  To access the time zone from the configuration, we use the FreeMarker variable ``siteTools`` provided by Crafter Engine to templates.  For more information on other variables available in the template, please see :ref:`newIa-templating-api`
 
 We'll now edit the ``article.ftl`` template file, to display the date/time the article was created.
 
 -------------------------------
-Using Freemarker Date Built-ins
+Using FreeMarker Date Built-ins
 -------------------------------
 To display just the date, no time, on when the article was created, we can access the contentModel variable ``date_dt``, and add to the template under the author:
 
@@ -86,10 +86,10 @@ Which will output this:
 
 
 ----------------------------------------------------
-Using the Freemarker time_zone and date_time Setting
+Using the FreeMarker time_zone and date_time Setting
 ----------------------------------------------------
 
-If we want to set the time zone used by the template to display dates, Freemarker provides a ``time_zone`` setting.  Once you set the time zone, all date displays will be in the time zone specified.  Let's set all the date and time display in the time zone we specified in the `Engine Project Config` file.
+If we want to set the time zone used by the template to display dates, FreeMarker provides a ``time_zone`` setting.  Once you set the time zone, all date displays will be in the time zone specified.  Let's set all the date and time display in the time zone we specified in the `Engine Project Config` file.
 
 .. code-block:: html
     :force:
@@ -120,5 +120,5 @@ Which will display the same time as the previous example, but in the format spec
 
 
 
-For more information on Freemarker date built-ins, see http://freemarker.org/docs/ref_builtins_date.html
-For more information on Freemarker directive setting, see http://freemarker.org/docs/ref_directive_setting.html
+For more information on FreeMarker date built-ins, see http://freemarker.org/docs/ref_builtins_date.html
+For more information on FreeMarker directive setting, see http://freemarker.org/docs/ref_directive_setting.html

@@ -2,13 +2,13 @@
 :orphan:
 :nosearch:
 
-.. index:: Setting up an LDAP server for development/testing using Apache Directory Studio, Setting up an LDAP server for development
+.. index:: Setting up a simple LDAP server for development/testing using Apache Directory Studio, Setting up a simple LDAP server
 
-.. _newIa-setting-up-ldap-server-for-dev:
+.. _newIa-setting-up-simple-ldap-server:
 
-===============================================================================
-Setting up an LDAP server for development/testing using Apache Directory Studio
-===============================================================================
+=============================================================
+Setting up a Simple LDAP Server using Apache Directory Studio
+=============================================================
 
 In this section, we will describe how to setup an LDAP server using Apache Directory Studio to test the LDAP authentication in Crafter Studio.
 

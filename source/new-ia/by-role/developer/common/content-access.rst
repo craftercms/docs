@@ -1,22 +1,89 @@
-:is-up-to-date: True
-:last-updated: 4.0.3
+:is-up-to-date: False
+:last-updated: 4.0.0
 :nosearch:
 
-.. index:: Remote Assets, Assets
+.. _newIa-headless-accessing-content:
 
-.. _newIa-remote-assets:
+==============
+Content Access
+==============
 
--------------
-Remote Assets
--------------
+In this section we'll take a look on how to access content.
 
-Remote assets are binary files, typically images, videos, pdf documents, etc. which are hosted outside
-of CrafterCMS.  Remote assets could be hosted in AWS S3 or compatible storage, Box or some other server
-accessed through WebDAV, etc.
+---------------------
+Content Retrieval API
+---------------------
 
-Various data sources are available to help manage/select assets hosted outside of CrafterCMS in your
-project.  The ``Developer`` section contains some examples on how to store assets remotely, such as
-:ref:`newIa-use-s3-to-store-assets` and :ref:`newIa-use-box-to-store-assets`.  The ``Site Administrators`` section
+CrafterCMS requires you use one of the following APIs to gain access to your content:
+
+* FreeMarker API (great for templated projects) :ref:`freemarker-api`
+* JavaScript API (great for SPAs and/or AJAX) :ref:`javascript-sdk`
+* GraphQL (great for SPAs and/or AJAX) :ref:`newIa-graphql`
+* Search API :ref:`newIa-search-elasticsearch`
+* REST API (great for SPAs and/or AJAX) :ref:`newIa-rest-api`
+* Groovy (great for full control of the API endpoints and response shape) :ref:`groovy-api`
+* Java (can be accessed from Groovy and gives full access to Engine) :ref:`newIa-javadoc`
+
+-----------------------
+Accessing Static Assets
+-----------------------
+
+.. Define what a static asset is
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Internally Managed Static Assets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. Regular files stored in git
+
+Blob Store Files
+----------------
+
+.. For large files that are still managed directly by Studio and go through the same workflow and publishing processes, the blob store offers...
+.. High-level overview of the blob store goes here
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Externally Managed Static Assets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. TODO: Flesh this out
+
+.. Indicate that external assets are still indexed by Crafter for search
+
+.. Content is stored externally for
+   - Integration
+   - Large files
+
+.. By default content is stored in the project's Git repository, however, it's often necessary to store content
+   in external content stores, like a DAM or S3.
+   Additionally, large files...
+
+
+AWS Asset Access
+----------------
+
+S3 Asset Access
+^^^^^^^^^^^^^^^
+aws/use-s3-to-store-assets
+
+Transcoding Videos with AWS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+aws/upload-transcode-video
+
+
+Box Asset Access
+----------------
+box/use-box-to-store-assets
+
+WebDAV Asset Access
+-------------------
+
+.. explain webdav
+
+Referencing Externally Managed Assets
+-------------------------------------
+
+The ``Site Administrators`` section
 contains information on how to configure CrafterCMS to access services used for storing assets remotely
 here: :ref:`newIa-studio-configuration`.
 
@@ -27,9 +94,8 @@ via the URL pattern ``/remote-assets/STORE-TYPE/PROFILE-ID/PATH-TO-ASSET``, wher
    * **PROFILE-ID** ID used to refer to remote repository profile
    * **PATH-TO-ASSET**  path to asset in the remote repository
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Disabling /remote-assets Access
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Disabling ``/remote-assets`` Access
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sometimes you may want to disable access to remote repositories. To do this, in your authoring or delivery
 install, open the file ``rendering-context.xml`` under ``apache-tomcat/shared/classes/crafter/engine/extension/``
@@ -51,7 +117,6 @@ and edit the file to define a set of ``crafter.urlMappings`` without the remote-
           assets will be broken.
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 By-passing /remote-assets in Delivery for WebDAV
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -66,4 +131,3 @@ delivery URL.
   - processorName: findAndReplaceProcessor
     textPattern: /remote-assets/webdav(/([^&quot;&lt;]+)
     replacement: 'http://apache.static-asset.delivery.url$1'
-
