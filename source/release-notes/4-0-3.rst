@@ -75,6 +75,56 @@ Updates
 * Improved logging for script not found errors |br|
   See `here <https://github.com/craftercms/craftercms/issues/5904>`__ for more information
 
+* Fixed issue with Sidebar not loading properly due to a broken/missing content type |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5873>`__ for more information
+
+* Fixed issue with log console errors |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5779>`__ for more information
+
+* Added support for viewing and editing Sass files  |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5865>`__ for more information
+
+* Improved Dashboard performance |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5813>`__ for more information
+
+* Fixed typo in Dashboard publishing message |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5922>`__ for more information
+
+* Fixed issue with Component and Shared Content node selectors |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5862>`__ for more information
+
+* Fixed issue with decryption of data containing new lines |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5849>`__ for more information
+
+* Fixed issue with assigning users to groups |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5836>`__ for more information
+
+* Fixed issue with selecting items via search in item selector |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5903>`__ for more information
+
+* Improved Group/User forms |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5897>`__ for more information
+
+* Fixed issue with groups when using LDAP authentication |br|
+
+* Fixed issue while performing cache warming |br|
+
+* Upgraded the following dependencies:
+
+  - Spring to version 5.3.23
+  - Spring Boot to version 2.7.6
+  - Spring Security to version 5.7.5
+  - Tomcat to version 9.0.71
+  - GraphQL to version 20.0
+  - Groovy to version 3.0.14
+  - Jackson (and related) to version 2.14.2
+  - JGit to version 6.4.0.202211300538-r
+  - Apache CXF to version 3.4.10
+  - Google protobuf to version 3.19.6
+  - The embedded MariaDB library to version 2.6.0
+  - Apache Commons Text to version 1.10.0
+  - Various Studio UI libraries
+
 Lots of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 4.0.3 Milestone <https://github.com/craftercms/craftercms/milestone/91?closed=1>`_
