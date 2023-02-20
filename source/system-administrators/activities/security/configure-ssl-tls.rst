@@ -101,7 +101,7 @@ where:
 
 We'll use the above values for our CrafterCMS authoring example.  Save the changes and restart CrafterCMS authoring/delivery.
 
-For more information on configuring SSL/TLS on Tomcat, see https://tomcat.apache.org/tomcat-8.5-doc/ssl-howto.html
+For more information on configuring SSL/TLS on Tomcat, see https://tomcat.apache.org/tomcat-9.0-doc/ssl-howto.html
 
 .. _ssl-test-your-setup:
 
