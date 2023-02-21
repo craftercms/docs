@@ -114,9 +114,9 @@ You can tail the logs of the ``tomcat`` and ``deployer`` containers, with the ``
 
 For example: ``kubectl logs -n craftercms -f -c tomcat authoring-0``
 
--------------
-Create a Site
--------------
+----------------
+Create a Project
+----------------
 
 To be able to access the applications in Kubernetes, you need to use port forwarding. To access Studio, forward a local port to port 8080 of the pod, with the ``kubectl port-forward`` command:
 
@@ -132,6 +132,7 @@ Here's an example of forwarding local port 8080 to the 8080 port of the ``author
       Forwarding from 127.0.0.1:8080 -> 8080
       Forwarding from [::1]:8080 -> 8080
 
-After that, you can now access Studio using ``localhost:8080/studio`` in your browser and create a site.
+After that, you can now access Studio using ``localhost:8080/studio`` in your browser and create a project.
+Remember to :ref:`publish <newIa-publishing-and-status>` your project before continuing on the next steps.
 
-To setup the site in delivery, follow the instructions listed here: :ref:`newIa-simple-delivery-kubernetes-deployment`
+To setup the project in delivery, follow the instructions listed here: :ref:`newIa-simple-delivery-kubernetes-deployment`

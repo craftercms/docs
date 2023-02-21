@@ -21,7 +21,7 @@ This section details building headless projects, its purpose and examples.
     :maxdepth: 1
     :titlesonly:
 
-    ../common/content-modeling
+    ../common/content-modeling/content-modeling
     ../common/content-modeling/information-architecture
     ../common/content-access
     ../../../reference/groovy-api

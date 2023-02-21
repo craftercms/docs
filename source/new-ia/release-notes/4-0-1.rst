@@ -30,8 +30,7 @@ Updates
 ^^^^^^^
 * Added documentation on how to upgrade from ICE to XB |br|
   For more information on how to move from the 3.x ICE system to the 4.x Experience Builder (XB)
-  system, see :ref:`newIa-upgrading-in-context-editing-headless` or
-  :ref:`newIa-upgrading-in-context-editing-templated`
+  system, see :ref:`newIa-upgrading-in-context-editing`
 
 * Upgraded the following dependencies:
 

@@ -80,6 +80,6 @@ Make sure that at least one of the **groupName** attribute of the LDAP user exis
 
 To assign a role to a group, please follow the guide :ref:`newIa-role-mappings`.  To assign permissions to a role, please see :ref:`newIa-permission-mappings`
 
-For an example of setting up LDAP, see :ref:`newIa-setting-up-ldap-server-for-dev`
+For an example of setting up LDAP, see :ref:`newIa-setting-up-simple-ldap-server`
 
 

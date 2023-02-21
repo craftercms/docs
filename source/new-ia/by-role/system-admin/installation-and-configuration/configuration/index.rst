@@ -20,7 +20,6 @@ This section details how to configure various CrafterCMS modules such as Crafter
    studio/publishing-blacklist
 
    engine/configure-engine-multi-tenancy
-   engine/configure-engine-single-tenant
    engine/engine-configuration-overrides
    engine/turning-off-show-error
 
