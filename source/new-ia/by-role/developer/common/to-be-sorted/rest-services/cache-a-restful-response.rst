@@ -3,6 +3,8 @@
 
 :nosearch:
 
+.. Rewrite this to better indicate the use case
+   Add that the developer should create their own cache within CrafterCMS and not use the primary object cache
 
 ===============================
 Active Cache a RESTful Response

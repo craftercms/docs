@@ -2,16 +2,19 @@
 :last-updated: 4.0.0
 :nosearch:
 
-.. index:: Working with Crafter Studio's APIs
+.. index:: CLI Access to Crafter Studio
 
-.. _newIa-working-with-crafter-studios-api:
+.. _newIa-cli-access-to-crafter-studio:
 
-==================================
-Working with Crafter Studio's APIs
-==================================
+====================================
+Commandline Access to Crafter Studio
+====================================
 
 .. Will CrafterCLI make this article obsolete or at least it references that?
    If we were to keep this, should we call it Automating Crafter Studio or CLI Access to Studio?
+
+.. Use CrafterCLI [insert link], otherwise
+    See below if you want to do it manually
 
 In this section, we'll show the basics of interacting with Crafter Studio APIs by performing the following:
 
