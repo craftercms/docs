@@ -54,22 +54,6 @@ content inheritance:
 
    <hr>
 
-**Content Search**
-
-To search for content in your project:
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   content-search
-
-|
-
-.. raw:: html
-
-   <hr>
-
 **Targeting**
 
 CrafterCMS allows content targeting by providing the ability to render content adapted to specific users,
@@ -104,35 +88,6 @@ These logs/data may also be moved to another location if desired.
    resources/change-log-data-folder-location
 
 |
-
-.. raw:: html
-
-   <hr>
-
-**Developer Workflow (DevContentOps)**
-
-CrafterCMS supports content authoring, publishing and developer workflow and how to configure
-and implement it, the basic mechanics of DevContentOps.
-
-The following looks at the developer workflow in depth:
-
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-
-   developer-workflow/index
-
-|
-
-.. raw:: html
-
-   <hr>
-
-**Extending Studio**
-
-While much of Crafter Studio is configurable, projects sometimes want to change or add functionality that
-does not exist in the base platform.Crafter Studio is designed as a framework that supports extensions.
-To extend Studio, use :ref:`plugins <newIa-plugins>`.
 
 .. raw:: html
 

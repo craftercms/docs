@@ -22,7 +22,7 @@ Working with Large Files
    :maxdepth: 2
    :titlesonly:
 
-   use-s3-to-store-assets
+   aws/use-s3-to-store-assets
 
 .. Working with images
     asset processing link

@@ -6,12 +6,12 @@
 
 .. _newIa-working-with-crafter-studios-api:
 
-.. Will CrafterCLI make this article obsolete or at least it references that?
-      If we were to keep this, should we call it Automating Crafter Studio or CLI Access to Studio?
-
 ==================================
 Working with Crafter Studio's APIs
 ==================================
+
+.. Will CrafterCLI make this article obsolete or at least it references that?
+   If we were to keep this, should we call it Automating Crafter Studio or CLI Access to Studio?
 
 In this section, we'll show the basics of interacting with Crafter Studio APIs by performing the following:
 

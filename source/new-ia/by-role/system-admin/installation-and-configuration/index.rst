@@ -31,7 +31,7 @@ The quick start guide provides instructions on setting up a development environm
 
 To learn more about the developer workflow, see :ref:`newIa-devContentOps-workflow`.
 
-#. Production Environment
+#. Using CrafterCMS bundles
 
    The guide below provides instructions on how to setup a production environment
 
@@ -50,18 +50,14 @@ To learn more about the developer workflow, see :ref:`newIa-devContentOps-workfl
       authoring/setup-authoring-using-aws-ami
       delivery/setup-delivery-using-aws-ami
 
-#. Clustering
-
-   Setup Crafter Studio for high-availability via clustering
-
-   * :ref:`newIa-clustering`
-
 #. Deploying CrafterCMS in Kubernetes
 
    .. toctree::
       :maxdepth: 1
 
       kubernetes/index
+
+.. configuration section
 
 ----------------
 Tuning Authoring
@@ -72,11 +68,11 @@ setup various things for your authoring install
 .. toctree::
    :maxdepth: 1
 
-   authoring/authoring-env-performance-tuning
-   authoring/navigating-main-menu
-   authoring/users-groups-management
+   ../performance-and-scaling/authoring-env-performance-tuning
+   configuration/studio/navigating-main-menu
+   configuration/studio/users-groups-management
    authoring/change-hosts-ports-on-your-auth-install
-   authoring/staging
+   configuration/studio/staging
    authoring/sync-studio-database-with-repo
 
 ---------------
@@ -88,32 +84,8 @@ setup various things for your delivery install
 .. toctree::
    :maxdepth: 1
 
-   delivery/delivery-env-performance-tuning
+   ../performance-and-scaling/delivery-env-performance-tuning
    delivery/change-hosts-ports-on-your-delivery-install
    delivery/setup-project-for-delivery
-   delivery/setup-serverless-site
    delivery/setup-serverless-delivery
 
-----------
-Clustering
-----------
-
-Here's some more information on setting up and configuring your cluster
-
-.. toctree::
-   :maxdepth: 1
-
-   clustering/clustering
-   clustering/changing-git-url-format-in-cluster
-   clustering/studio-clustering-two-nodes
-
----------
-Upgrading
----------
-
-Here's how to upgrade your CrafterCMS installations in Kubernetes, Docker Compose, or a server
-
-.. toctree::
-   :maxdepth: 2
-
-   upgrade/index
