@@ -125,6 +125,12 @@ Updates
   - Apache Commons Text to version 1.10.0
   - Various Studio UI libraries
 
+*  Added support for editing text files|br|
+  See `here <https://github.com/craftercms/craftercms/issues/5939>`__ for more information
+
+* Fixed issue with *Video Transcode* form control |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5935>`__ for more information
+
 Lots of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 4.0.3 Milestone <https://github.com/craftercms/craftercms/milestone/91?closed=1>`_
