@@ -46,7 +46,7 @@ Request
 
 .. code-block:: none
 
-    GET .../api/1/services/api/1/content/get-content-type.jsons?site_id=mysite&type=/site/website
+    GET .../api/1/services/api/1/content/get-content-type.jsons?site_id=mysite&path=/site/website
 
 ^^^^^^^^
 Response
