@@ -52,7 +52,10 @@ The following details building templated projects, its purpose and examples.
     ../common/security
     ../common/redirects
     ../common/servlet-filters
-    working-with-sass
+
+.. Smaller topics that are needed but not sure how to represent/wrap these yet
+../common/working-with-sass
+../../common/asset-processing
 
 .. Consider adding a section for detailed topics below the bigger topics
 
