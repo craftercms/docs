@@ -39,7 +39,7 @@ In depth concepts and guides follow.
       redirect
       testing
       errors
-      developer-workflow/index
+      devcontentops
 
 |
 

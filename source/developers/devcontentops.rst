@@ -3,7 +3,7 @@
 
 .. index:: DevContentOps
 
-.. _newIa-devcontentops:
+.. _devcontentops:
 
 =============
 DevContentOps
@@ -49,7 +49,7 @@ Conversely, moving content from a lower environment to a higher one is not desir
 content authors, and content authors work almost exclusively in the production environment. Therefore,
 content flow from lower environments to higher ones must be prevented.
 
-.. _newIa-devcontentops-flow-diagram:
+.. _devcontentops-flow-diagram:
 
 ^^^^^^^^^^^^^^^^^^^^
 Visualizing the Flow
@@ -115,7 +115,7 @@ addresses this problem.
 For the single repository approach, the branches will look like the following
 
 .. list-table::
-    :widths: 10 45 45
+    :widths: 10 40 40
     :header-rows: 1
 
     * - Branch
@@ -287,7 +287,7 @@ Preventing Content Flow from Lower Environments to High Environments
 
 It is important to note that *Content Back* never occurs from *studio-qa* to *qa*, or from *studio-dev* to *dev*.  Content must only originate from the *studio-prod* branch to get into the *dev*/*qa*/*prod* branches, to avoid having content from lower environments be picked up in the *Code Forward* model.
 
-Git actions can be applied to the repository to reject pull requests or merges that contain content moving back from these branches.  Practically, the most important place to apply this verification is on merges into the dev branch, as this is where most content from individual developers accidentally makes its way into the system.  (Depending on how your rule is set up, it may be necessary to override this protection when performing an intentional Content Back operation.)
+Git actions can be applied to the repository to reject pull requests or merges that contain content moving back from these branches.  Practically, the most important place to apply this verification is on merges into the dev branch, as this is where most content from individual developers accidentally makes its way into the system.  (Depending on how your rule is set up, it may be necessary to override this protection when performing an intentional *Content Back* operation.)
 
 This production content that has been "*Content Backed*" from prod into lower environments will ultimately make its way into the *studio-dev* and *studio-qa* environments with subsequent deployments which can be done as part of the Content Back operation or left for the next code deployment.
 

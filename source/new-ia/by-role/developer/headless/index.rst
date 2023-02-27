@@ -30,6 +30,13 @@ This section details building headless projects, its purpose and examples.
     ../common/redirects
     ../common/servlet-filters
 
+
+.. Smaller topics that are needed but not sure how to represent/wrap these yet
+    ../common/working-with-sass
+    ../../common/asset-processing
+
+.. Add something related to storing source in `/sources` optionally and refer to working with sass files (added above)
+
 -------------------------
 Example Headless Projects
 -------------------------
