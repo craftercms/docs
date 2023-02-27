@@ -9,7 +9,7 @@
 DevContentOps
 =============
 
-This section details clear and scalable DevContentOps processes for CrafterCMS. These processes allow a
+This document details clear and scalable DevContentOps processes for CrafterCMS. These processes allow a
 team of software developers, content authors, and system administrators to work together on a single
 project across multiple environments. Developers build new features and fix bugs by flowing their updates
 from lower environments all the way to production. Authors focus on content creation, updates, and
@@ -49,7 +49,7 @@ Conversely, moving content from a lower environment to a higher one is not desir
 content authors, and content authors work almost exclusively in the production environment. Therefore,
 content flow from lower environments to higher ones must be prevented.
 
-.. _devcontentops-flow-diagram:
+.. _newIa-devcontentops-flow-diagram:
 
 ^^^^^^^^^^^^^^^^^^^^
 Visualizing the Flow

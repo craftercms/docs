@@ -26,7 +26,7 @@ The following gets you started with content modeling, content retrieval, and mor
    composable/index
    headless/index
    templated/index
-   devcontentops/devcontentops
+   devcontentops/index
    upgrade/index
 
 |
