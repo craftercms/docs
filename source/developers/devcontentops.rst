@@ -9,7 +9,7 @@
 DevContentOps
 =============
 
-This document details how to implement DevContentOps processes with CrafterCMS. These processes allow a
+This document details clear and scalable DevContentOps processes for CrafterCMS. These processes allow a
 team of software developers, content authors, and system administrators to work together on a single
 project across multiple environments. Developers build new features and fix bugs by flowing their updates
 from lower environments all the way to production. Authors focus on content creation, updates, and
