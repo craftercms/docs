@@ -28,7 +28,7 @@ The quick start guide provides instructions on setting up a development environm
 
 * :ref:`installing-crafter-cms-from-prebuilt-binaries`
 
-To learn more about the developer workflow, see :ref:`devContentOps-workflow`.
+To learn more about the developer workflow, see :ref:`devcontentops`.
 
 ----------------------
 Production Environment

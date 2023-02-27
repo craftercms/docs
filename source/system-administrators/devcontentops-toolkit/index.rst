@@ -9,7 +9,7 @@
 DevContentOps Toolkit
 =====================
 
-CrafterCMS provides a DevContentOps Toolkit to support :ref:`DevContentOps <developer-workflow>` processes in CrafterCMS.  The DevContentOps Toolkit contains the CrafterCMS Command Line Interface (CLI), that allows you to authenticate with CrafterCMS and exercise its APIs via a Unix or Windows command line interface.
+CrafterCMS provides a DevContentOps Toolkit to support :ref:`DevContentOps <devcontentops>` processes in CrafterCMS.  The DevContentOps Toolkit contains the CrafterCMS Command Line Interface (CLI), that allows you to authenticate with CrafterCMS and exercise its APIs via a Unix or Windows command line interface.
 
 To run the command line tool (CrafterCMS Command line Interface (CLI) for DevContentOps processes), in your terminal program, navigate to the ``bin`` folder  ``CRAFTER_HOME/bin/cli/bin/``.  There you will find two versions of the tool:
 
