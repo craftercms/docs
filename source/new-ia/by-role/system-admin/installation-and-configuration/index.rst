@@ -29,7 +29,7 @@ The quick start guide provides instructions on setting up a development environm
 
 * :ref:`newIa-getting-started`
 
-To learn more about the developer workflow, see :ref:`newIa-devContentOps-workflow`.
+To learn more about the developer workflow, see :ref:`newIa-devContentOps`.
 
 #. Using CrafterCMS bundles
 

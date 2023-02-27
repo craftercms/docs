@@ -139,7 +139,7 @@ Let’s consider for a moment that you’re a new developer joining the team. Th
 2. Login as Admin
 3. Click Create Project
 
-.. figure:: /_static/images/developer/workflow/create-project-based-on-remote-1.webp
+.. figure:: /_static/images/developer/dev-cloud-platforms/create-project-based-on-remote-1.webp
     :alt: Developer How Tos - Setting up to work locally against the upstream
     :width: 70 %
     :align: center
