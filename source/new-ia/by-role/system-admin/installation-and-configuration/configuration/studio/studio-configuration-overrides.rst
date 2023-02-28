@@ -390,7 +390,7 @@ Access Tokens
    :version: 4.0.0
 
 
-The following section of Studio's configuration overrides allows you to configure settings for the Studio access tokens.  For more information on how access tokens are used, see :ref:`newIa-working-with-crafter-studios-api`
+The following section of Studio's configuration overrides allows you to configure settings for the Studio access tokens.  For more information on how access tokens are used, see :ref:`newIa-working-in-your-ide`
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*

@@ -11,6 +11,7 @@ Anatomy of a CrafterCMS Repository
 ==================================
 
 .. introduce the main concepts, show the structure, show extension points, show example
+
 Repository Structure::
 
         {REPOSITORY_ROOT}/sites/SITENAME/sandbox/
