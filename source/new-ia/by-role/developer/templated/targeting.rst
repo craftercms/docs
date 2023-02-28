@@ -5,11 +5,11 @@
 
 .. _newIa-targeting:
 
-.. TODO Review this and see what to refactor if anything
-
 =================
 Content Targeting
 =================
+
+.. TODO Review this and see what to refactor if anything
 
 Targeting is a CrafterCMS feature that allows delivering the right experience, with the right
 content, to the right people at the right time. CrafterCMS provides the ability to render content

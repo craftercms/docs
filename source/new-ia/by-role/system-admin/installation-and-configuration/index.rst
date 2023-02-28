@@ -73,7 +73,7 @@ setup various things for your authoring install
    configuration/studio/users-groups-management
    authoring/change-hosts-ports-on-your-auth-install
    configuration/studio/staging
-   authoring/sync-studio-database-with-repo
+   ../../developer/common/working-in-your-ide
 
 ---------------
 Tuning Delivery
