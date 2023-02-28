@@ -46,7 +46,7 @@ content inheritance:
    :maxdepth: 1
    :titlesonly:
 
-   content-inheritance
+   common/content-modeling/content-inheritance
 
 |
 
@@ -63,7 +63,7 @@ depending on different aspects like geographical location, language, preferences
    :maxdepth: 1
    :titlesonly:
 
-   targeting
+   templated/targeting
 
 |
 |
@@ -84,8 +84,8 @@ These logs/data may also be moved to another location if desired.
    :maxdepth: 1
    :titlesonly:
 
-   override-logging-levels
-   resources/change-log-data-folder-location
+   ../system-admin/installation-and-configuration/override-logging-levels
+   ../system-admin/installation-and-configuration/change-log-data-folder-location
 
 |
 

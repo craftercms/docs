@@ -62,7 +62,7 @@ New Features
 * **Switched Crafter Studio’s authentication system to JWT** |br|
 
   - It’s now much easier to automate work with Crafter Studio APIs by issuing secure tokens for
-    your automation jobs, see :ref:`newIa-working-with-crafter-studios-api` |br|
+    your automation jobs, see :ref:`newIa-cli-access-to-crafter-studio` |br|
   - Remember to replace default values for all the variables used to control the
     access tokens (JWT) used for Studio’s API.  See :ref:`here <newIa-securing-your-crafter-cms-install>`
     for more information on default values used for JWT |br|

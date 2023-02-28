@@ -29,7 +29,7 @@ Features like workflow, review and approval processes, staging and final go-live
 
 Finally, given that CrafterCMS is Git-based, full DevContentOps support is native and fully supports templated sites.
 
-See :ref:`here <newIa-devContentOps-workflow>` for more information on DevContentOps
+See :ref:`here <newIa-devcontentops>` for more information on DevContentOps
 
 --------------
 Available APIs
