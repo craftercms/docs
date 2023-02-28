@@ -2,13 +2,13 @@
 :nosearch:
 :orphan:
 
-.. index:: Global Menu Config
+.. index:: Main Menu Config
 
-.. _newIa-global-menu-config:
+.. _newIa-main-menu-config:
 
-==================
-Global Menu Config
-==================
+================
+Main Menu Config
+================
 
 The Global Menu Config configuration file defines what modules are available for administration use when clicking on the ``Navigation Menu`` from the top bar.
 
