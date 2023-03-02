@@ -164,15 +164,7 @@ Additional Configuration
 ^^^^^^^
 Logging
 ^^^^^^^
-"""""""""""""""""
-Change Log Levels
-"""""""""""""""""
-:ref:`newIa-override-logging-levels`
-
-"""""""""""""""""""
-Change Log Location
-"""""""""""""""""""
-:ref:`newIa-change-log-data-folder-location`
+Learn more about :ref:`newIa-logging`.
 
 ^^^^^^^^^
 Main Menu

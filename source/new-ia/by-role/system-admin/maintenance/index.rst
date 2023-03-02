@@ -17,7 +17,7 @@ Maintenance
    :titlesonly:
 
    backup-and-restore
-   logging
+   ../../common/logging
    troubleshooting/index
 
 
