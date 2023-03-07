@@ -33,9 +33,9 @@ if [ "$3" = "api" ] || [ "$2" = "api" ]; then
 	#curl -s $DEPLOYER > /tmp/deployer.json
 	
 	# Build the OAS spec
-	mkdir -p build/html/api
+	mkdir -p source/_static/api
 
-	redoc-cli build -o build/html/api/studio.html /tmp/studio.json
+	redoc-cli build -o source/_static/api/studio.html /tmp/studio.json
 	#redoc-cli build -o build/html/api/engine.html /tmp/engine.json
 	#redoc-cli build -o build/html/api/deployer.html /tmp/deployer.json
 	
