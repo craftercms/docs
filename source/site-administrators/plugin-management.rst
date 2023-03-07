@@ -117,7 +117,7 @@ Install a plugin using the install plugin REST API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Another way to install a plugin from the Crafter Marketplace is by using the install plugin REST API.
 
-For more information on the API, see `installPlugin </_static/api/studio.html#tag/marketplace/operation/installPlugin>`__
+For more information on the API, see :base_url:`installPlugin </_static/api/studio.html#tag/marketplace/operation/installPlugin>`
 
 
 --------------------------

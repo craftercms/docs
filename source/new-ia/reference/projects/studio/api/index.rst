@@ -22,7 +22,7 @@ There are 2 versions of Crafter Studio APIs.  **API version 2** contains the Use
 API Version 2
 -------------
 
-Version 2 APIs are available from `here </_static/api/studio.html>`__
+Version 2 APIs are available from :base_url:`here </_static/api/studio.html>`
 
 -------------
 API Version 1
