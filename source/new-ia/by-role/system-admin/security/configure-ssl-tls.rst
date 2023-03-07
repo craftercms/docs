@@ -29,9 +29,9 @@ From ``tomcat.apache.org`` :
 
 CrafterCMS employs two deployment methods, traditional deployment and serverless deployment.  Let's take a look at an example of how to configure SSL/TLS in a traditional deployment and serverless (docker container) deployment:
 
---------------------------------------------------------------------------------------
-Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Traditional Deployment
---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Traditional Deployment with Tomcat
+-------------------------------------------------------------------------------------------------
 
 .. _newIa-create-keystore-file:
 
@@ -130,6 +130,18 @@ From the above screen, just click on ``Advanced``, then allow it to proceed to `
 
 |
 
+-------------------------------------------------------------------------------------------------------
+Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Traditional Deployment with Apache HTTPd
+-------------------------------------------------------------------------------------------------------
+
+.. todo
+
+------------------------------------------------------------------------------------------------
+Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Traditional Deployment with a CDN
+------------------------------------------------------------------------------------------------
+
+.. todo
+
 -------------------------------------------------------------------------------
 Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Docker Container
 -------------------------------------------------------------------------------
@@ -226,7 +238,7 @@ Your ``docker-compose.yml`` should look like below:
           - elasticsearch_data:/usr/share/elasticsearch/data
           - elasticsearch_logs:/usr/share/elasticsearch/logs
       tomcat:
-        image: craftercms/authoring_tomcat:3.1.3 # craftercms version flag
+        image: craftercms/authoring_tomcat:4.0.3 # craftercms version flag
         depends_on:
           - elasticsearch
           - deployer

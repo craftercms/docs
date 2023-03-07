@@ -111,12 +111,12 @@ Logging Configurations
 
 You can update the logging configuration depending on the CrafterCMS component that you need to change:
 
-* Crafter Engine: ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/engine/extension/logging.xml``
-* Crafter Studio: ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/studio/extension/logging.xml``
-* Crafter Search: ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/search/extension/logging.xml``
-* Crafter Profile: ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/profile/extension/logging.xml``
-* Crafter Social: ``INSTALL_DIR/bin/apache-tomcat/shared/classes/crafter/social/extension/logging.xml``
-* Crafter Deployer: ``INSTALL_DIR/bin/crafter-deployer/logging.xml``
+* Crafter Engine: ``$CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/logging.xml``
+* Crafter Studio: ``$CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/logging.xml``
+* Crafter Search: ``$CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/search/extension/logging.xml``
+* Crafter Profile: ``$CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/profile/extension/logging.xml``
+* Crafter Social: ``$CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/social/extension/logging.xml``
+* Crafter Deployer: ``$CRAFTER_HOME/bin/crafter-deployer/logging.xml``
 
 .. warning::
   It is highly recommended to only add new appenders or do small changes to existing ones, if existing appenders are
@@ -130,8 +130,8 @@ To add a custom appender you can follow these steps:
 
 #. Place the required JAR files in the appropriate location:
    
-   * for Engine, Studio, Search, Profile or Social use ``INSTALL_DIR/bin/apache-tomcat/shared/lib``
-   * for Deployer use ``INSTALL_DIR/bin/crafter-deployer/lib``
+   * for Engine, Studio, Search, Profile or Social use ``$CRAFTER_HOME/bin/apache-tomcat/shared/lib``
+   * for Deployer use ``$CRAFTER_HOME/bin/crafter-deployer/lib``
 #. Update the required logging configuration to add the custom appender, for example if the custom appender name is
    ``AwesomeAppender`` and the class is under the package ``com.custom.logging`` the configuration will be like this:
    
@@ -170,4 +170,89 @@ To capture the output of the ``crafter.sh`` script in a log file, set the enviro
 .. code-block:: bash
 
    export CRAFTER_SCRIPT_LOG=${CRAFTER_SCRIPT_LOG:="/your/path/output-file.log}"
+
+.. TODO Review to make sure it flows and doesn't overlap
+
+==========================================
+Changing the Data and Logs Folder Location
+==========================================
+
+The data folder and logs folder is by default located in **{Crafter-CMS-install-directory}/{Crafter-ENV}/data** and **{Crafter-CMS-install-directory}/{Crafter-ENV}/logs**.  To change the location of the data and logs folder,
+
+
+    Open the file **{Crafter-CMS-install-directory}/{Crafter-ENV}/crafter-setenv.sh**
+
+    Change the following lines to your desired location for your data ("$CRAFTER_ROOT/data") and logs ("$CRAFTER_ROOT/logs") folder:
+
+    .. code-block:: bash
+
+        # Locations variables
+        export CRAFTER_LOGS_DIR=${CRAFTER_LOGS_DIR:="$CRAFTER_ROOT/logs"}
+        export CRAFTER_DATA_DIR=${CRAFTER_DATA_DIR:="$CRAFTER_ROOT/data"}
+
+.. TODO clean up overlap and explain where it's only authoring using the UI
+
+=========================
+Overriding Logging Levels
+=========================
+
+There are times when you'd like to see more log details, say when there are problems, so you can narrow down what is happening and address it.  Overriding the logging levels allows you to see more or less details in your installation depending on your needs.
+
+CrafterCMS comes with classes and packages set to logging level INFO out of the box.  To change the logging levels of your CrafterCMS installation, you can do one of the following:
+
+------------------------------
+Temporarily Set Logging Levels
+------------------------------
+
+To temporarily set the logging levels for specific classes through the Navigation Menu:
+
+* From the Global menu, click on **Logging Levels**
+* Find the class/package you want to change the log level, then set the level by selecting from the dropdown the desired log level.
+
+.. figure:: /_static/images/site-admin/logs-logging-levels.webp
+    :alt: Crafter Studio Logging Levels
+    :width: 75%
+    :align: center
+
+|
+
+.. note:: Remember that changes to the logging levels through Studio only live from one restart of the application to the next.
+
+------------------------------
+Permanently Set Logging Levels
+------------------------------
+
+To permanently change the logging levels you will need to update some configuration in your installation on the server. To make changes, you're going to add/modify the logging configuration file ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/logging.xml``.
+
+Step 1: Identify the package/class you want to modify logging levels for
+     The first step is identifying the package or class you want to change the levels for.  Specifying the logging level at the package granularity e.g.: ``org.craftercms.studio.api.v1.dal.DependencyMapper``, will modify all classes under that package.  Specifying logging levels at the class granularity, e.g.: ``org.craftercms.studio.api.v1.dal.DependencyMapper.calculatePublishingDependenciesForList``, modifies only the levels for that specific class.
+
+Step 2: Add the override configuration you require to the logging configuration file ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/logging.xml``.
+     Available logging levels are all, trace, debug, info, warn, error, off.  All is the lowest logging level and Error is the highest.  The lower your logging levels are set, the more verbose your logs will be.
+
+     To set a specific class to a higher log level (giving us less detail in the logs), add the following lines:
+
+     .. code-block:: xml
+        :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/logging.xml*
+
+        <Logger name="org.craftercms.studio.api.v1.dal.DependencyMapper.calculatePublishingDependenciesForList" level="debug"/>
+
+     |
+
+     To set an entire package:
+
+     .. code-block:: xml
+        :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/logging.xml*
+
+        <Logger name="org.craftercms.studio.api.v1.dal.DependencyMapper" level="debug"/>
+
+     |
+
+Step 3: Your changes to logging levels are now set
+     Changes in the logging configuration file is automatically applied after a few seconds.
+
+
+To learn more about the log levels defined in Crafter, see: :ref:`newIa-studio-log-console`
+
+
 

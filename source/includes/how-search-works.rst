@@ -2,7 +2,7 @@
 Flow
 ^^^^
 
-.. image:: /_static/images/search/search-mechanics-es.webp
+.. image:: /_static/images/search/search-mechanics.webp
    :alt: Crafter Studio Search Mechanics
    :align: center
 

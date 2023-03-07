@@ -5,9 +5,9 @@
 
 .. _newIa-upgrading-dockers:
 
-==================================================
-Docker/Kuber Instructions for Upgrading CrafterCMS
-==================================================
+====================================
+Upgrading CrafterCMS on Docker/Kuber
+====================================
 
 This section details how to upgrade your CrafterCMS installations in Kubernetes or Docker Compose.
 
@@ -58,3 +58,9 @@ These upgrade instructions are for both Authoring and Delivery deployments:
 #. Apply the updated deployment files (``kubectl apply``) so the containers are restarted and the configuration 
    changes detected.  
 #. Monitor the Kubernetes logs for any upgrade errors.
+
+=================================================
+Configuration changes between CrafterCMS versions
+=================================================
+
+.. Leave file in place for future configuration changes between CrafterCMS versions starting 4.0.0

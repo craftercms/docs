@@ -10,14 +10,14 @@
 Maintenance
 ===========
 
-.. add some introduction here for this section
+.. TODO add some introduction here for this section
 
 .. toctree::
    :maxdepth: 1
    :titlesonly:
 
    backup-and-restore
-   logging
+   ../../common/logging
    troubleshooting/index
 
 

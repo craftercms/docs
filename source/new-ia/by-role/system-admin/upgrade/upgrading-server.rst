@@ -3,9 +3,9 @@
 
 .. index:: Upgrading CrafterCMS, Upgrading
 
-====================
-Upgrading CrafterCMS
-====================
+================================
+Upgrading CrafterCMS on a Server
+================================
 
 This section details how to upgrade CrafterCMS installed on a server.
 
@@ -55,7 +55,7 @@ For config files that are different in the new release, the script gives you the
 |
 
    .. note::
-      When upgrading to CrafterCMS version 4.0.0 from a 3.1.x version, the environment variable `MARIADB_SOCKET_TIMEOUT <https://github.com/craftercms/craftercms/blob/develop/resources/env/authoring/bin/crafter-setenv.sh#L85>`__ in the ``{Crafter-CMS-install-directory}/bin/crafter-setenv.sh`` file of the CrafterCMS install you're running the upgrade script from may need to be increased depending on the size of the existing sites.
+      When upgrading to CrafterCMS version 4 from a 3.1.x version, the environment variable `MARIADB_SOCKET_TIMEOUT <https://github.com/craftercms/craftercms/blob/develop/resources/env/authoring/bin/crafter-setenv.sh#L85>`__ in the ``{Crafter-CMS-install-directory}/bin/crafter-setenv.sh`` file of the CrafterCMS install you're running the upgrade script from may need to be increased depending on the size of the existing sites.
 
       Here's an example where we increased it to 3x the default value:
 

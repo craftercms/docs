@@ -6,18 +6,37 @@
 Performance and Scaling
 =======================
 
-.. add text description here
-    Authoring
-        authoring-env-performance-tuning
-        clustering/index
-    Delivery
-        delivery-env-performance-tuning
-        multi-region-and-global-delivery <== create this article
-        cdn-integration <== create this article
+Thanks to its architecture, CrafterCMS can be scaled to accommodate any size traffic load. CrafterCMS can also be geographically distributed allowing for local delivery of personalized content.
 
-.. toctree::
-   :maxdepth: 1
+^^^^^^^^
+Delivery
+^^^^^^^^
+.. Add a note on shared-nothing architecture and that we don't need to cluster
 
-   authoring-env-performance-tuning
-   delivery-env-performance-tuning
-   clustering/index
+""""""""""""""""""""""""
+Basic Performance Tuning
+""""""""""""""""""""""""
+:ref:`delivery-env-performance-tuning`
+
+"""""""""""""""
+CDN Integration
+"""""""""""""""
+.. cdn-integration <== create this article
+
+""""""""""""""""""""""""""""
+Global Multi-region Delivery
+""""""""""""""""""""""""""""
+.. multi-region-and-global-delivery <== create this article
+
+^^^^^^^^^
+Authoring
+^^^^^^^^^
+""""""""""""""""""""""""
+Basic Performance Tuning
+""""""""""""""""""""""""
+:ref:`authoring-env-performance-tuning`
+
+""""""""""
+Clustering
+""""""""""
+:ref:`newIa-clustering`

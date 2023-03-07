@@ -28,7 +28,7 @@ Site Management
    site/write-configuration
 
 .. note::
-   Some of the site management operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit: https://app.swaggerhub.com/apis/craftercms/studio
+   Some of the site management operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit `here </_static/api/studio.html>`__.
 
 
 ^^^^^^^^^^^^^^^
@@ -41,15 +41,14 @@ Repo Management
    repo/sync-from-repo
 
 .. note::
-  Some of the repo management operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit: https://app.swaggerhub.com/apis/craftercms/studio
+  Some of the repo management operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit `here </_static/api/studio.html>`__.
 
 ^^^^^
 Audit
 ^^^^^
 
 .. note::
-  Audit operations are only available in the new API, for more information, please visit:
-  https://app.swaggerhub.com/apis/craftercms/studio
+  Audit operations are only available in the new API, for more information, please visit `here </_static/api/studio.html>`__.
 
 
 ^^^^^^^^
@@ -68,8 +67,7 @@ Monitoring
 ^^^^^^^^^^
 
 .. note::
-  Monitoring operations are only available in the new API, for more information, please visit: 
-  https://app.swaggerhub.com/apis/craftercms/studio
+  Monitoring operations are only available in the new API, for more information, please visit `here </_static/api/studio.html>`__.
 
 ^^^^^^^
 Publish
@@ -199,4 +197,4 @@ AWS
    aws/s3/post-upload
 
 .. note::
-    Some of the AWS operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit: https://app.swaggerhub.com/apis/craftercms/studio
+    Some of the AWS operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit `here </_static/api/studio.html>`__

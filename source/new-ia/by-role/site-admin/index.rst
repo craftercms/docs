@@ -48,6 +48,7 @@ The following contains more information on administration tools
         UI
         Notifications
         RTE
+        Staging
         ...
     Delivery
         Security

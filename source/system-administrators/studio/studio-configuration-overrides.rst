@@ -435,3 +435,28 @@ The following section of Studio's configuration overrides allows you to set the 
 
    # Use base domain instead of subdomain for the crafterSite cookie
    studio.cookie.useBaseDomain: false
+
+-----------------
+Validations Regex
+-----------------
+.. version_tag::
+   :label: Since
+   :version: 4.0.3
+
+CrafterCMS validates API requests related with users and groups through regex restrictions to avoid malicious payloads.
+
+The following section of Studio's configuration overrides allows you to configure the regex used for validating user names and group names to suit your needs.
+
+.. code-block:: yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+
+   ##########################################################
+   ##                  Input Validations                   ##
+   ##########################################################
+   # These properties override default validation regex patterns
+   # from crafter common validations.
+   # Key should have the form `studio.validation.regex.KEY_NAME`
+   # Value should be a valid java regex.
+   # studio.validation.regex.GROUP_NAME: "^[a-zA-Z0-9]+$"
+   # studio.validation.regex.USERNAME: "^[A-Za-z0-9]$"

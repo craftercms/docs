@@ -78,14 +78,7 @@ While developing your project, there are times when you’d like to see more log
 is happening and address it as needed.  Overriding the logging levels allows you to see more or less
 details depending on your needs.
 
-These logs/data may also be moved to another location if desired.
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   ../system-admin/installation-and-configuration/override-logging-levels
-   ../system-admin/installation-and-configuration/change-log-data-folder-location
+Learn more about :ref:`newIa-logging`.
 
 |
 

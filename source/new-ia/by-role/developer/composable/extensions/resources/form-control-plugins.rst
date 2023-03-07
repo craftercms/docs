@@ -9,7 +9,7 @@
 Building Form Engine Control Project Plugins
 ============================================
 
-Crafter Studio allows plugins for form engine controls through the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile`
+Crafter Studio allows plugins for form engine controls through the ``getPluginFile`` API found here `getPluginFile </_static/api/studio.html#tag/plugin/operation/getPluginFile>`__
 
 -----------------
 What is a Control
