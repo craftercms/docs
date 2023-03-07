@@ -12,9 +12,8 @@ This section details common problems you might encounter with CrafterCMS and how
    :maxdepth: 1
    :titlesonly:
 
-   debugging-search-elasticsearch.rst
-   debugging-publishing-issues.rst
-   debugging-upgrade-issues.rst
-   debugging-deployer-issues.rst
-   debugging-ssh-issues.rst
-   debugging-ssl-issues.rst
+   troubleshooting-search.rst
+   troubleshooting-publishing-issues.rst
+   troubleshooting-deployer-issues.rst
+   troubleshooting-ssh-issues.rst
+   troubleshooting-ssl-issues.rst

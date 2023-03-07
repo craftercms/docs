@@ -3,9 +3,9 @@
 
 .. _newIa-crafter-studio-debugging-deployer-issues:
 
-=========================
-Debugging Deployer Issues
-=========================
+===============================
+Troubleshooting Deployer Issues
+===============================
 
 ----------------
 SSH Unknown Host

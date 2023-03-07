@@ -5,15 +5,15 @@
 
 .. _newIa-debugging-search:
 
-=======================
-Debugging Search Issues
-=======================
+=============================
+Troubleshooting Search Issues
+=============================
 
 ----------------
 How Search Works
 ----------------
 
-.. include:: /includes/how-search-works-es.rst
+.. include:: /new-ia/includes/how-search-works.rst
 
 --------------------------------------
 Places Search Indexing Can Get Hung Up

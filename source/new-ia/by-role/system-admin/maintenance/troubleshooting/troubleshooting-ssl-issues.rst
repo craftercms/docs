@@ -3,9 +3,9 @@
 
 .. _newIa-debugging_ssl_issues:
 
-==============================
-Debugging SSL Handshake Issues
-==============================
+====================================
+Troubleshooting SSL Handshake Issues
+====================================
 
 In this section, we present an error that a user may encounter regarding SSL and how to fix the error.
 

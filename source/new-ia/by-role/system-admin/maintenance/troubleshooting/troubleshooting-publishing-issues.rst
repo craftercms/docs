@@ -4,9 +4,9 @@
 
 .. _newIa-crafter-studio-debugging-publishing-issues:
 
-===========================
-Debugging Publishing Issues
-===========================
+=================================
+Troubleshooting Publishing Issues
+=================================
 
 When publishing fails, here are some things to consider to help track down the cause of publishing issues.
 
@@ -37,7 +37,7 @@ Item states:
     * `READY_FOR_LIVE`  - item is scheduled and waiting in the queue to be published
     * `PROCESSING`      - item is being published
     * `COMPLETED`       - item has been published
-    * `CANCELLED`       - item has been removed from the queue (publishing was cancelled)
+    * `CANCELLED`       - item has been removed from the queue (publishing was canceled)
     * `BLOCKED`         - item is blocking the publishing queue
 
 ------------------------

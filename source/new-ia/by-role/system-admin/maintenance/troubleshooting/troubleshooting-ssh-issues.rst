@@ -3,9 +3,9 @@
 
 .. _newIa-debugging_ssh_issues:
 
-========================
-Debugging SSH Key Issues
-========================
+==============================
+Troubleshooting SSH Key Issues
+==============================
 
 In this section, we present a few errors that a user may encounter when using ssh keys with CrafterCMS and how to fix the errors.
 
