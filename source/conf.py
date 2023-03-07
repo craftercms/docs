@@ -246,7 +246,7 @@ extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None )
             }
 
 # The docs base URL
-extlinks = {'base_url': (language + version + '/%s', None)}
+extlinks = {'base_url': ('/' + language + '/' + version + '/%s', None)}
 
 #
 # Open links in new tab
