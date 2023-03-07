@@ -170,6 +170,7 @@ Learn more about :ref:`newIa-logging`.
 Main Menu
 ^^^^^^^^^
 .. TODO explain why would one want to edit this
+
 :ref:`newIa-main-menu-config`
 
 .. TODO Add configuration tasks below detailing how to accomplish that task with references to the relevant configuration files

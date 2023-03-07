@@ -9,7 +9,7 @@ Go Delete (deprecated)
 Go delete workflow.
 
 .. important::
-   This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/content/contentDelete` for the current version.
+   This API is deprecated and provided only as a reference.  Please see `contentDelete </_static/api/studio.html#tag/content/operation/contentDelete>`__ for the current version.
 
 --------------------
 Resource Information
