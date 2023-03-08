@@ -30,6 +30,16 @@ New Features
 
   See `here <https://github.com/craftercms/craftercms/issues/5909>`__ for more information
 
+* Added support for displaying item paths in Crafter Studio's PreviewDialog |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5954>`__ for more information
+
+* Added support for capturing output of the ``crafter.sh`` script in a log file |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5887>`__ for more information
+
+  To learn how to capture the output of the ``crafter.sh`` script, see :ref:`here <crafter-sh-script-logging>`
+
+
+
 
 ^^^^^^^
 Updates
@@ -130,6 +140,26 @@ Updates
 
 * Fixed issue with *Video Transcode* form control |br|
   See `here <https://github.com/craftercms/craftercms/issues/5935>`__ for more information
+
+* Fixed issue with the disabled bit not updating properly when content changes through git |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5960>`__ for more information
+
+* Fixed issue with XB targets not honoring multiple "Components" data sources |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5940>`__ for more information
+
+* Fixed issue with Javascript SDK's ``ContentInstance`` interface not exposing the
+  ``orderDefault_f`` field used by pages |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5871>`__ for more information
+
+* Fixed issue with extracted ``internal-name`` field on save when embedded content data source is used |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5905>`__ for more information
+
+* Fixed issue when pasting from a Word document with a link in the RTE  |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5971>`__ for more information
+
+* Fixed issue with form not saving when form contains a repeat group that contains a checkbox field
+  with a default value set to false   |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5975>`__ for more information
 
 Lots of other small enhancements and bug fixes :)
 
