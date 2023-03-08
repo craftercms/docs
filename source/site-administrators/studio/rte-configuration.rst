@@ -348,7 +348,7 @@ For more information on the Tiny MCE external_plugins option, see https://www.ti
 The Crafter Studio developer does not have full control of the tinymce initialization.  To add a custom button to the toolbar in Crafter Studio, it would be done using the external plugin route since, what TinyMCE docs advise – i.e. using the ``setup`` function to add the button – is not viable in Studio without creating a :ref:`form control plugin <building-plugins-controls>` where they'd have full control of tinymce initialization.
 
 To add an external plugin, use ``external_plugins`` in the RTE configuration.
-Use the Crafter Studio API that gets a file for a given plugin, the getPluginFile API found here :base_url:`getPluginFile </_static/api/studio.html#tag/plugin/operation/getPluginFile>` to get the Tiny MCE external plugin file to pass to the RTE.
+Use the Crafter Studio API that gets a file for a given plugin, the getPluginFile API found here :base_url:`getPluginFile <_static/api/studio.html#tag/plugin/operation/getPluginFile>` to get the Tiny MCE external plugin file to pass to the RTE.
 
 Example External Plugin
 ^^^^^^^^^^^^^^^^^^^^^^^

@@ -9,7 +9,7 @@ Write Configuration (deprecated)
 Write project configuration.
 
 .. important::
-   This API is deprecated and provided only as a reference.  Please see :base_url:`writeConfiguration </_static/api/studio.html#tag/configuration/operation/writeConfiguration>` for the current version.
+   This API is deprecated and provided only as a reference.  Please see :base_url:`writeConfiguration <_static/api/studio.html#tag/configuration/operation/writeConfiguration>` for the current version.
 
 
 --------------------
