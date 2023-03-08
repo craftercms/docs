@@ -509,5 +509,3 @@ CrafterCMS has an upgrade manager that automatically upgrades the system, some c
 
 Note that the Elasticsearch index will be automatically updated by the CrafterCMS upgrade manager whenever the Elasticsearch index settings are updated, for example, a new field has been added for a release.
 The updated index containing the new settings will be named the current index version name incremented by 1, e.g. let’s say the current index is ``mysite-authoring_v1``, after the upgrade, the new index will now be ``mysite-authoring_v2``.
-
-To learn more about the upgrade manager and how to add upgrade scripts for your customizations, see :ref:`here <add-to-upgrade-scripts>`
