@@ -10,7 +10,7 @@ Get Configuration (deprecated)
 Get configuration.
 
 .. important::
-   This API is deprecated and provided only as a reference.  Please see `getConfiguration </_static/api/studio.html#tag/configuration/operation/getConfiguration>`__ for the current version.
+   This API is deprecated and provided only as a reference.  Please see :base_url:`getConfiguration </_static/api/studio.html#tag/configuration/operation/getConfiguration>` for the current version.
 
 
 --------------------
