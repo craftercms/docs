@@ -242,11 +242,10 @@ javadoc_base = 'http://javadoc.craftercms.org/'
 javadoc_version = '4.0.2'
 
 # Shorten external links
-extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None )
+extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),
+            'base_url': ('/' + language + '/' + version + '/%s', None)
             }
 
-# The docs base URL
-extlinks = {'base_url': ('/' + language + '/' + version + '/%s', None)}
 
 #
 # Open links in new tab
