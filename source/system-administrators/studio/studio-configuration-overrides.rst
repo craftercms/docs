@@ -443,9 +443,9 @@ Validations Regex
    :label: Since
    :version: 4.0.3
 
-CrafterCMS validates API requests related with users and groups through regex restrictions to avoid malicious payloads.
+CrafterCMS validates API requests related with users, groups, etc. through regex restrictions to avoid malicious payloads.
 
-The following section of Studio's configuration overrides allows you to configure the regex used for validating user names and group names to suit your needs.
+The following section of Studio's configuration overrides allows you to configure the regex used by the validation framework to suit your needs.
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -458,5 +458,16 @@ The following section of Studio's configuration overrides allows you to configur
    # from crafter common validations.
    # Key should have the form `studio.validation.regex.KEY_NAME`
    # Value should be a valid java regex.
-   # studio.validation.regex.GROUP_NAME: "^[a-zA-Z0-9]+$"
-   # studio.validation.regex.USERNAME: "^[A-Za-z0-9]$"
+   #
+   # studio.validation.regex.HTTPParameterName: "^[a-zA-Z0-9_\\-]{1,32}$"
+   # studio.validation.regex.SITEID: "^[a-z0-9\-_]*$"
+   # studio.validation.regex.EMAIL: "^([\\w\\d._\\-#])+@([\\w\\d._\\-#]+[.][\\w\\d._\\-#]+)+$"
+   # studio.validation.regex.USERNAME: "^[a-zA-Z][\\w.\\-@+]+$"
+   # studio.validation.regex.GROUP_NAME: "^[a-zA-Z][\\w.\\-]*$"
+   # studio.validation.regex.ALPHANUMERIC: "^[a-zA-Z0-9]*$"
+   # studio.validation.regex.SEARCH_KEYWORDS: "^[\\w\\s\\-\\\"\\.\\*]*$"
+   # studio.validation.regex.CONTENT_PATH_WRITE: "^/?([a-z0-9\\-_]+/?)*(((crafter\\-level\\-descriptor\\.level)|([a-z0-9_\\-]))+\\.[\\w]+)?$"
+   # studio.validation.regex.ASSET_PATH_WRITE: "^/?([a-z0-9-_.]+/?)*([a-z0-9_\\-./]+\\.[\\w]+)?$"
+   # studio.validation.regex.CONTENT_PATH_READ: "^/?([\\w\\p{IsLatin}@$%^&{}\\[\\]()+\\-=,.:~'`]+(\\s*[\\w\\p{IsLatin}/@$%^&{}\\[\\]()+\\-=,.:~'`])*(/?))*$"
+   # studio.validation.regex.CONTENT_FILE_NAME_WRITE: "^((crafter\\-level\\-descriptor\\.level)|([a-z0-9_\\-])+)\\.xml$"
+   # studio.validation.regex.CONFIGURATION_PATH: "^([a-z0-9\\-_/]+([.]*[a-z0-9\\-_])+)*(\\.[\w]+)?/?$"
