@@ -4,6 +4,8 @@
 
 .. index:: Documentation Standard
 
+.. TODO Fix this to match our latest style
+
 .. _newIa-documentation-standard:
 
 ######################

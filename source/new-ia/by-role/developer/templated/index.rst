@@ -37,6 +37,8 @@ can render the final page. The choice of HTML tools and frameworks doesn't matte
 Developers can use whatever front-end technology they want. For development React, Vue, Angular, Flutter
 or similar SPA, please see :ref:`here <newIa-developer-headless>`
 
+When you're ready for development, and if you use Docker, review :ref:`newIa-local-dev-with-docker`.
+
 The following details building templated projects, its purpose and examples.
 
 .. toctree::

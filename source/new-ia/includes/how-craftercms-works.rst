@@ -3,7 +3,9 @@ CrafterCMS is a web content and experience management solution that allows organ
 ------------------------------
 How Authors Work in CrafterCMS
 ------------------------------
-  
+
+.. TODO Update this video content and hosting solution and add more for other personas
+
 .. raw:: html
 
         <iframe id="vzvd-6931273" name="vzvd-6931273" title="vzaar video player" class="vzaar-video-player" type="text/html" width="448" height="252" frameborder="0" allowFullScreen allowTransparency="true" mozallowfullscreen webkitAllowFullScreen src="//view.vzaar.com/6931273/player"></iframe>
