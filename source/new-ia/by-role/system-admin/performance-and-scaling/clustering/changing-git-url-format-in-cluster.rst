@@ -6,6 +6,8 @@
 
 .. _newIa-changing-the-cluster-git-url:
 
+.. todo check if this is still the case with primary/replica clustering and update as needed
+
 =============================================
 Changing the Cluster Git URL |enterpriseOnly|
 =============================================

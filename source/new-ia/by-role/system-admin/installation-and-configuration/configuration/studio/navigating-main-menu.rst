@@ -186,7 +186,7 @@ The ``Token Management Tool`` allows the user to manage access tokens used to ma
     :align: center
     :width: 100%
 
-For more information on how to use the Token Management tool, see :ref:`newIa-working-with-crafter-studios-api`.
+For more information on how to use the Token Management tool, see :ref:`newIa-cli-access-to-crafter-studio`.
 
 -------
 Account

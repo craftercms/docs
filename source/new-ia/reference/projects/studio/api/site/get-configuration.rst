@@ -10,7 +10,7 @@ Get Configuration (deprecated)
 Get configuration.
 
 .. important::
-   This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/configuration/getConfiguration` for the current version.
+   This API is deprecated and provided only as a reference.  Please see :base_url:`getConfiguration <_static/api/studio.html#tag/configuration/operation/getConfiguration>` for the current version.
 
 
 --------------------

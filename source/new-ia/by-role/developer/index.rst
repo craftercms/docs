@@ -46,23 +46,7 @@ content inheritance:
    :maxdepth: 1
    :titlesonly:
 
-   content-inheritance
-
-|
-
-.. raw:: html
-
-   <hr>
-
-**Content Search**
-
-To search for content in your project:
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   content-search
+   common/content-modeling/content-inheritance
 
 |
 
@@ -79,7 +63,7 @@ depending on different aspects like geographical location, language, preferences
    :maxdepth: 1
    :titlesonly:
 
-   targeting
+   templated/targeting
 
 |
 |
@@ -94,45 +78,9 @@ While developing your project, there are times when you’d like to see more log
 is happening and address it as needed.  Overriding the logging levels allows you to see more or less
 details depending on your needs.
 
-These logs/data may also be moved to another location if desired.
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   override-logging-levels
-   resources/change-log-data-folder-location
+Learn more about :ref:`newIa-logging`.
 
 |
-
-.. raw:: html
-
-   <hr>
-
-**Developer Workflow (DevContentOps)**
-
-CrafterCMS supports content authoring, publishing and developer workflow and how to configure
-and implement it, the basic mechanics of DevContentOps.
-
-The following looks at the developer workflow in depth:
-
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-
-   developer-workflow/index
-
-|
-
-.. raw:: html
-
-   <hr>
-
-**Extending Studio**
-
-While much of Crafter Studio is configurable, projects sometimes want to change or add functionality that
-does not exist in the base platform.Crafter Studio is designed as a framework that supports extensions.
-To extend Studio, use :ref:`plugins <newIa-plugins>`.
 
 .. raw:: html
 

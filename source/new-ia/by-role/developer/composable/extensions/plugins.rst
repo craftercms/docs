@@ -430,10 +430,8 @@ To publish a plugin in the Crafter Marketplace you can follow the instructions i
 Retrieving Extension Assets
 ---------------------------
 
-.. TODO: can we change the link to swagger URL to an abbreviated text?
-
 At the low level, Crafter Studio APIs provide an endpoint that gets a file for a given plugin, (i.e.
-:studio_swagger_url:`#/plugin/getPluginFile`). This API takes care of setting all the right headers
+:base_url:`getPluginFile <_static/api/studio.html#tag/plugin/operation/getPluginFile>`). This API takes care of setting all the right headers
 for whatever kind of asset you're retrieving (JavaScript, CSS, image, etc). There are also higher level
 mechanisms for developers to load and use plugins like the :ref:`Plugin host <newIa-plugin-host>`
 or through the :ref:`Crafter CLI <newIa-crafter-cli-commands>`.

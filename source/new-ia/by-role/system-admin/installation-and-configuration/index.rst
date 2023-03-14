@@ -2,118 +2,175 @@
 :last-updated: 4.0.3
 :nosearch:
 
-.. _newIa-system-admin-installation:
+.. _newIa-system-admin-installation-and-configuration:
 
-==========================
-Installation and Upgrading
-==========================
+============
+Installation
+============
 
-This section describes various ways of installing/setting up CrafterCMS
-
+This section describes various ways of installing and configuring up CrafterCMS.
 
 First we'll take a look at the requirements and supported platform for installing/setting up CrafterCMS
 
+------------
+Requirements
+------------
+
+To run CrafterCMS, the following are required:
+
+    - Java 11
+    - 8+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
+    - Git 2.20.1 and later
+
+Please note that CrafterCMS does not require any external databases for the core system to run and deliver fully dynamic experiences.  MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide user management and social features.
+
+-------------------
+Supported Platforms
+-------------------
+
+^^^^^^^^^^^^^^^^^^^
+OS (All components)
+^^^^^^^^^^^^^^^^^^^
+
+The following Operating Systems are supported (64Bit only for all OSs)
+
+    - Linux (Ubuntu, RHEL)
+    - macOS (10.12 and later)
+    - Windows via WSL
+
+^^^^^^^^^^^^^^^^^^^^^
+JVMs (All components)
+^^^^^^^^^^^^^^^^^^^^^
+
+The following JVMs are supported:
+
+    - OpenJDK 11
+    - Oracle JDK (HotSpot) 11
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Browsers (Crafter Studio & Crafter Social/Profile Admin Consoles)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following browsers are supported:
+
+    - Chrome and Chromium-based Browsers
+    - Firefox
+    - MS Edge
+
+------------
+Installation
+------------
+
+CrafterCMS provides the following methods for installation depending on your environment. There are three main installation methods:
+- Docker
+- Kubernetes
+- AWS AMI
+- Binary Bundles
+- Build from Source
+
+We'll go through these one by one.
+
+^^^^^^
+Docker
+^^^^^^
+
+Run CrafterCMS in Docker.
+
+.. TODO Vita to populate
+
+^^^^^^^^^^
+Kubernetes
+^^^^^^^^^^
+
+Deploying CrafterCMS in Kubernetes.
+
 .. toctree::
-   :maxdepth: 2
+  :maxdepth: 1
 
-   requirements-supported-platforms
+  kubernetes/index
 
-Remember to change the default values pre-configured when installing CrafterCMS for a secure installation.
-See :ref:`newIa-securing-your-crafter-cms-install` for more information.
+^^^^^^^
+AWS AMI
+^^^^^^^
 
-CrafterCMS provides the following methods for setting up CrafterCMS depending on your environment
-and in addition, instructions on setting up CrafterCMS using Crafter's AWS AMI,  clustering  and
-deploying CrafterCMS in Kubernetes:
+Setup CrafterCMS authoring and delivery using Crafter's AWS AMI.
 
-The quick start guide provides instructions on setting up a development environment by installing CrafterCMS from the prebuilt binaries
+.. toctree::
+  :maxdepth: 1
 
-* :ref:`newIa-getting-started`
+  authoring/setup-authoring-using-aws-ami
+  delivery/setup-delivery-using-aws-ami
 
-To learn more about the developer workflow, see :ref:`newIa-devContentOps-workflow`.
 
-#. Production Environment
+^^^^^^^^^^^^^^
+Binary Bundles
+^^^^^^^^^^^^^^
 
-   The guide below provides instructions on how to setup a production environment
+CrafterCMS provides pre-built bundles for Linux, MacOS x86 and ARM. The guide below provides instructions on how to setup a production environment.
 
    .. toctree::
       :maxdepth: 2
 
       production-environment-setup
 
-#. Using Crafter's AWS AMI
+^^^^^^^^^^^^^^^^^
+Build from Source
+^^^^^^^^^^^^^^^^^
 
-   Setup CrafterCMS authoring and delivery using Crafter's AWS AMI.
+CrafterCMS is open source and you can always build and run it from source code.
 
-   .. toctree::
-      :maxdepth: 1
+.. TODO Vita to populate/link to the parent project.
 
-      authoring/setup-authoring-using-aws-ami
-      delivery/setup-delivery-using-aws-ami
+=============
+Configuration
+=============
 
-#. Clustering
+---------------------
+Securing Your Install
+---------------------
+Remember to change the default values pre-configured when installing CrafterCMS for a secure installation.
+See :ref:`newIa-securing-your-crafter-cms-install` for more information.
 
-   Setup Crafter Studio for high-availability via clustering
-
-   * :ref:`newIa-clustering`
-
-#. Deploying CrafterCMS in Kubernetes
-
-   .. toctree::
-      :maxdepth: 1
-
-      kubernetes/index
-
-----------------
-Tuning Authoring
-----------------
+---------
+Authoring
+---------
 Below you'll find instructions how to enhance the authoring environment performance and how to
 setup various things for your authoring install
 
 .. toctree::
    :maxdepth: 1
 
-   authoring/authoring-env-performance-tuning
-   authoring/navigating-main-menu
-   authoring/users-groups-management
    authoring/change-hosts-ports-on-your-auth-install
-   authoring/staging
-   authoring/sync-studio-database-with-repo
+   configuration/studio/navigating-main-menu
+   configuration/studio/users-groups-management
+   ../../common/staging
 
----------------
-Tuning Delivery
----------------
+--------
+Delivery
+--------
 Below you'll find instructions how to enhance the delivery environment performance and how to
 setup various things for your delivery install
 
 .. toctree::
    :maxdepth: 1
 
-   delivery/delivery-env-performance-tuning
    delivery/change-hosts-ports-on-your-delivery-install
    delivery/setup-project-for-delivery
-   delivery/setup-serverless-site
    delivery/setup-serverless-delivery
 
-----------
-Clustering
-----------
+------------------------
+Additional Configuration
+------------------------
+^^^^^^^
+Logging
+^^^^^^^
+Learn more about :ref:`newIa-logging`.
 
-Here's some more information on setting up and configuring your cluster
+^^^^^^^^^
+Main Menu
+^^^^^^^^^
+.. TODO explain why would one want to edit this
 
-.. toctree::
-   :maxdepth: 1
+:ref:`newIa-main-menu-config`
 
-   clustering/clustering
-   clustering/changing-git-url-format-in-cluster
-   clustering/studio-clustering-two-nodes
-
----------
-Upgrading
----------
-
-Here's how to upgrade your CrafterCMS installations in Kubernetes, Docker Compose, or a server
-
-.. toctree::
-   :maxdepth: 2
-
-   upgrade/index
+.. TODO Add configuration tasks below detailing how to accomplish that task with references to the relevant configuration files

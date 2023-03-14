@@ -8,7 +8,6 @@ How-Tos
    :maxdepth: 2
    :titlesonly:
 
-   add-to-upgrade-scripts
    change-log-data-folder-location
    configure-crafter-on-docker-for-local-dev-tools
    integrating-crafter-cms-with-cloud

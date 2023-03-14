@@ -9,7 +9,7 @@
 Building Form Engine Data Source Project Plugins
 ================================================
 
-Crafter Studio allows plugins for form engine data sources through the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile`
+Crafter Studio allows plugins for form engine data sources through the ``getPluginFile`` API found here :base_url:`getPluginFile <_static/api/studio.html#tag/plugin/operation/getPluginFile>`
 
 ---------------------
 What is a Data Source

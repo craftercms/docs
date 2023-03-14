@@ -12,7 +12,7 @@ Transcode and/or compress media files using AWS Elemental MediaConvert.
      Make sure that the aws profile id to be used has been configured.
 
 .. important::
-    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/aws/uploadVideo` for the current version.
+    This API is deprecated and provided only as a reference.  Please see :base_url:`uploadVideo <_static/api/studio.html#tag/aws/operation/uploadVideo>` for the current version.
 
 --------------------
 Resource Information

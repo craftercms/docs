@@ -9,16 +9,16 @@ For the System Administrator
 ============================
 
 This section is intended to provide system administrators with the information and access to the tools
-they need to install and maintain CrafterCMS components.
+they need to install and maintain CrafterCMS.
 
 .. toctree::
    :maxdepth: 1
 
    deployment-architecture
    installation-and-configuration/index
-   performance-and-scaling/index
-   upgrade/index
    security/index
-   maintenance/index
+   performance-and-scaling/index
    disaster-recovery
+   maintenance/index
+   upgrade/index
 

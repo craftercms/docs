@@ -21,7 +21,7 @@ This section details building headless projects, its purpose and examples.
     :maxdepth: 1
     :titlesonly:
 
-    ../common/content-modeling
+    ../common/content-modeling/content-modeling
     ../common/content-modeling/information-architecture
     ../common/content-access
     ../../../reference/groovy-api
@@ -29,6 +29,13 @@ This section details building headless projects, its purpose and examples.
     ../common/security
     ../common/redirects
     ../common/servlet-filters
+
+
+.. Smaller topics that are needed but not sure how to represent/wrap these yet
+    ../common/working-with-sass
+    ../../common/asset-processing
+
+.. Add something related to storing source in `/sources` optionally and refer to working with sass files (added above)
 
 -------------------------
 Example Headless Projects

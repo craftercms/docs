@@ -16,13 +16,13 @@ There are 2 versions of Crafter Studio APIs.  **API version 2** contains the Use
 .. note::
     This API can be used with JWT or HTTP Basic authentication.
 
-    For more information on using Crafter Studio APIs, see :ref:`newIa-working-with-crafter-studios-api`
+    For more information on using Crafter Studio APIs, see :ref:`newIa-cli-access-to-crafter-studio`
 
 -------------
 API Version 2
 -------------
 
-Version 2 APIs are available from: https://app.swaggerhub.com/apis/craftercms/studio
+Version 2 APIs are available from :base_url:`here <_static/api/studio.html>`
 
 -------------
 API Version 1

@@ -32,7 +32,7 @@ For the content author learning to use CrafterCMS to create and manage content, 
 For the Project Administrator
 -----------------------------
 
-For the project administrator learning how to create and manage projects in CrafterCMS, please start :ref:`here<newIa-site-admin>`.
+For the project administrator learning how to create and manage projects in CrafterCMS, please start :ref:`here<newIa-project-admin>`.
 
 ----------------------------
 For the System Administrator
