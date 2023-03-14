@@ -20,7 +20,14 @@ There are 2 versions of Crafter Studio APIs.  **API version 2** contains the Use
 API Version 2
 -------------
 
-Version 2 APIs are available :base_url:`here <_static/api/studio.html>`.
+Version 2 APIs are available here:
+
+.. raw:: html
+
+    <iframe src="../../../../_static/api/studio.html" height="700px" width="100%"></iframe>
+
+|
+|
 
 -------------
 API Version 1
