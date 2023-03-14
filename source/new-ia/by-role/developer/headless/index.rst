@@ -15,7 +15,7 @@ transformed content to the caller as JSON.
 This section details how you can model any type of content, provide your content authors the ability to visually
 author content items and then retrieve that content for your SPA, iOS, Android or other applications.
 
-This section details building headless projects, its purpose and examples.
+When you're ready for development, and if you use Docker, review :ref:`newIa-local-dev-with-docker`.
 
 .. toctree::
     :maxdepth: 1
