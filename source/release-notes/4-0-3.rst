@@ -161,6 +161,11 @@ Updates
   with a default value set to false   |br|
   See `here <https://github.com/craftercms/craftercms/issues/5975>`__ for more information
 
+* Fixed issue with LDAP authentication while creating group
+
+* Fixed issue with ``Publish All`` failing when blob is missing  |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5949>`__ for more information
+
 Lots of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 4.0.3 Milestone <https://github.com/craftercms/craftercms/milestone/91?closed=1>`_
