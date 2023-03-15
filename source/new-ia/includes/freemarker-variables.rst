@@ -9,10 +9,6 @@
 ||                          || URL of a page to the web or          ||                                   |
 ||                          || render URL.                          ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
-|| searchService            || Service that can be used to          || |SearchService|                   |
-||                          || execute search queries against       ||                                   |
-||                          || Crafter Search.                      ||                                   |
-+---------------------------+---------------------------------------+------------------------------------+
 || applicationContext       || Provides access to the Crafter       || |ApplicationContextAccessor|      |
 ||                          || Engine's Spring beans and site       ||                                   |
 ||                          || beans defined in                     ||                                   |
@@ -46,7 +42,7 @@
 ||                          || ``crafter.engine.environment``       ||                                   |
 ||                          || property                             ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
-|| siteConfig               || The current site Configuration       || `XMLConfiguration`_               |
+|| siteConfig               || The current site Configuration       || |XMLConfiguration|                |
 ||                          || loaded from /config/site.xml.        ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
 || siteContext              || The current SiteContext              || |SiteContextHashModel|            |
@@ -56,15 +52,15 @@
 || requestParameters        || The parameter values for the         || `HttpRequestParametersHashModel`_ |
 ||                          || current request                      ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
-|| cookies                  || The cookie values for the            || `Map`_                            |
+|| cookies                  || The cookie values for the            || |Map|                             |
 ||                          || current request                      ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
 || session                  || The current session                  || `HttpSessionHashModel`_           |
 +---------------------------+---------------------------------------+------------------------------------+
-|| locale                   || The current locale for the           || `Locale`_                         |
+|| locale                   || The current locale for the           || |Locale|                          |
 ||                          || current user                         ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
-|| authToken                || The current authentication (if       || `Authentication`_                 |
+|| authToken                || The current authentication (if       || |SpringAuthentication|            |
 ||                          || the user has logged in),             ||                                   |
 ||                          || created by Spring Security           ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
@@ -112,17 +108,15 @@ The following variables are restricted by default, to use them see :ref:`newIa-a
 .. |TenantService| replace:: :javadoc_base_url:`TenantService <profile/org/craftercms/profile/api/services/TenantService.html>`
 .. |AuthenticationService| replace:: :javadoc_base_url:`AuthenticationService <profile/org/craftercms/profile/api/services/AuthenticationService.html>`
 .. |AuthenticationManager| replace:: :javadoc_base_url:`AuthenticationManager <profile/org/craftercms/security/authentication/AuthenticationManager.html>`
-.. _TextEncryptor: http://docs.spring.io/autorepo/docs/spring-security/4.0.3.RELEASE/apidocs/org/springframework/security/crypto/encrypt/TextEncryptor.html
-.. _Logger: http://www.slf4j.org/api/org/slf4j/Logger.html
-.. _XMLConfiguration: https://commons.apache.org/proper/commons-configuration/javadocs/v1.10/apidocs/org/apache/commons/configuration/XMLConfiguration.html
+.. |XMLConfiguration| replace:: See ``XMLConfiguration`` under ``org.apache.commons.configuration2`` in the Apache Commons apidocs
 .. |SiteContext| replace:: :javadoc_base_url:`SiteContext <engine/org/craftercms/engine/service/context/SiteContext.html>`
 .. |ServletContextHashModel| replace:: :javadoc_base_url:`ServletContextHashModel <engine/org/craftercms/engine/freemarker/ServletContextHashModel.html>`
 .. |SiteContextHashModel| replace:: :javadoc_base_url:`ServletContextHashModel <engine/org/craftercms/engine/util/freemarker/SiteContextHashModel.html>`
 .. |HttpRequestHashModel| replace:: :javadoc_base_url:`HttpRequestHashModel <engine/org/craftercms/engine/util/freemarker/HttpRequestHashModel.html>`
 .. _HttpRequestParametersHashModel: http://freemarker.org/docs/api/freemarker/ext/servlet/HttpRequestParametersHashModel.html
 .. _HttpSessionHashModel: http://freemarker.org/docs/api/freemarker/ext/servlet/HttpSessionHashModel.html
-.. _Map: https://docs.oracle.com/javase/7/docs/api/java/util/Map.html
-.. _Locale: https://docs.oracle.com/javase/7/docs/api/java/util/Locale.html
+.. |Map| replace:: See ``Map`` under the ``java.util`` package of the ``java.base`` module in the Java documentation
+.. |Locale| replace:: See ``Locale`` under the ``java.util`` package of the ``java.base`` module in the Java documentation
 .. |Authentication| replace:: :javadoc_base_url:`Authentication <profile/org/craftercms/security/authentication/Authentication.html>`
 .. |Profile| replace:: :javadoc_base_url:`Profile <profile/org/craftercms/profile/api/Profile.html>`
-.. _Authentication: https://docs.spring.io/spring-security/site/docs/4.0.x/apidocs/org/springframework/security/core/Authentication.html
+.. |SpringAuthentication| replace::  See ``Authentication`` under ``org.springframework.security.core`` in the Spring Security apidocs

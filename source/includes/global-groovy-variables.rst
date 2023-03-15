@@ -7,10 +7,6 @@
 ||                       || transforming the content URL of a    ||                               |
 ||                       || page to the web or render URL.       ||                               |
 +------------------------+---------------------------------------+--------------------------------+
-|| searchService         || Service that can be used to execute  || |SearchService|               |
-||                       || search queries against               ||                               |
-||                       || Crafter Search.                      ||                               |
-+------------------------+---------------------------------------+--------------------------------+
 || elasticsearch         || Service that can be used to execute  || |ElasticsearchWrapper|        |
 ||                       || search queries against               ||                               |
 ||                       || Elasticsearch.                       ||                               |
@@ -47,7 +43,7 @@
 || authenticationManager || Manages Crafter Security Provider    || |AuthenticationManager|       |
 ||                       || based authentications.               ||                               |
 +------------------------+---------------------------------------+--------------------------------+
-|| textEncryptor         || Utility class for encrypting/        || `TextEncryptor`_              |
+|| textEncryptor         || Utility class for encrypting/        || |TextEncryptor|               |
 ||                       || decrypting text with AES.            ||                               |
 +------------------------+---------------------------------------+--------------------------------+
 || modePreview           || Flag that indicates that Engine is   || Boolean                       |
@@ -61,7 +57,7 @@
 +------------------------+---------------------------------------+--------------------------------+
 || logger                || The GroovyUtils SLF4J logger         || `Logger`_                     |
 +------------------------+---------------------------------------+--------------------------------+
-|| siteConfig            || The current project Configuration,   || `XMLConfiguration`_           |
+|| siteConfig            || The current project Configuration,   || |XMLConfiguration|            |
 ||                       || loaded from /config/site.xml.        ||                               |
 +------------------------+---------------------------------------+--------------------------------+
 || siteContext           || The current SiteContext              || |SiteContext|                 |
@@ -82,7 +78,7 @@
 .. |TenantService| replace:: :javadoc_base_url:`TenantService <profile/org/craftercms/profile/api/services/TenantService.html>`
 .. |AuthenticationService| replace:: :javadoc_base_url:`AuthenticationService <profile/org/craftercms/profile/api/services/AuthenticationService.html>`
 .. |AuthenticationManager| replace:: :javadoc_base_url:`AuthenticationManager <profile/org/craftercms/security/authentication/AuthenticationManager.html>`
-.. _TextEncryptor: http://docs.spring.io/autorepo/docs/spring-security/4.0.3.RELEASE/apidocs/org/springframework/security/crypto/encrypt/TextEncryptor.html
+.. |TextEncryptor| replace:: See ``TextEncryptor`` under ``org.springframework.security.crypto.encrypt`` in the Spring Security apidocs
 .. _Logger: http://www.slf4j.org/api/org/slf4j/Logger.html
-.. _XMLConfiguration: https://commons.apache.org/proper/commons-configuration/javadocs/v1.10/apidocs/org/apache/commons/configuration/XMLConfiguration.html
+.. |XMLConfiguration| replace:: See ``XMLConfiguration`` under ``org.apache.commons.configuration2`` in the Apache Commons apidocs
 .. |SiteContext| replace:: :javadoc_base_url:`SiteContext <engine/org/craftercms/engine/service/context/SiteContext.html>`

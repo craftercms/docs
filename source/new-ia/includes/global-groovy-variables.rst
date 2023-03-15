@@ -7,10 +7,6 @@
 ||                       || transforming the content URL of a    ||                               |
 ||                       || page to the web or render URL.       ||                               |
 +------------------------+---------------------------------------+--------------------------------+
-|| searchService         || Service that can be used to execute  || |SearchService|               |
-||                       || search queries against               ||                               |
-||                       || Crafter Search.                      ||                               |
-+------------------------+---------------------------------------+--------------------------------+
 || elasticsearch         || Service that can be used to execute  || |ElasticsearchWrapper|        |
 ||                       || search queries against               ||                               |
 ||                       || Elasticsearch.                       ||                               |
@@ -72,7 +68,6 @@
 .. |PropertySources| replace:: PropertySourcesPropertyResolver
 .. _PropertySources: https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/PropertySourcesPropertyResolver.html
 .. |UrlTransformationService| replace:: :javadoc_base_url:`UrlTransformationService <engine/org/craftercms/engine/service/UrlTransformationService.html>`
-.. |SearchService| replace:: :javadoc_base_url:`SearchService <search/org/craftercms/search/service/SearchService.html>`
 .. |ElasticsearchWrapper| replace:: :javadoc_base_url:`ElasticsearchWrapper <search/org/craftercms/search/elasticsearch/ElasticsearchWrapper.html>`
 .. |ApplicationContextAccessor| replace:: :javadoc_base_url:`ApplicationContextAccessor <engine/org/craftercms/engine/util/spring/ApplicationContextAccessor.html>`
 .. |BreadcrumbBuilder| replace:: :javadoc_base_url:`BreadcrumbBuilder <engine/org/craftercms/engine/navigation/NavBreadcrumbBuilder.html>`
@@ -82,7 +77,7 @@
 .. |TenantService| replace:: :javadoc_base_url:`TenantService <profile/org/craftercms/profile/api/services/TenantService.html>`
 .. |AuthenticationService| replace:: :javadoc_base_url:`AuthenticationService <profile/org/craftercms/profile/api/services/AuthenticationService.html>`
 .. |AuthenticationManager| replace:: :javadoc_base_url:`AuthenticationManager <profile/org/craftercms/security/authentication/AuthenticationManager.html>`
-.. _TextEncryptor: http://docs.spring.io/autorepo/docs/spring-security/4.0.3.RELEASE/apidocs/org/springframework/security/crypto/encrypt/TextEncryptor.html
 .. _Logger: http://www.slf4j.org/api/org/slf4j/Logger.html
 .. _XMLConfiguration: https://commons.apache.org/proper/commons-configuration/javadocs/v1.10/apidocs/org/apache/commons/configuration/XMLConfiguration.html
 .. |SiteContext| replace:: :javadoc_base_url:`SiteContext <engine/org/craftercms/engine/service/context/SiteContext.html>`
+.. _TextEncryptor: See ``TextEncryptor`` under ``org.springframework.security.crypto.encrypt`` in the Spring Security apidocs
