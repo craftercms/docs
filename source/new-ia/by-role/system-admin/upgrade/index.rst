@@ -5,11 +5,11 @@
 
 .. _newIa-upgrading-craftercms:
 
-.. TODO Update to the latest 4
-
 ====================
 Upgrading CrafterCMS
 ====================
+
+.. TODO Update to the latest 4
 
 This section details the steps required to upgrade your CrafterCMS install.
 

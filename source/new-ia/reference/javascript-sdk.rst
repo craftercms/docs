@@ -7,11 +7,11 @@
 
 .. _newIa-javascript-sdk:
 
-.. TODO discuss this with RA to make sure it's up to date
-
 ==============
 JavaScript SDK
 ==============
+
+.. TODO discuss this with RA to make sure it's up to date
 
 CrafterCMS has a JavaScript SDK that enable easy interaction with several
 CrafterCMS modules/utilities for creating websites and applications.
