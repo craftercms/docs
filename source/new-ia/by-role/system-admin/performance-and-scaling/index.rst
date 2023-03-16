@@ -16,7 +16,7 @@ Delivery
 """"""""""""""""""""""""
 Basic Performance Tuning
 """"""""""""""""""""""""
-:ref:`delivery-env-performance-tuning`
+:ref:`newIa-delivery-env-performance-tuning`
 
 """""""""""""""
 CDN Integration
@@ -34,7 +34,7 @@ Authoring
 """"""""""""""""""""""""
 Basic Performance Tuning
 """"""""""""""""""""""""
-:ref:`authoring-env-performance-tuning`
+:ref:`newIa-authoring-env-performance-tuning`
 
 """"""""""
 Clustering

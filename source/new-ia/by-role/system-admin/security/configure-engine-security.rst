@@ -1,21 +1,23 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-setup-cloudfront-signed-cookies-in-crafter:
+.. _newIa-configuring-engine-security:
 
+===========================
+Configuring Engine Security
+===========================
 
-.. TODO Fix below to map to Engine not Studio
-
-=======================================================
+-------------------------------------------------------
 Configure Headers Based Authentication |enterpriseOnly|
-=======================================================
+-------------------------------------------------------
+.. TODO Fix below to map to Engine not Studio
 
 Crafter Studio is able to integrate with any authentication system that sends custom HTTP headers containing information that will be used to authenticate the user in Studio.  This section details how to setup Studio for headers based authentication.
 
 
--------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Configure Studio for Headers Based Authentication
--------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configuring Studio for headers based authentication is very simple: in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
 
@@ -64,8 +66,10 @@ From the above configuration, here are the attributes that Studio expects from t
 The attribute ``secure_key`` is placed by the authentication agent in the header.
 The attribute ``enabled`` enables/disables headers authentication, make sure this is set to **true** for headers authentication
 
+
+""""""""""""""""""
 Configuring Logout
-------------------
+""""""""""""""""""
 
 The **Sign out** button link is disabled/hidden by default when headers based authentication is enabled.
 
@@ -83,10 +87,11 @@ To enable **Sign out** for users signed in using headers based authentication, c
 |
 
 
+.. _newIa-setup-cloudfront-signed-cookies-in-crafter:
 
-======================================================
+------------------------------------------------------
 Setup CloudFront Signed Cookies in CrafterCMS Delivery
-======================================================
+------------------------------------------------------
 
 One way to provide access to restricted content through AWS CloudFront is to use signed cookies.
 This section details how to setup CloudFront signed cookies for CrafterCMS with SSO.
