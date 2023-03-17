@@ -12,6 +12,7 @@ from docutils.parsers.rst import directives
 
 from sphinx.util.nodes import set_source_info
 from docutils.parsers.rst import Directive, directives
+import uuid
 
 class openIframeModalButton(Body, Element):
    pass
@@ -35,18 +36,20 @@ class OpenIframeModalButton(Directive):
         return [node]
 
 def button(self, node):
+    id = uuid.uuid4()
+
     template= """
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#iframeModal">
+<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#iframeModal%(id)s">
   %(label)s
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="iframeModal" tabindex="-1" aria-labelledby="iframeModalLabel" aria-hidden="true">
+<div class="modal fade" id="iframeModal%(id)s" tabindex="-1" aria-labelledby="iframeModalLabel%(id)s" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="iframeModalLabel">%(title)s</h1>
+        <h1 class="modal-title fs-5" id="iframeModalLabel%(id)s">%(title)s</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -59,7 +62,7 @@ def button(self, node):
   </div>
 </div>
 """
-    self.body.append(template%{'url': node['url'], 'label': node['label'], 'title': node['title']})
+    self.body.append(template%{'url': node['url'], 'label': node['label'], 'title': node['title'], 'id': id})
     raise nodes.SkipNode
 
 

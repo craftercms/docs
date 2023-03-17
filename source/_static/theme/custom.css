@@ -131,14 +131,6 @@
   margin: 0 auto;
 }
 
-/* @media (min-width: 576px) {
-  .modal-dialog {
-    max-width: 500px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-} */
-
 .modal-content {
   position: relative;
   display: flex;
