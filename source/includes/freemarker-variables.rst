@@ -98,7 +98,6 @@ The following variables are restricted by default, to use them see :ref:`access-
 
 .. |SiteItemService| replace:: :javadoc_base_url:`SiteItemService <engine/org/craftercms/engine/service/SiteItemService.html>`
 .. |UrlTransformationService| replace:: :javadoc_base_url:`UrlTransformationService <engine/org/craftercms/engine/service/UrlTransformationService.html>`
-.. |SearchService| replace:: :javadoc_base_url:`SearchService <search/org/craftercms/search/service/SearchService.html>`
 .. |ApplicationContextAccessor| replace:: :javadoc_base_url:`ApplicationContextAccessor <engine/org/craftercms/engine/util/spring/ApplicationContextAccessor.html>`
 .. _PropertySourcesPropertyResolver: https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/PropertySourcesPropertyResolver.html
 .. |BreadcrumbBuilder| replace:: :javadoc_base_url:`BreadcrumbBuilder <engine/org/craftercms/engine/navigation/NavBreadcrumbBuilder.html>`
@@ -108,15 +107,15 @@ The following variables are restricted by default, to use them see :ref:`access-
 .. |TenantService| replace:: :javadoc_base_url:`TenantService <profile/org/craftercms/profile/api/services/TenantService.html>`
 .. |AuthenticationService| replace:: :javadoc_base_url:`AuthenticationService <profile/org/craftercms/profile/api/services/AuthenticationService.html>`
 .. |AuthenticationManager| replace:: :javadoc_base_url:`AuthenticationManager <profile/org/craftercms/security/authentication/AuthenticationManager.html>`
-.. |XMLConfiguration| replace:: See ``XMLConfiguration`` under ``org.apache.commons.configuration2`` in the Apache Commons apidocs
+.. |XMLConfiguration| replace:: See ``XMLConfiguration`` under ``org.apache.commons.configuration2`` in the `Apache Commons <https://commons.apache.org/proper/commons-configuration/index.html>`__ apidocs
 .. |SiteContext| replace:: :javadoc_base_url:`SiteContext <engine/org/craftercms/engine/service/context/SiteContext.html>`
 .. |ServletContextHashModel| replace:: :javadoc_base_url:`ServletContextHashModel <engine/org/craftercms/engine/freemarker/ServletContextHashModel.html>`
 .. |SiteContextHashModel| replace:: :javadoc_base_url:`ServletContextHashModel <engine/org/craftercms/engine/util/freemarker/SiteContextHashModel.html>`
 .. |HttpRequestHashModel| replace:: :javadoc_base_url:`HttpRequestHashModel <engine/org/craftercms/engine/util/freemarker/HttpRequestHashModel.html>`
 .. _HttpRequestParametersHashModel: http://freemarker.org/docs/api/freemarker/ext/servlet/HttpRequestParametersHashModel.html
 .. _HttpSessionHashModel: http://freemarker.org/docs/api/freemarker/ext/servlet/HttpSessionHashModel.html
-.. |Map| replace:: See ``Map`` under the ``java.util`` package of the ``java.base`` module in the Java documentation
-.. |Locale| replace:: See ``Locale`` under the ``java.util`` package of the ``java.base`` module in the Java documentation
+.. |Map| replace:: See ``Map`` under the ``java.util`` package of the ``java.base`` module in the `Java documentation <https://docs.oracle.com/en/java/javase/index.html>`__
+.. |Locale| replace:: See ``Locale`` under the ``java.util`` package of the ``java.base`` module in the `Java documentation <https://docs.oracle.com/en/java/javase/index.html>`__
 .. |Authentication| replace:: :javadoc_base_url:`Authentication <profile/org/craftercms/security/authentication/Authentication.html>`
 .. |Profile| replace:: :javadoc_base_url:`Profile <profile/org/craftercms/profile/api/Profile.html>`
-.. |SpringAuthentication| replace::  See ``Authentication`` under ``org.springframework.security.core`` in the Spring Security apidocs
+.. |SpringAuthentication| replace::  See ``Authentication`` under ``org.springframework.security.core`` in the `Spring Security <https://docs.spring.io/spring-security/reference/index.html>`__ apidocs
