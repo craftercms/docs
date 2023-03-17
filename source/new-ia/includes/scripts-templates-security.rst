@@ -4,9 +4,9 @@
    **Scripts and Templates Security**
 
 
-   Crafter Engine limits access to services when developing templates or scripts, and sandboxes scripts for security by default.
+   CrafterCMS limits access to services when developing templates or scripts, and sandboxes scripts for security by default.
 
-   Crafter Engine only allows a small list of services available to use when developing templates or scripts.
+   CrafterCMS only allows a small list of services available to use when developing templates or scripts.
    There are some sites that may require services not included by default.
 
    To expose other services, follow the guide :ref:`newIa-access-to-services`

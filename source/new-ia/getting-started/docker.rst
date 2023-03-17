@@ -31,7 +31,7 @@ To run CrafterCMS in a Docker container using Docker Compose, make sure the foll
 
    |
 
-#. If you are a developer and want to use your local IDE and other tools, follow :ref:`this <newIa-configuring-crafter-on-docker-for-local-dev-tools>` documentation to configure your docker container to support access to your projects via local IDE.
+#. If you are a developer and want to use your local IDE and other tools, follow :ref:`this <newIa-local-dev-with-docker>` documentation to configure your docker container to support access to your projects via local IDE.
 
 #. Go into the authoring folder, then start the container by running ``docker-compose up``
 

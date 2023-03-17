@@ -1,13 +1,15 @@
 :is-up-to-date: false
 :nosearch:
 
-.. index:: Configuring CrafterCMS on Docker for Local Development Tools
+.. index:: Local Development with Docker
 
-.. _newIa-configuring-crafter-on-docker-for-local-dev-tools:
+.. TODO: Update to v4
 
-============================================================
-Configuring CrafterCMS on Docker for Local Development Tools
-============================================================
+.. _newIa-local-dev-with-docker:
+
+=============================
+Local Development with Docker
+=============================
 
 Sometimes you'll need to have the Authoring project repositories in your docker container available in the host filesystem, specially if you want to update the files from your IDE. To support access to your projects via a local IDE, we need to mount the Authoring project repositories directory to a host directory.
 

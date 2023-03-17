@@ -4,58 +4,17 @@
 
 .. _newIa-system-admin-installation-and-configuration:
 
-============
-Installation
-============
+==============================
+Installation and Configuration
+==============================
 
 This section describes various ways of installing and configuring up CrafterCMS.
 
-First we'll take a look at the requirements and supported platform for installing/setting up CrafterCMS
+First we'll take a look at the requirements and supported platform for installing/setting up CrafterCMS.
 
-------------
-Requirements
-------------
+.. _newia-requirements_supported_platforms:
 
-To run CrafterCMS, the following are required:
-
-    - Java 11
-    - 8+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
-    - Git 2.20.1 and later
-
-Please note that CrafterCMS does not require any external databases for the core system to run and deliver fully dynamic experiences.  MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide user management and social features.
-
--------------------
-Supported Platforms
--------------------
-
-^^^^^^^^^^^^^^^^^^^
-OS (All components)
-^^^^^^^^^^^^^^^^^^^
-
-The following Operating Systems are supported (64Bit only for all OSs)
-
-    - Linux (Ubuntu, RHEL)
-    - macOS (10.12 and later)
-    - Windows via WSL
-
-^^^^^^^^^^^^^^^^^^^^^
-JVMs (All components)
-^^^^^^^^^^^^^^^^^^^^^
-
-The following JVMs are supported:
-
-    - OpenJDK 11
-    - Oracle JDK (HotSpot) 11
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Browsers (Crafter Studio & Crafter Social/Profile Admin Consoles)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The following browsers are supported:
-
-    - Chrome and Chromium-based Browsers
-    - Firefox
-    - MS Edge
+.. include:: /new-ia/includes/requirements.rst
 
 ------------
 Installation
@@ -121,19 +80,19 @@ CrafterCMS is open source and you can always build and run it from source code.
 
 .. TODO Vita to populate/link to the parent project.
 
-=============
+-------------
 Configuration
-=============
+-------------
 
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 Securing Your Install
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 Remember to change the default values pre-configured when installing CrafterCMS for a secure installation.
 See :ref:`newIa-securing-your-crafter-cms-install` for more information.
 
----------
+^^^^^^^^^
 Authoring
----------
+^^^^^^^^^
 Below you'll find instructions how to enhance the authoring environment performance and how to
 setup various things for your authoring install
 
@@ -145,9 +104,9 @@ setup various things for your authoring install
    configuration/studio/users-groups-management
    ../../common/staging
 
---------
+^^^^^^^^
 Delivery
---------
+^^^^^^^^
 Below you'll find instructions how to enhance the delivery environment performance and how to
 setup various things for your delivery install
 
@@ -158,17 +117,17 @@ setup various things for your delivery install
    delivery/setup-project-for-delivery
    delivery/setup-serverless-delivery
 
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 Additional Configuration
-------------------------
-^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""
 Logging
-^^^^^^^
+"""""""
 Learn more about :ref:`newIa-logging`.
 
-^^^^^^^^^
+"""""""""
 Main Menu
-^^^^^^^^^
+"""""""""
 .. TODO explain why would one want to edit this
 
 :ref:`newIa-main-menu-config`

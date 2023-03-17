@@ -9,7 +9,7 @@
 Crafter Core
 ============
 
-Crafter Core is the content rendering library for CrafterCMS.
+Crafter Core is the content retrieval and in-memory database library for CrafterCMS.
 
 -----------
 Source Code
