@@ -55,9 +55,6 @@ def button(self, node):
       <div class="modal-body">
         <iframe src="%(url)s"></iframe>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-neutral" data-bs-dismiss="modal">Close</button>
-      </div>
     </div>
   </div>
 </div>
