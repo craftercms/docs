@@ -173,6 +173,10 @@ Access to static methods in Freemarker templates is disabled by default.
 Cache
 -----
 
+^^^^^^^^^^^^^^^^^
+Preloaded Folders
+^^^^^^^^^^^^^^^^^
+
 The following allows you to configure folders to be preloaded in the cache:
 
 .. code-block:: properties
@@ -192,3 +196,14 @@ where:
   - The content folders are mostly static, non-processed content, e.g. scripts, templates, static-assets
 
 For all projects, the cache is preloaded using the above configuration. CrafterCMS warms up the cache on every publish and startup.  Note also that what's cache warmed will be warmed on every publish and startup and will live as long as nothing kicks it out of the cache due to least recently used (LRU) cache.
+
+^^^^^^^^^
+Max Items
+^^^^^^^^^
+
+The following allows you to configure the maximum number of objects in Engine's cache:
+
+.. code-block:: properties
+
+   # The max number of items that each site cache can have
+   crafter.engine.site.default.cache.maxAllowedItems=250000
