@@ -24,7 +24,6 @@ When you're ready for development, and if you use Docker, review :ref:`newIa-loc
     ../common/content-modeling/content-modeling
     ../common/content-modeling/information-architecture
     ../common/content-access
-    ../../../reference/groovy-api
     ../common/adding-experience-builder
     ../common/security
     ../common/redirects

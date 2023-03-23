@@ -9,7 +9,7 @@
 Reference
 =========
 
-This section is a reference to the modules, complementary projects, APIs and other detailed material.
+This section is a reference to the modules, APIs, complementary projects, and other detailed material.
 
 .. TODO List out the reference material here
 
@@ -24,11 +24,11 @@ CrafterCMS comprises a set of modules that work together. The modules are
     * - Module
       - Description
     * - :ref:`Studio<newIa-crafter-studio>`
-      - The content authoring UI and services
+      - Studio provides all the content management services to enable authoring, management, and publishing of all content.
     * - :ref:`Engine<newIa-crafter-engine>`
-      - The content delivery services
+      - Engine provides content delivery services to power any type of Web or mobile application.
     * - :ref:`Deployer<newIa-crafter-deployer>`
-      - The content deployment system which moves content from Studio to Engine and Search
+      - The content deployment system which moves content from Studio to Engine and Search.
     * - :ref:`Search<newIa-crafter-search>`
       - The search engine that backs content authoring and content delivery
     * - :ref:`Core<newIa-crafter-core>`
@@ -44,18 +44,9 @@ CrafterCMS comprises a set of modules that work together. The modules are
 CrafterCMS APIs
 ---------------
 
-CrafterCMS requires you use one of the following APIs to gain access to your content:
+.. include:: /new-ia/includes/content-retrieval-apis
 
-* FreeMarker API (great for templated projects) :ref:`newIa-templating-api`
-* JavaScript API (great for SPAs and/or AJAX) :ref:`newIa-javascript-sdk`
-* GraphQL (great for SPAs and/or AJAX) :ref:`newIa-graphql`
-* Search API :ref:`newIa-search-elasticsearch`
-* REST API (great for SPAs and/or AJAX) :ref:`newIa-rest-api`
-* Groovy (great for full control of the API endpoints and response shape) :ref:`newIa-groovy-api`
-* Java (can be accessed from Groovy and gives full access to Engine) :ref:`newIa-javadoc`
-
-
-
+For non-content related APIs, such as user/group management, monitoring, indexing and more, please consult the module API directly.
 
 
 .. toctree::
@@ -65,3 +56,12 @@ CrafterCMS requires you use one of the following APIs to gain access to your con
    api-reference
    devcontentops-toolkit/index
    resources
+
+----------------------
+Complimentary Projects
+----------------------
+.. TODO finish this and link things
+
+- Docker Compose
+- Kubernetes ...
+- Plugins
