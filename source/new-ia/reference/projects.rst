@@ -1,10 +1,10 @@
 :is-up-to-date: False
 :nosearch:
 
-.. _newIa-projects:
+.. _newIa-modules:
 
 ========
-Projects
+Modules
 ========
 
 
