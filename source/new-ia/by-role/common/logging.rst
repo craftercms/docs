@@ -160,6 +160,8 @@ To add a custom appender you can follow these steps:
   Because Log4j2 only loads classes during initialization if there is a change in the custom appender JAR those will 
   not be caught by the reconfiguration feature and you must restart the app context or tomcat.
 
+.. _newIa-crafter-sh-script-logging:
+
 ---------------------------
 *crafter.sh* Script Logging
 ---------------------------
