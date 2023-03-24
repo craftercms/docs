@@ -39,13 +39,3 @@ Delivery
         setup-cloudfront-signed-cookies-in-crafter
 
 
-.. toctree::
-   :maxdepth: 1
-
-   securing-your-craftercms-install
-   configure-studio-security
-   configure-ssl-tls
-   configure-headers-based-auth
-   configure-authentication-chain
-   setup-cloudfront-signed-cookies-in-crafter
-   configure-password-requirements

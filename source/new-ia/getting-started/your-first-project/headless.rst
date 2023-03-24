@@ -8,10 +8,10 @@
 
 .. _newIa-your-first-headless-site:
 
-.. TODO write this
-
 =============================
 Your First Project (headless)
 =============================
+
+.. TODO write this
 
 In this section, we will create a site using an out-of-the-box blueprint called "Headless Store" and show you:

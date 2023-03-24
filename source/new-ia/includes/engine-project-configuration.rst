@@ -1,3 +1,4 @@
+
 ----------------------------
 Engine Project Configuration
 ----------------------------
@@ -29,16 +30,16 @@ properties will be available for developers in the Freemarker templates and Groo
    External XML configuration, this file will be always loaded by Crafter Engine when present and
    will allow to change configurations without having to modify the files in the project repository.
 
-.. NOTE ::
-Properties will be overridden according to the order the files are loaded which is the same as
-the list above: main site-config.xml, environment site-config.xml, external site-config.xml
-If the same property is present in all files the value from the external file will be used.
+.. NOTE::
+   Properties will be overridden according to the order the files are loaded which is the same as
+   the list above: main site-config.xml, environment site-config.xml, external site-config.xml
+   If the same property is present in all files the value from the external file will be used.
 
-.. NOTE ::
-Apache Commons Configuration (https://commons.apache.org/proper/commons-configuration/) is used
-to read all configuration files. The ``siteConfig`` variable is an instance of the
-`XMLConfiguration <https://commons.apache.org/proper/commons-configuration/apidocs/org/apache/commons/configuration2/XMLConfiguration.html>`_
-class.
+.. NOTE::
+   Apache Commons Configuration (https://commons.apache.org/proper/commons-configuration/) is used
+   to read all configuration files. The ``siteConfig`` variable is an instance of the
+   `XMLConfiguration <https://commons.apache.org/proper/commons-configuration/apidocs/org/apache/commons/configuration2/XMLConfiguration.html>`_
+   class.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Configuration Properties

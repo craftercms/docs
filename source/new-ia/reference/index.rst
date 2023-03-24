@@ -44,7 +44,7 @@ CrafterCMS comprises a set of modules that work together. The modules are
 CrafterCMS APIs
 ---------------
 
-.. include:: /new-ia/includes/content-retrieval-apis
+.. include:: /new-ia/includes/content-retrieval-apis.rst
 
 For non-content related APIs, such as user/group management, monitoring, indexing and more, please consult the module API directly.
 

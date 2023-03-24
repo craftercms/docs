@@ -5,11 +5,12 @@
 
 .. _newIa-crafter-deployer:
 
-.. TODO Use an image that shows this component highlighted within the overall architecture (so it's not out of context)
-
 ================
 Crafter Deployer
 ================
+
+.. TODO Use an image that shows this component highlighted within the overall architecture (so it's not out of context)
+
 
 .. figure:: /_static/images/architecture/crafter-deployer.webp
    :alt: Crafter Deployer
@@ -26,7 +27,7 @@ Source Code
 
 Crafter Deployer's source code is managed in GitHub: https://github.com/craftercms/deployer
 
-.. include:: /new-ia/includes/deployer-admin-guide
+.. include:: /new-ia/includes/deployer-admin-guide.rst
 
 --------
 REST API
