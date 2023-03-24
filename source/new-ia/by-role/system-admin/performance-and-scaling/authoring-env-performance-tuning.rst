@@ -2,7 +2,7 @@
 :last-updated: 4.0.0
 :nosearch:
 
-.. _newIa-authoring-env-performance-tuning.rst:
+.. _newIa-authoring-env-performance-tuning:
 
 ========================================
 Authoring Environment Performance Tuning

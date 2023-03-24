@@ -4,7 +4,7 @@
 
 .. index:: Delivery Environment Performance Tuning
 
-.. _newIa-delivery-env-performance-tuning.rst:
+.. _newIa-delivery-env-performance-tuning:
 
 =======================================
 Delivery Environment Performance Tuning

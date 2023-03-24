@@ -27,6 +27,8 @@ To configure an external authentication method, please follow one of the guides 
 
 When using an external authentication method, user accounts are automatically created in the internal database upon each user's first successful login, using the attributes from the responses received.  Users added to the internal database after the user's first successful login through external authentication are marked as **Externally Managed**.
 
+.. _newia-configure-authentication-chain:
+
 ==============================
 Configure Authentication Chain
 ==============================
@@ -149,6 +151,8 @@ In the configuration above, when a user tries to authenticate, the user's creden
     :alt: Static Assets - Example Authentication Chain Process
     :width: 80 %
     :align: center
+
+.. _newia-crafter-studio-configure-studio-saml:
 
 ===========================================
 Studio SAML2 Configuration |enterpriseOnly|
@@ -296,6 +300,12 @@ The classpath is located in your Authoring installation, under ``CRAFTER_HOME/bi
 
 Restart your Authoring installation after configuring the above.
 
+.. raw:: html
+
+   <hr>
+
+.. _newia-crafter-studio-configure-headers-based-auth:
+
 =======================================================
 Configure Headers Based Authentication |enterpriseOnly|
 =======================================================
@@ -371,6 +381,8 @@ To enable **Sign out** for users signed in using headers based authentication, c
     # logoutUrl: /YOUR_DOMAIN/logout?ReturnTo={baseUrl}
 
 |
+
+.. _newia-crafter-studio-configure-ldap:
 
 ==============================================
 Configure LDAP Authentication |enterpriseOnly|
@@ -450,6 +462,8 @@ Make sure that at least one of the **groupName** attribute of the LDAP user exis
 To assign a role to a group, please follow the guide :ref:`newIa-role-mappings`.  To assign permissions to a role, please see :ref:`newIa-permission-mappings`
 
 For an example of setting up LDAP, see :ref:`newIa-setting-up-simple-ldap-server`
+
+.. _newIa-crafter-studio-configure-password-requirements:
 
 ======================================
 Configure Studio Password Requirements
@@ -538,6 +552,8 @@ Below, are some of the messages displayed as a user is inputting a new password:
     :width: 35%
 
 |
+
+.. _newia-randomize-admin-password:
 
 ===================================================================
 Randomize Authoring's "admin" Password for CrafterCMS Fresh Install

@@ -49,4 +49,3 @@ Delivery
    configure-authentication-chain
    setup-cloudfront-signed-cookies-in-crafter
    configure-password-requirements
-   randomize-admin-passwd
