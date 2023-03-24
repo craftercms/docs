@@ -7,7 +7,7 @@
 .. _newIa-production-environment-setup:
 
 ==============================================
-Setting up a CrafterCMS production environment
+Setting Up a CrafterCMS Production Environment
 ==============================================
 
 This section lets you get started on setting up your CrafterCMS for production. A production
@@ -22,7 +22,7 @@ Setting up the production environment
 
 .. TODO remove references to getting-started. The meat of that must be an include.
 
-#. We'll first install the authoring instance. You can follow the :ref:`newIa-getting-started`
+#. We'll first install the authoring instance. You can follow the instructions :ref:`here <newIa-installation>`
    to install and start authoring.
 
 #. Create your project in authoring. You can follow the guide :ref:`newIa-your-first-editorial-project`
@@ -72,7 +72,7 @@ For optimal performance, the server should have different storage systems (disks
 
 |
 
-For more information on tuning your authoring environment for better performance, please see: :ref:`newIa-authoring-env-performance-tuning.rst`
+For more information on tuning your authoring environment for better performance, please see: :ref:`newIa-authoring-env-performance-tuning`
 
 -----------------------------
 Set Profile Cookies to Secure

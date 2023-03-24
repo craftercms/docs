@@ -31,6 +31,8 @@ Windows
 -------
 You can use :ref:`WSL<newIa-installing-craftercms-on-wsl>` or ref:`Docker<newIa-running-craftercms-in-docker>`.
 
+Note that the preferred method of installing and running CrafterCMS is via the binary archive through WSL as described :ref:`here <newIa-installing-craftercms-on-wsl>`.
+
 ---
 AWS
 ---

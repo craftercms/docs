@@ -1,4 +1,6 @@
 :is-up-to-date: False
+:last-updated: 4.0.3
+
 :nosearch:
 
 .. Section Outliine
@@ -40,7 +42,7 @@ Here are the steps to start using CrafterCMS for development or evaluation by in
 
    Download the CrafterCMS install binary file from https://craftercms.org/downloads
 
-   Select ``crafter-cms-authoring-VERSION.tar.gz``.  The ``.tar.gz`` file will install a fully functional authoring instance. Out of the box, the authoring instance uses a local directory as the repository and an embedded database, which allows a quick and easy set up for local development.
+   Select ``crafter-cms-authoring-VERSION-darwin-x86_64.tar.gz``.  The ``.tar.gz`` file will install a fully functional authoring instance. Out of the box, the authoring instance uses a local directory as the repository and an embedded database, which allows a quick and easy set up for local development.
 
 #. **Extract the CrafterCMS binaries**
 
@@ -48,7 +50,7 @@ Here are the steps to start using CrafterCMS for development or evaluation by in
 
    .. code-block:: sh
 
-      tar -zxvf crafter-cms-authoring-VERSION.tar.gz -C /tmp/extract_to_some_directory/
+      tar -zxvf crafter-cms-authoring-VERSION-darwin-x86_64.tar.gz -C /tmp/extract_to_some_directory/
 
    |
 
