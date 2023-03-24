@@ -3,15 +3,15 @@
 
 .. index:: Your First Project
 
-.. Section outline
-   14.4.2 Site Example (P)
-   14.4.2.1 Editorial
-
 .. _newIa-your-first-editorial-project:
 
 ==============================
 Your First Project (templated)
 ==============================
+
+.. Section outline
+   14.4.2 Site Example (P)
+   14.4.2.1 Editorial
 
 In this section, we will create a project using an out-of-the-box blueprint called "Website Editorial" and show you:
 

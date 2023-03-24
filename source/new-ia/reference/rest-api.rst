@@ -15,9 +15,9 @@ CrafterCMS provides the following REST APIs for creating and managing content in
    :maxdepth: 1
    :titlesonly:
 
-   projects/core/api/index
-   projects/deployer/api/index
-   projects/engine/api/index
-   projects/studio/api/index
-   projects/profile/api/index
-   projects/social/api/index
+   modules/core/index
+   modules/deployer/index
+   modules/engine/index
+   modules/studio/api/index
+   modules/profile/api/index
+   modules/social/api/index

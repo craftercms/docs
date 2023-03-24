@@ -1,4 +1,6 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
+
 :nosearch:
 
 .. _newIa-installing-craftercms-on-wsl:
@@ -6,6 +8,34 @@
 ============================
 Installing CrafterCMS on WSL
 ============================
+
+-------------
+Prerequisites
+-------------
+First, we need to install Windows Subsystem for Linux (WSL) by following the instructions
+`here <https://docs.microsoft.com/en-us/windows/wsl/install>`__ which will enable the required
+optional components, download the latest Linux kernel, set WSL 2 as your default, and install
+Ubuntu Linux for you.
+
+All the commands/scripts in this section should be executed in your Ubuntu (or Linux distribution of choice) terminal.
+
+To open your Ubuntu terminal, click on the Ubuntu icon from the Start menu, or, from a command prompt, type ubuntu or
+ubuntu1604 or ubuntu2004 depending on the version you’ve downloaded.
+
+.. figure:: /_static/images/system-admin/open-ubuntu-terminal.webp
+   :alt: Setting up CrafterCMS in Windows - Open the Ubuntu terminal
+   :width: 70 %
+   :align: center
+
+|
+
+It is recommended we store all files in the WSL file system for better performance speed.
+
+See https://docs.microsoft.com/en-us/windows/wsl/ for more information on WSL.
+
+---------------------
+Installing CrafterCMS
+---------------------
 
 Here are the steps to start using CrafterCMS for development or evaluation by installing CrafterCMS from the prebuilt binaries:
 
@@ -27,9 +57,9 @@ Here are the steps to start using CrafterCMS for development or evaluation by in
 
      See https://docs.microsoft.com/en-us/windows/wsl/ for more information on WSL.
 
-------------
+^^^^^^^^^^^^
 Prerequisite
-------------
+^^^^^^^^^^^^
 
 #. **Download and install Java 11**
 
@@ -54,15 +84,15 @@ Prerequisite
    installed in the server.
 
 
---------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Installing CrafterCMS from Prebuilt Binaries
---------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. **Download CrafterCMS binaries**
 
    Download the CrafterCMS install prebuilt binaries from https://craftercms.org/downloads
 
-   Select ``crafter-cms-authoring-VERSION.tar.gz``.  The ``.tar.gz`` file will install a fully functional authoring instance. Out of the box, the authoring instance uses a local directory as the repository and an embedded database, which allows a quick and easy set up for local development.
+   Select ``crafter-cms-authoring-VERSION-linux-x86_64.tar.gz``.  The ``.tar.gz`` file will install a fully functional authoring instance. Out of the box, the authoring instance uses a local directory as the repository and an embedded database, which allows a quick and easy set up for local development.
 
    You can download the CrafterCMS prebuilt binaries directly onto the WSL file system from the Ubuntu terminal using ``wget`` or ``curl``, or, you can copy/move the prebuilt binaries in the Windows file system to the WSL file system via the Ubuntu terminal or the Windows File Explorer.
 
@@ -84,7 +114,7 @@ Installing CrafterCMS from Prebuilt Binaries
    .. code-block:: sh
       :caption: *Extract the contents of the CrafterCMS binary archive file to a directory*
 
-      tar -zxvf crafter-cms-authoring-VERSION.tar.gz -C /tmp/extract_to_some_directory/
+      tar -zxvf crafter-cms-authoring-VERSION-linux-x86_64.tar.gz -C /tmp/extract_to_some_directory/
 
    |
 
@@ -157,4 +187,4 @@ Installing CrafterCMS from Prebuilt Binaries
       * **password:** admin
 
 
-   After logging in, you should be redirected to the ``Sites`` screen, and you're now ready to create your first experience!
+   After logging in, you should be redirected to the ``Projects`` screen, and you're now ready to create your first experience!

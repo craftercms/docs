@@ -4,4 +4,4 @@
 
 .. _newIa-crafter-deployer-administration-guide:
 
-.. include:: /new-ia/includes/deployer-admin-guide
+.. include:: /new-ia/includes/deployer-admin-guide.rst
