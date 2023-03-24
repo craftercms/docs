@@ -1,4 +1,6 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
+
 :nosearch:
 
 .. _newIa-running-craftercms-in-docker:
@@ -81,11 +83,7 @@ When the ``authoring`` application displayed above is selected, the application 
    :width: 80%
    :align: center
 
-
-.. toctree::
-   :maxdepth: 1
-
-   configure-crafter-on-docker-for-local-dev-tools
+To configure working on projects in Docker via a local IDE follow the instructions :ref:`here <newIa-local-dev-with-docker>`
 
 For more information on Docker Desktop Dashboard, see https://docs.docker.com/desktop/dashboard/
 

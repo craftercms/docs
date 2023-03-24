@@ -1,10 +1,11 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 :nosearch:
 
 .. highlight:: groovy
    :linenothreshold: 5
 
-.. index:: Custom Services and Controllers, Services, Controllers, Groovy API
+.. index:: Groovy, Groovy API, Custom Services and Controllers, Services, Controllers
 
 .. _newIa-groovy-api:
 

@@ -194,6 +194,8 @@ The data folder and logs folder is by default located in **{Crafter-CMS-install-
 
 .. TODO clean up overlap and explain where it's only authoring using the UI
 
+.. _override-logging-levels:
+
 =========================
 Overriding Logging Levels
 =========================

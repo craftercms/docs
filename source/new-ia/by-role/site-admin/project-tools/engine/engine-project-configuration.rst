@@ -6,4 +6,4 @@
 
 .. _newIa-engine-project-configuration:
 
-.. include:: /new-ia/includes/engine-project-configuration
+.. include:: /new-ia/includes/engine-project-configuration.rst

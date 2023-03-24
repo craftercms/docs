@@ -10,7 +10,7 @@ Content Access
 
 In this section we'll take a look on how to access content.
 
-.. include:: /new-ia/includes/content-retrieval-apis
+.. include:: /new-ia/includes/content-retrieval-apis.rst
 
 -----------------------
 Accessing Static Assets
