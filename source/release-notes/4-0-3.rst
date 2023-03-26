@@ -4,7 +4,7 @@
 CrafterCMS 4.0.3
 ----------------
 
-*Released TBD*
+*Released March 24, 2023*
 
 This release includes fixes for issues with the release version 4.0.2
 
@@ -135,7 +135,7 @@ Updates
   - Apache Commons Text to version 1.10.0
   - Various Studio UI libraries
 
-*  Added support for editing text files|br|
+* Added support for editing text files|br|
   See `here <https://github.com/craftercms/craftercms/issues/5939>`__ for more information
 
 * Fixed issue with *Video Transcode* form control |br|
