@@ -8,13 +8,15 @@
 Installation and Configuration
 ==============================
 
-This section describes various ways of installing and configuring up CrafterCMS.
+This section describes various ways of installing and configuring CrafterCMS.
 
 First we'll take a look at the requirements and supported platform for installing/setting up CrafterCMS.
 
 .. _newia-requirements_supported_platforms:
 
 .. include:: /new-ia/includes/requirements.rst
+
+.. _newIa-installation:
 
 ------------
 Installation
@@ -33,15 +35,13 @@ We'll go through these one by one.
 Docker
 ^^^^^^
 
-Run CrafterCMS in Docker.
-
-.. TODO Vita to populate
+Run CrafterCMS in :ref:`Docker <newIa-running-craftercms-in-docker>`.
 
 ^^^^^^^^^^
 Kubernetes
 ^^^^^^^^^^
 
-Deploying CrafterCMS in Kubernetes.
+Deploy CrafterCMS in Kubernetes.
 
 .. toctree::
   :maxdepth: 1
@@ -76,9 +76,8 @@ CrafterCMS provides pre-built bundles for Linux, MacOS x86 and ARM. The guide be
 Build from Source
 ^^^^^^^^^^^^^^^^^
 
-CrafterCMS is open source and you can always build and run it from source code.
+CrafterCMS is open source and you can always build and run it from source code `here <https://github.com/craftercms/craftercms>`__
 
-.. TODO Vita to populate/link to the parent project.
 
 -------------
 Configuration

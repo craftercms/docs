@@ -130,7 +130,7 @@ For OS X users, the latest ``openssl`` formula needs to be installed via homebre
 
 |
 
-.. _prerequisites:
+.. _newIa-prerequisites:
 
 ------------------
 Linux Prerequisite

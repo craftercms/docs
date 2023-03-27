@@ -16,7 +16,7 @@ Server Requirements
 Minimum Installation
 
 	* 8GB of RAM + 8GB Swap Space or Virtual Memory
-	* 4GB JVM Memory (-Xms 1G -Xmx 4G)
+	* 4GB+ JVM Memory (-Xms 1G -Xmx 4G)
 	* 4 CPU Cores
 
 Medium Installations
