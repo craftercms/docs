@@ -19,6 +19,55 @@ A project or a site is a collection of related pages/components and assets.
 
 .. include anatomy of a craftercms repository
 
+
+
+.. Start introducing topics of interest and then link deeper into how to configure/work with these
+    Authoring
+        Security
+            Role mapping
+            Permission mapping
+            Authentication with JWT
+            Additional authentication mechanisms, ref Sys Admin auth
+        UI
+            Sidebar
+            Top Nav Bar
+            Dashboards
+            Localization
+            ...
+        Content
+            Large Assets and External Stores
+                Blob store
+                AWS S3
+                Box
+                WebDAV
+            Rich media processing
+                Images
+                Video (transcoding)
+            Rich Text Editor (RTE)
+            Localization
+        Preview
+            Proxy configuration
+        Publishing
+        Notifications
+        Staging
+        Multi-environment Configuration
+        ...
+    Delivery
+        URL Rewrites and Vanity URLs
+        Security, reference Sys Admin
+
+------------
+Localization
+------------
+
+.. todo: add description here on what is localization, and move the articles to this location
+
+To configure localized content based on language:
+:ref:`newIa-language-based-localized-content`
+
+To customize how dates & times get displayed on Studio UI for a project
+:ref:`newIa-studio-project-time-zone`
+
 -------------
 Project Tools
 -------------
@@ -29,60 +78,4 @@ The following contains more information on administration tools
 .. toctree::
    :maxdepth: 3
 
-   project-tools/index
-
-.. Start introducing topics of interest and then link deeper into how to configure/work with these
-    Authoring
-        Security
-            Role mapping
-            Permission mapping
-        Sidebar
-        External stores?
-            AWS
-            Box
-            WebDAV
-        Rich media processing
-            Images
-            Video (transcoding)
-        Publishing
-        UI
-        Notifications
-        RTE
-        Staging
-        ...
-    Delivery
-        Security
-        URL Rewrites and Vanity URLs
-
-
-
-
-----------------
-Sidebar Cabinets
-----------------
-
-.. todo: insert picture here of sidebar cabinets and description
-
---------
-Security
---------
-
-----------
-Composable
-----------
-
-^^^^^^^^^^^^^^^^^^^^^^^
-Experience Builder (XB)
-^^^^^^^^^^^^^^^^^^^^^^^
-
-------------
-Localization
-------------
-
-.. todo: add description here on what is localization
-
-To configure localized content based on language:
-:ref:`newIa-language-based-localized-content`
-
-To customize how dates & times get displayed on Studio UI for a project
-:ref:`newIa-studio-project-time-zone`
+   /new-ia/reference/project-tools/index
