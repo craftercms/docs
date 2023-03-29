@@ -10,7 +10,7 @@
 Engine Configuration
 ====================
 
-This section details how to configure settings related to Crafter Engine, Crafter Profile through Crafter Studio  and through various xml files.
+This section details how to configure settings related to Crafter Engine, Crafter Profile through Crafter Studio and through various xml files.
 
 .. toctree::
    :maxdepth: 1

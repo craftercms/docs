@@ -172,10 +172,44 @@ Access to static methods in Freemarker templates is disabled by default.
 Cache
 -----
 
-The following allows you to configure folders to be preloaded in the cache:
+^^^^^^^^^
+Max Items
+^^^^^^^^^
+
+The following allows you to configure the maximum number of objects in Engine's cache:
 
 .. code-block:: properties
 
+   # The max number of items that each site cache can have
+   crafter.engine.site.default.cache.maxAllowedItems=250000
+
+^^^^^^^^^^^^^^^^^^^
+URL Transformations
+^^^^^^^^^^^^^^^^^^^
+
+The following allows you to configure whether the URL transformation performed by the view resolver will be cached:
+
+.. code-block:: properties
+
+   # Flag that indicates if the URL transformations performed by the view resolver should be cached
+   crafter.engine.page.view.resolver.url.transformation.cache=false
+
+^^^^^^^^^^^^^^^^^
+Preloaded Folders
+^^^^^^^^^^^^^^^^^
+
+The following allows you to configure folders to be preloaded in the cache:
+
+.. code-block:: properties
+   :emphasize-lines: 7,10,13
+
+   #################
+   # Cache Warm Up #
+   #################
+   # Indicates if cache warming should be enabled. This means the site cache will be warmed up (according to a list of
+   # cache warmers) on context init and instead of cache clear, a new cache will be warmed up and switched with the
+   # current one
+   crafter.engine.site.cache.warmUp.enabled=false
    # The descriptor folders that need to be preloaded in cache, separated by comma. Specify the preload depth with
    # :{depth} after the path. If no depth is specified, the folders will be fully preloaded.
    crafter.engine.site.cache.warmUp.descriptor.folders=/site:4
