@@ -46,51 +46,6 @@ Here's a sample Project Configuration file (click on the triangle on the left to
 |
 |
 
-.. _newIa-studio-project-time-zone:
-
-*****************
-Project Time Zone
-*****************
-
-The :ref:`default dates and times <newIa-server-time-zone>` used for displays in Studio is UTC.  To customize how
-dates & times get displayed on Studio UI for a project, edit the following:
-
-.. code-block:: xml
-   :linenos:
-
-   <locale>
-     <!--
-     BCP 47 language tag (e.g. en-US) or unicode extension (e.g. "en-US-u-ca-buddhist").
-     Leave empty for using the user's browser locale (i.e. dates/times will be displayed in each users's system locale).
-     Specifying a locale code will apply those localization settings to *all* users regardless of their system settings
-     or location. For example, if "en-US", is specified, all users will see dates as month/day/year instead of day/month/year
-     regardless of their system (i.e. OS) locale preference.
-     -->
-     <localeCode/>
-     <!--
-     Use `dateTimeFormatOptions` to customize how dates & times get displayed on Studio UI.
-     For full list of options and docs, visit: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
-     -->
-     <dateTimeFormatOptions>
-     <!--
-     Specifying a time zone (i.e. `timeZone` element) will express dates/times across the UI in the time zone you specify
-     here. Leaving it unspecified, will display dates/times to each user in their own system time zone.
-     -->
-       <!--<timeZone>EST5EDT</timeZone>-->
-       <day>numeric</day>
-       <month>numeric</month>
-       <year>numeric</year>
-       <hour>numeric</hour>
-       <minute>numeric</minute>
-       <!--
-       Set `hour12` to "false" to show times in 24 hour format.
-       -->
-       <hour12>true</hour12>
-     </dateTimeFormatOptions>
-   </locale>
-
-|
-
 ****************
 Enabling Staging
 ****************
