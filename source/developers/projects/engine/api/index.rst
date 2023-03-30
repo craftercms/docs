@@ -8,6 +8,8 @@
 Crafter Engine API
 ==================
 
+The Crafter Engine API is available `here <../../../../_static/api/engine.html>`__:
+
 .. note::
     When simple multi-tenancy has been configured for Crafter Engine, or when working in ``Preview`` mode, make sure that the request includes the ``crafterSite`` parameter to set a site value.  Crafter Engine API's are site specific, and so, it needs to know the site when multi-tenancy or preview mode has been configured for each request made.
 
@@ -20,7 +22,6 @@ Crafter Engine API
     |
 
     For more information on configuring multi-tenancy in Crafter Engine, see :ref:`engine-site-configuration-multi-tenancy`
-
 
 .. raw:: html
 
