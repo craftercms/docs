@@ -48,7 +48,7 @@ How do I start crafting my experiences?
 .. toctree::
    :maxdepth: 2
 
-   your-first-project/headless/index.rst
-   your-first-project/templated/index.rst
+   your-first-project/headless.rst
+   your-first-project/templated.rst
 
 Once you have CrafterCMS up and running, proceed to learn more about CrafterCMS by reviewing the documentation based on your role or interest :ref:`here<newIa-by-role>`.

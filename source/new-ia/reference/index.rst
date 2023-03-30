@@ -16,7 +16,11 @@ This section is a reference to the modules, APIs, complementary projects, and ot
 ------------------
 CrafterCMS Modules
 ------------------
-CrafterCMS comprises a set of modules that work together. The modules are
+CrafterCMS comprises a set of modules that work together.
+
+.. TODO: Insert an image detailing the modules and how data flows
+
+The modules are
 
 .. list-table:: CrafterCMS Modules
     :header-rows: 1
@@ -48,20 +52,36 @@ CrafterCMS APIs
 
 For non-content related APIs, such as user/group management, monitoring, indexing and more, please consult the module API directly.
 
+.. TODO Finish the table below
 
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
+.. list-table:: CrafterCMS Modules
+    :header-rows: 1
 
-   api-reference
-   devcontentops-toolkit/index
-   resources
+    * - Module
+      - REST API
+    * - :ref:`Studio<newIa-crafter-studio>`
+      - OAS Link
+    * - :ref:`Engine<newIa-crafter-engine>`
+      - OAS Link
+    * - :ref:`Deployer<newIa-crafter-deployer>`
+      - OAS Link
+    * - :ref:`Profile<newIa-crafter-profile>`
+      - OAS Link
+    * - :ref:`Social<newIa-crafter-Social>`
+      - OAS Link
+
+^^^^^^^^
+Java Doc
+^^^^^^^^
+
+.. include:: /new-ia/includes/javadoc.rst
 
 ----------------------
 Complimentary Projects
 ----------------------
 .. TODO finish this and link things
 
-- Docker Compose
+- :ref:`Docker Compose<newIa-crafter-docker-compose>`
 - Kubernetes ...
 - Plugins
+- :ref:`DevContentOps Toolkit (CrafterCMS CLI)<newIa-devcontentops-toolkit>`
