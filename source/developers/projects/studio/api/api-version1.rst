@@ -157,7 +157,6 @@ Content / Asset
    content/get-pages
    content/reorder-items
    content/revert-content
-   content/search
    content/unlock-content
    content/write-content
 
