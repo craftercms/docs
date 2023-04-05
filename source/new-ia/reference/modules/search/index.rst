@@ -12,7 +12,7 @@ Crafter Search
 .. TODO Use an image that shows this component highlighted within the overall architecture (so it's not out of context)
 
 
-.. figure:: /_static/images/architecture/crafter-search.webp
+.. .. figure:: /_static/images/architecture/crafter-search.webp
    :alt: Crafter Search
    :width: 60 %
    :align: center
