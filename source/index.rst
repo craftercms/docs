@@ -7,7 +7,7 @@ CrafterCMS |version| Documentation
 
 .. default-domain:: craftercms
 
-CrafterCMS is a modern content management platform for building digital experience applications including:
+CrafterCMS is a modern headless+ content management platform for building digital experience applications including:
 
 * Single Page Applications (SPAs) using frameworks like React, Vue, and Angular
 * Native mobile apps and headless applications (IOT, digital signage, wearables, etc.)
