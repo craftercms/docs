@@ -20,7 +20,7 @@ REST Content Retrieval APIs
 
 .. raw:: html
 
-    <iframe src="../../../../_static/api/engine.html" height="700px" width="100%"></iframe>
+    <iframe src="../../_static/api/engine.html" height="700px" width="100%"></iframe>
 
 |
 |
