@@ -12,7 +12,7 @@ CrafterCMS is a modern content management platform for building digital experien
 * Single Page Applications (SPAs) using frameworks like React, Vue, and Angular
 * Native mobile apps and headless applications (IOT, digital signage, wearables, etc.)
 * HTML5 websites using Bootstrap or other HTML frameworks
-* e-commerce front-ends
+* eCommerce front-ends
 * OTT video experiences on AWS Elemental Media Services
 * AR/VR applications using A-Frame
 
