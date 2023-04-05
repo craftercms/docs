@@ -79,9 +79,23 @@ Java Doc
 ----------------------
 Complimentary Projects
 ----------------------
-.. TODO finish this and link things
 
-- :ref:`Docker Compose<newIa-crafter-docker-compose>`
-- Kubernetes ...
-- Plugins
-- :ref:`DevContentOps Toolkit (CrafterCMS CLI)<newIa-devcontentops-toolkit>`
+.. list-table:: Complimentary Projects and Resources
+    :header-rows: 1
+
+    *   - Docker Compose
+        - :ref:`Docker Compose on GitHub<https://github.com/craftercms/docker-compose>`
+    *   - Docker Images
+        - :ref:`Docker Images on GitHub<https://github.com/craftercms/docker-images>`
+    *   - Kubernetes
+        - :ref:`Kubernetes Deployments on GitHub<https://github.com/craftercms/kubernetes-deployments>`
+    *   - DevContentOps Toolkit (CLI)
+        - :ref:`DevContentOps Toolkit (CrafterCMS CLI)<newIa-devcontentops-toolkit>`
+    *   - Extensions: Plugins
+        - :ref:`CrafterCMS Sponsored Plugins on GitHub<https://github.com/orgs/craftercms/repositories?q=plugin&type=all&language=&sort=>`
+    *   - Extensions: Blueprints
+        - :ref:`CrafterCMS Sponsored Blueprints<https://github.com/orgs/craftercms/repositories?q=blueprint&type=all&language=&sort=>`
+    *   - Marketplace
+        - :ref:`CrafterCMS Marketplace<https://craftercms.com/marketplace>`
+
+
