@@ -105,6 +105,9 @@
   <!--[if lt IE 9]>
     <script src="{{ pathto('_static/js/html5shiv.min.js', 1) }}"></script>
   <![endif]-->
+
+  <script src="{{ pathto('_static/jquery.js', 1) }}"></script>
+
   {%- if not embedded %}
   {# XXX Sphinx 1.8.0 made this an external js-file, quick fix until we refactor the template to inherert more blocks directly from sphinx #}
     {%- if sphinx_version_info >= (1, 8) -%}
