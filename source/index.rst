@@ -16,7 +16,7 @@ CrafterCMS is a modern headless+ content management platform for building digita
 * OTT video experiences on AWS Elemental Media Services
 * AR/VR applications using A-Frame
 
-CrafterCMS is a dynamic CMS based on Git and supports DevContentOps processes for code and content. It is also a hybrid-headless, API-first (GraphQL, REST, in-process) CMS, and that allows developers to use their favorite UI frameworks and tools.
+CrafterCMS is a dynamic CMS based on Git and supports DevContentOps processes for code and content. It is also a hybrid-headless, API-first (GraphQL, REST, in-process) CMS, and that allows developers to use their favorite UI framework and tools.
 
 CrafterCMS differentiates itself from other CMSs with its architecture: microservices-based, serverless, elastic and planet-wide scalability. To learn more, see the :ref:`architecture`.
 
