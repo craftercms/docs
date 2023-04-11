@@ -22,9 +22,14 @@ API Version 2
 
 Version 2 APIs are available `here <../../../../_static/api/studio.html>`__:
 
+.. open_iframe_modal_button::
+  :label: Open V2 API Dialog
+  :url: ../../../../_static/api/studio.html
+  :title: API Version 2
+
 .. raw:: html
 
-    <iframe src="../../../../_static/api/studio.html" height="700px" width="100%"></iframe>
+    or <a href="../../../../_static/api/studio.html" target="_blank">Open V2 API in new tab</a>
 
 |
 |
