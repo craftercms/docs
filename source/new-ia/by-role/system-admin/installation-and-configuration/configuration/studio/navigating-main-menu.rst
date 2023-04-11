@@ -110,16 +110,9 @@ See :ref:`newIa-nav-menu-audit` for more details on the audit logs
 Logging Levels
 --------------
 
-There are 4 log levels defined in CrafterCMS.  These levels determine what messages will be logged and displayed in the **Logging Console**.  Below are the 4 log levels available from the lowest to the highest:
+There are 6 log levels defined in CrafterCMS.  These levels determine what messages will be logged and displayed in the **Logging Console**.
 
-    - debug: displays things useful for debugging
-    - info: displays informational messages like progress of the application, etc
-    - warn: displays potentially harmful situations that might cause problems
-    - error: displays anything that may be fatal to the operation/causes a problem
-
-The lower your logging levels are set, the more verbose your logs will be.
-
-.. image:: /_static/images/system-admin/main-menu/main-menu-logging-levels.webp
+.. image:: /_static/images/site-admin/logs-logging-levels.webp
     :alt: System Administrator - Navigation Menu Logging Levels
     :align: center
     :width: 85%
