@@ -8,7 +8,19 @@
 Crafter Engine API
 ==================
 
-The Crafter Engine API is available `here <../../../../_static/api/engine.html>`__:
+To view the Crafter Engine REST APIs:
+
+.. open_iframe_modal_button::
+   :label: Open here
+   :url: ../../../../_static/api/engine.html
+   :title: Engine API
+
+.. raw:: html
+
+    or <a href="../../../../_static/api/engine.html" target="_blank">in a new tab</a>
+
+|
+|
 
 .. note::
     When simple multi-tenancy has been configured for Crafter Engine, or when working in ``Preview`` mode, make sure that the request includes the ``crafterSite`` parameter to set a site value.  Crafter Engine API's are site specific, and so, it needs to know the site when multi-tenancy or preview mode has been configured for each request made.
@@ -22,11 +34,4 @@ The Crafter Engine API is available `here <../../../../_static/api/engine.html>`
     |
 
     For more information on configuring multi-tenancy in Crafter Engine, see :ref:`engine-site-configuration-multi-tenancy`
-
-.. raw:: html
-
-    <iframe src="../../../../_static/api/engine.html" height="700px" width="100%"></iframe>
-
-|
-|
 
