@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0..3
+:last-updated: 4.0.3
 
 .. index:: Upload and Transcode Video to AWS
 
