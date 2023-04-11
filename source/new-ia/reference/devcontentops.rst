@@ -6,9 +6,9 @@
 
 .. _newIa-devcontentops-toolkit:
 
-=====================
-DevContentOps Toolkit
-=====================
+===================================
+DevContentOps Toolkit (Crafter CLI)
+===================================
 
 .. TODO Add a link to GitHub somewhere
 
