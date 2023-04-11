@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.1
+:last-updated: 4.0.3
 
 :orphan:
 
@@ -460,7 +460,7 @@ The following section of Studio's configuration overrides allows you to configur
    # Value should be a valid java regex.
    #
    # studio.validation.regex.HTTPParameterName: "^[a-zA-Z0-9_\\-]{1,32}$"
-   # studio.validation.regex.SITEID: "^[a-z0-9\-_]*$"
+   # studio.validation.regex.SITEID: "^[a-z0-9\\-_]*$"
    # studio.validation.regex.EMAIL: "^([\\w\\d._\\-#])+@([\\w\\d._\\-#]+[.][\\w\\d._\\-#]+)+$"
    # studio.validation.regex.USERNAME: "^[a-zA-Z][\\w.\\-@+]+$"
    # studio.validation.regex.GROUP_NAME: "^[a-zA-Z][\\w.\\-]*$"
@@ -470,4 +470,4 @@ The following section of Studio's configuration overrides allows you to configur
    # studio.validation.regex.ASSET_PATH_WRITE: "^/?([a-z0-9-_.]+/?)*([a-z0-9_\\-./]+\\.[\\w]+)?$"
    # studio.validation.regex.CONTENT_PATH_READ: "^/?([\\w\\p{IsLatin}@$%^&{}\\[\\]()+\\-=,.:~'`]+(\\s*[\\w\\p{IsLatin}/@$%^&{}\\[\\]()+\\-=,.:~'`])*(/?))*$"
    # studio.validation.regex.CONTENT_FILE_NAME_WRITE: "^((crafter\\-level\\-descriptor\\.level)|([a-z0-9_\\-])+)\\.xml$"
-   # studio.validation.regex.CONFIGURATION_PATH: "^([a-z0-9\\-_/]+([.]*[a-z0-9\\-_])+)*(\\.[\w]+)?/?$"
+   # studio.validation.regex.CONFIGURATION_PATH: "^([a-z0-9\\-_/]+([.]*[a-z0-9\\-_])+)*(\\.[\\w]+)?/?$"
