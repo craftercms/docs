@@ -22,6 +22,11 @@ Prerequisites
 
 * Create an AWS S3 bucket for uploading the transcoded videos.
 * Create an AWS Elemental MediaConvert Job template
+
+  For development purposes, the following permissions work but you may want to use less in your production setting: |br|
+  *MediaConvert IAM role* with ``AmazonS3FullAccess`` and ``AmazonAPIGatewayInvokeFullAccess``
+
+  For more information on available permissions for AWS Elemental MediaConvert, see https://aws.permissions.cloud/iam/mediaconvert
 * Create a site based on the Website Editorial blueprint.
 
 -----------------------------------------------------------
