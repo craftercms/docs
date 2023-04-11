@@ -180,6 +180,9 @@ Requirements
     * **keyout**: The value used for this option wil be used in the ``studio.security.saml.rp.privateKey.location`` property
     * **out**: The value used for this option will be used in the ``studio.security.saml.rp.certificate.location`` property
 
+.. note::
+   ``IdP`` is the asserting party and ``SP`` is the relying party (Studio)
+
 ---------
 Configure
 ---------
