@@ -177,7 +177,7 @@ CrafterCMS provides built-in support for GraphQL to query content in any project
 
 |
 
-For more information on Studio support for GraphQL, see :ref:`newIa-working_with_graphql`
+For more information on Studio support for GraphQL, see :ref:`newIa-graphql`
 
 -----------------
 Plugin Management
