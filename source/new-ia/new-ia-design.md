@@ -31,6 +31,8 @@ Developer
 =========
 - Multi-environment config (include)
 - Cite the Secrets Management reference article
+- Move the Groovy unit testing article to this section
+- Include or move the adding custom services to Engine to this section
 
 Site Admin
 ==========
