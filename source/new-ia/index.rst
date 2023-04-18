@@ -47,6 +47,9 @@ Who uses CrafterCMS
 ===================
 
 .. todo: Fill in
+   developers
+   devOps
+   authors
 
 ===
 FAQ

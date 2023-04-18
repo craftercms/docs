@@ -23,15 +23,15 @@ Types of Content Queries
 
 CrafterCMS supports 3 specific types of content queries:
 
-* Cross content Elasticsearch queries. This enables you to query any/all content objects, by any group of properties)
+* Cross content search queries. This enables you to query any/all content objects, by any group of properties)
 * Filtered Structural Queries. This enables you to query against the repository structure e.g. "Get all articles by author XYZ"
 * Content Item specific query.  This enables you to write queries inside of a given content item
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Make an Elasticsearch Query
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+Make a Search Query
+^^^^^^^^^^^^^^^^^^^
 
-To perform content queries in Elasticsearch you need to use the client provided by Crafter Engine, the bean name is
+To perform content queries you need to use the client provided by Crafter Engine, the bean name is
 ``elasticsearchClient`` and it can be used from any Groovy script.
 
 You can find the interface for this service :javadoc_base_url:`here <search/org/craftercms/search/elasticsearch/client/ElasticsearchClientWrapper.html>`
@@ -45,7 +45,7 @@ simple queries that don't require too much configuration.
 
 .. code-block:: groovy
   :linenos:
-  :caption: Elasticsearch query using the DSL
+  :caption: Search query using the DSL
 
   // No imports are required for this method
 
@@ -90,7 +90,7 @@ allow you to use builder objects to develop complex logic for building the queri
 
 .. code-block:: groovy
   :linenos:
-  :caption: Elasticsearch query using builders
+  :caption: Search query using builders
 
   // Import the required classes
   import co.elastic.clients.elasticsearch.core.SearchRequest

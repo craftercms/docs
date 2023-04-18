@@ -72,7 +72,7 @@ The ``Encryption Tool`` allows the user to encrypt sensitive data such as access
 
 |
 
-For more information on how to use the encryption tool, see :ref:`newIa-nav-menu-encryption-tool`.
+For more information on how to use the encryption tool, see :ref:`newIa-studio-encryption-tool`.
 
 -------------
 Configuration
