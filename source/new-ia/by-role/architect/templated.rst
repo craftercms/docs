@@ -39,7 +39,7 @@ CrafterCMS supports a number of APIs to access content for templated projects, i
 
 * :ref:`FreeMarker API <newIa-templating-api>`
 * :ref:`Groovy API <newIa-groovy-api>`
-* :ref:`Search API <newIa-search-elasticsearch>`
+* :ref:`Search API <newIa-search>`
 * Custom API
 
 .. todo: link the above - what is custom API?

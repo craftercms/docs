@@ -10,16 +10,6 @@ Reference
     - Passing secrets into CrafterCMS via environment variables
       - Explain `crafter-setenv.sh` and give examples
         - Ask AV for real examples and add them
-  - When you have to store secrets
-    - Encryption
-      - Configuration file field encryption
-      - UI encryption tool
-        - Project encryption tool
-        - Global menu encryption tool
-          - From the global menu
-          - Navigation menu encryption tool
-      - CLI tool
-- Cross-reference the Secrets Management reference article in the Project Tools
 - Finish the OAS docs and link them to the index of Reference
 
 Include
