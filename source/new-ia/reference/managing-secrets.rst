@@ -81,7 +81,7 @@ Automatic Encryption of Secrets in Configuration Files
 This section details how to encrypt passwords, access keys or other sensitive information in a configuration file
 managed through Crafter Studio.
 
-The encrypted properties work in the following project configuration files:
+Examples of project configuration files where encryption would make sense include:
 
  - Engine Project Configuration (``/config/engine/site-config.xml``)
  - Studio AWS Profiles (``/config/studio/aws/aws.xml``)
@@ -304,17 +304,11 @@ sub-module, where you should find the JAR with the ``-enctool`` suffix. Then you
 		java -jar crafter-commons-utilities-3.0.1-enctool.jar -e c852cb30cda311e488300800200c9a66 -p klanFogyetkonjo -s S25pT2RkeWk=
 		Cipher text (in Base 64): VkHxBsaSZ9DXrXk52uK9And+CEZlqiy7Wb23GxBFOSXD6KBOCh1ojp8fUw7w11IxpxBipiI4HsSg3cdl9TgTQg==
 
-
 ^^^^^^^^^^
 Decryption
 ^^^^^^^^^^
 
-To consume secrets, the secrets must be decrypted.  Secrets are decrypted via a key and a salt.
-
-For secrets encrypted via Studio, it uses the key and salt located in the file ``CRAFTER_HOME/bin/crafter-setenv.sh``
-in your Authoring installation directory
-
-To decrypt text encrypted via the CLI encryption tool, run the following:
+CrafterCMS will automatically decrypt secrets as it needs them. If, however, you wanted to decrypt a secret manually you can use the CLI encryption/decryption tool:
 
 - **Decode Base 64 text:** ``java -jar {JARNAME} -d64 BASE64_TEXT``
 
