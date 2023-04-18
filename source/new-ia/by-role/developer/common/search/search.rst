@@ -1,12 +1,12 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 :nosearch:
 
-.. _newIa-search-elasticsearch:
+.. _newIa-search:
 
-=========================
-Search with Elasticsearch
-=========================
+======
+Search
+======
 
 ----------------
 Querying Content
@@ -18,11 +18,11 @@ To see the types of content queries you can make in CrafterCMS, please see :ref:
 Implementing a Faceted Search
 -----------------------------
 
-Using Elasticsearch it is possible to use aggregations to provide a faceted search to allow users to refine the search
+It is possible to use aggregations to provide a faceted search to allow users to refine the search
 results based on one or more fields.
 
 .. note::
-  Elasticsearch offers a variety of aggregations that can be used depending on the type of the fields in
+  Search offers a variety of aggregations that can be used depending on the type of the fields in
   your model or the requirements in the UI to display the data, for detailed information visit the
   `official documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html>`_
 
@@ -47,20 +47,20 @@ field in the Elasticsearch index is ``categories.item.value_smv``.
 
 To build the faceted search we must:
 
-#. Include the appropriate aggregations in the Elasticsearch search request
-#. Process the aggregations from the Elasticsearch search response
+#. Include the appropriate aggregations in the search request
+#. Process the aggregations from the search response
 #. Display the facets in the search result page
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Sending aggregations in the search request
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In Elasticsearch aggregations are added in the request using the ``aggs`` key, each aggregation must have a unique name
+Aggregations are added in the request using the ``aggs`` key, each aggregation must have a unique name
 as key and the configuration depending on the type.
 
 .. code-block:: groovy
   :linenos:
-  :caption: Elasticsearch request with aggregations
+  :caption: Search request with aggregations
 
   def result = elasticsearchClient.search(r -> r
     .query(q -> q
@@ -85,12 +85,12 @@ the field ``categories.item.value_smv`` that have at least 1 article assigned.
 Processing aggregations in the search response
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Elasticsearch will return the aggregations in the response under the ``aggregations`` field, the contents of each
-aggregation will be different depending of the type.
+Search will return the aggregations in the response under the ``aggregations`` field, the contents of each
+aggregation will be different depending on the type.
 
 .. code-block:: groovy
   :linenos:
-  :caption: Elasticsearch response with aggregations
+  :caption: Search response with aggregations
 
   def facets = [:]
   if(result.aggregations()) {
@@ -101,7 +101,7 @@ aggregation will be different depending of the type.
 
 In the previous example we extract the aggregations from the response object to a simple map, this example assumes
 that all aggregation will be of type ``terms`` so it gets the ``key`` and ``docCount`` for each value found
-(Elasticsearch calls them buckets).
+(Search calls them buckets).
 
 The result from a query of all existing articles could return something similar to this:
 
@@ -190,13 +190,13 @@ The final step is to trigger a new search when the user selects one of the value
    doSearch(queryParam, categories);
   });
 
-.. _newIa-search-elasticsearch-multi-index-query:
+.. _newIa-search-multi-index-query:
 
 -----------------
 Multi-index Query
 -----------------
 
-CrafterCMS supports querying more than one Elasticsearch index in a single query.
+CrafterCMS supports querying more than one search index in a single query.
 
 To search your site and other indexes, simply send a search query with a comma separated list of indexes/aliases (ES pointer to an index).  It will then search your site and the other indexes
 
@@ -230,7 +230,7 @@ Here's how the query will look like for the above image of a multi-index query f
 
 |
 
-See :ref:`here <newIa-crafter-engine-api-site-elasticsearch-search>` for more information on the Crafter Engine API ``search``.
+See `here <../../../../../_static/api/studio.html#tag/search/operation/search>`_ for more information on the Crafter Engine API ``search``.
 
 CrafterCMS supports the following search query parameters:
 

@@ -6,11 +6,10 @@
 
 ..  _newIa-content_authors_search:
 
-Crafter Studio's search backend is based on Elasticsearch.  This section describes how Content Authors can search for different things in Crafter Studio while creating content.
-
 ---------
 Searching
 ---------
+This section describes how Content Authors can search for different things in Crafter Studio while creating content.
 
 To do a search in Crafter Studio, point your mouse to the navigation menu icon on the top right, which will display the name of the icon, **Navigation Menu**, click on it then select **Search** under ``Project``
 

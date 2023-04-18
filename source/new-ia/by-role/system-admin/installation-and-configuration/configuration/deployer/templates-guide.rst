@@ -32,14 +32,14 @@ All target templates support the following parameters:
 Authoring Target
 ^^^^^^^^^^^^^^^^
 
-This is one of the templates used by Crafter Studio when a new site is created, this template will setup a target for 
+This is one of the templates used by Crafter Studio when a new project/site is created, this template will setup a target for
 Studio's search features including: indexing all xml files, binary files and indexing additional Git metadata from the
 site repository.
 
 This target will:
 
 - Identify the changed files according to the local Git repository history
-- Index all site content in Elasticsearch
+- Index all site content in search
 
 **Parameters**
 
@@ -51,16 +51,16 @@ This target has no additional parameters.
 Local Target
 ^^^^^^^^^^^^
 
-This is the other template used by Crafter Studio when a new site is created, this template will setup a target for
-previewing the site.
+This is the other template used by Crafter Studio when a new project is created, this template will setup a target for
+previewing the project.
 
 This target will:
 
 - Identify the changed files according to the local Git repository history
-- Index all site content in Elasticsearch
+- Index all project content in search
 - Rebuild Crafter Engine's site context when there are changes in configuration files or Groovy scripts
 - Clear Crafter Engine's cache
-- Rebuild Crafter Engine's site GraphQL schema when there are changes in content-type definitions
+- Rebuild Crafter Engine's project GraphQL schema when there are changes in content-type definitions
 - Send email notifications if enabled
 
 **Parameters**
@@ -87,10 +87,10 @@ This target will:
 - Clone the remote repository if needed
 - Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
 - Identify the changed files according to the Git repository history
-- Index all site content in the appropriate search engine, Elasticsearch
+- Index all project content in the appropriate search engine
 - Rebuild Crafter Engine's site context when there are changes in configuration files or Groovy scripts
 - Clear Crafter Engine's cache
-- Rebuild Crafter Engine's site GraphQL schema when there are changes in content-type definitions
+- Rebuild Crafter Engine's project GraphQL schema when there are changes in content-type definitions
 - Send email notifications if enabled
 
 **Parameters**
@@ -128,13 +128,13 @@ This target will:
 - Clone the remote repository if needed
 - Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
 - Identify the changed files according to the Git repository history
-- Index all site content in Elasticsearch
+- Index all project content in search
 - Sync all new, updated and deleted files to an AWS S3 bucket
 - Execute an invalidation for all updated files in one or more AWS Cloudfront distributions
 - Submit deployments events for all Crafter Engine instances:
 
   - Rebuild the site context when there are changes in configuration files or Groovy scripts
-  - Clear the site cache
+  - Clear the project cache
   - Rebuild the site GraphQL schema when there are changes in content-type definitions
 
 - Send email notifications if enabled
@@ -191,7 +191,7 @@ This target will:
 - Clone the remote repository if needed
 - Pull the latest changes from the remote repository (discarding any local uncommitted or conflicting files)
 - Identify the changed files according to the Git repository history
-- Index all site content in Elasticsearch
+- Index all project content in search
 - Sync all new, updated and deleted files to an AWS S3 bucket
 - Execute an invalidation for all updated files in the AWS CloudFront distribution
 - Submit deployments events for all Crafter Engine instances:
