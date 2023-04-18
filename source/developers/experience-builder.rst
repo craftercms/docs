@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.3
+:last-updated: 4.1.0
 
 .. index:: Experience Builder, In-Context Editing, ICE
 
@@ -551,9 +551,8 @@ Note the ``@crafter.img`` macro automatically prints to ``src`` when you don't s
 ``<@crafter.img $field"image_s:" />`` is equivalent to ``<@crafter.img $field"image_s:src" />``.
 
 
-.. TODO: @vita please add a nice info or warning style to the below:
-
-Auto-print can only be used to print top-level model field values.
+.. note::
+   Auto-print can only be used to print top-level model field values.
 
 .. _renderComponentCollection:
 
