@@ -6,6 +6,8 @@
 
 .. _newIa-configuration:
 
+.. TODO: see why this article is still relevant
+
 =============
 Configuration
 =============

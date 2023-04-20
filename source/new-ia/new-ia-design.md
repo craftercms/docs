@@ -11,6 +11,7 @@ Reference
       - Explain `crafter-setenv.sh` and give examples
         - Ask AV for real examples and add them
 - Finish the OAS docs and link them to the index of Reference
+- Update the file `configurations.rst` to match the latest software
 
 Include
 =======

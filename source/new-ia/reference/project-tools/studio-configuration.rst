@@ -39,6 +39,72 @@ The following items are noted in the image above:
 
 Here are the settings that can be configured through Crafter Studio:
 
+.. TODO: Turn this into a table with name, description, and link to the sample configuration file or article
+
+.. list-table:: Studio Configuration Files
+    :header-rows: 1
+
+    * - Configuration File
+      - Description
+      - More Information
+    * - Project Configuration
+      - Defines the general project configuration
+      -
+    * - Notification Configuration
+      - Defines a list of UI messages to use in notifications
+      -
+    * - Permissions Mapping
+      - Defines user access permissions to the project
+      -
+    * - Role Mappings
+      - Maps users and groups to roles within the project
+      -
+    * - Content Type Editor Config
+      - Defines controls, data sources, and content types for content authoring
+      -
+    * - Configurations
+      - Configure this list of configuration files
+      -
+    * - Engine Project Configuration
+      - Project configuration used by Crafter Engine
+      -
+    * - Engine Project Application Configuration
+      -
+      -
+    * - Engine URL Rewrite Configuration
+      -
+      -
+    * - Dependency Resolver Configuration
+      -
+      -
+    * - AWS Profiles
+      -
+      -
+    * - Box Profiles
+      -
+      -
+    * - WebDAV Profiles
+      -
+      -
+    * - Asset Processing
+      -
+      -
+    * - Blob Stores
+      -
+      -
+    * - Proxy Config
+      -
+      -
+    * - Translation Configuration
+      -
+      -
+    * - Project Policy Configuration
+      -
+      -
+    * - User Interface Configuration
+      -
+      -
+
 .. toctree::
    :maxdepth: 1
 
