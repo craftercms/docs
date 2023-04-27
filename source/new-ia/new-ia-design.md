@@ -12,6 +12,7 @@ Reference
         - Ask AV for real examples and add them
 - Finish the OAS docs and link them to the index of Reference
 - Update the file `configurations.rst` to match the latest software
+- Add Deployer configuration to the Reference section
 
 Include
 =======

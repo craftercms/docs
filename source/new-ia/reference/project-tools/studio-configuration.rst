@@ -41,69 +41,64 @@ Here are the settings that can be configured through Crafter Studio:
 
 .. TODO: Turn this into a table with name, description, and link to the sample configuration file or article
 
+.. TODO: Does the Proxy config below here or in Engine? (it configures engine, but configures it for Preview)
+
 .. list-table:: Studio Configuration Files
     :header-rows: 1
 
     * - Configuration File
       - Description
       - More Information
-    * - Project Configuration
+    * - Project Configuration (``config/studio/site-config.xml``)
       - Defines the general project configuration
       -
-    * - Notification Configuration
+    * - Notification Configuration (``config/studio/workflow/notification-config.xml``)
       - Defines a list of UI messages to use in notifications
       -
-    * - Permissions Mapping
+    * - Permissions Mapping (``config/studio/permission-mappings-config.xml``)
       - Defines user access permissions to the project
       -
-    * - Role Mappings
+    * - Role Mappings (``config/studio/role-mappings-config.xml``)
       - Maps users and groups to roles within the project
       -
-    * - Content Type Editor Config
+    * - Content Type Editor Config (``config/studio/administration/site-config-tools.xml``)
       - Defines controls, data sources, and content types for content authoring
       -
-    * - Configurations
+    * - Configurations (``config/studio/administration/config-list.xml``)
       - Configure this list of configuration files
       -
-    * - Engine Project Configuration
-      - Project configuration used by Crafter Engine
+    * - Dependency Resolver Configuration (``config/studio/dependency/resolver-config.xml``)
+      - Configures the dependency resolver
       -
-    * - Engine Project Application Configuration
+    * - AWS Profiles (``config/studio/aws/aws.xml``)
+      - Configures the project's AWS profiles
       -
+    * - Box Profiles (``config/studio/box/box.xml``)
+      - Configures the project's Box profiles
       -
-    * - Engine URL Rewrite Configuration
+    * - WebDAV Profiles (``config/studio/webdav/webdav.xml``)
+      - Configures the project's WebDAV profiles
       -
+    * - Asset Processing Configuration (``config/studio/asset-processing/asset-processing-config.xml``)
+      - Configures the project's asset processing
       -
-    * - Dependency Resolver Configuration
+    * - Blob Stores (``config/studio/blob-stores-config.xml``)
+      - Configures the project's blob stores
       -
+    * - Proxy Config (``config/engine/proxy-config.xml``)
+      - Configures the proxy servers for preview
       -
-    * - AWS Profiles
+    * - Translation Configuration (``config/studio/translation-config.xml``)
+      - Configures the translation service
       -
+    * - Project Policy Configuration (``config/studio/site-policy-config.xml``)
+      - Configures the project policy
       -
-    * - Box Profiles
+    * - User Interface Configuration (``config/studio/ui.xml``)
+      - Configures the user interface
       -
-      -
-    * - WebDAV Profiles
-      -
-      -
-    * - Asset Processing
-      -
-      -
-    * - Blob Stores
-      -
-      -
-    * - Proxy Config
-      -
-      -
-    * - Translation Configuration
-      -
-      -
-    * - Project Policy Configuration
-      -
-      -
-    * - User Interface Configuration
-      -
-      -
+
+.. TODO Remove the toctree below once the links are moved up to the table
 
 .. toctree::
    :maxdepth: 1
