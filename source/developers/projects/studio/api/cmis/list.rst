@@ -9,7 +9,7 @@ List CMIS Files and Folders (deprecated)
 List files and folders in a CMIS repository with an optional range for pagination.
 
 .. important::
-    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/cmis/cmisList` for the current version.
+    This API is deprecated and provided only as a reference.  Please see `cmisList <../../../../../_static/api/studio.html#tag/cmis/operation/cmisList>`_ for the current version.
 
 --------------------
 Resource Information

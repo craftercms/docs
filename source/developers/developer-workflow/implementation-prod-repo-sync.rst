@@ -35,23 +35,23 @@ The following process is used to configure the upstream remote:
 #. Make sure that the remote does not exist
 
    * Issue the List Remotes API
-        :studio_swagger_url:`#/repository/listRemoteRepositories`
+        `listRemoteRepositories <../../_static/api/studio.html#tag/repository/operation/listRemoteRepositories>`_
 
 #. Assuming the remote does not exist, add it
 
    * Issue the Add Remote API
-         :studio_swagger_url:`#/repository/addRemoteRepository`
+         `addRemoteRepository <../../_static/api/studio.html#tag/repository/operation/addRemoteRepository>`_
    * Parameter values listed in table below
 #. Issue pull to get the latest content from the remote
 
    * Issue the Pull Remote API
-        :studio_swagger_url:`#/repository/pullFromRemoteRepository`
+        `pullFromRemoteRepository <../../_static/api/studio.html#tag/repository/operation/pullFromRemoteRepository>`_
    * Parameter values listed in table below
 
 #. Issue push to get the latest content to the remote
 
    * Issue the Push Remote API
-        :studio_swagger_url:`#/repository/pushToRemoteRepository`
+        `pushToRemoteRepository <../../_static/api/studio.html#tag/repository/operation/pushToRemoteRepository>`_
    * Parameter values listed in table below
 
 +--------+--------------+----------------------------------------------------------------+

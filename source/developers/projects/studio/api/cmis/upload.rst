@@ -9,7 +9,7 @@ Upload an asset File into CMIS (deprecated)
 Upload an asset file to CMIS repository.
 
 .. important::
-    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/cmis/cmisUpload` for the current version.
+    This API is deprecated and provided only as a reference.  Please see `cmisUpload <../../../../../_static/api/studio.html#tag/cmis/operation/cmisUpload>`_ for the current version.
 
 --------------------
 Resource Information

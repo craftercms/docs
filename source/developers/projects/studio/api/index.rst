@@ -21,7 +21,16 @@ There are 2 versions of Crafter Studio APIs.  **API version 2** contains the Use
 API Version 2
 -------------
 
-Version 2 APIs are available from: https://app.swaggerhub.com/apis/craftercms/studio
+.. open_iframe_modal_button::
+   :label: Open here
+   :url: ../../../../_static/api/studio.html
+   :title: API Version 2
+
+.. raw:: html
+
+    or <a href="../../../../_static/api/studio.html" target="_blank">in a new tab</a>
+
+|
 
 -------------
 API Version 1
