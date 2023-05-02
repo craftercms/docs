@@ -12,7 +12,12 @@ Reference
         - Ask AV for real examples and add them
 - Finish the OAS docs and link them to the index of Reference
 - Update the file `configurations.rst` to match the latest software
-- Add Deployer configuration to the Reference section
+- Update all modules to be fully inclusive of
+  - Description
+  - Administration
+    - Configuration
+  - API
+  - Source Code
 
 Include
 =======
@@ -42,3 +47,4 @@ System Admin
     - Headers
     - 
 - Cite the Secrets Management reference article
+- Reference the administration and configuration in the reference section instead of duplicating it here
