@@ -11,9 +11,9 @@ Crafter Engine
 
 Engine provides content delivery services to power any type of Web or mobile application. It consumes content published from Studio via the Deployer and provides developers with APIs to consume the content (content, search, GraphQL, etc.).
 
-.. include:: /new-ia/includes/content-retrieval-apis.rst
+.. include:: /includes/content-retrieval-apis.rst
 
-.. include:: /new-ia/includes/scripts-templates-security.rst
+.. include:: /includes/scripts-templates-security.rst
 
 ---------------------------
 Crafter Engine Architecture
@@ -86,9 +86,9 @@ These files can be accessed by navigating from the Studio Sidebar to |projectToo
 For more information on how to configure site settings related to Crafter Engine see :ref:`engine-configuration`
 
 .. _engine-project-configuration-guide:
-.. include:: /new-ia/includes/engine-project-configuration.rst
+.. include:: /includes/engine-project-configuration.rst
 
-.. include:: /new-ia/includes/engine-project-security-guide.rst
+.. include:: /includes/engine-project-security-guide.rst
 
 .. _access-to-services:
 

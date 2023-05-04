@@ -27,7 +27,7 @@ To configure an external authentication method, please follow one of the guides 
 
 When using an external authentication method, user accounts are automatically created in the internal database upon each user's first successful login, using the attributes from the responses received.  Users added to the internal database after the user's first successful login through external authentication are marked as **Externally Managed**.
 
-.. _newia-configure-authentication-chain:
+.. _configure-authentication-chain:
 
 ==============================
 Configure Authentication Chain
@@ -152,7 +152,7 @@ In the configuration above, when a user tries to authenticate, the user's creden
     :width: 80 %
     :align: center
 
-.. _newia-crafter-studio-configure-studio-saml:
+.. _crafter-studio-configure-studio-saml:
 
 ===========================================
 Studio SAML2 Configuration |enterpriseOnly|
@@ -307,7 +307,7 @@ Restart your Authoring installation after configuring the above.
 
    <hr>
 
-.. _newia-crafter-studio-configure-headers-based-auth:
+.. _crafter-studio-configure-headers-based-auth:
 
 =======================================================
 Configure Headers Based Authentication |enterpriseOnly|
@@ -385,7 +385,7 @@ To enable **Sign out** for users signed in using headers based authentication, c
 
 |
 
-.. _newia-crafter-studio-configure-ldap:
+.. _crafter-studio-configure-ldap:
 
 ==============================================
 Configure LDAP Authentication |enterpriseOnly|
@@ -556,7 +556,7 @@ Below, are some of the messages displayed as a user is inputting a new password:
 
 |
 
-.. _newia-randomize-admin-password:
+.. _randomize-admin-password:
 
 ===================================================================
 Randomize Authoring's "admin" Password for CrafterCMS Fresh Install

@@ -8,4 +8,4 @@
 Java Doc
 ========
 
-.. include:: /new-ia/includes/javadoc.rst
+.. include:: /includes/javadoc.rst

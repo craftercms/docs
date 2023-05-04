@@ -70,7 +70,7 @@ For the System Administrator
 .. |systemAdministrator| image:: /_static/images/by-role/system_admin.webp
     :alt: By Role - System Admin
     :width: 20 %
-    :target: system-admin/index.html#newia-system-admin
+    :target: system-admin/index.html#system-admin
 
 |systemAdministrator| For the system administrator learning how to set up and configure CrafterCMS, please start :ref:`here<system-admin>`.
 

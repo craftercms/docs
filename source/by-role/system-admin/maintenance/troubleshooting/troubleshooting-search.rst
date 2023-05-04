@@ -13,7 +13,7 @@ Troubleshooting Search Issues
 How Search Works
 ----------------
 
-.. include:: /new-ia/includes/how-search-works.rst
+.. include:: /includes/how-search-works.rst
 
 --------------------------------------
 Places Search Indexing Can Get Hung Up

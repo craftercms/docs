@@ -12,7 +12,7 @@ This section lets you get started quickly on using CrafterCMS.
 
 How do I install CrafterCMS? First, let's make sure we have all the requirements.
 
-.. include:: /new-ia/includes/requirements.rst
+.. include:: /includes/requirements.rst
 
 |hr|
 

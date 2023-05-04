@@ -12,9 +12,9 @@ This section describes various ways of installing and configuring CrafterCMS.
 
 First we'll take a look at the requirements and supported platform for installing/setting up CrafterCMS.
 
-.. _newia-requirements_supported_platforms:
+.. _requirements_supported_platforms:
 
-.. include:: /new-ia/includes/requirements.rst
+.. include:: /includes/requirements.rst
 
 .. raw:: html
 

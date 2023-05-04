@@ -48,7 +48,7 @@ The modules are
 APIs
 ----
 
-.. include:: /new-ia/includes/content-retrieval-apis.rst
+.. include:: /includes/content-retrieval-apis.rst
 
 For non-content related APIs, such as user/group management, monitoring, indexing and more, please consult the module API directly.
 
@@ -74,7 +74,7 @@ For non-content related APIs, such as user/group management, monitoring, indexin
 Java Doc
 ^^^^^^^^
 
-.. include:: /new-ia/includes/javadoc.rst
+.. include:: /includes/javadoc.rst
 
 ----------------
 Managing Secrets
@@ -88,7 +88,7 @@ There are a number of ways to manage secrets in CrafterCMS, please review this :
 Administration Scripts
 ----------------------
 
-.. include:: /new-ia/includes/administration-scripts.rst
+.. include:: /includes/administration-scripts.rst
 
 ----------------------
 Complimentary Projects

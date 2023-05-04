@@ -464,4 +464,4 @@ The following contains more information on administration tools
 .. toctree::
    :maxdepth: 3
 
-   /new-ia/reference/project-tools/index
+   /reference/project-tools/index
