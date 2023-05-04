@@ -1,155 +1,41 @@
-.. index:: CrafterCMS 4.0.0 Release Notes
+.. index:: CrafterCMS 4.1.0 Release Notes
 
 ----------------
-CrafterCMS 4.0.0
+CrafterCMS 4.1.0
 ----------------
 
-*Released May 12, 2022*
+*TBD*
 
 ^^^^^^^^^^^^
 New Features
 ^^^^^^^^^^^^
 
-* **New Studio UI for Content Authors** |br|
-
-  - New Pluggable React-based UI |br|
-
-    - Improved Sidebar
-    - Improved authoring search experience
-    - Improved user management experience
-    - Improved code editing
-    - Improved configuration management
-    - Improved My Projects experience
-    - And more...
-
-  - Experience Builder (XB) - a new In-Context Editing system: |br|
-
-    - Edit content in-place |br|
-    - Drag and drop components and assets to build and rearrange pages
-
-      - Supports projects built with FreeMarker, React, and can easily be extended to support Vue, Angular and other
-        UI frameworks |br|
-
-    - New Experience Builder package in the SDK `here <https://www.npmjs.com/package/@craftercms/experience-builder>`__
-    - See :ref:`experience-builder` for more information |br|
-
-  - New configuration mechanics of the UI that allow plugins to wire to almost every aspect of
-    the experience. This opens the door for having different authoring experiences per project. |br|
-
-* **Plugins!** |br|
-
-  - New plugin system allowing developers to build plugins for a project (headless or templated) that provide:
-
-    - Authoring side extensions allowing content authors new tools to build the desired experience.
-      This includes extending Crafter Studio’s functionality with server-side code, UI widgets,
-      third-party integration, pre-baked content model items and more. Learn all about it
-      :ref:`here <plugins>`
-    - Delivery-side extensions that provide end-user widgets, server-side code, integration with
-      third-party providers and more. Learn about it :ref:`here <plugins>`
-    - Host plugins are still supported, see :ref:`here <full-screen-plugin-example>`
-    - Plugins are starting to appear on the marketplace `here <https://marketplace.craftercms.org>`__
-    - Read the guide to building your own plugins  :ref:`here <how-do-i-make-my-own-plugin>`
-
-  - Added support for a plugin to add servlet filters |br|
-    See `here <https://github.com/craftercms/craftercms/issues/4938>`__ for more information
-
-    For more information on how to wire your plugin, see the section on a sample for a
-    servlet filter :ref:`here <plugin-descriptor-servlet-filter>`
-
-
-* **Switched Crafter Studio’s authentication system to JWT** |br|
-
-  - It’s now much easier to automate work with Crafter Studio APIs by issuing secure tokens for
-    your automation jobs, see :ref:`working-with-crafter-studios-api` |br|
-  - Remember to replace default values for all the variables used to control the
-    access tokens (JWT) used for Studio’s API.  See :ref:`here <securing-your-crafter-cms-install>`
-    for more information on default values used for JWT |br|
-
-* **Project Content Rules and Policy** |br|
-
-  Added a project-wide policy configuration that lets site administrators control:
-
-  - File name patterns (permissioning and automatic renaming of files)
-  - File mime-type
-  - File size
-
-  See :ref:`here <project-policy-configuration>` for more information on the Project Policy configuration
-
-* **New Crafter CLI** |br|
-
-  The CrafterCMS Command Line Interface (CLI) for DevContentOps, allows you to authenticate with
-  CrafterCMS and exercise its APIs from a terminal or automation tools. |br|
-  See :ref:`here <devcontentops-toolkit>` for more information on the Crafter CLI
-
-* **Better locale support** |br|
-
-  CrafterCMS allows configuring a locale to be used for displaying dates and times in the Studio UI or,
-  it can also be configured to respect the user's locale settings |br|
-
-  See :ref:`studio-project-time-zone` for more information on how to customize your project's dates and times display
-
-
+* **Studio UI Updates** |br|
+  - New Dashboards
+  - Improved Sidebar
 
 ^^^^^^^
 Updates
 ^^^^^^^
-* Upgraded Java to version 11
+* Upgraded Java to version 17
 
-* Upgraded Elasticsearch to version 7
+* Switched to OpenSearch version 2.6.0
 
-* Upgraded Tomcat to version 9
-
-* Unlock permission added and can be assigned to a role |br|
-  See `here <https://github.com/craftercms/craftercms/issues/3690>`__ for more information
-
-* Added support for deployment mode for deployer processors |br|
-  Supported modes currently are ``PUBLISH`` and ``SEARCH_INDEX``.
-  See :ref:`here <crafter-deployer-api-target-deploy>` and :ref:`here <crafter-deployer-api-target-deploy-all>`
-  for more information
-
-* Added support for deleting content types |br|
-  See `here <https://github.com/craftercms/craftercms/issues/1631>`__ for more information
-
-* Updated the JavaScript SDK for in-context editing (ICE) |br|
-  See https://npm.io/package/@craftercms/ice for more information
-
-* RTE improvements
-  Added support for pasting from MS Word to RTE
-
-* Added friendly labels for content types and mime types on the search filter |br|
-  See `here <https://github.com/craftercms/craftercms/issues/5137>`__ for more information
-
-* Fixed data source plugin failure when loading in content form |br|
-  See `here <https://github.com/craftercms/craftercms/issues/5307>`__ for more information
-
-* Improved visuals when search is running |br|
-  See `here <https://github.com/craftercms/craftercms/issues/5135>`__ for more information
-
-* The entire project is now published (bulk publish) when an item is published for the very first time |br|
-  See `here <https://github.com/craftercms/craftercms/issues/5207>`__ for more information
-
-* Fixed format for dates when copying |br|
-  See `here <https://github.com/craftercms/craftercms/issues/5268>`__ for more information
-
-* Added support for regex patterns in CORS origins for Studio, Engine, Profile and Social|br|
-
-  Values in the CORS origins are split using ``,``.  Remember that commas inside patterns need to
-  be escaped with a ``\`` like: ``studio.cors.origins: 'http://localhost:[8000\,3000],http://*.domain1.com'``
 
   See `here <https://github.com/craftercms/craftercms/issues/5381>`__ for more information
 
 Lots of other small enhancements and bug fixes :)
 
-For a full list of tickets, please visit: `GitHub 4.0.0 Milestone <https://github.com/craftercms/craftercms/milestone/78?closed=1>`_
+For a full list of tickets, please visit: `GitHub 4.1.0 Milestone <https://github.com/craftercms/craftercms/milestone/95?closed=1>`_
 
 For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
 
 .. important::
 
-    Please see :ref:`Breaking changes <breaking-changes-4-0-0>` for breaking changes and other
+    Please see :ref:`Breaking changes <breaking-changes-4-1-0>` for breaking changes and other
     things to consider before upgrading
 
-    For instructions on how to update your CrafterCMS install to 4.0.0,
+    For instructions on how to update your CrafterCMS install to 4.1.0,
     please see :ref:`upgrading-craftercms`
 
     For Linux installs, the Studio upgrade requires the library ``libaio`` which is not installed
