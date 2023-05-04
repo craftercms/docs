@@ -10,7 +10,7 @@ Clear Configuration Cache (deprecated)
 Clear configuration cache for site.
 
 .. important::
-   This API is deprecated and provided only as a reference.  Please see :base_url:`clearConfigurationCache <_static/api/studio.html#tag/configuration/operation/clearConfigurationCache>`__ for the current version.
+   This API is deprecated and provided only as a reference.  Please see :base_url:`clearConfigurationCache <_static/api/studio.html#tag/configuration/operation/clearConfigurationCache>` for the current version.
 
 --------------------
 Resource Information

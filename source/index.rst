@@ -23,7 +23,7 @@ CrafterCMS differentiates itself from other CMSs with its architecture: microser
 This Manual introduces key concepts in CrafterCMS, presents the authoring and development environment, and provides operational and administrative considerations and procedures as well as a comprehensive reference section.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
     
    /getting-started/index
    /content-authors/index
@@ -44,6 +44,7 @@ This Manual introduces key concepts in CrafterCMS, presents the authoring and de
    Acknowledgements </acknowledgements/index>
 
 .. toctree::
+   :titlesonly:
    :maxdepth: 3
 
    CrafterCMS docs Beta </new-ia/index>

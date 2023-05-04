@@ -21,7 +21,9 @@ Crafter Deployer is the deployment agent for CrafterCMS.
 
 .. TODO: We need a bigger/better description of this.
 
+
 .. _newIa-crafter-deployer-administration:
+
 --------------
 Administration
 --------------
@@ -181,7 +183,7 @@ Create a Target
 
 There are two different ways in which a target configuration file can be created:
 
-* By calling the API endpoint :ref:`newIa-crafter-deployer-api-target-create`, which creates a new target based on a template. The Deployer comes out
+* By calling the API endpoint `createTarget <../../../../_static/api/deployer.html#tag/target/operation/createTarget>`_, which creates a new target based on a template. The Deployer comes out
   of the box with two templates: one for local repositories (useful for authoring environments) and one for remote repositories (useful for
   delivery environments). You can also specify your own templates under ``./config/templates/targets``, and use the same API endpoint to create
   targets based on those templates.
@@ -204,7 +206,7 @@ Delete a Target
 
 There are two options for deleting a target:
 
-* Call the API endpoint :ref:`newIa-crafter-deployer-api-target-delete`.
+* Call the API endpoint `deleteTarget <../../../../_static/api/deployer.html#tag/target/operation/deleteTarget>`_.
 
 * Delete the target configuration file in the filesystem.
 
@@ -213,8 +215,8 @@ Run Deployments
 ^^^^^^^^^^^^^^^
 
 Crafter Deployer has an option of running scheduled deployments for a target (``deployment.scheduling.enabled``), which is enabled by default, but if you
-want to manually trigger a deployment, you just need to call the API endpoint :ref:`newIa-crafter-deployer-api-target-deploy` (or
-:ref:`newIa-crafter-deployer-api-target-deploy-all`). This will start the deployment if the request is correct. To watch the progress of a scheduled or a manually
+want to manually trigger a deployment, you just need to call the API endpoint `deployTarget <../../_static/api/deployer.html#tag/target/operation/deployTarget>`_ (or
+`deployAllTargets <../../_static/api/deployer.html#tag/target/operation/deployAllTargets>`_). This will start the deployment if the request is correct. To watch the progress of a scheduled or a manually
 triggered deployment, check the Deployer log. When the deployment has finished, and the target has a ``fileOutputProcessor`` in the deployment pipeline, a
 CSV file with the final result of that particular deployment will be written under ``./logs`` (or ``CRAFTER_HOME/logs/deployer``).
 
@@ -244,6 +246,8 @@ the steps described in :ref:`newIa-crafter-studio-debugging-deployer-issues`
 .. warning::
   Changing or deleting a processed commit file could cause unchanged files to be indexed again and
   it should be done as a last resort in case of errors.
+
+|hr|
 
 .. _newIa-crafter-deployer-processors-guide:
 
@@ -981,6 +985,8 @@ The following example shows how the deployment processors work together to deliv
         - author@example.com
       status: ON_ANY_FAILURE
 
+|hr|
+
 .. _newIa-crafter-deployer-templates-guide:
 
 ----------------
@@ -1227,6 +1233,8 @@ This target will:
 
 .. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
 
+|hr|
+
 .. _newIa-crafter-deployer-elasticsearch-configuration-guide:
 
 --------------------
@@ -1300,16 +1308,29 @@ The search configuration can be changed in two places:
 
 #.  Individual target configuration file ``$CRAFTER_HOME/data/deployer/targets/{siteName}-{environment}.yaml``
 
+|hr|
+
 --------
 REST API
 --------
 
-.. TODO embed the OAS rest API HTML file
+To view the Crafter Deployer REST APIs:
+
+.. open_iframe_modal_button::
+   :label: Open here
+   :url: ../../../../_static/api/deployer.html
+   :title: Deployer API
+
+.. raw:: html
+
+    or <a href="../../../../_static/api/deployer.html" target="_blank">in a new tab</a>
+
+|
+
+|hr|
 
 -----------
 Source Code
 -----------
 
 Crafter Deployer's source code is managed in GitHub: https://github.com/craftercms/deployer
-
-.. include:: /new-ia/includes/deployer-admin-guide.rst

@@ -95,7 +95,7 @@ Configuration allows the user to configure the different settings in CrafterCMS 
 
 |
 
-For more information on what settings can be configured, see :ref:`newIa-configuration`
+For more information on what settings can be configured, see :ref:`newIa-studio-configuration` and :ref:`newIa-engine-configuration`
 
 ^^^^^
 Audit

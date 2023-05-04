@@ -56,7 +56,7 @@ Response
         "status": "INIT_COMPLETED",
         "id": "third-preview"
     }
-]
+  ]
 
 ---------
 Responses

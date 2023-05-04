@@ -25,11 +25,7 @@ Crafter Engine Architecture
     :width: 60 %
     :align: center
 
------------
-Source Code
------------
-
-Crafter Engine's source code is managed in GitHub: https://github.com/craftercms/engine
+|hr|
 
 .. _newIa-engine-configuration-files:
 
@@ -64,9 +60,9 @@ For more information on the properties in ``server-config.properties``, see :ref
 
 .. _newIa-engine-site-configuration-files:
 
---------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Project-level/Site-level Configuration Files
---------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The main configuration files related to Crafter Engine for a site are the following:
 
@@ -87,8 +83,9 @@ These site configuration files are located under ``CRAFTER_HOME/data/repos/sites
 
 These files can be accessed by navigating from the Studio Sidebar to |projectTools| ➜ ``Configuration``, then selecting the desired Engine configuration option from the dropdown.
 
-For more information on how to configure site settings related to Crafter Engine see :ref:`newIa-engine_configuration`
+For more information on how to configure site settings related to Crafter Engine see :ref:`newIa-engine-configuration`
 
+.. _newIa-engine-project-configuration-guide:
 .. include:: /new-ia/includes/engine-project-configuration.rst
 
 .. include:: /new-ia/includes/engine-project-security-guide.rst
@@ -331,3 +328,29 @@ There are a couple of things you can do to get around the exception being thrown
 
      |
 
+|hr|
+
+--------
+REST API
+--------
+
+To view the Crafter Engine REST APIs:
+
+.. open_iframe_modal_button::
+   :label: Open here
+   :url: ../../../../_static/api/engine.html
+   :title: Engine API
+
+.. raw:: html
+
+    or <a href="../../../../_static/api/engine.html" target="_blank">in a new tab</a>
+
+|
+
+|hr|
+
+-----------
+Source Code
+-----------
+
+Crafter Engine's source code is managed in GitHub: https://github.com/craftercms/engine

@@ -14,7 +14,7 @@ VERSION=$1
 
 STUDIO=https://raw.githubusercontent.com/craftercms/studio/v$VERSION/src/main/api/2/studio-api-2.yaml
 ENGINE=https://raw.githubusercontent.com/craftercms/engine/v$VERSION/src/main/api/1/engine-api.yaml
-DEPLOYER=https://raw.githubusercontent.com/craftercms/deployer/v$VERSION/src/main/api/1/deployer-api.yaml
+DEPLOYER=https://raw.githubusercontent.com/craftercms/deployer/v$VERSION/src/main/api/deployer-api.yaml
 
 
 # Clean if required
@@ -23,24 +23,24 @@ if [ "$2" = "clean" ] || [ "$3" = "clean" ]; then
 fi
 
 # Build the basic structure
-make html
+#make html
 
 if [ "$3" = "api" ] || [ "$2" = "api" ]; then
 
 	# Pull down the spec
-	curl -s $STUDIO > /tmp/studio.json
+	#curl -s $STUDIO > /tmp/studio.json
 	#curl -s $ENGINE > /tmp/engine.json
-	#curl -s $DEPLOYER > /tmp/deployer.json
+	curl -s $DEPLOYER > /tmp/deployer.json
 	
 	# Build the OAS spec
 	mkdir -p source/_static/api
 
-	redoc-cli build -o source/_static/api/studio.html /tmp/studio.json
+	#redoc-cli build -o source/_static/api/studio.html /tmp/studio.json
 	#redoc-cli build -o build/html/api/engine.html /tmp/engine.json
-	#redoc-cli build -o build/html/api/deployer.html /tmp/deployer.json
+	redoc-cli build -o build/html/api/deployer.html /tmp/deployer.json
 	
 	# Remove temporary files
-	rm /tmp/studio.json
+	#rm /tmp/studio.json
 	#rm /tmp/engine.json
-	#rm /tmp/deployer.json
+	rm /tmp/deployer.json
 fi

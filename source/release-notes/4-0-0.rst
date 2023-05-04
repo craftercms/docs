@@ -104,7 +104,7 @@ Updates
 
 * Added support for deployment mode for deployer processors |br|
   Supported modes currently are ``PUBLISH`` and ``SEARCH_INDEX``.
-  See :ref:`here <crafter-deployer-api-target-deploy>` and :ref:`here <crafter-deployer-api-target-deploy>`
+  See :ref:`here <crafter-deployer-api-target-deploy>` and :ref:`here <crafter-deployer-api-target-deploy-all>`
   for more information
 
 * Added support for deleting content types |br|

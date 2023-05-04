@@ -6,7 +6,7 @@
 
 .. highlight:: xml
 
-.. _newIa-project-config-configuration:
+.. _newIa-configure-url-rewrite:
 
 ================================
 Engine URL Rewrite Configuration

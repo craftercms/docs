@@ -62,7 +62,7 @@ For non-content related APIs, such as user/group management, monitoring, indexin
     * - :ref:`Studio<newIa-crafter-studio>`
       - OAS Link
     * - :ref:`Engine<newIa-crafter-engine>`
-      - OAS Link
+      - `Crafter Engine APIs <../../_static/api/engine.html>`_
     * - :ref:`Deployer<newIa-crafter-deployer>`
       - OAS Link
     * - :ref:`Profile<newIa-crafter-profile>`
@@ -98,18 +98,18 @@ Complimentary Projects
     :header-rows: 1
 
     *   - Docker Compose
-        - :ref:`Docker Compose on GitHub<https://github.com/craftercms/docker-compose>`
+        - `Docker Compose on GitHub <https://github.com/craftercms/docker-compose>`_
     *   - Docker Images
-        - :ref:`Docker Images on GitHub<https://github.com/craftercms/docker-images>`
+        - `Docker Images on GitHub <https://github.com/craftercms/docker-images>`_
     *   - Kubernetes
-        - :ref:`Kubernetes Deployments on GitHub<https://github.com/craftercms/kubernetes-deployments>`
+        - `Kubernetes Deployments on GitHub <https://github.com/craftercms/kubernetes-deployments>`_
     *   - DevContentOps Toolkit (Crafter CLI)
-        - :ref:`DevContentOps Toolkit (CrafterCMS CLI)<newIa-devcontentops-toolkit>`
+        - `DevContentOps Toolkit (CrafterCMS CLI) <newIa-devcontentops-toolkit>`_
     *   - Extensions: Plugins
-        - :ref:`CrafterCMS Sponsored Plugins on GitHub<https://github.com/orgs/craftercms/repositories?q=plugin&type=all&language=&sort=>`
+        - `CrafterCMS Sponsored Plugins on GitHub <https://github.com/orgs/craftercms/repositories?q=plugin&type=all&language=&sort=>`_
     *   - Extensions: Blueprints
-        - :ref:`CrafterCMS Sponsored Blueprints<https://github.com/orgs/craftercms/repositories?q=blueprint&type=all&language=&sort=>`
+        - `CrafterCMS Sponsored Blueprints <https://github.com/orgs/craftercms/repositories?q=blueprint&type=all&language=&sort=>`_
     *   - Marketplace
-        - :ref:`CrafterCMS Marketplace<https://craftercms.com/marketplace>`
+        - `CrafterCMS Marketplace <https://craftercms.com/marketplace>`_
 
 

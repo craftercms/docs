@@ -1,5 +1,3 @@
-.. highlight:: groovy
-   :linenothreshold: 5
 
 -----------------------------
 Engine Project Security Guide

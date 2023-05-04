@@ -14,9 +14,7 @@ This section describes how content authors can create and use pages to manage co
 Templates are used for page layouts in CrafterCMS.  A developer usually creates the templates
 that authors can then use to manage content.
 
-.. raw:: html
-
-   <hr/>
+|hr|
 
 -------------
 Adding a Page
@@ -84,9 +82,7 @@ An error form will appear when you try to *Save and Close* without filling out a
    :align: center
    :alt: Content Author - Page Save Error
 
-.. raw:: html
-
-   <hr/>
+|hr|
 
 .. _newIa-editing-a-page:
 

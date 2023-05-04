@@ -535,14 +535,18 @@ The example below, uses the short-hand auto-print expression. The colon at the e
 instructs the system to print the value of that field for you.
 
 .. code-block:: text
+
    <@crafter.h1 $field"title_t:" />
                              -^- notice the `:`
+
 The above is equivalent to ``<@crafter.h1 $field"title_t">${model.title_t!""}</@crafter.h1>``. By default,
 auto-print renders to the ``innerHTML``, but you can print to an attribute by putting the target attribute
 after the colon.
 
 .. code-block:: text
+
    <@crafter.img $field"image_s:src" />
+
 Note the ``@crafter.img`` macro automatically prints to ``src`` when you don't supply the render target; hence,
 ``<@crafter.img $field"image_s:" />`` is equivalent to ``<@crafter.img $field"image_s:src" />``.
 
