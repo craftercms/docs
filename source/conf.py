@@ -27,9 +27,9 @@ copyright = u"%s, Crafter Software Corporation"% str(date.today().year)
 author = u'CrafterCMS'
 
 # The short X.Y version.
-version = u'4.0'
+version = u'4.1'
 # The full version, including alpha/beta/rc tags.
-release = u'4.0.3'
+release = u'4.1.0'
 
 
 # -- General configuration ---------------------------------------------------
