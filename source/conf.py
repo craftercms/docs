@@ -54,7 +54,8 @@ extensions = [
     'version_tag',
     'sphinx_copybutton',
     'sphinxext.remoteliteralinclude',
-    'sphinx_tabs.tabs'
+    'sphinx_tabs.tabs',
+    'open_iframe_modal_button'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

@@ -33,7 +33,7 @@ CrafterCMS supports a number of APIs to access content for headless applications
 
 * :ref:`ReST API <newIa-rest-api>`
 * :ref:`GraphQL <newIa-graphql>`
-* :ref:`Search API <newIa-search-elasticsearch>`
+* :ref:`Search API <newIa-search>`
 * :ref:`Custom API <newIa-groovy-api>`
 
 -----------

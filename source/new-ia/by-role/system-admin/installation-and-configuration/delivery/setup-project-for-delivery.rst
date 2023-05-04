@@ -1,5 +1,5 @@
-:is-up-to-date: True
-:last-updated: 4.0.2
+:is-up-to-date: False
+:last-updated: 4.0.3
 :nosearch:
 
 .. index:: Setup Project for a Delivery Environment
@@ -42,11 +42,11 @@ explains how to use the script:
      -p,--password <password>                  The password for the remote Git
                                                repo, when using basic
                                                authentication
-     -s,--crafter-search                       Use Crafter Search instead of
-                                               Elasticsearch
      -u,--username <username>                  The username for the remote Git
                                                repo, when using basic
                                                authentication
+     --addresses <>                            A comma-separated list of email
+                                               addresses that should receive deployment notifications
 
     EXAMPLES:
      Init a site from the default repo path (../../crafter-authoring/data/repos/sites/{sitename}/published)

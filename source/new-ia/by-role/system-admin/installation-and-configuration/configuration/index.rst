@@ -10,6 +10,25 @@ Configuration
 
 This section details how to configure various CrafterCMS modules such as Crafter Studio and Crafter Engine
 
+.. TODO: Switch this to be links to the reference docs of each module
+
+-------------
+Reverse Proxy
+-------------
+.. TODO Indicate when and why you would want to use a reverse proxy
+.. TODO detail out the configuration of the reverse proxy
+
+-------
+Modules
+-------
+
+^^^^^^^^
+Deployer
+^^^^^^^^
+.. TODO: Briefly describe Crafter Deployer's role and the purpose of administering it
+:ref:`Deployer Administration and Configuration <newIa-crafter-deployer-administration>`
+
+
 .. toctree::
    :maxdepth: 1
 

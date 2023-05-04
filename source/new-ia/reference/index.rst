@@ -13,9 +13,9 @@ This section is a reference to the modules, APIs, complementary projects, and ot
 
 .. TODO List out the reference material here
 
-------------------
-CrafterCMS Modules
-------------------
+-------
+Modules
+-------
 CrafterCMS comprises a set of modules that work together.
 
 .. TODO: Insert an image detailing the modules and how data flows
@@ -44,9 +44,9 @@ The modules are
     * - :ref:`Social<newIa-crafter-Social>`
       - User generated content store
 
----------------
-CrafterCMS APIs
----------------
+----
+APIs
+----
 
 .. include:: /new-ia/includes/content-retrieval-apis.rst
 
@@ -76,6 +76,20 @@ Java Doc
 
 .. include:: /new-ia/includes/javadoc.rst
 
+----------------
+Managing Secrets
+----------------
+
+There are a number of ways to manage secrets in CrafterCMS, please review this :ref:`article<newIa-managing-secrets>` for more information.
+
+|
+
+----------------------
+Administration Scripts
+----------------------
+
+.. include:: /new-ia/includes/administration-scripts.rst
+
 ----------------------
 Complimentary Projects
 ----------------------
@@ -89,7 +103,7 @@ Complimentary Projects
         - :ref:`Docker Images on GitHub<https://github.com/craftercms/docker-images>`
     *   - Kubernetes
         - :ref:`Kubernetes Deployments on GitHub<https://github.com/craftercms/kubernetes-deployments>`
-    *   - DevContentOps Toolkit (CLI)
+    *   - DevContentOps Toolkit (Crafter CLI)
         - :ref:`DevContentOps Toolkit (CrafterCMS CLI)<newIa-devcontentops-toolkit>`
     *   - Extensions: Plugins
         - :ref:`CrafterCMS Sponsored Plugins on GitHub<https://github.com/orgs/craftercms/repositories?q=plugin&type=all&language=&sort=>`
