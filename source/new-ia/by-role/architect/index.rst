@@ -4,9 +4,9 @@
 
 .. _newIa-architect:
 
-=================
-For the Architect
-=================
+==========
+Architects
+==========
 
 .. General Architecture
    Deployment Architecture

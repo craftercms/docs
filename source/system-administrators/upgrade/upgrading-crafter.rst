@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:lsat-update: 4.1.0
 
 .. index:: Upgrading CrafterCMS, Upgrading
 
@@ -54,7 +55,7 @@ For config files that are different in the new release, the script gives you the
 |
 
    .. note::
-      When upgrading to CrafterCMS version 4.0.0 from a 3.1.x version, the environment variable `MARIADB_SOCKET_TIMEOUT <https://github.com/craftercms/craftercms/blob/develop/resources/env/authoring/bin/crafter-setenv.sh#L85>`__ in the ``{Crafter-CMS-install-directory}/bin/crafter-setenv.sh`` file of the CrafterCMS install you're running the upgrade script from may need to be increased depending on the size of the existing sites.
+      When upgrading to CrafterCMS version 4.1.0 from a 3.1.x version, the environment variable `MARIADB_SOCKET_TIMEOUT <https://github.com/craftercms/craftercms/blob/develop/resources/env/authoring/bin/crafter-setenv.sh#L85>`__ in the ``{Crafter-CMS-install-directory}/bin/crafter-setenv.sh`` file of the CrafterCMS install you're running the upgrade script from may need to be increased depending on the size of the existing sites.
 
       Here's an example where we increased it to 3x the default value:
 
@@ -243,6 +244,10 @@ After the ``upgrade-target`` script is finished running, the next step is to run
 
 You may now :ref:`start CrafterCMS <start-crafter-after-upgrade>` again
 
+.. raw:: html
+
+   <hr>
+
 ..  _upgrade-using-current-install:
 
 ---------------------------------------------------------------
@@ -282,7 +287,7 @@ To upgrade your current CrafterCMS install:
 #. Go to ``{Crafter-CMS-install-directory}/bin/upgrade`` and run the ``post-upgrade.sh`` script
 
       .. note::
-         CrafterCMS 4.0.0 requires Java JDK 11.  When upgrading to CrafterCMS version 4.0.0 from a 3.1.x version, remember to switch your JAVA_HOME environment variable to point to Java JDK 11 before running the ``post-upgrade`` script
+         CrafterCMS 4.1.0 requires Java JDK 17.  When upgrading to CrafterCMS version 4.1.0 from a 3.1.x version, remember to switch your JAVA_HOME environment variable to point to Java JDK 17 before running the ``post-upgrade`` script
 
 #. Delete the``{Crafter-CMS-install-directory}/temp/upgrade`` once your upgrade has been completed successfully
 
@@ -290,7 +295,7 @@ Here's an example to perform an upgrade of your current install to a certain ver
 
     .. code-block:: bash
 
-        $ ./start-upgrade.sh -v 4.0.0
+        $ ./start-upgrade.sh -v 4.1.0
         $ cd ../../temp/upgrade
         $ ./upgrade.sh
 

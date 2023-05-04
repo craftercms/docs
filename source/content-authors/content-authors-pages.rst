@@ -12,9 +12,7 @@ Working with Pages
 This section describes how content authors can create and use pages to manage content.
 Templates are used for page layouts in CrafterCMS.  A developer usually creates the templates that authors can then use to manage content.
 
-.. raw:: html
-
-   <hr/>
+|hr|
 
 -------------
 Adding a Page
@@ -64,9 +62,7 @@ An error form will appear when you try to *Save and Close* without filling out a
     :align: center
     :alt: Content Author - Page Save Error
 
-.. raw:: html
-
-   <hr/>
+|hr|
 
 .. _editing-a-page:
 
@@ -86,9 +82,7 @@ There are multiple ways to edit a page.
     :align: center
     :alt: Content Author - Edit a Page
 
-.. raw:: html
-
-   <hr/>
+|hr|
 
 ----------
 Versioning
@@ -140,9 +134,7 @@ There are a number of things that you can do in the Version History dialog.  On 
     :align: center
     :alt: Content Author - Page History
 
-.. raw:: html
-
-   <hr/>
+|hr|
 
 ------------------
 Form based editing
@@ -342,9 +334,7 @@ The RTE (Rich Text Editor) is intended to provide an in-context editing experien
 
 There are a number of tools available from the RTE out of the box for editing your content.  Custom tools may also be added to the RTE, depending on your needs.  Please see the developer section :ref:`rte-configuration` of the docs for more details.
 
-.. raw:: html
-
-   <hr/>
+|hr|
 
 --------------
 Copying a Page
@@ -372,9 +362,7 @@ Depending on how the page content type has been modeled (dependencies), copying 
 
 To learn more about these dependencies and see examples, see :ref:`item-specific-dependencies` or :ref:`copy-dependencies-configuration`.
 
-.. raw:: html
-
-   <hr/>
+|hr|
 
 ---------------
 Deleting a Page

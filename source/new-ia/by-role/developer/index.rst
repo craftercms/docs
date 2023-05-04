@@ -20,7 +20,7 @@ for your application to retrieve said content), and how to access content items 
 The following gets you started with content modeling, content retrieval, and more:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :titlesonly:
 
    composable/index
@@ -30,6 +30,9 @@ The following gets you started with content modeling, content retrieval, and mor
    upgrade/index
 
 |
+
+Credentials may be required in some cases when accessing content. For more information on how to manage/encode your secrets such as
+AWS credentials, please see :ref:`newIa-managing-secrets`
 
 .. raw:: html
 

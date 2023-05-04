@@ -172,9 +172,7 @@ Let's take a look at an example of encrypting the ``accessKey`` and ``securityKe
 
 * The ``accessKey`` and ``secureKey`` is now encrypted and will be decrypted by Crafter Studio as needed
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 .. _newIa-studio-encryption-tool:
 
@@ -275,9 +273,9 @@ Let's begin:
 
 #. Your password is now encrypted and will be decrypted by Crafter Studio as needed.
 
-.. raw:: html
+|hr|
 
-   <hr>
+.. _newIa-crafter-commons-encryption-tool:
 
 """"""""""""""""""""""""""""""""""""""""""""
 Command Line Interface (CLI) Encryption Tool

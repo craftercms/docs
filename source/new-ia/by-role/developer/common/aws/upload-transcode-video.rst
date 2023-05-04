@@ -112,6 +112,8 @@ For this guide, the ``AWS Profiles`` should look like this (replace the ``X's`` 
 
 |
 
+Please see :ref:`newIa-managing-secrets` for more information on how to manage/encode your AWS credentials.
+
 -------------------------------------------------------------------------------------------------------
 Step 2: Add the control and data source for uploading video to AWS for transcoding, to the content type
 -------------------------------------------------------------------------------------------------------

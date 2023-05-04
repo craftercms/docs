@@ -42,6 +42,9 @@ Here's a sample Blob Stores Configuration file (click on the triangle on the lef
 |
 |
 
+Remember to encrypt your credentials. For more information on how to manage/encode your secrets such as AWS credentials,
+please see :ref:`newIa-managing-secrets`
+
 For better security and control, we recommend setting an AWS profile via the ``crafter-setenv.sh`` file instead of
 configuring the encrypted credentials in the blob stores configuration file.  This allows you to have an IAM user
 per developer, which is a better approach than a single user whose credentials are included (encrypted) in the

@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.1.0
 :nosearch:
 
 .. index:: Projects; Crafter Studio
@@ -18,17 +19,11 @@ Crafter Studio
 
 Crafter Studio provides all the content management services and integrates with repositories like Git, Alfresco and other CMIS based platforms to enable authoring, management, and publishing of all content.
 
------------
-Source Code
------------
-
-Crafter Studio's source code is managed in GitHub: https://github.com/craftercms/studio
+.. _newIa-studio-configuration:
 
 -------------
 Configuration
 -------------
-
-.. _newIa-studio-configuration:
 
 This section details how to configure settings managed through Crafter Studio.
 
@@ -120,25 +115,25 @@ Here are the settings that can be configured through Crafter Studio:
 
 .. TODO Remove the toctree below once the links are moved up to the table
 
-.. toctree::
-   :maxdepth: 1
+.. .. toctree::
+      :maxdepth: 1
 
-   studio/asset-processing-config
-   studio/aws-profiles-configuration
-   studio/blob-stores
-   studio/box-profiles-configuration
-   studio/configurations
-   studio/content-monitoring
-   studio/content-type-editor-config
-   studio/dependency-resolver
-   studio/notification-configuration
-   studio/permission-mappings
-   studio/project-configuration
-   studio/project-policy-configuration
-   studio/role-mappings
-   studio/rte-configuration
-   studio/user-interface-configuration
-   studio/webdav-profiles-configuration
+..    studio/asset-processing-config
+      studio/aws-profiles-configuration
+      studio/blob-stores
+      studio/box-profiles-configuration
+      studio/configurations
+      studio/content-monitoring
+      studio/content-type-editor-config
+      studio/dependency-resolver
+      studio/notification-configuration
+      studio/permission-mappings
+      studio/project-configuration
+      studio/project-policy-configuration
+      studio/role-mappings
+      studio/rte-configuration
+      studio/user-interface-configuration
+      studio/webdav-profiles-configuration
 
 
 Crafter Studio supports creating multiple environments with different configuration files for each environment.  To setup an environment follow the guide below:
@@ -155,3 +150,11 @@ CrafterCMS supports managing assets in external storage through workflow and pub
    :maxdepth: 1
 
    studio/publishing-assets-in-external-storage
+
+|hr|
+
+-----------
+Source Code
+-----------
+
+Crafter Studio's source code is managed in GitHub: https://github.com/craftercms/studio

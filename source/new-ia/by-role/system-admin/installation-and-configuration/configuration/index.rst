@@ -26,32 +26,33 @@ Modules
 Deployer
 ^^^^^^^^
 .. TODO: Briefly describe Crafter Deployer's role and the purpose of administering it
+
 :ref:`Deployer Administration and Configuration <newIa-crafter-deployer-administration>`
 
 
-.. toctree::
+.. .. toctree::
    :maxdepth: 1
 
-   reverse-proxy-configuration
+..   reverse-proxy-configuration
 
-   studio/studio-configuration
-   studio/session-timeout-settings
-   studio/publishing-blacklist
+..   studio/studio-configuration
+     studio/session-timeout-settings
+     studio/publishing-blacklist
 
-   engine/configure-engine-multi-tenancy
-   engine/engine-configuration-overrides
-   engine/turning-off-show-error
+..   engine/configure-engine-multi-tenancy
+     engine/engine-configuration-overrides
+     engine/turning-off-show-error
 
-   deployer/admin-guide
-   deployer/processors-guide
-   deployer/templates-guide
-   deployer/elasticsearch-configuration-guide
+..   deployer/admin-guide
+     deployer/processors-guide
+     deployer/templates-guide
+     deployer/elasticsearch-configuration-guide
 
-   profile/index
-   profile/admin/index
+..   profile/index
+     profile/admin/index
 
-   social/index
-   social/admin/index
+..   social/index
+     social/admin/index
 
 
 

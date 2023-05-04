@@ -65,9 +65,7 @@ The remainder of this document explains the flow illustrated below.
     :width: 80 %
     :align: center
 
-.. raw:: html
-
-   <hr/>
+|hr|
 
 --------------
 Implementation

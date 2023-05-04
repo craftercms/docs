@@ -10,8 +10,6 @@
 DevContentOps Toolkit (Crafter CLI)
 ===================================
 
-.. TODO Add a link to GitHub somewhere
-
 CrafterCMS provides a DevContentOps Toolkit to support :ref:`DevContentOps <newIa-devcontentops>` processes in CrafterCMS.  The DevContentOps Toolkit contains the CrafterCMS Command Line Interface (CLI), that allows you to authenticate with CrafterCMS and exercise its APIs via a Unix or Windows command line interface.
 
 To run the command line tool (CrafterCMS Command line Interface (CLI) for DevContentOps processes), in your terminal program, navigate to the ``bin`` folder  ``CRAFTER_HOME/bin/cli/bin/``.  There you will find two versions of the tool:
@@ -19,7 +17,9 @@ To run the command line tool (CrafterCMS Command line Interface (CLI) for DevCon
 * **crafter-cli:** - for users on a Linux/macOS operating system
 * **crafter-cli.bat** - for users on a Windows operating system
 
-When using the **crafter-cli**, we first need to setup the connection to CrafterCMS before we can use the other available commands.  To setup the connection, run the :ref:`add-environment <newIa-crafter-cli-add-environment>` command,  provide a name, the url for a CrafterCMS authoring server and the authentication information.
+.. _newIa-crafter-cli-add-environment:
+
+When using the **crafter-cli**, we first need to setup the connection to CrafterCMS before we can use the other available commands.  To setup the connection, run the ``add-environment`` command,  provide a name, the url for a CrafterCMS authoring server and the authentication information.
 
 For the example below, we'll use ``local`` for the name, ``http://localhost:8080`` for the url, and your access token for the authentication.  See :ref:`here <newIa-access-tokens>` for the steps on how to create a token.  Leave the token blank, you will be prompted for the token after issuing the ``add-environment`` command:
 
@@ -60,6 +60,7 @@ Here's an example of syncing to a remote repository:
 
    |
 
+
 To view the available commands, type in ``./crafter-cli -h``
 
    .. code-block:: bash
@@ -81,6 +82,8 @@ To view the available commands, type in ``./crafter-cli -h``
 
    |
 
+.. _newIa-crafter-cli-command-help:
+
 To view more information about each command, just enter ``./crafter-cli <command>``, for example:
 
    .. code-block:: bash
@@ -99,6 +102,7 @@ To view more information about each command, just enter ``./crafter-cli <command
 
    |
 
+Crafter CrafterCMS Command line Interface (CLI) for DevContentOps processes source code is managed in GitHub: https://github.com/craftercms/cli
 
 
 
