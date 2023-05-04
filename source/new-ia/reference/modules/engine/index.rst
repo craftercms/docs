@@ -83,7 +83,7 @@ These site configuration files are located under ``CRAFTER_HOME/data/repos/sites
 
 These files can be accessed by navigating from the Studio Sidebar to |projectTools| ➜ ``Configuration``, then selecting the desired Engine configuration option from the dropdown.
 
-For more information on how to configure site settings related to Crafter Engine see :ref:`newIa-engine_configuration`
+For more information on how to configure site settings related to Crafter Engine see :ref:`newIa-engine-configuration`
 
 .. _newIa-engine-project-configuration-guide:
 .. include:: /new-ia/includes/engine-project-configuration.rst

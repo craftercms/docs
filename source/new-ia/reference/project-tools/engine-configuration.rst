@@ -18,11 +18,11 @@ Engine Configuration
     * - Configuration File
       - Description
       - More Information
-    * - Engine Configuration file, ``s$TOMCAT/shared/classes/crafter/engine/extension/sites/{siteName}/site-config.xml``
-      - Project configuration used by Crafter Engine
+    * -
       -
-    * - Engine Application Context, ``application-context.xml``
-      - Project application context used by Crafter Engine
+      -
+    * -
+      -
       -
 
 
