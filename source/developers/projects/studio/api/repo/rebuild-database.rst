@@ -9,7 +9,7 @@ Rebuild Database (deprecated)
 Rebuild Crafter Studio's database and object state with the underlying repository.
 
 .. important::
-    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/repository/rebuildDatabase` for the current version.
+    This API is deprecated and provided only as a reference.  Please see `rebuildDatabase <../../../../../_static/api/studio.html#tag/repository/operation/rebuildDatabase>`_ for the current version.
 
 --------------------
 Resource Information

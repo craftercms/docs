@@ -9,7 +9,7 @@ Clone a CMIS File into Studio (deprecated)
 Clone a file from a CMIS repository to Studio provided paths.
 
 .. important::
-    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/cmis/cmisClone` for the current version.
+    This API is deprecated and provided only as a reference.  Please see `cmisClone <../../../../../_static/api/studio.html#tag/cmis/operation/cmisClone>`_ for the current version.
 
 --------------------
 Resource Information

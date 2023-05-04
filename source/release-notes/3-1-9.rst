@@ -24,7 +24,7 @@ Updates
 * Added support for using the numpad (numeric keypad/ten key/number pad) on a keyboard in ``number`` form control
 
 * Added support for the search API to accept path filters with regex values |br|
-  The search parameter (SearchParams) ``path`` is now added in the search API for filtering paths using a regular expression.  See :studio_swagger_url:`#/search/search` for more information.
+  The search parameter (SearchParams) ``path`` is now added in the search API for filtering paths using a regular expression.  See `search <../_static/api/studio.html#tag/search/operation/search>`_ for more information.
 
 * Added a new lifecycle hook for remote targets |br|
   All targets that use the ``gitPullProcessor`` need to include a new lifecycle hook, ``deleteLocalRepoFolderLifecycleHook``.  This new lifecycle hook will be automatically added to existing targets when upgrading to CrafterCMS 3.1.9 by the upgrade manager.

@@ -9,7 +9,7 @@ Add Remote (deprecated)
 Add remote repository to site content repository.
 
 .. important::
-    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/repository/addRemoteRepository` for the current version.
+    This API is deprecated and provided only as a reference.  Please see `addRemoteRepository <../../../../../_static/api/studio.html#tag/repository/operation/addRemoteRepository>`_ for the current version.
 
 --------------------
 Resource Information

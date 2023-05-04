@@ -1,37 +1,27 @@
-.. index:: CrafterCMS 3.1.28 Release Notes
+.. index:: CrafterCMS 3.1.30 Release Notes
 
 -----------------
-CrafterCMS 3.1.28
+CrafterCMS 3.1.30
 -----------------
 
-*Released December 21, 2022*
+*Released May 4, 2023*
 
-This release includes fixes for issues with the release version 3.1.27.
+This release includes fixes for issues with the release version 3.1.29.
 
 ^^^^^^^
 Updates
 ^^^^^^^
 
-* Updated Moment Timezone library |br|
-  See `here <https://github.com/craftercms/craftercms/issues/5855>`__ for more information
+* Fixed issue with ``crafter.sh`` script not terminating Elasticsearch process in RHEL environments |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5822>`__ for more information
 
-* Added support for setting a primary publisher node for clusters |br|
-  A node in the cluster needs to be set as a primary publisher before any publishing can happen.
-  To set a node as the primary publishing node, issue the cluster setClusterPrimary API:
+* Upgraded various libraries and dependencies  |br|
 
-   `setClusterPrimary <../_static/api/studio.html#tag/cluster/operation/setClusterPrimary>`_
-
-  See :ref:`clustering` for more information
-
-* Added an environment variable for setting a default esapi library, ``CRAFTER_ESAPI_DEFAULT_CONFIGURATION`` |br|
-  See :ref:`here <upgrade-to-3-1-28>` for more information on using the new environment variable
-
-
-For a full list of tickets, please visit: `GitHub 3.1.28 Milestone <https://github.com/craftercms/craftercms/milestone/92?closed=1>`_
+For a full list of tickets, please visit: `GitHub 3.1.30 Milestone <https://github.com/craftercms/craftercms/milestone/94?closed=1>`_
 
 .. important::
 
-    Please see :ref:`upgrading-craftercms` for instructions on how to update your CrafterCMS install to 3.1.1 (applies to 3.1.27)
+    Please see :ref:`upgrading-craftercms` for instructions on how to update your CrafterCMS install to 3.1.1 (applies to 3.1.30)
 
     Starting with JVM version 1.8.0_292, support for TLS v1.1 and earlier is disabled by default |br|
     See :ref:`debugging_ssl_issues` if you encounter issues.

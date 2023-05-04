@@ -9,7 +9,7 @@ Push To Remote (deprecated)
 Push content to remote repository from site content repository.
 
 .. important::
-    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/repository/pushToRemoteRepository` for the current version.
+    This API is deprecated and provided only as a reference.  Please see `pushToRemoteRepository <../../../../../_static/api/studio.html#tag/repository/operation/pushToRemoteRepository>`_ for the current version.
 
 
 --------------------

@@ -43,7 +43,7 @@ the primary publishing node from the load balancer, if possible.  Note that a no
 
 To set a node as the primary publishing node, issue the cluster setClusterPrimary API:
 
-   :studio_swagger_url:`#/cluster/setClusterPrimary`
+   `setClusterPrimary <../../_static/api/studio.html#tag/cluster/operation/setClusterPrimary>`_
 
 It is not recommended to switch the primary publishing node often.  Only switch the primary publishing node to a healthy node during a failover.
 

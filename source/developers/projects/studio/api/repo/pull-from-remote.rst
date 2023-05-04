@@ -9,7 +9,7 @@ Pull From Remote (deprecated)
 Pull content from remote repository to site content repository.
 
 .. important::
-    This API is deprecated and provided only as a reference.  Please see :studio_swagger_url:`#/repository/pullFromRemoteRepository` for the current version.
+    This API is deprecated and provided only as a reference.  Please see `pullFromRemoteRepository <../../../../../_static/api/studio.html#tag/repository/operation/pullFromRemoteRepository>`_ for the current version.
 
 
 --------------------

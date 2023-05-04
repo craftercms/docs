@@ -29,7 +29,7 @@ author = u'CrafterCMS'
 # The short X.Y version.
 version = u'3.1'
 # The full version, including alpha/beta/rc tags.
-release = u'3.1.29'
+release = u'3.1.30'
 
 
 # -- General configuration ---------------------------------------------------
@@ -52,7 +52,8 @@ extensions = [
     'edit_on_github',
     'sphinx.ext.extlinks',
     'version_tag',
-    'sphinx_copybutton'
+    'sphinx_copybutton',
+    'open_iframe_modal_button'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -238,15 +239,11 @@ rst_epilog = """
 
 # Javadoc home and version
 javadoc_base = 'http://javadoc.craftercms.org/'
-javadoc_version = '3.1.29'
-
-# swagger base and version
-studio_swagger_base = 'https://app.swaggerhub.com/apis/craftercms/studio/'
-studio_swagger_version = '3.1.28'
+javadoc_version = '3.1.30'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),
-            'studio_swagger_url': (studio_swagger_base + studio_swagger_version + '%s', None )}
+            'base_url': ('/' + language + '/' + version + '/%s', None)}
 
 #
 # Open links in new tab
