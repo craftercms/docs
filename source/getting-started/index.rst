@@ -1,39 +1,73 @@
-:is-up-to-date: True
+:is-up-to-date: False
+:since-version: 4.0.0
+:nosearch:
 
-..  _getting-started:
+..  _newIa-getting-started:
 
 ===============
 Getting Started
 ===============
 
-This section lets you get started quickly on using CrafterCMS for development or evaluation.
+This section lets you get started quickly on using CrafterCMS.
+
+How do I install CrafterCMS? First, let's make sure we have all the requirements.
+
+.. include:: /new-ia/includes/requirements.rst
+
+|hr|
+
+Installing and running CrafterCMS is easy. You have a number of choices:
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   docker
+   linux
+   mac
+   wsl
+
+------------
+Linux System
+------------
+You can use the :ref:`Linux<newIa-installing-craftercms-on-linux>` bundles or :ref:`Docker<newIa-running-craftercms-in-docker>`.
+
+|hr|
+
+----------
+Mac System
+----------
+You can use :ref:`Mac<newIa-installing-craftercms-on-macos>` bundles or ref:`Docker<newIa-running-craftercms-in-docker>`.
+
+|hr|
+
+-------
+Windows
+-------
+You can use :ref:`WSL<newIa-installing-craftercms-on-wsl>` or ref:`Docker<newIa-running-craftercms-in-docker>`.
+
+Note that the preferred method of installing and running CrafterCMS is via the binary archive through WSL as described :ref:`here <newIa-installing-craftercms-on-wsl>`.
+
+|hr|
+
+---
+AWS
+---
+You can use :ref:`Linux<newIa-installing-craftercms-on-linux>` bundles or a `prebuilt AMI<https://aws.amazon.com/marketplace/seller-profile?id=6d75ffca-9630-44bd-90b4-ac0e99058995>` from the AWS marketplace.
+
+|hr|
+
+----
+SaaS
+----
+You can sign up for `Crafter Cloud<https://craftercms.com/products/crafter-cloud>`.
+
+How do I start crafting my experiences?
 
 .. toctree::
    :maxdepth: 2
 
-   /system-administrators/requirements-supported-platforms
-   quick-start-guide
-   your-first-website
+   your-first-project/headless.rst
+   your-first-project/templated.rst
 
-
-**Here are a few more links to get you started crafting!**
-	
-If you are a newly minted author ready to create your own digital experience in Crafter Studio, the place to start is our authoring guide:
-
-    * :ref:`content_authors`
-
-
-If you are a developer gung-ho to start developing, here are a couple resources to get you going:
-
-    * :ref:`developers`
-    * :ref:`developer_cookbooks`
-
-If you are a system administrator and would like to learn more about configuring/setting up CrafterCMS or to setup a production environment, here are some resources to get you going:
-
-    * :ref:`system-administrators`
-    * :ref:`production-environment-setup`
-
-Looking for support? The following page will get you started:
-
-    * :ref:`support`
-
+Once you have CrafterCMS up and running, proceed to learn more about CrafterCMS by reviewing the documentation based on your role or interest :ref:`here<newIa-by-role>`.

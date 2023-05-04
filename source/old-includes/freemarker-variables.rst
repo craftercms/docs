@@ -42,7 +42,7 @@
 ||                          || ``crafter.engine.environment``       ||                                   |
 ||                          || property                             ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
-|| siteConfig               || The current site Configuration       || |XMLConfiguration|                |
+|| siteConfig               || The current project Configuration    || |XMLConfiguration|                |
 ||                          || loaded from /config/site.xml.        ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
 || siteContext              || The current SiteContext              || |SiteContextHashModel|            |
@@ -86,7 +86,7 @@ with ``authToken`` if possible:
       The variables ``profile`` and ``authentication`` listed  above will be null in most cases and should not be used anymore
 
 
-The following variables are restricted by default, to use them see :ref:`newIa-access-to-services`
+The following variables are restricted by default, to use them see :ref:`access-to-services`
 
 +---------------------------+---------------------------------------+------------------------------------+
 || Name                     || Description                          || Type                              |
@@ -98,7 +98,6 @@ The following variables are restricted by default, to use them see :ref:`newIa-a
 
 .. |SiteItemService| replace:: :javadoc_base_url:`SiteItemService <engine/org/craftercms/engine/service/SiteItemService.html>`
 .. |UrlTransformationService| replace:: :javadoc_base_url:`UrlTransformationService <engine/org/craftercms/engine/service/UrlTransformationService.html>`
-.. |SearchService| replace:: :javadoc_base_url:`SearchService <search/org/craftercms/search/service/SearchService.html>`
 .. |ApplicationContextAccessor| replace:: :javadoc_base_url:`ApplicationContextAccessor <engine/org/craftercms/engine/util/spring/ApplicationContextAccessor.html>`
 .. _PropertySourcesPropertyResolver: https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/PropertySourcesPropertyResolver.html
 .. |BreadcrumbBuilder| replace:: :javadoc_base_url:`BreadcrumbBuilder <engine/org/craftercms/engine/navigation/NavBreadcrumbBuilder.html>`

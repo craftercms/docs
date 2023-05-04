@@ -1,8 +1,12 @@
 :is-up-to-date: True
+:last-updated: 4.0.0
+:nosearch:
 
 .. index:: Documentation Standard
 
-.. _documentation-standard:
+.. TODO Fix this to match our latest style
+
+.. _newIa-documentation-standard:
 
 ######################
 Documentation Standard
@@ -51,11 +55,11 @@ External URL without Tag: http://example.com
 
 	External URL without Tag: http://example.com
 
-Sphinx-doc reference: :ref:`content-view-templates`
+Sphinx-doc reference: :ref:`newIa-content-view-templates`
 
 .. code-block:: rst
 
-	Sphinx-doc reference: :ref:`content-view-templates`
+	Sphinx-doc reference: :ref:`newIa-content-view-templates`
 
 
 Anchors

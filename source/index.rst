@@ -1,56 +1,65 @@
-:is-up-to-date: True
-:last-updated: 4.0.0
+:is-up-to-date: False
+:last-updated: 4.0.1
 
-==================================
-CrafterCMS |version| Documentation
-==================================
+:nosearch:
+
+
+#########################################
+CrafterCMS |version| Documentation (beta)
+#########################################
 
 .. default-domain:: craftercms
 
-CrafterCMS is a modern headless+ content management platform for building digital experience applications including:
+.. Section outline:
+   1.1 What is CrafterCMS
+   1.2 When/where to use CrafterCMS
+   1.3 Who uses CrafterCMS
+   1.4 FAQ
+
+This documentation introduces key concepts in CrafterCMS |version|, presents the authoring and development environment, and provides operational and administrative considerations and procedures as well as a comprehensive reference section.
+
+
+==================
+What is CrafterCMS
+==================
+
+CrafterCMS is a modern content management platform for building digital experience applications including:
 
 * Single Page Applications (SPAs) using frameworks like React, Vue, and Angular
 * Native mobile apps and headless applications (IOT, digital signage, wearables, etc.)
 * HTML5 websites using Bootstrap or other HTML frameworks
-* eCommerce front-ends
+* e-commerce front-ends
 * OTT video experiences on AWS Elemental Media Services
 * AR/VR applications using A-Frame
 
-CrafterCMS is a dynamic CMS based on Git and supports DevContentOps processes for code and content. It is also a hybrid-headless, API-first (GraphQL, REST, in-process) CMS, and that allows developers to use their favorite UI framework and tools.
+Crafter is a dynamic CMS based on Git and supports DevContentOps processes for code and content. It is also a hybrid-headless, API-first (GraphQL, REST, in-process) CMS, and that allows developers to use their favorite UI frameworks and tools.
 
-CrafterCMS differentiates itself from other CMSs with its architecture: microservices-based, serverless, elastic and planet-wide scalability. To learn more, see the :ref:`architecture`.
+CrafterCMS differentiates itself from existing CMSs with its architecture: microservices-based, serverless, elastic and planet-wide scalability. To learn more, see the :ref:`newIa-general-architecture`.
 
-This Manual introduces key concepts in CrafterCMS, presents the authoring and development environment, and provides operational and administrative considerations and procedures as well as a comprehensive reference section.
+============================
+When/where to use CrafterCMS
+============================
 
-.. toctree::
-   :maxdepth: 4
-    
-   /getting-started/index
-   /content-authors/index
-   /developers/index
-   /site-administrators/index
-   /system-administrators/index
-   /security/index
-   /release-notes/index
-   /roadmap/index
-   /contribute/index
-   /source-code
-   /get-support/index
-   /faq/index
+.. todo: Fill in
 
-.. toctree::
-   :maxdepth: 1
+===================
+Who uses CrafterCMS
+===================
 
-   Acknowledgements </acknowledgements/index>
+.. todo: Fill in
+   developers
+   devOps
+   authors
 
 .. toctree::
    :titlesonly:
-   :maxdepth: 3
+   :maxdepth: 1
 
-   CrafterCMS docs Beta </new-ia/index>
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
+   getting-started/index
+   by-role/index
+   security/index
+   release-notes/index
+   contribute/index
+   roadmap/index
+   support/index
+   reference/index

@@ -57,7 +57,7 @@
 +------------------------+---------------------------------------+--------------------------------+
 || logger                || The GroovyUtils SLF4J logger         || `Logger`_                     |
 +------------------------+---------------------------------------+--------------------------------+
-|| siteConfig            || The current site Configuration,      || |XMLConfiguration|            |
+|| siteConfig            || The current project Configuration,   || |XMLConfiguration|            |
 ||                       || loaded from /config/site.xml.        ||                               |
 +------------------------+---------------------------------------+--------------------------------+
 || siteContext           || The current SiteContext              || |SiteContext|                 |
@@ -77,7 +77,7 @@
 .. |TenantService| replace:: :javadoc_base_url:`TenantService <profile/org/craftercms/profile/api/services/TenantService.html>`
 .. |AuthenticationService| replace:: :javadoc_base_url:`AuthenticationService <profile/org/craftercms/profile/api/services/AuthenticationService.html>`
 .. |AuthenticationManager| replace:: :javadoc_base_url:`AuthenticationManager <profile/org/craftercms/security/authentication/AuthenticationManager.html>`
+.. |TextEncryptor| replace:: See ``TextEncryptor`` under ``org.springframework.security.crypto.encrypt`` in the `Spring Security <https://docs.spring.io/spring-security/reference/index.html>`__ apidocs
 .. _Logger: http://www.slf4j.org/api/org/slf4j/Logger.html
 .. |XMLConfiguration| replace:: See ``XMLConfiguration`` under ``org.apache.commons.configuration2`` in the `Apache Commons <https://commons.apache.org/proper/commons-configuration/index.html>`__ apidocs
 .. |SiteContext| replace:: :javadoc_base_url:`SiteContext <engine/org/craftercms/engine/service/context/SiteContext.html>`
-.. |TextEncryptor| replace:: See ``TextEncryptor`` under ``org.springframework.security.crypto.encrypt`` in the `Spring Security <https://docs.spring.io/spring-security/reference/index.html>`__ apidocs
