@@ -16,13 +16,18 @@ First we'll take a look at the requirements and supported platform for installin
 
 .. include:: /new-ia/includes/requirements.rst
 
+.. raw:: html
+
+   <hr>
+
 .. _newIa-installation:
 
 ------------
 Installation
 ------------
 
-CrafterCMS provides the following methods for installation depending on your environment. There are three main installation methods:
+CrafterCMS provides the following methods for installation depending on your environment. There are various installation methods:
+
 - Docker
 - Kubernetes
 - AWS AMI
@@ -78,10 +83,16 @@ Build from Source
 
 CrafterCMS is open source and you can always build and run it from source code `here <https://github.com/craftercms/craftercms>`__
 
+.. raw:: html
+
+   <hr>
 
 -------------
 Configuration
 -------------
+
+Credentials may be required in some configurations. For more information on how to manage/encode your secrets such as
+AWS credentials, please see :ref:`newIa-managing-secrets`
 
 ^^^^^^^^^^^^^^^^^^^^^
 Securing Your Install
@@ -129,6 +140,6 @@ Main Menu
 """""""""
 .. TODO explain why would one want to edit this
 
-:ref:`newIa-main-menu-config`
+:ref:`newIa-nav-menu-global-config`
 
 .. TODO Add configuration tasks below detailing how to accomplish that task with references to the relevant configuration files

@@ -139,7 +139,8 @@ What's CrafterCMS's licensing terms?
 * Customers who purchase CrafterCMS's support subscription receive a commercial license that alleviates them from the terms of the open source license.
 
 .. toctree::
-   :maxdepth: 3
+   :titlesonly:
+   :maxdepth: 1
 
    getting-started/index
    by-role/index

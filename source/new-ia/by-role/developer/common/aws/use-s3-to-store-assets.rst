@@ -88,6 +88,8 @@ bucket name for the actual bucket where you're storing the documents):
 
 |
 
+Please see :ref:`newIa-managing-secrets` for more information on how to manage/encode your AWS credentials.
+
 --------------------------------------------------------------------------------------------------
 Step 2: Add the controls and data source for uploading files to your S3 bucket to the content type
 --------------------------------------------------------------------------------------------------

@@ -83,6 +83,9 @@ For the project repository, the project structure looks like this::
         URL Rewrites and Vanity URLs
         Security, reference Sys Admin
 
+Credentials may be required in some project configurations. For more information on how to manage/encode your secrets such as
+AWS credentials, please see :ref:`newIa-managing-secrets`
+
 ---------
 Authoring
 ---------
@@ -342,8 +345,6 @@ To enable this, add the following bean to your project's application-context.xml
 ^^^^^^^
 Preview
 ^^^^^^^
-
-.. _newIa-using-the-proxy-configuration:
 
 """""""""""""""""""
 Proxy Configuration

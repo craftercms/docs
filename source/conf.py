@@ -236,7 +236,13 @@ rst_epilog = """
 
    <br />
 
+.. # define a horizontal line for HTML
+.. |hr| raw:: html
+
+   <hr>
+
 """
+
 
 # Javadoc home and version
 javadoc_base = 'http://javadoc.craftercms.org/'

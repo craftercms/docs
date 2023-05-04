@@ -170,9 +170,7 @@ See https://github.com/craftercms/google-analytics-plugin/blob/master/delivery/t
 
 
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 .. _how-do-i-make-my-own-plugin:
 
@@ -412,9 +410,7 @@ To reuse those libraries, do the following:
      import com.example.java.Plugin // This class is made up, it can be anything
 
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 ----------------------
 Publishing Your Plugin
@@ -422,9 +418,7 @@ Publishing Your Plugin
 
 To publish a plugin in the Crafter Marketplace you can follow the instructions in :ref:`marketplace-create-extensions`
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 ---------------------------
 Retrieving Extension Assets
@@ -445,9 +439,7 @@ If your extensions is nested on a plugin id directory, you should also include t
 
 ``/studio/1/plugin/file?siteId={siteId}&pluginId={yourPluginId}&type={yourPluginType}&name={yourPluginName}&file={fileName}``
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 -------------------
 Installing a Plugin
@@ -512,9 +504,7 @@ using any of the ``crafter-cli`` commands.
 
 See :ref:`crafter-cli-copy-plugin` for more information on the ``copy-plugin`` command.
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 .. _example-component-plugin:
 

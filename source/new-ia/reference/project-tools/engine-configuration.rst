@@ -4,7 +4,7 @@
 
 .. index:: Engine Configuration
 
-.. _newIa-engine_configuration:
+.. _newIa-engine-configuration:
 
 ====================
 Engine Configuration
@@ -18,7 +18,12 @@ Engine Configuration
     * - Configuration File
       - Description
       - More Information
-
+    * - Engine Configuration file, ``s$TOMCAT/shared/classes/crafter/engine/extension/sites/{siteName}/site-config.xml``
+      - Project configuration used by Crafter Engine
+      -
+    * - Engine Application Context, ``application-context.xml``
+      - Project application context used by Crafter Engine
+      -
 
 
 .. list-table:: Engine Project/Site Configuration Files

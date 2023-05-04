@@ -80,6 +80,8 @@ For this guide, the Box Profiles should look like this (replace the ``...``'s fo
 
 |
 
+Please see :ref:`newIa-managing-secrets` for more information on how to manage/encode your Box credentials
+
 ------------------------------------------
 Step 2: Enable the Box File Upload Control
 ------------------------------------------

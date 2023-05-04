@@ -327,6 +327,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <newIa-use-s3-to-store-a
         </s3>
       </aws>
 
+   Please see :ref:`newIa-managing-secrets` for more information on how to manage/encode your AWS credentials.
 
 #. Next we'll modify the content type ``Page - Article`` and the template for it, ``article.ftl`` to allow the user to select files to be uploaded like in the example :ref:`here <newIa-use-s3-to-store-assets>`.  We'll end up with two files modified.  The ``article.ftl`` and ``form-definition.xml`` files.
 

@@ -12,7 +12,7 @@
 Configurations
 ==============
 
-The Configurations configuration file allows you to specify which items can be accessed from the dropdown list in **Project Tools** -> **Configuration**.
+The Configurations configuration file allows you to specify which items can be accessed from the list in **Project Tools** -> **Configuration**.
 
 To find this configuration xml through studio follow the next instructions:
 
@@ -62,6 +62,8 @@ List of available configuration tags
 || files          || This tag contains each  file.                                                |
 +-----------------+-------------------------------------------------------------------------------+
 || file           || This tag contains the configuration of each file.                            |
++-----------------+-------------------------------------------------------------------------------+
+|| module         || CrafterCMS module                                                            |
 +-----------------+-------------------------------------------------------------------------------+
 || path           || Path where the system will find the specific xml file                        |
 +-----------------+-------------------------------------------------------------------------------+

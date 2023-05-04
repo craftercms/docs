@@ -131,9 +131,7 @@ is ready to be submitted you can follow these steps:
   in private extensions/Marketplace, you'll need to switch to the Enterprise Edition of CrafterCMS.
 
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 For more information on the Crafter Marketplace, see https://craftercms.com/marketplace
 

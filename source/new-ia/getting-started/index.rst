@@ -14,17 +14,32 @@ How do I install CrafterCMS? First, let's make sure we have all the requirements
 
 .. include:: /new-ia/includes/requirements.rst
 
+|hr|
+
 Installing and running CrafterCMS is easy. You have a number of choices:
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   docker
+   linux
+   mac
+   wsl
 
 ------------
 Linux System
 ------------
 You can use the :ref:`Linux<newIa-installing-craftercms-on-linux>` bundles or :ref:`Docker<newIa-running-craftercms-in-docker>`.
 
+|hr|
+
 ----------
 Mac System
 ----------
 You can use :ref:`Mac<newIa-installing-craftercms-on-macos>` bundles or ref:`Docker<newIa-running-craftercms-in-docker>`.
+
+|hr|
 
 -------
 Windows
@@ -33,10 +48,14 @@ You can use :ref:`WSL<newIa-installing-craftercms-on-wsl>` or ref:`Docker<newIa-
 
 Note that the preferred method of installing and running CrafterCMS is via the binary archive through WSL as described :ref:`here <newIa-installing-craftercms-on-wsl>`.
 
+|hr|
+
 ---
 AWS
 ---
 You can use :ref:`Linux<newIa-installing-craftercms-on-linux>` bundles or a `prebuilt AMI<https://aws.amazon.com/marketplace/seller-profile?id=6d75ffca-9630-44bd-90b4-ac0e99058995>` from the AWS marketplace.
+
+|hr|
 
 ----
 SaaS

@@ -66,7 +66,7 @@ For delivery environments:
     }'
 
 .. note::
-  For a detailed list of parameters see :ref:`newIa-crafter-deployer-api-target-create`
+  For a detailed list of parameters see `createTarget <../../../../_static/api/deployer.html#tag/target/operation/createTarget>`_
 
 |
 

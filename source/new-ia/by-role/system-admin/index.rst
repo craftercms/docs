@@ -4,15 +4,15 @@
 
 .. _newIa-system-admin:
 
-============================
-For the System Administrator
-============================
+====================
+System Administrator
+====================
 
 This section is intended to provide system administrators with the information and access to the tools
 they need to install and maintain CrafterCMS.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    deployment-architecture
    installation-and-configuration/index

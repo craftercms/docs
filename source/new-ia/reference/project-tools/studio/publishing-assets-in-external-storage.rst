@@ -137,6 +137,8 @@ In your Studio, click on |projectTools| -> *Configuration* -> *Blob Stores* and 
 * **mappings.mapping.storeTarget:** the name of the storeTarget inside the store (AWS S3 buckets, ``my-authoring-bucket`` and ``my-deli-bucket`` for our example above)
 * **configuration:** configuration specific for the store type (For AWS S3, it requires credentials to access the buckets)
 
+Remember to encrypt your credentials. For more information on how to manage/encode your secrets such as AWS credentials,
+please see :ref:`newIa-managing-secrets`
 
 To see more information on the Blob Stores configuration, see :ref:`newIa-blob-stores-configuration`
 
