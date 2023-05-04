@@ -187,7 +187,7 @@ The fields available at this level are:
 || Template     ||                                                                               |
 +---------------+--------------------------------------------------------------------------------+
 || Merge        || The inheritance pattern to use with content of this type, please see Content  |
-|| Strategy     || Inheritance for more detail on this feature :ref:`content-inheritance`  |
+|| Strategy     || Inheritance for more detail on this feature :ref:`content-inheritance`        |
 +---------------+--------------------------------------------------------------------------------+
 || Show in Quick|| Show this content type in the quick create menu from the context nav          |
 || Create       ||                                                                               |
@@ -600,7 +600,7 @@ The following variable names are used by CrafterCMS.
 || placeInNav          || Used by the Page Order control.                                 |
 +----------------------+------------------------------------------------------------------+
 || disabled            || Used to logically remove an object in content delivery.         |
-||                     || For more information, see :ref:`disabling-a-page`         |
+||                     || For more information, see :ref:`disabling-a-page`               |
 +----------------------+------------------------------------------------------------------+
 || expired             || Used to logically remove an object after date                   |
 +----------------------+------------------------------------------------------------------+

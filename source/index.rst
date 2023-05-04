@@ -1,12 +1,12 @@
 :is-up-to-date: False
-:last-updated: 4.0.1
+:last-updated: 4.1.0
 
 :nosearch:
 
 
-#########################################
-CrafterCMS |version| Documentation (beta)
-#########################################
+##################################
+CrafterCMS |version| Documentation
+##################################
 
 .. default-domain:: craftercms
 

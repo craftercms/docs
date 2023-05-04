@@ -1,10 +1,13 @@
+.. TODO Make this about running, not building
+.. TODO Building the project should go in the main README file on CrafterCMS
+
 ------------
 Requirements
 ------------
 
 To run CrafterCMS, the following are required:
 
-    - Java 11
+    - Java 17
     - 8+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
     - Git 2.20.1 and later
 
@@ -30,14 +33,14 @@ JVMs (All components)
 
 The following JVMs are supported:
 
-    - OpenJDK 11
-    - Oracle JDK (HotSpot) 11
+    - OpenJDK 17
+    - Oracle JDK (HotSpot) 17
 
 """""""""""""""""""
 Verify Java Version
 """""""""""""""""""
 
-Ensure that you are running Java 11.  To check,
+Ensure that you are running Java 17.  To check,
 run the following command at the command prompt and make sure that the version displayed is Java 11:
 
 .. code-block:: sh
@@ -50,8 +53,7 @@ The command above should output something like this:
 
 .. code-block:: sh
 
-    openjdk version "11.0.11
-
+    openjdk version "17.0.6"
 |
 
 .. _verify-java-home-env-var:
@@ -179,7 +181,7 @@ For building with Gradle for installing CrafterCMS, the following must be instal
 ^^^^^^^^^^^^^^^^^^^^^^
 On Linux/Windows WSL 2
 ^^^^^^^^^^^^^^^^^^^^^^
-* Java 11
+* Java 17
 * Git 2.20.1+
 * Maven 3.3.x+
 * make and GCC
@@ -203,7 +205,7 @@ On Linux/Windows WSL 2
 ^^^^^^^^
 On macOS
 ^^^^^^^^
-* Java 11
+* Java 17
 * Git 2.20.1+
 * Maven 3.3.x+
 * make and GCC, which can be installed from ``XCode Command Line Tools``

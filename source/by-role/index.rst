@@ -23,7 +23,7 @@ For the Architect
 
 .. |architectByRole| raw:: html
 
-    <a href="architect/index.html"><img alt="By Role - Architect" src="../../_static/images/by-role/architect.webp" style="width: 20%;" /></a>
+    <a href="architect/index.html"><img alt="By Role - Architect" src="../_static/images/by-role/architect.webp" style="width: 20%; border-radius: 50%; object-fit: cover;" /></a>
 
 
 |architectByRole| For the enterprise architect looking for a content management platform, please start :ref:`here<architect>`.
@@ -34,10 +34,9 @@ For the Architect
 For the Developer
 -----------------
 
-.. |developerByRole| image:: /_static/images/by-role/developer.webp
-    :alt: By Role - Developer
-    :width: 20 %
-    :target: developer/index.html
+.. |developerByRole| raw:: html
+
+    <a href="developer/index.html"><img alt="By Role - Architect" src="../_static/images/by-role/developer.webp" style="width: 20%; border-radius: 50%; object-fit: cover;" /></a>
 
 |developerByRole| For the developer learning how to develop on CrafterCMS, please start :ref:`here<developer>`.
 
@@ -45,10 +44,9 @@ For the Developer
 For the Content Author
 ----------------------
 
-.. |authorByRole| image:: /_static/images/by-role/author.webp
-    :alt: By Role - Author
-    :width: 20 %
-    :target: author/index.html
+.. |authorByRole| raw:: html
+
+    <a href="author/index.html"><img alt="By Role - Architect" src="../_static/images/by-role/author.webp" style="width: 20%; border-radius: 50%; object-fit: cover;" /></a>
 
 |authorByRole| For the content author learning to use CrafterCMS to create and manage content, please start :ref:`here<author>`.
 
@@ -56,10 +54,9 @@ For the Content Author
 For the Project Administrator
 -----------------------------
 
-.. |projectAdminByRole| image:: /_static/images/by-role/site_admin.webp
-    :alt: By Role - Project/Site Administrator
-    :width: 20 %
-    :target: site-admin/index.html
+.. |projectAdminByRole| raw:: html
+
+    <a href="site-admin/index.html"><img alt="By Role - Architect" src="../_static/images/by-role/site_admin.webp" style="width: 20%; border-radius: 50%; object-fit: cover;" /></a>
 
 |projectAdminByRole| For the project administrator learning how to create and manage projects/sites in CrafterCMS, please start :ref:`here<project-admin>`.
 
@@ -67,10 +64,9 @@ For the Project Administrator
 For the System Administrator
 ----------------------------
 
-.. |systemAdministrator| image:: /_static/images/by-role/system_admin.webp
-    :alt: By Role - System Admin
-    :width: 20 %
-    :target: system-admin/index.html#system-admin
+.. |systemAdministrator| raw:: html
+
+    <a href="system-admin/index.html"><img alt="By Role - Architect" src="../_static/images/by-role/system_admin.webp" style="width: 20%; border-radius: 50%; object-fit: cover;" /></a>
 
 |systemAdministrator| For the system administrator learning how to set up and configure CrafterCMS, please start :ref:`here<system-admin>`.
 

@@ -110,7 +110,7 @@ Properties prefix: ``crafter.social.ugc.``
 |                  || `ancestors`              ||                                                |
 +------------------+---------------------------+-------------------------------------------------+
 | virusScanner     || [#]_                     || Class implementing the ``VirusScanner``        |
-|                  ||                          || interface, see :ref:`crafter-social-av`  |
+|                  ||                          || interface, see :ref:`crafter-social-av`        |
 +------------------+---------------------------+-------------------------------------------------+
 
 ---------------------------
