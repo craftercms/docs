@@ -5,7 +5,6 @@
 # This file does only contain a selection of the most common options. For a
 # full list see the documentation:
 # http://www.sphinx-doc.org/en/master/config
-#
 
 # -- Path setup --------------------------------------------------------------
 
@@ -299,4 +298,3 @@ class PatchedHTMLTranslator(HTMLTranslator):
 
 def setup(app):
     app.set_translator('html', PatchedHTMLTranslator)
-
