@@ -4,7 +4,7 @@
 
 .. index:: WebDAV Profiles Configuration
 
-.. _newIa-webdav-profiles-configuration:
+.. _webdav-profiles-configuration:
 
 =============================
 WebDAV Profiles Configuration

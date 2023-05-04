@@ -2,7 +2,7 @@
 :last-updated: 4.0.0
 :nosearch:
 
-.. _newIa-setup-serverless-delivery:
+.. _setup-serverless-delivery:
 
 =========================
 Setup Serverless Delivery
@@ -109,7 +109,7 @@ Step 2: Configure the Delivery for Serverless Mode
    - ``crafter.engine.s3.accessKey``
    - ``crafter.engine.s3.secretKey``
 
-   An example of how the :ref:`newIa-server-config.properties <newIa-engine-configuration-files>` would look with configuration to read from an S3 bucket per site
+   An example of how the :ref:`server-config.properties <engine-configuration-files>` would look with configuration to read from an S3 bucket per site
    (which is the most common use case), is the following (values in ``X`` are not displayed since they're sensitive):
 
    .. code-block:: properties
@@ -188,7 +188,7 @@ authoring node. When there's multiple authoring nodes (a cluster), then you'll n
 from a load balanced SSH/HTTPS URL fronting the Studio Git repos.
 
 In both cases you still need to configure Studio to call the Deployer to create the serverless targets on site creation. 
-You can find this configuration under :ref:`CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml <newIa-studio-configuration-files>`. The
+You can find this configuration under :ref:`CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml <studio-configuration-files>`. The
 properties are well documented in the file so they won't be explained here, but there are still some important things to 
 notice:
 

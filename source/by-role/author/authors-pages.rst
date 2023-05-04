@@ -4,7 +4,7 @@
 
 .. index:: Content Authors Working with Pages, Pages
 
-.. _newIa-content_authors_pages:
+.. _content_authors_pages:
 
 ==================
 Working with Pages
@@ -84,7 +84,7 @@ An error form will appear when you try to *Save and Close* without filling out a
 
 |hr|
 
-.. _newIa-editing-a-page:
+.. _editing-a-page:
 
 --------------
 Editing a Page
@@ -456,7 +456,7 @@ scroll in the RTE field.
 
 There are a number of tools available from the RTE out of the box for editing your content.  Custom
 tools may also be added to the RTE, depending on your needs.  Please see the developer section
-:ref:`newIa-rte-configuration` of the docs for more details.
+:ref:`rte-configuration` of the docs for more details.
 
 .. raw:: html
 
@@ -493,8 +493,8 @@ creating the content type.  Generally, when an item on a page is uploaded to the
 ``/site/components/item/.*`` or  ``/static-assets/item/.*``, when the page containing those items is
 copied, a copy of the uploaded items are created.
 
-To learn more about these dependencies and see examples, see :ref:`newIa-item-specific-dependencies` or
-:ref:`newIa-copy-dependencies-configuration`.
+To learn more about these dependencies and see examples, see :ref:`item-specific-dependencies` or
+:ref:`copy-dependencies-configuration`.
 
 .. raw:: html
 
@@ -535,7 +535,7 @@ item deletion.
 
 |
 
-.. _newIa-disabling-a-page:
+.. _disabling-a-page:
 
 ^^^^^^^^^^^^^^^^
 Disabling a Page

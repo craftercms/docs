@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-context-get-all:
+.. _crafter-social-api-context-get-all:
 
 =======================
 Get All Social Contexts

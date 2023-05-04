@@ -4,7 +4,7 @@
 
 .. index:: Use Box to Store Assets; Store Assets
 
-.. _newIa-use-box-to-store-assets:
+.. _use-box-to-store-assets:
 
 =======================
 Use Box to store assets
@@ -80,7 +80,7 @@ For this guide, the Box Profiles should look like this (replace the ``...``'s fo
 
 |
 
-Please see :ref:`newIa-managing-secrets` for more information on how to manage/encode your Box credentials
+Please see :ref:`managing-secrets` for more information on how to manage/encode your Box credentials
 
 ------------------------------------------
 Step 2: Enable the Box File Upload Control

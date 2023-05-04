@@ -3,7 +3,7 @@
 
 :nosearch:
 
-..  _newIa-developer:
+..  _developer:
 
 **********
 Developers
@@ -32,7 +32,7 @@ The following gets you started with content modeling, content retrieval, and mor
 |
 
 Credentials may be required in some cases when accessing content. For more information on how to manage/encode your secrets such as
-AWS credentials, please see :ref:`newIa-managing-secrets`
+AWS credentials, please see :ref:`managing-secrets`
 
 .. raw:: html
 
@@ -81,7 +81,7 @@ While developing your project, there are times when you’d like to see more log
 is happening and address it as needed.  Overriding the logging levels allows you to see more or less
 details depending on your needs.
 
-Learn more about :ref:`newIa-logging`.
+Learn more about :ref:`logging`.
 
 |
 

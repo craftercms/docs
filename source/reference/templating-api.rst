@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-templating-api:
+.. _templating-api:
 
 ===========================
 FreeMarker (Templating) API
@@ -23,7 +23,7 @@ Crafter Engine also populates templates with other useful variables, described b
 
 .. include:: /includes/freemarker-variables.rst
 
-.. _newIa-renderComponent:
+.. _renderComponent:
 
 --------------------
 Rendering Components
@@ -62,7 +62,7 @@ Parameters:
 * **additionalModel**: a Freemarker hash containing key-value pairs that can be used as global variables in the
   component's template
 
-.. _newIa-templating-rendering-navigation:
+.. _templating-rendering-navigation:
 
 --------------------
 Rendering Navigation
@@ -71,9 +71,9 @@ Rendering Navigation
 Crafter Engine provides the option of rendering automatically the navigation for you, just by using the macro
 ``navigation``
 
-See :ref:`newIa-navigation` for more information on the macro
+See :ref:`navigation` for more information on the macro
 
-.. _newIa-templating-rendering-breadcrumbs:
+.. _templating-rendering-breadcrumbs:
 
 ---------------------
 Rendering Breadcrumbs
@@ -82,7 +82,7 @@ Rendering Breadcrumbs
 Crafter also offers a ``renderBreadcrumb`` macro to easily generate a dynamic list with all the
 parent pages of a specific url.
 
-See :ref:`newIa-breadcrumb` for more information on the macro
+See :ref:`breadcrumb` for more information on the macro
 
 ..
   Todo: Review the section below if still applicable
@@ -308,7 +308,7 @@ templates then you should consider creating a Groovy class instead:
 
 .. note::
 
-  All beans defined in the :ref:`Engine Site Application Context <newIa-engine-site-configuration-spring-configuration>`
+  All beans defined in the :ref:`Engine Site Application Context <engine-site-configuration-spring-configuration>`
   file will be available in templates.
 
-  For more information on Crafter Engine Site configuration files, see :ref:`newIa-engine-site-configuration-files`
+  For more information on Crafter Engine Site configuration files, see :ref:`engine-site-configuration-files`

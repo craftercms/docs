@@ -4,7 +4,7 @@
 
 .. index:: Configuration
 
-.. _newIa-configuration:
+.. _configuration:
 
 .. TODO: see why this article is still relevant
 

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-server-get-ui-resource-override:
+.. _crafter-studio-api-server-get-ui-resource-override:
 
 ========================
 Get UI Resource Override

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-security-get-user-roles:
+.. _crafter-studio-api-security-get-user-roles:
 
 ==============
 Get User Roles

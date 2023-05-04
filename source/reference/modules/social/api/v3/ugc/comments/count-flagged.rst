@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-ugc-comments-count-flagged:
+.. _crafter-social-api-ugc-comments-count-flagged:
 
 ======================
 Count Flagged Comments

@@ -3,7 +3,7 @@
 
 .. index:: Crafter Marketplace, Marketplace
 
-.. _newIa-marketplace:
+.. _marketplace:
 
 ===================
 Crafter Marketplace
@@ -25,7 +25,7 @@ CrafterCMS ``extensions`` extend the CMS and provide the user additional functio
 This section provides information on creating and how to submit your extensions so that it's available to the
 community via the Marketplace
 
-.. _newIa-marketplace-create-extensions:
+.. _marketplace-create-extensions:
 
 ---------------------------------------------
 Create Extensions for the Crafter Marketplace
@@ -37,12 +37,12 @@ Types of extensions
 
 - ``blueprint``: This type of extension (blueprint) can be used as a template to create projects, it includes
   support for parameters to allow dynamic sites that use API keys or passwords for external services. For more
-  information about creating blueprints you can follow this guide: :ref:`newIa-create-a-blueprint`.
+  information about creating blueprints you can follow this guide: :ref:`create-a-blueprint`.
 
 - ``plugin``: This type of extension can be used to add features to existing projects, it can include authoring
-  and delivery extensions. For more information about creating plugins you can follow this guide: :ref:`newIa-how-do-i-make-my-own-plugin`
+  and delivery extensions. For more information about creating plugins you can follow this guide: :ref:`how-do-i-make-my-own-plugin`
 
-.. _newIa-submit-extension-to-marketplace:
+.. _submit-extension-to-marketplace:
 
 ^^^^^^^^^^^^^^^^^^^
 Submit an extension
@@ -136,5 +136,5 @@ is ready to be submitted you can follow these steps:
 
 For more information on the Crafter Marketplace, see https://craftercms.com/marketplace/
 
-For more information on developing extensions for the Marketplace, see :ref:`here <newIa-extensions>`
+For more information on developing extensions for the Marketplace, see :ref:`here <extensions>`
 

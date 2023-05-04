@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-profile-api-authentication-authenticate:
+.. _crafter-profile-api-authentication-authenticate:
 
 ============
 Authenticate

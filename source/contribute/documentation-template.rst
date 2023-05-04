@@ -6,7 +6,7 @@
 
 .. TODO Fix this to match our latest style
 
-.. _newIa-documentation-standard:
+.. _documentation-standard:
 
 ######################
 Documentation Standard
@@ -55,11 +55,11 @@ External URL without Tag: http://example.com
 
 	External URL without Tag: http://example.com
 
-Sphinx-doc reference: :ref:`newIa-content-view-templates`
+Sphinx-doc reference: :ref:`content-view-templates`
 
 .. code-block:: rst
 
-	Sphinx-doc reference: :ref:`newIa-content-view-templates`
+	Sphinx-doc reference: :ref:`content-view-templates`
 
 
 Anchors

@@ -4,7 +4,7 @@
 
 .. index:: Navigating the Main Menu
 
-.. _newIa-navigating-main-menu:
+.. _navigating-main-menu:
 
 ==============================
 Navigating the Navigation Menu
@@ -28,30 +28,30 @@ Here are the list of tools available when using an out of the box blueprint.  Th
 
 The configuration files for the Main Menu is located in ``CRAFTER_HOME/data/repos/global/configuration/`` where:
 
-* :ref:`global-menu-config.xml <newIa-global-menu-config>` lets you setup the list of tools available from the Main Menu sidebar
-* :ref:`global-permission-mappings-config.xml <newIa-global-permission-mappings-config>` lets you configure the permissions to a role globally for the entire application
-* :ref:`global-role-mappings-config.xml <newIa-global-role-mappings-config>` lets you configure the mapping between the group and the role
+* :ref:`global-menu-config.xml <global-menu-config>` lets you setup the list of tools available from the Main Menu sidebar
+* :ref:`global-permission-mappings-config.xml <global-permission-mappings-config>` lets you configure the permissions to a role globally for the entire application
+* :ref:`global-role-mappings-config.xml <global-role-mappings-config>` lets you configure the mapping between the group and the role
 
-The tools available in the Main Menu is configured similar to how the Project Tools Sidebar is configured :ref:`here <newIa-project-tools-configuration>` using the :ref:`global menu config <newIa-global-menu-config>` configuration file mentioned above.
+The tools available in the Main Menu is configured similar to how the Project Tools Sidebar is configured :ref:`here <project-tools-configuration>` using the :ref:`global menu config <global-menu-config>` configuration file mentioned above.
 
-.. _newIa-main-menu-tool-projects:
+.. _main-menu-tool-projects:
 
 --------
 Projects
 --------
-``Projects`` contains a list of all the projects the logged in user has access to. The section :ref:`newIa-author-screens` in ``Content Authors`` contains descriptions on some of the actions that can be performed from the Projects screen.
+``Projects`` contains a list of all the projects the logged in user has access to. The section :ref:`author-screens` in ``Content Authors`` contains descriptions on some of the actions that can be performed from the Projects screen.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-sites.webp
     :alt: System Administrator - Navigation Menu Projects
     :align: center
     :width: 85%
 
-.. _newIa-main-menu-tool-users:
+.. _main-menu-tool-users:
 
 -----
 Users
 -----
-A user is anybody who uses CrafterCMS.  ``Users`` lets the administrator manage who has access to Crafter Studio.  See :ref:`newIa-users-management` for more information on ``Users``
+A user is anybody who uses CrafterCMS.  ``Users`` lets the administrator manage who has access to Crafter Studio.  See :ref:`users-management` for more information on ``Users``
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-users.webp
     :alt: System Administrator - Navigation Menu Users
@@ -60,14 +60,14 @@ A user is anybody who uses CrafterCMS.  ``Users`` lets the administrator manage 
 
 |
 
-:ref:`newIa-users-group-management` contains more information on managing users and groups.
+:ref:`users-group-management` contains more information on managing users and groups.
 
-.. _newIa-main-menu-tool-groups:
+.. _main-menu-tool-groups:
 
 ------
 Groups
 ------
-A group consists of a collection of users.  ``Groups`` lets the administrator manage groups, members belonging to a group, etc.  For more information on groups, see :ref:`newIa-groups-management`
+A group consists of a collection of users.  ``Groups`` lets the administrator manage groups, members belonging to a group, etc.  For more information on groups, see :ref:`groups-management`
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-groups.webp
     :alt: System Administrator - Navigation Menu Groups
@@ -76,21 +76,21 @@ A group consists of a collection of users.  ``Groups`` lets the administrator ma
 
 |
 
-:ref:`newIa-users-group-management` contains more information on managing users and groups.
+:ref:`users-group-management` contains more information on managing users and groups.
 
-.. _newIa-main-menu-tool-cluster:
+.. _main-menu-tool-cluster:
 
 -------
 Cluster
 -------
-``Cluster`` lets the administrator manage Studio clusters.  See :ref:`newIa-clustering` for more information on how to setup clustering and available actions from ``Cluster`` from the Main Menu
+``Cluster`` lets the administrator manage Studio clusters.  See :ref:`clustering` for more information on how to setup clustering and available actions from ``Cluster`` from the Main Menu
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-cluster.webp
     :alt: System Administrator - Navigation Menu Cluster
     :align: center
     :width: 85%
 
-.. _newIa-main-menu-tool-audit:
+.. _main-menu-tool-audit:
 
 -----
 Audit
@@ -102,9 +102,9 @@ Audit logs displays the date, time, user and action performed to content in all 
     :align: center
     :width: 85%
 
-See :ref:`newIa-nav-menu-audit` for more details on the audit logs
+See :ref:`nav-menu-audit` for more details on the audit logs
 
-.. _newIa-main-menu-tool-logging-levels:
+.. _main-menu-tool-logging-levels:
 
 --------------
 Logging Levels
@@ -117,9 +117,9 @@ There are 6 log levels defined in CrafterCMS.  These levels determine what messa
     :align: center
     :width: 85%
 
-For more information on logging levels, see :ref:`newIa-override-logging-levels`
+For more information on logging levels, see :ref:`override-logging-levels`
 
-.. _newIa-main-menu-tool-log-console:
+.. _main-menu-tool-log-console:
 
 -----------
 Log Console
@@ -132,11 +132,11 @@ The ``Log Console`` allows the user to view messages depending on what log level
     :align: center
     :width: 75%
 
-:ref:`newIa-override-logging-levels` contains more information on how to track Java packages with the corresponding log levels desired.
+:ref:`override-logging-levels` contains more information on how to track Java packages with the corresponding log levels desired.
 
-The ``Log Console`` here in the Main Menu is similar to a project ``Log Console`` described :ref:`here <newIa-studio-log-console>`.  The difference is the ``Log Console`` from the Main Menu can display logs for all the projects inside Studio, not just one project.
+The ``Log Console`` here in the Main Menu is similar to a project ``Log Console`` described :ref:`here <studio-log-console>`.  The difference is the ``Log Console`` from the Main Menu can display logs for all the projects inside Studio, not just one project.
 
-.. _newIa-main-menu-tool-global-config:
+.. _main-menu-tool-global-config:
 
 -------------
 Global Config
@@ -151,9 +151,9 @@ The ``Global Config`` allows the user to edit the system settings for Studio wit
 
 When making changes here, not all changes can/will take effect without a restart, so expect to have to **restart Studio** for most changes to take effect
 
-For more information on what you can configure from the ``Global Config``, see :ref:`newIa-nav-menu-global-config`
+For more information on what you can configure from the ``Global Config``, see :ref:`nav-menu-global-config`
 
-.. _newIa-main-menu-tool-encryption-tool:
+.. _main-menu-tool-encryption-tool:
 
 ---------------
 Encryption Tool
@@ -166,7 +166,7 @@ The ``Encryption Tool`` allows the user to encrypt sensitive data such as access
     :align: center
     :width: 100%
 
-For more information on how to use the encryption tool, see :ref:`newIa-studio-encryption-tool`.
+For more information on how to use the encryption tool, see :ref:`studio-encryption-tool`.
 
 ----------------
 Token Management
@@ -179,7 +179,7 @@ The ``Token Management Tool`` allows the user to manage access tokens used to ma
     :align: center
     :width: 100%
 
-For more information on how to use the Token Management tool, see :ref:`newIa-cli-access-to-crafter-studio`.
+For more information on how to use the Token Management tool, see :ref:`cli-access-to-crafter-studio`.
 
 -------
 Account
@@ -191,5 +191,5 @@ The ``Account Tool`` allows the user to change the user's personal Crafter Studi
     :align: center
     :width: 100%
 
-For more information on how to use the Account tool, see :ref:`newIa-account-management`.
+For more information on how to use the Account tool, see :ref:`account-management`.
 

@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; File from S3 Repository
 
-.. _newIa-form-source-s3-file-repo:
+.. _form-source-s3-file-repo:
 
 =========================
 S3 Repository Data Source

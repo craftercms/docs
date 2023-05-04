@@ -3,7 +3,7 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
 
-.. _newIa-plugin-descriptor-file:
+.. _plugin-descriptor-file:
 
 ============================
 CrafterCMS Plugin Descriptor
@@ -113,7 +113,7 @@ Here are some things to note in the descriptor file:
    * - plugin.crafterCmsVersions
      - |checkmark|
      - Contains the CrafterCMS version/s that the plugin is compatible with |br|
-       (look in the :ref:`newIa-release-notes` section for the versions available), and you'll need to keep |br|
+       (look in the :ref:`release-notes` section for the versions available), and you'll need to keep |br|
        this up to date
 
 .. note::
@@ -180,7 +180,7 @@ where:
 
 |
 
-.. _newIa-plugin-descriptor-servlet-filter:
+.. _plugin-descriptor-servlet-filter:
 
 Below are examples on how to setup auto-wiring in Studio for various plugin types:
 
@@ -324,4 +324,4 @@ Below are examples on how to setup auto-wiring in Studio for various plugin type
                        value: crafter.siteItemService
 
 
-See :ref:`here <newIa-plugins-authoring-guides>` for examples of plugins auto-wired in Studio.
+See :ref:`here <plugins-authoring-guides>` for examples of plugins auto-wired in Studio.

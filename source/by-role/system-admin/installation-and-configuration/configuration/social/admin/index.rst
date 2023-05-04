@@ -3,7 +3,7 @@
 
 .. index:: System Administrators
 
-.. _newIa-social-admin-console:
+.. _social-admin-console:
 
 ===============================
 Crafter Social Admin Console UI
@@ -11,7 +11,7 @@ Crafter Social Admin Console UI
 
 Crafter Social Admin Console consists of a single WAR file that depends on access to both Crafter
 Social and Crafter Profile. This web application provides a simple way to manage all data related
-to permissions and user generated content without the need to call the :ref:`newIa-crafter-social-api`
+to permissions and user generated content without the need to call the :ref:`crafter-social-api`
 directly.
 
 ------------

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-activity-get-user-activities:
+.. _crafter-studio-api-activity-get-user-activities:
 
 =================
 Get User Activity

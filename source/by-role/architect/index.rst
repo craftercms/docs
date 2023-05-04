@@ -2,7 +2,7 @@
 :last-updated: 4.0.3
 :nosearch:
 
-.. _newIa-architect:
+.. _architect:
 
 ==========
 Architects

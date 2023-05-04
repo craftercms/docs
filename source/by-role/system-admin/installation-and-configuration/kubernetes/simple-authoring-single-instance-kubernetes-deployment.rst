@@ -4,7 +4,7 @@
 
 .. index:: Simple Authoring with a Single Instance Kubernetes Deployment, Example Kubernetes deployment of simple Authoring with a single instance
 
-.. _newIa-setup-simple-authoring-with-kubernetes-deployment:
+.. _setup-simple-authoring-with-kubernetes-deployment:
 
 =============================================================
 Simple Authoring With a Single Instance Kubernetes Deployment
@@ -133,6 +133,6 @@ Here's an example of forwarding local port 8080 to the 8080 port of the ``author
       Forwarding from [::1]:8080 -> 8080
 
 After that, you can now access Studio using ``localhost:8080/studio`` in your browser and create a project.
-Remember to :ref:`publish <newIa-publishing-and-status>` your project before continuing on the next steps.
+Remember to :ref:`publish <publishing-and-status>` your project before continuing on the next steps.
 
-To setup the project in delivery, follow the instructions listed here: :ref:`newIa-simple-delivery-kubernetes-deployment`
+To setup the project in delivery, follow the instructions listed here: :ref:`simple-delivery-kubernetes-deployment`

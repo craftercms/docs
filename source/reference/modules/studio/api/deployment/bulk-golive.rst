@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-deployment-bulk-golive:
+.. _crafter-studio-api-deployment-bulk-golive:
 
 ============
 Bulk Go Live

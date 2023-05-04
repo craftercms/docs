@@ -5,7 +5,7 @@
 
 .. index:: Global Permission Mappings Config
 
-.. _newIa-global-permission-mappings-config:
+.. _global-permission-mappings-config:
 
 =================================
 Global Permission Mappings Config
@@ -13,9 +13,9 @@ Global Permission Mappings Config
 
 The global permission mappings configuration file lets you configure the permissions to a role globally for the entire application
 
-Permissions per project are managed within Crafter Studio's UI.  See :ref:`newIa-permission-mappings` for more information on project permissions.
+Permissions per project are managed within Crafter Studio's UI.  See :ref:`permission-mappings` for more information on project permissions.
 
-Here's the default global permissions configuration.  It contains the permissions mappings for the roles defined in the :ref:`global role mappings configuration <newIa-global-role-mappings-config>` file.  To access the file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/`` then open the file ``global-permission-mappings-config.xml``.  Remember to restart CrafterCMS so your changes to the file will take effect.
+Here's the default global permissions configuration.  It contains the permissions mappings for the roles defined in the :ref:`global role mappings configuration <global-role-mappings-config>` file.  To access the file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/`` then open the file ``global-permission-mappings-config.xml``.  Remember to restart CrafterCMS so your changes to the file will take effect.
 
 .. code-block:: xml
    :caption: *CRAFTER_HOME/data/repos/global/configuration/global-permission-mappings-config.xml*
@@ -108,7 +108,7 @@ List of available permissions
 Permission                 Description
 ========================== ================================================================================
 add_remote                 User is permitted to add a remote repository
-audit_log                  User is permitted to access the :ref:`newIa-main-menu-tool-audit` from the Main Menu for viewing all the audit logs
+audit_log                  User is permitted to access the :ref:`main-menu-tool-audit` from the Main Menu for viewing all the audit logs
 cancel_failed_pull         User is permitted to cancel a failed pull from a repository
 cancel_publish             User is permitted to cancel a publish request
 Change Content Type        User is permitted to change content type
@@ -118,15 +118,15 @@ content_delete             User is permitted to delete content
 content_read               User is permitted to read content
 content_write              User is permitted to user is permitted to edit content
 folder_create              User is permitted to create new folder
-create_cluster             User is permitted to access the :ref:`newIa-main-menu-tool-cluster` from the Main Menu for managing clusters
-create_groups              User is permitted to access the :ref:`newIa-main-menu-tool-groups` from the Main Menu for managing groups
-create_users               User is permitted to access the :ref:`newIa-main-menu-tool-users` from the Main Menu for managing users
-create-site                User is permitted to access the :ref:`newIa-main-menu-tool-projects` from the Main Menu for managing projects
+create_cluster             User is permitted to access the :ref:`main-menu-tool-cluster` from the Main Menu for managing clusters
+create_groups              User is permitted to access the :ref:`main-menu-tool-groups` from the Main Menu for managing groups
+create_users               User is permitted to access the :ref:`main-menu-tool-users` from the Main Menu for managing users
+create-site                User is permitted to access the :ref:`main-menu-tool-projects` from the Main Menu for managing projects
 delete_cluster             User is permitted to delete a member of the cluster
 delete_groups              User is permitted to delete a group
 delete_users               User is permitted to delete a user
 edit_site                  User is permitted to edit project
-encryption_tool            User is permitted to access the :ref:`newIa-main-menu-tool-encryption-tool` from the Main Menu to encrypt a text value
+encryption_tool            User is permitted to access the :ref:`main-menu-tool-encryption-tool` from the Main Menu to encrypt a text value
 get_children               User is permitted to call getChildren* APIs for browsing project content
 get_publishing_queue       User is permitted to get the list of packages in the publishing queue
 install_plugins            User is permitted to install plugins
@@ -158,5 +158,5 @@ update_users               User is permitted to update user
 webdav_read                User is permitted to get a list of items from a WebDAV server
 webdav_write               User is permitted to upload a file to a WebDAV server
 write_configuration        User is permitted to write configuration content for project
-write_global_configuration User is permitted access to the :ref:`newIa-main-menu-tool-global-config` tool from the Main Menu
+write_global_configuration User is permitted access to the :ref:`main-menu-tool-global-config` tool from the Main Menu
 ========================== ================================================================================

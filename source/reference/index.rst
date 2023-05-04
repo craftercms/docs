@@ -1,7 +1,7 @@
 :is-up-to-date: False
 :nosearch:
 
-.. _newIa-reference:
+.. _reference:
 
 .. TODO Review
 
@@ -27,21 +27,21 @@ The modules are
 
     * - Module
       - Description
-    * - :ref:`Studio<newIa-crafter-studio>`
+    * - :ref:`Studio<crafter-studio>`
       - Studio provides all the content management services to enable authoring, management, and publishing of all content.
-    * - :ref:`Engine<newIa-crafter-engine>`
+    * - :ref:`Engine<crafter-engine>`
       - Engine provides content delivery services to power any type of Web or mobile application.
-    * - :ref:`Deployer<newIa-crafter-deployer>`
+    * - :ref:`Deployer<crafter-deployer>`
       - The content deployment system which moves content from Studio to Engine and Search.
-    * - :ref:`Search<newIa-crafter-search>`
+    * - :ref:`Search<crafter-search>`
       - The search engine that backs content authoring and content delivery
-    * - :ref:`Core<newIa-crafter-core>`
+    * - :ref:`Core<crafter-core>`
       - The content retrieval and in-memory database library
-    * - :ref:`Commons<newIa-crafter-commons>`
+    * - :ref:`Commons<crafter-commons>`
       - The shared libraries used by all CrafterCMS modules
-    * - :ref:`Profile<newIa-crafter-profile>`
+    * - :ref:`Profile<crafter-profile>`
       - Profile and attribute store
-    * - :ref:`Social<newIa-crafter-Social>`
+    * - :ref:`Social<crafter-Social>`
       - User generated content store
 
 ----
@@ -59,15 +59,15 @@ For non-content related APIs, such as user/group management, monitoring, indexin
 
     * - Module
       - REST API
-    * - :ref:`Studio<newIa-crafter-studio>`
+    * - :ref:`Studio<crafter-studio>`
       - OAS Link
-    * - :ref:`Engine<newIa-crafter-engine>`
+    * - :ref:`Engine<crafter-engine>`
       - `Crafter Engine APIs <../../_static/api/engine.html>`_
-    * - :ref:`Deployer<newIa-crafter-deployer>`
+    * - :ref:`Deployer<crafter-deployer>`
       - OAS Link
-    * - :ref:`Profile<newIa-crafter-profile>`
+    * - :ref:`Profile<crafter-profile>`
       - OAS Link
-    * - :ref:`Social<newIa-crafter-Social>`
+    * - :ref:`Social<crafter-Social>`
       - OAS Link
 
 ^^^^^^^^
@@ -80,7 +80,7 @@ Java Doc
 Managing Secrets
 ----------------
 
-There are a number of ways to manage secrets in CrafterCMS, please review this :ref:`article<newIa-managing-secrets>` for more information.
+There are a number of ways to manage secrets in CrafterCMS, please review this :ref:`article<managing-secrets>` for more information.
 
 |
 
@@ -104,7 +104,7 @@ Complimentary Projects
     *   - Kubernetes
         - `Kubernetes Deployments on GitHub <https://github.com/craftercms/kubernetes-deployments>`_
     *   - DevContentOps Toolkit (Crafter CLI)
-        - `DevContentOps Toolkit (CrafterCMS CLI) <newIa-devcontentops-toolkit>`_
+        - `DevContentOps Toolkit (CrafterCMS CLI) <devcontentops-toolkit>`_
     *   - Extensions: Plugins
         - `CrafterCMS Sponsored Plugins on GitHub <https://github.com/orgs/craftercms/repositories?q=plugin&type=all&language=&sort=>`_
     *   - Extensions: Blueprints

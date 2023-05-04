@@ -4,7 +4,7 @@
 
 .. index:: Groups Management
 
-.. _newIa-groups-management:
+.. _groups-management:
 
 =================
 Groups Management
@@ -58,7 +58,7 @@ that match your search term.
     :alt: Groups Management Search
     :align: center
 
-.. _newIa-create-a-new-group:
+.. _create-a-new-group:
 
 ------------------
 Adding a New Group
@@ -122,7 +122,7 @@ changes.  You can also add/remove users from the group.  Finally, you'll see a l
     :alt: Main Menu - Groups Edit
     :align: center
 
-.. _newIa-adding-users-to-a-group:
+.. _adding-users-to-a-group:
 
 -----------------------
 Adding Users to a Group

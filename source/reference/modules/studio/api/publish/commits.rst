@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-publish-commits:
+.. _crafter-studio-api-publish-commits:
 
 ===============
 Publish Commits

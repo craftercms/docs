@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-profile-api-profile-enable:
+.. _crafter-profile-api-profile-enable:
 
 ==============
 Enable Profile

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-publish-stop:
+.. _crafter-studio-api-publish-stop:
 
 ==============
 Stop Publisher

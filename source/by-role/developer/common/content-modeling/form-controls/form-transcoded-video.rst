@@ -8,7 +8,7 @@
 
 .. index:: Form Controls; Transcoded Video
 
-.. _newIa-form-transcoded-video:
+.. _form-transcoded-video:
 
 ========================
 Transcoded Video Control
@@ -43,4 +43,4 @@ Configuration
 || Related Data Sources  || * |mediaConvertTranscode|                                            |
 +------------------------+-----------------------------------------------------------------------+
 
-.. |mediaConvertTranscode| replace:: :ref:`Video Transcoding From S3 Repository <newIa-form-source-mediaconvert-transcode>`
+.. |mediaConvertTranscode| replace:: :ref:`Video Transcoding From S3 Repository <form-source-mediaconvert-transcode>`

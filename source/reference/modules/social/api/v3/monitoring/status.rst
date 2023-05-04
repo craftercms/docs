@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-monitoring-status:
+.. _crafter-social-api-monitoring-status:
 
 ==========
 Get Status

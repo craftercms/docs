@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-ugc-votes-up:
+.. _crafter-social-api-ugc-votes-up:
 
 =======
 Vote Up

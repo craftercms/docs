@@ -7,7 +7,7 @@
 
 .. index:: Groovy, Groovy API, Custom Services and Controllers, Services, Controllers
 
-.. _newIa-groovy-api:
+.. _groovy-api:
 
 ==========
 Groovy API
@@ -25,9 +25,9 @@ scripts, page/component scripts and filter scripts):
 .. include:: /includes/request-groovy-variables.rst
 
 All scripts are executed in a sandbox to prevent insecure code from running, to change the configuration see 
-:ref:`newIa-script-sandbox-configuration`
+:ref:`script-sandbox-configuration`
 
-To create unit tests for your groovy code, see :ref:`newIa-unit-testing-groovy-code`
+To create unit tests for your groovy code, see :ref:`unit-testing-groovy-code`
 
 -------------------------
 Create a Script in Studio
@@ -182,7 +182,7 @@ controller then must be placed in Scripts > controllers > sitemap.groovy. The co
     return null
 
 
-.. _newIa-page-and-component-scripts:
+.. _page-and-component-scripts:
 
 Page and Component Scripts
 ==========================

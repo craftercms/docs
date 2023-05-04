@@ -4,7 +4,7 @@
 
 .. index:: Permission Mappings
 
-.. _newIa-permission-mappings:
+.. _permission-mappings:
 
 ===================
 Permission Mappings

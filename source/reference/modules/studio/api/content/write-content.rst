@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-content-write-content:
+.. _crafter-studio-api-content-write-content:
 
 =============
 Write Content

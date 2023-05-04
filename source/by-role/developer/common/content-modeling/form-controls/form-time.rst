@@ -7,7 +7,7 @@
 
 .. index:: Form Controls; Time Control
 
-.. _newIa-form-time:
+.. _form-time:
 
 ============
 Time Control

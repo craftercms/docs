@@ -3,7 +3,7 @@
 
 .. index:: Projects; Crafter Search
 
-.. _newIa-crafter-search:
+.. _crafter-search:
 
 ==============
 Crafter Search

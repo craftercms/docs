@@ -8,7 +8,7 @@
 
 .. index:: Rich Text Editor (RTE) Configuration;
 
-.. _newIa-rte-configuration:
+.. _rte-configuration:
 
 ==============================
 Rich Text Editor Configuration
@@ -17,7 +17,7 @@ Rich Text Editor Configuration
 RTEs are more effective/productive for authors  when they are configured properly for the specific type of content the author is managing.  A properly and effectively configured RTE has the right styles, menu options and so on.
 Every RTE in the system can have a different look  and feel, different editing/menu options, available styles, components and other configurations.  You can also SHARE setups between similar RTEs in your project.
 
-This document describes how to configure various configuration options and plugins for the RTE in the :ref:`User Interface Configuration <newIa-user-interface-configuration>` file.
+This document describes how to configure various configuration options and plugins for the RTE in the :ref:`User Interface Configuration <user-interface-configuration>` file.
 
 ----------------------------------------
 Common Configurations for Effective RTEs
@@ -203,7 +203,7 @@ Let us take a look at an example of adding two templates to the RTE configuratio
 
 See https://www.tiny.cloud/docs/plugins/opensource/template/ for more information on the template plugin.
 
-.. _newIa-rte-paste-plugin-hooks:
+.. _rte-paste-plugin-hooks:
 
 TinyMCE paste plugin callback hooks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -220,7 +220,7 @@ In order to hook into the callback (``paste_preprocess`` and ``paste_postprocess
 
    |
 
-2) Create an :ref:`external plugin <newIa-adding-external-plugins>` by following the structure of the example plugin `here <https://github.com/craftercms/studio-ui/blob/develop/static-assets/js/tinymce-plugins/craftercms_paste_extension/craftercms_tinymce_hooks.sample.js>`__.  To modify the pasted content, add your code under ``paste_preprocess()`` or ``paste_postprocess()`` depending on your needs.
+2) Create an :ref:`external plugin <adding-external-plugins>` by following the structure of the example plugin `here <https://github.com/craftercms/studio-ui/blob/develop/static-assets/js/tinymce-plugins/craftercms_paste_extension/craftercms_tinymce_hooks.sample.js>`__.  To modify the pasted content, add your code under ``paste_preprocess()`` or ``paste_postprocess()`` depending on your needs.
 
 3) Add the plugin created in the previous step as an external plugin under the ``craftercms_tinymce_hooks`` tag.
 
@@ -234,13 +234,13 @@ In order to hook into the callback (``paste_preprocess`` and ``paste_postprocess
 
    |
 
-   For more information on ``craftercms_tinymce_hooks``, see :ref:`here <newIa-extending-tinymce>`
+   For more information on ``craftercms_tinymce_hooks``, see :ref:`here <extending-tinymce>`
 
 .. note::
    When Tiny's ``paste`` plugin is included, ``craftercms_paste_cleanup`` extension is also enabled. CrafterCMS' extension performs some additional paste cleanup from what Tiny's plugin does. To disable these additional processing of the paste input, you may add ``<craftercms_paste_cleanup>false</craftercms_paste_cleanup>`` to the RTE configuration
 
 
-.. _newIa-rte-add-allowable-elements:
+.. _rte-add-allowable-elements:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Adding Allowable Elements
@@ -340,7 +340,7 @@ You can also add custom elements to the rule set and can be done by simply addin
 
    |
 
-.. _newIa-adding-external-plugins:
+.. _adding-external-plugins:
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 Adding External Plugins
@@ -350,7 +350,7 @@ TinyMCE provides an option to specify URLS to plugins outside the tinymce plugin
 
 For more information on the Tiny MCE external_plugins option, see https://www.tiny.cloud/docs/configure/integration-and-setup/#external_plugins
 
-The Crafter Studio developer does not have full control of the tinymce initialization.  To add a custom button to the toolbar in Crafter Studio, it would be done using the external plugin route since, what TinyMCE docs advise – i.e. using the ``setup`` function to add the button – is not viable in Studio without creating a :ref:`form control plugin <newIa-building-plugins-controls>` where they'd have full control of tinymce initialization.
+The Crafter Studio developer does not have full control of the tinymce initialization.  To add a custom button to the toolbar in Crafter Studio, it would be done using the external plugin route since, what TinyMCE docs advise – i.e. using the ``setup`` function to add the button – is not viable in Studio without creating a :ref:`form control plugin <building-plugins-controls>` where they'd have full control of tinymce initialization.
 
 To add an external plugin, use ``external_plugins`` in the RTE configuration.
 Use the Crafter Studio API that gets a file for a given plugin, the getPluginFile API found here :base_url:`getPluginFile <_static/api/studio.html#tag/plugin/operation/getPluginFile>` to get the Tiny MCE external plugin file to pass to the RTE.
@@ -386,7 +386,7 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
 
    |
 
-4. Finally, we'll create our plugin file and add it in to Studio.  See :ref:`newIa-plugins` for more information on creating a Crafter Studio plugin.
+4. Finally, we'll create our plugin file and add it in to Studio.  See :ref:`plugins` for more information on creating a Crafter Studio plugin.
 
    * Using information from step 2 for our external plugin, create the required directory structure for the plugin file, then create our plugin file named ``plugin.js``
 
@@ -742,7 +742,7 @@ Let's now take a look at the data source we setup and bound to the RTE in action
 
    <hr>
 
-.. _newIa-extending-tinymce:
+.. _extending-tinymce:
 
 -----------------
 Extending TinyMCE
@@ -754,4 +754,4 @@ CrafterCMS  provides a general tool for extending TinyMCE via the ``craftercms_t
 - ``paste_postprocess`` callback
 - ``setup`` function
 
-To hook into the paste pre/post process of TinyMCE, see :ref:`here <newIa-rte-paste-plugin-hooks>`.
+To hook into the paste pre/post process of TinyMCE, see :ref:`here <rte-paste-plugin-hooks>`.

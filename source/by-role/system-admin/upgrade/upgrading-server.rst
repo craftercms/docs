@@ -11,12 +11,12 @@ This section details how to upgrade CrafterCMS installed on a server.
 
 CrafterCMS provides a couple of scripts for upgrading your installation.
 
-* :ref:`Running the upgrade script (upgrade-target) from a new binary archive <newIa-upgrade-using-new-binary-archive>`
-* :ref:`Running the upgrade script (start-upgrade) from your current installation <newIa-upgrade-using-current-install>`
+* :ref:`Running the upgrade script (upgrade-target) from a new binary archive <upgrade-using-new-binary-archive>`
+* :ref:`Running the upgrade script (start-upgrade) from your current installation <upgrade-using-current-install>`
 
 The upgrade script allows you to do an upgrade, where your bin directory is upgraded, keeping only Tomcat's shared folder, Tomcat's conf folder, the Elasticsearch config, the Deployer config folder, and the crafter-setenv scripts.
 
-When performing an upgrade, CrafterCMS is shut down, then the script asks if the user wants to backup the ``data`` folder.  It will then ask if the user wants to backup the ``bin`` folder, then perform the upgrade.  After  running  the upgrade script (either *upgrade-target*  or *start-upgrade*), run the ``post-upgrade`` script.  Finally, you can :ref:`start your CrafterCMS  <newIa-start-crafter-after-upgrade>` install again.
+When performing an upgrade, CrafterCMS is shut down, then the script asks if the user wants to backup the ``data`` folder.  It will then ask if the user wants to backup the ``bin`` folder, then perform the upgrade.  After  running  the upgrade script (either *upgrade-target*  or *start-upgrade*), run the ``post-upgrade`` script.  Finally, you can :ref:`start your CrafterCMS  <start-crafter-after-upgrade>` install again.
 
 Depending on how recent the version you are upgrading from, there may be files that do not exist in the new release and the script will give the user the option to delete or keep the files.
 
@@ -72,18 +72,18 @@ Before Upgrading
 
 Before starting your upgrade:
 
-#. **Review the** :ref:`release notes <newIa-release-notes>` **for the version you are upgrading to**. It contains specific information on the changes that have been made and how it may affect you when upgrading to that specific version.
+#. **Review the** :ref:`release notes <release-notes>` **for the version you are upgrading to**. It contains specific information on the changes that have been made and how it may affect you when upgrading to that specific version.
 
 #. **Backup CrafterCMS** just in case something goes wrong with the upgrade.
 
-   When upgrading CrafterCMS installed on a server, the upgrade scripts performs an automated backup of CrafterCMS, but it's recommended not to rely on the automated backup, just in case.  See :ref:`newIa-backup-and-recovery` for details on how to perform the backup of CrafterCMS
+   When upgrading CrafterCMS installed on a server, the upgrade scripts performs an automated backup of CrafterCMS, but it's recommended not to rely on the automated backup, just in case.  See :ref:`backup-and-recovery` for details on how to perform the backup of CrafterCMS
 
 #. **Manually shut down CrafterCMS**   For CrafterCMS installed on a server, the upgrade scripts shuts down CrafterCMS as one of the first steps, but it's also recommended not to rely on the automated shutting down just in case.
 
    To shutdown CrafterCMS, run the ``shutdown.sh`` script from the ``{Crafter-CMS-install-directory}/bin`` directory
 
 
-.. _newIa-upgrade-using-new-binary-archive:
+.. _upgrade-using-new-binary-archive:
 
 ---------------------------------------------------------------
 Upgrade by running the upgrade script from a new binary archive
@@ -242,9 +242,9 @@ After the ``upgrade-target`` script is finished running, the next step is to run
 
    |
 
-You may now :ref:`start CrafterCMS <newIa-start-crafter-after-upgrade>` again
+You may now :ref:`start CrafterCMS <start-crafter-after-upgrade>` again
 
-.. _newIa-upgrade-using-current-install:
+.. _upgrade-using-current-install:
 
 ---------------------------------------------------------------
 Upgrade by running the upgrade script from your current install
@@ -448,9 +448,9 @@ Finally we'll  run the ``post-upgrade`` script.  Remember to switch your JAVA_HO
 
    |
 
-You may now :ref:`start CrafterCMS <newIa-start-crafter-after-upgrade>` again
+You may now :ref:`start CrafterCMS <start-crafter-after-upgrade>` again
 
-.. _newIa-start-crafter-after-upgrade:
+.. _start-crafter-after-upgrade:
 
 ----------------
 Start CrafterCMS

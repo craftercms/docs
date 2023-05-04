@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-site-get-configuration:
+.. _crafter-studio-api-site-get-configuration:
 
 ==============================
 Get Configuration (deprecated)

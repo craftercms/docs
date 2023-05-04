@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-profile-admin-profiles:
+.. _profile-admin-profiles:
 
 ===================
 Profiles Management

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-profile-clear:
+.. _crafter-social-api-profile-clear:
 
 ===========
 Clear Cache

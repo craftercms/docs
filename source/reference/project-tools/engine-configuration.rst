@@ -4,7 +4,7 @@
 
 .. index:: Engine Configuration
 
-.. _newIa-engine-configuration:
+.. _engine-configuration:
 
 ====================
 Engine Configuration

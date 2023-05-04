@@ -5,7 +5,7 @@
    9.1 Source Code
    9.2 Acknowledgements
 
-.. _newIa-contribute:
+.. _contribute:
 
 ==========
 Contribute
@@ -18,7 +18,7 @@ CrafterCMS is written in Java and React.
 Extensions
 ----------
 
-The best way to contribute to CrafterCMS is to create new extensions (plugins and blueprints) as explained in the :ref:`newIa-extensions`  section, and get those listed on our `marketplace<https://craftercms.com/marketplace>`.
+The best way to contribute to CrafterCMS is to create new extensions (plugins and blueprints) as explained in the :ref:`extensions`  section, and get those listed on our `marketplace<https://craftercms.com/marketplace>`.
 
 -------------
 Documentation

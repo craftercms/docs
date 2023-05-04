@@ -1,7 +1,7 @@
 :is-up-to-date: False
 :nosearch:
 
-.. _newIa-system-admin-deployment-architecture:
+.. _system-admin-deployment-architecture:
 
 =======================
 Deployment Architecture

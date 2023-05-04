@@ -4,7 +4,7 @@
 
 .. index:: Proxy Configuration
 
-.. _newIa-proxy-configuration:
+.. _proxy-configuration:
 
 ###################
 Proxy Configuration
@@ -44,4 +44,4 @@ Here's a sample Proxy Configuration file (click on the triangle on the left to e
    .. note::
       Deleting the config file (*proxy-config.xml*) from the repo completely disables the proxy feature.
 
-See :ref:`newIa-using-the-proxy-configuration` for an example of configuring the proxy with a React application.
+See :ref:`using-the-proxy-configuration` for an example of configuring the proxy with a React application.

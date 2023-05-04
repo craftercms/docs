@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; Static Key Value Pairs
 
-.. _newIa-form-source-kvp:
+.. _form-source-kvp:
 
 ==================================
 Static Key Value Pairs Data Source

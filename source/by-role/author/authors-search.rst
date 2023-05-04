@@ -4,7 +4,7 @@
 
 .. index:: Content Author Search
 
-..  _newIa-content_authors_search:
+..  _content_authors_search:
 
 ---------
 Searching

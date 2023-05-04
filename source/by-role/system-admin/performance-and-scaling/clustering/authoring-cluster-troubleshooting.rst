@@ -4,7 +4,7 @@
 
 .. index:: Troubleshooting, Studio Clustering, Authoring Cluster Troubleshooting
 
-.. _newIa-authoring-cluster-troubleshooting:
+.. _authoring-cluster-troubleshooting:
 
 ==================================================
 Authoring Cluster Troubleshooting |enterpriseOnly|
@@ -12,7 +12,7 @@ Authoring Cluster Troubleshooting |enterpriseOnly|
 
 Whenever your authoring cluster has a Git or DB sync failure, the following logs may appear:
 
-.. _newIa-authoring-cluster-troubleshooting-git-sync-fail-log:
+.. _authoring-cluster-troubleshooting-git-sync-fail-log:
 
 .. code-block:: text
    :caption: *Sample log for an authoring cluster Git sync startup failure*
@@ -22,7 +22,7 @@ Whenever your authoring cluster has a Git or DB sync failure, the following logs
    [ERROR] 2022-10-19T17:22:24,598 [main] [cluster.StudioClusterUtils] | Error notification email has been sent
    ...
 
-.. _newIa-authoring-cluster-troubleshooting-db-sync-fail-log:
+.. _authoring-cluster-troubleshooting-db-sync-fail-log:
 
 .. code-block:: text
    :caption: *Sample log for an authoring cluster DB sync startup failure*
@@ -42,8 +42,8 @@ Whenever your authoring cluster has a Git or DB sync failure, the following logs
 
 An email will also be sent to the configured list of recipients to inform them of the failure.
 
-See the :ref:`newIa-setup-a-two-node-cluster-with-studio` article then scroll to the
-:ref:`failure notification properties <newIa-authoring-cluster-startup-failure-notification-config>` section
+See the :ref:`setup-a-two-node-cluster-with-studio` article then scroll to the
+:ref:`failure notification properties <authoring-cluster-startup-failure-notification-config>` section
 for more information on how to configure the list of recipients to be informed in case of a
 startup failure in the authoring cluster.
 
@@ -74,7 +74,7 @@ For a DB sync failure, the logs will contain a message like below:
    Failed to start DB replica:
    ...
 
-as seen :ref:`above <newIa-authoring-cluster-troubleshooting-git-sync-fail-log>` and the following email will be sent if configured:
+as seen :ref:`above <authoring-cluster-troubleshooting-git-sync-fail-log>` and the following email will be sent if configured:
 
 .. image:: /_static/images/system-admin/cluster-db-sync-fail.webp
    :alt: CrafterCMS - Studio Enterprise Clustering DB sync failure email
@@ -169,7 +169,7 @@ For a Git sync failure, the logs will contain a message like below:
    Branch 'master' in repository '/opt/crafter/data/repos/sites/ed123/sandbox/.git' has commits ahead of the primary node
    ...
 
-as seen :ref:`above <newIa-authoring-cluster-troubleshooting-git-sync-fail-log>` and the following email will be sent if configured:
+as seen :ref:`above <authoring-cluster-troubleshooting-git-sync-fail-log>` and the following email will be sent if configured:
 
 .. image:: /_static/images/system-admin/cluster-git-sync-fail.webp
    :alt: CrafterCMS - Studio Enterprise Clustering Git sync failure email

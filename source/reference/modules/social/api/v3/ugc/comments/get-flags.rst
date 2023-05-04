@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-ugc-comments-get-flags:
+.. _crafter-social-api-ugc-comments-get-flags:
 
 =================
 Get Comment Flags

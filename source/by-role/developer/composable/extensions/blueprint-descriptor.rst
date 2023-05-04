@@ -3,7 +3,7 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
 
-.. _newIa-blueprint-descriptor-file:
+.. _blueprint-descriptor-file:
 
 ===============================
 CrafterCMS Blueprint Descriptor
@@ -104,14 +104,14 @@ Here are some things to note in the descriptor file:
        If ``plugin.media.url`` is not specified, the url ``../.crafter/screenshots/default.png`` is the
        default path for CrafterCMS to look for a default representative image of a blueprint. |br|
        For more information on adding a default representative image for your blueprint see |br|
-       :ref:`newIa-adding-default-image-for-bp`
+       :ref:`adding-default-image-for-bp`
    * - plugin.license
      -
      - The license supported by the blueprint
    * - plugin.crafterCmsVersions
      - |checkmark|
      - Contains the CrafterCMS version/s that the plugin is compatible with |br|
-       (look in the :ref:`newIa-release-notes` section for the versions available), and |br|
+       (look in the :ref:`release-notes` section for the versions available), and |br|
        you'll need to keep this up to date
 
 

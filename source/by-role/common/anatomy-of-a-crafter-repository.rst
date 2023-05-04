@@ -4,7 +4,7 @@
 
 .. index:: Anatomy of a CrafterCMS Repository
 
-.. _newIa-anatomy-of-a-craftercms-repository:
+.. _anatomy-of-a-craftercms-repository:
 
 ==================================
 Anatomy of a CrafterCMS Repository

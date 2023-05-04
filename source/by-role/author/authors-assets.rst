@@ -4,7 +4,7 @@
 
 .. index:: Assets
 
-..  _newIa-content_authors_assets:
+..  _content_authors_assets:
 
 ===================
 Working with Assets

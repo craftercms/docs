@@ -4,7 +4,7 @@
 
 .. index:: Information Architecture
 
-.. _newIa-information-architecture:
+.. _information-architecture:
 
 ========================
 Information Architecture

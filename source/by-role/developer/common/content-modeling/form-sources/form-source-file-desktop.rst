@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; File Uploaded from Desktop
 
-.. _newIa-form-source-file-desktop:
+.. _form-source-file-desktop:
 
 ======================================
 File Uploaded from Desktop Data Source

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-content-get-content-types:
+.. _crafter-studio-api-content-get-content-types:
 
 =================
 Get Content Types

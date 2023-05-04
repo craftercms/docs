@@ -4,7 +4,7 @@
 
 .. index:: Apache HTTPd, Configure Reverse Proxy
 
-.. _newIa-reverse-proxy-configuration:
+.. _reverse-proxy-configuration:
 
 ===========================
 Reverse Proxy Configuration
@@ -19,7 +19,7 @@ for authoring and delivery.
 
 Below are the directives used for setting up a reverse proxy with Apache:
 
-.. _newIa-configure-reverse-proxy-for-authoring:
+.. _configure-reverse-proxy-for-authoring:
 
 .. code-block:: apache
    :caption: *Authoring Configuration*
@@ -39,7 +39,7 @@ Below are the directives used for setting up a reverse proxy with Apache:
         CustomLog ${APACHE_LOG_DIR}/crafter-studio-access.log combined
    </VirtualHost>
 
-.. _newIa-configure-reverse-proxy-for-delivery:
+.. _configure-reverse-proxy-for-delivery:
 
 .. code-block:: apache
    :caption: *Delivery Configuration*
@@ -97,7 +97,7 @@ as a reverse proxy setup.
 
 Depending on your setup, the following CrafterCMS properties may need to be setup:
 
-- ``reverseProxy`` property when configuring :ref:`Engine SAML2 <newIa-engine-saml2-configuration>`
-- ``crafter.engine.forwarded.headers.enabled`` property under :ref:`newIa-engine-forwarded-headers` in :ref:`newIa-engine-saml2-configuration`
-- ``studio-config-forwarded-headers`` property under :ref:`newIa-studio-config-forwarded-headers` in :ref:`newIa-studio-config-override`
-- ``studio.security.saml.reverseProxy`` properties as describe in :ref:`newIa-crafter-studio-configure-studio-saml`
+- ``reverseProxy`` property when configuring :ref:`Engine SAML2 <engine-saml2-configuration>`
+- ``crafter.engine.forwarded.headers.enabled`` property under :ref:`engine-forwarded-headers` in :ref:`engine-saml2-configuration`
+- ``studio-config-forwarded-headers`` property under :ref:`studio-config-forwarded-headers` in :ref:`studio-config-override`
+- ``studio.security.saml.reverseProxy`` properties as describe in :ref:`crafter-studio-configure-studio-saml`

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-profile-api-tenant-all:
+.. _crafter-profile-api-tenant-all:
 
 ===============
 Get All Tenants

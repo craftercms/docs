@@ -2,7 +2,7 @@
 :since-veresion: 4.0.0
 :nosearch:
 
-.. _newIa-javadoc:
+.. _javadoc:
 
 ========
 Java Doc

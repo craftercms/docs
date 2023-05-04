@@ -3,7 +3,7 @@
 
 :nosearch:
 
-.. _newIa-managing-secrets:
+.. _managing-secrets:
 
 ================
 Managing Secrets
@@ -72,7 +72,7 @@ open ``CRAFTER_HOME/bin/crafter-setenv.sh`` and modify the following values
 |
 
 
-.. _newIa-encrypting-text-in-a-configuration-file:
+.. _encrypting-text-in-a-configuration-file:
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 Automatic Encryption of Secrets in Configuration Files
@@ -174,7 +174,7 @@ Let's take a look at an example of encrypting the ``accessKey`` and ``securityKe
 
 |hr|
 
-.. _newIa-studio-encryption-tool:
+.. _studio-encryption-tool:
 
 """""""""""""""""""""""""
 Studio UI Encryption Tool
@@ -204,7 +204,7 @@ then click on ``Encryption Tool``.
 
 To encrypt a password, access key, etc., simply enter the password, access key, etc. in the ``Raw Text`` field, then click on ``Encrypt Text``.  This will generate the encrypted password, access key, etc. that you then simply need to paste in the configuration file.
 
-Crafter Studio also provides the encryption tool to encrypt passwords, access keys or other sensitive information in a configuration file managed through Crafter Studio in |projectTools| -> ``Configuration``.  See :ref:`newIa-encrypting-text-in-a-configuration-file` for more information.
+Crafter Studio also provides the encryption tool to encrypt passwords, access keys or other sensitive information in a configuration file managed through Crafter Studio in |projectTools| -> ``Configuration``.  See :ref:`encrypting-text-in-a-configuration-file` for more information.
 
 Example
 -------
@@ -275,7 +275,7 @@ Let's begin:
 
 |hr|
 
-.. _newIa-crafter-commons-encryption-tool:
+.. _crafter-commons-encryption-tool:
 
 """"""""""""""""""""""""""""""""""""""""""""
 Command Line Interface (CLI) Encryption Tool

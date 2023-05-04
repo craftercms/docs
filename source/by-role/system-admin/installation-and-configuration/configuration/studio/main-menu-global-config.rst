@@ -10,14 +10,14 @@
 
 .. index:: Navigation Menu Global Config, Global Config
 
-.. _newIa-nav-menu-global-config:
+.. _nav-menu-global-config:
 
 =============================
 Navigation Menu Global Config
 =============================
 
 CrafterCMS allows the user to edit the system settings for Studio without access to the physical server through ``Global Config`` under the ``Navigation Menu`` in Studio.
-This global configuration file overrides the :ref:`core configuration of Crafter Studio <newIa-studio-core-configuration>`, ``studio-config.yaml``,  found in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio``, and the Studio configuration override file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` in your Authoring installation (for more information on this file, see :ref:`newIa-studio-config-override`.
+This global configuration file overrides the :ref:`core configuration of Crafter Studio <studio-core-configuration>`, ``studio-config.yaml``,  found in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio``, and the Studio configuration override file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` in your Authoring installation (for more information on this file, see :ref:`studio-config-override`.
 
 Changes made to this file will spread to all nodes in a Studio cluster automatically. Please note that not all changes to this file can/will take effect without a restart, so expect to have to **restart Studio for most changes to take effect**. If in a cluster, you'll need a rolling restart for all nodes to pick up the changes.
 
@@ -79,7 +79,7 @@ This section allows the user to set the Studio session timeout, the amount of ti
    # HTTP Session timeout for studio (value is in minutes).
    # studio.security.sessionTimeout: 60
 
-Remember to keep the Studio session timeout less than the Tomcat ``session-timeout``.  The default Tomcat ``session-timeout`` is ``75`` minutes.  See :ref:`newIa-changing-session-timeout` for more information.
+Remember to keep the Studio session timeout less than the Tomcat ``session-timeout``.  The default Tomcat ``session-timeout`` is ``75`` minutes.  See :ref:`changing-session-timeout` for more information.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Security Provider for Accessing Repository
@@ -125,7 +125,7 @@ through the property ``studio.security.passwordRequirements.minimumComplexity``:
    # studio.security.passwordRequirements.minimumComplexity: 3
 
 
-For more information, see :ref:`newIa-crafter-studio-configure-password-requirements`
+For more information, see :ref:`crafter-studio-configure-password-requirements`
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Configure Authentication Chain
@@ -199,7 +199,7 @@ The following section of Studio's global config allows you to configure an authe
        # Authentication via DB enabled
        # enabled: true
 
-For more information, see :ref:`newIa-configure-authentication-chain`
+For more information, see :ref:`configure-authentication-chain`
 
 ----
 CORS
@@ -291,7 +291,7 @@ The following section of Studio's global config allows you to setup Studio clust
    #    privateKey
    #    -----END PRIVATE KEY-----
 
-For more information, see :ref:`newIa-clustering`
+For more information, see :ref:`clustering`
 
 ------------------
 Content Repository

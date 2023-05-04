@@ -7,7 +7,7 @@
 
 .. index:: Form Controls; Internal Name
 
-.. _newIa-form-internal-name:
+.. _form-internal-name:
 
 =====================
 Internal Name Control

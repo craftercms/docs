@@ -3,7 +3,7 @@
 
 .. index:: Upgrading CrafterCMS; Upgrading; Docker; Kubernetes
 
-.. _newIa-upgrading-dockers:
+.. _upgrading-dockers:
 
 ====================================
 Upgrading CrafterCMS on Docker/Kuber
@@ -20,7 +20,7 @@ These upgrade instructions are for both ``authoring`` and ``delivery`` compose p
 #. Run ``docker-compose down`` to fully stop the environment.
 #. If you are using a clone of https://github.com/craftercms/docker-compose, then just pull the latest changes. If 
    you're using your own Docker Compose files, then remember to update the versions of the CrafterCMS Docker images.
-#. Check the release notes of the new CrafterCMS version (:ref:`newIa-release-notes`) for upgrades to Elasticsearch. If there has been an upgrade, then also update the Elasticsearch image versions.
+#. Check the release notes of the new CrafterCMS version (:ref:`release-notes`) for upgrades to Elasticsearch. If there has been an upgrade, then also update the Elasticsearch image versions.
 #. Check the configuration file changes between the previous version and the new version.
    If you have overwritten any of them in a volume, we recommend you do the following:
 
@@ -31,7 +31,7 @@ These upgrade instructions are for both ``authoring`` and ``delivery`` compose p
       upgrading to is 3.1.5, then copy your configuration overrides to the 3.1.5 version of the file).
    #. Replace the file in the volume with the new configuration file with your changes.
 
-#. Check the :ref:`newIa-release-notes` for any other additional tasks you need to perform.
+#. Check the :ref:`release-notes` for any other additional tasks you need to perform.
 #. Run ``docker-compose up``.
 #. Monitor the Docker logs for any upgrade errors.
 
@@ -42,7 +42,7 @@ Upgrading Kubernetes Deployments
 These upgrade instructions are for both Authoring and Delivery deployments:
 
 #. Update the CrafterCMS image versions in your deployment files.
-#. Check the release notes of the new CrafterCMS version (:ref:`newIa-release-notes`) for upgrades to Elasticsearch.
+#. Check the release notes of the new CrafterCMS version (:ref:`release-notes`) for upgrades to Elasticsearch.
    If there has been an upgrade, then also update the Elasticsearch image versions in your deployment files.
 #. Check the configuration file changes between the previous version and the new version.
    If you have overwritten any of them in a ``ConfigMap`` or ``Secret``, we recommend you do the following:
@@ -54,7 +54,7 @@ These upgrade instructions are for both Authoring and Delivery deployments:
       upgrading to is 3.1.5, then copy your configuration overrides to the 3.1.5 version of the file).
    #. Replace the file in the ``ConfigMap`` or ``Secret`` with the new configuration file with your changes.
 
-#. Check the :ref:`newIa-release-notes` for any other additional tasks you need to perform.
+#. Check the :ref:`release-notes` for any other additional tasks you need to perform.
 #. Apply the updated deployment files (``kubectl apply``) so the containers are restarted and the configuration 
    changes detected.  
 #. Monitor the Kubernetes logs for any upgrade errors.

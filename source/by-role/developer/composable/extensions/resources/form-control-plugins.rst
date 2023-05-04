@@ -3,7 +3,7 @@
 
 .. index:: Building Form Engine Controls Project Plugins, Form Control Project Plugins, Project Plugins
 
-.. _newIa-building-plugins-controls:
+.. _building-plugins-controls:
 
 ============================================
 Building Form Engine Control Project Plugins
@@ -42,7 +42,7 @@ Form Engine Control consist of (at a minimum)
 * Configuration in a Crafter Studio project to make that control available for use
 
 
-.. _newIa-control-interface:
+.. _control-interface:
 
 -----------------
 Control Interface
@@ -111,7 +111,7 @@ Control Interface
     });
 
 
-.. _newIa-plugin-directory-structure:
+.. _plugin-directory-structure:
 
 ----------------------------------
 Project Plugin Directory Structure
@@ -135,7 +135,7 @@ Let's take a look at an example of a control plugin.  We will be adding a contro
 Form Engine Control Code
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-The first thing we have to do is to create the folder structure where we will be placing the JS file for our control.  We'll follow the convention listed above in :ref:`newIa-plugin-directory-structure`
+The first thing we have to do is to create the folder structure where we will be placing the JS file for our control.  We'll follow the convention listed above in :ref:`plugin-directory-structure`
 
 In a local folder, create the descriptor file for your plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.excontrol``, then create the folder ``authoring``.  Under the ``authoring`` folder, create the ``static-assets`` folder.  Under the ``static-assets`` folder, create the folder ``plugins``.
 
@@ -254,7 +254,7 @@ To save additional elements from your form control into the XML content, call ``
 
 See `here <https://github.com/craftercms/studio-ui/tree/develop/static-assets/components/cstudio-forms/controls/date-time.js#L865>`__ for an example of calling ``registerDynamicField`` in the date-time form control code.
 
-.. _newIa-configure-descriptor-file-for-autowiring:
+.. _configure-descriptor-file-for-autowiring:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Configuring the Descriptor File to Wire the Plugin
@@ -289,7 +289,7 @@ To setup our form control to be automatically wired in the corresponding configu
 
 |
 
-See :ref:`newIa-plugin-descriptor-file` for more information on setting up automatic wiring of your plugin in Studio
+See :ref:`plugin-descriptor-file` for more information on setting up automatic wiring of your plugin in Studio
 
 ^^^^^^^^^^^^^^^
 Test the Plugin
@@ -297,7 +297,7 @@ Test the Plugin
 
 After placing your JS file, the plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
-When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <newIa-crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``my-editorial`` by running the following:
+When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``my-editorial`` by running the following:
 
    ..  code-block:: bash
 
@@ -308,7 +308,7 @@ When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be
 
 Let's take a look at the auto-wiring performed during installation of the plugin.  Form controls are setup in the ``site-config-tools.xml``  file.
 
-The items we setup in the descriptor file for auto-wiring :ref:`above <newIa-configure-descriptor-file-for-autowiring>` should now be in the ``Project Config Tools`` configuration file, which can be accessed  by opening the ``Sidebar``, then clicking  on ``Project Tools`` -> ``Configuration``  ->  ``Project Config Tools``
+The items we setup in the descriptor file for auto-wiring :ref:`above <configure-descriptor-file-for-autowiring>` should now be in the ``Project Config Tools`` configuration file, which can be accessed  by opening the ``Sidebar``, then clicking  on ``Project Tools`` -> ``Configuration``  ->  ``Project Config Tools``
 
 **Location (In Repository) SITENAME/config/studio/administration/site-config-tools.xml**
 

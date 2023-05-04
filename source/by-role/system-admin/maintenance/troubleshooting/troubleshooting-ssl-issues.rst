@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-debugging_ssl_issues:
+.. _debugging_ssl_issues:
 
 ====================================
 Troubleshooting SSL Handshake Issues

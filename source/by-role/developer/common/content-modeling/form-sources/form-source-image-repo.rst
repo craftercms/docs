@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; Image from Repository
 
-.. _newIa-form-source-image-repo:
+.. _form-source-image-repo:
 
 =================================
 Image from Repository Data Source

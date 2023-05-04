@@ -12,11 +12,11 @@ Crafter Engine is able to integrate with multiple authentication providers:
 
 #. **Using SAML2**
 
-   To configure SAML 2.0, follow the instructions: :ref:`newIa-engine-saml2-configuration`
+   To configure SAML 2.0, follow the instructions: :ref:`engine-saml2-configuration`
 
 #. **Using Crafter Profile**
 
-   To configure Crafter Profile, follow the instructions: :ref:`newIa-engine-crafter-profile-configuration`
+   To configure Crafter Profile, follow the instructions: :ref:`engine-crafter-profile-configuration`
 
 ^^^^^^^^^^^^^^^^^^
 Add Authentication
@@ -85,7 +85,7 @@ the next steps to create in the page content type a Repeating Group with a text 
     |
 
        .. warning::
-           The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS.  For a list of variable names used by CrafterCMS, see :ref:`newIa-form-control-variable-names` for more information
+           The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS.  For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
            The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
 
@@ -99,7 +99,7 @@ the next steps to create in the page content type a Repeating Group with a text 
     |
 
        .. warning::
-           The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page.  For a list of variable names used by CrafterCMS, see :ref:`newIa-form-control-variable-names` for more information
+           The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page.  For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
 
 #.  Save the changes. The added fields should look like this:
@@ -119,7 +119,7 @@ by Crafter Engine is described below:
 #.  If the page has the role ``Authenticated``, just authentication is needed.
 #.  If the page has any other roles, the user needs to be authenticated and have any of those roles.
 
-.. _newIa-engine-project-security-guide-restrict-urls:
+.. _engine-project-security-guide-restrict-urls:
 
 """""""""""""
 Restrict URLs
@@ -158,7 +158,7 @@ be used:
 
   For the *hasAnyRole* expression, remember to escape the comma ``,`` separating the roles inside the expression as shown above.
 
-.. _newIa-engine-security-access-attributes:
+.. _engine-security-access-attributes:
 
 ^^^^^^^^^^^^^^^^^^^^^^
 Access User Attributes
@@ -177,7 +177,7 @@ authentication provider used, but you can always obtain an instance of |CustomUs
     <#-- show login button -->
   </#if>
 
-.. note:: You can find more details about the ``authToken`` variable in :ref:`newIa-templating-api` or :ref:`newIa-groovy-api`
+.. note:: You can find more details about the ``authToken`` variable in :ref:`templating-api` or :ref:`groovy-api`
 
 |
 

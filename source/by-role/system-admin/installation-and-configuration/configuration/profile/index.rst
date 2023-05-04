@@ -2,14 +2,14 @@
 :last-updated: 4.0.0
 :nosearch:
 
-.. _newIa-crafter-profile-admin:
+.. _crafter-profile-admin:
 
 =====================================
 Crafter Profile System Administration
 =====================================
 
 This guide covers the basic configuration for Crafter Profile, if you need to manage tenants and
-profiles you can follow the :ref:`newIa-profile-admin-console` guides.
+profiles you can follow the :ref:`profile-admin-console` guides.
 
 .. NOTE::
   This guide assumes that you have already installed and configured MongoDB, or you've used

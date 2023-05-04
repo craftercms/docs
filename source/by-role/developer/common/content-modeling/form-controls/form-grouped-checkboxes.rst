@@ -7,7 +7,7 @@
 
 .. index:: Form Controls; Grouped Checkboxes
 
-.. _newIa-form-grouped-checkboxes:
+.. _form-grouped-checkboxes:
 
 ==========================
 Grouped Checkboxes Control

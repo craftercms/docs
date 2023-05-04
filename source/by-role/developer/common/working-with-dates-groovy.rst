@@ -2,7 +2,7 @@
 :last-updated: 4.0.3
 :nosearch:
 
-.. _newIa-working-with-dates-in-groovy:
+.. _working-with-dates-in-groovy:
 
 ===========================================
 Working with Dates and Time Zones in Groovy
@@ -21,7 +21,7 @@ First, let's set the time zone in Crafter Engine.  From the **Sidebar**, click o
     </site>
 
 
-We'll now create a controller by opening the **Sidebar**, then navigate to **scripts** -> **pages**, right click on **pages**, and select **Create Controller**, which we will then name **article.groovy**, which would make it execute before the article page is loaded.  We're now ready to show some examples of working with dates and times in Groovy.  We'll be performing operations on the contentModel variable **date_dt**, which is the date created of the article.  For more information on variables available in groovy scripts, see :ref:`newIa-groovy-api`
+We'll now create a controller by opening the **Sidebar**, then navigate to **scripts** -> **pages**, right click on **pages**, and select **Create Controller**, which we will then name **article.groovy**, which would make it execute before the article page is loaded.  We're now ready to show some examples of working with dates and times in Groovy.  We'll be performing operations on the contentModel variable **date_dt**, which is the date created of the article.  For more information on variables available in groovy scripts, see :ref:`groovy-api`
 
 ----------------
 Formatting Dates

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-profile-api-profile-attachment-details:
+.. _crafter-profile-api-profile-attachment-details:
 
 ==============================
 Get Profile Attachment Details

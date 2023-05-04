@@ -1,18 +1,18 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-admin:
+.. _crafter-social-admin:
 
 ====================================
 Crafter Social System Administration
 ====================================
 
 This guide covers the basic configuration for Crafter Social, if you need to manage contexts and
-user generated content you can follow the :ref:`newIa-social-admin-console` guides.
+user generated content you can follow the :ref:`social-admin-console` guides.
 
 .. NOTE::
   This guide assumes that you have already installed and configured Crafter Profile. For details
-  see :ref:`newIa-crafter-profile-admin`
+  see :ref:`crafter-profile-admin`
 
 
 All configuration for Crafter Social is managed using a properties file:
@@ -110,7 +110,7 @@ Properties prefix: ``crafter.social.ugc.``
 |                  || `ancestors`              ||                                                |
 +------------------+---------------------------+-------------------------------------------------+
 | virusScanner     || [#]_                     || Class implementing the ``VirusScanner``        |
-|                  ||                          || interface, see :ref:`newIa-crafter-social-av`  |
+|                  ||                          || interface, see :ref:`crafter-social-av`  |
 +------------------+---------------------------+-------------------------------------------------+
 
 ---------------------------
@@ -238,7 +238,7 @@ your sites and applications are able to access the Crafter Social API.
 |                               |                     || ``Access-Control-Allow-Credentials``    |
 +-------------------------------+---------------------+------------------------------------------+
 
-.. _newIa-crafter-social-av:
+.. _crafter-social-av:
 
 ---------------------------
 Virus Scanner Configuration

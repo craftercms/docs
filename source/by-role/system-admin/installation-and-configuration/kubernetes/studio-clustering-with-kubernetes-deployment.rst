@@ -4,7 +4,7 @@
 
 .. index:: Setup Studio Clustering with Kubernetes Deployment, Clustering with Studio Example with Kubernetes
 
-.. _newIa-setup-studio-clustering-with-kubernetes-deployment:
+.. _setup-studio-clustering-with-kubernetes-deployment:
 
 ===================================================================
 Setup Studio Clustering with Kubernetes Deployment |enterpriseOnly|

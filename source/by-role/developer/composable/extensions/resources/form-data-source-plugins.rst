@@ -3,7 +3,7 @@
 
 .. index:: Building Form Engine Data Source Project Plugins, Form  Data Source Project Plugin, Project Plugins
 
-.. _newIa-building-plugins-form-ds:
+.. _building-plugins-form-ds:
 
 ================================================
 Building Form Engine Data Source Project Plugins
@@ -41,7 +41,7 @@ Data Sources consist of (at a minimum)
 
 * Configuration in a Crafter Studio project to make that data source available for use.
 
-.. _newIa-data-source-interface:
+.. _data-source-interface:
 
 ---------------------
 Data Source Interface
@@ -93,7 +93,7 @@ Data Source Interface
     	getList: function(cb) { }
     });
 
-.. _newIa-plugin-ds-directory-structure:
+.. _plugin-ds-directory-structure:
 
 ----------------------------------
 Project Plugin Directory Structure
@@ -118,7 +118,7 @@ Let's take a look at an example of a data source plugin.  We will be adding a da
 Form Engine Data Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The first thing we have to do is to create the folder structure where we will be placing the JS file for our data source.  We'll follow the convention listed above in :ref:`newIa-plugin-ds-directory-structure`
+The first thing we have to do is to create the folder structure where we will be placing the JS file for our data source.  We'll follow the convention listed above in :ref:`plugin-ds-directory-structure`
 
 In a local folder, create the descriptor file for your plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.examples``, then create the folder ``authoring``.  Under the ``authoring`` folder, create the ``static-assets`` folder.  Under the ``static-assets`` folder, create the folder ``plugins``.
 
@@ -246,7 +246,7 @@ Here's the complete example form data source plugin file for the ``parent-conten
 |
 |
 
-.. _newIa-configure-descriptor-file-for-autowiring-datasource:
+.. _configure-descriptor-file-for-autowiring-datasource:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Configuring the Descriptor File to Wire the Plugin
@@ -281,7 +281,7 @@ To setup our form control to be automatically wired in the corresponding configu
 
 |
 
-See :ref:`newIa-plugin-descriptor-file` for more information on setting up automatic wiring of your plugin in Studio
+See :ref:`plugin-descriptor-file` for more information on setting up automatic wiring of your plugin in Studio
 
 ^^^^^^^^^^^^^^^
 Test the Plugin
@@ -289,7 +289,7 @@ Test the Plugin
 
 After placing your JS file, the plugin may now be installed for testing/debugging using the ``crafter-cli`` command ``copy-plugin``.
 
-When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <newIa-crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``my-editorial`` by running the following:
+When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``my-editorial`` by running the following:
 
    ..  code-block:: bash
 
@@ -300,7 +300,7 @@ When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be
 
 Let's take a look at the auto-wiring performed during installation of the plugin.  Form data sources are setup in the ``site-config-tools.xml``  file.
 
-The items we setup in the descriptor file for auto-wiring :ref:`above <newIa-configure-descriptor-file-for-autowiring-datasource>` should now be in the ``Project Config Tools`` configuration file, which can be accessed  by opening the ``Sidebar``, then clicking  on ``Project Tools`` -> ``Configuration``  ->  ``Project Config Tools``
+The items we setup in the descriptor file for auto-wiring :ref:`above <configure-descriptor-file-for-autowiring-datasource>` should now be in the ``Project Config Tools`` configuration file, which can be accessed  by opening the ``Sidebar``, then clicking  on ``Project Tools`` -> ``Configuration``  ->  ``Project Config Tools``
 
 **Location (In Repository) SITENAME/config/studio/administration/site-config-tools.xml**
 

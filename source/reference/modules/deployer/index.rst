@@ -3,7 +3,7 @@
 
 .. index:: Projects; Crafter Deployer
 
-.. _newIa-crafter-deployer:
+.. _crafter-deployer:
 
 ================
 Crafter Deployer
@@ -22,7 +22,7 @@ Crafter Deployer is the deployment agent for CrafterCMS.
 .. TODO: We need a bigger/better description of this.
 
 
-.. _newIa-crafter-deployer-administration:
+.. _crafter-deployer-administration:
 
 --------------
 Administration
@@ -241,7 +241,7 @@ If the repository is changed manually using Git commands instead of updating fil
 Studio it is possible that a deployment may found a conflict, for example if a specific commit is
 deleted from the repository. In most cases Crafter Deployer should be able to detect those conflicts
 and solve them automatically, however if a deployment does not finish successfully you can follow
-the steps described in :ref:`newIa-crafter-studio-debugging-deployer-issues`
+the steps described in :ref:`crafter-studio-debugging-deployer-issues`
 
 .. warning::
   Changing or deleting a processed commit file could cause unchanged files to be indexed again and
@@ -249,7 +249,7 @@ the steps described in :ref:`newIa-crafter-studio-debugging-deployer-issues`
 
 |hr|
 
-.. _newIa-crafter-deployer-processors-guide:
+.. _crafter-deployer-processors-guide:
 
 -------------------
 Deployer Processors
@@ -367,7 +367,7 @@ Processor that clones/pulls a remote Git repository into a local path in the fil
           path: /home/myuser/myprivatekey
           passphrase: mypassphrase
 
-.. _newIa-deployer-git-diff-processor:
+.. _deployer-git-diff-processor:
 
 """"""""""""""""""
 Git Diff Processor
@@ -403,7 +403,7 @@ the change set.
     includeGitLog: true
 
 
-.. _newIa-deployer-git-push-processor:
+.. _deployer-git-push-processor:
 
 """"""""""""""""""
 Git Push Processor
@@ -465,7 +465,7 @@ Processor that pushes a local repo to a remote Git repository.
           path: /home/myuser/myprivatekey
           passphrase: mypassphrase
 
-.. _newIa-deployer-git-update-commit-id-processor:
+.. _deployer-git-update-commit-id-processor:
 
 """"""""""""""""""""""""""""""
 Git Update Commit Id Processor
@@ -481,7 +481,7 @@ Processor that updates the processed commits value with the current commit
 
     - processorName: gitUpdateCommitIdProcessor
 
-.. _newIa-deployer-script-processor:
+.. _deployer-script-processor:
 
 """""""""""""""""""""""
 Groovy Script Processor
@@ -574,7 +574,7 @@ reading a file from the repository.
   - processorName: fileBasedDeploymentEventProcessor
     eventName: 'events.deployment.rebuildContext'
 
-.. _newIa-deployer-command-line-processor:
+.. _deployer-command-line-processor:
 
 """"""""""""""""""""""
 Command Line Processor
@@ -611,7 +611,7 @@ Processor that runs a command line process.
     command: 'myapp -f --param1=value1'
 
 
-.. _newIa-deployer-es-indexing-processor:
+.. _deployer-es-indexing-processor:
 
 """""""""""""""""""""""""""""""""""""""
 Elasticsearch Search Indexing Processor
@@ -691,7 +691,7 @@ Processor that stops the pipeline execution for a given number of seconds.
   - processorName: delayProcessor
     seconds: 10
 
-.. _newIa-deployer-target-find-replace-processor:
+.. _deployer-target-find-replace-processor:
 
 """"""""""""""""""""""""""
 Find And Replace Processor
@@ -747,7 +747,7 @@ All deployment processors related to AWS services support the following properti
 
 |
 
-.. _newIa-deployer-s3-sync-processor:
+.. _deployer-s3-sync-processor:
 
 ~~~~~~~~~~~~~~~~~
 S3 Sync Processor
@@ -768,7 +768,7 @@ Processor that syncs files to an AWS S3 Bucket.
 
 .. |defaultS3E| replace:: ``deployment-events.properties``
 
-.. _newIa-deployer-s3-deployment-events-processor:
+.. _deployer-s3-deployment-events-processor:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 S3 Deployment Events Processor
@@ -987,7 +987,7 @@ The following example shows how the deployment processors work together to deliv
 
 |hr|
 
-.. _newIa-crafter-deployer-templates-guide:
+.. _crafter-deployer-templates-guide:
 
 ----------------
 Target Templates
@@ -1158,7 +1158,7 @@ This target will:
 
 .. note:: When this target is used, the value of ``repo_url`` must be a supported Git URL (HTTP or SSH)
 
-.. note:: For more details about setting up a serverless delivery see :ref:`newIa-setup-serverless-delivery`
+.. note:: For more details about setting up a serverless delivery see :ref:`setup-serverless-delivery`
 
 """"""""""""""""""""""
 AWS Cloudformed Target
@@ -1235,7 +1235,7 @@ This target will:
 
 |hr|
 
-.. _newIa-crafter-deployer-elasticsearch-configuration-guide:
+.. _crafter-deployer-elasticsearch-configuration-guide:
 
 --------------------
 Search Configuration

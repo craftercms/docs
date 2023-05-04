@@ -5,7 +5,7 @@
 
 .. index:: Projects; CrafterCMS
 
-.. _newIa-crafter-cms:
+.. _crafter-cms:
 
 ==========
 CrafterCMS
@@ -129,7 +129,7 @@ The Gradle task above will:
 
 #. Delete any existing environments/module
 #. Download Apache Tomcat, Elasticsearch, and MongoDB (check the Gradle section on how to specify a version for each component)
-#. Build all CrafterCMS modules from the source (check the :ref:`newIa-git` section on how to update the source)
+#. Build all CrafterCMS modules from the source (check the :ref:`git` section on how to update the source)
 #. Create the environment folders and copy all needed resources
 
     - ``crafter-authoring``
@@ -169,13 +169,13 @@ The options above will:
 
 For the *Authoring Environment*:
 
-* Start Apache tomcat on default ports (8080, 8009, 8005) [See :ref:`newIa-gradle-tasks` on how to change default ports]
+* Start Apache tomcat on default ports (8080, 8009, 8005) [See :ref:`gradle-tasks` on how to change default ports]
 * Start Elasticsearch on port 9201
 * Start Crafter Deployer on port 9191
 
 For the *Delivery Environment*:
 
-* Start Apache tomcat on default ports (9080, 9009, 9005) [See :ref:`newIa-gradle-tasks` on how to change default ports]
+* Start Apache tomcat on default ports (9080, 9009, 9005) [See :ref:`gradle-tasks` on how to change default ports]
 * Start ElasticSEarch server on port 9202
 * Start Crafter Deployer on port 9192
 
@@ -226,7 +226,7 @@ Let's look at an example using the task property mentioned above:
 
 The command above will generate an authoring binary archive in the bundles folder named ``crafter-cms-authoring-VERSION.tar.gz``.
 
-.. _newIa-gradle-tasks:
+.. _gradle-tasks:
 
 ^^^^^^^^^^^^
 Gradle Tasks
@@ -250,7 +250,7 @@ Downloads the configured Tomcat version and also verifies that the zip file is o
 
 
 
-.. _newIa-common-task-properties:
+.. _common-task-properties:
 
 Common Task Properties
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -297,7 +297,7 @@ Aside from the tasks that we can run, there are also some properties defined in 
 ||                        || **If true, *includeProfile* will be set to true**                   |
 +-------------------------+----------------------------------------------------------------------+
 
-.. _newIa-authoring-default-ports:
+.. _authoring-default-ports:
 
 +------------------------------------------------------------------------------------------------+
 || Authoring Environment Properties                                                              |
@@ -330,7 +330,7 @@ Aside from the tasks that we can run, there are also some properties defined in 
 ||                                    || Default value is "data/repos/sites"                     |
 +-------------------------------------+----------------------------------------------------------+
 
-.. _newIa-delivery-default-ports:
+.. _delivery-default-ports:
 
 +------------------------------------------------------------------------------------------------+
 || Delivery Environment Properties                                                               |
@@ -361,7 +361,7 @@ Aside from the tasks that we can run, there are also some properties defined in 
 || ``delivery.smtp.port``            || Delivery SMTP port. Default value is 25                  |
 +------------------------------------+-----------------------------------------------------------+
 
-.. _newIa-other-properties:
+.. _other-properties:
 
 +------------------------------------------------------------------------------------------------+
 || Other Properties                                                                              |
@@ -373,7 +373,7 @@ Aside from the tasks that we can run, there are also some properties defined in 
 || ``backupAndReplaceConfig``   || Backup and replace configurations. Default value is false     |
 +-------------------------------+----------------------------------------------------------------+
 
-.. _newIa-git-properties:
+.. _git-properties:
 
 +------------------------------------------------------------------------------------------------+
 || Git Properties                                                                                |
@@ -398,7 +398,7 @@ Here's an example using one of the task properties, ``gitRepo``,  to get the lat
 
         ./gradlew update -Pcrafter.git.remote=upstream
 
-Here's another example on how to clone, build and bundle from a given tag/branch.  Remember to clone the desired branch/tag of craftercms (As described in the next section :ref:`newIa-git`),  before running the command below:
+Here's another example on how to clone, build and bundle from a given tag/branch.  Remember to clone the desired branch/tag of craftercms (As described in the next section :ref:`git`),  before running the command below:
 
     .. code-block:: bash
 
@@ -413,7 +413,7 @@ Here's yet another example of building and deploying the authoring environment o
        ./gradlew build deploy -Pcrafter.profile=true -Penv=authoring
 
 
-.. _newIa-git:
+.. _git:
 
 -------------------
 Useful Git Commands
@@ -436,7 +436,7 @@ Copy CrafterCMS repository and clone submodules
        cd craftercms
        git submodule clone
 
-.. _newIa-update-submodules:
+.. _update-submodules:
 
 ^^^^^^^^^^^^^^^^^
 Update Submodules
@@ -469,7 +469,7 @@ Change the branch/tag of a project (manual way)
 
        git submodule sync --recursive
 
-3. Run :ref:`newIa-update-submodules`
+3. Run :ref:`update-submodules`
 
 ^^^^^^^^^^^^^^^^^^
 Clone a branch/tag
@@ -481,6 +481,6 @@ To clone the branch/tag of craftercms that you want to work with, run:
 
         git clone -b<branch> https://github.com/craftercms/craftercms/
 
-Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.  After cloning the desired branch, you can now clone, build and bundle from a given tag/branch using the property `crafter.git.branch` as described in an earlier section :ref:`Git Properties<newIa-git-properties>`
+Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.  After cloning the desired branch, you can now clone, build and bundle from a given tag/branch using the property `crafter.git.branch` as described in an earlier section :ref:`Git Properties<git-properties>`
 
 

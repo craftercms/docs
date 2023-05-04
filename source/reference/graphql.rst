@@ -1,7 +1,7 @@
 :is-up-to-date: False
 :nosearch:
 
-.. _newIa-graphql:
+.. _graphql:
 
 =======
 GraphQL
@@ -77,7 +77,7 @@ against the schema in real time.
         :align: center
 
 .. note::
-    If the GraphQL server host name used is not ``localhost``, the ``<graphql-server-url />`` in your proxy configuration file needs to be set to the appropriate url.  For more information on the proxy configuration file, see: :ref:`newIa-proxy-configuration`
+    If the GraphQL server host name used is not ``localhost``, the ``<graphql-server-url />`` in your proxy configuration file needs to be set to the appropriate url.  For more information on the proxy configuration file, see: :ref:`proxy-configuration`
 
 ^^^^^^^^^^^^^^^^
 GraphQL Examples
@@ -429,7 +429,7 @@ After Crafter Engine builds the types corresponding to the Content Types in the 
 Groovy script that allows you to make customizations to the schema before making it available to the clients. By
 default the full path of the script is ``/scripts/graphql/init.groovy``.
 
-In this script you will be able to use most of the global variables described in :ref:`newIa-groovy-api` (except the ones
+In this script you will be able to use most of the global variables described in :ref:`groovy-api` (except the ones
 for the request scope). Additionally there is a global variable specific for this script:
 
 +-------------+--------------------------------------------------------+--------------------------------+

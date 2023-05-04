@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-profile-api-profile-verification_token-create:
+.. _crafter-profile-api-profile-verification_token-create:
 
 =========================
 Create Verification Token

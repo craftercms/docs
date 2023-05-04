@@ -4,6 +4,6 @@
 
 .. index:: Engine Project Security Guide
 
-.. _newIa-engine-project-security-guide:
+.. _engine-project-security-guide:
 
 .. include:: /new-ia/includes/engine-project-security-guide.rst

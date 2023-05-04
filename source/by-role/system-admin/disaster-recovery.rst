@@ -1,7 +1,7 @@
 :is-up-to-date: False
 :nosearch:
 
-.. _newIa-system-admin-disaster-recovery:
+.. _system-admin-disaster-recovery:
 
 =================
 Disaster Recovery

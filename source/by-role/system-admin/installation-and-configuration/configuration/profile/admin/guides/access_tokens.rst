@@ -2,13 +2,13 @@
 :last-updated: 4.0.0
 :nosearch:
 
-.. _newIa-profile-admin-access-tokens:
+.. _profile-admin-access-tokens:
 
 ========================
 Access Tokens Management
 ========================
 
-All applications need an Access Token in order to make requests for the :ref:`newIa-crafter-profile-api`.
+All applications need an Access Token in order to make requests for the :ref:`crafter-profile-api`.
 By default three tokens will be created:
 
 +----------------+-----------------------------------------------------------------------------+

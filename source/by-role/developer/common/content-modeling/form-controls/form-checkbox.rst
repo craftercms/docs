@@ -7,7 +7,7 @@
 
 .. index:: Form Controls; Checkbox
 
-.. _newIa-form-checkbox:
+.. _form-checkbox:
 
 ================
 Checkbox Control

@@ -7,7 +7,7 @@
 
 .. index:: Form Controls; Page Order
 
-.. _newIa-form-page-order:
+.. _form-page-order:
 
 ==================
 Page Order Control

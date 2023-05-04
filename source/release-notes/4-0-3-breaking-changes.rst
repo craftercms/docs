@@ -6,7 +6,7 @@
 .. document does not appear in any toctree, this file is referenced
    use :orphan: File-wide metadata option to get rid of WARNING: document isn't included in any toctree for now
 
-.. _newIa-breaking-changes-4-0-3:
+.. _breaking-changes-4-0-3:
 
 ====================================
 Breaking Changes in CrafterCMS 4.0.3

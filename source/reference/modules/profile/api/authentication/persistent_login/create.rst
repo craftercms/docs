@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-profile-api-authentication-persistent_login-create:
+.. _crafter-profile-api-authentication-persistent_login-create:
 
 =======================
 Create Persistent Login

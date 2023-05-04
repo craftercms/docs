@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-actions-get:
+.. _crafter-social-api-actions-get:
 
 ===================
 Get Current Actions

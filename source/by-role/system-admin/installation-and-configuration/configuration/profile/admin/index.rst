@@ -2,7 +2,7 @@
 :last-updated: 4.0.0
 :nosearch:
 
-.. _newIa-profile-admin-console:
+.. _profile-admin-console:
 
 ================================
 Crafter Profile Admin Console UI
@@ -10,7 +10,7 @@ Crafter Profile Admin Console UI
 
 Crafter Profile Admin Console consists of a single WAR file, with a dependency on access to
 Crafter Profile. This web application provides a simple way to manage all data related to tenants
-and profiles without the need to call the :ref:`newIa-crafter-profile-api` directly.
+and profiles without the need to call the :ref:`crafter-profile-api` directly.
 
 ------------
 Installation

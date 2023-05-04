@@ -4,7 +4,7 @@
 
 .. index:: Upload and Transcode Video to AWS
 
-.. _newIa-upload-transcode-video-to-aws:
+.. _upload-transcode-video-to-aws:
 
 ===========================================================
 Upload and Transcode Video using AWS Elemental MediaConvert
@@ -71,7 +71,7 @@ Where:
 - **template:** Name of the Job Template used to create transcoding jobs found in the AWS MediaConvert dashboard
 
 
-We also need an S3 profile where the transcoded videos will be uploaded.  See :ref:`newIa-use-s3-to-store-assets` on how to configure the profile for AWS S3.
+We also need an S3 profile where the transcoded videos will be uploaded.  See :ref:`use-s3-to-store-assets` on how to configure the profile for AWS S3.
 
 For this guide, the ``AWS Profiles`` should look like this (replace the ``X's`` for actual AWS credentials,
 ``mybucket`` for the actual bucket where you're storing the transcoded videos, ``mybucket/folder/videos`` for the actual folder setup in AWS where the transcoded videos will be stored, ``Example Template`` for the actual AWS MediaConvert job template name):
@@ -112,7 +112,7 @@ For this guide, the ``AWS Profiles`` should look like this (replace the ``X's`` 
 
 |
 
-Please see :ref:`newIa-managing-secrets` for more information on how to manage/encode your AWS credentials.
+Please see :ref:`managing-secrets` for more information on how to manage/encode your AWS credentials.
 
 -------------------------------------------------------------------------------------------------------
 Step 2: Add the control and data source for uploading video to AWS for transcoding, to the content type

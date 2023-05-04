@@ -4,7 +4,7 @@
 
 .. index:: Engine SAML2 Configuration
 
-.. _newIa-engine-saml2-configuration:
+.. _engine-saml2-configuration:
 
 ===========================================
 Engine SAML2 Configuration |enterpriseOnly|
@@ -15,10 +15,10 @@ Engine SAML2 Configuration |enterpriseOnly|
 
 .. important::
    *This document only applies to* **CrafterCMS version 4.0.3 and later** |br|
-   *Please see* :ref:`here <newIa-engine-saml2-configuration-up-to-4-0-2>` *for version 4.0.2 and earlier.*
+   *Please see* :ref:`here <engine-saml2-configuration-up-to-4-0-2>` *for version 4.0.2 and earlier.*
 
 .. note:: This guide includes SAML2 specific configuration only, for a general guide see
-   :ref:`newIa-engine-project-security-guide`
+   :ref:`engine-project-security-guide`
 
 |
 |
@@ -60,7 +60,7 @@ To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.s
 
 |
 
-Next we'll setup SAML configuration properties.  Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension`` and add/uncomment the following lines to :ref:`server-config.properties <newIa-engine-config-override>` (of course, make any appropriate configuration changes according to your system):
+Next we'll setup SAML configuration properties.  Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension`` and add/uncomment the following lines to :ref:`server-config.properties <engine-config-override>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: properties
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*

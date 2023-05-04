@@ -4,7 +4,7 @@
 
 .. index:: Project Project Tools
 
-.. _newIa-project-tools:
+.. _project-tools:
 
 =============
 Project Tools
@@ -12,13 +12,13 @@ Project Tools
 
 This section contains details on project tools such as Configuration Management, Plugin Management, Encryption Tool, etc.
 
-.. _newIa-navigating-project-tools:
+.. _navigating-project-tools:
 
 ------------------------
 Navigating Project Tools
 ------------------------
 
-In this section, we discuss the available modules in the |projectTools| dialog from any of the available out-of-the-box blueprints.  The modules available in the Project Tools can be configured by following :ref:`newIa-user-interface-configuration`
+In this section, we discuss the available modules in the |projectTools| dialog from any of the available out-of-the-box blueprints.  The modules available in the Project Tools can be configured by following :ref:`user-interface-configuration`
 
 To get to |projectTools|, click on the **Toggle Sidebar** icon (CrafterCMS logo with hamburger next to it) at the top left of your browser, if it's not yet open.
 
@@ -65,7 +65,7 @@ The Content Types module under **Project Tools** allows the user to view existin
 
 |
 
-For more information on content modeling and content types, see :ref:`newIa-content-modeling` in the Developer section
+For more information on content modeling and content types, see :ref:`content-modeling` in the Developer section
 
 ^^^^^^^^^^^^^^^
 Encryption Tool
@@ -80,7 +80,7 @@ The ``Encryption Tool`` allows the user to encrypt sensitive data such as access
 
 |
 
-For more information on how to use the encryption tool, see :ref:`newIa-studio-encryption-tool`.
+For more information on how to use the encryption tool, see :ref:`studio-encryption-tool`.
 
 ^^^^^^^^^^^^^
 Configuration
@@ -95,7 +95,7 @@ Configuration allows the user to configure the different settings in CrafterCMS 
 
 |
 
-For more information on what settings can be configured, see :ref:`newIa-studio-configuration` and :ref:`newIa-engine-configuration`
+For more information on what settings can be configured, see :ref:`studio-configuration` and :ref:`engine-configuration`
 
 ^^^^^
 Audit
@@ -110,7 +110,7 @@ Audit logs displays the date, time, user and action performed to content in the 
 
 |
 
-See :ref:`newIa-studio-logging` for some more information on viewing logs.
+See :ref:`studio-logging` for some more information on viewing logs.
 
 ^^^^^^^^^^^^^^^
 Workflow States
@@ -125,7 +125,7 @@ Workflow States allows the user to manually set the workflow state of every file
 
 |
 
-For more details on manually setting workflow states, see :ref:`newIa-setting-workflow-states`
+For more details on manually setting workflow states, see :ref:`setting-workflow-states`
 
 ^^^^^^^^^^^
 Log Console
@@ -140,7 +140,7 @@ The **Log Console** allows the user to view messages depending on what log level
 
 |
 
-See :ref:`newIa-studio-log-console` for some more information on viewing logs.
+See :ref:`studio-log-console` for some more information on viewing logs.
 
 ^^^^^^^^^^
 Publishing
@@ -155,7 +155,7 @@ The **Publishing** module under **Project Tools** allows the user to view the pu
 
 |
 
-For more information on Publishing, see :ref:`newIa-publishing-and-status`
+For more information on Publishing, see :ref:`publishing-and-status`
 
 ^^^
 Git
@@ -170,7 +170,7 @@ The **Git** under **Project Tools** allows the user to perform Git operations su
 
 |
 
-For more information on Git under |projectTools|, see :ref:`newIa-project-tools-git`
+For more information on Git under |projectTools|, see :ref:`project-tools-git`
 
 ^^^^^^^
 GraphQL
@@ -185,7 +185,7 @@ CrafterCMS provides built-in support for GraphQL to query content in any project
 
 |
 
-For more information on Studio support for GraphQL, see :ref:`newIa-graphql`
+For more information on Studio support for GraphQL, see :ref:`graphql`
 
 ^^^^^^^^^^^^^^^^^
 Plugin Management
@@ -199,7 +199,7 @@ The Project Tools **Plugin Management** allows the user to install and to view c
    :align: center
    :width: 70%
 
-For more information on managing project plugins, see :ref:`newIa-plugin-management`
+For more information on managing project plugins, see :ref:`plugin-management`
 
 
 Here are the topics covered in this section:

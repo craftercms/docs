@@ -3,7 +3,7 @@
 
 :nosearch:
 
-.. _newIa-crafter-studio-api-server-get-loggers:
+.. _crafter-studio-api-server-get-loggers:
 
 ===========
 Get Loggers

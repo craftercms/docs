@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-ugc-threads-get-children:
+.. _crafter-social-api-ugc-threads-get-children:
 
 ====================
 Get Comment Children

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-debugging_ssh_issues:
+.. _debugging_ssh_issues:
 
 ==============================
 Troubleshooting SSH Key Issues

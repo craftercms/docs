@@ -4,7 +4,7 @@
 
 .. index:: Author Screens
 
-..  _newIa-author-screens:
+..  _author-screens:
 
 ==============
 Author Screens
@@ -101,7 +101,7 @@ Crafter Studio administrators can also create and delete projects from this scre
 
 |
 
-.. _newIa-account-management:
+.. _account-management:
 
 ------------------
 Account Management
@@ -128,7 +128,7 @@ To get to Account Management:
 
 |
 
-.. _newIa-project-dashboard:
+.. _project-dashboard:
 
 -----------------
 Project Dashboard
@@ -322,7 +322,7 @@ prior to publishing changes.
 
 |
 
-.. _newIa-experience-builder-panel-screens:
+.. _experience-builder-panel-screens:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Experience Builder Panel
@@ -571,10 +571,10 @@ Sidebar
 The sidebar opens a menu that allows access to the following:
 
     - *Dashboard:* An overview of the workflow for that given project.
-      See :ref:`above <newIa-project-dashboard>` for more information
+      See :ref:`above <project-dashboard>` for more information
     - *Project Explorer:* Allows navigation to all pages, components and documents in the system
     - *Project Tools (available depending on your role):* Contains project administration tools
-      such as Plugin Management, Encryption Tool, etc.  See :ref:`here <newIa-navigating-project-tools>`
+      such as Plugin Management, Encryption Tool, etc.  See :ref:`here <navigating-project-tools>`
       for more information
 
 The menu/panel width can be resized freely by the user and will remember where you set the length and

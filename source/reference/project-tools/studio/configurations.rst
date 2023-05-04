@@ -6,7 +6,7 @@
 
 .. highlight:: xml
 
-.. _newIa-project-config-configuration:
+.. _project-config-configuration:
 
 ==============
 Configurations

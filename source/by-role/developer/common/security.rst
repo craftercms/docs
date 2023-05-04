@@ -2,7 +2,7 @@
 :last-updated: 4.0.0
 :nosearch:
 
-.. _newIa-headless-security:
+.. _headless-security:
 
 ===========================
 Project Security (Delivery)

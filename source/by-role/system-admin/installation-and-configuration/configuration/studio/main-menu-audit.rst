@@ -7,7 +7,7 @@
 
 
 .. index:: Main Menu Audit
-.. _newIa-nav-menu-audit:
+.. _nav-menu-audit:
 
 =====================
 Navigation Menu Audit

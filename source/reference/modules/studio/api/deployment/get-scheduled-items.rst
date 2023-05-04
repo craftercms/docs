@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-deployment-get-scheduled-items:
+.. _crafter-studio-api-deployment-get-scheduled-items:
 
 ===================
 Get Scheduled Items

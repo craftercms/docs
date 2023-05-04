@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-profile-api-profile-verification_token-get:
+.. _crafter-profile-api-profile-verification_token-get:
 
 ======================
 Get Verification Token

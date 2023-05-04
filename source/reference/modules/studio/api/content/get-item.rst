@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-content-get-item:
+.. _crafter-studio-api-content-get-item:
 
 ================
 Get Content Item

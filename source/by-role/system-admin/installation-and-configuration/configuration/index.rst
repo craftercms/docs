@@ -2,7 +2,7 @@
 :since-version: 4.0.3
 :nosearch:
 
-.. _newIa-system-admin-configuration:
+.. _system-admin-configuration:
 
 =============
 Configuration
@@ -27,7 +27,7 @@ Deployer
 ^^^^^^^^
 .. TODO: Briefly describe Crafter Deployer's role and the purpose of administering it
 
-:ref:`Deployer Administration and Configuration <newIa-crafter-deployer-administration>`
+:ref:`Deployer Administration and Configuration <crafter-deployer-administration>`
 
 
 .. .. toctree::

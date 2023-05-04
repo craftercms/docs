@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-deploying-crafter-cms-in-kubernetes:
+.. _deploying-crafter-cms-in-kubernetes:
 
 ==================================
 Deploying CrafterCMS in Kubernetes

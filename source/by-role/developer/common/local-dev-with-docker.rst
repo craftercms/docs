@@ -5,7 +5,7 @@
 
 .. TODO: Update to v4
 
-.. _newIa-local-dev-with-docker:
+.. _local-dev-with-docker:
 
 =============================
 Local Development with Docker

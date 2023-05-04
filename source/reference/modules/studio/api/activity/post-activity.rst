@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-activity-post-activity:
+.. _crafter-studio-api-activity-post-activity:
 
 =============
 Post Activity

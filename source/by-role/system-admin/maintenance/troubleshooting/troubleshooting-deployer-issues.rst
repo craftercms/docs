@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-debugging-deployer-issues:
+.. _crafter-studio-debugging-deployer-issues:
 
 ===============================
 Troubleshooting Deployer Issues

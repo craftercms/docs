@@ -4,7 +4,7 @@
 
 .. index::  Studio Logging, Viewing Logs Through Crafter Studio
 
-.. _newIa-studio-logging:
+.. _studio-logging:
 
 ===================================
 Viewing Logs Through Crafter Studio
@@ -25,7 +25,7 @@ To view the audit logs, from the **Sidebar**, click on |projectTools|, then clic
 
 |
 
-.. _newIa-studio-log-console:
+.. _studio-log-console:
 
 -----------
 Log Console
@@ -54,4 +54,4 @@ We'll now go to the **Log Console** to start viewing the logs.  From the **Sideb
 
 |
 
-For more information on logging levels, see :ref:`newIa-override-logging-levels`
+For more information on logging levels, see :ref:`override-logging-levels`

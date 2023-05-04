@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-ugc-attachments-update:
+.. _crafter-social-api-ugc-attachments-update:
 
 =========================
 Update Attachment Content

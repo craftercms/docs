@@ -3,7 +3,7 @@
 
 .. index:: Project Creation with Remote Repositories, Remote Repositories
 
-.. _newIa-create-project-with-link-to-remote-repo:
+.. _create-project-with-link-to-remote-repo:
 
 =========================================
 Project Creation with Remote Repositories

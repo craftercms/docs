@@ -3,7 +3,7 @@
 
 .. index:: Asset Processing, Asset
 
-.. _newIa-asset-processing:
+.. _asset-processing:
 
 ================
 Asset Processing

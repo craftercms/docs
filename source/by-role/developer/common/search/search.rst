@@ -2,7 +2,7 @@
 :last-updated: 4.0.3
 :nosearch:
 
-.. _newIa-search:
+.. _search:
 
 ======
 Search
@@ -12,7 +12,7 @@ Search
 Querying Content
 ----------------
 
-To see the types of content queries you can make in CrafterCMS, please see :ref:`newIa-basic-query-mechanics`
+To see the types of content queries you can make in CrafterCMS, please see :ref:`basic-query-mechanics`
 
 -----------------------------
 Implementing a Faceted Search
@@ -190,7 +190,7 @@ The final step is to trigger a new search when the user selects one of the value
    doSearch(queryParam, categories);
   });
 
-.. _newIa-search-multi-index-query:
+.. _search-multi-index-query:
 
 -----------------
 Multi-index Query

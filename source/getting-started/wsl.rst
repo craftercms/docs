@@ -3,7 +3,7 @@
 
 :nosearch:
 
-.. _newIa-installing-craftercms-on-wsl:
+.. _installing-craftercms-on-wsl:
 
 ============================
 Installing CrafterCMS on WSL
@@ -65,7 +65,7 @@ Prerequisite
 
    Download and install Java JDK 11 (either `Oracle <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_  or `OpenJDK <http://openjdk.java.net/>`_).
 
-   Make sure that you have a ``JAVA_HOME`` environment variable that points to the root of the JDK install directory.  See :ref:`here <newIa-verify-java-home-env-var>` for more information on the ``JAVA_HOME`` environment variable
+   Make sure that you have a ``JAVA_HOME`` environment variable that points to the root of the JDK install directory.  See :ref:`here <verify-java-home-env-var>` for more information on the ``JAVA_HOME`` environment variable
 
    Here's an example of installing Java JDK 11 using ``apt`` then setup ``JAVA_HOME``
 

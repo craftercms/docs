@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; File Browse Repo
 
-.. _newIa-form-source-file-browse:
+.. _form-source-file-browse:
 
 =======================
 File Browse Data Source

@@ -7,7 +7,7 @@
 
 .. index:: Form Controls; Auto Filename
 
-.. _newIa-form-auto-filename:
+.. _form-auto-filename:
 
 =====================
 Auto Filename Control

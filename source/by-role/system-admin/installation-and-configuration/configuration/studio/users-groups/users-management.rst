@@ -5,7 +5,7 @@
 .. index:: Users Management
 .. highlight:: xml
 
-.. _newIa-users-management:
+.. _users-management:
 
 ================
 Users Management
@@ -62,7 +62,7 @@ In the following example we typed "jane", we obtained only one related user: "Ja
     :alt: Users - Search
     :align: center
 
-.. _newIa-creating-a-user:
+.. _creating-a-user:
 
 ^^^^^^^^^^^^^^^^^^^
 Creating a New User
@@ -88,7 +88,7 @@ A notification will appear on the screen for a few seconds on successful creatio
     :alt: Users - Created Notification
     :align: center
 
-.. _newIa-editing-a-user:
+.. _editing-a-user:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Viewing and Editing an Existing User

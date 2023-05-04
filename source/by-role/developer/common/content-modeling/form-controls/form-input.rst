@@ -7,7 +7,7 @@
 
 .. index:: Form Controls; Input
 
-.. _newIa-form-input:
+.. _form-input:
 
 =============
 Input Control

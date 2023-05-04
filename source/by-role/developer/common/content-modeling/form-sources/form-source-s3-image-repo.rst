@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; Image from S3 Repository
 
-.. _newIa-form-source-s3-image-repo:
+.. _form-source-s3-image-repo:
 
 ====================================
 Image from S3 Repository Data Source

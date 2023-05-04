@@ -2,7 +2,7 @@
 :last-updated: 4.0.0
 :nosearch:
 
-.. _newIa-working-in-your-ide:
+.. _working-in-your-ide:
 
 ===================
 Working in Your IDE

@@ -3,7 +3,7 @@
 
 .. index:: Projects; Crafter Core
 
-.. _newIa-crafter-core:
+.. _crafter-core:
 
 ============
 Crafter Core

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-profile-api-profile-by_ids:
+.. _crafter-profile-api-profile-by_ids:
 
 ===================
 Get Profiles By Ids

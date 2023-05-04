@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-content-get-next-item-order:
+.. _crafter-studio-api-content-get-next-item-order:
 
 ===================
 Get Next Item Order

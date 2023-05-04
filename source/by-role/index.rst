@@ -2,7 +2,7 @@
 :last-updated: 4.0.3
 :nosearch:
 
-.. _newIa-by-role:
+.. _by-role:
 
 =====================
 Documentation by Role
@@ -26,7 +26,7 @@ For the Architect
     <a href="architect/index.html"><img alt="By Role - Architect" src="../../_static/images/by-role/architect.webp" style="width: 20%;" /></a>
 
 
-|architectByRole| For the enterprise architect looking for a content management platform, please start :ref:`here<newIa-architect>`.
+|architectByRole| For the enterprise architect looking for a content management platform, please start :ref:`here<architect>`.
 
 
 
@@ -39,7 +39,7 @@ For the Developer
     :width: 20 %
     :target: developer/index.html
 
-|developerByRole| For the developer learning how to develop on CrafterCMS, please start :ref:`here<newIa-developer>`.
+|developerByRole| For the developer learning how to develop on CrafterCMS, please start :ref:`here<developer>`.
 
 ----------------------
 For the Content Author
@@ -50,7 +50,7 @@ For the Content Author
     :width: 20 %
     :target: author/index.html
 
-|authorByRole| For the content author learning to use CrafterCMS to create and manage content, please start :ref:`here<newIa-author>`.
+|authorByRole| For the content author learning to use CrafterCMS to create and manage content, please start :ref:`here<author>`.
 
 -----------------------------
 For the Project Administrator
@@ -61,7 +61,7 @@ For the Project Administrator
     :width: 20 %
     :target: site-admin/index.html
 
-|projectAdminByRole| For the project administrator learning how to create and manage projects/sites in CrafterCMS, please start :ref:`here<newIa-project-admin>`.
+|projectAdminByRole| For the project administrator learning how to create and manage projects/sites in CrafterCMS, please start :ref:`here<project-admin>`.
 
 ----------------------------
 For the System Administrator
@@ -72,7 +72,7 @@ For the System Administrator
     :width: 20 %
     :target: system-admin/index.html#newia-system-admin
 
-|systemAdministrator| For the system administrator learning how to set up and configure CrafterCMS, please start :ref:`here<newIa-system-admin>`.
+|systemAdministrator| For the system administrator learning how to set up and configure CrafterCMS, please start :ref:`here<system-admin>`.
 
 
 .. toctree::

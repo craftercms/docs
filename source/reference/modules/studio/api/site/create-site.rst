@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-site-create:
+.. _crafter-studio-api-site-create:
 
 ===========
 Create Site

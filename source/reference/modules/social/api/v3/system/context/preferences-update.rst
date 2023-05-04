@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-context-preferences-update:
+.. _crafter-social-api-context-preferences-update:
 
 ==========================
 Update Context Preferences
@@ -36,7 +36,7 @@ Parameters
 .. NOTE::
   Any additional parameter included in the request will be saved to the preferences, there is no
   validation on names or values to support custom preferences. For more information about the
-  available preferences see :ref:`newIa-social-admin-tenant-preferences`
+  available preferences see :ref:`social-admin-tenant-preferences`
 
 -------
 Example

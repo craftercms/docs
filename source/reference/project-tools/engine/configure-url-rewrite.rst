@@ -4,7 +4,7 @@
 
 .. index:: URL Rewrite
 
-.. _newIa-configure-url-rewrite:
+.. _configure-url-rewrite:
 
 =========================
 Configuring URL Rewriting

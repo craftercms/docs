@@ -7,7 +7,7 @@
 
 .. index:: Form Controls; Text Area
 
-.. _newIa-form-text-area:
+.. _form-text-area:
 
 =================
 Text Area Control

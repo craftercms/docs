@@ -4,7 +4,7 @@
 
 .. index:: Configure Engine to use MongoDB
 
-.. _newIa-engine-mongodb-configuration:
+.. _engine-mongodb-configuration:
 
 ===============================
 Configure Engine to use MongoDB
@@ -134,4 +134,4 @@ Delivery specific configurations
 --------------------------------
 
 If you need to manage different values for the configuration files depending on the environment
-you can find more detailed information in the :ref:`newIa-environment-specific-configurations` cook book.
+you can find more detailed information in the :ref:`environment-specific-configurations` cook book.

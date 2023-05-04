@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-clipboard-cut-item:
+.. _crafter-studio-api-clipboard-cut-item:
 
 ========
 Cut Item

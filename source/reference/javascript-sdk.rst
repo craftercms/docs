@@ -5,7 +5,7 @@
 
 .. index:: JavaScript SDK
 
-.. _newIa-javascript-sdk:
+.. _javascript-sdk:
 
 ==============
 JavaScript SDK

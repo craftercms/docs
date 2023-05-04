@@ -8,7 +8,7 @@
 
 .. index:: Plugin Management
 
-.. _newIa-plugin-management:
+.. _plugin-management:
 
 =================
 Plugin Management

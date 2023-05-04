@@ -8,7 +8,7 @@
 
 .. index:: Form Controls; Video
 
-.. _newIa-form-video:
+.. _form-video:
 
 =============
 Video Control
@@ -48,9 +48,9 @@ Configuration
 ||                       || * |vidUploadToS3|                                                    |
 +------------------------+-----------------------------------------------------------------------+
 
-.. |vidUploadFromDesktop| replace:: :ref:`Video Uploaded From Desktop <newIa-form-source-video-desktop>`
-.. |vidFromRepo| replace:: :ref:`Video from Repository <newIa-form-source-video-repo>`
-.. |vidFromWebDAV| replace:: :ref:`Video from WebDAV Repository <newIa-form-source-webdav-video-repo>`
-.. |vidUploadToWebDAV| replace:: :ref:`Video Uploaded to WebDAV Repository <newIa-form-source-webdav-video-upload>`
-.. |vidFromS3| replace:: :ref:`Video From S3 Repository <newIa-form-source-s3-video-repo>`
-.. |vidUploadToS3| replace:: :ref:`Video Uploaded to S3 Repository <newIa-form-source-s3-video-upload>`
+.. |vidUploadFromDesktop| replace:: :ref:`Video Uploaded From Desktop <form-source-video-desktop>`
+.. |vidFromRepo| replace:: :ref:`Video from Repository <form-source-video-repo>`
+.. |vidFromWebDAV| replace:: :ref:`Video from WebDAV Repository <form-source-webdav-video-repo>`
+.. |vidUploadToWebDAV| replace:: :ref:`Video Uploaded to WebDAV Repository <form-source-webdav-video-upload>`
+.. |vidFromS3| replace:: :ref:`Video From S3 Repository <form-source-s3-video-repo>`
+.. |vidUploadToS3| replace:: :ref:`Video Uploaded to S3 Repository <form-source-s3-video-upload>`

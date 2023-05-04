@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-ugc-comments-update-attributes:
+.. _crafter-social-api-ugc-comments-update-attributes:
 
 =========================
 Update Comment Attributes

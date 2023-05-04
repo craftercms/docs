@@ -4,7 +4,7 @@
 
 .. index:: Engine Headers Based Authentication
 
-.. _newIa-engine-headers-authentication:
+.. _engine-headers-authentication:
 
 ====================================================
 Engine Headers Based Authentication |enterpriseOnly|
@@ -63,7 +63,7 @@ Next, configure the URLs you require authentication by setting ``url`` to desire
 
    |
 
-See :ref:`newIa-engine-project-security-guide-restrict-urls` for more information on expressions that can be used.
+See :ref:`engine-project-security-guide-restrict-urls` for more information on expressions that can be used.
 
 From the above configuration, here are the headers that Engine expects to be provided:
 
@@ -260,7 +260,7 @@ You should now see the Home page displayed
 
 |
 
-See :ref:`newIa-engine-project-configuration` for more information on how to access the ``site-config.xml`` file.
+See :ref:`engine-project-configuration` for more information on how to access the ``site-config.xml`` file.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Example Setting Up Engine Headers Authentication with Optional Role Mappings and Attributes

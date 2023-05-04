@@ -3,7 +3,7 @@
 
 .. index:: Publishing Assets in External Storage
 
-.. _newIa-publishing-assets-in-external-storage:
+.. _publishing-assets-in-external-storage:
 
 =====================================
 Publishing Assets in External Storage
@@ -38,11 +38,11 @@ To setup an external storage for assets, open the **Sidebar**, then click on |pr
 
 |
 
-To see more information on the Blob Stores configuration, see :ref:`newIa-blob-stores-configuration`
+To see more information on the Blob Stores configuration, see :ref:`blob-stores-configuration`
 
 After setting up the ``Blob Stores`` configuration, you may now use the external storage for uploading using the various upload methods provided by Crafter Studio, and publishing to live or staging if it's setup.
 
-.. _newIa-publishing-assets-in-external-storage-example:
+.. _publishing-assets-in-external-storage-example:
 
 -------
 Example
@@ -84,7 +84,7 @@ This step is optional but for our example, we wanted to be able to publish to st
 
   |
 
-For more information on staging, see :ref:`newIa-staging-env`
+For more information on staging, see :ref:`staging-env`
 
 ^^^^^^^^^^^^^^^^^^^
 2. Setup Blob Store
@@ -138,9 +138,9 @@ In your Studio, click on |projectTools| -> *Configuration* -> *Blob Stores* and 
 * **configuration:** configuration specific for the store type (For AWS S3, it requires credentials to access the buckets)
 
 Remember to encrypt your credentials. For more information on how to manage/encode your secrets such as AWS credentials,
-please see :ref:`newIa-managing-secrets`
+please see :ref:`managing-secrets`
 
-To see more information on the Blob Stores configuration, see :ref:`newIa-blob-stores-configuration`
+To see more information on the Blob Stores configuration, see :ref:`blob-stores-configuration`
 
 
 ^^^^^^^^^^^^^^^
@@ -293,7 +293,7 @@ Let's begin:
 
      |
 
-   For more information on staging, see :ref:`newIa-staging-env`
+   For more information on staging, see :ref:`staging-env`
 
 2. **Setup Blob Store**
 
@@ -309,7 +309,7 @@ Let's begin:
      |
 
   
-   To see more information on the Blob Stores configuration, see :ref:`newIa-blob-stores-configuration`
+   To see more information on the Blob Stores configuration, see :ref:`blob-stores-configuration`
 
 #. **Copy assets in** ``live`` **to** ``staging`` **in external storage**
 

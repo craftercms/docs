@@ -3,7 +3,7 @@
 
 :nosearch:
 
-.. _newIa-backup-and-recovery:
+.. _backup-and-recovery:
 
 ===================
 Backup and Recovery

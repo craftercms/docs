@@ -3,14 +3,14 @@
 
 .. index:: Crafter Studio Dashboard Plugin Example, Studio Plugins, Plugins
 
-.. _newIa-plugin-dashboard-example:
+.. _plugin-dashboard-example:
 
 =======================================
 Crafter Studio Dashboard Plugin Example
 =======================================
 
 The dashboard contains different dashlets that show at a glance all items currently in workflow, all items recently modified by the current user, etc. Dashlets shown vary depending on the user's role.
-For more information on the Dashboard, see :ref:`here <newIa-project-dashboard>`
+For more information on the Dashboard, see :ref:`here <project-dashboard>`
 
 .. image:: /_static/images/content-author/project-dashboard.webp
    :align: center
@@ -21,7 +21,7 @@ For more information on the Dashboard, see :ref:`here <newIa-project-dashboard>`
 
 Let's take a look at an example of creating a Dashboard plugin in Studio using a project called ``My Editorial`` created using the **Website Editorial** blueprint.
 
-#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our dashboard plugin.  We'll follow the convention listed in :ref:`newIa-ui-plugin-directory-structure`.  For our example, CATEGORY is ``dashboard`` and the NAME is ``test-dashboard``
+#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our dashboard plugin.  We'll follow the convention listed in :ref:`ui-plugin-directory-structure`.  For our example, CATEGORY is ``dashboard`` and the NAME is ``test-dashboard``
 
    In a local folder, create the descriptor file for your plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.exampletoolbar``, then create the following folder structure:
 
@@ -100,7 +100,7 @@ Let's take a look at an example of creating a Dashboard plugin in Studio using a
 
    |
 
-   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <newIa-crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``my-editorial`` by running the following:
+   When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``my-editorial`` by running the following:
 
       ..  code-block:: bash
 

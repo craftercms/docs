@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-aws-mediaconvert:
+.. _crafter-studio-api-aws-mediaconvert:
 
 =========================
 MediaConvert (deprecated)

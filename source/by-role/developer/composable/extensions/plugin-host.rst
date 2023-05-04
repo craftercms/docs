@@ -3,7 +3,7 @@
 
 :orphan:
 
-.. _newIa-plugin-host:
+.. _plugin-host:
 
 ===========
 Plugin Host
@@ -60,7 +60,7 @@ responsible for bootstrapping the application.
 
 If you have an app that requires building (e.g. transpilation), you can keep your sources inside your
 CrafterCMS project or in a separate repository — up to you. The important piece is that the final build
-of your plugin is placed into the plugins file directory as detailed :ref:`here <newIa-ui-plugin-directory-structure>`
+of your plugin is placed into the plugins file directory as detailed :ref:`here <ui-plugin-directory-structure>`
 
 
 -------------------------------------
@@ -170,7 +170,7 @@ now, we'll want to load the ``index.html`` instead of the ``index.js``.
 
 We can now view the Bulk Edit plugin at ``/studio/plugin?site=skateboard-shop&type=apps&name=bulk-edit&file=index.html``.
 
-.. _newIa-plugin-host-page-examples:
+.. _plugin-host-page-examples:
 
 --------
 Examples

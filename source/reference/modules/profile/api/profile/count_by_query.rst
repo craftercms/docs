@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-profile-api-profile-count_by_query:
+.. _crafter-profile-api-profile-count_by_query:
 
 ==========================
 Get Profile Count By Query

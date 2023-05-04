@@ -3,7 +3,7 @@
 
 :nosearch:
 
-..  _newIa-developers:
+..  _developers:
 
 ==========
 Composable

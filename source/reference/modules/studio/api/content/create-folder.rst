@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-content-create-folder:
+.. _crafter-studio-api-content-create-folder:
 
 =============
 Create Folder

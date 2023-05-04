@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-content-get-items-tree:
+.. _crafter-studio-api-content-get-items-tree:
 
 ==============
 Get Items Tree

@@ -7,7 +7,7 @@
 
 .. index:: Form Controls; Form Section
 
-.. _newIa-form-section:
+.. _form-section:
 
 ====================
 Form Section Control

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-context-preferences-email-template-update:
+.. _crafter-social-api-context-preferences-email-template-update:
 
 =====================
 Update Email Template

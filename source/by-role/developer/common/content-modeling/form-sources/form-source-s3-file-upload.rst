@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; S3 Repository File Upload
 
-.. _newIa-form-source-s3-file-upload:
+.. _form-source-s3-file-upload:
 
 ==========================
 S3 File Upload Data Source

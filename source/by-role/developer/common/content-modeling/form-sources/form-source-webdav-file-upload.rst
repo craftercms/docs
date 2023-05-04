@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; WebDAV Repository File Upload
 
-.. _newIa-form-source-webdav-file-upload:
+.. _form-source-webdav-file-upload:
 
 ==============================
 WebDAV File Upload Data Source

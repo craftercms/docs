@@ -7,7 +7,7 @@
 
 .. index:: Form Controls; Dropdown
 
-.. _newIa-form-dropdown:
+.. _form-dropdown:
 
 ================
 Dropdown Control

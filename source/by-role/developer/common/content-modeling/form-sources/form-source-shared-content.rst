@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; Shared Content
 
-.. _newIa-form-source-shared-content:
+.. _form-source-shared-content:
 
 ==========================
 Shared Content Data Source

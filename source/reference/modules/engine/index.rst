@@ -3,7 +3,7 @@
 
 .. index:: Projects; Crafter Engine
 
-.. _newIa-crafter-engine:
+.. _crafter-engine:
 
 ==============
 Crafter Engine
@@ -27,7 +27,7 @@ Crafter Engine Architecture
 
 |hr|
 
-.. _newIa-engine-configuration-files:
+.. _engine-configuration-files:
 
 --------------------------
 Configuring Crafter Engine
@@ -56,9 +56,9 @@ These configuration files for Crafter Engine is located under  ``CRAFTER_HOME/bi
 
 The files can be accessed by opening the files using your favorite editor.  Any changes made to any of the files listed above will require a restart of Crafter.
 
-For more information on the properties in ``server-config.properties``, see :ref:`newIa-engine-config-override`
+For more information on the properties in ``server-config.properties``, see :ref:`engine-config-override`
 
-.. _newIa-engine-site-configuration-files:
+.. _engine-site-configuration-files:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Project-level/Site-level Configuration Files
@@ -83,14 +83,14 @@ These site configuration files are located under ``CRAFTER_HOME/data/repos/sites
 
 These files can be accessed by navigating from the Studio Sidebar to |projectTools| ➜ ``Configuration``, then selecting the desired Engine configuration option from the dropdown.
 
-For more information on how to configure site settings related to Crafter Engine see :ref:`newIa-engine-configuration`
+For more information on how to configure site settings related to Crafter Engine see :ref:`engine-configuration`
 
-.. _newIa-engine-project-configuration-guide:
+.. _engine-project-configuration-guide:
 .. include:: /new-ia/includes/engine-project-configuration.rst
 
 .. include:: /new-ia/includes/engine-project-security-guide.rst
 
-.. _newIa-access-to-services:
+.. _access-to-services:
 
 ---------------
 Custom Services
@@ -104,7 +104,7 @@ CrafterCMS Services
 ^^^^^^^^^^^^^^^^^^^
 
 If your site includes a custom application context with services, you can make them available by adding them to the
-comma-separated list in the :ref:`server-config.properties <newIa-engine-configuration-files>` configuration file:
+comma-separated list in the :ref:`server-config.properties <engine-configuration-files>` configuration file:
 
 .. code-block:: none
   :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
@@ -124,7 +124,7 @@ System Services
 |
 
 System objects like ``servletContext`` cannot be exposed by adding them to a list, instead you will need to change
-the following configuration in the :ref:`server-config.properties <newIa-engine-configuration-files>` file:
+the following configuration in the :ref:`server-config.properties <engine-configuration-files>` file:
 
 .. code-block:: none
   :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
@@ -132,7 +132,7 @@ the following configuration in the :ref:`server-config.properties <newIa-engine-
   # Expose all services
   crafter.engine.disableVariableRestrictions=true
 
-.. _newIa-script-sandbox-configuration:
+.. _script-sandbox-configuration:
 
 ----------------------------
 Script Sandbox Configuration
@@ -170,7 +170,7 @@ To use a custom blacklist follow these steps:
     ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/groovy/blacklist``
 
 #.  Remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
-#.  Update the :ref:`server-config.properties <newIa-engine-configuration-files>` configuration file to load the custom blacklist:
+#.  Update the :ref:`server-config.properties <engine-configuration-files>` configuration file to load the custom blacklist:
 
     .. code-block:: none
       :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
@@ -210,7 +210,7 @@ Disabling the Sandbox Blacklist
 It is possible to disable the blacklist to allow the execution of most expressions, in
 case you need to use a considerable number of the expression included in the blacklist while keeping some basic
 restrictions. To disable the blacklist for all sites update the server configuration file
-:ref:`server-config.properties <newIa-engine-configuration-files>`:
+:ref:`server-config.properties <engine-configuration-files>`:
 
 .. code-block:: none
   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
@@ -224,7 +224,7 @@ restrictions. To disable the blacklist for all sites update the server configura
 Disabling the Groovy Sandbox
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is possible to completely disable the Groovy sandbox for all scripts. To disable the sandbox for all sites update the server configuration file :ref:`server-config.properties <newIa-engine-configuration-files>`:
+It is possible to completely disable the Groovy sandbox for all scripts. To disable the sandbox for all sites update the server configuration file :ref:`server-config.properties <engine-configuration-files>`:
 
 .. code-block:: none
   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*

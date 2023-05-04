@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-profile-api-tenant-roles-add:
+.. _crafter-profile-api-tenant-roles-add:
 
 =========
 Add Roles

@@ -4,7 +4,7 @@
 
 .. index:: Simple Delivery Kubernetes Deployment, Example Kubernetes deployment of simple Delivery
 
-.. _newIa-simple-delivery-kubernetes-deployment:
+.. _simple-delivery-kubernetes-deployment:
 
 =====================================
 Simple Delivery Kubernetes Deployment

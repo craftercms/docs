@@ -3,7 +3,7 @@
 
 .. index:: DevContentOps
 
-.. _newIa-devcontentops:
+.. _devcontentops:
 
 =============
 DevContentOps
@@ -49,7 +49,7 @@ Conversely, moving content from a lower environment to a higher one is not desir
 content authors, and content authors work almost exclusively in the production environment. Therefore,
 content flow from lower environments to higher ones must be prevented.
 
-.. _newIa-devcontentops-flow-diagram:
+.. _devcontentops-flow-diagram:
 
 ^^^^^^^^^^^^^^^^^^^^
 Visualizing the Flow

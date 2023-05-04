@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-clipboard-get-items:
+.. _crafter-studio-api-clipboard-get-items:
 
 =========
 Get Items

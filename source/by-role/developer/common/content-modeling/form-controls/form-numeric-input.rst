@@ -7,7 +7,7 @@
 
 .. index:: Form Controls; Numeric Input
 
-.. _newIa-form-numeric-input:
+.. _form-numeric-input:
 
 =====================
 Numeric Input Control

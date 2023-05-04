@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; Image from WebDAV Repository
 
-.. _newIa-form-source-webdav-image-repo:
+.. _form-source-webdav-image-repo:
 
 ========================================
 Image from WebDAV Repository Data Source

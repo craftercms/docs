@@ -4,7 +4,7 @@
 
 .. index:: Roles and Permissions
 
-.. _newIa-roles-and-permissions:
+.. _roles-and-permissions:
 
 =====================
 Roles and Permissions
@@ -29,26 +29,26 @@ publisher      site_publisher    Has the ability to approve and reject workflow,
 
 Permissions and roles can be setup for each project, and for the entire application itself.  Note that the ``system_admin`` role applies to the entire application and the rest of the default roles applies to a project.
 
-See :ref:`newIa-groups-management` for more information on administrating groups.
+See :ref:`groups-management` for more information on administrating groups.
 
 --------
 Projects
 --------
 
-To edit permissions for a project role, in Studio, from the *Sidebar*, click on |projectTools| -> *Configuration* -> *Permission Mapping*.  See :ref:`newIa-permission-mappings` for more information on permissions and the default permissions assigned to roles.
+To edit permissions for a project role, in Studio, from the *Sidebar*, click on |projectTools| -> *Configuration* -> *Permission Mapping*.  See :ref:`permission-mappings` for more information on permissions and the default permissions assigned to roles.
 
-To add/edit a role for a project, in Studio, from the *Sidebar*, click on |projectTools| -> *Configuration* -> *Role Mapping*. See :ref:`newIa-role-mappings` for more information.
+To add/edit a role for a project, in Studio, from the *Sidebar*, click on |projectTools| -> *Configuration* -> *Role Mapping*. See :ref:`role-mappings` for more information.
 
-The items for interaction/tools available from the **Sidebar** depending on the user role can be configured in Studio, from the *Sidebar*, click on |projectTools| -> *Configuration* -> *User Interface Configuration*. See :ref:`newIa-user-interface-configuration` for more information.
+The items for interaction/tools available from the **Sidebar** depending on the user role can be configured in Studio, from the *Sidebar*, click on |projectTools| -> *Configuration* -> *User Interface Configuration*. See :ref:`user-interface-configuration` for more information.
 
 ------
 Global
 ------
 
-To add/edit a global role/group, see :ref:`newIa-global-role-mappings-config` for more information.
+To add/edit a global role/group, see :ref:`global-role-mappings-config` for more information.
 
-To add/edit global permissions for a role, see :ref:`newIa-global-permission-mappings-config` for more information.
+To add/edit global permissions for a role, see :ref:`global-permission-mappings-config` for more information.
 
-The items for interaction/tools available from the |mainMenu| *Main Menu* depending on the user role can be configured by opening the :ref:`global-menu-config.xml <newIa-global-menu-config>` file under ``CRAFTER_HOME/data/repos/global/configuration`` using your favorite editor.
+The items for interaction/tools available from the |mainMenu| *Main Menu* depending on the user role can be configured by opening the :ref:`global-menu-config.xml <global-menu-config>` file under ``CRAFTER_HOME/data/repos/global/configuration`` using your favorite editor.
 
 

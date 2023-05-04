@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-repo-sync-from-repo:
+.. _crafter-studio-api-repo-sync-from-repo:
 
 ==============
 Sync from Repo

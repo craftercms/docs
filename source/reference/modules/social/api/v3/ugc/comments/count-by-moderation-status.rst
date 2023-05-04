@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-ugc-comments-count-by-moderation-status:
+.. _crafter-social-api-ugc-comments-count-by-moderation-status:
 
 ===================================
 Count Comments By Moderation Status

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-site-exists:
+.. _crafter-studio-api-site-exists:
 
 ======
 Exists

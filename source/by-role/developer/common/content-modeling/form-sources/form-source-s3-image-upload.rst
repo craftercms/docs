@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; S3 Repository Image Upload
 
-.. _newIa-form-source-s3-image-upload:
+.. _form-source-s3-image-upload:
 
 ===========================
 S3 Image Upload Data Source

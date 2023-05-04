@@ -2,7 +2,7 @@
 :last-updated: 4.0.0
 :nosearch:
 
-.. _newIa-author:
+.. _author:
 
 ======
 Author
@@ -17,7 +17,7 @@ Authors creates, edits and submits content for experiences.  CrafterCMS's Crafte
 authoring and management system for developing and optimizing the content and dynamic project visitor experience for any
 and all of your Web properties.
 
-The :ref:`project administrator <newIa-project-admin>` and the :ref:`developer <newIa-developers>` sets things up before an
+The :ref:`project administrator <project-admin>` and the :ref:`developer <developers>` sets things up before an
 author begins contributing content for the web experience being built. This section contains information on the
 authoring environment and how authors manages content.
 

@@ -8,7 +8,7 @@
 
 .. index:: Form Controls; Item Selector
 
-.. _newIa-form-item-selector:
+.. _form-item-selector:
 
 =====================
 Item Selector Control
@@ -56,11 +56,11 @@ Configuration
 ||                       || * |fileUploadToS3|                                                   |
 +------------------------+-----------------------------------------------------------------------+
 
-.. |fileUploadFromDesktop| replace:: :ref:`File Uploaded From Desktop <newIa-form-source-file-desktop>`
-.. |fileFromRepo| replace:: :ref:`File from Repository <newIa-form-source-file-browse>`
-.. |fileFromWebDAV| replace:: :ref:`File from WebDAV Repository <newIa-form-source-webdav-file-repo>`
-.. |fileUploadToWebDAV| replace:: :ref:`File Uploaded to WebDAV Repository <newIa-form-source-webdav-file-upload>`
-.. |fileFromS3| replace:: :ref:`File From S3 Repository <newIa-form-source-s3-file-repo>`
-.. |fileUploadToS3| replace:: :ref:`File Uploaded to S3 Repository <newIa-form-source-s3-file-upload>`
-.. |sharedContent| replace:: :ref:`Shared Content <newIa-form-source-shared-content>`
-.. |embeddedContent| replace:: :ref:`Embedded Content <newIa-form-source-embedded-content>`
+.. |fileUploadFromDesktop| replace:: :ref:`File Uploaded From Desktop <form-source-file-desktop>`
+.. |fileFromRepo| replace:: :ref:`File from Repository <form-source-file-browse>`
+.. |fileFromWebDAV| replace:: :ref:`File from WebDAV Repository <form-source-webdav-file-repo>`
+.. |fileUploadToWebDAV| replace:: :ref:`File Uploaded to WebDAV Repository <form-source-webdav-file-upload>`
+.. |fileFromS3| replace:: :ref:`File From S3 Repository <form-source-s3-file-repo>`
+.. |fileUploadToS3| replace:: :ref:`File Uploaded to S3 Repository <form-source-s3-file-upload>`
+.. |sharedContent| replace:: :ref:`Shared Content <form-source-shared-content>`
+.. |embeddedContent| replace:: :ref:`Embedded Content <form-source-embedded-content>`

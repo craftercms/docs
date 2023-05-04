@@ -2,7 +2,7 @@
 :since-version: 4.0.0
 :nosearch:
 
-.. _newIa-general-architecture:
+.. _general-architecture:
 
 ====================
 General Architecture

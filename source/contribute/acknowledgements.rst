@@ -4,7 +4,7 @@
 
 .. index:: Open Source Acknowledgements
 
-.. _newIa-oss-acknowledgements:
+.. _oss-acknowledgements:
 
 Open Source Acknowledgements
 ============================

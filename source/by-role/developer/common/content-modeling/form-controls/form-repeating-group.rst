@@ -8,7 +8,7 @@
 
 .. index:: Form Controls; Repeating Group
 
-.. _newIa-form-repeating-group:
+.. _form-repeating-group:
 
 =======================
 Repeating Group Control

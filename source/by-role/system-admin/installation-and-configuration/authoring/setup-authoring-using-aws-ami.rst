@@ -3,7 +3,7 @@
 
 .. index:: Setup CrafterCMS Authoring Using Crafter's AWS AMI
 
-.. _newIa-setup-authoring-using-aws-ami:
+.. _setup-authoring-using-aws-ami:
 
 ==================================================
 Setup CrafterCMS Authoring Using Crafter's AWS AMI
@@ -143,6 +143,6 @@ Welcome to Crafter Studio! Your initial installation and setup is complete.
 
 From here you can create sites, administer users/group and manage your admin user's account settings.
 
-Follow this guide to create your first website or headless CMS project: :ref:`newIa-your-first-editorial-project`
+Follow this guide to create your first website or headless CMS project: :ref:`your-first-editorial-project`
 
-Follow this guide to setup a Delivery instance of CrafterCMS on AWS: :ref:`newIa-setup-delivery-using-aws-ami`
+Follow this guide to setup a Delivery instance of CrafterCMS on AWS: :ref:`setup-delivery-using-aws-ami`

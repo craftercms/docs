@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-context-remove-profile:
+.. _crafter-social-api-context-remove-profile:
 
 ==================================
 Remove Profile from Social Context

@@ -4,7 +4,7 @@
 
 .. index:: Changing the Cluster Git URL, Studio Clustering, Clustering
 
-.. _newIa-changing-the-cluster-git-url:
+.. _changing-the-cluster-git-url:
 
 .. todo check if this is still the case with primary/replica clustering and update as needed
 

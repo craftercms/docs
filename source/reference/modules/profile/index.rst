@@ -3,7 +3,7 @@
 
 .. index:: Projects; Crafter Profile
 
-.. _newIa-crafter-profile:
+.. _crafter-profile:
 
 ===============
 Crafter Profile
@@ -32,4 +32,4 @@ Crafter Profile's source code is managed in GitHub: https://github.com/craftercm
 Configuration
 -------------
 
-To configure Crafter Profile, please see :ref:`newIa-crafter-profile-admin`
+To configure Crafter Profile, please see :ref:`crafter-profile-admin`

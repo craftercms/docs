@@ -3,7 +3,7 @@
 
 .. index:: Debugging Search; Search
 
-.. _newIa-debugging-search:
+.. _debugging-search:
 
 =============================
 Troubleshooting Search Issues

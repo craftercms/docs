@@ -4,7 +4,7 @@
 
 .. index:: Maintenance
 
-.. _newIa-maintenance:
+.. _maintenance:
 
 ===========
 Maintenance

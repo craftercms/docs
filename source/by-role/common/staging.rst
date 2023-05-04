@@ -2,7 +2,7 @@
 :last-updated: 4.0.3
 :nosearch:
 
-.. _newIa-staging-env:
+.. _staging-env:
 
 ========================================
 Configuring Publishing to Staging Target
@@ -46,7 +46,7 @@ Under the **<published-repository>** tags, set **<enable-staging-environment>** 
 
 |
 
-To view your project with respect to the staging preview, we need to set it up for delivery.  To setup your project for the staging preview, run the ``init-site`` script and follow the instructions in :ref:`newIa-setup-project-for-delivery` using the staging branch in the options.
+To view your project with respect to the staging preview, we need to set it up for delivery.  To setup your project for the staging preview, run the ``init-site`` script and follow the instructions in :ref:`setup-project-for-delivery` using the staging branch in the options.
 
     .. code-block:: bash
 

@@ -4,7 +4,7 @@
 
 .. index:: User Passwords
 
-.. _newIa-user-passwords:
+.. _user-passwords:
 
 ==============
 User passwords
@@ -52,9 +52,9 @@ The Crafter admin can change passwords for other users.
 #. Enter a new password in the **Reset Password** field.
 #. Click on the **Save** button.  A notification will appear that the user has been edited.
 
-For more information on editing a user, see :ref:`newIa-editing-a-user`
+For more information on editing a user, see :ref:`editing-a-user`
 
 Setting a User's Initial Password
 ---------------------------------
 
-The Crafter admin must set an initial password when creating a new user.  To create a new user, please see :ref:`newIa-creating-a-user`
+The Crafter admin must set an initial password when creating a new user.  To create a new user, please see :ref:`creating-a-user`

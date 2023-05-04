@@ -15,4 +15,4 @@ CrafterCMS provides the following options for accessing content for content rich
 * Groovy
 * Java
 
-For more information on the above APIs, see :ref:`newIa-api-reference`
+For more information on the above APIs, see :ref:`api-reference`

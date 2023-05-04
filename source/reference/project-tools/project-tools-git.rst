@@ -8,7 +8,7 @@
 
 .. index:: Project Tools Git
 
-.. _newIa-project-tools-git:
+.. _project-tools-git:
 
 ===
 Git
@@ -42,7 +42,7 @@ To add a remote repository for your site, click on the **New Remote** button.  A
 |
 
    .. note::
-      For more information on errors that a user may encounter when using ssh keys with CrafterCMS, see :ref:`newIa-debugging_ssh_issues`
+      For more information on errors that a user may encounter when using ssh keys with CrafterCMS, see :ref:`debugging_ssh_issues`
 
 --------------------
 Pull from Repository

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-profile-api-authentication-ticket-get:
+.. _crafter-profile-api-authentication-ticket-get:
 
 ==========
 Get Ticket

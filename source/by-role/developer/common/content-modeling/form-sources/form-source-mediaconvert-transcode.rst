@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; Video Upload then Transcode Video from S3 Repository using MediaConvert
 
-.. _newIa-form-source-mediaconvert-transcode:
+.. _form-source-mediaconvert-transcode:
 
 ==================================================================
 Video Upload then Transcode from S3 using MediaConvert Data Source

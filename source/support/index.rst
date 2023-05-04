@@ -4,7 +4,7 @@
 
 .. index:: Get Support
 
-.. _newIa-support:
+.. _support:
 
 =======
 Support

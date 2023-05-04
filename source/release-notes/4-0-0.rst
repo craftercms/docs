@@ -33,7 +33,7 @@ New Features
         UI frameworks |br|
 
     - New Experience Builder package in the SDK `here <https://www.npmjs.com/package/@craftercms/experience-builder>`__
-    - See :ref:`newIa-xb` for more information |br|
+    - See :ref:`xb` for more information |br|
 
   - New configuration mechanics of the UI that allow plugins to wire to almost every aspect of
     the experience. This opens the door for having different authoring experiences per project. |br|
@@ -45,26 +45,26 @@ New Features
     - Authoring side extensions allowing content authors new tools to build the desired experience.
       This includes extending Crafter Studio’s functionality with server-side code, UI widgets,
       third-party integration, pre-baked content model items and more. Learn all about it
-      :ref:`here <newIa-plugins>`
+      :ref:`here <plugins>`
     - Delivery-side extensions that provide end-user widgets, server-side code, integration with
-      third-party providers and more. Learn about it :ref:`here <newIa-plugins>`
-    - Host plugins are still supported, see :ref:`here <newIa-full-screen-plugin-example>`
+      third-party providers and more. Learn about it :ref:`here <plugins>`
+    - Host plugins are still supported, see :ref:`here <full-screen-plugin-example>`
     - Plugins are starting to appear on the marketplace `here <https://marketplace.craftercms.org>`__
-    - Read the guide to building your own plugins  :ref:`here <newIa-how-do-i-make-my-own-plugin>`
+    - Read the guide to building your own plugins  :ref:`here <how-do-i-make-my-own-plugin>`
 
   - Added support for a plugin to add servlet filters |br|
     See `here <https://github.com/craftercms/craftercms/issues/4938>`__ for more information
 
     For more information on how to wire your plugin, see the section on a sample for a
-    servlet filter :ref:`here <newIa-plugin-descriptor-servlet-filter>`
+    servlet filter :ref:`here <plugin-descriptor-servlet-filter>`
 
 
 * **Switched Crafter Studio’s authentication system to JWT** |br|
 
   - It’s now much easier to automate work with Crafter Studio APIs by issuing secure tokens for
-    your automation jobs, see :ref:`newIa-cli-access-to-crafter-studio` |br|
+    your automation jobs, see :ref:`cli-access-to-crafter-studio` |br|
   - Remember to replace default values for all the variables used to control the
-    access tokens (JWT) used for Studio’s API.  See :ref:`here <newIa-securing-your-crafter-cms-install>`
+    access tokens (JWT) used for Studio’s API.  See :ref:`here <securing-your-crafter-cms-install>`
     for more information on default values used for JWT |br|
 
 * **Project Content Rules and Policy** |br|
@@ -75,20 +75,20 @@ New Features
   - File mime-type
   - File size
 
-  See :ref:`here <newIa-project-policy-configuration>` for more information on the Project Policy configuration
+  See :ref:`here <project-policy-configuration>` for more information on the Project Policy configuration
 
 * **New Crafter CLI** |br|
 
   The CrafterCMS Command Line Interface (CLI) for DevContentOps, allows you to authenticate with
   CrafterCMS and exercise its APIs from a terminal or automation tools. |br|
-  See :ref:`here <newIa-devcontentops-toolkit>` for more information on the Crafter CLI
+  See :ref:`here <devcontentops-toolkit>` for more information on the Crafter CLI
 
 * **Better locale support** |br|
 
   CrafterCMS allows configuring a locale to be used for displaying dates and times in the Studio UI or,
   it can also be configured to respect the user's locale settings |br|
 
-  See :ref:`newIa-studio-project-time-zone` for more information on how to customize your project's dates and times display
+  See :ref:`studio-project-time-zone` for more information on how to customize your project's dates and times display
 
 
 
@@ -144,18 +144,18 @@ Lot's of other small enhancements and bug fixes :)
 
 For a full list of tickets, please visit: `GitHub 4.0.0 Milestone <https://github.com/craftercms/craftercms/milestone/78?closed=1>`_
 
-For information on upgrading 3.1.x sites, see :ref:`here <newIa-compatibility-with-3.1.x>`
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
 
 .. important::
 
-    Please see :ref:`Breaking changes <newIa-breaking-changes-4-0-0>` for breaking changes and other
+    Please see :ref:`Breaking changes <breaking-changes-4-0-0>` for breaking changes and other
     things to consider before upgrading
 
     For instructions on how to update your CrafterCMS install to 4.0.0,
-    please see :ref:`newIa-upgrading-craftercms`
+    please see :ref:`upgrading-craftercms`
 
     For Linux installs, the Studio upgrade requires the library ``libaio`` which is not installed
     by default in some Linux distributions.  Please see the section on **Linux Prerequisites**
-    in :ref:`newIa-linux-prerequisites` for instructions on how to install the library ``libaio``
+    in :ref:`linux-prerequisites` for instructions on how to install the library ``libaio``
 
 

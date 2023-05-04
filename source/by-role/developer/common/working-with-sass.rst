@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :since-version: 4.0.3
 
-.. _newIa-working-with-sass-in-craftercms:
+.. _working-with-sass-in-craftercms:
 
 ===============================
 Working with Sass in CrafterCMS

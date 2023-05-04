@@ -8,7 +8,7 @@
 
 .. index:: Publishing and Status, Bulk Publish, Publish by Commit Id
 
-.. _newIa-publishing-and-status:
+.. _publishing-and-status:
 
 =====================
 Publishing and Status
@@ -18,7 +18,7 @@ The **Publishing Dashboard** under |projectTools| allows the user to view the pu
 publish multiple items from a specified path, publish commits from sandbox repository by commit id or tag and
 view the publishing queue.
 
-.. _newIa-publishing-status:
+.. _publishing-status:
 
 ------
 Status
@@ -142,7 +142,7 @@ To publish by commit id, let's use a project created using the Website Editorial
 - Select the ``Publish changes made via direct git actions against the repository or pulled from a remote repository`` radio button
 - Paste the commit id from the step where we got the commit id, then click on the ``Publish`` button
 
-.. _newIa-publish-everything:
+.. _publish-everything:
 
 Publish all changes on the repo
 -------------------------------
@@ -163,7 +163,7 @@ simply select ``Publish everything`` and then choose the publishing target, then
 
 |
 
-.. _newIa-publishing-queue:
+.. _publishing-queue:
 
 ----------------
 Publishing Queue

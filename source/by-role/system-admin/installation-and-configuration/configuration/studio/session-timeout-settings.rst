@@ -3,7 +3,7 @@
 
 :nosearch:
 
-.. _newIa-changing-session-timeout:
+.. _changing-session-timeout:
 
 ============================
 Changing the Session Timeout
@@ -109,7 +109,7 @@ To change the session inactivity timeout, follow the instructions below:
    |
 
 
-Remember to keep the Studio session inactivity timeout ``inactivityTimeout`` from the :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` file less than the Tomcat ``session-timeout`` from the ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/web.xml`` file.
+Remember to keep the Studio session inactivity timeout ``inactivityTimeout`` from the :ref:`studio-config-override.yaml <studio-configuration-files>` file less than the Tomcat ``session-timeout`` from the ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/web.xml`` file.
 
 Make sure to stop and **restart Studio after making your changes**.
 

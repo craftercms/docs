@@ -6,7 +6,7 @@
 
 .. index:: Engine SAML2 Configuration CrafterCMS version 4.0.2 and earlier
 
-.. _newIa-engine-saml2-configuration-up-to-4-0-2:
+.. _engine-saml2-configuration-up-to-4-0-2:
 
 =============================================================================
 Engine SAML2 Configuration for CrafterCMS v4.0.2 and Earlier |enterpriseOnly|
@@ -15,10 +15,10 @@ Engine SAML2 Configuration for CrafterCMS v4.0.2 and Earlier |enterpriseOnly|
 .. warning::
 
       *This document only applies to* **CrafterCMS version 4.0.2 and earlier** |br|
-      *Please see* :ref:`newIa-engine-saml2-configuration` *for the latest version.*
+      *Please see* :ref:`engine-saml2-configuration` *for the latest version.*
 
 .. note:: This guide includes SAML2 specific configuration only, for a general guide see
-   :ref:`newIa-engine-project-security-guide`
+   :ref:`engine-project-security-guide`
 
 |
 |
@@ -160,7 +160,7 @@ SAML2 authentication can be enabled by updating the project configuration to inc
 Properties Details
 ^^^^^^^^^^^^^^^^^^
 
-.. |refToEngineSecurityAccessAttributes| replace:: :ref:`newIa-engine-security-access-attributes`
+.. |refToEngineSecurityAccessAttributes| replace:: :ref:`engine-security-access-attributes`
 
 +------------------------------------+-------------------------------------------+-------------------------------------+
 || Property                          || Description                              || Default Value                      |

@@ -4,7 +4,7 @@
 
 .. index:: Role Mappings
 
-.. _newIa-role-mappings:
+.. _role-mappings:
 
 =============
 Role Mappings
@@ -68,4 +68,4 @@ Here's a list of predefined roles for projects:
 
 * **author**: Users with the role ``author`` have access to create, edit and submit content
 
-See :ref:`newIa-permission-mappings` for more information on all items accessible for each role in a project.
+See :ref:`permission-mappings` for more information on all items accessible for each role in a project.

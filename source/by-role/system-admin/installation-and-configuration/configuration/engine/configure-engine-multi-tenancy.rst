@@ -4,7 +4,7 @@
 
 .. index:: Multi-Tenancy, Configuration; Crafter Engine Multi-Tenancy
 
-.. _newIa-engine-site-configuration-multi-tenancy:
+.. _engine-site-configuration-multi-tenancy:
 
 =================================
 Configure Multi-Tenancy in Engine
@@ -23,7 +23,7 @@ configuration using the Spring context files.
 Configure the Root Folder Path
 ------------------------------
 
-The root folder path, as shown below, needs to be configured to include a substitution variable ``{siteName}`` in the :ref:`server-config.properties <newIa-engine-configuration-files>` file:
+The root folder path, as shown below, needs to be configured to include a substitution variable ``{siteName}`` in the :ref:`server-config.properties <engine-configuration-files>` file:
 
 .. code-block:: properties
   :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
@@ -42,7 +42,7 @@ Configure Simple Multi-Tenancy
 Using this mode you can easily support multiple sites without any additional configuration in
 external components.
 
-To enable this mode you need to change the following :ref:`Crafter Engine configuration files <newIa-engine-configuration-files>`:
+To enable this mode you need to change the following :ref:`Crafter Engine configuration files <engine-configuration-files>`:
 
 .. code-block:: xml
     :caption: *{delivery-env-directory}/bin/apache-tomcat/shared/classes/crafter/engine/extension/services-context.xml*

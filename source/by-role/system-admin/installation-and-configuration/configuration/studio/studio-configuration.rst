@@ -5,7 +5,7 @@
 
 .. index:: Studio's Configuration
 
-.. _newIa-studio-core-configuration:
+.. _studio-core-configuration:
 
 ===========================
 Studio's Core Configuration
@@ -17,8 +17,8 @@ Remember that we **do not recommend** making changes to the core configuration f
 There are two override files available to make changes to the pre-configured settings in the core configuration
 file for Crafter Studio:
 
-* :ref:`CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml <newIa-studio-config-override>`
-* :ref:`CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml <newIa-nav-menu-global-config>`
+* :ref:`CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml <studio-config-override>`
+* :ref:`CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml <nav-menu-global-config>`
 
 The above override configuration articles lists some settings that you may want to override in Crafter Studio.
 
@@ -63,7 +63,7 @@ using one of the override files.
    # Copy content commit message
    studio.repo.copyContent.commitMessage: "Copying {fromPath} to {toPath}"
 
-.. _newIa-server-time-zone:
+.. _server-time-zone:
 
 -------------------------------------
 Server Time Zone for Date Time Format
@@ -78,9 +78,9 @@ The default server time zone used by Studio is UTC and can be overridden using o
 
 |
 
-See :ref:`newIa-studio-project-time-zone` for more information on how to customize project dates & times displayed on Studio UI
+See :ref:`studio-project-time-zone` for more information on how to customize project dates & times displayed on Studio UI
 
-.. _newIa-editable-mime-types:
+.. _editable-mime-types:
 
 -------------------
 Editable Mime Types
@@ -101,7 +101,7 @@ Here's the default list of MIME-types editable in Studio:
     - application/xml
     - application/xhtml+xml
 
-.. _newIa-cache-settings:
+.. _cache-settings:
 
 --------------
 Cache Settings

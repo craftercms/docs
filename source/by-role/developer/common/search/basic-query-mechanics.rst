@@ -2,7 +2,7 @@
 :last-updated: 4.0.0
 :nosearch:
 
-.. _newIa-basic-query-mechanics:
+.. _basic-query-mechanics:
 
 =====================
 Basic Query Mechanics

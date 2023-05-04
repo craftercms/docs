@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-profile-api-profile-by_ticket:
+.. _crafter-profile-api-profile-by_ticket:
 
 =====================
 Get Profile By Ticket

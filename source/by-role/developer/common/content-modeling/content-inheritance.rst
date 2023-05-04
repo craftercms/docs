@@ -4,7 +4,7 @@
 
 .. index:: Content Inheritance, Inheritance
 
-.. _newIa-content-inheritance:
+.. _content-inheritance:
 
 ===================
 Content Inheritance
@@ -157,7 +157,7 @@ Out of the Box Strategies
 ||                      || ``/crafter-level-descriptor.xml``.                                    |
 +-----------------------+------------------------------------------------------------------------+
 
-.. _newIa-inherit-levels-example:
+.. _inherit-levels-example:
 
 ---------------------------------------------------
 Example of Out of the Box Strategy "inherit-levels"

@@ -4,7 +4,7 @@
 
 .. index:: User Interface Configuration
 
-.. _newIa-user-interface-configuration:
+.. _user-interface-configuration:
 
 ############################
 User Interface Configuration
@@ -17,7 +17,7 @@ It shows different projections of the content in addition to other tools to assi
 and site administration.
 
 The UI is made up of configurable widgets and can be extended or modified by adding/removing/configuring widgets.
-Plugins can make use of this by adding themselves to the UI where required.  See :ref:`newIa-plugin-descriptor-file` for more information on how a plugin can be wired in the user interface configuration.
+Plugins can make use of this by adding themselves to the UI where required.  See :ref:`plugin-descriptor-file` for more information on how a plugin can be wired in the user interface configuration.
 
 Here's a screenshot of Studio showing some of the widgets in the UI in red circles that are defined in the user interface configuration.
 
@@ -49,7 +49,7 @@ Here's an annotated version of some of the widgets in the user interface shown i
 
 |
 
-.. _newIa-sidebar-widget:
+.. _sidebar-widget:
 
 Let's take a look at the sidebar widget as an example.  The Sidebar widget is a panel located on the left
 side of Studio.  The Sidebar contains, the ``Dashboard``, various path navigators and path navigator trees
@@ -149,7 +149,7 @@ Here's a sample User Interface Configuration file (click on the triangle on the 
 |
 |
 
-.. _newIa-widget-permissions:
+.. _widget-permissions:
 
 ******************
 Widget Permissions
@@ -168,7 +168,7 @@ Simply add the following to the widget you want available only to users with the
 
 |
 
-where ALLOWED ROLE is a role defined in Studio that is allowed to access the widget.  See :ref:`newIa-roles-and-permissions` for a list of default roles in Crafter Studio
+where ALLOWED ROLE is a role defined in Studio that is allowed to access the widget.  See :ref:`roles-and-permissions` for a list of default roles in Crafter Studio
 
 Let's take a look at an example in the configuration where access to the ``Project Tools`` widget is limited to users with the roles ``admin`` and ``developer``.
 
@@ -211,7 +211,7 @@ Here's the sidebar when a user with role ``author`` is logged in.  Notice that `
 |
 
 
-.. _newIa-sidebar-excludes:
+.. _sidebar-excludes:
 
 ****************
 Sidebar Excludes
@@ -275,7 +275,7 @@ Here's the Sidebar with the folder ``2021/3`` hidden:
 
 |
 
-.. _newIa-sidebar-widget-icon-colors:
+.. _sidebar-widget-icon-colors:
 
 *****************************
 Sidebar Widget Icon/Container
@@ -352,7 +352,7 @@ Here's the Sidebar with the colors and border added:
 
 |
 
-.. _newIa-targeting-configuration:
+.. _targeting-configuration:
 
 ******************
 Audience Targeting
@@ -431,9 +431,9 @@ Here's how the above configuration looks like in the Experience Builder Panel in
 
 |
 
-See :ref:`newIa-targeting` for more information on configuring the targeting system of Crafter Studio to help provide Crafter Engine with fake user properties that help drive the targeting system, such as configuring targeting based on roles, etc. and :ref:`newIa-content_authors_targeting` for more information on how content authors use the audience targeting system configured.
+See :ref:`targeting` for more information on configuring the targeting system of Crafter Studio to help provide Crafter Engine with fake user properties that help drive the targeting system, such as configuring targeting based on roles, etc. and :ref:`content_authors_targeting` for more information on how content authors use the audience targeting system configured.
 
-.. _newIa-rte-config:
+.. _rte-config:
 
 *****************
 RTE Configuration
@@ -489,9 +489,9 @@ To configure the RTE, add/edit the widget ``craftercms.components.TinyMCE``:
 
 Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all configurations and plugins designed for the TinyMCE editor.
 
-To learn more about configuring the RTE, see :ref:`here <newIa-rte-configuration>`
+To learn more about configuring the RTE, see :ref:`here <rte-configuration>`
 
-.. _newIa-project-tools-configuration:
+.. _project-tools-configuration:
 
 ***************************
 Project Tools Configuration
@@ -549,4 +549,4 @@ GraphQL              Allows the user run GraphQL queries and explore the schema 
 Plugin Management    Allows the user to install and to view currently installed, project plugins
 ==================== =====================================================================
 
-See :ref:`newIa-navigating-project-tools` for more information on the available tools in ``Project Tools``.
+See :ref:`navigating-project-tools` for more information on the available tools in ``Project Tools``.

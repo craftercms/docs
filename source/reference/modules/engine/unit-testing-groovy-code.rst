@@ -5,7 +5,7 @@
 
 ..  index:: Unit Testing CrafterCMS Groovy Code, unit test
 
-.. _newIa-unit-testing-groovy-code:
+.. _unit-testing-groovy-code:
 
 ===================================
 Unit Testing CrafterCMS Groovy Code
@@ -15,7 +15,7 @@ For larger sites with complex services implemented in Groovy, it is very helpful
 
 This section details how to create unit tests for CrafterCMS Groovy code with Gradle.
 
-For more information on the classes of the variables that can be mocked for unit testing, see  :ref:`newIa-groovy-api`
+For more information on the classes of the variables that can be mocked for unit testing, see  :ref:`groovy-api`
 
 -----------------------------------
 Steps for Creating Groovy Unit Test

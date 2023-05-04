@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-configuring-engine-security:
+.. _configuring-engine-security:
 
 ===========================
 Configuring Engine Security
@@ -19,7 +19,7 @@ Crafter Studio is able to integrate with any authentication system that sends cu
 Configure Studio for Headers Based Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configuring Studio for headers based authentication is very simple: in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+Configuring Studio for headers based authentication is very simple: in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: properties
     :linenos:
@@ -73,7 +73,7 @@ Configuring Logout
 
 The **Sign out** button link is disabled/hidden by default when headers based authentication is enabled.
 
-To enable **Sign out** for users signed in using headers based authentication, change the following lines (as described from the above configuration) in your :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+To enable **Sign out** for users signed in using headers based authentication, change the following lines (as described from the above configuration) in your :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: yaml
 
@@ -87,7 +87,7 @@ To enable **Sign out** for users signed in using headers based authentication, c
 |
 
 
-.. _newIa-setup-cloudfront-signed-cookies-in-crafter:
+.. _setup-cloudfront-signed-cookies-in-crafter:
 
 ------------------------------------------------------
 Setup CloudFront Signed Cookies in CrafterCMS Delivery

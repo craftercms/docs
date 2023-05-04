@@ -1,6 +1,6 @@
 :nosearch:
 
-.. _newIa-rest-content-retrieval-api:
+.. _rest-content-retrieval-api:
 
 ===========================
 REST Content Retrieval APIs

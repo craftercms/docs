@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-content-get-item-orders:
+.. _crafter-studio-api-content-get-item-orders:
 
 ===============
 Get Item Orders

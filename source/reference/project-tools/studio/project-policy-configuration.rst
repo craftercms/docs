@@ -3,7 +3,7 @@
 
 .. index:: Project Policy Configuration
 
-.. _newIa-project-policy-configuration:
+.. _project-policy-configuration:
 
 ############################
 Project Policy Configuration

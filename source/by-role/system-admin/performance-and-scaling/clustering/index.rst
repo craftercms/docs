@@ -4,7 +4,7 @@
 
 .. index:: Studio Clustering, Clustering
 
-.. _newIa-clustering:
+.. _clustering:
 
 ==================================
 Studio Clustering |enterpriseOnly|
@@ -68,7 +68,7 @@ look at an example of setting up Studio clustering using a Kubernetes deployment
    studio-clustering-two-nodes
    ../../installation-and-configuration/kubernetes/studio-clustering-with-kubernetes-deployment
 
-.. _newIa-cluster-multi-region-considerations:
+.. _cluster-multi-region-considerations:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Multi-Region Considerations

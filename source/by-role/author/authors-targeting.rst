@@ -4,7 +4,7 @@
 
 .. index:: Targeting
 
-..  _newIa-content_authors_targeting:
+..  _content_authors_targeting:
 
 ==================
 Audience Targeting
@@ -41,7 +41,7 @@ segments are Anonymous, Guy and Gal, and the page is currently tagged for the se
                       :width: 3%
                       :alt: Targeting Icon
 
-.. _newIa-content_authors_site_views_diff_segments:
+.. _content_authors_site_views_diff_segments:
 
 -------------------------------------------
 Viewing the project with different segments
@@ -56,7 +56,7 @@ To find out the current active targeting attributes, switch ``Edit Mode`` to on 
 top right of Studio, which then opens the experience builder panel on the right hand side).  Click on
 ``Audience Targeting`` and the current attribute values will be displayed in the panel.  You can have as
 many attributes as you need for your project.  To add other attributes, please see the section
-:ref:`newIa-targeting` in the developer's section of the documentation.
+:ref:`targeting` in the developer's section of the documentation.
 
 .. image:: /_static/images/page/page-targeting-open.webp
     :width: 80 %
@@ -111,9 +111,9 @@ Here, the segment **Gal** is selected.  Again, notice the articles available on 
 |
 
 As mentioned above, you can setup/configure as many attributes as needed to target your content
-and for more information.  Please see the sections on targeting, :ref:`newIa-targeting` in the
-developers section of the documentation and :ref:`newIa-targeting-configuration`  and
-:ref:`newIa-targeting-guide` in the site administrators section of the documentation
+and for more information.  Please see the sections on targeting, :ref:`targeting` in the
+developers section of the documentation and :ref:`targeting-configuration`  and
+:ref:`targeting-guide` in the site administrators section of the documentation
 for more information.
  
 

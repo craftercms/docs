@@ -4,7 +4,7 @@
 
 .. index:: Project Configuration
 
-.. _newIa-project-configuration:
+.. _project-configuration:
 
 #####################
 Project Configuration
@@ -61,7 +61,7 @@ To enable the ``staging`` publishing target, set the following to ``true``:
 
 |
 
-See :ref:`newIa-staging-env` for more information on how to setup the ``staging`` publishing target
+See :ref:`staging-env` for more information on how to setup the ``staging`` publishing target
 
 ***********************
 Escaping Content Fields
@@ -82,7 +82,7 @@ To add/remove escaped content fields, modify the following:
 
 |
 
-For more information on escaping content fields, see the notes under :ref:`Variable Names and Search Indexing <newIa-variable-names-search-indexing>`
+For more information on escaping content fields, see the notes under :ref:`Variable Names and Search Indexing <variable-names-search-indexing>`
 
 *******************
 Publishing Comments
@@ -107,9 +107,9 @@ site administrators want to require comments when publishing.
 
 |
 
-See :ref:`newIa-publishing-and-status` for more information on the different publishing methods available from ``Project Tools``
+See :ref:`publishing-and-status` for more information on the different publishing methods available from ``Project Tools``
 
-.. _newIa-project-config-require-peer-review:
+.. _project-config-require-peer-review:
 
 ************************************
 Requiring Peer Review for Publishing
@@ -161,9 +161,9 @@ Content monitoring allows you to configure watches and notifications on your pro
 
 |
 
-See :ref:`newIa-content-monitoring` for more information on configuring content monitoring.
+See :ref:`content-monitoring` for more information on configuring content monitoring.
 
-.. _newIa-project-config-protected-folders:
+.. _project-config-protected-folders:
 
 *****************
 Protected Folders

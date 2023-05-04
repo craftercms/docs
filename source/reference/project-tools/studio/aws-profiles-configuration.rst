@@ -4,7 +4,7 @@
 
 .. index:: AWS Profiles Configuration
 
-.. _newIa-aws-profile-configuration:
+.. _aws-profile-configuration:
 
 ==========================
 AWS Profiles Configuration

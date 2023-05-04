@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-preview-sync-site:
+.. _crafter-studio-api-preview-sync-site:
 
 ============
 Preview Sync

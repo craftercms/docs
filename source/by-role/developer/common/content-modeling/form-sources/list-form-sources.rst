@@ -105,50 +105,50 @@
    * - Datasource
      - Description
    * - |ctlComponents|
-     - Details are in the :ref:`newIa-form-source-components` page.
+     - Details are in the :ref:`form-source-components` page.
    * - |ctlSharedContent|
-     - Details are in the :ref:`newIa-form-source-shared-content` page.
+     - Details are in the :ref:`form-source-shared-content` page.
    * - |ctlEmbeddedContent|
-     - Details are in the :ref:`newIa-form-source-embedded-content` page.
+     - Details are in the :ref:`form-source-embedded-content` page.
    * - |ctlImgDt|
-     - Details are in the :ref:`newIa-form-source-image-desktop` page.
+     - Details are in the :ref:`form-source-image-desktop` page.
    * - |ctlImgRepo|
-     - Details are in the :ref:`newIa-form-source-image-repo` page.
+     - Details are in the :ref:`form-source-image-repo` page.
    * - |ctlFileDt|
-     - Details are in the :ref:`newIa-form-source-file-desktop` page.
+     - Details are in the :ref:`form-source-file-desktop` page.
    * - |ctlFileBrowse|
-     - Details are in the :ref:`newIa-form-source-file-browse` page.
+     - Details are in the :ref:`form-source-file-browse` page.
    * - |ctlWebDAVRepo|
-     - Details are in the :ref:`newIa-form-source-webdav-file-repo` page.
+     - Details are in the :ref:`form-source-webdav-file-repo` page.
    * - |ctlWebDAVImgRepo|
-     - Details are in the :ref:`newIa-form-source-webdav-image-repo` page.
+     - Details are in the :ref:`form-source-webdav-image-repo` page.
    * - |ctlWebDAVVidRepo|
-     - Details are in the :ref:`newIa-form-source-webdav-video-repo` page.
+     - Details are in the :ref:`form-source-webdav-video-repo` page.
    * - |ctlWebDAVUpload|
-     - Details are in the :ref:`newIa-form-source-webdav-file-upload` page.
+     - Details are in the :ref:`form-source-webdav-file-upload` page.
    * - |ctlWebDAVImgUpload|
-     - Details are in the :ref:`newIa-form-source-webdav-image-upload` page.
+     - Details are in the :ref:`form-source-webdav-image-upload` page.
    * - |ctlWebDAVVidUpload|
-     - Details are in the :ref:`newIa-form-source-webdav-video-upload` page.
+     - Details are in the :ref:`form-source-webdav-video-upload` page.
    * - |ctlS3Repo|
-     - Details are in the :ref:`newIa-form-source-s3-file-repo` page.
+     - Details are in the :ref:`form-source-s3-file-repo` page.
    * - |ctlS3ImgRepo|
-     - Details are in the :ref:`newIa-form-source-s3-image-repo` page.
+     - Details are in the :ref:`form-source-s3-image-repo` page.
    * - |ctlS3VidRepo|
-     - Details are in the :ref:`newIa-form-source-s3-video-repo` page.
+     - Details are in the :ref:`form-source-s3-video-repo` page.
    * - |ctlS3Upload|
-     - Details are in the :ref:`newIa-form-source-s3-file-upload` page.
+     - Details are in the :ref:`form-source-s3-file-upload` page.
    * - |ctlS3ImgUpload|
-     - Details are in the :ref:`newIa-form-source-s3-image-upload` page.
+     - Details are in the :ref:`form-source-s3-image-upload` page.
    * - |ctlS3VidUpload|
-     - Details are in the :ref:`newIa-form-source-s3-video-upload` page.
+     - Details are in the :ref:`form-source-s3-video-upload` page.
    * - |ctlTranscode|
-     - Details are in the :ref:`newIa-form-source-mediaconvert-transcode` page.
+     - Details are in the :ref:`form-source-mediaconvert-transcode` page.
    * - |ctlVidDt|
-     - Details are in the :ref:`newIa-form-source-video-desktop` page.
+     - Details are in the :ref:`form-source-video-desktop` page.
    * - |ctlVidRepo|
-     - Details are in the :ref:`newIa-form-source-video-repo` page.
+     - Details are in the :ref:`form-source-video-repo` page.
    * - |ctlKVPair|
-     - Details are in the :ref:`newIa-form-source-kvp` page.
+     - Details are in the :ref:`form-source-kvp` page.
    * - |ctlSimpleTaxonomy|
-     - Details are in the :ref:`newIa-form-source-simple-taxonomy` page.
+     - Details are in the :ref:`form-source-simple-taxonomy` page.

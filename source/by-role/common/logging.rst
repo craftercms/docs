@@ -2,7 +2,7 @@
 :last-updated: 4.0.3
 :nosearch:
 
-.. _newIa-logging:
+.. _logging:
 
 =======
 Logging
@@ -122,7 +122,7 @@ The data folder and logs folder is by default located in **{Crafter-CMS-install-
 
    <hr>
 
-.. _newIa-override-logging-levels:
+.. _override-logging-levels:
 
 -------------------------
 Overriding Logging Levels
@@ -198,7 +198,7 @@ Step 3: Your changes to logging levels are now set
      Changes in the logging configuration file is automatically applied after a few seconds.
 
 
-To learn more about the log levels defined in Crafter, see: :ref:`newIa-studio-log-console`
+To learn more about the log levels defined in Crafter, see: :ref:`studio-log-console`
 
 .. raw:: html
 
@@ -272,7 +272,7 @@ To add a custom appender you can follow these steps:
 
    <hr>
 
-.. _newIa-crafter-sh-script-logging:
+.. _crafter-sh-script-logging:
 
 ---------------------------
 *crafter.sh* Script Logging

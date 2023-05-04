@@ -4,7 +4,7 @@
 
 .. index:: Engine Multi-Target Configuration
 
-.. _newIa-engine-multi-target-configurations:
+.. _engine-multi-target-configurations:
 
 =================================
 Engine Multi-Target Configuration
@@ -12,7 +12,7 @@ Engine Multi-Target Configuration
 
 There are some cases where the Engine configuration files need to have different values per publishing target.  Say for a production environment where you have **staging** to test out your project and **live** , the project to be used by end users, you may need different SAML authentication mechanics or different URL rewrites.
 
-The :ref:`newIa-engine-multi-environment-configurations` section detailed how to setup Engine configuration files per environment.  CrafterCMS
+The :ref:`engine-multi-environment-configurations` section detailed how to setup Engine configuration files per environment.  CrafterCMS
 supports overriding Engine configuration files, not just per environment, but also per publishing target.
 It supports a base configuration per environment with the ability to override per publishing target.
 
@@ -66,7 +66,7 @@ To override a configuration file in any of the publishing targets
 
      |
 
-   For more information on **Configurations** config file, see :ref:`newIa-project-config-configuration`
+   For more information on **Configurations** config file, see :ref:`project-config-configuration`
 
 #. Fill in your desired additions/modifications to the override configuration file.  Refresh your browser.  The configuration file you added from above should now be available from |projectTools| -> **Configuration**.  Open the new configuration file and make the necessary additions/modifications for the override file then save your changes.
 
@@ -165,7 +165,7 @@ Let's take a look at an example of overriding the Project Configuration used by 
 
    |
 
-   For more information on SAML2 configuration, see :ref:`newIa-engine-saml2-configuration`
+   For more information on SAML2 configuration, see :ref:`engine-saml2-configuration`
 
 #. Publish ``site-config.live.xml`` to live and ``site-config.staging.xml`` to staging.
 

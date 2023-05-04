@@ -4,7 +4,7 @@
 
 .. index:: Dependency Resolver Configuration, Dependency Resolver, Dependency
 
-.. _newIa-dependency-resolver-config:
+.. _dependency-resolver-config:
 
 =================================
 Dependency Resolver Configuration

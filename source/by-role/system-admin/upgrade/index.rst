@@ -3,7 +3,7 @@
 
 .. index:: Upgrading CrafterCMS; Upgrading
 
-.. _newIa-upgrading-craftercms:
+.. _upgrading-craftercms:
 
 ====================
 Upgrading CrafterCMS

@@ -3,7 +3,7 @@
 
 .. index:: API; Crafter Profile
 
-.. _newIa-crafter-profile-api:
+.. _crafter-profile-api:
 
 ===================
 Crafter Profile API
@@ -14,7 +14,7 @@ The context for this API is ``/crafter-profile/``, please prefix the API URLs wi
 .. NOTE::
   All endpoints in this API require an ``accessTokenId`` parameter that needs
   to be known by  the client prior to any request. This value needs to be
-  obtained from the  system administrator or maintainer. See :ref:`newIa-profile-admin-access-tokens`
+  obtained from the  system administrator or maintainer. See :ref:`profile-admin-access-tokens`
 
 -----------------------
 Access Token Management

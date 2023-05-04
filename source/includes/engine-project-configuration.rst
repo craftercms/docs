@@ -101,13 +101,13 @@ This example file contains the properties used by Crafter Engine (click on the t
  * **targeting.enabled**:``true`` if content targeting should be enabled. Defaults to false.
  * **targeting.rootFolders:** The root folders that should be handled for content targeting.
  * **targeting.excludePatterns:** Regex patterns that are used to exclude certain paths from content targeting.
- * **targeting.availableTargetIds:** The valid target IDs for content targeting (see :ref:`newIa-targeting-guide`).
+ * **targeting.availableTargetIds:** The valid target IDs for content targeting (see :ref:`targeting-guide`).
  * **targeting.fallbackTargetId:** The target ID that should be used as last resort when resolving targeted content.
-   (see :ref:`newIa-targeting-guide`).
+   (see :ref:`targeting-guide`).
  * **targeting.mergeFolders:** ``true`` if the content of folders that have the same "family" of target IDs should be merged.
-   (see :ref:`newIa-targeting-guide`).
+   (see :ref:`targeting-guide`).
  * **targeting.redirectToTargetedUrl:** ``true`` if the request should be redirected when the targeted URL is different from the current URL.
-   (see :ref:`newIa-targeting-guide`).
+   (see :ref:`targeting-guide`).
  * **profile.api.accessToken:** The access token to use for the Profile REST calls. This parameter should be always specified on
    multi-tenant configurations.
  * **security.saml.token:** The expected value for the secure key request header
@@ -214,7 +214,7 @@ Your configuration should look something like below:
 Please note that the ``Cache-Control`` header inserted to responses by default is set to ``No-Cache``.
 
 
-.. _newIa-engine-site-configuration-spring-configuration:
+.. _engine-site-configuration-spring-configuration:
 
 ^^^^^^^^^^^^^^^^^^^^
 Spring Configuration

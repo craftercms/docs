@@ -3,7 +3,7 @@
 
 .. index:: Crafter Studio Sidebar Plugin Example, Studio Plugins, Plugins
 
-.. _newIa-plugin-sidebar-example:
+.. _plugin-sidebar-example:
 
 =====================================
 Crafter Studio Sidebar Plugin Example
@@ -13,7 +13,7 @@ Let's take a look at an example of creating a Sidebar plugin in Studio using a p
 created using the **Website Editorial** blueprint.
 
 #. The first thing we have to do is to create the folder structure where we will be placing the JS file for
-   our sidebar project plugin.  We'll follow the convention listed in :ref:`newIa-ui-plugin-directory-structure`.
+   our sidebar project plugin.  We'll follow the convention listed in :ref:`ui-plugin-directory-structure`.
    For our example, CATEGORY is ``sidebar`` and the NAME is ``react-sample``
 
    In a local folder, create the descriptor file for your project plugin ``craftercms-plugin.yaml`` with
@@ -97,7 +97,7 @@ created using the **Website Editorial** blueprint.
    |
 
    When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the
-   :ref:`add-environment <newIa-crafter-cli-add-environment>` command. Once the connection has been established,
+   :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established,
    we can now install the plugin to the project ``my-editorial`` by running the following:
 
       ..  code-block:: bash

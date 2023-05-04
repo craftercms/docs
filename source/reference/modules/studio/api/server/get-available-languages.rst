@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-server-get-available-languages:
+.. _crafter-studio-api-server-get-available-languages:
 
 =======================
 Get Available Languages

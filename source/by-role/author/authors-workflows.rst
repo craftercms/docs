@@ -4,7 +4,7 @@
 
 .. index:: Workflows
 
-.. _newIa-content_authors_workflows:
+.. _content_authors_workflows:
 
 =========
 Workflows
@@ -22,7 +22,7 @@ provided by default. Workflow options are available to specific content, such as
 etc.  The available workflow options for users depends on the Role the users are assigned with.  As the
 content goes through the workflow options, notification emails are sent out to corresponding users based
 on the workflow option.  To setup the email addresses, please see the section **Site Administrators**,
-:ref:`newIa-configure-notifications` and  :ref:`newIa-users-group-management`. Below is a diagram showing
+:ref:`configure-notifications` and  :ref:`users-group-management`. Below is a diagram showing
 the default workflow steps.
 
 .. image:: /_static/images/page/page-workflow-diagram.webp
@@ -120,7 +120,7 @@ Users with permission to publish can also make changes and request approval for 
 |
 
 To make approval mandatory for publish requests for users with publish permission,
-see :ref:`here <newIa-project-config-require-peer-review>`.
+see :ref:`here <project-config-require-peer-review>`.
 
 After clicking on the **Submit** or **Schedule** button (depending on the option selected for publishing
 now or later), a notification email will be sent to the project's approvers.  Notice also, that the
@@ -200,7 +200,7 @@ sent to the approver, which should give you the **Publish** option too in the to
 Below is a sample notification email sent to the approver when user *author* sent a request to publish
 content.  To modify/setup your notification emails, please contact your site administrator.  To see more
 details on how to configure your notification emails, see the section for Site Administrators in
-:ref:`newIa-configure-notifications`
+:ref:`configure-notifications`
 
 .. image:: /_static/images/page/page-workflows-notification-email-reviewer.webp
      :width: 40 %

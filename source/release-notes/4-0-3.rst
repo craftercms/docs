@@ -186,7 +186,7 @@ For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1
     please see :ref:`upgrading-craftercms`
 
     When using private key SSH authentication in the ``init-site.sh`` script, the private key path must be set explicitly. |br|
-    Please see :ref:`newIa-setup-project-for-delivery` for more information on using the ``-k`` option of ``init-site.sh`` to
+    Please see :ref:`setup-project-for-delivery` for more information on using the ``-k`` option of ``init-site.sh`` to
     set the private key path
 
     For Linux installs, the Studio upgrade requires the library ``libaio`` which is not installed

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-profile-api-access_token-all:
+.. _crafter-profile-api-access_token-all:
 
 ======================
 Get All  Access Tokens

@@ -2,7 +2,7 @@
 :last-update: 4.1.0
 :nosearch:
 
-.. _newIa-xb:
+.. _xb:
 
 ======================================
 Adding Experience Builder to a Project
@@ -15,12 +15,12 @@ Adding Experience Builder to a Project
 CrafterCMS' Experience Builder (XB) provides a UI layer on top of your applications that enables authors
 with in-context editing (ICE) for all the model fields defined in the content types of pages and components.
 CrafterCMS developers must integrate their applications with XB, essentially telling XB what field of the
-model each element on the view represents. See :ref:`newIa-content-modeling` to learn more about the model.
+model each element on the view represents. See :ref:`content-modeling` to learn more about the model.
 
 .. TODO insert <figure: example page with a sample content type side by side showing the relation between page elements
    and content type fields>
 
-If you`re starting from a 3.x ICE system, see :ref:`newIa-upgrading-in-context-editing` for more information on how
+If you`re starting from a 3.x ICE system, see :ref:`upgrading-in-context-editing` for more information on how
 to move from the 3.x ICE system to the 4.x Experience Builder (XB) system discussed here.
 
 ----------------------------------------------
@@ -186,7 +186,7 @@ Rules of XB
                      </div>
                   </div>
 
-.. _newIa-xb-freemarker:
+.. _xb-freemarker:
 
 ^^^^^^^^^^
 FreeMarker
@@ -199,7 +199,7 @@ the ICE engine to make things editable to authors.
 As mentioned earlier, you need to give XB's ICE engine the *coordinates* to identify each model/field,
 so, in addition to their other arguments, each macro receives the following base parameters:
 
-.. _newIa-xbAttributes:
+.. _xbAttributes:
 
 * **Model** (``$model``)
 
@@ -292,7 +292,7 @@ Exceptions to this are the following:
 * For item selector controls that hold components to be rendered, use ``@crafter.renderComponentCollection``.
 
 To convert the carousel example, first, mark the component root by using ``@crafter.div``.
-See :ref:`newIa-htmlElementTagMacros` for all the available customizations and configuration.
+See :ref:`htmlElementTagMacros` for all the available customizations and configuration.
 
 .. code-block:: text
 
@@ -302,7 +302,7 @@ See :ref:`newIa-htmlElementTagMacros` for all the available customizations and c
    </@crafter.div>
 
 Next, let's do the repeat group and its items. We use ``@crafter.renderRepeatGroup`` to render repeat
-groups. :ref:`newIa-renderRepeatGroup` for all the available customizations and configuration.
+groups. :ref:`renderRepeatGroup` for all the available customizations and configuration.
 
 .. code-block:: text
    :linenos:
@@ -361,7 +361,7 @@ The complete FreeMarker template for the carousel component becomes:
 
 .. TODO Speak about the ice support classes, event capture overlay and special treatment for empty zones
 
-.. _newIa-xbMacros:
+.. _xbMacros:
 
 FreeMarker Macros & Utilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -380,7 +380,7 @@ position them in accordance to their name. For example, a Google Tag Manager plu
 early on in the ``head`` so it will print it’s script in the ``<@head />`` hook.
 
 
-See :ref:`here <newIa-plugins-using-freemarker-templates>` for more information on injecting templates from plugins.
+See :ref:`here <plugins-using-freemarker-templates>` for more information on injecting templates from plugins.
 
 |
 
@@ -395,7 +395,7 @@ After importing ``crafter.ftl``, you'll have all the available XB macros describ
    const editModeClass = 'craftercms-ice-on';
    const zKeyClass = 'craftercms-ice-bypass';
 
-.. _newIa-freemarker-initExperienceBuilder:
+.. _freemarker-initExperienceBuilder:
 
 initExperienceBuilder
 """""""""""""""""""""
@@ -421,7 +421,7 @@ In that case, you'll need to invoke ``initExperienceBuilder`` manually.
      - Description
    * - isAuthoring
      - boolean
-     - Optional as it defaults to :ref:`modePreview <newIa-printIfPreview>` FreeMarker context variable. When isAuthoring=false, in context editing is skipped all together. Meant for running in production.
+     - Optional as it defaults to :ref:`modePreview <printIfPreview>` FreeMarker context variable. When isAuthoring=false, in context editing is skipped all together. Meant for running in production.
    * - props
      - JS object string
      - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string, the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter's JavaScript SDK initialization.
@@ -449,7 +449,7 @@ Examples
    <@crafter.body_bottom xbProps="{ scrollElement: '#mainWrapper' }" />
    <#-- `body_bottom` internally invokes `initExperienceBuilder` -->
 
-.. _newIa-htmlElementTagMacros:
+.. _htmlElementTagMacros:
 
 Html elements tag macros
 """"""""""""""""""""""""
@@ -554,7 +554,7 @@ Note the ``@crafter.img`` macro automatically prints to ``src`` when you don't s
 .. note::
    Auto-print can only be used to print top-level model field values.
 
-.. _newIa-renderComponentCollection:
+.. _renderComponentCollection:
 
 renderComponentCollection
 """""""""""""""""""""""""
@@ -617,7 +617,7 @@ not the item.
      - Html attributes to print by item index. For example, ``$nthItemAttributes={ 0: { "class": "active" } }`` will
        apply the class named active only to the first item in the collection.
    * - ``renderComponentArguments``
-     - CrafterCMS' :ref:`renderComponent <newIa-renderComponent>` macro supports supplying additional arguments
+     - CrafterCMS' :ref:`renderComponent <renderComponent>` macro supports supplying additional arguments
        (``additionalModel`` argument when used directly) to the component template context. You can send these via
        this parameter. The ``renderComponentArguments`` will be sent to all items.
 
@@ -670,7 +670,7 @@ The sample above would print out the following html:
      </div>
    </section>
 
-.. _newIa-renderRepeatGroup:
+.. _renderRepeatGroup:
 
 renderRepeatGroup
 """""""""""""""""
@@ -891,7 +891,7 @@ The sample above would print out the following html:
      </div>
    </section>
 
-.. _newIa-forEach:
+.. _forEach:
 
 forEach
 """""""
@@ -921,7 +921,7 @@ Examples
      ></button>
    </@crafter.forEach>
 
-.. _newIa-cleanDotNotationString:
+.. _cleanDotNotationString:
 
 cleanDotNotationString
 """"""""""""""""""""""
@@ -949,14 +949,14 @@ carryovers and complex/compound fields (e.g. ``field1.field2``) and indexes (e.g
    ${crafter.cleanDotNotationString("..")}
    <#-- Output is an empty string -->
 
-.. _newIa-isEmptyCollection:
+.. _isEmptyCollection:
 
 isEmptyCollection
 """""""""""""""""
 
 Receives a Crafter collection and returns true if it's empty or false otherwise.
 
-.. _newIa-emptyCollectionClass:
+.. _emptyCollectionClass:
 
 emptyCollectionClass
 """"""""""""""""""""
@@ -988,7 +988,7 @@ One should use this macro on empty component or repeat group collections.
      $containerAttributes={ "class": crafter.emptyCollectionClass(contentModel.slides_o) }
    />
 
-.. _newIa-emptyFieldClass:
+.. _emptyFieldClass:
 
 emptyFieldClass
 """""""""""""""
@@ -1013,7 +1013,7 @@ One should use this macro on empty fields.
       ${contentModel.title_s!''}
    </@crafter.h1>
 
-.. _newIa-printIfPreview:
+.. _printIfPreview:
 
 printIfPreview
 """"""""""""""
@@ -1034,7 +1034,7 @@ You can also use the FreeMarker context variable ``modePreview`` to do similar t
    <#-- Import a in-context editing stylesheet only in preview. -->
    <#if modePreview><link href="/static-assets/css/ice.css" rel="stylesheet"></#if>
 
-.. _newIa-printIfNotPreview:
+.. _printIfNotPreview:
 
 printIfNotPreview
 """""""""""""""""
@@ -1047,7 +1047,7 @@ anything if Engine is running the published site.
    <#-- Import the "minified" version of the script in delivery. -->
    <script src="/static-assets/js/bootstrap.bundle${crafter.printIfNotPreview('.min')}.js"></script>
 
-.. _newIa-navigation:
+.. _navigation:
 
 navigation
 """"""""""
@@ -1164,7 +1164,7 @@ Prints out the navigation structure of a site in a customizable markup structure
        print ``Home`` at the same level as its children to get something like ``Home • Products • About • Contact``
        instead of having products, about and contact as a dropdown or indented within home in your UI.
 
-.. _newIa-navigationItem:
+.. _navigationItem:
 
 navigationItem
 """"""""""""""
@@ -1194,7 +1194,7 @@ See the navigation macro
      - {}
      - The navItem object that will be used to print.
 
-.. _newIa-breadcrumb:
+.. _breadcrumb:
 
 breadcrumb
 """"""""""
@@ -1265,7 +1265,7 @@ breadcrumb
      - false
      - Whether to render the active element as a link (i.e. ``a``); otherwise rendered as a ``span``.
 
-.. _newIa-xbJsApps:
+.. _xbJsApps:
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 JavaScript Applications
@@ -1288,7 +1288,7 @@ Usage
 XB JS libraries can be used either via npm by importing ``@craftercms/experience-builder`` or using the
 JS :abbr:`UMD (Universal Module Definition)` bundle and adding it into your app's runtime.
 
-.. _newIa-xb-react-bindings:
+.. _xb-react-bindings:
 
 React
 ~~~~~
@@ -1301,7 +1301,7 @@ React bindings can be used either via npm or using the umd bundle that comes wit
 
 The components available for using on your React applications are listed below.
 
-.. _newIa-ExperienceBuilder:
+.. _ExperienceBuilder:
 
 ExperienceBuilder
 """""""""""""""""
@@ -1467,7 +1467,7 @@ fields, CrafterCMS provides specific components (see below) to render component 
      - If you need to do custom rendering logic for the value of the field being rendered, you may
        supply a ``render`` function. The function receives the field value and the ``fieldId``
 
-.. _newIa-RenderComponents:
+.. _RenderComponents:
 
 RenderComponents
 """"""""""""""""
@@ -1507,7 +1507,7 @@ element (i.e. the item selector), the item element, and the component itself.
      - If the default component renderer is not sufficient for your use case, you can supply a custom
        renderer which is invoked with the current component and the current index in the collection.
 
-.. _newIa-RenderRepeat:
+.. _RenderRepeat:
 
 RenderRepeat
 """"""""""""
@@ -1577,7 +1577,7 @@ Angular, Vue and Other JS Applications
 The easiest way to integrate XB with your JS application is by putting attributes on each HTML element that
 represents a model, field or item of a CrafterCMS content type and then invoking XB initializer.
 
-.. _newIa-fetchIsAuthoring:
+.. _fetchIsAuthoring:
 
 fetchIsAuthoring
 """"""""""""""""
@@ -1628,7 +1628,7 @@ addAuthoringSupport
 
 Add authoring support will import the XB scripts on to your page.
 
-.. _newIa-getICEAttributes:
+.. _getICEAttributes:
 
 getICEAttributes
 """"""""""""""""
@@ -1654,7 +1654,7 @@ You should first set all the attributes on your markup and afterwards, invoke `i
        supplied when the artifact being rendered is a field. The ``index`` must be specified when
        the artifact being rendered is inside a collection (repeat groups or item selectors).
 
-.. _newIa-js-app-initExperienceBuilder:
+.. _js-app-initExperienceBuilder:
 
 initExperienceBuilder
 """""""""""""""""""""

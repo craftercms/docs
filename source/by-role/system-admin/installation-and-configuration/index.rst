@@ -2,7 +2,7 @@
 :last-updated: 4.0.3
 :nosearch:
 
-.. _newIa-system-admin-installation-and-configuration:
+.. _system-admin-installation-and-configuration:
 
 ==============================
 Installation and Configuration
@@ -20,7 +20,7 @@ First we'll take a look at the requirements and supported platform for installin
 
    <hr>
 
-.. _newIa-installation:
+.. _installation:
 
 ------------
 Installation
@@ -40,7 +40,7 @@ We'll go through these one by one.
 Docker
 ^^^^^^
 
-Run CrafterCMS in :ref:`Docker <newIa-running-craftercms-in-docker>`.
+Run CrafterCMS in :ref:`Docker <running-craftercms-in-docker>`.
 
 ^^^^^^^^^^
 Kubernetes
@@ -92,13 +92,13 @@ Configuration
 -------------
 
 Credentials may be required in some configurations. For more information on how to manage/encode your secrets such as
-AWS credentials, please see :ref:`newIa-managing-secrets`
+AWS credentials, please see :ref:`managing-secrets`
 
 ^^^^^^^^^^^^^^^^^^^^^
 Securing Your Install
 ^^^^^^^^^^^^^^^^^^^^^
 Remember to change the default values pre-configured when installing CrafterCMS for a secure installation.
-See :ref:`newIa-securing-your-crafter-cms-install` for more information.
+See :ref:`securing-your-crafter-cms-install` for more information.
 
 ^^^^^^^^^
 Authoring
@@ -133,13 +133,13 @@ Additional Configuration
 """""""
 Logging
 """""""
-Learn more about :ref:`newIa-logging`.
+Learn more about :ref:`logging`.
 
 """""""""
 Main Menu
 """""""""
 .. TODO explain why would one want to edit this
 
-:ref:`newIa-nav-menu-global-config`
+:ref:`nav-menu-global-config`
 
 .. TODO Add configuration tasks below detailing how to accomplish that task with references to the relevant configuration files

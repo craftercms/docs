@@ -4,7 +4,7 @@
 
 .. index:: CLI Access to Crafter Studio
 
-.. _newIa-cli-access-to-crafter-studio:
+.. _cli-access-to-crafter-studio:
 
 ====================================
 Commandline Access to Crafter Studio
@@ -32,7 +32,7 @@ Let's begin:
 
    There are two authentication methods that can be used: JWT and HTTP Basic
 
-   .. _newIa-access-tokens:
+   .. _access-tokens:
 
    **JWT Authentication**
 
@@ -122,7 +122,7 @@ Let's begin:
 
    |
 
-   .. _newIa-http-basic-authentication:
+   .. _http-basic-authentication:
 
    **HTTP Basic Authentication**
 
@@ -153,7 +153,7 @@ Let's begin:
 #. **Get a list of projects under management**
 
    We'll get a list of sites the user is authorized to work with
-   :ref:`newIa-crafter-studio-api-site-get-per-user`
+   :ref:`crafter-studio-api-site-get-per-user`
 
    .. code-block:: bash
 
@@ -174,7 +174,7 @@ Let's begin:
 #. **Write content to a project**
 
    We'll now write content to the Editorial com Project
-   :ref:`newIa-crafter-studio-api-content-write-content`
+   :ref:`crafter-studio-api-content-write-content`
 
    .. code-block:: bash
 
@@ -187,4 +187,4 @@ Let's begin:
    We are passing in content as the POST body.  The content is in XML format.  In CrafterCMS, content objects are stored as simple XML documents.
    We are passing a number of parameters that tell CrafterCMS where and how to store the content in the repository
 
-Using the above examples as a guide, we can now interact with any Crafter Studio API found :ref:`here <newIa-crafter-studio-api>`
+Using the above examples as a guide, we can now interact with any Crafter Studio API found :ref:`here <crafter-studio-api>`

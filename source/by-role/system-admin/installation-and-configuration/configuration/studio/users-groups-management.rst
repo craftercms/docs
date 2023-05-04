@@ -3,7 +3,7 @@
 
 .. index:: Users Groups Management
 
-.. _newIa-users-group-management:
+.. _users-group-management:
 
 =======================
 Users/Groups Management

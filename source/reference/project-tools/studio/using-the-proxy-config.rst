@@ -8,7 +8,7 @@
 
 .. index:: Using the Proxy Configuration
 
-.. _newIa-using-the-proxy-configuration:
+.. _using-the-proxy-configuration:
 
 =============================
 Using the Proxy Configuration

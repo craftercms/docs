@@ -3,7 +3,7 @@
 
 .. index:: Configuring Studio Security; Studio Security; Security
 
-.. _newIa-configuring-studio-security:
+.. _configuring-studio-security:
 
 ===========================
 Configuring Studio Security
@@ -48,7 +48,7 @@ The following authentication providers can be configured in a chain:
     - headers
     - internal database
 
-When an authentication chain is configured, when a user logs in, Studio will try to authenticate the user using the first security provider in the chain as defined in the :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` file.  If authentication fails, it will then move on to the next authentication provider in the list and try to authenticate the user again.  It will continue moving on to the next security provider in the chain until the user is authenticated or the authentication fails.
+When an authentication chain is configured, when a user logs in, Studio will try to authenticate the user using the first security provider in the chain as defined in the :ref:`studio-config-override.yaml <studio-configuration-files>` file.  If authentication fails, it will then move on to the next authentication provider in the list and try to authenticate the user again.  It will continue moving on to the next security provider in the chain until the user is authenticated or the authentication fails.
 
 To setup the authentication chain, open the file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension``.  Another way to access the ``studio-config-override.yaml`` file is by clicking on the |mainMenu| **Main Menu** from the context nav in Studio, then clicking on ``Global Config``.
 
@@ -165,7 +165,7 @@ Crafter Studio can be configured to support SAML2 SSO out of the box without usi
 
 .. important::
    *This document only applies to* **CrafterCMS version 4.0.3 and later** |br|
-   *Please see* :ref:`here <newIa-crafter-studio-configure-studio-saml-up-to-4-0-2>` *for version 4.0.2 and earlier.*
+   *Please see* :ref:`here <crafter-studio-configure-studio-saml-up-to-4-0-2>` *for version 4.0.2 and earlier.*
 
 ------------
 Requirements
@@ -202,7 +202,7 @@ To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.s
 
 |
 
-Next we'll setup SAML configuration properties.  Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add/uncomment the following lines to :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+Next we'll setup SAML configuration properties.  Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add/uncomment the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -320,7 +320,7 @@ Crafter Studio is able to integrate with any authentication system that sends cu
 Configure Studio for Headers Based Authentication
 -------------------------------------------------
 
-Configuring Studio for headers based authentication is very simple: in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+Configuring Studio for headers based authentication is very simple: in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: properties
     :linenos:
@@ -372,7 +372,7 @@ Configuring Logout
 
 The **Sign out** button link is disabled/hidden by default when headers based authentication is enabled.
 
-To enable **Sign out** for users signed in using headers based authentication, change the following lines (as described from the above configuration) in your :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+To enable **Sign out** for users signed in using headers based authentication, change the following lines (as described from the above configuration) in your :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: yaml
 
@@ -392,7 +392,7 @@ Configure LDAP Authentication |enterpriseOnly|
 ==============================================
 
 To configure LDAP authentication, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and uncomment the
-following lines to the :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` file.
+following lines to the :ref:`studio-config-override.yaml <studio-configuration-files>` file.
 
 .. note:: The values for the parameters listed below are just examples.  Remember to make any appropriate configuration changes according to your directory service in use.
 
@@ -462,11 +462,11 @@ Make sure that at least one of the **groupName** attribute of the LDAP user exis
 
 |
 
-To assign a role to a group, please follow the guide :ref:`newIa-role-mappings`.  To assign permissions to a role, please see :ref:`newIa-permission-mappings`
+To assign a role to a group, please follow the guide :ref:`role-mappings`.  To assign permissions to a role, please see :ref:`permission-mappings`
 
-For an example of setting up LDAP, see :ref:`newIa-setting-up-simple-ldap-server`
+For an example of setting up LDAP, see :ref:`setting-up-simple-ldap-server`
 
-.. _newIa-crafter-studio-configure-password-requirements:
+.. _crafter-studio-configure-password-requirements:
 
 ======================================
 Configure Studio Password Requirements
@@ -562,7 +562,7 @@ Below, are some of the messages displayed as a user is inputting a new password:
 Randomize Authoring's "admin" Password for CrafterCMS Fresh Install
 ===================================================================
 
-CrafterCMS gives you the option to randomize the **admin** password on a fresh install.  To randomize the **admin** password, before starting CrafterCMS for the very first time, in your Authoring installation, go to  the following folder: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/`` and add the following to the :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` file:
+CrafterCMS gives you the option to randomize the **admin** password on a fresh install.  To randomize the **admin** password, before starting CrafterCMS for the very first time, in your Authoring installation, go to  the following folder: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/`` and add the following to the :ref:`studio-config-override.yaml <studio-configuration-files>` file:
 
 .. code-block:: yaml
        :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-site-monitor-content:
+.. _crafter-studio-api-site-monitor-content:
 
 ===============
 Monitor Content

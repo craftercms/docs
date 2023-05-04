@@ -3,7 +3,7 @@
 
 :nosearch:
 
-..  _newIa-developers-upgrade:
+..  _developers-upgrade:
 
 *******
 Upgrade
@@ -11,7 +11,7 @@ Upgrade
 
 .. CrafterCMS upgrades may require some developer work. List the activities:
 .. ICE
-.. Search :ref:`newIa-migrate-site-to-elasticsearch`
+.. Search :ref:`migrate-site-to-elasticsearch`
 .. Search (old ES to new ES)
 .. Configuration files if any
 

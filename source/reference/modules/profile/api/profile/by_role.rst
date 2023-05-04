@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-profile-api-profile-by_role:
+.. _crafter-profile-api-profile-by_role:
 
 ====================
 Get Profiles By Role

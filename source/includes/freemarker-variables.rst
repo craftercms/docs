@@ -86,7 +86,7 @@ with ``authToken`` if possible:
       The variables ``profile`` and ``authentication`` listed  above will be null in most cases and should not be used anymore
 
 
-The following variables are restricted by default, to use them see :ref:`newIa-access-to-services`
+The following variables are restricted by default, to use them see :ref:`access-to-services`
 
 +---------------------------+---------------------------------------+------------------------------------+
 || Name                     || Description                          || Type                              |

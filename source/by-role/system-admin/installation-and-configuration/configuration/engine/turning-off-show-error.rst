@@ -12,7 +12,7 @@ Templates in CrafterCMS will display the errors in line with content as they enc
 Step 1
 ------
 
-Place the following property and value in the :ref:`server-config.properties <newIa-engine-configuration-files>` file
+Place the following property and value in the :ref:`server-config.properties <engine-configuration-files>` file
 
 .. code-block:: properties
     :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*

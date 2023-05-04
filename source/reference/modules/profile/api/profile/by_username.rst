@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-profile-api-profile-by_username:
+.. _crafter-profile-api-profile-by_username:
 
 =======================
 Get Profile By Username

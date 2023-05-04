@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; WebDAV Repository Image Upload
 
-.. _newIa-form-source-webdav-image-upload:
+.. _form-source-webdav-image-upload:
 
 ===============================
 WebDAV Image Upload Data Source

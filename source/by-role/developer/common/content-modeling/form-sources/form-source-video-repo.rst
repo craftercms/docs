@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; Video from Repository
 
-.. _newIa-form-source-video-repo:
+.. _form-source-video-repo:
 
 =================================
 Video from Repository Data Source

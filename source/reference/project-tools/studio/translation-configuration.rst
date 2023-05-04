@@ -8,7 +8,7 @@
 
 .. index:: Translation Configuration
 
-.. _newIa-translation-configuration:
+.. _translation-configuration:
 
 #########################
 Translation Configuration

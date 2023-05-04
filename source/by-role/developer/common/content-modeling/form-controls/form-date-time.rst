@@ -7,7 +7,7 @@
 
 .. index:: Form Controls; Date/Time Control
 
-.. _newIa-form-date-time:
+.. _form-date-time:
 
 =================
 Date/Time Control

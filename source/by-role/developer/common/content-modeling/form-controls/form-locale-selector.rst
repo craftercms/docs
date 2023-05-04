@@ -7,7 +7,7 @@
 
 .. index:: Form Controls; Locale Selector
 
-.. _newIa-form-locale-selector:
+.. _form-locale-selector:
 
 =======================
 Locale Selector Control

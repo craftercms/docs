@@ -4,7 +4,7 @@
 
 .. index:: Setting up a simple LDAP server for development/testing using Apache Directory Studio, Setting up a simple LDAP server
 
-.. _newIa-setting-up-simple-ldap-server:
+.. _setting-up-simple-ldap-server:
 
 =============================================================
 Setting up a Simple LDAP Server using Apache Directory Studio

@@ -3,7 +3,7 @@
 
 .. index:: Projects; Crafter Commons
 
-.. _newIa-crafter-commons:
+.. _crafter-commons:
 
 ===============
 Crafter Commons
@@ -27,4 +27,4 @@ Crafter Commons is configured through the rest of the projects comprising Crafte
 Tool
 ----
 Crafter Commons provides a command line tool that can be used to encrypt/decrypt text.
-See :ref:`newIa-crafter-commons-encryption-tool` for more information
+See :ref:`crafter-commons-encryption-tool` for more information

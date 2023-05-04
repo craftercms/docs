@@ -2,7 +2,7 @@
 :since-version: 4.0.0
 :nosearch:
 
-.. _newIa-deployment-architecture:
+.. _deployment-architecture:
 
 =======================
 Deployment Architecture

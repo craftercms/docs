@@ -1,7 +1,7 @@
 :is-up-to-date: False
 :nosearch:
 
-.. _newIa-rest-api:
+.. _rest-api:
 
 .. TODO Figure out what this should become
 

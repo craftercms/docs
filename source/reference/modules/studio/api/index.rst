@@ -5,7 +5,7 @@
 
 .. index:: API; Crafter Studio
 
-.. _newIa-crafter-studio-api:
+.. _crafter-studio-api:
 
 ==================
 Crafter Studio API
@@ -16,7 +16,7 @@ There are 2 versions of Crafter Studio APIs.  **API version 2** contains the Use
 .. note::
     This API can be used with JWT or HTTP Basic authentication.
 
-    For more information on using Crafter Studio APIs, see :ref:`newIa-cli-access-to-crafter-studio`
+    For more information on using Crafter Studio APIs, see :ref:`cli-access-to-crafter-studio`
 
 -------------
 API Version 2

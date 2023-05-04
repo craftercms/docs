@@ -4,7 +4,7 @@
 
 .. index:: Author Experience Builder
 
-..  _newIa-author-xb:
+..  _author-xb:
 
 ==============================
 Author Experience Builder (XB)
@@ -13,7 +13,7 @@ Author Experience Builder (XB)
 CrafterCMS’ Experience Builder (XB) enables authors with in-context editing (ICE) for all the model
 fields defined in the content types of pages and components.
 
-:ref:`This article<newIa-experience-builder-panel-screens>` gave an overview of the Experience
+:ref:`This article<experience-builder-panel-screens>` gave an overview of the Experience
 Builder panel in Studio.
 
 In this section, we describe how authors can use the Experience Builder for adding/editing content.

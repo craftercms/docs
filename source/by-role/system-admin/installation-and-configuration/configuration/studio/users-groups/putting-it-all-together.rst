@@ -4,7 +4,7 @@
 
 .. index:: Putting it all together - Users, Groups, Roles and Permissions
 
-.. _newIa-putting-it-all-together:
+.. _putting-it-all-together:
 
 ==============================================================
 Putting it all together - Users, Groups, Roles and Permissions
@@ -41,7 +41,7 @@ Below are the information used to create a new group:
      :width: 100%
      :align: center
 
-For more information on adding a new group to a project, please see :ref:`newIa-create-a-new-group`
+For more information on adding a new group to a project, please see :ref:`create-a-new-group`
 
 -----------------
 Create a new role
@@ -82,7 +82,7 @@ We'll now create a new role for the new group we just created.
 
 #. Click on the **Save** button.
 
-For more information about role mappings, please see: :ref:`newIa-role-mappings`
+For more information about role mappings, please see: :ref:`role-mappings`
 
 ------------------
 Adding permissions
@@ -130,7 +130,7 @@ Adding permissions
 
 #. Click on the **Save** button to save your changes.
 
-For more information about permission mappings, please see: :ref:`newIa-permission-mappings`
+For more information about permission mappings, please see: :ref:`permission-mappings`
 
 ------------------------
 Adding users to the role
@@ -142,6 +142,6 @@ We can now add users to the role by adding the users to the group mapped to the 
 #. Click on the pencil (edit icon) next to the group name you want to edit.  In our example, the group **NewsEditor**
 #. Click on the box for the field **Add new members**, enter the users you'd like to add, then click on the **Add members** button.
 
-For more information about adding users to a group, please see: :ref:`newIa-adding-users-to-a-group`
+For more information about adding users to a group, please see: :ref:`adding-users-to-a-group`
 
 Your new role with users and permissions assigned are now ready!

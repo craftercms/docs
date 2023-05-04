@@ -3,7 +3,7 @@
 
 .. index:: Securing Your CrafterCMS Install, Change Defaults in CrafterCMS
 
-.. _newIa-securing-your-crafter-cms-install:
+.. _securing-your-crafter-cms-install:
 
 ================================
 Securing Your CrafterCMS Install
@@ -126,7 +126,7 @@ CrafterCMS installations are pre-configured with default passwords, tokens, keys
 
   #. Restart Studio
 
-* Change the default Studio ``admin`` user password either by randomizing the ``admin`` password for a fresh install of Crafter Studio or by changing the password after logging in as user ``admin``.  For more information on randomizing the admin password for a fresh install, see :ref:`newIa-randomize-admin-password`.  For more information on changing user passwords, see :ref:`newIa-user-passwords`
+* Change the default Studio ``admin`` user password either by randomizing the ``admin`` password for a fresh install of Crafter Studio or by changing the password after logging in as user ``admin``.  For more information on randomizing the admin password for a fresh install, see :ref:`randomize-admin-password`.  For more information on changing user passwords, see :ref:`user-passwords`
 
 * Set session cookies as ``HTTP Only`` and ``Secure`` by setting the flags to ``true`` in your tomcat ``web.xml`` file
 

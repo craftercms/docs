@@ -7,7 +7,7 @@ FAQ
 What do I need to run CrafterCMS
 --------------------------------
 
-Follow these instructions to run CrafterCMS and to download and install Crafter on your machine or server: :ref:`Quick Start Guide <newIa-getting-started>`
+Follow these instructions to run CrafterCMS and to download and install Crafter on your machine or server: :ref:`Quick Start Guide <getting-started>`
 
 -------------------------------------------------------------------------------
 Does CrafterCMS require Git?  My company uses XYZ source code control system...
@@ -76,7 +76,7 @@ Crafter's tools enable an agile development methodology.  Many organizations cre
 How do I contribute to CrafterCMS?
 ----------------------------------
 
-You can find out more about contributing bug reports, code, documentations and tests here: :ref:`newIa-contribute`
+You can find out more about contributing bug reports, code, documentations and tests here: :ref:`contribute`
 
 
 ------------------------------------

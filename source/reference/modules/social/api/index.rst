@@ -3,7 +3,7 @@
 
 .. index:: API; Crafter Social
 
-.. _newIa-crafter-social-api:
+.. _crafter-social-api:
 
 ==================
 Crafter Social API

@@ -2,7 +2,7 @@
 :last-updated: 4.0.0
 :nosearch:
 
-.. _newIa-headless-accessing-content:
+.. _headless-accessing-content:
 
 ==============
 Content Access
@@ -73,7 +73,7 @@ Referencing Externally Managed Assets
 
 The ``Site Administrators`` section
 contains information on how to configure CrafterCMS to access services used for storing assets remotely
-here: :ref:`newIa-studio-configuration`.
+here: :ref:`studio-configuration`.
 
 Browser access to remote assets on your site is provided by Crafter Engine's remote assets controller
 via the URL pattern ``/remote-assets/STORE-TYPE/PROFILE-ID/PATH-TO-ASSET``, where:

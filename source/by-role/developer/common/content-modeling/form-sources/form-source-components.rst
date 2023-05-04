@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; Components
 
-.. _newIa-form-source-components:
+.. _form-source-components:
 
 ======================
 Components Data Source

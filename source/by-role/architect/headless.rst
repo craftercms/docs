@@ -2,7 +2,7 @@
 :since-version: 4.0.0
 :nosearch:
 
-.. _newIa-architect-headless:
+.. _architect-headless:
 
 ========
 Headless
@@ -31,10 +31,10 @@ Available APIs
 
 CrafterCMS supports a number of APIs to access content for headless applications, including:
 
-* :ref:`ReST API <newIa-rest-api>`
-* :ref:`GraphQL <newIa-graphql>`
-* :ref:`Search API <newIa-search>`
-* :ref:`Custom API <newIa-groovy-api>`
+* :ref:`ReST API <rest-api>`
+* :ref:`GraphQL <graphql>`
+* :ref:`Search API <search>`
+* :ref:`Custom API <groovy-api>`
 
 -----------
 Inheritance
@@ -43,7 +43,7 @@ Inheritance
 Having content authors enter the same meta-data/content for every content item where it doesn't change is both
 laborious and wasteful. It's best for common meta-data for a section or the whole application to be entered once
 and inherited by all child items. This is content inheritance, and the implementation in CrafterCMS is very
-powerful supporting many inheritance mechanisms. More on this :ref:`here <newIa-content-inheritance>`
+powerful supporting many inheritance mechanisms. More on this :ref:`here <content-inheritance>`
 
 --------
 Security
@@ -52,7 +52,7 @@ Security
 Securing content access and providing role-based access to different content items or hierarchies is critical to any
 enterprise-grade content-rich application. It's critical that the security be implemented at the content API-level.
 CrafterCMS provides enterprise-grade authentication and authorization mechanics to help achieve this.
-More on this :ref:`here <newIa-architect-security>`
+More on this :ref:`here <architect-security>`
 
 
 Authentication
@@ -60,9 +60,9 @@ Authentication
 
 CrafterCMS support authentication integration with:
 
-* SAML2 providers (see :ref:`here <newIa-engine-saml2-configuration>` and :ref:`here <newIa-crafter-studio-configure-studio-saml>`)
-* :ref:`LDAP <newIa-crafter-studio-configure-ldap>` , AD, ADFS
-* Headers-based providers (most SSO vendors) (see :ref:`here <newIa-crafter-studio-configure-headers-based-auth>` and :ref:`here <newIa-engine-headers-authentication>`)
+* SAML2 providers (see :ref:`here <engine-saml2-configuration>` and :ref:`here <crafter-studio-configure-studio-saml>`)
+* :ref:`LDAP <crafter-studio-configure-ldap>` , AD, ADFS
+* Headers-based providers (most SSO vendors) (see :ref:`here <crafter-studio-configure-headers-based-auth>` and :ref:`here <engine-headers-authentication>`)
 * OAuth 2.0 (coming soon)
 
 
@@ -79,4 +79,4 @@ In-Context Editing
 CrafterCMS provides an SDK that lets developers focused on a headless use-case add the tools content authors expect,
 like visual in-context and in-place editing of Web content regardless of the development platform and tools.
 
-More information on Experience Builder :ref:`here <newIa-xb>` and on the SDK `here <https://www.npmjs.com/package/@craftercms/experience-builder>`__
+More information on Experience Builder :ref:`here <xb>` and on the SDK `here <https://www.npmjs.com/package/@craftercms/experience-builder>`__

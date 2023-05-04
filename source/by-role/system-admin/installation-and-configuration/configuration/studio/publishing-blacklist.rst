@@ -3,7 +3,7 @@
 
 .. index:: Publishing Blacklist
 
-.. _newIa-publishing-blacklist:
+.. _publishing-blacklist:
 
 ====================
 Publishing Blacklist

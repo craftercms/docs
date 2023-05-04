@@ -4,7 +4,7 @@
 
 .. index:: Content Type Editor Config
 
-.. _newIa-content-type-editor-config:
+.. _content-type-editor-config:
 
 ==========================
 Content Type Editor Config

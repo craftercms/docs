@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; S3 Repository Video Upload
 
-.. _newIa-form-source-s3-video-upload:
+.. _form-source-s3-video-upload:
 
 ===========================
 S3 Video Upload Data Source

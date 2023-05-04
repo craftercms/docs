@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; Video from S3 Repository
 
-.. _newIa-form-source-s3-video-repo:
+.. _form-source-s3-video-repo:
 
 ====================================
 Video from S3 Repository Data Source

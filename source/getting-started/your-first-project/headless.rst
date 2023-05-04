@@ -6,7 +6,7 @@
 
 .. index:: Your First Project
 
-.. _newIa-your-first-headless-site:
+.. _your-first-headless-site:
 
 =============================
 Your First Project (headless)

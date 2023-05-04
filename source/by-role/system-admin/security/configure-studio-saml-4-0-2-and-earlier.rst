@@ -5,7 +5,7 @@
 
 .. index:: Studio SAML, Studio SAML version 4.0.2 and earlier
 
-.. _newIa-crafter-studio-configure-studio-saml-up-to-4-0-2:
+.. _crafter-studio-configure-studio-saml-up-to-4-0-2:
 
 =============================================================================
 Studio SAML2 Configuration for CrafterCMS v4.0.2 and Earlier |enterpriseOnly|
@@ -14,7 +14,7 @@ Studio SAML2 Configuration for CrafterCMS v4.0.2 and Earlier |enterpriseOnly|
 .. warning::
 
    *This document only applies to* **CrafterCMS version 4.0.2 and earlier** |br|
-   *Please see* :ref:`newIa-crafter-studio-configure-studio-saml` *for the latest version.*
+   *Please see* :ref:`crafter-studio-configure-studio-saml` *for the latest version.*
 
 Crafter Studio can be configured to support SAML2 SSO out of the box without using any additional plugin.
 
@@ -107,7 +107,7 @@ To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.s
 
 |
 
-Next we'll setup SAML configuration properties.  Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+Next we'll setup SAML configuration properties.  Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*

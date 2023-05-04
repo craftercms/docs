@@ -3,7 +3,7 @@
 
 .. index:: Your First Project
 
-.. _newIa-your-first-editorial-project:
+.. _your-first-editorial-project:
 
 ==============================
 Your First Project (templated)
@@ -20,7 +20,7 @@ In this section, we will create a project using an out-of-the-box blueprint call
 - how to edit a section in the project
 - how to publish the page we created above
 
-It is assumed that you have followed the steps in the :ref:`Getting Started <newIa-getting-started>` to install CrafterCMS and login.
+It is assumed that you have followed the steps in the :ref:`Getting Started <getting-started>` to install CrafterCMS and login.
 
 Let's get started building your first editorial website!
 
@@ -81,7 +81,7 @@ When it's done you will be taken to the Home Page of your project:
    :align: center
    :alt: Your First Website - Home Page
 
-Your project is setup, we can now start adding/editing content!  To edit content you see on the page, click on the three dots next to the page url at the toolbar at the top, then select **Edit**.  This will open a form (see below) where you can edit the page content.  To see other ways of editing page content, see :ref:`newIa-editing-a-page`.
+Your project is setup, we can now start adding/editing content!  To edit content you see on the page, click on the three dots next to the page url at the toolbar at the top, then select **Edit**.  This will open a form (see below) where you can edit the page content.  To see other ways of editing page content, see :ref:`editing-a-page`.
 
 .. image:: /_static/images/first-project/first-project-editing-content.webp
    :width: 90 %
@@ -314,5 +314,5 @@ Your project is not yet published after creating the project from the Website_Ed
 
 |
 
-For more information on content authoring, please see the documentation section: :ref:`Content Authoring <newIa-author>`
+For more information on content authoring, please see the documentation section: :ref:`Content Authoring <author>`
 

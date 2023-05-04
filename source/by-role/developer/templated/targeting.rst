@@ -3,7 +3,7 @@
 
 .. index:: Targeting
 
-.. _newIa-targeting:
+.. _targeting:
 
 =================
 Content Targeting
@@ -23,7 +23,7 @@ Targeting Using Taxonomies
 Taxonomies allow you to organize your content to make it easy for your project users to browse what
 they want and deliver content appropriate for them. It also allows you to search for content faster.
 
-The :ref:`Content Authors - Audience Targeting<newIa-content_authors_targeting>` section of the documentation,
+The :ref:`Content Authors - Audience Targeting<content_authors_targeting>` section of the documentation,
 describes how Content Authors can target content with taxonomies based on segments and how to view
 the project depending on who is browsing. This section describes how to add the segments and segment
 targeting on pages as seen in the Website Editorial blueprint, so that content authors can target
@@ -222,7 +222,7 @@ the groovy script used to get the articles according to the right segment:
 From the script, you can see that it gets the segment currently active, then it searches for
 articles targeted for the right value, which it then returns to the template, ready to be displayed
 when the page renders. To see how the articles displayed differ depending on who the current active
-user is, please see the section: :ref:`newIa-content_authors_site_views_diff_segments`
+user is, please see the section: :ref:`content_authors_site_views_diff_segments`
 
 
 --------------------------
@@ -371,7 +371,7 @@ the page renders.  To do this, we need to create a script named after the page w
 to run before rendering, under *scripts -> pages*   In the groovy script below, a query is sent to
 ask for all articles targeted for the requested category. (To see the script in Studio, from the
 Sidebar, navigate to scripts -> pages -> category-landing.groovy) Please see
-:ref:`newIa-content-type-controller-definition` for more details on binding a script to a page or component.
+:ref:`content-type-controller-definition` for more details on binding a script to a page or component.
 
 .. code-block:: groovy
   :caption: Category Landing Page Script
@@ -575,7 +575,7 @@ In the ``Repeating Group`` properties, set the Title field to “Authorized Role
 |
 
    .. warning::
-      The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS.  For a list of variable names used by CrafterCMS, see :ref:`newIa-form-control-variable-names` for more information
+      The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS.  For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
       The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
 
@@ -589,7 +589,7 @@ Name** field set to "role". Make this Input required by checking the checkbox un
 |
 
     .. warning::
-       The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_s``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page.  For a list of variable names used by CrafterCMS, see :ref:`newIa-form-control-variable-names` for more information
+       The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_s``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page.  For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
 
 ^^^^^^^^^^^^^^^^^^

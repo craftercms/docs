@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-monitoring-memory:
+.. _crafter-social-api-monitoring-memory:
 
 ================
 Get Memory Stats

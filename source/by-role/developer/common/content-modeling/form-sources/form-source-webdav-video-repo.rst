@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; Video from WebDAV Repository
 
-.. _newIa-form-source-webdav-video-repo:
+.. _form-source-webdav-video-repo:
 
 ========================================
 Video from WebDAV Repository Data Source

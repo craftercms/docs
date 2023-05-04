@@ -4,7 +4,7 @@
 
 .. index:: Box Profiles Configuration
 
-.. _newIa-box-profile-configuration:
+.. _box-profile-configuration:
 
 ==========================
 Box Profiles Configuration
@@ -57,4 +57,4 @@ For more details you can follow the `official documentation <https://developer.b
   If you are using a JRE older than ``1.8.0_151`` you need to install the JCE Unlimited Strength
   Jurisdiction Policy Files. For newer versions you only need to enable the unlimited strength setting.
 
-For more information on how to manage/encode your secrets such as your Box credentials, please see :ref:`newIa-managing-secrets`
+For more information on how to manage/encode your secrets such as your Box credentials, please see :ref:`managing-secrets`

@@ -3,7 +3,7 @@
 
 :nosearch:
 
-.. _newIa-release-notes:
+.. _release-notes:
 
 =============
 Release Notes

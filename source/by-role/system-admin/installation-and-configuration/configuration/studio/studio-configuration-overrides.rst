@@ -6,7 +6,7 @@
 
 .. index:: Studio's Configuration Overrides, Configuration Overrides, Overrides
 
-.. _newIa-studio-config-override:
+.. _studio-config-override:
 
 ================================
 Studio's Configuration Overrides
@@ -158,7 +158,7 @@ The following section of Studio's configuration overrides allows you to setup th
 Security Configuration
 ----------------------
 
-The following section of Studio's configuration overrides allows you to randomize the admin password on a fresh install (for more information, see: :ref:`newIa-randomize-admin-password`), configure encryption and configure authentication method to be used (for more information, see: :ref:`newIa-configuring-studio-security`), configure password requirements validation (for more information see: :ref:`newIa-crafter-studio-configure-password-requirements`).
+The following section of Studio's configuration overrides allows you to randomize the admin password on a fresh install (for more information, see: :ref:`randomize-admin-password`), configure encryption and configure authentication method to be used (for more information, see: :ref:`configuring-studio-security`), configure password requirements validation (for more information see: :ref:`crafter-studio-configure-password-requirements`).
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -242,7 +242,7 @@ The following section of Studio's configuration overrides allows you to setup th
    # studio.mail.debug: false
 
 
-.. _newIa-studio-config-override-cors:
+.. _studio-config-override-cors:
 
 ----
 CORS
@@ -362,7 +362,7 @@ The following section of Studio's configuration overrides allows you to setup se
    #       # The alternate domains names (besides *.cloudfront.net) for the CloudFront CDN (optional when target template is aws-cloudformed-s3)
    #       alternateCloudFrontDomainNames:
 
-.. _newIa-studio-config-forwarded-headers:
+.. _studio-config-forwarded-headers:
 
 -----------------
 Forwarded Headers
@@ -390,7 +390,7 @@ Access Tokens
    :version: 4.0.0
 
 
-The following section of Studio's configuration overrides allows you to configure settings for the Studio access tokens.  For more information on how access tokens are used, see :ref:`newIa-working-in-your-ide`
+The following section of Studio's configuration overrides allows you to configure settings for the Studio access tokens.  For more information on how access tokens are used, see :ref:`working-in-your-ide`
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -419,7 +419,7 @@ The following section of Studio's configuration overrides allows you to configur
    # Indicates if the refresh token cookie should be secure (should be true for production environments behind HTTPS)
    studio.security.token.cookie.secure: ${env:STUDIO_REFRESH_TOKEN_SECURE}
 
-.. _newIa-crafterSite-cookie-domain:
+.. _crafterSite-cookie-domain:
 
 -------------------------
 crafterSite Cookie Domain

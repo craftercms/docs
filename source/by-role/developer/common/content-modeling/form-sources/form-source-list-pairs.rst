@@ -7,7 +7,7 @@
 
 .. index:: Data Sources; Configured List of Pairs
 
-.. _newIa-form-source-list-pairs:
+.. _form-source-list-pairs:
 
 ====================================
 Configured List of Pairs Data Source

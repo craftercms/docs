@@ -3,7 +3,7 @@
 
 .. index:: Upgrading CrafterCMS, Upgrading
 
-.. _newIa-upgrading-in-context-editing:
+.. _upgrading-in-context-editing:
 
 =====================================================
 Upgrading JavaScript Applications' In Context Editing
@@ -14,7 +14,7 @@ Upgrading JavaScript Applications' In Context Editing
 CrafterCMS 3.x and below had mechanisms for "in-context editing" (ICE) which are now deprecated when
 upgrading to CrafterCMS 4.x. This article contains information on how to move from the 3.x ICE system
 to the 4.x Experience Builder (XB) system. If you're starting your project from scratch, please refer to the
-Experience builder docs for :ref:`newIa-xb`.
+Experience builder docs for :ref:`xb`.
 
 .. Motivation
 
@@ -158,7 +158,7 @@ JavaScript
 ----------
 
 The approach to upgrade JavaScript applications will depend on how you first integrated your app with ICE.
-If you didn't have in-context editing on your app, head to :ref:`XB docs <newIa-xbJsApps>` to learn how to integrate.
+If you didn't have in-context editing on your app, head to :ref:`XB docs <xbJsApps>` to learn how to integrate.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Migrating From Setting Attributes Manually
@@ -169,7 +169,7 @@ with the new. However, the best approach would be to use `CrafterCMS JavaScript 
 to integrate your application with XB. Whether you use it straight from npm or download a build, is
 up to you, but using these will facilitate integrating with XB and avoid mistakes.
 
-The old in-context editing relied on a set of attributes which differ from :ref:`the new XB attributes <newIa-xbAttributes>`.
+The old in-context editing relied on a set of attributes which differ from :ref:`the new XB attributes <xbAttributes>`.
 You should remove any of the old attributes listed below:
 
 - ``data-studio-ice``
@@ -188,10 +188,10 @@ The new attributes you would be setting are
 
 As mentioned before, the recommended approach is to use the JavaScript SDK, specifically the
 `@craftercms/experience-builder <https://www.npmjs.com/package/@craftercms/experience-builder>`_ package.
-Once you install or download the package, from its `index`, you should use :ref:`newIa-getICEAttributes` which will
+Once you install or download the package, from its `index`, you should use :ref:`getICEAttributes` which will
 create and return an object with all the necessary attributes and values for you to simply apply the
 attributes to your elements in whatever way suits your app. If you're using React, you should use the
-:ref:`React-specific bindings <newIa-xb-react-bindings>` that the package offers.
+:ref:`React-specific bindings <xb-react-bindings>` that the package offers.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Migrating From ``@craftercms/ice``
@@ -200,7 +200,7 @@ Migrating From ``@craftercms/ice``
 The ``@craftercms/ice`` package is superseded by `@craftercms/experience-builder <https://www.npmjs.com/package/@craftercms/experience-builder>`_.
 You should replace the usage of the old package with the new.
 
-- The new package also exports function :ref:`newIa-getICEAttributes` to get the attributes you must set
+- The new package also exports function :ref:`getICEAttributes` to get the attributes you must set
   onto your elements. Their arguments are fairly similar but not identical so be sure to update the
   arguments too.
 
@@ -209,7 +209,7 @@ You should replace the usage of the old package with the new.
 - The use of ``getDropZoneAttributes`` is also replaced with getICEAttributes, no special function is
   needed with the new function. All fields would use getICEAttributes.
 
-- The ``reportNavigation`` method is `replaced` by :ref:`initExperienceBuilder <newIa-js-app-initExperienceBuilder>`.
+- The ``reportNavigation`` method is `replaced` by :ref:`initExperienceBuilder <js-app-initExperienceBuilder>`.
   If you are using report navigation, there's a good chance you should initialize XB manually; for that purpose,
   you should add ``initializeInContextEditing=false`` to your ``crafter.body_bottom`` invocation (i.e.
   ``<@crafter.body_bottom initializeInContextEditing=false />``). Once you've done that, you're responsible

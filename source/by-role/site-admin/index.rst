@@ -1,7 +1,7 @@
 :is-up-to-date: False
 :nosearch:
 
-.. _newIa-project-admin:
+.. _project-admin:
 
 ============================
 Project (Site) Administrator
@@ -84,7 +84,7 @@ For the project repository, the project structure looks like this::
         Security, reference Sys Admin
 
 Credentials may be required in some project configurations. For more information on how to manage/encode your secrets such as
-AWS credentials, please see :ref:`newIa-managing-secrets`
+AWS credentials, please see :ref:`managing-secrets`
 
 ---------
 Authoring
@@ -142,12 +142,12 @@ Localization
 Localization is the process of adapting the application/software to a specific culture of end users, such as units of
 measurements, language, etc., to make the application look and feel natural to the end users.
 
-.. _newIa-studio-project-time-zone:
+.. _studio-project-time-zone:
 
 Project Time Zone
 -----------------
 
-The :ref:`default dates and times <newIa-server-time-zone>` used for displays in Studio is UTC.  To
+The :ref:`default dates and times <server-time-zone>` used for displays in Studio is UTC.  To
 customize how dates & times get displayed on Studio UI for a project, edit the following in the project
 configuration file, by clicking on |projectTools| from the *Sidebar*, then click on **Configuration**
 and finally selecting **Project Configuration** from the list:
@@ -228,7 +228,7 @@ Localization
 """"""""""""
 As mentioned above, localization is the process of adapting the application/software to a specific culture of end users.
 
-.. _newIa-targeting-guide:
+.. _targeting-guide:
 
 Content Targeting Guide
 -----------------------
@@ -236,13 +236,13 @@ Crafter Engine provides the ability to render content adapted to specific users,
 aspects like geographical location, language, preferences, etc.
 Content that is targeted to users is known in CrafterCMS as targeted content.
 
-.. _newIa-language-based-localized-content:
+.. _language-based-localized-content:
 
 Language-Based Localized Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The most common form of targeted content is language-based localization, which is enabled just by specifying
-some configuration in the :ref:`Engine's Project Config <newIa-engine-project-configuration>`.
+some configuration in the :ref:`Engine's Project Config <engine-project-configuration>`.
 
 The Engine project configuration file can be accessed by clicking on |projectTools| from the *Sidebar*,
 then click on **Configuration** and finally selecting **Engine Project Configuration** from the list:
@@ -357,7 +357,7 @@ then performs the required transactions.  Proxies forwards web requests, act as 
 shared network connections, and cache data to speed up common requests.  It helps to simplify/control the
 complexity of the request, and can provide additional benefits such as load balancing, privacy or security.
 
-See :ref:`here <newIa-using-the-proxy-configuration>` for an example of setting up the proxy for a React application
+See :ref:`here <using-the-proxy-configuration>` for an example of setting up the proxy for a React application
 
 .. todo: should we just dump the article here or leave the article in a separate file somewhere?
 

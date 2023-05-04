@@ -54,7 +54,7 @@ The command above should output something like this:
 
 |
 
-.. _newIa-verify-java-home-env-var:
+.. _verify-java-home-env-var:
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 Verify JAVA_HOME environment variable is set correctly
@@ -130,7 +130,7 @@ For OS X users, the latest ``openssl`` formula needs to be installed via homebre
 
 |
 
-.. _newIa-prerequisites:
+.. _prerequisites:
 
 ------------------
 Linux Prerequisite

@@ -4,19 +4,19 @@
 
 .. index:: Engine Crafter Profile Configuration
 
-.. _newIa-engine-crafter-profile-configuration:
+.. _engine-crafter-profile-configuration:
 
 ====================================
 Engine Crafter Profile Configuration
 ====================================
 
    .. note:: This guide includes Crafter Profile specific configuration only, for a general guide see
-             :ref:`newIa-engine-project-security-guide`
+             :ref:`engine-project-security-guide`
 
 Crafter Engine needs access tokens to use Crafter Profile's API. Each project must have it's own access token. Follow the
 next steps to create one:
 
-#.  Login to Crafter Profile Admin Console as a ``PROFILE_SUPERADMIN`` (by default the admin user has this role).  *See* :ref:`here <newIa-profile-admin-console>` *for more information on the Crafter Profile Admin Console UI.*
+#.  Login to Crafter Profile Admin Console as a ``PROFILE_SUPERADMIN`` (by default the admin user has this role).  *See* :ref:`here <profile-admin-console>` *for more information on the Crafter Profile Admin Console UI.*
 #.  Click on **New Access Token** in the navigation. Enter your project's name on **Application**, leave the **Master** checkbox
     unselected, pick a proper Expiration Date (10 years from the current date is ok) and on **Tenant Permissions** add
     your tenant's name to the input (*Remember that your tenant's name has to have the same name as your project.  See the note below*) and click on **Add**. By default the admin console auto-selects the 3 actions
@@ -25,7 +25,7 @@ next steps to create one:
     values for Application, Master and Expiration Date. Finally, click on **Accept**.
 
        .. note::
-          Authentication by default is done against a tenant with the same name as your project.  See :ref:`newIa-profile-admin-tenants` for more information on creating a tenant.
+          Authentication by default is done against a tenant with the same name as your project.  See :ref:`profile-admin-tenants` for more information on creating a tenant.
 
     .. image:: /_static/images/new_access_token.webp
 

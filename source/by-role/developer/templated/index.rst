@@ -35,9 +35,9 @@ It allows developers to model the content as general reusable items, and fold th
 Pages aggregate content from components as needed and are associated with a FreeMarker template that
 can render the final page. The choice of HTML tools and frameworks doesn't matter to CrafterCMS.
 Developers can use whatever front-end technology they want. For development React, Vue, Angular, Flutter
-or similar SPA, please see :ref:`here <newIa-developer-headless>`
+or similar SPA, please see :ref:`here <developer-headless>`
 
-When you're ready for development, and if you use Docker, review :ref:`newIa-local-dev-with-docker`.
+When you're ready for development, and if you use Docker, review :ref:`local-dev-with-docker`.
 
 The following details building templated projects, its purpose and examples.
 

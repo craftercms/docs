@@ -12,9 +12,9 @@ Basics
 ------
 .. Add some language to introduce
 
-:ref:`newIa-securing-your-crafter-cms-install`
-:ref:`newIa-configure-ssl-tls`
-:ref:`newIa-configuring-studio-security`
+:ref:`securing-your-crafter-cms-install`
+:ref:`configure-ssl-tls`
+:ref:`configuring-studio-security`
 
 ---------
 Authoring
@@ -22,7 +22,7 @@ Authoring
 
 .. todo introduce
 
-:ref:`newIa-configuring-studio-security`
+:ref:`configuring-studio-security`
 
 
 --------
@@ -31,7 +31,7 @@ Delivery
 
 .. todo introduce
 
-:ref:`newIa-configuring-engine-security`
+:ref:`configuring-engine-security`
 
 .. Separate authoring from delivery
     Delivery (deep link to delivery in the documents)

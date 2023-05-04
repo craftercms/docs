@@ -4,7 +4,7 @@
 
 .. index:: Setting up a CrafterCMS production environment, Production Environment
 
-.. _newIa-production-environment-setup:
+.. _production-environment-setup:
 
 ==============================================
 Setting Up a CrafterCMS Production Environment
@@ -14,7 +14,7 @@ This section lets you get started on setting up your CrafterCMS for production. 
 environment normally consists of one authoring instance and one or more delivery instances.
 
 Before we begin, please review the following for requirements and supported platforms:
-:ref:`newIa-requirements_supported_platforms`
+:ref:`requirements_supported_platforms`
 
 -------------------------------------
 Setting up the production environment
@@ -22,10 +22,10 @@ Setting up the production environment
 
 .. TODO remove references to getting-started. The meat of that must be an include.
 
-#. We'll first install the authoring instance. You can follow the instructions :ref:`here <newIa-installation>`
+#. We'll first install the authoring instance. You can follow the instructions :ref:`here <installation>`
    to install and start authoring.
 
-#. Create your project in authoring. You can follow the guide :ref:`newIa-your-first-editorial-project`
+#. Create your project in authoring. You can follow the guide :ref:`your-first-editorial-project`
    to use one of the out-of-the-box blueprints provided by CrafterCMS.
 
 #. Now that you have a project setup in authoring, the next thing to do is to setup your project
@@ -42,7 +42,7 @@ Setting up the production environment
 
    .. include:: /includes/ssh-private-key.rst
 
-   See the guide :ref:`newIa-setup-project-for-delivery` for more information on setting up your project
+   See the guide :ref:`setup-project-for-delivery` for more information on setting up your project
    for delivery.
 
 #. For the rest of the delivery instances, you can just repeat the previous 2 steps for each one of them,
@@ -50,7 +50,7 @@ Setting up the production environment
 
 #. Your production environment is now ready.
 
-For more information on using gradle, please see :ref:`newIa-crafter-cms`.
+For more information on using gradle, please see :ref:`crafter-cms`.
 
 -------------------------------------------
 Server Hardware Configuration Consideration
@@ -72,13 +72,13 @@ For optimal performance, the server should have different storage systems (disks
 
 |
 
-For more information on tuning your authoring environment for better performance, please see: :ref:`newIa-authoring-env-performance-tuning`
+For more information on tuning your authoring environment for better performance, please see: :ref:`authoring-env-performance-tuning`
 
 -----------------------------
 Set Profile Cookies to Secure
 -----------------------------
 
-For production environments using Crafter Profile and/or the Security Provider, these properties should be added to  :ref:`server-config.properties <newIa-engine-configuration-files>` configuration file to make the Crafter Profile cookies be sent only through HTTPS
+For production environments using Crafter Profile and/or the Security Provider, these properties should be added to  :ref:`server-config.properties <engine-configuration-files>` configuration file to make the Crafter Profile cookies be sent only through HTTPS
 
 .. code-block:: Properties
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*

@@ -3,7 +3,7 @@
 
 :nosearch:
 
-.. _newIa-api-version1:
+.. _api-version1:
 
 
 ----------------------------

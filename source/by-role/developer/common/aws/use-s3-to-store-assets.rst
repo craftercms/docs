@@ -4,7 +4,7 @@
 
 .. index:: Use S3 to Store Assets
 
-.. _newIa-use-s3-to-store-assets:
+.. _use-s3-to-store-assets:
 
 ======================
 Use S3 to store assets
@@ -23,9 +23,9 @@ explains how to:
    .. note::
       The preferred way to store S3 files is to use the Blob Store since it can handle multiple buckets and is completely integrated in Crafter Studio, allowing you to upload and publish files in S3 as if they were in the local repo.
 
-      For more information on Blob Store, see :ref:`newIa-blob-stores-configuration`
+      For more information on Blob Store, see :ref:`blob-stores-configuration`
 
-      For an example of setting up a blob store, see :ref:`here <newIa-publishing-assets-in-external-storage-example>`
+      For an example of setting up a blob store, see :ref:`here <publishing-assets-in-external-storage-example>`
 
 -------------
 Prerequisites
@@ -88,7 +88,7 @@ bucket name for the actual bucket where you're storing the documents):
 
 |
 
-Please see :ref:`newIa-managing-secrets` for more information on how to manage/encode your AWS credentials.
+Please see :ref:`managing-secrets` for more information on how to manage/encode your AWS credentials.
 
 --------------------------------------------------------------------------------------------------
 Step 2: Add the controls and data source for uploading files to your S3 bucket to the content type

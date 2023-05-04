@@ -4,7 +4,7 @@
 
 .. index:: Setup CrafterCMS Delivery Using Crafter's AWS AMI
 
-.. _newIa-setup-delivery-using-aws-ami:
+.. _setup-delivery-using-aws-ami:
 
 =================================================
 Setup CrafterCMS Delivery Using Crafter's AWS AMI
@@ -89,7 +89,7 @@ You can find the IP address and/or DNS name in several locations on your AWS adm
 Step 3: Configure Crafter Engine to deliver published projects
 --------------------------------------------------------------
 
-Crafter Engine is now up and running. However, in order to deliver content, its deployer must be configured to monitor a published repository for one or more projects. A delivery engine is multi-tenant and can deliver many projects. Each project must be configured or "initialized" such that the deployer monitors a Git repository for published updates. CrafterCMS's delivery tier has a decoupled, shared-nothing architecture that makes it cloud native and elastically scalable. You can read more about this architecture here: :ref:`newIa-general-architecture`
+Crafter Engine is now up and running. However, in order to deliver content, its deployer must be configured to monitor a published repository for one or more projects. A delivery engine is multi-tenant and can deliver many projects. Each project must be configured or "initialized" such that the deployer monitors a Git repository for published updates. CrafterCMS's delivery tier has a decoupled, shared-nothing architecture that makes it cloud native and elastically scalable. You can read more about this architecture here: :ref:`general-architecture`
 
 In this section we'll show you how to configure a Crafter Delivery instance to monitor a published Git repository and delivery content for a given project. The simplest topology for this is to directly monitor the published repository of a project on the authoring instance. This is what we will configure. Let's get started.
 
@@ -98,11 +98,11 @@ Step 3.1: Configure authoring instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In order to complete step 3, you must have a CrafterCMS authoring instance running.  If you do not, please follow these instructions to set an instance:
 
-:ref:`newIa-setup-authoring-using-aws-ami`
+:ref:`setup-authoring-using-aws-ami`
 
 
 After your authoring instance is set up and configured, follow this guide to create a simple project.
-:ref:`newIa-your-first-editorial-project`
+:ref:`your-first-editorial-project`
 
 Crafter will automatically "publish" the initial state of the project for you for you which will give you the prerequisites for the rest of step 3.
 
@@ -319,14 +319,14 @@ Example:
     :alt: CrafterCMS AWS AMI Delivery View Site
 
 .. note::
-   The **SITE_ID** parameter is typically added automatically to all requests for a given project by a webserver "virtual host" configured for each project/tenant that sits in front of Crafter Engine. You can learn more about this :ref:`here <newIa-configure-reverse-proxy-for-delivery>`
+   The **SITE_ID** parameter is typically added automatically to all requests for a given project by a webserver "virtual host" configured for each project/tenant that sits in front of Crafter Engine. You can learn more about this :ref:`here <configure-reverse-proxy-for-delivery>`
 
 This configuration and other advanced topology topics such as load balancing are outside the scope of a basic installation.
 
 -------------------------------------------------------------------------------
 Step 6: Make an update in authoring and see it published on the delivery server
 -------------------------------------------------------------------------------
-To further test publishing, log in to Crafter Studio for the given project, make an edit and then approve the edit for publish. In a few moments you will see your updates in the web browser on the delivery server.  You can find step by step instructions on editing and publishing here: :ref:`newIa-your-first-editorial-project`
+To further test publishing, log in to Crafter Studio for the given project, make an edit and then approve the edit for publish. In a few moments you will see your updates in the web browser on the delivery server.  You can find step by step instructions on editing and publishing here: :ref:`your-first-editorial-project`
 
 .. image:: /_static/images/ami/craftercms-approve-publish.webp
     :width: 100 %

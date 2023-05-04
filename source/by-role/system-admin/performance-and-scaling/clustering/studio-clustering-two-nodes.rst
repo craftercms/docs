@@ -5,7 +5,7 @@
 
 .. index:: Setup a Two Node Cluster with Studio, Clustering with Studio Example
 
-.. _newIa-setup-a-two-node-cluster-with-studio:
+.. _setup-a-two-node-cluster-with-studio:
 
 =====================================================
 Setup a Two Node Cluster with Studio |enterpriseOnly|
@@ -37,7 +37,7 @@ Configuring Nodes in the Cluster
 
 #. Install the Enterprise version of CrafterCMS on all the nodes
 #. Configure the Git **repository clustering** for all nodes by configuring the following settings in the
-   :ref:`studio-config-override.yaml <newIa-studio-configuration-files>` file.
+   :ref:`studio-config-override.yaml <studio-configuration-files>` file.
 
    .. code-block:: yaml
       :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -114,7 +114,7 @@ Configuring Nodes in the Cluster
    |
    |
 
-   .. _newIa-authoring-cluster-startup-failure-notification-config:
+   .. _authoring-cluster-startup-failure-notification-config:
 
    To configure a list of email recipients to inform them of a startup failure, uncomment and configure the following:
 
@@ -284,7 +284,7 @@ Starting the Nodes in the Cluster
 After finishing the node configurations, we are now ready to start the cluster. Please start the cluster nodes
 in close succession, one after the other. If you take more than 5 minutes to start all the cluster nodes then
 the nodes already running will timeout while trying to synchronize for bootstrapping (you can configure this
-timeout in :ref:`studio-config-override.yaml <newIa-studio-configuration-files>`, under the property ``studio.db.cluster.nodes.startup.wait.timeout``).
+timeout in :ref:`studio-config-override.yaml <studio-configuration-files>`, under the property ``studio.db.cluster.nodes.startup.wait.timeout``).
 
 There are a few ways to check that the cluster is running.
 
@@ -452,4 +452,4 @@ To check the ``gtid_current_pos`` and ``gtid_slave_pos`` system variables, log i
       1 row in set (0.000 sec)
 
 
-For information on errors you may encounter in your cluster, see :ref:`newIa-authoring-cluster-troubleshooting`.
+For information on errors you may encounter in your cluster, see :ref:`authoring-cluster-troubleshooting`.

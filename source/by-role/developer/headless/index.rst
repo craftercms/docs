@@ -2,7 +2,7 @@
 :last-updated: 4.0.0
 :nosearch:
 
-.. _newIa-developer-headless:
+.. _developer-headless:
 
 ========
 Headless
@@ -15,7 +15,7 @@ transformed content to the caller as JSON.
 This section details how you can model any type of content, provide your content authors the ability to visually
 author content items and then retrieve that content for your SPA, iOS, Android or other applications.
 
-When you're ready for development, and if you use Docker, review :ref:`newIa-local-dev-with-docker`.
+When you're ready for development, and if you use Docker, review :ref:`local-dev-with-docker`.
 
 .. toctree::
     :maxdepth: 1

@@ -2,7 +2,7 @@
 :last-updated: 4.0.3
 :nosearch:
 
-.. _newIa-system-admin:
+.. _system-admin:
 
 ====================
 System Administrator

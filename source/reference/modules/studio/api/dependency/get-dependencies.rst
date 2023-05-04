@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-dependency-get-dependencies:
+.. _crafter-studio-api-dependency-get-dependencies:
 
 ================
 Get dependencies

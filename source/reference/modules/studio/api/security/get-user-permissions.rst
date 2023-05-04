@@ -3,7 +3,7 @@
 
 :nosearch:
 
-.. _newIa-crafter-studio-api-security-get-user-permissions:
+.. _crafter-studio-api-security-get-user-permissions:
 
 ====================
 Get User Permissions

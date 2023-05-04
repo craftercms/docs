@@ -3,13 +3,13 @@
 
 .. index:: Component Content Type
 
-.. _newIa-content-type-component:
+.. _content-type-component:
 
 ======================
 Component Content Type
 ======================
 
-Component content type templates are very similar to page content type templates, as mentioned in :ref:`newIa-content-modeling`, the only difference between components and pages is that components cannot render by itself, it needs a container to render into.  In this section, we will look at the component content type, **Component - Articles Widget** found in the Website_Editorial blueprint that shows you how to create a component content type that can be rendered in the sidebar.
+Component content type templates are very similar to page content type templates, as mentioned in :ref:`content-modeling`, the only difference between components and pages is that components cannot render by itself, it needs a container to render into.  In this section, we will look at the component content type, **Component - Articles Widget** found in the Website_Editorial blueprint that shows you how to create a component content type that can be rendered in the sidebar.
 
 To create a new component content type, click on |projectTools| in the **Sidebar**.  Click on **Content Types**, then select **Create New Type**.  Enter a Display Label and content type name for your new template, then select **Component** as Type and then click on the **Create** button.
 
@@ -54,7 +54,7 @@ We'll take a look at the property **Controllers** and notice that the data sourc
 
 |
 
-That's the model for the component content type Articles - Widget.  Remember that you can add some other controls by dragging and dropping controls from the **Controls** section to the form.  To learn more about all the controls available, please see :ref:`newIa-form-controls`.  To learn more about the data sources available, please see :ref:`newIa-data-sources`.
+That's the model for the component content type Articles - Widget.  Remember that you can add some other controls by dragging and dropping controls from the **Controls** section to the form.  To learn more about all the controls available, please see :ref:`form-controls`.  To learn more about the data sources available, please see :ref:`data-sources`.
 
 
 ^^^^
@@ -117,7 +117,7 @@ Controller
 
 We will look at a controller that allows us to display the latest article entries in the sidebar of our project.
 
-There are two ways to bind a script/controller to a page/component.  The first way, as we have seen in the previous section :ref:`newIa-content-type-page` is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type.  We'll show the other way how to bind a script to a page/component in this section, by adding an item selector to the model with a corresponding data source **Shared Content** named ``scripts``.  When we were looking at the model for our content type template (articles-widget), you may have noticed that there is an item selector named **Controllers** with a corresponding data source shared content named **Scripts**, we are now going to look at a script that can be used by the item selector of our content type.
+There are two ways to bind a script/controller to a page/component.  The first way, as we have seen in the previous section :ref:`content-type-page` is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type.  We'll show the other way how to bind a script to a page/component in this section, by adding an item selector to the model with a corresponding data source **Shared Content** named ``scripts``.  When we were looking at the model for our content type template (articles-widget), you may have noticed that there is an item selector named **Controllers** with a corresponding data source shared content named **Scripts**, we are now going to look at a script that can be used by the item selector of our content type.
 
 To create a new controller, open the **Sidebar** menu and navigate to the **Scripts** folder.  Click on the **Scripts** folder then **scripts**.  Right click on the folder **components**, then select **Create Controller**
 

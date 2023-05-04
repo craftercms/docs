@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-publish-reset-staging:
+.. _crafter-studio-api-publish-reset-staging:
 
 ===============================
 Reset Staging Publishing Target

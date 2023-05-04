@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; Embedded Content
 
-.. _newIa-form-source-embedded-content:
+.. _form-source-embedded-content:
 
 ============================
 Embedded Content Data Source

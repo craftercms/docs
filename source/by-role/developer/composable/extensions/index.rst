@@ -3,7 +3,7 @@
 
 .. index:: CrafterCMS Extensions
 
-.. _newIa-extensions:
+.. _extensions:
 
 ==========
 Extensions
@@ -19,7 +19,7 @@ There are two main types of CrafterCMS Extensions:
   Blueprints provide an initial set of styles, pages, behaviors, content types and more.
   It can be used directly from CrafterCMS when creating a new project.
 
-  For more information on blueprints, see :ref:`here <newIa-create-a-blueprint>`
+  For more information on blueprints, see :ref:`here <create-a-blueprint>`
 
   .. toctree::
      :maxdepth: 1
@@ -41,9 +41,9 @@ There are two main types of CrafterCMS Extensions:
   On the other hand, authoring plugins open the door for developers to customize and extend Crafter
   Studio. Through authoring extensions, Studio UI can be extended by including new widgets into specific
   portions of the UI or by creating complete applications that run in their own
-  :ref:`private route within Crafter Studio <newIa-plugin-host>`.
+  :ref:`private route within Crafter Studio <plugin-host>`.
 
-  For more information on plugins, see :ref:`here <newIa-plugins>`
+  For more information on plugins, see :ref:`here <plugins>`
 
   .. toctree::
      :maxdepth: 1
@@ -54,7 +54,7 @@ There are two main types of CrafterCMS Extensions:
 
 **Crafter Marketplace**
 
-Developers may submit their extensions to the :ref:`Crafter Marketplace <newIa-marketplace>`, which provides a
+Developers may submit their extensions to the :ref:`Crafter Marketplace <marketplace>`, which provides a
 home for the Crafter community to contribute, find, and use extensions.
 
 Extensions submitted to the Crafter Marketplace can be used directly from CrafterCMS.
@@ -68,7 +68,7 @@ displayed for the user to choose from like below:
    :align: center
 
 As mentioned above, plugins published in the Crafter Marketplace can be installed on projects in CrafterCMS
-via the :ref:`Plugin Management <newIa-plugin-management>` tool:
+via the :ref:`Plugin Management <plugin-management>` tool:
 
 .. image:: /_static/images/developer/plugins/marketplace-site-plugins.webp
    :alt: Marketplace Plugins

@@ -4,7 +4,7 @@
 
 .. index:: Engine's Configuration Overrides, Configuration Overrides, Overrides
 
-.. _newIa-engine-config-override:
+.. _engine-config-override:
 
 ================================
 Engine's Configuration Overrides
@@ -76,7 +76,7 @@ The following allows you to configure the following:
 
 |
 
-.. _newIa-engine-forwarded-headers:
+.. _engine-forwarded-headers:
 
 -----------------
 Forwarded Headers
@@ -153,7 +153,7 @@ The Groovy sandbox is enabled by default.
 
 |
 
-For more information on configuring the Groovy sandbox, see :ref:`here <newIa-script-sandbox-configuration>`
+For more information on configuring the Groovy sandbox, see :ref:`here <script-sandbox-configuration>`
 
 --------------------------------------
 Static Methods in Freemarker Templates

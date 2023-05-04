@@ -4,24 +4,24 @@
 
 .. index:: DevContentOps Toolkit, CrafterCMS Command Line Interface, crafter-cli
 
-.. _newIa-devcontentops-toolkit:
+.. _devcontentops-toolkit:
 
 ===================================
 DevContentOps Toolkit (Crafter CLI)
 ===================================
 
-CrafterCMS provides a DevContentOps Toolkit to support :ref:`DevContentOps <newIa-devcontentops>` processes in CrafterCMS.  The DevContentOps Toolkit contains the CrafterCMS Command Line Interface (CLI), that allows you to authenticate with CrafterCMS and exercise its APIs via a Unix or Windows command line interface.
+CrafterCMS provides a DevContentOps Toolkit to support :ref:`DevContentOps <devcontentops>` processes in CrafterCMS.  The DevContentOps Toolkit contains the CrafterCMS Command Line Interface (CLI), that allows you to authenticate with CrafterCMS and exercise its APIs via a Unix or Windows command line interface.
 
 To run the command line tool (CrafterCMS Command line Interface (CLI) for DevContentOps processes), in your terminal program, navigate to the ``bin`` folder  ``CRAFTER_HOME/bin/cli/bin/``.  There you will find two versions of the tool:
 
 * **crafter-cli:** - for users on a Linux/macOS operating system
 * **crafter-cli.bat** - for users on a Windows operating system
 
-.. _newIa-crafter-cli-add-environment:
+.. _crafter-cli-add-environment:
 
 When using the **crafter-cli**, we first need to setup the connection to CrafterCMS before we can use the other available commands.  To setup the connection, run the ``add-environment`` command,  provide a name, the url for a CrafterCMS authoring server and the authentication information.
 
-For the example below, we'll use ``local`` for the name, ``http://localhost:8080`` for the url, and your access token for the authentication.  See :ref:`here <newIa-access-tokens>` for the steps on how to create a token.  Leave the token blank, you will be prompted for the token after issuing the ``add-environment`` command:
+For the example below, we'll use ``local`` for the name, ``http://localhost:8080`` for the url, and your access token for the authentication.  See :ref:`here <access-tokens>` for the steps on how to create a token.  Leave the token blank, you will be prompted for the token after issuing the ``add-environment`` command:
 
    .. code-block:: bash
 
@@ -82,7 +82,7 @@ To view the available commands, type in ``./crafter-cli -h``
 
    |
 
-.. _newIa-crafter-cli-command-help:
+.. _crafter-cli-command-help:
 
 To view more information about each command, just enter ``./crafter-cli <command>``, for example:
 

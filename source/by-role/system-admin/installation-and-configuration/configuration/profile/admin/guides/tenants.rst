@@ -3,7 +3,7 @@
 
 :nosearch:
 
-.. _newIa-profile-admin-tenants:
+.. _profile-admin-tenants:
 
 ==================
 Tenants Management

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-social-api-context-add-profile:
+.. _crafter-social-api-context-add-profile:
 
 =============================
 Add Profile To Social Context

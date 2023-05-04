@@ -8,7 +8,7 @@
 
 .. index:: Form Controls; Rich Text Editor
 
-.. _newIa-form-rte:
+.. _form-rte:
 
 ========================
 Rich Text Editor Control
@@ -74,25 +74,25 @@ Configuration
 ||                       || * |embeddedContent|                                                  |
 +------------------------+-----------------------------------------------------------------------+
 
-.. |imgUploadFromDesktop| replace:: :ref:`Image Uploaded from Desktop <newIa-form-source-image-desktop>`
-.. |imgFromRepo| replace:: :ref:`Image from Repository <newIa-form-source-image-repo>`
-.. |imgFromWebDAV| replace:: :ref:`Image from WebDAV Repository <newIa-form-source-webdav-image-repo>`
-.. |imgUploadToWebDAV| replace:: :ref:`Image Uploaded to WebDAV Repository <newIa-form-source-webdav-image-upload>`
-.. |imgFromS3| replace:: :ref:`Image From S3 Repository <newIa-form-source-s3-image-repo>`
-.. |imgUploadToS3| replace:: :ref:`Image Uploaded to S3 Repository <newIa-form-source-s3-image-upload>`
+.. |imgUploadFromDesktop| replace:: :ref:`Image Uploaded from Desktop <form-source-image-desktop>`
+.. |imgFromRepo| replace:: :ref:`Image from Repository <form-source-image-repo>`
+.. |imgFromWebDAV| replace:: :ref:`Image from WebDAV Repository <form-source-webdav-image-repo>`
+.. |imgUploadToWebDAV| replace:: :ref:`Image Uploaded to WebDAV Repository <form-source-webdav-image-upload>`
+.. |imgFromS3| replace:: :ref:`Image From S3 Repository <form-source-s3-image-repo>`
+.. |imgUploadToS3| replace:: :ref:`Image Uploaded to S3 Repository <form-source-s3-image-upload>`
 
-.. |vidUploadFromDesktop| replace:: :ref:`Video Uploaded From Desktop <newIa-form-source-video-desktop>`
-.. |vidFromRepo| replace:: :ref:`Video from Repository <newIa-form-source-video-repo>`
-.. |vidFromWebDAV| replace:: :ref:`Video from WebDAV Repository <newIa-form-source-webdav-video-repo>`
-.. |vidUploadToWebDAV| replace:: :ref:`Video Uploaded to WebDAV Repository <newIa-form-source-webdav-video-upload>`
-.. |vidFromS3| replace:: :ref:`Video From S3 Repository <newIa-form-source-s3-video-repo>`
-.. |vidUploadToS3| replace:: :ref:`Video Uploaded to S3 Repository <newIa-form-source-s3-video-upload>`
+.. |vidUploadFromDesktop| replace:: :ref:`Video Uploaded From Desktop <form-source-video-desktop>`
+.. |vidFromRepo| replace:: :ref:`Video from Repository <form-source-video-repo>`
+.. |vidFromWebDAV| replace:: :ref:`Video from WebDAV Repository <form-source-webdav-video-repo>`
+.. |vidUploadToWebDAV| replace:: :ref:`Video Uploaded to WebDAV Repository <form-source-webdav-video-upload>`
+.. |vidFromS3| replace:: :ref:`Video From S3 Repository <form-source-s3-video-repo>`
+.. |vidUploadToS3| replace:: :ref:`Video Uploaded to S3 Repository <form-source-s3-video-upload>`
 
-.. |fileUploadFromDesktop| replace:: :ref:`File Uploaded From Desktop <newIa-form-source-file-desktop>`
-.. |fileFromRepo| replace:: :ref:`File from Repository <newIa-form-source-file-browse>`
-.. |fileFromWebDAV| replace:: :ref:`File from WebDAV Repository <newIa-form-source-webdav-file-repo>`
-.. |fileUploadToWebDAV| replace:: :ref:`File Uploaded to WebDAV Repository <newIa-form-source-webdav-file-upload>`
-.. |fileFromS3| replace:: :ref:`File From S3 Repository <newIa-form-source-s3-file-repo>`
-.. |fileUploadToS3| replace:: :ref:`File Uploaded to S3 Repository <newIa-form-source-s3-file-upload>`
-.. |sharedContent| replace:: :ref:`Shared Content <newIa-form-source-shared-content>`
-.. |embeddedContent| replace:: :ref:`Embedded Content <newIa-form-source-embedded-content>`
+.. |fileUploadFromDesktop| replace:: :ref:`File Uploaded From Desktop <form-source-file-desktop>`
+.. |fileFromRepo| replace:: :ref:`File from Repository <form-source-file-browse>`
+.. |fileFromWebDAV| replace:: :ref:`File from WebDAV Repository <form-source-webdav-file-repo>`
+.. |fileUploadToWebDAV| replace:: :ref:`File Uploaded to WebDAV Repository <form-source-webdav-file-upload>`
+.. |fileFromS3| replace:: :ref:`File From S3 Repository <form-source-s3-file-repo>`
+.. |fileUploadToS3| replace:: :ref:`File Uploaded to S3 Repository <form-source-s3-file-upload>`
+.. |sharedContent| replace:: :ref:`Shared Content <form-source-shared-content>`
+.. |embeddedContent| replace:: :ref:`Embedded Content <form-source-embedded-content>`

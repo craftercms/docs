@@ -7,7 +7,7 @@
 
 .. index:: Form Controls; Label
 
-.. _newIa-form-label:
+.. _form-label:
 
 =============
 Label Control

@@ -9,7 +9,7 @@
 
 .. index:: Setting Workflow States
 
-.. _newIa-setting-workflow-states:
+.. _setting-workflow-states:
 
 =======================
 Setting Workflow States

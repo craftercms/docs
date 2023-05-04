@@ -4,7 +4,7 @@
 
 .. index:: Asset Processing
 
-.. _newIa-asset-processing-config:
+.. _asset-processing-config:
 
 ==============================
 Asset Processing Configuration
@@ -42,4 +42,4 @@ Here's a sample Asset Processing Configuration file (click on the triangle on th
 |
 |
 
-For more details on asset processing, see :ref:`newIa-asset-processing`
+For more details on asset processing, see :ref:`asset-processing`

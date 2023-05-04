@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :nosearch:
 
-.. _newIa-crafter-studio-api-content-reorder-items:
+.. _crafter-studio-api-content-reorder-items:
 
 =====================
 Reorder Content Items

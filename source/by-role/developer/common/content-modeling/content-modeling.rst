@@ -7,7 +7,7 @@
 
 .. index:: Content Modeling, Modeling, Content Model
 
-.. _newIa-content-modeling:
+.. _content-modeling:
 
 ================
 Content Modeling
@@ -60,9 +60,9 @@ Shared components vs embedded components
 
 Components may be shared or embedded.  Embedded components belong exclusively to a content object,
 while a shared component is shared across pages or components.  For more information on how to
-use embedded and shared components, see :ref:`here <newIa-component-handling>`
+use embedded and shared components, see :ref:`here <component-handling>`
 
-.. _newIa-content-model:
+.. _content-model:
 
 -----------------------------
 Content Type Model Definition
@@ -92,7 +92,7 @@ You now specify:
 * Type: Choose if you're defining a Page or a Component.
 
 
-.. _newIa-form-builder-basics:
+.. _form-builder-basics:
 
 ^^^^^^^^^^^^^^^^^^^
 Form Builder Basics
@@ -187,7 +187,7 @@ The fields available at this level are:
 || Template     ||                                                                               |
 +---------------+--------------------------------------------------------------------------------+
 || Merge        || The inheritance pattern to use with content of this type, please see Content  |
-|| Strategy     || Inheritance for more detail on this feature :ref:`newIa-content-inheritance`  |
+|| Strategy     || Inheritance for more detail on this feature :ref:`content-inheritance`  |
 +---------------+--------------------------------------------------------------------------------+
 || Show in Quick|| Show this content type in the quick create menu from the context nav          |
 || Create       ||                                                                               |
@@ -202,9 +202,9 @@ The fields available at this level are:
 ||              ||    **{dd}** Inserts the current day (2-digit day of the month).               |
 +---------------+--------------------------------------------------------------------------------+
 
-The 2 key properties are: the display template (:ref:`newIa-content-view-templates`) which is the HTML template that renders the final Web page; the content inheritance (:ref:`newIa-content-inheritance`) which determines how this content type will inherit from parent XML files in the system.
+The 2 key properties are: the display template (:ref:`content-view-templates`) which is the HTML template that renders the final Web page; the content inheritance (:ref:`content-inheritance`) which determines how this content type will inherit from parent XML files in the system.
 
-.. _newIa-content-creation-permissions-section:
+.. _content-creation-permissions-section:
 
 Content Creation Permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -349,7 +349,7 @@ Open the Sidebar and navigate to the newly created article.  Right click on the 
 
 |
 
-.. _newIa-copy-dependencies-configuration:
+.. _copy-dependencies-configuration:
 
 Copy Dependencies Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -401,7 +401,7 @@ Let's look at the dependencies of our copied article, where we expect a copy of 
 
 |
 
-.. _newIa-item-specific-dependencies:
+.. _item-specific-dependencies:
 
 Item Specific Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -445,7 +445,7 @@ To take advantage of item specific dependencies for copying and deleting, we wil
 
 `/static-assets/item/images/2020/05/17/`
 
-The macros **{yyyy}**, **{mm}** and **{dd}** are available for content modelers to use to better organize their project items.  To see other macros available for content modelers, see :ref:`newIa-macros-for-data-sources`.
+The macros **{yyyy}**, **{mm}** and **{dd}** are available for content modelers to use to better organize their project items.  To see other macros available for content modelers, see :ref:`macros-for-data-sources`.
 
 Let's take a look at item specific dependencies in action for copying and deleting content.  Let's create a new article (**Article** content type) under one of the article folders in the Sidebar.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.  Note the location where the image is uploaded.
 
@@ -492,7 +492,7 @@ Open the **Dashboard** and notice the items that are deleted.  We deleted an art
 
 |
 
-.. _newIa-setting-up-quick-create:
+.. _setting-up-quick-create:
 
 Quick Create
 ^^^^^^^^^^^^
@@ -549,13 +549,13 @@ Below is the site tree after using the quick create button to create a new artic
 
 |
 
-.. _newIa-form-controls:
+.. _form-controls:
 
 ^^^^^^^^^^^^^
 Form Controls
 ^^^^^^^^^^^^^
 
-Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. CrafterCMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`newIa-building-plugins-controls`.
+Form Controls are data input controls that, once placed on a form, will capture that input from the content authors and store it in the content object. CrafterCMS ships with a number of out-of-the-box controls and you can also create your own by reading :ref:`building-plugins-controls`.
 
 .. figure:: /_static/images/content-model/form-engine-controls.webp
     :width: 40%
@@ -570,7 +570,7 @@ Here's a list of available Form Engine Controls:
 
 .. include:: form-controls/list-form-controls.rst
 
-.. _newIa-form-control-variable-names:
+.. _form-control-variable-names:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Form Control Variable Names
@@ -584,7 +584,7 @@ Every Form Control has a Variable Name property.  The Variable Name is used by t
 #. Use regex constraints on input boxes to enforce additional validation rules
 #. Do not use Reserved names.
 
-.. _newIa-reserved-variable-names:
+.. _reserved-variable-names:
 
 **Reserved Variable Names**
 
@@ -600,7 +600,7 @@ The following variable names are used by CrafterCMS.
 || placeInNav          || Used by the Page Order control.                                 |
 +----------------------+------------------------------------------------------------------+
 || disabled            || Used to logically remove an object in content delivery.         |
-||                     || For more information, see :ref:`newIa-disabling-a-page`         |
+||                     || For more information, see :ref:`disabling-a-page`         |
 +----------------------+------------------------------------------------------------------+
 || expired             || Used to logically remove an object after date                   |
 +----------------------+------------------------------------------------------------------+
@@ -672,7 +672,7 @@ The following variable names are used by CrafterCMS.
 
 .. include:: /includes/valid-file-names.rst
 
-.. _newIa-variable-names-search-indexing:
+.. _variable-names-search-indexing:
 
 **Variable Names and Search Indexing**
 
@@ -712,7 +712,7 @@ To facilitate indexing, the following suffix should be appended to variable name
 
 Model fields require their respective data type postfix as listed above.  The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.
 
-When setting up reserved variable names for your model, remember to remove the postfix auto-added by the UI since the variable name needs to be exactly the same as listed :ref:`above<newIa-reserved-variable-names>`.
+When setting up reserved variable names for your model, remember to remove the postfix auto-added by the UI since the variable name needs to be exactly the same as listed :ref:`above<reserved-variable-names>`.
 
 Remember to also remove the postfix auto-added by the UI when using ``key`` or ``value`` for your variable names being setup as key-value pairs in a content type, such as the ``Taxonomy`` content type used in the Website Editorial blueprint.
 
@@ -769,7 +769,7 @@ This default configuration can be modified by editing the element ``<cdata-escap
 
 |
 
-.. _newIa-data-sources:
+.. _data-sources:
 
 ^^^^^^^^^^^^
 Data Sources
@@ -783,17 +783,17 @@ Data Sources
 
 |
 
-Data Sources are pickers that help pull in content from internal or external storage/systems.  For example, data source include: desktop video uploader, desktop image uploader, and so on. CrafterCMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`newIa-building-plugins-form-ds`.
+Data Sources are pickers that help pull in content from internal or external storage/systems.  For example, data source include: desktop video uploader, desktop image uploader, and so on. CrafterCMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`building-plugins-form-ds`.
 
 Data Sources allows the content model designer to decide where different assets uploaded via different controls go (for instance icons, images, RTE related assets, etc.).  It has it's own properties, like "Repository Path", which specifies the path where assets are stored, which help keep the system consistent over time.  The storage destination designed in the model dictates how those assets are handled during a duplicate event (duplicate the asset or duplicate the reference to the asset).
 
-.. _newIa-component-handling:
+.. _component-handling:
 
-There are a couple of data source that also dictates how components are handled during duplicate/copy events.  The :ref:`Shared Content<newIa-form-source-shared-content>` data source will duplicate/copy the reference to a component during a duplicate/copy event and is used for components that need to be shared across pages or components. For components that belong exclusively to a content object, use the :ref:`Embedded Content<newIa-form-source-embedded-content>` data source.
+There are a couple of data source that also dictates how components are handled during duplicate/copy events.  The :ref:`Shared Content<form-source-shared-content>` data source will duplicate/copy the reference to a component during a duplicate/copy event and is used for components that need to be shared across pages or components. For components that belong exclusively to a content object, use the :ref:`Embedded Content<form-source-embedded-content>` data source.
 
 The ``shared-content`` data sources also provides an option to allow users to search for existing items (``Enable Search Existing`` property) in addition to browsing.  This provides users ease of managing lots of items/assets.
 
-Data sources are usually used in conjunction with a control in the content type, for example, the :ref:`newIa-form-item-selector` is used for selecting files to be uploaded when bound with the :ref:`newIa-form-source-file-desktop` data source.
+Data sources are usually used in conjunction with a control in the content type, for example, the :ref:`form-item-selector` is used for selecting files to be uploaded when bound with the :ref:`form-source-file-desktop` data source.
 
 Let's take a look at a shared content data source in a project created using the Video Center blueprint from the Marketplace.
 
@@ -804,7 +804,7 @@ Let's take a look at a shared content data source in a project created using the
 
 |
 
-Open the ``Sidebar`` then click on |projectTools|.  Click on ``Content Types`` and select ``Stream``, then click on the ``Open Type`` button.  Scroll down  to the ``Data Sources`` section, then click on ``Origins``, a shared content data source.  Notice how a :ref:`newIa-form-item-selector` control is used for selecting shared content ``Origin``.  In the ``Properties Explorer`` on the right  side, put a check mark on  ``Enable Search Existing`` property so users can search for existing items.
+Open the ``Sidebar`` then click on |projectTools|.  Click on ``Content Types`` and select ``Stream``, then click on the ``Open Type`` button.  Scroll down  to the ``Data Sources`` section, then click on ``Origins``, a shared content data source.  Notice how a :ref:`form-item-selector` control is used for selecting shared content ``Origin``.  In the ``Properties Explorer`` on the right  side, put a check mark on  ``Enable Search Existing`` property so users can search for existing items.
 
 .. image:: /_static/images/content-model/shared-content-ds-enable-search-existing.webp
     :alt: Form Engine Data Sources Example - Shared Content Data Source
@@ -835,7 +835,7 @@ Form Engine Data Sources (please use the scrollbar to see more data sources)
 
 .. include:: form-sources/list-form-sources.rst
 
-.. _newIa-macros-for-data-sources:
+.. _macros-for-data-sources:
 
 Macros for Data Sources
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -868,7 +868,7 @@ There are a number of macros available for the content model designer to use in 
 
 For an example of how the macros are used when modeling your content, the website_editorial blueprint uses some of the macros available in the content type ``Article``.
 
-The section :ref:`newIa-item-specific-dependencies` above details the use of some of the macros in the website_editorial blueprint, content type ``Article``.
+The section :ref:`item-specific-dependencies` above details the use of some of the macros in the website_editorial blueprint, content type ``Article``.
 
    .. note::
       For both the ``parentPath`` and ``parentPath[index]`` macros, the path starts **without** ``/site/website`` and ``/site/components``.
@@ -898,20 +898,20 @@ Form Canvas
 
 The canvas is where the form actually gets built. The building process is performed by simply dragging the controls from the Form Controls over to the canvas, rearranging the controls in the order you'd like to present to the content authors, and configuring the controls individually.
 
-Controls on the canvas are configured by clicking on the control, and then editing the control's configuration in the Properties Explorer, see item #3 in :ref:`newIa-form-builder-basics`. Different controls have different configuration, so please review the individual form control configuration listed in :ref:`newIa-form-controls`.
+Controls on the canvas are configured by clicking on the control, and then editing the control's configuration in the Properties Explorer, see item #3 in :ref:`form-builder-basics`. Different controls have different configuration, so please review the individual form control configuration listed in :ref:`form-controls`.
 
-Two controls have a special significance to the form canvas: :ref:`newIa-form-section` and :ref:`newIa-form-repeating-group`. Form Section Control creates a form section that can be expanded and collapsed and holds within it other controls. This is typically used to group together controls that cover a similar concern and help provide the content authors with a clear and organized form when editing in form mode.
+Two controls have a special significance to the form canvas: :ref:`form-section` and :ref:`form-repeating-group`. Form Section Control creates a form section that can be expanded and collapsed and holds within it other controls. This is typically used to group together controls that cover a similar concern and help provide the content authors with a clear and organized form when editing in form mode.
 Like the Form Section Control, Repeating Group Control is also a container that holds other controls, but the purpose is to allow a set of controls to repeat as configured. This is typically used to allow content authors to enter a set of meta-data and repeat it as many times as desired and permitted by configuration.
 
-The canvas allows the form-based content capture only, and is used by content authors when they're in that mode. In-Context Editing will leverage the form components, but not the canvas when authors are in that mode. Learn more about In-Context Editing configuration for projects :ref:`newIa-xb` .
+The canvas allows the form-based content capture only, and is used by content authors when they're in that mode. In-Context Editing will leverage the form components, but not the canvas when authors are in that mode. Learn more about In-Context Editing configuration for projects :ref:`xb` .
 
-.. _newIa-content-view-templates:
+.. _content-view-templates:
 
 ---------------------------
 Content Type View Templates
 ---------------------------
 
-View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the primary CrafterCMS model or additional model (via APIs, please read :ref:`newIa-groovy-api` for that topic).
+View templates control how the model is rendered as HTML. Crafter uses `FreeMarker <http://freemarker.org>`_ as the templating engine, and provide the full model defined by the model in the previous section. Every element in the model is accessible to the view template via a simple API ``${contentModel.VARIABLE_NAME}`` where variable name is the ``Name / Variable Name`` definition in the Form Control. View templates are primarily written in HTML, backed by CSS with API calls weaved within to pull content from the primary CrafterCMS model or additional model (via APIs, please read :ref:`groovy-api` for that topic).
 
 An example view template
 
@@ -964,7 +964,7 @@ The simple example renders a simple HTML page with a very basic model. Let's rev
 
 The `FreeMarker <http://freemarker.org>`_ language is supported. For detailed Freemarker documentation, please visit: `http://freemarker.org <http://freemarker.org>`_
 
-.. _newIa-content-type-controller-definition:
+.. _content-type-controller-definition:
 
 ----------------------------------
 Content Type Controller Definition
@@ -1057,9 +1057,9 @@ Groovy classes to follow this convention.
 
 |
 
-For more information on the FreeMarker (Templating) APIs, please see :ref:`newIa-templating-api`.
+For more information on the FreeMarker (Templating) APIs, please see :ref:`templating-api`.
 
-For more information on the Groovy APIs, please see :ref:`newIa-groovy-api`
+For more information on the Groovy APIs, please see :ref:`groovy-api`
 
   .. include:: /includes/scripts-templates-security.rst
 

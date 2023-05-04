@@ -3,7 +3,7 @@
 
 .. index:: Page Content Type
 
-.. _newIa-content-type-page:
+.. _content-type-page:
 
 =================
 Page Content Type
@@ -122,7 +122,7 @@ Next we'll add a **Repeating Group** control to the form,  with a minimum of 1 o
 
 |
 
-In the Repeating Group control, we will add an RTE (Rich Text Editor).  In order for the content to be searchable, it needs to be indexed.  To facilitate indexing, the suffix **_html** should be appended to the variable name given to the RTE.  In this case, the RTE's variable name is *entry_html*.  For more information on variable names and search indexing , please see the section :ref:`newIa-form-control-variable-names`
+In the Repeating Group control, we will add an RTE (Rich Text Editor).  In order for the content to be searchable, it needs to be indexed.  To facilitate indexing, the suffix **_html** should be appended to the variable name given to the RTE.  In this case, the RTE's variable name is *entry_html*.  For more information on variable names and search indexing , please see the section :ref:`form-control-variable-names`
 
 .. figure:: /_static/images/templates/templates-add-rte.webp
 	:alt: Template Add Rich Text Editor to Repeating Group Control
@@ -130,7 +130,7 @@ In the Repeating Group control, we will add an RTE (Rich Text Editor).  In order
 
 |
 
-The model for our template is done.  You can add some other controls by dragging and dropping controls from the **Controls** section to the form.  To learn more about all the controls available, please see :ref:`newIa-form-controls`.  To learn more about the data sources available, please see :ref:`newIa-data-sources`.
+The model for our template is done.  You can add some other controls by dragging and dropping controls from the **Controls** section to the form.  To learn more about all the controls available, please see :ref:`form-controls`.  To learn more about the data sources available, please see :ref:`data-sources`.
 
 ^^^^
 View
@@ -189,7 +189,7 @@ For the template we are creating, we will select **Studio support** from  the dr
 
 |
 
-We will now start filling in the template of how we want the content captured in the model is rendered to html in this case.  In the image below, we render the header component and the other fields in the Content section of our model.  Please note how fields in the model are rendered through the FTL template.  To learn more, please see the section :ref:`newIa-templating-api`
+We will now start filling in the template of how we want the content captured in the model is rendered to html in this case.  In the image below, we render the header component and the other fields in the Content section of our model.  Please note how fields in the model are rendered through the FTL template.  To learn more, please see the section :ref:`templating-api`
 
 .. figure:: /_static/images/templates/templates-ftl.webp
 	:alt: Template FTL
@@ -281,9 +281,9 @@ We can now start adding the script to get a list of articles depending on the ac
 
 |
 
-There are two ways to bind a script/controller to a page/component.  The first way, as we have seen is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type.  We'll show the other way how to bind a script to a page/component in the next section :ref:`newIa-content-type-component`
+There are two ways to bind a script/controller to a page/component.  The first way, as we have seen is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type.  We'll show the other way how to bind a script to a page/component in the next section :ref:`content-type-component`
 
-To find out more about page and component scripts, please see :ref:`newIa-page-and-component-scripts`.
+To find out more about page and component scripts, please see :ref:`page-and-component-scripts`.
 
 Now that we have our controller, we just need to add code to the freemarker template (view) to display the list of articles returned by the script.
 
@@ -325,4 +325,4 @@ Now that we have our controller, we just need to add code to the freemarker temp
 
 |
 
-As you can see from the controller we just added, the controller is used to customize your page by enabling you to run codes before the page is rendered.  To find out more about groovy APIs in CrafterCMS, please see the section :ref:`newIa-groovy-api`.
+As you can see from the controller we just added, the controller is used to customize your page by enabling you to run codes before the page is rendered.  To find out more about groovy APIs in CrafterCMS, please see the section :ref:`groovy-api`.

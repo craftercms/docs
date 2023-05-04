@@ -8,7 +8,7 @@
 
 .. index:: Data Sources; Image Uploaded from Desktop
 
-.. _newIa-form-source-image-desktop:
+.. _form-source-image-desktop:
 
 =======================================
 Image Uploaded from Desktop Data Source
