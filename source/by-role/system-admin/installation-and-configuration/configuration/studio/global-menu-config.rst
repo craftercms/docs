@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:nosearch:
+
 :orphan:
 
 .. index:: Global Menu Config

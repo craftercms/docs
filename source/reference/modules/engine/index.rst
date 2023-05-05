@@ -1,7 +1,7 @@
-:is-up-to-date: True
-:nosearch:
+:is-up-to-date: False
+:last-updated: 4.1.0
 
-.. index:: Projects; Crafter Engine
+.. index:: Modules; Crafter Engine
 
 .. _crafter-engine:
 
@@ -14,6 +14,8 @@ Engine provides content delivery services to power any type of Web or mobile app
 .. include:: /includes/content-retrieval-apis.rst
 
 .. include:: /includes/scripts-templates-security.rst
+
+|hr|
 
 ---------------------------
 Crafter Engine Architecture
@@ -338,12 +340,12 @@ To view the Crafter Engine REST APIs:
 
 .. open_iframe_modal_button::
    :label: Open here
-   :url: ../../../../_static/api/engine.html
+   :url: ../../../_static/api/engine.html
    :title: Engine API
 
 .. raw:: html
 
-    or <a href="../../../../_static/api/engine.html" target="_blank">in a new tab</a>
+    or <a href="../../../_static/api/engine.html" target="_blank">in a new tab</a>
 
 |
 

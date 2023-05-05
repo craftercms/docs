@@ -1,8 +1,6 @@
 :is-up-to-date: False
 :last-updated: 4.0.3
 
-:nosearch:
-
 .. Section Outliine
    14.2.1 Prereq
    14.2.2 Install via Bundle
@@ -11,9 +9,9 @@
 
 .. _installing-craftercms-on-macos:
 
-==============================
-Installing CrafterCMS on MacOS
-==============================
+=====
+MacOS
+=====
 
 This section describes in detail how to install/setup CrafterCMS on MacOS.
 

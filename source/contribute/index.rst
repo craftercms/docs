@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:nosearch:
+
 
 .. Section outline
    9.1 Source Code

@@ -1,6 +1,6 @@
 :is-up-to-date: True
 :orphan:
-:nosearch:
+
 
 .. index:: Setting up a simple LDAP server for development/testing using Apache Directory Studio, Setting up a simple LDAP server
 

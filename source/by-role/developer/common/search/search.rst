@@ -1,6 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
-:nosearch:
+
 
 .. _search:
 
@@ -230,7 +230,7 @@ Here's how the query will look like for the above image of a multi-index query f
 
 |
 
-See `here <../../../../../_static/api/studio.html#tag/search/operation/search>`_ for more information on the Crafter Engine API ``search``.
+See `here <../../../../_static/api/studio.html#tag/search/operation/search>`_ for more information on the Crafter Engine API ``search``.
 
 CrafterCMS supports the following search query parameters:
 

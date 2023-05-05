@@ -1,9 +1,7 @@
 :is-up-to-date: True
-:last-updated: 4.0.3
+:last-updated: 4.1.0
 
-:nosearch:
-
-.. index:: Projects; CrafterCMS
+.. index:: modules; CrafterCMS
 
 .. _crafter-cms:
 
@@ -12,12 +10,6 @@ CrafterCMS
 ==========
 
 This project is the parent project that builds CrafterCMS from source and can also prepare deployable bundles.
-
------------
-Source Code
------------
-
-CrafterCMS's source code is managed in GitHub: https://github.com/craftercms/craftercms
 
 .. TODO Clean this up
 
@@ -483,4 +475,11 @@ To clone the branch/tag of craftercms that you want to work with, run:
 
 Replace {BRANCH} or {TAG NAME} with the branch and tag you'd like to build.  After cloning the desired branch, you can now clone, build and bundle from a given tag/branch using the property `crafter.git.branch` as described in an earlier section :ref:`Git Properties<git-properties>`
 
+|hr|
+
+-----------
+Source Code
+-----------
+
+CrafterCMS's source code is managed in GitHub: https://github.com/craftercms/craftercms
 

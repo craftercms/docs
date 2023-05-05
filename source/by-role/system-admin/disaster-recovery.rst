@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:nosearch:
+
 
 .. _system-admin-disaster-recovery:
 

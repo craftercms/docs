@@ -1,6 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
-:nosearch:
+
 
 .. index:: Putting it all together - Users, Groups, Roles and Permissions
 

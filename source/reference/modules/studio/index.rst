@@ -1,8 +1,8 @@
-:is-up-to-date: True
+:is-up-to-date: False
 :last-updated: 4.1.0
-:nosearch:
 
-.. index:: Projects; Crafter Studio
+
+.. index:: Modules; Crafter Studio
 
 .. _crafter-studio:
 
@@ -150,6 +150,25 @@ CrafterCMS supports managing assets in external storage through workflow and pub
    :maxdepth: 1
 
    studio/publishing-assets-in-external-storage
+
+|hr|
+
+--------
+REST API
+--------
+
+To view the Crafter Studio REST APIs:
+
+.. open_iframe_modal_button::
+   :label: Open here
+   :url: ../../../_static/api/studio.html
+   :title: Studio API
+
+.. raw:: html
+
+    or <a href="../../../_static/api/studio.html" target="_blank">in a new tab</a>
+
+|
 
 |hr|
 

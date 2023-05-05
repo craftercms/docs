@@ -1,6 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.1
-:nosearch:
+
 
 .. _crafter-studio-debugging-publishing-issues:
 

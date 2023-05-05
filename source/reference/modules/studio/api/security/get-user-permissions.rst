@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
 
-:nosearch:
+
 
 .. _crafter-studio-api-security-get-user-permissions:
 

@@ -1,13 +1,11 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
 
-:nosearch:
-
 .. _installing-craftercms-on-wsl:
 
-============================
-Installing CrafterCMS on WSL
-============================
+===========
+Windows WSL
+===========
 
 -------------
 Prerequisites

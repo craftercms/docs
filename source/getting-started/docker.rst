@@ -1,13 +1,13 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
 
-:nosearch:
+
 
 .. _running-craftercms-in-docker:
 
-========================================
-Running CrafterCMS in a Docker Container
-========================================
+======
+Docker
+======
 
    .. note::
       The preferred method of installing and running CrafterCMS is via the archive download or via the archive built by the Gradle environment builder.  See the :ref:`installing-craftercms-on-wsl` for more information on the preferred methods of installation.

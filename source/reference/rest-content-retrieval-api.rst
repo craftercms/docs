@@ -1,4 +1,4 @@
-:nosearch:
+
 
 .. _rest-content-retrieval-api:
 
@@ -10,12 +10,12 @@ To view the REST Content Retrieval APIs:
 
 .. open_iframe_modal_button::
    :label: Open here
-   :url: ../../_static/api/engine.html
+   :url: ../_static/api/engine.html
    :title: REST Content Retrieval APIs
 
 .. raw:: html
 
-    or <a href="../../_static/api/engine.html"  target="_blank">in a new tab</a>
+    or <a href="../_static/api/engine.html"  target="_blank">in a new tab</a>
 
 |
 |

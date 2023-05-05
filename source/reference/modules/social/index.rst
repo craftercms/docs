@@ -1,7 +1,7 @@
-:is-up-to-date: True
-:nosearch:
+:is-up-to-date: False
+:last-updated: 4.1.0
 
-.. index:: Projects; Crafter Social
+.. index:: Modules; Crafter Social
 
 .. _crafter-social:
 
@@ -22,14 +22,35 @@ Crafter Social is a multi-tenant, platform independent user-generated content ma
     - a ratings site and
     - a blogging application with threaded comments.
 
------------
-Source Code
------------
-
-Crafter Social's source code is managed in GitHub: https://github.com/craftercms/social
-
 -------------
 Configuration
 -------------
 
 To configure Crafter Social, please see :ref:`crafter-social-admin`
+
+|hr|
+
+--------
+REST API
+--------
+
+To view the Crafter Social REST APIs:
+
+.. open_iframe_modal_button::
+   :label: Open here
+   :url: ../../../_static/api/social.html
+   :title: Social API
+
+.. raw:: html
+
+    or <a href="../../../_static/api/social.html" target="_blank">in a new tab</a>
+
+|
+
+|hr|
+
+-----------
+Source Code
+-----------
+
+Crafter Social's source code is managed in GitHub: https://github.com/craftercms/social
