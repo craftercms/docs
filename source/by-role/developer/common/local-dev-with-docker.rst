@@ -1,5 +1,5 @@
 :is-up-to-date: false
-:nosearch:
+
 
 .. index:: Local Development with Docker
 

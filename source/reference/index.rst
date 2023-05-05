@@ -1,5 +1,4 @@
 :is-up-to-date: False
-:nosearch:
 
 .. _reference:
 
@@ -44,6 +43,21 @@ The modules are
     * - :ref:`Social<crafter-Social>`
       - User generated content store
 
+.. toctree::
+   :hidden:
+   :maxdepth: 3
+
+   modules/studio/index
+   modules/engine/index
+   modules/deployer/index
+   modules/search/index
+   modules/core/index
+   modules/commons/index
+   modules/profile/index
+   modules/social/index
+
+|hr|
+
 ----
 APIs
 ----
@@ -62,9 +76,9 @@ For non-content related APIs, such as user/group management, monitoring, indexin
     * - :ref:`Studio<crafter-studio>`
       - OAS Link
     * - :ref:`Engine<crafter-engine>`
-      - `Crafter Engine APIs <../../_static/api/engine.html>`_
+      - `Crafter Engine APIs <../_static/api/engine.html>`_
     * - :ref:`Deployer<crafter-deployer>`
-      - OAS Link
+      - `Crafter Deployer APIs <../_static/api/deployer.html>`_
     * - :ref:`Profile<crafter-profile>`
       - OAS Link
     * - :ref:`Social<crafter-Social>`
@@ -76,19 +90,31 @@ Java Doc
 
 .. include:: /includes/javadoc.rst
 
+|hr|
+
 ----------------
 Managing Secrets
 ----------------
 
 There are a number of ways to manage secrets in CrafterCMS, please review this :ref:`article<managing-secrets>` for more information.
 
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   managing-secrets
+
 |
+
+|hr|
 
 ----------------------
 Administration Scripts
 ----------------------
 
 .. include:: /includes/administration-scripts.rst
+
+|hr|
 
 ----------------------
 Complimentary Projects

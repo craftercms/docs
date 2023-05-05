@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
 
-:nosearch:
+
 
 .. index:: API; Crafter Studio
 
@@ -24,12 +24,12 @@ API Version 2
 
 .. open_iframe_modal_button::
    :label: Open here
-   :url: ../../../../../_static/api/studio.html
+   :url: ../../../../_static/api/studio.html
    :title: API Version 2
 
 .. raw:: html
 
-    or <a href="../../../../../_static/api/studio.html" target="_blank">in a new tab</a>
+    or <a href="../../../../_static/api/studio.html" target="_blank">in a new tab</a>
 
 |
 |

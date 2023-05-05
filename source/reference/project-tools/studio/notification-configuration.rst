@@ -1,6 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
-:nosearch:
+
 
 .. index:: Configure Simple Workflow Notifications and Dialog Messages
 

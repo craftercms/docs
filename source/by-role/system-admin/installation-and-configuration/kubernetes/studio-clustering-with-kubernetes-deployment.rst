@@ -1,6 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
-:nosearch:
+
 
 .. index:: Setup Studio Clustering with Kubernetes Deployment, Clustering with Studio Example with Kubernetes
 

@@ -1,7 +1,7 @@
-:is-up-to-date: True
-:nosearch:
+:is-up-to-date: False
+:last-updated: 4.1.0
 
-.. index:: Projects; Crafter Deployer
+.. index:: Modules; Crafter Deployer
 
 .. _crafter-deployer:
 
@@ -183,7 +183,7 @@ Create a Target
 
 There are two different ways in which a target configuration file can be created:
 
-* By calling the API endpoint `createTarget <../../../../_static/api/deployer.html#tag/target/operation/createTarget>`_, which creates a new target based on a template. The Deployer comes out
+* By calling the API endpoint `createTarget <../../../_static/api/deployer.html#tag/target/operation/createTarget>`_, which creates a new target based on a template. The Deployer comes out
   of the box with two templates: one for local repositories (useful for authoring environments) and one for remote repositories (useful for
   delivery environments). You can also specify your own templates under ``./config/templates/targets``, and use the same API endpoint to create
   targets based on those templates.
@@ -206,7 +206,7 @@ Delete a Target
 
 There are two options for deleting a target:
 
-* Call the API endpoint `deleteTarget <../../../../_static/api/deployer.html#tag/target/operation/deleteTarget>`_.
+* Call the API endpoint `deleteTarget <../../../_static/api/deployer.html#tag/target/operation/deleteTarget>`_.
 
 * Delete the target configuration file in the filesystem.
 
@@ -215,8 +215,8 @@ Run Deployments
 ^^^^^^^^^^^^^^^
 
 Crafter Deployer has an option of running scheduled deployments for a target (``deployment.scheduling.enabled``), which is enabled by default, but if you
-want to manually trigger a deployment, you just need to call the API endpoint `deployTarget <../../_static/api/deployer.html#tag/target/operation/deployTarget>`_ (or
-`deployAllTargets <../../_static/api/deployer.html#tag/target/operation/deployAllTargets>`_). This will start the deployment if the request is correct. To watch the progress of a scheduled or a manually
+want to manually trigger a deployment, you just need to call the API endpoint `deployTarget <../../../_static/api/deployer.html#tag/target/operation/deployTarget>`_ (or
+`deployAllTargets <../../../_static/api/deployer.html#tag/target/operation/deployAllTargets>`_). This will start the deployment if the request is correct. To watch the progress of a scheduled or a manually
 triggered deployment, check the Deployer log. When the deployment has finished, and the target has a ``fileOutputProcessor`` in the deployment pipeline, a
 CSV file with the final result of that particular deployment will be written under ``./logs`` (or ``CRAFTER_HOME/logs/deployer``).
 
@@ -1318,12 +1318,12 @@ To view the Crafter Deployer REST APIs:
 
 .. open_iframe_modal_button::
    :label: Open here
-   :url: ../../../../_static/api/deployer.html
+   :url: ../../../_static/api/deployer.html
    :title: Deployer API
 
 .. raw:: html
 
-    or <a href="../../../../_static/api/deployer.html" target="_blank">in a new tab</a>
+    or <a href="../../../_static/api/deployer.html" target="_blank">in a new tab</a>
 
 |
 

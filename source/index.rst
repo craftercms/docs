@@ -1,7 +1,7 @@
 :is-up-to-date: False
 :last-updated: 4.1.0
 
-:nosearch:
+
 
 
 ##################################
@@ -52,8 +52,6 @@ Who uses CrafterCMS
    authors
 
 .. toctree::
-   :titlesonly:
-   :maxdepth: 1
 
    getting-started/index
    by-role/index

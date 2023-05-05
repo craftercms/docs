@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:nosearch:
+
 
 .. _crafter-social-api-ugc-comments-update-attributes:
 

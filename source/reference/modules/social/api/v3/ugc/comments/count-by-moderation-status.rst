@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:nosearch:
+
 
 .. _crafter-social-api-ugc-comments-count-by-moderation-status:
 

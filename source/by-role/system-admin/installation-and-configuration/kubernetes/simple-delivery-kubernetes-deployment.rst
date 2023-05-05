@@ -1,6 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
-:nosearch:
+
 
 .. index:: Simple Delivery Kubernetes Deployment, Example Kubernetes deployment of simple Delivery
 

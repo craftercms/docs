@@ -1,6 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
-:nosearch:
+
 
 .. _migrate-site-to-elasticsearch:
 
@@ -66,7 +66,7 @@ For delivery environments:
     }'
 
 .. note::
-  For a detailed list of parameters see `createTarget <../../../../_static/api/deployer.html#tag/target/operation/createTarget>`_
+  For a detailed list of parameters see `createTarget <../../../_static/api/deployer.html#tag/target/operation/createTarget>`_
 
 |
 

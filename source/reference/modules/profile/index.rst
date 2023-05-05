@@ -1,7 +1,7 @@
-:is-up-to-date: True
-:nosearch:
+:is-up-to-date: False
+:last-updated: 4.1.0
 
-.. index:: Projects; Crafter Profile
+.. index:: Modules; Crafter Profile
 
 .. _crafter-profile:
 
@@ -22,14 +22,35 @@ Crafter Profile is built on MongoDB for extensibility and extreme scalability an
 
 Crafter Profile provides a secure and scalable platform for storing, querying and analyzing user data at each interaction in your customer journey.
 
------------
-Source Code
------------
-
-Crafter Profile's source code is managed in GitHub: https://github.com/craftercms/profile
-
 -------------
 Configuration
 -------------
 
 To configure Crafter Profile, please see :ref:`crafter-profile-admin`
+
+|hr|
+
+--------
+REST API
+--------
+
+To view the Crafter Profile REST APIs:
+
+.. open_iframe_modal_button::
+   :label: Open here
+   :url: ../../../_static/api/social.html
+   :title: Profile API
+
+.. raw:: html
+
+    or <a href="../../../_static/api/profile.html" target="_blank">in a new tab</a>
+
+|
+
+|hr|
+
+-----------
+Source Code
+-----------
+
+Crafter Profile's source code is managed in GitHub: https://github.com/craftercms/profile

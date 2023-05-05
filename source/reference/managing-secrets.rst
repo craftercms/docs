@@ -1,7 +1,7 @@
 :is-up-to-date: False
 :since-version: 4.1.0
 
-:nosearch:
+
 
 .. _managing-secrets:
 

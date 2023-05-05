@@ -1,6 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.3
-:nosearch:
+
 
 .. highlight:: groovy
    :linenothreshold: 5

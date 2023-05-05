@@ -1,7 +1,7 @@
-:is-up-to-date: True
-:nosearch:
+:is-up-to-date: False
+:last-updated: 4.1.0
 
-.. index:: Projects; Crafter Search
+.. index:: Modules; Crafter Search
 
 .. _crafter-search:
 

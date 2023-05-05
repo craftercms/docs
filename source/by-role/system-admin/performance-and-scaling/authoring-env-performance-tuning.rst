@@ -1,6 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
-:nosearch:
+
 
 .. _authoring-env-performance-tuning:
 
