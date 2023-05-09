@@ -32,29 +32,10 @@ The modules are
       - Engine provides content delivery services to power any type of Web or mobile application.
     * - :ref:`Deployer<crafter-deployer>`
       - The content deployment system which moves content from Studio to Engine and Search.
-    * - :ref:`Search<crafter-search>`
-      - The search engine that backs content authoring and content delivery
-    * - :ref:`Core<crafter-core>`
-      - The content retrieval and in-memory database library
-    * - :ref:`Commons<crafter-commons>`
-      - The shared libraries used by all CrafterCMS modules
     * - :ref:`Profile<crafter-profile>`
       - Profile and attribute store
     * - :ref:`Social<crafter-Social>`
       - User generated content store
-
-.. toctree::
-   :hidden:
-   :maxdepth: 3
-
-   modules/studio/index
-   modules/engine/index
-   modules/deployer/index
-   modules/search/index
-   modules/core/index
-   modules/commons/index
-   modules/profile/index
-   modules/social/index
 
 |hr|
 

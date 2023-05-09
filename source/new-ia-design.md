@@ -1,5 +1,9 @@
 This is a TODO file, what's in here must be done then removed from this file
 
+Getting Started
+===============
+- Orient to users of CrafterCMS not developers developing CrafterCMS (JRE instead of JDK, run instead of compile, etc.)
+
 Common
 ======
 
@@ -36,7 +40,7 @@ Site Admin
 - Cite the Secrets Management reference article
 
 System Admin
-=============
+============
 - Authoring authentication
     - LDAP
     - SAML (< 4.0.2, >= 4.0.3)
