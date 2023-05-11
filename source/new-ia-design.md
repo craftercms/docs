@@ -27,6 +27,7 @@ Include
 =======
 - JWT
 - Multi-environment configuration
+- Default ports (authoring and delivery) -- either one include for both or two separate.
 
 Developer
 =========
@@ -52,3 +53,7 @@ System Admin
     - 
 - Cite the Secrets Management reference article
 - Reference the administration and configuration in the reference section instead of duplicating it here
+
+Misc
+====
+- Revisit the FAQ

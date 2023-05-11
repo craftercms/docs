@@ -10,17 +10,36 @@ Getting Started
 
 This section lets you get started quickly on using CrafterCMS.
 
-How do I install CrafterCMS? First, let's make sure we have all the requirements.
+-----------
+Quick Start
+-----------
+
+If you have `Docker <https://www.docker.com/>`_ installed, you can get started with CrafterCMS in a few minutes. Simply run the following command:
+
+.. code-block:: bash
+
+    docker run -p 8080:8080 craftercms/authoring_local:latest
+
+Then point your browser to http://localhost:8080/studio and you will be presented with the Crafter Studio login page. The default username is ``admin`` and the default password is ``admin``.
+
+---------------------------------------------
+Installing and Running CrafterCMS on a Server
+---------------------------------------------
+
+First, let's make sure we have all the requirements.
 
 .. include:: /includes/requirements.rst
 
 |hr|
 
+.. TODO Continue fixing below
+
+
 Installing and running CrafterCMS is easy. You have a number of choices:
 
-------
-Docker
-------
+--------------
+Docker Compose
+--------------
 You can use :ref:`Docker <running-craftercms-in-docker>`.
 
 .. toctree::
