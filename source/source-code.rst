@@ -12,14 +12,14 @@ GitHub hosts `CrafterCMS <https://github.com/craftercms/>`_ and is made up of a 
 
 The primary projects are:
 
-* :ref:`crafter-cms`
-* :ref:`crafter-commons`
-* :ref:`crafter-core`
-* :ref:`crafter-deployer`
-* :ref:`crafter-docker-compose`
-* :ref:`crafter-engine`
-* :ref:`crafter-studio`
-* :ref:`crafter-profile`
-* :ref:`crafter-social`
+* https://github.com/craftercms/craftercms
+* https://github.com/craftercms/commons
+* https://github.com/craftercms/core
+* https://github.com/craftercms/deployer
+* https://github.com/craftercms/docker-compose
+* https://github.com/craftercms/engine
+* https://github.com/craftercms/studio
+* https://github.com/craftercms/profile
+* https://github.com/craftercms/social
 
 There are a number of additional projects within CrafterCMS that help complete it, including a project for this very documentation.
