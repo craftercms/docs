@@ -91,6 +91,8 @@ Here are the steps to start using CrafterCMS for development or evaluation by in
 
    |
 
+.. TODO: Accessing Studio should be an include
+
    .. _accessing-crafter-studio:
 
 #. **Access Crafter Studio**

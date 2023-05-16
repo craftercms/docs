@@ -1,7 +1,6 @@
 :is-up-to-date: False
 :since-version: 4.1.0
 
-
 ..  _getting-started:
 
 ===============
@@ -10,9 +9,13 @@ Getting Started
 
 This section lets you get started quickly on using CrafterCMS.
 
------------
-Quick Start
------------
+--------------
+Run CrafterCMS
+--------------
+
+^^^^^^^^^^^^^^^^^^^^^^^^
+Run CrafterCMS in Docker
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you have `Docker <https://www.docker.com/>`_ installed, you can get started with CrafterCMS in a few minutes. Simply run the following command:
 
@@ -22,91 +25,29 @@ If you have `Docker <https://www.docker.com/>`_ installed, you can get started w
 
 Then point your browser to http://localhost:8080/studio and you will be presented with the Crafter Studio login page. The default username is ``admin`` and the default password is ``admin``.
 
----------------------------------------------
-Installing and Running CrafterCMS on a Server
----------------------------------------------
-
-First, let's make sure we have all the requirements.
-
-.. include:: /includes/requirements.rst
-
 |hr|
 
-.. TODO Continue fixing below
+^^^^^^^^^^^^^^^^^^^^^
+Run CrafterCMS on AWS
+^^^^^^^^^^^^^^^^^^^^^
 
-
-Installing and running CrafterCMS is easy. You have a number of choices:
-
---------------
-Docker Compose
---------------
-You can use :ref:`Docker <running-craftercms-in-docker>`.
-
-.. toctree::
-   :hidden:
-   :maxdepth: 2
-
-   docker
-
-|hr|
-
--------
-Bundles
--------
-^^^^^^^^^^^^
-Linux System
-^^^^^^^^^^^^
-You can use the :ref:`Linux <installing-craftercms-on-linux>` bundles
-
-.. toctree::
-   :hidden:
-   :maxdepth: 2
-
-   linux
-
-|hr|
-
-^^^^^^^^^^
-Mac System
-^^^^^^^^^^
-You can use :ref:`Mac <installing-craftercms-on-macos>` bundles
-
-.. toctree::
-   :hidden:
-   :maxdepth: 2
-
-   mac
-
-|hr|
-
-^^^^^^^
-Windows
-^^^^^^^
-You can use :ref:`WSL <installing-craftercms-on-wsl>`
-
-Note that the preferred method of installing and running CrafterCMS is via the binary archive through WSL as described :ref:`here <installing-craftercms-on-wsl>`.
-
-.. toctree::
-   :hidden:
-   :maxdepth: 2
-
-   wsl
-
-|hr|
-
----
-AWS
----
 You can use a `prebuilt AMI <https://aws.amazon.com/marketplace/seller-profile?id=6d75ffca-9630-44bd-90b4-ac0e99058995>`_ from the AWS marketplace.
 
 |hr|
 
-----
-SaaS
-----
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Run CrafterCMS SaaS in the Cloud
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 You can sign up for `Crafter Cloud <https://craftercms.com/products/crafter-cloud>`_.
 
 |hr|
+
+For more ways to install CrafterCMS, please see :ref:`here <installing-craftercms>`.
+
+-------------------------------
+Start Crafting Your Experiences
+-------------------------------
 
 How do I start crafting my experiences?
 
