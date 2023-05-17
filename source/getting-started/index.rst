@@ -49,7 +49,7 @@ For more ways to install CrafterCMS, please see :ref:`here <installing-craftercm
 Start Crafting Your Experiences
 -------------------------------
 
-How do I start crafting my experiences?
+CrafterCMS is an API-first CMS, and as such, it can be used as a headless CMS or a templated (traditional) CMS. The following sections will help you get started with both.
 
 .. toctree::
    :maxdepth: 1
@@ -57,4 +57,4 @@ How do I start crafting my experiences?
    your-first-project/headless.rst
    your-first-project/templated.rst
 
-Once you have CrafterCMS up and running, proceed to learn more about CrafterCMS by reviewing the documentation based on your role or interest :ref:`here <by-role>`.
+If you're ready to jump into serious development, then proceed to learn more about CrafterCMS by reviewing the documentation based on :ref:`your role or interest <by-role>`.
