@@ -52,7 +52,7 @@ Start Crafting Your Experiences
 How do I start crafting my experiences?
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    your-first-project/headless.rst
    your-first-project/templated.rst
