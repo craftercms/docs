@@ -1,18 +1,10 @@
 :is-up-to-date: False
 :since-version: 4.0.0
 
-
 =============
 API Reference
 =============
 
-CrafterCMS provides the following options for accessing content for content rich applications.
+.. include:: /includes/content-retrieval-apis.rst
 
-* JavaScript API
-* GraphQL
-* REST API
-* FreeMarker
-* Groovy
-* Java
-
-For more information on the above APIs, see :ref:`api-reference`
+For additional information on the APIs, see the :ref:`API reference <api-reference>`.

@@ -42,6 +42,7 @@ The modules are
 ----
 APIs
 ----
+.. _api-reference:
 
 .. include:: /includes/content-retrieval-apis.rst
 
