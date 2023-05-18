@@ -43,7 +43,7 @@ You can sign up for `Crafter Cloud <https://craftercms.com/products/crafter-clou
 
 |hr|
 
-For more ways to install CrafterCMS, please see :ref:`here <installing-craftercms>`.
+For more ways to install, please see the article :ref:`install-craftercms`.
 
 -------------------------------
 Start Crafting Your Experiences

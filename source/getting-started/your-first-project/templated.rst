@@ -24,9 +24,9 @@ It is assumed that you have followed the steps in the :ref:`Getting Started <get
 
 Let's get started building your first editorial website!
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Creating your website from out of the box blueprint Website Editorial
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating a Project from the Editorial Blueprint
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 After logging in, you'll see the Projects screen (Below).  Click on **Create Project**
 
 .. image:: /_static/images/first-project/projects-screen.webp
@@ -91,7 +91,7 @@ Your project is setup, we can now start adding/editing content!  To edit content
 |
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Adding a new article page to the project
+Adding a New Article Page to the Project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 We'll be adding a new article to the project.  To add a new article (or a new page), navigate to the level and location within the project navigation tree in the Sidebar where we want to create the new page.  In this case, we are adding an article under **articles** -> **2021** -> **3**.  Click on the three dots next to the folder, then select **New Content**
 
@@ -157,7 +157,7 @@ You can add more pages or modify/remove the existing pages from the blueprint, d
 |
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Updating the Contact Us section in the sidebar
+Updating the Contact Us Section in the Sidebar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Another thing that we may want to modify from the blueprint, is the left rail.  For this example, we are going to modify the **Contact Us** section in the left rail (contact widget).  To edit items in the left rail, toggle the ``Edit Mode`` switch on the top right of your screen to the ``on`` position to enable in-context editing.  A pencil should appear on sections editable on the page when you hover your mouse on them.  Go to the the left rail and click there, then select ``Edit``
@@ -196,9 +196,9 @@ Here's the sidebar with the **Contact Us** section updated.  Notice that you can
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Editing the features section, "Erat lacinia"
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Editing the Features Section
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We will now edit the features section in our blueprint.  The features in this section has been configured as components, as you will see in the images below.  There are multiple ways of editing the features section in the blueprint.
 

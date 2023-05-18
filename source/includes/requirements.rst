@@ -10,6 +10,7 @@ To run CrafterCMS, the following are required:
     - Java 17
     - 8+ Gig of memory to JVM (additional memory may be required depending on the size and number of your web experiences)
     - Git 2.20.1 and later
+    - Docker if running on Mac or Windows
 
 Please note that CrafterCMS does not require any external databases for the core system to run and deliver fully dynamic experiences.  MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide user management and social features.
 

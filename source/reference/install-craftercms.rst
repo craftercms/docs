@@ -18,9 +18,9 @@ You can use a `prebuilt AMI <https://aws.amazon.com/marketplace/seller-profile?i
 
 |hr|
 
----------------------------------------------
-Installing and Running CrafterCMS on a Server
----------------------------------------------
+--------------------------------------------------------
+Installing and Running CrafterCMS on a Server or Locally
+--------------------------------------------------------
 
 First, let's make sure we have all the requirements.
 
@@ -41,46 +41,67 @@ Docker Compose
 
 |hr|
 
--------
-Bundles
--------
+------------------------
+Pre-built Binary Bundles
+------------------------
+
 ^^^^^^^^^^^^
-Linux System
+Requirements
 ^^^^^^^^^^^^
-You can use the :ref:`Linux <installing-craftercms-on-linux>` bundles
 
-.. toctree::
-   :hidden:
-   :maxdepth: 2
+.. include:: /includes/requirements.rst
 
-   linux
+^^^^^^^^^^^^^^^^^^^
+Download the Bundle
+^^^^^^^^^^^^^^^^^^^
+Download CrafterCMS binary bundle from https://craftercms.org/downloads
 
-|hr|
+Select ``crafter-cms-authoring-*.tar.gz`` for authoring, and ``crafter-cms-delivery*.tar.gz`` for delivery. The ``.tar.gz`` file will install a fully functional authoring/delivery instance. Out of the box, the authoring instance uses a local directory as the repository and an embedded database, which allows a quick and easy set up for local development.
 
-^^^^^^^^^^
-Mac System
-^^^^^^^^^^
-You can use :ref:`Mac <installing-craftercms-on-macos>` bundles
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Extract the CrafterCMS binaries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. toctree::
-   :hidden:
-   :maxdepth: 2
+Extract the contents in the desired directory.
 
-   mac
+.. code-block:: sh
 
-|hr|
+  tar -zxvf crafter-cms-authoring*.tar.gz -C /tmp/target-unzip-directory/
 
-^^^^^^^
-Windows
-^^^^^^^
-You can use :ref:`WSL <installing-craftercms-on-wsl>`
+|
 
-Note that the preferred method of installing and running CrafterCMS is via the binary archive through WSL as described :ref:`here <installing-craftercms-on-wsl>`.
+   The extracted files should look like this:
 
-.. toctree::
-   :hidden:
-   :maxdepth: 2
+   .. code-block:: none
 
-   wsl
+      {target-unzip-directory}
+      |--crafter/
+         |--LICENSE
+         |--README.txt
+         |--bin/
 
-|hr|
+   |
+
+You can then do the same for the delivery bundle.
+
+^^^^^^^^^^^^^^^^
+Start CrafterCMS
+^^^^^^^^^^^^^^^^
+
+.. include:: /includes/start-craftercms.rst
+
+^^^^^^^^^^^^^^^
+Stop CrafterCMS
+^^^^^^^^^^^^^^^
+
+.. include:: /includes/stop-craftercms.rst
+
+^^^^^^^^^^^^^^^^^^^^^^^
+Login to Crafter Studio
+^^^^^^^^^^^^^^^^^^^^^^^
+
+   .. _accessing-crafter-studio:
+
+
+
+   After logging in, you should be redirected to the ``Projects`` screen, and you're now ready to create your first experience!

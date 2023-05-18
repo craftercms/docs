@@ -50,7 +50,7 @@ To run CrafterCMS in a set of Docker containers using Docker Compose, make sure 
           tomcat_1         | 02-Jun-2023 14:26:47.448 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 54120 ms
 
 
-You may now follow the instructions listed in the guide for getting started with CrafterCMS starting from the step :ref:`Access Crafter Studio <accessing-crafter-studio>` to start using CrafterCMS.
+You may now login to Crafter Studio at http://localhost:8080/studio.  The default username is ``admin`` and the default password is ``admin``.
 
 The console output when you start the container (as shown above) contains useful information that you can use to debug or monitor the status of CrafterCMS.  To view more of the logs, the Docker Desktop Dashboard provides a runtime view of all your containers and applications, including logs for monitoring/debugging CrafterCMS.  To access the Docker Desktop Dashboard, from the **Docker menu**, select **Dashboard**.
 
