@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. _logging:
 
@@ -6,9 +7,9 @@
 Logging
 =======
 
-Log files from several sources are created when running CrafterCMS.  These log files are useful for checking the status of CrafterCMS, for example, the success of actions/requests, warnings and error messages.  These logs can be used to provide more information about potential issues in the system or for debugging errors.  The log files can be found in ``$CRAFTER_DIR/crafter-authoring/logs/`` or in ``$CRAFTER_DIR/crafter-delivery/logs/`` depending on which environment you are running.  Effective use of these logs is an important part of maintaining your sites and are useful for keeping track of your system performance.  To that end, please make sure that you rotate the logs.
+Log files from several sources are created when running CrafterCMS.  These log files are useful for checking the status of CrafterCMS, for example, the success of actions/requests, warnings and error messages.  These logs can be used to provide more information about potential issues in the system or for debugging errors.  The log files can be found in ``$CRAFTER_DIR/crafter-authoring/logs/`` or in ``$CRAFTER_DIR/crafter-delivery/logs/`` depending on which environment you are running.  Effective use of these logs is an important part of maintaining your projects and are useful for keeping track of your system performance.  To that end, please make sure that you rotate the logs.
 
-CrafterCMS ships with a Tomcat Application Server, Elasticsearch, and MongoDB included in the binary archive.  There are five folders used by CrafterCMS for the log files,
+CrafterCMS ships with a Tomcat Application Server, Elasticsearch, and MongoDB included in the binary archive.  There are four folders used by CrafterCMS for the log files,
 
     - tomcat
     - elasticsearch
@@ -16,7 +17,7 @@ CrafterCMS ships with a Tomcat Application Server, Elasticsearch, and MongoDB in
     - mongodb
 
 -------------------------------------------
-Tailing Log Files From a shell/Command Line
+Tailing Log Files From a Shell/Command Line
 -------------------------------------------
 The most recent messages from the log files may be displayed by tailing the log files.  Here are the log files and locations of the log files:
 
@@ -32,7 +33,7 @@ The most recent messages from the log files may be displayed by tailing the log 
 || Crafter Deployer log file   || ``$CRAFTER_LOGS_DIR/deployer/crafter-deployer.out``            |
 +------------------------------+-----------------------------------------------------------------+
 || Crafter Deployer            || ``$CRAFTER_LOGS_DIR/deployer/%SITE-preview.log``               |
-||     sites log files         ||                                                                |
+||     projects log files      ||                                                                |
 +------------------------------+-----------------------------------------------------------------+
 || MongoDB log files           || ``$CRAFTER_LOGS_DIR/mongodb/``                                 |
 +------------------------------+-----------------------------------------------------------------+
@@ -46,7 +47,7 @@ For the Delivery environment:
     ``$CRAFTER_LOGS_DIR = $CRAFTER_DIR/crafter-delivery/logs``
 
 ^^^^^^^^^^^^^^^^^^^^^
-Log file descriptions
+Log File Descriptions
 ^^^^^^^^^^^^^^^^^^^^^
 
 Tomcat Log Files
@@ -73,7 +74,7 @@ Deployer Log Files
 
 File: crafter-deployer.out
 
-This log file contains all messages pertaining to Crafter Deployer.  In the same folder where the **crafter-deployer.out** log file is, you will find all the site specific deployer logs as described in the table above.
+This log file contains all messages pertaining to Crafter Deployer.  In the same folder where the **crafter-deployer.out** log file is, you will find all the project specific deployer logs as described in the table above.
 
 To tail the log file in the authoring environment:
 
@@ -95,7 +96,7 @@ File: elasticsearch.log
 This log file contains all messages pertaining to Elasticsearch.
 
 ----------------------
-Using custom appenders
+Using Custom Appenders
 ----------------------
 
 All CrafterCMS components use Apache Log4j2 for logging and you can easily include custom configurations to change
@@ -104,7 +105,7 @@ you only need to add them in the appropriate configuration file. For more detail
 visit the `official documentation <https://logging.apache.org/log4j/2.x/manual/appenders.html>`_.
 
 ^^^^^^^^^^^^^^^^^^^^^^
-Logging configurations
+Logging Configurations
 ^^^^^^^^^^^^^^^^^^^^^^
 
 You can update the logging configuration depending on the CrafterCMS component that you need to change:
@@ -121,7 +122,7 @@ You can update the logging configuration depending on the CrafterCMS component t
   removed or the configuration is broken some CrafterCMS components could stop working.
 
 ^^^^^^^^^^^^^^^^^^^^^
-Add a custom appender
+Add a Custom Appender
 ^^^^^^^^^^^^^^^^^^^^^
 
 To add a custom appender you can follow these steps:
@@ -157,3 +158,21 @@ To add a custom appender you can follow these steps:
 .. warning::
   Because Log4j2 only loads classes during initialization if there is a change in the custom appender JAR those will 
   not be caught by the reconfiguration feature and you must restart the app context or tomcat.
+
+.. raw:: html
+
+   <hr>
+
+.. _crafter-sh-script-logging:
+
+---------------------------
+*crafter.sh* Script Logging
+---------------------------
+
+To capture the output of the ``crafter.sh`` script in a log file, set the environment variable
+``CRAFTER_SCRIPT_LOG`` to point to a log file like below:
+
+.. code-block:: bash
+
+   export CRAFTER_SCRIPT_LOG=${CRAFTER_SCRIPT_LOG:="/your/path/output-file.log}"
+

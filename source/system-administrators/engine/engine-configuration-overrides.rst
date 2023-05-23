@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. index:: Engine's Configuration Overrides, Configuration Overrides, Overrides
 
@@ -73,6 +74,8 @@ The following allows you to configure the following:
    crafter.engine.environment=${CRAFTER_ENVIRONMENT}
 
 |
+
+.. _engine-forwarded-headers:
 
 -----------------
 Forwarded Headers
@@ -165,3 +168,60 @@ Access to static methods in Freemarker templates is disabled by default.
    # Indicates if access for static methods should be allowed in Freemarker templates
    crafter.engine.freemarker.statics.enable=false
 
+-----
+Cache
+-----
+
+^^^^^^^^^
+Max Items
+^^^^^^^^^
+
+The following allows you to configure the maximum number of objects in Engine's cache:
+
+.. code-block:: properties
+
+   # The max number of items that each site cache can have
+   crafter.engine.site.default.cache.maxAllowedItems=250000
+
+^^^^^^^^^^^^^^^^^^^
+URL Transformations
+^^^^^^^^^^^^^^^^^^^
+
+The following allows you to configure whether the URL transformation performed by the view resolver will be cached:
+
+.. code-block:: properties
+
+   # Flag that indicates if the URL transformations performed by the view resolver should be cached
+   crafter.engine.page.view.resolver.url.transformation.cache=false
+
+^^^^^^^^^^^^^^^^^
+Preloaded Folders
+^^^^^^^^^^^^^^^^^
+
+The following allows you to configure folders to be preloaded in the cache:
+
+.. code-block:: properties
+   :emphasize-lines: 7,10,13
+
+   #################
+   # Cache Warm Up #
+   #################
+   # Indicates if cache warming should be enabled. This means the site cache will be warmed up (according to a list of
+   # cache warmers) on context init and instead of cache clear, a new cache will be warmed up and switched with the
+   # current one
+   crafter.engine.site.cache.warmUp.enabled=false
+   # The descriptor folders that need to be preloaded in cache, separated by comma. Specify the preload depth with
+   # :{depth} after the path. If no depth is specified, the folders will be fully preloaded.
+   crafter.engine.site.cache.warmUp.descriptor.folders=/site:4
+   # The content folders that need to be preloaded in cache, separated by comma. Specify the preload depth with
+   # :{depth} after the path. If no depth is specified, the folders will be fully preloaded.
+   crafter.engine.site.cache.warmUp.content.folders=/scripts,/templates
+
+where:
+
+  - The descriptor folders are paths that contain XML that needs to be parsed, loaded and merged e.g. for inheritance.
+    Most of the time this would be folders under ``/site``
+
+  - The content folders are mostly static, non-processed content, e.g. scripts, templates, static-assets
+
+For all projects, the cache is preloaded using the above configuration. CrafterCMS warms up the cache on every publish and startup.  Note also that what's cache warmed will be warmed on every publish and startup and will live as long as nothing kicks it out of the cache due to least recently used (LRU) cache.

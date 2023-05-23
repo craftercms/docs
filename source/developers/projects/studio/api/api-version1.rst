@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. _api-version1:
 
@@ -27,7 +28,7 @@ Site Management
    site/write-configuration
 
 .. note::
-   Some of the site management operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit: https://app.swaggerhub.com/apis/craftercms/studio
+   Some of the site management operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit :base_url:`here <_static/api/studio.html>`.
 
 
 ^^^^^^^^^^^^^^^
@@ -37,24 +38,17 @@ Repo Management
 .. toctree::
    :maxdepth: 1
 
-   repo/add-remote
-   repo/pull-from-remote
-   repo/push-to-remote
-   repo/rebuild-database
-   repo/remove-remote
    repo/sync-from-repo
-   repo/list-remote
 
 .. note::
-  Some of the repo management operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit: https://app.swaggerhub.com/apis/craftercms/studio
+  Some of the repo management operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit :base_url:`here <_static/api/studio.html>`.
 
 ^^^^^
 Audit
 ^^^^^
 
 .. note::
-  Audit operations are only available in the new API, for more information, please visit:
-  https://app.swaggerhub.com/apis/craftercms/studio
+  Audit operations are only available in the new API, for more information, please visit :base_url:`here <_static/api/studio.html>`.
 
 
 ^^^^^^^^
@@ -73,23 +67,7 @@ Monitoring
 ^^^^^^^^^^
 
 .. note::
-  Monitoring operations are only available in the new API, for more information, please visit: 
-  https://app.swaggerhub.com/apis/craftercms/studio
-
-^^^^
-CMIS
-^^^^
-
-.. toctree::
-   :maxdepth: 1
-
-   cmis/list
-   cmis/search
-   cmis/clone
-   cmis/upload
-
-.. note::
-    The CMIS operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit: https://app.swaggerhub.com/apis/craftercms/studio
+  Monitoring operations are only available in the new API, for more information, please visit :base_url:`here <_static/api/studio.html>`.
 
 ^^^^^^^
 Publish
@@ -179,7 +157,6 @@ Content / Asset
    content/get-pages
    content/reorder-items
    content/revert-content
-   content/search
    content/unlock-content
    content/write-content
 
@@ -219,4 +196,4 @@ AWS
    aws/s3/post-upload
 
 .. note::
-    Some of the AWS operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit: https://app.swaggerhub.com/apis/craftercms/studio
+    Some of the AWS operations listed above are now deprecated.  These operations are now available in the new API, for more information, please visit :base_url:`here <_static/api/studio.html>`

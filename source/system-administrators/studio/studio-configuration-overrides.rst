@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.1
+:last-updated: 4.0.3
 
 :orphan:
 
@@ -181,17 +181,19 @@ The following section of Studio's configuration overrides allows you to randomiz
    studio.security.cipher.salt: ${env:CRAFTER_SYSTEM_ENCRYPTION_SALT}
    # Key for encrypting
    studio.security.cipher.key: ${env:CRAFTER_SYSTEM_ENCRYPTION_KEY}
-   # Password requirements validation regular expression
-   # The supported capture group keys are:
-   #   hasNumbers
-   #   hasLowercase
-   #   hasUppercase
-   #   hasSpecialChars
-   #   noSpaces
-   #   minLength
-   #   maxLength
-   #   minMaxLength
-   # studio.security.passwordRequirements.validationRegex: ^(?=(?<hasNumbers>.*[0-9]))(?=(?<hasLowercase>.*[a-z]))(?=(?<hasUppercase>.*[A-Z]))(?=(?<hasSpecialChars>.*[~|!`,;\/@#$%^&+=]))(?<minLength>.{8,})$
+
+   # Password requirements minimum complexity
+   # This is based on https://github.com/dropbox/zxcvbn
+   # The minimum complexity corresponds to the password score
+   # You can try this out here https://lowe.github.io/tryzxcvbn/
+   #  score      # Integer from 0-4 (useful for implementing a strength bar)
+   #  0 # too guessable: risky password. (guesses < 10^3)
+   #  1 # very guessable: protection from throttled online attacks. (guesses < 10^6)
+   #  2 # somewhat guessable: protection from unthrottled online attacks. (guesses < 10^8)
+   #  3 # safely unguessable: moderate protection from offline slow-hash scenario. (guesses < 10^10)
+   #  4 # very unguessable: strong protection from offline slow-hash scenario. (guesses >= 10^10)
+   # The default value is 3
+   # studio.security.passwordRequirements.minimumComplexity: 3
 
    # The key used for encryption of configuration properties
    studio.security.encryption.key: ${env:CRAFTER_ENCRYPTION_KEY}
@@ -359,6 +361,8 @@ The following section of Studio's configuration overrides allows you to setup se
    #       # The alternate domains names (besides *.cloudfront.net) for the CloudFront CDN (optional when target template is aws-cloudformed-s3)
    #       alternateCloudFrontDomainNames:
 
+.. _studio-config-forwarded-headers:
+
 -----------------
 Forwarded Headers
 -----------------
@@ -431,3 +435,39 @@ The following section of Studio's configuration overrides allows you to set the 
 
    # Use base domain instead of subdomain for the crafterSite cookie
    studio.cookie.useBaseDomain: false
+
+-----------------
+Validations Regex
+-----------------
+.. version_tag::
+   :label: Since
+   :version: 4.0.3
+
+CrafterCMS validates API requests related with users, groups, etc. through regex restrictions to avoid malicious payloads.
+
+The following section of Studio's configuration overrides allows you to configure the regex used by the validation framework to suit your needs.
+
+.. code-block:: yaml
+   :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
+
+
+   ##########################################################
+   ##                  Input Validations                   ##
+   ##########################################################
+   # These properties override default validation regex patterns
+   # from crafter common validations.
+   # Key should have the form `studio.validation.regex.KEY_NAME`
+   # Value should be a valid java regex.
+   #
+   # studio.validation.regex.HTTPParameterName: "^[a-zA-Z0-9_\\-]{1,32}$"
+   # studio.validation.regex.SITEID: "^[a-z0-9\\-_]*$"
+   # studio.validation.regex.EMAIL: "^([\\w\\d._\\-#])+@([\\w\\d._\\-#]+[.][\\w\\d._\\-#]+)+$"
+   # studio.validation.regex.USERNAME: "^[a-zA-Z][\\w.\\-@+]+$"
+   # studio.validation.regex.GROUP_NAME: "^[a-zA-Z][\\w.\\-]*$"
+   # studio.validation.regex.ALPHANUMERIC: "^[a-zA-Z0-9]*$"
+   # studio.validation.regex.SEARCH_KEYWORDS: "^[\\w\\s\\-\\\"\\.\\*]*$"
+   # studio.validation.regex.CONTENT_PATH_WRITE: "^/?([a-z0-9\\-_]+/?)*(((crafter\\-level\\-descriptor\\.level)|([a-z0-9_\\-]))+\\.[\\w]+)?$"
+   # studio.validation.regex.ASSET_PATH_WRITE: "^/?([a-z0-9-_.]+/?)*([a-z0-9_\\-./]+\\.[\\w]+)?$"
+   # studio.validation.regex.CONTENT_PATH_READ: "^/?([\\w\\p{IsLatin}@$%^&{}\\[\\]()+\\-=,.:~'`]+(\\s*[\\w\\p{IsLatin}/@$%^&{}\\[\\]()+\\-=,.:~'`])*(/?))*$"
+   # studio.validation.regex.CONTENT_FILE_NAME_WRITE: "^((crafter\\-level\\-descriptor\\.level)|([a-z0-9_\\-])+)\\.xml$"
+   # studio.validation.regex.CONFIGURATION_PATH: "^([a-z0-9\\-_/]+([.]*[a-z0-9\\-_])+)*(\\.[\\w]+)?/?$"

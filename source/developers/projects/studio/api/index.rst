@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. index:: API; Crafter Studio
 
@@ -8,7 +9,7 @@
 Crafter Studio API
 ==================
 
-There are 2 versions of Crafter Studio APIs.  **API version 2** contains the User and Group Management, UI, AWS, Cluster, Sites, Search, Audit, Monitoring, CMIS, Repository, Content, Configuration, Plugin, Dependency, Marketplace, WebDAV, Publishing, Security, Dashboard, Translation and Schemas APIs.   All other APIs are in **API version 1**.
+There are 2 versions of Crafter Studio APIs.  **API version 2** contains the User and Group Management, UI, AWS, Cluster, Sites, Search, Audit, Monitoring, Repository, Content, Configuration, Plugin, Dependency, Marketplace, WebDAV, Publishing, Security, Dashboard, Translation and Schemas APIs.   All other APIs are in **API version 1**.
 
 .. note::
     This API can be used with JWT or HTTP Basic authentication.
@@ -19,7 +20,17 @@ There are 2 versions of Crafter Studio APIs.  **API version 2** contains the Use
 API Version 2
 -------------
 
-Version 2 APIs are available from: https://app.swaggerhub.com/apis/craftercms/studio
+.. open_iframe_modal_button::
+  :label: Open here
+  :url: ../../../../_static/api/studio.html
+  :title: API Version 2
+
+.. raw:: html
+
+    or <a href="../../../../_static/api/studio.html" target="_blank">in a new tab</a>
+
+|
+|
 
 -------------
 API Version 1

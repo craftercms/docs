@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.2
+:last-updated: 4.0.3
 
 .. index:: Open Source Acknowledgements
 
@@ -194,6 +194,102 @@ bson4jackson
 **Package:** de.undercouch |br|
 **Dependency:** bson4jackson |br|
 **URL:** https://search.maven.org/artifact/de.undercouch/bson4jackson
+
+esapi
+^^^^^
+**Package:** org.owasp.esapi |br|
+**Dependency:** esapi |br|
+**URL:** https://search.maven.org/artifact/org.owasp.esapi/esapi
+
+xom
+^^^
+**Package:** xom |br|
+**Dependency:** xom |br|
+**URL:** https://search.maven.org/artifact/xom/xom
+
+commons-configuration
+^^^^^^^^^^^^^^^^^^^^^
+**Package:** commons-configuration |br|
+**Dependency:** commons-configuration |br|
+**URL:** https://search.maven.org/artifact/commons-configuration/commons-configuration
+
+bsh
+^^^
+**Package:** org.apache-extras.beanshell |br|
+**Dependency:** bsh |br|
+**URL:** https://search.maven.org/artifact/org.apache-extras.beanshell/bsh
+
+antisamy
+^^^^^^^^
+**Package:** org.owasp.antisamy |br|
+**Dependency:** antisamy |br|
+**URL:** https://search.maven.org/artifact/org.owasp.antisamy/antisamy
+
+neko-htmlunit
+^^^^^^^^^^^^^
+**Package:** net.sourceforge.htmlunit |br|
+**Dependency:** neko-htmlunit |br|
+**URL:** https://search.maven.org/artifact/net.sourceforge.htmlunit/neko-htmlunit
+
+httpclient5
+^^^^^^^^^^^
+**Package:** org.apache.httpcomponents.client5 |br|
+**Dependency:** httpclient5 |br|
+**URL:** https://search.maven.org/artifact/org.apache.httpcomponents.client5/httpclient5
+
+httpcore5-h2
+^^^^^^^^^^^^
+**Package:** org.apache.httpcomponents.core5 |br|
+**Dependency:** httpcore5-h2 |br|
+**URL:** https://search.maven.org/artifact/org.apache.httpcomponents.core5/httpcore5-h2
+
+httpcore5
+^^^^^^^^^
+**Package:** org.apache.httpcomponents.core5 |br|
+**Dependency:** httpcore5 |br|
+**URL:** https://search.maven.org/artifact/org.apache.httpcomponents.core5/httpcore5
+
+batik-css
+^^^^^^^^^
+**Package:** org.apache.xmlgraphics |br|
+**Dependency:** batik-css |br|
+**URL:** https://search.maven.org/artifact/org.apache.xmlgraphics/batik-css
+
+batik-shared-resources
+^^^^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.xmlgraphics |br|
+**Dependency:** batik-shared-resources |br|
+**URL:** https://search.maven.org/artifact/org.apache.xmlgraphics/batik-shared-resources
+
+batik-util
+^^^^^^^^^^
+**Package:** org.apache.xmlgraphics |br|
+**Dependency:** batik-util |br|
+**URL:** https://search.maven.org/artifact/org.apache.xmlgraphics/batik-util
+
+batik-constants
+^^^^^^^^^^^^^^^
+**Package:** org.apache.xmlgraphics |br|
+**Dependency:** batik-constants |br|
+**URL:** https://search.maven.org/artifact/org.apache.xmlgraphics/batik-constants
+
+batik-i18n
+^^^^^^^^^^
+**Package:** org.apache.xmlgraphics |br|
+**Dependency:** batik-i18n |br|
+**URL:** https://search.maven.org/artifact/org.apache.xmlgraphics/batik-i18n
+
+xmlgraphics-commons
+^^^^^^^^^^^^^^^^^^^
+**Package:** org.apache.xmlgraphics |br|
+**Dependency:** xmlgraphics-commons |br|
+**URL:** https://search.maven.org/artifact/org.apache.xmlgraphics/xmlgraphics-commons
+
+xml-apis-ext
+^^^^^^^^^^^^
+**Package:** xml-apis |br|
+**Dependency:** xml-apis-ext |br|
+**URL:** https://search.maven.org/artifact/xml-apis/xml-apis-ext
 
 jsoup
 ^^^^^
@@ -1113,12 +1209,6 @@ jcip-annotations
 **Dependency:** jcip-annotations |br|
 **URL:** https://search.maven.org/artifact/net.jcip/jcip-annotations
 
-bcel-findbugs
-^^^^^^^^^^^^^
-**Package:** com.google.code.findbugs |br|
-**Dependency:** bcel-findbugs |br|
-**URL:** https://search.maven.org/artifact/com.google.code.findbugs/bcel-findbugs
-
 jFormatString
 ^^^^^^^^^^^^^
 **Package:** com.google.code.findbugs |br|
@@ -1148,6 +1238,12 @@ AppleJavaExtensions
 **Package:** com.apple |br|
 **Dependency:** AppleJavaExtensions |br|
 **URL:** https://search.maven.org/artifact/com.apple/AppleJavaExtensions
+
+bcel
+^^^^
+**Package:** org.apache.bcel |br|
+**Dependency:** bcel |br|
+**URL:** https://search.maven.org/artifact/org.apache.bcel/bcel
 
 caffeine
 ^^^^^^^^
@@ -1280,12 +1376,6 @@ reactive-streams
 **Package:** org.reactivestreams |br|
 **Dependency:** reactive-streams |br|
 **URL:** https://search.maven.org/artifact/org.reactivestreams/reactive-streams
-
-antlr4-runtime
-^^^^^^^^^^^^^^
-**Package:** org.antlr |br|
-**Dependency:** antlr4-runtime |br|
-**URL:** https://search.maven.org/artifact/org.antlr/antlr4-runtime
 
 graphql-java-extended-scalars
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1611,6 +1701,18 @@ JavaEWAH
 **Dependency:** JavaEWAH |br|
 **URL:** https://search.maven.org/artifact/com.googlecode.javaewah/JavaEWAH
 
+tomcat-jasper-el
+^^^^^^^^^^^^^^^^
+**Package:** org.apache.tomcat |br|
+**Dependency:** tomcat-jasper-el |br|
+**URL:** https://search.maven.org/artifact/org.apache.tomcat/tomcat-jasper-el
+
+tomcat-el-api
+^^^^^^^^^^^^^
+**Package:** org.apache.tomcat |br|
+**Dependency:** tomcat-el-api |br|
+**URL:** https://search.maven.org/artifact/org.apache.tomcat/tomcat-el-api
+
 testng
 ^^^^^^
 **Package:** org.testng |br|
@@ -1808,36 +1910,6 @@ spring-data-commons
 **Package:** org.springframework.data |br|
 **Dependency:** spring-data-commons |br|
 **URL:** https://search.maven.org/artifact/org.springframework.data/spring-data-commons
-
-chemistry-opencmis-client-impl
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Package:** org.apache.chemistry.opencmis |br|
-**Dependency:** chemistry-opencmis-client-impl |br|
-**URL:** https://search.maven.org/artifact/org.apache.chemistry.opencmis/chemistry-opencmis-client-impl
-
-chemistry-opencmis-client-api
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Package:** org.apache.chemistry.opencmis |br|
-**Dependency:** chemistry-opencmis-client-api |br|
-**URL:** https://search.maven.org/artifact/org.apache.chemistry.opencmis/chemistry-opencmis-client-api
-
-chemistry-opencmis-commons-api
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Package:** org.apache.chemistry.opencmis |br|
-**Dependency:** chemistry-opencmis-commons-api |br|
-**URL:** https://search.maven.org/artifact/org.apache.chemistry.opencmis/chemistry-opencmis-commons-api
-
-chemistry-opencmis-commons-impl
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Package:** org.apache.chemistry.opencmis |br|
-**Dependency:** chemistry-opencmis-commons-impl |br|
-**URL:** https://search.maven.org/artifact/org.apache.chemistry.opencmis/chemistry-opencmis-commons-impl
-
-chemistry-opencmis-client-bindings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Package:** org.apache.chemistry.opencmis |br|
-**Dependency:** chemistry-opencmis-client-bindings |br|
-**URL:** https://search.maven.org/artifact/org.apache.chemistry.opencmis/chemistry-opencmis-client-bindings
 
 cxf-rt-frontend-jaxws
 ^^^^^^^^^^^^^^^^^^^^^
@@ -2162,4 +2234,10 @@ jose4j
 **Package:** org.bitbucket.b_c |br|
 **Dependency:** jose4j |br|
 **URL:** https://search.maven.org/artifact/org.bitbucket.b_c/jose4j
+
+zxcvbn
+^^^^^^
+**Package:** com.nulab-inc |br|
+**Dependency:** zxcvbn |br|
+**URL:** https://search.maven.org/artifact/com.nulab-inc/zxcvbn
 

@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. index:: Projects; Crafter Engine
 
@@ -23,15 +24,15 @@ Building content rich applications backed by CrafterCMS requires you use one of 
 
   .. include:: /includes/scripts-templates-security.rst
 
---------------------
-JavaScript Libraries
---------------------
+--------------
+JavaScript SDK
+--------------
 
 .. toctree::
     :maxdepth: 1
     :titlesonly:
 
-    javascript-libraries
+    javascript-sdk
 
 -------
 GraphQL

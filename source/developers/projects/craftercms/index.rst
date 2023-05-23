@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. index:: Projects; CrafterCMS
 
@@ -70,6 +71,8 @@ The CrafterCMS Authoring and Delivery scripts will help you on the basic startup
 +-------------------------+------------------------------------------------------------------------+
 || **Description**        || Main Script to start and stop all needed Services to have a           |
 ||                        || functional CrafterCMS *Authoring/Delivery Environment*                |
+||                        || To log the output of the script to a file, set the environment        |
+||                        || variable CRAFTER_SCRIPT_LOG to point to a log file                    |
 +-------------------------+------------------------------------------------------------------------+
 || **Synopsis**           || ``crafter.sh start|stop|debug|help``                                  |
 +-------------------------+------------------------------------------------------------------------+
@@ -647,7 +650,7 @@ Other Scripts
 
 For more information about Apache Tomcat, and Elasticsearch please refer to the following:
 
- * [Tomcat Script documentation](https://tomcat.apache.org/tomcat-8.5-doc/RUNNING.txt)
+ * [Tomcat Script documentation](https://tomcat.apache.org/tomcat-9.0-doc/RUNNING.txt)
  * [Elasticsearch Script documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/starting-elasticsearch.html)
 
 

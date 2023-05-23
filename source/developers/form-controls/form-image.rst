@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.0.3
 
 :orphan:
 
@@ -53,8 +53,6 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Related Data Sources  || * |imgUploadFromDesktop|                                             |
 ||                       || * |imgFromRepo|                                                      |
-||                       || * |imgFromCMIS|                                                      |
-||                       || * |imgUploadToCMIS|                                                  |
 ||                       || * |imgFromWebDAV|                                                    |
 ||                       || * |imgUploadToWebDAV|                                                |
 ||                       || * |imgFromS3|                                                        |
@@ -63,8 +61,6 @@ Configuration
 
 .. |imgUploadFromDesktop| replace:: :ref:`Image Uploaded from Desktop <form-source-image-desktop>`
 .. |imgFromRepo| replace:: :ref:`Image from Repository <form-source-image-repo>`
-.. |imgFromCMIS| replace:: :ref:`Image from CMIS Repository <form-source-cmis-image-repo>`
-.. |imgUploadToCMIS| replace:: :ref:`Image Uploaded to CMIS Repository <form-source-cmis-image-upload>`
 .. |imgFromWebDAV| replace:: :ref:`Image from WebDAV Repository <form-source-webdav-image-repo>`
 .. |imgUploadToWebDAV| replace:: :ref:`Image Uploaded to WebDAV Repository <form-source-webdav-image-upload>`
 .. |imgFromS3| replace:: :ref:`Image From S3 Repository <form-source-s3-image-repo>`

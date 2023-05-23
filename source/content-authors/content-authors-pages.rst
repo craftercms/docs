@@ -1,4 +1,5 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
 
 .. index:: Content Authors Working with Pages, Pages
 
@@ -10,6 +11,10 @@ Working with Pages
 
 This section describes how content authors can create and use pages to manage content.
 Templates are used for page layouts in CrafterCMS.  A developer usually creates the templates that authors can then use to manage content.
+
+.. raw:: html
+
+   <hr/>
 
 -------------
 Adding a Page
@@ -59,6 +64,10 @@ An error form will appear when you try to *Save and Close* without filling out a
     :align: center
     :alt: Content Author - Page Save Error
 
+.. raw:: html
+
+   <hr/>
+
 .. _editing-a-page:
 
 --------------
@@ -77,6 +86,9 @@ There are multiple ways to edit a page.
     :align: center
     :alt: Content Author - Edit a Page
 
+.. raw:: html
+
+   <hr/>
 
 ----------
 Versioning
@@ -127,6 +139,10 @@ There are a number of things that you can do in the Version History dialog.  On 
     :width: 75 %
     :align: center
     :alt: Content Author - Page History
+
+.. raw:: html
+
+   <hr/>
 
 ------------------
 Form based editing
@@ -326,6 +342,10 @@ The RTE (Rich Text Editor) is intended to provide an in-context editing experien
 
 There are a number of tools available from the RTE out of the box for editing your content.  Custom tools may also be added to the RTE, depending on your needs.  Please see the developer section :ref:`rte-configuration` of the docs for more details.
 
+.. raw:: html
+
+   <hr/>
+
 --------------
 Copying a Page
 --------------
@@ -352,3 +372,126 @@ Depending on how the page content type has been modeled (dependencies), copying 
 
 To learn more about these dependencies and see examples, see :ref:`item-specific-dependencies` or :ref:`copy-dependencies-configuration`.
 
+.. raw:: html
+
+   <hr/>
+
+---------------
+Deleting a Page
+---------------
+
+Users with permission to delete content can delete a page from a project.  To delete a page, in the Sidebar panel,
+click on the **Pages** folder.  Navigate to the level and location within the project navigation tree where you
+want to delete content, then click on the three dots next to the page and select **Delete**
+
+.. image:: /_static/images/page/page-delete-menu.webp
+   :width: 40 %
+   :align: center
+   :alt: Content Author - Delete Page Menu
+
+|
+
+A dialog confirming the action will appear.  Check the ``I understand that deleted items will be published immediately.``
+checkbox to enable the ``Delete`` button.
+
+.. image:: /_static/images/page/page-delete-dialog.webp
+   :width: 60 %
+   :align: center
+   :alt: Content Author - Delete Page Dialog
+
+|
+
+Click on the ``Delete`` button.  A snackbar at the bottom left of the screen will appear to inform you of the
+item deletion.
+
+.. image:: /_static/images/page/page-delete-snackbar.webp
+   :width: 40 %
+   :align: center
+   :alt: Content Author - Delete Page Snackbar
+
+|
+
+.. _disabling-a-page:
+
+^^^^^^^^^^^^^^^^
+Disabling a Page
+^^^^^^^^^^^^^^^^
+
+A page content type can be modeled to disable a page in content delivery via the reserved variable ``disabled``.
+This variable indicates an object is “hidden” in live and cannot be retrieved via services like search or the
+site item service.
+
+To model a content type that allows disabling a page, do the following:
+
+#. Open the content type you'd like to add ``disabled`` by opening the Sidebar, then clicking on
+   ``Project Tools`` -> ``Content Type``, then select the desired page content type
+#. Drag a ``Check Box`` control to the ``Page Property`` form section. Set the ``Title`` to something
+   descriptive, say ``Disable Page`` and remember that the ``Name/Variable Name`` value needs to be
+   set to ``disabled``.  Save your changes.
+
+Let's take a look at an example of a page content type with ``disabled`` and how the page appears in preview and
+in delivery.  We will be using a project created using the ``Website Editorial`` blueprint named
+``my-editorial`` for this example.
+
+We'll open the content type ``Article`` of the project.  Below is the ``Article`` content type modeled
+with ``disabled``, as described above.
+
+.. image:: /_static/images/page/page-disable-setup.webp
+   :width: 90 %
+   :align: center
+   :alt: Content Author - Content Type with disabled setup
+
+|
+
+Let's now disable an article in the project, then publish it and see how the project behaves in delivery when
+a page has been disabled.
+
+We'll disable the article ``10 Tips to Get a Six Pack``.  First, we'll take a look at how the ``Health``
+category page looks like with the article still enabled in Preview by opening the Sidebar, then clicking
+on the ``Home`` page then finally click on the ``Health`` category on the left-rail.:
+
+.. image:: /_static/images/page/page-enabled.webp
+   :width: 60 %
+   :align: center
+   :alt: Content Author - Article "10 Tips to Get a Six Pack" enabled
+
+|
+
+Notice above that there are three articles listed in the ``Health`` category page and it contains the
+article that we are now going to disable.  To disable the page ``10 Tips to Get a Six Pack``, open the
+Sidebar, then navigate to ``/articles/2021/2/``.  Click on the three dots next to the article then select
+``Edit``, which will open a form allowing us to edit the article.  Once the form opens, put a checkmark
+on the ``Disable Page`` field under the ``Page Properties`` section then save your changes.
+
+.. image:: /_static/images/page/page-disable-article.webp
+   :width: 60 %
+   :align: center
+   :alt: Content Author - Disable article "10 Tips to Get a Six Pack"
+
+|
+
+Preview the ``Home`` page and click on the ``Health`` category on the left-rail.  Notice that the article we
+disabled is not listed in the preview.  Note too that on the Sidebar, the article we disabled will have
+a red circle with a slash on it indicating that the page is disabled.
+
+.. image:: /_static/images/page/page-disabled.webp
+   :width: 60 %
+   :align: center
+   :alt: Content Author - Article "10 Tips to Get a Six Pack" disabled
+
+|
+
+Finally, we'll publish the changes we made to the article and verify that in delivery, the article we
+disabled is not available/accessible.  To publish your changes, on the Sidebar, click on the three dots
+next to the article we just edited, then select ``Publish``.  A Publish dialog will appear.  Check the
+information in the dialog and make changes as required, then click on the ``Publish`` button.
+
+In your browser, go to ``localhost:9080?crafterSite=my-editorial`` to view your project in delivery.  Next,
+we'll view the ``Health`` category page and verify that the article ``10 Tips to Get a Six Pack`` is not listed:
+
+.. image:: /_static/images/page/page-disabled-in-live.webp
+   :width: 60 %
+   :align: center
+   :alt: Content Author - Article "10 Tips to Get a Six Pack" disabled
+
+|

@@ -12,7 +12,7 @@ Debugging Search Issues
 How Search Works
 ----------------
 
-.. include:: /includes/how-search-works-es.rst
+.. include:: /includes/how-search-works.rst
 
 --------------------------------------
 Places Search Indexing Can Get Hung Up

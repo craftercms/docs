@@ -111,7 +111,7 @@ Here, the segment **Gal** is selected.  Again, notice the articles available on 
 |
 
 As mentioned above, you can setup/configure as many attributes as needed to target your content
-and for more information.  Please see the sections on targeting,  :ref:`newIa-targeting` in the
+and for more information.  Please see the sections on targeting, :ref:`newIa-targeting` in the
 developers section of the documentation and :ref:`newIa-targeting-configuration`  and
 :ref:`newIa-targeting-guide` in the site administrators section of the documentation
 for more information.

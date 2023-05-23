@@ -1,7 +1,9 @@
 :is-up-to-date: True
+:last-updated: 4.0.3
+
 :nosearch:
 
-..  _newIa-developers:
+..  _newIa-developer:
 
 **********
 Developers
@@ -21,16 +23,20 @@ The following gets you started with content modeling, content retrieval, and mor
    :maxdepth: 1
    :titlesonly:
 
+   composable/index
    headless/index
    templated/index
-   extensions/index
-   working-with-crafter-studios-api
-   working-with-filters
-   working-with-dates-groovy
+   devcontentops/index
+   upgrade/index
 
 |
 
-   .. include:: /includes/scripts-templates-security.rst
+.. raw:: html
+
+   <hr>
+
+
+**Content Inheritance**
 
 CrafterCMS also supports content inheritance out of the box, and supports it via a pluggable mechanism
 that allows developers to augment or override what’s out of the box. Below is more information on
@@ -40,20 +46,15 @@ content inheritance:
    :maxdepth: 1
    :titlesonly:
 
-   content-inheritance
+   common/content-modeling/content-inheritance
 
 |
 
-To search for content in your project:
+.. raw:: html
 
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
+   <hr>
 
-   content-search
-
-|
-|
+**Targeting**
 
 CrafterCMS allows content targeting by providing the ability to render content adapted to specific users,
 depending on different aspects like geographical location, language, preferences, etc.
@@ -62,37 +63,31 @@ depending on different aspects like geographical location, language, preferences
    :maxdepth: 1
    :titlesonly:
 
-   targeting
+   templated/targeting
 
 |
 |
+
+.. raw:: html
+
+   <hr>
+
+**Logs**
 
 While developing your project, there are times when you’d like to see more log details, to figure out what
 is happening and address it as needed.  Overriding the logging levels allows you to see more or less
 details depending on your needs.
 
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
+Learn more about :ref:`newIa-logging`.
 
-   override-logging-levels
+|
 
+.. raw:: html
 
+   <hr>
 
+**More Resources**
 
-CrafterCMS supports content authoring, publishing and developer workflow and how to configure
-and implement it, the basic mechanics of DevContentOps.
-
-The following looks at the developer workflow in depth:
-
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-
-   developer-workflow/index
-
-
-Crafter Studio is designed as a framework that supports extension.  To extend Studio, use :ref:`plugins <newIa-plugins>`.
 Below is a short set of links to other documentation for technology that CrafterCMS leverages:
 
 +----------------+------------------------------+-----------------------------------------------+

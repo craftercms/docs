@@ -9,7 +9,7 @@
 Building Form Engine Control Project Plugins
 ============================================
 
-Crafter Studio allows plugins for form engine controls through the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile`
+Crafter Studio allows plugins for form engine controls through the ``getPluginFile`` API found here :base_url:`getPluginFile <_static/api/studio.html#tag/plugin/operation/getPluginFile>`
 
 -----------------
 What is a Control
@@ -35,7 +35,7 @@ The anatomy of a Control Project Plugin
 
 Form Engine Control consist of (at a minimum)
 
-* A single javascript file which implements the control interface.
+* A single JavaScript file which implements the control interface.
 
     * The JS file name and the control name in the configuration does not need to be the same.  The JS file name can be any meaningful name, different from the control name in the configuration.
 

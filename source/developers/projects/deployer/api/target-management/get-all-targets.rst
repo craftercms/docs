@@ -43,18 +43,20 @@ Response
 
   [
     {
-      "env": "dev",
-      "siteName": "mysite",
-	  "id" : "mysite-dev",
-	  "load_date" : "2017-01-26T10:00:1.234-05:00"
+        "load_date": "2023-03-30T13:24:36.042181-04:00",
+        "env": "preview",
+        "site_name": "hi",
+        "status": "INIT_COMPLETED",
+        "id": "hi-preview"
     },
     {
-      "env": "dev",
-      "siteName": "mysite",
-	  "id" : "yoursite-dev",
-	  "load_date" : "2017-01-01T11:00:5.678-05:00"
+        "load_date": "2023-03-31T09:48:48.214383-04:00",
+        "env": "preview",
+        "site_name": "third",
+        "status": "INIT_COMPLETED",
+        "id": "third-preview"
     }
-  ]
+]
 
 ---------
 Responses

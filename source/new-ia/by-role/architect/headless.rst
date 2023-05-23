@@ -33,7 +33,7 @@ CrafterCMS supports a number of APIs to access content for headless applications
 
 * :ref:`ReST API <newIa-rest-api>`
 * :ref:`GraphQL <newIa-graphql>`
-* :ref:`Search API <newIa-search-elasticsearch>`
+* :ref:`Search API <newIa-search>`
 * :ref:`Custom API <newIa-groovy-api>`
 
 -----------
@@ -79,4 +79,4 @@ In-Context Editing
 CrafterCMS provides an SDK that lets developers focused on a headless use-case add the tools content authors expect,
 like visual in-context and in-place editing of Web content regardless of the development platform and tools.
 
-More information on Experience Builder :ref:`here <newIa-headless-xb>` and on the SDK `here <https://www.npmjs.com/package/@craftercms/experience-builder>`__
+More information on Experience Builder :ref:`here <newIa-xb>` and on the SDK `here <https://www.npmjs.com/package/@craftercms/experience-builder>`__

@@ -9,7 +9,7 @@
 Building Form Engine Data Source Project Plugins
 ================================================
 
-Crafter Studio allows plugins for form engine data sources through the ``getPluginFile`` API found here :studio_swagger_url:`#/plugin/getPluginFile`
+Crafter Studio allows plugins for form engine data sources through the ``getPluginFile`` API found here :base_url:`getPluginFile <_static/api/studio.html#tag/plugin/operation/getPluginFile>`
 
 ---------------------
 What is a Data Source
@@ -34,7 +34,7 @@ The anatomy of a Data Source Project Plugin
 
 Data Sources consist of (at a minimum)
 
-* A single javascript file which implements the data source interface.
+* A single JavaScript file which implements the data source interface.
 
 	* The JS file name and the data source name in the configuration does not need to be the same.  The JS file name can be any meaningful name, different from the data source name in the configuration.
 

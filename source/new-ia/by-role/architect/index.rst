@@ -1,12 +1,12 @@
 :is-up-to-date: False
-:since-version: 4.0.0
+:last-updated: 4.0.3
 :nosearch:
 
 .. _newIa-architect:
 
-=========
-Architect
-=========
+=================
+For the Architect
+=================
 
 .. General Architecture
    Deployment Architecture
@@ -29,7 +29,8 @@ This section details key concepts for CrafterCMS experience architects
    :maxdepth: 2
 
    general-architecture
-   deployment-architecture/index
+   deployment-architecture
+   composable
    headless
    templated
    availability

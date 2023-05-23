@@ -47,6 +47,9 @@ Who uses CrafterCMS
 ===================
 
 .. todo: Fill in
+   developers
+   devOps
+   authors
 
 ===
 FAQ
@@ -139,11 +142,7 @@ What's CrafterCMS's licensing terms?
    :maxdepth: 3
 
    getting-started/index
-   by-role/architect/index
-   by-role/author/index
-   by-role/developer/index
-   by-role/site-admin/index
-   by-role/system-admin/index
+   by-role/index
    security/index
    release-notes/index
    contribute/index

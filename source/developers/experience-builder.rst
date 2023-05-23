@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:since-version: 4.0.0
+:last-updated: 4.1.0
 
 .. index:: Experience Builder, In-Context Editing, ICE
 
@@ -8,6 +8,9 @@
 ==================
 Experience Builder
 ==================
+.. version_tag::
+   :label: Since
+   :version: 4.0.0
 
 CrafterCMS' Experience Builder (XB) provides a UI layer on top of your applications that enables authors
 with in-context editing (ICE) for all the model fields defined in the content types of pages and components.
@@ -421,7 +424,7 @@ In that case, you'll need to invoke ``initExperienceBuilder`` manually.
      - Optional as it defaults to :ref:`modePreview <printIfPreview>` FreeMarker context variable. When isAuthoring=false, in context editing is skipped all together. Meant for running in production.
    * - props
      - JS object string
-     - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string, the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter's JavaScript libraries initialization.
+     - This is passed directly to the JavaScript runtime. Though it should be passed to the macro as a string, the contents of the string should be a valid JavaScript object. Use it to configure/customize Crafter's JavaScript SDK initialization.
 
 When invoked, ``initExperienceBuilder`` returns an object with an ``unmount`` prop/function, which
 would indeed `unmount` XB from the current page.
@@ -502,25 +505,54 @@ The following tags are available:
 Examples
 ########
 
-In a component template no ``$field`` is necessary for the component root tag as it is not a field; it's
-a model. Also, no ``$model`` since by default it already uses ``contentModel``; and, no ``$index`` since it's not
-an item of a collection.
+In this first example:
+
+ - The template's model root tag has no ``$field`` parameter as it is not a field; it represents the model itself.
+ - Specifying ``$model`` is not required in most cases because by default the macros use the ``model`` variable
+   (set automatically by the system on the rendering template's scope, containing the current template's model).
+ - Finally the ``$index`` parameter is not used in either tags, since neither is an item of a collection.
 
 .. code-block:: text
    :emphasize-lines: 1
 
    <@crafter.section>
-     <@crafter.h1 $field="heading_t">${contentModel.heading_t}</@crafter.h1>
+     <@crafter.h1 $field="heading_t">${model.heading_t}</@crafter.h1>
    </@crafter.section>
 
-In this example, a dynamic tag is used to print the tag from the actual content model.
+In this example, the html tag is printed dynamically using what's specified on the content model.
 
 .. code-block:: text
    :emphasize-lines: 1
 
    <@crafter.tag $tag=(contentModel.headingLevel_s!'h2')>
-     <@crafter.span $field"text_s">${contentModel.text_s}</@crafter.span>
+     <@crafter.span $field"text_s">${model.text_s}</@crafter.span>
    </@crafter.tag>
+
+Auto-print
+##########
+
+The example below, uses the short-hand auto-print expression. The colon at the end of the field id,
+instructs the system to print the value of that field for you.
+
+.. code-block:: text
+
+   <@crafter.h1 $field"title_t:" />
+                             -^- notice the `:`
+
+The above is equivalent to ``<@crafter.h1 $field"title_t">${model.title_t!""}</@crafter.h1>``. By default,
+auto-print renders to the ``innerHTML``, but you can print to an attribute by putting the target attribute
+after the colon.
+
+.. code-block:: text
+
+   <@crafter.img $field"image_s:src" />
+
+Note the ``@crafter.img`` macro automatically prints to ``src`` when you don't supply the render target; hence,
+``<@crafter.img $field"image_s:" />`` is equivalent to ``<@crafter.img $field"image_s:src" />``.
+
+
+.. note::
+   Auto-print can only be used to print top-level model field values.
 
 .. _renderComponentCollection:
 
