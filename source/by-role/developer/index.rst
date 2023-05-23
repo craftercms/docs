@@ -1,7 +1,5 @@
-:is-up-to-date: True
-:last-updated: 4.0.3
-
-
+:is-up-to-date: False
+:last-updated: 4.1.0
 
 ..  _developer:
 
@@ -23,9 +21,9 @@ The following gets you started with content modeling, content retrieval, and mor
    :maxdepth: 2
    :titlesonly:
 
-   composable/index
    headless/index
    templated/index
+   composable/index
    devcontentops/index
    upgrade/index
 

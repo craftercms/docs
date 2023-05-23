@@ -1,6 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.0
-
+:last-updated: 4.1.0
 
 .. _author:
 
@@ -70,16 +69,4 @@ Here we'll take a look at the tools provided by Crafter Studio for creating/mana
    authors-workflows
    authors-xb
 
---------
-Examples
---------
-
-Here we'll take a look at examples of authors at work.
-
-.. todo: add examples
-
-.. toctree::
-   :maxdepth: 2
-
-   authors-pages
 
