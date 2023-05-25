@@ -1,8 +1,9 @@
-:is-up-to-date: True
-:last-updated: 4.0.0
-
+:is-up-to-date: False
+:last-updated: 4.1.0
 
 .. _authoring-env-performance-tuning:
+
+.. TODO: Add Studio and Deployer performance tuning parameters
 
 ========================================
 Authoring Environment Performance Tuning

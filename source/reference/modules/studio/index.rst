@@ -144,12 +144,7 @@ Crafter Studio supports creating multiple environments with different configurat
    studio/multi-environment-configurations
 
 
-CrafterCMS supports managing assets in external storage through workflow and publishing mechanics.  For more information, see below:
-
-.. toctree::
-   :maxdepth: 1
-
-   studio/publishing-assets-in-external-storage
+CrafterCMS supports managing assets in external storage through workflow and publishing mechanics.  For more information, see :ref:`blob-stores`.
 
 |hr|
 
