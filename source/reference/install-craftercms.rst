@@ -1,3 +1,8 @@
+:is-up-to-date: False
+:since-version: 4.1.0
+
+..  _install-craftercms:
+
 ==================
 Install CrafterCMS
 ==================
@@ -100,8 +105,7 @@ Stop CrafterCMS
 Login to Crafter Studio
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-   .. _accessing-crafter-studio:
-
+.. include:: /includes/accessing-crafter-studio.rst
 
 
    After logging in, you should be redirected to the ``Projects`` screen, and you're now ready to create your first experience!
