@@ -42,7 +42,7 @@ Verify Java Version
 ~~~~~~~~~~~~~~~~~~~
 
 Ensure that you are running Java 17.  To check,
-run the following command at the command prompt and make sure that the version displayed is Java 11:
+run the following command at the command prompt and make sure that the version displayed is Java 17:
 
 .. code-block:: sh
 
@@ -57,8 +57,6 @@ The command above should output something like this:
     openjdk version "17.0.6"
 
 |
-
-.. _verify-java-home-env-var:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Verify JAVA_HOME environment variable is set correctly
@@ -122,7 +120,6 @@ The following browsers are supported:
     - Firefox
     - MS Edge
 
-.. _prerequisites:
 
 ^^^^^^^^^^^^^
 Prerequisites

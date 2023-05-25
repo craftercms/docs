@@ -11,53 +11,45 @@ CrafterCMS requires you use one of the following APIs to gain access to your con
 * Groovy (great for full control of the API endpoints and response shape) :ref:`groovy-api`
 * Java (can be accessed from Groovy and gives full access to Engine) :ref:`javadoc`
 
-.. list-table::
-   :header-rows: 1
+.. |js_sdk_desc| replace:: The JavaScript SDK allows access to CrafterCMS services from any SPA framework or direct JavaScript. The SDK also enables Experience Builder (In-Content Editing capabilities) for any project, including SPA projects.
+.. |graphql_desc| replace:: The GraphQL API allows content retrieval and control over the shape of the response.
+.. |rest_api_desc| replace:: The REST API allows content retrieval using the default REST API endpoints, and also allows the developer to define custom endpoints with full control over the shape of the response. To create custom endpoints, see the Groovy API indicated below.
+.. |search_desc| replace:: The search API allows full text search, filtering, ranking and boosting across the entire project.
+.. |groovy_desc| replace:: The Groovy API allows for writing server-side code that can perform business logic, content operations, and more. This layer also allows the developer to create custom REST endpoints with full control over the shape of the response.
+.. |static_asset_desc| replace:: The Static Asset Access allows the developer to access static assets (images, videos, etc.) from internally managed or externally managed repositories.
+.. |freemarker_desc| replace:: The FreeMarker API allows access to CrafterCMS services from FreeMarker templates for server-side rendered projects.
 
-    * - Project Type
-      - API
-      - Description
-      - Link
-    * - Headless
-      - JavaScript SDK
-      - The JavaScript SDK allows access to CrafterCMS services from any SPA framework or direct JavaScript. The SDK also enables Experience Builder (In-Content Editing capabilities) for any project, including SPA projects.
-      - :ref:`javascript-sdk`
-    * -
-      - GraphQL
-      - The GraphQL API allows content retrieval and control over the shape of the response.
-      - :ref:`graphql`
-	* -
-      - REST API
-      - The REST API allows content retrieval using the default REST API endpoints, and also allows the developer to define custom endpoints with full control over the shape of the response. To create custom endpoints, see the Groovy API indicated below.
-      - :ref:`rest-content-retrieval-api`
-    * -
-      - Search
-      - The search API allows full text search, filtering, ranking and boosting across the entire project.
-      - :ref:`search`
-	* -
-      - Groovy
-      - The Groovy API allows for writing server-side code that can perform business logic, content operations, and more. This layer also allows the developer to create custom REST endpoints with full control over the shape of the response.
-      - :ref:`groovy-api` and :ref:`javadoc`
-	* -
-      - Static Asset Access
-      - The Static Asset Access allows the developer to access static assets (images, videos, etc.) from internally managed or externally managed repositories.
-      - :ref:`static-content-access`
-    * - Templated
-	  - FreeMarker
-      - The FreeMarker API allows access to CrafterCMS services from FreeMarker templates for server-side rendered projects.
-      - :ref:`templating-api`
-	* -
-      - Search
-      - The search API allows full text search, filtering, ranking and boosting across the entire project.
-      - :ref:`search`
-	* -
-      - Groovy
-      - The Groovy API allows for writing server-side code that can perform business logic, content operations, and more. This layer also allows the developer to create custom REST endpoints with full control over the shape of the response.
-      - :ref:`groovy-api` and :ref:`javadoc`
-	* -
-      - Static Asset Access
-      - The Static Asset Access allows the developer to access static assets (images, videos, etc.) from internally managed or externally managed repositories.
-      - :ref:`static-content-access`
+.. |js_sdk_link| replace:: :ref:`javascript-sdk`
+.. |graphql_link| replace:: :ref:`graphql`
+.. |rest_api_link| replace:: :ref:`rest-content-retrieval-api`
+.. |search_link| replace:: :ref:`search`
+.. |groovy_link| replace:: :ref:`groovy-api` and :ref:`javadoc`
+.. |static_asset_link| replace:: :ref:`static-content-access`
+.. |freemarker_link| replace:: :ref:`templating-api`
+
++--------------+---------------------+----------------------------------+---------------------+
+| Project Type | API                 | Description                      | Link                |
++==============+=====================+==================================+=====================+
+| Headless     | Javascript SDK      | |js_sdk_desc|                    | |js_sdk_link|       |
+|              +---------------------+----------------------------------+---------------------+
+|              | GraphQL             | |graphql_desc|                   | |graphql_link|      |
+|              +---------------------+----------------------------------+---------------------+
+|              | REST API            | |rest_api_desc|                  | |rest_api_link|     |
+|              +---------------------+----------------------------------+---------------------+
+|              | Search              | |search_desc|                    | |search_link|       |
+|              +---------------------+----------------------------------+---------------------+
+|              | Groovy              | |groovy_desc|                    | |groovy_link|       |
+|              +---------------------+----------------------------------+---------------------+
+|              | Static Asset Access | |static_asset_desc|              | |static_asset_link| |
++--------------+---------------------+----------------------------------+---------------------+
+| Templated    | FreeMarker          | |freemarker_desc|                | |freemarker_link|   |
+|              +---------------------+----------------------------------+---------------------+
+|              | Search              | |search_desc|                    | |search_link|       |
+|              +---------------------+----------------------------------+---------------------+
+|              | Groovy              | |groovy_desc|                    | |groovy_link|       |
+|              +---------------------+----------------------------------+---------------------+
+|              | Static Asset Access | |static_asset_desc|              | |static_asset_link| |
++--------------+---------------------+----------------------------------+---------------------+
 
 .. Note::
     You can use the REST API in Templated projects to perform content operations via JavaScript as needed
