@@ -1,0 +1,46 @@
+.. index:: CrafterCMS 4.0.4 Release Notes
+
+----------------
+CrafterCMS 4.0.4
+----------------
+
+*Released TBD*
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Upgraded various libraries and dependencies
+
+Lots of other small enhancements and bug fixes :)
+
+For a full list of tickets, please visit: `GitHub 4.0.4 Milestone <https://github.com/craftercms/craftercms/milestone/100?closed=1>`_
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+.. important::
+
+    Please see :ref:`Breaking changes <breaking-changes-4-0-3>` for breaking changes and other
+    things to consider before upgrading
+
+    Please see :ref:`Breaking changes <breaking-changes-4-0-0>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install to 4.0.0 (applies to 4.0.2),
+    please see :ref:`upgrading-craftercms`
+
+    When using private key SSH authentication in the ``init-site.sh`` script, the private key path must be set explicitly. |br|
+    Please see :ref:`newIa-setup-project-for-delivery` for more information on using the ``-k`` option of ``init-site.sh`` to
+    set the private key path
+
+    For Linux installs, the Studio upgrade requires the library ``libaio`` which is not installed
+    by default in some Linux distributions.  Please see the section on **Linux Prerequisites**
+    in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+|
+|
+
+.. raw:: html
+
+   <hr>
+
