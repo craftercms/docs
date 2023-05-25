@@ -1,17 +1,13 @@
 :is-up-to-date: False
 
 
-.. index:: Your First Project
+.. index:: Your First Project (templated), templated project
 
 .. _your-first-editorial-project:
 
 ==============================
 Your First Project (templated)
 ==============================
-
-.. Section outline
-   14.4.2 Site Example (P)
-   14.4.2.1 Editorial
 
 In this section, we will create a project using an out-of-the-box blueprint called "Website Editorial" and show you:
 
@@ -36,7 +32,7 @@ After logging in, you'll see the Projects screen (Below).  Click on **Create Pro
 
 |
 
-In the **Create Project** screen, the user is presented with the available blueprints or the option to use a remote Git repository instead of selecting a blueprint from the list.  To see all available blueprints, scroll through the dialog to see ``Private Blueprints`` which contains default blueprints available out of the box from Crafter Studio including the option to use a remote Git repository to create a new project, and ``Public Marketplace`` blueprints which contains blueprints submitted to the `Crafter Marketplace GitHub App <https://github.com/marketplace/crafter-marketplace>`__
+In the **Create Project** screen, the user is presented with the available blueprints or the option to use a remote Git repository instead of selecting a blueprint from the list.  To see all available blueprints, scroll through the dialog to see the default blueprints available out of the box from Crafter Studio including the option to use a remote Git repository to create a new project, and ``Public Marketplace`` blueprints which contains blueprints submitted to the `Crafter Marketplace GitHub App <https://github.com/marketplace/crafter-marketplace>`__
 
 We're going to be using the "Website Editorial Blueprint".  Blueprints offer you a starting point for your website. New blueprints can be created and installed into the system.  Click on **Use** for the "Website Editorial Blueprint".
 
@@ -143,7 +139,7 @@ Here's the project, with our newly created article in the featured section.
 .. image:: /_static/images/first-project/first-project-home-page.webp
    :width: 100 %
    :align: center
-   :alt: Your First Webproject - Newly Created project Home Page
+   :alt: Your First Website - Newly Created project Home Page
 
 |
 
