@@ -37,8 +37,7 @@ can render the final page. The choice of HTML tools and frameworks doesn't matte
 Developers can use whatever front-end technology they want. For development React, Vue, Angular, Flutter
 or similar SPA, please see :ref:`here <developer-headless>`
 
-When you're ready for development, and if you use Docker, review :ref:`local-dev-with-docker`.
-
+For local development, you'll need to install CrafterCMS locally and that's best done via the local bundle. Instructions on how to do that are in :ref:`install-craftercms-via-binary-bundles`. Other options include running CrafterCMS in :ref:`Docker <local-dev-with-docker>` or installing CrafterCMS `from source <https://github.com/craftercms/craftercms>`_.
 The following details building templated projects, its purpose and examples.
 
 .. toctree::

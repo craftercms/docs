@@ -46,6 +46,8 @@ Docker Compose
 
 |hr|
 
+.. _install-craftercms-via-binary-bundles:
+
 ------------------------
 Pre-built Binary Bundles
 ------------------------

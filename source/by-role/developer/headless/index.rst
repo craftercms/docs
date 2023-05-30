@@ -15,7 +15,7 @@ transformed content to the caller as JSON.
 This section details how you can model any type of content, provide your content authors the ability to visually
 author content items and then retrieve that content for your SPA, iOS, Android or other applications.
 
-When you're ready for development, and if you use Docker, review :ref:`local-dev-with-docker`.
+For local development, you'll need to install CrafterCMS locally and that's best done via the local bundle. Instructions on how to do that are in :ref:`install-craftercms-via-binary-bundles`. Other options include running CrafterCMS in :ref:`Docker <local-dev-with-docker>` or installing CrafterCMS `from source <https://github.com/craftercms/craftercms>`_.
 
 .. toctree::
     :maxdepth: 1

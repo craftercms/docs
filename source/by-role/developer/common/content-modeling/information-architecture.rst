@@ -24,6 +24,36 @@ Information Architecture
 ``/static-assets/css`` or js, ... is managed by developers
 ``static-assets/app`` is where deployed SPA applications end up
 
+.. list-table::
+    :widths: 25 75
+    :header-rows: 1
+
+    * - Folder
+      - Purpose
+    * - `/site`
+      - Project/site content
+    * - `/site/website`
+        - Pages (for templated/page-based sites)
+    * - `/site/components`
+        - Components
+    * - `/site/taxonomy`
+        - Taxonomy
+    * - `/static-assets`
+        - Static assets
+    * - `/static-assets/app`
+        - SPA applications
+    * - `/templates`
+        - Templates (FreeMarker view templates for templated sites)
+    * - `/scripts`
+        - Scripts (Groovy scripts)
+    * - `/sources`
+        - Source files (e.g. SPA, Sass, etc.)
+    * - `/config`
+        - Configuration files
+    * - `/config/studio`
+        - Studio configuration files
+    * - `/config/engine`
+        - Engine configuration files
 
 --------------
 Best Practices
