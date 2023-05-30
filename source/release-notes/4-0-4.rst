@@ -25,10 +25,10 @@ For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1
 
 .. important::
 
-    Please see :ref:`Breaking changes <breaking-changes-4-0-3>` for breaking changes and other
+    Please see :ref:`Breaking changes in 4.0.3 <breaking-changes-4-0-3>` for breaking changes and other
     things to consider before upgrading
 
-    Please see :ref:`Breaking changes <breaking-changes-4-0-0>` for breaking changes and other
+    Please see :ref:`Breaking changes in 4.0.0 <breaking-changes-4-0-0>` for breaking changes and other
     things to consider before upgrading
 
     For instructions on how to update your CrafterCMS install to 4.0.0 (applies to 4.0.4),
