@@ -45,7 +45,7 @@ Information Architecture
     * - `/templates`
         - Templates (FreeMarker view templates for templated sites)
     * - `/scripts`
-        - Scripts (Groovy scripts)
+        - Scripts (Groovy scripts, custom REST APIs, etc.)
     * - `/sources`
         - Source files (e.g. SPA, Sass, etc.)
     * - `/config`

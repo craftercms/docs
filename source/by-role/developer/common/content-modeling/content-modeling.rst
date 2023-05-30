@@ -1393,9 +1393,9 @@ As you can see from the controller we just added, the controller is used to cust
 
 .. _content-type-component:
 
-^^^^^^^^^^^^^^^^^^^^^^
-Component Content Type
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Component Content Type Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Component content type templates are very similar to page content type templates, as mentioned in :ref:`content-modeling`, the only difference between components and pages is that components cannot render by itself, it needs a container to render into.  In this section, we will look at the component content type, **Component - Articles Widget** found in the Website_Editorial blueprint that shows you how to create a component content type that can be rendered in the sidebar.
 
