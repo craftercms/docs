@@ -15,7 +15,9 @@ Updates
 * Fixed issue with page history when page contains an É, é (e-acute) entity |br|
   See `here <https://github.com/craftercms/craftercms/issues/6003>`__ for more information
 
-* Fixed issue with SAML not re-authenticating users via the Open Login Form after a Session Expired
+* Fixed issue with SAML not re-authenticating users via the Open Login Form after a Session Expired |br|
+
+* Fixed issue with site creation if write takes place while creation is still in process |br|
 
 * Upgraded various libraries and dependencies
 
