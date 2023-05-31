@@ -76,7 +76,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
      |
 
-   We will redirect the page to ``/articles/2021/12/Top Books For Young Women`` when the page ``/articles/2020/12/Top Books For Young Women`` is previewed.  Copy the following inside the ``urlrewrite.xml`` file.
+   We will redirect the page to ``/articles/2021/12/Top Books For Young Women`` when the page ``/articles/2020/12/Top Books For Young Women`` is previewed. Copy the following inside the ``urlrewrite.xml`` file.
 
      .. code-block:: xml
         :linenos:
@@ -92,7 +92,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
      |
 
-   For our example, the folder ``articles/2020/12`` was copied to ``articles/2021`` with the page under ``articles/2021/12``, modified to display the title as a dupe.  This was done so when we click on the page under ``articles/2020/12``, we can easily tell that it's being redirected to the page under ``articles/2021/12``.  Of course, you can also just look at the url of the page previewed to verify that it was redirected to the right page.
+   For our example, the folder ``articles/2020/12`` was copied to ``articles/2021`` with the page under ``articles/2021/12``, modified to display the title as a dupe. This was done so when we click on the page under ``articles/2020/12``, we can easily tell that it's being redirected to the page under ``articles/2021/12``. Of course, you can also just look at the url of the page previewed to verify that it was redirected to the right page.
 
    .. image:: /_static/images/site-admin/env-copy-page-for-urlrewrite.webp
        :align: center
@@ -137,7 +137,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
       |
 
-#. Restart Crafter.  To verify our newly setup environment, open the ``Sidebar`` and click on |projectTools|, then select ``Configuration``.  Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations drop-down box and when you select the *Engine URL Rewrite Configuration (XML Style)*, it should display the file we created in one of the previous step:
+#. Restart Crafter. To verify our newly setup environment, open the ``Sidebar`` and click on |projectTools|, then select ``Configuration``. Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations drop-down box and when you select the *Engine URL Rewrite Configuration (XML Style)*, it should display the file we created in one of the previous step:
 
    .. image:: /_static/images/site-admin/env-custom-configurations.webp
       :align: center
@@ -145,7 +145,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
    |
 
-   Let's verify that our *urlrewrite.xml* is in effect.  From the *Sidebar*, click on *Home* -> *Entertainment* -> *Top Books For Young Women*  or, navigate to */articles/2020/12/* and click on *Top Books For Young Women*.
+   Let's verify that our *urlrewrite.xml* is in effect. From the *Sidebar*, click on *Home* -> *Entertainment* -> *Top Books For Young Women*  or, navigate to */articles/2020/12/* and click on *Top Books For Young Women*.
 
    .. image:: /_static/images/site-admin/env-preview-page.webp
       :align: center
@@ -186,7 +186,7 @@ specific configuration files where ``{myCustomEnv}`` is the name of your environ
 Example
 ^^^^^^^
 
-Say we're setting up SAML2 files for an environment named ``dev``.  Using the format mentioned above, our environment
+Say we're setting up SAML2 files for an environment named ``dev``. Using the format mentioned above, our environment
 specific SAML2 files will be the following:
 
 - ``/config/engine/saml2/keystore-dev.jks``

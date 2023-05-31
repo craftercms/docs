@@ -60,7 +60,7 @@ Fixing the Sync Failure
 
 The first thing to do when a sync failure happens is to figure out whether the sync failure is in the DB or Git.
 The email sent to configured recipients when the sync failure happened will indicate whether it's a DB or a Git
-sync failure.  From the logs, you can also determine if it was a DB or a Git sync failure.
+sync failure. From the logs, you can also determine if it was a DB or a Git sync failure.
 
 ^^^^^^^^^^^^^^^
 DB sync failure
@@ -84,7 +84,7 @@ as seen :ref:`above <authoring-cluster-troubleshooting-git-sync-fail-log>` and t
 
 Before performing any valid intervention on the database, it will need to be started first, then the user needs to login.
 
-#. The first thing that needs to be done is to start the database.  To start the database, run the following:
+#. The first thing that needs to be done is to start the database. To start the database, run the following:
 
    .. code-block:: bash
 
@@ -128,7 +128,7 @@ Before performing any valid intervention on the database, it will need to be sta
 
    |
 
-   The <db_root_user> by default is ``root`` with password set to ``root`` or empty.  Remember to replace
+   The <db_root_user> by default is ``root`` with password set to ``root`` or empty. Remember to replace
    <db_root_user> with the actual ``root`` user (MARIADB_ROOT_USER) value and enter the actual password
    (MARIADB_ROOT_PASSWD) value used in your system, which can be found in the ``crafter-setenv.sh`` file
    under the ``CRAFTER_HOME/bin`` folder.
@@ -139,7 +139,7 @@ Before performing any valid intervention on the database, it will need to be sta
 
       ./mysql -u root -p --socket=/tmp/MariaDB4j.33306.sock
       Enter password:
-      Welcome to the MariaDB monitor.  Commands end with ; or \g.
+      Welcome to the MariaDB monitor. Commands end with ; or \g.
       Your MariaDB connection id is 8
       Server version: 10.4.20-MariaDB MariaDB Server
 
@@ -178,7 +178,7 @@ as seen :ref:`above <authoring-cluster-troubleshooting-git-sync-fail-log>` and t
 |
 
 If there is any divergent history, the node will fail to startup and the admins would need to remove any commits
-"ahead" of primary branch.  That would apply for all repositories (global, site sandbox, site published).
+"ahead" of primary branch. That would apply for all repositories (global, site sandbox, site published).
 
 After reviewing the logs (tomcat logs and git log), there are a few ways to go about fixing the sync problem:
 

@@ -58,8 +58,8 @@ Model content as a page for content made up of various texts, images, components
 Shared components vs embedded components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Components may be shared or embedded.  Embedded components belong exclusively to a content object,
-while a shared component is shared across pages or components.  For more information on how to
+Components may be shared or embedded. Embedded components belong exclusively to a content object,
+while a shared component is shared across pages or components. For more information on how to
 use embedded and shared components, see :ref:`here <component-handling>`
 
 .. _content-model:
@@ -110,42 +110,42 @@ Crafter Studio's Form Builder
 || Label || Description                                                                          |
 +--------+---------------------------------------------------------------------------------------+
 || 1     || Form Builder: The beginning of the form builder and it's headed by the name of the   |
-||       || currently open Content Type.                                                         |
+||       || currently open Content Type.                                                        |
 ||       || Click here to explore the global properties of the type in the Properties Explorer,  |
-||       || #3.                                                                                  |
+||       || #3.                                                                                 |
 +--------+---------------------------------------------------------------------------------------+
 || 2     || Delete Icon: Deletes the current content type                                        |
 +--------+---------------------------------------------------------------------------------------+
 || 3     || Properties Explorer: Helps configure the properties of the currently                 |
 ||       || selected item. Clicking on an item on the left side of the screen,                   |
 ||       || like #2 or #7 will populate this control and allow you to modify                     |
-||       || the selected item.                                                                   |
+||       || the selected item.                                                                  |
 +--------+---------------------------------------------------------------------------------------+
 || 4     || Form Controls: This is a list of available form controls for you to build your own   |
 ||       || form with. Note that the list can be expanded or collapsed and a search can also be  |
-||       || performed instead of scrolling through the list.                                     |
-||       || Controls can be dragged from the controls list onto the form builder.                |
+||       || performed instead of scrolling through the list.                                    |
+||       || Controls can be dragged from the controls list onto the form builder.               |
 +--------+---------------------------------------------------------------------------------------+
 || 5     || Data Sources: Shows the list of available data sources that can be attached to this  |
 ||       || content type such that the content authors can pull content and incorporate it into  |
 ||       || pages or components. Data Sources can be dragged over to the form builder            |
-||       || and configured as needed.                                                            |
+||       || and configured as needed.                                                           |
 ||       || The content author will then use the control to pull data from that data source into |
-||       || the content object.                                                                  |
+||       || the content object.                                                                 |
 +--------+---------------------------------------------------------------------------------------+
 || 6     || Form Section: Form sections help cluster a number of controls together to make it    |
 ||       || easier for content authors. Click on the form section to edit its properties in      |
-||       || the Properties Explorer.                                                             |
+||       || the Properties Explorer.                                                            |
 +--------+---------------------------------------------------------------------------------------+
-|| 7     || Form Canvas: Actual controls that have been placed on this form.                     |
+|| 7     || Form Canvas: Actual controls that have been placed on this form.                    |
 ||       || Clicking on a control will allow you to configure this control in the Properties     |
-||       || Explorer.                                                                            |
+||       || Explorer.                                                                           |
 +--------+---------------------------------------------------------------------------------------+
-|| 8     || Data Source: The data sources configured for this content type.                      |
+|| 8     || Data Source: The data sources configured for this content type.                     |
 ||       || To configure a data source, click on it and then edit the properties                 |
-||       || in the Properties Explorer.                                                          |
+||       || in the Properties Explorer.                                                         |
 +--------+---------------------------------------------------------------------------------------+
-|| 9     || Save or Cancel the changes to the Content Type.                                      |
+|| 9     || Save or Cancel the changes to the Content Type.                                     |
 +--------+---------------------------------------------------------------------------------------+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -178,10 +178,10 @@ The fields available at this level are:
 || Image        ||                                                                               |
 +---------------+--------------------------------------------------------------------------------+
 || Configuration|| Contains config.xml which holds information about the content type such as the|
-||              || limit where content can be created, is it previewable, etc.                   |
+||              || limit where content can be created, is it previewable, etc.                  |
 +---------------+--------------------------------------------------------------------------------+
 || Controller   || Contains controller.groovy which provides an extension/hook to authoring      |
-||              || lifecycle events.                                                             |
+||              || lifecycle events.                                                            |
 +---------------+--------------------------------------------------------------------------------+
 || Display      || View template to use when rendering this content                              |
 || Template     ||                                                                               |
@@ -192,14 +192,14 @@ The fields available at this level are:
 || Show in Quick|| Show this content type in the quick create menu from the context nav          |
 || Create       ||                                                                               |
 +---------------+--------------------------------------------------------------------------------+
-|| Destination  || Path pattern where the content created from quick create will be stored.      |
+|| Destination  || Path pattern where the content created from quick create will be stored.     |
 || Path Pattern || The patterns available are the following:                                     |
-||              ||    **{objectId}** Inserts a GUID.                                             |
-||              ||    **{year}** Inserts the current year (4 digit year).                        |
-||              ||    **{month}** Inserts the current month (2-digit month of the year).         |
-||              ||    **{yyyy}** Inserts the current year (4 digit year).                        |
-||              ||    **{mm}** Inserts the current month (2-digit month of the year).            |
-||              ||    **{dd}** Inserts the current day (2-digit day of the month).               |
+||              ||    **{objectId}** Inserts a GUID.                                            |
+||              ||    **{year}** Inserts the current year (4 digit year).                       |
+||              ||    **{month}** Inserts the current month (2-digit month of the year).        |
+||              ||    **{yyyy}** Inserts the current year (4 digit year).                       |
+||              ||    **{mm}** Inserts the current month (2-digit month of the year).           |
+||              ||    **{dd}** Inserts the current day (2-digit day of the month).              |
 +---------------+--------------------------------------------------------------------------------+
 
 The 2 key properties are: the display template (:ref:`content-view-templates`) which is the HTML template that renders the final Web page; the content inheritance (:ref:`content-inheritance`) which determines how this content type will inherit from parent XML files in the system.
@@ -239,7 +239,7 @@ You can only use one of either include or exclude. Use Include when you need to 
 
 We'll look at an example of limiting where you can create content from the Website_Editorial blueprint that comes out of the box.
 
-From the **Sidebar**, click on |projectTools|.  Next, click on **Content Types** then either create a new content type or open an existing content type.  In the image below, we have the content type **Article** open for editing.  Go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name *config.xml*, click on that pencil to edit.
+From the **Sidebar**, click on |projectTools|. Next, click on **Content Types** then either create a new content type or open an existing content type. In the image below, we have the content type **Article** open for editing. Go to the **Properties Explorer** and click on **Configuration**. A pencil will appear next to the file name *config.xml*, click on that pencil to edit.
 
 .. figure:: /_static/images/content-model/form-engine-prop-configuration.webp
     :alt: Form Engine Properties Configuration
@@ -247,7 +247,7 @@ From the **Sidebar**, click on |projectTools|.  Next, click on **Content Types**
 
 |
 
-To limit where this particular content type can be created, the tags, <paths><includes><pattern>some_regex_pattern</pattern></includes></paths> are included towards the bottom of the file.  Here, we can see that content type **Article** can be created anywhere under */site/website/articles*
+To limit where this particular content type can be created, the tags, <paths><includes><pattern>some_regex_pattern</pattern></includes></paths> are included towards the bottom of the file. Here, we can see that content type **Article** can be created anywhere under */site/website/articles*
 
 .. figure:: /_static/images/content-model/form-engine-prop-config-file.webp
     :width: 80%
@@ -267,7 +267,7 @@ To limit where this particular content type can be created, the tags, <paths><in
 
 |
 
-To see how the above tags/example works, go to the **Sidebar** and right click on the **Home** folder and select **New Content**.  Notice that content type **Article** is not available from the content types listed.
+To see how the above tags/example works, go to the **Sidebar** and right click on the **Home** folder and select **New Content**. Notice that content type **Article** is not available from the content types listed.
 
 .. figure:: /_static/images/content-model/form-engine-prop-config-sample-no.webp
     :alt: Form Engine Properties Config File "Articles" Not Available
@@ -308,7 +308,7 @@ Enabling cascade on delete is configured through the content type **Configuratio
 
 We'll look at an example of how to enable cascade on delete on the **Article** content type in the Website_editorial blueprint.
 
-From the **Sidebar**, click on |projectTools|.  Next, click on **Content Types**.  We will select the content type **Article** for editing.  Next, go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name **config.xml**, click on that pencil to edit.
+From the **Sidebar**, click on |projectTools|. Next, click on **Content Types**. We will select the content type **Article** for editing. Next, go to the **Properties Explorer** and click on **Configuration**. A pencil will appear next to the file name **config.xml**, click on that pencil to edit.
 
 We're going to enable cascade on delete for articles (**Article** content type) containing images under ``/static-assets/item/images``, and we'll also delete empty folders under ``/static-assets/item/images`` by adding the following code in the **config.xml** file:
 
@@ -324,7 +324,7 @@ We're going to enable cascade on delete for articles (**Article** content type) 
 
 |
 
-To see cascade on delete in action, let's create a new article (**Article** content type) under one of the article folders in the Sidebar.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.
+To see cascade on delete in action, let's create a new article (**Article** content type) under one of the article folders in the Sidebar. Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section. Click on the **Save & Close** button.
 
 .. figure:: /_static/images/content-model/new-article-image-uploaded.webp
     :alt: New article with image uploaded activity list in Dashboard
@@ -341,7 +341,7 @@ Let's look at the dependencies of our newly created article, where we expect the
 
 |
 
-Open the Sidebar and navigate to the newly created article.  Right click on the newly created article and select **Delete**.  Open the **Dashboard** and notice the items listed as deleted in the **My Recent Activity** widget.
+Open the Sidebar and navigate to the newly created article. Right click on the newly created article and select **Delete**. Open the **Dashboard** and notice the items listed as deleted in the **My Recent Activity** widget.
 
 .. figure:: /_static/images/content-model/new-article-child-items-deleted.webp
    :alt: New article with image uploaded deleted activity list in Dashboard
@@ -372,7 +372,7 @@ Enabling copy dependencies is configured through the content type **Configuratio
 
 We'll look at an example of how to enable copy dependencies on the **Article** content type in the website editorial blueprint.
 
-From the **Sidebar**, click on |projectTools| at the bottom.  Next, click on **Content Types**.  We will select the content type **Article** for editing.  Next, go to the **Properties Explorer** and click on **Configuration**.  A pencil will appear next to the file name **config.xml**, click on that pencil to edit.
+From the **Sidebar**, click on |projectTools| at the bottom. Next, click on **Content Types**. We will select the content type **Article** for editing. Next, go to the **Properties Explorer** and click on **Configuration**. A pencil will appear next to the file name **config.xml**, click on that pencil to edit.
 
 We're going to enable copy dependencies for articles (**Article** content type) containing images under ``/static-assets/images/`` and placing the copies in folder ``/static-assets/images/articles/`` by adding the following code in the **config.xml** file:
 
@@ -390,7 +390,7 @@ We're going to enable copy dependencies for articles (**Article** content type) 
 
 Click on **Save & Close**, then save changes made to the content type by clicking on **Save**.
 
-To see copy dependencies in action, let's copy an article under one of the article folders from the **Sidebar**.  First, we'll create the folder ``articles`` under ``/static-assets/images``.  Next, we'll navigate to ``articles/2020/12/Top Books For Young Women``.  Right click on the article and select **Copy**.  Navigate to ``articles/2020/7``, right click on the folder and select **Paste**.
+To see copy dependencies in action, let's copy an article under one of the article folders from the **Sidebar**. First, we'll create the folder ``articles`` under ``/static-assets/images``. Next, we'll navigate to ``articles/2020/12/Top Books For Young Women``. Right click on the article and select **Copy**. Navigate to ``articles/2020/7``, right click on the folder and select **Paste**.
 
 Let's look at the dependencies of our copied article, where we expect a copy of the image under the ``static-assets/images/articles`` will be located since we have configured cop dependencies for content type **Article** for items under the directory ``static-assets/images``:
 
@@ -406,7 +406,7 @@ Let's look at the dependencies of our copied article, where we expect a copy of 
 Item Specific Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Item specific dependencies allows for the automatic copying of child items matching the regex pattern in the ``studio-config.yaml`` file when a content is copied.  It also allows the automatic deletion of child items matching the regex pattern in the ``studio-config.yaml`` file when a content is deleted.
+Item specific dependencies allows for the automatic copying of child items matching the regex pattern in the ``studio-config.yaml`` file when a content is copied. It also allows the automatic deletion of child items matching the regex pattern in the ``studio-config.yaml`` file when a content is deleted.
 
 Below is the regex pattern for item specific dependencies:
 
@@ -417,13 +417,13 @@ Below is the regex pattern for item specific dependencies:
 
 |
 
-``/site/components/page/.*`` and ``/static-assets/page/.*`` are legacy regex pattern for backwards compatibility.  Moving forward, we suggest using the following regex patterns for item specific dependencies: ``/site/components/item/.*`` and ``/static-assets/item/.*``
+``/site/components/page/.*`` and ``/static-assets/page/.*`` are legacy regex pattern for backwards compatibility. Moving forward, we suggest using the following regex patterns for item specific dependencies: ``/site/components/item/.*`` and ``/static-assets/item/.*``
 
-Item specific dependencies are configured during content type creation.  We'll look at an example of how content is modeled to take advantage of item specific dependencies, using the **Article** content type in the website editorial blueprint.
+Item specific dependencies are configured during content type creation. We'll look at an example of how content is modeled to take advantage of item specific dependencies, using the **Article** content type in the website editorial blueprint.
 
-From the **Sidebar**, click on |projectTools| at the bottom.  Next, click on **Content Types**.  We will select the content type **Article** for editing.
+From the **Sidebar**, click on |projectTools| at the bottom. Next, click on **Content Types**. We will select the content type **Article** for editing.
 
-Scroll to the ``Data Sources`` section, and click on **Upload Images**.  Notice the value in the **Repository Path** property, which is the path where to store the new file uploaded from desktop.
+Scroll to the ``Data Sources`` section, and click on **Upload Images**. Notice the value in the **Repository Path** property, which is the path where to store the new file uploaded from desktop.
 
 .. figure:: /_static/images/content-model/item-specific-dependencies.webp
     :alt: Modeling content for item specific dependencies
@@ -431,7 +431,7 @@ Scroll to the ``Data Sources`` section, and click on **Upload Images**.  Notice 
 
 |
 
-Let's take a closer look at the value for the **Repository Path** property.  The value listed is:
+Let's take a closer look at the value for the **Repository Path** property. The value listed is:
 
 `/static-assets/item/images/{yyyy}/{mm}/{dd}/`
 
@@ -441,13 +441,13 @@ where:
     * **{mm}** inserts the current month when the image is uploaded (2-digit month of the year)
     * **{dd}** inserts the current day when the image is uploaded (2-digit day of the month)
 
-To take advantage of item specific dependencies for copying and deleting, we will place uploaded items in ``/static-assets/item/``.  We added a folder ``image`` to better organize our items, since in this location, we will only be storing images.  We also used the macros **{yyyy}**, **{mm}** and **{dd}**, again to better organize our image (we can browse by year, or by month, or by date).  So, when an image is uploaded from the Desktop say on May 17, 2020, the image will be stored in the following location:
+To take advantage of item specific dependencies for copying and deleting, we will place uploaded items in ``/static-assets/item/``. We added a folder ``image`` to better organize our items, since in this location, we will only be storing images. We also used the macros **{yyyy}**, **{mm}** and **{dd}**, again to better organize our image (we can browse by year, or by month, or by date). So, when an image is uploaded from the Desktop say on May 17, 2020, the image will be stored in the following location:
 
 `/static-assets/item/images/2020/05/17/`
 
-The macros **{yyyy}**, **{mm}** and **{dd}** are available for content modelers to use to better organize their project items.  To see other macros available for content modelers, see :ref:`macros-for-data-sources`.
+The macros **{yyyy}**, **{mm}** and **{dd}** are available for content modelers to use to better organize their project items. To see other macros available for content modelers, see :ref:`macros-for-data-sources`.
 
-Let's take a look at item specific dependencies in action for copying and deleting content.  Let's create a new article (**Article** content type) under one of the article folders in the Sidebar.  Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section.  Click on the **Save & Close** button.  Note the location where the image is uploaded.
+Let's take a look at item specific dependencies in action for copying and deleting content. Let's create a new article (**Article** content type) under one of the article folders in the Sidebar. Enter data in the required fields and remember to upload from desktop an image in the **Image** field in the **Content** section. Click on the **Save & Close** button. Note the location where the image is uploaded.
 
 .. figure:: /_static/images/content-model/new-article-item-dependencies.webp
     :width: 40%
@@ -456,7 +456,7 @@ Let's take a look at item specific dependencies in action for copying and deleti
 
 |
 
-From the **Sidebar**, navigate to the newly created article.  Right click on the article and select **Copy**.  Navigate to a different folder, right click on the folder and select **Paste**.
+From the **Sidebar**, navigate to the newly created article. Right click on the article and select **Copy**. Navigate to a different folder, right click on the folder and select **Paste**.
 
 Let's look at the dependencies of our copied article, where we expect a copy of the image under the ``/static-assets/item/images/2021/10/05`` will be located since we have taken advantage of the item specific dependencies regex pattern of ``/static-assets/item/*``.
 
@@ -476,7 +476,7 @@ Let's also take a look at the ``static-assets`` folder to see the copy of the up
 
 |
 
-Now let's take a look at what happens when we delete content with item specific dependencies.  From the Sidebar, navigate to the article that we created.  Right click on the article and select **Delete**.  Click on the **Delete** button when the Delete dialog appears.  Notice the items that will be deleted when we delete the article.
+Now let's take a look at what happens when we delete content with item specific dependencies. From the Sidebar, navigate to the article that we created. Right click on the article and select **Delete**. Click on the **Delete** button when the Delete dialog appears. Notice the items that will be deleted when we delete the article.
 
 .. figure:: /_static/images/content-model/delete-article-dialog.webp
     :alt: Delete dialog showing items to be deleted
@@ -484,7 +484,7 @@ Now let's take a look at what happens when we delete content with item specific 
 
 |
 
-Open the **Dashboard** and notice the items that are deleted.  We deleted an article, and since the image is located in a path matching the regex pattern for item specific dependencies, the image is deleted along with the article.
+Open the **Dashboard** and notice the items that are deleted. We deleted an article, and since the image is located in a path matching the regex pattern for item specific dependencies, the image is deleted along with the article.
 
 .. figure:: /_static/images/content-model/delete-article-sidebar.webp
     :alt: Sidebar and Dashboard showing items that were deleted when the article was deleted
@@ -506,7 +506,7 @@ Quick create allows content authors to create content with as few clicks as poss
 
 |
 
-Let's take a look at an example on how to configure a content type to be available from the quick create button in the context nav for authors using the out of the box blueprint **Website Editorial**.  In the image below, we have a project named **My Site** with the quick create button expanded.  Notice that we have one content type available for quick create, the **Article** content type.
+Let's take a look at an example on how to configure a content type to be available from the quick create button in the context nav for authors using the out of the box blueprint **Website Editorial**. In the image below, we have a project named **My Site** with the quick create button expanded. Notice that we have one content type available for quick create, the **Article** content type.
 
 .. figure:: /_static/images/content-model/quick-create-btn-expanded.webp
     :width: 35%
@@ -515,9 +515,9 @@ Let's take a look at an example on how to configure a content type to be availab
 
 |
 
-If you look at the site tree as shown above, most of the content (the articles) is organized in a dated folder structure.  Adding quick create for the **Article** content type lets the content author skip having to open the Sidebar, then navigate through the path navigation tree, create the year/month folder if it does not exist yet, then finally create their content.
+If you look at the site tree as shown above, most of the content (the articles) is organized in a dated folder structure. Adding quick create for the **Article** content type lets the content author skip having to open the Sidebar, then navigate through the path navigation tree, create the year/month folder if it does not exist yet, then finally create their content.
 
-To setup quick create for a content type, from the **Sidebar**, click on |projectTools| at the bottom.  Next, click on **Content Types**.  We will select the content type **Article** for editing.  Next, go to the **Properties Explorer** and scroll to the **Quick Create** section of the properties.
+To setup quick create for a content type, from the **Sidebar**, click on |projectTools| at the bottom. Next, click on **Content Types**. We will select the content type **Article** for editing. Next, go to the **Properties Explorer** and scroll to the **Quick Create** section of the properties.
 
 .. figure:: /_static/images/content-model/quick-create-properties.webp
     :width: 50%
@@ -528,7 +528,7 @@ To setup quick create for a content type, from the **Sidebar**, click on |projec
 
 Check the **Show in Quick Create** property to make the content type available from the quick create button of the **Article** content type.
 
-In the **Destination Path Pattern**, fill in the path pattern where the content created from quick create will be stored.  For our example, notice that the articles are arranged in the following folder structure:
+In the **Destination Path Pattern**, fill in the path pattern where the content created from quick create will be stored. For our example, notice that the articles are arranged in the following folder structure:
 
 .. code-block:: text
 
@@ -564,7 +564,7 @@ Form Controls are data input controls that, once placed on a form, will capture 
 
 |
 
-Each Form Control type has it's own properties and constraints.  Some constraints are common, like "Variable Name" and "Required" while others apply only to the type, e.g. Height and Width limitations on the Image Picker control.
+Each Form Control type has it's own properties and constraints. Some constraints are common, like "Variable Name" and "Required" while others apply only to the type, e.g. Height and Width limitations on the Image Picker control.
 
 Here's a list of available Form Engine Controls:
 
@@ -575,11 +575,11 @@ Here's a list of available Form Engine Controls:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Form Control Variable Names
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Every Form Control has a Variable Name property.  The Variable Name is used by the form engine to store the content entered by the user in the content model and search index.  This same Variable Name is used later by templates and controllers to retrieve the value.
+Every Form Control has a Variable Name property. The Variable Name is used by the form engine to store the content entered by the user in the content model and search index. This same Variable Name is used later by templates and controllers to retrieve the value.
 
 **Variable Name Best Practices**
 
-#. Be descriptive.  Well thought out Variable Names help with template and controller readability.
+#. Be descriptive. Well thought out Variable Names help with template and controller readability.
 #. Use camel case. Example: "productSummary".
 #. Use regex constraints on input boxes to enforce additional validation rules
 #. Do not use Reserved names.
@@ -593,13 +593,13 @@ The following variable names are used by CrafterCMS.
 +----------------------+------------------------------------------------------------------+
 || Variable Name       || Description                                                     |
 +======================+==================================================================+
-|| file-name*          || Used by the File Name and Auto File Name control.               |
+|| file-name*          || Used by the File Name and Auto File Name control.              |
 +----------------------+------------------------------------------------------------------+
 || internal-name       || Used by Crafter Studio to label the content object              |
 +----------------------+------------------------------------------------------------------+
-|| placeInNav          || Used by the Page Order control.                                 |
+|| placeInNav          || Used by the Page Order control.                                |
 +----------------------+------------------------------------------------------------------+
-|| disabled            || Used to logically remove an object in content delivery.         |
+|| disabled            || Used to logically remove an object in content delivery.        |
 ||                     || For more information, see :ref:`disabling-a-page`               |
 +----------------------+------------------------------------------------------------------+
 || expired             || Used to logically remove an object after date                   |
@@ -642,26 +642,26 @@ The following variable names are used by CrafterCMS.
 || crafterSite         || Used to set the site value                                      |
 ||                     || See note in :ref:`crafter-engine-api` for more information      |
 +----------------------+------------------------------------------------------------------+
-|| localId             || Name of the field for paths.  Used by the deployer              |
+|| localId             || Name of the field for paths. Used by the deployer              |
 +----------------------+------------------------------------------------------------------+
-|| rootId              || Root Id name.  Used by the deployer                             |
+|| rootId              || Root Id name. Used by the deployer                             |
 +----------------------+------------------------------------------------------------------+
-|| includedDescriptors || Included descriptors field name.  Used by the deployer          |
+|| includedDescriptors || Included descriptors field name. Used by the deployer          |
 +----------------------+------------------------------------------------------------------+
-|| crafterPublishedDate|| The name for the publish date field.  Used by the deployer      |
+|| crafterPublishedDate|| The name for the publish date field. Used by the deployer      |
 +----------------------+------------------------------------------------------------------+
 || disableFlattening   || Used to indicate if XML flattening should be disabled when      |
 ||                     || indexing XML. Used by the deployer                              |
 +----------------------+------------------------------------------------------------------+
 || content             || Used by the deployer                                            |
 +----------------------+------------------------------------------------------------------+
-|| contentType         || Name of field for mimeType.  Used by the deployer               |
+|| contentType         || Name of field for mimeType. Used by the deployer               |
 +----------------------+------------------------------------------------------------------+
 || width               || Used by the deployer                                            |
 +----------------------+------------------------------------------------------------------+
 || height              || Used by the deployer                                            |
 +----------------------+------------------------------------------------------------------+
-|| contentLength       || Name of field for file size.  Used by the deployer              |
+|| contentLength       || Name of field for file size. Used by the deployer              |
 +----------------------+------------------------------------------------------------------+
 || lastEditedOn        || Name of field for last edit date. Used by the deployer          |
 +----------------------+------------------------------------------------------------------+
@@ -689,7 +689,7 @@ To facilitate indexing, the following suffix should be appended to variable name
 || integer   || _i     || _is        || a 32 bit signed integer                           |
 +------------+---------+-------------+----------------------------------------------------+
 || string    || _s     || _ss        || String (UTF-8 encoded string or Unicode). A string|
-||           ||        ||            ||  value is indexed as a single unit.               |
+||           ||        ||            ||  value is indexed as a single unit.              |
 +------------+---------+-------------+----------------------------------------------------+
 || long      || _l     || _ls        || a 64 bit signed integer                           |
 +------------+---------+-------------+----------------------------------------------------+
@@ -710,7 +710,7 @@ To facilitate indexing, the following suffix should be appended to variable name
 || html tags ||        ||            ||                                                   |
 +------------+---------+-------------+----------------------------------------------------+
 
-Model fields require their respective data type postfix as listed above.  The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.
+Model fields require their respective data type postfix as listed above. The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.
 
 When setting up reserved variable names for your model, remember to remove the postfix auto-added by the UI since the variable name needs to be exactly the same as listed :ref:`above<reserved-variable-names>`.
 
@@ -718,7 +718,7 @@ Remember to also remove the postfix auto-added by the UI when using ``key`` or `
 
 Please note that indexed ``text`` fields are case insensitive when performing a search, while ``string`` fields are case sensitive. Also, queries using ``string`` fields will only match full values besides being case sensitive.
 
-If performing a case insensitive search on a ``string`` field is desired, CrafterCMS provides a way by enabling tokenization of the field in the content type.  To enable tokenization of a ``string`` field in Studio, put a check in the checkbox labeled **Tokenize for Indexing** in the properties section of the content type field.  Below is the ``Article`` content type in a project created using the Website Editorial blueprint, showing the field ``Author`` with the ``Tokenize for Indexing`` option:
+If performing a case insensitive search on a ``string`` field is desired, CrafterCMS provides a way by enabling tokenization of the field in the content type. To enable tokenization of a ``string`` field in Studio, put a check in the checkbox labeled **Tokenize for Indexing** in the properties section of the content type field. Below is the ``Article`` content type in a project created using the Website Editorial blueprint, showing the field ``Author`` with the ``Tokenize for Indexing`` option:
 
 .. image:: /_static/images/content-model/tokenize-for-indexing-property.webp
    :alt: Enable case insensitive keyword search for string fields in content type by clicking on "Tokenize for Indexing"
@@ -727,7 +727,7 @@ If performing a case insensitive search on a ``string`` field is desired, Crafte
 
 |
 
-It should also be noted that when the tokenize option is enabled, a second field will be created with the ``_t`` postfix.  This second field with the ``_t`` postfix should be used in queries to be case insensitive and match tokens.  In our example above, the field ``author_t`` should be used in queries instead of ``author_s`` to be case insensitive and match tokens.
+It should also be noted that when the tokenize option is enabled, a second field will be created with the ``_t`` postfix. This second field with the ``_t`` postfix should be used in queries to be case insensitive and match tokens. In our example above, the field ``author_t`` should be used in queries instead of ``author_s`` to be case insensitive and match tokens.
 
 Let's take a look at an example of queries performed on a ``string`` field with ``tokenize`` enabled and compare the results of using the field with the ``_s`` postfix and the second field created when we enabled ``tokenize`` with the  ``_t`` postfix. We'll use the ``Author`` field shown above with ``Tokenize for Indexing`` enabled. Here are the results of the queries using the ``author_s`` and ``author_t`` fields:
 
@@ -783,15 +783,15 @@ Data Sources
 
 |
 
-Data Sources are pickers that help pull in content from internal or external storage/systems.  For example, data source include: desktop video uploader, desktop image uploader, and so on. CrafterCMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`building-plugins-form-ds`.
+Data Sources are pickers that help pull in content from internal or external storage/systems. For example, data source include: desktop video uploader, desktop image uploader, and so on. CrafterCMS ships with a number of out-of-the-box data sources and you can also create your own by reading :ref:`building-plugins-form-ds`.
 
-Data Sources allows the content model designer to decide where different assets uploaded via different controls go (for instance icons, images, RTE related assets, etc.).  It has it's own properties, like "Repository Path", which specifies the path where assets are stored, which help keep the system consistent over time.  The storage destination designed in the model dictates how those assets are handled during a duplicate event (duplicate the asset or duplicate the reference to the asset).
+Data Sources allows the content model designer to decide where different assets uploaded via different controls go (for instance icons, images, RTE related assets, etc.). It has it's own properties, like "Repository Path", which specifies the path where assets are stored, which help keep the system consistent over time. The storage destination designed in the model dictates how those assets are handled during a duplicate event (duplicate the asset or duplicate the reference to the asset).
 
 .. _component-handling:
 
-There are a couple of data source that also dictates how components are handled during duplicate/copy events.  The :ref:`Shared Content<form-source-shared-content>` data source will duplicate/copy the reference to a component during a duplicate/copy event and is used for components that need to be shared across pages or components. For components that belong exclusively to a content object, use the :ref:`Embedded Content<form-source-embedded-content>` data source.
+There are a couple of data source that also dictates how components are handled during duplicate/copy events. The :ref:`Shared Content<form-source-shared-content>` data source will duplicate/copy the reference to a component during a duplicate/copy event and is used for components that need to be shared across pages or components. For components that belong exclusively to a content object, use the :ref:`Embedded Content<form-source-embedded-content>` data source.
 
-The ``shared-content`` data sources also provides an option to allow users to search for existing items (``Enable Search Existing`` property) in addition to browsing.  This provides users ease of managing lots of items/assets.
+The ``shared-content`` data sources also provides an option to allow users to search for existing items (``Enable Search Existing`` property) in addition to browsing. This provides users ease of managing lots of items/assets.
 
 Data sources are usually used in conjunction with a control in the content type, for example, the :ref:`form-item-selector` is used for selecting files to be uploaded when bound with the :ref:`form-source-file-desktop` data source.
 
@@ -804,7 +804,7 @@ Let's take a look at a shared content data source in a project created using the
 
 |
 
-Open the ``Sidebar`` then click on |projectTools|.  Click on ``Content Types`` and select ``Stream``, then click on the ``Open Type`` button.  Scroll down  to the ``Data Sources`` section, then click on ``Origins``, a shared content data source.  Notice how a :ref:`form-item-selector` control is used for selecting shared content ``Origin``.  In the ``Properties Explorer`` on the right  side, put a check mark on  ``Enable Search Existing`` property so users can search for existing items.
+Open the ``Sidebar`` then click on |projectTools|. Click on ``Content Types`` and select ``Stream``, then click on the ``Open Type`` button. Scroll down  to the ``Data Sources`` section, then click on ``Origins``, a shared content data source. Notice how a :ref:`form-item-selector` control is used for selecting shared content ``Origin``. In the ``Properties Explorer`` on the right  side, put a check mark on  ``Enable Search Existing`` property so users can search for existing items.
 
 .. image:: /_static/images/content-model/shared-content-ds-enable-search-existing.webp
     :alt: Form Engine Data Sources Example - Shared Content Data Source
@@ -813,7 +813,7 @@ Open the ``Sidebar`` then click on |projectTools|.  Click on ``Content Types`` a
 
 |
 
-To see the property we setup in action, open the Sidebar, then navigate to ``/streams``.  Right click on any of the items, say, ``AlphaGo``, then click on ``Edit``.  Scroll down to the ``Content`` section of the form.  In the ``Origin`` field, select the item next to it (``ShakaDemo``) then click on the ``x`` button to remove it.  We'll now add a new one, by clicking on the ``Add`` button, then select ``Search for Existing - Origins``.
+To see the property we setup in action, open the Sidebar, then navigate to ``/streams``. Right click on any of the items, say, ``AlphaGo``, then click on ``Edit``. Scroll down to the ``Content`` section of the form. In the ``Origin`` field, select the item next to it (``ShakaDemo``) then click on the ``x`` button to remove it. We'll now add a new one, by clicking on the ``Add`` button, then select ``Search for Existing - Origins``.
 
 .. image:: /_static/images/content-model/author-search-for-existing.webp
    :alt: Form Engine Data Sources Example - Author Search for Existing Option
@@ -822,7 +822,7 @@ To see the property we setup in action, open the Sidebar, then navigate to ``/st
 
 |
 
-A search dialog will open displaying in a grid view, items the user can search through, select, filter, etc.  As we can see, the search option makes it easier for users to pick items instead of scrolling through all the available items, especially for say projects with hundreds or even thousands of items/assets.
+A search dialog will open displaying in a grid view, items the user can search through, select, filter, etc. As we can see, the search option makes it easier for users to pick items instead of scrolling through all the available items, especially for say projects with hundreds or even thousands of items/assets.
 
 .. image:: /_static/images/content-model/author-search-for-existing-dialog.webp
    :alt: Form Engine Data Sources Example - Author Search for Existing Dialog
@@ -839,7 +839,7 @@ Form Engine Data Sources (please use the scrollbar to see more data sources)
 
 Macros for Data Sources
 ^^^^^^^^^^^^^^^^^^^^^^^
-There are a number of macros available for the content model designer to use in data sources. These macros are used when uploading assets to better organize project items, usually in the **Repository Path** property of the data source for uploading.  Here are the available macros:
+There are a number of macros available for the content model designer to use in data sources. These macros are used when uploading assets to better organize project items, usually in the **Repository Path** property of the data source for uploading. Here are the available macros:
 
 +---------------------+--------------------------------------------------------------------------------+
 || Macro              || Description                                                                   |
@@ -957,7 +957,7 @@ The simple example renders a simple HTML page with a very basic model. Let's rev
 || meta_keywords    || Input       || SEO keywords associated with the page                      |
 +-------------------+--------------+-------------------------------------------------------------+
 || body_html        || Rich Text   || The page's main HTML body (in this case, it's              |
-||                  || Editor      || just a static HTML block).                                 |
+||                  || Editor      || just a static HTML block).                                |
 +-------------------+--------------+-------------------------------------------------------------+
 || analytics_script || Text Area   || Analytics's Engine JavaScript                              |
 +-------------------+--------------+-------------------------------------------------------------+
@@ -980,8 +980,8 @@ is the XML descriptor content, of type SiteItem. The scripts don't have to retur
 
 There are 2 ways in which you can "bind" a script to a page or component:
 
-#.  Put the script under Scripts > pages or Scripts > components, and name it after the page or component content type.
-#.  When creating the content type for the page or component, add an Item Selector with the variable name ``scripts``. Later when creating
+#. Put the script under Scripts > pages or Scripts > components, and name it after the page or component content type.
+#. When creating the content type for the page or component, add an Item Selector with the variable name ``scripts``. Later when creating
     a page or component of that type, you can select multiple scripts that will be associated to the page or component.
 
 The following is an example of a component script. The component content type is ``/component/upcoming-events``. We can then place the
@@ -1073,7 +1073,7 @@ Creating Content Type Examples
 Page Content Type Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Page content types are top level container types that lets you define the layout/structure and functionality of content/components.  To create a new page content type, click on |projectTools| from the **Sidebar**
+Page content types are top level container types that lets you define the layout/structure and functionality of content/components. To create a new page content type, click on |projectTools| from the **Sidebar**
 
 .. figure:: /_static/images/templates/templates-site-config.webp
 	:alt: Template Project Config
@@ -1099,13 +1099,13 @@ Enter a Display Label and content type name for your new page content type, then
 
 |
 
-We'll now start to construct the layout of the page.  A content type has three ingredients: the model, the view and the controller.
+We'll now start to construct the layout of the page. A content type has three ingredients: the model, the view and the controller.
 
 """""
 Model
 """""
 
-We'll start building the model first, which is the form that Authors will be using to enter content into.  We'll add a form section called *Content* to the form and name it accordingly.
+We'll start building the model first, which is the form that Authors will be using to enter content into. We'll add a form section called *Content* to the form and name it accordingly.
 
 .. figure:: /_static/images/templates/templates-add-form-section.webp
 	:alt: Template Add Form Section to Model
@@ -1113,7 +1113,7 @@ We'll start building the model first, which is the form that Authors will be usi
 
 |
 
-We'll add a few more things to our model by dragging controls and data sources to the form.  We're creating a page template for a blog entry, so at a minimum, we'll add some input fields for the title and author names, a date/time field, an image picker and it's corresponding data sources and a rich text editor inside a repeating group control so Authors can add as many sections as they want.
+We'll add a few more things to our model by dragging controls and data sources to the form. We're creating a page template for a blog entry, so at a minimum, we'll add some input fields for the title and author names, a date/time field, an image picker and it's corresponding data sources and a rich text editor inside a repeating group control so Authors can add as many sections as they want.
 
 .. figure:: /_static/images/templates/templates-add-controls-input.webp
 	:alt: Template Add Input Fields to the Form
@@ -1121,7 +1121,7 @@ We'll add a few more things to our model by dragging controls and data sources t
 
 |
 
-Here we're adding an image picker to the form.  Notice that we'll need to add data sources for the image picker to get images from.  There are at least two sources that the image picker can get images from.  One is from images uploaded from the desktop, the other is for existing images listed in the **Static Assets** folder in the **Sidebar**.
+Here we're adding an image picker to the form. Notice that we'll need to add data sources for the image picker to get images from. There are at least two sources that the image picker can get images from. One is from images uploaded from the desktop, the other is for existing images listed in the **Static Assets** folder in the **Sidebar**.
 
 .. figure:: /_static/images/templates/templates-add-image-picker.webp
 	:alt: Template Add Image Picker to Form
@@ -1129,7 +1129,7 @@ Here we're adding an image picker to the form.  Notice that we'll need to add da
 
 |
 
-We're now going to add a data source for our image picker, by dragging the **Image Uploaded from Desktop** from the Data Sources list on the right to the form in the section **Data Sources**.  Don't forget to enter the path where to store the new image uploaded from desktop in the **Repository Path** field under the Properties Explorer
+We're now going to add a data source for our image picker, by dragging the **Image Uploaded from Desktop** from the Data Sources list on the right to the form in the section **Data Sources**. Don't forget to enter the path where to store the new image uploaded from desktop in the **Repository Path** field under the Properties Explorer
 
 .. figure:: /_static/images/templates/templates-image-desktop-src.webp
 	:alt: Template Add Desktop Image Source
@@ -1137,7 +1137,7 @@ We're now going to add a data source for our image picker, by dragging the **Ima
 
 |
 
-We'll also add the data source **Image From Repository** by dragging it to the **Data Sources** section in the form.  Don't forget to add the path where to browse existing images from the repository
+We'll also add the data source **Image From Repository** by dragging it to the **Data Sources** section in the form. Don't forget to add the path where to browse existing images from the repository
 
 .. figure:: /_static/images/templates/templates-image-existing-src.webp
 	:alt: Template Add Existing Image Source
@@ -1153,7 +1153,7 @@ We'll go back to the Image Picker control on the form to make sure the two data 
 
 |
 
-We'll be adding a header component and a left-rail component inherited from the home page.  To add a component to the form, drag the **Item Selector** control to the form in the *Page - Blog Properties* section.  We'll be adding two components to the form, one for the *Header* and one for the *Left-rail*
+We'll be adding a header component and a left-rail component inherited from the home page. To add a component to the form, drag the **Item Selector** control to the form in the *Page - Blog Properties* section. We'll be adding two components to the form, one for the *Header* and one for the *Left-rail*
 
 .. figure:: /_static/images/templates/templates-add-item-selector.webp
 	:alt: Template Add Item Selector
@@ -1186,7 +1186,7 @@ Next we'll add a **Repeating Group** control to the form,  with a minimum of 1 o
 
 |
 
-In the Repeating Group control, we will add an RTE (Rich Text Editor).  In order for the content to be searchable, it needs to be indexed.  To facilitate indexing, the suffix **_html** should be appended to the variable name given to the RTE.  In this case, the RTE's variable name is *entry_html*.  For more information on variable names and search indexing , please see the section :ref:`form-control-variable-names`
+In the Repeating Group control, we will add an RTE (Rich Text Editor). In order for the content to be searchable, it needs to be indexed. To facilitate indexing, the suffix **_html** should be appended to the variable name given to the RTE. In this case, the RTE's variable name is *entry_html*. For more information on variable names and search indexing , please see the section :ref:`form-control-variable-names`
 
 .. figure:: /_static/images/templates/templates-add-rte.webp
 	:alt: Template Add Rich Text Editor to Repeating Group Control
@@ -1194,14 +1194,14 @@ In the Repeating Group control, we will add an RTE (Rich Text Editor).  In order
 
 |
 
-The model for our template is done.  You can add some other controls by dragging and dropping controls from the **Controls** section to the form.  To learn more about all the controls available, please see :ref:`form-controls`.  To learn more about the data sources available, please see :ref:`data-sources`.
+The model for our template is done. You can add some other controls by dragging and dropping controls from the **Controls** section to the form. To learn more about all the controls available, please see :ref:`form-controls`. To learn more about the data sources available, please see :ref:`data-sources`.
 
 """"
 View
 """"
 
 We'll now build the view for our template, which is the freemarker template file that renders the content, typically to HTML markup.
-There are two ways to create the freemarker template file for our template.  One way is to open the **Sidebar** menu in Studio, then navigate to the **Templates** folder, depending on how your project is setup, you may want to navigate to the subfolder in your Templates folder where you want to create the freemarker template file.  Once you are in the desired subfolder, right click on that folder then select **Create Template**
+There are two ways to create the freemarker template file for our template. One way is to open the **Sidebar** menu in Studio, then navigate to the **Templates** folder, depending on how your project is setup, you may want to navigate to the subfolder in your Templates folder where you want to create the freemarker template file. Once you are in the desired subfolder, right click on that folder then select **Create Template**
 
 .. figure:: /_static/images/templates/templates-ftl-create-sidebar.webp
     :alt: Template Create FTL from Sidebar
@@ -1210,7 +1210,7 @@ There are two ways to create the freemarker template file for our template.  One
 
 |
 
-The other way of creating your freemarker template, is to go to the Properties Explorer in the Content Type model, then click on the **Display Template** field, a magnifying glass and a pencil will appear on the field.  To create a template, click on the pencil.
+The other way of creating your freemarker template, is to go to the Properties Explorer in the Content Type model, then click on the **Display Template** field, a magnifying glass and a pencil will appear on the field. To create a template, click on the pencil.
 
 .. figure:: /_static/images/templates/templates-ftl-create-properties.webp
 	:alt: Template Create FTL from Content Type Properties Display Template Field
@@ -1218,7 +1218,7 @@ The other way of creating your freemarker template, is to go to the Properties E
 
 |
 
-Either way of starting to create your new ftl template, a Create Template dialog will appear.  It will then ask you for a filename for the freemarker template you're creating, then click on the **Create** button.
+Either way of starting to create your new ftl template, a Create Template dialog will appear. It will then ask you for a filename for the freemarker template you're creating, then click on the **Create** button.
 
 .. figure:: /_static/images/templates/templates-ftl-create-dialog.webp
     :alt: Template FTL Create Template Dialog
@@ -1236,7 +1236,7 @@ A dialog will appear with a blank template.
 
 |
 
-At the top right of the dialog, you can use some *Template code examples* from a drop down list with the caption ``Insert Code``.  Here's the list of available template code examples.
+At the top right of the dialog, you can use some *Template code examples* from a drop down list with the caption ``Insert Code``. Here's the list of available template code examples.
 
 .. figure:: /_static/images/templates/templates-ftl-sample-codes.webp
     :alt: Template FTL Code Examples
@@ -1253,7 +1253,7 @@ For the template we are creating, we will select **Studio support** from  the dr
 
 |
 
-We will now start filling in the template of how we want the content captured in the model is rendered to html in this case.  In the image below, we render the header component and the other fields in the Content section of our model.  Please note how fields in the model are rendered through the FTL template.  To learn more, please see the section :ref:`templating-api`
+We will now start filling in the template of how we want the content captured in the model is rendered to html in this case. In the image below, we render the header component and the other fields in the Content section of our model. Please note how fields in the model are rendered through the FTL template. To learn more, please see the section :ref:`templating-api`
 
 .. figure:: /_static/images/templates/templates-ftl.webp
 	:alt: Template FTL
@@ -1302,9 +1302,9 @@ We will now start filling in the template of how we want the content captured in
 Controller
 """"""""""
 
-A controller is not necessary for a content type.  To show how to create a controller for our new content type, we will create a custom controller.  In the preceding section, we created a new content type (template) Page - Blog.  We will now add a couple of featured articles at the bottom of the page depending on the active segment set in targeting.  To be able to display articles depending on the active segment set, we will need to get a list of articles tagged for the active segment.  This can be done by adding a script that gets executed to get the list of articles tagged for the segment selected before the page is rendered.
+A controller is not necessary for a content type. To show how to create a controller for our new content type, we will create a custom controller. In the preceding section, we created a new content type (template) Page - Blog. We will now add a couple of featured articles at the bottom of the page depending on the active segment set in targeting. To be able to display articles depending on the active segment set, we will need to get a list of articles tagged for the active segment. This can be done by adding a script that gets executed to get the list of articles tagged for the segment selected before the page is rendered.
 
-Open the **Sidebar** menu and navigate to the **Scripts** folder.  Click on the **Scripts** folder then **scripts**.  Right click on the folder **pages**, then select **Create Controller**
+Open the **Sidebar** menu and navigate to the **Scripts** folder. Click on the **Scripts** folder then **scripts**. Right click on the folder **pages**, then select **Create Controller**
 
 .. figure:: /_static/images/templates/templates-create-controller.webp
     :alt: Template Create Controller
@@ -1313,7 +1313,7 @@ Open the **Sidebar** menu and navigate to the **Scripts** folder.  Click on the 
 
 |
 
-Enter a name for the controller, then click on the **Create** button.  Since we are creating this controller for our Page-Blog template, we will name the script ``blog.groovy``.  Putting the script under *scripts->pages* and naming it after the page content type, binds the script to our page.
+Enter a name for the controller, then click on the **Create** button. Since we are creating this controller for our Page-Blog template, we will name the script ``blog.groovy``. Putting the script under *scripts->pages* and naming it after the page content type, binds the script to our page.
 
 .. figure:: /_static/images/templates/templates-dialog-create-controller.webp
     :alt: Template Dialog Create Controller
@@ -1345,7 +1345,7 @@ We can now start adding the script to get a list of articles depending on the ac
 
 |
 
-There are two ways to bind a script/controller to a page/component.  The first way, as we have seen is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type.  We'll show the other way how to bind a script to a page/component in the next section :ref:`content-type-component`
+There are two ways to bind a script/controller to a page/component. The first way, as we have seen is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type. We'll show the other way how to bind a script to a page/component in the next section :ref:`content-type-component`
 
 To find out more about page and component scripts, please see :ref:`page-and-component-scripts`.
 
@@ -1389,7 +1389,7 @@ Now that we have our controller, we just need to add code to the freemarker temp
 
 |
 
-As you can see from the controller we just added, the controller is used to customize your page by enabling you to run codes before the page is rendered.  To find out more about groovy APIs in CrafterCMS, please see the section :ref:`groovy-api`.
+As you can see from the controller we just added, the controller is used to customize your page by enabling you to run codes before the page is rendered. To find out more about groovy APIs in CrafterCMS, please see the section :ref:`groovy-api`.
 
 .. _content-type-component:
 
@@ -1397,9 +1397,9 @@ As you can see from the controller we just added, the controller is used to cust
 Component Content Type Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Component content type templates are very similar to page content type templates, as mentioned in :ref:`content-modeling`, the only difference between components and pages is that components cannot render by itself, it needs a container to render into.  In this section, we will look at the component content type, **Component - Articles Widget** found in the Website_Editorial blueprint that shows you how to create a component content type that can be rendered in the sidebar.
+Component content type templates are very similar to page content type templates, as mentioned in :ref:`content-modeling`, the only difference between components and pages is that components cannot render by itself, it needs a container to render into. In this section, we will look at the component content type, **Component - Articles Widget** found in the Website_Editorial blueprint that shows you how to create a component content type that can be rendered in the sidebar.
 
-To create a new component content type, click on |projectTools| in the **Sidebar**.  Click on **Content Types**, then select **Create New Type**.  Enter a Display Label and content type name for your new template, then select **Component** as Type and then click on the **Create** button.
+To create a new component content type, click on |projectTools| in the **Sidebar**. Click on **Content Types**, then select **Create New Type**. Enter a Display Label and content type name for your new template, then select **Component** as Type and then click on the **Create** button.
 
 .. figure:: /_static/images/templates/templates-component-new.webp
     :alt: Template Create New Type Component Dialog
@@ -1408,14 +1408,14 @@ To create a new component content type, click on |projectTools| in the **Sidebar
 
 |
 
-We'll now show you how to construct the layout of our component.  Just like a Page content type, a Component content type has three ingredients: the model, the view and the controller.
+We'll now show you how to construct the layout of our component. Just like a Page content type, a Component content type has three ingredients: the model, the view and the controller.
 
 """""
 Model
 """""
-The dialog that opens after clicking on the **Create** button is the form that is presented to authors to enter content into.  The controls available are on the right side of the dialog, in the **Controls** section.  Simply drag the desired control to the form section to add.
+The dialog that opens after clicking on the **Create** button is the form that is presented to authors to enter content into. The controls available are on the right side of the dialog, in the **Controls** section. Simply drag the desired control to the form section to add.
 
-Let's take a look at the model for the articles-widget component content type.  The default dialog after clicking on the **Create** button  contains only the **Component ID** and **Internal Name** field.  From the image below, we have a few input controls added, one for the **Title**, one for **Max Articles**, a check box for **Disable Component** and an item selector for **Controllers**.
+Let's take a look at the model for the articles-widget component content type. The default dialog after clicking on the **Create** button  contains only the **Component ID** and **Internal Name** field. From the image below, we have a few input controls added, one for the **Title**, one for **Max Articles**, a check box for **Disable Component** and an item selector for **Controllers**.
 
 .. figure:: /_static/images/templates/templates-comp-articles-widget-model.webp
     :alt: Template Articles Widget Component Content Type Model
@@ -1442,13 +1442,13 @@ We'll take a look at the property **Controllers** and notice that the data sourc
 
 |
 
-That's the model for the component content type Articles - Widget.  Remember that you can add some other controls by dragging and dropping controls from the **Controls** section to the form.  To learn more about all the controls available, please see :ref:`form-controls`.  To learn more about the data sources available, please see :ref:`data-sources`.
+That's the model for the component content type Articles - Widget. Remember that you can add some other controls by dragging and dropping controls from the **Controls** section to the form. To learn more about all the controls available, please see :ref:`form-controls`. To learn more about the data sources available, please see :ref:`data-sources`.
 
 """"
 View
 """"
 
-We'll now look at the view for our template, which is the freemarker template file that renders the content, typically to HTML markup.  There are two ways to create the freemarker template file for our template.  One way is to open the **Sidebar** menu in Studio, then navigate to the **Templates** folder, depending on how your project is setup, you may want to navigate to the subfolder in your Templates folder where you want to create the freemarker template file.  Once you are in the desired subfolder, right click on that folder then select **Create Template**.  In our example here, we navigated to **Templates->templates->components**, then right click on the **components** folder then select *Create Template*
+We'll now look at the view for our template, which is the freemarker template file that renders the content, typically to HTML markup. There are two ways to create the freemarker template file for our template. One way is to open the **Sidebar** menu in Studio, then navigate to the **Templates** folder, depending on how your project is setup, you may want to navigate to the subfolder in your Templates folder where you want to create the freemarker template file. Once you are in the desired subfolder, right click on that folder then select **Create Template**. In our example here, we navigated to **Templates->templates->components**, then right click on the **components** folder then select *Create Template*
 
 .. figure:: /_static/images/templates/templates-comp-create-controller.webp
     :alt: Template Component Create Controller
@@ -1486,7 +1486,7 @@ Let's take a look on how to bind the view template to the model described earlie
 
 |
 
-We will now select the view template we just created by clicking on the magnifying glass and selecting your desired template from the list.  For our example, we would select **articles-widget.ftl** from the list.
+We will now select the view template we just created by clicking on the magnifying glass and selecting your desired template from the list. For our example, we would select **articles-widget.ftl** from the list.
 
 .. figure:: /_static/images/templates/templates-comp-bind-select.webp
     :alt: Template Component Bind View to Model
@@ -1495,7 +1495,7 @@ We will now select the view template we just created by clicking on the magnifyi
 
 |
 
-Our view template is now done.  Next we'll see how to create a controller for our component and bind it to the articles-widget component content type template.
+Our view template is now done. Next we'll see how to create a controller for our component and bind it to the articles-widget component content type template.
 
 
 """"""""""
@@ -1504,9 +1504,9 @@ Controller
 
 We will look at a controller that allows us to display the latest article entries in the sidebar of our project.
 
-There are two ways to bind a script/controller to a page/component.  The first way, as we have seen in the previous section :ref:`content-type-page` is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type.  We'll show the other way how to bind a script to a page/component in this section, by adding an item selector to the model with a corresponding data source **Shared Content** named ``scripts``.  When we were looking at the model for our content type template (articles-widget), you may have noticed that there is an item selector named **Controllers** with a corresponding data source shared content named **Scripts**, we are now going to look at a script that can be used by the item selector of our content type.
+There are two ways to bind a script/controller to a page/component. The first way, as we have seen in the previous section :ref:`content-type-page` is to put the script under Scripts->Pages or Scripts->Components, and name the script after the page or component type. We'll show the other way how to bind a script to a page/component in this section, by adding an item selector to the model with a corresponding data source **Shared Content** named ``scripts``. When we were looking at the model for our content type template (articles-widget), you may have noticed that there is an item selector named **Controllers** with a corresponding data source shared content named **Scripts**, we are now going to look at a script that can be used by the item selector of our content type.
 
-To create a new controller, open the **Sidebar** menu and navigate to the **Scripts** folder.  Click on the **Scripts** folder then **scripts**.  Right click on the folder **components**, then select **Create Controller**
+To create a new controller, open the **Sidebar** menu and navigate to the **Scripts** folder. Click on the **Scripts** folder then **scripts**. Right click on the folder **components**, then select **Create Controller**
 
 .. figure:: /_static/images/templates/templates-component-create-controller.webp
     :alt: Template Component Create Controller
@@ -1515,7 +1515,7 @@ To create a new controller, open the **Sidebar** menu and navigate to the **Scri
 
 |
 
-Enter a name for the controller, then click on the **Create** button.  For our latest articles example, this is how it would look like when giving your controller a name:
+Enter a name for the controller, then click on the **Create** button. For our latest articles example, this is how it would look like when giving your controller a name:
 
 .. figure:: /_static/images/templates/templates-dialog-create-controller.webp
     :alt: Template Dialog Create Controller
@@ -1524,7 +1524,7 @@ Enter a name for the controller, then click on the **Create** button.  For our l
 
 |
 
-A dialog will then open where you can start entering your script.  Let's take a look at the script to get a list of the latest articles
+A dialog will then open where you can start entering your script. Let's take a look at the script to get a list of the latest articles
 
 .. figure:: /_static/images/templates/templates-input-script-controller.webp
     :alt: Template Controller Script
@@ -1547,7 +1547,7 @@ A dialog will then open where you can start entering your script.  Let's take a 
 
 |
 
-After creating your controller, you would then need to create a component that will use the script just created.  Let's take a look at the component named *Latest Articles Widget* under the **Components** folder in the Sidebar which uses the script we looked at earlier.  Preview your project or click on the Dashboard.  Click on the Sidebar and navigate to **Components** -> **components** -> **articles-widget**.  To create a new component, right click on the folder, then select **New Content**, which will open the form containing the model we looked at earlier for articles-widget:
+After creating your controller, you would then need to create a component that will use the script just created. Let's take a look at the component named *Latest Articles Widget* under the **Components** folder in the Sidebar which uses the script we looked at earlier. Preview your project or click on the Dashboard. Click on the Sidebar and navigate to **Components** -> **components** -> **articles-widget**. To create a new component, right click on the folder, then select **New Content**, which will open the form containing the model we looked at earlier for articles-widget:
 
 .. figure:: /_static/images/templates/templates-comp-articles-widget.webp
     :alt: Template Create New Type Component Dialog
@@ -1556,7 +1556,7 @@ After creating your controller, you would then need to create a component that w
 
 |
 
-As we can see from the figure above, the script we created is bound to the new articles-widget component we created.  To bind a script to your component, in the **Controllers** field, click on the **Add** button, then select **Browse for Existing - Scripts**, which would then give you a list of existing scripts:
+As we can see from the figure above, the script we created is bound to the new articles-widget component we created. To bind a script to your component, in the **Controllers** field, click on the **Add** button, then select **Browse for Existing - Scripts**, which would then give you a list of existing scripts:
 
 .. figure:: /_static/images/templates/templates-comp-bind-select.webp
     :alt: Template Create New Type Component Dialog

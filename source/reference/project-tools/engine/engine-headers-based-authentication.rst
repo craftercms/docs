@@ -11,7 +11,7 @@ Engine Headers Based Authentication |enterpriseOnly|
 ====================================================
 
 Crafter Engine is able to integrate with any authentication system that sends custom HTTP headers containing
-information that will be used to authenticate the user in Engine.  This section details how to setup Engine for
+information that will be used to authenticate the user in Engine. This section details how to setup Engine for
 headers based authentication.
 
 To enable Engine headers based authentication:
@@ -20,7 +20,7 @@ To enable Engine headers based authentication:
 - Set the URLs requiring authentication
 
 Additionally, optional role mappings are available that allows mapping names from the external authentication to
-simple role names to use in the page or URL restrictions.  Optional attribute mappings are also available which
+simple role names to use in the page or URL restrictions. Optional attribute mappings are also available which
 allow exposing attributes from the external authentication authority.
 
 -------------------------------------------------
@@ -109,8 +109,8 @@ It is also possible to change the prefix and names for the headers:
       For CrafterCMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` and can't be changed via project configuration
 
 
-The default value of the token is ``my_secure_token``.  Remember to replace the default value by setting
-``security.headers.token`` to secure your installation.  In the example below, the token is now set to
+The default value of the token is ``my_secure_token``. Remember to replace the default value by setting
+``security.headers.token`` to secure your installation. In the example below, the token is now set to
 ``CHANGE_MY_TOKEN_VALUE``
 
    .. code-block:: xml
@@ -150,10 +150,10 @@ To add optional role mappings, add the following inside the ``<headers>`` tag:
 
 where:
 
-* **name**: The name of the group in the header.  The ``APP_`` prefix shown above is just an example and could be
+* **name**: The name of the group in the header. The ``APP_`` prefix shown above is just an example and could be
   anything.
-* **role**: The name of the role in the authentication object.  Remember to add **ROLE_** to the name of the role in
-  the authentication object.  So, if mapping the role ``user``, it will be ``<role>ROLE_user</role>``
+* **role**: The name of the role in the authentication object. Remember to add **ROLE_** to the name of the role in
+  the authentication object. So, if mapping the role ``user``, it will be ``<role>ROLE_user</role>``
 
 ^^^^^^^^^^^^^^^^^^^
 Optional Attributes
@@ -183,7 +183,7 @@ To add optional attributes, add the following inside the ``<headers>`` tag:
 
 where:
 
-* **name**: The name of the attribute in the header, with the prefix removed.  (if your prefix is ``CRAFTER_`` then the 
+* **name**: The name of the attribute in the header, with the prefix removed. (if your prefix is ``CRAFTER_`` then the 
   header value would be ``CRAFTER_APP_ATTRIBUTE_NAME``, and you should enter ``APP_ATTRIBUTE_NAME`` in this tag.)
 * **field**: The name of the attribute that will be created in the authentication object.
 
@@ -195,7 +195,7 @@ Example
 -------
 
 Let's take a look at an example of setting up Engine headers authentication using a project created using the Website
-Editorial blueprint named ``My Editorial``.  We will also change the default value for the token header. We'll then take a
+Editorial blueprint named ``My Editorial``. We will also change the default value for the token header. We'll then take a
 look at an example of setting up Engine headers authentication with optional role mappings and attribute.
 
 
@@ -236,7 +236,7 @@ Save your changes and remember to publish the file ``/config/engine/site-config.
 authentication in action in delivery.
 
 Now, try viewing the Home page without the header attributes required, by entering in your browser
-``localhost:9080?crafterSite=my-editorial``.  The Home page will not be displayed without the required header attributes.
+``localhost:9080?crafterSite=my-editorial``. The Home page will not be displayed without the required header attributes.
 
 .. image:: /_static/images/site-admin/engine-headers-delivery-not-sent.webp
    :align: center
@@ -268,9 +268,9 @@ Example Setting Up Engine Headers Authentication with Optional Role Mappings and
 
 We'll now take a look at another example where we setup optional role mappings and attributes.
 
-We'll setup the ``admin`` and the ``user`` roles and add the attribute ``APP_FULL_NAME``.  We'll try to restrict
+We'll setup the ``admin`` and the ``user`` roles and add the attribute ``APP_FULL_NAME``. We'll try to restrict
 access to ``/articles/**`` for users with the ``user`` or ``admin`` role, then we'll try to display the
-``APP_FULL_NAME`` value passed from the headers in our project.  Remember that the ``ROLE_`` prefix is required
+``APP_FULL_NAME`` value passed from the headers in our project. Remember that the ``ROLE_`` prefix is required
 
 Open the Engine ``site-config.xml`` file in Studio, by navigating from the ``Sidebar`` to
 ``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project Configuration`` option from the dropdown.
@@ -357,7 +357,7 @@ Notice that this time, we are able to preview the article correctly
 
 
 The website editorial blueprint displays the value of the attribute with field ``name`` out of the box in the page
-header. You can take a look at the ``header.ftl`` file on how the attribute is displayed.  Open the ``Sidebar`` in
+header. You can take a look at the ``header.ftl`` file on how the attribute is displayed. Open the ``Sidebar`` in
 Studio, then navigate to ``/templates/web/components/`` then right click on ``header.ftl`` and select ``Edit``.
 The ``authToken.principal.attributes.name`` contains the value passed for ``APP_FULL_NAME`` in the header
 

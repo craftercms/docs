@@ -10,14 +10,14 @@
 User Interface Configuration
 ############################
 
-The user interface configuration file defines the widgets shown in the user interface.  It allows the user to configure
+The user interface configuration file defines the widgets shown in the user interface. It allows the user to configure
 the items available for interaction in Studio.
 
 It shows different projections of the content in addition to other tools to assist in content authoring
 and site administration.
 
 The UI is made up of configurable widgets and can be extended or modified by adding/removing/configuring widgets.
-Plugins can make use of this by adding themselves to the UI where required.  See :ref:`plugin-descriptor-file` for more information on how a plugin can be wired in the user interface configuration.
+Plugins can make use of this by adding themselves to the UI where required. See :ref:`plugin-descriptor-file` for more information on how a plugin can be wired in the user interface configuration.
 
 Here's a screenshot of Studio showing some of the widgets in the UI in red circles that are defined in the user interface configuration.
 
@@ -51,8 +51,8 @@ Here's an annotated version of some of the widgets in the user interface shown i
 
 .. _sidebar-widget:
 
-Let's take a look at the sidebar widget as an example.  The Sidebar widget is a panel located on the left
-side of Studio.  The Sidebar contains, the ``Dashboard``, various path navigators and path navigator trees
+Let's take a look at the sidebar widget as an example. The Sidebar widget is a panel located on the left
+side of Studio. The Sidebar contains, the ``Dashboard``, various path navigators and path navigator trees
 such as ``Pages``, ``Components``, etc., and the ``Project Tools``, which are also widgets.
 Here's the configuration:
 
@@ -168,7 +168,7 @@ Simply add the following to the widget you want available only to users with the
 
 |
 
-where ALLOWED ROLE is a role defined in Studio that is allowed to access the widget.  See :ref:`roles-and-permissions` for a list of default roles in Crafter Studio
+where ALLOWED ROLE is a role defined in Studio that is allowed to access the widget. See :ref:`roles-and-permissions` for a list of default roles in Crafter Studio
 
 Let's take a look at an example in the configuration where access to the ``Project Tools`` widget is limited to users with the roles ``admin`` and ``developer``.
 
@@ -192,7 +192,7 @@ Let's take a look at an example in the configuration where access to the ``Proje
 
 |
 
-Here's the sidebar when a user with role ``admin`` is logged in.  Notice that ``Project Tools`` is available in the sidebar
+Here's the sidebar when a user with role ``admin`` is logged in. Notice that ``Project Tools`` is available in the sidebar
 
 .. image:: /_static/images/site-admin/ui-config-permitted-roles-admin.webp
    :alt: Configurations - User Interface Configuration Permitted Roles Admin
@@ -201,7 +201,7 @@ Here's the sidebar when a user with role ``admin`` is logged in.  Notice that ``
 
 |
 
-Here's the sidebar when a user with role ``author`` is logged in.  Notice that ``Project Tools`` is not available in the sidebar
+Here's the sidebar when a user with role ``author`` is logged in. Notice that ``Project Tools`` is not available in the sidebar
 
 .. image:: /_static/images/site-admin/ui-config-permitted-roles-author.webp
    :alt: Configurations - User Interface Configuration Permitted Roles Admin
@@ -439,7 +439,7 @@ See :ref:`targeting` for more information on configuring the targeting system of
 RTE Configuration
 *****************
 
-There are two ways of editing content in Studio: (1) form-based editing and (2) In-context editing (ICE).  Form-based editing is done by clicking on ``Options`` (three dots next to the preview address bar at the top of the page, or the three dots next to the page in the Sidebar), then selecting ``Edit``.  In-context editing is done by enabling the ``Edit mode`` by clicking on the pencil at the top right of the page (which turns green when enabled), then clicking on the section of the page you want to edit.
+There are two ways of editing content in Studio: (1) form-based editing and (2) In-context editing (ICE). Form-based editing is done by clicking on ``Options`` (three dots next to the preview address bar at the top of the page, or the three dots next to the page in the Sidebar), then selecting ``Edit``. In-context editing is done by enabling the ``Edit mode`` by clicking on the pencil at the top right of the page (which turns green when enabled), then clicking on the section of the page you want to edit.
 
 To configure the RTE, add/edit the widget ``craftercms.components.TinyMCE``:
 

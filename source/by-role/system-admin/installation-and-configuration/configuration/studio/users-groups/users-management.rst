@@ -43,7 +43,7 @@ You can list, search, add or delete users, as well as view specific information.
 Listing Users
 ^^^^^^^^^^^^^
 
-To see a list of all existing users, make sure that there are no search terms entered in the search bar.  You can also change the number of users listed per page by selecting a different number in the dropdown box at the bottom right of the screen
+To see a list of all existing users, make sure that there are no search terms entered in the search bar. You can also change the number of users listed per page by selecting a different number in the dropdown box at the bottom right of the screen
 
 .. image:: /_static/images/users/users-list-all.webp
     :alt: Users - List All
@@ -109,14 +109,14 @@ A modal dialog will be displayed with the user information. To finish viewing, c
 
 Once the dialog is displayed, to edit a specific user, simply click on the field that you want to change.
 In the above dialog the **Externally Managed** label is displayed which indicates that the user is externally
-managed such as the case in LDAP.  Notice that since the user is externally managed, the only change that
+managed such as the case in LDAP. Notice that since the user is externally managed, the only change that
 can be made for the user is the group membership.
 
 For the user dialog displayed below, since the user is not externally managed, all the fields can be changed
-for the user.  In this dialog, you can modify the user information such as email, first name, last name and
-user name, group membership, reset the user's password and delete the user.  You can also activate/de-activate
-the user currently being viewed by clicking on the slider labeled **Enabled**.  Edit the fields you
-want to change and then click on the "**Save**" button.  If you do not want to edit the user, please click
+for the user. In this dialog, you can modify the user information such as email, first name, last name and
+user name, group membership, reset the user's password and delete the user. You can also activate/de-activate
+the user currently being viewed by clicking on the slider labeled **Enabled**. Edit the fields you
+want to change and then click on the "**Save**" button. If you do not want to edit the user, please click
 on the "Cancel" button.
 
 .. image:: /_static/images/users/users-edit.webp
@@ -135,7 +135,7 @@ the following example.
     :alt: Users - Reset Password Icon
     :align: center
 
-A modal dialog will be displayed, where the admin can reset the users password.  Click on ``Save`` to reset the password.
+A modal dialog will be displayed, where the admin can reset the users password. Click on ``Save`` to reset the password.
 
 .. image:: /_static/images/users/users-reset.webp
     :alt: Users - Reset Password

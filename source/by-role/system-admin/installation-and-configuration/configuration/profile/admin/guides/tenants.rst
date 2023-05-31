@@ -9,7 +9,7 @@
 Tenants Management
 ==================
 
-Tenants can be used to organize profiles separating them by company or department or site.  This
+Tenants can be used to organize profiles separating them by company or department or site. This
 allows better control over data access by the applications.
 
 After the installation there is only one tenant named ``default``, it will include the roles and
@@ -62,7 +62,7 @@ Fields
 |                       |             |         || these names can be changed by changing Crafter|
 |                       |             |         || Profile security provider configuration. SSO  |
 |                       |             |         || is typically implemented using SAML2 and      |
-|                       |             |         || Apache mod_auth_mellon.                       |
+|                       |             |         || Apache mod_auth_mellon.                      |
 +-----------------------+-------------+---------+------------------------------------------------+
 | Cleanse Attributes    |             | Boolean || If set to ``true``, escape HTML tags in       |
 |                       |             |         || values for attributes of type ``TEXT``,       |
@@ -96,7 +96,7 @@ process is completed.
 Roles
 ^^^^^
 
-Roles are simple strings used to differentiate users for business logic.  In your site or
+Roles are simple strings used to differentiate users for business logic. In your site or
 application you can check if a profile has certain roles to choose what content they can see
 or change.
 
@@ -114,7 +114,7 @@ Attribute Definitions
 ^^^^^^^^^^^^^^^^^^^^^
 
 A tenant can have any number of custom attributes according to the needs of each site or
-application.  The attributes are used to store meta data used in the business logic.
+application. The attributes are used to store meta data used in the business logic.
 When a new profile is created you can set a value for each one of the attributes defined in the
 tenant.
 

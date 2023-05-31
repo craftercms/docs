@@ -13,7 +13,7 @@ Upload a file to AWS S3.
   Make sure that the aws profile id to be used has been configured.
 
 .. important::
-    This API is deprecated and provided only as a reference.  Please see :base_url:`uploadItem <_static/api/studio.html#tag/aws/operation/uploadItem>` for the current version.
+    This API is deprecated and provided only as a reference. Please see :base_url:`uploadItem <_static/api/studio.html#tag/aws/operation/uploadItem>` for the current version.
 
 --------------------
 Resource Information
@@ -74,7 +74,7 @@ Responses
 +---------+-------------------------------------------+---------------------------------------------------+
 || Status || Location                                 || Response Body                                    |
 +=========+===========================================+===================================================+
-|| 200    ||                                          || See example above.                               |
+|| 200    ||                                          || See example above.                              |
 +---------+-------------------------------------------+---------------------------------------------------+
 || 400    ||                                          || ``{ "message" : "Bad request" }``                |
 +---------+-------------------------------------------+---------------------------------------------------+

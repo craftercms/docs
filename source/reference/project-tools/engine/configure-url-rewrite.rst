@@ -10,11 +10,11 @@
 Configuring URL Rewriting
 =========================
 
-URL rewriting turns hard to remember, long and complicated URLs into easier to remember URLs.  Simple URL rewrite rules per site can be done through Crafter Engine.
+URL rewriting turns hard to remember, long and complicated URLs into easier to remember URLs. Simple URL rewrite rules per site can be done through Crafter Engine.
 
 CrafterCMS comes with the Tuckey URLRewrite filter, a Java Web Filter with functionality like Apache's mod_rewrite, that lets you setup rewrite rules for your site.
 
-To add a URL rewrite rule, in Studio, open the **Sidebar** then click on |projectTools|.  Click on **Configuration** then select **Engine URL Rewrite Configuration (XML Style)**.
+To add a URL rewrite rule, in Studio, open the **Sidebar** then click on |projectTools|. Click on **Configuration** then select **Engine URL Rewrite Configuration (XML Style)**.
 
 .. image:: /_static/images/site-admin/config-urlrewrite-select.webp
     :alt: Configurations - Open URL Rewrite Configuration
@@ -51,7 +51,7 @@ Below is a sample URL rewrite configuration.
 
 |
 
-After saving the configuration, remember to publish the configuration file just saved (``urlrewrite.xml`` file).  To publish the configuration file, from the **Sidebar**, click on **Dashboard**.  In the **My Recent Activity** dashlet, check the box next to the ``urlrewrite.xml`` file, and click **Publish** from the context nav to publish.
+After saving the configuration, remember to publish the configuration file just saved (``urlrewrite.xml`` file). To publish the configuration file, from the **Sidebar**, click on **Dashboard**. In the **My Recent Activity** dashlet, check the box next to the ``urlrewrite.xml`` file, and click **Publish** from the context nav to publish.
 
 .. image:: /_static/images/site-admin/publish-urlrewrite.webp
     :alt: Configurations - Publish URL Rewrite Config File from Dashboard

@@ -35,7 +35,7 @@ Configuration
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
 +------------------------+--------------------------------------------------------------------------+
-|| Description/Purpose   || Data source to select videos from repository.                           |
+|| Description/Purpose   || Data source to select videos from repository.                          |
 +------------------------+--------------------------------------------------------------------------+
 || Properties            || - Repository Path: Path where to browse the videos from the repository. |
 +------------------------+--------------------------------------------------------------------------+

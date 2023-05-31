@@ -57,7 +57,7 @@ GitHub App
 The Crafter Marketplace provides a very simple way of publishing plugins from a GitHub repository, once your extension
 is ready to be submitted you can follow these steps:
 
-#.  Install the Crafter Marketplace GitHub App in your repository:
+#. Install the Crafter Marketplace GitHub App in your repository:
 
     #. Open a browser and go to `<https://github.com/marketplace/crafter-marketplace>`_
 

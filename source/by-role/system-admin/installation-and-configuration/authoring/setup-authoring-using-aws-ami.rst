@@ -105,7 +105,7 @@ To acquire the initial password you must log in to the instance via SSH. Open a 
 
 **If SSH times out :**
 
-You will need to double check your security policies for the instance to make sure you are using the correct SSH port and that the firewall will accept your traffic from your network. To check these configurations, scroll right and click the ``Security Settings`` column for your instance.  Follow the steps outlined in step 1 to check or configure your security policies. Once the rule has been added/updated or you have specified the non-standard port (22) in your SSH command (add -p PORT_NUMBER to your command) you will be able to log in.
+You will need to double check your security policies for the instance to make sure you are using the correct SSH port and that the firewall will accept your traffic from your network. To check these configurations, scroll right and click the ``Security Settings`` column for your instance. Follow the steps outlined in step 1 to check or configure your security policies. Once the rule has been added/updated or you have specified the non-standard port (22) in your SSH command (add -p PORT_NUMBER to your command) you will be able to log in.
 
 **To get the initial administrative password:**
 

@@ -61,8 +61,8 @@ built CSS file to Studio:
 Example
 -------
 
-Let's take a look at an example of a project that uses Sass.  We will be using a project created using the **Wordify
-Blueprint** named **MYPROJECT** from the Marketplace.  For this example, we'll change the color of the social links
+Let's take a look at an example of a project that uses Sass. We will be using a project created using the **Wordify
+Blueprint** named **MYPROJECT** from the Marketplace. For this example, we'll change the color of the social links
 on the top bar from white to yellow.
 
 .. image:: /_static/images/developer/working-with-sass-wordify-bp.webp
@@ -88,7 +88,7 @@ Let's begin by looking at the ``package.json`` file in your project:
    }
 
 The Sass file for the project as seen above can be found under
-*CRAFTER_HOME/data/repos/site/MYPROJECT/sandbox/sources/scss/src/style.scss*.  Notice that inside the file,
+*CRAFTER_HOME/data/repos/site/MYPROJECT/sandbox/sources/scss/src/style.scss*. Notice that inside the file,
 it compiles the Sass file into CSS and places the CSS file under ``CRAFTER_HOME/data/repos/site/MYPROJECT/sandbox/static-assets/css``.
 
 This CSS file is imported in the ``header_include.ftl`` file under the ``templates/web/fragments`` folder of

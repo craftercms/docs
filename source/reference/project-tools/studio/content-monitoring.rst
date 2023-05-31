@@ -17,9 +17,9 @@ What is Content Monitoring?
 Content Monitoring is a feature that allows you to configure watches and notifications on your project.
 This will provide an easy way to detect unwanted or outdated content.
 
-The monitoring process always runs in Studio for all existing projects once a day at noon (time zone of the server) and sends notifications indicating the items detected by the content monitors.  Content monitors are managed independently for each project and are highly customizable.
+The monitoring process always runs in Studio for all existing projects once a day at noon (time zone of the server) and sends notifications indicating the items detected by the content monitors. Content monitors are managed independently for each project and are highly customizable.
 
-All the built-in blueprints in Studio include a default configuration for monitors and users just need to add the field ``expired_dt`` in the content type they want monitored.  We'll take a look at an example later on of adding the ``expired_dt`` field in one of the content type of a project using the Website Editorial blueprint.
+All the built-in blueprints in Studio include a default configuration for monitors and users just need to add the field ``expired_dt`` in the content type they want monitored. We'll take a look at an example later on of adding the ``expired_dt`` field in one of the content type of a project using the Website Editorial blueprint.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Content Monitor Properties
@@ -58,7 +58,7 @@ Each path item needs to define the following properties:
 How to Configure Content Monitoring
 -----------------------------------
 
-Content monitoring can be configured through Crafter Studio.  Go to the **Sidebar**, then click on
+Content monitoring can be configured through Crafter Studio. Go to the **Sidebar**, then click on
 **Project Tools** > **Configuration** > **Project Configuration**
 
 .. image:: /_static/images/site-admin/config-open-project-config.webp
@@ -115,7 +115,7 @@ The file can also be located in the following path:
 Notification Templates Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Notification templates can be configured through Crafter Studio.  Go to the **Sidebar**, then click
+Notification templates can be configured through Crafter Studio. Go to the **Sidebar**, then click
 on |projectTools| > **Configuration** > **Notification Configuration**
 
 .. figure:: /_static/images/site-admin/notification-config-open.webp
@@ -230,7 +230,7 @@ Example Content Monitoring Setup for a Project Created Using the Website Editori
 
 Let's take a look at content monitoring for a project created using the Website Editorial blueprint.
 
-Open the ``Sidebar`` then click on ``Project Tools`` -> ``Configuration``, then select ``Project Configuration`` from the drop down.  Notice that the monitor is checking for content that's about to expire by looking at the ``expired_dt`` field.  The following content monitoring is setup by default in all the built-in blueprints:
+Open the ``Sidebar`` then click on ``Project Tools`` -> ``Configuration``, then select ``Project Configuration`` from the drop down. Notice that the monitor is checking for content that's about to expire by looking at the ``expired_dt`` field. The following content monitoring is setup by default in all the built-in blueprints:
 
 .. code-block:: xml
    :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/site-config.xml*
@@ -292,9 +292,9 @@ Open the ``Sidebar`` then click on ``Project Tools`` -> ``Configuration``, then 
 
 |
 
-We need to setup the ``expired_dt`` field for the content types that we want monitored.  For our example, we'll add the ``expired_dt`` field to the ``Page - Article`` content type.
+We need to setup the ``expired_dt`` field for the content types that we want monitored. For our example, we'll add the ``expired_dt`` field to the ``Page - Article`` content type.
 
-Open the ``Sidebar`` then click on ``Project Tools`` -> ``Content Types``.  Select the ``Article`` content type.  Drag a ``Date/Time`` control into the  ``Page Properties`` form section.  Set the ``Title`` to ``Expire Date`` and the ``Name/Variable Name`` to ``expired_dt``.  Save your changes.
+Open the ``Sidebar`` then click on ``Project Tools`` -> ``Content Types``. Select the ``Article`` content type. Drag a ``Date/Time`` control into the  ``Page Properties`` form section. Set the ``Title`` to ``Expire Date`` and the ``Name/Variable Name`` to ``expired_dt``. Save your changes.
 
 .. figure:: /_static/images/site-admin/content-mon-add-field-exp.webp
    :align: center
@@ -302,7 +302,7 @@ Open the ``Sidebar`` then click on ``Project Tools`` -> ``Content Types``.  Sele
 
 |
 
-We have a monitor for content expiring tomorrow as shown above.  We'll set one of the articles to expire the next day.  For our example. we'll set the ``Expire Date`` of the article *Top Books For Young Women*
+We have a monitor for content expiring tomorrow as shown above. We'll set one of the articles to expire the next day. For our example. we'll set the ``Expire Date`` of the article *Top Books For Young Women*
 
 .. figure:: /_static/images/site-admin/content-mon-update-article-exp.webp
    :align: center
@@ -310,7 +310,7 @@ We have a monitor for content expiring tomorrow as shown above.  We'll set one o
 
 |
 
-The monitoring process of Studio runs everyday at noon (based on the server time zone).  To test right away if the monitors are working as expected, we can call the :ref:`monitor-content <crafter-studio-api-site-monitor-content>` API.
+The monitoring process of Studio runs everyday at noon (based on the server time zone). To test right away if the monitors are working as expected, we can call the :ref:`monitor-content <crafter-studio-api-site-monitor-content>` API.
 
 Enter the following in your browser: `http://localhost:8080/studio/api/1/services/api/1/site/monitor-content.json`
 

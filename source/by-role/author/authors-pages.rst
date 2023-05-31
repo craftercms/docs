@@ -11,7 +11,7 @@ Working with Pages
 ==================
 
 This section describes how content authors can create and use pages to manage content.
-Templates are used for page layouts in CrafterCMS.  A developer usually creates the templates
+Templates are used for page layouts in CrafterCMS. A developer usually creates the templates
 that authors can then use to manage content.
 
 |hr|
@@ -19,7 +19,7 @@ that authors can then use to manage content.
 -------------
 Adding a Page
 -------------
-To add a page, in the Sidebar panel, then click on **Pages**.  Navigate to the level and location
+To add a page, in the Sidebar panel, then click on **Pages**. Navigate to the level and location
 within the path navigation tree where you want to create the content, then click on the three dots
 next to the parent page and select *New Content*
 
@@ -30,7 +30,7 @@ next to the parent page and select *New Content*
 
 |
 
-You will then be prompted to choose a content type.  Select a starter page template from the list
+You will then be prompted to choose a content type. Select a starter page template from the list
 shown. If you need a template that's not available or want to modify the template, ask a developer
 to add/modify the template that you want.
 
@@ -41,8 +41,8 @@ to add/modify the template that you want.
 
 |
 
-A form will open containing the template selected. You can now start adding content.  Required fields
-have a red 'x' after the field label.  The number of required fields within each section is displayed
+A form will open containing the template selected. You can now start adding content. Required fields
+have a red 'x' after the field label. The number of required fields within each section is displayed
 in the Section bar for that section.
 
 When data is entered into a field, the red 'x' will change to a green checkmark and the section bar
@@ -66,7 +66,7 @@ users to Save as Draft, Save & Minimize, Save & Preview, Save & Close or Cancel.
 
 To minimize the form, click on the ``-`` at the top of the Content Form right next to the ``x``.
 When a form is minimized, it will appear at the bottom right of the screen with an arrow pointing
-up next to it.  To maximize the form, simply click on that arrow pointing up.
+up next to it. To maximize the form, simply click on that arrow pointing up.
 
 .. image:: /_static/images/page/page-add-minimized.webp
    :width: 75%
@@ -91,21 +91,21 @@ Editing a Page
 --------------
 There are multiple ways to edit a page.
 
-#. In the Sidebar panel click on **Pages**.  Navigate to the level and location within the path
+#. In the Sidebar panel click on **Pages**. Navigate to the level and location within the path
    navigation tree where you want to edit the content, then click on the three dots on the right
-   and select **Edit**.  A form containing the page content you want to edit will open.
+   and select **Edit**. A form containing the page content you want to edit will open.
 
-#. In the Sidebar panel click on **Pages**.  Navigate to the level and location within the path
+#. In the Sidebar panel click on **Pages**. Navigate to the level and location within the path
    navigation tree where you want to edit the content and click on it to preview the page.
    Toggle ``Edit Mode`` to on (switch at the top right corner) to turn on in-context editing and
-   the experience builder panel, if it's not turned on yet.  Move your mouse over to the area you
-   would like the edit.  As you're moving the mouse around the page, notice that the cursor changes
-   to a pencil on editable sections.  Click anywhere editable on the page to start editing.
+   the experience builder panel, if it's not turned on yet. Move your mouse over to the area you
+   would like the edit. As you're moving the mouse around the page, notice that the cursor changes
+   to a pencil on editable sections. Click anywhere editable on the page to start editing.
 
-#. In the Sidebar panel click on **Pages**.  Navigate to the level and location within the path
+#. In the Sidebar panel click on **Pages**. Navigate to the level and location within the path
    navigation tree where you want to edit the content and click on it to preview the page.
    Click the three dots next to the address url on the toolbar found at the top of your screen.
-   Click on ``Edit``.  A form containing the page content you want to edit will open.
+   Click on ``Edit``. A form containing the page content you want to edit will open.
 
 .. image:: /_static/images/page/page-edit.webp
    :width: 95 %
@@ -124,7 +124,7 @@ Versioning
 CrafterCMS tracks all changes to pages/contents/static assets in your project.
 
 All page changes/versions can be viewed, compared with other versions and reverted to an older version.
-There are a couple of ways to view the History of your desired page.  Navigate to the page you want to
+There are a couple of ways to view the History of your desired page. Navigate to the page you want to
 view the history of from the project navigation tree.
 
 After selecting the page you want, click on ``Options`` (the three dots next to the address url at the
@@ -150,7 +150,7 @@ on the Sidebar and then selecting **History**
 ^^^^^^^^^^^^^^^
 Version History
 ^^^^^^^^^^^^^^^
-There are a number of things that you can do in the Version History dialog.  On the right hand side
+There are a number of things that you can do in the Version History dialog. On the right hand side
 of the dialog, for each entry/version on the list, there are a number of actions that you can perform
 on the version you selected, accessible by clicking on the three dots next to it.
 
@@ -160,7 +160,7 @@ on the version you selected, accessible by clicking on the three dots next to it
 || View                  || View details of the selected version of the page such |
 ||                       || as the creation date, last modified date, page content|
 +------------------------+--------------------------------------------------------+
-|| Compare to ...        || Compares the selected version to the version selected |
+|| Compare to ...       || Compares the selected version to the version selected |
 ||                       || by the user                                           |
 +------------------------+--------------------------------------------------------+
 || Compare to current    || Compares the selected version to the current version  |
@@ -187,7 +187,7 @@ on the version you selected, accessible by clicking on the three dots next to it
 Form based editing
 ------------------
 
-Form controls are the building blocks of forms.  It lets you get content into the system.
+Form controls are the building blocks of forms. It lets you get content into the system.
 
 Forms are the means by which content is captured in Crafter Studio. A form generally maps
 to or represents a type of object in the system for example a certain kind of page - like
@@ -236,7 +236,7 @@ Editing Controls
 
 Here are some controls that authors may encounter while editing content:
 
-* Dropdowns - Allows the user to select an item from the list.  When not selecting an item from the
+* Dropdowns - Allows the user to select an item from the list. When not selecting an item from the
   dropdown, the selected item is shown on the box.
 
 .. image:: /_static/images/page/form-control-dropdown-expand.webp
@@ -272,14 +272,14 @@ Here are some controls that authors may encounter while editing content:
 
 * Group checkboxes - Allows users to select one or more items in a group
 * Input boxes - Simple text input control allows users to input text up to the character limit
-  indicated next to the input box.  The character limit specifies both the MAXLENGTH and SIZE
-  attributes for the field.  The character counter will count up as the user types into the field.
+  indicated next to the input box. The character limit specifies both the MAXLENGTH and SIZE
+  attributes for the field. The character counter will count up as the user types into the field.
 * Date/Time pickers - The Date and Time input can allow entry of both Date and Time, only Date or
   only Time, depending on what was setup.
 * Rich text editors - What You See Is What You Get (WYSIWYG) editor that allows authors to arrange
-  and style content without needing to know HTML.  Below is a more detailed description on working in the RTE.
+  and style content without needing to know HTML. Below is a more detailed description on working in the RTE.
 * Repeating Group - Group of controls (1 or more controls) that can be duplicated multiple times by
-  clicking on **Add Another**.  If there are two or more instances, "Move Up" and "Move Down" links
+  clicking on **Add Another**. If there are two or more instances, "Move Up" and "Move Down" links
   will be available which will move the group up or down in relation to the other group instances.
 
 .. image:: /_static/images/page/form-controls.webp
@@ -297,7 +297,7 @@ Here are some controls that authors may encounter while editing content:
 |
 
 * Image pickers - Allows the user to select an image from whatever source is allowed, such as Upload
-  Image or Existing Image (asset uploaded to the system).  To select an image, click on **Add**
+  Image or Existing Image (asset uploaded to the system). To select an image, click on **Add**
   (when there's no image selected yet) or **Replace** to change the selected image
 
 .. image:: /_static/images/page/form-control-image-picker.webp
@@ -307,7 +307,7 @@ Here are some controls that authors may encounter while editing content:
 
 |
 
-* Video pickers - Allows the user to select a video from whatever source is allowed, such as Upload Video (video to be uploaded) or Existing Video (asset uploaded to the system).  To select a video, click on **Add** (when there's no video selected yet) or **Replace** to change the selected video.
+* Video pickers - Allows the user to select a video from whatever source is allowed, such as Upload Video (video to be uploaded) or Existing Video (asset uploaded to the system). To select a video, click on **Add** (when there's no video selected yet) or **Replace** to change the selected video.
 
 .. image:: /_static/images/page/form-control-video-picker.webp
    :width: 60 %
@@ -319,7 +319,7 @@ Here are some controls that authors may encounter while editing content:
 * Page Order - Allows the user to change the position of the page in the navigation structure.
   To change the position of the page, select **Yes**, an **Edit Position** button will appear.
   Click on the **Edit Position** button, a form will appear that lets the user drag and drop the
-  position of the page the user is editing, called **Current Page**.  The first time navigation is
+  position of the page the user is editing, called **Current Page**. The first time navigation is
   turned on for the page, the **Current Page** will always default to the top position.
 
 .. image:: /_static/images/page/form-control-page-order-no.webp
@@ -339,8 +339,8 @@ Here are some controls that authors may encounter while editing content:
 
 |
 
-* Item Selector - Allows the user to select an item from configured sources.  Clicking the **Add**
-  button opens a menu that lets the user pick from the list.  Clicking on **Add & Close** or
+* Item Selector - Allows the user to select an item from configured sources. Clicking the **Add**
+  button opens a menu that lets the user pick from the list. Clicking on **Add & Close** or
   **Add Selection** adds the selected item to the selector list
 
 .. image:: /_static/images/form-controls/form-control-item-selector.webp
@@ -355,7 +355,7 @@ Here are some controls that authors may encounter while editing content:
 
 |
 
-* File name - Allows the user to enter a name for the file.  Whitespaces are replaced by a dash
+* File name - Allows the user to enter a name for the file. Whitespaces are replaced by a dash
   automatically and a maximum length for the name is specified next to the filename input box.
 
 .. image:: /_static/images/page/form-control-filename.webp
@@ -373,10 +373,10 @@ component from a pre-defined list of components/widgets, drag them on to the scr
 them where they want (in defined drop zones), and then configure them. Authors may also move
 components from one zone to another or remove components.
 
-The ``Edit Mode`` switch puts the page in component construction mode.  Regions on the page
-that are wired to accept components ("drop target") are highlighted.  In the component construction
+The ``Edit Mode`` switch puts the page in component construction mode. Regions on the page
+that are wired to accept components ("drop target") are highlighted. In the component construction
 mode, the user may drag an existing component or place a new component to be configured in the drop
-target.  The user may also drag a component from one region to another.  Crafter Studio administrators
+target. The user may also drag a component from one region to another. Crafter Studio administrators
 can configure what components are available in this panel.
 
 
@@ -393,7 +393,7 @@ Drag and Drop Components
 * Placing new components
 
 The user may create new components by dragging components from the experience builder panel
-(**Component** section) out and on to the drop target on the screen.  A new component with
+(**Component** section) out and on to the drop target on the screen. A new component with
 default values will then be visible and ready for editing when a new component is dropped on the screen.
 
 .. image:: /_static/images/page/page-components-new.webp
@@ -417,7 +417,7 @@ default values will then be visible and ready for editing when a new component i
 
 * Moving components around
 
-  Components inside the drop targets may be moved around to the desired position.  Simply click,
+  Components inside the drop targets may be moved around to the desired position. Simply click,
   then drag and drop to the desired position in the drop target.
 
   .. image:: /_static/images/content-author/preview-page-components-drag.webp
@@ -454,8 +454,8 @@ scroll in the RTE field.
 
 |
 
-There are a number of tools available from the RTE out of the box for editing your content.  Custom
-tools may also be added to the RTE, depending on your needs.  Please see the developer section
+There are a number of tools available from the RTE out of the box for editing your content. Custom
+tools may also be added to the RTE, depending on your needs. Please see the developer section
 :ref:`rte-configuration` of the docs for more details.
 
 .. raw:: html
@@ -466,7 +466,7 @@ tools may also be added to the RTE, depending on your needs.  Please see the dev
 Copying a Page
 --------------
 
-To copy a page, in the Sidebar panel, click on the **Pages** folder.  Navigate to the level and location
+To copy a page, in the Sidebar panel, click on the **Pages** folder. Navigate to the level and location
 within the project navigation tree where you want to copy content, then click on the three dots next to
 the page and select **Copy**
 
@@ -489,7 +489,7 @@ want to paste the copied content, then click on the three dots next to it and se
 
 Depending on how the page content type has been modeled (dependencies), copying and pasting a page
 may also create copies of items in the page. These dependencies are setup by the developers when
-creating the content type.  Generally, when an item on a page is uploaded to the following locations:
+creating the content type. Generally, when an item on a page is uploaded to the following locations:
 ``/site/components/item/.*`` or  ``/static-assets/item/.*``, when the page containing those items is
 copied, a copy of the uploaded items are created.
 
@@ -504,8 +504,8 @@ To learn more about these dependencies and see examples, see :ref:`item-specific
 Deleting a Page
 ---------------
 
-Users with permission to delete content can delete a page from a project.  To delete a page, in the Sidebar panel,
-click on the **Pages** folder.  Navigate to the level and location within the project navigation tree where you
+Users with permission to delete content can delete a page from a project. To delete a page, in the Sidebar panel,
+click on the **Pages** folder. Navigate to the level and location within the project navigation tree where you
 want to delete content, then click on the three dots next to the page and select **Delete**
 
 .. image:: /_static/images/page/page-delete-menu.webp
@@ -515,7 +515,7 @@ want to delete content, then click on the three dots next to the page and select
 
 |
 
-A dialog confirming the action will appear.  Check the ``I understand that deleted items will be published immediately.``
+A dialog confirming the action will appear. Check the ``I understand that deleted items will be published immediately.``
 checkbox to enable the ``Delete`` button.
 
 .. image:: /_static/images/page/page-delete-dialog.webp
@@ -525,7 +525,7 @@ checkbox to enable the ``Delete`` button.
 
 |
 
-Click on the ``Delete`` button.  A snackbar at the bottom left of the screen will appear to inform you of the
+Click on the ``Delete`` button. A snackbar at the bottom left of the screen will appear to inform you of the
 item deletion.
 
 .. image:: /_static/images/page/page-delete-snackbar.webp
@@ -551,13 +551,13 @@ To model a content type that allows disabling a page, do the following:
    ``Project Tools`` -> ``Content Type``, then select the desired page content type
 #. Drag a ``Check Box`` control to the ``Page Property`` form section. Set the ``Title`` to something
    descriptive, say ``Disable Page`` and remember that the ``Name/Variable Name`` value needs to be
-   set to ``disabled``.  Save your changes.
+   set to ``disabled``. Save your changes.
 
 Let's take a look at an example of a page content type with ``disabled`` and how the page appears in preview and
-in delivery.  We will be using a project created using the ``Website Editorial`` blueprint named
+in delivery. We will be using a project created using the ``Website Editorial`` blueprint named
 ``my-editorial`` for this example.
 
-We'll open the content type ``Article`` of the project.  Below is the ``Article`` content type modeled
+We'll open the content type ``Article`` of the project. Below is the ``Article`` content type modeled
 with ``disabled``, as described above.
 
 .. image:: /_static/images/page/page-disable-setup.webp
@@ -570,7 +570,7 @@ with ``disabled``, as described above.
 Let's now disable an article in the project, then publish it and see how the project behaves in delivery when
 a page has been disabled.
 
-We'll disable the article ``10 Tips to Get a Six Pack``.  First, we'll take a look at how the ``Health``
+We'll disable the article ``10 Tips to Get a Six Pack``. First, we'll take a look at how the ``Health``
 category page looks like with the article still enabled in Preview by opening the Sidebar, then clicking
 on the ``Home`` page then finally click on the ``Health`` category on the left-rail.:
 
@@ -582,9 +582,9 @@ on the ``Home`` page then finally click on the ``Health`` category on the left-r
 |
 
 Notice above that there are three articles listed in the ``Health`` category page and it contains the
-article that we are now going to disable.  To disable the page ``10 Tips to Get a Six Pack``, open the
-Sidebar, then navigate to ``/articles/2021/2/``.  Click on the three dots next to the article then select
-``Edit``, which will open a form allowing us to edit the article.  Once the form opens, put a checkmark
+article that we are now going to disable. To disable the page ``10 Tips to Get a Six Pack``, open the
+Sidebar, then navigate to ``/articles/2021/2/``. Click on the three dots next to the article then select
+``Edit``, which will open a form allowing us to edit the article. Once the form opens, put a checkmark
 on the ``Disable Page`` field under the ``Page Properties`` section then save your changes.
 
 .. image:: /_static/images/page/page-disable-article.webp
@@ -594,8 +594,8 @@ on the ``Disable Page`` field under the ``Page Properties`` section then save yo
 
 |
 
-Preview the ``Home`` page and click on the ``Health`` category on the left-rail.  Notice that the article we
-disabled is not listed in the preview.  Note too that on the Sidebar, the article we disabled will have
+Preview the ``Home`` page and click on the ``Health`` category on the left-rail. Notice that the article we
+disabled is not listed in the preview. Note too that on the Sidebar, the article we disabled will have
 a red circle with a slash on it indicating that the page is disabled.
 
 .. image:: /_static/images/page/page-disabled.webp
@@ -606,11 +606,11 @@ a red circle with a slash on it indicating that the page is disabled.
 |
 
 Finally, we'll publish the changes we made to the article and verify that in delivery, the article we
-disabled is not available/accessible.  To publish your changes, on the Sidebar, click on the three dots
-next to the article we just edited, then select ``Publish``.  A Publish dialog will appear.  Check the
+disabled is not available/accessible. To publish your changes, on the Sidebar, click on the three dots
+next to the article we just edited, then select ``Publish``. A Publish dialog will appear. Check the
 information in the dialog and make changes as required, then click on the ``Publish`` button.
 
-In your browser, go to ``localhost:9080?crafterSite=my-editorial`` to view your project in delivery.  Next,
+In your browser, go to ``localhost:9080?crafterSite=my-editorial`` to view your project in delivery. Next,
 we'll view the ``Health`` category page and verify that the article ``10 Tips to Get a Six Pack`` is not listed:
 
 .. image:: /_static/images/page/page-disabled-in-live.webp

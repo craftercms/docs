@@ -16,7 +16,7 @@ CrafterCMS provides a couple of scripts for upgrading your installation.
 
 The upgrade script allows you to do an upgrade, where your bin directory is upgraded, keeping only Tomcat's shared folder, Tomcat's conf folder, the Elasticsearch config, the Deployer config folder, and the crafter-setenv scripts.
 
-When performing an upgrade, CrafterCMS is shut down, then the script asks if the user wants to backup the ``data`` folder.  It will then ask if the user wants to backup the ``bin`` folder, then perform the upgrade.  After  running  the upgrade script (either *upgrade-target*  or *start-upgrade*), run the ``post-upgrade`` script.  Finally, you can :ref:`start your CrafterCMS  <start-crafter-after-upgrade>` install again.
+When performing an upgrade, CrafterCMS is shut down, then the script asks if the user wants to backup the ``data`` folder. It will then ask if the user wants to backup the ``bin`` folder, then perform the upgrade. After  running  the upgrade script (either *upgrade-target*  or *start-upgrade*), run the ``post-upgrade`` script. Finally, you can :ref:`start your CrafterCMS  <start-crafter-after-upgrade>` install again.
 
 Depending on how recent the version you are upgrading from, there may be files that do not exist in the new release and the script will give the user the option to delete or keep the files.
 
@@ -35,7 +35,7 @@ Depending on how recent the version you are upgrading from, there may be files t
 
    |
 
-For config files that are different in the new release, the script gives you the option to overwrite the config files with their new versions.  When the script overwrites a file, it creates a backup version of the file with a timestamp and a bak file extension.
+For config files that are different in the new release, the script gives you the option to overwrite the config files with their new versions. When the script overwrites a file, it creates a backup version of the file with a timestamp and a bak file extension.
 
    .. code-block:: bash
       :force:
@@ -76,7 +76,7 @@ Before starting your upgrade:
 
 #. **Backup CrafterCMS** just in case something goes wrong with the upgrade.
 
-   When upgrading CrafterCMS installed on a server, the upgrade scripts performs an automated backup of CrafterCMS, but it's recommended not to rely on the automated backup, just in case.  See :ref:`backup-and-recovery` for details on how to perform the backup of CrafterCMS
+   When upgrading CrafterCMS installed on a server, the upgrade scripts performs an automated backup of CrafterCMS, but it's recommended not to rely on the automated backup, just in case. See :ref:`backup-and-recovery` for details on how to perform the backup of CrafterCMS
 
 #. **Manually shut down CrafterCMS**   For CrafterCMS installed on a server, the upgrade scripts shuts down CrafterCMS as one of the first steps, but it's also recommended not to rely on the automated shutting down just in case.
 
@@ -91,7 +91,7 @@ Upgrade by running the upgrade script from a new binary archive
 
 Download the CrafterCMS version you'd like to upgrade to, and extract the files.
 
-To upgrade your CrafterCMS, we will use the ``upgrade-target`` script.  The upgrade script  is located in ``{Crafter-CMS-install-directory}/bin/upgrade`` of your newly downloaded binary archive.  Here's the description for the script we are going to use:
+To upgrade your CrafterCMS, we will use the ``upgrade-target`` script. The upgrade script  is located in ``{Crafter-CMS-install-directory}/bin/upgrade`` of your newly downloaded binary archive. Here's the description for the script we are going to use:
 
     .. code-block:: bash
 
@@ -250,7 +250,7 @@ You may now :ref:`start CrafterCMS <start-crafter-after-upgrade>` again
 Upgrade by running the upgrade script from your current install
 ---------------------------------------------------------------
 
-CrafterCMS version 3.1.x, excluding version 3.1.0,  contain the upgrade scripts required to upgrade your install.  Here's the description for the script we are going to use:
+CrafterCMS version 3.1.x, excluding version 3.1.0,  contain the upgrade scripts required to upgrade your install. Here's the description for the script we are going to use:
 
     .. code-block:: bash
 
@@ -278,12 +278,12 @@ Steps for upgrading using the upgrade script from your current install
 To upgrade your current CrafterCMS install:
 
 #. Go to your ``bin/upgrade`` folder
-#. Run the ``start-upgrade`` script.  The ``start-upgrade`` script downloads the CrafterCMS binary archive version you would like to upgrade to.  This will create a script ``upgrade.sh`` in ``{Crafter-CMS-install-directory}/temp/upgrade``.
+#. Run the ``start-upgrade`` script. The ``start-upgrade`` script downloads the CrafterCMS binary archive version you would like to upgrade to. This will create a script ``upgrade.sh`` in ``{Crafter-CMS-install-directory}/temp/upgrade``.
 #. Go to ``{Crafter-CMS-install-directory}/temp/upgrade`` and run the ``upgrade.sh`` script
 #. Go to ``{Crafter-CMS-install-directory}/bin/upgrade`` and run the ``post-upgrade.sh`` script
 
       .. note::
-         CrafterCMS 4.0.0 requires Java JDK 11.  When upgrading to CrafterCMS version 4.0.0 from a 3.1.x version, remember to switch your JAVA_HOME environment variable to point to Java JDK 11 before running the ``post-upgrade`` script
+         CrafterCMS 4.0.0 requires Java JDK 11. When upgrading to CrafterCMS version 4.0.0 from a 3.1.x version, remember to switch your JAVA_HOME environment variable to point to Java JDK 11 before running the ``post-upgrade`` script
 
 #. Delete the``{Crafter-CMS-install-directory}/temp/upgrade`` once your upgrade has been completed successfully
 
@@ -429,7 +429,7 @@ The next step is to run the ``upgrade`` script under the ``temp/upgrade`` folder
 
    |
 
-Finally we'll  run the ``post-upgrade`` script.  Remember to switch your JAVA_HOME environment variable to point to Java JDK 11 before running the ``post-upgrade`` script if you're upgrading from a 3.1.x release.
+Finally we'll  run the ``post-upgrade`` script. Remember to switch your JAVA_HOME environment variable to point to Java JDK 11 before running the ``post-upgrade`` script if you're upgrading from a 3.1.x release.
 
    .. code-block:: bash
       :emphasize-lines: 2,11
@@ -506,7 +506,7 @@ Once you start up CrafterCMS, in the logs, notice the lines mentioning ``Checkin
 
    |
 
-CrafterCMS has an upgrade manager that automatically upgrades the system, some configuration files and blueprints on startup.  It uses a pipeline of handlers to upgrade various subsystems.
+CrafterCMS has an upgrade manager that automatically upgrades the system, some configuration files and blueprints on startup. It uses a pipeline of handlers to upgrade various subsystems.
 
 Note that the Elasticsearch index will be automatically updated by the CrafterCMS upgrade manager whenever the Elasticsearch index settings are updated, for example, a new field has been added for a release.
 The updated index containing the new settings will be named the current index version name incremented by 1, e.g. let’s say the current index is ``mysite-authoring_v1``, after the upgrade, the new index will now be ``mysite-authoring_v2``.

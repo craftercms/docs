@@ -46,7 +46,7 @@ Open the **Sidebar** and navigate to a folder called **scripts**
    :alt: Working with Filters - "scripts" Folder
 
 
-Right-click on the **scripts** folder and click **Create Folder**. Enter “filters” as the folder name.  Right-click on the new filters folder and click **Create Controller**.
+Right-click on the **scripts** folder and click **Create Folder**. Enter “filters” as the folder name. Right-click on the new filters folder and click **Create Controller**.
 
 .. image:: /_static/images/developer/working-with-filters/sidebar-create-filter.webp
    :width: 45 %
@@ -81,7 +81,7 @@ Step 3: Configure the Filter to Execute
 
 Now we need to tell the filter which resources to execute for by configuring the order of execution, the URL resource patterns it should execute on and the request method types that it should apply to. To do this we modify the Crafter Engine /Config/site.xml.
 
-From the **Sidebar**, click on |projectTools|.  Click on **Configuration**.  Select **Engine Project Configuration** from the dropdown.
+From the **Sidebar**, click on |projectTools|. Click on **Configuration**. Select **Engine Project Configuration** from the dropdown.
 
 .. image:: /_static/images/developer/working-with-filters/select-engine-site-config.webp
    :width: 75 %
@@ -120,7 +120,7 @@ In the console, watch the logs by printing it out as it is appended:
 
 Simply reload a page: ``http://localhost:8080/studio/preview/#/?page=/``
 
-Then, you should see your log entries in the log file every time you view a page or access any other resource.  The log will look something like this:
+Then, you should see your log entries in the log file every time you view a page or access any other resource. The log will look something like this:
 
     .. code-block:: xml
 

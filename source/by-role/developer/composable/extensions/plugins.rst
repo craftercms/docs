@@ -133,7 +133,7 @@ via the Freemarker template hooks.
 Freemarker Template Hooks
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 CrafterCMS provides a mechanism (a "hook") for adding markup and defining macros for plugins via
-Freemarker templates.  These templates, when the plugin has one of them will be automatically
+Freemarker templates. These templates, when the plugin has one of them will be automatically
 included in the project.
 
 Here are the supported templates:
@@ -240,7 +240,7 @@ plugin folder, following the structure below:
     - ``rest``: contains Groovy REST scripts
 
 An easy way to develop new plugins is to start with an empty project and when all the files are ready
-copy them to a new repository following the given structure.  However all references should be updated
+copy them to a new repository following the given structure. However all references should be updated
 to match the final destination of the file:
 
 +------------------------------------------+---------------------------------------------------------------+
@@ -332,8 +332,8 @@ Here's an example directory structure for a plugin with the *pluginId* value set
                   head.ftl
 
 The repository `here <https://github.com/craftercms/craftercms-marketplace-plugin-template>`__ contains
-a skeleton plugin directory structure for your use.  You can use the repository to help you start
-create your plugin.  Simply fill in the plugin descriptor file ``craftercms-plugin.yaml`` file and
+a skeleton plugin directory structure for your use. You can use the repository to help you start
+create your plugin. Simply fill in the plugin descriptor file ``craftercms-plugin.yaml`` file and
 remove items you don't need
 
 .. _plugins-create-your-plugin-files:
@@ -347,8 +347,8 @@ an example file.
 
 The next requirement for creating your plugin are the plugin files.
 Depending on the plugin type you are creating, this could be a JavaScript file, Freemarker template files,
-Groovy file, XML file, etc.  The plugin file/s should then be placed in a directory structure as described
-above depending on the plugin created.  For example, say your plugin is a component content type, your
+Groovy file, XML file, etc. The plugin file/s should then be placed in a directory structure as described
+above depending on the plugin created. For example, say your plugin is a component content type, your
 plugin files should be placed under the directory  ``authoring/content-types/component``
 
   .. code-block:: text
@@ -364,7 +364,7 @@ plugin files should be placed under the directory  ``authoring/content-types/com
              form-definition.xml
 
 
-CrafterCMS uses a default path to look for a default representative image of a plugin, the url ``../.crafter/screenshots/``.  Here's a sample plugin files/directory with a default image to represent the plugin:
+CrafterCMS uses a default path to look for a default representative image of a plugin, the url ``../.crafter/screenshots/``. Here's a sample plugin files/directory with a default image to represent the plugin:
 
   .. code-block:: text
      :caption: *Example directory structure for a component content type plugin with a default representative image*
@@ -596,7 +596,7 @@ Here are the plugin files:
 |
 
 
-The plugin is now ready to be tested.  We'll install our plugin located  under ``/users/myuser/component-plugin``
+The plugin is now ready to be tested. We'll install our plugin located  under ``/users/myuser/component-plugin``
 using the ``crafter-cli`` command ``copy-plugin`` to test it out to a project named editorial
 
 .. code-block:: console
@@ -653,7 +653,7 @@ Below are more authoring examples of creating plugins:
 Example Plugins
 ^^^^^^^^^^^^^^^
 
-CrafterCMS also provides various plugin examples available from the `Marketplace <https://craftercms.com/marketplace>`__ to help you create your own plugins.  These plugins can be installed to your project using ``Plugin Management`` in |projectTools| through the Studio UI.  See :ref:`plugin-management` for more information on installing plugins from the Crafter Marketplace.
+CrafterCMS also provides various plugin examples available from the `Marketplace <https://craftercms.com/marketplace>`__ to help you create your own plugins. These plugins can be installed to your project using ``Plugin Management`` in |projectTools| through the Studio UI. See :ref:`plugin-management` for more information on installing plugins from the Crafter Marketplace.
 
 * `Cliengo plugin <https://github.com/craftercms/chatbot-plugin/tree/cliengo>`__ to add Cliengo to a project
 * `Image Carousel plugin <https://github.com/craftercms/carousel-plugin>`__ to add a highly configurable carousel plugin based on `Tiny Slider <https://github.com/ganlanyuan/tiny-slider/tree/v2.9.3>`__

@@ -16,10 +16,10 @@ certain folders in a project.
 We'll create a new role, group and user, add permissions for the new role and finally assign the newly
 created user to the new group setup.
 
-In preparation for our example, we will be using the Website editorial blueprint.  We'll add a **news** folder
+In preparation for our example, we will be using the Website editorial blueprint. We'll add a **news** folder
 under **Home**, by navigating to **Pages** -> **Home**, then right click on **Home** and select **New Folder**.
-Enter *news* in the **Folder Name** field.  We will be using the **news** folder for our example in setting up
-permissions to folders based on roles.  Users assigned to the **newseditor** role will then have access to
+Enter *news* in the **Folder Name** field. We will be using the **news** folder for our example in setting up
+permissions to folders based on roles. Users assigned to the **newseditor** role will then have access to
 publish and add/edit content in the **news** folder.
 
 ------------------
@@ -90,7 +90,7 @@ Adding permissions
 
 #. To add permissions to the new role we just created, click on |projectTools| from the **Sidebar**, then click on **Configuration**.
 #. From the dropdown box, select **Permissions Mappings**
-#. Add in the permissions that you would like to give to the new role that we just created.  For our example below, we are giving the role **newseditor** permission to publish from the dashboard and the following permissions for the **news** folder and **assets** folder:
+#. Add in the permissions that you would like to give to the new role that we just created. For our example below, we are giving the role **newseditor** permission to publish from the dashboard and the following permissions for the **news** folder and **assets** folder:
 
       - read
       - write
@@ -136,10 +136,10 @@ For more information about permission mappings, please see: :ref:`permission-map
 Adding users to the role
 ------------------------
 
-We can now add users to the role by adding the users to the group mapped to the role.  In the role mappings configuration file, we mapped the role **newseditor** to the group NewsEditor.  To add users to the group NewsEditor,
+We can now add users to the role by adding the users to the group mapped to the role. In the role mappings configuration file, we mapped the role **newseditor** to the group NewsEditor. To add users to the group NewsEditor,
 
 #. Click on |mainMenu| from the top right of Studio, then select **Groups** on the left hand side
-#. Click on the pencil (edit icon) next to the group name you want to edit.  In our example, the group **NewsEditor**
+#. Click on the pencil (edit icon) next to the group name you want to edit. In our example, the group **NewsEditor**
 #. Click on the box for the field **Add new members**, enter the users you'd like to add, then click on the **Add members** button.
 
 For more information about adding users to a group, please see: :ref:`adding-users-to-a-group`

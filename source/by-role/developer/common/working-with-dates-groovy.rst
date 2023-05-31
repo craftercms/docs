@@ -9,9 +9,9 @@ Working with Dates and Time Zones in Groovy
 ===========================================
 
 
-There are times when we need to do some date operations or parse dates or format dates to a desired format.  Groovy has extensions that allows us to work with dates more easily. We'll use a project created using the "Website_editorial" blueprint, and add a script that will run when we preview an article page.
+There are times when we need to do some date operations or parse dates or format dates to a desired format. Groovy has extensions that allows us to work with dates more easily. We'll use a project created using the "Website_editorial" blueprint, and add a script that will run when we preview an article page.
 
-First, let's set the time zone in Crafter Engine.  From the **Sidebar**, click on |projectTools|, then click on **Configuration**.  Select **Engine Project Configuration** from the dropdown list, then enter the following into the configuration:
+First, let's set the time zone in Crafter Engine. From the **Sidebar**, click on |projectTools|, then click on **Configuration**. Select **Engine Project Configuration** from the dropdown list, then enter the following into the configuration:
 
 .. code-block:: xml
 
@@ -21,7 +21,7 @@ First, let's set the time zone in Crafter Engine.  From the **Sidebar**, click o
     </site>
 
 
-We'll now create a controller by opening the **Sidebar**, then navigate to **scripts** -> **pages**, right click on **pages**, and select **Create Controller**, which we will then name **article.groovy**, which would make it execute before the article page is loaded.  We're now ready to show some examples of working with dates and times in Groovy.  We'll be performing operations on the contentModel variable **date_dt**, which is the date created of the article.  For more information on variables available in groovy scripts, see :ref:`groovy-api`
+We'll now create a controller by opening the **Sidebar**, then navigate to **scripts** -> **pages**, right click on **pages**, and select **Create Controller**, which we will then name **article.groovy**, which would make it execute before the article page is loaded. We're now ready to show some examples of working with dates and times in Groovy. We'll be performing operations on the contentModel variable **date_dt**, which is the date created of the article. For more information on variables available in groovy scripts, see :ref:`groovy-api`
 
 ----------------
 Formatting Dates
@@ -91,9 +91,9 @@ Which will output this for ``nowDate``:
 Date Arithmetic Operations
 --------------------------
 
-We'll use the same example above to perform arithmetic operations on the date object.  There are two ways to perform the arithmetic operations on the date objects, using the ``plus`` and ``minus`` methods, and using the ``+`` and ``-`` operators.
+We'll use the same example above to perform arithmetic operations on the date object. There are two ways to perform the arithmetic operations on the date objects, using the ``plus`` and ``minus`` methods, and using the ``+`` and ``-`` operators.
 
-Say, we want to find the date object 10 days after the date in our example above.  We will use the ``plus`` method and the ``+`` operator to increment the date by 10 days:
+Say, we want to find the date object 10 days after the date in our example above. We will use the ``plus`` method and the ``+`` operator to increment the date by 10 days:
 
 .. code-block:: groovy
 

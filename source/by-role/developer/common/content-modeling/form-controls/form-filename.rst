@@ -34,13 +34,13 @@ Configuration
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
 +------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Simple text filename.                                                |
+|| Description/Purpose   || Simple text filename.                                               |
 +------------------------+-----------------------------------------------------------------------+
-|| Properties            || * Size: How much of the input to show on the author input form.      |
-||                       || * Max Length: Maximum number of characters to accept as input.       |
-||                       || * Read Only: Make field read-only (can't be changed by the author).  |
+|| Properties            || * Size: How much of the input to show on the author input form.     |
+||                       || * Max Length: Maximum number of characters to accept as input.      |
+||                       || * Read Only: Make field read-only (can't be changed by the author). |
 +------------------------+-----------------------------------------------------------------------+
-|| Constraints           || None.                                                                |
+|| Constraints           || None.                                                               |
 +------------------------+-----------------------------------------------------------------------+
-|| Related Data Sources  || None.                                                                |
+|| Related Data Sources  || None.                                                               |
 +------------------------+-----------------------------------------------------------------------+

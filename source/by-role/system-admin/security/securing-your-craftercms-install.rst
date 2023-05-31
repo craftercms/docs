@@ -9,7 +9,7 @@
 Securing Your CrafterCMS Install
 ================================
 
-CrafterCMS installations are pre-configured with default passwords, tokens, keys, etc.  These default values are intended for initial testing, installation and configuration.  We recommend changing the default values for the following parameters to secure your CrafterCMS installation:
+CrafterCMS installations are pre-configured with default passwords, tokens, keys, etc. These default values are intended for initial testing, installation and configuration. We recommend changing the default values for the following parameters to secure your CrafterCMS installation:
 
 * Replace default values for configuration files encryption key and salt
 
@@ -72,7 +72,7 @@ CrafterCMS installations are pre-configured with default passwords, tokens, keys
 
   #. Manually change the DB passwords
 
-     First, login to the database as root.  From the command line in the server, go to ``CRAFTER_HOME/bin/dbms/bin`` and run the following command:
+     First, login to the database as root. From the command line in the server, go to ``CRAFTER_HOME/bin/dbms/bin`` and run the following command:
 
        .. code-block:: bash
 
@@ -126,7 +126,7 @@ CrafterCMS installations are pre-configured with default passwords, tokens, keys
 
   #. Restart Studio
 
-* Change the default Studio ``admin`` user password either by randomizing the ``admin`` password for a fresh install of Crafter Studio or by changing the password after logging in as user ``admin``.  For more information on randomizing the admin password for a fresh install, see :ref:`randomize-admin-password`.  For more information on changing user passwords, see :ref:`user-passwords`
+* Change the default Studio ``admin`` user password either by randomizing the ``admin`` password for a fresh install of Crafter Studio or by changing the password after logging in as user ``admin``. For more information on randomizing the admin password for a fresh install, see :ref:`randomize-admin-password`. For more information on changing user passwords, see :ref:`user-passwords`
 
 * Set session cookies as ``HTTP Only`` and ``Secure`` by setting the flags to ``true`` in your tomcat ``web.xml`` file
 

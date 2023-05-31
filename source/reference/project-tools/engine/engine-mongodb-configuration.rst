@@ -10,14 +10,14 @@
 Configure Engine to use MongoDB
 ===============================
 
-There are times when you may need access to MongoDB.  This section details how you can access MongoDB by configuring Engine.
+There are times when you may need access to MongoDB. This section details how you can access MongoDB by configuring Engine.
 
 Here are the steps for configuring Engine to use mongoDB:
 
 -------------------------
 Configure the MongoDB URI
 -------------------------
-To define the connection between MongoDB and Engine, add the URI in the config file `/config/engine/site-config.xml`.  (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio dashboard to Project Tools > Configuration, and finally picking up the **Engine Project Configuration** option from the dropdown).
+To define the connection between MongoDB and Engine, add the URI in the config file `/config/engine/site-config.xml`. (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio dashboard to Project Tools > Configuration, and finally picking up the **Engine Project Configuration** option from the dropdown).
 
 .. code-block:: xml
 
@@ -37,7 +37,7 @@ For more details on the Connection String URI format, see https://docs.mongodb.c
 ----------------------
 Create a GMongo client
 ----------------------
-To access Mongo from Groovy, we'll use a GMongo client.  We'll need to add some beans in `/config/engine/application-context.xml`.  (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio dashboard to Project Tools > Configuration, and finally picking up the **Engine Site Application Context** option from the dropdown).
+To access Mongo from Groovy, we'll use a GMongo client. We'll need to add some beans in `/config/engine/application-context.xml`. (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio dashboard to Project Tools > Configuration, and finally picking up the **Engine Site Application Context** option from the dropdown).
 
 .. code-block:: xml
     :linenos:
@@ -62,7 +62,7 @@ To access Mongo from Groovy, we'll use a GMongo client.  We'll need to add some 
 Use the client from a Groovy script
 -----------------------------------
 
-We can now use the client from a Groovy script.  Here's a simple script that runs a query:
+We can now use the client from a Groovy script. Here's a simple script that runs a query:
 
 .. code-block:: groovy
     :linenos:

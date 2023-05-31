@@ -33,25 +33,25 @@ Deployer
 .. .. toctree::
    :maxdepth: 1
 
-..   reverse-proxy-configuration
+..  reverse-proxy-configuration
 
-..   studio/studio-configuration
+..  studio/studio-configuration
      studio/session-timeout-settings
      studio/publishing-blacklist
 
-..   engine/configure-engine-multi-tenancy
+..  engine/configure-engine-multi-tenancy
      engine/engine-configuration-overrides
      engine/turning-off-show-error
 
-..   deployer/admin-guide
+..  deployer/admin-guide
      deployer/processors-guide
      deployer/templates-guide
      deployer/elasticsearch-configuration-guide
 
-..   profile/index
+..  profile/index
      profile/admin/index
 
-..   social/index
+..  social/index
      social/admin/index
 
 

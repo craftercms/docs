@@ -15,9 +15,9 @@
 Setting Workflow States
 =======================
 
-There are times when a file/item in your project gets in a state that you would want to manually correct.  Workflow States allows the user to manually set the workflow state of every file in the project.
+There are times when a file/item in your project gets in a state that you would want to manually correct. Workflow States allows the user to manually set the workflow state of every file in the project.
 
-To manually set the workflow state of a file in your project, find the file/s you'd like to change the workflow state and put a checkmark on the box next to it.  Towards the top of your browser, click on **Edit**
+To manually set the workflow state of a file in your project, find the file/s you'd like to change the workflow state and put a checkmark on the box next to it. Towards the top of your browser, click on **Edit**
 
 .. image:: /_static/images/site-admin/project-tools-workflow-states.webp
     :alt: Site Admin - Project Tools Set Workflow States

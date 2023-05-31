@@ -36,12 +36,12 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Description/Purpose   || Simple Dropdown control                                              |
 +------------------------+-----------------------------------------------------------------------+
-|| Properties            || * Data Source: Source that will populate the dropdown.               |
+|| Properties            || * Data Source: Source that will populate the dropdown.              |
 ||                       || * Allow Empty Value: To enable/disable allowing to leave the field   |
-||                       ||   empty.                                                             |
-||                       || * Read Only: Make field read-only (can't be changed by the author).  |
+||                       ||   empty.                                                            |
+||                       || * Read Only: Make field read-only (can't be changed by the author). |
 +------------------------+-----------------------------------------------------------------------+
-|| Constraints           || * Required: Make field required to fill out.                         |
+|| Constraints           || * Required: Make field required to fill out.                        |
 +------------------------+-----------------------------------------------------------------------+
 || Related Data Sources  || * Configured List of Pairs                                           |
 ||                       || * Static Key Value Pairs                                             |

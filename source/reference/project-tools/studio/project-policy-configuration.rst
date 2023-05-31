@@ -99,7 +99,7 @@ file uploads:
 File Size Limits
 ----------------
 
-Limiting file size of uploads is supported.  Simply add ``<minimum-file-size/>`` and/or <maximum-file-size/>
+Limiting file size of uploads is supported. Simply add ``<minimum-file-size/>`` and/or <maximum-file-size/>
 under ``<permitted>`` where the minimum and maximum file sizes are in bytes
 
 The example configuration below limits image uploads to less than 1MB in folder ``/static-assets/images/``.

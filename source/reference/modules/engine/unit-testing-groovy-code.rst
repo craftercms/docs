@@ -3,7 +3,7 @@
 
 :orphan:
 
-..  index:: Unit Testing CrafterCMS Groovy Code, unit test
+.. index:: Unit Testing CrafterCMS Groovy Code, unit test
 
 .. _unit-testing-groovy-code:
 
@@ -182,7 +182,7 @@ Let's begin creating our unit test for ``MyService``
 Designate folder for all test related files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The first thing we need to do is to designate a folder for all test related files.  We'll designate the ``/scripts/test`` folder to be used for all test related files.
+The first thing we need to do is to designate a folder for all test related files. We'll designate the ``/scripts/test`` folder to be used for all test related files.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Write your unit test code

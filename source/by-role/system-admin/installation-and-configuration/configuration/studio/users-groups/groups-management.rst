@@ -31,8 +31,8 @@ Here's a list of predefined groups and roles in CrafterCMS:
 || site_publisher     || Site publisher        || publisher     |
 +---------------------+------------------------+----------------+
 
-You can add more groups defined whenever needed.  The list above is just a starting point for when you first
-create your project.  The following sections will give you more details on users and groups.  The next sections,
+You can add more groups defined whenever needed. The list above is just a starting point for when you first
+create your project. The following sections will give you more details on users and groups. The next sections,
 Permission Mappings and Role Mappings describes how to setup/assign permissions and roles.
 
 To find this section through studio follow the next instructions:
@@ -115,7 +115,7 @@ Editing an Existing Group
 
 To edit a group, select a group from the list which will open a dialog for the selected group.
 In this dialog, you can modify the group description, just click on the **Save** button after making your
-changes.  You can also add/remove users from the group.  Finally, you'll see a list of all users that belong to the group.  To return to the list of all groups in your project, click on the **X** at the top right of the dialog.
+changes. You can also add/remove users from the group. Finally, you'll see a list of all users that belong to the group. To return to the list of all groups in your project, click on the **X** at the top right of the dialog.
 
 .. image:: /_static/images/groups/groups-edit.webp
     :width: 60%
@@ -128,7 +128,7 @@ changes.  You can also add/remove users from the group.  Finally, you'll see a l
 Adding Users to a Group
 -----------------------
 
-To add a user to a group, click on the group you want to add users.  In the ``Users`` column found on the left
+To add a user to a group, click on the group you want to add users. In the ``Users`` column found on the left
 in the ``Edit Group Members`` section, you can click on the search box then type in the name, username or
 email of the user you want to add to the group.
 
@@ -157,9 +157,9 @@ It will then give you a notification that the user(s) has been successfully adde
 Removing Users from a Group
 ---------------------------
 
-To remove a user from a group, click on the group you want to remove users.  In the ``Members`` column
+To remove a user from a group, click on the group you want to remove users. In the ``Members`` column
 found on the right in the ``Edit Group Members`` section, you can click on the search box then type in
-the name, username or email of the user you want to remove from the group.  Select the user you want to
+the name, username or email of the user you want to remove from the group. Select the user you want to
 remove from the group by clicking on the checkbox next to it, and if you want to remove some more users
 from the group, just type in the names and put a checkmark next to them, then click on
 the **<** (less than icon) button.

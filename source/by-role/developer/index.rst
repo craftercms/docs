@@ -1,15 +1,15 @@
 :is-up-to-date: False
 :last-updated: 4.1.0
 
-..  _developer:
+.. _developer:
 
 ==========
 Developers
 ==========
 
-This section focuses on how to build content rich applications backed by CrafterCMS.  It covers
+This section focuses on how to build content rich applications backed by CrafterCMS. It covers
 the basic topics you need to define a content type and render that content as part of a page,
-component or service.  It also covers topics like building queries, accessing services and extending
+component or service. It also covers topics like building queries, accessing services and extending
 the core platforms and the developer workflow (DevContentOps).
 
 Developers need to be comfortable with Content Modeling (how to represent content in CrafterCMS
@@ -27,7 +27,7 @@ CrafterCMS supports both headless and templated projects (templated projects are
 Headless
 --------
 
-CrafterCMS is natively headless.  CrafterCMS simply retrieves content that the developer models in the
+CrafterCMS is natively headless. CrafterCMS simply retrieves content that the developer models in the
 modeling tool, applies actions/rules like inheritance, security, versioning, etc. and returns the
 transformed content to the caller as JSON. Developers can use whatever front-end technology they want including, but not limited to: React, Vue, Angular, Flutter
 or similar SPAs, Android and iOS applications, etc.
@@ -152,7 +152,7 @@ depending on different aspects like geographical location, language, preferences
 **Logs**
 
 While developing your project, there are times when you’d like to see more log details, to figure out what
-is happening and address it as needed.  Overriding the logging levels allows you to see more or less
+is happening and address it as needed. Overriding the logging levels allows you to see more or less
 details depending on your needs.
 
 Learn more about :ref:`logging`.
@@ -192,7 +192,7 @@ Below is a short set of links to other documentation for technology that Crafter
 +----------------+------------------------------+-----------------------------------------------+
 
 .. note::
-   CrafterCMS is a Git-based CMS.  Please note that **your system's global git ignore file (list of
+   CrafterCMS is a Git-based CMS. Please note that **your system's global git ignore file (list of
    rules for ignoring files in every Git repository on your computer) is respected by CrafterCMS**.
    In case you find some of your content not being committed into CrafterCMS, check your global
    git ignore file to verify the content you're committing is not being ignored.

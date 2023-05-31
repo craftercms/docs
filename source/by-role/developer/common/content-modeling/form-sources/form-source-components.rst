@@ -42,8 +42,8 @@ Configuration
 ||                       || - Allow Embedded: Allows user to browse embedded components          |
 ||                       || - Enable Browse Existing: Allows user to browse existing items       |
 ||                       || - Enable Search Existing: Allows user to search for existing items   |
-||                       || - Base Repository Path: Path where to store new content created.     |
-||                       || - Base Browse Path: Path where to browse the datasource items.       |
+||                       || - Base Repository Path: Path where to store new content created.    |
+||                       || - Base Browse Path: Path where to browse the datasource items.      |
 ||                       || - Content Types: Components that can be accepted                     |
 ||                       || - Tags: Tags                                                         |
 +------------------------+-----------------------------------------------------------------------+

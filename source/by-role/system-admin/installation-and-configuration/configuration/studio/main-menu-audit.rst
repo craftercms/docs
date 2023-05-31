@@ -28,7 +28,7 @@ You can filter the logs displayed based on the following:
 ----------------------
 Audit Logs Site Filter
 ----------------------
-``Site`` filters the log by site .  Clicking on ``Site`` gives you a list of all the sites in Studio and the option to see system logs or logs for all the sites.
+``Site`` filters the log by site . Clicking on ``Site`` gives you a list of all the sites in Studio and the option to see system logs or logs for all the sites.
 
 .. image:: /_static/images/system-admin/main-menu/audit-site-filter.webp
     :alt: System Administrator - Main Menu Audit Site Filter
@@ -38,7 +38,7 @@ Audit Logs Site Filter
 ----------------------
 Audit Logs User Filter
 ----------------------
-``User`` filters the log by user name.  Clicking on ``User`` gives you a list of all the users in Studio and the option to see logs for all users.
+``User`` filters the log by user name. Clicking on ``User`` gives you a list of all the users in Studio and the option to see logs for all users.
 
 .. image:: /_static/images/system-admin/main-menu/audit-user-filter.webp
     :alt: System Administrator - Main Menu Audit User Filter
@@ -48,7 +48,7 @@ Audit Logs User Filter
 ----------------------------
 Audit Logs Operations Filter
 ----------------------------
-``Operations`` filters the log by operations.  Clicking on ``Operations`` gives you a list of all operations logged.
+``Operations`` filters the log by operations. Clicking on ``Operations`` gives you a list of all operations logged.
 
 .. image:: /_static/images/system-admin/main-menu/audit-operations-filter.webp
     :alt: System Administrator - Main Menu Audit Operations Filter

@@ -221,8 +221,8 @@ For more information on types, other items, etc. that you can configure, see you
 
   .. note::
 
-     * On RHEL/CentOS: For the ``nproc`` setting, please use ``/etc/security/limits.d/90-nproc.conf``.  More information can be found `here <https://access.redhat.com/solutions/61334>`_
-     * On Ubuntu: The *limits.conf* file is ignored for processes started by *init.d* .  To apply the settings in *limits.conf* for processes started by *init.d*, open ``/etc/pam.d/su`` and uncomment the following: ``session required pam_limits.so``
+     * On RHEL/CentOS: For the ``nproc`` setting, please use ``/etc/security/limits.d/90-nproc.conf``. More information can be found `here <https://access.redhat.com/solutions/61334>`_
+     * On Ubuntu: The *limits.conf* file is ignored for processes started by *init.d* . To apply the settings in *limits.conf* for processes started by *init.d*, open ``/etc/pam.d/su`` and uncomment the following: ``session required pam_limits.so``
 
 
 .. JVM Level

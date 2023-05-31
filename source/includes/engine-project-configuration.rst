@@ -67,7 +67,7 @@ This example file contains the properties used by Crafter Engine (click on the t
  * **indexFileName:** The name of a page's index file (default is ``index.xml``).
  * **defaultLocale:** The default locale for the project. Used with content targeting through localization.
  * **navigation.additionalFields:**  List of additional fields to include for dynamic navigation items (Example: *<additionalFields>myTitle_s,myAuthor_s,...</additionalFields>*)
- * **spa:** Used for Single Page Application (SPA) Properties (React JS, Angular, Vue.js, etc.).  Contains ``<enabled>`` element which enables/disables SPA mode (default is false) and ``<viewName>`` element, the view name for the SPA (Single Page Application. Current view names can be a page URL (like ``/``) or a template name (like ``/template/web/app.ftl``). Default is ``/``)
+ * **spa:** Used for Single Page Application (SPA) Properties (React JS, Angular, Vue.js, etc.). Contains ``<enabled>`` element which enables/disables SPA mode (default is false) and ``<viewName>`` element, the view name for the SPA (Single Page Application. Current view names can be a page URL (like ``/``) or a template name (like ``/template/web/app.ftl``). Default is ``/``)
  * **compatibility.disableFullModelTypeConversion:** Disables full content model type conversion for backwards compatibility mode (false by default)
 
    Up to and including version 2:
@@ -82,16 +82,16 @@ This example file contains the properties used by Crafter Engine (click on the t
    path to the filter script, and a ``<mapping>`` element. In the ``<mapping>`` element, the ``<include>`` element contains the Ant
    patterns (separated by comma) that request URLs should match for the filter to be executed, while the ``<exclude>`` element contains
    the patterns that requests shouldn't match.
- * **cors.enable**:``true`` if CORS headers should be added to REST API responses when not in preview mode.  Defaults to false. |br|.
+ * **cors.enable**:``true`` if CORS headers should be added to REST API responses when not in preview mode. Defaults to false. |br|.
    The elements ``<accessControlMaxAge>``, ``<accessControlAllowOrigin>``, ``<accessControlAllowMethods>``,
    ``<accessControlAllowHeaders>`` and ``<accessControlAllowCredentials>`` have the values that will be
    copied to each response.
 
-   ``<accessControlAllowOrigin>`` values are split using ``,``.  Remember that
+   ``<accessControlAllowOrigin>`` values are split using ``,``. Remember that
    commas inside patterns need to be escaped with a ``\``,
    like this: ``<accessControlAllowOrigin>http://localhost:[8000\,3000],http://*.other.domain</accessControlAllowOrigin>``
 
-   ``<accessControlAllowMethods>`` and ``<accessControlAllowHeaders>`` values are split using ``,``.  Remember to escape the commas ``,`` separating
+   ``<accessControlAllowMethods>`` and ``<accessControlAllowHeaders>`` values are split using ``,``. Remember to escape the commas ``,`` separating
    the values like this: ``<accessControlAllowHeaders>X-Custom-Header\, Content-Type</accessControlAllowHeaders>`` or
    ``<accessControlAllowMethods>GET\, OPTIONS</accessControlAllowMethods>``
 
@@ -111,8 +111,8 @@ This example file contains the properties used by Crafter Engine (click on the t
  * **profile.api.accessToken:** The access token to use for the Profile REST calls. This parameter should be always specified on
    multi-tenant configurations.
  * **security.saml.token:** The expected value for the secure key request header
- * **security.saml.groups:** Contains any number of ``<group>`` elements.  Each ``<group>`` element contains a ``<name>`` element (The name of the group from the request header) and a ``<role>`` element (The value to use for the role in the profile).
- * **security.saml.attributes:** Contains any number of ``<attribute>`` elements.  Each ``<attribute>`` element contains a ``<name>`` element (The name of the request header for the attribute) and a ``<field>`` element (The name of the field to use in the profile).
+ * **security.saml.groups:** Contains any number of ``<group>`` elements. Each ``<group>`` element contains a ``<name>`` element (The name of the group from the request header) and a ``<role>`` element (The value to use for the role in the profile).
+ * **security.saml.attributes:** Contains any number of ``<attribute>`` elements. Each ``<attribute>`` element contains a ``<name>`` element (The name of the request header for the attribute) and a ``<field>`` element (The name of the field to use in the profile).
  * **security.login.formUrl:** The URL of the login form page. The default is /login.
  * **security.login.defaultSuccessUrl:** The URL to redirect to if the login was successful and the user couldn't be redirected to the
    previous page. The default is /.
@@ -129,7 +129,7 @@ This example file contains the properties used by Crafter Engine (click on the t
    and :javadoc_base_url:`AccessRestrictionExpressionRoot.java <profile/org/craftercms/security/utils/spring/el/AccessRestrictionExpressionRoot.html>`
 
      .. note::
-       For the ``<url>`` Ant-style path pattern, ``<url>/*</url>`` indicates just one level of the URL and ``<url>/**</url>`` indicates all urls.  For more information on Ant-style path pattern matching, see https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/util/AntPathMatcher.html
+       For the ``<url>`` Ant-style path pattern, ``<url>/*</url>`` indicates just one level of the URL and ``<url>/**</url>`` indicates all urls. For more information on Ant-style path pattern matching, see https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/util/AntPathMatcher.html
 
  * **socialConnections.facebookConnectionFactory.appId:** The Facebook app ID required for establishing connections with Facebook.
  * **socialConnections.facebookConnectionFactory.appSecret:** The Facebook app secret required for establishing connections with Facebook.
@@ -138,14 +138,14 @@ This example file contains the properties used by Crafter Engine (click on the t
    ``<cronExpression>``.
  * **jobs.job:** Specifies a single script job to be scheduled. The job path should be specified in ``<path>``, and the cron expression
    in ``<cronExpression>``.
- * **cache.warmUp.descriptorFolders:** The descriptor folders (paths that contain XML that needs to be parsed, loaded and merged e.g. for inheritance.  Most of the time this would be folders under ``/site``) that need to be pre-loaded in cache, separated by comma, when not in preview mode. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully preloaded. Example: *<descriptorFolders>/site:3</descriptorFolders>*
- * **cache.warmUp.contentFolders:** The content folders (mostly static, non-processed content, e.g. scripts, templates, static-assets) that need to be pre-loaded in cache, separated by comma, when not in preview mode. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully pre-loaded.  Example: *<contentFolders>/scripts,/templates</contentFolders>*
+ * **cache.warmUp.descriptorFolders:** The descriptor folders (paths that contain XML that needs to be parsed, loaded and merged e.g. for inheritance. Most of the time this would be folders under ``/site``) that need to be pre-loaded in cache, separated by comma, when not in preview mode. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully preloaded. Example: *<descriptorFolders>/site:3</descriptorFolders>*
+ * **cache.warmUp.contentFolders:** The content folders (mostly static, non-processed content, e.g. scripts, templates, static-assets) that need to be pre-loaded in cache, separated by comma, when not in preview mode. Specify the preload depth with ``:{depth}`` after the path. If no depth is specified, the folders and all their sub-folders will be fully pre-loaded. Example: *<contentFolders>/scripts,/templates</contentFolders>*
 
    .. note::
       Cache and ActiveCache do not function the same way as specified above when engine is in preview because the preview server does not cache to ensure the latest updates are seen immediately.
 
  * **headerMappings.mapping.urlPattern** Ant path pattern to match for adding headers to response
- * **headerMappings.mapping.headers** The headers that will be added to responses.  Each ``<header>`` element must contain a ``<name>``
+ * **headerMappings.mapping.headers** The headers that will be added to responses. Each ``<header>`` element must contain a ``<name>``
    element that specifies the name of the header e.g. ``Cache-Control``, and a ``<value>`` element containing directives, etc. (separated by an escaped comma)
    e.g. ``max-age=60\, s-maxage=300``.
 

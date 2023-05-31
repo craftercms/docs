@@ -27,7 +27,7 @@ From ``tomcat.apache.org`` :
 
    Transport Layer Security (TLS) and its predecessor, Secure Sockets Layer (SSL), are technologies which allow web browsers and web servers to communicate over a secured connection. This means that the data being sent is encrypted by one side, transmitted, then decrypted by the other side before processing. This is a two-way process, meaning that both the server AND the browser encrypt all traffic before sending out data.*
 
-CrafterCMS employs two deployment methods, traditional deployment and serverless deployment.  Let's take a look at an example of how to configure SSL/TLS in a traditional deployment and serverless (docker container) deployment:
+CrafterCMS employs two deployment methods, traditional deployment and serverless deployment. Let's take a look at an example of how to configure SSL/TLS in a traditional deployment and serverless (docker container) deployment:
 
 -------------------------------------------------------------------------------------------------
 Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Traditional Deployment with Tomcat
@@ -39,7 +39,7 @@ Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Traditional Deplo
 Step 1: Create a keystore file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Java's ``keytool`` file allows the user to create self signed certificates.  For this example, we will be using a self signed certificate.  Please remember that self signed certificates are not suitable for production use.
+Java's ``keytool`` file allows the user to create self signed certificates. For this example, we will be using a self signed certificate. Please remember that self signed certificates are not suitable for production use.
 
 .. code-block:: bash
 
@@ -68,7 +68,7 @@ Java's ``keytool`` file allows the user to create self signed certificates.  For
 
 |
 
-The command above will generate a file named ``.keystore`` in the users home directory.  Take note of the location as it will be used in the next step.
+The command above will generate a file named ``.keystore`` in the users home directory. Take note of the location as it will be used in the next step.
 
 .. _use-keystore-file-in-tomcat:
 
@@ -100,7 +100,7 @@ where:
 * **keystoreFile** : path to your keystore file created from the previous step
 * **keystorePass** : password used when keystore file was created from the previous step
 
-We'll use the above values for our CrafterCMS authoring example.  Save the changes and restart CrafterCMS authoring/delivery.
+We'll use the above values for our CrafterCMS authoring example. Save the changes and restart CrafterCMS authoring/delivery.
 
 For more information on configuring SSL/TLS on Tomcat, see https://tomcat.apache.org/tomcat-9.0-doc/ssl-howto.html
 
@@ -162,13 +162,13 @@ Setting up SSL/TLS for CrafterCMS authoring and delivery in a Docker Container i
 
 * Step 4: Test your setup
 
-Let's take a look at an example of a CrafterCMS authoring running in a docker container.  For reference, here's the instruction for  :ref:`running-craftercms-in-docker`
+Let's take a look at an example of a CrafterCMS authoring running in a docker container. For reference, here's the instruction for  :ref:`running-craftercms-in-docker`
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 1: Create keystore file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Follow the step above :ref:`create-keystore-file` to create your keystore file.  For convenience, copy the ``.keystore`` file where your ``docker-compose.yml`` files is, so your directory structure looks like:
+Follow the step above :ref:`create-keystore-file` to create your keystore file. For convenience, copy the ``.keystore`` file where your ``docker-compose.yml`` files is, so your directory structure looks like:
 
 .. code-block:: text
 

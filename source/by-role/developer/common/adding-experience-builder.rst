@@ -373,7 +373,7 @@ There are three macros in ``crafter.ftl``:
 - ``body_bottom``: used to inject templates from plugins and is also used by ICE as detailed below
 
 The ``head``, ``body_bottom`` and ``body_top`` are macros that should be positioned in those positions that the
-name suggests.  Their purpose is to print strategic scripts, stylesheets or otherwise executions that should
+name suggests. Their purpose is to print strategic scripts, stylesheets or otherwise executions that should
 take place in those moments of the page rendering or be printed in that position.
 Plugins use these “hooks” to inject themselves on the right location so it’s important for ftl templates to
 position them in accordance to their name. For example, a Google Tag Manager plugin will want to get injected

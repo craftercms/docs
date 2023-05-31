@@ -96,7 +96,7 @@ In this section we'll show you how to configure a Crafter Delivery instance to m
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 3.1: Configure authoring instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In order to complete step 3, you must have a CrafterCMS authoring instance running.  If you do not, please follow these instructions to set an instance:
+In order to complete step 3, you must have a CrafterCMS authoring instance running. If you do not, please follow these instructions to set an instance:
 
 :ref:`setup-authoring-using-aws-ami`
 
@@ -114,7 +114,7 @@ The delivery instance's deployer can use any git protocol to communicate with th
 
 3.2.1: Create a public / private key pair
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-On your local machine, generate a public / private key pair.  On a terminal/console execute the following command:
+On your local machine, generate a public / private key pair. On a terminal/console execute the following command:
 
 .. code-block:: sh
    :linenos:
@@ -123,7 +123,7 @@ On your local machine, generate a public / private key pair.  On a terminal/cons
 
 You will be prompted for the file name and a passphrase. Since Crafter will use this key as part of an automated process, do not enter a passphase (just hit enter when prompted.)
 
-Once the keygen process completes you should find a file at the location you specified. This is your private key.  You will find another file at the same location with a .pub extension.  This is your public key.
+Once the keygen process completes you should find a file at the location you specified. This is your private key. You will find another file at the same location with a .pub extension. This is your public key.
 
 .. image:: /_static/images/ami/craftercms-ssh-rsa-keygen.webp
     :width: 100 %
@@ -166,7 +166,7 @@ To do this, SSH on to the authoring server as the ubuntu user and execute the fo
     sudo ls -al /home/crafter/.ssh
     exit
 
-The **ls** command will help you verify that the key has been added to the authorized_keys file and that crafter is the owner of the file.  The output should look similar to the following:
+The **ls** command will help you verify that the key has been added to the authorized_keys file and that crafter is the owner of the file. The output should look similar to the following:
 
 .. code-block:: sh
     :linenos:
@@ -221,7 +221,7 @@ SSH on to the delivery server as the ubuntu user and execute the following comma
     sudo su crafter
     ssh -o HostKeyAlgorithms=ssh-rsa crafter@ec2-3-93-34-40.compute-1.amazonaws.com
 
-It's important that you include the  **-o HostKeyAlgorithms=ssh-rsa** parameter in the initial SSH connection to the authoring server. Crafter expects the fingerprint to be stored in an RSA format. Once you execute the SSH command to log in to the authoring machine from the delivery machine as the crafter user. You will be prompted to verify the auhtenticity of the authoring server.  Type yes to confirm.  After this you will be logged in to the authoring server.  No further action is required. Type exit in to the command line of the authoring server to terminate the SSH session.
+It's important that you include the  **-o HostKeyAlgorithms=ssh-rsa** parameter in the initial SSH connection to the authoring server. Crafter expects the fingerprint to be stored in an RSA format. Once you execute the SSH command to log in to the authoring machine from the delivery machine as the crafter user. You will be prompted to verify the auhtenticity of the authoring server. Type yes to confirm. After this you will be logged in to the authoring server. No further action is required. Type exit in to the command line of the authoring server to terminate the SSH session.
 
 .. code-block:: text
     :linenos:
@@ -287,7 +287,7 @@ Example:
     :align: center
     :alt: CrafterCMS AWS AMI Delivery initsite
 
-You can further verify that the deployment is working by watching the logs.  To watch the logs use the following command:
+You can further verify that the deployment is working by watching the logs. To watch the logs use the following command:
 
 .. code-block:: sh
     :linenos:
@@ -305,7 +305,7 @@ Look for output that is similar to the following:
 ------------------------------------------------------------------
 Step 5: View the project on the delivery server from a web browser
 ------------------------------------------------------------------
-Now that project has deployed it can be viewed via web browser. As previously mentioned, Crafter's delivery tier is multi-tenant.  A SITE_ID is used on the URL to indicate which tenant is to be displayed. To preview the project you initialized, open a browser and navigate to the following URL:
+Now that project has deployed it can be viewed via web browser. As previously mentioned, Crafter's delivery tier is multi-tenant. A SITE_ID is used on the URL to indicate which tenant is to be displayed. To preview the project you initialized, open a browser and navigate to the following URL:
 
 **http://[DELIVERY_DNS_NAME]?crafterSite=[SITE_ID]**
 
@@ -326,7 +326,7 @@ This configuration and other advanced topology topics such as load balancing are
 -------------------------------------------------------------------------------
 Step 6: Make an update in authoring and see it published on the delivery server
 -------------------------------------------------------------------------------
-To further test publishing, log in to Crafter Studio for the given project, make an edit and then approve the edit for publish. In a few moments you will see your updates in the web browser on the delivery server.  You can find step by step instructions on editing and publishing here: :ref:`your-first-editorial-project`
+To further test publishing, log in to Crafter Studio for the given project, make an edit and then approve the edit for publish. In a few moments you will see your updates in the web browser on the delivery server. You can find step by step instructions on editing and publishing here: :ref:`your-first-editorial-project`
 
 .. image:: /_static/images/ami/craftercms-approve-publish.webp
     :width: 100 %

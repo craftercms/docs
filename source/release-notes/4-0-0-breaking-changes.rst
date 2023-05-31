@@ -12,9 +12,9 @@ Breaking Changes in CrafterCMS 4.0.0
 ====================================
 
 This section covers changes that might affect your CrafterCMS projects, as well as other considerations
-before upgrading.  Please review the following and apply changes as required:
+before upgrading. Please review the following and apply changes as required:
 
-- CrafterCMS 4.0.x requires Java 11 and Git.  See :ref:`requirements_supported_platforms` for more
+- CrafterCMS 4.0.x requires Java 11 and Git. See :ref:`requirements_supported_platforms` for more
   information on CrafterCMS requirements.
 
 - ``nodeSelectors`` now always return an array, even if it's an array of a single item |br|
@@ -27,7 +27,7 @@ before upgrading.  Please review the following and apply changes as required:
   See `here <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/breaking-changes.html>`__ for more
   information on Elasticsearch breaking changes.
 
-  Please note that most of the breaking changes are from Elasticsearch 6.8 to 7.0.  Please take a look at the
+  Please note that most of the breaking changes are from Elasticsearch 6.8 to 7.0. Please take a look at the
   breaking changes listed for Elasticsearch 7.0 for more information.
 
 
@@ -35,9 +35,9 @@ before upgrading.  Please review the following and apply changes as required:
 
 - **Upgrading 3.1.x sites** |br|
 
-  - CrafterCMS 4.0.0 has a new Studio UI.  To get the same Sidebar you're used to, update
+  - CrafterCMS 4.0.0 has a new Studio UI. To get the same Sidebar you're used to, update
     the :ref:`user-interface-configuration`
-  - Update your Elasticsearch code to match the latest Elasticsearch changes.  Elasticsearch
+  - Update your Elasticsearch code to match the latest Elasticsearch changes. Elasticsearch
     has released a new Java API Client to replace the Rest High Level Client.
 
     See :ref:`migrating-a-site-from-previous-elasticsearch-client` for more information on

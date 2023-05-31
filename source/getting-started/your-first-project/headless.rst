@@ -23,7 +23,7 @@ Let's get started building your first headless store app!
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Creating a Project from the Headless Store Blueprint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-After logging in, you'll see the Projects screen (Below).  Click on **Create Project**
+After logging in, you'll see the Projects screen (Below). Click on **Create Project**
 
 .. image:: /_static/images/first-project/projects-screen.webp
    :width: 90 %
@@ -32,9 +32,9 @@ After logging in, you'll see the Projects screen (Below).  Click on **Create Pro
 
 |
 
-In the **Create Project** screen, the user is presented with the available blueprints or the option to use a remote Git repository instead of selecting a blueprint from the list.  To see all available blueprints, scroll through the dialog to see the default blueprints available out of the box from Crafter Studio including the option to use a remote Git repository to create a new project, and ``Public Marketplace`` blueprints which contains blueprints submitted to the `Crafter Marketplace GitHub App <https://github.com/marketplace/crafter-marketplace>`__
+In the **Create Project** screen, the user is presented with the available blueprints or the option to use a remote Git repository instead of selecting a blueprint from the list. To see all available blueprints, scroll through the dialog to see the default blueprints available out of the box from Crafter Studio including the option to use a remote Git repository to create a new project, and ``Public Marketplace`` blueprints which contains blueprints submitted to the `Crafter Marketplace GitHub App <https://github.com/marketplace/crafter-marketplace>`__
 
-We're going to be using the "Headless Store Blueprint".  Blueprints offer you a starting point for your website. New blueprints can be created and installed into the system.  Click on **Use** for the "Headless Store Blueprint".
+We're going to be using the "Headless Store Blueprint". Blueprints offer you a starting point for your website. New blueprints can be created and installed into the system. Click on **Use** for the "Headless Store Blueprint".
 
 .. image:: /_static/images/first-project/create-project-choose-bp.webp
    :width: 90 %
@@ -43,7 +43,7 @@ We're going to be using the "Headless Store Blueprint".  Blueprints offer you a 
 
 |
 
-Give the project a friendly name for the **Project Name** and a description.  Click on the ``Review`` button.
+Give the project a friendly name for the **Project Name** and a description. Click on the ``Review`` button.
 
 .. image:: /_static/images/first-project/create-project-basic-info-headless-store.webp
    :width: 90 %
@@ -52,7 +52,7 @@ Give the project a friendly name for the **Project Name** and a description.  Cl
 
 |
 
-The next step is to review your entries and finally create your new project.  Click on the **Create Project** button and wait for the system to create your project based on the blueprint.
+The next step is to review your entries and finally create your new project. Click on the **Create Project** button and wait for the system to create your project based on the blueprint.
 
 .. image:: /_static/images/first-project/create-project-review-create-headless-store.webp
    :width: 90 %
@@ -77,7 +77,7 @@ When it's done you will be taken to the preview of your project:
    :align: center
    :alt: Your First Headless Project - Preview
 
-Your project is setup, we can now start adding/editing content!  To edit content you see on the page, click on the three dots next to the page url at the toolbar at the top, then select **Edit**.  This will open a form (see below) where you can edit the page content.
+Your project is setup, we can now start adding/editing content!  To edit content you see on the page, click on the three dots next to the page url at the toolbar at the top, then select **Edit**. This will open a form (see below) where you can edit the page content.
 
 .. image:: /_static/images/first-project/first-project-editing-content-headless-store.webp
    :width: 90 %
@@ -89,7 +89,7 @@ Your project is setup, we can now start adding/editing content!  To edit content
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Adding a New Product to the Project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-We'll be adding a new product to the project.  Notice that our headless store project is mostly made up of components, ``company`` and ``product`` components.  To add a new product, open the Sidebar and navigate to ``/items/products``  In this case, we are adding a product under **items** -> **products**.  Click on the three dots next to the folder ``products``, then select **New Content**
+We'll be adding a new product to the project. Notice that our headless store project is mostly made up of components, ``company`` and ``product`` components. To add a new product, open the Sidebar and navigate to ``/items/products``  In this case, we are adding a product under **items** -> **products**. Click on the three dots next to the folder ``products``, then select **New Content**
 
 .. image:: /_static/images/first-project/first-project-new-content-headless-store.webp
    :width: 50 %
@@ -98,7 +98,7 @@ We'll be adding a new product to the project.  Notice that our headless store pr
 
 |
 
-The item product component template will open and we can now start filling out the product properties.  We'll be adding a plush bear product.  We'll need to give it a name and an internal name - ``Bear``, a description - ``Plush bear``:
+The item product component template will open and we can now start filling out the product properties. We'll be adding a plush bear product. We'll need to give it a name and an internal name - ``Bear``, a description - ``Plush bear``:
 
 .. image:: /_static/images/first-project/first-project-headless-store-properties-1.webp
    :width: 80 %
@@ -107,7 +107,7 @@ The item product component template will open and we can now start filling out t
 
 |
 
-Next we'll upload an image of the new product, select a tag for it if desired, give it a price and finally add/select the company the product is from by clicking on ``+Add`` in the ``Company`` field.  For our example, we will be selecting ``Company 1`` by clicking on ``+Add`` -> ``Browse for Existing - Company Components`` -> ``Company 1`` then finally click on the ``Save & Close`` button to create our new product:
+Next we'll upload an image of the new product, select a tag for it if desired, give it a price and finally add/select the company the product is from by clicking on ``+Add`` in the ``Company`` field. For our example, we will be selecting ``Company 1`` by clicking on ``+Add`` -> ``Browse for Existing - Company Components`` -> ``Company 1`` then finally click on the ``Save & Close`` button to create our new product:
 
 .. image:: /_static/images/first-project/first-project-headless-store-properties-2.webp
    :width: 80 %
@@ -125,7 +125,7 @@ Here’s the project, with our newly created product in the catalog.
 
 |
 
-You can add more products/companies, or modify/remove the existing products/companies from the blueprint, depending on your needs.  To remove or edit an existing product/company, navigate to the location of the product/company you want to edit/remove on the Sidebar.  Right click on it, then select the action you would like to do on the item.
+You can add more products/companies, or modify/remove the existing products/companies from the blueprint, depending on your needs. To remove or edit an existing product/company, navigate to the location of the product/company you want to edit/remove on the Sidebar. Right click on it, then select the action you would like to do on the item.
 
 .. image:: /_static/images/first-project/first-project-headless-store-edit-item.webp
    :width: 50 %
@@ -137,7 +137,7 @@ You can add more products/companies, or modify/remove the existing products/comp
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Publishing Your New/Edited Items
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Your project is not yet published after creating the project from the Headless Store Blueprint.  Once your project is published, if you make edits to any of the items or created new items, it will need to be published for your project consumers to see the changes.  The first thing you need to do is to navigate to the item you want to publish in the Sidebar enabled by toggling on the Crafter logo with hamburger icon on the upper left hand corner of Studio.  After navigating to the item you want to publish, click on the three dots next to the item you want to publish from the Sidebar, then click on **Publish**
+Your project is not yet published after creating the project from the Headless Store Blueprint. Once your project is published, if you make edits to any of the items or created new items, it will need to be published for your project consumers to see the changes. The first thing you need to do is to navigate to the item you want to publish in the Sidebar enabled by toggling on the Crafter logo with hamburger icon on the upper left hand corner of Studio. After navigating to the item you want to publish, click on the three dots next to the item you want to publish from the Sidebar, then click on **Publish**
 
 .. image:: /_static/images/first-project/first-project-headless-store-publish.webp
    :width: 50 %
@@ -146,7 +146,7 @@ Your project is not yet published after creating the project from the Headless S
 
 |
 
-You will then be prompted whether you want to publish the page now (**Now**), or publish the page at a later date and time (**Later**).  If this is the first publish for the project, you will be warned that the whole project will be published
+You will then be prompted whether you want to publish the page now (**Now**), or publish the page at a later date and time (**Later**). If this is the first publish for the project, you will be warned that the whole project will be published
 
 .. image:: /_static/images/first-project/first-project-publish-option.webp
    :width: 90 %
@@ -163,7 +163,7 @@ Retrieving a Product from the Project
 
 We'll now try to retrieve a product from the project using one of the  content retrieval APIs available `here <../../_static/api/engine.html>`_.
 
-For our example, let's say we're not sure of the urls for a certain product, so we'll use the `Get Children <../../_static/api/engine.html#tag/content/operation/getChildren>`_ to get a list of the products under ``/site/items/products``.  Our project id is ``my-store``, which will be used by the ``crafterSite`` parameter to set a project value.
+For our example, let's say we're not sure of the urls for a certain product, so we'll use the `Get Children <../../_static/api/engine.html#tag/content/operation/getChildren>`_ to get a list of the products under ``/site/items/products``. Our project id is ``my-store``, which will be used by the ``crafterSite`` parameter to set a project value.
 
 Here's the request that we'll be sending:
 
@@ -267,7 +267,7 @@ Here's how the response will look like:
      ...
    </list>
 
-To retrieve just one product, use `Get Item <../../_static/api/engine.html#tag/content/operation/getItem>`_ to get an item from the content store.  Remember to set the ``crafterSite`` parameter when sending your request:
+To retrieve just one product, use `Get Item <../../_static/api/engine.html#tag/content/operation/getItem>`_ to get an item from the content store. Remember to set the ``crafterSite`` parameter when sending your request:
 
 .. code-block:: text
    :caption: *Get Item request to get a product from the store*

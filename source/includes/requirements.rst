@@ -12,7 +12,7 @@ To run CrafterCMS, the following are required:
     - Git 2.20.1 and later
     - Docker if running on Mac or Windows
 
-Please note that CrafterCMS does not require any external databases for the core system to run and deliver fully dynamic experiences.  MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide user management and social features.
+Please note that CrafterCMS does not require any external databases for the core system to run and deliver fully dynamic experiences. MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide user management and social features.
 
 ^^^^^^^^^^^^^^^^^^^
 Supported Platforms
@@ -41,7 +41,7 @@ The following JVMs are supported:
 Verify Java Version
 ~~~~~~~~~~~~~~~~~~~
 
-Ensure that you are running Java 17.  To check,
+Ensure that you are running Java 17. To check,
 run the following command at the command prompt and make sure that the version displayed is Java 17:
 
 .. code-block:: sh
@@ -140,7 +140,7 @@ For OS X users, the latest ``openssl`` formula needs to be installed via homebre
 Linux Prerequisite
 """"""""""""""""""
 
-#. The library ``libaio`` is required by the Authoring install.  Please note that some Linux distributions does not install the library ``libaio`` by default and so, may need to be installed.  You may get the following error when starting up Studio:
+#. The library ``libaio`` is required by the Authoring install. Please note that some Linux distributions does not install the library ``libaio`` by default and so, may need to be installed. You may get the following error when starting up Studio:
 
    **error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory**
 
@@ -148,13 +148,13 @@ Linux Prerequisite
 
    To install ``libaio`` for RedHat-based Linux distros: ``yum install libaio``
 
-#. For Linux users, some of the scripts uses ``lsof``.  Please note that some Linux distributions does not come with ``lsof`` pre-installed and so, may need to be installed.
+#. For Linux users, some of the scripts uses ``lsof``. Please note that some Linux distributions does not come with ``lsof`` pre-installed and so, may need to be installed.
 
    To install ``lsof`` for Debian-based Linux distros: ``apt-get install lsof``
 
    To install ``lsof`` for RedHat-based Linux distros: ``yum install lsof``
 
-#. The library ``libncurses5`` is required for the Authoring install and the restore script.  You may get the following error when running an Authoring install or the restore script without the ``libncurses5`` library installed:
+#. The library ``libncurses5`` is required for the Authoring install and the restore script. You may get the following error when running an Authoring install or the restore script without the ``libncurses5`` library installed:
 
    **error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory**
 
@@ -170,7 +170,7 @@ Linux Prerequisite
 Windows Prerequisite
 """"""""""""""""""""
 
-For Windows users, WSL 2 needs to be installed.  All CrafterCMS scripts/commands to be executed and items that needs to be downloaded and installed needs to be in WSL 2.
+For Windows users, WSL 2 needs to be installed. All CrafterCMS scripts/commands to be executed and items that needs to be downloaded and installed needs to be in WSL 2.
 
 Follow the instructions `here <https://docs.microsoft.com/en-us/windows/wsl/install>`__ to install WSL 2.
 

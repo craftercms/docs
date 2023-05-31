@@ -15,7 +15,7 @@ Crafter Studio supports project creation with remote repositories and provides t
 - Create project based on a blueprint then add a remote Git repository
 
 To start creating a project with a remote repository, from the **Projects** screen, click on the **Create Project** button.
-A **Create Project** dialog will be launched.  For both options, there will be a screen where the **Remote Git Repository Name** and **Remote Git Repository URL** needs to be filled out and the rest is optional and only needs to be filled out if required by the remote git repository being used.
+A **Create Project** dialog will be launched. For both options, there will be a screen where the **Remote Git Repository Name** and **Remote Git Repository URL** needs to be filled out and the rest is optional and only needs to be filled out if required by the remote git repository being used.
 
 Let's take a look at the fields where the remote repository details needs to be filled in:
 
@@ -32,9 +32,9 @@ Let's take a look at the fields where the remote repository details needs to be 
    CrafterCMS supports the following authentication types to use to access remote repository:
 
     - **Authentication not required (Public URL)** - no credentials needed to access remote repository
-    - **Username & Password** - for this method, you will be asked for a **Remote Git Repository Username** and a **Remote Git Repository Password**.  Supply your username and password
-    - **Token** - for this method, you will be asked for a **Remote Git Repository Username** (if required) and a **Remote Git Repository Token**.  This method is usually used when two-factor authentication is configured on the remote repository to be accessed. Supply your username if required and token.
-    - **Private Key** - for this method, you will be asked for a **Remote Git Repository Private Key**.  This method is a key-based authentication.  Supply your private key.
+    - **Username & Password** - for this method, you will be asked for a **Remote Git Repository Username** and a **Remote Git Repository Password**. Supply your username and password
+    - **Token** - for this method, you will be asked for a **Remote Git Repository Username** (if required) and a **Remote Git Repository Token**. This method is usually used when two-factor authentication is configured on the remote repository to be accessed. Supply your username if required and token.
+    - **Private Key** - for this method, you will be asked for a **Remote Git Repository Private Key**. This method is a key-based authentication. Supply your private key.
 
 #. In the **Git Branch** field, you can supply a branch name, but can be left blank, which in turn would default to the ``master`` branch.
 #. In the **Git Remote Name** field you want to provide a repository name that makes sense. It’s common to use “origin” or “upstream.”
@@ -53,7 +53,7 @@ To create a project based on a blueprint then add a remote bare git repository, 
 
 |
 
-The next step is to fill in the **Project ID** and **Project Name**, then click on the **Review** button, then finally  click on the **Create Project** button to create your project.  Your project should be created in a short while.
+The next step is to fill in the **Project ID** and **Project Name**, then click on the **Review** button, then finally  click on the **Create Project** button to create your project. Your project should be created in a short while.
 
 .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-2.webp
     :alt: Create Site Dialog in Crafter Studio, fill in Site ID
@@ -62,8 +62,8 @@ The next step is to fill in the **Project ID** and **Project Name**, then click 
 
 |
 
-Once your project is created, the next step is to add a remote repository to your newly created project.  Open the **Sidebar** then click on **Site Config** -> **Remote Repositories**, then click on the **New Repository** on the top right.
-This will open up a dialog where we can fill in all the information for our remote repository as described above.  Click on the **Create** button after filling in the required information.
+Once your project is created, the next step is to add a remote repository to your newly created project. Open the **Sidebar** then click on **Site Config** -> **Remote Repositories**, then click on the **New Repository** on the top right.
+This will open up a dialog where we can fill in all the information for our remote repository as described above. Click on the **Create** button after filling in the required information.
 
 .. image:: /_static/images/developer/dev-cloud-platforms/create-project-then-push-3.webp
     :alt: Create Repository dialog to fill in information of remote repository being added to the project
@@ -79,7 +79,7 @@ Your project should now have a remote repository listed in the **Remotes** scree
     :width: 70 %
     :align: center
 
-Remember that the remote repository needs to be a bare git repository, since we are pushing our newly created project to the remote repository.  To push our newly create project to the remote repository, click on the ``Push`` button (button with the up arrow) next to the remote repository
+Remember that the remote repository needs to be a bare git repository, since we are pushing our newly created project to the remote repository. To push our newly create project to the remote repository, click on the ``Push`` button (button with the up arrow) next to the remote repository
 
 -----------------------------------------------
 Create project based on a remote Git repository
@@ -96,7 +96,7 @@ To create a project based on remote Git repository, after clicking on **Create P
 
 |
 
-Click on the **Site ID** field where you'll need to give your project an ID.  Scroll down to see where you can fill in all the information for the remote repository we are importing.  The ``Git Repo URL`` is the import project's sandbox repository git url (the project you want to bring over to your Studio). Below are sample urls for the project being imported:
+Click on the **Site ID** field where you'll need to give your project an ID. Scroll down to see where you can fill in all the information for the remote repository we are importing. The ``Git Repo URL`` is the import project's sandbox repository git url (the project you want to bring over to your Studio). Below are sample urls for the project being imported:
 
 Here is a sample Git url from GitHub:
 `https://github.com/username/hello-test.git`

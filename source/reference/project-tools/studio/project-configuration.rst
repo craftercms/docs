@@ -119,7 +119,7 @@ Requiring Peer Review for Publishing
    :version: 4.0.0
 
 A publisher review workflow option is available to make approval of a publish request mandatory for users with
-publish permission.  To enable the publisher review workflow option, set ``requirePeerReview`` to ``true``.
+publish permission. To enable the publisher review workflow option, set ``requirePeerReview`` to ``true``.
 
 .. code-block:: xml
 
@@ -197,7 +197,7 @@ pattern/s that you would like to be protected.
 
 To see an example of configured protected folders, create a project using the ``Video Center`` blueprint from the
 Public Marketplace in the ``Create Project`` dialog then open the
-``Sidebar`` -> |projectTools| -> ``Configuration`` -> ``Project Configuration``.  Scroll down to the
+``Sidebar`` -> |projectTools| -> ``Configuration`` -> ``Project Configuration``. Scroll down to the
 ``<protected-folders-patterns>`` tag:
 
 .. code-block:: xml

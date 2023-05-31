@@ -37,7 +37,7 @@ Data Sources consist of (at a minimum)
 
 * A single JavaScript file which implements the data source interface.
 
-	* The JS file name and the data source name in the configuration does not need to be the same.  The JS file name can be any meaningful name, different from the data source name in the configuration.
+	* The JS file name and the data source name in the configuration does not need to be the same. The JS file name can be any meaningful name, different from the data source name in the configuration.
 
 * Configuration in a Crafter Studio project to make that data source available for use.
 
@@ -87,7 +87,7 @@ Data Source Interface
     	getSupportedProperties: function() { },
 
     	/**
-    	 * method responsible for getting the actual values.  Caller must pass callback which meets interface:
+    	 * method responsible for getting the actual values. Caller must pass callback which meets interface:
     	 * { success: function(list) {}, failure: function(exception) }
     	 */
     	getList: function(cb) { }
@@ -112,17 +112,17 @@ where:
 Form Engine Data Source Project Plugin Example
 ----------------------------------------------
 
-Let's take a look at an example of a data source plugin.  We will be adding a data source named ``parent-content``.
+Let's take a look at an example of a data source plugin. We will be adding a data source named ``parent-content``.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Form Engine Data Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The first thing we have to do is to create the folder structure where we will be placing the JS file for our data source.  We'll follow the convention listed above in :ref:`plugin-ds-directory-structure`
+The first thing we have to do is to create the folder structure where we will be placing the JS file for our data source. We'll follow the convention listed above in :ref:`plugin-ds-directory-structure`
 
-In a local folder, create the descriptor file for your plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.examples``, then create the folder ``authoring``.  Under the ``authoring`` folder, create the ``static-assets`` folder.  Under the ``static-assets`` folder, create the folder ``plugins``.
+In a local folder, create the descriptor file for your plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.examples``, then create the folder ``authoring``. Under the ``authoring`` folder, create the ``static-assets`` folder. Under the ``static-assets`` folder, create the folder ``plugins``.
 
-We will now create the folders following the plugin id path name, ``org.craftercms.plugin.examples``.  Under the ``plugins`` folder, create the folder ``org``.  Under the ``org`` folder, create the folder ``craftercms``.  Under the ``craftercms`` folder, create the folder ``plugin``.  Next, we'll create the folder for the plugin type, ``datasource``.  Under the ``plugin`` folder, create the folder ``datasource``.  Under the ``datasource`` folder, create the folder ``parent-content``, which is the name of the data source we're building.  We will be placing the JS file implementing the data source interface under the ``parent-content`` folder.  In the example below, the JS file is ``main.js``
+We will now create the folders following the plugin id path name, ``org.craftercms.plugin.examples``. Under the ``plugins`` folder, create the folder ``org``. Under the ``org`` folder, create the folder ``craftercms``. Under the ``craftercms`` folder, create the folder ``plugin``. Next, we'll create the folder for the plugin type, ``datasource``. Under the ``plugin`` folder, create the folder ``datasource``. Under the ``datasource`` folder, create the folder ``parent-content``, which is the name of the data source we're building. We will be placing the JS file implementing the data source interface under the ``parent-content`` folder. In the example below, the JS file is ``main.js``
 
 .. code-block:: text
       :caption: *Form Engine Data Source Plugin Directory Structure*
@@ -145,7 +145,7 @@ We will now create the folders following the plugin id path name, ``org.crafterc
 
 For our example, the <plugin-folder> is located here: ``/users/myuser/myplugins/form-datasource-plugin``
 
-In the JS file, please note that the ``CStudioAuthoring.Module`` is required and that the prefix for ``CStudioAuthoring.Module.moduleLoaded`` must be the name of the data source.  For our example, the prefix is ``parent-content`` as shown in the example.
+In the JS file, please note that the ``CStudioAuthoring.Module`` is required and that the prefix for ``CStudioAuthoring.Module.moduleLoaded`` must be the name of the data source. For our example, the prefix is ``parent-content`` as shown in the example.
 
 .. code-block:: js
     :linenos:
@@ -291,14 +291,14 @@ After placing your JS file, the plugin may now be installed for testing/debuggin
 
 When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``my-editorial`` by running the following:
 
-   ..  code-block:: bash
+   .. code-block:: bash
 
        ./crafter-cli copy-plugin -e local -s my-editorial --path /users/myuser/myplugins/form-datasource-plugin
 
    |
 
 
-Let's take a look at the auto-wiring performed during installation of the plugin.  Form data sources are setup in the ``site-config-tools.xml``  file.
+Let's take a look at the auto-wiring performed during installation of the plugin. Form data sources are setup in the ``site-config-tools.xml``  file.
 
 The items we setup in the descriptor file for auto-wiring :ref:`above <configure-descriptor-file-for-autowiring-datasource>` should now be in the ``Project Config Tools`` configuration file, which can be accessed  by opening the ``Sidebar``, then clicking  on ``Project Tools`` -> ``Configuration``  ->  ``Project Config Tools``
 

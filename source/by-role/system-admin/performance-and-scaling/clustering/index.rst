@@ -19,7 +19,7 @@ Crafter Studio can be clustered for high-availability.
 
 |
 
-A node is a server running an instance of Crafter Studio and a cluster consists of two or more nodes.  In the image above, two Crafter Studio instances are clustered as primary and replica.
+A node is a server running an instance of Crafter Studio and a cluster consists of two or more nodes. In the image above, two Crafter Studio instances are clustered as primary and replica.
 
 When setting up a Studio cluster, a specific node needs to be started first as a
 reference point, then the other node/s can join and form the cluster. This is known as cluster bootstrapping.
@@ -84,7 +84,7 @@ endpoint that applications can use to fulfill requests from.
 For more information on Multi-Region Access Points in Amazon S3, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPoints.html
 
 AWS S3 also supports bucket replication (S3 replication) irrespective of the region they belong to, which provides data
-protection against disasters, minimizing latency, etc.  For more information on S3 bucket replication for use with
+protection against disasters, minimizing latency, etc. For more information on S3 bucket replication for use with
 multi-region access points, see https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPointBucketReplication.html
 
 Here's some more information on S3 replication: https://aws.amazon.com/about-aws/whats-new/2020/12/amazon-s3-replication-adds-support-two-way-replication/

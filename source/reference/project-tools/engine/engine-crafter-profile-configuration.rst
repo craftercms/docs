@@ -16,22 +16,22 @@ Engine Crafter Profile Configuration
 Crafter Engine needs access tokens to use Crafter Profile's API. Each project must have it's own access token. Follow the
 next steps to create one:
 
-#.  Login to Crafter Profile Admin Console as a ``PROFILE_SUPERADMIN`` (by default the admin user has this role).  *See* :ref:`here <profile-admin-console>` *for more information on the Crafter Profile Admin Console UI.*
-#.  Click on **New Access Token** in the navigation. Enter your project's name on **Application**, leave the **Master** checkbox
+#. Login to Crafter Profile Admin Console as a ``PROFILE_SUPERADMIN`` (by default the admin user has this role). *See* :ref:`here <profile-admin-console>` *for more information on the Crafter Profile Admin Console UI.*
+#. Click on **New Access Token** in the navigation. Enter your project's name on **Application**, leave the **Master** checkbox
     unselected, pick a proper Expiration Date (10 years from the current date is ok) and on **Tenant Permissions** add
-    your tenant's name to the input (*Remember that your tenant's name has to have the same name as your project.  See the note below*) and click on **Add**. By default the admin console auto-selects the 3 actions
+    your tenant's name to the input (*Remember that your tenant's name has to have the same name as your project. See the note below*) and click on **Add**. By default the admin console auto-selects the 3 actions
     mentioned before. If you're using the same access token as another environment (e.g. you want to use the same 
     access token in dev and prod), copy the same access token ID from the other environment, and enter the same field 
     values for Application, Master and Expiration Date. Finally, click on **Accept**.
 
        .. note::
-          Authentication by default is done against a tenant with the same name as your project.  See :ref:`profile-admin-tenants` for more information on creating a tenant.
+          Authentication by default is done against a tenant with the same name as your project. See :ref:`profile-admin-tenants` for more information on creating a tenant.
 
     .. image:: /_static/images/new_access_token.webp
 
     |
 
-#.  Now that you have created the access token, you need to "tell" Engine to use it in your project. In Admin Console,
+#. Now that you have created the access token, you need to "tell" Engine to use it in your project. In Admin Console,
     click on **List Access Tokens** in the navigation menu and copy the ID of the token you just created. Then, depending
     on the mode Engine is running, add one of the following configurations (preview is ignored because normally 
     predefined Personas are used, so there's no need to access the Crafter Profile app).
@@ -65,7 +65,7 @@ Add Registration
 
 Normally, to add registration or sign up you just need to:
 
-#.  Create a page with an HTML form that captures the user information for registration:
+#. Create a page with an HTML form that captures the user information for registration:
 
     .. code-block:: html
       :linenos:
@@ -78,7 +78,7 @@ Normally, to add registration or sign up you just need to:
           <button type="submit">Submit</button>
       </form>
 
-#.  Create a controller script that receives the information and creates the respective profile. Assuming the 
+#. Create a controller script that receives the information and creates the respective profile. Assuming the 
     controller should be under /registration, you need to create a script under Scripts > controllers > 
     registration.post.groovy, with code similar to the following:
     
@@ -131,7 +131,7 @@ Normally, to add registration or sign up you just need to:
           throw new HttpStatusCodeException(400, "User '${email}' already exists")
       }
 
-#.  Create also a MailHelper.groovy file under Classes > groovy > utils, with the following code:
+#. Create also a MailHelper.groovy file under Classes > groovy > utils, with the following code:
     
     .. code-block:: groovy
       :linenos:
@@ -171,7 +171,7 @@ Normally, to add registration or sign up you just need to:
 
       }
 
-#.  Create the Freemarker template that will be used to send the verification emails to the users, under Templates > 
+#. Create the Freemarker template that will be used to send the verification emails to the users, under Templates > 
     mail > verify-account.ftl:
 
     .. code-block:: html
@@ -189,7 +189,7 @@ Normally, to add registration or sign up you just need to:
           The MySite.com Team
       </p>
 
-#.  Finally, add the controller that will perform the profile verification when the user clicks on the link included 
+#. Finally, add the controller that will perform the profile verification when the user clicks on the link included 
     in the email and is redirected. If we used the code above, the script should be put in Scripts > controllers > 
     verifyacct.get.groovy:
     
@@ -228,13 +228,13 @@ Provider to create a user with firstName, lastName and displayName attributes.
 Add Facebook Login
 ==================
 
-#.  Be sure there's a connections attribute of Complex type defined for the project's Crafter Profile Tenant. This
+#. Be sure there's a connections attribute of Complex type defined for the project's Crafter Profile Tenant. This
     attribute is needed to store the Facebook connection info. To add this attribute to the Tenant, go to Crafter 
     Profile Admin Console, select the Tenant and then add the attribute.
 
     .. image:: /_static/images/connections_attribute.webp
 
-#.  Add the Facebook appSecret and appKey to your project's config (in Studio, Config > Engine Project Configuration), like this:
+#. Add the Facebook appSecret and appKey to your project's config (in Studio, Config > Engine Project Configuration), like this:
 
     .. code-block:: xml
       :linenos:
@@ -246,7 +246,7 @@ Add Facebook Login
           </facebookConnectionFactory>
       </socialConnections>
 
-#.  Add a JS method that is triggered when the user clicks on the "Login with Facebook" button, that displays the FB 
+#. Add a JS method that is triggered when the user clicks on the "Login with Facebook" button, that displays the FB 
     login popup when the user clicks on "Connect with Facebook":
 
     .. code-block:: javascript
@@ -267,7 +267,7 @@ Add Facebook Login
           } catch(e) {}
       }
 
-#.  Add a controller script under Scripts > controllers > connect > facebook_dialog.get.groovy, that will redirect to 
+#. Add a controller script under Scripts > controllers > connect > facebook_dialog.get.groovy, that will redirect to 
     the actual Facebook login when the popup appears. The whole FB login process can be done with the help of the 
     ``providerLoginSupport``, provided automatically to all scripts. The ``start(tenant, providerId, request, 
     additionalParams, connectSupport)`` method is used to create the proper Facebook redirect URL. Also, by creating 
@@ -289,7 +289,7 @@ Add Facebook Login
 
       return "redirect:" + providerLoginSupport.start(siteContext.siteName, "facebook", request, additionalParams, connectSupport)
 
-#.  Under Scripts > controllers > connect > facebook.get.groovy, add the script to complete the Facebook connection. 
+#. Under Scripts > controllers > connect > facebook.get.groovy, add the script to complete the Facebook connection. 
     By calling ``providerLoginSupport.complete(tenant, providerId, request)``, the login process will automatically 
     be completed for you, and a new user will be created if there wasn't a previous one with the Facebook provided 
     username or email.

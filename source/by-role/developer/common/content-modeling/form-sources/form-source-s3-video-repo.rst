@@ -35,8 +35,8 @@ Configuration
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
 +------------------------+--------------------------------------------------------------------------+
-|| Description/Purpose   || Data source to select videos from repository.                           |
+|| Description/Purpose   || Data source to select videos from repository.                          |
 +------------------------+--------------------------------------------------------------------------+
-|| Properties            || - Repository Path: Path where to browse the S3 repository.              |
+|| Properties            || - Repository Path: Path where to browse the S3 repository.             |
 ||                       || - Profile ID: S3 profile id to be used setup in aws.xml                 |
 +------------------------+--------------------------------------------------------------------------+

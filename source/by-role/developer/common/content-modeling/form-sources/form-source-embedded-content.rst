@@ -35,7 +35,7 @@ Configuration
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
 +------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Data source to create inline components.                             |
+|| Description/Purpose   || Data source to create inline components.                            |
 +------------------------+-----------------------------------------------------------------------+
 || Properties            || - Content Type: the content type to use by default when creating the |
 ||                       ||   content                                                            |

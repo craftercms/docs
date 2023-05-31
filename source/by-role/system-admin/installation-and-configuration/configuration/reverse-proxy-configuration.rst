@@ -92,7 +92,7 @@ The ``ProxyPreserveHost`` directive indicates whether it uses incoming Host HTTP
 
 The ``ProxyPass`` and ``ProxyPassReverse`` directives in the above example specify that traffic to the server name
 specified in your config should be proxied to ``http://localhost:8080/`` for your authoring install and
-``http://localhost:9080/`` for your delivery install.  The ``ProxyPassReverse`` distinguishes your configuration
+``http://localhost:9080/`` for your delivery install. The ``ProxyPassReverse`` distinguishes your configuration
 as a reverse proxy setup.
 
 Depending on your setup, the following CrafterCMS properties may need to be setup:

@@ -4,7 +4,7 @@
 
 .. index:: Content Author Search
 
-..  _content_authors_search:
+.. _content_authors_search:
 
 ---------
 Searching
@@ -29,7 +29,7 @@ You can also access **Search** by clicking on the magnifying glass icon on the t
 
 |
 
-Search allows you to find objects in the system through keywords.  Each result is a content type of one sort or another.  An option to delete, edit/view and the content type is provided with each result.  You can view the results in a list or a grid, like below:
+Search allows you to find objects in the system through keywords. Each result is a content type of one sort or another. An option to delete, edit/view and the content type is provided with each result. You can view the results in a list or a grid, like below:
 
 .. image:: /_static/images/content-author/search-grid-view.webp
     :width: 95 %
@@ -47,7 +47,7 @@ Here's the search results in list view:
 
 |
 
-**Filtering Results**:  Crafter Studio supports multiple ways to filter search results.  Depending on your search results, different filters will be available.  Generally, you can sort your search results based on the following:
+**Filtering Results**:  Crafter Studio supports multiple ways to filter search results. Depending on your search results, different filters will be available. Generally, you can sort your search results based on the following:
 
 * Sort By
   * Relevance
@@ -74,7 +74,7 @@ Here's the search results in list view:
 
 |
 
-**Result Selection**: Note the checkboxes for each result type .  Just as you can select multiple items on the dashboard and then interact with them in bulk, the same is true with search.  You will have checkboxes that allow you to choose many items and access to the context nav to take action on those items.  If you are selecting specific items for a control in a form you will be able to choose whatever number of items are expected by the control.
+**Result Selection**: Note the checkboxes for each result type . Just as you can select multiple items on the dashboard and then interact with them in bulk, the same is true with search. You will have checkboxes that allow you to choose many items and access to the context nav to take action on those items. If you are selecting specific items for a control in a form you will be able to choose whatever number of items are expected by the control.
 
 .. image:: /_static/images/content-author/search-results-checkboxes.webp
     :width: 95 %

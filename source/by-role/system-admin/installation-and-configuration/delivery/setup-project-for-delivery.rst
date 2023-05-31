@@ -78,7 +78,7 @@ Example #2: ``ssh://jdoe@server2.example.com:63022/path/to/repo``
    .. note::
       .. include:: /includes/setup-ssh-keys.rst
 
-If you are just working on another directory on disk for your delivery, you can just use the filesystem.  When your repository is local, make sure to use the absolute path.
+If you are just working on another directory on disk for your delivery, you can just use the filesystem. When your repository is local, make sure to use the absolute path.
 Here is an example project's published repo Git url when using a local repository:
 
   .. code-block:: bash

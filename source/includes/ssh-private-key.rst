@@ -2,7 +2,7 @@
 .. note::
 
    Remember that when using private key SSH authentication, the private key path must be set explicitly using
-   the ``-k`` option.  Here's an example:
+   the ``-k`` option. Here's an example:
 
    .. code-block:: text
 

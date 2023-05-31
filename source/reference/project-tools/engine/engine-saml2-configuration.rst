@@ -30,8 +30,8 @@ Crafter Engine can be configured to support SAML2 SSO out of the box without usi
 Requirements
 ------------
 
-#.  A SAML2 compatible Identity Provider properly configured, this configuration will not be covered here
-#.  A private key and certificate.  This can be generated like so:
+#. A SAML2 compatible Identity Provider properly configured, this configuration will not be covered here
+#. A private key and certificate. This can be generated like so:
 
     ``openssl req -newkey rsa:2048 -nodes -keyout rp-private.key -x509 -days 365 -out rp-certificate.crt``
 
@@ -60,7 +60,7 @@ To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.s
 
 |
 
-Next we'll setup SAML configuration properties.  Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension`` and add/uncomment the following lines to :ref:`server-config.properties <engine-config-override>` (of course, make any appropriate configuration changes according to your system):
+Next we'll setup SAML configuration properties. Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension`` and add/uncomment the following lines to :ref:`server-config.properties <engine-config-override>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: properties
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
@@ -146,7 +146,7 @@ where
 - ``crafter.security.saml.webSSOProfileOptions.passive``: Indicates if user is authenticated silently
 - ``crafter.security.saml.webSSOProfileOptions.forceAuthn``: Indicates if user will be forced to re-authenticate
 
-The classpath is located in your CrafterCMS installation, under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes``.  As shown in the example above, the relying party private key is located in your CrafterCMS installation under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/saml`` folder.
+The classpath is located in your CrafterCMS installation, under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes``. As shown in the example above, the relying party private key is located in your CrafterCMS installation under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/saml`` folder.
 
 .. code-block:: properties
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*

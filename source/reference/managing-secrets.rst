@@ -59,7 +59,7 @@ The encryption algorithm used is PBE (Password Based Encryption) with AES, in wh
 specified to generate the key used on encryption/decryption.
 
 For encryption via Studio-managed configuration files and via the UI, Crafter Studio uses a default key and salt
-for the encryption tool.  To set the key and salt to desired values, in your Authoring installation directory,
+for the encryption tool. To set the key and salt to desired values, in your Authoring installation directory,
 open ``CRAFTER_HOME/bin/crafter-setenv.sh`` and modify the following values
 
 .. code-block:: bash
@@ -102,7 +102,7 @@ Example
 Let's take a look at an example of encrypting the ``accessKey`` and ``securityKey`` for the AWS Profiles configuration.
 
 * Open the ``AWS Profiles`` configuration file by clicking on |projectTools| -> ``Configuration``, then select ``AWS Profiles`` from the dropdown box
-* We will add an ``AWS S3 profile``.  Notice that the ``accessKey`` and ``secureKey`` is in the clear.
+* We will add an ``AWS S3 profile``. Notice that the ``accessKey`` and ``secureKey`` is in the clear.
 
   .. code-block:: xml
      :caption: *{REPOSITORY_ROOT}/sites/SITENAME/config/studio/aws/aws.xml*
@@ -138,7 +138,7 @@ Let's take a look at an example of encrypting the ``accessKey`` and ``securityKe
        </s3>
      </aws>
 
-* We will now mark items to be encrypted by adding the attribute ``encrypted=""``.  For our example, we will mark ``accessKey`` and ``secretKey`` for encryption.
+* We will now mark items to be encrypted by adding the attribute ``encrypted=""``. For our example, we will mark ``accessKey`` and ``secretKey`` for encryption.
 
   .. code-block:: xml
      :caption: *{REPOSITORY_ROOT}/sites/SITENAME/config/studio/aws/aws.xml*
@@ -202,14 +202,14 @@ then click on ``Encryption Tool``.
 
 |
 
-To encrypt a password, access key, etc., simply enter the password, access key, etc. in the ``Raw Text`` field, then click on ``Encrypt Text``.  This will generate the encrypted password, access key, etc. that you then simply need to paste in the configuration file.
+To encrypt a password, access key, etc., simply enter the password, access key, etc. in the ``Raw Text`` field, then click on ``Encrypt Text``. This will generate the encrypted password, access key, etc. that you then simply need to paste in the configuration file.
 
-Crafter Studio also provides the encryption tool to encrypt passwords, access keys or other sensitive information in a configuration file managed through Crafter Studio in |projectTools| -> ``Configuration``.  See :ref:`encrypting-text-in-a-configuration-file` for more information.
+Crafter Studio also provides the encryption tool to encrypt passwords, access keys or other sensitive information in a configuration file managed through Crafter Studio in |projectTools| -> ``Configuration``. See :ref:`encrypting-text-in-a-configuration-file` for more information.
 
 Example
 -------
 
-Let's take a look at an example of using the Studio encryption tool to encrypt a password.  From the ``Navigation Menu``, click on ``Global Config`` and scroll down to the ``SMTP Configuration (Email)`` section. We're going to encrypt the value for ``studio.mail.password:``
+Let's take a look at an example of using the Studio encryption tool to encrypt a password. From the ``Navigation Menu``, click on ``Global Config`` and scroll down to the ``SMTP Configuration (Email)`` section. We're going to encrypt the value for ``studio.mail.password:``
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
@@ -251,7 +251,7 @@ Let's begin:
         :align: center
         :width: 70%
 
-   * Click on the ``Encrypt Text`` button.  The encrypted text will be displayed below the ``Raw Text`` field and copied onto the clipboard
+   * Click on the ``Encrypt Text`` button. The encrypted text will be displayed below the ``Raw Text`` field and copied onto the clipboard
 
      .. image:: /_static/images/system-admin/main-menu/main-menu-encryption-text-encrypted.webp
         :alt: System Administrator - Main Menu Encryption Tool Text Encrypted

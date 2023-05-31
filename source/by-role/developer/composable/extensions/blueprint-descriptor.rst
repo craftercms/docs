@@ -9,9 +9,9 @@
 CrafterCMS Blueprint Descriptor
 ===============================
 
-The ``craftercms-plugin.yaml`` file contains information for use in CrafterCMS.  This descriptor file contains
+The ``craftercms-plugin.yaml`` file contains information for use in CrafterCMS. This descriptor file contains
 information about your extension, such as the license, the versions of CrafterCMS supported, and other
-configurations and metadata.  In this section, we'll take a look at a blueprint descriptor file.
+configurations and metadata. In this section, we'll take a look at a blueprint descriptor file.
 
 Below is a sample descriptor file for a blueprint:
 
@@ -83,10 +83,10 @@ Here are some things to note in the descriptor file:
    * - plugin.name
      - |checkmark|
      - The name displayed in the Crafter Marketplace. |br|
-       Pick a unique name for your blueprint.  You can check in the Crafter Marketplace if |br|
+       Pick a unique name for your blueprint. You can check in the Crafter Marketplace if |br|
        the name you picked does not exist yet. |br|
        It's also a best practice to provide a name for your blueprint that is meaningful or |br|
-       recognizable to users.  The name can be multiple words such as ``Video Center``
+       recognizable to users. The name can be multiple words such as ``Video Center``
    * - plugin.version
      - |checkmark|
      - The version number for the blueprint

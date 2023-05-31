@@ -10,7 +10,7 @@
 Multi-Environment Configuration
 ===============================
 
-Users may want multiple environments setup with different configurations for each environment, e.g. QA, Prod, Dev, etc.  To setup an environment, do the following:
+Users may want multiple environments setup with different configurations for each environment, e.g. QA, Prod, Dev, etc. To setup an environment, do the following:
 
 #. Create a folder under ``CRAFTER_HOME/data/repos/site/my-awesome-editorial/sandbox/config/studio`` called ``env``
 #. Inside the folder, create a directory called ``myenv`` (or whatever you want to call the environment)
@@ -65,7 +65,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
       |
 
 #. Inside the ``env`` folder, create a directory called ``mycustomenv``
-#. We will now copy the configuration file for the ``ui.xml`` that we want to override in the new environment we are setting up, inside our ``mycustomenv`` folder, following the folder structure under ``config/studio``.  For our example, the ``ui.xml`` file is under ``config/studio/``:
+#. We will now copy the configuration file for the ``ui.xml`` that we want to override in the new environment we are setting up, inside our ``mycustomenv`` folder, following the folder structure under ``config/studio``. For our example, the ``ui.xml`` file is under ``config/studio/``:
 
       .. code-block:: text
          :emphasize-lines: 3
@@ -96,7 +96,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
       |
 
-#. Restart Studio.  To verify our newly setup environment, open the ``Sidebar`` and click on |projectTools|, then select ``Configuration``.  Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations list:
+#. Restart Studio. To verify our newly setup environment, open the ``Sidebar`` and click on |projectTools|, then select ``Configuration``. Notice that the active environment ``mycustomenv`` will be displayed on top of the configurations list:
 
    .. image:: /_static/images/site-admin/env-custom-configurations.webp
       :align: center

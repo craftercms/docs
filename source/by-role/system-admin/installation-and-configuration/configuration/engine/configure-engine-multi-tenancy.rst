@@ -86,7 +86,7 @@ current site from the URL.
 |
 
 Aside from the ``crafterSite`` parameter, a header can be sent to specify the site name, called
-``X-Crafter-Site`` for changing the current site.  This is very useful when Crafter Engine is used
+``X-Crafter-Site`` for changing the current site. This is very useful when Crafter Engine is used
 together with CDNs that can send headers, like AWS CloudFront
 
   .. WARNING::

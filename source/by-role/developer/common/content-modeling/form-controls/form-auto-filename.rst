@@ -25,7 +25,7 @@ Configuration
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
 +------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Simple text auto filename.                                           |
+|| Description/Purpose   || Simple text auto filename.                                          |
 +------------------------+-----------------------------------------------------------------------+
 || Properties            || None                                                                 |
 +------------------------+-----------------------------------------------------------------------+

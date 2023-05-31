@@ -47,16 +47,16 @@ The main files for configuring Crafter Engine are the following:
 | services-context.xml          | Contains the bean definition for services layer                |
 +-------------------------------+----------------------------------------------------------------+
 | server-config.properties      | Contains server configurable parameters such as urls,          |
-|                               | paths, etc.                                                    |
+|                               | paths, etc.                                                   |
 +-------------------------------+----------------------------------------------------------------+
 | rendering-context.xml         | Contains the bean definition for rendering                     |
 +-------------------------------+----------------------------------------------------------------+
-| logging.xml                   | Contains loggers, appenders, etc.                              |
+| logging.xml                   | Contains loggers, appenders, etc.                             |
 +-------------------------------+----------------------------------------------------------------+
 
 These configuration files for Crafter Engine is located under  ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension``, where ``CRAFTER_HOME`` is the install directory of your CrafterCMS authoring or delivery environment.
 
-The files can be accessed by opening the files using your favorite editor.  Any changes made to any of the files listed above will require a restart of Crafter.
+The files can be accessed by opening the files using your favorite editor. Any changes made to any of the files listed above will require a restart of Crafter.
 
 For more information on the properties in ``server-config.properties``, see :ref:`engine-config-override`
 
@@ -167,12 +167,12 @@ Crafter Engine includes a default blacklist that you can find
 
 To use a custom blacklist follow these steps:
 
-#.  Copy the default blacklist file to your classpath, for example:
+#. Copy the default blacklist file to your classpath, for example:
 
     ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/groovy/blacklist``
 
-#.  Remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
-#.  Update the :ref:`server-config.properties <engine-configuration-files>` configuration file to load the custom blacklist:
+#. Remove or comment (adding a ``#`` at the beginning of the line) the expressions that your scripts require
+#. Update the :ref:`server-config.properties <engine-configuration-files>` configuration file to load the custom blacklist:
 
     .. code-block:: none
       :caption: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties``
@@ -183,7 +183,7 @@ To use a custom blacklist follow these steps:
     .. note::
       In CrafterCMS v3.1.14 and prior, the name of the property is ``crafter.engine.groovy.sandbox.blacklist``
 
-#.  Restart CrafterCMS
+#. Restart CrafterCMS
 
 Now you can execute the same script without any issues.
 
@@ -242,7 +242,7 @@ Important Notes
 
 There are some limitations that should be noted when working with the Groovy Sandbox.
 
-One limitation is that an exception is thrown during execution when a Groovy class has a property and a getter method for the property.  Here's an example code that throws an exception during execution:
+One limitation is that an exception is thrown during execution when a Groovy class has a property and a getter method for the property. Here's an example code that throws an exception during execution:
 
    .. code-block::
 

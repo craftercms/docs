@@ -13,17 +13,17 @@ Active Cache a RESTful Response
 This section will demonstrate how to create a RESTful service in Crafter Engine that has predictable performance
 and reliability when your service relies on an external service.
 
-Any time your services depend on another service there is a cause for concern.  You can't control the performance or
+Any time your services depend on another service there is a cause for concern. You can't control the performance or
 the availability of the external service. Further, if the response of the external service is not unique across calls
 then there may be no real need to call out to it on each request you receive.
 
 In this case what you want to do is cache the request from the external service and have your service attempt to get the content from the cache.
 Active cache is a built in CrafterCMS capability that makes building these sort of solutions much easier.
-You tell Active Cache what you want, how to get it and how often to refresh it in the background.  From there on, you
+You tell Active Cache what you want, how to get it and how often to refresh it in the background. From there on, you
 simply ask Active cache for whatever the current response is.
 
 .. note::
-   Remember that caching only works when Crafter Engine is NOT in preview mode.  This is because when in preview mode, the preview server does not cache to ensure the latest updates are seen immediately.
+   Remember that caching only works when Crafter Engine is NOT in preview mode. This is because when in preview mode, the preview server does not cache to ensure the latest updates are seen immediately.
 
 -------------
 Prerequisites
@@ -31,7 +31,7 @@ Prerequisites
 
 **Enable active cache**
 
-Active cache is disabled by default.  To enable active cache, in the ``crafter-setenv.sh`` file under ``CRAFTER_HOME/bin``, set the Spring profile ``crafter.core.activeCache``
+Active cache is disabled by default. To enable active cache, in the ``crafter-setenv.sh`` file under ``CRAFTER_HOME/bin``, set the Spring profile ``crafter.core.activeCache``
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/crafter-setenv.sh*
@@ -52,7 +52,7 @@ To do this go to your Crafter installation, and then in ``bin/apache-tomcat/shar
 
 |
 
-In some cases, restrictions need to be disabled.  To disable all restrictions, set ``crafter.engine.disableVariableRestrictions`` to ``true``:
+In some cases, restrictions need to be disabled. To disable all restrictions, set ``crafter.engine.disableVariableRestrictions`` to ``true``:
 
 .. code-block:: properties
    :caption: *bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*

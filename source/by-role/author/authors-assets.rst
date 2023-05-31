@@ -4,7 +4,7 @@
 
 .. index:: Assets
 
-..  _content_authors_assets:
+.. _content_authors_assets:
 
 ===================
 Working with Assets
@@ -20,7 +20,7 @@ the project navigation tree to CrafterCMS.
 Adding Assets
 -------------
 To upload a file (images, videos, etc.), in the Sidebar click on **Static Assets**, then click again on
-the folder named **static-assets**.  This will show you a list of folders containing assets already uploaded,
+the folder named **static-assets**. This will show you a list of folders containing assets already uploaded,
 such as images, fonts, etc.
 
 ^^^^^^^^^^^^^^^^^
@@ -95,7 +95,7 @@ adding/replacing an asset which would give you an option to use an existing asse
 
 |
 
-The upload dialog will come up.  Click on the ``Choose File`` button to browse for the file you want to upload.
+The upload dialog will come up. Click on the ``Choose File`` button to browse for the file you want to upload.
 
 .. image:: /_static/images/page/page-asset-single-file-upload-dlg.webp
    :alt: Static Assets - Upload File Dialog
@@ -117,7 +117,7 @@ Once the file is uploaded, the dialog will close and the asset will now be in th
 Removing Assets
 ---------------
 
-To delete an asset, navigate to the asset you want to delete in the project navigation tree.  Click on the
+To delete an asset, navigate to the asset you want to delete in the project navigation tree. Click on the
 three dots next to the asset, then select **Delete**
 
 .. image:: /_static/images/page/page-asset-delete.webp
@@ -128,7 +128,7 @@ three dots next to the asset, then select **Delete**
 |
 
 Put a checkmark on ``By submitting, deleted items will be published immediately.`` to enable the
-**Delete** button.  Click on the **Delete** button if you want to delete the listed files, or
+**Delete** button. Click on the **Delete** button if you want to delete the listed files, or
 click on **Cancel** if you don't want to delete the asset.
 
 .. image:: /_static/images/page/page-asset-confirm-delete.webp
@@ -151,7 +151,7 @@ to inform you that the item/asset has been pushed for delete.
 ----------------
 Asset Versioning
 ----------------
-All changes to static assets are tracked and can be reverted to an older version.  For static assets,
+All changes to static assets are tracked and can be reverted to an older version. For static assets,
 like images, videos, etc., to access the History dialog, select the static asset that you want to view
 the history of from the project navigation tree, under the folder **Static Assets**, then click on the
 **History** menu of the context navigation menu at the top of your browser or, click on the three dots

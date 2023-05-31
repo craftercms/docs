@@ -14,7 +14,7 @@
 Plugin Management
 =================
 
-Project plugins extend Crafter Studio (authoring) and Crafter Engine and the site/web application (delivery).  It adds new features/functionality without adding code to CrafterCMS.
+Project plugins extend Crafter Studio (authoring) and Crafter Engine and the site/web application (delivery). It adds new features/functionality without adding code to CrafterCMS.
 
 This section details how to manage plugins from the |projectTools| Plugin Management module.
 
@@ -140,7 +140,7 @@ To view the installed plugins in your project, click on the ``Navigation Menu`` 
 Uninstall Plugins
 ^^^^^^^^^^^^^^^^^
 
-To uninstall plugins in your project, open the ``Plugin Management`` dialog.  Click on the trash can icon next to the plugin you want to uninstall.  A dialog will open to confirm the plugin to be uninstalled and a list of where the plugin is being used if applicable
+To uninstall plugins in your project, open the ``Plugin Management`` dialog. Click on the trash can icon next to the plugin you want to uninstall. A dialog will open to confirm the plugin to be uninstalled and a list of where the plugin is being used if applicable
 
 .. figure:: /_static/images/developer/plugins/project-plugins/plugin-uninstall-no-deps.webp
    :align: center
@@ -156,7 +156,7 @@ To uninstall plugins in your project, open the ``Plugin Management`` dialog.  Cl
 
 |
 
-For plugins with dependencies like the above, take note of the items in the list in the uninstall dialog.  These dependencies will need to be removed by the user before or after uninstalling the plugin.
+For plugins with dependencies like the above, take note of the items in the list in the uninstall dialog. These dependencies will need to be removed by the user before or after uninstalling the plugin.
 
 After clicking on the ``Uninstall`` button, a notification will appear at the bottom left of the screen informing the user of the plugin uninstall status (success/failure/etc.).
 

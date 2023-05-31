@@ -125,7 +125,7 @@ Configuring Nodes in the Cluster
    |
    |
 
-   Configure the Hazelcast configuration file location in Studio, by uncommenting ``studio.hazelcast.config.location``.  You will create the Hazelcast configuration file in a later step.
+   Configure the Hazelcast configuration file location in Studio, by uncommenting ``studio.hazelcast.config.location``. You will create the Hazelcast configuration file in a later step.
 
    .. code-block:: yaml
       :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -139,7 +139,7 @@ Configuring Nodes in the Cluster
    |
    |
 
-   Configure the following times and locations. Leave the environment variables, e.g. ``${env:MARIADB_CLUSTER_NAME}``.  You can see the configuration of the environment variables in a later step.
+   Configure the following times and locations. Leave the environment variables, e.g. ``${env:MARIADB_CLUSTER_NAME}``. You can see the configuration of the environment variables in a later step.
 
    .. code-block:: yaml
       :caption: *bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -399,7 +399,7 @@ Via the Global Transaction ID
 
 On a primary server, all database updates are written into the binary log as binlog events. A replica server
 connects to the primary and reads the binlog events, then applies the events locally to replicate
-the changes in the primary.  For each event group (transaction) in the binlog, a unique id is attached
+the changes in the primary. For each event group (transaction) in the binlog, a unique id is attached
 to it, called the ``Global Transaction ID`` or ``GTID``.
 
 To check our cluster, we can check the ``gtid_current_pos`` system variable in the primary and

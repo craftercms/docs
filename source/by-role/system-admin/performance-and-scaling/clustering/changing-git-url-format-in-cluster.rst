@@ -51,7 +51,7 @@ To recreate a remote:
 
    |
 
-   Remember to only remove the cluster remotes.  Cluster remote names start with ``cluster_``.  See example below:
+   Remember to only remove the cluster remotes. Cluster remote names start with ``cluster_``. See example below:
 
    .. code-block:: sh
       :caption: *List of remotes for the sandbox repository of site video*
@@ -65,7 +65,7 @@ To recreate a remote:
 
    |
 
-   To remove a remote, run ``git remote rm <remote_name>``, where ``remote_name`` is the name of remote as seen from the ``Cluster`` screen in the Studio Main Menu.  Let's use the remote name ``cluster_node_192.168.1.103`` for our example on removing a remote
+   To remove a remote, run ``git remote rm <remote_name>``, where ``remote_name`` is the name of remote as seen from the ``Cluster`` screen in the Studio Main Menu. Let's use the remote name ``cluster_node_192.168.1.103`` for our example on removing a remote
 
    .. code-block:: sh
       :caption: *Remove remote*
@@ -87,5 +87,5 @@ To recreate a remote:
    |
 
 #. Start the cluster.
-   Once the cluster is started, the remotes will be recreated.  Verify that the URL format displayed in ``Cluster`` in the Studio global menu is the desired URL format.
+   Once the cluster is started, the remotes will be recreated. Verify that the URL format displayed in ``Cluster`` in the Studio global menu is the desired URL format.
 

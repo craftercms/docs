@@ -41,4 +41,4 @@ Here's a sample WebDAV Profiles Configuration file (click on the triangle on the
 |
 |
 
-  .. note:: Preemptive authentication may be needed if network timeouts are happening during uploads.  To enable preemptive authentication, simply set the option ``preemptiveAuth`` to ``true`` in the configuration file.
+  .. note:: Preemptive authentication may be needed if network timeouts are happening during uploads. To enable preemptive authentication, simply set the option ``preemptiveAuth`` to ``true`` in the configuration file.

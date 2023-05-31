@@ -11,8 +11,8 @@ Configure Simple Workflow Notifications and Dialog Messages
 ===========================================================
 
 Crafter Studio provides a simple workflow option that includes submission, review/reject and approve and
-publish immediate / publish on a schedule options.  This document covers the configuration of the HTML notifications
-that can be sent at each point in the workflow.  To setup your email server, please see the section **System Administrators**, :ref:`studio-config-override`
+publish immediate / publish on a schedule options. This document covers the configuration of the HTML notifications
+that can be sent at each point in the workflow. To setup your email server, please see the section **System Administrators**, :ref:`studio-config-override`
 
 ------
 Basics
@@ -41,7 +41,7 @@ This can be modified/accessed through Crafter Studio, by going to the **Sidebar*
 Templates
 ---------
 
-Templates are used for the email messages sent for workflow states in the configuration file mentioned above.  The template used is Freemarker (also known as FTL).
+Templates are used for the email messages sent for workflow states in the configuration file mentioned above. The template used is Freemarker (also known as FTL).
 Variables are referenced in the template like `${VARIABLE}` or as part of a Freemarker statement like `<#list files as file>...</#list>`
 Dates can be formatted like so: `scheduleDate?string["MMMMM dd, yyyy 'at' hh:mm a"]}`
 
@@ -61,7 +61,7 @@ Common Variables
 +=============================+===========================================================+
 || date                       || Date for submission                                      |
 +-----------------------------+-----------------------------------------------------------+
-|| files                      || Collection of file objects in submission.                |
+|| files                      || Collection of file objects in submission.               |
 ||                            || Usually iterated over `<#list files as file>...</#list>` |
 +-----------------------------+-----------------------------------------------------------+
 || `file`.name                || File name including full repository path                 |
@@ -96,7 +96,7 @@ Deployment Error Notice Variable
 +-----------------------------+---------------------------------------------------------+
 || Variable Name              || Description                                            |
 +=============================+=========================================================+
-|| deploymentError            || Error message on deployment.  Currently must be        |
+|| deploymentError            || Error message on deployment. Currently must be        |
 ||                            || addressed as ${deploymentError.toString()}             |
 +-----------------------------+---------------------------------------------------------+
 
@@ -147,7 +147,7 @@ Below is a sample of Studio workflow dialog messages defined in our notification
               <content  title="Not Approved" key="NotApproved"><![CDATA[Please make the following revisions and resubmit.]]></content>
               <content  title="Typos" key="Typos"><![CDATA[This content has multiple misspellings and/or grammatical errors. Please correct and re-submit.]]></content>
               <content  title="Incorrect Branding" key="IB"><![CDATA[This content uses incorrect or outdated terms, images, and/or colors. Please correct and re-submit.]]></content>
-              <content  title="Broken Links" key="BrokenLinks"><![CDATA[This content has non-working links that may be due to incomplete and/or misspelled URLs.  Any links directing users to websites without the Acme.com primary navigation, or directing users to a document must open in a new browser window. Please correct and re-submit.]]></content>
+              <content  title="Broken Links" key="BrokenLinks"><![CDATA[This content has non-working links that may be due to incomplete and/or misspelled URLs. Any links directing users to websites without the Acme.com primary navigation, or directing users to a document must open in a new browser window. Please correct and re-submit.]]></content>
               <content  title="Needs Section Owner's Approval" key="NSOA"><![CDATA[This content needs the approval of its section&apos;s owner to insure there is no negative impact on other pages/areas of section, etc. Once you have their approval please email the Web Marketing Operations Team and re-submit this publish request.]]></content>
             </cannedMessages>
 

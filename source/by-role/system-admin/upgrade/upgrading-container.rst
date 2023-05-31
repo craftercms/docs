@@ -56,7 +56,7 @@ These upgrade instructions are for both Authoring and Delivery deployments:
 
 #. Check the :ref:`release-notes` for any other additional tasks you need to perform.
 #. Apply the updated deployment files (``kubectl apply``) so the containers are restarted and the configuration 
-   changes detected.  
+   changes detected. 
 #. Monitor the Kubernetes logs for any upgrade errors.
 
 =================================================

@@ -9,7 +9,7 @@
 Backup and Recovery
 ===================
 
-CrafterCMS out of the box comes with a script to backup and restore your environment.  The script provided will backup your environment including indexes, repos, mongodb, etc.  You can then use your favorite backup tools for backing up the script-generated CrafterCMS environment backup file.
+CrafterCMS out of the box comes with a script to backup and restore your environment. The script provided will backup your environment including indexes, repos, mongodb, etc. You can then use your favorite backup tools for backing up the script-generated CrafterCMS environment backup file.
 
 .. TODO add a note that Delivery can be easily reconstituted
 
@@ -72,7 +72,7 @@ If no filename has been specified, the backup file will be named either ``crafte
 --------
 Recovery
 --------
-To restore your backup, make sure that CrafterCMS is not running.  To restore your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}/bin``, where ``{env}`` is the environment (either authoring or delivery) then run the following:
+To restore your backup, make sure that CrafterCMS is not running. To restore your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}/bin``, where ``{env}`` is the environment (either authoring or delivery) then run the following:
 
     .. code-block:: bash
 
@@ -87,7 +87,7 @@ It will then prompt you with the following message:
 
 Enter ``yes`` if you want to proceed with the restore, otherwise, enter ``no``.
 
-If you're restoring the authoring environment, Studio will be started by the restore process.  If you're restoring the delivery environment, you will need to start the delivery environment after the restore process is done.
+If you're restoring the authoring environment, Studio will be started by the restore process. If you're restoring the delivery environment, you will need to start the delivery environment after the restore process is done.
 
    .. important::
       **When restoring the authoring environment, to avoid conflicts, please make sure you do one of the following for the delivery environment:**

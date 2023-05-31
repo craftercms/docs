@@ -259,13 +259,13 @@ However, in exceptional circumstances, authors or developers may temporarily bre
 
 Moving content and code between branches or between Git repositories is a task normally performed by developers or DevOps personnel, and these are the individuals that will be responsible for resolving conflicts.
 
-CrafterCMS is not a conflict management utility (although very coarse capabilities do exist), and developers and DevOps personnel have tools that they prefer in addressing them.  These tools are indeed suitable for managing these conflicts.
+CrafterCMS is not a conflict management utility (although very coarse capabilities do exist), and developers and DevOps personnel have tools that they prefer in addressing them. These tools are indeed suitable for managing these conflicts.
 
 """"""""""""""""""""""""""""""""""""
 Resolving the Merge Conflict Locally
 """"""""""""""""""""""""""""""""""""
 
-A fairly common conflict scenario arises when promoting code from one environment to the next (e.g. Dev to QA). An administrator may have modified a configuration file directly on the server or changed a data source, or similar.  In these cases, the changed config file will likely be in a merge conflict, blocking a regular promotion of the code.
+A fairly common conflict scenario arises when promoting code from one environment to the next (e.g. Dev to QA). An administrator may have modified a configuration file directly on the server or changed a data source, or similar. In these cases, the changed config file will likely be in a merge conflict, blocking a regular promotion of the code.
 
 A very simple solution would be to pull the dev and QA branches down to a local developer workstation's Git repository, run the merge locally, manually fix the conflict (using your tool of choice), and then push the merged QA branch back up to the shared Git repository.
 
@@ -277,7 +277,7 @@ Merge conflicts can be a nuisance, but resolving them using the tools that devel
 The Content Back Flow
 ^^^^^^^^^^^^^^^^^^^^^
 
-Content originates in the Prod authoring environment, where it is published to the Prod delivery environments.  But this content will also flow from the Prod environment back to lower environments, like to QA, and then from QA to Dev, and finally from Dev to individual developer workstations. This *Content Back* flow is a critical feature of DevContentOps.
+Content originates in the Prod authoring environment, where it is published to the Prod delivery environments. But this content will also flow from the Prod environment back to lower environments, like to QA, and then from QA to Dev, and finally from Dev to individual developer workstations. This *Content Back* flow is a critical feature of DevContentOps.
 
 Referring back to the flow diagram :ref:`here <devcontentops-flow-diagram>`, the *Content Back* pathway clearly shows this model.
 
@@ -285,9 +285,9 @@ Referring back to the flow diagram :ref:`here <devcontentops-flow-diagram>`, the
 Preventing Content Flow from Lower Environments to High Environments
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-It is important to note that *Content Back* never occurs from *studio-qa* to *qa*, or from *studio-dev* to *dev*.  Content must only originate from the *studio-prod* branch to get into the *dev*/*qa*/*prod* branches, to avoid having content from lower environments be picked up in the *Code Forward* model.
+It is important to note that *Content Back* never occurs from *studio-qa* to *qa*, or from *studio-dev* to *dev*. Content must only originate from the *studio-prod* branch to get into the *dev*/*qa*/*prod* branches, to avoid having content from lower environments be picked up in the *Code Forward* model.
 
-Git actions can be applied to the repository to reject pull requests or merges that contain content moving back from these branches.  Practically, the most important place to apply this verification is on merges into the dev branch, as this is where most content from individual developers accidentally makes its way into the system.  (Depending on how your rule is set up, it may be necessary to override this protection when performing an intentional Content Back operation.)
+Git actions can be applied to the repository to reject pull requests or merges that contain content moving back from these branches. Practically, the most important place to apply this verification is on merges into the dev branch, as this is where most content from individual developers accidentally makes its way into the system. (Depending on how your rule is set up, it may be necessary to override this protection when performing an intentional Content Back operation.)
 
 This production content that has been "*Content Backed*" from prod into lower environments will ultimately make its way into the *studio-dev* and *studio-qa* environments with subsequent deployments which can be done as part of the Content Back operation or left for the next code deployment.
 
@@ -304,12 +304,12 @@ Blob Storage and Content Back
 """""""""""""""""""""""""""""
 
 Not all content resides exclusively in the Git repository. CrafterCMS supports using a blob store for large
-binary objects (typically stored in the */static-assets/content* folder as noted above).  When performing a
+binary objects (typically stored in the */static-assets/content* folder as noted above). When performing a
 *Content Back*, it's important to sync the content in the blob store from the higher environment to the
 lower environment.
 
 A very simple way of performing this operation is to simply add all of the content in prod into the blob
-store of the stage environment and then to that of dev.  If AWS S3 is the datastore, a simple command like
+store of the stage environment and then to that of dev. If AWS S3 is the datastore, a simple command like
 
 .. code-block:: bash
 
@@ -338,7 +338,7 @@ repository performance.
 
 Projects that are subject to these conditions should consider the multi-upstream repository model described above.
 
-Git repository tuning techniques can be employed when necessary to keep each environment performing well. However, occasionally (particularly in the dev environment), a clean start is the best choice.  As the Dev repository is simply a fork of QA, the Dev repository and environment can both be dropped and re-created to match the performance profile of QA.  Individual developers will need to re-create their forks and local environments to maintain alignment with their Git histories.
+Git repository tuning techniques can be employed when necessary to keep each environment performing well. However, occasionally (particularly in the dev environment), a clean start is the best choice. As the Dev repository is simply a fork of QA, the Dev repository and environment can both be dropped and re-created to match the performance profile of QA. Individual developers will need to re-create their forks and local environments to maintain alignment with their Git histories.
 
 The same approach can also be done on the QA environment as well, though environment re-creation may need to
 cascade down to Dev and individual developers as well to ensure that Git histories are maintained properly.
@@ -352,8 +352,8 @@ Developer Environment Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 CrafterCMS's DevContentOps model provides a systematic process for creating all of the environments in a CMS
-ecosystem from production to local development.  A robust and consistently-reproducible environment is
-particularly important for advanced development.  The techniques described in this document allow developers
+ecosystem from production to local development. A robust and consistently-reproducible environment is
+particularly important for advanced development. The techniques described in this document allow developers
 to completely recreate their environments on demand in a couple of minutes. This is a significant advantage
 over having to spend hours getting a local development environment of an enterprise platform up and running
 and is a differentiator for CrafterCMS when compared to database-oriented CMSs.
@@ -362,7 +362,7 @@ and is a differentiator for CrafterCMS when compared to database-oriented CMSs.
 Working with DevContentOps
 --------------------------
 When the above DevContentOps processes are adopted, the content authoring experience is streamlined and very
-robust.  Amazingly though, the developer experience is greatly enhanced by allowing developers to easily work
+robust. Amazingly though, the developer experience is greatly enhanced by allowing developers to easily work
 with a true replica of the production system in every environment.
 
 This leads to a much more efficient workflow, without imposing complicated demands on the DevOps teams.

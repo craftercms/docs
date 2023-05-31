@@ -109,7 +109,7 @@ For our example, we'll add an ``Attachments`` field, which is of type ``box-file
 content type. To do this:
 
 #. Go to ``Project Tools`` and open the ``Article`` content type definition.
-#. At the end of the *Content* section, add a ``Box File Upload`` control with Title *Attachments* and Name *attachments* (the control has a property called Profile ID. If you changed the name of ``profile.id`` in step 1, you need to change it in the property too).  Remember to put a check mark on the ``Enable Upload`` and ``Enable Multiple Selection`` properties of the **Box File Upload** control so the users will be able to upload assets to Box and be able to select multiple assets.
+#. At the end of the *Content* section, add a ``Box File Upload`` control with Title *Attachments* and Name *attachments* (the control has a property called Profile ID. If you changed the name of ``profile.id`` in step 1, you need to change it in the property too). Remember to put a check mark on the ``Enable Upload`` and ``Enable Multiple Selection`` properties of the **Box File Upload** control so the users will be able to upload assets to Box and be able to select multiple assets.
 
 
 .. image:: /_static/images/guides/box/attachments-controls.webp
@@ -139,7 +139,7 @@ Step 5: Add some attachments and test the changes
 -------------------------------------------------
 
 If all the previous steps have been done correctly, you should be able to add any number of attachments and they
-should appear underneath the last content sections when the page is rendered. To upload files to Box, click on the ``+`` button in the Box widget and select ``Upload``, then drag or browse for the files you want to upload.  Click on the ``Upload`` button after selecting the files you want to upload.  After the upload finishes, click on the ``Close`` button on the left side of the Box widget and you'll be able to see the files you just uploaded to Box.  You'd then put a check mark next to the files that you want to add as attachment for the page, then click on the ``Choose`` button.
+should appear underneath the last content sections when the page is rendered. To upload files to Box, click on the ``+`` button in the Box widget and select ``Upload``, then drag or browse for the files you want to upload. Click on the ``Upload`` button after selecting the files you want to upload. After the upload finishes, click on the ``Close`` button on the left side of the Box widget and you'll be able to see the files you just uploaded to Box. You'd then put a check mark next to the files that you want to add as attachment for the page, then click on the ``Choose`` button.
 
 For example, after adding a couple of PDF catalogs in the *Men Styles For Winter* article:
 
@@ -161,7 +161,7 @@ The bottom of the page looks like this when you preview your page:
 Step 6: Publish the changes
 ---------------------------
 
-The next step is to publish the changes.  Remember to publish not just the page where we added the Box assets,
+The next step is to publish the changes. Remember to publish not just the page where we added the Box assets,
 but also the ``article.ftl`` and the ``box.xml`` files too.
 
 .. image:: /_static/images/guides/box/attachments-publish.webp

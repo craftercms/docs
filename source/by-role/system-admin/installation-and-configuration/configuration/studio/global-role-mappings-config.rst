@@ -11,9 +11,9 @@
 Global Role Mappings Config
 ===========================
 
-The global role mappings config contains the role mappings for groups created in CrafterCMS that needs global permissions.  For more information on groups, see :ref:`groups-management`
+The global role mappings config contains the role mappings for groups created in CrafterCMS that needs global permissions. For more information on groups, see :ref:`groups-management`
 
-To access the global role mappings config file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/`` then open the file ``global-role-mappings-config.xml``.  Remember to restart Crafter so your changes to the file will take effect.
+To access the global role mappings config file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/`` then open the file ``global-role-mappings-config.xml``. Remember to restart Crafter so your changes to the file will take effect.
 
 .. code-block:: xml
    :caption: *CRAFTER_HOME/data/repos/global/configuration/global-role-mappings-config.xml*

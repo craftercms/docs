@@ -89,7 +89,7 @@ Here are the steps:
 
 #. Start Authoring.
 
-   Go to the Authoring browser URL and create a site.  In the image below, site ``mysite`` was created using the website editorial blueprint:
+   Go to the Authoring browser URL and create a site. In the image below, site ``mysite`` was created using the website editorial blueprint:
 
    .. image:: /_static/images/developer/docker/docker-install-site-created.webp
       :alt: Docker Desktop - File Sharing
@@ -102,7 +102,7 @@ Here are the steps:
 
    You should now be able to see the files in your host directory and use any IDE for editing the files in the site.
 
-   Let's take a look at an example of modifying a file in your host directory then verifying that the changes are reflected in your site.  In your browser, open the ``Sidebar``, then navigate to ``scripts`` -> ``pages`` then right click on ``home.groovy`` and select ``edit``.
+   Let's take a look at an example of modifying a file in your host directory then verifying that the changes are reflected in your site. In your browser, open the ``Sidebar``, then navigate to ``scripts`` -> ``pages`` then right click on ``home.groovy`` and select ``edit``.
 
    .. image:: /_static/images/developer/docker/docker-install-script-file-orig.webp
       :alt: Docker Desktop - unedited script file in browser
@@ -111,7 +111,7 @@ Here are the steps:
 
    |
 
-   We'll now edit the same ``home.groovy`` file from the host directory using any of your favorite IDE.  For our example, the files in the site were put in a project in IntelliJ IDEA, and some text was added to the comments
+   We'll now edit the same ``home.groovy`` file from the host directory using any of your favorite IDE. For our example, the files in the site were put in a project in IntelliJ IDEA, and some text was added to the comments
 
    .. image:: /_static/images/developer/docker/docker-install-script-file-on-host.webp
       :alt: Docker Desktop - Edited script file on host

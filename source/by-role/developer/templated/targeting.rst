@@ -104,7 +104,7 @@ The file can also be found in the path ``/config/studio/targeting/targeting-conf
 **Segments List**
 
 Here's the list that will be used by the Website Editorial blueprint when modeling the segments
-into the content.  The list was created by right clicking on **Taxonomy** in the Sidebar, then
+into the content. The list was created by right clicking on **Taxonomy** in the Sidebar, then
 clicking on **New Content**.
 
 Here's the list after entering the desired segments:
@@ -145,8 +145,8 @@ Here's the resulting xml file:
 Model Criteria in Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We will now see how to add the segments you just configured into a page.  From the Sidebar, click
-on |projectTools|, next click on **Content Types**.  Select **Article**, then click on
+We will now see how to add the segments you just configured into a page. From the Sidebar, click
+on |projectTools|, next click on **Content Types**. Select **Article**, then click on
 **Open Type**
 
 .. figure:: /_static/images/targeting/tagging-segments-model-open.webp
@@ -175,8 +175,8 @@ Now that we have modeled the criteria, we can now update the content. When you c
 page, you will see the grouped check boxes that we added in the previous section, in the Metadata
 section, ready for the content author to select which segment the page is targeted for. We will
 look at one of the articles in the blueprint, "Coffee is good for your health" as an example of
-content for targeting.  Click on the article from the Sidebar, then click on **Edit** in the
-toolbar ``Options``.  Notice that the article is targeted for both Guy and Gal (Guy and Gal checkbox
+content for targeting. Click on the article from the Sidebar, then click on **Edit** in the
+toolbar ``Options``. Notice that the article is targeted for both Guy and Gal (Guy and Gal checkbox
 checked).
 
 .. figure:: /_static/images/targeting/targeting-segments-tag-content.webp
@@ -202,7 +202,7 @@ as an user with the segment Gal, and we're looking at the featured articles:
 |
 
 In order to display only articles targeted for gal, a groovy script is used that is run before the
-page renders so it knows which articles are supposed to be displayed for the current user.  Here is
+page renders so it knows which articles are supposed to be displayed for the current user. Here is
 the groovy script used to get the articles according to the right segment:
 
 .. code-block:: groovy
@@ -286,8 +286,8 @@ Here's the resulting xml file:
 Model Criteria in Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We will now see how to add the categories you just configured into a page.  From the Sidebar, click
-on |projectTools|, next click on **Content Types**.  Select **Article**, then click on **Open Type**
+We will now see how to add the categories you just configured into a page. From the Sidebar, click
+on |projectTools|, next click on **Content Types**. Select **Article**, then click on **Open Type**
 
 
 .. figure:: /_static/images/targeting/tagging-segments-model-open.webp
@@ -331,8 +331,8 @@ Build Dynamic Components
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 After updating the content, we can now see how we can use the categories we just setup on displaying
-content. Let's take a look at the homepage of our project.  On the left side of the page, you can see
-the left rail of our project.  If your screen is not wide enough, look at the top left corner of the
+content. Let's take a look at the homepage of our project. On the left side of the page, you can see
+the left rail of our project. If your screen is not wide enough, look at the top left corner of the
 page, there is a hamburger icon/button (multiple lines in red that sort of looks like a hamburger),
 click on that icon to display the left rail.
 
@@ -343,7 +343,7 @@ click on that icon to display the left rail.
 
 |
 
-Let us look at the navigation menu on the left rail.  As you can see, the categories we used to
+Let us look at the navigation menu on the left rail. As you can see, the categories we used to
 target our pages can be used as navigation headings for the project.
 
 .. figure:: /_static/images/targeting/tagging-categories-left-rail.webp
@@ -355,7 +355,7 @@ target our pages can be used as navigation headings for the project.
 
 We'll now take a closer look on how our taxonomy for categories is used for displaying articles in
 the landing pages of our project. On the left rail of our project, click on **Health**, notice how all
-the articles listed on the page are targeted for category *Health*.  (To check the category for
+the articles listed on the page are targeted for category *Health*. (To check the category for
 an article, just click on the article then click on **Edit** on the toolbar ``Options`` (stacked three dots)
 at the top of the page. Go down to the *Metadata* section to see which category is selected.)
 
@@ -367,7 +367,7 @@ at the top of the page. Go down to the *Metadata* section to see which category 
 |
 
 In order to display just the articles targeted for a certain category, a groovy script is run before
-the page renders.  To do this, we need to create a script named after the page we want the script
+the page renders. To do this, we need to create a script named after the page we want the script
 to run before rendering, under *scripts -> pages*   In the groovy script below, a query is sent to
 ask for all articles targeted for the requested category. (To see the script in Studio, from the
 Sidebar, navigate to scripts -> pages -> category-landing.groovy) Please see
@@ -390,8 +390,8 @@ Sidebar, navigate to scripts -> pages -> category-landing.groovy) Please see
   templateModel.articles = articles
 
 Another way of using the categories tag is for displaying a list of related articles based on the
-article being browsed.  We will look at the content type component **Articles Widget**
-to see how this is done in our Website Editorial blueprint.  We will open the model for the
+article being browsed. We will look at the content type component **Articles Widget**
+to see how this is done in our Website Editorial blueprint. We will open the model for the
 component article widget by going to the Sidebar ``Site Tools``, then clicking on **Content Types -> Articles Widget -> Open Type**
 
 .. figure:: /_static/images/targeting/tagging-component-article-open.webp
@@ -402,7 +402,7 @@ component article widget by going to the Sidebar ``Site Tools``, then clicking o
 |
 
 In the dialog, notice the item selector control labeled **Controllers** with data source
-**Scripts**.  This picker will be used to select which script we want to run before the component
+**Scripts**. This picker will be used to select which script we want to run before the component
 renders in its container.
 
 .. figure:: /_static/images/targeting/tagging-component-article-form.webp
@@ -434,7 +434,7 @@ the component.
 |
 
 To open the groovy script, click on the Sidebar and navigate to the path navigator tree to **scripts -> components**
-then right click on **related-articles.groovy** and select **Edit**.  In the groovy script, it
+then right click on **related-articles.groovy** and select **Edit**. In the groovy script, it
 sends a query for articles in the same category as the article being viewed, then passes on the
 articles to the template model of the component ready for rendering.
 
@@ -459,10 +459,10 @@ articles to the template model of the component ready for rendering.
 
   templateModel.articles = articles
 
-To see the component in action, click on one of the articles to view.  In the image below, the
+To see the component in action, click on one of the articles to view. In the image below, the
 article **Coffee is Good for Your Health** is being viewed, which is tagged for the Health
 category, then the left rail is expanded by clicking on the hamburger icon at the top left of
-the page.  In the left rail, we can see the related articles to the one currently being viewed
+the page. In the left rail, we can see the related articles to the one currently being viewed
 in the page (articles tagged for category Health).
 
 .. figure:: /_static/images/targeting/tagging-component-related-display.webp
@@ -476,8 +476,8 @@ in the page (articles tagged for category Health).
 Targeting Using Roles
 ---------------------
 
-Another way of organizing content is by targeting pages based on role(s).  First, decide on the roles you'd
-like to use.  After deciding on the roles, we will now work on adding in metadata to our project that content
+Another way of organizing content is by targeting pages based on role(s). First, decide on the roles you'd
+like to use. After deciding on the roles, we will now work on adding in metadata to our project that content
 authors can use. Using the Website Editorial blueprint, for example, we can have the following roles for targeting purposes:
 
 - ROLE_user
@@ -555,8 +555,8 @@ Below is how the configuration for roles using the Website Editorial blueprint w
 Model Criteria in Content
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We will now see how to add the role(s) into a page.  From the Sidebar, click
-on |projectTools|, next click on **Content Types**.  Select **Article**, then select
+We will now see how to add the role(s) into a page. From the Sidebar, click
+on |projectTools|, next click on **Content Types**. Select **Article**, then select
 **Open Type**
 
 .. figure:: /_static/images/targeting/tagging-segments-model-open.webp
@@ -575,7 +575,7 @@ In the ``Repeating Group`` properties, set the Title field to “Authorized Role
 |
 
    .. warning::
-      The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS.  For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
+      The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_o``, as ``authorizedRoles`` is a reserved variable name used by CrafterCMS. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
       The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
 
@@ -589,7 +589,7 @@ Name** field set to "role". Make this Input required by checking the checkbox un
 |
 
     .. warning::
-       The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field.  Remember to remove the postfix ``_s``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page.  For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
+       The UI autofills the **Name/ Variable Name** field and adds postfixes as you're typing in the **Title** field. Remember to remove the postfix ``_s``, as the ``role`` variable name is used by CrafterCMS for enforcing access to a page. For a list of variable names used by CrafterCMS, see :ref:`form-control-variable-names` for more information
 
 
 ^^^^^^^^^^^^^^^^^^
@@ -601,7 +601,7 @@ you will see the repeating group control that we added in the previous section, 
 ready for the content author to input which role is authorized to preview the page. We will look at one of the
 articles in the blueprint, "Top Books For Young Women" as an example of targeting content based on a
 role. Click on the article from the Sidebar, then click on **Edit** in the toolbar ``Options``.
-Scroll down to the ``Metadata`` section in the form to the ``Authorized Roles`` field.  Click on ``Add First Item``
+Scroll down to the ``Metadata`` section in the form to the ``Authorized Roles`` field. Click on ``Add First Item``
 
 .. figure:: /_static/images/targeting/tagging-roles-tag-content-1.webp
    :alt: Targeting - Authorized Roles Metadata in Content
@@ -610,7 +610,7 @@ Scroll down to the ``Metadata`` section in the form to the ``Authorized Roles`` 
 
 |
 
-Let's setup the page to be available to users with the role ``user``.  The prefix ``ROLE_`` for the values in ``authorizedRoles`` is optional.
+Let's setup the page to be available to users with the role ``user``. The prefix ``ROLE_`` for the values in ``authorizedRoles`` is optional.
 
 .. figure:: /_static/images/targeting/tagging-roles-tag-content-2.webp
    :alt: Targeting - Authorized Roles Metadata in Content
@@ -634,7 +634,7 @@ as a user with the role ``ROLE_user``,
 
 |
 
-and we're looking at the ``Entertainment`` category page.  Notice that the article we setup with role ``ROLE_user`` is listed:
+and we're looking at the ``Entertainment`` category page. Notice that the article we setup with role ``ROLE_user`` is listed:
 
 .. figure:: /_static/images/targeting/tagging-roles-entertainment-page.webp
     :alt: Targeting - Entertainment category landing page with role targeting set to ROLE_user

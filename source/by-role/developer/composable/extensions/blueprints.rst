@@ -13,7 +13,7 @@ Blueprints
 What are Blueprints?
 --------------------
 
-Blueprints are CrafterCMS project templates.  It provides an initial set of styles, pages, behaviors, content types and more, containing one or more of the following: content types such as pages and components as described in :ref:`content-modeling`, static assets such as images, videos, etc., and project configuration files for managing items in the blueprint such as taxonomies (categories, segments), roles, permissions, etc.
+Blueprints are CrafterCMS project templates. It provides an initial set of styles, pages, behaviors, content types and more, containing one or more of the following: content types such as pages and components as described in :ref:`content-modeling`, static assets such as images, videos, etc., and project configuration files for managing items in the blueprint such as taxonomies (categories, segments), roles, permissions, etc.
 
 .. image:: /_static/images/blueprint/blueprint-anatomy.webp
    :alt: Blueprint Anatomy
@@ -22,9 +22,9 @@ Blueprints are CrafterCMS project templates.  It provides an initial set of styl
 
 |
 
-The blueprint that comes out of the box with CrafterCMS, ``Website Editorial Blueprint``, provides us with an initial structure for our project, along with the project navigation, content inheritance, taxonomies for organizing the content such as categories and segments, which is also used for targeting content, static assets such as the initial images and fonts used for the project and configuration files for managing things like the segments for targeting, the permissions for all the items in the project, the role mappings, the RTE configuration, etc.  To see more of the ``Website Editorial Blueprint``, please see :ref:`your-first-editorial-project` where we create a project based on the ``Website Editorial Blueprint``.
+The blueprint that comes out of the box with CrafterCMS, ``Website Editorial Blueprint``, provides us with an initial structure for our project, along with the project navigation, content inheritance, taxonomies for organizing the content such as categories and segments, which is also used for targeting content, static assets such as the initial images and fonts used for the project and configuration files for managing things like the segments for targeting, the permissions for all the items in the project, the role mappings, the RTE configuration, etc. To see more of the ``Website Editorial Blueprint``, please see :ref:`your-first-editorial-project` where we create a project based on the ``Website Editorial Blueprint``.
 
-As mentioned earlier, blueprints allows us to generate projects with predefined layouts, contents and configuration.  Blueprints could be a project theme or an API only project.  New blueprints can be created from a project and added into CrafterCMS allowing the creation of more projects based on the new blueprint.  In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from CrafterCMS and an existing project is used to create a new blueprint.
+As mentioned earlier, blueprints allows us to generate projects with predefined layouts, contents and configuration. Blueprints could be a project theme or an API only project. New blueprints can be created from a project and added into CrafterCMS allowing the creation of more projects based on the new blueprint. In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from CrafterCMS and an existing project is used to create a new blueprint.
 
 Developers may submit their blueprints to the `Crafter Marketplace GitHub App <https://github.com/marketplace/crafter-marketplace>`__. Users can browse the `Crafter Marketplace <https://craftercms.com/marketplace/>`__   catalog where submitted blueprints are listed, and power users of CrafterCMS can create projects based on Marketplace plugins directly from the ``Create Project`` dialog in the CMS. See :ref:`submit-extension-to-marketplace` for more information on how to submit your blueprint to the marketplace.
 
@@ -92,7 +92,7 @@ Here are some best practices to help you:
     * Prefer repeating groups over shared/embedded components. Shared/embedded components are ultimately more versatile, but if you are only going to repeat text, and that text is not going to appear outside the repeating group again, it's a better user experience to just use a repeating group.
 
        * Bear in mind that you can't have nested repeating groups, so only the innermost repetition can be a repeating group.
-    * You can set up folders for specific content types, and you can enforce them by using ``<paths>`` in your types' config.xml. Use ``includes`` whenever you want to *whitelist* some paths, and use ``excludes`` to *blacklist* some paths, but do not mix them.  For more examples, see :ref:`content-creation-permissions-section`
+    * You can set up folders for specific content types, and you can enforce them by using ``<paths>`` in your types' config.xml. Use ``includes`` whenever you want to *whitelist* some paths, and use ``excludes`` to *blacklist* some paths, but do not mix them. For more examples, see :ref:`content-creation-permissions-section`
 
         .. code-block:: xml
 
@@ -103,7 +103,7 @@ Here are some best practices to help you:
             </paths>
 
        * You can also use this to enforce single page blueprints by using ``<excludes> <pattern>^/.*</pattern> </excludes>`` in your page type's config.xml, effectively forbidding from creating a new page.
-    * Ensure your blueprint supports experience builder.  For more information on experience builder, see :ref:`xb`.
+    * Ensure your blueprint supports experience builder. For more information on experience builder, see :ref:`xb`.
 
 Above all, blueprints should be usable and simple.
 
@@ -147,7 +147,7 @@ Installing
 ----------
 
 #. Copy your blueprint folder into ``{CRAFTER_HOME}/data/repos/global/blueprints``.
-#. Check in your blueprint folder if it contains a ``craftercms-plugin.yaml`` file.  Add in the file if it does not exist by copying a ``craftercms-plugin.yaml`` file from one of the default blueprints, such as from the folder ``4000_empty``, which contains the empty blueprint and modifying it as needed.  See :ref:`blueprint-descriptor-file` for details on the file
+#. Check in your blueprint folder if it contains a ``craftercms-plugin.yaml`` file. Add in the file if it does not exist by copying a ``craftercms-plugin.yaml`` file from one of the default blueprints, such as from the folder ``4000_empty``, which contains the empty blueprint and modifying it as needed. See :ref:`blueprint-descriptor-file` for details on the file
 #. Once you do, commit the change to the global repo (``{CRAFTER_HOME}/data/repos/global/``) by using ``git``, and your  blueprint will now start appearing when you try to create a new project.
 
    * CrafterCMS uses a vanilla version of Git, so regular Git commands work as intended. To commit your changes so Crafter can see it, head to ``{CRAFTER_HOME}/data/repos/global/blueprints`` and git add your modified files like this
@@ -187,7 +187,7 @@ In the ``Projects`` screen where your projects are listed, if your project displ
 
 |
 
-To replace the **Screenshot not Set** image for your blueprint, simply add an image file (e.g.  ``default.png``) under the ``.crafter/screenshots/`` folder of your blueprint.
+To replace the **Screenshot not Set** image for your blueprint, simply add an image file (e.g. ``default.png``) under the ``.crafter/screenshots/`` folder of your blueprint.
 
 Let's take a look at an example of fixing the **Screenshot not Set** image for an installed project as seen in the above image.
 
@@ -229,7 +229,7 @@ All blueprints need to include a plugin descriptor as described in :ref:`bluepri
 
 Passing Parameters to Project Blueprints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Some parameters may need to be passed to the blueprint instead of left in the blueprint, say, AWS credentials, Box credentials, CommerceTools credentials, etc.  CrafterCMS supports passing parameters to blueprints during creation.
+Some parameters may need to be passed to the blueprint instead of left in the blueprint, say, AWS credentials, Box credentials, CommerceTools credentials, etc. CrafterCMS supports passing parameters to blueprints during creation.
 
 To add parameters to be passed to blueprints, simply add the following to the ``craftercms-plugin.yaml`` file
 
@@ -248,9 +248,9 @@ where:
 
 - ``label``: Label to display for parameter on Create Project dialog
 - ``name``: Name of the parameter in *camelCase* notation
-- ``type``: Type of the parameter, possible values are ``STRING`` and ``PASSWORD``.  The default is ``STRING``
+- ``type``: Type of the parameter, possible values are ``STRING`` and ``PASSWORD``. The default is ``STRING``
 - ``description``: Description of the parameter
-- ``required``: Indicates whether the parameter is required.  The default is ``true``
+- ``required``: Indicates whether the parameter is required. The default is ``true``
 
 
 To use the parameters in configuration files, simply use ``${plugin:PARAM_NAME}`` where PARAM_NAME is the name of the parameter.
@@ -262,7 +262,7 @@ In our example, we will be passing AWS credentials when the project is created t
 
 To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>` guide, but instead of manually adding the AWS credentials so the user can upload files, we'll pass the AWS credentials through the blueprint when the project is created.
 
-#. The first thing we need to do is to add the parameters to the ``craftercms-plugin.yaml`` file of the Website Editorial blueprint.  Open the ``craftercms-plugin.yaml`` which is under the ``{CRAFTER_HOME}/data/repos/global/blueprints/1000_website_editorial`` folder and add the following lines to the end of the file:
+#. The first thing we need to do is to add the parameters to the ``craftercms-plugin.yaml`` file of the Website Editorial blueprint. Open the ``craftercms-plugin.yaml`` which is under the ``{CRAFTER_HOME}/data/repos/global/blueprints/1000_website_editorial`` folder and add the following lines to the end of the file:
 
    .. code-block:: yaml
       :linenos:
@@ -304,7 +304,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>
 
 #. Next, we'll add the ``aws.xml`` file which will contain all the parameters passed from the blueprint which we'll use to create an S3 profile, so files can be uploaded to an S3 bucket. To access the parameters passed from the blueprint when the project was created, simply use ``${plugin:PARAM_NAME}``, where PARAM_NAME is the name of the parameter passed through the blueprint that you would like to use.
 
-   Create the folder ``aws`` under ``CRAFTER_HOME/data/repos/global/blueprints/config`` then inside the newly created folder, create the file ``aws.xml``.  Add the following inside the file:
+   Create the folder ``aws`` under ``CRAFTER_HOME/data/repos/global/blueprints/config`` then inside the newly created folder, create the file ``aws.xml``. Add the following inside the file:
 
    .. code-block:: xml
       :linenos:
@@ -329,7 +329,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>
 
    Please see :ref:`managing-secrets` for more information on how to manage/encode your AWS credentials.
 
-#. Next we'll modify the content type ``Page - Article`` and the template for it, ``article.ftl`` to allow the user to select files to be uploaded like in the example :ref:`here <use-s3-to-store-assets>`.  We'll end up with two files modified.  The ``article.ftl`` and ``form-definition.xml`` files.
+#. Next we'll modify the content type ``Page - Article`` and the template for it, ``article.ftl`` to allow the user to select files to be uploaded like in the example :ref:`here <use-s3-to-store-assets>`. We'll end up with two files modified. The ``article.ftl`` and ``form-definition.xml`` files.
 
    .. code-block:: text
       :caption: *CRAFTER_HOME/data/repos/global/blueprints/1000_website_editorial/templates/web/pages/article.ftl*
@@ -392,9 +392,9 @@ To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>
 
    |
 
-#. Refresh your browser.  We will now try creating a project using the **Website Editorial** blueprint to see the parameters we added to the blueprint earlier.
+#. Refresh your browser. We will now try creating a project using the **Website Editorial** blueprint to see the parameters we added to the blueprint earlier.
 
-   Click on the ``Navigation Menu`` ➜ ``Projects`` ➜ ``Create Project`` button, then finally select the ``Website Editorial`` blueprint.  You will then be presented with the ``Create Project`` dialog.  Notice that the parameters we added to the ``craftercms-plugin.yaml`` file is near the bottom of dialog.  The values entered there will now be available to the project being created which for our example, will be used for the AWS profile in ``aws.xml``.  Enter the requested information then click on ``Create Project``
+   Click on the ``Navigation Menu`` ➜ ``Projects`` ➜ ``Create Project`` button, then finally select the ``Website Editorial`` blueprint. You will then be presented with the ``Create Project`` dialog. Notice that the parameters we added to the ``craftercms-plugin.yaml`` file is near the bottom of dialog. The values entered there will now be available to the project being created which for our example, will be used for the AWS profile in ``aws.xml``. Enter the requested information then click on ``Create Project``
 
    .. image:: /_static/images/blueprint/blueprint-param-added.webp
       :width: 80%
@@ -403,7 +403,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>
 
    |
 
-#. Once your new project is up, users can upload files to S3 from an article page.  Let's verify the parameters you passed through the blueprint by checking the ``aws.xml`` file.  Open the **Sidebar**, then click on |projectTools|.  Click on ``Configuration``, then select ``AWS Profiles`` from the dropdown.
+#. Once your new project is up, users can upload files to S3 from an article page. Let's verify the parameters you passed through the blueprint by checking the ``aws.xml`` file. Open the **Sidebar**, then click on |projectTools|. Click on ``Configuration``, then select ``AWS Profiles`` from the dropdown.
 
    .. image:: /_static/images/blueprint/blueprint-param-added-verify.webp
       :width: 80%

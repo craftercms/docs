@@ -169,7 +169,7 @@ Let's begin:
 
    |
 
-   The response above contains a number of projects.  In the next call we will write a content object to one of the projects (editorialcom.) To do this we need the site ID.  We get this from the response above: **editorialcom**
+   The response above contains a number of projects. In the next call we will write a content object to one of the projects (editorialcom.) To do this we need the site ID. We get this from the response above: **editorialcom**
 
 #. **Write content to a project**
 
@@ -184,7 +184,7 @@ Let's begin:
 
    In the call above note:
 
-   We are passing in content as the POST body.  The content is in XML format.  In CrafterCMS, content objects are stored as simple XML documents.
+   We are passing in content as the POST body. The content is in XML format. In CrafterCMS, content objects are stored as simple XML documents.
    We are passing a number of parameters that tell CrafterCMS where and how to store the content in the repository
 
 Using the above examples as a guide, we can now interact with any Crafter Studio API found :ref:`here <crafter-studio-api>`

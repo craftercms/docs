@@ -79,7 +79,7 @@ This section allows the user to set the Studio session timeout, the amount of ti
    # HTTP Session timeout for studio (value is in minutes).
    # studio.security.sessionTimeout: 60
 
-Remember to keep the Studio session timeout less than the Tomcat ``session-timeout``.  The default Tomcat ``session-timeout`` is ``75`` minutes.  See :ref:`changing-session-timeout` for more information.
+Remember to keep the Studio session timeout less than the Tomcat ``session-timeout``. The default Tomcat ``session-timeout`` is ``75`` minutes. See :ref:`changing-session-timeout` for more information.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Security Provider for Accessing Repository

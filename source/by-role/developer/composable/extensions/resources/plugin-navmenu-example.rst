@@ -21,7 +21,7 @@ For more information on the Navigation Menu, see :ref:`here <navigating-main-men
 
 Let's take a look at an example of creating a Navigation Menu plugin in Studio using a project called ``My Editorial`` created using the **Website Editorial** blueprint.
 
-#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our navigation menu project plugin.  We'll follow the convention listed in :ref:`ui-plugin-directory-structure`.  For our example, CATEGORY is ``navmenu`` and the NAME is ``test-navmenu``
+#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our navigation menu project plugin. We'll follow the convention listed in :ref:`ui-plugin-directory-structure`. For our example, CATEGORY is ``navmenu`` and the NAME is ``test-navmenu``
 
    In a local folder, create the descriptor file for your project plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.examplenavmenu``, then create the following folder structure:
 
@@ -106,7 +106,7 @@ Let's take a look at an example of creating a Navigation Menu plugin in Studio u
 
    When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``my-editorial`` by running the following:
 
-      ..  code-block:: bash
+      .. code-block:: bash
 
           ./crafter-cli copy-plugin -e local -s my-editorial --path /users/myuser/myplugins/navmenu-plugin
 

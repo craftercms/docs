@@ -3,7 +3,7 @@
 
 .. index:: Composable
 
-..  _composable:
+.. _composable:
 
 ==========
 Composable

@@ -16,12 +16,12 @@ This section describes the simple default workflow available from CrafterCMS.
 Workflow and Scheduled Deployments
 ----------------------------------
 
-Workflow is the act of moving content through its lifecycle.  A simple workflow option that includes
+Workflow is the act of moving content through its lifecycle. A simple workflow option that includes
 submission, review/reject and approve and publish immediate / publish on a schedule options are
 provided by default. Workflow options are available to specific content, such as pages or static assets,
-etc.  The available workflow options for users depends on the Role the users are assigned with.  As the
+etc. The available workflow options for users depends on the Role the users are assigned with. As the
 content goes through the workflow options, notification emails are sent out to corresponding users based
-on the workflow option.  To setup the email addresses, please see the section **Site Administrators**,
+on the workflow option. To setup the email addresses, please see the section **Site Administrators**,
 :ref:`configure-notifications` and  :ref:`users-group-management`. Below is a diagram showing
 the default workflow steps.
 
@@ -32,7 +32,7 @@ the default workflow steps.
 
 |
 
-We will be looking at the workflow steps in this section.  Workflow is managed through dialogs.  Below
+We will be looking at the workflow steps in this section. Workflow is managed through dialogs. Below
 is a sample dialog:
 
 .. image:: /_static/images/page/page-workflows.webp
@@ -123,7 +123,7 @@ To make approval mandatory for publish requests for users with publish permissio
 see :ref:`here <project-config-require-peer-review>`.
 
 After clicking on the **Submit** or **Schedule** button (depending on the option selected for publishing
-now or later), a notification email will be sent to the project's approvers.  Notice also, that the
+now or later), a notification email will be sent to the project's approvers. Notice also, that the
 toolbar now displays the icon for **Submitted**
 
 .. image:: /_static/images/page/page-workflows-submitted-context-nav.webp
@@ -157,13 +157,13 @@ Publishing Content
 ^^^^^^^^^^^^^^^^^^
 
 After a request for publish has been sent, the next step in the workflow is for an approver (a user with
-publishing rights) to approve or reject the request for publishing.  Notification emails are sent out when
+publishing rights) to approve or reject the request for publishing. Notification emails are sent out when
 an item has been approved for publish or rejected.
 
 Approve & Publish Request
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 To approve content for publishing, there are a few ways to access the **Publish** workflow option for
-approving a publish request.  One way is by going to the dashboard, then in the
+approving a publish request. One way is by going to the dashboard, then in the
 **Items Waiting For Approval** dashlet, look for the article you want to approve, then put a check
 mark next to it.
 
@@ -185,7 +185,7 @@ want to approve, then click on **Options** (the three dots next to it).
 |
 
 Yet another way to access the **Publish** option is by going to the Sidebar and then navigating to the
-article and opening it for preview.  After opening the article for preview, go to the toolbar and click
+article and opening it for preview. After opening the article for preview, go to the toolbar and click
 on **Options** (three dots) next to the address bar.
 
 .. image:: /_static/images/page/page-workflows-context-nav-approve.webp
@@ -198,7 +198,7 @@ on **Options** (three dots) next to the address bar.
 You can also preview the article that you want to approve by clicking on the link provided in the email
 sent to the approver, which should give you the **Publish** option too in the toolbar **Options**.
 Below is a sample notification email sent to the approver when user *author* sent a request to publish
-content.  To modify/setup your notification emails, please contact your site administrator.  To see more
+content. To modify/setup your notification emails, please contact your site administrator. To see more
 details on how to configure your notification emails, see the section for Site Administrators in
 :ref:`configure-notifications`
 
@@ -209,9 +209,9 @@ details on how to configure your notification emails, see the section for Site A
 
 |
 
-Below is the dialog that loads after clicking on **Publish**.  The item scheduling selected in the dialog
-depends on what the requester has chosen when the request to publish was sent.  In the image below. the
-selected scheduling for the item is for the **Now**.  Click on **Publish** to publish the content now.
+Below is the dialog that loads after clicking on **Publish**. The item scheduling selected in the dialog
+depends on what the requester has chosen when the request to publish was sent. In the image below. the
+selected scheduling for the item is for the **Now**. Click on **Publish** to publish the content now.
 
 .. image:: /_static/images/page/page-workflows-approve-publish-now.webp
      :width: 75 %
@@ -220,8 +220,8 @@ selected scheduling for the item is for the **Now**.  Click on **Publish** to pu
 
 |
 
-In the image below, the requester sent the request to publish with a schedule.  Click on the **Schedule**
-button to schedule the publishing of the item.  The dialog with the date and time when selecting the **Later**
+In the image below, the requester sent the request to publish with a schedule. Click on the **Schedule**
+button to schedule the publishing of the item. The dialog with the date and time when selecting the **Later**
 radio button allows the approver to schedule or reschedule the submitted item.
 
 .. image:: /_static/images/page/page-workflows-approve-publish-later.webp
@@ -304,7 +304,7 @@ for comments in the ``Rejection Comment`` box.
 
 |
 
-Once an item has been rejected, a notification email will be sent to the requester.  Below is an example
+Once an item has been rejected, a notification email will be sent to the requester. Below is an example
 notification email of rejection:
 
 .. image:: /_static/images/page/page-workflows-reject-notification-email.webp

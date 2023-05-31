@@ -67,7 +67,7 @@ Actions
 Spam
 ^^^^
 
-Content that has already been reviewed but was considered as irrelevant.  Items in this state can
+Content that has already been reviewed but was considered as irrelevant. Items in this state can
 be set as ``Unmoderated`` again.
 
 .. figure:: /_static/images/social-admin/moderation-spam.webp

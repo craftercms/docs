@@ -35,7 +35,7 @@ Configuration
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
 +------------------------+------------------------------------------------------------------------------+
-|| Description/Purpose   || Data source to upload images from desktop.                                  |
+|| Description/Purpose   || Data source to upload images from desktop.                                 |
 +------------------------+------------------------------------------------------------------------------+
 || Properties            || - Repository Path: Path where to store the new image uploaded from desktop. |
 +------------------------+------------------------------------------------------------------------------+

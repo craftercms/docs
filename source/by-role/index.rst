@@ -15,7 +15,7 @@ Browse the CrafterCMS documentation by your role or interest.
    :titlesonly:
    :hidden:
 
-..   architect/index
+..  architect/index
    developer/index
    author/index
    site-admin/index

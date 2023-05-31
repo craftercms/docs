@@ -153,7 +153,7 @@ Filters can make their determination based on the path or the content or even "o
 
     * You can find the interface for this service :javadoc_base_url:`HERE <engine/org/craftercms/engine/service/SiteItemService.html>`
     * Note in the example below we define our own filter based on the ItemFilter interface found :javadoc_base_url:`HERE <core/org/craftercms/core/service/ItemFilter.html>`
-    * However, you may use out of the box filters as well if they meet your needs.  These are found :javadoc_base_url:`HERE <engine/org/craftercms/engine/service/filter/package-frame.html>`
+    * However, you may use out of the box filters as well if they meet your needs. These are found :javadoc_base_url:`HERE <engine/org/craftercms/engine/service/filter/package-frame.html>`
     * Finally be aware that for simple filename patterns, methods for this already exist in the Site Item Service and no filter is required (but they make for an simple to understand example.)
 
 .. code-block:: groovy
@@ -412,13 +412,13 @@ Multi-index Query
 
 CrafterCMS supports querying more than one search index in a single query.
 
-To search your site and other indexes, simply send a search query with a comma separated list of indexes/aliases (ES pointer to an index).  It will then search your site and the other indexes
+To search your site and other indexes, simply send a search query with a comma separated list of indexes/aliases (ES pointer to an index). It will then search your site and the other indexes
 
 .. image:: /_static/images/search/craftercms-multi-index-query.svg
    :width: 80 %
    :align: center
 
-Remember that all other Elasticsearch indexes/aliases to be searched need to be prefixed with the site name like this: ``SITENAME_{external-index-name}``.  When sending the query, remove the prefix ``SITENAME_`` from the other indexes/aliases.
+Remember that all other Elasticsearch indexes/aliases to be searched need to be prefixed with the site name like this: ``SITENAME_{external-index-name}``. When sending the query, remove the prefix ``SITENAME_`` from the other indexes/aliases.
 
 Here's how the query will look like for the above image of a multi-index query for the site ``acme`` (the SITENAME), and the CD database index ``acme_cd-database``:
 

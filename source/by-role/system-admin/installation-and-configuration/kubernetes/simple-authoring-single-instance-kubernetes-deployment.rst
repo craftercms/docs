@@ -44,7 +44,7 @@ protocol will start with the comment ``Uncomment if using Git (HTTPS|SSH)``. Mak
 Create the SSH Keys Secrets (SSH mode only)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Go to ``kubernetes-deployments/authoring/simple/resources/secrets/git-ssh-server`` (create the folders if they don't exist).  This is where you will create the ssh keys.
+#. Go to ``kubernetes-deployments/authoring/simple/resources/secrets/git-ssh-server`` (create the folders if they don't exist). This is where you will create the ssh keys.
 #. Run ``ssh-keygen`` to generate the key pair (e.g. ``ssh-keygen -t ecdsa -b 521 -C "your_email@example.com"``).
    When asked for the filename of the key, just enter a filename e.g. ``id_rsa``, ``id_dsa``, ``id_ecdsa`` or ``id_ed25519`` depending
    on the type of key selected (so that the keys are saved in the current folder). Do not provide a passphrase.
@@ -58,7 +58,7 @@ Create the SSH Keys Secrets (SSH mode only)
 Create the HTTPS Certificate and Key Secrets (HTTPS mode only)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Go to ``kubernetes-deployments/authoring/simple/resources/secrets/git-ssh-server`` (create the folders if they don't exist).  This is where you will create the ssh keys.
+#. Go to ``kubernetes-deployments/authoring/simple/resources/secrets/git-ssh-server`` (create the folders if they don't exist). This is where you will create the ssh keys.
 #. Run ``openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt`` and follow the prompts. It's up to you what to enter in each field, **EXCEPT** for the Common Name (CN). This should match
    the Authoring service name. If following the example, the CN value should be ``authoring-svc-headless``.
 

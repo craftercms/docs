@@ -12,9 +12,9 @@
 Studio's Configuration Overrides
 ================================
 
-Crafter Studio comes with pre-configured settings that you may want to override.  To view the pre-configured settings in Crafter Studio, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio`` and open the file ``studio-config.yaml``.
+Crafter Studio comes with pre-configured settings that you may want to override. To view the pre-configured settings in Crafter Studio, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio`` and open the file ``studio-config.yaml``.
 
-To override any of the pre-configured settings, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the settings you would like to configure in the file ``studio-config-override.yaml``.   The override file have some settings already listed that you may want to override in Crafter Studio:
+To override any of the pre-configured settings, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the settings you would like to configure in the file ``studio-config-override.yaml``.  The override file have some settings already listed that you may want to override in Crafter Studio:
 
 --------------------------------
 Content Repository Configuration
@@ -274,7 +274,7 @@ The following section of Studio's configuration overrides allows you to setup CO
    # Value for the Access-Control-Max-Age header
    # studio.cors.maxage: -1
 
-The CORS origins accepts regex patterns.  Values are split using ``,``.  Remember that commas inside
+The CORS origins accepts regex patterns. Values are split using ``,``. Remember that commas inside
 patterns need to be escaped with a ``\`` like:
 ``studio.cors.origins: 'http://localhost:[8000\,3000],http://*.other.domain'``
 
@@ -390,7 +390,7 @@ Access Tokens
    :version: 4.0.0
 
 
-The following section of Studio's configuration overrides allows you to configure settings for the Studio access tokens.  For more information on how access tokens are used, see :ref:`working-in-your-ide`
+The following section of Studio's configuration overrides allows you to configure settings for the Studio access tokens. For more information on how access tokens are used, see :ref:`working-in-your-ide`
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*

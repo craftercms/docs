@@ -29,10 +29,10 @@ Setting up the production environment
    to use one of the out-of-the-box blueprints provided by CrafterCMS.
 
 #. Now that you have a project setup in authoring, the next thing to do is to setup your project
-   in the delivery instance(s).  Let's begin the delivery installation.
+   in the delivery instance(s). Let's begin the delivery installation.
 
-   Installing the delivery instance is almost the same as installing the authoring instance.  The
-   difference is, you need to download/use ``crafter-cms-delivery-VERSION.tar.gz``.  Follow the
+   Installing the delivery instance is almost the same as installing the authoring instance. The
+   difference is, you need to download/use ``crafter-cms-delivery-VERSION.tar.gz``. Follow the
    same steps used to install your authoring environment using the delivery binary files.
 
 #. After starting delivery, we'll setup the project we created in step 2 in our delivery instance.
@@ -56,7 +56,7 @@ For more information on using gradle, please see :ref:`crafter-cms`.
 Server Hardware Configuration Consideration
 -------------------------------------------
 
-CrafterCMS performs multiple reads/writes to disk from various concerns such as the database, the repository, logs, etc. with very different I/O patterns.  One of the primary factor for hardware bottlenecks is disk I/O.
+CrafterCMS performs multiple reads/writes to disk from various concerns such as the database, the repository, logs, etc. with very different I/O patterns. One of the primary factor for hardware bottlenecks is disk I/O.
 
 For optimal performance, the server should have different storage systems (disks) mounted for different concerns, for example:
 
@@ -96,9 +96,9 @@ For production environments using Crafter Profile and/or the Security Provider, 
 System Configuration for Elasticsearch
 --------------------------------------
 
-Elasticsearch uses a lot of file descriptors or file handles.  Elasticsearch recommends increasing the number of open file descriptors for the user running Elasticsearch to 65,536 or higher.
+Elasticsearch uses a lot of file descriptors or file handles. Elasticsearch recommends increasing the number of open file descriptors for the user running Elasticsearch to 65,536 or higher.
 
-CrafterCMS uses the .zip ELasticsearch package.  When using the .zip package, the system settings for increasing the number of open file descriptors can be configured:
+CrafterCMS uses the .zip ELasticsearch package. When using the .zip package, the system settings for increasing the number of open file descriptors can be configured:
 
 * temporarily with ``ulimit``, or
 * permanently in ``/etc/security/limits.conf``

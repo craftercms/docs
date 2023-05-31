@@ -9,7 +9,7 @@
 Configuring Studio Security
 ===========================
 
-Users are authenticated by Studio through the internal database by default.  CrafterCMS can be configured so that users are authenticated using an external authentication protocol such as Lightweight Directory Access Protocol (LDAP) or Security Assertion Markup Language (SAML).
+Users are authenticated by Studio through the internal database by default. CrafterCMS can be configured so that users are authenticated using an external authentication protocol such as Lightweight Directory Access Protocol (LDAP) or Security Assertion Markup Language (SAML).
 
 Here's a list of security providers supported by CrafterCMS for accessing the repository:
 
@@ -25,7 +25,7 @@ To configure an external authentication method, please follow one of the guides 
    configure-ldap.rst
    configure-headers-based-auth.rst
 
-When using an external authentication method, user accounts are automatically created in the internal database upon each user's first successful login, using the attributes from the responses received.  Users added to the internal database after the user's first successful login through external authentication are marked as **Externally Managed**.
+When using an external authentication method, user accounts are automatically created in the internal database upon each user's first successful login, using the attributes from the responses received. Users added to the internal database after the user's first successful login through external authentication are marked as **Externally Managed**.
 
 .. _configure-authentication-chain:
 
@@ -33,7 +33,7 @@ When using an external authentication method, user accounts are automatically cr
 Configure Authentication Chain
 ==============================
 
-CrafterCMS supports multiple security providers and allows configuration of multiple authentication providers in a chain that are then iterated through until either the user is authenticated and granted access or authentication fails and an HTTP 401 Unauthorized is returned to the user.  This allows Studio to support multiple security providers that appears like a single authentication module to users.
+CrafterCMS supports multiple security providers and allows configuration of multiple authentication providers in a chain that are then iterated through until either the user is authenticated and granted access or authentication fails and an HTTP 401 Unauthorized is returned to the user. This allows Studio to support multiple security providers that appears like a single authentication module to users.
 
 .. image:: /_static/images/system-admin/authentication-chain.webp
     :alt: Static Assets - Authentication Chaining
@@ -48,11 +48,11 @@ The following authentication providers can be configured in a chain:
     - headers
     - internal database
 
-When an authentication chain is configured, when a user logs in, Studio will try to authenticate the user using the first security provider in the chain as defined in the :ref:`studio-config-override.yaml <studio-configuration-files>` file.  If authentication fails, it will then move on to the next authentication provider in the list and try to authenticate the user again.  It will continue moving on to the next security provider in the chain until the user is authenticated or the authentication fails.
+When an authentication chain is configured, when a user logs in, Studio will try to authenticate the user using the first security provider in the chain as defined in the :ref:`studio-config-override.yaml <studio-configuration-files>` file. If authentication fails, it will then move on to the next authentication provider in the list and try to authenticate the user again. It will continue moving on to the next security provider in the chain until the user is authenticated or the authentication fails.
 
-To setup the authentication chain, open the file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension``.  Another way to access the ``studio-config-override.yaml`` file is by clicking on the |mainMenu| **Main Menu** from the context nav in Studio, then clicking on ``Global Config``.
+To setup the authentication chain, open the file ``studio-config-override.yaml`` under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension``. Another way to access the ``studio-config-override.yaml`` file is by clicking on the |mainMenu| **Main Menu** from the context nav in Studio, then clicking on ``Global Config``.
 
-Below is a sample configuration for the authentication chain.  There are four authentication providers in the example below: (1) Headers Authentication (2) LDAP1 (3) LDAP2 (4) Internal database
+Below is a sample configuration for the authentication chain. There are four authentication providers in the example below: (1) Headers Authentication (2) LDAP1 (3) LDAP2 (4) Internal database
 
 .. code-block:: yaml
     :linenos:
@@ -145,7 +145,7 @@ Below is a sample configuration for the authentication chain.  There are four au
 
 |
 
-In the configuration above, when a user tries to authenticate, the user's credentials will be passed first to the headers authentication provider.  If the authentication succeeds, the processing in the chain is done and the user is allowed to proceed.  If the authentication fails, the user credentials will then be passed to LDAP1.  If authentication is successful, processing in the chain is done, otherwise, the user credentials are then passed on to LDAP2.  LDAP2 will then try to authenticate user.  If successful, processing in the chain is done, otherwise, the user credentials are then passed to the final provider in the chain, the internal database.  The final provider in the chain then determines whether the user is successfully authenticated or rejected and sent an HTTP 401 Unauthorized message.  Below is a diagram showing the authentication chain process using the above configuration:
+In the configuration above, when a user tries to authenticate, the user's credentials will be passed first to the headers authentication provider. If the authentication succeeds, the processing in the chain is done and the user is allowed to proceed. If the authentication fails, the user credentials will then be passed to LDAP1. If authentication is successful, processing in the chain is done, otherwise, the user credentials are then passed on to LDAP2. LDAP2 will then try to authenticate user. If successful, processing in the chain is done, otherwise, the user credentials are then passed to the final provider in the chain, the internal database. The final provider in the chain then determines whether the user is successfully authenticated or rejected and sent an HTTP 401 Unauthorized message. Below is a diagram showing the authentication chain process using the above configuration:
 
 .. image:: /_static/images/system-admin/auth-chain-example.webp
     :alt: Static Assets - Example Authentication Chain Process
@@ -170,8 +170,8 @@ Crafter Studio can be configured to support SAML2 SSO out of the box without usi
 ------------
 Requirements
 ------------
-#.  A SAML2 compatible Identity Provider (IdP) properly configured, this configuration will not be covered here
-#.  A private key and certificate.  This can be generated like so:
+#. A SAML2 compatible Identity Provider (IdP) properly configured, this configuration will not be covered here
+#. A private key and certificate. This can be generated like so:
 
     ``openssl req -newkey rsa:2048 -nodes -keyout rp-private.key -x509 -days 365 -out rp-certificate.crt``
 
@@ -202,7 +202,7 @@ To enable SAML security, go to ``CRAFTER_HOME/bin``, open the ``crafter-setenv.s
 
 |
 
-Next we'll setup SAML configuration properties.  Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add/uncomment the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+Next we'll setup SAML configuration properties. Go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add/uncomment the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -291,7 +291,7 @@ where
 - ``studio.security.saml.webSSOProfileOptions.passive``: Indicates if user is authenticated silently
 - ``studio.security.saml.webSSOProfileOptions.forceAuthn``: Indicates if user will be forced to re-authenticate
 
-The classpath is located in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes``.  As shown in the example above, the relying party private key is located in your Authoring installation under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/saml`` folder.
+The classpath is located in your Authoring installation, under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes``. As shown in the example above, the relying party private key is located in your Authoring installation under ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/saml`` folder.
 
 .. code-block:: yaml
    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -313,7 +313,7 @@ Restart your Authoring installation after configuring the above.
 Configure Headers Based Authentication |enterpriseOnly|
 =======================================================
 
-Crafter Studio is able to integrate with any authentication system that sends custom HTTP headers containing information that will be used to authenticate the user in Studio.  This section details how to setup Studio for headers based authentication.
+Crafter Studio is able to integrate with any authentication system that sends custom HTTP headers containing information that will be used to authenticate the user in Studio. This section details how to setup Studio for headers based authentication.
 
 
 -------------------------------------------------
@@ -394,7 +394,7 @@ Configure LDAP Authentication |enterpriseOnly|
 To configure LDAP authentication, in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and uncomment the
 following lines to the :ref:`studio-config-override.yaml <studio-configuration-files>` file.
 
-.. note:: The values for the parameters listed below are just examples.  Remember to make any appropriate configuration changes according to your directory service in use.
+.. note:: The values for the parameters listed below are just examples. Remember to make any appropriate configuration changes according to your directory service in use.
 
 .. code-block:: properties
     :linenos:
@@ -438,12 +438,12 @@ Some notes on the properties above:
 - ``bindDN`` and ``bindPassword`` are basically the credentials used to connect initially to the LDAP server.
 - ``baseContext`` is the LDAP tree root where the user entries can be located.
 - ``username``, ``firstName``, ``lastName`` and ``email`` are basic user attributes.
-- ``groupName`` indicates the groups the user belongs to (can have multiple values).  You can specify a regex to extract the group name of a user.
+- ``groupName`` indicates the groups the user belongs to (can have multiple values). You can specify a regex to extract the group name of a user.
 
 Studio will then do a query against the LDAP server whenever a user attempts to log in and the user is not yet in the DB. If there's a match in LDAP, the user is
 created in the database with the imported LDAP attributes, and finally added to the groups specified in LDAP.
 
-Also, please note that Studio needs all the attributes listed in the config to be present in the LDAP user's attributes, otherwise, Studio is not able to authenticate the user.  When an attribute is missing, an error message will be displayed in the login screen: ``A system error has occurred.  Please wait a few minutes or contact an administrator``.  Please look at the tomcat log to check which attribute was not found.  Here's an example log:
+Also, please note that Studio needs all the attributes listed in the config to be present in the LDAP user's attributes, otherwise, Studio is not able to authenticate the user. When an attribute is missing, an error message will be displayed in the login screen: ``A system error has occurred. Please wait a few minutes or contact an administrator``. Please look at the tomcat log to check which attribute was not found. Here's an example log:
 
 .. code-block:: none
 
@@ -453,7 +453,7 @@ Also, please note that Studio needs all the attributes listed in the config to b
 
 Here are a few things to take note of when configuring LDAP authentication in Studio:
 
-Make sure that at least one of the **groupName** attribute of the LDAP user exists in Studio and has Roles and Permission setup.  If there is no **groupName** attribute setup in Studio with Roles and Permissions, please make sure that the system administrator assigns a role to at least one group in Studio so the user can access the site, otherwise, once the user gets into the **Sites** screen and tries to Preview the site or view the dashboard, the user will get a notification that the site is invalid.
+Make sure that at least one of the **groupName** attribute of the LDAP user exists in Studio and has Roles and Permission setup. If there is no **groupName** attribute setup in Studio with Roles and Permissions, please make sure that the system administrator assigns a role to at least one group in Studio so the user can access the site, otherwise, once the user gets into the **Sites** screen and tries to Preview the site or view the dashboard, the user will get a notification that the site is invalid.
 
     .. image:: /_static/images/system-admin/ldap-user-group-no-role-assigned.webp
         :alt: System Admin LDAP Config - LDAP user group attribute not assigned to a role
@@ -462,7 +462,7 @@ Make sure that at least one of the **groupName** attribute of the LDAP user exis
 
 |
 
-To assign a role to a group, please follow the guide :ref:`role-mappings`.  To assign permissions to a role, please see :ref:`permission-mappings`
+To assign a role to a group, please follow the guide :ref:`role-mappings`. To assign permissions to a role, please see :ref:`permission-mappings`
 
 For an example of setting up LDAP, see :ref:`setting-up-simple-ldap-server`
 
@@ -516,7 +516,7 @@ to desired minimum password complexity required:
 
 Crafter Studio's default minimum password complexity required is set to 3 (which translate to a score
 of 80 in the UI), and until the user setting/changing the password has met the minimum required,
-the ``Submit`` button will not be enabled.  Also, once the minimum password strength score has been
+the ``Submit`` button will not be enabled. Also, once the minimum password strength score has been
 reached, the score will be displayed in green.
 
 .. image:: /_static/images/system-admin/password-reqts-80-score.webp
@@ -562,7 +562,7 @@ Below, are some of the messages displayed as a user is inputting a new password:
 Randomize Authoring's "admin" Password for CrafterCMS Fresh Install
 ===================================================================
 
-CrafterCMS gives you the option to randomize the **admin** password on a fresh install.  To randomize the **admin** password, before starting CrafterCMS for the very first time, in your Authoring installation, go to  the following folder: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/`` and add the following to the :ref:`studio-config-override.yaml <studio-configuration-files>` file:
+CrafterCMS gives you the option to randomize the **admin** password on a fresh install. To randomize the **admin** password, before starting CrafterCMS for the very first time, in your Authoring installation, go to  the following folder: ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/`` and add the following to the :ref:`studio-config-override.yaml <studio-configuration-files>` file:
 
 .. code-block:: yaml
        :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml*
@@ -578,9 +578,9 @@ CrafterCMS gives you the option to randomize the **admin** password on a fresh i
        # Random admin password allowed chars
        studio.db.initializer.randomAdminPassword.chars: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*_=+-/
 
-To enable the random admin password generation, just set ``studio.db.initializer.randomAdminPassword.enabled`` to ``true`` and specify your desired password length and allowed characters for the password.  Save the file after making your changes.
+To enable the random admin password generation, just set ``studio.db.initializer.randomAdminPassword.enabled`` to ``true`` and specify your desired password length and allowed characters for the password. Save the file after making your changes.
 
-After saving the ``studio-config-override.yaml`` file, start CrafterCMS.  You'll then need to look at the authoring tomcat log, and search for the following string to get the random password generated for user **admin**: `*** Admin Account Password:`
+After saving the ``studio-config-override.yaml`` file, start CrafterCMS. You'll then need to look at the authoring tomcat log, and search for the following string to get the random password generated for user **admin**: `*** Admin Account Password:`
 
 Here's a sample password generated for the admin as listed in the tomcat log:
 

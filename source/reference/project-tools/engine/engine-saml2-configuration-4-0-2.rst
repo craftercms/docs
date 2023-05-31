@@ -29,8 +29,8 @@ Crafter Engine can be configured to support SAML2 SSO out of the box without usi
 Requirements
 ------------
 
-#.  A SAML2 compatible Identity Provider properly configured, this configuration will not be covered here
-#.  A Java KeyStore file containing all needed keys & certificates, this can be generated with the Java Keytool or any 
+#. A SAML2 compatible Identity Provider properly configured, this configuration will not be covered here
+#. A Java KeyStore file containing all needed keys & certificates, this can be generated with the Java Keytool or any 
     other compatible tool. For example:
     
     ``keytool -genkey -alias CREDENTIAL_NAME -keystore keystore.jks -storepass STORE_PASSWORD``
@@ -47,14 +47,14 @@ Requirements
     * **keypass**: The value used for this option will be used in the ``keystore.credentials.credential.password`` 
       property
     
-#.  XML descriptors for the Identity Provider and the Service Provider (Crafter Engine). The descriptor for Crafter
+#. XML descriptors for the Identity Provider and the Service Provider (Crafter Engine). The descriptor for Crafter
     Engine can be generated following these steps:
     
-    #.  Export the X509 certificate from the key store file:
+    #. Export the X509 certificate from the key store file:
     
         ``keytool -export -alias CREDENTIAL_NAME -keystore keystore.jks -rfc -file CREDENTIAL_NAME.cer``
     
-    #.  Create the XML descriptor, either using a `third party tool <https://www.samltool.com/sp_metadata.php>`_ or
+    #. Create the XML descriptor, either using a `third party tool <https://www.samltool.com/sp_metadata.php>`_ or
         manually. The descriptor should look like this:
        
         .. code-block:: xml

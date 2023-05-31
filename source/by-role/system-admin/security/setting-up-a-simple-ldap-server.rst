@@ -18,7 +18,7 @@ First, we'll configure LDAP authentication in Crafter Studio |enterpriseOnly| , 
 Configure LDAP authentication in Crafter Studio |enterpriseOnly|
 ----------------------------------------------------------------
 
-We will first configure LDAP authentication in Crafter Studio |enterpriseOnly|.  In your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>`.  (The server url, bindDN and password are all default values of the Apache Directory Studio)  Stop and restart Crafter Studio after making your changes.
+We will first configure LDAP authentication in Crafter Studio |enterpriseOnly|. In your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>`. (The server url, bindDN and password are all default values of the Apache Directory Studio)  Stop and restart Crafter Studio after making your changes.
 
 .. code-block:: yaml
    :linenos:
@@ -65,28 +65,28 @@ Download and install Apache Directory Studio from here: http://directory.apache.
 ---------------------
 Setup the LDAP server
 ---------------------
-We will first create our LDAP server.  Launch your Apache Directory Studio application.  Notice the tabs on the lower left hand corner.  Click on the **LDAP Servers** tab.  To create the server, click on the **New Server** icon, the first icon to the right of the **LDAP Servers** tab.
+We will first create our LDAP server. Launch your Apache Directory Studio application. Notice the tabs on the lower left hand corner. Click on the **LDAP Servers** tab. To create the server, click on the **New Server** icon, the first icon to the right of the **LDAP Servers** tab.
 
 .. image:: /_static/images/developer/apache-ds-screen.webp
     :alt: Apache Directory Studio Screen
     :width: 95 %
     :align: center
 
-A dialog to create the server will appear, go the the **Select the server type:** section of the dialog.  For our example, select **ApacheDS 2.0.0** then click on the **Finish** button.
+A dialog to create the server will appear, go the the **Select the server type:** section of the dialog. For our example, select **ApacheDS 2.0.0** then click on the **Finish** button.
 
 .. image:: /_static/images/developer/create-ldap-server.webp
     :alt: Apache Directory Studio - Create LDAP server
     :width: 65 %
     :align: center
 
-Next we'll start our LDAP server.  Click on the LDAP server we just created, **ApacheDS 2.0.0**, which will be displaying the status **Stopped**.  To start the server, click on the green button right next to the tabs:
+Next we'll start our LDAP server. Click on the LDAP server we just created, **ApacheDS 2.0.0**, which will be displaying the status **Stopped**. To start the server, click on the green button right next to the tabs:
 
 .. image:: /_static/images/developer/ldap-server-start.webp
     :alt: Apache Directory Studio - Start LDAP server
     :width: 65 %
     :align: center
 
-We'll now need to connect the LDAP browser to our newly created LDAP server.  To connect to the server, in the **LDAP Server** tab, right click on the server **ApacheDS 2.0.0**, then select **Create a Connection**
+We'll now need to connect the LDAP browser to our newly created LDAP server. To connect to the server, in the **LDAP Server** tab, right click on the server **ApacheDS 2.0.0**, then select **Create a Connection**
 
 .. image:: /_static/images/developer/ldap-server-options.webp
     :alt: Apache Directory Studio - Create a Connection to the LDAP server
@@ -104,14 +104,14 @@ Click on the **Connections** tab, you should now see **ApacheDS 2.0.0** listed.
 Load some data into the LDAP Server
 -----------------------------------
 
-The server we setup earlier does not have any data yet.  We will now load some data by using the LDIF editor.  LDIF or LDAP Data Interchange Format, is a text format for representing LDAP data and commands.  To open an LDIF editor, click on the **New** icon at the top left, or click **File** -> **New**, a dialog will appear with a list, select **LDIF File** under **LDAP Browser**
+The server we setup earlier does not have any data yet. We will now load some data by using the LDIF editor. LDIF or LDAP Data Interchange Format, is a text format for representing LDAP data and commands. To open an LDIF editor, click on the **New** icon at the top left, or click **File** -> **New**, a dialog will appear with a list, select **LDIF File** under **LDAP Browser**
 
 .. image:: /_static/images/developer/ldap-server-select-ldif.webp
     :alt: Apache Directory Studio - Open LDIF file editor
     :width: 95 %
     :align: center
 
-An empty file in the middle of your ApacheDS will appear.  This is the LDIF editor.  We will now enter some data into it to create users that Crafter Studio can authenticate through the LDAP Server we just setup.  We will add three users, each belonging to a different group for the site **myawesomesite** in Crafter Studio.  Please make sure that the attributes listed in the Crafter Studio LDAP configuration is configured in the LDAP server for each user.  Copy and paste the data listed below into the LDIF editor.  Make sure that there is an empty line after the last entry.
+An empty file in the middle of your ApacheDS will appear. This is the LDIF editor. We will now enter some data into it to create users that Crafter Studio can authenticate through the LDAP Server we just setup. We will add three users, each belonging to a different group for the site **myawesomesite** in Crafter Studio. Please make sure that the attributes listed in the Crafter Studio LDAP configuration is configured in the LDAP server for each user. Copy and paste the data listed below into the LDIF editor. Make sure that there is an empty line after the last entry.
 
 .. code-block:: text
     :linenos:
@@ -231,21 +231,21 @@ We should also be able to see the three users we just added in the LDAP browser
 Changing a user's password in the LDAP server
 ---------------------------------------------
 
-Notice that we set the password to the same characters for all the users.  Let's change the password for all the users.  To do this, from the LDAP Browser tab, navigate to DIT -> Root DSE -> dc=example,dc=com -> ou=Users, then click on the name os a user. We'll click on user **Jane Doe**.  A new tab will open in the middle of your ApacheDS with all the attributes for user **Jane Doe**.  Double click on **userPassword** to change the user's password.
+Notice that we set the password to the same characters for all the users. Let's change the password for all the users. To do this, from the LDAP Browser tab, navigate to DIT -> Root DSE -> dc=example,dc=com -> ou=Users, then click on the name os a user. We'll click on user **Jane Doe**. A new tab will open in the middle of your ApacheDS with all the attributes for user **Jane Doe**. Double click on **userPassword** to change the user's password.
 
 .. image:: /_static/images/developer/ldap-server-user-view.webp
     :alt: Apache Directory Studio - LDAP Browser View a User
     :width: 95 %
     :align: center
 
-The **Password Editor** dialog will now be in focus.  Click on **New Password** at the middle top and fill in the **Enter New Password** and **Confirm New Password** fields in the form, then click on the **OK** button
+The **Password Editor** dialog will now be in focus. Click on **New Password** at the middle top and fill in the **Enter New Password** and **Confirm New Password** fields in the form, then click on the **OK** button
 
 .. image:: /_static/images/developer/ldap-server-new-passwd.webp
     :alt: Apache Directory Studio - LDAP Browser Password Editor New Password
     :width: 85 %
     :align: center
 
-To test the new password you just entered, double click on **userPassword** attribute of the user, then click on **Current Password** in the **Password Editor** dialog.  Enter the new password in the **Verify Password** field, then click on the **Verify** button.
+To test the new password you just entered, double click on **userPassword** attribute of the user, then click on **Current Password** in the **Password Editor** dialog. Enter the new password in the **Verify Password** field, then click on the **Verify** button.
 
 .. image:: /_static/images/developer/ldap-server-curr-passwd.webp
     :alt: Apache Directory Studio - LDAP Browser Password Editor Current Password
@@ -259,13 +259,13 @@ When successful, a dialog will appear that the password was verified successfull
     :width: 65 %
     :align: center
 
-Repeat the steps listed above for the rest of the users we added in to the LDAP server to change their password.  After changing all the user's passwords, we can now try to login to Crafter Studio using the credentials of the users we just added.
+Repeat the steps listed above for the rest of the users we added in to the LDAP server to change their password. After changing all the user's passwords, we can now try to login to Crafter Studio using the credentials of the users we just added.
 
 --------------------------------------------
 Logging in to Crafter Studio as an LDAP user
 --------------------------------------------
 
-In your browser, enter ``localhost:8080\studio``.  Fill in the the username and password using one of the users we setup in the LDAP server.  In the image below, we will log in the user **jbloggs**.  If authentication is successful, the user should be taken to the **Sites** screen of Crafter Studio.
+In your browser, enter ``localhost:8080\studio``. Fill in the the username and password using one of the users we setup in the LDAP server. In the image below, we will log in the user **jbloggs**. If authentication is successful, the user should be taken to the **Sites** screen of Crafter Studio.
 
 .. image:: /_static/images/developer/ldap-server-authenticate-user.webp
     :alt: Apache Directory Studio - LDAP Server authenticate user login from Crafter Studio

@@ -14,7 +14,7 @@
 Git
 ===
 
-The **Git** under |projectTools| allows the user to perform Git operations such as viewing remote repositories linked to the project and options to pull and push to the listed remote repositories.  It also allows the user to add a remote repository to the project.
+The **Git** under |projectTools| allows the user to perform Git operations such as viewing remote repositories linked to the project and options to pull and push to the listed remote repositories. It also allows the user to add a remote repository to the project.
 
 Below, we have a site **mysweetdotcom** with a link to a remote repository in GitHub:
 
@@ -33,7 +33,7 @@ Below, we have a site **mysweetdotcom** with a link to a remote repository in Gi
 ----------------
 Add a Repository
 ----------------
-To add a remote repository for your site, click on the **New Remote** button.  A **Create Repository** dialog will open where you'll need to fill in the required information then click on the **Create** button and you should see the new repository added in the **Remote Repositories**
+To add a remote repository for your site, click on the **New Remote** button. A **Create Repository** dialog will open where you'll need to fill in the required information then click on the **Create** button and you should see the new repository added in the **Remote Repositories**
 
 .. image:: /_static/images/site-admin/project-tools-add-repo.webp
     :alt: Git - New Repository
@@ -100,7 +100,7 @@ Another way of publishing the commitd id from the successful pull is to click ``
 ^^^^^^^^^^^^^^^^^^^
 Conflict Resolution
 ^^^^^^^^^^^^^^^^^^^
-When performing a pull from remote repository, Git is usually able to merge changes from the remote repository to your local files.  Sometimes, a line you edited in a file may have also been edited on the remote repository which will result in a merge conflict when you pull from the remote repository.  In this case, you will have to step in and tell Git what to do.  Crafter Studio supports resolving the conflict from the ``Git`` dashboard.
+When performing a pull from remote repository, Git is usually able to merge changes from the remote repository to your local files. Sometimes, a line you edited in a file may have also been edited on the remote repository which will result in a merge conflict when you pull from the remote repository. In this case, you will have to step in and tell Git what to do. Crafter Studio supports resolving the conflict from the ``Git`` dashboard.
 
    .. note::
       Remember not to use Studio as a git merge and conflict resolution platform. All merge conflicts should be resolved upstream before getting pulled into Studio.
@@ -113,7 +113,7 @@ When you perform a pull from repository, and there's a conflict between your loc
 
 |
 
-After the conflict message appears on the bottom left, to resolve the conflict, click on the ``Repository Status`` tab.  Here, you will then be presented with options on how to resolve the conflict
+After the conflict message appears on the bottom left, to resolve the conflict, click on the ``Repository Status`` tab. Here, you will then be presented with options on how to resolve the conflict
 
 .. image:: /_static/images/site-admin/project-tools-pull-from-remote-fix.webp
     :alt: Git - Pull from Remote Repository Error Resolution Screen
@@ -150,7 +150,7 @@ To resolve the conflict, you are given two options:
 
   |
 
-* **Diff**: let's you view the differences between your local files and the files in the remote repository.  Crafter Studio let's you view the differences a couple of ways:
+* **Diff**: let's you view the differences between your local files and the files in the remote repository. Crafter Studio let's you view the differences a couple of ways:
 
   .. image:: /_static/images/site-admin/project-tools-conflict-diff-stacked.webp
       :alt: Git - Pull from Remote Repository Conflict Resolution Diff Stacked
@@ -166,7 +166,7 @@ To resolve the conflict, you are given two options:
 
   |
 
-Select the appropriate button for your case, ``Keep Local`` or ``Accept Remote`` then click on ``Confirm``.  You will then be directed to commit the changes done to your local or cancel the pull operation.
+Select the appropriate button for your case, ``Keep Local`` or ``Accept Remote`` then click on ``Confirm``. You will then be directed to commit the changes done to your local or cancel the pull operation.
 
 .. image:: /_static/images/site-admin/project-tools-commit-res-btn.webp
     :alt: Git - Pull from Remote Repository Conflict Resolution

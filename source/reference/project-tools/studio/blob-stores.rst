@@ -49,7 +49,7 @@ Remember to encrypt your credentials. For more information on how to manage/enco
 please see :ref:`managing-secrets`
 
 For better security and control, we recommend setting an AWS profile via the ``crafter-setenv.sh`` file instead of
-configuring the encrypted credentials in the blob stores configuration file.  This allows you to have an IAM user
+configuring the encrypted credentials in the blob stores configuration file. This allows you to have an IAM user
 per developer, which is a better approach than a single user whose credentials are included (encrypted) in the
 configuration file. In this way, if you need to rotate or remove the credentials of a single user, the access of
 other users won't be affected.
@@ -62,7 +62,7 @@ To set an AWS profile, using your favorite editor, open ``CRAFTER_HOME/bin/craft
 
 |
 
-*where* ``YOUR_AWS_PROFILE`` is the AWS profile you wish to use for the blob store.  See :ref:`here <aws-profile-configuration>`
+*where* ``YOUR_AWS_PROFILE`` is the AWS profile you wish to use for the blob store. See :ref:`here <aws-profile-configuration>`
 for more information on configuring AWS profiles.
 
 When using an AWS profile, you can now remove the ``<credentials />`` section in your blob stores configuration file.
@@ -95,7 +95,7 @@ The external storage could be in the cloud, such as AWS S3 or some other storage
 Configuring the External Storage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 First we'll need to setup the external storage to be used by CrafterCMS.
-To setup an external storage for assets, open the **Sidebar**, then click on |projectTools| -> *Configurations*.  Select ``Blob Stores`` from the dropdown and fill in the required information.
+To setup an external storage for assets, open the **Sidebar**, then click on |projectTools| -> *Configurations*. Select ``Blob Stores`` from the dropdown and fill in the required information.
 
 .. code-block:: xml
 
@@ -123,14 +123,14 @@ After setting up the ``Blob Stores`` configuration, you may now use the external
 Example
 ^^^^^^^
 
-Let's take a look at an example of setting up an external storage for preview, staging and live and then uploading and finally publishing assets to the external storage we setup.  In the example, we will use AWS S3 as the external storage and the Website Editorial blueprint in Crafter Studio to create our project.
+Let's take a look at an example of setting up an external storage for preview, staging and live and then uploading and finally publishing assets to the external storage we setup. In the example, we will use AWS S3 as the external storage and the Website Editorial blueprint in Crafter Studio to create our project.
 
 **Prerequisites:**
 
 #. Project created using the Website Editorial blueprint.
 #. AWS S3 bucket/s. A single bucket can be used as long as all the ``publishingTarget`` uses a unique ``prefix``, or a separate bucket can be created for each ``publishingTarget``, or a combination of both.
 
-   For our example, we will be using two buckets.  One for authoring and another for delivery.  The following buckets were setup in AWS S3: *my-authoring-bucket* for authoring (used by publishing target ``preview`` with the prefix *sandbox* and publishing target ``staging`` with the prefix *staging*) and *my-deli-bucket* for delivery.
+   For our example, we will be using two buckets. One for authoring and another for delivery. The following buckets were setup in AWS S3: *my-authoring-bucket* for authoring (used by publishing target ``preview`` with the prefix *sandbox* and publishing target ``staging`` with the prefix *staging*) and *my-deli-bucket* for delivery.
 
 **Here are the steps:**
 
@@ -146,7 +146,7 @@ Let's begin:
 1. Enable Staging (optional)
 """"""""""""""""""""""""""""
 
-This step is optional but for our example, we wanted to be able to publish to staging, so in this step, we will first enable staging.  In your Studio, click on |projectTools| -> *Configuration* -> *Project Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
+This step is optional but for our example, we wanted to be able to publish to staging, so in this step, we will first enable staging. In your Studio, click on |projectTools| -> *Configuration* -> *Project Configuration* and set ``enable-staging-environment`` to ``true`` to enable staging
 
   .. code-block:: xml
      :emphasize-lines: 2
@@ -222,7 +222,7 @@ To see more information on the Blob Stores configuration, see :ref:`blob-stores-
 3. Upload files
 """""""""""""""
 
-There are various ways to upload files in Crafter Studio.  Here's a few ways we can upload to the external storage:
+There are various ways to upload files in Crafter Studio. Here's a few ways we can upload to the external storage:
 
 #. Upload through a picker with corresponding data source setup in a content type
 #. Upload using the ``Bulk Upload`` or ``Upload`` right-click option
@@ -244,7 +244,7 @@ Let's take a closer look:
 
    From the **Sidebar**, navigate to ``/articles/2016/6`` then right click on ``Coffee is Good for Your Health`` then select ``Edit``.
 
-   Scroll down to the ``Content`` section, then click on the ``Replace`` button next to the **Image** field, then select ``Upload Images``.  Select the file you want to upload.  In our example, the file ``new1.png`` will be uploaded to ``static-assets/item/images/2020/03/27``.
+   Scroll down to the ``Content`` section, then click on the ``Replace`` button next to the **Image** field, then select ``Upload Images``. Select the file you want to upload. In our example, the file ``new1.png`` will be uploaded to ``static-assets/item/images/2020/03/27``.
 
    .. image:: /_static/images/site-admin/ext-storage/upload-image-with-picker.webp
       :align: center
@@ -262,7 +262,7 @@ Let's take a closer look:
 
 #. Next we'll try uploading using the ``Upload`` right-click option.
 
-   Open the **Sidebar** and navigate to ``static-assets/item``.  Create a folder named ``docs`` under ``item``.  Right click on the newly created folder and select ``Upload`` to upload a single file, or ``Bulk Upload`` to upload multiple files
+   Open the **Sidebar** and navigate to ``static-assets/item``. Create a folder named ``docs`` under ``item``. Right click on the newly created folder and select ``Upload`` to upload a single file, or ``Bulk Upload`` to upload multiple files
 
    In the example below, two files were uploaded to the ``docs`` folder.
 
@@ -286,9 +286,9 @@ Let's take a closer look:
 5. Publish the files to staging
 """""""""""""""""""""""""""""""
 
-The next step in our example is to publish the files to ``staging``.  To publish a file to ``staging``, navigate to the file in the ``Sidebar`` then right click on the file, and select ``Approve & Publish`` or open the ``Dashboard`` and select the file/s you want to publish to ``staging`` in the ``My Recent Activity`` widget and click on ``Approve & Publish`` from the context nav.
+The next step in our example is to publish the files to ``staging``. To publish a file to ``staging``, navigate to the file in the ``Sidebar`` then right click on the file, and select ``Approve & Publish`` or open the ``Dashboard`` and select the file/s you want to publish to ``staging`` in the ``My Recent Activity`` widget and click on ``Approve & Publish`` from the context nav.
 
-The ``Approve for Publish`` dialog will come up.  Remember to select ``staging`` for the ``Publishing Options``
+The ``Approve for Publish`` dialog will come up. Remember to select ``staging`` for the ``Publishing Options``
 
 .. image:: /_static/images/site-admin/ext-storage/publish-to-staging.webp
     :align: center
@@ -310,9 +310,9 @@ When the file/s are published to ``staging``, the files get published to the ``s
 6. Publish the files to delivery
 """"""""""""""""""""""""""""""""
 
-Finally, we'll publish the file/s to ``live``.  To publish a file to ``live``, navigate to the file in the ``Sidebar`` then right click on the file, and select ``Approve & Publish`` or open the ``Dashboard`` and select the file/s you want to publish to ``live`` in the ``My Recent Activity`` widget and click on ``Approve & Publish`` from the context nav.
+Finally, we'll publish the file/s to ``live``. To publish a file to ``live``, navigate to the file in the ``Sidebar`` then right click on the file, and select ``Approve & Publish`` or open the ``Dashboard`` and select the file/s you want to publish to ``live`` in the ``My Recent Activity`` widget and click on ``Approve & Publish`` from the context nav.
 
-The ``Approve for Publish`` dialog will come up.  Remember to select ``live`` for the ``Publishing Options``
+The ``Approve for Publish`` dialog will come up. Remember to select ``live`` for the ``Publishing Options``
 
 .. image:: /_static/images/site-admin/ext-storage/publish-to-live.webp
     :align: center
@@ -334,7 +334,7 @@ When the file/s are published to ``live``, the file/s get published to the ``my-
 Setting up Staging for Existing Projects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When adding the ``staging`` publishing target to an established project that uses external storage, Studio does not clone the assets in external storage for ``live`` into ``staging``.  Performing a bulk publish to ``staging`` also does not work at this time.  This is because Studio does not publish to ``staging``, assets in a LIVE, UNEDITED state.
+When adding the ``staging`` publishing target to an established project that uses external storage, Studio does not clone the assets in external storage for ``live`` into ``staging``. Performing a bulk publish to ``staging`` also does not work at this time. This is because Studio does not publish to ``staging``, assets in a LIVE, UNEDITED state.
 
 To sync the external storage for ``staging`` with ``live``, you must copy the assets in the ``live`` external storage to the ``staging`` external storage.
 
@@ -342,8 +342,8 @@ Let's take a look at an example of adding ``staging`` to an existing project.
 
 **Prerequisites:**
 
-#. Project created using the Website Editorial blueprint with external storage setup for ``live`` and assets already published to ``live`` (See example above for setting up external storage for a project.  Remember to not setup ``staging`` as we will be doing it in this example)
-#. AWS S3 bucket to be used by the ``staging`` publishing target.  For our example, we will be using the bucket ``my-staging`` setup in AWS S3.
+#. Project created using the Website Editorial blueprint with external storage setup for ``live`` and assets already published to ``live`` (See example above for setting up external storage for a project. Remember to not setup ``staging`` as we will be doing it in this example)
+#. AWS S3 bucket to be used by the ``staging`` publishing target. For our example, we will be using the bucket ``my-staging`` setup in AWS S3.
 
 **Here are the steps:**
 
@@ -372,7 +372,7 @@ Let's begin:
 
 2. **Setup Blob Store**
 
-   Setup ``staging`` in the Blob Store by adding the following to your ``Blob Stores`` configuration.  In your Studio, click on |projectTools| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 bucket for staging.
+   Setup ``staging`` in the Blob Store by adding the following to your ``Blob Stores`` configuration. In your Studio, click on |projectTools| -> *Configuration* -> *Blob Stores* and fill in the required information to setup the S3 bucket for staging.
 
      .. code-block:: xml
 

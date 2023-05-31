@@ -12,7 +12,7 @@ Configure Headers Based Authentication |enterpriseOnly|
 -------------------------------------------------------
 .. TODO Fix below to map to Engine not Studio
 
-Crafter Studio is able to integrate with any authentication system that sends custom HTTP headers containing information that will be used to authenticate the user in Studio.  This section details how to setup Studio for headers based authentication.
+Crafter Studio is able to integrate with any authentication system that sends custom HTTP headers containing information that will be used to authenticate the user in Studio. This section details how to setup Studio for headers based authentication.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

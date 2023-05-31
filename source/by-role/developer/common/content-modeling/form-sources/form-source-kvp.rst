@@ -37,8 +37,8 @@ Configuration
 +------------------------+---------------------------------------------------------------------------+
 || Description/Purpose   || Data source where key/value paris can be added for its use on a control. |
 +------------------------+---------------------------------------------------------------------------+
-|| Properties            || - Data Type: Key Value pairs type (String, Integer, Float, Date, HTML).  |
-||                       || - Options: Key Value pairs to be added on the datasource.                |
+|| Properties            || - Data Type: Key Value pairs type (String, Integer, Float, Date, HTML). |
+||                       || - Options: Key Value pairs to be added on the datasource.               |
 ||                       || - Show keys:                                                             |
 +------------------------+---------------------------------------------------------------------------+
 

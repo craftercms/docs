@@ -10,7 +10,7 @@
 Navigating the Navigation Menu
 ==============================
 
-In this section, we discuss the Navigation Menu tools available in Studio.  To access, click the ``Navigation Menu`` icon from the top right of the browser
+In this section, we discuss the Navigation Menu tools available in Studio. To access, click the ``Navigation Menu`` icon from the top right of the browser
 
 .. image:: /_static/images/system-admin/main-menu/open-main-menu.webp
     :alt: System Administrator - Open Navigation Menu
@@ -19,7 +19,7 @@ In this section, we discuss the Navigation Menu tools available in Studio.  To a
 
 |
 
-Here are the list of tools available when using an out of the box blueprint.  The ``Navigation Menu`` tools described below are available to users belonging to the ``system_admin`` group.
+Here are the list of tools available when using an out of the box blueprint. The ``Navigation Menu`` tools described below are available to users belonging to the ``system_admin`` group.
 
 .. image:: /_static/images/system-admin/main-menu/main-menu.webp
     :alt: System Administrator - Navigation Menu
@@ -51,7 +51,7 @@ Projects
 -----
 Users
 -----
-A user is anybody who uses CrafterCMS.  ``Users`` lets the administrator manage who has access to Crafter Studio.  See :ref:`users-management` for more information on ``Users``
+A user is anybody who uses CrafterCMS. ``Users`` lets the administrator manage who has access to Crafter Studio. See :ref:`users-management` for more information on ``Users``
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-users.webp
     :alt: System Administrator - Navigation Menu Users
@@ -67,7 +67,7 @@ A user is anybody who uses CrafterCMS.  ``Users`` lets the administrator manage 
 ------
 Groups
 ------
-A group consists of a collection of users.  ``Groups`` lets the administrator manage groups, members belonging to a group, etc.  For more information on groups, see :ref:`groups-management`
+A group consists of a collection of users. ``Groups`` lets the administrator manage groups, members belonging to a group, etc. For more information on groups, see :ref:`groups-management`
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-groups.webp
     :alt: System Administrator - Navigation Menu Groups
@@ -83,7 +83,7 @@ A group consists of a collection of users.  ``Groups`` lets the administrator ma
 -------
 Cluster
 -------
-``Cluster`` lets the administrator manage Studio clusters.  See :ref:`clustering` for more information on how to setup clustering and available actions from ``Cluster`` from the Main Menu
+``Cluster`` lets the administrator manage Studio clusters. See :ref:`clustering` for more information on how to setup clustering and available actions from ``Cluster`` from the Main Menu
 
 .. image:: /_static/images/system-admin/main-menu/main-menu-cluster.webp
     :alt: System Administrator - Navigation Menu Cluster
@@ -110,7 +110,7 @@ See :ref:`nav-menu-audit` for more details on the audit logs
 Logging Levels
 --------------
 
-There are 6 log levels defined in CrafterCMS.  These levels determine what messages will be logged and displayed in the **Logging Console**.
+There are 6 log levels defined in CrafterCMS. These levels determine what messages will be logged and displayed in the **Logging Console**.
 
 .. image:: /_static/images/site-admin/logs-logging-levels.webp
     :alt: System Administrator - Navigation Menu Logging Levels
@@ -134,7 +134,7 @@ The ``Log Console`` allows the user to view messages depending on what log level
 
 :ref:`override-logging-levels` contains more information on how to track Java packages with the corresponding log levels desired.
 
-The ``Log Console`` here in the Main Menu is similar to a project ``Log Console`` described :ref:`here <studio-log-console>`.  The difference is the ``Log Console`` from the Main Menu can display logs for all the projects inside Studio, not just one project.
+The ``Log Console`` here in the Main Menu is similar to a project ``Log Console`` described :ref:`here <studio-log-console>`. The difference is the ``Log Console`` from the Main Menu can display logs for all the projects inside Studio, not just one project.
 
 .. _main-menu-tool-global-config:
 

@@ -4,7 +4,7 @@
 
 .. index:: Author Screens
 
-..  _author-screens:
+.. _author-screens:
 
 ==============
 Author Screens
@@ -49,8 +49,8 @@ primary roles as a content author:
 --------
 Projects
 --------
-**Projects** is the first screen you will encounter after logging in to Crafter Studio.  This screen lists all of
-the projects you have been granted permission to.  From this screen you can navigate to any project.  Your projects
+**Projects** is the first screen you will encounter after logging in to Crafter Studio. This screen lists all of
+the projects you have been granted permission to. From this screen you can navigate to any project. Your projects
 can be viewed either in a list or in a grid.
 
 Here's the **Projects** screen with the projects in a list:
@@ -133,7 +133,7 @@ To get to Account Management:
 -----------------
 Project Dashboard
 -----------------
-Each project has a Project Dashboard.  To view a project's dashboard, click on the ``Navigation Menu`` icon at the
+Each project has a Project Dashboard. To view a project's dashboard, click on the ``Navigation Menu`` icon at the
 top right corner of the screen, or click on **Dashboard** at the top of the Sidebar.
 
 Access the ``Dashboard`` from the ``Navigation Menu``
@@ -155,19 +155,19 @@ Access the ``Dashboard`` from the ``Sidebar``
 |
 
 
-This screen is an overview of the workflow for that given project.  The project dashboard has different dashlets
+This screen is an overview of the workflow for that given project. The project dashboard has different dashlets
 depending on your role.
 
 Each dashboard has a header
 
-   Expand Collapse control.  Each widget can be closed and opened to hide the items shown by the widget.
+   Expand Collapse control. Each widget can be closed and opened to hide the items shown by the widget.
    This setting is remembered by your browser
 
-   Dashlet title and count.  Most dashlets include a count at the end of the name for the number of items in the widget
+   Dashlet title and count. Most dashlets include a count at the end of the name for the number of items in the widget
 
-   Dashlet level options.  Options are different on each widget
+   Dashlet level options. Options are different on each widget
 
-   Show count.  Some dashlets allow the author to decide how many items they want to see in the dashlet
+   Show count. Some dashlets allow the author to decide how many items they want to see in the dashlet
 
    Content "type" filter:  Some dashlets allow you to filter them by a broad content type (All, Pages, Components)
 
@@ -207,12 +207,12 @@ For the dashboard shown above, here are the dashlets listed:
           always shows the Current state of the object.
         * Describes the meaning of icons within Crafter Studio
         * Viewable by all users
-        * The Icon guide breaks down icons in to their elements.  You have two basic elements which can
+        * The Icon guide breaks down icons in to their elements. You have two basic elements which can
           be combined to form a specific icon: the item type and the worfkflow indicator.
 
             **Item Types**
 
-            Item types are high level archetypes of content objects within the system.  These types and the
+            Item types are high level archetypes of content objects within the system. These types and the
             iconography associated with them provide a basic classification of the type of object at a glance.
 
             |workflowPage|:	A page is exactly what you would expect, it's a URI addressable object that
@@ -247,14 +247,14 @@ For the dashboard shown above, here are the dashlets listed:
             **Workflow States**
 
             Workflow States help authors and content managers understand at a glance what is going on with the
-            content at a high level.  Is it Live?  Is it work in progress?  Is it currently checked out?
+            content at a high level. Is it Live?  Is it work in progress?  Is it currently checked out?
             In some sort of approval process?
 
             |workflowNeverPub|:	The content has never been pushed live. This helps authors quickly identify which objects that are in progress are already live and which ones are entirely new.
 
             |workflowEdited|: Edited means that the item has been edited since it was made live. Items move to edited as soon as they are created or when they are edited.
 
-            |workflowDeleted|: Items which carry the red trash can icon but are not editable and previewable are deleted.  You will only see these items in dashboards which show historical data
+            |workflowDeleted|: Items which carry the red trash can icon but are not editable and previewable are deleted. You will only see these items in dashboards which show historical data
 
             |workflowLocked|: A locked item is currently in the process of being edited by another author.
 
@@ -268,7 +268,7 @@ For the dashboard shown above, here are the dashlets listed:
 
             |workflowPublishing|: Item is currently being published
 
-            |workflowDisabled|:	You will find that some objects have a red circle with a slash in the middle, this means that the object is not deleted but it should not be displayed on the project.  It's essentially a logical delete.  Imagine a scenario where you need to take an object down immediately because of an inaccuracy while you make corrections.  Disable is perfect for this and several other scenarios.
+            |workflowDisabled|:	You will find that some objects have a red circle with a slash in the middle, this means that the object is not deleted but it should not be displayed on the project. It's essentially a logical delete. Imagine a scenario where you need to take an object down immediately because of an inaccuracy while you make corrections. Disable is perfect for this and several other scenarios.
 
             **Publishing Status/Target**
 
@@ -281,7 +281,7 @@ For the dashboard shown above, here are the dashlets listed:
 
     **Selecting a dashboard item**
 
-        Dashboard items have the ability to be selected.  Selecting an item allows the user to interact with the
+        Dashboard items have the ability to be selected. Selecting an item allows the user to interact with the
         selected items via the context navigation
 
         Items in the dashboard has a icons which shows the type and current workflow status of the item
@@ -305,7 +305,7 @@ For the dashboard shown above, here are the dashlets listed:
 Preview
 -------
 
-Every project has a preview.  This allows users to see, edit and test the project in a safe authoring sandbox
+Every project has a preview. This allows users to see, edit and test the project in a safe authoring sandbox
 prior to publishing changes.
 
     * Preview is a fully functional project but in a safe-to-edit environment.
@@ -357,7 +357,7 @@ In-Context Editing
 ^^^^^^^^^^^^^^^^^^
 
 When in-context editing is turned on (``Edit mode`` pencil is green or ``Move mode`` two vertical ellipsis
-is blue at the top), it puts the page in construction mode.  When you hover your mouse around regions of
+is blue at the top), it puts the page in construction mode. When you hover your mouse around regions of
 the page that have been wired for in-context editing, a pencil will show up instead of the mouse cursor.
 
 .. image:: /_static/images/content-author/preview-page-in-context-editing.webp
@@ -399,7 +399,7 @@ drop targets in it
 Add Components
 ^^^^^^^^^^^^^^
 The ``Add Components`` tool allows you to create new components by dragging components from the panel and
-on to the screen to configured drop targets.  A new component with default values will then be visible and
+on to the screen to configured drop targets. A new component with default values will then be visible and
 ready for editing when a new component is dropped on the screen.
 
 .. image:: /_static/images/content-author/preview-page-components-list.webp
@@ -539,7 +539,7 @@ Common Navigation Elements
 
 Toolbar
 ^^^^^^^
-The Toolbar is a fixed element at the top of the page and cannot be scrolled off the page.  The toolbar
+The Toolbar is a fixed element at the top of the page and cannot be scrolled off the page. The toolbar
 provides contextual workflow and other options relative to the page you are looking at, content you have
 selected or tool you are using.
 
@@ -574,7 +574,7 @@ The sidebar opens a menu that allows access to the following:
       See :ref:`above <project-dashboard>` for more information
     - *Project Explorer:* Allows navigation to all pages, components and documents in the system
     - *Project Tools (available depending on your role):* Contains project administration tools
-      such as Plugin Management, Encryption Tool, etc.  See :ref:`here <navigating-project-tools>`
+      such as Plugin Management, Encryption Tool, etc. See :ref:`here <navigating-project-tools>`
       for more information
 
 The menu/panel width can be resized freely by the user and will remember where you set the length and

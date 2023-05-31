@@ -23,7 +23,7 @@ This section details the steps required to upgrade your CrafterCMS install.
      - 3.1.13
      - 3.1.17 and later versions
 
-     If you are upgrading from a version other than the ones listed above, you will need to upgrade to one of the above listed supported upgrade paths release version first before upgrading to 4.  See the Upgrading CrafterCMS page for 3.1 here: https://docs.craftercms.org/en/3.1/system-administrators/upgrade/index.html
+     If you are upgrading from a version other than the ones listed above, you will need to upgrade to one of the above listed supported upgrade paths release version first before upgrading to 4. See the Upgrading CrafterCMS page for 3.1 here: https://docs.craftercms.org/en/3.1/system-administrators/upgrade/index.html
 
 |
 
@@ -40,7 +40,7 @@ Here are the instructions for upgrading CrafterCMS based on how it was installed
 Troubleshooting Upgrade Issues
 ==============================
 
-When upgrading your Studio install fails, the first thing to do is to inspect data from the logs and figure out which statement failed when completing the upgrade.  Using the results of the inspection, we then have to recover the database manually.
+When upgrading your Studio install fails, the first thing to do is to inspect data from the logs and figure out which statement failed when completing the upgrade. Using the results of the inspection, we then have to recover the database manually.
 
 -----------------------------
 Failure Executing a Statement
@@ -65,7 +65,7 @@ Let's take a look at an example log:
     	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1700)
     	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1630)
     	... 45 more
-    Caused by: org.apache.ibatis.jdbc.RuntimeSqlException: Error executing: ALTER TABLE `cluster` ADD UNIQUE IF NOT EXISTS `uq_cl_git_remote_name` (`git_remote_name`).  Cause: java.sql.SQLIntegrityConstraintViolationException: (conn:12) Duplicate entry '' for key 'uq_cl_git_remote_name'
+    Caused by: org.apache.ibatis.jdbc.RuntimeSqlException: Error executing: ALTER TABLE `cluster` ADD UNIQUE IF NOT EXISTS `uq_cl_git_remote_name` (`git_remote_name`). Cause: java.sql.SQLIntegrityConstraintViolationException: (conn:12) Duplicate entry '' for key 'uq_cl_git_remote_name'
 
 |
 
@@ -90,4 +90,4 @@ When the system is in an undefined state between two versions, you may see the f
 
 |
 
-The above message may occur, if you had an error upgrading because of a failed statement, then you restarted the system again.  Because the script was not executed completely, the system is in an undefined state between the two versions.  So, the next time the system is restarted, the upgrade will be attempted again resulting in a different message in the logs as seen above.  The solution here would be to look some more in the logs for the failed statement before the system was restarted and manually recover, like the previous example.
+The above message may occur, if you had an error upgrading because of a failed statement, then you restarted the system again. Because the script was not executed completely, the system is in an undefined state between the two versions. So, the next time the system is restarted, the upgrade will be attempted again resulting in a different message in the logs as seen above. The solution here would be to look some more in the logs for the failed statement before the system was restarted and manually recover, like the previous example.

@@ -9,7 +9,7 @@
 Extensions
 ==========
 
-CrafterCMS extensions extend the CMS and provide the users additional functionality.  It allows developers
+CrafterCMS extensions extend the CMS and provide the users additional functionality. It allows developers
 to create new experiences both for authors and end-users.
 
 There are two main types of CrafterCMS Extensions:

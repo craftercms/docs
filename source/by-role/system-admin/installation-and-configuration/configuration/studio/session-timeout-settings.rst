@@ -17,7 +17,7 @@ Session inactivity timeout is the amount of time of user inactivity before requi
 
 In some cases, some operations in CrafterCMS may last longer than the user session inactivity timeout settings.
 For this scenario, the session inactivity timeout will need to be modified to allow the operation to finish
-without the session timing out.  Also, you may want to change the timeouts from the default settings.
+without the session timing out. Also, you may want to change the timeouts from the default settings.
 
 Here's a summary of the session timeouts available in CrafterCMS:
 

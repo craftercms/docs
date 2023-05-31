@@ -9,9 +9,9 @@
 CrafterCMS Plugin Descriptor
 ============================
 
-The ``craftercms-plugin.yaml`` file contains information for use in CrafterCMS.  This descriptor file contains
+The ``craftercms-plugin.yaml`` file contains information for use in CrafterCMS. This descriptor file contains
 information about your extension, such as the license, the versions of CrafterCMS supported, and other
-configurations and metadata.  In this section, we'll take a look at a plugin descriptor file.
+configurations and metadata. In this section, we'll take a look at a plugin descriptor file.
 
 .. code-block:: yaml
      :linenos:
@@ -83,7 +83,7 @@ Here are some things to note in the descriptor file:
      - |checkmark|
      - The name displayed in the Crafter Marketplace. |br|
        Pick a unique name for your plugin. You can check in the Crafter Marketplace if |br|
-       the name you picked does not exist yet.  It's also a best practice to provide a name |br|
+       the name you picked does not exist yet. It's also a best practice to provide a name |br|
        for your plugin that is meaningful or recognizable to users. |br|
        The name can be multiple words such as ``Contact Form``
    * - plugin.version

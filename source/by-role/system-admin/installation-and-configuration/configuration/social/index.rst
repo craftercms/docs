@@ -125,7 +125,7 @@ Properties prefix: ``studio.social.notification.``
 | Property        | Default Value     | Description                                              |
 +=================+===================+==========================================================+
 | dailyCron       | ``0 0 0 * * ?``   || CRON Expressions used to control how often each type    |
-+-----------------+-------------------+| of notification is sent.                                |
++-----------------+-------------------+| of notification is sent.                               |
 | weeklyCron      | ``0 0 0 ? * SUN`` |                                                          |
 +-----------------+-------------------+                                                          |
 | instantCron     | ``0 */2 * * * ?`` |                                                          |

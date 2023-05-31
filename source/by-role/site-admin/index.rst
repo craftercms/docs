@@ -9,7 +9,7 @@ Project (Site) Administrator
 
 This section details activities related to project administration in CrafterCMS. The content is oriented towards CrafterCMS administration primarily through Crafter Studio.
 
-Most configuration files can be accessed through Crafter Studio through the **Sidebar ->** |projectTools| **-> Configuration**. but can also be modified by accessing the configuration files directly.  Please note that it is recommended that changes to configuration files be done through the Crafter Studio UI.
+Most configuration files can be accessed through Crafter Studio through the **Sidebar ->** |projectTools| **-> Configuration**. but can also be modified by accessing the configuration files directly. Please note that it is recommended that changes to configuration files be done through the Crafter Studio UI.
 
 -----------------------
 What is a Project/Site?
@@ -147,7 +147,7 @@ measurements, language, etc., to make the application look and feel natural to t
 Project Time Zone
 -----------------
 
-The :ref:`default dates and times <server-time-zone>` used for displays in Studio is UTC.  To
+The :ref:`default dates and times <server-time-zone>` used for displays in Studio is UTC. To
 customize how dates & times get displayed on Studio UI for a project, edit the following in the project
 configuration file, by clicking on |projectTools| from the *Sidebar*, then click on **Configuration**
 and finally selecting **Project Configuration** from the list:
@@ -264,20 +264,20 @@ then click on **Configuration** and finally selecting **Engine Project Configura
 By default, Crafter Engine thinks that targeted content is organized in folders, directly underneath
 ``rootFolders``. So following the configuration posted above:
 
-#.  Targeting is enabled through the property ``targeting.enabled``.
-#.  Each folder underneath /site/website (``targeting.rootFolders``) will hold the content for a different
+#. Targeting is enabled through the property ``targeting.enabled``.
+#. Each folder underneath /site/website (``targeting.rootFolders``) will hold the content for a different
     locale, like *en*, *es*, *fr*, *jp*, etc.
-#.  If for example, Engine will render /site/website/index.xml and the locale for the current user is
+#. If for example, Engine will render /site/website/index.xml and the locale for the current user is
     *es_CR*, then Engine will try to resolve first to /site/website/es_CR/index.xml, /site/website/es/index.xml,
     and finally, since *en* is the ``targeting.fallbackTargetId``, /site/website/en/index.xml. If there was
     no ``targeting.fallbackTargetId``, then the last candidate page for rendering would be /site/website/index.xml.
-#.  The ``targeting.mergeFolders`` property will make Engine create merged content trees, which is useful for
+#. The ``targeting.mergeFolders`` property will make Engine create merged content trees, which is useful for
     navigation. For example, assume that for the top navigation of a page the first level of pages under
     /site/website/{locale} will be displayed, and the locale for the current user again is *es_CR*. Under *es_CR*
     just the "Contact Us" page exists, but under *en* there are more: "Products", "About Us" and "Contact Us".
     By setting ``mergeFolders`` as true, the final pages that are displayed in the navigation would be
     /site/website/en/products, /site/website/en/about-us and /site/website/es_CR/contact-us.
-#.  Normally, if a user goes to my-editorial.com/contact-us, and the current locale is *es_CR*, then page to be
+#. Normally, if a user goes to my-editorial.com/contact-us, and the current locale is *es_CR*, then page to be
     rendered would be resolved to /site/website/es_CR/contact-us, but the browser navigation bar would still show
     my-editorial.com/contact-us. If ``targeting.redirectToTargetedUrl`` is set to true, then instead the user is
     redirected first to my-editoriaal.com/es_CR/contact-us.
@@ -353,8 +353,8 @@ CrafterCMS supports a proxy system to proxy GraphQL, Engine, NodeJS or other app
 A proxy server, or proxy for short, is an application or system that acts as a middleman between requests
 from clients for resources such as a file or web page for example, and the server that provides those resources.
 Whenever a request is made by a client, the request gets sent to the proxy that then evaluates the request and
-then performs the required transactions.  Proxies forwards web requests, act as a firewall and web filter, provide
-shared network connections, and cache data to speed up common requests.  It helps to simplify/control the
+then performs the required transactions. Proxies forwards web requests, act as a firewall and web filter, provide
+shared network connections, and cache data to speed up common requests. It helps to simplify/control the
 complexity of the request, and can provide additional benefits such as load balancing, privacy or security.
 
 See :ref:`here <using-the-proxy-configuration>` for an example of setting up the proxy for a React application
@@ -413,12 +413,12 @@ URL Rewrites and Vanity URLs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 URL rewriting turns hard to remember, long and complicated URLs into easier to remember, user-friendly and search
-engine friendly URLs.  Simple URL rewrite rules per project can be done through Crafter Engine.
+engine friendly URLs. Simple URL rewrite rules per project can be done through Crafter Engine.
 
 CrafterCMS comes with the Tuckey URLRewrite filter, a Java Web Filter with functionality like Apache's mod_rewrite,
 that lets you setup rewrite rules for your project.
 
-To add a URL rewrite rule, in Studio, open the **Sidebar** then click on |projectTools|.  Click on **Configuration** then select **Engine URL Rewrite Configuration (XML Style)**.
+To add a URL rewrite rule, in Studio, open the **Sidebar** then click on |projectTools|. Click on **Configuration** then select **Engine URL Rewrite Configuration (XML Style)**.
 
 Here's an example URL rewrite rule for a project created using the Website Editorial blueprint where requests to
 /articles/2020/12/top-books-for-young-women will be redirected to /articles/2021/1/men-styles-for-winter
@@ -434,7 +434,7 @@ Here's an example URL rewrite rule for a project created using the Website Edito
    </urlrewrite>
 
 
-After saving the configuration, remember to publish the configuration file just saved (``urlrewrite.xml`` file).  To publish the configuration file, from the **Sidebar**, click on **Dashboard**.  In the **My Recent Activity** dashlet, check the box next to the ``urlrewrite.xml`` file, and click **Publish** from the context nav to publish.
+After saving the configuration, remember to publish the configuration file just saved (``urlrewrite.xml`` file). To publish the configuration file, from the **Sidebar**, click on **Dashboard**. In the **My Recent Activity** dashlet, check the box next to the ``urlrewrite.xml`` file, and click **Publish** from the context nav to publish.
 
 .. image:: /_static/images/site-admin/publish-urlrewrite.webp
     :alt: Configurations - Publish URL Rewrite Config File from Dashboard

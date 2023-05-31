@@ -38,7 +38,7 @@ It also allows the user to **Start** or **Stop** Studio publishing
 
 |
 
-Publishing is locked when content is being published.  From the Status tab, you can unlock publishing by clicking on the ``unlock`` button that is displayed during content publishing.
+Publishing is locked when content is being published. From the Status tab, you can unlock publishing by clicking on the ``unlock`` button that is displayed during content publishing.
 
 .. image:: /_static/images/site-admin/project-tools-unlock-publish.webp
     :alt: Project Tools Publishing - Unlock icon
@@ -84,9 +84,9 @@ The user will first be asked to publish the entire project, if the project has n
 Publish by path
 ---------------
 
-The **Publish changes made in Studio via the UI** selection allows the user to publish multiple items under a specified path.  This should be used to publish changes made in Studio via the UI.
+The **Publish changes made in Studio via the UI** selection allows the user to publish multiple items under a specified path. This should be used to publish changes made in Studio via the UI.
 
-For example, using the Website Editorial blueprint, to publish all the articles in the year 2021, in the **Path to Publish** field, enter ``/site/website/articles/2021``.  To publish everything in your project, the user will enter ``/`` in the **Path to Publish** field
+For example, using the Website Editorial blueprint, to publish all the articles in the year 2021, in the **Path to Publish** field, enter ``/site/website/articles/2021``. To publish everything in your project, the user will enter ``/`` in the **Path to Publish** field
 
 .. image:: /_static/images/site-admin/project-tools-publish-bulk.webp
     :alt: Project Tools Publishing - Publish changes made in Studio via the UI
@@ -220,7 +220,7 @@ You can filter the publishing queue displayed, based on the following:
 
 |
 
-Filtering shows packages where one or more items in the package match.  The default filter is set for items that are in State ``READY_FOR_LIVE`` and Publishing Target ``All``  which will show a list of packages that are ready to go live.
+Filtering shows packages where one or more items in the package match. The default filter is set for items that are in State ``READY_FOR_LIVE`` and Publishing Target ``All``  which will show a list of packages that are ready to go live.
 
 Below, we have the filter set to display items in the ``COMPLETED`` state
 
@@ -230,7 +230,7 @@ Below, we have the filter set to display items in the ``COMPLETED`` state
 
 |
 
-Packages in the ``READY_FOR_LIVE`` state can be selected and the publishing package cancelled.  In the image below, we have two publishing packages selected with the ``Cancel Selected`` button clicked and confirming if the user wants to set the state of the selected publishing packages to state ``CANCELLED``
+Packages in the ``READY_FOR_LIVE`` state can be selected and the publishing package cancelled. In the image below, we have two publishing packages selected with the ``Cancel Selected`` button clicked and confirming if the user wants to set the state of the selected publishing packages to state ``CANCELLED``
 
 .. image:: /_static/images/site-admin/project-tools-publish-queue-filter-cancel.webp
     :alt: Project Tools Publishing - Publishing Queue Filter Completed

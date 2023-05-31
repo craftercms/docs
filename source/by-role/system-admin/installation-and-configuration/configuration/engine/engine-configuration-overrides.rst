@@ -10,9 +10,9 @@
 Engine's Configuration Overrides
 ================================
 
-Crafter Engine comes with pre-configured settings that you may want to override.  To view the pre-configured settings in Crafter Engine, in your installation, go to ``CRAFTER_HOME/bin/apache-tomcat/webapps/ROOT/WEB-INF/classes/crafter/engine`` and open the file ``server-config.properties``.
+Crafter Engine comes with pre-configured settings that you may want to override. To view the pre-configured settings in Crafter Engine, in your installation, go to ``CRAFTER_HOME/bin/apache-tomcat/webapps/ROOT/WEB-INF/classes/crafter/engine`` and open the file ``server-config.properties``.
 
-To override any of the pre-configured settings, in your installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension`` and add the settings you would like to configure in the file ``server-config.properties``.   The override file have some settings already listed that you may want to override in Crafter Engine:
+To override any of the pre-configured settings, in your installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension`` and add the settings you would like to configure in the file ``server-config.properties``.  The override file have some settings already listed that you may want to override in Crafter Engine:
 
 ----------
 Properties
@@ -225,4 +225,4 @@ where:
 
   - The content folders are mostly static, non-processed content, e.g. scripts, templates, static-assets
 
-For all projects, the cache is preloaded using the above configuration. CrafterCMS warms up the cache on every publish and startup.  Note also that what's cache warmed will be warmed on every publish and startup and will live as long as nothing kicks it out of the cache due to least recently used (LRU) cache.
+For all projects, the cache is preloaded using the above configuration. CrafterCMS warms up the cache on every publish and startup. Note also that what's cache warmed will be warmed on every publish and startup and will live as long as nothing kicks it out of the cache due to least recently used (LRU) cache.

@@ -8,7 +8,7 @@ GraphQL
 =======
 
 CrafterCMS provides built-in support for GraphQL to query content in any site without writing
-additional code.  Below you'll find more information on working with GraphQL and how to
+additional code. Below you'll find more information on working with GraphQL and how to
 customize the built-in GraphQL schema
 
 --------------------
@@ -77,7 +77,7 @@ against the schema in real time.
         :align: center
 
 .. note::
-    If the GraphQL server host name used is not ``localhost``, the ``<graphql-server-url />`` in your proxy configuration file needs to be set to the appropriate url.  For more information on the proxy configuration file, see: :ref:`proxy-configuration`
+    If the GraphQL server host name used is not ``localhost``, the ``<graphql-server-url />`` in your proxy configuration file needs to be set to the appropriate url. For more information on the proxy configuration file, see: :ref:`proxy-configuration`
 
 ^^^^^^^^^^^^^^^^
 GraphQL Examples
@@ -453,7 +453,7 @@ The following example shows how to customize the schema to integrate a service w
   The example uses the public OMDb API that requires a key, to make the code work in your local environment
   you can get a free key `here <http://www.omdbapi.com/apikey.aspx>`_
 
-#.  Update the site configuration to include the needed information to connect to the OMDb API:
+#. Update the site configuration to include the needed information to connect to the OMDb API:
 
     .. code-block:: xml
       :caption: ``/config/engine/site-config.xml``
@@ -466,7 +466,7 @@ The following example shows how to customize the schema to integrate a service w
         </omdb>
       </site>
 
-#.  Update the site context to include a new service bean:
+#. Update the site context to include a new service bean:
 
     .. code-block:: xml
       :caption: ``/config/engine/application-context.xml``
@@ -488,7 +488,7 @@ The following example shows how to customize the schema to integrate a service w
 	      </bean>
 	</beans>
 
-#.  Add the Groovy class for the service:
+#. Add the Groovy class for the service:
 
     .. code-block:: groovy
       :caption: ``/scripts/classes/org/craftercms/movies/omdb/OmdbService.groovy``
@@ -535,7 +535,7 @@ The following example shows how to customize the schema to integrate a service w
       will only parse the response from JSON into Groovy map instances. This means that the GraphQL schema needs to
       match the field names returned by the API.
 
-#.  Define the GraphQL schema to use:
+#. Define the GraphQL schema to use:
 
     First you need to know what the API will return to create a matching schema, in any browser or REST client execute
     a call to ``http://www.omdbapi.com/?t=XXXX&apikey=XXXXXXX``. The result will look like this:
@@ -622,7 +622,7 @@ The following example shows how to customize the schema to integrate a service w
     The API also has support for single episodes but those will not be included in this example. Not all fields returned
     by the API might be needed in the GraphQL schema, for this example we will include a small subset.
 
-    #.  The first step is to define a generic entry type that includes all common fields present in movies and series:
+    #. The first step is to define a generic entry type that includes all common fields present in movies and series:
 
         .. code-block:: text
           :caption: GraphQL interface for all entries
@@ -638,7 +638,7 @@ The following example shows how to customize the schema to integrate a service w
         Notice that the API returns a single string for the ``Actors`` fields but in the GraphQL schema it will be
         defined as a list of strings, a custom data fetcher will handle this transformation.
 
-    #.  Next step is to define the concrete types for movies and series, those will have all fields from the parent
+    #. Next step is to define the concrete types for movies and series, those will have all fields from the parent
         type but include new ones:
 
         .. code-block:: text
@@ -667,7 +667,7 @@ The following example shows how to customize the schema to integrate a service w
             totalSeasons: Int!
           }
 
-    #.  Finally the service call will be exposed using a wrapper type:
+    #. Finally the service call will be exposed using a wrapper type:
 
         .. code-block:: text
           :caption: GraphQL type for the service
@@ -679,7 +679,7 @@ The following example shows how to customize the schema to integrate a service w
 
           }
 
-#.  Add the GraphQL schema customizations to create the schema defined in the previous step:
+#. Add the GraphQL schema customizations to create the schema defined in the previous step:
 
     .. code-block:: groovy
       :caption: ``/script/graphql/init.groovy``
@@ -806,7 +806,7 @@ The following example shows how to customize the schema to integrate a service w
       schema.fetcher('OmdbSeries', 'Actors', actorsFetcher)
 
 
-#.  Verify how the GraphQL schema has changed:
+#. Verify how the GraphQL schema has changed:
 
     The new field ``odmb.search`` is now available and can be called with different parameters, you can requests
     different fields depending on the type of each result.

@@ -15,7 +15,7 @@ A comma separated list of regexes is used to configure items that should not be 
 
 To configure the publishing blacklist, using your favorite editor open ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/studio-config-override.yaml`` or open the Global Studio Configuration Override file **studio-config-override.yaml** located under ``CRAFTER_HOME/data/repos/global/configuration`` that can be accessed from Studio from the ``Main Menu`` under ``Global Config``.
 
-Add the following lines with the regex for the item you wish not to be published.  By default, ``.keep`` files are not published by CrafterCMS.  Just add a ``,`` then your regex after ``.*/\.keep``:
+Add the following lines with the regex for the item you wish not to be published. By default, ``.keep`` files are not published by CrafterCMS. Just add a ``,`` then your regex after ``.*/\.keep``:
 
    .. code-block:: yaml
       :caption: *studio-config-override.yaml*
@@ -40,7 +40,7 @@ Let's take a look at an example.
 
 Create a site using the website editorial blueprint, then create the folder ``mytempimages`` under ``/static-assets/images``.
 
-Say, you do not want files under ``/static-assets/images/mytempimages`` to be published when a user performs a bulk publish or *Approve & Publish* of multiple items from the dashboard.  We'll add to the ``studio.configuration.publishing.blacklist.regex`` the regex for items under ``/static-assets/images/mytempimages``
+Say, you do not want files under ``/static-assets/images/mytempimages`` to be published when a user performs a bulk publish or *Approve & Publish* of multiple items from the dashboard. We'll add to the ``studio.configuration.publishing.blacklist.regex`` the regex for items under ``/static-assets/images/mytempimages``
 
    .. code-block:: yaml
       :caption: *studio-config-override.yaml*
@@ -60,9 +60,9 @@ Upload an image under ``/static-assets/images/mytempimages``
    :width: 30 %
    :align: center
 
-Publish the uploaded image by right-clicking on the image, then select **Approve & Publish**.  The **Approve for Publish** dialog will open up.  Select **Items should be published now**, then click on the **Submit** button.
+Publish the uploaded image by right-clicking on the image, then select **Approve & Publish**. The **Approve for Publish** dialog will open up. Select **Items should be published now**, then click on the **Submit** button.
 
-After publishing, open the **Sidebar** again and navigate to ``/static-assets/images/mytempimages``.  Notice that your file has been marked published.
+After publishing, open the **Sidebar** again and navigate to ``/static-assets/images/mytempimages``. Notice that your file has been marked published.
 
 .. image:: /_static/images/system-admin/studio/publishing-blacklist-example-published.webp
    :alt: System Administrator - Publishing blacklist example file published"

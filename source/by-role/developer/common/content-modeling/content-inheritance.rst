@@ -138,13 +138,13 @@ Out of the Box Strategies
 +-----------------------+------------------------------------------------------------------------+
 || Strategy             || Description                                                           |
 +=======================+========================================================================+
-|| ``single-file``      || No content should be inherited.                                       |
+|| ``single-file``      || No content should be inherited.                                      |
 +-----------------------+------------------------------------------------------------------------+
 || ``inherit-levels``   || Content from Crafter level descriptors (crafter-level-descriptor.xml) |
-||                      || in the current and upper levels should be inherited.                  |
+||                      || in the current and upper levels should be inherited.                 |
 +-----------------------+------------------------------------------------------------------------+
 || ``explicit-parent``  || The parent descriptor to inherit is specified explicitly in the XML   |
-||                      || tag ``parent-descriptor``.                                            |
+||                      || tag ``parent-descriptor``.                                           |
 +-----------------------+------------------------------------------------------------------------+
 || ``targeted-content`` || The page will be merged with other pages in a targeted content        |
 ||                      || hierarchy, including level descriptors. For example,                  |
@@ -154,7 +154,7 @@ Out of the Box Strategies
 ||                      || ``/en/about-us/index.xml``,                                           |
 ||                      || ``/en/about-us/crafter-level-descriptor.xml``,                        |
 ||                      || ``/about-us/index.xml``, ``/about-us/crafter-level-descriptor.xml``,  |
-||                      || ``/crafter-level-descriptor.xml``.                                    |
+||                      || ``/crafter-level-descriptor.xml``.                                   |
 +-----------------------+------------------------------------------------------------------------+
 
 .. _inherit-levels-example:
@@ -186,7 +186,7 @@ left (left-rail)side of the page.
 
 |
 
-The top part of the page is the header and the left side is the left-rail.  As shown above, the
+The top part of the page is the header and the left side is the left-rail. As shown above, the
     two pages we previewed uses the same information for the header, while the left-rail uses the
     same information on the top part of it, but different information on the bottom part.
 
@@ -199,7 +199,7 @@ The top part of the page is the header and the left side is the left-rail.  As s
 
 The Website Editorial blueprint uses a ``Section Defaults`` component content type (the level descriptor)
 to provide inherited values to all children and sibling content items, which for the example we are
-working on, is the header and the left-rail.  Below is the Section Defaults content type, showing us the
+working on, is the header and the left-rail. Below is the Section Defaults content type, showing us the
 content type as ``/component/level-descriptor`` with the merge strategy ``inherit-levels`` used, and two
 components, the header and the left-rail:
 
@@ -226,8 +226,8 @@ one residing under the **Home** folder, and another residing under **articles** 
 |
 
 As you preview the pages under **Home**, (*Style*, *Health*, *Techonology*, *Entertainment*, *Search Results*)
-you'll notice that the header and left-rail displayed is the same for all the pages.  Once you preview pages,
-under **articles**, we can see the left-rail displayed is now different.  This shows us how the Section
+you'll notice that the header and left-rail displayed is the same for all the pages. Once you preview pages,
+under **articles**, we can see the left-rail displayed is now different. This shows us how the Section
 Defaults under **articles** has overridden the Section Defaults under **Home**.
 
 Here's the Section Defaults under **Home**

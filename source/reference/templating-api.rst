@@ -200,7 +200,7 @@ See :ref:`breadcrumb` for more information on the macro
 Running Scripts/Controllers
 ---------------------------
 
-Crafter Engine allows executing scripts/controllers from inside Freemarker templates by using the tag ``@controller``.  It requires a single parameter, ``path``, which is the path of the script/controller in the site:
+Crafter Engine allows executing scripts/controllers from inside Freemarker templates by using the tag ``@controller``. It requires a single parameter, ``path``, which is the path of the script/controller in the site:
 
 .. code-block:: html
    :force:

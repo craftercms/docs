@@ -8,9 +8,9 @@
 Logging
 =======
 
-Log files from several sources are created when running CrafterCMS.  These log files are useful for checking the status of CrafterCMS, for example, the success of actions/requests, warnings and error messages.  These logs can be used to provide more information about potential issues in the system or for debugging errors.  The log files can be found in ``$CRAFTER_DIR/crafter-authoring/logs/`` or in ``$CRAFTER_DIR/crafter-delivery/logs/`` depending on which environment you are running.  Effective use of these logs is an important part of maintaining your projects and are useful for keeping track of your system performance.  To that end, please make sure that you rotate the logs.
+Log files from several sources are created when running CrafterCMS. These log files are useful for checking the status of CrafterCMS, for example, the success of actions/requests, warnings and error messages. These logs can be used to provide more information about potential issues in the system or for debugging errors. The log files can be found in ``$CRAFTER_DIR/crafter-authoring/logs/`` or in ``$CRAFTER_DIR/crafter-delivery/logs/`` depending on which environment you are running. Effective use of these logs is an important part of maintaining your projects and are useful for keeping track of your system performance. To that end, please make sure that you rotate the logs.
 
-CrafterCMS ships with a Tomcat Application Server, Elasticsearch, and MongoDB included in the binary archive.  There are four folders used by CrafterCMS for the log files,
+CrafterCMS ships with a Tomcat Application Server, Elasticsearch, and MongoDB included in the binary archive. There are four folders used by CrafterCMS for the log files,
 
     - tomcat
     - elasticsearch
@@ -20,7 +20,7 @@ CrafterCMS ships with a Tomcat Application Server, Elasticsearch, and MongoDB in
 -------------------------------------------
 Tailing Log Files From a Shell/Command Line
 -------------------------------------------
-The most recent messages from the log files may be displayed by tailing the log files.  Here are the log files
+The most recent messages from the log files may be displayed by tailing the log files. Here are the log files
 and locations of the log files:
 
 +------------------------------+-----------------------------------------------------------------+
@@ -57,7 +57,7 @@ Tomcat Log Files
 
 File: catalina.out
 
-This log file contains all messages pertaining to all java packages run by CrafterCMS.  It is used for tracking the success of requests/actions and logging helpful warning and error messages.  You'll also notice that in the same folder are the catalina historical log files, which are useful for checking logs for a certain date.  There are other log files created in the same folder that may be of interest to you depending on what you are investigating/debugging, but, the log file **catalina.out** is the one we usually look at to check the status of our system.
+This log file contains all messages pertaining to all java packages run by CrafterCMS. It is used for tracking the success of requests/actions and logging helpful warning and error messages. You'll also notice that in the same folder are the catalina historical log files, which are useful for checking logs for a certain date. There are other log files created in the same folder that may be of interest to you depending on what you are investigating/debugging, but, the log file **catalina.out** is the one we usually look at to check the status of our system.
 
 To tail the catalina log file in the authoring environment:
 
@@ -76,7 +76,7 @@ Deployer Log Files
 
 File: crafter-deployer.out
 
-This log file contains all messages pertaining to Crafter Deployer.  In the same folder where the **crafter-deployer.out** log file is, you will find all the project specific deployer logs as described in the table above.
+This log file contains all messages pertaining to Crafter Deployer. In the same folder where the **crafter-deployer.out** log file is, you will find all the project specific deployer logs as described in the table above.
 
 To tail the log file in the authoring environment:
 
@@ -105,7 +105,7 @@ This log file contains all messages pertaining to Elasticsearch.
 Changing the Data and Logs Folder Location
 ------------------------------------------
 
-The data folder and logs folder is by default located in **{Crafter-CMS-install-directory}/{Crafter-ENV}/data** and **{Crafter-CMS-install-directory}/{Crafter-ENV}/logs**.  To change the location of the data and logs folder,
+The data folder and logs folder is by default located in **{Crafter-CMS-install-directory}/{Crafter-ENV}/data** and **{Crafter-CMS-install-directory}/{Crafter-ENV}/logs**. To change the location of the data and logs folder,
 
 
     Open the file **{Crafter-CMS-install-directory}/{Crafter-ENV}/crafter-setenv.sh**
@@ -128,7 +128,7 @@ The data folder and logs folder is by default located in **{Crafter-CMS-install-
 Overriding Logging Levels
 -------------------------
 
-There are 6 log levels defined in CrafterCMS which determine what messages will be logged.  Below are the log levels available from the lowest to the highest:
+There are 6 log levels defined in CrafterCMS which determine what messages will be logged. Below are the log levels available from the lowest to the highest:
 
     - all: displays all levels of logging including custom logging levels that have been defined
     - trace: displays more information to debug level logs
@@ -140,7 +140,7 @@ There are 6 log levels defined in CrafterCMS which determine what messages will 
 
 The lower your logging levels are set, the more verbose your logs will be. CrafterCMS comes with classes and packages set to logging level INFO out of the box.
 
-There are times when you'd like to see more log details, say when there are problems, so you can narrow down what is happening and address it.  Overriding the logging levels allows you to see more or less details in your installation depending on your needs.
+There are times when you'd like to see more log details, say when there are problems, so you can narrow down what is happening and address it. Overriding the logging levels allows you to see more or less details in your installation depending on your needs.
 
 To change the logging levels of your CrafterCMS installation, you can do one of the following:
 
@@ -171,10 +171,10 @@ Permanently Set Logging Levels
 To permanently change the logging levels you will need to update some configuration in your installation on the server. To make changes, you're going to add/modify the logging configuration file ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/logging.xml``.
 
 Step 1: Identify the package/class you want to modify logging levels for
-     The first step is identifying the package or class you want to change the levels for.  Specifying the logging level at the package granularity e.g.: ``org.craftercms.studio.api.v1.dal.DependencyMapper``, will modify all classes under that package.  Specifying logging levels at the class granularity, e.g.: ``org.craftercms.studio.api.v1.dal.DependencyMapper.calculatePublishingDependenciesForList``, modifies only the levels for that specific class.
+     The first step is identifying the package or class you want to change the levels for. Specifying the logging level at the package granularity e.g.: ``org.craftercms.studio.api.v1.dal.DependencyMapper``, will modify all classes under that package. Specifying logging levels at the class granularity, e.g.: ``org.craftercms.studio.api.v1.dal.DependencyMapper.calculatePublishingDependenciesForList``, modifies only the levels for that specific class.
 
 Step 2: Add the override configuration you require to the logging configuration file ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/logging.xml``.
-     Available logging levels are all, trace, debug, info, warn, error, off.  All is the lowest logging level and Error is the highest.  The lower your logging levels are set, the more verbose your logs will be.
+     Available logging levels are all, trace, debug, info, warn, error, off. All is the lowest logging level and Error is the highest. The lower your logging levels are set, the more verbose your logs will be.
 
      To set a specific class to a higher log level (giving us less detail in the logs), add the following lines:
 

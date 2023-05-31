@@ -14,9 +14,9 @@
 Using the Proxy Configuration
 =============================
 
-CrafterCMS supports a proxy system to proxy GraphQL, Engine, NodeJS or other application delivery systems.  Whenever Crafter Engine receives a request, it is matched against the patterns of each server and the first match would then get the request sent to the server with the matching pattern.  In some systems, multiple servers are used for Elasticsearch, Studio, etc.  Using the proxy helps simplify the system.
+CrafterCMS supports a proxy system to proxy GraphQL, Engine, NodeJS or other application delivery systems. Whenever Crafter Engine receives a request, it is matched against the patterns of each server and the first match would then get the request sent to the server with the matching pattern. In some systems, multiple servers are used for Elasticsearch, Studio, etc. Using the proxy helps simplify the system.
 
-One of the benefits of using the proxy in CrafterCMS is that it can connect to any remote server as the preview server, which allows for easier authoring of projects built with other programming languages and technology.  For example, you would like to work on a React application within Studio.  What is normally included inside Studio is the build output of the React application, so that a user making edits to the React code would need to build the React code then copy it into Studio in order to preview the changes.  This becomes cumbersome when developing, as many edits are normally done before reaching the final version of the React app.  Using the proxy, the user can preview the React app in Studio and is able to work on both the React app and CrafterCMS.
+One of the benefits of using the proxy in CrafterCMS is that it can connect to any remote server as the preview server, which allows for easier authoring of projects built with other programming languages and technology. For example, you would like to work on a React application within Studio. What is normally included inside Studio is the build output of the React application, so that a user making edits to the React code would need to build the React code then copy it into Studio in order to preview the changes. This becomes cumbersome when developing, as many edits are normally done before reaching the final version of the React app. Using the proxy, the user can preview the React app in Studio and is able to work on both the React app and CrafterCMS.
 
 Let's take a look at an example of setting up the proxy for a React application.
 
@@ -24,7 +24,7 @@ Let's take a look at an example of setting up the proxy for a React application.
 Example
 -------
 
-We'll look at the video center blueprint, a React application available from the public marketplace, that runs on ``localhost:3000``, then setup the Studio proxy so we can preview the React application inside Studio.  Finally, we'll make some changes in the React application and view the changes made inside Studio.
+We'll look at the video center blueprint, a React application available from the public marketplace, that runs on ``localhost:3000``, then setup the Studio proxy so we can preview the React application inside Studio. Finally, we'll make some changes in the React application and view the changes made inside Studio.
 
 Let's begin:
 
@@ -44,7 +44,7 @@ Let's begin:
    * Run the React application
 
      Inside the video center blueprint folder that we just cloned above, navigate to ``video-center-blueprint/sources/app``.
-     We need ``yarn`` installed in your system.  Running ``yarn`` with no command will run ``yarn install``.  In the example below, yarn is already installed in the system
+     We need ``yarn`` installed in your system. Running ``yarn`` with no command will run ``yarn install``. In the example below, yarn is already installed in the system
 
        .. code-block:: sh
 
@@ -103,17 +103,17 @@ Let's begin:
           WDS_SOCKET_PORT=3000
 
      For Windows users on Docker, add ``DANGEROUSLY_DISABLE_HOST_CHECK=true`` to the ``.env.development`` file. |br|
-     Setting the environment variable ``DANGEROUSLY_DISABLE_HOST_CHECK`` to ``true`` disables the host check, which allows us to pretend that the the host header of the request and the listening address of the host are running on the same host and port which is important since browsers block cross-origin requests.  If not set, the user will see an ``Invalid Host header`` message in Studio.  Remember that **disabling the host check is insecure and should only be used in a development environment**.
+     Setting the environment variable ``DANGEROUSLY_DISABLE_HOST_CHECK`` to ``true`` disables the host check, which allows us to pretend that the the host header of the request and the listening address of the host are running on the same host and port which is important since browsers block cross-origin requests. If not set, the user will see an ``Invalid Host header`` message in Studio. Remember that **disabling the host check is insecure and should only be used in a development environment**.
 
      Remember to restart the React server for the settings to take effect.
 
-       .. note:: If you're using the create-react-app, please note that ``react-scripts`` versions earlier than 3.4.0 does not support custom sockjs pathname for hot reloading the server.  Make sure that your ``react-scripts`` version used is 3.4.0 or above for the live reload work inside CrafterCMS to work.
+       .. note:: If you're using the create-react-app, please note that ``react-scripts`` versions earlier than 3.4.0 does not support custom sockjs pathname for hot reloading the server. Make sure that your ``react-scripts`` version used is 3.4.0 or above for the live reload work inside CrafterCMS to work.
 
 #. Setup Studio
 
    * Create a project using the video center blueprint from the Public Marketplace.
 
-     From the **Main Menu**, click on **Project**, then click on the **Create Project** button.  This will open the **Create Site** dialog.  Look for **Video Center**, then click on the **Use** button, fill in the required information then click on the **Review** button, then finally the **Create Site** button.  This **Video Center** blueprint we selected from the Marketplace is the same react application
+     From the **Main Menu**, click on **Project**, then click on the **Create Project** button. This will open the **Create Site** dialog. Look for **Video Center**, then click on the **Use** button, fill in the required information then click on the **Review** button, then finally the **Create Site** button. This **Video Center** blueprint we selected from the Marketplace is the same react application
 
      .. image:: /_static/images/site-admin/vcbp-marketplace.webp
         :alt: Select Video Center blueprint from the Public Marketplace
@@ -125,7 +125,7 @@ Let's begin:
 
    * Setup the proxy for the video center React application we started above
 
-     Open the **Sidebar**, click on |projectTools|, then click on **Configuration**.  Select **Proxy Config** from the dropdown menu.
+     Open the **Sidebar**, click on |projectTools|, then click on **Configuration**. Select **Proxy Config** from the dropdown menu.
 
      .. image:: /_static/images/site-admin/config-open-proxy-config.webp
         :alt: Configurations - Open Proxy Configuration
@@ -134,7 +134,7 @@ Let's begin:
 
      |
 
-     Scroll down to the ``preview`` server and edit the ``url`` to point to the url used for the React application (``localhost:3000``) we setup in the beginning.  Save your changes.
+     Scroll down to the ``preview`` server and edit the ``url`` to point to the url used for the React application (``localhost:3000``) we setup in the beginning. Save your changes.
 
        .. code-block:: xml
           :caption: *CRAFTER_HOME/data/repos/sites/sandbox/SITENAME/sandbox/config/engine/proxy-config.xml*
@@ -148,13 +148,13 @@ Let's begin:
             </patterns>
           </server>
 
-     For users running Studio on Docker, use ``http://host.docker.internal:3000`` for the ``url`` of the React application.  Docker containers can access local services running on the host by connecting to ``host.docker.internal``.  See https://docs.docker.com/docker-for-windows/networking/#use-cases-and-workarounds for more information on connecting from a container to a service on the host.
+     For users running Studio on Docker, use ``http://host.docker.internal:3000`` for the ``url`` of the React application. Docker containers can access local services running on the host by connecting to ``host.docker.internal``. See https://docs.docker.com/docker-for-windows/networking/#use-cases-and-workarounds for more information on connecting from a container to a service on the host.
 
      At this point, the preview we are seeing in Studio should be the one from our React application.
 
    * Modify the React application then verify that we can preview the changes made inside Studio.
 
-     For this part, we'll change the text ``Featured Channels`` in the home page to ``My Featured Channels``.  Using your favorite editor, in your React app, navigate to ``video-center-blueprint/sources/app/src/containers/Home`` and open the ``Home.js`` file. Scroll down to the line with ``key: 'featured-channels'`` and edit the ``value``:
+     For this part, we'll change the text ``Featured Channels`` in the home page to ``My Featured Channels``. Using your favorite editor, in your React app, navigate to ``video-center-blueprint/sources/app/src/containers/Home`` and open the ``Home.js`` file. Scroll down to the line with ``key: 'featured-channels'`` and edit the ``value``:
 
        .. code-block:: js
           :emphasize-lines: 3
@@ -165,7 +165,7 @@ Let's begin:
             type: 'channel-card-alt',
             ...
 
-     Save your changes.  Notice that in the React app preview (localhost:3000), the page is reloaded with our changes now visible.  Now let's take a look at Studio.  Notice that Studio preview has reloaded and the changes we made in the React app is now visible.
+     Save your changes. Notice that in the React app preview (localhost:3000), the page is reloaded with our changes now visible. Now let's take a look at Studio. Notice that Studio preview has reloaded and the changes we made in the React app is now visible.
 
      .. image:: /_static/images/site-admin/vcbp-react-app-edited.webp
         :alt: Changes made in the React app now visible in the Studio preview

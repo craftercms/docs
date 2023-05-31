@@ -13,9 +13,9 @@ Here we'll take a look at an example of creating a Full Screen Plugin for the pl
 For more information on the plugin host, see :ref:`here <plugin-host>`
 
 For this example, as outlined in the vanilla example referenced above, we will need a project created using the
-``Website  Editorial Blueprint``.  We'll name the project ``editorial-neue``.
+``Website  Editorial Blueprint``. We'll name the project ``editorial-neue``.
 
-#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our vanilla  plugin.  We'll follow the convention listed in :ref:`ui-plugin-directory-structure`.  For our example, CATEGORY is ``apps`` and the NAME is ``example-vanilla``
+#. The first thing we have to do is to create the folder structure where we will be placing the JS file for our vanilla  plugin. We'll follow the convention listed in :ref:`ui-plugin-directory-structure`. For our example, CATEGORY is ``apps`` and the NAME is ``example-vanilla``
 
    In a local folder, create the descriptor file for your plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.vanilla``, then create the following folder structure:
 
@@ -69,7 +69,7 @@ For this example, as outlined in the vanilla example referenced above, we will n
 
    When running a ``crafter-cli`` command, the connection to CrafterCMS needs to be setup via the :ref:`add-environment <crafter-cli-add-environment>` command. Once the connection has been established, we can now install the plugin to the project ``editorial-neue`` by running the following:
 
-   ..  code-block:: console
+   .. code-block:: console
 
        ./crafter-cli copy-plugin -e local -s editorial-neue --path /users/myuser/myplugins/vanilla-plugin
 

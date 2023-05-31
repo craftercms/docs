@@ -30,11 +30,11 @@ Configuration
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
 +------------------------+----------------------------------------------------------------------------------+
-|| Description/Purpose   || Data source that loads pairs from external xml file.                            |
+|| Description/Purpose   || Data source that loads pairs from external xml file.                           |
 +------------------------+----------------------------------------------------------------------------------+
-|| Properties            || - Data Type: Key Value pairs type (String, Integer, Float, Date, HTML).         |
+|| Properties            || - Data Type: Key Value pairs type (String, Integer, Float, Date, HTML).        |
 ||                       || - List Name: Name of the xml file with the pairs to be used by the data source. |
-||                       || - Sort: Sort pairs when displaying on form.                                     |
+||                       || - Sort: Sort pairs when displaying on form.                                    |
 +------------------------+----------------------------------------------------------------------------------+
 
 ----------------------------------------

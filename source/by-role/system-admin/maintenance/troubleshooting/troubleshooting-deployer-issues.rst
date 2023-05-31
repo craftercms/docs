@@ -64,4 +64,4 @@ If the Deployer is not able to clone the remote repository and an error like bel
 
 Try a manual clone from the command line: `git clone ssh://jdoe@server2.example.com:63022/path/to/repo`
 
-If the manual clone works, it's very probable that there's a proxy between the servers.  The Deployer currently does not support connections through proxies but might get support in a future update.
+If the manual clone works, it's very probable that there's a proxy between the servers. The Deployer currently does not support connections through proxies but might get support in a future update.

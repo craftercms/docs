@@ -10,7 +10,7 @@ Get Workflow Affected Paths (deprecated)
 Get workflow affected paths.
 
 .. important::
-   This API is deprecated and provided only as a reference.  Please see :base_url:`getWorkflowAffectedPaths <_static/api/studio.html#tag/workflow/operation/getWorkflowAffectedPaths>` for the current version.
+   This API is deprecated and provided only as a reference. Please see :base_url:`getWorkflowAffectedPaths <_static/api/studio.html#tag/workflow/operation/getWorkflowAffectedPaths>` for the current version.
 
 --------------------
 Resource Information
@@ -79,5 +79,5 @@ Responses
 +---------+-------------------------------------------+---------------------------------------------------+
 || Status || Location                                 || Response Body                                    |
 +=========+===========================================+===================================================+
-|| 200    ||                                          || See example above.                               |
+|| 200    ||                                          || See example above.                              |
 +---------+-------------------------------------------+---------------------------------------------------+

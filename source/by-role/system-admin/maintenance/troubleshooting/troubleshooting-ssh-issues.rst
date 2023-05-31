@@ -23,7 +23,7 @@ Here's another error you may encounter in the logs when creating a site with a l
 
 |
 
-This could mean that a passphrase was setup for the SSH keys.  Crafter currently doesn't support using a passphrase with SSH keys.  To fix the error, remove the passphrase from the SSH key.
+This could mean that a passphrase was setup for the SSH keys. Crafter currently doesn't support using a passphrase with SSH keys. To fix the error, remove the passphrase from the SSH key.
 
 There are a couple of ways to remove the passphrase from the SSH key:
 
