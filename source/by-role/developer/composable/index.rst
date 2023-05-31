@@ -1,14 +1,17 @@
-:is-up-to-date: True
-:last-updated: 4.0.3
+:is-up-to-date: False
+:last-updated: 4.1.0
 
+.. index:: Composable
 
-
-..  _developers:
+..  _composable:
 
 ==========
 Composable
 ==========
-.. Composable overview
+
+CrafterCMS is a composable CMS and provides a modular and flexible approach to building and managing websites and digital experiences. Unlike traditional monolithic CMSs, which come with pre-built features and a fixed structure, CrafterCMS allows users to assemble and configure their own system by choosing and integrating individual components or services.
+
+A component is often referred to as Packaged Business Capability or PBC for short. CrafterCMS refers to these components as Extensions which can be Blueprints or Plugins. These extensions are available in the public Crafter Marketplace (or private marketplace) and can be installed and configured by the Site Admin.
 
 ----------
 Extensions

@@ -20,6 +20,11 @@ Information Architecture
 
 .. In the static assets section, discuss what assets are and discuss the options to deal with large files
 
+.. TODO review this:
+.. .. _anatomy-of-a-craftercms-repository:
+
+.. TODO Fix below
+
 ``/static-assets/content`` is typically mapped to a blob store and managed by content authors and contains things like ``images``
 ``/static-assets/css`` or js, ... is managed by developers
 ``static-assets/app`` is where deployed SPA applications end up

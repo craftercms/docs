@@ -3,9 +3,9 @@
 
 ..  _developer:
 
-**********
+==========
 Developers
-**********
+==========
 
 This section focuses on how to build content rich applications backed by CrafterCMS.  It covers
 the basic topics you need to define a content type and render that content as part of a page,
@@ -15,15 +15,91 @@ the core platforms and the developer workflow (DevContentOps).
 Developers need to be comfortable with Content Modeling (how to represent content in CrafterCMS
 for your application to retrieve said content), and how to access content items from your application/project.
 
-The following gets you started with content modeling, content retrieval, and more:
+.. note::
+    For local development, you'll need to install CrafterCMS locally and that's best done via the local bundle. Instructions on how to do that are in :ref:`install-craftercms-via-binary-bundles`. Other options include running CrafterCMS in :ref:`Docker <local-dev-with-docker>` or installing CrafterCMS `from source <https://github.com/craftercms/craftercms>`_.
+
+
+CrafterCMS supports both headless and templated projects (templated projects are the traditional web sites with a view layer).
+
+.. _developer-headless:
+
+--------
+Headless
+--------
+
+CrafterCMS is natively headless.  CrafterCMS simply retrieves content that the developer models in the
+modeling tool, applies actions/rules like inheritance, security, versioning, etc. and returns the
+transformed content to the caller as JSON. Developers can use whatever front-end technology they want including, but not limited to: React, Vue, Angular, Flutter
+or similar SPAs, Android and iOS applications, etc.
+
+---------
+Templated
+---------
+
+CrafterCMS embeds FreeMarker to provide a high-performance, clean, flexible, and tolerant of syntax
+variance, templating engine to render HTML directly from CrafterCMS.
+
+It allows developers to model the content as general reusable items, and fold those into pages.
+Pages aggregate content from components as needed and are associated with a FreeMarker template that
+can render the final page. The choice of HTML tools and frameworks doesn't matter to CrafterCMS.
+
+Regardless of type of project, a developer needs to be familiar with the following core concepts.
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    common/content-modeling/content-modeling
+    common/content-modeling/information-architecture
+    common/content-modeling/content-inheritance
+    common/content-access
+    common/adding-experience-builder
+    common/security
+    common/redirects
+    common/servlet-filters
+
+For templated projects, there are more topics to cover:
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    templated/templating
+    templated/targeting
+    templated/working-with-dates-freemarker
+
+--------
+Examples
+--------
+^^^^^^^^
+Headless
+^^^^^^^^
+- Video Center Blueprint
+- Headless Store Blueprint
+- Headless Blog Blueprint
+
+^^^^^^^^^
+Templated
+^^^^^^^^^
+- Editorial Blueprint
+- commerceTools Blueprint
+- Fitness Blueprint
+
+----------
+Composable
+----------
 
 .. toctree::
    :maxdepth: 2
    :titlesonly:
 
-   headless/index
-   templated/index
    composable/index
+|
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+
    devcontentops/index
    upgrade/index
 
@@ -120,3 +196,8 @@ Below is a short set of links to other documentation for technology that Crafter
    rules for ignoring files in every Git repository on your computer) is respected by CrafterCMS**.
    In case you find some of your content not being committed into CrafterCMS, check your global
    git ignore file to verify the content you're committing is not being ignored.
+
+
+.. Smaller topics that are needed but not sure how to represent/wrap these yet
+    .. working-with-sass
+    .. asset-processing
