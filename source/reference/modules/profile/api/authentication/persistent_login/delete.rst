@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 
 
 .. _crafter-profile-api-authentication-persistent_login-delete:

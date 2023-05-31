@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 
 
 .. index:: How to change hosts and ports on your CrafterCMS Delivery install; How to change ports

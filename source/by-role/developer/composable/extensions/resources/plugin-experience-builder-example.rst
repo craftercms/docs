@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 :last-updated: 4.0.1
 
 .. index:: Crafter Studio Experience Builder Panel Plugin Example, Studio Plugins, Plugins

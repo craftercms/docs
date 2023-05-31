@@ -1,4 +1,4 @@
-:is-up-to-date: True
+:is-up-to-date: False
 
 
 .. index:: Setup CrafterCMS Authoring Using Crafter's AWS AMI
