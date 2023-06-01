@@ -62,7 +62,7 @@ Fields
 |                       |             |         || these names can be changed by changing Crafter|
 |                       |             |         || Profile security provider configuration. SSO  |
 |                       |             |         || is typically implemented using SAML2 and      |
-|                       |             |         || Apache mod_auth_mellon.                      |
+|                       |             |         || Apache mod_auth_mellon.                       |
 +-----------------------+-------------+---------+------------------------------------------------+
 | Cleanse Attributes    |             | Boolean || If set to ``true``, escape HTML tags in       |
 |                       |             |         || values for attributes of type ``TEXT``,       |

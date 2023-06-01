@@ -35,8 +35,8 @@ Configuration
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
 +------------------------+--------------------------------------------------------------------------+
-|| Description/Purpose   || Data source to select videos from repository.                          |
+|| Description/Purpose   || Data source to select videos from repository.                           |
 +------------------------+--------------------------------------------------------------------------+
-|| Properties            || - Repository Path: Path where to browse the WebDAV repository.         |
+|| Properties            || - Repository Path: Path where to browse the WebDAV repository.          |
 ||                       || - Profile ID: WebDAV profile id to be used setup in webdav.xml          |
 +------------------------+--------------------------------------------------------------------------+

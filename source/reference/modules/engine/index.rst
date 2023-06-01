@@ -47,11 +47,11 @@ The main files for configuring Crafter Engine are the following:
 | services-context.xml          | Contains the bean definition for services layer                |
 +-------------------------------+----------------------------------------------------------------+
 | server-config.properties      | Contains server configurable parameters such as urls,          |
-|                               | paths, etc.                                                   |
+|                               | paths, etc.                                                    |
 +-------------------------------+----------------------------------------------------------------+
 | rendering-context.xml         | Contains the bean definition for rendering                     |
 +-------------------------------+----------------------------------------------------------------+
-| logging.xml                   | Contains loggers, appenders, etc.                             |
+| logging.xml                   | Contains loggers, appenders, etc.                              |
 +-------------------------------+----------------------------------------------------------------+
 
 These configuration files for Crafter Engine is located under  ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension``, where ``CRAFTER_HOME`` is the install directory of your CrafterCMS authoring or delivery environment.
@@ -87,7 +87,6 @@ These files can be accessed by navigating from the Studio Sidebar to |projectToo
 
 For more information on how to configure site settings related to Crafter Engine see :ref:`engine-configuration`
 
-.. _engine-project-configuration-guide:
 .. include:: /includes/engine-project-configuration.rst
 
 .. include:: /includes/engine-project-security-guide.rst

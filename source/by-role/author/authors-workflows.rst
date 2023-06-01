@@ -163,8 +163,8 @@ an item has been approved for publish or rejected.
 Approve & Publish Request
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 To approve content for publishing, there are a few ways to access the **Publish** workflow option for
-approving a publish request. One way is by going to the dashboard, then in the
-**Items Waiting For Approval** dashlet, look for the article you want to approve, then put a check
+approving a publish request.  One way is by going to the dashboard, then in the
+**Pending Approval** dashlet, look for the article you want to approve, then put a check
 mark next to it.
 
 .. image:: /_static/images/page/page-workflows-dashboard-approve.webp

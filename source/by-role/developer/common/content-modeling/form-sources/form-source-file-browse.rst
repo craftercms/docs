@@ -37,5 +37,5 @@ Configuration
 +------------------------+-----------------------------------------------------------------------------+
 || Description/Purpose   || Data source to select files from repository                                |
 +------------------------+-----------------------------------------------------------------------------+
-|| Properties            || - Repository Path: Path where to browse the files from the repository.    |
+|| Properties            || - Repository Path: Path where to browse the files from the repository.     |
 +------------------------+-----------------------------------------------------------------------------+

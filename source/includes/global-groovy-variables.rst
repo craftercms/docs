@@ -1,15 +1,15 @@
 +------------------------+---------------------------------------+--------------------------------+
 | Name                   | Description                           | Type                           |
 +========================+=======================================+================================+
-|| siteItemService       || Allows access to the site content.  || |SiteItemService|             |
+|| siteItemService       || Allows access to the site content.  || |SiteItemService|              |
 +------------------------+---------------------------------------+--------------------------------+
 || |UrlTransform|        || Service for transforming URLs, like  || |UrlTransformationService|    |
 ||                       || transforming the content URL of a    ||                               |
-||                       || page to the web or render URL.      ||                               |
+||                       || page to the web or render URL.      ||                                |
 +------------------------+---------------------------------------+--------------------------------+
 || elasticsearch         || Service that can be used to execute  || |ElasticsearchWrapper|        |
 ||                       || search queries against               ||                               |
-||                       || Elasticsearch.                      ||                               |
+||                       || Elasticsearch.                      ||                                |
 +------------------------+---------------------------------------+--------------------------------+
 || applicationContext    || Provides access to the Crafter       || |ApplicationContextAccessor|  |
 ||                       || Engine's Spring beans and site beans ||                               |
@@ -18,33 +18,33 @@
 +------------------------+---------------------------------------+--------------------------------+
 || globalProperties      || Provides access to global            || |PropertySources|_            |
 ||                       || configuration properties defined in  ||                               |
-||                       || server-config.properties.           ||                               |
+||                       || server-config.properties.           ||                                |
 +------------------------+---------------------------------------+--------------------------------+
 || navBreadcrumbBuilder  || Helper class that returns the list of|| |BreadcrumbBuilder|           |
 ||                       || path components in an URL, to create ||                               |
-||                       || navigation breadcrumbs.             ||                               |
+||                       || navigation breadcrumbs.             ||                                |
 +------------------------+---------------------------------------+--------------------------------+
 || navTreeBuilder        || Helper class that creates navigation || |NavTreeBuilder|              |
 ||                       || trees to facilitate rendering        ||                               |
 +------------------------+---------------------------------------+--------------------------------+
 || tenantsResolver       || Can be used to retrieve the          || |TenantsResolver|             |
 ||                       || Profile tenants associated to the    ||                               |
-||                       || current site.                       ||                               |
+||                       || current site.                       ||                                |
 +------------------------+---------------------------------------+--------------------------------+
 || profileService        || Provides access to the Crafter       || |ProfileService|              |
-||                       || Profile API for profiles.           ||                               |
+||                       || Profile API for profiles.           ||                                |
 +------------------------+---------------------------------------+--------------------------------+
 || tenantService         || Provides access to the Crafter       || |TenantService|               |
-||                       || Profile API for tenants.            ||                               |
+||                       || Profile API for tenants.            ||                                |
 +------------------------+---------------------------------------+--------------------------------+
 || authenticationService || Provides access to the Crafter       || |AuthenticationService|       |
-||                       || Profile API for authentication.     ||                               |
+||                       || Profile API for authentication.     ||                                |
 +------------------------+---------------------------------------+--------------------------------+
 || authenticationManager || Manages Crafter Security Provider    || |AuthenticationManager|       |
-||                       || based authentications.              ||                               |
+||                       || based authentications.              ||                                |
 +------------------------+---------------------------------------+--------------------------------+
 || textEncryptor         || Utility class for encrypting/        || |TextEncryptor|               |
-||                       || decrypting text with AES.           ||                               |
+||                       || decrypting text with AES.           ||                                |
 +------------------------+---------------------------------------+--------------------------------+
 || modePreview           || Flag that indicates that Engine is   || Boolean                       |
 ||                       || being executed in preview mode       ||                               |
@@ -58,7 +58,7 @@
 || logger                || The GroovyUtils SLF4J logger         || `Logger`_                     |
 +------------------------+---------------------------------------+--------------------------------+
 || siteConfig            || The current site Configuration,      || |XMLConfiguration|            |
-||                       || loaded from /config/site.xml.       ||                               |
+||                       || loaded from /config/site.xml.       ||                                |
 +------------------------+---------------------------------------+--------------------------------+
 || siteContext           || The current SiteContext              || |SiteContext|                 |
 +------------------------+---------------------------------------+--------------------------------+

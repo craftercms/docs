@@ -138,13 +138,13 @@ Out of the Box Strategies
 +-----------------------+------------------------------------------------------------------------+
 || Strategy             || Description                                                           |
 +=======================+========================================================================+
-|| ``single-file``      || No content should be inherited.                                      |
+|| ``single-file``      || No content should be inherited.                                       |
 +-----------------------+------------------------------------------------------------------------+
 || ``inherit-levels``   || Content from Crafter level descriptors (crafter-level-descriptor.xml) |
-||                      || in the current and upper levels should be inherited.                 |
+||                      || in the current and upper levels should be inherited.                  |
 +-----------------------+------------------------------------------------------------------------+
 || ``explicit-parent``  || The parent descriptor to inherit is specified explicitly in the XML   |
-||                      || tag ``parent-descriptor``.                                           |
+||                      || tag ``parent-descriptor``.                                            |
 +-----------------------+------------------------------------------------------------------------+
 || ``targeted-content`` || The page will be merged with other pages in a targeted content        |
 ||                      || hierarchy, including level descriptors. For example,                  |
@@ -154,7 +154,7 @@ Out of the Box Strategies
 ||                      || ``/en/about-us/index.xml``,                                           |
 ||                      || ``/en/about-us/crafter-level-descriptor.xml``,                        |
 ||                      || ``/about-us/index.xml``, ``/about-us/crafter-level-descriptor.xml``,  |
-||                      || ``/crafter-level-descriptor.xml``.                                   |
+||                      || ``/crafter-level-descriptor.xml``.                                    |
 +-----------------------+------------------------------------------------------------------------+
 
 .. _inherit-levels-example:

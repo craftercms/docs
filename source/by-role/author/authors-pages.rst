@@ -160,7 +160,7 @@ on the version you selected, accessible by clicking on the three dots next to it
 || View                  || View details of the selected version of the page such |
 ||                       || as the creation date, last modified date, page content|
 +------------------------+--------------------------------------------------------+
-|| Compare to ...       || Compares the selected version to the version selected |
+|| Compare to ...        || Compares the selected version to the version selected |
 ||                       || by the user                                           |
 +------------------------+--------------------------------------------------------+
 || Compare to current    || Compares the selected version to the current version  |

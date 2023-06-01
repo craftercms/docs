@@ -53,7 +53,7 @@ S3 Asset Access
 For very large externally managed artifacts, AWS S3 is a great option.
 
 .. note::
-    This mechanism allows CrafterCMS to _point_ to assets in S3, but not manage it. This is _not_ the same as the blob store. While the blob store is backed by S3, it's still an _internally managed_ store that supports the project's workflow and publishing processes.
+    This mechanism allows CrafterCMS to *point* to assets in S3, but not manage it. This is *not* the same as the blob store. While the blob store is backed by S3, it's still an *internally managed* store that supports the project's workflow and publishing processes.
 
 The following guide is an example to illustrate how to:
 

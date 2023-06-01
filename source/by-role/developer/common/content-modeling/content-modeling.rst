@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.0
+:last-updated: 4.1.0
 
 
 .. 3.2.2.1.1 When to model as a page vs component
@@ -62,6 +62,8 @@ Components may be shared or embedded. Embedded components belong exclusively to 
 while a shared component is shared across pages or components. For more information on how to
 use embedded and shared components, see :ref:`here <component-handling>`
 
+|hr|
+
 .. _content-model:
 
 -----------------------------
@@ -110,42 +112,42 @@ Crafter Studio's Form Builder
 || Label || Description                                                                          |
 +--------+---------------------------------------------------------------------------------------+
 || 1     || Form Builder: The beginning of the form builder and it's headed by the name of the   |
-||       || currently open Content Type.                                                        |
+||       || currently open Content Type.                                                         |
 ||       || Click here to explore the global properties of the type in the Properties Explorer,  |
-||       || #3.                                                                                 |
+||       || #3.                                                                                  |
 +--------+---------------------------------------------------------------------------------------+
 || 2     || Delete Icon: Deletes the current content type                                        |
 +--------+---------------------------------------------------------------------------------------+
 || 3     || Properties Explorer: Helps configure the properties of the currently                 |
 ||       || selected item. Clicking on an item on the left side of the screen,                   |
 ||       || like #2 or #7 will populate this control and allow you to modify                     |
-||       || the selected item.                                                                  |
+||       || the selected item.                                                                   |
 +--------+---------------------------------------------------------------------------------------+
 || 4     || Form Controls: This is a list of available form controls for you to build your own   |
 ||       || form with. Note that the list can be expanded or collapsed and a search can also be  |
-||       || performed instead of scrolling through the list.                                    |
-||       || Controls can be dragged from the controls list onto the form builder.               |
+||       || performed instead of scrolling through the list.                                     |
+||       || Controls can be dragged from the controls list onto the form builder.                |
 +--------+---------------------------------------------------------------------------------------+
 || 5     || Data Sources: Shows the list of available data sources that can be attached to this  |
 ||       || content type such that the content authors can pull content and incorporate it into  |
 ||       || pages or components. Data Sources can be dragged over to the form builder            |
-||       || and configured as needed.                                                           |
+||       || and configured as needed.                                                            |
 ||       || The content author will then use the control to pull data from that data source into |
-||       || the content object.                                                                 |
+||       || the content object.                                                                  |
 +--------+---------------------------------------------------------------------------------------+
 || 6     || Form Section: Form sections help cluster a number of controls together to make it    |
 ||       || easier for content authors. Click on the form section to edit its properties in      |
-||       || the Properties Explorer.                                                            |
+||       || the Properties Explorer.                                                             |
 +--------+---------------------------------------------------------------------------------------+
-|| 7     || Form Canvas: Actual controls that have been placed on this form.                    |
+|| 7     || Form Canvas: Actual controls that have been placed on this form.                     |
 ||       || Clicking on a control will allow you to configure this control in the Properties     |
-||       || Explorer.                                                                           |
+||       || Explorer.                                                                            |
 +--------+---------------------------------------------------------------------------------------+
-|| 8     || Data Source: The data sources configured for this content type.                     |
+|| 8     || Data Source: The data sources configured for this content type.                      |
 ||       || To configure a data source, click on it and then edit the properties                 |
-||       || in the Properties Explorer.                                                         |
+||       || in the Properties Explorer.                                                          |
 +--------+---------------------------------------------------------------------------------------+
-|| 9     || Save or Cancel the changes to the Content Type.                                     |
+|| 9     || Save or Cancel the changes to the Content Type.                                      |
 +--------+---------------------------------------------------------------------------------------+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -178,10 +180,10 @@ The fields available at this level are:
 || Image        ||                                                                               |
 +---------------+--------------------------------------------------------------------------------+
 || Configuration|| Contains config.xml which holds information about the content type such as the|
-||              || limit where content can be created, is it previewable, etc.                  |
+||              || limit where content can be created, is it previewable, etc.                   |
 +---------------+--------------------------------------------------------------------------------+
 || Controller   || Contains controller.groovy which provides an extension/hook to authoring      |
-||              || lifecycle events.                                                            |
+||              || lifecycle events.                                                             |
 +---------------+--------------------------------------------------------------------------------+
 || Display      || View template to use when rendering this content                              |
 || Template     ||                                                                               |
@@ -192,22 +194,23 @@ The fields available at this level are:
 || Show in Quick|| Show this content type in the quick create menu from the context nav          |
 || Create       ||                                                                               |
 +---------------+--------------------------------------------------------------------------------+
-|| Destination  || Path pattern where the content created from quick create will be stored.     |
+|| Destination  || Path pattern where the content created from quick create will be stored.      |
 || Path Pattern || The patterns available are the following:                                     |
-||              ||    **{objectId}** Inserts a GUID.                                            |
-||              ||    **{year}** Inserts the current year (4 digit year).                       |
-||              ||    **{month}** Inserts the current month (2-digit month of the year).        |
-||              ||    **{yyyy}** Inserts the current year (4 digit year).                       |
-||              ||    **{mm}** Inserts the current month (2-digit month of the year).           |
-||              ||    **{dd}** Inserts the current day (2-digit day of the month).              |
+||              ||    **{objectId}** Inserts a GUID.                                             |
+||              ||    **{year}** Inserts the current year (4 digit year).                        |
+||              ||    **{month}** Inserts the current month (2-digit month of the year).         |
+||              ||    **{yyyy}** Inserts the current year (4 digit year).                        |
+||              ||    **{mm}** Inserts the current month (2-digit month of the year).            |
+||              ||    **{dd}** Inserts the current day (2-digit day of the month).               |
 +---------------+--------------------------------------------------------------------------------+
 
 The 2 key properties are: the display template (:ref:`content-view-templates`) which is the HTML template that renders the final Web page; the content inheritance (:ref:`content-inheritance`) which determines how this content type will inherit from parent XML files in the system.
 
 .. _content-creation-permissions-section:
 
+""""""""""""""""""""""""""""
 Content Creation Permissions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""
 
 Limiting where a content type can be created is through the Configuration Property of a content type (config.xml) using the following tags:
 
@@ -287,8 +290,9 @@ From the **Sidebar** again, navigate from the **Pages** folder to the /Home/arti
 
 To see more examples, try creating content types in the other folders in the **Sidebar** such as the **Taxonomy** folder, the **Components** folder and anywhere under the **Pages** folder.
 
+"""""""""""""""""""""""""""""""
 Cascade on Delete Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 
 Cascade on delete allows the automatic deletion of child items matching a regexp when a content is deleted.
 
@@ -351,8 +355,9 @@ Open the Sidebar and navigate to the newly created article. Right click on the n
 
 .. _copy-dependencies-configuration:
 
+"""""""""""""""""""""""""""""""
 Copy Dependencies Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 
 Copy dependencies allows the automatic copying of child items matching a regexp when a content is copied.
 
@@ -403,8 +408,9 @@ Let's look at the dependencies of our copied article, where we expect a copy of 
 
 .. _item-specific-dependencies:
 
+""""""""""""""""""""""""""
 Item Specific Dependencies
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 
 Item specific dependencies allows for the automatic copying of child items matching the regex pattern in the ``studio-config.yaml`` file when a content is copied. It also allows the automatic deletion of child items matching the regex pattern in the ``studio-config.yaml`` file when a content is deleted.
 
@@ -441,9 +447,9 @@ where:
     * **{mm}** inserts the current month when the image is uploaded (2-digit month of the year)
     * **{dd}** inserts the current day when the image is uploaded (2-digit day of the month)
 
-To take advantage of item specific dependencies for copying and deleting, we will place uploaded items in ``/static-assets/item/``. We added a folder ``image`` to better organize our items, since in this location, we will only be storing images. We also used the macros **{yyyy}**, **{mm}** and **{dd}**, again to better organize our image (we can browse by year, or by month, or by date). So, when an image is uploaded from the Desktop say on May 17, 2020, the image will be stored in the following location:
+To take advantage of item specific dependencies for copying and deleting, we will place uploaded items in ``/static-assets/item/``. We added a folder ``image`` to better organize our items, since in this location, we will only be storing images. We also used the macros **{yyyy}**, **{mm}** and **{dd}**, again to better organize our image (we can browse by year, or by month, or by date). So, when an image is uploaded from the Desktop say on May 17, 2023, the image will be stored in the following location:
 
-`/static-assets/item/images/2020/05/17/`
+`/static-assets/item/images/2023/05/17/`
 
 The macros **{yyyy}**, **{mm}** and **{dd}** are available for content modelers to use to better organize their project items. To see other macros available for content modelers, see :ref:`macros-for-data-sources`.
 
@@ -458,7 +464,7 @@ Let's take a look at item specific dependencies in action for copying and deleti
 
 From the **Sidebar**, navigate to the newly created article. Right click on the article and select **Copy**. Navigate to a different folder, right click on the folder and select **Paste**.
 
-Let's look at the dependencies of our copied article, where we expect a copy of the image under the ``/static-assets/item/images/2021/10/05`` will be located since we have taken advantage of the item specific dependencies regex pattern of ``/static-assets/item/*``.
+Let's look at the dependencies of our copied article, where we expect a copy of the image under the ``/static-assets/item/images/2023/06/01`` will be located since we have taken advantage of the item specific dependencies regex pattern of ``/static-assets/item/*``.
 
 .. figure:: /_static/images/content-model/copied-article-item-dependencies.webp
     :width: 80%
@@ -494,8 +500,9 @@ Open the **Dashboard** and notice the items that are deleted. We deleted an arti
 
 .. _setting-up-quick-create:
 
+""""""""""""
 Quick Create
-^^^^^^^^^^^^
+""""""""""""
 
 Quick create allows content authors to create content with as few clicks as possible through a button from the context nav for configured content types.
 
@@ -590,83 +597,83 @@ Every Form Control has a Variable Name property. The Variable Name is used by th
 
 The following variable names are used by CrafterCMS.
 
-+----------------------+------------------------------------------------------------------+
-|| Variable Name       || Description                                                     |
-+======================+==================================================================+
-|| file-name*          || Used by the File Name and Auto File Name control.              |
-+----------------------+------------------------------------------------------------------+
-|| internal-name       || Used by Crafter Studio to label the content object              |
-+----------------------+------------------------------------------------------------------+
-|| placeInNav          || Used by the Page Order control.                                |
-+----------------------+------------------------------------------------------------------+
-|| disabled            || Used to logically remove an object in content delivery.        |
-||                     || For more information, see :ref:`disabling-a-page`               |
-+----------------------+------------------------------------------------------------------+
-|| expired             || Used to logically remove an object after date                   |
-+----------------------+------------------------------------------------------------------+
-|| expired_dt          || Used to logically remove an object after date                   |
-||                     || For more information, see :ref:`content-monitoring`             |
-+----------------------+------------------------------------------------------------------+
-|| objectId            || UUID. Auto assigned by Crafter                                  |
-+----------------------+------------------------------------------------------------------+
-|| objectGroupId       || First part of objectId. Auto assigned by Crafter                |
-+----------------------+------------------------------------------------------------------+
-|| createdDate         || create date. Auto assigned by Crafter                           |
-+----------------------+------------------------------------------------------------------+
-|| createdDate_dt      || Alternate name for create date. Auto assigned by Crafter        |
-+----------------------+------------------------------------------------------------------+
-|| lastModifiedDate    || Last modified date. Auto assigned by Crafter                    |
-+----------------------+------------------------------------------------------------------+
-|| lastModifiedDate_dt || Alternate name for last modified date. Auto assigned by Crafter |
-+----------------------+------------------------------------------------------------------+
-|| content-type        || Content type name                                               |
-+----------------------+------------------------------------------------------------------+
-|| display-template    || Path to default template for type                               |
-+----------------------+------------------------------------------------------------------+
-|| merge-strategy      || Crafter Core/Engine "Merge Strategy" for content type           |
-+----------------------+------------------------------------------------------------------+
-|| id                  || reserved for a unique identifier                                |
-+----------------------+------------------------------------------------------------------+
-|| authorizedRoles     || Used to restrict pages based on roles                           |
-+----------------------+------------------------------------------------------------------+
-|| role                || Contains the role required to access a page                     |
-+----------------------+------------------------------------------------------------------+
-|| mime-type           || Mime-type name                                                  |
-+----------------------+------------------------------------------------------------------+
-|| force-https         || HTTPS connection needs to be forced to access the page          |
-+----------------------+------------------------------------------------------------------+
-|| navLabel            || Navigation label                                                |
-+----------------------+------------------------------------------------------------------+
-|| redirect-url        || Redirect URL                                                    |
-+----------------------+------------------------------------------------------------------+
-|| crafterSite         || Used to set the site value                                      |
-||                     || See note in :ref:`crafter-engine-api` for more information      |
-+----------------------+------------------------------------------------------------------+
-|| localId             || Name of the field for paths. Used by the deployer              |
-+----------------------+------------------------------------------------------------------+
-|| rootId              || Root Id name. Used by the deployer                             |
-+----------------------+------------------------------------------------------------------+
-|| includedDescriptors || Included descriptors field name. Used by the deployer          |
-+----------------------+------------------------------------------------------------------+
-|| crafterPublishedDate|| The name for the publish date field. Used by the deployer      |
-+----------------------+------------------------------------------------------------------+
-|| disableFlattening   || Used to indicate if XML flattening should be disabled when      |
-||                     || indexing XML. Used by the deployer                              |
-+----------------------+------------------------------------------------------------------+
-|| content             || Used by the deployer                                            |
-+----------------------+------------------------------------------------------------------+
-|| contentType         || Name of field for mimeType. Used by the deployer               |
-+----------------------+------------------------------------------------------------------+
-|| width               || Used by the deployer                                            |
-+----------------------+------------------------------------------------------------------+
-|| height              || Used by the deployer                                            |
-+----------------------+------------------------------------------------------------------+
-|| contentLength       || Name of field for file size. Used by the deployer              |
-+----------------------+------------------------------------------------------------------+
-|| lastEditedOn        || Name of field for last edit date. Used by the deployer          |
-+----------------------+------------------------------------------------------------------+
-|| internalName        || Name of field for internal name. Used by the deployer           |
-+----------------------+------------------------------------------------------------------+
++----------------------+--------------------------------------------------------------------+
+|| Variable Name       || Description                                                       |
++======================+====================================================================+
+|| file-name*          || Used by the File Name and Auto File Name control.                 |
++----------------------+--------------------------------------------------------------------+
+|| internal-name       || Used by Crafter Studio to label the content object                |
++----------------------+--------------------------------------------------------------------+
+|| placeInNav          || Used by the Page Order control.                                   |
++----------------------+--------------------------------------------------------------------+
+|| disabled            || Used to logically remove an object in content delivery.           |
+||                     || For more information, see :ref:`disabling-a-page`                 |
++----------------------+--------------------------------------------------------------------+
+|| expired             || Used to logically remove an object after date                     |
++----------------------+--------------------------------------------------------------------+
+|| expired_dt          || Used to logically remove an object after date                     |
+||                     || For more information, see :ref:`content-monitoring`               |
++----------------------+--------------------------------------------------------------------+
+|| objectId            || UUID. Auto assigned by Crafter                                    |
++----------------------+--------------------------------------------------------------------+
+|| objectGroupId       || First part of objectId. Auto assigned by Crafter                  |
++----------------------+--------------------------------------------------------------------+
+|| createdDate         || create date. Auto assigned by Crafter                             |
++----------------------+--------------------------------------------------------------------+
+|| createdDate_dt      || Alternate name for create date. Auto assigned by Crafter          |
++----------------------+--------------------------------------------------------------------+
+|| lastModifiedDate    || Last modified date. Auto assigned by Crafter                      |
++----------------------+--------------------------------------------------------------------+
+|| lastModifiedDate_dt || Alternate name for last modified date. Auto assigned by Crafter   |
++----------------------+--------------------------------------------------------------------+
+|| content-type        || Content type name                                                 |
++----------------------+--------------------------------------------------------------------+
+|| display-template    || Path to default template for type                                 |
++----------------------+--------------------------------------------------------------------+
+|| merge-strategy      || Crafter Core/Engine "Merge Strategy" for content type             |
++----------------------+--------------------------------------------------------------------+
+|| id                  || reserved for a unique identifier                                  |
++----------------------+--------------------------------------------------------------------+
+|| authorizedRoles     || Used to restrict pages based on roles                             |
++----------------------+--------------------------------------------------------------------+
+|| role                || Contains the role required to access a page                       |
++----------------------+--------------------------------------------------------------------+
+|| mime-type           || Mime-type name                                                    |
++----------------------+--------------------------------------------------------------------+
+|| force-https         || HTTPS connection needs to be forced to access the page            |
++----------------------+--------------------------------------------------------------------+
+|| navLabel            || Navigation label                                                  |
++----------------------+--------------------------------------------------------------------+
+|| redirect-url        || Redirect URL                                                      |
++----------------------+--------------------------------------------------------------------+
+|| crafterSite         || Used to set the site value                                        |
+||                     || See note in :ref:`rest-content-retrieval-api` for more information|
++----------------------+--------------------------------------------------------------------+
+|| localId             || Name of the field for paths. Used by the deployer                 |
++----------------------+--------------------------------------------------------------------+
+|| rootId              || Root Id name. Used by the deployer                                |
++----------------------+--------------------------------------------------------------------+
+|| includedDescriptors || Included descriptors field name. Used by the deployer             |
++----------------------+--------------------------------------------------------------------+
+|| crafterPublishedDate|| The name for the publish date field. Used by the deployer         |
++----------------------+--------------------------------------------------------------------+
+|| disableFlattening   || Used to indicate if XML flattening should be disabled when        |
+||                     || indexing XML. Used by the deployer                                |
++----------------------+--------------------------------------------------------------------+
+|| content             || Used by the deployer                                              |
++----------------------+--------------------------------------------------------------------+
+|| contentType         || Name of field for mimeType. Used by the deployer                  |
++----------------------+--------------------------------------------------------------------+
+|| width               || Used by the deployer                                              |
++----------------------+--------------------------------------------------------------------+
+|| height              || Used by the deployer                                              |
++----------------------+--------------------------------------------------------------------+
+|| contentLength       || Name of field for file size. Used by the deployer                 |
++----------------------+--------------------------------------------------------------------+
+|| lastEditedOn        || Name of field for last edit date. Used by the deployer            |
++----------------------+--------------------------------------------------------------------+
+|| internalName        || Name of field for internal name. Used by the deployer             |
++----------------------+--------------------------------------------------------------------+
 
 \* **Note on file names**
 
@@ -689,7 +696,7 @@ To facilitate indexing, the following suffix should be appended to variable name
 || integer   || _i     || _is        || a 32 bit signed integer                           |
 +------------+---------+-------------+----------------------------------------------------+
 || string    || _s     || _ss        || String (UTF-8 encoded string or Unicode). A string|
-||           ||        ||            ||  value is indexed as a single unit.              |
+||           ||        ||            ||  value is indexed as a single unit.               |
 +------------+---------+-------------+----------------------------------------------------+
 || long      || _l     || _ls        || a 64 bit signed integer                           |
 +------------+---------+-------------+----------------------------------------------------+
@@ -837,8 +844,10 @@ Form Engine Data Sources (please use the scrollbar to see more data sources)
 
 .. _macros-for-data-sources:
 
+"""""""""""""""""""""""
 Macros for Data Sources
-^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""
+
 There are a number of macros available for the content model designer to use in data sources. These macros are used when uploading assets to better organize project items, usually in the **Repository Path** property of the data source for uploading. Here are the available macros:
 
 +---------------------+--------------------------------------------------------------------------------+
@@ -905,6 +914,8 @@ Like the Form Section Control, Repeating Group Control is also a container that 
 
 The canvas allows the form-based content capture only, and is used by content authors when they're in that mode. In-Context Editing will leverage the form components, but not the canvas when authors are in that mode. Learn more about In-Context Editing configuration for projects :ref:`xb` .
 
+|hr|
+
 .. _content-view-templates:
 
 ---------------------------
@@ -957,12 +968,14 @@ The simple example renders a simple HTML page with a very basic model. Let's rev
 || meta_keywords    || Input       || SEO keywords associated with the page                      |
 +-------------------+--------------+-------------------------------------------------------------+
 || body_html        || Rich Text   || The page's main HTML body (in this case, it's              |
-||                  || Editor      || just a static HTML block).                                |
+||                  || Editor      || just a static HTML block).                                 |
 +-------------------+--------------+-------------------------------------------------------------+
 || analytics_script || Text Area   || Analytics's Engine JavaScript                              |
 +-------------------+--------------+-------------------------------------------------------------+
 
 The `FreeMarker <http://freemarker.org>`_ language is supported. For detailed Freemarker documentation, please visit: `http://freemarker.org <http://freemarker.org>`_
+
+|hr|
 
 .. _content-type-controller-definition:
 
@@ -1063,6 +1076,8 @@ For more information on the Groovy APIs, please see :ref:`groovy-api`
 
   .. include:: /includes/scripts-templates-security.rst
 
+|hr|
+
 ------------------------------
 Creating Content Type Examples
 ------------------------------
@@ -1076,7 +1091,7 @@ Page Content Type Example
 Page content types are top level container types that lets you define the layout/structure and functionality of content/components. To create a new page content type, click on |projectTools| from the **Sidebar**
 
 .. figure:: /_static/images/templates/templates-site-config.webp
-	:alt: Template Project Config
+    :alt: Template Project Config
 	:align: center
 
 |
@@ -1108,7 +1123,7 @@ Model
 We'll start building the model first, which is the form that Authors will be using to enter content into. We'll add a form section called *Content* to the form and name it accordingly.
 
 .. figure:: /_static/images/templates/templates-add-form-section.webp
-	:alt: Template Add Form Section to Model
+    :alt: Template Add Form Section to Model
 	:align: center
 
 |
@@ -1116,7 +1131,7 @@ We'll start building the model first, which is the form that Authors will be usi
 We'll add a few more things to our model by dragging controls and data sources to the form. We're creating a page template for a blog entry, so at a minimum, we'll add some input fields for the title and author names, a date/time field, an image picker and it's corresponding data sources and a rich text editor inside a repeating group control so Authors can add as many sections as they want.
 
 .. figure:: /_static/images/templates/templates-add-controls-input.webp
-	:alt: Template Add Input Fields to the Form
+    :alt: Template Add Input Fields to the Form
 	:align: center
 
 |
@@ -1124,7 +1139,7 @@ We'll add a few more things to our model by dragging controls and data sources t
 Here we're adding an image picker to the form. Notice that we'll need to add data sources for the image picker to get images from. There are at least two sources that the image picker can get images from. One is from images uploaded from the desktop, the other is for existing images listed in the **Static Assets** folder in the **Sidebar**.
 
 .. figure:: /_static/images/templates/templates-add-image-picker.webp
-	:alt: Template Add Image Picker to Form
+    :alt: Template Add Image Picker to Form
 	:align: center
 
 |
@@ -1132,7 +1147,7 @@ Here we're adding an image picker to the form. Notice that we'll need to add dat
 We're now going to add a data source for our image picker, by dragging the **Image Uploaded from Desktop** from the Data Sources list on the right to the form in the section **Data Sources**. Don't forget to enter the path where to store the new image uploaded from desktop in the **Repository Path** field under the Properties Explorer
 
 .. figure:: /_static/images/templates/templates-image-desktop-src.webp
-	:alt: Template Add Desktop Image Source
+    :alt: Template Add Desktop Image Source
 	:align: center
 
 |
@@ -1140,7 +1155,7 @@ We're now going to add a data source for our image picker, by dragging the **Ima
 We'll also add the data source **Image From Repository** by dragging it to the **Data Sources** section in the form. Don't forget to add the path where to browse existing images from the repository
 
 .. figure:: /_static/images/templates/templates-image-existing-src.webp
-	:alt: Template Add Existing Image Source
+    :alt: Template Add Existing Image Source
 	:align: center
 
 |
@@ -1148,7 +1163,7 @@ We'll also add the data source **Image From Repository** by dragging it to the *
 We'll go back to the Image Picker control on the form to make sure the two data sources we added are checked as sources for the Image Picker
 
 .. figure:: /_static/images/templates/templates-add-img-src.webp
-	:alt: Template Add Image Sources to Image Picker
+    :alt: Template Add Image Sources to Image Picker
 	:align: center
 
 |
@@ -1156,7 +1171,7 @@ We'll go back to the Image Picker control on the form to make sure the two data 
 We'll be adding a header component and a left-rail component inherited from the home page. To add a component to the form, drag the **Item Selector** control to the form in the *Page - Blog Properties* section. We'll be adding two components to the form, one for the *Header* and one for the *Left-rail*
 
 .. figure:: /_static/images/templates/templates-add-item-selector.webp
-	:alt: Template Add Item Selector
+    :alt: Template Add Item Selector
 	:align: center
 
 |
@@ -1164,7 +1179,7 @@ We'll be adding a header component and a left-rail component inherited from the 
 We'll need to add a data source for the two *Item Selectors* we just added to the form by dragging **Shared Content** to the *Data Sources* section to the form and naming it **Components**. Don't forget to add the path where to store new content created under the **Repository Path** field in the Properties Explorer.
 
 .. figure:: /_static/images/templates/templates-add-item-selector-src.webp
-	:alt: Template Add Item Selector Source
+    :alt: Template Add Item Selector Source
 	:align: center
 
 |
@@ -1173,7 +1188,7 @@ We'll need to add a data source for the two *Item Selectors* we just added to th
 We're going back to the Item Selectors we added to the form and check  **Components** as data source for our control
 
 .. figure:: /_static/images/templates/templates-add-item-sel-src.webp
-	:alt: Template Check Item Selector Source
+    :alt: Template Check Item Selector Source
 	:align: center
 
 |
@@ -1181,7 +1196,7 @@ We're going back to the Item Selectors we added to the form and check  **Compone
 Next we'll add a **Repeating Group** control to the form,  with a minimum of 1 occurrence, which can be specified in the *Properties Explorer* section, in the **Minimum Occurrences** field
 
 .. figure:: /_static/images/templates/templates-add-repeating-group.webp
-	:alt: Template Add Repeating Group Control
+    :alt: Template Add Repeating Group Control
 	:align: center
 
 |
@@ -1189,7 +1204,7 @@ Next we'll add a **Repeating Group** control to the form,  with a minimum of 1 o
 In the Repeating Group control, we will add an RTE (Rich Text Editor). In order for the content to be searchable, it needs to be indexed. To facilitate indexing, the suffix **_html** should be appended to the variable name given to the RTE. In this case, the RTE's variable name is *entry_html*. For more information on variable names and search indexing , please see the section :ref:`form-control-variable-names`
 
 .. figure:: /_static/images/templates/templates-add-rte.webp
-	:alt: Template Add Rich Text Editor to Repeating Group Control
+    :alt: Template Add Rich Text Editor to Repeating Group Control
 	:align: center
 
 |
@@ -1213,7 +1228,7 @@ There are two ways to create the freemarker template file for our template. One 
 The other way of creating your freemarker template, is to go to the Properties Explorer in the Content Type model, then click on the **Display Template** field, a magnifying glass and a pencil will appear on the field. To create a template, click on the pencil.
 
 .. figure:: /_static/images/templates/templates-ftl-create-properties.webp
-	:alt: Template Create FTL from Content Type Properties Display Template Field
+    :alt: Template Create FTL from Content Type Properties Display Template Field
 	:align: center
 
 |
@@ -1248,7 +1263,7 @@ At the top right of the dialog, you can use some *Template code examples* from a
 For the template we are creating, we will select **Studio support** from  the drop down list to enable authoring support.
 
 .. figure:: /_static/images/templates/templates-ftl-studio-support-sample.webp
-	:alt: Template FTL Studio Support Code Example
+    :alt: Template FTL Studio Support Code Example
 	:align: center
 
 |
@@ -1256,7 +1271,7 @@ For the template we are creating, we will select **Studio support** from  the dr
 We will now start filling in the template of how we want the content captured in the model is rendered to html in this case. In the image below, we render the header component and the other fields in the Content section of our model. Please note how fields in the model are rendered through the FTL template. To learn more, please see the section :ref:`templating-api`
 
 .. figure:: /_static/images/templates/templates-ftl.webp
-	:alt: Template FTL
+    :alt: Template FTL
 	:align: center
 
 |
@@ -1352,7 +1367,7 @@ To find out more about page and component scripts, please see :ref:`page-and-com
 Now that we have our controller, we just need to add code to the freemarker template (view) to display the list of articles returned by the script.
 
 .. figure:: /_static/images/templates/templates-controller-added.webp
-	:alt: Template Modify FTL to Display Controller Script Output
+    :alt: Template Modify FTL to Display Controller Script Output
 	:align: center
 
 |

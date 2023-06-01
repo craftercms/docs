@@ -38,6 +38,8 @@ First, let's make sure we have all the requirements.
 
 Installing and running CrafterCMS is easy. You have a number of choices:
 
+.. _running-craftercms-in-docker:
+
 --------------
 Docker Compose
 --------------
@@ -110,4 +112,4 @@ Login to Crafter Studio
 .. include:: /includes/accessing-crafter-studio.rst
 
 
-   After logging in, you should be redirected to the ``Projects`` screen, and you're now ready to create your first experience!
+After logging in, you should be redirected to the ``Projects`` screen, and you're now ready to create your first experience!

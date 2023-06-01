@@ -33,12 +33,12 @@ Configuration
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
 +------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Transcoded Video selector from Video Transcoding Data Source.       |
+|| Description/Purpose   || Transcoded Video selector from Video Transcoding Data Source.        |
 +------------------------+-----------------------------------------------------------------------+
 || Properties            || * Data Source: Source that will populate the transcoded video picker.|
-||                       || * Read Only: Make field read-only (can't be changed by the author). |
+||                       || * Read Only: Make field read-only (can't be changed by the author).  |
 +------------------------+-----------------------------------------------------------------------+
-|| Constraints           || * Required: Make field required to fill out.                        |
+|| Constraints           || * Required: Make field required to fill out.                         |
 +------------------------+-----------------------------------------------------------------------+
 || Related Data Sources  || * |mediaConvertTranscode|                                            |
 +------------------------+-----------------------------------------------------------------------+

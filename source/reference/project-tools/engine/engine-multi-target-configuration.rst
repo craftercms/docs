@@ -169,7 +169,7 @@ Let's take a look at an example of overriding the Project Configuration used by 
 
 #. Publish ``site-config.live.xml`` to live and ``site-config.staging.xml`` to staging.
 
-   To publish the override configuration files setup above, open the **Dashboard** via the Navigation Menu on the top right or via the Sidebar. Scroll to the **My Recent Activity** dashlet.
+   To publish the override configuration files setup above, open the **Dashboard** via the Navigation Menu on the top right or via the Sidebar.  Scroll to the **Unpublished Work** dashlet.
 
    .. image:: /_static/images/site-admin/view-override-config-on-dashboard.webp
       :alt: Multi-target Configuration - New configuration files listed in the "My Recent Activity" dashlet in the Dashboard

@@ -36,9 +36,9 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Description/Purpose   || Indicates locale used for content                                    |
 +------------------------+-----------------------------------------------------------------------+
-|| Properties            || * Read Only: Make field read-only (can't be changed by the author). |
+|| Properties            || * Read Only: Make field read-only (can't be changed by the author).  |
 +------------------------+-----------------------------------------------------------------------+
-|| Constraints           || * Required: Make field required to fill out.                        |
+|| Constraints           || * Required: Make field required to fill out.                         |
 +------------------------+-----------------------------------------------------------------------+
 || Related Data Sources  || None                                                                 |
 +------------------------+-----------------------------------------------------------------------+

@@ -1,5 +1,5 @@
 :is-up-to-date: False
-
+:last-updated: 4.1.0
 
 .. _graphql:
 
@@ -15,21 +15,21 @@ customize the built-in GraphQL schema
 Working with GraphQL
 --------------------
 
-CrafterCMS provides built-in support for GraphQL to query content in any site without writing additional code.
-A GraphQL schema is generated independently for each site based on the content-type configuration that has been
+CrafterCMS provides built-in support for GraphQL to query content in any project without writing additional code.
+A GraphQL schema is generated independently for each project based on the content-type configuration that has been
 created using Crafter Studio, and the schema is automatically updated after any change is detected.
 
-To implement a site that uses GraphQL you would follow a workflow like this:
+To implement a project that uses GraphQL you would follow a workflow like this:
 
-1. Create a new site (if needed, for existing sites skip to step number 3)
-2. Define the content model for your site
-3. Obtain the GraphQL schema for your site, you can use the provided GraphiQL client or any third party client
-4. Develop GraphQL queries to use in your site or external app
+1. Create a new project (if needed, for existing projects skip to step number 3)
+2. Define the content model for your project
+3. Obtain the GraphQL schema for your project, you can use the provided GraphiQL client or any third party client
+4. Develop GraphQL queries to use in your project or external app
 
 All content changes made by authors in Crafter Studio will be immediately available in GraphQL queries.
 
 When a change is made in the content model, for example adding a new field or creating a new content-type, the
-GraphQL schema will be rebuilt to reflect the same changes. So for a CrafterCMS site that uses GraphQL queries the
+GraphQL schema will be rebuilt to reflect the same changes. So for a CrafterCMS projecct that uses GraphQL queries the
 development process would look like this:
 
 1. Developers define the base content model
@@ -39,7 +39,7 @@ development process would look like this:
 5. Publishers publish to live both the content model configuration & the content updates
 6. Crafter Deployer will handle the GraphQL schema rebuild in delivery
 
-You can also use the CrafterCMS GraphQL API from an external site or application, however in this case you will need to
+You can also use the CrafterCMS GraphQL API from an external project or application, however in this case you will need to
 handle the schema reload using third party tools.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -50,8 +50,8 @@ GraphiQL is a simple GraphQL client that you can use in Crafter Studio to run Gr
 documentation for a site without the need of any other tool. To access GraphiQL follow these steps:
 
 1. Login to Crafter Studio
-2. Click ``Dashboard`` next to the name of your site
-3. Click ``Site Config`` in the left sidebar
+2. Click the name of your project from the ``Projects`` screen and open the left sidebar
+3. Click ``Project Tools`` in the left sidebar
 4. Click ``GraphiQL`` in the left sidebar
 
 To explore the GraphQL schema you can click the ``Docs`` icon on the right side:

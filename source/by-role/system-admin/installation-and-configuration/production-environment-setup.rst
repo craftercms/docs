@@ -50,7 +50,7 @@ Setting up the production environment
 
 #. Your production environment is now ready.
 
-For more information on using gradle, please see :ref:`crafter-cms`.
+For more information on using gradle, please see https://github.com/craftercms/craftercms.
 
 -------------------------------------------
 Server Hardware Configuration Consideration

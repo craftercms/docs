@@ -61,7 +61,7 @@ Common Variables
 +=============================+===========================================================+
 || date                       || Date for submission                                      |
 +-----------------------------+-----------------------------------------------------------+
-|| files                      || Collection of file objects in submission.               |
+|| files                      || Collection of file objects in submission.                |
 ||                            || Usually iterated over `<#list files as file>...</#list>` |
 +-----------------------------+-----------------------------------------------------------+
 || `file`.name                || File name including full repository path                 |
@@ -96,7 +96,7 @@ Deployment Error Notice Variable
 +-----------------------------+---------------------------------------------------------+
 || Variable Name              || Description                                            |
 +=============================+=========================================================+
-|| deploymentError            || Error message on deployment. Currently must be        |
+|| deploymentError            || Error message on deployment. Currently must be         |
 ||                            || addressed as ${deploymentError.toString()}             |
 +-----------------------------+---------------------------------------------------------+
 

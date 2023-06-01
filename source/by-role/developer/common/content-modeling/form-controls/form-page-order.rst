@@ -34,11 +34,11 @@ Configuration
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
 +------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Control that allows changing the page order.                        |
+|| Description/Purpose   || Control that allows changing the page order.                         |
 +------------------------+-----------------------------------------------------------------------+
-||                       || * Read Only: Make field read-only (can't be changed by the author). |
+||                       || * Read Only: Make field read-only (can't be changed by the author).  |
 +------------------------+-----------------------------------------------------------------------+
-|| Constraints           || * Required: Make field required to fill out.                        |
+|| Constraints           || * Required: Make field required to fill out.                         |
 +------------------------+-----------------------------------------------------------------------+
-|| Related Data Sources  || None.                                                               |
+|| Related Data Sources  || None.                                                                |
 +------------------------+-----------------------------------------------------------------------+
