@@ -1,5 +1,5 @@
-:is-up-to-date: False
-:since-version: 4.0.1
+:is-up-to-date: True
+:last-updated: 4.0.1
 
 .. index:: Upgrading CrafterCMS, Upgrading
 

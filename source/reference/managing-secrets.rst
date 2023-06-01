@@ -1,16 +1,19 @@
 :is-up-to-date: False
-:since-version: 4.1.0
+:last-updated: 4.1.0
 
-
+.. index::
+   single: Secrets
+   single: Managing Secrets
+   single: External Secrets
+   single: Internal Secrets
+   single: Encryption
+   single: Encrypting Text in a Configuration File
 
 .. _managing-secrets:
 
 ================
 Managing Secrets
 ================
-.. version_tag::
-   :label: Since
-   :version: 4.1.0
 
 There are a number of ways to manage secrets with CrafterCMS. The following sections describe the different options.
 

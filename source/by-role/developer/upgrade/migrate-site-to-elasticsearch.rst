@@ -1,28 +1,29 @@
 :is-up-to-date: False
-:last-updated: 4.0.0
+:last-updated: 4.1.0
 
 
-.. _migrate-site-to-elasticsearch:
+.. _migrate-site-to-opensearch:
 
-===========================================
-Migrating a site from Solr to Elasticsearch
-===========================================
+========================================
+Migrating a site from Solr to OpenSearch
+========================================
 
-When upgrading to CrafterCMS 4.0 you need to update the code of all existing sites to use Elasticsearch if your site(s)
-were built to use Solr.
+If your project/site was built with Solr for search, then you'll need to upgrade to OpenSearch when upgrading to CrafterCMS 4.1. For that, you'll need to update the code of all existing projects/sites to use OpenSearch client and query language.
+
+.. TODO: Fix the imports, class names, etc.
 
 -------------------------
-Updating to Elasticsearch
+Updating to OpenSearch
 -------------------------
 
-To update your site to use Elasticsearch instead of Solr you can follow these steps:
+To update your site to use OpenSearch instead of Solr you can follow these steps:
 
-#. Overwrite the target in the Deployer to use Elasticsearch instead of Solr
-#. Index all existing content in Elasticsearch
-#. Find all references to ``searchService`` in your FreeMarker templates and replace them with the Elasticsearch client
-#. Find all references to ``searchService`` in your Groovy scripts and replace them with the Elasticsearch client
+#. Overwrite the target in the Deployer to use OpenSearch instead of Solr
+#. Index all existing content in OpenSearch
+#. Find all references to ``searchService`` in your FreeMarker templates and replace them with the OpenSearch client
+#. Find all references to ``searchService`` in your Groovy scripts and replace them with the OpenSearch client
 #. Delete the unused Solr core if needed (can be done using the Solr Admin UI or the ``data/indexes`` folder)
-#. Update ``craftercms-plugin.yaml`` to use Elasticsearch as the search engine
+#. Update ``craftercms-plugin.yaml`` to use OpenSearch as the search engine
 
 ^^^^^^^^^^^^^^^^^^^^
 Overwrite the target
@@ -70,7 +71,7 @@ For delivery environments:
 
 |
 
-The create target operation will also create the new index in Elasticsearch.
+The create target operation will also create the new index in OpenSearch.
 
 ^^^^^^^^^^^^^^^^^^^^^^
 Index all site content
@@ -92,18 +93,18 @@ To reindex all existing content execute the following command:
 Update the site code
 ^^^^^^^^^^^^^^^^^^^^
 
-Because both Solr and Elasticsearch are based on Lucene, you will be able to keep most of your queries unchanged,
+Because both Solr and OpenSearch are based on Lucene, you will be able to keep most of your queries unchanged,
 however features like sorting, facets and highlighting will require code changes.
 
 .. note::
-  To take full advantage of Elasticsearch features it is recommended to replace query strings with other type of
-  queries provided by the Elasticsearch DSL
+  To take full advantage of OpenSearch features it is recommended to replace query strings with other type of
+  queries provided by the OpenSearch DSL
 
 |
 
 .. warning::
   If you are using any customization or any advance feature from Solr, you will need to find an alternative using
-  Elasticsearch.
+  OpenSearch.
 
 |
 
@@ -111,7 +112,7 @@ To update your code there are two possible approaches:
 
 **Examples**
 
-This is a basic example of replacing Crafter Search service with Elasticsearch
+This is a basic example of replacing Crafter Search service with OpenSearch
 
 .. code-block:: groovy
   :linenos:
@@ -132,18 +133,18 @@ This is a basic example of replacing Crafter Search service with Elasticsearch
   def documents = result.response.documents
   def highlighting = result.highlighting
 
-Using the Elasticsearch Client the code will look like this:
+Using the OpenSearch Client the code will look like this:
 
 .. code-block:: groovy
   :linenos:
-  :caption: Elasticsearch Client
+  :caption: OpenSearch Client
 
-  import co.elastic.clients.elasticsearch._types.SortOrder
+  import co.elastic.clients.OpenSearch._types.SortOrder
 
   def q = "${userTerm}~1 OR *${userTerm}*"
 
   // Execute the query
-  def result = elasticsearchClient(r -> r
+  def result = OpenSearchClient(r -> r
     .query(q -> q
       .queryString(s -> s
         .query(q as String)
@@ -164,19 +165,19 @@ Using the Elasticsearch Client the code will look like this:
     })
   , Map)
 
-  // Elasticsearch response (highlight results are part of each hit object)
+  // OpenSearch response (highlight results are part of each hit object)
   def documents = result.hits().hits()
 
 For additional information you can read the official
-`Java Client documentation <https://www.elastic.co/guide/en/elasticsearch/client/java-api-client/current/index.html>`_
-and `DSL documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html>`_.
+`Java Client documentation <https://www.elastic.co/guide/en/OpenSearch/client/java-api-client/current/index.html>`_
+and `DSL documentation <https://www.elastic.co/guide/en/OpenSearch/reference/current/query-dsl.html>`_.
 
 Notice in the given example that the query string didn't change, you will need to update only the code
-that builds and executes the query. However Elasticsearch provides new query types and features that you
+that builds and executes the query. However OpenSearch provides new query types and features that you
 can use directly from your Groovy scripts.
 
-If any of your queries includes date math for range queries, you will also need to update them to use the Elasticsearch
-date math syntax described `here <https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#date-math>`_.
+If any of your queries includes date math for range queries, you will also need to update them to use the OpenSearch
+date math syntax described `here <https://www.elastic.co/guide/en/OpenSearch/reference/current/common-options.html#date-math>`_.
 
 **Example**
 
@@ -188,13 +189,13 @@ date math syntax described `here <https://www.elastic.co/guide/en/elasticsearch/
 
 .. code-block:: text
   :linenos:
-  :caption: Elasticsearch date math expression
+  :caption: OpenSearch date math expression
 
   createdDate_dt: [ now-1M/d TO now-2d/d ]
 
 In Solr there were two special fields ``_text_`` and ``_text_main_``, during indexing the values of other fields were
-copied to provide a simple way to create generic queries in all relevant text. Elasticsearch provides a different
-feature that replaces those fields `Multi-match query <https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html>`_
+copied to provide a simple way to create generic queries in all relevant text. OpenSearch provides a different
+feature that replaces those fields `Multi-match query <https://www.elastic.co/guide/en/OpenSearch/reference/current/query-dsl-multi-match-query.html>`_
 
 **Example**
 
@@ -206,18 +207,18 @@ feature that replaces those fields `Multi-match query <https://www.elastic.co/gu
 
 .. code-block:: text
   :linenos:
-  :caption: Elasticsearch query for any field (replacement for ``_text_``)
+  :caption: OpenSearch query for any field (replacement for ``_text_``)
 
 
   .multiMatch(m -> m
     .query('some keywords')
   )
 
-Elasticsearch also offers the possibility to query fields with postfixes using wildcards
+OpenSearch also offers the possibility to query fields with postfixes using wildcards
 
 .. code-block:: text
   :linenos:
-  :caption: Elasticsearch query for specific fields (replacement for ``_text_main_``)
+  :caption: OpenSearch query for specific fields (replacement for ``_text_main_``)
 
   .multiMatch(m -> m
     .query('some keywords')
@@ -225,11 +226,11 @@ Elasticsearch also offers the possibility to query fields with postfixes using w
   )
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Update "craftercms-plugin.yaml" to use Elasticsearch
+Update "craftercms-plugin.yaml" to use OpenSearch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Your site has a ``craftercms-plugin.yaml`` file that contains information for use by CrafterCMS.
-We'll have to update the file to use Elasticsearch as the search engine.
+We'll have to update the file to use OpenSearch as the search engine.
 
 Edit your ``craftercms-plugin.yaml``, and remove the following property:
 
@@ -241,24 +242,24 @@ Edit your ``craftercms-plugin.yaml``, and remove the following property:
 
 And make sure to commit your changes to ``craftercms-plugin.yaml``.
 
-.. _migrating-a-site-from-previous-elasticsearch-client:
+.. _migrating-a-site-from-previous-OpenSearch-client:
 
 =======================================================
-Migrating a site from the previous Elasticsearch client
+Migrating a site from the previous OpenSearch client
 =======================================================
 .. version_tag::
    :label: Since
    :version: 4.0.0
 
-CrafterCMS 4.0 provides two different Elasticsearch clients, this is because Elasticsearch has released a new Java API
+CrafterCMS 4.0 provides two different OpenSearch clients, this is because OpenSearch has released a new Java API
 Client to replace the Rest High Level Client and during the transition period both will work. So if you are upgrading
-from CrafterCMS 3.1 and your site already uses Elasticsearch it will continue to work with some small changes, but it
+from CrafterCMS 3.1 and your site already uses OpenSearch it will continue to work with some small changes, but it
 is highly recommended to migrate to the new client to avoid any issues in future releases when the Rest High Level
 Client is completely removed.
 
-Migrating to the new Elasticsearch client should not require too much effort:
+Migrating to the new OpenSearch client should not require too much effort:
 
 - If the existing code uses the builder classes you will need to replace them with the equivalent in the new client
 - If the existing code uses a map DSL it only needs to be replaced with the new lambda structure
 
-For additional information about the new client you can read the official `documentation <https://www.elastic.co/guide/en/elasticsearch/client/java-api-client/current/api-conventions.html>`_
+For additional information about the new client you can read the official `documentation <https://www.elastic.co/guide/en/OpenSearch/client/java-api-client/current/api-conventions.html>`_

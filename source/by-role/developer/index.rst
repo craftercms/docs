@@ -32,6 +32,14 @@ modeling tool, applies actions/rules like inheritance, security, versioning, etc
 transformed content to the caller as JSON. Developers can use whatever front-end technology they want including, but not limited to: React, Vue, Angular, Flutter
 or similar SPAs, Android and iOS applications, etc.
 
+^^^^^^^^^^^^^^^^^
+Headless Examples
+^^^^^^^^^^^^^^^^^
+
+- `Video Center Blueprint <https://github.com/craftercms/video-center-blueprint>`_
+- `Headless Store Blueprint <https://github.com/craftercms/studio/tree/develop/src/main/webapp/repo-bootstrap/global/blueprints/2000_headless_store>`_
+- `Headless Blog Blueprint <https://github.com/craftercms/studio/tree/develop/src/main/webapp/repo-bootstrap/global/blueprints/5000_headless_blog>`_
+
 ---------
 Templated
 ---------
@@ -42,6 +50,18 @@ variance, templating engine to render HTML directly from CrafterCMS.
 It allows developers to model the content as general reusable items, and fold those into pages.
 Pages aggregate content from components as needed and are associated with a FreeMarker template that
 can render the final page. The choice of HTML tools and frameworks doesn't matter to CrafterCMS.
+
+^^^^^^^^^^^^^^^^^^
+Templated Examples
+^^^^^^^^^^^^^^^^^^
+
+- `Editorial Blueprint <https://github.com/craftercms/studio/tree/develop/src/main/webapp/repo-bootstrap/global/blueprints/1000_website_editorial>`_
+- `commerceTools Blueprint <https://github.com/craftercms/commercetools-blueprint>`_
+- `Wordify Blueprint <https://github.com/craftercms/wordify-blueprint>`_
+
+----------------
+General Concepts
+----------------
 
 Regardless of type of project, a developer needs to be familiar with the following core concepts.
 
@@ -68,94 +88,54 @@ For templated projects, there are more topics to cover:
     templated/targeting
     templated/working-with-dates-freemarker
 
---------
-Examples
---------
-^^^^^^^^
-Headless
-^^^^^^^^
-- Video Center Blueprint
-- Headless Store Blueprint
-- Headless Blog Blueprint
-
-^^^^^^^^^
-Templated
-^^^^^^^^^
-- Editorial Blueprint
-- commerceTools Blueprint
-- Fitness Blueprint
-
 ----------
 Composable
 ----------
 
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
+CrafterCMS is a composable CMS and provides a modular and flexible approach to building and managing websites and digital experiences. Unlike traditional monolithic CMSs, which come with pre-built features and a fixed structure, CrafterCMS allows users to assemble and configure their own system by choosing and integrating individual components or services.
 
-   composable/index
+The article, :ref:`composable`, provides more details on the composable nature of CrafterCMS and how to take advantage of it.
 
-|
+-------------
+DevContentOps
+-------------
 
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
+DevContentOps is a set of tools and processes that allow teams of software developers, content authors, and system administrators to work together on a single
+project across multiple environments. These tools and processes are fully described in :ref:`devcontentops`.
 
-   devcontentops/index
-   upgrade/index
+-------
+Upgrade
+-------
 
-|
+Upgrading CrafterCMS from a developer's perspective is covered in :ref:`developers-upgrade`.
+
+
+.. TODO: Fix below
+
+----------------
+Managing Secrets
+----------------
 
 Credentials may be required in some cases when accessing content. For more information on how to manage/encode your secrets such as
 AWS credentials, please see :ref:`managing-secrets`
 
-|hr|
-
-**Content Inheritance**
-
-CrafterCMS also supports content inheritance out of the box, and supports it via a pluggable mechanism
-that allows developers to augment or override what’s out of the box. Below is more information on
-content inheritance:
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   common/content-modeling/content-inheritance
-
-|
-
-|hr|
-
-**Targeting**
-
-CrafterCMS allows content targeting by providing the ability to render content adapted to specific users,
-depending on different aspects like geographical location, language, preferences, etc.
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
-
-   templated/targeting
-
-|
-|
-
-|hr|
-
-**Logs**
+-------
+Logging
+-------
 
 While developing your project, there are times when you’d like to see more log details, to figure out what
 is happening and address it as needed. Overriding the logging levels allows you to see more or less
 details depending on your needs.
 
-Learn more about :ref:`logging`.
+Please review the :ref:`logging` article for more information.
 
 |
 
 |hr|
 
-**More Resources**
+--------------
+More Resources
+--------------
 
 Below is a short set of links to other documentation for technology that CrafterCMS leverages:
 
