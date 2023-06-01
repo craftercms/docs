@@ -94,6 +94,7 @@ Composable
    :titlesonly:
 
    composable/index
+
 |
 
 .. toctree::
@@ -108,10 +109,7 @@ Composable
 Credentials may be required in some cases when accessing content. For more information on how to manage/encode your secrets such as
 AWS credentials, please see :ref:`managing-secrets`
 
-.. raw:: html
-
-   <hr>
-
+|hr|
 
 **Content Inheritance**
 
@@ -127,9 +125,7 @@ content inheritance:
 
 |
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 **Targeting**
 
@@ -145,9 +141,7 @@ depending on different aspects like geographical location, language, preferences
 |
 |
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 **Logs**
 
@@ -159,9 +153,7 @@ Learn more about :ref:`logging`.
 
 |
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 **More Resources**
 

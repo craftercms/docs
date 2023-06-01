@@ -59,9 +59,9 @@ List of available configuration tags
 +-----------------+-------------------------------------------------------------------------------+
 || Tag            || Description                                                                  |
 +=================+===============================================================================+
-|| files          || This tag contains each  file.                                               |
+|| files          || This tag contains each  file.                                                |
 +-----------------+-------------------------------------------------------------------------------+
-|| file           || This tag contains the configuration of each file.                           |
+|| file           || This tag contains the configuration of each file.                            |
 +-----------------+-------------------------------------------------------------------------------+
 || module         || CrafterCMS module                                                            |
 +-----------------+-------------------------------------------------------------------------------+
@@ -73,7 +73,7 @@ List of available configuration tags
 || description    || This tag refers to file description. It will be showed to explain the file   |
 ||                || functionality. See #2 in the image above                                     |
 +-----------------+-------------------------------------------------------------------------------+
-|| samplePath     || Path where the system will find an example of the specific xml.             |
+|| samplePath     || Path where the system will find an example of the specific xml.              |
 ||                || See #3 in the image above                                                    |
 +-----------------+-------------------------------------------------------------------------------+
 

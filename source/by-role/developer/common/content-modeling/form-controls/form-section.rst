@@ -33,5 +33,5 @@ Configuration
 
 +------------------------+-----------------------------------------------------------------------+
 || Description/Purpose   || Create a new section in the form, this is to help the content authors|
-||                       || by segmenting a form into sections of similar concern.              |
+||                       || by segmenting a form into sections of similar concern.               |
 +------------------------+-----------------------------------------------------------------------+

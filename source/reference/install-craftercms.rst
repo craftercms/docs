@@ -38,6 +38,8 @@ First, let's make sure we have all the requirements.
 
 Installing and running CrafterCMS is easy. You have a number of choices:
 
+.. _running-craftercms-in-docker:
+
 --------------
 Docker Compose
 --------------

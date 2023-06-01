@@ -115,7 +115,7 @@ To setup an external storage for assets, open the **Sidebar**, then click on |pr
 
 |
 
-To see more information on the Blob Stores configuration, see :ref:`blob-stores-configuration`
+To see more information on the Blob Stores configuration, see :ref:`above <blob-stores>`
 
 After setting up the ``Blob Stores`` configuration, you may now use the external storage for uploading using the various upload methods provided by Crafter Studio, and publishing to live or staging if it's setup.
 
@@ -215,7 +215,7 @@ In your Studio, click on |projectTools| -> *Configuration* -> *Blob Stores* and 
 Remember to encrypt your credentials. For more information on how to manage/encode your secrets such as AWS credentials,
 please see :ref:`managing-secrets`
 
-To see more information on the Blob Stores configuration, see :ref:`blob-stores-configuration`
+To see more information on the Blob Stores configuration, see :ref:`above <blob-stores>`
 
 
 """""""""""""""
@@ -384,7 +384,7 @@ Let's begin:
      |
 
 
-   To see more information on the Blob Stores configuration, see :ref:`blob-stores-configuration`
+   To see more information on the Blob Stores configuration, see :ref:`above <blob-stores>`
 
 #. **Copy assets in** ``live`` **to** ``staging`` **in external storage**
 

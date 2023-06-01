@@ -35,19 +35,19 @@ Configuration
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
 +------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Rich Text Area field.                                               |
+|| Description/Purpose   || Rich Text Area field.                                                |
 +------------------------+-----------------------------------------------------------------------+
-|| Properties            || * Height: Height of the Rich Text Area.                             |
-||                       || * Force Root Block p Tag.                                           |
-||                       || * Force p tags New Lines: Adds a p tag on every new line.           |
-||                       || * Force br New Lines: Adds br for each new line.                    |
-||                       || * Supported Channels.                                               |
-||                       || * RTE Configuration: Configuration to be loaded on the rte.         |
-||                       || * Image Manager.                                                    |
-||                       || * Video Manager.                                                    |
-||                       || * File Manager.                                                     |
+|| Properties            || * Height: Height of the Rich Text Area.                              |
+||                       || * Force Root Block p Tag.                                            |
+||                       || * Force p tags New Lines: Adds a p tag on every new line.            |
+||                       || * Force br New Lines: Adds br for each new line.                     |
+||                       || * Supported Channels.                                                |
+||                       || * RTE Configuration: Configuration to be loaded on the rte.          |
+||                       || * Image Manager.                                                     |
+||                       || * Video Manager.                                                     |
+||                       || * File Manager.                                                      |
 +------------------------+-----------------------------------------------------------------------+
-|| Constraints           || * Required: Make field required to fill out.                        |
+|| Constraints           || * Required: Make field required to fill out.                         |
 +------------------------+-----------------------------------------------------------------------+
 || Related Data Sources  || Image Manager                                                        |
 ||                       || * |imgUploadFromDesktop|                                             |

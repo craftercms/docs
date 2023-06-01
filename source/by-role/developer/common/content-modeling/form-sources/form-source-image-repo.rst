@@ -35,7 +35,7 @@ Configuration
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
 +------------------------+--------------------------------------------------------------------------+
-|| Description/Purpose   || Data source to select images from repository.                          |
+|| Description/Purpose   || Data source to select images from repository.                           |
 +------------------------+--------------------------------------------------------------------------+
 || Properties            || - Repository Path: Path where to browse the images from the repository. |
 +------------------------+--------------------------------------------------------------------------+

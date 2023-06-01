@@ -35,10 +35,10 @@ Configuration
 .. include:: /includes/form-sources/form-source-field-basics.rst
 
 +------------------------+--------------------------------------------------------------------------+
-|| Description/Purpose   || Data source to select or create content to be used on the form.        |
+|| Description/Purpose   || Data source to select or create content to be used on the form.         |
 +------------------------+--------------------------------------------------------------------------+
 || Properties            || - Data Type: Key Value pairs type (String, Integer, Float, Date, HTML). |
-||                       || - Component Path: Path where to browse the datasource items.           |
+||                       || - Component Path: Path where to browse the datasource items.            |
 +------------------------+--------------------------------------------------------------------------+
 
 ----------------------------------------

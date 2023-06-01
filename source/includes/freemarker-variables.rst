@@ -2,36 +2,36 @@
 || Name                     || Description                          || Type                              |
 +===========================+=======================================+====================================+
 || siteItemService          || Allows access to the site            || |SiteItemService|                 |
-||                          || content.                            ||                                   |
+||                          || content.                             ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
 || urlTransformationService || Service for transforming URLs,       || |UrlTransformationService|        |
 ||                          || like transforming the content        ||                                   |
 ||                          || URL of a page to the web or          ||                                   |
-||                          || render URL.                         ||                                   |
+||                          || render URL.                         ||                                    |
 +---------------------------+---------------------------------------+------------------------------------+
 || applicationContext       || Provides access to the Crafter       || |ApplicationContextAccessor|      |
 ||                          || Engine's Spring beans and site       ||                                   |
 ||                          || beans defined in                     ||                                   |
 ||                          || config/spring/application-           ||                                   |
-||                          || context.xml.                        ||                                   |
+||                          || context.xml.                         ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
 || globalProperties         || Provides access to global            || `PropertySourcesPropertyResolver`_|
 ||                          || configuration properties             ||                                   |
 ||                          || defined in                           ||                                   |
-||                          || server-config.properties.           ||                                   |
+||                          || server-config.properties.            ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
 || navBreadcrumbBuilder     || Helper class that returns the        || |BreadcrumbBuilder|               |
 ||                          || list of path components in an        ||                                   |
 ||                          || URL, to create navigation            ||                                   |
-||                          || breadcrumbs.                        ||                                   |
+||                          || breadcrumbs.                         ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
 || navTreeBuilder           || Helper class that creates            || |NavTreeBuilder|                  |
 ||                          || navigation trees to                  ||                                   |
-||                          || facilitate rendering.               ||                                   |
+||                          || facilitate rendering.                ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
 || tenantsResolver          || Can be used to retrieve the          || |TenantsResolver|                 |
 ||                          || Profile tenants associated to        ||                                   |
-||                          || the current site.                   ||                                   |
+||                          || the current site.                    ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
 || modePreview              || Flag that indicates that Engine is   || Boolean                           |
 ||                          || being executed in preview mode       ||                                   |
@@ -43,7 +43,7 @@
 ||                          || property                             ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
 || siteConfig               || The current site Configuration       || |XMLConfiguration|                |
-||                          || loaded from /config/site.xml.       ||                                   |
+||                          || loaded from /config/site.xml.        ||                                   |
 +---------------------------+---------------------------------------+------------------------------------+
 || siteContext              || The current SiteContext              || |SiteContextHashModel|            |
 +---------------------------+---------------------------------------+------------------------------------+

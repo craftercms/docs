@@ -136,13 +136,7 @@ Here are the settings that can be configured through Crafter Studio:
       studio/webdav-profiles-configuration
 
 
-Crafter Studio supports creating multiple environments with different configuration files for each environment. To setup an environment follow the guide below:
-
-.. toctree::
-   :maxdepth: 1
-
-   studio/multi-environment-configurations
-
+Crafter Studio supports creating multiple environments with different configuration files for each environment. To setup an environment follow the guide :ref:`here <multi-environment-configurations>`
 
 CrafterCMS supports managing assets in external storage through workflow and publishing mechanics. For more information, see :ref:`blob-stores`.
 

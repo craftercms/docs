@@ -15,11 +15,11 @@ By default three tokens will be created:
 | Application    | Description                                                                 |
 +================+=============================================================================+
 | profile-admin  || Used by the Profile Admin Console web application for all operations       |
-|                || on tenants and profiles.                                                  |
+|                || on tenants and profiles.                                                   |
 +----------------+-----------------------------------------------------------------------------+
-| engine         || Used by Crafter Engine for authenticating and getting profiles.           |
+| engine         || Used by Crafter Engine for authenticating and getting profiles.            |
 +----------------+-----------------------------------------------------------------------------+
-| social         || Used by Crafter Social for getting profiles.                              |
+| social         || Used by Crafter Social for getting profiles.                               |
 +----------------+-----------------------------------------------------------------------------+
 
 --------

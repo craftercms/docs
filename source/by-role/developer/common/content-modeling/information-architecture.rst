@@ -38,27 +38,27 @@ Information Architecture
     * - `/site`
       - Project/site content
     * - `/site/website`
-        - Pages (for templated/page-based sites)
+      - Pages (for templated/page-based sites)
     * - `/site/components`
-        - Components
+      - Components
     * - `/site/taxonomy`
-        - Taxonomy
+      - Taxonomy
     * - `/static-assets`
-        - Static assets
+      - Static assets
     * - `/static-assets/app`
-        - SPA applications
+      - SPA applications
     * - `/templates`
-        - Templates (FreeMarker view templates for templated sites)
+      - Templates (FreeMarker view templates for templated sites)
     * - `/scripts`
-        - Scripts (Groovy scripts, custom REST APIs, etc.)
+      - Scripts (Groovy scripts, custom REST APIs, etc.)
     * - `/sources`
-        - Source files (e.g. SPA, Sass, etc.)
+      - Source files (e.g. SPA, Sass, etc.)
     * - `/config`
-        - Configuration files
+      - Configuration files
     * - `/config/studio`
-        - Studio configuration files
+      - Studio configuration files
     * - `/config/engine`
-        - Engine configuration files
+      - Engine configuration files
 
 --------------
 Best Practices

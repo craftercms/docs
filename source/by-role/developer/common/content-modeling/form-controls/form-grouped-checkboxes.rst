@@ -34,15 +34,15 @@ Configuration
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
 +------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Several checkboxes (true/false).                                    |
+|| Description/Purpose   || Several checkboxes (true/false).                                     |
 +------------------------+-----------------------------------------------------------------------+
-|| Properties            || * Data Source: Source that will populate the checkboxes.            |
-||                       || * Show Select All: To select/unselect all options.                  |
-||                       || * Read Only: Make field read-only (can't be changed by the author). |
+|| Properties            || * Data Source: Source that will populate the checkboxes.             |
+||                       || * Show Select All: To select/unselect all options.                   |
+||                       || * Read Only: Make field read-only (can't be changed by the author).  |
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || * Minimum Selection: Set a minimum amount of checkboxes to be        |
-||                       ||   selected.                                                         |
+||                       ||   selected.                                                          |
 +------------------------+-----------------------------------------------------------------------+
-|| Related Data Sources  || * Configured List of Pairs.                                         |
-||                       || * Static Key Value Pairs.                                           |
+|| Related Data Sources  || * Configured List of Pairs.                                          |
+||                       || * Static Key Value Pairs.                                            |
 +------------------------+-----------------------------------------------------------------------+

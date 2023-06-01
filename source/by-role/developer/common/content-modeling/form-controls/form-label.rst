@@ -34,11 +34,11 @@ Configuration
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
 +------------------------+-----------------------------------------------------------------------+
-|| Description/Purpose   || Simple label control in form.                                       |
+|| Description/Purpose   || Simple label control in form.                                        |
 +------------------------+-----------------------------------------------------------------------+
-|| Properties            || * Text: Label text to be displayed in form.                         |
+|| Properties            || * Text: Label text to be displayed in form.                          |
 +------------------------+-----------------------------------------------------------------------+
-|| Constraints           || None.                                                               |
+|| Constraints           || None.                                                                |
 +------------------------+-----------------------------------------------------------------------+
-|| Related Data Sources  || None.                                                               |
+|| Related Data Sources  || None.                                                                |
 +------------------------+-----------------------------------------------------------------------+

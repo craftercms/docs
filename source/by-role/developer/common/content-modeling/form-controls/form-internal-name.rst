@@ -28,7 +28,7 @@ Configuration
 || Description/Purpose   || Simple text internal name                                             |
 +------------------------+------------------------------------------------------------------------+
 || Properties            || * Display Size: How much of the input to show on the author input form|
-||                       || * Max Length: Maximum number of characters to accept as input.       |
+||                       || * Max Length: Maximum number of characters to accept as input.        |
 +------------------------+------------------------------------------------------------------------+
 || Constraints           || None                                                                  |
 +------------------------+------------------------------------------------------------------------+
