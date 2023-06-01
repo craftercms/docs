@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.0
+:last-updated: 4.1.0
 
 
 .. index:: Author Screens
@@ -18,7 +18,7 @@ Logging in
 ----------
 
 To log in to Crafter Studio:
-    * Enter the following in the URL of your browser:  *http://SERVERNAMEHERE/studio*
+    * Enter the following in the URL of your browser:  *http://SERVERNAMEHERE:PORT/studio*
     * Enter your user name
     * Enter your password
     * Click "Log In"
@@ -39,9 +39,9 @@ Roles
 After logging in, depending on what access rights have been setup for your user account, you can have one of two
 primary roles as a content author:
 
-* **Content Manager (Publisher Role)** A content Manager has the ability to approve and reject workflow.
-  A content manager also has access to a number of dashboards which are not available to content contributors
-  including Recently Published and Approved Scheduled Items.
+* **Content Manager (Publisher/Reviewer Role)** A content Manager has the ability to approve and reject workflow.
+  A content manager also has access to a number of available actions in dashlets which are not available to content contributors
+  including actions for Recently Published and Approved Scheduled Items dashlets.
 
 * **Content Contributor(Author Role)** A content contributor has access to create, edit and submit content
 
@@ -158,24 +158,25 @@ Access the ``Dashboard`` from the ``Sidebar``
 This screen is an overview of the workflow for that given project. The project dashboard has different dashlets
 depending on your role.
 
-Each dashboard has a header
+Each dashlet has a header
 
-   Expand Collapse control. Each widget can be closed and opened to hide the items shown by the widget.
-   This setting is remembered by your browser
+   Expand Collapse control.  Each dashlet can be expanded to be display more items in the dashlet and minimized to return it to its tile position in the dashboard.
 
-   Dashlet title and count. Most dashlets include a count at the end of the name for the number of items in the widget
+   Refresh control. Each dashlet has a refresh control to refresh the items displayed.
 
-   Dashlet level options. Options are different on each widget
+   Dashlet title and count.  Some dashlets include a count at the end of the name for the number of items in the dashlet
 
-   Show count. Some dashlets allow the author to decide how many items they want to see in the dashlet
+   Page number dropdown.  Allows author to navigate to a certain page by  selecting a page number from the dropdown
 
-   Content "type" filter:  Some dashlets allow you to filter them by a broad content type (All, Pages, Components)
+   Show count. Dashlets allow the author to decide how many items they want to see in the dashlet
+
+   Page forward and back.  Allows the author to navigate back and forth between available pages
 
 |
 |
 
 .. image:: /_static/images/content-author/project-dashboard.webp
-    :width: 95 %
+    :width: 85 %
     :align: center
     :alt: Navigating Studio - Project Dashboard
 
@@ -183,11 +184,15 @@ Each dashboard has a header
 
 For the dashboard shown above, here are the dashlets listed:
 
-    * Items Waiting for Approval
+    * Activity
+        * Shows all items recently modified by all users
+        * Viewable by all users
+
+    * Pending Approval
         * Shows all items currently in workflow
         * Viewable only to admins and publishers
 
-    * Approved Scheduled Items
+    * Scheduled for Publish
         * Shows all items approved for a specific scheduled deployment date
         * Viewable only to admins and publishers
 
@@ -195,8 +200,16 @@ For the dashboard shown above, here are the dashlets listed:
         * Shows all items that have been previously deployed
         * Viewable only to admins and publishers
 
-    * My Recent Activity
+    * My Activity
         * Shows all items recently modified by the current user
+        * Viewable by all users
+
+   * Unpublished Work
+        * Shows all unpublished items modified by the current user
+        * Viewable by all users
+
+   * Expiring
+        * Shows all items that are expired or about to expire
         * Viewable by all users
 
     * Icon Guide
@@ -281,19 +294,16 @@ For the dashboard shown above, here are the dashlets listed:
 
     **Selecting a dashboard item**
 
-        Dashboard items have the ability to be selected. Selecting an item allows the user to interact with the
-        selected items via the context navigation
+    Items in some dashlets have the ability to be selected.  Selecting an item allows
+    the user to interact with the selected items via the context navigation
 
-        Items in the dashboard has a icons which shows the type and current workflow status of the item
-
-        Clicking on ``Options`` (the three dots next to the item) shows the type and current workflow status of
-         the item, plus all oprions available e.g. ``Edit``, ``Publish``, etc.
+    Items in the dashboard have icons which shows the type and current workflow status of the item
 
 |
 |
 
 .. image:: /_static/images/content-author/project-dashboard-selected.webp
-   :width: 95 %
+   :width: 85 %
    :align: center
    :alt: Navigating Studio - Dashboard Selected
 

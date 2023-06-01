@@ -19,7 +19,7 @@ When staging is setup, the **Request Publish** and **Approve for Publish** dialo
 
 |
 
-Users with access to the following widgets in the dashboard will see a column named **Publishing Target** indicating which publishing target an item has been/would be published to: ``Items Waiting For Approval``, ``Approved Scheduled Items`` and ``Recently Published``
+Users will see **live** or **staging** underneath items indicating which publishing target an item has been/would be published to: ``Pending Approval``, ``Scheduled For Publish`` and ``Recently Published``
 
 .. image:: /_static/images/system-admin/staging-dashboard.webp
     :width: 75 %

@@ -110,4 +110,4 @@ Login to Crafter Studio
 .. include:: /includes/accessing-crafter-studio.rst
 
 
-   After logging in, you should be redirected to the ``Projects`` screen, and you're now ready to create your first experience!
+After logging in, you should be redirected to the ``Projects`` screen, and you're now ready to create your first experience!

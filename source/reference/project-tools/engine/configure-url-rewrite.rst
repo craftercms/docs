@@ -51,7 +51,7 @@ Below is a sample URL rewrite configuration.
 
 |
 
-After saving the configuration, remember to publish the configuration file just saved (``urlrewrite.xml`` file). To publish the configuration file, from the **Sidebar**, click on **Dashboard**. In the **My Recent Activity** dashlet, check the box next to the ``urlrewrite.xml`` file, and click **Publish** from the context nav to publish.
+After saving the configuration, remember to publish the configuration file just saved (``urlrewrite.xml`` file).  To publish the configuration file, from the **Sidebar**, click on **Dashboard**.  In the **Unpublished Work** dashlet, check the box next to the ``urlrewrite.xml`` file, and click **Publish** from the context nav to publish.
 
 .. image:: /_static/images/site-admin/publish-urlrewrite.webp
     :alt: Configurations - Publish URL Rewrite Config File from Dashboard
