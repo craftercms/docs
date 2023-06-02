@@ -4,7 +4,7 @@
 CrafterCMS 4.0.4
 ----------------
 
-*Released TBD*
+*Released June 2, 2023*
 
 This release includes fixes for issues with the release version 4.0.3
 
@@ -14,6 +14,9 @@ Updates
 
 * Fixed issue with page history when page contains an É, é (e-acute) entity |br|
   See `here <https://github.com/craftercms/craftercms/issues/6003>`__ for more information
+
+* Fixed issue with hard dependency calculation when parent is moved |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6083>`__ for more information
 
 * Fixed issue with SAML not re-authenticating users via the Open Login Form after a Session Expired |br|
 
