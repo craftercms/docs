@@ -1,0 +1,56 @@
+.. index:: CrafterCMS 4.0.4 Release Notes
+
+----------------
+CrafterCMS 4.0.4
+----------------
+
+*Released June 2, 2023*
+
+This release includes fixes for issues with the release version 4.0.3
+
+^^^^^^^
+Updates
+^^^^^^^
+
+* Fixed issue with page history when page contains an É, é (e-acute) entity |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6003>`__ for more information
+
+* Fixed issue with hard dependency calculation when parent is moved |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6083>`__ for more information
+
+* Fixed issue with SAML not re-authenticating users via the Open Login Form after a Session Expired |br|
+
+* Fixed issue with site creation if write takes place while creation is still in process |br|
+
+* Upgraded various libraries and dependencies
+
+For a full list of tickets, please visit: `GitHub 4.0.4 Milestone <https://github.com/craftercms/craftercms/milestone/100?closed=1>`_
+
+For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
+
+.. important::
+
+    Please see :ref:`Breaking changes in 4.0.3 <breaking-changes-4-0-3>` for breaking changes and other
+    things to consider before upgrading
+
+    Please see :ref:`Breaking changes in 4.0.0 <breaking-changes-4-0-0>` for breaking changes and other
+    things to consider before upgrading
+
+    For instructions on how to update your CrafterCMS install to 4.0.0 (applies to 4.0.4),
+    please see :ref:`upgrading-craftercms`
+
+    When using private key SSH authentication in the ``init-site.sh`` script, the private key path must be set explicitly. |br|
+    Please see :ref:`newIa-setup-project-for-delivery` for more information on using the ``-k`` option of ``init-site.sh`` to
+    set the private key path
+
+    For Linux installs, the Studio upgrade requires the library ``libaio`` which is not installed
+    by default in some Linux distributions.  Please see the section on **Linux Prerequisites**
+    in :ref:`prerequisites` for instructions on how to install the library ``libaio``
+
+|
+|
+
+.. raw:: html
+
+   <hr>
+
