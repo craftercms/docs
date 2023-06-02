@@ -45,14 +45,14 @@ CrafterCMS is used by three main constituencies:
 * DevOps who deploy and manage CrafterCMS.
 
 .. toctree::
-   :hidden:
+    :hidden:
 
-   getting-started/index
-   by-role/index
-   security/index
-   roadmap
-   support
-   reference/index
-   release-notes/index
-   contribute/index
-   faq
+    getting-started/index
+    by-role/index
+    security/index
+    roadmap
+    support
+    reference/index
+    release-notes/index
+    contribute/index
+    faq

@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.3
 
 .. index:: Crafter Marketplace, Marketplace
@@ -37,7 +37,7 @@ Types of extensions
 
 - ``blueprint``: This type of extension (blueprint) can be used as a template to create projects, it includes
   support for parameters to allow dynamic sites that use API keys or passwords for external services. For more
-  information about creating blueprints you can follow this guide: :ref:`create-a-blueprint`.
+  information about creating blueprints you can follow this guide: :ref:`blueprints`.
 
 - ``plugin``: This type of extension can be used to add features to existing projects, it can include authoring
   and delivery extensions. For more information about creating plugins you can follow this guide: :ref:`how-do-i-make-my-own-plugin`

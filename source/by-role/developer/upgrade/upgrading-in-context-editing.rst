@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :last-updated: 4.0.1
 
-.. index:: Upgrading CrafterCMS, Upgrading
+.. index:: Upgrading In-Context Editing, ICE, Upgrade to XB
 
 .. _upgrading-in-context-editing:
 

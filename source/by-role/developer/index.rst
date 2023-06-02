@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.0
 
 .. _developer:
@@ -109,8 +109,6 @@ Upgrade
 
 Upgrading CrafterCMS from a developer's perspective is covered in :ref:`developers-upgrade`.
 
-
-.. TODO: Fix below
 
 ----------------
 Managing Secrets

@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.1
 
 .. index:: Crafter Studio Navigation Menu Plugin Example, Studio Plugins, Plugins
