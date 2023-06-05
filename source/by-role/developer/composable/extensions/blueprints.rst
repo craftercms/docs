@@ -109,8 +109,9 @@ Above all, blueprints should be usable and simple.
 
 .. _section-defaults:
 
+""""""""""""""""
 Section Defaults
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 Section Defaults provides inherited values to all children and sibling content items.
 To learn more about content inheritance see :ref:`content-inheritance` and for an example to see how Section Defaults is used in the Website Editorial blueprint :ref:`inherit-levels-example` .
 
@@ -146,7 +147,7 @@ Installing
 ----------
 
 #. Copy your blueprint folder into ``{CRAFTER_HOME}/data/repos/global/blueprints``.
-#. Check in your blueprint folder if it contains a ``craftercms-plugin.yaml`` file. Add in the file if it does not exist by copying a ``craftercms-plugin.yaml`` file from one of the default blueprints, such as from the folder ``4000_empty``, which contains the empty blueprint and modifying it as needed. This is described in more detail below (:ref:`blueprint-descriptor-file`).
+#. Check in your blueprint folder if it contains a ``craftercms-plugin.yaml`` file. Add in the file if it does not exist by copying a ``craftercms-plugin.yaml`` file from one of the default blueprints, such as from the folder ``4000_empty``, which contains the empty blueprint and modifying it as needed. This is described in more detail below (:ref:`CrafterCMS Blueprint Descriptor <blueprint-descriptor-file>`).
 #. Once you do, commit the change to the global repo (``{CRAFTER_HOME}/data/repos/global/``) by using ``git``, and your  blueprint will now start appearing when you try to create a new project.
 
    * CrafterCMS uses a vanilla version of Git, so regular Git commands work as intended. To commit your changes so Crafter can see it, head to ``{CRAFTER_HOME}/data/repos/global/blueprints`` and git add your modified files like this
@@ -342,8 +343,10 @@ Here are some things to note in the descriptor file:
 
 .. _passing-parameters-to-bp:
 
+""""""""""""""""""""""""""""""""""""""""
 Passing Parameters to Project Blueprints
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""
+
 Some parameters may need to be passed to the blueprint instead of left in the blueprint, say, AWS credentials, Box credentials, CommerceTools credentials, etc. CrafterCMS supports passing parameters to blueprints during creation.
 
 To add parameters to be passed to blueprints, simply add the following to the ``craftercms-plugin.yaml`` file

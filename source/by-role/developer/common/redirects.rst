@@ -1,5 +1,5 @@
 :is-up-to-date: False
-
+:last-updated: 4.1.0
 
 .. index:: Page Redirect
 
@@ -27,13 +27,18 @@ This may be easier for some content authors that just want to create a redirect 
 
 Simply install the plugin https://craftercms.com/marketplace/redirect-file-plugin to get started.
 
+.. image:: /_static/images/developer/redirect/page-redirect-plugin.webp
+    :alt: Redirect - Page redirect plugin from the marketplace in Studio
+    :width: 75 %
+    :align: center
+
 Create the Page for Redirecting
 -------------------------------
 
-Open the **Sidebar**. Right click on ``Home`` and select ``New Content``. Select the content type ``Page - Redirect``. Fill in **Page URL** with ``fashion``, **Internal Name** with ``fashion`` and **Redirect URL** with ``/style`` since we want the page to redirect to the category landing page for style, then click on **Save and Close**
+Open the **Sidebar**. Right click on ``Home`` and select ``New Content``. Select the content type ``Redirect``. Fill in **Page URL** with ``fashion``, **Internal Name** with ``fashion``, **Nav Label** with ``Fashion`` and **Redirect URL** with ``/style`` since we want the page to redirect to the category landing page for style, then click on **Save and Close**
 
 .. image:: /_static/images/developer/redirect/page-redirect-fashion.webp
-    :alt: Redirect - Page redirect - fashion
+    :alt: Redirect - fashion
     :width: 75 %
     :align: center
 

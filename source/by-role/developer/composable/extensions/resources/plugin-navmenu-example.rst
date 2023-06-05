@@ -26,7 +26,7 @@ Let's take a look at an example of creating a Navigation Menu plugin in Studio u
    In a local folder, create the descriptor file for your project plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.examplenavmenu``, then create the following folder structure:
 
    .. code-block:: text
-         :caption: *Dashboard Plugin Directory Structure*
+         :caption: *Plugin Directory Structure*
 
          <plugin-folder>/
            craftercms-plugin.yaml

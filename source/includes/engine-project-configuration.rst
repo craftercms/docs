@@ -14,7 +14,7 @@ properties will be available for developers in the Freemarker templates and Groo
  - ``/config/engine/site-config.xml``
    Main XML configuration for the project, this file will always be loaded by Crafter Engine. This file can
    be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the
-   Studio dashboard to ``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project
+   Studio sidebar to ``Project Tools`` > ``Configuration``, and finally picking up the ``Engine Project
    Configuration`` option from the list.
 
 	 .. image:: /_static/images/site-admin/engine-project-config.webp
@@ -225,7 +225,7 @@ can be overwritten using the following locations:
 
 Spring Configuration Files
  - ``/config/engine/application-context.xml`` (This file can be accessed easily from any project created
-   through the out-of-the-box blueprints, by navigating from the Studio dashboard to ``Project Tools``
+   through the out-of-the-box blueprints, by navigating from the Studio sidebar to ``Project Tools``
    > ``Configuration``, and finally picking up the ``Engine Project Application Context`` option from the dropdown).
 
 	 .. image:: /_static/images/site-admin/engine-project-application-context.webp

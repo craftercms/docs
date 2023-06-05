@@ -3,11 +3,11 @@
 
 .. _authoring-env-performance-tuning:
 
-.. TODO: Add Studio and Deployer performance tuning parameters
-
 ========================================
 Authoring Environment Performance Tuning
 ========================================
+
+.. TODO: Add Studio and Deployer performance tuning parameters
 
 This section describes ways on how to enhance the authoring environment performance by tuning authoring environment settings and recommendations for hardware configurations.
 

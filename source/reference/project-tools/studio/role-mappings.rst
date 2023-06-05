@@ -62,9 +62,9 @@ Here's a list of predefined roles for projects:
 
 * **developer**: Users with the ``developer`` role have access to project configuration files, creating/editing layouts, templates, taxonomies, content types, scripts, etc. in addition to creating and editing content, as well as the ability to approve and reject workflow
 
-* **reviewer**: Users with the ``reviewer`` role have the ability to approve and reject workflow. They also have access to a number of dashboards which are not available to content contributors (users with role ``author``) including ``Recently Published`` and ``Approved Scheduled Items``. They do not have access to edit content.
+* **reviewer**: Users with the ``reviewer`` role have the ability to approve and reject workflow. They also have access to a number of actions in the dashboard which are not available to content contributors (users with role ``author``) including ``Pending Approval`` and ``Scheduled Publish``. They do not have access to edit content.
 
-* **publisher**: Users with the ``publisher`` role have the ability to approve and reject workflow. They also have access to a number of dashboards which are not available to content contributors (users with role ``author``) including ``Recently Published`` and ``Approved Scheduled Items``. In addition, they also have access to create, edit and submit content like the ``author`` role.
+* **publisher**: Users with the ``publisher`` role have the ability to approve and reject workflow. They also have access to a number of actions in the dashboard which are not available to content contributors (users with role ``author``) including ``Pending Approval`` and ``Scheduled Publish``. In addition, they also have access to create, edit and submit content like the ``author`` role.
 
 * **author**: Users with the role ``author`` have access to create, edit and submit content
 
