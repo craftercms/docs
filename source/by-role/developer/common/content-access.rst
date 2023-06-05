@@ -1,5 +1,5 @@
-:is-up-to-date: False
-:last-updated: 4.0.0
+:is-up-to-date: True
+:last-updated: 4.1.0
 
 .. _headless-accessing-content:
 

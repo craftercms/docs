@@ -1,6 +1,7 @@
 :is-up-to-date: True
 :last-update: 4.1.0
 
+.. index:: Experience Builder, XB, In-Context Editing, ICE
 
 .. _xb:
 

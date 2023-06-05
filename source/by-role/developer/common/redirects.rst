@@ -1,8 +1,7 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.0
 
-.. index:: Page Redirect
-
+.. index:: Page Redirect, URL Redirect, Redirect, Redirects, URL Rewrites, Vanity URLs, Rewrite
 .. _page-redirect:
 
 =========

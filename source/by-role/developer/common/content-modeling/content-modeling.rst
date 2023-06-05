@@ -1,11 +1,9 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.0
 
-
-.. 3.2.2.1.1 When to model as a page vs component
-   3.2.2.2 Shared components vs embedded components
-
 .. index:: Content Modeling, Modeling, Content Model, Page Content Type, Component Content Type
+
+.. TODO Review and refresh
 
 .. _content-modeling:
 

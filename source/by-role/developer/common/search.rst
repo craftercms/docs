@@ -1,26 +1,13 @@
 :is-up-to-date: False
 :last-updated: 4.1.0
 
+.. index:: Search, Query, OpenSearch, Elasticsearch, GraphQL
 
 .. _search:
 
 ======
 Search
 ======
-
-----------------
-Querying Content
-----------------
-
-CrafterCMS provides a number of mechanisms to query content:
-* Search (OpenSearch)
-* GraphQL
-* Crafter Engine's Site Item Service (for querying content based on structure)
-* XPath (within a content item)
-
-^^^^^^
-Search
-^^^^^^
 
 To perform content queries you need to use the client provided by Crafter Engine, the bean name is
 ``openSearchClient`` and it can be used from any Groovy script.
@@ -111,122 +98,10 @@ allow you to use builder objects to develop complex logic for building the queri
 
   return items
 
-.. TODO: CONTINUE FROM THIS POINT
 
 .. note::
-  You can find detailed information for each builder in the
-  `java documentation <https://artifacts.elastic.co/javadoc/co/elastic/clients/elasticsearch-java/7.16.3/index.html>`_
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Make a Query for Content Based on Structure
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The following code examples use the Site Item Service in Crafter Engine to get content.
-You can find the interface for this service :javadoc_base_url:`HERE <engine/org/craftercms/engine/service/SiteItemService.html>`
-
-.. code-block:: groovy
-
-    def topNavItems = [:]
-    def siteDir = siteItemService.getSiteTree("/site/website", 2)
-
-    if (siteDir) {
-        def dirs = siteDir.childItems
-        dirs.each { dir ->
-                def dirName = dir.getStoreName()
-                def dirItem = siteItemService.getSiteItem("/site/website/${dirName}/index.xml")
-                if (dirItem != null) {
-                    def dirDisplayName = dirItem.queryValue('internal-name')
-                       topNavItems.put(dirName, dirDisplayName)
-                }
-       }
-    }
-
-    return topNavItems
-
-
-Make a Query for Content Based on Structure with Filter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The following code examples use the Site Item Service in Crafter Engine to get content.
-In the example we build on the Site Item Service of getting objects under a specific tree in the repository by supplying a filter that will be applied to each object first to determine if it should be part of the result.
-Filters can make their determination based on the path or the content or even "outside" influence.
-
-    * You can find the interface for this service :javadoc_base_url:`HERE <engine/org/craftercms/engine/service/SiteItemService.html>`
-    * Note in the example below we define our own filter based on the ItemFilter interface found :javadoc_base_url:`HERE <core/org/craftercms/core/service/ItemFilter.html>`
-    * However, you may use out of the box filters as well if they meet your needs. These are found :javadoc_base_url:`HERE <engine/org/craftercms/engine/service/filter/package-frame.html>`
-    * Finally be aware that for simple filename patterns, methods for this already exist in the Site Item Service and no filter is required (but they make for an simple to understand example.)
-
-.. code-block:: groovy
-
-    import org.craftercms.core.service.ItemFilter
-    import org.craftercms.core.service.Item
-    import java.util.List
-
-
-    def result = [:]
-    def navItems = [:]
-    def siteDir = siteItemService.getSiteTree("/site/website", 2, new StartsWithAItemFilter(), null)
-
-    if (siteDir) {
-        def dirs = siteDir.childItems
-        dirs.each { dir ->
-                def dirName = dir.getStoreName()
-                def dirItem = siteItemService.getSiteItem("/site/website/${dirName}/index.xml")
-                if (dirItem != null) {
-                    def dirDisplayName = dirItem.queryValue('internal-name')
-                       navItems.put(dirName, dirDisplayName)
-                }
-       }
-    }
-    result.navItems = navItems
-
-    return result
-
-
-    /**
-     * Define a filter that returns only items that have a name that starts with "A" or "a"
-     */
-    class StartsWithAItemFilter implements ItemFilter {
-
-        public boolean runBeforeProcessing() {
-            return true
-        }
-
-        public boolean runAfterProcessing() {
-            return false
-        }
-
-        public boolean accepts(Item item, List acceptedItems, List rejectedItems, boolean runBeforeProcessing) {
-
-          if (item.getName().toLowerCase().startsWith("a")) {
-              return true
-          }
-
-          return false
-        }
-     }
-
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Make a Query Against Fields in a Content Object
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The following code examples use the Site Item Service in Crafter Engine to get content.
-You can find the interface for this service :javadoc_base_url:`HERE <engine/org/craftercms/engine/service/SiteItemService.html>`
-
-.. code-block:: groovy
-
-    def result = [:]
-    def segment = "a segment value" // could come from profile, query param etc
-
-    // load a specific content object
-    def itemDom = siteItemService.getSiteItem("/site/components/sliders/default.xml")
-
-    // query specific values from the object
-    result.header = itemDom.queryValue("/component/targetedSlide//segment[contains(.,'" +  segment + "')]../label")
-    result.image = itemDom.queryValue("/component/targetedSlide//segment[contains(.,'" +  segment + "')]/../image")
-
-    return result
+You can find detailed information for each builder in the
+`java documentation <https://opensearch.org/docs/latest/clients/java/>`_
 
 -----------------------------
 Implementing a Faceted Search
@@ -236,28 +111,28 @@ It is possible to use aggregations to provide a faceted search to allow users to
 results based on one or more fields.
 
 .. note::
-  Search offers a variety of aggregations that can be used depending on the type of the fields in
-  your model or the requirements in the UI to display the data, for detailed information visit the
-  `official documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html>`_
+Search offers a variety of aggregations that can be used depending on the type of the fields in
+your model or the requirements in the UI to display the data, for detailed information visit the
+`official documentation <https://opensearch.org/docs/latest/aggregations/>`_
 
 In this section, we will be using the most basic aggregation ``terms`` to provide a faceted search based on the
 category of blog articles.
 
 .. image:: /_static/images/developer/search/faceted-search.webp
-  :width: 90 %
-  :align: center
+:width: 90 %
+:align: center
 
 First we must define the fields that will be used for the aggregation, in this case the page model for ``Article`` has
 a ``categories`` field that uses a datasource to get values from a taxonomy in the site. For this case the name of the
-field in the Elasticsearch index is ``categories.item.value_smv``.
+field in the index is ``categories.item.value_smv``.
 
 .. image:: /_static/images/developer/search/model.webp
-  :width: 75 %
-  :align: center
+:width: 75 %
+:align: center
 
 .. image:: /_static/images/developer/search/datasource.webp
-  :width: 75 %
-  :align: center
+:width: 75 %
+:align: center
 
 To build the faceted search we must:
 
@@ -266,52 +141,52 @@ To build the faceted search we must:
 #. Display the facets in the search result page
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Sending aggregations in the search request
+Sending Aggregations in the Search Request
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Aggregations are added in the request using the ``aggs`` key, each aggregation must have a unique name
 as key and the configuration depending on the type.
 
 .. code-block:: groovy
-  :linenos:
-  :caption: Search request with aggregations
+:linenos:
+:caption: Search request with aggregations
 
-  def result = elasticsearchClient.search(r -> r
-    .query(q -> q
-      .queryString(s -> s
-        .query(q as String)
-      )
-    )
-    .from(start)
-    .size(rows)
-    .aggregations('categories', a -> a
-      .terms(t -> t
-        .field(categories.item.value_smv)
-        .minDocCount(1)
-      )
-    )
-  , Map)
+def result = openSearchClient.search(r -> r
+.query(q -> q
+.queryString(s -> s
+.query(q as String)
+)
+)
+.from(start)
+.size(rows)
+.aggregations('categories', a -> a
+.terms(t -> t
+.field(categories.item.value_smv)
+.minDocCount(1)
+)
+)
+, Map)
 
 In the previous example we include a ``terms`` aggregation called ``categories`` that will return all found values for
 the field ``categories.item.value_smv`` that have at least 1 article assigned.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Processing aggregations in the search response
+Processing Aggregations in the Search Response
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Search will return the aggregations in the response under the ``aggregations`` field, the contents of each
 aggregation will be different depending on the type.
 
 .. code-block:: groovy
-  :linenos:
-  :caption: Search response with aggregations
+:linenos:
+:caption: Search response with aggregations
 
-  def facets = [:]
-  if(result.aggregations()) {
-    result.aggregations().each { name, agg ->
-      facets[name] = agg.sterms().buckets().array().collect{ [ value: it.key(), count: it.docCount() ] }
-    }
-  }
+def facets = [:]
+if(result.aggregations()) {
+result.aggregations().each { name, agg ->
+facets[name] = agg.sterms().buckets().array().collect{ [ value: it.key(), count: it.docCount() ] }
+}
+}
 
 In the previous example we extract the aggregations from the response object to a simple map, this example assumes
 that all aggregation will be of type ``terms`` so it gets the ``key`` and ``docCount`` for each value found
@@ -321,23 +196,23 @@ The result from a query of all existing articles could return something similar 
 
 .. code-block:: javascript
   :linenos:
-  :caption: Search result with facets
+:caption: Search result with facets
 
-  "facets":{
-    "categories":[
-      { "value":"Entertainment", "count":3 },
-      { "value":"Health", "count":3 },
-      { "value":"Style", "count":1 },
-      { "value":"Technology", "count":1 }
-    ]
-  }
+"facets":{
+"categories":[
+{ "value":"Entertainment", "count":3 },
+{ "value":"Health", "count":3 },
+{ "value":"Style", "count":1 },
+{ "value":"Technology", "count":1 }
+]
+}
 
 According to the given example, if we run our query again including a filter for category with value ``Entertainment``
 it will return exactly 3 articles, and in the next query we will get a new set of facets based on those articles.
 This is how users can quickly reduce the number of result and find more useful data with less effort.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Displaying facets in the search result pages
+Displaying Facets in the Search Result Pages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This step will change depending on the technology being used to display all information, it can be done in Freemarker
@@ -345,64 +220,64 @@ or a SPA using Angular, React or Vue. As an example we will use Handlebars templ
 jQuery.
 
 .. code-block:: html
-  :force:
-  :linenos:
-  :caption: Search result page templates
+:force:
+:linenos:
+:caption: Search result page templates
 
-  <script id="search-facets-template" type="text/x-handlebars-template">
-    {{#if facets}}
-    <div class="row uniform">
-      {{#each facets}}
-      <div class="3u 6u(medium) 12u$(small)">
-        <input type="checkbox" id="{{value}}" name="{{value}}" value="{{value}}">
-        <label for="{{value}}">{{value}} ({{count}})</label>
-      </div>
-      {{/each}}
-    </div>
-    {{/if}}
-  </script>
+<script id="search-facets-template" type="text/x-handlebars-template">
+{{#if facets}}
+<div class="row uniform">
+{{#each facets}}
+<div class="3u 6u(medium) 12u$(small)">
+<input type="checkbox" id="{{value}}" name="{{value}}" value="{{value}}">
+<label for="{{value}}">{{value}} ({{count}})</label>
+</div>
+{{/each}}
+</div>
+{{/if}}
+</script>
 
-  <script id="search-results-template" type="text/x-handlebars-template">
-    {{#each articles}}
-    <div>
-      <h4><a href="{{url}}">{{title}}</a></h4>
-      {{#if highlight}}
-      <p>{{{highlight}}}</p>
-      {{/if}}
-    </div>
-    {{else}}
-    <p>No results found</p>
-    {{/each}}
-  </script>
+<script id="search-results-template" type="text/x-handlebars-template">
+{{#each articles}}
+<div>
+<h4><a href="{{url}}">{{title}}</a></h4>
+{{#if highlight}}
+<p>{{{highlight}}}</p>
+{{/if}}
+</div>
+{{else}}
+<p>No results found</p>
+{{/each}}
+</script>
 
 We use the templates to render the results after executing the search
 
 .. code-block:: javascript
   :linenos:
-  :caption: Search execution and rendering the results
+:caption: Search execution and rendering the results
 
-  $.get("/api/search.json", params).done(function(data) {
-     if (data == null) {
-       data = {};
-     }
-     $('#search-facets').html(facetsTemplate({ facets: data.facets.categories }));
-     $('#search-results').html(articlesTemplate(data));
-  });
+$.get("/api/search.json", params).done(function(data) {
+if (data == null) {
+data = {};
+}
+$('#search-facets').html(facetsTemplate({ facets: data.facets.categories }));
+$('#search-results').html(articlesTemplate(data));
+});
 
 The final step is to trigger a new search when the user selects one of the values in the facets
 
 .. code-block:: javascript
   :linenos:
-  :caption: Triggering a new search using the facets
+:caption: Triggering a new search using the facets
 
-  $('#search-facets').on('click', 'input', function() {
-   var categories = [];
-   $('#search-facets input:checked').each(function() {
-     categories.push($(this).val());
-   });
+$('#search-facets').on('click', 'input', function() {
+var categories = [];
+$('#search-facets input:checked').each(function() {
+categories.push($(this).val());
+});
 
-   doSearch(queryParam, categories);
-  });
+doSearch(queryParam, categories);
+});
 
 .. _search-multi-index-query:
 
@@ -412,21 +287,21 @@ Multi-index Query
 
 CrafterCMS supports querying more than one search index in a single query.
 
-To search your site and other indexes, simply send a search query with a comma separated list of indexes/aliases (ES pointer to an index). It will then search your site and the other indexes
+To search your site and other indexes, simply send a search query with a comma separated list of indexes/aliases (pointer to an index). It will then search your site and the other indexes
 
 .. image:: /_static/images/search/craftercms-multi-index-query.svg
-   :width: 80 %
-   :align: center
+:width: 80 %
+:align: center
 
-Remember that all other Elasticsearch indexes/aliases to be searched need to be prefixed with the site name like this: ``SITENAME_{external-index-name}``. When sending the query, remove the prefix ``SITENAME_`` from the other indexes/aliases.
+Remember that all other indexes/aliases to be searched need to be prefixed with the site name like this: ``SITENAME_{external-index-name}``. When sending the query, remove the prefix ``SITENAME_`` from the other indexes/aliases.
 
 Here's how the query will look like for the above image of a multi-index query for the site ``acme`` (the SITENAME), and the CD database index ``acme_cd-database``:
 
 .. code-block:: groovy
-    :linenos:
-    :caption: *Search multiple indexes - Groovy example*
+:linenos:
+:caption: *Search multiple indexes - Groovy example*
 
-    def result = elasticsearch.search(new SearchRequest('cd-database').source(builder))
+def result = openSearch.search(new SearchRequest('cd-database').source(builder))
 
 |
 
@@ -434,7 +309,7 @@ Here's how the query will look like for the above image of a multi-index query f
     :linenos:
     :caption: *Search multiple indexes - REST example*
 
-    curl -s -X POST "localhost:8080/api/1/site/elasticsearch/search?index=cd-database" -d '
+    curl -s -X POST "localhost:8080/api/1/site/search/search?index=cd-database" -d '
     {
       "query" : {
         "match_all" : {}
@@ -455,9 +330,11 @@ CrafterCMS supports the following search query parameters:
 * ignore_throttled
 * ignore_unavailable
 
-See `the official docs <https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html>`__ for more information on the above parameters.
+See `the official docs <https://opensearch.org/docs/latest/api-reference/search/>`__ for more information on the above parameters.
 
-For more information on ``indices_boost``, see `here <https://www.elastic.co/guide/en/elasticsearch//reference/current/search-multiple-indices.html#index-boost>`__
+For more information on ``indices_boost``, see index boosting in this article `<https://opensearch.org/docs/latest/api-reference/search/>`__
+
+.. TODO: CONTINUE FROM THIS POINT
 
 ---------------------------------
 Implementing a Type-ahead Service
@@ -593,3 +470,117 @@ component you only need to provide the REST endpoint in the configuration:
       window.location.replace("/search-results?q=" + ui.item.value);
     }
   });
+
+
+.. --------------------------------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Make a Query for Content Based on Structure
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following code examples use the Site Item Service in Crafter Engine to get content.
+You can find the interface for this service :javadoc_base_url:`HERE <engine/org/craftercms/engine/service/SiteItemService.html>`
+
+.. code-block:: groovy
+
+    def topNavItems = [:]
+    def siteDir = siteItemService.getSiteTree("/site/website", 2)
+
+    if (siteDir) {
+        def dirs = siteDir.childItems
+        dirs.each { dir ->
+                def dirName = dir.getStoreName()
+                def dirItem = siteItemService.getSiteItem("/site/website/${dirName}/index.xml")
+                if (dirItem != null) {
+                    def dirDisplayName = dirItem.queryValue('internal-name')
+                       topNavItems.put(dirName, dirDisplayName)
+                }
+       }
+    }
+
+    return topNavItems
+
+
+Make a Query for Content Based on Structure with Filter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following code examples use the Site Item Service in Crafter Engine to get content.
+In the example we build on the Site Item Service of getting objects under a specific tree in the repository by supplying a filter that will be applied to each object first to determine if it should be part of the result.
+Filters can make their determination based on the path or the content or even "outside" influence.
+
+    * You can find the interface for this service :javadoc_base_url:`HERE <engine/org/craftercms/engine/service/SiteItemService.html>`
+    * Note in the example below we define our own filter based on the ItemFilter interface found :javadoc_base_url:`HERE <core/org/craftercms/core/service/ItemFilter.html>`
+    * However, you may use out of the box filters as well if they meet your needs. These are found :javadoc_base_url:`HERE <engine/org/craftercms/engine/service/filter/package-frame.html>`
+    * Finally be aware that for simple filename patterns, methods for this already exist in the Site Item Service and no filter is required (but they make for an simple to understand example.)
+
+.. code-block:: groovy
+
+    import org.craftercms.core.service.ItemFilter
+    import org.craftercms.core.service.Item
+    import java.util.List
+
+
+    def result = [:]
+    def navItems = [:]
+    def siteDir = siteItemService.getSiteTree("/site/website", 2, new StartsWithAItemFilter(), null)
+
+    if (siteDir) {
+        def dirs = siteDir.childItems
+        dirs.each { dir ->
+                def dirName = dir.getStoreName()
+                def dirItem = siteItemService.getSiteItem("/site/website/${dirName}/index.xml")
+                if (dirItem != null) {
+                    def dirDisplayName = dirItem.queryValue('internal-name')
+                       navItems.put(dirName, dirDisplayName)
+                }
+       }
+    }
+    result.navItems = navItems
+
+    return result
+
+
+    /**
+     * Define a filter that returns only items that have a name that starts with "A" or "a"
+     */
+    class StartsWithAItemFilter implements ItemFilter {
+
+        public boolean runBeforeProcessing() {
+            return true
+        }
+
+        public boolean runAfterProcessing() {
+            return false
+        }
+
+        public boolean accepts(Item item, List acceptedItems, List rejectedItems, boolean runBeforeProcessing) {
+
+          if (item.getName().toLowerCase().startsWith("a")) {
+              return true
+          }
+
+          return false
+        }
+     }
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Make a Query Against Fields in a Content Object
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following code examples use the Site Item Service in Crafter Engine to get content.
+You can find the interface for this service :javadoc_base_url:`HERE <engine/org/craftercms/engine/service/SiteItemService.html>`
+
+.. code-block:: groovy
+
+    def result = [:]
+    def segment = "a segment value" // could come from profile, query param etc
+
+    // load a specific content object
+    def itemDom = siteItemService.getSiteItem("/site/components/sliders/default.xml")
+
+    // query specific values from the object
+    result.header = itemDom.queryValue("/component/targetedSlide//segment[contains(.,'" +  segment + "')]../label")
+    result.image = itemDom.queryValue("/component/targetedSlide//segment[contains(.,'" +  segment + "')]/../image")
+
+    return result
+
+.. --------------------------------------------------------------------------------------------------

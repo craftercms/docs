@@ -1,8 +1,7 @@
-:is-up-to-date: False
-:last-updated: 4.0.0
+:is-up-to-date: True
+:last-updated: 4.1.0
 
-
-.. index:: Information Architecture
+.. index:: Information Architecture, IA
 
 .. _information-architecture:
 
@@ -23,12 +22,6 @@ Information Architecture
 .. TODO review this:
 .. .. _anatomy-of-a-craftercms-repository:
 
-.. TODO Fix below
-
-``/static-assets/content`` is typically mapped to a blob store and managed by content authors and contains things like ``images``
-``/static-assets/css`` or js, ... is managed by developers
-``static-assets/app`` is where deployed SPA applications end up
-
 .. list-table::
     :widths: 25 75
     :header-rows: 1
@@ -47,6 +40,10 @@ Information Architecture
       - Static assets
     * - `/static-assets/app`
       - SPA applications
+    * - `/static-assets/content`
+      - Typically mapped to a blob store to handle very large files. This is typically managed by content authors and contains things like ``images``, ``videos``, etc.
+    * - `/static-assets/css`, `/static-assets/js`, `/static-assets/fonts`, etc.
+      - CSS, JS, fonts, etc. files managed by developers
     * - `/templates`
       - Templates (FreeMarker view templates for templated sites)
     * - `/scripts`
@@ -68,10 +65,10 @@ Best Practices
 Content Type Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. Reference site-admin how to configure where content items can be created
+Content types can be configured to limit the creation of content items to certain areas in the information architecture. For example, an ``article`` content type can be limited to ``/site/website/articles/*`` or a ``carousel`` content type can be limited to ``/components/carousels/*``. This helps keep the repository clean and organized. To configure content types, please follow the guide :ref:`content-creation-permissions-section`.
 
 ^^^^^^^^^^^^
 Quick Create
 ^^^^^^^^^^^^
 
-.. how to configure quickCreate to create in the right IA
+The information architecture can be made easier to follow by configuring the quick create feature to create content in the right place. To configure the quick create feature, follow the :ref:`setting-up-quick-create` guide.

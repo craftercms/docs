@@ -1,4 +1,7 @@
+:is-up-to-date: False
+:last-update: 4.1.0
 
+.. index:: REST, REST API, API
 
 .. _rest-content-retrieval-api:
 
