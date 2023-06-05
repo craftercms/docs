@@ -14,7 +14,7 @@ This section lets you get started on setting up your CrafterCMS for production. 
 environment normally consists of one authoring instance and one or more delivery instances.
 
 Before we begin, please review the following for requirements and supported platforms:
-:ref:`requirements_supported_platforms`
+:ref:`Requirements <requirements_supported_platforms>`
 
 -------------------------------------
 Setting up the production environment

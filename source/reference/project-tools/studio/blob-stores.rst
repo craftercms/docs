@@ -286,9 +286,9 @@ Let's take a closer look:
 5. Publish the files to staging
 """""""""""""""""""""""""""""""
 
-The next step in our example is to publish the files to ``staging``. To publish a file to ``staging``, navigate to the file in the ``Sidebar`` then right click on the file, and select ``Approve & Publish`` or open the ``Dashboard`` and select the file/s you want to publish to ``staging`` in the ``My Recent Activity`` widget and click on ``Approve & Publish`` from the context nav.
+The next step in our example is to publish the files to ``staging``. To publish a file to ``staging``, navigate to the file in the ``Sidebar`` then right click on the file, and select ``Publish`` or open the ``Dashboard`` and select the file/s you want to publish to ``staging`` in the ``Unpublished Work`` widget and click on ``Publish`` from the context nav.
 
-The ``Approve for Publish`` dialog will come up. Remember to select ``staging`` for the ``Publishing Options``
+The ``Publish`` dialog will come up. Remember to select ``staging`` for the ``Publishing Target``
 
 .. image:: /_static/images/site-admin/ext-storage/publish-to-staging.webp
     :align: center
@@ -310,9 +310,9 @@ When the file/s are published to ``staging``, the files get published to the ``s
 6. Publish the files to delivery
 """"""""""""""""""""""""""""""""
 
-Finally, we'll publish the file/s to ``live``. To publish a file to ``live``, navigate to the file in the ``Sidebar`` then right click on the file, and select ``Approve & Publish`` or open the ``Dashboard`` and select the file/s you want to publish to ``live`` in the ``My Recent Activity`` widget and click on ``Approve & Publish`` from the context nav.
+Finally, we'll publish the file/s to ``live``. To publish a file to ``live``, navigate to the file in the ``Sidebar`` then right click on the file, and select ``Publish`` or open the ``Dashboard`` and select the file/s you want to publish to ``live`` in the ``Unpublished Work`` widget and click on ``Approve & Publish`` from the context nav.
 
-The ``Approve for Publish`` dialog will come up. Remember to select ``live`` for the ``Publishing Options``
+The ``Publish`` dialog will come up. Remember to select ``live`` for the ``Publishing Target``
 
 .. image:: /_static/images/site-admin/ext-storage/publish-to-live.webp
     :align: center

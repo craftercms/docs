@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.0
+:last-updated: 4.1.0
 
 
 .. index:: Configure Engine to use MongoDB
@@ -17,7 +17,7 @@ Here are the steps for configuring Engine to use mongoDB:
 -------------------------
 Configure the MongoDB URI
 -------------------------
-To define the connection between MongoDB and Engine, add the URI in the config file `/config/engine/site-config.xml`. (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio dashboard to Project Tools > Configuration, and finally picking up the **Engine Project Configuration** option from the dropdown).
+To define the connection between MongoDB and Engine, add the URI in the config file `/config/engine/site-config.xml`. (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio sidebar to Project Tools > Configuration, and finally picking up the **Engine Project Configuration** option from the dropdown).
 
 .. code-block:: xml
 
@@ -37,7 +37,7 @@ For more details on the Connection String URI format, see https://docs.mongodb.c
 ----------------------
 Create a GMongo client
 ----------------------
-To access Mongo from Groovy, we'll use a GMongo client. We'll need to add some beans in `/config/engine/application-context.xml`. (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio dashboard to Project Tools > Configuration, and finally picking up the **Engine Site Application Context** option from the dropdown).
+To access Mongo from Groovy, we'll use a GMongo client. We'll need to add some beans in `/config/engine/application-context.xml`. (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio sidebar to Project Tools > Configuration, and finally picking up the **Engine Site Application Context** option from the dropdown).
 
 .. code-block:: xml
     :linenos:
@@ -97,8 +97,7 @@ This can be done from the Studio project dashboard with the following steps:
     :align: center
     :alt: Studio - Project Dashboard from Sidebar
 
-2. Locate the ``My Recent Activity`` dashlet and change the filter to ``All`` to display the
-configuration files
+2. Locate the ``Unpublished Work`` dashlet
 
 .. image:: /_static/images/site-admin/mongo/my-recent-activity.webp
    :alt: Studio Project Dashboard - My Recent Activity

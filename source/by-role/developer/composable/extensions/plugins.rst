@@ -42,8 +42,9 @@ Authoring Plugins
 Authoring plugins are those that allow extending Crafter Studio through UI widgets, applications,
 and backend services.
 
+""""""""""""""""""""""""""""""
 UI Widgets and Standalone Apps
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""
 
 There are two types of UI plugins
 
@@ -83,8 +84,9 @@ Examples of UI Plugins are
 * `Vanilla Standalone <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-vanilla>`_: illustrates a simple standalone app with single JS entry point without transpilation or anything special
 * `Component library <https://github.com/craftercms/authoring-ui-plugin-examples/tree/master/packages/example-component-library>`_: illustrates the creation of a library of widgets that can be rendered throughout Studio UI
 
+""""""""
 Services
-^^^^^^^^
+""""""""
 
 Through authoring plugins you can add your own service API rest scripts.
 
@@ -100,9 +102,9 @@ Delivery Plugins
 Delivery plugins allow you to extend the CrafterCMS project by adding content types (and all
 content types involve) and REST APIs.
 
-
+"""""""""""""
 Content Types
-^^^^^^^^^^^^^
+"""""""""""""
 
 You can add Content Types including their definition, Groovy controller, Freemarker templates and accompanying
 assets.
@@ -112,15 +114,15 @@ content type definition, its freemarker template and some JavaScript and CSS to 
 when used. When the extension containing the content type is installed, authors would be able to make
 use of the YouTube video component adding videos to their content.
 
-
+"""""""
 Scripts
-^^^^^^^
+"""""""
 
 Scripts allow you to add APIs to you CrafterCMS project application.
 
-
+"""""""""
 Templates
-^^^^^^^^^
+"""""""""
 
 Through delivery plugins, you can add Freemarker templates to your project. Templates could be
 the rendering template of a content type or a Freemarker template hook (explained below). So, in summary,
@@ -526,7 +528,7 @@ To create your own plugin, your files/folders needs to go in the corresponding t
 plugin folder, following the structure below:
 
 
-- ``craftercms-plugin.yaml``: the plugin descriptor, see :ref:`plugin-descriptor-file` for details
+- ``craftercms-plugin.yaml``: the plugin descriptor, see :ref:`CrafterCMS Plugin Descriptor <plugin-descriptor-file>` for details
 
 - ``.crafter``
 
@@ -600,8 +602,9 @@ directory structure will be read and corresponding plugin files copied to the pr
 
 .. _ui-plugin-directory-structure:
 
+"""""""""""""""""""""""""""""
 UI Plugin Directory Structure
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""
 
 Authoring plugins should use the following directory structure:
 
@@ -615,8 +618,9 @@ where:
 
   - Plugin sources and/or build output of the plugin would be placed here.
 
+"""""""""""""""""""""""""""
 Example Directory Structure
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""
 
 Here's an example directory structure for a plugin with the *pluginId* value set to ``org.craftercms.sample`` :
 

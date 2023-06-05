@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.0
+:last-updated: 4.1.0
 
 
 .. index:: Engine Multi-Target Configuration
@@ -172,7 +172,7 @@ Let's take a look at an example of overriding the Project Configuration used by 
    To publish the override configuration files setup above, open the **Dashboard** via the Navigation Menu on the top right or via the Sidebar.  Scroll to the **Unpublished Work** dashlet.
 
    .. image:: /_static/images/site-admin/view-override-config-on-dashboard.webp
-      :alt: Multi-target Configuration - New configuration files listed in the "My Recent Activity" dashlet in the Dashboard
+      :alt: Multi-target Configuration - New configuration files listed in the "Unpublished Work" dashlet in the Dashboard
       :width: 85 %
       :align: center
 

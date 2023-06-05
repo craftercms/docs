@@ -289,7 +289,7 @@ To setup our form control to be automatically wired in the corresponding configu
 
 |
 
-See :ref:`plugin-descriptor-file` for more information on setting up automatic wiring of your plugin in Studio
+See :ref:`CrafterCMS Plugin Descriptor <plugin-descriptor-file>` for more information on setting up automatic wiring of your plugin in Studio
 
 ^^^^^^^^^^^^^^^
 Test the Plugin

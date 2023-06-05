@@ -89,9 +89,7 @@ the next steps to create in the page content type a Repeating Group with a text 
 
            The ``ROLE_`` prefix is optional for values in ``authorizedRoles``
 
-#. Add an Input control inside the Repeating Group, with the **Title** field set to "Role" and the **Name / Variable
-    Name** field set to "role". Make this Input required by checking the checkbox under **Constraints** in the
-    **Required** field in the **Properties Explorer**.
+#. Add an Input control inside the Repeating Group, with the **Title** field set to "Role" and the **Name / Variable Name** field set to "role". Make this Input required by checking the checkbox under **Constraints** in the **Required** field in the **Properties Explorer**.
 
     .. image:: /_static/images/site-admin/role_properties.webp
         :alt: Engine Project Security Guide - Role Properties

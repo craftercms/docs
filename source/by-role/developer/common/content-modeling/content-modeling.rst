@@ -490,7 +490,7 @@ Now let's take a look at what happens when we delete content with item specific 
 
 |
 
-Open the **Dashboard** and notice the items that are deleted. We deleted an article, and since the image is located in a path matching the regex pattern for item specific dependencies, the image is deleted along with the article.
+Open the **Dashboard** and notice the items that are deleted in the ``My Activity`` dashlet. We deleted an article, and since the image is located in a path matching the regex pattern for item specific dependencies, the image is deleted along with the article.
 
 .. figure:: /_static/images/content-model/delete-article-sidebar.webp
     :alt: Sidebar and Dashboard showing items that were deleted when the article was deleted

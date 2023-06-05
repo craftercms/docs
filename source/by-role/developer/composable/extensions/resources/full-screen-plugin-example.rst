@@ -20,7 +20,7 @@ For this example, as outlined in the vanilla example referenced above, we will n
    In a local folder, create the descriptor file for your plugin ``craftercms-plugin.yaml`` with the ``plugin.id`` set to ``org.craftercms.plugin.vanilla``, then create the following folder structure:
 
    .. code-block:: text
-         :caption: *Dashboard Plugin Directory Structure*
+         :caption: *Plugin Directory Structure*
 
          <plugin-folder>/
            craftercms-plugin.yaml
