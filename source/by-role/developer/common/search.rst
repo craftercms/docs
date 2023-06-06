@@ -100,8 +100,8 @@ allow you to use builder objects to develop complex logic for building the queri
 
 
 .. note::
-You can find detailed information for each builder in the
-`java documentation <https://opensearch.org/docs/latest/clients/java/>`_
+    You can find detailed information for each builder in the
+    `java documentation <https://opensearch.org/docs/latest/clients/java/>`_
 
 -----------------------------
 Implementing a Faceted Search
@@ -111,28 +111,28 @@ It is possible to use aggregations to provide a faceted search to allow users to
 results based on one or more fields.
 
 .. note::
-Search offers a variety of aggregations that can be used depending on the type of the fields in
-your model or the requirements in the UI to display the data, for detailed information visit the
-`official documentation <https://opensearch.org/docs/latest/aggregations/>`_
+    Search offers a variety of aggregations that can be used depending on the type of the fields in
+    your model or the requirements in the UI to display the data, for detailed information visit the
+    `official documentation <https://opensearch.org/docs/latest/aggregations/>`_
 
 In this section, we will be using the most basic aggregation ``terms`` to provide a faceted search based on the
 category of blog articles.
 
 .. image:: /_static/images/developer/search/faceted-search.webp
-:width: 90 %
-:align: center
+    :width: 90 %
+    :align: center
 
 First we must define the fields that will be used for the aggregation, in this case the page model for ``Article`` has
 a ``categories`` field that uses a datasource to get values from a taxonomy in the site. For this case the name of the
 field in the index is ``categories.item.value_smv``.
 
 .. image:: /_static/images/developer/search/model.webp
-:width: 75 %
-:align: center
+    :width: 75 %
+    :align: center
 
 .. image:: /_static/images/developer/search/datasource.webp
-:width: 75 %
-:align: center
+    :width: 75 %
+    :align: center
 
 To build the faceted search we must:
 
@@ -148,24 +148,24 @@ Aggregations are added in the request using the ``aggs`` key, each aggregation m
 as key and the configuration depending on the type.
 
 .. code-block:: groovy
-:linenos:
-:caption: Search request with aggregations
+    :linenos:
+    :caption: Search request with aggregations
 
-def result = openSearchClient.search(r -> r
-.query(q -> q
-.queryString(s -> s
-.query(q as String)
-)
-)
-.from(start)
-.size(rows)
-.aggregations('categories', a -> a
-.terms(t -> t
-.field(categories.item.value_smv)
-.minDocCount(1)
-)
-)
-, Map)
+    def result = openSearchClient.search(r -> r
+      .query(q -> q
+        .queryString(s -> s
+          .query(q as String)
+        )
+      )
+      .from(start)
+      .size(rows)
+      .aggregations('categories', a -> a
+        .terms(t -> t
+        .field(categories.item.value_smv)
+        .minDocCount(1)
+        )
+      )
+    , Map)
 
 In the previous example we include a ``terms`` aggregation called ``categories`` that will return all found values for
 the field ``categories.item.value_smv`` that have at least 1 article assigned.
@@ -178,15 +178,15 @@ Search will return the aggregations in the response under the ``aggregations`` f
 aggregation will be different depending on the type.
 
 .. code-block:: groovy
-:linenos:
-:caption: Search response with aggregations
+    :linenos:
+    :caption: Search response with aggregations
 
-def facets = [:]
-if(result.aggregations()) {
-result.aggregations().each { name, agg ->
-facets[name] = agg.sterms().buckets().array().collect{ [ value: it.key(), count: it.docCount() ] }
-}
-}
+    def facets = [:]
+    if(result.aggregations()) {
+      result.aggregations().each { name, agg ->
+        facets[name] = agg.sterms().buckets().array().collect{ [ value: it.key(), count: it.docCount() ] }
+      }
+    }
 
 In the previous example we extract the aggregations from the response object to a simple map, this example assumes
 that all aggregation will be of type ``terms`` so it gets the ``key`` and ``docCount`` for each value found
@@ -195,17 +195,17 @@ that all aggregation will be of type ``terms`` so it gets the ``key`` and ``docC
 The result from a query of all existing articles could return something similar to this:
 
 .. code-block:: javascript
-  :linenos:
-:caption: Search result with facets
+    :linenos:
+    :caption: Search result with facets
 
-"facets":{
-"categories":[
-{ "value":"Entertainment", "count":3 },
-{ "value":"Health", "count":3 },
-{ "value":"Style", "count":1 },
-{ "value":"Technology", "count":1 }
-]
-}
+    "facets":{
+      "categories":[
+        { "value":"Entertainment", "count":3 },
+        { "value":"Health", "count":3 },
+        { "value":"Style", "count":1 },
+        { "value":"Technology", "count":1 }
+      ]
+    }
 
 According to the given example, if we run our query again including a filter for category with value ``Entertainment``
 it will return exactly 3 articles, and in the next query we will get a new set of facets based on those articles.
@@ -220,64 +220,64 @@ or a SPA using Angular, React or Vue. As an example we will use Handlebars templ
 jQuery.
 
 .. code-block:: html
-:force:
-:linenos:
-:caption: Search result page templates
+    :force:
+    :linenos:
+    :caption: Search result page templates
 
-<script id="search-facets-template" type="text/x-handlebars-template">
-{{#if facets}}
-<div class="row uniform">
-{{#each facets}}
-<div class="3u 6u(medium) 12u$(small)">
-<input type="checkbox" id="{{value}}" name="{{value}}" value="{{value}}">
-<label for="{{value}}">{{value}} ({{count}})</label>
-</div>
-{{/each}}
-</div>
-{{/if}}
-</script>
+    <script id="search-facets-template" type="text/x-handlebars-template">
+      {{#if facets}}
+        <div class="row uniform">
+          {{#each facets}}
+            <div class="3u 6u(medium) 12u$(small)">
+              <input type="checkbox" id="{{value}}" name="{{value}}" value="{{value}}">
+              <label for="{{value}}">{{value}} ({{count}})</label>
+            </div>
+          {{/each}}
+        </div>
+      {{/if}}
+    </script>
 
-<script id="search-results-template" type="text/x-handlebars-template">
-{{#each articles}}
-<div>
-<h4><a href="{{url}}">{{title}}</a></h4>
-{{#if highlight}}
-<p>{{{highlight}}}</p>
-{{/if}}
-</div>
-{{else}}
-<p>No results found</p>
-{{/each}}
-</script>
+    <script id="search-results-template" type="text/x-handlebars-template">
+    {{#each articles}}
+      <div>
+        <h4><a href="{{url}}">{{title}}</a></h4>
+        {{#if highlight}}
+          <p>{{{highlight}}}</p>
+        {{/if}}
+      </div>
+      {{else}}
+      <p>No results found</p>
+    {{/each}}
+    </script>
 
 We use the templates to render the results after executing the search
 
 .. code-block:: javascript
-  :linenos:
-:caption: Search execution and rendering the results
+    :linenos:
+    :caption: Search execution and rendering the results
 
-$.get("/api/search.json", params).done(function(data) {
-if (data == null) {
-data = {};
-}
-$('#search-facets').html(facetsTemplate({ facets: data.facets.categories }));
-$('#search-results').html(articlesTemplate(data));
-});
+    $.get("/api/search.json", params).done(function(data) {
+      if (data == null) {
+        data = {};
+      }
+      $('#search-facets').html(facetsTemplate({ facets: data.facets.categories }));
+      $('#search-results').html(articlesTemplate(data));
+    });
 
 The final step is to trigger a new search when the user selects one of the values in the facets
 
 .. code-block:: javascript
-  :linenos:
-:caption: Triggering a new search using the facets
+    :linenos:
+    :caption: Triggering a new search using the facets
 
-$('#search-facets').on('click', 'input', function() {
-var categories = [];
-$('#search-facets input:checked').each(function() {
-categories.push($(this).val());
-});
+    $('#search-facets').on('click', 'input', function() {
+    var categories = [];
+    $('#search-facets input:checked').each(function() {
+    categories.push($(this).val());
+    });
 
-doSearch(queryParam, categories);
-});
+    doSearch(queryParam, categories);
+    });
 
 .. _search-multi-index-query:
 
@@ -290,18 +290,18 @@ CrafterCMS supports querying more than one search index in a single query.
 To search your site and other indexes, simply send a search query with a comma separated list of indexes/aliases (pointer to an index). It will then search your site and the other indexes
 
 .. image:: /_static/images/search/craftercms-multi-index-query.svg
-:width: 80 %
-:align: center
+   :width: 80 %
+   :align: center
 
 Remember that all other indexes/aliases to be searched need to be prefixed with the site name like this: ``SITENAME_{external-index-name}``. When sending the query, remove the prefix ``SITENAME_`` from the other indexes/aliases.
 
 Here's how the query will look like for the above image of a multi-index query for the site ``acme`` (the SITENAME), and the CD database index ``acme_cd-database``:
 
 .. code-block:: groovy
-:linenos:
-:caption: *Search multiple indexes - Groovy example*
+    :linenos:
+    :caption: *Search multiple indexes - Groovy example*
 
-def result = openSearch.search(new SearchRequest('cd-database').source(builder))
+    def result = openSearch.search(new SearchRequest('cd-database').source(builder))
 
 |
 
@@ -319,7 +319,7 @@ def result = openSearch.search(new SearchRequest('cd-database').source(builder))
 
 |
 
-See `here <../../../../_static/api/studio.html#tag/search/operation/search>`_ for more information on the Crafter Engine API ``search``.
+See `here <../../../../_static/api/engine.html#tag/search/operation/search>`_ for more information on the Crafter Engine API ``search``.
 
 CrafterCMS supports the following search query parameters:
 
@@ -373,7 +373,7 @@ To create the REST endpoint, place the following Groovy file in your scripts fol
     // Obtain the text from the request parameters
     def term = params.term
 
-    def helper = new SuggestionHelper(elasticsearchClient)
+    def helper = new SuggestionHelper(searchClient)
 
     // Execute the query and process the results
     return helper.getSuggestions(term)
@@ -386,26 +386,26 @@ You will also need to create the helper class in the scripts folder
 
     package org.craftercms.sites.editorial
 
-    import co.elastic.clients.elasticsearch.core.SearchRequest
-    import org.craftercms.search.elasticsearch.client.ElasticsearchClientWrapper
+    import org.opensearch.client.opensearch.core.SearchRequest
+    import org.craftercms.search.opensearch.client.OpenSearchClientWrapper
 
     class SuggestionHelper {
 
     	static final String DEFAULT_CONTENT_TYPE_QUERY = "content-type:\"/page/article\""
     	static final String DEFAULT_SEARCH_FIELD = "subject_t"
 
-    	ElasticsearchClientWrapper elasticsearchClient
+    	OpenSearchClientWrapper searchClient
 
     	String contentTypeQuery = DEFAULT_CONTENT_TYPE_QUERY
     	String searchField = DEFAULT_SEARCH_FIELD
 
-    	SuggestionHelper(elasticsearchClient) {
-    		this.elasticsearchClient = elasticsearchClient
+    	SuggestionHelper(searchClient) {
+    		this.searchClient = searchClient
     	}
 
     	def getSuggestions(String term) {
 		  def queryStr = "${contentTypeQuery} AND ${searchField}:*${term}*"
-		  def result = elasticsearchClient.search(SearchRequest.of(r -> r
+		  def result = searchClient.search(SearchRequest.of(r -> r
 			.query(q -> q
 				.queryString(s -> s
 					.query(queryStr)
