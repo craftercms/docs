@@ -485,6 +485,7 @@ Now let's take a look at what happens when we delete content with item specific 
 .. figure:: /_static/images/content-model/delete-article-dialog.webp
     :alt: Delete dialog showing items to be deleted
     :align: center
+    :width: 80%
 
 |
 
@@ -493,6 +494,7 @@ Open the **Dashboard** and notice the items that are deleted in the ``My Activit
 .. figure:: /_static/images/content-model/delete-article-sidebar.webp
     :alt: Sidebar and Dashboard showing items that were deleted when the article was deleted
     :align: center
+    :width: 60%
 
 |
 

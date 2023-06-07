@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :since-version: 4.0.2
 
 :orphan:
@@ -40,8 +40,8 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Properties            || - Allow Shared: Allows user to browse shared components              |
 ||                       || - Allow Embedded: Allows user to browse embedded components          |
-||                       || - Enable Browse Existing: Allows user to browse existing items       |
-||                       || - Enable Search Existing: Allows user to search for existing items   |
+||                       || - Enable Browse: Allows user to browse existing items                |
+||                       || - Enable Search: Allows user to search for existing items            |
 ||                       || - Base Repository Path: Path where to store new content created.     |
 ||                       || - Base Browse Path: Path where to browse the datasource items.       |
 ||                       || - Content Types: Components that can be accepted                     |

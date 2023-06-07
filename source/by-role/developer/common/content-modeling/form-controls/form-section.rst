@@ -1,4 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
+:last-updated: 4.1.0
 
 :orphan:
 
@@ -30,6 +31,16 @@ Configuration
     :align: center
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
+
++------------------------+-----------------------------------------------------------------------+
+|| Title                 || Control title to show the author on the input form                   |
++------------------------+-----------------------------------------------------------------------+
+|| Description           || Form Control description.                                            |
+||                       ||                                                                      |
++------------------------+-----------------------------------------------------------------------+
+|| Default Open          || Indicates whether the section is open when the form opens            |
++------------------------+-----------------------------------------------------------------------+
+
 
 +------------------------+-----------------------------------------------------------------------+
 || Description/Purpose   || Create a new section in the form, this is to help the content authors|

@@ -1,5 +1,5 @@
-:is-up-to-date: False
-:last-updated: 4.0.3
+:is-up-to-date: True
+:last-updated: 4.1.0
 
 :orphan:
 
@@ -37,6 +37,7 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Description/Purpose   || Rich Text Area field.                                                |
 +------------------------+-----------------------------------------------------------------------+
+|| Properties            || * Width: Width of the Rich Text Area.                                |
 || Properties            || * Height: Height of the Rich Text Area.                              |
 ||                       || * Force Root Block p Tag.                                            |
 ||                       || * Force p tags New Lines: Adds a p tag on every new line.            |

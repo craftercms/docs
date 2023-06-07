@@ -1,5 +1,5 @@
-:is-up-to-date: False
-:last-updated: 4.0.1
+:is-up-to-date: True
+:last-updated: 4.1.0
 
 :orphan:
 
@@ -32,8 +32,12 @@ Configuration
 
 .. include:: /includes/form-controls/form-control-field-basics.rst
 
+
 +------------------------+-----------------------------------------------------------------------+
 || Description/Purpose   || Repeating groups are used when the form has one or several controls  |
 ||                       || that repeat to capture the same data as records. For example: a      |
 ||                       || list of images in a carousel, or a list of widgets on a page.        |
++------------------------+-----------------------------------------------------------------------+
+|| Properties            || * Minimum Occurrences: Minimum number of repeating controls          |
+||                       || * Maximum Occurrences: Maximum number of repeating controls          |
 +------------------------+-----------------------------------------------------------------------+
