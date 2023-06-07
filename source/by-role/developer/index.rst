@@ -75,8 +75,9 @@ Regardless of type of project, a developer needs to be familiar with the followi
     common/content-access
     common/adding-experience-builder
     common/security
-    common/redirects
     common/servlet-filters
+    common/working-with-dates-groovy
+    ../../reference/redirects
 
 For templated projects, there are more topics to cover:
 
@@ -102,6 +103,8 @@ DevContentOps
 
 DevContentOps is a set of tools and processes that allow teams of software developers, content authors, and system administrators to work together on a single
 project across multiple environments. These tools and processes are fully described in :ref:`devcontentops`.
+
+Studio is a great tool for content authors and for quick changes, but for development, you'll want to use your IDE. Learn how to use your IDE with Studio in the :ref:`working-in-your-ide` article.
 
 -------
 Upgrade

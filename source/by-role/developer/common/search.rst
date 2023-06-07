@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.0
 
 .. index:: Search, Query, OpenSearch, Elasticsearch, GraphQL
@@ -334,7 +334,6 @@ See `the official docs <https://opensearch.org/docs/latest/api-reference/search/
 
 For more information on ``indices_boost``, see index boosting in this article `<https://opensearch.org/docs/latest/api-reference/search/>`__
 
-.. TODO: CONTINUE FROM THIS POINT
 
 ---------------------------------
 Implementing a Type-ahead Service
@@ -343,12 +342,12 @@ Implementing a Type-ahead Service
 In this section, we will be looking at how to use a query to provide suggestions as the user types.
 
 .. image:: /_static/images/search/search-typeahead-box.webp
-  :width: 50 %
-  :align: center
+    :width: 50 %
+    :align: center
 
 .. image:: /_static/images/search/search-typeahead-suggestions.webp
-  :width: 50 %
-  :align: center
+    :width: 50 %
+    :align: center
 
 ^^^^^^^^^^^^^^^^^
 Build the Service
@@ -356,8 +355,9 @@ Build the Service
 
 Create a REST service that returns suggestions based on the content in your site.
 
+""""""""""""
 Requirements
-^^^^^^^^^^^^
+""""""""""""
 
 - The service will take the user's current search term and find similar content.
 - The service will return the results as a list of strings
@@ -365,8 +365,8 @@ Requirements
 To create the REST endpoint, place the following Groovy file in your scripts folder
 
 .. code-block:: groovy
-  :linenos:
-  :caption: /scripts/rest/suggestions.get.groovy
+    :linenos:
+    :caption: /scripts/rest/suggestions.get.groovy
 
     import org.craftercms.sites.editorial.SuggestionHelper
 
@@ -381,8 +381,8 @@ To create the REST endpoint, place the following Groovy file in your scripts fol
 You will also need to create the helper class in the scripts folder
 
 .. code-block:: groovy
-  :linenos:
-  :caption: /scripts/classes/org/craftercms/sites/editorial/SuggestionHelper.groovy
+    :linenos:
+    :caption: /scripts/classes/org/craftercms/sites/editorial/SuggestionHelper.groovy
 
     package org.craftercms.sites.editorial
 
@@ -391,27 +391,27 @@ You will also need to create the helper class in the scripts folder
 
     class SuggestionHelper {
 
-    	static final String DEFAULT_CONTENT_TYPE_QUERY = "content-type:\"/page/article\""
-    	static final String DEFAULT_SEARCH_FIELD = "subject_t"
+        static final String DEFAULT_CONTENT_TYPE_QUERY = "content-type:\"/page/article\""
+        static final String DEFAULT_SEARCH_FIELD = "subject_t"
 
-    	OpenSearchClientWrapper searchClient
+        OpenSearchClientWrapper searchClient
 
-    	String contentTypeQuery = DEFAULT_CONTENT_TYPE_QUERY
-    	String searchField = DEFAULT_SEARCH_FIELD
+        String contentTypeQuery = DEFAULT_CONTENT_TYPE_QUERY
+        String searchField = DEFAULT_SEARCH_FIELD
 
-    	SuggestionHelper(searchClient) {
-    		this.searchClient = searchClient
-    	}
+        SuggestionHelper(searchClient) {
+            this.searchClient = searchClient
+        }
 
-    	def getSuggestions(String term) {
-		  def queryStr = "${contentTypeQuery} AND ${searchField}:*${term}*"
-		  def result = searchClient.search(SearchRequest.of(r -> r
-			.query(q -> q
-				.queryString(s -> s
-					.query(queryStr)
-				)
-			)
-		  ), Map)
+        def getSuggestions(String term) {
+            def queryStr = "${contentTypeQuery} AND ${searchField}:*${term}*"
+            def result = searchClient.search(SearchRequest.of(r -> r
+                .query(q -> q
+                    .queryString(s -> s
+                        .query(queryStr)
+                    )
+                )
+            ), Map)
 
 		  return process(result)
 	    }
@@ -422,7 +422,6 @@ You will also need to create the helper class in the scripts folder
     		}
     		return processed
     	}
-
     }
 
 Once those files are created and the site context is reloaded you should be able to test the
@@ -431,14 +430,14 @@ REST endpoint from a browser and get a result similar to this:
   ``http://localhost:8080/api/1/services/suggestions.json?term=men``
 
 .. code-block:: json
-  :linenos:
+    :linenos:
 
-  [
-    "Men Styles For Winter",
-    "Women Styles for Winter",
-    "Top Books For Young Women",
-    "5 Popular Diets for Women"
-  ]
+    [
+        "Men Styles For Winter",
+        "Women Styles for Winter",
+        "Top Books For Young Women",
+        "5 Popular Diets for Women"
+    ]
 
 ^^^^^^^^^^^^
 Build the UI
@@ -446,8 +445,9 @@ Build the UI
 
 The front end experience is built with HTML, JavaScript and specifically AJAX.
 
+""""""""""""
 Requirements
-^^^^^^^^^^^^
+""""""""""""
 
   - When the user types a value send a request to the server to get instant results
   - Display the results and show suggestions about what the user might be looking for
@@ -470,117 +470,3 @@ component you only need to provide the REST endpoint in the configuration:
       window.location.replace("/search-results?q=" + ui.item.value);
     }
   });
-
-
-.. --------------------------------------------------------------------------------------------------
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Make a Query for Content Based on Structure
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The following code examples use the Site Item Service in Crafter Engine to get content.
-You can find the interface for this service :javadoc_base_url:`HERE <engine/org/craftercms/engine/service/SiteItemService.html>`
-
-.. code-block:: groovy
-
-    def topNavItems = [:]
-    def siteDir = siteItemService.getSiteTree("/site/website", 2)
-
-    if (siteDir) {
-        def dirs = siteDir.childItems
-        dirs.each { dir ->
-                def dirName = dir.getStoreName()
-                def dirItem = siteItemService.getSiteItem("/site/website/${dirName}/index.xml")
-                if (dirItem != null) {
-                    def dirDisplayName = dirItem.queryValue('internal-name')
-                       topNavItems.put(dirName, dirDisplayName)
-                }
-       }
-    }
-
-    return topNavItems
-
-
-Make a Query for Content Based on Structure with Filter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The following code examples use the Site Item Service in Crafter Engine to get content.
-In the example we build on the Site Item Service of getting objects under a specific tree in the repository by supplying a filter that will be applied to each object first to determine if it should be part of the result.
-Filters can make their determination based on the path or the content or even "outside" influence.
-
-    * You can find the interface for this service :javadoc_base_url:`HERE <engine/org/craftercms/engine/service/SiteItemService.html>`
-    * Note in the example below we define our own filter based on the ItemFilter interface found :javadoc_base_url:`HERE <core/org/craftercms/core/service/ItemFilter.html>`
-    * However, you may use out of the box filters as well if they meet your needs. These are found :javadoc_base_url:`HERE <engine/org/craftercms/engine/service/filter/package-frame.html>`
-    * Finally be aware that for simple filename patterns, methods for this already exist in the Site Item Service and no filter is required (but they make for an simple to understand example.)
-
-.. code-block:: groovy
-
-    import org.craftercms.core.service.ItemFilter
-    import org.craftercms.core.service.Item
-    import java.util.List
-
-
-    def result = [:]
-    def navItems = [:]
-    def siteDir = siteItemService.getSiteTree("/site/website", 2, new StartsWithAItemFilter(), null)
-
-    if (siteDir) {
-        def dirs = siteDir.childItems
-        dirs.each { dir ->
-                def dirName = dir.getStoreName()
-                def dirItem = siteItemService.getSiteItem("/site/website/${dirName}/index.xml")
-                if (dirItem != null) {
-                    def dirDisplayName = dirItem.queryValue('internal-name')
-                       navItems.put(dirName, dirDisplayName)
-                }
-       }
-    }
-    result.navItems = navItems
-
-    return result
-
-
-    /**
-     * Define a filter that returns only items that have a name that starts with "A" or "a"
-     */
-    class StartsWithAItemFilter implements ItemFilter {
-
-        public boolean runBeforeProcessing() {
-            return true
-        }
-
-        public boolean runAfterProcessing() {
-            return false
-        }
-
-        public boolean accepts(Item item, List acceptedItems, List rejectedItems, boolean runBeforeProcessing) {
-
-          if (item.getName().toLowerCase().startsWith("a")) {
-              return true
-          }
-
-          return false
-        }
-     }
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Make a Query Against Fields in a Content Object
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The following code examples use the Site Item Service in Crafter Engine to get content.
-You can find the interface for this service :javadoc_base_url:`HERE <engine/org/craftercms/engine/service/SiteItemService.html>`
-
-.. code-block:: groovy
-
-    def result = [:]
-    def segment = "a segment value" // could come from profile, query param etc
-
-    // load a specific content object
-    def itemDom = siteItemService.getSiteItem("/site/components/sliders/default.xml")
-
-    // query specific values from the object
-    result.header = itemDom.queryValue("/component/targetedSlide//segment[contains(.,'" +  segment + "')]../label")
-    result.image = itemDom.queryValue("/component/targetedSlide//segment[contains(.,'" +  segment + "')]/../image")
-
-    return result
-
-.. --------------------------------------------------------------------------------------------------

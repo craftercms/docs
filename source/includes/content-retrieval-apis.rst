@@ -1,6 +1,3 @@
-----------------------
-Content Retrieval APIs
-----------------------
 CrafterCMS requires you use one of the following APIs to gain access to your content:
 
 * FreeMarker API (great for templated projects) :ref:`templating-api`
@@ -9,7 +6,7 @@ CrafterCMS requires you use one of the following APIs to gain access to your con
 * Search API :ref:`search`
 * REST API (great for SPAs and/or AJAX) :ref:`rest-content-retrieval-api`
 * Groovy (great for full control of the API endpoints and response shape) :ref:`groovy-api`
-* Java (can be accessed from Groovy and gives full access to Engine) :ref:`javadoc`
+* Java (can be accessed from Groovy and gives full access to Crafter Engine) :ref:`java-api`
 
 .. |js_sdk_desc| replace:: The JavaScript SDK allows access to CrafterCMS services from any SPA framework or direct JavaScript. The SDK also enables Experience Builder (In-Content Editing capabilities) for any project, including SPA projects.
 .. |graphql_desc| replace:: The GraphQL API allows content retrieval and control over the shape of the response.
@@ -23,7 +20,7 @@ CrafterCMS requires you use one of the following APIs to gain access to your con
 .. |graphql_link| replace:: :ref:`graphql`
 .. |rest_api_link| replace:: :ref:`rest-content-retrieval-api`
 .. |search_link| replace:: :ref:`search`
-.. |groovy_link| replace:: :ref:`groovy-api` and :ref:`javadoc`
+.. |groovy_link| replace:: :ref:`groovy-api` and :ref:`java-api`
 .. |static_asset_link| replace:: :ref:`static-content-access`
 .. |freemarker_link| replace:: :ref:`templating-api`
 

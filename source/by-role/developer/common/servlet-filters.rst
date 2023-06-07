@@ -1,21 +1,17 @@
-:is-up-to-date: False
+:is-up-to-date: True
+:last-updated: 4.1.0
 
+.. index:: Servlet Filters
 
-.. index:: Working With URL Interceptor/Servlet Filters in CrafterCMS
+.. _servlet-filters:
 
-.. _working-with-url-filters:
-
-=============================================
-URL Interceptor/Servlet Filters in CrafterCMS
-=============================================
+===============
+Servlet Filters
+===============
 
 In this section, we’ll learn the specific mechanics of creating and configuring a filter in CrafterCMS.
 
-A filter in CrafterCMS is a Groovy-based controller that allows you to intercept inbound requests for content and API responses and dynamically apply rules, modify the request or transform the response. A CrafterCMS Filter has the same interface and mechanics as a Java J2EE Servlet Filter. Some examples of filter use are:
-
-* **Apply security rules:** Check for SAML2, Site Minder, or other security tokens before allowing the request to proceed.
-* **Active Record:** Example: before serving the requested resource, look up and load the user’s profile into the request so it is available to all components of the system.
-* **Apply compression:** Gzip all of the data returned by the requested resource (page, API, etc)
+A filter in CrafterCMS is a Groovy-based controller that allows you to intercept inbound requests for content and API responses and dynamically apply rules, modify the request or transform the response. A CrafterCMS Filter has the same interface and mechanics as a Java J2EE Servlet Filter.
 
 -----------------------------
 Step 1: Create the Controller

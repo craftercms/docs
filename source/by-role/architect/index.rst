@@ -188,12 +188,7 @@ considerations that CrafterCMS supports. Considerations include:
 Available APIs
 ^^^^^^^^^^^^^^
 
-CrafterCMS supports a number of APIs to access content for headless applications, including:
-
-* :ref:`ReST API <rest-api>`
-* :ref:`GraphQL <graphql>`
-* :ref:`Search API <search>`
-* :ref:`Custom API <groovy-api>`
+.. include:: /includes/content-retrieval-apis.rst
 
 ^^^^^^^^^^^
 Inheritance

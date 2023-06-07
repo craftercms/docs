@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-update: 4.1.0
 
 .. index:: REST, REST API, API
@@ -9,7 +9,7 @@
 REST Content Retrieval APIs
 ===========================
 
-To view the REST Content Retrieval APIs:
+Content can be accessed via the REST Content Retrieval APIs. To view the REST Content Retrieval APIs:
 
 .. open_iframe_modal_button::
    :label: Open here

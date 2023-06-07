@@ -31,8 +31,9 @@ Simply install the plugin https://craftercms.com/marketplace/redirect-file-plugi
     :width: 75 %
     :align: center
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Create the Page for Redirecting
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Open the **Sidebar**. Right click on ``Home`` and select ``New Content``. Select the content type ``Redirect``. Fill in **Page URL** with ``fashion``, **Internal Name** with ``fashion``, **Nav Label** with ``Fashion`` and **Redirect URL** with ``/style`` since we want the page to redirect to the category landing page for style, then click on **Save and Close**
 
