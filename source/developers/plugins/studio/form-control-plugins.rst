@@ -8,7 +8,7 @@
 Building Form Engine Control Plugins
 ====================================
 
-In :ref:`form-engine-control`, we learned how to build form engine controls placed in the Studio war file.  Crafter Studio also allows plugins for form engine controls through the ``getPluginFile`` API found here `getPluginFile <../../_static/api/studio.html#tag/plugin/operation/getPluginFile>`_
+In :ref:`form-engine-control`, we learned how to build form engine controls placed in the Studio war file.  Crafter Studio also allows plugins for form engine controls through the ``getPluginFile`` API found here `getPluginFile <../../../_static/api/studio.html#tag/plugin/operation/getPluginFile>`_
 
 -------------------------------
 The anatomy of a Control Plugin
