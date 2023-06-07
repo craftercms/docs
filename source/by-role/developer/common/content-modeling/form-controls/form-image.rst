@@ -1,5 +1,5 @@
-:is-up-to-date: False
-:last-updated: 4.0.3
+:is-up-to-date: True
+:last-updated: 4.1.0
 
 
 :orphan:
@@ -44,8 +44,9 @@ Configuration
 ||                       || * Thumbnail Width: Width of thumbnail image.                         |
 ||                       || * Thumbnail Height: Height of thumbnail image.                       |
 ||                       || * Data Source: Source where the image will be loaded.                |
+||                       || * Read Only: Make field read-only (can't be changed by the author).  |
 +------------------------+-----------------------------------------------------------------------+
-|| Constraints           || * Read Only: Make field read-only (can't be changed by the author).  |
+|| Constraints           || * Required: Make field required to fill out.                         |
 +------------------------+-----------------------------------------------------------------------+
 || Related Data Sources  || * |imgUploadFromDesktop|                                             |
 ||                       || * |imgFromRepo|                                                      |

@@ -1,4 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
+:last-updated: 4.1.0
 
 :orphan:
 
@@ -41,6 +42,7 @@ Configuration
 ||                       || * Max Length: Maximum number of characters to accept as input.       |
 ||                       || * Allow Resize: Allows the resizing feature of the text area.        |
 ||                       || * Read Only: Make field read-only (can't be changed by the author).  |
+||                       || * Escape Content: Allows escaping of script tags.                    |
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || * Required: Make field required to fill out.                         |
 +------------------------+-----------------------------------------------------------------------+

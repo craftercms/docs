@@ -1,4 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
+:last-updated: 4.1.0
 
 :orphan:
 
@@ -38,6 +39,7 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Properties            || * Data Source: Source that will populate the checkboxes.             |
 ||                       || * Show Select All: To select/unselect all options.                   |
+||                       || * List Direction: Display list horizontally or vertically            |
 ||                       || * Read Only: Make field read-only (can't be changed by the author).  |
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || * Minimum Selection: Set a minimum amount of checkboxes to be        |

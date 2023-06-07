@@ -1,5 +1,5 @@
-:is-up-to-date: False
-:last-updated: 4.0.3
+:is-up-to-date: True
+:last-updated: 4.1.0
 
 :orphan:
 
@@ -43,6 +43,7 @@ Configuration
 ||                       || * Read Only: Make field read-only (can't be changed by the author).  |
 ||                       || * Disable Flattening for Search.                                     |
 ||                       || * Use single value filename.                                         |
+||                       || * Use _mvs postfix.                                                  |
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || * Allow Duplicate: Allows adding the same item more than once.       |
 +------------------------+-----------------------------------------------------------------------+

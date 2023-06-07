@@ -1,4 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
+:last-updated: 4.1.0
 
 :orphan:
 
@@ -38,8 +39,8 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 ||                       || * Display Size: How much of the input to show on the author input    |
 ||                       ||   form.                                                              |
-|| Properties            || * Max Length: Maximum number of numeric characters to accept as input|
-||                       || * Min Length: Minimum number of numeric characters to accept as input|
+|| Properties            || * Maximum: Maximum number of numeric characters to accept as input   |
+||                       || * Minimum: Minimum number of numeric characters to accept as input   |
 ||                       || * Read Only: Make field read-only (can't be changed by the author).  |
 ||                       || * Tokenize for Indexing: Make the object searchable by this field.   |
 +------------------------+-----------------------------------------------------------------------+

@@ -1,4 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
+:last-updated: 4.1.0
 
 :orphan:
 
@@ -36,9 +37,9 @@ Configuration
 +------------------------+-----------------------------------------------------------------------+
 || Description/Purpose   || Simple text filename.                                                |
 +------------------------+-----------------------------------------------------------------------+
-|| Properties            || * Size: How much of the input to show on the author input form.      |
-||                       || * Max Length: Maximum number of characters to accept as input.       |
+|| Properties            || * Max Length: Maximum number of characters to accept as input.       |
 ||                       || * Read Only: Make field read-only (can't be changed by the author).  |
+||                       || * Allow Edit Without Warning.                                        |
 +------------------------+-----------------------------------------------------------------------+
 || Constraints           || None.                                                                |
 +------------------------+-----------------------------------------------------------------------+
