@@ -6,15 +6,11 @@ CrafterCMS 4.0.5
 
 *Released June 7, 2023*
 
-This release includes fixes for issues with the release version 4.0.4
-
 ^^^^^^^
 Updates
 ^^^^^^^
 
 * Fixed bug where Studio fails to ingest very large commits
-
-For a full list of tickets, please visit: `GitHub 4.0.5 Milestone <https://github.com/craftercms/craftercms/milestone/101?closed=1>`_
 
 For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
 
