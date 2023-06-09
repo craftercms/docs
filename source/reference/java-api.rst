@@ -3,17 +3,18 @@
 
 .. index:: Java API, Groovy API
 
-.. TODO: Outline
-    - Introduce in-process/java API
-    - Point to javadoc
-    - Elaborate with examples on XPath content queries
-    - Elaborate with examples on Structure queries and filtering
-
-.. _java_api:
+.. _java-api:
 
 ========
 Java API
 ========
+
+.. TODO: Outline
+- Introduce in-process/java API
+- Point to javadoc
+- Elaborate with examples on XPath content queries
+- Elaborate with examples on Structure queries and filtering
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Make a Query for Content Based on Structure
