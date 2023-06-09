@@ -6,6 +6,7 @@
 ==========
 Developers
 ==========
+.. contents::
 
 This section focuses on how to build content rich applications backed by CrafterCMS. It covers
 the basic topics you need to define a content type and render that content as part of a page,
@@ -73,11 +74,13 @@ Regardless of type of project, a developer needs to be familiar with the followi
     common/content-modeling/information-architecture
     common/content-modeling/content-inheritance
     common/content-access
+    common/static-content-access
     common/adding-experience-builder
     common/security
     common/servlet-filters
     common/working-with-dates-groovy
     ../../reference/redirects
+    common/working-with-sass
 
 For templated projects, there are more topics to cover:
 
@@ -172,5 +175,4 @@ Below is a short set of links to other documentation for technology that Crafter
 
 
 .. Smaller topics that are needed but not sure how to represent/wrap these yet
-    .. working-with-sass
     .. asset-processing

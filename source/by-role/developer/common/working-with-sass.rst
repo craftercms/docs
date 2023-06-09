@@ -1,28 +1,21 @@
-:is-up-to-date: False
-:since-version: 4.0.3
+:is-up-to-date: True
+:last-updated: 4.0.3
 
-.. _working-with-sass-in-craftercms:
+.. _working-with-sass:
 
-===============================
-Working with Sass in CrafterCMS
-===============================
-
-.. version_tag::
-   :label: Since
-   :version: 4.0.3
-
-|
-
+=================
+Working with Sass
+=================
 CrafterCMS does not directly compile Sass to CSS, but, you can use any UI toolchain you wish to compile to CSS.
 
 When working with Sass in CrafterCMS, you can do the following to compile your Sass code to CSS then commit the
-built CSS file to Studio:
+built CSS file to git:
 
 #. Create a ``sources`` folder inside of your project ``sandbox`` directory
    (e.g. ``CRAFTER_HOME/data/repos/site/PROJECT_NAME/sandbox/sources``)
 
    Please note that the following folders under the ``sandbox`` folder are
-   not mapped to the blob stores and developers own these:
+   not mapped to the blob stores and developers own these folders:
 
    - sources/*
    - static-assets/app/*
@@ -62,7 +55,7 @@ Example
 -------
 
 Let's take a look at an example of a project that uses Sass. We will be using a project created using the **Wordify
-Blueprint** named **MYPROJECT** from the Marketplace. For this example, we'll change the color of the social links
+Blueprint** named **myproject** from the Marketplace. For this example, we'll change the color of the social links
 on the top bar from white to yellow.
 
 .. image:: /_static/images/developer/working-with-sass-wordify-bp.webp
@@ -73,7 +66,7 @@ on the top bar from white to yellow.
 Let's begin by looking at the ``package.json`` file in your project:
 
 .. code-block:: json
-   :caption: *CRAFTER_HOME/data/repos/site/MYPROJECT/sandbox/sources/scss/package.json*
+   :caption: *CRAFTER_HOME/data/repos/site/myproject/sandbox/sources/scss/package.json*
 
    {
      "name": "scss",
@@ -88,15 +81,15 @@ Let's begin by looking at the ``package.json`` file in your project:
    }
 
 The Sass file for the project as seen above can be found under
-*CRAFTER_HOME/data/repos/site/MYPROJECT/sandbox/sources/scss/src/style.scss*. Notice that inside the file,
-it compiles the Sass file into CSS and places the CSS file under ``CRAFTER_HOME/data/repos/site/MYPROJECT/sandbox/static-assets/css``.
+*CRAFTER_HOME/data/repos/site/myproject/sandbox/sources/scss/src/style.scss*. Notice that inside the file,
+it compiles the Sass file into CSS and places the CSS file under ``CRAFTER_HOME/data/repos/site/myproject/sandbox/static-assets/css``.
 
 This CSS file is imported in the ``header_include.ftl`` file under the ``templates/web/fragments`` folder of
 your project:
 
 .. code-block:: html
    :force:
-   :caption: *CRAFTER_HOME/data/repos/site/MYPROJECT/sandbox/templates/web/fragments*
+   :caption: *CRAFTER_HOME/data/repos/site/myproject/sandbox/templates/web/fragments*
 
    <#-- Theme Style: Edit @ sources/scss and build using sass compiler -->
    <link rel="stylesheet" href="/static-assets/css/style.css">
@@ -106,7 +99,7 @@ In the Sass file, scroll down to ``.top-bar``, and change the value of ``color``
 
 .. code-block:: scss
    :emphasize-lines: 7
-   :caption: *CRAFTER_HOME/data/repos/site/MYPROJECT/sandbox/sources/scss/src/style.scss*
+   :caption: *CRAFTER_HOME/data/repos/site/myproject/sandbox/sources/scss/src/style.scss*
    :force:
 
    .top-bar {
@@ -139,7 +132,7 @@ The next step we need to do is to build:
    $ sass src/style.scss ../../static-assets/css/style.css --no-source-map --style=compressed
    ✨  Done in 1.02s.
 
-Then git add & commit the CSS file:
+Then ``git add`` & ``commit`` the CSS file:
 
 .. code-block:: bash
    :caption: *Git add & commit the newly compiled style.css file*

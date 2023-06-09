@@ -8,6 +8,7 @@
 ======
 Search
 ======
+.. contents::
 
 To perform content queries you need to use the client provided by Crafter Engine, the bean name is
 ``openSearchClient`` and it can be used from any Groovy script.
