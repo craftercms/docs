@@ -112,7 +112,7 @@ Complimentary Projects
     *   - Kubernetes
         - `Kubernetes Deployments on GitHub <https://github.com/craftercms/kubernetes-deployments>`_
     *   - DevContentOps Toolkit (Crafter CLI)
-        - `DevContentOps Toolkit (CrafterCMS CLI) <devcontentops-toolkit>`_
+        - :ref:`DevContentOps Toolkit (CrafterCMS CLI) <devcontentops-toolkit>`
     *   - Extensions: Plugins
         - `CrafterCMS Sponsored Plugins on GitHub <https://github.com/orgs/craftercms/repositories?q=plugin&type=all&language=&sort=>`_
     *   - Extensions: Blueprints
