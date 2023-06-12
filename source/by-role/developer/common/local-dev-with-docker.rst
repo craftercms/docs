@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :last-update: 4.1.0
 
-.. index:: Local Development with Docker
+.. index:: Local Development with Docker, Docker, Local Development
 
 .. _local-dev-with-docker:
 
@@ -9,10 +9,10 @@
 Local Development with Docker
 =============================
 
-Sometimes you'll need to have the Authoring project/site repositories in your docker container available in the host filesystem, specially if you want to update the files from your IDE. To support access to your projects via a local IDE, we need to mount the Authoring project repositories directory to a host directory.
+While local development is best done with a CrafterCMS bundle (:ref:`install-craftercms-via-binary-bundles`), sometimes Docker is the path of least resistance. To persist across Docker container restarts, you'll need to have the Authoring project/site repositories in your docker container available in the host filesystem, specially if you want to update the files from your IDE. To support access to your projects via a local IDE, we need to mount the Authoring project repositories directory to a host directory.
 
    .. note::
-      Performance may be slow when using WSL2 (Windows Subsystem for Linux 2) and a mounted Authoring project repositories directory to a host directory
+       Performance may be slow when using WSL2 (Windows Subsystem for Linux 2) and a mounted Authoring project repositories directory to a host directory.
 
 This section describes how to configure CrafterCMS on Docker for local development tools.
 
@@ -50,7 +50,7 @@ Here are the steps:
        ...
 
        tomcat:
-         image: craftercms/authoring_tomcat:4.1.0 # craftercms version flag
+         image: craftercms/authoring_tomcat:latest # craftercms version flag
          depends_on:
            - search
            - deployer
@@ -59,7 +59,7 @@ Here are the steps:
          ...
 
        deployer:
-         image: craftercms/deployer:4.1.0 # craftercms version flag
+         image: craftercms/deployer:latest # craftercms version flag
          depends_on:
            - search
          ports:

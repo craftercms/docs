@@ -3,11 +3,12 @@
 
 .. index:: Experience Builder, XB, In-Context Editing, ICE
 
-.. _xb:
+.. _experience-builder:
 
-======================================
-Adding Experience Builder to a Project
-======================================
+=======================
+Experience Builder (XB)
+=======================
+.. contents::
 
 .. version_tag::
    :label: Since

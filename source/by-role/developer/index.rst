@@ -75,12 +75,13 @@ Regardless of type of project, a developer needs to be familiar with the followi
     common/content-modeling/content-inheritance
     common/content-access
     common/static-content-access
-    common/adding-experience-builder
+    common/experience-builder
     common/security
     common/servlet-filters
     common/working-with-dates-groovy
     ../../reference/redirects
     common/working-with-sass
+    common/custom-error-pages
 
 For templated projects, there are more topics to cover:
 
