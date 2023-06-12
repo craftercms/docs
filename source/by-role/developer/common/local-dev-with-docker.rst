@@ -1,9 +1,7 @@
-:is-up-to-date: false
+:is-up-to-date: True
 :last-update: 4.1.0
 
 .. index:: Local Development with Docker
-
-.. TODO: Update to v4
 
 .. _local-dev-with-docker:
 
@@ -11,7 +9,7 @@
 Local Development with Docker
 =============================
 
-Sometimes you'll need to have the Authoring project repositories in your docker container available in the host filesystem, specially if you want to update the files from your IDE. To support access to your projects via a local IDE, we need to mount the Authoring project repositories directory to a host directory.
+Sometimes you'll need to have the Authoring project/site repositories in your docker container available in the host filesystem, specially if you want to update the files from your IDE. To support access to your projects via a local IDE, we need to mount the Authoring project repositories directory to a host directory.
 
    .. note::
       Performance may be slow when using WSL2 (Windows Subsystem for Linux 2) and a mounted Authoring project repositories directory to a host directory
@@ -29,9 +27,9 @@ Here are the steps:
 
       |
 
-#. Check the site directory is a shared drive
+#. Check the project directory is a shared drive
 
-   Make sure the drive with the directory that will contain the sites is a shared drive by clicking on Docker Desktop ``Preferences`` -> ``Resources`` -> ``File Sharing``)
+   Make sure the drive with the directory that will contain the projects is a shared drive by clicking on Docker Desktop ``Settings`` -> ``Resources`` -> ``File Sharing``)
 
    .. image:: /_static/images/developer/docker/docker-desktop-file-sharing.webp
        :alt: Docker Desktop - File Sharing
@@ -43,7 +41,7 @@ Here are the steps:
 
 #. Edit the ``docker-compose.yml`` file
 
-   Navigate to the ``authoring`` directory and open the ``docker-compose.yml`` file in an editor and edit the ``crafter_data`` volume like in the highlighted section below (assume C is the shared drive, and replace the ``/host/path/to/sites`` for the actual host path):
+   Navigate to the ``authoring`` directory and open the ``docker-compose.yml`` file in an editor and edit the ``crafter_data`` volume like in the highlighted section below (assume C is the shared drive, and replace the ``/host/path/to/projects`` for the actual host path):
 
    .. code-block:: yaml
        :emphasize-lines: 25-31
@@ -52,34 +50,34 @@ Here are the steps:
        ...
 
        tomcat:
-         image: craftercms/authoring_tomcat:3.1.17 # craftercms version flag
+         image: craftercms/authoring_tomcat:4.1.0 # craftercms version flag
          depends_on:
-           - elasticsearch
+           - search
            - deployer
          ports:
            - 8080:8080
          ...
 
        deployer:
-         image: craftercms/deployer:3.1.17 # craftercms version flag
+         image: craftercms/deployer:4.1.0 # craftercms version flag
          depends_on:
-           - elasticsearch
+           - search
          ports:
            - 9191:9191
          ...
 
        volumes:
-         elasticsearch_data:
-           name: crafter_authoring_data_elasticsearch
-         elasticsearch_logs:
-           name: crafter_authoring_logs_elasticsearch
+         search_data:
+           name: crafter_authoring_data_search
+         search_logs:
+           name: crafter_authoring_logs_search
          crafter_data:
            driver: local
            driver_opts:
              o: bind
              type: none
-             device: C:/host/path/to/sites
-            name: crafter_authoring_data
+             device: C:/host/path/to/projects
+           name: crafter_authoring_data
          crafter_logs:
            name: crafter_authoring_logs
          crafter_temp:
@@ -89,7 +87,7 @@ Here are the steps:
 
 #. Start Authoring.
 
-   Go to the Authoring browser URL and create a site. In the image below, site ``mysite`` was created using the website editorial blueprint:
+   Go to the Authoring browser URL and create a project/site. In the image below, project ``editorial`` was created using the website editorial blueprint:
 
    .. image:: /_static/images/developer/docker/docker-install-site-created.webp
       :alt: Docker Desktop - File Sharing
@@ -98,11 +96,11 @@ Here are the steps:
 
    |
 
-#. Access your site files from your host directory
+#. Access your project files from your host directory
 
-   You should now be able to see the files in your host directory and use any IDE for editing the files in the site.
+   You should now be able to see the files in your host directory and use any IDE for editing the files in the project.
 
-   Let's take a look at an example of modifying a file in your host directory then verifying that the changes are reflected in your site. In your browser, open the ``Sidebar``, then navigate to ``scripts`` -> ``pages`` then right click on ``home.groovy`` and select ``edit``.
+   Let's take a look at an example of modifying a file in your host directory then verifying that the changes are reflected in your project. In your browser, open the ``Sidebar``, then navigate to ``scripts`` -> ``pages`` then right click on ``home.groovy`` and select ``edit``.
 
    .. image:: /_static/images/developer/docker/docker-install-script-file-orig.webp
       :alt: Docker Desktop - unedited script file in browser
@@ -111,7 +109,7 @@ Here are the steps:
 
    |
 
-   We'll now edit the same ``home.groovy`` file from the host directory using any of your favorite IDE. For our example, the files in the site were put in a project in IntelliJ IDEA, and some text was added to the comments
+   We'll now edit the same ``home.groovy`` file from the host directory using any of your favorite IDE. For our example, the files in the project were put in a project in IntelliJ IDEA, and some text was added to the comments
 
    .. image:: /_static/images/developer/docker/docker-install-script-file-on-host.webp
       :alt: Docker Desktop - Edited script file on host
@@ -122,7 +120,7 @@ Here are the steps:
 
    After making your edits, remember to commit your changes by using git so Studio is aware of the changes made.
 
-   To commit your changes , head to ``/host/path/to/sites/mysite/sandbox`` and git add your edited file like this
+   To commit your changes , head to ``/host/path/to/projects/repos/sites/editorial/sandbox`` and ``git add`` your edited file like this
 
    .. code-block:: bash
 
@@ -138,7 +136,7 @@ Here are the steps:
 
    |
 
-   You can also use any Git client. Now, it will be available in your site in the Docker container. Remember that whenever you edit directly in the filesystem instead of through Studio, you need to commit your changes to ensure they are properly reflected.
+   You can also use any Git client. Now, it will be available in your project in the Docker container. Remember that whenever you edit directly in the filesystem instead of through Studio, you need to commit your changes to ensure they are properly reflected.
 
    Finally, let's check the ``home.groovy`` file from Studio to verify that changes we made from the host are reflected on Studio, by opening the file in Studio again:
 
