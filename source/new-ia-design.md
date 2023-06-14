@@ -32,9 +32,11 @@ Include
 Developer
 =========
 - Multi-environment config (include)
-- Cite the Secrets Management reference article
 - Move the Groovy unit testing article to this section
 - Include or move the adding custom services to Engine to this section
+- Custom Error Pages
+- Security page (complete it)
+- Targeting article
 
 Site Admin
 ==========
@@ -48,7 +50,7 @@ System Admin
     - Headers
     - JWT
 - Delivery authentication
-    - SAML (< 4.0.2, >= 4.0.3)
+    - SAML (< 4.0.2, >= 4.0.3) from an Sys Admin perspective
     - Headers
     - 
 - Cite the Secrets Management reference article

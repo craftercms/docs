@@ -223,7 +223,7 @@ CrafterCMS recommends the following conventions:
     * - /config/*
       - Dev and promoted up
       - This is a special case because every environment can have its own configuration, see the guide: |br|
-        https://docs.craftercms.org/current/site-administrators/studio/multi-environment-configurations.html
+        :ref:`multi-environment-support`
     * - /scripts/*
       - Dev and promoted up
       - Default location for Groovy code

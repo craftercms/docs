@@ -389,10 +389,12 @@ Staging
 
    <hr>
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Multi-environment Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Multi-environment Support
+^^^^^^^^^^^^^^^^^^^^^^^^^
+It is often required to have different configurations for different environments. For example, you may want to have developers access different integration services, keys, and configuration than QA, UAT or Prod environments.
 
+CrafterCMS supports environment specific configuration that helps with this, read more about it in the article :ref:`multi-environment-support`.
 
 |
 

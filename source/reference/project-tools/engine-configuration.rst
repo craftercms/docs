@@ -45,6 +45,7 @@ Engine Configuration
       - Configures the proxy servers for preview
       -
 
+.. TODO Don't forget to add :ref:`multi-environment-support`
 
 
 
@@ -61,6 +62,5 @@ This section details how to configure settings related to Crafter Engine, Crafte
    engine/engine-crafter-profile-configuration
    engine/engine-mongodb-configuration
    engine/configure-url-rewrite
-   engine/engine-multi-environment-configuration
-   engine/engine-multi-target-configuration
+   ../../multi-environment-support
    engine/proxy-configuration
