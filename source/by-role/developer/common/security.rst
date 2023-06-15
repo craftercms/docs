@@ -84,6 +84,27 @@ Securing the Entire Project
 ---------------------------
 The easiest way to secure a project is by wrapping the entire delivery tier with an authentication layer that blocks access to _all_ content unless the user is authenticated.
 
+Protecting the entire project/site means blocking all access unless the user is authenticated. This can be done in a number of ways:
+- Configuring Crafter Engine to use SAML2 or Headers-based Authentication for all requests
+- Configuring the CDN (Content Delivery Network), e.g. AWS CloudFront with AWS Cognito
+- Configuring a reverse-proxy, e.g. Apache HTTPd with mod_auth_openidc
+
+In this article, we will cover how to configure Crafter Engine to use SAML2 or Headers-based Authentication for all requests. Utilizing a CDN or reverse-proxy is outside the scope of this article, but we will provide a general overview of how to configure them.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configure Project-Wide Authentication in Engine
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""
+SAML2 Authentication
+""""""""""""""""""""
+""""""""""""""""""""""""""""
+Headers-Based Authentication
+""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~
+CDN or Reverse-Proxy
+~~~~~~~~~~~~~~~~~~~~
+
+
 .. TODO:
 - SAML in Engine
 - CDN based security with SAML/etc + headers to Engine

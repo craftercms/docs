@@ -1,21 +1,26 @@
-:is-up-to-date: False
-:last-updated: 4.0.3
-
+:is-up-to-date: True
+:last-updated: 4.1.0
 
 .. highlight:: groovy
    :linenothreshold: 5
 
-.. index:: Groovy, Groovy API, Custom Services and Controllers, Services, Controllers
+.. index:: Groovy, Groovy API, Custom Services, Services, Controllers, Unit Testing
+
+.. _groovy-development:
+
+==================
+Groovy Development
+==================
+.. contents::
+
+CrafterCMS supports server-side development with Groovy. By using Groovy, you can create RESTful services, MVC controllers, code that runs before a page or component is rendered, servlet filters, scheduled jobs, and entire backend applications.
 
 .. _groovy-api:
 
-==========
+----------
 Groovy API
-==========
-
-A lot of functionality and project customization can be done through Groovy scripts in Crafter, no need to code in Java! By using Groovy
-scripts, you can create RESTful services, MVC controllers, code that runs before a page or component is rendered, servlet filters and
-scheduled jobs. Crafter also provides a bunch of useful global variables that can be used in all the different types of scripts available:
+----------
+CrafterCMS provides a number of useful global variables that can be used in all the different types of scripts available:
 
 .. include:: /includes/global-groovy-variables.rst
 
@@ -29,21 +34,16 @@ All scripts are executed in a sandbox to prevent insecure code from running, to 
 
 To create unit tests for your groovy code, see :ref:`unit-testing-groovy-code`
 
--------------------------
-Create a Script in Studio
--------------------------
-
-.. todo:: Write how to create a script in Studio
-
-----------------
+^^^^^^^^^^^^^^^^
 Types of Scripts
-----------------
+^^^^^^^^^^^^^^^^
 
 There are different types of scripts you can create, depending on the subfolder under Scripts where they're placed. The following are
 the ones currently supported:
 
+""""""""""""
 REST Scripts
-============
+""""""""""""
 
 REST scripts function just like RESTful services. They just need to return the object to serialize
 back to the caller. REST scripts must be placed in any folder under Scripts > rest.
@@ -71,9 +71,9 @@ date is set as the attribute. Assume that the REST script exists under Scripts >
 
     return ["date": date]
 
+""""""""""""""""""
 Controller Scripts
-==================
-
+""""""""""""""""""
 Controller scripts are very similar to REST scripts. They have the same variables available, but instead of returning an object,
 they return a string with the view to render. Most of the time, this is just the template path, like in the following snippet:
 ::
@@ -184,8 +184,9 @@ controller then must be placed in Scripts > controllers > sitemap.groovy. The co
 
 .. _page-and-component-scripts:
 
+""""""""""""""""""""""""""
 Page and Component Scripts
-==========================
+""""""""""""""""""""""""""
 
 .. |SiteItem| replace:: :javadoc_base_url:`SiteItem <engine/org/craftercms/engine/model/SiteItem.html>`
 .. |AllHttpScopesAndAppContextHashModel| replace:: :javadoc_base_url:`AllHttpScopesAndAppContextHashModel <engine/org/craftercms/engine/view/freemarker/AllHttpScopesAndAppContextHashModel.html>`
@@ -258,7 +259,6 @@ script in Scripts > components > upcoming-events.groovy so that it is executed f
     templateModel.events = events
 
 
-
 In the above example, you will see that we're importing a ``utils.DateUtils`` class. This class is not part of CrafterCMS, but instead it is a site specific class written in Groovy.
 The class is/needs to be located at the following path ``scripts > classes > utils`` and is placed in a file called ``DateUtils.groovy``, like below:
 
@@ -286,9 +286,9 @@ The class is/needs to be located at the following path ``scripts > classes > uti
 
     }
 
+""""""""""""""
 Filter Scripts
-==============
-
+""""""""""""""
 Crafter Engine can handle special Groovy filters that work basically in the same way as Servlet filters. These are
 scripts very similar to page scripts, and have basically the same variables available (except the ``templateModel``
 and ``contentModel`` variables), but instead of updating the template model, they call ``filterChain.doFilter
@@ -367,9 +367,9 @@ To enable this filter, we need to configure its mapping in Config > site.xml. Th
         </filters>
     </site>
 
+"""""""""""""""""""""
 Scheduled Script Jobs
-=====================
-
+"""""""""""""""""""""
 Scripts can also be scheduled as jobs in Crafter Engine. These scripts only have the common global variables and the logger variable.
 They don't need to return any result. Engine allows 3 different ways to configure script jobs:
 
@@ -399,3 +399,235 @@ They don't need to return any result. Engine allows 3 different ways to configur
                 <cronExpression>0 0/15 * * * ?</cronExpression>
             </job>
         </jobs>
+
+.. _unit-testing-groovy-code:
+
+-----------------------------------
+Unit Testing CrafterCMS Groovy Code
+-----------------------------------
+For larger sites with complex services implemented in Groovy, it is very helpful to have a way to include unit tests in a way that can be easily integrated with CI/CD systems.
+
+This section details how to create unit tests for CrafterCMS Groovy code with Gradle.
+
+For more information on the classes of the variables that can be mocked for unit testing, see :ref:`above <groovy-api>`
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Steps for Creating Groovy Unit Test
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+To create a unit test:
+
+#. Designate a folder for all test related files
+#. Write your unit test code
+#. Setup your unit test to run with Gradle
+#. Execute your unit test
+
+"""""""""""""""""""""""""""""""""""""""""""
+Designate Folder for All Test Related Files
+"""""""""""""""""""""""""""""""""""""""""""
+Designate a folder in the site repository to contain all test related files. For example:
+
+   .. code-block:: text
+      :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox*
+
+      /scripts
+         /test
+           /classes   (all packages & groovy classes for testing)
+           /resources (all additional files required for testing)
+
+   |
+
+
+This structure is the equivalent of the standard folders used for Java/Groovy projects:
+
+   .. code-block:: text
+
+      /src/test/groovy
+      /src/test/resources
+
+   |
+
+"""""""""""""""""""""""""
+Write Your Unit Test Code
+"""""""""""""""""""""""""
+There are no restrictions or requirements for the unit test code, developers can choose any testing framework supported by the build tool. Examples: `spring-test <http://docs.spring.io/spring-batch/reference/html/testing.html>`__, `junit <http://junit.org/>`__, `testng <https://testng.org/doc/index.html>`__, `spock <https://spockframework.org/>`__
+
+Remember when writing unit test code, developers will be responsible for:
+
+- Choosing & configuring the testing framework
+- Making sure all required dependencies are included (for example external jars)
+- Mocking all Crafter Engine classes used by the classes under testing
+
+
+"""""""""""""""""""""""""""""""""""""""
+Setup Your Unit Test to Run With Gradle
+"""""""""""""""""""""""""""""""""""""""
+To use Gradle the only requirement is to add a ``build.gradle`` in the root folder of the site repository and execute the ``test`` task. Example:
+
+.. code-block:: groovy
+   :force:
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/build.gradle*
+   :linenos:
+
+   # Enable Gradle’s Groovy plugin
+   plugins {
+     id 'groovy'
+   }
+
+   sourceSets {
+     # Add the site Groovy classes that will be tested
+     main {
+       groovy {
+         srcDir 'scripts/classes'
+       }
+     }
+
+     # Add the Groovy classes & resources to perform the tests
+     test {
+       groovy {
+         srcDir 'scripts/test/classes'
+       }
+       resources {
+         srcDir 'scripts/test/resources'
+       }
+     }
+   }
+
+   # Enable the testing framework of choice
+   test {
+     useJUnit()
+   }
+
+   repositories {
+     mavenCentral()
+   }
+
+   # Include the required dependencies
+   dependencies {
+     # This dependency is required for two reasons:
+     # 1. Make Engine’s classes available for compilation & testing
+     # 2. Include the Groovy dependencies required by Gradle
+     implementation 'org.craftercms:crafter-engine:3.1.13:classes'
+
+     # Include the chosen testing dependencies
+     testImplementation 'junit:junit:4.13.2'
+     testImplementation 'org.mockito:mockito-core:3.9.0'
+   }
+
+|
+
+""""""""""""""""""""""
+Execute Your Unit Test
+""""""""""""""""""""""
+Given the previous example the tests can be executed using a single command:
+
+   .. code-block:: bash
+
+      gradle test
+
+   |
+
+^^^^^^^
+Example
+^^^^^^^
+Let's take a look at an example of a groovy unit test in a site created using the empty blueprint with a custom groovy script, ``MyService``
+
+.. image:: /_static/images/developer/unit-test/unit-test-groovy-sample-service.webp
+    :alt: Unit Testing Groovy - Sample Service
+    :width: 35 %
+    :align: center
+
+|
+
+.. literalinclude:: /_static/code/developer/groovy-unit-test/MyService.groovy
+   :language: groovy
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/scripts/classes/org/company/site/api/MyService.groovy*
+   :linenos:
+
+|
+
+.. literalinclude:: /_static/code/developer/groovy-unit-test/MySearchService.groovy
+   :language: groovy
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/scripts/classes/org/company/site/api/MySearchService.groovy*
+   :linenos:
+
+|
+
+.. literalinclude:: /_static/code/developer/groovy-unit-test/ExternalApi.groovy
+   :language: groovy
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/scripts/classes/org/company/site/api/ExternalApi.groovy*
+   :linenos:
+
+|
+
+.. literalinclude:: /_static/code/developer/groovy-unit-test/MyServiceImpl.groovy
+   :language: groovy
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/scripts/classes/org/company/site/impl/MyServiceImpl.groovy*
+   :linenos:
+
+|
+
+Let's begin creating our unit test for ``MyService``
+
+"""""""""""""""""""""""""""""""""""""""""""
+Designate Folder for All Test Related Files
+"""""""""""""""""""""""""""""""""""""""""""
+The first thing we need to do is to designate a folder for all test related files. We'll designate the ``/scripts/test`` folder to be used for all test related files.
+
+"""""""""""""""""""""""""
+Write Your Unit Test Code
+"""""""""""""""""""""""""
+Next, we'll write the unit test code.
+
+.. image:: /_static/images/developer/unit-test/unit-test-groovy-sample-unit-test.webp
+   :alt: Unit Testing Groovy - Sample Service
+   :width: 35 %
+   :align: center
+
+|
+
+.. literalinclude:: /_static/code/developer/groovy-unit-test/MyServiceImplTest.groovy
+   :language: groovy
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/scripts/test/classes/org/company/impl/MyServiceImplTest.groovy*
+   :linenos:
+
+|
+
+"""""""""""""""""""""""""""""""""""""""
+Setup Your Unit Test to Run With Gradle
+"""""""""""""""""""""""""""""""""""""""
+We'll now setup our unit test to run with Gradle, by adding a ``build.gradle`` file in the root folder of the site repository and execute the ``test`` task.
+
+.. literalinclude:: /_static/code/developer/groovy-unit-test/MyServiceImplTest.groovy
+   :language: groovy
+   :force:
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/build.gradle*
+   :linenos:
+
+""""""""""""""""""""""
+Execute Your Unit Test
+""""""""""""""""""""""
+Finally, we can run our unit test by running ``gradle test``
+
+   .. code-block:: bash
+      :caption: *Output when running unit test*
+
+      $ gradle test
+
+      BUILD SUCCESSFUL in 4s
+      3 actionable tasks: 3 up-to-date
+
+   |
+
+Let's take a look at the result of our unit test which can be found here: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/build/reports/tests/test/index.html*
+
+.. image:: /_static/images/developer/unit-test/unit-test-build-result.webp
+   :alt: Unit Testing Groovy - Unit test  build report
+   :width: 75 %
+   :align: center
+
+|
+
+--------
+See Also
+--------
+- :ref:`access-to-services`

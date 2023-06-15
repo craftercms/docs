@@ -265,17 +265,10 @@ Finally, given that CrafterCMS is Git-based, full DevContentOps support is nativ
 See :ref:`here <devcontentops>` for more information on DevContentOps
 
 ^^^^^^^^^^^^^^
-Available APIs
+Content Access
 ^^^^^^^^^^^^^^
 
-CrafterCMS supports a number of APIs to access content for templated projects, including:
-
-* :ref:`FreeMarker API <templating-api>`
-* :ref:`Groovy API <groovy-api>`
-* :ref:`Search API <search>`
-* Custom API
-
-.. todo: link the above - what is custom API?
+.. include:: /includes/content-retrieval-apis.rst
 
 ^^^^^^^^^^^
 Inheritance

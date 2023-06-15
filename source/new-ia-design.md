@@ -31,12 +31,8 @@ Include
 
 Developer
 =========
-- Multi-environment config (include)
-- Move the Groovy unit testing article to this section
-- Include or move the adding custom services to Engine to this section
 - Custom Error Pages
 - Security page (complete it)
-- Targeting article
 
 Site Admin
 ==========

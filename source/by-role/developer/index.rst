@@ -77,10 +77,12 @@ Regardless of type of project, a developer needs to be familiar with the followi
     common/static-content-access
     common/experience-builder
     common/security
+    common/targeting
     common/servlet-filters
     common/working-with-dates-groovy
     ../../reference/redirects
     common/working-with-sass
+    ../../reference/multi-environment-support
     common/custom-error-pages
 
 For templated projects, there are more topics to cover:
@@ -90,7 +92,6 @@ For templated projects, there are more topics to cover:
     :titlesonly:
 
     templated/templating
-    templated/targeting
     templated/working-with-dates-freemarker
 
 ----------
