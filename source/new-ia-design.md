@@ -26,7 +26,6 @@ Reference
 Include
 =======
 - JWT
-- Multi-environment configuration
 - Default ports (authoring and delivery) -- either one include for both or two separate.
 
 Developer

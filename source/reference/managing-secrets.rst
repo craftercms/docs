@@ -14,7 +14,6 @@
 ================
 Managing Secrets
 ================
-
 There are a number of ways to manage secrets with CrafterCMS. The following sections describe the different options.
 
 .. note::
@@ -24,7 +23,6 @@ There are a number of ways to manage secrets with CrafterCMS. The following sect
 ----------------
 External Secrets
 ----------------
-
 CrafterCMS supports the use of external secrets. This means that you can store your secrets in a separate location
 and use these secrets in your configuration files. This is the recommended approach whenever possible.
 
@@ -36,7 +34,6 @@ Secrets can then be injected into CrafterCMS via environment variables or system
 ----------------
 Internal Secrets
 ----------------
-
 When external secrets are not possible, CrafterCMS supports the use of encrypted internal secrets. This means that
 you can store your secrets in the configuration files themselves, and these secrets will be encrypted.
 
@@ -55,7 +52,6 @@ CrafterCMS has a number of ways to encrypt secrets:
 ^^^^^^^^^^
 Encryption
 ^^^^^^^^^^
-
 Encrypting secrets can be done automatically within Studio-managed configuration files, via the UI, or using a CLI.
 
 The encryption algorithm used is PBE (Password Based Encryption) with AES, in which a key and a salt are
@@ -80,7 +76,6 @@ open ``CRAFTER_HOME/bin/crafter-setenv.sh`` and modify the following values
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 Automatic Encryption of Secrets in Configuration Files
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-
 This section details how to encrypt passwords, access keys or other sensitive information in a configuration file
 managed through Crafter Studio.
 
@@ -91,8 +86,9 @@ Examples of project configuration files where encryption would make sense includ
  - Studio Box Profiles (``/config/studio/box/box.xml``)
  - Studio WebDAV Profiles (``/config/studio/webdav/webdav.xml``)
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 How to Encrypt Text in Configuration File
------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 To encrypt passwords, access keys or other sensitive information in a configuration file managed through Crafter Studio:
 
 * Open the configuration file that has the text/information that you would like to encrypt
@@ -100,8 +96,9 @@ To encrypt passwords, access keys or other sensitive information in a configurat
 * Click on the ``Encrypt Marked`` button to encrypt text
 * Your sensitive text should now be encrypted and displayed with the attribute ``encrypted="true"`` and you may now save your file
 
+~~~~~~~
 Example
--------
+~~~~~~~
 Let's take a look at an example of encrypting the ``accessKey`` and ``securityKey`` for the AWS Profiles configuration.
 
 * Open the ``AWS Profiles`` configuration file by clicking on |projectTools| -> ``Configuration``, then select ``AWS Profiles`` from the dropdown box
@@ -209,9 +206,9 @@ To encrypt a password, access key, etc., simply enter the password, access key, 
 
 Crafter Studio also provides the encryption tool to encrypt passwords, access keys or other sensitive information in a configuration file managed through Crafter Studio in |projectTools| -> ``Configuration``. See :ref:`encrypting-text-in-a-configuration-file` for more information.
 
+~~~~~~~
 Example
--------
-
+~~~~~~~
 Let's take a look at an example of using the Studio encryption tool to encrypt a password. From the ``Navigation Menu``, click on ``Global Config`` and scroll down to the ``SMTP Configuration (Email)`` section. We're going to encrypt the value for ``studio.mail.password:``
 
 .. code-block:: yaml
@@ -283,7 +280,6 @@ Let's begin:
 """"""""""""""""""""""""""""""""""""""""""""
 Command Line Interface (CLI) Encryption Tool
 """"""""""""""""""""""""""""""""""""""""""""
-
 Crafter Commons provides a command line tool that can be used to encrypt/decrypt text. It's especially useful for encrypting
 values that will be used in configuration files. The encryption algorithm used is PBE (Password Based Encryption) with AES,
 in which a password and a salt are specified to generate the key used on encryption/decryption.
@@ -308,7 +304,6 @@ sub-module, where you should find the JAR with the ``-enctool`` suffix. Then you
 ^^^^^^^^^^
 Decryption
 ^^^^^^^^^^
-
 CrafterCMS will automatically decrypt secrets as it needs them. If, however, you wanted to decrypt a secret manually you can use the CLI encryption/decryption tool:
 
 - **Decode Base 64 text:** ``java -jar {JARNAME} -d64 BASE64_TEXT``
