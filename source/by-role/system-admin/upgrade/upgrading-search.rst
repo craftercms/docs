@@ -17,7 +17,7 @@ The steps for upgrading to OpenSearch follows almost exactly the same steps as l
 Upgrading 3.1.x -> 4.1.0 (from ES 6.x)
 --------------------------------------
 To upgrade your 3.1.x installation, we'll be running the upgrade scripts from a new binary archive.
-We'll use the ``upgrade-search.sh`` script, which will update the data in place, please backup your data directory before running the script.
+We'll use the ``upgrade-search.sh`` script, which will update the data in place. Please backup your data directory before running the script.
 
 Here is the ``upgrade-search`` script params:
 
@@ -70,6 +70,7 @@ Before beginning your upgrade, remember that the install you're upgrading needs 
 #. All indices should be now available in OpenSearch
 #. Monitor tomcat logs on startup.
 
+|hr|
 
 ---------------------------------------
 Upgrading 4.0.x -> 4.1.0 (from ES 7.15)
@@ -87,6 +88,7 @@ Here are the steps:
 
 #. Before starting CrafterCMS, you'll need to configure the installation root directory to use Java version 17.  Remember to read the release notes or any relevant upgrade articles and make any necessary manual changes before running the `post-upgrade.sh`` script as described next
 #. Run the ``post-upgrade.sh`` script. This will:
+
    - Remove old *data/indexes-es* directory (old indexes are not usable by OpenSearch)
    - Start CrafterCMS and ask for signal to continue
    - Once started and CrafterCMS is up (including UM execution), let the post-upgrade continue by typing ``Y``:
@@ -103,6 +105,8 @@ Here are the steps:
    .. code-block:: text
 
        2023-04-20 14:36:46.050  INFO 376430 --- [deployment-1] org.craftercms.deployer.impl.TargetImpl  : Deployment for editorial110-authoring finished in 9.953 secs
+
+|hr|
 
 -------------------------
 Manual Updates for Search
