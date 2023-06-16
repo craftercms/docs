@@ -1,15 +1,13 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.0.0
 
-
-.. index:: Engine Headers Based Authentication
+.. index:: Headers Based Authentication, Authentication
 
 .. _engine-headers-authentication:
 
 ====================================================
 Engine Headers Based Authentication |enterpriseOnly|
 ====================================================
-
 Crafter Engine is able to integrate with any authentication system that sends custom HTTP headers containing
 information that will be used to authenticate the user in Engine. This section details how to setup Engine for
 headers based authentication.
@@ -26,7 +24,6 @@ allow exposing attributes from the external authentication authority.
 -------------------------------------------------
 Configure Engine for Headers Based Authentication
 -------------------------------------------------
-
 To enable Engine headers based authentication, open the Engine project configuration file ``site-config.xml``.
 
 Set ``security.headers.standalone`` to ``true``

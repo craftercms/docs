@@ -1,11 +1,11 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.0
 
 .. _project-security:
 
-===========================
-Project Security (Delivery)
-===========================
+===================
+Security (Delivery)
+===================
 .. contents::
 
 Securing CrafterCMS projects/site is a very important aspect of the platform. CrafterCMS provides a number of security features that can be used to secure a project/site. This section will cover the following topics:
@@ -106,39 +106,27 @@ Engine SAML2 Authentication |enterpriseOnly|
 """"""""""""""""""""""""""""""""""""""""""""
 Crafter Engine's SAML2 implementation is configured at the instance level. This means that all projects served by this instance node will use the same SAML2 configuration, and will be authenticated against the same SAML2 IdP (Identity Provider).
 
-.. TODO Link to :ref:`engine-saml2-configuration`
+Follow the article :ref:`engine-saml2-configuration` to configure SAML2 authentication for Crafter Engine.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Multi-Environment Authentication Support
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 It's often the case that lower environments will require their own authentication configuration. Crafter Engine supports that by allowing you to configure multiple SAML2 configurations, and then specify which configuration to use for each environment. See the article :ref:`saml2-multi-environment-support` for more information.
 
-.. TODO: Continue here
-
-, you must first configure the authentication mechanism. CrafterCMS supports SAML2 and Headers-based Authentication out of the box. Learn more about configuring SAML2 in :ref:`saml2-multi-environment-support` and configuring Headers-based Authentication in :ref:`headers-based-authentication`.
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Engine HTTP Headers-Based Authentication |enterpriseOnly|
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-~~~~~~~~~~~~~~~~~~~~
-CDN or Reverse-Proxy
-~~~~~~~~~~~~~~~~~~~~
+When authenticating outside of Crafter Engine, the authenticating system can pass the authenticated user information to Crafter Engine via HTTP headers. Crafter Engine can then use that information to authenticate the user to the project/site. Learn more about this in the article :ref:`engine-headers-based-authentication`.
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CDN or Reverse-Proxy and Securing Static Assets
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+It's sometimes desirable to use a CDN or reverse-proxy to secure the delivery tier. The primary use-case here is the delivery of static assets, such as videos, images, CSS, and JavaScript files via the CDN or reverse-proxy instead of the application tier. This can speed up delivery of these assets, and reduce the load on the application tier.
 
-.. TODO:
-- SAML in Engine
-- CDN based security with SAML/etc + headers to Engine
+As an example, AWS CloudFront supports this approach as described in `https://aws.amazon.com/blogs/networking-and-content-delivery/securing-cloudfront-distributions-using-openid-connect-and-aws-secrets-manager/`_.
 
----------------------------------------------
-Securing Sections or Individual Content Items
----------------------------------------------
+A similar setup can be accomplished with Apache HTTPd and ``mod_auth_openidc``, whereby Apache HTTPd serves the static assets, and Engine serves the dynamic experience and API calls.
 
-.. TODO: Link to :ref:`saml2-multi-environment-support` for SAML2 configuration
-
+It's important to remember that for Crafter Engine to know about this authentication that was terminated upstream, it's important to pass in the correct headers for Crafter Engine to use. Learn more about this in the article :ref:`engine-headers-based-authentication`.
 
 .. TODO Do we need to discuss Signed URLs here?
-
-.. TODO is this section needed?
-    ----------------------
-    Securing Static Assets
-    ----------------------

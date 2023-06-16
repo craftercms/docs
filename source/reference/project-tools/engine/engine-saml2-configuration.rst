@@ -1,8 +1,8 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :since-version: 4.0.3
 
 
-.. index:: Engine SAML2 Configuration
+.. index:: SAML2 Authentication, Authentication, SAML2
 
 .. _engine-saml2-configuration:
 
@@ -22,6 +22,8 @@ Engine SAML2 Configuration |enterpriseOnly|
 
 |
 |
+
+.. contents::
 
 Crafter Engine can be configured to support SAML2 SSO out of the box without using any additional plugin.
 
@@ -167,3 +169,8 @@ secured page and then automatically return to your project in Crafter Engine.
   configured to allow the login to be displayed in an ``iframe`` element by setting the right values for the 
   ``Content-Security-Policy`` header. You can find more information 
   `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy>`_.
+
+-------------------------
+Multi-Environment Support
+-------------------------
+It's often the case that lower environments will require their own authentication configuration. Crafter Engine supports that by allowing you to configure multiple SAML2 configurations, and then specify which configuration to use for each environment. See the article :ref:`saml2-multi-environment-support` for more information.

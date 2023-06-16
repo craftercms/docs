@@ -261,6 +261,7 @@ Let's take a look at an example of creating a new environment, called ``mycustom
    <hr>
 
 .. _saml2-multi-environment-support:
+
 ------------------------------------------------
 SAML2 Multi-Environment Support |enterpriseOnly|
 ------------------------------------------------
