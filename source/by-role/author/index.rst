@@ -9,19 +9,18 @@ Author
 
 .. contents::
 
-Authors creates, edits and submits content for experiences. CrafterCMS's Crafter Studio provides the author an easy to use
-authoring and management system for developing and optimizing the content and dynamic project visitor experience for any
-and all of your Web properties.
+Authors create, edit and submit content for experiences. CrafterCMS's Crafter Studio provides the author an easy to use
+authoring system for the development and optimization of content-rich experiences.
 
 The :ref:`project administrator <project-admin>` and the :ref:`developer <developer>` sets things up before an
-author begins contributing content for the web experience being built. This section contains information on the
+author begins contributing content for the experience being built. This section contains information on the
 authoring environment and how authors manages content.
 
 .. include:: /includes/how-craftercms-works.rst
 
 * Authors work in Crafter Studio
 
-  * It is a web based application. There is nothing to install.
+  * It is a web based application. There is nothing to install
   * It is multi-tenant so you can manage as many projects as you need to
   * It provides a safe environment to make and preview content changes
   * All changes are versioned and audited
@@ -32,11 +31,11 @@ authoring environment and how authors manages content.
   * Content can be published immediately
   * Or on a schedule
 
-* Crafter Studio can publish to anywhere including social networks however, we often Publish to Crafter Engine.
+* Crafter Studio can publish to a ``Staging`` target or ``Live`` target, it can also publish to social networks and more
 
-  * Crafter Engine is a high performance, Spring MVC based content delivery engine.
+  * Crafter Engine is a high performance content delivery engine.
   * Crafter Engine delivers highly personalized HTML (and other markup) based content and Content APIS (Content as a Service).
-  * Crafter Engine is multi-channel. It supports Responsive Design and Adaptive Design as well as Content as API(s)
+  * Crafter Engine is multi-channel, headless+, content delivery system. It supports Responsive Design, Mobile Apps, SPA applications and more.
   * Crafter Engine is multi-tenant so you can deliver as many projects as you need to.
 
 |hr|
@@ -46,14 +45,12 @@ authoring environment and how authors manages content.
 --------------
 Author Screens
 --------------
-
 As mentioned earlier, Crafter Studio provides authors the tools for creating/managing content in experiences.
 In this section we'll take a look at various screens in Crafter Studio an author may encounter.
 
 ^^^^^^^^^^
 Logging in
 ^^^^^^^^^^
-
 To log in to Crafter Studio:
     * Enter the following in the URL of your browser:  *http://SERVERNAMEHERE:PORT/studio*
     * Enter your user name
@@ -72,16 +69,14 @@ To log in to Crafter Studio:
 """""
 Roles
 """""
+After logging in, depending on what access rights have been setup for your user account, you can have one of the following roles:
+- **Content Author** An Author has access to create, edit and submit content within a project.
+- **Content Publisher** A Publisher has access to create, edit, submit and approve content within a project.
+- **Content Reviewer** A Reviewer has access to approve or reject content within a project.
 
-After logging in, depending on what access rights have been setup for your user account, you can have one of two
-primary roles as a content author:
+There are three additional roles in CrafterCMS that are out of scope of this article: *Project Administrator*, *Developer* and *System Administrator*.
 
-* **Content Manager (Publisher/Reviewer Role)** A content Manager has the ability to approve and reject workflow.
-  A content manager also has access to a number of available actions in dashlets which are not available to content contributors
-  including actions for Recently Published and Approved Scheduled Items dashlets.
-
-* **Content Contributor(Author Role)** A content contributor has access to create, edit and submit content
-
+.. note:: Only the System Administrator can create new projects, users, groups, and assign roles to users.
 
 ^^^^^^^^
 Projects
@@ -126,18 +121,6 @@ of the *Global* panel
 
 |
 
-""""""""""""""""
-Projects (Admin)
-""""""""""""""""
-Crafter Studio administrators can also create and delete projects from this screen.
-
-.. image:: /_static/images/content-author/project-delete.webp
-    :width: 75 %
-    :align: center
-    :alt: Navigating Studio - Delete Project
-
-|
-
 .. _account-management:
 
 ^^^^^^^^^^^^^^^^^^
@@ -170,17 +153,8 @@ To get to Account Management:
 ^^^^^^^^^^^^^^^^^
 Project Dashboard
 ^^^^^^^^^^^^^^^^^
-Each project has a Project Dashboard. To view a project's dashboard, click on the ``Navigation Menu`` icon at the
-top right corner of the screen, or click on **Dashboard** at the top of the Sidebar.
+Each project has a Project Dashboard. To view a project's dashboard, click on **Dashboard** at the top of the Sidebar, or click on the ``Navigation Menu`` icon at the top right corner of the screen.
 
-Access the ``Dashboard`` from the ``Navigation Menu``
-
-.. image:: /_static/images/content-author/project-dashboard-alt.webp
-    :width: 65 %
-    :align: center
-    :alt: Navigating Studio - Project Dashboard from the Navigation Menu
-
-|
 
 Access the ``Dashboard`` from the ``Sidebar``
 
@@ -191,6 +165,14 @@ Access the ``Dashboard`` from the ``Sidebar``
 
 |
 
+Access the ``Dashboard`` from the ``Navigation Menu``
+
+.. image:: /_static/images/content-author/project-dashboard-alt.webp
+    :width: 65 %
+    :align: center
+    :alt: Navigating Studio - Project Dashboard from the Navigation Menu
+
+|
 
 This screen is an overview of the workflow for that given project. The project dashboard has different dashlets
 depending on your role.
@@ -351,11 +333,10 @@ For the dashboard shown above, here are the dashlets listed:
 ^^^^^^^
 Preview
 ^^^^^^^
-
 Every project has a preview. This allows users to see, edit and test the project in a safe authoring sandbox
 prior to publishing changes.
 
-    * Preview is a fully functional project but in a safe-to-edit environment.
+    * Preview is a fully functional project but in a safe-to-edit environment
     * The top center shows workflow status and options (three dots) for the current page
     * Author can change the type of preview from one channel to another
     * Author can turn on in-context and drag and drop editing features
@@ -374,7 +355,6 @@ prior to publishing changes.
 """"""""""""""""""""""""
 Experience Builder Panel
 """"""""""""""""""""""""
-
 * When in preview mode your context navigation will show an additional control beside the publishing status.
 * The ``Edit Mode`` and ``Move mode`` icons turns on the Experience Builder panel which allows you to use
   in-context editing and various tools for creating your page in a panel on the right
@@ -400,199 +380,6 @@ Experience Builder Panel
 
 |
 
-~~~~~~~~~~~~~~~~~~
-In-Context Editing
-~~~~~~~~~~~~~~~~~~
-
-When in-context editing is turned on (``Edit mode`` pencil is green or ``Move mode`` two vertical ellipsis
-is blue at the top), it puts the page in construction mode. When you hover your mouse around regions of
-the page that have been wired for in-context editing, a pencil will show up instead of the mouse cursor.
-
-.. image:: /_static/images/content-author/preview-page-in-context-editing.webp
-    :width: 75 %
-    :align: center
-    :alt: Navigating Studio - Preview Page In-Context Editing
-
-|
-
-This pencil allows you to edit the content of the wired region, including the current page's template and
-controller depending on your user account permissions
-
-.. image:: /_static/images/content-author/preview-in-context-edit.webp
-    :width: 95 %
-    :align: center
-    :alt: Navigating Studio - Preview In-Context Editing
-
-|
-
-To turn off in-context editing, click on the ``Switch off editing`` off switch icon at the top, which will
-then turn the ``Edit mode``/``Move mode`` icon to gray.
-
-Convenient keyboard shortcuts are also provided, press ``?`` to see the list of commands.
-
-~~~~~~
-Search
-~~~~~~
-
-The Search tool allows you to search for components and static assets in the project then display the
-results from which the user can drag and drop into the current page being viewed if there are configured
-drop targets in it
-
-.. image:: /_static/images/content-author/preview-experience-builder-search.webp
-    :width: 20 %
-    :align: center
-    :alt: Navigating Studio - Experience Builder Panel Search Components and Static Assets
-
-|
-
-~~~~~~~~~~~~~~
-Add Components
-~~~~~~~~~~~~~~
-
-The ``Add Components`` tool allows you to create new components by dragging components from the panel and
-on to the screen to configured drop targets. A new component with default values will then be visible and
-ready for editing when a new component is dropped on the screen.
-
-.. image:: /_static/images/content-author/preview-page-components-list.webp
-    :width: 20 %
-    :alt: Navigating Studio - Experience Builder Panel Page Components
-
-.. image:: /_static/images/content-author/preview-page-components-space.webp
-    :width: 5 %
-
-.. image:: /_static/images/content-author/preview-page-components.webp
-    :width: 20 %
-    :alt: Navigating Studio - Experience Builder Panel Page Components
-
-.. image:: /_static/images/content-author/preview-page-components-space.webp
-    :width: 5 %
-
-.. image:: /_static/images/content-author/preview-page-components-instances.webp
-    :width: 20 %
-    :alt: Navigating Studio - Experience Builder Panel Page Components Instances
-
-|
-
-You may drag around a component from one position to a different position by enabling the ``Move mode``
-(by clicking the ``Move mode`` icon at the top right, or by using the keyboard shortcut).
-Crafter Studio administrators can configure what components are available in this panel.
-
-.. image:: /_static/images/content-author/preview-page-components-drag.webp
-    :width: 85 %
-    :align: center
-    :alt: Navigating Studio - Experience Builder Panel Page Drag Component
-
-|
-
-~~~~~~~~~~~~~~~~~
-Browse Components
-~~~~~~~~~~~~~~~~~
-The Browse Components tool allows you to search / select a content type in the project then display the
-existing components for that content type that can be dragged and dropped into the current page being
-viewed if there are configured drop targets in it
-
-.. image:: /_static/images/content-author/preview-page-builder-browse-components.webp
-    :width: 30 %
-    :align: center
-    :alt: Navigating Studio - Experience Builder Panel Browse Components
-
-|
-
-When you drag a component into the page being previewed and there are no drop zones configured in the page,
-you will see a snack bar like below:
-
-.. image:: /_static/images/content-author/preview-page-builder-no-drop-targets.webp
-    :width: 80 %
-    :align: center
-    :alt: Navigating Studio - Experience Builder Panel No Drop Targets
-
-|
-
-~~~~~~~~~~~~~~~~~~~~~~
-Component Drop Targets
-~~~~~~~~~~~~~~~~~~~~~~
-The Component Drop Targets tool allows you to select a content type in the project then display the
-configured drop target for that content type on the current page being previewed
-
-.. image:: /_static/images/content-author/preview-page-builder-component-drop-targets.webp
-    :width: 70 %
-    :align: center
-    :alt: Navigating Studio - Experience Builder Panel Component Drop Targets
-
-|
-
-~~~~~~
-Assets
-~~~~~~
-The Assets tool allows you to search/list assets such as images that can be dragged into configured
-drop targets in the project
-
-.. image:: /_static/images/content-author/preview-page-builder-assets.webp
-    :width: 30 %
-    :align: center
-    :alt: Navigating Studio - Experience Builder Panel Assets
-
-|
-
-~~~~~~~~~~~~~~~~~~
-Audience Targeting
-~~~~~~~~~~~~~~~~~~
-
-The Audience Targeting tool allows you to view and set targeting attributes for the project
-
-.. image:: /_static/images/content-author/preview-page-builder-audience-targeting.webp
-    :width: 30 %
-    :align: center
-    :alt: Navigating Studio - Experience Builder Panel Audience Targeting
-
-|
-
-~~~~~~~~~~~~~
-Page Explorer
-~~~~~~~~~~~~~
-
-The Page Explorer tool allows you to browse/list content items such as pages, components and level
-descriptors in the project and make edits to them by clicking on the three dots next to the content
-item that appears when you hover your mouse on it
-
-.. image:: /_static/images/content-author/preview-page-builder-page-explorer.webp
-    :width: 30 %
-    :align: center
-    :alt: Navigating Studio - Experience Builder Panel Page Explorer
-
-|
-
-~~~~~~~~~~~~~~~~
-Device Simulator
-~~~~~~~~~~~~~~~~
-
-The Device Simulator tool allows an author to review the current page in the context of all devices
-supported by the project.
-
-The phone and tablet can be rotated through the use of the rotation control next to the width and
-height input boxes.
-
-.. image:: /_static/images/content-author/preview-publishing-channel.webp
-    :width: 60 %
-    :align: center
-    :alt: Navigating Studio - Experience Builder Panel Device Simulator
-
-|
-
-~~~~~~~~
-Settings
-~~~~~~~~
-
-The Settings tool allows you to switch on/off the ``Edit Mode`` (in-context editing) and setup
-highlighting of drop targets
-
-.. image:: /_static/images/content-author/preview-page-builder-settings.webp
-    :width: 30 %
-    :align: center
-    :alt: Navigating Studio - Experience Builder Panel Settings
-
-|
-
 """"""""""""""""""""""""""
 Common Navigation Elements
 """"""""""""""""""""""""""
@@ -612,8 +399,8 @@ The basic elements of the Contextual Navigation bar are:
     * Quick Create: A shortcut for content authors to create configured content without having to navigate
       through the project tree.
     * Preview Address Bar: An area reserved for navigation buttons (back, forward and reload page), the address
-      of the current  page being previewed, and an options link whose content will change based off of the
-      current page view and user role.
+      of the current page being previewed, and an options link whose content will change based off of the
+      current page view and user role. This can also help authors search for content in the project and preview it quickly.
     * Edit Mode Switch: Toggles the in-context editing and Experience Builder panel on/off
     * Publish Status: Allows the user to view the project's publish status.
     * Search: Allows the user to search for items in the project
@@ -652,7 +439,6 @@ width on your browser
 **Project Explorer**
 
 * Users can have multiple navigation paths / path tree open at the same time e.g. templates, pages, etc.
-* If closed, the menu should retain it's last state when re-opened.
 * Each item listed has item state and publish target icons next to them
 * Root folders allow a user to drill in to a hierarchy of content. If the item is previewable it will
   also be clickable.
@@ -665,7 +451,7 @@ width on your browser
 
 |
 
-* Clicking the three dots next to each item or right-clicking on an item provides the user options whose
+* Clicking the More menu (three dots) next to each item or right-clicking on an item provides the user options whose
   content will change based off of the item selected and user role.
 
 .. image:: /_static/images/content-author/sidebar-right-click-menu.webp
@@ -675,7 +461,7 @@ width on your browser
 
 |
 
-.. workflow icons=======================================================================================================
+.. workflow icons ======================================================================================================
 
 .. |workflowLocked| image:: /_static/images/content-author/workflow-icon-locked.webp
              :width: 12%
@@ -787,9 +573,9 @@ width on your browser
              :width: 10%
              :alt: Workflow Icons - CSS
 
-.. end of workflow icons================================================================================================
+.. end of workflow icons ===============================================================================================
 
-.. Start of Publishing Status/Target  icons=============================================================
+.. Start of Publishing Status/Target  icons ============================================================================
 
 .. |publishStaging| image:: /_static/images/content-author/publish-target-icon-staged.webp
              :width: 11%
@@ -806,14 +592,200 @@ width on your browser
 ------------------------------
 Author Experience Builder (XB)
 ------------------------------
-
-CrafterCMS’ Experience Builder (XB) enables authors with in-context editing (ICE) for all the model
+CrafterCMS's Experience Builder (XB) enables authors with in-context editing (ICE) for all the model
 fields defined in the content types of pages and components.
 
-:ref:`This article<experience-builder-panel-screens>` gave an overview of the Experience
-Builder panel in Studio.
+In this section, we describe how authors can use the Experience Builder for adding/editing content. But first, let's explore the screens of the Experience Builder.
 
-In this section, we describe how authors can use the Experience Builder for adding/editing content.
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Experience Builder Screens
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+When in-context editing is turned on (``Edit mode`` pencil is green or ``Move mode`` two vertical ellipsis
+is blue at the top), it puts the page in construction mode. When you hover your mouse around regions of
+the page that have been wired for in-context editing, a pencil will show up instead of the mouse cursor.
+
+.. image:: /_static/images/content-author/preview-page-in-context-editing.webp
+    :width: 75 %
+    :align: center
+    :alt: Navigating Studio - Preview Page In-Context Editing
+
+|
+
+This pencil allows you to edit the content of the wired region, including the current page's template and
+controller depending on your user account permissions
+
+.. image:: /_static/images/content-author/preview-in-context-edit.webp
+    :width: 95 %
+    :align: center
+    :alt: Navigating Studio - Preview In-Context Editing
+
+|
+
+To turn off in-context editing, click on the ``Switch off editing`` off switch icon at the top, which will
+then turn the ``Edit mode``/``Move mode`` icon to gray.
+
+Convenient keyboard shortcuts are also provided, press ``?`` to see the list of commands.
+
+^^^^^^
+Search
+^^^^^^
+The Search tool allows you to search for components and static assets in the project then display the
+results from which the user can drag and drop into the current page being viewed if there are configured
+drop targets in it
+
+.. image:: /_static/images/content-author/preview-experience-builder-search.webp
+    :width: 20 %
+    :align: center
+    :alt: Navigating Studio - Experience Builder Panel Search Components and Static Assets
+
+|
+
+^^^^^^^^^^^^^^
+Add Components
+^^^^^^^^^^^^^^
+The ``Add Components`` tool allows you to create new components by dragging components from the panel and
+on to the screen to configured drop targets. A new component with default values will then be visible and
+ready for editing when a new component is dropped on the screen.
+
+.. image:: /_static/images/content-author/preview-page-components-list.webp
+    :width: 20 %
+    :alt: Navigating Studio - Experience Builder Panel Page Components
+
+.. image:: /_static/images/content-author/preview-page-components-space.webp
+    :width: 5 %
+
+.. image:: /_static/images/content-author/preview-page-components.webp
+    :width: 20 %
+    :alt: Navigating Studio - Experience Builder Panel Page Components
+
+.. image:: /_static/images/content-author/preview-page-components-space.webp
+    :width: 5 %
+
+.. image:: /_static/images/content-author/preview-page-components-instances.webp
+    :width: 20 %
+    :alt: Navigating Studio - Experience Builder Panel Page Components Instances
+
+|
+
+You may drag around a component from one position to a different position by enabling the ``Move mode``
+(by clicking the ``Move mode`` icon at the top right, or by using the keyboard shortcut).
+Crafter Studio administrators can configure what components are available in this panel.
+
+.. image:: /_static/images/content-author/preview-page-components-drag.webp
+    :width: 85 %
+    :align: center
+    :alt: Navigating Studio - Experience Builder Panel Page Drag Component
+
+|
+
+^^^^^^^^^^^^^^^^^
+Browse Components
+^^^^^^^^^^^^^^^^^
+The Browse Components tool allows you to search / select a content type in the project then display the
+existing components for that content type that can be dragged and dropped into the current page being
+viewed if there are configured drop targets in it
+
+.. image:: /_static/images/content-author/preview-page-builder-browse-components.webp
+    :width: 30 %
+    :align: center
+    :alt: Navigating Studio - Experience Builder Panel Browse Components
+
+|
+
+When you drag a component into the page being previewed and there are no drop zones configured in the page,
+you will see a snack bar like below:
+
+.. image:: /_static/images/content-author/preview-page-builder-no-drop-targets.webp
+    :width: 80 %
+    :align: center
+    :alt: Navigating Studio - Experience Builder Panel No Drop Targets
+
+|
+
+^^^^^^^^^^^^^^^^^^^^^^
+Component Drop Targets
+^^^^^^^^^^^^^^^^^^^^^^
+The Component Drop Targets tool allows you to select a content type in the project then display the
+configured drop target for that content type on the current page being previewed
+
+.. image:: /_static/images/content-author/preview-page-builder-component-drop-targets.webp
+    :width: 70 %
+    :align: center
+    :alt: Navigating Studio - Experience Builder Panel Component Drop Targets
+
+|
+
+^^^^^^
+Assets
+^^^^^^
+The Assets tool allows you to search/list assets such as images that can be dragged into configured
+drop targets in the project
+
+.. image:: /_static/images/content-author/preview-page-builder-assets.webp
+    :width: 30 %
+    :align: center
+    :alt: Navigating Studio - Experience Builder Panel Assets
+
+|
+
+^^^^^^^^^^^^^^^^^^
+Audience Targeting
+^^^^^^^^^^^^^^^^^^
+The Audience Targeting tool allows you to view and set targeting attributes for the project
+
+.. image:: /_static/images/content-author/preview-page-builder-audience-targeting.webp
+    :width: 30 %
+    :align: center
+    :alt: Navigating Studio - Experience Builder Panel Audience Targeting
+
+|
+
+^^^^^^^^^^^^^
+Page Explorer
+^^^^^^^^^^^^^
+The Page Explorer tool allows you to browse/list content items such as pages, components and level
+descriptors in the project and make edits to them by clicking on the three dots next to the content
+item that appears when you hover your mouse on it
+
+.. image:: /_static/images/content-author/preview-page-builder-page-explorer.webp
+    :width: 30 %
+    :align: center
+    :alt: Navigating Studio - Experience Builder Panel Page Explorer
+
+|
+
+^^^^^^^^^^^^^^^^
+Device Simulator
+^^^^^^^^^^^^^^^^
+The Device Simulator tool allows an author to review the current page in the context of all devices
+supported by the project.
+
+The phone and tablet can be rotated through the use of the rotation control next to the width and
+height input boxes.
+
+.. image:: /_static/images/content-author/preview-publishing-channel.webp
+    :width: 60 %
+    :align: center
+    :alt: Navigating Studio - Experience Builder Panel Device Simulator
+
+|
+
+^^^^^^^^
+Settings
+^^^^^^^^
+The Settings tool allows you to switch on/off the ``Edit Mode`` (in-context editing) and setup
+highlighting of drop targets
+
+.. image:: /_static/images/content-author/preview-page-builder-settings.webp
+    :width: 30 %
+    :align: center
+    :alt: Navigating Studio - Experience Builder Panel Settings
+
+|
+
+^^^^^^^^^^^^^^^^^^^^^^^^
+Using Experience Builder
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: /_static/images/content-author/xb-enable-panel.webp
     :alt: Getting Started - XB Panel Enabled
@@ -825,10 +797,9 @@ or the two sets of three vertical dots (Move Mode), which will turn blue when en
 Studio. Enabling ``Edit mode`` or ``Move mode``  turns on the ``Experience builder`` panel on the right
 side of the screen.
 
-^^^^^^^^^
+"""""""""
 Edit mode
-^^^^^^^^^
-
+"""""""""
 .. image:: /_static/images/content-author/xb-edit-mode.webp
     :alt: Getting Started - XB Edit Mode
     :width: 35 %
@@ -858,16 +829,13 @@ highlight the section in a green box
     :width: 85 %
     :align: center
 
-^^^^^^^^^
+"""""""""
 Move mode
-^^^^^^^^^
-
-
+"""""""""
 .. image:: /_static/images/content-author/xb-move-mode.webp
     :alt: Getting Started - XB Move mode
     :width: 35 %
     :align: center
-
 
 ``Move Mode`` allows you to drag around a items from one position to a different position and also
 provides short-cut menus to open specific pieces of the content form, and the experience builder
@@ -883,10 +851,9 @@ your item.
     :width: 85 %
     :align: center
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""
 Using the Experience Builder Panel
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+""""""""""""""""""""""""""""""""""
 Let's take  a look at an example of editing a post using the experience builder (XB) panel in a project
 created using the ``Wordify`` blueprint from the Marketplace.
 
@@ -932,10 +899,11 @@ into that area.
 
 .. _content_authors_pages:
 
+.. TODO: Continue refactor here
+
 ------------------
 Working with Pages
 ------------------
-
 This section describes how content authors can create and use pages to manage content.
 Templates are used for page layouts in CrafterCMS. A developer usually creates the templates
 that authors can then use to manage content.

@@ -1,27 +1,25 @@
 :is-up-to-date: True
-:last-updated: 4.0.0
+:last-updated: 4.1.0
 
-.. TODO Review this and see what to refactor if anything (for example, security is covered elsewhere, but references here...)
-
-.. index:: Targeting
+.. index:: Targeting, Audience Targeting, Audience Segmentation, Segmentation
 
 .. _targeting:
 
-=================
-Content Targeting
-=================
-
-.. TODO Review this and see what to refactor if anything
+=========
+Targeting
+=========
+.. contents::
 
 Targeting is a CrafterCMS feature that allows delivering the right experience, with the right
 content, to the right people at the right time. CrafterCMS provides the ability to render content
 adapted to specific users, depending on different aspects like geographical location, language,
 preferences, etc. The following sections describe how you can use this feature to organize content.
 
+Be it templated or headless, CrafterCMS can return different content depending on the user's persona, or content metadata.
+
 --------------------------
 Targeting Using Taxonomies
 --------------------------
-
 Taxonomies allow you to organize your content to make it easy for your project users to browse what
 they want and deliver content appropriate for them. It also allows you to search for content faster.
 
@@ -33,10 +31,9 @@ their content.
 
 For the segments, we will have the values ``Guy`` and ``Gal``.
 
-^^^^^^^^^^^
-Configuring
-^^^^^^^^^^^
-
+^^^^^^^^^^^^^
+Configuration
+^^^^^^^^^^^^^
 **Targeting Configuration**
 
 .. figure:: /_static/images/site-admin/config-open-user-interface-config.webp
@@ -143,10 +140,9 @@ Here's the resulting xml file:
     
   </component>
 
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Model Criteria in Content
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
+^^^^^^^^^^^^^^^^^^^^^^^^
+Update the Content Model
+^^^^^^^^^^^^^^^^^^^^^^^^
 We will now see how to add the segments you just configured into a page. From the Sidebar, click
 on |projectTools|, next click on **Content Types**. Select **Article**, then click on
 **Open Type**
@@ -172,7 +168,6 @@ Section set to *Segments*.
 ^^^^^^^^^^^^^^^^^^
 Update the Content
 ^^^^^^^^^^^^^^^^^^
-
 Now that we have modeled the criteria, we can now update the content. When you create a new article
 page, you will see the grouped check boxes that we added in the previous section, in the Metadata
 section, ready for the content author to select which segment the page is targeted for. We will
@@ -191,7 +186,6 @@ checked).
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Build Dynamic Components
 ^^^^^^^^^^^^^^^^^^^^^^^^
-
 After targeting the content, we will now see how we can display pages depending on which user is
 logged in. Let's take a look at the home page of the Website Editorial blueprint. We are browsing
 as an user with the segment Gal, and we're looking at the featured articles:
@@ -226,11 +220,9 @@ articles targeted for the right value, which it then returns to the template, re
 when the page renders. To see how the articles displayed differ depending on who the current active
 user is, please see the section: :ref:`content_authors_site_views_diff_segments`
 
-
 --------------------------
 Targeting Using Categories
 --------------------------
-
 Another way of using taxonomies for organizing content is by targeting pages based on categories.
 First, decide on the categories that you'd like to use. After deciding on the categories, we will
 now work on adding in metadata to our project that content authors can use. In the Website Editorial
@@ -241,10 +233,9 @@ blueprint, the following categories are used:
 - Entertainment
 - Technology
 
-^^^^^^^^^^^
-Configuring
-^^^^^^^^^^^
-
+^^^^^^^^^^^^^
+Configuration
+^^^^^^^^^^^^^
 Here's the list that will be used by the Website Editorial blueprint when modeling the categories
 into the content. The list was created by right clicking on **Taxonomy** in the Sidebar, then
 clicking on **New Content**.
@@ -284,10 +275,9 @@ Here's the resulting xml file:
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Model Criteria in Content
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
+^^^^^^^^^^^^^^^^^^^^^^^^
+Update the Content Model
+^^^^^^^^^^^^^^^^^^^^^^^^
 We will now see how to add the categories you just configured into a page. From the Sidebar, click
 on |projectTools|, next click on **Content Types**. Select **Article**, then click on **Open Type**
 
@@ -313,7 +303,6 @@ Section set to *categories*.
 ^^^^^^^^^^^^^^^^^^
 Update the Content
 ^^^^^^^^^^^^^^^^^^
-
 Now that we have modeled the criteria, we can now target content. When you create a new article page,
 you will see the grouped check boxes that we added in the previous section, in the Metadata section,
 ready for the content author to select which category the page falls into. We will look at one of the
@@ -331,7 +320,6 @@ Notice that the article is targeted for the *Style* category.
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Build Dynamic Components
 ^^^^^^^^^^^^^^^^^^^^^^^^
-
 After updating the content, we can now see how we can use the categories we just setup on displaying
 content. Let's take a look at the homepage of our project. On the left side of the page, you can see
 the left rail of our project. If your screen is not wide enough, look at the top left corner of the
@@ -477,7 +465,6 @@ in the page (articles tagged for category Health).
 ---------------------
 Targeting Using Roles
 ---------------------
-
 Another way of organizing content is by targeting pages based on role(s). First, decide on the roles you'd
 like to use. After deciding on the roles, we will now work on adding in metadata to our project that content
 authors can use. Using the Website Editorial blueprint, for example, we can have the following roles for targeting purposes:
@@ -486,10 +473,9 @@ authors can use. Using the Website Editorial blueprint, for example, we can have
 - ROLE_admin
 - ROLE_editor
 
-^^^^^^^^^^^
-Configuring
-^^^^^^^^^^^
-
+^^^^^^^^^^^^^
+Configuration
+^^^^^^^^^^^^^
 Let's configure targeting based on roles by clicking on |projectTools| in the Sidebar, then clicking on
 **Configuration** and finally selecting **User Interface Configuration** from the dropdown box.
 
@@ -553,10 +539,9 @@ Below is how the configuration for roles using the Website Editorial blueprint w
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^
-Model Criteria in Content
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
+^^^^^^^^^^^^^^^^^^^^^^^^
+Update the Content Model
+^^^^^^^^^^^^^^^^^^^^^^^^
 We will now see how to add the role(s) into a page. From the Sidebar, click
 on |projectTools|, next click on **Content Types**. Select **Article**, then select
 **Open Type**
@@ -597,7 +582,6 @@ Name** field set to "role". Make this Input required by checking the checkbox un
 ^^^^^^^^^^^^^^^^^^
 Update the Content
 ^^^^^^^^^^^^^^^^^^
-
 Now that we have modeled the criteria, we can now target content. When you create a new article page,
 you will see the repeating group control that we added in the previous section, in the Metadata section,
 ready for the content author to input which role is authorized to preview the page. We will look at one of the
@@ -624,7 +608,6 @@ Let's setup the page to be available to users with the role ``user``. The prefix
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Build Dynamic Components
 ^^^^^^^^^^^^^^^^^^^^^^^^
-
 After targeting the content, we will now see how we can display pages depending on which role a
 user has. Let's take a look at the home page of the Website Editorial blueprint. We are browsing
 as a user with the role ``ROLE_user``,

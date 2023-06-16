@@ -26,17 +26,12 @@ Reference
 Include
 =======
 - JWT
-- Multi-environment configuration
 - Default ports (authoring and delivery) -- either one include for both or two separate.
 
 Developer
 =========
-- Multi-environment config (include)
-- Move the Groovy unit testing article to this section
-- Include or move the adding custom services to Engine to this section
 - Custom Error Pages
 - Security page (complete it)
-- Targeting article
 
 Site Admin
 ==========

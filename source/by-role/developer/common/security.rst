@@ -12,7 +12,7 @@ Securing CrafterCMS projects/site is a very important aspect of the platform. Cr
 
 - Authentication Mechanics
 - Authorization Mechanics
-- Securing an Entire Project
+- Securing an Entire Delivery Tier
 - Securing Sections or Individual Content Items
 
 .. - Securing Some Static Assets
@@ -79,10 +79,51 @@ Role-based Authorization for Sections
 Role-based authorization can also be applied to entire sections. This is done by adding the ``authorizedRoles`` model to the ``crafter-level-descriptor.level.xml`` file in the section's folder. This will limit access to the entire section to only users that are in the specified roles. Learn more about content inheritance in :ref:`content-inheritance`.
 Bear in mind that the ``crafter-level-descriptor.level.xml`` file is not created by default. It must be created manually. Also, individual content items can override the ``authorizedRoles`` model specified in the ``crafter-level-descriptor.level.xml`` file.
 
----------------------------
-Securing the Entire Project
----------------------------
+---------------------------------
+Securing the Entire Delivery Tier
+---------------------------------
 The easiest way to secure a project is by wrapping the entire delivery tier with an authentication layer that blocks access to _all_ content unless the user is authenticated.
+
+Protecting the entire delivery tier means blocking all access unless the user is authenticated. This can be done in a number of ways:
+- Configuring Crafter Engine to use SAML2 or Headers-based Authentication for all requests
+- Configuring the CDN (Content Delivery Network), e.g. AWS CloudFront with AWS Cognito
+- Configuring a reverse-proxy, e.g. Apache HTTPd with `mod_auth_openidc`
+
+In this article, we will cover how to configure Crafter Engine to use SAML2 or Headers-based Authentication for all requests. Utilizing a CDN or reverse-proxy is outside the scope of this article, but we will provide a general overview of how to configure them.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configure Delivery-Wide Authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Delivery-wide authentication can be accomplished with Crafter Engine, a CDN, a reverse-proxy, or a combination of these mechanisms.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Crafter Engine Instance-Wide Authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Crafter Engine supports the SAML2 protocol of authentication and HTTP-headers-based authentication.
+
+""""""""""""""""""""""""""""""""""""""""""""
+Engine SAML2 Authentication |enterpriseOnly|
+""""""""""""""""""""""""""""""""""""""""""""
+Crafter Engine's SAML2 implementation is configured at the instance level. This means that all projects served by this instance node will use the same SAML2 configuration, and will be authenticated against the same SAML2 IdP (Identity Provider).
+
+.. TODO Link to :ref:`engine-saml2-configuration`
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Multi-Environment Authentication Support
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+It's often the case that lower environments will require their own authentication configuration. Crafter Engine supports that by allowing you to configure multiple SAML2 configurations, and then specify which configuration to use for each environment. See the article :ref:`saml2-multi-environment-support` for more information.
+
+.. TODO: Continue here
+
+, you must first configure the authentication mechanism. CrafterCMS supports SAML2 and Headers-based Authentication out of the box. Learn more about configuring SAML2 in :ref:`saml2-multi-environment-support` and configuring Headers-based Authentication in :ref:`headers-based-authentication`.
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Engine HTTP Headers-Based Authentication |enterpriseOnly|
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~
+CDN or Reverse-Proxy
+~~~~~~~~~~~~~~~~~~~~
+
 
 .. TODO:
 - SAML in Engine
