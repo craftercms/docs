@@ -3,9 +3,9 @@
 
 .. _developer:
 
-==========
-Developers
-==========
+=========
+Developer
+=========
 .. contents::
 
 This section focuses on how to build content rich applications backed by CrafterCMS. It covers
