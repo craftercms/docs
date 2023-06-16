@@ -31,7 +31,6 @@ Include
 Developer
 =========
 - Custom Error Pages
-- Security page (complete it)
 
 Site Admin
 ==========
