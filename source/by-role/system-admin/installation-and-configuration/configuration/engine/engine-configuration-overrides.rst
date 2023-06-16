@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.3
+:last-updated: 4.1.0
 
 
 .. index:: Engine's Configuration Overrides, Configuration Overrides, Overrides
@@ -21,7 +21,7 @@ Properties
 The following allows you to configure the following:
 
 * ``crafter.engine.site.default.rootFolder.path`` allows you to set the content root folder
-* ``crafter.engine.elasticsearch.timeout.connect``, ``crafter.engine.elasticsearch.timeout.socket`` and ``crafter.engine.elasticsearch.threads`` allows you to configure the Elasticsearch client connection timeout, socket timeout and number of threads
+* ``crafter.engine.search.timeout.connect``, ``crafter.engine.search.timeout.socket`` and ``crafter.engine.search.threads`` allows you to configure the search client connection timeout, socket timeout and number of threads
 
 .. code-block:: properties
    :linenos:
@@ -29,28 +29,20 @@ The following allows you to configure the following:
 
    # Content root folder. The {siteName} variable will be automatically replaced.
    crafter.engine.site.default.rootFolder.path=file:${CRAFTER_DATA_DIR}/repos/sites/{siteName}/sandbox/
-   # The URL of Crafter Search
+   # The search hosts to use
    crafter.engine.search.server.url=${SEARCH_URL}
-   # The value for the access token for Crafter Search
-   crafter.engine.search.server.accessToken.value=${SEARCH_ACCESS_TOKEN}
-   # The URL of Crafter Profile
-   crafter.profile.rest.client.url.base=${PROFILE_URL}
-   # If the Security Provider is enabled
-   crafter.security.enabled=true
-   # The Elasticsearch hosts to use
-   crafter.engine.elasticsearch.urls=${ES_URL}
-   # The username for Elasticsearch
-   crafter.engine.elasticsearch.username=${ES_USERNAME}
-   # The password for Elasticsearch
-   crafter.engine.elasticsearch.password=${ES_PASSWORD}
+   # The username for search
+   crafter.engine.search.username=${SEARCH_USERNAME}
+   # The password for search
+   crafter.engine.search.password=${SEARCH_PASSWORD}
    # The connection timeout in milliseconds, if set to -1 the default will be used
-   crafter.engine.elasticsearch.timeout.connect=-1
+   crafter.engine.search.timeout.connect=-1
    # The socket timeout in milliseconds, if set to -1 the default will be used
-   crafter.engine.elasticsearch.timeout.socket=-1
+   crafter.engine.search.timeout.socket=-1
    # The number of threads to use, if set to -1 the default will be used
-   crafter.engine.elasticsearch.threads=-1
+   crafter.engine.search.threads=-1
    # Indicates if keep alive should be enabled for sockets used by the search client, defaults to false
-   crafter.engine.elasticsearch.keepAlive=false
+   crafter.engine.search.keepAlive=false
 
    # Engine management authorization token
    crafter.engine.management.authorizationToken=${ENGINE_MANAGEMENT_TOKEN}
@@ -187,7 +179,6 @@ The following allows you to configure the maximum number of objects in Engine's 
 ^^^^^^^^^^^^^^^^^^^
 URL Transformations
 ^^^^^^^^^^^^^^^^^^^
-
 The following allows you to configure whether the URL transformation performed by the view resolver will be cached:
 
 .. code-block:: properties
@@ -198,25 +189,24 @@ The following allows you to configure whether the URL transformation performed b
 ^^^^^^^^^^^^^^^^^
 Preloaded Folders
 ^^^^^^^^^^^^^^^^^
-
 The following allows you to configure folders to be preloaded in the cache:
 
 .. code-block:: properties
-   :emphasize-lines: 7,10,13
+    :emphasize-lines: 7,10,13
 
-   #################
-   # Cache Warm Up #
-   #################
-   # Indicates if cache warming should be enabled. This means the site cache will be warmed up (according to a list of
-   # cache warmers) on context init and instead of cache clear, a new cache will be warmed up and switched with the
-   # current one
-   crafter.engine.site.cache.warmUp.enabled=false
-   # The descriptor folders that need to be preloaded in cache, separated by comma. Specify the preload depth with
-   # :{depth} after the path. If no depth is specified, the folders will be fully preloaded.
-   crafter.engine.site.cache.warmUp.descriptor.folders=/site:4
-   # The content folders that need to be preloaded in cache, separated by comma. Specify the preload depth with
-   # :{depth} after the path. If no depth is specified, the folders will be fully preloaded.
-   crafter.engine.site.cache.warmUp.content.folders=/scripts,/templates
+    #################
+    # Cache Warm Up #
+    #################
+    # Indicates if cache warming should be enabled. This means the site cache will be warmed up (according to a list of
+    # cache warmers) on context init and instead of cache clear, a new cache will be warmed up and switched with the
+    # current one
+    crafter.engine.site.cache.warmUp.enabled=false
+    # The descriptor folders that need to be preloaded in cache, separated by comma. Specify the preload depth with
+    # :{depth} after the path. If no depth is specified, the folders will be fully preloaded.
+    crafter.engine.site.cache.warmUp.descriptor.folders=/site:4
+    # The content folders that need to be preloaded in cache, separated by comma. Specify the preload depth with
+    # :{depth} after the path. If no depth is specified, the folders will be fully preloaded.
+    crafter.engine.site.cache.warmUp.content.folders=/scripts,/templates
 
 where:
 
@@ -226,3 +216,46 @@ where:
   - The content folders are mostly static, non-processed content, e.g. scripts, templates, static-assets
 
 For all projects, the cache is preloaded using the above configuration. CrafterCMS warms up the cache on every publish and startup. Note also that what's cache warmed will be warmed on every publish and startup and will live as long as nothing kicks it out of the cache due to least recently used (LRU) cache.
+
+.. _s3-object-caching:
+
+^^^^^^^^^
+S3 Object
+^^^^^^^^^
+.. version_tag::
+    :label: Since
+    :version: 4.1.0
+
+The following allows you to configure a white list of paths for caching in memory when using S3 store and also the maximum content length for S3 objects allowed to be cached in memory
+
+.. code-block:: properties
+
+    # Maximum content length (in bytes) for S3 objects to be cached in memory. Larger files will be retrieved
+    # directly from S3 every time they are requested.
+    # Default set to 10M = 10 * 1024 * 1024
+    crafter.engine.store.s3.cache.contentMaxLength=10485760
+    # White list of paths to be cached in memory when using S3 store.
+    crafter.engine.store.s3.cache.allowedPaths=\
+      /config/.*,\
+      /site/.*,\
+      /scripts/.*,\
+      /templates/.*,\
+      /static-assets/css/.*,\
+      /static-assets/js/.*,\
+      /static-assets/fonts/.*
+
+.. _request-filtering-configuration:
+
+-------------------------------
+Request Filtering Configuration
+-------------------------------
+.. version_tag::
+    :label: Since
+    :version: 4.1.0
+
+The following allows you to setup a filter to deny access to any request matching the value/s defined in the property.
+
+.. code-block:: properties
+    :caption: *CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension/server-config.properties*
+
+    crafter.security.forbidden.urls=/templates/**

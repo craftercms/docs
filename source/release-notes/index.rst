@@ -1,14 +1,11 @@
-:is-up-to-date: False
-:since-version: 4.1.0
-
-
+:is-up-to-date: True
+:last-updated: 4.1.0
 
 .. _release-notes:
 
 =============
 Release Notes
 =============
-
 This section contains release notes for CrafterCMS 4.1. For other release notes, please visit your
 release's release notes page here: http://docs.craftercms.org
 

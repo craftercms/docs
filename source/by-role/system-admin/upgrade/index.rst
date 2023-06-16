@@ -1,5 +1,5 @@
-:is-up-to-date: False
-
+:is-up-to-date: True
+:last-updated: 4.1.0
 
 .. index:: Upgrading CrafterCMS; Upgrading
 
@@ -9,12 +9,10 @@
 Upgrading CrafterCMS
 ====================
 
-.. TODO Update to the latest 4
-
 This section details the steps required to upgrade your CrafterCMS install.
 
 .. WARNING::
-   * This guide assumes that you're trying to upgrade from a stock 3.1.x Studio and with some slight Studio configuration changes. If your site configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
+   * This guide assumes that you're trying to upgrade from a stock 3.1.x or 4.0.x Studio and with some slight Studio configuration changes. If your project/site configuration is heavily customized or your Studio is a custom overlay you might need additional work that is not specified here.
 
    * The following release versions are able to upgrade to 4.
 
@@ -91,3 +89,42 @@ When the system is in an undefined state between two versions, you may see the f
 |
 
 The above message may occur, if you had an error upgrading because of a failed statement, then you restarted the system again. Because the script was not executed completely, the system is in an undefined state between the two versions. So, the next time the system is restarted, the upgrade will be attempted again resulting in a different message in the logs as seen above. The solution here would be to look some more in the logs for the failed statement before the system was restarted and manually recover, like the previous example.
+
+.. _db-upgrades-timeout:
+
+-------------------
+DB Upgrades Timeout
+-------------------
+On start, Crafter Studio will run its Upgrade Manager. When migrating large sites
+with a large content base, some DB operations can timeout and throw an error like the following:
+
+.. code-block:: text
+    :caption: System in an undefined state between two versions
+
+    Caused by: java.lang.NullPointerException: Cannot read field "lock" because "this.connection" is null
+	    at org.mariadb.jdbc.MariaDbProcedureStatement.execute(MariaDbProcedureStatement.java:174) ~[mariadb-java-client-2.7.4.jar:?]
+	    at org.apache.commons.dbcp2.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:94) ~[commons-dbcp2-2.9.0.jar:2.9.0]
+	    at org.apache.commons.dbcp2.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:94) ~[commons-dbcp2-2.9.0.jar:2.9.0]
+	    at org.craftercms.studio.impl.v2.upgrade.operations.db.PopulateItemTableUpgradeOperation.populateDataFromDB(PopulateItemTableUpgradeOperation.java:213) ~[classes/:4.1.0-SNAPSHOT]
+	    at org.craftercms.studio.impl.v2.upgrade.operations.db.PopulateItemTableUpgradeOperation.processSite(PopulateItemTableUpgradeOperation.java:179) ~[classes/:4.1.0-SNAPSHOT]
+	    at org.craftercms.studio.impl.v2.upgrade.operations.db.PopulateItemTableUpgradeOperation.doExecute(PopulateItemTableUpgradeOperation.java:156) ~[classes/:4.1.0-SNAPSHOT]
+	    at org.craftercms.studio.impl.v2.upgrade.operations.AbstractUpgradeOperation.doExecute(AbstractUpgradeOperation.java:103) ~[classes/:4.1.0-SNAPSHOT]
+	    at org.craftercms.commons.upgrade.impl.operations.AbstractUpgradeOperation.execute(AbstractUpgradeOperation.java:97) ~[crafter-commons-upgrade-manager-4.1.0-SNAPSHOT.jar:4.1.0-SNAPSHOT]
+	    at org.craftercms.commons.upgrade.impl.pipeline.DefaultUpgradePipelineImpl.execute(DefaultUpgradePipelineImpl.java:82) ~[crafter-commons-upgrade-manager-4.1.0-SNAPSHOT.jar:4.1.0-SNAPSHOT]
+	    at org.craftercms.studio.impl.v2.upgrade.StudioUpgradeManagerImpl.upgradeDatabaseAndConfiguration(StudioUpgradeManagerImpl.java:122) ~[classes/:4.1.0-SNAPSHOT]
+	    at org.craftercms.studio.impl.v2.upgrade.StudioUpgradeManagerImpl.startUpgrade(StudioUpgradeManagerImpl.java:285) ~[classes/:4.1.0-SNAPSHOT]
+	    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+
+|
+
+To prevent the error, the environment variable `MARIADB_SOCKET_TIMEOUT <https://github.com/craftercms/craftercms/blob/develop/resources/env/authoring/bin/crafter-setenv.sh#L100>`__ in the ``{Crafter-CMS-install-directory}/bin/crafter-setenv.sh`` file of the CrafterCMS install you're running the upgrade script from may need to be increased depending on the size of the existing sites.
+
+Here's an example of setting the timeout to 10 hours:
+
+.. code-block:: sh
+    :caption: *{Crafter-CMS-install-directory}/bin/crafter-setenv.sh*
+
+    # Setting timeout to 10h = 3600 * 10 * 1000ms
+    export MARIADB_SOCKET_TIMEOUT=${MARIADB_SOCKET_TIMEOUT:="36000000"}
+
+|
