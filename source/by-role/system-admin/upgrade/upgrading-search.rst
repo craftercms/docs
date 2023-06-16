@@ -13,6 +13,11 @@ This section describes how to upgrade search for CrafterCMS installed on a serve
 Please read through the upgrade instructions :ref:`here <upgrading-craftercms-on-a-server>` first.
 The steps for upgrading to OpenSearch follows almost exactly the same steps as listed in that document.
 
+.. important::
+    Remember to **manually shut down and backup CrafterCMS** before beginning your upgrades!
+
+|hr|
+
 --------------------------------------
 Upgrading 3.1.x -> 4.1.0 (from ES 6.x)
 --------------------------------------
@@ -42,7 +47,7 @@ Here is the ``upgrade-search`` script params:
     # Run in a different port
     ./upgrade-search.sh --port 9206 /path/of/install/to/be/upgraded --stay-aliveUpgrading 3.1.x -> 4.1.0 (from ES 6.x)
 
-Before beginning your upgrade, remember that the install you're upgrading needs to be running. Here are the steps to  upgrade your CrafterCMS  3.1.x install:
+Here are the steps to  upgrade your CrafterCMS  3.1.x install:
 
 #. Download the CrafterCMS version you'd like to upgrade to, and extract the files.
 #. Run the ``upgrade-search.sh`` script from your newly extracted files.
