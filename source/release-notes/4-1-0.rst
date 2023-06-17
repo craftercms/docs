@@ -9,15 +9,65 @@ CrafterCMS 4.1.0
 ^^^^^^^^^^^^
 New Features
 ^^^^^^^^^^^^
-
 * **Studio UI New Features** |br|
+
+  - New Dashboard
+  - Improved Sidebar
 
 ^^^^^^^
 Updates
 ^^^^^^^
-* Upgraded Java to version 17
+* Upgraded Java to version 17 LTS |br|
 
-* Switched to OpenSearch version 2.6.0
+* Switched the search engine to OpenSearch version 2.8.0 |br|
+  See :ref:`here <upgrading-search>` for more information on upgrading to OpenSearch
+
+* Updated the minimum number of characters for usernames to 2 characters |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6106>`__ for more information
+
+* Fixed the issue with ICE Pencil not propagating click events in compatibility-mode |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6094>`__ for more information
+
+* Fixed the issue with global permission mappings |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6093>`__ for more information
+
+* Fixed the issue for projects with multi-environment configuration setup |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6025>`__ for more information
+
+* Fixed the issue with content after ``Save & Close`` and ``Save & Minimize`` action |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6011>`__ for more information
+
+* Fixed the issue with Site Policy when uploading image from image upload control |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6008>`__ for more information
+
+* Fixed the issue with pop-up buttons containing multiple options |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6005>`__ for more information
+
+* Fixed the issue with binary content indexing for large files |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5997>`__ for more information
+
+* Fixed the issue with required fields calculation for Page-URL fields |br|
+  See `here <https://github.com/craftercms/craftercms/issues/5837>`__ for more information
+
+* Fixed the issue with create project failures due to line breaks in queries |br|
+
+* Fixed the issue with SAML re-authentication via Open Login form after a session expires |br|
+
+* Added support for filtering requests |br|
+  See :ref:`here <request-filtering-configuration>` for more information
+
+* Updated default validation regex |br|
+  See :ref:`here <studio-validations-regex>` for more information on default validations regex values
+
+* Added support for configuring limits to S3 object caching |br|
+  See :ref:`here <s3-object-caching>` for more information
+
+* SPA applications can now directly include CSS files from ``/static-assets/app`` by default  |br|
+
+* Noteworthy dependency updates:
+
+  - MongoDB to version 4.9.1 (optional)
+  - Box SDK to version 4.1.1 (optional)
 
 Lot's of other small enhancements and bug fixes :)
 
@@ -27,14 +77,8 @@ For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1
 
 .. important::
 
-    Please see :ref:`Breaking changes <breaking-changes-4-0-0>` for breaking changes and other
+    Please see :ref:`Breaking changes <breaking-changes-4-1-0>` for breaking changes and other
     things to consider before upgrading
 
-    For instructions on how to update your CrafterCMS install to 4.0.0,
+    For instructions on how to update your CrafterCMS install to 4.1.0,
     please see :ref:`upgrading-craftercms`
-
-    For Linux installs, the Studio upgrade requires the library ``libaio`` which is not installed
-    by default in some Linux distributions. Please see the section on **Linux Prerequisites**
-    in :ref:`linux-prerequisites` for instructions on how to install the library ``libaio``
-
-

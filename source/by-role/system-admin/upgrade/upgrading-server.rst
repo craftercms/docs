@@ -1,7 +1,9 @@
 :is-up-to-date: False
-
+:last-updated: 4.1.0
 
 .. index:: Upgrading CrafterCMS, Upgrading
+
+.. _upgrading-craftercms-on-a-server:
 
 ================================
 Upgrading CrafterCMS on a Server
@@ -14,7 +16,7 @@ CrafterCMS provides a couple of scripts for upgrading your installation.
 * :ref:`Running the upgrade script (upgrade-target) from a new binary archive <upgrade-using-new-binary-archive>`
 * :ref:`Running the upgrade script (start-upgrade) from your current installation <upgrade-using-current-install>`
 
-The upgrade script allows you to do an upgrade, where your bin directory is upgraded, keeping only Tomcat's shared folder, Tomcat's conf folder, the Elasticsearch config, the Deployer config folder, and the crafter-setenv scripts.
+The upgrade script allows you to do an upgrade, where your bin directory is upgraded, keeping only Tomcat's shared folder, Tomcat's conf folder, the search config, the Deployer config folder, and the crafter-setenv scripts.
 
 When performing an upgrade, CrafterCMS is shut down, then the script asks if the user wants to backup the ``data`` folder. It will then ask if the user wants to backup the ``bin`` folder, then perform the upgrade. After  running  the upgrade script (either *upgrade-target*  or *start-upgrade*), run the ``post-upgrade`` script. Finally, you can :ref:`start your CrafterCMS  <start-crafter-after-upgrade>` install again.
 
@@ -55,16 +57,7 @@ For config files that are different in the new release, the script gives you the
 |
 
    .. note::
-      When upgrading to CrafterCMS version 4 from a 3.1.x version, the environment variable `MARIADB_SOCKET_TIMEOUT <https://github.com/craftercms/craftercms/blob/develop/resources/env/authoring/bin/crafter-setenv.sh#L85>`__ in the ``{Crafter-CMS-install-directory}/bin/crafter-setenv.sh`` file of the CrafterCMS install you're running the upgrade script from may need to be increased depending on the size of the existing sites.
-
-      Here's an example where we increased it to 3x the default value:
-
-         .. code-block:: sh
-            :caption: *{Crafter-CMS-install-directory}/bin/crafter-setenv.sh*
-
-            export MARIADB_SOCKET_TIMEOUT=${MARIADB_SOCKET_TIMEOUT:="180000"}
-
-         |
+      When upgrading to CrafterCMS version 4 from a 3.1.x version, remember to increase the timeout set in the environment variable ``MARIADB_SOCKET_TIMEOUT`` in the ``{Crafter-CMS-install-directory}/bin/crafter-setenv.sh`` file of the CrafterCMS install you're running the upgrade script from to a high enough value to avoid running into a :ref:`db-upgrades-timeout`
 
 ----------------
 Before Upgrading
