@@ -6,6 +6,9 @@
 ==========
 Architects
 ==========
+.. contents::
+    :local:
+    :depth: 2
 
 This section details key concepts for CrafterCMS experience architects
 
@@ -233,7 +236,7 @@ In-Context Editing
 CrafterCMS provides an SDK that lets developers focused on a headless use-case add the tools content authors expect,
 like visual in-context and in-place editing of Web content regardless of the development platform and tools.
 
-More information on Experience Builder :ref:`here <xb>` and on the SDK `here <https://www.npmjs.com/package/@craftercms/experience-builder>`__
+More information on Experience Builder :ref:`here <experience-builder>` and on the SDK `here <https://www.npmjs.com/package/@craftercms/experience-builder>`__
 
 .. _ architect-templated:
 
@@ -313,7 +316,7 @@ In-Context Editing
 CrafterCMS provides an SDK that lets developers focused on a headless use-case add the tools content authors expect,
 like visual in-context and in-place editing of Web content regardless of the development platform and tools.
 
-More information on Experience Builder :ref:`here <xb>` and on the SDK `here <https://www.npmjs.com/package/@craftercms/experience-builder>`__
+More information on Experience Builder :ref:`here <experience-builder>` and on the SDK `here <https://www.npmjs.com/package/@craftercms/experience-builder>`__
 
 ------------
 Availability

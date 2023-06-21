@@ -116,17 +116,17 @@ It's often the case that lower environments will require their own authenticatio
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Engine HTTP Headers-Based Authentication |enterpriseOnly|
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-When authenticating outside of Crafter Engine, the authenticating system can pass the authenticated user information to Crafter Engine via HTTP headers. Crafter Engine can then use that information to authenticate the user to the project/site. Learn more about this in the article :ref:`engine-headers-based-authentication`.
+When authenticating outside of Crafter Engine, the authenticating system can pass the authenticated user information to Crafter Engine via HTTP headers. Crafter Engine can then use that information to authenticate the user to the project/site. Learn more about this in the article :ref:`engine-headers-authentication`.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 CDN or Reverse-Proxy and Securing Static Assets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 It's sometimes desirable to use a CDN or reverse-proxy to secure the delivery tier. The primary use-case here is the delivery of static assets, such as videos, images, CSS, and JavaScript files via the CDN or reverse-proxy instead of the application tier. This can speed up delivery of these assets, and reduce the load on the application tier.
 
-As an example, AWS CloudFront supports this approach as described in `https://aws.amazon.com/blogs/networking-and-content-delivery/securing-cloudfront-distributions-using-openid-connect-and-aws-secrets-manager/`_.
+As an example, AWS CloudFront supports this approach as described in https://aws.amazon.com/blogs/networking-and-content-delivery/securing-cloudfront-distributions-using-openid-connect-and-aws-secrets-manager.
 
 A similar setup can be accomplished with Apache HTTPd and ``mod_auth_openidc``, whereby Apache HTTPd serves the static assets, and Engine serves the dynamic experience and API calls.
 
-It's important to remember that for Crafter Engine to know about this authentication that was terminated upstream, it's important to pass in the correct headers for Crafter Engine to use. Learn more about this in the article :ref:`engine-headers-based-authentication`.
+It's important to remember that for Crafter Engine to know about this authentication that was terminated upstream, it's important to pass in the correct headers for Crafter Engine to use. Learn more about this in the article :ref:`engine-headers-authentication`.
 
 .. TODO Do we need to discuss Signed URLs here?

@@ -12,6 +12,8 @@
 Groovy Development
 ==================
 .. contents::
+    :local:
+    :depth: 2
 
 CrafterCMS supports server-side development with Groovy. By using Groovy, you can create RESTful services, MVC controllers, code that runs before a page or component is rendered, servlet filters, scheduled jobs, and entire backend applications.
 

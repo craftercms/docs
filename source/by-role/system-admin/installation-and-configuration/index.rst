@@ -7,6 +7,9 @@
 ==============================
 Installation and Configuration
 ==============================
+.. contents::
+    :local:
+    :depth: 2
 
 This section describes various ways of installing and configuring CrafterCMS.
 

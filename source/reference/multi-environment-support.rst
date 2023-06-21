@@ -9,6 +9,9 @@
 Multi-environment Support
 =========================
 .. contents::
+    :local:
+    :depth: 2
+
 
 ----------------------------------
 What is Multi-environment Support?
@@ -22,7 +25,7 @@ Studio Multi-environment Support
 --------------------------------
 To setup a Studio environment, do the following:
 
-#. Create a folder under ``CRAFTER_HOME/data/repos/site/${site}/sandbox/config/studio`` called ``env``
+#. Create a folder under ``CRAFTER_HOME/data/repos/sites/${site}/sandbox/config/studio`` called ``env``
 #. Inside the folder, create a directory called ``myenv`` (or whatever you want to call the environment)
 #. Copy the configuration file you want to override in the new environment you are setting up, inside your ``myenv`` folder
    following the folder structure under ``config/studio``.

@@ -25,6 +25,8 @@ The JavaScript SDK have the following npm package names:
 * `@craftercms/search <https://www.npmjs.com/package/@craftercms/search>`__ - Contains tools for integrating your application with Crafter Search.
 * `@craftercms/utils <https://www.npmjs.com/package/@craftercms/utils>`__ - Contains various utilities useful when developing with CrafterCMS
 * `@craftercms/ice <https://www.npmjs.com/package/@craftercms/ice>`__ - Contains JavaScript utilities to use CrafterCMS In Context Editing in your Apps and Sites
+* `@craftercms/experience-builder <https://www.npmjs.com/package/@craftercms/experience-builder>`__ - Contains JavaScript utilities to use CrafterCMS experience builder in your Apps and Sites
+* `@craftercms/studio-ui <https://www.npmjs.com/package/@craftercms/studio-ui>`__ - Contains tools to enable building CrafterCMS extensions using all of its native UI components, utils and APIs
 
 
 See the blueprint `Video Center <https://craftercms.com/marketplace/video-center-blueprint>`__ in the *Public Marketplace* when creating a project in Crafter Studio for an example of using the above JavaScript SDK NPM packages.
