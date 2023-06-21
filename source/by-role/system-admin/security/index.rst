@@ -12,9 +12,9 @@ Basics
 ------
 .. Add some language to introduce
 
-:ref:`securing-your-crafter-cms-install`
-:ref:`configure-ssl-tls`
-:ref:`configuring-studio-security`
+- :ref:`securing-your-crafter-cms-install`
+- :ref:`configure-ssl-tls`
+- :ref:`configuring-studio-security`
 
 ---------
 Authoring

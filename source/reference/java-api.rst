@@ -10,10 +10,10 @@ Java API
 ========
 
 .. TODO: Outline
-- Introduce in-process/java API
-- Point to javadoc
-- Elaborate with examples on XPath content queries
-- Elaborate with examples on Structure queries and filtering
+    - Introduce in-process/java API
+    - Point to javadoc
+    - Elaborate with examples on XPath content queries
+    - Elaborate with examples on Structure queries and filtering
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

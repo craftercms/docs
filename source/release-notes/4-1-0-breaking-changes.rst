@@ -28,7 +28,7 @@ before upgrading. Please review the following and apply changes as required:
   - CrafterCMS 4.1.0 has a new Studio UI. To get the same Sidebar you're used to, update
     the :ref:`user-interface-configuration`
 
-  - Update ICE to move to :ref:`XB <xb>`
+  - Update ICE to move to :ref:`XB <experience-builder>`
 
   - Studio and Engine SAML configuration now uses a key and certificate for configuration instead of using keystore. |br|
     See :ref:`engine-saml2-configuration` and :ref:`crafter-studio-configure-studio-saml` for more information.
