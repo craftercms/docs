@@ -1,4 +1,5 @@
 :is-up-to-date: False
+:last-updated: 4.1.0
 
 .. _reference:
 
@@ -56,15 +57,15 @@ For non-content related APIs, such as user/group management, monitoring, indexin
     * - Module
       - REST API
     * - :ref:`Studio<crafter-studio>`
-      - OAS Link
+      - :ref:`crafter-studio-api`
     * - :ref:`Engine<crafter-engine>`
       - `Crafter Engine APIs <../_static/api/engine.html>`_
     * - :ref:`Deployer<crafter-deployer>`
       - `Crafter Deployer APIs <../_static/api/deployer.html>`_
     * - :ref:`Profile<crafter-profile>`
-      - OAS Link
+      - :ref:`crafter-profile-api`
     * - :ref:`Social<crafter-Social>`
-      - OAS Link
+      - :ref:`crafter-social-api`
 
 ^^^^^^^^
 Java Doc
