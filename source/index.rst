@@ -31,6 +31,7 @@ When/where to use CrafterCMS
 ============================
 
 CrafterCMS is best suited for:
+
 * Content-rich applications that are authored by a few and consumed by many.
 * Enterprise-grade, complex, and integration-rich applications.
 * Applications that require a high degree of scalability, performance, and availability.
@@ -40,6 +41,7 @@ Who uses CrafterCMS
 ===================
 
 CrafterCMS is used by three main constituencies:
+
 * Developers who build applications using CrafterCMS.
 * Authors who create and manage content using CrafterCMS.
 * DevOps who deploy and manage CrafterCMS.

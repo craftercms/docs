@@ -6,8 +6,9 @@
 ======
 Author
 ======
-
 .. contents::
+    :local:
+    :depth: 2
 
 Authors create, edit and submit content for experiences. CrafterCMS's Crafter Studio provides the author an easy to use
 authoring system for the development and optimization of content-rich experiences.
@@ -17,6 +18,8 @@ author begins contributing content for the experience being built. This section 
 authoring environment and how authors manages content.
 
 .. include:: /includes/how-craftercms-works.rst
+
+|
 
 * Authors work in Crafter Studio
 

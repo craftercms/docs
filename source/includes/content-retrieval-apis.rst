@@ -5,7 +5,7 @@ CrafterCMS requires you use one of the following APIs to gain access to your con
 * GraphQL (great for SPAs and/or AJAX) :ref:`graphql`
 * Search API :ref:`search`
 * REST API (great for SPAs and/or AJAX) :ref:`rest-content-retrieval-api`
-* Groovy (great for full control of the API endpoints and response shape) :ref:`groovy-development
+* Groovy (great for full control of the API endpoints and response shape) :ref:`groovy-development`
 * Java (can be accessed from Groovy and gives full access to Crafter Engine) :ref:`java-api`
 
 +--------------+---------------------+----------------------------------+---------------------+

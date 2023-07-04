@@ -9,9 +9,10 @@
 Search
 ======
 .. contents::
+    :local:
 
 To perform content queries you need to use the client provided by Crafter Engine, the bean name is
-``openSearchClient`` and it can be used from any Groovy script.
+``searchClient`` and it can be used from any Groovy script.
 
 You can find the interface for this service :javadoc_base_url:`here <search/org/craftercms/search/opensearch/client/OpenSearchClientWrapper.html>`
 
@@ -29,7 +30,7 @@ simple queries that don't require too much configuration.
   // No imports are required for this method
 
   // Execute the query using inline builders
-  def searchResponse = openSearchClient.search(r -> r
+  def searchResponse = searchClient.search(r -> r
     .query(q -> q
       .bool(b -> b
         .should(s -> s
@@ -92,7 +93,7 @@ allow you to use builder objects to develop complex logic for building the queri
   }
 
   // Execute the query
-  def searchResponse = openSearchClient.search(builder.build(), Map)
+  def searchResponse = searchClient.search(builder.build(), Map)
 
   def itemsFound = searchResponse.hits().total().value()
   def items = searchResponse.hits().hits()
@@ -152,7 +153,7 @@ as key and the configuration depending on the type.
     :linenos:
     :caption: Search request with aggregations
 
-    def result = openSearchClient.search(r -> r
+    def result = searchClient.search(r -> r
       .query(q -> q
         .queryString(s -> s
           .query(q as String)

@@ -6,6 +6,9 @@
 ============================
 Project (Site) Administrator
 ============================
+.. contents::
+    :local:
+    :depth: 2
 
 This section details activities related to project administration in CrafterCMS. The content is oriented towards CrafterCMS administration primarily through Crafter Studio.
 

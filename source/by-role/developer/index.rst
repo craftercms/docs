@@ -148,7 +148,7 @@ Below is a short set of links to other documentation for technology that Crafter
 || Groovy        || Server side scripting       || http://groovy-lang.org/documentation.html    |
 ||               ||                             ||                                              |
 +----------------+------------------------------+-----------------------------------------------+
-|| Elasticsearch || Search and content query    || https://www.elastic.co/products/elasticsearch|
+|| OpenSearch    || Search and content query    || https://opensearch.org/docs/latest/          |
 ||               ||                             ||                                              |
 +----------------+------------------------------+-----------------------------------------------+
 || MongoDB       || Crafter Profile and Social  || https://docs.mongodb.com                     |
