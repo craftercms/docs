@@ -182,7 +182,7 @@ Let's take a look at an example in the configuration where access to the ``Proje
      </permittedRoles>
      <configuration>
        <title id="siteTools.title" defaultMessage="Site Tools"/>
-       <icon id="@material-ui/icons/TuneRounded"/>
+       <icon id="@mui/icons-material/TuneRounded"/>
        <widgets>
          <widget id="craftercms.components.SiteToolsPanel"/>
        </widgets>
@@ -323,7 +323,7 @@ Here's the configuration for putting a red border when ``Taxonomy`` is expanded 
    <widget id="craftercms.components.PathNavigatorTree">
      <configuration>
        <label>Templates</label>
-       <icon id="@material-ui/icons/InsertDriveFileOutlined">
+       <icon id="@mui/icons-material/InsertDriveFileOutlined">
          <expandedStyle>
            <color>red</color>
          </expandedStyle>
