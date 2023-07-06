@@ -74,6 +74,7 @@ Regardless of type of project, a developer needs to be familiar with the followi
     common/static-content-access
     common/experience-builder
     common/security
+    common/search
     common/targeting
     common/servlet-filters
     common/working-with-dates-groovy

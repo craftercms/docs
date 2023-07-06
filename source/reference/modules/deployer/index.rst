@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.1.0
+:last-updated: 4.1.1
 
 .. index:: Modules; Crafter Deployer
 
@@ -8,13 +8,16 @@
 ================
 Crafter Deployer
 ================
+.. contents::
+    :local:
+    :depth: 1
 
 .. TODO Use an image that shows this component highlighted within the overall architecture (so it's not out of context)
 
 
 .. figure:: /_static/images/architecture/crafter-deployer.webp
    :alt: Crafter Deployer
-   :width: 60 %
+   :width: 40 %
    :align: center
 
 Crafter Deployer is the deployment agent for CrafterCMS.
@@ -60,10 +63,128 @@ defined by Spring Boot:
 
 You can also override the ``application.yaml`` properties by specifying them as System properties, e.g. ``-Dserver.port=7171``.
 
+Here's a sample ``application.yaml`` file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample application.yaml file</a></summary>
+
+.. code-block:: yaml
+    :linenos:
+
+    deployer:
+      main:
+        config:
+          environment:
+            active: ${CRAFTER_ENVIRONMENT}
+        targets:
+          config:
+            folderPath: ${targets.dir}
+        deployments:
+          folderPath: ${deployments.dir}
+          output:
+            folderPath: ${logs.dir}
+          processedCommits:
+            folderPath: ${processedCommits.dir}
+        logging:
+          folderPath: ${logs.dir}
+        management:
+          # Deployer management authorization token
+          authorizationToken: ${DEPLOYER_MANAGEMENT_TOKEN}
+        security:
+          encryption:
+            # The key used for encryption of configuration properties
+            key: ${CRAFTER_ENCRYPTION_KEY}
+            # The salt used for encryption of configuration properties
+            salt: ${CRAFTER_ENCRYPTION_SALT}
+          ssh:
+            # The path of the folder used for the SSH configuration
+            config: ${CRAFTER_SSH_CONFIG}
+
+.. raw:: html
+
+   </details>
+
+|
+
 The ``base-target.yaml`` file is handled a little bit different. This file is loaded by Crafter Deployer every time a new target is
 being added, and is merged with the specific properties of the target, with the target's properties taking precedence. By default, the override
 location for this configuration file is ``./config/base-target.yaml``, but it can be changed through the ``application.yaml`` property
 ``deployer.main.targets.config.baseYaml.overrideLocation``.
+
+Here's a sample ``base-target.yaml`` file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample base-target.yaml file</a></summary>
+
+.. code-block:: yaml
+    :linenos:
+
+    target:
+      localRepoPath: ${deployer.main.deployments.folderPath}/${target.siteName}
+      engineUrl: ${env:ENGINE_URL}
+      engineManagementToken: ${env:ENGINE_MANAGEMENT_TOKEN}
+      studioUrl: ${env:STUDIO_URL}
+      studioManagementToken: ${env:STUDIO_MANAGEMENT_TOKEN}
+      translation:
+        # Indicates if the translation features should be enabled for the target
+        enable: false
+      search:
+        openSearch:
+          # Single Cluster
+          urls:
+            - ${env:SEARCH_URL}
+          username: ${env:SEARCH_USERNAME}
+          password: ${env:SEARCH_PASSWORD}
+          timeout:
+            # The connection timeout in milliseconds, if set to -1 the default will be used
+            connect: -1
+            # The socket timeout in milliseconds, if set to -1 the default will be used
+            socket: -1
+          # The number of threads to use, if set to -1 the default will be used
+          threads: -1
+          # Indicates if keep alive should be enabled for sockets used by the search client, defaults to false
+          keepAlive: false
+
+          # Multiple Clusters
+          #      readCluster:
+          #        urls:
+          #        username:
+          #        password:
+          #      writeClusters:
+          #        - urls:
+          #          username:
+          #          password:
+          #        - urls:
+          #          username:
+          #          password:
+
+          # Settings used for all indices
+          indexSettings:
+            - key: "index.mapping.total_fields.limit"
+              value : 3000
+            - key: "index.mapping.depth.limit"
+              value: 40
+
+          notifications:
+            mail:
+              server:
+                host: ${env:MAIL_HOST}
+                port: ${env:MAIL_PORT}
+
+.. raw:: html
+
+   </details>
+
+|
+
+where:
+
+  - ``engineURL`` and ``engineManagementToken`` is used for calling Engine APIs, and the environment variables (*env:VARIABLE_NAME*) values are set in the ``crafter-setenv.sh`` file
+  - ``studioURL`` and ``studioManagementToken`` is required for calling Studio APIs, and the environment variables (*env:VARIABLE_NAME*) values are set in the ``crafter-setenv.sh`` file
 
 """"""""""""""""""""
 Target Configuration
@@ -78,7 +199,7 @@ pulls the files from a remote repository. But target configurations between the 
 following two examples can be taken as a base for most authoring/delivery target configuration files:
 
 .. code-block:: yaml
-  :caption: Authoring Target Configuration Example (editorial-preview.yaml)
+  :caption: *Authoring Target Configuration Example (editorial-preview.yaml)*
   :linenos:
 
   target:
@@ -112,7 +233,7 @@ following two examples can be taken as a base for most authoring/delivery target
         - processorName: fileOutputProcessor
 
 .. code-block:: yaml
-  :caption: Delivery Target Configuration Example (editorial-dev.yaml)
+  :caption: *Delivery Target Configuration Example (editorial-dev.yaml)*
   :linenos:
 
   target:
@@ -279,22 +400,58 @@ detected by other processors. To process changed files a processor may interact 
 
 All deployment processors support the following properties:
 
-+-------------------+--------+-------------+----------------------------------------------------------------------+
-|Name               |Required|Default Value|Description                                                           |
-+===================+========+=============+======================================================================+
-|``processorLabel`` |        |None         |Label that other processors can use to jump to this one               |
-+-------------------+--------+-------------+----------------------------------------------------------------------+
-|``jumpTo``         |        |None         |The label of the processor to jump to after a successful execution    |
-+-------------------+--------+-------------+----------------------------------------------------------------------+
-|``includeFiles``   |        |None         |List of regular expressions to check the files that should be included|
-+-------------------+--------+-------------+----------------------------------------------------------------------+
-|``excludeFiles``   |        |None         |List of regular expressions to check the files that should be excluded|
-+-------------------+--------+-------------+----------------------------------------------------------------------+
-|``alwaysRun``      |        |``false``    |Indicates if the processor should run even if there are no changes in |
-|                   |        |             |the current deployment                                                |
-+-------------------+--------+-------------+----------------------------------------------------------------------+
-||failDep|          |        |``false``    |Enables failing a deployment when there's a processor failure         |
-+-------------------+--------+-------------+----------------------------------------------------------------------+
+.. list-table::
+    :header-rows: 1
+    :widths: 20 10 10 60
+
+    * - Name
+      - Required
+      - Default Value
+      - Description
+    * - ``processorLabel``
+      -
+      - None
+      - Label that other processors can use to jump to this one
+    * - ``jumpTo``
+      -
+      - None
+      - The label of the processor to jump to after a successful execution
+    * - ``includeFiles``
+      -
+      - None
+      - List of regular expressions to check the files that should be included
+    * - ``excludeFiles``
+      -
+      - None
+      - List of regular expressions to check the files that should be excluded
+    * - ``alwaysRun``
+      -
+      - false
+      - Indicates if the processor should run even if there are no changes in the current deployment
+    * - ``failDeploymentOnFailure``
+      -
+      - false
+      - Enables failing a deployment when there’s a processor failure
+    * - ``runInClusterMode``
+
+        .. version_tag::
+            :label: Since
+            :version: 4.1.1
+
+      -
+      - ``PRIMARY``
+      - Indicates the current ClusterMode the processor should run.
+        Available values are:
+
+        - ``PRIMARY``: Run in primary instance only
+        - ``REPLICA``: Run in replica instances only
+        - ``ALWAYS``: Run in both primary and replica instances
+
+        *The default value* ``ALWAYS`` *is used by the following processors*
+
+        - *gitPullProcessor*
+        - *gitDiffProcessor*
+        - *gitUpdateCommitIdProcessor*
 
 .. |lBranch| replace:: ``localRepoBranch``
 .. |URL| replace:: ``remoteRepo.url``
@@ -611,11 +768,11 @@ Processor that runs a command line process.
     command: 'myapp -f --param1=value1'
 
 
-.. _deployer-es-indexing-processor:
+.. _deployer-search-indexing-processor:
 
-"""""""""""""""""""""""""""""""""""""""
-Elasticsearch Search Indexing Processor
-"""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""
+Search Indexing Processor
+"""""""""""""""""""""""""
 
 Processor that indexes the files on the change set, using one or several BatchIndexer. After the files have been
 indexed it submits a commit.
@@ -638,9 +795,9 @@ indexed it submits a commit.
 
 .. code-block:: yaml
   :linenos:
-  :caption: *Elasticsearch Indexing Processor*
+  :caption: *Search Indexing Processor*
 
-  - processorName: elasticsearchIndexingProcessor
+  - processorName: searchIndexingProcessor
 
 """"""""""""""""""""""""""
 HTTP Method Call Processor
@@ -934,8 +1091,8 @@ The following example shows how the deployment processors work together to deliv
       textPattern: (/static-assets/[^&quot;&lt;]+)
       replacement: 'http://d111111abcdef8.cloudfront.net$1'
 
-    # Index the changes in Elasticsearch
-    - processorName: elasticsearchIndexingProcessor
+    # Index the changes in search
+    - processorName: searchIndexingProcessor
 
     # Sync the changes in a S3 bucket
     - processorName: s3SyncProcessor
@@ -1235,7 +1392,7 @@ This target will:
 
 |hr|
 
-.. _crafter-deployer-elasticsearch-configuration-guide:
+.. _crafter-deployer-search-configuration-guide:
 
 --------------------
 Search Configuration
@@ -1255,11 +1412,21 @@ This is the most common configuration used, all operations will be performed on 
 
     target:
       search:
-        elasticsearch:
+        openSearch:
           # Single cluster
           urls:
-            - 'http://es-cluster-node-1:9200'
-            - 'http://es-cluster-node-2:9200'
+            - ${env:SEARCH_URL}
+          username: ${env:SEARCH_USERNAME}
+          password: ${env:SEARCH_PASSWORD}
+          timeout:
+            # The connection timeout in milliseconds, if set to -1 the default will be used
+            connect: -1
+            # The socket timeout in milliseconds, if set to -1 the default will be used
+            socket: -1
+          # The number of threads to use, if set to -1 the default will be used
+          threads: -1
+          # Indicates if keep alive should be enabled for sockets used by the search client, defaults to false
+          keepAlive: false
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Multiple Search Clusters
@@ -1274,9 +1441,9 @@ be performed on multiple search clusters:
 
     target:
       search:
-        elasticsearch:
+        openSearch:
           # Global auth, used for all clusters
-          username: elastic
+          username: search
           password: passw0rd
           # Cluster for read operations
           readCluster:
@@ -1294,7 +1461,7 @@ be performed on multiple search clusters:
               - 'http://write-cluster-2-node-1:9200'
               - 'http://write-cluster-2-node-2:9200'
               # Override the global auth for this cluster
-              username: elastic2
+              username: search2
               password: passw0rd2
 
 ^^^^^^^^^^^^^^^^^^^

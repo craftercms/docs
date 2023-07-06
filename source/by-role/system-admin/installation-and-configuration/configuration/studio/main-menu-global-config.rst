@@ -239,57 +239,50 @@ Clustering
 The following section of Studio's global config allows you to setup Studio clustering.
 
 .. code-block:: yaml
-   :linenos:
-   :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
+    :linenos:
+    :caption: *CRAFTER_HOME/data/repos/global/configuration/studio-config-override.yaml*
 
-   ##################################################
-   ##                 Clustering                   ##
-   ##################################################
-   #-----------------------------------------------------------------------------
-   # IMPORTANT: To enable clustering, please specify the environment variable
-   # SPRING_PROFILES_ACTIVE=crafter.studio.dbCluster in your crafter-setenv.sh
-   # (or Docker/Kubernetes env variables).
-   # Also configure the appropiate MARIADB env variables
-   # -----------------------------------------------------------------------------
+    ##################################################
+    ##                 Clustering                   ##
+    ##################################################
+    #-----------------------------------------------------------------------------
+    # IMPORTANT: To enable clustering, please specify the environment variable
+    # SPRING_PROFILES_ACTIVE=crafter.studio.dbClusterPrimaryReplica in your crafter-setenv.sh
+    # (or Docker/Kubernetes env variables).
+    # Also configure the appropriate cluster env variables
+    # -----------------------------------------------------------------------------
 
-   # Cluster Git URL format for synching members.
-   # - Typical SSH URL format: ssh://{username}@{localAddress}{absolutePath}
-   # - Typical HTTPS URL format: https://{localAddress}/repos/sites
-   # studio.clustering.sync.urlFormat: ssh://{username}@{localAddress}{absolutePath}
+    # Cluster Git URL format for synching members.
+    # - Typical SSH URL format: ssh://{username}@{localAddress}{absolutePath}
+    # - Typical HTTPS URL format: https://{localAddress}/repos/sites
+    # studio.clustering.sync.urlFormat: ssh://{username}@{localAddress}{absolutePath}
 
-   # Cluster Syncers
-   # Sandbox Sync Job interval in milliseconds which is how often to sync the work-area
-   # studio.clustering.sandboxSyncJob.interval: 2000
-   # Published Sync Job interval in milliseconds which is how often to sync the published repos
-   # studio.clustering.publishedSyncJob.interval: 60000
-   # Global Repo Sync Job interval in milliseconds which is how often to sync the global repo
-   # studio.clustering.globalRepoSyncJob.interval: 45000
-   # Cluster member after heartbeat stale for amount of minutes will be declared inactive
-   # studio.clustering.heartbeatStale.timeLimit: 5
-   # Cluster member after being inactive for amount of minutes will be removed from cluster
-   # studio.clustering.inactivity.timeLimit: 5
+    # Notifications
+    #studio.notification.cluster.startupError.subject: "Action Required: Studio Cluster Error"
+    #studio.notification.cluster.startupError.template: startupError.ftl
+    #studio.notification.cluster.startupError.recipients: admin@example.com
 
-   # Cluster member registration, this registers *this* server into the pool
-   # Cluster node registration data, remember to uncomment the next line
-   # studio.clustering.node.registration:
-   #  This server's local address (reachable to other cluster members). You can also specify a different port by
-   #  attaching :PORT to the address (e.g. 192.168.1.200:2222)
-   #  localAddress: ${env:CLUSTER_NODE_ADDRESS}
-   #  Authentication type to access this server's local repository
-   #  possible values
-   #   - none (no authentication needed)
-   #   - basic (username/password authentication)
-   #   - key (ssh authentication)
-   #  authenticationType: none
-   #  Username to access this server's local repository
-   #  username: user
-   #  Password to access this server's local repository
-   #  password: SuperSecurePassword
-   #  Private key to access this server's local repository (multiline string)
-   #  privateKey: |
-   #    -----BEGIN PRIVATE KEY-----
-   #    privateKey
-   #    -----END PRIVATE KEY-----
+    # Cluster member registration, this registers *this* server into the pool
+    # Cluster node registration data, remember to uncomment the next line
+    # studio.clustering.node.registration:
+    #  This server's local address (reachable to other cluster members). You can also specify a different port by
+    #  attaching :PORT to the address (e.g 192.168.1.200:2222)
+    #  localAddress: ${env:CLUSTER_NODE_ADDRESS}
+    #  Authentication type to access this server's local repository
+    #  possible values
+    #   - none (no authentication needed)
+    #   - basic (username/password authentication)
+    #   - key (ssh authentication)
+    #  authenticationType: none
+    #  Username to access this server's local repository
+    #  username: user
+    #  Password to access this server's local repository
+    #  password: SuperSecurePassword
+    #  Private key to access this server's local repository (multiline string)
+    #  privateKey: |
+    #    -----BEGIN PRIVATE KEY-----
+    #    privateKey
+    #    -----END PRIVATE KEY-----
 
 For more information, see :ref:`clustering`
 
