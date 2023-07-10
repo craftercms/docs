@@ -4,7 +4,7 @@ To run CrafterCMS in a set of Docker containers using Docker Compose, make sure 
 * Docker Compose (https://docs.docker.com/compose/install/)
 * Git 2.x+
 
-**For Windows and Mac, we recommend you give Docker Desktop at least 8GB of RAM and 4 CPUs. To do this, go to Docker Desktop's Preferences > Resources > Advanced, and then change the resource limits.**
+**For Windows and Mac, we recommend you give Docker Desktop at least 12GB of RAM (6GB of RAM per environment) and 4 CPUs. To do this, go to Docker Desktop's Preferences > Resources > Advanced, and then change the resource limits.**
 
 .. image:: /_static/images/quick-start/docker-advanced-settings.webp
     :alt: Docker Desktop Advanced Settings
