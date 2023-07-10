@@ -1,14 +1,16 @@
 :is-up-to-date: False
-:since-version: 4.0.0
+:since-version: 4.1.1
 
 
 .. index:: User Interface Configuration
 
 .. _user-interface-configuration:
 
-############################
+============================
 User Interface Configuration
-############################
+============================
+.. contents::
+   :local:
 
 The user interface configuration file defines the widgets shown in the user interface. It allows the user to configure
 the items available for interaction in Studio.
@@ -67,7 +69,7 @@ Here's the configuration:
            <configuration>
              <title id="words.dashboard" defaultMessage="Dashboard"/>
              <icon id="@mui/icons-material/DashboardRounded"/>
-             <widget id="craftercms.components.Dashboard"/>
+             <widget id="craftercms.components.SiteDashboard"/>
            </configuration>
          </widget>
          <widget id="craftercms.components.PathNavigator">
@@ -126,9 +128,11 @@ and select **User Interface Configuration** from the list.
 
 |
 
-******
+|hr|
+
+------
 Sample
-******
+------
 
 Here's a sample User Interface Configuration file (click on the triangle on the left to expand/collapse):
 
@@ -149,11 +153,13 @@ Here's a sample User Interface Configuration file (click on the triangle on the 
 |
 |
 
+|hr|
+
 .. _widget-permissions:
 
-******************
+------------------
 Widget Permissions
-******************
+------------------
 
 Limiting who can access a widget via roles is through ``permittedRoles`` in the user interface configuration.
 Simply add the following to the widget you want available only to users with the permitted role(s)
@@ -210,12 +216,13 @@ Here's the sidebar when a user with role ``author`` is logged in. Notice that ``
 
 |
 
+|hr|
 
 .. _sidebar-excludes:
 
-****************
+----------------
 Sidebar Excludes
-****************
+----------------
 
 To hide items (exclude) in the Sidebar such as path navigators and path navigator trees, use
 
@@ -275,11 +282,13 @@ Here's the Sidebar with the folder ``2021/3`` hidden:
 
 |
 
+|hr|
+
 .. _sidebar-widget-icon-colors:
 
-*****************************
+-----------------------------
 Sidebar Widget Icon/Container
-*****************************
+-----------------------------
 
 Colors, background colors, borders (css properties) etc can be added to widgets in the Sidebar when expanding/collapsing a widget via the ``icon`` and ``container`` properties.
 
@@ -352,11 +361,13 @@ Here's the Sidebar with the colors and border added:
 
 |
 
+|hr|
+
 .. _targeting-configuration:
 
-******************
+------------------
 Audience Targeting
-******************
+------------------
 
 Audience Targeting allows an author to see what the project would look like if it were being browsed
 by a user with a given set of attributes.
@@ -433,11 +444,13 @@ Here's how the above configuration looks like in the Experience Builder Panel in
 
 See :ref:`targeting` for more information on configuring the targeting system of Crafter Studio to help provide Crafter Engine with fake user properties that help drive the targeting system, such as configuring targeting based on roles, etc. and :ref:`content_authors_targeting` for more information on how content authors use the audience targeting system configured.
 
+|hr|
+
 .. _rte-config:
 
-*****************
+-----------------
 RTE Configuration
-*****************
+-----------------
 
 There are two ways of editing content in Studio: (1) form-based editing and (2) In-context editing (ICE). Form-based editing is done by clicking on ``Options`` (three dots next to the preview address bar at the top of the page, or the three dots next to the page in the Sidebar), then selecting ``Edit``. In-context editing is done by enabling the ``Edit mode`` by clicking on the pencil at the top right of the page (which turns green when enabled), then clicking on the section of the page you want to edit.
 
@@ -491,11 +504,13 @@ Our RTE is based on TinyMCE (https://www.tiny.cloud/) and can leverage all confi
 
 To learn more about configuring the RTE, see :ref:`here <rte-configuration>`
 
+|hr|
+
 .. _project-tools-configuration:
 
-***************************
+---------------------------
 Project Tools Configuration
-***************************
+---------------------------
 
 The Project Config tools configuration section defines what modules are available for administration use when
 clicking on |projectTools| from the Sidebar.
@@ -529,8 +544,9 @@ clicking on |projectTools| from the Sidebar.
 
 |
 
+^^^^^^^^^^^^^^^^^^^^^^^
 List of available tools
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Here's a list of available tools defined in the Website_Editorial blueprint.
 
