@@ -129,7 +129,7 @@ created using the **Website Editorial** blueprint.
             <widget id="craftercms.components.ToolsPanelEmbeddedAppViewButton">
                <configuration>
                   <title id="words.dashboard" defaultMessage="Dashboard"/>
-                  <icon id="@material-ui/icons/DashboardRounded"/>
+                  <icon id="@mui/icons-material/DashboardRounded"/>
                   <widget id="craftercms.components.Dashboard"/>
                </configuration>
             </widget>
@@ -146,7 +146,7 @@ created using the **Website Editorial** blueprint.
                </permittedRoles>
                <configuration>
                   <title id="siteTools.title" defaultMessage="Project Tools"/>
-                  <icon id="@material-ui/icons/TuneRounded"/>
+                  <icon id="@mui/icons-material/TuneRounded"/>
                   <widgets>
                      <widget id="craftercms.components.SiteToolsPanel"/>
                   </widgets>

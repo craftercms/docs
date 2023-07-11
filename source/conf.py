@@ -29,7 +29,7 @@ author = u'CrafterCMS'
 # The short X.Y version.
 version = u'4.0'
 # The full version, including alpha/beta/rc tags.
-release = u'4.0.3'
+release = u'4.0.6'
 
 
 # -- General configuration ---------------------------------------------------
@@ -138,7 +138,7 @@ html_favicon = "_static/images/favicon.ico"
 
 # Add versions for the bottom menu
 html_context = {
-    'versions': ['4.0', '3.1'],
+    'versions': ['4.1', '4.0', '3.1'],
     'docsUrl': 'https://docs.craftercms.org'
 }
 
@@ -212,7 +212,7 @@ epub_exclude_files = ['search.html']
 
 # Configure Edit on Github
 edit_on_github_project = 'craftercms/docs'
-edit_on_github_branch = 'master'
+edit_on_github_branch = '4.0'
 edit_on_github_base_folder = 'source'
 
 # Place substitution available in all files here
@@ -240,7 +240,7 @@ rst_epilog = """
 
 # Javadoc home and version
 javadoc_base = 'http://javadoc.craftercms.org/'
-javadoc_version = '4.0.3'
+javadoc_version = '4.0.6'
 
 # Shorten external links
 extlinks = {'javadoc_base_url': (javadoc_base + javadoc_version + '/%s', None ),
