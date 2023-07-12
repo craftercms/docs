@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.0.3
+:last-updated: 4.1.1
 
 .. index:: Blueprints, Blueprint, Create a Blueprint
 
@@ -8,6 +8,8 @@
 ==========
 Blueprints
 ==========
+.. contents::
+    :local:
 
 --------------------
 What are Blueprints?
@@ -27,6 +29,8 @@ The blueprint that comes out of the box with CrafterCMS, ``Website Editorial Blu
 As mentioned earlier, blueprints allows us to generate projects with predefined layouts, contents and configuration. Blueprints could be a project theme or an API only project. New blueprints can be created from a project and added into CrafterCMS allowing the creation of more projects based on the new blueprint. In the section that follows, we will see how the ``Empty Blueprint`` that comes out of the box from CrafterCMS and an existing project is used to create a new blueprint.
 
 Developers may submit their blueprints to the `Crafter Marketplace GitHub App <https://github.com/marketplace/crafter-marketplace>`__. Users can browse the `Crafter Marketplace <https://craftercms.com/marketplace/>`__   catalog where submitted blueprints are listed, and power users of CrafterCMS can create projects based on Marketplace plugins directly from the ``Create Project`` dialog in the CMS. See :ref:`submit-extension-to-marketplace` for more information on how to submit your blueprint to the marketplace.
+
+|hr|
 
 -------------------------------
 How do I make my own Blueprint?
@@ -82,7 +86,7 @@ A good blueprint separates each meaningful chunk of HTML code into a component. 
 
 Here are some best practices to help you:
 
-    * Prefix all your Content Type's display label with either "Component - " or "Page - " as appropriate.
+    * Prefix all your Content Type's display label with either "component" or "page" as appropriate.
     * Make use of **Section Defaults**. Most projects will have a project logo that will be used all throughout the project, this is a perfect use case for Section Defaults.
 
        * Additionally, since Section Defaults have inheritance mechanics, a child folder that's meant to have private pages could have it's own Section Defaults that overrides the normal project logo with a more private looking one, signalling users that they are in the intranet.
@@ -346,7 +350,6 @@ Here are some things to note in the descriptor file:
 """"""""""""""""""""""""""""""""""""""""
 Passing Parameters to Project Blueprints
 """"""""""""""""""""""""""""""""""""""""
-
 Some parameters may need to be passed to the blueprint instead of left in the blueprint, say, AWS credentials, Box credentials, CommerceTools credentials, etc. CrafterCMS supports passing parameters to blueprints during creation.
 
 To add parameters to be passed to blueprints, simply add the following to the ``craftercms-plugin.yaml`` file
@@ -373,8 +376,9 @@ where:
 
 To use the parameters in configuration files, simply use ``${plugin:PARAM_NAME}`` where PARAM_NAME is the name of the parameter.
 
-**Example**
-
+~~~~~~~
+Example
+~~~~~~~
 Let's take a look at an example of adding parameters to the **Website Editorial** blueprint.
 In our example, we will be passing AWS credentials when the project is created to be used for storing files in an S3 bucket and will setup the configuration file that will be using the passed parameters, along with the changes required in the content type and template so users can upload files to S3 once the project is up.
 
@@ -447,7 +451,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>
 
    Please see :ref:`managing-secrets` for more information on how to manage/encode your AWS credentials.
 
-#. Next we'll modify the content type ``Page - Article`` and the template for it, ``article.ftl`` to allow the user to select files to be uploaded like in the example :ref:`here <use-s3-to-store-assets>`. We'll end up with two files modified. The ``article.ftl`` and ``form-definition.xml`` files.
+#. Next we'll modify the content type ``Article`` and the template for it, ``article.ftl`` to allow the user to select files to be uploaded like in the example :ref:`here <use-s3-to-store-assets>`. We'll end up with two files modified. The ``article.ftl`` and ``form-definition.xml`` files.
 
    .. code-block:: text
       :caption: *CRAFTER_HOME/data/repos/global/blueprints/1000_website_editorial/templates/web/pages/article.ftl*
@@ -530,6 +534,7 @@ To store files in an S3 bucket, we'll follow :ref:`this <use-s3-to-store-assets>
 
    |
 
+|hr|
 
 ----------------------------------------
 Editing as a Project vs Editing directly
