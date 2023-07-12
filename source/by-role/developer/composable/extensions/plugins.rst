@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.0
+:last-updated: 4.1.1
 
 .. index:: Plugins, Create a Plugin
 
@@ -8,6 +8,9 @@
 =======
 Plugins
 =======
+.. contents::
+   :local:
+   :depth: 2
 
 -----------------
 What are plugins?
@@ -172,9 +175,7 @@ See https://github.com/craftercms/google-analytics-plugin/blob/master/delivery/t
 
 
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 .. _how-do-i-make-my-own-plugin:
 
@@ -182,9 +183,6 @@ See https://github.com/craftercms/google-analytics-plugin/blob/master/delivery/t
 How Do I Make My Own Plugin?
 ----------------------------
 
-^^^^^^^^^^^^
-Requirements
-^^^^^^^^^^^^
 You'll need the following for creating your plugin:
 
 * Your plugin files
@@ -198,9 +196,9 @@ the versions of CrafterCMS supported, and other configurations and metadata. See
 
 .. _plugin-descriptor-file:
 
-""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 CrafterCMS Plugin Descriptor
-""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The ``craftercms-plugin.yaml`` file contains information for use in CrafterCMS. This descriptor file contains
 information about your extension, such as the license, the versions of CrafterCMS supported, and other
@@ -315,9 +313,9 @@ Here are some things to note in the descriptor file:
   using images with approximately a ``4:3`` aspect ratio (width to height), such as an image sized at 1200x800
 
 
-~~~~~~~~~~~
+"""""""""""
 Auto-wiring
-~~~~~~~~~~~
+"""""""""""
 CrafterCMS supports automatically wiring your plugin to the corresponding configuration
 file in Studio during your plugin installation.
 
@@ -518,6 +516,89 @@ Below are examples on how to setup auto-wiring in Studio for various plugin type
 
 
 See :ref:`here <plugins-authoring-guides>` for examples of plugins auto-wired in Studio.
+
+.. _passing-parameters-via-plugins:
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Passing Parameters to Project via Plugins
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Some parameters may need to be passed to the project instead of left in the plugin, say, AWS credentials, Box credentials, CommerceTools credentials, etc. CrafterCMS supports passing parameters to projects from plugins.
+
+To add parameters to be passed to projects via a plugin, simply add the following to the ``craftercms-plugin.yaml`` file
+
+.. code-block:: yaml
+
+   parameters:
+    - label: My Parameter Label
+      name: myParam
+      type: string
+      description: My parameter
+      required: true
+
+where:
+
+- ``label``: Label to display for parameter on Create Project dialog
+- ``name``: Name of the parameter in *camelCase* notation
+- ``type``: Type of the parameter, possible values are ``STRING`` and ``PASSWORD``. The default is ``STRING``
+- ``description``: Description of the parameter
+- ``required``: Indicates whether the parameter is required. The default is ``true``
+
+
+To use the parameters in scripts and template files, simply use ``pluginConfig``, e.g. ``pluginConfig.getString("PARAM_NAME")`` where PARAM_NAME is the name of the parameter.
+
+"""""""
+Example
+"""""""
+Let's take a look at an example of a plugin with parameters.  We'll use the `CrafterCMS Stripe Plugin <https://github.com/craftercms/stripe-plugin>`__ plugin (available from the Marketplace) to see how parameters are added to plugins that are then passed on to the projects after installing.
+
+#. Let's take a look at the parameters in the ``craftercms-plugin.yaml`` file of the plugin. In  the  ``craftercms-plugin.yaml`` in the plugin folder, scroll to the following lines in the file:
+
+   .. code-block:: yaml
+      :linenos:
+      :caption: *stripe-plugin/craftercms-plugin.yaml*
+
+      ...
+
+      parameters:
+        - label: Publishable key
+          name: publishableKey
+          description: Stripe Publishable key
+        - label: Secret key
+          name: secretKey
+          description: Stripe secret key
+        - label: Callback domain
+          name: callbackDomain
+          description: Callback domain of your application
+
+#. Next, we'll take a look at how to use the parameters passed in your scripts using ``pluginConfig`` in the ``checkout-session.get.groovy`` file
+
+   .. code-block:: groovy
+       :caption: *stripe-plugin/delivery/scripts/rest/plugins/org/craftercms/plugin/stripe/checkout-session.get.groovy*
+
+       ...
+
+       Stripe.apiKey = pluginConfig.getString('secretKey')
+
+       ...
+
+#. Let's now take a look at the plugin parameters in action during the plugin installation.
+   Open the project you want to install the ``stripe-plugin`` into.  Next, click on ``Project Tools`` -> ``Plugin Management`` -> ``Search & Install`` and search for ``stripe``.  For the example below, we'll be installing the plugin in the ``Editorial`` project.
+
+   .. image:: /_static/images/developer/plugins/search-for-stripe.webp
+      :width: 60%
+      :alt: Search for stripe in "Plugin Management"
+      :align: center
+
+   |
+
+#. Click on the ``Install`` button to install the ``stripe-plugin``.  The next screen will now ask the user for the parameters we saw listed in the ``craftercms-plugin.yaml`` file:
+
+   .. image:: /_static/images/developer/plugins/stripe-plugin-configuration.webp
+      :width: 60%
+      :alt: User prompted for values for parameters in the plugin
+      :align: center
+
+   |
 
 ^^^^^^^^^^^^^^^^^^^
 Directory Structure
@@ -737,9 +818,7 @@ To reuse those libraries, do the following:
      import com.example.java.Plugin // This class is made up, it can be anything
 
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 ----------------------
 Publishing Your Plugin
@@ -747,9 +826,7 @@ Publishing Your Plugin
 
 To publish a plugin in the Crafter Marketplace you can follow the instructions in :ref:`marketplace-create-extensions`
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 ---------------------------
 Retrieving Extension Assets
@@ -770,9 +847,7 @@ If your extensions is nested on a plugin id directory, you should also include t
 
 ``/studio/1/plugin/file?siteId={siteId}&pluginId={yourPluginId}&type={yourPluginType}&name={yourPluginName}&file={fileName}``
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 -------------------
 Installing a Plugin
@@ -837,9 +912,7 @@ using any of the ``crafter-cli`` commands.
 
 For more information on the ``copy-plugin`` command, see the :ref:`command line help<crafter-cli-command-help>`
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 .. _example-component-plugin:
 
@@ -938,6 +1011,8 @@ After installing our plugin, we can now verify that our component plugin is avai
    :width: 80%
 
 |
+
+|hr|
 
 ------------------------------
 Some More Examples & Resources
