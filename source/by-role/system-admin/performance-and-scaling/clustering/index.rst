@@ -54,9 +54,7 @@ Before we begin configuring Studio for clustering, the following must be setup:
 
 * A DNS server directing traffic to the primary node, and can failover to the replica node if the primary is not healthy
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 -----------------------------
 Configuring Studio Clustering
@@ -92,9 +90,9 @@ multi-region access points, see https://docs.aws.amazon.com/AmazonS3/latest/user
 
 Here's some more information on S3 replication: https://aws.amazon.com/about-aws/whats-new/2020/12/amazon-s3-replication-adds-support-two-way-replication/
 
-.. raw:: html
+|hr|
 
-   <hr>
+.. _configuring-the-deployer-for-studio-clustering:
 
 ----------------------------------------------
 Configuring the Deployer for Studio Clustering
@@ -153,6 +151,8 @@ The deployment processor configured above runs whenever the ``clusterMode`` retu
 
 - ``runInClusterMode`` is set to ``ALWAYS``
 - ``runInClusterMode`` value matches the current ``clusterMode``
+
+|hr|
 
 -------
 How-tos
