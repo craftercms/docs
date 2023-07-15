@@ -12,8 +12,7 @@ Updates
 
 * Upgraded dependencies |br|
 
-* Fixed issue when CGit and JGit Head Commit IDs do not match |br|
-
+* Git performance optimization |br|
 
 For information on upgrading 3.1.x sites, see :ref:`here <compatibility-with-3.1.x>`
 
