@@ -6,31 +6,29 @@ CrafterCMS 4.1.1
 
 Released *TBD*
 
+This release includes fixes for issues with the release version 4.1.0
+
 ^^^^^^^
 Updates
 ^^^^^^^
 * Added a cache buster to Studio plugin browser resources |br|
   See `here <https://github.com/craftercms/craftercms/issues/6106>`__ for more information
 
-* Fixed issue when CGit and JGit Head Commit IDs do not match |br|
-
-* Fixed issue with CGit child processes not terminating |br|
+* Git performance optimizations |br|
 
 * Added deployer cluster support  |br|
   See :ref:`here <configuring-the-deployer-for-studio-clustering>` for more information on how to configure the Deployer for Studio Clustering and :ref:`here <crafter-deployer-processors-guide>` for more information on the new deployer processor property ``runInClusterMode``
 
 * Added support for receiving authentication headers as JWT token |br|
 
-* Added support for configuring limits to S3 object caching |br|
-  See :ref:`here <s3-object-caching>` for more information
-
-* SPA applications can now directly include CSS files from ``/static-assets/app`` by default  |br|
-
-* Upgraded the following dependencies:
+* Noteworthy dependency updates:
 
   - MariaDb4J to version 2.6.0.1
   - Spring Boot to version 2.7.12
   - Spring Framework to version 5.3.27
+
+* Fixed issue with ``permittedRoles`` for widgets in the user interface configuration |br|
+  See `here <https://github.com/craftercms/craftercms/issues/6158>`__ for more information
 
 Lot's of other small enhancements and bug fixes :)
 
