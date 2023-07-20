@@ -24,8 +24,8 @@ Updates
 * Noteworthy dependency updates:
 
   - MariaDb4J to version 2.6.0.1
-  - Spring Boot to version 2.7.12
-  - Spring Framework to version 5.3.27
+  - Spring Boot to version 2.7.13
+  - Spring Framework to version 5.3.28
 
 * Fixed issue with ``permittedRoles`` for widgets in the user interface configuration |br|
   See `here <https://github.com/craftercms/craftercms/issues/6158>`__ for more information
