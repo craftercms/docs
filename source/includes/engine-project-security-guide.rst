@@ -72,12 +72,9 @@ You can restrict pages based on whether a user is authenticated or has a certain
 the next steps to create in the page content type a Repeating Group with a text Input for the roles:
 
 #. In Studio, click on |projectTools|.
-#. Click on **Content Types** then **Open Existing Type** and select the content type for the pages that you want to
-    restrict.
-#. On Controls, select the Repeating Group and add it to any Form Section (you can even create an Authorization
-    section just for these fields).
-#. In the Repeating Group properties, set the **Title** field to "Authorized Roles" and the **Name / Variable Name**
-    field to "authorizedRoles."
+#. Click on **Content Types** then **Open Existing Type** and select the content type for the pages that you want to restrict.
+#. On Controls, select the Repeating Group and add it to any Form Section (you can even create an Authorization section just for these fields).
+#. In the Repeating Group properties, set the **Title** field to "Authorized Roles" and the **Name / Variable Name** field to "authorizedRoles."
 
     .. image:: /_static/images/site-admin/authorized_roles_properties.webp
         :alt: Engine Project Security Guide - Authorized Roles Properties
