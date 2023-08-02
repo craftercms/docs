@@ -8,7 +8,7 @@ Author
 ======
 .. contents::
     :local:
-    :depth: 2
+    :depth: 1
 
 Authors create, edit and submit content for experiences. CrafterCMS's Crafter Studio provides the author an easy to use
 authoring system for the development and optimization of content-rich experiences.
@@ -62,7 +62,7 @@ To log in to Crafter Studio:
 
 .. image:: /_static/images/content-author/login-screen-full.webp
     :alt: Getting Started - Login Screen
-    :width: 85 %
+    :width: 75 %
     :align: center
 
 |
@@ -73,6 +73,7 @@ To log in to Crafter Studio:
 Roles
 """""
 After logging in, depending on what access rights have been setup for your user account, you can have one of the following roles:
+
 - **Content Author** An Author has access to create, edit and submit content within a project.
 - **Content Publisher** A Publisher has access to create, edit, submit and approve content within a project.
 - **Content Reviewer** A Reviewer has access to approve or reject content within a project.
@@ -106,9 +107,8 @@ Here's the **Projects** screen with the projects in a grid:
 
 |
 
-You can get back to the **Projects** screen by:
-* Clicking on the ``Navigation Menu`` icon at the top right corner, then click on "Projects" on the top left
-of the *Global* panel
+You can get back to the **Projects** screen by clicking on the ``Navigation Menu`` icon at the top right corner,
+then click on "Projects" on the top left of the *Global* section
 
 .. image:: /_static/images/content-author/get-to-my-projects-1.webp
     :width: 65 %
@@ -198,7 +198,7 @@ Each dashlet has a header
 |
 
 .. image:: /_static/images/content-author/project-dashboard.webp
-    :width: 85 %
+    :width: 65 %
     :align: center
     :alt: Navigating Studio - Project Dashboard
 
@@ -325,7 +325,7 @@ For the dashboard shown above, here are the dashlets listed:
 |
 
 .. image:: /_static/images/content-author/project-dashboard-selected.webp
-   :width: 85 %
+   :width: 65 %
    :align: center
    :alt: Navigating Studio - Dashboard Selected
 
@@ -347,7 +347,7 @@ prior to publishing changes.
     * Author can view the publish status of the project
 
 .. image:: /_static/images/content-author/project-preview.webp
-   :width: 95 %
+   :width: 75 %
    :align: center
    :alt: Navigating Studio - Project Preview
 
@@ -377,7 +377,7 @@ Experience Builder Panel
 |
 
 .. image:: /_static/images/content-author/preview-in-context-editing.webp
-    :width: 95 %
+    :width: 75 %
     :align: center
     :alt: Navigating Studio - Preview In-Context Editing
 
@@ -433,7 +433,7 @@ The menu/panel width can be resized freely by the user and will remember where y
 width on your browser
 
 .. image:: /_static/images/content-author/sidebar-panel-width.webp
-    :width: 95 %
+    :width: 75 %
     :align: center
     :alt: Navigating Studio - Sidebar Panel menu width
 
@@ -458,7 +458,7 @@ width on your browser
   content will change based off of the item selected and user role.
 
 .. image:: /_static/images/content-author/sidebar-right-click-menu.webp
-    :width: 80 %
+    :width: 75 %
     :align: center
     :alt: Navigating Studio - Sidebar Right Click Menu
 
@@ -608,7 +608,7 @@ is blue at the top), it puts the page in construction mode. When you hover your 
 the page that have been wired for in-context editing, a pencil will show up instead of the mouse cursor.
 
 .. image:: /_static/images/content-author/preview-page-in-context-editing.webp
-    :width: 75 %
+    :width: 65 %
     :align: center
     :alt: Navigating Studio - Preview Page In-Context Editing
 
@@ -618,7 +618,7 @@ This pencil allows you to edit the content of the wired region, including the cu
 controller depending on your user account permissions
 
 .. image:: /_static/images/content-author/preview-in-context-edit.webp
-    :width: 95 %
+    :width: 65 %
     :align: center
     :alt: Navigating Studio - Preview In-Context Editing
 
@@ -675,7 +675,7 @@ You may drag around a component from one position to a different position by ena
 Crafter Studio administrators can configure what components are available in this panel.
 
 .. image:: /_static/images/content-author/preview-page-components-drag.webp
-    :width: 85 %
+    :width: 75 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel Page Drag Component
 
@@ -689,7 +689,7 @@ existing components for that content type that can be dragged and dropped into t
 viewed if there are configured drop targets in it
 
 .. image:: /_static/images/content-author/preview-page-builder-browse-components.webp
-    :width: 30 %
+    :width: 25 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel Browse Components
 
@@ -699,7 +699,7 @@ When you drag a component into the page being previewed and there are no drop zo
 you will see a snack bar like below:
 
 .. image:: /_static/images/content-author/preview-page-builder-no-drop-targets.webp
-    :width: 80 %
+    :width: 75 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel No Drop Targets
 
@@ -725,7 +725,7 @@ The Assets tool allows you to search/list assets such as images that can be drag
 drop targets in the project
 
 .. image:: /_static/images/content-author/preview-page-builder-assets.webp
-    :width: 30 %
+    :width: 25 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel Assets
 
@@ -751,7 +751,7 @@ descriptors in the project and make edits to them by clicking on the three dots 
 item that appears when you hover your mouse on it
 
 .. image:: /_static/images/content-author/preview-page-builder-page-explorer.webp
-    :width: 30 %
+    :width: 25 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel Page Explorer
 
@@ -767,7 +767,7 @@ The phone and tablet can be rotated through the use of the rotation control next
 height input boxes.
 
 .. image:: /_static/images/content-author/preview-publishing-channel.webp
-    :width: 60 %
+    :width: 50 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel Device Simulator
 
@@ -780,7 +780,7 @@ The Settings tool allows you to switch on/off the ``Edit Mode`` (in-context edit
 highlighting of drop targets
 
 .. image:: /_static/images/content-author/preview-page-builder-settings.webp
-    :width: 30 %
+    :width: 25 %
     :align: center
     :alt: Navigating Studio - Experience Builder Panel Settings
 
@@ -792,7 +792,7 @@ Using Experience Builder
 
 .. image:: /_static/images/content-author/xb-enable-panel.webp
     :alt: Getting Started - XB Panel Enabled
-    :width: 85 %
+    :width: 75 %
     :align: center
 
 To turn on Experience Builder, simply click on the pencil (Edit mode), which will turn green when enabled,
@@ -820,7 +820,7 @@ that the editable section will be inside a blue box like below:
 
 .. image:: /_static/images/content-author/xb-edit-text-section.webp
     :alt: Getting Started - Edit text content via XB
-    :width: 85 %
+    :width: 75 %
     :align: center
 
 For editable non-text sections, clicking on it will give the user options to edit, cancel, etc. and also
@@ -829,7 +829,7 @@ highlight the section in a green box
 
 .. image:: /_static/images/content-author/xb-edit-non-text-section.webp
     :alt: Getting Started - Edit non-text section via XB
-    :width: 85 %
+    :width: 75 %
     :align: center
 
 """""""""
@@ -851,7 +851,7 @@ your item.
 
 .. image:: /_static/images/content-author/xb-move-item.webp
     :alt: Getting Started - Move item via XB
-    :width: 85 %
+    :width: 65 %
     :align: center
 
 """"""""""""""""""""""""""""""""""
@@ -914,12 +914,17 @@ that authors can then use to manage content.
 ^^^^^^^^^^^^^
 Adding a Page
 ^^^^^^^^^^^^^
-To add a page, in the Sidebar panel, then click on **Pages**. Navigate to the level and location
+There are a couple of ways to add a page in your project.
+
+"""""""""""""""
+Via the Sidebar
+"""""""""""""""
+To add a page, open the Sidebar panel, then click on **Pages**. Navigate to the level and location
 within the path navigation tree where you want to create the content, then click on the three dots
-next to the parent page and select *New Content*
+next to the parent item and select *New Content*
 
 .. image:: /_static/images/page/page-add-new-content.webp
-   :width: 50 %
+   :width: 40 %
    :align: center
    :alt: Content Author - Add New Page Content
 
@@ -977,6 +982,23 @@ An error form will appear when you try to *Save and Close* without filling out a
    :align: center
    :alt: Content Author - Page Save Error
 
+""""""""""""""""
+Via Quick Create
+""""""""""""""""
+Here we'll take a look at how to add a page via quick create.  Quick create allows you to create content with as few clicks as possible.
+We'll use a project created using the ``Website Editorial`` blueprint, which has the ``Article`` content type (a page content type) :ref:`configured for quick create <setting-up-quick-create>`.
+
+To add a new page, simply click on the **Quick Create** icon (``+``) on the top left of the screen.
+
+.. image:: /_static/images/page/quick-create-btn-expanded.webp
+   :width: 40 %
+   :align: center
+   :alt: Content Author - Add new Page content via quick create
+
+|
+
+This will create a new page under ``/articles/{year}/{month}`` and open a form for the author to fill in content.  The form that opens is the same as the form described in the previous section.
+
 |hr|
 
 .. _editing-a-page:
@@ -987,15 +1009,21 @@ Editing a Page
 There are multiple ways to edit a page.
 
 #. In the Sidebar panel click on **Pages**. Navigate to the level and location within the path
-   navigation tree where you want to edit the content, then click on the three dots on the right
-   and select **Edit**. A form containing the page content you want to edit will open.
-
-#. In the Sidebar panel click on **Pages**. Navigate to the level and location within the path
    navigation tree where you want to edit the content and click on it to preview the page.
-   Toggle ``Edit Mode`` to on (switch at the top right corner) to turn on in-context editing and
+   Toggle ``Edit Mode`` to on (pencil icon at the top right corner) to turn on in-context editing and
    the experience builder panel, if it's not turned on yet. Move your mouse over to the area you
    would like the edit. As you're moving the mouse around the page, notice that the cursor changes
    to a pencil on editable sections. Click anywhere editable on the page to start editing.
+
+   .. image:: /_static/images/page/edit-page-via-xb.webp
+       :width: 75 %
+       :align: center
+       :alt: Content Author - Edit a Page via XB
+
+
+#. In the Sidebar panel click on **Pages**. Navigate to the level and location within the path
+   navigation tree where you want to edit the content, then click on the three dots on the right
+   and select **Edit**. A form containing the page content you want to edit will open.
 
 #. In the Sidebar panel click on **Pages**. Navigate to the level and location within the path
    navigation tree where you want to edit the content and click on it to preview the page.
@@ -1003,15 +1031,13 @@ There are multiple ways to edit a page.
    Click on ``Edit``. A form containing the page content you want to edit will open.
 
 .. image:: /_static/images/page/page-edit.webp
-   :width: 95 %
+   :width: 85 %
    :align: center
    :alt: Content Author - Edit a Page
 
 |
 
-.. raw:: html
-
-   <hr/>
+|hr|
 
 ^^^^^^^^^^
 Versioning
@@ -1026,17 +1052,24 @@ After selecting the page you want, click on ``Options`` (the three dots next to 
 top of your browser) then select **History**.
 
 .. image:: /_static/images/page/page-access-history.webp
-   :width: 95 %
+   :width: 85 %
    :align: center
    :alt: Content Author - Access Page History
 
 |
 
 Another way to view the history of a page is by clicking on the three dots next to the page you want
-on the Sidebar and then selecting **History**
+on the Sidebar
 
-.. image:: /_static/images/page/page-access-history-tree.webp
-   :width: 60 %
+.. image:: /_static/images/page/page-access-history-tree-1.webp
+   :width: 40 %
+   :align: center
+   :alt: Content Author - Page Access History Tree
+
+and then selecting **History**
+
+.. image:: /_static/images/page/page-access-history-tree-2.webp
+   :width: 50 %
    :align: center
    :alt: Content Author - Page Access History Tree
 
@@ -1074,23 +1107,24 @@ on the version you selected, accessible by clicking on the three dots next to it
 
 |
 
-.. raw:: html
-
-   <hr/>
+|hr|
 
 ^^^^^^^^^^^^^^^^^^
 Form based editing
 ^^^^^^^^^^^^^^^^^^
+Forms are one of the means by which content is captured in Crafter Studio. A form generally maps
+to or represents a type of object in the system for example a certain kind of page - like
+a section page or a banner or video.
 
 Form controls are the building blocks of forms. It lets you get content into the system.
+These form controls are able to capture content either when editing via a form dialog or
+through the experience builder (XB) in Preview mode.
 
-Forms are the means by which content is captured in Crafter Studio. A form generally maps
-to or represents a type of object in the system for example a certain kind of page - like
-a section page or a banner or video. Let's look at some common elements of a form and examine
+Let's look at some common elements of a form and examine
 some of the controls that we use to get content in to the system.
 
 .. image:: /_static/images/page/page-form.webp
-   :width: 75 %
+   :width: 65 %
    :align: center
    :alt: Content Author - Page Form
 
@@ -1204,12 +1238,12 @@ Here are some controls that authors may encounter while editing content:
 
 * Video pickers - Allows the user to select a video from whatever source is allowed, such as Upload Video (video to be uploaded) or Existing Video (asset uploaded to the system). To select a video, click on **Add** (when there's no video selected yet) or **Replace** to change the selected video.
 
-.. image:: /_static/images/page/form-control-video-picker.webp
-   :width: 60 %
-   :align: center
-   :alt: Content Author - Form Control Video Picker
+  .. image:: /_static/images/page/form-control-video-picker.webp
+     :width: 60 %
+     :align: center
+     :alt: Content Author - Form Control Video Picker
 
-|
+  |
 
 * Page Order - Allows the user to change the position of the page in the navigation structure.
   To change the position of the page, select **Yes**, an **Edit Position** button will appear.
@@ -1217,48 +1251,48 @@ Here are some controls that authors may encounter while editing content:
   position of the page the user is editing, called **Current Page**. The first time navigation is
   turned on for the page, the **Current Page** will always default to the top position.
 
-.. image:: /_static/images/page/form-control-page-order-no.webp
-   :width: 60 %
-   :align: center
-   :alt: Content Author - Form Control No Page Order
+  .. image:: /_static/images/page/form-control-page-order-no.webp
+     :width: 60 %
+     :align: center
+     :alt: Content Author - Form Control No Page Order
 
-.. image:: /_static/images/page/form-control-page-order-yes.webp
-   :width: 60 %
-   :align: center
-   :alt: Content Author - Form Control Yes Page Order
+  .. image:: /_static/images/page/form-control-page-order-yes.webp
+     :width: 60 %
+     :align: center
+     :alt: Content Author - Form Control Yes Page Order
 
-.. image:: /_static/images/page/form-control-page-order.webp
-   :width: 50 %
-   :align: center
-   :alt: Content Author - Form Control Page Order
+  .. image:: /_static/images/page/form-control-page-order.webp
+     :width: 50 %
+     :align: center
+     :alt: Content Author - Form Control Page Order
 
-|
+  |
 
 * Item Selector - Allows the user to select an item from configured sources. Clicking the **Add**
   button opens a menu that lets the user pick from the list. Clicking on **Add & Close** or
   **Add Selection** adds the selected item to the selector list
 
-.. image:: /_static/images/form-controls/form-control-item-selector.webp
-   :width: 50 %
-   :align: center
-   :alt: Content Author - Form Control Item Selector
+  .. image:: /_static/images/form-controls/form-control-item-selector.webp
+     :width: 50 %
+     :align: center
+     :alt: Content Author - Form Control Item Selector
 
-.. image:: /_static/images/page/form-control-item-select.webp
-   :width: 70 %
-   :align: center
-   :alt: Content Author - Form Control Item Select
+  .. image:: /_static/images/page/form-control-item-select.webp
+     :width: 70 %
+     :align: center
+     :alt: Content Author - Form Control Item Select
 
-|
+  |
 
 * File name - Allows the user to enter a name for the file. Whitespaces are replaced by a dash
   automatically and a maximum length for the name is specified next to the filename input box.
 
-.. image:: /_static/images/page/form-control-filename.webp
-   :width: 70 %
-   :align: center
-   :alt: Content Author - Form Control Filename
+  .. image:: /_static/images/page/form-control-filename.webp
+     :width: 70 %
+     :align: center
+     :alt: Content Author - Form Control Filename
 
-|
+  |
 
 """"""""""""""""""""""""""
 Placing Content Components
@@ -1288,16 +1322,16 @@ Drag and Drop Components
 
 * Placing new components
 
-The user may create new components by dragging components from the experience builder panel
-(**Component** section) out and on to the drop target on the screen. A new component with
-default values will then be visible and ready for editing when a new component is dropped on the screen.
+  The user may create new components by dragging components from the experience builder panel
+  (**Component** section) out and on to the drop target on the screen. A new component with
+  default values will then be visible and ready for editing when a new component is dropped on the screen.
 
-.. image:: /_static/images/page/page-components-new.webp
-   :width: 50 %
-   :align: center
-   :alt: Content Author - Page Components New
+  .. image:: /_static/images/page/page-components-new.webp
+     :width: 50 %
+     :align: center
+     :alt: Content Author - Page Components New
 
-|
+  |
 
 * Placing existing components
 
@@ -1305,7 +1339,7 @@ default values will then be visible and ready for editing when a new component i
   A list of existing components will be presented that can be dragged and dropped into the drop target
 
   .. image:: /_static/images/content-author/preview-page-builder-browse-components.webp
-     :width: 30 %
+     :width: 25 %
      :align: center
      :alt: Content Author - Experience Builder Panel Browse Components
 
@@ -1317,7 +1351,7 @@ default values will then be visible and ready for editing when a new component i
   then drag and drop to the desired position in the drop target.
 
   .. image:: /_static/images/content-author/preview-page-components-drag.webp
-     :width: 85 %
+     :width: 75 %
      :align: center
      :alt: Content Author - Experience Builder Panel Page Drag Component
 
@@ -1329,7 +1363,7 @@ default values will then be visible and ready for editing when a new component i
   on the bottom right of the screen when dragging around a component.
 
   .. image:: /_static/images/first-project/first-project-drag-n-drop-delete.webp
-     :width: 80 %
+     :width: 75 %
      :align: center
      :alt: Content Author - Drag and Drop Delete
 
@@ -1339,14 +1373,25 @@ default values will then be visible and ready for editing when a new component i
 Working in the Rich Text Editor(RTE)
 """"""""""""""""""""""""""""""""""""
 The RTE (Rich Text Editor) is intended to provide an in-context editing experience from within a form
-(rather than a preview) that allows authors to arrange and style content without needing to know HTML.
+(and through preview via the XB) that allows authors to arrange and style content without needing to know HTML.
 In an RTE field, the RTE toolbar is at the top, and is always available regardless of how far down you
 scroll in the RTE field.
 
-.. image:: /_static/images/page/rte-screen.webp
-   :width: 75 %
+.. figure:: /_static/images/page/rte-screen.webp
+   :width: 65 %
    :align: center
-   :alt: Content Author - RTE Screen
+   :alt: Content Author - Form RTE Screen
+
+   RTE Screen in a Form Dialog
+
+|
+
+.. figure:: /_static/images/page/rte-screen-2.webp
+   :width: 65 %
+   :align: center
+   :alt: Content Author - XB RTE Screen
+
+   RTE Screen in Preview Using XB
 
 |
 
@@ -1354,9 +1399,7 @@ There are a number of tools available from the RTE out of the box for editing yo
 tools may also be added to the RTE, depending on your needs. Please see the developer section
 :ref:`rte-configuration` of the docs for more details.
 
-.. raw:: html
-
-   <hr/>
+|hr|
 
 ^^^^^^^^^^^^^^
 Copying a Page
@@ -1405,7 +1448,7 @@ click on the **Pages** folder. Navigate to the level and location within the pro
 want to delete content, then click on the three dots next to the page and select **Delete**
 
 .. image:: /_static/images/page/page-delete-menu.webp
-   :width: 40 %
+   :width: 30 %
    :align: center
    :alt: Content Author - Delete Page Menu
 
@@ -1457,7 +1500,7 @@ We'll open the content type ``Article`` of the project. Below is the ``Article``
 with ``disabled``, as described above.
 
 .. image:: /_static/images/page/page-disable-setup.webp
-   :width: 90 %
+   :width: 75 %
    :align: center
    :alt: Content Author - Content Type with disabled setup
 
@@ -1548,7 +1591,7 @@ Click on the three dots next to the folder **static-assets**, then select **New 
 
 .. image:: /_static/images/page/page-asset-folders.webp
     :alt: Static Assets - Create a Folder
-    :width: 40 %
+    :width: 30 %
     :align: center
 
 |
@@ -1570,13 +1613,13 @@ then click on the three dots next to the folder and select **Upload**
 
 .. image:: /_static/images/page/page-asset-upload.webp
     :alt: Static Assets - Upload a File
-    :width: 40 %
+    :width: 30 %
     :align: center
 
 |
 
 The upload dialog will come up and if you have multiple files to upload, you can drag and drop or browse
-    for files that you want to upload.
+for files that you want to upload.
 
 .. image:: /_static/images/page/page-asset-bulk-upload.webp
     :alt: Static Assets - Upload File/s Dialog
@@ -1606,7 +1649,7 @@ adding/replacing an asset which would give you an option to use an existing asse
 
 .. image:: /_static/images/page/page-asset-single-upload.webp
    :alt: Static Assets - Upload a file from a control/data source in the content form
-   :width: 60 %
+   :width: 50 %
    :align: center
 
 |
@@ -1615,7 +1658,7 @@ The upload dialog will come up. Click on the ``Choose File`` button to browse fo
 
 .. image:: /_static/images/page/page-asset-single-file-upload-dlg.webp
    :alt: Static Assets - Upload File Dialog
-   :width: 60 %
+   :width: 50 %
    :align: center
 
 |
@@ -1624,7 +1667,7 @@ Once the file is uploaded, the dialog will close and the asset will now be in th
 
 .. image:: /_static/images/page/page-asset-single-file-upload-done.webp
    :alt: Static Assets - Single file upload done and asset in content form
-   :width: 60 %
+   :width: 50 %
    :align: center
 
 |
@@ -1675,7 +1718,7 @@ next to the asset you want to view then select **History**
 
 .. image:: /_static/images/page/page-asset-access-history.webp
     :alt: Static Assets - Open History
-    :width: 50 %
+    :width: 40 %
     :align: center
 
 |
@@ -1699,7 +1742,7 @@ This section describes how Content Authors can search for different things in Cr
 To do a search in Crafter Studio, point your mouse to the navigation menu icon on the top right, which will display the name of the icon, **Navigation Menu**, click on it then select **Search** under ``Project``
 
 .. image:: /_static/images/content-author/search-project-icon.webp
-    :width: 75 %
+    :width: 65 %
     :align: center
     :alt: Content Author - Search from Navigation Menu
 
@@ -1708,7 +1751,7 @@ To do a search in Crafter Studio, point your mouse to the navigation menu icon o
 You can also access **Search** by clicking on the magnifying glass icon on the top right, which will then display the name of the icon, **Search**, when you point your mouse on the icon.
 
 .. image:: /_static/images/content-author/search-project-icon-toolbar.webp
-    :width: 100 %
+    :width: 90 %
     :align: center
     :alt: Content Author - Search from Toolbar
 
@@ -1717,7 +1760,7 @@ You can also access **Search** by clicking on the magnifying glass icon on the t
 Search allows you to find objects in the system through keywords. Each result is a content type of one sort or another. An option to delete, edit/view and the content type is provided with each result. You can view the results in a list or a grid, like below:
 
 .. image:: /_static/images/content-author/search-grid-view.webp
-    :width: 95 %
+    :width: 75 %
     :align: center
     :alt: Content Author - Search Results Grid View
 
@@ -1726,7 +1769,7 @@ Search allows you to find objects in the system through keywords. Each result is
 Here's the search results in list view:
 
 .. image:: /_static/images/content-author/search-list-view.webp
-    :width: 95 %
+    :width: 75 %
     :align: center
     :alt: Content Author - Page Search Results List View
 
@@ -1762,7 +1805,7 @@ Here's the search results in list view:
 **Result Selection**: Note the checkboxes for each result type . Just as you can select multiple items on the dashboard and then interact with them in bulk, the same is true with search. You will have checkboxes that allow you to choose many items and access to the context nav to take action on those items. If you are selecting specific items for a control in a form you will be able to choose whatever number of items are expected by the control.
 
 .. image:: /_static/images/content-author/search-results-checkboxes.webp
-    :width: 95 %
+    :width: 75 %
     :align: center
     :alt: Content Author - Page Search Results Multiple Results Selected
 
@@ -1820,14 +1863,14 @@ Sidebar (for single items), or from the Dashboard (where items can be batch chec
 Initiate a Publish through the toolbar at the top:
 
 .. image:: /_static/images/page/page-workflows-publish-1a.webp
-    :width: 85 %
+    :width: 75 %
     :align: center
     :alt: Workflow - Request publish through the toolbar at the top
 
 |
 
 .. image:: /_static/images/page/page-workflows-publish-1b.webp
-    :width: 85 %
+    :width: 75 %
     :align: center
     :alt: Workflow - Request publish through the toolbar at the top
 
@@ -1836,7 +1879,7 @@ Initiate a Publish through the toolbar at the top:
 Initiate Publish batch checked through the dashboard:
 
 .. image:: /_static/images/page/page-workflows-publish2.webp
-    :width: 85 %
+    :width: 75 %
     :align: center
     :alt: Workflow - Request batch items for publish through Dashboard
 
@@ -1845,21 +1888,21 @@ Initiate Publish batch checked through the dashboard:
 Initiate Publish by clicking on the three dots next to the content from the Sidebar:
 
 .. image:: /_static/images/page/page-workflows-publish3a.webp
-    :width: 30 %
+    :width: 25 %
     :align: center
     :alt: Workflow - Request publish by right clicking on content in nav tree
 
 |
 
 .. image:: /_static/images/page/page-workflows-publish3b.webp
-    :width: 45 %
+    :width: 35 %
     :align: center
     :alt: Workflow - Request publish by right clicking on content in nav tree
 
 |
 
 When sending the request for publish, you have the option of requesting to publish your content now,
-    or to schedule publishing of your content at a later time and date.
+or to schedule publishing of your content at a later time and date.
 
 .. image:: /_static/images/page/page-workflows-request-publish-now.webp
     :width: 65 %
@@ -1876,7 +1919,7 @@ When sending the request for publish, you have the option of requesting to publi
 |
 
 Users with permission to publish can also make changes and request approval for publishing their changes
-    by checking the ``Request approval`` checkbox in the Publish dialog
+by checking the ``Request approval`` checkbox in the Publish dialog
 
 .. image:: /_static/images/page/page-workflows-request-publish.webp
      :width: 65 %
@@ -1912,7 +1955,7 @@ content you just submitted a request for publish and contains the text **Submitt
 The **Submitted** icon also appears next to the content submitted for publish in the dashboard:
 
 .. image:: /_static/images/page/page-workflows-submitted-dashboard.webp
-     :width: 85 %
+     :width: 75 %
      :align: center
      :alt: Workflow - Request publish submitted dashboard updated icon
 
@@ -1956,7 +1999,7 @@ article and opening it for preview. After opening the article for preview, go to
 on **Options** (three dots) next to the address bar.
 
 .. image:: /_static/images/page/page-workflows-context-nav-approve.webp
-     :width: 85 %
+     :width: 75 %
      :align: center
      :alt: Workflow - Approve & publish context nav option
 
@@ -2026,7 +2069,7 @@ The dashboard allows batches of scheduled and non-scheduled items to be pushed l
 Clicking on **Publish** will change the schedule of all items to be pushed live at the same time.
 
 .. image:: /_static/images/page/page-workflows-batch-approve-request.webp
-     :width: 85 %
+     :width: 75 %
      :align: center
      :alt: Workflow - Batch approve request to publish
 
