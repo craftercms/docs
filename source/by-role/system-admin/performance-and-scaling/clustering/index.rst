@@ -1,6 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.1
-
 
 .. index:: Studio Clustering, Clustering
 
@@ -54,9 +53,7 @@ Before we begin configuring Studio for clustering, the following must be setup:
 
 * A DNS server directing traffic to the primary node, and can failover to the replica node if the primary is not healthy
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 -----------------------------
 Configuring Studio Clustering
@@ -92,9 +89,7 @@ multi-region access points, see https://docs.aws.amazon.com/AmazonS3/latest/user
 
 Here's some more information on S3 replication: https://aws.amazon.com/about-aws/whats-new/2020/12/amazon-s3-replication-adds-support-two-way-replication/
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 ----------------------------------------------
 Configuring the Deployer for Studio Clustering
@@ -153,6 +148,21 @@ The deployment processor configured above runs whenever the ``clusterMode`` retu
 
 - ``runInClusterMode`` is set to ``ALWAYS``
 - ``runInClusterMode`` value matches the current ``clusterMode``
+
+|hr|
+
+------------------
+Backup and Restore
+------------------
+CrafterCMS comes with a script to backup and restore your environment, as described :ref:`here <backup-and-recovery>`
+
+There are a couple of ways to backup and restore your cluster:
+
+- Shutdown the cluster first then back up the Primary and the Replicas and restore both nodes when necessary
+- Shutdown the cluster first then backup and restore only 1 node (Primary or Replica), which will become
+  Primary. You then have to add a Replica using the instructions :ref:`here <adding-a-new-node-to-cluster>`.
+
+|hr|
 
 -------
 How-tos

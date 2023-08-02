@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.0
+:last-updated: 4.1.1
 
 .. index:: Upgrading CrafterCMS; Upgrading
 
@@ -33,6 +33,9 @@ Here are the instructions for upgrading CrafterCMS based on how it was installed
 
    upgrading-server.rst
    upgrading-container.rst
+   upgrading-cluster.rst
+
+|hr|
 
 ==============================
 Troubleshooting Upgrade Issues
@@ -73,6 +76,8 @@ Here, the upgrade failed because of a special case with existing data in a table
 
 For this case, the solution would be to manually set unique values for the existing rows in the table and then execute the remaining statements in the script.
 
+|hr|
+
 ---------------------
 Upgrade Not Supported
 ---------------------
@@ -89,6 +94,8 @@ When the system is in an undefined state between two versions, you may see the f
 |
 
 The above message may occur, if you had an error upgrading because of a failed statement, then you restarted the system again. Because the script was not executed completely, the system is in an undefined state between the two versions. So, the next time the system is restarted, the upgrade will be attempted again resulting in a different message in the logs as seen above. The solution here would be to look some more in the logs for the failed statement before the system was restarted and manually recover, like the previous example.
+
+|hr|
 
 .. _db-upgrades-timeout:
 
