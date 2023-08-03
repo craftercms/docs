@@ -6,6 +6,24 @@
 Security Advisories
 ===================
 
+CV-2023080301
+=============
+
+======================= ======================================================================================
+**Date**                2023.08.03
+======================= ======================================================================================
+**Affected Versions**   **4.0** <= 4.0.2, **3.1** =< 3.1.27
+**Vulnerability Type**  CWE-79 Improper Neutralization of Input During Web Page Generation
+                        ('Cross-site Scripting')
+**Risk**                High
+**Description**         Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+                        vulnerability in CrafterCMS Engine on Windows, MacOS, Linux, x86, ARM, 64 bit allows
+                        Reflected XSS.
+**CVE**                 https://www.cve.org/cverecord?id=CVE-2023-4136
+**Credit**              Discovered by Egidio Romano <egidio.romano@mindedsecurity.com>, working with
+                        `IMQ Minded Security <https://mindedsecurity.com/>`_
+======================= ======================================================================================
+
 CV-2023021701
 =============
 
