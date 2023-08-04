@@ -13,7 +13,7 @@ Studio plugins extend the authoring environment and can be pieces within Studio 
 
 Stand alone plugins can make use of Studio UI components using various possible mechanisms described below.
 
-The Crafter Studio API that gets a file for a given plugin, the ``getPluginFile`` API found here `getPluginFile <../../_static/api/studio.html#tag/plugin/operation/getPluginFile>`_ facilitates extending Studio through plugins.
+The Crafter Studio API that gets a file for a given plugin, the ``getPluginFile`` API found here `getPluginFile <../../_static/api/studio.html#tag/plugin/operation/getPluginFile>`__ facilitates extending Studio through plugins.
 
 --------------------------
 Plugin Directory Structure
@@ -125,7 +125,7 @@ You can use ``JSX``, ``TypeScript`` or any form of transpiling when developing y
 Your plugin's build script would then transpile your app and write the output on the plugin folder and commit that
 output so Studio can see it. If your plugin size allows, it is preferable to have a single bundled file. If you do
 need multiple files (e.g. more JS files, CSS files, other), you may have them; simply bear in mind that loading them
-into the page would need to be done through the ``getPluginFile`` API found here `getPluginFile <../../_static/api/studio.html#tag/plugin/operation/getPluginFile>`_ (i.e. it's not a regular web resource loaded
+into the page would need to be done through the ``getPluginFile`` API found here `getPluginFile <../../_static/api/studio.html#tag/plugin/operation/getPluginFile>`__ (i.e. it's not a regular web resource loaded
 via it's physical path).
 
 To load a file, the URL would look like:
