@@ -34,16 +34,23 @@ To configure Crafter Social, please see :ref:`crafter-social-admin`
 REST API
 --------
 
-To view the Crafter Social REST APIs:
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
 
-.. open_iframe_modal_button::
-   :label: Open here
-   :url: ../../../_static/api/social.html
-   :title: Social API
+   api/index.rst
 
-.. raw:: html
+.. Comment out for now for when OAS file is ready
+.. To view the Crafter Social REST APIs:
 
-    or <a href="../../../_static/api/social.html" target="_blank">in a new tab</a>
+.. .. open_iframe_modal_button::
+      :label: Open here
+      :url: ../../../_static/api/social.html
+      :title: Social API
+
+.. .. raw:: html
+
+..     or <a href="../../../_static/api/social.html" target="_blank">in a new tab</a>
 
 |
 

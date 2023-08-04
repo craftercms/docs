@@ -34,16 +34,23 @@ To configure Crafter Profile, please see :ref:`crafter-profile-admin`
 REST API
 --------
 
-To view the Crafter Profile REST APIs:
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
 
-.. open_iframe_modal_button::
-   :label: Open here
-   :url: ../../../_static/api/social.html
-   :title: Profile API
+   api/index.rst
 
-.. raw:: html
+.. Comment out for now for when OAS file is ready
+.. To view the Crafter Profile REST APIs:
 
-    or <a href="../../../_static/api/profile.html" target="_blank">in a new tab</a>
+.. .. open_iframe_modal_button::
+      :label: Open here
+      :url: ../../../_static/api/social.html
+      :title: Profile API
+
+.. .. raw:: html
+
+..    or <a href="../../../_static/api/profile.html" target="_blank">in a new tab</a>
 
 |
 
