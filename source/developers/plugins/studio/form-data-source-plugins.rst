@@ -8,7 +8,7 @@
 Building Form Engine Data Source Plugins
 ========================================
 
-In :ref:`form-engine-data-source`, we learned how to build form engine data sources placed in the Studio war file.  Crafter Studio also allows plugins for form engine data sources through the ``getPluginFile`` API found here `getPluginFile <../../_static/api/studio.html#tag/plugin/operation/getPluginFile>`_
+In :ref:`form-engine-data-source`, we learned how to build form engine data sources placed in the Studio war file.  Crafter Studio also allows plugins for form engine data sources through the ``getPluginFile`` API found here `getPluginFile <../../../_static/api/studio.html#tag/plugin/operation/getPluginFile>`__
 
 -----------------------------------
 The anatomy of a Data Source Plugin
