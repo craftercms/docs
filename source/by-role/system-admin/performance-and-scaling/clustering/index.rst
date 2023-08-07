@@ -91,6 +91,8 @@ Here's some more information on S3 replication: https://aws.amazon.com/about-aws
 
 |hr|
 
+.. _configuring-the-deployer-for-studio-clustering:
+
 ----------------------------------------------
 Configuring the Deployer for Studio Clustering
 ----------------------------------------------
