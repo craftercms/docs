@@ -1,7 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.3
-
-
+:last-updated: 4.1.1
 
 .. _backup-and-recovery:
 
@@ -19,21 +17,26 @@ Studio Backup
 
 To backup CrafterCMS, you only need to backup Crafter Studio.
 
+^^^^^^^^^^^^^^^^^^^^
 Non-clustered Studio
 ^^^^^^^^^^^^^^^^^^^^
+For non-clustered Studio instances, shutdown CrafterCMS then perform the backup. Once the backup is done,
+start it up again. This implies some downtime for authors.
 
-For non-clustered Studio instances, shutdown CrafterCMS then perform the backup. Once the backup is done, start it up again.
-This implies some downtime for authors.
-
+^^^^^^^^^^^^^^^^
 Clustered Studio
 ^^^^^^^^^^^^^^^^
+For clustered instances, shutdown a Replica, then perform the backup against that Replica.
+Once the backup is done, start up the Replica. This doesn't result in any downtime for authors.
 
-For clustered instances, shutdown a replica, then perform the backup against that replica. Once the backup is done, start up
-the replica. This doesn't result in any downtime for authors.
+In some instances, you may want to backup all the nodes (Primary and Replicas) in case restoration of all nodes
+is necessary. In this case, you will need to shutdown the cluster first to perform the backup of all the nodes.
 
 .. WARNING::
 
    Performing a backup while CrafterCMS is running is technically possible, but the resulting backup may not be viable.
+
+|hr|
 
 -------------------------
 Running the backup script
@@ -69,9 +72,12 @@ If a filename has been specified, your backup file will be named ``{filename}-{y
 
 If no filename has been specified, the backup file will be named either ``crafter-authoring-backup-{yyyy-MM-dd-hh-mm-ss}.zip`` or ``crafter-delivery-backup-{yyyy-MM-dd-hh-mm-ss}.zip``, depending on which environment you are backing up.
 
+|hr|
+
 --------
 Recovery
 --------
+
 To restore your backup, make sure that CrafterCMS is not running. To restore your authoring or delivery environment, go to ``{Crafter-CMS-install-directory}/crafter-{env}/bin``, where ``{env}`` is the environment (either authoring or delivery) then run the following:
 
     .. code-block:: bash
@@ -100,3 +106,11 @@ If you're restoring the authoring environment, Studio will be started by the res
 
         .. include:: /includes/ssh-private-key.rst
 
+^^^^^^^^^^^^^^^^
+Clustered Studio
+^^^^^^^^^^^^^^^^
+For clusters, you have a couple of options on restoring your backup/s:
+
+- Restore both Primary and Replica node backups when necessary
+- Restore only 1 node (Primary or Replica), which will become Primary. You then have to add a Replica using
+  the instructions :ref:`here <adding-a-new-node-to-cluster>`.

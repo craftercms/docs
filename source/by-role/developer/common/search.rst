@@ -3,7 +3,7 @@
 
 .. index:: Search, Query, OpenSearch, Elasticsearch, GraphQL
 
-.. _search:
+.. _content-search:
 
 ======
 Search
@@ -321,7 +321,7 @@ Here's how the query will look like for the above image of a multi-index query f
 
 |
 
-See `here <../../../../_static/api/engine.html#tag/search/operation/search>`_ for more information on the Crafter Engine API ``search``.
+See `here <../../../_static/api/engine.html#tag/search/operation/search>`_ for more information on the Crafter Engine API ``search``.
 
 CrafterCMS supports the following search query parameters:
 

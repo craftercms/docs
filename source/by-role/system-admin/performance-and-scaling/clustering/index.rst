@@ -1,6 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.1
-
 
 .. index:: Studio Clustering, Clustering
 
@@ -151,6 +150,19 @@ The deployment processor configured above runs whenever the ``clusterMode`` retu
 
 - ``runInClusterMode`` is set to ``ALWAYS``
 - ``runInClusterMode`` value matches the current ``clusterMode``
+
+|hr|
+
+------------------
+Backup and Restore
+------------------
+CrafterCMS comes with a script to backup and restore your environment, as described :ref:`here <backup-and-recovery>`
+
+There are a couple of ways to backup and restore your cluster:
+
+- Shutdown the cluster first then back up the Primary and the Replicas and restore both nodes when necessary
+- Shutdown the cluster first then backup and restore only 1 node (Primary or Replica), which will become
+  Primary. You then have to add a Replica using the instructions :ref:`here <adding-a-new-node-to-cluster>`.
 
 |hr|
 
