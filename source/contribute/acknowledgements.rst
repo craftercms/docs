@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.0
+:last-updated: 4.1.1
 
 .. index:: Open Source Acknowledgements
 
@@ -199,13 +199,6 @@ spring-social-config
 **Dependency:** spring-social-config |br|
 **URL:** https://search.maven.org/artifact/org.springframework.social/spring-social-config
 
--------------------
-mongodb-driver-sync
--------------------
-**Package:** org.mongodb |br|
-**Dependency:** mongodb-driver-sync |br|
-**URL:** https://search.maven.org/artifact/org.mongodb/mongodb-driver-sync
-
 ----
 bson
 ----
@@ -213,26 +206,12 @@ bson
 **Dependency:** bson |br|
 **URL:** https://search.maven.org/artifact/org.mongodb/bson
 
--------------------
-mongodb-driver-core
--------------------
-**Package:** org.mongodb |br|
-**Dependency:** mongodb-driver-core |br|
-**URL:** https://search.maven.org/artifact/org.mongodb/mongodb-driver-core
-
 -----------------
-bson-record-codec
+mongo-java-driver
 -----------------
 **Package:** org.mongodb |br|
-**Dependency:** bson-record-codec |br|
-**URL:** https://search.maven.org/artifact/org.mongodb/bson-record-codec
-
----------------------
-mongodb-driver-legacy
----------------------
-**Package:** org.mongodb |br|
-**Dependency:** mongodb-driver-legacy |br|
-**URL:** https://search.maven.org/artifact/org.mongodb/mongodb-driver-legacy
+**Dependency:** mongo-java-driver |br|
+**URL:** https://search.maven.org/artifact/org.mongodb/mongo-java-driver
 
 -----
 jongo
@@ -247,13 +226,6 @@ bson4jackson
 **Package:** de.undercouch |br|
 **Dependency:** bson4jackson |br|
 **URL:** https://search.maven.org/artifact/de.undercouch/bson4jackson
-
-------------
-commons-text
-------------
-**Package:** org.apache.commons |br|
-**Dependency:** commons-text |br|
-**URL:** https://search.maven.org/artifact/org.apache.commons/commons-text
 
 -----
 esapi
@@ -293,9 +265,30 @@ antisamy
 -------------
 neko-htmlunit
 -------------
-**Package:** org.htmlunit |br|
+**Package:** net.sourceforge.htmlunit |br|
 **Dependency:** neko-htmlunit |br|
-**URL:** https://search.maven.org/artifact/org.htmlunit/neko-htmlunit
+**URL:** https://search.maven.org/artifact/net.sourceforge.htmlunit/neko-htmlunit
+
+-----------
+httpclient5
+-----------
+**Package:** org.apache.httpcomponents.client5 |br|
+**Dependency:** httpclient5 |br|
+**URL:** https://search.maven.org/artifact/org.apache.httpcomponents.client5/httpclient5
+
+------------
+httpcore5-h2
+------------
+**Package:** org.apache.httpcomponents.core5 |br|
+**Dependency:** httpcore5-h2 |br|
+**URL:** https://search.maven.org/artifact/org.apache.httpcomponents.core5/httpcore5-h2
+
+---------
+httpcore5
+---------
+**Package:** org.apache.httpcomponents.core5 |br|
+**Dependency:** httpcore5 |br|
+**URL:** https://search.maven.org/artifact/org.apache.httpcomponents.core5/httpcore5
 
 ---------
 batik-css
@@ -353,54 +346,47 @@ jsoup
 **Dependency:** jsoup |br|
 **URL:** https://search.maven.org/artifact/org.jsoup/jsoup
 
----------------------------------
-opensearch-rest-high-level-client
----------------------------------
-**Package:** org.opensearch.client |br|
-**Dependency:** opensearch-rest-high-level-client |br|
-**URL:** https://search.maven.org/artifact/org.opensearch.client/opensearch-rest-high-level-client
+------------------------------------
+elasticsearch-rest-high-level-client
+------------------------------------
+**Package:** org.elasticsearch.client |br|
+**Dependency:** elasticsearch-rest-high-level-client |br|
+**URL:** https://search.maven.org/artifact/org.elasticsearch.client/elasticsearch-rest-high-level-client
 
-----------
-opensearch
-----------
-**Package:** org.opensearch |br|
-**Dependency:** opensearch |br|
-**URL:** https://search.maven.org/artifact/org.opensearch/opensearch
+-------------
+elasticsearch
+-------------
+**Package:** org.elasticsearch |br|
+**Dependency:** elasticsearch |br|
+**URL:** https://search.maven.org/artifact/org.elasticsearch/elasticsearch
+
+------------------
+elasticsearch-core
+------------------
+**Package:** org.elasticsearch |br|
+**Dependency:** elasticsearch-core |br|
+**URL:** https://search.maven.org/artifact/org.elasticsearch/elasticsearch-core
+
+-----------------------
+elasticsearch-secure-sm
+-----------------------
+**Package:** org.elasticsearch |br|
+**Dependency:** elasticsearch-secure-sm |br|
+**URL:** https://search.maven.org/artifact/org.elasticsearch/elasticsearch-secure-sm
+
+-----------------------
+elasticsearch-x-content
+-----------------------
+**Package:** org.elasticsearch |br|
+**Dependency:** elasticsearch-x-content |br|
+**URL:** https://search.maven.org/artifact/org.elasticsearch/elasticsearch-x-content
 
 -----------------
-opensearch-common
+elasticsearch-geo
 -----------------
-**Package:** org.opensearch |br|
-**Dependency:** opensearch-common |br|
-**URL:** https://search.maven.org/artifact/org.opensearch/opensearch-common
-
----------------
-opensearch-core
----------------
-**Package:** org.opensearch |br|
-**Dependency:** opensearch-core |br|
-**URL:** https://search.maven.org/artifact/org.opensearch/opensearch-core
-
---------------------
-opensearch-secure-sm
---------------------
-**Package:** org.opensearch |br|
-**Dependency:** opensearch-secure-sm |br|
-**URL:** https://search.maven.org/artifact/org.opensearch/opensearch-secure-sm
-
---------------------
-opensearch-x-content
---------------------
-**Package:** org.opensearch |br|
-**Dependency:** opensearch-x-content |br|
-**URL:** https://search.maven.org/artifact/org.opensearch/opensearch-x-content
-
---------------
-opensearch-geo
---------------
-**Package:** org.opensearch |br|
-**Dependency:** opensearch-geo |br|
-**URL:** https://search.maven.org/artifact/org.opensearch/opensearch-geo
+**Package:** org.elasticsearch |br|
+**Dependency:** elasticsearch-geo |br|
+**URL:** https://search.maven.org/artifact/org.elasticsearch/elasticsearch-geo
 
 -----------
 lucene-core
@@ -409,12 +395,12 @@ lucene-core
 **Dependency:** lucene-core |br|
 **URL:** https://search.maven.org/artifact/org.apache.lucene/lucene-core
 
-----------------------
-lucene-analysis-common
-----------------------
+-----------------------
+lucene-analyzers-common
+-----------------------
 **Package:** org.apache.lucene |br|
-**Dependency:** lucene-analysis-common |br|
-**URL:** https://search.maven.org/artifact/org.apache.lucene/lucene-analysis-common
+**Dependency:** lucene-analyzers-common |br|
+**URL:** https://search.maven.org/artifact/org.apache.lucene/lucene-analyzers-common
 
 ----------------------
 lucene-backward-codecs
@@ -500,12 +486,12 @@ lucene-suggest
 **Dependency:** lucene-suggest |br|
 **URL:** https://search.maven.org/artifact/org.apache.lucene/lucene-suggest
 
---------------
-opensearch-cli
---------------
-**Package:** org.opensearch |br|
-**Dependency:** opensearch-cli |br|
-**URL:** https://search.maven.org/artifact/org.opensearch/opensearch-cli
+-----------------
+elasticsearch-cli
+-----------------
+**Package:** org.elasticsearch |br|
+**Dependency:** elasticsearch-cli |br|
+**URL:** https://search.maven.org/artifact/org.elasticsearch/elasticsearch-cli
 
 -----------
 jopt-simple
@@ -522,6 +508,13 @@ hppc
 **URL:** https://search.maven.org/artifact/com.carrotsearch/hppc
 
 --------
+lz4-java
+--------
+**Package:** org.lz4 |br|
+**Dependency:** lz4-java |br|
+**URL:** https://search.maven.org/artifact/org.lz4/lz4-java
+
+--------
 t-digest
 --------
 **Package:** com.tdunning |br|
@@ -535,26 +528,26 @@ HdrHistogram
 **Dependency:** HdrHistogram |br|
 **URL:** https://search.maven.org/artifact/org.hdrhistogram/HdrHistogram
 
----------
-log4j-jul
----------
-**Package:** org.apache.logging.log4j |br|
-**Dependency:** log4j-jul |br|
-**URL:** https://search.maven.org/artifact/org.apache.logging.log4j/log4j-jul
-
 ---
 jna
 ---
-**Package:** net.java.dev.jna |br|
+**Package:** org.elasticsearch |br|
 **Dependency:** jna |br|
-**URL:** https://search.maven.org/artifact/net.java.dev.jna/jna
+**URL:** https://search.maven.org/artifact/org.elasticsearch/jna
 
-----------------------
-opensearch-rest-client
-----------------------
-**Package:** org.opensearch.client |br|
-**Dependency:** opensearch-rest-client |br|
-**URL:** https://search.maven.org/artifact/org.opensearch.client/opensearch-rest-client
+--------------------------------
+elasticsearch-plugin-classloader
+--------------------------------
+**Package:** org.elasticsearch |br|
+**Dependency:** elasticsearch-plugin-classloader |br|
+**URL:** https://search.maven.org/artifact/org.elasticsearch/elasticsearch-plugin-classloader
+
+-------------------------
+elasticsearch-rest-client
+-------------------------
+**Package:** org.elasticsearch.client |br|
+**Dependency:** elasticsearch-rest-client |br|
+**URL:** https://search.maven.org/artifact/org.elasticsearch.client/elasticsearch-rest-client
 
 ---------------
 httpasyncclient
@@ -573,37 +566,37 @@ httpcore-nio
 --------------------
 mapper-extras-client
 --------------------
-**Package:** org.opensearch.plugin |br|
+**Package:** org.elasticsearch.plugin |br|
 **Dependency:** mapper-extras-client |br|
-**URL:** https://search.maven.org/artifact/org.opensearch.plugin/mapper-extras-client
+**URL:** https://search.maven.org/artifact/org.elasticsearch.plugin/mapper-extras-client
 
 ------------------
 parent-join-client
 ------------------
-**Package:** org.opensearch.plugin |br|
+**Package:** org.elasticsearch.plugin |br|
 **Dependency:** parent-join-client |br|
-**URL:** https://search.maven.org/artifact/org.opensearch.plugin/parent-join-client
+**URL:** https://search.maven.org/artifact/org.elasticsearch.plugin/parent-join-client
 
 ------------------------
 aggs-matrix-stats-client
 ------------------------
-**Package:** org.opensearch.plugin |br|
+**Package:** org.elasticsearch.plugin |br|
 **Dependency:** aggs-matrix-stats-client |br|
-**URL:** https://search.maven.org/artifact/org.opensearch.plugin/aggs-matrix-stats-client
+**URL:** https://search.maven.org/artifact/org.elasticsearch.plugin/aggs-matrix-stats-client
 
 ----------------
 rank-eval-client
 ----------------
-**Package:** org.opensearch.plugin |br|
+**Package:** org.elasticsearch.plugin |br|
 **Dependency:** rank-eval-client |br|
-**URL:** https://search.maven.org/artifact/org.opensearch.plugin/rank-eval-client
+**URL:** https://search.maven.org/artifact/org.elasticsearch.plugin/rank-eval-client
 
 --------------------
 lang-mustache-client
 --------------------
-**Package:** org.opensearch.plugin |br|
+**Package:** org.elasticsearch.plugin |br|
 **Dependency:** lang-mustache-client |br|
-**URL:** https://search.maven.org/artifact/org.opensearch.plugin/lang-mustache-client
+**URL:** https://search.maven.org/artifact/org.elasticsearch.plugin/lang-mustache-client
 
 --------
 compiler
@@ -612,19 +605,12 @@ compiler
 **Dependency:** compiler |br|
 **URL:** https://search.maven.org/artifact/com.github.spullara.mustache.java/compiler
 
----------------
-opensearch-java
----------------
-**Package:** org.opensearch.client |br|
-**Dependency:** opensearch-java |br|
-**URL:** https://search.maven.org/artifact/org.opensearch.client/opensearch-java
-
--------
-parsson
--------
-**Package:** org.eclipse.parsson |br|
-**Dependency:** parsson |br|
-**URL:** https://search.maven.org/artifact/org.eclipse.parsson/parsson
+------------------
+elasticsearch-java
+------------------
+**Package:** co.elastic.clients |br|
+**Dependency:** elasticsearch-java |br|
+**URL:** https://search.maven.org/artifact/co.elastic.clients/elasticsearch-java
 
 ----------------
 jakarta.json-api
@@ -633,26 +619,12 @@ jakarta.json-api
 **Dependency:** jakarta.json-api |br|
 **URL:** https://search.maven.org/artifact/jakarta.json/jakarta.json-api
 
----------------------
-jakarta.json.bind-api
----------------------
-**Package:** jakarta.json.bind |br|
-**Dependency:** jakarta.json.bind-api |br|
-**URL:** https://search.maven.org/artifact/jakarta.json.bind/jakarta.json.bind-api
-
-------
-yasson
-------
-**Package:** org.eclipse |br|
-**Dependency:** yasson |br|
-**URL:** https://search.maven.org/artifact/org.eclipse/yasson
-
-------------
-jakarta.json
-------------
-**Package:** org.glassfish |br|
-**Dependency:** jakarta.json |br|
-**URL:** https://search.maven.org/artifact/org.glassfish/jakarta.json
+-------
+parsson
+-------
+**Package:** org.eclipse.parsson |br|
+**Dependency:** parsson |br|
+**URL:** https://search.maven.org/artifact/org.eclipse.parsson/parsson
 
 ---------
 tika-core
@@ -717,13 +689,6 @@ jhighlight
 **Dependency:** jhighlight |br|
 **URL:** https://search.maven.org/artifact/org.codelibs/jhighlight
 
--------
-tagsoup
--------
-**Package:** org.ccil.cowan.tagsoup |br|
-**Dependency:** tagsoup |br|
-**URL:** https://search.maven.org/artifact/org.ccil.cowan.tagsoup/tagsoup
-
 -----
 parso
 -----
@@ -744,34 +709,6 @@ tika-parser-crypto-module
 **Package:** org.apache.tika |br|
 **Dependency:** tika-parser-crypto-module |br|
 **URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-crypto-module
-
---------------
-bcmail-jdk18on
---------------
-**Package:** org.bouncycastle |br|
-**Dependency:** bcmail-jdk18on |br|
-**URL:** https://search.maven.org/artifact/org.bouncycastle/bcmail-jdk18on
-
---------------
-bcutil-jdk18on
---------------
-**Package:** org.bouncycastle |br|
-**Dependency:** bcutil-jdk18on |br|
-**URL:** https://search.maven.org/artifact/org.bouncycastle/bcutil-jdk18on
-
---------------
-bcpkix-jdk18on
---------------
-**Package:** org.bouncycastle |br|
-**Dependency:** bcpkix-jdk18on |br|
-**URL:** https://search.maven.org/artifact/org.bouncycastle/bcpkix-jdk18on
-
---------------
-bcprov-jdk18on
---------------
-**Package:** org.bouncycastle |br|
-**Dependency:** bcprov-jdk18on |br|
-**URL:** https://search.maven.org/artifact/org.bouncycastle/bcprov-jdk18on
 
 --------------------------
 tika-parser-digest-commons
@@ -800,6 +737,20 @@ tika-parser-html-module
 **Package:** org.apache.tika |br|
 **Dependency:** tika-parser-html-module |br|
 **URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-html-module
+
+------------------------
+tika-parser-html-commons
+------------------------
+**Package:** org.apache.tika |br|
+**Dependency:** tika-parser-html-commons |br|
+**URL:** https://search.maven.org/artifact/org.apache.tika/tika-parser-html-commons
+
+----------
+boilerpipe
+----------
+**Package:** de.l3s.boilerpipe |br|
+**Dependency:** boilerpipe |br|
+**URL:** https://search.maven.org/artifact/de.l3s.boilerpipe/boilerpipe
 
 ------------------------
 tika-parser-image-module
@@ -962,6 +913,13 @@ pdfbox-tools
 **Dependency:** pdfbox-tools |br|
 **URL:** https://search.maven.org/artifact/org.apache.pdfbox/pdfbox-tools
 
+---------------
+pdfbox-debugger
+---------------
+**Package:** org.apache.pdfbox |br|
+**Dependency:** pdfbox-debugger |br|
+**URL:** https://search.maven.org/artifact/org.apache.pdfbox/pdfbox-debugger
+
 -------
 jempbox
 -------
@@ -1007,9 +965,9 @@ tika-parser-text-module
 -----------------
 juniversalchardet
 -----------------
-**Package:** com.github.albfernandez |br|
+**Package:** com.googlecode.juniversalchardet |br|
 **Dependency:** juniversalchardet |br|
-**URL:** https://search.maven.org/artifact/com.github.albfernandez/juniversalchardet
+**URL:** https://search.maven.org/artifact/com.googlecode.juniversalchardet/juniversalchardet
 
 -----------
 commons-csv
@@ -1185,13 +1143,6 @@ groovy-all
 **Package:** org.codehaus.groovy |br|
 **Dependency:** groovy-all |br|
 **URL:** https://search.maven.org/artifact/org.codehaus.groovy/groovy-all
-
-------
-groovy
-------
-**Package:** org.codehaus.groovy |br|
-**Dependency:** groovy |br|
-**URL:** https://search.maven.org/artifact/org.codehaus.groovy/groovy
 
 ----------
 groovy-ant
@@ -1382,13 +1333,6 @@ junit
 **Dependency:** junit |br|
 **URL:** https://search.maven.org/artifact/junit/junit
 
--------------
-hamcrest-core
--------------
-**Package:** org.hamcrest |br|
-**Dependency:** hamcrest-core |br|
-**URL:** https://search.maven.org/artifact/org.hamcrest/hamcrest-core
-
 ------------------
 groovy-test-junit5
 ------------------
@@ -1444,13 +1388,6 @@ groovy-testng
 **Package:** org.codehaus.groovy |br|
 **Dependency:** groovy-testng |br|
 **URL:** https://search.maven.org/artifact/org.codehaus.groovy/groovy-testng
-
-----------
-groovy-xml
-----------
-**Package:** org.codehaus.groovy |br|
-**Dependency:** groovy-xml |br|
-**URL:** https://search.maven.org/artifact/org.codehaus.groovy/groovy-xml
 
 ---
 ivy
@@ -1543,13 +1480,6 @@ gmongo
 **Dependency:** gmongo |br|
 **URL:** https://search.maven.org/artifact/com.gmongo/gmongo
 
------------------
-mongo-java-driver
------------------
-**Package:** org.mongodb |br|
-**Dependency:** mongo-java-driver |br|
-**URL:** https://search.maven.org/artifact/org.mongodb/mongo-java-driver
-
 ----
 rome
 ----
@@ -1572,11 +1502,32 @@ urlrewritefilter
 **URL:** https://search.maven.org/artifact/org.tuckey/urlrewritefilter
 
 ---------
+log4j-api
+---------
+**Package:** org.apache.logging.log4j |br|
+**Dependency:** log4j-api |br|
+**URL:** https://search.maven.org/artifact/org.apache.logging.log4j/log4j-api
+
+----------
+log4j-core
+----------
+**Package:** org.apache.logging.log4j |br|
+**Dependency:** log4j-core |br|
+**URL:** https://search.maven.org/artifact/org.apache.logging.log4j/log4j-core
+
+---------
 log4j-web
 ---------
 **Package:** org.apache.logging.log4j |br|
 **Dependency:** log4j-web |br|
 **URL:** https://search.maven.org/artifact/org.apache.logging.log4j/log4j-web
+
+----------------
+log4j-slf4j-impl
+----------------
+**Package:** org.apache.logging.log4j |br|
+**Dependency:** log4j-slf4j-impl |br|
+**URL:** https://search.maven.org/artifact/org.apache.logging.log4j/log4j-slf4j-impl
 
 ------------
 bcpg-jdk15on
@@ -1935,6 +1886,13 @@ commons-fileupload
 **Dependency:** commons-fileupload |br|
 **URL:** https://search.maven.org/artifact/commons-fileupload/commons-fileupload
 
+------------
+commons-text
+------------
+**Package:** org.apache.commons |br|
+**Dependency:** commons-text |br|
+**URL:** https://search.maven.org/artifact/org.apache.commons/commons-text
+
 --------
 json-lib
 --------
@@ -2026,20 +1984,6 @@ JavaEWAH
 **Dependency:** JavaEWAH |br|
 **URL:** https://search.maven.org/artifact/com.googlecode.javaewah/JavaEWAH
 
-----------------
-tomcat-jasper-el
-----------------
-**Package:** org.apache.tomcat |br|
-**Dependency:** tomcat-jasper-el |br|
-**URL:** https://search.maven.org/artifact/org.apache.tomcat/tomcat-jasper-el
-
--------------
-tomcat-el-api
--------------
-**Package:** org.apache.tomcat |br|
-**Dependency:** tomcat-el-api |br|
-**URL:** https://search.maven.org/artifact/org.apache.tomcat/tomcat-el-api
-
 ------
 testng
 ------
@@ -2095,6 +2039,76 @@ snakeyaml
 **Package:** org.yaml |br|
 **Dependency:** snakeyaml |br|
 **URL:** https://search.maven.org/artifact/org.yaml/snakeyaml
+
+------------
+rest-assured
+------------
+**Package:** com.jayway.restassured |br|
+**Dependency:** rest-assured |br|
+**URL:** https://search.maven.org/artifact/com.jayway.restassured/rest-assured
+
+------
+groovy
+------
+**Package:** org.codehaus.groovy |br|
+**Dependency:** groovy |br|
+**URL:** https://search.maven.org/artifact/org.codehaus.groovy/groovy
+
+----------
+groovy-xml
+----------
+**Package:** org.codehaus.groovy |br|
+**Dependency:** groovy-xml |br|
+**URL:** https://search.maven.org/artifact/org.codehaus.groovy/groovy-xml
+
+--------
+httpmime
+--------
+**Package:** org.apache.httpcomponents |br|
+**Dependency:** httpmime |br|
+**URL:** https://search.maven.org/artifact/org.apache.httpcomponents/httpmime
+
+-------------
+hamcrest-core
+-------------
+**Package:** org.hamcrest |br|
+**Dependency:** hamcrest-core |br|
+**URL:** https://search.maven.org/artifact/org.hamcrest/hamcrest-core
+
+----------------
+hamcrest-library
+----------------
+**Package:** org.hamcrest |br|
+**Dependency:** hamcrest-library |br|
+**URL:** https://search.maven.org/artifact/org.hamcrest/hamcrest-library
+
+-------
+tagsoup
+-------
+**Package:** org.ccil.cowan.tagsoup |br|
+**Dependency:** tagsoup |br|
+**URL:** https://search.maven.org/artifact/org.ccil.cowan.tagsoup/tagsoup
+
+---------
+json-path
+---------
+**Package:** com.jayway.restassured |br|
+**Dependency:** json-path |br|
+**URL:** https://search.maven.org/artifact/com.jayway.restassured/json-path
+
+-------------------
+rest-assured-common
+-------------------
+**Package:** com.jayway.restassured |br|
+**Dependency:** rest-assured-common |br|
+**URL:** https://search.maven.org/artifact/com.jayway.restassured/rest-assured-common
+
+--------
+xml-path
+--------
+**Package:** com.jayway.restassured |br|
+**Dependency:** xml-path |br|
+**URL:** https://search.maven.org/artifact/com.jayway.restassured/xml-path
 
 -----------
 spring-test
@@ -2180,27 +2194,6 @@ slf4j-api
 **Dependency:** slf4j-api |br|
 **URL:** https://search.maven.org/artifact/org.slf4j/slf4j-api
 
----------
-log4j-api
----------
-**Package:** org.apache.logging.log4j |br|
-**Dependency:** log4j-api |br|
-**URL:** https://search.maven.org/artifact/org.apache.logging.log4j/log4j-api
-
-----------
-log4j-core
-----------
-**Package:** org.apache.logging.log4j |br|
-**Dependency:** log4j-core |br|
-**URL:** https://search.maven.org/artifact/org.apache.logging.log4j/log4j-core
-
------------------
-log4j-slf4j2-impl
------------------
-**Package:** org.apache.logging.log4j |br|
-**Dependency:** log4j-slf4j2-impl |br|
-**URL:** https://search.maven.org/artifact/org.apache.logging.log4j/log4j-slf4j2-impl
-
 ----------------
 spring-ldap-core
 ----------------
@@ -2221,6 +2214,41 @@ spring-data-commons
 **Package:** org.springframework.data |br|
 **Dependency:** spring-data-commons |br|
 **URL:** https://search.maven.org/artifact/org.springframework.data/spring-data-commons
+
+------------------------------
+chemistry-opencmis-client-impl
+------------------------------
+**Package:** org.apache.chemistry.opencmis |br|
+**Dependency:** chemistry-opencmis-client-impl |br|
+**URL:** https://search.maven.org/artifact/org.apache.chemistry.opencmis/chemistry-opencmis-client-impl
+
+-----------------------------
+chemistry-opencmis-client-api
+-----------------------------
+**Package:** org.apache.chemistry.opencmis |br|
+**Dependency:** chemistry-opencmis-client-api |br|
+**URL:** https://search.maven.org/artifact/org.apache.chemistry.opencmis/chemistry-opencmis-client-api
+
+------------------------------
+chemistry-opencmis-commons-api
+------------------------------
+**Package:** org.apache.chemistry.opencmis |br|
+**Dependency:** chemistry-opencmis-commons-api |br|
+**URL:** https://search.maven.org/artifact/org.apache.chemistry.opencmis/chemistry-opencmis-commons-api
+
+-------------------------------
+chemistry-opencmis-commons-impl
+-------------------------------
+**Package:** org.apache.chemistry.opencmis |br|
+**Dependency:** chemistry-opencmis-commons-impl |br|
+**URL:** https://search.maven.org/artifact/org.apache.chemistry.opencmis/chemistry-opencmis-commons-impl
+
+----------------------------------
+chemistry-opencmis-client-bindings
+----------------------------------
+**Package:** org.apache.chemistry.opencmis |br|
+**Dependency:** chemistry-opencmis-client-bindings |br|
+**URL:** https://search.maven.org/artifact/org.apache.chemistry.opencmis/chemistry-opencmis-client-bindings
 
 ---------------------
 cxf-rt-frontend-jaxws
@@ -2516,41 +2544,6 @@ Saxon-HE
 **Dependency:** Saxon-HE |br|
 **URL:** https://search.maven.org/artifact/net.sf.saxon/Saxon-HE
 
------------
-xmlresolver
------------
-**Package:** org.xmlresolver |br|
-**Dependency:** xmlresolver |br|
-**URL:** https://search.maven.org/artifact/org.xmlresolver/xmlresolver
-
------------
-httpclient5
------------
-**Package:** org.apache.httpcomponents.client5 |br|
-**Dependency:** httpclient5 |br|
-**URL:** https://search.maven.org/artifact/org.apache.httpcomponents.client5/httpclient5
-
-------------
-httpcore5-h2
-------------
-**Package:** org.apache.httpcomponents.core5 |br|
-**Dependency:** httpcore5-h2 |br|
-**URL:** https://search.maven.org/artifact/org.apache.httpcomponents.core5/httpcore5-h2
-
----------
-httpcore5
----------
-**Package:** org.apache.httpcomponents.core5 |br|
-**Dependency:** httpcore5 |br|
-**URL:** https://search.maven.org/artifact/org.apache.httpcomponents.core5/httpcore5
-
------------
-xmlresolver
------------
-**Package:** org.xmlresolver |br|
-**Dependency:** xmlresolver |br|
-**URL:** https://search.maven.org/artifact/org.xmlresolver/xmlresolver
-
 --------------
 bcpkix-jdk15on
 --------------
@@ -2579,12 +2572,12 @@ okio
 **Dependency:** okio |br|
 **URL:** https://search.maven.org/artifact/com.squareup.okio/okio
 
---------
-okio-jvm
---------
-**Package:** com.squareup.okio |br|
-**Dependency:** okio-jvm |br|
-**URL:** https://search.maven.org/artifact/com.squareup.okio/okio-jvm
+--------------------
+kotlin-stdlib-common
+--------------------
+**Package:** org.jetbrains.kotlin |br|
+**Dependency:** kotlin-stdlib-common |br|
+**URL:** https://search.maven.org/artifact/org.jetbrains.kotlin/kotlin-stdlib-common
 
 -------------
 kotlin-stdlib
@@ -2593,33 +2586,12 @@ kotlin-stdlib
 **Dependency:** kotlin-stdlib |br|
 **URL:** https://search.maven.org/artifact/org.jetbrains.kotlin/kotlin-stdlib
 
---------------------
-kotlin-stdlib-common
---------------------
-**Package:** org.jetbrains.kotlin |br|
-**Dependency:** kotlin-stdlib-common |br|
-**URL:** https://search.maven.org/artifact/org.jetbrains.kotlin/kotlin-stdlib-common
-
 -----------
 annotations
 -----------
 **Package:** org.jetbrains |br|
 **Dependency:** annotations |br|
 **URL:** https://search.maven.org/artifact/org.jetbrains/annotations
-
-------------------
-kotlin-stdlib-jdk8
-------------------
-**Package:** org.jetbrains.kotlin |br|
-**Dependency:** kotlin-stdlib-jdk8 |br|
-**URL:** https://search.maven.org/artifact/org.jetbrains.kotlin/kotlin-stdlib-jdk8
-
-------------------
-kotlin-stdlib-jdk7
-------------------
-**Package:** org.jetbrains.kotlin |br|
-**Dependency:** kotlin-stdlib-jdk7 |br|
-**URL:** https://search.maven.org/artifact/org.jetbrains.kotlin/kotlin-stdlib-jdk7
 
 ------
 tinify
