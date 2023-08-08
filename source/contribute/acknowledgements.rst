@@ -9,1607 +9,493 @@
 Open Source Acknowledgements
 ============================
 CrafterCMS acknowledges the following Open Source Software used in this product:
-
------
-cglib
------
-Package: cglib |br|
-Dependency: cglib |br|
-*URL:* https://mvnrepository.com/artifact/cglib/cglib/3.3.0
-
----------------------------
-aws-java-sdk-cloudformation
----------------------------
-Package: com.amazonaws |br|
-Dependency: aws-java-sdk-cloudformation |br|
-*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cloudformation/1.12.463
-
------------------------
-aws-java-sdk-cloudfront
------------------------
-Package: com.amazonaws |br|
-Dependency: aws-java-sdk-cloudfront |br|
-*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cloudfront/1.12.463
-
-------------------------------
-aws-java-sdk-elastictranscoder
-------------------------------
-Package: com.amazonaws |br|
-Dependency: aws-java-sdk-elastictranscoder |br|
-*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-elastictranscoder/1.12.463
-
--------------------------
-aws-java-sdk-mediaconvert
--------------------------
-Package: com.amazonaws |br|
-Dependency: aws-java-sdk-mediaconvert |br|
-*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-mediaconvert/1.12.463
-
----------------
-aws-java-sdk-s3
----------------
-Package: com.amazonaws |br|
-Dependency: aws-java-sdk-s3 |br|
-*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3/1.12.463
-
-----------------
-aws-java-sdk-sts
-----------------
-Package: com.amazonaws |br|
-Dependency: aws-java-sdk-sts |br|
-*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-sts/1.12.463
-
-------------
-box-java-sdk
-------------
-Package: com.box |br|
-Dependency: box-java-sdk |br|
-*URL:* https://mvnrepository.com/artifact/com.box/box-java-sdk/4.1.1
-
-------------------
-metadata-extractor
-------------------
-Package: com.drewnoakes |br|
-Dependency: metadata-extractor |br|
-*URL:* https://mvnrepository.com/artifact/com.drewnoakes/metadata-extractor/2.18.0
-
--------------------
-jackson-annotations
--------------------
-Package: com.fasterxml.jackson.core |br|
-Dependency: jackson-annotations |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations/2.14.1
-
--------------------
-jackson-annotations
--------------------
-Package: com.fasterxml.jackson.core |br|
-Dependency: jackson-annotations |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations/2.15.0
-
-------------
-jackson-core
-------------
-Package: com.fasterxml.jackson.core |br|
-Dependency: jackson-core |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core/2.14.1
-
-------------
-jackson-core
-------------
-Package: com.fasterxml.jackson.core |br|
-Dependency: jackson-core |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core/2.15.0
-
-----------------
-jackson-databind
-----------------
-Package: com.fasterxml.jackson.core |br|
-Dependency: jackson-databind |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind/2.14.1
-
-----------------
-jackson-databind
-----------------
-Package: com.fasterxml.jackson.core |br|
-Dependency: jackson-databind |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind/2.15.0
-
------------------------
-jackson-dataformat-cbor
------------------------
-Package: com.fasterxml.jackson.dataformat |br|
-Dependency: jackson-dataformat-cbor |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-cbor/2.15.0
-
-------------------------
-jackson-dataformat-smile
-------------------------
-Package: com.fasterxml.jackson.dataformat |br|
-Dependency: jackson-dataformat-smile |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-smile/2.15.0
-
-----------------------
-jackson-dataformat-xml
-----------------------
-Package: com.fasterxml.jackson.dataformat |br|
-Dependency: jackson-dataformat-xml |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml/2.15.0
-
------------------------
-jackson-dataformat-yaml
------------------------
-Package: com.fasterxml.jackson.dataformat |br|
-Dependency: jackson-dataformat-yaml |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/2.15.0
-
------------------------
-jackson-datatype-jsr310
------------------------
-Package: com.fasterxml.jackson.datatype |br|
-Dependency: jackson-datatype-jsr310 |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.15.0
-
---------------------
-handlebars-springmvc
---------------------
-Package: com.github.jknack |br|
-Dependency: handlebars-springmvc |br|
-*URL:* https://mvnrepository.com/artifact/com.github.jknack/handlebars-springmvc/4.3.1
-
-----------
-handlebars
-----------
-Package: com.github.jknack |br|
-Dependency: handlebars |br|
-*URL:* https://mvnrepository.com/artifact/com.github.jknack/handlebars/4.3.1
-
--------
-sardine
--------
-Package: com.github.lookfirst |br|
-Dependency: sardine |br|
-*URL:* https://mvnrepository.com/artifact/com.github.lookfirst/sardine/5.10
-
-------
-gmongo
-------
-Package: com.gmongo |br|
-Dependency: gmongo |br|
-*URL:* https://mvnrepository.com/artifact/com.gmongo/gmongo/1.5
-
-----
-gson
-----
-Package: com.google.code.gson |br|
-Dependency: gson |br|
-*URL:* https://mvnrepository.com/artifact/com.google.code.gson/gson/2.10.1
-
------
-guava
------
-Package: com.google.guava |br|
-Dependency: guava |br|
-*URL:* https://mvnrepository.com/artifact/com.google.guava/guava/31.1-jre
-
--------------
-protobuf-java
--------------
-Package: com.google.protobuf |br|
-Dependency: protobuf-java |br|
-*URL:* https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java/3.22.4
-
------------------------------
-graphql-java-extended-scalars
------------------------------
-Package: com.graphql-java |br|
-Dependency: graphql-java-extended-scalars |br|
-*URL:* https://mvnrepository.com/artifact/com.graphql-java/graphql-java-extended-scalars/20.2
-
-------------
-graphql-java
-------------
-Package: com.graphql-java |br|
-Dependency: graphql-java |br|
-*URL:* https://mvnrepository.com/artifact/com.graphql-java/graphql-java/20.2
-
-----------------
-json-path-assert
-----------------
-Package: com.jayway.jsonpath |br|
-Dependency: json-path-assert |br|
-*URL:* https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path-assert/2.8.0
-
-------
-okhttp
-------
-Package: com.squareup.okhttp3 |br|
-Dependency: okhttp |br|
-*URL:* https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp/4.11.0
-
-----------------
-javax.activation
-----------------
-Package: com.sun.activation |br|
-Dependency: javax.activation |br|
-*URL:* https://mvnrepository.com/artifact/com.sun.activation/javax.activation/1.2.0
-
-----------
-javax.mail
-----------
-Package: com.sun.mail |br|
-Dependency: javax.mail |br|
-*URL:* https://mvnrepository.com/artifact/com.sun.mail/javax.mail/1.6.2
-
--------
-xstream
--------
-Package: com.thoughtworks.xstream |br|
-Dependency: xstream |br|
-*URL:* https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream/1.4.20
-
-------
-tinify
-------
-Package: com.tinify |br|
-Dependency: tinify |br|
-*URL:* https://mvnrepository.com/artifact/com.tinify/tinify/1.8.3
-
---------
-semver4j
---------
-Package: com.vdurmont |br|
-Dependency: semver4j |br|
-*URL:* https://mvnrepository.com/artifact/com.vdurmont/semver4j/3.1.0
-
------------------
-commons-beanutils
------------------
-Package: commons-beanutils |br|
-Dependency: commons-beanutils |br|
-*URL:* https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils/1.9.4
-
------------
-commons-cli
------------
-Package: commons-cli |br|
-Dependency: commons-cli |br|
-*URL:* https://mvnrepository.com/artifact/commons-cli/commons-cli/1.5.0
-
--------------
-commons-codec
--------------
-Package: commons-codec |br|
-Dependency: commons-codec |br|
-*URL:* https://mvnrepository.com/artifact/commons-codec/commons-codec/1.15
-
-------------------
-commons-fileupload
-------------------
-Package: commons-fileupload |br|
-Dependency: commons-fileupload |br|
-*URL:* https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload/1.5
-
-----------
-commons-io
-----------
-Package: commons-io |br|
-Dependency: commons-io |br|
-*URL:* https://mvnrepository.com/artifact/commons-io/commons-io/2.11.0
-
---------
-unit-api
---------
-Package: javax.measure |br|
-Dependency: unit-api |br|
-*URL:* https://mvnrepository.com/artifact/javax.measure/unit-api/2.1.3
-
------------------
-javax.servlet-api
------------------
-Package: javax.servlet |br|
-Dependency: javax.servlet-api |br|
-*URL:* https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api/4.0.1
-
----
-jta
----
-Package: javax.transaction |br|
-Dependency: jta |br|
-*URL:* https://mvnrepository.com/artifact/javax.transaction/jta/1.1
-
---------------
-validation-api
---------------
-Package: javax.validation |br|
-Dependency: validation-api |br|
-*URL:* https://mvnrepository.com/artifact/javax.validation/validation-api/2.0.1.Final
-
----------
-joda-time
----------
-Package: joda-time |br|
-Dependency: joda-time |br|
-*URL:* https://mvnrepository.com/artifact/joda-time/joda-time/2.12.5
-
------
-junit
------
-Package: junit |br|
-Dependency: junit |br|
-*URL:* https://mvnrepository.com/artifact/junit/junit/4.13.2
-
------
-eddsa
------
-Package: net.i2p.crypto |br|
-Dependency: eddsa |br|
-*URL:* https://mvnrepository.com/artifact/net.i2p.crypto/eddsa/0.3.0
-
---------
-json-lib
---------
-Package: net.sf.json-lib |br|
-Dependency: json-lib |br|
-*URL:* https://mvnrepository.com/artifact/net.sf.json-lib/json-lib/jdk15
-
---------
-Saxon-HE
---------
-Package: net.sf.saxon |br|
-Dependency: Saxon-HE |br|
-*URL:* https://mvnrepository.com/artifact/net.sf.saxon/Saxon-HE/12.2
-
---------------------
-commons-collections4
---------------------
-Package: org.apache.commons |br|
-Dependency: commons-collections4 |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-collections4/4.4
-
-----------------
-commons-compress
-----------------
-Package: org.apache.commons |br|
-Dependency: commons-compress |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-compress/1.23.0
-
-----------------------
-commons-configuration2
-----------------------
-Package: org.apache.commons |br|
-Dependency: commons-configuration2 |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-configuration2/2.9.0
-
------------
-commons-csv
------------
-Package: org.apache.commons |br|
-Dependency: commons-csv |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-csv/1.10.0
-
--------------
-commons-dbcp2
--------------
-Package: org.apache.commons |br|
-Dependency: commons-dbcp2 |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2/2.9.0
-
--------------
-commons-lang3
--------------
-Package: org.apache.commons |br|
-Dependency: commons-lang3 |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-lang3/3.12.0
-
-------------
-commons-text
-------------
-Package: org.apache.commons |br|
-Dependency: commons-text |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-text/1.10.0
-
----------------------
-cxf-rt-frontend-jaxws
----------------------
-Package: org.apache.cxf |br|
-Dependency: cxf-rt-frontend-jaxws |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-frontend-jaxws/3.5.5
-
-----------------------
-cxf-rt-transports-http
-----------------------
-Package: org.apache.cxf |br|
-Dependency: cxf-rt-transports-http |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-transports-http/3.5.5
-
-----------------
-cxf-rt-ws-policy
-----------------
-Package: org.apache.cxf |br|
-Dependency: cxf-rt-ws-policy |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-ws-policy/3.5.5
-
-----------
-httpclient
-----------
-Package: org.apache.httpcomponents |br|
-Dependency: httpclient |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient/4.5.14
-
--------------
-ibatis-sqlmap
--------------
-Package: org.apache.ibatis |br|
-Dependency: ibatis-sqlmap |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.ibatis/ibatis-sqlmap/2.3.4.726
-
----
-ivy
----
-Package: org.apache.ivy |br|
-Dependency: ivy |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.ivy/ivy/2.5.1
-
----------
-log4j-api
----------
-Package: org.apache.logging.log4j |br|
-Dependency: log4j-api |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api/2.20.0
-
-----------
-log4j-core
-----------
-Package: org.apache.logging.log4j |br|
-Dependency: log4j-core |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core/2.20.0
-
------------------
-log4j-slf4j2-impl
------------------
-Package: org.apache.logging.log4j |br|
-Dependency: log4j-slf4j2-impl |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j2-impl/2.20.0
-
----------
-log4j-web
----------
-Package: org.apache.logging.log4j |br|
-Dependency: log4j-web |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-web/2.20.0
-
---------------
-poi-scratchpad
---------------
-Package: org.apache.poi |br|
-Dependency: poi-scratchpad |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad/5.2.3
-
----------
-tika-core
----------
-Package: org.apache.tika |br|
-Dependency: tika-core |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.tika/tika-core/2.7.0
-
------------------------------
-tika-parsers-standard-package
------------------------------
-Package: org.apache.tika |br|
-Dependency: tika-parsers-standard-package |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.tika/tika-parsers-standard-package/2.7.0
-
-----------------------
-tomcat-embed-websocket
-----------------------
-Package: org.apache.tomcat.embed |br|
-Dependency: tomcat-embed-websocket |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-websocket/9.0.76
-
-----------------
-tomcat-jasper-el
-----------------
-Package: org.apache.tomcat |br|
-Dependency: tomcat-jasper-el |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper-el/9.0.76
-
----------
-aspectjrt
----------
-Package: org.aspectj |br|
-Dependency: aspectjrt |br|
-*URL:* https://mvnrepository.com/artifact/org.aspectj/aspectjrt/1.9.19
-
--------------
-aspectjweaver
--------------
-Package: org.aspectj |br|
-Dependency: aspectjweaver |br|
-*URL:* https://mvnrepository.com/artifact/org.aspectj/aspectjweaver/1.9.19
-
-------
-jose4j
-------
-Package: org.bitbucket.b_c |br|
-Dependency: jose4j |br|
-*URL:* https://mvnrepository.com/artifact/org.bitbucket.b_c/jose4j/0.9.3
-
---------------
-bcmail-jdk15on
---------------
-Package: org.bouncycastle |br|
-Dependency: bcmail-jdk15on |br|
-*URL:* https://mvnrepository.com/artifact/org.bouncycastle/bcmail-jdk15on/1.70
-
-------------
-bcpg-jdk15on
-------------
-Package: org.bouncycastle |br|
-Dependency: bcpg-jdk15on |br|
-*URL:* https://mvnrepository.com/artifact/org.bouncycastle/bcpg-jdk15on/1.70
-
---------------
-bcpkix-jdk15on
---------------
-Package: org.bouncycastle |br|
-Dependency: bcpkix-jdk15on |br|
-*URL:* https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk15on/1.70
-
---------------
-bcprov-jdk15on
---------------
-Package: org.bouncycastle |br|
-Dependency: bcprov-jdk15on |br|
-*URL:* https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on/1.70
-
-----------
-groovy-all
-----------
-Package: org.codehaus.groovy |br|
-Dependency: groovy-all |br|
-*URL:* https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all/3.0.17
-
----------
-stax2-api
----------
-Package: org.codehaus.woodstox |br|
-Dependency: stax2-api |br|
-*URL:* https://mvnrepository.com/artifact/org.codehaus.woodstox/stax2-api/4.2.1
-
------------------
-opensearch-runner
------------------
-Package: org.codelibs.opensearch |br|
-Dependency: opensearch-runner |br|
-*URL:* https://mvnrepository.com/artifact/org.codelibs.opensearch/opensearch-runner/2.8.0.0
-
------
-dom4j
------
-Package: org.dom4j |br|
-Dependency: dom4j |br|
-*URL:* https://mvnrepository.com/artifact/org.dom4j/dom4j/2.1.4
-
-------------------------
-org.eclipse.jgit.archive
-------------------------
-Package: org.eclipse.jgit |br|
-Dependency: org.eclipse.jgit.archive |br|
-*URL:* https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.archive/6.5.0.202303070854-r
-
----------------------------
-org.eclipse.jgit.ssh.apache
----------------------------
-Package: org.eclipse.jgit |br|
-Dependency: org.eclipse.jgit.ssh.apache |br|
-*URL:* https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.ssh.apache/6.5.0.202303070854-r
-
-----------------
-org.eclipse.jgit
-----------------
-Package: org.eclipse.jgit |br|
-Dependency: org.eclipse.jgit |br|
-*URL:* https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit/6.5.0.202303070854-r
-
-----------
-freemarker
-----------
-Package: org.freemarker |br|
-Dependency: freemarker |br|
-*URL:* https://mvnrepository.com/artifact/org.freemarker/freemarker/2.3.32
-
-------------
-jakarta.json
-------------
-Package: org.glassfish |br|
-Dependency: jakarta.json |br|
-*URL:* https://mvnrepository.com/artifact/org.glassfish/jakarta.json/2.0.1
-
---------
-hamcrest
---------
-Package: org.hamcrest |br|
-Dependency: hamcrest |br|
-*URL:* https://mvnrepository.com/artifact/org.hamcrest/hamcrest/2.2
-
--------------------
-hibernate-validator
--------------------
-Package: org.hibernate.validator |br|
-Dependency: hibernate-validator |br|
-*URL:* https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator/6.2.5.Final
-
------
-jdom2
------
-Package: org.jdom |br|
-Dependency: jdom2 |br|
-*URL:* https://mvnrepository.com/artifact/org.jdom/jdom2/2.0.6.1
-
------
-jongo
------
-Package: org.jongo |br|
-Dependency: jongo |br|
-*URL:* https://mvnrepository.com/artifact/org.jongo/jongo/1.5.1
-
------
-jsoup
------
-Package: org.jsoup |br|
-Dependency: jsoup |br|
-*URL:* https://mvnrepository.com/artifact/org.jsoup/jsoup/1.16.1
-
----------
-spatial4j
----------
-Package: org.locationtech.spatial4j |br|
-Dependency: spatial4j |br|
-*URL:* https://mvnrepository.com/artifact/org.locationtech.spatial4j/spatial4j/0.8
-
--------------------
-mariadb-java-client
--------------------
-Package: org.mariadb.jdbc |br|
-Dependency: mariadb-java-client |br|
-*URL:* https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client/2.7.9
-
--------------------------
-smiley-http-proxy-servlet
--------------------------
-Package: org.mitre.dsmiley.httpproxy |br|
-Dependency: smiley-http-proxy-servlet |br|
-*URL:* https://mvnrepository.com/artifact/org.mitre.dsmiley.httpproxy/smiley-http-proxy-servlet/1.12.1
-
-------------
-mockito-core
-------------
-Package: org.mockito |br|
-Dependency: mockito-core |br|
-*URL:* https://mvnrepository.com/artifact/org.mockito/mockito-core/4.11.0
-
-----
-bson
-----
-Package: org.mongodb |br|
-Dependency: bson |br|
-*URL:* https://mvnrepository.com/artifact/org.mongodb/bson/4.9.1
-
----------------------
-mongodb-driver-legacy
----------------------
-Package: org.mongodb |br|
-Dependency: mongodb-driver-legacy |br|
-*URL:* https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-legacy/4.9.1
-
--------------------
-mongodb-driver-sync
--------------------
-Package: org.mongodb |br|
-Dependency: mongodb-driver-sync |br|
-*URL:* https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync/4.9.1
-
---------------
-mybatis-spring
---------------
-Package: org.mybatis |br|
-Dependency: mybatis-spring |br|
-*URL:* https://mvnrepository.com/artifact/org.mybatis/mybatis-spring/2.1.0
-
--------
-mybatis
--------
-Package: org.mybatis |br|
-Dependency: mybatis |br|
-*URL:* https://mvnrepository.com/artifact/org.mybatis/mybatis/3.5.13
-
----------------
-opensearch-java
----------------
-Package: org.opensearch.client |br|
-Dependency: opensearch-java |br|
-*URL:* https://mvnrepository.com/artifact/org.opensearch.client/opensearch-java/2.5.0
-
----------------------------------
-opensearch-rest-high-level-client
----------------------------------
-Package: org.opensearch.client |br|
-Dependency: opensearch-rest-high-level-client |br|
-*URL:* https://mvnrepository.com/artifact/org.opensearch.client/opensearch-rest-high-level-client/2.8.0
-
------
-esapi
------
-Package: org.owasp.esapi |br|
-Dependency: esapi |br|
-*URL:* https://mvnrepository.com/artifact/org.owasp.esapi/esapi/2.5.2.0
-
-------
-quartz
-------
-Package: org.quartz-scheduler |br|
-Dependency: quartz |br|
-*URL:* https://mvnrepository.com/artifact/org.quartz-scheduler/quartz/2.3.2
-
---------------
-jcl-over-slf4j
---------------
-Package: org.slf4j |br|
-Dependency: jcl-over-slf4j |br|
-*URL:* https://mvnrepository.com/artifact/org.slf4j/jcl-over-slf4j/2.0.7
-
----------
-slf4j-api
----------
-Package: org.slf4j |br|
-Dependency: slf4j-api |br|
-*URL:* https://mvnrepository.com/artifact/org.slf4j/slf4j-api/2.0.7
-
-------------
-slf4j-simple
-------------
-Package: org.slf4j |br|
-Dependency: slf4j-simple |br|
-*URL:* https://mvnrepository.com/artifact/org.slf4j/slf4j-simple/2.0.7
-
---------------------------
-spring-boot-starter-log4j2
---------------------------
-Package: org.springframework.boot |br|
-Dependency: spring-boot-starter-log4j2 |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2/2.7.13
-
-------------------------
-spring-boot-starter-test
-------------------------
-Package: org.springframework.boot |br|
-Dependency: spring-boot-starter-test |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test/2.7.13
-
------------------------
-spring-boot-starter-web
------------------------
-Package: org.springframework.boot |br|
-Dependency: spring-boot-starter-web |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web/2.7.13
-
--------------------
-spring-data-commons
--------------------
-Package: org.springframework.data |br|
-Dependency: spring-data-commons |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons/2.7.11
-
-----------------
-spring-ldap-core
-----------------
-Package: org.springframework.ldap |br|
-Dependency: spring-ldap-core |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.ldap/spring-ldap-core/2.4.1
-
-----------------------
-spring-security-config
-----------------------
-Package: org.springframework.security |br|
-Dependency: spring-security-config |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.security/spring-security-config/5.8.5
-
---------------------
-spring-security-core
---------------------
-Package: org.springframework.security |br|
-Dependency: spring-security-core |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.security/spring-security-core/5.8.5
-
---------------------
-spring-security-ldap
---------------------
-Package: org.springframework.security |br|
-Dependency: spring-security-ldap |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.security/spring-security-ldap/5.8.5
-
--------------------------
-spring-security-messaging
--------------------------
-Package: org.springframework.security |br|
-Dependency: spring-security-messaging |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.security/spring-security-messaging/5.8.5
-
--------------------
-spring-security-web
--------------------
-Package: org.springframework.security |br|
-Dependency: spring-security-web |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.security/spring-security-web/5.8.5
-
-----------
-spring-aop
-----------
-Package: org.springframework |br|
-Dependency: spring-aop |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-aop/5.3.28
-
-------------
-spring-beans
-------------
-Package: org.springframework |br|
-Dependency: spring-beans |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-beans/5.3.28
-
-----------------------
-spring-context-support
-----------------------
-Package: org.springframework |br|
-Dependency: spring-context-support |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-context-support/5.3.28
-
---------------
-spring-context
---------------
-Package: org.springframework |br|
-Dependency: spring-context |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-context/5.3.28
-
------------
-spring-core
------------
-Package: org.springframework |br|
-Dependency: spring-core |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-core/5.3.28
-
------------------
-spring-expression
------------------
-Package: org.springframework |br|
-Dependency: spring-expression |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-expression/5.3.28
-
------------
-spring-jdbc
------------
-Package: org.springframework |br|
-Dependency: spring-jdbc |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-jdbc/5.3.28
-
-----------------
-spring-messaging
-----------------
-Package: org.springframework |br|
-Dependency: spring-messaging |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-messaging/5.3.28
-
-----------
-spring-oxm
-----------
-Package: org.springframework |br|
-Dependency: spring-oxm |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-oxm/5.3.28
-
------------
-spring-test
------------
-Package: org.springframework |br|
-Dependency: spring-test |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-test/5.3.28
-
----------
-spring-tx
----------
-Package: org.springframework |br|
-Dependency: spring-tx |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-tx/5.3.28
-
-----------
-spring-web
-----------
-Package: org.springframework |br|
-Dependency: spring-web |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-web/5.3.28
-
--------------
-spring-webmvc
--------------
-Package: org.springframework |br|
-Dependency: spring-webmvc |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-webmvc/5.3.28
-
-----------------
-spring-websocket
-----------------
-Package: org.springframework |br|
-Dependency: spring-websocket |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-websocket/5.3.28
-
-------
-testng
-------
-Package: org.testng |br|
-Dependency: testng |br|
-*URL:* https://mvnrepository.com/artifact/org.testng/testng/7.7.1
-
-----------------
-urlrewritefilter
-----------------
-Package: org.tuckey |br|
-Dependency: urlrewritefilter |br|
-*URL:* https://mvnrepository.com/artifact/org.tuckey/urlrewritefilter/4.0.4
-
-------------
-xmlunit-core
-------------
-Package: org.xmlunit |br|
-Dependency: xmlunit-core |br|
-*URL:* https://mvnrepository.com/artifact/org.xmlunit/xmlunit-core/2.9.1
-
----------
-snakeyaml
----------
-Package: org.yaml |br|
-Dependency: snakeyaml |br|
-*URL:* https://mvnrepository.com/artifact/org.yaml/snakeyaml/2.0
-
-----
-rome
-----
-Package: rome |br|
-Dependency: rome |br|
-*URL:* https://mvnrepository.com/artifact/rome/rome/1.0
-
-----------
-xercesImpl
-----------
-Package: xerces |br|
-Dependency: xercesImpl |br|
-*URL:* https://mvnrepository.com/artifact/xerces/xercesImpl/2.12.2
-
-----------
-@babel/cli
-----------
-Dependency: @babel/cli |br|
-*URL:* https://www.npmjs.com/package/@babel/cli
-
--------------------------------------
-@babel/plugin-transform-object-assign
--------------------------------------
-Dependency: @babel/plugin-transform-object-assign |br|
-*URL:* https://www.npmjs.com/package/@babel/plugin-transform-object-assign
-
-------------
-@craco/craco
-------------
-Dependency: @craco/craco |br|
-*URL:* https://www.npmjs.com/package/@craco/craco
-
-------------
-@emotion/css
-------------
-Dependency: @emotion/css |br|
-*URL:* https://www.npmjs.com/package/@emotion/css
-
---------------
-@emotion/react
---------------
-Dependency: @emotion/react |br|
-*URL:* https://www.npmjs.com/package/@emotion/react
-
----------------
-@emotion/styled
----------------
-Dependency: @emotion/styled |br|
-*URL:* https://www.npmjs.com/package/@emotion/styled
-
--------------
-@formatjs/cli
--------------
-Dependency: @formatjs/cli |br|
-*URL:* https://www.npmjs.com/package/@formatjs/cli
-
--------------------
-@mui/icons-material
--------------------
-Dependency: @mui/icons-material |br|
-*URL:* https://www.npmjs.com/package/@mui/icons-material
-
---------
-@mui/lab
---------
-Dependency: @mui/lab |br|
-*URL:* https://www.npmjs.com/package/@mui/lab
-
--------------
-@mui/material
--------------
-Dependency: @mui/material |br|
-*URL:* https://www.npmjs.com/package/@mui/material
-
-----------------
-@mui/x-data-grid
-----------------
-Dependency: @mui/x-data-grid |br|
-*URL:* https://www.npmjs.com/package/@mui/x-data-grid
-
--------------------
-@mui/x-date-pickers
--------------------
-Dependency: @mui/x-date-pickers |br|
-*URL:* https://www.npmjs.com/package/@mui/x-date-pickers
-
---------------------
-@prettier/plugin-xml
---------------------
-Dependency: @prettier/plugin-xml |br|
-*URL:* https://www.npmjs.com/package/@prettier/plugin-xml
-
-----------------
-@reduxjs/toolkit
-----------------
-Dependency: @reduxjs/toolkit |br|
-*URL:* https://www.npmjs.com/package/@reduxjs/toolkit
-
------------------------
-@rollup/plugin-commonjs
------------------------
-Dependency: @rollup/plugin-commonjs |br|
-*URL:* https://www.npmjs.com/package/@rollup/plugin-commonjs
-
----------------------------
-@rollup/plugin-node-resolve
----------------------------
-Dependency: @rollup/plugin-node-resolve |br|
-*URL:* https://www.npmjs.com/package/@rollup/plugin-node-resolve
-
-----------------------
-@rollup/plugin-replace
-----------------------
-Dependency: @rollup/plugin-replace |br|
-*URL:* https://www.npmjs.com/package/@rollup/plugin-replace
-
--------------------------
-@rollup/plugin-typescript
--------------------------
-Dependency: @rollup/plugin-typescript |br|
-*URL:* https://www.npmjs.com/package/@rollup/plugin-typescript
-
---------------
-@stomp/stompjs
---------------
-Dependency: @stomp/stompjs |br|
-*URL:* https://www.npmjs.com/package/@stomp/stompjs
-
-----------
-@types/ace
-----------
-Dependency: @types/ace |br|
-*URL:* https://www.npmjs.com/package/@types/ace
-
---------------
-@types/graphql
---------------
-Dependency: @types/graphql |br|
-*URL:* https://www.npmjs.com/package/@types/graphql
-
--------------
-@types/jquery
--------------
-Dependency: @types/jquery |br|
-*URL:* https://www.npmjs.com/package/@types/jquery
-
-----------------
-@types/js-cookie
-----------------
-Dependency: @types/js-cookie |br|
-*URL:* https://www.npmjs.com/package/@types/js-cookie
-
--------------
-@types/marked
--------------
-Dependency: @types/marked |br|
-*URL:* https://www.npmjs.com/package/@types/marked
-
------------
-@types/node
------------
-Dependency: @types/node |br|
-*URL:* https://www.npmjs.com/package/@types/node
-
----------------
-@types/prettier
----------------
-Dependency: @types/prettier |br|
-*URL:* https://www.npmjs.com/package/@types/prettier
-
------------------
-@types/prop-types
------------------
-Dependency: @types/prop-types |br|
-*URL:* https://www.npmjs.com/package/@types/prop-types
-
-----------------
-@types/react-dom
-----------------
-Dependency: @types/react-dom |br|
-*URL:* https://www.npmjs.com/package/@types/react-dom
-
-------------------------------
-@types/react-infinite-scroller
-------------------------------
-Dependency: @types/react-infinite-scroller |br|
-*URL:* https://www.npmjs.com/package/@types/react-infinite-scroller
-
----------------
-@types/react-is
----------------
-Dependency: @types/react-is |br|
-*URL:* https://www.npmjs.com/package/@types/react-is
-
-----------------------------
-@types/react-swipeable-views
-----------------------------
-Dependency: @types/react-swipeable-views |br|
-*URL:* https://www.npmjs.com/package/@types/react-swipeable-views
-
-------------
-@types/react
-------------
-Dependency: @types/react |br|
-*URL:* https://www.npmjs.com/package/@types/react
-
--------------
-@types/rimraf
--------------
-Dependency: @types/rimraf |br|
-*URL:* https://www.npmjs.com/package/@types/rimraf
-
---------------
-@types/tinymce
---------------
-Dependency: @types/tinymce |br|
-*URL:* https://www.npmjs.com/package/@types/tinymce
-
----------------
-@types/video.js
----------------
-Dependency: @types/video.js |br|
-*URL:* https://www.npmjs.com/package/@types/video.js
-
--------------
-@types/zxcvbn
--------------
-Dependency: @types/zxcvbn |br|
-*URL:* https://www.npmjs.com/package/@types/zxcvbn
-
-------------------
-@videojs/vhs-utils
-------------------
-Dependency: @videojs/vhs-utils |br|
-*URL:* https://www.npmjs.com/package/@videojs/vhs-utils
-
-----------
-ace-builds
-----------
-Dependency: ace-builds |br|
-*URL:* https://www.npmjs.com/package/ace-builds
-
----------------------
-autosuggest-highlight
----------------------
-Dependency: autosuggest-highlight |br|
-*URL:* https://www.npmjs.com/package/autosuggest-highlight
-
----------------------
-babel-plugin-formatjs
----------------------
-Dependency: babel-plugin-formatjs |br|
-*URL:* https://www.npmjs.com/package/babel-plugin-formatjs
-
---------------------------------
-babel-plugin-inline-package-json
---------------------------------
-Dependency: babel-plugin-inline-package-json |br|
-*URL:* https://www.npmjs.com/package/babel-plugin-inline-package-json
-
------------------------
-babel-plugin-react-intl
------------------------
-Dependency: babel-plugin-react-intl |br|
-*URL:* https://www.npmjs.com/package/babel-plugin-react-intl
-
-------------
-browserslist
-------------
-Dependency: browserslist |br|
-*URL:* https://www.npmjs.com/package/browserslist
-
-----------------
-build-if-changed
-----------------
-Dependency: build-if-changed |br|
-*URL:* https://www.npmjs.com/package/build-if-changed
-
-----
-clsx
-----
-Dependency: clsx |br|
-*URL:* https://www.npmjs.com/package/clsx
-
-----------------------
-eslint-config-prettier
-----------------------
-Dependency: eslint-config-prettier |br|
-*URL:* https://www.npmjs.com/package/eslint-config-prettier
-
-----------------------
-eslint-plugin-prettier
-----------------------
-Dependency: eslint-plugin-prettier |br|
-*URL:* https://www.npmjs.com/package/eslint-plugin-prettier
-
-------
-eslint
-------
-Dependency: eslint |br|
-*URL:* https://www.npmjs.com/package/eslint
-
----------------
-fast-xml-parser
----------------
-Dependency: fast-xml-parser |br|
-*URL:* https://www.npmjs.com/package/fast-xml-parser
-
---------------
-glob-gitignore
---------------
-Dependency: glob-gitignore |br|
-*URL:* https://www.npmjs.com/package/glob-gitignore
-
------------------
-graphiql-explorer
------------------
-Dependency: graphiql-explorer |br|
-*URL:* https://www.npmjs.com/package/graphiql-explorer
-
---------
-graphiql
---------
-Dependency: graphiql |br|
-*URL:* https://www.npmjs.com/package/graphiql
-
-----------
-graphql-ws
-----------
-Dependency: graphql-ws |br|
-*URL:* https://www.npmjs.com/package/graphql-ws
-
--------
-graphql
--------
-Dependency: graphql |br|
-*URL:* https://www.npmjs.com/package/graphql
-
-------------
-highlight.js
-------------
-Dependency: highlight.js |br|
-*URL:* https://www.npmjs.com/package/highlight.js
-
-------
-jabber
-------
-Dependency: jabber |br|
-*URL:* https://www.npmjs.com/package/jabber
-
-------
-jquery
-------
-Dependency: jquery |br|
-*URL:* https://www.npmjs.com/package/jquery
-
----------
-js-cookie
----------
-Dependency: js-cookie |br|
-*URL:* https://www.npmjs.com/package/js-cookie
-
--------
-js-yaml
--------
-Dependency: js-yaml |br|
-*URL:* https://www.npmjs.com/package/js-yaml
-
-------
-marked
-------
-Dependency: marked |br|
-*URL:* https://www.npmjs.com/package/marked
-
----------------
-moment-timezone
----------------
-Dependency: moment-timezone |br|
-*URL:* https://www.npmjs.com/package/moment-timezone
-
-----------------------------
-monaco-editor-webpack-plugin
-----------------------------
-Dependency: monaco-editor-webpack-plugin |br|
-*URL:* https://www.npmjs.com/package/monaco-editor-webpack-plugin
-
--------------
-monaco-editor
--------------
-Dependency: monaco-editor |br|
-*URL:* https://www.npmjs.com/package/monaco-editor
-
-------
-nanoid
-------
-Dependency: nanoid |br|
-*URL:* https://www.npmjs.com/package/nanoid
-
----
-ncp
----
-Dependency: ncp |br|
-*URL:* https://www.npmjs.com/package/ncp
-
----------
-notistack
----------
-Dependency: notistack |br|
-*URL:* https://www.npmjs.com/package/notistack
-
------------
-npm-run-all
------------
-Dependency: npm-run-all |br|
-*URL:* https://www.npmjs.com/package/npm-run-all
-
------------------
-postcss-normalize
------------------
-Dependency: postcss-normalize |br|
-*URL:* https://www.npmjs.com/package/postcss-normalize
-
---------
-prettier
---------
-Dependency: prettier |br|
-*URL:* https://www.npmjs.com/package/prettier
-
-----------
-prop-types
-----------
-Dependency: prop-types |br|
-*URL:* https://www.npmjs.com/package/prop-types
-
-------------
-query-string
-------------
-Dependency: query-string |br|
-*URL:* https://www.npmjs.com/package/query-string
-
-----------------
-react-animations
-----------------
-Dependency: react-animations |br|
-*URL:* https://www.npmjs.com/package/react-animations
-
----------
-react-dom
----------
-Dependency: react-dom |br|
-*URL:* https://www.npmjs.com/package/react-dom
-
-------------------
-react-hotkeys-hook
-------------------
-Dependency: react-hotkeys-hook |br|
-*URL:* https://www.npmjs.com/package/react-hotkeys-hook
-
------------------------
-react-infinite-scroller
------------------------
-Dependency: react-infinite-scroller |br|
-*URL:* https://www.npmjs.com/package/react-infinite-scroller
-
-----------
-react-intl
-----------
-Dependency: react-intl |br|
-*URL:* https://www.npmjs.com/package/react-intl
-
---------
-react-is
---------
-Dependency: react-is |br|
-*URL:* https://www.npmjs.com/package/react-is
-
------------
-react-redux
------------
-Dependency: react-redux |br|
-*URL:* https://www.npmjs.com/package/react-redux
-
-----------------
-react-router-dom
-----------------
-Dependency: react-router-dom |br|
-*URL:* https://www.npmjs.com/package/react-router-dom
-
--------------
-react-scripts
--------------
-Dependency: react-scripts |br|
-*URL:* https://www.npmjs.com/package/react-scripts
-
----------------------------
-react-swipeable-views-utils
----------------------------
-Dependency: react-swipeable-views-utils |br|
-*URL:* https://www.npmjs.com/package/react-swipeable-views-utils
-
----------------------
-react-swipeable-views
----------------------
-Dependency: react-swipeable-views |br|
-*URL:* https://www.npmjs.com/package/react-swipeable-views
-
------
-react
------
-Dependency: react |br|
-*URL:* https://www.npmjs.com/package/react
-
-----------------
-redux-observable
-----------------
-Dependency: redux-observable |br|
-*URL:* https://www.npmjs.com/package/redux-observable
-
------
-redux
------
-Dependency: redux |br|
-*URL:* https://www.npmjs.com/package/redux
-
----------------
-replace-in-file
----------------
-Dependency: replace-in-file |br|
-*URL:* https://www.npmjs.com/package/replace-in-file
-
-------
-rimraf
-------
-Dependency: rimraf |br|
-*URL:* https://www.npmjs.com/package/rimraf
-
--------------------
-rollup-plugin-babel
--------------------
-Dependency: rollup-plugin-babel |br|
-*URL:* https://www.npmjs.com/package/rollup-plugin-babel
-
-------------------
-rollup-plugin-copy
-------------------
-Dependency: rollup-plugin-copy |br|
-*URL:* https://www.npmjs.com/package/rollup-plugin-copy
-
---------------------
-rollup-plugin-terser
---------------------
-Dependency: rollup-plugin-terser |br|
-*URL:* https://www.npmjs.com/package/rollup-plugin-terser
-
-----------------------------
-rollup-plugin-ts-treeshaking
-----------------------------
-Dependency: rollup-plugin-ts-treeshaking |br|
-*URL:* https://www.npmjs.com/package/rollup-plugin-ts-treeshaking
-
-------
-rollup
-------
-Dependency: rollup |br|
-*URL:* https://www.npmjs.com/package/rollup
-
-----
-rxjs
-----
-Dependency: rxjs |br|
-*URL:* https://www.npmjs.com/package/rxjs
-
-----
-sass
-----
-Dependency: sass |br|
-*URL:* https://www.npmjs.com/package/sass
-
--------
-slugify
--------
-Dependency: slugify |br|
-*URL:* https://www.npmjs.com/package/slugify
-
----------
-tss-react
----------
-Dependency: tss-react |br|
-*URL:* https://www.npmjs.com/package/tss-react
-
-----------------
-typescript@patch
-----------------
-Dependency: typescript@patch |br|
-*URL:* https://www.npmjs.com/package/typescript@patch
-
-----
-uppy
-----
-Dependency: uppy |br|
-*URL:* https://www.npmjs.com/package/uppy
-
-----
-uuid
-----
-Dependency: uuid |br|
-*URL:* https://www.npmjs.com/package/uuid
-
---------
-video.js
---------
-Dependency: video.js |br|
-*URL:* https://www.npmjs.com/package/video.js
-
-----------
-web-vitals
-----------
-Dependency: web-vitals |br|
-*URL:* https://www.npmjs.com/package/web-vitals
-
------------
-webpack-cli
------------
-Dependency: webpack-cli |br|
-*URL:* https://www.npmjs.com/package/webpack-cli
-
--------
-webpack
--------
-Dependency: webpack |br|
-*URL:* https://www.npmjs.com/package/webpack
-
------
-yargs
------
-Dependency: yargs |br|
-*URL:* https://www.npmjs.com/package/yargs
-
-------
-zxcvbn
-------
-Dependency: zxcvbn |br|
-*URL:* https://www.npmjs.com/package/zxcvbn
+|br|
+`cglib:cglib <https://mvnrepository.com/artifact/cglib/cglib>`_
+|br|
+`com.amazonaws:aws-java-sdk-cloudformation <https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cloudformation>`_
+|br|
+`com.amazonaws:aws-java-sdk-cloudfront <https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cloudfront>`_
+|br|
+`com.amazonaws:aws-java-sdk-elastictranscoder <https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-elastictranscoder>`_
+|br|
+`com.amazonaws:aws-java-sdk-mediaconvert <https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-mediaconvert>`_
+|br|
+`com.amazonaws:aws-java-sdk-s3 <https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3>`_
+|br|
+`com.amazonaws:aws-java-sdk-sts <https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-sts>`_
+|br|
+`com.box:box-java-sdk <https://mvnrepository.com/artifact/com.box/box-java-sdk>`_
+|br|
+`com.drewnoakes:metadata-extractor <https://mvnrepository.com/artifact/com.drewnoakes/metadata-extractor>`_
+|br|
+`com.fasterxml.jackson.core:jackson-annotations <https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations>`_
+|br|
+`com.fasterxml.jackson.core:jackson-annotations <https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations>`_
+|br|
+`com.fasterxml.jackson.core:jackson-core <https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core>`_
+|br|
+`com.fasterxml.jackson.core:jackson-core <https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core>`_
+|br|
+`com.fasterxml.jackson.core:jackson-databind <https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind>`_
+|br|
+`com.fasterxml.jackson.core:jackson-databind <https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind>`_
+|br|
+`com.fasterxml.jackson.dataformat:jackson-dataformat-cbor <https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-cbor>`_
+|br|
+`com.fasterxml.jackson.dataformat:jackson-dataformat-smile <https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-smile>`_
+|br|
+`com.fasterxml.jackson.dataformat:jackson-dataformat-xml <https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml>`_
+|br|
+`com.fasterxml.jackson.dataformat:jackson-dataformat-yaml <https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml>`_
+|br|
+`com.fasterxml.jackson.datatype:jackson-datatype-jsr310 <https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310>`_
+|br|
+`com.github.jknack:handlebars <https://mvnrepository.com/artifact/com.github.jknack/handlebars>`_
+|br|
+`com.github.jknack:handlebars-springmvc <https://mvnrepository.com/artifact/com.github.jknack/handlebars-springmvc>`_
+|br|
+`com.github.lookfirst:sardine <https://mvnrepository.com/artifact/com.github.lookfirst/sardine>`_
+|br|
+`com.gmongo:gmongo <https://mvnrepository.com/artifact/com.gmongo/gmongo>`_
+|br|
+`com.google.code.gson:gson <https://mvnrepository.com/artifact/com.google.code.gson/gson>`_
+|br|
+`com.google.guava:guava <https://mvnrepository.com/artifact/com.google.guava/guava>`_
+|br|
+`com.google.protobuf:protobuf-java <https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java>`_
+|br|
+`com.graphql-java:graphql-java <https://mvnrepository.com/artifact/com.graphql-java/graphql-java>`_
+|br|
+`com.graphql-java:graphql-java-extended-scalars <https://mvnrepository.com/artifact/com.graphql-java/graphql-java-extended-scalars>`_
+|br|
+`com.jayway.jsonpath:json-path-assert <https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path-assert>`_
+|br|
+`commons-beanutils:commons-beanutils <https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils>`_
+|br|
+`commons-cli:commons-cli <https://mvnrepository.com/artifact/commons-cli/commons-cli>`_
+|br|
+`commons-codec:commons-codec <https://mvnrepository.com/artifact/commons-codec/commons-codec>`_
+|br|
+`commons-fileupload:commons-fileupload <https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload>`_
+|br|
+`commons-io:commons-io <https://mvnrepository.com/artifact/commons-io/commons-io>`_
+|br|
+`com.squareup.okhttp3:okhttp <https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp>`_
+|br|
+`com.sun.activation:javax.activation <https://mvnrepository.com/artifact/com.sun.activation/javax.activation>`_
+|br|
+`com.sun.mail:javax.mail <https://mvnrepository.com/artifact/com.sun.mail/javax.mail>`_
+|br|
+`com.thoughtworks.xstream:xstream <https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream>`_
+|br|
+`com.tinify:tinify <https://mvnrepository.com/artifact/com.tinify/tinify>`_
+|br|
+`com.vdurmont:semver4j <https://mvnrepository.com/artifact/com.vdurmont/semver4j>`_
+|br|
+`javax.measure:unit-api <https://mvnrepository.com/artifact/javax.measure/unit-api>`_
+|br|
+`javax.servlet:javax.servlet-api <https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api>`_
+|br|
+`javax.transaction:jta <https://mvnrepository.com/artifact/javax.transaction/jta>`_
+|br|
+`javax.validation:validation-api <https://mvnrepository.com/artifact/javax.validation/validation-api>`_
+|br|
+`joda-time:joda-time <https://mvnrepository.com/artifact/joda-time/joda-time>`_
+|br|
+`junit:junit <https://mvnrepository.com/artifact/junit/junit>`_
+|br|
+`net.i2p.crypto:eddsa <https://mvnrepository.com/artifact/net.i2p.crypto/eddsa>`_
+|br|
+`net.sf.json-lib:json-lib <https://mvnrepository.com/artifact/net.sf.json-lib/json-lib>`_
+|br|
+`net.sf.saxon:Saxon-HE <https://mvnrepository.com/artifact/net.sf.saxon/Saxon-HE>`_
+|br|
+`org.apache.commons:commons-collections4 <https://mvnrepository.com/artifact/org.apache.commons/commons-collections4>`_
+|br|
+`org.apache.commons:commons-compress <https://mvnrepository.com/artifact/org.apache.commons/commons-compress>`_
+|br|
+`org.apache.commons:commons-configuration2 <https://mvnrepository.com/artifact/org.apache.commons/commons-configuration2>`_
+|br|
+`org.apache.commons:commons-csv <https://mvnrepository.com/artifact/org.apache.commons/commons-csv>`_
+|br|
+`org.apache.commons:commons-dbcp2 <https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2>`_
+|br|
+`org.apache.commons:commons-lang3 <https://mvnrepository.com/artifact/org.apache.commons/commons-lang3>`_
+|br|
+`org.apache.commons:commons-text <https://mvnrepository.com/artifact/org.apache.commons/commons-text>`_
+|br|
+`org.apache.cxf:cxf-rt-frontend-jaxws <https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-frontend-jaxws>`_
+|br|
+`org.apache.cxf:cxf-rt-transports-http <https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-transports-http>`_
+|br|
+`org.apache.cxf:cxf-rt-ws-policy <https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-ws-policy>`_
+|br|
+`org.apache.httpcomponents:httpclient <https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient>`_
+|br|
+`org.apache.ibatis:ibatis-sqlmap <https://mvnrepository.com/artifact/org.apache.ibatis/ibatis-sqlmap>`_
+|br|
+`org.apache.ivy:ivy <https://mvnrepository.com/artifact/org.apache.ivy/ivy>`_
+|br|
+`org.apache.logging.log4j:log4j-api <https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api>`_
+|br|
+`org.apache.logging.log4j:log4j-core <https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core>`_
+|br|
+`org.apache.logging.log4j:log4j-slf4j2-impl <https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j2-impl>`_
+|br|
+`org.apache.logging.log4j:log4j-web <https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-web>`_
+|br|
+`org.apache.poi:poi-scratchpad <https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad>`_
+|br|
+`org.apache.tika:tika-core <https://mvnrepository.com/artifact/org.apache.tika/tika-core>`_
+|br|
+`org.apache.tika:tika-parsers-standard-package <https://mvnrepository.com/artifact/org.apache.tika/tika-parsers-standard-package>`_
+|br|
+`org.apache.tomcat.embed:tomcat-embed-websocket <https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-websocket>`_
+|br|
+`org.apache.tomcat:tomcat-jasper-el <https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper-el>`_
+|br|
+`org.aspectj:aspectjrt <https://mvnrepository.com/artifact/org.aspectj/aspectjrt>`_
+|br|
+`org.aspectj:aspectjweaver <https://mvnrepository.com/artifact/org.aspectj/aspectjweaver>`_
+|br|
+`org.bitbucket.b_c:jose4j <https://mvnrepository.com/artifact/org.bitbucket.b_c/jose4j>`_
+|br|
+`org.bouncycastle:bcmail-jdk15on <https://mvnrepository.com/artifact/org.bouncycastle/bcmail-jdk15on>`_
+|br|
+`org.bouncycastle:bcpg-jdk15on <https://mvnrepository.com/artifact/org.bouncycastle/bcpg-jdk15on>`_
+|br|
+`org.bouncycastle:bcpkix-jdk15on <https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk15on>`_
+|br|
+`org.bouncycastle:bcprov-jdk15on <https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on>`_
+|br|
+`org.codehaus.groovy:groovy-all <https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all>`_
+|br|
+`org.codehaus.woodstox:stax2-api <https://mvnrepository.com/artifact/org.codehaus.woodstox/stax2-api>`_
+|br|
+`org.codelibs.opensearch:opensearch-runner <https://mvnrepository.com/artifact/org.codelibs.opensearch/opensearch-runner>`_
+|br|
+`org.dom4j:dom4j <https://mvnrepository.com/artifact/org.dom4j/dom4j>`_
+|br|
+`org.eclipse.jgit:org.eclipse.jgit <https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit>`_
+|br|
+`org.eclipse.jgit:org.eclipse.jgit.archive <https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.archive>`_
+|br|
+`org.eclipse.jgit:org.eclipse.jgit.ssh.apache <https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.ssh.apache>`_
+|br|
+`org.freemarker:freemarker <https://mvnrepository.com/artifact/org.freemarker/freemarker>`_
+|br|
+`org.glassfish:jakarta.json <https://mvnrepository.com/artifact/org.glassfish/jakarta.json>`_
+|br|
+`org.hamcrest:hamcrest <https://mvnrepository.com/artifact/org.hamcrest/hamcrest>`_
+|br|
+`org.hibernate.validator:hibernate-validator <https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator>`_
+|br|
+`org.jdom:jdom2 <https://mvnrepository.com/artifact/org.jdom/jdom2>`_
+|br|
+`org.jongo:jongo <https://mvnrepository.com/artifact/org.jongo/jongo>`_
+|br|
+`org.jsoup:jsoup <https://mvnrepository.com/artifact/org.jsoup/jsoup>`_
+|br|
+`org.locationtech.spatial4j:spatial4j <https://mvnrepository.com/artifact/org.locationtech.spatial4j/spatial4j>`_
+|br|
+`org.mariadb.jdbc:mariadb-java-client <https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client>`_
+|br|
+`org.mitre.dsmiley.httpproxy:smiley-http-proxy-servlet <https://mvnrepository.com/artifact/org.mitre.dsmiley.httpproxy/smiley-http-proxy-servlet>`_
+|br|
+`org.mockito:mockito-core <https://mvnrepository.com/artifact/org.mockito/mockito-core>`_
+|br|
+`org.mongodb:bson <https://mvnrepository.com/artifact/org.mongodb/bson>`_
+|br|
+`org.mongodb:mongodb-driver-legacy <https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-legacy>`_
+|br|
+`org.mongodb:mongodb-driver-sync <https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync>`_
+|br|
+`org.mybatis:mybatis <https://mvnrepository.com/artifact/org.mybatis/mybatis>`_
+|br|
+`org.mybatis:mybatis-spring <https://mvnrepository.com/artifact/org.mybatis/mybatis-spring>`_
+|br|
+`org.opensearch.client:opensearch-java <https://mvnrepository.com/artifact/org.opensearch.client/opensearch-java>`_
+|br|
+`org.opensearch.client:opensearch-rest-high-level-client <https://mvnrepository.com/artifact/org.opensearch.client/opensearch-rest-high-level-client>`_
+|br|
+`org.owasp.esapi:esapi <https://mvnrepository.com/artifact/org.owasp.esapi/esapi>`_
+|br|
+`org.quartz-scheduler:quartz <https://mvnrepository.com/artifact/org.quartz-scheduler/quartz>`_
+|br|
+`org.slf4j:jcl-over-slf4j <https://mvnrepository.com/artifact/org.slf4j/jcl-over-slf4j>`_
+|br|
+`org.slf4j:slf4j-api <https://mvnrepository.com/artifact/org.slf4j/slf4j-api>`_
+|br|
+`org.slf4j:slf4j-simple <https://mvnrepository.com/artifact/org.slf4j/slf4j-simple>`_
+|br|
+`org.springframework.boot:spring-boot-starter-log4j2 <https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2>`_
+|br|
+`org.springframework.boot:spring-boot-starter-test <https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test>`_
+|br|
+`org.springframework.boot:spring-boot-starter-web <https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web>`_
+|br|
+`org.springframework.data:spring-data-commons <https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons>`_
+|br|
+`org.springframework.ldap:spring-ldap-core <https://mvnrepository.com/artifact/org.springframework.ldap/spring-ldap-core>`_
+|br|
+`org.springframework.security:spring-security-config <https://mvnrepository.com/artifact/org.springframework.security/spring-security-config>`_
+|br|
+`org.springframework.security:spring-security-core <https://mvnrepository.com/artifact/org.springframework.security/spring-security-core>`_
+|br|
+`org.springframework.security:spring-security-ldap <https://mvnrepository.com/artifact/org.springframework.security/spring-security-ldap>`_
+|br|
+`org.springframework.security:spring-security-messaging <https://mvnrepository.com/artifact/org.springframework.security/spring-security-messaging>`_
+|br|
+`org.springframework.security:spring-security-web <https://mvnrepository.com/artifact/org.springframework.security/spring-security-web>`_
+|br|
+`org.springframework:spring-aop <https://mvnrepository.com/artifact/org.springframework/spring-aop>`_
+|br|
+`org.springframework:spring-beans <https://mvnrepository.com/artifact/org.springframework/spring-beans>`_
+|br|
+`org.springframework:spring-context <https://mvnrepository.com/artifact/org.springframework/spring-context>`_
+|br|
+`org.springframework:spring-context-support <https://mvnrepository.com/artifact/org.springframework/spring-context-support>`_
+|br|
+`org.springframework:spring-core <https://mvnrepository.com/artifact/org.springframework/spring-core>`_
+|br|
+`org.springframework:spring-expression <https://mvnrepository.com/artifact/org.springframework/spring-expression>`_
+|br|
+`org.springframework:spring-jdbc <https://mvnrepository.com/artifact/org.springframework/spring-jdbc>`_
+|br|
+`org.springframework:spring-messaging <https://mvnrepository.com/artifact/org.springframework/spring-messaging>`_
+|br|
+`org.springframework:spring-oxm <https://mvnrepository.com/artifact/org.springframework/spring-oxm>`_
+|br|
+`org.springframework:spring-test <https://mvnrepository.com/artifact/org.springframework/spring-test>`_
+|br|
+`org.springframework:spring-tx <https://mvnrepository.com/artifact/org.springframework/spring-tx>`_
+|br|
+`org.springframework:spring-web <https://mvnrepository.com/artifact/org.springframework/spring-web>`_
+|br|
+`org.springframework:spring-webmvc <https://mvnrepository.com/artifact/org.springframework/spring-webmvc>`_
+|br|
+`org.springframework:spring-websocket <https://mvnrepository.com/artifact/org.springframework/spring-websocket>`_
+|br|
+`org.testng:testng <https://mvnrepository.com/artifact/org.testng/testng>`_
+|br|
+`org.tuckey:urlrewritefilter <https://mvnrepository.com/artifact/org.tuckey/urlrewritefilter>`_
+|br|
+`org.xmlunit:xmlunit-core <https://mvnrepository.com/artifact/org.xmlunit/xmlunit-core>`_
+|br|
+`org.yaml:snakeyaml <https://mvnrepository.com/artifact/org.yaml/snakeyaml>`_
+|br|
+`rome:rome <https://mvnrepository.com/artifact/rome/rome>`_
+|br|
+`xerces:xercesImpl <https://mvnrepository.com/artifact/xerces/xercesImpl>`_
+|br|
+`ace-builds <https://www.npmjs.com/package/ace-builds>`_
+|br|
+`autosuggest-highlight <https://www.npmjs.com/package/autosuggest-highlight>`_
+|br|
+`@babel/cli <https://www.npmjs.com/package/@babel/cli>`_
+|br|
+`babel-plugin-formatjs <https://www.npmjs.com/package/babel-plugin-formatjs>`_
+|br|
+`babel-plugin-inline-package-json <https://www.npmjs.com/package/babel-plugin-inline-package-json>`_
+|br|
+`babel-plugin-react-intl <https://www.npmjs.com/package/babel-plugin-react-intl>`_
+|br|
+`@babel/plugin-transform-object-assign <https://www.npmjs.com/package/@babel/plugin-transform-object-assign>`_
+|br|
+`browserslist <https://www.npmjs.com/package/browserslist>`_
+|br|
+`build-if-changed <https://www.npmjs.com/package/build-if-changed>`_
+|br|
+`clsx <https://www.npmjs.com/package/clsx>`_
+|br|
+`@craco/craco <https://www.npmjs.com/package/@craco/craco>`_
+|br|
+`@emotion/css <https://www.npmjs.com/package/@emotion/css>`_
+|br|
+`@emotion/react <https://www.npmjs.com/package/@emotion/react>`_
+|br|
+`@emotion/styled <https://www.npmjs.com/package/@emotion/styled>`_
+|br|
+`eslint-config-prettier <https://www.npmjs.com/package/eslint-config-prettier>`_
+|br|
+`eslint <https://www.npmjs.com/package/eslint>`_
+|br|
+`eslint-plugin-prettier <https://www.npmjs.com/package/eslint-plugin-prettier>`_
+|br|
+`fast-xml-parser <https://www.npmjs.com/package/fast-xml-parser>`_
+|br|
+`@formatjs/cli <https://www.npmjs.com/package/@formatjs/cli>`_
+|br|
+`glob-gitignore <https://www.npmjs.com/package/glob-gitignore>`_
+|br|
+`graphiql-explorer <https://www.npmjs.com/package/graphiql-explorer>`_
+|br|
+`graphiql <https://www.npmjs.com/package/graphiql>`_
+|br|
+`graphql <https://www.npmjs.com/package/graphql>`_
+|br|
+`graphql-ws <https://www.npmjs.com/package/graphql-ws>`_
+|br|
+`highlight.js <https://www.npmjs.com/package/highlight.js>`_
+|br|
+`jabber <https://www.npmjs.com/package/jabber>`_
+|br|
+`jquery <https://www.npmjs.com/package/jquery>`_
+|br|
+`js-cookie <https://www.npmjs.com/package/js-cookie>`_
+|br|
+`js-yaml <https://www.npmjs.com/package/js-yaml>`_
+|br|
+`marked <https://www.npmjs.com/package/marked>`_
+|br|
+`moment-timezone <https://www.npmjs.com/package/moment-timezone>`_
+|br|
+`monaco-editor <https://www.npmjs.com/package/monaco-editor>`_
+|br|
+`monaco-editor-webpack-plugin <https://www.npmjs.com/package/monaco-editor-webpack-plugin>`_
+|br|
+`@mui/icons-material <https://www.npmjs.com/package/@mui/icons-material>`_
+|br|
+`@mui/lab <https://www.npmjs.com/package/@mui/lab>`_
+|br|
+`@mui/material <https://www.npmjs.com/package/@mui/material>`_
+|br|
+`@mui/x-data-grid <https://www.npmjs.com/package/@mui/x-data-grid>`_
+|br|
+`@mui/x-date-pickers <https://www.npmjs.com/package/@mui/x-date-pickers>`_
+|br|
+`nanoid <https://www.npmjs.com/package/nanoid>`_
+|br|
+`ncp <https://www.npmjs.com/package/ncp>`_
+|br|
+`notistack <https://www.npmjs.com/package/notistack>`_
+|br|
+`npm-run-all <https://www.npmjs.com/package/npm-run-all>`_
+|br|
+`postcss-normalize <https://www.npmjs.com/package/postcss-normalize>`_
+|br|
+`prettier <https://www.npmjs.com/package/prettier>`_
+|br|
+`@prettier/plugin-xml <https://www.npmjs.com/package/@prettier/plugin-xml>`_
+|br|
+`prop-types <https://www.npmjs.com/package/prop-types>`_
+|br|
+`query-string <https://www.npmjs.com/package/query-string>`_
+|br|
+`react-animations <https://www.npmjs.com/package/react-animations>`_
+|br|
+`react-dom <https://www.npmjs.com/package/react-dom>`_
+|br|
+`react-hotkeys-hook <https://www.npmjs.com/package/react-hotkeys-hook>`_
+|br|
+`react-infinite-scroller <https://www.npmjs.com/package/react-infinite-scroller>`_
+|br|
+`react-intl <https://www.npmjs.com/package/react-intl>`_
+|br|
+`react-is <https://www.npmjs.com/package/react-is>`_
+|br|
+`react <https://www.npmjs.com/package/react>`_
+|br|
+`react-redux <https://www.npmjs.com/package/react-redux>`_
+|br|
+`react-router-dom <https://www.npmjs.com/package/react-router-dom>`_
+|br|
+`react-scripts <https://www.npmjs.com/package/react-scripts>`_
+|br|
+`react-swipeable-views <https://www.npmjs.com/package/react-swipeable-views>`_
+|br|
+`react-swipeable-views-utils <https://www.npmjs.com/package/react-swipeable-views-utils>`_
+|br|
+`@reduxjs/toolkit <https://www.npmjs.com/package/@reduxjs/toolkit>`_
+|br|
+`redux <https://www.npmjs.com/package/redux>`_
+|br|
+`redux-observable <https://www.npmjs.com/package/redux-observable>`_
+|br|
+`replace-in-file <https://www.npmjs.com/package/replace-in-file>`_
+|br|
+`rimraf <https://www.npmjs.com/package/rimraf>`_
+|br|
+`rollup <https://www.npmjs.com/package/rollup>`_
+|br|
+`rollup-plugin-babel <https://www.npmjs.com/package/rollup-plugin-babel>`_
+|br|
+`@rollup/plugin-commonjs <https://www.npmjs.com/package/@rollup/plugin-commonjs>`_
+|br|
+`rollup-plugin-copy <https://www.npmjs.com/package/rollup-plugin-copy>`_
+|br|
+`@rollup/plugin-node-resolve <https://www.npmjs.com/package/@rollup/plugin-node-resolve>`_
+|br|
+`@rollup/plugin-replace <https://www.npmjs.com/package/@rollup/plugin-replace>`_
+|br|
+`rollup-plugin-terser <https://www.npmjs.com/package/rollup-plugin-terser>`_
+|br|
+`rollup-plugin-ts-treeshaking <https://www.npmjs.com/package/rollup-plugin-ts-treeshaking>`_
+|br|
+`@rollup/plugin-typescript <https://www.npmjs.com/package/@rollup/plugin-typescript>`_
+|br|
+`rxjs <https://www.npmjs.com/package/rxjs>`_
+|br|
+`sass <https://www.npmjs.com/package/sass>`_
+|br|
+`slugify <https://www.npmjs.com/package/slugify>`_
+|br|
+`@stomp/stompjs <https://www.npmjs.com/package/@stomp/stompjs>`_
+|br|
+`tss-react <https://www.npmjs.com/package/tss-react>`_
+|br|
+`@types/ace <https://www.npmjs.com/package/@types/ace>`_
+|br|
+`typescript@patch <https://www.npmjs.com/package/typescript@patch>`_
+|br|
+`@types/graphql <https://www.npmjs.com/package/@types/graphql>`_
+|br|
+`@types/jquery <https://www.npmjs.com/package/@types/jquery>`_
+|br|
+`@types/js-cookie <https://www.npmjs.com/package/@types/js-cookie>`_
+|br|
+`@types/marked <https://www.npmjs.com/package/@types/marked>`_
+|br|
+`@types/node <https://www.npmjs.com/package/@types/node>`_
+|br|
+`@types/prettier <https://www.npmjs.com/package/@types/prettier>`_
+|br|
+`@types/prop-types <https://www.npmjs.com/package/@types/prop-types>`_
+|br|
+`@types/react-dom <https://www.npmjs.com/package/@types/react-dom>`_
+|br|
+`@types/react-infinite-scroller <https://www.npmjs.com/package/@types/react-infinite-scroller>`_
+|br|
+`@types/react-is <https://www.npmjs.com/package/@types/react-is>`_
+|br|
+`@types/react <https://www.npmjs.com/package/@types/react>`_
+|br|
+`@types/react-swipeable-views <https://www.npmjs.com/package/@types/react-swipeable-views>`_
+|br|
+`@types/rimraf <https://www.npmjs.com/package/@types/rimraf>`_
+|br|
+`@types/tinymce <https://www.npmjs.com/package/@types/tinymce>`_
+|br|
+`@types/video.js <https://www.npmjs.com/package/@types/video.js>`_
+|br|
+`@types/zxcvbn <https://www.npmjs.com/package/@types/zxcvbn>`_
+|br|
+`uppy <https://www.npmjs.com/package/uppy>`_
+|br|
+`uuid <https://www.npmjs.com/package/uuid>`_
+|br|
+`video.js <https://www.npmjs.com/package/video.js>`_
+|br|
+`@videojs/vhs-utils <https://www.npmjs.com/package/@videojs/vhs-utils>`_
+|br|
+`webpack-cli <https://www.npmjs.com/package/webpack-cli>`_
+|br|
+`webpack <https://www.npmjs.com/package/webpack>`_
+|br|
+`web-vitals <https://www.npmjs.com/package/web-vitals>`_
+|br|
+`yargs <https://www.npmjs.com/package/yargs>`_
+|br|
+`zxcvbn <https://www.npmjs.com/package/zxcvbn>`_
+|br|
 
