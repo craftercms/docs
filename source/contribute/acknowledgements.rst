@@ -15,973 +15,973 @@ cglib
 -----
 Package: cglib |br|
 Dependency: cglib |br|
-*URL:* https://mvnrepository.com/artifact/cglib/cglib/3.3.0
+*URL:* https://mvnrepository.com/artifact/cglib/cglib/
 
 ---------------------------
 aws-java-sdk-cloudformation
 ---------------------------
 Package: com.amazonaws |br|
 Dependency: aws-java-sdk-cloudformation |br|
-*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cloudformation/1.12.463
+*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cloudformation/
 
 -----------------------
 aws-java-sdk-cloudfront
 -----------------------
 Package: com.amazonaws |br|
 Dependency: aws-java-sdk-cloudfront |br|
-*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cloudfront/1.12.463
+*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cloudfront/
 
 ------------------------------
 aws-java-sdk-elastictranscoder
 ------------------------------
 Package: com.amazonaws |br|
 Dependency: aws-java-sdk-elastictranscoder |br|
-*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-elastictranscoder/1.12.463
+*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-elastictranscoder/
 
 -------------------------
 aws-java-sdk-mediaconvert
 -------------------------
 Package: com.amazonaws |br|
 Dependency: aws-java-sdk-mediaconvert |br|
-*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-mediaconvert/1.12.463
+*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-mediaconvert/
 
 ---------------
 aws-java-sdk-s3
 ---------------
 Package: com.amazonaws |br|
 Dependency: aws-java-sdk-s3 |br|
-*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3/1.12.463
+*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3/
 
 ----------------
 aws-java-sdk-sts
 ----------------
 Package: com.amazonaws |br|
 Dependency: aws-java-sdk-sts |br|
-*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-sts/1.12.463
+*URL:* https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-sts/
 
 ------------
 box-java-sdk
 ------------
 Package: com.box |br|
 Dependency: box-java-sdk |br|
-*URL:* https://mvnrepository.com/artifact/com.box/box-java-sdk/4.1.1
+*URL:* https://mvnrepository.com/artifact/com.box/box-java-sdk/
 
 ------------------
 metadata-extractor
 ------------------
 Package: com.drewnoakes |br|
 Dependency: metadata-extractor |br|
-*URL:* https://mvnrepository.com/artifact/com.drewnoakes/metadata-extractor/2.18.0
+*URL:* https://mvnrepository.com/artifact/com.drewnoakes/metadata-extractor/
 
 -------------------
 jackson-annotations
 -------------------
 Package: com.fasterxml.jackson.core |br|
 Dependency: jackson-annotations |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations/2.14.1
+*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations/
 
 -------------------
 jackson-annotations
 -------------------
 Package: com.fasterxml.jackson.core |br|
 Dependency: jackson-annotations |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations/2.15.0
+*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations/
 
 ------------
 jackson-core
 ------------
 Package: com.fasterxml.jackson.core |br|
 Dependency: jackson-core |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core/2.14.1
+*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core/
 
 ------------
 jackson-core
 ------------
 Package: com.fasterxml.jackson.core |br|
 Dependency: jackson-core |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core/2.15.0
+*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core/
 
 ----------------
 jackson-databind
 ----------------
 Package: com.fasterxml.jackson.core |br|
 Dependency: jackson-databind |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind/2.14.1
+*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind/
 
 ----------------
 jackson-databind
 ----------------
 Package: com.fasterxml.jackson.core |br|
 Dependency: jackson-databind |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind/2.15.0
+*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind/
 
 -----------------------
 jackson-dataformat-cbor
 -----------------------
 Package: com.fasterxml.jackson.dataformat |br|
 Dependency: jackson-dataformat-cbor |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-cbor/2.15.0
+*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-cbor/
 
 ------------------------
 jackson-dataformat-smile
 ------------------------
 Package: com.fasterxml.jackson.dataformat |br|
 Dependency: jackson-dataformat-smile |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-smile/2.15.0
+*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-smile/
 
 ----------------------
 jackson-dataformat-xml
 ----------------------
 Package: com.fasterxml.jackson.dataformat |br|
 Dependency: jackson-dataformat-xml |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml/2.15.0
+*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml/
 
 -----------------------
 jackson-dataformat-yaml
 -----------------------
 Package: com.fasterxml.jackson.dataformat |br|
 Dependency: jackson-dataformat-yaml |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/2.15.0
+*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/
 
 -----------------------
 jackson-datatype-jsr310
 -----------------------
 Package: com.fasterxml.jackson.datatype |br|
 Dependency: jackson-datatype-jsr310 |br|
-*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.15.0
+*URL:* https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/
 
 --------------------
 handlebars-springmvc
 --------------------
 Package: com.github.jknack |br|
 Dependency: handlebars-springmvc |br|
-*URL:* https://mvnrepository.com/artifact/com.github.jknack/handlebars-springmvc/4.3.1
+*URL:* https://mvnrepository.com/artifact/com.github.jknack/handlebars-springmvc/
 
 ----------
 handlebars
 ----------
 Package: com.github.jknack |br|
 Dependency: handlebars |br|
-*URL:* https://mvnrepository.com/artifact/com.github.jknack/handlebars/4.3.1
+*URL:* https://mvnrepository.com/artifact/com.github.jknack/handlebars/
 
 -------
 sardine
 -------
 Package: com.github.lookfirst |br|
 Dependency: sardine |br|
-*URL:* https://mvnrepository.com/artifact/com.github.lookfirst/sardine/5.10
+*URL:* https://mvnrepository.com/artifact/com.github.lookfirst/sardine/
 
 ------
 gmongo
 ------
 Package: com.gmongo |br|
 Dependency: gmongo |br|
-*URL:* https://mvnrepository.com/artifact/com.gmongo/gmongo/1.5
+*URL:* https://mvnrepository.com/artifact/com.gmongo/gmongo/
 
 ----
 gson
 ----
 Package: com.google.code.gson |br|
 Dependency: gson |br|
-*URL:* https://mvnrepository.com/artifact/com.google.code.gson/gson/2.10.1
+*URL:* https://mvnrepository.com/artifact/com.google.code.gson/gson/
 
 -----
 guava
 -----
 Package: com.google.guava |br|
 Dependency: guava |br|
-*URL:* https://mvnrepository.com/artifact/com.google.guava/guava/31.1-jre
+*URL:* https://mvnrepository.com/artifact/com.google.guava/guava/
 
 -------------
 protobuf-java
 -------------
 Package: com.google.protobuf |br|
 Dependency: protobuf-java |br|
-*URL:* https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java/3.22.4
+*URL:* https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java/
 
 -----------------------------
 graphql-java-extended-scalars
 -----------------------------
 Package: com.graphql-java |br|
 Dependency: graphql-java-extended-scalars |br|
-*URL:* https://mvnrepository.com/artifact/com.graphql-java/graphql-java-extended-scalars/20.2
+*URL:* https://mvnrepository.com/artifact/com.graphql-java/graphql-java-extended-scalars/
 
 ------------
 graphql-java
 ------------
 Package: com.graphql-java |br|
 Dependency: graphql-java |br|
-*URL:* https://mvnrepository.com/artifact/com.graphql-java/graphql-java/20.2
+*URL:* https://mvnrepository.com/artifact/com.graphql-java/graphql-java/
 
 ----------------
 json-path-assert
 ----------------
 Package: com.jayway.jsonpath |br|
 Dependency: json-path-assert |br|
-*URL:* https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path-assert/2.8.0
+*URL:* https://mvnrepository.com/artifact/com.jayway.jsonpath/json-path-assert/
 
 ------
 okhttp
 ------
 Package: com.squareup.okhttp3 |br|
 Dependency: okhttp |br|
-*URL:* https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp/4.11.0
+*URL:* https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp/
 
 ----------------
 javax.activation
 ----------------
 Package: com.sun.activation |br|
 Dependency: javax.activation |br|
-*URL:* https://mvnrepository.com/artifact/com.sun.activation/javax.activation/1.2.0
+*URL:* https://mvnrepository.com/artifact/com.sun.activation/javax.activation/
 
 ----------
 javax.mail
 ----------
 Package: com.sun.mail |br|
 Dependency: javax.mail |br|
-*URL:* https://mvnrepository.com/artifact/com.sun.mail/javax.mail/1.6.2
+*URL:* https://mvnrepository.com/artifact/com.sun.mail/javax.mail/
 
 -------
 xstream
 -------
 Package: com.thoughtworks.xstream |br|
 Dependency: xstream |br|
-*URL:* https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream/1.4.20
+*URL:* https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream/
 
 ------
 tinify
 ------
 Package: com.tinify |br|
 Dependency: tinify |br|
-*URL:* https://mvnrepository.com/artifact/com.tinify/tinify/1.8.3
+*URL:* https://mvnrepository.com/artifact/com.tinify/tinify/
 
 --------
 semver4j
 --------
 Package: com.vdurmont |br|
 Dependency: semver4j |br|
-*URL:* https://mvnrepository.com/artifact/com.vdurmont/semver4j/3.1.0
+*URL:* https://mvnrepository.com/artifact/com.vdurmont/semver4j/
 
 -----------------
 commons-beanutils
 -----------------
 Package: commons-beanutils |br|
 Dependency: commons-beanutils |br|
-*URL:* https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils/1.9.4
+*URL:* https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils/
 
 -----------
 commons-cli
 -----------
 Package: commons-cli |br|
 Dependency: commons-cli |br|
-*URL:* https://mvnrepository.com/artifact/commons-cli/commons-cli/1.5.0
+*URL:* https://mvnrepository.com/artifact/commons-cli/commons-cli/
 
 -------------
 commons-codec
 -------------
 Package: commons-codec |br|
 Dependency: commons-codec |br|
-*URL:* https://mvnrepository.com/artifact/commons-codec/commons-codec/1.15
+*URL:* https://mvnrepository.com/artifact/commons-codec/commons-codec/
 
 ------------------
 commons-fileupload
 ------------------
 Package: commons-fileupload |br|
 Dependency: commons-fileupload |br|
-*URL:* https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload/1.5
+*URL:* https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload/
 
 ----------
 commons-io
 ----------
 Package: commons-io |br|
 Dependency: commons-io |br|
-*URL:* https://mvnrepository.com/artifact/commons-io/commons-io/2.11.0
+*URL:* https://mvnrepository.com/artifact/commons-io/commons-io/
 
 --------
 unit-api
 --------
 Package: javax.measure |br|
 Dependency: unit-api |br|
-*URL:* https://mvnrepository.com/artifact/javax.measure/unit-api/2.1.3
+*URL:* https://mvnrepository.com/artifact/javax.measure/unit-api/
 
 -----------------
 javax.servlet-api
 -----------------
 Package: javax.servlet |br|
 Dependency: javax.servlet-api |br|
-*URL:* https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api/4.0.1
+*URL:* https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api/
 
 ---
 jta
 ---
 Package: javax.transaction |br|
 Dependency: jta |br|
-*URL:* https://mvnrepository.com/artifact/javax.transaction/jta/1.1
+*URL:* https://mvnrepository.com/artifact/javax.transaction/jta/
 
 --------------
 validation-api
 --------------
 Package: javax.validation |br|
 Dependency: validation-api |br|
-*URL:* https://mvnrepository.com/artifact/javax.validation/validation-api/2.0.1.Final
+*URL:* https://mvnrepository.com/artifact/javax.validation/validation-api/
 
 ---------
 joda-time
 ---------
 Package: joda-time |br|
 Dependency: joda-time |br|
-*URL:* https://mvnrepository.com/artifact/joda-time/joda-time/2.12.5
+*URL:* https://mvnrepository.com/artifact/joda-time/joda-time/
 
 -----
 junit
 -----
 Package: junit |br|
 Dependency: junit |br|
-*URL:* https://mvnrepository.com/artifact/junit/junit/4.13.2
+*URL:* https://mvnrepository.com/artifact/junit/junit/
 
 -----
 eddsa
 -----
 Package: net.i2p.crypto |br|
 Dependency: eddsa |br|
-*URL:* https://mvnrepository.com/artifact/net.i2p.crypto/eddsa/0.3.0
+*URL:* https://mvnrepository.com/artifact/net.i2p.crypto/eddsa/
 
 --------
 json-lib
 --------
 Package: net.sf.json-lib |br|
 Dependency: json-lib |br|
-*URL:* https://mvnrepository.com/artifact/net.sf.json-lib/json-lib/jdk15
+*URL:* https://mvnrepository.com/artifact/net.sf.json-lib/json-lib/
 
 --------
 Saxon-HE
 --------
 Package: net.sf.saxon |br|
 Dependency: Saxon-HE |br|
-*URL:* https://mvnrepository.com/artifact/net.sf.saxon/Saxon-HE/12.2
+*URL:* https://mvnrepository.com/artifact/net.sf.saxon/Saxon-HE/
 
 --------------------
 commons-collections4
 --------------------
 Package: org.apache.commons |br|
 Dependency: commons-collections4 |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-collections4/4.4
+*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-collections4/
 
 ----------------
 commons-compress
 ----------------
 Package: org.apache.commons |br|
 Dependency: commons-compress |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-compress/1.23.0
+*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-compress/
 
 ----------------------
 commons-configuration2
 ----------------------
 Package: org.apache.commons |br|
 Dependency: commons-configuration2 |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-configuration2/2.9.0
+*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-configuration2/
 
 -----------
 commons-csv
 -----------
 Package: org.apache.commons |br|
 Dependency: commons-csv |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-csv/1.10.0
+*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-csv/
 
 -------------
 commons-dbcp2
 -------------
 Package: org.apache.commons |br|
 Dependency: commons-dbcp2 |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2/2.9.0
+*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2/
 
 -------------
 commons-lang3
 -------------
 Package: org.apache.commons |br|
 Dependency: commons-lang3 |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-lang3/3.12.0
+*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-lang3/
 
 ------------
 commons-text
 ------------
 Package: org.apache.commons |br|
 Dependency: commons-text |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-text/1.10.0
+*URL:* https://mvnrepository.com/artifact/org.apache.commons/commons-text/
 
 ---------------------
 cxf-rt-frontend-jaxws
 ---------------------
 Package: org.apache.cxf |br|
 Dependency: cxf-rt-frontend-jaxws |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-frontend-jaxws/3.5.5
+*URL:* https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-frontend-jaxws/
 
 ----------------------
 cxf-rt-transports-http
 ----------------------
 Package: org.apache.cxf |br|
 Dependency: cxf-rt-transports-http |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-transports-http/3.5.5
+*URL:* https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-transports-http/
 
 ----------------
 cxf-rt-ws-policy
 ----------------
 Package: org.apache.cxf |br|
 Dependency: cxf-rt-ws-policy |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-ws-policy/3.5.5
+*URL:* https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-ws-policy/
 
 ----------
 httpclient
 ----------
 Package: org.apache.httpcomponents |br|
 Dependency: httpclient |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient/4.5.14
+*URL:* https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient/
 
 -------------
 ibatis-sqlmap
 -------------
 Package: org.apache.ibatis |br|
 Dependency: ibatis-sqlmap |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.ibatis/ibatis-sqlmap/2.3.4.726
+*URL:* https://mvnrepository.com/artifact/org.apache.ibatis/ibatis-sqlmap/
 
 ---
 ivy
 ---
 Package: org.apache.ivy |br|
 Dependency: ivy |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.ivy/ivy/2.5.1
+*URL:* https://mvnrepository.com/artifact/org.apache.ivy/ivy/
 
 ---------
 log4j-api
 ---------
 Package: org.apache.logging.log4j |br|
 Dependency: log4j-api |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api/2.20.0
+*URL:* https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api/
 
 ----------
 log4j-core
 ----------
 Package: org.apache.logging.log4j |br|
 Dependency: log4j-core |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core/2.20.0
+*URL:* https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core/
 
 -----------------
 log4j-slf4j2-impl
 -----------------
 Package: org.apache.logging.log4j |br|
 Dependency: log4j-slf4j2-impl |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j2-impl/2.20.0
+*URL:* https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j2-impl/
 
 ---------
 log4j-web
 ---------
 Package: org.apache.logging.log4j |br|
 Dependency: log4j-web |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-web/2.20.0
+*URL:* https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-web/
 
 --------------
 poi-scratchpad
 --------------
 Package: org.apache.poi |br|
 Dependency: poi-scratchpad |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad/5.2.3
+*URL:* https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad/
 
 ---------
 tika-core
 ---------
 Package: org.apache.tika |br|
 Dependency: tika-core |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.tika/tika-core/2.7.0
+*URL:* https://mvnrepository.com/artifact/org.apache.tika/tika-core/
 
 -----------------------------
 tika-parsers-standard-package
 -----------------------------
 Package: org.apache.tika |br|
 Dependency: tika-parsers-standard-package |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.tika/tika-parsers-standard-package/2.7.0
+*URL:* https://mvnrepository.com/artifact/org.apache.tika/tika-parsers-standard-package/
 
 ----------------------
 tomcat-embed-websocket
 ----------------------
 Package: org.apache.tomcat.embed |br|
 Dependency: tomcat-embed-websocket |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-websocket/9.0.76
+*URL:* https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-websocket/
 
 ----------------
 tomcat-jasper-el
 ----------------
 Package: org.apache.tomcat |br|
 Dependency: tomcat-jasper-el |br|
-*URL:* https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper-el/9.0.76
+*URL:* https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper-el/
 
 ---------
 aspectjrt
 ---------
 Package: org.aspectj |br|
 Dependency: aspectjrt |br|
-*URL:* https://mvnrepository.com/artifact/org.aspectj/aspectjrt/1.9.19
+*URL:* https://mvnrepository.com/artifact/org.aspectj/aspectjrt/
 
 -------------
 aspectjweaver
 -------------
 Package: org.aspectj |br|
 Dependency: aspectjweaver |br|
-*URL:* https://mvnrepository.com/artifact/org.aspectj/aspectjweaver/1.9.19
+*URL:* https://mvnrepository.com/artifact/org.aspectj/aspectjweaver/
 
 ------
 jose4j
 ------
 Package: org.bitbucket.b_c |br|
 Dependency: jose4j |br|
-*URL:* https://mvnrepository.com/artifact/org.bitbucket.b_c/jose4j/0.9.3
+*URL:* https://mvnrepository.com/artifact/org.bitbucket.b_c/jose4j/
 
 --------------
 bcmail-jdk15on
 --------------
 Package: org.bouncycastle |br|
 Dependency: bcmail-jdk15on |br|
-*URL:* https://mvnrepository.com/artifact/org.bouncycastle/bcmail-jdk15on/1.70
+*URL:* https://mvnrepository.com/artifact/org.bouncycastle/bcmail-jdk15on/
 
 ------------
 bcpg-jdk15on
 ------------
 Package: org.bouncycastle |br|
 Dependency: bcpg-jdk15on |br|
-*URL:* https://mvnrepository.com/artifact/org.bouncycastle/bcpg-jdk15on/1.70
+*URL:* https://mvnrepository.com/artifact/org.bouncycastle/bcpg-jdk15on/
 
 --------------
 bcpkix-jdk15on
 --------------
 Package: org.bouncycastle |br|
 Dependency: bcpkix-jdk15on |br|
-*URL:* https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk15on/1.70
+*URL:* https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk15on/
 
 --------------
 bcprov-jdk15on
 --------------
 Package: org.bouncycastle |br|
 Dependency: bcprov-jdk15on |br|
-*URL:* https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on/1.70
+*URL:* https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on/
 
 ----------
 groovy-all
 ----------
 Package: org.codehaus.groovy |br|
 Dependency: groovy-all |br|
-*URL:* https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all/3.0.17
+*URL:* https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all/
 
 ---------
 stax2-api
 ---------
 Package: org.codehaus.woodstox |br|
 Dependency: stax2-api |br|
-*URL:* https://mvnrepository.com/artifact/org.codehaus.woodstox/stax2-api/4.2.1
+*URL:* https://mvnrepository.com/artifact/org.codehaus.woodstox/stax2-api/
 
 -----------------
 opensearch-runner
 -----------------
 Package: org.codelibs.opensearch |br|
 Dependency: opensearch-runner |br|
-*URL:* https://mvnrepository.com/artifact/org.codelibs.opensearch/opensearch-runner/2.8.0.0
+*URL:* https://mvnrepository.com/artifact/org.codelibs.opensearch/opensearch-runner/
 
 -----
 dom4j
 -----
 Package: org.dom4j |br|
 Dependency: dom4j |br|
-*URL:* https://mvnrepository.com/artifact/org.dom4j/dom4j/2.1.4
+*URL:* https://mvnrepository.com/artifact/org.dom4j/dom4j/
 
 ------------------------
 org.eclipse.jgit.archive
 ------------------------
 Package: org.eclipse.jgit |br|
 Dependency: org.eclipse.jgit.archive |br|
-*URL:* https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.archive/6.5.0.202303070854-r
+*URL:* https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.archive/
 
 ---------------------------
 org.eclipse.jgit.ssh.apache
 ---------------------------
 Package: org.eclipse.jgit |br|
 Dependency: org.eclipse.jgit.ssh.apache |br|
-*URL:* https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.ssh.apache/6.5.0.202303070854-r
+*URL:* https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.ssh.apache/
 
 ----------------
 org.eclipse.jgit
 ----------------
 Package: org.eclipse.jgit |br|
 Dependency: org.eclipse.jgit |br|
-*URL:* https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit/6.5.0.202303070854-r
+*URL:* https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit/
 
 ----------
 freemarker
 ----------
 Package: org.freemarker |br|
 Dependency: freemarker |br|
-*URL:* https://mvnrepository.com/artifact/org.freemarker/freemarker/2.3.32
+*URL:* https://mvnrepository.com/artifact/org.freemarker/freemarker/
 
 ------------
 jakarta.json
 ------------
 Package: org.glassfish |br|
 Dependency: jakarta.json |br|
-*URL:* https://mvnrepository.com/artifact/org.glassfish/jakarta.json/2.0.1
+*URL:* https://mvnrepository.com/artifact/org.glassfish/jakarta.json/
 
 --------
 hamcrest
 --------
 Package: org.hamcrest |br|
 Dependency: hamcrest |br|
-*URL:* https://mvnrepository.com/artifact/org.hamcrest/hamcrest/2.2
+*URL:* https://mvnrepository.com/artifact/org.hamcrest/hamcrest/
 
 -------------------
 hibernate-validator
 -------------------
 Package: org.hibernate.validator |br|
 Dependency: hibernate-validator |br|
-*URL:* https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator/6.2.5.Final
+*URL:* https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator/
 
 -----
 jdom2
 -----
 Package: org.jdom |br|
 Dependency: jdom2 |br|
-*URL:* https://mvnrepository.com/artifact/org.jdom/jdom2/2.0.6.1
+*URL:* https://mvnrepository.com/artifact/org.jdom/jdom2/
 
 -----
 jongo
 -----
 Package: org.jongo |br|
 Dependency: jongo |br|
-*URL:* https://mvnrepository.com/artifact/org.jongo/jongo/1.5.1
+*URL:* https://mvnrepository.com/artifact/org.jongo/jongo/
 
 -----
 jsoup
 -----
 Package: org.jsoup |br|
 Dependency: jsoup |br|
-*URL:* https://mvnrepository.com/artifact/org.jsoup/jsoup/1.16.1
+*URL:* https://mvnrepository.com/artifact/org.jsoup/jsoup/
 
 ---------
 spatial4j
 ---------
 Package: org.locationtech.spatial4j |br|
 Dependency: spatial4j |br|
-*URL:* https://mvnrepository.com/artifact/org.locationtech.spatial4j/spatial4j/0.8
+*URL:* https://mvnrepository.com/artifact/org.locationtech.spatial4j/spatial4j/
 
 -------------------
 mariadb-java-client
 -------------------
 Package: org.mariadb.jdbc |br|
 Dependency: mariadb-java-client |br|
-*URL:* https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client/2.7.9
+*URL:* https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client/
 
 -------------------------
 smiley-http-proxy-servlet
 -------------------------
 Package: org.mitre.dsmiley.httpproxy |br|
 Dependency: smiley-http-proxy-servlet |br|
-*URL:* https://mvnrepository.com/artifact/org.mitre.dsmiley.httpproxy/smiley-http-proxy-servlet/1.12.1
+*URL:* https://mvnrepository.com/artifact/org.mitre.dsmiley.httpproxy/smiley-http-proxy-servlet/
 
 ------------
 mockito-core
 ------------
 Package: org.mockito |br|
 Dependency: mockito-core |br|
-*URL:* https://mvnrepository.com/artifact/org.mockito/mockito-core/4.11.0
+*URL:* https://mvnrepository.com/artifact/org.mockito/mockito-core/
 
 ----
 bson
 ----
 Package: org.mongodb |br|
 Dependency: bson |br|
-*URL:* https://mvnrepository.com/artifact/org.mongodb/bson/4.9.1
+*URL:* https://mvnrepository.com/artifact/org.mongodb/bson/
 
 ---------------------
 mongodb-driver-legacy
 ---------------------
 Package: org.mongodb |br|
 Dependency: mongodb-driver-legacy |br|
-*URL:* https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-legacy/4.9.1
+*URL:* https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-legacy/
 
 -------------------
 mongodb-driver-sync
 -------------------
 Package: org.mongodb |br|
 Dependency: mongodb-driver-sync |br|
-*URL:* https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync/4.9.1
+*URL:* https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync/
 
 --------------
 mybatis-spring
 --------------
 Package: org.mybatis |br|
 Dependency: mybatis-spring |br|
-*URL:* https://mvnrepository.com/artifact/org.mybatis/mybatis-spring/2.1.0
+*URL:* https://mvnrepository.com/artifact/org.mybatis/mybatis-spring/
 
 -------
 mybatis
 -------
 Package: org.mybatis |br|
 Dependency: mybatis |br|
-*URL:* https://mvnrepository.com/artifact/org.mybatis/mybatis/3.5.13
+*URL:* https://mvnrepository.com/artifact/org.mybatis/mybatis/
 
 ---------------
 opensearch-java
 ---------------
 Package: org.opensearch.client |br|
 Dependency: opensearch-java |br|
-*URL:* https://mvnrepository.com/artifact/org.opensearch.client/opensearch-java/2.5.0
+*URL:* https://mvnrepository.com/artifact/org.opensearch.client/opensearch-java/
 
 ---------------------------------
 opensearch-rest-high-level-client
 ---------------------------------
 Package: org.opensearch.client |br|
 Dependency: opensearch-rest-high-level-client |br|
-*URL:* https://mvnrepository.com/artifact/org.opensearch.client/opensearch-rest-high-level-client/2.8.0
+*URL:* https://mvnrepository.com/artifact/org.opensearch.client/opensearch-rest-high-level-client/
 
 -----
 esapi
 -----
 Package: org.owasp.esapi |br|
 Dependency: esapi |br|
-*URL:* https://mvnrepository.com/artifact/org.owasp.esapi/esapi/2.5.2.0
+*URL:* https://mvnrepository.com/artifact/org.owasp.esapi/esapi/
 
 ------
 quartz
 ------
 Package: org.quartz-scheduler |br|
 Dependency: quartz |br|
-*URL:* https://mvnrepository.com/artifact/org.quartz-scheduler/quartz/2.3.2
+*URL:* https://mvnrepository.com/artifact/org.quartz-scheduler/quartz/
 
 --------------
 jcl-over-slf4j
 --------------
 Package: org.slf4j |br|
 Dependency: jcl-over-slf4j |br|
-*URL:* https://mvnrepository.com/artifact/org.slf4j/jcl-over-slf4j/2.0.7
+*URL:* https://mvnrepository.com/artifact/org.slf4j/jcl-over-slf4j/
 
 ---------
 slf4j-api
 ---------
 Package: org.slf4j |br|
 Dependency: slf4j-api |br|
-*URL:* https://mvnrepository.com/artifact/org.slf4j/slf4j-api/2.0.7
+*URL:* https://mvnrepository.com/artifact/org.slf4j/slf4j-api/
 
 ------------
 slf4j-simple
 ------------
 Package: org.slf4j |br|
 Dependency: slf4j-simple |br|
-*URL:* https://mvnrepository.com/artifact/org.slf4j/slf4j-simple/2.0.7
+*URL:* https://mvnrepository.com/artifact/org.slf4j/slf4j-simple/
 
 --------------------------
 spring-boot-starter-log4j2
 --------------------------
 Package: org.springframework.boot |br|
 Dependency: spring-boot-starter-log4j2 |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2/2.7.13
+*URL:* https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2/
 
 ------------------------
 spring-boot-starter-test
 ------------------------
 Package: org.springframework.boot |br|
 Dependency: spring-boot-starter-test |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test/2.7.13
+*URL:* https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test/
 
 -----------------------
 spring-boot-starter-web
 -----------------------
 Package: org.springframework.boot |br|
 Dependency: spring-boot-starter-web |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web/2.7.13
+*URL:* https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web/
 
 -------------------
 spring-data-commons
 -------------------
 Package: org.springframework.data |br|
 Dependency: spring-data-commons |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons/2.7.11
+*URL:* https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons/
 
 ----------------
 spring-ldap-core
 ----------------
 Package: org.springframework.ldap |br|
 Dependency: spring-ldap-core |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.ldap/spring-ldap-core/2.4.1
+*URL:* https://mvnrepository.com/artifact/org.springframework.ldap/spring-ldap-core/
 
 ----------------------
 spring-security-config
 ----------------------
 Package: org.springframework.security |br|
 Dependency: spring-security-config |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.security/spring-security-config/5.8.5
+*URL:* https://mvnrepository.com/artifact/org.springframework.security/spring-security-config/
 
 --------------------
 spring-security-core
 --------------------
 Package: org.springframework.security |br|
 Dependency: spring-security-core |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.security/spring-security-core/5.8.5
+*URL:* https://mvnrepository.com/artifact/org.springframework.security/spring-security-core/
 
 --------------------
 spring-security-ldap
 --------------------
 Package: org.springframework.security |br|
 Dependency: spring-security-ldap |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.security/spring-security-ldap/5.8.5
+*URL:* https://mvnrepository.com/artifact/org.springframework.security/spring-security-ldap/
 
 -------------------------
 spring-security-messaging
 -------------------------
 Package: org.springframework.security |br|
 Dependency: spring-security-messaging |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.security/spring-security-messaging/5.8.5
+*URL:* https://mvnrepository.com/artifact/org.springframework.security/spring-security-messaging/
 
 -------------------
 spring-security-web
 -------------------
 Package: org.springframework.security |br|
 Dependency: spring-security-web |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework.security/spring-security-web/5.8.5
+*URL:* https://mvnrepository.com/artifact/org.springframework.security/spring-security-web/
 
 ----------
 spring-aop
 ----------
 Package: org.springframework |br|
 Dependency: spring-aop |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-aop/5.3.28
+*URL:* https://mvnrepository.com/artifact/org.springframework/spring-aop/
 
 ------------
 spring-beans
 ------------
 Package: org.springframework |br|
 Dependency: spring-beans |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-beans/5.3.28
+*URL:* https://mvnrepository.com/artifact/org.springframework/spring-beans/
 
 ----------------------
 spring-context-support
 ----------------------
 Package: org.springframework |br|
 Dependency: spring-context-support |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-context-support/5.3.28
+*URL:* https://mvnrepository.com/artifact/org.springframework/spring-context-support/
 
 --------------
 spring-context
 --------------
 Package: org.springframework |br|
 Dependency: spring-context |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-context/5.3.28
+*URL:* https://mvnrepository.com/artifact/org.springframework/spring-context/
 
 -----------
 spring-core
 -----------
 Package: org.springframework |br|
 Dependency: spring-core |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-core/5.3.28
+*URL:* https://mvnrepository.com/artifact/org.springframework/spring-core/
 
 -----------------
 spring-expression
 -----------------
 Package: org.springframework |br|
 Dependency: spring-expression |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-expression/5.3.28
+*URL:* https://mvnrepository.com/artifact/org.springframework/spring-expression/
 
 -----------
 spring-jdbc
 -----------
 Package: org.springframework |br|
 Dependency: spring-jdbc |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-jdbc/5.3.28
+*URL:* https://mvnrepository.com/artifact/org.springframework/spring-jdbc/
 
 ----------------
 spring-messaging
 ----------------
 Package: org.springframework |br|
 Dependency: spring-messaging |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-messaging/5.3.28
+*URL:* https://mvnrepository.com/artifact/org.springframework/spring-messaging/
 
 ----------
 spring-oxm
 ----------
 Package: org.springframework |br|
 Dependency: spring-oxm |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-oxm/5.3.28
+*URL:* https://mvnrepository.com/artifact/org.springframework/spring-oxm/
 
 -----------
 spring-test
 -----------
 Package: org.springframework |br|
 Dependency: spring-test |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-test/5.3.28
+*URL:* https://mvnrepository.com/artifact/org.springframework/spring-test/
 
 ---------
 spring-tx
 ---------
 Package: org.springframework |br|
 Dependency: spring-tx |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-tx/5.3.28
+*URL:* https://mvnrepository.com/artifact/org.springframework/spring-tx/
 
 ----------
 spring-web
 ----------
 Package: org.springframework |br|
 Dependency: spring-web |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-web/5.3.28
+*URL:* https://mvnrepository.com/artifact/org.springframework/spring-web/
 
 -------------
 spring-webmvc
 -------------
 Package: org.springframework |br|
 Dependency: spring-webmvc |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-webmvc/5.3.28
+*URL:* https://mvnrepository.com/artifact/org.springframework/spring-webmvc/
 
 ----------------
 spring-websocket
 ----------------
 Package: org.springframework |br|
 Dependency: spring-websocket |br|
-*URL:* https://mvnrepository.com/artifact/org.springframework/spring-websocket/5.3.28
+*URL:* https://mvnrepository.com/artifact/org.springframework/spring-websocket/
 
 ------
 testng
 ------
 Package: org.testng |br|
 Dependency: testng |br|
-*URL:* https://mvnrepository.com/artifact/org.testng/testng/7.7.1
+*URL:* https://mvnrepository.com/artifact/org.testng/testng/
 
 ----------------
 urlrewritefilter
 ----------------
 Package: org.tuckey |br|
 Dependency: urlrewritefilter |br|
-*URL:* https://mvnrepository.com/artifact/org.tuckey/urlrewritefilter/4.0.4
+*URL:* https://mvnrepository.com/artifact/org.tuckey/urlrewritefilter/
 
 ------------
 xmlunit-core
 ------------
 Package: org.xmlunit |br|
 Dependency: xmlunit-core |br|
-*URL:* https://mvnrepository.com/artifact/org.xmlunit/xmlunit-core/2.9.1
+*URL:* https://mvnrepository.com/artifact/org.xmlunit/xmlunit-core/
 
 ---------
 snakeyaml
 ---------
 Package: org.yaml |br|
 Dependency: snakeyaml |br|
-*URL:* https://mvnrepository.com/artifact/org.yaml/snakeyaml/2.0
+*URL:* https://mvnrepository.com/artifact/org.yaml/snakeyaml/
 
 ----
 rome
 ----
 Package: rome |br|
 Dependency: rome |br|
-*URL:* https://mvnrepository.com/artifact/rome/rome/1.0
+*URL:* https://mvnrepository.com/artifact/rome/rome/
 
 ----------
 xercesImpl
 ----------
 Package: xerces |br|
 Dependency: xercesImpl |br|
-*URL:* https://mvnrepository.com/artifact/xerces/xercesImpl/2.12.2
+*URL:* https://mvnrepository.com/artifact/xerces/xercesImpl/
 
 ----------
 @babel/cli
