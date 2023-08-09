@@ -1,5 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.1.1
+:orphan:
 
 .. index:: Plugins, Create a Plugin
 

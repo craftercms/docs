@@ -1,6 +1,7 @@
 :is-up-to-date: False
 :since-version: 4.1.1
 
+:orphan:
 
 .. index:: User Interface Configuration
 

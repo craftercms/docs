@@ -1,5 +1,6 @@
 :is-up-to-date: False
 :since-version: 4.1.0
+:orphan:
 
 .. _install-craftercms:
 

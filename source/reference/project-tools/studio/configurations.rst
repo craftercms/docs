@@ -1,6 +1,7 @@
 :is-up-to-date: False
 :last-updated: 4.0.0
 
+:orphan:
 
 .. index:: Configurations
 
@@ -67,14 +68,13 @@ List of available configuration tags
 +-----------------+-------------------------------------------------------------------------------+
 || path           || Path where the system will find the specific xml file                        |
 +-----------------+-------------------------------------------------------------------------------+
-|| title          || This tag refers to file title. It will be showed in the configuration        |
-||                || dropdown at the top of the page. See #1 in the image above                   |
+|| title          || This tag refers to file title. It will be shown in the configuration         |
+||                || list on the left side of the page. See #1 in the image above                 |
 +-----------------+-------------------------------------------------------------------------------+
-|| description    || This tag refers to file description. It will be showed to explain the file   |
+|| description    || This tag refers to file description. It will be shown to explain the file    |
 ||                || functionality. See #2 in the image above                                     |
 +-----------------+-------------------------------------------------------------------------------+
 || samplePath     || Path where the system will find an example of the specific xml.              |
-||                || See #3 in the image above                                                    |
 +-----------------+-------------------------------------------------------------------------------+
 
 -----------

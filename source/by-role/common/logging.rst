@@ -1,5 +1,5 @@
-:is-up-to-date: False
-:last-updated: 4.0.3
+:is-up-to-date: True
+:last-updated: 4.1.1
 
 .. index::
    single: Logging
@@ -9,13 +9,21 @@
 =======
 Logging
 =======
+.. contents::
+   :local:
 
-Log files from several sources are created when running CrafterCMS. These log files are useful for checking the status of CrafterCMS, for example, the success of actions/requests, warnings and error messages. These logs can be used to provide more information about potential issues in the system or for debugging errors. The log files can be found in ``$CRAFTER_DIR/crafter-authoring/logs/`` or in ``$CRAFTER_DIR/crafter-delivery/logs/`` depending on which environment you are running. Effective use of these logs is an important part of maintaining your projects and are useful for keeping track of your system performance. To that end, please make sure that you rotate the logs.
+Log files from several sources are created when running CrafterCMS. These log files are useful for
+checking the status of CrafterCMS, for example, the success of actions/requests, warnings and error
+messages. These logs can be used to provide more information about potential issues in the system
+or for debugging errors. The log files can be found in ``$CRAFTER_DIR/crafter-authoring/logs/`` or
+in ``$CRAFTER_DIR/crafter-delivery/logs/`` depending on which environment you are running. Effective
+use of these logs is an important part of maintaining your projects and are useful for keeping track
+of your system performance. To that end, please make sure that you rotate the logs.
 
-CrafterCMS ships with a Tomcat Application Server, Elasticsearch, and MongoDB included in the binary archive. There are four folders used by CrafterCMS for the log files,
+CrafterCMS ships with a Tomcat Application Server, and MongoDB included in the binary archive.
+There are three folders used by CrafterCMS for the log files,
 
     - tomcat
-    - elasticsearch
     - deployer
     - mongodb
 
@@ -31,8 +39,6 @@ and locations of the log files:
 || Tomcat log file             || ``$CRAFTER_LOGS_DIR/tomcat/catalina.out``                      |
 +------------------------------+-----------------------------------------------------------------+
 || Tomcat historical log files || ``$CRAFTER_LOGS_DIR/tomcat/catalina.%Y-%M-%D.log``             |
-+------------------------------+-----------------------------------------------------------------+
-|| Elasticsearch log files     || ``$CRAFTER_LOGS_DIR/elasticsearch/``                           |
 +------------------------------+-----------------------------------------------------------------+
 || Crafter Deployer log file   || ``$CRAFTER_LOGS_DIR/deployer/crafter-deployer.out``            |
 +------------------------------+-----------------------------------------------------------------+
@@ -53,9 +59,9 @@ For the Delivery environment:
 ^^^^^^^^^^^^^^^^^^^^^
 Log File Descriptions
 ^^^^^^^^^^^^^^^^^^^^^
-
+""""""""""""""""
 Tomcat Log Files
-^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 File: catalina.out
 
@@ -73,8 +79,9 @@ To tail the catalina log file in the delivery environment:
 
     tail -f crafter-delivery/logs/tomcat/catalina.out
 
+""""""""""""""""""
 Deployer Log Files
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""""
 
 File: crafter-deployer.out
 
@@ -92,16 +99,8 @@ To tail the log file in the delivery environment:
 
     tail -f ./crafter-delivery/logs/deployer/crafter-deployer.out
 
-Elasticsearch Log Files
-^^^^^^^^^^^^^^^^^^^^^^^
 
-File: elasticsearch.log
-
-This log file contains all messages pertaining to Elasticsearch.
-
-.. raw:: html
-
-   <hr>
+|hr|
 
 ------------------------------------------
 Changing the Data and Logs Folder Location
@@ -120,16 +119,13 @@ The data folder and logs folder is by default located in **{Crafter-CMS-install-
         export CRAFTER_LOGS_DIR=${CRAFTER_LOGS_DIR:="$CRAFTER_ROOT/logs"}
         export CRAFTER_DATA_DIR=${CRAFTER_DATA_DIR:="$CRAFTER_ROOT/data"}
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 .. _override-logging-levels:
 
 -------------------------
 Overriding Logging Levels
 -------------------------
-
 There are 6 log levels defined in CrafterCMS which determine what messages will be logged. Below are the log levels available from the lowest to the highest:
 
     - all: displays all levels of logging including custom logging levels that have been defined
@@ -166,11 +162,16 @@ To temporarily set the logging levels for specific classes through Studio's Navi
 
 .. note:: Remember that changes to the logging levels through Studio only live from one restart of the application to the next.
 
+.. _permanently-set-logging-levels:
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Permanently Set Logging Levels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To permanently change the logging levels you will need to update some configuration in your installation on the server. To make changes, you're going to add/modify the logging configuration file ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension/logging.xml``.
+To permanently change the logging levels you will need to update some configuration in your
+installation on the server. To make changes, you're going to add/modify the logging configuration
+file ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/{module}/extension/logging.xml``,
+where ``{module}`` can be one of the following: studio, engine, profile or social.
 
 Step 1: Identify the package/class you want to modify logging levels for
      The first step is identifying the package or class you want to change the levels for. Specifying the logging level at the package granularity e.g.: ``org.craftercms.studio.api.v1.dal.DependencyMapper``, will modify all classes under that package. Specifying logging levels at the class granularity, e.g.: ``org.craftercms.studio.api.v1.dal.DependencyMapper.calculatePublishingDependenciesForList``, modifies only the levels for that specific class.
@@ -200,11 +201,9 @@ Step 3: Your changes to logging levels are now set
      Changes in the logging configuration file is automatically applied after a few seconds.
 
 
-To learn more about the log levels defined in Crafter, see: :ref:`studio-log-console`
+To learn more about the log levels defined in CrafterCMS, see: :ref:`studio-log-console`
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 ----------------------
 Using Custom Appenders
@@ -270,9 +269,7 @@ To add a custom appender you can follow these steps:
   Because Log4j2 only loads classes during initialization if there is a change in the custom appender JAR those will
   not be caught by the reconfiguration feature and you must restart the app context or tomcat.
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 .. _crafter-sh-script-logging:
 

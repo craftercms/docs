@@ -14,7 +14,7 @@ A redirect sends users from one URL to another URL. CrafterCMS provides a couple
 URL Rewrites and Vanity URLs
 ----------------------------
 
-CrafterCMS supports URL rewriting and vanity URLs. It uses a Java Web Filter which allows you to rewrite URLs, like Apache's mod_rewrite, for setting up rewrite rules. For more details on how to use the filter in CrafterCMS for setting up rewrite rules, please see: :ref:`configure-url-rewrite`
+CrafterCMS supports URL rewriting and vanity URLs. It uses a Java Web Filter which allows you to rewrite URLs, like Apache's mod_rewrite, for setting up rewrite rules. For more details on how to use the filter in CrafterCMS for setting up rewrite rules, please see: :ref:`engine-url-rewrite-configuration`
 
 ---------------------------------
 URL Redirect Using a Content Item

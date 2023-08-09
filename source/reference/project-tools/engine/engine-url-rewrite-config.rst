@@ -1,12 +1,13 @@
-:is-up-to-date: False
-:last-updated: 4.0.0
+:is-up-to-date: True
+:last-updated: 4.1.1
 
+:orphan:
 
 .. index:: Configurations
 
 .. highlight:: xml
 
-.. _configure-url-rewrite:
+.. _engine-url-rewrite-configuration:
 
 ================================
 Engine URL Rewrite Configuration
@@ -49,3 +50,17 @@ Here's a sample urlrewrite.xml file (click on the triangle on the left to expand
 
 |
 |
+
+After making your changes and saving the configuration, remember to publish the configuration file just saved
+(``urlrewrite.xml`` file).  To publish the configuration file, from the **Sidebar**, click on **Dashboard**.
+In the **Unpublished Work** dashlet, check the box next to the ``urlrewrite.xml`` file, and click **Publish**
+from the context nav to publish.
+
+.. image:: /_static/images/site-admin/publish-urlrewrite.webp
+    :alt: Configurations - Publish URL Rewrite Config File from Dashboard
+    :width: 85 %
+    :align: center
+
+|
+
+For more information on the UrlRewriteFilter, see http://tuckey.org/urlrewrite/

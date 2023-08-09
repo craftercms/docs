@@ -1,5 +1,6 @@
 :is-up-to-date: True
 :last-updated: 4.0.1
+:orphan:
 
 .. index:: Upgrading In-Context Editing, ICE, Upgrade to XB
 

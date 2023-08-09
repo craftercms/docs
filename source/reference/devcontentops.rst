@@ -1,6 +1,6 @@
 :is-up-to-date: False
 :last-updated: 4.0.0
-
+:orphan:
 
 .. index:: DevContentOps Toolkit, CrafterCMS Command Line Interface, crafter-cli
 

@@ -517,7 +517,7 @@ Quick create allows content authors to create content with as few clicks as poss
 
 |
 
-Let's take a look at an example on how to configure a content type to be available from the quick create button in the context nav for authors using the out of the box blueprint **Website Editorial**. In the image below, we have a project named **My Site** with the quick create button expanded. Notice that we have one content type available for quick create, the **Article** content type.
+Let's take a look at an example on how to configure a content type to be available from the quick create button in the context nav for authors using the out of the box blueprint **Website Editorial**. In the image below, we have a project named **My Editorial** with the quick create button expanded. Notice that we have one content type available for quick create, the **Article** content type.
 
 .. figure:: /_static/images/content-model/quick-create-btn-expanded.webp
     :width: 35%

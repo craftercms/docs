@@ -1,5 +1,6 @@
 :is-up-to-date: False
 :last-updated: 4.1.0
+:orphan:
 
 .. index:: Modules; Crafter Social
 

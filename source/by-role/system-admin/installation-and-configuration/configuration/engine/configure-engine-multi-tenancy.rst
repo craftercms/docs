@@ -1,10 +1,10 @@
 :is-up-to-date: False
 :last-updated: 4.0.0
-
+:orphan:
 
 .. index:: Multi-Tenancy, Configuration; Crafter Engine Multi-Tenancy
 
-.. _engine-site-configuration-multi-tenancy:
+.. _configure-multi-tenancy-in-engine:
 
 =================================
 Configure Multi-Tenancy in Engine

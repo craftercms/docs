@@ -1,5 +1,6 @@
 :is-up-to-date: False
-:last-updated: 4.1.0
+:last-updated: 4.1.1
+:orphan:
 
 .. index:: Modules; Crafter Engine
 
@@ -12,6 +13,16 @@ Crafter Engine
     :local:
     :depth: 1
 
+---------------------------
+Crafter Engine Architecture
+---------------------------
+.. TODO update the image to show the whole arch and highlight Engine
+
+.. figure:: /_static/images/architecture/crafter-engine.webp
+    :alt: Crafter Engine
+    :width: 40 %
+    :align: center
+
 Engine provides content delivery services to power any type of Web or mobile application. It consumes content published from Studio via the Deployer and provides developers with APIs to consume the content (content, search, GraphQL, etc.).
 
 .. include:: /includes/content-retrieval-apis.rst
@@ -20,94 +31,96 @@ Engine provides content delivery services to power any type of Web or mobile app
 
 |hr|
 
----------------------------
-Crafter Engine Architecture
----------------------------
-.. TODO update the image to show the whole arch and highlight Engine
+.. _engine-configuration:
 
-.. figure:: /_static/images/architecture/crafter-engine.webp
-    :alt: Crafter Engine
-    :width: 60 %
-    :align: center
-
-|hr|
-
-.. _engine-configuration-files:
-
---------------------------
-Configuring Crafter Engine
---------------------------
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Instance-level Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The main files for configuring Crafter Engine are the following:
-
-+-------------------------------+----------------------------------------------------------------+
-| File                          | Description                                                    |
-+===============================+================================================================+
-| services-context.xml          | Contains the bean definition for services layer                |
-+-------------------------------+----------------------------------------------------------------+
-| server-config.properties      | Contains server configurable parameters such as urls,          |
-|                               | paths, etc.                                                    |
-+-------------------------------+----------------------------------------------------------------+
-| rendering-context.xml         | Contains the bean definition for rendering                     |
-+-------------------------------+----------------------------------------------------------------+
-| logging.xml                   | Contains loggers, appenders, etc.                              |
-+-------------------------------+----------------------------------------------------------------+
-
-These configuration files for Crafter Engine is located under  ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension``, where ``CRAFTER_HOME`` is the install directory of your CrafterCMS authoring or delivery environment.
-
-The files can be accessed by opening the files using your favorite editor. Any changes made to any of the files listed above will require a restart of Crafter.
-
-For more information on the properties in ``server-config.properties``, see :ref:`engine-config-override`
+-------------
+Configuration
+-------------
 
 .. _engine-site-configuration-files:
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Project-level/Site-level Configuration Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The main configuration files related to Crafter Engine for a project/site are the following:
 
-The main configuration files related to Crafter Engine for a site are the following:
+.. list-table:: Engine Project Configuration Files
+    :header-rows: 1
 
-+----------------------------------------------+--------------------------------------------------+
-| Configuration File                           | Description                                      |
-+==============================================+==================================================+
-|| Engine Site Configuration                   | Contains site properties used by Crafter Engine  |
-|| ``site-config.xml``                         |                                                  |
-+----------------------------------------------+--------------------------------------------------+
-|| Engine Site Application Context             | Contains bean definitions for the site context   |
-|| ``application-context.xml``                 | associated with the webapp                       |
-+----------------------------------------------+--------------------------------------------------+
-|| Engine URL Rewrite Configuration (XML Style)| Contains URL rewrite rules                       |
-|| ``urlrewrite.xml``                          |                                                  |
-+----------------------------------------------+--------------------------------------------------+
+    * - Configuration File
+      - Description
+      - More Information
+    * - Engine Project Configuration (``config/engine/site-config.xml``)
+      - Contains project properties used by Crafter Engine
+      - - :ref:`engine-project-configuration`
+        - :ref:`engine-headers-authentication`
+        - :ref:`Configure MongoDB URI <engine-mongodb-configuration>`
+        - :ref:`engine-crafter-profile-configuration`
+    * - Engine Project Application Context (``config/engine/application-context.xml``)
+      - Contains bean definitions for the site context associated with the webapp
+      - - :ref:`engine-project-spring-configuration`
+        - :ref:`Configure a GMongo client <engine-mongodb-configuration>`
+    * - URL Rewrite Configuration (XML Style) (``config/engine/urlrewrite.xml``)
+      - Contains URL rewrite rules
+      - - :ref:`engine-url-rewrite-configuration`
+    * - Proxy Config (``config/engine/proxy-config.xml``)
+      - Configures the proxy servers for preview
+      - - :ref:`proxy-configuration`
+        - :ref:`using-the-proxy-configuration`
 
-These site configuration files are located under ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine`` where ``CRAFTER_HOME`` is the install directory of your CrafterCMS and ``SITENAME`` is the name of the site being configured.
+These project configuration files are located under ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine`` where ``CRAFTER_HOME`` is the install directory of your CrafterCMS and ``SITENAME`` is the name of the site being configured.
 
 These files can be accessed by navigating from the Studio Sidebar to |projectTools| ➜ ``Configuration``, then selecting the desired Engine configuration option from the dropdown.
 
-For more information on how to configure site settings related to Crafter Engine see :ref:`engine-configuration`
+|hr|
 
-.. include:: /includes/engine-project-configuration.rst
+.. _engine-configuration-files:
 
-.. include:: /includes/engine-project-security-guide.rst
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Instance-level Configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The main files for configuring Crafter Engine are the following:
+
+.. list-table:: Engine Instance Level Configuration Files
+    :header-rows: 1
+
+    * - Configuration File
+      - Description
+      - More Information
+    * - ``server-config.properties``
+      - Contains server configurable parameters such as urls, paths, etc.
+      - - :ref:`engine-config-override`
+        - :ref:`configure-multi-tenancy-in-engine`
+        - :ref:`engine-saml2-configuration`
+        - :ref:`engine-turn-off-show-error`
+    * - ``services-context.xml``
+      - Contains the bean definition for services layer
+      - - :ref:`Example configuration in services-context.xml <configure-multi-tenancy-in-engine>`
+    * - ``rendering-context.xml``
+      - Contains the bean definition for rendering
+      - - :ref:`Example configuration in rendering-context.xml <configure-multi-tenancy-in-engine>`
+    * - ``logging.xml``
+      - Contains loggers, appenders, etc.
+      - - :ref:`Setting log levels <permanently-set-logging-levels>`
+
+These configuration files for Crafter Engine is located under  ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/engine/extension``, where ``CRAFTER_HOME`` is the install directory of your CrafterCMS authoring or delivery environment.
+
+The files can be accessed by opening the files using your favorite editor. Any changes made to any of the files listed above will require a restart of CrafterCMS.
+
+|hr|
 
 .. _access-to-services:
 
----------------
+^^^^^^^^^^^^^^^
 Custom Services
----------------
-
+^^^^^^^^^^^^^^^
 When developing templates or scripts only a small list of services are available to use. You can expose other
 services with the following steps.
 
-^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""
 CrafterCMS Services
-^^^^^^^^^^^^^^^^^^^
-
-If your site includes a custom application context with services, you can make them available by adding them to the
+"""""""""""""""""""
+If your project/site includes a custom application context with services, you can make them available by adding them to the
 comma-separated list in the :ref:`server-config.properties <engine-configuration-files>` configuration file:
 
 .. code-block:: none
@@ -119,11 +132,11 @@ comma-separated list in the :ref:`server-config.properties <engine-configuration
 .. note:: The value from the configuration is used as a regular expression, if the value contains special
           characters you will need to escape them with backslashes ``\\``.
 
-^^^^^^^^^^^^^^^
+"""""""""""""""
 System Services
-^^^^^^^^^^^^^^^
+"""""""""""""""
 
-.. warning:: This setting will disable restrictions for all sites
+.. warning:: This setting will disable restrictions for all projects/sites
 
 |
 
@@ -136,11 +149,13 @@ the following configuration in the :ref:`server-config.properties <engine-config
   # Expose all services
   crafter.engine.disableVariableRestrictions=true
 
+|hr|
+
 .. _script-sandbox-configuration:
 
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Script Sandbox Configuration
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When a script is executed all code is validated against a blacklist of insecure expressions to prevent code that could
 compromise the system. When you try to execute a script that contains insecure expressions you will see an error
@@ -160,9 +175,9 @@ is required, it is possible to override the blacklist configuration. Configurati
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 Using a custom blacklist
-^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""
 
 Crafter Engine includes a default blacklist that you can find
 `here <https://github.com/craftercms/engine/blob/develop/src/main/resources/crafter/engine/groovy/blacklist>`_. Make sure you review the branch/tag you're using.
@@ -190,9 +205,9 @@ To use a custom blacklist follow these steps:
 Now you can execute the same script without any issues.
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 Adding dependencies with Grapes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 
 If your Groovy code need to use external dependencies you can use Grapes, however, when the Groovy sandbox is enabled
 dependencies can only be downloaded during the initial compilation and not during runtime. For this reason it is
@@ -207,13 +222,13 @@ required to add an extra parameter ``initClass=false`` in the annotations to pre
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 Disabling the Sandbox Blacklist
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 
 It is possible to disable the blacklist to allow the execution of most expressions, in
 case you need to use a considerable number of the expression included in the blacklist while keeping some basic
-restrictions. To disable the blacklist for all sites update the server configuration file
+restrictions. To disable the blacklist for all projects/sites update the server configuration file
 :ref:`server-config.properties <engine-configuration-files>`:
 
 .. code-block:: none
@@ -224,9 +239,9 @@ restrictions. To disable the blacklist for all sites update the server configura
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""
 Disabling the Groovy Sandbox
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""
 
 It is possible to completely disable the Groovy sandbox for all scripts. To disable the sandbox for all sites update the server configuration file :ref:`server-config.properties <engine-configuration-files>`:
 
@@ -238,9 +253,9 @@ It is possible to completely disable the Groovy sandbox for all scripts. To disa
 
 |
 
-^^^^^^^^^^^^^^^
+"""""""""""""""
 Important Notes
-^^^^^^^^^^^^^^^
+"""""""""""""""
 
 There are some limitations that should be noted when working with the Groovy Sandbox.
 
@@ -334,10 +349,13 @@ There are a couple of things you can do to get around the exception being thrown
 
 |hr|
 
+.. include:: /includes/engine-project-security-guide.rst
+
+|hr|
+
 --------
 REST API
 --------
-
 To view the Crafter Engine REST APIs:
 
 .. open_iframe_modal_button::
@@ -356,5 +374,4 @@ To view the Crafter Engine REST APIs:
 -----------
 Source Code
 -----------
-
 Crafter Engine's source code is managed in GitHub: https://github.com/craftercms/engine
