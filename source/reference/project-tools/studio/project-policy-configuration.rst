@@ -1,6 +1,8 @@
 :is-up-to-date: False
 :last-updated: 4.0.2
 
+:orphan:
+
 .. index:: Project Policy Configuration
 
 .. _project-policy-configuration:

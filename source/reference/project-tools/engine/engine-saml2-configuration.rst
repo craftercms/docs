@@ -1,6 +1,7 @@
 :is-up-to-date: True
 :since-version: 4.0.3
 
+:orphan:
 
 .. index:: SAML2 Authentication, Authentication, SAML2
 

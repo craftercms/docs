@@ -8,8 +8,11 @@
 =========
 Reference
 =========
-
 This section is a reference to the modules, APIs, complementary projects, and other detailed material.
+
+.. contents::
+    :local:
+    :depth: 1
 
 .. TODO List out the reference material here
 
@@ -24,6 +27,7 @@ The modules are
 
 .. list-table:: CrafterCMS Modules
     :header-rows: 1
+    :widths: 25 75
 
     * - Module
       - Description
@@ -49,6 +53,9 @@ APIs
 
 For non-content related APIs, such as user/group management, monitoring, indexing and more, please consult the module API directly.
 
+^^^^^^^^
+REST API
+^^^^^^^^
 .. TODO Finish the table below
 
 .. list-table:: CrafterCMS Modules

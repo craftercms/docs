@@ -1,6 +1,6 @@
 :is-up-to-date: False
 :last-updated: 4.1.1
-
+:orphan:
 
 .. index:: Modules; Crafter Studio
 
@@ -14,7 +14,7 @@ Crafter Studio
 
 .. figure:: /_static/images/architecture/crafter-studio.webp
     :alt: Crafter Studio
-    :width: 60 %
+    :width: 40 %
     :align: center
 
 |
@@ -44,6 +44,7 @@ files available to be viewed/modified.
 
 .. image:: /_static/images/site-admin/basic-configuration.webp
     :align: center
+    :width: 80%
     :alt: Basic Configuration
 
 |
@@ -57,8 +58,6 @@ The following items are noted in the image above:
     #. This allows the user to view the selected configuration's history
 
 Here are the settings that can be configured through Crafter Studio:
-
-.. TODO: Turn this into a table with name, description, and link to the sample configuration file or article
 
 .. TODO: Does the Proxy config below here or in Engine? (it configures engine, but configures it for Preview)
 
@@ -133,6 +132,10 @@ REST API
 
 To view the Crafter Studio REST APIs:
 
+^^^^^^^^^^^^^
+API Version 2
+^^^^^^^^^^^^^
+
 .. open_iframe_modal_button::
    :label: Open here
    :url: ../../../_static/api/studio.html
@@ -143,6 +146,17 @@ To view the Crafter Studio REST APIs:
     or <a href="../../../_static/api/studio.html" target="_blank">in a new tab</a>
 
 |
+|
+
+^^^^^^^^^^^^^
+API Version 1
+^^^^^^^^^^^^^
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   api/api-version1.rst
 
 |hr|
 

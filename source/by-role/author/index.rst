@@ -1124,7 +1124,7 @@ Let's look at some common elements of a form and examine
 some of the controls that we use to get content in to the system.
 
 .. image:: /_static/images/page/page-form.webp
-   :width: 65 %
+   :width: 55 %
    :align: center
    :alt: Content Author - Page Form
 
@@ -1212,14 +1212,14 @@ Here are some controls that authors may encounter while editing content:
   will be available which will move the group up or down in relation to the other group instances.
 
 .. image:: /_static/images/page/form-controls.webp
-   :width: 65 %
+   :width: 45 %
    :align: center
    :alt: Content Author - Form Controls
 
 |
 
 .. image:: /_static/images/page/form-controls-2.webp
-   :width: 65 %
+   :width: 45 %
    :align: center
    :alt: Content Author - Form Controls Repeating Group and RTE
 
@@ -1230,7 +1230,7 @@ Here are some controls that authors may encounter while editing content:
   (when there's no image selected yet) or **Replace** to change the selected image
 
 .. image:: /_static/images/page/form-control-image-picker.webp
-   :width: 60 %
+   :width: 50 %
    :align: center
    :alt: Content Author - Form Control Image Picker
 
@@ -1239,7 +1239,7 @@ Here are some controls that authors may encounter while editing content:
 * Video pickers - Allows the user to select a video from whatever source is allowed, such as Upload Video (video to be uploaded) or Existing Video (asset uploaded to the system). To select a video, click on **Add** (when there's no video selected yet) or **Replace** to change the selected video.
 
   .. image:: /_static/images/page/form-control-video-picker.webp
-     :width: 60 %
+     :width: 50 %
      :align: center
      :alt: Content Author - Form Control Video Picker
 
@@ -1252,17 +1252,17 @@ Here are some controls that authors may encounter while editing content:
   turned on for the page, the **Current Page** will always default to the top position.
 
   .. image:: /_static/images/page/form-control-page-order-no.webp
-     :width: 60 %
+     :width: 50 %
      :align: center
      :alt: Content Author - Form Control No Page Order
 
   .. image:: /_static/images/page/form-control-page-order-yes.webp
-     :width: 60 %
+     :width: 50 %
      :align: center
      :alt: Content Author - Form Control Yes Page Order
 
   .. image:: /_static/images/page/form-control-page-order.webp
-     :width: 50 %
+     :width: 40 %
      :align: center
      :alt: Content Author - Form Control Page Order
 
@@ -1273,12 +1273,12 @@ Here are some controls that authors may encounter while editing content:
   **Add Selection** adds the selected item to the selector list
 
   .. image:: /_static/images/form-controls/form-control-item-selector.webp
-     :width: 50 %
+     :width: 30 %
      :align: center
      :alt: Content Author - Form Control Item Selector
 
   .. image:: /_static/images/page/form-control-item-select.webp
-     :width: 70 %
+     :width: 60 %
      :align: center
      :alt: Content Author - Form Control Item Select
 

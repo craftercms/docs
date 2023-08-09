@@ -1,6 +1,7 @@
 :is-up-to-date: False
 :last-updated: 4.0.0
 
+:orphan:
 
 .. index:: Dependency Resolver Configuration, Dependency Resolver, Dependency
 

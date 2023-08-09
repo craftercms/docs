@@ -1,6 +1,8 @@
 :is-up-to-date: True
 :last-updated: 4.0.0
 
+:orphan:
+
 .. index:: Headers Based Authentication, Authentication
 
 .. _engine-headers-authentication:

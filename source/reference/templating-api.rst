@@ -308,7 +308,7 @@ templates then you should consider creating a Groovy class instead:
 
 .. note::
 
-  All beans defined in the :ref:`Engine Site Application Context <engine-site-configuration-spring-configuration>`
+  All beans defined in the :ref:`Engine Site Application Context <engine-project-spring-configuration>`
   file will be available in templates.
 
   For more information on Crafter Engine Site configuration files, see :ref:`engine-site-configuration-files`
