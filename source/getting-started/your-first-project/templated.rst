@@ -166,6 +166,15 @@ You can add more pages or modify/remove the existing pages from the blueprint, d
 
 |
 
+You can also use the address bar at the top to search for pages that you'd like to edit
+
+.. image:: /_static/images/first-project/first-project-search-for-page.webp
+   :width: 75 %
+   :align: center
+   :alt: Your First Website - Search for a Page in Address Bar
+
+|
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Updating the Contact Us Section in the Sidebar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
