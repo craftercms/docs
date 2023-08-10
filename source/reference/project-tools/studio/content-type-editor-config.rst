@@ -78,9 +78,9 @@ Content Type Specific tool configuration
 List of available content type form controls
 --------------------------------------------
 
-.. include:: /by-role/developer/common/content-modeling/form-controls/list-form-controls.rst
+.. include:: /includes/form-controls/list-form-controls.rst
 
 List of available content type data sources
 -------------------------------------------
 
-.. include:: /by-role/developer/common/content-modeling/form-sources/list-form-sources.rst
+.. include:: /includes/form-sources/list-form-sources.rst

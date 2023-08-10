@@ -579,7 +579,7 @@ Each Form Control type has it's own properties and constraints. Some constraints
 
 Here's a list of available Form Engine Controls:
 
-.. include:: form-controls/list-form-controls.rst
+.. include:: /includes/form-controls/list-form-controls.rst
 
 .. _form-control-variable-names:
 
@@ -844,7 +844,7 @@ A search dialog will open displaying in a grid view, items the user can search t
 
 Form Engine Data Sources (please use the scrollbar to see more data sources)
 
-.. include:: form-sources/list-form-sources.rst
+.. include:: /includes/form-sources/list-form-sources.rst
 
 .. _macros-for-data-sources:
 

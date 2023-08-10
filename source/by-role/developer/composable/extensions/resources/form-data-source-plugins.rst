@@ -26,7 +26,7 @@ Form Engine data sources are #5 in the image above.
 
 Out of the box data sources are:
 
-.. include:: ../../../common/content-modeling/form-sources/list-form-sources.rst
+.. include:: /includes/form-sources/list-form-sources.rst
 
 
 -------------------------------------------
