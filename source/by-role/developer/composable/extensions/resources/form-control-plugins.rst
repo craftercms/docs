@@ -27,7 +27,7 @@ Form Engine controls are #4 in the image above.
 
 Out of the box controls are:
 
-.. include:: ../../../common/content-modeling/form-controls/list-form-controls.rst
+.. include:: /includes/form-controls/list-form-controls.rst
 
 ---------------------------------------
 The anatomy of a Control Project Plugin

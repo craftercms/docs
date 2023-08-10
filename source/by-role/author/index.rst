@@ -1008,6 +1008,17 @@ Editing a Page
 ^^^^^^^^^^^^^^
 There are multiple ways to edit a page.
 
+#. In the context nav, got to the address bar and search for the page you'd like to edit by
+   entering some keywords.
+
+   .. image:: /_static/images/first-project/first-project-search-for-page.webp
+       :width: 75 %
+       :align: center
+       :alt: Content Author - Search for a Page in Address Bar
+
+   |
+
+
 #. In the Sidebar panel click on **Pages**. Navigate to the level and location within the path
    navigation tree where you want to edit the content and click on it to preview the page.
    Toggle ``Edit Mode`` to on (pencil icon at the top right corner) to turn on in-context editing and
@@ -1020,6 +1031,7 @@ There are multiple ways to edit a page.
        :align: center
        :alt: Content Author - Edit a Page via XB
 
+   |
 
 #. In the Sidebar panel click on **Pages**. Navigate to the level and location within the path
    navigation tree where you want to edit the content, then click on the three dots on the right
