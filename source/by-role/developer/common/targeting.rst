@@ -442,7 +442,7 @@ articles to the template model of the component ready for rendering.
     segment = ProfileUtils.getSegment(authToken.principal, siteItemService)
   }
 
-  def searchHelper = new SearchHelper(elasticsearch, urlTransformationService)
+  def searchHelper = new SearchHelper(searchClient, urlTransformationService)
   // articleCategories and articlePath should be provided as additionalModel of the component and
   // should be the categories of the current article
   def articles = searchHelper.searchArticles(false, articleCategories, segment, 0, 3, "-localId:\"${articlePath}\"")

@@ -1,5 +1,5 @@
 :is-up-to-date: False
-
+:last-updated: 4.1.2
 
 .. index:: Configure SSL/TLS, SSL
 
@@ -222,25 +222,27 @@ Your ``docker-compose.yml`` should look like below:
 
    version: '3.7'
     services:
-      elasticsearch:
-        image: docker.elastic.co/elasticsearch/elasticsearch:6.6.0
-        ports:
-          - 9201:9200
-        environment:
-          - discovery.type=single-node
-          - bootstrap.memory_lock=true
-          - "ES_JAVA_OPTS=-Xss1024K -Xmx1G"
-        ulimits:
-          memlock:
-            soft: -1
-            hard: -1
-        volumes:
-          - elasticsearch_data:/usr/share/elasticsearch/data
-          - elasticsearch_logs:/usr/share/elasticsearch/logs
+      search:
+      image: opensearchproject/opensearch:2.8.0
+      ports:
+        - 9201:9200
+      environment:
+        - discovery.type=single-node
+        - bootstrap.memory_lock=true
+        - plugins.security.disabled=true
+        - "ES_JAVA_OPTS=-Xss1024K -Xmx1G"
+      ulimits:
+        memlock:
+          soft: -1
+          hard: -1
+      volumes:
+        - search_data:/usr/share/opensearch/data
+        - search_logs:/usr/share/opensearch/logs
+
       tomcat:
-        image: craftercms/authoring_tomcat:4.0.3 # craftercms version flag
+        image: craftercms/authoring_tomcat:4.1.1 # craftercms version flag
         depends_on:
-          - elasticsearch
+          - search
           - deployer
         ports:
           - 8080:8080
@@ -249,16 +251,15 @@ Your ``docker-compose.yml`` should look like below:
           - crafter_data:/opt/crafter/data
           - crafter_logs:/opt/crafter/logs
           - crafter_temp:/opt/crafter/temp
-          # Elastic Search dirs needed for backup/restore
-          - elasticsearch_data:/opt/crafter/data/indexes-es
-          - elasticsearch_logs:/opt/crafter/logs/elasticsearch
+          # Search dirs needed for backup/restore
+          - search_data:/opt/crafter/data/indexes
           # SSL/TLS certificate
           - ./.keystore:/etc/ssl/certs/.keystore
           - ./server.xml:/opt/crafter/bin/apache-tomcat/conf/server.xml
         environment:
           - DEPLOYER_HOST=deployer
           - DEPLOYER_PORT=9191
-          - ES_HOST=elasticsearch
+          - ES_HOST=search
           - ES_PORT=9200
 
 |

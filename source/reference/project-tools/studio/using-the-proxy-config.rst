@@ -15,7 +15,7 @@
 Using the Proxy Configuration
 =============================
 
-CrafterCMS supports a proxy system to proxy GraphQL, Engine, NodeJS or other application delivery systems. Whenever Crafter Engine receives a request, it is matched against the patterns of each server and the first match would then get the request sent to the server with the matching pattern. In some systems, multiple servers are used for Elasticsearch, Studio, etc. Using the proxy helps simplify the system.
+CrafterCMS supports a proxy system to proxy GraphQL, Engine, NodeJS or other application delivery systems. Whenever Crafter Engine receives a request, it is matched against the patterns of each server and the first match would then get the request sent to the server with the matching pattern. In some systems, multiple servers are used for search, Studio, etc. Using the proxy helps simplify the system.
 
 One of the benefits of using the proxy in CrafterCMS is that it can connect to any remote server as the preview server, which allows for easier authoring of projects built with other programming languages and technology. For example, you would like to work on a React application within Studio. What is normally included inside Studio is the build output of the React application, so that a user making edits to the React code would need to build the React code then copy it into Studio in order to preview the changes. This becomes cumbersome when developing, as many edits are normally done before reaching the final version of the React app. Using the proxy, the user can preview the React app in Studio and is able to work on both the React app and CrafterCMS.
 

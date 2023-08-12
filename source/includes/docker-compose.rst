@@ -33,22 +33,20 @@ To run CrafterCMS in a set of Docker containers using Docker Compose, make sure 
 
           ➜  docker-compose git:(master) cd authoring
           ➜  authoring git:(master) docker-compose up
-          Starting authoring_elasticsearch_1 ... done
-          Starting authoring_deployer_1      ... done
-          Starting authoring_tomcat_1        ... done
-          Attaching to authoring_elasticsearch_1, authoring_deployer_1, authoring_tomcat_1
-          elasticsearch_1  | OpenJDK 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
-          tomcat_1         | 02-Jun-2023 14:25:53.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/8.5.54
-          tomcat_1         | 02-Jun-2023 14:25:53.136 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Apr 3 2020 14:06:10 UTC
-          tomcat_1         | 02-Jun-2023 14:25:53.138 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 8.5.54.0
-          tomcat_1         | 02-Jun-2023 14:25:53.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
-          tomcat_1         | 02-Jun-2023 14:25:53.140 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.19.76-linuxkit
-          tomcat_1         | 02-Jun-2023 14:25:53.140 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
-          tomcat_1         | 02-Jun-2023 14:25:53.140 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/local/openjdk-8/jre
+          [+] Running 9/9
+           ✔ Network authoring_default               Created                                                                                                                          0.1s
+           ✔ Volume "crafter_authoring_temp"         Created                                                                                                                          0.0s
+           ✔ Volume "crafter_authoring_data_search"  Created                                                                                                                          0.0s
+           ✔ Volume "crafter_authoring_logs_search"  Created                                                                                                                          0.0s
+           ✔ Volume "crafter_authoring_data"         Created                                                                                                                          0.0s
+           ✔ Volume "crafter_authoring_logs"         Created                                                                                                                          0.0s
+           ✔ Container authoring-search-1            Created                                                                                                                          0.1s
+           ✔ Container authoring-deployer-1          Created                                                                                                                          0.1s
+           ✔ Container authoring-tomcat-1            Created                                                                                                                          0.1s
+          Attaching to authoring-deployer-1, authoring-search-1, authoring-tomcat-1
           ...
-          tomcat_1         | 02-Jun-2023 14:26:47.429 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
-          tomcat_1         | 02-Jun-2023 14:26:47.448 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 54120 ms
-
+          authoring-tomcat-1    | 11-Aug-2023 11:28:25.535 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+          authoring-tomcat-1    | 11-Aug-2023 11:28:25.579 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [68028] milliseconds
 
 You may now login to Crafter Studio at http://localhost:8080/studio. The default username is ``admin`` and the default password is ``admin``.
 
