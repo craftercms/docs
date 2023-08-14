@@ -81,8 +81,7 @@ CrafterCMS is a flexible platform, and features:
   * Groovy/Java if backed by Crafter Engine
   * Any language if backed by an external service
 * HTML5 sites
-
-  * Mobile applications and other headless use-cases
+* Mobile applications and other headless use-cases
 
 .. _deployment-architecture:
 
