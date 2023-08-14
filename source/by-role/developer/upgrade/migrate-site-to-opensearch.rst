@@ -1,5 +1,6 @@
-:is-up-to-date: True
-:last-updated: 4.1.0
+:is-up-to-date: False
+:last-updated: 4.1.1
+:orphan:
 
 .. index:: Solr
 
@@ -140,7 +141,7 @@ Using the OpenSearch Client the code will look like this:
   :linenos:
   :caption: OpenSearch Client
 
-  import co.elastic.clients.OpenSearch._types.SortOrder
+  import org.opensearch.client.opensearch._types.SortOrder
 
   def q = "${userTerm}~1 OR *${userTerm}*"
 
@@ -170,15 +171,15 @@ Using the OpenSearch Client the code will look like this:
   def documents = result.hits().hits()
 
 For additional information you can read the official
-`Java Client documentation <https://www.elastic.co/guide/en/OpenSearch/client/java-api-client/current/index.html>`_
-and `DSL documentation <https://www.elastic.co/guide/en/OpenSearch/reference/current/query-dsl.html>`_.
+`Java Client documentation <https://opensearch.org/docs/latest/clients/java/>`_
+and `DSL documentation <https://opensearch.org/docs/latest/query-dsl/index/>`_.
 
 Notice in the given example that the query string didn't change, you will need to update only the code
 that builds and executes the query. However OpenSearch provides new query types and features that you
 can use directly from your Groovy scripts.
 
 If any of your queries includes date math for range queries, you will also need to update them to use the OpenSearch
-date math syntax described `here <https://www.elastic.co/guide/en/OpenSearch/reference/current/common-options.html#date-math>`_.
+date math syntax described `here <https://opensearch.org/docs/latest/field-types/supported-field-types/date/>`_.
 
 **Example**
 
@@ -196,7 +197,7 @@ date math syntax described `here <https://www.elastic.co/guide/en/OpenSearch/ref
 
 In Solr there were two special fields ``_text_`` and ``_text_main_``, during indexing the values of other fields were
 copied to provide a simple way to create generic queries in all relevant text. OpenSearch provides a different
-feature that replaces those fields `Multi-match query <https://www.elastic.co/guide/en/OpenSearch/reference/current/query-dsl-multi-match-query.html>`_
+feature that replaces those fields `Multi-match query <https://opensearch.org/docs/latest/query-dsl/full-text/index/#multi-match>`_
 
 **Example**
 
@@ -242,25 +243,3 @@ Edit your ``craftercms-plugin.yaml``, and remove the following property:
    searchEngine: CrafterSearch
 
 And make sure to commit your changes to ``craftercms-plugin.yaml``.
-
-.. _migrating-a-site-from-previous-OpenSearch-client:
-
-=======================================================
-Migrating a site from the previous OpenSearch client
-=======================================================
-.. version_tag::
-   :label: Since
-   :version: 4.0.0
-
-CrafterCMS 4.0 provides two different OpenSearch clients, this is because OpenSearch has released a new Java API
-Client to replace the Rest High Level Client and during the transition period both will work. So if you are upgrading
-from CrafterCMS 3.1 and your site already uses OpenSearch it will continue to work with some small changes, but it
-is highly recommended to migrate to the new client to avoid any issues in future releases when the Rest High Level
-Client is completely removed.
-
-Migrating to the new OpenSearch client should not require too much effort:
-
-- If the existing code uses the builder classes you will need to replace them with the equivalent in the new client
-- If the existing code uses a map DSL it only needs to be replaced with the new lambda structure
-
-For additional information about the new client you can read the official `documentation <https://www.elastic.co/guide/en/OpenSearch/client/java-api-client/current/api-conventions.html>`_

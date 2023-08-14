@@ -14,7 +14,7 @@ Upgrade
 
 Upgrading to CrafterCMS 4.1 from 4.0 is a simple process. The upgrade script will handle most of the changes for you.
 
-Upgrading to CrafterCMS 4.1 from 3.1 or 3.0 is a bit more involved. Please follow the steps below to upgrade your project/site.
+Upgrading to CrafterCMS 4.1 from 3.1 is a bit more involved. Please follow the steps below to upgrade your project/site.
 
 .. _upgrade-search:
 
