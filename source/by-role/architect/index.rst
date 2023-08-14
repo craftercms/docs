@@ -75,12 +75,12 @@ CrafterCMS is a flexible platform, and features:
 * Extend GraphQL with your own schema and pull data from any external source to augment what's in the CMS
 * Quickly build REST end-points with small snippets of Groovy
 * Modern SPAs (Single Page Applications) support, like React, Angular, Vue
-* Support for in-context editing via content edit pencils, drag and drop component management, etc.
+* Support for in-context editing via content edit pencils, drag-and-drop component management, etc.
 * Server-side business logic developed in
-    * Groovy/Java if backed by Crafter Engine
-    * Any language if backed by an external service
+  * Groovy/Java if backed by Crafter Engine
+  * Any language if backed by an external service
 * HTML5 sites
-    * Mobile applications and other headless use-cases
+  * Mobile applications and other headless use-cases
 
 .. _deployment-architecture:
 
