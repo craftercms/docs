@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.3
+:last-updated: 4.1.2
 
 
 .. index:: Simple Delivery Kubernetes Deployment, Example Kubernetes deployment of simple Delivery
@@ -56,12 +56,12 @@ Create the ``craftercms`` namespace if it doesn't exist yet.
       ➜  kubectl create namespace craftercms
       namespace/craftercms created
 
-If using ``minikube``, pre-pull the Authoring and Elasticsearch images to avoid ``context deadline exceeded`` errors (change ``CRAFTERCMS_VERSION`` for the actual Crafter version, e.g. 4.0.2).
+If using ``minikube``, pre-pull the Authoring and OpenSearch images to avoid ``context deadline exceeded`` errors (change ``CRAFTERCMS_VERSION`` for the actual Crafter version, e.g. 4.1.1).
 
    .. code-block:: bash
 
       ➜  minikube image pull craftercms/delivery_tomcat:4.0.2
-      ➜  minikube image pull docker.elastic.co/elasticsearch/elasticsearch:7.17.1
+      ➜  minikube image pull opensearchproject/opensearch:2.8.0
 
 Go to ``kubernetes-deployments/delivery/simple`` then run ``kubectl apply -k .``
 

@@ -1,7 +1,7 @@
 :is-up-to-date: True
 :last-updated: 4.1.0
 
-.. index:: Search, Query, OpenSearch, Elasticsearch, GraphQL
+.. index:: Search, Query, OpenSearch, GraphQL
 
 .. _content-search:
 

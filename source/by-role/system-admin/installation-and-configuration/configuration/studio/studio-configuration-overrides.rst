@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.1.0
+:last-updated: 4.1.2
 
 
 :orphan:
@@ -280,12 +280,12 @@ The following section of Studio's configuration overrides allows you to setup th
     ################################################################
     ##                           Search                           ##
     ################################################################
-    # URLs to connect to Elasticsearch
-    studio.search.urls: ${env:ES_URL}
-    # The username for Elasticsearch
-    studio.search.username: ${env:ES_USERNAME}
-    # The password for Elasticsearch
-    studio.search.password: ${env:ES_PASSWORD}
+    # URLs to connect to Search
+    studio.search.urls: ${env:SEARCH_URL}
+    # The username for Search
+    studio.search.username: ${env:SEARCH_USERNAME}
+    # The password for Search
+    studio.search.password: ${env:SEARCH_PASSWORD}
     # The connection timeout in milliseconds, if set to -1 the default will be used
     studio.search.timeout.connect: -1
     # The socket timeout in milliseconds, if set to -1 the default will be used
@@ -327,8 +327,8 @@ The following section of Studio's configuration overrides allows you to setup se
     # The following parameters will be sent automatically, and you don't need to specify them: env, site_name, replace,
     # disable_deploy_cron, local_repo_path, repo_url, use_crafter_search
     # studio.serverless.delivery.deployer.target.template.params:
-    #   # The delivery Elasticsearch endpoint (optional is authoring is using the same one, specified in the ES_URL env variable)
-    #   elastic_search_url:
+    #   # The delivery search endpoint (optional is authoring is using the same one, specified in the SEARCH_URL env variable)
+    #   search_url:
     #   aws:
     #     # AWS region (optional if specified through default AWS chain)
     #     region: us-east-1

@@ -1,15 +1,15 @@
 +------------------------+---------------------------------------+--------------------------------+
 | Name                   | Description                           | Type                           |
 +========================+=======================================+================================+
-|| siteItemService       || Allows access to the site content.  || |SiteItemService|              |
+|| siteItemService       || Allows access to the site content.   || |SiteItemService|             |
 +------------------------+---------------------------------------+--------------------------------+
 || |UrlTransform|        || Service for transforming URLs, like  || |UrlTransformationService|    |
 ||                       || transforming the content URL of a    ||                               |
-||                       || page to the web or render URL.      ||                                |
+||                       || page to the web or render URL.       ||                               |
 +------------------------+---------------------------------------+--------------------------------+
-|| elasticsearch         || Service that can be used to execute  || |ElasticsearchWrapper|        |
+|| search                || Service that can be used to execute  || |OpenSearchWrapper|           |
 ||                       || search queries against               ||                               |
-||                       || Elasticsearch.                      ||                                |
+||                       || OpenSearch.                          ||                               |
 +------------------------+---------------------------------------+--------------------------------+
 || applicationContext    || Provides access to the Crafter       || |ApplicationContextAccessor|  |
 ||                       || Engine's Spring beans and site beans ||                               |
@@ -68,7 +68,7 @@
 .. |PropertySources| replace:: PropertySourcesPropertyResolver
 .. _PropertySources: https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/PropertySourcesPropertyResolver.html
 .. |UrlTransformationService| replace:: :javadoc_base_url:`UrlTransformationService <engine/org/craftercms/engine/service/UrlTransformationService.html>`
-.. |ElasticsearchWrapper| replace:: :javadoc_base_url:`ElasticsearchWrapper <search/org/craftercms/search/elasticsearch/ElasticsearchWrapper.html>`
+.. |OpenSearchWrapper| replace:: :javadoc_base_url:`OpenSearchWrapper <search/org/craftercms/search/opensearch/OpenSearchWrapper.html>`
 .. |ApplicationContextAccessor| replace:: :javadoc_base_url:`ApplicationContextAccessor <engine/org/craftercms/engine/util/spring/ApplicationContextAccessor.html>`
 .. |BreadcrumbBuilder| replace:: :javadoc_base_url:`BreadcrumbBuilder <engine/org/craftercms/engine/navigation/NavBreadcrumbBuilder.html>`
 .. |NavTreeBuilder| replace:: :javadoc_base_url:`NavTreeBuilder <engine/org/craftercms/engine/navigation/NavTreeBuilder.html>`

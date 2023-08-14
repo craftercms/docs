@@ -73,12 +73,12 @@ Create the ``craftercms`` namespace if it doesn't exist yet.
       ➜  kubectl create namespace craftercms
       namespace/craftercms created
 
-If using ``minikube``, pre-pull the Authoring and Elasticsearch images to avoid ``context deadline exceeded`` errors (change ``CRAFTERCMS_VERSION`` for the actual CrafterCMS version, e.g. 4.0.2).
+If using ``minikube``, pre-pull the Authoring and OpenSearch images to avoid ``context deadline exceeded`` errors (change ``CRAFTERCMS_VERSION`` for the actual CrafterCMS version, e.g. 4.1.1).
 
    .. code-block:: bash
 
-      ➜  minikube image pull craftercms/authoring_tomcat:4.0.2
-      ➜  minikube image pull docker.elastic.co/elasticsearch/elasticsearch:7.17.1
+      ➜  minikube image pull craftercms/authoring_tomcat:4.1.1
+      ➜  minikube image pull opensearchproject/opensearch:2.8.0
 
 Go to ``kubernetes-deployments/authoring/simple`` then run ``kubectl apply -k .``
 

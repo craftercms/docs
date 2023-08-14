@@ -223,7 +223,7 @@ Content Expiration
 | Content that Contains an Old Trademark         | | ``*:"UNWANTED TRADEMARK"``              |
 +------------------------------------------------+-------------------------------------------+
 
-For more information on supported time units that you can use for your query, see https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#date-math
+For more information on supported time units that you can use for your query, see https://opensearch.org/docs/latest/field-types/supported-field-types/date/
 
 --------------------------------------------------------------------------------------------
 Example Content Monitoring Setup for a Project Created Using the Website Editorial Blueprint
