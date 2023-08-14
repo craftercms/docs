@@ -77,9 +77,11 @@ CrafterCMS is a flexible platform, and features:
 * Modern SPAs (Single Page Applications) support, like React, Angular, Vue
 * Support for in-context editing via content edit pencils, drag-and-drop component management, etc.
 * Server-side business logic developed in
+
   * Groovy/Java if backed by Crafter Engine
   * Any language if backed by an external service
 * HTML5 sites
+
   * Mobile applications and other headless use-cases
 
 .. _deployment-architecture:
