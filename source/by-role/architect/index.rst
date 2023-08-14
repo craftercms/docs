@@ -69,23 +69,17 @@ Application Development
 
 |
 
-CrafterCMS is a very flexible platform, and features:
+CrafterCMS is a flexible platform, and features:
 
 * Content access via API (extensible GraphQL / REST)
-
-  * Extend GraphQL with your own schema and pull data from any external source to augment what's in the CMS
-  * Quickly build REST end-points with small snippets of Groovy
-
-  * Modern SPAs (Single Page Applications) support, like React, Angular, Vue
-
-    * Support for in-context editing via content edit pencils, drag and drop component management, etc.
-
-  * Server-side business logic developed in
-
+* Extend GraphQL with your own schema and pull data from any external source to augment what's in the CMS
+* Quickly build REST end-points with small snippets of Groovy
+* Modern SPAs (Single Page Applications) support, like React, Angular, Vue
+* Support for in-context editing via content edit pencils, drag and drop component management, etc.
+* Server-side business logic developed in
     * Groovy/Java if backed by Crafter Engine
     * Any language if backed by an external service
-
-  * HTML5 sites
+* HTML5 sites
     * Mobile applications and other headless use-cases
 
 .. _deployment-architecture:
@@ -96,10 +90,11 @@ Deployment Architecture
 
 CrafterCMS supports various deployments (both SaaS solutions and PaaS and self-hosted solutions).
 
-^^^^^^^^^^^^^^^^^^^^^^^^
-CrafterCMS Crafter Cloud
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+Crafter Cloud
+^^^^^^^^^^^^^
 Crafter Cloud provides a private SaaS offering of CrafterCMS. CrafterCloud is:
+
 * Fully elastically scalable (based on Kubernetes)
 * High-availability with disaster recovery
 * Fronted by a global CDN
@@ -113,7 +108,7 @@ On-Prem or IaaS/Cloud Providers
 .. Fix to indicate you can run Kuber or traditional
 
 If you're not quite ready for serverless deployment, CrafterCMS deploys quite nicely in a traditional
-server/scale-group architecture. Here is a typical deployment at a high-level:
+server/scale-group architecture. Here is a typical deployment at a high level:
 
 .. image:: /_static/images/architecture/typical-deployment.webp
    :width: 100%
@@ -128,38 +123,39 @@ CrafterCMS is a composable platform. This means that it is designed to allow you
 
 Additionally, CrafterCMS provides the substrate for said composition, whereby the composed components can leverage the core platform services, inter-communicate, and share data and services.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Composing Digital Experiences
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. TODO
+ 
+..    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Composing Digital Experiences
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-"""""""""""""""""""""
-Authoring experiences
-"""""""""""""""""""""
+    """""""""""""""""""""
+    Authoring experiences
+    """""""""""""""""""""
 
-"""""""""""""""""""""""""""""
-Delivery/End User experiences
-"""""""""""""""""""""""""""""
+    """""""""""""""""""""""""""""
+    Delivery/End User experiences
+    """""""""""""""""""""""""""""
 
-^^^^^^^^^^^^^^^
-Composing a DXP
-^^^^^^^^^^^^^^^
+    ^^^^^^^^^^^^^^^
+    Composing a DXP
+    ^^^^^^^^^^^^^^^
 
-""""""""""""""""""
-Experience Builder
-""""""""""""""""""
+    """"""""""""""""""
+    Experience Builder
+    """"""""""""""""""
 
+    """"""""""""""""""""""""""""""""""""""""
+    Integrating with Other Headless Services
+    """"""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""
-Integrating with Other Headless Services
-""""""""""""""""""""""""""""""""""""""""
+    ^^^^^^^^^^^^^^
+    DX Composition
+    ^^^^^^^^^^^^^^
 
-^^^^^^^^^^^^^^
-DX Composition
-^^^^^^^^^^^^^^
-
-"""""""""""""""""
-How to Build PBCs
-"""""""""""""""""
+    """""""""""""""""
+    How to Build PBCs
+    """""""""""""""""
 
 .. Define PBC
 .. our integration/orchestration/Discovery layers, etc.
@@ -171,16 +167,16 @@ Headless
 --------
 
 CrafterCMS is an API-first CMS, and therefore it's natively headless. This is in stark contrast to traditional CMSs
-that became headless with the addition of an API that tries to translate page-oriented data-structures into something
+that became headless with the addition of an API that tries to translate page-oriented data structures into something
 more general.
 
-Fundamentally, CrafterCMS simply retrieves content that the developer models in the modeling tool, applies actions/rules
-like inheritance, security, versioning, etc. and returns the transformed content to the caller as JSON.
+Fundamentally, CrafterCMS simply retrieves content that the developer models in the modeling tool and applies actions/rules
+like inheritance, security, versioning, etc., and returns the transformed content to the caller as JSON.
 
 This means you can model any type of content, provide your content authors the ability to visually author content items
-and then retrieve that content for your SPA, iOS, Android or other applications.
+and then retrieve that content for your SPA, iOS, Android, or other applications.
 
-Modeling, managing, and retrieving content may be enough for many simple use-cases, there are other more advanced
+Modeling, managing, and retrieving content may be enough for many simple use cases, there are other more advanced
 considerations that CrafterCMS supports. Considerations include:
 
 * In-context and in-place editing of headless content (Headless+)
@@ -207,7 +203,7 @@ Security
 ^^^^^^^^
 
 Securing content access and providing role-based access to different content items or hierarchies is critical to any
-enterprise-grade content-rich application. It's critical that the security be implemented at the content API-level.
+enterprise-grade content-rich application. It's critical that the security be implemented at the content API level.
 CrafterCMS provides enterprise-grade authentication and authorization mechanics to help achieve this.
 More on this :ref:`here <architect-security>`
 
@@ -215,7 +211,7 @@ More on this :ref:`here <architect-security>`
 Authentication
 """"""""""""""
 
-CrafterCMS support authentication integration with:
+CrafterCMS supports authentication integration with:
 
 * SAML2 providers (see :ref:`here <engine-saml2-configuration>` and :ref:`here <crafter-studio-configure-studio-saml>`)
 * :ref:`LDAP <crafter-studio-configure-ldap>` , AD, ADFS
@@ -226,8 +222,8 @@ CrafterCMS support authentication integration with:
 Authorization
 """""""""""""
 
-CrafterCMS provides role-based access to all content items, per item or per section/hierarchy/URL-space. This is across
-all APIs, and it includes search.
+CrafterCMS provides role-based access to all content items, per item, or per section/hierarchy/URL space, across
+all APIs and it includes search.
 
 ^^^^^^^^^^^^^^^^^^
 In-Context Editing
@@ -245,23 +241,23 @@ Templated
 ---------
 
 While CrafterCMS is an API-first CMS, it has first-class support for templated (page-based) sites. CrafterCMS embeds
-FreeMarker to provide a high-performance, clean, flexible, and tolerant of syntax variance, templating engine
+FreeMarker provides a high-performance, clean, flexible, and tolerant of syntax variance, templating engine
 to render HTML directly from CrafterCMS.
 
 CrafterCMS allows developers to model the content as general reusable items, and fold those into pages. Pages aggregate
 content from components as needed and are associated with a FreeMarker template that can render the final page.
 The choice of HTML tools and frameworks doesn't matter to CrafterCMS. Developers can use whatever front-end technology
-they want. For development React, Vue, Angular, Flutter or similar SPA, please see :ref:`here <architect-headless>`
+they want. For development React, Vue, Angular, Flutter, or similar SPA, please see ref:`here <architect-headless>`
 
 The use of templated sites as opposed to Headless sites doesn't detract from CrafterCMS' full support of building
 custom APIs. CrafterCMS allows developers to quickly drop a Groovy file that becomes a server-side API
 and/or REST endpoint. The project being developed can then invoke this API call from FreeMarker or as a REST API call.
 
 Given the freedom available to developers in creating their HTML, CSS, and JS from scratch, concerns like Responsive
-Design are a non-issue for CrafterCMS. Whatever developers can build in HTML CrafterCMS can happily render, and can
+Design is a non-issue for CrafterCMS. Whatever developers can build in HTML CrafterCMS can happily render, and can
 augment with in-context and in-place editing for content authors.
 
-Features like workflow, review and approval processes, staging and final go-live are of course all built-in.
+Features like workflow, review and approval processes, staging, and final go-live are of course all built-in.
 
 Finally, given that CrafterCMS is Git-based, full DevContentOps support is native and fully supports templated sites.
 
@@ -287,7 +283,7 @@ Security
 ^^^^^^^^
 
 Securing content access and providing role-based access to different content items or hierarchies is critical to any
-enterprise-grade content-rich application. It's critical that the security be implemented at the content API-level.
+enterprise-grade content-rich application. It's critical that the security be implemented at the content API level.
 CrafterCMS provides enterprise-grade authentication and authorization mechanics to help achieve this.
 More on this :ref:`here <architect-security>`
 
@@ -295,7 +291,7 @@ More on this :ref:`here <architect-security>`
 Authentication
 """"""""""""""
 
-CrafterCMS support authentication integration with:
+CrafterCMS supports authentication integration with:
 
 * SAML2 providers (see :ref:`here <engine-saml2-configuration>` and :ref:`here <crafter-studio-configure-studio-saml>`)
 * :ref:`LDAP <crafter-studio-configure-ldap>` , AD, ADFS
@@ -306,8 +302,8 @@ CrafterCMS support authentication integration with:
 Authorization
 """""""""""""
 
-CrafterCMS provides role-based access to all content items, per item or per section/hierarchy/URL-space. This is across
-all APIs, and it includes search.
+CrafterCMS provides role-based access to all content items, per item, or per section/hierarchy/URL space, across
+all APIs and it includes search.
 
 ^^^^^^^^^^^^^^^^^^
 In-Context Editing
@@ -322,24 +318,24 @@ More information on Experience Builder :ref:`here <experience-builder>` and on t
 Availability
 ------------
 
-CrafterCMS supports geo-distributed deployments with multiple data-centers per geography making the uptime of
-the delivery tier near 100%. Traffic to the content delivery system flows to the nearest healthy data-center providing
+CrafterCMS supports geo-distributed deployments with multiple data centers per geography making the uptime of
+the delivery tier near 100%. Traffic to the content delivery system flows to the nearest healthy data center providing
 speed and availability.
 
 Availability can be divided into High-Availability (HA) and Disaster Recovery (DR). Since CrafterCMS is two
-separate subsystems, delivery and authoring, then will describe HA and DR in the context of content delivery
+separate subsystems, delivery, and authoring, then will describe HA and DR in the context of content delivery
 and then in the context of content authoring.
 
 ^^^^^^^^
 Delivery
 ^^^^^^^^
 
-Content Delivery in CrafterCMS is based on the principals of Shared Nothing Architecture. This means delivery nodes
-don't intercommunicate, are not backed by a single database nor file system. As such, adding new nodes increases
+Content Delivery in CrafterCMS is based on the principles of Shared Nothing Architecture. This means delivery nodes
+don't intercommunicate and are not backed by a single database or file system. As such, adding new nodes increases
 reliability since the failure of one node doesn't result in a failure in content delivery.
 
 Ideally, an installation would follow an N+1 delivery allocation, where N is the number of nodes required to handle
-the delivery load and the extra node is in case of a single node failure.
+the delivery load and the extra node in case of a single node failure.
 
 Distributing nodes across geographies (multi-region) means automatic Disaster Recovery is built-in. A failure of
 a data center or several data centers in a region will not bring down content delivery.
@@ -370,21 +366,21 @@ Fundamental to scalability is:
 - Minimizing bottlenecks
 - Maximizing concurrency
 
-With CrafterCMS, scalability is a fundamental part of the architecture. CrafterCMS has a several core principals when
+With CrafterCMS, scalability is a fundamental part of the architecture. CrafterCMS has several core principles when
 it comes to content delivery:
 - Shared-nothing architecture
 - Stateless and Cloud Native
 - Minimal locking
 
-Let's elaborate the above.
+Let's elaborate on the above.
 
-CrafterCMS delivery nodes share nothing. They don't share a database, a file system, memory, nor keep in sync with
+CrafterCMS delivery nodes share nothing. They don't share a database, a file system, or memory, nor keep in sync with
 one another. They're completely independent. Therefore, these nodes can be added arbitrarily and can be in different
-datacenters and in different geographies regardless of the latency between the nodes since they don't communicate
+data centers and in different geographies regardless of the latency between the nodes since they don't communicate
 with one another.
 
-CrafterCMS delivery nodes are also stateless and cloud native. CrafterCMS delivery nodes run as a stateless set in
-Kubernetes and can pull content artifacts from remote storage for dynamic delivery.
+CrafterCMS delivery nodes are also stateless and cloud-native. CrafterCMS delivery nodes run as a stateless set in
+Kubernetes can pull content artifacts from remote storage for dynamic delivery.
 
 Finally, CrafterCMS delivery nodes try to avoid locks to maximize thread throughput. This makes the system scale both,
 vertically and horizontally very well.
@@ -395,14 +391,14 @@ Planet-scale
 
 For global deployments where your users are spread across the planet, it's best to deploy CrafterCMS services
 close to the users where possible. This guarantees fast, yet dynamic, responses to the users (CDNs are great,
-but they won't help you with dynamic nor personalized responses).
+but they won't help you with dynamic or personalized responses).
 
 Because CrafterCMS is made up of two main systems: authoring (content authors work here), delivery (content consumers
 consume from this tier), you can deploy different services in different regions depending on where the users are.
 
 The authoring clusters are typically deployed closest to the content authors, whereas delivery clusters are spread
-across geographies where you have end-users. Delivery nodes can pull content from an arbitrary number of authoring
-nodes, and are typically deployed in geographies where your end-users are.
+across geographies where you have end users. Delivery nodes can pull content from an arbitrary number of authoring
+nodes and are typically deployed in geographies where your end users are.
 
 .. image:: /_static/images/architecture/global-delivery.webp
     :width: 100%
@@ -415,7 +411,7 @@ nodes, and are typically deployed in geographies where your end-users are.
 Security
 --------
 
-Security of CrafterCMS is divided into core product security, marketplace security, and Crafter Cloud (SaaS) security.
+The security of CrafterCMS is divided into core product security, marketplace security, and Crafter Cloud (SaaS) security.
 
 ^^^^^^^^^^^^
 Core Product
