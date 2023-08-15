@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:since-version: 4.1.1
+:last-updated: 4.1.2
 
 :orphan:
 
@@ -355,12 +355,59 @@ Here's the Sidebar with the colors and border added:
 .. image:: /_static/images/content-author/preview-page-components-space.webp
    :width: 5 %
 
-
 .. image:: /_static/images/site-admin/ui-widget-template-color.webp
    :alt: Configurations - User Interface Configuration Widget Default Colors
    :width: 25 %
 
 |
+
+|hr|
+
+--------------------------------
+PathNavigatorTree Sidebar Widget
+--------------------------------
+The ``PathNavigatorTree`` sidebar widget allows the display of trees with the ability to expand/collapse containers. It shows elements (children) in a level and allows the container children to be further expanded without navigating to the child, allowing many children to be open at the same time. Also, each container child allows filtering/searching via keywords allowing users  to find items faster.
+
+^^^^^
+Limit
+^^^^^
+The number of children displayed at a time when expanding a container can be limited via the ``limit`` property like below:
+
+.. code-block:: xml
+    :caption: *PathNavigatorTree sidebar widget configuration*
+    :emphasize-lines: 8
+
+    <widget id="craftercms.components.PathNavigatorTree">
+      <configuration>
+        <id>StaticAssets</id>
+        <label>Static Assets</label>
+        <icon id="@mui/icons-material/ImageOutlined"/>
+        <rootPath>/static-assets</rootPath>
+        <locale>en</locale>
+        <limit>5</limit>
+      </configuration>
+    </widget>
+
+In the example above, the ``Static Assets`` path navigator tree limits the children displayed to 5 items when opening
+a container like in the image  on the left below:
+
+.. image:: /_static/images/site-admin/ui-widget-pathnavtree-limit.webp
+   :alt: Configurations - User Interface Configuration PathNavigatorTree Widget Limit
+   :width: 25 %
+
+.. image:: /_static/images/site-admin/ui-widget-image-spacer.webp
+   :width: 5 %
+
+.. image:: /_static/images/site-admin/ui-widget-pathnavtree-limit-more.webp
+   :alt: Configurations - User Interface Configuration PathNavigatorTree Widget Limit Expanded
+   :width: 25 %
+
+
+Notice also that when the user clicks on ``10 more items`` displayed on the image on the left, an additional 5 more
+items will be displayed as shown on the image on the right.
+
+Remember to do a refresh of your browser after making the limit changes and saving your configuration in order to see
+the changes you've made in action.
 
 |hr|
 
