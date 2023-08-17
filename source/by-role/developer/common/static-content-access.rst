@@ -27,6 +27,8 @@ Internally Managed Static Assets
 
 Static assets can be internal to the project (site) and managed by Studio. While Git is wonderful for managing and tracking textual content, it's not ideal for binary files. That's why CrafterCMS provides a blob store for managing binary files.
 
+.. _blob-stores-asset-access:
+
 ^^^^^^^^^^^^^^^^
 Blob Store Files
 ^^^^^^^^^^^^^^^^
@@ -216,6 +218,8 @@ but also the ``article.ftl`` and the ``aws.xml`` files too.
    :alt: AWS S3 Assets - Publish Changes
    :align: center
 
+.. _box-asset-access:
+
 ^^^^^^^^^^^^^^^^
 Box Asset Access
 ^^^^^^^^^^^^^^^^
@@ -378,6 +382,8 @@ but also the ``article.ftl`` and the ``box.xml`` files too.
    :alt: Box Assets - Publish Changes
    :align: center
 
+.. _webdav-asset-access:
+
 ^^^^^^^^^^^^^^^^^^^
 WebDAV Asset Access
 ^^^^^^^^^^^^^^^^^^^
@@ -385,6 +391,8 @@ WebDAV Asset Access
 .. TODO explain webdav
 
 TODO: explain how to access assets via webdav
+
+:ref:`webdav-profiles-configuration`
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Referencing Externally Managed Assets
@@ -574,6 +582,9 @@ would be discarded.
 .. [#] You need to have image ImageMagick installed in the machine, with the ``convert`` command in the path. For more information on ImageMagick options, please see https://imagemagick.org/script/command-line-options.php
 .. [#] The Tinify API key must be specified in the ``studio-config-overrides.yaml`` file (found in your Authoring installation, under ``shared/classes/crafter/studio/extension``). Add the line below and remember to replace ``<your Tinify API key>`` with the actual value of your Tinify API key:
        ``studio.configuration.asset.processing.tinify.apiKey:<your Tinify API key>``. For more information on Tinify, please see https://tinypng.com/developers/reference/java
+
+
+.. _video-transcoding:
 
 ^^^^^^^^^^^^^^^^^
 Video Transcoding

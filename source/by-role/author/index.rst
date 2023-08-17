@@ -177,22 +177,22 @@ Access the ``Dashboard`` from the ``Navigation Menu``
 
 |
 
-This screen is an overview of the workflow for that given project. The project dashboard has different dashlets
-depending on your role.
+This screen is an overview of the workflow for that given project. The project dashboard has
+different dashlet actions available depending on your role.
 
-Each dashlet has a header
+Each dashlet has a header and the following:
 
-   Expand Collapse control.  Each dashlet can be expanded to be display more items in the dashlet and minimized to return it to its tile position in the dashboard.
+   **Expand Collapse control**  Each dashlet can be expanded to be display more items in the dashlet and minimized to return it to its tile position in the dashboard.
 
-   Refresh control. Each dashlet has a refresh control to refresh the items displayed.
+   **Refresh control** Each dashlet has a refresh control to refresh the items displayed.
 
-   Dashlet title and count.  Some dashlets include a count at the end of the name for the number of items in the dashlet
+   **Dashlet title and count**  Some dashlets include a count at the end of the name for the number of items in the dashlet
 
-   Page number dropdown.  Allows author to navigate to a certain page by  selecting a page number from the dropdown
+   **Page number dropdown**  Allows author to navigate to a certain page by  selecting a page number from the dropdown
 
-   Show count. Dashlets allow the author to decide how many items they want to see in the dashlet
+   **Show count** Dashlets allow the author to decide how many items they want to see in the dashlet
 
-   Page forward and back.  Allows the author to navigate back and forth between available pages
+   **Page forward and back**  Allows the author to navigate back and forth between available pages
 
 |
 |
@@ -387,6 +387,8 @@ Experience Builder Panel
 Common Navigation Elements
 """"""""""""""""""""""""""
 
+.. _toolbar:
+
 ~~~~~~~
 Toolbar
 ~~~~~~~
@@ -416,6 +418,8 @@ The basic elements of the Contextual Navigation bar are:
     :alt: Navigating Studio - Project Context Navigation
 
 |
+
+.. _project-sidebar:
 
 ~~~~~~~
 Sidebar
