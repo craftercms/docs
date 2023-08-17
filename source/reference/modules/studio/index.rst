@@ -79,7 +79,7 @@ Here are the settings that can be configured through Crafter Studio:
       - - :ref:`Permission Mappings Configuration <permission-mappings>`
     * - Role Mappings (``config/studio/role-mappings-config.xml``)
       - Maps users and groups to roles within the project
-      - - :ref:`Role Mappings Configuration <role-mappings>`
+      - - :ref:`Role Mappings Configuration <project-role-mappings>`
     * - Content Type Editor Config (``config/studio/administration/site-config-tools.xml``)
       - Defines controls, data sources, and content types for content authoring
       - - :ref:`Content Type Editor Configuration <content-type-editor-config>`

@@ -1,5 +1,5 @@
 :is-up-to-date: False
-
+:last-updated: 4.1.2
 
 .. _project-admin:
 
@@ -86,8 +86,8 @@ For the project repository, the project structure looks like this::
         URL Rewrites and Vanity URLs
         Security, reference Sys Admin
 
-Credentials may be required in some project configurations. For more information on how to manage/encode your secrets such as
-AWS credentials, please see :ref:`managing-secrets`
+Credentials may be required in some project configurations. For more information on how to
+manage/encode your secrets such as AWS credentials, please see :ref:`managing-secrets`
 
 ---------
 Authoring
@@ -100,43 +100,69 @@ Authoring
 
 .. todo: add some text here
 
+In this section we discuss various aspects of managing content, UI, security, etc. in an authoring environment
+
 ^^^^^^^^
 Security
 ^^^^^^^^
+There are various ways for securing access to your CrafterCMS project content in an authoring environment.
 
 """"""""""""
 Role Mapping
 """"""""""""
+A role represents a set of activities allowed. Role mapping allows users to only see items that they have been granted access to based on the permissions granted to the role they have been assigned to.
+
+See :ref:`project-role-mappings` for more information.
 
 """"""""""""""""""
 Permission Mapping
 """"""""""""""""""
+Permission mapping allows you to assign permissions to folders and objects in a project/site giving specific roles rights to the object.
+
+See :ref:`permission-mappings` for more information.
 
 """""""""""""""""""""""
 Authentication with JWT
 """""""""""""""""""""""
+JWT authentication allows access to Studio APIs.
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Additional authentication mechanisms, ref Sys Admin auth
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+See :ref:`JWT Authentication<access-tokens>` for more information on creating and using a token.
 
-.. raw:: html
+""""""""""""""""""""""""""""""""""""
+Additional Authentication Mechanisms
+""""""""""""""""""""""""""""""""""""
+There are other ways for configuring security for your authoring install such as authenticating via headers, SAML, etc.
 
-   <hr>
+See :ref:`configuring-studio-security` for more information.
+
+|hr|
 
 ^^
 UI
 ^^
+
 """""""
 Sidebar
 """""""
+The Sidebar is the panel on the left side of Studio that contains path navigator trees and various tools.
+See :ref:`here <project-sidebar>` for a description and :ref:`here<sidebar-widget>` for more
+information on configuring the sidebar.
+
 """""""""""
-Top Nav Bar
+Top Toolbar
 """""""""""
+The toolbar is located at the top of the page and provides contextual workflow and other options
+relative to the page being previewed, content that have been selected or tool being used.
+
+See :ref:`here <toolbar>` for a description and :ref:`here <user-interface-configuration>` for
+more information on configuring the toolbar.
 
 """"""""""
 Dashboards
 """"""""""
+The dashboards show an overview of the workflow in the project.
+See :ref:`here project-dashboard` for a description and :ref:`here <user-interface-configuration>`
+for more information on configuring the dashboard.
 
 """"""""""""
 Localization
@@ -147,8 +173,9 @@ measurements, language, etc., to make the application look and feel natural to t
 
 .. _studio-project-time-zone:
 
+~~~~~~~~~~~~~~~~~
 Project Time Zone
------------------
+~~~~~~~~~~~~~~~~~
 
 The :ref:`default dates and times <server-time-zone>` used for displays in Studio is UTC. To
 customize how dates & times get displayed on Studio UI for a project, edit the following in the project
@@ -191,9 +218,7 @@ and finally selecting **Project Configuration** from the list:
 
 |
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 ^^^^^^^
 Content
@@ -202,29 +227,57 @@ Content
 """"""""""""""""""""""""""""""""
 Large Assets and External Stores
 """"""""""""""""""""""""""""""""
+Git is wonderful for managing and tracking textual content, but it's not ideal for storing binary files or large assets.
+There are multiple options for storing these large assets using either Studio's blob stores or various other
+external stores
 
-
+~~~~~~~~~~
 Blob Store
-----------
+~~~~~~~~~~
+The blob store is a Git-like repository for binary files.
+See :ref:`here <blob-stores-asset-access>` for more information
 
+~~~~~~
 AWS S3
-------
+~~~~~~
+AWS S3 is a great option for very large externally managed artifacts.
+See :ref:`here <use-s3-to-store-assets>` for more information
 
+~~~
 Box
----
+~~~
+Box is a good option when you need to store media and documents that are quite large.
+See :ref:`here <box-asset-access>` for more information
 
+~~~~~~
 WebDAV
-------
+~~~~~~
+Using WebDAV is another good option for collaborating on assets hosted on another server.
+See :ref:`here <webdav-asset-access>` for more information.
 
 """""""""""""""""""""
 Rich media processing
 """""""""""""""""""""
+~~~~~~
 Images
+~~~~~~
+CrafterCMS supports automatic image processing that allows you to upload just one image that gets converted to the
+different sizes or formats required by your project for various display sizes.
+See :ref:`here <asset-processing-config>` for more information
+
+~~~~~~~~~~~~~~~~~~~
 Video (transcoding)
+~~~~~~~~~~~~~~~~~~~
+Crafter Studio allows users to upload and transcode videos using AWS MediaConvert in order for users to be able
+to show the video in different display sizes.
+See :ref:`here <video-transcoding>` for more information
 
 """"""""""""""""""""""
 Rich Text Editor (RTE)
 """"""""""""""""""""""
+The RTE (Rich Text Editor) provides an in-context editing experience from within a form
+(and through preview via the XB) that allows authors to arrange and style content without needing to know HTML
+For more information on configuring the RTE, see :ref:`here <rte-config>`
 
 """"""""""""
 Localization
@@ -233,16 +286,18 @@ As mentioned above, localization is the process of adapting the application/soft
 
 .. _targeting-guide:
 
+"""""""""""""""""""""""
 Content Targeting Guide
------------------------
+"""""""""""""""""""""""
 Crafter Engine provides the ability to render content adapted to specific users, depending on different
 aspects like geographical location, language, preferences, etc.
 Content that is targeted to users is known in CrafterCMS as targeted content.
 
 .. _language-based-localized-content:
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Language-Based Localized Content
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The most common form of targeted content is language-based localization, which is enabled just by specifying
 some configuration in the :ref:`Engine's Project Config <engine-project-configuration>`.
@@ -290,8 +345,9 @@ It's important to point out that if a page exists several times under the same "
 following the path of the most general locale to the most specific one, so /site/website/es_CR/contact-us, would
 inherit and overwrite the content of /site/website/es/contact-us and /site/website/en/contact-us.
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Configuration for Custom Targeted Content
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As stated before, the most popular case for targeted content is language-based localization, but it isn't the
 only one. Sometimes you need to target content according to the user's region, country, age, gender, etc. For
@@ -323,8 +379,9 @@ these cases, a little bit more of coding and configuration is needed:
 
       <bean id="crafter.targetIdManager" class="services.targeting.RegionAndCountryTargetIdManager"/>
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Targeted Content By File Prefix
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, Engine expects targeted content to be organized by folders. The most common case is to have pages
 under /site/website to be grouped under locale folders. So pages for *en* would be put under /site/website/en,
@@ -341,13 +398,12 @@ To enable this, add the following bean to your project's application-context.xml
       class="org.craftercms.engine.targeting.impl.TargetedUrlByFileStrategy"
       parent="crafter.targetedUrlStrategyBase"/>
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 ^^^^^^^
 Preview
 ^^^^^^^
+Preview allows users to see, edit and test the project in a safe authoring sandbox prior to publishing changes.
 
 """""""""""""""""""
 Proxy Configuration
@@ -364,33 +420,32 @@ See :ref:`here <using-the-proxy-configuration>` for an example of setting up the
 
 .. todo: should we just dump the article here or leave the article in a separate file somewhere?
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 ^^^^^^^^^^
 Publishing
 ^^^^^^^^^^
+The publishing tool available from the sidebar under |projectTools| allows the user to view the
+publishing status, and various ways of publishing content.
+See :ref:`here <publishing-and-status>` for more information
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 ^^^^^^^^^^^^^
 Notifications
 ^^^^^^^^^^^^^
+To configure HTML notifications that can be sent at each point in the workflow, see
+:ref:`here <configure-notifications>`
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 ^^^^^^^
 Staging
 ^^^^^^^
+An intermediate publishing target, named ``staging``, is supported by CrafterCMS which allows testing of your project.
+See :ref:`here <staging-env>` for more information on how to setup a staging target for your project.
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Multi-environment Support
@@ -401,6 +456,8 @@ CrafterCMS supports environment specific configuration that helps with this, rea
 
 |
 
+|hr|
+
 --------
 Delivery
 --------
@@ -409,7 +466,7 @@ Delivery
    <div style="border-top: 2px solid red"></div>
    <br>
 
-In this section, we discuss
+In this section, we discuss managing your project, security, etc. in a delivery environment
 
 .. todo: Add some intro text here
 
@@ -450,14 +507,13 @@ After saving the configuration, remember to publish the configuration file just 
 
 For more information on the UrlRewriteFilter, see http://tuckey.org/urlrewrite/
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Security, reference Sys Admin
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^
+Security
+^^^^^^^^
+There are various ways for securing access to restricted content in your CrafterCMS project in a delivery environment.
+See :ref:`here <configuring-engine-security>` for more information.
 
-
-.. raw:: html
-
-   <hr>
+|hr|
 
 -------------
 Project Tools

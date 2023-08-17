@@ -82,7 +82,7 @@ We'll now create a new role for the new group we just created.
 
 #. Click on the **Save** button.
 
-For more information about role mappings, please see: :ref:`role-mappings`
+For more information about role mappings, please see: :ref:`project-role-mappings`
 
 ------------------
 Adding permissions
