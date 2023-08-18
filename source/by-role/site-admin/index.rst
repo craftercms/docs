@@ -453,19 +453,11 @@ CrafterCMS supports environment specific configuration that helps with this, rea
 --------
 Delivery
 --------
-.. raw:: html
-
-   <div style="border-top: 2px solid red"></div>
-   <br>
-
-In this section, we discuss managing your project, security, etc. in a delivery environment
-
-.. todo: Add some intro text here
+In this section, we discuss managing your project, security, etc. in a delivery environment.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 URL Rewrites and Vanity URLs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 URL rewriting turns hard to remember, long and complicated URLs into easier to remember, user-friendly and search
 engine friendly URLs. Simple URL rewrite rules per project can be done through Crafter Engine.
 
