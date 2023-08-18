@@ -376,12 +376,8 @@ nodes and are typically deployed in geographies where your end users are.
 --------
 Security
 --------
-
-The security of CrafterCMS is divided into core product security, marketplace security, and Crafter Cloud (SaaS) security.
-
-^^^^^^^^^^^^
-Core Product
-^^^^^^^^^^^^
+.. TODO Detail this out
+.. The security of CrafterCMS is divided into core product security, marketplace security, and Crafter Cloud (SaaS) security.
 
 Developing secure software requires having policies and procedures and abiding by them. CrafterCMS maintains a set
 of processes for its developers, machines, and facilities. Learn more about CrafterCMS' security policies in the :ref:`security section <security>`.

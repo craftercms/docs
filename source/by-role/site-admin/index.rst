@@ -17,7 +17,6 @@ Most configuration files can be accessed through Crafter Studio through the **Si
 -----------------------
 What is a Project/Site?
 -----------------------
-
 A project or a site is a collection of related pages/components and assets.
 
 For the project repository, the project structure looks like this::
@@ -87,18 +86,11 @@ For the project repository, the project structure looks like this::
         Security, reference Sys Admin
 
 Credentials may be required in some project configurations. For more information on how to
-manage/encode your secrets such as AWS credentials, please see :ref:`managing-secrets`
+manage/encode your secrets such as AWS credentials, please see :ref:`managing-secrets`.
 
 ---------
 Authoring
 ---------
-
-.. raw:: html
-
-   <div style="border-top: 2px solid red"></div>
-   <br>
-
-.. todo: add some text here
 
 In this section we discuss various aspects of managing content, UI, security, etc. in an authoring environment
 
