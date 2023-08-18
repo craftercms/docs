@@ -120,46 +120,11 @@ server/scale-group architecture. Here is a typical deployment at a high level:
 Composable
 ----------
 
-CrafterCMS is a composable platform. This means that it is designed to allow you to compose your digital experiences from a variety of different marketplace extensions, and extensions you develop yourself. This is in contrast to a monolithic platform that is designed to provide all of the services that you need to build your digital experiences.
+CrafterCMS is a composable platform. This means that it is designed to allow you to compose your digital experiences from Packaged Business Capabilities (PBC) through a variety of different marketplace extensions, and extensions you develop yourself. This is in contrast to a monolithic platform that is designed to provide all of the services that you need to build your digital experiences.
 
 Additionally, CrafterCMS provides the substrate for said composition, whereby the composed components can leverage the core platform services, inter-communicate, and share data and services.
 
-.. TODO
- 
-..    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    Composing Digital Experiences
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-    """""""""""""""""""""
-    Authoring experiences
-    """""""""""""""""""""
-
-    """""""""""""""""""""""""""""
-    Delivery/End User experiences
-    """""""""""""""""""""""""""""
-
-    ^^^^^^^^^^^^^^^
-    Composing a DXP
-    ^^^^^^^^^^^^^^^
-
-    """"""""""""""""""
-    Experience Builder
-    """"""""""""""""""
-
-    """"""""""""""""""""""""""""""""""""""""
-    Integrating with Other Headless Services
-    """"""""""""""""""""""""""""""""""""""""
-
-    ^^^^^^^^^^^^^^
-    DX Composition
-    ^^^^^^^^^^^^^^
-
-    """""""""""""""""
-    How to Build PBCs
-    """""""""""""""""
-
-.. Define PBC
-.. our integration/orchestration/Discovery layers, etc.
+Learn more about the composablity of CrafterCMS :ref:`in the developer's composable section <composable>`.
 
 .. _architect-headless:
 
@@ -419,36 +384,7 @@ Core Product
 ^^^^^^^^^^^^
 
 Developing secure software requires having policies and procedures and abiding by them. CrafterCMS maintains a set
-of processes for its developers, machines, and facilities. Here are the highlights:
-
-""""""""""""
-Key Policies
-""""""""""""
-
-* Acceptable Use Policy
-* Information Classification Policy
-* Access Control Policy
-* Secure System Engineering and Risk Management
-* Mobile Device Encryption Policy
-* Data Retention Policy
-* Private Information Management Policy
-* Encryption Policy
-* Remote Access Policy
-* Disaster Recover and Business Continuity
-* Clean Desk Policy
-* Password Policy
-* Software Licensing Policy
-* Data Breach Response Policy
-* Anti-bribery and Anti-corruption Policy
-* Physical Access Policy
-
-""""""""""
-Procedures
-""""""""""
-
-~~~~~~~~~~~
-Development
-~~~~~~~~~~~
+of processes for its developers, machines, and facilities. Learn more about CrafterCMS' security policies in the :ref:`security section <security>`.
 
 -------------
 API Reference

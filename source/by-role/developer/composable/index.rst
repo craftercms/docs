@@ -16,11 +16,11 @@ A component is often referred to as Packaged Business Capability or PBC for shor
 
 .. _extensions:
 
-----------
-Extensions
-----------
+----------------
+Extensions (PBC)
+----------------
 
-CrafterCMS extensions extend the CMS and provide the users additional functionality. It allows developers
+CrafterCMS extensions are Packaged Business Capabilities (PBC) which extend the CMS and provide the users additional functionality. It allows developers
 to create new experiences both for authors and end-users.
 
 There are two main types of CrafterCMS Extensions:
