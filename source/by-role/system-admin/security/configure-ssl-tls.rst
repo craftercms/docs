@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.2
 
 .. index:: Configure SSL/TLS, SSL
@@ -112,7 +112,7 @@ Step 3: Test your setup
 
 To test your CrafterCMS authoring, open your browser and type in:
 
-   *localhost:8443/studio*
+   https://localhost:8443/studio
 
 Since we are using a self-signed certificate, you'll get a message similar to this depending on your browser:
 
@@ -134,17 +134,17 @@ From the above screen, just click on ``Advanced``, then allow it to proceed to `
 Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Traditional Deployment with Apache HTTPd
 -------------------------------------------------------------------------------------------------------
 
-.. todo
+To configure SSL/TLS for CrafterCMS authoring and delivery in a traditional deployment with Apache HTTPd, follow the steps detailed at https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html.
 
-------------------------------------------------------------------------------------------------
-Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Traditional Deployment with a CDN
-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------
+Configuring SSL/TLS for CrafterCMS Authoring and Delivery via a CDN
+-------------------------------------------------------------------
 
-.. todo
+SSL/TLS can also be configured at the CDN, here is an example of doing that using AWS CloudFront https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https.html.
 
--------------------------------------------------------------------------------
-Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Docker Container
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+Configuring SSL/TLS for CrafterCMS Authoring and Delivery in a Containerized Deployment
+---------------------------------------------------------------------------------------
 
 Setting up SSL/TLS for CrafterCMS authoring and delivery in a Docker Container is similar to the steps done for CrafterCMS Authoring and Delivery installed in a server, which just a few differences.
 
@@ -264,7 +264,7 @@ Your ``docker-compose.yml`` should look like below:
 
 |
 
-Restart your docker container.
+Restart your Docker container.
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 Step 4: Test your setup
@@ -272,7 +272,7 @@ Step 4: Test your setup
 
 To test your CrafterCMS authoring, open your browser and type in:
 
-   *localhost:8443/studio*
+   https://localhost:8443/studio
 
 You should see similar screens as shown :ref:`above<ssl-test-your-setup>` when we setup SSL/TLS for a traditional deployment.
 

@@ -31,11 +31,11 @@ This section details how to setup CloudFront signed cookies for CrafterCMS with 
 
 From the  `AWS documentation <https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-cookies.html>`__
 
-   .. code-block:: text
+.. code-block:: text
 
-      CloudFront signed cookies allow you to control who can access your content when you don't want to change your current URLs or when you want to provide access to multiple restricted files, for example, all of the files in the subscribers' area of a website.
-
-   |
+      CloudFront signed cookies allow you to control who can access your content when you don't want to change your
+      current URLs or when you want to provide access to multiple restricted files, for example, all of the files
+      in the subscribers' area of a website.
 
 Here are the steps:
 

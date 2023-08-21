@@ -1,6 +1,7 @@
-:is-up-to-date: False
-:orphan:
+:is-up-to-date: True
+:last-updated: 4.0.3
 
+:orphan:
 
 .. index:: Setting up a simple LDAP server for development/testing using Apache Directory Studio, Setting up a simple LDAP server
 
@@ -9,7 +10,6 @@
 =============================================================
 Setting up a Simple LDAP Server using Apache Directory Studio
 =============================================================
-
 In this section, we will describe how to setup an LDAP server using Apache Directory Studio to test the LDAP authentication in Crafter Studio.
 
 First, we'll configure LDAP authentication in Crafter Studio |enterpriseOnly| , then proceed to install and setup the LDAP server using Apache Directory Studio, then finally login to Crafter Studio with the users setup in the LDAP server.
@@ -17,7 +17,6 @@ First, we'll configure LDAP authentication in Crafter Studio |enterpriseOnly| , 
 ----------------------------------------------------------------
 Configure LDAP authentication in Crafter Studio |enterpriseOnly|
 ----------------------------------------------------------------
-
 We will first configure LDAP authentication in Crafter Studio |enterpriseOnly|. In your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>`. (The server url, bindDN and password are all default values of the Apache Directory Studio)  Stop and restart Crafter Studio after making your changes.
 
 .. code-block:: yaml
@@ -60,7 +59,6 @@ Please note that the LDAP attributes are configurable and in our example above, 
 Install Apache Directory Studio
 -------------------------------
 Download and install Apache Directory Studio from here: http://directory.apache.org/studio/
-
 
 ---------------------
 Setup the LDAP server
@@ -265,7 +263,7 @@ Repeat the steps listed above for the rest of the users we added in to the LDAP 
 Logging in to Crafter Studio as an LDAP user
 --------------------------------------------
 
-In your browser, enter ``localhost:8080\studio``. Fill in the the username and password using one of the users we setup in the LDAP server. In the image below, we will log in the user **jbloggs**. If authentication is successful, the user should be taken to the **Sites** screen of Crafter Studio.
+In your browser, enter http://localhost:8080\studio. Fill in the the username and password using one of the users we setup in the LDAP server. In the image below, we will log in the user **jbloggs**. If authentication is successful, the user should be taken to the **Sites** screen of Crafter Studio.
 
 .. image:: /_static/images/developer/ldap-server-authenticate-user.webp
     :alt: Apache Directory Studio - LDAP Server authenticate user login from Crafter Studio

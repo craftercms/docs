@@ -1,4 +1,4 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.2
 
 .. index:: Configuring Studio Security; Studio Security; Security
@@ -9,21 +9,16 @@
 Configuring Studio Security
 ===========================
 
-Users are authenticated by Studio through the internal database by default. CrafterCMS can be configured so that users are authenticated using an external authentication protocol such as Lightweight Directory Access Protocol (LDAP) or Security Assertion Markup Language (SAML).
+Users are authenticated by Studio through the internal database by default. CrafterCMS can be configured so that users are authenticated using an external authentication protocol such as Lightweight Directory Access Protocol (LDAP), Security Assertion Markup Language (SAML), or integrate with any Single-Sign-On (SSO) solution that can provide headers to Studio to indicate successful authentication.
 
 Here's a list of security providers supported by CrafterCMS for accessing the repository:
 
-- Studio SAML security
-- headers (use when authenticating via headers)
-- LDAP (users are imported from LDAP into the database)
-- internal database (users are stored in database)
+- :ref:`Studio SAML security <crafter-studio-configure-studio-saml>` |enterpriseOnly|
+- :ref:`Header-Based (use when authenticating via headers) <crafter-studio-configure-header-based-auth>` |enterpriseOnly|
+- :ref:`LDAP (users are imported from LDAP into the database) <crafter-studio-configure-ldap>` |enterpriseOnly|
+- Internal database (users are stored in database)
 
 To configure an external authentication method, please follow one of the guides below:
-
-.. todo convert below to deep links within this article
-   configure-studio-saml.rst
-   configure-ldap.rst
-   configure-headers-based-auth.rst
 
 When using an external authentication method, user accounts are automatically created in the internal database upon each user's first successful login, using the attributes from the responses received. Users added to the internal database after the user's first successful login through external authentication are marked as **Externally Managed**.
 
@@ -35,18 +30,13 @@ Configure Authentication Chain
 
 CrafterCMS supports multiple security providers and allows configuration of multiple authentication providers in a chain that are then iterated through until either the user is authenticated and granted access or authentication fails and an HTTP 401 Unauthorized is returned to the user. This allows Studio to support multiple security providers that appears like a single authentication module to users.
 
-.. image:: /_static/images/system-admin/authentication-chain.webp
-    :alt: Static Assets - Authentication Chaining
-    :width: 70 %
-    :align: center
-
-|
-
 The following authentication providers can be configured in a chain:
 
+    - Headers
     - LDAP
-    - headers
-    - internal database
+    - Internal database
+
+.. note:: SAML2 authentication cannot be configured in a chain. SAML2 authentication is a standalone authentication provider.
 
 When an authentication chain is configured, when a user logs in, Studio will try to authenticate the user using the first security provider in the chain as defined in the :ref:`studio-config-override.yaml <studio-configuration-files>` file. If authentication fails, it will then move on to the next authentication provider in the list and try to authenticate the user again. It will continue moving on to the next security provider in the chain until the user is authenticated or the authentication fails.
 
@@ -303,24 +293,22 @@ The classpath is located in your Authoring installation, under ``CRAFTER_HOME/bi
 
 Restart your Authoring installation after configuring the above.
 
-.. raw:: html
+|hr|
 
-   <hr>
+.. _crafter-studio-configure-header-based-auth:
 
-.. _crafter-studio-configure-headers-based-auth:
+======================================================
+Configure Header-Based Authentication |enterpriseOnly|
+======================================================
 
-=======================================================
-Configure Headers Based Authentication |enterpriseOnly|
-=======================================================
-
-Crafter Studio is able to integrate with any authentication system that sends custom HTTP headers containing information that will be used to authenticate the user in Studio. This section details how to setup Studio for headers based authentication.
+Crafter Studio is able to integrate with any authentication system that sends custom HTTP headers containing information that will be used to authenticate the user in Studio. This section details how to setup Studio for header-based authentication.
 
 
 -------------------------------------------------
-Configure Studio for Headers Based Authentication
+Configure Studio for Header-Based Authentication
 -------------------------------------------------
 
-Configuring Studio for headers based authentication is very simple: in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+Configuring Studio for header-based authentication is very simple: in your Authoring installation, go to ``CRAFTER_HOME/bin/apache-tomcat/shared/classes/crafter/studio/extension`` and add the following lines to :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: properties
     :linenos:
@@ -365,14 +353,14 @@ From the above configuration, here are the attributes that Studio expects from t
 - groups
 
 The attribute ``secure_key`` is placed by the authentication agent in the header.
-The attribute ``enabled`` enables/disables headers authentication, make sure this is set to **true** for headers authentication
+The attribute ``enabled`` enables/disables headers authentication, make sure this is set to **true** for header-based authentication
 
 Configuring Logout
 ------------------
 
-The **Sign out** button link is disabled/hidden by default when headers based authentication is enabled.
+The **Sign out** button link is disabled/hidden by default when header-based authentication is enabled.
 
-To enable **Sign out** for users signed in using headers based authentication, change the following lines (as described from the above configuration) in your :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
+To enable **Sign out** for users signed in using header-based authentication, change the following lines (as described from the above configuration) in your :ref:`studio-config-override.yaml <studio-configuration-files>` (of course, make any appropriate configuration changes according to your system):
 
 .. code-block:: yaml
 
@@ -447,7 +435,7 @@ Also, please note that Studio needs all the attributes listed in the config to b
 
 .. code-block:: none
 
-    [WARN] 2017-10-11 12:42:57,487 [http-nio-8080-exec-2] [security.DbWithLdapExtensionSecurityProvider] | No LDAP attribute crafterGroup found for username cbrunato
+    [WARN] 2017-10-11 12:42:57,487 [http-nio-8080-exec-2] [security.DbWithLdapExtensionSecurityProvider] | No LDAP attribute crafterGroup found for username jbloggs
 
 |
 
