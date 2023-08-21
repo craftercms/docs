@@ -37,15 +37,14 @@ Here are the instructions for upgrading CrafterCMS based on how it was installed
 
 |hr|
 
-==============================
+------------------------------
 Troubleshooting Upgrade Issues
-==============================
-
+------------------------------
 When upgrading your Studio install fails, the first thing to do is to inspect data from the logs and figure out which statement failed when completing the upgrade. Using the results of the inspection, we then have to recover the database manually.
 
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Failure Executing a Statement
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Let's take a look at an example log:
 
 .. code-block:: bash
@@ -78,9 +77,9 @@ For this case, the solution would be to manually set unique values for the exist
 
 |hr|
 
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 Upgrade Not Supported
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 When the system is in an undefined state between two versions, you may see the following message in the logs:
 
 .. code-block:: text
@@ -99,9 +98,9 @@ The above message may occur, if you had an error upgrading because of a failed s
 
 .. _db-upgrades-timeout:
 
--------------------
+^^^^^^^^^^^^^^^^^^^
 DB Upgrades Timeout
--------------------
+^^^^^^^^^^^^^^^^^^^
 On start, Crafter Studio will run its Upgrade Manager. When migrating large sites
 with a large content base, some DB operations can timeout and throw an error like the following:
 

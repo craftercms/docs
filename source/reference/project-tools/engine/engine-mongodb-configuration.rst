@@ -36,7 +36,7 @@ where:
 For more details on the Connection String URI format, see https://docs.mongodb.com/manual/reference/connection-string/
 
 ----------------------
-Create a GMongo client
+Create a GMongo Client
 ----------------------
 To access Mongo from Groovy, we'll use a GMongo client. We'll need to add some beans in `/config/engine/application-context.xml`. (This file can be accessed easily from any project created through the out-of-the-box blueprints, by navigating from the Studio sidebar to Project Tools > Configuration, and finally picking up the **Engine Site Application Context** option from the dropdown).
 
@@ -60,7 +60,7 @@ To access Mongo from Groovy, we'll use a GMongo client. We'll need to add some b
     </beans>
 
 -----------------------------------
-Use the client from a Groovy script
+Use the Client From a Groovy Script
 -----------------------------------
 
 We can now use the client from a Groovy script. Here's a simple script that runs a query:
@@ -83,7 +83,7 @@ where:
     * {some id} - id you're searching for depending on your database
 
 ---------------------------------
-Publish configuration to Delivery
+Publish Configuration to Delivery
 ---------------------------------
 
 Until this point all changes have been made from Crafter Studio so they will only affect immediately
@@ -130,8 +130,8 @@ Once the files are deployed to the delivery node and the project context is relo
 Configuration will take effect.
 
 --------------------------------
-Delivery specific configurations
+Delivery Specific Configurations
 --------------------------------
 
 If you need to manage different values for the configuration files depending on the environment
-you can find more detailed information in the :ref:`environment-specific-configurations` cook book.
+you can find more detailed information in the :ref:`engine-multi-environment-support` section.

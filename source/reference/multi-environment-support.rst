@@ -10,8 +10,7 @@ Multi-environment Support
 =========================
 .. contents::
     :local:
-    :depth: 2
-
+    :depth: 1
 
 ----------------------------------
 What is Multi-environment Support?
@@ -145,11 +144,16 @@ To setup an environment for engine configuration files, do the following:
 
 #. Restart Crafter
 
-^^^^^^^
-Example
-^^^^^^^
+^^^^^^^^
+Examples
+^^^^^^^^
 
-Let's take a look at an example of creating a new environment, called ``mycustomenv`` with the ``urlrewrite.xml`` file overridden in the new environment for a project created using the Website Editorial blueprint:
+"""""""""""""""""""""""""""""""""""""
+Creating a Custom Environment Example
+"""""""""""""""""""""""""""""""""""""
+Let's take a look at an example of creating a new environment, called ``mycustomenv`` with the ``urlrewrite.xml``
+file overridden in the new environment for a project created using the Website Editorial blueprint.  This example
+is very similar to the example shown above for Studio except for the location of the custom configuration file:
 
 #. We'll create a folder called ``env`` under ``data/repos/sites/my-editorial/sandbox/config/engine``
 
@@ -259,9 +263,84 @@ Let's take a look at an example of creating a new environment, called ``mycustom
 
    The preview page should take you to */articles/2021/12/Top Books For Young Women*
 
-.. raw:: html
+"""""""""""""""""""""""""""""""""""""""""""
+Environment Specific Configurations Example
+"""""""""""""""""""""""""""""""""""""""""""
+Environments are useful for managing values such as paths or database connections without the need to
+change any code directly in the servers.
 
-   <hr>
+In this example, we show how to manage a database connection that will change depending on the server
+where the project is deployed. We will have three environments ``dev``, ``auth`` and ``delivery``
+
+#. First create the environments by following the example above for creating the environments.
+   We'll then have the following folders called ``dev``, ``auth`` and ``delivery`` under ``CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/engine/env``
+
+#. Next, include the appropriate connection string for each environment in the ``site-config.xml`` file:
+
+   .. code-block:: xml
+      :caption: *Local Development Configuration: /config/engine/env/dev/site-config.xml*
+      :linenos:
+
+      <?xml version="1.0" encoding="UTF-8"?>
+      <site>
+        <db>
+          <uri>mongodb://localhost:27017/mydb?maxPoolSize=1&amp;minPoolSize=0&amp;maxIdleTimeMS=10000</uri>
+        </db>
+     </site>
+
+
+   .. code-block:: xml
+       :caption: *Authoring Configuration: /config/engine/env/auth/site-config.xml*
+       :linenos:
+
+       <?xml version="1.0" encoding="UTF-8"?>
+       <site>
+         <db>
+           <uri>mongodb://localhost:27020/mydb?maxPoolSize=5&amp;minPoolSize=2&amp;maxIdleTimeMS=10000</uri>
+         </db>
+       </site>
+
+
+   .. code-block:: xml
+      :caption: *Delivery Configuration: /config/engine/env/delivery/site-config.xml*
+      :linenos:
+
+      <?xml version="1.0" encoding="UTF-8"?>
+      <site>
+        <db>
+          <uri>mongodb://delivery-db-server:27020/delivery-db?maxPoolSize=10&amp;minPoolSize=5&amp;maxIdleTimeMS=1000</uri>
+        </db>
+      </site>
+
+   Remember to commit the files copied so Studio will pick it up.
+
+#. Finally, notice when using this approach the code is completely independent of the environment so we only need one
+   bean that will always connect to the right database:
+
+   .. code-block:: xml
+      :caption: *Default Application Context: /config/engine/application-context.xml (shared by all environments)*
+      :linenos:
+
+      <?xml version="1.0" encoding="UTF-8"?>
+      <beans xmlns="http://www.springframework.org/schema/beans"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" parent="crafter.properties"/>
+
+        <bean id="mongoUri" class="com.mongodb.MongoClientURI">
+           <constructor-arg value="${db.uri}"/>
+        </bean>
+
+        <bean id="mongoClient" class="com.gmongo.GMongoClient">
+          <constructor-arg ref="mongoUri"/>
+        </bean>
+
+      </beans>
+
+
+|hr|
+
 
 .. _saml2-multi-environment-support:
 

@@ -1,7 +1,6 @@
 :is-up-to-date: False
 :last-updated: 4.0.3
 
-
 .. _system-admin-installation-and-configuration:
 
 ==============================

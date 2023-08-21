@@ -14,11 +14,12 @@ they need to install and maintain CrafterCMS.
 .. toctree::
    :maxdepth: 2
 
-   deployment-architecture
    installation-and-configuration/index
    security/index
-   performance-and-scaling/index
-   disaster-recovery
    maintenance/index
    upgrade/index
 
+..  TODO: Add these sections when they are ready
+    deployment-architecture
+    performance-and-scaling/index
+    disaster-recovery
