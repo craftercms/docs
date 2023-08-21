@@ -7,7 +7,7 @@
 Deployment Architecture
 =======================
 
-.. 6.1.1 Authoring vs Delivery
+.. TODO 6.1.1 Authoring vs Delivery
    6.1.2 Code Flow
    6.1.3 Content flow (Studio -> Deployer -> ...)
    6.1.4 Git

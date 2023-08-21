@@ -1,5 +1,5 @@
 :is-up-to-date: False
-
+:last-updated: 4.1.2
 
 ========
 Security
@@ -10,7 +10,7 @@ This section contains links to configuration for consideration when securing Cra
 ------
 Basics
 ------
-.. Add some language to introduce
+.. TODO Add some language to introduce
 
 - :ref:`securing-your-crafter-cms-install`
 - :ref:`configure-ssl-tls`
