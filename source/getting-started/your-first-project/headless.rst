@@ -1,4 +1,5 @@
-:is-up-to-date: False
+:is-up-to-date: True
+:last-updated: 4.1.1
 
 .. index:: Your First Project
 
@@ -7,9 +8,6 @@
 =============================
 Your First Project (headless)
 =============================
-
-.. TODO write this
-
 In this section, we will create a project using an out-of-the-box blueprint called "Headless Store" and show you:
 
 - how to add a new product to your project,

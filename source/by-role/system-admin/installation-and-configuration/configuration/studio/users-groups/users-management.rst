@@ -53,6 +53,7 @@ To see a list of all existing users, make sure that there are no search terms en
 
 Searching Users
 ^^^^^^^^^^^^^^^
+.. TODO Fix overlines
 
 You can search for a specific user. To search users, click on the magnifying glass icon on the top right then go
 to the search field and type user name, last name, user name or mail.

@@ -7,9 +7,9 @@
 
 .. _proxy-configuration:
 
-###################
+===================
 Proxy Configuration
-###################
+===================
 
 The proxy configuration file contains configuration for the preview proxy servers.
 To modify the proxy configuration, click on |projectTools| from the bottom of the *Sidebar*, then click on **Configuration** and select **Proxy Config** from the dropdown list.
@@ -19,9 +19,9 @@ To modify the proxy configuration, click on |projectTools| from the bottom of th
     :width: 45 %
     :align: center
 
-******
+------
 Sample
-******
+------
 
 Here's a sample Proxy Configuration file (click on the triangle on the left to expand/collapse):
 

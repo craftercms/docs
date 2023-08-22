@@ -9,6 +9,8 @@
 Project Creation with Remote Repositories
 =========================================
 
+.. TODO figure out where this should be referenced
+
 Crafter Studio supports project creation with remote repositories and provides two options:
 
 - Create project based on remote Git repository

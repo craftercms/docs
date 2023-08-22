@@ -10,6 +10,7 @@
 Support
 =======
 
+-----------------
 Community Support
 -----------------
 
@@ -21,6 +22,7 @@ If you have any questions, please look in the following:
 
 For additional resources, please visit the `CrafterCMS developer community <https://craftercms.org>`_.
 
+------------------
 Enterprise Support
 ------------------
 

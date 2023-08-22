@@ -100,7 +100,7 @@ AWS credentials, please see :ref:`managing-secrets`
 Securing Your Install
 ^^^^^^^^^^^^^^^^^^^^^
 Remember to change the default values pre-configured when installing CrafterCMS for a secure installation.
-See :ref:`securing-your-crafter-cms-install` for more information.
+See :ref:`change-the-defaults` for more information.
 
 ^^^^^^^^^
 Authoring

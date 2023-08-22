@@ -115,7 +115,7 @@ Here are the settings that can be configured through Crafter Studio:
       - Configures the proxy servers for preview
       - - :ref:`using-the-proxy-configuration`
 
-.. for later
+.. TODO for later
    * - Translation Configuration (``config/studio/translation-config.xml``)
      - Configures the translation service
      - :ref:`translation-configuration`

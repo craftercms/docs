@@ -83,6 +83,7 @@ The user will first be asked to publish the entire project, if the project has n
 
 Publish by path
 ---------------
+.. TODO Fix overlines
 
 The **Publish changes made in Studio via the UI** selection allows the user to publish multiple items under a specified path. This should be used to publish changes made in Studio via the UI.
 
