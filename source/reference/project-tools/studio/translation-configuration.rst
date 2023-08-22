@@ -1,5 +1,5 @@
 :is-up-to-date: False
-
+:last-updated: 4.1.2
 
 :orphan:
 
@@ -10,9 +10,9 @@
 
 .. _translation-configuration:
 
-#########################
+=========================
 Translation Configuration
-#########################
+=========================
 
   .. warning::
 
@@ -30,58 +30,22 @@ and select **Translation Configuration** from the list.
 
 |
 
-******
+------
 Sample
-******
+------
 
-.. code-block:: xml
+Here's a sample Translation Configuration file (click on the triangle on the left to expand/collapse):
+
+.. raw:: html
+
+   <details>
+   <summary><a>Sample translation configuration</a></summary>
+
+.. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/samples/sample-translation-config.xml
+   :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/translation-config.xml*
+   :language: xml
    :linenos:
 
-   <translation-config>
+.. raw:: html
 
-     <!-- List of codes for the supported locales -->
-     <!--
-     <localeCodes>
-       <localeCode>en_us</localeCode>
-     </localeCodes>
-     -->
-
-     <!-- The code of the default locale for all new content -->
-     <!--
-     <defaultLocaleCode>en_us</defaultLocaleCode>
-     -->
-
-     <!-- Indicates if the default locale should be used when none of the resolvers can find a locale -->
-     <!--
-     <fallbackToDefaultLocale>true</fallbackToDefaultLocale>
-     -->
-
-     <!-- List of locale resolvers -->
-     <!--
-     <localeResolvers>
-     -->
-     <!-- List of locale resolvers, will be executed in the same order until one returns a locale -->
-       <!--
-       <localeResolver>
-         <type>urlPattern</type>
-         <mappings>
-           <mapping>
-             <pattern>.+/en</pattern>
-             <localeCode>en_us</localeCode>
-           </mapping>
-         </mappings>
-       </localeResolver>
-       <localeResolver>
-         <type>cookie</type>
-       </localeResolver>
-       <localeResolver>
-         <type>header</type>
-       </localeResolver>
-       <localeResolver>
-         <type>groovy</type>
-         <script>/scripts/locale.groovy</script>
-       </localeResolver>
-     </localeResolvers>
-     -->
-
-   </translation-config>
+   </details>

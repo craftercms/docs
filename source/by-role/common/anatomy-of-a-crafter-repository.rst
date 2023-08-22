@@ -1,6 +1,7 @@
 :is-up-to-date: False
 :last-updated: 4.0.3
 
+:orphan:
 
 .. index:: Anatomy of a CrafterCMS Repository
 
@@ -10,7 +11,7 @@
 Anatomy of a CrafterCMS Repository
 ==================================
 
-.. introduce the main concepts, show the structure, show extension points, show example
+.. TODO introduce the main concepts, show the structure, show extension points, show example
 
 Repository Structure::
 

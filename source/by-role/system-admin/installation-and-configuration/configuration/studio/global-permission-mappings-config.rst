@@ -1,5 +1,5 @@
-:is-up-to-date: False
-:last-updated: 4.0.3
+:is-up-to-date: True
+:last-updated: 4.1.2
 
 :orphan:
 
@@ -15,7 +15,7 @@ The global permission mappings configuration file lets you configure the permiss
 
 Permissions per project are managed within Crafter Studio's UI. See :ref:`permission-mappings` for more information on project permissions.
 
-Here's the default global permissions configuration. It contains the permissions mappings for the roles defined in the :ref:`global role mappings configuration <global-role-mappings-config>` file. To access the file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/`` then open the file ``global-permission-mappings-config.xml``. Remember to restart CrafterCMS so your changes to the file will take effect.
+Here's the default global permissions configuration (click on the triangle on the left to expand/collapse). It contains the permissions mappings for the roles defined in the :ref:`global role mappings configuration <global-role-mappings-config>` file. To access the file, using your favorite editor, navigate to ``CRAFTER_HOME/data/repos/global/configuration/`` then open the file ``global-permission-mappings-config.xml``. Remember to restart CrafterCMS so your changes to the file will take effect.
 
 .. raw:: html
 
@@ -24,6 +24,7 @@ Here's the default global permissions configuration. It contains the permissions
 
 .. rli:: https://raw.githubusercontent.com/craftercms/studio/develop/src/main/webapp/repo-bootstrap/global/configuration/global-permission-mappings-config.xml
        :language: xml
+       :caption: *CRAFTER_HOME/data/repos/global/configuration/global-permission-mappings-config.xml*
        :linenos:
 
 

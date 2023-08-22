@@ -88,6 +88,8 @@ See https://www.tiny.cloud/docs/configure/editor-appearance/#toolbarn for more i
 
 TinyMCE Plugin Toolbar Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. TODO Fix overlines
+
 Let's take a look at an example of using one of the TinyMCE plugins to add a button in the toolbar.
 
 We'll add a media button to our editor instance to be able to embed a YouTube video:
