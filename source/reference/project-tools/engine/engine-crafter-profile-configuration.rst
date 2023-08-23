@@ -10,9 +10,11 @@
 ====================================
 Engine Crafter Profile Configuration
 ====================================
+.. contents::
+    :local:
 
-   .. note:: This guide includes Crafter Profile specific configuration only, for a general guide see
-             :ref:`engine-project-security-guide`
+.. note:: This guide includes Crafter Profile specific configuration only, for a general guide see
+          :ref:`engine-project-security-guide`
 
 Crafter Engine needs access tokens to use Crafter Profile's API. Each project must have it's own access token. Follow the
 next steps to create one:
@@ -60,11 +62,9 @@ next steps to create one:
 ------------------
 Add Authentication
 ------------------
-
+^^^^^^^^^^^^^^^^
 Add Registration
-================
-.. TODO Fix overlines
-
+^^^^^^^^^^^^^^^^
 Normally, to add registration or sign up you just need to:
 
 #. Create a page with an HTML form that captures the user information for registration:
@@ -210,10 +210,9 @@ Normally, to add registration or sign up you just need to:
       }
 
 
-
+^^^^^^^^^^^^^^^^^^
 Add Single Sign-On
-==================
-
+^^^^^^^^^^^^^^^^^^
 Configure SSO headers with at least a CRAFTER_secure_key, CRAFTER_username, CRAFTER_email and CRAFTER_groups (which must be a comma separated list of string) in the header, then check in Crafter Profile Admin Console to make sure
 that the Single sign-on enabled checkbox is selected in the tenant page.
 
@@ -226,10 +225,9 @@ Provider to create a user with firstName, lastName and displayName attributes.
    .. note::
       For CrafterCMS versions prior to 3.1.14, the prefix for the headers is ``MELLON_`` instead of ``CRAFTER_`` and can't be changed via project configuration.
 
-
+^^^^^^^^^^^^^^^^^^
 Add Facebook Login
-==================
-
+^^^^^^^^^^^^^^^^^^
 #. Be sure there's a connections attribute of Complex type defined for the project's Crafter Profile Tenant. This
     attribute is needed to store the Facebook connection info. To add this attribute to the Tenant, go to Crafter 
     Profile Admin Console, select the Tenant and then add the attribute.

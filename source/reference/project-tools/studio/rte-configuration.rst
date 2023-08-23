@@ -13,7 +13,6 @@
 ==============================
 Rich Text Editor Configuration
 ==============================
-
 RTEs are more effective/productive for authors  when they are configured properly for the specific type of content the author is managing. A properly and effectively configured RTE has the right styles, menu options and so on.
 Every RTE in the system can have a different look  and feel, different editing/menu options, available styles, components and other configurations. You can also SHARE setups between similar RTEs in your project.
 
@@ -31,9 +30,7 @@ Here are some things to consider for setting up effective RTEs:
 #. Toolbar is configured with only what is required for the specific use case (reducing options makes it easier for editors)
 #. If plugins like ``insert layout`` and so on are enabled it should be fully configured.
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 --------------------------------------------------------------------
 What Out-of-the-Box Functionality Does Crafter Studio's RTE Support?
@@ -86,10 +83,9 @@ Crafter Studio by default adds plugins to ``toolbar1`` as seen in the example be
 
 See https://www.tiny.cloud/docs/configure/editor-appearance/#toolbarn for more information on the toolbar(n) option of Tiny MCE
 
+""""""""""""""""""""""""""""""
 TinyMCE Plugin Toolbar Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. TODO Fix overlines
-
+""""""""""""""""""""""""""""""
 Let's take a look at an example of using one of the TinyMCE plugins to add a button in the toolbar.
 
 We'll add a media button to our editor instance to be able to embed a YouTube video:
@@ -131,8 +127,9 @@ We'll add a media button to our editor instance to be able to embed a YouTube vi
 
    |
 
+"""""""""""""""""""""""""""""""
 TinyMCE Plugin Template Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 
 Let's take a look at another example of using the TinyMCE plugin, ``template``.
 
@@ -207,8 +204,9 @@ See https://www.tiny.cloud/docs/plugins/opensource/template/ for more informatio
 
 .. _rte-paste-plugin-hooks:
 
+"""""""""""""""""""""""""""""""""""
 TinyMCE paste plugin callback hooks
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""
 The TinyMCE ``paste`` plugin enables you to modify the pasted content before it gets inserted into the editor (``paste_preprocess``) and before it gets inserted into the editor but after it’s been parsed into a DOM structure (``paste_postprocess``). For more information on these options, see https://www.tiny.cloud/docs/plugins/opensource/paste#paste_preprocess.
 
 In order to hook into the callback (``paste_preprocess`` and ``paste_postprocess``), do the following in the RTE configuration:
@@ -247,7 +245,6 @@ In order to hook into the callback (``paste_preprocess`` and ``paste_postprocess
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Adding Allowable Elements
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Tiny MCE allows only a certain set of elements (HTML tags) as valid (rule set) by default in the code editor and will strip elements not in the allowable list  when it outputs its HTML. For example, if you try adding in the ``<script />`` element , or the ``<iframe />`` element, it will be stripped out of the HTML output. To add specific elements that should also be valid, in addition to the existing rule set, we use the ``extended_valid_elements`` in the RTE configuration. Simply add the elements you would like added to the existing rule set in the ``<extended_valid_elements />`` tag in RTE Configuration file.
 
 .. code-block:: xml
@@ -256,8 +253,9 @@ Tiny MCE allows only a certain set of elements (HTML tags) as valid (rule set) b
 
 |
 
+"""""""""""""""""""""""""""""""
 Example allowing script element
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""
 
 Let's take a look at an example of adding ``<script />`` to the allowable elements (rule set). We'll be using a project created using the Website Editorial blueprint.
 
@@ -307,8 +305,9 @@ Let's take a look at an example of adding ``<script />`` to the allowable elemen
 
       .. Warning:: Allowing script elements (<script>) in TinyMCE exposes users to cross-site scripting (XSS) attacks.
 
+"""""""""""""""""""""""""""""""""
 Example allowing a custom element
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""
 You can also add custom elements to the rule set and can be done by simply adding the custom tag to ``extended_valid_elements``. Let's take a look at an example of adding the tag  ``mycustomtag`` to the rule set.
 
    .. note:: Case sensitive custom elements are not supported in TinyMCE 5. Remember to **use only lowercase for custom elements** (e.g. ``myattr`` is supported but *myAttr* is not supported).
@@ -347,7 +346,6 @@ You can also add custom elements to the rule set and can be done by simply addin
 ^^^^^^^^^^^^^^^^^^^^^^^
 Adding External Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^
-
 TinyMCE provides an option to specify URLS to plugins outside the tinymce plugins directory. These external plugins allow the user to extend TinyMCE. For example, you can create custom dialogs, buttons, menu items, etc.
 
 For more information on the Tiny MCE external_plugins option, see https://www.tiny.cloud/docs/configure/integration-and-setup/#external_plugins
@@ -357,8 +355,9 @@ The Crafter Studio developer does not have full control of the tinymce initializ
 To add an external plugin, use ``external_plugins`` in the RTE configuration.
 Use the Crafter Studio API that gets a file for a given plugin, the getPluginFile API found here :base_url:`getPluginFile <_static/api/studio.html#tag/plugin/operation/getPluginFile>` to get the Tiny MCE external plugin file to pass to the RTE.
 
+"""""""""""""""""""""""
 Example External Plugin
-^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""
 Let's take a look at an example of a simple external plugin that creates a custom button which inserts text in the RTE.
 We'll load our external plugin (a custom button) and add it to the RTE's toolbar. For our example, we'll be using a site created using the empty blueprint named ``hello``.
 
@@ -457,7 +456,6 @@ We'll load our external plugin (a custom button) and add it to the RTE's toolbar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Adding support for valid child elements within a parent element
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 TinyMCE provides an option to control what child elements can exist within specified parent elements.
 By adding/removing child elements that can exist within a parent element, you can force which elements are valid children of the parent element.
 
@@ -475,8 +473,9 @@ The example above shows you how to add **style** as a valid child of **body** an
 
 For more information on the TinyMCE ``valid_children`` option, see https://www.tiny.cloud/docs/configure/content-filtering/#valid_chiildren
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 Example adding valid child elements to parent element
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 Let's take a look at an example of how to add **div** and *text content* as valid children of **a** (html anchor) using the website editorial blueprint.
 
 1. Open the RTE configuration file in Studio by opening the **Sidebar**, then click on |projectTools| -> *Configuration* -> *User Interface Configuration* then scroll down to the ``craftercms.components.TinyMCE`` widget section
@@ -525,10 +524,7 @@ Let's take a look at an example of how to add **div** and *text content* as vali
 
    |
 
-
-.. raw:: html
-
-   <hr>
+|hr|
 
 ---------------------
 Creating an RTE Setup
@@ -605,14 +601,11 @@ Inside the ``<setups>`` tag, there can be multiple ``<setup>`` tags. Each setup 
 * An ``<id>`` tag with the name that must be specified for an RTE control to use this configuration.
 * An ``<tinymceOptions>`` tag containing TinyMCE Configuration options (see https://www.tiny.cloud/docs/configure/ for more information) and plugins (see https://www.tiny.cloud/docs/plugins/opensource/ for more information)
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 ------------------------------------------
 Attaching an RTE in a Form to an RTE Setup
 ------------------------------------------
-
 To attach an RTE setup to an RTE in a form, open the content type that you want to add an RTE to, then go to the **Properties Explorer** and click on RTE Configuration and type in an RTE setup name.
 
 .. figure:: /_static/images/site-admin/rte/rte-setup-form.webp
@@ -623,21 +616,17 @@ To attach an RTE setup to an RTE in a form, open the content type that you want 
 
 In the image above, the RTE setup name used is **generic**. Please see the section above on how to create an RTE Setup, where the example shows an RTE Setup named **generic**.
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 ------------------------------------------------------
 Inserting Links to Pages in the Rich Text Editor (RTE)
 ------------------------------------------------------
-
 Users sometimes need to link to a page in the site to selected text in their document.
 This section details how to setup the Rich Text Editor (RTE) to allow a user to browse or search for pages and insert links to them.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Basic Setup and Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 #. Open the content type with the Rich Text Editor (RTE) to be setup. Open the **Sidebar** and click on |projectTools| and select **Content Types**. Select the content type with the RTE you'd like to setup, then click on the **Open Type** button.
 #. Setup the data source to select a page from the site. From the content model definition, go to the **Data Sources** panel and drag ``File Browse`` to the the ``Data Sources`` section of the form and fill in the following properties:
 
@@ -652,7 +641,6 @@ Basic Setup and Configuration
 ^^^^^^^
 Example
 ^^^^^^^
-
 Let's take a look at an example using a site created using the ``Website Editorial`` blueprint. We will setup the RTE in the ``Article`` content type to allow a user to browse or search for pages and insert links to them. We will first setup the RTE, then see it in action.
 
 #. Open the content type with the Rich Text Editor (RTE) to be setup. Open the **Sidebar** and click on |projectTools| and select **Content Types**. Click on **Open Existing Type**, and select the content type ``Article`` then click on the **Open Type** button.
@@ -740,16 +728,13 @@ Let's now take a look at the data source we setup and bound to the RTE in action
 
    |
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 .. _extending-tinymce:
 
 -----------------
 Extending TinyMCE
 -----------------
-
 CrafterCMS  provides a general tool for extending TinyMCE via the ``craftercms_tinymce_hooks``.  It currently allows for hooking into the following (as shown by the example `here <https://github.com/craftercms/studio-ui/blob/master/static-assets/js/tinymce-plugins/craftercms_paste_extension/craftercms_tinymce_hooks.sample.js>`__):
 
 - ``paste_preprocess`` callback

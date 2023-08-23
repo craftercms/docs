@@ -10,7 +10,6 @@
 ===========================================================
 Configure Simple Workflow Notifications and Dialog Messages
 ===========================================================
-
 Crafter Studio provides a simple workflow option that includes submission, review/reject and approve and
 publish immediate / publish on a schedule options. This document covers the configuration of the HTML notifications
 that can be sent at each point in the workflow. To setup your email server, please see the section **System Administrators**, :ref:`studio-config-override`
@@ -18,14 +17,11 @@ that can be sent at each point in the workflow. To setup your email server, plea
 ------
 Basics
 ------
-
 All configuration for the notification system is done by a site admin (on a per site basis) in the following configuration file:
 
-
+^^^^^
 Where
------
-.. TODO fix overlines
-
+^^^^^
 .. code-block:: xml
     :caption: *CRAFTER_HOME/data/repos/sites/SITENAME/sandbox/config/studio/notifications.xml*
 
@@ -40,9 +36,9 @@ This can be modified/accessed through Crafter Studio, by going to the **Sidebar*
     :width: 50%
     :alt: Configuration - Open Notification Configuration
 
+^^^^^^^^^
 Templates
----------
-
+^^^^^^^^^
 Templates are used for the email messages sent for workflow states in the configuration file mentioned above. The template used is Freemarker (also known as FTL).
 Variables are referenced in the template like `${VARIABLE}` or as part of a Freemarker statement like `<#list files as file>...</#list>`
 Dates can be formatted like so: `scheduleDate?string["MMMMM dd, yyyy 'at' hh:mm a"]}`
@@ -52,12 +48,11 @@ A full guide to FTL can be found here: http://freemarker.org/
 ------------------
 Template Variables
 ------------------
-
 Here are some template variables used in CrafterCMS:
 
+^^^^^^^^^^^^^^^^
 Common Variables
-----------------
-
+^^^^^^^^^^^^^^^^
 +-----------------------------+-----------------------------------------------------------+
 || Variable Name              || Description                                              |
 +=============================+===========================================================+
@@ -90,11 +85,9 @@ Common Variables
 +-----------------------------+-----------------------------------------------------------+
 
 
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Deployment Error Notice Variable
---------------------------------
-
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 +-----------------------------+---------------------------------------------------------+
 || Variable Name              || Description                                            |
 +=============================+=========================================================+
@@ -105,7 +98,6 @@ Deployment Error Notice Variable
 --------------------------------
 Configure Who Gets Notifications
 --------------------------------
-
 Configure who gets notifications by entering the email addresses of the people you want to send notifications to, in between the tags ``<deploymentFailureNotification>`` and/or ``<approverEmails>``
 
 .. code-block:: xml
@@ -129,7 +121,6 @@ Configure who gets notifications by entering the email addresses of the people y
 -----------------------------------------
 Configure Studio Workflow Dialog Messages
 -----------------------------------------
-
 Below is a sample of Studio workflow dialog messages defined in our notifications configuration file.
 
 .. code-block:: xml
@@ -172,7 +163,6 @@ Below is a sample of Studio workflow dialog messages defined in our notification
 -------------------
 Configure Templates
 -------------------
-
 Below is an example of a configured email messages for each point in the workflow, found in between the tag <emailTemplates> in the notifications configuration file.
 
 .. code-block:: xml

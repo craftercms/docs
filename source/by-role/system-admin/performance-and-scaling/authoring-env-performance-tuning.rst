@@ -6,6 +6,8 @@
 ========================================
 Authoring Environment Performance Tuning
 ========================================
+.. contents::
+    :local:
 
 .. TODO: Add Studio and Deployer performance tuning parameters
 
@@ -48,17 +50,18 @@ The majority of Studio operations are I/O intensive. Optimizing your installatio
 Performance Tuning
 ------------------
 
+^^^^^^^^^^^^^^^^^^^^^
 Server/Hardware Level
----------------------
-.. TODO Fix overlines
+^^^^^^^^^^^^^^^^^^^^^
 
-^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""
 Disk/Storage Devices
-^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""
 Crafter Studio’s job is to manage content. A high volume of concurrent reads and writes should be expected. The faster the disk type and connection to the computer, the better the performance you will observe.
 
+~~~~~~~~~~~~~~~~~~~~~~~
 Testing Raw Performance
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * Non-concurrent quick test or the raw device performance can be achieved with ``sudo hdparm -tT /dev/{device}``
 
@@ -123,8 +126,9 @@ Testing Raw Performance
 	     10 requests completed in 9.01 s, 1.68 k iops, 6.57 MiB/s
 	     min/avg/max/mdev = 179 us / 594 us / 742 us / 146 us
 
+~~~~~~~~~~~~~~~
 Recommendations
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 **Prefer multiple devices to a single device**
 
 Crafter must update content, metadata about the content, search indexes and more on every write. By storing each kind of data on its own storage device, you better enable these activities to occur concurrently and hence vastly improve performance.
@@ -162,12 +166,13 @@ One optimization to raise effective IOPS of a system without buying very expensi
 
 |
 
+^^^^^^^^
 OS Level
---------
+^^^^^^^^
 
-^^^^^^^^^^^^
+""""""""""""
 Linux Ulimit
-^^^^^^^^^^^^
+""""""""""""
 CrafterCMS includes many subsystems that require additional file-handles be available at the operating system level.
 
 Our limits are:
@@ -245,32 +250,32 @@ For more information on types, other items, etc. that you can configure, see you
 .. DB Connection Pool
 .. [todo: Defaults are good, push up as needed]
 
+^^^^^^^^^^^^^
 Anti Patterns
--------------
+^^^^^^^^^^^^^
 Here are some things we recommend **NOT TO DO** when setting up/configuring your authoring environment:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 Slow network based storage
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""
 Simple network storage such as NAS connected over copper network to compute is known to produce slow performance due to latency across many small operations.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""
 Use of NFS as a mounting protocol
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""
 NFS is a particularly slow and unreliable network storage protocol, especially when mounts are configured with default settings.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""
 Putting all data on the same disk
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""
 Studio stores content in Git, Metadata about workflow and content in an embedded database and indexes in OpenSearch. All of these stores are updated on each write. Putting them on the same disk can lead to slower access times due to contention in high throughput scenarios.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""
 Using Default Settings for Larger Installations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""""""""""""
 Installations are pre-configured with settings that assume an average/smaller sized machines. Further OS defaults are not managed by Crafter. To get the best performance you should consider and adjust for your specific environment, hardware, business needs and best practices.
 
 --------------------------------
 Securing your CrafterCMS Install
 --------------------------------
-
 CrafterCMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`change-the-defaults`
