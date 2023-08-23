@@ -26,14 +26,14 @@ Enterprise Support
 
 For production and other services support including:
 
-    * Private marketplace
-    * High availability (advanced clustering) support
-    * Single Sign-on (SSO) support
-    * White labeling
-    * Priority security patches
-    * Commercial license
     * 24x7x365 support with SLAs
+    * Single Sign-on (SSO), SAML, LDAP, and Header-based authentication support
+    * Priority security patches
     * Certified builds
+    * Commercial license
+    * High availability (advanced clustering) support
+    * Private marketplace
+    * White labeling
     * Architectural consulting
     * Access to a system integration partner ecosystem
 
