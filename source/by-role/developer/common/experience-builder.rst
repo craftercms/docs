@@ -8,11 +8,12 @@
 =======================
 Experience Builder (XB)
 =======================
-.. contents::
-
 .. version_tag::
    :label: Since
    :version: 4.0.0
+
+.. contents::
+    :local:
 
 CrafterCMS' Experience Builder (XB) provides a UI layer on top of your applications that enables authors
 with in-context editing (ICE) for all the model fields defined in the content types of pages and components.
@@ -365,10 +366,9 @@ The complete FreeMarker template for the carousel component becomes:
 
 .. _xbMacros:
 
+"""""""""""""""""""""""""""""
 FreeMarker Macros & Utilities
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. TODO Fix overlines
-
+"""""""""""""""""""""""""""""
 There are three macros in ``crafter.ftl``:
 
 - ``head``: used to inject templates from plugins
@@ -400,8 +400,9 @@ After importing ``crafter.ftl``, you'll have all the available XB macros describ
 
 .. _freemarker-initExperienceBuilder:
 
+~~~~~~~~~~~~~~~~~~~~~
 initExperienceBuilder
-"""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~
 
 Initializes the ICE engine and the communication between the page/app and studio. Call is required to
 enable Studio to control the page and for XB to enable ICE.
@@ -432,8 +433,9 @@ In that case, you'll need to invoke ``initExperienceBuilder`` manually.
 When invoked, ``initExperienceBuilder`` returns an object with an ``unmount`` prop/function, which
 would indeed `unmount` XB from the current page.
 
+''''''''
 Examples
-""""""""
+''''''''
 
 .. TODO Add context to the examples below or find a way to make these look better/more meaningful when rendered
 
@@ -454,8 +456,9 @@ Examples
 
 .. _htmlElementTagMacros:
 
-Html elements tag macros
-""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~
+Html Elements Tag Macros
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 CrafterCMS provides a comprehensive list of macros for the most common html elements that are used to
 develop content-managed websites/webapps. All these tags provided are essentially an alias to the
@@ -504,9 +507,9 @@ The following tags are available:
        ``<article>`` tag. Use only if you're using ``@crafter.tag``, which in most cases you don't need to as you
        can use the tag alias (e.g. ``<@crafter.article ... />``)
 
-
+''''''''
 Examples
-########
+''''''''
 
 In this first example:
 
@@ -531,8 +534,9 @@ In this first example:
          <@crafter.span $field"text_s">${model.text_s}</@crafter.span>
        </@crafter.tag>
 
+''''''''''
 Auto-print
-##########
+''''''''''
 
 The example below, uses the short-hand auto-print expression. The colon at the end of the field id,
 instructs the system to print the value of that field for you.
@@ -559,8 +563,9 @@ Note the ``@crafter.img`` macro automatically prints to ``src`` when you don't s
 
 .. _renderComponentCollection:
 
+~~~~~~~~~~~~~~~~~~~~~~~~~
 renderComponentCollection
-"""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Used to render *Item Selector* controls, which hold components. Internally, it prints out the
 tag for the field (item selector) and the tags for each of the component container items.
@@ -624,8 +629,9 @@ not the item.
        (``additionalModel`` argument when used directly) to the component template context. You can send these via
        this parameter. The ``renderComponentArguments`` will be sent to all items.
 
+'''''''
 Example
-#######
+'''''''
 
 .. code-block:: text
 
@@ -675,8 +681,9 @@ The sample above would print out the following html:
 
 .. _renderRepeatGroup:
 
+~~~~~~~~~~~~~~~~~
 renderRepeatGroup
-"""""""""""""""""
+~~~~~~~~~~~~~~~~~
 
 Used to render *Repeat Group* controls. Internally, it prints out the
 tag for the field (repeat group) and the tags for each of the items.
@@ -735,8 +742,9 @@ contain nested repeat groups or component collections.
      - Html attributes to print by item index. For example, ``$nthItemAttributes={ 0: { "class": "active" } }`` will
        apply the class named active only to the first item in the collection.
 
+''''''''
 Examples
-########
+''''''''
 
 .. code-block:: text
 
@@ -896,13 +904,15 @@ The sample above would print out the following html:
 
 .. _forEach:
 
+~~~~~~~
 forEach
-"""""""
+~~~~~~~
 
 Useful for iterating through crafter collections.
 
+''''''''
 Examples
-########
+''''''''
 
 .. code-block:: text
 
@@ -926,8 +936,9 @@ Examples
 
 .. _cleanDotNotationString:
 
+~~~~~~~~~~~~~~~~~~~~~~
 cleanDotNotationString
-""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~
 
 Takes a dot-separated-string and returns a string that doesn't have any dots at the beginning or
 end of the string and that there aren't any consecutive dots.
@@ -954,15 +965,17 @@ carryovers and complex/compound fields (e.g. ``field1.field2``) and indexes (e.g
 
 .. _isEmptyCollection:
 
+~~~~~~~~~~~~~~~~~
 isEmptyCollection
-"""""""""""""""""
+~~~~~~~~~~~~~~~~~
 
 Receives a Crafter collection and returns true if it's empty or false otherwise.
 
 .. _emptyCollectionClass:
 
+~~~~~~~~~~~~~~~~~~~~
 emptyCollectionClass
-""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~
 
 Receives a collection and, if the collection is empty it will print a *special* crafter class,
 otherwise, it won't print anything. This macro only prints in Crafter Engine's *preview mode*.
@@ -993,8 +1006,9 @@ One should use this macro on empty component or repeat group collections.
 
 .. _emptyFieldClass:
 
+~~~~~~~~~~~~~~~
 emptyFieldClass
-"""""""""""""""
+~~~~~~~~~~~~~~~
 
 Receives a field value and, if the field has no content it will print a *special* crafter class,
 otherwise, it won't print anything. This macro only prints in Crafter Engine's *preview mode*.
@@ -1018,8 +1032,9 @@ One should use this macro on empty fields.
 
 .. _printIfPreview:
 
+~~~~~~~~~~~~~~
 printIfPreview
-""""""""""""""
+~~~~~~~~~~~~~~
 
 Receives a string which it will print if Crafter Engine is running in preview mode. Doesn't print
 anything if Engine is running the published site.
@@ -1039,8 +1054,9 @@ You can also use the FreeMarker context variable ``modePreview`` to do similar t
 
 .. _printIfNotPreview:
 
+~~~~~~~~~~~~~~~~~
 printIfNotPreview
-"""""""""""""""""
+~~~~~~~~~~~~~~~~~
 
 Receives a string which it will print if Crafter Engine is not running in preview mode. Doesn't print
 anything if Engine is running the published site.
@@ -1052,8 +1068,9 @@ anything if Engine is running the published site.
 
 .. _navigation:
 
+~~~~~~~~~~
 navigation
-""""""""""
+~~~~~~~~~~
 
 Prints out the navigation structure of a site in a customizable markup structure.
 
@@ -1169,8 +1186,9 @@ Prints out the navigation structure of a site in a customizable markup structure
 
 .. _navigationItem:
 
+~~~~~~~~~~~~~~
 navigationItem
-""""""""""""""
+~~~~~~~~~~~~~~
 
 Used internally by `the navigation macro <#navigation>`_ to print each item.
 
@@ -1199,8 +1217,9 @@ See the navigation macro
 
 .. _breadcrumb:
 
+~~~~~~~~~~
 breadcrumb
-""""""""""
+~~~~~~~~~~
 
 .. list-table::
    :widths: 10 10 10 70
@@ -1285,16 +1304,18 @@ model that you've previously fetched.
 You may also dig deep into the system and manage the field element registrations manually to suit your
 application needs.
 
+"""""
 Usage
-~~~~~
+"""""
 
 XB JS libraries can be used either via npm by importing ``@craftercms/experience-builder`` or using the
 JS :abbr:`UMD (Universal Module Definition)` bundle and adding it into your app's runtime.
 
 .. _xb-react-bindings:
 
+"""""
 React
-~~~~~
+"""""
 
 CrafterCMS provides React bindings for integrating with XB. Because XB itself is a React application,
 React presents the tightest, most native integration with XB as it will essentially run as part of your
@@ -1306,8 +1327,9 @@ The components available for using on your React applications are listed below.
 
 .. _ExperienceBuilder:
 
+~~~~~~~~~~~~~~~~~
 ExperienceBuilder
-"""""""""""""""""
+~~~~~~~~~~~~~~~~~
 
 This is the main component that orchestrates and enables all of the In-context Editing. You must declare
 this component only once and it should be a parent of all the XB-enabled components.
@@ -1351,8 +1373,9 @@ this component only once and it should be a parent of all the XB-enabled compone
      - You may specify a different element for XB to scroll when scrolling the user to specific
        CrafterCMS field elements.
 
+~~~~~
 Model
-"""""
+~~~~~
 
 Use this component to render elements that represent the **models themselves** (i.e. CrafterCMS pages or
 components, not their fields).
@@ -1382,8 +1405,9 @@ components, not their fields).
        component so to avoid it swallowing the prop and not reaching your target component, you may
        send the prop(s) via ``componentProps`` instead.
 
+~~~~~~~~~~~
 ContentType
-"""""""""""
+~~~~~~~~~~~
 
 Use this component to render a specific component of your own library based on the content type of the
 model. ``ContentType`` component works with a "content type map" which you must supply as a prop. The
@@ -1420,8 +1444,9 @@ component on a given piece of your app.
      - If the content type of the model is not found in the ``contentTypeMap``, the ``notMappedComponent``
        is rendered.
 
+~~~~~~~~~~~
 RenderField
-"""""""""""
+~~~~~~~~~~~
 
 Use this component to render CrafterCMS model **fields**. Although it can also render collection-type
 fields, CrafterCMS provides specific components (see below) to render component collections or repeat groups.
@@ -1472,8 +1497,9 @@ fields, CrafterCMS provides specific components (see below) to render component 
 
 .. _RenderComponents:
 
+~~~~~~~~~~~~~~~~
 RenderComponents
-""""""""""""""""
+~~~~~~~~~~~~~~~~
 
 Use this component to render item selectors that hold components. This component renders the field
 element (i.e. the item selector), the item element, and the component itself.
@@ -1512,8 +1538,9 @@ element (i.e. the item selector), the item element, and the component itself.
 
 .. _RenderRepeat:
 
+~~~~~~~~~~~~
 RenderRepeat
-""""""""""""
+~~~~~~~~~~~~
 
 Use this component to render repeat groups and their items. This component renders the field element
 (i.e. the repeat group) and the item element. The body of each repeat group item is rendered by a function
@@ -1574,16 +1601,18 @@ index (when applicable) and the collection itself.
        the compound index (nested collections), the index in the current repeat collection and the
        collection itself.
 
+""""""""""""""""""""""""""""""""""""""
 Angular, Vue and Other JS Applications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""""""""""""""""""""
 
 The easiest way to integrate XB with your JS application is by putting attributes on each HTML element that
 represents a model, field or item of a CrafterCMS content type and then invoking XB initializer.
 
 .. _fetchIsAuthoring:
 
+~~~~~~~~~~~~~~~~
 fetchIsAuthoring
-""""""""""""""""
+~~~~~~~~~~~~~~~~
 
 This function checks against the specified CrafterCMS server if it is running against an authoring server.
 When running in authoring, in-context editing tools should be enabled in the application whilst in
@@ -1626,15 +1655,17 @@ in "production", where authoring tools are completely absent.
    Is addAuthoringSupport still needed? If used via npm, everything is imported from the package and,
    if imported as a script, everything is already loaded.
 
+~~~~~~~~~~~~~~~~~~~
 addAuthoringSupport
-"""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~
 
 Add authoring support will import the XB scripts on to your page.
 
 .. _getICEAttributes:
 
+~~~~~~~~~~~~~~~~
 getICEAttributes
-""""""""""""""""
+~~~~~~~~~~~~~~~~
 
 Use this method to get the set of attributes to place on each element that represents a CrafterCMS
 model, field or item. Once you've fetched your content, you'd invoke ``getICEAttributes`` and it will
@@ -1659,8 +1690,9 @@ You should first set all the attributes on your markup and afterwards, invoke `i
 
 .. _js-app-initExperienceBuilder:
 
+~~~~~~~~~~~~~~~~~~~~~
 initExperienceBuilder
-"""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~
 
 Use this method to initialize experience builder once you have printed all the attributes (see
 `getICEAttributes <#geticeattributes>`__) on your markup.
@@ -1678,8 +1710,9 @@ Use this method to initialize experience builder once you have printed all the a
      - (Required)
      - See `XB props <#experiencebuilder>`_.
 
+""""""""""""""""""""
 Example Applications
-~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""
 
 - `React Example <https://github.com/craftercms/wordify-blueprint/tree/react>`_
 - `Next JS Example <https://github.com/craftercms/craftercms-example-nextjs>`_

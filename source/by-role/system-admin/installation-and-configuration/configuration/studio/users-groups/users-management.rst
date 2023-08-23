@@ -14,7 +14,6 @@ Users Management
 -----------
 Description
 -----------
-
 User Management allows you to control and set up who can access and manage the sites. All users are listed on
 the User Management page.
 
@@ -36,13 +35,11 @@ To find the Users Management console follow the next instructions:
 -------
 Actions
 -------
-
 You can list, search, add or delete users, as well as view specific information.
 
 ^^^^^^^^^^^^^
 Listing Users
 ^^^^^^^^^^^^^
-
 To see a list of all existing users, make sure that there are no search terms entered in the search bar. You can also change the number of users listed per page by selecting a different number in the dropdown box at the bottom right of the screen
 
 .. image:: /_static/images/users/users-list-all.webp
@@ -51,10 +48,9 @@ To see a list of all existing users, make sure that there are no search terms en
     :width: 75%
 
 
+"""""""""""""""
 Searching Users
-^^^^^^^^^^^^^^^
-.. TODO Fix overlines
-
+"""""""""""""""
 You can search for a specific user. To search users, click on the magnifying glass icon on the top right then go
 to the search field and type user name, last name, user name or mail.
 In the following example we typed "jane", we obtained only one related user: "Jane".
@@ -125,9 +121,9 @@ on the "Cancel" button.
     :align: center
     :width: 75%
 
-
+"""""""""""""""""""""""""""""""""""""
 Resetting an Existing User's Password
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""""
 
 To reset the password of a specific user, please click on the key icon in the user modal dialog as shown in
 the following example.
@@ -143,9 +139,9 @@ A modal dialog will be displayed, where the admin can reset the users password. 
     :align: center
     :width: 55%
 
-
+"""""""""""""""""""""""""
 Removing an Existing User
-^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""
 
 To remove a specific user, please click on the trash can icon located in the user modal dialog as shown in
 the following example.

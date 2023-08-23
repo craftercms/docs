@@ -13,7 +13,6 @@
 =====================
 Publishing and Status
 =====================
-
 The **Publishing Dashboard** under |projectTools| allows the user to view the publishing status,
 publish multiple items from a specified path, publish commits from sandbox repository by commit id or tag and
 view the publishing queue.
@@ -23,7 +22,6 @@ view the publishing queue.
 ------
 Status
 ------
-
 The **Status** section allows the user to view the publishing status, such as the following:
 
 - The publisher was stopped by an administrator.
@@ -55,14 +53,11 @@ After clicking on the ``unlock`` button, the user will be prompted to confirm th
 
 |
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 -----------------
 Publish on demand
 -----------------
-
 The **Publish on Demand** section allows the user to publish changes made in Studio via the UI and
 to publish commits from sandbox repository by commit id.
 
@@ -81,10 +76,9 @@ The user will first be asked to publish the entire project, if the project has n
 
 |
 
+^^^^^^^^^^^^^^^
 Publish by path
----------------
-.. TODO Fix overlines
-
+^^^^^^^^^^^^^^^
 The **Publish changes made in Studio via the UI** selection allows the user to publish multiple items under a specified path. This should be used to publish changes made in Studio via the UI.
 
 For example, using the Website Editorial blueprint, to publish all the articles in the year 2021, in the **Path to Publish** field, enter ``/site/website/articles/2021``. To publish everything in your project, the user will enter ``/`` in the **Path to Publish** field
@@ -95,9 +89,9 @@ For example, using the Website Editorial blueprint, to publish all the articles 
 
 |
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Publish by Commit/tag ID(s)
----------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The **Publish changes made via direct git actions against the repository or pulled from a remote repository** allows the user to publish by tags or commits ids
 
 .. image:: /_static/images/site-admin/project-tools-publish-commit-id.webp
@@ -145,8 +139,9 @@ To publish by commit id, let's use a project created using the Website Editorial
 
 .. _publish-everything:
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Publish all changes on the repo
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. version_tag::
    :label: Since
    :version: 4.0.2

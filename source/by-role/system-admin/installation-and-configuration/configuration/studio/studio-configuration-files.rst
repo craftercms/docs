@@ -1,14 +1,13 @@
 :is-up-to-date: False
-
+:last-updated: 4.0.0
 
 .. index:: Studio Configuration Files
 
 .. _studio-configuration-files:
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 Studio Configuration Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. TODO Fix overline
-
 The core configuration file for Crafter Studio ``studio-config.yaml`` contains pre-configured settings and is located in your Authoring installation under ``CRAFTER_HOME/bin/apache-tomcat/webapps/studio/WEB-INF/classes/crafter/studio``. See :ref:`studio-core-configuration` for more information.
 
 We do not recommend making changes to the core configuration file ``studio-config.yaml``. There are two override files available to make changes to the pre-configured settings in the core configuration file for Crafter Studio:
