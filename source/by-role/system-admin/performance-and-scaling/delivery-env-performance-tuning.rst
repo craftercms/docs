@@ -52,6 +52,7 @@ Performance Tuning
 
 Server/Hardware Level
 ---------------------
+.. TODO fix overlines
 
 ^^^^^^^^^^^^^^^^^^^^
 Disk/Storage Devices
@@ -239,4 +240,4 @@ Installations are pre-configured with settings that assume an average/smaller si
 Securing your CrafterCMS Install
 --------------------------------
 
-CrafterCMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`securing-your-crafter-cms-install`
+CrafterCMS installations are pre-configured with default values. To have a secure installation, remember to change the pre-configured default values. For more information, see :ref:`change-the-defaults`

@@ -41,7 +41,7 @@ REST API
 
    api/index.rst
 
-.. Comment out for now for when OAS file is ready
+.. TODO Comment out for now for when OAS file is ready
 .. To view the Crafter Social REST APIs:
 
 .. .. open_iframe_modal_button::

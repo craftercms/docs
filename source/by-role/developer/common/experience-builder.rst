@@ -367,6 +367,7 @@ The complete FreeMarker template for the carousel component becomes:
 
 FreeMarker Macros & Utilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. TODO Fix overlines
 
 There are three macros in ``crafter.ftl``:
 

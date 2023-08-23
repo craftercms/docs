@@ -21,9 +21,6 @@ Before we begin, please review the following for requirements and supported plat
 -------------------------------------
 Setting up the production environment
 -------------------------------------
-
-.. TODO remove references to getting-started. The meat of that must be an include.
-
 #. We'll first install the authoring instance. You can follow the instructions :ref:`here <installation>`
    to install and start authoring.
 

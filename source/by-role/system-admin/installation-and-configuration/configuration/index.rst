@@ -18,6 +18,8 @@ Reverse Proxy
 .. TODO Indicate when and why you would want to use a reverse proxy
 .. TODO detail out the configuration of the reverse proxy
 
+:ref:`reverse-proxy-configuration`
+
 -------
 Modules
 -------
@@ -29,6 +31,7 @@ Deployer
 
 :ref:`Deployer Administration and Configuration <crafter-deployer-administration>`
 
+.. TODO fill in the rest of the modules?
 
 .. .. toctree::
    :maxdepth: 1

@@ -63,6 +63,7 @@ Add Authentication
 
 Add Registration
 ================
+.. TODO Fix overlines
 
 Normally, to add registration or sign up you just need to:
 

@@ -181,7 +181,7 @@ CrafterCMS supports authentication integration with:
 
 * SAML2 providers (see :ref:`here <engine-saml2-configuration>` and :ref:`here <crafter-studio-configure-studio-saml>`)
 * :ref:`LDAP <crafter-studio-configure-ldap>` , AD, ADFS
-* Headers-based providers (most SSO vendors) (see :ref:`here <crafter-studio-configure-headers-based-auth>` and :ref:`here <engine-headers-authentication>`)
+* Header-based providers (most SSO vendors) (see :ref:`here <crafter-studio-configure-header-based-auth>` and :ref:`here <engine-headers-authentication>`)
 * OAuth 2.0 (coming soon)
 
 """""""""""""
@@ -261,7 +261,7 @@ CrafterCMS supports authentication integration with:
 
 * SAML2 providers (see :ref:`here <engine-saml2-configuration>` and :ref:`here <crafter-studio-configure-studio-saml>`)
 * :ref:`LDAP <crafter-studio-configure-ldap>` , AD, ADFS
-* Headers-based providers (most SSO vendors) (see :ref:`here <crafter-studio-configure-headers-based-auth>` and :ref:`here <engine-headers-authentication>`)
+* Header-based providers (most SSO vendors) (see :ref:`here <crafter-studio-configure-header-based-auth>` and :ref:`here <engine-headers-authentication>`)
 * OAuth 2.0 (coming soon)
 
 """""""""""""

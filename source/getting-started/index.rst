@@ -1,12 +1,11 @@
 :is-up-to-date: False
-:since-version: 4.1.0
+:last-updated: 4.1.0
 
 .. _getting-started:
 
 ===============
 Getting Started
 ===============
-
 This section lets you get started quickly on using CrafterCMS.
 
 .. contents::

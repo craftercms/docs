@@ -17,6 +17,7 @@ At a high-level, we're pursuing the objectives listed below in order:
 * Add Recycle Bin to the authoring system
 * Improve Studio's publishing system for better performance and scalability
 
+------------------
 Recently Completed
 ------------------
 

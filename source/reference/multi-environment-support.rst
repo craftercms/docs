@@ -286,7 +286,7 @@ where the project is deployed. We will have three environments ``dev``, ``auth``
         <db>
           <uri>mongodb://localhost:27017/mydb?maxPoolSize=1&amp;minPoolSize=0&amp;maxIdleTimeMS=10000</uri>
         </db>
-     </site>
+      </site>
 
 
    .. code-block:: xml
