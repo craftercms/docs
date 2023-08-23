@@ -10,9 +10,9 @@ Installation and Configuration
     :local:
     :depth: 2
 
-This section describes various ways of installing and configuring CrafterCMS.
+This section describes the various ways of installing and configuring CrafterCMS.
 
-First we'll take a look at the requirements and supported platform for installing/setting up CrafterCMS.
+First we'll take a look at the requirements and supported platform for installing and setting up CrafterCMS.
 
 .. _requirements_supported_platforms:
 
@@ -47,37 +47,22 @@ Run CrafterCMS in :ref:`Docker <running-craftercms-in-docker>`.
 ^^^^^^^^^^
 Kubernetes
 ^^^^^^^^^^
-
-Deploy CrafterCMS in Kubernetes.
-
-.. toctree::
-  :maxdepth: 1
-
-  kubernetes/index
+Follow the :ref:`deploying-craftercms-in-kubernetes` article to learn how CrafterCMS deploys in Kubernetes.
 
 ^^^^^^^
 AWS AMI
 ^^^^^^^
-
-Setup CrafterCMS authoring and delivery using Crafter's AWS AMI.
-
-.. toctree::
-  :maxdepth: 1
-
-  authoring/setup-authoring-using-aws-ami
-  delivery/setup-delivery-using-aws-ami
-
+Follow the :ref:`run-using-aws-ami` to setup CrafterCMS authoring and delivery using Crafter's AWS AMIs.
 
 ^^^^^^^^^^^^^^
 Binary Bundles
 ^^^^^^^^^^^^^^
-
 CrafterCMS provides pre-built bundles for Linux, MacOS x86 and ARM. The guide below provides instructions on how to setup a production environment.
 
    .. toctree::
       :maxdepth: 2
 
-      production-environment-setup
+      install-from-bundle
 
 ^^^^^^^^^^^^^^^^^
 Build from Source

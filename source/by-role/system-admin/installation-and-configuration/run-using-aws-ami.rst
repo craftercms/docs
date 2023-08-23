@@ -1,21 +1,168 @@
 :is-up-to-date: False
-:last-updated: 4.0.3
+:last-updated: 4.1.2
+
+.. index:: AWS AMI, AMI, AWS, Install
+
+.. _run-using-aws-ami:
+
+==========================================
+Run CrafterCMS on AWS via Marketplace AMIs
+==========================================
+.. contents::
+    :local:
+    :depth: 1
+
+CrafterCMS provides ready-to-run AMIs for Authoring and Delivery. This guide will walk you through the process of launching these instances from the AWS Marketplace.
+
+.. _setup-authoring-using-aws-ami:
+
+--------------------------------------------------
+Setup CrafterCMS Authoring Using Crafter's AWS AMI
+--------------------------------------------------
+This section details how to setup CrafterCMS authoring using Crafter's AWS AMI.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 1: Launch an AWS EC2 instance using a CrafterCMS Authoring AMI
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Crafter provides a prebuilt AMI(s) for Crafter Studio, the authoring component of CrafterCMS. In this step we'll walk you through the initial launch of your instance. To get started, go to your EC2 dashboard and click ``Launch Instance`` AWS will prompt you to choose your AMI type/image.
+
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-launch-instance.webp
+    :width: 100 %
+    :align: center
+    :alt: CrafterCMS AWS AMI Authoring Launch Instance
+
+You can find CrafterCMS Authoring by entering the keywords ``CrafterCMS Authoring`` in the search box as shown below. You will find a number of options in the search results.
+
+* **CrafterCMS Community Authoring** is our open source version
+* **CrafterCMS Enterprise Authoring** is our supported enterprise version
+
+Click ``Select`` on the AMI type you want to use and then follow the launch instance/configuration wizard to determine the sizing and networking details for your instance. Please note, we recommend compute optimized / "C-class" machines for best results with typical production use.
+
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-choose-ami.webp
+    :width: 100 %
+    :align: center
+    :alt: CrafterCMS AWS AMI Authoring Choose AMI
+
+The launch instance wizard gives you the ability to tweak your instance's configuration details. In the next step we will connect to the machine with SSH via a terminal/console in order to acquire the administrators initial login password for the Crafter Studio web application. You will need to add SSH to your inbound security settings for the instance to complete the next step and acquire the password. To do so, click the ``Configure Security Group`` tab.
 
 
-.. index:: Setup CrafterCMS Delivery Using Crafter's AWS AMI
+To add the rule for SSH, click the ``Inbound traffic`` tab and then ``Add Rule`` to configure SSH. You can restrict the inbound traffic for SSH in the source column. To allow SSH from anywhere you can enter a CIDR of 0.0.0.0/0. Use the ports and IP masks/policies that align with your needs.
+
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-configure-security-group.webp
+    :width: 100 %
+    :align: center
+    :alt: CrafterCMS AWS AMI Authoring Configure Security Group
+
+Once you have added SSH access and made any other tweaks you feel are necessary to your instance's configuration, click the ``Review`` tab and then click the ``Launch`` button.
+
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-review1.webp
+    :width: 100 %
+    :align: center
+    :alt: CrafterCMS AWS AMI Authoring Review
+
+After clicking ``Launch``, AWS will request that you **select a public key for administrative console access to the machine**. You will need access to this key in the next step in order to retrieve the administrator's password for Crafter Studio. Create or choose an existing key and click ``Launch Instances``
+
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-launch-2.webp
+    :width: 100 %
+    :align: center
+    :alt: CrafterCMS AWS AMI Authoring Launch
+
+Once you click ``Launch instances`` AWS will start and initialize the instance. This may take a minute or two.
+
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-initializing1.webp
+    :width: 100 %
+    :align: center
+    :alt: CrafterCMS AWS AMI Authoring Initializing
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 2: Access the Crafter Studio login screen
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+In this step we want to prove that the application is up and running now that our instance has started and initialized fully. To do this, we're simply going to check that the application login screen shows up when we access it via a web browser.
+
+To access the login screen open a web browser and navigate to http://DNS_NAME_OR_IP_ADDRESS/studio.
+
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-login.webp
+    :width: 100 %
+    :align: center
+    :alt: CrafterCMS AWS AMI Authoring Login
+
+You can find the IP address and/or DNS name in several locations on your AWS administration console shown here:
+
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-public-ip-and-dns.webp
+    :width: 100 %
+    :align: center
+    :alt: CrafterCMS AWS AMI Authoring Public IP and DNS
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 3: Acquire the Crafter Studio admin user's password
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CrafterCMS randomly generates the admin user's password for Crafter Studio for each instance you launch. The password can be reset to anything you like after your initial login using the initial password. In this step we're going to log into the machine and acquire the password.
+
+To acquire the initial password you must log in to the instance via SSH. Open a terminal and use the following command to sign in to the instance:
+
+.. code-block:: sh
+    :linenos:
+
+    ssh -i ./PATH/TO/PEM/keys.pem ubuntu@IP-ADDRESS
+
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-ssh.webp
+    :width: 100 %
+    :align: center
+    :alt: CrafterCMS AWS AMI Authoring SSH
+
+**If SSH times out :**
+
+You will need to double check your security policies for the instance to make sure you are using the correct SSH port and that the firewall will accept your traffic from your network. To check these configurations, scroll right and click the ``Security Settings`` column for your instance. Follow the steps outlined in step 1 to check or configure your security policies. Once the rule has been added/updated or you have specified the non-standard port (22) in your SSH command (add -p PORT_NUMBER to your command) you will be able to log in.
+
+**To get the initial administrative password:**
+
+Once logged in you will execute a simple script to acquire the password. To do so, from the console prompt of your instance you can execute the following:
+
+.. code-block:: sh
+    :linenos:
+
+    sudo get-studio-password.sh
+
+The password will print out in the console. Copy this password into your clipboard and proceed to the next step.
+
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-get-admin-password1.webp
+    :width: 65 %
+    :align: center
+    :alt: CrafterCMS AWS AMI Authoring Get Admin Password
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 4: Sign into Crafter Studio
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Now that we have the randomly generated admin password for Crafter Studio we can sign in to the application.
+
+In your web browser, navigate to http://DNS_NAME/studio and then enter admin as the Email/Username, paste the password you acquired from Step 3 then click "Sign In."
+
+.. image:: /_static/images/ami/craftercms-aws-ami-authoring-login.webp
+    :width: 100 %
+    :align: center
+    :alt: CrafterCMS AWS AMI Authoring Login
+
+^^^^^^^^^^^^^^^^^^^^^^
+Step 5: Setup complete
+^^^^^^^^^^^^^^^^^^^^^^
+Welcome to Crafter Studio! Your initial installation and setup is complete.
+
+From here you can create sites, administer users/group and manage your admin user's account settings.
+
+Follow this guide to create your first website or headless CMS project: :ref:`your-first-editorial-project`
+
+Follow this guide to setup a Delivery instance of CrafterCMS on AWS: :ref:`setup-delivery-using-aws-ami`
 
 .. _setup-delivery-using-aws-ami:
 
-=================================================
+-------------------------------------------------
 Setup CrafterCMS Delivery Using Crafter's AWS AMI
-=================================================
-
+-------------------------------------------------
 This section details how to setup CrafterCMS delivery using Crafter's AWS AMI.
 
-------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 1: Launch an AWS EC2 instance using a CrafterCMS Delivery AMI
-------------------------------------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Crafter provides a prebuilt AMI(s) for Crafter Engine, the delivery component of CrafterCMS. In this step we'll walk you through the initial launch of your instance. To get started, go to your EC2 dashboard and click ``Launch Instance`` AWS will prompt you to choose your AMI type/image.
 
 .. image:: /_static/images/ami/craftercms-aws-ami-delivery-launch-instance.webp
@@ -65,10 +212,9 @@ Once you click ``Launch instances`` AWS will start and initialize the instance. 
     :align: center
     :alt: CrafterCMS AWS AMI Delivery AMI Starting
 
----------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 2: Access the Crafter Engine via the Web
----------------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In this step we want to prove that the application is up and running now that our instance has started and initialized fully. To do this, we're simply going to check that the application login screen shows up when we access it via a web browser.
 
 To access the login screen open a web browser and navigate to http://DNS_NAME_OR_IP_ADDRESS.
@@ -85,17 +231,16 @@ You can find the IP address and/or DNS name in several locations on your AWS adm
     :align: center
     :alt: CrafterCMS AWS AMI Delivery IP DNS
 
---------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 3: Configure Crafter Engine to deliver published projects
---------------------------------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Crafter Engine is now up and running. However, in order to deliver content, its deployer must be configured to monitor a published repository for one or more projects. A delivery engine is multi-tenant and can deliver many projects. Each project must be configured or "initialized" such that the deployer monitors a Git repository for published updates. CrafterCMS's delivery tier has a decoupled, shared-nothing architecture that makes it cloud native and elastically scalable. You can read more about this architecture here: :ref:`general-architecture`
 
 In this section we'll show you how to configure a Crafter Delivery instance to monitor a published Git repository and delivery content for a given project. The simplest topology for this is to directly monitor the published repository of a project on the authoring instance. This is what we will configure. Let's get started.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""
 Step 3.1: Configure authoring instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""
 In order to complete step 3, you must have a CrafterCMS authoring instance running. If you do not, please follow these instructions to set an instance:
 
 :ref:`setup-authoring-using-aws-ami`
@@ -106,14 +251,15 @@ After your authoring instance is set up and configured, follow this guide to cre
 
 Crafter will automatically "publish" the initial state of the project for you for you which will give you the prerequisites for the rest of step 3.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Step 3.2: Establish SSH-based communication between the delivery instance and the authoring instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 The delivery instance's deployer can use any git protocol to communicate with the published repository. SSH is a secure method that is available with no additional set up. We'll use this approach. SSH requires authentication and the cleanest way to authenticate is via public / private keys. You may use existing key pairs but they must be RSA type keys. For completeness we'll generate and install keys from scratch.
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 3.2.1: Create a public / private key pair
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 On your local machine, generate a public / private key pair. On a terminal/console execute the following command:
 
 .. code-block:: sh
@@ -130,8 +276,9 @@ Once the keygen process completes you should find a file at the location you spe
     :align: center
     :alt: CrafterCMS AWS AMI Delivery SSH RSA keygen
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 3.2.2: Install the public key on the authoring server
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The next step is to upload and install our public key onto the authoring instance.
 
 **Upload the public key to the authoring server**
@@ -176,8 +323,9 @@ The **ls** command will help you verify that the key has been added to the autho
     drwxr-xr-x 3 crafter crafter 4096 Apr 17 21:06 ..
     -rw-r--r-- 1 crafter crafter 757 Apr 17 21:09 authorized_keys
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 3.2.3: Install the private key on the delivery server(s)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The next step is to upload and install our private key onto the delivery instance.
 
 **Upload the private key to the delivery server**
@@ -209,8 +357,9 @@ To do this, SSH on to the delivery server as the ubuntu user and execute the fol
 
     sudo chown crafter:crafter /home/crafter/.ssh/id_rsa
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 3.2.4 Log in to the authoring server from the delivery server(s) using SSH
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Now that both our public and private keys are installed on their respective servers we're going to test that they work properly and establish a fingerprint for the authoring server on the delivery server. To do this:
 
 SSH on to the delivery server as the ubuntu user and execute the following commands:
@@ -237,9 +386,9 @@ It's important that you include the  **-o HostKeyAlgorithms=ssh-rsa** parameter 
 
     exit
 
------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 4: Initialize the project on the delivery server
------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now that secure communication is established between the authoring and delivery instances, we can initialize any number of projects to be delivered by the delivery instance. It's very simple to initialize a project on the delivery instance. To do so:
 
 SSH to the delivery server and execute the following command in the **/opt/crafter/bin** directory as the **crafter** user:
@@ -302,9 +451,9 @@ Look for output that is similar to the following:
     2019-04-17 21:39:00.001 INFO 4389 --- [pool-5-thread-1] o.c.d.impl.processors.GitPullProcessor : Cloning Git remote repository ssh://crafter@ec2-3-93-34-40.compute-1.amazonaws.com:/opt/crafter/data/repos/sites/editorial/published into /opt/crafter/data/repos/sites/editorial
     2019-04-17 21:39:00.806 INFO 4389 --- [pool-5-thread-1] o.c.d.impl.processors.GitPullProcessor : Successfully cloned Git remote repository ssh://crafter@ec2-3-93-34-40.compute-1.amazonaws.com:/opt/crafter/data/repos/sites/editorial/published into /opt/crafter/data/repos/sites/editorial
 
-------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 5: View the project on the delivery server from a web browser
-------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now that project has deployed it can be viewed via web browser. As previously mentioned, Crafter's delivery tier is multi-tenant. A SITE_ID is used on the URL to indicate which tenant is to be displayed. To preview the project you initialized, open a browser and navigate to the following URL:
 
 **http://[DELIVERY_DNS_NAME]?crafterSite=[SITE_ID]**
@@ -323,9 +472,9 @@ Example:
 
 This configuration and other advanced topology topics such as load balancing are outside the scope of a basic installation.
 
--------------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Step 6: Make an update in authoring and see it published on the delivery server
--------------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To further test publishing, log in to Crafter Studio for the given project, make an edit and then approve the edit for publish. In a few moments you will see your updates in the web browser on the delivery server. You can find step by step instructions on editing and publishing here: :ref:`your-first-editorial-project`
 
 .. image:: /_static/images/ami/craftercms-approve-publish.webp
@@ -333,8 +482,8 @@ To further test publishing, log in to Crafter Studio for the given project, make
     :align: center
     :alt: CrafterCMS AWS AMI Delivery Approve & Publish
 
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 Step 7: Setup complete!
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 Your setup and configuration of your CrafterCMS Delivery on AWS is now complete!
 

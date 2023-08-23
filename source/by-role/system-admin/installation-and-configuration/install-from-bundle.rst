@@ -1,8 +1,7 @@
 :is-up-to-date: False
-:last-updated: 4.1.1
+:last-updated: 4.1.2
 
-
-.. index:: Setting up a CrafterCMS production environment, Production Environment
+.. index:: Bundle, Install
 
 .. _production-environment-setup:
 
@@ -111,3 +110,4 @@ In addition, OpenSearch also recommends the following settings, as seen in OpenS
 For more information on configuring the above settings in OpenSearch, see: https://opensearch.org/docs/latest/install-and-configure/install-opensearch/index/#important-settings
 
 
+.. TODO Reference optimization guide

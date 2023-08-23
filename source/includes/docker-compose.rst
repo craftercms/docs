@@ -2,7 +2,8 @@ To run CrafterCMS in a set of Docker containers using Docker Compose, make sure 
 
 * Docker (https://docs.docker.com/install/)
 * Docker Compose (https://docs.docker.com/compose/install/)
-* Git 2.x+
+* Git 2.20.1 or later
+
 
 **For Windows and Mac, we recommend you give Docker Desktop at least 12GB of RAM (6GB of RAM per environment) and 4 CPUs. To do this, go to Docker Desktop's Preferences > Resources > Advanced, and then change the resource limits.**
 
@@ -18,8 +19,6 @@ To run CrafterCMS in a set of Docker containers using Docker Compose, make sure 
       ➜ git clone https://github.com/craftercms/docker-compose.git
 
    |
-
-.. TODO check if the local dev with Docker Compose is viable
 
 #. If you are a developer and want to use your local IDE and other tools, follow :ref:`this <local-dev-with-docker>` documentation to configure your docker container to support access to your projects via local IDE.
 

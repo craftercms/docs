@@ -1,6 +1,3 @@
-.. TODO Make this about running, not building
-.. TODO Building the project should go in the main README file on CrafterCMS
-
 ------------
 Requirements
 ------------
@@ -12,21 +9,22 @@ To run CrafterCMS, the following are required:
     - Git 2.20.1 and later
     - Docker if running on Mac or Windows
 
-Please note that CrafterCMS does not require any external databases for the core system to run and deliver fully dynamic experiences. MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide user management and social features.
+Please note that CrafterCMS does not require any external databases for the core system to run and deliver fully dynamic experiences. MongoDB is used by Crafter Profile and Crafter Social which are optional components that provide external (non-author) user management and social features.
 
 ^^^^^^^^^^^^^^^^^^^
 Supported Platforms
 ^^^^^^^^^^^^^^^^^^^
 
-"""""""""""""""""""
-OS (All components)
-"""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""
+Operating System/Environment (All components)
+"""""""""""""""""""""""""""""""""""""""""""""
 
-The following Operating Systems are supported (64Bit only for all OSs)
+The following Operating Systems and environments are supported (64Bit only for all OSs)
 
+    - Docker
     - Linux (Ubuntu, RHEL)
     - macOS (10.12 and later)
-    - Windows via WSL
+    - Windows via WSL 2
 
 """""""""""""""""""""
 JVMs (All components)
