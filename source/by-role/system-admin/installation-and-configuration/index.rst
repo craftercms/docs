@@ -18,9 +18,7 @@ First we'll take a look at the requirements and supported platform for installin
 
 .. include:: /includes/requirements.rst
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 .. _installation:
 
@@ -70,9 +68,7 @@ Build from Source
 
 CrafterCMS is open source and you can always build and run it from source code `here <https://github.com/craftercms/craftercms>`__
 
-.. raw:: html
-
-   <hr>
+|hr|
 
 -------------
 Configuration
@@ -90,13 +86,14 @@ See :ref:`change-the-defaults` for more information.
 ^^^^^^^^^
 Authoring
 ^^^^^^^^^
-Below you'll find instructions how to enhance the authoring environment performance and how to
-setup various things for your authoring install
+In this section you'll find instructions how to enhance the authoring environment performance and how to
+setup various things for your authoring install.
+
+To change hosts and ports in your authoring install, see :ref:`authoring-environment-installation-hosts-and-ports`
 
 .. toctree::
    :maxdepth: 1
 
-   authoring/change-hosts-ports-on-your-auth-install
    configuration/studio/navigating-main-menu
    configuration/studio/users-groups-management
    ../../common/staging
@@ -104,13 +101,14 @@ setup various things for your authoring install
 ^^^^^^^^
 Delivery
 ^^^^^^^^
-Below you'll find instructions how to enhance the delivery environment performance and how to
-setup various things for your delivery install
+In this section you'll find instructions how to enhance the delivery environment performance and how to
+setup various things for your delivery install.
+
+To change hosts and ports in your delivery install, see :ref:`delivery-environment-installation-hosts-and-ports`
 
 .. toctree::
    :maxdepth: 1
 
-   delivery/change-hosts-ports-on-your-delivery-install
    delivery/setup-project-for-delivery
    delivery/setup-serverless-delivery
 

@@ -1,5 +1,5 @@
 :is-up-to-date: True
-:last-updated: 4.1.1
+:last-updated: 4.1.2
 
 .. index:: Studio Clustering, Clustering
 
@@ -8,7 +8,6 @@
 ==================================
 Studio Clustering |enterpriseOnly|
 ==================================
-
 .. contents::
     :local:
     :depth: 2
@@ -58,7 +57,6 @@ Before we begin configuring Studio for clustering, the following must be setup:
 -----------------------------
 Configuring Studio Clustering
 -----------------------------
-
 First, we'll take a look at an example of how to setup a two node cluster with Studio step by step, then, we'll take a
 look at an example of setting up Studio clustering using a Kubernetes deployment
 
@@ -66,7 +64,7 @@ look at an example of setting up Studio clustering using a Kubernetes deployment
    :maxdepth: 1
 
    studio-clustering-two-nodes
-   ../../installation-and-configuration/kubernetes/studio-clustering-with-kubernetes-deployment
+   ../../installation-and-configuration/kubernetes
 
 .. _cluster-multi-region-considerations:
 
