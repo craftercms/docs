@@ -39,5 +39,5 @@ For production and other services support including:
     * Architectural consulting
     * Access to a system integration partner ecosystem
 
-visit `CrafterCMS <https://craftercms.com>`_ or email our team at `sales@craftercms.com <mailto:sales@craftercms.com>`_ with your inquiries.
+Visit `CrafterCMS <https://craftercms.com>`_ or email our team at `sales@craftercms.com <mailto:sales@craftercms.com>`_ with your inquiries.
 
