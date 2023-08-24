@@ -2,6 +2,8 @@
 :since-version: 4.1.0
 :orphan:
 
+.. TODO Move this article to the sys admin section and merge it with the installation guide
+
 .. _install-craftercms:
 
 ==================
@@ -20,7 +22,8 @@ You can sign up for `Crafter Cloud <https://craftercms.com/products/crafter-clou
 ---
 AWS
 ---
-You can use a `prebuilt AMI <https://aws.amazon.com/marketplace/seller-profile?id=6d75ffca-9630-44bd-90b4-ac0e99058995>`_ from the AWS marketplace.
+
+Follow the :ref:`run-using-aws-ami` to setup CrafterCMS authoring and delivery using Crafter's AWS AMIs.
 
 |hr|
 

@@ -89,7 +89,7 @@ Authoring
 In this section you'll find instructions how to enhance the authoring environment performance and how to
 setup various things for your authoring install.
 
-To change hosts and ports in your authoring install, see :ref:`authoring-environment-installation-hosts-and-ports`
+To change hosts and ports in your authoring install, see :ref:`authoring-environment-ports-and-hostnames`
 
 .. toctree::
    :maxdepth: 1
@@ -104,7 +104,7 @@ Delivery
 In this section you'll find instructions how to enhance the delivery environment performance and how to
 setup various things for your delivery install.
 
-To change hosts and ports in your delivery install, see :ref:`delivery-environment-installation-hosts-and-ports`
+To change hosts and ports in your delivery install, see :ref:`delivery-environment-ports-and-hostnames`
 
 .. toctree::
    :maxdepth: 1

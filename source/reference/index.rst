@@ -82,22 +82,6 @@ Java Doc
 
 |hr|
 
-----------------
-Managing Secrets
-----------------
-
-There are a number of ways to manage secrets in CrafterCMS, please review this :ref:`article<managing-secrets>` for more information.
-
-.. toctree::
-   :hidden:
-   :maxdepth: 2
-
-   managing-secrets
-
-|
-
-|hr|
-
 ----------------------
 Administration Scripts
 ----------------------

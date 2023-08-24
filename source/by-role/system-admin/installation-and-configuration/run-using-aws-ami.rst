@@ -12,6 +12,9 @@ Run CrafterCMS on AWS via Marketplace AMIs
     :local:
     :depth: 1
 
+.. TODO add the following information to this article
+    `prebuilt AMI <https://aws.amazon.com/marketplace/seller-profile?id=6d75ffca-9630-44bd-90b4-ac0e99058995>`_ from the AWS marketplace.
+
 CrafterCMS provides ready-to-run AMIs for Authoring and Delivery. This guide will walk you through the process of launching these instances from the AWS Marketplace.
 
 .. _setup-authoring-using-aws-ami:
