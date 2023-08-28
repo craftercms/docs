@@ -483,6 +483,7 @@ CrafterCMS has a number of ways to encrypt secrets:
 
 - Automatic encryption of secrets in configuration files
 - Studio UI encryption tool
+
     - Project-level encryption tool
     - Admin UI encryption tool
 - CLI encryption tool
