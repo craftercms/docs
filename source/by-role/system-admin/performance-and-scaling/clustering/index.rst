@@ -57,14 +57,9 @@ Before we begin configuring Studio for clustering, the following must be setup:
 -----------------------------
 Configuring Studio Clustering
 -----------------------------
-First, we'll take a look at an example of how to setup a two node cluster with Studio step by step, then, we'll take a
-look at an example of setting up Studio clustering using a Kubernetes deployment
-
-.. toctree::
-   :maxdepth: 1
-
-   studio-clustering-two-nodes
-   ../../installation-and-configuration/kubernetes
+First, we'll take a look at an example of how to setup a two node cluster with Studio step by step
+:ref:`here <setup-a-two-node-cluster-with-studio>`, then, we'll take a look at an example of setting up
+Studio clustering using a Kubernetes deployment :ref:`here <setup-studio-clustering-with-kubernetes-deployment>`
 
 .. _cluster-multi-region-considerations:
 
