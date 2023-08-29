@@ -1,5 +1,5 @@
 :is-up-to-date: False
-:last-updated: 4.0.3
+:last-updated: 4.1.2
 
 .. _system-admin-installation-and-configuration:
 
@@ -50,12 +50,26 @@ You can sign up for `Crafter Cloud <https://craftercms.com/products/crafter-clou
 ^^^^^^
 Docker
 ^^^^^^
+
+""""""""""""""""""""""""""""""""""""
+Quick Start for Evaluation in Docker
+""""""""""""""""""""""""""""""""""""
+For a quick start to evaluate CrafterCMS, you follow these simple instructions. If you have `Docker <https://www.docker.com/>`_ installed, you can get started with CrafterCMS in a few minutes. Simply run the following command:
+
+.. code-block:: bash
+
+    docker run -p 8080:8080 craftercms/authoring_local:latest
+
+Then point your browser to http://localhost:8080/studio and you will be presented with the Crafter Studio login page. The default username is ``admin`` and the default password is ``admin``.
+
+""""""""""""""
+Docker Compose
+""""""""""""""
 To run CrafterCMS in a set of Docker containers using Docker Compose, make sure the following are installed in your local system:
 
 * Docker (https://docs.docker.com/install/)
 * Docker Compose (https://docs.docker.com/compose/install/)
 * Git 2.20.1 or later
-
 
 **For Windows and Mac, we recommend you give Docker Desktop at least 12GB of RAM (6GB of RAM per environment) and 4 CPUs. To do this, go to Docker Desktop's Preferences > Resources > Advanced, and then change the resource limits.**
 
@@ -120,7 +134,7 @@ When the ``authoring`` application displayed above is selected, the application 
    :width: 80%
    :align: center
 
-To configure working on projects in Docker via a local IDE follow the instructions :ref:`here <local-dev-with-docker>`
+To configure working on projects in Docker via a local IDE follow the instructions :ref:`here <local-dev-with-docker>`.
 
 For more information on Docker Desktop Dashboard, see https://docs.docker.com/desktop/dashboard/
 
