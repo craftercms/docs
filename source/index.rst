@@ -12,12 +12,11 @@ This documentation introduces key concepts in CrafterCMS |version|, presents the
 ==================
 What is CrafterCMS
 ==================
-
 CrafterCMS is a modern content management platform for building digital experience applications including:
 
 * Single Page Applications (SPAs) using frameworks like React, Vue, and Angular
 * Native mobile apps and headless applications (IOT, digital signage, wearables, etc.)
-* HTML5 websites using Bootstrap or other HTML frameworks
+* HTML5 websites
 * e-commerce front-ends
 * OTT video experiences on AWS Elemental Media Services
 * AR/VR applications using A-Frame
@@ -29,7 +28,6 @@ CrafterCMS differentiates itself from existing CMSs with its architecture: micro
 ============================
 When/where to use CrafterCMS
 ============================
-
 CrafterCMS is best suited for:
 
 * Content-rich applications that are authored by a few and consumed by many.
@@ -39,7 +37,6 @@ CrafterCMS is best suited for:
 ===================
 Who uses CrafterCMS
 ===================
-
 CrafterCMS is used by three main constituencies:
 
 * Developers who build applications using CrafterCMS.
