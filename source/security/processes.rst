@@ -35,12 +35,12 @@ Code Flow
 
     * CI: Travis-CI
     * Code quality gate: Codacy
-    * Security audit: Snyk
+    * Security audit: Snyk, SonyType, and Trivy
 
       * Critical and High issues will be addressed
       * Medium and below issues will be addressed if we deem it a viable attack vector
 
-    * Penetration testing using OWASP ZAP during every release
+    * Penetration testing using OWASP ZAP and Burp Suite during every release
 
       * Critical and High issues will be addressed
       * Medium and below issues will be addressed if we deem it a viable attack vector
@@ -55,7 +55,7 @@ Code Flow
 Release
 -------
 
-* Full audit and update based on Snyk reports
+* Full audit and update based on Snyk, Trivy, and SonaType reports
 * Release commit GPG signing, 2FA to Sonatype (Maven)
 * MD5 and SHA512 checksums on all artifacts
 * All 3rd party software is downloaded from the original authority and checksums validated
@@ -68,7 +68,7 @@ Crafter Cloud
 -------------
 
 * Crafter Cloud is based on the scanned AWS AMI
-* Penetration testing using OWASP ZAP during every release
+* Penetration testing using OWASP ZAP and Burp Suite during every release
 
   * Critical and High issues will be addressed
   * Medium and below issues will be addressed if we deem it a viable attack vector
