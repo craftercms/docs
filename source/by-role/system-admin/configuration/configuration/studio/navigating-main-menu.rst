@@ -60,7 +60,7 @@ A user is anybody who uses CrafterCMS. ``Users`` lets the administrator manage w
 
 |
 
-:ref:`users-group-management` contains more information on managing users and groups.
+:ref:`user-group-management` contains more information on managing users and groups.
 
 .. _main-menu-tool-groups:
 
@@ -76,7 +76,7 @@ A group consists of a collection of users. ``Groups`` lets the administrator man
 
 |
 
-:ref:`users-group-management` contains more information on managing users and groups.
+:ref:`user-group-management` contains more information on managing users and groups.
 
 .. _main-menu-tool-cluster:
 

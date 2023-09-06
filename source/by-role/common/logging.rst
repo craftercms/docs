@@ -2,7 +2,7 @@
 :last-updated: 4.1.1
 
 .. index::
-   single: Logging
+   single: Logging, Log Files
 
 .. _logging:
 

@@ -1,13 +1,13 @@
 :is-up-to-date: False
 :last-updated: 4.1.2
 
-.. index:: Users Groups Management
+.. index:: User Group Management, Users, Groups, Roles, Permissions, User Passwords
 
-.. _users-group-management:
+.. _user-group-management:
 
-=======================
-Users/Groups Management
-=======================
+=====================
+User/Group Management
+=====================
 
 This section describes managing user accounts and groups.
 

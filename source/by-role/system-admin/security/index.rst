@@ -3,6 +3,8 @@
 
 .. index:: Security, SAML, LDAP, Header-based, Headers-based, Headers Based, Authentication, Password, SSL, TLS, HTTPS, Secrets, Managing Secrets, External Secrets, Internal Secrets, Encryption, Encrypting Text in a Configuration File
 
+.. _system-admin-security:
+
 ========
 Security
 ========

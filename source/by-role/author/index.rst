@@ -1847,7 +1847,7 @@ provided by default. Workflow options are available to specific content, such as
 etc. The available workflow options for users depends on the Role the users are assigned with. As the
 content goes through the workflow options, notification emails are sent out to corresponding users based
 on the workflow option. To setup the email addresses, please see the section **Site Administrators**,
-:ref:`configure-notifications` and  :ref:`users-group-management`. Below is a diagram showing
+:ref:`configure-notifications` and  :ref:`user-group-management`. Below is a diagram showing
 the default workflow steps.
 
 .. image:: /_static/images/page/page-workflow-diagram.webp
