@@ -1,11 +1,13 @@
-:is-up-to-date: False
+:is-up-to-date: True
 :last-updated: 4.1.2
+
+.. TODO Review this article and see if it should be changes from the format: authoring - delivery to more general topics and how to implement the topic/concern
 
 .. _project-admin:
 
-============================
-Project (Site) Administrator
-============================
+=============================
+Project (Site) Administration
+=============================
 .. contents::
     :local:
     :depth: 2
@@ -48,42 +50,6 @@ For the project repository, the project structure looks like this::
                 system
                 web
 
-
-
-.. Start introducing topics of interest and then link deeper into how to configure/work with these
-    Authoring
-        Security
-            Role mapping
-            Permission mapping
-            Authentication with JWT
-            Additional authentication mechanisms, ref Sys Admin auth
-        UI
-            Sidebar
-            Top Nav Bar
-            Dashboards
-            Localization
-            ...
-        Content
-            Large Assets and External Stores
-                Blob store
-                AWS S3
-                Box
-                WebDAV
-            Rich media processing
-                Images
-                Video (transcoding)
-            Rich Text Editor (RTE)
-            Localization
-        Preview
-            Proxy configuration
-        Publishing
-        Notifications
-        Staging
-        Multi-environment Configuration
-        ...
-    Delivery
-        URL Rewrites and Vanity URLs
-        Security, reference Sys Admin
 
 Credentials may be required in some project configurations. For more information on how to
 manage/encode your secrets such as AWS credentials, please see :ref:`managing-secrets`.
@@ -245,7 +211,7 @@ See :ref:`here <box-asset-access>` for more information
 WebDAV
 ~~~~~~
 Using WebDAV is another good option for collaborating on assets hosted on another server.
-See :ref:`here <webdav-asset-access>` for more information.
+See :ref:`webdav-profiles-configuration` to learn how to configure WebDAV and review the developer documentation :ref:`webdav-asset-access` to learn how to access WebDAV assets.
 
 """""""""""""""""""""
 Rich media processing
@@ -290,7 +256,6 @@ Content that is targeted to users is known in CrafterCMS as targeted content.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Language-Based Localized Content
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 The most common form of targeted content is language-based localization, which is enabled just by specifying
 some configuration in the :ref:`Engine's Project Config <engine-project-configuration>`.
 
@@ -325,7 +290,6 @@ It's important to point out that if a page exists several times under the same "
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Configuration for Custom Targeted Content
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 As stated before, the most popular case for targeted content is language-based localization, but it isn't the
 only one. Sometimes you need to target content according to the user's region, country, age, gender, etc. For
 these cases, a little bit more of coding and configuration is needed:
@@ -359,7 +323,6 @@ these cases, a little bit more of coding and configuration is needed:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Targeted Content By File Prefix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 By default, Engine expects targeted content to be organized by folders. The most common case is to have pages
 under ``/site/website`` to be grouped under locale folders. So pages for *en* would be put under ``/site/website/en``,
 pages for *es* under ``/site/website/es``, and so on.
@@ -484,10 +447,22 @@ See :ref:`here <configuring-engine-security>` for more information.
 
 |hr|
 
+----------
+Composable
+----------
+^^^^^^^^^^
+Blueprints
+^^^^^^^^^^
+CrafterCMS supports the ability to extend the functionality of the platform through the use of plugins and blueprints. Projects can be created out of blueprints which can be built-in, pulled from the Marketplace, or custom built. Learn more about blueprints in the article :ref:`blueprints`.
+
+^^^^^^^
+Plugins
+^^^^^^^
+Plugins are extensions that can be installed into a project to add functionality. These can extend the functionality of Crafter Studio for added authoring capabilities, or extend the functionality of the project delivery itself by providing features to your project/site. Learn more about plugins in the article :ref:`plugins`.
+
 -------------
 Project Tools
 -------------
-
 |projectTools| contains project administration tools such as Configurations, Plugin Management, Encryption Tool, etc.
 The following contains more information on administration tools
 

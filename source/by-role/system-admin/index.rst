@@ -14,7 +14,7 @@ they need to install and maintain CrafterCMS.
 .. toctree::
    :maxdepth: 2
 
-   installation/index
+   installation
    configuration/index
    security/index
    maintenance/index
