@@ -99,7 +99,8 @@ html_theme = "sphinx_rtd_theme"
 html_theme_path = ["_themes", ]
 html_theme_options = {
     'logo_only': True,
-    'style_nav_header_background': '#D70015'
+    'style_nav_header_background': '#D70015',
+    "navigation_depth": 6
 }
 html_css_files = ['theme/custom.css']
 
