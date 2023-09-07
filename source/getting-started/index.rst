@@ -46,7 +46,7 @@ You can sign up for `Crafter Cloud <https://craftercms.com/products/crafter-clou
 
 |hr|
 
-For more ways to install, please see the article :ref:`installation`.
+For more ways to install, please see the article :ref:`system-admin-installation`.
 
 -------------------------------
 Start Crafting Your Experiences
